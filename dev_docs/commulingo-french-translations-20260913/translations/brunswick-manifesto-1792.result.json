@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 4,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 4,
+    "tokensIn": 4055,
+    "tokensOut": 12985
+  },
+  "seconds": 31.9,
+  "chunks": 4,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/brunswick-manifesto-1792.html",
+  "bytes": 9920,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/brunswick-manifesto-1792.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

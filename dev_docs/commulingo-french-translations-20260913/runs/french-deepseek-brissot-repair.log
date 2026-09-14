@@ -1,0 +1,29 @@
+{"provider": "deepseek_anthropic", "model": "deepseek-flash", "thinking": "enabled", "maxTokensIncludingReasoning": 48000, "retryOutputCapIncludingReasoning": 65536}
+안내: 인물사전 성(姓) 단독 표면 미주입 — 문서에 전체 이름·이니셜이 없음: Potemkin(포툠킨). 실제로 그 인물이면 spec glossary.extra에 넣을 것.
+{"spec": "brissot-war-speech-1791", "event": "plan", "pending": 12, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "brissot-war-speech-1791", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "brissot-war-speech-1791", "title": "", "blocks": 65, "chars": 37074}], "glossaryEntries": 934, "chunks": 12, "chars": 37074, "estimatedUsd": 0.0182, "oversizedBlocks": []}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [0, 7], "attempts": 1, "usage": {"tokens_in": 1264, "tokens_out": 2926, "cache_read": 1280, "cache_create": 0}, "latencyMs": 16253, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 1, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [13, 16], "attempts": 1, "usage": {"tokens_in": 1431, "tokens_out": 4568, "cache_read": 1280, "cache_create": 0}, "latencyMs": 23837, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 2, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [17, 23], "attempts": 1, "usage": {"tokens_in": 1524, "tokens_out": 5664, "cache_read": 1280, "cache_create": 0}, "latencyMs": 29029, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 3, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [8, 12], "attempts": 1, "usage": {"tokens_in": 1513, "tokens_out": 10847, "cache_read": 1280, "cache_create": 0}, "latencyMs": 53343, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 4, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [28, 33], "attempts": 1, "usage": {"tokens_in": 1331, "tokens_out": 7596, "cache_read": 1280, "cache_create": 0}, "latencyMs": 38780, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 5, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [41, 43], "attempts": 1, "usage": {"tokens_in": 1450, "tokens_out": 5643, "cache_read": 1280, "cache_create": 0}, "latencyMs": 26740, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 6, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [34, 40], "attempts": 1, "usage": {"tokens_in": 1510, "tokens_out": 7811, "cache_read": 1280, "cache_create": 0}, "latencyMs": 38037, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 7, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [44, 52], "attempts": 1, "usage": {"tokens_in": 1380, "tokens_out": 3858, "cache_read": 1280, "cache_create": 0}, "latencyMs": 18452, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 8, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [58, 61], "attempts": 1, "usage": {"tokens_in": 1492, "tokens_out": 3986, "cache_read": 1280, "cache_create": 0}, "latencyMs": 20992, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 9, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [62, 64], "attempts": 1, "usage": {"tokens_in": 971, "tokens_out": 3739, "cache_read": 1280, "cache_create": 0}, "latencyMs": 19925, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 10, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [53, 57], "attempts": 1, "usage": {"tokens_in": 1415, "tokens_out": 5786, "cache_read": 1280, "cache_create": 0}, "latencyMs": 27238, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 11, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "usage", "blocks": [24, 27], "attempts": 1, "usage": {"tokens_in": 1571, "tokens_out": 18240, "cache_read": 1280, "cache_create": 0}, "latencyMs": 82747, "errorKind": null}
+{"spec": "brissot-war-speech-1791", "event": "chunk", "done": 12, "total": 12}
+{"spec": "brissot-war-speech-1791", "event": "tm", "segments": 65, "inserted": 65}
+{"spec": "brissot-war-speech-1791", "event": "done", "stats": {"cached": 0, "translated": 12, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 12, "tokensIn": 16852, "tokensOut": 80664}, "seconds": 82.8, "chunks": 12, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/brissot-war-speech-1791.html", "bytes": 45559, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/brissot-war-speech-1791.deepseek.cache.review.json", "strayCyrillic": []}

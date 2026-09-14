@@ -1,0 +1,81 @@
+{"provider": "deepseek_anthropic", "model": "deepseek-flash", "thinking": "enabled", "maxTokensIncludingReasoning": 48000, "retryOutputCapIncludingReasoning": 65536}
+안내: 인물사전 성(姓) 단독 표면 미주입 — 문서에 전체 이름·이니셜이 없음: Louis XVI(루이 16세). 실제로 그 인물이면 spec glossary.extra에 넣을 것.
+{"spec": "france-august-decrees-1789", "event": "plan", "pending": 3, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "france-august-decrees-1789", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "france-august-decrees-1789", "title": "", "blocks": 44, "chars": 8251}], "glossaryEntries": 934, "chunks": 3, "chars": 8251, "estimatedUsd": 0.0041, "oversizedBlocks": []}
+{"spec": "france-august-decrees-1789", "event": "usage", "blocks": [34, 43], "attempts": 1, "usage": {"tokens_in": 1991, "tokens_out": 2719, "cache_read": 0, "cache_create": 0}, "latencyMs": 14807, "errorKind": null}
+{"spec": "france-august-decrees-1789", "event": "chunk", "done": 1, "total": 3}
+{"spec": "france-august-decrees-1789", "event": "usage", "blocks": [16, 33], "attempts": 1, "usage": {"tokens_in": 2634, "tokens_out": 5343, "cache_read": 0, "cache_create": 0}, "latencyMs": 28149, "errorKind": null}
+{"spec": "france-august-decrees-1789", "event": "chunk", "done": 2, "total": 3}
+{"spec": "france-august-decrees-1789", "event": "usage", "blocks": [0, 15], "attempts": 1, "usage": {"tokens_in": 2644, "tokens_out": 11937, "cache_read": 0, "cache_create": 0}, "latencyMs": 57317, "errorKind": null}
+{"spec": "france-august-decrees-1789", "event": "chunk", "done": 3, "total": 3}
+{"spec": "france-august-decrees-1789", "event": "tm", "segments": 44, "inserted": 44}
+{"spec": "france-august-decrees-1789", "event": "done", "stats": {"cached": 0, "translated": 3, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 3, "tokensIn": 7269, "tokensOut": 19999}, "seconds": 57.3, "chunks": 3, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-august-decrees-1789.html", "bytes": 9061, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-august-decrees-1789.deepseek.cache.review.json", "strayCyrillic": []}
+{"spec": "france-feudal-dues-abolition-1793", "event": "plan", "pending": 2, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "france-feudal-dues-abolition-1793", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "france-feudal-dues-abolition-1793", "title": "", "blocks": 26, "chars": 3515}], "glossaryEntries": 934, "chunks": 2, "chars": 3515, "estimatedUsd": 0.0019, "oversizedBlocks": []}
+{"spec": "france-feudal-dues-abolition-1793", "event": "usage", "blocks": [25, 25], "attempts": 1, "usage": {"tokens_in": 298, "tokens_out": 324, "cache_read": 1280, "cache_create": 0}, "latencyMs": 1988, "errorKind": null}
+{"spec": "france-feudal-dues-abolition-1793", "event": "chunk", "done": 1, "total": 2}
+{"spec": "france-feudal-dues-abolition-1793", "event": "usage", "blocks": [0, 24], "attempts": 1, "usage": {"tokens_in": 1302, "tokens_out": 3913, "cache_read": 1280, "cache_create": 0}, "latencyMs": 17177, "errorKind": null}
+{"spec": "france-feudal-dues-abolition-1793", "event": "chunk", "done": 2, "total": 2}
+{"spec": "france-feudal-dues-abolition-1793", "event": "tm", "segments": 26, "inserted": 26}
+{"spec": "france-feudal-dues-abolition-1793", "event": "done", "stats": {"cached": 0, "translated": 2, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 2, "tokensIn": 1600, "tokensOut": 4237}, "seconds": 17.2, "chunks": 2, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-feudal-dues-abolition-1793.html", "bytes": 3918, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-feudal-dues-abolition-1793.deepseek.cache.review.json", "strayCyrillic": []}
+안내: 인물사전 성(姓) 단독 표면 미주입 — 문서에 전체 이름·이니셜이 없음: Duport(뒤포르). 실제로 그 인물이면 spec glossary.extra에 넣을 것.
+{"spec": "france-le-chapelier-law-1791", "event": "plan", "pending": 2, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "france-le-chapelier-law-1791", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "france-le-chapelier-law-1791", "title": "", "blocks": 12, "chars": 4264}], "glossaryEntries": 934, "chunks": 2, "chars": 4264, "estimatedUsd": 0.0022, "oversizedBlocks": []}
+{"spec": "france-le-chapelier-law-1791", "event": "usage", "blocks": [10, 11], "attempts": 1, "usage": {"tokens_in": 552, "tokens_out": 1760, "cache_read": 1280, "cache_create": 0}, "latencyMs": 10280, "errorKind": null}
+{"spec": "france-le-chapelier-law-1791", "event": "chunk", "done": 1, "total": 2}
+{"spec": "france-le-chapelier-law-1791", "event": "usage", "blocks": [0, 9], "attempts": 1, "usage": {"tokens_in": 1294, "tokens_out": 6243, "cache_read": 1280, "cache_create": 0}, "latencyMs": 28958, "errorKind": null}
+{"spec": "france-le-chapelier-law-1791", "event": "chunk", "done": 2, "total": 2}
+{"spec": "france-le-chapelier-law-1791", "event": "tm", "segments": 12, "inserted": 12}
+{"spec": "france-le-chapelier-law-1791", "event": "done", "stats": {"cached": 0, "translated": 2, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 2, "tokensIn": 1846, "tokensOut": 8003}, "seconds": 29.0, "chunks": 2, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-le-chapelier-law-1791.html", "bytes": 5054, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-le-chapelier-law-1791.deepseek.cache.review.json", "strayCyrillic": []}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "plan", "pending": 12, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "robespierre-war-speech-1792-01-02", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "robespierre-war-speech-1792-01-02", "title": "", "blocks": 109, "chars": 36051}], "glossaryEntries": 935, "chunks": 12, "chars": 36051, "estimatedUsd": 0.0178, "oversizedBlocks": []}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [0, 9], "attempts": 1, "usage": {"tokens_in": 1303, "tokens_out": 3093, "cache_read": 1280, "cache_create": 0}, "latencyMs": 15791, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 1, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [43, 51], "attempts": 1, "usage": {"tokens_in": 1339, "tokens_out": 4101, "cache_read": 1280, "cache_create": 0}, "latencyMs": 21604, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 2, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [21, 31], "attempts": 1, "usage": {"tokens_in": 1422, "tokens_out": 5135, "cache_read": 1280, "cache_create": 0}, "latencyMs": 25469, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 3, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [32, 42], "attempts": 1, "usage": {"tokens_in": 1345, "tokens_out": 7885, "cache_read": 1280, "cache_create": 0}, "latencyMs": 39163, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 4, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [10, 20], "attempts": 1, "usage": {"tokens_in": 1390, "tokens_out": 8503, "cache_read": 1280, "cache_create": 0}, "latencyMs": 39393, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 5, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [65, 72], "attempts": 1, "usage": {"tokens_in": 1247, "tokens_out": 5495, "cache_read": 1280, "cache_create": 0}, "latencyMs": 29056, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 6, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [52, 64], "attempts": 1, "usage": {"tokens_in": 1338, "tokens_out": 7402, "cache_read": 1280, "cache_create": 0}, "latencyMs": 34930, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 7, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [107, 108], "attempts": 1, "usage": {"tokens_in": 564, "tokens_out": 1406, "cache_read": 1280, "cache_create": 0}, "latencyMs": 7636, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 8, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [82, 90], "attempts": 1, "usage": {"tokens_in": 1422, "tokens_out": 5204, "cache_read": 1280, "cache_create": 0}, "latencyMs": 26766, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 9, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [73, 81], "attempts": 1, "usage": {"tokens_in": 1309, "tokens_out": 8659, "cache_read": 1280, "cache_create": 0}, "latencyMs": 41380, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 10, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [91, 98], "attempts": 1, "usage": {"tokens_in": 1429, "tokens_out": 5996, "cache_read": 1280, "cache_create": 0}, "latencyMs": 29553, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 11, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "usage", "blocks": [99, 106], "attempts": 1, "usage": {"tokens_in": 1367, "tokens_out": 5913, "cache_read": 1280, "cache_create": 0}, "latencyMs": 31141, "errorKind": null}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "chunk", "done": 12, "total": 12}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "tm", "segments": 109, "inserted": 109}
+{"spec": "robespierre-war-speech-1792-01-02", "event": "done", "stats": {"cached": 0, "translated": 12, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 12, "tokensIn": 15475, "tokensOut": 68792}, "seconds": 81.8, "chunks": 12, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/robespierre-war-speech-1792-01-02.html", "bytes": 43506, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/robespierre-war-speech-1792-01-02.deepseek.cache.review.json", "strayCyrillic": []}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "plan", "pending": 5, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "sonthonax-emancipation-proclamation-1793", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "sonthonax-emancipation-proclamation-1793", "title": "", "blocks": 108, "chars": 15921}], "glossaryEntries": 934, "chunks": 5, "chars": 15921, "estimatedUsd": 0.0078, "oversizedBlocks": []}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "usage", "blocks": [10, 24], "attempts": 1, "usage": {"tokens_in": 1434, "tokens_out": 4433, "cache_read": 1280, "cache_create": 0}, "latencyMs": 22262, "errorKind": null}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "chunk", "done": 1, "total": 5}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "usage", "blocks": [25, 61], "attempts": 1, "usage": {"tokens_in": 1356, "tokens_out": 4864, "cache_read": 1280, "cache_create": 0}, "latencyMs": 23616, "errorKind": null}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "chunk", "done": 2, "total": 5}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "usage", "blocks": [62, 83], "attempts": 1, "usage": {"tokens_in": 1301, "tokens_out": 5397, "cache_read": 1280, "cache_create": 0}, "latencyMs": 25959, "errorKind": null}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "chunk", "done": 3, "total": 5}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "usage", "blocks": [0, 9], "attempts": 1, "usage": {"tokens_in": 1286, "tokens_out": 7353, "cache_read": 1280, "cache_create": 0}, "latencyMs": 35578, "errorKind": null}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "chunk", "done": 4, "total": 5}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "usage", "blocks": [84, 107], "attempts": 1, "usage": {"tokens_in": 1035, "tokens_out": 8326, "cache_read": 1280, "cache_create": 0}, "latencyMs": 38608, "errorKind": null}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "chunk", "done": 5, "total": 5}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "tm", "segments": 108, "inserted": 108}
+{"spec": "sonthonax-emancipation-proclamation-1793", "event": "done", "stats": {"cached": 0, "translated": 5, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 5, "tokensIn": 6412, "tokensOut": 30373}, "seconds": 38.6, "chunks": 5, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/sonthonax-emancipation-proclamation-1793.html", "bytes": 17865, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/sonthonax-emancipation-proclamation-1793.deepseek.cache.review.json", "strayCyrillic": []}
+{"spec": "treaty-amiens-1802", "event": "plan", "pending": 6, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "treaty-amiens-1802", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "treaty-amiens-1802", "title": "", "blocks": 80, "chars": 18098}], "glossaryEntries": 934, "chunks": 6, "chars": 18098, "estimatedUsd": 0.0089, "oversizedBlocks": []}
+{"spec": "treaty-amiens-1802", "event": "usage", "blocks": [42, 54], "attempts": 1, "usage": {"tokens_in": 1390, "tokens_out": 4373, "cache_read": 1280, "cache_create": 0}, "latencyMs": 21420, "errorKind": null}
+{"spec": "treaty-amiens-1802", "event": "chunk", "done": 1, "total": 6}
+{"spec": "treaty-amiens-1802", "event": "usage", "blocks": [13, 27], "attempts": 1, "usage": {"tokens_in": 1308, "tokens_out": 5088, "cache_read": 1280, "cache_create": 0}, "latencyMs": 23652, "errorKind": null}
+{"spec": "treaty-amiens-1802", "event": "chunk", "done": 2, "total": 6}
+{"spec": "treaty-amiens-1802", "event": "usage", "blocks": [55, 67], "attempts": 1, "usage": {"tokens_in": 1292, "tokens_out": 5868, "cache_read": 1280, "cache_create": 0}, "latencyMs": 28832, "errorKind": null}
+{"spec": "treaty-amiens-1802", "event": "chunk", "done": 3, "total": 6}
+{"spec": "treaty-amiens-1802", "event": "usage", "blocks": [28, 41], "attempts": 1, "usage": {"tokens_in": 1326, "tokens_out": 9123, "cache_read": 1280, "cache_create": 0}, "latencyMs": 42295, "errorKind": null}
+{"spec": "treaty-amiens-1802", "event": "chunk", "done": 4, "total": 6}
+{"spec": "treaty-amiens-1802", "event": "usage", "blocks": [68, 79], "attempts": 1, "usage": {"tokens_in": 919, "tokens_out": 5391, "cache_read": 1280, "cache_create": 0}, "latencyMs": 26464, "errorKind": null}
+{"spec": "treaty-amiens-1802", "event": "chunk", "done": 5, "total": 6}
+{"spec": "treaty-amiens-1802", "event": "usage", "blocks": [0, 12], "attempts": 1, "usage": {"tokens_in": 1200, "tokens_out": 17182, "cache_read": 1280, "cache_create": 0}, "latencyMs": 80637, "errorKind": null}
+{"spec": "treaty-amiens-1802", "event": "chunk", "done": 6, "total": 6}
+{"spec": "treaty-amiens-1802", "event": "tm", "segments": 80, "inserted": 80}
+{"spec": "treaty-amiens-1802", "event": "done", "stats": {"cached": 0, "translated": 6, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 6, "tokensIn": 7435, "tokensOut": 47025}, "seconds": 80.7, "chunks": 6, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-amiens-1802.html", "bytes": 18982, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-amiens-1802.deepseek.cache.review.json", "strayCyrillic": []}

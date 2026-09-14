@@ -1,0 +1,22 @@
+{
+  "review": [
+    {
+      "block": 17,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "25": 1,
+            "1792": 1
+          },
+          "target": {
+            "1792": 1,
+            "7": 1,
+            "25": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

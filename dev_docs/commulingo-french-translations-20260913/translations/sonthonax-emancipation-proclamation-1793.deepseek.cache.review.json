@@ -1,0 +1,310 @@
+{
+  "review": [
+    {
+      "block": 6,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {
+            "4": 2
+          }
+        }
+      ]
+    },
+    {
+      "block": 9,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {
+            "4": 2
+          }
+        }
+      ]
+    },
+    {
+      "block": 16,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "5": 1
+          },
+          "target": {
+            "3": 1,
+            "5": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 27,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 29,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "60": 1,
+            "10": 1,
+            "1": 1,
+            "6": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 31,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 39,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 41,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 42,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 3,
+            "3": 3
+          }
+        }
+      ]
+    },
+    {
+      "block": 46,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 1,
+            "3": 2
+          }
+        }
+      ]
+    },
+    {
+      "block": 48,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "2": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 50,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 1,
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 52,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 1,
+            "2": 1,
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 54,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "10": 1,
+            "15": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 58,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "10": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 60,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "10": 1,
+            "15": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 68,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1,
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 71,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "20": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 73,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 1,
+            "2": 1,
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 82,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "7": 1,
+            "3": 1,
+            "2": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 86,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 90,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 2,
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 102,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "29": 1,
+            "1793": 1
+          },
+          "target": {
+            "2": 1,
+            "1793": 1,
+            "8": 1,
+            "29": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

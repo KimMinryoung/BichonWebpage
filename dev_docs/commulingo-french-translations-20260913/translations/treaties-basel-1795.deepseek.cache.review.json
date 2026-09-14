@@ -1,0 +1,489 @@
+{
+  "review": [
+    {
+      "block": 0,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "5": 1,
+            "1795": 1
+          },
+          "target": {
+            "1795": 1,
+            "4": 1,
+            "5": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 3,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 5,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "2": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 7,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "3": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 9,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 10,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 2
+          }
+        }
+      ]
+    },
+    {
+      "block": 11,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "5": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 13,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "6": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 15,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "7": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 16,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "6": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 17,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "8": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 19,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "9": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 20,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "10": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 22,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "11": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 24,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "12": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 27,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "5": 1
+          },
+          "target": {
+            "1795": 1,
+            "4": 1,
+            "5": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 33,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 35,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 37,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "2": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 39,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "3": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 41,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 42,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 43,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "5": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 45,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "6": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 46,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 47,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "7": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 48,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "8": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 50,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "9": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 51,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 54,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 56,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "10": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 57,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "11": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 61,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "12": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 64,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "13": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 67,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "14": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 68,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "15": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 70,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "16": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 72,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "17": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 75,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "22": 1,
+            "1795": 1
+          },
+          "target": {
+            "3": 1,
+            "4": 1,
+            "1795": 1,
+            "7": 1,
+            "22": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

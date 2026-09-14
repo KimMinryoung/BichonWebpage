@@ -1,0 +1,51 @@
+{
+  "review": [
+    {
+      "block": 0,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "2": 1,
+            "1792": 1
+          },
+          "target": {
+            "1792": 1,
+            "1": 1,
+            "2": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 80,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "14": 1
+          },
+          "target": {
+            "7": 1,
+            "14": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 92,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "20": 1
+          },
+          "target": {
+            "2": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

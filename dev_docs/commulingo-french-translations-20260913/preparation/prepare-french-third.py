@@ -1,0 +1,4 @@
+exec(open('/tmp/prepare-french-first.py').read().split("t=fetched('august')")[0])
+t=(B/'sources/brunswick-full.txt').read_text();a=t.index('Déclaration',t.index('TROISIÈME ANNEXE'));z=t.index('Lettre du roi à l’Assemblée',a) if 'Lettre du roi à l’Assemblée' in t else t.index("Lettre du roi à l'Assemblée",a)
+save('brunswick-manifesto-1792',t[a:z].splitlines(),'https://mjp.univ-perp.fr/france/1792menaces_guerre.htm','1792년 7월 25일 브라운슈바이크 선언 전문: 서문·8항·후속 경고·서명. Archives parlementaires, 1792년 8월 1일 회의 부록, t. XLVII, 372–373쪽 전사. 축약된 Jomini 전사 대신 의회 기록 전문 사용.')
+save('bonaparte-egypt-proclamation-1798',json.load(open(B/'sources/bonaparte.paras.json')),'https://www.gutenberg.org/files/12782/12782-h/12782-h.htm','Œuvres de Napoléon Bonaparte, t. II (1821), 알렉산드리아 1798년 7월 1일/공화력 6년 메시도르 13일로 표기된 이집트 주민 대상 포고 전문. 서문·5조·서명 포함. 당시 프랑스어 포고문 판본이며 아랍어 포고와 구별한다.')

@@ -1,0 +1,51 @@
+{
+  "id": "treaty-campo-formio-1797",
+  "title": "캄포포르미오 조약 (1797년 10월 17일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1797년 10월 17일 캄포포르미오 조약 공개 제1–25조·서명·총재정부 비준문 전문. 비밀조항은 이 저본에 수록되지 않아 별도 보강 필요. MJP와 비교하여 18 avril 1797의 공화력 오기(20 germinal an III)를 피했다."
+  ],
+  "bibliography": [
+    "https://www.napoleon-empire.org/texte-officiel/traite-campoformio.php",
+    "1797년 10월 17일 캄포포르미오 조약 공개 제1–25조·서명·총재정부 비준문 전문. 비밀조항은 이 저본에 수록되지 않아 별도 보강 필요. MJP와 비교하여 18 avril 1797의 공화력 오기(20 germinal an III)를 피했다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "treaty-campo-formio-1797",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/treaty-campo-formio-1797.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "9ff5b57a0184fbbbbf87609ef8040611e86cb7ddeda3b57a29f763ba02f57ce7",
+        "url": "https://www.napoleon-empire.org/texte-officiel/traite-campoformio.php"
+      },
+      "blocks": [
+        0,
+        75
+      ],
+      "startsWith": "Sa Majesté l'empereur des Romains, roi de Hongrie et de Bohême,",
+      "endsWith": "e 5 brumaire an 6 de la République française, une et indivisible.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-campo-formio-1797.html",
+  "queueId": 2054,
+  "sourceContextChars": 600
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "member": "france-rights-declaration-1789",
+    "collection": "france-rights-and-emancipation-1789-1794",
+    "preservedSha256": "91d29ecb7894ccd9a79169f4a8c2589f4de279a6218ba6f953becd5b628c16da"
+  },
+  {
+    "member": "gouges-rights-of-woman-1791",
+    "collection": "france-rights-and-emancipation-1789-1794",
+    "preservedSha256": "653e66b422033b80c04ba58aaf43c08644130b3d60f3675301808cbf04a8edbe"
+  },
+  {
+    "member": "france-slavery-abolition-decree-1794",
+    "collection": "france-rights-and-emancipation-1789-1794",
+    "preservedSha256": "6ad8512c47175edd3d8f70571e854ac529ede6e5f9ebf0064eb22ed123e72c30"
+  },
+  {
+    "member": "robespierre-subsistence-1792",
+    "collection": "france-subsistence-and-equality-1792-1796",
+    "preservedSha256": "a95bf0f8d7fcbe4931629d5a0b149e6e962b03073b11a98d373b77b77b45b430"
+  },
+  {
+    "member": "france-general-maximum-law-1793",
+    "collection": "france-subsistence-and-equality-1792-1796",
+    "preservedSha256": "762386fbcac859d144aed8c025a06733f84cb2a31dd324b7d733fceba53ac82e"
+  },
+  {
+    "member": "marechal-manifesto-equals-1796",
+    "collection": "france-subsistence-and-equality-1792-1796",
+    "preservedSha256": "adb63cda8247525c73fb607af8f5fef8ef9754766fa21b11b261372f6666863d"
+  },
+  {
+    "id": "france-rights-and-emancipation-1789-1794",
+    "members": 5,
+    "sha256": "3657b88a9e23e91947ac7a9ac577e16ef2fdb1f989ae534d313344d49f68e22e",
+    "characters": 28563
+  },
+  {
+    "id": "france-subsistence-and-equality-1792-1796",
+    "members": 4,
+    "sha256": "9bf5c1cf5fbe33446f31b6786ad69b331156b0fe02f6a78e790b81f01c074e72",
+    "characters": 31795
+  },
+  {
+    "id": "france-privileges-property-and-labor-1789-1793",
+    "members": 3,
+    "sha256": "a0acc247e0cb21df3cad41e5eb3fb5297c6bc2cafcdb117bee023b9cbdc0f32f",
+    "characters": 7447
+  },
+  {
+    "id": "france-war-debate-and-declarations-1791-1792",
+    "members": 5,
+    "sha256": "b62a9add8157c7228f5f6803f9180aea477122e96d57a13c0afb372cd6f7f03a",
+    "characters": 42032
+  },
+  {
+    "id": "france-revolution-abroad-and-mobilization-1792-1793",
+    "members": 3,
+    "sha256": "a21ccf6d8c78de7be682eeda2c450c6fd5ca98fa27c58c9f84329807ec1912f2",
+    "characters": 6448
+  },
+  {
+    "id": "france-revolutionary-peace-treaties-1795-1802",
+    "members": 4,
+    "sha256": "9aca280e34e2c7ef94a18a55562ae4324ec5bf25d5a6fc81143b94caa4d90939",
+    "characters": 25446
+  },
+  {
+    "id": "egypt-french-proclamation-and-cairo-chronicle-1798",
+    "members": 2,
+    "sha256": "dd37a0846a8036ebe288c63c866623b0abb6412374d1931b39eda03e7a1eaf77",
+    "characters": 14754
+  },
+  {
+    "id": "france-civil-constitution-clergy-1790",
+    "members": 0,
+    "sha256": "a470e8b3ce8acee1d963e304eb4da5dbb1273eb34553fd226525414368e174d4",
+    "characters": 13782
+  }
+]

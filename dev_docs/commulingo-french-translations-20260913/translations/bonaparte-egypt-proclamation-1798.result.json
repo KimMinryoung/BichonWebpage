@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 2,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 2,
+    "tokensIn": 1763,
+    "tokensOut": 6050
+  },
+  "seconds": 25.4,
+  "chunks": 2,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/bonaparte-egypt-proclamation-1798.html",
+  "bytes": 5068,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/bonaparte-egypt-proclamation-1798.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

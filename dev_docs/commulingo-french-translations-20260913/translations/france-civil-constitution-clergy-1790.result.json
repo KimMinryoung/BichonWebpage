@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 10,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 10,
+    "tokensIn": 13836,
+    "tokensOut": 46690
+  },
+  "seconds": 52.9,
+  "chunks": 10,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-civil-constitution-clergy-1790.html",
+  "bytes": 33185,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-civil-constitution-clergy-1790.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

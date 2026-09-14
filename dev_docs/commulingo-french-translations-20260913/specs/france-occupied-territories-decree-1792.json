@@ -1,0 +1,51 @@
+{
+  "id": "france-occupied-territories-decree-1792",
+  "title": "점령지의 혁명 행정에 관한 법령 (1792년 12월 15일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1792년 12월 15일 원칙 채택·17일 최종 문안 채택. 제1–12조 및 부속 포고 전문. 22일 제3조 개정문은 후대에 삽입된 별도 법문이므로 본문에서 제외했다. Cambon 보고와 구분한다."
+  ],
+  "bibliography": [
+    "https://mjp.univ-perp.fr/france/1792reunion.htm",
+    "1792년 12월 15일 원칙 채택·17일 최종 문안 채택. 제1–12조 및 부속 포고 전문. 22일 제3조 개정문은 후대에 삽입된 별도 법문이므로 본문에서 제외했다. Cambon 보고와 구분한다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-occupied-territories-decree-1792",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-occupied-territories-decree-1792.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "c40f9c29fbd141197ff8ebbaccc285185756fd15b20338c2d8ef1c431a58aa65",
+        "url": "https://mjp.univ-perp.fr/france/1792reunion.htm"
+      },
+      "blocks": [
+        0,
+        33
+      ],
+      "startsWith": "Décret qui détermine les règles à suivre par les généraux de la R",
+      "endsWith": "e bonheur et la fraternité qui doit exister désormais entre nous.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-occupied-territories-decree-1792.html",
+  "queueId": 2050,
+  "sourceContextChars": 600
+}

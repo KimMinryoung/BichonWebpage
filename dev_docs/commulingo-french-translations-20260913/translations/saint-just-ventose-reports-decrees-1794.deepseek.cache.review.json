@@ -1,0 +1,163 @@
+{
+  "review": [
+    {
+      "block": 0,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "8": 1,
+            "26": 1,
+            "1794": 1
+          },
+          "target": {
+            "8": 1,
+            "2": 2,
+            "1794": 1,
+            "26": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 18,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1788": 1
+          },
+          "target": {
+            "1788": 1,
+            "16": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 23,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 24,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 42,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "20": 1,
+            "30": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 44,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "5": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 63,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "50": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 68,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1789": 1
+          },
+          "target": {
+            "1789": 1,
+            "5": 1,
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 73,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "13": 1,
+            "3": 1,
+            "1794": 1
+          },
+          "target": {
+            "2": 1,
+            "13": 1,
+            "1794": 1,
+            "3": 2
+          }
+        }
+      ]
+    },
+    {
+      "block": 79,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1200": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 86,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1789": 1
+          },
+          "target": {
+            "1789": 1,
+            "5": 1,
+            "1": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

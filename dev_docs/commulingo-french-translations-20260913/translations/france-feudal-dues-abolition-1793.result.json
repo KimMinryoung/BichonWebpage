@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 2,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 2,
+    "tokensIn": 1600,
+    "tokensOut": 4237
+  },
+  "seconds": 17.2,
+  "chunks": 2,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-feudal-dues-abolition-1793.html",
+  "bytes": 3918,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-feudal-dues-abolition-1793.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

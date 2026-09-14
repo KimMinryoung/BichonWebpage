@@ -1,0 +1,51 @@
+{
+  "id": "france-war-declaration-austria-1792",
+  "title": "오스트리아 군주에 대한 선전포고 (1792년 4월 20일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1792년 4월 20일 헝가리·보헤미아 왕에 대한 선전포고 최종 채택문 전문. Archives parlementaires, t. XLII, 1893, 210–218쪽 재록. 앞선 초안·토론·현대 해설 제외."
+  ],
+  "bibliography": [
+    "https://langloishg.fr/documents/guerre-et-paix/la-declaration-de-guerre-du-20-avril-1792/",
+    "1792년 4월 20일 헝가리·보헤미아 왕에 대한 선전포고 최종 채택문 전문. Archives parlementaires, t. XLII, 1893, 210–218쪽 재록. 앞선 초안·토론·현대 해설 제외.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-war-declaration-austria-1792",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-war-declaration-austria-1792.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "73ca8b960833bc99f524bf35e1f59edd010199178db7d284e7fdf0d919026ea7",
+        "url": "https://langloishg.fr/documents/guerre-et-paix/la-declaration-de-guerre-du-20-avril-1792/"
+      },
+      "blocks": [
+        0,
+        10
+      ],
+      "startsWith": "« L’Assemblée nationale, délibérant sur la proposition formelle d",
+      "endsWith": "gence, décrète la guerre contre le roi de Hongrie et de Bohême. »",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-war-declaration-austria-1792.html",
+  "queueId": 2048,
+  "sourceContextChars": 600
+}

@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 5,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 5,
+    "tokensIn": 6412,
+    "tokensOut": 30373
+  },
+  "seconds": 38.6,
+  "chunks": 5,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/sonthonax-emancipation-proclamation-1793.html",
+  "bytes": 17865,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/sonthonax-emancipation-proclamation-1793.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

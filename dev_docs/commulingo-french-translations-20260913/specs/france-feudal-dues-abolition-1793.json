@@ -1,0 +1,51 @@
+{
+  "id": "france-feudal-dues-abolition-1793",
+  "title": "봉건적 부담의 무상 폐지 법령 (1793년 7월 17일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1793년 7월 17일 법령 제1–12조 전문. 1789년 법령과 구별한다."
+  ],
+  "bibliography": [
+    "https://mjp.univ-perp.fr/france/1789nuit4aout.htm",
+    "1793년 7월 17일 법령 제1–12조 전문. 1789년 법령과 구별한다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-feudal-dues-abolition-1793",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-feudal-dues-abolition-1793.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "9771738250882774e5d7d8c0af9275899d0943db0ba252684b780ea8aa18f8d2",
+        "url": "https://mjp.univ-perp.fr/france/1789nuit4aout.htm"
+      },
+      "blocks": [
+        0,
+        26
+      ],
+      "startsWith": "Décret qui supprime sans indemnité toutes les redevances ci-devan",
+      "endsWith": " de son exécution, sans l'intermédiaire des corps administratifs.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-feudal-dues-abolition-1793.html",
+  "queueId": 2010,
+  "sourceContextChars": 600
+}

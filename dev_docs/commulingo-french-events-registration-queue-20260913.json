@@ -1,0 +1,2391 @@
+{
+  "batch": "french-events-registration-20260913",
+  "events": [
+    "french-revolution-1789-1799",
+    "french-revolutionary-wars-1792-1802"
+  ],
+  "scope": "Only two French events from this conversation; names include timeline map actors.",
+  "items": [
+    {
+      "kind": "person",
+      "suggested_id": "napoleon-bonaparte",
+      "label": {
+        "ko": "나폴레옹 보나파르트",
+        "en": "Napoleon Bonaparte"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 85,
+      "scope": "이탈리아·이집트 원정과 브뤼메르, 식민정책을 함께 설명. 나폴레온 제르바스와 구별",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "/War_of_the_Pyrenees)\n\n## 이탈리아 원정과 자매공화국의 모순\n\n1796년 이탈리아 방면군을 맡은 보나파르트는 사르데냐-피에몬테와 오스트리아군 사이를 공략했다. 사르데냐의 이탈 뒤에도 만토바를 둘러싼 전투는 계속되었고 아르콜레·리볼리 등의 승리와 1797년 만토바 항복이 오스트리아를 압박했다. 10월 캄포포르미오 조약은 제1차 동맹전쟁의 대륙적 국면을 마무리했다. 승전 장군은 작전뿐 아니라 외교와 점령지 정치에서도 독"
+      },
+      "sources": [
+        "https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html",
+        "https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 보나파르트. 작성 범위: 이탈리아·이집트 원정과 브뤼메르, 식민정책을 함께 설명. 나폴레온 제르바스와 구별. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html ; https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2016,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "charlotte-corday",
+      "label": {
+        "ko": "샤를로트 코르데",
+        "en": "Charlotte Corday"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 75,
+      "scope": "마라 암살의 정치적 맥락과 재판, 후대 이미지",
+      "evidence": {
+        "section": "상퀼로트와 생존권의 정치",
+        "text": "언론은 감시와 책임을 요구하는 기능과 적에 대한 선제적 폭력을 촉구하는 언어를 함께 지녔다. 1793년 7월 13일 샤를로트 코르데에게 암살된 뒤 마라는 혁명의 순교자로 기려졌고, 다비드의 그림은 그 기억을 형성했다. 언론·청원·클럽·장례와 축제는 의회의 연설 못지않게 누가 인민의 편인가를 판단하는 정치 공간이었다. [16](https://en.wikipedia.org/wiki/Jean-Paul_Marat)\n\n## 1793년 헌법과 혁"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jean-Paul_Marat"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 상퀼로트와 생존권의 정치. 본문 표현: 샤를로트 코르데. 작성 범위: 마라 암살의 정치적 맥락과 재판, 후대 이미지. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Jean-Paul_Marat",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1985,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "jacques-louis-david",
+      "label": {
+        "ko": "자크루이 다비드",
+        "en": "Jacques-Louis David"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 75,
+      "scope": "마라의 죽음 그림, 혁명기의 정치·의례와 예술",
+      "evidence": {
+        "section": "상퀼로트와 생존권의 정치",
+        "text": "구하는 언어를 함께 지녔다. 1793년 7월 13일 샤를로트 코르데에게 암살된 뒤 마라는 혁명의 순교자로 기려졌고, 다비드의 그림은 그 기억을 형성했다. 언론·청원·클럽·장례와 축제는 의회의 연설 못지않게 누가 인민의 편인가를 판단하는 정치 공간이었다. [16](https://en.wikipedia.org/wiki/Jean-Paul_Marat)\n\n## 1793년 헌법과 혁명정부의 간극\n\n1793년 6월 헌법과 권리 선언은 남성의 광범한"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jean-Paul_Marat"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 상퀼로트와 생존권의 정치. 본문 표현: 다비드. 작성 범위: 마라의 죽음 그림, 혁명기의 정치·의례와 예술. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Jean-Paul_Marat",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1986,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "camille-desmoulins",
+      "label": {
+        "ko": "카미유 데물랭",
+        "en": "Camille Desmoulins"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 75,
+      "scope": "언론 활동과 당통파, 1794년 숙청",
+      "evidence": {
+        "section": "테르미도르와 총재정부",
+        "text": "lavery-and-the-haitian-revolu)\n\n## 테르미도르와 총재정부\n\n1794년 봄 에베르파와 당통·데물랭 등이 차례로 처형되면서 혁명 진영 내부의 숙청이 깊어졌다. 7월 27일 테르미도르 9일에 국민공회는 로베스피에르와 그 동료들을 체포했고 다음 날 이들을 처형했다. 뒤이은 변화는 단 하루에 모든 탄압이 끝난 사건이 아니었다. 자코뱅 조직과 민중운동이 공격받고 가격 통제가 해제되었으며 반자코뱅 폭력도 벌어졌다. [3]"
+      },
+      "sources": [
+        "https://www.worldhistory.org/French_Revolution/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 테르미도르와 총재정부. 본문 표현: 데물랭. 작성 범위: 언론 활동과 당통파, 1794년 숙청. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.worldhistory.org/French_Revolution/",
+      "decision": "existing",
+      "audit": {
+        "existing_ids": [
+          "camille-desmoulins"
+        ],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [
+          "33250",
+          "33297",
+          "33220"
+        ]
+      }
+    },
+    {
+      "kind": "person",
+      "suggested_id": "charles-francois-dumouriez",
+      "label": {
+        "ko": "샤를 프랑수아 뒤무리에",
+        "en": "Charles François Dumouriez"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "발미·제마프, 네르빈던 패배와 1793년 전향",
+      "evidence": {
+        "section": "1792년: 초기 패배에서 발미와 제마프까지",
+        "text": " [6](https://www.worldhistory.org/Battle_of_Valmy/)\n\n9월 20일 발미에서 뒤무리에와 켈레르만의 군대는 침공군의 진격을 막았다. 이 전투는 적군을 전멸시킨 대승이 아니라 프랑스군이 무너지지 않고 버틴 정치·전략적 전환점이었다. 포병, 기존 군대의 경험, 지원병의 동원, 침공군의 질병과 보급난을 함께 보아야 한다. 국민공회는 다음 날 왕정을 폐지했지만 발미 한 번으로 전쟁이 끝난 것은 아니었다. "
+      },
+      "sources": [
+        "https://www.worldhistory.org/Battle_of_Valmy/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 뒤무리에. 작성 범위: 발미·제마프, 네르빈던 패배와 1793년 전향. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.worldhistory.org/Battle_of_Valmy/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2017,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "francois-christophe-kellermann",
+      "label": {
+        "ko": "프랑수아 크리스토프 켈레르만",
+        "en": "François Christophe Kellermann"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "발미 지휘. 아들 프랑수아 에티엔 켈레르만과 구별",
+      "evidence": {
+        "section": "1792년: 초기 패배에서 발미와 제마프까지",
+        "text": "ttps://www.worldhistory.org/Battle_of_Valmy/)\n\n9월 20일 발미에서 뒤무리에와 켈레르만의 군대는 침공군의 진격을 막았다. 이 전투는 적군을 전멸시킨 대승이 아니라 프랑스군이 무너지지 않고 버틴 정치·전략적 전환점이었다. 포병, 기존 군대의 경험, 지원병의 동원, 침공군의 질병과 보급난을 함께 보아야 한다. 국민공회는 다음 날 왕정을 폐지했지만 발미 한 번으로 전쟁이 끝난 것은 아니었다. [6](ht"
+      },
+      "sources": [
+        "https://www.worldhistory.org/Battle_of_Valmy/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 켈레르만. 작성 범위: 발미 지휘. 아들 프랑수아 에티엔 켈레르만과 구별. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.worldhistory.org/Battle_of_Valmy/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2018,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "lazare-carnot",
+      "label": {
+        "ko": "라자르 카르노",
+        "en": "Lazare Carnot"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "공안위원회의 군사 조직·작전 조정과 총재정부 활동",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "무로 두지 않았다. 청년의 군복무와 함께 무기·장비 생산, 운송, 간호 등 사회 전체의 노동을 동원하는 구상이었다. 카르노 등은 군사 조직과 작전을 조정했고, 기존 정규병과 지원병을 결합하는 부대 재편이 추진되었다. 숫자만 늘리는 것이 아니라 경험과 훈련을 대규모 동원과 연결하는 문제가 중요했다. [11](https://revolution.chnm.org/d/968) [12](https://en.wikipedia.org/wiki/Lev"
+      },
+      "sources": [
+        "https://revolution.chnm.org/d/968",
+        "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 카르노. 작성 범위: 공안위원회의 군사 조직·작전 조정과 총재정부 활동. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://revolution.chnm.org/d/968 ; https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2019,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "jean-baptiste-jourdan",
+      "label": {
+        "ko": "장바티스트 주르당",
+        "en": "Jean-Baptiste Jourdan"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "와티니·플뢰뤼스와 1798년 징병법, 법안 공동 제안자 구별",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "(https://www.worldhistory.org/French_Revolutionary_Wars/)\n\n1798년 주르당-델브렐 법은 징병을 보다 지속적인 제도로 만들었다. 혁명전쟁은 군대와 시민권의 관계를 바꾸었지만 전술과 전문성이 1789년에 처음 생긴 것은 아니다. 왕정기의 포병과 장교 교육도 새 군대의 자산이었다. 혁명적 열정만으로 승리를 설명하기보다 병력 규모, 전술의 적응, 지휘, 보급, 적국 간의 협력 실패를 함께 검토해"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jourdan_law",
+        "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 주르당. 작성 범위: 와티니·플뢰뤼스와 1798년 징병법, 법안 공동 제안자 구별. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Jourdan_law ; https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2020,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "jean-charles-pichegru",
+      "label": {
+        "ko": "장샤를 피슈그뤼",
+        "en": "Jean-Charles Pichegru"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1794~1795년 북부·네덜란드 진군과 뒤이은 정치 활동",
+      "evidence": {
+        "section": "1794~1795년: 북부 전선의 역전과 동맹 이탈",
+        "text": "worldhistory.org/article/2213/battle-of-fleurus/)\n\n1794~1795년 겨울 피슈그뤼의 군대가 네덜란드로 진입했고 바타비아 공화국이 세워졌다. 1795년 바젤의 평화에서 프로이센과 스페인은 각각 프랑스와 전쟁을 끝냈다. 프로이센은 폴란드 문제에도 관심과 자원을 쏟고 있었다. 영국과 오스트리아는 전쟁을 계속했다. 따라서 제1차 동맹의 약화는 한 번의 결정적 전투가 아니라 프랑스의 군사적 성과와 동맹"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Flanders_campaign",
+        "https://www.worldhistory.org/War_of_the_First_Coalition/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1794~1795년: 북부 전선의 역전과 동맹 이탈. 본문 표현: 피슈그뤼. 작성 범위: 1794~1795년 북부·네덜란드 진군과 뒤이은 정치 활동. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Flanders_campaign ; https://www.worldhistory.org/War_of_the_First_Coalition/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2021,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "richard-howe",
+      "label": {
+        "ko": "리처드 하우",
+        "en": "Richard Howe"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1794년 6월 1일 해전, 전술적 승리와 곡물 수송 목적 구별. 윌리엄 하우와 구별",
+      "evidence": {
+        "section": "바다와 식민지, 아일랜드의 전쟁",
+        "text": "n-1798)\n\n1794년 6월 1일 대서양 해전은 전술적 승리와 전략적 목적이 다를 수 있음을 보여 준다. 영국의 하우 함대는 프랑스 함대를 상대로 여러 전열함을 나포·격침했지만, 프랑스가 지키려던 곡물 수송선단은 도착했다. 해군의 전투는 함정끼리의 승패만이 아니라 식량 수입과 국가의 생존에 연결되어 있었다. 육지에서의 징발과 최고가격제가 공급을 관리했다면, 바다에서는 호송과 봉쇄가 어떤 물자가 프랑스에 들어갈 수 있는지를 좌우했다."
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Glorious_First_of_June"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 바다와 식민지, 아일랜드의 전쟁. 본문 표현: 하우. 작성 범위: 1794년 6월 1일 해전, 전술적 승리와 곡물 수송 목적 구별. 윌리엄 하우와 구별. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Glorious_First_of_June",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2022,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "horatio-nelson",
+      "label": {
+        "ko": "호레이쇼 넬슨",
+        "en": "Horatio Nelson"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "나일 해전과 이집트 원정군의 해상 고립",
+      "evidence": {
+        "section": "이집트와 시리아: 유럽 밖의 정복",
+        "text": "스는 영국의 동방 교역과 인도에 대한 지위를 압박하려 했다. 7월 피라미드 전투의 승리와 카이로 점령 뒤에도, 8월 넬슨의 함대가 아부키르만에서 프랑스 함대를 파괴하면서 원정군은 해상 연결을 잃었다. [23](https://www.nam.ac.uk/explore/egyptian-campaign)\n\n학자들의 동행과 고대 유물 조사는 원정의 한 측면이었지만 군사 점령을 지우지는 않는다. 1798년 카이로 봉기와 진압, 1799년 시리아 원"
+      },
+      "sources": [
+        "https://www.nam.ac.uk/explore/egyptian-campaign"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이집트와 시리아: 유럽 밖의 정복. 본문 표현: 넬슨. 작성 범위: 나일 해전과 이집트 원정군의 해상 고립. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.nam.ac.uk/explore/egyptian-campaign",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2023,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "alexander-suvorov",
+      "label": {
+        "ko": "알렉산드르 수보로프",
+        "en": "Alexander Suvorov"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1799년 이탈리아 원정과 스위스 철수, 동맹의 작전 갈등",
+      "evidence": {
+        "section": "제2차 동맹과 1799~1800년의 역전",
+        "text": "리아·러시아·오스만 제국 등이 새로운 동맹을 이루었다. 1799년 오스트리아군은 독일 전선에서 프랑스군을 밀어냈고, 수보로프의 오스트리아-러시아군은 이탈리아에서 카사노·트레비아·노비 등의 승리를 거두었다. 프랑스가 1797년에 얻은 지배는 확정된 것이 아니었다. 그러나 러시아와 오스트리아는 해방한 이탈리아의 처리와 작전 우선순위를 두고 충돌했다. [28](https://www.worldhistory.org/War_of_the_Secon"
+      },
+      "sources": [
+        "https://www.worldhistory.org/War_of_the_Second_Coalition/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 제2차 동맹과 1799~1800년의 역전. 본문 표현: 수보로프. 작성 범위: 1799년 이탈리아 원정과 스위스 철수, 동맹의 작전 갈등. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.worldhistory.org/War_of_the_Second_Coalition/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2024,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "andre-massena",
+      "label": {
+        "ko": "앙드레 마세나",
+        "en": "André Masséna"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "제2차 취리히 전투와 1799년 전선 역전",
+      "evidence": {
+        "section": "제2차 동맹과 1799~1800년의 역전",
+        "text": "](https://www.worldhistory.org/War_of_the_Second_Coalition/)\n\n9월 마세나의 제2차 취리히 전투 승리는 러시아군의 협동을 무너뜨렸고 수보로프는 알프스를 넘어 어렵게 철수했다. 네덜란드의 영국-러시아 원정도 실패했다. 러시아는 동맹에서 이탈했다. 프랑스에서는 군사적 불안과 총재정부의 정치 위기 속에 브뤼메르 쿠데타가 일어났다. 보나파르트는 전쟁이 끝난 뒤 권력을 얻은 것이 아니라 전쟁 중인"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Second_Battle_of_Zurich",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 제2차 동맹과 1799~1800년의 역전. 본문 표현: 마세나. 작성 범위: 제2차 취리히 전투와 1799년 전선 역전. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Second_Battle_of_Zurich ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2025,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "louis-desaix",
+      "label": {
+        "ko": "루이 드제",
+        "en": "Louis Desaix"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "마렝고 지원과 반격, 전사와 영웅화",
+      "evidence": {
+        "section": "제2차 동맹과 1799~1800년의 역전",
+        "text": "napoleonic-experience)\n\n1800년 6월 14일 마렝고에서 프랑스군은 한때 패배 직전까지 몰렸으나 드제의 병력 도착과 반격으로 승리했다. 드제는 전사했다. 12월 3일에는 모로가 호엔린덴에서 오스트리아군을 격파했다. 마렝고를 보나파르트 개인의 영웅담으로만 기억하면 다른 장군과 병사들의 역할, 독일 전선의 승리가 평화 협상에 가한 압력을 놓치게 된다. [30](https://www.napoleon.org/en/magaz"
+      },
+      "sources": [
+        "https://www.napoleon.org/en/magazine/places/marengo-2/",
+        "https://en.wikipedia.org/wiki/Battle_of_Hohenlinden"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 제2차 동맹과 1799~1800년의 역전. 본문 표현: 드제. 작성 범위: 마렝고 지원과 반격, 전사와 영웅화. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.napoleon.org/en/magazine/places/marengo-2/ ; https://en.wikipedia.org/wiki/Battle_of_Hohenlinden",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2026,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "jean-victor-moreau",
+      "label": {
+        "ko": "장빅토르 모로",
+        "en": "Jean Victor Moreau"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "호엔린덴 지휘와 독일 전선이 평화 협상에 준 압력",
+      "evidence": {
+        "section": "제2차 동맹과 1799~1800년의 역전",
+        "text": "서 프랑스군은 한때 패배 직전까지 몰렸으나 드제의 병력 도착과 반격으로 승리했다. 드제는 전사했다. 12월 3일에는 모로가 호엔린덴에서 오스트리아군을 격파했다. 마렝고를 보나파르트 개인의 영웅담으로만 기억하면 다른 장군과 병사들의 역할, 독일 전선의 승리가 평화 협상에 가한 압력을 놓치게 된다. [30](https://www.napoleon.org/en/magazine/places/marengo-2/) [31](https://en.wi"
+      },
+      "sources": [
+        "https://www.napoleon.org/en/magazine/places/marengo-2/",
+        "https://en.wikipedia.org/wiki/Battle_of_Hohenlinden"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 제2차 동맹과 1799~1800년의 역전. 본문 표현: 모로. 작성 범위: 호엔린덴 지휘와 독일 전선이 평화 협상에 준 압력. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://www.napoleon.org/en/magazine/places/marengo-2/ ; https://en.wikipedia.org/wiki/Battle_of_Hohenlinden",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2027,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "antoine-richepanse",
+      "label": {
+        "ko": "앙투안 리슈팡스",
+        "en": "Antoine Richepanse"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "호엔린덴 측후방 공격과 이후 과들루프 식민지 활동을 구별",
+      "evidence": {
+        "section": "제2차 동맹과 1799~1800년의 역전",
+        "text": " 분산된 진격이 만든 위험을 드러냈다. 오스트리아군은 여러 종대로 전진하다 서로 지원하기 어려워졌고, 모로의 부대와 리슈팡스의 측후방 공격에 큰 타격을 입었다. 프랑스의 승리는 단지 많은 병력을 전면으로 밀어 넣은 결과가 아니었다. 지형을 이용한 배치, 적의 이동에 대한 판단, 현장 지휘관의 대응이 결합했다. 이 승리 뒤 빈을 향한 압박이 커지면서 오스트리아가 휴전과 평화에 나설 여지는 좁아졌다. [31](https://en.wikip"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Battle_of_Hohenlinden"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 제2차 동맹과 1799~1800년의 역전. 본문 표현: 리슈팡스. 작성 범위: 호엔린덴 측후방 공격과 이후 과들루프 식민지 활동을 구별. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://en.wikipedia.org/wiki/Battle_of_Hohenlinden",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2028,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "person",
+      "suggested_id": "jean-joseph-amable-humbert",
+      "label": {
+        "ko": "장조제프 아마블 앙베르",
+        "en": "Jean Joseph Amable Humbert"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1798년 아일랜드 상륙·캐슬바 승리와 최종 패배. Humbert의 한국어 표기·별칭 검증",
+      "evidence": {
+        "section": "",
+        "text": "t\", \"turkey\", \"uk\"]}, {\"geo\": {\"kind\": \"arrow\", \"actor\": {\"en\": \"Humbert’s French and Irish forces\", \"ko\": \"앙베르의 프랑스군과 아일랜드 반란군\"}, \"label\": {\"en\": \"Early advance in Ireland (schematic)\", \"ko\": \"아일랜드 초기 진군 (개략)\"}, \"points\": [[54.212, -9.221], [54"
+      },
+      "sources": [
+        "https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802",
+        "https://www.worldhistory.org/French_Revolutionary_Wars/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 연표 지도. 본문 표현: Humbert. 작성 범위: 1798년 아일랜드 상륙·캐슬바 승리와 최종 패배. Humbert의 한국어 표기·별칭 검증. 한국어·영어 이름과 별칭, 생몰년·역할·출처를 확인하고 Admin store/upsert 검증 경로로 등록. 등록 뒤 해당 사건 인물 관계와 본문 링크도 검토. 근거/저본 탐색: https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802 ; https://www.worldhistory.org/French_Revolutionary_Wars/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2029,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "estates-general-france",
+      "label": {
+        "ko": "삼부회",
+        "en": "Estates-General (France)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "세 신분별 대표 구조와 표결 논쟁",
+      "evidence": {
+        "section": "재정 위기가 주권의 위기로 바뀌다",
+        "text": "상승은 생계를 압박했고, 국왕의 재정 문제를 일상의 불안과 연결했다. 루이 16세가 1789년 5월 5일 베르사유에 삼부회를 소집했을 때, 논쟁은 새 세금의 승인에서 누가 국민을 대표할 것인가라는 문제로 옮겨갔다. [1](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled)\n\n성직자·귀족·제3신분이라는 법적 구분은 부의 분포와"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 재정 위기가 주권의 위기로 바뀌다. 본문 표현: 삼부회. 작성 범위: 세 신분별 대표 구조와 표결 논쟁. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1987,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "third-estate-france",
+      "label": {
+        "ko": "제3신분",
+        "en": "Third Estate (France)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "법적 신분과 내부 재산·계급 차이",
+      "evidence": {
+        "section": "재정 위기가 주권의 위기로 바뀌다",
+        "text": "s/show/liberty--equality--fraternity/monarchy-embattled)\n\n성직자·귀족·제3신분이라는 법적 구분은 부의 분포와 정확히 일치하지 않았다. 제3신분에는 부유한 상인과 법률가뿐 아니라 장인·임금노동자·농민이 함께 속했다. 따라서 혁명을 단일한 계급의 일치된 계획으로 설명하면 참여자 사이의 차이가 사라진다. 특권 폐지, 정치적 대표권, 토지 부담의 경감, 식량 확보는 서로 연결되면서도 다른 요구였다"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 재정 위기가 주권의 위기로 바뀌다. 본문 표현: 제3신분. 작성 범위: 법적 신분과 내부 재산·계급 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1988,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "national-constituent-assembly-france",
+      "label": {
+        "ko": "제헌국민의회",
+        "en": "National Constituent Assembly (France)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1789~1791년 제헌·교회 재산·행정 개편. 국민공회 및 현대 국민의회와 구별",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": "[7](https://www.worldhistory.org/Great_Fear/)\n\n## 입헌군주제의 제도와 균열\n\n제헌국민의회는 교회 재산을 국유화하고 이를 뒷받침으로 아시냐를 발행했다. 1790년 성직자민사기본법과 뒤이은 선서 요구는 성직자와 신자들을 갈라놓았다. 새 국가는 종교를 단순히 없앤 것이 아니라 교회의 재산·조직·충성 관계를 재편하려 했다. 1791년 6월 국왕의 바렌 도주 실패는 왕이 혁명 질서를 받아들이는지에 대한 의"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 제헌국민의회. 작성 범위: 1789~1791년 제헌·교회 재산·행정 개편. 국민공회 및 현대 국민의회와 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "related_but_distinct": [
+          "constituent-assembly: generic/Russian constituent assembly; this request is the French body of 1789–1791"
+        ]
+      },
+      "queue_id": 1989,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "legislative-assembly-france-1791",
+      "label": {
+        "ko": "입법의회 (1791–1792)",
+        "en": "Legislative Assembly (France, 1791–1792)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1791년 헌법의 의회와 선거 구조, 전쟁·왕정 붕괴",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": "y--equality--fraternity/monarchy-falls)\n\n1791년 헌법은 행정권을 국왕에게 맡기고 입법의회를 두었지만 정치 참여를 동등하게 열지는 않았다. 능동시민 자격에는 연령·납세·독립성 조건이 있었고 선거인에게는 더 높은 재산 요건이 적용되었다. 같은 해 르 샤플리에 법은 직업적 결사와 노동자들의 집단적 임금 행동을 금지했다. 법적 신분 특권의 해체는 곧바로 보통선거나 노동자의 결사권을 뜻하지 않았다. [9](h"
+      },
+      "sources": [
+        "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 입법의회. 작성 범위: 1791년 헌법의 의회와 선거 구조, 전쟁·왕정 붕괴. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793 ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1990,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "assignat",
+      "label": {
+        "ko": "아시냐",
+        "en": "Assignat"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "국유재산 담보 증서에서 화폐로의 전환·증발·가치 하락",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": "rg/Great_Fear/)\n\n## 입헌군주제의 제도와 균열\n\n제헌국민의회는 교회 재산을 국유화하고 이를 뒷받침으로 아시냐를 발행했다. 1790년 성직자민사기본법과 뒤이은 선서 요구는 성직자와 신자들을 갈라놓았다. 새 국가는 종교를 단순히 없앤 것이 아니라 교회의 재산·조직·충성 관계를 재편하려 했다. 1791년 6월 국왕의 바렌 도주 실패는 왕이 혁명 질서를 받아들이는지에 대한 의심을 키웠다. [8](https://revolution"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 아시냐. 작성 범위: 국유재산 담보 증서에서 화폐로의 전환·증발·가치 하락. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1991,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "civil-constitution-clergy",
+      "label": {
+        "ko": "성직자민사기본법",
+        "en": "Civil Constitution of the Clergy"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1790년 교회 조직 재편과 후속 선서 요구를 구별",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": "## 입헌군주제의 제도와 균열\n\n제헌국민의회는 교회 재산을 국유화하고 이를 뒷받침으로 아시냐를 발행했다. 1790년 성직자민사기본법과 뒤이은 선서 요구는 성직자와 신자들을 갈라놓았다. 새 국가는 종교를 단순히 없앤 것이 아니라 교회의 재산·조직·충성 관계를 재편하려 했다. 1791년 6월 국왕의 바렌 도주 실패는 왕이 혁명 질서를 받아들이는지에 대한 의심을 키웠다. [8](https://revolution.chnm.org/exhibit"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 성직자민사기본법. 작성 범위: 1790년 교회 조직 재편과 후속 선서 요구를 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1992,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "le-chapelier-law-1791",
+      "label": {
+        "ko": "르 샤플리에 법",
+        "en": "Le Chapelier Law (1791)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "직업 결사·임금 단체행동 금지와 법적 평등의 모순",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": " 않았다. 능동시민 자격에는 연령·납세·독립성 조건이 있었고 선거인에게는 더 높은 재산 요건이 적용되었다. 같은 해 르 샤플리에 법은 직업적 결사와 노동자들의 집단적 임금 행동을 금지했다. 법적 신분 특권의 해체는 곧바로 보통선거나 노동자의 결사권을 뜻하지 않았다. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [10](ht"
+      },
+      "sources": [
+        "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 르 샤플리에 법. 작성 범위: 직업 결사·임금 단체행동 금지와 법적 평등의 모순. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793 ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1993,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "montagnards",
+      "label": {
+        "ko": "산악파",
+        "en": "The Mountain (Montagnards)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "국민공회 의원 집단과 상퀼로트·자코뱅의 관계 및 차이",
+      "evidence": {
+        "section": "상퀼로트와 생존권의 정치",
+        "text": "상점주·임금노동자 등이 파리의 구와 민중 단체에서 활동하며 식량 공급, 투기 억제, 정치적 감시와 참여를 요구했다. 산악파와 이들의 협력은 지롱드파를 압박했지만 의회 지도부와 민중 조직의 목표가 언제나 같았던 것은 아니다. 1793년 5월 31일~6월 2일의 압력은 주요 지롱드파 의원들의 체포로 이어졌다. [14](https://revolution.chnm.org/exhibits/show/liberty--equality--fratern"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 상퀼로트와 생존권의 정치. 본문 표현: 산악파. 작성 범위: 국민공회 의원 집단과 상퀼로트·자코뱅의 관계 및 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1994,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "committee-general-security-france",
+      "label": {
+        "ko": "프랑스 혁명기의 보안위원회",
+        "en": "Committee of General Security during the French Revolution"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "공안위원회와 다른 경찰·감시 기능 및 권력 관계",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": "때까지 정부를 혁명적으로 운영하기로 했다. 따라서 헌법의 권리 조항과 실제 통치 관행을 구분해야 한다. 공안위원회와 보안위원회, 파견의원과 지방 위원회는 각기 다른 기능과 권한을 행사했다. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [17](https://cyber-lenin.com/commulingo/docs/franc"
+      },
+      "sources": [
+        "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793",
+        "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 보안위원회. 작성 범위: 공안위원회와 다른 경찰·감시 기능 및 권력 관계. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793 ; https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "label_note": "Use explicit period-qualified headword; bracket contents were incorrectly matching the parent event rather than an existing term."
+      },
+      "queue_id": 1995,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "revolutionary-tribunal-france",
+      "label": {
+        "ko": "프랑스 혁명재판소",
+        "en": "French Revolutionary Tribunal"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "재판 제도·혐의자법·프레리알 법과 방어권",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": " 반란, 지방의 반산악파 봉기, 외국군의 침공은 비상조치의 배경이었다. 9월 17일 혐의자법은 체포 대상을 넓혔고, 혁명재판소와 지방의 탄압은 많은 민간인을 희생시켰다. 1794년 6월 10일 프레리알 22일 법은 피고인의 방어를 크게 제약했다. 로베스피에르의 도덕과 공포에 관한 연설은 이 통치의 정당화 논리이지 그 정당성을 확정하는 판정문은 아니다. 위기 상황의 설명과 국가폭력의 평가는 분리해서 살펴야 한다. [17](https://"
+      },
+      "sources": [
+        "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 혁명재판소. 작성 범위: 재판 제도·혐의자법·프레리알 법과 방어권. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794 ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "label_note": "Use explicit period-qualified headword; bracket contents were incorrectly matching the parent event rather than an existing term."
+      },
+      "queue_id": 1996,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "representatives-on-mission",
+      "label": {
+        "ko": "파견의원",
+        "en": "Representatives on mission"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "국민공회 의원의 전선·지방 감독, 권한과 지역별 집행",
+      "evidence": {
+        "section": "1793년의 위기: 동맹 확대와 내전",
+        "text": "ps://www.worldhistory.org/Federalist_Revolts/)\n\n이 위기에 대응한 공안위원회와 파견의원들은 병력·군수품을 확보하고 지휘관을 감독했다. 동시에 실패를 배신으로 취급하는 정치적 압력은 장교와 병사에게 위협이 되었다. 공화국의 생존을 설명할 때 탄압만으로 승리를 설명하거나, 전쟁 위기를 이유로 모든 탄압을 불가피했다고 단정해서는 안 된다. 국내 정치의 자세한 맥락은 [프랑스 혁명](/commulingo/"
+      },
+      "sources": [
+        "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1793년의 위기: 동맹 확대와 내전. 본문 표현: 파견의원. 작성 범위: 국민공회 의원의 전선·지방 감독, 권한과 지역별 집행. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2030,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "ventose-decrees",
+      "label": {
+        "ko": "방토즈 법령",
+        "en": "Ventôse decrees"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "적의 재산과 빈곤한 애국자 지원 제안, 법령과 실제 집행 차이",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": " 앙투안 드 생쥐스트는 공안위원회와 전선 파견 활동에서 군대의 규율·보급과 정치적 신뢰를 결합하려 했다. 1794년 방토즈의 제안은 공화국의 적으로 간주된 사람들의 재산을 빈곤한 애국자에게 돌리는 구상을 담았지만, 광범한 재분배로 실현되지는 못했다. 혁명정부 안에는 생존과 평등을 확대하려는 기획과 적을 분류·배제하는 강제력이 함께 있었다. 한 인물의 연설을 국가 전체의 실제 제도와 동일시하지 않고 제안·법령·집행을 나누어 읽어야 하는 "
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 방토즈. 작성 범위: 적의 재산과 빈곤한 애국자 지원 제안, 법령과 실제 집행 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1997,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "dechristianization-french-revolution",
+      "label": {
+        "ko": "프랑스 혁명기의 비기독교화 운동",
+        "en": "Dechristianization during the French Revolution"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "교회 폐쇄·상징 파괴·지역 차이와 지도부 내부 갈등",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": "i/Louis_Antoine_de_Saint-Just)\n\n종교정책에서도 혁명 지도부는 단일하지 않았다. 1793년의 비기독교화 운동은 교회 폐쇄와 종교적 상징의 파괴, 이성의 축제 등으로 나타났다. 로베스피에르는 무신론과 강제적인 비기독교화를 비판했고, 1794년 5월 국민공회는 최고존재와 영혼의 불멸을 인정하는 결의를 채택했다. 6월 8일 최고존재 축제는 공화국의 시민적 도덕을 의례로 표현하려 했다. 이러한 실험은 혁명이 법과 군대뿐"
+      },
+      "sources": [
+        "https://www.worldhistory.org/Cult_of_the_Supreme_Being/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 비기독교화. 작성 범위: 교회 폐쇄·상징 파괴·지역 차이와 지도부 내부 갈등. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.worldhistory.org/Cult_of_the_Supreme_Being/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "label_note": "Use explicit period-qualified headword; bracket contents were incorrectly matching the parent event rather than an existing term."
+      },
+      "queue_id": 1998,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "cult-supreme-being",
+      "label": {
+        "ko": "최고존재 숭배",
+        "en": "Cult of the Supreme Being"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1794년 결의·축제와 시민적 도덕, 이성 숭배와 차이",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": ", 이성의 축제 등으로 나타났다. 로베스피에르는 무신론과 강제적인 비기독교화를 비판했고, 1794년 5월 국민공회는 최고존재와 영혼의 불멸을 인정하는 결의를 채택했다. 6월 8일 최고존재 축제는 공화국의 시민적 도덕을 의례로 표현하려 했다. 이러한 실험은 혁명이 법과 군대뿐 아니라 시간·축제·신앙과 공동체의 감정까지 재조직하려 했음을 보여 준다. [21](https://www.worldhistory.org/Cult_of_the_Supr"
+      },
+      "sources": [
+        "https://www.worldhistory.org/Cult_of_the_Supreme_Being/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 최고존재. 작성 범위: 1794년 결의·축제와 시민적 도덕, 이성 숭배와 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.worldhistory.org/Cult_of_the_Supreme_Being/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 1999,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "cult-reason",
+      "label": {
+        "ko": "이성 숭배",
+        "en": "Cult of Reason"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1793년 의례·비기독교화와 최고존재 숭배의 차이",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": ")\n\n종교정책에서도 혁명 지도부는 단일하지 않았다. 1793년의 비기독교화 운동은 교회 폐쇄와 종교적 상징의 파괴, 이성의 축제 등으로 나타났다. 로베스피에르는 무신론과 강제적인 비기독교화를 비판했고, 1794년 5월 국민공회는 최고존재와 영혼의 불멸을 인정하는 결의를 채택했다. 6월 8일 최고존재 축제는 공화국의 시민적 도덕을 의례로 표현하려 했다. 이러한 실험은 혁명이 법과 군대뿐 아니라 시간·축제·신앙과 공동체의 감정까지 재조직하"
+      },
+      "sources": [
+        "https://www.worldhistory.org/Cult_of_the_Supreme_Being/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 이성의 축제. 작성 범위: 1793년 의례·비기독교화와 최고존재 숭배의 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.worldhistory.org/Cult_of_the_Supreme_Being/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2000,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "hebertists",
+      "label": {
+        "ko": "에베르파",
+        "en": "Hébertists"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "민중 정치·비기독교화와 1794년 숙청, 일치된 정당으로 단순화 금지",
+      "evidence": {
+        "section": "테르미도르와 총재정부",
+        "text": "ternity/slavery-and-the-haitian-revolu)\n\n## 테르미도르와 총재정부\n\n1794년 봄 에베르파와 당통·데물랭 등이 차례로 처형되면서 혁명 진영 내부의 숙청이 깊어졌다. 7월 27일 테르미도르 9일에 국민공회는 로베스피에르와 그 동료들을 체포했고 다음 날 이들을 처형했다. 뒤이은 변화는 단 하루에 모든 탄압이 끝난 사건이 아니었다. 자코뱅 조직과 민중운동이 공격받고 가격 통제가 해제되었으며 반자코뱅 폭력도 "
+      },
+      "sources": [
+        "https://www.worldhistory.org/French_Revolution/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 테르미도르와 총재정부. 본문 표현: 에베르파. 작성 범위: 민중 정치·비기독교화와 1794년 숙청, 일치된 정당으로 단순화 금지. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.worldhistory.org/French_Revolution/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2001,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "french-directory",
+      "label": {
+        "ko": "총재정부",
+        "en": "French Directory"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1795년 헌법의 5인 행정부·양원제와 선거 무효화·군사 의존",
+      "evidence": {
+        "section": "테르미도르와 총재정부",
+        "text": "-equality--fraternity/slavery-and-the-haitian-revolu)\n\n## 테르미도르와 총재정부\n\n1794년 봄 에베르파와 당통·데물랭 등이 차례로 처형되면서 혁명 진영 내부의 숙청이 깊어졌다. 7월 27일 테르미도르 9일에 국민공회는 로베스피에르와 그 동료들을 체포했고 다음 날 이들을 처형했다. 뒤이은 변화는 단 하루에 모든 탄압이 끝난 사건이 아니었다. 자코뱅 조직과 민중운동이 공격받고 가격 통제가 해제"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 테르미도르와 총재정부. 본문 표현: 총재정부. 작성 범위: 1795년 헌법의 5인 행정부·양원제와 선거 무효화·군사 의존. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2002,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "french-consulate",
+      "label": {
+        "ko": "통령정부",
+        "en": "French Consulate"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1799년 헌법과 제1통령 권력 집중, 총재정부·제정과 구별",
+      "evidence": {
+        "section": "테르미도르와 총재정부",
+        "text": "96년에 탄압되었다. 총재정부는 왕당파와 좌파의 압력 사이에서 선거 결과의 무효화와 군사력에 의존했다. [총재정부와 통령정부 문헌](/commulingo/docs/france-directoire-consulat-1795-1799)을 통해 헌법의 설계와 실제 권력 이동을 비교할 수 있다. [23](https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799) ["
+      },
+      "sources": [
+        "https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799",
+        "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 테르미도르와 총재정부. 본문 표현: 통령정부. 작성 범위: 1799년 헌법과 제1통령 권력 집중, 총재정부·제정과 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799 ; https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796 ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2003,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "french-emigres",
+      "label": {
+        "ko": "프랑스 혁명기의 망명 귀족",
+        "en": "French Revolutionary émigrés"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "망명 세력의 구성·국외 군사 활동과 외교 위협",
+      "evidence": {
+        "section": "혁명이 왜 유럽 전쟁으로 이어졌는가",
+        "text": " 공동 관심을 표했지만 행동을 다른 열강의 협력에 조건지었다. 프랑스에서는 이를 반혁명 개입의 위협으로 받아들였다. 망명 귀족들의 활동, 왕실에 대한 불신, 국경과 영토 문제도 긴장을 키웠다. 이념적 대립은 실제였지만 열강은 폴란드와 오스만 제국 등 다른 지역에서의 이해관계도 계산했다. [3](https://www.worldhistory.org/Declaration_of_Pillnitz/)\n\n브리소는 전쟁이 혁명을 결속시키고 외국의 인"
+      },
+      "sources": [
+        "https://www.worldhistory.org/Declaration_of_Pillnitz/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 망명 귀족. 작성 범위: 망명 세력의 구성·국외 군사 활동과 외교 위협. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.worldhistory.org/Declaration_of_Pillnitz/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "label_note": "Use explicit period-qualified headword; bracket contents were incorrectly matching the parent event rather than an existing term."
+      },
+      "queue_id": 2031,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "levee-en-masse",
+      "label": {
+        "ko": "국민총동원령",
+        "en": "Levée en masse"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1793년 8월 법령의 군복무·생산·간호 동원과 자발성의 한계",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "vernment-and-justice-1793-1794)\n\n## 국민 총동원과 군대의 재편\n\n1793년 8월 23일 국민총동원령은 전쟁을 병사들만의 업무로 두지 않았다. 청년의 군복무와 함께 무기·장비 생산, 운송, 간호 등 사회 전체의 노동을 동원하는 구상이었다. 카르노 등은 군사 조직과 작전을 조정했고, 기존 정규병과 지원병을 결합하는 부대 재편이 추진되었다. 숫자만 늘리는 것이 아니라 경험과 훈련을 대규모 동원과 연결하는 문제가 "
+      },
+      "sources": [
+        "https://revolution.chnm.org/d/968",
+        "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 국민총동원령. 작성 범위: 1793년 8월 법령의 군복무·생산·간호 동원과 자발성의 한계. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/d/968 ; https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2032,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "amalgamation-french-army",
+      "label": {
+        "ko": "혁명군의 정규병·지원병 통합",
+        "en": "Amalgamation of the French Revolutionary Army"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "왕정기 정규군과 지원병의 부대 재편·반여단, 시기별 차이",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "기·장비 생산, 운송, 간호 등 사회 전체의 노동을 동원하는 구상이었다. 카르노 등은 군사 조직과 작전을 조정했고, 기존 정규병과 지원병을 결합하는 부대 재편이 추진되었다. 숫자만 늘리는 것이 아니라 경험과 훈련을 대규모 동원과 연결하는 문제가 중요했다. [11](https://revolution.chnm.org/d/968) [12](https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse)\n\n전쟁 수행"
+      },
+      "sources": [
+        "https://revolution.chnm.org/d/968",
+        "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 기존 정규병과 지원병. 작성 범위: 왕정기 정규군과 지원병의 부대 재편·반여단, 시기별 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/d/968 ; https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2033,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "jourdan-delbrel-law",
+      "label": {
+        "ko": "주르당-델브렐 법",
+        "en": "Jourdan–Delbrel Law"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1798년 지속적 징병제와 국민총동원령의 차이",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "(https://www.worldhistory.org/French_Revolutionary_Wars/)\n\n1798년 주르당-델브렐 법은 징병을 보다 지속적인 제도로 만들었다. 혁명전쟁은 군대와 시민권의 관계를 바꾸었지만 전술과 전문성이 1789년에 처음 생긴 것은 아니다. 왕정기의 포병과 장교 교육도 새 군대의 자산이었다. 혁명적 열정만으로 승리를 설명하기보다 병력 규모, 전술의 적응, 지휘, 보급, 적국 간의 협력 실패를 함께 검토해"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jourdan_law",
+        "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 주르당-델브렐 법. 작성 범위: 1798년 지속적 징병제와 국민총동원령의 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://en.wikipedia.org/wiki/Jourdan_law ; https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2034,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "sister-republics",
+      "label": {
+        "ko": "자매공화국",
+        "en": "Sister republics"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "현지 공화주의·제도 개혁·프랑스 군사 의존과 징발",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "(https://en.wikipedia.org/wiki/War_of_the_Pyrenees)\n\n## 이탈리아 원정과 자매공화국의 모순\n\n1796년 이탈리아 방면군을 맡은 보나파르트는 사르데냐-피에몬테와 오스트리아군 사이를 공략했다. 사르데냐의 이탈 뒤에도 만토바를 둘러싼 전투는 계속되었고 아르콜레·리볼리 등의 승리와 1797년 만토바 항복이 오스트리아를 압박했다. 10월 캄포포르미오 조약은 제1차 동맹전쟁의 대륙적 국면을 마무리했다. "
+      },
+      "sources": [
+        "https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802",
+        "https://www.worldhistory.org/French_Revolutionary_Wars/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 자매공화국. 작성 범위: 현지 공화주의·제도 개혁·프랑스 군사 의존과 징발. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802 ; https://www.worldhistory.org/French_Revolutionary_Wars/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2035,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "batavian-republic",
+      "label": {
+        "ko": "바타비아 공화국",
+        "en": "Batavian Republic"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1795년 성립과 현지 세력, 네덜란드 왕국과 구별",
+      "evidence": {
+        "section": "1794~1795년: 북부 전선의 역전과 동맹 이탈",
+        "text": "cle/2213/battle-of-fleurus/)\n\n1794~1795년 겨울 피슈그뤼의 군대가 네덜란드로 진입했고 바타비아 공화국이 세워졌다. 1795년 바젤의 평화에서 프로이센과 스페인은 각각 프랑스와 전쟁을 끝냈다. 프로이센은 폴란드 문제에도 관심과 자원을 쏟고 있었다. 영국과 오스트리아는 전쟁을 계속했다. 따라서 제1차 동맹의 약화는 한 번의 결정적 전투가 아니라 프랑스의 군사적 성과와 동맹국들의 서로 다른 우선순위가 결합한 결"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Flanders_campaign",
+        "https://www.worldhistory.org/War_of_the_First_Coalition/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1794~1795년: 북부 전선의 역전과 동맹 이탈. 본문 표현: 바타비아 공화국. 작성 범위: 1795년 성립과 현지 세력, 네덜란드 왕국과 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://en.wikipedia.org/wiki/Flanders_campaign ; https://www.worldhistory.org/War_of_the_First_Coalition/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2036,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "cisalpine-republic",
+      "label": {
+        "ko": "치살피나 공화국",
+        "en": "Cisalpine Republic"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "이탈리아 북부의 공화국·프랑스 점령과 제도, 현대 이탈리아와 구별",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "://en.wikipedia.org/wiki/Treaty_of_Campo_Formio)\n\n프랑스군의 진출은 바타비아·치살피나·리구리아 공화국 등의 형성과 연결되었다. 기존 특권의 폐지와 공화주의 제도를 환영한 현지 세력도 있었다. 그러나 군대의 주둔 비용과 징발, 미술품 반출, 프랑스의 정치 개입은 해방의 약속을 훼손했다. 베네치아를 포함한 영토가 강대국의 조약에서 교환된 사실은 인민의 자기결정과 프랑스의 국가 이익이 일치하지 않았음을"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+        "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 치살피나. 작성 범위: 이탈리아 북부의 공화국·프랑스 점령과 제도, 현대 이탈리아와 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience ; https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2037,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "ligurian-republic",
+      "label": {
+        "ko": "리구리아 공화국",
+        "en": "Ligurian Republic"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "제노바의 정권 변동과 프랑스 영향",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": ".wikipedia.org/wiki/Treaty_of_Campo_Formio)\n\n프랑스군의 진출은 바타비아·치살피나·리구리아 공화국 등의 형성과 연결되었다. 기존 특권의 폐지와 공화주의 제도를 환영한 현지 세력도 있었다. 그러나 군대의 주둔 비용과 징발, 미술품 반출, 프랑스의 정치 개입은 해방의 약속을 훼손했다. 베네치아를 포함한 영토가 강대국의 조약에서 교환된 사실은 인민의 자기결정과 프랑스의 국가 이익이 일치하지 않았음을 보여 준"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+        "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 리구리아. 작성 범위: 제노바의 정권 변동과 프랑스 영향. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience ; https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2038,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "helvetic-republic",
+      "label": {
+        "ko": "헬베티아 공화국",
+        "en": "Helvetic Republic"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1798년 스위스의 중앙집권적 공화국과 현지 저항",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "이 기존 정권을 바꾸었지만, 정치적 자율성의 범위는 군사 상황과 프랑스의 요구에 좌우되었다. 1798년에는 스위스의 헬베티아 공화국과 로마 공화국이, 1799년에는 나폴리의 파르테노페 공화국이 등장했다. 제2차 동맹의 반격은 일부를 무너뜨렸다. 이런 정권들의 취약성은 사회개혁에 대한 현지의 찬반과 외국 군대에 대한 의존이 얽혀 있었음을 보여 준다. [22](https://en.wikipedia.org/wiki/Sister_republi"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sister_republic"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 헬베티아. 작성 범위: 1798년 스위스의 중앙집권적 공화국과 현지 저항. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://en.wikipedia.org/wiki/Sister_republic",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2039,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "roman-republic-1798",
+      "label": {
+        "ko": "로마 공화국 (1798–1799)",
+        "en": "Roman Republic (1798–1799)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "교황령 점령과 공화국 수립, 고대 로마·1849년 공화국과 구별",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "꾸었지만, 정치적 자율성의 범위는 군사 상황과 프랑스의 요구에 좌우되었다. 1798년에는 스위스의 헬베티아 공화국과 로마 공화국이, 1799년에는 나폴리의 파르테노페 공화국이 등장했다. 제2차 동맹의 반격은 일부를 무너뜨렸다. 이런 정권들의 취약성은 사회개혁에 대한 현지의 찬반과 외국 군대에 대한 의존이 얽혀 있었음을 보여 준다. [22](https://en.wikipedia.org/wiki/Sister_republic)\n\n## 바다와"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sister_republic"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 로마 공화국. 작성 범위: 교황령 점령과 공화국 수립, 고대 로마·1849년 공화국과 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://en.wikipedia.org/wiki/Sister_republic",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2040,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "parthenopean-republic",
+      "label": {
+        "ko": "파르테노페 공화국",
+        "en": "Parthenopean Republic"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "1799년 나폴리 공화국의 개혁·사회적 반대·붕괴",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "상황과 프랑스의 요구에 좌우되었다. 1798년에는 스위스의 헬베티아 공화국과 로마 공화국이, 1799년에는 나폴리의 파르테노페 공화국이 등장했다. 제2차 동맹의 반격은 일부를 무너뜨렸다. 이런 정권들의 취약성은 사회개혁에 대한 현지의 찬반과 외국 군대에 대한 의존이 얽혀 있었음을 보여 준다. [22](https://en.wikipedia.org/wiki/Sister_republic)\n\n## 바다와 식민지, 아일랜드의 전쟁\n\n영국은 해군"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sister_republic"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 파르테노페. 작성 범위: 1799년 나폴리 공화국의 개혁·사회적 반대·붕괴. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://en.wikipedia.org/wiki/Sister_republic",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2041,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "society-united-irishmen",
+      "label": {
+        "ko": "연합아일랜드인 협회",
+        "en": "Society of United Irishmen"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "초기 개혁·종파 초월 공화주의·프랑스 지원과 1798년 봉기",
+      "evidence": {
+        "section": "바다와 식민지, 아일랜드의 전쟁",
+        "text": "rty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n아일랜드의 연합아일랜드인 운동은 종파를 넘어 공화주의적 개혁과 독립을 추구했고 프랑스의 지원을 모색했다. 1796년 프랑스의 원정은 악천후로 상륙에 실패했다. 1798년의 봉기는 진압되었고, 뒤늦게 상륙한 프랑스군도 패배했다. 영국의 진압과 반란 과정에서 민간인 폭력과 종파 갈등이 격화되었다. 이는 혁명적 국제연대의 가능성과 외국 "
+      },
+      "sources": [
+        "https://www.nam.ac.uk/explore/irish-rebellion-1798"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 바다와 식민지, 아일랜드의 전쟁. 본문 표현: 연합아일랜드인. 작성 범위: 초기 개혁·종파 초월 공화주의·프랑스 지원과 1798년 봉기. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.nam.ac.uk/explore/irish-rebellion-1798",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2042,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "mamluks-egypt",
+      "label": {
+        "ko": "맘루크 (오스만기 이집트)",
+        "en": "Mamluks (Ottoman Egypt)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 75,
+      "scope": "오스만 종주권 아래 이집트의 군사 엘리트. 중세 술탄국과 구별",
+      "evidence": {
+        "section": "이집트와 시리아: 유럽 밖의 정복",
+        "text": "밖의 정복\n\n1798년 보나파르트의 원정군은 몰타를 점령한 뒤 이집트에 상륙했다. 이집트는 오스만 제국의 영토였으나 맘루크 세력이 실권을 행사하고 있었다. 프랑스는 영국의 동방 교역과 인도에 대한 지위를 압박하려 했다. 7월 피라미드 전투의 승리와 카이로 점령 뒤에도, 8월 넬슨의 함대가 아부키르만에서 프랑스 함대를 파괴하면서 원정군은 해상 연결을 잃었다. [23](https://www.nam.ac.uk/explore/egyptian-"
+      },
+      "sources": [
+        "https://www.nam.ac.uk/explore/egyptian-campaign"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이집트와 시리아: 유럽 밖의 정복. 본문 표현: 맘루크. 작성 범위: 오스만 종주권 아래 이집트의 군사 엘리트. 중세 술탄국과 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.nam.ac.uk/explore/egyptian-campaign",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2043,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "seigneurial-dues-france",
+      "label": {
+        "ko": "영주적 부담 (프랑스)",
+        "en": "Seigneurial dues (France)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1789년 유상 상환과 1793년 무상 폐지의 차이",
+      "evidence": {
+        "section": "1789년: 의회와 거리와 농촌",
+        "text": "es-of-revolution)\n\n8월 4일 밤 시작된 특권 폐지 결정은 8월의 법령으로 구체화되었다. 그러나 모든 영주적 부담이 즉시 무상으로 사라진 것은 아니다. 일부는 처음에 상환 대상으로 남았고, 남은 봉건적 부담의 무상 폐지는 1793년에 이루어졌다. 8월 26일 권리 선언은 국민주권과 법 앞의 평등을 내세우면서 소유권도 보장했다. 10월 5~6일 여성들이 앞장선 베르사유 행진은 식량 문제와 정치 문제를 결합했고 왕실을 파리로"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331",
+        "https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1789년: 의회와 거리와 농촌. 본문 표현: 영주적 부담. 작성 범위: 1789년 유상 상환과 1793년 무상 폐지의 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331 ; https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794 ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2004,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "biens-nationaux",
+      "label": {
+        "ko": "프랑스 혁명기의 국유재산",
+        "en": "Biens nationaux in Revolutionary France"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "교회·망명자 재산과 국유지 매각, 농민의 보편적 토지 분배와 구별",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": "증가와 신뢰의 약화는 통화 가치 하락을 낳았고, 임금과 물가가 같은 속도로 움직이지 않으면서 생활의 불안은 커졌다. 국유지 매각은 재산의 소유자를 바꾸었지만 모든 농민에게 같은 규모의 토지를 나누어 준 제도는 아니었다. 혁명기의 경제 변화는 법률의 평등 선언과 실제 구매력·재산 분배가 어긋날 수 있음을 보여 준다. [11](https://www.worldhistory.org/Assignat/)\n\n새 질서는 통치의 공간과 절차도 바꾸었다"
+      },
+      "sources": [
+        "https://www.worldhistory.org/Assignat/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 국유지 매각. 작성 범위: 교회·망명자 재산과 국유지 매각, 농민의 보편적 토지 분배와 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://www.worldhistory.org/Assignat/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "label_note": "Use explicit period-qualified headword; bracket contents were incorrectly matching the parent event rather than an existing term."
+      },
+      "queue_id": 2005,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "parlements-ancien-regime",
+      "label": {
+        "ko": "고등법원 (앙시앵 레짐)",
+        "en": "Parlements (Ancien Régime)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "칙령 등록·특권과 재정 개혁 저항, 현대 의회와 구별",
+      "evidence": {
+        "section": "재정 위기가 주권의 위기로 바뀌다",
+        "text": "가 주권의 위기로 바뀌다\n\n프랑스 왕정은 전쟁 비용과 누적된 부채를 감당하기 위해 세제를 바꾸려 했지만 특권 집단과 고등법원의 저항에 부딪혔다. 미국 독립전쟁 지원은 재정 부담을 더했다. 1788년의 흉작과 빵값 상승은 생계를 압박했고, 국왕의 재정 문제를 일상의 불안과 연결했다. 루이 16세가 1789년 5월 5일 베르사유에 삼부회를 소집했을 때, 논쟁은 새 세금의 승인에서 누가 국민을 대표할 것인가라는 문제로 옮겨갔다. [1](ht"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 재정 위기가 주권의 위기로 바뀌다. 본문 표현: 고등법원. 작성 범위: 칙령 등록·특권과 재정 개혁 저항, 현대 의회와 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2006,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "thermidorian-reaction-france",
+      "label": {
+        "ko": "프랑스의 테르미도르 반동",
+        "en": "Thermidorian Reaction in France"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "1794년 정치 연합과 반자코뱅 폭력·가격 통제 해제. 기존 soviet-thermidor는 소련 비유로 구별",
+      "evidence": {
+        "section": "테르미도르와 총재정부",
+        "text": "iberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n## 테르미도르와 총재정부\n\n1794년 봄 에베르파와 당통·데물랭 등이 차례로 처형되면서 혁명 진영 내부의 숙청이 깊어졌다. 7월 27일 테르미도르 9일에 국민공회는 로베스피에르와 그 동료들을 체포했고 다음 날 이들을 처형했다. 뒤이은 변화는 단 하루에 모든 탄압이 끝난 사건이 아니었다. 자코뱅 조직과 민중운동이 공격받고 가격"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled",
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 테르미도르와 총재정부. 본문 표현: 테르미도르. 작성 범위: 1794년 정치 연합과 반자코뱅 폭력·가격 통제 해제. 기존 soviet-thermidor는 소련 비유로 구별. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled ; https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": [],
+        "related_but_distinct": [
+          "soviet-thermidor: Soviet analogy; this request is the French historical context of 1794–1795"
+        ],
+        "label_note": "Use explicit period-qualified headword; bracket contents were incorrectly matching the parent event rather than an existing term."
+      },
+      "queue_id": 2007,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "term",
+      "suggested_id": "free-people-of-color-saint-domingue",
+      "label": {
+        "ko": "자유 유색인 (생도맹그)",
+        "en": "Free people of color (Saint-Domingue)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 80,
+      "scope": "법적 자유와 인종별 권리 차이, 노예화된 사람들과 이해관계 차이",
+      "evidence": {
+        "section": "식민지 노예제와 해방의 주체",
+        "text": "프랑스의 자유 선언은 처음부터 식민지의 노예제를 없애지 않았다. 설탕과 커피를 생산하던 생도맹그에서는 백인 식민자, 자유 유색인, 노예화된 사람들이 불평등한 지위에 놓여 있었다. 1791년 노예 봉기는 프랑스 의회의 결정만으로 설명할 수 없는 독자적인 혁명 동력이었다. 식민지의 전쟁과 저항은 본국에서 자유와 시민권의 범위를 다시 정하도록 압박했다. [22](https://revolution.chnm.org/exhibits/show/li"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 식민지 노예제와 해방의 주체. 본문 표현: 자유 유색인. 작성 범위: 법적 자유와 인종별 권리 차이, 노예화된 사람들과 이해관계 차이. 한영 표제·별칭과 당대 제도 설명, 시행과 실제 집행의 차이, 관련 사건·인물 연결을 작성. 동명 타시대 개념과 자동 링크 혼동 금지. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "queue_id": 2008,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-august-decrees-1789",
+      "label": {
+        "ko": "특권 폐지에 관한 8월 법령 (1789)",
+        "en": "August Decrees (1789)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 70,
+      "scope": "8월 4일 밤의 결의와 8월 11일까지 정리된 법령의 날짜·전문 범위 구별",
+      "evidence": {
+        "section": "재정 위기가 주권의 위기로 바뀌다",
+        "text": "금노동자·농민이 함께 속했다. 따라서 혁명을 단일한 계급의 일치된 계획으로 설명하면 참여자 사이의 차이가 사라진다. 특권 폐지, 정치적 대표권, 토지 부담의 경감, 식량 확보는 서로 연결되면서도 다른 요구였다. [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\n## 1789년: 의회와 거리와 농촌\n"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 재정 위기가 주권의 위기로 바뀌다. 본문 표현: 특권 폐지. 작성 범위: 8월 4일 밤의 결의와 8월 11일까지 정리된 법령의 날짜·전문 범위 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2009,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-feudal-dues-abolition-1793",
+      "label": {
+        "ko": "봉건적 부담의 무상 폐지 법령 (1793년 7월 17일)",
+        "en": "Decree abolishing remaining feudal dues (17 July 1793)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 70,
+      "scope": "1789년의 상환 원칙과 비교할 후속 폐지 법령",
+      "evidence": {
+        "section": "1789년: 의회와 거리와 농촌",
+        "text": "적 부담이 즉시 무상으로 사라진 것은 아니다. 일부는 처음에 상환 대상으로 남았고, 남은 봉건적 부담의 무상 폐지는 1793년에 이루어졌다. 8월 26일 권리 선언은 국민주권과 법 앞의 평등을 내세우면서 소유권도 보장했다. 10월 5~6일 여성들이 앞장선 베르사유 행진은 식량 문제와 정치 문제를 결합했고 왕실을 파리로 옮기게 했다. [4](https://revolution.chnm.org/exhibits/show/liberty--equ"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1789년: 의회와 거리와 농촌. 본문 표현: 1793년에 이루어졌다. 작성 범위: 1789년의 상환 원칙과 비교할 후속 폐지 법령. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2010,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-civil-constitution-clergy-1790",
+      "label": {
+        "ko": "성직자민사기본법 (1790년 7월 12일)",
+        "en": "Civil Constitution of the Clergy (12 July 1790)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 70,
+      "scope": "교구·주교·성직자 선출·급여의 법문 전체. 후속 선서령은 별도 문서로 표시",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": "## 입헌군주제의 제도와 균열\n\n제헌국민의회는 교회 재산을 국유화하고 이를 뒷받침으로 아시냐를 발행했다. 1790년 성직자민사기본법과 뒤이은 선서 요구는 성직자와 신자들을 갈라놓았다. 새 국가는 종교를 단순히 없앤 것이 아니라 교회의 재산·조직·충성 관계를 재편하려 했다. 1791년 6월 국왕의 바렌 도주 실패는 왕이 혁명 질서를 받아들이는지에 대한 의심을 키웠다. [8](https://revolution.chnm.org/exhibit"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 성직자민사기본법. 작성 범위: 교구·주교·성직자 선출·급여의 법문 전체. 후속 선서령은 별도 문서로 표시. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2011,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-le-chapelier-law-1791",
+      "label": {
+        "ko": "르 샤플리에 법 (1791년 6월 14일)",
+        "en": "Le Chapelier Law (14 June 1791)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 85,
+      "scope": "직업 결사와 집단 행동 금지 조문 전문; 기존 영어 전사와 프랑스어 원문 대조",
+      "evidence": {
+        "section": "입헌군주제의 제도와 균열",
+        "text": " 않았다. 능동시민 자격에는 연령·납세·독립성 조건이 있었고 선거인에게는 더 높은 재산 요건이 적용되었다. 같은 해 르 샤플리에 법은 직업적 결사와 노동자들의 집단적 임금 행동을 금지했다. 법적 신분 특권의 해체는 곧바로 보통선거나 노동자의 결사권을 뜻하지 않았다. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [10](ht"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 르 샤플리에 법. 작성 범위: 직업 결사와 집단 행동 금지 조문 전문; 기존 영어 전사와 프랑스어 원문 대조. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2012,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "robespierre-war-speech-1792-01-02",
+      "label": {
+        "ko": "로베스피에르, 전쟁에 관한 연설 (1792년 1월 2일)",
+        "en": "Robespierre, Speech on War (2 January 1792)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 85,
+      "scope": "무장한 해방자 비판이 나오는 해당 연설 전문. 1791년 12월 연설과 날짜·경계를 구별",
+      "evidence": {
+        "section": "혁명이 왜 유럽 전쟁으로 이어졌는가",
+        "text": "f_Pillnitz/)\n\n브리소는 전쟁이 혁명을 결속시키고 외국의 인민을 움직일 수 있다고 기대했다. 로베스피에르는 1792년 1월 연설에서 외국 주민이 무장한 해방자를 당연히 환영할 것이라는 가정을 비판했다. 이 논쟁은 혁명 진영 안에도 전쟁에 대한 선택지가 있었음을 보여 준다. 혁명과 전쟁을 필연적 연쇄로만 설명하면 선전포고를 택한 정치적 판단과 책임이 가려진다. [4](https://helios2.mi.parisdescartes."
+      },
+      "sources": [
+        "https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 1792년 1월 연설. 작성 범위: 무장한 해방자 비판이 나오는 해당 연설 전문. 1791년 12월 연설과 날짜·경계를 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2044,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "brissot-war-speech-1791",
+      "label": {
+        "ko": "브리소의 개전 찬성 연설 (1791년 12월)",
+        "en": "Brissot, Speech advocating war (December 1791)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 85,
+      "scope": "로베스피에르와 대조할 1791년 12월 연설 1편. 16일·29일 등 재인용 날짜를 원어 회의록으로 확정한 후 전문 번역",
+      "evidence": {
+        "section": "혁명이 왜 유럽 전쟁으로 이어졌는가",
+        "text": "산했다. [3](https://www.worldhistory.org/Declaration_of_Pillnitz/)\n\n브리소는 전쟁이 혁명을 결속시키고 외국의 인민을 움직일 수 있다고 기대했다. 로베스피에르는 1792년 1월 연설에서 외국 주민이 무장한 해방자를 당연히 환영할 것이라는 가정을 비판했다. 이 논쟁은 혁명 진영 안에도 전쟁에 대한 선택지가 있었음을 보여 준다. 혁명과 전쟁을 필연적 연쇄로만 설명하면 선전포고를 택한 정치적 판"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 브리소. 작성 범위: 로베스피에르와 대조할 1791년 12월 연설 1편. 16일·29일 등 재인용 날짜를 원어 회의록으로 확정한 후 전문 번역. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2045,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "declaration-pillnitz-1791",
+      "label": {
+        "ko": "필니츠 선언 (1791년 8월 27일)",
+        "en": "Declaration of Pillnitz (27 August 1791)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "프랑스 왕실 보호와 다른 열강 협력 조건을 포함한 선언 전문",
+      "evidence": {
+        "section": "혁명이 왜 유럽 전쟁으로 이어졌는가",
+        "text": "ldhistory.org/French_Revolutionary_Wars/)\n\n1791년 8월 오스트리아와 프로이센의 필니츠 선언은 프랑스 왕실 문제에 공동 관심을 표했지만 행동을 다른 열강의 협력에 조건지었다. 프랑스에서는 이를 반혁명 개입의 위협으로 받아들였다. 망명 귀족들의 활동, 왕실에 대한 불신, 국경과 영토 문제도 긴장을 키웠다. 이념적 대립은 실제였지만 열강은 폴란드와 오스만 제국 등 다른 지역에서의 이해관계도 계산했다. ["
+      },
+      "sources": [
+        "https://www.worldhistory.org/Declaration_of_Pillnitz/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 필니츠 선언. 작성 범위: 프랑스 왕실 보호와 다른 열강 협력 조건을 포함한 선언 전문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.worldhistory.org/Declaration_of_Pillnitz/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2046,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "brunswick-manifesto-1792",
+      "label": {
+        "ko": "브라운슈바이크 선언 (1792년 7월 25일)",
+        "en": "Brunswick Manifesto (25 July 1792)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "파리 주민·왕실 관련 위협 조항을 포함한 선언 전체. 현대 영어 번역을 그대로 저본으로 사용하지 말 것",
+      "evidence": {
+        "section": "1792년: 초기 패배에서 발미와 제마프까지",
+        "text": " 망명과 지휘체계의 혼란, 훈련과 보급 문제 때문에 초기 공격은 실패했다. 프로이센군과 오스트리아군의 침공, 7월의 브라운슈바이크 선언은 왕실과 외국군의 결탁에 대한 의심을 키웠다. 국내에서는 8월 10일 왕권이 정지되었고, 전선에서는 롱위와 베르됭의 함락으로 파리가 위협받았다. [5](https://www.worldhistory.org/War_of_the_First_Coalition/) [6](https://www.worldhisto"
+      },
+      "sources": [
+        "https://edu.lvivcenter.org/en/reflection-text/the-brunswick-manifesto-1792/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 브라운슈바이크 선언. 작성 범위: 파리 주민·왕실 관련 위협 조항을 포함한 선언 전체. 현대 영어 번역을 그대로 저본으로 사용하지 말 것. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://edu.lvivcenter.org/en/reflection-text/the-brunswick-manifesto-1792/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2047,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-war-declaration-austria-1792",
+      "label": {
+        "ko": "오스트리아 군주에 대한 선전포고 (1792년 4월 20일)",
+        "en": "French declaration of war against the Austrian monarch (20 April 1792)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "보헤미아·헝가리 국왕에 대한 선전포고 법문과 국왕 제안의 문서 경계를 구별",
+      "evidence": {
+        "section": "1792년: 초기 패배에서 발미와 제마프까지",
+        "text": "ILLES/RobespierreGuerre.html)\n\n## 1792년: 초기 패배에서 발미와 제마프까지\n\n프랑스는 1792년 4월 20일 오스트리아 군주에게 선전포고했다. 장교들의 망명과 지휘체계의 혼란, 훈련과 보급 문제 때문에 초기 공격은 실패했다. 프로이센군과 오스트리아군의 침공, 7월의 브라운슈바이크 선언은 왕실과 외국군의 결탁에 대한 의심을 키웠다. 국내에서는 8월 10일 왕권이 정지되었고, 전선에서는 롱위와 베르됭의 함락으"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 1792년 4월 20일. 작성 범위: 보헤미아·헝가리 국왕에 대한 선전포고 법문과 국왕 제안의 문서 경계를 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2048,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-fraternity-decree-1792",
+      "label": {
+        "ko": "외국 인민에 대한 형제애와 원조 법령 (1792년 11월 19일)",
+        "en": "Decree of fraternity and assistance (19 November 1792)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "국민공회의 혁명 지원 선언 전문, 점령지 12월 법령과 구별",
+      "evidence": {
+        "section": "1792년: 초기 패배에서 발미와 제마프까지",
+        "text": "승리 뒤 프랑스군은 오스트리아령 네덜란드로 진출했고, 다른 전선에서는 라인란트·사부아·니스로 확대되었다. 국민공회는 외국 인민의 자유를 돕겠다고 선언했다. 그러나 해방의 약속은 프랑스의 안전한 국경과 영토 확대 주장으로 이어지기도 했다. 방어와 혁명 수출, 정복이 같은 전쟁 안에서 겹치기 시작한 것이다. [7](https://www.worldhistory.org/Battle_of_Jemappes/)\n\n## 1793년의 위기: 동맹 확대"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 외국 인민의 자유. 작성 범위: 국민공회의 혁명 지원 선언 전문, 점령지 12월 법령과 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2049,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-occupied-territories-decree-1792",
+      "label": {
+        "ko": "점령지의 혁명 행정에 관한 법령 (1792년 12월 15일)",
+        "en": "Decree on revolutionary administration in occupied territories (15 December 1792)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "특권 폐지·재산·임시 행정과 프랑스군의 권한을 읽을 법문",
+      "evidence": {
+        "section": "1792년: 초기 패배에서 발미와 제마프까지",
+        "text": "했고, 다른 전선에서는 라인란트·사부아·니스로 확대되었다. 국민공회는 외국 인민의 자유를 돕겠다고 선언했다. 그러나 해방의 약속은 프랑스의 안전한 국경과 영토 확대 주장으로 이어지기도 했다. 방어와 혁명 수출, 정복이 같은 전쟁 안에서 겹치기 시작한 것이다. [7](https://www.worldhistory.org/Battle_of_Jemappes/)\n\n## 1793년의 위기: 동맹 확대와 내전\n\n루이 16세의 처형은 외교적 단절을 "
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 해방의 약속. 작성 범위: 특권 폐지·재산·임시 행정과 프랑스군의 권한을 읽을 법문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2050,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-levee-en-masse-1793",
+      "label": {
+        "ko": "국민총동원령 (1793년 8월 23일)",
+        "en": "Decree of levée en masse (23 August 1793)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 85,
+      "scope": "군복무·생산·운송·간호와 동원 조직을 포함한 법령 전체. 링크의 연표 요약을 법령 전문으로 오인하지 말 것",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "vernment-and-justice-1793-1794)\n\n## 국민 총동원과 군대의 재편\n\n1793년 8월 23일 국민총동원령은 전쟁을 병사들만의 업무로 두지 않았다. 청년의 군복무와 함께 무기·장비 생산, 운송, 간호 등 사회 전체의 노동을 동원하는 구상이었다. 카르노 등은 군사 조직과 작전을 조정했고, 기존 정규병과 지원병을 결합하는 부대 재편이 추진되었다. 숫자만 늘리는 것이 아니라 경험과 훈련을 대규모 동원과 연결하는 문제가 "
+      },
+      "sources": [
+        "https://revolution.chnm.org/d/968"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 국민총동원령. 작성 범위: 군복무·생산·운송·간호와 동원 조직을 포함한 법령 전체. 링크의 연표 요약을 법령 전문으로 오인하지 말 것. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/d/968",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2051,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-jourdan-delbrel-law-1798",
+      "label": {
+        "ko": "주르당-델브렐 징병법 (1798년 9월 5일)",
+        "en": "Jourdan–Delbrel conscription law (5 September 1798)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "공화력 6년 프뤽티도르 19일 법문 전문, 연령·등록·소집 규정",
+      "evidence": {
+        "section": "국민 총동원과 군대의 재편",
+        "text": "(https://www.worldhistory.org/French_Revolutionary_Wars/)\n\n1798년 주르당-델브렐 법은 징병을 보다 지속적인 제도로 만들었다. 혁명전쟁은 군대와 시민권의 관계를 바꾸었지만 전술과 전문성이 1789년에 처음 생긴 것은 아니다. 왕정기의 포병과 장교 교육도 새 군대의 자산이었다. 혁명적 열정만으로 승리를 설명하기보다 병력 규모, 전술의 적응, 지휘, 보급, 적국 간의 협력 실패를 함께 검토해"
+      },
+      "sources": [
+        "https://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/1914-1918/la-loi-des-trois-ans/presentation"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 주르당-델브렐 법. 작성 범위: 공화력 6년 프뤽티도르 19일 법문 전문, 연령·등록·소집 규정. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www2.assemblee-nationale.fr/decouvrir-l-assemblee/histoire/1914-1918/la-loi-des-trois-ans/presentation",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2052,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "saint-just-ventose-reports-decrees-1794",
+      "label": {
+        "ko": "생쥐스트의 방토즈 보고와 법령 (1794)",
+        "en": "Saint-Just, Ventôse reports and decrees (1794)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 70,
+      "scope": "방토즈 8일·13일 보고와 그에 대응하는 법령을 문서별로 나누어 전문 수록. 제안과 실행 구별",
+      "evidence": {
+        "section": "1793년 헌법과 혁명정부의 간극",
+        "text": " 앙투안 드 생쥐스트는 공안위원회와 전선 파견 활동에서 군대의 규율·보급과 정치적 신뢰를 결합하려 했다. 1794년 방토즈의 제안은 공화국의 적으로 간주된 사람들의 재산을 빈곤한 애국자에게 돌리는 구상을 담았지만, 광범한 재분배로 실현되지는 못했다. 혁명정부 안에는 생존과 평등을 확대하려는 기획과 적을 분류·배제하는 강제력이 함께 있었다. 한 인물의 연설을 국가 전체의 실제 제도와 동일시하지 않고 제안·법령·집행을 나누어 읽어야 하는 "
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 방토즈. 작성 범위: 방토즈 8일·13일 보고와 그에 대응하는 법령을 문서별로 나누어 전문 수록. 제안과 실행 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2013,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "france-womens-clubs-ban-1793",
+      "label": {
+        "ko": "여성 정치 결사 금지 보고와 법령 (1793년 10월 30일)",
+        "en": "Report and decree banning women’s political clubs (30 October 1793)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 70,
+      "scope": "아마르 보고와 국민공회 결의를 구별하여 각 전문, 시민권 배제 논리 읽기",
+      "evidence": {
+        "section": "여성의 참여와 시민권의 경계",
+        "text": "and-emancipation-1789-1794)\n\n혁명은 이혼 등 민사 영역의 변화를 열었지만, 1793년 10월 여성 정치 결사의 금지는 참여의 문을 닫았다. 구주는 그해 11월 처형되었다. 여성들은 하나의 정치 노선으로 결집하지 않았고, 민중운동 내부에서도 식량·종교·공화국을 둘러싼 입장이 달랐다. 권리 확대와 정치적 배제가 같은 혁명 과정에서 병존했다는 사실이 핵심이다. [6](https://revolution.chnm.org/"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 여성의 참여와 시민권의 경계. 본문 표현: 여성 정치 결사의 금지. 작성 범위: 아마르 보고와 국민공회 결의를 구별하여 각 전문, 시민권 배제 논리 읽기. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2014,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "treaties-basel-1795",
+      "label": {
+        "ko": "바젤 평화조약: 프로이센·스페인 (1795)",
+        "en": "Treaties of Basel with Prussia and Spain (1795)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "1795년 4월 5일·7월 22일 조약 두 편 전문. 스페인령 산토도밍고 양도와 유럽 영토 조항 구별",
+      "evidence": {
+        "section": "1794~1795년: 북부 전선의 역전과 동맹 이탈",
+        "text": "urus/)\n\n1794~1795년 겨울 피슈그뤼의 군대가 네덜란드로 진입했고 바타비아 공화국이 세워졌다. 1795년 바젤의 평화에서 프로이센과 스페인은 각각 프랑스와 전쟁을 끝냈다. 프로이센은 폴란드 문제에도 관심과 자원을 쏟고 있었다. 영국과 오스트리아는 전쟁을 계속했다. 따라서 제1차 동맹의 약화는 한 번의 결정적 전투가 아니라 프랑스의 군사적 성과와 동맹국들의 서로 다른 우선순위가 결합한 결과였다. [16](https://en.w"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Peace_of_Basel"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1794~1795년: 북부 전선의 역전과 동맹 이탈. 본문 표현: 바젤. 작성 범위: 1795년 4월 5일·7월 22일 조약 두 편 전문. 스페인령 산토도밍고 양도와 유럽 영토 조항 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://en.wikipedia.org/wiki/Peace_of_Basel",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2053,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "treaty-campo-formio-1797",
+      "label": {
+        "ko": "캄포포르미오 조약 (1797년 10월 17일)",
+        "en": "Treaty of Campo Formio (17 October 1797)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "공개 조항·비밀조항 범위를 확정하고 베네치아·저지대·라인 조항을 전문으로 읽기. 일부 전사 사이트의 날짜 오기 대조",
+      "evidence": {
+        "section": "이탈리아 원정과 자매공화국의 모순",
+        "text": "토바를 둘러싼 전투는 계속되었고 아르콜레·리볼리 등의 승리와 1797년 만토바 항복이 오스트리아를 압박했다. 10월 캄포포르미오 조약은 제1차 동맹전쟁의 대륙적 국면을 마무리했다. 승전 장군은 작전뿐 아니라 외교와 점령지 정치에서도 독자적 영향력을 얻었다. [18](https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/"
+      },
+      "sources": [
+        "https://www.napoleon-series.org/research/government/diplomatic/c_campoformio1.html"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 캄포포르미오 조약. 작성 범위: 공개 조항·비밀조항 범위를 확정하고 베네치아·저지대·라인 조항을 전문으로 읽기. 일부 전사 사이트의 날짜 오기 대조. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon-series.org/research/government/diplomatic/c_campoformio1.html",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2054,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "treaty-luneville-1801",
+      "label": {
+        "ko": "뤼네빌 조약 (1801년 2월 9일)",
+        "en": "Treaty of Lunéville (9 February 1801)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 85,
+      "scope": "프랑스·오스트리아·제국의 영토와 공화국 승인 조항 전문",
+      "evidence": {
+        "section": "1801~1802년의 평화와 남은 문제",
+        "text": "ki/Battle_of_Hohenlinden)\n\n## 1801~1802년의 평화와 남은 문제\n\n1801년 2월 9일 뤼네빌 조약은 오스트리아와 신성로마제국의 대프랑스 전쟁을 끝내고 프랑스의 라인강 좌안 지배와 벨기에 지역의 양도를 확인했다. 1802년 3월 25일 아미앵 조약은 영국과 프랑스 및 그 동맹 사이의 평화를 정했다. 영국은 트리니다드와 실론을 보유하되 다른 여러 식민지 점령지를 돌려주기로 했으며, 몰타의 처리와 프랑스의 철수"
+      },
+      "sources": [
+        "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1801~1802년의 평화와 남은 문제. 본문 표현: 뤼네빌 조약. 작성 범위: 프랑스·오스트리아·제국의 영토와 공화국 승인 조항 전문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2055,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "treaty-amiens-1802",
+      "label": {
+        "ko": "아미앵 조약 (1802년 3월 25일)",
+        "en": "Treaty of Amiens (25 March 1802)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 85,
+      "scope": "식민지 반환·트리니다드·실론·몰타와 철수 의무의 조항 전문",
+      "evidence": {
+        "section": "1801~1802년의 평화와 남은 문제",
+        "text": "마제국의 대프랑스 전쟁을 끝내고 프랑스의 라인강 좌안 지배와 벨기에 지역의 양도를 확인했다. 1802년 3월 25일 아미앵 조약은 영국과 프랑스 및 그 동맹 사이의 평화를 정했다. 영국은 트리니다드와 실론을 보유하되 다른 여러 식민지 점령지를 돌려주기로 했으며, 몰타의 처리와 프랑스의 철수 의무도 규정했다. 6월에는 프랑스-오스만 평화가 뒤따랐다. [21](https://www.napoleon.org/en/history-of-the-t"
+      },
+      "sources": [
+        "https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1801~1802년의 평화와 남은 문제. 본문 표현: 아미앵 조약. 작성 범위: 식민지 반환·트리니다드·실론·몰타와 철수 의무의 조항 전문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2056,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "bonaparte-egypt-proclamation-1798",
+      "label": {
+        "ko": "보나파르트의 이집트 주민에게 보내는 포고 (1798년 7월)",
+        "en": "Bonaparte’s proclamation to the people of Egypt (July 1798)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "프랑스어·아랍어 공표본의 차이와 날짜 확인, 해방·종교 존중의 주장과 점령 실제를 구별",
+      "evidence": {
+        "section": "이집트와 시리아: 유럽 밖의 정복",
+        "text": ". [26](https://en.wikipedia.org/wiki/Glorious_First_of_June)\n\n## 이집트와 시리아: 유럽 밖의 정복\n\n1798년 보나파르트의 원정군은 몰타를 점령한 뒤 이집트에 상륙했다. 이집트는 오스만 제국의 영토였으나 맘루크 세력이 실권을 행사하고 있었다. 프랑스는 영국의 동방 교역과 인도에 대한 지위를 압박하려 했다. 7월 피라미드 전투의 승리와 카이로 점령 뒤에도, 8월 넬슨의 함대가 아부키르만"
+      },
+      "sources": [
+        "https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이집트와 시리아: 유럽 밖의 정복. 본문 표현: 이집트. 작성 범위: 프랑스어·아랍어 공표본의 차이와 날짜 확인, 해방·종교 존중의 주장과 점령 실제를 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2057,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "sonthonax-emancipation-proclamation-1793",
+      "label": {
+        "ko": "송토나의 생도맹그 노예해방 포고 (1793년 8월 29일)",
+        "en": "Sonthonax’s emancipation proclamation (29 August 1793)"
+      },
+      "event_id": "french-revolution-1789-1799",
+      "target_id": "",
+      "priority": 70,
+      "scope": "북부 관구의 해방·노동 규정 전문. 1794년 국민공회 법령은 기존 문헌집으로 연결",
+      "evidence": {
+        "section": "식민지 노예제와 해방의 주체",
+        "text": "w/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n1793년 생도맹그에서 이루어진 해방 조치 뒤, 국민공회는 1794년 2월 4일 모든 식민지의 노예제 폐지와 피부색을 구별하지 않는 시민권을 선언했다. 법령은 집행 문제를 공안위원회에 맡겼고 실제 적용은 식민지마다 달랐다. 이는 중요한 단절이었지만 영구적인 보장은 아니었다. 뒤이은 보나파르트의 식민정책은 이 성과를 공격했"
+      },
+      "sources": [
+        "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 식민지 노예제와 해방의 주체. 본문 표현: 1793년 생도맹그. 작성 범위: 북부 관구의 해방·노동 규정 전문. 1794년 국민공회 법령은 기존 문헌집으로 연결. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2015,
+      "queue_status_at_verification": "pending"
+    },
+    {
+      "kind": "doc",
+      "suggested_id": "al-jabarti-french-occupation-1798",
+      "label": {
+        "ko": "알자바르티의 프랑스 점령 기록 (1798)",
+        "en": "Al-Jabarti’s account of the French occupation (1798)"
+      },
+      "event_id": "french-revolutionary-wars-1792-1802",
+      "target_id": "",
+      "priority": 70,
+      "scope": "이집트 주민의 시각을 보완. 아랍어 저작·판본을 확정하고 1798년 점령·카이로 봉기 기록의 날짜 경계를 갖춘 범위를 선정; 발췌면 명시, 현대 영어 번역의 재번역 금지",
+      "evidence": {
+        "section": "이집트와 시리아: 유럽 밖의 정복",
+        "text": "카이로와 알렉산드리아에서 항복했다. 원정은 영국을 동방에서 몰아내지 못했고 오스만 제국을 프랑스의 적으로 만들었다. 이집트인과 시리아 주민의 경험까지 포함하면 이 전쟁은 유럽 공화국과 유럽 왕조만의 충돌로는 설명되지 않는다. [27](https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/)\n\n## 제2차 동맹과 1799~1800년의 역"
+      },
+      "sources": [
+        "https://www.nam.ac.uk/explore/egyptian-campaign"
+      ],
+      "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이집트와 시리아: 유럽 밖의 정복. 본문 표현: 이집트인과 시리아 주민. 작성 범위: 이집트 주민의 시각을 보완. 아랍어 저작·판본을 확정하고 1798년 점령·카이로 봉기 기록의 날짜 경계를 갖춘 범위를 선정; 발췌면 명시, 현대 영어 번역의 재번역 금지. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.nam.ac.uk/explore/egyptian-campaign",
+      "decision": "enqueue",
+      "audit": {
+        "existing_ids": [],
+        "existing_gap_ids": [],
+        "existing_pipeline_job_ids": []
+      },
+      "source_status": "research_lead; original-language edition and completeness must be verified before translation",
+      "queue_id": 2058,
+      "queue_status_at_verification": "pending"
+    }
+  ],
+  "already_covered": {
+    "people": [
+      "louis-xvi",
+      "jacques-pierre-brissot",
+      "maximilien-robespierre",
+      "jean-paul-marat",
+      "georges-danton",
+      "louis-antoine-de-saint-just",
+      "olympe-de-gouges",
+      "gracchus-babeuf",
+      "camille-desmoulins"
+    ],
+    "docs": [
+      "france-constitutions-and-republic-1791-1793",
+      "france-rights-and-emancipation-1789-1794",
+      "france-subsistence-and-equality-1792-1796",
+      "france-revolutionary-government-and-justice-1793-1794",
+      "robespierre-republican-morality-supreme-being-thermidor-1794",
+      "france-directoire-consulat-1795-1799"
+    ],
+    "terms": [
+      "constitutional-monarchy",
+      "republic",
+      "national-sovereignty",
+      "active-citizen-1791",
+      "sans-culottes",
+      "jacobins",
+      "girondins",
+      "committee-of-public-safety",
+      "national-convention",
+      "general-maximum-1793",
+      "law-of-suspects-1793",
+      "law-of-22-prairial",
+      "conspiracy-of-equals"
+    ]
+  },
+  "audit_scope": {
+    "database": "live production people/terms headwords and aliases; curation gaps and active pipeline jobs",
+    "documents": "live manifest, redirects, six relevant published collections and unpublished exclusions",
+    "note": "No excluded guide, State and Revolution, or modern secondary book is queued for republication."
+  },
+  "filing_results": {
+    "french-revolution-1789-1799": {
+      "filed": [
+        "샤를로트 코르데",
+        "자크루이 다비드",
+        "삼부회",
+        "제3신분",
+        "제헌국민의회",
+        "입법의회 (1791–1792)",
+        "아시냐",
+        "성직자민사기본법",
+        "르 샤플리에 법",
+        "산악파",
+        "프랑스 혁명기의 보안위원회",
+        "프랑스 혁명재판소",
+        "방토즈 법령",
+        "프랑스 혁명기의 비기독교화 운동",
+        "최고존재 숭배",
+        "이성 숭배",
+        "에베르파",
+        "총재정부",
+        "통령정부",
+        "영주적 부담 (프랑스)",
+        "프랑스 혁명기의 국유재산",
+        "고등법원 (앙시앵 레짐)",
+        "프랑스의 테르미도르 반동",
+        "자유 유색인 (생도맹그)",
+        "특권 폐지에 관한 8월 법령 (1789)",
+        "봉건적 부담의 무상 폐지 법령 (1793년 7월 17일)",
+        "성직자민사기본법 (1790년 7월 12일)",
+        "르 샤플리에 법 (1791년 6월 14일)",
+        "생쥐스트의 방토즈 보고와 법령 (1794)",
+        "여성 정치 결사 금지 보고와 법령 (1793년 10월 30일)",
+        "송토나의 생도맹그 노예해방 포고 (1793년 8월 29일)"
+      ],
+      "already_queued": [],
+      "already_covered": []
+    },
+    "french-revolutionary-wars-1792-1802": {
+      "filed": [
+        "나폴레옹 보나파르트",
+        "샤를 프랑수아 뒤무리에",
+        "프랑수아 크리스토프 켈레르만",
+        "라자르 카르노",
+        "장바티스트 주르당",
+        "장샤를 피슈그뤼",
+        "리처드 하우",
+        "호레이쇼 넬슨",
+        "알렉산드르 수보로프",
+        "앙드레 마세나",
+        "루이 드제",
+        "장빅토르 모로",
+        "앙투안 리슈팡스",
+        "장조제프 아마블 앙베르",
+        "파견의원",
+        "프랑스 혁명기의 망명 귀족",
+        "국민총동원령",
+        "혁명군의 정규병·지원병 통합",
+        "주르당-델브렐 법",
+        "자매공화국",
+        "바타비아 공화국",
+        "치살피나 공화국",
+        "리구리아 공화국",
+        "헬베티아 공화국",
+        "로마 공화국 (1798–1799)",
+        "파르테노페 공화국",
+        "연합아일랜드인 협회",
+        "맘루크 (오스만기 이집트)",
+        "로베스피에르, 전쟁에 관한 연설 (1792년 1월 2일)",
+        "브리소의 개전 찬성 연설 (1791년 12월)",
+        "필니츠 선언 (1791년 8월 27일)",
+        "브라운슈바이크 선언 (1792년 7월 25일)",
+        "오스트리아 군주에 대한 선전포고 (1792년 4월 20일)",
+        "외국 인민에 대한 형제애와 원조 법령 (1792년 11월 19일)",
+        "점령지의 혁명 행정에 관한 법령 (1792년 12월 15일)",
+        "국민총동원령 (1793년 8월 23일)",
+        "주르당-델브렐 징병법 (1798년 9월 5일)",
+        "바젤 평화조약: 프로이센·스페인 (1795)",
+        "캄포포르미오 조약 (1797년 10월 17일)",
+        "뤼네빌 조약 (1801년 2월 9일)",
+        "아미앵 조약 (1802년 3월 25일)",
+        "보나파르트의 이집트 주민에게 보내는 포고 (1798년 7월)",
+        "알자바르티의 프랑스 점령 기록 (1798)"
+      ],
+      "already_queued": [],
+      "already_covered": []
+    }
+  },
+  "verification": {
+    "count": 74,
+    "counts": {
+      "person": 16,
+      "term": 36,
+      "doc": 22
+    },
+    "status_at_verification": "pending",
+    "queue_ids": [
+      2016,
+      1985,
+      1986,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      1987,
+      1988,
+      1989,
+      1990,
+      1991,
+      1992,
+      1993,
+      1994,
+      1995,
+      1996,
+      2030,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035,
+      2036,
+      2037,
+      2038,
+      2039,
+      2040,
+      2041,
+      2042,
+      2043,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2044,
+      2045,
+      2046,
+      2047,
+      2048,
+      2049,
+      2050,
+      2051,
+      2052,
+      2013,
+      2014,
+      2053,
+      2054,
+      2055,
+      2056,
+      2057,
+      2015,
+      2058
+    ],
+    "method": "Re-read each live row after filing; compared kind, labels, event_id, reason, priority and status.",
+    "registration_path": "runtime_tools.commulingo_people._file_gaps",
+    "publication": "Queued only; no people, terms, or translations published by this batch."
+  }
+}

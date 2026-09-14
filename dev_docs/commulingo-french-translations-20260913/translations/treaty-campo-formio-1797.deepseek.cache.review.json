@@ -1,0 +1,130 @@
+{
+  "review": [
+    {
+      "block": 2,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "18": 1,
+            "1797": 1,
+            "29": 1,
+            "5": 1
+          },
+          "target": {
+            "1797": 1,
+            "4": 1,
+            "18": 1,
+            "29": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 22,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 29,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 2
+          }
+        }
+      ]
+    },
+    {
+      "block": 37,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 47,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "6": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 51,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 56,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "40": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 65,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "30": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 66,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "17": 1,
+            "1797": 1,
+            "26": 1,
+            "6": 1
+          },
+          "target": {
+            "1797": 1,
+            "10": 1,
+            "17": 1,
+            "6": 1,
+            "26": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

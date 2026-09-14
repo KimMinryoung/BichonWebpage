@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 2,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 2,
+    "tokensIn": 2212,
+    "tokensOut": 12015
+  },
+  "seconds": 33.7,
+  "chunks": 2,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-levee-en-masse-1793.html",
+  "bytes": 6418,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-levee-en-masse-1793.deepseek.cache.review.json",
+  "strayCyrillic": []
+}
