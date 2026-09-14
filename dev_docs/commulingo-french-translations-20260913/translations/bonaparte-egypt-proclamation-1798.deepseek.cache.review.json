@@ -1,0 +1,76 @@
+{
+  "review": [
+    {
+      "block": 0,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "13": 1,
+            "6": 1,
+            "1": 1,
+            "1798": 1
+          },
+          "target": {
+            "6": 1,
+            "13": 1,
+            "1798": 1,
+            "7": 1,
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 13,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "1": 1
+          },
+          "target": {
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 14,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "2": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 15,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "3": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 16,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {}
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

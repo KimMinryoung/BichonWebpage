@@ -1,0 +1,49 @@
+{
+  "id": "al-jabarti-french-occupation-1798",
+  "title": "알자바르티의 프랑스 점령 기록 (1798)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "ar",
+  "headnote": [
+    "عبد الرحمن الجبرتي, عجائب الآثار في التراجم والأخبار, 제4권, Hindawi 디지털 원문, 인쇄면 37–45쪽 중 히즈라력 1213년 주마다 알아우왈월 기록 전체. 1798년 카이로 봉기를 포함하는 날짜 경계가 있는 발췌다. 다음 주마다 앗사니월 직전까지; 책 전체 번역이 아니다. 아랍어 PDF의 우좌 순서와 Unicode 합자를 정규화했으며 현대 영어 번역을 거치지 않는다."
+  ],
+  "bibliography": [
+    "https://downloads.hindawi.org/books/53519152.pdf",
+    "عبد الرحمن الجبرتي, عجائب الآثار في التراجم والأخبار, 제4권, Hindawi 디지털 원문, 인쇄면 37–45쪽 중 히즈라력 1213년 주마다 알아우왈월 기록 전체. 1798년 카이로 봉기를 포함하는 날짜 경계가 있는 발췌다. 다음 주마다 앗사니월 직전까지; 책 전체 번역이 아니다. 아랍어 PDF의 우좌 순서와 Unicode 합자를 정규화했으며 현대 영어 번역을 거치지 않는다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "extra": {
+      "الفرنسيس": "프랑스인",
+      "الأزهر": "알아즈하르",
+      "بونابرت": "보나파르트",
+      "الديوان": "디완",
+      "المماليك": "맘루크"
+    },
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json"
+  },
+  "documents": [
+    {
+      "id": "al-jabarti-french-occupation-1798",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/al-jabarti-french-occupation-1798.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "c68475b62e28c97035be5c9e900a586ebd69a2f5f4b1f525f07232ea9acd5407",
+        "url": "https://downloads.hindawi.org/books/53519152.pdf"
+      },
+      "blocks": [
+        0,
+        29
+      ],
+      "startsWith": "واستهل شهر جمادى الأولى بيوم الخميس املوعود سنة ١٢١٣ه واجتمعوا با",
+      "endsWith": "ميان الذي قتل أبوه، وكان معو ًقا ببيت البكري، فشفعهم فيه وأطلقوه.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다. 히즈라력 날짜를 임의로 양력으로 바꾸지 않는다. PDF 문자 추출의 명백한 합자 순서 오류(امل→الم, بني→بين 등)는 문맥에 따라 판독하되 확정 불가능한 부분은 [원문 판독 불명]으로 명시한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/al-jabarti-french-occupation-1798.html",
+  "queueId": 2058,
+  "sourceContextChars": 600
+}

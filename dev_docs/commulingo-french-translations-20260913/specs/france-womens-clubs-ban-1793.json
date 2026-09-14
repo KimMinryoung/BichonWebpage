@@ -1,0 +1,51 @@
+{
+  "id": "france-womens-clubs-ban-1793",
+  "title": "여성 정치 결사 금지 보고와 법령 (1793년 10월 30일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1793년 10월 30일 Amar 보고 전문(Moniteur 재록)과 여성 클럽 금지 법령 2조. Archives parlementaires, t. LXXVIII, 49–51쪽. 49쪽 난외의 다른 신문 보도와 현대 주석을 제거하고 양 단의 보고를 연결했다. 저본 OCR 추가 대조 검수 필요."
+  ],
+  "bibliography": [
+    "https://www.persee.fr/doc/arcpa_0000-0000_1911_num_78_1_41253_t1_0049_0000_2",
+    "1793년 10월 30일 Amar 보고 전문(Moniteur 재록)과 여성 클럽 금지 법령 2조. Archives parlementaires, t. LXXVIII, 49–51쪽. 49쪽 난외의 다른 신문 보도와 현대 주석을 제거하고 양 단의 보고를 연결했다. 저본 OCR 추가 대조 검수 필요.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-womens-clubs-ban-1793",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-womens-clubs-ban-1793.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "e71c3243171069e0ffe5da9fb523acc42eb9fd63dd522d60e6fd448ced8109fa",
+        "url": "https://www.persee.fr/doc/arcpa_0000-0000_1911_num_78_1_41253_t1_0049_0000_2"
+      },
+      "blocks": [
+        0,
+        24
+      ],
+      "startsWith": "Amar, au nom du comité de Sûreté générale. Citoyens, votre comité",
+      "endsWith": ", et celles des sociétés libres des arts, doivent être publiques.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-womens-clubs-ban-1793.html",
+  "queueId": 2014,
+  "sourceContextChars": 600
+}

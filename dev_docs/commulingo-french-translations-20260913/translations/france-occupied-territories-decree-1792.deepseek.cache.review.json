@@ -1,0 +1,187 @@
+{
+  "review": [
+    {
+      "block": 4,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "2": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 5,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 6,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "3": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 7,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "1": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 8,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "4": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 10,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "5": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 12,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "6": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 14,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "7": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 16,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "8": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 17,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {},
+          "target": {
+            "15": 1
+          }
+        }
+      ]
+    },
+    {
+      "block": 18,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "9": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 20,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "10": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 22,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "11": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 24,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "12": 1
+          },
+          "target": {}
+        }
+      ]
+    },
+    {
+      "block": 32,
+      "issues": [
+        {
+          "kind": "numbers_dates_amounts",
+          "source": {
+            "3": 1
+          },
+          "target": {
+            "1": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tmDecisions": []
+}

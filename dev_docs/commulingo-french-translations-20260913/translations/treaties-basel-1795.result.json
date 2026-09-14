@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 5,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 5,
+    "tokensIn": 5676,
+    "tokensOut": 17110
+  },
+  "seconds": 33.8,
+  "chunks": 5,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaties-basel-1795.html",
+  "bytes": 14471,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaties-basel-1795.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

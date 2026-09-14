@@ -1,0 +1,11 @@
+exec(open('/tmp/prepare-french-first.py').read().split("t=fetched('august')")[0])
+def ps(k):return json.load(open(B/'sources'/(k+'.paras.json')))
+save('france-civil-constitution-clergy-1790',ps('clergy'),'https://fr.wikisource.org/wiki/La_Séparation_des_Églises_et_de_l’État/Loi_du_24_août_1790','1790년 7월 12일 채택·8월 24일 재가된 성직자 시민헌법, 4편 전문. Briand의 1905년 의회 보고서 부록 431–445쪽 전사본. 저본 철자 보존; 지명 전사 오류는 후속 원판 대조 검수 대상이다.')
+save('treaty-luneville-1801',ps('luneville-fr'),'https://fr.wikisource.org/wiki/Traité_de_Lunéville','1801년 2월 9일 뤼네빌 조약: 서문·제1–19조·서명 및 별도 비밀조항 전문. Jules de Clercq, Recueil des traités de la France, 1864, t. I, 448–453쪽 전사.')
+save('declaration-pillnitz-1791',[p.replace('mutuel mutuel','mutuel') for p in ps('pillnitz')],'https://fr.wikisource.org/wiki/Déclaration_de_Pillnitz','1791년 8월 27일 필니츠 선언 전문·서명. P.-P. Granié 1797년 판 265–266쪽 전사. 전사의 명백한 중복 mutuel mutuel만 한 번으로 정규화했다.')
+t=(B/'sources/reunion.txt').read_text();a=t.index('La Convention nationale déclare, au nom');z=t.index('Rapport de Cambon, 15 décembre 1792',a)
+save('france-fraternity-decree-1792',t[a:z].splitlines(),'https://mjp.univ-perp.fr/france/1792reunion.htm','1792년 11월 19일 우애·원조 법령과 다국어 인쇄·포고 명령 전문. Archives parlementaires 재록 MJP 전사본; 현대 해설과 다른 날짜의 보고 제외.')
+a=t.index('Décret qui détermine');z=t.index('(La Convention adopte',a);v=t[a:z];v=v[:v.index('Cet article a été modifié')]+v[v.index('Article\xa0 4.'):]
+save('france-occupied-territories-decree-1792',v.splitlines(),'https://mjp.univ-perp.fr/france/1792reunion.htm','1792년 12월 15일 원칙 채택·17일 최종 문안 채택. 제1–12조 및 부속 포고 전문. 22일 제3조 개정문은 후대에 삽입된 별도 법문이므로 본문에서 제외했다. Cambon 보고와 구분한다.')
+soup=BeautifulSoup((B/'sources/war-declaration.raw.html').read_text(),'html.parser');pars=[p.get_text(' ',strip=True) for p in soup.select('p')];start=max(i for i,p in enumerate(pars) if 'L’Assemblée nationale, délibérant' in p);end=next(i for i in range(start,len(pars)) if 'décrète la guerre contre le roi de Hongrie et de Bohême' in pars[i]);v=pars[start:end+1]
+save('france-war-declaration-austria-1792',v,'https://langloishg.fr/documents/guerre-et-paix/la-declaration-de-guerre-du-20-avril-1792/','1792년 4월 20일 헝가리·보헤미아 왕에 대한 선전포고 최종 채택문 전문. Archives parlementaires, t. XLII, 1893, 210–218쪽 재록. 앞선 초안·토론·현대 해설 제외.')

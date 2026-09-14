@@ -1,0 +1,34 @@
+{"provider": "deepseek_anthropic", "model": "deepseek-flash", "thinking": "enabled", "maxTokensIncludingReasoning": 48000, "retryOutputCapIncludingReasoning": 65536}
+안내: 인물사전 성(姓) 단독 표면 미주입 — 문서에 전체 이름·이니셜이 없음: Roux(루). 실제로 그 인물이면 spec glossary.extra에 넣을 것.
+{"spec": "france-levee-en-masse-1793", "event": "plan", "pending": 2, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "france-levee-en-masse-1793", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "france-levee-en-masse-1793", "title": "", "blocks": 39, "chars": 5393}], "glossaryEntries": 934, "chunks": 2, "chars": 5393, "estimatedUsd": 0.0027, "oversizedBlocks": []}
+{"spec": "france-levee-en-masse-1793", "event": "usage", "blocks": [0, 24], "attempts": 1, "usage": {"tokens_in": 1334, "tokens_out": 5510, "cache_read": 1280, "cache_create": 0}, "latencyMs": 31025, "errorKind": null}
+{"spec": "france-levee-en-masse-1793", "event": "chunk", "done": 1, "total": 2}
+{"spec": "france-levee-en-masse-1793", "event": "usage", "blocks": [25, 38], "attempts": 1, "usage": {"tokens_in": 878, "tokens_out": 6505, "cache_read": 1280, "cache_create": 0}, "latencyMs": 33702, "errorKind": null}
+{"spec": "france-levee-en-masse-1793", "event": "chunk", "done": 2, "total": 2}
+{"spec": "france-levee-en-masse-1793", "event": "tm", "segments": 39, "inserted": 39}
+{"spec": "france-levee-en-masse-1793", "event": "done", "stats": {"cached": 0, "translated": 2, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 2, "tokensIn": 2212, "tokensOut": 12015}, "seconds": 33.7, "chunks": 2, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-levee-en-masse-1793.html", "bytes": 6418, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-levee-en-masse-1793.deepseek.cache.review.json", "strayCyrillic": []}
+안내: 인물사전 성(姓) 단독 표면 미주입 — 문서에 전체 이름·이니셜이 없음: Hessen(게센). 실제로 그 인물이면 spec glossary.extra에 넣을 것.
+{"spec": "treaties-basel-1795", "event": "plan", "pending": 5, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "treaties-basel-1795", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "treaties-basel-1795", "title": "", "blocks": 77, "chars": 13398}], "glossaryEntries": 934, "chunks": 5, "chars": 13398, "estimatedUsd": 0.0068, "oversizedBlocks": []}
+{"spec": "treaties-basel-1795", "event": "usage", "blocks": [76, 76], "attempts": 1, "usage": {"tokens_in": 295, "tokens_out": 242, "cache_read": 1280, "cache_create": 0}, "latencyMs": 3108, "errorKind": null}
+{"spec": "treaties-basel-1795", "event": "chunk", "done": 1, "total": 5}
+{"spec": "treaties-basel-1795", "event": "usage", "blocks": [38, 56], "attempts": 1, "usage": {"tokens_in": 1331, "tokens_out": 2135, "cache_read": 1280, "cache_create": 0}, "latencyMs": 14427, "errorKind": null}
+{"spec": "treaties-basel-1795", "event": "chunk", "done": 2, "total": 5}
+{"spec": "treaties-basel-1795", "event": "usage", "blocks": [57, 75], "attempts": 1, "usage": {"tokens_in": 1301, "tokens_out": 3535, "cache_read": 1280, "cache_create": 0}, "latencyMs": 20067, "errorKind": null}
+{"spec": "treaties-basel-1795", "event": "chunk", "done": 3, "total": 5}
+{"spec": "treaties-basel-1795", "event": "usage", "blocks": [0, 19], "attempts": 1, "usage": {"tokens_in": 1380, "tokens_out": 5320, "cache_read": 1280, "cache_create": 0}, "latencyMs": 28736, "errorKind": null}
+{"spec": "treaties-basel-1795", "event": "chunk", "done": 4, "total": 5}
+{"spec": "treaties-basel-1795", "event": "usage", "blocks": [20, 37], "attempts": 1, "usage": {"tokens_in": 1369, "tokens_out": 5878, "cache_read": 1280, "cache_create": 0}, "latencyMs": 33753, "errorKind": null}
+{"spec": "treaties-basel-1795", "event": "chunk", "done": 5, "total": 5}
+{"spec": "treaties-basel-1795", "event": "tm", "segments": 77, "inserted": 68}
+{"spec": "treaties-basel-1795", "event": "done", "stats": {"cached": 0, "translated": 5, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 5, "tokensIn": 5676, "tokensOut": 17110}, "seconds": 33.8, "chunks": 5, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaties-basel-1795.html", "bytes": 14471, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaties-basel-1795.deepseek.cache.review.json", "strayCyrillic": []}
+{"spec": "treaty-campo-formio-1797", "event": "plan", "pending": 4, "tmReusedBlocks": 0, "chunksSkipped": 0, "id": "treaty-campo-formio-1797", "sourceLang": "fr", "model": "deepseek-flash", "thinking": true, "documents": [{"id": "treaty-campo-formio-1797", "title": "", "blocks": 75, "chars": 12793}], "glossaryEntries": 934, "chunks": 4, "chars": 12793, "estimatedUsd": 0.0063, "oversizedBlocks": []}
+{"spec": "treaty-campo-formio-1797", "event": "usage", "blocks": [0, 17], "attempts": 1, "usage": {"tokens_in": 1356, "tokens_out": 4339, "cache_read": 1280, "cache_create": 0}, "latencyMs": 25542, "errorKind": null}
+{"spec": "treaty-campo-formio-1797", "event": "chunk", "done": 1, "total": 4}
+{"spec": "treaty-campo-formio-1797", "event": "usage", "blocks": [29, 48], "attempts": 1, "usage": {"tokens_in": 1302, "tokens_out": 5527, "cache_read": 1280, "cache_create": 0}, "latencyMs": 31293, "errorKind": null}
+{"spec": "treaty-campo-formio-1797", "event": "chunk", "done": 2, "total": 4}
+{"spec": "treaty-campo-formio-1797", "event": "usage", "blocks": [18, 28], "attempts": 1, "usage": {"tokens_in": 1389, "tokens_out": 6421, "cache_read": 1280, "cache_create": 0}, "latencyMs": 35185, "errorKind": null}
+{"spec": "treaty-campo-formio-1797", "event": "chunk", "done": 3, "total": 4}
+{"spec": "treaty-campo-formio-1797", "event": "usage", "blocks": [49, 74], "attempts": 1, "usage": {"tokens_in": 1188, "tokens_out": 9382, "cache_read": 1280, "cache_create": 0}, "latencyMs": 50483, "errorKind": null}
+{"spec": "treaty-campo-formio-1797", "event": "chunk", "done": 4, "total": 4}
+{"spec": "treaty-campo-formio-1797", "event": "tm", "segments": 75, "inserted": 74}
+{"spec": "treaty-campo-formio-1797", "event": "done", "stats": {"cached": 0, "translated": 4, "retried": 0, "failed": 0, "revalidated": 0, "providerCalls": 4, "tokensIn": 5235, "tokensOut": 25669}, "seconds": 50.5, "chunks": 4, "failures": [], "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-campo-formio-1797.html", "bytes": 14361, "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-campo-formio-1797.deepseek.cache.review.json", "strayCyrillic": []}

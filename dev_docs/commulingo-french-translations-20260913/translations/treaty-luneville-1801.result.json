@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 5,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 5,
+    "tokensIn": 5886,
+    "tokensOut": 24295
+  },
+  "seconds": 30.4,
+  "chunks": 5,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-luneville-1801.html",
+  "bytes": 15164,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaty-luneville-1801.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

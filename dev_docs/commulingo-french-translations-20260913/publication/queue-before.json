@@ -1,0 +1,170 @@
+[
+  {
+    "id": 2009,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 재정 위기가 주권의 위기로 바뀌다. 본문 표현: 특권 폐지. 작성 범위: 8월 4일 밤의 결의와 8월 11일까지 정리된 법령의 날짜·전문 범위 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-august-decrees-1789.html. 저본/범위: 1789년 8월 특권 폐지 법령 제1–19조. 사이트의 현대 서론 제외. 뒤의 1793년 법령은 별도 문헌이다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2010,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1789년: 의회와 거리와 농촌. 본문 표현: 1793년에 이루어졌다. 작성 범위: 1789년의 상환 원칙과 비교할 후속 폐지 법령. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-feudal-dues-abolition-1793.html. 저본/범위: 1793년 7월 17일 법령 제1–12조 전문. 1789년 법령과 구별한다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2011,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 성직자민사기본법. 작성 범위: 교구·주교·성직자 선출·급여의 법문 전체. 후속 선서령은 별도 문서로 표시. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-civil-constitution-clergy-1790.html. 저본/범위: 1790년 7월 12일 채택·8월 24일 재가된 성직자 시민헌법, 4편 전문. Briand의 1905년 의회 보고서 부록 431–445쪽 전사본. 저본 철자 보존; 지명 전사 오류는 후속 원판 대조 검수 대상이다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2012,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 입헌군주제의 제도와 균열. 본문 표현: 르 샤플리에 법. 작성 범위: 직업 결사와 집단 행동 금지 조문 전문; 기존 영어 전사와 프랑스어 원문 대조. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-le-chapelier-law-1791.html. 저본/범위: 1791년 6월 14일 채택, 6월 17일 공포본. Gueffier 1792년 법령집 11부 218–220쪽의 전사. 제1–8조와 공포·서명문을 포함한다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2013,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 1793년 헌법과 혁명정부의 간극. 본문 표현: 방토즈. 작성 범위: 방토즈 8일·13일 보고와 그에 대응하는 법령을 문서별로 나누어 전문 수록. 제안과 실행 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/saint-just-ventose-reports-decrees-1794.html. 저본/범위: 방토즈 8일·13일 보고 두 편과 각각의 최종 채택 법령 전문. Archives parlementaires, t. LXXXV, 516–520쪽; t. LXXXVI, 22–23쪽. 13일은 1794년 3월 3일이다. 22쪽 OCR 누락은 이미지 직접 전사. 현대 교감 주석·별개 초안은 제외. 13일 원판: https://archives-parlementaires.persee.fr/prt/7ec3b7fe-44bd-41d8-9ffa-f79a9b83fbba",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2014,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 여성의 참여와 시민권의 경계. 본문 표현: 여성 정치 결사의 금지. 작성 범위: 아마르 보고와 국민공회 결의를 구별하여 각 전문, 시민권 배제 논리 읽기. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-womens-clubs-ban-1793.html. 저본/범위: 1793년 10월 30일 Amar 보고 전문(Moniteur 재록)과 여성 클럽 금지 법령 2조. Archives parlementaires, t. LXXVIII, 49–51쪽. 49쪽 난외의 다른 신문 보도와 현대 주석을 제거하고 양 단의 보고를 연결했다. 저본 OCR 추가 대조 검수 필요.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2015,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolution-1789-1799; 식민지 노예제와 해방의 주체. 본문 표현: 1793년 생도맹그. 작성 범위: 북부 관구의 해방·노동 규정 전문. 1794년 국민공회 법령은 기존 문헌집으로 연결. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/sonthonax-emancipation-proclamation-1793.html. 저본/범위: 송토나의 1793년 8월 29일 북부 관구 포고. 서문·제1–38조·서명·인쇄소 표시 전문. Brown University 소장 인쇄본을 전사한 MJP 원문. 현대 서론과 오제 해설 제외.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2044,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 1792년 1월 연설. 작성 범위: 무장한 해방자 비판이 나오는 해당 연설 전문. 1791년 12월 연설과 날짜·경계를 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/robespierre-war-speech-1792-01-02.html. 저본/범위: 1792년 1월 2일 자코뱅 클럽 연설 전문. Les plus grandes questions로 시작하는 연설만 선택했다. 같은 페이지의 앞뒤 다른 연설·현대 저작권 표시는 제외했다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2045,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 브리소. 작성 범위: 로베스피에르와 대조할 1791년 12월 연설 1편. 16일·29일 등 재인용 날짜를 원어 회의록으로 확정한 후 전문 번역. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/brissot-war-speech-1791.html. 저본/범위: 1791년 12월 16일 자코뱅 클럽 개전 연설 전문. 당시 Patriote François 인쇄본, Newberry Library/Internet Archive, 1–23쪽. 29일 국민의회 연설과 구분. 페이지 번호·인쇄 기호를 제거하고 페이지를 넘어가는 문장을 연결했다. 4·8·11·13·14쪽의 판독 불명은 원판 대조로 수정했다. 추가 교열 전 검수용 번역이다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2046,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 혁명이 왜 유럽 전쟁으로 이어졌는가. 본문 표현: 필니츠 선언. 작성 범위: 프랑스 왕실 보호와 다른 열강 협력 조건을 포함한 선언 전문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.worldhistory.org/Declaration_of_Pillnitz/\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/declaration-pillnitz-1791.html. 저본/범위: 1791년 8월 27일 필니츠 선언 전문·서명. P.-P. Granié 1797년 판 265–266쪽 전사. 전사의 명백한 중복 mutuel mutuel만 한 번으로 정규화했다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2047,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 브라운슈바이크 선언. 작성 범위: 파리 주민·왕실 관련 위협 조항을 포함한 선언 전체. 현대 영어 번역을 그대로 저본으로 사용하지 말 것. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://edu.lvivcenter.org/en/reflection-text/the-brunswick-manifesto-1792/\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/brunswick-manifesto-1792.html. 저본/범위: 1792년 7월 25일 브라운슈바이크 선언 전문: 서문·8항·후속 경고·서명. Archives parlementaires, 1792년 8월 1일 회의 부록, t. XLVII, 372–373쪽 전사. 축약된 Jomini 전사 대신 의회 기록 전문 사용.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2048,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 1792년 4월 20일. 작성 범위: 보헤미아·헝가리 국왕에 대한 선전포고 법문과 국왕 제안의 문서 경계를 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-war-declaration-austria-1792.html. 저본/범위: 1792년 4월 20일 헝가리·보헤미아 왕에 대한 선전포고 최종 채택문 전문. Archives parlementaires, t. XLII, 1893, 210–218쪽 재록. 앞선 초안·토론·현대 해설 제외.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2049,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 외국 인민의 자유. 작성 범위: 국민공회의 혁명 지원 선언 전문, 점령지 12월 법령과 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-fraternity-decree-1792.html. 저본/범위: 1792년 11월 19일 우애·원조 법령과 다국어 인쇄·포고 명령 전문. Archives parlementaires 재록 MJP 전사본; 현대 해설과 다른 날짜의 보고 제외.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2050,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1792년: 초기 패배에서 발미와 제마프까지. 본문 표현: 해방의 약속. 작성 범위: 특권 폐지·재산·임시 행정과 프랑스군의 권한을 읽을 법문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-occupied-territories-decree-1792.html. 저본/범위: 1792년 12월 15일 원칙 채택·17일 최종 문안 채택. 제1–12조 및 부속 포고 전문. 22일 제3조 개정문은 후대에 삽입된 별도 법문이므로 본문에서 제외했다. Cambon 보고와 구분한다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2051,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 국민 총동원과 군대의 재편. 본문 표현: 국민총동원령. 작성 범위: 군복무·생산·운송·간호와 동원 조직을 포함한 법령 전체. 링크의 연표 요약을 법령 전문으로 오인하지 말 것. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://revolution.chnm.org/d/968\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/france-levee-en-masse-1793.html. 저본/범위: 1793년 8월 23일 총동원 법령 제1–18조 전문. Archives parlementaires, t. LXXII, 674–675쪽 이미지 직접 대조 전사. 제5조·17조의 498,200,000리브르 등 OCR 숫자 오류 수정. 회의 진행문·현대 주석 제외.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2053,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1794~1795년: 북부 전선의 역전과 동맹 이탈. 본문 표현: 바젤. 작성 범위: 1795년 4월 5일·7월 22일 조약 두 편 전문. 스페인령 산토도밍고 양도와 유럽 영토 조항 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://en.wikipedia.org/wiki/Peace_of_Basel\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/treaties-basel-1795.html. 저본/범위: 1795년 4월 5일 프로이센 조약 12조와 7월 22일 스페인 조약 17조·각 서문과 서명 전문. CERIC/Martens 전사와 Jomini 1837년 부록 대조. 페이지 머리말·중복 OCR·섞인 난외어를 정리했다. 비밀조항은 이 전사에 미수록. 스페인 저본: https://documentsdedroitinternational.fr/1795-22-juillet-traite-de-bale/",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2054,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이탈리아 원정과 자매공화국의 모순. 본문 표현: 캄포포르미오 조약. 작성 범위: 공개 조항·비밀조항 범위를 확정하고 베네치아·저지대·라인 조항을 전문으로 읽기. 일부 전사 사이트의 날짜 오기 대조. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon-series.org/research/government/diplomatic/c_campoformio1.html\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/treaty-campo-formio-1797.html. 저본/범위: 1797년 10월 17일 캄포포르미오 조약 공개 제1–25조·서명·총재정부 비준문 전문. 비밀조항은 이 저본에 수록되지 않아 별도 보강 필요. MJP와 비교하여 18 avril 1797의 공화력 오기(20 germinal an III)를 피했다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2055,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1801~1802년의 평화와 남은 문제. 본문 표현: 뤼네빌 조약. 작성 범위: 프랑스·오스트리아·제국의 영토와 공화국 승인 조항 전문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/treaty-luneville-1801.html. 저본/범위: 1801년 2월 9일 뤼네빌 조약: 서문·제1–19조·서명 및 별도 비밀조항 전문. Jules de Clercq, Recueil des traités de la France, 1864, t. I, 448–453쪽 전사.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2056,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 1801~1802년의 평화와 남은 문제. 본문 표현: 아미앵 조약. 작성 범위: 식민지 반환·트리니다드·실론·몰타와 철수 의무의 조항 전문. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/treaty-amiens-1802.html. 저본/범위: 1802년 3월 25일 아미앵 조약 서문·제1–22조·서명부. Gazette Nationale ou Le Moniteur Universel 1802년 3월 재록 전사. 후대 서지 안내 제외; 별도 추가문서는 이 저본에 없다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2057,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이집트와 시리아: 유럽 밖의 정복. 본문 표현: 이집트. 작성 범위: 프랑스어·아랍어 공표본의 차이와 날짜 확인, 해방·종교 존중의 주장과 점령 실제를 구별. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/bonaparte-egypt-proclamation-1798.html. 저본/범위: Œuvres de Napoléon Bonaparte, t. II (1821), 알렉산드리아 1798년 7월 1일/공화력 6년 메시도르 13일로 표기된 이집트 주민 대상 포고 전문. 서문·5조·서명 포함. 당시 프랑스어 포고문 판본이며 아랍어 포고와 구별한다.",
+    "resolved_id": "",
+    "resolution": ""
+  },
+  {
+    "id": 2058,
+    "kind": "doc",
+    "status": "pending",
+    "reason": "사용자 요청: 프랑스 혁명·혁명 전쟁 사건의 미등록 항목 및 추가 원사료 번역 큐. 연결: /commulingo/events/french-revolutionary-wars-1792-1802; 이집트와 시리아: 유럽 밖의 정복. 본문 표현: 이집트인과 시리아 주민. 작성 범위: 이집트 주민의 시각을 보완. 아랍어 저작·판본을 확정하고 1798년 점령·카이로 봉기 기록의 날짜 경계를 갖춘 범위를 선정; 발췌면 명시, 현대 영어 번역의 재번역 금지. 추가 한국어 원사료 번역 요청. 원어 판본·발행일·선택 범위·전문 여부를 확정한 뒤 번역 스펙 작성. 짧은 법령·선언·조약은 전문, 조약의 비밀조항·부속문서 유무도 명시. 현대 해설과 타인의 현대 번역문은 저본과 구별. 기존 문헌집 수록분·redirects·비공개/제외 문헌을 재확인하여 중복 발행 금지. doc 큐는 자동 번역/발행되지 않으므로 별도 번역 작업이 필요. 근거/저본 탐색: https://www.nam.ac.uk/explore/egyptian-campaign\n\n[프랑스 문헌 번역 진행 2026-09-14] DeepSeek Flash 추론 ON 한국어 초안 생성·자동 구조검증 통과. 미발행·교열 대기. 결과: dev_docs/commulingo-french-translations-20260913/translations/al-jabarti-french-occupation-1798.html. 저본/범위: عبد الرحمن الجبرتي, عجائب الآثار في التراجم والأخبار, 제4권, Hindawi 디지털 원문, 인쇄면 37–45쪽 중 히즈라력 1213년 주마다 알아우왈월 기록 전체. 1798년 카이로 봉기를 포함하는 날짜 경계가 있는 발췌다. 다음 주마다 앗사니월 직전까지; 책 전체 번역이 아니다. 아랍어 PDF의 우좌 순서와 Unicode 합자를 정규화했으며 현대 영어 번역을 거치지 않는다.",
+    "resolved_id": "",
+    "resolution": ""
+  }
+]

@@ -1,0 +1,185 @@
+{
+  "date": "2026-09-14",
+  "newTranslations": 21,
+  "referenceEntries": 8,
+  "collections": 7,
+  "standalone": 1,
+  "queueResolutions": [
+    {
+      "queueId": 2015,
+      "member": "sonthonax-emancipation-proclamation-1793",
+      "id": "france-rights-and-emancipation-1789-1794",
+      "anchor": "sonthonax-emancipation-proclamation-1793"
+    },
+    {
+      "queueId": 2014,
+      "member": "france-womens-clubs-ban-1793",
+      "id": "france-rights-and-emancipation-1789-1794",
+      "anchor": "france-womens-clubs-ban-1793"
+    },
+    {
+      "queueId": 2013,
+      "member": "saint-just-ventose-reports-decrees-1794",
+      "id": "france-subsistence-and-equality-1792-1796",
+      "anchor": "saint-just-ventose-reports-decrees-1794"
+    },
+    {
+      "queueId": 2009,
+      "member": "france-august-decrees-1789",
+      "id": "france-privileges-property-and-labor-1789-1793",
+      "anchor": "france-august-decrees-1789"
+    },
+    {
+      "queueId": 2012,
+      "member": "france-le-chapelier-law-1791",
+      "id": "france-privileges-property-and-labor-1789-1793",
+      "anchor": "france-le-chapelier-law-1791"
+    },
+    {
+      "queueId": 2010,
+      "member": "france-feudal-dues-abolition-1793",
+      "id": "france-privileges-property-and-labor-1789-1793",
+      "anchor": "france-feudal-dues-abolition-1793"
+    },
+    {
+      "queueId": 2046,
+      "member": "declaration-pillnitz-1791",
+      "id": "france-war-debate-and-declarations-1791-1792",
+      "anchor": "declaration-pillnitz-1791"
+    },
+    {
+      "queueId": 2045,
+      "member": "brissot-war-speech-1791",
+      "id": "france-war-debate-and-declarations-1791-1792",
+      "anchor": "brissot-war-speech-1791"
+    },
+    {
+      "queueId": 2044,
+      "member": "robespierre-war-speech-1792-01-02",
+      "id": "france-war-debate-and-declarations-1791-1792",
+      "anchor": "robespierre-war-speech-1792-01-02"
+    },
+    {
+      "queueId": 2048,
+      "member": "france-war-declaration-austria-1792",
+      "id": "france-war-debate-and-declarations-1791-1792",
+      "anchor": "france-war-declaration-austria-1792"
+    },
+    {
+      "queueId": 2047,
+      "member": "brunswick-manifesto-1792",
+      "id": "france-war-debate-and-declarations-1791-1792",
+      "anchor": "brunswick-manifesto-1792"
+    },
+    {
+      "queueId": 2049,
+      "member": "france-fraternity-decree-1792",
+      "id": "france-revolution-abroad-and-mobilization-1792-1793",
+      "anchor": "france-fraternity-decree-1792"
+    },
+    {
+      "queueId": 2050,
+      "member": "france-occupied-territories-decree-1792",
+      "id": "france-revolution-abroad-and-mobilization-1792-1793",
+      "anchor": "france-occupied-territories-decree-1792"
+    },
+    {
+      "queueId": 2051,
+      "member": "france-levee-en-masse-1793",
+      "id": "france-revolution-abroad-and-mobilization-1792-1793",
+      "anchor": "france-levee-en-masse-1793"
+    },
+    {
+      "queueId": 2053,
+      "member": "treaties-basel-1795",
+      "id": "france-revolutionary-peace-treaties-1795-1802",
+      "anchor": "treaties-basel-1795"
+    },
+    {
+      "queueId": 2054,
+      "member": "treaty-campo-formio-1797",
+      "id": "france-revolutionary-peace-treaties-1795-1802",
+      "anchor": "treaty-campo-formio-1797"
+    },
+    {
+      "queueId": 2055,
+      "member": "treaty-luneville-1801",
+      "id": "france-revolutionary-peace-treaties-1795-1802",
+      "anchor": "treaty-luneville-1801"
+    },
+    {
+      "queueId": 2056,
+      "member": "treaty-amiens-1802",
+      "id": "france-revolutionary-peace-treaties-1795-1802",
+      "anchor": "treaty-amiens-1802"
+    },
+    {
+      "queueId": 2057,
+      "member": "bonaparte-egypt-proclamation-1798",
+      "id": "egypt-french-proclamation-and-cairo-chronicle-1798",
+      "anchor": "bonaparte-egypt-proclamation-1798"
+    },
+    {
+      "queueId": 2058,
+      "member": "al-jabarti-french-occupation-1798",
+      "id": "egypt-french-proclamation-and-cairo-chronicle-1798",
+      "anchor": "al-jabarti-french-occupation-1798"
+    },
+    {
+      "queueId": 2011,
+      "member": "france-civil-constitution-clergy-1790",
+      "id": "france-civil-constitution-clergy-1790",
+      "anchor": ""
+    }
+  ],
+  "documents": [
+    {
+      "id": "france-rights-and-emancipation-1789-1794",
+      "members": 5,
+      "sha256": "3657b88a9e23e91947ac7a9ac577e16ef2fdb1f989ae534d313344d49f68e22e",
+      "characters": 28563
+    },
+    {
+      "id": "france-subsistence-and-equality-1792-1796",
+      "members": 4,
+      "sha256": "9bf5c1cf5fbe33446f31b6786ad69b331156b0fe02f6a78e790b81f01c074e72",
+      "characters": 31795
+    },
+    {
+      "id": "france-privileges-property-and-labor-1789-1793",
+      "members": 3,
+      "sha256": "a0acc247e0cb21df3cad41e5eb3fb5297c6bc2cafcdb117bee023b9cbdc0f32f",
+      "characters": 7447
+    },
+    {
+      "id": "france-war-debate-and-declarations-1791-1792",
+      "members": 5,
+      "sha256": "b62a9add8157c7228f5f6803f9180aea477122e96d57a13c0afb372cd6f7f03a",
+      "characters": 42032
+    },
+    {
+      "id": "france-revolution-abroad-and-mobilization-1792-1793",
+      "members": 3,
+      "sha256": "a21ccf6d8c78de7be682eeda2c450c6fd5ca98fa27c58c9f84329807ec1912f2",
+      "characters": 6448
+    },
+    {
+      "id": "france-revolutionary-peace-treaties-1795-1802",
+      "members": 4,
+      "sha256": "9aca280e34e2c7ef94a18a55562ae4324ec5bf25d5a6fc81143b94caa4d90939",
+      "characters": 25446
+    },
+    {
+      "id": "egypt-french-proclamation-and-cairo-chronicle-1798",
+      "members": 2,
+      "sha256": "dd37a0846a8036ebe288c63c866623b0abb6412374d1931b39eda03e7a1eaf77",
+      "characters": 14754
+    },
+    {
+      "id": "france-civil-constitution-clergy-1790",
+      "members": 0,
+      "sha256": "a470e8b3ce8acee1d963e304eb4da5dbb1273eb34553fd226525414368e174d4",
+      "characters": 13782
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-privileges-property-and-labor-1789-1793",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-war-debate-and-declarations-1791-1792",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-revolution-abroad-and-mobilization-1792-1793",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-revolutionary-peace-treaties-1795-1802",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/egypt-french-proclamation-and-cairo-chronicle-1798",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/france-civil-constitution-clergy-1790",
+    "status": 200
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/brissot-war-speech-1791",
+    "status": 301,
+    "location": "/commulingo/docs/france-war-debate-and-declarations-1791-1792#brissot-war-speech-1791"
+  },
+  {
+    "url": "https://cyber-lenin.com/commulingo/docs/al-jabarti-french-occupation-1798",
+    "status": 301,
+    "location": "/commulingo/docs/egypt-french-proclamation-and-cairo-chronicle-1798#al-jabarti-french-occupation-1798"
+  }
+]

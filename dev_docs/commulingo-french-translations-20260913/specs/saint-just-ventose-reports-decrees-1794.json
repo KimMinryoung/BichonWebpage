@@ -1,0 +1,51 @@
+{
+  "id": "saint-just-ventose-reports-decrees-1794",
+  "title": "생쥐스트의 방토즈 보고와 법령 (1794)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "방토즈 8일·13일 보고 두 편과 각각의 최종 채택 법령 전문. Archives parlementaires, t. LXXXV, 516–520쪽; t. LXXXVI, 22–23쪽. 13일은 1794년 3월 3일이다. 22쪽 OCR 누락은 이미지 직접 전사. 현대 교감 주석·별개 초안은 제외. 13일 원판: https://archives-parlementaires.persee.fr/prt/7ec3b7fe-44bd-41d8-9ffa-f79a9b83fbba"
+  ],
+  "bibliography": [
+    "https://www.persee.fr/doc/arcpa_0000-0000_1964_num_85_1_32659_t1_0516_0000_3",
+    "방토즈 8일·13일 보고 두 편과 각각의 최종 채택 법령 전문. Archives parlementaires, t. LXXXV, 516–520쪽; t. LXXXVI, 22–23쪽. 13일은 1794년 3월 3일이다. 22쪽 OCR 누락은 이미지 직접 전사. 현대 교감 주석·별개 초안은 제외. 13일 원판: https://archives-parlementaires.persee.fr/prt/7ec3b7fe-44bd-41d8-9ffa-f79a9b83fbba",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "saint-just-ventose-reports-decrees-1794",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/saint-just-ventose-reports-decrees-1794.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "41a0f6154c0ad190f8ee6e4f375992f5221f5e754c4b63e651d0e0142dcde13e",
+        "url": "https://www.persee.fr/doc/arcpa_0000-0000_1964_num_85_1_32659_t1_0516_0000_3"
+      },
+      "blocks": [
+        0,
+        88
+      ],
+      "startsWith": "Rapport du 8 ventôse an II (26 février 1794)",
+      "endsWith": "une instruction au présent décret pour en faciliter l’exécution »",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/saint-just-ventose-reports-decrees-1794.html",
+  "queueId": 2013,
+  "sourceContextChars": 600
+}

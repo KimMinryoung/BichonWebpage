@@ -1,0 +1,51 @@
+{
+  "id": "france-august-decrees-1789",
+  "title": "특권 폐지에 관한 8월 법령 (1789)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1789년 8월 특권 폐지 법령 제1–19조. 사이트의 현대 서론 제외. 뒤의 1793년 법령은 별도 문헌이다."
+  ],
+  "bibliography": [
+    "https://mjp.univ-perp.fr/france/1789nuit4aout.htm",
+    "1789년 8월 특권 폐지 법령 제1–19조. 사이트의 현대 서론 제외. 뒤의 1793년 법령은 별도 문헌이다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-august-decrees-1789",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-august-decrees-1789.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "2bb5dbcc074a102f7f8cdc2a0aaeb865730446098588f568e7fea2ee44788184",
+        "url": "https://mjp.univ-perp.fr/france/1789nuit4aout.htm"
+      },
+      "blocks": [
+        0,
+        44
+      ],
+      "startsWith": "Décret portant abolition du régime féodal,",
+      "endsWith": "4, 6, 7, 8 et 11 août-3 novembre 1789.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-august-decrees-1789.html",
+  "queueId": 2009,
+  "sourceContextChars": 600
+}

@@ -1,0 +1,51 @@
+{
+  "id": "treaties-basel-1795",
+  "title": "바젤 평화조약: 프로이센·스페인 (1795)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1795년 4월 5일 프로이센 조약 12조와 7월 22일 스페인 조약 17조·각 서문과 서명 전문. CERIC/Martens 전사와 Jomini 1837년 부록 대조. 페이지 머리말·중복 OCR·섞인 난외어를 정리했다. 비밀조항은 이 전사에 미수록. 스페인 저본: https://documentsdedroitinternational.fr/1795-22-juillet-traite-de-bale/"
+  ],
+  "bibliography": [
+    "https://documentsdedroitinternational.fr/1795-5-avril-traite-de-bale/",
+    "1795년 4월 5일 프로이센 조약 12조와 7월 22일 스페인 조약 17조·각 서문과 서명 전문. CERIC/Martens 전사와 Jomini 1837년 부록 대조. 페이지 머리말·중복 OCR·섞인 난외어를 정리했다. 비밀조항은 이 전사에 미수록. 스페인 저본: https://documentsdedroitinternational.fr/1795-22-juillet-traite-de-bale/",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "treaties-basel-1795",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/treaties-basel-1795.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "60beb18cf4fccdf6d27228360d3d8900755c968056c17778553db578ab24d0a4",
+        "url": "https://documentsdedroitinternational.fr/1795-5-avril-traite-de-bale/"
+      },
+      "blocks": [
+        0,
+        77
+      ],
+      "startsWith": "Traité de Paix, entre Sa Majesté le Roi de Prusse et la Républiqu",
+      "endsWith": "Signé : Francois Barthelemy, Domingo d’Yriarte.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/treaties-basel-1795.html",
+  "queueId": 2053,
+  "sourceContextChars": 600
+}

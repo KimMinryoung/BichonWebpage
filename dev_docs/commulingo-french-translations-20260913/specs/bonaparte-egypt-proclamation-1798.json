@@ -1,0 +1,51 @@
+{
+  "id": "bonaparte-egypt-proclamation-1798",
+  "title": "보나파르트의 이집트 주민에게 보내는 포고 (1798년 7월)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "Œuvres de Napoléon Bonaparte, t. II (1821), 알렉산드리아 1798년 7월 1일/공화력 6년 메시도르 13일로 표기된 이집트 주민 대상 포고 전문. 서문·5조·서명 포함. 당시 프랑스어 포고문 판본이며 아랍어 포고와 구별한다."
+  ],
+  "bibliography": [
+    "https://www.gutenberg.org/files/12782/12782-h/12782-h.htm",
+    "Œuvres de Napoléon Bonaparte, t. II (1821), 알렉산드리아 1798년 7월 1일/공화력 6년 메시도르 13일로 표기된 이집트 주민 대상 포고 전문. 서문·5조·서명 포함. 당시 프랑스어 포고문 판본이며 아랍어 포고와 구별한다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "bonaparte-egypt-proclamation-1798",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/bonaparte-egypt-proclamation-1798.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "8d0a8590896d5fb8725c7c8a607f4536c23053cb3fc0af723f11af2f2b1a31be",
+        "url": "https://www.gutenberg.org/files/12782/12782-h/12782-h.htm"
+      },
+      "blocks": [
+        0,
+        19
+      ],
+      "startsWith": "Alexandrie, le 13 messidor an 6 (1er juillet 1798).",
+      "endsWith": "BONAPARTE.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/bonaparte-egypt-proclamation-1798.html",
+  "queueId": 2057,
+  "sourceContextChars": 600
+}

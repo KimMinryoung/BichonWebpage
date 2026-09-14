@@ -1,0 +1,19 @@
+{
+  "stats": {
+    "cached": 0,
+    "translated": 1,
+    "retried": 0,
+    "failed": 0,
+    "revalidated": 0,
+    "providerCalls": 1,
+    "tokensIn": 1008,
+    "tokensOut": 7701
+  },
+  "seconds": 37.5,
+  "chunks": 1,
+  "failures": [],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-war-declaration-austria-1792.html",
+  "bytes": 3612,
+  "reviewOutput": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-war-declaration-austria-1792.deepseek.cache.review.json",
+  "strayCyrillic": []
+}

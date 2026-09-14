@@ -1,0 +1,80 @@
+[
+  {
+    "id": "bonaparte-egypt-proclamation-1798",
+    "before": "알렉산드리아, 메시도르 6년 13일",
+    "after": "알렉산드리아, 공화력 6년 메시도르 13일",
+    "count": 1
+  },
+  {
+    "id": "bonaparte-egypt-proclamation-1798",
+    "before": "<p>5. 셰이크",
+    "after": "<p>제5조. 셰이크",
+    "count": 1
+  },
+  {
+    "id": "saint-just-ventose-reports-decrees-1794",
+    "before": "벙토즈",
+    "after": "방토즈",
+    "count": 4
+  },
+  {
+    "id": "saint-just-ventose-reports-decrees-1794",
+    "before": "공공안전위원회",
+    "after": "공안위원회",
+    "count": 2
+  },
+  {
+    "id": "france-civil-constitution-clergy-1790",
+    "before": "성직자민사기본법 (1790년 7월 12일)",
+    "after": "성직자 시민헌법 (1790년 7월 12일)",
+    "count": 1
+  },
+  {
+    "id": "france-civil-constitution-clergy-1790",
+    "before": "아리에주의 것은 라미에에",
+    "after": "아리에주의 것은 파미에에",
+    "count": 1
+  },
+  {
+    "id": "france-civil-constitution-clergy-1790",
+    "before": "바스잘프의 것은 디종에",
+    "after": "바스잘프의 것은 디뉴에",
+    "count": 1
+  },
+  {
+    "id": "france-civil-constitution-clergy-1790",
+    "before": "랭스의 것은 북서부 관구",
+    "after": "렌의 것은 북서부 관구",
+    "count": 1
+  },
+  {
+    "id": "france-civil-constitution-clergy-1790",
+    "before": "인구가 1만 영혼인 곳에는 12명만",
+    "after": "인구가 1만 영혼 미만인 곳에는 12명만",
+    "count": 1
+  },
+  {
+    "id": "al-jabarti-french-occupation-1798",
+    "before": "알자바르티의 프랑스 점령 기록 (1798)",
+    "after": "알자바르티의 프랑스 점령 기록 (1798년, 발췌)",
+    "count": 1
+  },
+  {
+    "id": "france-womens-clubs-ban-1793",
+    "before": "<p>아마르, 일반안전위원회의 이름으로. 시민들이여, 여러분의 위원회는 쉬지 않고</p>\n<p>그저께",
+    "after": "<p>아마르, 일반안전위원회의 이름으로. 시민들이여, 여러분의 위원회는 쉬지 않고 그저께",
+    "count": 1
+  },
+  {
+    "id": "france-womens-clubs-ban-1793",
+    "before": "여러분이 어떤</p>\n<p>중요한 심의를",
+    "after": "여러분이 어떤 중요한 심의를",
+    "count": 1
+  },
+  {
+    "id": "france-womens-clubs-ban-1793",
+    "before": "자유 예술 결사의 회합",
+    "after": "자유로운 예술 결사의 회합",
+    "count": 1
+  }
+]

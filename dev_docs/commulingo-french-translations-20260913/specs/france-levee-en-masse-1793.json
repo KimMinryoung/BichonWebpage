@@ -1,0 +1,51 @@
+{
+  "id": "france-levee-en-masse-1793",
+  "title": "국민총동원령 (1793년 8월 23일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1793년 8월 23일 총동원 법령 제1–18조 전문. Archives parlementaires, t. LXXII, 674–675쪽 이미지 직접 대조 전사. 제5조·17조의 498,200,000리브르 등 OCR 숫자 오류 수정. 회의 진행문·현대 주석 제외."
+  ],
+  "bibliography": [
+    "https://www.persee.fr/doc/arcpa_0000-0000_1907_num_72_1_47449_t1_0674_0000_3",
+    "1793년 8월 23일 총동원 법령 제1–18조 전문. Archives parlementaires, t. LXXII, 674–675쪽 이미지 직접 대조 전사. 제5조·17조의 498,200,000리브르 등 OCR 숫자 오류 수정. 회의 진행문·현대 주석 제외.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-levee-en-masse-1793",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-levee-en-masse-1793.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "a171742c5771d5a3bcc6b1e4de5a17e3ad133d9226b86c9f74d6707f34564783",
+        "url": "https://www.persee.fr/doc/arcpa_0000-0000_1907_num_72_1_47449_t1_0674_0000_3"
+      },
+      "blocks": [
+        0,
+        39
+      ],
+      "startsWith": "La Convention nationale, après avoir entendu le rapport de son co",
+      "endsWith": "ra porté dans les départements par des courriers extraordinaires.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-levee-en-masse-1793.html",
+  "queueId": 2051,
+  "sourceContextChars": 600
+}

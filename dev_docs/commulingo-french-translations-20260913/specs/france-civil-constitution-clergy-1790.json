@@ -1,0 +1,51 @@
+{
+  "id": "france-civil-constitution-clergy-1790",
+  "title": "성직자민사기본법 (1790년 7월 12일)",
+  "byline": "원사료 한국어 번역",
+  "sourceLang": "fr",
+  "headnote": [
+    "1790년 7월 12일 채택·8월 24일 재가된 성직자 시민헌법, 4편 전문. Briand의 1905년 의회 보고서 부록 431–445쪽 전사본. 저본 철자 보존; 지명 전사 오류는 후속 원판 대조 검수 대상이다."
+  ],
+  "bibliography": [
+    "https://fr.wikisource.org/wiki/La_Séparation_des_Églises_et_de_l’État/Loi_du_24_août_1790",
+    "1790년 7월 12일 채택·8월 24일 재가된 성직자 시민헌법, 4편 전문. Briand의 1905년 의회 보고서 부록 431–445쪽 전사본. 저본 철자 보존; 지명 전사 오류는 후속 원판 대조 검수 대상이다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash, 추론 ON."
+  ],
+  "glossary": {
+    "people": "/home/grass/frontend/data/commulingo/people-snapshot.json",
+    "terms": "/home/grass/frontend/data/commulingo/terms-snapshot.json",
+    "extra": {
+      "Convention nationale": "국민공회",
+      "Assemblée nationale": "국민의회",
+      "Comité de salut public": "공안위원회",
+      "République batave": "바타비아 공화국",
+      "livres": "리브르",
+      "Sonthonax": "송토나",
+      "Corps législatif": "입법부"
+    }
+  },
+  "documents": [
+    {
+      "id": "france-civil-constitution-clergy-1790",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/sources/france-civil-constitution-clergy-1790.body.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "c5c0deb217c288269ac471812fd22da121231ecf7821813a84461c7732b99b47",
+        "url": "https://fr.wikisource.org/wiki/La_Séparation_des_Églises_et_de_l’État/Loi_du_24_août_1790"
+      },
+      "blocks": [
+        0,
+        208
+      ],
+      "startsWith": "LOI",
+      "endsWith": "e département, ils pourront continuer d’en exercer les fonctions.",
+      "heading": false,
+      "register": "한다체. 원문 전체를 요약·생략 없이 번역한다. 조항 번호와 문단·수치·단위·조건·예외를 보존한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/commulingo-french-translations-20260913/translations/france-civil-constitution-clergy-1790.html",
+  "queueId": 2011,
+  "sourceContextChars": 600
+}
