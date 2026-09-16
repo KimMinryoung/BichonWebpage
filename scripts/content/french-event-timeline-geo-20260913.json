@@ -1,0 +1,1859 @@
+{
+  "id": "french-event-timeline-geo-20260913",
+  "notes": {
+    "ko": "좌표는 도시·전장 일대의 근사 위치다. 화살표는 주요 이동 방향과 전역을 연결한 개략도이며 실제 도로·행군 궤적을 정밀하게 재현하지 않는다. 복합 항목은 명시한 대표 장소를 표시한다.",
+    "en": "Coordinates locate approximate city or battlefield areas. Arrows connect principal movements or campaign stages schematically, rather than reconstructing exact roads or marches. Composite entries use the named representative location."
+  },
+  "sources": [
+    "https://en.wikipedia.org/wiki/Tennis_Court_Oath",
+    "https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html",
+    "https://www.dbnl.org/tekst/molh003nieu07_01/molh003nieu07_01_1670.php",
+    "https://1798castlebar.ie/wp-content/uploads/2023/07/In-Humberts-Footsteps.pdf",
+    "https://unire.unige.it/handle/123456789/7775",
+    "https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio"
+  ],
+  "events": [
+    {
+      "id": "french-revolution-1789-1799",
+      "expected": [
+        {
+          "date": "1789.05.05",
+          "title": {
+            "ko": "삼부회 소집",
+            "en": "Estates-General convenes"
+          },
+          "body": {
+            "ko": "재정 위기가 국민 대표권 논쟁으로 확대되었다.",
+            "en": "The fiscal crisis became a dispute over national representation."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1789.06.17",
+          "title": {
+            "ko": "국민의회 선언",
+            "en": "National Assembly declared"
+          },
+          "body": {
+            "ko": "제3신분 대표들이 국민 대표기관을 선언했다.",
+            "en": "Third Estate deputies declared a national representative assembly."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1789.06.20",
+          "title": {
+            "ko": "테니스코트의 서약",
+            "en": "Tennis Court Oath"
+          },
+          "body": {
+            "ko": "헌법 제정 전 해산하지 않겠다고 서약했다.",
+            "en": "Deputies pledged not to disperse before establishing a constitution."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1789.07.14",
+          "title": {
+            "ko": "바스티유 습격",
+            "en": "Storming of the Bastille"
+          },
+          "body": {
+            "ko": "파리 민중의 무장행동이 왕권을 압박했다.",
+            "en": "Armed popular action in Paris challenged royal authority."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1789.08.04",
+          "title": {
+            "ko": "특권 폐지 결정",
+            "en": "Decisions against privilege"
+          },
+          "body": {
+            "ko": "8월 법령은 영주제 해체를 시작했으나 일부 부담은 상환 대상으로 남았다.",
+            "en": "August decrees began dismantling seigneurial privilege; some dues initially remained redeemable."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1789.08.26",
+          "title": {
+            "ko": "인간과 시민의 권리 선언",
+            "en": "Declaration of the Rights of Man and Citizen"
+          },
+          "body": {
+            "ko": "국민주권·법적 평등·소유권을 선언했다.",
+            "en": "Proclaimed national sovereignty, legal equality, and property rights."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1789.10.05–06",
+          "title": {
+            "ko": "베르사유 행진",
+            "en": "March on Versailles"
+          },
+          "body": {
+            "ko": "여성들이 앞장선 행진 뒤 왕실이 파리로 옮겨졌다.",
+            "en": "The women-led march brought the royal family to Paris."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1791.06.20–21",
+          "title": {
+            "ko": "바렌 도주 실패",
+            "en": "Flight to Varennes fails"
+          },
+          "body": {
+            "ko": "국왕의 도주 시도가 입헌군주제에 대한 신뢰를 흔들었다.",
+            "en": "The attempted royal flight undermined confidence in constitutional monarchy."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1791.09.03",
+          "title": {
+            "ko": "입헌군주제 헌법",
+            "en": "Constitutional monarchy"
+          },
+          "body": {
+            "ko": "헌법은 국왕과 입법의회를 두되 선거권을 제한했다.",
+            "en": "The constitution established king and assembly with restricted electoral participation."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1792.04.20",
+          "title": {
+            "ko": "오스트리아에 선전포고",
+            "en": "War declared on Austria"
+          },
+          "body": {
+            "ko": "전쟁과 국내 혁명이 서로를 급진화하기 시작했다.",
+            "en": "War and domestic revolution began intensifying one another."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1792.08.10",
+          "title": {
+            "ko": "왕권 정지",
+            "en": "Royal authority suspended"
+          },
+          "body": {
+            "ko": "튈르리 봉기 뒤 국왕의 권한이 정지되었다.",
+            "en": "The Tuileries insurrection led to suspension of royal authority."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1792.09.21",
+          "title": {
+            "ko": "왕정 폐지",
+            "en": "Monarchy abolished"
+          },
+          "body": {
+            "ko": "국민공회가 왕정을 폐지하고 다음 날부터 공화국 원년을 사용했다.",
+            "en": "The Convention abolished monarchy; republican dating began the next day."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1793.01.21",
+          "title": {
+            "ko": "루이 16세 처형",
+            "en": "Execution of Louis XVI"
+          },
+          "body": {
+            "ko": "국민공회의 재판과 표결 뒤 전 국왕이 처형되었다.",
+            "en": "The former king was executed after trial and votes in the Convention."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1793.06.24",
+          "title": {
+            "ko": "1793년 헌법 채택",
+            "en": "Constitution of 1793 adopted"
+          },
+          "body": {
+            "ko": "광범한 권리를 규정했으나 통상적 헌정 체제로 시행되지 못했다.",
+            "en": "It proclaimed extensive rights but never operated as regular constitutional government."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1793.09.17–29",
+          "title": {
+            "ko": "혐의자법과 일반최고가격법",
+            "en": "Suspects and General Maximum laws"
+          },
+          "body": {
+            "ko": "탄압 확대와 물가·임금 통제가 비상통치의 일부가 되었다.",
+            "en": "Wider repression and price and wage controls formed part of emergency government."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1794.02.04",
+          "title": {
+            "ko": "식민지 노예제 폐지 선언",
+            "en": "Colonial abolition decree"
+          },
+          "body": {
+            "ko": "국민공회가 노예제 폐지를 선언했으나 집행은 지역마다 달랐다.",
+            "en": "The Convention decreed abolition, with uneven implementation."
+          },
+          "country": [
+            "france",
+            "haiti"
+          ]
+        },
+        {
+          "date": "1794.07.27–28",
+          "title": {
+            "ko": "테르미도르",
+            "en": "Thermidor"
+          },
+          "body": {
+            "ko": "로베스피에르와 동료들이 체포되고 처형되었다.",
+            "en": "Robespierre and his allies were arrested and executed."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1795.08.22",
+          "title": {
+            "ko": "1795년 헌법",
+            "en": "Constitution of 1795"
+          },
+          "body": {
+            "ko": "양원제와 5인의 총재정부를 규정했다.",
+            "en": "Established two legislative chambers and a five-member Directory."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1796.05",
+          "title": {
+            "ko": "평등파 운동 탄압",
+            "en": "Suppression of the Equals"
+          },
+          "body": {
+            "ko": "바뵈프와 동료들의 운동이 탄압되었다.",
+            "en": "Babeuf and his associates’ movement was suppressed."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1799.11.09–10",
+          "title": {
+            "ko": "브뤼메르 쿠데타",
+            "en": "Brumaire coup"
+          },
+          "body": {
+            "ko": "총재정부가 무너지고 통령정부가 들어섰다.",
+            "en": "The Directory fell and the Consulate followed."
+          },
+          "country": [
+            "france"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1789.05.05",
+          "title": {
+            "ko": "삼부회 소집",
+            "en": "Estates-General convenes"
+          },
+          "body": {
+            "ko": "재정 위기가 국민 대표권 논쟁으로 확대되었다.",
+            "en": "The fiscal crisis became a dispute over national representation."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8049,
+            "lng": 2.1204,
+            "label": {
+              "ko": "베르사유 · 삼부회 소집",
+              "en": "Versailles · Estates-General"
+            }
+          }
+        },
+        {
+          "date": "1789.06.17",
+          "title": {
+            "ko": "국민의회 선언",
+            "en": "National Assembly declared"
+          },
+          "body": {
+            "ko": "제3신분 대표들이 국민 대표기관을 선언했다.",
+            "en": "Third Estate deputies declared a national representative assembly."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8049,
+            "lng": 2.1204,
+            "label": {
+              "ko": "베르사유 · 국민의회 선언",
+              "en": "Versailles · National Assembly"
+            }
+          }
+        },
+        {
+          "date": "1789.06.20",
+          "title": {
+            "ko": "테니스코트의 서약",
+            "en": "Tennis Court Oath"
+          },
+          "body": {
+            "ko": "헌법 제정 전 해산하지 않겠다고 서약했다.",
+            "en": "Deputies pledged not to disperse before establishing a constitution."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8015,
+            "lng": 2.1248,
+            "label": {
+              "ko": "베르사유 · 테니스코트의 서약",
+              "en": "Versailles · Tennis Court Oath"
+            }
+          }
+        },
+        {
+          "date": "1789.07.14",
+          "title": {
+            "ko": "바스티유 습격",
+            "en": "Storming of the Bastille"
+          },
+          "body": {
+            "ko": "파리 민중의 무장행동이 왕권을 압박했다.",
+            "en": "Armed popular action in Paris challenged royal authority."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8533,
+            "lng": 2.3692,
+            "label": {
+              "ko": "파리 · 바스티유",
+              "en": "Paris · Bastille"
+            }
+          }
+        },
+        {
+          "date": "1789.08.04",
+          "title": {
+            "ko": "특권 폐지 결정",
+            "en": "Decisions against privilege"
+          },
+          "body": {
+            "ko": "8월 법령은 영주제 해체를 시작했으나 일부 부담은 상환 대상으로 남았다.",
+            "en": "August decrees began dismantling seigneurial privilege; some dues initially remained redeemable."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8049,
+            "lng": 2.1204,
+            "label": {
+              "ko": "베르사유 · 특권 폐지 결정",
+              "en": "Versailles · Decisions against privilege"
+            }
+          }
+        },
+        {
+          "date": "1789.08.26",
+          "title": {
+            "ko": "인간과 시민의 권리 선언",
+            "en": "Declaration of the Rights of Man and Citizen"
+          },
+          "body": {
+            "ko": "국민주권·법적 평등·소유권을 선언했다.",
+            "en": "Proclaimed national sovereignty, legal equality, and property rights."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8049,
+            "lng": 2.1204,
+            "label": {
+              "ko": "베르사유 · 권리 선언 채택",
+              "en": "Versailles · Declaration of Rights"
+            }
+          }
+        },
+        {
+          "date": "1789.10.05–06",
+          "title": {
+            "ko": "베르사유 행진",
+            "en": "March on Versailles"
+          },
+          "body": {
+            "ko": "여성들이 앞장선 행진 뒤 왕실이 파리로 옮겨졌다.",
+            "en": "The women-led march brought the royal family to Paris."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "arrow",
+            "points": [
+              [
+                48.8566,
+                2.3522
+              ],
+              [
+                48.8049,
+                2.1204
+              ]
+            ],
+            "label": {
+              "ko": "파리 → 베르사유 행진 (개략)",
+              "en": "Paris → Versailles march (schematic)"
+            },
+            "actor": {
+              "ko": "여성들이 앞장선 행진대",
+              "en": "Women-led marchers"
+            }
+          }
+        },
+        {
+          "date": "1791.06.20–21",
+          "title": {
+            "ko": "바렌 도주 실패",
+            "en": "Flight to Varennes fails"
+          },
+          "body": {
+            "ko": "국왕의 도주 시도가 입헌군주제에 대한 신뢰를 흔들었다.",
+            "en": "The attempted royal flight undermined confidence in constitutional monarchy."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 49.227,
+            "lng": 5.034,
+            "label": {
+              "ko": "바렌앙아르곤 · 국왕의 도주 저지",
+              "en": "Varennes-en-Argonne · royal flight stopped"
+            }
+          }
+        },
+        {
+          "date": "1791.09.03",
+          "title": {
+            "ko": "입헌군주제 헌법",
+            "en": "Constitutional monarchy"
+          },
+          "body": {
+            "ko": "헌법은 국왕과 입법의회를 두되 선거권을 제한했다.",
+            "en": "The constitution established king and assembly with restricted electoral participation."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 1791년 헌법 채택",
+              "en": "Paris · Constitution of 1791"
+            }
+          }
+        },
+        {
+          "date": "1792.04.20",
+          "title": {
+            "ko": "오스트리아에 선전포고",
+            "en": "War declared on Austria"
+          },
+          "body": {
+            "ko": "전쟁과 국내 혁명이 서로를 급진화하기 시작했다.",
+            "en": "War and domestic revolution began intensifying one another."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 오스트리아에 선전포고",
+              "en": "Paris · Declaration of war on Austria"
+            }
+          }
+        },
+        {
+          "date": "1792.08.10",
+          "title": {
+            "ko": "왕권 정지",
+            "en": "Royal authority suspended"
+          },
+          "body": {
+            "ko": "튈르리 봉기 뒤 국왕의 권한이 정지되었다.",
+            "en": "The Tuileries insurrection led to suspension of royal authority."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8629,
+            "lng": 2.3325,
+            "label": {
+              "ko": "파리 · 튈르리 궁전 일대",
+              "en": "Paris · Tuileries Palace area"
+            }
+          }
+        },
+        {
+          "date": "1792.09.21",
+          "title": {
+            "ko": "왕정 폐지",
+            "en": "Monarchy abolished"
+          },
+          "body": {
+            "ko": "국민공회가 왕정을 폐지하고 다음 날부터 공화국 원년을 사용했다.",
+            "en": "The Convention abolished monarchy; republican dating began the next day."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 국민공회의 왕정 폐지",
+              "en": "Paris · Convention abolishes monarchy"
+            }
+          }
+        },
+        {
+          "date": "1793.01.21",
+          "title": {
+            "ko": "루이 16세 처형",
+            "en": "Execution of Louis XVI"
+          },
+          "body": {
+            "ko": "국민공회의 재판과 표결 뒤 전 국왕이 처형되었다.",
+            "en": "The former king was executed after trial and votes in the Convention."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8656,
+            "lng": 2.3212,
+            "label": {
+              "ko": "파리 · 혁명광장 (현재 콩코르드 광장)",
+              "en": "Paris · Place de la Révolution (now Place de la Concorde)"
+            }
+          }
+        },
+        {
+          "date": "1793.06.24",
+          "title": {
+            "ko": "1793년 헌법 채택",
+            "en": "Constitution of 1793 adopted"
+          },
+          "body": {
+            "ko": "광범한 권리를 규정했으나 통상적 헌정 체제로 시행되지 못했다.",
+            "en": "It proclaimed extensive rights but never operated as regular constitutional government."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 1793년 헌법 채택",
+              "en": "Paris · Constitution of 1793"
+            }
+          }
+        },
+        {
+          "date": "1793.09.17–29",
+          "title": {
+            "ko": "혐의자법과 일반최고가격법",
+            "en": "Suspects and General Maximum laws"
+          },
+          "body": {
+            "ko": "탄압 확대와 물가·임금 통제가 비상통치의 일부가 되었다.",
+            "en": "Wider repression and price and wage controls formed part of emergency government."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 혐의자법·일반최고가격법 채택",
+              "en": "Paris · Suspects and General Maximum laws"
+            }
+          }
+        },
+        {
+          "date": "1794.02.04",
+          "title": {
+            "ko": "식민지 노예제 폐지 선언",
+            "en": "Colonial abolition decree"
+          },
+          "body": {
+            "ko": "국민공회가 노예제 폐지를 선언했으나 집행은 지역마다 달랐다.",
+            "en": "The Convention decreed abolition, with uneven implementation."
+          },
+          "country": [
+            "france",
+            "haiti"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 국민공회의 식민지 노예제 폐지 선언",
+              "en": "Paris · Convention’s colonial abolition decree"
+            }
+          }
+        },
+        {
+          "date": "1794.07.27–28",
+          "title": {
+            "ko": "테르미도르",
+            "en": "Thermidor"
+          },
+          "body": {
+            "ko": "로베스피에르와 동료들이 체포되고 처형되었다.",
+            "en": "Robespierre and his allies were arrested and executed."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 테르미도르의 체포·처형",
+              "en": "Paris · Thermidor arrests and executions"
+            }
+          }
+        },
+        {
+          "date": "1795.08.22",
+          "title": {
+            "ko": "1795년 헌법",
+            "en": "Constitution of 1795"
+          },
+          "body": {
+            "ko": "양원제와 5인의 총재정부를 규정했다.",
+            "en": "Established two legislative chambers and a five-member Directory."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 1795년 헌법 채택",
+              "en": "Paris · Constitution of 1795"
+            }
+          }
+        },
+        {
+          "date": "1796.05",
+          "title": {
+            "ko": "평등파 운동 탄압",
+            "en": "Suppression of the Equals"
+          },
+          "body": {
+            "ko": "바뵈프와 동료들의 운동이 탄압되었다.",
+            "en": "Babeuf and his associates’ movement was suppressed."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 평등파 조직 탄압",
+              "en": "Paris · Suppression of the Equals"
+            }
+          }
+        },
+        {
+          "date": "1799.11.09–10",
+          "title": {
+            "ko": "브뤼메르 쿠데타",
+            "en": "Brumaire coup"
+          },
+          "body": {
+            "ko": "총재정부가 무너지고 통령정부가 들어섰다.",
+            "en": "The Directory fell and the Consulate followed."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8376,
+            "lng": 2.2147,
+            "label": {
+              "ko": "생클루 · 브뤼메르 쿠데타의 의회 해산",
+              "en": "Saint-Cloud · dispersal of the legislature during Brumaire"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "french-revolutionary-wars-1792-1802",
+      "expected": [
+        {
+          "date": "1791.08.27",
+          "title": {
+            "ko": "필니츠 선언",
+            "en": "Declaration of Pillnitz"
+          },
+          "body": {
+            "ko": "오스트리아와 프로이센이 조건부 공동행동 의사를 밝혔다.",
+            "en": "Austria and Prussia expressed conditional readiness for joint action."
+          },
+          "country": [
+            "austria",
+            "germany",
+            "france"
+          ]
+        },
+        {
+          "date": "1792.04.20",
+          "title": {
+            "ko": "전쟁 시작",
+            "en": "War begins"
+          },
+          "body": {
+            "ko": "프랑스가 오스트리아 군주에게 선전포고했다.",
+            "en": "France declared war on the Austrian ruler."
+          },
+          "country": [
+            "france",
+            "austria"
+          ]
+        },
+        {
+          "date": "1792.09.20",
+          "title": {
+            "ko": "발미",
+            "en": "Valmy"
+          },
+          "body": {
+            "ko": "프랑스군이 침공군의 진격을 막았다.",
+            "en": "French forces checked the invasion."
+          },
+          "country": [
+            "france",
+            "germany",
+            "austria"
+          ]
+        },
+        {
+          "date": "1792.11.06",
+          "title": {
+            "ko": "제마프",
+            "en": "Jemappes"
+          },
+          "body": {
+            "ko": "프랑스군의 오스트리아령 네덜란드 진출이 확대되었다.",
+            "en": "French advances in the Austrian Netherlands expanded."
+          },
+          "country": [
+            "france",
+            "austria",
+            "belgium"
+          ]
+        },
+        {
+          "date": "1793.02.01",
+          "title": {
+            "ko": "영국·네덜란드에 선전포고",
+            "en": "War with Britain and the Dutch Republic"
+          },
+          "body": {
+            "ko": "해상·식민지와 저지대 전쟁이 확대되었다.",
+            "en": "War widened at sea, overseas, and in the Low Countries."
+          },
+          "country": [
+            "france",
+            "uk",
+            "netherlands"
+          ]
+        },
+        {
+          "date": "1793.03.07",
+          "title": {
+            "ko": "스페인에 선전포고",
+            "en": "War with Spain"
+          },
+          "body": {
+            "ko": "피레네 전선이 열렸다.",
+            "en": "A Pyrenean front opened."
+          },
+          "country": [
+            "france",
+            "spain"
+          ]
+        },
+        {
+          "date": "1793.03.18",
+          "title": {
+            "ko": "네르빈던 패배",
+            "en": "Defeat at Neerwinden"
+          },
+          "body": {
+            "ko": "패배 뒤 뒤무리에가 오스트리아 측으로 넘어갔다.",
+            "en": "Dumouriez defected to Austria after the defeat."
+          },
+          "country": [
+            "france",
+            "austria",
+            "belgium"
+          ]
+        },
+        {
+          "date": "1793.08.23",
+          "title": {
+            "ko": "국민총동원령",
+            "en": "Levée en masse"
+          },
+          "body": {
+            "ko": "국민과 자원을 전쟁에 광범하게 동원했다.",
+            "en": "Mobilized people and resources broadly for war."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1794.06.26",
+          "title": {
+            "ko": "플뢰뤼스",
+            "en": "Fleurus"
+          },
+          "body": {
+            "ko": "승리가 오스트리아군의 저지대 철수를 촉진했다.",
+            "en": "French victory helped precipitate Austrian withdrawal."
+          },
+          "country": [
+            "france",
+            "belgium",
+            "austria"
+          ]
+        },
+        {
+          "date": "1795.01",
+          "title": {
+            "ko": "바타비아 공화국",
+            "en": "Batavian Republic"
+          },
+          "body": {
+            "ko": "프랑스군 진입과 네덜란드의 정치 변동이 결합했다.",
+            "en": "French military advances accompanied political transformation."
+          },
+          "country": [
+            "france",
+            "netherlands"
+          ]
+        },
+        {
+          "date": "1795.04–07",
+          "title": {
+            "ko": "바젤의 평화",
+            "en": "Peace settlements at Basel"
+          },
+          "body": {
+            "ko": "프로이센과 스페인이 각각 프랑스와 평화에 합의했다.",
+            "en": "Prussia and Spain separately made peace with France."
+          },
+          "country": [
+            "france",
+            "germany",
+            "spain"
+          ]
+        },
+        {
+          "date": "1796–1797",
+          "title": {
+            "ko": "이탈리아 원정",
+            "en": "Italian campaign"
+          },
+          "body": {
+            "ko": "보나파르트의 승리와 만토바 함락이 오스트리아를 압박했다.",
+            "en": "Bonaparte’s victories and Mantua’s fall increased pressure on Austria."
+          },
+          "country": [
+            "france",
+            "italy",
+            "austria"
+          ]
+        },
+        {
+          "date": "1797.10.17",
+          "title": {
+            "ko": "캄포포르미오 조약",
+            "en": "Treaty of Campo Formio"
+          },
+          "body": {
+            "ko": "오스트리아와 프랑스가 합의했으나 영국과의 전쟁은 계속되었다.",
+            "en": "Austria and France settled, while war with Britain continued."
+          },
+          "country": [
+            "france",
+            "austria",
+            "italy",
+            "belgium"
+          ]
+        },
+        {
+          "date": "1798.07–08",
+          "title": {
+            "ko": "이집트 침공과 나일 해전",
+            "en": "Egyptian invasion and Battle of the Nile"
+          },
+          "body": {
+            "ko": "프랑스군이 이집트를 점령했지만 함대가 파괴되었다.",
+            "en": "French forces occupied Egypt but their fleet was destroyed."
+          },
+          "country": [
+            "france",
+            "egypt",
+            "turkey",
+            "uk"
+          ]
+        },
+        {
+          "date": "1798.08–09",
+          "title": {
+            "ko": "아일랜드의 프랑스 원정군",
+            "en": "French expedition in Ireland"
+          },
+          "body": {
+            "ko": "봉기를 지원한 프랑스군이 패배했다.",
+            "en": "French troops supporting the rebellion were defeated."
+          },
+          "country": [
+            "france",
+            "ireland",
+            "uk"
+          ]
+        },
+        {
+          "date": "1799.04–08",
+          "title": {
+            "ko": "수보로프의 이탈리아 승리",
+            "en": "Suvorov’s victories in Italy"
+          },
+          "body": {
+            "ko": "오스트리아-러시아군이 프랑스군을 밀어냈다.",
+            "en": "Austro-Russian forces drove back the French."
+          },
+          "country": [
+            "france",
+            "italy",
+            "austria",
+            "russia"
+          ]
+        },
+        {
+          "date": "1799.09.25–26",
+          "title": {
+            "ko": "제2차 취리히 전투",
+            "en": "Second Battle of Zurich"
+          },
+          "body": {
+            "ko": "마세나의 승리가 동맹의 스위스 작전을 무너뜨렸다.",
+            "en": "Masséna’s victory disrupted coalition operations in Switzerland."
+          },
+          "country": [
+            "france",
+            "switzerland",
+            "russia"
+          ]
+        },
+        {
+          "date": "1799.11.09–10",
+          "title": {
+            "ko": "전쟁 중의 브뤼메르 쿠데타",
+            "en": "Brumaire during wartime"
+          },
+          "body": {
+            "ko": "보나파르트가 통령정부의 수장으로 부상했다.",
+            "en": "Bonaparte emerged as the leading figure of the Consulate."
+          },
+          "country": [
+            "france"
+          ]
+        },
+        {
+          "date": "1800.06.14",
+          "title": {
+            "ko": "마렝고",
+            "en": "Marengo"
+          },
+          "body": {
+            "ko": "프랑스군의 반격으로 오스트리아군이 패배했다.",
+            "en": "A French counterattack defeated the Austrians."
+          },
+          "country": [
+            "france",
+            "italy",
+            "austria"
+          ]
+        },
+        {
+          "date": "1800.12.03",
+          "title": {
+            "ko": "호엔린덴",
+            "en": "Hohenlinden"
+          },
+          "body": {
+            "ko": "모로의 승리가 오스트리아에 평화 압력을 높였다.",
+            "en": "Moreau’s victory increased pressure on Austria to make peace."
+          },
+          "country": [
+            "france",
+            "germany",
+            "austria"
+          ]
+        },
+        {
+          "date": "1801.02.09",
+          "title": {
+            "ko": "뤼네빌 조약",
+            "en": "Treaty of Lunéville"
+          },
+          "body": {
+            "ko": "프랑스의 라인강 좌안과 벨기에 지배를 확인했다.",
+            "en": "Confirmed French possession of the Rhine’s left bank and the Belgian provinces."
+          },
+          "country": [
+            "france",
+            "austria",
+            "germany",
+            "belgium"
+          ]
+        },
+        {
+          "date": "1801.06–09",
+          "title": {
+            "ko": "프랑스군의 이집트 철수",
+            "en": "French withdrawal from Egypt"
+          },
+          "body": {
+            "ko": "영국·오스만군의 공세 뒤 프랑스군이 항복하고 철수했다.",
+            "en": "French troops surrendered and withdrew after British-Ottoman operations."
+          },
+          "country": [
+            "france",
+            "egypt",
+            "turkey",
+            "uk"
+          ]
+        },
+        {
+          "date": "1802.03.25",
+          "title": {
+            "ko": "아미앵 조약",
+            "en": "Treaty of Amiens"
+          },
+          "body": {
+            "ko": "영국과 프랑스 및 그 동맹 사이에 평화가 성립했다.",
+            "en": "Peace was established between Britain, France, and their partners."
+          },
+          "country": [
+            "france",
+            "uk",
+            "spain",
+            "netherlands"
+          ]
+        },
+        {
+          "date": "1802.06.25",
+          "title": {
+            "ko": "프랑스-오스만 평화",
+            "en": "Franco-Ottoman peace"
+          },
+          "body": {
+            "ko": "이집트 원정으로 시작된 양국의 전쟁을 마무리했다.",
+            "en": "Concluded hostilities arising from the Egyptian expedition."
+          },
+          "country": [
+            "france",
+            "turkey",
+            "egypt"
+          ]
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1791.08.27",
+          "title": {
+            "ko": "필니츠 선언",
+            "en": "Declaration of Pillnitz"
+          },
+          "body": {
+            "ko": "오스트리아와 프로이센이 조건부 공동행동 의사를 밝혔다.",
+            "en": "Austria and Prussia expressed conditional readiness for joint action."
+          },
+          "country": [
+            "austria",
+            "germany",
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 51.0089,
+            "lng": 13.8708,
+            "label": {
+              "ko": "필니츠 궁전 · 공동 선언",
+              "en": "Pillnitz Palace · joint declaration"
+            }
+          }
+        },
+        {
+          "date": "1792.04.20",
+          "title": {
+            "ko": "전쟁 시작",
+            "en": "War begins"
+          },
+          "body": {
+            "ko": "프랑스가 오스트리아 군주에게 선전포고했다.",
+            "en": "France declared war on the Austrian ruler."
+          },
+          "country": [
+            "france",
+            "austria"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 오스트리아에 선전포고",
+              "en": "Paris · Declaration of war on Austria"
+            }
+          }
+        },
+        {
+          "date": "1792.09.20",
+          "title": {
+            "ko": "발미",
+            "en": "Valmy"
+          },
+          "body": {
+            "ko": "프랑스군이 침공군의 진격을 막았다.",
+            "en": "French forces checked the invasion."
+          },
+          "country": [
+            "france",
+            "germany",
+            "austria"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 49.086,
+            "lng": 4.774,
+            "label": {
+              "ko": "발미 전장",
+              "en": "Valmy battlefield"
+            }
+          }
+        },
+        {
+          "date": "1792.11.06",
+          "title": {
+            "ko": "제마프",
+            "en": "Jemappes"
+          },
+          "body": {
+            "ko": "프랑스군의 오스트리아령 네덜란드 진출이 확대되었다.",
+            "en": "French advances in the Austrian Netherlands expanded."
+          },
+          "country": [
+            "france",
+            "austria",
+            "belgium"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 50.45,
+            "lng": 3.89,
+            "label": {
+              "ko": "제마프 전장",
+              "en": "Jemappes battlefield"
+            }
+          }
+        },
+        {
+          "date": "1793.02.01",
+          "title": {
+            "ko": "영국·네덜란드에 선전포고",
+            "en": "War with Britain and the Dutch Republic"
+          },
+          "body": {
+            "ko": "해상·식민지와 저지대 전쟁이 확대되었다.",
+            "en": "War widened at sea, overseas, and in the Low Countries."
+          },
+          "country": [
+            "france",
+            "uk",
+            "netherlands"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 영국·네덜란드에 선전포고",
+              "en": "Paris · Declaration of war on Britain and the Dutch Republic"
+            }
+          }
+        },
+        {
+          "date": "1793.03.07",
+          "title": {
+            "ko": "스페인에 선전포고",
+            "en": "War with Spain"
+          },
+          "body": {
+            "ko": "피레네 전선이 열렸다.",
+            "en": "A Pyrenean front opened."
+          },
+          "country": [
+            "france",
+            "spain"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 스페인에 선전포고",
+              "en": "Paris · Declaration of war on Spain"
+            }
+          }
+        },
+        {
+          "date": "1793.03.18",
+          "title": {
+            "ko": "네르빈던 패배",
+            "en": "Defeat at Neerwinden"
+          },
+          "body": {
+            "ko": "패배 뒤 뒤무리에가 오스트리아 측으로 넘어갔다.",
+            "en": "Dumouriez defected to Austria after the defeat."
+          },
+          "country": [
+            "france",
+            "austria",
+            "belgium"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 50.766,
+            "lng": 5.041,
+            "label": {
+              "ko": "네르빈던 전장",
+              "en": "Neerwinden battlefield"
+            }
+          }
+        },
+        {
+          "date": "1793.08.23",
+          "title": {
+            "ko": "국민총동원령",
+            "en": "Levée en masse"
+          },
+          "body": {
+            "ko": "국민과 자원을 전쟁에 광범하게 동원했다.",
+            "en": "Mobilized people and resources broadly for war."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 국민총동원령 채택",
+              "en": "Paris · Adoption of the levée en masse"
+            }
+          }
+        },
+        {
+          "date": "1794.06.26",
+          "title": {
+            "ko": "플뢰뤼스",
+            "en": "Fleurus"
+          },
+          "body": {
+            "ko": "승리가 오스트리아군의 저지대 철수를 촉진했다.",
+            "en": "French victory helped precipitate Austrian withdrawal."
+          },
+          "country": [
+            "france",
+            "belgium",
+            "austria"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 50.483,
+            "lng": 4.55,
+            "label": {
+              "ko": "플뢰뤼스 전장",
+              "en": "Fleurus battlefield"
+            }
+          }
+        },
+        {
+          "date": "1795.01",
+          "title": {
+            "ko": "바타비아 공화국",
+            "en": "Batavian Republic"
+          },
+          "body": {
+            "ko": "프랑스군 진입과 네덜란드의 정치 변동이 결합했다.",
+            "en": "French military advances accompanied political transformation."
+          },
+          "country": [
+            "france",
+            "netherlands"
+          ],
+          "geo": {
+            "kind": "arrow",
+            "points": [
+              [
+                52.091,
+                5.122
+              ],
+              [
+                52.3676,
+                4.9041
+              ]
+            ],
+            "label": {
+              "ko": "위트레흐트 → 암스테르담 진출 (개략)",
+              "en": "Utrecht → Amsterdam advance (schematic)"
+            },
+            "actor": {
+              "ko": "프랑스군",
+              "en": "French army"
+            }
+          }
+        },
+        {
+          "date": "1795.04–07",
+          "title": {
+            "ko": "바젤의 평화",
+            "en": "Peace settlements at Basel"
+          },
+          "body": {
+            "ko": "프로이센과 스페인이 각각 프랑스와 평화에 합의했다.",
+            "en": "Prussia and Spain separately made peace with France."
+          },
+          "country": [
+            "france",
+            "germany",
+            "spain"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 47.5596,
+            "lng": 7.5886,
+            "label": {
+              "ko": "바젤 · 프로이센·스페인과의 평화",
+              "en": "Basel · settlements with Prussia and Spain"
+            }
+          }
+        },
+        {
+          "date": "1796–1797",
+          "title": {
+            "ko": "이탈리아 원정",
+            "en": "Italian campaign"
+          },
+          "body": {
+            "ko": "보나파르트의 승리와 만토바 함락이 오스트리아를 압박했다.",
+            "en": "Bonaparte’s victories and Mantua’s fall increased pressure on Austria."
+          },
+          "country": [
+            "france",
+            "italy",
+            "austria"
+          ],
+          "geo": {
+            "kind": "arrow",
+            "points": [
+              [
+                44.307,
+                8.481
+              ],
+              [
+                44.43,
+                8.334
+              ],
+              [
+                44.39,
+                7.82
+              ],
+              [
+                45.052,
+                9.693
+              ],
+              [
+                45.314,
+                9.503
+              ],
+              [
+                45.4642,
+                9.19
+              ],
+              [
+                45.156,
+                10.791
+              ]
+            ],
+            "label": {
+              "ko": "이탈리아 원정 (개략)",
+              "en": "Italian campaign (schematic)"
+            },
+            "actor": {
+              "ko": "보나파르트의 이탈리아 방면군",
+              "en": "Bonaparte’s Army of Italy"
+            }
+          }
+        },
+        {
+          "date": "1797.10.17",
+          "title": {
+            "ko": "캄포포르미오 조약",
+            "en": "Treaty of Campo Formio"
+          },
+          "body": {
+            "ko": "오스트리아와 프랑스가 합의했으나 영국과의 전쟁은 계속되었다.",
+            "en": "Austria and France settled, while war with Britain continued."
+          },
+          "country": [
+            "france",
+            "austria",
+            "italy",
+            "belgium"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 46.019,
+            "lng": 13.159,
+            "label": {
+              "ko": "캄포포르미도 · 조약의 명칭이 된 마을",
+              "en": "Campoformido · village giving the treaty its name"
+            }
+          }
+        },
+        {
+          "date": "1798.07–08",
+          "title": {
+            "ko": "이집트 침공과 나일 해전",
+            "en": "Egyptian invasion and Battle of the Nile"
+          },
+          "body": {
+            "ko": "프랑스군이 이집트를 점령했지만 함대가 파괴되었다.",
+            "en": "French forces occupied Egypt but their fleet was destroyed."
+          },
+          "country": [
+            "france",
+            "egypt",
+            "turkey",
+            "uk"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 31.32,
+            "lng": 30.07,
+            "label": {
+              "ko": "아부키르만 · 나일 해전",
+              "en": "Aboukir Bay · Battle of the Nile"
+            }
+          }
+        },
+        {
+          "date": "1798.08–09",
+          "title": {
+            "ko": "아일랜드의 프랑스 원정군",
+            "en": "French expedition in Ireland"
+          },
+          "body": {
+            "ko": "봉기를 지원한 프랑스군이 패배했다.",
+            "en": "French troops supporting the rebellion were defeated."
+          },
+          "country": [
+            "france",
+            "ireland",
+            "uk"
+          ],
+          "geo": {
+            "kind": "arrow",
+            "points": [
+              [
+                54.212,
+                -9.221
+              ],
+              [
+                54.114,
+                -9.155
+              ],
+              [
+                54.029,
+                -9.322
+              ],
+              [
+                53.855,
+                -9.298
+              ]
+            ],
+            "label": {
+              "ko": "아일랜드 초기 진군 (개략)",
+              "en": "Early advance in Ireland (schematic)"
+            },
+            "actor": {
+              "ko": "앙베르의 프랑스군과 아일랜드 반란군",
+              "en": "Humbert’s French and Irish forces"
+            }
+          }
+        },
+        {
+          "date": "1799.04–08",
+          "title": {
+            "ko": "수보로프의 이탈리아 승리",
+            "en": "Suvorov’s victories in Italy"
+          },
+          "body": {
+            "ko": "오스트리아-러시아군이 프랑스군을 밀어냈다.",
+            "en": "Austro-Russian forces drove back the French."
+          },
+          "country": [
+            "france",
+            "italy",
+            "austria",
+            "russia"
+          ],
+          "geo": {
+            "kind": "arrow",
+            "points": [
+              [
+                45.438,
+                10.992
+              ],
+              [
+                45.526,
+                9.515
+              ],
+              [
+                45.4642,
+                9.19
+              ],
+              [
+                45.07,
+                7.687
+              ],
+              [
+                45.044,
+                9.615
+              ],
+              [
+                44.761,
+                8.786
+              ]
+            ],
+            "label": {
+              "ko": "이탈리아 전역 (개략)",
+              "en": "Italian campaign stages (schematic)"
+            },
+            "actor": {
+              "ko": "수보로프의 오스트리아-러시아군",
+              "en": "Suvorov’s Austro-Russian army"
+            }
+          }
+        },
+        {
+          "date": "1799.09.25–26",
+          "title": {
+            "ko": "제2차 취리히 전투",
+            "en": "Second Battle of Zurich"
+          },
+          "body": {
+            "ko": "마세나의 승리가 동맹의 스위스 작전을 무너뜨렸다.",
+            "en": "Masséna’s victory disrupted coalition operations in Switzerland."
+          },
+          "country": [
+            "france",
+            "switzerland",
+            "russia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 47.377,
+            "lng": 8.542,
+            "label": {
+              "ko": "취리히 · 제2차 취리히 전투",
+              "en": "Zurich · Second Battle of Zurich"
+            }
+          }
+        },
+        {
+          "date": "1799.11.09–10",
+          "title": {
+            "ko": "전쟁 중의 브뤼메르 쿠데타",
+            "en": "Brumaire during wartime"
+          },
+          "body": {
+            "ko": "보나파르트가 통령정부의 수장으로 부상했다.",
+            "en": "Bonaparte emerged as the leading figure of the Consulate."
+          },
+          "country": [
+            "france"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8376,
+            "lng": 2.2147,
+            "label": {
+              "ko": "생클루 · 브뤼메르 쿠데타",
+              "en": "Saint-Cloud · Brumaire coup"
+            }
+          }
+        },
+        {
+          "date": "1800.06.14",
+          "title": {
+            "ko": "마렝고",
+            "en": "Marengo"
+          },
+          "body": {
+            "ko": "프랑스군의 반격으로 오스트리아군이 패배했다.",
+            "en": "A French counterattack defeated the Austrians."
+          },
+          "country": [
+            "france",
+            "italy",
+            "austria"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 44.886,
+            "lng": 8.677,
+            "label": {
+              "ko": "마렝고 전장",
+              "en": "Marengo battlefield"
+            }
+          }
+        },
+        {
+          "date": "1800.12.03",
+          "title": {
+            "ko": "호엔린덴",
+            "en": "Hohenlinden"
+          },
+          "body": {
+            "ko": "모로의 승리가 오스트리아에 평화 압력을 높였다.",
+            "en": "Moreau’s victory increased pressure on Austria to make peace."
+          },
+          "country": [
+            "france",
+            "germany",
+            "austria"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.156,
+            "lng": 11.998,
+            "label": {
+              "ko": "호엔린덴 전장",
+              "en": "Hohenlinden battlefield"
+            }
+          }
+        },
+        {
+          "date": "1801.02.09",
+          "title": {
+            "ko": "뤼네빌 조약",
+            "en": "Treaty of Lunéville"
+          },
+          "body": {
+            "ko": "프랑스의 라인강 좌안과 벨기에 지배를 확인했다.",
+            "en": "Confirmed French possession of the Rhine’s left bank and the Belgian provinces."
+          },
+          "country": [
+            "france",
+            "austria",
+            "germany",
+            "belgium"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.593,
+            "lng": 6.493,
+            "label": {
+              "ko": "뤼네빌 · 평화조약",
+              "en": "Lunéville · peace treaty"
+            }
+          }
+        },
+        {
+          "date": "1801.06–09",
+          "title": {
+            "ko": "프랑스군의 이집트 철수",
+            "en": "French withdrawal from Egypt"
+          },
+          "body": {
+            "ko": "영국·오스만군의 공세 뒤 프랑스군이 항복하고 철수했다.",
+            "en": "French troops surrendered and withdrew after British-Ottoman operations."
+          },
+          "country": [
+            "france",
+            "egypt",
+            "turkey",
+            "uk"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 31.2,
+            "lng": 29.9187,
+            "label": {
+              "ko": "알렉산드리아 · 프랑스군의 항복과 철수",
+              "en": "Alexandria · French surrender and withdrawal"
+            }
+          }
+        },
+        {
+          "date": "1802.03.25",
+          "title": {
+            "ko": "아미앵 조약",
+            "en": "Treaty of Amiens"
+          },
+          "body": {
+            "ko": "영국과 프랑스 및 그 동맹 사이에 평화가 성립했다.",
+            "en": "Peace was established between Britain, France, and their partners."
+          },
+          "country": [
+            "france",
+            "uk",
+            "spain",
+            "netherlands"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 49.894,
+            "lng": 2.295,
+            "label": {
+              "ko": "아미앵 · 평화조약",
+              "en": "Amiens · peace treaty"
+            }
+          }
+        },
+        {
+          "date": "1802.06.25",
+          "title": {
+            "ko": "프랑스-오스만 평화",
+            "en": "Franco-Ottoman peace"
+          },
+          "body": {
+            "ko": "이집트 원정으로 시작된 양국의 전쟁을 마무리했다.",
+            "en": "Concluded hostilities arising from the Egyptian expedition."
+          },
+          "country": [
+            "france",
+            "turkey",
+            "egypt"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "label": {
+              "ko": "파리 · 프랑스-오스만 평화조약",
+              "en": "Paris · Franco-Ottoman peace treaty"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
