@@ -72,7 +72,7 @@ function validateFields(fields, current, action, sources) {
     for (const field of ['people','events']) if (fields[field] !== undefined &&
         (!Array.isArray(fields[field]) || fields[field].some(v => typeof v !== 'string' || !v))) throw badRequest(`invalid ${field}`);
     const evidence = fields.evidence || [];
-    if (!Array.isArray(evidence) || evidence.length > 50) throw badRequest('at most 50 evidence items');
+    if (!Array.isArray(evidence)) throw badRequest('evidence must be an array');
     for (const e of evidence) {
         if (!e || !Object.hasOwn(fields,e.field) || typeof e.claim !== 'string' || !e.claim.trim()
             || !sources.includes(e.source) || typeof e.locator !== 'string' || !e.locator.trim()

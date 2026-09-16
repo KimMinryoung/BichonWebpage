@@ -29,7 +29,7 @@ function validateEditorial(payload, options = {}, section = false) {
         }
     }
     const evidence = payload.evidence ?? [];
-    if (!Array.isArray(evidence) || evidence.length > 50) throw badRequest('evidence must be an array of at most 50 claims');
+    if (!Array.isArray(evidence)) throw badRequest('evidence must be an array');
     for (const e of evidence) {
         if (!e || typeof e !== 'object' || !['supports', 'disputes'].includes(e.stance || 'supports')
             || !['field', 'claim', 'source', 'locator', 'excerpt', 'stance'].every(k => e[k] === undefined || typeof e[k] === 'string')

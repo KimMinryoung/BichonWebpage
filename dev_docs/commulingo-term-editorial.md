@@ -36,3 +36,5 @@ node scripts/test-commulingo-pipeline-db.js
 Python의 term_editorial_service와 legacy_shared_budget은 준비 이후 활성화한다.
 파이프라인은 draft → 작업군별 하루 한 건 canary → live 순으로 전환한다.
 운영 frontend 재시작은 기존 `scripts/deploy --restart` 절차를 사용한다.
+
+인물·절·용어 근거 배열은 개수 상한 없이 검증한다. 많은 근거를 이유로 거절하지 않으며, 각 항목의 출처·필드·인용 형식과 변경 사실의 지원 여부는 계속 검사한다.
