@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "viewports": [
+    {
+      "width": 390,
+      "sections": 11,
+      "author": "CommuLingo 편집부",
+      "overflow": false,
+      "tableCount": 0,
+      "hasInstitutions": true
+    },
+    {
+      "width": 1280,
+      "sections": 11,
+      "author": "CommuLingo 편집부",
+      "overflow": false,
+      "tableCount": 0,
+      "hasInstitutions": true
+    }
+  ]
+}
