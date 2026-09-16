@@ -5730,6 +5730,47 @@
         "국민의회",
         "중앙위원회"
       ]
+    },
+    {
+      "id": "barnave-royal-inviolability-1791",
+      "file": "barnave-royal-inviolability-1791.html",
+      "docLang": "ko",
+      "title": {
+        "ko": "바르나브, 국왕의 불가침성·권력 분립과 혁명의 종결",
+        "en": "Barnave: Royal Inviolability, Separation of Powers and the End of the Revolution"
+      },
+      "description": {
+        "ko": "1791년 7월 15일 제헌국민의회 연설. 바렌 도주 이후 국왕의 불가침성, 권력 분립과 혁명 종결을 옹호한 바르나브의 논증. 프랑스 국민의회 웹 전사본에 실린 연설 전체의 한국어 번역.",
+        "en": "Korean translation of all speech text reproduced on the French National Assembly website: Barnave’s defence of royal inviolability, separation of powers and ending the Revolution, 15 July 1791."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "Antoine Barnave, « L’inviolabilité royale, la séparation des pouvoirs et la terminaison de la Révolution française », Assemblée constituante, 15 juillet 1791. Assemblée nationale, https://www.assemblee-nationale.fr/histoire/7ea.asp (열람: 2026-09-16). 한국어 번역: CommuLingo, DeepSeek Flash; 웹 전사본 수록 연설 전체, 후대 해설·도판 제외.",
+      "aliases": {
+        "ko": [
+          "『국왕의 불가침성, 권력 분립과 프랑스 혁명의 종결』"
+        ],
+        "en": []
+      },
+      "noAutoLink": [
+        "국민의회",
+        "국민대표회의",
+        "행정위원회"
+      ],
+      "date": "1791-07-15",
+      "people": [
+        "antoine-barnave"
+      ],
+      "terms": [
+        "constitutional-monarchy",
+        "national-sovereignty"
+      ],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "addedAt": "2026-09-16"
     }
   ],
   "redirects": {

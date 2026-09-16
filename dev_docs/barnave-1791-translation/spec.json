@@ -1,0 +1,57 @@
+{
+  "id": "barnave-royal-inviolability-1791",
+  "title": "국왕의 불가침성, 권력 분립과 프랑스 혁명의 종결",
+  "byline": "앙투안 바르나브",
+  "bylineNote": "1791년 7월 15일 제헌국민의회 연설",
+  "sourceLang": "fr",
+  "headnote": [
+    "바렌 도주 사건 뒤 국왕의 지위를 둘러싼 논쟁에서 바르나브는 국왕의 불가침성과 권력 분립을 옹호하며 혁명을 종결할 것을 주장했다. 프랑스 국민의회 웹페이지에 수록된 연설 본문 전체를 옮겼다."
+  ],
+  "bibliography": [
+    "발표: 1791년 7월 15일, 제헌국민의회.",
+    "번역 저본: Assemblée nationale, « L’inviolabilité royale, la séparation des pouvoirs et la terminaison de la Révolution française », https://www.assemblee-nationale.fr/histoire/7ea.asp (2026년 9월 16일 열람).",
+    "수록 범위: 바르나브의 등단 기록부터 마지막 박수 기록까지. 웹페이지의 후대 인물·사건 해설과 도판은 제외했다. 연설 원판 전체와 웹 전사본의 일치 여부를 확정하는 표기는 아니다.",
+    "옮긴이 일러두기: 소괄호 안의 회의장 반응과 대괄호 안의 저본 설명을 보존했다. inviolabilité는 불가침성, sanction은 국왕의 재가, déchéance는 왕위 박탈로 옮긴다.",
+    "한국어 번역: CommuLingo, DeepSeek Flash. 프랑스어 웹 전사본과 대조 검수."
+  ],
+  "glossary": {
+    "extra": {
+      "Barnave": "바르나브",
+      "Duport": "뒤포르",
+      "Buzot": "뷔조",
+      "Salle": "살",
+      "Assemblée nationale": "국민의회",
+      "Constitution": "헌법",
+      "inviolabilité": "불가침성",
+      "sanction": "재가",
+      "déchéance": "왕위 박탈",
+      "Convention nationale": "국민대표회의",
+      "Corps législatif": "입법부"
+    },
+    "people": "/home/grass/frontend/dev_docs/barnave-1791-translation/empty-people.json",
+    "terms": "/home/grass/frontend/dev_docs/barnave-1791-translation/empty-terms.json"
+  },
+  "documents": [
+    {
+      "id": "barnave-speech",
+      "titleKo": "",
+      "source": {
+        "path": "/home/grass/frontend/dev_docs/barnave-1791-translation/source.fr.html",
+        "format": "html",
+        "selector": "article",
+        "sha256": "e746a87d7fc7c70e53e33fb0fcf71b84d2f6f26e230517b906ec1de654052271",
+        "url": "https://www.assemblee-nationale.fr/histoire/7ea.asp"
+      },
+      "blocks": [
+        0,
+        23
+      ],
+      "startsWith": "M. Barnave (il monte à la trib",
+      "endsWith": "rojet des comités. (Applaudissements répétés)",
+      "heading": false,
+      "register": "하십시오체 의회 연설. 모든 문장과 논증, 괄호의 반응과 대괄호 설명을 생략 없이 옮긴다. 여기서 Convention nationale는 1792년 국민공회가 아니라 영국의 비상 국민대표회의이므로 국민대표회의로 번역한다."
+    }
+  ],
+  "output": "/home/grass/frontend/dev_docs/barnave-1791-translation/translated.html",
+  "frozen": "공개본은 reviewed.html. 원문 대조 교정과 출처 링크를 적용했으므로 재실행 전에 공개본을 보존하고 재검수할 것."
+}

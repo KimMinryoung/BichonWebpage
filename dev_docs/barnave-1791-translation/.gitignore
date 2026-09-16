@@ -1,0 +1,5 @@
+*.cache.jsonl
+translated.html
+translated.result.json
+translated.assembly.json
+translated.deepseek.cache.*
