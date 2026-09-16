@@ -5157,18 +5157,18 @@
       "docLang": "ko",
       "date": "2026-09-13",
       "title": {
-        "ko": "프랑스 국민의회 혁명사 읽기: 세력 관계와 혁명정부, 1791–1794",
-        "en": "Reading the French National Assembly: Factions and Revolutionary Government, 1791–1794"
+        "ko": "프랑스 혁명의 세력 관계와 혁명정부, 1791–1794",
+        "en": "Factions and Revolutionary Government in the French Revolution, 1791–1794"
       },
       "description": {
-        "ko": "프랑스 국민의회 자료를 바탕으로 푀양파 분리, 1792년 전쟁과 왕정 붕괴, 국민공회 세력 구도, 공포정치와 법령, 테르미도르를 하나의 한국어 해설 문헌으로 묶고 1차 사료 전문 번역과 연결한다.",
-        "en": "A Korean annotated guide consolidating French National Assembly materials on the Feuillant split, war and abolition of monarchy in 1792, Convention factions, the Terror, law, and Thermidor, linked to complete primary-source translations in CommuLingo."
+        "ko": "입헌군주제에서 공화국·혁명정부로의 전환을 다룬 11개 절의 해설. 정파와 국가기구, 국민총동원, 가격·임금 통제, 혐의자법, 프레리알법, 테르미도르를 구체적인 조항 및 연설과 연결한다.",
+        "en": "An eleven-section Korean guide to factions, institutions, mobilisation, price and wage controls, the Law of Suspects, the Law of 22 Prairial and Thermidor, with links to primary texts."
       },
       "kind": {
         "ko": "연구서",
         "en": "Scholarship"
       },
-      "source": "French National Assembly: Barnave (1791), war and Girondin mobilisation (1792), 10 August and abolition of monarchy (1792), the National Convention, and La Terreur (1793–1794). 한국어 해제는 원문 전문 번역이 아니라, 이 사이트의 현대 해설과 수록 1차 사료를 바탕으로 CommuLingo가 작성했다.",
+      "source": "CommuLingo 편집부, 2026-09-16 개정. 프랑스 국민의회 혁명사 자료; 1791·1793·1795년 헌법; 바르나브·로베스피에르 연설; 국민총동원령·일반최고가격법·혐의자법·프레리알법; Larousse의 제도·사건 해설; Musée Carnavalet, Paris 1793–1794 (2024). 각 절에 출처와 사료 링크 수록.",
       "people": [
         "maximilien-robespierre",
         "louis-antoine-de-saint-just",
@@ -5201,7 +5201,8 @@
         "en": [
           "French National Assembly guide to the Terror"
         ]
-      }
+      },
+      "updatedAt": "2026-09-16"
     },
     {
       "id": "france-revolutionary-government-and-justice-1793-1794",
