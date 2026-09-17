@@ -1,0 +1,59 @@
+{
+  "applied": true,
+  "terms": [
+    {
+      "id": "committee-of-general-security",
+      "action": "create",
+      "suggestionId": "9984",
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "revision": "v1-f7959f64118f19b3a47f430e23a0059abdb4b84de2835d2f1e67bf96ff4c4684"
+    },
+    {
+      "id": "representatives-on-mission",
+      "action": "create",
+      "suggestionId": "9985",
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "revision": "v1-c70ff595d27003d2bd3cedde4f3ffd59a077d9747c6917abeca5e0adae73490a"
+    },
+    {
+      "id": "local-surveillance-committees-french-revolution",
+      "action": "create",
+      "suggestionId": "9986",
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "revision": "v1-cd3b731f6ca3e6ecef4b3733fb2f24cd30bcca3313a4c84175b73f7c6826016b"
+    },
+    {
+      "id": "revolutionary-tribunal-france",
+      "action": "create",
+      "suggestionId": "9987",
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "revision": "v1-2245b1b5cf320950cafc9885249b21c215db891823f4d26320ae75dc2a68fd3a"
+    },
+    {
+      "id": "national-convention",
+      "action": "update",
+      "suggestionId": "9988",
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "revision": "v1-b66929d4375876a4a7b5781423744ae320e0ddea3ccad92d94b0e9e77b70b93b"
+    },
+    {
+      "id": "committee-of-public-safety",
+      "action": "update",
+      "suggestionId": "9989",
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "revision": "v1-11d1ee3c445132759bb9446cc80b99b23a1b10efd4322b42b510ac16524d517b"
+    }
+  ]
+}

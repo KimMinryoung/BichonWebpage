@@ -5187,7 +5187,12 @@
       "terms": [
         "law-of-suspects-1793",
         "committee-of-public-safety",
-        "law-of-22-prairial"
+        "law-of-22-prairial",
+        "national-convention",
+        "committee-of-general-security",
+        "representatives-on-mission",
+        "local-surveillance-committees-french-revolution",
+        "revolutionary-tribunal-france"
       ],
       "events": [
         "french-revolution-1789-1799"
@@ -5202,7 +5207,7 @@
           "French National Assembly guide to the Terror"
         ]
       },
-      "updatedAt": "2026-09-16"
+      "updatedAt": "2026-09-17"
     },
     {
       "id": "france-revolutionary-government-and-justice-1793-1794",
@@ -5229,7 +5234,11 @@
         "law-of-suspects-1793",
         "national-convention",
         "committee-of-public-safety",
-        "law-of-22-prairial"
+        "law-of-22-prairial",
+        "committee-of-general-security",
+        "representatives-on-mission",
+        "local-surveillance-committees-french-revolution",
+        "revolutionary-tribunal-france"
       ],
       "events": [
         "french-revolution-1789-1799",
@@ -5257,7 +5266,8 @@
         "france-law-of-suspects-1793",
         "robespierre-political-morality-1794",
         "france-law-22-prairial-1794"
-      ]
+      ],
+      "updatedAt": "2026-09-17"
     },
     {
       "id": "robespierre-republican-morality-supreme-being-thermidor-1794",
