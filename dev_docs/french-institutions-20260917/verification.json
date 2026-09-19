@@ -1,0 +1,37 @@
+{
+  "eventStatus": 200,
+  "event": {
+    "links": [
+      {
+        "id": "committee-of-general-security",
+        "present": true
+      },
+      {
+        "id": "representatives-on-mission",
+        "present": true
+      },
+      {
+        "id": "local-surveillance-committees-french-revolution",
+        "present": true
+      },
+      {
+        "id": "revolutionary-tribunal-france",
+        "present": true
+      },
+      {
+        "id": "national-convention",
+        "present": true
+      },
+      {
+        "id": "committee-of-public-safety",
+        "present": true
+      }
+    ],
+    "overflow": false
+  },
+  "guideStatus": 200,
+  "guideLinks": true,
+  "termStatus": 200,
+  "termBackLink": true,
+  "termReference": true
+}

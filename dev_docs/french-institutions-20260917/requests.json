@@ -1,0 +1,314 @@
+[
+  {
+    "id": "committee-of-general-security",
+    "action": "create",
+    "fields": {
+      "term": {
+        "ko": "일반안전위원회",
+        "en": "Committee of General Security"
+      },
+      "original": "Comité de sûreté générale",
+      "period": {
+        "ko": "1792~1795년",
+        "en": "1792–1795"
+      },
+      "startYear": 1792,
+      "endYear": 1795,
+      "category": "party-state",
+      "definition": {
+        "ko": "프랑스 국민공회의 정치적 감시·치안 위원회. 지역의 체포 기록을 모으고 혐의자 수사와 혁명재판소 회부에 관여했다.",
+        "en": "A National Convention committee responsible for political surveillance and policing, receiving arrest records and participating in investigations and referrals to the Revolutionary Tribunal."
+      },
+      "body": {
+        "ko": "국민공회 의원들로 구성되어 의회에 책임을 지는 중앙기관이었다. 군사·외교와 정부 집행을 조정한 공안위원회와 별도로 치안·감시 업무를 맡았다.\n\n1793년 혐의자법 제9조는 지역 감시위원회가 체포 명단, 체포 사유, 압수 서류를 일반안전위원회에 보내도록 했다. 지역에서 작성한 혐의 정보가 중앙에 모이는 제도적 통로였다.\n\n1794년 프레리알 22일 법 제10조는 이 위원회를 혁명재판소에 피고인을 회부할 수 있는 기관으로 규정했다. 제18조는 기소 사유가 없다는 재판소의 결정도 공안위원회와 일반안전위원회의 심사를 거치도록 했다. 체포·기소를 감독하는 위원회와 평결·판결을 담당하는 재판소의 역할은 서로 달랐다.",
+        "en": "A central committee drawn from Convention deputies and accountable to the assembly, it handled policing separately from the military, diplomatic and executive coordination of the Committee of Public Safety.\n\nArticle 9 of the Law of Suspects required local surveillance committees to send it lists of detainees, grounds for arrest and seized papers. This connected local surveillance to central supervision.\n\nArticles 10 and 18 of the Law of 22 Prairial authorised it to refer defendants to the Revolutionary Tribunal and, with the Committee of Public Safety, examine decisions to drop cases. The committee supervised policing and referrals; the tribunal delivered verdicts and sentences."
+      },
+      "aliases": {
+        "ko": [
+          "일반보안위원회",
+          "일반치안위원회"
+        ],
+        "en": [
+          "Comité de sûreté générale"
+        ]
+      },
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "국민공회의 치안·감시기관이며 체포 기록과 재판 회부를 다뤘다.",
+          "source": "https://www.larousse.fr/archives/histoire_de_france/page/273",
+          "locator": "Comité de sûreté générale: organisation et attributions"
+        },
+        {
+          "field": "body",
+          "claim": "혐의자법은 지역의 체포 기록 보고를, 프레리알법은 재판 회부와 기소 제외 심사를 규정한다.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "제9조"
+        },
+        {
+          "field": "body",
+          "claim": "혁명재판소 회부 및 사건 제외 심사에 참여했다.",
+          "source": "https://www.cercle-du-barreau.org/media/00/01/591063394.pdf",
+          "locator": "제10·18조"
+        },
+        {
+          "field": "period",
+          "claim": "국민공회 일반안전위원회는 1792~1795년에 활동했다.",
+          "source": "https://www.larousse.fr/archives/histoire_de_france/page/273",
+          "locator": "Comité de sûreté générale 첫 문단"
+        },
+        {
+          "field": "startYear",
+          "claim": "국민공회 일반안전위원회는 1792~1795년에 활동했다.",
+          "source": "https://www.larousse.fr/archives/histoire_de_france/page/273",
+          "locator": "Comité de sûreté générale 첫 문단"
+        },
+        {
+          "field": "endYear",
+          "claim": "국민공회 일반안전위원회는 1792~1795년에 활동했다.",
+          "source": "https://www.larousse.fr/archives/histoire_de_france/page/273",
+          "locator": "Comité de sûreté générale 첫 문단"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.larousse.fr/archives/histoire_de_france/page/273",
+      "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+      "https://www.cercle-du-barreau.org/media/00/01/591063394.pdf"
+    ]
+  },
+  {
+    "id": "representatives-on-mission",
+    "action": "create",
+    "fields": {
+      "term": {
+        "ko": "파견의원",
+        "en": "Representatives on Mission"
+      },
+      "original": "Représentants en mission",
+      "period": {
+        "ko": "1793년 이후 국민공회 시기",
+        "en": "Convention period, from 1793"
+      },
+      "startYear": 1793,
+      "category": "party-state",
+      "definition": {
+        "ko": "프랑스 국민공회가 지방이나 군대에 보내 중앙의 법령을 집행하고 병력 충원·보급·지휘부·행정을 감독하게 한 의원.",
+        "en": "Convention deputies sent to departments or armies to enforce central decrees and supervise recruitment, supplies, military commanders and administration."
+      },
+      "body": {
+        "ko": "1793년 병력 충원과 전선의 위기 속에서 국민공회 의원의 지방·군대 파견이 확대되었다. 파견의원은 현지 사정을 보고하는 데 그치지 않고 징발, 군 지휘부와 행정기관 감독 등 집행 권한을 행사했다.\n\n생쥐스트와 르바의 라인군 파견은 군대 감독의 사례다. 낭트의 카리에, 리옹의 콜로 데르부아와 푸셰처럼 지방 진압을 지휘한 의원도 있었다. 임무와 권한은 파견 명령과 현지 상황에 따라 달랐다.\n\n지역 감시위원회가 관할 주민의 혐의를 조사하는 지방기관이었다면, 파견의원은 국민공회의 위임을 받아 지방과 군대에 개입하는 중앙의 대표였다.",
+        "en": "The Convention expanded missions to departments and armies during the recruitment and military crises of 1793. Deputies exercised executive powers over requisitions, commanders and local authorities as well as reporting to Paris.\n\nSaint-Just and Le Bas served with the Army of the Rhine. Carrier at Nantes and Collot d’Herbois and Fouché at Lyon directed repression. Their assignments and powers depended on their commissions and local circumstances.\n\nUnlike a local surveillance committee, a representative on mission was a deputy exercising authority delegated by the national assembly."
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Représentants en mission"
+        ]
+      },
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "국민공회 의원을 지방과 군대에 보내 법령 집행과 군사·행정을 감독하게 했다.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/repr%C3%A9sentant_en_mission/87631",
+          "locator": "정의 및 1793년 3월 파견 설명"
+        },
+        {
+          "field": "body",
+          "claim": "징발·지휘관 통제와 생쥐스트·르바·카리에·콜로 데르부아·푸셰의 파견 사례.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/repr%C3%A9sentant_en_mission/87631",
+          "locator": "파견의원의 권한과 사례 문단"
+        },
+        {
+          "field": "period",
+          "claim": "1793년부터 국민공회 의원 파견이 확대되었다.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/repr%C3%A9sentant_en_mission/87631",
+          "locator": "1793년 3월 파견 설명"
+        },
+        {
+          "field": "startYear",
+          "claim": "1793년 병력 충원과 함께 파견 체계가 확대되었다.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/repr%C3%A9sentant_en_mission/87631",
+          "locator": "1793년 3월 파견 설명"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.larousse.fr/encyclopedie/divers/repr%C3%A9sentant_en_mission/87631"
+    ]
+  },
+  {
+    "id": "local-surveillance-committees-french-revolution",
+    "action": "create",
+    "fields": {
+      "term": {
+        "ko": "지역 감시위원회 (프랑스 혁명)",
+        "en": "Local Surveillance Committees (French Revolution)"
+      },
+      "original": "Comités de surveillance",
+      "period": {
+        "ko": "1793년 이후 프랑스 혁명기",
+        "en": "French Revolution, from 1793"
+      },
+      "startYear": 1793,
+      "category": "party-state",
+      "definition": {
+        "ko": "프랑스 혁명기에 코뮌·도시 구역에서 혐의자를 조사하고 명단·체포 영장을 작성하여 중앙에 보고한 지역 위원회.",
+        "en": "Local committees in revolutionary France that investigated suspects, compiled lists, issued arrest warrants and reported to central authorities."
+      },
+      "body": {
+        "ko": "1793년 3월 21일 법률에 따른 지역 감시위원회는 9월 17일 혐의자법의 주요 집행기관이 되었다. 제3조는 관할구역의 혐의자 명단 작성, 체포 영장 발부와 서류 봉인을 맡겼다.\n\n제4조는 적어도 7명의 위원이 모이고 절대다수가 찬성해야 체포를 명령하도록 했다. 제9조는 체포 명단·이유·압수 서류를 일반안전위원회에 보내도록 했다. 지역에서 수집한 평판과 행동에 대한 정보가 중앙의 정치적 감시로 이어졌다.\n\n위원회의 체포는 형사재판의 유죄 판결과 달랐다. 혐의자법 제7조는 구금을 평화가 올 때까지로 정했고, 제10조는 법원이 불기소·무죄 판결 뒤에도 구금을 유지할 수 있게 했다. 위원회는 이처럼 예방적 구금을 확대하는 체계의 지역 접점이었다.",
+        "en": "Committees established under the law of 21 March 1793 became key local agents of the Law of Suspects. Article 3 assigned them suspect lists, arrest warrants and the sealing of papers.\n\nArticle 4 required at least seven members and an absolute majority for arrest orders. Article 9 required lists, reasons and seized papers to be sent to the Committee of General Security, connecting local information to central political policing.\n\nAn arrest was not a criminal conviction. Article 7 provided for detention until peace, while Article 10 allowed courts to maintain detention after dismissal or acquittal. Local committees operated within this system of preventive detention."
+      },
+      "aliases": {
+        "ko": [
+          "지역 감시위원회",
+          "프랑스 혁명 감시위원회"
+        ],
+        "en": [
+          "Comités de surveillance"
+        ]
+      },
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "혐의자 명단·영장·서류 봉인과 중앙 보고가 지역 위원회의 임무였다.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "제3·9조"
+        },
+        {
+          "field": "body",
+          "claim": "위원회 의결 요건, 중앙 보고와 예방적 구금 절차.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "제3·4·7·9·10조"
+        },
+        {
+          "field": "period",
+          "claim": "1793년 3월 21일 법률에 따라 설립된 위원회.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "제3조"
+        },
+        {
+          "field": "startYear",
+          "claim": "1793년 3월 21일 법률에 따른 위원회.",
+          "source": "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects",
+          "locator": "제3조"
+        }
+      ]
+    },
+    "sources": [
+      "https://fr.wikisource.org/wiki/D%C3%A9cret_du_17_septembre_1793_relatif_aux_gens_suspects"
+    ]
+  },
+  {
+    "id": "revolutionary-tribunal-france",
+    "action": "create",
+    "fields": {
+      "term": {
+        "ko": "혁명재판소 (프랑스)",
+        "en": "Revolutionary Tribunal (France)"
+      },
+      "original": "Tribunal révolutionnaire",
+      "period": {
+        "ko": "1793~1795년",
+        "en": "1793–1795"
+      },
+      "startYear": 1793,
+      "endYear": 1795,
+      "category": "party-state",
+      "definition": {
+        "ko": "1793년 3월 10일 국민공회가 파리에 설치한 특별 형사재판소. 반혁명 혐의 사건을 심리했으며 1795년 5월 31일 폐지되었다.",
+        "en": "An exceptional criminal court established in Paris by the Convention on 10 March 1793 to try counter-revolutionary cases; abolished on 31 May 1795."
+      },
+      "body": {
+        "ko": "국민공회가 설치한 특별재판소로, 공소관이 기소하고 배심원과 판사가 평결·판결을 담당했다. 지방 감시위원회의 체포나 중앙위원회의 수사와 구별되는 재판기관이었다.\n\n1794년 6월 10일 프레리알 22일 법은 인민의 적이라는 범주를 넓히고 관할 범죄의 형을 사형으로 정했다. 증거가 있으면 증인 심문을 생략할 수 있게 했으며, 별도 변호인의 방어도 없앴다. 제10조는 재판소에 피고인을 회부할 수 있는 기관과 직책을 규정했다.\n\n테르미도르 뒤 재판소는 재편되었고 1795년 5월 31일 폐지되었다. 이 항목은 프랑스 혁명기의 파리 재판소를 다룬다.",
+        "en": "The Convention created this exceptional court with a public prosecutor, jurors and judges. It tried cases, whereas local surveillance committees and central committees handled arrests, investigations and referrals.\n\nThe Law of 22 Prairial, adopted on 10 June 1794, broadened the category of enemies of the people and made death the penalty for offences within its jurisdiction. It permitted witness hearings to be omitted when other evidence existed and removed separate defence counsel. Article 10 specified who could refer defendants.\n\nReorganised after Thermidor, the tribunal was abolished on 31 May 1795. This entry concerns the Paris court during the French Revolution."
+      },
+      "aliases": {
+        "ko": [
+          "프랑스 혁명재판소",
+          "파리 혁명재판소"
+        ],
+        "en": [
+          "Tribunal révolutionnaire"
+        ]
+      },
+      "events": [
+        "french-revolution-1789-1799"
+      ],
+      "evidence": [
+        {
+          "field": "definition",
+          "claim": "파리 특별재판소의 설립과 폐지.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/Tribunal_r%C3%A9volutionnaire/147421",
+          "locator": "개요와 폐지 문단"
+        },
+        {
+          "field": "body",
+          "claim": "프레리알법의 범죄 범주·사형·증인·변호·회부 절차.",
+          "source": "https://www.cercle-du-barreau.org/media/00/01/591063394.pdf",
+          "locator": "제5–16조"
+        },
+        {
+          "field": "body",
+          "claim": "테르미도르 이후 재편과 1795년 폐지.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/Tribunal_r%C3%A9volutionnaire/147421",
+          "locator": "마지막 문단"
+        },
+        {
+          "field": "period",
+          "claim": "재판소는 1793년 3월 10일부터 1795년 5월 31일까지 존속했다.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/Tribunal_r%C3%A9volutionnaire/147421",
+          "locator": "개요와 폐지 문단"
+        },
+        {
+          "field": "startYear",
+          "claim": "재판소는 1793년 3월 10일부터 1795년 5월 31일까지 존속했다.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/Tribunal_r%C3%A9volutionnaire/147421",
+          "locator": "개요와 폐지 문단"
+        },
+        {
+          "field": "endYear",
+          "claim": "재판소는 1793년 3월 10일부터 1795년 5월 31일까지 존속했다.",
+          "source": "https://www.larousse.fr/encyclopedie/divers/Tribunal_r%C3%A9volutionnaire/147421",
+          "locator": "개요와 폐지 문단"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.larousse.fr/encyclopedie/divers/Tribunal_r%C3%A9volutionnaire/147421",
+      "https://www.cercle-du-barreau.org/media/00/01/591063394.pdf"
+    ]
+  },
+  {
+    "id": "national-convention",
+    "action": "update",
+    "fields": {},
+    "sources": [
+      "https://www.larousse.fr/archives/histoire_de_france/page/273"
+    ],
+    "appendEvents": [
+      "french-revolution-1789-1799"
+    ]
+  },
+  {
+    "id": "committee-of-public-safety",
+    "action": "update",
+    "fields": {},
+    "sources": [
+      "https://www.larousse.fr/archives/histoire_de_france/page/273"
+    ],
+    "appendEvents": [
+      "french-revolution-1789-1799"
+    ]
+  }
+]

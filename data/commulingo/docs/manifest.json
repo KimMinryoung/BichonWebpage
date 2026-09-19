@@ -5126,7 +5126,9 @@
         "republic",
         "national-convention"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5153,6 +5155,7 @@
       "id": "france-national-assembly-terror-guide-1793-1794",
       "file": "france-national-assembly-terror-guide-1793-1794.html",
       "docLang": "ko",
+      "date": "2026-09-13",
       "title": {
         "ko": "프랑스 혁명의 세력 관계와 혁명정부, 1791–1794",
         "en": "Factions and Revolutionary Government in the French Revolution, 1791–1794"
@@ -5166,17 +5169,6 @@
         "en": "Scholarship"
       },
       "source": "CommuLingo 편집부, 2026-09-16 개정. 프랑스 국민의회 혁명사 자료; 1791·1793·1795년 헌법; 바르나브·로베스피에르 연설; 국민총동원령·일반최고가격법·혐의자법·프레리알법; Larousse의 제도·사건 해설; Musée Carnavalet, Paris 1793–1794 (2024). 각 절에 출처와 사료 링크 수록.",
-      "aliases": {
-        "ko": [
-          "공포정치 1793–1794 읽기 안내",
-          "프랑스 국민의회 공포정치 해설"
-        ],
-        "en": [
-          "French National Assembly guide to the Terror"
-        ]
-      },
-      "date": "2026-09-13",
-      "updatedAt": "2026-09-16",
       "people": [
         "maximilien-robespierre",
         "louis-antoine-de-saint-just",
@@ -5195,12 +5187,27 @@
       "terms": [
         "law-of-suspects-1793",
         "committee-of-public-safety",
-        "law-of-22-prairial"
+        "law-of-22-prairial",
+        "national-convention",
+        "committee-of-general-security",
+        "representatives-on-mission",
+        "local-surveillance-committees-french-revolution",
+        "revolutionary-tribunal-france"
       ],
       "events": [
         "french-revolution-1789-1799"
       ],
-      "addedAt": "2026-09-13"
+      "addedAt": "2026-09-13",
+      "aliases": {
+        "ko": [
+          "공포정치 1793–1794 읽기 안내",
+          "프랑스 국민의회 공포정치 해설"
+        ],
+        "en": [
+          "French National Assembly guide to the Terror"
+        ]
+      },
+      "updatedAt": "2026-09-17"
     },
     {
       "id": "france-revolutionary-government-and-justice-1793-1794",
@@ -5227,9 +5234,16 @@
         "law-of-suspects-1793",
         "national-convention",
         "committee-of-public-safety",
-        "law-of-22-prairial"
+        "law-of-22-prairial",
+        "committee-of-general-security",
+        "representatives-on-mission",
+        "local-surveillance-committees-french-revolution",
+        "revolutionary-tribunal-france"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799",
+        "french-revolutionary-wars-1792-1802"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5252,7 +5266,8 @@
         "france-law-of-suspects-1793",
         "robespierre-political-morality-1794",
         "france-law-22-prairial-1794"
-      ]
+      ],
+      "updatedAt": "2026-09-17"
     },
     {
       "id": "robespierre-republican-morality-supreme-being-thermidor-1794",
@@ -5283,7 +5298,9 @@
         "committee-of-public-safety",
         "law-of-22-prairial"
       ],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5318,7 +5335,10 @@
       "source": "프랑스 대통령실 Élysée 공식 프랑스어 원문: https://www.elysee.fr/la-presidence/la-constitution-du-5-fructidor-an-iii-22-aout-1795 ; https://www.elysee.fr/la-presidence/la-constitution-du-22-frimaire-an-viii-13-decembre-1799",
       "people": [],
       "terms": [],
-      "events": [],
+      "events": [
+        "french-revolution-1789-1799",
+        "french-revolutionary-wars-1792-1802"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [

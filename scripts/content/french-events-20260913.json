@@ -1,0 +1,2231 @@
+{
+  "id": "french-events-20260913",
+  "events": [
+    {
+      "id": "french-revolution-1789-1799",
+      "expected": null,
+      "fields": {
+        "title_ko": "프랑스 혁명",
+        "title_en": "French Revolution",
+        "period_label": "1789–1799",
+        "sort_order": 1,
+        "countries": [
+          "france",
+          "haiti"
+        ],
+        "locations": [
+          {
+            "label": {
+              "ko": "파리",
+              "en": "Paris"
+            },
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "kind": "main"
+          },
+          {
+            "label": {
+              "ko": "베르사유",
+              "en": "Versailles"
+            },
+            "lat": 48.8049,
+            "lng": 2.1204,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "바렌앙아르곤",
+              "en": "Varennes-en-Argonne"
+            },
+            "lat": 49.227,
+            "lng": 5.034,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "방데 전쟁 지역: 숄레",
+              "en": "Vendée war region: Cholet"
+            },
+            "lat": 47.06,
+            "lng": -0.88,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "리옹",
+              "en": "Lyon"
+            },
+            "lat": 45.764,
+            "lng": 4.836,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "생도맹그: 카프프랑세",
+              "en": "Saint-Domingue: Cap-Français"
+            },
+            "lat": 19.76,
+            "lng": -72.2,
+            "kind": "place"
+          }
+        ],
+        "relations": {
+          "related": [
+            "french-revolutionary-wars-1792-1802"
+          ]
+        },
+        "no_auto_link": [],
+        "link_expressions": [],
+        "sources": [
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",
+          "https://www.worldhistory.org/French_Revolution/",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331",
+          "https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution",
+          "https://www.worldhistory.org/Great_Fear/",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls",
+          "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480",
+          "https://www.worldhistory.org/Assignat/",
+          "https://www.worldhistory.org/War_of_the_First_Coalition/",
+          "https://www.worldhistory.org/Declaration_of_Pillnitz/",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+          "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796",
+          "https://en.wikipedia.org/wiki/Jean-Paul_Marat",
+          "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794",
+          "https://www.worldhistory.org/War_in_the_Vendee/",
+          "https://www.worldhistory.org/Federalist_Revolts/",
+          "https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just",
+          "https://www.worldhistory.org/Cult_of_the_Supreme_Being/",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu",
+          "https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+          "https://www.worldhistory.org/French_Directory/",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution"
+        ],
+        "timeline": [
+          {
+            "date": "1789.05.05",
+            "title": {
+              "ko": "삼부회 소집",
+              "en": "Estates-General convenes"
+            },
+            "body": {
+              "ko": "재정 위기가 국민 대표권 논쟁으로 확대되었다.",
+              "en": "The fiscal crisis became a dispute over national representation."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8049,
+              "lng": 2.1204,
+              "label": {
+                "ko": "베르사유 · 삼부회 소집",
+                "en": "Versailles · Estates-General"
+              }
+            }
+          },
+          {
+            "date": "1789.06.17",
+            "title": {
+              "ko": "국민의회 선언",
+              "en": "National Assembly declared"
+            },
+            "body": {
+              "ko": "제3신분 대표들이 국민 대표기관을 선언했다.",
+              "en": "Third Estate deputies declared a national representative assembly."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8049,
+              "lng": 2.1204,
+              "label": {
+                "ko": "베르사유 · 국민의회 선언",
+                "en": "Versailles · National Assembly"
+              }
+            }
+          },
+          {
+            "date": "1789.06.20",
+            "title": {
+              "ko": "테니스코트의 서약",
+              "en": "Tennis Court Oath"
+            },
+            "body": {
+              "ko": "헌법 제정 전 해산하지 않겠다고 서약했다.",
+              "en": "Deputies pledged not to disperse before establishing a constitution."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8015,
+              "lng": 2.1248,
+              "label": {
+                "ko": "베르사유 · 테니스코트의 서약",
+                "en": "Versailles · Tennis Court Oath"
+              }
+            }
+          },
+          {
+            "date": "1789.07.14",
+            "title": {
+              "ko": "바스티유 습격",
+              "en": "Storming of the Bastille"
+            },
+            "body": {
+              "ko": "파리 민중의 무장행동이 왕권을 압박했다.",
+              "en": "Armed popular action in Paris challenged royal authority."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8533,
+              "lng": 2.3692,
+              "label": {
+                "ko": "파리 · 바스티유",
+                "en": "Paris · Bastille"
+              }
+            }
+          },
+          {
+            "date": "1789.08.04",
+            "title": {
+              "ko": "특권 폐지 결정",
+              "en": "Decisions against privilege"
+            },
+            "body": {
+              "ko": "8월 법령은 영주제 해체를 시작했으나 일부 부담은 상환 대상으로 남았다.",
+              "en": "August decrees began dismantling seigneurial privilege; some dues initially remained redeemable."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8049,
+              "lng": 2.1204,
+              "label": {
+                "ko": "베르사유 · 특권 폐지 결정",
+                "en": "Versailles · Decisions against privilege"
+              }
+            }
+          },
+          {
+            "date": "1789.08.26",
+            "title": {
+              "ko": "인간과 시민의 권리 선언",
+              "en": "Declaration of the Rights of Man and Citizen"
+            },
+            "body": {
+              "ko": "국민주권·법적 평등·소유권을 선언했다.",
+              "en": "Proclaimed national sovereignty, legal equality, and property rights."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8049,
+              "lng": 2.1204,
+              "label": {
+                "ko": "베르사유 · 권리 선언 채택",
+                "en": "Versailles · Declaration of Rights"
+              }
+            }
+          },
+          {
+            "date": "1789.10.05–06",
+            "title": {
+              "ko": "베르사유 행진",
+              "en": "March on Versailles"
+            },
+            "body": {
+              "ko": "여성들이 앞장선 행진 뒤 왕실이 파리로 옮겨졌다.",
+              "en": "The women-led march brought the royal family to Paris."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "arrow",
+              "points": [
+                [
+                  48.8566,
+                  2.3522
+                ],
+                [
+                  48.8049,
+                  2.1204
+                ]
+              ],
+              "label": {
+                "ko": "파리 → 베르사유 행진 (개략)",
+                "en": "Paris → Versailles march (schematic)"
+              },
+              "actor": {
+                "ko": "여성들이 앞장선 행진대",
+                "en": "Women-led marchers"
+              }
+            }
+          },
+          {
+            "date": "1791.06.20–21",
+            "title": {
+              "ko": "바렌 도주 실패",
+              "en": "Flight to Varennes fails"
+            },
+            "body": {
+              "ko": "국왕의 도주 시도가 입헌군주제에 대한 신뢰를 흔들었다.",
+              "en": "The attempted royal flight undermined confidence in constitutional monarchy."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 49.227,
+              "lng": 5.034,
+              "label": {
+                "ko": "바렌앙아르곤 · 국왕의 도주 저지",
+                "en": "Varennes-en-Argonne · royal flight stopped"
+              }
+            }
+          },
+          {
+            "date": "1791.09.03",
+            "title": {
+              "ko": "입헌군주제 헌법",
+              "en": "Constitutional monarchy"
+            },
+            "body": {
+              "ko": "헌법은 국왕과 입법의회를 두되 선거권을 제한했다.",
+              "en": "The constitution established king and assembly with restricted electoral participation."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 1791년 헌법 채택",
+                "en": "Paris · Constitution of 1791"
+              }
+            }
+          },
+          {
+            "date": "1792.04.20",
+            "title": {
+              "ko": "오스트리아에 선전포고",
+              "en": "War declared on Austria"
+            },
+            "body": {
+              "ko": "전쟁과 국내 혁명이 서로를 급진화하기 시작했다.",
+              "en": "War and domestic revolution began intensifying one another."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 오스트리아에 선전포고",
+                "en": "Paris · Declaration of war on Austria"
+              }
+            }
+          },
+          {
+            "date": "1792.08.10",
+            "title": {
+              "ko": "왕권 정지",
+              "en": "Royal authority suspended"
+            },
+            "body": {
+              "ko": "튈르리 봉기 뒤 국왕의 권한이 정지되었다.",
+              "en": "The Tuileries insurrection led to suspension of royal authority."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8629,
+              "lng": 2.3325,
+              "label": {
+                "ko": "파리 · 튈르리 궁전 일대",
+                "en": "Paris · Tuileries Palace area"
+              }
+            }
+          },
+          {
+            "date": "1792.09.21",
+            "title": {
+              "ko": "왕정 폐지",
+              "en": "Monarchy abolished"
+            },
+            "body": {
+              "ko": "국민공회가 왕정을 폐지하고 다음 날부터 공화국 원년을 사용했다.",
+              "en": "The Convention abolished monarchy; republican dating began the next day."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 국민공회의 왕정 폐지",
+                "en": "Paris · Convention abolishes monarchy"
+              }
+            }
+          },
+          {
+            "date": "1793.01.21",
+            "title": {
+              "ko": "루이 16세 처형",
+              "en": "Execution of Louis XVI"
+            },
+            "body": {
+              "ko": "국민공회의 재판과 표결 뒤 전 국왕이 처형되었다.",
+              "en": "The former king was executed after trial and votes in the Convention."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8656,
+              "lng": 2.3212,
+              "label": {
+                "ko": "파리 · 혁명광장 (현재 콩코르드 광장)",
+                "en": "Paris · Place de la Révolution (now Place de la Concorde)"
+              }
+            }
+          },
+          {
+            "date": "1793.06.24",
+            "title": {
+              "ko": "1793년 헌법 채택",
+              "en": "Constitution of 1793 adopted"
+            },
+            "body": {
+              "ko": "광범한 권리를 규정했으나 통상적 헌정 체제로 시행되지 못했다.",
+              "en": "It proclaimed extensive rights but never operated as regular constitutional government."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 1793년 헌법 채택",
+                "en": "Paris · Constitution of 1793"
+              }
+            }
+          },
+          {
+            "date": "1793.09.17–29",
+            "title": {
+              "ko": "혐의자법과 일반최고가격법",
+              "en": "Suspects and General Maximum laws"
+            },
+            "body": {
+              "ko": "탄압 확대와 물가·임금 통제가 비상통치의 일부가 되었다.",
+              "en": "Wider repression and price and wage controls formed part of emergency government."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 혐의자법·일반최고가격법 채택",
+                "en": "Paris · Suspects and General Maximum laws"
+              }
+            }
+          },
+          {
+            "date": "1794.02.04",
+            "title": {
+              "ko": "식민지 노예제 폐지 선언",
+              "en": "Colonial abolition decree"
+            },
+            "body": {
+              "ko": "국민공회가 노예제 폐지를 선언했으나 집행은 지역마다 달랐다.",
+              "en": "The Convention decreed abolition, with uneven implementation."
+            },
+            "country": [
+              "france",
+              "haiti"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 국민공회의 식민지 노예제 폐지 선언",
+                "en": "Paris · Convention’s colonial abolition decree"
+              }
+            }
+          },
+          {
+            "date": "1794.07.27–28",
+            "title": {
+              "ko": "테르미도르",
+              "en": "Thermidor"
+            },
+            "body": {
+              "ko": "로베스피에르와 동료들이 체포되고 처형되었다.",
+              "en": "Robespierre and his allies were arrested and executed."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 테르미도르의 체포·처형",
+                "en": "Paris · Thermidor arrests and executions"
+              }
+            }
+          },
+          {
+            "date": "1795.08.22",
+            "title": {
+              "ko": "1795년 헌법",
+              "en": "Constitution of 1795"
+            },
+            "body": {
+              "ko": "양원제와 5인의 총재정부를 규정했다.",
+              "en": "Established two legislative chambers and a five-member Directory."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 1795년 헌법 채택",
+                "en": "Paris · Constitution of 1795"
+              }
+            }
+          },
+          {
+            "date": "1796.05",
+            "title": {
+              "ko": "평등파 운동 탄압",
+              "en": "Suppression of the Equals"
+            },
+            "body": {
+              "ko": "바뵈프와 동료들의 운동이 탄압되었다.",
+              "en": "Babeuf and his associates’ movement was suppressed."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 평등파 조직 탄압",
+                "en": "Paris · Suppression of the Equals"
+              }
+            }
+          },
+          {
+            "date": "1799.11.09–10",
+            "title": {
+              "ko": "브뤼메르 쿠데타",
+              "en": "Brumaire coup"
+            },
+            "body": {
+              "ko": "총재정부가 무너지고 통령정부가 들어섰다.",
+              "en": "The Directory fell and the Consulate followed."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8376,
+              "lng": 2.2147,
+              "label": {
+                "ko": "생클루 · 브뤼메르 쿠데타의 의회 해산",
+                "en": "Saint-Cloud · dispersal of the legislature during Brumaire"
+              }
+            }
+          }
+        ],
+        "question_ko": "법 앞의 평등을 선언한 혁명은 왜 생존권·시민권·비상권력을 둘러싼 갈등으로 나아갔는가?",
+        "summary_ko": "왕정의 재정 위기에서 시작해 신분 특권과 군주제를 무너뜨린 혁명. 의회·민중·농민·여성과 식민지의 투쟁, 공화국의 전쟁과 공포정치, 총재정부와 브뤼메르까지 살펴본다.",
+        "outcome_ko": "구체제의 법적 신분질서는 무너졌고 국민주권과 권리의 언어가 확산되었다. 그러나 재산·성별·식민지의 불평등과 강제력의 문제는 남았으며, 1799년 권력은 보나파르트의 통령정부로 집중되었다.",
+        "body_ko": "## 재정 위기가 주권의 위기로 바뀌다\n\n프랑스 왕정은 전쟁 비용과 누적된 부채를 감당하기 위해 세제를 바꾸려 했지만 특권 집단과 고등법원의 저항에 부딪혔다. 미국 독립전쟁 지원은 재정 부담을 더했다. 1788년의 흉작과 빵값 상승은 생계를 압박했고, 국왕의 재정 문제를 일상의 불안과 연결했다. 루이 16세가 1789년 5월 5일 베르사유에 삼부회를 소집했을 때, 논쟁은 새 세금의 승인에서 누가 국민을 대표할 것인가라는 문제로 옮겨갔다. [1](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled)\n\n성직자·귀족·제3신분이라는 법적 구분은 부의 분포와 정확히 일치하지 않았다. 제3신분에는 부유한 상인과 법률가뿐 아니라 장인·임금노동자·농민이 함께 속했다. 따라서 혁명을 단일한 계급의 일치된 계획으로 설명하면 참여자 사이의 차이가 사라진다. 특권 폐지, 정치적 대표권, 토지 부담의 경감, 식량 확보는 서로 연결되면서도 다른 요구였다. [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\n## 1789년: 의회와 거리와 농촌\n\n제3신분 대표들은 6월 17일 국민의회를 선언했고, 6월 20일 테니스코트의 서약에서 헌법 제정 전에는 해산하지 않겠다고 다짐했다. 왕실의 병력 집결에 대한 불안 속에서 파리 민중은 7월 14일 바스티유를 습격했다. 농촌에서는 대공포가 번지고 농민들이 영주의 권리를 기록한 문서를 공격했다. 의회의 권위는 법률 논의만이 아니라 이러한 도시·농촌의 집단행동에 의해 뒷받침되고 압박받았다. [3](https://www.worldhistory.org/French_Revolution/) [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\n8월 4일 밤 시작된 특권 폐지 결정은 8월의 법령으로 구체화되었다. 그러나 모든 영주적 부담이 즉시 무상으로 사라진 것은 아니다. 일부는 처음에 상환 대상으로 남았고, 남은 봉건적 부담의 무상 폐지는 1793년에 이루어졌다. 8월 26일 권리 선언은 국민주권과 법 앞의 평등을 내세우면서 소유권도 보장했다. 10월 5~6일 여성들이 앞장선 베르사유 행진은 식량 문제와 정치 문제를 결합했고 왕실을 파리로 옮기게 했다. [4](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331) [5](https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794) [6](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution)\n\n대공포는 굶주린 사람들이 무작정 폭동을 일으킨 사건만은 아니었다. 귀족이 도적을 고용해 수확을 파괴한다는 소문과 곡물 부족에 대한 불안이 마을 사이로 퍼졌고, 주민들은 무장해 방어하다가 영주의 문서고와 권리 증서로 공격 대상을 옮겼다. 소문은 지역마다 다른 경로로 움직였으며 모든 지방이 똑같이 반응하지 않았다. 농민의 행동은 파리의 결정을 기다린 수동적 반응이 아니라 영주적 부담을 없애려는 독자적 압력이었다. [7](https://www.worldhistory.org/Great_Fear/)\n\n## 입헌군주제의 제도와 균열\n\n제헌국민의회는 교회 재산을 국유화하고 이를 뒷받침으로 아시냐를 발행했다. 1790년 성직자민사기본법과 뒤이은 선서 요구는 성직자와 신자들을 갈라놓았다. 새 국가는 종교를 단순히 없앤 것이 아니라 교회의 재산·조직·충성 관계를 재편하려 했다. 1791년 6월 국왕의 바렌 도주 실패는 왕이 혁명 질서를 받아들이는지에 대한 의심을 키웠다. [8](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls)\n\n1791년 헌법은 행정권을 국왕에게 맡기고 입법의회를 두었지만 정치 참여를 동등하게 열지는 않았다. 능동시민 자격에는 연령·납세·독립성 조건이 있었고 선거인에게는 더 높은 재산 요건이 적용되었다. 같은 해 르 샤플리에 법은 직업적 결사와 노동자들의 집단적 임금 행동을 금지했다. 법적 신분 특권의 해체는 곧바로 보통선거나 노동자의 결사권을 뜻하지 않았다. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [10](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480)\n\n아시냐는 처음에는 국유재산과 연결된 증서였으나 유통 화폐로 확대되었다. 재정 수요에 따른 발행 증가와 신뢰의 약화는 통화 가치 하락을 낳았고, 임금과 물가가 같은 속도로 움직이지 않으면서 생활의 불안은 커졌다. 국유지 매각은 재산의 소유자를 바꾸었지만 모든 농민에게 같은 규모의 토지를 나누어 준 제도는 아니었다. 혁명기의 경제 변화는 법률의 평등 선언과 실제 구매력·재산 분배가 어긋날 수 있음을 보여 준다. [11](https://www.worldhistory.org/Assignat/)\n\n새 질서는 통치의 공간과 절차도 바꾸었다. 1791년 헌법은 왕국을 83개 도로 나누고 선출된 행정관과 법관을 두는 원칙을 담았다. 공직의 매매와 세습, 출생에 따른 직위 차별을 부정하고 같은 범죄에는 같은 형벌을 적용하도록 했다. 이런 변화는 왕실과 특권 신분의 권리를 국민의 이름으로 행사되는 공적 권한으로 재구성했다. 동시에 국왕의 거부권과 재산에 따른 선거 구조는 누가 그 공권력을 통제하는가라는 갈등을 남겼다. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793)\n\n## 1792년: 전쟁과 왕정의 붕괴\n\n자크 피에르 브리소와 그 동료들은 전쟁으로 혁명을 지키고 적을 드러낼 수 있다고 주장했다. 로베스피에르는 군사적 패배와 장군들의 권력 확대를 경계하며 반대했다. 국왕도 다른 계산에서 전쟁에 동의했다. 1792년 4월 20일 프랑스가 오스트리아 군주에게 선전포고하면서 시작된 전쟁은 초기 패배와 침공 위협을 통해 국내 갈등을 악화시켰다. [12](https://www.worldhistory.org/War_of_the_First_Coalition/) [13](https://www.worldhistory.org/Declaration_of_Pillnitz/)\n\n8월 10일 튈르리 궁전 봉기 뒤 국왕의 권한은 정지되었다. 9월에는 파리 감옥 수감자들이 학살되었다. 이를 공화국 방어라는 구호만으로 정당화하거나 모든 희생자를 실제 음모자로 취급할 수는 없다. 9월 20일 발미 전투 다음 날 새 국민공회는 왕정을 폐지했고, 9월 22일부터 공화국 원년을 사용했다. 루이 16세는 재판과 표결을 거쳐 1793년 1월 21일 처형되었다. 전쟁의 전개는 [프랑스 혁명 전쟁](/commulingo/events/french-revolutionary-wars-1792-1802)에서 이어진다. [8](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls) [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793)\n\n## 상퀼로트와 생존권의 정치\n\n상퀼로트는 근대 공장노동자만을 가리키는 이름이 아니었다. 장인·소상점주·임금노동자 등이 파리의 구와 민중 단체에서 활동하며 식량 공급, 투기 억제, 정치적 감시와 참여를 요구했다. 산악파와 이들의 협력은 지롱드파를 압박했지만 의회 지도부와 민중 조직의 목표가 언제나 같았던 것은 아니다. 1793년 5월 31일~6월 2일의 압력은 주요 지롱드파 의원들의 체포로 이어졌다. [14](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance) [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\n로베스피에르의 1792년 생필품 연설은 소유권을 생존의 보장과 연결했다. 1793년 9월 29일 일반최고가격법은 생필품 가격뿐 아니라 임금에도 상한을 두고 노동 징발을 규정했다. 그러므로 이를 노동자에게 이익만 준 정책이나 생산수단의 사회적 소유를 실현한 제도로 설명하면 부정확하다. 사적 소유를 유지하는 공화국 안에서 전쟁 수행, 소비자의 생존, 생산과 유통의 이해가 충돌했다. [생존권과 평등 문헌집](/commulingo/docs/france-subsistence-and-equality-1792-1796)에서 이 긴장을 원문으로 읽을 수 있다. [15](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796)\n\n장폴 마라는 『인민의 벗』을 통해 관리와 정치 지도자들을 고발하고 민중의 불만을 대변했다. 그의 언론은 감시와 책임을 요구하는 기능과 적에 대한 선제적 폭력을 촉구하는 언어를 함께 지녔다. 1793년 7월 13일 샤를로트 코르데에게 암살된 뒤 마라는 혁명의 순교자로 기려졌고, 다비드의 그림은 그 기억을 형성했다. 언론·청원·클럽·장례와 축제는 의회의 연설 못지않게 누가 인민의 편인가를 판단하는 정치 공간이었다. [16](https://en.wikipedia.org/wiki/Jean-Paul_Marat)\n\n## 1793년 헌법과 혁명정부의 간극\n\n1793년 6월 헌법과 권리 선언은 남성의 광범한 선거 참여, 공공부조와 교육, 압제에 맞선 저항을 규정했다. 그러나 이 헌법에 따른 통상적인 정부는 가동되지 않았다. 10월 국민공회는 평화가 올 때까지 정부를 혁명적으로 운영하기로 했다. 따라서 헌법의 권리 조항과 실제 통치 관행을 구분해야 한다. 공안위원회와 보안위원회, 파견의원과 지방 위원회는 각기 다른 기능과 권한을 행사했다. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [17](https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794)\n\n방데의 반란, 지방의 반산악파 봉기, 외국군의 침공은 비상조치의 배경이었다. 9월 17일 혐의자법은 체포 대상을 넓혔고, 혁명재판소와 지방의 탄압은 많은 민간인을 희생시켰다. 1794년 6월 10일 프레리알 22일 법은 피고인의 방어를 크게 제약했다. 로베스피에르의 도덕과 공포에 관한 연설은 이 통치의 정당화 논리이지 그 정당성을 확정하는 판정문은 아니다. 위기 상황의 설명과 국가폭력의 평가는 분리해서 살펴야 한다. [17](https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794) [14](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance)\n\n지방의 저항도 하나의 사건으로 묶을 수 없다. 방데에서는 성직자 문제와 징집에 대한 반감이 농민 봉기와 가톨릭·왕당파 군대로 이어졌다. 리옹·마르세유·보르도 등의 반산악파 운동은 서로 다른 지역 갈등을 품었으며 모두가 처음부터 왕정 복고를 원한 것은 아니었다. 방데의 민간인 학살, 낭트의 수장, 리옹의 집단 처형은 비상통치가 지방에서 어떻게 작동했는지를 보여 준다. 희생자 수와 방데 학살의 법적·역사적 성격은 연구 범위와 정의에 따라 논쟁되므로 단일 숫자나 명칭으로 결론내리지 않는다. [18](https://www.worldhistory.org/War_in_the_Vendee/) [19](https://www.worldhistory.org/Federalist_Revolts/)\n\n루이 앙투안 드 생쥐스트는 공안위원회와 전선 파견 활동에서 군대의 규율·보급과 정치적 신뢰를 결합하려 했다. 1794년 방토즈의 제안은 공화국의 적으로 간주된 사람들의 재산을 빈곤한 애국자에게 돌리는 구상을 담았지만, 광범한 재분배로 실현되지는 못했다. 혁명정부 안에는 생존과 평등을 확대하려는 기획과 적을 분류·배제하는 강제력이 함께 있었다. 한 인물의 연설을 국가 전체의 실제 제도와 동일시하지 않고 제안·법령·집행을 나누어 읽어야 하는 이유다. [20](https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just)\n\n종교정책에서도 혁명 지도부는 단일하지 않았다. 1793년의 비기독교화 운동은 교회 폐쇄와 종교적 상징의 파괴, 이성의 축제 등으로 나타났다. 로베스피에르는 무신론과 강제적인 비기독교화를 비판했고, 1794년 5월 국민공회는 최고존재와 영혼의 불멸을 인정하는 결의를 채택했다. 6월 8일 최고존재 축제는 공화국의 시민적 도덕을 의례로 표현하려 했다. 이러한 실험은 혁명이 법과 군대뿐 아니라 시간·축제·신앙과 공동체의 감정까지 재조직하려 했음을 보여 준다. [21](https://www.worldhistory.org/Cult_of_the_Supreme_Being/)\n\n## 여성의 참여와 시민권의 경계\n\n여성은 시장과 거리, 청원과 정치 결사를 통해 혁명을 움직였지만 국민을 대표하는 선거권에서는 배제되었다. 올랭프 드 구주의 1791년 여성 권리 선언은 1789년 선언의 보편성을 여성에게도 적용하라고 요구했다. 이것은 국민의회가 채택한 법률이 아니라 배제에 도전한 저술이었다. 시민권을 논할 때 혁명가들이 선언한 보편적 원칙과 실제로 권리를 행사할 수 있었던 사람들을 함께 보아야 한다. [5](https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794)\n\n혁명은 이혼 등 민사 영역의 변화를 열었지만, 1793년 10월 여성 정치 결사의 금지는 참여의 문을 닫았다. 구주는 그해 11월 처형되었다. 여성들은 하나의 정치 노선으로 결집하지 않았고, 민중운동 내부에서도 식량·종교·공화국을 둘러싼 입장이 달랐다. 권리 확대와 정치적 배제가 같은 혁명 과정에서 병존했다는 사실이 핵심이다. [6](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution)\n\n## 식민지 노예제와 해방의 주체\n\n프랑스의 자유 선언은 처음부터 식민지의 노예제를 없애지 않았다. 설탕과 커피를 생산하던 생도맹그에서는 백인 식민자, 자유 유색인, 노예화된 사람들이 불평등한 지위에 놓여 있었다. 1791년 노예 봉기는 프랑스 의회의 결정만으로 설명할 수 없는 독자적인 혁명 동력이었다. 식민지의 전쟁과 저항은 본국에서 자유와 시민권의 범위를 다시 정하도록 압박했다. [22](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n1793년 생도맹그에서 이루어진 해방 조치 뒤, 국민공회는 1794년 2월 4일 모든 식민지의 노예제 폐지와 피부색을 구별하지 않는 시민권을 선언했다. 법령은 집행 문제를 공안위원회에 맡겼고 실제 적용은 식민지마다 달랐다. 이는 중요한 단절이었지만 영구적인 보장은 아니었다. 뒤이은 보나파르트의 식민정책은 이 성과를 공격했다. 아이티의 독립은 1804년이므로 이 글의 시기 밖에 두되, 해방을 프랑스가 일방적으로 베푼 선물로 서술해서는 안 된다. [5](https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794) [22](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n## 테르미도르와 총재정부\n\n1794년 봄 에베르파와 당통·데물랭 등이 차례로 처형되면서 혁명 진영 내부의 숙청이 깊어졌다. 7월 27일 테르미도르 9일에 국민공회는 로베스피에르와 그 동료들을 체포했고 다음 날 이들을 처형했다. 뒤이은 변화는 단 하루에 모든 탄압이 끝난 사건이 아니었다. 자코뱅 조직과 민중운동이 공격받고 가격 통제가 해제되었으며 반자코뱅 폭력도 벌어졌다. [3](https://www.worldhistory.org/French_Revolution/)\n\n1795년 헌법은 양원제와 5인의 총재정부를 세웠다. 이 제도는 권력 집중을 막으려 했지만 재산에 따른 정치적 선별을 유지했다. 바뵈프와 동료들의 평등파 운동은 사회적 평등이 미완성이라는 문제를 제기했고 1796년에 탄압되었다. 총재정부는 왕당파와 좌파의 압력 사이에서 선거 결과의 무효화와 군사력에 의존했다. [총재정부와 통령정부 문헌](/commulingo/docs/france-directoire-consulat-1795-1799)을 통해 헌법의 설계와 실제 권력 이동을 비교할 수 있다. [23](https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799) [15](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796) [24](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience)\n\n총재정부의 위기를 부패라는 한 단어로 설명하는 것도 부족하다. 아시냐의 붕괴와 대체 화폐의 실패는 재정과 생계를 흔들었다. 1797년 프뤽티도르 쿠데타는 왕당파의 진출을 꺾었고, 1798년 플로레알의 선거 무효화는 좌파 당선자들을 겨냥했다. 재정·행정의 안정화 시도와 공화국 방어라는 목표는 존재했지만, 통치자들이 선거의 불리한 결과를 군사력과 예외조치로 뒤집으면서 대표제 자체의 신뢰를 약화시켰다. [25](https://www.worldhistory.org/French_Directory/) [11](https://www.worldhistory.org/Assignat/)\n\n## 브뤼메르와 혁명의 유산\n\n1799년 11월 9~10일 브뤼메르 18~19일의 쿠데타는 총재정부를 무너뜨리고 보나파르트가 주도하는 통령정부로 이어졌다. 군사적 명성과 의회 정치인들의 개헌 구상이 결합했지만, 결과는 보나파르트에게 권력이 집중되는 체제였다. 1799년을 혁명의 끝으로 삼는 것은 정치적 시대 구분이지 사회적 변화가 모두 중단되었다는 뜻은 아니다. 군주정의 붕괴, 신분적 특권의 해체, 국민주권의 언어는 이후에도 남았다. [24](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience) [26](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution)\n\n혁명의 성격을 두고는 계급과 소유관계의 변화를 강조하는 해석, 정치문화와 주권의 언어를 중시하는 해석, 전쟁·종교·식민지·성별의 경험을 통해 접근하는 연구가 공존한다. 상퀼로트와 바뵈프의 평등 요구는 후대 사회주의자들의 중요한 참조점이 되었지만, 1790년대 공화국을 곧바로 사회주의 국가로 부를 수는 없다. 권리 선언, 소유의 보호, 민중의 생존 요구, 비상권력의 폭력이 어떻게 함께 나타났는지가 학습의 중심 질문이다. [26](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution) [15](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796)",
+        "question_en": "Why did a revolution proclaiming legal equality become a struggle over subsistence, citizenship, and emergency power?",
+        "summary_en": "A revolution that began in royal fiscal crisis and dismantled inherited privilege and monarchy. It connects assemblies and popular movements, women and colonial emancipation, wartime emergency rule, the Directory, and Brumaire.",
+        "outcome_en": "The old legal order of estates was dismantled and the language of sovereignty and rights spread. Inequalities of property, gender, and colonial status remained contested; in 1799 power concentrated in Bonaparte’s Consulate.",
+        "body_en": "## A fiscal crisis becomes a crisis of sovereignty\n\nThe crown sought tax reform to meet war costs and accumulated debt, but encountered resistance from privileged bodies and the sovereign courts known as parlements. Support for American independence had added to its financial burden. The poor harvest of 1788 and rising bread prices connected royal insolvency with everyday insecurity. When Louis XVI convened the Estates-General at Versailles on 5 May 1789, debate moved beyond authorizing revenue to the question of who could represent the nation. [1](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled)\n\nThe legal division into clergy, nobility, and Third Estate did not map neatly onto wealth. The Third Estate included prosperous merchants and lawyers alongside artisans, wage earners, and peasants. Treating the Revolution as the unanimous project of one class obscures these differences. Ending privilege, securing representation, reducing obligations on land, and obtaining food were connected demands, but they were not identical. [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\n## 1789: assembly, streets, and countryside\n\nThird Estate deputies declared themselves the National Assembly on 17 June and pledged in the Tennis Court Oath of 20 June to remain together until a constitution was established. Anxiety over royal troop concentrations helped drive the storming of the Bastille on 14 July. In the countryside, the Great Fear accompanied attacks on records of seigneurial obligations. Collective action outside the assembly both strengthened its challenge to royal authority and pressed it toward further change. [3](https://www.worldhistory.org/French_Revolution/) [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\nThe decisions against privilege begun on the night of 4 August became legislative decrees, but not every seigneurial payment vanished without compensation: some were initially redeemable, and remaining feudal dues were abolished without compensation in 1793. The Declaration of Rights of 26 August proclaimed national sovereignty and legal equality while protecting property. The women-led march to Versailles on 5–6 October joined subsistence demands to politics and brought the royal family to Paris. [4](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331) [5](https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794) [6](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution)\n\nThe Great Fear was more than an undirected riot of hungry people. Rumors that aristocrats had hired brigands to destroy the harvest circulated alongside anxiety about grain shortages. Villagers armed themselves defensively and then turned against seigneurial archives and title deeds. Rumors traveled through different regional networks, and responses were not uniform. Peasant action exerted an independent pressure against seigneurial obligations rather than passively waiting for decisions in Paris. [7](https://www.worldhistory.org/Great_Fear/)\n\n## Institutions and fractures of constitutional monarchy\n\nThe Constituent Assembly nationalized church property and used it to back assignats. The Civil Constitution of the Clergy in 1790 and the subsequent oath requirement divided clergy and believers. The new state was attempting to reorganize ecclesiastical property, institutions, and allegiance, rather than simply abolish religion. The king’s failed flight to Varennes in June 1791 intensified doubts about his commitment to the revolutionary settlement. [8](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls)\n\nThe Constitution of 1791 assigned executive power to the king and established a Legislative Assembly, but political participation remained unequal. Active citizenship required age, tax, and independence qualifications; electors faced higher property thresholds. The Le Chapelier Law of the same year prohibited occupational combinations and workers’ collective wage action. Abolishing inherited legal privilege did not automatically establish universal suffrage or workers’ freedom of association. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [10](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480)\n\nAssignats began as instruments connected to national property but expanded into circulating money. Increased issues to meet fiscal needs and declining confidence contributed to depreciation; wages and prices did not move together, intensifying insecurity. Sales of national property changed ownership without distributing equal plots to every peasant. Economic change thus exposed a gap between legal equality and the distribution of purchasing power and assets. [11](https://www.worldhistory.org/Assignat/)\n\nThe new order also changed the geography and procedures of government. The 1791 constitution organized the kingdom into 83 departments and provided for elected administrators and judges. It rejected the sale and inheritance of offices and distinctions of birth, and required equal punishments for the same offenses. Such measures recast royal and corporate privileges as public powers exercised in the nation’s name. The king’s veto and property-based electoral structure nevertheless left unresolved who would control those powers. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793)\n\n## 1792: war and the overthrow of monarchy\n\nJacques Pierre Brissot and his allies argued that war could defend the Revolution and expose its enemies. Robespierre opposed the policy, warning of defeat and the growing power of generals. The king supported war for different reasons. France’s declaration against the Austrian ruler on 20 April 1792 opened a conflict whose early defeats and threat of invasion sharpened political conflict at home. [12](https://www.worldhistory.org/War_of_the_First_Coalition/) [13](https://www.worldhistory.org/Declaration_of_Pillnitz/)\n\nAfter the Tuileries insurrection of 10 August, royal authority was suspended. Prisoners were massacred in Paris in September; appeals to defend the Revolution neither establish every victim’s guilt nor justify these killings. On 21 September, the day after Valmy, the new National Convention abolished monarchy, and republican dating began from 22 September. Louis XVI was executed on 21 January 1793 after trial and votes in the Convention. The military narrative continues in [French Revolutionary Wars](/commulingo/events/french-revolutionary-wars-1792-1802). [8](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls) [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793)\n\n## Sans-culottes and the politics of subsistence\n\nThe sans-culottes were not simply a modern factory proletariat. Artisans, shopkeepers, and wage earners participated in Paris sections and popular societies, demanding food supplies, restraints on speculation, vigilance, and political participation. Their alliance with the Mountain put pressure on the Girondins, without making parliamentary leaders and popular organizations identical in purpose. The mobilization of 31 May–2 June 1793 led to the arrest of leading Girondin deputies. [14](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance) [2](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution)\n\nRobespierre’s 1792 speech on subsistence connected property rights with the preservation of life. The General Maximum of 29 September 1793 capped wages as well as commodity prices and provided for requisitioning labor. It was neither an unqualified benefit to workers nor the establishment of social ownership of production. Within a republic retaining private property, military supply, consumer survival, production, and distribution pulled policy in different directions. The [Subsistence and Equality collection](/commulingo/docs/france-subsistence-and-equality-1792-1796) lets readers examine these tensions in the documents. [15](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796)\n\nJean-Paul Marat’s L’Ami du peuple publicized popular grievances and accused officials and political leaders of wrongdoing. His journalism combined demands for vigilance and accountability with calls for preemptive violence against perceived enemies. After Charlotte Corday assassinated him on 13 July 1793, he was commemorated as a revolutionary martyr, an image shaped by David’s painting. Newspapers, petitions, clubs, funerals, and festivals became arenas for deciding who spoke for the people alongside debate in the assembly. [16](https://en.wikipedia.org/wiki/Jean-Paul_Marat)\n\n## The gap between the 1793 constitution and revolutionary government\n\nThe June 1793 constitution and declaration envisaged broad male electoral participation, public assistance, education, and resistance to oppression. Its regular constitutional government never went into operation. In October the Convention instead declared government revolutionary until peace. Constitutional promises must therefore be distinguished from governing practice. The Committees of Public Safety and General Security, representatives on mission, and local committees exercised different functions and powers. [9](https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793) [17](https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794)\n\nThe Vendée rebellion, provincial opposition to the Mountain, and foreign invasion formed the setting for emergency measures. The Law of Suspects of 17 September widened arrest powers; revolutionary tribunals and provincial repression took many civilian lives. The Law of 22 Prairial, 10 June 1794, sharply curtailed defendants’ protections. Robespierre’s speech linking virtue and terror articulated a justification for this government, not an authoritative verdict on its legitimacy. Explaining the emergency and assessing state violence are distinct tasks. [17](https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794) [14](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance)\n\nProvincial resistance was not one uniform movement. In the Vendée, disputes over clergy and recruitment contributed to peasant rebellion and a Catholic and Royal Army. Anti-Montagnard movements in Lyon, Marseille, and Bordeaux arose from distinct local conflicts; not all initially sought restoration of monarchy. Civilian massacres in the Vendée, drownings at Nantes, and mass executions at Lyon show how emergency rule operated locally. Estimates and the classification of the Vendée killings remain disputed, making definitions and geographical scope essential to assessing claims. [18](https://www.worldhistory.org/War_in_the_Vendee/) [19](https://www.worldhistory.org/Federalist_Revolts/)\n\nLouis Antoine de Saint-Just linked military discipline and supply with political reliability through the Committee of Public Safety and missions to the armies. His Ventôse proposals in 1794 envisaged transferring property of people regarded as enemies of the republic to needy patriots, but did not produce extensive redistribution in practice. Revolutionary government combined projects for greater subsistence and equality with coercive classification and exclusion. Proposals, decrees, and implementation must be distinguished rather than treating an individual’s speech as a description of the entire state. [20](https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just)\n\nRevolutionary leaders also disagreed over religion. Dechristianization in 1793 involved church closures, destruction of religious symbols, and festivals of Reason. Robespierre opposed atheism and coercive dechristianization; in May 1794 the Convention recognized a Supreme Being and the immortality of the soul. The festival of 8 June sought to express republican civic morality through public ritual. These experiments show a revolution attempting to reorganize time, festivals, belief, and communal feeling as well as law and armed force. [21](https://www.worldhistory.org/Cult_of_the_Supreme_Being/)\n\n## Women’s participation and the boundaries of citizenship\n\nWomen helped drive the Revolution through markets, demonstrations, petitions, and political associations while remaining excluded from national electoral citizenship. Olympe de Gouges’s 1791 declaration demanded that the universality claimed in 1789 also apply to women. Her text was a challenge to exclusion, not legislation adopted by the Assembly. Studying citizenship requires comparing proclaimed universal principles with the people actually permitted to exercise political rights. [5](https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794)\n\nThe Revolution opened changes in civil life, including divorce, yet the prohibition of women’s political clubs in October 1793 closed an important avenue of participation. Gouges was executed that November. Women did not share a single political program, and popular activism itself contained disagreements over food, religion, and republicanism. The central point is that expanded civil possibilities and political exclusion coexisted within the same revolution. [6](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution)\n\n## Colonial slavery and the agents of emancipation\n\nFrance’s declaration of liberty did not initially abolish colonial slavery. In sugar- and coffee-producing Saint-Domingue, white colonists, free people of color, and enslaved people occupied unequal positions. The slave uprising of 1791 was an independent revolutionary force, not merely an effect of decisions in Paris. Resistance and warfare in the colony pressed metropolitan lawmakers to reconsider the reach of liberty and citizenship. [22](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\nAfter emancipation measures in Saint-Domingue in 1793, the Convention decreed abolition throughout the colonies on 4 February 1794 and declared citizenship without distinction of color. It referred implementation to the Committee of Public Safety; enforcement differed between colonies. This was a major rupture, but not an irreversible guarantee. Bonaparte’s subsequent colonial policy attacked these gains. Haitian independence in 1804 lies beyond this article’s dates, but emancipation should not be narrated as a gift bestowed unilaterally by France. [5](https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794) [22](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n## Thermidor and the Directory\n\nExecutions of the Hébertists and then Danton, Desmoulins, and their associates in spring 1794 deepened the destruction of rival revolutionary groups. On 27 July, 9 Thermidor, the Convention arrested Robespierre and his allies; they were executed the following day. Repression did not simply end overnight. Jacobin organizations and popular activism came under attack, price controls were removed, and anti-Jacobin violence followed. [3](https://www.worldhistory.org/French_Revolution/)\n\nThe Constitution of 1795 established two legislative chambers and a five-member Directory. Designed to disperse power, it retained property-based political selection. Babeuf and his associates’ egalitarian movement challenged the incompleteness of social equality and was suppressed in 1796. Under pressure from royalists and the left, the Directory increasingly relied on annulled elections and military force. The [Directory and Consulate documents](/commulingo/docs/france-directoire-consulat-1795-1799) allow comparison between constitutional design and the actual transfer of power. [23](https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799) [15](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796) [24](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience)\n\nThe Directory’s difficulties cannot be reduced to corruption. The collapse of assignats and failure of their replacement disrupted finance and subsistence. The Fructidor coup of 1797 reversed royalist gains; electoral annulments in Floréal 1798 targeted victories on the left. Efforts to stabilize administration and preserve the republic existed alongside these interventions. By reversing unfavorable electoral outcomes through force and exceptional measures, rulers undermined confidence in representative institutions. [25](https://www.worldhistory.org/French_Directory/) [11](https://www.worldhistory.org/Assignat/)\n\n## Brumaire and the Revolution’s legacies\n\nThe coup of 18–19 Brumaire, 9–10 November 1799, overthrew the Directory and led to a Consulate dominated by Bonaparte. Military prestige combined with civilian politicians’ plans for constitutional revision, but the outcome concentrated power in the general’s hands. Dating the Revolution’s end to 1799 is a political periodization, not a claim that social change stopped. The destruction of the old monarchy and inherited privilege, and the language of national sovereignty, outlasted the revolutionary decade. [24](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience) [26](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution)\n\nInterpretations differ in their emphasis on class and property, political culture and sovereignty, or the experiences of war, religion, empire, and gender. Sans-culotte demands and Babeuf’s egalitarianism became important reference points for later socialists, but the republic of the 1790s cannot simply be labeled a socialist state. The central problem for study is how declarations of rights, protection of property, demands for subsistence, and coercive emergency rule appeared together. [26](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution) [15](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796)"
+      },
+      "sections": [
+        {
+          "heading": {
+            "ko": "재정 위기가 주권의 위기로 바뀌다",
+            "en": "A fiscal crisis becomes a crisis of sovereignty"
+          },
+          "paragraphs": [
+            {
+              "ko": "프랑스 왕정은 전쟁 비용과 누적된 부채를 감당하기 위해 세제를 바꾸려 했지만 특권 집단과 고등법원의 저항에 부딪혔다. 미국 독립전쟁 지원은 재정 부담을 더했다. 1788년의 흉작과 빵값 상승은 생계를 압박했고, 국왕의 재정 문제를 일상의 불안과 연결했다. 루이 16세가 1789년 5월 5일 베르사유에 삼부회를 소집했을 때, 논쟁은 새 세금의 승인에서 누가 국민을 대표할 것인가라는 문제로 옮겨갔다.",
+              "en": "The crown sought tax reform to meet war costs and accumulated debt, but encountered resistance from privileged bodies and the sovereign courts known as parlements. Support for American independence had added to its financial burden. The poor harvest of 1788 and rising bread prices connected royal insolvency with everyday insecurity. When Louis XVI convened the Estates-General at Versailles on 5 May 1789, debate moved beyond authorizing revenue to the question of who could represent the nation.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled"
+              ]
+            },
+            {
+              "ko": "성직자·귀족·제3신분이라는 법적 구분은 부의 분포와 정확히 일치하지 않았다. 제3신분에는 부유한 상인과 법률가뿐 아니라 장인·임금노동자·농민이 함께 속했다. 따라서 혁명을 단일한 계급의 일치된 계획으로 설명하면 참여자 사이의 차이가 사라진다. 특권 폐지, 정치적 대표권, 토지 부담의 경감, 식량 확보는 서로 연결되면서도 다른 요구였다.",
+              "en": "The legal division into clergy, nobility, and Third Estate did not map neatly onto wealth. The Third Estate included prosperous merchants and lawyers alongside artisans, wage earners, and peasants. Treating the Revolution as the unanimous project of one class obscures these differences. Ending privilege, securing representation, reducing obligations on land, and obtaining food were connected demands, but they were not identical.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1789년: 의회와 거리와 농촌",
+            "en": "1789: assembly, streets, and countryside"
+          },
+          "paragraphs": [
+            {
+              "ko": "제3신분 대표들은 6월 17일 국민의회를 선언했고, 6월 20일 테니스코트의 서약에서 헌법 제정 전에는 해산하지 않겠다고 다짐했다. 왕실의 병력 집결에 대한 불안 속에서 파리 민중은 7월 14일 바스티유를 습격했다. 농촌에서는 대공포가 번지고 농민들이 영주의 권리를 기록한 문서를 공격했다. 의회의 권위는 법률 논의만이 아니라 이러한 도시·농촌의 집단행동에 의해 뒷받침되고 압박받았다.",
+              "en": "Third Estate deputies declared themselves the National Assembly on 17 June and pledged in the Tennis Court Oath of 20 June to remain together until a constitution was established. Anxiety over royal troop concentrations helped drive the storming of the Bastille on 14 July. In the countryside, the Great Fear accompanied attacks on records of seigneurial obligations. Collective action outside the assembly both strengthened its challenge to royal authority and pressed it toward further change.",
+              "sources": [
+                "https://www.worldhistory.org/French_Revolution/",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+              ]
+            },
+            {
+              "ko": "8월 4일 밤 시작된 특권 폐지 결정은 8월의 법령으로 구체화되었다. 그러나 모든 영주적 부담이 즉시 무상으로 사라진 것은 아니다. 일부는 처음에 상환 대상으로 남았고, 남은 봉건적 부담의 무상 폐지는 1793년에 이루어졌다. 8월 26일 권리 선언은 국민주권과 법 앞의 평등을 내세우면서 소유권도 보장했다. 10월 5~6일 여성들이 앞장선 베르사유 행진은 식량 문제와 정치 문제를 결합했고 왕실을 파리로 옮기게 했다.",
+              "en": "The decisions against privilege begun on the night of 4 August became legislative decrees, but not every seigneurial payment vanished without compensation: some were initially redeemable, and remaining feudal dues were abolished without compensation in 1793. The Declaration of Rights of 26 August proclaimed national sovereignty and legal equality while protecting property. The women-led march to Versailles on 5–6 October joined subsistence demands to politics and brought the royal family to Paris.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/331",
+                "https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution"
+              ]
+            },
+            {
+              "ko": "대공포는 굶주린 사람들이 무작정 폭동을 일으킨 사건만은 아니었다. 귀족이 도적을 고용해 수확을 파괴한다는 소문과 곡물 부족에 대한 불안이 마을 사이로 퍼졌고, 주민들은 무장해 방어하다가 영주의 문서고와 권리 증서로 공격 대상을 옮겼다. 소문은 지역마다 다른 경로로 움직였으며 모든 지방이 똑같이 반응하지 않았다. 농민의 행동은 파리의 결정을 기다린 수동적 반응이 아니라 영주적 부담을 없애려는 독자적 압력이었다.",
+              "en": "The Great Fear was more than an undirected riot of hungry people. Rumors that aristocrats had hired brigands to destroy the harvest circulated alongside anxiety about grain shortages. Villagers armed themselves defensively and then turned against seigneurial archives and title deeds. Rumors traveled through different regional networks, and responses were not uniform. Peasant action exerted an independent pressure against seigneurial obligations rather than passively waiting for decisions in Paris.",
+              "sources": [
+                "https://www.worldhistory.org/Great_Fear/"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "입헌군주제의 제도와 균열",
+            "en": "Institutions and fractures of constitutional monarchy"
+          },
+          "paragraphs": [
+            {
+              "ko": "제헌국민의회는 교회 재산을 국유화하고 이를 뒷받침으로 아시냐를 발행했다. 1790년 성직자민사기본법과 뒤이은 선서 요구는 성직자와 신자들을 갈라놓았다. 새 국가는 종교를 단순히 없앤 것이 아니라 교회의 재산·조직·충성 관계를 재편하려 했다. 1791년 6월 국왕의 바렌 도주 실패는 왕이 혁명 질서를 받아들이는지에 대한 의심을 키웠다.",
+              "en": "The Constituent Assembly nationalized church property and used it to back assignats. The Civil Constitution of the Clergy in 1790 and the subsequent oath requirement divided clergy and believers. The new state was attempting to reorganize ecclesiastical property, institutions, and allegiance, rather than simply abolish religion. The king’s failed flight to Varennes in June 1791 intensified doubts about his commitment to the revolutionary settlement.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls"
+              ]
+            },
+            {
+              "ko": "1791년 헌법은 행정권을 국왕에게 맡기고 입법의회를 두었지만 정치 참여를 동등하게 열지는 않았다. 능동시민 자격에는 연령·납세·독립성 조건이 있었고 선거인에게는 더 높은 재산 요건이 적용되었다. 같은 해 르 샤플리에 법은 직업적 결사와 노동자들의 집단적 임금 행동을 금지했다. 법적 신분 특권의 해체는 곧바로 보통선거나 노동자의 결사권을 뜻하지 않았다.",
+              "en": "The Constitution of 1791 assigned executive power to the king and established a Legislative Assembly, but political participation remained unequal. Active citizenship required age, tax, and independence qualifications; electors faced higher property thresholds. The Le Chapelier Law of the same year prohibited occupational combinations and workers’ collective wage action. Abolishing inherited legal privilege did not automatically establish universal suffrage or workers’ freedom of association.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/item/480"
+              ]
+            },
+            {
+              "ko": "아시냐는 처음에는 국유재산과 연결된 증서였으나 유통 화폐로 확대되었다. 재정 수요에 따른 발행 증가와 신뢰의 약화는 통화 가치 하락을 낳았고, 임금과 물가가 같은 속도로 움직이지 않으면서 생활의 불안은 커졌다. 국유지 매각은 재산의 소유자를 바꾸었지만 모든 농민에게 같은 규모의 토지를 나누어 준 제도는 아니었다. 혁명기의 경제 변화는 법률의 평등 선언과 실제 구매력·재산 분배가 어긋날 수 있음을 보여 준다.",
+              "en": "Assignats began as instruments connected to national property but expanded into circulating money. Increased issues to meet fiscal needs and declining confidence contributed to depreciation; wages and prices did not move together, intensifying insecurity. Sales of national property changed ownership without distributing equal plots to every peasant. Economic change thus exposed a gap between legal equality and the distribution of purchasing power and assets.",
+              "sources": [
+                "https://www.worldhistory.org/Assignat/"
+              ]
+            },
+            {
+              "ko": "새 질서는 통치의 공간과 절차도 바꾸었다. 1791년 헌법은 왕국을 83개 도로 나누고 선출된 행정관과 법관을 두는 원칙을 담았다. 공직의 매매와 세습, 출생에 따른 직위 차별을 부정하고 같은 범죄에는 같은 형벌을 적용하도록 했다. 이런 변화는 왕실과 특권 신분의 권리를 국민의 이름으로 행사되는 공적 권한으로 재구성했다. 동시에 국왕의 거부권과 재산에 따른 선거 구조는 누가 그 공권력을 통제하는가라는 갈등을 남겼다.",
+              "en": "The new order also changed the geography and procedures of government. The 1791 constitution organized the kingdom into 83 departments and provided for elected administrators and judges. It rejected the sale and inheritance of offices and distinctions of birth, and required equal punishments for the same offenses. Such measures recast royal and corporate privileges as public powers exercised in the nation’s name. The king’s veto and property-based electoral structure nevertheless left unresolved who would control those powers.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1792년: 전쟁과 왕정의 붕괴",
+            "en": "1792: war and the overthrow of monarchy"
+          },
+          "paragraphs": [
+            {
+              "ko": "자크 피에르 브리소와 그 동료들은 전쟁으로 혁명을 지키고 적을 드러낼 수 있다고 주장했다. 로베스피에르는 군사적 패배와 장군들의 권력 확대를 경계하며 반대했다. 국왕도 다른 계산에서 전쟁에 동의했다. 1792년 4월 20일 프랑스가 오스트리아 군주에게 선전포고하면서 시작된 전쟁은 초기 패배와 침공 위협을 통해 국내 갈등을 악화시켰다.",
+              "en": "Jacques Pierre Brissot and his allies argued that war could defend the Revolution and expose its enemies. Robespierre opposed the policy, warning of defeat and the growing power of generals. The king supported war for different reasons. France’s declaration against the Austrian ruler on 20 April 1792 opened a conflict whose early defeats and threat of invasion sharpened political conflict at home.",
+              "sources": [
+                "https://www.worldhistory.org/War_of_the_First_Coalition/",
+                "https://www.worldhistory.org/Declaration_of_Pillnitz/"
+              ]
+            },
+            {
+              "ko": "8월 10일 튈르리 궁전 봉기 뒤 국왕의 권한은 정지되었다. 9월에는 파리 감옥 수감자들이 학살되었다. 이를 공화국 방어라는 구호만으로 정당화하거나 모든 희생자를 실제 음모자로 취급할 수는 없다. 9월 20일 발미 전투 다음 날 새 국민공회는 왕정을 폐지했고, 9월 22일부터 공화국 원년을 사용했다. 루이 16세는 재판과 표결을 거쳐 1793년 1월 21일 처형되었다. 전쟁의 전개는 [프랑스 혁명 전쟁](/commulingo/events/french-revolutionary-wars-1792-1802)에서 이어진다.",
+              "en": "After the Tuileries insurrection of 10 August, royal authority was suspended. Prisoners were massacred in Paris in September; appeals to defend the Revolution neither establish every victim’s guilt nor justify these killings. On 21 September, the day after Valmy, the new National Convention abolished monarchy, and republican dating began from 22 September. Louis XVI was executed on 21 January 1793 after trial and votes in the Convention. The military narrative continues in [French Revolutionary Wars](/commulingo/events/french-revolutionary-wars-1792-1802).",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-falls",
+                "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "상퀼로트와 생존권의 정치",
+            "en": "Sans-culottes and the politics of subsistence"
+          },
+          "paragraphs": [
+            {
+              "ko": "상퀼로트는 근대 공장노동자만을 가리키는 이름이 아니었다. 장인·소상점주·임금노동자 등이 파리의 구와 민중 단체에서 활동하며 식량 공급, 투기 억제, 정치적 감시와 참여를 요구했다. 산악파와 이들의 협력은 지롱드파를 압박했지만 의회 지도부와 민중 조직의 목표가 언제나 같았던 것은 아니다. 1793년 5월 31일~6월 2일의 압력은 주요 지롱드파 의원들의 체포로 이어졌다.",
+              "en": "The sans-culottes were not simply a modern factory proletariat. Artisans, shopkeepers, and wage earners participated in Paris sections and popular societies, demanding food supplies, restraints on speculation, vigilance, and political participation. Their alliance with the Mountain put pressure on the Girondins, without making parliamentary leaders and popular organizations identical in purpose. The mobilization of 31 May–2 June 1793 led to the arrest of leading Girondin deputies.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution"
+              ]
+            },
+            {
+              "ko": "로베스피에르의 1792년 생필품 연설은 소유권을 생존의 보장과 연결했다. 1793년 9월 29일 일반최고가격법은 생필품 가격뿐 아니라 임금에도 상한을 두고 노동 징발을 규정했다. 그러므로 이를 노동자에게 이익만 준 정책이나 생산수단의 사회적 소유를 실현한 제도로 설명하면 부정확하다. 사적 소유를 유지하는 공화국 안에서 전쟁 수행, 소비자의 생존, 생산과 유통의 이해가 충돌했다. [생존권과 평등 문헌집](/commulingo/docs/france-subsistence-and-equality-1792-1796)에서 이 긴장을 원문으로 읽을 수 있다.",
+              "en": "Robespierre’s 1792 speech on subsistence connected property rights with the preservation of life. The General Maximum of 29 September 1793 capped wages as well as commodity prices and provided for requisitioning labor. It was neither an unqualified benefit to workers nor the establishment of social ownership of production. Within a republic retaining private property, military supply, consumer survival, production, and distribution pulled policy in different directions. The [Subsistence and Equality collection](/commulingo/docs/france-subsistence-and-equality-1792-1796) lets readers examine these tensions in the documents.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796"
+              ]
+            },
+            {
+              "ko": "장폴 마라는 『인민의 벗』을 통해 관리와 정치 지도자들을 고발하고 민중의 불만을 대변했다. 그의 언론은 감시와 책임을 요구하는 기능과 적에 대한 선제적 폭력을 촉구하는 언어를 함께 지녔다. 1793년 7월 13일 샤를로트 코르데에게 암살된 뒤 마라는 혁명의 순교자로 기려졌고, 다비드의 그림은 그 기억을 형성했다. 언론·청원·클럽·장례와 축제는 의회의 연설 못지않게 누가 인민의 편인가를 판단하는 정치 공간이었다.",
+              "en": "Jean-Paul Marat’s L’Ami du peuple publicized popular grievances and accused officials and political leaders of wrongdoing. His journalism combined demands for vigilance and accountability with calls for preemptive violence against perceived enemies. After Charlotte Corday assassinated him on 13 July 1793, he was commemorated as a revolutionary martyr, an image shaped by David’s painting. Newspapers, petitions, clubs, funerals, and festivals became arenas for deciding who spoke for the people alongside debate in the assembly.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Jean-Paul_Marat"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1793년 헌법과 혁명정부의 간극",
+            "en": "The gap between the 1793 constitution and revolutionary government"
+          },
+          "paragraphs": [
+            {
+              "ko": "1793년 6월 헌법과 권리 선언은 남성의 광범한 선거 참여, 공공부조와 교육, 압제에 맞선 저항을 규정했다. 그러나 이 헌법에 따른 통상적인 정부는 가동되지 않았다. 10월 국민공회는 평화가 올 때까지 정부를 혁명적으로 운영하기로 했다. 따라서 헌법의 권리 조항과 실제 통치 관행을 구분해야 한다. 공안위원회와 보안위원회, 파견의원과 지방 위원회는 각기 다른 기능과 권한을 행사했다.",
+              "en": "The June 1793 constitution and declaration envisaged broad male electoral participation, public assistance, education, and resistance to oppression. Its regular constitutional government never went into operation. In October the Convention instead declared government revolutionary until peace. Constitutional promises must therefore be distinguished from governing practice. The Committees of Public Safety and General Security, representatives on mission, and local committees exercised different functions and powers.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-constitutions-and-republic-1791-1793",
+                "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794"
+              ]
+            },
+            {
+              "ko": "방데의 반란, 지방의 반산악파 봉기, 외국군의 침공은 비상조치의 배경이었다. 9월 17일 혐의자법은 체포 대상을 넓혔고, 혁명재판소와 지방의 탄압은 많은 민간인을 희생시켰다. 1794년 6월 10일 프레리알 22일 법은 피고인의 방어를 크게 제약했다. 로베스피에르의 도덕과 공포에 관한 연설은 이 통치의 정당화 논리이지 그 정당성을 확정하는 판정문은 아니다. 위기 상황의 설명과 국가폭력의 평가는 분리해서 살펴야 한다.",
+              "en": "The Vendée rebellion, provincial opposition to the Mountain, and foreign invasion formed the setting for emergency measures. The Law of Suspects of 17 September widened arrest powers; revolutionary tribunals and provincial repression took many civilian lives. The Law of 22 Prairial, 10 June 1794, sharply curtailed defendants’ protections. Robespierre’s speech linking virtue and terror articulated a justification for this government, not an authoritative verdict on its legitimacy. Explaining the emergency and assessing state violence are distinct tasks.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/war-terror-and-resistance"
+              ]
+            },
+            {
+              "ko": "지방의 저항도 하나의 사건으로 묶을 수 없다. 방데에서는 성직자 문제와 징집에 대한 반감이 농민 봉기와 가톨릭·왕당파 군대로 이어졌다. 리옹·마르세유·보르도 등의 반산악파 운동은 서로 다른 지역 갈등을 품었으며 모두가 처음부터 왕정 복고를 원한 것은 아니었다. 방데의 민간인 학살, 낭트의 수장, 리옹의 집단 처형은 비상통치가 지방에서 어떻게 작동했는지를 보여 준다. 희생자 수와 방데 학살의 법적·역사적 성격은 연구 범위와 정의에 따라 논쟁되므로 단일 숫자나 명칭으로 결론내리지 않는다.",
+              "en": "Provincial resistance was not one uniform movement. In the Vendée, disputes over clergy and recruitment contributed to peasant rebellion and a Catholic and Royal Army. Anti-Montagnard movements in Lyon, Marseille, and Bordeaux arose from distinct local conflicts; not all initially sought restoration of monarchy. Civilian massacres in the Vendée, drownings at Nantes, and mass executions at Lyon show how emergency rule operated locally. Estimates and the classification of the Vendée killings remain disputed, making definitions and geographical scope essential to assessing claims.",
+              "sources": [
+                "https://www.worldhistory.org/War_in_the_Vendee/",
+                "https://www.worldhistory.org/Federalist_Revolts/"
+              ]
+            },
+            {
+              "ko": "루이 앙투안 드 생쥐스트는 공안위원회와 전선 파견 활동에서 군대의 규율·보급과 정치적 신뢰를 결합하려 했다. 1794년 방토즈의 제안은 공화국의 적으로 간주된 사람들의 재산을 빈곤한 애국자에게 돌리는 구상을 담았지만, 광범한 재분배로 실현되지는 못했다. 혁명정부 안에는 생존과 평등을 확대하려는 기획과 적을 분류·배제하는 강제력이 함께 있었다. 한 인물의 연설을 국가 전체의 실제 제도와 동일시하지 않고 제안·법령·집행을 나누어 읽어야 하는 이유다.",
+              "en": "Louis Antoine de Saint-Just linked military discipline and supply with political reliability through the Committee of Public Safety and missions to the armies. His Ventôse proposals in 1794 envisaged transferring property of people regarded as enemies of the republic to needy patriots, but did not produce extensive redistribution in practice. Revolutionary government combined projects for greater subsistence and equality with coercive classification and exclusion. Proposals, decrees, and implementation must be distinguished rather than treating an individual’s speech as a description of the entire state.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just"
+              ]
+            },
+            {
+              "ko": "종교정책에서도 혁명 지도부는 단일하지 않았다. 1793년의 비기독교화 운동은 교회 폐쇄와 종교적 상징의 파괴, 이성의 축제 등으로 나타났다. 로베스피에르는 무신론과 강제적인 비기독교화를 비판했고, 1794년 5월 국민공회는 최고존재와 영혼의 불멸을 인정하는 결의를 채택했다. 6월 8일 최고존재 축제는 공화국의 시민적 도덕을 의례로 표현하려 했다. 이러한 실험은 혁명이 법과 군대뿐 아니라 시간·축제·신앙과 공동체의 감정까지 재조직하려 했음을 보여 준다.",
+              "en": "Revolutionary leaders also disagreed over religion. Dechristianization in 1793 involved church closures, destruction of religious symbols, and festivals of Reason. Robespierre opposed atheism and coercive dechristianization; in May 1794 the Convention recognized a Supreme Being and the immortality of the soul. The festival of 8 June sought to express republican civic morality through public ritual. These experiments show a revolution attempting to reorganize time, festivals, belief, and communal feeling as well as law and armed force.",
+              "sources": [
+                "https://www.worldhistory.org/Cult_of_the_Supreme_Being/"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "여성의 참여와 시민권의 경계",
+            "en": "Women’s participation and the boundaries of citizenship"
+          },
+          "paragraphs": [
+            {
+              "ko": "여성은 시장과 거리, 청원과 정치 결사를 통해 혁명을 움직였지만 국민을 대표하는 선거권에서는 배제되었다. 올랭프 드 구주의 1791년 여성 권리 선언은 1789년 선언의 보편성을 여성에게도 적용하라고 요구했다. 이것은 국민의회가 채택한 법률이 아니라 배제에 도전한 저술이었다. 시민권을 논할 때 혁명가들이 선언한 보편적 원칙과 실제로 권리를 행사할 수 있었던 사람들을 함께 보아야 한다.",
+              "en": "Women helped drive the Revolution through markets, demonstrations, petitions, and political associations while remaining excluded from national electoral citizenship. Olympe de Gouges’s 1791 declaration demanded that the universality claimed in 1789 also apply to women. Her text was a challenge to exclusion, not legislation adopted by the Assembly. Studying citizenship requires comparing proclaimed universal principles with the people actually permitted to exercise political rights.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794"
+              ]
+            },
+            {
+              "ko": "혁명은 이혼 등 민사 영역의 변화를 열었지만, 1793년 10월 여성 정치 결사의 금지는 참여의 문을 닫았다. 구주는 그해 11월 처형되었다. 여성들은 하나의 정치 노선으로 결집하지 않았고, 민중운동 내부에서도 식량·종교·공화국을 둘러싼 입장이 달랐다. 권리 확대와 정치적 배제가 같은 혁명 과정에서 병존했다는 사실이 핵심이다.",
+              "en": "The Revolution opened changes in civil life, including divorce, yet the prohibition of women’s political clubs in October 1793 closed an important avenue of participation. Gouges was executed that November. Women did not share a single political program, and popular activism itself contained disagreements over food, religion, and republicanism. The central point is that expanded civil possibilities and political exclusion coexisted within the same revolution.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/women-and-the-revolution"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "식민지 노예제와 해방의 주체",
+            "en": "Colonial slavery and the agents of emancipation"
+          },
+          "paragraphs": [
+            {
+              "ko": "프랑스의 자유 선언은 처음부터 식민지의 노예제를 없애지 않았다. 설탕과 커피를 생산하던 생도맹그에서는 백인 식민자, 자유 유색인, 노예화된 사람들이 불평등한 지위에 놓여 있었다. 1791년 노예 봉기는 프랑스 의회의 결정만으로 설명할 수 없는 독자적인 혁명 동력이었다. 식민지의 전쟁과 저항은 본국에서 자유와 시민권의 범위를 다시 정하도록 압박했다.",
+              "en": "France’s declaration of liberty did not initially abolish colonial slavery. In sugar- and coffee-producing Saint-Domingue, white colonists, free people of color, and enslaved people occupied unequal positions. The slave uprising of 1791 was an independent revolutionary force, not merely an effect of decisions in Paris. Resistance and warfare in the colony pressed metropolitan lawmakers to reconsider the reach of liberty and citizenship.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu"
+              ]
+            },
+            {
+              "ko": "1793년 생도맹그에서 이루어진 해방 조치 뒤, 국민공회는 1794년 2월 4일 모든 식민지의 노예제 폐지와 피부색을 구별하지 않는 시민권을 선언했다. 법령은 집행 문제를 공안위원회에 맡겼고 실제 적용은 식민지마다 달랐다. 이는 중요한 단절이었지만 영구적인 보장은 아니었다. 뒤이은 보나파르트의 식민정책은 이 성과를 공격했다. 아이티의 독립은 1804년이므로 이 글의 시기 밖에 두되, 해방을 프랑스가 일방적으로 베푼 선물로 서술해서는 안 된다.",
+              "en": "After emancipation measures in Saint-Domingue in 1793, the Convention decreed abolition throughout the colonies on 4 February 1794 and declared citizenship without distinction of color. It referred implementation to the Committee of Public Safety; enforcement differed between colonies. This was a major rupture, but not an irreversible guarantee. Bonaparte’s subsequent colonial policy attacked these gains. Haitian independence in 1804 lies beyond this article’s dates, but emancipation should not be narrated as a gift bestowed unilaterally by France.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-rights-and-emancipation-1789-1794",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "테르미도르와 총재정부",
+            "en": "Thermidor and the Directory"
+          },
+          "paragraphs": [
+            {
+              "ko": "1794년 봄 에베르파와 당통·데물랭 등이 차례로 처형되면서 혁명 진영 내부의 숙청이 깊어졌다. 7월 27일 테르미도르 9일에 국민공회는 로베스피에르와 그 동료들을 체포했고 다음 날 이들을 처형했다. 뒤이은 변화는 단 하루에 모든 탄압이 끝난 사건이 아니었다. 자코뱅 조직과 민중운동이 공격받고 가격 통제가 해제되었으며 반자코뱅 폭력도 벌어졌다.",
+              "en": "Executions of the Hébertists and then Danton, Desmoulins, and their associates in spring 1794 deepened the destruction of rival revolutionary groups. On 27 July, 9 Thermidor, the Convention arrested Robespierre and his allies; they were executed the following day. Repression did not simply end overnight. Jacobin organizations and popular activism came under attack, price controls were removed, and anti-Jacobin violence followed.",
+              "sources": [
+                "https://www.worldhistory.org/French_Revolution/"
+              ]
+            },
+            {
+              "ko": "1795년 헌법은 양원제와 5인의 총재정부를 세웠다. 이 제도는 권력 집중을 막으려 했지만 재산에 따른 정치적 선별을 유지했다. 바뵈프와 동료들의 평등파 운동은 사회적 평등이 미완성이라는 문제를 제기했고 1796년에 탄압되었다. 총재정부는 왕당파와 좌파의 압력 사이에서 선거 결과의 무효화와 군사력에 의존했다. [총재정부와 통령정부 문헌](/commulingo/docs/france-directoire-consulat-1795-1799)을 통해 헌법의 설계와 실제 권력 이동을 비교할 수 있다.",
+              "en": "The Constitution of 1795 established two legislative chambers and a five-member Directory. Designed to disperse power, it retained property-based political selection. Babeuf and his associates’ egalitarian movement challenged the incompleteness of social equality and was suppressed in 1796. Under pressure from royalists and the left, the Directory increasingly relied on annulled elections and military force. The [Directory and Consulate documents](/commulingo/docs/france-directoire-consulat-1795-1799) allow comparison between constitutional design and the actual transfer of power.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-directoire-consulat-1795-1799",
+                "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience"
+              ]
+            },
+            {
+              "ko": "총재정부의 위기를 부패라는 한 단어로 설명하는 것도 부족하다. 아시냐의 붕괴와 대체 화폐의 실패는 재정과 생계를 흔들었다. 1797년 프뤽티도르 쿠데타는 왕당파의 진출을 꺾었고, 1798년 플로레알의 선거 무효화는 좌파 당선자들을 겨냥했다. 재정·행정의 안정화 시도와 공화국 방어라는 목표는 존재했지만, 통치자들이 선거의 불리한 결과를 군사력과 예외조치로 뒤집으면서 대표제 자체의 신뢰를 약화시켰다.",
+              "en": "The Directory’s difficulties cannot be reduced to corruption. The collapse of assignats and failure of their replacement disrupted finance and subsistence. The Fructidor coup of 1797 reversed royalist gains; electoral annulments in Floréal 1798 targeted victories on the left. Efforts to stabilize administration and preserve the republic existed alongside these interventions. By reversing unfavorable electoral outcomes through force and exceptional measures, rulers undermined confidence in representative institutions.",
+              "sources": [
+                "https://www.worldhistory.org/French_Directory/",
+                "https://www.worldhistory.org/Assignat/"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "브뤼메르와 혁명의 유산",
+            "en": "Brumaire and the Revolution’s legacies"
+          },
+          "paragraphs": [
+            {
+              "ko": "1799년 11월 9~10일 브뤼메르 18~19일의 쿠데타는 총재정부를 무너뜨리고 보나파르트가 주도하는 통령정부로 이어졌다. 군사적 명성과 의회 정치인들의 개헌 구상이 결합했지만, 결과는 보나파르트에게 권력이 집중되는 체제였다. 1799년을 혁명의 끝으로 삼는 것은 정치적 시대 구분이지 사회적 변화가 모두 중단되었다는 뜻은 아니다. 군주정의 붕괴, 신분적 특권의 해체, 국민주권의 언어는 이후에도 남았다.",
+              "en": "The coup of 18–19 Brumaire, 9–10 November 1799, overthrew the Directory and led to a Consulate dominated by Bonaparte. Military prestige combined with civilian politicians’ plans for constitutional revision, but the outcome concentrated power in the general’s hands. Dating the Revolution’s end to 1799 is a political periodization, not a claim that social change stopped. The destruction of the old monarchy and inherited privilege, and the language of national sovereignty, outlasted the revolutionary decade.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution"
+              ]
+            },
+            {
+              "ko": "혁명의 성격을 두고는 계급과 소유관계의 변화를 강조하는 해석, 정치문화와 주권의 언어를 중시하는 해석, 전쟁·종교·식민지·성별의 경험을 통해 접근하는 연구가 공존한다. 상퀼로트와 바뵈프의 평등 요구는 후대 사회주의자들의 중요한 참조점이 되었지만, 1790년대 공화국을 곧바로 사회주의 국가로 부를 수는 없다. 권리 선언, 소유의 보호, 민중의 생존 요구, 비상권력의 폭력이 어떻게 함께 나타났는지가 학습의 중심 질문이다.",
+              "en": "Interpretations differ in their emphasis on class and property, political culture and sovereignty, or the experiences of war, religion, empire, and gender. Sans-culotte demands and Babeuf’s egalitarianism became important reference points for later socialists, but the republic of the 1790s cannot simply be labeled a socialist state. The central problem for study is how declarations of rights, protection of property, demands for subsistence, and coercive emergency rule appeared together.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution",
+                "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796"
+              ]
+            }
+          ]
+        }
+      ],
+      "people": [
+        {
+          "person_id": "louis-xvi",
+          "relation_kind": "opponent",
+          "relation_ko": "폐위된 국왕",
+          "relation_en": "Deposed king",
+          "note_ko": "입헌군주제의 국왕이었으나 1792년 왕권을 잃고 1793년 처형되었다.",
+          "note_en": "King under the constitutional monarchy; deposed in 1792 and executed in 1793.",
+          "sort_order": 0
+        },
+        {
+          "person_id": "jacques-pierre-brissot",
+          "relation_kind": "leader",
+          "relation_ko": "지롱드파 지도자",
+          "relation_en": "Girondin leader",
+          "note_ko": "전쟁을 지지한 정치인이며 산악파와의 갈등 속에 1793년 처형되었다.",
+          "note_en": "Advocated war and was executed in 1793 after conflict with the Mountain.",
+          "sort_order": 10
+        },
+        {
+          "person_id": "maximilien-robespierre",
+          "relation_kind": "leader",
+          "relation_ko": "산악파·공안위원회 지도자",
+          "relation_en": "Montagnard and committee leader",
+          "note_ko": "1792년 전쟁에 반대했고 1793~1794년 혁명정부를 이끌던 인물 중 하나였다.",
+          "note_en": "Opposed war in 1792 and became one of the leaders of revolutionary government in 1793–1794.",
+          "sort_order": 20
+        },
+        {
+          "person_id": "louis-antoine-de-saint-just",
+          "relation_kind": "leader",
+          "relation_ko": "공안위원회·전선 파견의원",
+          "relation_en": "Committee member and representative on mission",
+          "note_ko": "혁명정부와 군대에서 활동하고 방토즈의 재산 재분배를 제안했다.",
+          "note_en": "Served revolutionary government and the armies and proposed Ventôse redistribution.",
+          "sort_order": 25
+        },
+        {
+          "person_id": "georges-danton",
+          "relation_kind": "leader",
+          "relation_ko": "공화국 수립기의 지도자",
+          "relation_en": "Leader during the republic’s founding",
+          "note_ko": "1792년 동원과 공안위원회 초기 활동에 관여했으며 1794년 처형되었다.",
+          "note_en": "Helped mobilize France in 1792, served on the early Committee of Public Safety, and was executed in 1794.",
+          "sort_order": 30
+        },
+        {
+          "person_id": "camille-desmoulins",
+          "relation_kind": "participant",
+          "relation_ko": "혁명 언론인",
+          "relation_en": "Revolutionary journalist",
+          "note_ko": "『르 비외 코르들리에』에서 탄압을 비판했으며 당통과 함께 처형되었다.",
+          "note_en": "Criticized repression in Le Vieux Cordelier and was executed with Danton.",
+          "sort_order": 40
+        },
+        {
+          "person_id": "jean-paul-marat",
+          "relation_kind": "participant",
+          "relation_ko": "민중 언론인·국민공회 의원",
+          "relation_en": "Popular journalist and Convention deputy",
+          "note_ko": "『인민의 벗』으로 활동하고 1793년 암살되었다.",
+          "note_en": "Published L’Ami du peuple and was assassinated in 1793.",
+          "sort_order": 45
+        },
+        {
+          "person_id": "olympe-de-gouges",
+          "relation_kind": "participant",
+          "relation_ko": "여성 시민권의 옹호자",
+          "relation_en": "Advocate of women’s citizenship",
+          "note_ko": "1791년 여성 권리 선언을 발표했으며 1793년 처형되었다.",
+          "note_en": "Published her declaration of women’s rights in 1791 and was executed in 1793.",
+          "sort_order": 50
+        },
+        {
+          "person_id": "gracchus-babeuf",
+          "relation_kind": "participant",
+          "relation_ko": "평등파 운동의 조직자",
+          "relation_en": "Organizer of the Equals",
+          "note_ko": "총재정부 아래 사회적 평등을 요구하는 운동을 조직했다.",
+          "note_en": "Organized a movement demanding social equality under the Directory.",
+          "sort_order": 60
+        }
+      ]
+    },
+    {
+      "id": "french-revolutionary-wars-1792-1802",
+      "expected": null,
+      "fields": {
+        "title_ko": "프랑스 혁명 전쟁",
+        "title_en": "French Revolutionary Wars",
+        "period_label": "1792–1802",
+        "sort_order": 2,
+        "countries": [
+          "france",
+          "austria",
+          "germany",
+          "uk",
+          "netherlands",
+          "belgium",
+          "spain",
+          "italy",
+          "switzerland",
+          "russia",
+          "turkey",
+          "egypt",
+          "malta",
+          "ireland",
+          "haiti",
+          "dominican-republic"
+        ],
+        "locations": [
+          {
+            "label": {
+              "ko": "발미",
+              "en": "Valmy"
+            },
+            "lat": 49.086,
+            "lng": 4.774,
+            "kind": "main"
+          },
+          {
+            "label": {
+              "ko": "제마프",
+              "en": "Jemappes"
+            },
+            "lat": 50.45,
+            "lng": 3.89,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "플뢰뤼스",
+              "en": "Fleurus"
+            },
+            "lat": 50.483,
+            "lng": 4.55,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "툴롱",
+              "en": "Toulon"
+            },
+            "lat": 43.125,
+            "lng": 5.93,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "만토바",
+              "en": "Mantua"
+            },
+            "lat": 45.156,
+            "lng": 10.791,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "카이로",
+              "en": "Cairo"
+            },
+            "lat": 30.044,
+            "lng": 31.236,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "아부키르만",
+              "en": "Aboukir Bay"
+            },
+            "lat": 31.32,
+            "lng": 30.07,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "아크레",
+              "en": "Acre"
+            },
+            "lat": 32.927,
+            "lng": 35.082,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "캐슬바",
+              "en": "Castlebar"
+            },
+            "lat": 53.855,
+            "lng": -9.298,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "취리히",
+              "en": "Zurich"
+            },
+            "lat": 47.377,
+            "lng": 8.542,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "마렝고",
+              "en": "Marengo"
+            },
+            "lat": 44.886,
+            "lng": 8.677,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "호엔린덴",
+              "en": "Hohenlinden"
+            },
+            "lat": 48.156,
+            "lng": 11.998,
+            "kind": "place"
+          },
+          {
+            "label": {
+              "ko": "아미앵",
+              "en": "Amiens"
+            },
+            "lat": 49.894,
+            "lng": 2.295,
+            "kind": "place"
+          }
+        ],
+        "relations": {
+          "related": [
+            "french-revolution-1789-1799"
+          ]
+        },
+        "no_auto_link": [],
+        "link_expressions": [],
+        "sources": [
+          "https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802",
+          "https://www.worldhistory.org/French_Revolutionary_Wars/",
+          "https://www.worldhistory.org/Declaration_of_Pillnitz/",
+          "https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html",
+          "https://www.worldhistory.org/War_of_the_First_Coalition/",
+          "https://www.worldhistory.org/Battle_of_Valmy/",
+          "https://www.worldhistory.org/Battle_of_Jemappes/",
+          "https://en.wikipedia.org/wiki/Battle_of_Neerwinden_(1793)",
+          "https://www.worldhistory.org/Federalist_Revolts/",
+          "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794",
+          "https://revolution.chnm.org/d/968",
+          "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse",
+          "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796",
+          "https://en.wikipedia.org/wiki/Jourdan_law",
+          "https://www.worldhistory.org/article/2213/battle-of-fleurus/",
+          "https://en.wikipedia.org/wiki/Flanders_campaign",
+          "https://en.wikipedia.org/wiki/War_of_the_Pyrenees",
+          "https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html",
+          "https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+          "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/",
+          "https://en.wikipedia.org/wiki/Sister_republic",
+          "https://www.nam.ac.uk/explore/egyptian-campaign",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu",
+          "https://www.nam.ac.uk/explore/irish-rebellion-1798",
+          "https://en.wikipedia.org/wiki/Glorious_First_of_June",
+          "https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/",
+          "https://www.worldhistory.org/War_of_the_Second_Coalition/",
+          "https://en.wikipedia.org/wiki/Second_Battle_of_Zurich",
+          "https://www.napoleon.org/en/magazine/places/marengo-2/",
+          "https://en.wikipedia.org/wiki/Battle_of_Hohenlinden",
+          "https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/",
+          "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution"
+        ],
+        "timeline": [
+          {
+            "date": "1791.08.27",
+            "title": {
+              "ko": "필니츠 선언",
+              "en": "Declaration of Pillnitz"
+            },
+            "body": {
+              "ko": "오스트리아와 프로이센이 조건부 공동행동 의사를 밝혔다.",
+              "en": "Austria and Prussia expressed conditional readiness for joint action."
+            },
+            "country": [
+              "austria",
+              "germany",
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 51.0089,
+              "lng": 13.8708,
+              "label": {
+                "ko": "필니츠 궁전 · 공동 선언",
+                "en": "Pillnitz Palace · joint declaration"
+              }
+            }
+          },
+          {
+            "date": "1792.04.20",
+            "title": {
+              "ko": "전쟁 시작",
+              "en": "War begins"
+            },
+            "body": {
+              "ko": "프랑스가 오스트리아 군주에게 선전포고했다.",
+              "en": "France declared war on the Austrian ruler."
+            },
+            "country": [
+              "france",
+              "austria"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 오스트리아에 선전포고",
+                "en": "Paris · Declaration of war on Austria"
+              }
+            }
+          },
+          {
+            "date": "1792.09.20",
+            "title": {
+              "ko": "발미",
+              "en": "Valmy"
+            },
+            "body": {
+              "ko": "프랑스군이 침공군의 진격을 막았다.",
+              "en": "French forces checked the invasion."
+            },
+            "country": [
+              "france",
+              "germany",
+              "austria"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 49.086,
+              "lng": 4.774,
+              "label": {
+                "ko": "발미 전장",
+                "en": "Valmy battlefield"
+              }
+            }
+          },
+          {
+            "date": "1792.11.06",
+            "title": {
+              "ko": "제마프",
+              "en": "Jemappes"
+            },
+            "body": {
+              "ko": "프랑스군의 오스트리아령 네덜란드 진출이 확대되었다.",
+              "en": "French advances in the Austrian Netherlands expanded."
+            },
+            "country": [
+              "france",
+              "austria",
+              "belgium"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 50.45,
+              "lng": 3.89,
+              "label": {
+                "ko": "제마프 전장",
+                "en": "Jemappes battlefield"
+              }
+            }
+          },
+          {
+            "date": "1793.02.01",
+            "title": {
+              "ko": "영국·네덜란드에 선전포고",
+              "en": "War with Britain and the Dutch Republic"
+            },
+            "body": {
+              "ko": "해상·식민지와 저지대 전쟁이 확대되었다.",
+              "en": "War widened at sea, overseas, and in the Low Countries."
+            },
+            "country": [
+              "france",
+              "uk",
+              "netherlands"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 영국·네덜란드에 선전포고",
+                "en": "Paris · Declaration of war on Britain and the Dutch Republic"
+              }
+            }
+          },
+          {
+            "date": "1793.03.07",
+            "title": {
+              "ko": "스페인에 선전포고",
+              "en": "War with Spain"
+            },
+            "body": {
+              "ko": "피레네 전선이 열렸다.",
+              "en": "A Pyrenean front opened."
+            },
+            "country": [
+              "france",
+              "spain"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 스페인에 선전포고",
+                "en": "Paris · Declaration of war on Spain"
+              }
+            }
+          },
+          {
+            "date": "1793.03.18",
+            "title": {
+              "ko": "네르빈던 패배",
+              "en": "Defeat at Neerwinden"
+            },
+            "body": {
+              "ko": "패배 뒤 뒤무리에가 오스트리아 측으로 넘어갔다.",
+              "en": "Dumouriez defected to Austria after the defeat."
+            },
+            "country": [
+              "france",
+              "austria",
+              "belgium"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 50.766,
+              "lng": 5.041,
+              "label": {
+                "ko": "네르빈던 전장",
+                "en": "Neerwinden battlefield"
+              }
+            }
+          },
+          {
+            "date": "1793.08.23",
+            "title": {
+              "ko": "국민총동원령",
+              "en": "Levée en masse"
+            },
+            "body": {
+              "ko": "국민과 자원을 전쟁에 광범하게 동원했다.",
+              "en": "Mobilized people and resources broadly for war."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 국민총동원령 채택",
+                "en": "Paris · Adoption of the levée en masse"
+              }
+            }
+          },
+          {
+            "date": "1794.06.26",
+            "title": {
+              "ko": "플뢰뤼스",
+              "en": "Fleurus"
+            },
+            "body": {
+              "ko": "승리가 오스트리아군의 저지대 철수를 촉진했다.",
+              "en": "French victory helped precipitate Austrian withdrawal."
+            },
+            "country": [
+              "france",
+              "belgium",
+              "austria"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 50.483,
+              "lng": 4.55,
+              "label": {
+                "ko": "플뢰뤼스 전장",
+                "en": "Fleurus battlefield"
+              }
+            }
+          },
+          {
+            "date": "1795.01",
+            "title": {
+              "ko": "바타비아 공화국",
+              "en": "Batavian Republic"
+            },
+            "body": {
+              "ko": "프랑스군 진입과 네덜란드의 정치 변동이 결합했다.",
+              "en": "French military advances accompanied political transformation."
+            },
+            "country": [
+              "france",
+              "netherlands"
+            ],
+            "geo": {
+              "kind": "arrow",
+              "points": [
+                [
+                  52.091,
+                  5.122
+                ],
+                [
+                  52.3676,
+                  4.9041
+                ]
+              ],
+              "label": {
+                "ko": "위트레흐트 → 암스테르담 진출 (개략)",
+                "en": "Utrecht → Amsterdam advance (schematic)"
+              },
+              "actor": {
+                "ko": "프랑스군",
+                "en": "French army"
+              }
+            }
+          },
+          {
+            "date": "1795.04–07",
+            "title": {
+              "ko": "바젤의 평화",
+              "en": "Peace settlements at Basel"
+            },
+            "body": {
+              "ko": "프로이센과 스페인이 각각 프랑스와 평화에 합의했다.",
+              "en": "Prussia and Spain separately made peace with France."
+            },
+            "country": [
+              "france",
+              "germany",
+              "spain"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 47.5596,
+              "lng": 7.5886,
+              "label": {
+                "ko": "바젤 · 프로이센·스페인과의 평화",
+                "en": "Basel · settlements with Prussia and Spain"
+              }
+            }
+          },
+          {
+            "date": "1796–1797",
+            "title": {
+              "ko": "이탈리아 원정",
+              "en": "Italian campaign"
+            },
+            "body": {
+              "ko": "보나파르트의 승리와 만토바 함락이 오스트리아를 압박했다.",
+              "en": "Bonaparte’s victories and Mantua’s fall increased pressure on Austria."
+            },
+            "country": [
+              "france",
+              "italy",
+              "austria"
+            ],
+            "geo": {
+              "kind": "arrow",
+              "points": [
+                [
+                  44.307,
+                  8.481
+                ],
+                [
+                  44.43,
+                  8.334
+                ],
+                [
+                  44.39,
+                  7.82
+                ],
+                [
+                  45.052,
+                  9.693
+                ],
+                [
+                  45.314,
+                  9.503
+                ],
+                [
+                  45.4642,
+                  9.19
+                ],
+                [
+                  45.156,
+                  10.791
+                ]
+              ],
+              "label": {
+                "ko": "이탈리아 원정 (개략)",
+                "en": "Italian campaign (schematic)"
+              },
+              "actor": {
+                "ko": "보나파르트의 이탈리아 방면군",
+                "en": "Bonaparte’s Army of Italy"
+              }
+            }
+          },
+          {
+            "date": "1797.10.17",
+            "title": {
+              "ko": "캄포포르미오 조약",
+              "en": "Treaty of Campo Formio"
+            },
+            "body": {
+              "ko": "오스트리아와 프랑스가 합의했으나 영국과의 전쟁은 계속되었다.",
+              "en": "Austria and France settled, while war with Britain continued."
+            },
+            "country": [
+              "france",
+              "austria",
+              "italy",
+              "belgium"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 46.019,
+              "lng": 13.159,
+              "label": {
+                "ko": "캄포포르미도 · 조약의 명칭이 된 마을",
+                "en": "Campoformido · village giving the treaty its name"
+              }
+            }
+          },
+          {
+            "date": "1798.07–08",
+            "title": {
+              "ko": "이집트 침공과 나일 해전",
+              "en": "Egyptian invasion and Battle of the Nile"
+            },
+            "body": {
+              "ko": "프랑스군이 이집트를 점령했지만 함대가 파괴되었다.",
+              "en": "French forces occupied Egypt but their fleet was destroyed."
+            },
+            "country": [
+              "france",
+              "egypt",
+              "turkey",
+              "uk"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 31.32,
+              "lng": 30.07,
+              "label": {
+                "ko": "아부키르만 · 나일 해전",
+                "en": "Aboukir Bay · Battle of the Nile"
+              }
+            }
+          },
+          {
+            "date": "1798.08–09",
+            "title": {
+              "ko": "아일랜드의 프랑스 원정군",
+              "en": "French expedition in Ireland"
+            },
+            "body": {
+              "ko": "봉기를 지원한 프랑스군이 패배했다.",
+              "en": "French troops supporting the rebellion were defeated."
+            },
+            "country": [
+              "france",
+              "ireland",
+              "uk"
+            ],
+            "geo": {
+              "kind": "arrow",
+              "points": [
+                [
+                  54.212,
+                  -9.221
+                ],
+                [
+                  54.114,
+                  -9.155
+                ],
+                [
+                  54.029,
+                  -9.322
+                ],
+                [
+                  53.855,
+                  -9.298
+                ]
+              ],
+              "label": {
+                "ko": "아일랜드 초기 진군 (개략)",
+                "en": "Early advance in Ireland (schematic)"
+              },
+              "actor": {
+                "ko": "앙베르의 프랑스군과 아일랜드 반란군",
+                "en": "Humbert’s French and Irish forces"
+              }
+            }
+          },
+          {
+            "date": "1799.04–08",
+            "title": {
+              "ko": "수보로프의 이탈리아 승리",
+              "en": "Suvorov’s victories in Italy"
+            },
+            "body": {
+              "ko": "오스트리아-러시아군이 프랑스군을 밀어냈다.",
+              "en": "Austro-Russian forces drove back the French."
+            },
+            "country": [
+              "france",
+              "italy",
+              "austria",
+              "russia"
+            ],
+            "geo": {
+              "kind": "arrow",
+              "points": [
+                [
+                  45.438,
+                  10.992
+                ],
+                [
+                  45.526,
+                  9.515
+                ],
+                [
+                  45.4642,
+                  9.19
+                ],
+                [
+                  45.07,
+                  7.687
+                ],
+                [
+                  45.044,
+                  9.615
+                ],
+                [
+                  44.761,
+                  8.786
+                ]
+              ],
+              "label": {
+                "ko": "이탈리아 전역 (개략)",
+                "en": "Italian campaign stages (schematic)"
+              },
+              "actor": {
+                "ko": "수보로프의 오스트리아-러시아군",
+                "en": "Suvorov’s Austro-Russian army"
+              }
+            }
+          },
+          {
+            "date": "1799.09.25–26",
+            "title": {
+              "ko": "제2차 취리히 전투",
+              "en": "Second Battle of Zurich"
+            },
+            "body": {
+              "ko": "마세나의 승리가 동맹의 스위스 작전을 무너뜨렸다.",
+              "en": "Masséna’s victory disrupted coalition operations in Switzerland."
+            },
+            "country": [
+              "france",
+              "switzerland",
+              "russia"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 47.377,
+              "lng": 8.542,
+              "label": {
+                "ko": "취리히 · 제2차 취리히 전투",
+                "en": "Zurich · Second Battle of Zurich"
+              }
+            }
+          },
+          {
+            "date": "1799.11.09–10",
+            "title": {
+              "ko": "전쟁 중의 브뤼메르 쿠데타",
+              "en": "Brumaire during wartime"
+            },
+            "body": {
+              "ko": "보나파르트가 통령정부의 수장으로 부상했다.",
+              "en": "Bonaparte emerged as the leading figure of the Consulate."
+            },
+            "country": [
+              "france"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8376,
+              "lng": 2.2147,
+              "label": {
+                "ko": "생클루 · 브뤼메르 쿠데타",
+                "en": "Saint-Cloud · Brumaire coup"
+              }
+            }
+          },
+          {
+            "date": "1800.06.14",
+            "title": {
+              "ko": "마렝고",
+              "en": "Marengo"
+            },
+            "body": {
+              "ko": "프랑스군의 반격으로 오스트리아군이 패배했다.",
+              "en": "A French counterattack defeated the Austrians."
+            },
+            "country": [
+              "france",
+              "italy",
+              "austria"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 44.886,
+              "lng": 8.677,
+              "label": {
+                "ko": "마렝고 전장",
+                "en": "Marengo battlefield"
+              }
+            }
+          },
+          {
+            "date": "1800.12.03",
+            "title": {
+              "ko": "호엔린덴",
+              "en": "Hohenlinden"
+            },
+            "body": {
+              "ko": "모로의 승리가 오스트리아에 평화 압력을 높였다.",
+              "en": "Moreau’s victory increased pressure on Austria to make peace."
+            },
+            "country": [
+              "france",
+              "germany",
+              "austria"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.156,
+              "lng": 11.998,
+              "label": {
+                "ko": "호엔린덴 전장",
+                "en": "Hohenlinden battlefield"
+              }
+            }
+          },
+          {
+            "date": "1801.02.09",
+            "title": {
+              "ko": "뤼네빌 조약",
+              "en": "Treaty of Lunéville"
+            },
+            "body": {
+              "ko": "프랑스의 라인강 좌안과 벨기에 지배를 확인했다.",
+              "en": "Confirmed French possession of the Rhine’s left bank and the Belgian provinces."
+            },
+            "country": [
+              "france",
+              "austria",
+              "germany",
+              "belgium"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.593,
+              "lng": 6.493,
+              "label": {
+                "ko": "뤼네빌 · 평화조약",
+                "en": "Lunéville · peace treaty"
+              }
+            }
+          },
+          {
+            "date": "1801.06–09",
+            "title": {
+              "ko": "프랑스군의 이집트 철수",
+              "en": "French withdrawal from Egypt"
+            },
+            "body": {
+              "ko": "영국·오스만군의 공세 뒤 프랑스군이 항복하고 철수했다.",
+              "en": "French troops surrendered and withdrew after British-Ottoman operations."
+            },
+            "country": [
+              "france",
+              "egypt",
+              "turkey",
+              "uk"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 31.2,
+              "lng": 29.9187,
+              "label": {
+                "ko": "알렉산드리아 · 프랑스군의 항복과 철수",
+                "en": "Alexandria · French surrender and withdrawal"
+              }
+            }
+          },
+          {
+            "date": "1802.03.25",
+            "title": {
+              "ko": "아미앵 조약",
+              "en": "Treaty of Amiens"
+            },
+            "body": {
+              "ko": "영국과 프랑스 및 그 동맹 사이에 평화가 성립했다.",
+              "en": "Peace was established between Britain, France, and their partners."
+            },
+            "country": [
+              "france",
+              "uk",
+              "spain",
+              "netherlands"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 49.894,
+              "lng": 2.295,
+              "label": {
+                "ko": "아미앵 · 평화조약",
+                "en": "Amiens · peace treaty"
+              }
+            }
+          },
+          {
+            "date": "1802.06.25",
+            "title": {
+              "ko": "프랑스-오스만 평화",
+              "en": "Franco-Ottoman peace"
+            },
+            "body": {
+              "ko": "이집트 원정으로 시작된 양국의 전쟁을 마무리했다.",
+              "en": "Concluded hostilities arising from the Egyptian expedition."
+            },
+            "country": [
+              "france",
+              "turkey",
+              "egypt"
+            ],
+            "geo": {
+              "kind": "point",
+              "lat": 48.8566,
+              "lng": 2.3522,
+              "label": {
+                "ko": "파리 · 프랑스-오스만 평화조약",
+                "en": "Paris · Franco-Ottoman peace treaty"
+              }
+            }
+          }
+        ],
+        "question_ko": "혁명을 지키려던 전쟁은 어떻게 국민 총동원과 국외 정복, 군인의 정치적 지배를 함께 낳았는가?",
+        "summary_ko": "제1·2차 대프랑스 동맹전쟁의 배경과 전개. 발미·플뢰뤼스·이탈리아에서 이집트·아일랜드와 아미앵까지, 군사 작전과 동원·점령·해방의 모순을 함께 다룬다.",
+        "outcome_ko": "프랑스는 대륙의 동맹을 물리치고 영토와 영향력을 확대했으나 영국의 해상 우위를 제거하지 못했다. 1802년 평화는 전쟁을 일단 끝냈지만 대립을 해소하지 못했고, 전쟁이 키운 군사 권력은 통령정부를 뒷받침했다.",
+        "body_ko": "## 혁명이 왜 유럽 전쟁으로 이어졌는가\n\n프랑스 혁명 전쟁은 1792년 4월의 선전포고에서 1802년의 평화까지 이어진 여러 전쟁의 묶음이다. 보통 제1차 대프랑스 동맹전쟁(1792~1797)과 제2차 동맹전쟁(1798~1802)으로 나누지만, 영국과 프랑스의 전쟁은 그 사이에도 계속되었다. 동맹은 처음부터 모든 군주국이 한꺼번에 결성한 단일 조직이 아니었고, 참전국·전쟁 목표·적과 동지의 관계는 계속 바뀌었다. [1](https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802) [2](https://www.worldhistory.org/French_Revolutionary_Wars/)\n\n1791년 8월 오스트리아와 프로이센의 필니츠 선언은 프랑스 왕실 문제에 공동 관심을 표했지만 행동을 다른 열강의 협력에 조건지었다. 프랑스에서는 이를 반혁명 개입의 위협으로 받아들였다. 망명 귀족들의 활동, 왕실에 대한 불신, 국경과 영토 문제도 긴장을 키웠다. 이념적 대립은 실제였지만 열강은 폴란드와 오스만 제국 등 다른 지역에서의 이해관계도 계산했다. [3](https://www.worldhistory.org/Declaration_of_Pillnitz/)\n\n브리소는 전쟁이 혁명을 결속시키고 외국의 인민을 움직일 수 있다고 기대했다. 로베스피에르는 1792년 1월 연설에서 외국 주민이 무장한 해방자를 당연히 환영할 것이라는 가정을 비판했다. 이 논쟁은 혁명 진영 안에도 전쟁에 대한 선택지가 있었음을 보여 준다. 혁명과 전쟁을 필연적 연쇄로만 설명하면 선전포고를 택한 정치적 판단과 책임이 가려진다. [4](https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html)\n\n## 1792년: 초기 패배에서 발미와 제마프까지\n\n프랑스는 1792년 4월 20일 오스트리아 군주에게 선전포고했다. 장교들의 망명과 지휘체계의 혼란, 훈련과 보급 문제 때문에 초기 공격은 실패했다. 프로이센군과 오스트리아군의 침공, 7월의 브라운슈바이크 선언은 왕실과 외국군의 결탁에 대한 의심을 키웠다. 국내에서는 8월 10일 왕권이 정지되었고, 전선에서는 롱위와 베르됭의 함락으로 파리가 위협받았다. [5](https://www.worldhistory.org/War_of_the_First_Coalition/) [6](https://www.worldhistory.org/Battle_of_Valmy/)\n\n9월 20일 발미에서 뒤무리에와 켈레르만의 군대는 침공군의 진격을 막았다. 이 전투는 적군을 전멸시킨 대승이 아니라 프랑스군이 무너지지 않고 버틴 정치·전략적 전환점이었다. 포병, 기존 군대의 경험, 지원병의 동원, 침공군의 질병과 보급난을 함께 보아야 한다. 국민공회는 다음 날 왕정을 폐지했지만 발미 한 번으로 전쟁이 끝난 것은 아니었다. [6](https://www.worldhistory.org/Battle_of_Valmy/)\n\n11월 6일 제마프 승리 뒤 프랑스군은 오스트리아령 네덜란드로 진출했고, 다른 전선에서는 라인란트·사부아·니스로 확대되었다. 국민공회는 외국 인민의 자유를 돕겠다고 선언했다. 그러나 해방의 약속은 프랑스의 안전한 국경과 영토 확대 주장으로 이어지기도 했다. 방어와 혁명 수출, 정복이 같은 전쟁 안에서 겹치기 시작한 것이다. [7](https://www.worldhistory.org/Battle_of_Jemappes/)\n\n## 1793년의 위기: 동맹 확대와 내전\n\n루이 16세의 처형은 외교적 단절을 심화시켰지만 전쟁 확대의 유일한 원인은 아니었다. 저지대 점령과 스헬더강 통항 문제는 영국·네덜란드의 전략적 이해를 건드렸다. 프랑스는 1793년 2월 1일 영국과 네덜란드 공화국에, 3월 7일 스페인에 선전포고했다. 해상·식민지 전쟁과 피레네 전선이 더해지면서 프랑스는 여러 방향에서 병력과 자원을 배분해야 했다. [2](https://www.worldhistory.org/French_Revolutionary_Wars/) [5](https://www.worldhistory.org/War_of_the_First_Coalition/)\n\n3월 네르빈던 패배 뒤 뒤무리에는 오스트리아 측으로 넘어갔다. 방데에서는 징집과 종교정책에 대한 반발이 무장 반란으로 번졌고, 여름에는 여러 도시에서 산악파의 지배에 저항했다. 툴롱 항구가 영국·스페인 함대에 넘어간 사건은 내전과 국제전이 맞닿는 지점이었다. 전선의 패배는 국내의 배신 의심을 키웠고 국내의 갈등은 다시 전선에 필요한 자원을 소모했다. [8](https://en.wikipedia.org/wiki/Battle_of_Neerwinden_(1793)) [9](https://www.worldhistory.org/Federalist_Revolts/)\n\n이 위기에 대응한 공안위원회와 파견의원들은 병력·군수품을 확보하고 지휘관을 감독했다. 동시에 실패를 배신으로 취급하는 정치적 압력은 장교와 병사에게 위협이 되었다. 공화국의 생존을 설명할 때 탄압만으로 승리를 설명하거나, 전쟁 위기를 이유로 모든 탄압을 불가피했다고 단정해서는 안 된다. 국내 정치의 자세한 맥락은 [프랑스 혁명](/commulingo/events/french-revolution-1789-1799)에서 다룬다. [10](https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794)\n\n## 국민 총동원과 군대의 재편\n\n1793년 8월 23일 국민총동원령은 전쟁을 병사들만의 업무로 두지 않았다. 청년의 군복무와 함께 무기·장비 생산, 운송, 간호 등 사회 전체의 노동을 동원하는 구상이었다. 카르노 등은 군사 조직과 작전을 조정했고, 기존 정규병과 지원병을 결합하는 부대 재편이 추진되었다. 숫자만 늘리는 것이 아니라 경험과 훈련을 대규모 동원과 연결하는 문제가 중요했다. [11](https://revolution.chnm.org/d/968) [12](https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse)\n\n전쟁 수행에는 식량·말·신발·화약·수송이 필요했다. 징발과 가격 통제는 군대와 도시를 먹이는 수단이었지만 농민·상인·노동자에게 서로 다른 부담을 주었다. 애국심으로 자원한 병사도 있었고 징집을 피하거나 탈영한 사람도 있었다. 병력 명부상의 수와 실제 전투 가능한 인원을 구별해야 하며, 거대한 국민군이라는 표현이 모든 국민의 자발적 동의를 뜻하지는 않는다. [13](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796) [2](https://www.worldhistory.org/French_Revolutionary_Wars/)\n\n1798년 주르당-델브렐 법은 징병을 보다 지속적인 제도로 만들었다. 혁명전쟁은 군대와 시민권의 관계를 바꾸었지만 전술과 전문성이 1789년에 처음 생긴 것은 아니다. 왕정기의 포병과 장교 교육도 새 군대의 자산이었다. 혁명적 열정만으로 승리를 설명하기보다 병력 규모, 전술의 적응, 지휘, 보급, 적국 간의 협력 실패를 함께 검토해야 한다. [14](https://en.wikipedia.org/wiki/Jourdan_law) [12](https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse)\n\n## 1794~1795년: 북부 전선의 역전과 동맹 이탈\n\n1793년 가을의 옹드스코트와 와티니 승리, 12월 툴롱 탈환은 공화국의 위기를 완화했다. 1794년 6월 26일 주르당의 군대는 플뢰뤼스에서 승리했고, 오스트리아군의 저지대 철수로 이어지는 중요한 계기를 만들었다. 프랑스의 방어 성공은 이제 국외의 장기 점령을 가능하게 했다. 플뢰뤼스는 로베스피에르가 몰락하기 한 달 전의 승리였지만, 군사적 호전 하나만으로 테르미도르의 정치적 연합을 설명할 수는 없다. [15](https://www.worldhistory.org/article/2213/battle-of-fleurus/)\n\n1794~1795년 겨울 피슈그뤼의 군대가 네덜란드로 진입했고 바타비아 공화국이 세워졌다. 1795년 바젤의 평화에서 프로이센과 스페인은 각각 프랑스와 전쟁을 끝냈다. 프로이센은 폴란드 문제에도 관심과 자원을 쏟고 있었다. 영국과 오스트리아는 전쟁을 계속했다. 따라서 제1차 동맹의 약화는 한 번의 결정적 전투가 아니라 프랑스의 군사적 성과와 동맹국들의 서로 다른 우선순위가 결합한 결과였다. [16](https://en.wikipedia.org/wiki/Flanders_campaign) [5](https://www.worldhistory.org/War_of_the_First_Coalition/)\n\n피레네 전선에서는 처음 스페인군이 루시용으로 진입했지만 1794년부터 프랑스군이 주도권을 되찾았다. 동부의 르 불루와 검은산 전투, 서부의 바스크 지역 진출은 스페인을 압박했다. 1795년 평화는 단순한 유럽 국경의 문제를 넘어서 스페인령 산토도밍고의 프랑스 양도를 포함했다. 전쟁의 유럽 전선과 카리브해 식민지의 운명이 같은 외교 협상에서 연결되었던 것이다. [17](https://en.wikipedia.org/wiki/War_of_the_Pyrenees)\n\n## 이탈리아 원정과 자매공화국의 모순\n\n1796년 이탈리아 방면군을 맡은 보나파르트는 사르데냐-피에몬테와 오스트리아군 사이를 공략했다. 사르데냐의 이탈 뒤에도 만토바를 둘러싼 전투는 계속되었고 아르콜레·리볼리 등의 승리와 1797년 만토바 항복이 오스트리아를 압박했다. 10월 캄포포르미오 조약은 제1차 동맹전쟁의 대륙적 국면을 마무리했다. 승전 장군은 작전뿐 아니라 외교와 점령지 정치에서도 독자적 영향력을 얻었다. [18](https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html) [19](https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio)\n\n프랑스군의 진출은 바타비아·치살피나·리구리아 공화국 등의 형성과 연결되었다. 기존 특권의 폐지와 공화주의 제도를 환영한 현지 세력도 있었다. 그러나 군대의 주둔 비용과 징발, 미술품 반출, 프랑스의 정치 개입은 해방의 약속을 훼손했다. 베네치아를 포함한 영토가 강대국의 조약에서 교환된 사실은 인민의 자기결정과 프랑스의 국가 이익이 일치하지 않았음을 보여 준다. [20](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience) [21](https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/)\n\n이 지역들은 오늘날의 이탈리아·독일·벨기에와 같은 국민국가 체제로 존재하지 않았다. 합스부르크의 영지, 신성로마제국의 여러 국가, 도시와 지역 공화국의 구체적 지위를 구별해야 한다. 전쟁의 지도는 현대 국경을 과거에 덮어씌우기보다 점령·병합·동맹·종속 공화국이라는 서로 다른 관계를 읽는 도구여야 한다. [1](https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802) [21](https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/)\n\n자매공화국은 단지 같은 헌법을 복사한 나라들의 집합도 아니었다. 프랑스군의 후원 아래 현지 공화주의자들이 기존 정권을 바꾸었지만, 정치적 자율성의 범위는 군사 상황과 프랑스의 요구에 좌우되었다. 1798년에는 스위스의 헬베티아 공화국과 로마 공화국이, 1799년에는 나폴리의 파르테노페 공화국이 등장했다. 제2차 동맹의 반격은 일부를 무너뜨렸다. 이런 정권들의 취약성은 사회개혁에 대한 현지의 찬반과 외국 군대에 대한 의존이 얽혀 있었음을 보여 준다. [22](https://en.wikipedia.org/wiki/Sister_republic)\n\n## 바다와 식민지, 아일랜드의 전쟁\n\n영국은 해군력과 재정으로 대륙의 동맹을 지원하고 프랑스의 해상 활동을 압박했다. 프랑스가 대륙에서 승리해도 영국을 곧바로 굴복시킬 수 없었던 이유다. 카리브해에서는 영국과 스페인의 개입, 식민자들의 이해, 노예화된 사람들의 해방 투쟁이 겹쳤다. 생도맹그의 전쟁을 유럽 전쟁의 작은 부속 사건으로만 다루면 현지 세력이 동맹과 목표를 바꾸며 행동한 역사가 사라진다. [23](https://www.nam.ac.uk/explore/egyptian-campaign) [24](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\n아일랜드의 연합아일랜드인 운동은 종파를 넘어 공화주의적 개혁과 독립을 추구했고 프랑스의 지원을 모색했다. 1796년 프랑스의 원정은 악천후로 상륙에 실패했다. 1798년의 봉기는 진압되었고, 뒤늦게 상륙한 프랑스군도 패배했다. 영국의 진압과 반란 과정에서 민간인 폭력과 종파 갈등이 격화되었다. 이는 혁명적 국제연대의 가능성과 외국 원조에 기대는 전략의 한계를 함께 드러냈다. [25](https://www.nam.ac.uk/explore/irish-rebellion-1798)\n\n1794년 6월 1일 대서양 해전은 전술적 승리와 전략적 목적이 다를 수 있음을 보여 준다. 영국의 하우 함대는 프랑스 함대를 상대로 여러 전열함을 나포·격침했지만, 프랑스가 지키려던 곡물 수송선단은 도착했다. 해군의 전투는 함정끼리의 승패만이 아니라 식량 수입과 국가의 생존에 연결되어 있었다. 육지에서의 징발과 최고가격제가 공급을 관리했다면, 바다에서는 호송과 봉쇄가 어떤 물자가 프랑스에 들어갈 수 있는지를 좌우했다. [26](https://en.wikipedia.org/wiki/Glorious_First_of_June)\n\n## 이집트와 시리아: 유럽 밖의 정복\n\n1798년 보나파르트의 원정군은 몰타를 점령한 뒤 이집트에 상륙했다. 이집트는 오스만 제국의 영토였으나 맘루크 세력이 실권을 행사하고 있었다. 프랑스는 영국의 동방 교역과 인도에 대한 지위를 압박하려 했다. 7월 피라미드 전투의 승리와 카이로 점령 뒤에도, 8월 넬슨의 함대가 아부키르만에서 프랑스 함대를 파괴하면서 원정군은 해상 연결을 잃었다. [23](https://www.nam.ac.uk/explore/egyptian-campaign)\n\n학자들의 동행과 고대 유물 조사는 원정의 한 측면이었지만 군사 점령을 지우지는 않는다. 1798년 카이로 봉기와 진압, 1799년 시리아 원정에서의 야파 포로 학살은 정복의 폭력을 보여 준다. 아크레 포위는 실패했고 프랑스군은 질병과 보급 문제 속에 이집트로 돌아왔다. 보나파르트는 1799년 8월 군대를 남겨 두고 프랑스로 떠났다. [27](https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/)\n\n남은 프랑스군은 계속 싸웠지만 1801년 영국군과 오스만군의 공세 뒤 카이로와 알렉산드리아에서 항복했다. 원정은 영국을 동방에서 몰아내지 못했고 오스만 제국을 프랑스의 적으로 만들었다. 이집트인과 시리아 주민의 경험까지 포함하면 이 전쟁은 유럽 공화국과 유럽 왕조만의 충돌로는 설명되지 않는다. [27](https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/)\n\n## 제2차 동맹과 1799~1800년의 역전\n\n프랑스의 팽창과 이집트 침공을 배경으로 영국·오스트리아·러시아·오스만 제국 등이 새로운 동맹을 이루었다. 1799년 오스트리아군은 독일 전선에서 프랑스군을 밀어냈고, 수보로프의 오스트리아-러시아군은 이탈리아에서 카사노·트레비아·노비 등의 승리를 거두었다. 프랑스가 1797년에 얻은 지배는 확정된 것이 아니었다. 그러나 러시아와 오스트리아는 해방한 이탈리아의 처리와 작전 우선순위를 두고 충돌했다. [28](https://www.worldhistory.org/War_of_the_Second_Coalition/)\n\n9월 마세나의 제2차 취리히 전투 승리는 러시아군의 협동을 무너뜨렸고 수보로프는 알프스를 넘어 어렵게 철수했다. 네덜란드의 영국-러시아 원정도 실패했다. 러시아는 동맹에서 이탈했다. 프랑스에서는 군사적 불안과 총재정부의 정치 위기 속에 브뤼메르 쿠데타가 일어났다. 보나파르트는 전쟁이 끝난 뒤 권력을 얻은 것이 아니라 전쟁 중인 공화국의 수장이 되었다. [29](https://en.wikipedia.org/wiki/Second_Battle_of_Zurich) [20](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience)\n\n1800년 6월 14일 마렝고에서 프랑스군은 한때 패배 직전까지 몰렸으나 드제의 병력 도착과 반격으로 승리했다. 드제는 전사했다. 12월 3일에는 모로가 호엔린덴에서 오스트리아군을 격파했다. 마렝고를 보나파르트 개인의 영웅담으로만 기억하면 다른 장군과 병사들의 역할, 독일 전선의 승리가 평화 협상에 가한 압력을 놓치게 된다. [30](https://www.napoleon.org/en/magazine/places/marengo-2/) [31](https://en.wikipedia.org/wiki/Battle_of_Hohenlinden)\n\n호엔린덴의 전투는 겨울의 숲길과 분산된 진격이 만든 위험을 드러냈다. 오스트리아군은 여러 종대로 전진하다 서로 지원하기 어려워졌고, 모로의 부대와 리슈팡스의 측후방 공격에 큰 타격을 입었다. 프랑스의 승리는 단지 많은 병력을 전면으로 밀어 넣은 결과가 아니었다. 지형을 이용한 배치, 적의 이동에 대한 판단, 현장 지휘관의 대응이 결합했다. 이 승리 뒤 빈을 향한 압박이 커지면서 오스트리아가 휴전과 평화에 나설 여지는 좁아졌다. [31](https://en.wikipedia.org/wiki/Battle_of_Hohenlinden)\n\n## 1801~1802년의 평화와 남은 문제\n\n1801년 2월 9일 뤼네빌 조약은 오스트리아와 신성로마제국의 대프랑스 전쟁을 끝내고 프랑스의 라인강 좌안 지배와 벨기에 지역의 양도를 확인했다. 1802년 3월 25일 아미앵 조약은 영국과 프랑스 및 그 동맹 사이의 평화를 정했다. 영국은 트리니다드와 실론을 보유하되 다른 여러 식민지 점령지를 돌려주기로 했으며, 몰타의 처리와 프랑스의 철수 의무도 규정했다. 6월에는 프랑스-오스만 평화가 뒤따랐다. [21](https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/) [32](https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/) [23](https://www.nam.ac.uk/explore/egyptian-campaign)\n\n아미앵은 유럽 전쟁의 중요한 마침표였지만 모든 식민지 전투나 강제 지배의 종식을 뜻하지 않았다. 프랑스의 대륙 지배와 영국의 해상·식민지 이해를 둘러싼 갈등도 남았다. 1803년 양국의 전쟁 재개부터는 보통 나폴레옹 전쟁으로 구분한다. 이 글은 1815년까지 이어지는 그 전쟁의 상세한 전역을 포함하지 않는다. [32](https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/) [1](https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802)\n\n혁명전쟁은 공화국을 외국의 군사적 패배에서 지켜 냈지만, 장기 동원과 정복은 장군의 권력과 국가의 강제력을 키웠다. 점령지에서는 법적 개혁과 수탈, 현지 공화주의와 프랑스에 대한 저항이 병존했다. 병사의 경험도 승전 기록만이 아니라 부상·질병·탈영·포로 생활과 가족의 부담으로 이루어졌다. 무엇이 해방이었고 누구에게 부담과 지배였는지를 묻는 것이 전투의 승패를 외우는 것만큼 중요하다. [20](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience) [33](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution)",
+        "question_en": "How did war to defend the Revolution produce mass mobilization, conquest abroad, and military political power?",
+        "summary_en": "The origins and course of the First and Second Coalition wars, from Valmy and Fleurus through Italy, Egypt, and Ireland to Amiens, linking campaigns with mobilization, occupation, and contested emancipation.",
+        "outcome_en": "France defeated its continental coalitions and expanded its territory and influence without eliminating British maritime power. Peace in 1802 ended this phase without resolving underlying rivalries; the military power enlarged by war underpinned the Consulate.",
+        "body_en": "## Why revolution became a European war\n\nThe French Revolutionary Wars comprise conflicts from France’s declaration in April 1792 to the settlements of 1802. They are usually divided into the First Coalition (1792–1797) and Second Coalition (1798–1802), although Britain and France remained at war between them. These coalitions were not a single organization simultaneously embracing every monarchy. Membership, objectives, and even the distinction between allies and enemies changed over time. [1](https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802) [2](https://www.worldhistory.org/French_Revolutionary_Wars/)\n\nThe Austro-Prussian Declaration of Pillnitz in August 1791 expressed common concern for the French royal family but made action conditional on cooperation from other powers. In France it was read as a threat of counterrevolutionary intervention. Émigré activity, distrust of the court, and territorial disputes sharpened tensions. Ideological antagonism was real, but the powers also calculated their interests in Poland, the Ottoman world, and elsewhere. [3](https://www.worldhistory.org/Declaration_of_Pillnitz/)\n\nBrissot expected war to unite the Revolution and mobilize foreign peoples. In his January 1792 speech, Robespierre challenged the assumption that inhabitants abroad would naturally welcome armed liberators. This disagreement reveals alternatives within revolutionary politics. Describing revolution and war as an inevitable sequence obscures the political choices and responsibilities involved in declaring hostilities. [4](https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html)\n\n## 1792: from early defeats to Valmy and Jemappes\n\nFrance declared war on the Austrian ruler on 20 April 1792. Emigration among officers, disrupted command, and problems of training and supply contributed to failed opening offensives. Invasion by Prussian and Austrian forces and the Brunswick declaration of July intensified suspicion that the court was linked to foreign intervention. Royal authority was suspended on 10 August; the fall of Longwy and Verdun meanwhile threatened the approaches to Paris. [5](https://www.worldhistory.org/War_of_the_First_Coalition/) [6](https://www.worldhistory.org/Battle_of_Valmy/)\n\nAt Valmy on 20 September, the forces of Dumouriez and Kellermann checked the invasion. Its importance lay less in annihilating the enemy than in the French army holding together at a decisive political moment. Artillery, regular military experience, volunteers, and the invaders’ disease and supply problems all matter. The Convention abolished monarchy the next day, but Valmy did not end the war. [6](https://www.worldhistory.org/Battle_of_Valmy/)\n\nVictory at Jemappes on 6 November carried French forces into the Austrian Netherlands, alongside advances in the Rhineland, Savoy, and Nice. The Convention promised assistance to peoples seeking liberty. Such promises could also serve demands for secure frontiers and territorial expansion. Defense, revolutionary internationalism, and conquest were beginning to overlap within the same conflict. [7](https://www.worldhistory.org/Battle_of_Jemappes/)\n\n## The crisis of 1793: a wider coalition and civil war\n\nLouis XVI’s execution deepened diplomatic rupture, but it was not the sole cause of escalation. Occupation in the Low Countries and navigation on the Scheldt affected British and Dutch strategic interests. France declared war on Britain and the Dutch Republic on 1 February 1793, and Spain on 7 March. Maritime and colonial warfare and the Pyrenean front multiplied demands on French manpower and resources. [2](https://www.worldhistory.org/French_Revolutionary_Wars/) [5](https://www.worldhistory.org/War_of_the_First_Coalition/)\n\nAfter defeat at Neerwinden in March, Dumouriez defected to the Austrians. Resistance to recruitment and religious policy became armed rebellion in the Vendée; several cities opposed Montagnard ascendancy that summer. The opening of Toulon to British and Spanish fleets connected civil and international war directly. Military reverses intensified accusations of treason, while domestic conflicts consumed resources needed at the front. [8](https://en.wikipedia.org/wiki/Battle_of_Neerwinden_(1793)) [9](https://www.worldhistory.org/Federalist_Revolts/)\n\nThe Committee of Public Safety and representatives on mission sought recruits and supplies and supervised commanders. Political pressure equating failure with betrayal also threatened officers and soldiers. Explaining republican survival requires more than attributing victory to repression or treating every coercive measure as inevitable. The fuller domestic context appears in [French Revolution](/commulingo/events/french-revolution-1789-1799). [10](https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794)\n\n## Mass mobilization and military reorganization\n\nThe levée en masse of 23 August 1793 conceived war as more than soldiers’ work. Military service by young men belonged to a wider mobilization of arms production, equipment, transport, and nursing. Carnot and others coordinated military organization and operations, while amalgamation brought regular soldiers and volunteers into reorganized units. The problem was not merely to increase numbers, but to connect experience and training with mass recruitment. [11](https://revolution.chnm.org/d/968) [12](https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse)\n\nCampaigning required grain, horses, shoes, powder, and transport. Requisitioning and price controls supplied armies and towns while imposing different burdens on peasants, merchants, and workers. Patriotic volunteers served alongside reluctant recruits, draft evaders, and deserters. Nominal strength must be distinguished from men available for combat: a national army did not imply unanimous, voluntary participation. [13](https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796) [2](https://www.worldhistory.org/French_Revolutionary_Wars/)\n\nThe Jourdan–Delbrel law of 1798 gave conscription a more enduring institutional basis. Revolutionary warfare transformed the connection between military service and citizenship, but tactics and expertise did not originate in 1789. Royal artillery traditions and officer education also supplied resources for the new armies. Manpower, tactical adaptation, command, logistics, and failures of enemy coordination all belong alongside revolutionary commitment in explaining results. [14](https://en.wikipedia.org/wiki/Jourdan_law) [12](https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse)\n\n## 1794–1795: reversal in the north and coalition withdrawals\n\nVictories at Hondschoote and Wattignies in autumn 1793 and the recapture of Toulon in December eased the emergency. Jourdan’s victory at Fleurus on 26 June 1794 helped precipitate Austrian withdrawal from the Low Countries. Successful defense now enabled sustained occupation abroad. Fleurus preceded Robespierre’s fall by a month, but military improvement alone does not explain the political coalition that brought about Thermidor. [15](https://www.worldhistory.org/article/2213/battle-of-fleurus/)\n\nPichegru’s army entered the Netherlands during the winter of 1794–1795, and the Batavian Republic emerged. Separate settlements at Basel in 1795 ended the wars of Prussia and Spain with France; Prussia was also occupied with Poland. Britain and Austria continued fighting. The weakening of the First Coalition therefore reflected both French battlefield gains and divergent allied priorities, rather than a single decisive battle. [16](https://en.wikipedia.org/wiki/Flanders_campaign) [5](https://www.worldhistory.org/War_of_the_First_Coalition/)\n\nOn the Pyrenean front, Spanish troops initially advanced into Roussillon, but the French regained the initiative from 1794. Victories at Le Boulou and the Black Mountain in the east and advances into the Basque country in the west increased pressure on Spain. Peace in 1795 included the cession of Spanish Santo Domingo to France, connecting the fate of a Caribbean colony to the settlement of European campaigns. [17](https://en.wikipedia.org/wiki/War_of_the_Pyrenees)\n\n## The Italian campaign and the contradictions of sister republics\n\nCommanding the Army of Italy in 1796, Bonaparte struck between Sardinia-Piedmont and the Austrian forces. Sardinia’s withdrawal did not end the campaign: repeated struggles over Mantua, victories including Arcole and Rivoli, and Mantua’s surrender in 1797 increased pressure on Austria. Campo Formio in October closed the main continental phase of the First Coalition war. The victorious general gained influence in diplomacy and occupied politics as well as military operations. [18](https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html) [19](https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio)\n\nFrench advances accompanied the formation of the Batavian, Cisalpine, and Ligurian republics. Local supporters could welcome republican institutions and the ending of privilege. Yet occupation costs, requisitions, removal of artworks, and French political intervention undermined promises of liberation. The bargaining away of territories including Venice demonstrated that popular self-determination and French state interests did not necessarily coincide. [20](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience) [21](https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/)\n\nThese territories did not exist within today’s system of Italian, German, and Belgian nation-states. Habsburg possessions, states of the Holy Roman Empire, and local republics had distinct political statuses. Maps should help distinguish occupation, annexation, alliance, and dependent republican government rather than project modern borders backward. [1](https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802) [21](https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/)\n\nSister republics were not simply copies of a single constitution. Local republicans changed established regimes with French military support, but their room for autonomous action depended on military circumstances and French demands. The Helvetic and Roman republics appeared in 1798, followed by the Parthenopean Republic at Naples in 1799. Coalition counterattacks overturned some of them. Their fragility reflected the interaction between local conflicts over reform and dependence on foreign armed forces. [22](https://en.wikipedia.org/wiki/Sister_republic)\n\n## War at sea, in the colonies, and in Ireland\n\nBritain used naval and financial power to support continental allies and constrain French activity at sea. Continental victory could not by itself force British submission. In the Caribbean, British and Spanish intervention intersected with colonists’ interests and enslaved people’s struggle for freedom. Treating Saint-Domingue merely as a sideshow to Europe erases local actors’ changing alliances and independent objectives. [23](https://www.nam.ac.uk/explore/egyptian-campaign) [24](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu)\n\nThe United Irish movement sought republican change across confessional divisions and looked to France for assistance. Bad weather prevented the French expedition of 1796 from landing. The rebellion of 1798 was suppressed, and French troops who landed later were defeated. Repression and rebellion intensified civilian violence and sectarian antagonisms. Ireland exposed both the possibilities of revolutionary international solidarity and the limits of relying on foreign intervention. [25](https://www.nam.ac.uk/explore/irish-rebellion-1798)\n\nThe Atlantic battle of 1 June 1794 illustrates the difference between tactical victory and strategic purpose. Howe’s British fleet captured or destroyed several French ships of the line, yet the grain convoy the French sought to protect arrived. Naval warfare was therefore connected to food imports and state survival, not only the balance of ships lost. While requisitions and maximum prices regulated supply on land, convoy protection and blockade affected what goods could reach France by sea. [26](https://en.wikipedia.org/wiki/Glorious_First_of_June)\n\n## Egypt and Syria: conquest beyond Europe\n\nIn 1798 Bonaparte’s expedition captured Malta and landed in Egypt, an Ottoman territory where Mamluk rulers exercised substantial power. France sought to threaten Britain’s eastern commerce and position in India. Victory at the Pyramids and occupation of Cairo in July did not secure the expedition: Nelson destroyed the French fleet in Aboukir Bay in August, severing its maritime connection. [23](https://www.nam.ac.uk/explore/egyptian-campaign)\n\nThe presence of scholars and investigation of antiquities formed one aspect of the expedition without canceling its character as occupation. The Cairo revolt and repression in 1798 and the killing of prisoners at Jaffa during the Syrian campaign of 1799 reveal its violence. The siege of Acre failed; disease and supply difficulties accompanied the return to Egypt. Bonaparte left his army there and departed for France in August 1799. [27](https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/)\n\nThe remaining French troops continued fighting but surrendered at Cairo and Alexandria after British and Ottoman operations in 1801. The expedition failed to dislodge Britain from the East and made the Ottoman Empire an enemy. Including the experiences of Egyptian and Syrian inhabitants makes clear why this conflict cannot be reduced to a contest between European republicanism and European dynasties. [27](https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/)\n\n## The Second Coalition and the reversals of 1799–1800\n\nFrench expansion and the Egyptian invasion helped bring Britain, Austria, Russia, and the Ottoman Empire into a new coalition. In 1799 Austrian forces pushed the French back in Germany, while Suvorov’s Austro-Russian forces won at Cassano, the Trebbia, and Novi in Italy. French gains of 1797 were far from secure. Russia and Austria nevertheless disagreed about the disposition of recovered Italian territories and operational priorities. [28](https://www.worldhistory.org/War_of_the_Second_Coalition/)\n\nMasséna’s victory at the Second Battle of Zurich in September disrupted Russian cooperation, and Suvorov made a difficult withdrawal across the Alps. The Anglo-Russian expedition to the Netherlands also failed. Russia withdrew from the coalition. In France, military insecurity accompanied the Directory’s political crisis and the Brumaire coup. Bonaparte became head of a republic still at war, rather than taking power after peace had been won. [29](https://en.wikipedia.org/wiki/Second_Battle_of_Zurich) [20](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience)\n\nAt Marengo on 14 June 1800, French forces came close to defeat before Desaix’s arrival and a counterattack helped turn the battle; Desaix was killed. Moreau then defeated the Austrians at Hohenlinden on 3 December. Remembering only Bonaparte’s personal triumph obscures other commanders and soldiers, and the pressure that victory in Germany exerted on the peace negotiations. [30](https://www.napoleon.org/en/magazine/places/marengo-2/) [31](https://en.wikipedia.org/wiki/Battle_of_Hohenlinden)\n\nHohenlinden exposed the dangers of advancing in separated columns through winter woodland. Austrian formations became unable to support one another effectively, and Moreau’s forces, including Richepanse’s attack against their flank and rear, inflicted a major defeat. French success was not simply a matter of pushing superior numbers forward. Deployment, judgments about enemy movements, and subordinate commanders’ responses interacted. The subsequent advance toward Vienna intensified pressure on Austria to accept an armistice and peace. [31](https://en.wikipedia.org/wiki/Battle_of_Hohenlinden)\n\n## The settlements of 1801–1802 and unresolved questions\n\nThe Treaty of Lunéville of 9 February 1801 ended the war with Austria and the Holy Roman Empire, confirming French possession of the Rhine’s left bank and the former Belgian provinces. Amiens, signed on 25 March 1802, made peace between Britain, France, and their partners. Britain retained Trinidad and Ceylon while agreeing to return other colonial conquests; the treaty also addressed Malta and French evacuation obligations. Franco-Ottoman peace followed in June. [21](https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/) [32](https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/) [23](https://www.nam.ac.uk/explore/egyptian-campaign)\n\nAmiens marked an important end to the European war, not the end of every colonial conflict or coercive regime. Disputes over French continental predominance and British maritime and colonial interests remained. Renewed Anglo-French hostilities in 1803 are conventionally treated as the opening of the Napoleonic Wars; their campaigns through 1815 lie outside this article. [32](https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/) [1](https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802)\n\nThe wars preserved the republic against military defeat, while prolonged mobilization and conquest enlarged the power of generals and the coercive state. Occupied societies experienced legal reform alongside extraction, local republicanism alongside resistance to France. Soldiers’ lives involved wounds, disease, desertion, captivity, and burdens on families as well as victories. Asking what counted as liberation, and for whom war meant domination, is as important as memorizing battlefield outcomes. [20](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience) [33](https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution)"
+      },
+      "sections": [
+        {
+          "heading": {
+            "ko": "혁명이 왜 유럽 전쟁으로 이어졌는가",
+            "en": "Why revolution became a European war"
+          },
+          "paragraphs": [
+            {
+              "ko": "프랑스 혁명 전쟁은 1792년 4월의 선전포고에서 1802년의 평화까지 이어진 여러 전쟁의 묶음이다. 보통 제1차 대프랑스 동맹전쟁(1792~1797)과 제2차 동맹전쟁(1798~1802)으로 나누지만, 영국과 프랑스의 전쟁은 그 사이에도 계속되었다. 동맹은 처음부터 모든 군주국이 한꺼번에 결성한 단일 조직이 아니었고, 참전국·전쟁 목표·적과 동지의 관계는 계속 바뀌었다.",
+              "en": "The French Revolutionary Wars comprise conflicts from France’s declaration in April 1792 to the settlements of 1802. They are usually divided into the First Coalition (1792–1797) and Second Coalition (1798–1802), although Britain and France remained at war between them. These coalitions were not a single organization simultaneously embracing every monarchy. Membership, objectives, and even the distinction between allies and enemies changed over time.",
+              "sources": [
+                "https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802",
+                "https://www.worldhistory.org/French_Revolutionary_Wars/"
+              ]
+            },
+            {
+              "ko": "1791년 8월 오스트리아와 프로이센의 필니츠 선언은 프랑스 왕실 문제에 공동 관심을 표했지만 행동을 다른 열강의 협력에 조건지었다. 프랑스에서는 이를 반혁명 개입의 위협으로 받아들였다. 망명 귀족들의 활동, 왕실에 대한 불신, 국경과 영토 문제도 긴장을 키웠다. 이념적 대립은 실제였지만 열강은 폴란드와 오스만 제국 등 다른 지역에서의 이해관계도 계산했다.",
+              "en": "The Austro-Prussian Declaration of Pillnitz in August 1791 expressed common concern for the French royal family but made action conditional on cooperation from other powers. In France it was read as a threat of counterrevolutionary intervention. Émigré activity, distrust of the court, and territorial disputes sharpened tensions. Ideological antagonism was real, but the powers also calculated their interests in Poland, the Ottoman world, and elsewhere.",
+              "sources": [
+                "https://www.worldhistory.org/Declaration_of_Pillnitz/"
+              ]
+            },
+            {
+              "ko": "브리소는 전쟁이 혁명을 결속시키고 외국의 인민을 움직일 수 있다고 기대했다. 로베스피에르는 1792년 1월 연설에서 외국 주민이 무장한 해방자를 당연히 환영할 것이라는 가정을 비판했다. 이 논쟁은 혁명 진영 안에도 전쟁에 대한 선택지가 있었음을 보여 준다. 혁명과 전쟁을 필연적 연쇄로만 설명하면 선전포고를 택한 정치적 판단과 책임이 가려진다.",
+              "en": "Brissot expected war to unite the Revolution and mobilize foreign peoples. In his January 1792 speech, Robespierre challenged the assumption that inhabitants abroad would naturally welcome armed liberators. This disagreement reveals alternatives within revolutionary politics. Describing revolution and war as an inevitable sequence obscures the political choices and responsibilities involved in declaring hostilities.",
+              "sources": [
+                "https://helios2.mi.parisdescartes.fr/~lerb/rouanet/recherche/FEUILLES/RobespierreGuerre.html"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1792년: 초기 패배에서 발미와 제마프까지",
+            "en": "1792: from early defeats to Valmy and Jemappes"
+          },
+          "paragraphs": [
+            {
+              "ko": "프랑스는 1792년 4월 20일 오스트리아 군주에게 선전포고했다. 장교들의 망명과 지휘체계의 혼란, 훈련과 보급 문제 때문에 초기 공격은 실패했다. 프로이센군과 오스트리아군의 침공, 7월의 브라운슈바이크 선언은 왕실과 외국군의 결탁에 대한 의심을 키웠다. 국내에서는 8월 10일 왕권이 정지되었고, 전선에서는 롱위와 베르됭의 함락으로 파리가 위협받았다.",
+              "en": "France declared war on the Austrian ruler on 20 April 1792. Emigration among officers, disrupted command, and problems of training and supply contributed to failed opening offensives. Invasion by Prussian and Austrian forces and the Brunswick declaration of July intensified suspicion that the court was linked to foreign intervention. Royal authority was suspended on 10 August; the fall of Longwy and Verdun meanwhile threatened the approaches to Paris.",
+              "sources": [
+                "https://www.worldhistory.org/War_of_the_First_Coalition/",
+                "https://www.worldhistory.org/Battle_of_Valmy/"
+              ]
+            },
+            {
+              "ko": "9월 20일 발미에서 뒤무리에와 켈레르만의 군대는 침공군의 진격을 막았다. 이 전투는 적군을 전멸시킨 대승이 아니라 프랑스군이 무너지지 않고 버틴 정치·전략적 전환점이었다. 포병, 기존 군대의 경험, 지원병의 동원, 침공군의 질병과 보급난을 함께 보아야 한다. 국민공회는 다음 날 왕정을 폐지했지만 발미 한 번으로 전쟁이 끝난 것은 아니었다.",
+              "en": "At Valmy on 20 September, the forces of Dumouriez and Kellermann checked the invasion. Its importance lay less in annihilating the enemy than in the French army holding together at a decisive political moment. Artillery, regular military experience, volunteers, and the invaders’ disease and supply problems all matter. The Convention abolished monarchy the next day, but Valmy did not end the war.",
+              "sources": [
+                "https://www.worldhistory.org/Battle_of_Valmy/"
+              ]
+            },
+            {
+              "ko": "11월 6일 제마프 승리 뒤 프랑스군은 오스트리아령 네덜란드로 진출했고, 다른 전선에서는 라인란트·사부아·니스로 확대되었다. 국민공회는 외국 인민의 자유를 돕겠다고 선언했다. 그러나 해방의 약속은 프랑스의 안전한 국경과 영토 확대 주장으로 이어지기도 했다. 방어와 혁명 수출, 정복이 같은 전쟁 안에서 겹치기 시작한 것이다.",
+              "en": "Victory at Jemappes on 6 November carried French forces into the Austrian Netherlands, alongside advances in the Rhineland, Savoy, and Nice. The Convention promised assistance to peoples seeking liberty. Such promises could also serve demands for secure frontiers and territorial expansion. Defense, revolutionary internationalism, and conquest were beginning to overlap within the same conflict.",
+              "sources": [
+                "https://www.worldhistory.org/Battle_of_Jemappes/"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1793년의 위기: 동맹 확대와 내전",
+            "en": "The crisis of 1793: a wider coalition and civil war"
+          },
+          "paragraphs": [
+            {
+              "ko": "루이 16세의 처형은 외교적 단절을 심화시켰지만 전쟁 확대의 유일한 원인은 아니었다. 저지대 점령과 스헬더강 통항 문제는 영국·네덜란드의 전략적 이해를 건드렸다. 프랑스는 1793년 2월 1일 영국과 네덜란드 공화국에, 3월 7일 스페인에 선전포고했다. 해상·식민지 전쟁과 피레네 전선이 더해지면서 프랑스는 여러 방향에서 병력과 자원을 배분해야 했다.",
+              "en": "Louis XVI’s execution deepened diplomatic rupture, but it was not the sole cause of escalation. Occupation in the Low Countries and navigation on the Scheldt affected British and Dutch strategic interests. France declared war on Britain and the Dutch Republic on 1 February 1793, and Spain on 7 March. Maritime and colonial warfare and the Pyrenean front multiplied demands on French manpower and resources.",
+              "sources": [
+                "https://www.worldhistory.org/French_Revolutionary_Wars/",
+                "https://www.worldhistory.org/War_of_the_First_Coalition/"
+              ]
+            },
+            {
+              "ko": "3월 네르빈던 패배 뒤 뒤무리에는 오스트리아 측으로 넘어갔다. 방데에서는 징집과 종교정책에 대한 반발이 무장 반란으로 번졌고, 여름에는 여러 도시에서 산악파의 지배에 저항했다. 툴롱 항구가 영국·스페인 함대에 넘어간 사건은 내전과 국제전이 맞닿는 지점이었다. 전선의 패배는 국내의 배신 의심을 키웠고 국내의 갈등은 다시 전선에 필요한 자원을 소모했다.",
+              "en": "After defeat at Neerwinden in March, Dumouriez defected to the Austrians. Resistance to recruitment and religious policy became armed rebellion in the Vendée; several cities opposed Montagnard ascendancy that summer. The opening of Toulon to British and Spanish fleets connected civil and international war directly. Military reverses intensified accusations of treason, while domestic conflicts consumed resources needed at the front.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Battle_of_Neerwinden_(1793)",
+                "https://www.worldhistory.org/Federalist_Revolts/"
+              ]
+            },
+            {
+              "ko": "이 위기에 대응한 공안위원회와 파견의원들은 병력·군수품을 확보하고 지휘관을 감독했다. 동시에 실패를 배신으로 취급하는 정치적 압력은 장교와 병사에게 위협이 되었다. 공화국의 생존을 설명할 때 탄압만으로 승리를 설명하거나, 전쟁 위기를 이유로 모든 탄압을 불가피했다고 단정해서는 안 된다. 국내 정치의 자세한 맥락은 [프랑스 혁명](/commulingo/events/french-revolution-1789-1799)에서 다룬다.",
+              "en": "The Committee of Public Safety and representatives on mission sought recruits and supplies and supervised commanders. Political pressure equating failure with betrayal also threatened officers and soldiers. Explaining republican survival requires more than attributing victory to repression or treating every coercive measure as inevitable. The fuller domestic context appears in [French Revolution](/commulingo/events/french-revolution-1789-1799).",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-revolutionary-government-and-justice-1793-1794"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "국민 총동원과 군대의 재편",
+            "en": "Mass mobilization and military reorganization"
+          },
+          "paragraphs": [
+            {
+              "ko": "1793년 8월 23일 국민총동원령은 전쟁을 병사들만의 업무로 두지 않았다. 청년의 군복무와 함께 무기·장비 생산, 운송, 간호 등 사회 전체의 노동을 동원하는 구상이었다. 카르노 등은 군사 조직과 작전을 조정했고, 기존 정규병과 지원병을 결합하는 부대 재편이 추진되었다. 숫자만 늘리는 것이 아니라 경험과 훈련을 대규모 동원과 연결하는 문제가 중요했다.",
+              "en": "The levée en masse of 23 August 1793 conceived war as more than soldiers’ work. Military service by young men belonged to a wider mobilization of arms production, equipment, transport, and nursing. Carnot and others coordinated military organization and operations, while amalgamation brought regular soldiers and volunteers into reorganized units. The problem was not merely to increase numbers, but to connect experience and training with mass recruitment.",
+              "sources": [
+                "https://revolution.chnm.org/d/968",
+                "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+              ]
+            },
+            {
+              "ko": "전쟁 수행에는 식량·말·신발·화약·수송이 필요했다. 징발과 가격 통제는 군대와 도시를 먹이는 수단이었지만 농민·상인·노동자에게 서로 다른 부담을 주었다. 애국심으로 자원한 병사도 있었고 징집을 피하거나 탈영한 사람도 있었다. 병력 명부상의 수와 실제 전투 가능한 인원을 구별해야 하며, 거대한 국민군이라는 표현이 모든 국민의 자발적 동의를 뜻하지는 않는다.",
+              "en": "Campaigning required grain, horses, shoes, powder, and transport. Requisitioning and price controls supplied armies and towns while imposing different burdens on peasants, merchants, and workers. Patriotic volunteers served alongside reluctant recruits, draft evaders, and deserters. Nominal strength must be distinguished from men available for combat: a national army did not imply unanimous, voluntary participation.",
+              "sources": [
+                "https://cyber-lenin.com/commulingo/docs/france-subsistence-and-equality-1792-1796",
+                "https://www.worldhistory.org/French_Revolutionary_Wars/"
+              ]
+            },
+            {
+              "ko": "1798년 주르당-델브렐 법은 징병을 보다 지속적인 제도로 만들었다. 혁명전쟁은 군대와 시민권의 관계를 바꾸었지만 전술과 전문성이 1789년에 처음 생긴 것은 아니다. 왕정기의 포병과 장교 교육도 새 군대의 자산이었다. 혁명적 열정만으로 승리를 설명하기보다 병력 규모, 전술의 적응, 지휘, 보급, 적국 간의 협력 실패를 함께 검토해야 한다.",
+              "en": "The Jourdan–Delbrel law of 1798 gave conscription a more enduring institutional basis. Revolutionary warfare transformed the connection between military service and citizenship, but tactics and expertise did not originate in 1789. Royal artillery traditions and officer education also supplied resources for the new armies. Manpower, tactical adaptation, command, logistics, and failures of enemy coordination all belong alongside revolutionary commitment in explaining results.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Jourdan_law",
+                "https://en.wikipedia.org/wiki/Lev%C3%A9e_en_masse"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1794~1795년: 북부 전선의 역전과 동맹 이탈",
+            "en": "1794–1795: reversal in the north and coalition withdrawals"
+          },
+          "paragraphs": [
+            {
+              "ko": "1793년 가을의 옹드스코트와 와티니 승리, 12월 툴롱 탈환은 공화국의 위기를 완화했다. 1794년 6월 26일 주르당의 군대는 플뢰뤼스에서 승리했고, 오스트리아군의 저지대 철수로 이어지는 중요한 계기를 만들었다. 프랑스의 방어 성공은 이제 국외의 장기 점령을 가능하게 했다. 플뢰뤼스는 로베스피에르가 몰락하기 한 달 전의 승리였지만, 군사적 호전 하나만으로 테르미도르의 정치적 연합을 설명할 수는 없다.",
+              "en": "Victories at Hondschoote and Wattignies in autumn 1793 and the recapture of Toulon in December eased the emergency. Jourdan’s victory at Fleurus on 26 June 1794 helped precipitate Austrian withdrawal from the Low Countries. Successful defense now enabled sustained occupation abroad. Fleurus preceded Robespierre’s fall by a month, but military improvement alone does not explain the political coalition that brought about Thermidor.",
+              "sources": [
+                "https://www.worldhistory.org/article/2213/battle-of-fleurus/"
+              ]
+            },
+            {
+              "ko": "1794~1795년 겨울 피슈그뤼의 군대가 네덜란드로 진입했고 바타비아 공화국이 세워졌다. 1795년 바젤의 평화에서 프로이센과 스페인은 각각 프랑스와 전쟁을 끝냈다. 프로이센은 폴란드 문제에도 관심과 자원을 쏟고 있었다. 영국과 오스트리아는 전쟁을 계속했다. 따라서 제1차 동맹의 약화는 한 번의 결정적 전투가 아니라 프랑스의 군사적 성과와 동맹국들의 서로 다른 우선순위가 결합한 결과였다.",
+              "en": "Pichegru’s army entered the Netherlands during the winter of 1794–1795, and the Batavian Republic emerged. Separate settlements at Basel in 1795 ended the wars of Prussia and Spain with France; Prussia was also occupied with Poland. Britain and Austria continued fighting. The weakening of the First Coalition therefore reflected both French battlefield gains and divergent allied priorities, rather than a single decisive battle.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Flanders_campaign",
+                "https://www.worldhistory.org/War_of_the_First_Coalition/"
+              ]
+            },
+            {
+              "ko": "피레네 전선에서는 처음 스페인군이 루시용으로 진입했지만 1794년부터 프랑스군이 주도권을 되찾았다. 동부의 르 불루와 검은산 전투, 서부의 바스크 지역 진출은 스페인을 압박했다. 1795년 평화는 단순한 유럽 국경의 문제를 넘어서 스페인령 산토도밍고의 프랑스 양도를 포함했다. 전쟁의 유럽 전선과 카리브해 식민지의 운명이 같은 외교 협상에서 연결되었던 것이다.",
+              "en": "On the Pyrenean front, Spanish troops initially advanced into Roussillon, but the French regained the initiative from 1794. Victories at Le Boulou and the Black Mountain in the east and advances into the Basque country in the west increased pressure on Spain. Peace in 1795 included the cession of Spanish Santo Domingo to France, connecting the fate of a Caribbean colony to the settlement of European campaigns.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/War_of_the_Pyrenees"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "이탈리아 원정과 자매공화국의 모순",
+            "en": "The Italian campaign and the contradictions of sister republics"
+          },
+          "paragraphs": [
+            {
+              "ko": "1796년 이탈리아 방면군을 맡은 보나파르트는 사르데냐-피에몬테와 오스트리아군 사이를 공략했다. 사르데냐의 이탈 뒤에도 만토바를 둘러싼 전투는 계속되었고 아르콜레·리볼리 등의 승리와 1797년 만토바 항복이 오스트리아를 압박했다. 10월 캄포포르미오 조약은 제1차 동맹전쟁의 대륙적 국면을 마무리했다. 승전 장군은 작전뿐 아니라 외교와 점령지 정치에서도 독자적 영향력을 얻었다.",
+              "en": "Commanding the Army of Italy in 1796, Bonaparte struck between Sardinia-Piedmont and the Austrian forces. Sardinia’s withdrawal did not end the campaign: repeated struggles over Mantua, victories including Arcole and Rivoli, and Mantua’s surrender in 1797 increased pressure on Austria. Campo Formio in October closed the main continental phase of the First Coalition war. The victorious general gained influence in diplomacy and occupied politics as well as military operations.",
+              "sources": [
+                "https://www.napoleon.org/wp-content/themes/napoleon/annexes/hors-serie/premiere-campagne-italie/fr/chronologie/chrono.html",
+                "https://en.wikipedia.org/wiki/Treaty_of_Campo_Formio"
+              ]
+            },
+            {
+              "ko": "프랑스군의 진출은 바타비아·치살피나·리구리아 공화국 등의 형성과 연결되었다. 기존 특권의 폐지와 공화주의 제도를 환영한 현지 세력도 있었다. 그러나 군대의 주둔 비용과 징발, 미술품 반출, 프랑스의 정치 개입은 해방의 약속을 훼손했다. 베네치아를 포함한 영토가 강대국의 조약에서 교환된 사실은 인민의 자기결정과 프랑스의 국가 이익이 일치하지 않았음을 보여 준다.",
+              "en": "French advances accompanied the formation of the Batavian, Cisalpine, and Ligurian republics. Local supporters could welcome republican institutions and the ending of privilege. Yet occupation costs, requisitions, removal of artworks, and French political intervention undermined promises of liberation. The bargaining away of territories including Venice demonstrated that popular self-determination and French state interests did not necessarily coincide.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+                "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/"
+              ]
+            },
+            {
+              "ko": "이 지역들은 오늘날의 이탈리아·독일·벨기에와 같은 국민국가 체제로 존재하지 않았다. 합스부르크의 영지, 신성로마제국의 여러 국가, 도시와 지역 공화국의 구체적 지위를 구별해야 한다. 전쟁의 지도는 현대 국경을 과거에 덮어씌우기보다 점령·병합·동맹·종속 공화국이라는 서로 다른 관계를 읽는 도구여야 한다.",
+              "en": "These territories did not exist within today’s system of Italian, German, and Belgian nation-states. Habsburg possessions, states of the Holy Roman Empire, and local republics had distinct political statuses. Maps should help distinguish occupation, annexation, alliance, and dependent republican government rather than project modern borders backward.",
+              "sources": [
+                "https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802",
+                "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/"
+              ]
+            },
+            {
+              "ko": "자매공화국은 단지 같은 헌법을 복사한 나라들의 집합도 아니었다. 프랑스군의 후원 아래 현지 공화주의자들이 기존 정권을 바꾸었지만, 정치적 자율성의 범위는 군사 상황과 프랑스의 요구에 좌우되었다. 1798년에는 스위스의 헬베티아 공화국과 로마 공화국이, 1799년에는 나폴리의 파르테노페 공화국이 등장했다. 제2차 동맹의 반격은 일부를 무너뜨렸다. 이런 정권들의 취약성은 사회개혁에 대한 현지의 찬반과 외국 군대에 대한 의존이 얽혀 있었음을 보여 준다.",
+              "en": "Sister republics were not simply copies of a single constitution. Local republicans changed established regimes with French military support, but their room for autonomous action depended on military circumstances and French demands. The Helvetic and Roman republics appeared in 1798, followed by the Parthenopean Republic at Naples in 1799. Coalition counterattacks overturned some of them. Their fragility reflected the interaction between local conflicts over reform and dependence on foreign armed forces.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Sister_republic"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "바다와 식민지, 아일랜드의 전쟁",
+            "en": "War at sea, in the colonies, and in Ireland"
+          },
+          "paragraphs": [
+            {
+              "ko": "영국은 해군력과 재정으로 대륙의 동맹을 지원하고 프랑스의 해상 활동을 압박했다. 프랑스가 대륙에서 승리해도 영국을 곧바로 굴복시킬 수 없었던 이유다. 카리브해에서는 영국과 스페인의 개입, 식민자들의 이해, 노예화된 사람들의 해방 투쟁이 겹쳤다. 생도맹그의 전쟁을 유럽 전쟁의 작은 부속 사건으로만 다루면 현지 세력이 동맹과 목표를 바꾸며 행동한 역사가 사라진다.",
+              "en": "Britain used naval and financial power to support continental allies and constrain French activity at sea. Continental victory could not by itself force British submission. In the Caribbean, British and Spanish intervention intersected with colonists’ interests and enslaved people’s struggle for freedom. Treating Saint-Domingue merely as a sideshow to Europe erases local actors’ changing alliances and independent objectives.",
+              "sources": [
+                "https://www.nam.ac.uk/explore/egyptian-campaign",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/slavery-and-the-haitian-revolu"
+              ]
+            },
+            {
+              "ko": "아일랜드의 연합아일랜드인 운동은 종파를 넘어 공화주의적 개혁과 독립을 추구했고 프랑스의 지원을 모색했다. 1796년 프랑스의 원정은 악천후로 상륙에 실패했다. 1798년의 봉기는 진압되었고, 뒤늦게 상륙한 프랑스군도 패배했다. 영국의 진압과 반란 과정에서 민간인 폭력과 종파 갈등이 격화되었다. 이는 혁명적 국제연대의 가능성과 외국 원조에 기대는 전략의 한계를 함께 드러냈다.",
+              "en": "The United Irish movement sought republican change across confessional divisions and looked to France for assistance. Bad weather prevented the French expedition of 1796 from landing. The rebellion of 1798 was suppressed, and French troops who landed later were defeated. Repression and rebellion intensified civilian violence and sectarian antagonisms. Ireland exposed both the possibilities of revolutionary international solidarity and the limits of relying on foreign intervention.",
+              "sources": [
+                "https://www.nam.ac.uk/explore/irish-rebellion-1798"
+              ]
+            },
+            {
+              "ko": "1794년 6월 1일 대서양 해전은 전술적 승리와 전략적 목적이 다를 수 있음을 보여 준다. 영국의 하우 함대는 프랑스 함대를 상대로 여러 전열함을 나포·격침했지만, 프랑스가 지키려던 곡물 수송선단은 도착했다. 해군의 전투는 함정끼리의 승패만이 아니라 식량 수입과 국가의 생존에 연결되어 있었다. 육지에서의 징발과 최고가격제가 공급을 관리했다면, 바다에서는 호송과 봉쇄가 어떤 물자가 프랑스에 들어갈 수 있는지를 좌우했다.",
+              "en": "The Atlantic battle of 1 June 1794 illustrates the difference between tactical victory and strategic purpose. Howe’s British fleet captured or destroyed several French ships of the line, yet the grain convoy the French sought to protect arrived. Naval warfare was therefore connected to food imports and state survival, not only the balance of ships lost. While requisitions and maximum prices regulated supply on land, convoy protection and blockade affected what goods could reach France by sea.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Glorious_First_of_June"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "이집트와 시리아: 유럽 밖의 정복",
+            "en": "Egypt and Syria: conquest beyond Europe"
+          },
+          "paragraphs": [
+            {
+              "ko": "1798년 보나파르트의 원정군은 몰타를 점령한 뒤 이집트에 상륙했다. 이집트는 오스만 제국의 영토였으나 맘루크 세력이 실권을 행사하고 있었다. 프랑스는 영국의 동방 교역과 인도에 대한 지위를 압박하려 했다. 7월 피라미드 전투의 승리와 카이로 점령 뒤에도, 8월 넬슨의 함대가 아부키르만에서 프랑스 함대를 파괴하면서 원정군은 해상 연결을 잃었다.",
+              "en": "In 1798 Bonaparte’s expedition captured Malta and landed in Egypt, an Ottoman territory where Mamluk rulers exercised substantial power. France sought to threaten Britain’s eastern commerce and position in India. Victory at the Pyramids and occupation of Cairo in July did not secure the expedition: Nelson destroyed the French fleet in Aboukir Bay in August, severing its maritime connection.",
+              "sources": [
+                "https://www.nam.ac.uk/explore/egyptian-campaign"
+              ]
+            },
+            {
+              "ko": "학자들의 동행과 고대 유물 조사는 원정의 한 측면이었지만 군사 점령을 지우지는 않는다. 1798년 카이로 봉기와 진압, 1799년 시리아 원정에서의 야파 포로 학살은 정복의 폭력을 보여 준다. 아크레 포위는 실패했고 프랑스군은 질병과 보급 문제 속에 이집트로 돌아왔다. 보나파르트는 1799년 8월 군대를 남겨 두고 프랑스로 떠났다.",
+              "en": "The presence of scholars and investigation of antiquities formed one aspect of the expedition without canceling its character as occupation. The Cairo revolt and repression in 1798 and the killing of prisoners at Jaffa during the Syrian campaign of 1799 reveal its violence. The siege of Acre failed; disease and supply difficulties accompanied the return to Egypt. Bonaparte left his army there and departed for France in August 1799.",
+              "sources": [
+                "https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/"
+              ]
+            },
+            {
+              "ko": "남은 프랑스군은 계속 싸웠지만 1801년 영국군과 오스만군의 공세 뒤 카이로와 알렉산드리아에서 항복했다. 원정은 영국을 동방에서 몰아내지 못했고 오스만 제국을 프랑스의 적으로 만들었다. 이집트인과 시리아 주민의 경험까지 포함하면 이 전쟁은 유럽 공화국과 유럽 왕조만의 충돌로는 설명되지 않는다.",
+              "en": "The remaining French troops continued fighting but surrendered at Cairo and Alexandria after British and Ottoman operations in 1801. The expedition failed to dislodge Britain from the East and made the Ottoman Empire an enemy. Including the experiences of Egyptian and Syrian inhabitants makes clear why this conflict cannot be reduced to a contest between European republicanism and European dynasties.",
+              "sources": [
+                "https://www.napoleon.org/en/history-of-the-two-empires/timelines/the-egyptian-campaign/"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "제2차 동맹과 1799~1800년의 역전",
+            "en": "The Second Coalition and the reversals of 1799–1800"
+          },
+          "paragraphs": [
+            {
+              "ko": "프랑스의 팽창과 이집트 침공을 배경으로 영국·오스트리아·러시아·오스만 제국 등이 새로운 동맹을 이루었다. 1799년 오스트리아군은 독일 전선에서 프랑스군을 밀어냈고, 수보로프의 오스트리아-러시아군은 이탈리아에서 카사노·트레비아·노비 등의 승리를 거두었다. 프랑스가 1797년에 얻은 지배는 확정된 것이 아니었다. 그러나 러시아와 오스트리아는 해방한 이탈리아의 처리와 작전 우선순위를 두고 충돌했다.",
+              "en": "French expansion and the Egyptian invasion helped bring Britain, Austria, Russia, and the Ottoman Empire into a new coalition. In 1799 Austrian forces pushed the French back in Germany, while Suvorov’s Austro-Russian forces won at Cassano, the Trebbia, and Novi in Italy. French gains of 1797 were far from secure. Russia and Austria nevertheless disagreed about the disposition of recovered Italian territories and operational priorities.",
+              "sources": [
+                "https://www.worldhistory.org/War_of_the_Second_Coalition/"
+              ]
+            },
+            {
+              "ko": "9월 마세나의 제2차 취리히 전투 승리는 러시아군의 협동을 무너뜨렸고 수보로프는 알프스를 넘어 어렵게 철수했다. 네덜란드의 영국-러시아 원정도 실패했다. 러시아는 동맹에서 이탈했다. 프랑스에서는 군사적 불안과 총재정부의 정치 위기 속에 브뤼메르 쿠데타가 일어났다. 보나파르트는 전쟁이 끝난 뒤 권력을 얻은 것이 아니라 전쟁 중인 공화국의 수장이 되었다.",
+              "en": "Masséna’s victory at the Second Battle of Zurich in September disrupted Russian cooperation, and Suvorov made a difficult withdrawal across the Alps. The Anglo-Russian expedition to the Netherlands also failed. Russia withdrew from the coalition. In France, military insecurity accompanied the Directory’s political crisis and the Brumaire coup. Bonaparte became head of a republic still at war, rather than taking power after peace had been won.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Second_Battle_of_Zurich",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience"
+              ]
+            },
+            {
+              "ko": "1800년 6월 14일 마렝고에서 프랑스군은 한때 패배 직전까지 몰렸으나 드제의 병력 도착과 반격으로 승리했다. 드제는 전사했다. 12월 3일에는 모로가 호엔린덴에서 오스트리아군을 격파했다. 마렝고를 보나파르트 개인의 영웅담으로만 기억하면 다른 장군과 병사들의 역할, 독일 전선의 승리가 평화 협상에 가한 압력을 놓치게 된다.",
+              "en": "At Marengo on 14 June 1800, French forces came close to defeat before Desaix’s arrival and a counterattack helped turn the battle; Desaix was killed. Moreau then defeated the Austrians at Hohenlinden on 3 December. Remembering only Bonaparte’s personal triumph obscures other commanders and soldiers, and the pressure that victory in Germany exerted on the peace negotiations.",
+              "sources": [
+                "https://www.napoleon.org/en/magazine/places/marengo-2/",
+                "https://en.wikipedia.org/wiki/Battle_of_Hohenlinden"
+              ]
+            },
+            {
+              "ko": "호엔린덴의 전투는 겨울의 숲길과 분산된 진격이 만든 위험을 드러냈다. 오스트리아군은 여러 종대로 전진하다 서로 지원하기 어려워졌고, 모로의 부대와 리슈팡스의 측후방 공격에 큰 타격을 입었다. 프랑스의 승리는 단지 많은 병력을 전면으로 밀어 넣은 결과가 아니었다. 지형을 이용한 배치, 적의 이동에 대한 판단, 현장 지휘관의 대응이 결합했다. 이 승리 뒤 빈을 향한 압박이 커지면서 오스트리아가 휴전과 평화에 나설 여지는 좁아졌다.",
+              "en": "Hohenlinden exposed the dangers of advancing in separated columns through winter woodland. Austrian formations became unable to support one another effectively, and Moreau’s forces, including Richepanse’s attack against their flank and rear, inflicted a major defeat. French success was not simply a matter of pushing superior numbers forward. Deployment, judgments about enemy movements, and subordinate commanders’ responses interacted. The subsequent advance toward Vienna intensified pressure on Austria to accept an armistice and peace.",
+              "sources": [
+                "https://en.wikipedia.org/wiki/Battle_of_Hohenlinden"
+              ]
+            }
+          ]
+        },
+        {
+          "heading": {
+            "ko": "1801~1802년의 평화와 남은 문제",
+            "en": "The settlements of 1801–1802 and unresolved questions"
+          },
+          "paragraphs": [
+            {
+              "ko": "1801년 2월 9일 뤼네빌 조약은 오스트리아와 신성로마제국의 대프랑스 전쟁을 끝내고 프랑스의 라인강 좌안 지배와 벨기에 지역의 양도를 확인했다. 1802년 3월 25일 아미앵 조약은 영국과 프랑스 및 그 동맹 사이의 평화를 정했다. 영국은 트리니다드와 실론을 보유하되 다른 여러 식민지 점령지를 돌려주기로 했으며, 몰타의 처리와 프랑스의 철수 의무도 규정했다. 6월에는 프랑스-오스만 평화가 뒤따랐다.",
+              "en": "The Treaty of Lunéville of 9 February 1801 ended the war with Austria and the Holy Roman Empire, confirming French possession of the Rhine’s left bank and the former Belgian provinces. Amiens, signed on 25 March 1802, made peace between Britain, France, and their partners. Britain retained Trinidad and Ceylon while agreeing to return other colonial conquests; the treaty also addressed Malta and French evacuation obligations. Franco-Ottoman peace followed in June.",
+              "sources": [
+                "https://www.napoleon.org/en/history-of-the-two-empires/articles/treaty-of-luneville/",
+                "https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/",
+                "https://www.nam.ac.uk/explore/egyptian-campaign"
+              ]
+            },
+            {
+              "ko": "아미앵은 유럽 전쟁의 중요한 마침표였지만 모든 식민지 전투나 강제 지배의 종식을 뜻하지 않았다. 프랑스의 대륙 지배와 영국의 해상·식민지 이해를 둘러싼 갈등도 남았다. 1803년 양국의 전쟁 재개부터는 보통 나폴레옹 전쟁으로 구분한다. 이 글은 1815년까지 이어지는 그 전쟁의 상세한 전역을 포함하지 않는다.",
+              "en": "Amiens marked an important end to the European war, not the end of every colonial conflict or coercive regime. Disputes over French continental predominance and British maritime and colonial interests remained. Renewed Anglo-French hostilities in 1803 are conventionally treated as the opening of the Napoleonic Wars; their campaigns through 1815 lie outside this article.",
+              "sources": [
+                "https://www.napoleon.org/histoire-des-2-empires/articles/le-traite-de-la-paix-damiens/",
+                "https://col-militarymaps-frontend.rct.uk/french-revolutionary-wars-1792-1802"
+              ]
+            },
+            {
+              "ko": "혁명전쟁은 공화국을 외국의 군사적 패배에서 지켜 냈지만, 장기 동원과 정복은 장군의 권력과 국가의 강제력을 키웠다. 점령지에서는 법적 개혁과 수탈, 현지 공화주의와 프랑스에 대한 저항이 병존했다. 병사의 경험도 승전 기록만이 아니라 부상·질병·탈영·포로 생활과 가족의 부담으로 이루어졌다. 무엇이 해방이었고 누구에게 부담과 지배였는지를 묻는 것이 전투의 승패를 외우는 것만큼 중요하다.",
+              "en": "The wars preserved the republic against military defeat, while prolonged mobilization and conquest enlarged the power of generals and the coercive state. Occupied societies experienced legal reform alongside extraction, local republicanism alongside resistance to France. Soldiers’ lives involved wounds, disease, desertion, captivity, and burdens on families as well as victories. Asking what counted as liberation, and for whom war meant domination, is as important as memorizing battlefield outcomes.",
+              "sources": [
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/napoleonic-experience",
+                "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/legacies-of-the-revolution"
+              ]
+            }
+          ]
+        }
+      ],
+      "people": [
+        {
+          "person_id": "jacques-pierre-brissot",
+          "relation_kind": "leader",
+          "relation_ko": "개전론의 주도자",
+          "relation_en": "Leading advocate of war",
+          "note_ko": "1791~1792년 혁명을 지키고 확대하기 위한 전쟁을 주장했다.",
+          "note_en": "Advocated war in 1791–1792 as a means to defend and extend the Revolution.",
+          "sort_order": 0
+        },
+        {
+          "person_id": "maximilien-robespierre",
+          "relation_kind": "participant",
+          "relation_ko": "개전 반대·혁명정부 지도자",
+          "relation_en": "War critic and revolutionary leader",
+          "note_ko": "1792년 개전론을 비판했고 뒤에는 전쟁 중의 공안위원회에서 활동했다.",
+          "note_en": "Criticized the drive to war in 1792 and later served on the wartime Committee of Public Safety.",
+          "sort_order": 10
+        },
+        {
+          "person_id": "georges-danton",
+          "relation_kind": "leader",
+          "relation_ko": "1792년 전시 동원 지도자",
+          "relation_en": "Leader of wartime mobilization",
+          "note_ko": "침공 위기 속에서 공화국 방어를 위한 동원을 촉구했다.",
+          "note_en": "Called for mobilization to defend France during the invasion crisis.",
+          "sort_order": 20
+        },
+        {
+          "person_id": "louis-antoine-de-saint-just",
+          "relation_kind": "leader",
+          "relation_ko": "전선 파견의원",
+          "relation_en": "Representative on mission",
+          "note_ko": "라인군과 북부 전선에서 병력과 군수, 규율을 감독했다.",
+          "note_en": "Supervised manpower, supplies, and discipline with the Rhine and northern armies.",
+          "sort_order": 25
+        },
+        {
+          "person_id": "louis-xvi",
+          "relation_kind": "participant",
+          "relation_ko": "선전포고 당시 국왕",
+          "relation_en": "King at the declaration of war",
+          "note_ko": "1792년 4월 선전포고를 제안한 입헌군주였으며 전쟁 중 폐위되었다.",
+          "note_en": "The constitutional monarch who proposed the April 1792 declaration and was deposed during the war.",
+          "sort_order": 30
+        }
+      ]
+    }
+  ]
+}
