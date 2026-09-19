@@ -16,7 +16,21 @@ const { buildAliasPattern } = require('./people-linkify');
 
 // Builds an alias→document index from the manifest entries
 // ({ id, title: {ko,en}, kind: {ko,en}, aliases: {ko:[],en:[]}, ... }).
-function sourceExpressions(doc, lang) { return expressionCandidates(doc, lang, (doc.aliases && doc.aliases[lang]) || []); }
+// `anchors` in the manifest ({ 'art-5': { ko: ['NATO 5조'], en: [...] } }) name
+// a heading id inside the document: the alias links to that section instead of
+// the top of the page. Anchored aliases are reviewed like any other expression
+// (the anchor is part of the reviewed payload), and each anchor counts as its
+// own first mention, so a report citing Article 4 and Article 5 links both.
+function anchorExpressions(doc, lang) {
+    return Object.entries(doc.anchors || {}).flatMap(([anchor, aliases]) =>
+        ((aliases && aliases[lang]) || []).filter(text => typeof text === 'string' && text)
+            .map(text => ({ text, lang, role: 'related', policy: 'auto', anchor })));
+}
+function sourceExpressions(doc, lang) {
+    const plain = expressionCandidates(doc, lang, (doc.aliases && doc.aliases[lang]) || []);
+    const taken = new Set(plain.map(expression => expression.text));
+    return [...plain, ...anchorExpressions(doc, lang).filter(expression => !taken.has(expression.text))];
+}
 
 function buildDocLinkIndex(docs, options = {}) {
     const lang = options.lang || 'ko';
@@ -45,6 +59,10 @@ function buildDocLinkIndex(docs, options = {}) {
             if (alias.length < 2) return;
             expressions[doc.id + ':' + alias] = expression;
             if (expression.policy === 'search') return;
+            if (expression.anchor) {
+                registerAlias(byAlias, tokens, alias, { ...entry, anchor: expression.anchor, href: entry.href + '#' + encodeURIComponent(expression.anchor) });
+                return;
+            }
             if (expression.role === 'identity' || (expression.role === 'legacy' && alias === label)) identityAliases[alias] = doc.id;
             registerAlias(byAlias, tokens, alias, entry);
         });
@@ -58,5 +76,6 @@ function buildDocLinkIndex(docs, options = {}) {
 
 module.exports = {
     sourceExpressions,
+    anchorExpressions,
     buildDocLinkIndex,
 };

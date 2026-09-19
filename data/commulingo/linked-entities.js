@@ -12,7 +12,9 @@ function registryFor(indexes) {
         const index = indexes[kind];
         if (!index) continue;
         for (const entry of [...Object.values(index.byId || {}), ...Object.values(index.byAlias || {})]) {
-            if (entry) registry.set((kind === 'topic' ? entry.kind : kind) + ':' + entry.id, entry);
+            // An anchored doc alias resolves to the document itself here, so the
+            // related panel lists the treaty once, not once per article.
+            if (entry && !entry.anchor) registry.set((kind === 'topic' ? entry.kind : kind) + ':' + entry.id, entry);
         }
     }
     registryMemo.set(indexes, registry);

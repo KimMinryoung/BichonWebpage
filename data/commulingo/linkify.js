@@ -284,7 +284,10 @@ function createLinker(indexes, options = {}) {
             if (!entry || expression?.policy === 'search') return match;
             if (blockStrings.has(match)) return match;
             if (exclude[kind] && exclude[kind] === entry.id) return match;
-            const key = kind + ':' + (kind === 'topic' ? entry.kind + ':' : '') + entry.id;
+            // An anchored doc alias is its own first mention: 4조 and 5조 of one
+            // treaty both link, each to its article.
+            const key = kind + ':' + (kind === 'topic' ? entry.kind + ':' : '') + entry.id
+                + (entry.anchor ? '#' + entry.anchor : '');
             if (seen.has(key)) return match;
             seen.add(key);
             return '<a class="' + spec.className + '"'

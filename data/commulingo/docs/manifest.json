@@ -2628,7 +2628,7 @@
         "en": "The Warsaw Treaty"
       },
       "description": {
-        "ko": "여덟 나라의 우호·협력·상호원조 조약 전문. 나토 제5조를 본뜬 제4조의 상호원조, 통합사령부와 정치협상위원회, 그리고 전유럽 집단안보조약이 서면 효력을 잃는다는 제11조까지.",
+        "ko": "여덟 나라의 우호·협력·상호원조 조약 전문. NATO 제5조를 본뜬 제4조의 상호원조, 통합사령부와 정치협상위원회, 그리고 전유럽 집단안보조약이 서면 효력을 잃는다는 제11조까지.",
         "en": "The full text of the eight-nation treaty of friendship, cooperation and mutual assistance: the Article 4 mutual-assistance clause mirroring NATO's Article 5, the Joint Command and Political Consultative Committee, and Article 11's promise to dissolve into an all-European security treaty."
       },
       "kind": {
@@ -5793,14 +5793,14 @@
         "en": "The North Atlantic Treaty"
       },
       "description": {
-        "ko": "1949년 워싱턴에서 열두 나라가 서명한 나토 창설 조약 전문. 위협 시 협의를 정한 제4조, 한 나라에 대한 무력 공격을 전체에 대한 공격으로 간주하되 각국이 「필요하다고 판단하는 행동」을 취한다고 한 제5조, 이사회를 세운 제9조, 그리고 나토가 단 각주 세 개까지.",
+        "ko": "1949년 워싱턴에서 열두 나라가 서명한 NATO 창설 조약 전문. 위협 시 협의를 정한 제4조, 한 나라에 대한 무력 공격을 전체에 대한 공격으로 간주하되 각국이 「필요하다고 판단하는 행동」을 취한다고 한 제5조, 이사회를 세운 제9조, 그리고 NATO가 단 각주 세 개까지.",
         "en": "The full text of the twelve-nation founding treaty signed in Washington in 1949: Article 4 on consultation when threatened, Article 5 treating an armed attack on one as an attack on all while leaving each Party \"such action as it deems necessary\", Article 9 establishing the Council, plus NATO's three footnotes."
       },
       "kind": {
         "ko": "조약·협정",
         "en": "Treaties & agreements"
       },
-      "source": "나토 공식 웹사이트(nato.int) Official texts 전자판(영어 정본)",
+      "source": "NATO 공식 웹사이트(nato.int) Official texts 전자판(영어 정본)",
       "people": [],
       "terms": [
         "north-atlantic-treaty-organization-nato",
@@ -5814,17 +5814,39 @@
       "addedAt": "2026-09-19",
       "aliases": {
         "ko": [
-          "나토 조약",
-          "북대서양 조약 제5조",
-          "북대서양 조약 제4조",
-          "나토 5조",
-          "나토 4조"
+          "NATO 조약",
+          "북대서양 조약 전문"
         ],
         "en": [
           "NATO treaty",
-          "NATO Article 5",
-          "NATO Article 4"
+          "Washington Treaty of 1949"
         ]
+      },
+      "anchors": {
+        "art-4": {
+          "ko": [
+            "NATO 4조",
+            "NATO 제4조",
+            "NATO 조약 제4조",
+            "북대서양 조약 제4조"
+          ],
+          "en": [
+            "NATO Article 4",
+            "Article 4 of the North Atlantic Treaty"
+          ]
+        },
+        "art-5": {
+          "ko": [
+            "NATO 5조",
+            "NATO 제5조",
+            "NATO 조약 제5조",
+            "북대서양 조약 제5조"
+          ],
+          "en": [
+            "NATO Article 5",
+            "Article 5 of the North Atlantic Treaty"
+          ]
+        }
       }
     }
   ],
