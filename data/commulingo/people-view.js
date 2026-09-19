@@ -100,7 +100,7 @@ function localizedPersonSections(sections, lang) {
         return {
             slug: section.slug,
             heading: localize(section.heading, lang),
-            bodyHtml: renderMarkdown(body),
+            bodyHtml: renderMarkdown(body, { headingShift: 1 }),
         };
     }).filter(Boolean);
 }

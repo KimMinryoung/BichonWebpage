@@ -336,7 +336,10 @@ function renderMarkdown(markdown = '', options = {}) {
         if (heading) {
             flushParagraph(out, paragraph, citationLinks, footnoteDefinitions);
             flushList(out, list, citationLinks, footnoteDefinitions);
-            const level = heading[1].length;
+            // headingShift demotes body headings under a container that already
+            // owns the heading level (a person section's <h2>), so a "## " in
+            // the body becomes <h3> instead of a sibling <h2>.
+            const level = Math.min(6, heading[1].length + (options.headingShift || 0));
             out.push(`<h${level}>${inlineMarkdown(heading[2], citationLinks, footnoteDefinitions)}</h${level}>`);
             continue;
         }
