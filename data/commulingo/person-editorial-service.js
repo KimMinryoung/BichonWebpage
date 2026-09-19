@@ -5,6 +5,7 @@ const { getPersonAdmin, createPersonAdmin, updatePersonAdmin, deletePersonAdmin 
 const { listPersonSectionsAdmin, upsertPersonSectionAdmin, deletePersonSectionAdmin } = require('./people-sections-store');
 const { sourcesFor, reviewReasons } = require('./person-editorial-policy');
 const { assertExpectedRevision } = require('./people-edit-version');
+const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
 
 async function readPersonEditorial(id, options = {}) {
     if (!options.client) return readSnapshot(client => readPersonEditorial(id, { client }));
@@ -13,7 +14,8 @@ async function readPersonEditorial(id, options = {}) {
     const sections = await listPersonSectionsAdmin(id, options);
     const { rows: evidence } = await options.client.query('SELECT * FROM commulingo_person_evidence WHERE person_id=$1 ORDER BY id DESC LIMIT 100', [id]);
     const { rows: enrichment } = await options.client.query('SELECT * FROM commulingo_person_enrichment WHERE person_id=$1 ORDER BY topic', [id]);
-    return { revision: person.revision, ...person, sections, evidence, enrichment };
+    const notes = await listEditorialNotes(options.client, 'person', id);
+    return { revision: person.revision, ...person, sections, evidence, enrichment, notes };
 }
 
 async function submitPersonEdit(request, options = {}) {
@@ -108,4 +110,8 @@ async function saveEnrichment(request, options = {}) {
     });
 }
 
-module.exports = { readPersonEditorial, submitPersonEdit, reviewPersonSuggestion, saveEnrichment };
+async function saveNote(request, options = {}) {
+    return withTransaction(options, client => saveEditorialNote(client, { ...request, target: 'person' }, options));
+}
+
+module.exports = { readPersonEditorial, submitPersonEdit, reviewPersonSuggestion, saveEnrichment, saveNote };

@@ -39,6 +39,13 @@ const evidence = field => ({field,claim:`Documented ${field}`,source,locator:'p.
         idempotencyKey:`test:${id}:enrichment`};
     assert.equal((await execute(judgment)).reviewDays,90);
     assert.equal((await readTermEditorial(id)).enrichment[0].status,'sources_unavailable');
+    const note = {command:'note',target:'term',id,note:'Next pass: examples section still unsupported.',
+        jobRef:'job 1',idempotencyKey:`test:${id}:note`};
+    assert.equal((await execute(note)).noteId,(await execute(note)).noteId,'note write must replay by key');
+    const notes = (await readTermEditorial(id)).notes;
+    assert.equal(notes.length,1);
+    assert.equal(notes[0].note,note.note);
+    await assert.rejects(execute({...note,note:'',idempotencyKey:`test:${id}:empty-note`}),/note text/);
     await assert.rejects(execute({...update,idempotencyKey:`test:${id}:stale`}),/changed since/);
     const invalid = {...update,idempotencyKey:`test:${id}:invalid`,fields:{expectedRevision:after.revision,
         definition:{ko:'롤백되어야 할 정의'},evidence:[evidence('definition')],people:['missing-person']}};
@@ -48,6 +55,7 @@ const evidence = field => ({field,claim:`Documented ${field}`,source,locator:'p.
     console.log('Pipeline store: concurrent receipts, pending isolation, review replay, evidence, bilingual merge, revision conflicts, FK rollback and alias collision passed');
 })().catch(error => {console.error(error);process.exitCode=1;}).finally(async () => {
     await db.query('DELETE FROM commulingo_terms WHERE id=$1',[id]);
+    await db.query("DELETE FROM commulingo_editorial_notes WHERE target_type='term' AND target_id=$1",[id]);
     await db.query('DELETE FROM commulingo_agent_suggestions WHERE target_id=$1',[id]);
     await db.query('DELETE FROM commulingo_editorial_receipts WHERE key LIKE $1',[`test:${id}:%`]);
     await db.query('DELETE FROM commulingo_people_revisions WHERE entity_id=$1',[id]);

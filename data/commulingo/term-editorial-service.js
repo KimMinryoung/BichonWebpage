@@ -5,6 +5,7 @@ const { badRequest, requireId } = require('./people-admin-fields');
 const { sourcesFor } = require('./person-editorial-policy');
 const { assertExpectedRevision } = require('./people-edit-version');
 const contract = require('./term-editorial-contract.json');
+const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
 
 const columns = {
     original: 'original', startYear: 'start_year', endYear: 'end_year',
@@ -37,6 +38,7 @@ async function readTermEditorial(id, options = {}) {
     result.revision = `v1-${createHash('sha256').update(JSON.stringify(state)).digest('hex')}`;
     result.evidence = (await client.query('SELECT * FROM commulingo_term_evidence WHERE term_id=$1 ORDER BY id', [id])).rows;
     result.enrichment = (await client.query('SELECT * FROM commulingo_term_enrichment WHERE term_id=$1 ORDER BY topic', [id])).rows;
+    result.notes = await listEditorialNotes(client, 'term', id);
     return result;
 }
 
@@ -197,4 +199,8 @@ async function saveEnrichment(request, options = {}) {
     });
 }
 
-module.exports = {readTermEditorial,submitTermEdit,reviewTermSuggestion,saveEnrichment,validateFields};
+async function saveNote(request, options = {}) {
+    return withTransaction(options, client => saveEditorialNote(client, {...request, target:'term'}, options));
+}
+
+module.exports = {readTermEditorial,submitTermEdit,reviewTermSuggestion,saveEnrichment,saveNote,validateFields};

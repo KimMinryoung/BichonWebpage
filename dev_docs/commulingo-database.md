@@ -94,6 +94,14 @@ Python RPC 테스트는 `commulingo-python-rpc` 테스트 컨테이너만 허용
 인물/절 쓰기 계약은 176 공통 서비스를 그대로 쓴다. 177 적용 후 Python 검토 서비스와 타이머를 설치한다.
 복구 시 타이머를 중지하고 실행 중인 검토가 끝났는지 확인한다. 큐 테이블과 판단 자료는 삭제하지 않는다.
 
+## 편집 작업 메모 181
+
+`181_commulingo_editorial_notes.sql`은 `commulingo_editorial_notes`(target_type person/term, target_id, note,
+changed_by, job_ref)를 추가한다. 파이프라인 작성기가 한 번에 쓰지 못한 것(뒷받침되는 다음 절, 미해결 상충)을
+같은 항목의 다음 작업에 넘기는 비공개 메모다. `editorial-pipeline-service`의 `note` 명령(idempotencyKey 필수)이
+쓰고, `read`가 인물·용어 결과에 `notes`(최신 20건)로 돌려준다. 공개 페이지에는 렌더링하지 않는다.
+`data/commulingo/editorial-notes.js`가 담당하며 `test-commulingo-pipeline-db.js`가 왕복을 검사한다.
+
 ## 관련 보고서 증분 색인
 
 `services/research-body.js`는 언어별 최대 500개 보고서 렌더 결과를 보관한다. 사전 스냅샷 교체 시 `research-link-cache.js`가 별칭·차단 구문·표현 정책·항목 메타데이터·인물 문맥 증거를 비교해 변경된 표현이 등장하는 보고서만 무효화한다. 이전에 링크되지 않았던 표현과 수동 링크도 검사한다. 후보 검사는 보수적인 문자열 검사이고, 최종 링크/앵커 판정은 기존 공통 링커가 담당한다. 식별할 수 없는 커스텀 정규식은 전체 무효화한다.
