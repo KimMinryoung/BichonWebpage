@@ -7,10 +7,10 @@ const terms = require('./term-editorial-service');
 async function execute(request) {
     if (!['person','person_section','term'].includes(request.target)) throw badRequest('invalid target');
     const service = request.target==='term' ? {
-        read:terms.readTermEditorial,submit:terms.submitTermEdit,review:terms.reviewTermSuggestion,enrichment:terms.saveEnrichment,
-    } : {read:people.readPersonEditorial,submit:people.submitPersonEdit,review:people.reviewPersonSuggestion,enrichment:people.saveEnrichment};
+        read:terms.readTermEditorial,submit:terms.submitTermEdit,review:terms.reviewTermSuggestion,enrichment:terms.saveEnrichment,note:terms.saveNote,
+    } : {read:people.readPersonEditorial,submit:people.submitPersonEdit,review:people.reviewPersonSuggestion,enrichment:people.saveEnrichment,note:people.saveNote};
     if (request.command==='read') return service.read(request.id);
-    if (!['validate','submit','review','enrichment'].includes(request.command)) throw badRequest('invalid command');
+    if (!['validate','submit','review','enrichment','note'].includes(request.command)) throw badRequest('invalid command');
     if (request.command==='review' && (typeof request.approve!=='boolean' || typeof request.note!=='string' || !request.note.trim())) throw badRequest('review requires boolean approve and a note');
     if (request.command==='validate') return service.submit({...request,dryRun:true,directApply:false});
     if (typeof request.idempotencyKey!=='string' || !/^[a-zA-Z0-9:_-]{1,180}$/.test(request.idempotencyKey)) throw badRequest('idempotencyKey required');
@@ -27,7 +27,8 @@ async function execute(request) {
             if (!row || row.target_type!==request.target) throw badRequest('suggestion target mismatch');
             if (row.status===(request.approve?'approved':'rejected')) alreadyReviewed = {status:row.status,suggestionId:request.suggestionId};
         }
-        const result = alreadyReviewed || (request.command==='enrichment' ? await service.enrichment(request,{client}) : request.command==='submit'
+        const result = alreadyReviewed || (request.command==='note' ? await service.note(request,{client})
+            : request.command==='enrichment' ? await service.enrichment(request,{client}) : request.command==='submit'
             ? await service.submit({...request,directApply:false,dryRun:false},{client})
             : await service.review(request.suggestionId,request.approve,request.note,{client,changedBy:'commulingo-pipeline-reviewer'}));
         await client.query('INSERT INTO commulingo_editorial_receipts(key,request_hash,result) VALUES ($1,$2,$3)',
