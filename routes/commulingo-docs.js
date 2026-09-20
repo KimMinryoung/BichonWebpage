@@ -1,3 +1,4 @@
+const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const { searchableAliases } = require('../data/commulingo/link-expressions');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
@@ -113,7 +114,7 @@ function nestToc(flat) {
 // Haystacks for the list search, mirroring the glossary's: the reader looks a
 // document up by whichever title they know it under, so both languages' titles
 // and the manifest's aliases go in alongside what the card shows. The title
-// haystack ships separately (data-search-title) so the shared search can rank
+// haystack is indexed separately so the shared search can rank
 // a title hit above a card that only mentions the words in its description.
 function docTitleText(raw) {
     const aliases = searchableAliases(raw, raw.aliases);
@@ -166,8 +167,8 @@ function kindFacets(docs, lang) {
 
 // The presented list and its facets are a pure function of the manifest, the
 // language, and the ref resolver (itself memoized per dictionary generation),
-// so they render once per data refresh per language. paginateList stamps
-// onPage on each item, so a request gets shallow copies of the shared records.
+// so they render once per data refresh per language. Pagination reads the
+// shared records without mutating them.
 const docListMemo = new WeakMap(); // manifest docs -> Map(lang -> { resolverRef, docs, facets })
 
 function presentedDocList(manifest, lang, resolveDocRefs) {
@@ -188,18 +189,26 @@ function presentedDocList(manifest, lang, resolveDocRefs) {
     return entry;
 }
 
+router.get('/search', dictionarySearchRoute({
+    kind: 'docs', view: 'partials/commulingo-docs-cards', target: '#commu-doc-list',
+    load: async (req, lang) => {
+        const resolveDocRefs = await createDocRefResolver(lang);
+        return { items: presentedDocList(listCommuLingoDocs(), lang, resolveDocRefs).docs };
+    },
+}));
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const resolveDocRefs = await createDocRefResolver(lang);
         const presented = presentedDocList(listCommuLingoDocs(), lang, resolveDocRefs);
-        const docs = presented.docs.map(doc => ({ ...doc }));
+        const docs = presented.docs;
         const facets = presented.facets;
         const requestedKind = typeof req.query.kind === 'string' ? req.query.kind.trim() : '';
         const kind = facets.some(facet => facet.id === requestedKind) ? requestedKind : '';
         const matched = kind ? docs.filter(doc => doc.kindId === kind) : docs;
         const pagination = paginateList(docs, matched, req.query,
-            '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=');
+            '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=', { mark: false });
         setShortPublicCache(res);
         res.render('public/commulingo-docs', {
             docs,

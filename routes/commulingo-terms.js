@@ -1,3 +1,4 @@
+const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const { searchableAliases } = require('../data/commulingo/link-expressions');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
@@ -67,7 +68,7 @@ function presentTerm(raw, lang) {
     };
 }
 
-// Both languages' aliases feed the client-side card search: readers look terms
+// Both languages' aliases feed the server search index: readers look terms
 // up by the spelling they already know ('쿨락', 'prodrazverstka', 'kolkhozy'),
 // which is exactly what the alias lists hold.
 function aliasSearchText(raw) {
@@ -207,7 +208,7 @@ function sortTerms(terms, sort, lang) {
 // actually changes. The listing ships as a light shell (toolbar, search,
 // chips, jump index, group headings + the first group's cards); the other
 // groups' cards are fetched from /commulingo/terms/cards as the reader
-// scrolls or searches.
+// scrolls. Search uses a separate paginated endpoint.
 const termListMemo = new WeakMap(); // termsRaw -> Map(`${lang}:${sort}` -> { terms, groups, categories })
 const termCardsMemo = new WeakMap(); // termsRaw -> Map(`${lang}:${sort}:${groupId}` -> html)
 
@@ -260,6 +261,15 @@ async function termGroupCardsHtml(req, lang, sort, groupId) {
     }
     return html;
 }
+
+router.get('/search', dictionarySearchRoute({
+    kind: 'terms', view: 'partials/commulingo-term-cards', target: '#commu-term-list',
+    load: async (req, lang) => {
+        const sort = req.query.sort === 'chrono' ? 'chrono' : 'name';
+        const data = await termListData(lang, sort);
+        return { items: data.terms, params: { sort } };
+    },
+}));
 
 router.get('/', async (req, res) => {
     try {

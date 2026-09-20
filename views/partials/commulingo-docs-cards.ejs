@@ -1,0 +1,8 @@
+            <% docs.forEach(function(doc) { %>
+            <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>">
+                <span class="commu-event-period"><%= doc.kind %></span>
+                <h2><%= doc.title %></h2>
+                <p><%= doc.description %></p>
+                <span class="commu-event-card-link"><%= strings.commuLingoViews.docs.readTheFullText %></span>
+            </a>
+            <% }) %>

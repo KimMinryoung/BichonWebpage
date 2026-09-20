@@ -27,23 +27,14 @@
             resultMany: strings.commuLingoViews.events.eventsFound,
             emptyLabel: strings.commuLingoViews.events.noHistoricalEventsFound
         }) %>
-        <section class="commu-event-grid" id="commu-event-list" data-country="<%= selectedCountry ? selectedCountry.code : '' %>" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
+        <section class="commu-event-grid" id="commu-event-list" data-search-endpoint="/commulingo/events/search" data-country="<%= selectedCountry ? selectedCountry.code : '' %>" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.events.historicalEvents3 %>">
-            <% events.forEach(function(event) { %>
-            <a class="commu-event-card" href="/commulingo/events/<%= event.id %>"
-                data-search="<%= [event.period, event.title, event.summary, event.searchExpressions].filter(Boolean).join(' ') %>"
-                data-search-title="<%= event.title %>"<% if (!event.onPage) { %> hidden<% } %>>
-                <div class="commu-event-meta">
-                    <span class="commu-event-period"><%= event.period %></span>
-                </div>
-                <h2><%= event.title %></h2>
-                <p><%= event.summary %></p>
-            </a>
-            <% }) %>
+            <%- include('../partials/commulingo-events-cards', { events: pagination.pageItems }) %>
         </section>
         <%- include('../partials/commulingo-list-pager', { pagination: pagination, target: '#commu-event-list', en: en }) %>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

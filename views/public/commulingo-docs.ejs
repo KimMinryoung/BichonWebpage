@@ -20,8 +20,7 @@
         }) %>
         <%
         // Kind chips and the pager are links so the list works without script;
-        // commulingo-dict-search.js takes them over (data-page-size turns its
-        // chunked reveal into pages) and rewrites the URL as the reader moves.
+        // Search and pagination fetch only the requested page of cards.
         %>
         <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-doc-list"
             role="group" aria-label="<%= strings.commuLingoViews.docs.filterByKind %>">
@@ -32,23 +31,14 @@
                 data-category="<%= facet.id %>" aria-pressed="<%= facet.id === kind ? 'true' : 'false' %>"><%= facet.label %> <span><%= facet.count %></span></a>
             <% }) %>
         </div>
-        <section class="commu-event-grid" id="commu-doc-list" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
+        <section class="commu-event-grid" id="commu-doc-list" data-search-endpoint="/commulingo/docs/search" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.docs.referenceDocuments %>">
-            <% docs.forEach(function(doc) { %>
-            <a class="commu-event-card" href="/commulingo/docs/<%= doc.id %>"
-                data-search="<%= doc.searchText %>"
-                data-search-title="<%= doc.searchTitleText %>"
-                data-category="<%= doc.kindId %>"<% if (!doc.onPage) { %> hidden<% } %>>
-                <span class="commu-event-period"><%= doc.kind %></span>
-                <h2><%= doc.title %></h2>
-                <p><%= doc.description %></p>
-                <span class="commu-event-card-link"><%= strings.commuLingoViews.docs.readTheFullText %></span>
-            </a>
-            <% }) %>
+            <%- include('../partials/commulingo-docs-cards', { docs: pagination.pageItems }) %>
         </section>
         <%- include('../partials/commulingo-list-pager', { pagination: pagination, target: '#commu-doc-list', en: en }) %>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

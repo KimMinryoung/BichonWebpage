@@ -221,9 +221,6 @@
         if (en) return n + (n === 1 ? ' person' : ' people');
         return n + '명';
     }
-    function escapeRegExp(value) {
-        return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
     // Skeleton shown in the results panel while the first search waits
     // for the card download. Completion and reset remove it.
     var searchSkel = null;
@@ -245,36 +242,6 @@
             searchSkel = null;
         }
     }
-    function highlight(card, re) {
-        var walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, {
-            acceptNode: function(node) {
-                if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-                return NodeFilter.FILTER_ACCEPT;
-            }
-        });
-        var nodes = [], n;
-        while ((n = walker.nextNode())) nodes.push(n);
-        nodes.forEach(function(node) {
-            var text = node.nodeValue;
-            re.lastIndex = 0;
-            if (!re.test(text)) return;
-            re.lastIndex = 0;
-            var frag = document.createDocumentFragment();
-            var last = 0, match;
-            while ((match = re.exec(text))) {
-                if (match.index > last) frag.appendChild(document.createTextNode(text.slice(last, match.index)));
-                var mark = document.createElement('mark');
-                mark.className = 'commu-search-hl';
-                mark.textContent = match[0];
-                frag.appendChild(mark);
-                last = match.index + match[0].length;
-                if (re.lastIndex === match.index) re.lastIndex++;
-            }
-            if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-            node.parentNode.replaceChild(frag, node);
-        });
-    }
-
     function reset() {
         hideSearchSkeleton();
         buckets.forEach(function(bucket) { bucket.grid.replaceChildren(); });
@@ -302,9 +269,8 @@
         bucket.count.textContent = countText(data.total);
         var holder = document.createElement('template');
         holder.innerHTML = data.html;
-        var re = new RegExp('(' + query.split(/\s+/).filter(Boolean)
-            .sort(function(a, b) { return b.length - a.length; }).map(escapeRegExp).join('|') + ')', 'gi');
-        Array.prototype.forEach.call(holder.content.children, function(card) { highlight(card, re); });
+        var re = window.__commuSearch.pattern(query);
+        Array.prototype.forEach.call(holder.content.children, function(card) { window.__commuSearch.highlight(card, re); });
         bucket.grid.appendChild(holder.content);
         if (data.next < data.total) {
             var more = document.createElement('button');

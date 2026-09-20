@@ -43,11 +43,11 @@
         <%
         // Shell only: group headings render now, the first group's cards come
         // inlined (memoized server-side), and the rest are fetched from
-        // /commulingo/terms/cards as they approach the viewport or when a
-        // search/filter needs every card. The <noscript> lists keep every term
+        // /commulingo/terms/cards as the reader browses a group. Search has
+        // its own paginated endpoint and does not need those fragments. The <noscript> lists keep every term
         // reachable for crawlers and script-less readers.
         %>
-        <section class="commu-event-grid" id="commu-term-list" data-lazy data-sort="<%= sort %>"
+        <section class="commu-event-grid" id="commu-term-list" data-lazy data-search-endpoint="/commulingo/terms/search" data-sort="<%= sort %>"
             aria-label="<%= strings.commuLingoViews.terms.glossaryTerms %>">
             <% groups.forEach(function(group) { %>
             <h2 class="commu-term-group-head" id="<%= group.id %>"
@@ -70,8 +70,7 @@
     <script>
         // Lazy group loading for the glossary list. Loads a group's cards when
         // its heading nears the viewport, when its index-bar link is clicked,
-        // or all at once when the shared dict search needs the full list
-        // (window.__commuDictLazyLoad, consumed by commulingo-dict-search.js).
+        // independently of the paginated search results.
         (function() {
             var list = document.getElementById('commu-term-list');
             if (!list || !list.hasAttribute('data-lazy')) return;
@@ -95,7 +94,6 @@
                         if (head.hasAttribute('data-pending')) {
                             head.removeAttribute('data-pending');
                             head.insertAdjacentHTML('afterend', html);
-                            list.dispatchEvent(new CustomEvent('commu-cards-changed'));
                         }
                     })
                     .catch(function(err) {
@@ -108,7 +106,7 @@
             var io = 'IntersectionObserver' in window
                 ? new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
-                        if (!entry.isIntersecting) return;
+                        if (!entry.isIntersecting || list.hidden) return;
                         io.unobserve(entry.target);
                         loadGroup(entry.target).catch(function() {});
                     });
@@ -116,11 +114,6 @@
                 : null;
             if (io) heads.forEach(function(head) { io.observe(head); });
             else heads.forEach(function(head) { loadGroup(head).catch(function() {}); });
-
-            window.__commuDictLazyLoad = function() {
-                return Promise.all(heads.map(function(head) { return loadGroup(head); }))
-                    .then(function() { if (io) io.disconnect(); });
-            };
 
             // Index-bar jumps and #hash arrivals load their target right away.
             Array.prototype.forEach.call(
@@ -137,6 +130,7 @@
             }
         })();
     </script>
+    <script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

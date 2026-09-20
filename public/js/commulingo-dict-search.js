@@ -1,488 +1,187 @@
 (function() {
     'use strict';
-
-    function escapeRegExp(value) {
-        return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-
-    function clearHighlights(card) {
-        var marks = card.querySelectorAll('mark.commu-search-hl');
-        for (var i = 0; i < marks.length; i++) {
-            var mark = marks[i];
-            var parent = mark.parentNode;
-            while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
-            parent.removeChild(mark);
-            parent.normalize();
-        }
-    }
-
-    function highlight(card, re) {
-        var walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, {
-            acceptNode: function(node) {
-                if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-                return NodeFilter.FILTER_ACCEPT;
-            }
-        });
-        var nodes = [];
-        var node;
-        while ((node = walker.nextNode())) nodes.push(node);
-        nodes.forEach(function(textNode) {
-            var text = textNode.nodeValue;
-            re.lastIndex = 0;
-            if (!re.test(text)) return;
-            re.lastIndex = 0;
-            var fragment = document.createDocumentFragment();
-            var last = 0;
-            var match;
-            while ((match = re.exec(text))) {
-                if (match.index > last) fragment.appendChild(document.createTextNode(text.slice(last, match.index)));
-                var mark = document.createElement('mark');
-                mark.className = 'commu-search-hl';
-                mark.textContent = match[0];
-                fragment.appendChild(mark);
-                last = match.index + match[0].length;
-                if (re.lastIndex === match.index) re.lastIndex++;
-            }
-            if (last < text.length) fragment.appendChild(document.createTextNode(text.slice(last)));
-            textNode.parentNode.replaceChild(fragment, textNode);
-        });
-    }
+    var search = window.__commuSearch;
+    var en = document.documentElement.lang === 'en';
 
     function initialize(root) {
         var input = root.querySelector('[data-commu-dict-search-input]');
-        var clearButton = root.querySelector('[data-commu-dict-search-clear]');
+        var clear = root.querySelector('[data-commu-dict-search-clear]');
         var status = root.querySelector('[data-commu-dict-search-status]');
         var count = root.querySelector('[data-commu-dict-search-count]');
-        var target = root.getAttribute('data-target');
-        var list = document.querySelector(target);
-        if (!input || !clearButton || !status || !list) return;
-
-        var cards = Array.prototype.slice.call(list.querySelectorAll('[data-search]'));
-        var highlighted = [];
-        // A list marked data-lazy loads its cards in groups (see the glossary
-        // shell). Filtering needs every card, so those paths wait on the
-        // page's loader; a list without the attribute resolves immediately.
-        var lazyPending = list.hasAttribute('data-lazy');
-        function rescanCards() {
-            cards = Array.prototype.slice.call(list.querySelectorAll('[data-search]'));
+        var selector = root.getAttribute('data-target');
+        var list = document.querySelector(selector);
+        if (!list || !input || !clear || !status) return;
+        input.maxLength = 200;
+        var endpoint = list.getAttribute('data-search-endpoint');
+        var chipRoot = document.querySelector('[data-commu-dict-chips][data-target="' + selector + '"]');
+        var chips = chipRoot ? Array.from(chipRoot.querySelectorAll('[data-category]')) : [];
+        var active = chips.find(function(chip) { return chip.classList.contains('is-active'); });
+        var category = active ? active.getAttribute('data-category') : '';
+        var browse = list.hasAttribute('data-lazy') ? list : null;
+        var indexBar = browse ? document.querySelector('.commu-dict-index') : null;
+        if (browse) {
+            list = document.createElement('section');
+            list.className = browse.className;
+            list.id = browse.id + '-results';
+            list.setAttribute('aria-label', browse.getAttribute('aria-label'));
+            list.hidden = true;
+            browse.after(list);
         }
-        function ensureLoaded() {
-            if (!lazyPending || typeof window.__commuDictLazyLoad !== 'function') {
-                return Promise.resolve();
-            }
-            return window.__commuDictLazyLoad().then(function() {
-                lazyPending = false;
-                rescanCards();
-            });
+        var pager = document.querySelector('[data-commu-list-pager][data-target="' + selector + '"]');
+        if (endpoint && !pager) {
+            pager = document.createElement('div');
+            pager.hidden = true;
+            list.after(pager);
         }
-        // Groups also stream in while the reader just scrolls; keep the card
-        // list current and re-run any active filter over the newcomers.
-        // Engaging search pulls in every remaining group, so this fires 25 times
-        // in a row; coalesce them into one pass rather than re-filtering the
-        // whole list once per arrival.
-        var restyle = null;
-        list.addEventListener('commu-cards-changed', function() {
-            rescanCards();
-            if (!(input.value.trim() || category)) return;
-            if (restyle) cancelAnimationFrame(restyle);
-            restyle = requestAnimationFrame(function() { restyle = null; apply(); });
-        });
-        // Engaging the search box prefetches the rest of the list, so the
-        // cards are usually in place before the first keystroke settles.
-        input.addEventListener('focus', function() { ensureLoaded(); }, { once: true });
-        // Optional category chips over the same list (glossary only). Query and
-        // category are one filter with two inputs, so they share this state and
-        // one visibility pass; two independent scripts toggling .hidden would
-        // fight over the same cards.
-        var chipRoot = document.querySelector('[data-commu-dict-chips][data-target="' + target + '"]');
-        var chips = chipRoot ? Array.prototype.slice.call(chipRoot.querySelectorAll('[data-category]')) : [];
-        // A chip the server rendered active (the reference library arrives
-        // pre-filtered from ?kind=…) is the starting state, not 'All'.
-        var category = '';
-        chips.forEach(function(chip) {
-            if (chip.classList.contains('is-active')) category = chip.getAttribute('data-category') || '';
+        var retry = document.createElement('button');
+        retry.type = 'button';
+        retry.className = 'btn btn-small';
+        retry.textContent = en ? 'Retry' : '다시 시도';
+        retry.hidden = true;
+        status.after(retry);
+        var page = Number(list.getAttribute('data-page')) || 1;
+        var requestId = 0, timer = null, controller = null, loading = false;
+        // Small country lists stay local. Normalize their text once, not on
+        // every keystroke. Larger dictionaries keep this index on the server.
+        var local = endpoint ? [] : Array.from(list.querySelectorAll('[data-search]')).map(function(card) {
+            return { card: card, text: card.getAttribute('data-search').toLocaleLowerCase() };
         });
 
-        // ── Pages ─────────────────────────────────────────────────────────
-        // A list with data-page-size is cut into pages instead of streaming in
-        // chunks: the reference library reads as a catalogue, and a catalogue
-        // of ninety entries is shorter to browse as four pages than as one
-        // scroll. The server renders the first view (cards off the page carry
-        // `hidden`, the pager holds real links), and from here on the same
-        // pager is redrawn client-side over whatever the search and chips
-        // leave matched. The URL follows the kind and page so a reload or a
-        // shared link lands on the same view; a search query is not written
-        // into it.
-        var pageSize = parseInt(list.getAttribute('data-page-size'), 10) || 0;
-        var page = Math.max(1, parseInt(list.getAttribute('data-page'), 10) || 1);
-        var pager = pageSize
-            ? document.querySelector('[data-commu-list-pager][data-target="' + target + '"]')
-            : null;
-        var pagedAll = null, pagedItems = null, pagedRe = null;
-
-        function pageHref(n) {
-            var params = [];
-            var country = list.getAttribute('data-country');
-            if (country) params.push('country=' + encodeURIComponent(country));
-            if (category) params.push('kind=' + encodeURIComponent(category));
-            if (n > 1) params.push('page=' + n);
-            return window.location.pathname + (params.length ? '?' + params.join('&') : '');
+        function showCount(total, filtered) {
+            status.textContent = total ? total + (en ? ' ' : '') + root.getAttribute(total === 1 ? 'data-result-one' : 'data-result-many')
+                : root.getAttribute('data-result-empty');
+            status.classList.toggle('is-empty', total === 0);
+            status.hidden = !filtered;
+            if (count) { count.textContent = total ? status.textContent : ''; count.hidden = !filtered || !total; }
         }
-
-        // Same markup and windowing as views/partials/pagination.ejs (the
-        // site's pagination, as under /ai-diary), so the redrawn pager looks
-        // exactly like the one the server sent.
-        function renderPager(total) {
-            if (!pager) return;
-            var labelPrev = pager.getAttribute('data-label-prev') || '이전';
-            var labelNext = pager.getAttribute('data-label-next') || '다음';
-            var startPage, endPage;
-            if (total <= 7) {
-                startPage = 1; endPage = total;
-            } else {
-                startPage = Math.max(1, page - 2);
-                endPage = Math.min(total, page + 2);
-                if (endPage - startPage < 4) {
-                    if (startPage === 1) endPage = Math.min(total, startPage + 4);
-                    else if (endPage === total) startPage = Math.max(1, endPage - 4);
-                }
-            }
-            function link(n, text, extra) {
-                return '<a href="' + pageHref(n) + '" data-page="' + n + '" class="btn btn-small' + (extra || '') + '">' + text + '</a>';
-            }
-            var html = '';
-            if (page > 1) html += link(page - 1, labelPrev);
-            if (startPage > 1) {
-                html += link(1, '1');
-                if (startPage > 2) html += '<span class="pagination-ellipsis">...</span>';
-            }
-            for (var n = startPage; n <= endPage; n++) html += link(n, String(n), n === page ? ' active' : '');
-            if (endPage < total) {
-                if (endPage < total - 1) html += '<span class="pagination-ellipsis">...</span>';
-                html += link(total, String(total));
-            }
-            if (page < total) html += link(page + 1, labelNext);
-            pager.innerHTML = '<div class="pagination">' + html + '</div>';
-            pager.hidden = total < 2;
+        function cancel() {
+            clearTimeout(timer);
+            if (controller) controller.abort();
+            loading = false;
+            list.removeAttribute('aria-busy');
+            return ++requestId;
         }
-
-        function showPaged(all, items, re) {
-            pagedAll = all; pagedItems = items; pagedRe = re;
-            var total = Math.max(1, Math.ceil(items.length / pageSize));
-            if (page > total) page = total;
-            var start = (page - 1) * pageSize;
-            var slice = items.slice(start, start + pageSize);
-            slice.forEach(function(item) { item.__pageShow = true; });
-            all.forEach(function(item) {
-                var show = item.__pageShow === true;
-                if (item.hidden === show) item.hidden = !show;
-            });
-            slice.forEach(function(item) {
-                item.__pageShow = false;
-                if (re && item.hasAttribute('data-search')) {
-                    highlight(item, re);
-                    highlighted.push(item);
+        function applyLocal(query) {
+            var terms = search.terms(query), pattern = search.pattern(query), total = 0;
+            local.forEach(function(row) {
+                search.clearHighlights(row.card);
+                row.card.hidden = !terms.every(function(term) { return row.text.includes(term); });
+                if (!row.card.hidden) {
+                    total++;
+                    if (pattern) search.highlight(row.card, pattern);
                 }
             });
-            renderPager(total);
-            if (!input.value.trim() && window.history && window.history.replaceState) {
-                var href = pageHref(page);
-                if (href !== window.location.pathname + window.location.search) {
-                    window.history.replaceState(null, '', href);
+            list.querySelectorAll('.commu-country-group').forEach(function(group) {
+                group.hidden = !group.querySelector('[data-search]:not([hidden])');
+            });
+            showCount(total, !!query);
+        }
+        function updateUrl() {
+            if (browse || input.value.trim()) return;
+            var params = new URLSearchParams(window.location.search);
+            if (category) params.set('kind', category); else params.delete('kind');
+            if (page > 1) params.set('page', page); else params.delete('page');
+            var suffix = params.toString();
+            window.history.replaceState(null, '', location.pathname + (suffix ? '?' + suffix : '') + location.hash);
+        }
+        function run(delay) {
+            var id = cancel();
+            var query = input.value.trim();
+            var filtered = !!(query || category);
+            clear.hidden = !query;
+            retry.hidden = true;
+            if (!endpoint) { applyLocal(query); return; }
+            if (browse) {
+                browse.hidden = filtered;
+                list.hidden = !filtered;
+                if (indexBar) indexBar.hidden = filtered;
+                if (!filtered) {
+                    list.replaceChildren();
+                    pager.hidden = true;
+                    showCount(0, false);
+                    return;
                 }
             }
-        }
-
-        if (pager) {
-            pager.addEventListener('click', function(event) {
-                // The server-rendered partial carries the page only in its
-                // href; links drawn here also stamp data-page.
-                var link = event.target.closest('a[href]');
-                if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
-                var match = /[?&]page=(\d+)/.exec(link.getAttribute('href') || '');
-                var next = parseInt(link.getAttribute('data-page') || (match && match[1]), 10);
-                if (!next) return;
-                event.preventDefault();
-                page = next;
-                highlighted.forEach(clearHighlights);
-                highlighted = [];
-                if (pagedAll) {
-                    showPaged(pagedAll, pagedItems, pagedRe);
-                } else {
-                    var all = browseItems();
-                    showPaged(all, all, null);
-                }
-                list.scrollIntoView({ block: 'start' });
-            });
-        }
-
-        // ── Title-first ranking ───────────────────────────────────────────
-        // A reader who types a document's title expects that document on top,
-        // not whichever card mentions the words first in its description. Cards
-        // carry a second haystack, data-search-title (the headword, both
-        // languages' titles, aliases), and results sort into three tiers:
-        // every term in the title, some terms in the title, terms only in the
-        // rest. The lists are CSS grids, so the tiers are applied as `order`
-        // values instead of moving nodes — hidden cards have no boxes, and the
-        // reveal cost stays what it was.
-        function titleTier(card, terms) {
-            var titleHay = (card.getAttribute('data-search-title') || '').toLocaleLowerCase();
-            if (!titleHay) return 2;
-            var hits = 0;
-            for (var i = 0; i < terms.length; i++) {
-                if (titleHay.indexOf(terms[i]) !== -1) hits++;
-            }
-            return hits === terms.length ? 0 : (hits ? 1 : 2);
-        }
-        var reordered = [];  // cards whose style.order is currently set
-        var firstMatch = null; // top-ranked match, for Enter-to-open
-
-        // ── Chunked reveal ────────────────────────────────────────────────
-        // Showing a card costs style, layout and paint, and that is the whole
-        // cost of filtering this list: 209 matches take 503ms and clearing back
-        // to all 470 takes 1185ms, while the matching itself is a few ms. So
-        // only the first chunk is unhidden and a sentinel below the last one
-        // pulls in the next as it nears the viewport. The status line still
-        // reports the full number of matches.
-        var CHUNK = 60;
-        var MARGIN_PX = 800;
-        var queue = [];      // matched-but-not-yet-shown, in document order
-        var activeRe = null; // highlight pattern for cards revealed later
-        var sentinel = document.createElement('div');
-        sentinel.className = 'commu-chunk-sentinel';
-        sentinel.setAttribute('aria-hidden', 'true');
-        // Ranked cards get order 0–2; the sentinel must trail every shown card
-        // for the near-viewport check to mean "the reader is near the end".
-        sentinel.style.order = '99';
-        var observer = null;
-        var settle = null;
-
-        function revealChunk() {
-            var slice = queue.splice(0, CHUNK);
-            slice.forEach(function(item) {
-                item.hidden = false;
-                if (activeRe && item.hasAttribute('data-search')) {
-                    highlight(item, activeRe);
-                    highlighted.push(item);
-                }
-            });
-            if (!queue.length) retire();
-        }
-
-        function retire() {
-            if (observer) { observer.disconnect(); observer = null; }
-            if (sentinel.parentNode) sentinel.parentNode.removeChild(sentinel);
-        }
-
-        // The sentinel sits after every card, but hidden cards have no box, so
-        // in practice it trails whatever is currently shown. A reader who flings
-        // straight past it would otherwise strand the rest, and
-        // IntersectionObserver only reports entering — hence the settle check.
-        function topUp() {
-            if (!queue.length) return retire();
-            if (!sentinel.parentNode || sentinel.offsetParent === null) return;
-            if (sentinel.getBoundingClientRect().top < window.innerHeight + MARGIN_PX) revealChunk();
-        }
-        window.addEventListener('scroll', function() {
-            if (settle) clearTimeout(settle);
-            settle = setTimeout(topUp, 150);
-        }, { passive: true });
-
-        // Reveals `items` out of `all`, a chunk at a time. `re` is the highlight
-        // pattern, or null when nothing is being searched. Only cards whose
-        // visibility actually changes are written to: blanket-hiding all 470 and
-        // building back up cost more than the reveal saved on a category chip,
-        // where most of the list was hidden already.
-        function showChunked(all, items, re) {
-            if (pageSize) return showPaged(all, items, re);
-            retire();
-            activeRe = re;
-            var first = items.slice(0, CHUNK);
-            queue = items.slice(CHUNK);
-            first.forEach(function(item) { item.__chunkShow = true; });
-            all.forEach(function(item) {
-                var show = item.__chunkShow === true;
-                if (item.hidden === show) item.hidden = !show;
-            });
-            first.forEach(function(item) {
-                item.__chunkShow = false;
-                if (re && item.hasAttribute('data-search')) {
-                    highlight(item, re);
-                    highlighted.push(item);
-                }
-            });
-            list.appendChild(sentinel);
-            if (!queue.length) retire();
-            if (queue.length && 'IntersectionObserver' in window) {
-                observer = new IntersectionObserver(function(entries) {
-                    if (entries.some(function(entry) { return entry.isIntersecting; })) revealChunk();
-                }, { rootMargin: MARGIN_PX + 'px 0px' });
-                observer.observe(sentinel);
-            } else if (queue.length) {
-                while (queue.length) revealChunk();
-            }
-        }
-
-        // Everything the browsing view shows, headings included, in the order it
-        // shows them — so a revealed heading always arrives with its cards
-        // rather than standing over an empty stretch.
-        function browseItems() {
-            return Array.prototype.filter.call(list.children, function(child) {
-                return child !== sentinel;
-            });
-        }
-
-        function apply() {
-            page = 1;
-            var terms = input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-            var searching = terms.length > 0;
-            var categorized = category !== '';
-
-            highlighted.forEach(clearHighlights);
-            highlighted = [];
-            reordered.forEach(function(card) { card.style.order = ''; });
-            reordered = [];
-            firstMatch = null;
-
-            if (!searching && !categorized) {
-                list.classList.remove('is-filtering');
-                list.classList.remove('is-ungrouped');
-                // Before the whole list has been fetched, the page's own group
-                // loader is still revealing it a group at a time as the reader
-                // scrolls; chunking on top of that would fight it for which
-                // heading may load next. Once everything is in — which is what
-                // clearing a search returns to — this owns the reveal.
-                if (lazyPending) {
-                    retire();
-                    cards.forEach(function(card) { card.hidden = false; });
-                } else {
-                    var all = browseItems();
-                    showChunked(all, all, null);
-                }
-                clearButton.hidden = true;
-                status.hidden = true;
-                status.textContent = '';
-                if (count) { count.hidden = true; count.textContent = ''; }
-                return;
-            }
-
-            // is-filtering lets card CSS drop the preview clamp so a highlight
-            // can't hide in the overflow; both classes hide the group headings,
-            // which would otherwise label sections that filtered down to empty.
-            list.classList.toggle('is-filtering', searching);
-            list.classList.toggle('is-ungrouped', categorized);
-            clearButton.hidden = !searching;
-
-            var matched = cards.filter(function(card) {
-                var matches = !categorized || card.getAttribute('data-category') === category;
-                if (matches && searching) {
-                    var haystack = (card.getAttribute('data-search') || '').toLocaleLowerCase();
-                    matches = terms.every(function(term) { return haystack.indexOf(term) !== -1; });
-                }
-                return matches;
-            });
-            if (searching) {
-                matched.forEach(function(card) { card.__tier = titleTier(card, terms); });
-                // Stable sort: within a tier the browsing order stands.
-                matched.sort(function(a, b) { return a.__tier - b.__tier; });
-                matched.forEach(function(card) {
-                    if (card.__tier) {
-                        card.style.order = String(card.__tier);
-                        reordered.push(card);
-                    }
-                });
-                firstMatch = matched[0] || null;
-            }
-            var visible = matched.length;
-
-            // Highlighting is handed to the reveal, so a card that arrives with
-            // a later chunk is marked up the same as one in the first.
-            var re = (visible && searching)
-                ? new RegExp('(' + terms.slice().sort(function(a, b) { return b.length - a.length; })
-                    .map(escapeRegExp).join('|') + ')', 'gi')
-                : null;
-            // The headings are hidden by is-filtering/is-ungrouped, so only the
-            // cards take part; browseItems() would drag them back in.
-            showChunked(cards, matched, re);
-
-            if (visible) {
-                var separator = document.documentElement.lang.indexOf('ko') === 0 ? '' : ' ';
-                status.textContent = visible + separator + (visible === 1
-                    ? root.getAttribute('data-result-one')
-                    : root.getAttribute('data-result-many'));
-            } else {
-                status.textContent = root.getAttribute('data-result-empty');
-            }
-            status.classList.toggle('is-empty', visible === 0);
+            list.replaceChildren();
+            list.classList.toggle('is-filtering', !!query);
+            pager.hidden = true;
             status.hidden = false;
-            if (count) {
-                count.textContent = visible ? status.textContent : '';
-                count.hidden = !visible;
-            }
-        }
-
-        var frame = null;
-        input.addEventListener('input', function() {
-            ensureLoaded().then(function() {
-                if (frame) cancelAnimationFrame(frame);
-                frame = requestAnimationFrame(apply);
-            });
-        });
-        input.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && input.value) {
-                event.preventDefault();
-                input.value = '';
-                apply();
-            } else if (event.key === 'Enter') {
-                ensureLoaded().then(function() {
-                    if (!input.value.trim()) return;
-                    // The last keystroke's pass may still be queued behind rAF;
-                    // settle it so Enter opens what the ranking would show first.
-                    if (frame) { cancelAnimationFrame(frame); frame = null; }
-                    apply();
-                    if (firstMatch) window.location.href = firstMatch.href;
+            status.classList.remove('is-empty');
+            status.textContent = en ? 'Loading…' : '불러오는 중…';
+            if (count) count.hidden = true;
+            loading = true;
+            list.setAttribute('aria-busy', 'true');
+            timer = setTimeout(function() {
+                controller = new AbortController();
+                var params = new URLSearchParams({ q: query, page: String(page) });
+                if (category) params.set('kind', category);
+                var source = browse || list;
+                ['sort', 'country'].forEach(function(key) {
+                    var value = source.getAttribute('data-' + key);
+                    if (value) params.set(key, value);
                 });
+                var prefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
+                fetch(prefix + endpoint + '?' + params, { credentials: 'same-origin', signal: controller.signal })
+                    .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+                    .then(function(data) {
+                        if (id !== requestId) return;
+                        loading = false;
+                        list.removeAttribute('aria-busy');
+                        list.innerHTML = data.html;
+                        var pattern = search.pattern(query);
+                        if (pattern) Array.from(list.children).forEach(function(card) { search.highlight(card, pattern); });
+                        var holder = document.createElement('template');
+                        holder.innerHTML = data.pager;
+                        var renderedPager = holder.content.firstElementChild;
+                        pager.replaceChildren.apply(pager, Array.from(renderedPager.childNodes));
+                        pager.hidden = renderedPager.hidden;
+                        page = data.page;
+                        showCount(data.total, filtered);
+                        updateUrl();
+                    }).catch(function(err) {
+                        if (id !== requestId || err.name === 'AbortError') return;
+                        loading = false;
+                        list.removeAttribute('aria-busy');
+                        status.textContent = en ? 'Failed to load results' : '검색 결과를 불러오지 못했습니다';
+                        retry.hidden = false;
+                    });
+            }, delay || 0);
+        }
+        input.addEventListener('input', function() { page = 1; run(180); });
+        function reset() { input.value = ''; page = 1; run(); }
+        clear.addEventListener('click', function() { reset(); input.focus(); });
+        retry.addEventListener('click', function() { run(); });
+        input.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && input.value) { event.preventDefault(); reset(); }
+            else if (event.key === 'Enter' && input.value.trim() && !loading) {
+                var first = list.querySelector('a[href]:not([hidden])');
+                if (first) location.href = first.href;
             }
-        });
-        clearButton.addEventListener('click', function() {
-            input.value = '';
-            apply();
-            input.focus();
         });
         chips.forEach(function(chip) {
             chip.addEventListener('click', function(event) {
-                // Chips that are links (the reference library's script-less
-                // fallback) filter in place like the buttons do.
-                if (chip.tagName === 'A') {
-                    if (event.metaKey || event.ctrlKey || event.shiftKey) return;
-                    event.preventDefault();
-                }
+                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                event.preventDefault();
                 var next = chip.getAttribute('data-category') || '';
-                // Clicking the active chip clears the filter, same as 'All'.
                 category = category === next ? '' : next;
                 chips.forEach(function(other) {
-                    var active = (other.getAttribute('data-category') || '') === category;
-                    other.classList.toggle('is-active', active);
-                    other.setAttribute('aria-pressed', active ? 'true' : 'false');
+                    var selected = (other.getAttribute('data-category') || '') === category;
+                    other.classList.toggle('is-active', selected);
+                    other.setAttribute('aria-pressed', String(selected));
                 });
-                ensureLoaded().then(apply);
+                page = 1;
+                run();
             });
         });
-        if (input.value.trim()) {
-            apply();
-        } else if (!lazyPending) {
-            // A list that ships whole — historical events, the reference library
-            // — renders every card the moment the page loads. That is nothing at
-            // 39 events and seconds at 400, and these lists only grow, so the
-            // browsing view starts chunked here too. Below one chunk this
-            // reveals everything at once and changes nothing, which is why it is
-            // safe to leave on for the small lists as they are today.
-            // A paged list arrives already cut by the server; redrawing it
-            // here would only repeat what is on screen.
-            var initial = browseItems();
-            if (!pageSize && initial.length > CHUNK) showChunked(initial, initial, null);
-        }
+        if (pager) pager.addEventListener('click', function(event) {
+            var link = event.target.closest('a[href]');
+            if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            page = Number(new URL(link.href).searchParams.get('page')) || 1;
+            run();
+            root.scrollIntoView({ block: 'start' });
+        });
+        if (input.value.trim()) { page = 1; run(); }
     }
-
-    Array.prototype.forEach.call(document.querySelectorAll('[data-commu-dict-search]'), initialize);
+    document.querySelectorAll('[data-commu-dict-search]').forEach(initialize);
 })();

@@ -1,3 +1,4 @@
+const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { paginateList } = require('../data/commulingo/list-pagination');
@@ -265,7 +266,7 @@ async function buildEventPanel(eventId, lang) {
 
 // The list page's presented events are a pure function of the snapshot and
 // the language (the detail page has eventPanelMemo for the same reason).
-// paginateList stamps onPage on each item, so a request gets shallow copies.
+// Pagination reads these records without mutating them.
 const eventListMemo = new WeakMap(); // events snapshot -> Map(lang -> presented[])
 
 function presentedEventList(raw, lang) {
@@ -282,6 +283,19 @@ function presentedEventList(raw, lang) {
     return presented;
 }
 
+router.get('/search', dictionarySearchRoute({
+    kind: 'events', view: 'partials/commulingo-events-cards', target: '#commu-event-list',
+    load: async (req, lang) => {
+        const raw = await loadCommuLingoHistoryEvents();
+        const country = typeof req.query.country === 'string' ? countryInfo(req.query.country, lang) : null;
+        return {
+            items: presentedEventList(raw, lang),
+            accepts: country ? event => eventCountries(event.countries).includes(country.code) : undefined,
+            params: country ? { country: country.code } : {},
+        };
+    },
+}));
+
 router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -291,9 +305,9 @@ router.get('/', async (req, res) => {
             ? new Set(rawEvents.filter(event => eventCountries(event.countries).includes(selectedCountry.code)).map(event => event.id))
             : null;
         const events = presentedEventList(rawEvents, lang)
-            .filter(event => !matchingIds || matchingIds.has(event.id)).map(event => ({ ...event }));
+            .filter(event => !matchingIds || matchingIds.has(event.id));
         const pagination = paginateList(events, events, req.query, selectedCountry
-            ? `/commulingo/events?country=${encodeURIComponent(selectedCountry.code)}&page=` : '/commulingo/events?page=');
+            ? `/commulingo/events?country=${encodeURIComponent(selectedCountry.code)}&page=` : '/commulingo/events?page=', { mark: false });
         setShortPublicCache(res);
         res.render('public/commulingo-events', {
             events,

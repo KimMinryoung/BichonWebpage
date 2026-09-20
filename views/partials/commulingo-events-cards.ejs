@@ -1,0 +1,9 @@
+            <% events.forEach(function(event) { %>
+            <a class="commu-event-card" href="/commulingo/events/<%= event.id %>">
+                <div class="commu-event-meta">
+                    <span class="commu-event-period"><%= event.period %></span>
+                </div>
+                <h2><%= event.title %></h2>
+                <p><%= event.summary %></p>
+            </a>
+            <% }) %>
