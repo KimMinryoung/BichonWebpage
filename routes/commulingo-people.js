@@ -1,3 +1,5 @@
+const { localizeHtmlLinks } = require('../utils/seo');
+const { searchPeople } = require('../utils/people-search');
 const express = require('express');
 const allStrings = require('../config/strings');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
@@ -55,7 +57,7 @@ const personBodyMemo = new WeakMap(); // indexes -> Map(personId -> { epithetHtm
 
 // `page` cuts the group to one page of cards (list-pagination.js) and appends
 // the site's pager, which the people shell redraws the group from; without
-// it the whole group is returned, which is what the search corpus needs.
+// it the whole group is returned for existing fragment consumers.
 const PEOPLE_CARDS_BASE = group => `/commulingo/people/cards?group=${encodeURIComponent(group.id)}&page=`;
 
 async function peopleGroupCardsHtml(req, standardized, lang, group, page, baseUrl) {
@@ -121,6 +123,42 @@ router.get('/people', async (req, res) => {
     } catch (err) {
         console.error('commulingo people:', err);
         commuLingoLoadError(res, { message: { ko: '인물 사전을 불러올 수 없습니다.', en: 'Failed to load people data.' } });
+    }
+});
+
+// Search the cached text index before rendering any cards. No DB query or
+// full-group HTML download is needed per keystroke. Limit each response to
+// one screenful per rank; subsequent pages are requested only on demand.
+router.get('/people/search', async (req, res) => {
+    const query = typeof req.query.q === 'string' ? req.query.q.trim() : '';
+    const bucket = req.query.bucket;
+    const offset = Number(req.query.offset || 0);
+    if (query.length > 200 || (bucket !== undefined && !['name', 'role', 'desc'].includes(bucket))
+        || !Number.isSafeInteger(offset) || offset < 0) return res.status(400).json({ error: 'Invalid search' });
+    try {
+        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
+        const hits = searchPeople(standardized, query, sortPeopleChronologically);
+        const buckets = {};
+        const keys = bucket ? [bucket] : ['name', 'role', 'desc'];
+        let indexes;
+        for (const key of keys) {
+            const people = hits[key].slice(offset, offset + 20);
+            let html = '';
+            if (people.length) {
+                indexes = indexes || await getLinkIndexes(lang);
+                html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
+                    strings: allStrings[lang], people, groupId: '', en: lang === 'en',
+                    roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
+                    linkifyPersonText: createCardTextLinker(indexes),
+                });
+            }
+            buckets[key] = { total: hits[key].length, next: offset + people.length, html: lang === 'en' ? localizeHtmlLinks(html, 'en') : html };
+        }
+        setShortPublicCache(res);
+        res.json({ buckets });
+    } catch (err) {
+        console.error('commulingo people search:', err);
+        res.status(500).json({ error: 'Failed to load people' });
     }
 });
 

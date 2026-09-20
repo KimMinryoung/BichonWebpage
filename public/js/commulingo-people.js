@@ -137,10 +137,6 @@ window.__commuChunk = (function() {
 // of its cards (/commulingo/people/cards?group=<id>&page=N, with the
 // site's pager appended) instead of the whole group — the largest group
 // is 900KB of markup — and the pager under the grid fetches the next.
-// Search needs every card of every group, so it keeps a second,
-// detached corpus per group (the same endpoint without `page`), which
-// never touches the page view: clearing a search leaves each group on
-// the page it was showing.
 (function() {
     var en = document.documentElement.lang === 'en';
     var PAGE_SIZE = parseInt(document.querySelector('.commu-people-shell').getAttribute('data-page-size'), 10) || 24;
@@ -259,18 +255,6 @@ window.__commuChunk = (function() {
         return showPage(group, 1);
     }
 
-    // The search corpus: every card of the group, detached. Loaded on
-    // the first search and kept; search reads attributes off these and
-    // moves matches into the result grids.
-    function loadCorpus(group) {
-        if (group.__corpus) return Promise.resolve(group.__corpus);
-        var id = group.getAttribute('data-group-id');
-        return fetchGroup(id, 0).then(function(result) {
-            group.__corpus = result.cards;
-            return group.__corpus;
-        });
-    }
-
     groupEls.forEach(function(group) {
         group.addEventListener('toggle', function() {
             if (group.open) loadGroup(group).catch(function() {});
@@ -280,9 +264,6 @@ window.__commuChunk = (function() {
     window.__commuPeopleCards = {
         loadGroup: loadGroup,
         skeleton: makeSkeleton,
-        loadAll: function() {
-            return Promise.all(groupEls.map(function(group) { return loadCorpus(group); }));
-        },
         groupFor: function(personId) {
             for (var i = 0; i < groupEls.length; i++) {
                 var ids = ' ' + (groupEls[i].getAttribute('data-people') || '') + ' ';
@@ -290,18 +271,6 @@ window.__commuChunk = (function() {
             }
             return null;
         },
-        // Every card of every group's search corpus, revealed or not.
-        // Search matches against these attributes without rendering.
-        allCards: function() {
-            var out = [];
-            groupEls.forEach(function(group) {
-                if (group.__corpus) out.push.apply(out, group.__corpus);
-            });
-            return out;
-        },
-        // The page views were never touched by a search (it draws from
-        // the corpus), so there is nothing to put back.
-        restoreGroups: function() {},
         // Brings one person's card onto the page, for #p-<id> arrivals:
         // data-people is in card order, so the position gives the page.
         revealPerson: function(group, personId) {
@@ -358,12 +327,7 @@ window.__commuChunk = (function() {
     focusHash();
 })();
 
-// Live person search. Each card carries three haystacks: data-name
-// (identity), data-role (category/career/institution), data-desc (prose).
-// Terms are AND-matched and bucketed most-identity-first into three
-// result containers: name → role → description. Matched cards are moved
-// into the result grids (restored on clear) and the matched substrings
-// are wrapped in <mark> for highlighting.
+// Ranked, paged server search; only matching cards are downloaded.
 (function() {
     var input = document.getElementById('commu-people-search-input');
     var clearBtn = document.getElementById('commu-people-search-clear');
@@ -382,25 +346,11 @@ window.__commuChunk = (function() {
     var groups = Array.prototype.slice.call(document.querySelectorAll('details.commu-people-group'));
     var chrome = Array.prototype.slice.call(document.querySelectorAll(
         'details.commu-office-index, .commu-people-shelf'));
-    // Cards load lazily. allCards() hands back every card of every
-    // loaded group, including the ones still detached behind a chunk
-    // sentinel — matching only reads their attributes, so an unrevealed
-    // card is searchable without costing a frame of layout.
-    var cards = [];
-    var cardsReady = null;
     var emptyText = emptyMsg.textContent;
-    function ensureCards() {
-        if (!cardsReady) {
-            cardsReady = window.__commuPeopleCards.loadAll().then(function() {
-                cards = window.__commuPeopleCards.allCards();
-            });
-        }
-        return cardsReady;
-    }
-    // Start the download as soon as the reader engages the search box,
-    // so the cards are usually there before the first keystroke lands.
-    input.addEventListener('focus', function() { ensureCards(); }, { once: true });
-    var highlighted = [];
+    var requestId = 0;
+    var controller = null;
+    var timer = null;
+    var prefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
 
     function countText(n) {
         if (en) return n + (n === 1 ? ' person' : ' people');
@@ -430,23 +380,6 @@ window.__commuChunk = (function() {
         if (searchSkel) {
             searchSkel.remove();
             searchSkel = null;
-        }
-    }
-    // Reveal handles for the three result grids, so a new query can tear
-    // down the previous one's sentinels before building its own.
-    var shown = [];
-    function clearResults() {
-        shown.forEach(function(handle) { handle.clear(); });
-        shown = [];
-    }
-    function clearHighlights(card) {
-        var marks = card.querySelectorAll('mark.commu-search-hl');
-        for (var i = 0; i < marks.length; i++) {
-            var mark = marks[i];
-            var parent = mark.parentNode;
-            while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);
-            parent.removeChild(mark);
-            parent.normalize();
         }
     }
     function highlight(card, re) {
@@ -481,92 +414,90 @@ window.__commuChunk = (function() {
 
     function reset() {
         hideSearchSkeleton();
-        highlighted.forEach(clearHighlights);
-        highlighted = [];
-        clearResults();
-        window.__commuPeopleCards.restoreGroups();
+        buckets.forEach(function(bucket) { bucket.grid.replaceChildren(); });
+        requestId++;
+        clearTimeout(timer);
+        if (controller) controller.abort();
         results.hidden = true;
         groups.forEach(function(group) { group.hidden = false; group.open = false; });
         chrome.forEach(function(el) { el.hidden = false; });
         clearBtn.hidden = true;
     }
 
-    function apply(query) {
-        var terms = query.split(/\s+/).filter(Boolean);
-        if (!terms.length) { reset(); return; }
-        hideSearchSkeleton();
-        emptyMsg.textContent = emptyText;
-        highlighted.forEach(clearHighlights);
-        highlighted = [];
-        // Detach the previous query's results rather than walking all
-        // 1341 cards home: only what is on screen has to be undone.
-        clearResults();
-        clearBtn.hidden = false;
-        groups.forEach(function(group) { group.hidden = true; });
-        chrome.forEach(function(el) { el.hidden = true; });
-
-        var hits = { name: [], role: [], desc: [] };
-        cards.forEach(function(card) {
-            var nameHay = card.getAttribute('data-name') || '';
-            var roleHay = nameHay + ' ' + (card.getAttribute('data-role') || '');
-            var descHay = roleHay + ' ' + (card.getAttribute('data-desc') || '');
-            function all(hay) { return terms.every(function(t) { return hay.indexOf(t) !== -1; }); }
-            if (all(nameHay)) hits.name.push(card);
-            else if (all(roleHay)) hits.role.push(card);
-            else if (all(descHay)) hits.desc.push(card);
+    function fetchResults(query, bucket, offset, signal) {
+        var url = prefix + '/commulingo/people/search?q=' + encodeURIComponent(query);
+        if (bucket) url += '&bucket=' + bucket + '&offset=' + offset;
+        return fetch(url, { credentials: 'same-origin', signal: signal }).then(function(res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
         });
-
-        var re = new RegExp('(' + terms.slice().sort(function(a, b) { return b.length - a.length; })
-            .map(escapeRegExp).join('|') + ')', 'gi');
-        var total = 0;
-        buckets.forEach(function(bucket) {
-            var list = hits[bucket.key];
-            bucket.section.hidden = list.length === 0;
-            // The count stays the full match count — the reader is told
-            // how many there are, and scrolling brings them in.
-            bucket.count.textContent = countText(list.length);
-            total += list.length;
-            if (!list.length) return;
-            shown.push(window.__commuChunk.reveal(bucket.grid, list, function(slice) {
-                slice.forEach(function(card) {
-                    highlight(card, re);
-                    highlighted.push(card);
-                });
-            }));
-        });
-        emptyMsg.hidden = total > 0;
-        results.hidden = false;
     }
 
-    var raf = null;
+    function renderBucket(bucket, data, query, id, append) {
+        if (!append) bucket.grid.replaceChildren();
+        bucket.section.hidden = data.total === 0;
+        bucket.count.textContent = countText(data.total);
+        var holder = document.createElement('template');
+        holder.innerHTML = data.html;
+        var re = new RegExp('(' + query.split(/\s+/).filter(Boolean)
+            .sort(function(a, b) { return b.length - a.length; }).map(escapeRegExp).join('|') + ')', 'gi');
+        Array.prototype.forEach.call(holder.content.children, function(card) { highlight(card, re); });
+        bucket.grid.appendChild(holder.content);
+        if (data.next < data.total) {
+            var more = document.createElement('button');
+            more.type = 'button';
+            more.className = 'btn commu-people-loading';
+            more.textContent = en ? 'Load more' : '더 보기';
+            bucket.grid.appendChild(more);
+            more.addEventListener('click', function() {
+                more.disabled = true;
+                more.textContent = en ? 'Loading…' : '불러오는 중…';
+                fetchResults(query, bucket.key, data.next, controller.signal).then(function(result) {
+                    if (id !== requestId) return;
+                    more.remove();
+                    renderBucket(bucket, result.buckets[bucket.key], query, id, true);
+                }).catch(function(err) {
+                    if (id !== requestId || err.name === 'AbortError') return;
+                    more.disabled = false;
+                    more.textContent = en ? 'Retry' : '다시 시도';
+                });
+            });
+        }
+    }
+
     function onInput() {
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(function() {
-            var query = input.value.trim().toLowerCase();
-            if (!query) { apply(query); return; }
-            if (cards.length) {
-                ensureCards().then(function() { apply(input.value.trim().toLowerCase()); });
-                return;
-            }
-            // First search before the cards arrived: lay skeleton cards
-            // in the results panel, then run the query once the grids
-            // are in — apply() clears the skeleton before it renders,
-            // so a query with no matches shows only the empty message.
-            groups.forEach(function(group) { group.hidden = true; });
-            chrome.forEach(function(el) { el.hidden = true; });
-            buckets.forEach(function(bucket) { bucket.section.hidden = true; });
-            emptyMsg.hidden = true;
-            showSearchSkeleton();
-            results.hidden = false;
-            clearBtn.hidden = false;
-            ensureCards().then(function() {
-                apply(input.value.trim().toLowerCase());
-            }).catch(function() {
+        clearTimeout(timer);
+        if (controller) controller.abort();
+        var id = ++requestId;
+        var query = input.value.trim().toLowerCase();
+        if (!query) { reset(); return; }
+        groups.forEach(function(group) { group.hidden = true; });
+        chrome.forEach(function(el) { el.hidden = true; });
+        buckets.forEach(function(bucket) { bucket.section.hidden = true; bucket.grid.replaceChildren(); });
+        emptyMsg.hidden = true;
+        showSearchSkeleton();
+        results.hidden = false;
+        clearBtn.hidden = false;
+        timer = setTimeout(function() {
+            controller = new AbortController();
+            fetchResults(query, null, 0, controller.signal).then(function(result) {
+                if (id !== requestId) return;
                 hideSearchSkeleton();
-                emptyMsg.textContent = en ? 'Failed to load people data' : '인물 데이터를 불러오지 못했습니다';
+                var total = 0;
+                buckets.forEach(function(bucket) {
+                    var data = result.buckets[bucket.key];
+                    total += data.total;
+                    renderBucket(bucket, data, query, id, false);
+                });
+                emptyMsg.textContent = emptyText;
+                emptyMsg.hidden = total > 0;
+            }).catch(function(err) {
+                if (id !== requestId || err.name === 'AbortError') return;
+                hideSearchSkeleton();
+                emptyMsg.textContent = en ? 'Failed to load people data — type to retry' : '인물 데이터를 불러오지 못했습니다 — 다시 입력하면 재시도합니다';
                 emptyMsg.hidden = false;
             });
-        });
+        }, 180);
     }
     input.addEventListener('input', onInput);
     input.addEventListener('keydown', function(event) {
@@ -575,7 +506,7 @@ window.__commuChunk = (function() {
             input.value = '';
             reset();
         } else if (event.key === 'Enter') {
-            var first = results.querySelector('.commu-person-card[data-person-href]');
+            var first = !results.hidden && !searchSkel && results.querySelector('.commu-person-card[data-person-href]');
             if (first) window.location.href = first.getAttribute('data-person-href');
         }
     });
