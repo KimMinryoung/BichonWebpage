@@ -447,7 +447,7 @@ window.__commuChunk = (function() {
             var more = document.createElement('button');
             more.type = 'button';
             more.className = 'btn commu-people-loading';
-            more.textContent = en ? 'Load more' : '더 보기';
+            more.textContent = data.next === 0 ? (en ? 'Show results' : '결과 보기') : (en ? 'Load more' : '더 보기');
             bucket.grid.appendChild(more);
             more.addEventListener('click', function() {
                 more.disabled = true;

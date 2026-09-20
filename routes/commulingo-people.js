@@ -140,9 +140,12 @@ router.get('/people/search', async (req, res) => {
         const hits = searchPeople(standardized, query, sortPeopleChronologically);
         const buckets = {};
         const keys = bucket ? [bucket] : ['name', 'role', 'desc'];
+        // Show the strongest matches first. Lower ranks retain their full
+        // counts, but their cards are fetched when the reader expands them.
+        const initialBucket = bucket || keys.find(key => hits[key].length);
         let indexes;
         for (const key of keys) {
-            const people = hits[key].slice(offset, offset + 20);
+            const people = key === initialBucket ? hits[key].slice(offset, offset + 20) : [];
             let html = '';
             if (people.length) {
                 indexes = indexes || await getLinkIndexes(lang);
