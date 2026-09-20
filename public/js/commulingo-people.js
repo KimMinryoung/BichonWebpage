@@ -212,9 +212,7 @@
     var chrome = Array.prototype.slice.call(document.querySelectorAll(
         'details.commu-office-index, .commu-people-shelf'));
     var emptyText = emptyMsg.textContent;
-    var requestId = 0;
-    var controller = null;
-    var timer = null;
+    var requests = window.__commuSearch.createRequests();
     var prefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
 
     function countText(n) {
@@ -245,25 +243,20 @@
     function reset() {
         hideSearchSkeleton();
         buckets.forEach(function(bucket) { bucket.grid.replaceChildren(); });
-        requestId++;
-        clearTimeout(timer);
-        if (controller) controller.abort();
+        requests.cancel();
         results.hidden = true;
         groups.forEach(function(group) { group.hidden = false; group.open = false; });
         chrome.forEach(function(el) { el.hidden = false; });
         clearBtn.hidden = true;
     }
 
-    function fetchResults(query, bucket, offset, signal) {
+    function fetchResults(query, bucket, offset, request) {
         var url = prefix + '/commulingo/people/search?q=' + encodeURIComponent(query);
         if (bucket) url += '&bucket=' + bucket + '&offset=' + offset;
-        return fetch(url, { credentials: 'same-origin', signal: signal }).then(function(res) {
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            return res.json();
-        });
+        return request.json(url);
     }
 
-    function renderBucket(bucket, data, query, id, append) {
+    function renderBucket(bucket, data, query, request, append) {
         if (!append) bucket.grid.replaceChildren();
         bucket.section.hidden = data.total === 0;
         bucket.count.textContent = countText(data.total);
@@ -281,12 +274,11 @@
             more.addEventListener('click', function() {
                 more.disabled = true;
                 more.textContent = en ? 'Loading…' : '불러오는 중…';
-                fetchResults(query, bucket.key, data.next, controller.signal).then(function(result) {
-                    if (id !== requestId) return;
+                fetchResults(query, bucket.key, data.next, request).then(function(result) {
                     more.remove();
-                    renderBucket(bucket, result.buckets[bucket.key], query, id, true);
+                    renderBucket(bucket, result.buckets[bucket.key], query, request, true);
                 }).catch(function(err) {
-                    if (id !== requestId || err.name === 'AbortError') return;
+                    if (err.name === 'AbortError') return;
                     more.disabled = false;
                     more.textContent = en ? 'Retry' : '다시 시도';
                 });
@@ -295,9 +287,7 @@
     }
 
     function onInput() {
-        clearTimeout(timer);
-        if (controller) controller.abort();
-        var id = ++requestId;
+        requests.cancel();
         var query = input.value.trim().toLowerCase();
         if (!query) { reset(); return; }
         groups.forEach(function(group) { group.hidden = true; });
@@ -307,21 +297,19 @@
         showSearchSkeleton();
         results.hidden = false;
         clearBtn.hidden = false;
-        timer = setTimeout(function() {
-            controller = new AbortController();
-            fetchResults(query, null, 0, controller.signal).then(function(result) {
-                if (id !== requestId) return;
+        requests.schedule(function(request) {
+            fetchResults(query, null, 0, request).then(function(result) {
                 hideSearchSkeleton();
                 var total = 0;
                 buckets.forEach(function(bucket) {
                     var data = result.buckets[bucket.key];
                     total += data.total;
-                    renderBucket(bucket, data, query, id, false);
+                    renderBucket(bucket, data, query, request, false);
                 });
                 emptyMsg.textContent = emptyText;
                 emptyMsg.hidden = total > 0;
             }).catch(function(err) {
-                if (id !== requestId || err.name === 'AbortError') return;
+                if (err.name === 'AbortError') return;
                 hideSearchSkeleton();
                 emptyMsg.textContent = en ? 'Failed to load people data — type to retry' : '인물 데이터를 불러오지 못했습니다 — 다시 입력하면 재시도합니다';
                 emptyMsg.hidden = false;

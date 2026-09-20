@@ -40,7 +40,8 @@
         retry.hidden = true;
         status.after(retry);
         var page = Number(list.getAttribute('data-page')) || 1;
-        var requestId = 0, timer = null, controller = null, loading = false;
+        var requests = search.createRequests();
+        var loading = false;
         // Small country lists stay local. Normalize their text once, not on
         // every keystroke. Larger dictionaries keep this index on the server.
         var local = endpoint ? [] : Array.from(list.querySelectorAll('[data-search]')).map(function(card) {
@@ -55,11 +56,9 @@
             if (count) { count.textContent = total ? status.textContent : ''; count.hidden = !filtered || !total; }
         }
         function cancel() {
-            clearTimeout(timer);
-            if (controller) controller.abort();
+            requests.cancel();
             loading = false;
             list.removeAttribute('aria-busy');
-            return ++requestId;
         }
         function applyLocal(query) {
             var terms = search.terms(query), pattern = search.pattern(query), total = 0;
@@ -85,7 +84,7 @@
             window.history.replaceState(null, '', location.pathname + (suffix ? '?' + suffix : '') + location.hash);
         }
         function run(delay) {
-            var id = cancel();
+            cancel();
             var query = input.value.trim();
             var filtered = !!(query || category);
             clear.hidden = !query;
@@ -111,8 +110,7 @@
             if (count) count.hidden = true;
             loading = true;
             list.setAttribute('aria-busy', 'true');
-            timer = setTimeout(function() {
-                controller = new AbortController();
+            requests.schedule(function(request) {
                 var params = new URLSearchParams({ q: query, page: String(page) });
                 if (category) params.set('kind', category);
                 var source = browse || list;
@@ -121,10 +119,8 @@
                     if (value) params.set(key, value);
                 });
                 var prefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
-                fetch(prefix + endpoint + '?' + params, { credentials: 'same-origin', signal: controller.signal })
-                    .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+                request.json(prefix + endpoint + '?' + params)
                     .then(function(data) {
-                        if (id !== requestId) return;
                         loading = false;
                         list.removeAttribute('aria-busy');
                         list.innerHTML = data.html;
@@ -139,7 +135,7 @@
                         showCount(data.total, filtered);
                         updateUrl();
                     }).catch(function(err) {
-                        if (id !== requestId || err.name === 'AbortError') return;
+                        if (err.name === 'AbortError') return;
                         loading = false;
                         list.removeAttribute('aria-busy');
                         status.textContent = en ? 'Failed to load results' : '검색 결과를 불러오지 못했습니다';

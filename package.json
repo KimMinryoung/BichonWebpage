@@ -12,6 +12,7 @@
     "lint": "scripts/lint",
     "dev": "node --watch server.js",
     "dev:preview": "scripts/dev-preview",
+    "test:commulingo-search:browser": "node scripts/test-commulingo-search-browser.js",
     "test:seo": "node scripts/test-seo.js",
     "ui:audit": "node scripts/audit-overflow.js",
     "ui:check": "node scripts/check-ui.js",

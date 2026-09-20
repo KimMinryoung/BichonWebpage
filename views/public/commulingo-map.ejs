@@ -37,7 +37,7 @@
                 <div class="commu-country-grid">
                     <% group.countries.forEach(function(country) { %>
                     <a class="commu-country-card is-<%= country.kind %>" href="<%= country.href %>"
-                        data-country-code="<%= country.code %>" data-search="<%= country.search %>" data-search-title="<%= country.search %>">
+                        data-country-code="<%= country.code %>" data-search="<%= country.search %>">
                         <%- flagImg(country.code, country.label) %>
                         <span><strong><%= country.label %></strong><small><%= copy.citizenship %> <%= country.citizenshipCount %> · <%= copy.background %> <%= country.originCount %> · <%= copy.events %> <%= country.eventCount %></small></span>
                     </a>

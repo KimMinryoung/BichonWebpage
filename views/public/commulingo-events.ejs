@@ -27,7 +27,7 @@
             resultMany: strings.commuLingoViews.events.eventsFound,
             emptyLabel: strings.commuLingoViews.events.noHistoricalEventsFound
         }) %>
-        <section class="commu-event-grid" id="commu-event-list" data-search-endpoint="/commulingo/events/search" data-country="<%= selectedCountry ? selectedCountry.code : '' %>" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
+        <section class="commu-event-grid" id="commu-event-list" data-search-endpoint="/commulingo/events/search" data-country="<%= selectedCountry ? selectedCountry.code : '' %>" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.events.historicalEvents3 %>">
             <%- include('../partials/commulingo-events-cards', { events: pagination.pageItems }) %>
         </section>

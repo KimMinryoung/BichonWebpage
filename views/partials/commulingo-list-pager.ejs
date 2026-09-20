@@ -4,8 +4,7 @@
 // filtered list. Args: pagination (from data/commulingo/list-pagination.js),
 // target (the list's selector), en.
 %>
-<div data-commu-list-pager data-target="<%= target %>"
-    data-label-prev="<%= strings.commuLingoViews.listPager.previous %>" data-label-next="<%= strings.commuLingoViews.listPager.next %>"<% if (pagination.total < 2) { %> hidden<% } %>>
+<div data-commu-list-pager data-target="<%= target %>"<% if (pagination.total < 2) { %> hidden<% } %>>
     <% if (pagination.total > 1) { %>
     <%- include('pagination', {
         currentPage: pagination.current,

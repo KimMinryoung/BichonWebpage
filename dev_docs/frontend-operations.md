@@ -13,6 +13,13 @@
 - data/는 `/home/grass/frontend/data:/app/data`로 마운트되어 실시간 반영된다. 수정본을 검증한 후 원자적으로 교체하고 콘텐츠별 캐시 갱신 절차를 따른다.
 - DB 연결 이상 복구의 최소 절차는 [AGENTS.md](../AGENTS.md)에 있다.
 
+## CommuLingo 검색 회귀 검사
+
+- `npm test`는 검색 순위·분류·페이지 처리와 공통 요청 제어의 취소·늦은 응답 무시를 검사한다.
+- 브라우저 검사는 `BASE_URL=https://cyber-lenin.com npm run test:commulingo-search:browser`로 실행한다. 기본 주소는 `http://127.0.0.1:3001`이며 미리보기 주소도 지정할 수 있다. Playwright와 Chromium이 필요하다.
+- 실제 사전에서 검색·분류·페이지 이동·정렬·영문·모바일·그룹 로딩 재시도를 확인한다. 오류는 해당 브라우저의 요청 가로채기로만 재현하며 서버 데이터를 변경하지 않는다. 화면 캡처는 `/tmp/dictionary-search-mobile.png`에 저장한다.
+- 검색 UI 변경 때 운영 배포 후 한 번 실행한다. 미리보기와 운영에서 같은 브라우저 검사를 반복하지 않는다.
+
 ## CommuLingo 데이터
 
 - 정확한 경로·캐시·검증은 [데이터 운영 스킬](../.claude/skills/commulingo-data-ops/SKILL.md)을 해당 작업 때 읽는다.

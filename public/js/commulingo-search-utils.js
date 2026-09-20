@@ -55,5 +55,40 @@ window.__commuSearch = (function() {
         var words = terms(query).sort(function(a, b) { return b.length - a.length; });
         return words.length ? new RegExp('(' + words.map(escapeRegExp).join('|') + ')', 'gi') : null;
     }
-    return { terms: terms, pattern: pattern, highlight: highlight, clearHighlights: clearHighlights };
+    // One search owns its timer, initial request and any later result pages.
+    // Even a response whose transport ignores abort cannot update a new search.
+    function createRequests() {
+        var generation = 0, timer = null, controller = null;
+        function cancel() {
+            generation++;
+            clearTimeout(timer);
+            if (controller) controller.abort();
+        }
+        function schedule(callback, delay) {
+            cancel();
+            var current = generation;
+            controller = new AbortController();
+            var signal = controller.signal;
+            function isCurrent() { return current === generation && !signal.aborted; }
+            function aborted() { return Object.assign(new Error('Search cancelled'), { name: 'AbortError' }); }
+            var request = {
+                json: function(url) {
+                    if (!isCurrent()) return Promise.reject(aborted());
+                    return fetch(url, { credentials: 'same-origin', signal: signal })
+                        .then(function(res) {
+                            if (!res.ok) throw new Error('HTTP ' + res.status);
+                            return res.json();
+                        }).then(function(data) {
+                            if (!isCurrent()) throw aborted();
+                            return data;
+                        }).catch(function(err) {
+                            throw isCurrent() ? err : aborted();
+                        });
+                }
+            };
+            timer = setTimeout(function() { if (isCurrent()) callback(request); }, delay === undefined ? 180 : delay);
+        }
+        return { cancel: cancel, schedule: schedule };
+    }
+    return { createRequests: createRequests, terms: terms, pattern: pattern, highlight: highlight, clearHighlights: clearHighlights };
 })();

@@ -31,7 +31,7 @@
                 data-category="<%= facet.id %>" aria-pressed="<%= facet.id === kind ? 'true' : 'false' %>"><%= facet.label %> <span><%= facet.count %></span></a>
             <% }) %>
         </div>
-        <section class="commu-event-grid" id="commu-doc-list" data-search-endpoint="/commulingo/docs/search" data-page-size="<%= pagination.pageSize %>" data-page="<%= pagination.current %>"
+        <section class="commu-event-grid" id="commu-doc-list" data-search-endpoint="/commulingo/docs/search" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.docs.referenceDocuments %>">
             <%- include('../partials/commulingo-docs-cards', { docs: pagination.pageItems }) %>
         </section>
