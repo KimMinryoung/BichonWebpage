@@ -38,3 +38,11 @@ Python의 term_editorial_service와 legacy_shared_budget은 준비 이후 활성
 운영 frontend 재시작은 기존 `scripts/deploy --restart` 절차를 사용한다.
 
 인물·절·용어 근거 배열은 개수 상한 없이 검증한다. 많은 근거를 이유로 거절하지 않으며, 각 항목의 출처·필드·인용 형식과 변경 사실의 지원 여부는 계속 검사한다.
+
+`publish`는 새 편집 파이프라인의 원자적 반영 명령이다. 요청의 target/action/id/fields/sources를
+정렬·ASCII JSON으로 정규화한 SHA-256과 `approvedPatchHash`가 일치해야 한다.
+`review`에는 approve 결정과 사유, 독립적으로 확인한 citation/source/quote/finding checks가 필요하다.
+기존 submit/review 저장 함수를 하나의 외부 트랜잭션 안에서 실행하고, 선택적 원 제안 대체·작업 메모·
+영수증도 함께 커밋한다. 어떤 부분이라도 실패하면 공개 내용·제안·이력·영수증 전부 롤백된다.
+같은 요청의 재실행은 revision 재검사 전에 영수증을 반환한다. 이 명령은 private RPC에만 존재하며,
+공개 HTTP API나 LLM 도구로 노출하지 않는다. Python 검토 artifact도 같은 수정안 해시에 묶인다.
