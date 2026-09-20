@@ -1,32 +1,35 @@
-// Keep the three ranked search fields identical to the public person card.
+// Search-only text stays in the server index, not in card HTML.
 function searchFields(person) {
-const nameSearch = [
-    person.names && person.names.ko,
-    person.names && person.names.en,
-    person.displayName,
-    person.cyrillic
-].concat(
-    (person.aliases && person.aliases.ko) || [],
-    (person.aliases && person.aliases.en) || [],
-    (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
-).filter(Boolean).join(' ').toLowerCase();
-const roleSearch = [
-    person.role && person.role.label
-].concat(
-    (person.career || []).map(function(item) { return item.r; }),
-    (person.institutionRoles || []).map(function(item) { return (item.role || '') + ' ' + (item.officeTitle || ''); })
-).filter(Boolean).join(' ').toLowerCase();
-const descSearch = [
-    person.epithet,
-    person.moment,
-    person.bio,
-    (person.linkExpressions || []).filter(function(item) { return item.role === 'related'; }).map(function(item) { return item.text; }).join(' ')
-].filter(Boolean).join(' ').toLowerCase();
-return { name: nameSearch, role: roleSearch, desc: descSearch };
+    const nameSearch = [
+        person.names && person.names.ko,
+        person.names && person.names.en,
+        person.displayName,
+        person.cyrillic
+    ].concat(
+        (person.aliases && person.aliases.ko) || [],
+        (person.aliases && person.aliases.en) || [],
+        (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
+    ).filter(Boolean).join(' ').toLowerCase();
+    const roleSearch = [
+        person.role && person.role.label
+    ].concat(
+        (person.career || []).map(function(item) { return item.r; }),
+        (person.institutionRoles || []).map(function(item) { return (item.role || '') + ' ' + (item.officeTitle || ''); })
+    ).filter(Boolean).join(' ').toLowerCase();
+    const descSearch = [
+        person.epithet,
+        person.moment,
+        person.bio,
+        (person.linkExpressions || []).filter(function(item) { return item.role === 'related'; }).map(function(item) { return item.text; }).join(' ')
+    ].filter(Boolean).join(' ').toLowerCase();
+    return { name: nameSearch, role: roleSearch, desc: descSearch };
 }
 
 const indexes = new WeakMap();
 function searchPeople(standardized, query, sortPeople) {
+    const hits = { name: [], role: [], desc: [] };
+    const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) return hits;
     let index = indexes.get(standardized);
     if (!index) {
         index = standardized.groups.flatMap(group => sortPeople(group.people).map(person => {
@@ -36,9 +39,6 @@ function searchPeople(standardized, query, sortPeople) {
         }));
         indexes.set(standardized, index);
     }
-    const hits = { name: [], role: [], desc: [] };
-    const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    if (!terms.length) return hits;
     for (const row of index) {
         for (const key of ['name', 'role', 'desc']) {
             if (terms.every(term => row[key].includes(term))) {

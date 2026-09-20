@@ -1,6 +1,4 @@
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const vm = require('node:vm');
 const { searchFields, searchPeople } = require('../utils/people-search');
 const person = {
     id: 'lenin', names: { ko: '레닌', en: 'Vladimir Lenin' }, displayName: '레닌',
@@ -9,12 +7,13 @@ const person = {
     role: { label: '혁명가' }, career: [{ r: '의장' }], institutionRoles: [{ role: '지도자', officeTitle: '인민위원회' }],
     epithet: '혁명의 지도자', moment: '10월 혁명', bio: '러시아',
 };
-// Guard against drift from the existing card's search contract.
-const template = fs.readFileSync('views/partials/commulingo-person-card.ejs', 'utf8');
-const fieldsCode = template.slice(template.indexOf('var nameSearch'), template.indexOf('%>'));
-const context = { person };
-vm.runInNewContext(fieldsCode, context);
-assert.deepEqual(searchFields(person), { name: context.nameSearch, role: context.roleSearch, desc: context.descSearch });
+assert.deepEqual(searchFields(person), {
+    name: '레닌 vladimir lenin 레닌 Ленин 울리야노프 ulyanov 일리치'.toLowerCase(),
+    role: '혁명가 의장 지도자 인민위원회',
+    desc: '혁명의 지도자 10월 혁명 러시아 볼셰비키',
+});
+// Empty searches must not build/sort an index.
+assert.deepEqual(searchPeople({ groups: [{ people: [person] }] }, ' ', () => { throw new Error('Unexpected sort'); }), { name: [], role: [], desc: [] });
 const other = { ...person, id: 'other', names: { en: 'Someone' }, displayName: 'Someone', cyrillic: '', aliases: {}, linkExpressions: [], bio: 'Lenin' };
 const snapshot = { groups: [{ people: [person, other] }] };
 const sort = rows => rows;
@@ -28,4 +27,4 @@ assert.deepEqual(ids(searchPeople(snapshot, 'missing', sort)), { name: [], role:
 const updated = { groups: [{ people: [{ ...person, aliases: { ko: ['새별칭'] } }] }] };
 assert.equal(searchPeople(updated, '새별칭', sort).name.length, 1);
 assert.equal(searchPeople(snapshot, '새별칭', sort).name.length, 0);
-console.log('people search: ranking, bilingual aliases, AND matching, card parity, snapshot refresh passed');
+console.log('people search: ranking, bilingual aliases, AND matching, search fields, snapshot refresh passed');

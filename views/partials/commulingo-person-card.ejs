@@ -7,32 +7,8 @@ var fateIcons = {
 var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 var medalTitle = person.role && person.role.label ? person.role.label : (strings.commuLingoViews.personCard.contextMarker);
-// Three search haystacks, ranked most-identity-first: name (+aliases) → role
-// (category, career, institution posts) → description prose (epithet/bio).
-var nameSearch = [
-    person.names && person.names.ko,
-    person.names && person.names.en,
-    person.displayName,
-    person.cyrillic
-].concat(
-    (person.aliases && person.aliases.ko) || [],
-    (person.aliases && person.aliases.en) || [],
-    (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
-).filter(Boolean).join(' ').toLowerCase();
-var roleSearch = [
-    person.role && person.role.label
-].concat(
-    (person.career || []).map(function(item) { return item.r; }),
-    (person.institutionRoles || []).map(function(item) { return (item.role || '') + ' ' + (item.officeTitle || ''); })
-).filter(Boolean).join(' ').toLowerCase();
-var descSearch = [
-    person.epithet,
-    person.moment,
-    person.bio,
-    (person.linkExpressions || []).filter(function(item) { return item.role === 'related'; }).map(function(item) { return item.text; }).join(' ')
-].filter(Boolean).join(' ').toLowerCase();
 %>
-<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>" data-name="<%= nameSearch %>" data-role="<%= roleSearch %>" data-desc="<%= descSearch %>">
+<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
     <div class="commu-person-top">
         <% if (medalHref) { %>
         <a class="commu-person-medal is-<%= cardGroupId %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>

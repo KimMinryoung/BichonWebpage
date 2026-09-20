@@ -1,137 +1,4 @@
-// People dictionary page (views/public/commulingo-people.ejs): chunked card
-// reveal, lazy per-group card loading, #p-<id> deep links, and live search.
-// Was four inline <script> blocks on a no-cache page; as a versioned file it
-// is immutable-cached. PAGE_SIZE comes from data-page-size on the shell.
-
-// Chunked reveal, shared by the group grids and the search results.
-//
-// A person card costs about 5.3ms of style, layout and paint, and that
-// is essentially the whole cost of both slow paths: a CPU profile of one
-// keystroke spent 15,460ms of 15,833ms inside the engine and under
-// 400ms in script. Rendering 368 cards to open a group, or 883 to show
-// what 'ㄹ' matches, is therefore seconds of work for a screenful the
-// reader can actually see. So cards are appended a chunk at a time, with
-// the rest held off-DOM, and a sentinel below the last one pulls in the
-// next chunk as it comes into view.
-//
-// Note this is not content-visibility: the cards below simply do not
-// exist yet, so nothing is holding a guessed height and nothing snaps
-// when they arrive. The page only grows downwards, past what the reader
-// is looking at.
-window.__commuChunk = (function() {
-    var CHUNK = 40;
-    // 600px of runway, so the next chunk is usually in place before the
-    // reader reaches the end of the current one.
-    var MARGIN_PX = 600;
-    var MARGIN = MARGIN_PX + 'px 0px';
-
-    // A sentinel the reader flings straight past never re-enters the
-    // viewport, and IntersectionObserver only reports entering — so the
-    // list under it would be stranded. The result view stacks three
-    // grids, so this is reachable in ordinary use: jumping to the foot
-    // of the page skips the first two sentinels entirely. After a scroll
-    // settles, top up anything now above the fold.
-    var live = [];
-    var settle = null;
-    function pump() {
-        for (var i = live.length - 1; i >= 0; i--) {
-            var handle = live[i];
-            if (handle.exhausted()) { live.splice(i, 1); continue; }
-            if (handle.sentinelTop() < window.innerHeight + MARGIN_PX) handle.append();
-        }
-    }
-    function onScroll() {
-        if (settle) clearTimeout(settle);
-        settle = setTimeout(pump, 150);
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
-
-    // Appends `items` into `target` a chunk at a time, `onAppend` firing
-    // with each slice so a caller can highlight what just landed. The
-    // items not yet appended stay detached: they keep their attributes,
-    // so search can still read them without their costing a single
-    // frame of layout.
-    function reveal(target, items, onAppend) {
-        var next = 0;
-        var sentinel = document.createElement('div');
-        sentinel.className = 'commu-chunk-sentinel';
-        sentinel.setAttribute('aria-hidden', 'true');
-        var observer = null;
-
-        function append() {
-            if (next >= items.length) return void retire();
-            var slice = items.slice(next, next + CHUNK);
-            next += slice.length;
-            var frag = document.createDocumentFragment();
-            slice.forEach(function(node) { frag.appendChild(node); });
-            target.insertBefore(frag, sentinel);
-            if (onAppend) onAppend(slice);
-            if (next >= items.length) retire();
-        }
-
-        // Everything is shown; the sentinel has no more work to do.
-        function retire() {
-            if (observer) { observer.disconnect(); observer = null; }
-            if (sentinel.parentNode) sentinel.parentNode.removeChild(sentinel);
-            var at = live.indexOf(handle);
-            if (at !== -1) live.splice(at, 1);
-        }
-
-        function watch() {
-            if (next >= items.length) return;
-            if ('IntersectionObserver' in window) {
-                observer = new IntersectionObserver(function(entries) {
-                    if (entries.some(function(e) { return e.isIntersecting; })) append();
-                }, { rootMargin: MARGIN });
-                observer.observe(sentinel);
-            } else {
-                // No observer: show everything rather than strand cards
-                // the reader has no way to reach.
-                while (next < items.length) append();
-            }
-        }
-
-        var handle = {
-            items: items,
-            append: append,
-            exhausted: function() { return next >= items.length; },
-            sentinelTop: function() {
-                // A sentinel inside a closed <details> or a hidden group
-                // has no box, and its rect reads as 0 — which the scroll
-                // top-up would take for "above the fold" and drain the
-                // whole list into a grid nobody is looking at. Anything
-                // without layout is simply not due yet.
-                if (!sentinel.parentNode || sentinel.offsetParent === null) return Infinity;
-                return sentinel.getBoundingClientRect().top;
-            },
-            // Detaches the whole list, for a target being rebuilt.
-            clear: function() {
-                retire();
-                items.forEach(function(node) {
-                    if (node.parentNode) node.parentNode.removeChild(node);
-                });
-                next = 0;
-            },
-            // Appends chunks until `node` is on the page. Used by
-            // #p-<id> deep links, which may point past the first chunk.
-            revealNode: function(node) {
-                var index = items.indexOf(node);
-                if (index < 0) return false;
-                while (next <= index) append();
-                return true;
-            }
-        };
-
-        target.appendChild(sentinel);
-        live.push(handle);
-        append();
-        watch();
-        return handle;
-    }
-
-    return { reveal: reveal, CHUNK: CHUNK };
-})();
+// People dictionary: paged group cards, deep links, and ranked server search.
 
 // Lazy card loading, a page at a time. Opening a group fetches one page
 // of its cards (/commulingo/people/cards?group=<id>&page=N, with the
@@ -174,16 +41,15 @@ window.__commuChunk = (function() {
         setTimeout(function() { failed.remove(); }, 4000);
     }
 
-    // Fetches one group's markup (a page, or everything) and splits it
-    // into its cards and, when paged, the pager block that follows them.
+    // Fetch and cache a group page, separating cards from its pager.
     function fetchGroup(id, page) {
-        var key = id + (page ? ':' + page : '');
+        var key = id + ':' + page;
         if (pending[key]) return pending[key];
         // Under /en/… the fragment must come from /en/… too, so its
         // card links carry the English prefix instead of costing a
         // redirect on every click.
         var langPrefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
-        var url = langPrefix + '/commulingo/people/cards?group=' + encodeURIComponent(id) + (page ? '&page=' + page : '');
+        var url = langPrefix + '/commulingo/people/cards?group=' + encodeURIComponent(id) + '&page=' + page;
         pending[key] = fetch(url, { credentials: 'same-origin' })
             .then(function(res) {
                 if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -210,42 +76,31 @@ window.__commuChunk = (function() {
         var id = group.getAttribute('data-group-id');
         var grid = group.querySelector('.commu-people-grid');
         if (!grid) return Promise.resolve();
+        var requestId = group.__requestId = (group.__requestId || 0) + 1;
         if (group.__page === page) return Promise.resolve();
         var skeleton = makeSkeleton();
         var status = document.createElement('p');
         status.className = 'commu-sr-only';
         status.setAttribute('role', 'status');
         status.textContent = en ? 'Loading…' : '불러오는 중…';
-        if (!group.__view) {
+        if (!group.hasAttribute('data-loaded')) {
             grid.appendChild(skeleton);
             grid.appendChild(status);
         }
         return fetchGroup(id, page).then(function(result) {
             skeleton.remove();
             status.remove();
-            if (group.__view) group.__view.clear();
+            if (requestId !== group.__requestId) return;
             if (group.__pager) group.__pager.remove();
-            group.__view = window.__commuChunk.reveal(grid, result.cards);
+            grid.replaceChildren.apply(grid, result.cards);
             group.__page = page;
             group.__pager = result.pager;
-            if (result.pager) {
-                group.appendChild(result.pager);
-                result.pager.addEventListener('click', function(event) {
-                    var link = event.target.closest('a[href]');
-                    if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
-                    var match = /[?&]page=(\d+)/.exec(link.getAttribute('href') || '');
-                    if (!match) return;
-                    event.preventDefault();
-                    showPage(group, parseInt(match[1], 10)).then(function() {
-                        group.scrollIntoView({ block: 'start' });
-                    }).catch(function() {});
-                });
-            }
+            if (result.pager) group.appendChild(result.pager);
             group.setAttribute('data-loaded', '');
         }, function(err) {
             skeleton.remove();
             status.remove();
-            failNotice(grid);
+            if (requestId === group.__requestId) failNotice(grid);
             throw err;
         });
     }
@@ -256,13 +111,23 @@ window.__commuChunk = (function() {
     }
 
     groupEls.forEach(function(group) {
+        // Delegate once: cached pager nodes can be revisited many times.
+        group.addEventListener('click', function(event) {
+            var link = event.target.closest('[data-commu-list-pager] a[href]');
+            if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            var match = /[?&]page=(\d+)/.exec(link.getAttribute('href') || '');
+            if (!match) return;
+            event.preventDefault();
+            showPage(group, parseInt(match[1], 10)).then(function() {
+                group.scrollIntoView({ block: 'start' });
+            }).catch(function() {});
+        });
         group.addEventListener('toggle', function() {
             if (group.open) loadGroup(group).catch(function() {});
         });
     });
 
     window.__commuPeopleCards = {
-        loadGroup: loadGroup,
         skeleton: makeSkeleton,
         groupFor: function(personId) {
             for (var i = 0; i < groupEls.length; i++) {
@@ -360,9 +225,7 @@ window.__commuChunk = (function() {
         return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
     // Skeleton shown in the results panel while the first search waits
-    // for the card download. It exists only during that wait: apply()
-    // and reset() both tear it down first, so a finished search shows
-    // results or the empty message and never a leftover placeholder.
+    // for the card download. Completion and reset remove it.
     var searchSkel = null;
     function showSearchSkeleton() {
         if (searchSkel) return;
