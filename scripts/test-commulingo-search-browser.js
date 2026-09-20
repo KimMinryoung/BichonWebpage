@@ -69,13 +69,16 @@ const assert = require('node:assert/strict');
         let failGroup = true;
         await page.route('**/terms/cards?*', async route => {
             if (new URL(route.request().url()).searchParams.get('group') === groupId && failGroup) {
-                failGroup = false;
                 await route.fulfill({ status: 500, body: '' });
             } else await route.continue();
         });
+        // Start with a fresh page so an earlier browse cannot have the
+        // target group already in flight before interception was installed.
+        await goto('/commulingo/terms');
         await page.locator('.commu-dict-index a[href="#' + groupId + '"]').click();
         const groupRetry = page.locator('#' + groupId + ' + .commu-people-loading button');
         await groupRetry.waitFor();
+        failGroup = false;
         await groupRetry.click();
         await page.waitForFunction(id => !document.getElementById(id).hasAttribute('data-pending'), groupId);
         assert.equal(await page.locator('#' + groupId + ' + .commu-people-loading').count(), 0);
