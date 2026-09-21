@@ -13,6 +13,7 @@
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌 12편·36문항과 출처 기준](commulingo-ideology-learning.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
 | CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
+| CommuLingo 중국 혁명·중화인민공화국 확장 | [중국 선반·시대 그룹, 사건 12편·인물 48명·용어 15개](commulingo-china-history-20260921.md) |
 | CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |
 | CommuLingo 프랑스 혁명 추가 문헌 DeepSeek 추론 ON 번역 | [21개 초안·1개 저본 접근 장애·토큰 집계](commulingo-french-translations-20260913/README.md) |
 | CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](commulingo-fulltext-20260913/README.md) |

@@ -1,0 +1,260 @@
+// 마오 시대의 사람들 (group china-mao-era).
+const W = 'https://en.wikipedia.org/wiki/';
+const L = 'Wikipedia article: lead, biography sections';
+
+module.exports = [
+    {
+        id: 'kang-sheng', group: 'china-mao-era',
+        family: { ko: '캉', en: 'Kang' }, given: { ko: '성', en: 'Sheng' }, native: '康生',
+        years: '1898–1975', role: 'non-soviet-revolutionary',
+        epithet: { ko: '옌안 정풍의 「구조(搶救)」 운동부터 문화대혁명까지 당의 보안·정보를 쥔 마오의 심문관', en: 'Mao’s inquisitor who ran party security and intelligence from the Yan’an “rescue” campaign to the Cultural Revolution' },
+        bio: {
+            ko: '산둥의 지주 집안 출신으로 상하이 지하활동을 거쳐 1933년 모스크바에서 왕밍의 오른팔로 소련 숙청을 배웠다. 1937년 옌안에 돌아와 마오 편에 서서 사회부장으로 정풍운동의 「구조 운동」을 지휘해 수천 명을 특무로 몰았다. 건국 후 한동안 물러났다가 1960년대 중소 논쟁과 문화대혁명에서 중앙문혁소조 고문으로 복귀해 류사오치·허룽 등 원로들에 대한 조사와 박해를 주도했다. 1975년 암으로 사망했고 1980년 당적을 박탈당했다.',
+            en: 'From a Shandong landlord family, he worked in the Shanghai underground and in 1933 went to Moscow as Wang Ming’s deputy, where he studied the Soviet purges. Back at Yan’an in 1937 he sided with Mao and, as head of the Social Affairs Department, ran the rectification movement’s “rescue” campaign that branded thousands as enemy agents. Sidelined for a time after 1949, he returned in the Sino-Soviet polemics of the 1960s and as adviser to the Cultural Revolution Group directed the investigation and persecution of Liu Shaoqi, He Long and other veterans. He died of cancer in 1975 and was posthumously expelled from the party in 1980.',
+        },
+        fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+        aliases: { ko: ['강생', '자오룽'], en: ['K’ang Sheng', 'Zhao Rong'] },
+        career: [
+            { y: '1939–1946', r: { ko: '중공 중앙 사회부장 (정보·보안)', en: 'Head of the Social Affairs Department (intelligence and security)' } },
+            { y: '1966–1969', r: { ko: '중앙문화혁명소조 고문', en: 'Adviser to the Central Cultural Revolution Group' } },
+            { y: '1973–1975', r: { ko: '중공 중앙 부주석', en: 'Vice-Chairman of the Central Committee' } },
+        ],
+        sources: [W + 'Kang_Sheng', W + 'Yan%27an_Rectification_Movement'], locator: L,
+    },
+    {
+        id: 'chen-boda', group: 'china-mao-era',
+        family: { ko: '천', en: 'Chen' }, given: { ko: '보다', en: 'Boda' }, native: '陈伯达',
+        years: '1904–1989', role: 'theorist',
+        epithet: { ko: '마오의 정치비서 겸 「마오쩌둥 사상」의 이론가, 중앙문혁소조 조장에서 1970년 실각', en: 'Mao’s political secretary and the codifier of “Mao Zedong Thought”, head of the Cultural Revolution Group until his fall in 1970' },
+        bio: {
+            ko: '푸젠 출신으로 모스크바 중산대학에서 배운 뒤 1937년 옌안에서 마오의 정치비서가 되어 마오의 저작을 다듬고 「마오쩌둥 사상」이라는 용어를 정착시켰다. 건국 후 『홍기』 편집장과 선전 분야 책임자로 대약진의 이론을 썼고, 1966년 중앙문화혁명소조 조장으로 문화대혁명을 추진했다. 1970년 루산 회의에서 린뱌오 쪽에 서 국가주석직 문제로 마오의 분노를 사 실각했고, 1981년 「린뱌오·장칭 반혁명집단」 재판에서 18년형을 받았다. 1989년 사망했다.',
+            en: 'From Fujian, he studied at Sun Yat-sen University in Moscow and from 1937 served at Yan’an as Mao’s political secretary, editing Mao’s writings and establishing the term “Mao Zedong Thought”. After 1949 he edited Red Flag and led propaganda work, supplying the theory of the Great Leap, and in 1966 headed the Central Cultural Revolution Group. At the 1970 Lushan plenum he sided with Lin Biao over the state chairmanship, provoked Mao’s anger and fell; in the 1981 trial of the “Lin Biao and Jiang Qing counter-revolutionary cliques” he received eighteen years. He died in 1989.',
+        },
+        fate: { kind: 'deposed', label: { ko: '실각 1970 · 자연사', en: 'Removed 1970 · natural causes' } },
+        aliases: { ko: ['진백달'], en: ['Ch’en Po-ta'] },
+        career: [
+            { y: '1958–1966', r: { ko: '『홍기』 편집장', en: 'Editor-in-chief of Red Flag' } },
+            { y: '1966–1970', r: { ko: '중앙문화혁명소조 조장', en: 'Head of the Central Cultural Revolution Group' } },
+        ],
+        sources: [W + 'Chen_Boda', W + 'Cultural_Revolution'], locator: L,
+    },
+    {
+        id: 'ye-jianying', group: 'china-mao-era',
+        family: { ko: '예', en: 'Ye' }, given: { ko: '젠잉', en: 'Jianying' }, native: '叶剑英',
+        years: '1897–1986', role: 'military-commander',
+        epithet: { ko: '황푸의 교관에서 원수까지, 1976년 4인방 체포를 조직해 문화대혁명을 끝낸 군인', en: 'From Whampoa instructor to marshal, the soldier who organised the arrest of the Gang of Four in 1976 and ended the Cultural Revolution' },
+        bio: {
+            ko: '광둥 하카 출신으로 황푸군관학교 교관을 지내고 1927년 입당해 광저우 봉기에 참여했다. 대장정에서 참모장으로 장궈타오의 분열 기도를 마오에게 알렸고, 항일전쟁기와 국공내전기 참모장·베이핑 접수 책임자였다. 1955년 원수가 되었고 문화대혁명 중 「2월 역류」로 비판받았으나 살아남아 린뱌오 사후 군을 맡았다. 마오 사후 1976년 10월 화궈펑·왕둥싱과 함께 4인방 체포를 결정·집행했고, 1978년 덩샤오핑 복권을 지지했다. 1978~1983년 전국인민대표대회 상무위원장으로 국가원수 역할을 했다.',
+            en: 'A Hakka from Guangdong, he taught at the Whampoa Military Academy, joined the party in 1927 and took part in the Guangzhou Uprising. As chief of staff on the Long March he warned Mao of Zhang Guotao’s split, and he was chief of staff through the war with Japan and the civil war and took over Beiping in 1949. Made a marshal in 1955, he was criticised in the “February Countercurrent” of 1967 but survived to run the army after Lin Biao’s death. In October 1976, after Mao died, he decided and executed the arrest of the Gang of Four with Hua Guofeng and Wang Dongxing, and in 1978 backed Deng Xiaoping’s return. As chairman of the National People’s Congress Standing Committee (1978–1983) he acted as head of state.',
+        },
+        fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+        aliases: { ko: ['엽검영'], en: ['Yeh Chien-ying'] },
+        career: [
+            { y: '1955', r: { ko: '중화인민공화국 원수', en: 'Marshal of the People’s Republic of China' } },
+            { y: '1975–1978', r: { ko: '국방부장', en: 'Minister of National Defence' } },
+            { y: '1978–1983', r: { ko: '전국인민대표대회 상무위원회 위원장', en: 'Chairman of the NPC Standing Committee' } },
+        ],
+        sources: [W + 'Ye_Jianying', W + 'Gang_of_Four'], locator: L,
+    },
+    {
+        id: 'chen-yi', group: 'china-mao-era',
+        family: { ko: '천', en: 'Chen' }, given: { ko: '이', en: 'Yi' }, native: '陈毅',
+        years: '1901–1972', role: 'military-commander',
+        epithet: { ko: '신4군과 제3야전군을 이끈 시인 원수, 저우언라이를 이은 외교부장', en: 'The poet-marshal who led the New Fourth Army and the Third Field Army and succeeded Zhou Enlai as foreign minister' },
+        bio: {
+            ko: '쓰촨 출신으로 프랑스 근공검학 뒤 입당했고 난창 봉기 잔여 부대를 주더와 함께 징강산으로 이끌었다. 대장정에 참여하지 않고 남방에서 3년 유격전을 버텼으며 1941년 완난 사변 뒤 신4군 대리군장이 되었다. 국공내전에서 화둥 야전군(제3야전군)을 지휘해 회하이 전역에 참전하고 상하이를 점령해 초대 시장이 되었다. 1955년 원수, 1958년 외교부장이 되어 반둥 노선의 아시아·아프리카 외교를 이끌었다. 문화대혁명에서 「2월 역류」로 비판받았고 1972년 암으로 사망했으며 마오가 장례에 참석했다.',
+            en: 'From Sichuan, he joined the party after work-study in France and with Zhu De led the remnants of the Nanchang Uprising to Jinggangshan. He stayed behind on the Long March to fight three years of guerrilla war in the south and became acting commander of the New Fourth Army after the 1941 incident. In the civil war he commanded the East China (Third) Field Army at Huaihai and took Shanghai, becoming its first mayor. A marshal in 1955 and foreign minister from 1958, he ran China’s Bandung-era diplomacy in Asia and Africa. Attacked in the “February Countercurrent” of 1967, he died of cancer in 1972; Mao attended the funeral.',
+        },
+        fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+        aliases: { ko: ['진의'], en: ['Ch’en Yi'] },
+        career: [
+            { y: '1949–1958', r: { ko: '상하이 시장', en: 'Mayor of Shanghai' } },
+            { y: '1958–1972', r: { ko: '외교부장', en: 'Minister of Foreign Affairs' } },
+        ],
+        sources: [W + 'Chen_Yi_(marshal)', W + 'New_Fourth_Army_incident'], locator: L,
+    },
+    {
+        id: 'nie-rongzhen', group: 'china-mao-era',
+        family: { ko: '녜', en: 'Nie' }, given: { ko: '룽전', en: 'Rongzhen' }, native: '聂荣臻',
+        years: '1899–1992', role: 'military-commander',
+        epithet: { ko: '진차지 근거지의 사령관에서 「양탄일성」 핵·미사일 계획의 총책임자가 된 원수', en: 'Marshal who commanded the Jin-Cha-Ji base and then ran the “two bombs, one satellite” nuclear and missile programme' },
+        bio: {
+            ko: '쓰촨 출신으로 프랑스·벨기에·소련에서 배우고 황푸군관학교 정치교관을 지냈다. 대장정에서 린뱌오의 제1군단 정치위원이었고 항일전쟁기 화베이의 진차지 근거지를 세워 지휘했다. 국공내전 뒤 베이징 시장을 지냈고 1955년 원수가 되었다. 1956년부터 국무원 과학기술 담당 부총리로 소련 원조 철수 뒤에도 1964년 원자폭탄, 1967년 수소폭탄, 1970년 인공위성 발사에 이르는 국방과학 계획을 총괄했다. 10대 원수 중 마지막으로 1992년 사망했다.',
+            en: 'From Sichuan, he studied in France, Belgium and the Soviet Union and was a political instructor at Whampoa. Political commissar of Lin Biao’s First Army Corps on the Long March, he founded and commanded the Jin-Cha-Ji base in north China during the war with Japan and was mayor of Beijing after the civil war. Made a marshal in 1955, from 1956 he was the vice-premier for science and technology and, after the Soviet advisers left, ran the defence-science programme that produced the atomic bomb in 1964, the hydrogen bomb in 1967 and a satellite in 1970. He was the last of the ten marshals to die, in 1992.',
+        },
+        fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+        aliases: { ko: ['섭영진'], en: ['Nieh Jung-chen'] },
+        career: [
+            { y: '1937–1945', r: { ko: '진차지 군구 사령관', en: 'Commander of the Jin-Cha-Ji Military Region' } },
+            { y: '1958–1975', r: { ko: '국방과학기술위원회 주임', en: 'Chairman of the National Defence Science and Technology Commission' } },
+        ],
+        sources: [W + 'Nie_Rongzhen'], locator: L,
+    },
+    {
+        id: 'xu-xiangqian', group: 'china-mao-era',
+        family: { ko: '쉬', en: 'Xu' }, given: { ko: '샹첸', en: 'Xiangqian' }, native: '徐向前',
+        years: '1901–1990', role: 'military-commander',
+        epithet: { ko: '제4방면군 총지휘로 장궈타오의 분열을 겪고, 1979년 국방부장으로 베트남 전쟁을 지휘한 원수', en: 'Marshal who commanded the Fourth Front Army through Zhang Guotao’s split and as defence minister directed the 1979 war with Vietnam' },
+        bio: {
+            ko: '산시 출신 황푸 1기생으로 광저우 봉기 뒤 어위완 소비에트에서 제4방면군 총지휘가 되었고, 대장정 중 장궈타오의 남하 결정에 따르다 1936년 서로군이 하서회랑에서 궤멸하는 참패를 겪었다. 항일전쟁기 129사단 부사단장, 국공내전기 화베이 군구 부사령관으로 타이위안을 점령했다. 1955년 원수가 되었고 문화대혁명 「2월 역류」 뒤 한직에 있다가 1978년 복귀해 국방부장으로 1979년 중월전쟁을 지휘했다.',
+            en: 'A Shanxi native in Whampoa’s first class, he became commander of the Fourth Front Army in the Eyuwan Soviet after the Guangzhou Uprising, followed Zhang Guotao’s southward decision on the Long March and in 1936 saw the Western Route Army destroyed in the Hexi Corridor. Deputy commander of the 129th Division in the war with Japan and of the North China Military Region in the civil war, he took Taiyuan in 1949. A marshal in 1955, he was sidelined after the “February Countercurrent” of 1967, returned in 1978 and as minister of defence directed the 1979 war with Vietnam.',
+        },
+        fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+        aliases: { ko: ['서향전'], en: ['Hsu Hsiang-chien'] },
+        career: [
+            { y: '1931–1936', r: { ko: '홍군 제4방면군 총지휘', en: 'Commander of the Fourth Front Army' } },
+            { y: '1978–1981', r: { ko: '국방부장', en: 'Minister of National Defence' } },
+        ],
+        sources: [W + 'Xu_Xiangqian', W + 'Long_March'], locator: L,
+    },
+    {
+        id: 'luo-ruiqing', group: 'china-mao-era',
+        family: { ko: '뤄', en: 'Luo' }, given: { ko: '루이칭', en: 'Ruiqing' }, native: '罗瑞卿',
+        years: '1906–1978', role: 'non-soviet-revolutionary',
+        epithet: { ko: '초대 공안부장이자 총참모장, 문화대혁명 전야에 린뱌오의 표적이 되어 실각한 인물', en: 'First minister of public security and chief of the general staff, purged on the eve of the Cultural Revolution as Lin Biao’s target' },
+        bio: {
+            ko: '쓰촨 출신 황푸 6기생으로 홍군 정치·보위 부문에서 일했고 항일군정대학 교육장이었다. 1949년 초대 공안부장이 되어 반혁명 진압운동과 공안 체계를 세웠고, 1959년 펑더화이 실각 뒤 총참모장으로 군을 관리했다. 정치보다 훈련을 앞세운 그는 1965년 말 린뱌오의 고발로 「군권 탈취」를 꾀했다는 비판을 받아 실각했고, 1966년 자살을 기도해 다리를 다쳤다. 1977년 복권되어 군사위원회 비서장이 되었으나 이듬해 서독에서 수술 후 사망했다.',
+            en: 'From Sichuan and Whampoa’s sixth class, he served in Red Army political and security work and ran the Anti-Japanese Military and Political University. As first minister of public security from 1949 he built the police system and the campaign to suppress counter-revolutionaries, and after Peng Dehuai’s fall in 1959 he managed the army as chief of the general staff. Putting training before politics, he was denounced by Lin Biao at the end of 1965 for plotting to seize military power, fell, and injured his legs in a suicide attempt in 1966. Rehabilitated in 1977 as secretary-general of the Military Commission, he died after surgery in West Germany the next year.',
+        },
+        fate: { kind: 'deposed', label: { ko: '실각 1965 · 자연사', en: 'Removed 1965 · natural causes' } },
+        aliases: { ko: ['나서경'], en: ['Lo Jui-ching'] },
+        career: [
+            { y: '1949–1959', r: { ko: '공안부장', en: 'Minister of Public Security' } },
+            { y: '1959–1965', r: { ko: '인민해방군 총참모장', en: 'Chief of the General Staff' } },
+        ],
+        sources: [W + 'Luo_Ruiqing', W + 'Cultural_Revolution'], locator: L,
+    },
+    {
+        id: 'li-xiannian', group: 'china-mao-era',
+        family: { ko: '리', en: 'Li' }, given: { ko: '셴녠', en: 'Xiannian' }, native: '李先念',
+        years: '1909–1992', role: 'socialist-bloc-leader',
+        epithet: { ko: '문화대혁명을 살아남은 재정 책임자, 4인방 체포에 가담하고 국가주석이 된 「팔대 원로」', en: 'The finance chief who survived the Cultural Revolution, helped arrest the Gang of Four and became president; one of the “eight elders”' },
+        bio: {
+            ko: '후베이 목수 출신으로 제4방면군의 정치위원이었고 서로군 궤멸 뒤 살아남았다. 항일전쟁기 후베이의 신4군 제5사단을 세웠고 국공내전 초기 중원 돌파를 이끌었다. 1954년부터 재정부장으로 22년간 경제 운영을 맡았으며 문화대혁명에서도 저우언라이 곁에서 살아남았다. 1976년 4인방 체포에 참여했고 화궈펑의 「양개범시」와 덩샤오핑 사이에서 천윈과 함께 계획경제 우선을 주장했다. 1983~1988년 국가주석을 지냈으며 1989년 강경 진압을 지지했다.',
+            en: 'A carpenter from Hubei, he was a political commissar of the Fourth Front Army and survived the destruction of the Western Route Army. He founded the New Fourth Army’s Fifth Division in Hubei during the war with Japan and led the breakout from the Central Plains at the start of the civil war. Finance minister for twenty-two years from 1954, he ran the economy and survived the Cultural Revolution at Zhou Enlai’s side. He joined the arrest of the Gang of Four in 1976 and, between Hua Guofeng’s “two whatevers” and Deng Xiaoping, argued with Chen Yun for the primacy of planning. President from 1983 to 1988, he backed the crackdown of 1989.',
+        },
+        fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+        aliases: { ko: ['이선념'], en: ['Li Hsien-nien'] },
+        career: [
+            { y: '1954–1975', r: { ko: '재정부장', en: 'Minister of Finance' } },
+            { y: '1983–1988', r: { ko: '중화인민공화국 주석', en: 'President of the People’s Republic of China' } },
+        ],
+        sources: [W + 'Li_Xiannian'], locator: L,
+    },
+    {
+        id: 'deng-tuo', group: 'china-mao-era',
+        family: { ko: '덩', en: 'Deng' }, given: { ko: '퉈', en: 'Tuo' }, native: '邓拓',
+        years: '1912–1966', role: 'writer-artist',
+        epithet: { ko: '『인민일보』 편집장, 『연산야화』로 대약진을 풍자했다는 이유로 문화대혁명의 첫 희생자가 된 언론인', en: 'People’s Daily editor whose Evening Chats at Yanshan were read as satire of the Great Leap, the Cultural Revolution’s first victim' },
+        bio: {
+            ko: '푸젠 출신 역사학자·언론인으로 항일전쟁기 진차지 근거지에서 신문을 만들고 최초의 『마오쩌둥 선집』을 편집했다. 1949년부터 『인민일보』 편집장·사장을 맡았으나 1957년 마오에게 「서생 논정(書生辦報)」이라 질책받고 물러났다. 베이징시 당위원회 서기로 1961~1962년 『베이징만보』에 연재한 잡문 『연산야화』와 우한·랴오모사와 함께 쓴 『삼가촌 찰기』는 1966년 「반당 독초」로 규정되어 문화대혁명의 서막이 되었고, 그는 그해 5월 자살했다. 1979년 복권되었다.',
+            en: 'A historian and journalist from Fujian, he ran newspapers in the Jin-Cha-Ji base during the war with Japan and edited the first Selected Works of Mao Zedong. Editor and then director of People’s Daily from 1949, he was rebuked by Mao in 1957 for running a “scholars’ paper” and stepped down. As a Beijing party secretary he wrote Evening Chats at Yanshan for the Beijing Evening News in 1961–1962 and, with Wu Han and Liao Mosha, Notes from Three-Family Village; in 1966 these were condemned as “anti-party poisonous weeds”, opening the Cultural Revolution, and he killed himself that May. He was rehabilitated in 1979.',
+        },
+        fate: { kind: 'suicide', label: { ko: '자살', en: 'Suicide' } },
+        aliases: { ko: ['등탁', '마난춘'], en: ['Teng T’o', 'Ma Nancun'] },
+        career: [
+            { y: '1949–1958', r: { ko: '『인민일보』 편집장 · 사장', en: 'Editor-in-chief and director of People’s Daily' } },
+        ],
+        sources: [W + 'Deng_Tuo', W + 'Cultural_Revolution'], locator: L,
+    },
+    {
+        id: 'wu-han', group: 'china-mao-era',
+        family: { ko: '우', en: 'Wu' }, given: { ko: '한', en: 'Han' }, native: '吴晗',
+        years: '1909–1969', role: 'scholar',
+        epithet: { ko: '명사(明史) 연구자이자 베이징 부시장, 역사극 『해서파관』 비판으로 문화대혁명의 도화선이 된 인물', en: 'Ming historian and Beijing vice-mayor whose play Hai Rui Dismissed from Office became the fuse of the Cultural Revolution' },
+        bio: {
+            ko: '저장 출신으로 후스의 제자였던 명대사 연구자였고 1940년대 민주동맹의 활동가였다. 건국 후 베이징시 부시장으로 문화·교육을 맡았다. 1961년 마오의 권유로 쓴 역사극 『해서파관』은 청렴한 관리 해서가 황제에게 파면되는 이야기였는데, 1965년 11월 야오원위안이 이를 펑더화이 실각을 옹호하는 「독초」라 비판한 글이 문화대혁명의 신호탄이 되었다. 그는 1966년 체포되어 1969년 옥중에서 사망했고 아내와 딸도 박해로 죽었다. 1979년 복권되었다.',
+            en: 'A Ming historian from Zhejiang and a student of Hu Shih, he was active in the Democratic League in the 1940s and after 1949 served as vice-mayor of Beijing for culture and education. His 1961 play Hai Rui Dismissed from Office, written at Mao’s own suggestion, told of an upright official dismissed by the emperor; in November 1965 Yao Wenyuan’s attack on it as a “poisonous weed” defending Peng Dehuai was the opening shot of the Cultural Revolution. Arrested in 1966, he died in prison in 1969; his wife and daughter also died in the persecution. He was rehabilitated in 1979.',
+        },
+        fate: { kind: 'natural', label: { ko: '옥사', en: 'Died in prison' } },
+        aliases: { ko: ['오함'], en: ['Wu Han'] },
+        career: [
+            { y: '1949–1966', r: { ko: '베이징시 부시장', en: 'Vice-Mayor of Beijing' } },
+        ],
+        sources: [W + 'Wu_Han_(historian)', W + 'Cultural_Revolution'], locator: L,
+    },
+    {
+        id: 'yao-wenyuan', group: 'china-mao-era',
+        family: { ko: '야오', en: 'Yao' }, given: { ko: '원위안', en: 'Wenyuan' }, native: '姚文元',
+        years: '1931–2005', role: 'non-soviet-revolutionary',
+        epithet: { ko: '『해서파관』 비판문으로 문화대혁명의 문을 연 4인방의 이론가, 「몽둥이」라 불린 평론가', en: 'The Gang of Four’s theorist whose attack on Hai Rui Dismissed from Office opened the Cultural Revolution; the critic nicknamed “the cudgel”' },
+        bio: {
+            ko: '상하이의 문예평론가로 1957년 반우파 투쟁 때 공격적 비판문으로 마오의 눈에 들었다. 장칭·장춘차오의 지시로 1965년 11월 『문회보』에 「신편 역사극 해서파관을 평함」을 발표해 문화대혁명의 서막을 열었고, 중앙문혁소조원으로 선전을 장악했다. 1969년 정치국원이 되어 상하이 그룹의 일원으로 「린뱌오와 공자 비판」 등 운동을 이끌었다. 1976년 10월 4인방으로 체포되어 1981년 20년형을 받았고 1996년 출소 뒤 2005년 사망했다.',
+            en: 'A Shanghai literary critic, he caught Mao’s eye with aggressive polemics during the 1957 anti-rightist campaign. At the direction of Jiang Qing and Zhang Chunqiao he published “On the New Historical Play Hai Rui Dismissed from Office” in Wenhui Bao in November 1965, the opening of the Cultural Revolution, and as a member of the Cultural Revolution Group controlled propaganda. A Politburo member from 1969 and part of the Shanghai group, he ran campaigns such as “Criticise Lin Biao and Confucius”. Arrested with the Gang of Four in October 1976, he received twenty years in 1981, was released in 1996 and died in 2005.',
+        },
+        fate: { kind: 'deposed', label: { ko: '체포 1976 · 자연사', en: 'Arrested 1976 · natural causes' } },
+        aliases: { ko: ['요문원'], en: ['Yao Wen-yuan'] },
+        career: [
+            { y: '1966–1969', r: { ko: '중앙문화혁명소조원', en: 'Member of the Central Cultural Revolution Group' } },
+            { y: '1969–1976', r: { ko: '중공 중앙 정치국원', en: 'Member of the Politburo' } },
+        ],
+        sources: [W + 'Yao_Wenyuan', W + 'Gang_of_Four'], locator: L,
+    },
+    {
+        id: 'wang-hongwen', group: 'china-mao-era',
+        family: { ko: '왕', en: 'Wang' }, given: { ko: '훙원', en: 'Hongwen' }, native: '王洪文',
+        years: '1935–1992', role: 'non-soviet-revolutionary',
+        epithet: { ko: '상하이 노동자 반란파에서 당 부주석까지 오른 「헬리콥터」, 4인방의 최연소', en: 'The Shanghai worker-rebel who rose “like a helicopter” to party vice-chairman, youngest of the Gang of Four' },
+        bio: {
+            ko: '지린 출신으로 한국전쟁에 참전한 뒤 상하이 면방직공장의 보위 간부였다. 1966년 노동자 반란 조직 「공총사」를 이끌어 1967년 1월 상하이 시정부를 접수한 「1월 폭풍」의 주역이 되었고, 장춘차오·야오원위안과 함께 상하이 혁명위원회를 이끌었다. 마오가 「노동자 출신 후계자」로 발탁해 1973년 제10차 당대회에서 당 부주석이 되었으나 경험 부족으로 「헬리콥터」라 조롱받았다. 1976년 10월 4인방으로 체포되어 1981년 무기징역을 선고받았고 1992년 옥중 간질환으로 사망했다.',
+            en: 'From Jilin, he fought in the Korean War and became a security cadre at a Shanghai cotton mill. In 1966 he led the worker-rebel “Workers’ General Headquarters”, the driving force of the “January Storm” that seized the Shanghai government in 1967, and ran the Shanghai Revolutionary Committee with Zhang Chunqiao and Yao Wenyuan. Picked by Mao as a successor of worker origin, he became party vice-chairman at the Tenth Congress in 1973, mocked as a “helicopter” for his rapid, inexperienced rise. Arrested with the Gang of Four in October 1976, he was sentenced to life in 1981 and died of liver disease in custody in 1992.',
+        },
+        fate: { kind: 'deposed', label: { ko: '체포 1976 · 병사', en: 'Arrested 1976 · illness' } },
+        aliases: { ko: ['왕홍문'], en: ['Wang Hung-wen'] },
+        career: [
+            { y: '1967–1976', r: { ko: '상하이 혁명위원회 부주임', en: 'Vice-chairman of the Shanghai Revolutionary Committee' } },
+            { y: '1973–1976', r: { ko: '중공 중앙 부주석', en: 'Vice-Chairman of the Central Committee' } },
+        ],
+        sources: [W + 'Wang_Hongwen', W + 'Gang_of_Four'], locator: L,
+    },
+    {
+        id: 'wang-dongxing', group: 'china-mao-era',
+        family: { ko: '왕', en: 'Wang' }, given: { ko: '둥싱', en: 'Dongxing' }, native: '汪东兴',
+        years: '1916–2015', role: 'non-soviet-revolutionary',
+        epithet: { ko: '마오의 경호대장, 중난하이의 8341부대로 4인방을 체포한 뒤 「양개범시」로 밀려난 인물', en: 'Mao’s bodyguard chief whose Zhongnanhai Unit 8341 arrested the Gang of Four, then pushed aside for the “two whatevers”' },
+        bio: {
+            ko: '장시 출신으로 대장정 뒤 마오의 경호를 맡았고 1949년부터 중앙경위국(8341부대) 책임자로 지도부의 안전과 일상을 관리했다. 문화대혁명기 중앙판공청 주임으로 마오의 신임을 받았으며 1976년 10월 예젠잉·화궈펑과 함께 8341부대를 동원해 장칭 등 4인방을 체포했다. 1977년 당 부주석이 되었으나 화궈펑의 「양개범시」를 지지해 덩샤오핑과 대립했고, 1980년 부주석직에서 물러나 정치적으로 퇴장했다. 2015년 99세로 사망했다.',
+            en: 'From Jiangxi, he guarded Mao after the Long March and from 1949 headed the Central Guard Bureau (Unit 8341), managing the leadership’s security and daily life. Director of the General Office during the Cultural Revolution and trusted by Mao, in October 1976 he used Unit 8341 with Ye Jianying and Hua Guofeng to arrest Jiang Qing and the Gang of Four. Made party vice-chairman in 1977, he backed Hua’s “two whatevers” against Deng Xiaoping, resigned the vice-chairmanship in 1980 and left politics. He died in 2015 at 99.',
+        },
+        fate: { kind: 'deposed', label: { ko: '퇴임 1980 · 자연사', en: 'Left office 1980 · natural causes' } },
+        aliases: { ko: ['왕동흥'], en: ['Wang Tung-hsing'] },
+        career: [
+            { y: '1949–1977', r: { ko: '중앙경위국(8341부대) 국장', en: 'Director of the Central Guard Bureau (Unit 8341)' } },
+            { y: '1977–1980', r: { ko: '중공 중앙 부주석', en: 'Vice-Chairman of the Central Committee' } },
+        ],
+        sources: [W + 'Wang_Dongxing', W + 'Gang_of_Four'], locator: L,
+    },
+    {
+        id: 'rao-shushi', group: 'china-mao-era',
+        family: { ko: '라오', en: 'Rao' }, given: { ko: '수스', en: 'Shushi' }, native: '饶漱石',
+        years: '1903–1975', role: 'non-soviet-revolutionary',
+        epithet: { ko: '「가오강·라오수스 반당연맹」으로 건국 후 첫 고위 숙청에 걸린 화둥의 지도자', en: 'The East China leader purged with Gao Gang in the “Gao–Rao anti-party alliance”, the People’s Republic’s first high-level purge' },
+        bio: {
+            ko: '장시 출신으로 1941년 완난 사변 뒤 신4군 정치위원이 되었고 국공내전기 화둥국 서기로 천이와 함께 화둥을 관할했다. 건국 후 화둥 군정위원회 주석과 중앙조직부장을 맡았다. 1953년 가오강과 함께 류사오치·저우언라이를 밀어내려 했다는 이유로 1954년 「가오강·라오수스 반당연맹」으로 비판받고 1955년 체포되었다. 재판 없이 수감되었다가 1975년 옥중에서 사망했으며, 가오강과 달리 공식 복권은 이루어지지 않았다.',
+            en: 'From Jiangxi, he became political commissar of the New Fourth Army after the 1941 incident and, as secretary of the East China Bureau in the civil war, ran the region with Chen Yi. After 1949 he chaired the East China military-administrative committee and headed the Central Organisation Department. Accused in 1953–1954 of plotting with Gao Gang to displace Liu Shaoqi and Zhou Enlai, he was condemned as the “Gao–Rao anti-party alliance” and arrested in 1955. Held without trial, he died in prison in 1975 and, unlike Gao Gang, was never formally rehabilitated.',
+        },
+        fate: { kind: 'deposed', label: { ko: '체포 1955 · 옥사', en: 'Arrested 1955 · died in prison' } },
+        aliases: { ko: ['요수석'], en: ['Jao Shu-shih'] },
+        career: [
+            { y: '1949–1952', r: { ko: '화둥 군정위원회 주석', en: 'Chairman of the East China Military and Administrative Committee' } },
+            { y: '1953–1954', r: { ko: '중공 중앙 조직부장', en: 'Head of the Central Organisation Department' } },
+        ],
+        sources: [W + 'Rao_Shushi', W + 'Gao_Gang'], locator: L,
+    },
+    {
+        id: 'chen-yonggui', group: 'china-mao-era',
+        family: { ko: '천', en: 'Chen' }, given: { ko: '융구이', en: 'Yonggui' }, native: '陈永贵',
+        years: '1915–1986', role: 'non-soviet-revolutionary',
+        epithet: { ko: '「농업은 다자이를 배우자」의 모델 마을 지도자에서 부총리까지 오른 농민', en: 'The peasant leader of the model village behind “In agriculture, learn from Dazhai”, who rose to vice-premier' },
+        bio: {
+            ko: '산시 시양현 다자이촌의 문맹에 가까운 농민으로 생산대대 서기로 계단밭을 일구고 1963년 홍수 뒤 국가 지원 없이 마을을 재건해 이름을 얻었다. 1964년 마오가 「농업은 다자이를 배우자」고 하면서 전국의 모델이 되었고, 그는 1969년 중앙위원, 1973년 정치국원, 1975년 국무원 부총리가 되어 농업을 맡았다. 다자이 모델은 집단노동과 자력갱생을 내세웠으나 통계 부풀리기와 강제성이 드러났고, 개혁개방 뒤 1980년 부총리에서 물러나 베이징 교외 농장에서 살다 폐암으로 사망했다.',
+            en: 'A barely literate peasant from Dazhai in Xiyang County, Shanxi, he terraced hillsides as brigade secretary and rebuilt the village after the 1963 floods without state aid. When Mao said in 1964 “In agriculture, learn from Dazhai” the village became the national model, and Chen became a Central Committee member in 1969, a Politburo member in 1973 and vice-premier for agriculture in 1975. The Dazhai model preached collective labour and self-reliance, but inflated statistics and coercion came to light; after the reforms began he left the vice-premiership in 1980, lived on a farm outside Beijing and died of lung cancer.',
+        },
+        fate: { kind: 'deposed', label: { ko: '퇴임 1980 · 폐암', en: 'Left office 1980 · lung cancer' } },
+        aliases: { ko: ['진영귀'], en: ['Ch’en Yung-kuei'] },
+        career: [
+            { y: '1975–1980', r: { ko: '국무원 부총리 (농업)', en: 'Vice-Premier for agriculture' } },
+        ],
+        sources: [W + 'Chen_Yonggui'], locator: L,
+    },
+];
