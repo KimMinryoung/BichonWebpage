@@ -22,30 +22,37 @@ async function loadStandardizedPeople(lang, options = {}) {
     return { lang, catalog, loaded, standardized };
 }
 
-// Standalone groups sit outside the Soviet/Russian era sequence and render at
-// the end of the people page inside one boxed "소련 밖 인물들" section, in
-// this order.
-const STANDALONE_GROUP_IDS = [
+// The people page is boxed into shelves: the Soviet era sequence, the Chinese
+// era sequence (migration 182), then the groups outside both states. A group's
+// shelf is data (commulingo_people_groups.shelf); this list only fixes the
+// order the shelves render in. Snapshots written before the column existed
+// carry no shelf, so the groups that used to be hard-coded as standalone fall
+// back to the world shelf and everything else to the Soviet one.
+const SHELF_ORDER = ['soviet', 'china', 'world'];
+const LEGACY_WORLD_GROUP_IDS = [
     'international-revolutionary',
     'foreign-statesmen',
     'international-counterrevolutionary',
+    'scholar',
 ];
 
-// Shell metadata for the people page: group headers, per-group person ids
-// (the client resolves #p-<id> deep links against them), and name links for
-// the <noscript>/crawler fallback.
+function shelfOf(group) {
+    if (group.shelf && SHELF_ORDER.includes(group.shelf)) return group.shelf;
+    return LEGACY_WORLD_GROUP_IDS.includes(group.id) ? 'world' : 'soviet';
+}
+
+// Shell metadata for the people page: group headers in shelf order, per-group
+// person ids (the client resolves #p-<id> deep links against them), and name
+// links for the <noscript>/crawler fallback.
 function orderedPeopleGroupsMeta(standardized) {
     const groups = standardized.groups || [];
-    const ordered = groups.filter(group => !STANDALONE_GROUP_IDS.includes(group.id))
-        .concat(STANDALONE_GROUP_IDS
-            .map(id => groups.find(group => group.id === id))
-            .filter(Boolean));
+    const ordered = SHELF_ORDER.flatMap(shelf => groups.filter(group => shelfOf(group) === shelf));
     return ordered.map(group => ({
         id: group.id,
+        shelf: shelfOf(group),
         range: group.range,
         title: group.title,
         blurb: group.blurb,
-        standalone: STANDALONE_GROUP_IDS.includes(group.id),
         count: group.people.length,
         // In card order, so the shell can tell which page a #p-<id> deep link
         // lands on.
@@ -105,4 +112,4 @@ function localizedPersonSections(sections, lang) {
     }).filter(Boolean);
 }
 
-module.exports = { loadStandardizedPeople, STANDALONE_GROUP_IDS, orderedPeopleGroupsMeta, peopleShellFor, sortPeopleChronologically, localizedPersonSections };
+module.exports = { loadStandardizedPeople, SHELF_ORDER, shelfOf, orderedPeopleGroupsMeta, peopleShellFor, sortPeopleChronologically, localizedPersonSections };

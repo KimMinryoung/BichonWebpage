@@ -51,7 +51,7 @@ async function fetchRows() {
         redirects,
     ] = await readSnapshot(client => Promise.all([
         client.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, updated_at
+            `SELECT id, shelf, range_label, title_ko, title_en, blurb_ko, blurb_en, updated_at
              FROM commulingo_people_groups
              ORDER BY sort_order, id`
         ),
@@ -261,6 +261,7 @@ function rowsToPeopleData(rows) {
     return {
         groups: rows.groups.map(row => ({
             id: row.id,
+            shelf: row.shelf || 'soviet',
             range: row.range_label || '',
             title: t(row.title_ko, row.title_en),
             blurb: t(row.blurb_ko, row.blurb_en),

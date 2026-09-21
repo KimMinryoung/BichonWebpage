@@ -369,6 +369,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
     });
     const groups = (data.groups || []).map(group => ({
         id: group.id,
+        shelf: group.shelf || '',
         range: group.range || '',
         period: parsePeriod(group.range || ''),
         title: localize(group.title, lang),

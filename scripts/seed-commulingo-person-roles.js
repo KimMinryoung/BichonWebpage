@@ -62,6 +62,10 @@ async function seedCommuLingoPersonRoles(client) {
         // event lane's historiography sections name and who otherwise had to be
         // filed as revolutionaries or counter-revolutionaries.
         ['scholar', 10, 'library', '연구자', 'Scholar'],
+        // Added 2026-09-21 (migration 182). A commander outside the Soviet
+        // army (Zhu De, Peng Dehuai, Giap) had to wear 비소련 혁명가 or
+        // 사회주의권 지도자; the Soviet marshals keep the 군사·국방 office.
+        ['military-commander', 11, 'shield', '군 지휘관', 'Military commander'],
     ];
     let roleCategoriesInserted = 0;
     for (const category of roleCategories) {

@@ -116,21 +116,21 @@
         // header is the server-rendered page of the same cards
         // (/people/list/<id>), which keeps every person reachable for
         // crawlers and script-less readers.
-        // The groups sit on two boxed shelves: the Soviet-era timeline, then
-        // the standalone groups, which orderedPeopleGroupsMeta always puts
-        // last — so the first shelf closes where the second opens.
-        var sovietShelfOpened = false;
-        var standaloneShelfOpened = false;
+        // The groups sit on boxed shelves (Soviet era sequence, Chinese era
+        // sequence, the world beyond both), which orderedPeopleGroupsMeta
+        // returns in shelf order — so each shelf closes where the next opens.
+        var shelfTitles = {
+            soviet: strings.commuLingoViews.people.peopleOfTheSoviet,
+            china: strings.commuLingoViews.people.peopleOfChina,
+            world: strings.commuLingoViews.people.peopleBeyondTheSoviet
+        };
+        var openShelf = '';
         %>
         <% groupsMeta.forEach(function(group) { %>
-        <% if (!sovietShelfOpened && !group.standalone) { sovietShelfOpened = true; %>
-        <section class="commu-people-shelf" aria-labelledby="commu-people-soviet-title">
-        <h2 class="commu-people-shelf-head" id="commu-people-soviet-title"><%= strings.commuLingoViews.people.peopleOfTheSoviet %></h2>
-        <% } %>
-        <% if (!standaloneShelfOpened && group.standalone) { standaloneShelfOpened = true; %>
-        <% if (sovietShelfOpened) { %></section><% } %>
-        <section class="commu-people-shelf" aria-labelledby="commu-people-standalone-title">
-        <h2 class="commu-people-shelf-head" id="commu-people-standalone-title"><%= strings.commuLingoViews.people.peopleBeyondTheSoviet %></h2>
+        <% if (group.shelf !== openShelf) { %>
+        <% if (openShelf) { %></section><% } openShelf = group.shelf; %>
+        <section class="commu-people-shelf is-shelf-<%= group.shelf %>" aria-labelledby="commu-people-<%= group.shelf %>-title">
+        <h2 class="commu-people-shelf-head" id="commu-people-<%= group.shelf %>-title"><%= shelfTitles[group.shelf] || '' %></h2>
         <% } %>
         <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
             <summary class="commu-people-group-head">
@@ -142,7 +142,7 @@
             <div class="commu-people-grid"></div>
         </details>
         <% }) %>
-        <% if (sovietShelfOpened || standaloneShelfOpened) { %></section><% } %>
+        <% if (openShelf) { %></section><% } %>
     </main>
 
     <%- include('../partials/footer') %>

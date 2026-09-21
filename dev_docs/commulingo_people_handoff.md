@@ -344,16 +344,25 @@ Event grouping and country tags:
 
 Event sources may be book citations as well as URLs; non-URL references render as text.
 
-Current people groups:
+Current people groups (`commulingo_people_groups`; the `shelf` column, migration
+182, says which boxed section of the people page a group renders in —
+`people-view.js` orders the shelves soviet → china → world and nothing in code
+names a group id):
 
-- `old-regime`
-- `bolshevik`
-- `international-revolutionary`
-- `stalin-era`
-- `thaw`
-- `perestroika`
+| shelf | groups |
+| --- | --- |
+| soviet | `old-regime`, `bolshevik`, `stalin-era`, `thaw`, `perestroika` |
+| china | `china-old-regime` (구체제와 국민당), `china-revolution` (혁명 세대 1911–1949), `china-mao-era`, `china-reform` |
+| world | `international-revolutionary`, `foreign-statesmen`, `international-counterrevolutionary`, `scholar` |
 
-`international-revolutionary` holds non-Soviet revolutionaries (Luxemburg, Liebknecht, Gramsci, Mao, Guevara, ...). It renders LAST, under its own '소련 밖의 혁명가들' section heading, independent of the Soviet-era sequence (sort_order 99; standalone list in commulingo-people.ejs). Convention: their `cyrillic` column carries the NATIVE-script name instead (毛泽东, Hồ Chí Minh, Amílcar Cabral, ...).
+The China shelf follows the Soviet assignment rule: people who made the
+revolution stay in 혁명 세대 even when they ruled afterwards (Mao, Zhou, Liu
+Shaoqi — as Stalin is in 혁명 세대), people whose defining role came after 1949
+go to the Mao or reform era, and the Qing officials, warlords and Nationalists
+are the counterpart of the Soviet 구체제. Foreign advisers to the Chinese
+revolution (Borodin, Otto Braun) keep their own groups.
+
+`international-revolutionary` holds non-Soviet, non-Chinese revolutionaries (Luxemburg, Liebknecht, Gramsci, Guevara, ...). Convention for the world shelf: their `cyrillic` column carries the NATIVE-script name instead (Hồ Chí Minh, Amílcar Cabral, ...).
 
 ## Key Files
 
@@ -486,6 +495,7 @@ Use icon ids, not raw SVG:
 - left opposition (office-less role, label '좌익 반대파'/'Left Opposition'): `git-branch`
 - Russian republic leader: `building`
 - socialist-bloc leader (office-less role, label '사회주의권 지도자'/'Socialist-bloc leader'): `orbit`
+- military commander outside the Soviet army (office-less role, label '군 지휘관'/'Military commander', migration 182): `shield`
 
 Design decision: do not use swords for defence. The Cheka/security tradition uses the "sword" symbol, so defence currently uses `star` for Red Army association.
 

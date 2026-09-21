@@ -2506,6 +2506,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-people-group.is-stalin-era .commu-people-group-head { border-left-color: #8a93a6; }
 .commu-people-group.is-thaw .commu-people-group-head { border-left-color: #4d8fc4; }
 .commu-people-group.is-perestroika .commu-people-group-head { border-left-color: #4aa578; }
+.commu-people-group.is-china-old-regime .commu-people-group-head { border-left-color: #9a7b4f; }
+.commu-people-group.is-china-revolution .commu-people-group-head { border-left-color: #d1473a; }
+.commu-people-group.is-china-mao-era .commu-people-group-head { border-left-color: #8c2f2f; }
+.commu-people-group.is-china-reform .commu-people-group-head { border-left-color: #3f9a8a; }
 
 /* The person groups sit on two boxed shelves — the Soviet timeline and the
    people beyond it — in the same grammar as the index's book shelves: a card
@@ -2743,6 +2747,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-person-medal.is-stalin-era { border-color: #8a93a6; color: #8a93a6; }
 .commu-person-medal.is-thaw { border-color: #4d8fc4; color: #4d8fc4; }
 .commu-person-medal.is-perestroika { border-color: #4aa578; color: #4aa578; }
+.commu-person-medal.is-china-old-regime { border-color: #9a7b4f; color: #9a7b4f; }
+.commu-person-medal.is-china-revolution { border-color: #d1473a; color: #d1473a; }
+.commu-person-medal.is-china-mao-era { border-color: #8c2f2f; color: #8c2f2f; }
+.commu-person-medal.is-china-reform { border-color: #3f9a8a; color: #3f9a8a; }
 
 /* .commu-role-icon lives in commulingo-crumb.css — the document reader loads
    that file alone and the crumb's home glyph needs it. */
@@ -3074,6 +3082,10 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-role-tag.is-stalin-era { border-left-color: #8a93a6; }
 .commu-person-role-tag.is-thaw { border-left-color: #4d8fc4; }
 .commu-person-role-tag.is-perestroika { border-left-color: #4aa578; }
+.commu-person-role-tag.is-china-old-regime { border-left-color: #9a7b4f; }
+.commu-person-role-tag.is-china-revolution { border-left-color: #d1473a; }
+.commu-person-role-tag.is-china-mao-era { border-left-color: #8c2f2f; }
+.commu-person-role-tag.is-china-reform { border-left-color: #3f9a8a; }
 
 .commu-people-group-count,
 .commu-event-people-count {
@@ -3205,6 +3217,10 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-detail-head.is-stalin-era { border-left-color: #8a93a6; }
 .commu-person-detail-head.is-thaw { border-left-color: #4d8fc4; }
 .commu-person-detail-head.is-perestroika { border-left-color: #4aa578; }
+.commu-person-detail-head.is-china-old-regime { border-left-color: #9a7b4f; }
+.commu-person-detail-head.is-china-revolution { border-left-color: #d1473a; }
+.commu-person-detail-head.is-china-mao-era { border-left-color: #8c2f2f; }
+.commu-person-detail-head.is-china-reform { border-left-color: #3f9a8a; }
 
 .commu-person-detail-top {
     align-items: flex-start;
