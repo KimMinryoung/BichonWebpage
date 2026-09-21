@@ -6,7 +6,7 @@ module.exports = [
     {
         id: 'yuan-shikai', group: 'china-old-regime',
         family: { ko: '위안', en: 'Yuan' }, given: { ko: '스카이', en: 'Shikai' }, native: '袁世凯',
-        years: '1859–1916', role: 'counterrevolution',
+        years: '1859–1916', role: 'qing-kuomintang-warlords',
         epithet: { ko: '신해혁명의 성과를 가로채 황제가 되려 한 북양군벌의 총수', en: 'The Beiyang strongman who took over the 1911 revolution and tried to make himself emperor' },
         bio: {
             ko: '청 말 북양신군을 키운 군인·관료였다. 1911년 신해혁명이 일어나자 청 조정과 혁명파 사이에서 양쪽을 압박해 1912년 청 황제의 퇴위와 자신의 중화민국 임시대총통 취임을 함께 얻어냈다. 이후 국회를 무력화하고 국민당을 해산했으며, 1915년 말 스스로 황제를 칭했다가 각 성의 반발로 이듬해 제정을 취소하고 곧 병사했다. 그의 죽음 뒤 북양군은 분열해 군벌 시대가 열렸다.',
@@ -24,7 +24,7 @@ module.exports = [
     {
         id: 'wang-jingwei', group: 'china-old-regime',
         family: { ko: '왕', en: 'Wang' }, given: { ko: '징웨이', en: 'Jingwei' }, native: '汪精卫',
-        years: '1883–1944', role: 'counterrevolution',
+        years: '1883–1944', role: 'qing-kuomintang-warlords',
         epithet: { ko: '쑨원의 후계자에서 일본 점령하 난징 정권의 수반이 된 국민당 좌파', en: 'Sun Yat-sen’s heir and Kuomintang left leader who ended as head of the Japanese-sponsored Nanjing regime' },
         bio: {
             ko: '청 섭정왕 암살 미수로 이름을 얻은 동맹회 혁명가로, 쑨원의 유촉을 받아쓴 측근이었다. 1927년 우한 국민정부를 이끌며 한때 공산당과의 합작을 유지했으나 그해 7월 분공(分共)으로 돌아섰다. 이후 장제스와 경쟁·협력을 반복하다 1938년 충칭을 떠나 일본과의 「평화」를 주장했고, 1940년 일본이 세운 난징 국민정부의 주석이 되었다. 1944년 나고야에서 병사했으며 중국에서는 대표적 한간(漢奸)으로 기억된다.',
@@ -42,7 +42,7 @@ module.exports = [
     {
         id: 'zhang-xueliang', group: 'china-old-regime',
         family: { ko: '장', en: 'Zhang' }, given: { ko: '쉐량', en: 'Xueliang' }, native: '张学良',
-        years: '1901–2001', role: 'military-commander',
+        years: '1901–2001', role: 'qing-kuomintang-warlords',
         epithet: { ko: '시안에서 장제스를 감금해 제2차 국공합작의 길을 연 「젊은 원수」', en: 'The “Young Marshal” who detained Chiang Kai-shek at Xi’an and opened the way to the second united front' },
         bio: {
             ko: '만주 군벌 장쭤린의 아들로 1928년 아버지가 일본군에 폭살되자 동북을 물려받았고, 그해 말 난징 국민정부에 귀순했다. 1931년 만주사변으로 근거지를 잃은 뒤 공산당 토벌에 투입되었으나, 1936년 12월 시안에서 양후청과 함께 장제스를 감금해 내전 중지와 항일을 요구했다. 사건은 저우언라이의 중재로 풀렸지만 그는 장제스와 함께 난징으로 돌아가 이후 반세기 넘게 연금되었다. 1990년대 풀려나 하와이에서 100세로 사망했다.',
@@ -59,7 +59,7 @@ module.exports = [
     {
         id: 'puyi', group: 'china-old-regime',
         family: { ko: '푸이', en: 'Puyi' }, native: '溥仪',
-        years: '1906–1967', role: 'counterrevolution',
+        years: '1906–1967', role: 'qing-kuomintang-warlords',
         epithet: { ko: '청의 마지막 황제이자 만주국의 꼭두각시 황제, 인민공화국의 「개조된」 시민', en: 'Last emperor of the Qing, puppet emperor of Manchukuo, and a “remoulded” citizen of the People’s Republic' },
         bio: {
             ko: '세 살에 청의 선통제로 즉위해 1912년 신해혁명으로 퇴위했다. 자금성에 머물다 1924년 쫓겨나 톈진의 일본 조계로 갔고, 1932년 일본이 세운 만주국의 집정, 1934년부터 황제가 되었다. 1945년 소련군에 붙잡혀 억류된 뒤 1950년 중국에 송환되어 푸순 전범관리소에서 개조 교육을 받았고 1959년 특사로 풀려났다. 베이징 식물원 정원사와 정협 위원으로 살다 문화대혁명 초기인 1967년 병사했다.',

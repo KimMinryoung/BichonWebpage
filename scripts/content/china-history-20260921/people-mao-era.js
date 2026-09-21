@@ -6,7 +6,7 @@ module.exports = [
     {
         id: 'kang-sheng', group: 'china-mao-era',
         family: { ko: '캉', en: 'Kang' }, given: { ko: '성', en: 'Sheng' }, native: '康生',
-        years: '1898–1975', role: 'non-soviet-revolutionary',
+        years: '1898–1975', role: 'ccp-security',
         epithet: { ko: '옌안 정풍의 「구조(搶救)」 운동부터 문화대혁명까지 당의 보안·정보를 쥔 마오의 심문관', en: 'Mao’s inquisitor who ran party security and intelligence from the Yan’an “rescue” campaign to the Cultural Revolution' },
         bio: {
             ko: '산둥의 지주 집안 출신으로 상하이 지하활동을 거쳐 1933년 모스크바에서 왕밍의 오른팔로 소련 숙청을 배웠다. 1937년 옌안에 돌아와 마오 편에 서서 사회부장으로 정풍운동의 「구조 운동」을 지휘해 수천 명을 특무로 몰았다. 건국 후 한동안 물러났다가 1960년대 중소 논쟁과 문화대혁명에서 중앙문혁소조 고문으로 복귀해 류사오치·허룽 등 원로들에 대한 조사와 박해를 주도했다. 1975년 암으로 사망했고 1980년 당적을 박탈당했다.',
@@ -24,7 +24,7 @@ module.exports = [
     {
         id: 'chen-boda', group: 'china-mao-era',
         family: { ko: '천', en: 'Chen' }, given: { ko: '보다', en: 'Boda' }, native: '陈伯达',
-        years: '1904–1989', role: 'theorist',
+        years: '1904–1989', role: 'ccp-ideology-propaganda',
         epithet: { ko: '마오의 정치비서 겸 「마오쩌둥 사상」의 이론가, 중앙문혁소조 조장에서 1970년 실각', en: 'Mao’s political secretary and the codifier of “Mao Zedong Thought”, head of the Cultural Revolution Group until his fall in 1970' },
         bio: {
             ko: '푸젠 출신으로 모스크바 중산대학에서 배운 뒤 1937년 옌안에서 마오의 정치비서가 되어 마오의 저작을 다듬고 「마오쩌둥 사상」이라는 용어를 정착시켰다. 건국 후 『홍기』 편집장과 선전 분야 책임자로 대약진의 이론을 썼고, 1966년 중앙문화혁명소조 조장으로 문화대혁명을 추진했다. 1970년 루산 회의에서 린뱌오 쪽에 서 국가주석직 문제로 마오의 분노를 사 실각했고, 1981년 「린뱌오·장칭 반혁명집단」 재판에서 18년형을 받았다. 1989년 사망했다.',
@@ -59,7 +59,7 @@ module.exports = [
     {
         id: 'chen-yi', group: 'china-mao-era',
         family: { ko: '천', en: 'Chen' }, given: { ko: '이', en: 'Yi' }, native: '陈毅',
-        years: '1901–1972', role: 'military-commander',
+        years: '1901–1972', role: 'prc-foreign-affairs',
         epithet: { ko: '신4군과 제3야전군을 이끈 시인 원수, 저우언라이를 이은 외교부장', en: 'The poet-marshal who led the New Fourth Army and the Third Field Army and succeeded Zhou Enlai as foreign minister' },
         bio: {
             ko: '쓰촨 출신으로 프랑스 근공검학 뒤 입당했고 난창 봉기 잔여 부대를 주더와 함께 징강산으로 이끌었다. 대장정에 참여하지 않고 남방에서 3년 유격전을 버텼으며 1941년 완난 사변 뒤 신4군 대리군장이 되었다. 국공내전에서 화둥 야전군(제3야전군)을 지휘해 회하이 전역에 참전하고 상하이를 점령해 초대 시장이 되었다. 1955년 원수, 1958년 외교부장이 되어 반둥 노선의 아시아·아프리카 외교를 이끌었다. 문화대혁명에서 「2월 역류」로 비판받았고 1972년 암으로 사망했으며 마오가 장례에 참석했다.',
@@ -110,7 +110,7 @@ module.exports = [
     {
         id: 'luo-ruiqing', group: 'china-mao-era',
         family: { ko: '뤄', en: 'Luo' }, given: { ko: '루이칭', en: 'Ruiqing' }, native: '罗瑞卿',
-        years: '1906–1978', role: 'non-soviet-revolutionary',
+        years: '1906–1978', role: 'ccp-security',
         epithet: { ko: '초대 공안부장이자 총참모장, 문화대혁명 전야에 린뱌오의 표적이 되어 실각한 인물', en: 'First minister of public security and chief of the general staff, purged on the eve of the Cultural Revolution as Lin Biao’s target' },
         bio: {
             ko: '쓰촨 출신 황푸 6기생으로 홍군 정치·보위 부문에서 일했고 항일군정대학 교육장이었다. 1949년 초대 공안부장이 되어 반혁명 진압운동과 공안 체계를 세웠고, 1959년 펑더화이 실각 뒤 총참모장으로 군을 관리했다. 정치보다 훈련을 앞세운 그는 1965년 말 린뱌오의 고발로 「군권 탈취」를 꾀했다는 비판을 받아 실각했고, 1966년 자살을 기도해 다리를 다쳤다. 1977년 복권되어 군사위원회 비서장이 되었으나 이듬해 서독에서 수술 후 사망했다.',
@@ -127,7 +127,7 @@ module.exports = [
     {
         id: 'li-xiannian', group: 'china-mao-era',
         family: { ko: '리', en: 'Li' }, given: { ko: '셴녠', en: 'Xiannian' }, native: '李先念',
-        years: '1909–1992', role: 'socialist-bloc-leader',
+        years: '1909–1992', role: 'prc-economy-planning',
         epithet: { ko: '문화대혁명을 살아남은 재정 책임자, 4인방 체포에 가담하고 국가주석이 된 「팔대 원로」', en: 'The finance chief who survived the Cultural Revolution, helped arrest the Gang of Four and became president; one of the “eight elders”' },
         bio: {
             ko: '후베이 목수 출신으로 제4방면군의 정치위원이었고 서로군 궤멸 뒤 살아남았다. 항일전쟁기 후베이의 신4군 제5사단을 세웠고 국공내전 초기 중원 돌파를 이끌었다. 1954년부터 재정부장으로 22년간 경제 운영을 맡았으며 문화대혁명에서도 저우언라이 곁에서 살아남았다. 1976년 4인방 체포에 참여했고 화궈펑의 「양개범시」와 덩샤오핑 사이에서 천윈과 함께 계획경제 우선을 주장했다. 1983~1988년 국가주석을 지냈으며 1989년 강경 진압을 지지했다.',
@@ -144,7 +144,7 @@ module.exports = [
     {
         id: 'deng-tuo', group: 'china-mao-era',
         family: { ko: '덩', en: 'Deng' }, given: { ko: '퉈', en: 'Tuo' }, native: '邓拓',
-        years: '1912–1966', role: 'writer-artist',
+        years: '1912–1966', role: 'ccp-ideology-propaganda',
         epithet: { ko: '『인민일보』 편집장, 『연산야화』로 대약진을 풍자했다는 이유로 문화대혁명의 첫 희생자가 된 언론인', en: 'People’s Daily editor whose Evening Chats at Yanshan were read as satire of the Great Leap, the Cultural Revolution’s first victim' },
         bio: {
             ko: '푸젠 출신 역사학자·언론인으로 항일전쟁기 진차지 근거지에서 신문을 만들고 최초의 『마오쩌둥 선집』을 편집했다. 1949년부터 『인민일보』 편집장·사장을 맡았으나 1957년 마오에게 「서생 논정(書生辦報)」이라 질책받고 물러났다. 베이징시 당위원회 서기로 1961~1962년 『베이징만보』에 연재한 잡문 『연산야화』와 우한·랴오모사와 함께 쓴 『삼가촌 찰기』는 1966년 「반당 독초」로 규정되어 문화대혁명의 서막이 되었고, 그는 그해 5월 자살했다. 1979년 복권되었다.',
@@ -176,7 +176,7 @@ module.exports = [
     {
         id: 'yao-wenyuan', group: 'china-mao-era',
         family: { ko: '야오', en: 'Yao' }, given: { ko: '원위안', en: 'Wenyuan' }, native: '姚文元',
-        years: '1931–2005', role: 'non-soviet-revolutionary',
+        years: '1931–2005', role: 'ccp-ideology-propaganda',
         epithet: { ko: '『해서파관』 비판문으로 문화대혁명의 문을 연 4인방의 이론가, 「몽둥이」라 불린 평론가', en: 'The Gang of Four’s theorist whose attack on Hai Rui Dismissed from Office opened the Cultural Revolution; the critic nicknamed “the cudgel”' },
         bio: {
             ko: '상하이의 문예평론가로 1957년 반우파 투쟁 때 공격적 비판문으로 마오의 눈에 들었다. 장칭·장춘차오의 지시로 1965년 11월 『문회보』에 「신편 역사극 해서파관을 평함」을 발표해 문화대혁명의 서막을 열었고, 중앙문혁소조원으로 선전을 장악했다. 1969년 정치국원이 되어 상하이 그룹의 일원으로 「린뱌오와 공자 비판」 등 운동을 이끌었다. 1976년 10월 4인방으로 체포되어 1981년 20년형을 받았고 1996년 출소 뒤 2005년 사망했다.',
@@ -193,7 +193,7 @@ module.exports = [
     {
         id: 'wang-hongwen', group: 'china-mao-era',
         family: { ko: '왕', en: 'Wang' }, given: { ko: '훙원', en: 'Hongwen' }, native: '王洪文',
-        years: '1935–1992', role: 'non-soviet-revolutionary',
+        years: '1935–1992', role: 'ccp-leadership',
         epithet: { ko: '상하이 노동자 반란파에서 당 부주석까지 오른 「헬리콥터」, 4인방의 최연소', en: 'The Shanghai worker-rebel who rose “like a helicopter” to party vice-chairman, youngest of the Gang of Four' },
         bio: {
             ko: '지린 출신으로 한국전쟁에 참전한 뒤 상하이 면방직공장의 보위 간부였다. 1966년 노동자 반란 조직 「공총사」를 이끌어 1967년 1월 상하이 시정부를 접수한 「1월 폭풍」의 주역이 되었고, 장춘차오·야오원위안과 함께 상하이 혁명위원회를 이끌었다. 마오가 「노동자 출신 후계자」로 발탁해 1973년 제10차 당대회에서 당 부주석이 되었으나 경험 부족으로 「헬리콥터」라 조롱받았다. 1976년 10월 4인방으로 체포되어 1981년 무기징역을 선고받았고 1992년 옥중 간질환으로 사망했다.',
@@ -210,7 +210,7 @@ module.exports = [
     {
         id: 'wang-dongxing', group: 'china-mao-era',
         family: { ko: '왕', en: 'Wang' }, given: { ko: '둥싱', en: 'Dongxing' }, native: '汪东兴',
-        years: '1916–2015', role: 'non-soviet-revolutionary',
+        years: '1916–2015', role: 'ccp-security',
         epithet: { ko: '마오의 경호대장, 중난하이의 8341부대로 4인방을 체포한 뒤 「양개범시」로 밀려난 인물', en: 'Mao’s bodyguard chief whose Zhongnanhai Unit 8341 arrested the Gang of Four, then pushed aside for the “two whatevers”' },
         bio: {
             ko: '장시 출신으로 대장정 뒤 마오의 경호를 맡았고 1949년부터 중앙경위국(8341부대) 책임자로 지도부의 안전과 일상을 관리했다. 문화대혁명기 중앙판공청 주임으로 마오의 신임을 받았으며 1976년 10월 예젠잉·화궈펑과 함께 8341부대를 동원해 장칭 등 4인방을 체포했다. 1977년 당 부주석이 되었으나 화궈펑의 「양개범시」를 지지해 덩샤오핑과 대립했고, 1980년 부주석직에서 물러나 정치적으로 퇴장했다. 2015년 99세로 사망했다.',
@@ -227,7 +227,7 @@ module.exports = [
     {
         id: 'rao-shushi', group: 'china-mao-era',
         family: { ko: '라오', en: 'Rao' }, given: { ko: '수스', en: 'Shushi' }, native: '饶漱石',
-        years: '1903–1975', role: 'non-soviet-revolutionary',
+        years: '1903–1975', role: 'ccp-leadership',
         epithet: { ko: '「가오강·라오수스 반당연맹」으로 건국 후 첫 고위 숙청에 걸린 화둥의 지도자', en: 'The East China leader purged with Gao Gang in the “Gao–Rao anti-party alliance”, the People’s Republic’s first high-level purge' },
         bio: {
             ko: '장시 출신으로 1941년 완난 사변 뒤 신4군 정치위원이 되었고 국공내전기 화둥국 서기로 천이와 함께 화둥을 관할했다. 건국 후 화둥 군정위원회 주석과 중앙조직부장을 맡았다. 1953년 가오강과 함께 류사오치·저우언라이를 밀어내려 했다는 이유로 1954년 「가오강·라오수스 반당연맹」으로 비판받고 1955년 체포되었다. 재판 없이 수감되었다가 1975년 옥중에서 사망했으며, 가오강과 달리 공식 복권은 이루어지지 않았다.',
@@ -244,7 +244,7 @@ module.exports = [
     {
         id: 'chen-yonggui', group: 'china-mao-era',
         family: { ko: '천', en: 'Chen' }, given: { ko: '융구이', en: 'Yonggui' }, native: '陈永贵',
-        years: '1915–1986', role: 'non-soviet-revolutionary',
+        years: '1915–1986', role: 'prc-government',
         epithet: { ko: '「농업은 다자이를 배우자」의 모델 마을 지도자에서 부총리까지 오른 농민', en: 'The peasant leader of the model village behind “In agriculture, learn from Dazhai”, who rose to vice-premier' },
         bio: {
             ko: '산시 시양현 다자이촌의 문맹에 가까운 농민으로 생산대대 서기로 계단밭을 일구고 1963년 홍수 뒤 국가 지원 없이 마을을 재건해 이름을 얻었다. 1964년 마오가 「농업은 다자이를 배우자」고 하면서 전국의 모델이 되었고, 그는 1969년 중앙위원, 1973년 정치국원, 1975년 국무원 부총리가 되어 농업을 맡았다. 다자이 모델은 집단노동과 자력갱생을 내세웠으나 통계 부풀리기와 강제성이 드러났고, 개혁개방 뒤 1980년 부총리에서 물러나 베이징 교외 농장에서 살다 폐암으로 사망했다.',

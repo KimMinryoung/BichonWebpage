@@ -6,7 +6,7 @@ module.exports = [
     {
         id: 'hua-guofeng', group: 'china-reform',
         family: { ko: '화', en: 'Hua' }, given: { ko: '궈펑', en: 'Guofeng' }, native: '华国锋',
-        years: '1921–2008', role: 'socialist-bloc-leader',
+        years: '1921–2008', role: 'ccp-leadership',
         epithet: { ko: '「네가 일을 맡으면 내가 안심한다」는 마오의 후계자, 4인방을 체포하고 덩샤오핑에게 밀려났다', en: 'Mao’s designated successor — “With you in charge, I am at ease” — who arrested the Gang of Four and was eased out by Deng Xiaoping' },
         bio: {
             ko: '산시 출신으로 후난에서 지방 간부로 일하다 마오의 눈에 들었고, 1976년 1월 저우언라이 사후 총리 대행, 4월 톈안먼 사건 뒤 제1부주석 겸 총리가 되었다. 마오 사후 10월 예젠잉·왕둥싱과 4인방을 체포하고 당 주석·군사위 주석을 겸했다. 「마오 주석의 결정은 모두 지키고 지시는 모두 따른다」는 양개범시로 정통성을 세우려 했으나 1978년 진리 기준 논쟁과 11기 3중전회에서 덩샤오핑에게 주도권을 잃었고 1980~1981년 총리와 당 주석직을 내놓았다. 2002년까지 중앙위원으로 남았다.',
@@ -32,7 +32,7 @@ module.exports = [
     {
         id: 'hu-yaobang', group: 'china-reform',
         family: { ko: '후', en: 'Hu' }, given: { ko: '야오방', en: 'Yaobang' }, native: '胡耀邦',
-        years: '1915–1989', role: 'socialist-bloc-reform-leader',
+        years: '1915–1989', role: 'ccp-leadership',
         epithet: { ko: '문화대혁명 피해자의 복권과 사상 해방을 이끈 개혁파 총서기, 그의 죽음이 1989년 시위를 불렀다', en: 'The reformist general secretary who rehabilitated the Cultural Revolution’s victims and freed thought; his death sparked the 1989 protests' },
         bio: {
             ko: '후난 출신으로 열네 살에 소년 홍군이 되어 대장정에 참여했고 건국 후 공산주의청년단을 이끌었다. 문화대혁명에서 박해받았으며 1977년 중앙조직부장으로 수백만 건의 억울한 사건을 재심해 복권시켰고, 1978년 「진리 기준」 논쟁을 조직해 덩샤오핑의 복귀를 뒷받침했다. 1981년 당 주석, 1982년 총서기로 개혁개방을 추진했으나 1986년 말 학생 시위 뒤 「자산계급 자유화」에 관대했다는 이유로 1987년 1월 사임을 강요당했다. 1989년 4월 15일 심장마비로 사망했고 추모 집회가 톈안먼 시위로 번졌다.',
@@ -50,7 +50,7 @@ module.exports = [
     {
         id: 'zhao-ziyang', group: 'china-reform',
         family: { ko: '자오', en: 'Zhao' }, given: { ko: '쯔양', en: 'Ziyang' }, native: '赵紫阳',
-        years: '1919–2005', role: 'socialist-bloc-reform-leader',
+        years: '1919–2005', role: 'ccp-leadership',
         epithet: { ko: '쓰촨의 농업개혁에서 총서기까지, 1989년 계엄에 반대해 15년 연금으로 생을 마친 개혁가', en: 'From Sichuan’s farm reforms to general secretary, the reformer who opposed martial law in 1989 and died under house arrest' },
         bio: {
             ko: '허난 출신으로 광둥의 지방 간부였다가 문화대혁명에서 실각했고, 1975년 쓰촨 제1서기로 복귀해 농가생산책임제와 기업 자율화 실험으로 「먹으려면 자오쯔양을 찾으라」는 말을 낳았다. 1980년 총리, 1987년 총서기가 되어 가격개혁과 정치체제 개혁 구상을 추진했다. 1989년 5월 학생 시위에 대한 계엄에 반대해 광장에서 학생들에게 「우리는 너무 늦게 왔다」고 말한 뒤 실각했고, 이후 2005년 죽을 때까지 베이징 자택에 연금되었다. 몰래 녹음한 회고록이 사후 홍콩에서 출간되었다.',
@@ -77,7 +77,7 @@ module.exports = [
     {
         id: 'wan-li', group: 'china-reform',
         family: { ko: '완', en: 'Wan' }, given: { ko: '리', en: 'Li' }, native: '万里',
-        years: '1916–2015', role: 'socialist-bloc-reform-leader',
+        years: '1916–2015', role: 'prc-government',
         epithet: { ko: '「쌀을 먹으려면 완리를 찾으라」 — 안후이에서 농가생산책임제를 허용한 개혁의 선구자', en: '“If you want rice, look for Wan Li” — the reform pioneer who let Anhui’s peasants contract land to households' },
         bio: {
             ko: '산둥 출신으로 건국 후 베이징 부시장으로 인민대회당 등 「10대 건축」을 지휘했고 문화대혁명에서 박해받았다. 1977년 안후이 제1서기로 부임해 기근에 시달리던 농촌에서 샤오강촌의 비밀 토지 분배를 묵인하고 「성위 6조」로 농가생산책임제를 허용해 개혁의 출발점을 만들었다. 1980년 부총리로 전국 농업을 맡아 인민공사를 해체했고 1988~1993년 전국인민대표대회 상무위원장을 지냈다. 1989년 5월 해외 순방 중 귀국해 계엄을 지지했다. 2015년 99세로 사망했다.',
@@ -94,7 +94,7 @@ module.exports = [
     {
         id: 'xi-zhongxun', group: 'china-reform',
         family: { ko: '시', en: 'Xi' }, given: { ko: '중쉰', en: 'Zhongxun' }, native: '习仲勋',
-        years: '1913–2002', role: 'socialist-bloc-reform-leader',
+        years: '1913–2002', role: 'prc-government',
         epithet: { ko: '산베이 근거지의 창건자, 16년 실각 뒤 광둥에서 경제특구를 열어 낸 개혁가', en: 'A founder of the northern Shaanxi base, purged for sixteen years, who opened Guangdong’s special economic zones' },
         bio: {
             ko: '산시 출신으로 류즈단과 함께 산간 근거지를 세워 대장정의 종착지를 마련했다. 건국 후 서북국 서기와 국무원 비서장·부총리를 지냈으나 1962년 소설 『류즈단』이 가오강을 옹호한 「반당」 작품이라는 캉성의 고발로 실각해 16년 동안 감금·하방되었다. 1978년 광둥 제1서기로 복귀해 홍콩 탈출 문제의 해법으로 중앙에 「선행일보(先行一步)」의 권한을 요구했고, 이는 1980년 선전·주하이·산터우 경제특구로 이어졌다. 1980년대 서기처 서기로 후야오방을 지지했으며 1987년 그의 해임에 반대했다. 시진핑의 아버지다.',
@@ -111,7 +111,7 @@ module.exports = [
     {
         id: 'bo-yibo', group: 'china-reform',
         family: { ko: '보', en: 'Bo' }, given: { ko: '이보', en: 'Yibo' }, native: '薄一波',
-        years: '1908–2007', role: 'socialist-bloc-leader',
+        years: '1908–2007', role: 'prc-economy-planning',
         epithet: { ko: '초대 재정부장이자 「61인 반도 사건」의 당사자, 개혁기에 보수적 원로로 돌아온 인물', en: 'First finance minister and central figure of the “61 renegades” case, who returned in the reform era as a conservative elder' },
         bio: {
             ko: '산시 출신으로 1936년 당의 지시로 국민당 감옥에서 「전향서」에 서명하고 출옥한 61명 중 한 사람이었고, 이 일은 문화대혁명에서 「61인 반도 집단」 사건으로 되살아나 그를 12년 감금으로 몰았다. 건국 후 초대 재정부장으로 세제와 통화 통일을 맡았고 1953년 「신세제」 논란으로 마오의 비판을 받았다. 1979년 복귀해 부총리와 중앙고문위원회 부주임으로 「팔대 원로」의 한 사람이 되어 1987년 후야오방 해임 회의를 주재했다. 2007년 98세로 사망했으며 아들이 보시라이다.',
@@ -128,7 +128,7 @@ module.exports = [
     {
         id: 'jiang-zemin', group: 'china-reform',
         family: { ko: '장', en: 'Jiang' }, given: { ko: '쩌민', en: 'Zemin' }, native: '江泽民',
-        years: '1926–2022', role: 'socialist-bloc-leader',
+        years: '1926–2022', role: 'ccp-leadership',
         epithet: { ko: '1989년 상하이에서 발탁된 「핵심」, 톈안먼 이후의 중국을 시장경제와 「3개 대표」로 이끈 총서기', en: 'The “core” plucked from Shanghai in 1989 who led post-Tiananmen China into the market economy and the “Three Represents”' },
         bio: {
             ko: '장쑤 출신 전기공학자로 소련 자동차공장에서 연수했고 1985년 상하이 시장, 1987년 상하이 서기가 되었다. 1989년 시위 때 상하이의 자유주의 신문 『세계경제도보』를 폐간하고 시위를 큰 유혈 없이 수습해 6월 자오쯔양 대신 총서기로 발탁되었다. 1992년 덩샤오핑의 남순강화 뒤 「사회주의 시장경제」를 당의 목표로 삼았고 국유기업 개혁과 WTO 가입, 홍콩 반환을 이끌었다. 2002년 총서기, 2004년 군사위 주석에서 물러나며 「3개 대표」론으로 자본가의 입당을 열었다. 2022년 백혈병으로 사망했다.',
@@ -145,7 +145,7 @@ module.exports = [
     {
         id: 'li-peng', group: 'china-reform',
         family: { ko: '리', en: 'Li' }, given: { ko: '펑', en: 'Peng' }, native: '李鹏',
-        years: '1928–2019', role: 'socialist-bloc-leader',
+        years: '1928–2019', role: 'prc-government',
         epithet: { ko: '1989년 5월 계엄을 선포한 총리, 「베이징의 도살자」라 불린 저우언라이의 양자', en: 'The premier who declared martial law in May 1989, called “the butcher of Beijing”; Zhou Enlai’s ward' },
         bio: {
             ko: '쓰촨 출신으로 아버지가 1931년 국민당에게 처형된 뒤 저우언라이 부부의 보호 아래 자랐다. 모스크바 동력학원에서 수력발전을 배워 전력 관료로 성장했고 1987년 자오쯔양의 뒤를 이어 총리가 되었다. 1989년 5월 18일 학생 대표들과의 텔레비전 대화가 결렬된 뒤 5월 20일 베이징 계엄을 선포했고 6월 4일 진압의 정부 측 책임자가 되었다. 총리 재임 중 삼협댐 건설을 밀어붙였고 1998~2003년 전국인민대표대회 상무위원장을 지냈다. 2019년 사망했다.',
@@ -162,7 +162,7 @@ module.exports = [
     {
         id: 'wei-jingsheng', group: 'china-reform',
         family: { ko: '웨이', en: 'Wei' }, given: { ko: '징성', en: 'Jingsheng' }, native: '魏京生',
-        years: '1950–', role: 'theorist',
+        years: '1950–', role: 'dissident',
         epithet: { ko: '민주의 벽에 「제5의 현대화」를 붙인 전기공, 18년 옥살이 뒤 추방된 민주운동의 상징', en: 'The electrician who pasted “The Fifth Modernisation” on Democracy Wall, deported after eighteen years in prison' },
         bio: {
             ko: '베이징의 고급 간부 집안에서 자라 홍위병으로 지방을 떠돌며 기근의 흔적을 본 뒤 동물원 전기공이 되었다. 1978년 12월 시단 민주의 벽에 「제5의 현대화 — 민주」를 붙여 덩샤오핑의 4개 현대화가 민주 없이는 공허하다고 주장했고 잡지 『탐색』을 냈다. 1979년 3월 체포되어 「반혁명 선전과 군사기밀 누설」로 15년형을 받았으며, 1993년 석방 뒤 다시 체포되어 14년형을 받았다. 1997년 병 치료를 이유로 미국으로 추방되어 망명 민주운동을 이어가고 있다.',
@@ -177,7 +177,7 @@ module.exports = [
     {
         id: 'fang-lizhi', group: 'china-reform',
         family: { ko: '팡', en: 'Fang' }, given: { ko: '리즈', en: 'Lizhi' }, native: '方励之',
-        years: '1936–2012', role: 'scholar',
+        years: '1936–2012', role: 'dissident',
         epithet: { ko: '「중국의 사하로프」, 1986년 학생 시위와 1989년 미국 대사관 피신으로 알려진 천체물리학자', en: '“China’s Sakharov”, the astrophysicist known for the 1986 student protests and his 1989 refuge in the US embassy' },
         bio: {
             ko: '베이징 출신 천체물리학자로 1957년 우파로 몰렸다가 복권되어 중국과학기술대학 부총장이 되었다. 1986년 강연에서 마르크스주의의 과학적 권위와 당의 지도를 공개 비판해 그해 말 학생 시위의 정신적 지주로 지목되었고, 1987년 당적 박탈과 함께 후야오방 실각의 빌미가 되었다. 1989년 1월 덩샤오핑에게 웨이징성 석방을 청원하는 공개서한을 보냈고, 6월 4일 진압 뒤 아내 리수셴과 미국 대사관에 피신해 13개월을 보낸 뒤 출국이 허용되었다. 애리조나대학 교수로 지내다 2012년 사망했다.',

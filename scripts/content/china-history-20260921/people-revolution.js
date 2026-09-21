@@ -34,7 +34,7 @@ module.exports = [
     {
         id: 'song-qingling', group: 'china-revolution',
         family: { ko: '쑹', en: 'Soong' }, given: { ko: '칭링', en: 'Ching-ling' }, native: '宋庆龄',
-        years: '1893–1981', role: 'non-soviet-revolutionary',
+        years: '1893–1981', role: 'prc-government',
         epithet: { ko: '쑨원의 부인으로 국민당 좌파에 남아 인민공화국의 국가부주석이 된 인물', en: 'Sun Yat-sen’s widow who stayed with the Kuomintang left and became a vice-chair of the People’s Republic' },
         bio: {
             ko: '상하이의 부유한 기독교 집안 쑹씨 세 자매의 둘째로, 1915년 쑨원과 결혼했다. 1927년 장제스의 반공 정변에 반대해 국민당 좌파의 상징이 되었고 모스크바로 갔다가 1930년대 상하이에서 민권보장동맹을 이끌었다. 항일전쟁기 홍콩에서 보위중국동맹을 조직해 공산당 근거지에 물자를 보냈다. 1949년 인민공화국의 중앙인민정부 부주석이 되었고 1981년 사망 직전 공산당에 입당해 명예국가주석 칭호를 받았다. 동생 쑹메이링은 장제스의 부인이었다.',
@@ -51,7 +51,7 @@ module.exports = [
     {
         id: 'li-lisan', group: 'china-revolution',
         family: { ko: '리', en: 'Li' }, given: { ko: '리싼', en: 'Lisan' }, native: '李立三',
-        years: '1899–1967', role: 'non-soviet-revolutionary',
+        years: '1899–1967', role: 'ccp-leadership',
         epithet: { ko: '1930년 도시 봉기 노선 「리리싼 노선」으로 당을 이끌다 실각한 노동운동 지도자', en: 'Labour organiser whose 1930 urban-insurrection “Li Lisan line” led the party and cost him his position' },
         bio: {
             ko: '후난 출신으로 프랑스 근공검학 시절 입당했고 1922년 안위안 탄광 파업, 1925년 5·30 운동의 조직자였다. 1928년 이후 당 중앙의 실권을 쥐고 1930년 혁명의 고조가 왔다며 창사·우한 등 대도시 공격을 명령했으나 실패했고, 코민테른의 비판으로 실각해 모스크바로 소환되었다. 15년 동안 소련에 머물며 소련인 아내를 맞았고 1946년 귀국해 노동부장을 지냈다. 문화대혁명 초기 박해 속에 1967년 자살했으며 1980년 복권되었다.',
@@ -68,7 +68,7 @@ module.exports = [
     {
         id: 'zhang-guotao', group: 'china-revolution',
         family: { ko: '장', en: 'Zhang' }, given: { ko: '궈타오', en: 'Guotao' }, native: '张国焘',
-        years: '1897–1979', role: 'non-soviet-revolutionary',
+        years: '1897–1979', role: 'ccp-leadership',
         epithet: { ko: '창당 대회 의장에서 대장정 중 마오와 결별해 국민당으로 간 홍군 지도자', en: 'Chair of the founding congress who split with Mao on the Long March and defected to the Nationalists' },
         bio: {
             ko: '베이징대 학생으로 5·4 운동에 앞장섰고 1921년 제1차 당대회를 주재했다. 노동운동을 조직하다 1931년 어위완 소비에트로 가 제4방면군의 정치적 지도자가 되었고, 1935년 대장정 중 쓰촨에서 마오의 중앙홍군과 합류했다. 북상 대 서진을 놓고 마오와 대립해 별도의 「중앙」을 세우고 남하했으나 병력을 잃고 1936년 옌안에 합류했다. 1937년 비판을 받은 뒤 1938년 국민당 지역으로 탈출해 당에서 제명되었고, 만년에 홍콩과 캐나다에서 회고록을 썼다. 토론토에서 사망했다.',
@@ -85,7 +85,7 @@ module.exports = [
     {
         id: 'zhang-wentian', group: 'china-revolution',
         family: { ko: '장', en: 'Zhang' }, given: { ko: '원톈', en: 'Wentian' }, native: '张闻天',
-        years: '1900–1976', role: 'non-soviet-revolutionary',
+        years: '1900–1976', role: 'ccp-leadership',
         epithet: { ko: '쭌이 회의 뒤 총서기를 맡은 「28인의 볼셰비키」, 1959년 루산에서 펑더화이 편에 섰다', en: 'A “28 Bolsheviks” returnee who became general secretary after Zunyi and sided with Peng Dehuai at Lushan in 1959' },
         bio: {
             ko: '모스크바 중산대학 출신으로 「28인의 볼셰비키」의 한 사람이었으나 1935년 쭌이 회의에서 보구 대신 마오를 지지해 당 총서기(총부책)를 맡았다. 옌안에서 선전·이론 부문을 이끌었고 정풍운동 이후 마오에게 실권을 넘겼다. 건국 후 주소련 대사와 외교부 부부장을 지냈으며 1959년 루산 회의에서 대약진을 비판해 펑더화이와 함께 「반당집단」으로 몰려 실각했다. 문화대혁명기 유배지에서 1976년 심장병으로 사망했고 1979년 복권되었다.',
@@ -103,7 +103,7 @@ module.exports = [
     {
         id: 'ren-bishi', group: 'china-revolution',
         family: { ko: '런', en: 'Ren' }, given: { ko: '비스', en: 'Bishi' }, native: '任弼时',
-        years: '1904–1950', role: 'non-soviet-revolutionary',
+        years: '1904–1950', role: 'ccp-leadership',
         epithet: { ko: '옌안 시기 「5대 서기」의 한 사람이었던 조직가, 건국 이듬해 요절했다', en: 'The organiser among Yan’an’s five secretaries, dead a year after the People’s Republic was founded' },
         bio: {
             ko: '후난 출신으로 모스크바 동방노력자공산대학에서 배우고 공산주의청년단을 이끌었다. 대장정 때 허룽과 함께 제2방면군을 지휘했고 1938년 코민테른 주재 중공 대표로 마오의 지도권을 인정받는 데 기여했다. 1943년부터 중앙서기처 서기로 당 조직과 재정을 맡아 마오·류사오치·저우언라이·주더와 함께 「5대 서기」로 불렸다. 1949년 건국 후 병세가 악화되어 1950년 뇌출혈로 46세에 사망했다.',

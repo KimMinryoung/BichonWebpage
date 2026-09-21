@@ -66,6 +66,16 @@ async function seedCommuLingoPersonRoles(client) {
         // army (Zhu De, Peng Dehuai, Giap) had to wear 비소련 혁명가 or
         // 사회주의권 지도자; the Soviet marshals keep the 군사·국방 office.
         ['military-commander', 11, 'shield', '군 지휘관', 'Military commander'],
+        // Added 2026-09-21 (migration 183). The Chinese party-state by
+        // function, the way the offices split the Soviet one; plus 반체제 인사.
+        ['ccp-leadership', 12, 'flag', '중공 당 지도부', 'CCP party leadership'],
+        ['prc-government', 13, 'briefcase', '국무원·정부', 'PRC government'],
+        ['ccp-security', 14, 'eye', '중공 보안·정보', 'CCP security and intelligence'],
+        ['ccp-ideology-propaganda', 15, 'megaphone', '중공 이념·선전', 'CCP ideology and propaganda'],
+        ['prc-economy-planning', 16, 'chart', '중국 경제·계획', 'PRC economy and planning'],
+        ['prc-foreign-affairs', 17, 'handshake', '중국 외교', 'PRC foreign affairs'],
+        ['qing-kuomintang-warlords', 18, 'landmark', '청·국민당·군벌', 'Qing, Kuomintang and warlords'],
+        ['dissident', 19, 'rose', '반체제 인사', 'Dissident'],
     ];
     let roleCategoriesInserted = 0;
     for (const category of roleCategories) {

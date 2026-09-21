@@ -21,7 +21,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-security"
    },
    "epithet": {
     "ko": "옌안 정풍의 「구조(搶救)」 운동부터 문화대혁명까지 당의 보안·정보를 쥔 마오의 심문관",
@@ -123,7 +123,7 @@
     "code": "china"
    },
    "role": {
-    "category": "theorist"
+    "category": "ccp-ideology-propaganda"
    },
    "epithet": {
     "ko": "마오의 정치비서 겸 「마오쩌둥 사상」의 이론가, 중앙문혁소조 조장에서 1970년 실각",
@@ -316,7 +316,7 @@
     "code": "china"
    },
    "role": {
-    "category": "military-commander"
+    "category": "prc-foreign-affairs"
    },
    "epithet": {
     "ko": "신4군과 제3야전군을 이끈 시인 원수, 저우언라이를 이은 외교부장",
@@ -594,7 +594,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-security"
    },
    "epithet": {
     "ko": "초대 공안부장이자 총참모장, 문화대혁명 전야에 린뱌오의 표적이 되어 실각한 인물",
@@ -687,7 +687,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-leader"
+    "category": "prc-economy-planning"
    },
    "epithet": {
     "ko": "문화대혁명을 살아남은 재정 책임자, 4인방 체포에 가담하고 국가주석이 된 「팔대 원로」",
@@ -779,7 +779,7 @@
     "code": "china"
    },
    "role": {
-    "category": "writer-artist"
+    "category": "ccp-ideology-propaganda"
    },
    "epithet": {
     "ko": "『인민일보』 편집장, 『연산야화』로 대약진을 풍자했다는 이유로 문화대혁명의 첫 희생자가 된 언론인",
@@ -953,7 +953,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-ideology-propaganda"
    },
    "epithet": {
     "ko": "『해서파관』 비판문으로 문화대혁명의 문을 연 4인방의 이론가, 「몽둥이」라 불린 평론가",
@@ -1046,7 +1046,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "상하이 노동자 반란파에서 당 부주석까지 오른 「헬리콥터」, 4인방의 최연소",
@@ -1139,7 +1139,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-security"
    },
    "epithet": {
     "ko": "마오의 경호대장, 중난하이의 8341부대로 4인방을 체포한 뒤 「양개범시」로 밀려난 인물",
@@ -1232,7 +1232,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "「가오강·라오수스 반당연맹」으로 건국 후 첫 고위 숙청에 걸린 화둥의 지도자",
@@ -1325,7 +1325,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "prc-government"
    },
    "epithet": {
     "ko": "「농업은 다자이를 배우자」의 모델 마을 지도자에서 부총리까지 오른 농민",
@@ -1410,7 +1410,7 @@
     "code": "china"
    },
    "role": {
-    "category": "counterrevolution"
+    "category": "qing-kuomintang-warlords"
    },
    "epithet": {
     "ko": "신해혁명의 성과를 가로채 황제가 되려 한 북양군벌의 총수",
@@ -1510,7 +1510,7 @@
     "code": "china"
    },
    "role": {
-    "category": "counterrevolution"
+    "category": "qing-kuomintang-warlords"
    },
    "epithet": {
     "ko": "쑨원의 후계자에서 일본 점령하 난징 정권의 수반이 된 국민당 좌파",
@@ -1612,7 +1612,7 @@
     "code": "china"
    },
    "role": {
-    "category": "military-commander"
+    "category": "qing-kuomintang-warlords"
    },
    "epithet": {
     "ko": "시안에서 장제스를 감금해 제2차 국공합작의 길을 연 「젊은 원수」",
@@ -1705,7 +1705,7 @@
     "code": "china"
    },
    "role": {
-    "category": "counterrevolution"
+    "category": "qing-kuomintang-warlords"
    },
    "epithet": {
     "ko": "청의 마지막 황제이자 만주국의 꼭두각시 황제, 인민공화국의 「개조된」 시민",
@@ -1910,7 +1910,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-leader"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "「네가 일을 맡으면 내가 안심한다」는 마오의 후계자, 4인방을 체포하고 덩샤오핑에게 밀려났다",
@@ -2028,7 +2028,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-reform-leader"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "문화대혁명 피해자의 복권과 사상 해방을 이끈 개혁파 총서기, 그의 죽음이 1989년 시위를 불렀다",
@@ -2128,7 +2128,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-reform-leader"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "쓰촨의 농업개혁에서 총서기까지, 1989년 계엄에 반대해 15년 연금으로 생을 마친 개혁가",
@@ -2253,7 +2253,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-reform-leader"
+    "category": "prc-government"
    },
    "epithet": {
     "ko": "「쌀을 먹으려면 완리를 찾으라」 — 안후이에서 농가생산책임제를 허용한 개혁의 선구자",
@@ -2346,7 +2346,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-reform-leader"
+    "category": "prc-government"
    },
    "epithet": {
     "ko": "산베이 근거지의 창건자, 16년 실각 뒤 광둥에서 경제특구를 열어 낸 개혁가",
@@ -2439,7 +2439,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-leader"
+    "category": "prc-economy-planning"
    },
    "epithet": {
     "ko": "초대 재정부장이자 「61인 반도 사건」의 당사자, 개혁기에 보수적 원로로 돌아온 인물",
@@ -2531,7 +2531,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-leader"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "1989년 상하이에서 발탁된 「핵심」, 톈안먼 이후의 중국을 시장경제와 「3개 대표」로 이끈 총서기",
@@ -2624,7 +2624,7 @@
     "code": "china"
    },
    "role": {
-    "category": "socialist-bloc-leader"
+    "category": "prc-government"
    },
    "epithet": {
     "ko": "1989년 5월 계엄을 선포한 총리, 「베이징의 도살자」라 불린 저우언라이의 양자",
@@ -2717,7 +2717,7 @@
     "code": "china"
    },
    "role": {
-    "category": "theorist"
+    "category": "dissident"
    },
    "epithet": {
     "ko": "민주의 벽에 「제5의 현대화」를 붙인 전기공, 18년 옥살이 뒤 추방된 민주운동의 상징",
@@ -2796,7 +2796,7 @@
     "code": "china"
    },
    "role": {
-    "category": "scholar"
+    "category": "dissident"
    },
    "epithet": {
     "ko": "「중국의 사하로프」, 1986년 학생 시위와 1989년 미국 대사관 피신으로 알려진 천체물리학자",
@@ -3010,7 +3010,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "prc-government"
    },
    "epithet": {
     "ko": "쑨원의 부인으로 국민당 좌파에 남아 인민공화국의 국가부주석이 된 인물",
@@ -3104,7 +3104,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "1930년 도시 봉기 노선 「리리싼 노선」으로 당을 이끌다 실각한 노동운동 지도자",
@@ -3196,7 +3196,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "창당 대회 의장에서 대장정 중 마오와 결별해 국민당으로 간 홍군 지도자",
@@ -3289,7 +3289,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "쭌이 회의 뒤 총서기를 맡은 「28인의 볼셰비키」, 1959년 루산에서 펑더화이 편에 섰다",
@@ -3391,7 +3391,7 @@
     "code": "china"
    },
    "role": {
-    "category": "non-soviet-revolutionary"
+    "category": "ccp-leadership"
    },
    "epithet": {
     "ko": "옌안 시기 「5대 서기」의 한 사람이었던 조직가, 건국 이듬해 요절했다",

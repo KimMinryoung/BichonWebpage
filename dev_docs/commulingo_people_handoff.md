@@ -496,6 +496,7 @@ Use icon ids, not raw SVG:
 - Russian republic leader: `building`
 - socialist-bloc leader (office-less role, label '사회주의권 지도자'/'Socialist-bloc leader'): `orbit`
 - military commander outside the Soviet army (office-less role, label '군 지휘관'/'Military commander', migration 182): `shield`
+- Chinese party-state by function (migration 183, office-less categories rather than offices because the office timelines are Soviet institutions): `ccp-leadership` 중공 당 지도부 `flag`, `prc-government` 국무원·정부 `briefcase`, `ccp-security` 중공 보안·정보 `eye`, `ccp-ideology-propaganda` 중공 이념·선전 `megaphone`, `prc-economy-planning` 중국 경제·계획 `chart`, `prc-foreign-affairs` 중국 외교 `handshake`, `qing-kuomintang-warlords` 청·국민당·군벌 `landmark`; and the generic `dissident` 반체제 인사 `rose`. One category per person, the function they are known for; the PLA marshals keep 군 지휘관 and the writers keep 작가·예술가.
 
 Design decision: do not use swords for defence. The Cheka/security tradition uses the "sword" symbol, so defence currently uses `star` for Red Army association.
 
