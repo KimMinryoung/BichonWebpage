@@ -3,8 +3,18 @@
 <head><%- include('../partials/head') %></head>
 <body class="commulingo-page">
 <%- include('../partials/nav') %>
-<% var en = lang === 'en'; %>
-<main class="container commulingo-shell commu-person-hub-page">
+<% var en = lang === 'en';
+var activeFunction = functions.find(f => f.id === filter.functionId);
+var activeAffiliation = affiliations.find(a => a.id === filter.affiliationId);
+var resultLabel = [activeFunction && activeFunction.label, activeAffiliation && activeAffiliation.label].filter(Boolean).join(' · ');
+function clearFilter(key) {
+    var params = new URLSearchParams({ lang });
+    if (key !== 'function' && filter.functionId) params.set('function', filter.functionId);
+    if (key !== 'affiliation' && filter.affiliationId) params.set('affiliation', filter.affiliationId);
+    return '/commulingo/activities?' + params;
+}
+%>
+<main class="container commulingo-shell commu-person-hub-page commu-activities-page">
     <%- include('../partials/commulingo-crumb', { trail: [{ label: en ? 'People' : '인물 사전', href: '/commulingo/people' }, { label: en ? 'Activities' : '기능·활동' }], dictJump: 'people' }) %>
     <header class="commu-hub-head"><div><h1><%= en ? 'Activities and affiliations' : '기능·활동과 국가·세력' %></h1>
         <p><%= en ? 'What people did, and whom they served in that activity.' : '인물이 수행한 활동과 그 활동에서의 소속을 함께 찾습니다.' %></p>
@@ -17,21 +27,35 @@
                 <% functions.forEach(function(f) { %><option value="<%= f.id %>" <%= filter.functionId === f.id ? 'selected' : '' %>><%= f.label %> (<%= f.count %>)</option><% }) %>
                 </select>
             </label>
-            <label><span><%= en ? 'State / organization' : '국가·세력·조직' %></span>
-                <select name="affiliation"><option value=""><%= en ? 'All affiliations' : '모든 소속' %></option>
+            <div class="commu-activity-affiliation">
+                <label for="activity-affiliation"><%= en ? 'State / organization' : '국가·세력·조직' %></label>
+                <select id="activity-affiliation" name="affiliation"><option value=""><%= en ? 'All affiliations' : '모든 소속' %></option>
                 <% affiliationGroups.forEach(function(group) { %><optgroup label="<%= group.label %>">
                     <% group.items.forEach(function(a) { %><option value="<%= a.id %>" <%= filter.affiliationId === a.id ? 'selected' : '' %>><%= a.parentId ? '↳ ' : '' %><%= a.label %> (<%= a.count %>)</option><% }) %>
                 </optgroup><% }) %>
                 </select>
-            </label>
-            <button type="submit"><%= en ? 'Apply' : '적용' %></button>
-            <a href="/commulingo/activities"><%= en ? 'Reset' : '초기화' %></a>
+                <details class="commu-affiliation-search" data-affiliation-search-panel hidden>
+                    <summary><%= en ? 'Search this list' : '목록에서 검색' %></summary>
+                <input type="search" data-affiliation-search aria-label="<%= en ? 'Search countries and organizations' : '국가·조직 목록 검색' %>" placeholder="<%= en ? 'Search countries or organizations' : '국가·조직 이름으로 목록 좁히기' %>" aria-controls="activity-affiliation" aria-describedby="affiliation-search-status">
+                <span id="affiliation-search-status" class="commu-activity-search-status" role="status" hidden></span>
+                </details>
+            </div>
+            <div class="commu-activity-actions">
+                <button type="submit"><%= en ? 'Apply' : '적용' %></button>
+                <a href="/commulingo/activities?lang=<%= lang %>"><%= en ? 'Reset' : '초기화' %></a>
+            </div>
         </form>
-        <p><%= total %> <%= en ? 'people' : '명' %></p>
+        <div class="commu-activity-results">
+            <h2><%= resultLabel || (en ? 'All' : '전체') %> <%= en ? 'people' : '인물' %> <span><%= total %><%= en ? '' : '명' %></span></h2>
+            <% if (activeFunction || activeAffiliation) { %><div class="commu-activity-selected" aria-label="<%= en ? 'Active filters' : '적용된 조건' %>">
+                <% if (activeFunction) { %><a href="<%= clearFilter('function') %>" aria-label="<%= activeFunction.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeFunction.label %> ×</a><% } %>
+                <% if (activeAffiliation) { %><a href="<%= clearFilter('affiliation') %>" aria-label="<%= activeAffiliation.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeAffiliation.label %> ×</a><% } %>
+            </div><% } %>
+        </div>
         <% if (!total) { %><p><%= en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.' %></p><% } %>
         <div class="commu-people-grid">
         <% people.forEach(function(person) { %>
-            <%- include('../partials/commulingo-person-card', { person, groupId: person.groupId, en, roleIconSvg, roleHubHref, flagImg }) %>
+            <%- include('../partials/commulingo-person-card', { person, groupId: person.groupId, en, roleIconSvg, roleHubHref, flagImg, compact: true }) %>
         <% }) %>
         </div>
         <%- include('../partials/commulingo-list-pager', { pagination, en, target: '.commu-people-grid' }) %>
@@ -39,4 +63,5 @@
 </main>
 <%- include('../partials/footer') %>
 <%- include('../partials/commulingo-person-card-click-script') %>
+<script src="/js/commulingo-activities.js?v=<%= assetVersion %>" defer></script>
 </body></html>

@@ -1,5 +1,6 @@
 <%
 var cardGroupId = groupId || person.groupId || person.group || '';
+var compactCard = typeof compact !== 'undefined' && compact;
 var fateIcons = {
     executed: '✕', assassinated: '✕', murdered: '✕', killed: '✕', suicide: '✕',
     deposed: '↓', exile: '→', natural: '○'
@@ -8,7 +9,7 @@ var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 var medalTitle = person.role && person.role.label ? person.role.label : (strings.commuLingoViews.personCard.contextMarker);
 %>
-<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
+<article class="commu-person-card<%= compactCard ? ' commu-person-card-compact' : '' %>" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
     <div class="commu-person-top">
         <% if (medalHref) { %>
         <a class="commu-person-medal is-<%= cardGroupId %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
@@ -46,6 +47,11 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
         <% } %>
     </div>
     <p class="commu-person-epithet"><%- linkifyPersonText(person.epithet, person.id) %></p>
+    <% if (compactCard) { %>
+    <details class="commu-person-more commu-person-overview">
+        <summary><%= en ? 'About this person' : '인물 소개 펼쳐보기' %></summary>
+        <div class="commu-person-overview-body">
+    <% } %>
     <% if (person.moment) { %>
     <p class="commu-person-moment"><%- linkifyPersonText(person.moment, person.id) %></p>
     <% } %>
@@ -67,5 +73,10 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
         <a class="commu-scene-chip" href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>" title="<%= scene.bookTitle %>"><%= scene.title %></a>
         <% }) %>
     </div>
+    <% } %>
+    <% if (compactCard) { %>
+        <a href="<%= personHref %>"><%= en ? 'View full profile →' : '인물 상세 보기 →' %></a>
+        </div>
+    </details>
     <% } %>
 </article>
