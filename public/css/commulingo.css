@@ -3114,15 +3114,39 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 .commu-person-more {
     border-top: 1px dashed var(--border);
-    padding-top: 8px;
+    margin-inline: calc(-1 * var(--space-4));
 }
 
-.commu-person-more summary {
+.commu-person-more:last-child {
+    margin-bottom: calc(-1 * var(--space-4));
+}
+
+.commu-person-more > summary {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    min-height: var(--control-height);
+    padding: var(--space-3) var(--space-4);
     cursor: pointer;
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--link);
     list-style: none;
+}
+
+.commu-person-more > summary:hover {
+    background: var(--bg-surface-hover);
+}
+
+.commu-person-more > summary:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+}
+
+.commu-person-more > .commu-person-career {
+    margin: 0;
+    padding: var(--space-2) var(--space-4) var(--space-4);
 }
 
 .commu-person-more summary::before {
@@ -3136,12 +3160,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-more summary::-webkit-details-marker {
     display: none;
 }
-
-.commu-person-card-compact .commu-person-idbox h3 { white-space: normal; overflow-wrap: anywhere; }
-.commu-person-card-compact .commu-person-meta { color: var(--text-secondary); }
-.commu-person-overview > summary { display: flex; align-items: center; min-height: var(--control-height); gap: var(--space-1); }
-.commu-person-overview > summary:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-.commu-person-overview-body { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-2); }
 
 .commu-person-career {
     list-style: none;

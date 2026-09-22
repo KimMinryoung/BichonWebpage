@@ -55,7 +55,7 @@ function clearFilter(key) {
         <% if (!total) { %><p><%= en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.' %></p><% } %>
         <div class="commu-people-grid">
         <% people.forEach(function(person) { %>
-            <%- include('../partials/commulingo-person-card', { person, groupId: person.groupId, en, roleIconSvg, roleHubHref, flagImg, compact: true }) %>
+            <%- include('../partials/commulingo-person-card', { person, groupId: person.groupId, en, roleIconSvg, roleHubHref, flagImg }) %>
         <% }) %>
         </div>
         <%- include('../partials/commulingo-list-pager', { pagination, en, target: '.commu-people-grid' }) %>
