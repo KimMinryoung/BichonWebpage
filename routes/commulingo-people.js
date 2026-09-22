@@ -278,7 +278,7 @@ router.get('/activities', async (req, res) => {
         const filter = { functionId, affiliationId };
         const people = sortPeopleChronologically(standardized.people.filter(p => activitiesModel.matchesActivities(p, filter)));
         const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId })).length }));
-        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length })).filter(a => a.count || a.id === affiliationId);
+        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length }));
         const groupedAffiliations = new Map();
         for (const a of affiliations) {
             const key = a.countryCode || 'international';
