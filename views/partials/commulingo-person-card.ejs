@@ -29,10 +29,10 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
         <% } %>
         <% } %>
         <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>
-        <a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()">
+        <% if (person.primaryActivity.affiliationId) { %><a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
             <% if (person.primaryActivity.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %>
             <%= person.primaryActivity.affiliationLabel %>
-        </a>
+        <% if (person.primaryActivity.affiliationId) { %></a><% } else { %></span><% } %>
         <% } %>
         <span class="commu-person-years">
             <% if (typeof flagImg === 'function') { %>

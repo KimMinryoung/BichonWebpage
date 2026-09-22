@@ -21,4 +21,6 @@ for (const [key, [functionId, affiliationId]] of Object.entries(catalog.legacy))
     assert(catalog.functions.some(f => f.id === functionId), key);
     assert(!affiliationId || catalog.affiliations.some(a => a.id === affiliationId), key);
 }
+assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], null, 'ko')[0].affiliationLabel, '소속 미확정');
+assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], null, 'en')[0].affiliationLabel, 'Independent activity');
 console.log('Activity evidence, primary selection, periods, same-career filters and legacy boundaries passed');

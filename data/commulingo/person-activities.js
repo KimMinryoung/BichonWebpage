@@ -48,7 +48,7 @@ function displayActivities(raw, legacyRole, lang) {
     return rows.filter(a => functions.has(a.functionId)).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
-            affiliationLabel: affiliation ? localize(affiliation.label, lang) : '',
+            affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : a.affiliationStatus === 'unresolved' ? (lang === 'en' ? 'Affiliation unconfirmed' : '소속 미확정') : '',
             affiliationIcon: affiliation?.icon || '', href: activityHref(a) };
     });
 }

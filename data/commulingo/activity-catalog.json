@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "functions": [
     {
       "id": "political-leadership",
@@ -117,6 +117,15 @@
       },
       "icon": "feather",
       "criteria": "Literary, visual, musical and performing arts. Administration of censorship belongs to propaganda."
+    },
+    {
+      "id": "law",
+      "label": {
+        "ko": "법률·사법",
+        "en": "Law and justice"
+      },
+      "icon": "landmark",
+      "criteria": "Legal practice, defense counsel, prosecution, judging and judicial administration. Academic legal theory belongs to scholarship; being a defendant or victim alone does not qualify."
     }
   ],
   "affiliations": [
