@@ -282,7 +282,7 @@ router.get('/activities', async (req, res) => {
         const groupedAffiliations = new Map();
         for (const a of affiliations) {
             const key = a.countryCode || 'international';
-            if (!groupedAffiliations.has(key)) groupedAffiliations.set(key, { label: flagLabel(key, lang) || (lang === 'en' ? 'International organizations' : '국제조직'), items: [] });
+            if (!groupedAffiliations.has(key)) groupedAffiliations.set(key, { label: localize(a.countryLabel, lang) || flagLabel(key, lang) || (lang === 'en' ? 'International organizations' : '국제조직'), items: [] });
             groupedAffiliations.get(key).items.push(a);
         }
         const affiliationGroups = [...groupedAffiliations.values()].sort((a,b) => a.label.localeCompare(b.label, lang));
