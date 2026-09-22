@@ -504,7 +504,7 @@ Design decision: do not use swords for defence. The Cheka/security tradition use
 
 Current `/commulingo/people` UX:
 
-- `소련 기관별 지도부 타임라인` is collapsed by default.
+- The `인물 분류와 기관별 지도부 타임라인` index (role categories + the Soviet office timelines; the heading dropped its Soviet qualifier on 2026-09-21 when the Chinese categories arrived) is collapsed by default.
 - Each individual office timeline card inside it is also collapsed by default.
 - Each office timeline card includes a small `기관 페이지 →` / `Office page →`
   link to `/commulingo/offices/:officeId`.
