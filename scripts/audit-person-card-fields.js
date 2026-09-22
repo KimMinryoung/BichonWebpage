@@ -27,7 +27,7 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             `SELECT p.id, p.years_label, p.birth_year, p.death_year, p.fate_kind, p.fate_label_ko, p.fate_label_en,
                     p.citizenship_label_ko, p.citizenship_label_en,
                     p.origin_label_ko, p.origin_label_en,
-                    r.person_id AS role_person_id
+                    r.person_id AS role_person_id, COALESCE(to_jsonb(p)->'activities', '[]'::jsonb) AS activities
              FROM commulingo_people p
              LEFT JOIN commulingo_person_roles r ON r.person_id = p.id
              ORDER BY p.id`
@@ -38,7 +38,7 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             for (const p of personLifeProblems(row.years_label, { kind: row.fate_kind, label: { ko: row.fate_label_ko, en: row.fate_label_en } })) problems.push(`${row.id}: ${p}`);
             const years = parseLifeYears(row.years_label);
             if (years.birthYear !== row.birth_year || years.deathYear !== row.death_year) problems.push(`${row.id}: birth_year/death_year disagree with years_label`);
-            if (!row.role_person_id) problems.push(`${row.id}: no commulingo_person_roles row (set officeId, category or icon)`);
+            if (!row.role_person_id && !row.activities?.some(a => a.primary)) problems.push(`${row.id}: no commulingo_person_roles row (set officeId, category or icon)`);
             for (const p of fateLabelProblems({ ko: row.fate_label_ko, en: row.fate_label_en })) problems.push(`${row.id}: ${p}`);
             for (const p of nationalityLabelProblems({
                 citizenshipKo: row.citizenship_label_ko, citizenshipEn: row.citizenship_label_en,

@@ -11,7 +11,8 @@ function searchFields(person) {
         (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
     ).filter(Boolean).join(' ').toLowerCase();
     const roleSearch = [
-        person.role && person.role.label
+        person.role && person.role.label,
+        (person.activities || []).map(a => [a.label, a.affiliationLabel].filter(Boolean).join(' ')).join(' ')
     ].concat(
         (person.career || []).map(function(item) { return item.r; }),
         (person.institutionRoles || []).map(function(item) { return (item.role || '') + ' ' + (item.officeTitle || ''); })

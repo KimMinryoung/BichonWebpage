@@ -1,0 +1,24 @@
+const assert = require('node:assert/strict');
+const { validateActivities, displayActivities, matchesActivities, catalog } = require('../data/commulingo/person-activities');
+const { ICON_PATHS } = require('../data/icons');
+const evidence = [{ source: 'https://example.org/biography', locator: 'Career', claim: 'Service', excerpt: 'Documented service.' }];
+const primary = { functionId: 'security', affiliationId: 'china-ccp', affiliationStatus: 'confirmed', relation: 'membership', primary: true, startYear: 1939, endYear: 1948, evidence };
+const sources = evidence.map(e => e.source);
+assert.deepEqual(validateActivities([primary], sources), [primary]);
+for (const invalid of [[], [primary, primary], [{ ...primary, primary: false }], [{ ...primary, endYear: 1900 }], [{ ...primary, affiliationId: 'missing' }], [{ ...primary, affiliationStatus: 'independent' }], [{ ...primary, evidence: [] }]]) {
+    assert.throws(() => validateActivities(invalid, sources));
+}
+assert.throws(() => validateActivities([primary], []));
+const person = { activities: [{ functionId: 'military', affiliationId: 'state-soviet' }, { functionId: 'diplomacy', affiliationId: 'china-prc' }] };
+assert(!matchesActivities(person, { functionId: 'military', affiliationId: 'china-prc' }), 'must match the same career, not a cross product');
+assert(matchesActivities(person, { functionId: 'diplomacy', affiliationId: 'china-prc' }));
+assert(matchesActivities({ activities: [{ functionId: 'military', affiliationId: 'china-pla' }] }, { affiliationId: 'china-ccp' }));
+assert.equal(displayActivities([], { categoryId: 'ccp-security' }, 'ko')[0].affiliationId, 'china-ccp');
+assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].affiliationId, null, 'research must not invent affiliation');
+assert.deepEqual(displayActivities([], { categoryId: 'counterrevolution' }, 'ko'), [], 'mixed political category is not a function');
+for (const entry of [...catalog.functions, ...catalog.affiliations]) assert(ICON_PATHS[entry.icon], `missing icon: ${entry.id}`);
+for (const [key, [functionId, affiliationId]] of Object.entries(catalog.legacy)) {
+    assert(catalog.functions.some(f => f.id === functionId), key);
+    assert(!affiliationId || catalog.affiliations.some(a => a.id === affiliationId), key);
+}
+console.log('Activity evidence, primary selection, periods, same-career filters and legacy boundaries passed');

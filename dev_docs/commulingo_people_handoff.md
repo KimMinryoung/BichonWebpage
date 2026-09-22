@@ -811,3 +811,8 @@ Unresolved cases reach the single Telegram owner; `/commulingo_review list`, `sh
 The review runs every 15 minutes, one proposal per invocation, under the shared daily budget.
 Migration 177 persists leases, decisions, retries and notification delivery state.
 See leninbot `dev_docs/commulingo_editorial.md` for current scheduling, limits and recovery.
+
+
+## 기능·활동 × 소속 전환 (2026-09-22)
+
+대표 표시는 새 `activities`와 기능 카탈로그를 우선한다. 기관별 재임 연표와 구 role은 호환을 위해 보존한다. 저장·분류·근거 검토 상태의 정본은 [활동 모델 문서](commulingo-role-model-plan.md)다. 새 소속은 국적을 복사하지 않으며, 기능과 소속 필터는 같은 활동 경력에서 일치해야 한다.

@@ -10,6 +10,7 @@ function roleIconSvg(icon) {
 
 function roleHubHref(role) {
     if (!role) return '';
+    if (role.functionId) return require('./person-activities').activityHref(role);
     if (role.officeId) return `/commulingo/offices/${role.officeId}`;
     if (role.categoryId) return `/commulingo/roles/${role.categoryId}`;
     return '';

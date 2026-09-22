@@ -13,7 +13,7 @@ function sourcesFor(payload, options = {}) {
 function validateEditorial(payload, options = {}, section = false) {
     const allowed = new Set(section
         ? ['slug','heading','body','sortOrder','sources','evidence','reviewFlags','expectedRevision','createdAt','updatedAt','revision']
-        : ['id','group','groupId','sortOrder','initial','name','givenName','familyName','patronymic','cyrillic','cyrillicPatronymic','nativeName','nativePatronymic','nativeScriptOverride','years','epithet','moment','bio','citizenship','nationalOrigin','origin','role','fate','aliases','scenes','career','aliasEdits','careerEdits','sceneEdits','linkExpressions','sources','evidence','reviewFlags','expectedRevision']);
+        : ['id','group','groupId','sortOrder','initial','name','givenName','familyName','patronymic','cyrillic','cyrillicPatronymic','nativeName','nativePatronymic','nativeScriptOverride','years','epithet','moment','bio','citizenship','nationalOrigin','origin','role','activities','fate','aliases','scenes','career','aliasEdits','careerEdits','sceneEdits','linkExpressions','sources','evidence','reviewFlags','expectedRevision']);
     for (const key of Object.keys(payload)) if (!allowed.has(key)) throw badRequest(`unknown person field ${key}`);
     if (payload.sortOrder !== undefined && !Number.isInteger(payload.sortOrder)) throw badRequest('sortOrder must be an integer');
     const sources = sourcesFor(payload, options);
@@ -42,7 +42,7 @@ function validateEditorial(payload, options = {}, section = false) {
             throw badRequest(`evidence must identify the claim and page/section supporting ${field}`);
         }
     }
-    if (payload.role === null) throw badRequest('a person must retain a primary role');
+    if (payload.role === null && !payload.activities?.length) throw badRequest('a person must retain a primary role');
     const flags = payload.reviewFlags ?? [];
     if (!Array.isArray(flags) || flags.some(f => !REVIEW_FLAGS.includes(f))) throw badRequest('invalid reviewFlags');
     return { sources, evidence, flags };
@@ -65,7 +65,7 @@ async function recordEvidence(client, personId, sectionSlug, payload, options, r
     const topics = new Set();
     if (sectionSlug) topics.add('sections');
     for (const key of new Set([...Object.keys(payload), ...(payload.evidence || []).map(e => e.field)])) {
-        if (['name', 'givenName', 'familyName', 'years', 'bio', 'role', 'career', 'careerEdits', 'epithet'].includes(key)) topics.add('basics');
+        if (['name', 'givenName', 'familyName', 'years', 'bio', 'role', 'activities', 'career', 'careerEdits', 'epithet'].includes(key)) topics.add('basics');
         if (['bio', 'epithet'].includes(key)) topics.add('bio');
         if (key === 'moment') topics.add('moment');
         if (['citizenship', 'nationalOrigin', 'origin'].includes(key)) topics.add('nationality');

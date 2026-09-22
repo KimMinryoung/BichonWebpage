@@ -1,3 +1,4 @@
+const activitiesModel = require('../data/commulingo/person-activities');
 const { localizeHtmlLinks } = require('../utils/seo');
 const { searchPeople } = require('../utils/people-search');
 const express = require('express');
@@ -14,7 +15,7 @@ const { getLinkIndexes, createLinker, createCardTextLinker } = require('../data/
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
-const { flagImg } = require('../data/commulingo/flag-icons');
+const { flagImg, flagLabel } = require('../data/commulingo/flag-icons');
 const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
 const { countryHref, countryInfo } = require('../data/commulingo/country-geography');
 const { renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
@@ -109,6 +110,7 @@ router.get('/people', async (req, res) => {
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             roleCategories,
+            activityFunctions: activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id })).length })),
             groupsMeta,
             peopleCount: standardized.people.length,
             pageSize: PAGE_SIZE,
@@ -265,9 +267,45 @@ router.get('/offices/:officeId', async (req, res) => {
     }
 });
 
+router.get('/activities', async (req, res) => {
+    try {
+        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
+        const functionId = typeof req.query.function === 'string' ? req.query.function : '';
+        const affiliationId = typeof req.query.affiliation === 'string' ? req.query.affiliation : '';
+        if ((functionId && !activitiesModel.functions.has(functionId)) || (affiliationId && !activitiesModel.affiliations.has(affiliationId))) {
+            return errorPage(res, 404, { message: lang === 'en' ? 'Activity filter not found.' : '활동 분류를 찾을 수 없습니다.' });
+        }
+        const filter = { functionId, affiliationId };
+        const people = sortPeopleChronologically(standardized.people.filter(p => activitiesModel.matchesActivities(p, filter)));
+        const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId })).length }));
+        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length })).filter(a => a.count || a.id === affiliationId);
+        const groupedAffiliations = new Map();
+        for (const a of affiliations) {
+            const key = a.countryCode || 'international';
+            if (!groupedAffiliations.has(key)) groupedAffiliations.set(key, { label: flagLabel(key, lang) || (lang === 'en' ? 'International organizations' : '국제조직'), items: [] });
+            groupedAffiliations.get(key).items.push(a);
+        }
+        const affiliationGroups = [...groupedAffiliations.values()].sort((a,b) => a.label.localeCompare(b.label, lang));
+        const query = new URLSearchParams({ function: functionId, affiliation: affiliationId, lang });
+        const pagination = paginateList(people, people, { page: req.query.page || 1 }, `/commulingo/activities?${query}&page=`, { mark: false });
+        setShortPublicCache(res);
+        res.render('public/commulingo-activities', { filter, functions, affiliations, affiliationGroups, pagination, total: people.length,
+            people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
+            linkifyPersonText: await cardTextLinker(res),
+            pageTitle: lang === 'en' ? 'People by activity and affiliation' : '기능·활동과 국가·세력별 인물',
+            pageDescription: lang === 'en' ? 'Explore people by what they did and the organizations they served.' : '인물이 수행한 활동과 그 활동의 국가·세력을 함께 살펴봅니다.',
+            pagePath: '/commulingo/activities' });
+    } catch (err) {
+        console.error('commulingo activities:', err);
+        commuLingoLoadError(res, { message: { ko: '활동 분류를 불러올 수 없습니다.', en: 'Failed to load activities.' } });
+    }
+});
+
 router.get('/roles/:categoryId', async (req, res) => {
     try {
         const categoryId = typeof req.params.categoryId === 'string' ? req.params.categoryId.trim() : '';
+        const mapped = activitiesModel.catalog.legacy[categoryId];
+        if (mapped) return res.redirect(301, activitiesModel.activityHref({ functionId: mapped[0], affiliationId: mapped[1] }));
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
         const category = standardized.roleCategories[categoryId];
         if (!category) {

@@ -28,6 +28,12 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
         <span class="commu-person-role-tag is-<%= cardGroupId %>"><%= person.role.label %></span>
         <% } %>
         <% } %>
+        <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>
+        <a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()">
+            <% if (person.primaryActivity.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %>
+            <%= person.primaryActivity.affiliationLabel %>
+        </a>
+        <% } %>
         <span class="commu-person-years">
             <% if (typeof flagImg === 'function') { %>
             <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.personCard.citizenship, nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>

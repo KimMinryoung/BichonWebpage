@@ -1,3 +1,4 @@
+const { validateActivities } = require('./person-activities');
 const { validateEditorial, reviewReasons, recordEvidence } = require('./person-editorial-policy');
 const { planCollectionEdits, applyCareerEdits } = require('./people-collection-edits');
 const { personRevision, assertExpectedRevision } = require('./people-edit-version');
@@ -83,6 +84,7 @@ function rowToPerson(row) {
     const origin = nationality(row.origin_code, row.origin_label_ko, row.origin_label_en);
     return {
         id: row.id,
+        activities: row.activities || [],
         group: row.group_id,
         groupId: row.group_id,
         initial: row.initial || '',
@@ -119,7 +121,8 @@ async function listPeopleAdmin(options = {}) {
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
                 origin_code, origin_label_ko, origin_label_en,
-                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions
+                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
+                COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE ($1 = ''
                 OR id ILIKE '%' || $1 || '%'
@@ -145,7 +148,8 @@ async function getPersonAdmin(personId, options = {}) {
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
                 origin_code, origin_label_ko, origin_label_en,
-                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions
+                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
+                COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE id = $1`,
         [id]
@@ -374,7 +378,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         const years = parseLifeYears(payload.years || '');
         // Every card belongs to an office, a category or at least an icon;
         // a person without a role row is invisible to the office/category pages.
-        if (!payload.role || typeof payload.role !== 'object') {
+        if ((!payload.role || typeof payload.role !== 'object') && !payload.activities?.length) {
             throw badRequest('role is required on create: { officeId } (e.g. state-security), { category } or { icon }');
         }
         const fateKo = payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), years.deathYear) : '';
@@ -433,6 +437,10 @@ async function createPersonAdmin(rawPayload, options = {}) {
         await replaceAliases(client, id, payload.aliases || { ko: [nameKo], en: [nameEn] });
         await replaceScenes(client, id, payload.scenes || []);
         await replaceCareer(client, id, payload.career || []);
+        if (payload.activities !== undefined) {
+            validateActivities(payload.activities, payload.sources || options.sources || []);
+            await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
+        }
         if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         const person = await getPersonAdmin(id, { client });
         await recordEvidence(client, id, '', payload, options, person.revision);
@@ -458,6 +466,9 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         validateEditorial(payload, options);
         if (!options.reviewed && reviewReasons('person', 'update', payload, before).length) {
             const error = badRequest('edit requires review; submit through the shared editorial service'); error.status = 422; throw error;
+        }
+        if (before.activities?.length && payload.role !== undefined && payload.activities === undefined) {
+            throw badRequest('this person uses activities; update activities with evidence instead of the legacy role');
         }
         const collections = planCollectionEdits(before, payload);
         payload = mergePersonPatch(before, payload);
@@ -618,6 +629,10 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         if (payload.aliases !== undefined) await replaceAliases(client, id, payload.aliases);
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
         if (payload.career !== undefined) await replaceCareer(client, id, payload.career);
+        if (payload.activities !== undefined) {
+            validateActivities(payload.activities, payload.sources || options.sources || []);
+            await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
+        }
         if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         if (collections.aliases !== undefined) await replaceAliases(client, id, collections.aliases);
         if (collections.scenes !== undefined) await replaceScenes(client, id, collections.scenes);

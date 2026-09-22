@@ -7,6 +7,10 @@ const { loadStandardizedPeople, localizedPersonSections } = require('../data/com
 // standardization as the pages; thirty-second public cache.
 
 const router = express.Router();
+router.get('/api/activity-catalog', (req, res) => {
+    setShortPublicCache(res);
+    res.json(require('../data/commulingo/person-activities').catalog);
+});
 
 // The full people payload is ~9 MB of JSON; serializing it took ~100 ms of
 // event-loop time per request. It is a pure function of the standardized

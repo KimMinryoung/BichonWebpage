@@ -62,7 +62,8 @@ async function fetchRows() {
                     fate_kind, fate_label_ko, fate_label_en,
                     citizenship_code, citizenship_label_ko, citizenship_label_en,
                     origin_code, origin_label_ko, origin_label_en, updated_at,
-                    to_jsonb(commulingo_people)->'link_expressions' AS link_expressions
+                    to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
+                    COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
              FROM commulingo_people
              ORDER BY sort_order, id`
         ),
@@ -283,6 +284,7 @@ function rowsToPeopleData(rows) {
         people: rows.people.map(row => ({
             id: row.id,
             group: row.group_id,
+            activities: row.activities || [],
             initial: row.initial || '',
             cyrillic: row.cyrillic || '',
             name: t(row.name_ko, row.name_en),

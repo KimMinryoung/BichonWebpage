@@ -1,3 +1,4 @@
+const { displayActivities } = require('./person-activities');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
@@ -244,6 +245,9 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         r: localize(entry.r, lang),
         role: localize(entry.r, lang),
     }));
+    const legacyRole = roleForPerson(raw, lang, data, officeTitles, officeIcons);
+    const activities = displayActivities(raw.activities, legacyRole, lang);
+    const primaryActivity = activities.find(a => a.primary);
     return {
         schemaVersion: SCHEMA_VERSION,
         id: raw.id,
@@ -289,7 +293,10 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
             ko: raw.aliases && Array.isArray(raw.aliases.ko) ? raw.aliases.ko : [],
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],
         },
-        role: roleForPerson(raw, lang, data, officeTitles, officeIcons),
+        legacyRole,
+        activities,
+        primaryActivity: primaryActivity || null,
+        role: primaryActivity ? { ...legacyRole, ...primaryActivity } : legacyRole,
         hasDetail: !!((data.sectionCounts || {})[raw.id]),
         career,
         scenes: (raw.scenes || [])

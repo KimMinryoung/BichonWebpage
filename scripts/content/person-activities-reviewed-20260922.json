@@ -1,0 +1,74 @@
+{
+  "note": "Source-reviewed activities. Add the current expectedRevision from the common Admin reader immediately before dry-run. Do not overwrite changed sources or careers.",
+  "items": [
+    {
+      "id": "kang-sheng",
+      "reviewed": true,
+      "sources": [
+        "https://www.oriental-msu.ru/en/articles/article/26191/"
+      ],
+      "activities": [
+        {
+          "functionId": "security",
+          "affiliationId": "china-ccp",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "primary": true,
+          "startYear": null,
+          "endYear": null,
+          "evidence": [
+            {
+              "source": "https://www.oriental-msu.ru/en/articles/article/26191/",
+              "locator": "Abstract, first sentence",
+              "claim": "Kang Sheng led Chinese Communist Party security and intelligence work.",
+              "excerpt": "The head of all secret services of the Chinese Communist Party, Kang Sheng"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "comintern",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "primary": false,
+          "startYear": 1933,
+          "endYear": 1937,
+          "evidence": [
+            {
+              "source": "https://www.oriental-msu.ru/en/articles/article/26191/",
+              "locator": "Abstract, first sentence",
+              "claim": "Kang Sheng served on the ECCI Presidium in 1933–1937.",
+              "excerpt": "member of the Presidium of the Comintern Executive Committee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chen-duxiu",
+      "reviewed": true,
+      "sources": [
+        "https://en.wikipedia.org/wiki/Chen_Duxiu"
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "china-ccp",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "primary": true,
+          "startYear": 1921,
+          "endYear": 1927,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Chen_Duxiu",
+              "locator": "Lead paragraph",
+              "claim": "Chen Duxiu was the first CCP General Secretary in 1921–1927.",
+              "excerpt": "served as its first General Secretary from 1921 to 1927"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

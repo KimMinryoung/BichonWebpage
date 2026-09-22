@@ -58,6 +58,19 @@
             <p class="commu-person-bio"><%- typeof bioHtml !== 'undefined' ? bioHtml : person.bio %></p>
         </header>
 
+        <% if (person.activities && person.activities.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="person-activities">
+            <h2 id="person-activities"><%= en ? 'Activities and affiliations' : '주요 활동과 소속' %></h2>
+            <ul class="commu-person-career">
+            <% person.activities.forEach(function(a) { %>
+                <li><span class="commu-career-year"><%= a.startYear || '' %><%= a.startYear || a.endYear ? '–' : '' %><%= a.endYear || '' %></span>
+                    <span><a href="<%= a.href %>"><%= a.label %></a>
+                    <% if (a.affiliationLabel) { %> · <span class="commu-person-affiliation"><% if (a.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %><%= a.affiliationLabel %></span><% } %>
+                    </span></li>
+            <% }) %>
+            </ul>
+        </section>
+        <% } %>
         <% if (person.career.length) { %>
         <section class="commu-person-detail-section commu-person-detail-career" aria-labelledby="career">
             <h2 id="career"><%= strings.commuLingoViews.person.careerTimeline %></h2>
