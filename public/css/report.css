@@ -63,26 +63,7 @@
     flex: 0 0 auto;
 }
 
-.research-series-actions a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 28px;
-    padding: 5px 9px;
-    background: var(--btn-primary);
-    border: 1px solid var(--btn-primary);
-    color: var(--clr-cream-light);
-    font-size: 0.78rem;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.research-series-actions a:hover {
-    background: var(--btn-primary-hover);
-    border-color: var(--btn-primary-hover);
-    color: var(--clr-cream-light);
-    text-decoration: none;
-}
+.research-series-actions .btn { white-space: nowrap; }
 
 .research-series-list {
     list-style: none;

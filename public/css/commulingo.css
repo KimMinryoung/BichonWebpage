@@ -2991,13 +2991,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
     .commu-world-map-controls button { width: 40px; height: 40px; min-width: 40px; min-height: 40px; flex-basis: 40px; }
 }
 .commu-country-view-all {
-    align-items: center; background: var(--btn-bg); border: 1px solid var(--border);
-    color: var(--text-primary); display: flex; font-size: .9rem; font-weight: 700;
-    justify-content: space-between; margin-top: 10px; min-height: 44px; padding: 9px 14px;
-    text-decoration: none;
+    justify-content: space-between;
+    margin-top: var(--space-2);
 }
-.commu-country-view-all:hover,
-.commu-country-view-all:focus-visible { background: var(--btn-hover); color: var(--text-primary); text-decoration: none; }
 .commu-country-page .commu-hub-section { scroll-margin-top: 82px; }
 .commu-country-empty { color: var(--text-muted); }
 
@@ -3398,30 +3394,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     vertical-align: top;
 }
 
-/* Closes a detail page at its foot. The whole bar is the link — full width
-   like the blog's post-nav bar, clickable like a button. Cream text, not the
-   green link color: at this size the green recedes too far on dark. The
-   shell's own 8px gap is all the room it keeps above. */
-.commu-person-detail-back {
-    background: var(--btn-bg);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    display: block;
-    font-size: 0.92rem;
-    font-weight: 700;
-    padding: 10px 20px;
-    text-decoration: none;
-    transition: background-color 0.15s;
-}
-
-.commu-person-detail-back:hover {
-    background: var(--btn-hover);
-    /* keep the cream text and no underline — the global a:hover would
-       otherwise green-and-underline the bar */
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
 /* The bar is the last thing on a detail page; the site-wide 32px before the
    footer reads as dead air after it, so CommuLingo pages close up tight. */
 .commulingo-page footer {
@@ -3523,16 +3495,11 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Historical event pages */
 /* Dictionary switcher (people / events / terms), shared by the three list
    pages via partials/commulingo-dict-nav.ejs. The open page's tab is painted. */
-.commu-dict-nav { display: flex; border: 1px solid var(--border); background: var(--bg-surface); }
 /* Labels must never wrap: nowrap plus a viewport-scaled font absorbs the
    in-between widths, and below 560px the data-short labels take over. */
-.commu-dict-tab { flex: 1; min-width: 0; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: .4rem; padding: .7rem .4rem; color: var(--text-primary); text-decoration: none; font-weight: 700; font-size: clamp(0.82rem, 1.9vw, 1rem); border-left: 1px solid var(--border); transition: background-color .15s ease; overflow: hidden; }
+.commu-dict-tab { min-height: var(--control-height); padding: .7rem .4rem; font-size: clamp(0.82rem, 1.9vw, 1rem); overflow: hidden; }
 .commu-dict-tab span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.commu-dict-tab:first-child { border-left: 0; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; color: inherit; }
-.commu-dict-tab:hover { background: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
-.commu-dict-tab.is-active { background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas)); color: var(--text-primary); }
-.commu-dict-tab.is-active .commu-role-icon { color: inherit; }
 /* Narrow phones: swap each label for its data-short form (keeping the
    icons) so all five tabs stay on a single line. */
 @media (max-width: 560px) {
@@ -5062,11 +5029,9 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-activities-page > .commu-hub-section { margin-top: var(--space-2); padding-top: var(--space-4); }
 .commu-activity-filters { display: grid; grid-template-columns: 1fr 1fr auto; align-items: start; gap: var(--space-4); }
 .commu-activity-filters label, .commu-activity-affiliation { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
-.commu-activity-filters select, .commu-activity-filters input, .commu-activity-filters button { box-sizing: border-box; min-height: var(--control-height); width: 100%; min-width: 0; padding: var(--space-2); color: var(--text-primary); background: var(--bg-primary); border: 1px solid var(--border); font: inherit; }
+.commu-activity-filters select, .commu-activity-filters input { box-sizing: border-box; min-height: var(--control-height); width: 100%; min-width: 0; padding: var(--space-2); color: var(--text-primary); background: var(--input-bg); border: 1px solid var(--border); font: inherit; }
 .commu-activity-actions { display: flex; align-items: center; gap: var(--space-3); padding-top: calc(1em * var(--leading-normal) + var(--space-2)); }
-.commu-activity-actions button { width: auto; padding-inline: var(--space-4); cursor: pointer; background: var(--btn-bg); }
-.commu-activity-actions button:hover { background: var(--btn-hover); border-color: var(--link); }
-.commu-activity-actions a { display: inline-flex; align-items: center; min-height: var(--control-height); white-space: nowrap; }
+.commu-activity-actions .btn { width: auto; white-space: nowrap; }
 .commu-affiliation-search { font-size: var(--text-sm); }
 .commu-affiliation-search summary { color: var(--link); cursor: pointer; padding-block: var(--space-2); }
 .commu-affiliation-search input { margin-top: var(--space-2); }

@@ -21,18 +21,18 @@ var crumbTrail = (typeof trail !== 'undefined' && trail) || [];
 var crumbJump = typeof dictJump !== 'undefined' ? dictJump : false;
 var crumbAttached = typeof attached !== 'undefined' && attached;
 %>
-<nav class="commu-crumb<%= crumbAttached ? ' is-attached' : '' %>" aria-label="<%= crumbEn ? 'Breadcrumb' : '현재 위치' %>">
-    <ol class="commu-crumb-trail">
-        <li class="commu-crumb-item">
-            <a class="commu-crumb-link commu-crumb-home" href="/commulingo"><%- roleIconSvg('house') %><span><%= crumbEn ? 'CommuLingo' : '공산링고' %></span></a>
+<nav class="ui-crumb commu-crumb<%= crumbAttached ? ' is-attached' : '' %>" aria-label="<%= crumbEn ? 'Breadcrumb' : '현재 위치' %>">
+    <ol class="ui-crumb-trail commu-crumb-trail">
+        <li class="ui-crumb-item commu-crumb-item">
+            <a class="ui-crumb-link commu-crumb-link commu-crumb-home" href="/commulingo"><%- roleIconSvg('house') %><span><%= crumbEn ? 'CommuLingo' : '공산링고' %></span></a>
         </li>
         <% crumbTrail.forEach(function(step) { %>
-        <li class="commu-crumb-item">
-            <span class="commu-crumb-sep" aria-hidden="true">›</span>
+        <li class="ui-crumb-item commu-crumb-item">
+            <span class="ui-crumb-sep commu-crumb-sep" aria-hidden="true">›</span>
             <% if (step.href) { %>
-            <a class="commu-crumb-link" href="<%= step.href %>"<%- step.pair ? ' data-pair-crumb' : '' %>><%= step.label %></a>
+            <a class="ui-crumb-link commu-crumb-link" href="<%= step.href %>"<%- step.pair ? ' data-pair-crumb' : '' %>><%= step.label %></a>
             <% } else { %>
-            <span class="commu-crumb-current" aria-current="page"<%- step.pair ? ' data-pair-crumb-leaf' : '' %>><%= step.label %></span>
+            <span class="ui-crumb-current commu-crumb-current" aria-current="page"<%- step.pair ? ' data-pair-crumb-leaf' : '' %>><%= step.label %></span>
             <% } %>
         </li>
         <% }) %>

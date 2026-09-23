@@ -44,6 +44,7 @@
 <link rel="stylesheet" href="/css/pretendard-subset.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
+<link rel="stylesheet" href="/css/ui.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/commulingo-crumb.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/commulingo-doc.css?v=<%= assetVersion %>">
 </head>
@@ -158,7 +159,7 @@ var refGroups = [
 <% } %>
 <footer class="doc-colophon">
     <% if (doc.source) { %><p><%= strings.commuLingoViews.doc.source %>: <%= doc.source %></p><% } %>
-    <p><a href="/commulingo/docs"><%= strings.commuLingoViews.doc.commulingoReferenceLibrary %></a></p>
+    <p><a class="btn" href="/commulingo/docs"><%= strings.commuLingoViews.doc.commulingoReferenceLibrary %></a></p>
 </footer>
 </main>
 <% if (toc.length) { %>

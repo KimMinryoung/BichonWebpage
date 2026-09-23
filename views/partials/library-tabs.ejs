@@ -8,9 +8,9 @@ var libraryTabs = [
     { key: 'posts', href: '/posts', label: strings.nav.bichonPosts, icon: 'posts' },
 ];
 %>
-<nav class="section-tabs" aria-label="<%= strings.nav.library %>">
+<nav class="ui-tabs section-tabs" aria-label="<%= strings.nav.library %>">
     <% libraryTabs.forEach(function(tab) { %>
-    <a class="section-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>>
+    <a class="ui-tab section-tab<%= active === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (active === tab.key) { %> aria-current="page"<% } %>>
         <%- include('menu-icon', { icon: tab.icon, iconClass: 'section-tab-icon' }) %>
         <%= tab.label %>
     </a>

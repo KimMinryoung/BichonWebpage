@@ -21,14 +21,14 @@
             </div>
         </article>
 
-        <div class="box post-nav">
-            <div class="post-nav-left">
-                <a href="/">&larr; <%= strings.public.backToList %></a>
+        <div class="box ui-action-bar post-nav">
+            <div class="ui-action-bar-start post-nav-left">
+                <a class="btn btn-small" href="/">&larr; <%= strings.public.backToList %></a>
                 <% if (isAuthenticated) { %>
-                    | <a href="/admin/posts/edit/<%= post.id %>"><%= strings.admin.edit %></a>
+                    <a class="btn btn-small" href="/admin/posts/edit/<%= post.id %>"><%= strings.admin.edit %></a>
                 <% } %>
             </div>
-            <div class="post-nav-right">
+            <div class="ui-action-bar-end post-nav-right">
                 <% if (prevId) { %>
                     <a href="/post/<%= prevId %>" class="btn btn-small">&larr; <%= strings.public.prevPost %></a>
                 <% } %>

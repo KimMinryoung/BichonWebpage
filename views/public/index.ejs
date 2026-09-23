@@ -20,11 +20,11 @@
 
         <!-- Menu Cards -->
         <div class="home-cards">
-            <a href="/chat" class="home-card home-card-full home-card-highlight">
+            <a href="/chat" class="ui-card home-card home-card-full home-card-highlight">
                 <h2><%- include('../partials/menu-icon', { icon: 'chat', iconClass: 'home-card-icon' }) %><%= strings.nav.chat %></h2>
                 <p><%= strings.home.chatDesc %></p>
             </a>
-            <div class="home-card home-card-full home-card-highlight home-card-group">
+            <div class="ui-card home-card home-card-full home-card-highlight home-card-group">
                 <h2><a href="/commulingo"><%- include('../partials/menu-icon', { icon: 'commulingo', iconClass: 'home-card-icon' }) %><%= strings.nav.commuLingo %></a></h2>
                 <p><%= strings.home.commuLingoDesc %></p>
                 <div class="home-card-links">
@@ -35,7 +35,7 @@
                     <a href="/commulingo/docs"><%- include('../partials/menu-icon', { icon: 'docs', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictDocsShort %>"><%= strings.commuLingo.dictDocs %></span></a>
                 </div>
             </div>
-            <div class="home-card home-card-full home-card-group">
+            <div class="ui-card home-card home-card-full home-card-group">
                 <h2><a href="/reports"><%- include('../partials/menu-icon', { icon: 'library', iconClass: 'home-card-icon' }) %><%= strings.nav.library %></a></h2>
                 <p><%= strings.home.libraryDesc %></p>
                 <div class="home-card-links">
@@ -45,7 +45,7 @@
                     <a href="/posts"><%- include('../partials/menu-icon', { icon: 'posts', iconClass: 'home-card-link-icon' }) %><span><%= strings.nav.bichonPosts %></span></a>
                 </div>
             </div>
-            <a href="/games/" class="home-card home-card-full">
+            <a href="/games/" class="ui-card home-card home-card-full">
                 <h2><%- include('../partials/menu-icon', { icon: 'game', iconClass: 'home-card-icon' }) %><%= strings.nav.game %></h2>
                 <p><%= strings.home.gameDesc %></p>
             </a>

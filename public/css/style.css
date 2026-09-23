@@ -138,11 +138,8 @@ select:focus-visible,
 
 /* ===== Box (generic surface) ===== */
 .box {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
     padding: 20px;
     margin-bottom: 0;
-    border-radius: 0;
 }
 
 /* ===== Navigation ===== */
@@ -391,35 +388,19 @@ header h1 {
     font-weight: 600;
 }
 
-/* Section tabs — switcher for the four writing sections merged under the
-   글 menu. Mirrors the CommuLingo dictionary switcher (.commu-dict-nav). */
-/* Hangs directly off the menu above it, so it takes the same band height
-   (--bar-height, borders included) — the tabs stretch to fill it. */
-.section-tabs {
-    display: flex;
-    box-sizing: border-box;
+/* Library tabs attach directly to the site menu. Their shared tab structure
+   lives in ui.css; this section keeps only library-specific sizing. */
+.section-tabs.ui-tabs {
     min-height: var(--bar-height);
-    border: 1px solid var(--border);
     border-top: none;
-    background: var(--bg-surface);
 }
 
-.section-tab {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.section-tabs .section-tab {
     gap: 0.4rem;
-    box-sizing: border-box;
     padding: 0.25rem 0.3rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 700;
     /* Labels must never wrap: nowrap + a viewport-scaled font instead. */
     font-size: clamp(0.75rem, 2.4vw, 0.9rem);
     white-space: nowrap;
-    border-left: 1px solid var(--border);
-    transition: background-color 0.15s;
 }
 
 .section-tab-icon {
@@ -428,21 +409,8 @@ header h1 {
     flex: 0 0 auto;
 }
 
-.section-tab:first-child {
-    border-left: none;
-}
-
-.section-tab:hover {
-    background: var(--bg-surface-hover);
-    text-decoration: none;
-}
-
-.section-tab.is-active {
-    background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas));
-}
-
 @media (max-width: 560px) {
-    .section-tab {
+    .section-tabs .section-tab {
         gap: 0.25rem;
         padding: 0.25rem 0.2rem;
     }
@@ -819,14 +787,11 @@ header h1 {
     gap: 0;
 }
 
-.home-card {
+.home-card.ui-card {
     position: relative;
-    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
     border-top: none;
     padding: 14px 44px 14px 18px;
     text-decoration: none;
@@ -1282,66 +1247,6 @@ form {
     min-height: 300px;
     resize: vertical;
     font-family: inherit;
-}
-
-/* ===== Buttons ===== */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    background-color: var(--btn-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-    border-radius: 0;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-align: center;
-    font-family: inherit;
-    line-height: 1;
-    box-sizing: border-box;
-    transition: background-color 0.15s, border-color 0.15s;
-}
-
-/* Buttons react by ground brightness only: pin the text color so the global
-   a:hover link color can't tint <a class="btn"> labels. */
-.btn:hover {
-    background-color: var(--btn-hover);
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.btn-primary {
-    background-color: var(--btn-primary);
-    border-color: var(--btn-primary);
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: var(--btn-primary-hover);
-    color: #fff;
-}
-
-.btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.btn-danger {
-    background-color: var(--btn-danger);
-    border-color: var(--btn-danger);
-    color: #fff;
-}
-
-.btn-danger:hover {
-    background-color: var(--btn-danger-hover);
-}
-
-.btn-small {
-    padding: 5px 10px;
-    font-size: 0.85rem;
-    height: 30px;
 }
 
 /* ===== Admin ===== */
@@ -2034,26 +1939,6 @@ footer .footer-tagline {
 .chat-input-row button {
     min-height: 44px;
     white-space: nowrap;
-}
-
-/* Post Navigation */
-.post-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.post-nav-left {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.post-nav-right {
-    display: flex;
-    gap: 8px;
 }
 
 /* ===== Responsive ===== */

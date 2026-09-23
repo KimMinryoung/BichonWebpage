@@ -27,10 +27,10 @@
                         </div>
                         <div class="research-series-actions">
                             <% if (seriesNav.previous) { %>
-                                <a href="<%= seriesNav.previous.href %>">&larr; <%= lang === 'ko' ? '이전' : 'Prev' %></a>
+                                <a class="btn btn-primary btn-small" href="<%= seriesNav.previous.href %>">&larr; <%= lang === 'ko' ? '이전' : 'Prev' %></a>
                             <% } %>
                             <% if (seriesNav.next) { %>
-                                <a href="<%= seriesNav.next.href %>"><%= lang === 'ko' ? '다음' : 'Next' %> &rarr;</a>
+                                <a class="btn btn-primary btn-small" href="<%= seriesNav.next.href %>"><%= lang === 'ko' ? '다음' : 'Next' %> &rarr;</a>
                             <% } %>
                         </div>
                     </div>
@@ -112,9 +112,9 @@
             <% } %>
         </article>
 
-        <div class="box post-nav">
-            <div class="post-nav-left">
-                <a href="/reports">&larr; <%= strings.public.backToList %></a>
+        <div class="box ui-action-bar post-nav">
+            <div class="ui-action-bar-start post-nav-left">
+                <a class="btn btn-small" href="/reports">&larr; <%= strings.public.backToList %></a>
             </div>
         </div>
     </div>

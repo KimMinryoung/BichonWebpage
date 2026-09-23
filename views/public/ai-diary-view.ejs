@@ -21,9 +21,9 @@
             </div>
         </article>
 
-        <div class="box post-nav">
-            <div class="post-nav-left">
-                <a href="/ai-diary">&larr; <%= strings.public.backToList %></a>
+        <div class="box ui-action-bar post-nav">
+            <div class="ui-action-bar-start post-nav-left">
+                <a class="btn btn-small" href="/ai-diary">&larr; <%= strings.public.backToList %></a>
                 <% if (isAuthenticated) { %>
                     <form action="/ai-diary/<%= diary.id %>/delete" method="POST" class="ui-inline-form" data-confirm="<%= strings.public.deleteDiaryConfirm %>">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
@@ -31,7 +31,7 @@
                     </form>
                 <% } %>
             </div>
-            <div class="post-nav-right">
+            <div class="ui-action-bar-end post-nav-right">
                 <% if (prevId) { %>
                     <a href="/ai-diary/<%= prevId %>" class="btn btn-small">&larr; <%= strings.public.prevPost %></a>
                 <% } %>

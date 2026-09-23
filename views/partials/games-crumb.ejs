@@ -11,10 +11,10 @@
 var crumbCurrent = typeof current !== 'undefined' ? current : '';
 var crumbSibling = typeof sibling !== 'undefined' && sibling ? sibling : null;
 %>
-<nav class="games-crumb" aria-label="현재 위치">
-  <ol class="games-crumb-trail">
-    <li class="games-crumb-item"><a class="games-crumb-link games-crumb-home" href="/games/"><%- include('menu-icon', { icon: 'game', iconClass: 'games-crumb-icon' }) %><span>게임</span></a></li>
-    <li class="games-crumb-item"><span class="games-crumb-sep" aria-hidden="true">›</span><span class="games-crumb-current" aria-current="page"><%= crumbCurrent %></span></li>
+<nav class="ui-crumb games-crumb" aria-label="현재 위치">
+  <ol class="ui-crumb-trail games-crumb-trail">
+    <li class="ui-crumb-item games-crumb-item"><a class="ui-crumb-link games-crumb-link games-crumb-home" href="/games/"><%- include('menu-icon', { icon: 'game', iconClass: 'games-crumb-icon' }) %><span>게임</span></a></li>
+    <li class="ui-crumb-item games-crumb-item"><span class="ui-crumb-sep games-crumb-sep" aria-hidden="true">›</span><span class="ui-crumb-current games-crumb-current" aria-current="page"><%= crumbCurrent %></span></li>
   </ol>
   <% if (crumbSibling) { %><a class="games-crumb-jump" href="<%= crumbSibling.href %>"><%= crumbSibling.label %> <span aria-hidden="true">→</span></a><% } %>
 </nav>

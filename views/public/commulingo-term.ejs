@@ -31,7 +31,7 @@
             <%- include('../partials/commulingo-event-panel', { en: en, p: eventPanel }) %>
         </div>
         <% } %>
-        <a class="commu-person-detail-back" data-pair-back href="/commulingo/terms">← <%= strings.commuLingoViews.term.glossary %></a>
+        <a class="btn btn-block commu-person-detail-back" data-pair-back href="/commulingo/terms">← <%= strings.commuLingoViews.term.glossary %></a>
     </main>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (paired && eventPanel.event.mapSvg) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>

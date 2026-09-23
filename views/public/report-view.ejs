@@ -39,9 +39,9 @@
             <script type="application/json" id="report-raw"><%- JSON.stringify(report.result).replace(/</g, '\\u003c') %></script>
         </article>
 
-        <div class="box post-nav">
-            <div class="post-nav-left">
-                <a href="/reports">&larr; <%= strings.public.backToList %></a>
+        <div class="box ui-action-bar post-nav">
+            <div class="ui-action-bar-start post-nav-left">
+                <a class="btn btn-small" href="/reports">&larr; <%= strings.public.backToList %></a>
             </div>
         </div>
     </div>
