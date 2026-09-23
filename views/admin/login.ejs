@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.login.title }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.login.title }) %>
     <meta name="csrf-token" content="<%= csrfToken %>">
 </head>
 <body>
-    <nav class="site-nav">
-        <div class="nav-content">
-            <a href="/" class="logo"><%= strings.siteName %></a>
-            <div class="nav-links">
-                <a href="/"><%= strings.nav.home %></a>
-            </div>
-        </div>
-    </nav>
+    <%- include('../partials/nav') %>
 
-    <div class="login-container">
+    <main class="login-container admin-login">
         <div class="login-box">
             <h1><%= strings.login.title %></h1>
 
@@ -41,7 +34,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@13/dist/bundle/index.umd.min.js"></script>
     <script>

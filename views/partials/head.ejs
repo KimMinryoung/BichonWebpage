@@ -15,7 +15,9 @@
     ? canonicalUrl
     : (_canonicalLang === 'en' ? _enUrl : _koUrl); %>
 <% const _baseRobots = (typeof robotsMeta !== 'undefined' && robotsMeta) ? robotsMeta : 'index, follow'; %>
-<% const _robots = _urlLang === 'en' && !_hasEnglish ? 'noindex, follow' : _baseRobots; %>
+<% const _robots = (typeof robotsMeta !== 'undefined' && robotsMeta)
+    ? _baseRobots
+    : (_urlLang === 'en' && !_hasEnglish ? 'noindex, follow' : _baseRobots); %>
 <% const _ogType = (typeof ogType !== 'undefined' && ogType) ? ogType : 'website'; %>
 <% const _section = _isHome ? 'home'
     : (_path.indexOf('/commulingo') === 0 ? 'commulingo'

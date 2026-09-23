@@ -1,0 +1,7 @@
+<%- include('head', {
+    pageTitle: pageTitle,
+    pagePath: typeof pagePath !== 'undefined' ? pagePath : '/admin',
+    hasEnglishVersion: false,
+    robotsMeta: 'noindex, nofollow'
+}) %>
+<link rel="stylesheet" href="/css/admin.css?v=<%= assetVersion %>">

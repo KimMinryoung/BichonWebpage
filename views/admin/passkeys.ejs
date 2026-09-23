@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.admin.passkeys }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.admin.passkeys }) %>
     <meta name="csrf-token" content="<%= csrfToken %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
 
-    <div class="container">
+    <div class="container admin-page">
         <div class="admin-header">
             <h1><%= strings.admin.passkeys %></h1>
         </div>
 
         <div class="box">
             <p><%= strings.admin.passkeysHint %></p>
-            <div id="passkey-list" class="ui-section-gap"></div>
+            <div id="passkey-list" class="ui-section-gap admin-table-scroll"></div>
         </div>
 
         <div class="box">

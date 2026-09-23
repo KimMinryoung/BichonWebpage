@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.admin.commulingoDocs }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.admin.commulingoDocs }) %>
     <link rel="stylesheet" href="/css/admin-commulingo-docs.css?v=<%= assetVersion %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
 
-    <div class="container cdocs-page">
+    <div class="container admin-page cdocs-page">
         <div class="admin-header">
             <h1><%= strings.admin.commulingoDocs %></h1>
-            <a href="/admin/commulingo-links" class="btn">자동 링크 검토</a>
-            <a href="/commulingo/docs" class="btn" target="_blank" rel="noopener"><%= strings.commuLingoViews.adminDocs.publicPage %> ↗</a>
+            <div class="admin-actions">
+                <a href="/admin/commulingo-links" class="btn">자동 링크 검토</a>
+                <a href="/commulingo/docs" class="btn" target="_blank" rel="noopener"><%= strings.commuLingoViews.adminDocs.publicPage %> ↗</a>
+            </div>
         </div>
 
         <div class="box cdocs-upload">
@@ -21,8 +23,10 @@
                 ? 'Any .html file works — head/style/script are stripped and the body becomes an <article> fragment. Preview first to check the table of contents and warnings.'
                 : '아무 .html 파일이나 올리면 head/style/script를 제거하고 본문을 <article> fragment로 변환합니다. 미리보기로 목차와 경고를 먼저 확인하세요.' %></p>
             <div class="cdocs-upload-row">
-                <input type="file" id="uploadFile" accept=".html,.htm,text/html">
-                <input type="text" id="uploadId" placeholder="<%= strings.commuLingoViews.adminDocs.slugEGYezhov %>" autocomplete="off" spellcheck="false">
+                <label class="visually-hidden" for="uploadFile"><%= en ? 'HTML file' : 'HTML 파일' %></label>
+                <input class="ui-control" type="file" id="uploadFile" accept=".html,.htm,text/html">
+                <label class="visually-hidden" for="uploadId"><%= en ? 'Document ID' : '문서 ID' %></label>
+                <input class="ui-control" type="text" id="uploadId" placeholder="<%= strings.commuLingoViews.adminDocs.slugEGYezhov %>" autocomplete="off" spellcheck="false">
                 <button class="btn" id="previewBtn"><%= strings.commuLingoViews.adminDocs.preview %></button>
                 <button class="btn btn-primary" id="uploadBtn"><%= strings.commuLingoViews.adminDocs.upload %></button>
             </div>
@@ -43,24 +47,24 @@
             <h2><%= strings.commuLingoViews.adminDocs.edit %>: <span id="editorDocId"></span></h2>
             <form id="editorForm">
                 <div class="cdocs-grid">
-                    <label><%= strings.commuLingoViews.adminDocs.titleKo %><input type="text" name="titleKo"></label>
-                    <label><%= strings.commuLingoViews.adminDocs.titleEn %><input type="text" name="titleEn"></label>
-                    <label><%= strings.commuLingoViews.adminDocs.kindKo %><input type="text" name="kindKo" placeholder="저작·연설"></label>
-                    <label><%= strings.commuLingoViews.adminDocs.kindEn %><input type="text" name="kindEn" placeholder="Writings &amp; speeches"></label>
-                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionKo %><textarea name="descKo" rows="3"></textarea></label>
-                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionEn %><textarea name="descEn" rows="3"></textarea></label>
-                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.sourceCitation %><input type="text" name="source"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.titleKo %><input class="ui-control" type="text" name="titleKo"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.titleEn %><input class="ui-control" type="text" name="titleEn"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.kindKo %><input class="ui-control" type="text" name="kindKo" placeholder="저작·연설"></label>
+                    <label><%= strings.commuLingoViews.adminDocs.kindEn %><input class="ui-control" type="text" name="kindEn" placeholder="Writings &amp; speeches"></label>
+                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionKo %><textarea class="ui-control" name="descKo" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionEn %><textarea class="ui-control" name="descEn" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.sourceCitation %><input class="ui-control" type="text" name="source"></label>
                     <label><%= strings.commuLingoViews.adminDocs.bodyLanguage %>
-                        <select name="docLang"><option value="ko">ko</option><option value="en">en</option></select>
+                        <select class="ui-control" name="docLang"><option value="ko">ko</option><option value="en">en</option></select>
                     </label>
-                    <label><%= strings.commuLingoViews.adminDocs.tocExcludeRegexesOne %><textarea name="tocExclude" rows="2" spellcheck="false"></textarea></label>
+                    <label><%= strings.commuLingoViews.adminDocs.tocExcludeRegexesOne %><textarea class="ui-control" name="tocExclude" rows="2" spellcheck="false"></textarea></label>
                 </div>
 
                 <% ['people', 'terms', 'events'].forEach(function(kind) { %>
                 <fieldset class="cdocs-links" data-kind="<%= kind %>">
                     <legend><%= kind === 'people' ? (strings.commuLingoViews.adminDocs.linkedPeople) : kind === 'terms' ? (strings.commuLingoViews.adminDocs.linkedTerms) : (strings.commuLingoViews.adminDocs.linkedEvents) %></legend>
                     <div class="cdocs-chips" data-chips="<%= kind %>"></div>
-                    <input type="text" list="options-<%= kind %>" data-picker="<%= kind %>"
+                    <input class="ui-control" type="text" list="options-<%= kind %>" data-picker="<%= kind %>"
                         placeholder="<%= strings.commuLingoViews.adminDocs.typeToSearchPick %>" autocomplete="off">
                     <datalist id="options-<%= kind %>"></datalist>
                 </fieldset>

@@ -1,0 +1,51 @@
+/* Shared admin layout. Controls, cards and feedback use ui.css. */
+.admin-page.container {
+    max-width: var(--content-admin);
+    padding-inline: var(--gutter);
+    padding-block: var(--space-5) var(--space-8);
+}
+
+.admin-page .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.admin-page .admin-header h1 { margin: 0; font-size: var(--text-2xl); }
+.admin-page .box { margin-bottom: var(--space-4); }
+.admin-page .box:last-child { margin-bottom: 0; }
+.admin-page .box > h2 { margin-bottom: var(--space-3); }
+
+.admin-actions { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-2); }
+.quick-actions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--space-2); margin-top: var(--space-4); }
+.quick-actions-grid .btn { width: 100%; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--space-3); margin-bottom: var(--space-4); }
+.stat-box { padding: var(--space-4); text-align: center; }
+.stat-box .stat-number { color: var(--text-primary); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; line-height: var(--leading-tight); }
+.stat-box .stat-label { margin-top: var(--space-1); color: var(--text-muted); font-size: var(--text-sm); }
+
+.admin-table-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; }
+.admin-page .posts-table { min-width: 36rem; }
+.admin-page .posts-table th,
+.admin-page .posts-table td { overflow-wrap: anywhere; }
+.admin-page .posts-table .action-group { align-items: center; }
+
+.admin-toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+.admin-toolbar .ui-control { width: auto; max-width: 100%; }
+.admin-toolbar .ui-control[type='search'] { flex: 1 1 14rem; }
+.admin-toolbar .btn { flex: 0 0 auto; }
+.loading-spinner,
+.empty-state { padding: var(--space-8); color: var(--text-muted); text-align: center; }
+
+.admin-login .login-box { border-radius: var(--radius-md); }
+
+@media (max-width: 600px) {
+    .admin-page.container { padding-inline: var(--gutter); }
+    .admin-page .admin-header { align-items: flex-start; }
+    .admin-page .admin-header .btn { width: 100%; }
+    .admin-toolbar .ui-control[type='search'] { flex-basis: 100%; }
+}

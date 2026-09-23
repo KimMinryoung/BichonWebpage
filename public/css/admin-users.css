@@ -1,30 +1,11 @@
-.admin-users-page {
-    max-width: 1120px;
-}
-
 .users-toolbar {
-    display: grid;
-    grid-template-columns: minmax(180px, 1fr) 96px auto;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-
-.users-toolbar input,
-.users-toolbar select,
-.inline-admin-form input {
-    width: 100%;
-    min-height: 40px;
-    padding: 8px 10px;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    color: var(--text-primary);
-    font: inherit;
+    display: flex;
 }
 
 .users-status {
     display: none;
-    margin-bottom: 12px;
-    padding: 10px 12px;
+    margin-bottom: var(--space-3);
+    padding: var(--space-2) var(--space-3);
     border: 1px solid var(--border);
     background: var(--card-bg);
 }
@@ -34,11 +15,15 @@
 }
 
 .users-status.success {
-    border-color: var(--accent-red);
+    color: var(--success-text);
+    border-color: var(--success-border);
+    background: var(--success-bg);
 }
 
 .users-status.error {
-    color: var(--accent-red);
+    color: var(--error-text);
+    border-color: var(--error-border);
+    background: var(--error-bg);
 }
 
 .users-shell {
@@ -50,8 +35,6 @@
 
 .users-list-panel,
 .user-detail-panel {
-    border: 1px solid var(--border);
-    background: var(--card-bg);
     min-width: 0;
 }
 
@@ -112,17 +95,12 @@
 }
 
 .user-badge {
-    display: inline-flex;
-    align-items: center;
-    min-height: 22px;
-    padding: 2px 7px;
-    border: 1px solid var(--border);
-    font-size: 0.76rem;
-    color: var(--text-secondary);
+    max-width: 100%;
 }
 
 .user-badge.admin {
-    color: var(--accent-red);
+    color: var(--text-primary);
+    border-color: var(--border-emphasis);
 }
 
 .user-detail-panel {
@@ -274,8 +252,11 @@
 
 @media (max-width: 560px) {
     .users-toolbar {
-        grid-template-columns: 1fr;
+        align-items: stretch;
+        flex-direction: column;
     }
+
+    .users-toolbar .ui-control { width: 100%; }
 
     .detail-header,
     .detail-actions {

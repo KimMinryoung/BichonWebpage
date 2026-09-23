@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.admin.users }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.admin.users }) %>
     <link rel="stylesheet" href="/css/admin-users.css?v=<%= assetVersion %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
 
-    <div class="container admin-users-page">
+    <div class="container admin-page admin-users-page">
         <div class="admin-header">
             <h1><%= strings.admin.users %></h1>
         </div>
 
-        <div class="users-toolbar">
-            <input id="userSearch" type="search" placeholder="<%= strings.admin.usersSearch %>" autocomplete="off">
-            <select id="userLimit">
+        <div class="users-toolbar admin-toolbar">
+            <label class="visually-hidden" for="userSearch"><%= strings.admin.usersSearch %></label>
+            <input class="ui-control" id="userSearch" type="search" placeholder="<%= strings.admin.usersSearch %>" autocomplete="off">
+            <label class="visually-hidden" for="userLimit"><%= lang === 'en' ? 'Rows per page' : '페이지당 행 수' %></label>
+            <select class="ui-control" id="userLimit">
                 <option value="25">25</option>
                 <option value="50" selected>50</option>
                 <option value="100">100</option>
@@ -25,14 +27,14 @@
         <div id="usersStatus" class="users-status"></div>
 
         <div class="users-shell">
-            <section class="users-list-panel" aria-label="<%= strings.admin.users %>">
+            <section class="ui-card users-list-panel" aria-label="<%= strings.admin.users %>">
                 <div id="usersList" class="users-list">
                     <div class="loading-spinner"><%= strings.admin.chatLogsLoading %></div>
                 </div>
                 <div class="pagination" id="usersPagination"></div>
             </section>
 
-            <section class="user-detail-panel" aria-live="polite">
+            <section class="ui-card user-detail-panel" aria-live="polite">
                 <div id="userDetail" class="user-detail-empty">
                     <%= strings.admin.usersSelectHint %>
                 </div>

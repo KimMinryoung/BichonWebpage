@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.admin.managePosts }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.admin.managePosts }) %>
 </head>
 <body>
     <%- include('../partials/nav') %>
 
-    <div class="container">
+    <div class="container admin-page">
         <div class="admin-header">
             <h1><%= strings.admin.managePosts %></h1>
             <a href="/admin/posts/new" class="btn btn-primary"><%= strings.admin.createPost %></a>
@@ -55,7 +55,8 @@
             </div>
         <% } else { %>
             <div class="box">
-                <p><%= strings.admin.noPostsYet %> <a href="/admin/posts/new"><%= strings.admin.createFirst %></a>.</p>
+                <p><%= strings.admin.noPostsYet %></p>
+                <a class="btn btn-primary ui-section-gap" href="/admin/posts/new"><%= strings.admin.createFirst %></a>
             </div>
         <% } %>
     </div>

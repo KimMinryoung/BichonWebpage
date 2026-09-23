@@ -46,7 +46,6 @@ if (!/<nav\s+class="site-nav"/.test(sharedNav)) {
 }
 
 const standaloneStyleViews = new Set([
-    'views/admin/private-reports.ejs',
     'views/public/novel-view.ejs',
 ]);
 

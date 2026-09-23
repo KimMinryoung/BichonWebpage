@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: isEdit ? strings.admin.editPost : strings.admin.newPost }) %>
+    <%- include('../partials/admin-head', { pageTitle: isEdit ? strings.admin.editPost : strings.admin.newPost }) %>
 </head>
 <body>
     <%- include('../partials/nav') %>
 
-    <div class="container">
+    <div class="container admin-page">
         <div class="admin-header">
             <h1><%= isEdit ? strings.admin.editPost : strings.admin.newPost %></h1>
             <a href="/admin/posts" class="btn">&larr; <%= strings.admin.backToPosts %></a>

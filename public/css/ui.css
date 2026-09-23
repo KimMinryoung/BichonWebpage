@@ -277,6 +277,36 @@ svg {
     font-weight: 700;
 }
 
+.ui-control {
+    width: 100%;
+    min-width: 0;
+    min-height: var(--control-height);
+    box-sizing: border-box;
+    padding: var(--space-2) var(--space-3);
+    color: var(--text-primary);
+    background: var(--input-bg);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius-sm);
+    font: inherit;
+}
+
+.ui-control:focus-visible {
+    outline: 2px solid var(--accent-red);
+    outline-offset: 2px;
+}
+
+.ui-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: var(--space-1) var(--space-2);
+    color: var(--text-secondary);
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    line-height: 1.2;
+}
+
 /* A compact navigation row. The wrapper and individual links both use this
    API; page CSS only supplies icon sizing or unusual attachment behavior. */
 .ui-tabs {

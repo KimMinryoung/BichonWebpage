@@ -25,6 +25,7 @@
 - 공통 UI는 `public/css/ui.css`와 `views/partials/`에서 재사용한다. 도메인 CSS에는 게임판 등 고유한 표현만 둔다. 공통 규칙을 페이지 끝의 덮어쓰기로 복제하지 않는다.
 - CSS 계층은 `palette.css`(원본 토큰) → `style.css`(기존 문서·사이트 기본 규칙) → `ui.css`(공통 컴포넌트) → 화면별 CSS 순서다. 독립 `<head>`를 쓰는 공개 화면도 이 순서를 따른다. 공통 형태를 바꾸려면 `ui.css`에서 수정하고, 화면 CSS에는 크기·배치 같은 해당 화면의 차이만 둔다.
 - 재사용 구성 요소: `.ui-card`(평평한 테두리 카드), `.btn`과 `.btn-primary`·`.btn-danger`·`.btn-small`·`.btn-block`(이동 또는 동작), `.ui-tabs`/`.ui-tab`(상호 배타적인 페이지 메뉴), `.ui-crumb`와 `ui-crumb-*`(현재 위치), `.ui-action-bar`와 시작·끝 슬롯(상세 화면 하단 이동), `.ui-link-group`(버튼 묶음). EJS의 `library-tabs`, `commulingo-dict-nav`, `games-crumb`, `commulingo-crumb` partial이 메뉴 구조와 활성 상태를 제공한다.
+- 관리자 화면은 `admin-head` partial로 공통 CSS·메타데이터를 불러오고 `admin.css`의 `.admin-page` 레이아웃을 사용한다. 입력은 `.ui-control`, 작은 상태 표시는 `.ui-badge`를 적용한다. 비공개 보고서 리더는 `ui-page-shell`과 관리자 전용 두 칸 레이아웃을 쓴다.
 - 주요 독립 이동(시작·이어하기·목록 복귀·전체보기)은 링크에 `.btn`을 붙여 버튼형으로 표시한다. 페이지 전환은 `<a href>`, 제출·필터·토글 같은 현재 화면의 동작은 `<button>`을 사용한다. 본문 인용, 제목, 목차, 카드 전체 링크는 읽기·탐색 맥락에 맞는 링크로 둔다.
 - 상단 메뉴는 `--bar-height`를 사용한다. 위치 메뉴는 현재 위치와 돌아갈 경로를 일관되게 제공한다. 게임과 공산링고의 위치 메뉴는 상단 메뉴 아래 `--crumb-offset`(14px), 높이 `--crumb-height`(34px)를 공유한다. 위치 메뉴로 시작하는 페이지는 shell 상단 padding을 중복 적용하지 않는다.
 - 일반 버튼은 `--control-height`(44px)를 기준으로 한다. 키보드 포커스가 보이고, 입력에는 label, 현재 선택에는 적절한 ARIA 상태를 제공한다. 퍼즐 셀 같은 공간 제약 컨트롤은 키보드 조작을 함께 제공한다.

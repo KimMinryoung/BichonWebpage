@@ -25,7 +25,7 @@
             total = data.total;
             $('review-list').replaceChildren();
             data.rows.forEach(row => {
-                const item = node('article'); item.className = 'review-row';
+                const item = node('article'); item.className = 'ui-card review-row';
                 const info = node('div'); info.append(node('strong', row.text));
                 info.append(node('small', row.lang + ' · ' + row.kind + ' · ' + row.label + ' · ' + policies[row.policy] + (row.reviewed ? '' : ' · 미검토')));
                 if (row.collisions.length || row.risks.length) info.append(node('small', '다른 항목 중복 ' + row.collisions.length + ' · 일반 이름 주의 ' + row.risks.length));

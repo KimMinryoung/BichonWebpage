@@ -97,10 +97,10 @@
         container.innerHTML = state.users.map(function(user) {
             var selected = Number(user.id) === Number(state.selectedId) ? ' selected' : '';
             var badges = '';
-            if (user.is_admin) badges += '<span class="user-badge admin">' + escapeHtml(text.adminBadge || 'Admin') + '</span>';
-            if (user.has_password) badges += '<span class="user-badge">' + escapeHtml(text.password || 'Password') + '</span>';
+            if (user.is_admin) badges += '<span class="ui-badge user-badge admin">' + escapeHtml(text.adminBadge || 'Admin') + '</span>';
+            if (user.has_password) badges += '<span class="ui-badge user-badge">' + escapeHtml(text.password || 'Password') + '</span>';
             return [
-                '<button class="user-row' + selected + '" data-user-id="' + user.id + '">',
+                '<button type="button" class="user-row' + selected + '" data-user-id="' + user.id + '">',
                     '<span class="user-main">',
                         '<span class="user-name">#' + user.id + ' ' + escapeHtml(user.username) + '</span>',
                         '<span class="user-meta">' + escapeHtml(text.created || 'Created') + ': ' + formatDate(user.created_at) + '</span>',
@@ -213,7 +213,8 @@
         if (!user) return;
         $('detailForm').innerHTML = [
             '<form class="inline-admin-form" data-form="rename">',
-                '<input name="username" value="' + escapeAttr(user.username) + '" maxlength="30">',
+                '<label class="visually-hidden" for="admin-rename-username">' + escapeHtml(text.rename || 'Rename') + '</label>',
+                '<input class="ui-control" id="admin-rename-username" name="username" value="' + escapeAttr(user.username) + '" maxlength="30">',
                 '<button class="btn btn-small" type="submit">' + escapeHtml(text.save || 'Save') + '</button>',
                 '<button class="btn btn-small" type="button" data-action="cancel-form">' + escapeHtml(text.cancel || 'Cancel') + '</button>',
             '</form>'
@@ -225,8 +226,8 @@
         if (!source) return;
         $('detailForm').innerHTML = [
             '<form class="inline-admin-form" data-form="merge">',
-                '<label>' + escapeHtml(text.source || 'Source') + '<input value="#' + source.id + ' ' + escapeAttr(source.username) + '" disabled></label>',
-                '<label>' + escapeHtml(text.target || 'Target user ID') + '<input name="targetUserId" inputmode="numeric" pattern="[0-9]+" required></label>',
+                '<label>' + escapeHtml(text.source || 'Source') + '<input class="ui-control" value="#' + source.id + ' ' + escapeAttr(source.username) + '" disabled></label>',
+                '<label>' + escapeHtml(text.target || 'Target user ID') + '<input class="ui-control" name="targetUserId" inputmode="numeric" pattern="[0-9]+" required></label>',
                 '<button class="btn btn-small" type="submit">' + escapeHtml(text.merge || 'Merge') + '</button>',
                 '<button class="btn btn-small" type="button" data-action="cancel-form">' + escapeHtml(text.cancel || 'Cancel') + '</button>',
             '</form>'
@@ -239,7 +240,8 @@
         $('detailForm').innerHTML = [
             '<form class="inline-admin-form danger" data-form="delete">',
                 '<div class="form-note">' + escapeHtml(text.confirmDelete || 'Type the username to delete this account.') + '</div>',
-                '<input name="confirmUsername" placeholder="' + escapeAttr(user.username) + '" autocomplete="off" required>',
+                '<label class="visually-hidden" for="admin-delete-username">' + escapeHtml(text.confirmDelete || 'Confirm username') + '</label>',
+                '<input class="ui-control" id="admin-delete-username" name="confirmUsername" placeholder="' + escapeAttr(user.username) + '" autocomplete="off" required>',
                 '<button class="btn btn-small btn-danger" type="submit">' + escapeHtml(text.delete || 'Delete') + '</button>',
                 '<button class="btn btn-small" type="button" data-action="cancel-form">' + escapeHtml(text.cancel || 'Cancel') + '</button>',
             '</form>'

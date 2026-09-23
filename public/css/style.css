@@ -341,26 +341,6 @@ nav .nav-links a[aria-current="page"] {
     font-weight: 600;
 }
 
-/* ===== Quick Actions Grid ===== */
-.quick-actions-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-@media (min-width: 300px) {
-    .quick-actions-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 800px) {
-    .quick-actions-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
 /* ===== Header ===== */
 header {
     margin-bottom: 20px;
@@ -1259,33 +1239,6 @@ form {
 
 .admin-header h1 {
     font-size: 1.3rem;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.stat-box {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 0;
-    padding: 10px 14px;
-    text-align: center;
-}
-
-.stat-box .stat-number {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--accent);
-}
-
-.stat-box .stat-label {
-    color: var(--text-muted);
-    margin-top: 2px;
-    font-size: 0.85rem;
 }
 
 /* ===== Posts Table ===== */

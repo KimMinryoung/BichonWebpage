@@ -34,10 +34,6 @@
 
 .cdocs-upload-row input[type="text"] {
     flex: 1 1 14rem;
-    padding: 0.45rem 0.6rem;
-    background: var(--input-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
 }
 
 .cdocs-preview {
@@ -129,18 +125,6 @@
 
 .cdocs-wide {
     grid-column: 1 / -1;
-}
-
-.cdocs-grid input,
-.cdocs-grid textarea,
-.cdocs-grid select,
-.cdocs-links input {
-    padding: 0.45rem 0.6rem;
-    background: var(--input-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-    font-family: inherit;
-    font-size: 0.95rem;
 }
 
 .cdocs-links {

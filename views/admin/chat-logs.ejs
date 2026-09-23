@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.admin.chatLogs }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.admin.chatLogs }) %>
     <link rel="stylesheet" href="/css/chat-logs.css?v=<%= assetVersion %>">
 </head>
 <body>
     <%- include('../partials/nav') %>
 
-    <div class="container">
+    <div class="container admin-page">
         <div class="admin-header">
             <h1><%= strings.admin.chatLogs %></h1>
         </div>
 
-        <div class="logs-controls">
-            <select id="routeFilter">
+        <div class="logs-controls admin-toolbar">
+            <label class="visually-hidden" for="routeFilter"><%= lang === 'en' ? 'Conversation route' : '대화 경로' %></label>
+            <select class="ui-control" id="routeFilter">
                 <option value="all"><%= strings.admin.chatLogsFilterAll %></option>
                 <option value="casual"><%= strings.admin.chatLogsFilterCasual %></option>
                 <option value="vectorstore"><%= strings.admin.chatLogsFilterVectorstore %></option>
             </select>
-            <select id="limitSelect">
+            <label class="visually-hidden" for="limitSelect"><%= lang === 'en' ? 'Rows per page' : '페이지당 행 수' %></label>
+            <select class="ui-control" id="limitSelect">
                 <option value="25">25</option>
                 <option value="50" selected>50</option>
                 <option value="100">100</option>

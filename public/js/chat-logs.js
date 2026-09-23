@@ -64,17 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
             var routeLabel = log.route === 'casual' ? '일상대화' : '진지한 대화';
             var answerId = 'answer-' + log.id + '-' + i;
 
-            html += '<div class="log-card">';
+            html += '<div class="ui-card log-card">';
             html += '<div class="log-card-header">';
             html += '<span>#' + log.id + ' &mdash; ' + formatDate(log.created_at) + '</span>';
-            html += '<span class="route-badge ' + routeClass + '">' + routeLabel + '</span>';
+            html += '<span class="ui-badge route-badge ' + routeClass + '">' + routeLabel + '</span>';
             html += '</div>';
 
             html += '<div class="log-label">질문</div>';
             html += '<div class="log-query">' + escapeHtml(log.user_query) + '</div>';
 
             html += '<div class="log-label">답변</div>';
-            html += '<button class="log-answer-toggle" data-answer-toggle="' + answerId + '" aria-expanded="false">답변 열기</button>';
+            html += '<button type="button" class="btn btn-primary btn-small log-answer-toggle" data-answer-toggle="' + answerId + '" aria-expanded="false">답변 열기</button>';
             html += '<div class="log-answer" id="' + answerId + '">' + escapeHtml(log.bot_answer) + '</div>';
 
             html += '<div class="log-meta">';
@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (log.strategy || (log.processing_logs && log.processing_logs.length > 0)) {
                 var detailId = 'detail-' + i;
-                html += '<button class="log-details-toggle" data-toggle="' + detailId + '">생각 과정</button>';
+                html += '<button type="button" class="btn btn-small log-details-toggle" data-toggle="' + detailId + '" aria-expanded="false">생각 과정</button>';
                 html += '<div class="log-details" id="' + detailId + '">';
                 var procLogs = log.processing_logs;
                 if (typeof procLogs === 'string') {
                     try { procLogs = JSON.parse(procLogs); } catch(e) { procLogs = [procLogs]; }
                 }
                 if (procLogs && procLogs.length > 0) {
-                    html += '<div class="log-label" style="margin-top:8px">Processing Logs</div>';
+                    html += '<div class="log-label log-label-spaced">Processing Logs</div>';
                     html += '<pre>' + escapeHtml(procLogs.join('\n')) + '</pre>';
                 }
                 html += '</div>';
@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var toggleId = e.target.getAttribute('data-toggle');
         if (toggleId) {
-            document.getElementById(toggleId).classList.toggle('open');
+            var detailsOpen = document.getElementById(toggleId).classList.toggle('open');
+            e.target.setAttribute('aria-expanded', detailsOpen ? 'true' : 'false');
             return;
         }
         var pageOffset = e.target.getAttribute('data-page');

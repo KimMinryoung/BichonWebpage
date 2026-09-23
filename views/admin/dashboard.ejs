@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-    <%- include('../partials/head', { pageTitle: strings.admin.dashboard }) %>
+    <%- include('../partials/admin-head', { pageTitle: strings.admin.dashboard }) %>
 </head>
 <body>
     <%- include('../partials/nav') %>
 
-    <div class="container">
+    <div class="container admin-page">
         <div class="admin-header">
             <h1><%= strings.admin.dashboard %></h1>
             <a href="/admin/posts/new" class="btn btn-primary"><%= strings.admin.createPost %></a>
         </div>
 
         <div class="stats-grid">
-            <div class="stat-box">
+            <div class="ui-card stat-box">
                 <div class="stat-number">
                     <%= stats.totalPosts %>
                 </div>
                 <div class="stat-label"><%= strings.admin.totalPosts %></div>
             </div>
-            <div class="stat-box">
+            <div class="ui-card stat-box">
                 <div class="stat-number">
                     <%= stats.recentPosts %>
                 </div>
