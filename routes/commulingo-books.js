@@ -1,10 +1,10 @@
 const express = require('express');
 const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { asyncHandler } = require('../utils/async-handler');
-const { loadCommuLingoCatalog, loadCommuLingoLesson, currentVersion } = require('../data/commulingo/shards');
+const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { localize } = require('../data/commulingo/localize');
-const { getLinkIndexes } = require('../data/commulingo/linkify');
-const { bookPageData, linkifyLessonPayload } = require('../data/commulingo/book-page');
+const { bookPageData } = require('../data/commulingo/book-page');
+const { catalogBody, lessonPayload } = require('../data/commulingo/book-response');
 
 // Books, the lesson catalog, and lesson payloads. The page data and the
 // lesson linkifier live in data/commulingo/book-page.js.
@@ -57,54 +57,16 @@ router.get('/book/:collectionId', async (req, res) => {
     }
 });
 
-// The catalog is a ~300KB object; serialize it once per catalog reference
-// instead of on every request.
-const catalogJsonMemo = new WeakMap(); // catalog -> serialized body
-
 router.get('/catalog.json', (req, res) => {
     const catalog = loadCommuLingoCatalog();
     setPublicDataCache(req, res, catalog.version);
-    let body = catalogJsonMemo.get(catalog);
-    if (!body) {
-        body = JSON.stringify(catalog);
-        catalogJsonMemo.set(catalog, body);
-    }
-    res.type('application/json').send(body);
+    res.type('application/json').send(catalogBody(catalog));
 });
-
-// Linkified lesson payloads (~58ms each to build: shard parse + ko/en linkify
-// of every brief/map/explanation), memoized until the shards version or the
-// link indexes change. A linkify failure is served plain and left uncached so
-// the next request retries.
-// Keyed on the index object so a rotated index set releases the generation
-// (a plain Map with indexesRef pinned it until each lesson was next requested).
-const lessonPayloadMemo = new WeakMap(); // indexes -> Map(lessonId -> { version, payload })
 
 router.get('/lesson/:lessonId', asyncHandler(async (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
-    const version = currentVersion();
-    const indexes = await getLinkIndexes('ko'); // both langs invalidate together
-    let generation = lessonPayloadMemo.get(indexes);
-    if (!generation) {
-        generation = new Map();
-        lessonPayloadMemo.set(indexes, generation);
-    }
-    const cached = generation.get(lessonId);
-    let payload;
-    if (cached && cached.version === version) {
-        payload = cached.payload;
-    } else {
-        payload = loadCommuLingoLesson(lessonId);
-        if (!payload) return res.status(404).json({ error: 'lesson not found' });
-        try {
-            await linkifyLessonPayload(payload.lesson);
-            generation.set(lessonId, { version, payload });
-        } catch (err) {
-            // Losing the links costs a hyperlink; losing the payload costs the
-            // quiz. Serve it plain.
-            console.error('commulingo lesson linkify:', err);
-        }
-    }
+    const payload = await lessonPayload(lessonId);
+    if (!payload) return res.status(404).json({ error: 'lesson not found' });
     // Deliberately not setPublicDataCache: the payload is no longer a pure
     // function of the course sources, so its year-long immutable branch would
     // freeze the links against dictionaries that keep changing. Thirty seconds

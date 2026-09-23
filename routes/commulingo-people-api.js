@@ -2,6 +2,7 @@ const express = require('express');
 const { setShortPublicCache } = require('../data/commulingo/page-helpers');
 const { redirectTarget } = require('../data/commulingo/people-store');
 const { loadStandardizedPeople, localizedPersonSections } = require('../data/commulingo/people-view');
+const { peopleApiBody } = require('../data/commulingo/people-presentation');
 
 // JSON API over the people dictionary (people, offices). Same snapshot and
 // standardization as the pages; thirty-second public cache.
@@ -12,40 +13,11 @@ router.get('/api/activity-catalog', (req, res) => {
     res.json(require('../data/commulingo/person-activities').catalog);
 });
 
-// The full people payload is ~9 MB of JSON; serializing it took ~100 ms of
-// event-loop time per request. It is a pure function of the standardized
-// snapshot (and the source label, which flips snapshot→db once after a cold
-// start), so the string is memoized the way catalog.json is.
-const peopleApiMemo = new WeakMap(); // standardized -> Map(source -> JSON string)
-
 router.get('/api/people', async (req, res) => {
     try {
         const { loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
-        let bySource = peopleApiMemo.get(standardized);
-        if (!bySource) {
-            bySource = new Map();
-            peopleApiMemo.set(standardized, bySource);
-        }
-        let body = bySource.get(loaded.source);
-        if (!body) {
-            body = JSON.stringify({
-                schemaVersion: standardized.schemaVersion,
-                source: loaded.source,
-                lang: standardized.lang,
-                peopleCount: standardized.people.length,
-                people: standardized.people,
-                groups: standardized.groups.map(group => ({
-                    id: group.id,
-                    range: group.range,
-                    title: group.title,
-                    blurb: group.blurb,
-                    people: group.people.map(person => person.id),
-                })),
-            });
-            bySource.set(loaded.source, body);
-        }
         setShortPublicCache(res);
-        res.type('application/json').send(body);
+        res.type('application/json').send(peopleApiBody(loaded, standardized));
     } catch (err) {
         console.error('commulingo people api:', err);
         res.status(500).json({ error: 'failed to load people data' });

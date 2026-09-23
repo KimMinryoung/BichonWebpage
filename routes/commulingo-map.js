@@ -1,58 +1,15 @@
 const express = require('express');
 const errorPage = require('../utils/error-page');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
-const { localize } = require('../data/commulingo/localize');
-const { loadStandardizedPeople, sortPeopleChronologically } = require('../data/commulingo/people-view');
-const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
 const { getLinkIndexes, createCardTextLinker } = require('../data/commulingo/linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
-const { flagLabel } = require('../data/commulingo/flag-icons');
-const { eventCountries } = require('../data/commulingo/event-countries');
 const { countryCodes, countryInfo } = require('../data/commulingo/country-geography');
 const { renderWorldMapSvg, renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
 
 const router = express.Router();
+const { directEventsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
 const PREVIEW_LIMIT = 4;
 const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas', 'oceania'];
-
-function directEventsFor(events, code, lang) {
-    return (events || []).filter(event => eventCountries(event.countries).includes(code)).map(event => ({
-        id: event.id,
-        period: event.period,
-        title: localize(event.title, lang),
-        summary: localize(event.summary, lang),
-    }));
-}
-
-function countryPeople(people, code) {
-    return {
-        citizenship: sortPeopleChronologically((people || []).filter(person => person.citizenship && person.citizenship.code === code)),
-        origin: sortPeopleChronologically((people || []).filter(person => person.origin && person.origin.code === code)),
-    };
-}
-
-function summaryFor(people, events, code, lang) {
-    const info = countryInfo(code, lang);
-    if (!info) return null;
-    const groupedPeople = countryPeople(people, code);
-    const relatedEvents = directEventsFor(events, code, lang);
-    return {
-        ...info,
-        search: `${flagLabel(code, 'ko')} ${flagLabel(code, 'en')} ${code}`.toLowerCase(),
-        citizenshipCount: groupedPeople.citizenship.length,
-        originCount: groupedPeople.origin.length,
-        eventCount: relatedEvents.length,
-        totalCount: groupedPeople.citizenship.length + groupedPeople.origin.length + relatedEvents.length,
-    };
-}
-
-async function loadMapData(lang) {
-    const [peopleData, events] = await Promise.all([
-        loadStandardizedPeople(lang),
-        loadCommuLingoHistoryEvents(),
-    ]);
-    return { standardized: peopleData.standardized, events };
-}
 
 router.get('/map', async (req, res) => {
     try {

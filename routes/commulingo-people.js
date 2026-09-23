@@ -11,7 +11,7 @@ const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/histor
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
 const { renderAppView } = require('../utils/render-app-view');
 const { paginateList, PAGE_SIZE } = require('../data/commulingo/list-pagination');
-const { getLinkIndexes, createLinker, createCardTextLinker } = require('../data/commulingo/linkify');
+const { getLinkIndexes, createCardTextLinker } = require('../data/commulingo/linkify');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
@@ -20,7 +20,7 @@ const { nationalityHubHref, buildNationalityFilter } = require('../data/commulin
 const { countryHref, countryInfo } = require('../data/commulingo/country-geography');
 const { renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
-const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically, localizedPersonSections } = require('../data/commulingo/people-view');
+const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically } = require('../data/commulingo/people-view');
 
 // The people dictionary: shell + card fragments, group list pages, office /
 // role / nationality hubs, and the person page. Mounted by routes/commulingo.js.
@@ -38,69 +38,7 @@ async function relatedReportsForTopic(kind, id, lang) {
 
 const router = express.Router();
 
-// Card prose (epithet, moment, bio) on the list and hub pages. Person names
-// only — see the `card` surface in linkify.js — with one seen-set per card, and
-// a fresh set of linkers per request.
-async function cardTextLinker(res) {
-    return createCardTextLinker(await getLinkIndexes(res.locals.lang));
-}
-
-// /people is served as a light shell (search box, institution index, group
-// headers) — ~8MB of person-card markup no longer ships with the page. The
-// cards load per group on demand from /people/cards?group=<id>; each group
-// fragment is memoized per (standardized, link indexes), so it is rendered
-// once per data refresh per language, not per request.
-const peopleGroupCardsMemo = new WeakMap(); // standardized -> { indexesRef, byGroup: Map }
-
-// Linkified person-page bodies, keyed by the per-language link-index entry (a
-// new entry appears whenever any dictionary changes, dropping the old Map).
-const personBodyMemo = new WeakMap(); // indexes -> Map(personId -> { epithetHtml, momentHtml, bioHtml, sections })
-
-// `page` cuts the group to one page of cards (list-pagination.js) and appends
-// the site's pager, which the people shell redraws the group from; without
-// it the whole group is returned for existing fragment consumers.
-const PEOPLE_CARDS_BASE = group => `/commulingo/people/cards?group=${encodeURIComponent(group.id)}&page=`;
-
-async function peopleGroupCardsHtml(req, standardized, lang, group, page, baseUrl) {
-    const indexes = await getLinkIndexes(lang);
-    let memo = peopleGroupCardsMemo.get(standardized);
-    if (!memo || memo.indexesRef !== indexes) {
-        memo = { indexesRef: indexes, byGroup: new Map() };
-        peopleGroupCardsMemo.set(standardized, memo);
-    }
-    const sorted = sortPeopleChronologically(group.people);
-    const pagerBase = baseUrl || PEOPLE_CARDS_BASE(group);
-    const pagination = page
-        ? paginateList(sorted, sorted, { page }, pagerBase, { mark: false })
-        : null;
-    const key = pagination ? `${group.id}\0${pagination.current}\0${pagerBase}` : group.id;
-    let html = memo.byGroup.get(key);
-    if (!html) {
-        // req.app.render knows app.locals only, so the per-language string
-        // table every view otherwise gets from res.locals is passed by hand.
-        html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
-            strings: allStrings[lang],
-            people: pagination ? pagination.pageItems : sorted,
-            groupId: group.id,
-            en: lang === 'en',
-            roleIconSvg,
-            roleHubHref,
-            flagImg,
-            nationalityHubHref,
-            linkifyPersonText: createCardTextLinker(indexes),
-        });
-        if (pagination) {
-            html += await renderAppView(req, 'partials/commulingo-list-pager', {
-                strings: allStrings[lang],
-                pagination,
-                target: `.commu-people-group.is-${group.id} .commu-people-grid`,
-                en: lang === 'en',
-            });
-        }
-        memo.byGroup.set(key, html);
-    }
-    return html;
-}
+const { cardTextLinker, peopleGroupCardsHtml, personBody } = require('../data/commulingo/people-presentation');
 
 router.get('/people', async (req, res) => {
     try {
@@ -410,44 +348,7 @@ router.get('/people/:personId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        // Sections come from the snapshot (loaded.data); history events from their
-        // own cached store. The linkified page body (epithet/moment/bio +
-        // sections, ~60-80ms for section-heavy people) is a pure function of
-        // the snapshot and the link indexes, so it is rendered once per data
-        // refresh per person and served from the memo afterwards.
-        const indexes = await getLinkIndexes(lang);
-        let personPages = personBodyMemo.get(indexes);
-        if (!personPages) {
-            personPages = new Map();
-            personBodyMemo.set(indexes, personPages);
-        }
-        let body = personPages.get(personId);
-        if (!body) {
-            const rawSections = (loaded.data.sections || {})[personId] || [];
-            const sections = localizedPersonSections(rawSections, lang);
-            // One linker for the whole page — bio and every section share its
-            // seen-set, so a document, event, term, or colleague named throughout a
-            // career is a link at its first mention. The person's own name is
-            // excluded so the page never links to itself.
-            const link = createLinker(indexes, {
-                surface: 'person',
-                exclude: { person: person.id },
-            });
-            // Reading order: epithet, moment, bio, then the sections. The moment is a
-            // scene with other people in it — 예조프가 류시코프의 전보를 스탈린에게 —
-            // and it printed as plain text here while the same sentence linked on the
-            // person's card in the list.
-            const introContext = { contextText: [person.epithet, person.moment, person.bio].filter(Boolean).join(' ') };
-            const epithetHtml = link.plain(person.epithet, introContext);
-            const momentHtml = link.plain(person.moment, introContext);
-            const bioHtml = link.plain(person.bio, introContext);
-            sections.forEach(section => {
-                section.bodyHtml = link.html(section.bodyHtml);
-            });
-            body = { epithetHtml, momentHtml, bioHtml, sections };
-            personPages.set(personId, body);
-        }
-        const { epithetHtml, momentHtml, bioHtml, sections } = body;
+        const { epithetHtml, momentHtml, bioHtml, sections } = await personBody(personId, person, loaded, lang);
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
         }));

@@ -3,25 +3,12 @@ const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb } = requir
 const errorPage = require('../utils/error-page');
 const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const { localize } = require('../data/commulingo/localize');
+const { localizedMeta, deckBody } = require('../data/commulingo/drill-presentation');
 
 const router = express.Router();
 
 function isSafeDeckId(deckId) {
     return typeof deckId === 'string' && /^[a-z0-9-]+$/.test(deckId);
-}
-
-function localizedMeta(meta, lang) {
-    return {
-        id: meta.id,
-        kind: meta.kind,
-        mode: meta.mode,
-        title: localize(meta.title, lang),
-        description: localize(meta.description, lang),
-        cardNote: meta.cardNote ? localize(meta.cardNote, lang) : '',
-        roundSize: meta.roundSize,
-        count: meta.count,
-        countUnit: localize(meta.countUnit, lang),
-    };
 }
 
 router.get('/', async (req, res) => {
@@ -53,8 +40,6 @@ router.get('/', async (req, res) => {
 
 // 덱 전체(이중 언어)를 그대로 준다. 언어 분기·라운드 표본은 클라이언트 몫이라
 // 응답이 언어와 세션에 무관해지고, server.js가 이 경로를 세션 없이 캐시한다.
-const deckJsonMemo = new WeakMap(); // drills.byId -> Map(deckId -> serialized)
-
 router.get('/deck/:deckId', async (req, res) => {
     try {
         const deckId = req.params.deckId;
@@ -63,17 +48,7 @@ router.get('/deck/:deckId', async (req, res) => {
         const deck = drills.byId.get(deckId);
         if (!deck) return res.status(404).json({ error: 'unknown deck' });
         setPublicDataCache(req, res, drills.version);
-        let memo = deckJsonMemo.get(drills.byId);
-        if (!memo) {
-            memo = new Map();
-            deckJsonMemo.set(drills.byId, memo);
-        }
-        let body = memo.get(deckId);
-        if (!body) {
-            body = JSON.stringify({ version: drills.version, deck });
-            memo.set(deckId, body);
-        }
-        res.type('application/json').send(body);
+        res.type('application/json').send(deckBody(drills, deckId));
     } catch (err) {
         console.error('commulingo drill deck:', err);
         res.status(500).json({ error: 'failed to load deck' });
