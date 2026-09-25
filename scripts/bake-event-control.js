@@ -13,8 +13,8 @@
 // Requires the polygon-clipping devDependency (bake time only).
 //
 // Output data/commulingo/event-control/<eventId>.json:
-// Spec fields: region (Natural Earth ADM0 codes), sea (coastal waters, [lat,
-// lng]), base (the remainder side), precedence (drawn sides, highest first),
+// Spec fields: region (Natural Earth ADM0 codes), bounds (optional crop box
+// [[lat0, lng0], [lat1, lng1]]), sea (coastal waters, one or more [lat, lng] rings), base (the remainder side), precedence (drawn sides, highest first),
 // carve (sides the base's pockets cut; default all), focus (extra points
 // the map frame must include), sides [{ id, label, tone }], note, sources,
 // traced (the event's .traced.json), phases [{ date, label, <side>: items }].
@@ -87,7 +87,9 @@ function ringArea(ring) {
 // therefore run out to sea; the renderer clips them to the drawn coastline,
 // so no phase repeats the coast's thousands of vertices. Only land borders
 // with neighbours stay exact.
-function regionGeometry(geojsonPath, codes, sea) {
+// sea: one ring or several; bounds: [[lat0, lng0], [lat1, lng1]] crops
+// units that reach far beyond the story (Russia to the Pacific).
+function regionGeometry(geojsonPath, codes, sea, bounds) {
     const geo = JSON.parse(fs.readFileSync(geojsonPath, 'utf8'));
     const polygonsOf = feature => {
         const g = feature.geometry;
@@ -95,18 +97,24 @@ function regionGeometry(geojsonPath, codes, sea) {
         return polys.map(poly => poly.map(r => simplifyRing(r, SIMPLIFY)).filter(r => r.length >= 4))
             .filter(rings => rings.length);
     };
-    const own = geo.features.filter(f => codes.includes(f.properties.ADM0_A3)).flatMap(polygonsOf);
+    const box = bounds ? [[[
+        [bounds[0][1], bounds[0][0]], [bounds[1][1], bounds[0][0]],
+        [bounds[1][1], bounds[1][0]], [bounds[0][1], bounds[1][0]],
+    ]]] : null;
+    const inBox = polys => (box ? polys.flatMap(p => intersection([p], box)) : polys);
+    const own = inBox(geo.features.filter(f => codes.includes(f.properties.ADM0_A3)).flatMap(polygonsOf));
     if (!own.length) throw new Error(`no Natural Earth units ${codes.join(', ')}`);
+    const seas = !sea ? [] : Array.isArray(sea[0][0]) ? sea : [sea];
     // Neighbours are whatever land touches the region's box, padded.
     let [x0, y0, x1, y1] = [Infinity, Infinity, -Infinity, -Infinity];
     const grow = ([x, y]) => { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); };
     own.forEach(poly => poly[0].forEach(grow));
-    (sea ? toRing(sea) : []).forEach(grow);
+    seas.forEach(ring => toRing(ring).forEach(grow));
     const touches = poly => poly[0].some(([x, y]) => x > x0 - 2 && x < x1 + 2 && y > y0 - 2 && y < y1 + 2);
     const others = geo.features.filter(f => !codes.includes(f.properties.ADM0_A3))
         .flatMap(polygonsOf).filter(touches);
     const land = union(...own.map(p => [p]));
-    const withSea = sea ? union(land, [[toRing(sea)]]) : land;
+    const withSea = seas.length ? union(land, ...seas.map(ring => [[toRing(ring)]])) : land;
     return others.length ? difference(withSea, union(...others.map(p => [p]))) : withSea;
 }
 
@@ -202,7 +210,7 @@ function flatten(multi) {
 
 function bakeEvent(spec, ne) {
     const traced = spec.traced ? readTraced(spec.traced) : { phases: {} };
-    const region = regionGeometry(ne, spec.region, spec.sea);
+    const region = regionGeometry(ne, spec.region, spec.sea, spec.bounds);
     const used = new Set();
     // Sides other than the base, highest precedence first: a side loses
     // whatever a higher one holds. The base side's items in a phase are
