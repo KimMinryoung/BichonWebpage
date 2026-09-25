@@ -57,7 +57,7 @@ start_container() {
     log "Starting ${CONTAINER_NAME} at http://${TAILSCALE_IP}:${DEV_PORT}"
     docker run -d \
         --name "$CONTAINER_NAME" \
-        --user "$(id -u):$(id -g)" \
+        --user "$(stat -c '%u:%g' "$FRONTEND_DIR/data")" \
         --add-host=host.docker.internal:host-gateway \
         -p "${TAILSCALE_IP}:${DEV_PORT}:3000" \
         --restart unless-stopped \
@@ -66,6 +66,7 @@ start_container() {
         -e DEV_MODE=1 \
         -e PORT=3000 \
         -e ASSET_VERSION=dev \
+        -e REPORT_RENDER_CACHE_PATH=/app/data/cache/report-renders.dev.json \
         -v "$FRONTEND_DIR/config:/app/config" \
         -v "$FRONTEND_DIR/data:/app/data" \
         -v "$FRONTEND_DIR/middleware:/app/middleware" \

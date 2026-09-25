@@ -42,5 +42,5 @@ Admin은 passkey-only이고 /admin/*는 ADMIN_ALLOWED_IPS 제한을 받는다. �
 - assetVersion: ASSET_VERSION → GIT_SHA → 부팅 시각 fallback. 동일 리비전의 URL은 재시작에도 안정적이다.
 - 모바일 높이는 dvh를 사용한다. 실제 화면은 직접 브라우저로 검증하고, 사용자가 temp_dev/ 스크린샷을 지정하면 먼저 읽는다.
 - 운영은 127.0.0.1:3000에 바인딩된다. 모바일에서는 운영 도메인 또는 Tailscale 미리보기를 사용한다.
-- `scripts/dev-preview start|stop|restart|status|logs`: leninbot-frontend-dev, Tailscale :3001, DEV_MODE=1, view/static 캐시 비활성화, host UID로 실행.
+- `scripts/dev-preview start|stop|restart|status|logs`: leninbot-frontend-dev, Tailscale :3001, DEV_MODE=1, view/static 캐시 비활성화. 운영 `scripts/deploy`와 마찬가지로 실행한 사람이 아니라 `data/` 소유자의 UID로 실행하므로 root로 실행해도 root 소유 파일이 생기지 않는다. 보고서 렌더 캐시는 운영과 섞이지 않게 `data/cache/report-renders.dev.json`을 따로 쓴다. 운영 캐시(`report-renders.json`)는 leninbot 파이프라인이 읽는다.
 - Android 원격 디버깅은 chrome://inspect를 사용할 수 있다.

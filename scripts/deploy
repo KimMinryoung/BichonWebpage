@@ -20,7 +20,9 @@ CONTAINER_NAME="leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
 REVISION_LABEL="com.cyber-lenin.frontend.git-revision"
-RUN_AS_UID_GID="$(id -u):$(id -g)"
+# Run as the owner of the data mount, not whoever invoked this script: a root
+# invocation must not produce a root container writing root-owned data files.
+RUN_AS_UID_GID="$(stat -c '%u:%g' "$FRONTEND_DATA_DIR")"
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
