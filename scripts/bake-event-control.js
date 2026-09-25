@@ -15,7 +15,8 @@
 // Output data/commulingo/event-control/<eventId>.json:
 // Spec fields: region (Natural Earth ADM0 codes), bounds (optional crop box
 // [[lat0, lng0], [lat1, lng1]]), sea (coastal waters, one or more [lat, lng] rings), base (the remainder side), precedence (drawn sides, highest first),
-// carve (sides the base's pockets cut; default all), focus (extra points
+// carve (sides the base's pockets cut; default all), simplify (degrees,
+// default 0.08), focus (extra points
 // the map frame must include), sides [{ id, label, tone }], note, sources,
 // traced (the event's .traced.json), phases [{ date, label, <side>: items }].
 // Items: 'traced' | { traced: date, side?, file? } | [[lat, lng], ...] |
@@ -48,7 +49,9 @@ const CONTENT_DIR = path.join(__dirname, 'content', 'event-control');
 const OUT_DIR = path.join(__dirname, '..', 'data', 'commulingo', 'event-control');
 // Degrees. The event map draws no borders, so a control boundary on land is
 // the only line there and can be coarse; the coast comes from the basemap.
-const SIMPLIFY = 0.08;
+// A spec may coarsen it (spec.simplify) when its map spans a continent.
+const DEFAULT_SIMPLIFY = 0.08;
+let SIMPLIFY = DEFAULT_SIMPLIFY;
 const MIN_AREA = 0.004;  // square degrees; smaller slivers are dropped
 
 function simplifyRing(ring, tol) {
@@ -214,6 +217,7 @@ function flatten(multi) {
 }
 
 function bakeEvent(spec, ne) {
+    SIMPLIFY = spec.simplify || DEFAULT_SIMPLIFY;
     const traced = spec.traced ? readTraced(spec.traced) : { phases: {} };
     const region = regionGeometry(ne, spec.region, spec.sea, spec.bounds);
     const used = new Set();

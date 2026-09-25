@@ -80,7 +80,7 @@ var sections = p.event.bodySections || [];
                 </div>
                 <p class="commu-event-control-caption" aria-live="polite" data-control-caption><strong><%= ctl.phases[0].date %></strong> <span><%= ctl.phases[0].label %></span></p>
                 <ul class="commu-event-control-legend"><% ctl.sides.forEach(function(side) { %><li><i class="is-<%= side.tone %>" aria-hidden="true"></i><%= side.label %></li><% }) %></ul>
-                <p class="commu-event-control-note"><%= ctl.note %> <%= ep.controlSources %>: <% ctl.sources.forEach(function(src, i) { %><a href="<%= src.url %>" rel="noopener"><%= src.label %></a><%= i < ctl.sources.length - 1 ? '; ' : '' %><% }) %></p>
+                <p class="commu-event-control-note"><%= ctl.note %><% if (ctl.sources.length) { %> <%= ep.controlSources %>: <% ctl.sources.forEach(function(src, i) { %><a href="<%= src.url %>" rel="noopener"><%= src.label %></a><%= i < ctl.sources.length - 1 ? '; ' : '' %><% }) %><% } %></p>
                 <script type="application/json" data-control-phases><%- JSON.stringify(ctl.phases).replace(/</g, '\\u003c') %></script>
             </div>
             <% } %>

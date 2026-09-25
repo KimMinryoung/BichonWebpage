@@ -196,6 +196,6 @@ module.exports = {
     phases: Object.keys(LINES).map(date => phaseOf(date, LABELS[date], LINES[date], EXTRA[date])),
     parts: {
         SHARED, phaseOf, LINES, LABELS, EXTRA,
-        NORTH_1941, FINNISH_FRONT, LENINGRAD_1941, LENINGRAD_1943, NORTH_1944, ORANIENBAUM,
+        NORTH_1941, FINNISH_FRONT, LENINGRAD_1941, LENINGRAD_1943, NORTH_1944, ORANIENBAUM, SEAS,
     },
 };
