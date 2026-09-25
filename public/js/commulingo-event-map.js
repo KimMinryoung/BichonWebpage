@@ -55,6 +55,80 @@
         setScale(1);
     });
 
+    // Territorial-control phases: a slider and a play button step through
+    // the dated <g data-phase> layers; the timeline rows carry the phase in
+    // force at their date, so hovering or pinning a row moves the map too.
+    var setPhase = function () {};
+    var control = document.querySelector('[data-event-control]');
+    if (control) (function () {
+        var layers = Array.prototype.slice.call(document.querySelectorAll('.emap-phase[data-phase]'));
+        var range = control.querySelector('[data-control-range]');
+        var play = control.querySelector('[data-control-play]');
+        var caption = control.querySelector('[data-control-caption]');
+        var data = control.querySelector('[data-control-phases]');
+        var phases = [];
+        try { phases = JSON.parse(data.textContent); } catch (e) { return; }
+        if (!layers.length || !range || !phases.length) return;
+        control.querySelector('.commu-event-control-bar').hidden = false;
+        var current = 0;
+        var timer = null;
+
+        setPhase = function (index) {
+            index = Math.max(0, Math.min(phases.length - 1, index));
+            current = index;
+            layers.forEach(function (layer) {
+                layer.classList.toggle('is-current', layer.getAttribute('data-phase') === String(index));
+            });
+            range.value = String(index);
+            var phase = phases[index];
+            range.setAttribute('aria-valuetext', phase.date + ' ' + phase.label);
+            caption.querySelector('strong').textContent = phase.date;
+            caption.querySelector('span').textContent = phase.label;
+        };
+
+        function stop() {
+            if (timer === null) return;
+            clearInterval(timer);
+            timer = null;
+            play.setAttribute('aria-pressed', 'false');
+            play.textContent = play.getAttribute('data-label-play');
+        }
+
+        range.addEventListener('input', function () {
+            stop();
+            setPhase(parseInt(range.value, 10));
+        });
+        play.addEventListener('click', function () {
+            if (timer !== null) { stop(); return; }
+            if (current >= phases.length - 1) setPhase(0);
+            play.setAttribute('aria-pressed', 'true');
+            play.textContent = play.getAttribute('data-label-pause');
+            timer = setInterval(function () {
+                if (current >= phases.length - 1) { stop(); return; }
+                setPhase(current + 1);
+            }, 1600);
+        });
+        // A row without a map number still moves the map to its date.
+        document.querySelectorAll('.commu-event-timeline-list > li[data-control-phase]').forEach(function (row) {
+            if (row.hasAttribute('data-geo-num')) return;
+            row.addEventListener('click', function (event) {
+                if (event.target.closest('a')) return;
+                stop();
+                setPhase(parseInt(row.getAttribute('data-control-phase'), 10));
+            });
+        });
+        setPhase(0);
+        control.stopPlaying = stop;
+    })();
+
+    function followRow(num) {
+        if (!control || num === null) return;
+        var row = document.querySelector('.commu-event-timeline-list > li[data-geo-num="' + num + '"][data-control-phase]');
+        if (!row) return;
+        if (control.stopPlaying) control.stopPlaying();
+        setPhase(parseInt(row.getAttribute('data-control-phase'), 10));
+    }
+
     // Both maps of the page carry the numbered geometry — the orientation map
     // at the top and the campaign map in the timeline section — and they
     // highlight together.
@@ -90,6 +164,7 @@
         shown = num;
         svgs.forEach(function (svg) { svg.classList.toggle('has-active', num !== null); });
         if (num === null) return;
+        followRow(num);
         shapes(num).forEach(function (el) { el.classList.add('is-active'); });
         rows.forEach(function (row) {
             if (row.getAttribute('data-geo-num') === String(num)) row.classList.add('is-map-active');

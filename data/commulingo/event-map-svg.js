@@ -264,6 +264,50 @@ function renderInset(frame) {
     return parts.join('');
 }
 
+// ── Territorial control ──
+// Optional per-event phases from event-control.js: the base side's colour
+// over the whole region, then each phase's other sides as even-odd paths,
+// one <g> per phase. The areas run out to sea (see bake-event-control.js),
+// so the layer is clipped to the land path drawn above it. Only the first
+// phase is shown without JavaScript; commulingo-event-map.js switches them.
+function controlRingsPath(rings, frame, project) {
+    const parts = [];
+    for (const flat of rings) {
+        const pts = [];
+        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        for (let i = 0; i < flat.length; i += 2) {
+            pts.push([flat[i], flat[i + 1]]);
+            minX = Math.min(minX, flat[i]); maxX = Math.max(maxX, flat[i]);
+            minY = Math.min(minY, flat[i + 1]); maxY = Math.max(maxY, flat[i + 1]);
+        }
+        if (minX > frame.x1 || maxX < frame.x0 || minY > frame.y1 || maxY < frame.y0) continue;
+        // A margin keeps the clipped edge off the frame border.
+        const clipped = clipRing(pts, frame.x0 - 1, frame.x1 + 1, frame.y0 - 1, frame.y1 + 1);
+        if (clipped.length < 3) continue;
+        parts.push('M' + clipped.map(p => {
+            const [x, y] = project(p[0], p[1]);
+            return `${x.toFixed(1)} ${y.toFixed(1)}`;
+        }).join('L') + 'Z');
+    }
+    return parts.join('');
+}
+
+function renderControlLayer(control, frame, project, clipId) {
+    const parts = [`<g class="emap-control" clip-path="url(#${clipId})">`];
+    const base = controlRingsPath(control.region || [], frame, project);
+    if (base) parts.push(`<path class="emap-ctl is-${esc(control.base)}" fill-rule="evenodd" d="${base}"/>`);
+    control.phases.forEach((phase, i) => {
+        parts.push(`<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`);
+        for (const [side, rings] of Object.entries(phase.areas || {})) {
+            const d = controlRingsPath(rings, frame, project);
+            if (d) parts.push(`<path class="emap-ctl is-${esc(side)} is-drawn" fill-rule="evenodd" d="${d}"/>`);
+        }
+        parts.push('</g>');
+    });
+    parts.push('</g>');
+    return parts.join('');
+}
+
 // ── Timeline campaign map ──
 // Timeline entries may carry an optional geo field (inline, so reordering the
 // timeline can never orphan it):
@@ -479,7 +523,8 @@ function renderLegend(rows, frame) {
 // anything else the standard marker. When the timeline carries geometry, the
 // whole numbered campaign is drawn here too, so the map at the top of the
 // page shows the full picture at rest; the frame widens to fit it.
-function renderEventMapSvg(locations, lang, title, timeline) {
+// control: the event's territorial-control phases (event-control.js), or null.
+function renderEventMapSvg(locations, lang, title, timeline, control) {
     const entries = (Array.isArray(locations) ? locations : []).filter(loc =>
         loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
         && Math.abs(loc.lat) <= 85 && Math.abs(loc.lng) <= 180);
@@ -507,7 +552,18 @@ function renderEventMapSvg(locations, lang, title, timeline) {
     parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
 
     const level = frame.lonSpan > LOW_RES_LON_SPAN ? 'low' : 'high';
-    parts.push(`<path class="emap-land" fill-rule="evenodd" d="${landPath(level, frame, project)}"/>`);
+    const land = landPath(level, frame, project);
+    if (control) {
+        // The land doubles as the control layer's clip; clip-rule matters
+        // only there. One map per page, so the event id makes the id unique.
+        const id = String(control.eventId || 'event').replace(/[^a-z0-9-]/gi, '');
+        const clipId = `emap-land-clip-${id}`;
+        parts.push(`<path id="emap-land-${id}" class="emap-land" fill-rule="evenodd" clip-rule="evenodd" d="${land}"/>`);
+        parts.push(`<defs><clipPath id="${clipId}"><use href="#emap-land-${id}"/></clipPath></defs>`);
+        parts.push(renderControlLayer(control, frame, project, clipId));
+    } else {
+        parts.push(`<path class="emap-land" fill-rule="evenodd" d="${land}"/>`);
+    }
     parts.push(waterLayers(level, frame, project));
 
     // Faint graticule so scale reads at a glance.

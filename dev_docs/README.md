@@ -25,7 +25,7 @@
 | CommuLingo 용어 편집·파이프라인 | [근거·revision·검토와 private RPC](commulingo-term-editorial.md) |
 | CommuLingo 기능·활동과 소속 분류 | [설계·구현·전환 상태](commulingo-role-model-plan.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
-| CommuLingo 세계지도·국가 허브 | [지도·국가·사건 연결](commulingo-world-map.md) |
+| CommuLingo 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | SEO 인덱싱 | [기존 계획](seo-indexing-plan.md) |
 | 사이트 최적화 | [기존 계획](site-optimization-plan.md) |
 

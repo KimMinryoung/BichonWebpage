@@ -72,6 +72,18 @@ var sections = p.event.bodySections || [];
             <figure class="commu-event-map commu-event-timeline-map">
                 <div class="commu-event-map-viewport"><%- p.event.mapSvg %></div>
             </figure>
+            <% if (p.event.control) { var ctl = p.event.control, ep = strings.commuLingoViews.eventPanel; %>
+            <div class="commu-event-control" data-event-control>
+                <div class="commu-event-control-bar" hidden>
+                    <button type="button" class="commu-event-control-play" data-control-play aria-pressed="false" data-label-play="<%= ep.controlPlay %>" data-label-pause="<%= ep.controlPause %>"><%= ep.controlPlay %></button>
+                    <input type="range" class="commu-event-control-range" min="0" max="<%= ctl.phases.length - 1 %>" step="1" value="0" aria-label="<%= ep.controlPhase %>" aria-valuetext="<%= ctl.phases[0].date %> <%= ctl.phases[0].label %>" data-control-range>
+                </div>
+                <p class="commu-event-control-caption" aria-live="polite" data-control-caption><strong><%= ctl.phases[0].date %></strong> <span><%= ctl.phases[0].label %></span></p>
+                <ul class="commu-event-control-legend"><% ctl.sides.forEach(function(side) { %><li><i class="is-<%= side.id %>" aria-hidden="true"></i><%= side.label %></li><% }) %></ul>
+                <p class="commu-event-control-note"><%= ctl.note %> <%= ep.controlSources %>: <% ctl.sources.forEach(function(src, i) { %><a href="<%= src.url %>" rel="noopener"><%= src.label %></a><%= i < ctl.sources.length - 1 ? '; ' : '' %><% }) %></p>
+                <script type="application/json" data-control-phases><%- JSON.stringify(ctl.phases).replace(/</g, '\\u003c') %></script>
+            </div>
+            <% } %>
             <% } %>
             <% if (p.event.hasCountryFilter) { %>
             <div class="commu-tl-filter" role="group" aria-label="<%= strings.commuLingoViews.eventPanel.byCountry %>" data-tl-filter>
@@ -79,7 +91,7 @@ var sections = p.event.bodySections || [];
                 <% p.event.countryFilter.forEach(function(c) { %><button type="button" class="commu-tl-chip" data-country="<%= c.code %>" aria-pressed="false"><%- c.flagHtml %><%= c.label %></button><% }) %>
             </div>
             <% } %>
-            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %><% if (item.countries && item.countries.length) { %> data-countries="<%= item.countries.join(' ') %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %><% if (item.flagsHtml) { %><span class="commu-tl-flags"><%- item.flagsHtml %></span><% } %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
+            <ol class="commu-event-timeline-list"><% p.event.timeline.forEach(function(item) { %><li<% if (item.geoNum) { %> data-geo-num="<%= item.geoNum %>"<% } %><% if (item.controlPhase != null) { %> data-control-phase="<%= item.controlPhase %>"<% } %><% if (item.countries && item.countries.length) { %> data-countries="<%= item.countries.join(' ') %>"<% } %>><span><% if (item.geoNum) { %><i class="commu-tl-geo-badge"><%= item.geoNum %></i><% } %><%= item.date %><% if (item.flagsHtml) { %><span class="commu-tl-flags"><%- item.flagsHtml %></span><% } %></span><div><strong><%= item.title %></strong><p><%- item.bodyHtml %></p></div></li><% }) %></ol>
         </section>
         <% if (!p.event.bodyHtml) { %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>

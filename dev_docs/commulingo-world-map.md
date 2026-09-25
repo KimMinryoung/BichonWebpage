@@ -10,6 +10,15 @@
 
 역사 사건 지도는 세계지도와 같은 확대·축소·초기화 버튼을 사용한다. `commulingo-event-map.js`가 SVG를 최대 12배로 확대하며, 고정된 지도 창 안에서 가로·세로 스크롤과 터치·키보드 이동을 제공한다. 버튼은 ‘연표와 지도’ 제목 행 오른쪽에 놓이며 지도와 함께 스크롤되지 않는다. 진격로는 Leaflet.PolylineDecorator의 경로 방향·끝점 배치·화살촉 좌표 계산을 사용한다. 원본 리비전과 MIT 라이선스는 `data/commulingo/vendor/leaflet-polyline-decorator/`에 보관한다. 경유점을 잇는 실선과 열린 화살촉을 SVG 경로로 그리며, 짧은 경로에서는 화살촉과 선 굵기를 함께 줄인다. 범례도 동일한 렌더러를 쓴다. 연표 번호 강조·선택은 유지되며, 진격로 없는 위치 지도와 용어 페이지의 사건 탭에도 적용된다. JavaScript가 없으면 원래 크기의 지도를 표시하고 조절 버튼은 숨긴다.
 
+## 사건 지도의 시기별 세력 범위
+
+사건에 `data/commulingo/event-control/<eventId>.json`이 있으면 사건 지도에 시기별 점령 영역 층을 그린다. 현재는 국공내전(1945.08~1949.12, 10단계)만 있다. 지도 아래 재생 버튼·슬라이더로 시기를 넘기고, 연표 행을 가리키거나 누르면 그 날짜에 해당하는 시기(행 날짜 이전의 가장 늦은 시기)로 바뀐다. JavaScript가 없으면 첫 시기만 보인다. 기준 세력(국공내전은 국민정부)은 영역 전체에 한 번 칠하고, 시기마다 나머지 세력만 덧그린다. 영역은 바다까지 포함하고 지도에서 육지 path로 잘라내므로 해안선 좌표를 반복하지 않는다.
+
+- 원고: `scripts/content/event-control/<eventId>.js`. 추출 영역, 손으로 그린 다각형, 원(도시), 철도 회랑을 조합하며 좌표는 `[lat, lng]`이다.
+- 1945~1947년 공산당 지역과 1945년 일본 점령지는 퍼블릭 도메인 당대 지도(미 국무부 1947년 6단 지도, 웨스트포인트 도판)에서 `scripts/trace-event-control-maps.js`로 색을 추출했다. 기준점 좌표와 방법은 스크립트 머리말에 있다.
+- 굽기: `node scripts/bake-event-control.js <ne_50m_admin_0_map_units.geojson>`. polygon-clipping(devDependency)으로 세력별 영역을 겹치지 않게 만든다. 결과 JSON은 `data/`에 있어 운영에 바로 마운트되지만 코드가 배포되기 전에는 읽히지 않는다.
+- 경계는 근사치이며 화면에 출처와 함께 밝힌다. 검증은 `scripts/smoke-commulingo-event-control.js`가 담당한다.
+
 ## 데이터 계약
 
 `commulingo_history_events.countries`는 `flag-icons.js`의 코드로 된 중복 없는 JSON 배열이다. 위치 좌표나 관련 인물의 국적에서 추론하지 않고 교전국·점령국·조약의 핵심 당사국·정권 변동의 직접 대상만 명시한다. 공개 사건은 하나 이상의 코드를 가져야 하며 타임라인 `country`와 본문 절 표시는 상위 `countries`의 부분집합이어야 한다.

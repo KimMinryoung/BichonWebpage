@@ -3291,7 +3291,8 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 
 .commu-section-wide > .commu-event-timeline-list,
-.commu-section-wide > .commu-tl-filter {
+.commu-section-wide > .commu-tl-filter,
+.commu-section-wide > .commu-event-control {
     margin-inline: var(--content-inset);
 }
 
@@ -3585,6 +3586,45 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .emap-border { fill: none; stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
 .emap-lake { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 30%, transparent); stroke-width: .5; }
 .emap-river { fill: none; stroke: var(--bg-surface); stroke-width: 1.1; stroke-linecap: round; }
+/* Territorial control (event-control.js): translucent side colours over
+   the land, one dated layer shown at a time. The hues are map colours, not
+   UI states; the legend below the map names each one. */
+.commu-event-map, .commu-event-control {
+    --emap-kmt: #2f6fb8; --emap-ccp: var(--clr-red); --emap-japan: #c7861c;
+    --emap-soviet: #7b5aa6; --emap-other: #8d8d86;
+}
+.emap-ctl { stroke: none; fill-opacity: .26; }
+.emap-ctl:not(.is-drawn) { stroke-width: .8; stroke-opacity: .55; }
+.emap-ctl.is-drawn { fill-opacity: .34; stroke-width: .8; stroke-opacity: .7; stroke-linejoin: round; }
+.emap-ctl.is-kmt { fill: var(--emap-kmt); stroke: var(--emap-kmt); }
+.emap-ctl.is-ccp { fill: var(--emap-ccp); stroke: var(--emap-ccp); }
+.emap-ctl.is-japan { fill: var(--emap-japan); stroke: var(--emap-japan); }
+.emap-ctl.is-soviet { fill: var(--emap-soviet); stroke: var(--emap-soviet); }
+.emap-ctl.is-other { fill: var(--emap-other); stroke: var(--emap-other); }
+.emap-phase { display: none; }
+.emap-phase.is-current { display: inline; }
+.commu-event-control { margin-block: .7rem 1.1rem; }
+.commu-event-control-bar { display: flex; align-items: center; gap: .75rem; }
+.commu-event-control-bar[hidden] { display: none; }
+.commu-event-control-play {
+    flex-shrink: 0; min-width: 4.2rem; padding: .3rem .8rem; border: 1px solid var(--border);
+    background: transparent; color: var(--text-primary); font: inherit; font-size: .88rem; cursor: pointer;
+}
+.commu-event-control-play:hover { border-color: var(--accent); }
+.commu-event-control-play[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); }
+.commu-event-control-range { flex: 1; min-width: 0; accent-color: var(--accent); }
+.commu-event-control-caption { margin: .45rem 0 0; font-size: .95rem; }
+.commu-event-control-caption strong { margin-right: .4rem; font-variant-numeric: tabular-nums; }
+.commu-event-control-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; margin: .45rem 0 0; padding: 0; list-style: none; font-size: .85rem; color: var(--text-secondary, var(--text-primary)); }
+.commu-event-control-legend li { display: inline-flex; align-items: center; gap: .35rem; }
+.commu-event-control-legend i { width: 14px; height: 10px; border: 1px solid; }
+.commu-event-control-legend i.is-kmt { background: color-mix(in srgb, var(--emap-kmt) 30%, transparent); border-color: var(--emap-kmt); }
+.commu-event-control-legend i.is-ccp { background: color-mix(in srgb, var(--emap-ccp) 34%, transparent); border-color: var(--emap-ccp); }
+.commu-event-control-legend i.is-japan { background: color-mix(in srgb, var(--emap-japan) 34%, transparent); border-color: var(--emap-japan); }
+.commu-event-control-legend i.is-soviet { background: color-mix(in srgb, var(--emap-soviet) 34%, transparent); border-color: var(--emap-soviet); }
+.commu-event-control-legend i.is-other { background: color-mix(in srgb, var(--emap-other) 34%, transparent); border-color: var(--emap-other); }
+.commu-event-control-note { margin: .45rem 0 0; font-size: .8rem; line-height: 1.5; color: var(--text-muted); }
+.commu-event-control-note a { color: inherit; }
 .emap-ref { fill: color-mix(in srgb, var(--text-primary) 65%, transparent); }
 .emap-label.is-ref { fill: var(--text-muted); font-size: 11px; }
 /* Physical geography (돈강, 볼가강): a floating italic name, no marker. */

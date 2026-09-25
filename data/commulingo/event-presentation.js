@@ -4,6 +4,7 @@ const { relatedDocsFor } = require('./docs-refs');
 const { getReportsForEvent } = require('../../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { renderEventMapSvg, timelineGeos } = require('./event-map-svg');
+const { loadEventControl, phaseIndexForDate, presentEventControl } = require('./event-control');
 const { eventRelationsFor } = require('./event-relations');
 const { decode: decodeEntities } = require('./html-fragments');
 const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('./event-countries');
@@ -178,9 +179,13 @@ async function buildEventPanel(eventId, lang) {
         // Campaign-map numbering: the row keeps the same ①②… number its
         // geometry wears on the map (timelineGeos is the one numbering pass).
         const geoNums = new Map(timelineGeos(events[index].timeline).map(g => [g.index, g.num]));
+        // Territorial-control phases, when the event has them: each row
+        // carries the phase in force at its date, so the map can follow it.
+        const control = loadEventControl(eventId);
         event.timeline = event.timeline.map((item, i) => ({
             ...item,
             ...(geoNums.has(i) ? { geoNum: geoNums.get(i) } : {}),
+            ...(control ? { controlPhase: phaseIndexForDate(control.phases, item.date) } : {}),
             flagsHtml: flagsHtml(item.countries, lang),
         }));
         event.hasCountryFilter = event.countryFilter.length > 0;
@@ -227,8 +232,9 @@ async function buildEventPanel(eventId, lang) {
         // location markers, and the numbered campaign when the timeline
         // carries geometry. Rendered here so it rides the same per-snapshot
         // memo as the prose. hasCampaign gates the highlight script.
-        const map = renderEventMapSvg(events[index].locations, lang, event.title, events[index].timeline);
+        const map = renderEventMapSvg(events[index].locations, lang, event.title, events[index].timeline, control);
         event.mapSvg = map ? map.svg : '';
+        event.control = map && control ? presentEventControl(control, lang) : null;
         event.hasCampaign = Boolean(event.mapSvg) && geoNums.size > 0;
         const neighbor = offset => {
             const item = events[index + offset];
