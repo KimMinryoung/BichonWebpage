@@ -13,7 +13,15 @@
 // Requires the polygon-clipping devDependency (bake time only).
 //
 // Output data/commulingo/event-control/<eventId>.json:
-//   { eventId, base, region: [ring, ...], sides: [{ id, label }], note, sources,
+// Spec fields: region (Natural Earth ADM0 codes), sea (coastal waters, [lat,
+// lng]), base (the remainder side), precedence (drawn sides, highest first),
+// carve (sides the base's pockets cut; default all), focus (extra points
+// the map frame must include), sides [{ id, label, tone }], note, sources,
+// traced (the event's .traced.json), phases [{ date, label, <side>: items }].
+// Items: 'traced' | { traced: date, side?, file? } | [[lat, lng], ...] |
+// { circle: [lat, lng, r] } | { corridor: [[lat, lng], ...], width }.
+//
+//   { eventId, base, focus?, region: [ring, ...], sides: [{ id, label, tone }], note, sources,
 //     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] } }] }
 // where a ring is a flat [lng, lat, ...] outline rounded to 0.01°. The
 // region is drawn once in the base side's colour (whatever no other side
@@ -81,23 +89,25 @@ function ringArea(ring) {
 // with neighbours stay exact.
 function regionGeometry(geojsonPath, codes, sea) {
     const geo = JSON.parse(fs.readFileSync(geojsonPath, 'utf8'));
-    const own = [];
-    const others = [];
-    for (const feature of geo.features) {
-        const mine = codes.includes(feature.properties.ADM0_A3);
-        const [x0, y0, x1, y1] = feature.bbox || [-180, -90, 180, 90];
-        if (!mine && (x1 < 60 || x0 > 150 || y1 < 5 || y0 > 60)) continue;
+    const polygonsOf = feature => {
         const g = feature.geometry;
         const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
-        for (const poly of polys) {
-            const rings = poly.map(r => simplifyRing(r, SIMPLIFY)).filter(r => r.length >= 4);
-            if (rings.length) (mine ? own : others).push([rings]);
-        }
-    }
+        return polys.map(poly => poly.map(r => simplifyRing(r, SIMPLIFY)).filter(r => r.length >= 4))
+            .filter(rings => rings.length);
+    };
+    const own = geo.features.filter(f => codes.includes(f.properties.ADM0_A3)).flatMap(polygonsOf);
     if (!own.length) throw new Error(`no Natural Earth units ${codes.join(', ')}`);
-    const land = union(...own);
-    const waters = sea ? [[toRing(sea)]] : [];
-    return difference(waters.length ? union(land, waters) : land, union(...others));
+    // Neighbours are whatever land touches the region's box, padded.
+    let [x0, y0, x1, y1] = [Infinity, Infinity, -Infinity, -Infinity];
+    const grow = ([x, y]) => { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); };
+    own.forEach(poly => poly[0].forEach(grow));
+    (sea ? toRing(sea) : []).forEach(grow);
+    const touches = poly => poly[0].some(([x, y]) => x > x0 - 2 && x < x1 + 2 && y > y0 - 2 && y < y1 + 2);
+    const others = geo.features.filter(f => !codes.includes(f.properties.ADM0_A3))
+        .flatMap(polygonsOf).filter(touches);
+    const land = union(...own.map(p => [p]));
+    const withSea = sea ? union(land, [[toRing(sea)]]) : land;
+    return others.length ? difference(withSea, union(...others.map(p => [p]))) : withSea;
 }
 
 // [lat, lng] authoring coordinates -> [lng, lat] ring.
@@ -140,9 +150,16 @@ function tracedGeometry(rings) {
     return xor(...rings.map(r => [[r]]));
 }
 
+
+const readTraced = file => JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8'));
+
 function resolveItem(item, side, phase, traced) {
     if (item === 'traced') return tracedGeometry((traced.phases[phase.date] || {})[side]);
-    if (item && item.traced) return tracedGeometry((traced.phases[item.traced] || {}).ccp);
+    // { traced: date, side?, file? }: another phase, side or event's tracing.
+    if (item && item.traced) {
+        const source = item.file ? readTraced(item.file) : traced;
+        return tracedGeometry((source.phases[item.traced] || {})[item.side || 'ccp']);
+    }
     if (item && item.circle) return circlePolygon(item.circle);
     if (item && item.corridor) return corridorPolygon(item.corridor, item.width);
     if (Array.isArray(item) && Array.isArray(item[0])) return [[toRing(item)]];
@@ -184,22 +201,25 @@ function flatten(multi) {
 }
 
 function bakeEvent(spec, ne) {
-    const traced = spec.traced
-        ? JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, spec.traced), 'utf8'))
-        : { phases: {} };
+    const traced = spec.traced ? readTraced(spec.traced) : { phases: {} };
     const region = regionGeometry(ne, spec.region, spec.sea);
     const used = new Set();
+    // Sides other than the base, highest precedence first: a side loses
+    // whatever a higher one holds. The base side's items in a phase are
+    // pockets (cities, railway corridors) carved out of the sides named in
+    // spec.carve; the base itself is the remainder, laid down once over the
+    // whole region by the renderer, so no shared boundary is stored twice.
+    const drawn = spec.precedence || spec.sides.map(side => side.id).filter(id => id !== spec.base);
+    const carved = new Set(spec.carve || drawn);
     const phases = spec.phases.map(phase => {
-        const other = within(unionOf(phase.other, 'other', phase, traced), region);
-        const soviet = minus(within(unionOf(phase.soviet, 'soviet', phase, traced), region), other);
-        const ccp = minus(within(minus(unionOf(phase.ccp, 'ccp', phase, traced),
-            unionOf(phase.kmt, 'kmt', phase, traced)), region), other, soviet);
-        const japan = minus(within(unionOf(phase.japan, 'japan', phase, traced), region), other, soviet, ccp);
-        // The Nationalist share is the remainder: the renderer lays the whole
-        // region down in its colour once and draws the other sides on top,
-        // so no shared boundary is stored twice.
+        const pockets = unionOf(phase[spec.base], spec.base, phase, traced);
+        const taken = [];
         const areas = {};
-        for (const [side, geom] of Object.entries({ ccp, japan, soviet, other })) {
+        for (const side of drawn) {
+            let geom = within(unionOf(phase[side], side, phase, traced), region);
+            if (carved.has(side)) geom = minus(geom, pockets);
+            geom = minus(geom, ...taken);
+            if (geom.length) taken.push(geom);
             const rings = flatten(geom);
             if (rings.length) { areas[side] = rings; used.add(side); }
         }
@@ -209,6 +229,9 @@ function bakeEvent(spec, ne) {
     return {
         eventId: spec.eventId,
         base: spec.base,
+        // Extra [lat, lng] points the map frame must include, when the
+        // event's own markers would crop the areas that matter.
+        ...(spec.focus ? { focus: spec.focus } : {}),
         region: flatten(region),
         sides: spec.sides.filter(side => used.has(side.id)),
         note: spec.note,

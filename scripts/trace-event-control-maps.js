@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Trace the Chinese Civil War control areas off public-domain period maps.
+// Trace territorial-control areas off public-domain period maps.
 //
 // The event map's control layer (data/commulingo/event-control.js) needs
 // "who held what, when" polygons. For 1945–1947 a contemporary US source
@@ -12,11 +12,17 @@
 // with hand-drawn later phases and clips everything to the coastline.
 //
 // Usage:
-//   node scripts/trace-event-control-maps.js <state-dept.jpg> <west-point-plate-5.png>
+//   node scripts/trace-event-control-maps.js chinese-civil-war <state-dept.jpg> <west-point-plate-5.png>
+//   node scripts/trace-event-control-maps.js sino-japanese-war <west-point-plate-4.jpg>
+//   node scripts/trace-event-control-maps.js spanish-civil-war <1936-07.png> <1936-09.png> <1937-03.png> <1937-10.png> <1938-07.png> <1939-02.png>
 // Sources (Wikimedia Commons originals):
 //   File:China_Communist_Controlled_Areas,_1945-1947_-_DPLA_-_fcf9e57e32bee59c1519defdd8d46e43.jpg (8268×6888)
 //   File:Situation_at_the_End_of_World_War_Two.PNG (888×687)
-// Output: scripts/content/event-control/chinese-civil-war-1945-1949.traced.json
+//   File:Japanese_Occupation_-_Map.jpg (1119×857; West Point plate 4, Japanese occupation 1940)
+//   File:Map_of_the_Spanish_Civil_War_in_<Month_Year>.png (900×725 each; NordNordWest,
+//     modified by Sting and Grandiose, CC BY-SA 3.0 — the traced areas are a
+//     derivative and carry the same licence and attribution)
+// Output: scripts/content/event-control/<eventId>.traced.json
 //
 // Method. Each map is georeferenced with a least-squares quadratic from
 // lng/lat to frame-normalised (u, v), fitted on city dots read off the scan
@@ -32,10 +38,16 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
-const STEP = 0.05;
-const LNG0 = 97, LNG1 = 136, LAT0 = 17, LAT1 = 54;
-const NX = Math.round((LNG1 - LNG0) / STEP);
-const NY = Math.round((LAT1 - LAT0) / STEP);
+// The lng/lat sampling grid; each event sets its own extent.
+let STEP, LNG0, LAT1, NX, NY;
+function setGrid(lng0, lng1, lat0, lat1, step) {
+    STEP = step;
+    LNG0 = lng0;
+    LAT1 = lat1;
+    NX = Math.round((lng1 - lng0) / step);
+    NY = Math.round((lat1 - lat0) / step);
+}
+setGrid(97, 136, 17, 54, 0.05);
 
 function solve(A, b) {
     const n = A[0].length;
@@ -88,6 +100,34 @@ const STATE_FORWARD = georeference({ l: 5762, t: 370, r: 8076, b: 3055 }, [
     ['Suchow', 34.26, 117.19, 6765.5, 2448], ['Chiamussu', 46.80, 130.36, 7700, 1125],
 ]);
 
+// Plate 4 is the same West Point series as plate 5, printed at another
+// size; its control points were read separately.
+const PLATE4_FORWARD = georeference({ l: 0, t: 0, r: 1119, b: 857 }, [
+    ['Beijing', 39.90, 116.40, 761.3, 193.1], ['Jinan', 36.67, 117.00, 796.7, 299.4],
+    ['Qingdao', 36.07, 120.38, 892, 297.7], ['Xian', 34.27, 108.94, 579.4, 411],
+    ['Nanjing', 32.06, 118.78, 875.4, 445.7], ['Shanghai', 31.23, 121.47, 954.7, 456.7],
+    ['Hankou', 30.58, 114.27, 749, 516.7], ['Changsha', 28.23, 112.94, 724.6, 610.6],
+    ['Guangzhou', 23.13, 113.26, 752.1, 782], ['Chongqing', 29.56, 106.55, 517, 583.4],
+    ['Lanzhou', 36.06, 103.83, 432.7, 358.1], ['Shenyang', 41.80, 123.43, 921.3, 95.7],
+    ['Xiamen', 24.48, 118.09, 912.1, 698.6], ['Nanchang', 28.68, 115.86, 811.9, 580.7],
+    ['Taiyuan', 37.87, 112.55, 673, 276.6], ['Baotou', 40.65, 109.84, 586.7, 192.6],
+]);
+
+// One base map for the whole Spanish series; city dots read at 900×725.
+const SPAIN_FORWARD = georeference({ l: 0, t: 0, r: 900, b: 725 }, [
+    ['Corunna', 43.37, -8.40, 80, 61], ['Gijon', 43.53, -5.66, 250, 55], ['Oviedo', 43.36, -5.85, 238, 72],
+    ['Santander', 43.46, -3.80, 363, 66], ['Bilbao', 43.26, -2.93, 420, 80], ['Vitoria', 42.85, -2.67, 432, 108],
+    ['Pamplona', 42.81, -1.64, 504, 122], ['Leon', 42.60, -5.57, 254, 131], ['Valladolid', 41.65, -4.72, 303, 208],
+    ['Zaragoza', 41.65, -0.88, 546, 212], ['Lerida', 41.62, 0.62, 656, 220], ['Barcelona', 41.39, 2.17, 747, 234],
+    ['Tarragona', 41.12, 1.25, 686, 253], ['Salamanca', 40.97, -5.66, 243, 265], ['Avila', 40.66, -4.70, 305, 294],
+    ['Guadalajara', 40.63, -3.17, 403, 295], ['Madrid', 40.42, -3.70, 369, 316], ['Teruel', 40.34, -1.11, 536, 319],
+    ['Toledo', 39.86, -4.02, 345, 357], ['Valencia', 39.47, -0.38, 583, 400], ['Caceres', 39.47, -6.37, 205, 387],
+    ['Badajoz', 38.88, -6.97, 165, 432], ['Merida', 38.92, -6.34, 199, 432], ['Alicante', 38.35, -0.48, 574, 490],
+    ['Murcia', 37.99, -1.13, 533, 518], ['Cordoba', 37.89, -4.78, 289, 523], ['Cartagena', 37.60, -0.99, 545, 548],
+    ['Seville', 37.39, -5.98, 221, 565], ['Granada', 37.18, -3.60, 366, 584], ['Huelva', 37.26, -6.94, 162, 577],
+    ['Almeria', 36.84, -2.46, 447, 610], ['Malaga', 36.72, -4.42, 327, 618], ['Cadiz', 36.53, -6.29, 207, 635],
+]);
+
 const PLATE_FORWARD = georeference({ l: 0, t: 0, r: 888, b: 687 }, [
     ['Beijing', 39.90, 116.40, 603.7, 158.7], ['Jinan', 36.67, 117.00, 631.6, 240.9],
     ['Qingdao', 36.07, 120.38, 705.1, 241.9], ['Xian', 34.27, 108.94, 461.4, 326.7],
@@ -125,6 +165,21 @@ function plateClass(r, g, b) {
     if (r > 180 && g < 110 && b < 110) return 'stripe';
     if (r > 200 && g > 200 && b > 200) return 'white';
     return null;
+}
+
+function plate4Class(r, g, b) {
+    if (b > r + 40) return null;                              // water
+    if (r > 200 && r - g > 80 && b < 110) return null;        // foreign (orange)
+    if (r + g + b < 360) return null;                         // lines, lettering
+    if (r > 190 && r - g > 25 && b - g > 15) return 'pink';   // Japanese-occupied
+    return 'white';
+}
+
+function spainClass(r, g, b) {
+    if (r + g + b < 250) return null;                          // dots, lettering
+    if (r > 200 && r - g > 55 && b > 150) return 'pink';        // Nationalist
+    if (b - r > 40 && r < 175 && b < 230) return 'blue';        // Republican
+    return 'other';                                             // sea, foreign land
 }
 
 async function loadRaw(file) {
@@ -296,12 +351,7 @@ function simplify(ring, tol) {
 const polygons = (m, tol) => traceRings(m).map(r => simplify(r, tol)).filter(r => r.length >= 4);
 const areaCells = m => m.reduce((s, x) => s + x, 0);
 
-async function main() {
-    const [statePath, platePath] = process.argv.slice(2);
-    if (!statePath || !platePath) {
-        console.error('usage: node scripts/trace-event-control-maps.js <state-dept.jpg> <west-point-plate-5.png>');
-        process.exit(2);
-    }
+async function traceChineseCivilWar(statePath, platePath) {
     const out = {
         eventId: 'chinese-civil-war-1945-1949',
         generatedBy: 'scripts/trace-event-control-maps.js',
@@ -334,7 +384,65 @@ async function main() {
     out.phases['1945.08'].japan = polygons(japan, 0.08);
     console.log('1945.08 japan cells', areaCells(japan));
 
-    const target = path.join(__dirname, 'content', 'event-control', 'chinese-civil-war-1945-1949.traced.json');
+    return out;
+}
+
+// Plate 4: the pink Japanese-occupied area of 1940.
+async function traceSinoJapaneseWar(platePath) {
+    const plate = await loadRaw(platePath);
+    const grids = rasterize(plate, { l: 0, t: 0, r: 1119, b: 857 }, PLATE4_FORWARD, plate4Class, { radius: 1, stride: 1 });
+    let japan = close(threshold(grids.pink, 0.4), 3);
+    japan = dropSmall(japan, 1, 20);
+    japan = dropSmall(japan, 0, 200, true);
+    console.log('1940 japan cells', areaCells(japan));
+    return {
+        eventId: 'sino-japanese-war-1937-1945',
+        generatedBy: 'scripts/trace-event-control-maps.js',
+        step: STEP,
+        phases: { '1940': { japan: polygons(japan, 0.06) } },
+    };
+}
+
+// The Spanish series: Republican (blue-violet) areas, month by month.
+async function traceSpanishCivilWar(...files) {
+    setGrid(-10, 5, 35.5, 44.5, 0.02);
+    const dates = ['1936.07', '1936.09', '1937.03', '1937.10', '1938.07', '1939.02'];
+    const phases = {};
+    for (const [i, file] of files.entries()) {
+        const img = await loadRaw(file);
+        const grids = rasterize(img, { l: 0, t: 0, r: 900, b: 725 }, SPAIN_FORWARD, spainClass, { radius: 5, stride: 1 });
+        let rep = threshold(grids.blue, 0.5);
+        rep = dropSmall(rep, 1, 6);
+        rep = dropSmall(rep, 0, 10, true);
+        phases[dates[i]] = { rep: polygons(rep, 0.03) };
+        console.log(dates[i], 'republican cells', areaCells(rep));
+    }
+    return {
+        eventId: 'spanish-civil-war',
+        generatedBy: 'scripts/trace-event-control-maps.js',
+        licence: 'CC BY-SA 3.0; traced from maps by NordNordWest, modified by Sting and Grandiose (Wikimedia Commons)',
+        step: STEP,
+        phases,
+    };
+}
+
+const EVENTS = {
+    'chinese-civil-war': { files: 2, run: traceChineseCivilWar },
+    'sino-japanese-war': { files: 1, run: traceSinoJapaneseWar },
+    'spanish-civil-war': { files: 6, run: traceSpanishCivilWar },
+};
+
+async function main() {
+    const [name, ...files] = process.argv.slice(2);
+    const event = EVENTS[name];
+    if (!event || files.length !== event.files) {
+        console.error('usage: node scripts/trace-event-control-maps.js chinese-civil-war <state-dept.jpg> <west-point-plate-5.png>');
+        console.error('       node scripts/trace-event-control-maps.js sino-japanese-war <west-point-plate-4.jpg>');
+        console.error('       node scripts/trace-event-control-maps.js spanish-civil-war <six monthly maps, 1936-07 … 1939-02>');
+        process.exit(2);
+    }
+    const out = await event.run(...files);
+    const target = path.join(__dirname, 'content', 'event-control', `${out.eventId}.traced.json`);
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, JSON.stringify(out) + '\n');
     console.log('wrote', path.relative(process.cwd(), target));

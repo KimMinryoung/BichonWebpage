@@ -51,7 +51,7 @@ function presentEventControl(control, lang) {
     if (!control) return null;
     return {
         phases: control.phases.map(phase => ({ date: phase.date, label: localize(phase.label, lang) })),
-        sides: control.sides.map(side => ({ id: side.id, label: localize(side.label, lang) })),
+        sides: control.sides.map(side => ({ id: side.id, tone: side.tone || 'gray', label: localize(side.label, lang) })),
         note: localize(control.note, lang),
         sources: control.sources || [],
     };

@@ -293,19 +293,31 @@ function controlRingsPath(rings, frame, project) {
 }
 
 function renderControlLayer(control, frame, project, clipId) {
+    // Sides are coloured by tone (blue, red, amber, purple, gray), not by
+    // id, so every event reuses the same few map colours.
+    const tones = new Map((control.sides || []).map(side => [side.id, side.tone || 'gray']));
+    const tone = id => esc(tones.get(id) || 'gray');
     const parts = [`<g class="emap-control" clip-path="url(#${clipId})">`];
     const base = controlRingsPath(control.region || [], frame, project);
-    if (base) parts.push(`<path class="emap-ctl is-${esc(control.base)}" fill-rule="evenodd" d="${base}"/>`);
+    if (base) parts.push(`<path class="emap-ctl is-${tone(control.base)}" fill-rule="evenodd" d="${base}"/>`);
+    // A drawn side first knocks the base colour out (a land-coloured copy),
+    // or its translucent tone would mix with the base's into a third colour.
+    // The outline lives once in <defs>; both copies are <use>s of it.
+    const defs = [];
+    const idBase = clipId.replace(/^emap-land-clip-/, 'emap-ctl-');
     control.phases.forEach((phase, i) => {
         parts.push(`<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`);
         for (const [side, rings] of Object.entries(phase.areas || {})) {
             const d = controlRingsPath(rings, frame, project);
-            if (d) parts.push(`<path class="emap-ctl is-${esc(side)} is-drawn" fill-rule="evenodd" d="${d}"/>`);
+            if (!d) continue;
+            const id = `${idBase}-${i}-${esc(side)}`;
+            defs.push(`<path id="${id}" fill-rule="evenodd" d="${d}"/>`);
+            parts.push(`<use href="#${id}" class="emap-ctl-knock"/><use href="#${id}" class="emap-ctl is-${tone(side)} is-drawn"/>`);
         }
         parts.push('</g>');
     });
     parts.push('</g>');
-    return parts.join('');
+    return `<defs>${defs.join('')}</defs>` + parts.join('');
 }
 
 // ── Timeline campaign map ──
@@ -535,7 +547,9 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
         ? [{ lat: geo.lat, lng: geo.lng }]
         : geo.points.map(p => ({ lat: p[0], lng: p[1] })));
 
-    const frame = fitFrame(markers.concat(geoFit));
+    const controlFit = control && Array.isArray(control.focus)
+        ? control.focus.map(([lat, lng]) => ({ lat, lng })) : [];
+    const frame = fitFrame(markers.concat(geoFit, controlFit));
     const project = (lng, lat) => [
         (lng - frame.x0) / frame.lonSpan * frame.width,
         (frame.y1 - lat) / frame.latSpan * frame.height,

@@ -16,26 +16,41 @@ assert.equal(phaseIndexForDate(phases, '연대 미상'), null);
 assert.equal(loadEventControl('no-such-event'), null);
 assert.equal(loadEventControl('../etc/passwd'), null);
 
-const control = loadEventControl('chinese-civil-war-1945-1949');
-assert(control, 'the Chinese Civil War control phases are baked');
-assert.equal(control.base, 'kmt');
-assert(control.region.length > 0);
-const dates = control.phases.map(p => p.date);
-assert.deepEqual([...dates].sort(), dates, 'phases are in date order');
-for (const phase of control.phases) {
-    assert(phase.label.ko && phase.label.en, `${phase.date} has both captions`);
-    assert(phase.areas.ccp && phase.areas.ccp.length, `${phase.date} draws Communist areas`);
-    for (const rings of Object.values(phase.areas)) {
-        for (const ring of rings) {
-            assert(ring.length >= 8 && ring.length % 2 === 0);
-            assert(ring.every(Number.isFinite));
+// Every baked event: dated, captioned, toned and self-consistent.
+const fs = require('node:fs');
+const path = require('node:path');
+const TONES = new Set(['blue', 'red', 'amber', 'purple', 'gray']);
+const bakedIds = fs.readdirSync(path.join(__dirname, '..', 'data', 'commulingo', 'event-control'))
+    .filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, ''));
+assert(bakedIds.length >= 4, 'the four control events are baked');
+for (const id of bakedIds) {
+    const baked = loadEventControl(id);
+    assert(baked && baked.eventId === id, `${id} loads`);
+    assert(baked.region.length > 0, `${id} has a region`);
+    const dates = baked.phases.map(p => p.date);
+    assert.deepEqual([...dates].sort(), dates, `${id} phases are in date order`);
+    const sideIds = new Set(baked.sides.map(s => s.id));
+    assert(sideIds.has(baked.base), `${id} base is a legend side`);
+    for (const side of baked.sides) {
+        assert(TONES.has(side.tone), `${id} ${side.id} has a known tone`);
+        assert(side.label.ko && side.label.en);
+    }
+    for (const phase of baked.phases) {
+        assert(phase.label.ko && phase.label.en, `${id} ${phase.date} has both captions`);
+        for (const [side, rings] of Object.entries(phase.areas)) {
+            assert(sideIds.has(side), `${id} ${side} is in the legend`);
+            assert.notEqual(side, baked.base, 'the base side is never drawn per phase');
+            for (const ring of rings) {
+                assert(ring.length >= 8 && ring.length % 2 === 0);
+                assert(ring.every(Number.isFinite));
+            }
         }
     }
 }
-const sideIds = new Set(control.sides.map(s => s.id));
-for (const phase of control.phases) {
-    for (const side of Object.keys(phase.areas)) assert(sideIds.has(side), `${side} is in the legend`);
-}
+
+const control = loadEventControl('chinese-civil-war-1945-1949');
+assert.equal(control.base, 'kmt');
+for (const phase of control.phases) assert(phase.areas.ccp && phase.areas.ccp.length, `${phase.date} draws Communist areas`);
 
 const presented = presentEventControl(control, 'en');
 assert.equal(presented.phases[0].label, 'Japan surrenders');
@@ -49,6 +64,7 @@ assert.equal((svg.match(/class="emap-phase[^"]*" data-phase=/g) || []).length, c
 assert.equal((svg.match(/class="emap-phase is-current"/g) || []).length, 1, 'only the first phase shows without JS');
 assert.match(svg, /<path id="emap-land-chinese-civil-war-1945-1949" class="emap-land"/);
 assert.match(svg, /<clipPath id="emap-land-clip-chinese-civil-war-1945-1949"><use href="#emap-land-chinese-civil-war-1945-1949"\/>/);
+assert.match(svg, /<use href="#emap-ctl-chinese-civil-war-1945-1949-0-ccp" class="emap-ctl-knock"\/><use href="#emap-ctl-chinese-civil-war-1945-1949-0-ccp" class="emap-ctl is-red is-drawn"\/>/);
 assert.match(svg, /<g class="emap-control" clip-path="url\(#emap-land-clip-chinese-civil-war-1945-1949\)">/);
 assert(svg.length < 260 * 1024, `control SVG stays bounded (${svg.length} bytes)`);
 
