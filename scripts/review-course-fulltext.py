@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 # The leninbot checkout supplies the archival translation core (LENINBOT_DIR,
 # as in scripts/archive-migrations-r2).
 sys.path.insert(0, os.environ.get('LENINBOT_DIR', '/home/grass/leninbot'))
-from runtime_tools.archival_translation import core
+from translation_runtime.archival import core
 
 BASE = Path(__file__).resolve().parents[1] / 'dev_docs/commulingo-fulltext-20260913'
 REVIEWED = BASE / 'reviewed'

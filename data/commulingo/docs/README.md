@@ -134,7 +134,7 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 ```
 
 외국어 사료를 DeepSeek로 옮겨 이 디렉터리에 바로 쓰는 경로가 따로 있다
-(leninbot 저장소의 `runtime_tools/archival_translation`). 스펙 하나가 어느
+(leninbot 저장소의 `translation_runtime/archival`). 스펙 하나가 어느
 출처의 어느 블록 범위를 옮길지 고정하고, 조립기가 fragment를 만들어 스펙의
 `output` 경로에 **덮어쓴다** — `data/commulingo/docs/`가 그 경로다. 따라서
 이 파이프라인이 만든 문서는 손으로 고쳐도 다음 실행 때 되돌아간다. 서두를

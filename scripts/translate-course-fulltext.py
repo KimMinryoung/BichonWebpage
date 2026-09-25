@@ -21,7 +21,7 @@ parser.add_argument('--plan', action='store_true')
 args = parser.parse_args()
 sys.path.insert(0, str(args.backend))
 from llm import call_registry
-from runtime_tools.archival_translation import core
+from translation_runtime.archival import core
 
 # Al-Jabarti's source is Arabic. Reuse the shared executor and validators,
 # but register a process-local source-language adapter, never label it French.
