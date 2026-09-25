@@ -1,7 +1,7 @@
 # AGENTS.md
 
 This repository runs the production frontend as the `leninbot-frontend` Docker container.
-When operating from the `root` account:
+When operating from the `root` account on the production server (cloud sessions have no `grass` user and run as root; this does not apply there):
 
 1. Create and modify project files as the `grass` user so that file ownership is assigned to `grass`, not `root`.
 2. Run all Git commands as the `grass` user. Do not perform Git operations as `root`.
