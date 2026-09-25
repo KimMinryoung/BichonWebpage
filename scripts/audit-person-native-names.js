@@ -3,7 +3,7 @@
 // wrong script — the bug migration 057 cleaned up (박헌영 filed as "Пак Хон Ён").
 //
 // The ingest paths now reject these on write (people-admin-store.js and leninbot
-// runtime_tools/commulingo_people.py), so this script is the backstop for rows
+// commulingo/people.py), so this script is the backstop for rows
 // written before the guard, or by hand-run SQL.
 //
 // Usage (inside the frontend container):

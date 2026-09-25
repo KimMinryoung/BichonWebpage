@@ -75,7 +75,7 @@ not transliterated, for Georgians, Balts, Hungarians and Western Europeans.
   columns; `nativeScriptOverride: true` is the deliberate escape hatch. The same
   store now also reads and writes `citizenship` / `nationalOrigin`
   (`{code, label}`); legacy `origin` remains a compatible alias.
-- leninbot `runtime_tools/commulingo_people.py` — `_NATION_SCRIPTS` and
+- leninbot `commulingo/people.py` — `_NATION_SCRIPTS` and
   `_check_native_script()` support legacy normalization; active person writes
   use the JS validator through the shared service. Tool descriptions carry the rule.
 - `data/commulingo/person-card-validation.js` — card-label rules (fate label is a
@@ -178,7 +178,7 @@ mini-sentences — put burial, prison names, etc. in bio or sections).
   strips the death year (handles `년`, parens, full dates, legacy `d.`) while
   preserving political-event years. The frontend admin store
   (`people-admin-store.js`) runs create/update fate labels through it.
-- leninbot `runtime_tools/commulingo_people.py` → `_normalize_fate_label` is the
+- leninbot `commulingo/people.py` → `_normalize_fate_label` is the
   compatibility helper; active writes use JS normalization and the shared
   22/50 write limits. Tool descriptions carry the vocabulary guide.
 - `scripts/one-off/normalize-commulingo-fate-db.js` was the one-off that normalized all
@@ -290,7 +290,7 @@ different rule per page and a new entry had to be wired into four places.
 
 ## AI Agent Editing
 
-Python `runtime_tools/commulingo_people.py` exposes target-specific person create/update
+Python `commulingo/people.py` exposes target-specific person create/update
 and section save tools. Person reads and writes call the frontend's private
 `scripts/commulingo-person-service.js` through `docker exec` with JSON stdin.
 Admin HTTP, upsert CLI, automatic edits and suggestion approvals all use

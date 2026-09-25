@@ -69,7 +69,7 @@ store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배�
 
 사이트의 다른 산문(인물 카드, 용어 풀이, 사건 본문)에서는 줄표(—)를 쓰지
 않는다. 큐레이터가 지어낸 글의 줄표는 한국어 관례가 아니라 기계의 버릇이고,
-그래서 저장 단계에서 거부한다(leninbot `runtime_tools/commulingo_people.py`의
+그래서 저장 단계에서 거부한다(leninbot `commulingo/people.py`의
 `_em_dash_problem`).
 
 **참고 문헌은 그 규칙을 따르지 않는다.** 여기 실리는 글은 우리가 쓴 것이

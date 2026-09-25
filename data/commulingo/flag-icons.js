@@ -14,7 +14,7 @@
 // no matter where the code list lives. Everything else about a person's
 // nationality — which code they carry, the label shown — is DB. The leninbot
 // repo keeps the same code list for the curator's schema
-// (runtime_tools/commulingo_people.py `_NATIONALITY_CODES`), so adding a nation
+// (commulingo/people.py `_NATIONALITY_CODES`), so adding a nation
 // means both repos plus the asset. The drift check verifies that every code in
 // use by a person actually has a flag here.
 //

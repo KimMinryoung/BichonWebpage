@@ -6,7 +6,7 @@
 // ('산acja 체제', '아프간tsy', '아isne 방어선').
 //
 // The write-time twin lives in the leninbot repo,
-// runtime_tools/commulingo_people.py (_script_leak_problem), and rejects these
+// commulingo/people.py (_script_leak_problem), and rejects these
 // at the tool gate; this audit is the safety net for content that arrives by
 // any other path (bulk translation, manual imports, old rows).
 //

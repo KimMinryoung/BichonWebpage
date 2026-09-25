@@ -10,7 +10,7 @@
 // This module is the rule that stops it happening again: a nationality code maps
 // to the scripts its own orthography uses, and the ingest paths reject a native
 // name written in anything else. The same table is ported to leninbot
-// runtime_tools/commulingo_people.py (_NATION_SCRIPTS) — keep the two in sync.
+// commulingo/people.py (_NATION_SCRIPTS) — keep the two in sync.
 
 // Unicode ranges per script we care about. Order matters only for reporting.
 const SCRIPT_RANGES = [
@@ -126,7 +126,7 @@ const NATION_SCRIPTS = {
 // Hungarian with Romanian papers (Tőkés) or a Korean with Soviet ones (허가이)
 // follows the citizenship's order, and a mononym or a fused single token
 // (허가이, 마오쩌둥) lives wholly in the family part.
-// Ported to leninbot runtime_tools/commulingo_people.py — keep the two in
+// Ported to leninbot commulingo/people.py — keep the two in
 // sync, and run scripts/audit-person-name-order.js after touching either.
 const FAMILY_FIRST = {
     korea: { ko: '', en: ' ' },
