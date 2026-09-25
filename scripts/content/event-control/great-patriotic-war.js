@@ -33,8 +33,10 @@ const FINNISH_FRONT = [[70.4, 32.3], [69.4, 32.0], [67.0, 30.6], [66.0, 31.6], [
 
 // Leningrad under siege: across the Gulf, below the city to the Neva at
 // Shlisselburg, and out to the Ladoga shore.
-const LENINGRAD_1941 = [[59.9, 29.95], [59.84, 30.12], [59.77, 30.33], [59.72, 30.62], [59.83, 30.95],
-    [59.95, 31.08], [59.93, 31.5]];
+// Shlisselburg and the south bank of the Neva are German; the line runs up
+// the river, into the lake and back to the shore east of Lipka.
+const LENINGRAD_1941 = [[59.9, 29.95], [59.84, 30.12], [59.77, 30.33], [59.72, 30.62], [59.8, 30.9],
+    [59.88, 30.97], [59.955, 31.0], [59.99, 31.2], [59.94, 31.42]];
 // January 1943: the land corridor south of Ladoga reopened.
 const LENINGRAD_1943 = [[59.9, 29.95], [59.84, 30.12], [59.77, 30.33], [59.72, 30.62], [59.78, 30.95],
     [59.83, 31.25], [59.9, 31.6]];
@@ -73,8 +75,8 @@ const LINES = {
         [55.9, 32.4], [55.8, 33.1], [56.2, 33.5], [56.3, 34.3], [56.15, 34.6], [55.55, 35.0], [55.0, 35.2],
         [54.6, 34.7], [54.2, 34.4], [54.0, 35.0], [53.6, 35.6], [53.4, 36.2], [53.2, 36.7], [52.8, 37.3],
         [52.4, 37.8], [52.0, 38.4], [51.67, 39.2], [50.9, 39.6], [50.3, 40.4], [49.8, 41.3], [49.55, 42.7],
-        [49.35, 43.1], [49.0, 43.8], [48.85, 44.4], [48.75, 44.53], [48.5, 44.6], [48.4, 44.45], [48.2, 44.1],
-        [47.6, 44.0], [46.8, 45.2], [46.0, 45.6], [45.2, 45.0], [44.3, 44.9], [43.75, 44.95], [43.3, 44.9],
+        [49.35, 43.1], [49.0, 43.8], [48.85, 44.4], [48.8, 44.52], [48.7, 44.55], [48.64, 44.5], [48.63, 44.35],
+        [48.55, 44.22], [48.4, 44.1], [48.2, 44.0], [47.6, 44.0], [46.8, 45.2], [46.0, 45.6], [45.2, 45.0], [44.3, 44.9], [43.75, 44.95], [43.3, 44.9],
         [43.15, 44.4], [43.25, 43.6], [43.3, 42.6], [43.6, 41.8], [44.0, 40.9], [44.3, 39.9], [44.4, 39.3],
         [44.7, 38.0], [44.7, 37.8], [44.5, 37.6]],
     '1943.07': [...FINNISH_FRONT, ...LENINGRAD_1943, [59.5, 32.0], [59.1, 31.95], [58.6, 31.6], [57.95, 31.5],
@@ -151,8 +153,9 @@ const SEAS = [
     [[47.4, 30.3], [47.4, 39.6], [45.0, 38.5], [43.0, 41.8], [41.0, 41.8], [40.8, 28.0], [43.5, 27.5], [45.5, 29.3]],
 ];
 
-module.exports = {
-    eventId: 'great-patriotic-war',
+// The frame of the war shared with its campaign events (siege-of-leningrad,
+// stalingrad), which reuse these lines and add their own dates.
+const SHARED = {
     region: ['RUS', 'UKR', 'BLR', 'EST', 'LVA', 'LTU', 'MDA', 'FIN', 'POL', 'ROU', 'HUN', 'SVK', 'CZE', 'BGR',
         'DEU', 'AUT', 'GEO', 'ARM', 'AZE'],
     bounds: [[38, 5], [71, 62]],
@@ -160,6 +163,21 @@ module.exports = {
     base: 'axis',
     precedence: ['soviet', 'west', 'other'],
     carve: ['soviet'],
+};
+
+// One phase from a line and its extras.
+const phaseOf = (date, label, line, extra = {}) => ({
+    date,
+    label,
+    soviet: [eastOf(line), ...(extra.soviet || [])],
+    ...(extra.axis ? { axis: extra.axis } : {}),
+    ...(extra.west ? { west: extra.west } : {}),
+    ...(extra.other ? { other: extra.other } : {}),
+});
+
+module.exports = {
+    eventId: 'great-patriotic-war',
+    ...SHARED,
     // Leningrad and the Caucasus lie outside the frame the markers give.
     focus: [[60.3, 30.0], [43.2, 44.5]],
     sides: [
@@ -175,12 +193,9 @@ module.exports = {
     sources: [
         { label: 'Gdr, “Eastern Front” map series, Wikimedia Commons (CC BY-SA 3.0), used for reference', url: 'https://commons.wikimedia.org/wiki/File:Eastern_Front_1941-06_to_1941-12.png' },
     ],
-    phases: Object.keys(LINES).map(date => ({
-        date,
-        label: LABELS[date],
-        soviet: [eastOf(LINES[date]), ...((EXTRA[date] || {}).soviet || [])],
-        ...(EXTRA[date] && EXTRA[date].axis ? { axis: EXTRA[date].axis } : {}),
-        ...(EXTRA[date] && EXTRA[date].west ? { west: EXTRA[date].west } : {}),
-        ...(EXTRA[date] && EXTRA[date].other ? { other: EXTRA[date].other } : {}),
-    })),
+    phases: Object.keys(LINES).map(date => phaseOf(date, LABELS[date], LINES[date], EXTRA[date])),
+    parts: {
+        SHARED, phaseOf, LINES, LABELS, EXTRA,
+        NORTH_1941, FINNISH_FRONT, LENINGRAD_1941, LENINGRAD_1943, NORTH_1944, ORANIENBAUM,
+    },
 };

@@ -27,11 +27,13 @@ function loadEventControl(eventId) {
     return control;
 }
 
-// 'YYYY.MM…' → a comparable month number; the first date in a range counts
-// ('1948.11–1949.01' is November 1948). A bare year is its January.
+// 'YYYY.MM.DD…' → a comparable day number; the first date in a range counts
+// ('1948.11–1949.01' is November 1948). Missing month or day count as the
+// first, so a phase dated '1942.11.23' follows one dated '1942.11'.
 function monthOf(date) {
-    const m = String(date || '').match(/(\d{4})(?:\.(\d{1,2}))?/);
-    return m ? Number(m[1]) * 12 + (m[2] ? Number(m[2]) - 1 : 0) : null;
+    const m = String(date || '').match(/(\d{4})(?:\.(\d{1,2})(?:\.(\d{1,2}))?)?/);
+    if (!m) return null;
+    return Number(m[1]) * 372 + (m[2] ? Number(m[2]) - 1 : 0) * 31 + (m[3] ? Number(m[3]) - 1 : 0);
 }
 
 // The phase in force at a timeline date: the latest one that is not after

@@ -12,6 +12,11 @@ assert.equal(phaseIndexForDate(phases, '1948.11–1949.01'), 2, 'a range counts 
 assert.equal(phaseIndexForDate(phases, '1949.10.01'), 3);
 assert.equal(phaseIndexForDate(phases, '1950'), 3);
 assert.equal(phaseIndexForDate(phases, '연대 미상'), null);
+const days = [{ date: '1942.11' }, { date: '1942.11.23' }, { date: '1943.01.10' }];
+assert.equal(phaseIndexForDate(days, '1942.11.19'), 0, 'a day before the second phase');
+assert.equal(phaseIndexForDate(days, '1942.11.23'), 1);
+assert.equal(phaseIndexForDate(days, '1942.12'), 1);
+assert.equal(phaseIndexForDate(days, '1943.01'), 1, 'a bare month is its first day');
 
 assert.equal(loadEventControl('no-such-event'), null);
 assert.equal(loadEventControl('../etc/passwd'), null);

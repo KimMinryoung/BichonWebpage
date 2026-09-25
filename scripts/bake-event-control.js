@@ -94,9 +94,14 @@ function regionGeometry(geojsonPath, codes, sea, bounds) {
     const polygonsOf = feature => {
         const g = feature.geometry;
         const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
-        return polys.map(poly => poly.map(r => simplifyRing(r, SIMPLIFY)).filter(r => r.length >= 4))
-            .filter(rings => rings.length);
+        return polys.filter(poly => poly[0].length >= 4);
     };
+    // Simplify once, after the boolean work: neighbours simplified apart
+    // leave slivers along their shared border (Russia–Ukraine did).
+    const simplified = multi => union(...multi
+        .map(poly => poly.map(r => simplifyRing(r, SIMPLIFY)).filter(r => r.length >= 4))
+        .filter(poly => poly.length)
+        .map(poly => [poly]));
     const box = bounds ? [[[
         [bounds[0][1], bounds[0][0]], [bounds[1][1], bounds[0][0]],
         [bounds[1][1], bounds[1][0]], [bounds[0][1], bounds[1][0]],
@@ -115,7 +120,7 @@ function regionGeometry(geojsonPath, codes, sea, bounds) {
         .flatMap(polygonsOf).filter(touches);
     const land = union(...own.map(p => [p]));
     const withSea = seas.length ? union(land, ...seas.map(ring => [[toRing(ring)]])) : land;
-    return others.length ? difference(withSea, union(...others.map(p => [p]))) : withSea;
+    return simplified(others.length ? difference(withSea, union(...others.map(p => [p]))) : withSea);
 }
 
 // [lat, lng] authoring coordinates -> [lng, lat] ring.
