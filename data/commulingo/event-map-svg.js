@@ -619,22 +619,30 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     for (const p of placed) {
         parts.push(`<circle class="emap-marker${p.main ? ' is-main' : ''}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.main ? 5.5 : 4}"/>`);
     }
-    const lastLabel = { start: null, end: null };
+    // A label drops below any earlier one it would actually overlap — same
+    // line band and overlapping width. Stacking every label on a side instead
+    // pushed far-apart names down a chain (Irkutsk ended up beside
+    // Vladivostok). Widths and the line step are sized for the 17px mobile
+    // labels (the media query in commulingo.css), the larger of the two
+    // scales this SVG renders at.
+    const labelBoxes = [];
     for (const p of placed) {
         const text = localize(p.marker.label, lang);
         if (!text) continue;
         const flip = p.x > frame.width * 0.8;
-        const side = flip ? 'end' : 'start';
-        let ly = p.y + 4;
-        const prev = lastLabel[side];
-        // Spacing sized for the 17px mobile labels (the media query in
-        // commulingo.css), the larger of the two scales this SVG renders at.
-        if (prev && ly - prev < 19) ly = prev + 19;
-        lastLabel[side] = ly;
         const lx = flip ? p.x - 9 : p.x + 9;
+        const w = Array.from(text).reduce((sum, ch) => sum + (ch.charCodeAt(0) > 0x2e80 ? 17 : 9), 0);
+        const x0 = flip ? lx - w : lx;
+        const x1 = flip ? lx : lx + w;
+        let ly = p.y + 4;
+        for (let guard = 0; guard < labelBoxes.length + 1; guard++) {
+            const hit = labelBoxes.find(b => x0 < b.x1 + 4 && x1 > b.x0 - 4 && Math.abs(ly - b.ly) < 18.5);
+            if (!hit) break;
+            ly = hit.ly + 19;
+        }
+        labelBoxes.push({ x0, x1, ly });
         parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${flip ? 'end' : 'start'}">${esc(text)}</text>`);
-        const w = text.length * 12;
-        avoid.push({ x0: flip ? lx - w : lx, x1: flip ? lx : lx + w, y0: ly - 12, y1: ly + 4 });
+        avoid.push({ x0, x1, y0: ly - 12, y1: ly + 4 });
     }
 
     if (geos.length) parts.push(...renderGeometryLayer(geos, lang, frame, projectPt, avoid));

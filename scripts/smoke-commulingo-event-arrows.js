@@ -33,4 +33,16 @@ const spans=tips.map(([,path,stroke],i)=>{
 assert(spans[0]<spans[1]&&spans[1]<spans[2]);
 const zero=renderEventMapSvg(locations,'en','Check',[{geo:{kind:'arrow',points:[[45,5],[45,5]]}}]).svg;
 assert(!zero.includes('NaN'));assert(!zero.includes('class="emap-arrow-tip'));
+// Place labels: a far-away label keeps its own line; near ones stack apart.
+const labelYs = svg => [...svg.matchAll(/<text class="emap-label[^"]*" x="[\d.]+" y="([\d.]+)"[^>]*>([^<]+)/g)]
+    .reduce((o, m) => ({ ...o, [m[2]]: Number(m[1]) }), {});
+const markerYs = svg => [...svg.matchAll(/<circle class="emap-marker[^"]*" cx="[\d.]+" cy="([\d.]+)"/g)].map(m => Number(m[1]));
+const spread = renderEventMapSvg([
+    { lat: 55.75, lng: 37.62, label: { en: 'Moscow' } }, { lat: 55.3, lng: 38.4, label: { en: 'Kolomna' } },
+    { lat: 52.29, lng: 104.28, label: { en: 'Irkutsk' } }, { lat: 43.12, lng: 131.89, label: { en: 'Vladivostok' } },
+], 'en', 'Labels', []).svg;
+const ys = labelYs(spread);
+const irkutskMarker = markerYs(spread).find(y => Math.abs(y + 4 - ys.Irkutsk) < 0.2);
+assert(irkutskMarker !== undefined, 'a label with no neighbour stays beside its marker');
+assert(Math.abs(ys.Moscow - ys.Kolomna) >= 18.5, 'overlapping neighbours stack apart');
 console.log('event arrows: upstream heading, visible open heads, connected shafts, sizing and degenerate routes OK');
