@@ -7,12 +7,14 @@ Output and checkpoints stay private until completeness and editorial review.
 import argparse
 import dataclasses
 import json
+import os
 import sys
 from pathlib import Path
 
 parser = argparse.ArgumentParser()
 parser.add_argument('specs', nargs='+', type=Path)
-parser.add_argument('--backend', type=Path, default=Path('/home/grass/leninbot'))
+parser.add_argument('--backend', type=Path,
+                    default=Path(os.environ.get('LENINBOT_DIR', '/home/grass/leninbot')))
 parser.add_argument('--concurrency', type=int, default=5)
 parser.add_argument('--thinking', choices=['enabled', 'disabled'], default='enabled')
 parser.add_argument('--plan', action='store_true')

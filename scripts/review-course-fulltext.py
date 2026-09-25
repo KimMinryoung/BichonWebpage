@@ -6,12 +6,15 @@ it does not publish or change the production registry.
 """
 import html
 import json
+import os
 import re
 import sys
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-sys.path.insert(0, '/home/grass/leninbot')
+# The leninbot checkout supplies the archival translation core (LENINBOT_DIR,
+# as in scripts/archive-migrations-r2).
+sys.path.insert(0, os.environ.get('LENINBOT_DIR', '/home/grass/leninbot'))
 from runtime_tools.archival_translation import core
 
 BASE = Path(__file__).resolve().parents[1] / 'dev_docs/commulingo-fulltext-20260913'

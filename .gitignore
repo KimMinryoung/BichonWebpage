@@ -26,6 +26,7 @@ Thumbs.db
 # LLM Assistant — skills are shared with the repo; settings.local.json stays local
 .claude/*
 !.claude/skills/
+!.claude/settings.json
 
 # temp files for dev
 temp_dev/

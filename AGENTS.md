@@ -39,3 +39,11 @@ Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content agai
 - UI changes must follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
 - For CSS, layout, or client-side interaction changes, perform one browser check, preferably against production after deployment. Do not require browser checks for metadata, visibility, server-only, or documentation changes. Read user-referenced screenshots before diagnosing them.
 - Keep this file limited to enduring constraints and routing links. Put formulas, procedures and completed-work history in topic documents. Current user instructions take precedence over past preferences.
+
+## Cloud sessions and lone clones
+
+This repository works without the production server or the leninbot checkout. In a Claude Code cloud session the SessionStart hook in `.claude/settings.json` runs `scripts/cloud-setup` (only when `CLAUDE_CODE_REMOTE=true`), which installs `node_modules`; elsewhere run it by hand.
+
+- Available: editing, `npm test` (no DB or container; the gitignored `data/commulingo/generated/` shards are built on demand), `npm run lint`.
+- Not available: running the server against data (Postgres, Redis), `scripts/deploy`, `scripts/dev-preview`, and the scripts that need leninbot (`LENINBOT_DIR`, default `/home/grass/leninbot`): `scripts/{review,translate}-course-fulltext.py`, `scripts/archive-migrations-r2`, `scripts/bulk-translate/extract_glossary.py`. Verify those on the server.
+- `data/commulingo/{person-editorial-contract,nationality-policy,activity-schema,activity-catalog}.json` are this repository's contracts, and leninbot keeps copies in `config/commulingo_contracts/` so it can test alone. After changing one, run `scripts/sync_commulingo_contracts.py` in leninbot and commit there too; its unit test fails until the copies match.

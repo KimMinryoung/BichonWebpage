@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# scripts/cloud-setup — prepare a fresh checkout for development without the
+# production server: a Claude Code cloud session, or any lone clone.
+#
+# Installs node_modules from package-lock.json so `npm test` runs. Nothing else
+# is needed: the tests use no DB, container or leninbot checkout, and build the
+# gitignored data/commulingo/generated/ shards on demand. Idempotent: skips the
+# install while package-lock.json is unchanged. See AGENTS.md "Cloud sessions".
+set -eu
+cd "$(dirname "$0")/.."
+
+STAMP=node_modules/.package-lock.sha256
+if [ -f "$STAMP" ] && sha256sum -c --status "$STAMP" 2>/dev/null; then
+    echo "cloud-setup: node_modules up to date"
+    exit 0
+fi
+npm ci --silent
+sha256sum package-lock.json > "$STAMP"
+echo "cloud-setup: node_modules ready (node $(node -v))"
