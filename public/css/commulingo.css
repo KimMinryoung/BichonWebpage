@@ -3696,6 +3696,18 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-timeline-list li.is-map-active .commu-tl-geo-badge {
     background: var(--accent); border-color: var(--accent); color: var(--clr-cream);
 }
+/* A city-scale event's rows name their sites instead of carrying numbers;
+   rows at the same site light together. */
+.commu-tl-place {
+    display: inline-block; margin-left: .5rem; padding: 0 .45rem;
+    border: 1px solid color-mix(in srgb, var(--border) 55%, transparent); border-radius: 999px;
+    font-size: .74rem; font-weight: 600; line-height: 1.5; vertical-align: 1px;
+    color: var(--text-muted);
+}
+.commu-event-timeline-list li.is-place-match { background: color-mix(in srgb, var(--border) 6%, transparent); }
+.commu-event-timeline-list li.is-place-match .commu-tl-place {
+    background: var(--accent); border-color: var(--accent); color: var(--clr-cream);
+}
 /* Clicked-to-pin: held through mouseleave and scrolling, so it wears the map
    badge's red instead of the hover green. */
 .commu-event-timeline-list li.is-map-pinned .commu-tl-geo-badge {

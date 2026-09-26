@@ -9,6 +9,20 @@
 // row, or empty map unpins. Tapping a map badge pins and scrolls to its row.
 (function () {
     'use strict';
+    // A city-scale event has no map numbers; its rows name their sites
+    // (data-place), and pointing at one lights every row at the same site.
+    var placeRows = Array.prototype.slice.call(
+        document.querySelectorAll('.commu-event-timeline-list > li[data-place]'));
+    placeRows.forEach(function (row) {
+        var place = row.getAttribute('data-place');
+        var mark = function (on) {
+            placeRows.forEach(function (other) {
+                other.classList.toggle('is-place-match', on && other.getAttribute('data-place') === place);
+            });
+        };
+        row.addEventListener('mouseenter', function () { mark(true); });
+        row.addEventListener('mouseleave', function () { mark(false); });
+    });
     // Keep the full SVG (including its legend) reachable at every scale.
     // A fixed viewport uses native scrolling on both axes, including touch
     // and keyboard navigation, while the controls stay outside the scroller.

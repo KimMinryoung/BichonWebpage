@@ -408,6 +408,33 @@ function timelineGeos(timeline) {
     return geos;
 }
 
+// A city-scale event — every marker and timeline point inside one city,
+// CITY_SPAN degrees across — cannot show its sites on this basemap: it has
+// no streets and the frame never narrows to a city, so the numbers would
+// only pile up round one dot. Its map shows the city alone; the timeline
+// rows name their sites in words instead (event-presentation.js).
+const CITY_SPAN = 0.3;
+
+function isCityScale(locations, timeline) {
+    const geos = timelineGeos(timeline);
+    if (!geos.length) return false;
+    const points = (Array.isArray(locations) ? locations : [])
+        .filter(loc => loc && loc.kind !== 'geo' && Number.isFinite(loc.lat) && Number.isFinite(loc.lng))
+        .map(loc => [loc.lat, loc.lng])
+        .concat(geos.flatMap(({ geo }) => (geo.kind === 'point' ? [[geo.lat, geo.lng]] : geo.points)));
+    const lats = points.map(p => p[0]);
+    const lngs = points.map(p => p[1]);
+    const k = Math.cos((Math.min(...lats) + Math.max(...lats)) / 2 * Math.PI / 180);
+    return Math.max(...lats) - Math.min(...lats) <= CITY_SPAN
+        && (Math.max(...lngs) - Math.min(...lngs)) * k <= CITY_SPAN;
+}
+
+// The geometry the map numbers: none for a city-scale event. The page
+// numbers its rows from this too, so map and list never disagree.
+function numberedGeos(locations, timeline) {
+    return isCityScale(locations, timeline) ? [] : timelineGeos(timeline);
+}
+
 const ARROW_VARIANTS = { red: 'red', axis: 'axis' };
 
 // Upstream Leaflet.PolylineDecorator supplies path length, direction,
@@ -583,7 +610,7 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
         && Math.abs(loc.lat) <= 85 && Math.abs(loc.lng) <= 180);
     const markers = entries.filter(loc => loc.kind !== 'geo');
     if (!markers.length) return null;
-    const geos = timelineGeos(timeline);
+    const geos = numberedGeos(locations, timeline);
     const geoFit = geos.flatMap(({ geo }) => geo.kind === 'point'
         ? [{ lat: geo.lat, lng: geo.lng }]
         : geo.points.map(p => ({ lat: p[0], lng: p[1] })));
@@ -759,4 +786,4 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     return { svg: parts.join('\n'), width: frame.width, height: frame.height };
 }
 
-module.exports = { renderEventMapSvg, timelineGeos };
+module.exports = { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale };

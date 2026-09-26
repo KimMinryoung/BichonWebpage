@@ -3,7 +3,7 @@ const { loadCommuLingoTerms } = require('./terms-store');
 const { relatedDocsFor } = require('./docs-refs');
 const { getReportsForEvent } = require('../../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('./linkify');
-const { renderEventMapSvg, timelineGeos } = require('./event-map-svg');
+const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
 const { loadEventControl, phaseIndexForDate, presentEventControl } = require('./event-control');
 const { eventRelationsFor } = require('./event-relations');
 const { decode: decodeEntities } = require('./html-fragments');
@@ -177,14 +177,21 @@ async function buildEventPanel(eventId, lang) {
         const link = text => linker.plain(text);
         const event = presentEvent(events[index], lang);
         // Campaign-map numbering: the row keeps the same ①②… number its
-        // geometry wears on the map (timelineGeos is the one numbering pass).
-        const geoNums = new Map(timelineGeos(events[index].timeline).map(g => [g.index, g.num]));
+        // geometry wears on the map (numberedGeos is the one numbering pass).
+        const { locations, timeline } = events[index];
+        const geoNums = new Map(numberedGeos(locations, timeline).map(g => [g.index, g.num]));
+        // A city-scale event has no numbers; its rows name their sites
+        // (Lubyanka, the Kremlin) in words instead.
+        const places = new Map(isCityScale(locations, timeline)
+            ? timelineGeos(timeline).map(g => [g.index, localize(g.geo.label, lang)]).filter(([, name]) => name)
+            : []);
         // Territorial-control phases, when the event has them: each row
         // carries the phase in force at its date, so the map can follow it.
         const control = loadEventControl(eventId);
         event.timeline = event.timeline.map((item, i) => ({
             ...item,
             ...(geoNums.has(i) ? { geoNum: geoNums.get(i) } : {}),
+            ...(places.has(i) ? { place: places.get(i) } : {}),
             ...(control ? { controlPhase: phaseIndexForDate(control.phases, item.date) } : {}),
             flagsHtml: flagsHtml(item.countries, lang),
         }));
