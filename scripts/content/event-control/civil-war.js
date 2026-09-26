@@ -16,7 +16,17 @@
 //
 // Coordinates are [lat, lng].
 
-const { SEAS } = require('./great-patriotic-war').parts;
+// Coastal waters (the Baltic with the Gulfs of Bothnia and Finland, and the
+// Black Sea), kept off the Swedish, Turkish and Balkan coasts, which the
+// wider rings of the Great Patriotic War map would outline in this frame.
+const SEAS = [
+    [[65.7, 24.2], [64.0, 22.3], [63.0, 20.9], [61.5, 19.6], [60.2, 19.9], [59.6, 20.6], [59.0, 21.6],
+        [58.2, 21.3], [57.5, 20.8], [56.5, 20.5], [55.5, 20.5], [55.0, 18.5], [54.9, 16.0], [54.5, 14.2],
+        [53.8, 14.2], [54.0, 17.0], [54.3, 19.5], [55.0, 21.0], [56.0, 22.0], [57.0, 25.0], [59.0, 25.0],
+        [59.5, 30.5], [60.6, 30.5], [60.5, 24.0], [62.5, 22.5], [65.0, 25.5]],
+    [[47.4, 30.3], [47.4, 39.6], [45.0, 38.5], [43.0, 41.8], [41.6, 41.7], [42.6, 40.0], [43.5, 37.0],
+        [44.0, 33.0], [44.6, 31.0], [45.3, 30.0], [46.0, 30.5]],
+];
 
 const EMPIRE = [[85, 14], [85, 180], [30, 180], [30, 14]];
 
