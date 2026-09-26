@@ -83,8 +83,7 @@ async function listResearch(lang = 'ko', { limit } = {}) {
         `SELECT filename, slug, title, summary, title_en, summary_en,
                 series_slug, series_title, series_title_en, series_order,
                 published_at, updated_at,
-                OCTET_LENGTH(markdown) AS markdown_size,
-                COALESCE(BTRIM(markdown_en), '') <> '' AS has_markdown_en
+                markdown_size, has_markdown_en
            FROM research_documents
           WHERE status = 'public'
           ORDER BY updated_at DESC, id DESC${limitSql}`,

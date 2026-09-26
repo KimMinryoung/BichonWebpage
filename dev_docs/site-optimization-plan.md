@@ -37,6 +37,7 @@
 > - **2차 패스 전체 완료(배치 0~9).** 사용자 작업도 완료: nginx 적용(HTTP/2 확인), data/*-cache·puzzles 백업 삭제(추적 파일이라 커밋 91584a1·eac53a1), root 소유 chown + 호스트 `npm ci`(npm test에 lint 포함), leninbot compose·maintainer 술어 커밋(leninbot 2ddde39)·redis 재기동, 어드민 패스키 로그인 실기기 확인(2026-09-02).
 >
 > - 2026-09-26: **페이지 이동 프리페치.** 서버 TTFB는 로컬 10~60ms라 남은 비용은 CDN 왕복(~100~170ms)뿐 → `views/partials/head.ejs`에 Speculation Rules `prefetch`(eagerness moderate: 링크 위 200ms 호버·누름) 추가. 같은 언어 링크만(/en/ 응답과 `?lang=`은 언어 쿠키를 바꿈), admin·auth·api·.md·.xml·target=_blank·`data-no-prefetch` 제외. 헤드리스 Chromium 검증: 클릭 시 deliveryType `navigational-prefetch`, TTFB 2~3ms, 제외 링크는 네트워크 로드·쿠키 불변. /games/는 CSRF 때문에 no-store라 bfcache 제외(의도적 유지).
+> - 2026-09-26: **연구 목록 쿼리 detoast 제거.** 목록 캐시 TTL 60초에 방문이 드물어 실제 트래픽 5분간 연구 목록 GET 6회 중 4회가 미스였고, 미스마다 `OCTET_LENGTH(markdown)`·`BTRIM(markdown_en)`이 공개 문서 전 본문을 detoast해 41ms. 저장형 생성 컬럼 `markdown_size`·`has_markdown_en`(마이그레이션 187, `psql -U postgres`로 적용, 209행 값 일치 확인)으로 0.8ms. leninbot 쓰기는 명시 컬럼 INSERT라 영향 없음. 운영↔미리보기 /reports·연구 상세 양 언어·sitemap·rss 동일.
 > ## 최종 결과 (베이스라인 대비, 2026-08-04)
 > - 용어 페이지 warm 10~14ms → **4~8ms**, 인물 페이지 12~20ms → **5~13ms**, sitemap 17~30ms → **4ms**
 > - `commulingo_people` seq_scan 요청당 증가 → **정지** (분당 리프레시만), `people_revisions` 183k에서 **동결**

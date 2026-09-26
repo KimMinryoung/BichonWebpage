@@ -64,7 +64,7 @@ async function listPrivateReports() {
         `SELECT id, slug, title, summary, source_task_id,
                 NULL::BIGINT AS published_research_id,
                 content_sha256, published_at AS created_at, updated_at,
-                OCTET_LENGTH(markdown) AS markdown_size
+                markdown_size
            FROM research_documents
           WHERE status = 'private'
           ORDER BY updated_at DESC, id DESC
