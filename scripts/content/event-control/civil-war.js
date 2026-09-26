@@ -37,24 +37,82 @@ const BUKHARA = [[40.5, 63.5], [40.2, 66.2], [39.5, 67.3], [39.5, 70.5], [37.0, 
 // Japan's Karafuto and the Kurils, part of Russia's map today.
 const JAPAN_NORTH = [[50.0, 140.5], [50.0, 157], [43.0, 157], [43.0, 145.2], [45.8, 145.2], [45.8, 140.5]];
 
-// The Baltic states and Poland, 1919: the Polish line from the Dvina down
-// through Lida and Pinsk to Galicia, closed round the west.
-const WEST_1919_05 = [[59.8, 19], [59.8, 24], [59.4, 28.1], [57.9, 27.8], [56.1, 28.2], [55.6, 27.0],
-    [54.5, 26.5], [53.9, 25.8], [53.0, 25.9], [52.1, 26.3], [51.3, 25.8], [50.6, 25.8], [49.8, 25.8],
-    [49.5, 26.1], [48.5, 26.5], [46.2, 30.2], [45, 30], [45, 14], [59.8, 14]];
-// Autumn 1919 to spring 1920: the Poles on the Berezina and in Volhynia.
-const WEST_1919_10 = [[59.8, 19], [59.8, 24], [59.4, 28.1], [57.9, 27.8], [56.1, 28.2], [55.5, 28.0],
-    [54.5, 28.5], [53.4, 29.2], [52.0, 29.0], [51.3, 27.6], [50.6, 27.0], [49.5, 26.2], [48.5, 26.5],
-    [46.2, 30.2], [45, 30], [45, 14], [59.8, 14]];
-// August 1920: the Red Army at the Vistula and before Lwów.
-const WEST_1920_08 = [[59.8, 19], [59.8, 24], [59.4, 28.1], [57.9, 27.8], [56.1, 26.6], [55.3, 24.5],
-    [54.4, 23.0], [54.0, 18.5], [53.3, 19.3], [52.6, 19.2], [52.35, 20.3], [52.3, 21.2], [51.9, 21.6],
-    [51.2, 22.3], [50.8, 23.3], [50.3, 24.2], [49.9, 24.4], [49.5, 24.9], [48.9, 25.0], [48.3, 25.5],
-    [48.5, 26.5], [46.2, 30.2], [45, 30], [45, 14], [59.8, 14]];
-// The Riga armistice line of October 1920, which the 1921 treaty kept.
-const WEST_1920_11 = [[59.8, 19], [59.8, 24], [59.4, 28.1], [57.9, 27.8], [56.1, 28.2], [55.9, 27.6],
-    [54.9, 27.4], [54.0, 27.0], [53.3, 26.9], [52.5, 27.2], [51.5, 26.9], [50.6, 26.3], [49.5, 26.2],
-    [48.5, 26.5], [46.2, 30.2], [45, 30], [45, 14], [59.8, 14]];
+// The western front against the Baltic states and Poland, shared with the
+// Soviet-Polish War map (soviet-polish-war.js). Each front runs north to
+// south in two stretches: `baltic`, from the Estonian border down to where
+// Polish-held ground begins (empty once Latvia and Lithuania hold their own
+// lines), and `polish`, from there to the Dniester. westOf() closes a front
+// round the west into everything not Soviet.
+const BALTIC_EDGE = [[59.8, 19], [59.8, 24], [59.4, 28.1], [57.9, 27.8]];
+const WEST_CLOSE = [[46.2, 30.2], [45, 30], [45, 14], [59.8, 14]];
+const FRONTS = {
+    // First clash: the Soviets hold most of Latvia and eastern Lithuania;
+    // the Germans still hold the Grodno-Bialystok zone they are leaving,
+    // and the Ukrainian People's Republic Volhynia and Podolia.
+    '1919.02': {
+        baltic: [[57.52, 27.35], [57.75, 26.0], [57.87, 24.36], [57.6, 21.9], [57.3, 21.9], [56.8, 22.0],
+            [56.4, 22.3], [55.95, 22.8], [55.6, 23.3], [55.3, 23.9], [54.95, 24.3], [54.7, 24.5], [54.4, 24.5]],
+        polish: [[54.2, 24.6], [53.6, 24.6], [53.2, 24.7], [52.9, 24.8], [52.55, 25.0], [52.1, 25.4], [51.7, 25.5],
+            [51.5, 27.0], [51.1, 28.3], [50.5, 29.0], [49.9, 29.3], [49.3, 29.6], [48.7, 30.3], [48.0, 30.5],
+            [47.0, 30.8], [46.5, 31.0]],
+    },
+    // Vilnius taken: Soviet Latvia still holds Riga; the Poles stand before
+    // Lida and Pinsk, the Ukrainian republic between Volhynia and the Dniester.
+    '1919.04': {
+        baltic: [[57.52, 27.35], [57.75, 26.0], [57.87, 24.36], [57.0, 23.6], [56.65, 23.8], [56.4, 24.1],
+            [56.0, 24.6], [55.6, 25.2], [55.3, 25.6]],
+        polish: [[55.2, 26.3], [54.6, 26.2], [53.9, 25.8], [53.4, 25.9], [53.0, 25.9], [52.5, 26.2], [52.1, 26.3],
+            [51.6, 26.3], [51.0, 26.5], [50.6, 26.7], [50.0, 26.7], [49.4, 26.8], [48.6, 27.0], [48.45, 27.0]],
+    },
+    // Autumn 1919: Latgale still Soviet; the Poles on the Dvina, the Berezina
+    // and in Volhynia.
+    '1919.10': {
+        baltic: [[57.52, 27.35], [57.3, 26.9], [56.8, 26.2], [56.3, 25.9], [55.85, 26.4]],
+        polish: [[55.85, 26.6], [55.95, 27.4], [55.7, 28.0], [55.5, 28.0], [54.5, 28.5], [53.4, 29.2], [52.0, 29.0],
+            [51.3, 27.6], [50.6, 27.0], [49.5, 26.2], [48.5, 26.5]],
+    },
+    // March 1920: Latgale Latvian since January, Mozyr Polish.
+    '1920.03': {
+        baltic: [],
+        polish: [[56.1, 28.2], [55.9, 28.0], [55.5, 28.0], [54.5, 28.5], [53.4, 29.2], [52.4, 29.8], [51.9, 29.3],
+            [51.3, 27.6], [50.6, 27.0], [49.5, 26.2], [48.5, 26.5]],
+    },
+    // May 1920: the Poles and Petliura's army on the Dnieper at Kyiv.
+    '1920.05': {
+        baltic: [],
+        polish: [[56.1, 28.2], [55.9, 28.0], [55.5, 28.0], [54.5, 28.5], [53.4, 29.2], [52.6, 30.2], [52.3, 30.6],
+            [51.9, 30.6], [51.3, 30.6], [50.8, 30.9], [50.45, 31.0], [50.1, 30.7], [49.8, 30.2], [49.4, 29.9],
+            [48.9, 29.7], [48.3, 29.2], [47.9, 29.1]],
+    },
+    // End of July 1920: Vilnius, Grodno and Bialystok Soviet; the Poles on
+    // the Narew and the Bug, Budyonny before Brody.
+    '1920.07': {
+        baltic: [[56.1, 28.2], [55.95, 27.6], [55.75, 26.9], [55.7, 26.6],
+            [55.4, 26.0], [55.1, 25.3], [54.8, 24.9], [54.4, 24.4], [54.0, 23.9]],
+        polish: [[53.85, 23.0], [53.45, 22.4], [53.1, 22.1], [52.9, 22.6], [52.6, 22.9], [52.35, 23.2], [52.1, 23.7],
+            [51.7, 24.2], [51.2, 24.6], [50.8, 25.0], [50.3, 25.2], [49.6, 25.6], [49.2, 25.5], [48.6, 25.6]],
+    },
+    // Mid-August 1920: the Red Army along the East Prussian border to the
+    // Vistula, before Warsaw and before Lwów.
+    '1920.08': {
+        baltic: [[56.1, 28.2], [55.95, 27.6], [55.75, 26.9], [55.7, 26.6],
+            [55.4, 26.0], [55.1, 25.3], [54.8, 24.9], [54.4, 24.4], [54.0, 23.9]],
+        polish: [[53.85, 22.95], [53.55, 22.2], [53.4, 21.9], [53.25, 21.5], [53.2, 20.9], [53.25, 20.4],
+            [53.3, 20.1], [53.45, 19.7], [53.4, 19.35], [53.0, 19.0], [52.65, 19.05], [52.55, 19.7], [52.5, 20.2],
+            [52.45, 20.8], [52.4, 21.2], [52.2, 21.45], [51.9, 21.6], [51.2, 22.3], [50.8, 23.3], [50.3, 24.2],
+            [49.9, 24.4], [49.5, 24.9], [48.9, 25.0], [48.3, 25.5], [48.5, 26.5]],
+    },
+    // The Riga armistice line of October 1920, which the 1921 treaty kept.
+    '1920.10': {
+        baltic: [],
+        polish: [[56.1, 28.2], [55.9, 27.6], [54.9, 27.4], [54.0, 27.0], [53.3, 26.9], [52.5, 27.2], [51.5, 26.9],
+            [50.6, 26.3], [49.5, 26.2], [48.5, 26.5]],
+    },
+};
+const westOf = date => [...BALTIC_EDGE, ...FRONTS[date].baltic, ...FRONTS[date].polish, ...WEST_CLOSE];
+// The Ukrainian People's Republic's last ground, between the Poles and Denikin.
+const UNR_1919_10 = [[50.1, 26.6], [50.0, 27.8], [49.5, 28.6], [48.3, 28.5], [48.45, 27.0], [48.5, 26.5],
+    [49.5, 26.2]];
 
 // German and Austro-Hungarian occupation after Brest-Litovsk.
 const CENTRAL_1918_03 = [[59.8, 14], [59.8, 21], [59.4, 28.2], [57.8, 28.4], [56.3, 29.6], [55.5, 28.8],
@@ -152,27 +210,31 @@ module.exports = {
         }),
         phase('1919.05', { ko: '콜차크 춘계 공세의 정점', en: 'The height of Kolchak\'s spring offensive' }, {
             white: [EAST_1919_05, NORTH_1919, SOUTH_1919_05],
-            national: [FINLAND, WEST_1919_05, TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
+            national: [FINLAND, westOf('1919.04'), TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
         }),
         phase('1919.10', { ko: '위기의 정점: 오룔과 페트로그라드', en: 'The crisis: Orel and Petrograd' }, {
             white: [EAST_1919_10, URAL_COSSACKS_1919, TRANSCASPIA_1919, NORTH_1919, SOUTH_1919_10, YUDENICH_1919],
-            national: [FINLAND, WEST_1919_10, TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
+            national: [FINLAND, westOf('1919.10'), UNR_1919_10, TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
         }),
         phase('1920.03', { ko: '콜차크 처형과 노보로시스크 철수 뒤', en: 'After Kolchak\'s death and the Novorossiysk evacuation' }, {
             white: [EAST_1920_03, CRIMEA_1920],
-            national: [FINLAND, WEST_1919_10, TRANSCAUCASIA, BUKHARA, JAPAN_NORTH],
+            national: [FINLAND, westOf('1920.03'), TRANSCAUCASIA, BUKHARA, JAPAN_NORTH],
         }),
         phase('1920.08', { ko: '바르샤바 앞의 적군과 브랑겔', en: 'The Red Army before Warsaw; Wrangel' }, {
             white: [EAST_1920_08, WRANGEL_1920],
-            national: [FINLAND, WEST_1920_08, GEORGIA_ARMENIA, BUKHARA, JAPAN_NORTH],
+            national: [FINLAND, westOf('1920.08'), GEORGIA_ARMENIA, BUKHARA, JAPAN_NORTH],
         }),
         phase('1920.11', { ko: '리가 휴전과 크림 철수', en: 'The Riga armistice and the Crimean evacuation' }, {
             white: [PRIMORYE, NORTH_SAKHALIN],
-            national: [FINLAND, WEST_1920_11, GEORGIA_ARMENIA, JAPAN_NORTH],
+            national: [FINLAND, westOf('1920.10'), GEORGIA_ARMENIA, JAPAN_NORTH],
         }),
         phase('1922.10', { ko: '블라디보스토크와 내전의 종결', en: 'Vladivostok and the end of the war' }, {
             white: [NORTH_SAKHALIN],
-            national: [FINLAND, WEST_1920_11, JAPAN_NORTH],
+            national: [FINLAND, westOf('1920.10'), JAPAN_NORTH],
         }),
     ],
+    parts: {
+        BALTIC_EDGE, FRONTS, westOf, BESSARABIA, UNR_1919_10, SOUTH_1919_05, SOUTH_1919_10, CRIMEA_1920,
+        WRANGEL_1920,
+    },
 };
