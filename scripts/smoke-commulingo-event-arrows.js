@@ -33,16 +33,36 @@ const spans=tips.map(([,path,stroke],i)=>{
 assert(spans[0]<spans[1]&&spans[1]<spans[2]);
 const zero=renderEventMapSvg(locations,'en','Check',[{geo:{kind:'arrow',points:[[45,5],[45,5]]}}]).svg;
 assert(!zero.includes('NaN'));assert(!zero.includes('class="emap-arrow-tip'));
-// Place labels: a far-away label keeps its own line; near ones stack apart.
-const labelYs = svg => [...svg.matchAll(/<text class="emap-label[^"]*" x="[\d.]+" y="([\d.]+)"[^>]*>([^<]+)/g)]
-    .reduce((o, m) => ({ ...o, [m[2]]: Number(m[1]) }), {});
-const markerYs = svg => [...svg.matchAll(/<circle class="emap-marker[^"]*" cx="[\d.]+" cy="([\d.]+)"/g)].map(m => Number(m[1]));
+// Place labels: a far-away label keeps its spot beside its marker; near
+// ones move round their markers without covering each other or a marker.
+const labelBoxes = svg => [...svg.matchAll(/<text class="emap-label[^"]*" x="([\d.]+)" y="([\d.]+)" text-anchor="(\w+)"[^>]*>([^<]+)/g)]
+    .map(m => {
+        const w = Array.from(m[4]).reduce((sum, ch) => sum + (ch.charCodeAt(0) > 0x2e80 ? 17 : 9), 0);
+        const x = Number(m[1]);
+        const x0 = m[3] === 'start' ? x : m[3] === 'end' ? x - w : x - w / 2;
+        return { text: m[4], x, y: Number(m[2]), x0, x1: x0 + w, y0: Number(m[2]) - 13, y1: Number(m[2]) + 4 };
+    });
+const markerXYs = svg => [...svg.matchAll(/<circle class="emap-marker[^"]*" cx="([\d.]+)" cy="([\d.]+)"/g)].map(m => [Number(m[1]), Number(m[2])]);
 const spread = renderEventMapSvg([
     { lat: 55.75, lng: 37.62, label: { en: 'Moscow' } }, { lat: 55.3, lng: 38.4, label: { en: 'Kolomna' } },
+    { lat: 55.9, lng: 38.1, label: { en: 'Sergiyev Posad' } },
     { lat: 52.29, lng: 104.28, label: { en: 'Irkutsk' } }, { lat: 43.12, lng: 131.89, label: { en: 'Vladivostok' } },
 ], 'en', 'Labels', []).svg;
-const ys = labelYs(spread);
-const irkutskMarker = markerYs(spread).find(y => Math.abs(y + 4 - ys.Irkutsk) < 0.2);
-assert(irkutskMarker !== undefined, 'a label with no neighbour stays beside its marker');
-assert(Math.abs(ys.Moscow - ys.Kolomna) >= 18.5, 'overlapping neighbours stack apart');
+const boxes = labelBoxes(spread);
+const irkutsk = boxes.find(b => b.text === 'Irkutsk');
+assert(markerXYs(spread).some(([x, y]) => Math.abs(y + 4 - irkutsk.y) < 0.2 && Math.abs(x + 9 - irkutsk.x) < 0.2),
+    'a label with no neighbour stays beside its marker');
+boxes.forEach((a, i) => boxes.slice(i + 1).forEach(b => assert(
+    Math.min(a.x1, b.x1) <= Math.max(a.x0, b.x0) || Math.min(a.y1, b.y1) <= Math.max(a.y0, b.y0),
+    `${a.text} and ${b.text} do not overlap`)));
+for (const b of boxes) {
+    assert(markerXYs(spread).every(([x, y]) => !(x > b.x0 + 2 && x < b.x1 - 2 && y > b.y0 + 2 && y < b.y1 - 2)),
+        `${b.text} covers no marker`);
+}
+// Zooming out: the geography is nested and drawn past the frame.
+const surround = spread.match(/data-surround="([-\d. ]+)"/);
+assert(surround, 'the map carries its surround');
+const [sx, sy, sw, sh] = surround[1].split(' ').map(Number);
+assert(sx < 0 && sy < 0 && sw > 720 && sh > 0, 'the surround contains the frame');
+assert.match(spread, /<svg class="emap-world" x="0" y="0" width="720"/);
 console.log('event arrows: upstream heading, visible open heads, connected shafts, sizing and degenerate routes OK');

@@ -20,6 +20,11 @@ const PAD_FACTOR = 1.6;     // frame span = marker span × this (≥30% air each
 const MIN_LAT_SPAN = 7;     // one city marker still gets a regional frame
 const MIN_LON_SPAN = 10;
 const LOW_RES_LON_SPAN = 100;  // wider frames use the 110m rings
+// Zooming out widens the view past the fitted frame, for readers who need
+// the surrounding geography: the map is drawn over a surround this many
+// times the frame's span, and at least this many degrees of longitude.
+const SURROUND_FACTOR = 3;
+const SURROUND_MIN_LON_SPAN = 90;
 const INSET_W = 126;
 const INSET_LAT_TOP = 84;   // world inset crops the empty polar bands
 const INSET_LAT_BOTTOM = -60;
@@ -220,6 +225,30 @@ function fitFrame(markers) {
     };
 }
 
+// The surround the zoomed-out view may show: the frame's aspect, widened
+// around its centre, kept on the map vertically. In frame pixels, so the
+// frame itself stays at 0 0 width height.
+function surroundOf(frame) {
+    let lonSpan = Math.min(360, Math.max(frame.lonSpan * SURROUND_FACTOR, SURROUND_MIN_LON_SPAN));
+    let latSpan = lonSpan * frame.latSpan / frame.lonSpan;
+    if (latSpan > 170) {
+        lonSpan *= 170 / latSpan;
+        latSpan = 170;
+    }
+    if (lonSpan <= frame.lonSpan) return null;
+    const midLon = (frame.x0 + frame.x1) / 2;
+    let y1 = (frame.y0 + frame.y1) / 2 + latSpan / 2;
+    if (y1 > 85) y1 = 85;
+    if (y1 - latSpan < -85) y1 = -85 + latSpan;
+    const x0 = midLon - lonSpan / 2;
+    const px = frame.width / frame.lonSpan;
+    const py = frame.height / frame.latSpan;
+    return {
+        x0, x1: x0 + lonSpan, y0: y1 - latSpan, y1,
+        box: [(x0 - frame.x0) * px, (frame.y1 - y1) * py, lonSpan * px, latSpan * py],
+    };
+}
+
 function renderInset(frame) {
     const w = INSET_W;
     const h = Math.round(w * (INSET_LAT_TOP - INSET_LAT_BOTTOM) / 360);
@@ -292,32 +321,38 @@ function controlRingsPath(rings, frame, project) {
     return parts.join('');
 }
 
-function renderControlLayer(control, frame, project, clipId) {
+// The areas are built once, as <defs>, and drawn by layer(clipId) under
+// the land clip.
+function renderControlLayer(control, bounds, project, idBase) {
     // Sides are coloured by tone (blue, red, amber, purple, gray), not by
     // id, so every event reuses the same few map colours.
     const tones = new Map((control.sides || []).map(side => [side.id, side.tone || 'gray']));
     const tone = id => esc(tones.get(id) || 'gray');
-    const parts = [`<g class="emap-control" clip-path="url(#${clipId})">`];
-    const base = controlRingsPath(control.region || [], frame, project);
-    if (base) parts.push(`<path class="emap-ctl is-${tone(control.base)}" fill-rule="evenodd" d="${base}"/>`);
+    const defs = [];
+    const uses = [];
+    const base = controlRingsPath(control.region || [], bounds, project);
+    if (base) {
+        defs.push(`<path id="${idBase}-base" fill-rule="evenodd" d="${base}"/>`);
+        uses.push(`<use href="#${idBase}-base" class="emap-ctl is-${tone(control.base)}"/>`);
+    }
     // A drawn side first knocks the base colour out (a land-coloured copy),
     // or its translucent tone would mix with the base's into a third colour.
     // The outline lives once in <defs>; both copies are <use>s of it.
-    const defs = [];
-    const idBase = clipId.replace(/^emap-land-clip-/, 'emap-ctl-');
     control.phases.forEach((phase, i) => {
-        parts.push(`<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`);
+        uses.push(`<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`);
         for (const [side, rings] of Object.entries(phase.areas || {})) {
-            const d = controlRingsPath(rings, frame, project);
+            const d = controlRingsPath(rings, bounds, project);
             if (!d) continue;
             const id = `${idBase}-${i}-${esc(side)}`;
             defs.push(`<path id="${id}" fill-rule="evenodd" d="${d}"/>`);
-            parts.push(`<use href="#${id}" class="emap-ctl-knock"/><use href="#${id}" class="emap-ctl is-${tone(side)} is-drawn"/>`);
+            uses.push(`<use href="#${id}" class="emap-ctl-knock"/><use href="#${id}" class="emap-ctl is-${tone(side)} is-drawn"/>`);
         }
-        parts.push('</g>');
+        uses.push('</g>');
     });
-    parts.push('</g>');
-    return `<defs>${defs.join('')}</defs>` + parts.join('');
+    return {
+        defs: `<defs>${defs.join('')}</defs>`,
+        layer: clipId => `<g class="emap-control" clip-path="url(#${clipId})">${uses.join('')}</g>`,
+    };
 }
 
 // ── Timeline campaign map ──
@@ -450,8 +485,9 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
     for (const badge of badges) {
         const anchor = { x: badge.x, y: badge.y };
         const candidates = [anchor];
-        for (let y = 16; y <= frame.height - 32; y += 28) {
-            for (let x = 16; x <= frame.width - 16; x += 28) candidates.push({ x, y });
+        // A fine grid, so a crowded anchor still finds a slot close by.
+        for (let y = 14; y <= frame.height - 32; y += 7) {
+            for (let x = 14; x <= frame.width - 14; x += 7) candidates.push({ x, y });
         }
         const free = p => p.x >= 14 && p.x <= frame.width - 14
             && p.y >= 14 && p.y <= frame.height - 32
@@ -481,8 +517,7 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
             parts.push(`<text class="emap-geo-label" data-geo-num="${badge.num}" x="${nx.toFixed(1)}" y="${(y + 24).toFixed(1)}" text-anchor="middle">${esc(badge.name)}</text>`);
         }
     }
-    if (legend) parts.push(legend.svg);
-    return parts;
+    return { parts, legend: legend ? legend.svg : '' };
 }
 
 // The actor legend box. Text width is estimated at the 14px mobile font size
@@ -561,20 +596,40 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
 
     const parts = [];
     const label = lang === 'en' ? `Map: ${title || 'event locations'}` : `지도: ${title || '사건 위치'}`;
-    parts.push(`<svg xmlns="http://www.w3.org/2000/svg" class="emap-svg" viewBox="0 0 ${frame.width} ${frame.height}" role="img" aria-label="${esc(label)}">`);
-
-    parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
+    // The geography sits in a nested <svg> whose viewBox starts on the
+    // frame; it is drawn out to the surround, which only a zoomed-out view
+    // (commulingo-event-map.js widens that viewBox) reveals. The inset,
+    // legend and border stay on the outer frame.
+    const surround = surroundOf(frame);
+    const area = surround || frame;
+    const box = surround ? surround.box : [0, 0, frame.width, frame.height];
+    const fmt = n => Number(n.toFixed(1));
+    parts.push(`<svg xmlns="http://www.w3.org/2000/svg" class="emap-svg" viewBox="0 0 ${frame.width} ${frame.height}" role="img" aria-label="${esc(label)}"`
+        + (surround ? ` data-surround="${box.map(fmt).join(' ')}"` : '') + '>');
+    parts.push(`<svg class="emap-world" x="0" y="0" width="${frame.width}" height="${frame.height}" viewBox="0 0 ${frame.width} ${frame.height}">`);
 
     const level = frame.lonSpan > LOW_RES_LON_SPAN ? 'low' : 'high';
+    // The land doubles as the control layer's clip; clip-rule matters only
+    // there. One map per page, so the event id makes the ids unique.
+    // The surround: coarse land only, no rivers, lakes or control areas,
+    // whose data stops at the event's region. The frame's own sea (crisp,
+    // so no seam) covers it again, so its coarser coast never shows inside
+    // the frame, and a zoomed-out view outlines the frame.
+    if (surround) {
+        parts.push(`<rect class="emap-sea" x="${fmt(box[0])}" y="${fmt(box[1])}" width="${fmt(box[2])}" height="${fmt(box[3])}"/>`);
+        parts.push(`<path class="emap-land" fill-rule="evenodd" d="${landPath('low', surround, project)}"/>`);
+    }
+    parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"${surround ? ' shape-rendering="crispEdges"' : ''}/>`);
     const land = landPath(level, frame, project);
     if (control) {
         // The land doubles as the control layer's clip; clip-rule matters
         // only there. One map per page, so the event id makes the id unique.
         const id = String(control.eventId || 'event').replace(/[^a-z0-9-]/gi, '');
         const clipId = `emap-land-clip-${id}`;
+        const ctl = renderControlLayer(control, frame, project, `emap-ctl-${id}`);
         parts.push(`<path id="emap-land-${id}" class="emap-land" fill-rule="evenodd" clip-rule="evenodd" d="${land}"/>`);
         parts.push(`<defs><clipPath id="${clipId}"><use href="#emap-land-${id}"/></clipPath></defs>`);
-        parts.push(renderControlLayer(control, frame, project, clipId));
+        parts.push(ctl.defs, ctl.layer(clipId));
     } else {
         parts.push(`<path class="emap-land" fill-rule="evenodd" d="${land}"/>`);
     }
@@ -582,16 +637,15 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
 
     // Faint graticule so scale reads at a glance.
     const step = graticuleStep(frame.lonSpan);
-    for (let lon = Math.ceil(frame.x0 / step) * step; lon <= frame.x1; lon += step) {
+    const [gx0, gy0, gw, gh] = box.map(fmt);
+    for (let lon = Math.ceil(area.x0 / step) * step; lon <= area.x1; lon += step) {
         const [x] = project(lon, 0);
-        parts.push(`<line class="emap-grid" x1="${x.toFixed(1)}" y1="0" x2="${x.toFixed(1)}" y2="${frame.height}"/>`);
+        parts.push(`<line class="emap-grid" x1="${x.toFixed(1)}" y1="${gy0}" x2="${x.toFixed(1)}" y2="${fmt(gy0 + gh)}"/>`);
     }
-    for (let lat = Math.ceil(frame.y0 / step) * step; lat <= frame.y1; lat += step) {
+    for (let lat = Math.ceil(area.y0 / step) * step; lat <= area.y1; lat += step) {
         const [, y] = project(0, lat);
-        parts.push(`<line class="emap-grid" x1="0" y1="${y.toFixed(1)}" x2="${frame.width}" y2="${y.toFixed(1)}"/>`);
+        parts.push(`<line class="emap-grid" x1="${gx0}" y1="${y.toFixed(1)}" x2="${fmt(gx0 + gw)}" y2="${y.toFixed(1)}"/>`);
     }
-
-    if (frame.lonSpan < 200) parts.push(renderInset(frame));
 
     // Physical-geography names under the markers. Their boxes, and the marker
     // labels' below, feed the badge collision pass when geometry is drawn.
@@ -609,44 +663,90 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
         avoid.push({ x0: x - w / 2, x1: x + w / 2, y0: y - 11, y1: y + 4 });
     }
 
-    // Markers, then labels nudged apart: sorted by y, a label landing within a
-    // line-height of the previous one on the same side drops below it.
+    // Markers, then their labels. Each label picks a spot on a ring round
+    // its marker (right, left, below, above, the diagonals, then a line
+    // further out) inside the frame, scored by what it covers (the other
+    // labels, every marker and timeline point, the geography names) and by
+    // whether it sits nearer another marker than its own, which would name
+    // the wrong place. A greedy first pass (main place first, then top to
+    // bottom) is refined by re-placing each label against all the others.
+    // Widths and line heights are sized for the 17px mobile labels (the
+    // media query in commulingo.css), the larger of the two scales this SVG
+    // renders at.
     const placed = markers.map(marker => {
         const lng = frame.lonShifted && marker.lng < 0 ? marker.lng + 360 : marker.lng;
         const [x, y] = project(lng, marker.lat);
         return { marker, x, y, main: marker.kind === 'main' };
-    }).sort((a, b) => a.y - b.y || a.x - b.x);
+    }).sort((a, b) => b.main - a.main || a.y - b.y || a.x - b.x);
     for (const p of placed) {
         parts.push(`<circle class="emap-marker${p.main ? ' is-main' : ''}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.main ? 5.5 : 4}"/>`);
     }
-    // A label drops below any earlier one it would actually overlap — same
-    // line band and overlapping width. Stacking every label on a side instead
-    // pushed far-apart names down a chain (Irkutsk ended up beside
-    // Vladivostok). Widths and the line step are sized for the 17px mobile
-    // labels (the media query in commulingo.css), the larger of the two
-    // scales this SVG renders at.
-    const labelBoxes = [];
+    const dots = placed.map(p => ({ x: p.x, y: p.y, p }));
+    for (const { geo } of geos) {
+        if (geo.kind === 'point') {
+            const [x, y] = projectPt([geo.lat, geo.lng]);
+            dots.push({ x, y, p: null });
+        }
+    }
+    const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0))
+        * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
+    const gap = (b, x, y) => Math.hypot(Math.max(b.x0 - x, 0, x - b.x1), Math.max(b.y0 - y, 0, y - b.y1));
+    const SPOTS = [[9, 4, 'start'], [-9, 4, 'end'], [0, 25, 'middle'], [0, -12, 'middle'],
+        [7, 20, 'start'], [7, -9, 'start'], [-7, 20, 'end'], [-7, -9, 'end'],
+        [9, 23, 'start'], [9, -15, 'start'], [-9, 23, 'end'], [-9, -15, 'end'],
+        [0, 44, 'middle'], [0, -31, 'middle']];
+    const labels = [];
     for (const p of placed) {
         const text = localize(p.marker.label, lang);
         if (!text) continue;
-        const flip = p.x > frame.width * 0.8;
-        const lx = flip ? p.x - 9 : p.x + 9;
         const w = Array.from(text).reduce((sum, ch) => sum + (ch.charCodeAt(0) > 0x2e80 ? 17 : 9), 0);
-        const x0 = flip ? lx - w : lx;
-        const x1 = flip ? lx : lx + w;
-        let ly = p.y + 4;
-        for (let guard = 0; guard < labelBoxes.length + 1; guard++) {
-            const hit = labelBoxes.find(b => x0 < b.x1 + 4 && x1 > b.x0 - 4 && Math.abs(ly - b.ly) < 18.5);
-            if (!hit) break;
-            ly = hit.ly + 19;
+        // Near the right edge, the left side comes first. A timeline point
+        // on the marker itself is the same place and cannot be confused.
+        const order = p.x > frame.width * 0.8 ? [SPOTS[1], SPOTS[0], ...SPOTS.slice(2)] : SPOTS;
+        const spots = [];
+        order.forEach(([dx, dy, anchor], rank) => {
+            const lx = p.x + dx;
+            const ly = p.y + dy;
+            const x0 = anchor === 'start' ? lx : anchor === 'end' ? lx - w : lx - w / 2;
+            const b = { x0, x1: x0 + w, y0: ly - 13, y1: ly + 4 };
+            if (b.x0 < 2 || b.x1 > frame.width - 2 || b.y0 < 2 || b.y1 > frame.height - 2) return;
+            const own = gap(b, p.x, p.y);
+            const fixed = rank * 2
+                + dots.reduce((c, d) => c + (Math.hypot(d.x - p.x, d.y - p.y) <= 6 ? 0
+                    : 4 * overlap(b, { x0: d.x - 8, x1: d.x + 8, y0: d.y - 8, y1: d.y + 8 })
+                    + (gap(b, d.x, d.y) < own ? 150 : 0)), 0)
+                + avoid.reduce((c, o) => c + 4 * overlap(b, o), 0);
+            spots.push({ lx, ly, anchor, b, fixed });
+        });
+        // Too long for any spot inside the frame: beside the marker, clamped.
+        if (!spots.length) {
+            const lx = Math.min(frame.width - 2 - w, Math.max(2, p.x + 9));
+            spots.push({ lx, ly: p.y + 4, anchor: 'start', b: { x0: lx, x1: lx + w, y0: p.y - 9, y1: p.y + 8 }, fixed: 0 });
         }
-        labelBoxes.push({ x0, x1, ly });
-        parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${flip ? 'end' : 'start'}">${esc(text)}</text>`);
-        avoid.push({ x0, x1, y0: ly - 12, y1: ly + 4 });
+        labels.push({ p, text, spots, pick: null });
+    }
+    const choose = label => {
+        let best = null;
+        for (const spot of label.spots) {
+            const cost = spot.fixed + labels.reduce((c, o) => c + (o === label || !o.pick ? 0 : 4 * overlap(spot.b, o.pick.b)), 0);
+            if (!best || cost < best.cost) best = { cost, spot };
+        }
+        label.pick = best.spot;
+    };
+    labels.forEach(choose);
+    for (let round = 0; round < 3; round++) labels.forEach(choose);
+    for (const { p, text, pick } of labels) {
+        parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${pick.lx.toFixed(1)}" y="${pick.ly.toFixed(1)}" text-anchor="${pick.anchor}">${esc(text)}</text>`);
+        avoid.push(pick.b);
     }
 
-    if (geos.length) parts.push(...renderGeometryLayer(geos, lang, frame, projectPt, avoid));
+    const geometry = geos.length ? renderGeometryLayer(geos, lang, frame, projectPt, avoid) : null;
+    if (geometry) parts.push(...geometry.parts);
+    if (surround) parts.push(`<rect class="emap-frame-outline" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
+    parts.push('</svg>');
 
+    if (frame.lonSpan < 200) parts.push(renderInset(frame));
+    if (geometry && geometry.legend) parts.push(geometry.legend);
     parts.push(`<rect class="emap-border" x="0.5" y="0.5" width="${frame.width - 1}" height="${frame.height - 1}"/>`);
     parts.push('</svg>');
     return { svg: parts.join('\n'), width: frame.width, height: frame.height };

@@ -22,6 +22,14 @@
         if (!box.width || !box.height) return;
         var scale = 1;
         var maxZoom = 12;
+        // Zooming in enlarges the whole SVG inside the scroller; zooming out
+        // widens the nested map's viewBox into the surround the server drew
+        // round the frame (data-surround), so the inset, legend and border
+        // keep their places.
+        var world = svg.querySelector('.emap-world');
+        var surround = (svg.getAttribute('data-surround') || '').split(' ').map(Number);
+        var minZoom = world && surround.length === 4 && surround[2] > 0 && surround[3] > 0
+            ? Math.max(box.width / surround[2], box.height / surround[3]) : 1;
         var zoomIn = tools.querySelector('[data-map-action="zoom-in"]');
         var zoomOut = tools.querySelector('[data-map-action="zoom-out"]');
         viewport.style.aspectRatio = box.width + ' / ' + box.height;
@@ -30,18 +38,31 @@
         viewport.setAttribute('aria-label', svg.getAttribute('aria-label') || document.title);
         tools.hidden = false;
 
+        function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
+
         function setScale(next) {
-            next = Math.max(1, Math.min(maxZoom, next));
-            var ratio = next / scale;
+            next = clamp(next, minZoom, maxZoom);
+            if (Math.abs(next - 1) < 1e-6) next = 1;
+            var enlarged = Math.max(next, 1);
+            var ratio = enlarged / Math.max(scale, 1);
             var x = (viewport.scrollLeft + viewport.clientWidth / 2) * ratio - viewport.clientWidth / 2;
             var y = (viewport.scrollTop + viewport.clientHeight / 2) * ratio - viewport.clientHeight / 2;
             scale = next;
-            svg.style.width = (scale * 100) + '%';
+            svg.style.width = (enlarged * 100) + '%';
             svg.style.maxWidth = 'none';
+            if (world) {
+                // Widen round the frame's centre, slid back inside the surround.
+                var w = box.width / Math.min(next, 1);
+                var h = box.height / Math.min(next, 1);
+                var vx = next < 1 ? clamp((box.width - w) / 2, surround[0], surround[0] + surround[2] - w) : 0;
+                var vy = next < 1 ? clamp((box.height - h) / 2, surround[1], surround[1] + surround[3] - h) : 0;
+                world.setAttribute('viewBox', [vx, vy, w, h].join(' '));
+                svg.classList.toggle('is-zoomed-out', next < 1);
+            }
             viewport.scrollLeft = x;
             viewport.scrollTop = y;
             zoomIn.disabled = scale >= maxZoom;
-            zoomOut.disabled = scale <= 1;
+            zoomOut.disabled = scale <= minZoom + 1e-6;
         }
 
         tools.addEventListener('click', function (event) {
