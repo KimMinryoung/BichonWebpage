@@ -4,6 +4,14 @@ const badRequest = message => require('./people-admin-fields').badRequest(messag
 const functions = new Map(catalog.functions.map(row => [row.id, row]));
 const affiliations = new Map(catalog.affiliations.map(row => [row.id, row]));
 
+// Affiliations with a bounded existence carry periods: [[start|null, end|null], ...].
+// One year of slack on each side absorbs founding and dissolution years.
+function periodsOverlap(periods, start, end) {
+    if (!Array.isArray(periods) || !periods.length || (start == null && end == null)) return true;
+    const from = start ?? end, to = end ?? start;
+    return periods.some(([a, b]) => (a == null || a - 1 <= to) && (b == null || from <= b + 1));
+}
+
 function validateActivities(value, sources = []) {
     if (!Array.isArray(value) || !value.length || value.length > 30) throw badRequest('activities must contain 1–30 documented activities');
     if (value.filter(a => a?.primary === true).length !== 1) throw badRequest('activities requires exactly one primary activity');
@@ -19,6 +27,9 @@ function validateActivities(value, sources = []) {
         if (typeof a.primary !== 'boolean') throw badRequest('activity primary must be boolean');
         for (const key of ['startYear','endYear']) if (a[key] != null && (!Number.isInteger(a[key]) || a[key] < -3000 || a[key] > 2200)) throw badRequest('invalid activity year');
         if (a.startYear != null && a.endYear != null && a.endYear < a.startYear) throw badRequest('activity endYear precedes startYear');
+        if (a.affiliationId && !periodsOverlap(affiliations.get(a.affiliationId)?.periods, a.startYear, a.endYear)) {
+            throw badRequest(`activity years ${a.startYear ?? ''}–${a.endYear ?? ''} fall outside the existence of ${a.affiliationId}`);
+        }
         if (!Array.isArray(a.evidence) || !a.evidence.length) throw badRequest('activity requires evidence');
         for (const e of a.evidence) {
             if (!e || typeof e !== 'object' || !['source','locator','claim','excerpt'].every(k => typeof e[k] === 'string' && e[k].trim()) || !sources.includes(e.source)) throw badRequest('activity evidence requires a cited source, locator, claim and excerpt');
@@ -69,4 +80,4 @@ function matchesActivities(person, filter) {
         && (!filter.affiliationId || affiliationMatches(a.affiliationId, filter.affiliationId)));
 }
 
-module.exports = { catalog, functions, affiliations, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
