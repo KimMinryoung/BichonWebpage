@@ -210,6 +210,12 @@ router.get('/activities', async (req, res) => {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         const functionId = typeof req.query.function === 'string' ? req.query.function : '';
         const affiliationId = typeof req.query.affiliation === 'string' ? req.query.affiliation : '';
+        const merged = activitiesModel.catalog.retired?.[affiliationId];
+        if (merged) {
+            const query = new URLSearchParams(Object.entries(req.query).filter(([, v]) => typeof v === 'string'));
+            query.set('affiliation', merged);
+            return res.redirect(301, `${req.baseUrl}${req.path}?${query}`);
+        }
         if ((functionId && !activitiesModel.functions.has(functionId)) || (affiliationId && !activitiesModel.affiliations.has(affiliationId))) {
             return errorPage(res, 404, { message: lang === 'en' ? 'Activity filter not found.' : '활동 분류를 찾을 수 없습니다.' });
         }

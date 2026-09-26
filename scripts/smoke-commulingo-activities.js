@@ -9,14 +9,21 @@ for (const invalid of [[], [primary, primary], [{ ...primary, primary: false }],
     assert.throws(() => validateActivities(invalid, sources));
 }
 assert.throws(() => validateActivities([primary], []));
-const person = { activities: [{ functionId: 'military', affiliationId: 'state-soviet' }, { functionId: 'diplomacy', affiliationId: 'china-prc' }] };
-assert(!matchesActivities(person, { functionId: 'military', affiliationId: 'china-prc' }), 'must match the same career, not a cross product');
-assert(matchesActivities(person, { functionId: 'diplomacy', affiliationId: 'china-prc' }));
+const person = { activities: [{ functionId: 'military', affiliationId: 'soviet-party' }, { functionId: 'diplomacy', affiliationId: 'china-ccp' }] };
+assert(!matchesActivities(person, { functionId: 'military', affiliationId: 'china-ccp' }), 'must match the same career, not a cross product');
+assert(matchesActivities(person, { functionId: 'diplomacy', affiliationId: 'china-ccp' }));
 assert(matchesActivities({ activities: [{ functionId: 'military', affiliationId: 'china-pla' }] }, { affiliationId: 'china-ccp' }));
 assert.equal(displayActivities([], { categoryId: 'ccp-security' }, 'ko')[0].affiliationId, 'china-ccp');
 assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].affiliationId, null, 'research must not invent affiliation');
 assert.deepEqual(displayActivities([], { categoryId: 'counterrevolution' }, 'ko'), [], 'mixed political category is not a function');
 for (const entry of [...catalog.functions, ...catalog.affiliations]) assert(ICON_PATHS[entry.icon], `missing icon: ${entry.id}`);
+// A party-state is one affiliation: its state organs merge into the ruling party.
+for (const [from, to] of Object.entries(catalog.retired)) {
+    assert(!catalog.affiliations.some(a => a.id === from) && catalog.affiliations.some(a => a.id === to), from);
+    assert.throws(() => validateActivities([{ ...primary, affiliationId: from }], sources), from);
+}
+assert.equal(displayActivities([], { categoryId: 'prc-government' }, 'ko')[0].affiliationId, 'china-ccp');
+assert.equal(displayActivities([], { officeId: 'defence' }, 'ko')[0].affiliationId, 'soviet-party');
 for (const [key, [functionId, affiliationId]] of Object.entries(catalog.legacy)) {
     assert(catalog.functions.some(f => f.id === functionId), key);
     assert(!affiliationId || catalog.affiliations.some(a => a.id === affiliationId), key);
