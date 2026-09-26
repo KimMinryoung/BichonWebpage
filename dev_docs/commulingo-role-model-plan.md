@@ -113,7 +113,7 @@ UI에는 첫 단계에서 국가·세력 수준을, 필요한 경우 그 안의 
 
 ## 구현과 전환 상태
 
-- 기능 레지스트리 14개, 활동 소속 192개와 구 역할의 명확한 의미 대응은 `data/commulingo/activity-catalog.json` 한 곳에서 관리한다. 별도 DB 레지스트리를 중복 유지하지 않고 버전 관리된 JSON을 JS·Python·API가 함께 읽는다. 소속 추가·관계 변경은 이 파일과 검증을 함께 갱신한다.
+- 기능 레지스트리 14개, 활동 소속 191개와 구 역할의 명확한 의미 대응은 `data/commulingo/activity-catalog.json` 한 곳에서 관리한다. 별도 DB 레지스트리를 중복 유지하지 않고 버전 관리된 JSON을 JS·Python·API가 함께 읽는다. 소속 추가·관계 변경은 이 파일과 검증을 함께 갱신한다.
 - 활동은 migration 184의 `commulingo_people.activities` JSONB 배열에 원자적으로 저장한다. 인물 행 잠금·revision에 포함되므로 다른 경력과 분리된 쓰기나 손실 갱신이 발생하지 않는다. 의미·카탈로그·대표 1개·중복·기간·출처 검증은 공통 Admin 스토어가 수행한다. 기존 role 및 기관 재임 연표는 보존한다.
 - `/commulingo/activities`는 기능과 소속을 같은 활동에 대해 필터하고, 소속은 국가별로 묶어 보여준다. 부모 조직 필터는 하위 조직도 포함한다. `/commulingo/api/activity-catalog`와 Python `list_activity_catalog`가 같은 카탈로그를 반환한다.
 - 활동이 저장되지 않은 인물 중 의미가 명확한 기존 분류 1,491건은 `provenance=legacy-role`로 호환 표시한다. 별도 사실 판정이나 근거 검증을 완료했다는 뜻이 아니다. `state-head`처럼 체제가 섞인 범주와 연구자 등에는 소속을 추정하지 않는다. 혼합 범주 897건은 아래 원문 검토 이관을 완료했다. 필터를 고르지 않은 전체 목록과 시대별 선반에는 모두 나타난다.
