@@ -20,7 +20,8 @@
 // the map frame must include), sides [{ id, label, tone }], note, sources,
 // traced (the event's .traced.json), phases [{ date, label, <side>: items }].
 // Items: 'traced' | { traced: date, side?, file? } | [[lat, lng], ...] |
-// { circle: [lat, lng, r] } | { corridor: [[lat, lng], ...], width }.
+// { circle: [lat, lng, r] } | { corridor: [[lat, lng], ...], width } |
+// { area: item, minus: [items] }.
 //
 //   { eventId, base, focus?, region: [ring, ...], sides: [{ id, label, tone }], note, sources,
 //     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] } }] }
@@ -175,6 +176,10 @@ function resolveItem(item, side, phase, traced) {
     if (item && item.traced) {
         const source = item.file ? readTraced(item.file) : traced;
         return tracedGeometry((source.phases[item.traced] || {})[item.side || 'ccp']);
+    }
+    // { area: item, minus: [items] }: an area with others cut out of it.
+    if (item && item.area) {
+        return minus(resolveItem(item.area, side, phase, traced), unionOf(item.minus, side, phase, traced));
     }
     if (item && item.circle) return circlePolygon(item.circle);
     if (item && item.corridor) return corridorPolygon(item.corridor, item.width);

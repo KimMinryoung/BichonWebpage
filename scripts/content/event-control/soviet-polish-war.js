@@ -9,7 +9,7 @@
 //
 // Coordinates are [lat, lng].
 
-const { BALTIC_EDGE, FRONTS, westOf, BESSARABIA, UNR_1919_10, SOUTH_1919_05, SOUTH_1919_10, CRIMEA_1920,
+const { FRONTS, northOf, westOf, BESSARABIA, UNR_1919_10, SOUTH_1919_05, SOUTH_1919_10, CRIMEA_1920,
     WRANGEL_1920 } = require('./civil-war').parts;
 
 // Coastal waters of the eastern Baltic, kept off Sweden and Bornholm, whose
@@ -40,10 +40,12 @@ const SUWALKI_1919 = [[54.4, 22.7], [54.3, 23.4], [54.0, 23.5], [53.9, 22.9], [5
 
 // The Baltic states: the part of a front's Baltic stretch west of the
 // Soviets, closed back west along the Lithuanian line with the Poles.
-const balticOf = (date, south) => [...BALTIC_EDGE, ...FRONTS[date].baltic, ...south];
+const balticOf = (date, south) => [...northOf(date), ...FRONTS[date].baltic, ...south];
 const LITHUANIA_WEST = [[54.1, 23.4], [54.3, 23.0], [54.4, 22.8], [54.45, 19]];
 // The Polish-Lithuanian demarcation, Vilnius on the Polish side.
 const DEMARCATION = [[55.1, 25.0], [54.8, 24.6], [54.4, 24.3], [54.05, 23.9], ...LITHUANIA_WEST];
+// The same, from Latgale's edge on the Daugava while it was Soviet (1919).
+const LITHUANIA_POLAND_1919 = [[55.7, 26.0], [55.45, 25.8], [55.3, 25.5], ...DEMARCATION];
 // Round Latvia (with Abrene, Latvian from 1920) to Polish-held Braslaw.
 const LATVIA_POLAND = [[56.1, 28.2], [55.95, 27.6], [55.75, 26.9], [55.7, 26.4], [55.45, 25.8], [55.3, 25.5]];
 
@@ -56,7 +58,8 @@ const ZUNR_1919 = [[50.6, 24.1], [50.45, 24.5], [50.3, 25.0], [50.05, 25.25], [4
 // The Ukrainian People's Republic (the Directory) and, on the coast, the
 // French at Odesa.
 const UNR_1919_02 = [[51.2, 24.0], [51.7, 25.5], [51.5, 27.0], [51.1, 28.3], [50.5, 29.0], [49.9, 29.3],
-    [49.3, 29.6], [48.7, 30.3], [48.0, 30.5], [47.0, 30.8], [46.5, 31.0], [46.2, 30.2], [48.45, 27.0],
+    [49.3, 29.6], [48.7, 30.3], [48.0, 30.5], [47.0, 30.8], [46.5, 31.0], [46.35, 30.25], [47.0, 29.9],
+    [47.8, 29.3], [48.2, 28.3], [48.45, 27.0],
     [48.55, 26.25], [49.55, 26.15], [49.75, 25.8], [50.05, 25.25], [50.3, 25.0], [50.45, 24.5], [50.6, 24.1]];
 const UNR_1919_04 = [[51.3, 25.1], [51.6, 26.3], [51.0, 26.5], [50.6, 26.7], [50.0, 26.7], [49.4, 26.8],
     [48.6, 27.0], [48.45, 27.0], [48.55, 26.25], [49.55, 26.15], [49.75, 25.8], [50.05, 25.25], [50.3, 25.0],
@@ -99,7 +102,7 @@ module.exports = {
         }),
         phase('1919.10', '1919.10', { ko: '전선 동결과 미카셰비체 회담', en: 'The front frozen; the Mikaszewicze talks' }, {
             german: [GERMANY_WEST, CORRIDOR_1919, EAST_PRUSSIA],
-            other: [balticOf('1919.10', [[55.7, 26.0], [55.45, 25.8], [55.3, 25.5], ...DEMARCATION]), UNR_1919_10,
+            other: [balticOf('1919.10', LITHUANIA_POLAND_1919), UNR_1919_10,
                 ...NEIGHBOURS, SOUTH_1919_10],
         }),
         phase('1920.05.07', '1920.05', { ko: '폴란드-우크라이나군의 키예프 입성', en: 'Polish and Ukrainian troops enter Kyiv' }, {
@@ -119,4 +122,9 @@ module.exports = {
             other: [balticOf('1920.10', [...LATVIA_POLAND, ...DEMARCATION]), ...NEIGHBOURS, WRANGEL_1920],
         }),
     ],
+    parts: {
+        SEA, GERMANY_WEST, CORRIDOR_1919, DANZIG, EAST_PRUSSIA, OBER_OST_1919, SUWALKI_1919, balticOf, LITHUANIA_WEST,
+        DEMARCATION, LITHUANIA_POLAND_1919, LATVIA_POLAND, ZUNR_1919, UNR_1919_02, UNR_1919_04, BUKOVINA, RUTHENIA,
+        NEIGHBOURS,
+    },
 };

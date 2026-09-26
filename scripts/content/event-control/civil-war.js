@@ -52,10 +52,35 @@ const JAPAN_NORTH = [[50.0, 140.5], [50.0, 157], [43.0, 157], [43.0, 145.2], [45
 // south in two stretches: `baltic`, from the Estonian border down to where
 // Polish-held ground begins (empty once Latvia and Lithuania hold their own
 // lines), and `polish`, from there to the Dniester. westOf() closes a front
-// round the west into everything not Soviet.
+// round the west into everything not Soviet. A front with the Soviets inside
+// Estonia replaces the Estonian border with its own `north` edge.
+// Shared with the Brest-Litovsk, Ukrainian and Baltic maps as well.
 const BALTIC_EDGE = [[59.8, 19], [59.8, 24], [59.4, 28.1], [57.9, 27.8]];
 const WEST_CLOSE = [[46.2, 30.2], [45, 30], [45, 14], [59.8, 14]];
 const FRONTS = {
+    // Mid-December 1918: the Red Army following the German withdrawal, at
+    // Narva and Minsk; the Directory's Ukraine behind the old border.
+    '1918.12': {
+        north: [[59.8, 19], [59.8, 26.5]],
+        baltic: [[59.5, 27.0], [59.2, 27.0], [58.8, 27.3], [58.4, 27.4], [57.9, 27.4], [57.6, 27.0], [57.2, 26.5],
+            [56.6, 25.9], [56.2, 25.8], [55.9, 26.2]],
+        // In Ukraine, the Rada's border (UKRAINE_1917) with Soviet Russia and the Don.
+        polish: [[55.5, 26.8], [54.9, 27.0], [54.2, 27.1], [53.9, 27.3], [53.3, 27.9], [52.7, 28.6], [52.2, 29.3],
+            [51.5, 30.6], [52.2, 30.9], [52.4, 31.8], [52.6, 32.3], [52.3, 33.4], [51.7, 33.9], [51.2, 34.8],
+            [50.8, 35.5], [50.5, 36.8], [50.3, 37.8], [49.8, 38.2], [49.2, 38.8], [48.6, 39.6], [47.9, 39.6],
+            [47.1, 38.2], [45.8, 36.5], [44.0, 36.5], [43.8, 33.0]],
+    },
+    // Early January 1919: the Soviets before Tallinn, in Riga (3 January) and
+    // Vilnius (5 January), and in Kharkiv; the Germans still round Grodno.
+    '1919.01': {
+        north: [[59.8, 19], [59.8, 25.0]],
+        baltic: [[59.5, 25.4], [59.2, 25.6], [58.9, 25.4], [58.4, 25.0], [58.0, 25.3], [57.8, 25.0], [57.9, 24.4],
+            [57.0, 23.7], [56.75, 23.6], [56.4, 24.1], [56.0, 24.3], [55.6, 24.5], [55.2, 24.8], [54.8, 24.9],
+            [54.4, 25.1]],
+        polish: [[54.0, 25.5], [53.6, 26.0], [53.2, 26.4], [52.8, 26.8], [52.3, 27.4], [52.0, 28.2], [52.1, 29.4],
+            [52.4, 31.8], [52.3, 33.0], [51.6, 34.0], [50.6, 34.8], [50.0, 35.3], [49.5, 36.5], [49.0, 38.0],
+            [48.6, 39.8], [47.2, 39.7], [46.5, 38.5], [44.0, 36.5], [43.8, 33.0]],
+    },
     // First clash: the Soviets hold most of Latvia and eastern Lithuania;
     // the Germans still hold the Grodno-Bialystok zone they are leaving,
     // and the Ukrainian People's Republic Volhynia and Podolia.
@@ -119,10 +144,41 @@ const FRONTS = {
             [50.6, 26.3], [49.5, 26.2], [48.5, 26.5]],
     },
 };
-const westOf = date => [...BALTIC_EDGE, ...FRONTS[date].baltic, ...FRONTS[date].polish, ...WEST_CLOSE];
+// June 1919: Latgale Soviet (the October line), the Poles still short of
+// Minsk (the April line).
+FRONTS['1919.06'] = {
+    baltic: FRONTS['1919.10'].baltic,
+    polish: [[55.6, 26.6], ...FRONTS['1919.04'].polish],
+};
+const northOf = date => FRONTS[date].north || BALTIC_EDGE;
+const westOf = date => [...northOf(date), ...FRONTS[date].baltic, ...FRONTS[date].polish, ...WEST_CLOSE];
 // The Ukrainian People's Republic's last ground, between the Poles and Denikin.
 const UNR_1919_10 = [[50.1, 26.6], [50.0, 27.8], [49.5, 28.6], [48.3, 28.5], [48.45, 27.0], [48.5, 26.5],
     [49.5, 26.2]];
+
+// The Eastern Front at the armistice of December 1917, closed round the
+// west into the Central Powers and the lands they held: the Moonsund
+// islands, Riga, the line before Dvinsk and Baranovichi, Pinsk, the Stokhid,
+// Brody, the Zbruch and Czernowitz.
+const CENTRAL_1917_12 = [[59.8, 14], [59.8, 21], [59.1, 21.5], [58.9, 23.2], [58.55, 23.45], [58.2, 23.3],
+    [57.9, 23.5], [57.25, 24.4], [57.0, 24.7], [56.7, 25.2], [56.5, 25.8], [56.1, 26.1], [55.85, 26.3],
+    [55.5, 26.5], [55.0, 26.6], [54.6, 26.7], [54.1, 26.3], [53.6, 26.0], [53.2, 26.2], [52.5, 26.1],
+    [52.1, 26.3], [51.6, 25.9], [51.2, 25.6], [50.8, 25.2], [50.6, 25.0], [50.2, 25.3], [49.8, 25.8],
+    [49.5, 26.1], [48.6, 26.2], [48.3, 26.3], [47.7, 26.4], [46.0, 26.0], [44.5, 26.0], [44.5, 14]];
+// The nine governorates the Central Rada claimed in November 1917, without
+// Crimea: west on the old Austrian border, north through the Pripet
+// marshes and Chernihiv, east to Kharkiv and the Donets, south to the coast.
+const UKRAINE_1917 = [[51.9, 24.0], [51.9, 26.0], [51.9, 28.5], [51.5, 30.6], [52.2, 30.9], [52.4, 31.8],
+    [52.6, 32.3], [52.3, 33.4], [51.7, 33.9], [51.2, 34.8], [50.8, 35.5], [50.5, 36.8], [50.3, 37.8], [49.8, 38.2],
+    [49.2, 38.8], [48.6, 39.6], [47.9, 39.6], [47.1, 38.2], [46.1, 35.0], [46.15, 33.7], [46.0, 33.5], [46.3, 31.8],
+    [46.2, 30.2], [47.3, 29.2], [48.2, 28.2], [48.5, 26.5], [48.55, 26.25], [49.55, 26.15], [49.75, 25.8],
+    [50.05, 25.25], [50.3, 25.0], [50.45, 24.5], [50.6, 24.1], [51.2, 24.0]];
+// Poland in November 1918: Congress Poland and western Galicia, inside the
+// German border of 1914; the Germans still held the east beyond the Bug.
+const POLAND_1918_11 = [[53.1, 19.2], [53.25, 20.4], [53.2, 20.9], [53.3, 21.5], [53.5, 22.2], [53.2, 22.6],
+    [52.6, 22.8], [52.3, 23.3], [51.6, 23.6], [51.0, 24.0], [50.6, 24.1], [50.2, 23.6], [49.8, 23.3], [49.4, 22.6],
+    [49.1, 22.6], [49.2, 20.0], [49.6, 19.2], [50.0, 19.2], [50.25, 19.1], [50.5, 19.0], [50.9, 18.9],
+    [51.3, 18.4], [51.7, 17.9], [52.1, 18.0], [52.4, 18.4], [52.8, 18.8]];
 
 // German and Austro-Hungarian occupation after Brest-Litovsk.
 const CENTRAL_1918_03 = [[59.8, 14], [59.8, 21], [59.4, 28.2], [57.8, 28.4], [56.3, 29.6], [55.5, 28.8],
@@ -244,7 +300,8 @@ module.exports = {
         }),
     ],
     parts: {
-        BALTIC_EDGE, FRONTS, westOf, BESSARABIA, UNR_1919_10, SOUTH_1919_05, SOUTH_1919_10, CRIMEA_1920,
-        WRANGEL_1920,
+        BALTIC_EDGE, FRONTS, northOf, westOf, SEAS, FINLAND, BESSARABIA, UNR_1919_10, CENTRAL_1917_12,
+        UKRAINE_1917, POLAND_1918_11, CENTRAL_1918_03, CENTRAL_1918_08, EAST_1918_08, NORTH_1918, KUBAN_1918_03,
+        SOUTH_1918_08, SOUTH_1919_05, SOUTH_1919_10, YUDENICH_1919, CRIMEA_1920, WRANGEL_1920,
     },
 };
