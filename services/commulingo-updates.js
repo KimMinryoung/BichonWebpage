@@ -2,6 +2,7 @@ const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
 const { localize } = require('../data/commulingo/localize');
+const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
 
 const TYPE_LABELS = {
     ko: { person: '인물', event: '사건', term: '용어', doc: '참고 문헌', course: '학습 콘텐츠' },
@@ -69,6 +70,24 @@ function recentCourse(lang) {
 
 const UPDATES_PER_KIND = 10;
 
+async function recentPeople(lang) {
+    const { data } = await loadCommuLingoPeople();
+    return data.people
+        .map(person => ({
+            type: 'person',
+            typeLabel: TYPE_LABELS[lang].person,
+            title: localize(person.name, lang),
+            summary: localize(person.epithet, lang),
+            moment: localize(person.moment, lang),
+            bio: localize(person.bio, lang),
+            href: TYPE_PATHS.person + encodeURIComponent(person.id),
+            modified: Date.parse(person.updatedAt),
+        }))
+        .filter(item => item.title && Number.isFinite(item.modified))
+        .sort((a, b) => (b.modified - a.modified) || a.href.localeCompare(b.href))
+        .slice(0, UPDATES_PER_KIND);
+}
+
 async function recentDictionaryItems(lang) {
     const { rows } = await db.query(
         `SELECT * FROM (
@@ -76,13 +95,6 @@ async function recentDictionaryItems(lang) {
                 PARTITION BY kind ORDER BY updated_at DESC NULLS LAST, id
             ) AS update_rank
             FROM (
-                SELECT 'person' AS kind, id,
-                       name_ko AS title_ko, name_en AS title_en,
-                       epithet_ko AS summary_ko, epithet_en AS summary_en,
-                       moment_ko, moment_en, bio_ko, bio_en,
-                       updated_at
-                  FROM commulingo_people
-                UNION ALL
                 SELECT 'event' AS kind, id,
                        title_ko, title_en, summary_ko, summary_en,
                        NULL::text AS moment_ko, NULL::text AS moment_en,
@@ -104,12 +116,11 @@ async function recentDictionaryItems(lang) {
         [UPDATES_PER_KIND]
     );
 
-    // Select each kind in SQL so frequent person edits cannot hide events or terms.
+    // Select each DB-backed kind in SQL so frequent edits cannot hide another kind.
     return rows.map(row => dictionaryItem(row, lang));
 }
 
-// The UNION ALL scan below reads every dictionary row; without this memo it ran
-// on every homepage request (44k+ seq scans of commulingo_people observed).
+// Memoize the event/term scan so it does not run on every homepage request.
 const DICTIONARY_MEMO_MS = Number(process.env.COMMULINGO_UPDATES_CACHE_MS || 60 * 1000);
 const dictionaryMemo = new Map();
 
@@ -128,12 +139,16 @@ function recentDictionaryItemsCached(lang) {
 
 async function loadCommuLingoUpdateGroups(lang = 'ko') {
     const safeLang = lang === 'en' ? 'en' : 'ko';
-    const [dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
+    const [peopleResult, dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
+        recentPeople(safeLang),
         recentDictionaryItemsCached(safeLang),
         Promise.resolve().then(() => recentDocs(safeLang, UPDATES_PER_KIND)),
         Promise.resolve().then(() => recentCourse(safeLang)),
     ]);
 
+    if (peopleResult.status === 'rejected') {
+        console.warn('[CommuLingo updates] People preview unavailable:', peopleResult.reason.message);
+    }
     if (dictionaryResult.status === 'rejected') {
         console.warn('[CommuLingo updates] Dictionary preview unavailable:', dictionaryResult.reason.message);
     }
@@ -144,7 +159,7 @@ async function loadCommuLingoUpdateGroups(lang = 'ko') {
         console.warn('[CommuLingo updates] Learning preview unavailable:', courseResult.reason.message);
     }
 
-    const results = { person: dictionaryResult, event: dictionaryResult, term: dictionaryResult,
+    const results = { person: peopleResult, event: dictionaryResult, term: dictionaryResult,
         doc: docsResult, course: courseResult };
     return ['person', 'event', 'term', 'doc', 'course'].map(type => ({
         type,

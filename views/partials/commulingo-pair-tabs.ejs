@@ -20,9 +20,9 @@ var pairTabs = [
       leaf: pairEventLabel },
 ];
 %>
-<nav class="commu-dict-nav commu-pair-tabs" aria-label="<%= strings.commuLingoViews.pairTabs.twoEntriesOnThis %>" data-active="<%= activePanel %>">
+<nav class="ui-tabs commu-dict-nav commu-pair-tabs" aria-label="<%= strings.commuLingoViews.pairTabs.twoEntriesOnThis %>" data-active="<%= activePanel %>">
     <% pairTabs.forEach(function(tab) { %>
-    <a class="commu-dict-tab commu-pair-tab<%= activePanel === tab.key ? ' is-active' : '' %>"
+    <a class="ui-tab commu-dict-tab commu-pair-tab<%= activePanel === tab.key ? ' is-active' : '' %>"
        href="<%= tab.href %>" data-panel="<%= tab.key %>"
        data-back-href="<%= tab.backHref %>" data-back-label="<%= tab.label %>" data-back-crumb="<%= tab.crumb %>" data-back-leaf="<%= tab.leaf %>"<% if (activePanel === tab.key) { %> aria-current="page"<% } %>>
         <span><%= tab.sub %><small><%= tab.label %></small></span>

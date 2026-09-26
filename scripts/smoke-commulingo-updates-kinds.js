@@ -8,12 +8,17 @@ assert.equal(getLatestCourseMetadata().id, 'french-revolution-intro');
 assert.equal(getLatestCourseMetadata().releasedAt, '2026-09-13');
 assert.equal(getLatestCourseMetadata().title.ko, '프랑스 혁명사');
 
-function loadService(rows) {
+function loadService(rows, people = [{
+    id: 'person', name: { ko: '인물', en: 'Person' }, epithet: { ko: '소개' },
+    // The snapshot timestamp includes section edits even when the base row is older.
+    updatedAt: '2026-09-06T00:00:00Z',
+}]) {
     const dependencies = {
         '../config/database': { query: async (sql, params) => {
             // A global LIMIT can drop an entire kind before the UI sees it.
             assert.match(sql, /PARTITION BY kind ORDER BY updated_at DESC NULLS LAST, id/);
             assert.match(sql, /WHERE update_rank <= \$1/);
+            assert.doesNotMatch(sql, /FROM commulingo_people\b/);
             assert.equal(params[0], 10);
             assert.doesNotMatch(sql, /LIMIT/);
             if (rows instanceof Error) throw rows;
@@ -27,6 +32,7 @@ function loadService(rows) {
             id: 'course', title: { ko: '학습' }, releasedAt: '2026-09-05',
         }) },
         '../data/commulingo/localize': require('../data/commulingo/localize'),
+        '../data/commulingo/people-store': { loadCommuLingoPeople: async () => ({ data: { people } }) },
     };
     const sandbox = {
         require: name => {
@@ -43,7 +49,7 @@ function loadService(rows) {
 
 (async () => {
     // The event must survive even when both other dictionary kinds are newer.
-    const rows = ['event', 'person', 'term'].map((kind, index) => ({
+    const rows = ['event', 'term'].map((kind, index) => ({
         kind, id: kind, title_ko: kind, title_en: `English ${kind}`,
         updated_at: `2026-09-0${index + 1}T00:00:00Z`,
     }));
@@ -53,18 +59,19 @@ function loadService(rows) {
     assert.deepEqual(items.map(item => item.type).sort(), ['course', 'doc', 'event', 'person', 'term']);
     assert.equal(items.find(item => item.type === 'doc').title, '최신 문헌');
     assert.equal(items.find(item => item.type === 'event').href, '/commulingo/events/event');
+    assert.equal(items.find(item => item.type === 'person').modified, Date.parse('2026-09-06T00:00:00Z'));
     const english = Array.from(await load('en'));
     assert.equal(english.find(item => item.type === 'event').title, 'English event');
 
     // Missing or unavailable dictionary content leaves the other kinds usable.
     for (const result of [[], new Error('DB unavailable')]) {
         const remaining = Array.from(await loadService(result).loadRecentCommuLingoItems('ko'));
-        assert.deepEqual(remaining.map(item => item.type).sort(), ['course', 'doc']);
+        assert.deepEqual(remaining.map(item => item.type).sort(), ['course', 'doc', 'person']);
     }
     const historyRows = Array.from({ length: 10 }, (_, index) => ({
         ...rows[0], id: `event-${index}`, updated_at: `2026-09-05T09:${String(59 - index).padStart(2, '0')}:00Z`,
     }));
-    const history = loadService([...historyRows, ...rows.slice(1)]);
+    const history = loadService([...historyRows, rows[1]]);
     const groups = Array.from(await history.loadCommuLingoUpdateGroups('ko'));
     assert.equal(groups.find(group => group.type === 'event').items.length, 10);
     const homeItems = Array.from(await history.loadRecentCommuLingoItems('ko'));
