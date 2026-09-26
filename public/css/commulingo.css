@@ -2511,7 +2511,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-people-group.is-china-mao-era .commu-people-group-head { border-left-color: #8c2f2f; }
 .commu-people-group.is-china-reform .commu-people-group-head { border-left-color: #3f9a8a; }
 .commu-people-group.is-france-revolution .commu-people-group-head { border-left-color: #3b5ba5; }
-.commu-people-group.is-france-napoleon .commu-people-group-head { border-left-color: #7a5c99; }
 
 /* The person groups sit on two boxed shelves — the Soviet timeline and the
    people beyond it — in the same grammar as the index's book shelves: a card
@@ -2754,7 +2753,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-person-medal.is-china-mao-era { border-color: #8c2f2f; color: #8c2f2f; }
 .commu-person-medal.is-china-reform { border-color: #3f9a8a; color: #3f9a8a; }
 .commu-person-medal.is-france-revolution { border-color: #3b5ba5; color: #3b5ba5; }
-.commu-person-medal.is-france-napoleon { border-color: #7a5c99; color: #7a5c99; }
 
 /* .commu-role-icon lives in commulingo-crumb.css — the document reader loads
    that file alone and the crumb's home glyph needs it. */
@@ -3087,7 +3085,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-role-tag.is-china-mao-era { border-left-color: #8c2f2f; }
 .commu-person-role-tag.is-china-reform { border-left-color: #3f9a8a; }
 .commu-person-role-tag.is-france-revolution { border-left-color: #3b5ba5; }
-.commu-person-role-tag.is-france-napoleon { border-left-color: #7a5c99; }
 
 .commu-people-group-count,
 .commu-event-people-count {
@@ -3248,7 +3245,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-detail-head.is-china-mao-era { border-left-color: #8c2f2f; }
 .commu-person-detail-head.is-china-reform { border-left-color: #3f9a8a; }
 .commu-person-detail-head.is-france-revolution { border-left-color: #3b5ba5; }
-.commu-person-detail-head.is-france-napoleon { border-left-color: #7a5c99; }
 
 .commu-person-detail-top {
     align-items: flex-start;

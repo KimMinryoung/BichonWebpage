@@ -353,7 +353,7 @@ names a group id):
 | --- | --- |
 | soviet | `old-regime`, `bolshevik`, `stalin-era`, `thaw`, `perestroika` |
 | china | `china-old-regime` (구체제와 국민당), `china-revolution` (혁명 세대 1911–1949), `china-mao-era`, `china-reform` |
-| france | `france-revolution` (구체제와 대혁명 1774–1799), `france-napoleon` (통령정부·제정과 복고 왕정 1799–1830) — migration 188 |
+| france | `france-revolution` (대혁명과 나폴레옹 시대 1774–1830) — migrations 188–189; `france-napoleon` 301s to it |
 | world | `international-revolutionary`, `foreign-statesmen`, `international-counterrevolutionary`, `scholar` |
 
 The China shelf follows the Soviet assignment rule: people who made the
@@ -369,7 +369,7 @@ window overlaps the person's adult life (16 to death), computed from the years
 label; the model then chooses among those. A French revolutionary is never
 offered a Soviet or modern world group, nor a modern socialist a French one. A
 new group needs its window there, or it is never filtered out. The French
-shelf files by the era of the defining role; coalition commanders of the
+shelf is one group from Louis XVI to the July Revolution; coalition commanders of the
 revolutionary wars (Howe, Nelson) sit there, 1830s socialists (Cabet, Owen)
 and Suvorov do not.
 

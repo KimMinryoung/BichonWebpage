@@ -128,9 +128,13 @@ router.get('/people/cards', async (req, res) => {
 router.get('/people/list/:groupId', async (req, res) => {
     try {
         const groupId = typeof req.params.groupId === 'string' ? req.params.groupId.trim() : '';
-        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
+        const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
         const group = (standardized.groups || []).find(item => item.id === groupId);
         const meta = peopleShellFor(standardized, lang).groupsMeta.find(item => item.id === groupId);
+        if (!group) {
+            const merged = redirectTarget(loaded.data, 'people-group', groupId);
+            if (merged) return res.redirect(301, `/commulingo/people/list/${encodeURIComponent(merged)}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
+        }
         if (!group || !meta) return errorPage.notFound(res, {
             message: lang === 'en' ? 'People group not found.' : '인물 그룹을 찾을 수 없습니다.',
             backHref: '/commulingo/people',
