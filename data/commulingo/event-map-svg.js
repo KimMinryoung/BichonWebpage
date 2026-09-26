@@ -249,6 +249,12 @@ function surroundOf(frame) {
     };
 }
 
+// The world inset's box, top-right: the labels and badges keep clear of it.
+function insetRect() {
+    const h = Math.round(INSET_W * (INSET_LAT_TOP - INSET_LAT_BOTTOM) / 360);
+    return { x0: WIDTH - INSET_W - 10, x1: WIDTH - 10, y0: 10, y1: 10 + h };
+}
+
 function renderInset(frame) {
     const w = INSET_W;
     const h = Math.round(w * (INSET_LAT_TOP - INSET_LAT_BOTTOM) / 360);
@@ -648,8 +654,9 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     }
 
     // Physical-geography names under the markers. Their boxes, and the marker
-    // labels' below, feed the badge collision pass when geometry is drawn.
-    const avoid = [];
+    // labels' below, feed the badge collision pass when geometry is drawn;
+    // so does the world inset, when there is one.
+    const avoid = frame.lonSpan < 200 ? [insetRect()] : [];
     for (const loc of entries) {
         if (loc.kind !== 'geo') continue;
         const lng = frame.lonShifted && loc.lng < 0 ? loc.lng + 360 : loc.lng;

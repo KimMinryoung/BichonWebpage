@@ -1,0 +1,7628 @@
+{
+ "note": "Timeline geo backfill, 2026-09-26: rows with an identifiable place that had no map point.",
+ "events": [
+  {
+   "id": "revolution-1905",
+   "add": [
+    {
+     "index": 5,
+     "date": "1905.10",
+     "title_en": "The October all-Russian political general strike",
+     "geo": {
+      "kind": "point",
+      "lat": 55.77,
+      "lng": 37.66,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1905.10.26",
+     "title_en": "The St. Petersburg Soviet is formed",
+     "geo": {
+      "kind": "point",
+      "lat": 59.917,
+      "lng": 30.318,
+      "label": {
+       "ko": "상트페테르부르크 공과대학",
+       "en": "Technological Institute"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1905.10.30",
+     "title_en": "The October Manifesto",
+     "geo": {
+      "kind": "point",
+      "lat": 59.88,
+      "lng": 29.91,
+      "label": {
+       "ko": "페테르고프",
+       "en": "Peterhof"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1905.11.21",
+     "title_en": "Lenin returns to Russia",
+     "geo": {
+      "kind": "point",
+      "lat": 59.956,
+      "lng": 30.356,
+      "label": {
+       "ko": "상트페테르부르크",
+       "en": "St. Petersburg"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1905.12.16",
+     "title_en": "The Petersburg Soviet is arrested",
+     "geo": {
+      "kind": "point",
+      "lat": 59.914,
+      "lng": 30.305,
+      "label": {
+       "ko": "상트페테르부르크",
+       "en": "St. Petersburg"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1906.05.10",
+     "title_en": "The First State Duma opens",
+     "geo": {
+      "kind": "point",
+      "lat": 59.947,
+      "lng": 30.378,
+      "label": {
+       "ko": "타브리다 궁전",
+       "en": "Tauride Palace"
+      }
+     }
+    },
+    {
+     "index": 13,
+     "date": "1907.06.16",
+     "title_en": "The coup of 3 June: the Stolypin system",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.31,
+      "label": {
+       "ko": "상트페테르부르크",
+       "en": "St. Petersburg"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "xinhai-revolution-1911",
+   "add": [
+    {
+     "index": 7,
+     "date": "1914.01",
+     "title_en": "Parliament dissolved",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1916.06.06",
+     "title_en": "Death of Yuan Shikai",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "베이징 중난하이",
+       "en": "Zhongnanhai, Beijing"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "world-war-i",
+   "add": [
+    {
+     "index": 1,
+     "date": "1914.07.28",
+     "title_en": "Austria-Hungary opens the war",
+     "geo": {
+      "kind": "point",
+      "lat": 48.21,
+      "lng": 16.37,
+      "label": {
+       "ko": "빈",
+       "en": "Vienna"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1914.10.29–11",
+     "title_en": "Ottoman entry",
+     "geo": {
+      "kind": "point",
+      "lat": 44.62,
+      "lng": 33.53,
+      "label": {
+       "ko": "세바스토폴",
+       "en": "Sevastopol"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1915.05.23",
+     "title_en": "Italy joins the Allies",
+     "geo": {
+      "kind": "point",
+      "lat": 41.9,
+      "lng": 12.5,
+      "label": {
+       "ko": "로마",
+       "en": "Rome"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1915.10.14",
+     "title_en": "Bulgaria joins the Central Powers",
+     "geo": {
+      "kind": "point",
+      "lat": 42.7,
+      "lng": 23.32,
+      "label": {
+       "ko": "소피아",
+       "en": "Sofia"
+      }
+     }
+    },
+    {
+     "index": 15,
+     "date": "1916.08.27",
+     "title_en": "Romania enters",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "부쿠레슈티",
+       "en": "Bucharest"
+      }
+     }
+    },
+    {
+     "index": 17,
+     "date": "1917.03",
+     "title_en": "February Revolution",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.31,
+      "label": {
+       "ko": "페트로그라드",
+       "en": "Petrograd"
+      }
+     }
+    },
+    {
+     "index": 19,
+     "date": "1917.06",
+     "title_en": "Greece joins the Allies",
+     "geo": {
+      "kind": "point",
+      "lat": 37.98,
+      "lng": 23.73,
+      "label": {
+       "ko": "아테네",
+       "en": "Athens"
+      }
+     }
+    },
+    {
+     "index": 24,
+     "date": "1917.11.07",
+     "title_en": "October Revolution",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.31,
+      "label": {
+       "ko": "페트로그라드",
+       "en": "Petrograd"
+      }
+     }
+    },
+    {
+     "index": 26,
+     "date": "1918.09–11",
+     "title_en": "Successive Central Powers armistices",
+     "geo": {
+      "kind": "point",
+      "lat": 49.43,
+      "lng": 2.91,
+      "label": {
+       "ko": "콩피에뉴",
+       "en": "Compiègne"
+      }
+     }
+    },
+    {
+     "index": 28,
+     "date": "1919.06.28",
+     "title_en": "Treaty of Versailles",
+     "geo": {
+      "kind": "point",
+      "lat": 48.8,
+      "lng": 2.13,
+      "label": {
+       "ko": "베르사유",
+       "en": "Versailles"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "february-revolution",
+   "add": [
+    {
+     "index": 0,
+     "date": "1917.03.08",
+     "title_en": "International Women's Day: women workers light the spark",
+     "geo": {
+      "kind": "point",
+      "lat": 59.97,
+      "lng": 30.35,
+      "label": {
+       "ko": "비보르크 구역",
+       "en": "Vyborg district"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1917.03.09–11",
+     "title_en": "General strike and the order to fire",
+     "geo": {
+      "kind": "point",
+      "lat": 59.931,
+      "lng": 30.361,
+      "label": {
+       "ko": "즈나멘스카야 광장",
+       "en": "Znamenskaya Square"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1917.03.12",
+     "title_en": "The garrison mutinies; the Soviet is born",
+     "geo": {
+      "kind": "point",
+      "lat": 59.947,
+      "lng": 30.378,
+      "label": {
+       "ko": "타브리다 궁전",
+       "en": "Tauride Palace"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1917.03.14",
+     "title_en": "Order No. 1",
+     "geo": {
+      "kind": "point",
+      "lat": 59.947,
+      "lng": 30.378,
+      "label": {
+       "ko": "타브리다 궁전",
+       "en": "Tauride Palace"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1917.03.15",
+     "title_en": "Nicholas II abdicates; dual power begins",
+     "geo": {
+      "kind": "point",
+      "lat": 57.82,
+      "lng": 28.33,
+      "label": {
+       "ko": "프스코프",
+       "en": "Pskov"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1917.04.16",
+     "title_en": "Lenin returns",
+     "geo": {
+      "kind": "point",
+      "lat": 59.956,
+      "lng": 30.356,
+      "label": {
+       "ko": "핀란드역",
+       "en": "Finland Station"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1917.04.17",
+     "title_en": "The April Theses",
+     "geo": {
+      "kind": "point",
+      "lat": 59.947,
+      "lng": 30.378,
+      "label": {
+       "ko": "타브리다 궁전",
+       "en": "Tauride Palace"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1917.05.03–04",
+     "title_en": "The April Crisis",
+     "geo": {
+      "kind": "point",
+      "lat": 59.931,
+      "lng": 30.309,
+      "label": {
+       "ko": "마린스키 궁전",
+       "en": "Mariinsky Palace"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1917.06.16",
+     "title_en": "The First All-Russian Congress of Soviets",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.29,
+      "label": {
+       "ko": "바실리옙스키섬",
+       "en": "Vasilyevsky Island"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1917.07.01",
+     "title_en": "The June demonstration and the Kerensky offensive",
+     "geo": {
+      "kind": "point",
+      "lat": 59.943,
+      "lng": 30.332,
+      "label": {
+       "ko": "마르스 광장",
+       "en": "Field of Mars"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1917.07.16–17",
+     "title_en": "The July Days",
+     "geo": {
+      "kind": "point",
+      "lat": 59.934,
+      "lng": 30.33,
+      "label": {
+       "ko": "넵스키 대로",
+       "en": "Nevsky Prospekt"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1917.07.19",
+     "title_en": "Repression drives the party underground",
+     "geo": {
+      "kind": "point",
+      "lat": 60.09,
+      "lng": 29.97,
+      "label": {
+       "ko": "라즐리프",
+       "en": "Razliv"
+      }
+     }
+    },
+    {
+     "index": 12,
+     "date": "1917.07.21",
+     "title_en": "The Kerensky government",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.314,
+      "label": {
+       "ko": "겨울궁전",
+       "en": "Winter Palace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "october-revolution",
+   "add": [
+    {
+     "index": 0,
+     "date": "1917.09.13",
+     "title_en": "Bolshevization of the soviets",
+     "geo": {
+      "kind": "point",
+      "lat": 59.946,
+      "lng": 30.396,
+      "label": {
+       "ko": "스몰니",
+       "en": "Smolny"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1917.09.25–27",
+     "title_en": "Lenin's letters urging insurrection",
+     "geo": {
+      "kind": "point",
+      "lat": 60.17,
+      "lng": 24.94,
+      "label": {
+       "ko": "헬싱포르스",
+       "en": "Helsingfors"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1917.10.23",
+     "title_en": "The Central Committee resolves on armed insurrection",
+     "geo": {
+      "kind": "point",
+      "lat": 59.97,
+      "lng": 30.31,
+      "label": {
+       "ko": "수하노프의 집",
+       "en": "Sukhanov’s flat"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1917.10.25",
+     "title_en": "The Military Revolutionary Committee is created",
+     "geo": {
+      "kind": "point",
+      "lat": 59.946,
+      "lng": 30.396,
+      "label": {
+       "ko": "스몰니",
+       "en": "Smolny"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1917.11.06",
+     "title_en": "Eve of insurrection: the government strikes first",
+     "geo": {
+      "kind": "point",
+      "lat": 59.932,
+      "lng": 30.3,
+      "label": {
+       "ko": "중앙전신국",
+       "en": "Central Telegraph"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1917.11.07",
+     "title_en": "The capital taken: 'To the Citizens of Russia'",
+     "geo": {
+      "kind": "point",
+      "lat": 59.935,
+      "lng": 30.345,
+      "label": {
+       "ko": "페트로그라드",
+       "en": "Petrograd"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1917.11.07–08",
+     "title_en": "The night of the Winter Palace",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.314,
+      "label": {
+       "ko": "겨울궁전",
+       "en": "Winter Palace"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1917.11.07–09",
+     "title_en": "The Second All-Russian Congress of Soviets",
+     "geo": {
+      "kind": "point",
+      "lat": 59.946,
+      "lng": 30.396,
+      "label": {
+       "ko": "스몰니",
+       "en": "Smolny"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1917.11.08",
+     "title_en": "The Decrees on Peace and Land, and Sovnarkom",
+     "geo": {
+      "kind": "point",
+      "lat": 59.946,
+      "lng": 30.396,
+      "label": {
+       "ko": "스몰니",
+       "en": "Smolny"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1917.11.10–15",
+     "title_en": "The first counterattacks defeated; Moscow",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "모스크바 크렘린",
+       "en": "Moscow Kremlin"
+      }
+     }
+    },
+    {
+     "index": 12,
+     "date": "1917.12.20",
+     "title_en": "Creation of the Cheka",
+     "geo": {
+      "kind": "point",
+      "lat": 59.936,
+      "lng": 30.312,
+      "label": {
+       "ko": "고로호바야 거리 2번지",
+       "en": "Gorokhovaya 2"
+      }
+     }
+    },
+    {
+     "index": 13,
+     "date": "1918.01.18–19",
+     "title_en": "The Constituent Assembly's single day and dissolution",
+     "geo": {
+      "kind": "point",
+      "lat": 59.947,
+      "lng": 30.378,
+      "label": {
+       "ko": "타브리다 궁전",
+       "en": "Tauride Palace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "brest-litovsk",
+   "add": [
+    {
+     "index": 2,
+     "date": "1917.12.22",
+     "title_en": "Peace talks open",
+     "geo": {
+      "kind": "point",
+      "lat": 52.1,
+      "lng": 23.7,
+      "label": {
+       "ko": "브레스트-리토프스크",
+       "en": "Brest-Litovsk"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1918.02.10",
+     "title_en": "\"Neither war nor peace\"",
+     "geo": {
+      "kind": "point",
+      "lat": 52.1,
+      "lng": 23.7,
+      "label": {
+       "ko": "브레스트-리토프스크",
+       "en": "Brest-Litovsk"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "soviet-polish-war",
+   "add": [
+    {
+     "index": 8,
+     "date": "1920.07.11",
+     "title_en": "The Curzon note",
+     "geo": {
+      "kind": "point",
+      "lat": 50.49,
+      "lng": 5.87,
+      "label": {
+       "ko": "스파",
+       "en": "Spa"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "may-fourth-and-ccp-founding",
+   "add": [
+    {
+     "index": 7,
+     "date": "1920.04",
+     "title_en": "Voitinsky’s mission",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        39.93,
+        116.4
+       ],
+       [
+        31.22,
+        121.47
+       ]
+      ],
+      "label": {
+       "ko": "베이징 → 상하이",
+       "en": "Beijing → Shanghai"
+      },
+      "actor": {
+       "ko": "보이틴스키",
+       "en": "Voitinsky"
+      },
+      "variant": "red"
+     }
+    }
+   ]
+  },
+  {
+   "id": "kronstadt-1921",
+   "add": [
+    {
+     "index": 2,
+     "date": "1921.02.28",
+     "title_en": "The Petropavlovsk Resolution",
+     "geo": {
+      "kind": "point",
+      "lat": 59.985,
+      "lng": 29.77,
+      "label": {
+       "ko": "페트로파블롭스크함",
+       "en": "Battleship Petropavlovsk"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1921.03.01",
+     "title_en": "16,000 Rally at Anchor Square",
+     "geo": {
+      "kind": "point",
+      "lat": 59.992,
+      "lng": 29.776,
+      "label": {
+       "ko": "닻 광장",
+       "en": "Anchor Square"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1921.03.02",
+     "title_en": "Provisional Revolutionary Committee Seizes the Island",
+     "geo": {
+      "kind": "point",
+      "lat": 60,
+      "lng": 29.74,
+      "label": {
+       "ko": "크론시타트",
+       "en": "Kronstadt"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1921.03.05",
+     "title_en": "Trotsky's Ultimatum",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.31,
+      "label": {
+       "ko": "페트로그라드",
+       "en": "Petrograd"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1921.03.07",
+     "title_en": "7th Army Formed, Artillery Bombardment Begins",
+     "geo": {
+      "kind": "point",
+      "lat": 60.09,
+      "lng": 29.96,
+      "label": {
+       "ko": "세스트로레츠크",
+       "en": "Sestroretsk"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1921.03.08",
+     "title_en": "First Assault Fails",
+     "geo": {
+      "kind": "point",
+      "lat": 59.96,
+      "lng": 29.77,
+      "label": {
+       "ko": "크론시타트 앞 빙판",
+       "en": "Ice off Kronstadt"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1921.03.18",
+     "title_en": "8,000 Flee to Finland; Reprisals Begin",
+     "geo": {
+      "kind": "point",
+      "lat": 60.17,
+      "lng": 29.7,
+      "label": {
+       "ko": "테리요키",
+       "en": "Terijoki"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "volga-famine",
+   "add": [
+    {
+     "index": 2,
+     "date": "1921.03.15",
+     "title_en": "10th Party Congress: From Requisitioning to the Tax in Kind",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1921.06.18",
+     "title_en": "Central Famine Relief Commission (Pomgol) Created",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.61,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1921.08.20",
+     "title_en": "The Riga Agreement: ARA Enters Russia",
+     "geo": {
+      "kind": "point",
+      "lat": 56.95,
+      "lng": 24.11,
+      "label": {
+       "ko": "리가",
+       "en": "Riga"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1921.09",
+     "title_en": "First Relief Train; Nansen's Geneva Speech",
+     "geo": {
+      "kind": "point",
+      "lat": 55.79,
+      "lng": 49.11,
+      "label": {
+       "ko": "카잔",
+       "en": "Kazan"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "mongolian-republic-1921-1924",
+   "add": [
+    {
+     "index": 0,
+     "date": "1911",
+     "title_en": "Independence declaration and Bogd Khan government",
+     "geo": {
+      "kind": "point",
+      "lat": 47.92,
+      "lng": 106.91,
+      "label": {
+       "ko": "우르가",
+       "en": "Urga"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1919",
+     "title_en": "Chinese troops abolish autonomy",
+     "geo": {
+      "kind": "point",
+      "lat": 47.92,
+      "lng": 106.92,
+      "label": {
+       "ko": "우르가",
+       "en": "Urga"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1921.07",
+     "title_en": "People’s government established",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        50.35,
+        106.45
+       ],
+       [
+        49.2,
+        106.2
+       ],
+       [
+        47.92,
+        106.91
+       ]
+      ],
+      "label": {
+       "ko": "캬흐타 → 우르가",
+       "en": "Kyakhta → Urga"
+      },
+      "actor": {
+       "ko": "몽골 인민군·붉은 군대",
+       "en": "Mongolian People’s Army and Red Army"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 3,
+     "date": "1922",
+     "title_en": "Bodoo executed",
+     "geo": {
+      "kind": "point",
+      "lat": 47.91,
+      "lng": 106.9,
+      "label": {
+       "ko": "우르가",
+       "en": "Urga"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1924.05",
+     "title_en": "Bogd Khan dies",
+     "geo": {
+      "kind": "point",
+      "lat": 47.9,
+      "lng": 106.91,
+      "label": {
+       "ko": "보그드 칸 궁전",
+       "en": "Bogd Khan Palace"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1924.11.26",
+     "title_en": "Constitution and people’s republic",
+     "geo": {
+      "kind": "point",
+      "lat": 47.92,
+      "lng": 106.92,
+      "label": {
+       "ko": "울란바토르",
+       "en": "Ulaanbaatar"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ussr-formation",
+   "add": [
+    {
+     "index": 1,
+     "date": "1922.03.12",
+     "title_en": "Formation of the Transcaucasian federation",
+     "geo": {
+      "kind": "point",
+      "lat": 41.69,
+      "lng": 44.8,
+      "label": {
+       "ko": "트빌리시",
+       "en": "Tbilisi"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1922.08–09",
+     "title_en": "Stalin's autonomization draft",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1922.09.26",
+     "title_en": "Lenin's intervention: a union of equal republics",
+     "geo": {
+      "kind": "point",
+      "lat": 55.5,
+      "lng": 37.78,
+      "label": {
+       "ko": "고르키",
+       "en": "Gorki"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1922.10–12",
+     "title_en": "The Georgian affair",
+     "geo": {
+      "kind": "point",
+      "lat": 41.7,
+      "lng": 44.79,
+      "label": {
+       "ko": "트빌리시",
+       "en": "Tbilisi"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1922.12.30",
+     "title_en": "First All-Union Congress of Soviets: the union is born",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.619,
+      "label": {
+       "ko": "볼쇼이 극장",
+       "en": "Bolshoi Theatre"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1922.12.30–31",
+     "title_en": "Lenin's last struggle: against Great-Russian chauvinism",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1923.04",
+     "title_en": "The Twelfth Congress and korenizatsiya",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1923.07.06",
+     "title_en": "The union constitution takes effect",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1924.01.31",
+     "title_en": "Ratification of the 1924 Constitution",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.619,
+      "label": {
+       "ko": "볼쇼이 극장",
+       "en": "Bolshoi Theatre"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "new-economic-policy",
+   "add": [
+    {
+     "index": 1,
+     "date": "1921.03",
+     "title_en": "Tenth Party Congress: the turn to the tax in kind",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1921–1922",
+     "title_en": "Famine and the start of recovery",
+     "geo": {
+      "kind": "point",
+      "lat": 53.2,
+      "lng": 50.15,
+      "label": {
+       "ko": "사마라",
+       "en": "Samara"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1922.12–1923.03",
+     "title_en": "Lenin's last writings",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1924.01.21",
+     "title_en": "The death of Lenin",
+     "geo": {
+      "kind": "point",
+      "lat": 55.5,
+      "lng": 37.78,
+      "label": {
+       "ko": "고르키",
+       "en": "Gorki"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1925.12",
+     "title_en": "Fourteenth Congress: socialism in one country and the smychka",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1928",
+     "title_en": "The grain crisis and the end of NEP",
+     "geo": {
+      "kind": "point",
+      "lat": 55.03,
+      "lng": 82.92,
+      "label": {
+       "ko": "노보시비르스크",
+       "en": "Novosibirsk"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "succession-struggle",
+   "add": [
+    {
+     "index": 0,
+     "date": "1922.12",
+     "title_en": "Lenin Dictates His 'Letter to the Congress'",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1923.03.10",
+     "title_en": "Lenin's Third Stroke",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1924.01.21",
+     "title_en": "Lenin Dies",
+     "geo": {
+      "kind": "point",
+      "lat": 55.5,
+      "lng": 37.78,
+      "label": {
+       "ko": "고르키",
+       "en": "Gorki"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1924.05",
+     "title_en": "XIII Party Congress and the Lenin Enrollment",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1925.01",
+     "title_en": "Trotsky Removed as War Commissar",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1925.04",
+     "title_en": "'Socialism in One Country' and the Triumvirate's Crack",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1925.12",
+     "title_en": "XIV Party Congress Defeats the New Opposition",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1926.07",
+     "title_en": "Formation and Defeat of the United Opposition",
+     "geo": {
+      "kind": "point",
+      "lat": 55.756,
+      "lng": 37.631,
+      "label": {
+       "ko": "스타라야 광장",
+       "en": "Old Square"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1927.11.07",
+     "title_en": "The Last Stand: the October Revolution 10th Anniversary",
+     "geo": {
+      "kind": "point",
+      "lat": 55.754,
+      "lng": 37.621,
+      "label": {
+       "ko": "붉은 광장",
+       "en": "Red Square"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1927.12",
+     "title_en": "XV Party Congress: The Left Opposition Is Extinguished",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "five-year-plans",
+   "add": [
+    {
+     "index": 0,
+     "date": "1928.01",
+     "title_en": "The grain crisis and the Siberian journey",
+     "geo": {
+      "kind": "point",
+      "lat": 55.03,
+      "lng": 82.92,
+      "label": {
+       "ko": "노보시비르스크",
+       "en": "Novosibirsk"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1929.04",
+     "title_en": "The First Five-Year Plan adopted",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1932.02.01",
+     "title_en": "First pig iron at Magnitogorsk",
+     "geo": {
+      "kind": "point",
+      "lat": 53.41,
+      "lng": 59.05,
+      "label": {
+       "ko": "마그니토고르스크",
+       "en": "Magnitogorsk"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1932.10.10",
+     "title_en": "Dneprostroi hydroelectric station opens",
+     "geo": {
+      "kind": "point",
+      "lat": 47.87,
+      "lng": 35.09,
+      "label": {
+       "ko": "드네프르 댐",
+       "en": "Dnieper Dam"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1935.08.31",
+     "title_en": "Stakhanov's shift",
+     "geo": {
+      "kind": "point",
+      "lat": 48.57,
+      "lng": 38.65,
+      "label": {
+       "ko": "카디예프카",
+       "en": "Kadiyevka"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1936.12.05",
+     "title_en": "The 1936 Soviet Constitution",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 13,
+     "date": "1941.06",
+     "title_en": "The test of 1941",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        50,
+        36.23
+       ],
+       [
+        55.16,
+        61.4
+       ]
+      ],
+      "label": {
+       "ko": "우랄 방면",
+       "en": "toward the Urals"
+      },
+      "actor": {
+       "ko": "소개된 공장",
+       "en": "evacuated factories"
+      },
+      "variant": "red"
+     }
+    }
+   ]
+  },
+  {
+   "id": "holodomor",
+   "add": [
+    {
+     "index": 3,
+     "date": "1932.06.10",
+     "title_en": "Petrovsky and Chubar Appeal for Relief",
+     "geo": {
+      "kind": "point",
+      "lat": 49.99,
+      "lng": 36.23,
+      "label": {
+       "ko": "하리코프",
+       "en": "Kharkov"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1932.11.18",
+     "title_en": "The Blacklist System and Village Blockades",
+     "geo": {
+      "kind": "point",
+      "lat": 49.99,
+      "lng": 36.23,
+      "label": {
+       "ko": "하리코프",
+       "en": "Kharkov"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1933.01.01",
+     "title_en": "Stalin's New Year's Day Telegram: The Final Grain Searches",
+     "geo": {
+      "kind": "point",
+      "lat": 49.99,
+      "lng": 36.23,
+      "label": {
+       "ko": "하리코프",
+       "en": "Kharkov"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1933.01.24",
+     "title_en": "Postyshev Dispatched: Stalin's Viceroy in Ukraine",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        55.75,
+        37.62
+       ],
+       [
+        49.99,
+        36.23
+       ]
+      ],
+      "label": {
+       "ko": "하리코프",
+       "en": "Kharkov"
+      },
+      "actor": {
+       "ko": "포스티셰프",
+       "en": "Postyshev"
+      },
+      "variant": "red"
+     }
+    }
+   ]
+  },
+  {
+   "id": "february-1934-crisis",
+   "add": [
+    {
+     "index": 2,
+     "date": "1934.01.27",
+     "title_en": "The Chautemps cabinet falls",
+     "geo": {
+      "kind": "point",
+      "lat": 48.855,
+      "lng": 2.321,
+      "label": {
+       "ko": "마티뇽 관저",
+       "en": "Hôtel Matignon"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1934.01.30",
+     "title_en": "Daladier forms a government",
+     "geo": {
+      "kind": "point",
+      "lat": 48.87,
+      "lng": 2.317,
+      "label": {
+       "ko": "엘리제궁",
+       "en": "Élysée Palace"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1934.02.03",
+     "title_en": "Prefect Chiappe removed",
+     "geo": {
+      "kind": "point",
+      "lat": 48.854,
+      "lng": 2.347,
+      "label": {
+       "ko": "파리 경찰청",
+       "en": "Prefecture of Police"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1934.02.06",
+     "title_en": "Riot on the Place de la Concorde",
+     "geo": {
+      "kind": "point",
+      "lat": 48.866,
+      "lng": 2.321,
+      "label": {
+       "ko": "콩코르드 광장",
+       "en": "Place de la Concorde"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1934.02.07",
+     "title_en": "Daladier resigns",
+     "geo": {
+      "kind": "point",
+      "lat": 48.855,
+      "lng": 2.321,
+      "label": {
+       "ko": "마티뇽 관저",
+       "en": "Hôtel Matignon"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1934.02.09",
+     "title_en": "The Communist demonstration and a second bloodletting",
+     "geo": {
+      "kind": "point",
+      "lat": 48.867,
+      "lng": 2.364,
+      "label": {
+       "ko": "레퓌블리크 광장",
+       "en": "Place de la République"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1934.02.12",
+     "title_en": "General strike and the junction at the Nation",
+     "geo": {
+      "kind": "point",
+      "lat": 48.848,
+      "lng": 2.396,
+      "label": {
+       "ko": "나시옹 광장",
+       "en": "Place de la Nation"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1934.07.27",
+     "title_en": "The Socialist-Communist pact of unity of action",
+     "geo": {
+      "kind": "point",
+      "lat": 48.86,
+      "lng": 2.35,
+      "label": {
+       "ko": "파리",
+       "en": "Paris"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "french-popular-front",
+   "add": [
+    {
+     "index": 0,
+     "date": "1934.02.06",
+     "title_en": "Riot on the Place de la Concorde",
+     "geo": {
+      "kind": "point",
+      "lat": 48.866,
+      "lng": 2.321,
+      "label": {
+       "ko": "콩코르드 광장",
+       "en": "Place de la Concorde"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1934.02.12",
+     "title_en": "The Anti-Fascist General Strike",
+     "geo": {
+      "kind": "point",
+      "lat": 48.848,
+      "lng": 2.396,
+      "label": {
+       "ko": "나시옹 광장",
+       "en": "Place de la Nation"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1934.07.27",
+     "title_en": "The Socialist-Communist Unity Pact",
+     "geo": {
+      "kind": "point",
+      "lat": 48.86,
+      "lng": 2.35,
+      "label": {
+       "ko": "파리",
+       "en": "Paris"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1935.07.14",
+     "title_en": "The Oath of the Rassemblement Populaire",
+     "geo": {
+      "kind": "point",
+      "lat": 48.853,
+      "lng": 2.369,
+      "label": {
+       "ko": "바스티유 광장",
+       "en": "Place de la Bastille"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1936.03",
+     "title_en": "The CGT Reunified",
+     "geo": {
+      "kind": "point",
+      "lat": 43.6,
+      "lng": 1.44,
+      "label": {
+       "ko": "툴루즈",
+       "en": "Toulouse"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1936.05.11",
+     "title_en": "The First Occupation, Le Havre",
+     "geo": {
+      "kind": "point",
+      "lat": 49.49,
+      "lng": 0.11,
+      "label": {
+       "ko": "르아브르",
+       "en": "Le Havre"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1936.05.28",
+     "title_en": "Renault Billancourt Occupied",
+     "geo": {
+      "kind": "point",
+      "lat": 48.825,
+      "lng": 2.235,
+      "label": {
+       "ko": "비양쿠르",
+       "en": "Billancourt"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1936.06.04",
+     "title_en": "Blum Takes Office",
+     "geo": {
+      "kind": "point",
+      "lat": 48.87,
+      "lng": 2.317,
+      "label": {
+       "ko": "엘리제궁",
+       "en": "Élysée Palace"
+      }
+     }
+    },
+    {
+     "index": 12,
+     "date": "1936.06.07",
+     "title_en": "The Matignon Agreements",
+     "geo": {
+      "kind": "point",
+      "lat": 48.855,
+      "lng": 2.321,
+      "label": {
+       "ko": "마티뇽 관저",
+       "en": "Hôtel Matignon"
+      }
+     }
+    },
+    {
+     "index": 13,
+     "date": "1936.06.11",
+     "title_en": "Paid Holidays, the 40-Hour Week, and 'Knowing How to End a Strike'",
+     "geo": {
+      "kind": "point",
+      "lat": 48.862,
+      "lng": 2.318,
+      "label": {
+       "ko": "부르봉궁",
+       "en": "Palais Bourbon"
+      }
+     }
+    },
+    {
+     "index": 17,
+     "date": "1937.03.16",
+     "title_en": "The Shots at Clichy",
+     "geo": {
+      "kind": "point",
+      "lat": 48.904,
+      "lng": 2.306,
+      "label": {
+       "ko": "클리시",
+       "en": "Clichy"
+      }
+     }
+    },
+    {
+     "index": 18,
+     "date": "1937.06.21",
+     "title_en": "Blum Resigns",
+     "geo": {
+      "kind": "point",
+      "lat": 48.848,
+      "lng": 2.337,
+      "label": {
+       "ko": "뤽상부르궁",
+       "en": "Luxembourg Palace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "spanish-civil-war",
+   "add": [
+    {
+     "index": 2,
+     "date": "1936.07–09",
+     "title_en": "Revolution behind the lines",
+     "geo": {
+      "kind": "point",
+      "lat": 41.39,
+      "lng": 2.17,
+      "label": {
+       "ko": "바르셀로나",
+       "en": "Barcelona"
+      }
+     }
+    },
+    {
+     "index": 13,
+     "date": "1937.05.17",
+     "title_en": "Largo Caballero falls, Negrín takes over",
+     "geo": {
+      "kind": "point",
+      "lat": 39.47,
+      "lng": -0.38,
+      "label": {
+       "ko": "발렌시아",
+       "en": "Valencia"
+      }
+     }
+    },
+    {
+     "index": 14,
+     "date": "1937.06",
+     "title_en": "The POUM outlawed, and the death of Andreu Nin",
+     "geo": {
+      "kind": "point",
+      "lat": 40.48,
+      "lng": -3.36,
+      "label": {
+       "ko": "알칼라데에나레스",
+       "en": "Alcalá de Henares"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "great-terror",
+   "add": [
+    {
+     "index": 0,
+     "date": "1937.06.11",
+     "title_en": "Trial and execution of the military leadership",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.628,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1937.07.25",
+     "title_en": "NKVD Secret Operational Order No. 00439: German operation",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.628,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1937.07.30–31",
+     "title_en": "NKVD Operational Order No. 00447: ‘kulaks, criminals, and anti-Soviet elements’",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.618,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1937.08.11",
+     "title_en": "NKVD Operational Order No. 00485: Polish operation",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.628,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1937.08.15",
+     "title_en": "NKVD Operational Order No. 00486: ‘families of traitors to the motherland’",
+     "geo": {
+      "kind": "point",
+      "lat": 51,
+      "lng": 71.1,
+      "label": {
+       "ko": "알지르",
+       "en": "ALZhIR"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1937.09.20",
+     "title_en": "NKVD Operational Order No. 00593: Harbin returnees and ‘Japanese spies’",
+     "geo": {
+      "kind": "point",
+      "lat": 45.8,
+      "lng": 126.53,
+      "label": {
+       "ko": "하얼빈",
+       "en": "Harbin"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1937.11.30",
+     "title_en": "NKVD Directive No. 49990: Latvian operation",
+     "geo": {
+      "kind": "point",
+      "lat": 55.54,
+      "lng": 37.58,
+      "label": {
+       "ko": "부토보 사격장",
+       "en": "Butovo firing range"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1937.12.11",
+     "title_en": "NKVD Directive No. 50215: Greek operation",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.628,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1938.01.31",
+     "title_en": "National operations extended",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.618,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1938.09–10",
+     "title_en": "The Yezhov apparatus fractures and is purged",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.628,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1938.11.17",
+     "title_en": "Resolution halting mass operations",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.618,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1938.11.25",
+     "title_en": "Beria’s NKVD Order No. 00762",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.628,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "soviet-japanese-border-wars",
+   "add": [
+    {
+     "index": 0,
+     "date": "1932",
+     "title_en": "Establishment of Manchukuo and the start of tensions",
+     "geo": {
+      "kind": "point",
+      "lat": 43.88,
+      "lng": 125.32,
+      "label": {
+       "ko": "신징(창춘)",
+       "en": "Hsinking (Changchun)"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1936.03",
+     "title_en": "Soviet-Mongolian Mutual Assistance Protocol",
+     "geo": {
+      "kind": "point",
+      "lat": 47.92,
+      "lng": 106.92,
+      "label": {
+       "ko": "울란바토르",
+       "en": "Ulan Bator"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1937.07",
+     "title_en": "Outbreak of the Second Sino-Japanese War and Soviet aid to China",
+     "geo": {
+      "kind": "point",
+      "lat": 39.85,
+      "lng": 116.21,
+      "label": {
+       "ko": "루거우차오",
+       "en": "Marco Polo Bridge"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1938.06.13",
+     "title_en": "Defection of Genrikh Lyushkov",
+     "geo": {
+      "kind": "point",
+      "lat": 42.87,
+      "lng": 130.36,
+      "label": {
+       "ko": "훈춘",
+       "en": "Hunchun"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1939.06.05",
+     "title_en": "Zhukov takes command",
+     "geo": {
+      "kind": "point",
+      "lat": 47.77,
+      "lng": 118.45,
+      "label": {
+       "ko": "하마르다바",
+       "en": "Khamar-Daba"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1939.07.02",
+     "title_en": "The Japanese July offensive",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        47.72,
+        118.95
+       ],
+       [
+        47.76,
+        118.6
+       ]
+      ],
+      "label": {
+       "ko": "바인차간 고지",
+       "en": "Bayan-Tsagan Heights"
+      },
+      "actor": {
+       "ko": "일본군 제23사단",
+       "en": "Japanese 23rd Division"
+      },
+      "variant": "axis"
+     }
+    },
+    {
+     "index": 9,
+     "date": "1939.08.20",
+     "title_en": "Zhukov's August offensive",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        47.9,
+        118.55
+       ],
+       [
+        47.82,
+        118.85
+       ],
+       [
+        47.66,
+        118.95
+       ]
+      ],
+      "label": {
+       "ko": "포위",
+       "en": "the encirclement"
+      },
+      "actor": {
+       "ko": "소련·몽골군",
+       "en": "Soviet-Mongolian forces"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 12,
+     "date": "1941.06.24",
+     "title_en": "Japan decides not to join the German-Soviet war",
+     "geo": {
+      "kind": "point",
+      "lat": 35.68,
+      "lng": 139.69,
+      "label": {
+       "ko": "도쿄",
+       "en": "Tokyo"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "sino-japanese-war-1937-1945",
+   "add": [
+    {
+     "index": 2,
+     "date": "1937.09.22",
+     "title_en": "The second united front announced",
+     "geo": {
+      "kind": "point",
+      "lat": 32.06,
+      "lng": 118.78,
+      "label": {
+       "ko": "난징",
+       "en": "Nanjing"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1940.01",
+     "title_en": "“On New Democracy”",
+     "geo": {
+      "kind": "point",
+      "lat": 36.59,
+      "lng": 109.49,
+      "label": {
+       "ko": "옌안",
+       "en": "Yan’an"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "nazi-soviet-pact",
+   "add": [
+    {
+     "index": 0,
+     "date": "1939.05.03",
+     "title_en": "Litvinov dismissed, Molotov appointed",
+     "geo": {
+      "kind": "point",
+      "lat": 55.761,
+      "lng": 37.625,
+      "label": {
+       "ko": "외무인민위원부",
+       "en": "Foreign Affairs Commissariat"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1939.08.12",
+     "title_en": "Tripartite military talks begin in Moscow",
+     "geo": {
+      "kind": "point",
+      "lat": 55.758,
+      "lng": 37.593,
+      "label": {
+       "ko": "스피리도놉카 저택",
+       "en": "Spiridonovka Mansion"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1939.08.19",
+     "title_en": "German-Soviet commercial agreement signed",
+     "geo": {
+      "kind": "point",
+      "lat": 52.52,
+      "lng": 13.4,
+      "label": {
+       "ko": "베를린",
+       "en": "Berlin"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1939.09.28",
+     "title_en": "Boundary and Friendship Treaty signed",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.618,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1939.10.05",
+     "title_en": "Last Polish resistance ends",
+     "geo": {
+      "kind": "point",
+      "lat": 51.64,
+      "lng": 22.45,
+      "label": {
+       "ko": "코츠크",
+       "en": "Kock"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1939.10.10",
+     "title_en": "Mutual assistance treaties imposed on the Baltic states",
+     "geo": {
+      "kind": "point",
+      "lat": 54.69,
+      "lng": 25.28,
+      "label": {
+       "ko": "빌뉴스",
+       "en": "Vilnius"
+      }
+     }
+    },
+    {
+     "index": 12,
+     "date": "1939.11.01",
+     "title_en": "Eastern Poland annexed to the USSR",
+     "geo": {
+      "kind": "point",
+      "lat": 49.84,
+      "lng": 24.03,
+      "label": {
+       "ko": "리보프",
+       "en": "Lwów"
+      }
+     }
+    },
+    {
+     "index": 17,
+     "date": "1940.08.03",
+     "title_en": "The Baltic states incorporated into the USSR",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.617,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 18,
+     "date": "1941.06.22",
+     "title_en": "Germany invades the USSR: the pact is broken",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        52.2,
+        21.3
+       ],
+       [
+        52.1,
+        23.7
+       ],
+       [
+        53.9,
+        27.57
+       ]
+      ],
+      "label": {
+       "ko": "민스크 방면",
+       "en": "toward Minsk"
+      },
+      "actor": {
+       "ko": "독일군",
+       "en": "German forces"
+      },
+      "variant": "axis"
+     }
+    },
+    {
+     "index": 19,
+     "date": "1989.12.24",
+     "title_en": "USSR Congress condemns the secret protocol",
+     "geo": {
+      "kind": "point",
+      "lat": 55.751,
+      "lng": 37.616,
+      "label": {
+       "ko": "크렘린 대회궁전",
+       "en": "Kremlin Palace of Congresses"
+      }
+     }
+    },
+    {
+     "index": 20,
+     "date": "1990.04.13",
+     "title_en": "USSR admits responsibility for Katyn",
+     "geo": {
+      "kind": "point",
+      "lat": 55.752,
+      "lng": 37.618,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "winter-war",
+   "add": [
+    {
+     "index": 10,
+     "date": "1941.06",
+     "title_en": "The Continuation War",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        61.25,
+        29.1
+       ],
+       [
+        60.71,
+        28.75
+       ]
+      ],
+      "label": {
+       "ko": "비푸리",
+       "en": "Viipuri"
+      },
+      "actor": {
+       "ko": "핀란드군",
+       "en": "Finnish forces"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "fall-of-france",
+   "add": [
+    {
+     "index": 0,
+     "date": "1939.09.03",
+     "title_en": "War declared, the Phoney War",
+     "geo": {
+      "kind": "point",
+      "lat": 49.3,
+      "lng": 6.5,
+      "label": {
+       "ko": "마지노선",
+       "en": "Maginot Line"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1940.02.24",
+     "title_en": "The main effort shifts to the Ardennes",
+     "geo": {
+      "kind": "point",
+      "lat": 50,
+      "lng": 5.5,
+      "label": {
+       "ko": "아르덴",
+       "en": "Ardennes"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1940.10.03",
+     "title_en": "The Jewish Statute",
+     "geo": {
+      "kind": "point",
+      "lat": 46.13,
+      "lng": 3.42,
+      "label": {
+       "ko": "비시",
+       "en": "Vichy"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1942.07.16",
+     "title_en": "The Vel d'Hiv roundup",
+     "geo": {
+      "kind": "point",
+      "lat": 48.854,
+      "lng": 2.288,
+      "label": {
+       "ko": "벨디브",
+       "en": "Vel d'Hiv"
+      }
+     }
+    },
+    {
+     "index": 13,
+     "date": "1944.08.25",
+     "title_en": "The liberation of Paris",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        48.4,
+        2.1
+       ],
+       [
+        48.86,
+        2.35
+       ]
+      ],
+      "label": {
+       "ko": "파리",
+       "en": "Paris"
+      },
+      "actor": {
+       "ko": "르클레르 제2기갑사단",
+       "en": "Leclerc's 2nd Armoured Division"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "battle-of-britain",
+   "add": [
+    {
+     "index": 1,
+     "date": "1940.06.04",
+     "title_en": "The Dunkirk evacuation",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        51.03,
+        2.38
+       ],
+       [
+        51.12,
+        1.32
+       ]
+      ],
+      "label": {
+       "ko": "도버",
+       "en": "Dover"
+      },
+      "actor": {
+       "ko": "영국·프랑스군",
+       "en": "British and French troops"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1940.06.18",
+     "title_en": "The battle announced",
+     "geo": {
+      "kind": "point",
+      "lat": 51.5,
+      "lng": -0.12,
+      "label": {
+       "ko": "하원",
+       "en": "House of Commons"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1940.07.04",
+     "title_en": "The Channel blockade begins",
+     "geo": {
+      "kind": "point",
+      "lat": 50.45,
+      "lng": -2.4,
+      "label": {
+       "ko": "포틀랜드 앞바다",
+       "en": "off Portland"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1940.07.10",
+     "title_en": "The campaign opens",
+     "geo": {
+      "kind": "point",
+      "lat": 50.9,
+      "lng": 1.3,
+      "label": {
+       "ko": "도버 해협",
+       "en": "Strait of Dover"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1940.09.15",
+     "title_en": "Battle of Britain Day",
+     "geo": {
+      "kind": "point",
+      "lat": 51.51,
+      "lng": -0.13,
+      "label": {
+       "ko": "런던",
+       "en": "London"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "great-patriotic-war",
+   "add": [
+    {
+     "index": 8,
+     "date": "1943.02.02",
+     "title_en": "Victory at Stalingrad",
+     "geo": {
+      "kind": "point",
+      "lat": 48.71,
+      "lng": 44.51,
+      "label": {
+       "ko": "스탈린그라드",
+       "en": "Stalingrad"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "siege-of-leningrad",
+   "add": [
+    {
+     "index": 1,
+     "date": "1941.06.22",
+     "title_en": "Invasion and mobilisation",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.31,
+      "label": {
+       "ko": "레닌그라드",
+       "en": "Leningrad"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1941.09.08",
+     "title_en": "The encirclement closes",
+     "geo": {
+      "kind": "point",
+      "lat": 59.95,
+      "lng": 31.03,
+      "label": {
+       "ko": "실리셀부르크",
+       "en": "Shlisselburg"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1941.09.13",
+     "title_en": "Defence command is reorganised",
+     "geo": {
+      "kind": "point",
+      "lat": 59.946,
+      "lng": 30.396,
+      "label": {
+       "ko": "스몰니",
+       "en": "Smolny"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1942.08.09",
+     "title_en": "A symphony under blockade",
+     "geo": {
+      "kind": "point",
+      "lat": 59.936,
+      "lng": 30.331,
+      "label": {
+       "ko": "레닌그라드 필하모니",
+       "en": "Leningrad Philharmonia"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "pacific-war",
+   "add": [
+    {
+     "index": 0,
+     "date": "1931",
+     "title_en": "Manchuria and the Expansionist Course",
+     "geo": {
+      "kind": "point",
+      "lat": 41.8,
+      "lng": 123.43,
+      "label": {
+       "ko": "펑톈",
+       "en": "Mukden"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1941.07",
+     "title_en": "Indochina and the Oil Embargo",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        20,
+        110.3
+       ],
+       [
+        10.78,
+        106.7
+       ]
+      ],
+      "label": {
+       "ko": "남부 인도차이나",
+       "en": "southern Indochina"
+      },
+      "actor": {
+       "ko": "일본군",
+       "en": "Japanese forces"
+      },
+      "variant": "axis"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stalingrad",
+   "add": [
+    {
+     "index": 7,
+     "date": "1942.10.14",
+     "title_en": "The last riverbank defenses",
+     "geo": {
+      "kind": "point",
+      "lat": 48.78,
+      "lng": 44.58,
+      "label": {
+       "ko": "트랙터 공장",
+       "en": "Tractor Factory"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1943.02.02",
+     "title_en": "Surrender and the shift of initiative",
+     "geo": {
+      "kind": "point",
+      "lat": 48.71,
+      "lng": 44.52,
+      "label": {
+       "ko": "중앙 백화점",
+       "en": "Central Department Store"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "second-front-normandy",
+   "add": [
+    {
+     "index": 7,
+     "date": "1944.06.05",
+     "title_en": "Weather and the decision",
+     "geo": {
+      "kind": "point",
+      "lat": 50.87,
+      "lng": -1.11,
+      "label": {
+       "ko": "사우스윅 하우스",
+       "en": "Southwick House"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1944.06.30",
+     "title_en": "The beachhead and its supply system",
+     "geo": {
+      "kind": "point",
+      "lat": 49.34,
+      "lng": -0.62,
+      "label": {
+       "ko": "아로망슈",
+       "en": "Arromanches"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "italian-campaign",
+   "add": [
+    {
+     "index": 2,
+     "date": "1943.07.24",
+     "title_en": "The Fascist Grand Council Turns Against Mussolini",
+     "geo": {
+      "kind": "point",
+      "lat": 41.9,
+      "lng": 12.48,
+      "label": {
+       "ko": "베네치아 궁전",
+       "en": "Palazzo Venezia"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1943.07.25",
+     "title_en": "Mussolini Is Removed",
+     "geo": {
+      "kind": "point",
+      "lat": 41.93,
+      "lng": 12.5,
+      "label": {
+       "ko": "빌라 사보이아",
+       "en": "Villa Savoia"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1944.06.04",
+     "title_en": "Rome Is Captured",
+     "geo": {
+      "kind": "point",
+      "lat": 41.89,
+      "lng": 12.49,
+      "label": {
+       "ko": "로마",
+       "en": "Rome"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "french-resistance",
+   "add": [
+    {
+     "index": 0,
+     "date": "1940.05",
+     "title_en": "France is defeated",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        49.8,
+        5.5
+       ],
+       [
+        49.7,
+        4.94
+       ],
+       [
+        50.1,
+        1.8
+       ]
+      ],
+      "label": {
+       "ko": "스당 돌파",
+       "en": "Sedan breakthrough"
+      },
+      "actor": {
+       "ko": "독일군",
+       "en": "German forces"
+      },
+      "variant": "axis"
+     }
+    },
+    {
+     "index": 1,
+     "date": "1940.06.14",
+     "title_en": "Paris falls",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        49.4,
+        2.8
+       ],
+       [
+        48.9,
+        2.36
+       ]
+      ],
+      "label": {
+       "ko": "파리",
+       "en": "Paris"
+      },
+      "actor": {
+       "ko": "독일군",
+       "en": "German forces"
+      },
+      "variant": "axis"
+     }
+    },
+    {
+     "index": 2,
+     "date": "1940.06.18",
+     "title_en": "The London appeal",
+     "geo": {
+      "kind": "point",
+      "lat": 51.51,
+      "lng": -0.13,
+      "label": {
+       "ko": "런던",
+       "en": "London"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1940.06.22",
+     "title_en": "Armistice and division",
+     "geo": {
+      "kind": "point",
+      "lat": 49.43,
+      "lng": 2.91,
+      "label": {
+       "ko": "콩피에뉴",
+       "en": "Compiègne"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1940.07",
+     "title_en": "The Vichy regime is established",
+     "geo": {
+      "kind": "point",
+      "lat": 46.13,
+      "lng": 3.43,
+      "label": {
+       "ko": "비시",
+       "en": "Vichy"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1941.05",
+     "title_en": "Underground coordination begins",
+     "geo": {
+      "kind": "point",
+      "lat": 45.76,
+      "lng": 4.84,
+      "label": {
+       "ko": "리옹",
+       "en": "Lyon"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1943.05",
+     "title_en": "The National Resistance Council",
+     "geo": {
+      "kind": "point",
+      "lat": 48.85,
+      "lng": 2.33,
+      "label": {
+       "ko": "파리",
+       "en": "Paris"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "warsaw-uprising",
+   "add": [
+    {
+     "index": 5,
+     "date": "1944.07.29",
+     "title_en": "Radio Appeal and Counterattack",
+     "geo": {
+      "kind": "point",
+      "lat": 52.42,
+      "lng": 21.18,
+      "label": {
+       "ko": "라지민",
+       "en": "Radzymin"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1944.08.05",
+     "title_en": "The Wola Massacre",
+     "geo": {
+      "kind": "point",
+      "lat": 52.24,
+      "lng": 20.96,
+      "label": {
+       "ko": "볼라",
+       "en": "Wola"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1944.10.02",
+     "title_en": "Capitulation and Deportation",
+     "geo": {
+      "kind": "point",
+      "lat": 52.21,
+      "lng": 20.8,
+      "label": {
+       "ko": "오자루프",
+       "en": "Ożarów"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1945.01",
+     "title_en": "A New Authority over Ruins",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        52.25,
+        21.4
+       ],
+       [
+        52.23,
+        21.05
+       ]
+      ],
+      "label": {
+       "ko": "바르샤바 입성",
+       "en": "entry into Warsaw"
+      },
+      "actor": {
+       "ko": "제1폴란드군",
+       "en": "the First Polish Army"
+      },
+      "variant": "red"
+     }
+    }
+   ]
+  },
+  {
+   "id": "yugoslav-partisans",
+   "add": [
+    {
+     "index": 1,
+     "date": "1941.06.22",
+     "title_en": "The turn to armed resistance",
+     "geo": {
+      "kind": "point",
+      "lat": 45.47,
+      "lng": 16.37,
+      "label": {
+       "ko": "시사크",
+       "en": "Sisak"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1941.07.04",
+     "title_en": "Order for a national rising",
+     "geo": {
+      "kind": "point",
+      "lat": 44.77,
+      "lng": 20.45,
+      "label": {
+       "ko": "베오그라드",
+       "en": "Belgrade"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1941.10",
+     "title_en": "Civil war within the resistance",
+     "geo": {
+      "kind": "point",
+      "lat": 44.12,
+      "lng": 20.2,
+      "label": {
+       "ko": "라브나고라",
+       "en": "Ravna Gora"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1943.09",
+     "title_en": "Italy’s surrender and captured arms",
+     "geo": {
+      "kind": "point",
+      "lat": 43.51,
+      "lng": 16.44,
+      "label": {
+       "ko": "스플리트",
+       "en": "Split"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "greek-resistance",
+   "add": [
+    {
+     "index": 2,
+     "date": "1941.05.30",
+     "title_en": "The Acropolis flag",
+     "geo": {
+      "kind": "point",
+      "lat": 37.97,
+      "lng": 23.73,
+      "label": {
+       "ko": "아크로폴리스",
+       "en": "Acropolis"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1941.12–1942.02",
+     "title_en": "The occupation famine",
+     "geo": {
+      "kind": "point",
+      "lat": 37.94,
+      "lng": 23.65,
+      "label": {
+       "ko": "피레우스",
+       "en": "Piraeus"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1944.03.10",
+     "title_en": "The Political Committee of National Liberation",
+     "geo": {
+      "kind": "point",
+      "lat": 38.99,
+      "lng": 21.72,
+      "label": {
+       "ko": "비니아니",
+       "en": "Viniani"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1944.10.18",
+     "title_en": "Liberation and the returning government",
+     "geo": {
+      "kind": "point",
+      "lat": 37.98,
+      "lng": 23.73,
+      "label": {
+       "ko": "아테네",
+       "en": "Athens"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1945.02.12",
+     "title_en": "The Varkiza Agreement",
+     "geo": {
+      "kind": "point",
+      "lat": 37.82,
+      "lng": 23.8,
+      "label": {
+       "ko": "바르키자",
+       "en": "Varkiza"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "yalta-potsdam",
+   "add": [
+    {
+     "index": 0,
+     "date": "1945.02.04–11",
+     "title_en": "The Yalta Conference",
+     "geo": {
+      "kind": "point",
+      "lat": 44.47,
+      "lng": 34.14,
+      "label": {
+       "ko": "리바디아 궁전",
+       "en": "Livadia Palace"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1945.07.17–08.02",
+     "title_en": "The Potsdam Conference",
+     "geo": {
+      "kind": "point",
+      "lat": 52.42,
+      "lng": 13.07,
+      "label": {
+       "ko": "체칠리엔호프 궁전",
+       "en": "Cecilienhof Palace"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1945.08.08",
+     "title_en": "The Soviet declaration of war on Japan",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "albanian-socialist-transition-1944-1946",
+   "add": [
+    {
+     "index": 0,
+     "date": "1941.11",
+     "title_en": "Albanian Communist Party formed",
+     "geo": {
+      "kind": "point",
+      "lat": 41.33,
+      "lng": 19.82,
+      "label": {
+       "ko": "티라나",
+       "en": "Tirana"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1944.05",
+     "title_en": "Përmet congress",
+     "geo": {
+      "kind": "point",
+      "lat": 40.23,
+      "lng": 20.35,
+      "label": {
+       "ko": "페르메트",
+       "en": "Përmet"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1944.10–11",
+     "title_en": "Provisional government and the end of occupation",
+     "geo": {
+      "kind": "point",
+      "lat": 40.7,
+      "lng": 19.95,
+      "label": {
+       "ko": "베라트",
+       "en": "Berat"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1946.01.11",
+     "title_en": "People’s republic proclaimed",
+     "geo": {
+      "kind": "point",
+      "lat": 41.32,
+      "lng": 19.82,
+      "label": {
+       "ko": "티라나",
+       "en": "Tirana"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "manchurian-operation",
+   "add": [
+    {
+     "index": 2,
+     "date": "1945.05.09",
+     "title_en": "Germany Surrenders: the Clock Begins",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        52.29,
+        104.28
+       ],
+       [
+        51.83,
+        107.6
+       ],
+       [
+        52.03,
+        113.5
+       ],
+       [
+        50.39,
+        116.52
+       ]
+      ],
+      "label": {
+       "ko": "시베리아 횡단 철도",
+       "en": "Trans-Siberian Railway"
+      },
+      "actor": {
+       "ko": "소련군",
+       "en": "Soviet forces"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 7,
+     "date": "1945.08.10",
+     "title_en": "Mongolia Declares War",
+     "geo": {
+      "kind": "point",
+      "lat": 47.92,
+      "lng": 106.92,
+      "label": {
+       "ko": "울란바토르",
+       "en": "Ulaanbaatar"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1945.08.15",
+     "title_en": "Emperor's Surrender Broadcast",
+     "geo": {
+      "kind": "point",
+      "lat": 35.68,
+      "lng": 139.75,
+      "label": {
+       "ko": "도쿄",
+       "en": "Tokyo"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "eastern-europe-peoples-democracies",
+   "add": [
+    {
+     "index": 0,
+     "date": "1944.07.22",
+     "title_en": "The Lublin Committee's manifesto",
+     "geo": {
+      "kind": "point",
+      "lat": 51.14,
+      "lng": 23.47,
+      "label": {
+       "ko": "헤움",
+       "en": "Chełm"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1944.09.09",
+     "title_en": "The Fatherland Front takes power in Sofia",
+     "geo": {
+      "kind": "point",
+      "lat": 42.7,
+      "lng": 23.32,
+      "label": {
+       "ko": "소피아",
+       "en": "Sofia"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1944.10.09",
+     "title_en": "The percentages agreement in Moscow",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1945.03.06",
+     "title_en": "The Groza government in Bucharest",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "부쿠레슈티",
+       "en": "Bucharest"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1945.11.04",
+     "title_en": "Hungary's general election",
+     "geo": {
+      "kind": "point",
+      "lat": 47.5,
+      "lng": 19.04,
+      "label": {
+       "ko": "부다페스트",
+       "en": "Budapest"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1946.04.22",
+     "title_en": "The Socialist Unity Party is founded",
+     "geo": {
+      "kind": "point",
+      "lat": 52.52,
+      "lng": 13.4,
+      "label": {
+       "ko": "베를린",
+       "en": "Berlin"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1947.01.19",
+     "title_en": "Poland's general election",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1947.09.23",
+     "title_en": "Petkov is executed",
+     "geo": {
+      "kind": "point",
+      "lat": 42.7,
+      "lng": 23.32,
+      "label": {
+       "ko": "소피아",
+       "en": "Sofia"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1947.12.30",
+     "title_en": "Michael I abdicates",
+     "geo": {
+      "kind": "point",
+      "lat": 44.45,
+      "lng": 26.08,
+      "label": {
+       "ko": "엘리자베타 궁전",
+       "en": "Elisabeta Palace"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1948.12.19",
+     "title_en": "Dimitrov's report to the Fifth Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 42.7,
+      "lng": 23.32,
+      "label": {
+       "ko": "소피아",
+       "en": "Sofia"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1949.09.24",
+     "title_en": "Verdict in the Rajk trial",
+     "geo": {
+      "kind": "point",
+      "lat": 47.5,
+      "lng": 19.04,
+      "label": {
+       "ko": "부다페스트",
+       "en": "Budapest"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "poland-1944-1948",
+   "add": [
+    {
+     "index": 0,
+     "date": "1944.07.22",
+     "title_en": "The Lublin Committee's manifesto",
+     "geo": {
+      "kind": "point",
+      "lat": 51.14,
+      "lng": 23.47,
+      "label": {
+       "ko": "헤움",
+       "en": "Chełm"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1944.12.31",
+     "title_en": "The Provisional Government proclaimed",
+     "geo": {
+      "kind": "point",
+      "lat": 51.25,
+      "lng": 22.57,
+      "label": {
+       "ko": "루블린",
+       "en": "Lublin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1945.03.28",
+     "title_en": "The sixteen underground leaders arrested",
+     "geo": {
+      "kind": "point",
+      "lat": 52.17,
+      "lng": 20.81,
+      "label": {
+       "ko": "프루슈쿠프",
+       "en": "Pruszków"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1945.07.22",
+     "title_en": "The first amnesty",
+     "geo": {
+      "kind": "point",
+      "lat": 53.84,
+      "lng": 22.98,
+      "label": {
+       "ko": "아우구스투프",
+       "en": "Augustów"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1947.10.20",
+     "title_en": "Mikołajczyk leaves Poland",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        52.23,
+        21.01
+       ],
+       [
+        54.52,
+        18.53
+       ]
+      ],
+      "label": {
+       "ko": "그디니아",
+       "en": "Gdynia"
+      },
+      "actor": {
+       "ko": "미코와이치크",
+       "en": "Mikołajczyk"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1948.12.15",
+     "title_en": "The unification congress",
+     "geo": {
+      "kind": "point",
+      "lat": 52.22,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바 공과대학",
+       "en": "Warsaw Polytechnic"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "romania-1944-1948",
+   "add": [
+    {
+     "index": 0,
+     "date": "1944.08.23",
+     "title_en": "The king's coup",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "왕궁",
+       "en": "Royal Palace"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1944.09.12",
+     "title_en": "The Moscow armistice",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1945.03.06",
+     "title_en": "The Groza government",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "부쿠레슈티",
+       "en": "Bucharest"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1945.08.21",
+     "title_en": "The royal strike",
+     "geo": {
+      "kind": "point",
+      "lat": 45.35,
+      "lng": 25.55,
+      "label": {
+       "ko": "시나이아",
+       "en": "Sinaia"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1947.07.14",
+     "title_en": "Tămădău and the dissolution of the National Peasants",
+     "geo": {
+      "kind": "point",
+      "lat": 44.35,
+      "lng": 26.48,
+      "label": {
+       "ko": "터머더우",
+       "en": "Tămădău"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1947.12.30",
+     "title_en": "Abdication and the People's Republic",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "엘리자베타 궁전",
+       "en": "Elisabeta Palace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "bulgaria-1944-1949",
+   "add": [
+    {
+     "index": 0,
+     "date": "1944.09.09",
+     "title_en": "The Fatherland Front takes power",
+     "geo": {
+      "kind": "point",
+      "lat": 42.7,
+      "lng": 23.32,
+      "label": {
+       "ko": "소피아",
+       "en": "Sofia"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1944.10.28",
+     "title_en": "The Moscow armistice",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1945.02.01",
+     "title_en": "The People's Court verdicts and executions",
+     "geo": {
+      "kind": "point",
+      "lat": 42.7,
+      "lng": 23.32,
+      "label": {
+       "ko": "소피아",
+       "en": "Sofia"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1947.08.01",
+     "title_en": "The Bled agreement",
+     "geo": {
+      "kind": "point",
+      "lat": 46.37,
+      "lng": 14.11,
+      "label": {
+       "ko": "블레드",
+       "en": "Bled"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1948.02.10",
+     "title_en": "The Moscow meeting",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "hungary-1945-1949",
+   "add": [
+    {
+     "index": 0,
+     "date": "1944.12.22",
+     "title_en": "The provisional government at Debrecen",
+     "geo": {
+      "kind": "point",
+      "lat": 47.53,
+      "lng": 21.63,
+      "label": {
+       "ko": "데브레첸",
+       "en": "Debrecen"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1945.01.20",
+     "title_en": "The armistice in Moscow",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1946.02.01",
+     "title_en": "The republic proclaimed",
+     "geo": {
+      "kind": "point",
+      "lat": 47.51,
+      "lng": 19.05,
+      "label": {
+       "ko": "국회의사당",
+       "en": "Parliament"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1949.09.24",
+     "title_en": "Verdict in the Rajk trial",
+     "geo": {
+      "kind": "point",
+      "lat": 47.5,
+      "lng": 19.04,
+      "label": {
+       "ko": "부다페스트",
+       "en": "Budapest"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "marshall-plan",
+   "add": [
+    {
+     "index": 0,
+     "date": "1947.06",
+     "title_en": "The Marshall Plan announced",
+     "geo": {
+      "kind": "point",
+      "lat": 42.37,
+      "lng": -71.12,
+      "label": {
+       "ko": "하버드 대학교",
+       "en": "Harvard University"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1947.07",
+     "title_en": "The Paris talks collapse",
+     "geo": {
+      "kind": "point",
+      "lat": 48.86,
+      "lng": 2.32,
+      "label": {
+       "ko": "파리",
+       "en": "Paris"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1947.09",
+     "title_en": "The Cominform founded",
+     "geo": {
+      "kind": "point",
+      "lat": 50.83,
+      "lng": 15.52,
+      "label": {
+       "ko": "슈클랴르스카포렝바",
+       "en": "Szklarska Poręba"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1948.02",
+     "title_en": "The Czechoslovak coup",
+     "geo": {
+      "kind": "point",
+      "lat": 50.08,
+      "lng": 14.44,
+      "label": {
+       "ko": "프라하",
+       "en": "Prague"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "berlin-blockade",
+   "add": [
+    {
+     "index": 0,
+     "date": "1945.08.02",
+     "title_en": "Potsdam Agreement divides Berlin into four sectors",
+     "geo": {
+      "kind": "point",
+      "lat": 52.42,
+      "lng": 13.07,
+      "label": {
+       "ko": "포츠담",
+       "en": "Potsdam"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1948.03.20",
+     "title_en": "Marshal Sokolovsky walks out of the Allied Control Council",
+     "geo": {
+      "kind": "point",
+      "lat": 52.49,
+      "lng": 13.36,
+      "label": {
+       "ko": "클라이스트 공원",
+       "en": "Kleistpark"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1948.09.09",
+     "title_en": "300,000 West Berliners rally at the Brandenburg Gate",
+     "geo": {
+      "kind": "point",
+      "lat": 52.52,
+      "lng": 13.38,
+      "label": {
+       "ko": "라이히스타크",
+       "en": "Reichstag"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1949.04.16",
+     "title_en": "Easter Parade: record 12,941 tons in a single day",
+     "geo": {
+      "kind": "point",
+      "lat": 52.47,
+      "lng": 13.4,
+      "label": {
+       "ko": "템펠호프",
+       "en": "Tempelhof"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1949.05.12",
+     "title_en": "Soviets lift the blockade after 324 days",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        52.23,
+        11.01
+       ],
+       [
+        52.4,
+        13.19
+       ]
+      ],
+      "label": {
+       "ko": "헬름슈테트",
+       "en": "Helmstedt"
+      },
+      "actor": {
+       "ko": "영국군 수송대",
+       "en": "British convoy"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1949.05.23",
+     "title_en": "Federal Republic of Germany (West Germany) founded",
+     "geo": {
+      "kind": "point",
+      "lat": 50.73,
+      "lng": 7.1,
+      "label": {
+       "ko": "본",
+       "en": "Bonn"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1949.10.07",
+     "title_en": "German Democratic Republic (East Germany) founded",
+     "geo": {
+      "kind": "point",
+      "lat": 52.51,
+      "lng": 13.38,
+      "label": {
+       "ko": "동베를린",
+       "en": "East Berlin"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "dprk-foundation-1946-1948",
+   "add": [
+    {
+     "index": 0,
+     "date": "1945.08–09",
+     "title_en": "Liberation and divided occupation",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        41.79,
+        129.79
+       ],
+       [
+        39.9,
+        127.54
+       ],
+       [
+        39.02,
+        125.75
+       ]
+      ],
+      "label": {
+       "ko": "평양 진주",
+       "en": "into Pyongyang"
+      },
+      "actor": {
+       "ko": "소련군",
+       "en": "Soviet forces"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 1,
+     "date": "1946.02",
+     "title_en": "Provisional People’s Committee",
+     "geo": {
+      "kind": "point",
+      "lat": 39.02,
+      "lng": 125.75,
+      "label": {
+       "ko": "평양",
+       "en": "Pyongyang"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1946.08",
+     "title_en": "North Korean Workers’ Party formed",
+     "geo": {
+      "kind": "point",
+      "lat": 39.02,
+      "lng": 125.75,
+      "label": {
+       "ko": "평양",
+       "en": "Pyongyang"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1948.09.09",
+     "title_en": "DPRK established",
+     "geo": {
+      "kind": "point",
+      "lat": 39.02,
+      "lng": 125.75,
+      "label": {
+       "ko": "평양",
+       "en": "Pyongyang"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "tito-stalin-split",
+   "add": [
+    {
+     "index": 0,
+     "date": "1945–1947",
+     "title_en": "A regime standing on its own",
+     "geo": {
+      "kind": "point",
+      "lat": 45.65,
+      "lng": 13.78,
+      "label": {
+       "ko": "트리에스테",
+       "en": "Trieste"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1948.01–02",
+     "title_en": "Discord over the Balkan federation",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1948.06",
+     "title_en": "The Bucharest resolution: expulsion",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "부쿠레슈티",
+       "en": "Bucharest"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1948–1949",
+     "title_en": "Blockade and heresy hunt",
+     "geo": {
+      "kind": "point",
+      "lat": 44.84,
+      "lng": 14.82,
+      "label": {
+       "ko": "골리오토크",
+       "en": "Goli Otok"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1953–1955",
+     "title_en": "The Belgrade declaration",
+     "geo": {
+      "kind": "point",
+      "lat": 44.79,
+      "lng": 20.45,
+      "label": {
+       "ko": "베오그라드",
+       "en": "Belgrade"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1961",
+     "title_en": "Into non-alignment",
+     "geo": {
+      "kind": "point",
+      "lat": 44.81,
+      "lng": 20.46,
+      "label": {
+       "ko": "베오그라드",
+       "en": "Belgrade"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "chinese-civil-war-1945-1949",
+   "add": [
+    {
+     "index": 2,
+     "date": "1946.01",
+     "title_en": "Marshall’s ceasefire",
+     "geo": {
+      "kind": "point",
+      "lat": 29.56,
+      "lng": 106.55,
+      "label": {
+       "ko": "충칭",
+       "en": "Chongqing"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1946.06",
+     "title_en": "Full-scale civil war",
+     "geo": {
+      "kind": "point",
+      "lat": 31.8,
+      "lng": 114.4,
+      "label": {
+       "ko": "중원 해방구",
+       "en": "Central Plains Liberated Area"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1947.10",
+     "title_en": "Outline Land Law",
+     "geo": {
+      "kind": "point",
+      "lat": 38.35,
+      "lng": 113.94,
+      "label": {
+       "ko": "시바이포",
+       "en": "Xibaipo"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "chinese-revolution-1949",
+   "add": [
+    {
+     "index": 0,
+     "date": "1945–1946",
+     "title_en": "Failed negotiations and renewed civil war",
+     "geo": {
+      "kind": "point",
+      "lat": 29.56,
+      "lng": 106.55,
+      "label": {
+       "ko": "충칭",
+       "en": "Chongqing"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1949.09",
+     "title_en": "Common Program adopted",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "화이런탕",
+       "en": "Huairen Hall"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1949.10.01",
+     "title_en": "PRC proclaimed",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.39,
+      "label": {
+       "ko": "톈안먼",
+       "en": "Tiananmen"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "leningrad-affair",
+   "add": [
+    {
+     "index": 0,
+     "date": "1948.08",
+     "title_en": "Zhdanov’s death",
+     "geo": {
+      "kind": "point",
+      "lat": 57.98,
+      "lng": 33.24,
+      "label": {
+       "ko": "발다이",
+       "en": "Valdai"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1949",
+     "title_en": "Arrests begin",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.31,
+      "label": {
+       "ko": "레닌그라드",
+       "en": "Leningrad"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1950.10",
+     "title_en": "Voznesensky and Kuznetsov executed",
+     "geo": {
+      "kind": "point",
+      "lat": 59.94,
+      "lng": 30.35,
+      "label": {
+       "ko": "장교회관",
+       "en": "House of Officers"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "soviet-atomic-project",
+   "add": [
+    {
+     "index": 0,
+     "date": "1940–1942",
+     "title_en": "Flyorov''s letter",
+     "geo": {
+      "kind": "point",
+      "lat": 51.67,
+      "lng": 39.21,
+      "label": {
+       "ko": "보로네시",
+       "en": "Voronezh"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1943.02",
+     "title_en": "Laboratory No. 2",
+     "geo": {
+      "kind": "point",
+      "lat": 55.8,
+      "lng": 37.48,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1946.12.25",
+     "title_en": "The F-1 reactor goes critical",
+     "geo": {
+      "kind": "point",
+      "lat": 55.8,
+      "lng": 37.48,
+      "label": {
+       "ko": "제2연구소",
+       "en": "Laboratory No. 2"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1946–1948",
+     "title_en": "The closed cities and Mayak",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 60.71,
+      "label": {
+       "ko": "마야크",
+       "en": "Mayak"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1949.08.29",
+     "title_en": "RDS-1",
+     "geo": {
+      "kind": "point",
+      "lat": 50.44,
+      "lng": 77.82,
+      "label": {
+       "ko": "세미팔라틴스크 핵실험장",
+       "en": "Semipalatinsk Test Site"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1953.08.12",
+     "title_en": "RDS-6s",
+     "geo": {
+      "kind": "point",
+      "lat": 50.44,
+      "lng": 77.82,
+      "label": {
+       "ko": "세미팔라틴스크 핵실험장",
+       "en": "Semipalatinsk Test Site"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "doctors-plot",
+   "add": [
+    {
+     "index": 0,
+     "date": "1948–1952",
+     "title_en": "The antisemitic campaign",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.63,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1953.01.13",
+     "title_en": "The plot announced",
+     "geo": {
+      "kind": "point",
+      "lat": 55.79,
+      "lng": 37.58,
+      "label": {
+       "ko": "프라우다 본사",
+       "en": "Pravda offices"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1953.03.05",
+     "title_en": "Stalin’s death",
+     "geo": {
+      "kind": "point",
+      "lat": 55.72,
+      "lng": 37.46,
+      "label": {
+       "ko": "쿤체보 별장",
+       "en": "Kuntsevo dacha"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1953.04",
+     "title_en": "The doctors freed",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.63,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "prc-consolidation-1949-1956",
+   "add": [
+    {
+     "index": 0,
+     "date": "1949.09",
+     "title_en": "The CPPCC and the Common Programme",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "화이런탕",
+       "en": "Huairen Hall"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1954.09",
+     "title_en": "The 1954 constitution and the National People’s Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "화이런탕",
+       "en": "Huairen Hall"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1956.09",
+     "title_en": "The Eighth Party Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 39.92,
+      "lng": 116.36,
+      "label": {
+       "ko": "정협 강당",
+       "en": "CPPCC Auditorium"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "beria-purge",
+   "add": [
+    {
+     "index": 0,
+     "date": "1953.03",
+     "title_en": "Stalin’s death and Beria’s rise",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.63,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1953.06.26",
+     "title_en": "Arrest at the Presidium",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1953.12",
+     "title_en": "Trial and execution",
+     "geo": {
+      "kind": "point",
+      "lat": 55.74,
+      "lng": 37.65,
+      "label": {
+       "ko": "모스크바 군관구 본부",
+       "en": "Moscow Military District HQ"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "warsaw-pact",
+   "add": [
+    {
+     "index": 2,
+     "date": "1954.11.29",
+     "title_en": "Moscow Security Conference",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1955.05.11",
+     "title_en": "Warsaw Conference opens",
+     "geo": {
+      "kind": "point",
+      "lat": 52.24,
+      "lng": 21.02,
+      "label": {
+       "ko": "대통령궁",
+       "en": "Presidential Palace"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1955.05.14",
+     "title_en": "Warsaw Pact signed",
+     "geo": {
+      "kind": "point",
+      "lat": 52.24,
+      "lng": 21.02,
+      "label": {
+       "ko": "대통령궁",
+       "en": "Presidential Palace"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "twentieth-party-congress",
+   "add": [
+    {
+     "index": 0,
+     "date": "1953.03",
+     "title_en": "Stalin''s death",
+     "geo": {
+      "kind": "point",
+      "lat": 55.72,
+      "lng": 37.46,
+      "label": {
+       "ko": "쿤체보 별장",
+       "en": "Kuntsevo dacha"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1955.12–1956.02",
+     "title_en": "The Pospelov commission",
+     "geo": {
+      "kind": "point",
+      "lat": 55.756,
+      "lng": 37.631,
+      "label": {
+       "ko": "스타라야 광장",
+       "en": "Old Square"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1956.02.14",
+     "title_en": "The congress opens",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1956.02.25",
+     "title_en": "The secret speech",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1956.03",
+     "title_en": "Circulation, and Tbilisi",
+     "geo": {
+      "kind": "point",
+      "lat": 41.69,
+      "lng": 44.8,
+      "label": {
+       "ko": "트빌리시",
+       "en": "Tbilisi"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1961.10",
+     "title_en": "The Twenty-Second Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 55.751,
+      "lng": 37.616,
+      "label": {
+       "ko": "크렘린 대회궁전",
+       "en": "Kremlin Palace of Congresses"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "poznan-1956",
+   "add": [
+    {
+     "index": 2,
+     "date": "1956.06.23–26",
+     "title_en": "ZISPO delegation negotiates in Warsaw",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1956.06.27",
+     "title_en": "The promises are withdrawn",
+     "geo": {
+      "kind": "point",
+      "lat": 52.39,
+      "lng": 16.9,
+      "label": {
+       "ko": "ZISPO 공장",
+       "en": "ZISPO works"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1956.06.28",
+     "title_en": "From strike to uprising: 'Black Thursday'",
+     "geo": {
+      "kind": "point",
+      "lat": 52.41,
+      "lng": 16.93,
+      "label": {
+       "ko": "포즈난",
+       "en": "Poznań"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1956.06.28",
+     "title_en": "Rokossovsky intervenes, Poplavsky dispatched",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        52.23,
+        21.01
+       ],
+       [
+        52.41,
+        16.93
+       ]
+      ],
+      "label": {
+       "ko": "포즈난 진압",
+       "en": "to Poznań"
+      },
+      "actor": {
+       "ko": "폴란드 인민군",
+       "en": "Polish People’s Army"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 6,
+     "date": "1956.06.29",
+     "title_en": "Cyrankiewicz's radio address",
+     "geo": {
+      "kind": "point",
+      "lat": 52.41,
+      "lng": 16.93,
+      "label": {
+       "ko": "포즈난",
+       "en": "Poznań"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1956.06.30",
+     "title_en": "Suppression and arrests",
+     "geo": {
+      "kind": "point",
+      "lat": 52.42,
+      "lng": 16.83,
+      "label": {
+       "ko": "와비차 공항",
+       "en": "Ławica Airport"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1956.09–10",
+     "title_en": "Trials of the insurgents",
+     "geo": {
+      "kind": "point",
+      "lat": 52.41,
+      "lng": 16.93,
+      "label": {
+       "ko": "포즈난",
+       "en": "Poznań"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1956.10.21",
+     "title_en": "Gomułka's return and 'Polish October'",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1981.06.28",
+     "title_en": "First memorial erected",
+     "geo": {
+      "kind": "point",
+      "lat": 52.41,
+      "lng": 16.92,
+      "label": {
+       "ko": "미츠키에비치 광장",
+       "en": "Mickiewicz Square"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "hungarian-revolution",
+   "add": [
+    {
+     "index": 2,
+     "date": "1956.10–11",
+     "title_en": "Nagy’s reforms",
+     "geo": {
+      "kind": "point",
+      "lat": 47.51,
+      "lng": 19.05,
+      "label": {
+       "ko": "국회의사당",
+       "en": "Parliament"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1958",
+     "title_en": "Nagy executed",
+     "geo": {
+      "kind": "point",
+      "lat": 47.5,
+      "lng": 19.04,
+      "label": {
+       "ko": "부다페스트",
+       "en": "Budapest"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "hundred-flowers-anti-rightist",
+   "add": [
+    {
+     "index": 1,
+     "date": "1956.05.02",
+     "title_en": "The Hundred Flowers slogan raised",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "중난하이",
+       "en": "Zhongnanhai"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1957.02.27",
+     "title_en": "“On the Correct Handling of Contradictions Among the People”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "중난하이",
+       "en": "Zhongnanhai"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "anti-party-group",
+   "add": [
+    {
+     "index": 0,
+     "date": "1956.02",
+     "title_en": "The Secret Speech",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1957.06",
+     "title_en": "The Presidium revolt",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1957.06",
+     "title_en": "The Central Committee plenum",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1957.10",
+     "title_en": "Zhukov dismissed",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "soviet-space-program",
+   "add": [
+    {
+     "index": 0,
+     "date": "1903",
+     "title_en": "Tsiolkovsky publishes the equations of spaceflight",
+     "geo": {
+      "kind": "point",
+      "lat": 54.51,
+      "lng": 36.26,
+      "label": {
+       "ko": "칼루가",
+       "en": "Kaluga"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1946.08",
+     "title_en": "Korolev becomes chief designer of long-range rockets",
+     "geo": {
+      "kind": "point",
+      "lat": 55.92,
+      "lng": 37.82,
+      "label": {
+       "ko": "NII-88(포들립키)",
+       "en": "NII-88 (Podlipki)"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1957.08.21",
+     "title_en": "The R-7, the world's first intercontinental ballistic missile",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1957.10.04",
+     "title_en": "Sputnik 1 opens the space age",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1957.11.03",
+     "title_en": "Sputnik 2 and Laika",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1959",
+     "title_en": "The Luna probes reach the Moon",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1961.04.12",
+     "title_en": "Vostok 1: Gagarin",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1961.08.06",
+     "title_en": "Titov: a full day in orbit",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1963.06.16",
+     "title_en": "Tereshkova, the first woman in space",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1965.03.18",
+     "title_en": "Leonov performs the first spacewalk",
+     "geo": {
+      "kind": "point",
+      "lat": 45.62,
+      "lng": 63.31,
+      "label": {
+       "ko": "바이코누르",
+       "en": "Baikonur"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "great-leap-forward",
+   "add": [
+    {
+     "index": 4,
+     "date": "1958.11–1959.초",
+     "title_en": "First attempts at adjustment",
+     "geo": {
+      "kind": "point",
+      "lat": 34.75,
+      "lng": 113.63,
+      "label": {
+       "ko": "정저우",
+       "en": "Zhengzhou"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1961.01",
+     "title_en": "Ninth Plenum: “readjust, consolidate, fill out, raise standards”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1962.09",
+     "title_en": "Tenth Plenum: “never forget class struggle”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "sino-soviet-split",
+   "add": [
+    {
+     "index": 0,
+     "date": "1956.02",
+     "title_en": "The shock of the Twentieth Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.614,
+      "label": {
+       "ko": "크렘린 대궁전",
+       "en": "Grand Kremlin Palace"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1958",
+     "title_en": "The joint fleet and the Taiwan Strait",
+     "geo": {
+      "kind": "point",
+      "lat": 24.45,
+      "lng": 118.38,
+      "label": {
+       "ko": "진먼섬",
+       "en": "Kinmen"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1960.11",
+     "title_en": "The Moscow conference",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1969.03–08",
+     "title_en": "Zhenbao island",
+     "geo": {
+      "kind": "point",
+      "lat": 46.48,
+      "lng": 133.84,
+      "label": {
+       "ko": "다만스키 섬",
+       "en": "Damansky Island"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1989.05",
+     "title_en": "Normalization",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.39,
+      "label": {
+       "ko": "인민대회당",
+       "en": "Great Hall of the People"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "cuban-revolution-1959-1961",
+   "add": [
+    {
+     "index": 0,
+     "date": "1959.01.01",
+     "title_en": "Batista regime collapses",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        20.02,
+        -75.82
+       ],
+       [
+        22.41,
+        -79.96
+       ],
+       [
+        23.13,
+        -82.37
+       ]
+      ],
+      "label": {
+       "ko": "아바나 입성",
+       "en": "into Havana"
+      },
+      "actor": {
+       "ko": "반란군",
+       "en": "Rebel Army"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1959.05.17",
+     "title_en": "Agrarian reform law",
+     "geo": {
+      "kind": "point",
+      "lat": 20.03,
+      "lng": -76.87,
+      "label": {
+       "ko": "라플라타",
+       "en": "La Plata"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1961.04.16–19",
+     "title_en": "Socialist declaration and invasion defeated",
+     "geo": {
+      "kind": "point",
+      "lat": 22.07,
+      "lng": -81.03,
+      "label": {
+       "ko": "플라야히론",
+       "en": "Playa Girón"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "berlin-wall",
+   "add": [
+    {
+     "index": 0,
+     "date": "1949.10.07",
+     "title_en": "The GDR Is Founded",
+     "geo": {
+      "kind": "point",
+      "lat": 52.51,
+      "lng": 13.38,
+      "label": {
+       "ko": "동베를린",
+       "en": "East Berlin"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1961.06.15",
+     "title_en": "Ulbricht's Denial",
+     "geo": {
+      "kind": "point",
+      "lat": 52.508,
+      "lng": 13.383,
+      "label": {
+       "ko": "정부 청사",
+       "en": "House of Ministries"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1961.08.07",
+     "title_en": "SED Politburo Sets the Date",
+     "geo": {
+      "kind": "point",
+      "lat": 52.515,
+      "lng": 13.398,
+      "label": {
+       "ko": "SED 중앙위원회",
+       "en": "SED Central Committee"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1961.08.13",
+     "title_en": "Construction Begins",
+     "geo": {
+      "kind": "point",
+      "lat": 52.516,
+      "lng": 13.378,
+      "label": {
+       "ko": "브란덴부르크 문",
+       "en": "Brandenburg Gate"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1961.08.19",
+     "title_en": "LBJ and Clay Arrive",
+     "geo": {
+      "kind": "point",
+      "lat": 52.473,
+      "lng": 13.403,
+      "label": {
+       "ko": "템펠호프 공항",
+       "en": "Tempelhof Airport"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1961.10.27",
+     "title_en": "Checkpoint Charlie Tank Standoff",
+     "geo": {
+      "kind": "point",
+      "lat": 52.507,
+      "lng": 13.39,
+      "label": {
+       "ko": "체크포인트 찰리",
+       "en": "Checkpoint Charlie"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "cuban-missile-crisis",
+   "add": [
+    {
+     "index": 2,
+     "date": "1962.10.16",
+     "title_en": "The missiles discovered",
+     "geo": {
+      "kind": "point",
+      "lat": 22.72,
+      "lng": -83.05,
+      "label": {
+       "ko": "산크리스토발",
+       "en": "San Cristóbal"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1962.10.22",
+     "title_en": "The naval blockade",
+     "geo": {
+      "kind": "point",
+      "lat": 23.5,
+      "lng": -74,
+      "label": {
+       "ko": "봉쇄선",
+       "en": "Quarantine line"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1962.10.28",
+     "title_en": "The withdrawal agreement",
+     "geo": {
+      "kind": "point",
+      "lat": 38.9,
+      "lng": -77.04,
+      "label": {
+       "ko": "워싱턴",
+       "en": "Washington"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "kosygin-reform",
+   "add": [
+    {
+     "index": 1,
+     "date": "1965.09",
+     "title_en": "The reform launched",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "south-yemen-socialist-state-1967-1990",
+   "add": [
+    {
+     "index": 0,
+     "date": "1967.11.30",
+     "title_en": "Independence",
+     "geo": {
+      "kind": "point",
+      "lat": 12.78,
+      "lng": 45.01,
+      "label": {
+       "ko": "아덴",
+       "en": "Aden"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1969.06",
+     "title_en": "Radical wing takes control",
+     "geo": {
+      "kind": "point",
+      "lat": 12.78,
+      "lng": 45.01,
+      "label": {
+       "ko": "아덴",
+       "en": "Aden"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1977",
+     "title_en": "Aden refinery transfer",
+     "geo": {
+      "kind": "point",
+      "lat": 12.75,
+      "lng": 44.88,
+      "label": {
+       "ko": "리틀아덴 정유소",
+       "en": "Little Aden refinery"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1978",
+     "title_en": "Yemeni Socialist Party formed",
+     "geo": {
+      "kind": "point",
+      "lat": 12.78,
+      "lng": 45.01,
+      "label": {
+       "ko": "아덴",
+       "en": "Aden"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1986.01",
+     "title_en": "Violent leadership conflict",
+     "geo": {
+      "kind": "point",
+      "lat": 12.78,
+      "lng": 45.01,
+      "label": {
+       "ko": "아덴",
+       "en": "Aden"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1990.05.22",
+     "title_en": "Unification",
+     "geo": {
+      "kind": "point",
+      "lat": 12.78,
+      "lng": 45.01,
+      "label": {
+       "ko": "아덴",
+       "en": "Aden"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "cultural-revolution",
+   "add": [
+    {
+     "index": 1,
+     "date": "1966.05.16",
+     "title_en": "The May 16 Notification",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "중난하이",
+       "en": "Zhongnanhai"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1966.08.05",
+     "title_en": "Mao’s “Bombard the Headquarters”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "중난하이",
+       "en": "Zhongnanhai"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1967.02",
+     "title_en": "The “February Countercurrent”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.91,
+      "lng": 116.38,
+      "label": {
+       "ko": "중난하이",
+       "en": "Zhongnanhai"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1969.04",
+     "title_en": "The Ninth Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.39,
+      "label": {
+       "ko": "인민대회당",
+       "en": "Great Hall of the People"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "congo-peoples-republic-1969-1991",
+   "add": [
+    {
+     "index": 0,
+     "date": "1963",
+     "title_en": "Youlou removed",
+     "geo": {
+      "kind": "point",
+      "lat": -4.26,
+      "lng": 15.28,
+      "label": {
+       "ko": "브라자빌",
+       "en": "Brazzaville"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1968–1969",
+     "title_en": "Ngouabi consolidates power",
+     "geo": {
+      "kind": "point",
+      "lat": -4.26,
+      "lng": 15.28,
+      "label": {
+       "ko": "브라자빌",
+       "en": "Brazzaville"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1969.12",
+     "title_en": "PCT and republican constitution",
+     "geo": {
+      "kind": "point",
+      "lat": -4.26,
+      "lng": 15.28,
+      "label": {
+       "ko": "브라자빌",
+       "en": "Brazzaville"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1977.03",
+     "title_en": "Ngouabi assassinated",
+     "geo": {
+      "kind": "point",
+      "lat": -4.26,
+      "lng": 15.28,
+      "label": {
+       "ko": "브라자빌",
+       "en": "Brazzaville"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1979",
+     "title_en": "Sassou Nguesso takes power",
+     "geo": {
+      "kind": "point",
+      "lat": -4.26,
+      "lng": 15.28,
+      "label": {
+       "ko": "브라자빌",
+       "en": "Brazzaville"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1990–1991",
+     "title_en": "Multiparty opening and national conference",
+     "geo": {
+      "kind": "point",
+      "lat": -4.26,
+      "lng": 15.28,
+      "label": {
+       "ko": "브라자빌",
+       "en": "Brazzaville"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "prague-spring",
+   "add": [
+    {
+     "index": 0,
+     "date": "1968.01",
+     "title_en": "Dubček rises",
+     "geo": {
+      "kind": "point",
+      "lat": 50.09,
+      "lng": 14.42,
+      "label": {
+       "ko": "프라하",
+       "en": "Prague"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1968.08.20–21",
+     "title_en": "The Warsaw Pact invasion",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        51.05,
+        13.74
+       ],
+       [
+        50.09,
+        14.42
+       ]
+      ],
+      "label": {
+       "ko": "프라하 점령",
+       "en": "into Prague"
+      },
+      "actor": {
+       "ko": "바르샤바 조약군",
+       "en": "Warsaw Pact forces"
+      },
+      "variant": "red"
+     }
+    }
+   ]
+  },
+  {
+   "id": "somali-socialist-transition-1969-1976",
+   "add": [
+    {
+     "index": 0,
+     "date": "1969.10",
+     "title_en": "Military takeover",
+     "geo": {
+      "kind": "point",
+      "lat": 2.07,
+      "lng": 45.36,
+      "label": {
+       "ko": "모가디슈",
+       "en": "Mogadishu"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1976.07",
+     "title_en": "Power transferred to the socialist party",
+     "geo": {
+      "kind": "point",
+      "lat": 2.07,
+      "lng": 45.36,
+      "label": {
+       "ko": "모가디슈",
+       "en": "Mogadishu"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1977–1978",
+     "title_en": "Ogaden War",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        4.74,
+        45.2
+       ],
+       [
+        8.22,
+        43.56
+       ],
+       [
+        9.35,
+        42.8
+       ]
+      ],
+      "label": {
+       "ko": "오가덴 진격",
+       "en": "into the Ogaden"
+      },
+      "actor": {
+       "ko": "소말리아군",
+       "en": "Somali army"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "detente-salt",
+   "add": [
+    {
+     "index": 0,
+     "date": "1969.11.17",
+     "title_en": "SALT I negotiations begin",
+     "geo": {
+      "kind": "point",
+      "lat": 60.17,
+      "lng": 24.94,
+      "label": {
+       "ko": "헬싱키",
+       "en": "Helsinki"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1972.05.26",
+     "title_en": "Moscow Summit: ABM Treaty and SALT I Interim Agreement signed",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1972.11.21",
+     "title_en": "SALT II negotiations begin",
+     "geo": {
+      "kind": "point",
+      "lat": 46.2,
+      "lng": 6.14,
+      "label": {
+       "ko": "제네바",
+       "en": "Geneva"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1973.06.21",
+     "title_en": "Washington Summit: Agreement on the Prevention of Nuclear War",
+     "geo": {
+      "kind": "point",
+      "lat": 38.9,
+      "lng": -77.04,
+      "label": {
+       "ko": "워싱턴",
+       "en": "Washington"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1975.08.01",
+     "title_en": "Helsinki Final Act signed",
+     "geo": {
+      "kind": "point",
+      "lat": 60.17,
+      "lng": 24.94,
+      "label": {
+       "ko": "헬싱키",
+       "en": "Helsinki"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1979.06.18",
+     "title_en": "Vienna Summit: SALT II Treaty signed",
+     "geo": {
+      "kind": "point",
+      "lat": 48.21,
+      "lng": 16.37,
+      "label": {
+       "ko": "호프부르크 궁전",
+       "en": "Hofburg Palace"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1979.12.25",
+     "title_en": "Soviet invasion of Afghanistan",
+     "geo": {
+      "kind": "point",
+      "lat": 34.53,
+      "lng": 69.17,
+      "label": {
+       "ko": "카불",
+       "en": "Kabul"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "malagasy-socialist-transition-1972-1975",
+   "add": [
+    {
+     "index": 0,
+     "date": "1960",
+     "title_en": "Independence and cooperation with France",
+     "geo": {
+      "kind": "point",
+      "lat": -18.91,
+      "lng": 47.51,
+      "label": {
+       "ko": "안타나나리보",
+       "en": "Antananarivo"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1972.05",
+     "title_en": "Protests and transfer to the military",
+     "geo": {
+      "kind": "point",
+      "lat": -18.91,
+      "lng": 47.51,
+      "label": {
+       "ko": "안타나나리보",
+       "en": "Antananarivo"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1975.02",
+     "title_en": "Ratsimandrava’s accession and assassination",
+     "geo": {
+      "kind": "point",
+      "lat": -18.91,
+      "lng": 47.51,
+      "label": {
+       "ko": "안타나나리보",
+       "en": "Antananarivo"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "lao-republic-1975",
+   "add": [
+    {
+     "index": 0,
+     "date": "1973",
+     "title_en": "Vientiane peace agreement",
+     "geo": {
+      "kind": "point",
+      "lat": 17.97,
+      "lng": 102.6,
+      "label": {
+       "ko": "비엔티안",
+       "en": "Vientiane"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1975.03–05",
+     "title_en": "Military pressure and rightist departures",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        19.44,
+        102.43
+       ],
+       [
+        18.92,
+        102.45
+       ]
+      ],
+      "label": {
+       "ko": "방비엥 방면",
+       "en": "toward Vang Vieng"
+      },
+      "actor": {
+       "ko": "파테트라오",
+       "en": "Pathet Lao"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 3,
+     "date": "1975.08",
+     "title_en": "Vientiane administration taken over",
+     "geo": {
+      "kind": "point",
+      "lat": 17.97,
+      "lng": 102.6,
+      "label": {
+       "ko": "비엔티안",
+       "en": "Vientiane"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1975.12.02",
+     "title_en": "Lao PDR established",
+     "geo": {
+      "kind": "point",
+      "lat": 17.97,
+      "lng": 102.6,
+      "label": {
+       "ko": "비엔티안",
+       "en": "Vientiane"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1977",
+     "title_en": "Treaty with Vietnam",
+     "geo": {
+      "kind": "point",
+      "lat": 17.97,
+      "lng": 102.6,
+      "label": {
+       "ko": "비엔티안",
+       "en": "Vientiane"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "beninese-socialist-transition-1974-1990",
+   "add": [
+    {
+     "index": 0,
+     "date": "1972.10",
+     "title_en": "Kérékou’s military takeover",
+     "geo": {
+      "kind": "point",
+      "lat": 6.36,
+      "lng": 2.4,
+      "label": {
+       "ko": "코토누",
+       "en": "Cotonou"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1974",
+     "title_en": "Marxism-Leninism adopted",
+     "geo": {
+      "kind": "point",
+      "lat": 7.19,
+      "lng": 1.99,
+      "label": {
+       "ko": "아보메",
+       "en": "Abomey"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1990.02",
+     "title_en": "National conference",
+     "geo": {
+      "kind": "point",
+      "lat": 6.36,
+      "lng": 2.4,
+      "label": {
+       "ko": "코토누",
+       "en": "Cotonou"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "ethiopian-revolution-1974-1977",
+   "add": [
+    {
+     "index": 0,
+     "date": "1974.01–02",
+     "title_en": "Military mutinies and urban protests",
+     "geo": {
+      "kind": "point",
+      "lat": 5.33,
+      "lng": 39.58,
+      "label": {
+       "ko": "네겔레",
+       "en": "Negele"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1974.06",
+     "title_en": "Derg organized",
+     "geo": {
+      "kind": "point",
+      "lat": 9.04,
+      "lng": 38.7,
+      "label": {
+       "ko": "아디스아바바",
+       "en": "Addis Ababa"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1974.09.12",
+     "title_en": "Emperor deposed",
+     "geo": {
+      "kind": "point",
+      "lat": 9.04,
+      "lng": 38.7,
+      "label": {
+       "ko": "아디스아바바",
+       "en": "Addis Ababa"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1974.11",
+     "title_en": "Aman’s death and mass executions",
+     "geo": {
+      "kind": "point",
+      "lat": 9.04,
+      "lng": 38.7,
+      "label": {
+       "ko": "아디스아바바",
+       "en": "Addis Ababa"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1977.02–11",
+     "title_en": "Mengistu establishes predominance",
+     "geo": {
+      "kind": "point",
+      "lat": 9.04,
+      "lng": 38.7,
+      "label": {
+       "ko": "아디스아바바",
+       "en": "Addis Ababa"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1977–1978",
+     "title_en": "Red Terror",
+     "geo": {
+      "kind": "point",
+      "lat": 9.04,
+      "lng": 38.7,
+      "label": {
+       "ko": "아디스아바바",
+       "en": "Addis Ababa"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "helsinki-accords",
+   "add": [
+    {
+     "index": 1,
+     "date": "1965",
+     "title_en": "Warsaw Pact Renews Call for a European Security Conference",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1972.11",
+     "title_en": "Helsinki Consultations Begin",
+     "geo": {
+      "kind": "point",
+      "lat": 60.19,
+      "lng": 24.83,
+      "label": {
+       "ko": "디폴리",
+       "en": "Dipoli"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1973.07.03",
+     "title_en": "Phase I: Helsinki Foreign Ministers' Meeting",
+     "geo": {
+      "kind": "point",
+      "lat": 60.18,
+      "lng": 24.93,
+      "label": {
+       "ko": "핀란디아 홀",
+       "en": "Finlandia Hall"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1973.09.18",
+     "title_en": "Phase II: Geneva Negotiations",
+     "geo": {
+      "kind": "point",
+      "lat": 46.2,
+      "lng": 6.14,
+      "label": {
+       "ko": "제네바",
+       "en": "Geneva"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1975.07.30",
+     "title_en": "Phase III: Helsinki Summit Opens",
+     "geo": {
+      "kind": "point",
+      "lat": 60.18,
+      "lng": 24.93,
+      "label": {
+       "ko": "핀란디아 홀",
+       "en": "Finlandia Hall"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1975.08.01",
+     "title_en": "Signing of the Final Act",
+     "geo": {
+      "kind": "point",
+      "lat": 60.18,
+      "lng": 24.93,
+      "label": {
+       "ko": "핀란디아 홀",
+       "en": "Finlandia Hall"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1976.05.12",
+     "title_en": "Moscow Helsinki Group Founded",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.66,
+      "label": {
+       "ko": "모스크바",
+       "en": "Moscow"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1977.01",
+     "title_en": "Czechoslovakia's Charter 77",
+     "geo": {
+      "kind": "point",
+      "lat": 50.09,
+      "lng": 14.42,
+      "label": {
+       "ko": "프라하",
+       "en": "Prague"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1977.10.04",
+     "title_en": "Belgrade Follow-Up Meeting",
+     "geo": {
+      "kind": "point",
+      "lat": 44.82,
+      "lng": 20.46,
+      "label": {
+       "ko": "베오그라드",
+       "en": "Belgrade"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "angolan-independence-1975-1977",
+   "add": [
+    {
+     "index": 2,
+     "date": "1975.07–08",
+     "title_en": "Transitional government collapses",
+     "geo": {
+      "kind": "point",
+      "lat": -8.84,
+      "lng": 13.23,
+      "label": {
+       "ko": "루안다",
+       "en": "Luanda"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1975.11.11",
+     "title_en": "Independence and rival governments",
+     "geo": {
+      "kind": "point",
+      "lat": -8.84,
+      "lng": 13.23,
+      "label": {
+       "ko": "루안다",
+       "en": "Luanda"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1977.05",
+     "title_en": "Internal conflict and repression",
+     "geo": {
+      "kind": "point",
+      "lat": -8.84,
+      "lng": 13.23,
+      "label": {
+       "ko": "루안다",
+       "en": "Luanda"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1977.12",
+     "title_en": "Reorganization as MPLA–Workers’ Party",
+     "geo": {
+      "kind": "point",
+      "lat": -8.84,
+      "lng": 13.23,
+      "label": {
+       "ko": "루안다",
+       "en": "Luanda"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "cambodian-regime-change-1975-1979",
+   "add": [
+    {
+     "index": 0,
+     "date": "1970.03",
+     "title_en": "Sihanouk removed",
+     "geo": {
+      "kind": "point",
+      "lat": 11.55,
+      "lng": 104.91,
+      "label": {
+       "ko": "프놈펜",
+       "en": "Phnom Penh"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1975.04.17",
+     "title_en": "Phnom Penh falls; forced evacuation",
+     "geo": {
+      "kind": "point",
+      "lat": 11.55,
+      "lng": 104.91,
+      "label": {
+       "ko": "프놈펜",
+       "en": "Phnom Penh"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1978.12",
+     "title_en": "Major Vietnamese offensive",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        11.3,
+        106.1
+       ],
+       [
+        11.55,
+        104.95
+       ]
+      ],
+      "label": {
+       "ko": "프놈펜 진격",
+       "en": "toward Phnom Penh"
+      },
+      "actor": {
+       "ko": "베트남군",
+       "en": "Vietnamese army"
+      },
+      "variant": "red"
+     }
+    },
+    {
+     "index": 4,
+     "date": "1979.01.07",
+     "title_en": "Regime change in Phnom Penh",
+     "geo": {
+      "kind": "point",
+      "lat": 11.55,
+      "lng": 104.91,
+      "label": {
+       "ko": "프놈펜",
+       "en": "Phnom Penh"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "2022.09",
+     "title_en": "Case 002/02 appeal concludes",
+     "geo": {
+      "kind": "point",
+      "lat": 11.53,
+      "lng": 104.82,
+      "label": {
+       "ko": "크메르루주 특별재판소",
+       "en": "ECCC"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "mozambican-independence-1975-1977",
+   "add": [
+    {
+     "index": 0,
+     "date": "1964",
+     "title_en": "Liberation war begins",
+     "geo": {
+      "kind": "point",
+      "lat": -11.97,
+      "lng": 40.03,
+      "label": {
+       "ko": "샤이",
+       "en": "Chai"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1974.09.07",
+     "title_en": "Lusaka agreement",
+     "geo": {
+      "kind": "point",
+      "lat": -15.42,
+      "lng": 28.28,
+      "label": {
+       "ko": "루사카",
+       "en": "Lusaka"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1975.06.25",
+     "title_en": "Mozambican independence",
+     "geo": {
+      "kind": "point",
+      "lat": -25.95,
+      "lng": 32.59,
+      "label": {
+       "ko": "마푸투",
+       "en": "Maputo"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1977.02",
+     "title_en": "FRELIMO Third Congress",
+     "geo": {
+      "kind": "point",
+      "lat": -25.95,
+      "lng": 32.59,
+      "label": {
+       "ko": "마푸투",
+       "en": "Maputo"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "vietnam-reunification-1975-1976",
+   "add": [
+    {
+     "index": 1,
+     "date": "1975.03",
+     "title_en": "Central Highlands offensive",
+     "geo": {
+      "kind": "point",
+      "lat": 12.67,
+      "lng": 108.04,
+      "label": {
+       "ko": "부온마투옷",
+       "en": "Buôn Ma Thuột"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1975.04.30",
+     "title_en": "Saigon government surrenders",
+     "geo": {
+      "kind": "point",
+      "lat": 10.78,
+      "lng": 106.7,
+      "label": {
+       "ko": "독립궁",
+       "en": "Independence Palace"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1975.11",
+     "title_en": "Reunification conference",
+     "geo": {
+      "kind": "point",
+      "lat": 10.78,
+      "lng": 106.7,
+      "label": {
+       "ko": "사이공",
+       "en": "Saigon"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1976.07.02",
+     "title_en": "Unified republic established",
+     "geo": {
+      "kind": "point",
+      "lat": 21.04,
+      "lng": 105.85,
+      "label": {
+       "ko": "하노이",
+       "en": "Hanoi"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1976.12",
+     "title_en": "Fourth Party Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 21.04,
+      "lng": 105.85,
+      "label": {
+       "ko": "하노이",
+       "en": "Hanoi"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "afghanistan-war",
+   "add": [
+    {
+     "index": 0,
+     "date": "1978",
+     "title_en": "The April Revolution",
+     "geo": {
+      "kind": "point",
+      "lat": 34.53,
+      "lng": 69.17,
+      "label": {
+       "ko": "카불",
+       "en": "Kabul"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "reform-and-opening",
+   "add": [
+    {
+     "index": 1,
+     "date": "1977.07",
+     "title_en": "Deng Xiaoping restored",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1981.06",
+     "title_en": "The Resolution on History",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1984.10",
+     "title_en": "Third Plenum of the Twelfth Central Committee: the “socialist commodity economy”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1986.12–1987.01",
+     "title_en": "Student protests and Hu Yaobang’s resignation",
+     "geo": {
+      "kind": "point",
+      "lat": 31.84,
+      "lng": 117.26,
+      "label": {
+       "ko": "허페이",
+       "en": "Hefei"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "solidarity-martial-law",
+   "add": [
+    {
+     "index": 0,
+     "date": "1979.06",
+     "title_en": "The Pope's First Visit to Poland",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1980.08.14",
+     "title_en": "The Gdańsk Shipyard Strike",
+     "geo": {
+      "kind": "point",
+      "lat": 54.36,
+      "lng": 18.65,
+      "label": {
+       "ko": "그단스크 조선소",
+       "en": "Gdańsk Shipyard"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1980.08.31",
+     "title_en": "The Gdańsk Agreement and the Birth of Solidarity",
+     "geo": {
+      "kind": "point",
+      "lat": 54.36,
+      "lng": 18.65,
+      "label": {
+       "ko": "그단스크 조선소",
+       "en": "Gdańsk Shipyard"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1980.09.06",
+     "title_en": "Gierek Falls",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1981.02.09",
+     "title_en": "Jaruzelski Becomes Prime Minister",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1981.03.19",
+     "title_en": "The Bydgoszcz Crisis",
+     "geo": {
+      "kind": "point",
+      "lat": 53.12,
+      "lng": 18.01,
+      "label": {
+       "ko": "비드고슈치",
+       "en": "Bydgoszcz"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1981.03.30",
+     "title_en": "The Warsaw Accord",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 8,
+     "date": "1981.09",
+     "title_en": "Solidarity's First National Congress",
+     "geo": {
+      "kind": "point",
+      "lat": 54.38,
+      "lng": 18.61,
+      "label": {
+       "ko": "올리비아 홀",
+       "en": "Hala Olivia"
+      }
+     }
+    },
+    {
+     "index": 9,
+     "date": "1981.10.18",
+     "title_en": "Kania Out, Jaruzelski Takes the Party",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 10,
+     "date": "1981.12.13",
+     "title_en": "Martial Law Declared",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1981.12.16",
+     "title_en": "The Pacification of Wujek",
+     "geo": {
+      "kind": "point",
+      "lat": 50.24,
+      "lng": 19,
+      "label": {
+       "ko": "부이크 탄광",
+       "en": "Wujek mine"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "war-scare-1983",
+   "add": [
+    {
+     "index": 1,
+     "date": "1981.05",
+     "title_en": "Operation RYAN Launched",
+     "geo": {
+      "kind": "point",
+      "lat": 55.76,
+      "lng": 37.63,
+      "label": {
+       "ko": "루뱐카",
+       "en": "Lubyanka"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1982.11",
+     "title_en": "Andropov Becomes General Secretary",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1983.04",
+     "title_en": "FleetEx 83-1",
+     "geo": {
+      "kind": "point",
+      "lat": 43.5,
+      "lng": 146.13,
+      "label": {
+       "ko": "젤료니섬",
+       "en": "Zelyony Island"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1983.09.01",
+     "title_en": "KAL 007 Shot Down",
+     "geo": {
+      "kind": "point",
+      "lat": 46.57,
+      "lng": 141.28,
+      "label": {
+       "ko": "모네론섬",
+       "en": "Moneron Island"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1983.09.26",
+     "title_en": "Petrov's False Alarm",
+     "geo": {
+      "kind": "point",
+      "lat": 55.1,
+      "lng": 37,
+      "label": {
+       "ko": "세르푸호프-15",
+       "en": "Serpukhov-15"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "perestroika",
+   "add": [
+    {
+     "index": 0,
+     "date": "1985.03",
+     "title_en": "Gorbachev takes power",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1989",
+     "title_en": "The Congress of People’s Deputies",
+     "geo": {
+      "kind": "point",
+      "lat": 55.751,
+      "lng": 37.616,
+      "label": {
+       "ko": "크렘린 대회궁전",
+       "en": "Kremlin Palace of Congresses"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "chernobyl",
+   "add": [
+    {
+     "index": 0,
+     "date": "1986.04.26",
+     "title_en": "The explosion",
+     "geo": {
+      "kind": "point",
+      "lat": 51.39,
+      "lng": 30.1,
+      "label": {
+       "ko": "체르노빌 원전 4호기",
+       "en": "Reactor No. 4"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1986.04–05",
+     "title_en": "Concealment and delay",
+     "geo": {
+      "kind": "point",
+      "lat": 51.41,
+      "lng": 30.06,
+      "label": {
+       "ko": "프리피야트",
+       "en": "Pripyat"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1986.05",
+     "title_en": "The cleanup",
+     "geo": {
+      "kind": "point",
+      "lat": 51.39,
+      "lng": 30.1,
+      "label": {
+       "ko": "석관",
+       "en": "Sarcophagus"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "new-thinking-diplomacy",
+   "add": [
+    {
+     "index": 0,
+     "date": "1985.11",
+     "title_en": "The Geneva summit",
+     "geo": {
+      "kind": "point",
+      "lat": 46.2,
+      "lng": 6.14,
+      "label": {
+       "ko": "제네바",
+       "en": "Geneva"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1986.10",
+     "title_en": "The Reykjavik summit",
+     "geo": {
+      "kind": "point",
+      "lat": 64.15,
+      "lng": -21.94,
+      "label": {
+       "ko": "레이캬비크",
+       "en": "Reykjavík"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1989.02",
+     "title_en": "Withdrawal from Afghanistan completed",
+     "geo": {
+      "kind": "point",
+      "lat": 37.23,
+      "lng": 67.42,
+      "label": {
+       "ko": "테르메스",
+       "en": "Termez"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1989.12.02–03",
+     "title_en": "The Malta summit: the Cold War's end confirmed",
+     "geo": {
+      "kind": "point",
+      "lat": 35.9,
+      "lng": 14.51,
+      "label": {
+       "ko": "몰타",
+       "en": "Malta"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "nineteenth-party-conference",
+   "add": [
+    {
+     "index": 0,
+     "date": "1988.06",
+     "title_en": "The Nineteenth Party Conference",
+     "geo": {
+      "kind": "point",
+      "lat": 55.751,
+      "lng": 37.616,
+      "label": {
+       "ko": "크렘린 대회궁전",
+       "en": "Kremlin Palace of Congresses"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1989.05",
+     "title_en": "The First Congress of People's Deputies",
+     "geo": {
+      "kind": "point",
+      "lat": 55.751,
+      "lng": 37.616,
+      "label": {
+       "ko": "크렘린 대회궁전",
+       "en": "Kremlin Palace of Congresses"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1990.03",
+     "title_en": "Article 6 deleted",
+     "geo": {
+      "kind": "point",
+      "lat": 55.751,
+      "lng": 37.616,
+      "label": {
+       "ko": "크렘린 대회궁전",
+       "en": "Kremlin Palace of Congresses"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "nationalities-crisis",
+   "add": [
+    {
+     "index": 0,
+     "date": "1988.02.20",
+     "title_en": "The Karabakh resolution",
+     "geo": {
+      "kind": "point",
+      "lat": 39.82,
+      "lng": 46.75,
+      "label": {
+       "ko": "스테파나케르트",
+       "en": "Stepanakert"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1988.02.27–29",
+     "title_en": "The Sumgait pogrom",
+     "geo": {
+      "kind": "point",
+      "lat": 40.59,
+      "lng": 49.67,
+      "label": {
+       "ko": "숨가이트",
+       "en": "Sumgait"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1989.04.09",
+     "title_en": "Tbilisi",
+     "geo": {
+      "kind": "point",
+      "lat": 41.69,
+      "lng": 44.8,
+      "label": {
+       "ko": "트빌리시",
+       "en": "Tbilisi"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1990.01.13–19",
+     "title_en": "The Baku pogrom",
+     "geo": {
+      "kind": "point",
+      "lat": 40.41,
+      "lng": 49.87,
+      "label": {
+       "ko": "바쿠",
+       "en": "Baku"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1990.01.19–20",
+     "title_en": "Black January",
+     "geo": {
+      "kind": "point",
+      "lat": 40.41,
+      "lng": 49.87,
+      "label": {
+       "ko": "바쿠",
+       "en": "Baku"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1990.03.11",
+     "title_en": "Lithuania declares independence",
+     "geo": {
+      "kind": "point",
+      "lat": 54.69,
+      "lng": 25.28,
+      "label": {
+       "ko": "빌뉴스",
+       "en": "Vilnius"
+      }
+     }
+    },
+    {
+     "index": 7,
+     "date": "1991.01.13",
+     "title_en": "Vilnius",
+     "geo": {
+      "kind": "point",
+      "lat": 54.69,
+      "lng": 25.21,
+      "label": {
+       "ko": "빌뉴스 TV 타워",
+       "en": "Vilnius TV Tower"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "baltic-independence",
+   "add": [
+    {
+     "index": 0,
+     "date": "1987.08.23",
+     "title_en": "The Hirvepark rally",
+     "geo": {
+      "kind": "point",
+      "lat": 59.43,
+      "lng": 24.74,
+      "label": {
+       "ko": "히르베파르크",
+       "en": "Hirvepark"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1989.08.23",
+     "title_en": "The Baltic Way",
+     "geo": {
+      "kind": "arrow",
+      "points": [
+       [
+        59.44,
+        24.75
+       ],
+       [
+        56.95,
+        24.11
+       ],
+       [
+        54.69,
+        25.28
+       ]
+      ],
+      "label": {
+       "ko": "발트의 길",
+       "en": "Baltic Way"
+      },
+      "actor": {
+       "ko": "시민",
+       "en": "Citizens"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1990.03.11",
+     "title_en": "Lithuania declares independence restored",
+     "geo": {
+      "kind": "point",
+      "lat": 54.69,
+      "lng": 25.28,
+      "label": {
+       "ko": "빌뉴스",
+       "en": "Vilnius"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1991.01",
+     "title_en": "Vilnius and Riga",
+     "geo": {
+      "kind": "point",
+      "lat": 54.69,
+      "lng": 25.21,
+      "label": {
+       "ko": "빌뉴스 TV 타워",
+       "en": "Vilnius TV Tower"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "revolutions-1989",
+   "add": [
+    {
+     "index": 0,
+     "date": "1989.05",
+     "title_en": "Hungary opens the border",
+     "geo": {
+      "kind": "point",
+      "lat": 47.91,
+      "lng": 17.16,
+      "label": {
+       "ko": "헝가리-오스트리아 국경",
+       "en": "Hungarian-Austrian border"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1989.06",
+     "title_en": "Free elections in Poland",
+     "geo": {
+      "kind": "point",
+      "lat": 52.23,
+      "lng": 21.01,
+      "label": {
+       "ko": "바르샤바",
+       "en": "Warsaw"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1989.11.09",
+     "title_en": "The Berlin Wall falls",
+     "geo": {
+      "kind": "point",
+      "lat": 52.52,
+      "lng": 13.4,
+      "label": {
+       "ko": "베를린",
+       "en": "Berlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1989.12",
+     "title_en": "The Romanian revolution",
+     "geo": {
+      "kind": "point",
+      "lat": 44.43,
+      "lng": 26.1,
+      "label": {
+       "ko": "부쿠레슈티",
+       "en": "Bucharest"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "tiananmen-1989",
+   "add": [
+    {
+     "index": 0,
+     "date": "1989.04.15",
+     "title_en": "Death of Hu Yaobang",
+     "geo": {
+      "kind": "point",
+      "lat": 39.905,
+      "lng": 116.397,
+      "label": {
+       "ko": "톈안먼 광장",
+       "en": "Tiananmen Square"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1989.05.04",
+     "title_en": "The May Fourth anniversary and Zhao Ziyang’s speech",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.39,
+      "label": {
+       "ko": "인민대회당",
+       "en": "Great Hall of the People"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1989.05.15–18",
+     "title_en": "Gorbachev in Beijing",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.39,
+      "label": {
+       "ko": "인민대회당",
+       "en": "Great Hall of the People"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1989.05.17",
+     "title_en": "The meeting at Deng’s home: martial law decided",
+     "geo": {
+      "kind": "point",
+      "lat": 39.93,
+      "lng": 116.39,
+      "label": {
+       "ko": "덩샤오핑 자택",
+       "en": "Deng’s residence"
+      }
+     }
+    },
+    {
+     "index": 11,
+     "date": "1989.06.05",
+     "title_en": "“Tank Man”",
+     "geo": {
+      "kind": "point",
+      "lat": 39.908,
+      "lng": 116.41,
+      "label": {
+       "ko": "창안제",
+       "en": "Chang’an Avenue"
+      }
+     }
+    },
+    {
+     "index": 12,
+     "date": "1989.06.24",
+     "title_en": "Fourth Plenum: Zhao removed, Jiang Zemin general secretary",
+     "geo": {
+      "kind": "point",
+      "lat": 39.9,
+      "lng": 116.4,
+      "label": {
+       "ko": "베이징",
+       "en": "Beijing"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "economic-reform-debate",
+   "add": [
+    {
+     "index": 2,
+     "date": "1989.07",
+     "title_en": "The great miners' strike",
+     "geo": {
+      "kind": "point",
+      "lat": 53.69,
+      "lng": 88.06,
+      "label": {
+       "ko": "메즈두레첸스크",
+       "en": "Mezhdurechensk"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "novo-ogaryovo-process",
+   "add": [
+    {
+     "index": 1,
+     "date": "1991.04.23",
+     "title_en": "The 9+1 statement",
+     "geo": {
+      "kind": "point",
+      "lat": 55.72,
+      "lng": 37.3,
+      "label": {
+       "ko": "노보오가료보",
+       "en": "Novo-Ogaryovo"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1991.06",
+     "title_en": "Pavlov demands emergency powers",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1991.07.29",
+     "title_en": "The midnight bargain",
+     "geo": {
+      "kind": "point",
+      "lat": 55.72,
+      "lng": 37.3,
+      "label": {
+       "ko": "노보오가료보",
+       "en": "Novo-Ogaryovo"
+      }
+     }
+    },
+    {
+     "index": 4,
+     "date": "1991.08.18–20",
+     "title_en": "The signing that never came",
+     "geo": {
+      "kind": "point",
+      "lat": 55.755,
+      "lng": 37.573,
+      "label": {
+       "ko": "러시아 최고회의 청사",
+       "en": "White House"
+      }
+     }
+    },
+    {
+     "index": 5,
+     "date": "1991.09–11",
+     "title_en": "The confederation attempt",
+     "geo": {
+      "kind": "point",
+      "lat": 55.72,
+      "lng": 37.3,
+      "label": {
+       "ko": "노보오가료보",
+       "en": "Novo-Ogaryovo"
+      }
+     }
+    },
+    {
+     "index": 6,
+     "date": "1991.12.08",
+     "title_en": "The Belovezha Accords",
+     "geo": {
+      "kind": "point",
+      "lat": 52.7,
+      "lng": 23.85,
+      "label": {
+       "ko": "벨로베시 숲",
+       "en": "Belovezha Forest"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "soviet-collapse",
+   "add": [
+    {
+     "index": 0,
+     "date": "1991.08.19",
+     "title_en": "The coup",
+     "geo": {
+      "kind": "point",
+      "lat": 44.39,
+      "lng": 33.79,
+      "label": {
+       "ko": "포로스",
+       "en": "Foros"
+      }
+     }
+    },
+    {
+     "index": 1,
+     "date": "1991.08.21",
+     "title_en": "The coup collapses",
+     "geo": {
+      "kind": "point",
+      "lat": 55.755,
+      "lng": 37.573,
+      "label": {
+       "ko": "러시아 최고회의 청사",
+       "en": "White House"
+      }
+     }
+    },
+    {
+     "index": 2,
+     "date": "1991.12.08",
+     "title_en": "The Belovezha Accords",
+     "geo": {
+      "kind": "point",
+      "lat": 52.7,
+      "lng": 23.85,
+      "label": {
+       "ko": "벨로베시 숲",
+       "en": "Belovezha Forest"
+      }
+     }
+    },
+    {
+     "index": 3,
+     "date": "1991.12.25",
+     "title_en": "Gorbachev resigns",
+     "geo": {
+      "kind": "point",
+      "lat": 55.75,
+      "lng": 37.62,
+      "label": {
+       "ko": "크렘린",
+       "en": "Kremlin"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
