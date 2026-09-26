@@ -592,6 +592,18 @@ header h1 {
     padding: 0 20px;
 }
 
+/* Extend the home link through the empty gutter while keeping its label and
+   the other toolbar controls in their existing positions. */
+.home-page .home-toolbar {
+    --home-logo-gutter: max(20px, calc((100vw - 960px) / 2 + 20px));
+}
+
+.home-page .toolbar-logo {
+    align-self: stretch;
+    margin-left: calc(-1 * var(--home-logo-gutter));
+    padding-left: calc(var(--home-logo-gutter) + 6px);
+}
+
 .toolbar-logo {
     display: inline-flex;
     align-items: center;
@@ -729,6 +741,9 @@ header h1 {
 @media (max-width: 768px) {
     .home-toolbar {
         padding: 0 8px;
+    }
+    .home-page .home-toolbar {
+        --home-logo-gutter: 8px;
     }
 }
 
