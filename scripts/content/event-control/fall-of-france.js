@@ -94,4 +94,7 @@ module.exports = {
         { date: '1944.08.25', label: { ko: '파리 해방', en: 'The liberation of Paris' },
             allied: [{ area: WEST_1940, minus: [GERMAN_1944_08_25, ...ATLANTIC_POCKETS] }] },
     ],
+    // Shared with the French Resistance map (french-resistance.js).
+    parts: { SEAS, WEST_1940, VICHY_ZONE_1940, MENTON_1940, ITALIAN_1942, BEACHHEAD_1944, CORSICA,
+        GERMAN_1944_08_25, ATLANTIC_POCKETS },
 };

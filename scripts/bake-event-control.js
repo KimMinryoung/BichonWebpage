@@ -8,8 +8,11 @@
 // renderer only projects rings and clips them to its coastline.
 //
 // Usage:
-//   node scripts/bake-event-control.js <ne_50m_admin_0_map_units.geojson>
+//   node scripts/bake-event-control.js <ne_50m_admin_0_map_units.geojson> [eventId ...]
 // Source: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_map_units.geojson
+// Event ids limit the bake to those events. Specs with province items also
+// need NE_ADMIN1=<ne_10m_admin_1_states_provinces.geojson>, from the same
+// repository.
 // Requires the polygon-clipping devDependency (bake time only).
 //
 // Output data/commulingo/event-control/<eventId>.json:
@@ -21,7 +24,9 @@
 // traced (the event's .traced.json), phases [{ date, label, <side>: items }].
 // Items: 'traced' | { traced: date, side?, file? } | [[lat, lng], ...] |
 // { circle: [lat, lng, r] } | { corridor: [[lat, lng], ...], width } |
-// { area: item, minus: [items] }.
+// { area: item, minus: [items] } | { units: [ADM0 codes] } (whole Natural
+// Earth units) | { provinces: [names], country: ADM0 } (Natural Earth
+// admin-1 by `name`: modern provinces standing in for historical ones).
 //
 //   { eventId, base, focus?, region: [ring, ...], sides: [{ id, label, tone }], note, sources,
 //     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] } }] }
@@ -168,6 +173,31 @@ function tracedGeometry(rings) {
 }
 
 
+const geojsonCache = new Map();
+function readGeojson(file) {
+    if (!geojsonCache.has(file)) geojsonCache.set(file, JSON.parse(fs.readFileSync(file, 'utf8')).features);
+    return geojsonCache.get(file);
+}
+// Whole features as one simplified multipolygon; throws on a name that
+// matches nothing, so a misspelt province is not silently left unpainted.
+function featureGeometry(features, names, key, what) {
+    const polys = [];
+    for (const name of names) {
+        const hits = features.filter(f => f.properties[key] === name);
+        if (!hits.length) throw new Error(`no ${what} ${name}`);
+        for (const f of hits) {
+            const g = f.geometry;
+            // Unsimplified: neighbours simplified apart leave a seam along
+            // their shared border; flatten() simplifies the union.
+            for (const poly of g.type === 'Polygon' ? [g.coordinates] : g.coordinates) {
+                if (poly[0].length >= 4 && ringArea(poly[0]) >= MIN_AREA) polys.push([poly[0]]);
+            }
+        }
+    }
+    return polys.length ? union(...polys.map(p => [p])) : [];
+}
+let unitsFile = null;
+
 const readTraced = file => JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8'));
 
 function resolveItem(item, side, phase, traced) {
@@ -180,6 +210,12 @@ function resolveItem(item, side, phase, traced) {
     // { area: item, minus: [items] }: an area with others cut out of it.
     if (item && item.area) {
         return minus(resolveItem(item.area, side, phase, traced), unionOf(item.minus, side, phase, traced));
+    }
+    if (item && item.units) return featureGeometry(readGeojson(unitsFile), item.units, 'ADM0_A3', 'Natural Earth unit');
+    if (item && item.provinces) {
+        if (!process.env.NE_ADMIN1) throw new Error('province items need NE_ADMIN1=<ne_10m_admin_1_states_provinces.geojson>');
+        const features = readGeojson(process.env.NE_ADMIN1).filter(f => f.properties.adm0_a3 === item.country);
+        return featureGeometry(features, item.provinces, 'name', `${item.country} province`);
     }
     if (item && item.circle) return circlePolygon(item.circle);
     if (item && item.corridor) return corridorPolygon(item.corridor, item.width);
@@ -265,11 +301,14 @@ function bakeEvent(spec, ne) {
 function main() {
     const ne = process.argv[2];
     if (!ne) {
-        console.error('usage: node scripts/bake-event-control.js <ne_50m_admin_0_map_units.geojson>');
+        console.error('usage: node scripts/bake-event-control.js <ne_50m_admin_0_map_units.geojson> [eventId ...]');
         process.exit(2);
     }
+    unitsFile = ne;
+    const only = process.argv.slice(3);
     fs.mkdirSync(OUT_DIR, { recursive: true });
     for (const file of fs.readdirSync(CONTENT_DIR).filter(f => f.endsWith('.js')).sort()) {
+        if (only.length && !only.includes(file.replace(/\.js$/, ''))) continue;
         const spec = require(path.join(CONTENT_DIR, file));
         const baked = bakeEvent(spec, ne);
         const target = path.join(OUT_DIR, `${spec.eventId}.json`);

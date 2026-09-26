@@ -111,4 +111,6 @@ module.exports = {
             other: [TIBET],
         },
     ],
+    // Shared with the Pacific War and Manchurian operation maps.
+    parts: { MANCHUKUO, TAIWAN, HAINAN, EAST_HEBEI, NORTH_CHAHAR, NORTH_CHINA_1937, LOWER_YANGTZE_1937, TRACED_1945 },
 };
