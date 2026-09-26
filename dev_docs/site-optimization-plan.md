@@ -36,6 +36,7 @@
 > - 2026-09-02: **배치 9(A4) 완료·배포**. 사전 스토어 3종의 refresh가 매분 27.5MB를 stringify+sha1(동기 ~198ms)하고 테이블 22개를 순차 스캔하던 것을, `pg_stat_user_tables`의 n_tup_ins+upd+del 합(스토어별 대상 테이블 목록, FROM/JOIN에서 추출)을 먼저 한 줄 조회해 지난 전체 조회 때와 같으면 건너뛴다. DELETE+INSERT도 카운터에 잡히므로 8-04에 A4를 거부한 사유(updated_at 부재)가 해소됨. 10주기마다 강제 전체 조회, `COMMULINGO_SNAPSHOT_SIGNATURE=0`으로 비활성. 검증(dev): 조용한 3주기 동안 term_relations·person_scenes seq_scan 증가 = prod 몫(+3)뿐, 무변경 UPDATE 1건 뒤 2주기에 dev 전체 조회 정확히 1회(+3 = prod 2 + dev 1), 48/48 바이트 동일.
 > - **2차 패스 전체 완료(배치 0~9).** 사용자 작업도 완료: nginx 적용(HTTP/2 확인), data/*-cache·puzzles 백업 삭제(추적 파일이라 커밋 91584a1·eac53a1), root 소유 chown + 호스트 `npm ci`(npm test에 lint 포함), leninbot compose·maintainer 술어 커밋(leninbot 2ddde39)·redis 재기동, 어드민 패스키 로그인 실기기 확인(2026-09-02).
 >
+> - 2026-09-26: **페이지 이동 프리페치.** 서버 TTFB는 로컬 10~60ms라 남은 비용은 CDN 왕복(~100~170ms)뿐 → `views/partials/head.ejs`에 Speculation Rules `prefetch`(eagerness moderate: 링크 위 200ms 호버·누름) 추가. 같은 언어 링크만(/en/ 응답과 `?lang=`은 언어 쿠키를 바꿈), admin·auth·api·.md·.xml·target=_blank·`data-no-prefetch` 제외. 헤드리스 Chromium 검증: 클릭 시 deliveryType `navigational-prefetch`, TTFB 2~3ms, 제외 링크는 네트워크 로드·쿠키 불변. /games/는 CSRF 때문에 no-store라 bfcache 제외(의도적 유지).
 > ## 최종 결과 (베이스라인 대비, 2026-08-04)
 > - 용어 페이지 warm 10~14ms → **4~8ms**, 인물 페이지 12~20ms → **5~13ms**, sitemap 17~30ms → **4ms**
 > - `commulingo_people` seq_scan 요청당 증가 → **정지** (분당 리프레시만), `people_revisions` 183k에서 **동결**

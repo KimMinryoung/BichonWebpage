@@ -52,6 +52,16 @@
 <%# Font preloads removed on purpose: Pretendard is unicode-range sliced (the
     browser only knows which slices a page needs after CSS+text are seen) and
     font-display: swap paints text immediately in the fallback. %>
+<%# Page-to-page speed: fetch a link's HTML when the pointer rests on it (or it
+    is pressed), so the click finds the response already there. Only links in
+    the page's own language: an /en/ response or a ?lang= link would set the
+    language cookie as a side effect. Admin/auth/API links are never fetched. %>
+<script type="speculationrules">
+{"prefetch":[{"where":{"and":[
+<% if (_urlLang === 'en') { %>{"href_matches":"/en/*"},<% } else { %>{"href_matches":"/*"},{"not":{"href_matches":"/en/*"}},{"not":{"href_matches":"/en"}},<% } %>
+{"not":{"selector_matches":"[href*='lang='],[href*='/admin'],[href*='/auth'],[href*='/api/'],[href$='.md'],[href$='.xml'],[download],[target=_blank],[data-no-prefetch]"}}
+]},"eagerness":"moderate"}]}
+</script>
 <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
 <script type="application/ld+json"><%- jsonLdScript(jsonLd) %></script>
 <% } %>
