@@ -66,6 +66,10 @@
     document.documentElement.setAttribute('data-section', <%- JSON.stringify(_section) %>);
 })();
 </script>
+<%# The common Hangul font is one fixed file, so a Korean page can start it
+    with the HTML instead of after the CSS; it then usually arrives before the
+    first layout, which is not done twice (fallback, then Pretendard). %>
+<% if (_urlLang === 'ko') { %><link rel="preload" href="/fonts/pretendard/PretendardVariable.common.woff2" as="font" type="font/woff2" crossorigin><% } %>
 <link rel="stylesheet" href="/css/pretendard-subset.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">

@@ -41,6 +41,7 @@
     document.documentElement.setAttribute('data-theme', t);
 })();
 </script>
+<% if (docLang === 'ko') { %><link rel="preload" href="/fonts/pretendard/PretendardVariable.common.woff2" as="font" type="font/woff2" crossorigin><% } %>
 <link rel="stylesheet" href="/css/pretendard-subset.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
