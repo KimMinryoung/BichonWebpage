@@ -1,0 +1,64 @@
+{
+ "note": "Lafayette revolutionary camp 2026-09-26",
+ "items": [
+  {
+   "id": "lafayette",
+   "reviewed": true,
+   "reviewMethod": "operator request: affiliation by revolutionary camp",
+   "expectedRevision": "v1-8a3ec959e4312336e71c7133446d8b8c77b7352ea471b765cfc5b357c10704a4",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gilbert_du_Motier,_Marquis_de_Lafayette",
+    "https://en.wikipedia.org/wiki/Marquis_de_Lafayette",
+    "https://fr.wikipedia.org/wiki/Club_des_feuillants"
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-feuillants",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1789,
+     "endYear": 1791,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Gilbert_du_Motier,_Marquis_de_Lafayette",
+       "locator": "plain-text extract characters 2535:2701; sha256 8a2518844d9281a094047bf98ad1eff2b70038b5b848e8f02a8d0f46797da5bc",
+       "claim": "바스티유 습격 뒤 라파예트는 프랑스 국민위병 총사령관에 임명되어 혁명기 내내 중도 노선을 취하려 했다.",
+       "excerpt": "After the storming of the Bastille, he was appointed commander-in-chief of France's National Guard and tried to steer a middle course through the years of revolution."
+      },
+      {
+       "source": "https://fr.wikipedia.org/wiki/Club_des_feuillants",
+       "locator": "plain-text extract characters 4876:5165; sha256 e14257e2e7ab94f9acb425fe93e414e6f8cb57f28c2ad12c02d5e1116053e77d",
+       "claim": "라파예트는 바르나브·뒤포르·라메트와 함께 푀양파의 주요 인물이었다.",
+       "excerpt": "Une partie de ses personnalités les plus expérimentées sont également en dehors de l'Assemblée, du fait de la non-rééligibilité des Constituants, notamment Antoine Barnave, Duport, La Fayette, Alexandre de Lameth, Le Chapelier, ou François Alexandre Frédéric de La Rochefoucauld-Liancourt."
+      },
+      {
+       "source": "https://fr.wikipedia.org/wiki/Club_des_feuillants",
+       "locator": "plain-text extract characters 7460:7660; sha256 e14257e2e7ab94f9acb425fe93e414e6f8cb57f28c2ad12c02d5e1116053e77d",
+       "claim": "푀양파 안에는 라파예트 장군이 이끈 경향이 있었다.",
+       "excerpt": "Jean Antoine d'Averhoult, Louis Ramond de Carbonnières, Jacques Claude Beugnot, Emmanuel de Pastoret, Louis Stanislas de Girardin appartiennent à la tendance menée par la figure du général La Fayette."
+      }
+     ]
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "1777년 대륙군 소장이 되어 1781년 요크타운에서 콘월리스의 부대를 봉쇄하고 공략전에 참여했다.",
+       "source": "https://en.wikipedia.org/wiki/Marquis_de_Lafayette",
+       "excerpt": "Lafayette was born into a wealthy land-owning family in Chavaniac in the province of Auvergne in south-central France. He followed the family's martial tradition and was commissioned an officer at age 13. He became convinced that the American revolutionary cause was noble, and he traveled to the Americas seeking glory in it. He was made a major general at age 19 but was initially not given American troops to command. He fought with the Continental Army at the Battle of Brandywine near Chadds Ford, Pennsylvania, where he was wounded but organized an orderly retreat, and he served with distinction in the Battle of Rhode Island. In the middle of the war, he returned home to France to lobby for an increase in French support for the American Revolution. He returned to America in 1780 and was given senior positions in the Continental Army. In 1781, troops under his command in Virginia blocked a British army led by Lord Cornwallis until other American and French forces could position themselves for the decisive siege of Yorktown.",
+       "locator": "characters 1818–2856"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "state-usa",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  }
+ ]
+}
