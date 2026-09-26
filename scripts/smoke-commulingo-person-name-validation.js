@@ -52,4 +52,15 @@ assert.match(
     /disagree/
 );
 
+// The native-name line is required; the script override does not waive it.
+{
+    const { assertNativeScript } = require('../data/commulingo/people-admin-validation');
+    for (const cyrillic of [undefined, '', '  ']) {
+        assert.throws(() => assertNativeScript({ cyrillic }, { citizenship: 'finland' }), /required/);
+        assert.throws(() => assertNativeScript({ cyrillic, nativeScriptOverride: true }, { citizenship: 'finland' }), /required/);
+    }
+    assert.doesNotThrow(() => assertNativeScript({ cyrillic: 'Susanne Dahlgren' }, { citizenship: 'finland' }));
+    assert.doesNotThrow(() => assertNativeScript({ cyrillic: '최창익 (崔昌益)' }, { citizenship: 'north-korea' }));
+}
+
 console.log('OK — CommuLingo person name validation smoke passed.');

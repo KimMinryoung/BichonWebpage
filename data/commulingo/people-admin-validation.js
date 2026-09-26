@@ -55,6 +55,13 @@ function requirePatronymicState(payload, before, nativeName) {
 // mismatch here is what keeps a Russian transliteration from being filed under a
 // Korean, Hungarian or Chinese figure (see data/commulingo/native-script.js).
 function assertNativeScript(payload, { citizenship, origin }) {
+    // An empty value has no script to be wrong about, so checkNativeScript
+    // passes it — and nine cards created 2026-09-16..18 went out with a blank
+    // line under the display name. The line is required; the override below
+    // only waives the script check.
+    if (!String(payload.cyrillic ?? '').trim()) {
+        throw badRequest('cyrillic (nativeName) is required: the person\'s name in their own script — for a Latin-script nationality usually the English name verbatim, diacritics included');
+    }
     if (payload.nativeScriptOverride === true) return;
     const checks = [
         ['cyrillic', payload.cyrillic],

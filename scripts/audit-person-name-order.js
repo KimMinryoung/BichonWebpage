@@ -93,7 +93,12 @@ function firstToken(text) {
             if (!native) continue; // audit-person-native-names.js reports the blank.
             const found = detectScripts(native);
             const familyFirstAtHome = familyFirstJoiner(code, 'ko') !== null;
-            if (found.length && found.every(script => CJK.has(script)) && /\s/.test(native)) {
+            // Each form is checked on its own: a parenthesised second form —
+            // the hanja beside the hangul, '최창익 (崔昌益)' — is set off by a
+            // space, and that space is not inside either name.
+            const forms = [native.replace(/\s*\([^)]*\)/g, ''), ...[...native.matchAll(/\(([^)]*)\)/g)].map(m => m[1])]
+                .map(form => form.trim()).filter(Boolean);
+            if (found.length && found.every(script => CJK.has(script)) && forms.some(form => /\s/.test(form))) {
                 problems.push(`${tag}: native name "${native}" has an internal space; CJK names are written solid`);
             }
             const allowed = scriptsFor(code) || [];
