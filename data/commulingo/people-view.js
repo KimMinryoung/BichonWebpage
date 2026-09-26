@@ -23,12 +23,13 @@ async function loadStandardizedPeople(lang, options = {}) {
 }
 
 // The people page is boxed into shelves: the Soviet era sequence, the Chinese
-// era sequence (migration 182), then the groups outside both states. A group's
+// era sequence (migration 182), the French Revolution (migration 188), then
+// the groups outside them. A group's
 // shelf is data (commulingo_people_groups.shelf); this list only fixes the
 // order the shelves render in. Snapshots written before the column existed
 // carry no shelf, so the groups that used to be hard-coded as standalone fall
 // back to the world shelf and everything else to the Soviet one.
-const SHELF_ORDER = ['soviet', 'china', 'world'];
+const SHELF_ORDER = ['soviet', 'china', 'france', 'world'];
 const LEGACY_WORLD_GROUP_IDS = [
     'international-revolutionary',
     'foreign-statesmen',

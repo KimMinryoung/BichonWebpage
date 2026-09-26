@@ -1,0 +1,1208 @@
+{
+ "note": "French Revolution affiliation review 2026-09-26",
+ "items": [
+  {
+   "id": "francois-christophe-kellermann",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-731512a8b6f8c02a26fe9b79e71732f9f6064fcffe4be5ac38597157449d904a",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Christophe_de_Kellermann"
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "켈레르만은 프랑스 혁명 및 나폴레옹 전쟁에서 복무한 프랑스 군 장교이자 원수로서 발미 전투에서 프랑스군을 승리로 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Christophe_de_Kellermann",
+       "excerpt": "was a French Army officer and politician who served in the French Revolutionary and Napoleonic Wars. One of the original eighteen Marshals of the Empire created by Napoleon, he was best known for leading the French army to victory at the Battle of Valmy.",
+       "locator": "characters 184:438; sha256 474578ea96c2e916111797e8ce6089190c8ab243072ddd4df85ec57114047b08"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "켈레르만은 프랑스 제국에 복무하며 군대 행정과 훈련, 통신선 통제 및 예비군 지휘를 맡았다.",
+       "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Christophe_de_Kellermann",
+       "excerpt": "In his service to the First French Empire, Kellermann was frequently employed in the administration and training of the army. He also took control of the line of communications and the command of reserve troops, and his long and wide experience made him one of Napoleon's most valuable assistants.",
+       "locator": "characters 4857:5154; sha256 474578ea96c2e916111797e8ce6089190c8ab243072ddd4df85ec57114047b08"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "charles-francois-dumouriez",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-307323a19f232acb0b34943d522d3ef90cc94288978c7aacb36767e2044b4258",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles_Fran%C3%A7ois_Dumouriez"
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1792,
+     "endYear": 1793,
+     "evidence": [
+      {
+       "claim": "그가 프랑스 혁명 정부의 군대 지휘관으로 임명되었음을 보여준다.",
+       "source": "https://en.wikipedia.org/wiki/Charles_Fran%C3%A7ois_Dumouriez",
+       "excerpt": "After the émeute of 10 August 1792 and Lafayette’s flight, he gained appointment to the command of the \"Army of the Centre\".",
+       "locator": "characters 7858:7982; sha256 08ecc78720899eed8305c7fb8a65c8d21d698bc03c968b3ac73f09889c6abd8b"
+      }
+     ]
+    },
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1792,
+     "endYear": 1792,
+     "evidence": [
+      {
+       "claim": "뒤무리에가 프랑스 군 장교로서 복무했음을 보여준다.",
+       "source": "https://en.wikipedia.org/wiki/Charles_Fran%C3%A7ois_Dumouriez",
+       "excerpt": "was a French Army officer and politician who served as Minister of Foreign Affairs and Minister of War in the Constitutional Cabinet of Louis XVI.",
+       "locator": "characters 131:277; sha256 08ecc78720899eed8305c7fb8a65c8d21d698bc03c968b3ac73f09889c6abd8b"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jean-paul-marat",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-9c00354b32cfa008576f017f0f4d51d432284c9a4683a3985dffed31c0813f7d",
+   "sources": [
+    "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "마라는 국민공회 내 산악파의 지도자 중 한 명으로 활동했다.",
+       "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute",
+       "excerpt": "À la gauche du Président, sur les bancs les plus élevés, siègent les Montagnards – principalement des membres des clubs des Jacobins ou des Cordeliers – favorables à un pouvoir fort, républicain et centralisé menés par Maximilien de Robespierre, Georges Danton et Jean-Paul Marat",
+       "locator": "characters 2387:2666; sha256 92fedbde82f7f2b21a2b0ac3ee4abb36044754c018f8d35f46b75cbd124f88cc"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-montagnards",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "georges-danton",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-1919f937b547c1dfd3a5d0178b090fe3aae8de8f57600b9dd971489e27d0139a",
+   "sources": [
+    "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "당통은 자코뱅 또는 코르들리에 클럽 구성원들로 이루어진 몽타뉴파의 지도자 중 한 명으로 제시된다.",
+       "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute",
+       "excerpt": "À la gauche du Président, sur les bancs les plus élevés, siègent les Montagnards – principalement des membres des clubs des Jacobins ou des Cordeliers – favorables à un pouvoir fort, républicain et centralisé menés par Maximilien de Robespierre, Georges Danton et Jean-Paul Marat",
+       "locator": "characters 2387:2666; sha256 92fedbde82f7f2b21a2b0ac3ee4abb36044754c018f8d35f46b75cbd124f88cc"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-montagnards",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "camille-desmoulins",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-118e8b2927671c0126e86a06910720af01ea5f889bb70007262a86ba0dd5c4ae",
+   "sources": [
+    "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "카미유 데물랭은 자코뱅 또는 코르들리에 클럽과 연결된 몽타뉴파의 일원으로서 프랑스 혁명 정치 진영에서 활동했다.",
+       "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute",
+       "excerpt": "siègent les Montagnards – principalement des membres des clubs des Jacobins ou des Cordeliers – favorables à un pouvoir fort, républicain et centralisé menés par Maximilien de Robespierre, Georges Danton et Jean-Paul Marat, avec des partisans tels que Camille Desmoulins",
+       "locator": "characters 2444:2714; sha256 92fedbde82f7f2b21a2b0ac3ee4abb36044754c018f8d35f46b75cbd124f88cc"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-montagnards",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "louis-antoine-de-saint-just",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-e5298ca91b85f2d62821a78205215be9686889286502fea7f3e83826983eb8e6",
+   "sources": [
+    "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "생쥐스트는 강력한 중앙집권적 공화정을 주장한 몽타뉴파의 일원으로 국민공회에서 활동했다.",
+       "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute",
+       "excerpt": "À la gauche du Président, sur les bancs les plus élevés, siègent les Montagnards – principalement des membres des clubs des Jacobins ou des Cordeliers – favorables à un pouvoir fort, républicain et centralisé menés par Maximilien de Robespierre, Georges Danton et Jean-Paul Marat, avec des partisans tels que Camille Desmoulins, le duc d’Orléans (Philippe Égalité) et Louis Antoine Saint-Just.",
+       "locator": "characters 2387:2780; sha256 92fedbde82f7f2b21a2b0ac3ee4abb36044754c018f8d35f46b75cbd124f88cc"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-montagnards",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "maximilien-robespierre",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-51ad1e318698e725d1bc1479c30abedc1263a3164ca559a5561223f134607aa4",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Maximilien_Robespierre"
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "french-jacobins",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "로베스피에르는 1792년 국민공회 의원으로 선출되고 1793년 공안위원회 위원으로 임명되어 혁명 정부의 행정에 참여했다.",
+       "source": "https://en.wikipedia.org/wiki/Maximilien_Robespierre",
+       "excerpt": "A radical Jacobin leader, Robespierre was elected as a deputy to the National Convention in September 1792, and in July 1793, he was appointed a member of the Committee of Public Safety.",
+       "locator": "characters 487:673; sha256 8b3bb5cfc9e19868100e4cef8a675ee93f758b2a487d56e21a009282da514472"
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1793,
+     "endYear": 1794,
+     "evidence": [
+      {
+       "claim": "로베스피에르는 1792년 국민공회 의원으로 선출되고 1793년 공안위원회 위원으로 임명되어 혁명 정부의 행정에 참여했다.",
+       "source": "https://en.wikipedia.org/wiki/Maximilien_Robespierre",
+       "excerpt": "A radical Jacobin leader, Robespierre was elected as a deputy to the National Convention in September 1792, and in July 1793, he was appointed a member of the Committee of Public Safety.",
+       "locator": "characters 487:673; sha256 8b3bb5cfc9e19868100e4cef8a675ee93f758b2a487d56e21a009282da514472"
+      },
+      {
+       "claim": "그는 혁명 정부의 공포 정치 조치를 주도하며 정부 운영에 핵심적 역할을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Maximilien_Robespierre",
+       "excerpt": "Robespierre faced growing disillusionment with other revolutionaries which led him to argue for the harsh measures of the Reign of Terror.",
+       "locator": "characters 674:812; sha256 8b3bb5cfc9e19868100e4cef8a675ee93f758b2a487d56e21a009282da514472"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "georges-couthon",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-eaebb540a0d1ced1baf7bcf53a8d43848f66e0426e89b7539bb5917c7a5260c3",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Georges_Couthon"
+   ],
+   "activities": [
+    {
+     "endYear": 1794,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "쿠통은 1793년 5월 30일 프랑스 공안위원회 위원으로 선출되어 1794년 체포·처형될 때까지 위원회에서 권력을 행사했다.",
+       "source": "https://en.wikipedia.org/wiki/Georges_Couthon",
+       "excerpt": "Couthon was elected to the Committee of Public Safety on 30 May 1793. Along with his close associate Louis Antoine de Saint-Just and Maximilien Robespierre, he formed an unofficial triumvirate within the committee which wielded power during the Reign of Terror until the three were arrested and executed in 1794 during the Thermidorian Reaction.",
+       "locator": "characters 227:572; sha256 2381e542937d7bc3afd1bdc914aa54d800802d2cf9c2855a1cb5774300fe917d"
+      },
+      {
+       "claim": "쿠통은 1794년 6월 10일 로베스피에르의 도움을 받아 22 프레리알 법을 기초하여 혁명재판소의 재판 절차를 규정하는 정부 정책을 입안했다.",
+       "source": "https://en.wikipedia.org/wiki/Georges_Couthon",
+       "excerpt": "On 10 June 1794 (22 Prairial Year II on the French Republican Calendar), Couthon drafted the Law of 22 Prairial with the aid of Robespierre. On the pretext of shortening proceedings, the law deprived the accused of the aid of counsel and of witnesses for their defence in the case of trials before the Revolutionary Tribunal.",
+       "locator": "characters 6101:6426; sha256 2381e542937d7bc3afd1bdc914aa54d800802d2cf9c2855a1cb5774300fe917d"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1793,
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "lazare-carnot",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-7b6d2fe28ed4f72bde5a0895dc58f4d2441d22a381da213d446d637ab3bd0111",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lazare_Carnot"
+   ],
+   "activities": [
+    {
+     "endYear": 1794,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "카르노는 1793년 공안위원회에 선출되어 전쟁 장관의 한 사람으로서 군사 상황을 총괄했다.",
+       "source": "https://en.wikipedia.org/wiki/Lazare_Carnot",
+       "excerpt": "On 14 August 1793 Carnot was elected to the Committee of Public Safety, where he took charge of the military situation as one of the Ministers of War.",
+       "locator": "characters 6464:6614; sha256 9d82db7fb7126c2fbae324623f1c0735d3972910b037af61aaca9a1917fd4326"
+      },
+      {
+       "claim": "그는 군대 재편과 징병 확대를 주도하여 1793~94년 프랑스의 군사적 성공을 이끌었고 '승리의 조직자'로 불렸다.",
+       "source": "https://en.wikipedia.org/wiki/Lazare_Carnot",
+       "excerpt": "He oversaw the reorganization of the army, imposed discipline, and significantly expanded the French force through the imposition of mass conscription. Credited with France's renewed military success from 1793 to 1794, Carnot came to be known as the \"Organizer of Victory\".",
+       "locator": "characters 708:981; sha256 9d82db7fb7126c2fbae324623f1c0735d3972910b037af61aaca9a1917fd4326"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1793,
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "emmanuel-sieyes",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-21ec4c5cd9bc4ea107812b0deafd5e5fc61a46fe08da9ba3175fbbfa01f6bdd1",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s"
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "french-revolution",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1789,
+     "endYear": 1791,
+     "evidence": [
+      {
+       "claim": "시에예스는 혁명 초기 국민주권과 대표제 이론을 확장하며 인권선언 최종 초안 작성에 참여하는 등 혁명 진영의 핵심 정치적 역할을 수행했다.",
+       "source": "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s",
+       "excerpt": "He played his main role in the opening years of the Revolution, participating in the final drafting of the Declaration of the Rights of Man and of the Citizen, expanding on the theories of national sovereignty, popular sovereignty, and representation implied in his pamphlet",
+       "locator": "characters 5513:5787; sha256 861307d7de589f7cb888954c9ae6e255014dc08d1e859dc4a5758a19e8fb73c7"
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1799,
+     "endYear": 1799,
+     "evidence": [
+      {
+       "claim": "시에예스는 1799년 총재가 된 뒤 나폴레옹을 집권시킨 브뤼메르 18일 쿠데타의 주도자 중 한 명으로서 혁명 정부의 정치적 전환을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s",
+       "excerpt": "After becoming a director in 1799,  Sieyès was among the instigators of the Coup of 18 Brumaire (9 November), which installed Napoleon Bonaparte in power.",
+       "locator": "characters 676:830; sha256 861307d7de589f7cb888954c9ae6e255014dc08d1e859dc4a5758a19e8fb73c7"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jacques-roux",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-9678d781d243e7a6bec4e4bd903a1bdacc49bb36d3e3fa7d47a715f575ae2cc9",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jacques_Roux"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "locator": "plain-text extract characters 538:722; sha256 cd8afc52375444e7de3e2a5c219970c111ff1e888ad230283e21b6518afd14e2",
+       "claim": "1792년 제1공화국 수립 후 자크 루는 앙라제로 불린 정파에 속했다.",
+       "excerpt": "When the French First Republic started in 1792, Roux became aligned with the political faction dubbed by their enemies as the Enragés (French for \"The Enraged Ones\" but also \"Madmen\")."
+      },
+      {
+       "claim": "그는 프랑스 혁명 기간 정치에 적극 참여한 혁명가였다.",
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "excerpt": "was a French Catholic Red priest and revolutionary who took an active role in politics during the French Revolution",
+       "locator": "characters 67:182; sha256 ce767b3200d73fcb50c21737c573834fc7349ad08b210af2cd90bc48fc41a72d"
+      },
+      {
+       "claim": "그는 극좌파의 주요 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "excerpt": "He became a major leader of the far-left.",
+       "locator": "characters 419:460; sha256 ce767b3200d73fcb50c21737c573834fc7349ad08b210af2cd90bc48fc41a72d"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-enrages",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "jean-francois-varlet",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-63d7a8622d4b3926ed4eb9984e045215e699c1463c63cd407f398b98c2f563c7",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Varlet"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "바를레는 프랑스 혁명기 앙라제 파벌의 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Varlet",
+       "excerpt": "Jean-François Varlet (French pronunciation: [ʒɑ̃ fʁɑ̃swa vaʁlɛ]; 14 July 1764 – 4 October 1837) was a leader of the Enragés faction during the French Revolution.",
+       "locator": "characters 0:161; sha256 569c042e5f9ba0e22c1e24d58862fde9ff9962a97839f54e1cd672832868c18b"
+      },
+      {
+       "claim": "그는 왕정 붕괴와 1793년 5월 31일–6월 2일 봉기에서 중요한 역할을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Varlet",
+       "excerpt": "He was important in the fall of the monarchy and the Insurrection of 31 May – 2 June 1793.",
+       "locator": "characters 162:252; sha256 569c042e5f9ba0e22c1e24d58862fde9ff9962a97839f54e1cd672832868c18b"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "organizing",
+     "affiliationId": "french-enrages",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "pierre-vergniaud",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-ad04aee84c1e9626e0ff1a6efea358cf520e7189b756bd42b5b7fd77ad0ed602",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pierre_Victurnien_Vergniaud"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "베르니오는 지롱드파에 속해 있었다.",
+       "source": "https://en.wikipedia.org/wiki/Pierre_Victurnien_Vergniaud",
+       "excerpt": "He was a supporter of Jacques Pierre Brissot and the Girondist faction.",
+       "locator": "characters 253:324; sha256 b95bc5f439900face0f4dacf7a07d1766a416f1f81f522f43a9078f98d0b3cdd"
+      },
+      {
+       "claim": "그는 지롱드파 정파를 이끈 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Pierre_Victurnien_Vergniaud",
+       "excerpt": "the excesses of which he realised only by the September Massacres, which ultimately overwhelmed the party of Girondists that he led.",
+       "locator": "characters 7202:7334; sha256 b95bc5f439900face0f4dacf7a07d1766a416f1f81f522f43a9078f98d0b3cdd"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-girondins",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "jacques-pierre-brissot",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-d81cfe44fb424b7c2215695e95d99bd2ee3274b5c0544a45187391ff13b106c5",
+   "sources": [
+    "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "자크 피에르 브리소는 국민공회 내 지롱드파를 주도한 지도자였다.",
+       "source": "https://www.assemblee-nationale.fr/dyn/histoire-et-patrimoine/revolution-francaise/la-convention-nationale-et-la-fin-de-la-royaute",
+       "excerpt": "À la droite du Président siègent les Girondins conduits principalement par Jacques Pierre Brissot, Pierre Vergniaud, Jérôme Pétion de Villeneuve et Jean-Marie Roland de la Platière.",
+       "locator": "characters 1786:1967; sha256 92fedbde82f7f2b21a2b0ac3ee4abb36044754c018f8d35f46b75cbd124f88cc"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-girondins",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "adrien-duport",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-4fbc0000c0e4eaf8941488186f7603b91a5e57d794a1dfd25348f5dc0cfd35d5",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Adrien_Duport"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "뒤포르는 바르나브, 라메트와 함께 '삼두정치'로 알려진 정치 그룹을 결성했다.",
+       "source": "https://en.wikipedia.org/wiki/Adrien_Duport",
+       "excerpt": "Duport formed with Barnave and Alexandre de Lameth a group known as the \"triumvirate,\" which was popular at first.",
+       "locator": "characters 634:748; sha256 aa78b76d79d8900e0cd41d95d56a52206b5093c2cea9ca12c073efbdf8f570f9"
+      },
+      {
+       "claim": "자코뱅파에서 이탈한 뒤 푀양파에 합류하며 혁명기 정치 세력을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Adrien_Duport",
+       "excerpt": "Having separated himself from the Jacobins, he joined the Feuillant party.",
+       "locator": "characters 961:1035; sha256 aa78b76d79d8900e0cd41d95d56a52206b5093c2cea9ca12c073efbdf8f570f9"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-feuillants",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "antoine-barnave",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-bcfe25856c1d9b0d945921b561d0fe502ff0b2d186259d6f5830f9cd55dd704a",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Antoine_Barnave"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "그는 제헌의회에서 삼두정치를 결성하며 혁명 진영의 핵심 지도자로 부상했다.",
+       "source": "https://en.wikipedia.org/wiki/Antoine_Barnave",
+       "excerpt": "He soon rose to prominence in the National Assembly, becoming the friend of most of the leaders of the party originating in the Third Estate, and formed with Adrien Duport and Alexandre Lameth the group known during the Constituent Assembly as \"the triumvirate\".",
+       "locator": "characters 1826:2088; sha256 3eb420592fe85a51e7d582e644598fd4795226a55f19922fc2666f7908af8188"
+      },
+      {
+       "claim": "그는 삼두정치의 일원으로서 푀양당을 창설하고 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Antoine_Barnave",
+       "excerpt": "As the Jacobin Club grew more radically in favor of a republic, Barnave and the other two members of the triumvirate broke away from it and formed the Feuillant political group on 18 July 1791.",
+       "locator": "characters 12049:12242; sha256 3eb420592fe85a51e7d582e644598fd4795226a55f19922fc2666f7908af8188"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-feuillants",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "alexandre-de-lameth",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-1b138cd887ba2913af121395448ca06faaca2bb98d59b40a0ad80cf6c05e10c7",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexandre-Th%C3%A9odore-Victor%2C_comte_de_Lameth"
+   ],
+   "activities": [
+    {
+     "endYear": 1792,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "라메트는 1789년 뒤포르·바르나브와 삼두정치를 이루어 제헌의회 좌파 그룹을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandre-Th%C3%A9odore-Victor%2C_comte_de_Lameth",
+       "excerpt": "Alexandre Lameth, Adrien Duport, and Barnave were brought together in September 1789 for the first time during the first struggles of the Patriot Party. Despite the odds against them, their political ties strengthened and became a profound friendship that lasted through the turmoil. In the Constituent Assembly they formed a \"Triumvirate\", which controlled a group of about forty deputies forming the advanced left of the Assembly.",
+       "locator": "characters 1398:1830; sha256 b5292da6d485cbc0257b3129f85c2d7c176b61ecc55720ddbb7166596713126c"
+      },
+      {
+       "claim": "그는 푀양파 클럽의 지도자로서 입헌군주정을 옹호하는 정치 노선을 주도했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandre-Th%C3%A9odore-Victor%2C_comte_de_Lameth",
+       "excerpt": "During the next months, as leaders of the Feuillant club, they established their belief that the flight of the King to Varennes was all because of the faulty revolutionary process that prohibited any manner of compromise.",
+       "locator": "characters 2135:2356; sha256 b5292da6d485cbc0257b3129f85c2d7c176b61ecc55720ddbb7166596713126c"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1789,
+     "functionId": "political-leadership",
+     "affiliationId": "french-feuillants",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "나폴레옹 제정기와 왕정복고기 동안 그는 여러 주의 지사와 하원 의원을 지내며 프랑스 국가 행정과 입법에 종사했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandre-Th%C3%A9odore-Victor%2C_comte_de_Lameth",
+       "excerpt": "Under the Empire, he was made prefect successively in several departments, and in 1810 was declared a Baron of the Empire. In 1814, he attached himself to the Bourbons, and under the Restoration was appointed prefect of Somme, deputy for Seine-Inférieure and finally deputy for Seine-et-Oise, in which capacity he was a leader of the Liberal opposition.",
+       "locator": "characters 3277:3630; sha256 b5292da6d485cbc0257b3129f85c2d7c176b61ecc55720ddbb7166596713126c"
+      }
+     ],
+     "relation": "employment",
+     "startYear": null,
+     "functionId": "government",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "bertrand-barere",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-8bbecc52002f76f4ee8a256d00ae53e05fdded0c27630eeb11cf0f1db43e6685",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bertrand_Bar%C3%A8re"
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1793,
+     "endYear": 1795,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Bertrand_Bar%C3%A8re",
+       "locator": "plain-text extract characters 4624:4866; sha256 b0ea4bfe8f5f1d9bbe2ca2500d1053d886cdc35e44e3fbdcdfb64ae98eaf29f0",
+       "claim": "바레르는 평원파 의원으로 공안위원회에 처음 선출된 위원이었고 위원회 존속 기간 내내 재임했다.",
+       "excerpt": "A member of \"The Plain,\" who was unaligned with either The Mountain or the Girondins, he was the first member elected to the Committee of Public Safety and one of two members (with Robert Lindet), who served on it during its entire existence."
+      },
+      {
+       "claim": "바레르는 프랑스 혁명기 국민공회의 대표적 의원으로서 혁명 진영의 정치 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Bertrand_Bar%C3%A8re",
+       "excerpt": "Bertrand Barère de Vieuzac (French pronunciation: [bɛʁtʁɑ̃ baʁɛʁ də vjøzak], 10 September 1755 – 13 January 1841) was a French politician, freemason, journalist, and one of the most prominent members of the National Convention, representing the Plain (a moderate political faction) during the French Revolution.",
+       "locator": "characters 0:311; sha256 7a09cec05b347d63252962751fed112f27b8eff80475b03431a74f4c4e9be330"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jacques-rene-hebert",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-da4710ff58d47054770d1e6abe9e571b2a1c81d19a8312f0adb61765f5c2dd7f",
+   "sources": [
+    "https://www.larousse.fr/encyclopedie/personnage/Jacques_H%C3%A9bert/123420"
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "french-cordeliers",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "primary": true,
+     "startYear": 1790,
+     "endYear": 1794,
+     "evidence": [
+      {
+       "claim": "에베르는 1790년 《페르 뒤셴》을 창간한 언론인으로, 상퀼로트의 대표적 대변인이었다.",
+       "source": "https://www.larousse.fr/encyclopedie/personnage/Jacques_H%C3%A9bert/123420",
+       "excerpt": "Fondateur du Père Duchesne (1790), membre influent du club des Cordeliers (1791), substitut du procureur de la Commune de Paris (1792), il fut le chef de la faction hébertiste et l'un des meilleurs porte-parole de la sans-culotterie.",
+       "locator": "characters 84:317; sha256 95c3286c1ffed23551d59fb8e1d662a22617c1412047601e8a061dda7ccee296"
+      },
+      {
+       "claim": "라루스는 에베르를 프랑스의 언론인이자 정치인으로 규정한다.",
+       "source": "https://www.larousse.fr/encyclopedie/personnage/Jacques_H%C3%A9bert/123420",
+       "excerpt": "Journaliste et homme politique français (Alençon 1757-Paris 1794).",
+       "locator": "characters 16:82; sha256 95c3286c1ffed23551d59fb8e1d662a22617c1412047601e8a061dda7ccee296"
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "french-revolutionary-commune",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1792,
+     "endYear": 1794,
+     "evidence": [
+      {
+       "claim": "에베르는 1790년 《페르 뒤셴》을 창간한 언론인으로, 상퀼로트의 대표적 대변인이었다.",
+       "source": "https://www.larousse.fr/encyclopedie/personnage/Jacques_H%C3%A9bert/123420",
+       "excerpt": "Fondateur du Père Duchesne (1790), membre influent du club des Cordeliers (1791), substitut du procureur de la Commune de Paris (1792), il fut le chef de la faction hébertiste et l'un des meilleurs porte-parole de la sans-culotterie.",
+       "locator": "characters 84:317; sha256 95c3286c1ffed23551d59fb8e1d662a22617c1412047601e8a061dda7ccee296"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pierre-gaspard-chaumette",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-7287490747d1060738e5445d76a88f03e6e3c5d4a3487d6f00f7b7079ccc79c8",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pierre_Gaspard_Chaumette"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "쇼메트는 파리 코뮌 의장을 지낸 혁명기 프랑스 정치인으로, 파리 코뮌 행정을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Pierre_Gaspard_Chaumette",
+       "excerpt": "was a French politician of the Revolutionary period who served as the president of the Paris Commune and played a leading role in the establishment of the Reign of Terror",
+       "locator": "characters 104:274; sha256 dd0b67ba1aab02a45643f1a5fa92d5e62c132ac223c653b5ba12fc063235b40a"
+      },
+      {
+       "claim": "그는 혁명의 급진 에베르파 지도자로서 프랑스 혁명 진영에 속해 활동했다.",
+       "source": "https://en.wikipedia.org/wiki/Pierre_Gaspard_Chaumette",
+       "excerpt": "He was a leader of the radical Hébertistes of the revolution",
+       "locator": "characters 276:336; sha256 dd0b67ba1aab02a45643f1a5fa92d5e62c132ac223c653b5ba12fc063235b40a"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "government",
+     "affiliationId": "french-revolutionary-commune",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "jean-charles-pichegru",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-0d6930f76cb8a57f396411f55f4c74e49b95a13eb92834999560cfa4f3b968db",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean-Charles_Pichegru"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "피슈그뤼는 프랑스 혁명 전쟁에 복무한 프랑스 육군 장교였다.",
+       "source": "https://en.wikipedia.org/wiki/Jean-Charles_Pichegru",
+       "excerpt": "Divisional-General Jean-Charles Pichegru (French: [ʒɑ̃ ʃaʁlə piʃˈɡʁy]; 16 February 1761 – 5 April 1804) was a French Army officer who served in the French Revolutionary Wars.",
+       "locator": "characters 0:174; sha256 af134e9396330d1a8d2ed162173492d227f80425d54974cdadc39d1daa6f23d4"
+      },
+      {
+       "claim": "그의 지휘 아래 프랑스군이 플랑드르 전역에서 오스트리아령 네덜란드와 네덜란드 공화국을 점령했다.",
+       "source": "https://en.wikipedia.org/wiki/Jean-Charles_Pichegru",
+       "excerpt": "Under his command, French troops overran the Austrian Netherlands and Dutch Republic in the Flanders campaign before fighting on the Rhine front.",
+       "locator": "characters 175:320; sha256 af134e9396330d1a8d2ed162173492d227f80425d54974cdadc39d1daa6f23d4"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "jean-baptiste-jourdan",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-64edf8da2bf245353fee0fa3096fa9c48a2c4b3f1c4b3303be04e90458dd21ed",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean-Baptiste_Jourdan"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "주르당은 프랑스 혁명 전쟁과 나폴레옹 전쟁에서 복무한 프랑스 군사 지휘관이었다.",
+       "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Jourdan",
+       "excerpt": "was a French military commander who served during the French Revolutionary Wars and the Napoleonic Wars",
+       "locator": "characters 128:231; sha256 97a1267dcfb7e9b988f4ed320f8755380197e0dc5166ec7c628779dc9d887049"
+      },
+      {
+       "claim": "그는 프랑스 혁명군의 지휘관으로서 플뢰뤼스 전투에서 결정적 승리를 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Jourdan",
+       "excerpt": "One of the most successful commanders of the French Revolutionary Army, Jourdan is best remembered in the Revolution for leading the French to a decisive victory over the First Coalition at the Battle of Fleurus, during the Flanders campaign.",
+       "locator": "characters 458:700; sha256 97a1267dcfb7e9b988f4ed320f8755380197e0dc5166ec7c628779dc9d887049"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "jean-victor-moreau",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-6eff1a0561fae2fa6b1bc274ebf9e3f83f4e158e84cee3bca39fb3dda054d360",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean_Victor_Marie_Moreau"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "모로는 프랑스 장군으로서 군사 지휘 활동을 한 인물이다.",
+       "source": "https://en.wikipedia.org/wiki/Jean_Victor_Marie_Moreau",
+       "excerpt": "was a French general who helped Napoleon Bonaparte rise to power, but later became his chief military and political rival and was banished to the United States.",
+       "locator": "characters 109:269; sha256 07af1f582c85a0a7d73e12ba1aa7f12da273021cf02b4a14f77215bc93c9aa63"
+      },
+      {
+       "claim": "그는 프랑스 혁명군을 이끌며 호엔린덴 전투 등에서 승리를 거두는 등 군사 지휘를 수행했다.",
+       "source": "https://en.wikipedia.org/wiki/Jean_Victor_Marie_Moreau",
+       "excerpt": "He led the French Revolutionary Army to a series of victories, including the major Battle of Hohenlinden; however, he also suffered defeats against such capable military commanders as Archduke Charles and Alexander Suvorov.",
+       "locator": "characters 368:591; sha256 07af1f582c85a0a7d73e12ba1aa7f12da273021cf02b4a14f77215bc93c9aa63"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "louis-desaix",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-517e09549284213216508e4eca785ea064187a1c055cdb00236b291bc308737b",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Louis_Desaix"
+   ],
+   "activities": [
+    {
+     "endYear": 1800,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "드제는 프랑스 혁명 전쟁 중 프랑스 장군이자 군사 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Louis_Desaix",
+       "excerpt": "Louis Charles Antoine Desaix (French: [lwi ʃaʁl ɑ̃twan dəzɛ]) (17 August 1768 – 14 June 1800) was a French general and military leader during the French Revolutionary Wars.",
+       "locator": "characters 0:172; sha256 462411236f1745a7a4dd00dc7496aa6e00829f02e7e6085d45c1997aeb396c48"
+      },
+      {
+       "claim": "그는 이탈리아 군에서 두 개 보병 사단으로 구성된 군단의 지휘를 맡았다.",
+       "source": "https://en.wikipedia.org/wiki/Louis_Desaix",
+       "excerpt": "He was immediately assigned to the command of a corps of two infantry divisions serving in the Army of Italy.",
+       "locator": "characters 3546:3655; sha256 462411236f1745a7a4dd00dc7496aa6e00829f02e7e6085d45c1997aeb396c48"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "jean-joseph-amable-humbert",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-b3c09dd214ad7e4e06d06bfd6026242be52416d3c5959e1601753400014b8023",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean_Joseph_Amable_Humbert"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "앙베르는 18세기 말과 19세기 초의 여러 군사 분쟁에 참여한 프랑스 군 장교였다.",
+       "source": "https://en.wikipedia.org/wiki/Jean_Joseph_Amable_Humbert",
+       "excerpt": "General Jean Joseph Amable Humbert (French pronunciation: [ʒɑ̃ ʒozɛf amabl ɛ̃bɛʁ]; 22 August 1767 – 3 January 1823) was a French military officer who participated in several notable military conflicts of the late 18th and early 19th century.",
+       "locator": "characters 0:241; sha256 c7f0ebefdab47f0d10b3d3aa4c7fe21c16d678edd4b6aba7f05f07187a7f37ae"
+      },
+      {
+       "claim": "그는 1794년 4월 9일 준장으로 진급했고 서부 전역에서 싸운 뒤 라인 군에 배속되었다.",
+       "source": "https://en.wikipedia.org/wiki/Jean_Joseph_Amable_Humbert",
+       "excerpt": "He rapidly advanced through the ranks to become brigadier general on 9 April 1794 and fought in the Western campaigns before being allocated to the Army of the Rhine.",
+       "locator": "characters 383:549; sha256 c7f0ebefdab47f0d10b3d3aa4c7fe21c16d678edd4b6aba7f05f07187a7f37ae"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "andre-massena",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-92539413540526fc642d4f5ddb35e94149db7f0e12d89442377a89fbc7dc70d6",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andr%C3%A9_Mass%C3%A9na"
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "그는 나폴레옹 1세가 창설한 최초의 18명 원수 중 한 명으로 프랑스 제국 군대를 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Mass%C3%A9na",
+       "excerpt": "He was one of the original eighteen Marshals of the Empire created by Napoleon I, who nicknamed him \"the dear child of victory\" (l'enfant chéri de la victoire).",
+       "locator": "characters 235:395; sha256 609430ccbb98394bc6c83769903d48ed9f5422fddce3e93597df55b701b64fae"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "마세나는 프랑스 혁명 전쟁과 나폴레옹 전쟁에서 활약한 프랑스 군사 지휘관이었다.",
+       "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Mass%C3%A9na",
+       "excerpt": "André Masséna, prince d'Essling, duc de Rivoli (English:  mass-eh-NAH, French: [ɑ̃dʁe massena]; born Andrea Massena; 6 May 1758 – 4 April 1817), was a French military commander of the French Revolutionary Wars and the Napoleonic Wars.",
+       "locator": "characters 0:234; sha256 609430ccbb98394bc6c83769903d48ed9f5422fddce3e93597df55b701b64fae"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "antoine-richepanse",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-964d9296f0f07bb55bd941198660b137e4e826d70d25cf47321498d34b8a2b34",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Antoine_Richepanse"
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1801,
+     "endYear": 1802,
+     "evidence": [
+      {
+       "claim": "리슈팡스는 프랑스 육군 장교이자 식민지 총독으로 복무했다.",
+       "source": "https://en.wikipedia.org/wiki/Antoine_Richepanse",
+       "excerpt": "Divisional-General Antoine Richepanse (25 March 1770 – 3 September 1802) was a French Army officer and colonial administrator who served as the governor of Guadeloupe from 1801 to 1802.",
+       "locator": "characters 0:185; sha256 92ebe6b42dc3b30e6c8a6e6a3ce3069a60cdde13b9af432e2c7e7e0ea4738800"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1797,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "그는 프랑스 혁명군에서 사단장으로 진급하여 전투를 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Antoine_Richepanse",
+       "excerpt": "In 1797 he was promoted to divisional general and served under the command of Lazare Hoche. Richepanse distinguished himself at the Battle of Neuwied, where the Austrians lost 8000 men, 27 cannons and 7 colours.",
+       "locator": "characters 1185:1396; sha256 92ebe6b42dc3b30e6c8a6e6a3ce3069a60cdde13b9af432e2c7e7e0ea4738800"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "napoleon-bonaparte",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-009c3a5b4418b4c894f201ba1a6be5d15b11f2c02323be67bb443d403e61b6ec",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Napoleon"
+   ],
+   "activities": [
+    {
+     "endYear": 1815,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "나폴레옹은 1804년부터 프랑스 황제로서 프랑스 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Napoleon",
+       "excerpt": "Napoleon Bonaparte (born Napoleone di Buonaparte; 15 August 1769 – 5 May 1821), later known by his regnal name Napoleon I, was Emperor of the French from 18 May 1804 until his first abdication in 1814, with a brief restoration during the Hundred Days in 1815.",
+       "locator": "characters 0:259; sha256 78fa13115d7425320bbadceb027cb28a6b8290ccada5dd256ef57d6f0cc623b0"
+      },
+      {
+       "claim": "나폴레옹은 1799년 브뤼메르 쿠데타 이후 제1통령으로서 프랑스 공화국 정부를 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Napoleon",
+       "excerpt": "In November 1799 Napoleon engineered the Coup of 18 Brumaire against the French Directory and became First Consul of the Republic.",
+       "locator": "characters 1231:1361; sha256 78fa13115d7425320bbadceb027cb28a6b8290ccada5dd256ef57d6f0cc623b0"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1799,
+     "functionId": "government",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "olympe-de-gouges",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-d462bc7bacb183344a62bebe15c5e98b1d69117c864588338b9c55197b795703",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Olympe_de_Gouges"
+   ],
+   "activities": [
+    {
+     "functionId": "arts",
+     "affiliationId": null,
+     "affiliationStatus": "independent",
+     "relation": "independent",
+     "primary": true,
+     "startYear": 1780,
+     "endYear": 1793,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Olympe_de_Gouges",
+       "locator": "plain-text extract characters 0:138; sha256 44820a88db4dc10ea111a04cb9aa2bca55b73d53d76c441fe66c48a56ac88c59",
+       "claim": "올랭프 드 구주는 프랑스의 극작가이자 정치 활동가였다.",
+       "excerpt": "Olympe de Gouges (French: [ɔlɛ̃p də ɡuʒ] ; born Marie Gouze; 7 May 1748 – 3 November 1793) was a French playwright and political activist."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Olympe_de_Gouges",
+       "locator": "plain-text extract characters 881:1149; sha256 44820a88db4dc10ea111a04cb9aa2bca55b73d53d76c441fe66c48a56ac88c59",
+       "claim": "1791년 구주는 『여성과 여성 시민의 권리 선언』을 발표해 여성의 동등한 권리를 주장했다.",
+       "excerpt": "In 1791, in response to the 1789 Declaration of the Rights of Man and of the Citizen, de Gouges published her Declaration of the Rights of Woman and of the Female Citizen, in which she challenged the practice of male authority and advocated for equal rights for women."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jacques-louis-david",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-1fc9f9bad87c6eaaae040e893d17647f1d6c5deb75a442f1d41bd6c13a4751cf",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jacques-Louis_David"
+   ],
+   "activities": [
+    {
+     "functionId": "arts",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jacques-Louis_David",
+       "locator": "plain-text extract characters 18443:18522; sha256 9875800e206b573429db26ccc6d3a42a032a801e22842dfac9c7de382663041a",
+       "claim": "다비드는 공화국을 위해 여러 대규모 혁명 축전을 연출했다.",
+       "excerpt": "This was the first of many large festivals organized by David for the republic."
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1793,
+     "endYear": 1794,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jacques-Louis_David",
+       "locator": "plain-text extract characters 25330:25431; sha256 9875800e206b573429db26ccc6d3a42a032a801e22842dfac9c7de382663041a",
+       "claim": "다비드는 보안위원회 위원으로서 공포정치에 직접 관여했다.",
+       "excerpt": "David, as a member of the Committee of General Security, contributed directly to the Reign of Terror."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sylvain-marechal",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-edfc992febbfee660d3c973d70770217a9e9a904d518dc0cf5e511f48398e331",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sylvain_Mar%C3%A9chal"
+   ],
+   "activities": [
+    {
+     "functionId": "organizing",
+     "affiliationId": "french-equals",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "primary": true,
+     "startYear": 1796,
+     "endYear": 1796,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Sylvain_Mar%C3%A9chal",
+       "locator": "plain-text extract characters 2967:3291; sha256 a5cc51e006f712fd9edcb5a050984d7a9b48c760bfcf79e4ea2e0bb7b9074f31",
+       "claim": "마레샬은 바뵈프의 음모에 가담해 『평등주의자 선언』을 썼다.",
+       "excerpt": "The encounter between him and François-Noël Babeuf (Gracchus Babeuf) and involvement in the latter's conspiracy was to find in Maréchal an early influence on utopian socialism, as evidenced by the manifesto he wrote in support of Babeuf's goals: \"The Manifesto of the Equals\" – Le Manifeste des Égaux (first issued in 1796)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "paul-lafargue",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-e42544f08661f376c959663861e568a648c8c4eb1a7dc325226dd4c05fb6bf35",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Paul_Lafargue"
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-french-workers",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Paul_Lafargue",
+       "locator": "plain-text extract characters 7021:7300; sha256 36c262bc4c8107da872718c01ed7d67c9a8def7253171d1b708ecdfcb2d98d35",
+       "claim": "라파르그는 게드·드빌과 함께 새로 창당한 프랑스 노동자당(POF)의 활동을 지도했다.",
+       "excerpt": "Together with Jules Guesde and Gabriel Deville, he began directing the activities of the newly initiated French Workers' Party (Parti Ouvrier Français; POF), which he caused to conflict with other major left-wing trends: anarchism, as well as the Jacobin Radicals and Blanquists."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "etienne-cabet",
+   "reviewed": true,
+   "reviewMethod": "French Revolution affiliation review 2026-09-26",
+   "expectedRevision": "v1-b10a9d685b1e3efef15b438be3a21b7aa25b518774bf4bb9854fbc92ae9aedcf",
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C3%89tienne_Cabet"
+   ],
+   "activities": [
+    {
+     "functionId": "organizing",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Cabet",
+       "locator": "plain-text extract characters 0:146; sha256 ab4edab64ed7e9787dcbd8ecc7474ac57e9ebb4242743a00c08a049ee5ff0b91",
+       "claim": "카베는 이카리아 운동을 창시한 공상적 사회주의자였다.",
+       "excerpt": "Étienne Cabet (French: [etjɛn kabɛ]; January 1, 1788 – November 9, 1856) was a philosopher and utopian socialist who founded the Icarian movement."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Cabet",
+       "locator": "plain-text extract characters 623:752; sha256 ab4edab64ed7e9787dcbd8ecc7474ac57e9ebb4242743a00c08a049ee5ff0b91",
+       "claim": "카베는 텍사스와 일리노이에 이카리아 공동체를 세웠다.",
+       "excerpt": "Cabet founded utopian communities in Texas and Illinois, but was again undercut, this time by recurring feuds with his followers."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
