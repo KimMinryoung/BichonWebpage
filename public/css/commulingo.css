@@ -3587,6 +3587,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Zoomed out past the fitted frame (commulingo-event-map.js), outline it. */
 .emap-frame-outline { display: none; fill: none; stroke: color-mix(in srgb, var(--text-muted) 70%, transparent); stroke-width: 1; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
 .emap-svg.is-zoomed-out .emap-frame-outline { display: inline; }
+.emap-svg.is-zoomed-far .emap-label, .emap-svg.is-zoomed-far .emap-geo-label.is-active { display: none; }
 .emap-lake { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 30%, transparent); stroke-width: .5; }
 .emap-river { fill: none; stroke: var(--bg-surface); stroke-width: 1.1; stroke-linecap: round; }
 /* Territorial control (event-control.js): translucent side tones over the

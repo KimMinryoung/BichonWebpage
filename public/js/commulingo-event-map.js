@@ -58,6 +58,9 @@
                 var vy = next < 1 ? clamp((box.height - h) / 2, surround[1], surround[1] + surround[3] - h) : 0;
                 world.setAttribute('viewBox', [vx, vy, w, h].join(' '));
                 svg.classList.toggle('is-zoomed-out', next < 1);
+                // Names shrink with the map; past the second step they are
+                // too small to read, so only the markers stay.
+                svg.classList.toggle('is-zoomed-far', next < 0.6);
             }
             viewport.scrollLeft = x;
             viewport.scrollTop = y;
