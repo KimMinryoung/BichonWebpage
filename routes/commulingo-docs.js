@@ -5,6 +5,7 @@ const errorPage = require('../utils/error-page');
 const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
+const { courseChaptersForDoc } = require('../data/commulingo/book-page');
 const { paginateList } = require('../data/commulingo/list-pagination');
 
 const router = express.Router();
@@ -82,6 +83,8 @@ router.get('/:docId', async (req, res) => {
         // back out to where the text sits in the story. The forward direction
         // (a chart node pointing at a document) is a `doc` ref in the chart JSON.
         doc.genealogies = genealogyLinksFor('doc', docId, lang);
+        // Course chapters that read this document.
+        doc.courses = courseChaptersForDoc(docId, lang);
         const { html, toc, paged } = getCommuLingoDocContent(raw);
         setShortPublicCache(res);
 

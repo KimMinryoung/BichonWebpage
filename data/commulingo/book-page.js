@@ -283,6 +283,28 @@ async function courseChaptersFor(keys, lang, limit = 6) {
     }
 }
 
+// Course chapters built on a reference document: those whose sourceUrl is the
+// document page (any anchor), so a reader of the text can go and study it.
+function courseChaptersForDoc(docId, lang) {
+    const prefix = '/commulingo/docs/' + docId;
+    const out = [];
+    for (const collection of (loadCommuLingoCatalog() || {}).collections || []) {
+        for (const chapter of collection.chapters || []) {
+            const url = String(chapter.sourceUrl || '');
+            const lesson = (chapter.lessons || [])[0];
+            if (!lesson || (url !== prefix && !url.startsWith(prefix + '#'))) continue;
+            out.push({
+                bookId: collection.id,
+                bookTitle: localize(collection.title, lang),
+                chapterNumber: chapter.chapterNumber,
+                chapterTitle: localize(chapter.title, lang),
+                lessonId: lesson.id,
+            });
+        }
+    }
+    return out;
+}
+
 // Startup warm-up, one language after the other.
 async function warmCourseChapters() {
     for (const lang of ['ko', 'en']) {
@@ -333,4 +355,4 @@ async function linkifyLessonPayload(lesson) {
     return lesson;
 }
 
-module.exports = { bookPageData, linkifyLessonPayload, courseChaptersFor, warmCourseChapters };
+module.exports = { bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc, warmCourseChapters };

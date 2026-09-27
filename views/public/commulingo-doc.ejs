@@ -127,12 +127,16 @@ var refGroups = [
     { label: strings.commuLingoViews.doc.genealogy, path: 'genealogy',
       items: (doc.genealogies || []).map(function(chart) { return { id: chart.id, name: chart.title }; }) },
 ].filter(function(group) { return group.items.length; });
+var docCourses = doc.courses || [];
 %>
-<% if (refGroups.length) { %>
+<% if (refGroups.length || docCourses.length) { %>
 <p class="doc-refs">
     <% refGroups.forEach(function(group) { %>
     <span class="doc-refs-group"><span class="doc-refs-label"><%= group.label %></span><% group.items.forEach(function(item, i) { %><a href="/commulingo/<%= group.path %>/<%= item.id %>" target="_blank" rel="noopener"><%= item.name %></a><%= i < group.items.length - 1 ? ', ' : '' %><% }) %></span>
     <% }) %>
+    <% if (docCourses.length) { %>
+    <span class="doc-refs-group"><span class="doc-refs-label"><%= strings.commuLingoViews.doc.learn %></span><% docCourses.forEach(function(chapter, i) { %><% if (i === 0 || docCourses[i - 1].bookId !== chapter.bookId) { %><%= chapter.bookTitle %> · <% } %><a href="/commulingo/book/<%= chapter.bookId %>#lesson=<%= encodeURIComponent(chapter.lessonId) %>" target="_blank" rel="noopener"><%= strings.commuLingoViews.practice.chapter.replace('{n}', chapter.chapterNumber) %> <%= chapter.chapterTitle %></a><%= i < docCourses.length - 1 ? ', ' : '' %><% }) %></span>
+    <% } %>
 </p>
 <% } %>
 <%- bodyRestHtml %>

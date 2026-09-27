@@ -33,6 +33,7 @@ const extendRule = extendIndex === -1 ? null : process.argv[extendIndex + 1];
 const expected = {
   'french-revolution-intro': { chapters: 10, questions: 30, lessons: 10, format: 'short-learning' },
   'socialist-divergences-intro': { chapters: 6, questions: 18, lessons: 6, format: 'short-learning' },
+  'french-revolution-documents': { chapters: 8, questions: 24, lessons: 8, format: 'short-learning' },
   'capital-vol1': { chapters: 33, questions: 330, lessons: 66 },
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },
@@ -46,7 +47,7 @@ const expectedSpecial = {
   'history-russian-revolution': { format: 'decision-history', eras: 4, episodes: 14 },
   'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
-const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2, 'french-revolution-intro': 3 };
+const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2, 'french-revolution-intro': 3, 'french-revolution-documents': 3 };
 
 const out = checks.createCollector();
 const data = loadCommuLingoBundle().bundle;

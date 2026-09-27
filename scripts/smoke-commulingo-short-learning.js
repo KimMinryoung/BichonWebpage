@@ -1,20 +1,26 @@
 #!/usr/bin/env node
 const assert = require('node:assert/strict');
 const checks = require('./lib/commulingo-checks');
-const courses = [require('../data/commulingo/courses/french-revolution-intro'), require('../data/commulingo/courses/socialist-divergences-intro')];
+const courses = [require('../data/commulingo/courses/french-revolution-intro'), require('../data/commulingo/courses/socialist-divergences-intro'), require('../data/commulingo/courses/french-revolution-documents')];
 function issues(collections) {
   const out = checks.createCollector();
   checks.checkChapters(out, collections);
   return out.issues;
 }
 assert.deepEqual(issues(courses), []);
-assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 48);
+assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 72);
 assert.equal(courses[0].chapters.length, 10);
 assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 30);
 assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 assert.equal(courses[0].title.ko, '프랑스 혁명사');
 assert.equal(courses[1].visibility, undefined);
 assert.deepEqual(courses[1].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6]);
+assert.equal(courses[2].visibility, undefined);
+assert.deepEqual(courses[2].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6, 7, 8]);
+// Every document-reading question cites the reference document it reads.
+for (const chapter of courses[2].chapters) {
+  for (const question of chapter.lessons[0].questions) assert(question.source.href.startsWith('/commulingo/docs/'), question.id);
+}
 assert.equal(courses[0].factionGuide.layers.length, 4);
 assert.deepEqual(courses[0].factionGuide.layers.map(layer => layer.groups.length), [4, 3, 4, 3]);
 assert.equal(courses[0].factionGuide.timeline.length, 5);
@@ -65,4 +71,4 @@ for (const href of ['javascript:alert(1)', 'https://www.marxists.org.evil.exampl
 const out = checks.createCollector();
 checks.checkSource(out, { kind: 'reference', href: '/commulingo/docs/french-revolution-intro', label: { ko: '자료', en: 'Source' }, quote: { ko: '요약', en: 'Paraphrase' } }, 'not-a-quotation');
 assert(out.issues.some(i => i.rule === 'source-shape'));
-console.log('Short learning: 48 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');
+console.log('Short learning: 72 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');
