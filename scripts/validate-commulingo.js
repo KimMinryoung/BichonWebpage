@@ -32,7 +32,7 @@ const extendRule = extendIndex === -1 ? null : process.argv[extendIndex + 1];
 // this map on purpose, together with PUBLIC_CHAPTER_LIMITS in shards.js.
 const expected = {
   'french-revolution-intro': { chapters: 10, questions: 30, lessons: 10, format: 'short-learning' },
-  'socialist-divergences-intro': { chapters: 4, questions: 12, lessons: 4, format: 'short-learning' },
+  'socialist-divergences-intro': { chapters: 6, questions: 18, lessons: 6, format: 'short-learning' },
   'capital-vol1': { chapters: 33, questions: 330, lessons: 66 },
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },

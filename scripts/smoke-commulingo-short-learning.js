@@ -8,12 +8,13 @@ function issues(collections) {
   return out.issues;
 }
 assert.deepEqual(issues(courses), []);
-assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 42);
+assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 48);
 assert.equal(courses[0].chapters.length, 10);
 assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 30);
 assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 assert.equal(courses[0].title.ko, '프랑스 혁명사');
-assert.equal(courses[1].visibility, 'private');
+assert.equal(courses[1].visibility, undefined);
+assert.deepEqual(courses[1].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6]);
 assert.equal(courses[0].factionGuide.layers.length, 4);
 assert.deepEqual(courses[0].factionGuide.layers.map(layer => layer.groups.length), [4, 3, 4, 3]);
 assert.equal(courses[0].factionGuide.timeline.length, 5);
@@ -29,8 +30,8 @@ for (const layer of courses[0].factionGuide.layers) {
 const publishedFrench = require('../data/commulingo/shards').loadCommuLingoCatalog().collections.find(collection => collection.id === 'french-revolution-intro');
 assert.equal(publishedFrench.factionGuide.layers.length, 4);
 const publishedSocialist = require('../data/commulingo/shards').loadCommuLingoCatalog().collections.find(collection => collection.id === 'socialist-divergences-intro');
-assert.equal(publishedSocialist, undefined);
-assert.equal(require('../data/commulingo/shards').loadCommuLingoLesson('socialist-divergences-intro-ch01-basic'), null);
+assert.equal(publishedSocialist.chapters.length, 6);
+assert(require('../data/commulingo/shards').loadCommuLingoLesson('socialist-divergences-intro-ch05-basic'));
 const factionGuide = JSON.stringify(courses[0].factionGuide);
 for (const required of ['푀양파', '왕정복고파와 망명귀족', '선서거부 성직자와 가톨릭 저항', '방데·슈앙 반란 세력', '지롱드파', '평원파', '산악파', '자코뱅 클럽', '코르들리에 클럽', '상퀼로트', '앙라제', '에베르파', '로베스피에르파', '당통파', 'jacques-rene-hebert']) {
   assert(factionGuide.includes(required), 'French Revolution faction guide is missing ' + required);
@@ -64,4 +65,4 @@ for (const href of ['javascript:alert(1)', 'https://www.marxists.org.evil.exampl
 const out = checks.createCollector();
 checks.checkSource(out, { kind: 'reference', href: '/commulingo/docs/french-revolution-intro', label: { ko: '자료', en: 'Source' }, quote: { ko: '요약', en: 'Paraphrase' } }, 'not-a-quotation');
 assert(out.issues.some(i => i.rule === 'source-shape'));
-console.log('Short learning: 42 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');
+console.log('Short learning: 48 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');
