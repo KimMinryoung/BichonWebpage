@@ -77,6 +77,14 @@
 
 ## 다음 단계
 
-1. 후보 2(사회주의의 분기) 공개 범위를 결정한다. 확장 없이 4편만 먼저 공개할 수도 있다.
-2. 후보 1의 문헌 묶음 → 장 구성안을 짠다.
-3. 2~4주 뒤 같은 기준(신뢰 방문)으로 로그를 다시 집계한다. 강좌 링크 추가 효과는 `scripts/commulingo-learning-report.js`로 본다. 방문자 수를 세려면 nginx에서 Cloudflare 실제 IP(`CF-Connecting-IP`)를 해시로 남기는 설정이 필요하다.
+1. 다음 강좌는 후보 3(대숙청과 보안기관 1934–1941)이다. 그다음은 후보 4(초기 소련 경제 논쟁)다. 후보 1·2는 끝났다.
+2. 2~4주 뒤 같은 기준(신뢰 방문)으로 로그를 다시 집계한다. 강좌 링크 추가 효과는 `scripts/commulingo-learning-report.js`로 본다. 방문자 수를 세려면 nginx에서 Cloudflare 실제 IP(`CF-Connecting-IP`)를 해시로 남기는 설정이 필요하다.
+
+## 새 short-learning 강좌 추가 절차 (2026-09-27 두 강좌에서 확인)
+
+1. **형식:** `data/commulingo/courses/<id>.js`를 `french-revolution-intro.js`·`socialist-divergences-intro.js`와 같은 모양으로 만든다. `format: "short-learning"`, 역사물은 `category: "history"`, 장마다 레슨 하나(`<chapter-id>-basic`, basic), 3문항, 보기 3개, 정답 0번(화면에서 섞음), points 2, 보기별 `choiceFeedback`, `source: {kind: "reference", href, label}`로 구성한다. `conceptMap` 노드는 `text` 필수이고, 본문에 「N장」·"Chapter N"을 쓰면 안 된다.
+2. **출처:** 허용 호스트는 `scripts/lib/commulingo-checks.js`의 `checkSource`에 있다(`/commulingo/docs/…`, marxists.org 등). 외부 URL은 curl로 200을 확인하고, 원문을 읽고 문항을 쓴다. 사이트에 있는 참고 문헌(`data/commulingo/docs/`)을 `sourceUrl`로 쓰면 그 문헌 페이지에 「학습」 링크가 자동으로 붙는다.
+3. **등록:** `data/commulingo/shards.js`의 `PUBLIC_CHAPTER_LIMITS`, `scripts/validate-commulingo.js`의 `expected`(부가 있으면 `requiredParts`), `scripts/smoke-commulingo-short-learning.js`를 갱신한다. 비공개로 작업하려면 `visibility: "private"`를 쓴다.
+4. **목록 위치:** `public/js/commulingo-index.js`의 `bookGroups`가 정한다. 역사 묶음은 `volumeNumber` 순이다(현재 11 프랑스 혁명사, 12 사회주의의 분기, 13 러시아 혁명사, 14 소련사). 시기에 맞게 번호를 고른다.
+5. **검증·배포:** `node scripts/build-commulingo-shards.js` → 스모크·`validate-commulingo.js` → preview 브라우저 확인(`#lesson=<id>` 딥링크는 새로 연 페이지에서만 동작) → `npm test` → 커밋 → `scripts/deploy --restart`(`shards.js`가 바뀌므로 재시작 필요) → `changed-commulingo-lessons.js <old-ref> HEAD | purge-commulingo.js --old-version <old> --stdin` → push.
+6. **작성 분담:** 초안은 서브에이전트에 맡길 수 있다(파일 두 개만 쓰게 하고 통합은 직접 한다). 문항은 전부 읽고, 의심 가는 사실은 원문과 대조한다. 사전 상세 페이지의 강좌 장 링크는 서버 시작 뒤 백그라운드 역색인(`courseChaptersFor`)으로 자동 생성된다.
