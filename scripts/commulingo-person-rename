@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# commulingo-person-rename — rename CommuLingo person ids with 301 redirects
+# (see scripts/commulingo-person-rename.js for the spec).
+# Runs inside the production container so DB_HOST resolves; `-` reads stdin.
+#
+#   scripts/commulingo-person-rename spec.json [--dry-run] [--changed-by who]
+set -euo pipefail
+CONTAINER="${CONTAINER_NAME:-leninbot-frontend}"
+SPEC="${1:?usage: commulingo-person-rename <spec.json|-> [--dry-run] [--changed-by who]}"; shift
+if [ "$SPEC" = "-" ]; then
+    exec docker exec -i "$CONTAINER" node /app/scripts/commulingo-person-rename.js - "$@"
+fi
+exec docker exec -i "$CONTAINER" node /app/scripts/commulingo-person-rename.js - "$@" < "$SPEC"
