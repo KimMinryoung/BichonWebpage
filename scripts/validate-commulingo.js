@@ -31,7 +31,7 @@ const extendRule = extendIndex === -1 ? null : process.argv[extendIndex + 1];
 // out of the file; the totals are their sum. Adding a chapter means editing
 // this map on purpose, together with PUBLIC_CHAPTER_LIMITS in shards.js.
 const expected = {
-  'french-revolution-intro': { chapters: 18, questions: 54, lessons: 18, format: 'short-learning' },
+  'french-revolution-intro': { chapters: 9, questions: 54, lessons: 9, format: 'short-learning' },
   'socialist-divergences-intro': { chapters: 6, questions: 18, lessons: 6, format: 'short-learning' },
   'capital-vol1': { chapters: 33, questions: 330, lessons: 66 },
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },

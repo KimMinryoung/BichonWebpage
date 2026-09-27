@@ -385,7 +385,9 @@ function checkChapter(out, chapter, collectionId, ctx) {
   const lessons = chapter.lessons || [];
   const shortLearning = Boolean(ctx && ctx.shortLearning);
   const lessonCount = shortLearning ? 1 : 2;
-  const questionCount = shortLearning ? 3 : 5;
+  // A short lesson is three questions; a chapter that joins two short readings
+  // on one period may carry up to six.
+  const questionCounts = shortLearning ? [3, 4, 5, 6] : [5];
   if (lessons.length !== lessonCount) out.add('shape', label, chapterLabel + ' lesson count ' + lessons.length + ' != ' + lessonCount);
   const levels = lessons.map(function(lesson) { return lesson.level; }).sort().join(',');
   const expectedLevels = shortLearning ? 'basic' : 'advanced,basic';
@@ -395,7 +397,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
     const lessonLabel = chapterLabel + '/' + lesson.id;
     allLocalizedText(out, lesson.title, lessonLabel + '.title');
     const questions = lesson.questions || [];
-    if (questions.length !== questionCount) out.add('shape', lesson.id, lessonLabel + ' question count ' + questions.length + ' != ' + questionCount);
+    if (questionCounts.indexOf(questions.length) === -1) out.add('shape', lesson.id, lessonLabel + ' question count ' + questions.length + ' not in ' + questionCounts.join('/'));
     questions.forEach(function(question, index) { checkQuestion(out, question, lesson, index, ctx); });
   });
 }

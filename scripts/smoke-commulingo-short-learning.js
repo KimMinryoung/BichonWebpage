@@ -9,19 +9,19 @@ function issues(collections) {
 }
 assert.deepEqual(issues(courses), []);
 assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 72);
-assert.equal(courses[0].chapters.length, 18);
+assert.equal(courses[0].chapters.length, 9);
 assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 54);
-assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), Array.from({ length: 18 }, (_, i) => i + 1));
+assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), Array.from({ length: 9 }, (_, i) => i + 1));
 assert.equal(courses[0].title.ko, '프랑스 혁명사');
 assert.equal(courses[1].visibility, undefined);
 assert.equal(courses[1].category, 'history');
 assert.deepEqual(courses[1].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6]);
-// The document-reading chapters sit in their periods; each question cites the reference document it reads.
-const documentChapters = courses[0].chapters.filter(chapter => Number(chapter.id.slice(-2)) >= 11);
+// Each period's narrative and its primary-source reading form one six-question
+// chapter; every chapter cites at least one of the site's reference documents.
 assert(courses[0].chapters.every(chapter => chapter.partNumber >= 1 && chapter.partNumber <= 3));
-assert.equal(documentChapters.length, 8);
-for (const chapter of documentChapters) {
-  for (const question of chapter.lessons[0].questions) assert(question.source.href.startsWith('/commulingo/docs/'), question.id);
+for (const chapter of courses[0].chapters) {
+  assert.equal(chapter.lessons[0].questions.length, 6, chapter.id);
+  assert(chapter.lessons[0].questions.some(question => question.source.href.startsWith('/commulingo/docs/')), chapter.id);
 }
 assert.equal(courses[0].factionGuide.layers.length, 4);
 assert.deepEqual(courses[0].factionGuide.layers.map(layer => layer.groups.length), [4, 3, 4, 3]);
@@ -45,7 +45,7 @@ for (const required of ['푀양파', '왕정복고파와 망명귀족', '선서�
   assert(factionGuide.includes(required), 'French Revolution faction guide is missing ' + required);
 }
 const frenchHistory = JSON.stringify(courses[0]);
-for (const required of ['미국 독립전쟁', '브룬스윅 선언', '발미', '방데전쟁', '에베르파', '당통', '1,376', '국민총동원령', '에베르파', '당통파', '프레리알', '테르미도르 9일', '자매공화국', '브뤼메르']) {
+for (const required of ['미국 독립전쟁', '브라운슈바이크 선언', '발미', '방데전쟁', '에베르파', '당통파', '1,376', '국민총동원령', '프레리알', '테르미도르 9일', '자매공화국', '브뤼메르']) {
   assert(frenchHistory.includes(required), 'French Revolution history is missing ' + required);
 }
 for (const course of courses) {
