@@ -26,6 +26,7 @@ const router = express.Router();
 const { termListData, termGroupCardsHtml, buildTermPanel } = require('../data/commulingo/term-presentation');
 const { buildEventPanel } = require('../data/commulingo/event-presentation');
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
+const { courseChaptersFor } = require('../data/commulingo/book-page');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'terms', view: 'partials/commulingo-term-cards', target: '#commu-term-list',
@@ -106,6 +107,8 @@ router.get('/:termId', async (req, res) => {
                 ? await buildEventPanel(term.sameSubjectEvent.id, lang)
                 : null,
             practiceDecks: await practiceDecksFor(practiceHrefs, lang),
+            courseChapters: await courseChaptersFor(
+                [`terms:${term.id}`].concat(term.sameSubjectEvent ? [`events:${term.sameSubjectEvent.id}`] : []), lang),
             activePanel: 'term',
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,

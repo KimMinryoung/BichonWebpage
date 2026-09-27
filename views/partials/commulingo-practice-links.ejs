@@ -1,14 +1,19 @@
-<%# Detail page → the course scenes and drill decks that quiz this entry. %>
+<%# Detail page → the course scenes (curated) and chapters (linked from lesson prose) that teach this entry, then the drill decks that quiz it. %>
+        <% var practiceCopy = strings.commuLingoViews.practice; %>
+        <% var practiceChapters = typeof chapters !== 'undefined' && chapters ? chapters : []; %>
         <% var practiceScenes = typeof scenes !== 'undefined' && scenes ? scenes : []; %>
-        <% if (practiceScenes.length || (decks && decks.length)) { %>
+        <% if (practiceChapters.length || practiceScenes.length || (decks && decks.length)) { %>
         <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="practice-links">
-            <h2 id="practice-links"><%= strings.commuLingoViews.practice.heading %></h2>
+            <h2 id="practice-links"><%= practiceCopy.heading %></h2>
             <ul class="commu-related-report-list commu-practice-list">
                 <% practiceScenes.forEach(function(scene) { %>
-                <li><a href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>"><span><%= strings.commuLingoViews.practice.course %> · <%= scene.bookTitle %></span><strong><%= scene.title %></strong></a></li>
+                <li><a href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>"><span><%= practiceCopy.course %> · <%= scene.bookTitle %></span><strong><%= scene.title %></strong></a></li>
+                <% }) %>
+                <% practiceChapters.forEach(function(chapter) { %>
+                <li><a href="/commulingo/book/<%= chapter.bookId %>#lesson=<%= encodeURIComponent(chapter.lessonId) %>"><span><%= practiceCopy.course %> · <%= chapter.bookTitle %><% if (chapter.chapterNumber) { %> · <%= practiceCopy.chapter.replace('{n}', chapter.chapterNumber) %><% } %></span><strong><%= chapter.chapterTitle %></strong></a></li>
                 <% }) %>
                 <% (decks || []).forEach(function(deck) { %>
-                <li><a href="/commulingo/drill/<%= deck.id %>"><span><% if (deck.kind === 'quiz') { %><%= strings.commuLingoViews.practice.quiz %> · <% } %><%= deck.group %></span><strong><%= deck.title %></strong></a></li>
+                <li><a href="/commulingo/drill/<%= deck.id %>"><span><% if (deck.kind === 'quiz') { %><%= practiceCopy.quiz %> · <% } %><%= deck.group %></span><strong><%= deck.title %></strong></a></li>
                 <% }) %>
             </ul>
         </section>

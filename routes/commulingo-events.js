@@ -13,6 +13,7 @@ const router = express.Router();
 const { buildEventPanel, pairedTermIdFor, presentedEventList } = require('../data/commulingo/event-presentation');
 const { buildTermPanel } = require('../data/commulingo/term-presentation');
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
+const { courseChaptersFor } = require('../data/commulingo/book-page');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'events', view: 'partials/commulingo-events-cards', target: '#commu-event-list',
@@ -74,6 +75,8 @@ router.get('/:eventId', async (req, res) => {
             event,
             termPanel: pairedTerm ? await buildTermPanel(pairedTerm, lang) : null,
             practiceDecks: await practiceDecksFor(practiceHrefs, lang),
+            courseChapters: await courseChaptersFor(
+                [`events:${event.id}`].concat(pairedTerm ? [`terms:${pairedTerm}`] : []), lang),
             activePanel: 'event',
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,

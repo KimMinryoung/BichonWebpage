@@ -137,6 +137,9 @@ const server = app.listen(env.PORT, () => {
     // Pre-build the report-mentions reverse index so the first CommuLingo
     // person/event page after a restart doesn't pay the cold-start DB query.
     require('./services/report-mentions').warmReportMentions();
+    // Same for the dictionary entry → course chapter index (seconds of CPU,
+    // built in yielding steps).
+    require('./data/commulingo/book-page').warmCourseChapters();
 });
 server.on('error', (err) => {
     console.error('[server] listen failed:', err.code || '', err.message);

@@ -40,6 +40,7 @@ const router = express.Router();
 
 const { cardTextLinker, peopleGroupCardsHtml, personBody } = require('../data/commulingo/people-presentation');
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
+const { courseChaptersFor } = require('../data/commulingo/book-page');
 
 router.get('/people', async (req, res) => {
     try {
@@ -396,6 +397,7 @@ router.get('/people/:personId', async (req, res) => {
             relatedReports,
             relatedDocs,
             practiceDecks: await practiceDecksFor([`/commulingo/people/${person.id}`], lang),
+            courseChapters: await courseChaptersFor([`people:${person.id}`], lang),
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,

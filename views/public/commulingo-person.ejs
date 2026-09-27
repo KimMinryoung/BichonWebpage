@@ -106,7 +106,7 @@
         </section>
         <% }) %>
 
-        <%- include('../partials/commulingo-practice-links', { decks: typeof practiceDecks !== 'undefined' ? practiceDecks : [], scenes: person.scenes }) %>
+        <%- include('../partials/commulingo-practice-links', { decks: typeof practiceDecks !== 'undefined' ? practiceDecks : [], chapters: typeof courseChapters !== 'undefined' ? courseChapters : [], scenes: person.scenes }) %>
 
         <%- include('../partials/commulingo-genealogy-links', { en: en, charts: typeof genealogies !== 'undefined' ? genealogies : [], headword: person.displayName || person.name }) %>
 

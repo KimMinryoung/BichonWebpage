@@ -548,6 +548,7 @@ const ko = {
             heading: '문제로 익히기',
             course: '강좌',
             quiz: '퀴즈',
+            chapter: '{n}장',
         },
         role: {
             people: '인물 사전',
@@ -1129,6 +1130,7 @@ const en = {
             heading: 'Practice',
             course: 'Course',
             quiz: 'Quiz',
+            chapter: 'Ch. {n}',
         },
         role: {
             people: 'People',
