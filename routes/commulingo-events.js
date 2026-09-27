@@ -12,6 +12,7 @@ const router = express.Router();
 
 const { buildEventPanel, pairedTermIdFor, presentedEventList } = require('../data/commulingo/event-presentation');
 const { buildTermPanel } = require('../data/commulingo/term-presentation');
+const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'events', view: 'partials/commulingo-events-cards', target: '#commu-event-list',
@@ -66,10 +67,13 @@ router.get('/:eventId', async (req, res) => {
         setShortPublicCache(res);
         // Show the glossary half when the two entries have the same subject.
         const pairedTerm = await pairedTermIdFor(eventId);
+        const practiceHrefs = [`/commulingo/events/${event.id}`];
+        if (pairedTerm) practiceHrefs.push(`/commulingo/terms/${pairedTerm}`);
         res.render('public/commulingo-event', {
             ...panel,
             event,
             termPanel: pairedTerm ? await buildTermPanel(pairedTerm, lang) : null,
+            practiceDecks: await practiceDecksFor(practiceHrefs, lang),
             activePanel: 'event',
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,

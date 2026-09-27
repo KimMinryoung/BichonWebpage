@@ -25,6 +25,7 @@ const router = express.Router();
 
 const { termListData, termGroupCardsHtml, buildTermPanel } = require('../data/commulingo/term-presentation');
 const { buildEventPanel } = require('../data/commulingo/event-presentation');
+const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'terms', view: 'partials/commulingo-term-cards', target: '#commu-term-list',
@@ -95,6 +96,8 @@ router.get('/:termId', async (req, res) => {
         }
         const term = panel.term;
         // Show the narrative half when the two entries have the same subject.
+        const practiceHrefs = [`/commulingo/terms/${term.id}`];
+        if (term.sameSubjectEvent) practiceHrefs.push(`/commulingo/events/${term.sameSubjectEvent.id}`);
         setShortPublicCache(res);
         res.render('public/commulingo-term', {
             ...panel,
@@ -102,6 +105,7 @@ router.get('/:termId', async (req, res) => {
             eventPanel: term.sameSubjectEvent
                 ? await buildEventPanel(term.sameSubjectEvent.id, lang)
                 : null,
+            practiceDecks: await practiceDecksFor(practiceHrefs, lang),
             activePanel: 'term',
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,

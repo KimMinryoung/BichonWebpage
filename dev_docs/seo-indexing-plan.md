@@ -71,6 +71,16 @@
 - [ ] `priority`와 `changefreq`에 의존하지 않고 내부 링크와 정확한 `lastmod`를 관리한다.
 - [ ] 저자 소개, 편집 원칙, 출처 사용법, 수정 이력 페이지를 공개하고 콘텐츠에서 연결한다.
 
+## 2026-09-27 크롤·유입 관측
+
+nginx 접근 로그 14일분(9/13~9/27) 기준. Cloudflare 뒤라 IP는 모두 엣지 주소여서 방문자 수는 셀 수 없다.
+
+- Googlebot은 sitemap을 9/15·9/21·9/26에 200으로 가져갔다(연결 정상). 그러나 실제 페이지 수집은 14일간 200건 안팎으로 적다. Googlebot UA로 `/.env` 등을 찔러 404가 난 요청은 사칭 스캐너다.
+- 같은 기간 `/commulingo` 요청 약 8.3만 건 중 대부분은 브라우저 UA를 흉내 낸 수집기, PetalBot, Amazonbot, PerplexityBot, bingbot, SemrushBot이다.
+- 사람 유입(검색·소셜 referrer)은 하루 50건 안팎이다. 인물·용어·문서 상세에 도착하고 강좌(`book`)로는 거의 오지 않는다.
+- 대응: 인물·용어·사건 상세에 「문제로 익히기」(해당 항목이 든 드릴 덱, 인물은 강좌 등장 장면)를 붙였다. sitemap에 `/commulingo/drill`과 드릴 덱 28개를 추가했다(9,428 URL). robots.txt에서 SEO 분석 봇(Semrush·Ahrefs·MJ12·Dot·DataForSeo·BLEX)을 막았다. 검색·AI 검색·학습 봇은 허용한다.
+- 다음 확인: Search Console 「페이지」 보고서의 색인 수와 「크롤링 통계」, 상세 → 드릴 전환(`commulingo-learning-report.js`).
+
 ## 검증 체크리스트
 
 - [x] 변경 파일 `node --check` 통과

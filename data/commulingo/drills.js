@@ -593,9 +593,29 @@ async function loadCommuLingoDrills() {
         }))
         .filter(group => group.decks.length);
 
-    const value = { version, groups, byId };
+    // 사전 상세 페이지 → 그 항목이 문항·연표 카드로 들어 있는 덱. 해설 링크(href)가
+    // 곧 사전 경로라 그대로 색인한다. 상한 적용 뒤의 덱 기준이라 플레이어와 같다.
+    const byHref = new Map();
+    for (const deck of decks) {
+        const items = deck.kind === 'timeline' ? deck.pool : deck.questions;
+        for (const item of items) {
+            if (!item.href) continue;
+            const ids = byHref.get(item.href) || byHref.set(item.href, new Set()).get(item.href);
+            ids.add(deck.id);
+        }
+    }
+    const metaById = new Map(groups.flatMap(group => group.decks.map(meta => [meta.id, { ...meta, groupLabel: group.label }])));
+
+    const value = { version, groups, byId, byHref, metaById };
     cache = { termsRef: terms, peopleRef: peopleData, eventsRef: events, categoriesRef: categories, value };
     return value;
 }
 
-module.exports = { loadCommuLingoDrills };
+// 사전 경로 여러 개(짝 페이지는 용어+사건)에 걸린 덱 메타를 허브 순서로.
+function drillDecksForHrefs(drills, hrefs) {
+    const ids = new Set();
+    for (const href of hrefs) (drills.byHref.get(href) || []).forEach(id => ids.add(id));
+    return [...drills.metaById.values()].filter(meta => ids.has(meta.id));
+}
+
+module.exports = { loadCommuLingoDrills, drillDecksForHrefs };

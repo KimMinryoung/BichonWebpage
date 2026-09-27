@@ -31,6 +31,7 @@
         <% if (paired) { %>
         </div>
         <% } %>
+        <%- include('../partials/commulingo-practice-links', { decks: typeof practiceDecks !== 'undefined' ? practiceDecks : [] }) %>
         <% if ((typeof prevEvent !== 'undefined' && prevEvent) || (typeof nextEvent !== 'undefined' && nextEvent)) { %>
         <nav class="commu-event-nav" aria-label="<%= strings.commuLingoViews.event.otherEvents %>">
             <% if (typeof prevEvent !== 'undefined' && prevEvent) { %>

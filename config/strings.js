@@ -544,6 +544,11 @@ const ko = {
             change: '변동',
             peopleDictionary: '인물 사전',
         },
+        practice: {
+            heading: '문제로 익히기',
+            course: '강좌',
+            quiz: '퀴즈',
+        },
         role: {
             people: '인물 사전',
             people2: '소속 인물',
@@ -1119,6 +1124,11 @@ const en = {
             entry: 'Entry',
             change: 'Change',
             peopleDictionary: 'People dictionary',
+        },
+        practice: {
+            heading: 'Practice',
+            course: 'Course',
+            quiz: 'Quiz',
         },
         role: {
             people: 'People',

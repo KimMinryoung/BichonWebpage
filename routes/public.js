@@ -18,6 +18,7 @@ const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-events-store');
+const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const { countryCodes: commuLingoCountryCodes } = require('../data/commulingo/country-geography');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
@@ -217,8 +218,12 @@ router.get('/novels/:slug', async (req, res) => {
 });
 
 // robots.txt
+// SEO 분석 업체 크롤러는 사람을 데려오지 않고 부하만 주므로 막는다. 검색엔진과
+// AI 검색·학습 봇은 그대로 둔다(내용 확산이 목적).
+const BLOCKED_CRAWLERS = ['SemrushBot', 'AhrefsBot', 'MJ12bot', 'DotBot', 'DataForSeoBot', 'BLEXBot'];
 router.get('/robots.txt', (req, res) => {
     res.type('text/plain').send(
+        BLOCKED_CRAWLERS.map(agent => `User-agent: ${agent}\nDisallow: /\n\n`).join('') +
         'User-agent: *\n' +
         'Allow: /\n' +
         'Host: cyber-lenin.com\n' +
@@ -331,7 +336,7 @@ async function cachedXml(key, build) {
 // sitemap.xml
 router.get('/sitemap.xml', async (req, res) => {
     try {
-        const xml = await cachedXml('xmlcache:sitemap:v5', () => buildSitemapXml());
+        const xml = await cachedXml('xmlcache:sitemap:v6', () => buildSitemapXml());
         res.type('application/xml').send(xml);
     } catch (error) {
         console.error('Sitemap error:', error);
@@ -341,7 +346,7 @@ router.get('/sitemap.xml', async (req, res) => {
 
 async function buildSitemapXml() {
         const [postsResult, diariesResult, researchResult, pagesResult, hubResult,
-            peopleResult, termsResult, eventsResult] = await Promise.allSettled([
+            peopleResult, termsResult, eventsResult, drillsResult] = await Promise.allSettled([
             db.query(`SELECT id, created_at, updated_at,
                              (COALESCE(BTRIM(title_en), '') <> '' OR COALESCE(BTRIM(content_en), '') <> '') AS has_translation
                         FROM posts ORDER BY created_at DESC`),
@@ -354,6 +359,7 @@ async function buildSitemapXml() {
             loadCommuLingoPeople(),
             loadCommuLingoTerms(),
             loadCommuLingoHistoryEvents(),
+            loadCommuLingoDrills(),
         ]);
         const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows : [];
         const diaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows : [];
@@ -368,6 +374,7 @@ async function buildSitemapXml() {
         // The events loader already drops hand-seeded skeleton rows (no summary),
         // so every id here is a page the public routes actually serve.
         const commuEvents = eventsResult.status === 'fulfilled' ? eventsResult.value : [];
+        const commuDrillIds = drillsResult.status === 'fulfilled' ? [...drillsResult.value.byId.keys()] : [];
         const safeList = fn => { try { return fn() || []; } catch (err) { console.warn('[sitemap]', err.message); return []; } };
         const commuDocs = safeList(listCommuLingoDocs);
         const commuCharts = safeList(listGenealogyCharts);
@@ -450,6 +457,9 @@ async function buildSitemapXml() {
         for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6');
         for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, chart.modifiedAt, '0.5');
         for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, book.modifiedAt, '0.6');
+        // 드릴 덱은 사전에서 만들어지므로 lastmod는 사전의 최신 갱신일을 따른다.
+        if (commuDrillIds.length) xml += url('/commulingo/drill', latestDate(peopleLastmod, termsLastmod, eventsLastmod), '0.6', 'weekly');
+        for (const id of commuDrillIds) xml += url(`/commulingo/drill/${encodeURIComponent(id)}`, latestDate(peopleLastmod, termsLastmod, eventsLastmod), '0.5', 'weekly');
         xml += '</urlset>';
         return xml;
 }

@@ -26,7 +26,7 @@
 | CommuLingo 기능·활동과 소속 분류 | [설계·구현·전환 상태](commulingo-role-model-plan.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
 | CommuLingo 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
-| SEO 인덱싱 | [기존 계획](seo-indexing-plan.md) |
+| SEO 인덱싱·크롤 관측 | [계획과 2026-09-27 관측](seo-indexing-plan.md) |
 | 사이트 최적화 | [기존 계획](site-optimization-plan.md) |
 
 계획 문서의 완료 여부와 과거 수치는 현재 코드로 재확인한다. 새로운 주제는 별도 문서로 추가하고 이 색인에 링크한다. 완료된 작업 이력을 AGENTS.md/CLAUDE.md에 누적하지 않는다.

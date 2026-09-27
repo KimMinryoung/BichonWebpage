@@ -1,4 +1,5 @@
 const { localize } = require('./localize');
+const { loadCommuLingoDrills, drillDecksForHrefs } = require('./drills');
 
 function localizedMeta(meta, lang) {
     return {
@@ -30,4 +31,20 @@ function deckBody(drills, deckId) {
     return body;
 }
 
-module.exports = { localizedMeta, deckBody };
+// 사전 상세 페이지의 「퀴즈로 익히기」 목록. 실패해도 그 칸만 비우고 페이지는 산다.
+async function practiceDecksFor(hrefs, lang) {
+    try {
+        const drills = await loadCommuLingoDrills();
+        return drillDecksForHrefs(drills, hrefs).map(meta => ({
+            id: meta.id,
+            kind: meta.kind,
+            group: localize(meta.groupLabel, lang),
+            title: localize(meta.title, lang),
+        }));
+    } catch (err) {
+        console.error('commulingo practice decks:', err);
+        return [];
+    }
+}
+
+module.exports = { localizedMeta, deckBody, practiceDecksFor };

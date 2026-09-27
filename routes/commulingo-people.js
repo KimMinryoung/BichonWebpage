@@ -39,6 +39,7 @@ async function relatedReportsForTopic(kind, id, lang) {
 const router = express.Router();
 
 const { cardTextLinker, peopleGroupCardsHtml, personBody } = require('../data/commulingo/people-presentation');
+const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 
 router.get('/people', async (req, res) => {
     try {
@@ -394,6 +395,7 @@ router.get('/people/:personId', async (req, res) => {
             genealogies: genealogyLinksFor('person', personId, lang),
             relatedReports,
             relatedDocs,
+            practiceDecks: await practiceDecksFor([`/commulingo/people/${person.id}`], lang),
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,
