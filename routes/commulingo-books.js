@@ -11,11 +11,17 @@ const { catalogBody, lessonPayload } = require('../data/commulingo/book-response
 
 const router = express.Router();
 
+// Books folded into another book keep their old address working.
+const MERGED_BOOKS = {
+    'french-revolution-documents': 'french-revolution-intro', // part 4 since 2026-09-27
+};
+
 router.get('/book/:collectionId', async (req, res) => {
     try {
         const collectionId = typeof req.params.collectionId === 'string' ? req.params.collectionId.trim() : '';
         const catalog = loadCommuLingoCatalog();
         const collection = (catalog.collections || []).find(item => item.id === collectionId);
+        if (!collection && MERGED_BOOKS[collectionId]) return res.redirect(301, `/commulingo/book/${MERGED_BOOKS[collectionId]}`);
         if (!collection) return res.redirect('/commulingo');
 
         // Linked chapters, dictionary chips, and the decision-link payload are

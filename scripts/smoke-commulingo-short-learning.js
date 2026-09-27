@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const assert = require('node:assert/strict');
 const checks = require('./lib/commulingo-checks');
-const courses = [require('../data/commulingo/courses/french-revolution-intro'), require('../data/commulingo/courses/socialist-divergences-intro'), require('../data/commulingo/courses/french-revolution-documents')];
+const courses = [require('../data/commulingo/courses/french-revolution-intro'), require('../data/commulingo/courses/socialist-divergences-intro')];
 function issues(collections) {
   const out = checks.createCollector();
   checks.checkChapters(out, collections);
@@ -9,16 +9,17 @@ function issues(collections) {
 }
 assert.deepEqual(issues(courses), []);
 assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 72);
-assert.equal(courses[0].chapters.length, 10);
-assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 30);
-assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+assert.equal(courses[0].chapters.length, 18);
+assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 54);
+assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), Array.from({ length: 18 }, (_, i) => i + 1));
 assert.equal(courses[0].title.ko, '프랑스 혁명사');
 assert.equal(courses[1].visibility, undefined);
+assert.equal(courses[1].category, 'history');
 assert.deepEqual(courses[1].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6]);
-assert.equal(courses[2].visibility, undefined);
-assert.deepEqual(courses[2].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6, 7, 8]);
-// Every document-reading question cites the reference document it reads.
-for (const chapter of courses[2].chapters) {
+// Part 4 reads the documents: every question cites the reference document it reads.
+const documentChapters = courses[0].chapters.filter(chapter => chapter.partNumber === 4);
+assert.equal(documentChapters.length, 8);
+for (const chapter of documentChapters) {
   for (const question of chapter.lessons[0].questions) assert(question.source.href.startsWith('/commulingo/docs/'), question.id);
 }
 assert.equal(courses[0].factionGuide.layers.length, 4);
