@@ -583,25 +583,25 @@ header h1 {
    min-height block below. Zero vertical padding here so the bar is exactly as
    tall as its tallest control. */
 .home-toolbar {
+    --toolbar-max: 960px;
+    --toolbar-pad: 20px;
+    /* Distance from the viewport's left edge to the logo label. */
+    --logo-gutter: max(var(--toolbar-pad), calc((100vw - var(--toolbar-max)) / 2 + var(--toolbar-pad)));
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 0;
-    max-width: 960px;
+    max-width: var(--toolbar-max);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--toolbar-pad);
 }
 
 /* Extend the home link through the empty gutter while keeping its label and
    the other toolbar controls in their existing positions. */
-.home-page .home-toolbar {
-    --home-logo-gutter: max(20px, calc((100vw - 960px) / 2 + 20px));
-}
-
-.home-page .toolbar-logo {
+.home-toolbar .toolbar-logo {
     align-self: stretch;
-    margin-left: calc(-1 * var(--home-logo-gutter));
-    padding-left: calc(var(--home-logo-gutter) + 6px);
+    margin-left: calc(-1 * var(--logo-gutter));
+    padding-left: calc(var(--logo-gutter) + 6px);
 }
 
 .toolbar-logo {
@@ -740,10 +740,7 @@ header h1 {
 
 @media (max-width: 768px) {
     .home-toolbar {
-        padding: 0 8px;
-    }
-    .home-page .home-toolbar {
-        --home-logo-gutter: 8px;
+        --toolbar-pad: 8px;
     }
 }
 
@@ -1535,6 +1532,7 @@ footer .footer-tagline {
 }
 
 .chat-page .home-toolbar {
+    --toolbar-max: 100vw;
     max-width: none;
     width: 100%;
     margin: 0;
