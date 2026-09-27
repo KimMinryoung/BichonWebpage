@@ -2200,7 +2200,7 @@
     "en": "Deputy General Secretary from July 1990"
    }
   },
-  "mykolas-burokevi-ius": {
+  "mykolas-burokevicius": {
    "spans": [
     {
      "k": "full",
@@ -2818,7 +2818,7 @@
    },
    "list": [
     "ivashko",
-    "mykolas-burokevi-ius",
+    "mykolas-burokevicius",
     "alexander-dzasokhov",
     "ivan-frolov",
     "givi-gumbaridze",
@@ -5870,7 +5870,7 @@
       }
      },
      {
-      "p": "mykolas-burokevi-ius",
+      "p": "mykolas-burokevicius",
       "in": {
        "t": "new"
       },
