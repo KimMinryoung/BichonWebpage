@@ -13,17 +13,17 @@ const person = { activities: [{ functionId: 'military', affiliationId: 'soviet-p
 assert(!matchesActivities(person, { functionId: 'military', affiliationId: 'china-ccp' }), 'must match the same career, not a cross product');
 assert(matchesActivities(person, { functionId: 'diplomacy', affiliationId: 'china-ccp' }));
 assert(matchesActivities({ activities: [{ functionId: 'military', affiliationId: 'china-pla' }] }, { affiliationId: 'china-ccp' }));
-assert.equal(displayActivities([], { categoryId: 'ccp-security' }, 'ko')[0].affiliationId, 'china-ccp');
+assert.equal(displayActivities([], { categoryId: 'ccp-security' }, 'ko')[0].affiliationId, 'china-prc');
 assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].affiliationId, null, 'research must not invent affiliation');
 assert.deepEqual(displayActivities([], { categoryId: 'counterrevolution' }, 'ko'), [], 'mixed political category is not a function');
 for (const entry of [...catalog.functions, ...catalog.affiliations]) assert(ICON_PATHS[entry.icon], `missing icon: ${entry.id}`);
-// A party-state is one affiliation: its state organs merge into the ruling party.
+// Retired aliases remain valid, while socialist state IDs are restored.
 for (const [from, to] of Object.entries(catalog.retired)) {
     assert(!catalog.affiliations.some(a => a.id === from) && catalog.affiliations.some(a => a.id === to), from);
     assert.throws(() => validateActivities([{ ...primary, affiliationId: from }], sources), from);
 }
-assert.equal(displayActivities([], { categoryId: 'prc-government' }, 'ko')[0].affiliationId, 'china-ccp');
-assert.equal(displayActivities([], { officeId: 'defence' }, 'ko')[0].affiliationId, 'soviet-party');
+assert.equal(displayActivities([], { categoryId: 'prc-government' }, 'ko')[0].affiliationId, 'china-prc');
+assert.equal(displayActivities([], { officeId: 'defence' }, 'ko')[0].affiliationId, 'state-soviet');
 for (const [key, [functionId, affiliationId]] of Object.entries(catalog.legacy)) {
     assert(catalog.functions.some(f => f.id === functionId), key);
     assert(!affiliationId || catalog.affiliations.some(a => a.id === affiliationId), key);
@@ -36,3 +36,16 @@ for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) 
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], null, 'ko')[0].affiliationLabel, '소속 미확정');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], null, 'en')[0].affiliationLabel, 'Independent activity');
 console.log('Activity evidence, primary selection, periods, same-career filters and legacy boundaries passed');
+
+assert.equal(displayActivities([], { categoryId: 'ccp-leadership' }, 'ko', {years:'1889–1927'})[0].affiliationId, 'china-ccp');
+assert.equal(displayActivities([], { categoryId: 'ccp-leadership' }, 'ko', {years:'1893–1976'})[0].affiliationId, 'china-prc');
+const stateActivity = {...primary, affiliationId:'china-prc', relation:'service', startYear:1950, endYear:1960};
+assert.deepEqual(validateActivities([stateActivity], sources), [stateActivity]);
+assert.throws(() => validateActivities([{...stateActivity, relation:'membership'}], sources), /not party membership/);
+assert.throws(() => validateActivities([{...stateActivity, startYear:1921, endYear:1927}], sources), /outside/);
+for (const party of catalog.affiliations.filter(a => a.governingState)) {
+    const state = catalog.affiliations.find(a => a.id === party.governingState.id);
+    assert.equal(state.kind, 'state');
+    assert(state.socialistSystem);
+    assert(party.criteria.includes('opposition'));
+}

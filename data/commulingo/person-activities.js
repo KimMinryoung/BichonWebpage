@@ -22,6 +22,7 @@ function validateActivities(value, sources = []) {
         if (!functions.has(a.functionId)) throw badRequest('unknown activity functionId');
         if (!['confirmed','independent','unresolved'].includes(a.affiliationStatus)) throw badRequest('activity affiliationStatus is required');
         if (a.affiliationStatus === 'confirmed' ? !affiliations.has(a.affiliationId) : a.affiliationId != null) throw badRequest('activity affiliationId must match its confirmation status');
+        if (affiliations.get(a.affiliationId)?.kind === 'state' && a.relation === 'membership') throw badRequest('state affiliation is service or employment, not party membership');
         if (!['service','membership','employment','independent','unresolved'].includes(a.relation)) throw badRequest('invalid activity relation');
         if ((a.affiliationStatus === 'independent') !== (a.relation === 'independent') || (a.affiliationStatus === 'unresolved') !== (a.relation === 'unresolved')) throw badRequest('activity relation contradicts affiliation status');
         if (typeof a.primary !== 'boolean') throw badRequest('activity primary must be boolean');
@@ -49,12 +50,17 @@ function activityHref(a) {
     return `/commulingo/activities?${query}`;
 }
 
-function displayActivities(raw, legacyRole, lang) {
+function displayActivities(raw, legacyRole, lang, person = {}) {
     let rows = raw || [];
     if (!rows.length) {
         const key = legacyRole?.officeId || legacyRole?.categoryId || legacyRole?.category;
         const mapped = catalog.legacy[key];
-        if (mapped) rows = [{ functionId: mapped[0], affiliationId: mapped[1], primary: true, provenance: 'legacy-role' }];
+        if (mapped) {
+            const before = catalog.legacyBeforeState?.[key];
+            const years = String(person.years || '').match(/[–−-]\s*(\d{4})\s*$/);
+            const affiliationId = before && years && Number(years[1]) < before.startYear ? before.affiliationId : mapped[1];
+            rows = [{ functionId: mapped[0], affiliationId, primary: true, provenance: 'legacy-role' }];
+        }
     }
     return rows.filter(a => functions.has(a.functionId)).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);

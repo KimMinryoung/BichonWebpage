@@ -1,0 +1,2452 @@
+{
+  "policy": "State affiliation for work within one-party socialist systems; pre-state party activity and opposition remain separate. Reviewed existing cited excerpts locally, no bulk model request.",
+  "reviewedPeople": 203,
+  "changedPeople": 176,
+  "items": [
+    {
+      "id": "chen-duxiu",
+      "beforeSha256": "32cfc0f70392c7ab5ee4e6552eeaf609e442325ed6e4c51cbb0f9c4f76d8de69",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "CCP leadership 1921–1927, before PRC."
+        }
+      ]
+    },
+    {
+      "id": "alexander-bogdanov",
+      "beforeSha256": "66b279b14596966bb523cb71c190cf18bee466708ab2645d56040a2ab952bae8",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Bolshevik leadership 1903–1909, before Soviet state."
+        }
+      ]
+    },
+    {
+      "id": "vladimir-velebit",
+      "beforeSha256": "58cd79275e036e6d75f055123d4f2de1e86670f21c92e5f78995eff2bf30b5a3",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "valery-sablin",
+      "beforeSha256": "2059b5597c5bace215882a788ffe01a1e35441f3a915bac8568e70a1b3b814ba",
+      "review": [
+        {
+          "index": 0,
+          "decision": "unresolved-opposition",
+          "reason": "Defining activity is 1975 mutiny against the Soviet state; no matching opposition organization in catalog. Preserve documented 1973–1975 naval service as a separate non-primary state activity."
+        }
+      ]
+    },
+    {
+      "id": "ramiz-alia",
+      "beforeSha256": "f8390b8da54254dcf980f7511bc0ac201a59644e9c0bdbccf6dbd18c34f83088",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-albania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "alexander-obolensky",
+      "beforeSha256": "eb5f87d9699bb1064636000bab68d3c0d833318f1025f6d8118f807eb7dd5452",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "alexander-rutskoy",
+      "beforeSha256": "9f046aae3c6356b57d1f9feb66f13a2a9ad2332ba52ed9c0edb5966d402f77fb",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "denis-sassou-nguesso",
+      "beforeSha256": "ad45440292cd65191713bc6cb4d88ba68c1ba996c607b40204c8b143e29e80f4",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-republic-of-congo",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ali-ahmed-nasser-antar",
+      "beforeSha256": "683c385377662fcefade34674f1c356d9a40f3be614213993467cd88597efaea",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-south-yemen",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ali-nasir-muhammad",
+      "beforeSha256": "5fdd9e68c286fc8ce01a64081a0eca3e46204e58b05b9db171145ba245e8a6a2",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-south-yemen",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ali-salem-al-beidh",
+      "beforeSha256": "93cdd3c2ecac335a6230aa5b41bfd30694a9b6e1103195e7a2e8229608f4fdef",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-south-yemen",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "alois-indra",
+      "beforeSha256": "596db26eece2a7bc1edf8d80468c82d0f7edfcdddbb83111238532ab196a2b57",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "akaki-kabakhidze",
+      "beforeSha256": "5baf61c379c9f584a4187d47adcfba997fdc939a1278bf9668811c26c3dfe54e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "sergei-medvedev",
+      "beforeSha256": "7e6c42f4edb76e8fa3490f89efb3294eaf18f69b4917aa0d3b33cc6f3c32a1cc",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Workers Opposition organizing, not service for the regime."
+        }
+      ]
+    },
+    {
+      "id": "elena-ceausescu",
+      "beforeSha256": "02a9183d36d74628d8dffe8d617daa8652620d5c3290969c2d4d9f7722694618",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kaysone-phomvihane",
+      "beforeSha256": "a9d77fc1693d80b2aa62b6f7dc188b3accf4f4fa967c6d2b31376f0319d1db1e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-laos",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "marien-ngouabi",
+      "beforeSha256": "ce66da333d09752288f6cdfa16ba68711f117c4ee46661a7ce63d959f85ffed6",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-republic-of-congo",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "mengistu-haile-mariam",
+      "beforeSha256": "326bfa8c3f1f99c14f616194f8307f0167d7331f2e94eb192f8544e4af18b951",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-ethiopia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "boris-kidric",
+      "beforeSha256": "4fac0cf90175fd1290ad405f21ddbadbb1d8eb1e6d66ee58cb79b68a2c171d6b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "antonov-ovseenko",
+      "beforeSha256": "081d929b5b89407b199fbdabd985e3e73e3ec7f958993ced4aaaac789f1e4e64",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "nouhak-phoumsavan",
+      "beforeSha256": "7452fc2d2ff2eb96c7aa470305fdeed1229ba451138561f4c88c1370c8793ebf",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Selected excerpts establish 1955 founding and 1972 Politburo, not later state career."
+        }
+      ]
+    },
+    {
+      "id": "kamo",
+      "beforeSha256": "1c47a1568d14aa31c25a4d5e84202eaa02390acd37aa2fbf8d543033ca7980b5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Bolshevik underground operations 1903–1912."
+        }
+      ]
+    },
+    {
+      "id": "nuon-chea",
+      "beforeSha256": "262d2ed6749b998ab1854a7269f4e5db73ec6bbc5d9af3ca36e15382698bb121",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-democratic-kampuchea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "armand",
+      "beforeSha256": "0b10f9b2a9dc1269edb9d4b5882db883a2acb522aeecb90f6b590e9aa9e21ea4",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gjergj-kokoshi",
+      "beforeSha256": "1eeb22af40f7135291e3d12b40e918df7bb01166528ec9edbab1dbfb1fa9fbe9",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-albania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "serafima-ryzhova",
+      "beforeSha256": "f84de18e6113e166cf03c8d010907343344ffb8366533fc0619482ec48bb85c7",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "sergei-bagdatev",
+      "beforeSha256": "51ffa062339c66c651ace4d2e88b6659dbb0b4b14de22a67f59b41850a8d859b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Petrograd party organizing from February 1917, before October."
+        }
+      ]
+    },
+    {
+      "id": "soliin-danzan",
+      "beforeSha256": "1b8eef6c70d4e00397e71f6e3945f5177b060b8ebe996af80d0272a2848b1fe7",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "sreten-zujovic",
+      "beforeSha256": "8206d6a5713efc213d3d0b45fb0de8371e3b216582386fc7151d68316aed2895",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Cited party and trade-union organizing is from 1924."
+        }
+      ]
+    },
+    {
+      "id": "traicho-kostov",
+      "beforeSha256": "ef4d1460be1326f8fad43dfa1e9eb8a45ca0818296ed96f47975c676f747c1d2",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-bulgaria",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "tseren-ochiryn-dambadorj",
+      "beforeSha256": "2a325a000d9b4804aa577d6421906619e1edf8bd4c317959f79a8340b0a18eb2",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "enver-hoxha",
+      "beforeSha256": "d10baf5d76e382eecb46fee235719330e98f4e465ed13142237f1ba9010b18cd",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-albania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vasily-kayurov",
+      "beforeSha256": "550bb33a5c3eef19e30150f295f86a58aa8ad2f81d5f6abb7faa102ad5a04204",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Underground organizing 1912–1917, before state rule."
+        }
+      ]
+    },
+    {
+      "id": "vladimir-bakaric",
+      "beforeSha256": "966ae310ebfbf123c3e1653df157847bd9e1418c1a407f78ff1ca0a0625273c1",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vladimir-smirnov",
+      "beforeSha256": "90727df39b4dd13225f35e0819735acf25d5bcf20b06dbf6ae0832cff3a2d1f1",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "walter-ulbricht",
+      "beforeSha256": "dfa4b82b4c0d2d905dc14860d912b29dceb95ae04da4b8acf13454c9111e3b47",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "edvard-kardelj",
+      "beforeSha256": "4d1c5fc137743fb2f8794965e50fcb4dfec7b800bc17f2f155167d5d5cf99b86",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "yumjaagiin-tsedenbal",
+      "beforeSha256": "ecf464d3c5d314f45cbf69014039b0917f5932e2a429620423574f526ef427d6",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "zdzislaw-kurowski",
+      "beforeSha256": "d4e995cd7522c302a364fb027925756dde8eefd07f5f9283fb2ca7c996f07b9d",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "zinovy-litvin-sedoy",
+      "beforeSha256": "f47a7a6ce14824f4813908ff842ed7c2aef16c0513e3db0dba42101aa608145c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "1905 uprising and 1906 underground work."
+        }
+      ]
+    },
+    {
+      "id": "choe-yong-gon",
+      "beforeSha256": "4beb7c228adeb17e3d295279399edc53a6f9dc07e85f14a55fc935a1cd7f2a22",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "wojciech-jaruzelski",
+      "beforeSha256": "b225c20d3b3d482956995b1e30d56674893c0fb2e7efbced0d1ad9072f6f22f3",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "dmitry-komar",
+      "beforeSha256": "e3eeadbb691e16825a4a9c2b5b8c6d107f7fc1b0f9ea45b423b89f1ac9d6a495",
+      "review": [
+        {
+          "index": 0,
+          "decision": "unresolved-opposition",
+          "reason": "Defining evidence is civilian resistance to the August coup; generic Afghanistan awards paragraph does not establish his service. Remove the unrelated aggregate awards excerpt; retain the direct anti-coup evidence."
+        }
+      ]
+    },
+    {
+      "id": "egon-krenz",
+      "beforeSha256": "634942a87b49926a0ff4bdc979112097152d8397e8f3299b753674178fd78f24",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ivan-chugurin",
+      "beforeSha256": "eb2600a91264a5026aeb4dc83316e7b0b4f18aa83cb4872dd51e888f7a4896c5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ern-ger",
+      "beforeSha256": "50457851355aad72e68649876cc17bb858c641cbe78437b8488136bfa7549912",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "frantisek-kriegel",
+      "beforeSha256": "408739bfd959d310cd6c882a0c9f251df208af461ea0fe2fc9ff84478dee091f",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "alexei-snegov",
+      "beforeSha256": "8b721ced7127b6ef0804085f7810f4b6a0d2aef8c38da06bb213b055196f7f45",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gavriil-myasnikov",
+      "beforeSha256": "57f5d009dd6d66c6dcab02c9fcbdb829337e5e71e5f2b9825213e1d4cf31b42f",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Workers Group opposition and 1922 expulsion."
+        }
+      ]
+    },
+    {
+      "id": "czeslaw-kiszczak",
+      "beforeSha256": "cafb272b51e5165257166f03347fed74eadbbf3957d67c5085a2b408304f1e12",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gunter-schabowski",
+      "beforeSha256": "1e5b23c325904fa7cb3b894fa9c393f1ef633e7ff8f7c6688b927e5dd84d7e4c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gyula-horn",
+      "beforeSha256": "5e270498f6769caaa0aaa7c3fba994e80984a3a3c883ead916fc5d6533e651e4",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gustav-husak",
+      "beforeSha256": "4af00dabc68ac773128f35c0f89bb9db46b1cb2ee4bbc674271114d2a239ddb0",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "adam-rapacki",
+      "beforeSha256": "2282e4360e11eb727215144e97517eadfeb465c8e7549983f35024af9e75dc57",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "pyotr-koganovich",
+      "beforeSha256": "a9cc4d5af26e9e6f8814589af4993ea34c8ff3d3a989cd781089e7f1158281f2",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "feliks-kon",
+      "beforeSha256": "a441d4493720821b65b0cdfe47a514d540943e651be7c26cb66caa483e24ad1c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ho-ka-i",
+      "beforeSha256": "01e7661772848d9c9a76f9bda566447cef10dd0188624d554c9a0987129b69c5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "innokenty-stukov",
+      "beforeSha256": "a7a5ce36c277e0bf124e0365b58aad03d7b07a354e58e5d826dc1117ad2866a2",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "hugh-lincoln-cooper",
+      "beforeSha256": "b6d94678927c3b3d1006454b5833e08d3002c1bec1bbb643537665ec8affb8db",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gheorghe-gheorghiu-dej",
+      "beforeSha256": "18377e76537eb0fd033cbd640bf0670b7fb4be14611bbae01b1f8ec6fdd49322",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ivan-smirnov",
+      "beforeSha256": "d685d820e0910e22dcb41df1ceeb950c65ab10929eccac8d3182af28a1deaf63",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Chosen evidence describes Left Opposition leadership."
+        }
+      ]
+    },
+    {
+      "id": "jakub-berman",
+      "beforeSha256": "7dd7b0913b88260c6a2f2dc9d08ca991f689fd56f5e7e9035c37107f08e498a5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ho-chi-minh",
+      "beforeSha256": "31575613a6754d5c128161aa71e9cc24e097de71412297c49082cbc164152c2d",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-vietnam",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ivan-ribar",
+      "beforeSha256": "db5b82f6ed56a506ed9ac1544616b804f3f2186309b410c0c23bc5e7ef5803db",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "mohammad-najibullah",
+      "beforeSha256": "6da3be11990a4204c31c3d6db0cb8be9016ed7595953271fb7e69d3448895908",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-afghanistan",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        },
+        {
+          "index": 1,
+          "decision": "state",
+          "to": "state-afghanistan",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ion-iliescu",
+      "beforeSha256": "865ae5e4441d0542ebafdd7d5d967f941f0697090e7f221f74ffb9b86831d12c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "iko-carreira",
+      "beforeSha256": "1b65d17d8099f8daae97d7587dc36e1a79a4e6575dcdbc9d2e764e0dcd974744",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "petar-mladenov",
+      "beforeSha256": "3cca6c6c6978121346b53c8b6af00c1e3448e0ceb506109e2d991eec572fc9f5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-bulgaria",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "pen-sovann",
+      "beforeSha256": "0fa0e28e2744e3237421436d5353de6312968eeaec519f839dbe7790ee65cb41",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-peoples-kampuchea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ivan-babushkin",
+      "beforeSha256": "fe9d3ed7adf9aa80424e01b82a6f1891f55da521239e0315a59a82b76d28d615",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Died in 1906, before Soviet state."
+        }
+      ]
+    },
+    {
+      "id": "arnaldo-ochoa",
+      "beforeSha256": "5c624d6dddc8e3692d0161de49355c9770de44e7852b591f5c6299e057a52a85",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-cuba",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "fidel-castro",
+      "beforeSha256": "b95f0417a0c4463517783ed29773625a311f20d840e8a5761f993f87637de0ba",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-cuba",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "jose-ramon-fernandez",
+      "beforeSha256": "98e7672dc22becb9eb90ee2360ee2b425836ae9f7b7747a7744a52df7f5f1776",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-cuba",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "antonin-novotny",
+      "beforeSha256": "7b4247d9d0047580b0ab7490a25b912704f876c4766cbd2fa7f728593dd558d6",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "jiri-hajek",
+      "beforeSha256": "798a512d6fda4629788b962cc5cd9280f67e6f2afdbc41987c48ca4dbabf7b45",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "eduardo-mondlane",
+      "beforeSha256": "4c567aa42c3112276731514cd093e1afe416d697e636977e4d138b5c21174942",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "FRELIMO leadership 1962–1969, before independence."
+        }
+      ]
+    },
+    {
+      "id": "jose-van-dunem",
+      "beforeSha256": "32410545f5eea2a0fadba98940dff35c17716829442797ff846c781510111fe4",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "josip-broz-tito",
+      "beforeSha256": "2cb7a407d55da269e1f9b93dd2693001d520fc69ea6145a7efb01876362e6a4a",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "erich-honecker",
+      "beforeSha256": "84bdb590565ef86c4d5997977491ad3c02b1c4b4a0967d388fe24ea0be21d892",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "erich-mielke",
+      "beforeSha256": "570b11907805a2b44156b2f8de9ba2bf1f079956879866edac5091180d396255",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "gerhard-schurer",
+      "beforeSha256": "51e0c5dc2224944ae91b1ff9c0d64afc1845e4ef1cf7008e53005083e1befac9",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "otto-grotewohl",
+      "beforeSha256": "b5f85accbc7169cbc504cb2de31871bf061f9b275857deb855e760bebff7e8f8",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "maurice-bishop",
+      "beforeSha256": "4b81593be93708e5c5ddc5cec6c96523aede92c617c68b776a705d024dd9fc64",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-grenada",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        },
+        {
+          "index": 1,
+          "decision": "retain-party",
+          "reason": "NJM founding/coordination; separate PRG government activity becomes state."
+        }
+      ]
+    },
+    {
+      "id": "andras-hegedus",
+      "beforeSha256": "f90fc9a061541d2e55094ba1921818a10ce9198a0b4b4fb1633dbb4faf964e82",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ferenc-donath",
+      "beforeSha256": "b8dc26eca56dab45d348953a7d2560f3cf0e3aace2deeeeae8854dbe412c3ae1",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "souphanouvong",
+      "beforeSha256": "d3441c6afb06fad97b6a681a94ee5baab3caf674b891650a265f832167387773",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-laos",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "elbegdorj-rinchino",
+      "beforeSha256": "d11af1731888d49817eac8915b32c943c27c42847407dcc0c51708ca30025bf0",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "khorloogiin-choibalsan",
+      "beforeSha256": "6ab5423a264816db1a8cf5092c8d8c4285ce62d89302783ea09689bdf45a3c6f",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kim-il-sung",
+      "beforeSha256": "d0352110c9fb718877f52b61c99695f0523a98b81f1d43a3523a50789ab09405",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "pang-hak-se",
+      "beforeSha256": "d1315a49d440927a8cb7600d84ad4f142a91ec05985718368b08aac59a2ac096",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        },
+        {
+          "index": 1,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "aleksander-zawadzki",
+      "beforeSha256": "701d42d5ce6e67896bb508e495d46dc69bef334c5b3eedb66bcce37ac05aad58",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "marian-rybicki",
+      "beforeSha256": "bab82799d91df5b51d95c730576ec2a28b1273d1e6738de352d17cc06c278db7",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "mieczysaw-jagielski",
+      "beforeSha256": "0a1f360f34d4a96ad90aa2e5d5ecedee6b228cb9e9721858d56f69ac51c74750",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "piotr-jaroszewicz",
+      "beforeSha256": "e6c6c69f6e7ca410650a4c4553dc1593f98ec9befe4a4f410081c240b731e88d",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "roman-fideliski",
+      "beforeSha256": "ef10b1b125ba18d67b0a75c2e02a613d412cd4ecc2a242909d60e42103dd63cd",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "petru-groza",
+      "beforeSha256": "a27bb69f0c214cdc61f2ff24d8e509cc74411fd8bc459758c602aa1412dabcee",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "andrey-vlasov",
+      "beforeSha256": "6e799a4579be21ddd8ead5105cfdea0f1bd4d03986ae4af7ef6ad41638235707",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "evgeny-varga",
+      "beforeSha256": "4b4cf9f7355d9a8556a5263d0b348152ee207c9c4dcca970703984ad6ae0b6f8",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "grigory-kotovsky",
+      "beforeSha256": "ab9fba5ef74e5405214677604bd2d7171df9e55fcc0cc25479ab52f071aa5d31",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "leonid-abalkin",
+      "beforeSha256": "641aff521cb6b59e47b8851cadc3e39e71a02b5a9e0cacc6ee3b7de673e0abed",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "tatyana-zaslavskaya",
+      "beforeSha256": "2ccf717b887043152d91fb584892872445d4682c64e1457c3dc7f57ecf160348",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "viktor-dementsev",
+      "beforeSha256": "0d57692c978b73b1c0133d3da66f2fda8461f1c79dafa8a3885866350c03e5be",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "yakov-blumkin",
+      "beforeSha256": "b38cfa415b2b2ae9b1aabd3d712217680d7dd33c2b0019c0c91aca3a1fbfe052",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "le-duan",
+      "beforeSha256": "23c6bdd230302456548bf35eb00df3a68d7485e048c1a31d9738c83b980e0c75",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-vietnam",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "pham-van-dong",
+      "beforeSha256": "6821cb590f5ba2cb9c3f6a94788c6ec773302eddf06fca49b706846802843872",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-vietnam",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "hafizullah-amin",
+      "beforeSha256": "8fb060511d27dbffeface28dc7ef88533b6f17f791ac8e16e31abc8480c5adee",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-afghanistan",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kim-alexandra-petrovna",
+      "beforeSha256": "117e1b97afadb2ad1e9957baa6b1369011f7c41ff5088b36616eed6124f3a588",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Bolshevik organizing and Korean Socialist Party founding; no state office in these excerpts."
+        }
+      ]
+    },
+    {
+      "id": "vo-nguyen-giap",
+      "beforeSha256": "cccc5bb97d74777ce3db3466e5c1f05240ffe0181059177760fad6580450ed43",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-vietnam",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "alexei-rumyantsev",
+      "beforeSha256": "a0d183039dbccf20b2fcdddbcc13409608a00db7006f74d9ade39f2fc37e2a9e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kim-jong-il",
+      "beforeSha256": "bf30d577c9451b7623a40cd247000a180390005bdfa2daaccb1fe06371c93e67",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kim-san",
+      "beforeSha256": "9b7c06ac10458fa7e8546c96ec545e59903e62d33216c0c5f74216e34b739dd2",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "CCP organizing before 1949; died before PRC."
+        }
+      ]
+    },
+    {
+      "id": "kim-tu-bong",
+      "beforeSha256": "ba325c83d0bb261e6e66b4ff032c0f269de6c88524f67e92306284fe17786980",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        },
+        {
+          "index": 1,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vo-van-kiet",
+      "beforeSha256": "82c921a9786d89816b8b05ad286f29f14b9bb280f018541796ba67182b3ed79b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-vietnam",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "arso-jovanovic",
+      "beforeSha256": "1559b3b3a9d8ef0cca26a2d73fcb66ca8dc0a4a580ef8ccb7494b99c30daf357",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "World War II partisan command 1941–1945, not postwar state command."
+        }
+      ]
+    },
+    {
+      "id": "nurija-pozderac",
+      "beforeSha256": "645e564768ef96f7740f51566c17d3e1612d5c794ae7c46e3f29b22ed8f59b0b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Partisan/AVNOJ activity 1942–1943, before the postwar state."
+        }
+      ]
+    },
+    {
+      "id": "peko-dapcevic",
+      "beforeSha256": "959b921216341b522bb0545855fc5aac9af9813669e07679b01c71c507b75ee7",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "boleslaw-bierut",
+      "beforeSha256": "bac96a5460d844a75cf983795deef19b17ecb8c51a95b2d849aa3050d23346a4",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "edward-gierek",
+      "beforeSha256": "adceb9fe847bb7310daafb1d2265a8d709ccb55243ec73b13686423f506f4214",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "klement-gottwald",
+      "beforeSha256": "09772db63e1532aca69e2b87121e3b1494da0cf2296c360b0e43df900e2a4e26",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "koci-xoxe",
+      "beforeSha256": "a631c6a26c34818645da05ccbd599b675226426af2e346d85f5e5f2205dc015e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-albania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "janos-kadar",
+      "beforeSha256": "ce15617cd5f1674eb5a93bb7157670699aa2b664df63b1eea6921a8bd792c3f4",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "josef-pavel",
+      "beforeSha256": "9c801b3aaaf03bc2818fe7e558c34766ff418498ee444c616649966b79c680c1",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "josef-smrkovsk",
+      "beforeSha256": "2a267f81c5104d94faccc325fde9cc0136c506dd9a5d5332c634c0a52de51c1f",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kang-kon",
+      "beforeSha256": "6580484e62eae3ff8a6fcc1bd2e75f25c05407d0c538d32cdb05494269e4aa8b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "leonid-serebryakov",
+      "beforeSha256": "151b6bc2176e0f84f1edc77004a0cc9334b3e804f4db4bc4cc42a542a17c8fc9",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "agostinho-neto",
+      "beforeSha256": "8b063618cb0890fd857e7fe21eea650d5689bfb8611f10d6eda30a524422a409",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Independence-war MPLA leadership; separate presidential activity becomes state."
+        },
+        {
+          "index": 1,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "lubomir-strougal",
+      "beforeSha256": "5ab1787a80eca30161a490670d91b1f4a981a6a0348170c4e39323c29d31c928",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "jarallah-omar",
+      "beforeSha256": "e724209636249521c66f7600182c78cfda043509db02cf486b0dde5827f58554",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Mixed pre-1990 party leadership and subsequent opposition in unified Yemen; retain party."
+        }
+      ]
+    },
+    {
+      "id": "markus-wolf",
+      "beforeSha256": "a33c604f2d00aa8e9d8febd26a10988eceaafedb8d1740b342ca0f53032f1fbd",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "balingiin-tserendorj",
+      "beforeSha256": "b4ce91bb53bd0a1162a6f0400b24c875248d4ab5d28334bfe2d92976625bc19b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "lucio-lara",
+      "beforeSha256": "0dc4a1fb04e8016446f0fb5a4a6f6f580b45bd0c592578abaa48a5f0d8e8fb8e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "babrak-karmal",
+      "beforeSha256": "bbf6e1699eb392bccc94cb5ea35998d0c7a18cfcbb62e0125dd17da9b5c99f7f",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Selected activity evidence establishes 1965 founding and 1967 Parcham leadership, not presidency."
+        }
+      ]
+    },
+    {
+      "id": "lydia-timashuk",
+      "beforeSha256": "8c102e7f36b6391b7eabebde02c63c9b9a9ad65b9e1ea7ed063388cbe8120b20",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "matyas-rakosi",
+      "beforeSha256": "34a8a3056a6f118f4b12227efa5415734fc7d50b5f309363a7b48a5894ef2024",
+      "review": [
+        {
+          "index": 1,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "mieczys-aw-rakowski",
+      "beforeSha256": "1499b1c0bbe02139117446e89b46ca0598ef34351b573cf202f22ec341d3ff76",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "miklos-nemeth",
+      "beforeSha256": "5252e20a49d78332509cd3ce3f92a6319e376081f3f56e8032224e42b3d18b58",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "milovan-djilas",
+      "beforeSha256": "dc51d58ffe04985f688bf2f09e8be742256722485886d03d0be3d77b63a7ebbc",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "kang-sheng",
+      "beforeSha256": "93f50cd06461a615dadb4bd7f732be0d4cb42843256e236885fc7b54e77756a5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "china-prc",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "mrachkovsky",
+      "beforeSha256": "bab874ef1f322fd7aea2996b1dc7c3ea19b0aa8fb0edc6744458507d885a0d93",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "damdin-sukhbaatar",
+      "beforeSha256": "8ebfd240d147800c9625bf3d1d8e60c07f12e7c4580aa249725ee342f7f09572",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mongolia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "mikhail-lashevich",
+      "beforeSha256": "7b8e974ddd310d33182c92d941f38cd71c9458be5985ddc4c2a159b6f8858943",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        },
+        {
+          "index": 1,
+          "decision": "retain-party",
+          "reason": "1901–1903 party affiliation; military service is converted separately."
+        }
+      ]
+    },
+    {
+      "id": "nagy",
+      "beforeSha256": "692e77798f701a7866ea94ace343ef6dedebe1d57543155668275ef4af17ed86",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "nam-il",
+      "beforeSha256": "f6cb6f8622c4a401c01c9aaf9978bf9364beb7a410f99500795ebec6fc9b1d38",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-north-korea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "nicolae-ceausescu",
+      "beforeSha256": "69a6ea11eeb5e54c8d240c4341341079b57cd02497147131fe88e702a5aa0fca",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "nikolai-bauman",
+      "beforeSha256": "35bf3a2b2c34f9f163289ce10f97a95b563aa9f5a79fa66c6502780b65cdc3b9",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Underground organizing 1901–1903, before state."
+        }
+      ]
+    },
+    {
+      "id": "nikolai-muralov",
+      "beforeSha256": "91239db8f5c45b76bed57f4304fecb95afd09c3d71680921cb05d5553df011ca",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "grigory-alexinsky",
+      "beforeSha256": "d9918a5acc575f2b437bc9a13555347f44972ef87cc8c7ef44076b636141e3f9",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Bolshevik and Duma activity 1905–1907."
+        }
+      ]
+    },
+    {
+      "id": "nito-alves",
+      "beforeSha256": "d665e617768a6520ed4eb586f81f1ad136466bea7540eaa9395b14a68b12884b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Independence-war guerrilla command 1966–1975."
+        }
+      ]
+    },
+    {
+      "id": "friedrich-ebert-jr",
+      "beforeSha256": "cb306d701a0cba61e088e46a1744306205233b5c8b54c66a3d76aac28cbd23c9",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "andrija-hebrang",
+      "beforeSha256": "30471544b64ce03f70e1397a4e7c06c0ecbf0324d07a2e6d3d1e8864d3e4cfd5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Evidence records wartime partisan leadership in 1942–1943."
+        }
+      ]
+    },
+    {
+      "id": "nako-spiru",
+      "beforeSha256": "8072497bac904711c05dfdee67369d9509456467dad227f7ebd6ae41c990ae0b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-albania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "jaan-anvelt",
+      "beforeSha256": "3c61fd7aca25143522df5764d983a62d07bcb7598ca10fc5c84aebfddb370820",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Estonian Bolshevik and 1924 insurrection activity, not Soviet state service in the selected excerpts."
+        }
+      ]
+    },
+    {
+      "id": "chen-yonggui",
+      "beforeSha256": "776e07ce63e05878113189fa93523857990a80edbe954fa788c7fbcdb5905743",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "china-prc",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "nur-muhammad-taraki",
+      "beforeSha256": "6c37c1e9098d0198415d85e11be6ae822547cdf4d20bef6501f0e51691dea9b3",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-afghanistan",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "nikolai-chkheidze",
+      "beforeSha256": "07d251d57e8436f57b0fa1a8a362d154bfd83aaa23719bbaa36c3fb89f66c5e3",
+      "review": [
+        {
+          "index": 0,
+          "decision": "correct-party",
+          "reason": "Excerpt explicitly says Menshevik, not Bolshevik or Soviet state."
+        }
+      ]
+    },
+    {
+      "id": "omer-nishani",
+      "beforeSha256": "d6e015c18dd54b20c31cab4fe953fe6bf124dc088c1a53fbdb6ace8219f224d3",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-albania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ota-sik",
+      "beforeSha256": "97ba480e48af6f96cc06e84fc92303d2f6b6cea5c40c79d9025a2811c367eec0",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "aleksandar-rankovic",
+      "beforeSha256": "0cfd38f75ba440589c2f2abb60f280deba052e7c7892382a9ad67bc11c1e1447",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-yugoslavia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "jozef-cyrankiewicz",
+      "beforeSha256": "1795f785fe50dfc80ccd81d51ab05119734875c42b34e61ac2c2596e1436fcf0",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "pavel-auersperg",
+      "beforeSha256": "afbaaafa56dd2aa09b40c6f0a277e918cb266e47449e18f1e9f80bd05269ae1b",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "abdul-fattah-ismail",
+      "beforeSha256": "648a13cc3461c8e3a874dd088bc07625da428a67de218e5e24535a3baa11cd21",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-south-yemen",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "wan-li",
+      "beforeSha256": "9d591d8ce841405d6ba26e60c17f84cc457057302096f4ed7184053647066bbf",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "china-prc",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "dubcek",
+      "beforeSha256": "8e87ad2cc88576de236f26b375535a6dca498d0390ffebeae0b4532f5feb53ad",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "jose-eduardo-dos-santos",
+      "beforeSha256": "729840c9465a3cff30f87a6d44ef91fba51741d56c9208df72714ced1dafaee1",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "pol-pot",
+      "beforeSha256": "c19d3a2d1a3cb390244048480b38c0690dc654c48286d5d54684fd494b31f260",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-democratic-kampuchea",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "edward-ochab",
+      "beforeSha256": "09b405d15f8cf4a883a385e0c523e010e0d3aa4e3e00a5f31c1e839cd3f8128c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "yuri-pyatakov",
+      "beforeSha256": "8c77590ff62b38039c60e38a92dcbbef54ba7a0bbe978c4c7159571ba8b2e475",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "fyodor-isidorovich-trukhin",
+      "beforeSha256": "a968123026f4b44e951c2b35ccb72dfa205fa43333e7f6b8299ac99ddbb4c178",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ana-pauker",
+      "beforeSha256": "720b058542af072234798f83124e4ecaaa6ac89942d7d69822346c3f3942d394",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "ferenc-vida",
+      "beforeSha256": "9f9c5c0f2f5dc6d5bc7b1e251259bc130603ea56c17ca15cf3ac54f3a9e0b6a8",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "raul-castro",
+      "beforeSha256": "c757cd7d8dd518c97fff89d63f349a10c1cc0ac95fa9b8349048ddc49dccfb80",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-cuba",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "imre-pozsgay",
+      "beforeSha256": "a8bec31772d495846b120cd46a69935e73b7fefea08f2f05beb61afd1d3dea3a",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "karoly-grosz",
+      "beforeSha256": "d2cfe3c05c6780553742580f40db5d5cecdec3df470c8852a23a61031600ddd8",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "rezso-nyers",
+      "beforeSha256": "95e8b77fa24715c17b7694c862d3b1fd78fb46059d7c2b27a12b989d8479aa40",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        },
+        {
+          "index": 1,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "oldrich-cernik",
+      "beforeSha256": "f131b6819c5e08025c86e41d29c88829c6a9f781d3aac7b96a39c8979b246b97",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "roman-malinovsky",
+      "beforeSha256": "c1d5c87e8131e095b727065f652067200f8b9ec189ebfd13f26f8482ccf32a05",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Bolshevik Duma leadership 1912–1914."
+        }
+      ]
+    },
+    {
+      "id": "vladimir-shashenok",
+      "beforeSha256": "c28244ef74f5c8026a7d8d7ac17469453d22985a3abf61677f64f7160b3dd836",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "rudolf-slansky",
+      "beforeSha256": "d3c289c949e31c0c91ce539845b6487b1df20152196d28836e858d546b7099e0",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "saleh-muslih-qasim",
+      "beforeSha256": "732485d5b8a05d11618f31d561149c247bd0a1460e378681e97abdb553ee3aca",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-south-yemen",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "sandor-kopacsi",
+      "beforeSha256": "2bacc9bae4de6160ee19a2b9f742bbfcaaff10dc1b4a417b7ce540e30ed97726",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-hungary",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "samora-machel",
+      "beforeSha256": "09b4980e8975f798091718e08074981778e9e2dcea025fcdc38c821bf559ad40",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-mozambique",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "viliam-algovi",
+      "beforeSha256": "d529c05825752d90730b2ea14e1b0f57bc5eef81acbfa99502132aee47ed7568",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "saparmurat-niyazov",
+      "beforeSha256": "d287658eff1ea2a26e35cc99e123273384eea64c3329bb37e15b05e4d8a22ced",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "carlos-rocha-dilolwa",
+      "beforeSha256": "0972a59ebd9e4c62015fd667c812a30fec00da29e5110a65f08815c6027d0b0d",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "smilga",
+      "beforeSha256": "5eb4a26419261e25a9c55bfa98b2d4502c40c8fa9a405c83cab3718162dc4c9c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Selected activity is Left Opposition leadership."
+        }
+      ]
+    },
+    {
+      "id": "paulo-teixeira-jorge",
+      "beforeSha256": "d9b76eb00180a9a5319c4e65f6d95e728e9b4c5b2641a7dc5a927718ed3986c0",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-angola",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "stepan-shaumyan",
+      "beforeSha256": "9fb60e45a1eb2164c11f22ebea8138c25b6119167dd02f16d05a0902b1d06e56",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "stepan-petrichenko",
+      "beforeSha256": "50a30cc75f8168dc2cb014136995552b1a3e98bb4a7ccbccd51a25c22d76678d",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "tadeusz-fiszbach",
+      "beforeSha256": "ec59e6f0482500b98e6494a9e634a60b6917e0e84002075eeef7716cd42473fc",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "teohari-georgescu",
+      "beforeSha256": "c7323b3fb8ffaaf004f52275c6eb8a89d2ff13e329ac41d257b722abfa62ed2e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "timofei-sapronov",
+      "beforeSha256": "304f2fa5c209083be184f3e373b9f60e94ef7be1cef4999b1e9d5ce8b3e4ebfb",
+      "review": [
+        {
+          "index": 0,
+          "decision": "retain-party",
+          "reason": "Selected activity is Left Opposition / Democratic Centralists."
+        }
+      ]
+    },
+    {
+      "id": "todor-zhivkov",
+      "beforeSha256": "164d66ad69d0da6fe78edc6bd6352bfebca6fc16cf4c1a1b43660bd043f3906a",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-bulgaria",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "truong-chinh",
+      "beforeSha256": "07ca7e274cbe4b5a70ca9e798ba38939ac6b1bfde2bf133d2c9d0984014a2b0c",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-vietnam",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "stanisaw-kania",
+      "beforeSha256": "cd3f7d7e76abf2c678f0b5cef511dace8c917a1dbe6a36ecdefb8194c45e2eaa",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vaclav-nosek",
+      "beforeSha256": "a6bb451b51f1110af7276f39b6db63db89ec35033223174b3f31681275772f54",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "harald-jager",
+      "beforeSha256": "955b0b286ae3fbc1a74f1470097f0451e607e4fb1dcd122e9c27be88db79e9e5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vaino-valjas",
+      "beforeSha256": "148dc5ffed970c543a4572223b331fb102160f99d2d2a40b242454967efa35c5",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-soviet",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vasil-bi-ak",
+      "beforeSha256": "99ddb6a8e99dee87976142306e501e7ac7928dcea8884065c711a991aea2258a",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vasile-luca",
+      "beforeSha256": "e6e15b050829a821a2fb78624a82c996d12520ffdd1a78a271a21e7fb38be7c7",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "vasile-milea",
+      "beforeSha256": "0b815e1555d28a483e35007e5938dc9301ceaff47cf8c6c50bbb714f15e565bb",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-romania",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "zdenek-mlynar",
+      "beforeSha256": "8cc826fec851c8204ec5ce1ea446f4dd0d6abef8b30f392f0495fd93c0d02432",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-czechoslovakia",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "wilhelm-pieck",
+      "beforeSha256": "5ae93cef421443a727d47fa3faf6b28ce0885c203c016daf1f7b42e11da1377e",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-east-germany",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    },
+    {
+      "id": "wladyslaw-gomulka",
+      "beforeSha256": "5271fbb35cf1bd7fcff3bedc9269cad7d08b26d369df9928dcb2f7e83b39e792",
+      "review": [
+        {
+          "index": 0,
+          "decision": "state",
+          "to": "state-poland",
+          "reason": "Reviewed cited career establishes work within the state/ruling system; earlier or later party periods retained separately where dated."
+        }
+      ]
+    }
+  ]
+}
