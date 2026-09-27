@@ -16,8 +16,9 @@ assert.equal(courses[0].title.ko, '프랑스 혁명사');
 assert.equal(courses[1].visibility, undefined);
 assert.equal(courses[1].category, 'history');
 assert.deepEqual(courses[1].chapters.map(chapter => chapter.chapterNumber), [1, 2, 3, 4, 5, 6]);
-// Part 4 reads the documents: every question cites the reference document it reads.
-const documentChapters = courses[0].chapters.filter(chapter => chapter.partNumber === 4);
+// The document-reading chapters sit in their periods; each question cites the reference document it reads.
+const documentChapters = courses[0].chapters.filter(chapter => Number(chapter.id.slice(-2)) >= 11);
+assert(courses[0].chapters.every(chapter => chapter.partNumber >= 1 && chapter.partNumber <= 3));
 assert.equal(documentChapters.length, 8);
 for (const chapter of documentChapters) {
   for (const question of chapter.lessons[0].questions) assert(question.source.href.startsWith('/commulingo/docs/'), question.id);

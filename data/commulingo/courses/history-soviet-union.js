@@ -26,7 +26,7 @@ function o(id, stance, labelKo, labelEn, noteKo, noteEn) {
 
 module.exports = {
     id: 'history-soviet-union',
-    volumeNumber: 1,
+    volumeNumber: 14,
     format: 'decision-history',
     title: t('소련사 1941–1991: 결정의 순간', 'The Soviet Union 1941–1991: Decision Points'),
     bookTitle: t('소련사 1941–1991', 'The Soviet Union, 1941–1991'),

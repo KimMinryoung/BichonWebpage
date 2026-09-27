@@ -30,7 +30,7 @@ function o(id, stance, labelKo, labelEn, noteKo, noteEn) {
 
 module.exports = {
     id: 'history-russian-revolution',
-    volumeNumber: 0,
+    volumeNumber: 13,
     format: 'decision-history',
     title: t('러시아 혁명사 1905–1937: 결정의 순간', 'The Russian Revolution 1905–1937: Decision Points'),
     bookTitle: t('러시아 혁명사 1905–1937', 'The Russian Revolution, 1905–1937'),

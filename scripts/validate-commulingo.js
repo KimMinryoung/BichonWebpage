@@ -46,7 +46,7 @@ const expectedSpecial = {
   'history-russian-revolution': { format: 'decision-history', eras: 4, episodes: 14 },
   'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
-const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2, 'french-revolution-intro': 4 };
+const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2, 'french-revolution-intro': 3 };
 
 const out = checks.createCollector();
 const data = loadCommuLingoBundle().bundle;
