@@ -122,6 +122,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
+    /* Korean wraps between words (어절), never inside one; long URLs and
+       unbroken strings still wrap instead of overflowing. */
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -182,6 +186,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 50;
+    border-inline: none;
 }
 
 /* The site menu (and the admin bar under it) takes the same band height as the
@@ -211,7 +216,7 @@ nav .nav-content {
     /* Fill the bar inside its border, so the links' hover fill and the active
        tab's underline reach the bar's own edges instead of stopping short. */
     min-height: calc(var(--bar-height) - 2 * var(--border-width));
-    max-width: 800px;
+    max-width: calc(var(--content-frame) - 2 * var(--gutter));
     margin: 0 auto;
 }
 
@@ -583,8 +588,8 @@ header h1 {
    min-height block below. Zero vertical padding here so the bar is exactly as
    tall as its tallest control. */
 .home-toolbar {
-    --toolbar-max: 960px;
-    --toolbar-pad: 20px;
+    --toolbar-max: var(--content-frame);
+    --toolbar-pad: var(--gutter);
     /* Distance from the viewport's left edge to the logo label. */
     --logo-gutter: max(var(--toolbar-pad), calc((100vw - var(--toolbar-max)) / 2 + var(--toolbar-pad)));
     display: flex;
@@ -629,41 +634,25 @@ header h1 {
     gap: 0;
 }
 
-.toolbar-center {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    justify-content: center;
-    font-size: 0.9rem;
-    min-width: 0;
-    white-space: nowrap;
-}
-
-/* Login / account button in the top toolbar */
+/* Login / account link: first of the right-hand controls, drawn like its
+   neighbours (no frame) but in the primary text colour. */
 .toolbar-account-btn {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    /* Shorter than the bar itself: this is the one control with a border, and
-       at the bar's full height its frame sits flush on the viewport edge. */
-    min-height: calc(var(--bar-height) - 6px);
+    gap: 6px;
+    min-height: var(--bar-height);
     box-sizing: border-box;
-    padding: 4px 14px;
-    background-color: var(--btn-bg);
-    border: 1px solid var(--border);
-    border-radius: 0;
+    padding: 4px 10px;
     color: var(--text-primary);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
-    transition: background-color 0.15s, border-color 0.15s;
+    transition: background-color 0.15s;
 }
 
 .toolbar-account-btn:hover {
-    background-color: var(--btn-hover);
-    border-color: var(--border-emphasis);
+    background-color: var(--bg-surface-hover);
     color: var(--text-primary);
     text-decoration: none;
 }
@@ -682,13 +671,9 @@ header h1 {
 }
 
 @media (max-width: 480px) {
-    .toolbar-center {
-        gap: 4px;
-        font-size: 0.82rem;
-    }
     .toolbar-account-btn {
-        padding: 5px 10px;
-        font-size: 0.8rem;
+        padding: 4px 6px;
+        font-size: 0.85rem;
     }
     .toolbar-account-name {
         max-width: 90px;
@@ -738,11 +723,6 @@ header h1 {
     min-width: var(--bar-height);
 }
 
-@media (max-width: 768px) {
-    .home-toolbar {
-        --toolbar-pad: 8px;
-    }
-}
 
 .home-hero {
     padding: 16px 24px;
@@ -859,6 +839,7 @@ a.home-card:hover::after {
     width: 18px;
     height: 18px;
     flex: 0 0 auto;
+    color: var(--accent-red);
 }
 
 .home-card p {
@@ -871,7 +852,8 @@ a.home-card:hover::after {
    they cannot be one anchor the way the plain cards are. The title link is
    stretched over the whole card instead, which makes the rectangle clickable
    like the chat card; the quick-link row is raised above it and keeps its own
-   targets. No arrow gutter on the right: the arrow sits after the title. */
+   targets. Its arrow sits in the same right-hand gutter as the plain cards,
+   centred on the title block above the quick-link row. */
 .home-card.home-card-group {
     padding: 14px 0 0;
 }
@@ -888,7 +870,7 @@ a.home-card:hover::after {
 
 .home-card-group > h2,
 .home-card-group > p {
-    padding-inline: 18px;
+    padding-inline: 18px 44px;
 }
 
 .home-card-group h2 a {
@@ -901,9 +883,23 @@ a.home-card:hover::after {
     text-decoration: none;
 }
 
+/* 14px top padding, 12px gap and the 44px link row: the title block's centre
+   sits 21px above the card's. */
 .home-card-group h2 a::after {
-    content: " →";
+    content: "→";
+    position: absolute;
+    top: calc(50% - 21px);
+    right: 16px;
+    transform: translateY(-50%);
     color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 400;
+    transition: transform 0.15s, color 0.15s;
+}
+
+.home-card-group:has(> h2 a:is(:hover, :active)) h2 a::after {
+    color: var(--accent);
+    transform: translate(4px, -50%);
 }
 
 /* Hover feedback matches the plain anchor cards: the stretched title link is
@@ -915,10 +911,6 @@ a.home-card:hover::after {
 
 .home-card-group:has(> h2 a:is(:hover, :active)) {
     background-color: var(--bg-surface-hover);
-}
-
-.home-card-highlight.home-card-group h2 a::after {
-    color: var(--accent-red);
 }
 
 /* Sub-section quick links: a full-width segmented button row, one shared
@@ -992,22 +984,6 @@ a.home-card:hover::after {
         content: attr(data-short);
         font-size: 0.85rem;
     }
-}
-
-/* Highlighted interactive cards (chat, CommuLingo) — restrained brand-red accent.
-   No fill and no left bar: the red title alone (--accent-red, the logo/tagline
-   red) draws the eye, and every card keeps the same cream frame so the column
-   reads as one stack rather than two kinds of box. */
-.home-card-highlight h2 {
-    color: var(--accent-red);
-}
-
-.home-card-highlight::after {
-    color: var(--accent-red);
-}
-
-.home-card-highlight:hover::after {
-    color: var(--accent-red);
 }
 
 .home-section {

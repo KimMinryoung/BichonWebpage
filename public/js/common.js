@@ -23,7 +23,6 @@ document.addEventListener('submit', function(e) {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
     var html = document.documentElement;
-    var icon = btn.querySelector('.theme-toggle-icon') || btn;
     var isEnglish = html.lang === 'en';
 
     function getTheme() {
@@ -33,7 +32,6 @@ document.addEventListener('submit', function(e) {
     function setIcon() {
         var theme = getTheme();
         var isLight = theme === 'light';
-        icon.textContent = isLight ? '\u263C' : '\u263E';
         btn.setAttribute('aria-pressed', String(isLight));
         btn.setAttribute('aria-label', isLight
             ? (isEnglish ? 'Switch to dark mode' : '다크 모드로 전환')

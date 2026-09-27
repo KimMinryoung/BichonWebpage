@@ -67,9 +67,13 @@
   --crumb-offset: 14px;
   --crumb-height: 34px;
 
-  --content-default: 50rem;
-  --content-wide: 61.25rem;
-  --content-home: 60rem;
+  /* One frame for every page: the toolbar, the site menu and the page
+     container share this width, so the logo and the page edges line up as
+     the reader moves between sections. */
+  --content-frame: 60rem;
+  --content-default: var(--content-frame);
+  --content-wide: var(--content-frame);
+  --content-home: var(--content-frame);
   --content-admin: 70rem;
   --gutter: clamp(0.75rem, 3vw, 1.25rem);
   --content-inset: clamp(var(--space-4), 3vw, var(--space-6));

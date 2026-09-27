@@ -1,6 +1,6 @@
 /* Shared page width; horizontal gutters come from style.css .container. */
 .commulingo-page .container {
-    max-width: 980px;
+    max-width: var(--content-frame);
 }
 
 .commulingo-shell {

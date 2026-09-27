@@ -328,15 +328,18 @@ svg {
     padding: var(--space-1) var(--space-2);
     color: var(--text-primary);
     border-left: var(--border-width) solid var(--border);
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: none;
     transition: background-color var(--duration-fast) var(--ease-standard);
 }
 
 .ui-tab:first-child { border-left: 0; }
 .ui-tab:hover { color: var(--text-primary); background: var(--bg-surface-hover); text-decoration: none; }
+/* Same current-page mark as the site menu: a red underline and red icon. */
 .ui-tab.is-active,
-.ui-tab[aria-current='page'] { background: color-mix(in srgb, var(--accent-red) 26%, var(--bg-canvas)); }
+.ui-tab[aria-current='page'] { box-shadow: inset 0 -3px 0 var(--accent-red); font-weight: 600; }
+.ui-tab.is-active svg,
+.ui-tab[aria-current='page'] svg { color: var(--accent-red); }
 
 .ui-crumb {
     display: flex;
@@ -435,10 +438,20 @@ svg {
     min-height: var(--control-height);
 }
 
-.theme-toggle-icon {
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 1;
+/* Both icons are in the markup; the theme attribute picks one, so the button
+   shows the right icon before any script runs. */
+.theme-icon {
+    width: 17px;
+    height: 17px;
+}
+
+.theme-icon-sun,
+[data-theme="light"] .theme-icon-moon {
+    display: none;
+}
+
+[data-theme="light"] .theme-icon-sun {
+    display: block;
 }
 
 .lang-menu {
