@@ -12,7 +12,7 @@ const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumn
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems } = require('./person-life-years');
-const { nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate } = require('./people-admin-validation');
+const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate } = require('./people-admin-validation');
 
 // Person records for the CommuLingo admin API: list/get, create/update/
 // delete with the child tables (role, aliases, scenes, patronymic, career).
@@ -362,6 +362,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         assertPatronymicSeparate(partsEn, patronymicState.en, 'en');
         const nameKo = partsKo.full;
         const nameEn = partsEn.full;
+        assertIdKeepsLetters(id, nameEn);
         const fold = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
         const { rows: candidates } = await client.query(`SELECT id, name_ko, name_en FROM commulingo_people
             UNION ALL SELECT person_id AS id, CASE WHEN lang='ko' THEN alias ELSE '' END,

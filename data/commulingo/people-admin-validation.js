@@ -141,4 +141,30 @@ function assertPatronymicSeparate(parts, patronymic, lang) {
     }
 }
 
-module.exports = { nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate };
+// Letters NFKD cannot decompose to ASCII (same table as leninbot's _fold_slug).
+const FOLD_LETTERS = { ł: 'l', Ł: 'l', ø: 'o', Ø: 'o', đ: 'd', Đ: 'd', ß: 'ss', æ: 'ae', Æ: 'ae', œ: 'oe', Œ: 'oe', þ: 'th', Þ: 'th', ð: 'd', Ð: 'd', ı: 'i' };
+const slugOf = text => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+function foldSlug(text) {
+    const folded = [...String(text || '')].map(ch => FOLD_LETTERS[ch] ?? ch).join('')
+        .normalize('NFKD').replace(/\p{M}/gu, '').replace(/['’ʼ]/g, '');
+    return slugOf(folded);
+}
+
+// A person id must romanize the name, not lose its letters: 2026-08 slugs
+// dropped every non-ASCII letter (Lech Wałęsa -> lech-wa-sa, Edvard Beneš ->
+// edvard-bene) and 24 cards had to be renamed with redirects. Reject an id that
+// carries a name word with those letters dropped or turned into dashes.
+function assertIdKeepsLetters(id, nameEn) {
+    for (const word of String(nameEn || '').split(/\s+/)) {
+        if (!/[^\x00-\x7f]/.test(word)) continue;
+        const good = foldSlug(word);
+        const cut = [word.replace(/[^\x00-\x7f]/g, ''), word.replace(/[^\x00-\x7f]/g, '-')].map(slugOf);
+        for (const bad of cut) {
+            if (bad && bad !== good && `-${id}-`.includes(`-${bad}-`)) {
+                throw badRequest(`person id "${id}" drops letters of "${word}"; romanize it as "${good}"`);
+            }
+        }
+    }
+}
+
+module.exports = { foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate };
