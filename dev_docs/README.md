@@ -9,6 +9,7 @@
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
 | CommuLingo 학습 활동 계측·테스트 제외·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
+| CommuLingo 신규 강좌 후보·실제 유입 판정 | [2026-09-27 후보](commulingo-course-candidates-20260927.md) |
 | CommuLingo 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌 12편·36문항과 출처 기준](commulingo-ideology-learning.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
