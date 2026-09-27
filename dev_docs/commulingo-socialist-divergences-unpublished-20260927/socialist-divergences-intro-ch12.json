@@ -1,0 +1,475 @@
+{
+ "id": "socialist-divergences-intro-ch12",
+ "title": {
+  "ko": "곡물 위기 앞에서 무엇이 갈렸나?",
+  "en": "What split over the grain crisis?"
+ },
+ "sourceUrl": "/commulingo/docs/bukharin-1928-notes-of-an-economist",
+ "summary": {
+  "ko": "약 12분 · 1928년 1월 스탈린의 시베리아 발언 「곡물 조달과 농업 발전의 전망에 대하여」, 같은 해 9월 부하린의 「한 경제학자의 노트」, 1929년 11월 스탈린의 「대전환의 해」를 차례로 읽고, 곡물 조달 위기의 원인과 처방을 두고 두 사람이 어디서 갈렸는지, 논쟁이 어떻게 끝났는지 확인합니다.",
+  "en": "About 12 minutes · Read Stalin's January 1928 Siberian remarks 'Grain Procurements and the Prospects for Agricultural Development', Bukharin's 'Notes of an Economist' of September 1928, and Stalin's 'A Year of Great Change' of November 1929, and see where the two men split over the causes and cures of the grain procurement crisis and how the argument ended."
+ },
+ "learningFocus": {
+  "ko": "부하린을 공업화에 반대하고 쿨라크를 감싼 사람으로 읽기 쉽지만, 「한 경제학자의 노트」는 공업화를 「우리에게 법」이라 부르고 국영·집단농장 투자도 지지합니다. 갈린 곳은 속도와 균형, 그리고 곡물 위기를 쿨라크의 사보타주로 볼지 곡물 경영의 정체와 가격 불균형으로 볼지였습니다. 「대전환의 해」의 성과 주장은 당시 당의 주장이지 확인된 결과가 아닙니다.",
+  "en": "It is easy to read Bukharin as opposing industrialisation and shielding the kulaks, but 'Notes of an Economist' calls industrialisation 'a law for us' and supports investment in state and collective farms. The split was over tempo and balance, and over whether the grain crisis was kulak sabotage or the stagnation of grain farming and price imbalance. The achievements claimed in 'A Year of Great Change' are the party's claims at the time, not established results."
+ },
+ "conceptBrief": {
+  "ko": [
+   {
+    "title": "배경: 1927~28년 곡물 조달 위기",
+    "items": [
+     "1928년 1월 스탈린은 올해 곡물 수지에 1억 뿌드 이상의 적자가 있어 이를 메우지 못하면 도시와 공업 중심지와 붉은군대가 기근의 위협을 받는다며 시베리아로 내려갔습니다.",
+     "네프 아래 국가는 곡물을 정해진 국가 가격으로 사들였습니다. 위기는 농민이 그 가격에 곡물을 충분히 내놓지 않으면서 드러났습니다.",
+     "제15차 당대회(1927년 12월)는 「농촌 사업에 관하여」에서 소농 경영을 대규모 집단으로 통합하는 것을 농촌에서 당의 기본 과제로 제시했고, 공업 투자의 속도에 대해서는 첫해에 미친 듯이 올렸다가 떨어지는 것에 반대했습니다."
+    ]
+   },
+   {
+    "title": "스탈린 (1928년 1월): 쿨라크, 제107조, 집단농장",
+    "items": [
+     "스탈린은 시베리아가 전례 없는 풍작인데도 쿨라크가 곡물을 쌓아 두고 국가 가격의 세 배를 기다리며 투기한다고 봤고, 빈농과 중농이 이미 국가 가격으로 납부했으니 쿨라크에게 더 줄 수 없다고 했습니다.",
+     "그는 투기 처벌 조항인 러시아 공화국 형법 제107조로 쿨라크를 기소하고 잉여 곡물을 몰수하되, 몰수분의 25%를 빈농과 빈약한 중농에게 낮은 가격이나 장기 신용으로 나누라고 했습니다. 이를 꺼리는 검사와 판사는 교체하라고 했습니다.",
+     "그는 쿨라크가 있는 한 조달 사보타주도 있을 것이라며, 3~4년 안에 집단농장과 국영농장이 필요한 곡물의 적어도 3분의 1을 내게 하고, 나아가 개인 농민까지 대체하도록 모든 지역을 집단농장으로 덮어야 한다고 했습니다. 사회주의화된 공업과 개인 소농 경영이라는 이질적인 두 기초 위에서는 소비에트 체제가 오래 버틸 수 없다는 것이 이유였습니다."
+    ]
+   },
+   {
+    "title": "부하린 (1928년 9월): 균형과 실물",
+    "items": [
+     "부하린은 『프라우다』에 실은 「한 경제학자의 노트」에서 스탈린의 이름을 적지 않고 트로츠키주의자들의 「초공업화」 주장을 표적으로 삼았습니다. 이행기에도 생산 부문들 사이의 올바른 결합, 곧 동태적 균형의 조건을 세워야 한다고 했습니다.",
+     "그는 곡물 위기가 공산품 부족 속의 곡물 과잉이 아니라, 곡물 경영의 영세화와 정체 속에서 곡물과 기술작물의 가격 불균형, 쿨라크 과세의 부족, 공산품 공급 부족, 쿨라크의 경제적 영향력 증대가 겹쳐 준비되었다고 했습니다.",
+     "그는 「미래의 벽돌」로 현재의 공장을 지을 수 없다며, 벽돌·시멘트·강재의 부족을 표로 제시하고 자재가 따라오지 않는 속도는 공업 자신을 멈추게 한다고 했습니다. 요구는 새 노선이 아니라 제15차 당대회의 결정과 비축 결정의 정확한 이행이었습니다.",
+     "그는 소련의 공업화를 「우리에게 법」이라 불렀고, 곡물 경영의 낙후 때문에 국영농장과 집단농장에 자금을 배정하는 것도 옳다고 했습니다."
+    ]
+   },
+   {
+    "title": "어디서 갈렸고 어떻게 끝났나",
+    "items": [
+     "두 사람 모두 공업화와 국영·집단농장 확대를 말했습니다. 갈린 곳은 위기의 원인을 쿨라크의 저항에서 찾느냐 곡물 경영과 가격의 불균형에서 찾느냐, 그리고 강제와 속도를 얼마나 밀어붙이느냐였습니다.",
+     "1929년 11월 7일 「대전환의 해」에서 스탈린은 중농이 마을째 집단농장으로 들어왔다며, 농민은 집단농장에 들어가지 않을 것이고 빠른 속도가 불만을 낳는다던 「우익 기회주의자(부하린 그룹)」의 주장이 낡은 부르주아 자유주의의 쓰레기처럼 무너졌다고 선언했습니다.",
+     "두 달 뒤 전면적 집단화와 「계급으로서의 쿨라크 청산」이 뒤따랐습니다. 부하린·리코프·톰스키는 1929년 요직에서 밀려났고, 1932~33년 우크라이나·카자흐스탄·볼가 유역에서 대기근으로 수백만 명이 죽었습니다."
+    ]
+   },
+   {
+    "title": "근거 자료",
+    "items": [
+     "스탈린, 「곡물 조달과 농업 발전의 전망에 대하여」(1928년 1월 시베리아 각지 발언, 전집 제11권).",
+     "부하린, 「한 경제학자의 노트: 새 경제년도의 시작에 부쳐」(『프라우다』 1928년 9월 30일), 통계표 포함 전문.",
+     "스탈린, 「대전환의 해: 10월 혁명 12주년에 부쳐」(『프라우다』 1929년 11월 7일)."
+    ]
+   }
+  ],
+  "en": [
+   {
+    "title": "Background: the grain procurement crisis of 1927-28",
+    "items": [
+     "In January 1928 Stalin went to Siberia saying the year's grain balance showed a deficit of over 100 million poods, and that unless it was covered the towns, industrial centres and Red Army would face the threat of famine.",
+     "Under NEP the state bought grain at fixed state prices. The crisis appeared when peasants did not deliver enough grain at those prices.",
+     "The Fifteenth Party Congress (December 1927), in its resolution 'On Work in the Countryside', set the uniting of small peasant farms into large collectives as the party's basic task in the countryside, and on investment tempo it opposed raising it furiously in the first years only to let it fall later."
+    ]
+   },
+   {
+    "title": "Stalin (January 1928): kulaks, Article 107, collective farms",
+    "items": [
+     "Stalin said that despite an unprecedented Siberian harvest the kulaks were hoarding grain and speculating, waiting for three times the state price, and that since poor and middle peasants had already delivered at state prices the kulaks could not be paid more.",
+     "He told officials to prosecute kulaks under Article 107 of the RSFSR criminal code, the anti-speculation article, and confiscate their surplus grain, distributing 25 per cent of it to poor and weaker middle peasants at low prices or on long-term credit. Prosecutors and judges unwilling to act should be replaced.",
+     "He said that as long as kulaks existed procurement sabotage would too, so within three or four years collective and state farms must supply at least a third of the grain needed, and ultimately the whole country must be covered with collective farms that would replace even individual peasants as suppliers. His reason was that the Soviet system could not long rest on two unlike foundations: socialised industry and small individual peasant farming."
+    ]
+   },
+   {
+    "title": "Bukharin (September 1928): balance and physical supply",
+    "items": [
+     "In 'Notes of an Economist' in Pravda Bukharin never named Stalin and targeted the Trotskyists' 'super-industrialisation'. Even in the transition period, he argued, the conditions for a correct combination of the branches of production, a dynamic equilibrium, must be established.",
+     "He said the grain crisis was not a surplus of grain amid a goods famine, but was prepared amid the fragmentation and stagnation of grain farming by price disparity between grain and industrial crops, insufficient taxation of kulaks, insufficient supply of manufactures, and the growing economic influence of the kulaks.",
+     "He said a present-day factory cannot be built with 'bricks of the future', set out shortages of bricks, cement and steel in tables, and argued that a tempo materials could not follow would stall industry itself. He asked not for a new line but for exact fulfilment of the Fifteenth Congress decisions and the decisions on reserves.",
+     "He called Soviet industrialisation 'a law for us' and said that, given the backwardness of grain farming, allocating funds to state and collective farms was right."
+    ]
+   },
+   {
+    "title": "Where they split and how it ended",
+    "items": [
+     "Both men spoke of industrialisation and of expanding state and collective farms. They split over whether the crisis lay in kulak resistance or in the imbalance of grain farming and prices, and over how far coercion and tempo should be pushed.",
+     "In 'A Year of Great Change' of 7 November 1929 Stalin declared that the middle peasant had entered the collective farms village by village, and that the claims of the 'Right opportunists (Bukharin group)' that peasants would not join and that a rapid tempo would breed discontent had collapsed like old bourgeois-liberal rubbish.",
+     "Two months later came wholesale collectivisation and 'the liquidation of the kulaks as a class'. Bukharin, Rykov and Tomsky lost their key posts in 1929, and in 1932-33 famine killed millions in Ukraine, Kazakhstan and the Volga region."
+    ]
+   },
+   {
+    "title": "Sources",
+    "items": [
+     "Stalin, 'Grain Procurements and the Prospects for Agricultural Development' (remarks in Siberia, January 1928; Works, vol. 11).",
+     "Bukharin, 'Notes of an Economist: At the Beginning of a New Economic Year' (Pravda, 30 September 1928), complete with its tables.",
+     "Stalin, 'A Year of Great Change: On the Twelfth Anniversary of October' (Pravda, 7 November 1929)."
+    ]
+   }
+  ]
+ },
+ "conceptMap": {
+  "ko": [
+   {
+    "title": "사보타주 진단",
+    "text": "스탈린은 위기를 곡물을 쥔 쿨라크의 투기와 지방 기관의 방관으로 봤습니다."
+   },
+   {
+    "title": "제107조와 집단농장",
+    "text": "처방은 형법에 따른 몰수와, 개인 농민까지 대체할 집단농장 확대였습니다."
+   },
+   {
+    "title": "균형과 실물",
+    "text": "부하린은 자재와 곡물이 따라오지 않는 속도는 공업 자신을 멈춘다고 했습니다."
+   },
+   {
+    "title": "대전환의 선언",
+    "text": "1929년 스탈린은 중농의 집단농장 가입으로 논쟁이 끝났다고 선언했습니다."
+   }
+  ],
+  "en": [
+   {
+    "title": "Diagnosis of sabotage",
+    "text": "Stalin saw the crisis as speculation by grain-hoarding kulaks and the passivity of local bodies."
+   },
+   {
+    "title": "Article 107 and collective farms",
+    "text": "His cure was confiscation under the criminal code and collective farms that would replace even individual peasants."
+   },
+   {
+    "title": "Balance and physical supply",
+    "text": "Bukharin said a tempo that materials and grain could not follow would stall industry itself."
+   },
+   {
+    "title": "The Great Change declared",
+    "text": "In 1929 Stalin declared the argument settled by the middle peasant's entry into the collective farms."
+   }
+  ]
+ },
+ "diagram": {
+  "kind": "contrast",
+  "ko": {
+   "title": "1928년 곡물 위기를 둘러싼 두 진단",
+   "left": {
+    "heading": "스탈린, 시베리아 발언 (1928년 1월)",
+    "rows": [
+     "원인: 풍작 속 쿨라크의 곡물 은닉과 투기",
+     "당장의 처방: 형법 제107조로 기소하고 잉여 몰수",
+     "농업의 전망: 모든 지역을 집단농장으로, 개인 농민까지 대체",
+     "속도: 3~4년 안에 곡물의 3분의 1을 집단·국영농장에서"
+    ]
+   },
+   "right": {
+    "heading": "부하린, 「한 경제학자의 노트」 (1928년 9월)",
+    "rows": [
+     "원인: 곡물 경영 정체, 가격 불균형, 공산품 부족, 쿨라크 영향력",
+     "당장의 처방: 가격 정책 시정, 곡물 경영 지원, 비축 확보",
+     "농업의 전망: 국영·집단농장 지원, 공업과 농업의 균형",
+     "속도: 자재와 곡물이 따라오는 범위, 제15차 대회 결정 이행"
+    ]
+   }
+  },
+  "en": {
+   "title": "Two diagnoses of the 1928 grain crisis",
+   "left": {
+    "heading": "Stalin, Siberian remarks (January 1928)",
+    "rows": [
+     "Cause: kulaks hoarding and speculating amid a good harvest",
+     "Immediate cure: prosecute under Article 107 and confiscate surplus",
+     "Farming prospect: collective farms everywhere, replacing even individual peasants",
+     "Tempo: a third of grain from collective and state farms within 3-4 years"
+    ]
+   },
+   "right": {
+    "heading": "Bukharin, 'Notes of an Economist' (September 1928)",
+    "rows": [
+     "Cause: stagnant grain farming, price disparity, goods shortage, kulak influence",
+     "Immediate cure: correct price policy, support grain farming, build reserves",
+     "Farming prospect: support state and collective farms; balance industry and agriculture",
+     "Tempo: within what materials and grain allow; carry out the Fifteenth Congress decisions"
+    ]
+   }
+  }
+ },
+ "lessons": [
+  {
+   "id": "socialist-divergences-intro-ch12-basic",
+   "level": "basic",
+   "title": {
+    "ko": "곡물 위기 앞에서 무엇이 갈렸나?",
+    "en": "What split over the grain crisis?"
+   },
+   "questions": [
+    {
+     "id": "q1",
+     "type": "multiple_choice",
+     "points": 2,
+     "prompt": {
+      "ko": "1928년 1월 시베리아에서 스탈린은 곡물 조달이 계획에 못 미친 원인을 어디서 찾았을까요?",
+      "en": "In Siberia in January 1928, where did Stalin locate the cause of grain procurements falling short of the plan?"
+     },
+     "choices": {
+      "ko": [
+       "풍작인데도 쿨라크가 곡물을 쌓아 두고 국가 가격의 세 배를 기다리며 투기하는데, 지방 간부들이 이를 막지 않는다고 봤습니다.",
+       "흉작으로 시베리아의 잉여 곡물 자체가 줄었다고 보고, 이번 해 조달 계획은 낮추되 다른 지방에서 부족분을 메우자고 했습니다.",
+       "국가 수매가가 너무 낮아 농민이 곡물을 내놓지 않는다고 보고, 쿨라크를 포함한 모든 농민에게 수매가를 넉넉히 올려 주자고 했습니다."
+      ],
+      "en": [
+       "Despite a good harvest the kulaks were hoarding grain and speculating for three times the state price, and local officials were not stopping them.",
+       "A poor harvest had shrunk Siberia's grain surplus itself, so this year's plan should be lowered and the shortfall made up in other regions.",
+       "State purchase prices were too low for peasants to part with grain, so prices should be raised generously for all peasants, kulaks included."
+      ]
+     },
+     "answer": 0,
+     "choiceFeedback": {
+      "ko": [
+       "스탈린은 수확이 전례 없는 풍작이고 쿨라크 창고에 경영당 5만~6만 뿌드의 잉여가 있는데 계획이 수행되지 않는다며, 지방 당 조직과 사법 기관을 탓했습니다.",
+       "반대입니다. 스탈린은 시베리아의 수확이 전례 없는 풍작이고 계획은 작년과 거의 같다며, 수행 불가능하다는 말을 비관주의라고 몰아세웠습니다.",
+       "스탈린은 빈농과 중농이 이미 국가 가격으로 곡물을 냈는데 쿨라크에게 세 배를 줄 수는 없다며 가격 인상을 명시적으로 거부했습니다."
+      ],
+      "en": [
+       "Stalin said the harvest was unprecedented and kulak barns held 50,000 to 60,000 poods of surplus per farm, yet the plan was unfulfilled, and he blamed local party bodies and the courts.",
+       "The reverse: Stalin said Siberia's harvest was unprecedented and its plan nearly the same as last year's, and dismissed talk of impossibility as pessimism.",
+       "Stalin explicitly refused higher prices, saying poor and middle peasants had already delivered at state prices and kulaks could not be paid three times as much."
+      ]
+     },
+     "explanation": {
+      "ko": "스탈린의 진단은 공급이 아니라 행위에서 출발합니다. 올해 곡물 수지에 1억 뿌드가 넘는 적자가 있고, 이를 메우지 못하면 도시와 붉은군대가 기근의 위협을 받는다고 했습니다. 그런데 시베리아는 전례 없는 풍작이니 곡물이 없는 것이 아니라 내놓지 않는 것이며, 그 주체가 가격이 세 배로 오르기를 기다리는 쿨라크라는 것입니다. 수매가를 올리자는 의견은 빈농과 중농이 이미 국가 가격으로 곡물을 냈다는 이유로 물리쳤습니다. 책임은 쿨라크 집에 얹혀산다는 검사·판사와 지방 당 조직에 돌렸습니다. 곡물 부족을 계급의 저항과 기관의 방관으로 읽는 이 진단이 뒤따르는 처방을 정했습니다.",
+      "en": "Stalin's diagnosis starts from conduct, not supply. The year's grain balance showed a deficit of over 100 million poods, and if it was not covered the towns and Red Army would face famine. But Siberia had an unprecedented harvest, so the grain was not missing but withheld, and those withholding it were kulaks waiting for prices to triple. He rejected raising purchase prices on the ground that poor and middle peasants had already delivered at state prices. He laid the blame on prosecutors and judges who, he said, lodged in kulak houses, and on local party bodies. Reading the shortage as class resistance and official passivity set the cure that followed."
+     },
+     "source": {
+      "kind": "reference",
+      "href": "/commulingo/docs/stalin-1928-grain-siberia",
+      "label": {
+       "ko": "스탈린, 「곡물 조달과 농업 발전의 전망에 대하여」 (1928년 1월)",
+       "en": "Stalin, 'Grain Procurements and the Prospects for Agricultural Development' (January 1928)"
+      }
+     }
+    },
+    {
+     "id": "q2",
+     "type": "multiple_choice",
+     "points": 2,
+     "prompt": {
+      "ko": "스탈린이 시베리아 간부들에게 제시한 당장의 조치와 그 뒤의 전망은 무엇이었을까요?",
+      "en": "What immediate measures and longer prospect did Stalin put to the Siberian officials?"
+     },
+     "choices": {
+      "ko": [
+       "형법 제107조로 쿨라크를 기소해 잉여 곡물을 몰수하고, 3~4년 안에 집단·국영농장이 필요한 곡물의 3분의 1 이상을 내게 하자고 했습니다.",
+       "곡물을 내놓지 않는 마을 전체에 연대 벌금을 매기고, 그해 봄 파종 전까지 모든 농가를 예외 없이 집단농장에 넣자고 했습니다.",
+       "쿨라크에게서 몰수한 곡물은 전부 도시와 군대로 보내고, 빈농에게는 다음 해에 공산품을 먼저 공급해 보상하자고 했습니다."
+      ],
+      "en": [
+       "Prosecute kulaks under Article 107 and confiscate their surplus; within three or four years have collective and state farms supply at least a third of the grain needed.",
+       "Fine whole villages collectively for withholding grain, and put every household without exception into collective farms before that spring's sowing.",
+       "Send all grain confiscated from kulaks to the towns and army, and compensate poor peasants next year by supplying them with manufactures first."
+      ]
+     },
+     "answer": 0,
+     "choiceFeedback": {
+      "ko": [
+       "스탈린은 제107조 적용과 몰수, 몰수분 25%의 빈농 분배, 부적합한 검사·판사 교체를 제안하고, 쿨라크가 있는 한 사보타주가 되풀이된다며 집단·국영농장 확대를 내걸었습니다.",
+       "1928년 1월의 제안은 전면 집단화가 아니라 3~4년 안에 곡물의 3분의 1을 집단·국영농장에서 얻는 부분적 집단화였습니다. 마을 연대 벌금도 이 발언에 없습니다.",
+       "스탈린은 몰수 곡물의 25%를 빈농과 빈약한 중농에게 낮은 국가 가격이나 장기 신용으로 나누라고 했습니다. 빈농을 끌어들이는 장치였습니다."
+      ],
+      "en": [
+       "Stalin proposed applying Article 107 and confiscation, giving 25 per cent to poor peasants, replacing unfit prosecutors and judges, and, since sabotage would recur while kulaks existed, expanding collective and state farms.",
+       "The January 1928 proposal was not wholesale collectivisation but partial: a third of grain from collective and state farms within three or four years. Collective village fines are not in these remarks either.",
+       "Stalin said 25 per cent of confiscated grain should go to poor and weaker middle peasants at low state prices or on long-term credit, a device to draw the poor to his side."
+      ]
+     },
+     "explanation": {
+      "ko": "처방은 두 층입니다. 당장은 쿨라크에게 잉여 곡물을 국가 가격으로 즉시 내라고 요구하고, 거부하면 투기 처벌 조항인 형법 제107조로 기소해 곡물을 몰수하되, 몰수분의 25%는 빈농과 빈약한 중농에게 싸게 또는 장기 신용으로 나누라는 것이었습니다. 이를 꺼리는 사법 간부는 갈아치우라고 했습니다. 그러나 스탈린은 이것으로 올해는 넘겨도 쿨라크가 있는 한 사보타주는 되풀이된다고 봤고, 3~4년 안에 집단·국영농장이 필요한 곡물의 3분의 1 이상을 내게 하자고 했습니다. 이어서 공업만이 아니라 농업 전체를 사회주의화해 개인 농민까지 대체하는 집단농장으로 모든 지역을 덮어야 한다고 했습니다. 시장에서 곡물을 사들이던 네프의 방식이 행정적 강제로 넘어가는 지점이 이 한 발언 안에 들어 있습니다.",
+      "en": "The cure had two layers. Immediately, kulaks were to deliver their surplus at state prices at once; if they refused, they were to be prosecuted under Article 107, the anti-speculation article, and their grain confiscated, with 25 per cent going cheaply or on long-term credit to poor and weaker middle peasants. Judicial officials who balked were to be replaced. Yet Stalin held that while this would get through the year, sabotage would recur as long as kulaks existed, so within three or four years collective and state farms should supply at least a third of the grain needed. He went on to say that not only industry but all agriculture must be socialised, covering every region with collective farms that would replace even individual peasants. The move from NEP's buying of grain on the market to administrative coercion is contained in these remarks."
+     },
+     "source": {
+      "kind": "reference",
+      "href": "/commulingo/docs/stalin-1928-grain-siberia",
+      "label": {
+       "ko": "스탈린, 「곡물 조달과 농업 발전의 전망에 대하여」 (1928년 1월)",
+       "en": "Stalin, 'Grain Procurements and the Prospects for Agricultural Development' (January 1928)"
+      }
+     }
+    },
+    {
+     "id": "q3",
+     "type": "multiple_choice",
+     "points": 2,
+     "prompt": {
+      "ko": "부하린은 「한 경제학자의 노트」에서 「미래의 벽돌로는 현재의 공장을 지을 수 없다」는 말로 무엇을 경고했을까요?",
+      "en": "What was Bukharin warning of in 'Notes of an Economist' when he said a present-day factory cannot be built with bricks of the future?"
+     },
+     "choices": {
+      "ko": [
+       "투자 계획을 돈으로만 세우면 안 되고 벽돌·시멘트·강재가 지금 실제로 있어야 하며, 그것을 넘는 속도는 건설 자체를 막는다고 했습니다.",
+       "공업화 자체가 농민에게 지나친 부담이 되므로 자본 건설을 당분간 멈추고, 그 예산을 경공업과 개인 농민 경영 지원으로 모두 돌리자고 했습니다.",
+       "건축자재가 모자라니 외국에서 벽돌과 강재를 대량으로 들여와서라도 통제숫자의 투자 속도를 그대로 지켜야 한다고 했습니다."
+      ],
+      "en": [
+       "Investment plans cannot be drawn up in money alone; bricks, cement and steel must physically exist now, and a tempo beyond them blocks construction itself.",
+       "Industrialisation itself was too heavy a burden on the peasants, so capital construction should stop for a while and its whole budget go to light industry and individual peasant farms.",
+       "Since building materials were short, bricks and steel should be imported in bulk so that the investment tempo in the control figures could be kept unchanged."
+      ]
+     },
+     "answer": 0,
+     "choiceFeedback": {
+      "ko": [
+       "부하린은 「돈만 있으면 다 된다」는 화폐 물신숭배를 비판하고, 벽돌·시멘트·유리·강재의 부족분을 표로 들며 건설용 금속이 20%나 모자라면 어떻게 짓겠느냐고 물었습니다.",
+       "부하린은 공업화를 멈추자고 하지 않았습니다. 그는 소련의 공업화를 「우리에게 법」이라 부르고, 요구한 것은 제15차 당대회 결정대로의 속도였습니다.",
+       "부하린은 장비는 몰라도 장비·원료·곡물 모두를 동시에 해외에 의존하는 것은 있을 수 없다고 했습니다. 수입으로 속도를 지키자는 주장이 아닙니다."
+      ],
+      "en": [
+       "Bukharin attacked the money fetishism of 'money is all you need', tabulated shortages of bricks, cement, glass and steel, and asked how one would build with construction metal 20 per cent short.",
+       "Bukharin did not ask to halt industrialisation. He called Soviet industrialisation 'a law for us' and asked for the tempo the Fifteenth Congress had decided.",
+       "Bukharin said temporary dependence abroad for equipment was bearable, but depending abroad for equipment, raw materials and grain at once was impossible. He was not arguing to keep the tempo through imports."
+      ]
+     },
+     "explanation": {
+      "ko": "부하린의 논증은 계획의 내적 일관성을 겨눕니다. 자본 건설이 관료적 「숫자 놀음」이 아니라 현실이 되려면 건설 자재에 대한 자금만이 아니라 그 자재의 물리적 공급이, 그것도 미래가 아니라 지금 있어야 한다는 것입니다. 그는 통제숫자에서 벽돌·시멘트·유리·강재의 부족분을 계산한 표를 내놓고, 자재가 따라오지 못하는 속도를 밀어붙이면 공업이 자기 자신에게서 뒤처져 멈춘다고 했습니다. 그리고 제15차 당대회가 첫해에 속도를 미친 듯이 올렸다가 떨어뜨리는 것에 반대했음을 상기시키며, 비축 없는 경제 운용은 모험주의라고 했습니다. 그는 스탈린의 이름을 한 번도 적지 않고 반박의 표적을 트로츠키주의자들로 삼았지만, 당 안에서는 누구를 겨눈 글인지 분명했습니다.",
+      "en": "Bukharin's argument targets the plan's internal consistency. For capital construction to be a reality and not a bureaucratic 'juggling with figures', there must be not only money for building materials but their physical supply, and supply now, not in the future. He set out tables from the control figures showing shortfalls of bricks, cement, glass and steel, and argued that a tempo materials could not follow would make industry lag behind itself and stall. He reminded readers that the Fifteenth Congress had opposed raising the tempo furiously in the first years only to let it fall, and called running the economy without reserves adventurism. He never once named Stalin and made the Trotskyists his stated target, but inside the party it was clear whom the article addressed."
+     },
+     "source": {
+      "kind": "reference",
+      "href": "/commulingo/docs/bukharin-1928-notes-of-an-economist",
+      "label": {
+       "ko": "부하린, 「한 경제학자의 노트」 (1928년 9월 30일)",
+       "en": "Bukharin, 'Notes of an Economist' (30 September 1928)"
+      }
+     }
+    },
+    {
+     "id": "q4",
+     "type": "multiple_choice",
+     "points": 2,
+     "prompt": {
+      "ko": "스탈린의 사보타주 진단과 달리, 부하린은 곡물 조달 위기가 어떻게 준비되었다고 설명했을까요?",
+      "en": "Unlike Stalin's diagnosis of sabotage, how did Bukharin explain the way the grain procurement crisis had been prepared?"
+     },
+     "choices": {
+      "ko": [
+       "곡물 경영의 정체 속에서 곡물과 기술작물의 가격 불균형, 쿨라크 과세 부족, 공산품 공급 부족, 쿨라크 영향력 증대가 겹친 결과라고 했습니다.",
+       "공산품이 모자란 가운데 농촌에 곡물이 넘쳐 났고, 농민들이 9억 푸드에 이르는 현물 곡물을 쌓아 두고 내놓지 않은 결과라고 했습니다.",
+       "쿨라크의 계획적 사보타주가 유일한 원인이므로, 비상 조치를 상설화해 해마다 적용하면 위기가 되풀이되지 않는다고 했습니다."
+      ],
+      "en": [
+       "Amid stagnant grain farming, price disparity between grain and industrial crops, too little taxation of kulaks, too few manufactures and growing kulak influence combined.",
+       "Grain was overflowing in the countryside amid a goods famine, and peasants were sitting on some 900 million poods of grain in kind and refusing to sell.",
+       "Planned kulak sabotage was the sole cause, so making the emergency measures permanent and applying them every year would prevent a repeat."
+      ]
+     },
+     "answer": 0,
+     "choiceFeedback": {
+      "ko": [
+       "부하린은 곡물 위기가 농민 경영의 영세화와 곡물 경영의 정체 속에서 준비되었다며 다섯 가지 조건을 들었습니다. 쿨라크의 영향력은 그중 하나입니다.",
+       "부하린은 공산품 기근 속 곡물 과잉이라는 설명이 비판을 견디지 못한다고 했고, 9억 푸드 비축 이야기는 반대파가 꾸며낸 비눗방울이라고 했습니다.",
+       "이것은 부하린이 아니라 1928년 1월 스탈린의 진단에 가깝습니다. 부하린은 원인을 곡물 경영의 낙후와 가격·공급의 불균형에서 찾았습니다."
+      ],
+      "en": [
+       "Bukharin said the crisis had been prepared amid the fragmentation of peasant farms and stagnation of grain farming, listing five conditions; kulak influence is one of them.",
+       "Bukharin said the 'grain surplus amid goods famine' explanation could not stand criticism, and called the story of 900 million poods in reserve a soap bubble blown by the opposition.",
+       "That is closer to Stalin's January 1928 diagnosis than to Bukharin's, who located the cause in the backwardness of grain farming and imbalances of price and supply."
+      ]
+     },
+     "explanation": {
+      "ko": "두 문서를 맞대면 쿨라크를 보는 비중이 다릅니다. 스탈린은 풍작 속에서 곡물을 쥔 쿨라크의 투기를 원인으로 보고 형법과 몰수로 대응했습니다. 부하린은 쿨라크 과세가 부족했고 쿨라크의 경제적 영향력이 커졌다는 점을 인정하면서도, 그것을 다섯 조건 가운데 하나로 놓았습니다. 근본에는 공업이 빠르게 커지고 인구와 수요가 늘어나는데도 곡물량은 늘지 않는 곡물 경영의 정체가 있고, 곡물과 기술작물 사이의 가격 불균형과 공산품 공급 부족이 농민의 곡물 판매 유인을 떨어뜨렸다는 것입니다. 그래서 그는 곡물 문제를 경시하는 것이 범죄라고 할 만큼 곡물 경영 지원과 가격 정책의 시정을 앞세웠습니다. 같은 위기를 계급 투쟁의 문제로 읽느냐 재생산 균형의 문제로 읽느냐가 여기서 갈렸습니다.",
+      "en": "Set side by side, the two documents weigh the kulaks differently. Stalin saw speculation by grain-holding kulaks amid a good harvest as the cause and answered with the criminal code and confiscation. Bukharin granted that kulaks were undertaxed and their economic influence had grown, but placed that as one of five conditions. At root lay the stagnation of grain farming, grain output not rising while industry grew fast and population and demand increased, and a price disparity between grain and industrial crops plus a shortage of manufactures that weakened peasants' incentive to sell grain. So he put support for grain farming and correction of price policy first, saying that neglecting the grain problem would be a real crime. The split was whether to read the same crisis as a matter of class struggle or of reproductive balance."
+     },
+     "source": {
+      "kind": "reference",
+      "href": "/commulingo/docs/bukharin-1928-notes-of-an-economist",
+      "label": {
+       "ko": "부하린, 「한 경제학자의 노트」 (1928년 9월 30일)",
+       "en": "Bukharin, 'Notes of an Economist' (30 September 1928)"
+      }
+     }
+    },
+    {
+     "id": "q5",
+     "type": "multiple_choice",
+     "points": 2,
+     "prompt": {
+      "ko": "1929년 11월 「대전환의 해」는 부하린 그룹의 경고를 어떻게 처리했고, 실제로는 무엇이 뒤따랐을까요?",
+      "en": "How did 'A Year of Great Change' of November 1929 dispose of the Bukharin group's warnings, and what actually followed?"
+     },
+     "choices": {
+      "ko": [
+       "중농이 마을째 집단농장에 들어와 속도가 불만을 낳는다는 경고는 무너졌다고 선언했고, 두 달 뒤 전면적 집단화와 쿨라크 청산이 이어졌습니다.",
+       "경고의 일부를 받아들여 집단농장 가입 속도를 늦추겠다고 밝혔고, 그 결과 1930년대 내내 개인 농민 경영이 곡물 공급의 중심으로 남았습니다.",
+       "부하린 그룹을 이름으로 언급하지 않고 공업 생산 통계만 제시해 성과를 정리했으며, 농업 문제는 다음 해의 과제로 미뤄 두었습니다."
+      ],
+      "en": [
+       "It declared the warning that tempo would breed discontent refuted, since the middle peasant had joined village by village; wholesale collectivisation and dekulakisation followed two months later.",
+       "It accepted some warnings and announced a slower tempo of joining collective farms, so individual peasant farming remained the core of grain supply through the 1930s.",
+       "It did not name the Bukharin group, tallied results with industrial output figures only, and left agriculture as a task for the following year."
+      ]
+     },
+     "answer": 0,
+     "choiceFeedback": {
+      "ko": [
+       "스탈린은 농민이 들어가지 않으리라는 주장과 속도가 결속을 약화시킨다는 주장이 낡은 부르주아 자유주의의 쓰레기처럼 무너졌다고 썼습니다. 두 달 뒤 전면적 집단화가 선포되었습니다.",
+       "스탈린은 속도를 늦추지 않고 오히려 집단농장 발전의 강화된 속도를 성과로 내세웠습니다. 개인 농민 경영은 뒤따른 전면적 집단화로 대부분 사라졌습니다.",
+       "글은 「우익 기회주의자(부하린 그룹)」를 직접 부르며, 노동생산성·공업 건설과 나란히 농업 건설을 셋째이자 핵심 성과로 정리합니다."
+      ],
+      "en": [
+       "Stalin wrote that the claims that peasants would not join and that tempo would weaken the alliance had collapsed like old bourgeois-liberal rubbish. Wholesale collectivisation was proclaimed two months later.",
+       "Stalin did not slow the tempo; he held up the heightened tempo of collective-farm growth as an achievement. Individual peasant farming was largely dismantled by the wholesale collectivisation that followed.",
+       "The article names the 'Right opportunists (Bukharin group)' directly and presents agricultural construction, beside labour productivity and industry, as the third and central achievement."
+      ]
+     },
+     "explanation": {
+      "ko": "「대전환의 해」는 1928년의 논쟁을 논증이 아니라 성과의 선언으로 닫습니다. 스탈린은 농민들이 개별 집단이 아니라 마을·향·군 전체로 집단농장에 들어오고 있으니 중농이 돌아섰다고 했고, 이로써 농민은 들어가지 않을 것이며 빠른 속도는 대중적 불만과 노농 결속의 약화만 낳는다던 부하린 그룹의 주장이 무너졌다고 선언했습니다. 1930년 집단·국영농장의 상품 곡물이 전체의 50%를 넘을 것이고 3년쯤 뒤 소련이 가장 풍족한 곡물 생산국 가운데 하나가 되리라는 전망도 내놓았습니다. 이것들은 당시 당 지도자의 주장입니다. 실제로는 두 달 뒤 전면적 집단화와 「계급으로서의 쿨라크 청산」이 선포되어 수백만 가구가 추방되었고, 1932~33년 우크라이나·카자흐스탄·볼가 유역을 덮친 대기근으로 수백만 명이 죽었습니다.",
+      "en": "'A Year of Great Change' closes the 1928 argument not with argument but with a declaration of results. Stalin said peasants were entering collective farms not in separate groups but by whole villages, volosts and districts, so the middle peasant had turned; thereby the Bukharin group's claims that peasants would not join and that a rapid tempo would only breed mass discontent and weaken the worker-peasant alliance had collapsed. He also forecast that in 1930 collective and state farms would supply over half of all marketed grain and that in about three years the USSR would be among the richest grain producers in the world. These were the party leader's claims at the time. What actually followed, two months later, was wholesale collectivisation and 'the liquidation of the kulaks as a class', under which millions of households were deported, and in 1932-33 famine killed millions in Ukraine, Kazakhstan and the Volga region."
+     },
+     "source": {
+      "kind": "reference",
+      "href": "/commulingo/docs/stalin-1929-great-break",
+      "label": {
+       "ko": "스탈린, 「대전환의 해」 제3절 농업 건설 (1929년 11월 7일)",
+       "en": "Stalin, 'A Year of Great Change', part III on agricultural construction (7 November 1929)"
+      }
+     }
+    },
+    {
+     "id": "q6",
+     "type": "multiple_choice",
+     "points": 2,
+     "prompt": {
+      "ko": "부하린은 흔히 「공업화에 반대하고 쿨라크를 감싼 사람」으로 기억됩니다. 「한 경제학자의 노트」 자체는 공업화와 농촌에 대해 무엇을 말했을까요?",
+      "en": "Bukharin is often remembered as 'the man who opposed industrialisation and shielded the kulaks'. What did 'Notes of an Economist' itself say about industrialisation and the countryside?"
+     },
+     "choices": {
+      "ko": [
+       "공업화를 「우리에게 법」이라 부르고 국영·집단농장 투자도 지지하면서, 속도는 농업과 자재가 따라오는 균형 안에서 정하자고 했습니다.",
+       "공업화는 농민을 수탈하는 트로츠키주의 정책이라 보고, 자본 건설을 크게 줄여 농민 경영의 자유로운 성장에 경제 발전을 맡기자고 했습니다.",
+       "쿨라크 경영이 가장 생산적인 곡물 공급원이므로 세금을 낮춰 주고, 국영농장에 들어갈 자금을 쿨라크 경영에 대한 신용으로 돌리자고 했습니다."
+      ],
+      "en": [
+       "He called industrialisation 'a law for us' and backed investment in state and collective farms, asking only that tempo be set within the balance agriculture and materials allowed.",
+       "He saw industrialisation as a Trotskyist policy of plundering peasants and wanted capital construction cut sharply, leaving development to the free growth of peasant farms.",
+       "Kulak farms were the most productive grain source, so their taxes should be cut and the funds meant for state farms redirected into credit for kulak farms."
+      ]
+     },
+     "answer": 0,
+     "choiceFeedback": {
+      "ko": [
+       "부하린은 공업화가 생산력·농업 발전·방위력 등 모든 관점에서 「우리에게 법」이라 했고, 곡물 경영의 낙후 때문에 국영농장 자금 배정도 옳다고 했습니다.",
+       "부하린은 트로츠키주의자들의 최대한의 이전론을 비판했지만 공업화 자체를 비판하지 않았고, 농업을 공업을 위한 공제에서 「옹호」하는 이들도 쿨라크에게 길을 닦는다고 비판했습니다.",
+       "부하린은 오히려 쿨라크 경영에 대한 과세가 불충분했다고 위기의 원인 가운데 하나로 들었고, 농촌의 쿨라크를 적대 세력으로 꼽았습니다."
+      ],
+      "en": [
+       "Bukharin said industrialisation was 'a law for us' from every standpoint, productive forces, farming, defence, and that funding state farms was right given the backwardness of grain farming.",
+       "Bukharin criticised the Trotskyists' maximum-transfer idea, not industrialisation itself, and also attacked those who 'defended' agriculture from contributions to industry as clearing the road for the kulaks.",
+       "Bukharin in fact listed insufficient taxation of kulak farms among the causes of the crisis, and named the rural kulaks as a hostile force."
+      ]
+     },
+     "explanation": {
+      "ko": "「한 경제학자의 노트」는 두 방향으로 싸웁니다. 한쪽은 농민 경제에서 공업으로 최대한을 옮기면 공업 속도도 최대가 된다고 믿는 트로츠키주의자들이고, 다른 쪽은 농업을 공업을 위한 분담에서 「옹호」하며 소농과 호토르 경영을 영속화하려는 「소부르주아적 기사들」입니다. 부하린은 뒤의 사람들이 사실상 쿨라크에게 길을 닦아 준다고 했습니다. 그는 소련의 공업화를 「우리에게 법」이라 부르고, 농업을 열등한 지위에 둔 자본주의와 달리 사회주의적 공업화는 농업의 가장 위대한 변혁과 비약의 수단이라고 했습니다. 곡물 경영이 낙후했으니 국영·집단농장에 자금을 주는 것도 옳다고 했습니다. 그가 스탈린과 갈린 곳은 공업화나 집단농장의 찬반이 아니라, 실물 자재와 곡물의 균형이 허락하는 속도와 강제 대신 가격 정책을 쓰느냐였습니다.",
+      "en": "'Notes of an Economist' fights on two fronts. On one side are the Trotskyists, who believe that transferring the maximum from peasant farming to industry yields the maximum industrial tempo; on the other are the 'petty-bourgeois knights' who 'defend' agriculture from contributing to industry and would perpetuate small and khutor farming. Bukharin said the latter in effect cleared the road for the kulaks. He called Soviet industrialisation 'a law for us' and said that unlike capitalism, which created agriculture's inferior position, socialist industrialisation is the means of agriculture's greatest transformation and advance. Given the backwardness of grain farming, funding state and collective farms was right too. Where he parted from Stalin was not on being for or against industrialisation or collective farms, but on a tempo within the balance of physical materials and grain, and on using price policy rather than coercion."
+     },
+     "source": {
+      "kind": "reference",
+      "href": "/commulingo/docs/bukharin-1928-notes-of-an-economist",
+      "label": {
+       "ko": "부하린, 「한 경제학자의 노트」 (1928년 9월 30일)",
+       "en": "Bukharin, 'Notes of an Economist' (30 September 1928)"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
