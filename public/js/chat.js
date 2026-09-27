@@ -251,6 +251,7 @@
                         errDiv.remove();
                         if (logDiv) logDiv.remove();
                         var recoveredAi = appendMessage(history[j].bot_answer, 'chat-message-ai');
+                        linkCommuLingoMentions(aiBody(recoveredAi));
                         decorateDeletableMessage(recoveredAi, history[j].message_id, 'assistant');
                         var pendingUsers = chatBox.querySelectorAll('.chat-message-user:not(.chat-message-deletable)');
                         if (pendingUsers.length) {
@@ -339,6 +340,7 @@
             }
             if (item.bot_answer_active !== false && item.bot_answer) {
                 var aiMsg = appendMessage(item.bot_answer, 'chat-message-ai');
+                linkCommuLingoMentions(aiBody(aiMsg));
                 decorateDeletableMessage(aiMsg, item.message_id, 'assistant');
             }
         }
@@ -479,6 +481,58 @@
         links.forEach(function(link) {
             link.setAttribute('target', '_blank');
             link.setAttribute('rel', 'noopener noreferrer');
+        });
+    }
+
+    // Finished answers get CommuLingo entries linked on first mention. The
+    // server applies the site-wide linking policy to the already-sanitized
+    // HTML; a body re-rendered since the request (regeneration) keeps its
+    // newer content.
+    var commuLinkQueue = [];
+    var commuLinkScheduled = false;
+
+    function linkCommuLingoMentions(body) {
+        if (!body || !window.fetch) return;
+        commuLinkQueue.push({ body: body, html: body.innerHTML });
+        if (commuLinkScheduled) return;
+        commuLinkScheduled = true;
+        setTimeout(flushCommuLingoLinks, 0);
+    }
+
+    function flushCommuLingoLinks() {
+        commuLinkScheduled = false;
+        var batch = [];
+        var size = 0;
+        while (commuLinkQueue.length && batch.length < 40) {
+            var next = commuLinkQueue[0];
+            if (!next.html || next.html.length > 40000) { commuLinkQueue.shift(); continue; }
+            if (batch.length && size + next.html.length > 80000) break;
+            size += next.html.length;
+            batch.push(commuLinkQueue.shift());
+        }
+        if (!batch.length) return;
+        fetch('/commulingo/chat-links', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'x-commulingo-chat-links': '1' },
+            body: JSON.stringify({
+                lang: document.documentElement.lang === 'en' ? 'en' : 'ko',
+                items: batch.map(function(item) { return item.html; })
+            })
+        }).then(function(res) {
+            return res.ok ? res.json() : null;
+        }).then(function(data) {
+            var items = data && data.items;
+            if (!Array.isArray(items)) return;
+            batch.forEach(function(item, index) {
+                if (typeof items[index] !== 'string' || item.body.innerHTML !== item.html) return;
+                item.body.innerHTML = DOMPurify.sanitize(items[index], {ADD_ATTR: ['target']});
+                item.body.querySelectorAll('a').forEach(function(link) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                });
+            });
+        }).catch(function() {}).then(function() {
+            if (commuLinkQueue.length) flushCommuLingoLinks();
         });
     }
 
@@ -924,6 +978,7 @@
                                 renderAiMarkdown();
                                 chatBox.scrollTop = chatBox.scrollHeight;
                             }
+                            linkCommuLingoMentions(aiBody(aiDiv));
                             if (data.message_id) {
                                 decorateDeletableMessage(aiDiv, data.message_id, 'assistant');
                                 if (userDiv) decorateDeletableMessage(userDiv, data.message_id, 'user');

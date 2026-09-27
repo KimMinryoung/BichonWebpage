@@ -134,6 +134,10 @@ const SURFACES = {
     // anchors, which every pass skips.
     doc: { kinds: KIND_ORDER },
     card: { kinds: ['person'] },
+    // Web chat answers, linked in the browser after the answer is final
+    // (routes/commulingo-chat-links.js). New tab for the same reason as
+    // learning: the conversation lives on one page.
+    chat: { kinds: KIND_ORDER, newTab: true },
 };
 
 // Anchor ids marking an entity's first mention: person 'mention-<id>', event

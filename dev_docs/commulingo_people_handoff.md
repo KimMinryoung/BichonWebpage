@@ -270,8 +270,8 @@ different rule per page and a new entry had to be wired into four places.
   the same-subject twin it is already showing beside it.
 - **Allowed differences**, declared in `SURFACES` and nowhere else: which kinds
   (only cards narrow it, to people — they are three-line snippets rendered by the
-  hundred), `newTab` (learning content only, so a lesson does not lose its quiz
-  state), and `anchors` (reports only, the `mention-*` ids report-mentions
+  hundred), `newTab` (learning content and web chat, so a lesson does not lose
+  its quiz state and a conversation stays open), and `anchors` (reports only, the `mention-*` ids report-mentions
   deep-links to). Every linker reports what it linked in `.found`, which the
   report panel and the book chip list read instead of re-parsing HTML.
 - The per-kind modules (`people-`/`term-`/`event-`/`doc-`/`topic-linkify.js`) are
@@ -284,6 +284,12 @@ different rule per page and a new entry had to be wired into four places.
   `public/js/commulingo-decision.js` applies the policy without keeping a
   hand-synced copy of it. It links people only, to the person page, in a new tab,
   first mention per passage.
+- **Web chat** (2026-09-28) renders markdown in the browser too, but posts the
+  finished, DOMPurify-sanitized answer HTML to `POST /commulingo/chat-links`
+  (`routes/commulingo-chat-links.js`, before the CSRF gate: read-only,
+  session-free, custom header + rate limit) and swaps in the `chat` surface's
+  output, re-sanitized. One linker per answer; history loads go in batches of
+  up to 40. Nothing is added to the chat UI beyond the links themselves.
 - Covered by `scripts/smoke-commulingo-linkify-policy.js` (no DB needed) and
   `scripts/smoke-commulingo-decision-links.js` (runs the client script against a
   stub DOM).

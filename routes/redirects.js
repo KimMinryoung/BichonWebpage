@@ -3,6 +3,7 @@
 const express = require('express');
 const crypto = require('crypto');
 const { setNoStore } = require('../utils/http');
+const { languagePath } = require('../utils/seo');
 
 const router = express.Router();
 
@@ -67,6 +68,13 @@ router.get(['/img/og-image.jpg', '/img/og-image.png'], (req, res) => {
 
 router.get('/reports/research/setlog-privacy-audit', (req, res) => {
     res.status(410).type('text/plain').send('Gone');
+});
+
+// The drill index is /commulingo/drill; the plural is the guess people type.
+router.get(/^\/commulingo\/drills(\/.*)?$/, (req, res) => {
+    const url = new URL(req.originalUrl, 'http://localhost');
+    const target = '/commulingo/drill' + (req.params[0] || '');
+    res.redirect(301, languagePath(target, req.urlLanguage === 'en' ? 'en' : 'ko') + url.search);
 });
 
 module.exports = router;
