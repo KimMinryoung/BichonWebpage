@@ -5848,6 +5848,208 @@
           ]
         }
       }
+    },
+    {
+      "id": "erfurt-program-1891",
+      "file": "erfurt-program-1891.html",
+      "docLang": "ko",
+      "date": "1891-10",
+      "title": {
+        "ko": "독일 사회민주당 에르푸르트 강령 (1891)",
+        "en": "Erfurt Programme of the Social Democratic Party of Germany (1891)"
+      },
+      "description": {
+        "ko": "1891년 10월 에르푸르트 당대회가 채택한 독일 사회민주당 강령의 전문이다. 자본주의 발전의 진단과 사회적 소유라는 목표를 밝힌 원칙 부분, 정치적 요구 아홉 항목과 노동자 보호 요구 다섯 항목을 영어 번역에서 옮겼다.",
+        "en": "Korean translation of the full Erfurt Programme adopted by the SPD congress in October 1891: the statement of principles, nine political demands and five demands for the protection of workers, translated from the English version by Thomas Dunlap."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "번역 저본: https://www.marxists.org/history/international/social-democracy/1891/erfurt-program.htm (Thomas Dunlap 영어 번역, German History in Documents and Images 수록본의 MIA 전사; 저본 페이지에 저작권·이용 허락 표기 없음). 원전: Protokoll des Parteitages der Sozialdemokratischen Partei Deutschlands. Abgehalten zu Erfurt vom 14. bis 20. Oktober 1891, Berlin 1891, 3~6쪽. 영어를 거친 중역. 한국어 번역: CommuLingo (2026).",
+      "people": [
+        "karl-kautsky",
+        "eduard-bernstein",
+        "august-bebel",
+        "friedrich-engels"
+      ],
+      "terms": [
+        "social-democracy",
+        "second-international",
+        "revisionism",
+        "erfurt-program",
+        "social-democratic-party-of-germany",
+        "anti-socialist-laws"
+      ],
+      "events": [],
+      "addedAt": "2026-09-27",
+      "aliases": {
+        "ko": [
+          "「에르푸르트 강령」",
+          "『에르푸르트 강령』",
+          "에르푸르트 강령 전문"
+        ],
+        "en": [
+          "full text of the Erfurt Programme",
+          "full text of the Erfurt Program"
+        ]
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회",
+        "두 진영"
+      ]
+    },
+    {
+      "id": "second-international-stuttgart-militarism-1907",
+      "file": "second-international-stuttgart-militarism-1907.html",
+      "docLang": "ko",
+      "date": "1907-08",
+      "title": {
+        "ko": "제2인터내셔널 슈투트가르트 대회, 군국주의와 국제 분쟁에 관한 결의 (1907)",
+        "en": "Second International, Stuttgart Congress Resolution on Militarism and International Conflicts (1907)"
+      },
+      "description": {
+        "ko": "1907년 8월 슈투트가르트 국제사회주의자대회가 채택한 반군국주의 결의의 전문이다. 전쟁의 원인, 의회 대표의 군비 예산 거부 의무, 전쟁이 나면 그 위기를 자본가 지배의 몰락에 이용하라는 마지막 문단까지 영어 번역에서 옮겼다.",
+        "en": "Korean translation of the full anti-militarist resolution of the International Socialist Congress at Stuttgart, August 1907, including the closing paragraph on using a war crisis to hasten the fall of capitalist rule."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "번역 저본: https://www.marxists.org/history/international/social-democracy/1907/militarism.htm (MIA 표기 출처·번역: Sam Marcy, The Bolsheviks and War, 1985; 마크업 Daniel Gaido; 저본 페이지에 저작권·이용 허락 표기 없음). 원전: Internationaler Sozialisten-Kongreß zu Stuttgart, 18. bis 24. August 1907, Vorwärts, Berlin 1907, 64~66쪽. 영어를 거친 중역. 한국어 번역: CommuLingo (2026).",
+      "people": [
+        "lenin",
+        "luxemburg",
+        "jean-jaures",
+        "august-bebel"
+      ],
+      "terms": [
+        "second-international",
+        "imperialist-war",
+        "social-democratic-party-of-germany"
+      ],
+      "events": [
+        "world-war-i"
+      ],
+      "addedAt": "2026-09-27",
+      "aliases": {
+        "ko": [
+          "「슈투트가르트 결의」",
+          "슈투트가르트 반군국주의 결의",
+          "「군국주의와 국제 분쟁에 관한 결의」"
+        ],
+        "en": [
+          "Stuttgart resolution on militarism",
+          "Resolution on Militarism and International Conflicts"
+        ]
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회",
+        "계급투쟁의 격화"
+      ]
+    },
+    {
+      "id": "second-international-basel-manifesto-1912",
+      "file": "second-international-basel-manifesto-1912.html",
+      "docLang": "ko",
+      "date": "1912-11-25",
+      "title": {
+        "ko": "제2인터내셔널 바젤 임시대회 선언 (1912)",
+        "en": "Manifesto of the Extraordinary International Socialist Congress at Basel (1912)"
+      },
+      "description": {
+        "ko": "발칸전쟁 중인 1912년 11월 바젤 임시 국제사회주의자대회가 채택한 반전 선언의 전문이다. 슈투트가르트·코펜하겐의 원칙을 다시 인용하고 나라별 사회주의 정당의 과제를 나눈 뒤 각국 정부에 세계대전의 결과를 경고한다.",
+        "en": "Korean translation of the full Basel Manifesto of November 1912, which restated the Stuttgart and Copenhagen principles, assigned tasks to each socialist party during the Balkan War and warned governments of the consequences of a world war."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "번역 저본: https://www.marxists.org/history/international/social-democracy/1912/basel-manifesto.htm (MIA 표기 출처: Sam Marcy, The Bolsheviks and War; 번역자 미표기; 저본 페이지에 저작권·이용 허락 표기 없음). 원전: Außerordentlicher Internationaler Sozialisten-Kongreß zu Basel am 24. und 25. November 1912, Vorwärts, Berlin 1912, 23~27쪽. 영어를 거친 중역. 한국어 번역: CommuLingo (2026).",
+      "people": [
+        "jean-jaures",
+        "lenin",
+        "luxemburg"
+      ],
+      "terms": [
+        "second-international",
+        "imperialist-war"
+      ],
+      "events": [
+        "world-war-i"
+      ],
+      "addedAt": "2026-09-27",
+      "aliases": {
+        "ko": [
+          "「바젤 선언」",
+          "『바젤 선언』",
+          "바젤 선언 전문"
+        ],
+        "en": [
+          "Basel Manifesto",
+          "full text of the Basel Manifesto"
+        ]
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회",
+        "계급투쟁의 격화",
+        "사회주의 인터내셔널"
+      ]
+    },
+    {
+      "id": "liebknecht-war-credits-statement-1914",
+      "file": "liebknecht-war-credits-statement-1914.html",
+      "docLang": "ko",
+      "date": "1914-12",
+      "title": {
+        "ko": "리프크네히트, 전쟁공채 반대 성명 (1914)",
+        "en": "Liebknecht, Protest Against the War Credits (1914)"
+      },
+      "description": {
+        "ko": "1914년 12월 2일 제국의회 전쟁공채 표결에서 홀로 반대한 카를 리프크네히트의 성명을 『베르너 타게바흐트』를 거쳐 영국 『저스티스』가 1914년 12월 17일 요약·인용한 기사 전체를 옮겼다.",
+        "en": "Korean translation of the Justice report of 17 December 1914 summarising and quoting Karl Liebknecht’s statement against the war credits of 2 December 1914, as published in the Berner Tagwacht."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "번역 저본: https://www.marxists.org/archive/liebknecht-k/works/1914/12/17.htm (Justice, London, 1914년 12월 17일, 1면; 전사 Ted Crawford; 저본 페이지에 저작권·이용 허락 표기 없음). 성명 전문은 『베르너 타게바흐트』(Berner Tagwacht)에 실렸다. 영어 보도를 거친 중역이며 성명의 발췌·요약이다. 한국어 번역: CommuLingo (2026).",
+      "people": [
+        "liebknecht",
+        "luxemburg"
+      ],
+      "terms": [
+        "imperialist-war",
+        "social-democracy",
+        "spd-war-credits-vote-1914",
+        "social-democratic-party-of-germany"
+      ],
+      "events": [
+        "world-war-i"
+      ],
+      "addedAt": "2026-09-27",
+      "aliases": {
+        "ko": [
+          "리프크네히트의 전쟁공채 반대 성명",
+          "리프크네히트의 반대 성명",
+          "리프크네히트의 항의 성명"
+        ],
+        "en": [
+          "Liebknecht’s Protest Against the War Credits",
+          "Liebknecht’s statement against the war credits"
+        ]
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "중앙위원회"
+      ]
     }
   ],
   "redirects": {

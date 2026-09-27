@@ -663,7 +663,7 @@ module.exports = {
         "ko": "당의 강령은 무엇을 약속했을까?",
         "en": "What did the party programme promise?"
       },
-      "sourceUrl": "https://www.marxists.org/history/international/social-democracy/1891/erfurt-program.htm",
+      "sourceUrl": "/commulingo/docs/erfurt-program-1891",
       "summary": {
         "ko": "약 6분 · 1891년 독일 사회민주당 에르푸르트 강령의 원칙 부분과 '우선' 요구 부분을 읽고, 경제 투쟁이 왜 정치 투쟁이 되는지, 누가 사회 전환을 이룰 수 있는지를 확인합니다.",
         "en": "About 6 minutes · Read the statement of principles and the 'first of all' demands of the German Social Democratic Party's Erfurt Programme of 1891, and see why economic struggle becomes political and who can carry out the social transformation."
@@ -855,7 +855,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "https://www.marxists.org/history/international/social-democracy/1891/erfurt-program.htm",
+                "href": "/commulingo/docs/erfurt-program-1891",
                 "label": {
                   "ko": "독일 사회민주당 에르푸르트 강령, 원칙 부분 (1891)",
                   "en": "Erfurt Programme of the German Social Democratic Party, principles (1891)"
@@ -901,7 +901,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "https://www.marxists.org/history/international/social-democracy/1891/erfurt-program.htm",
+                "href": "/commulingo/docs/erfurt-program-1891",
                 "label": {
                   "ko": "독일 사회민주당 에르푸르트 강령, 원칙 부분 (1891)",
                   "en": "Erfurt Programme of the German Social Democratic Party, principles (1891)"
@@ -947,7 +947,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "https://www.marxists.org/history/international/social-democracy/1891/erfurt-program.htm",
+                "href": "/commulingo/docs/erfurt-program-1891",
                 "label": {
                   "ko": "독일 사회민주당 에르푸르트 강령, 요구 부분 (1891)",
                   "en": "Erfurt Programme of the German Social Democratic Party, demands (1891)"
@@ -1273,7 +1273,7 @@ module.exports = {
         "ko": "전쟁이 오면 인터내셔널은 무엇을 하기로 했을까?",
         "en": "What did the International resolve to do if war came?"
       },
-      "sourceUrl": "https://www.marxists.org/history/international/social-democracy/1907/militarism.htm",
+      "sourceUrl": "/commulingo/docs/second-international-stuttgart-militarism-1907",
       "summary": {
         "ko": "약 6분 · 1907년 슈투트가르트 결의와 1912년 바젤 선언이 정한 반전 원칙을 읽고, 1914년 8월과 12월 독일 제국의회의 전쟁공채 표결, 리프크네히트의 반대 성명과 나란히 놓습니다.",
         "en": "About 6 minutes · Read the anti-war principles of the Stuttgart resolution (1907) and the Basel Manifesto (1912), then set them beside the Reichstag war-credit votes of August and December 1914 and Liebknecht's protest."
@@ -1479,7 +1479,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "https://www.marxists.org/history/international/social-democracy/1907/militarism.htm",
+                "href": "/commulingo/docs/second-international-stuttgart-militarism-1907",
                 "label": {
                   "ko": "제2인터내셔널 슈투트가르트 대회, 군국주의와 국제 분쟁 결의 (1907)",
                   "en": "Second International, Stuttgart congress, resolution on militarism and international conflicts (1907)"
@@ -1525,7 +1525,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "https://www.marxists.org/history/international/social-democracy/1912/basel-manifesto.htm",
+                "href": "/commulingo/docs/second-international-basel-manifesto-1912",
                 "label": {
                   "ko": "제2인터내셔널 바젤 임시대회 선언 (1912)",
                   "en": "Manifesto of the extraordinary International Socialist Congress at Basel (1912)"
@@ -1571,7 +1571,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "https://www.marxists.org/archive/liebknecht-k/works/1914/12/17.htm",
+                "href": "/commulingo/docs/liebknecht-war-credits-statement-1914",
                 "label": {
                   "ko": "리프크네히트, 전쟁공채 반대 성명 (『저스티스』 1914년 12월 17일 게재)",
                   "en": "Liebknecht, protest against the war credits (Justice, 17 December 1914)"
