@@ -17,8 +17,8 @@ module.exports = {
     "en": "9 short lessons"
   },
   "description": {
-    "ko": "오언과 국제노동자협회에서 코민테른 21개 조건까지, 사회주의자들이 변화의 주체·국가·강령·개혁·민족·전쟁·민주주의·당·건설 노선을 두고 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
-    "en": "From Owen and the International Workingmen’s Association to the Comintern’s Twenty-One Conditions, compare where socialists divided over agency, the state, programmes, reform, the national question, war, democracy, the party, and the path of construction, using the participants’ own writings. Each lesson has a concept brief, six questions, and feedback."
+    "ko": "오언과 국제노동자협회에서 코민테른 21개 조건까지, 사회주의자들이 변화의 주체·국가·강령·개혁·민족·전쟁·민주주의·당을 두고 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
+    "en": "From Owen and the International Workingmen’s Association to the Comintern’s Twenty-One Conditions, compare where socialists divided over agency, the state, programmes, reform, the national question, war, democracy, and the party, using the participants’ own writings. Each lesson has a concept brief, six questions, and feedback."
   },
   "editorial": {
     "authoredAt": "2026-09-13",
