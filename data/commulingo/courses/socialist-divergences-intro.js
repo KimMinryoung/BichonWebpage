@@ -1486,8 +1486,8 @@ module.exports = {
       },
       "sourceUrl": "/commulingo/docs/erfurt-program-1891",
       "summary": {
-        "ko": "약 12분 · 1891년 독일 사회민주당 에르푸르트 강령을 조문 단위로 읽습니다. 원칙 부분의 진단과 목표, 경제 투쟁이 왜 정치 투쟁이 되는지, 누가 사회 전환을 이룰 수 있는지, 국제적 연대의 근거, 그리고 '우선' 요구 14개 항의 성격을 확인합니다.",
-        "en": "About 12 minutes · Read the 1891 Erfurt Programme of the German Social Democratic Party clause by clause: the diagnosis and goal of the principles, why economic struggle becomes political, who can accomplish the transformation, the grounds of international solidarity, and the character of the fourteen 'first of all' demands."
+        "ko": "약 12분 · 1891년 독일 사회민주당 에르푸르트 강령을 조문 단위로 읽습니다. 원칙 부분의 진단과 목표, 경제 투쟁이 왜 정치 투쟁이 되는지, 누가 사회 전환을 이룰 수 있는지, 국제적 연대의 근거, 그리고 '우선' 요구 15개 항의 성격을 확인합니다.",
+        "en": "About 12 minutes · Read the 1891 Erfurt Programme of the German Social Democratic Party clause by clause: the diagnosis and goal of the principles, why economic struggle becomes political, who can accomplish the transformation, the grounds of international solidarity, and the character of the fifteen 'first of all' demands."
       },
       "learningFocus": {
         "ko": "요구 부분의 보통선거·민병·8시간 노동일을 사회주의 목표를 대신한 개혁 목록으로, 또는 사회주의 이후에 시행할 제도 설계로 읽기 쉽습니다. '종교는 사적인 일'을 종교 금지로 읽는 것도 흔한 오독입니다. 강령이 원칙과 '우선' 요구를 어떤 논리로 묶었는지 조문으로 확인하세요. 1891년의 독일 사회민주당을 오늘날 같은 이름의 정당과 겹쳐 읽지 않습니다.",
@@ -1499,8 +1499,8 @@ module.exports = {
             "title": "채택 배경과 강령의 짜임",
             "items": [
               "강령은 1891년 10월 에르푸르트 당대회에서 채택됐습니다. 반사회주의자법이 1890년에 만료되고 당이 합법 활동을 되찾은 직후입니다. 원칙 부분은 카우츠키, 요구 부분은 베른슈타인이 주로 초안을 썼다고 알려져 있습니다.",
-              "강령은 두 부분입니다. 앞부분은 자본주의 발전의 진단과 사회적 소유라는 목표를 밝힌 원칙 부분이고, 뒷부분은 '이러한 원칙에서 출발하여 … 우선 다음을 요구한다'로 시작하는 정치적 요구 9개 항과 노동자 보호 요구 5개 항입니다.",
-              "번역 저본은 당대회 의사록(1891)에 실린 강령을 옮긴 영어 번역이며, 한국어판은 그 중역입니다."
+              "강령은 두 부분입니다. 앞부분은 자본주의 발전의 진단과 사회적 소유라는 목표를 밝힌 원칙 부분이고, 뒷부분은 '이러한 원칙에서 출발하여 … 우선 다음을 요구한다'로 시작하는 정치적 요구 10개 항과 노동자 보호 요구 5개 항입니다.",
+              "로컬 번역은 당대회 의사록(1891)에 실린 독일어 원문에서 옮겼습니다. 흔히 도는 영어 번역은 정치적 요구를 9개 항으로 묶어 번호가 원문과 다릅니다."
             ]
           },
           {
@@ -1525,13 +1525,13 @@ module.exports = {
             "items": [
               "정치: 20세 이상 모든 제국 시민의 성별 구분 없는 보통·평등·직접·비밀 선거, 인민 입법, 상비군 대신 민병, 전쟁과 평화를 인민 대표 기관이 결정, 국제 분쟁의 중재 해결. 비례대표제, 선거일의 공휴일 지정, 선출된 대표의 보수 지급, 인민의 관리 선출도 들어 있습니다.",
               "시민적 자유와 공공 서비스: 여성 차별법 폐지, 결사·집회·표현의 자유, 종교는 사적인 일이라는 선언과 교회에 대한 공금 지출 폐지, 학교의 세속화와 무상 교육, 무상 의료, 사형 폐지, 누진 소득·재산세와 간접세 폐지. 인민이 선출한 판사, 무상 사법도 요구합니다.",
-              "노동자 보호: 8시간을 넘지 않는 표준 노동일, 14세 미만 아동의 영리 노동 금지, 주 36시간 이상 연속 휴식, 결사의 자유 보장, 노동자 보험 운영에 노동자의 결정적 참여. 야간 노동 금지, 현물 임금제 금지, 제국 노동부를 통한 감독, 농업 노동자와 가내 하인의 법적 평등도 요구합니다."
+              "노동자 보호: 8시간을 넘지 않는 표준 노동일, 14세 미만 아동의 영리 노동 금지, 주 36시간 이상 연속 휴식, 단결권 보장, 노동자 보험 운영에 노동자의 결정적 참여. 야간 노동 금지, 현물 임금제 금지, 제국 노동부를 통한 감독, 농업 노동자와 가내 하인의 법적 평등도 요구합니다."
             ]
           },
           {
             "title": "근거 자료",
             "items": [
-              "독일 사회민주당 에르푸르트 강령(1891), 당대회 의사록에 실린 원칙 부분과 요구 부분. 로컬 번역은 Thomas Dunlap의 영어 번역을 거친 중역입니다.",
+              "독일 사회민주당 에르푸르트 강령(1891), 당대회 의사록에 실린 원칙 부분과 요구 부분. 로컬 번역은 독일어 원문에서 옮겼습니다.",
               "국제노동자협회 일반규약 전문(1871년판): 노동 해방의 국제적 성격을 말한 대목."
             ]
           }
@@ -1541,8 +1541,8 @@ module.exports = {
             "title": "Background and structure",
             "items": [
               "The programme was adopted at the Erfurt party congress in October 1891, just after the Anti-Socialist Law lapsed in 1890 and the party regained legal activity. The principles are generally attributed mainly to Kautsky and the demands mainly to Bernstein.",
-              "The programme has two parts: principles, diagnosing capitalist development and stating the goal of social ownership, and then nine political demands and five demands for the protection of labour, introduced by 'proceeding from these principles ... demands first of all'.",
-              "The source text is an English translation of the programme as printed in the 1891 congress minutes; the Korean edition is translated from that English."
+              "The programme has two parts: principles, diagnosing capitalist development and stating the goal of social ownership, and then ten political demands and five demands for the protection of labour, introduced by 'proceeding from these principles ... demands first of all'.",
+              "The local text is translated from the German original as printed in the 1891 congress minutes. The widely circulated English translation merges the political demands into nine, so its numbering differs from the original."
             ]
           },
           {
@@ -1567,13 +1567,13 @@ module.exports = {
             "items": [
               "Politics: universal, equal, direct and secret suffrage for all citizens of the Reich over twenty without distinction of sex, direct legislation by the people, a militia in place of the standing army, decisions on war and peace by the popular assembly, and arbitration of international disputes. They also include proportional representation, elections on a legal holiday, payment of elected representatives and election of officials by the people.",
               "Civil liberties and public services: abolition of laws disadvantaging women, freedom of expression, association and assembly, religion declared a private matter with no public funds for churches, secular schools and free education, free medical care, abolition of capital punishment, graduated income and property taxes and the abolition of indirect taxes. Judges elected by the people and free legal aid are also demanded.",
-              "Worker protection: a normal working day of no more than eight hours, no gainful employment for children under fourteen, an uninterrupted weekly rest of at least thirty-six hours, safeguarding of the freedom of association, and decisive participation by workers in running workers' insurance. Also a ban on night work, prohibition of the truck system, supervision through a Reich labour department, and legal equality for agricultural labourers and domestic servants."
+              "Worker protection: a normal working day of no more than eight hours, no gainful employment for children under fourteen, an uninterrupted weekly rest of at least thirty-six hours, safeguarding of the right of combination, and decisive participation by workers in running workers' insurance. Also a ban on night work, prohibition of the truck system, supervision through a Reich labour department, and legal equality for agricultural labourers and domestic servants."
             ]
           },
           {
             "title": "Sources",
             "items": [
-              "Erfurt Programme of the German Social Democratic Party (1891), principles and demands as printed in the congress minutes. The local text is translated from Thomas Dunlap's English translation.",
+              "Erfurt Programme of the German Social Democratic Party (1891), principles and demands as printed in the congress minutes. The local text is translated from the German original.",
               "General Rules of the IWMA, preamble (1871 edition): the passage on the international character of labour's emancipation."
             ]
           }
@@ -1928,26 +1928,26 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "요구 5항은 종교는 사적인 일이라고 선언하고, 교회와 종교 목적의 공금 지출을 모두 폐지하며, 교회를 완전히 자율적인 사적 결사로 간주한다고 적습니다.",
-                  "강령에는 종교 금지 조항이 없습니다. 같은 5항은 오히려 표현·결사·집회의 자유를 제한하는 모든 법률의 폐지를 요구합니다.",
-                  "강령은 공금 지원을 똑같이 나누는 것이 아니라 모두 폐지하자고 하고, 6항에서 학교의 세속화를 따로 요구합니다."
+                  "요구 6항은 종교는 사적인 일이라고 선언하고, 교회와 종교 목적의 공금 지출을 모두 폐지하며, 교회를 완전히 자율적인 사적 결사로 간주한다고 적습니다.",
+                  "강령에는 종교 금지 조항이 없습니다. 바로 앞 4항은 오히려 표현·결사·집회의 자유를 제한하는 모든 법률의 폐지를 요구합니다.",
+                  "강령은 공금 지원을 똑같이 나누는 것이 아니라 모두 폐지하자고 하고, 7항에서 학교의 세속화를 따로 요구합니다."
                 ],
                 "en": [
-                  "Demand 5 declares religion a private matter, abolishes all public spending for church and religious purposes, and treats churches as fully autonomous private associations.",
-                  "The programme contains no ban on religion; the same demand 5 calls for abolishing every law restricting expression, association and assembly.",
-                  "The programme abolishes public funding rather than sharing it out, and demand 6 separately calls for secular schools."
+                  "Demand 6 declares religion a private matter, abolishes all public spending for church and religious purposes, and treats churches as fully autonomous private associations.",
+                  "The programme contains no ban on religion; demand 4, just before it, calls for abolishing every law restricting expression, association and assembly.",
+                  "The programme abolishes public funding rather than sharing it out, and demand 7 separately calls for secular schools."
                 ]
               },
               "explanation": {
-                "ko": "요구 5항은 표현·결사·집회의 자유를 제한하는 법률의 폐지와 함께 '종교는 사적인 일'이라는 선언을 요구합니다. 그 뜻은 곧바로 이어지는 문장에 있습니다. 교회와 종교의 목적을 위한 공금 지출을 모두 폐지하고, 교회와 종교 공동체를 자기 일을 완전히 자율적으로 처리하는 사적 결사로 본다는 것입니다. 6항의 학교 세속화와 공립 민중학교의 무상 교육이 이것을 교육 쪽에서 보완합니다. 그러니 이 요구는 국가와 교회를 떼어 놓자는 것이지, 신앙을 금지하거나 당이 종교를 단속하겠다는 약속이 아닙니다. 국가가 여러 교회를 똑같이 지원하는 방식과도 다릅니다. 같은 조항이 표현과 결사의 자유를 요구한다는 점을 함께 보면, 종교 문제도 시민적 자유와 국가 중립이라는 틀 안에 놓여 있다는 것이 드러납니다. 원칙 부분이 밝힌 대로 당은 계급·성·인종 등 어떤 형태의 억압에도 맞선다고 했습니다.",
-                "en": "Demand 5 calls, alongside abolition of laws restricting expression, association and assembly, for declaring religion a private matter. The meaning follows at once: all public spending for church and religious purposes is abolished, and churches and religious communities are treated as private associations running their own affairs with complete autonomy. Demand 6, secular schools and free public elementary education, complements this on the side of schooling. So the demand separates state and church; it is not a pledge to forbid belief or for the party to police religion, nor a scheme for the state to fund all churches equally. Read together with the call for freedom of expression and association in the same clause, the religious question sits within a frame of civil liberty and state neutrality. As the principles put it, the party opposes every kind of oppression, whether of a class, sex or race."
+                "ko": "요구 6항은 '종교는 사적인 일'이라는 선언을 요구합니다. 그 뜻은 곧바로 이어지는 문장에 있습니다. 교회와 종교의 목적을 위한 공금 지출을 모두 폐지하고, 교회와 종교 공동체를 자기 일을 완전히 자율적으로 처리하는 사적 결사로 본다는 것입니다. 7항의 학교 세속화와 공립 민중학교의 무상 교육이 이것을 교육 쪽에서 보완합니다. 그러니 이 요구는 국가와 교회를 떼어 놓자는 것이지, 신앙을 금지하거나 당이 종교를 단속하겠다는 약속이 아닙니다. 국가가 여러 교회를 똑같이 지원하는 방식과도 다릅니다. 바로 앞 4항이 표현·결사·집회의 자유를 제한하는 법률의 폐지를 요구한다는 점을 함께 보면, 종교 문제도 시민적 자유와 국가 중립이라는 틀 안에 놓여 있다는 것이 드러납니다. 원칙 부분이 밝힌 대로 당은 계급·성·인종 등 어떤 형태의 억압에도 맞선다고 했습니다.",
+                "en": "Demand 6 calls for declaring religion a private matter. The meaning follows at once: all public spending for church and religious purposes is abolished, and churches and religious communities are treated as private associations running their own affairs with complete autonomy. Demand 7, secular schools and free public elementary education, complements this on the side of schooling. So the demand separates state and church; it is not a pledge to forbid belief or for the party to police religion, nor a scheme for the state to fund all churches equally. Read together with demand 4 just before it, which abolishes laws restricting expression, association and assembly, the religious question sits within a frame of civil liberty and state neutrality. As the principles put it, the party opposes every kind of oppression, whether of a class, sex or race."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/erfurt-program-1891",
                 "label": {
-                  "ko": "독일 사회민주당 에르푸르트 강령, 정치적 요구 5·6항 (1891)",
-                  "en": "Erfurt Programme of the SPD, political demands 5 and 6 (1891)"
+                  "ko": "독일 사회민주당 에르푸르트 강령, 정치적 요구 4·6·7항 (1891)",
+                  "en": "Erfurt Programme of the SPD, political demands 4, 6 and 7 (1891)"
                 }
               }
             }
@@ -2958,7 +2958,7 @@ module.exports = {
             "title": "1914년에 일어난 일",
             "items": [
               "1914년 8월 4일 독일 제국의회에서 사회민주당 의원단은 전쟁공채에 찬성했습니다. 프랑스 등 다른 교전국의 주요 사회주의 정당도 자국 정부의 전쟁을 지지했습니다. 슈투트가르트 결의가 의회 대표에게 지운 군비 자금 거부 의무와 정반대의 선택이었습니다.",
-              "12월 2일 두 번째 표결에서 기록된 반대표는 카를 리프크네히트의 한 표였습니다. 영국 신문 『저스티스』의 보도에 따르면 사회민주당 의원 17명이 반대 의사를 밝혔지만 반대표로 기록된 것은 그의 표뿐이었습니다.",
+              "12월 2일 두 번째 표결에서 기록된 반대표는 카를 리프크네히트의 한 표였습니다. 그는 표결 이유를 적은 성명을 속기 의사록에 실어 달라고 제국의회 의장에게 냈지만, 의장은 이를 거부했습니다.",
               "의회에서 봉쇄된 그의 성명은 이 전쟁을 방어전쟁이 아닌 제국주의 전쟁으로 규정하고, '차르 체제에 맞서'라는 구호가 인민을 서로 미워하게 만드는 데 쓰였다고 비판했습니다. 전선의 병사와 부상병의 처지를 덜어 줄 조치에는 찬성한다고 밝혔습니다.",
               "성명은 이 전쟁을 세계시장 지배를 위한 제국주의 전쟁이자 독일·오스트리아 전쟁파가 도발한 예방전쟁으로 규정하고, 누구도 굴욕을 당하지 않는 평화를 모든 교전국에서 동시에 요구하자고 했습니다. 그가 반대한 것은 전쟁과 그 책임자, 자본주의적 목적, 벨기에·룩셈부르크 중립 침해, 군사 독재였습니다."
             ]
@@ -2968,7 +2968,7 @@ module.exports = {
             "items": [
               "제2인터내셔널 슈투트가르트 대회, 군국주의와 국제 분쟁에 관한 결의 (1907년 8월).",
               "제2인터내셔널 바젤 임시대회 선언 (1912년 11월 24~25일).",
-              "리프크네히트, 전쟁공채 반대 성명. 스위스 『베르너 타게바흐트』를 거쳐 1914년 12월 17일 영국 『저스티스』에 실린 판본."
+              "리프크네히트, 전쟁공채 반대 성명(1914년 12월 2일). 제국의회 의장에게 낸 표결 이유서의 독일어 전문."
             ]
           }
         ],
@@ -2995,7 +2995,7 @@ module.exports = {
             "title": "What happened in 1914",
             "items": [
               "On 4 August 1914 the Social Democratic deputies in the German Reichstag voted for war credits. The main socialist parties of other belligerents, including France, also backed their governments' war. It was the opposite of the duty the Stuttgart resolution laid on parliamentary representatives to refuse funds for armaments.",
-              "At the second vote on 2 December the only recorded vote against was Karl Liebknecht's. According to the British paper Justice, seventeen Social Democratic deputies voiced opposition, but his was the only vote recorded against the credits.",
+              "At the second vote on 2 December the only recorded vote against was Karl Liebknecht's. He handed the Reichstag president a written statement of his reasons for inclusion in the stenographic record, and the president refused to include it.",
               "His statement, suppressed in the Reichstag, called the war imperialist rather than defensive, and criticised the watchword 'against tsarism' as a means of stirring hatred among peoples. He said he would vote for anything that lightened the lot of soldiers at the front and the wounded.",
               "The statement called the war an imperialist war for capitalist domination of the world market and a preventive war provoked by the German and Austrian war parties, and urged that a peace humiliating no one be demanded simultaneously in all belligerent countries. What he protested against was the war and those responsible for it, its capitalist aims, the violation of Belgian and Luxembourg neutrality, and military dictatorship."
             ]
@@ -3005,7 +3005,7 @@ module.exports = {
             "items": [
               "Second International, Stuttgart congress, resolution on militarism and international conflicts (August 1907).",
               "Manifesto of the extraordinary International Socialist Congress at Basel (24 to 25 November 1912).",
-              "Liebknecht, protest against the war credits, as reprinted via the Swiss Berner Tagewacht in the British Justice, 17 December 1914."
+              "Liebknecht, statement against the war credits (2 December 1914): the full German text of the reasons for his vote he handed to the Reichstag president."
             ]
           }
         ]
@@ -3070,8 +3070,8 @@ module.exports = {
               "note": "리프크네히트의 반대표 하나만 기록되고, 그의 성명은 의회에서 봉쇄됩니다."
             },
             {
-              "label": "1914년 12월 17일 · 성명의 국외 보도",
-              "note": "독일 신문이 싣지 않은 성명이 스위스 『베르너 타게바흐트』를 거쳐 영국 『저스티스』에 보도됩니다."
+              "label": "1914년 12월 · 성명의 비합법 유포",
+              "note": "의사록에서 빠진 성명이 비합법 전단으로 퍼집니다."
             }
           ]
         },
@@ -3095,8 +3095,8 @@ module.exports = {
               "note": "Only Liebknecht's vote against is recorded; his statement is suppressed in the Reichstag."
             },
             {
-              "label": "17 December 1914 · the statement reported abroad",
-              "note": "Printed by no German paper, the statement appears via the Swiss Berner Tagwacht in the British Justice."
+              "label": "December 1914 · the statement circulated illegally",
+              "note": "Kept out of the official record, the statement circulates as an illegal leaflet."
             }
           ]
         }
@@ -3317,26 +3317,26 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "성명은 여기에 더해, 차르 체제의 공범이자 정치적 반동의 모범국인 독일은 인민들의 해방자 역할을 할 자격이 없다고 못 박습니다.",
+                  "성명은 여기에 더해, 차르 체제의 공범이자 오늘날까지 정치적 후진성의 표본인 독일은 인민 해방자가 될 소명이 없다고 못 박습니다.",
                   "리프크네히트는 이 전쟁이 독일에게 방어전쟁이 아니며, 나라를 지킨다며 공채를 요구하는 자본주의 정부를 믿을 수 없다고 했습니다.",
-                  "성명은 차르 체제를 옹호하지 않습니다. 비판의 초점은 독일 역시 차르 체제의 공범이자 반동의 모범국이라는 데 있었습니다."
+                  "성명은 차르 체제를 옹호하지 않습니다. 비판의 초점은 독일 역시 차르 체제의 공범이자 정치적 후진성의 표본이라는 데 있었습니다."
                 ],
                 "en": [
-                  "The statement adds that Germany, accomplice of tsarism and model of political reaction, has no standing to play the liberator of peoples.",
+                  "The statement adds that Germany, accomplice of tsarism and to this day the model of political backwardness, has no calling to be the liberator of peoples.",
                   "Liebknecht said the war was not a defensive war for Germany and that a capitalist government asking credits to defend the country could not be trusted.",
-                  "The statement does not defend tsarism; its point is that Germany too is tsarism's accomplice and a model state of reaction."
+                  "The statement does not defend tsarism; its point is that Germany too is tsarism's accomplice and a model of political backwardness."
                 ]
               },
               "explanation": {
-                "ko": "1912년 바젤 선언은 차르 체제를 유럽 모든 반동 세력의 희망이자 그 인민들의 민주주의에 가장 무서운 적으로 규정하고, 그 타도를 인터내셔널 전체의 중요한 과제로 꼽았습니다. 그러나 그 싸움은 러시아·핀란드·폴란드 프롤레타리아트의 혁명 투쟁에 기대했고, 독일·프랑스·영국 노동자에게는 자국 정부의 절대 중립을 요구하게 했습니다. 1914년 독일에서는 '차르 체제에 맞서'가 전쟁 지지의 구호가 되었습니다. 리프크네히트는 이 구호를 영국·프랑스의 '군국주의에 맞서'와 나란히 놓습니다. 양쪽 모두 인민들의 가장 고귀한 본능과 혁명적 전통과 희망을 끌어내 인민들 사이의 증오를 불러일으키는 수단이 되었다는 것입니다. 그리고 차르 체제의 공범이자 정치적 반동의 모범국인 독일은 해방자 역할을 할 자격이 없다고 못 박습니다. 반동 체제를 비판하는 것과 그 비판을 자국 정부의 전쟁에 빌려주는 것은 다른 일이라는 것이 그의 논지였습니다.",
-                "en": "The 1912 Basel Manifesto called tsarism the hope of all Europe's reactionary powers and the most terrible enemy of the democracy of the peoples it ruled, and made its overthrow an important task of the whole International. But it looked to the revolutionary struggle of the proletariat of Russia, Finland and Poland for that fight, while German, French and British workers were to demand their governments' absolute neutrality. In Germany in 1914, 'against tsarism' became a watchword for supporting the war. Liebknecht sets it beside the British and French 'against militarism': both had become means of calling on the peoples' noblest instincts, revolutionary traditions and hopes in order to stir up hatred between them. And Germany, tsarism's accomplice and the model state of political reaction, had no standing to play liberator. Criticising a reactionary regime is one thing; lending that criticism to one's own government's war is another, and that was his point."
+                "ko": "1912년 바젤 선언은 차르 체제를 유럽 모든 반동 세력의 희망이자 그 인민들의 민주주의에 가장 무서운 적으로 규정하고, 그 타도를 인터내셔널 전체의 중요한 과제로 꼽았습니다. 그러나 그 싸움은 러시아·핀란드·폴란드 프롤레타리아트의 혁명 투쟁에 기대했고, 독일·프랑스·영국 노동자에게는 자국 정부의 절대 중립을 요구하게 했습니다. 1914년 독일에서는 '차르 체제에 맞서'가 전쟁 지지의 구호가 되었습니다. 리프크네히트는 이 구호를 영국·프랑스의 '군국주의에 맞서'와 나란히 놓습니다. 양쪽 모두 인민들의 가장 고귀한 본능과 혁명적 전통과 희망을 끌어내 인민들 사이의 증오를 불러일으키는 수단이 되었다는 것입니다. 그리고 차르 체제의 공범이자 오늘날까지 정치적 후진성의 표본인 독일은 인민 해방자가 될 소명이 없고, 러시아 인민의 해방도 독일 인민의 해방도 그들 자신의 일이어야 한다고 못 박습니다. 반동 체제를 비판하는 것과 그 비판을 자국 정부의 전쟁에 빌려주는 것은 다른 일이라는 것이 그의 논지였습니다.",
+                "en": "The 1912 Basel Manifesto called tsarism the hope of all Europe's reactionary powers and the most terrible enemy of the democracy of the peoples it ruled, and made its overthrow an important task of the whole International. But it looked to the revolutionary struggle of the proletariat of Russia, Finland and Poland for that fight, while German, French and British workers were to demand their governments' absolute neutrality. In Germany in 1914, 'against tsarism' became a watchword for supporting the war. Liebknecht sets it beside the British and French 'against militarism': both had become means of calling on the peoples' noblest instincts, revolutionary traditions and hopes in order to stir up hatred between them. And Germany, tsarism's accomplice and to this day the model of political backwardness, had no calling to be a liberator; the liberation of the Russian and the German people alike had to be their own work. Criticising a reactionary regime is one thing; lending that criticism to one's own government's war is another, and that was his point."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/liebknecht-war-credits-statement-1914",
                 "label": {
-                  "ko": "리프크네히트, 전쟁공채 반대 성명의 '차르 체제에 맞서' 비판 (『저스티스』 1914년 12월 17일 게재)",
-                  "en": "Liebknecht, protest against the war credits, on 'against tsarism' (Justice, 17 December 1914)"
+                  "ko": "리프크네히트, 전쟁공채 반대 성명의 '차르 체제에 맞서' 비판 (1914년 12월 2일)",
+                  "en": "Liebknecht, protest against the war credits, on 'against tsarism' (2 December 1914)"
                 }
               }
             },
@@ -3374,15 +3374,15 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "슈투트가르트 결의는 의회 대표에게 군비 예산을 거부할 의무를 지웠지만, 1914년 8월 4일 독일 사회민주당 의원단은 전쟁공채에 찬성했습니다. 12월 2일 두 번째 표결에서 반대표로 기록된 것은 리프크네히트의 표뿐이었습니다. 『저스티스』 보도에 따르면 17명이 반대 의사를 밝혔지만 표결에서 반대한 사람은 그 혼자였습니다. 그의 성명은 이 전쟁을 세계시장 지배를 위한 제국주의 전쟁이자 독일과 오스트리아 전쟁파가 일으킨 예방전쟁으로 규정했습니다. 그러면서도 병사와 부상병을 향한 연민을 밝히며 그들을 돕는 조치에는 찬성했습니다. 그가 반대한 것은 병사가 아니라 전쟁과 그 목적, 그리고 그것을 이끄는 사람들이었습니다.",
-                "en": "The Stuttgart resolution obliged parliamentary representatives to refuse arms budgets, yet on 4 August 1914 the German Social Democratic deputies voted for war credits. At the second vote on 2 December, Liebknecht's was the only vote recorded against. Justice reported that seventeen deputies voiced opposition, but he alone voted against. His statement called the war an imperialist war for domination of world markets and a preventive war provoked by the German and Austrian war parties. Yet he expressed compassion for soldiers and the wounded and supported measures to help them. What he opposed was not the soldiers but the war, its aims and those directing it."
+                "ko": "슈투트가르트 결의는 의회 대표에게 군비 예산을 거부할 의무를 지웠지만, 1914년 8월 4일 독일 사회민주당 의원단은 전쟁공채에 찬성했습니다. 12월 2일 두 번째 표결에서 반대표로 기록된 것은 리프크네히트의 표뿐이었습니다. 그의 성명은 이 전쟁을 세계시장 지배를 위한 제국주의 전쟁이자 독일과 오스트리아 전쟁파가 일으킨 예방전쟁으로 규정했습니다. 그러면서도 병사와 부상병을 향한 연민을 밝히며 그들을 돕는 조치에는 찬성했습니다. 그가 반대한 것은 병사가 아니라 전쟁과 그 목적, 그리고 그것을 이끄는 사람들이었습니다.",
+                "en": "The Stuttgart resolution obliged parliamentary representatives to refuse arms budgets, yet on 4 August 1914 the German Social Democratic deputies voted for war credits. At the second vote on 2 December, Liebknecht's was the only vote recorded against. His statement called the war an imperialist war for domination of world markets and a preventive war provoked by the German and Austrian war parties. Yet he expressed compassion for soldiers and the wounded and supported measures to help them. What he opposed was not the soldiers but the war, its aims and those directing it."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/liebknecht-war-credits-statement-1914",
                 "label": {
-                  "ko": "리프크네히트, 전쟁공채 반대 성명 (『저스티스』 1914년 12월 17일 게재)",
-                  "en": "Liebknecht, protest against the war credits (Justice, 17 December 1914)"
+                  "ko": "리프크네히트, 전쟁공채 반대 성명 (1914년 12월 2일)",
+                  "en": "Liebknecht, protest against the war credits (2 December 1914)"
                 }
               }
             }
