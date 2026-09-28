@@ -1,0 +1,560 @@
+{
+ "note": "Religion reclassification 2026-09-28",
+ "items": [
+  {
+   "id": "patriarch-tikhon",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-3e22395514f88ec5c63b355563d7b3f5b086f84ad8da4b0752dd03cff19e940f",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Patriarch_Tikhon_of_Moscow"
+   ],
+   "activities": [
+    {
+     "functionId": "religion",
+     "affiliationId": "russian-orthodox-church",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1925,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Patriarch_Tikhon_of_Moscow",
+       "locator": "plain-text extract characters 95:231; sha256 12ae2fac195348f9d896a95a6e9d5a05eec01e2dd139bbb1690d58805a801cc2",
+       "claim": "티혼은 러시아 정교회의 주교였다.",
+       "excerpt": "25 March] 1925), born Vasily Ivanovich Bellavin (Russian: Василий Иванович Беллавин), was a bishop of the Russian Orthodox Church (ROC)."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Patriarch_Tikhon_of_Moscow",
+       "locator": "plain-text extract characters 232:382; sha256 12ae2fac195348f9d896a95a6e9d5a05eec01e2dd139bbb1690d58805a801cc2",
+       "claim": "그는 1917년 11월 제11대 모스크바와 전 러시아 총대주교로 선출되었다.",
+       "excerpt": "On 5 November 1917 (OS) he was selected the 11th Patriarch of Moscow and All Russia, after a period of about 200 years of the Synodal rule in the ROC."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "metropolitan-benjamin-of-petrograd",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-72dd0b4ae28032cd170849b24430a52ebe89bf94dd2b4ab594368a53b6daa4f0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Benjamin_of_Petrograd"
+   ],
+   "activities": [
+    {
+     "functionId": "religion",
+     "affiliationId": "russian-orthodox-church",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1922,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Benjamin_of_Petrograd",
+       "locator": "plain-text extract characters 127:380; sha256 5481c94bef1f302e108115ce6d56297ac597b41c5e435b786e86716b91d096c9",
+       "claim": "베냐민은 러시아 정교회 주교로 페트로그라드 수도대주교가 되었다.",
+       "excerpt": "31 July] 1922), born Vasily Pavlovich Kazansky (Russian: Василий Павлович Казанский), was a hieromartyr under Soviet anti-religious persecution, a bishop in the Russian Orthodox Church and eventually Metropolitan of Petrograd and Gdov from 1917 to 1922."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stefan-wyszynski",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-348dbc1b5a01ee125ce1c68d3186022608e6ce842e572e77e10d59ac7c792729",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski"
+   ],
+   "activities": [
+    {
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": 1948,
+     "endYear": 1981,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski",
+       "locator": "plain-text extract characters 0:207; sha256 403ac9d961dcfc804f037b0e8cae1bf1e2ca05242d12ec024788bf170e82c220",
+       "claim": "비신스키는 1948~1981년 바르샤바·그니에즈노 대주교를 지낸 폴란드 가톨릭 고위 성직자였다.",
+       "excerpt": "Stefan Wyszyński (Polish pronunciation: [ˈstɛfan vɨˈʂɨj̃skʲi]; 3 August 1901 – 28 May 1981) was a Polish Roman Catholic prelate who served as Archbishop of Warsaw and Archbishop of Gniezno from 1948 to 1981."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski",
+       "locator": "plain-text extract characters 268:330; sha256 403ac9d961dcfc804f037b0e8cae1bf1e2ca05242d12ec024788bf170e82c220",
+       "claim": "그는 1953년 추기경에 서임되었다.",
+       "excerpt": "He was created a cardinal on 12 January 1953 by Pope Pius XII."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gapon",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e4247d5fda92f7f8c2892241710657c76afdca476bc80b7f0f38d5515dbe3457",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Georgy_Gapon"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "가폰은 상트페테르부르크 러시아 공장·제분 노동자 협회를 조직했다.",
+       "source": "https://en.wikipedia.org/wiki/Georgy_Gapon",
+       "excerpt": "Gapon organized the Assembly of Russian Factory and Mill Workers of Saint Petersburg, which was also patronized by the Department of the Police and the Saint Petersburg Okhrana",
+       "locator": "characters 6805:6981; sha256 b660fb3ea0774afa8b2306d18c351443efb8d0d4d566607cf2bc0198558f9030"
+      },
+      {
+       "claim": "가폰은 차르에게 청원서를 제출하기 위한 노동자 행진을 조직했다.",
+       "source": "https://en.wikipedia.org/wiki/Georgy_Gapon",
+       "excerpt": "Gapon organized a workers' procession to present an emotionally charged written petition to the Tsar.",
+       "locator": "characters 8399:8500; sha256 b660fb3ea0774afa8b2306d18c351443efb8d0d4d566607cf2bc0198558f9030"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": null,
+     "functionId": "organizing",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": "russian-orthodox-church",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": null,
+     "endYear": 1906,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Georgy_Gapon",
+       "locator": "plain-text extract characters 78:215; sha256 5e471100f19e45b0342ee16e56f5d39ada845d1c384616ab2021eaffe48cae3c",
+       "claim": "가폰은 러시아 정교회 사제였다.",
+       "excerpt": "28 March] 1906) was a Russian Orthodox priest of Ukrainian descent and a popular working-class leader before the 1905 Russian Revolution."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pavel-florensky",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-2e6968757f417fb41c5b043865f86b53f6525a0996def9fdf127d62bc4d0ca06",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pavel_Florensky"
+   ],
+   "activities": [
+    {
+     "functionId": "religion",
+     "affiliationId": "russian-orthodox-church",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": 1937,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Pavel_Florensky",
+       "locator": "plain-text extract characters 194:378; sha256 ab9bb88acaec6a380bf29ba3c55ddf51b685349be176d1ed9facbbf73a581359",
+       "claim": "플로렌스키는 러시아 정교회 신학자이자 사제였다.",
+       "excerpt": "9 January] 1882 – December 8, 1937) was a Russian Orthodox theologian, priest, philosopher, mathematician, physicist, electrical engineer, inventor, polymath, neomartyr and folk saint."
+      }
+     ]
+    },
+    {
+     "functionId": "scholarship",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Pavel_Florensky",
+       "locator": "plain-text extract characters 194:378; sha256 ab9bb88acaec6a380bf29ba3c55ddf51b685349be176d1ed9facbbf73a581359",
+       "claim": "그는 철학자이자 수학자·물리학자였다.",
+       "excerpt": "9 January] 1882 – December 8, 1937) was a Russian Orthodox theologian, priest, philosopher, mathematician, physicist, electrical engineer, inventor, polymath, neomartyr and folk saint."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sergei-bulgakov",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-b72edc2d184a46227bf54f7288585e3314373df51322ab4e8768a52a35e8ecba",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sergei_Bulgakov"
+   ],
+   "activities": [
+    {
+     "functionId": "scholarship",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": null,
+     "endYear": 1944,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Sergei_Bulgakov",
+       "locator": "plain-text extract characters 138:238; sha256 4591b001375b762f0b38f6ae4d511c562dca3dd473c337fbccc6357565c9aa5e",
+       "claim": "불가코프는 러시아 정교회 신학자·철학자·경제학자였다.",
+       "excerpt": "16 July] 1871 – 13 July 1944) was a Russian Orthodox theologian, priest, philosopher, and economist."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Sergei_Bulgakov",
+       "locator": "plain-text extract characters 408:525; sha256 4591b001375b762f0b38f6ae4d511c562dca3dd473c337fbccc6357565c9aa5e",
+       "claim": "그는 소피아론 신학 체계로 가장 잘 알려져 있다.",
+       "excerpt": "Bulgakov is best known for his development of sophiology, a theological system centered on Sophia, the Wisdom of God."
+      }
+     ]
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": "russian-orthodox-church",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": null,
+     "endYear": 1944,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Sergei_Bulgakov",
+       "locator": "plain-text extract characters 239:407; sha256 4591b001375b762f0b38f6ae4d511c562dca3dd473c337fbccc6357565c9aa5e",
+       "claim": "그는 사제로서 영적 아버지이자 고해신부로 봉직했다.",
+       "excerpt": "As a priest, Bulgakov served as a spiritual father and confessor to Maria Skobtsova, who was canonized a saint by the Holy Synod of the Ecumenical Patriarchate in 2004."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "laszlo-tokes",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e2629f0379f96bee8fa79eb2dbaa2685a7682b9633dc32fd206bbb90667f8d8b",
+   "sources": [
+    "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s"
+   ],
+   "activities": [
+    {
+     "endYear": 2019,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "퇴케시는 2007년부터 2019년까지 유럽의회 의원으로 재직했다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+       "excerpt": "He was a Member of the European Parliament (MEP) from 2007 to 2019.",
+       "locator": "characters 137:204; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293"
+      },
+      {
+       "claim": "그는 2010년부터 2012년까지 유럽의회 부의장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+       "excerpt": "Tőkés served as a Vice-President of the European Parliament from 2010 to 2012.",
+       "locator": "characters 205:283; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 2007,
+     "functionId": "political-leadership",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+       "locator": "plain-text extract characters 0:136; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293",
+       "claim": "퇴케시는 루마니아의 목사이자 정치인이다.",
+       "excerpt": "László Tőkés (Hungarian pronunciation: [ˈlaːsloː ˈtøːkeːʃ]; born 1 April 1952) is a Romanian pastor and politician of Hungarian descent."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+       "locator": "plain-text extract characters 284:459; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293",
+       "claim": "그는 루마니아 개혁교회 키라이하고멜레크 교구 주교를 지냈다.",
+       "excerpt": "Bishop of the Reformed Diocese of Királyhágómellék of the Romanian Reformed Church, he is also a former Honorary President of the Democratic Alliance of Hungarians in Romania."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "zoltan-tildy",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-4a8e09d8b561e5b5961580f8c0e980fa4d941fa6a276b8dfb3bc5736f87a4172",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "틸디는 1929년 독립소농업자당에 합류해 부총재가 되었고, 1945년 당 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+       "excerpt": "In 1929, Tildy joined the Independent Smallholders' Party (FKgP) with other noted Hungarian political figures, including Ferenc Nagy. He became executive vice-president of the organization soon afterwards.",
+       "locator": "characters 832:1037; accessed 2026-09-27; sha256 99d35b54f27a229dde254ceade629bba3258977f1060e257e6b1ba186bef22c6"
+      },
+      {
+       "claim": "틸디는 1929년 독립소농업자당에 합류해 부총재가 되었고, 1945년 당 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+       "excerpt": "When the Soviets occupied Hungary and drove out the Germans, Tildy became leader of the FKgP and was appointed Prime Minister of Hungary, serving from 15 November 1945 until 1 February 1946, when he was elected President of Hungary.",
+       "locator": "characters 1479:1711; accessed 2026-09-27; sha256 99d35b54f27a229dde254ceade629bba3258977f1060e257e6b1ba186bef22c6"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1929,
+     "functionId": "political-leadership",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "endYear": 1948,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "틸디 졸탄은 1945–46년 헝가리 총리, 1946–48년 대통령을 지낸 헝가리 정치가로, 헝가리 국가기관에서 정부·국가 원수직을 수행했다.",
+       "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+       "excerpt": "Zoltán Tildy (18 November 1889 – 3 August 1961) was a Hungarian politician and statesman who served as prime minister of Hungary from 1945 to 1946 and president from 1946 until 1948",
+       "locator": "characters 0:181; sha256 63a915cb607521ac1a86c34df65dbe990b8b5b90b3168ef3afe7dbef1b9d1bd6"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1945,
+     "functionId": "government",
+     "affiliationId": "state-hungary",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": 1921,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+       "locator": "plain-text extract characters 621:831; sha256 99d35b54f27a229dde254ceade629bba3258977f1060e257e6b1ba186bef22c6",
+       "claim": "틸디는 1921년부터 개혁교회 목사로 활동했다.",
+       "excerpt": "Tildy served as an active minister of the Reformed Church beginning in 1921, and edited the daily paper of the Reformed church in Hungary, the Keresztény Család (Christian Family), as well as other periodicals."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "andrievs-niedra",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-394df312bcb8c82326c5dd0dfefe56d57871e0613fc5ac2983c67e9ae1a2469a",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andrievs_Niedra"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "니에드라는 라트비아의 작가로 규정된다.",
+       "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+       "excerpt": "Andrievs Niedra (Latvian old orthography: Andreews Needra; 8 February 1871 – 25 September 1942) was a Latvian writer, Lutheran pastor and the Prime Minister of the German puppet government in Latvia between April and June 1919, during the Latvian War of Independence.",
+       "locator": "characters 0:267; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb"
+      },
+      {
+       "claim": "그의 시집이 출판되고 역사·민속 기반 단편이 신문에 실리는 등 문학 활동을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+       "excerpt": "Niedra's first collection of poems was published when he was only nineteen years old, and he was still in his teens when his stories based on history and folklore began to appear in the newspaper Baltijas Vēstnesis.",
+       "locator": "characters 268:483; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": null,
+     "functionId": "arts",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "endYear": 1919,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "1919년 4월부터 6월까지 라트비아에서 독일 지원 정부의 총리를 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+       "excerpt": "was a Latvian writer, Lutheran pastor and the Prime Minister of the German puppet government in Latvia between April and June 1919, during the Latvian War of Independence.",
+       "locator": "characters 96:267; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "government",
+     "affiliationId": "state-latvia",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+       "locator": "plain-text extract characters 0:267; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb",
+       "claim": "니드라는 라트비아의 작가이자 루터교 목사였다.",
+       "excerpt": "Andrievs Niedra (Latvian old orthography: Andreews Needra; 8 February 1871 – 25 September 1942) was a Latvian writer, Lutheran pastor and the Prime Minister of the German puppet government in Latvia between April and June 1919, during the Latvian War of Independence."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "emmanuel-sieyes",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-571a3d32bc7febf2bd0e9fa235d18d6864ccffaf2e5927ef59749784518b8f8a",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s"
+   ],
+   "activities": [
+    {
+     "endYear": 1791,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "시에예스는 혁명 초기 국민주권과 대표제 이론을 확장하며 인권선언 최종 초안 작성에 참여하는 등 혁명 진영의 핵심 정치적 역할을 수행했다.",
+       "source": "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s",
+       "excerpt": "He played his main role in the opening years of the Revolution, participating in the final drafting of the Declaration of the Rights of Man and of the Citizen, expanding on the theories of national sovereignty, popular sovereignty, and representation implied in his pamphlet",
+       "locator": "characters 5513:5787; sha256 861307d7de589f7cb888954c9ae6e255014dc08d1e859dc4a5758a19e8fb73c7"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1789,
+     "functionId": "political-leadership",
+     "affiliationId": "french-revolution",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1799,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "시에예스는 1799년 총재가 된 뒤 나폴레옹을 집권시킨 브뤼메르 18일 쿠데타의 주도자 중 한 명으로서 혁명 정부의 정치적 전환을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s",
+       "excerpt": "After becoming a director in 1799,  Sieyès was among the instigators of the Coup of 18 Brumaire (9 November), which installed Napoleon Bonaparte in power.",
+       "locator": "characters 676:830; sha256 861307d7de589f7cb888954c9ae6e255014dc08d1e859dc4a5758a19e8fb73c7"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1799,
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s",
+       "locator": "plain-text extract characters 0:294; sha256 563d1544d4a3e089b2b1895ddba2f8e0173a5a6a07edb20b6d93466d09dd8950",
+       "claim": "시에예스는 프랑스 가톨릭 사제이자 정치 저술가였다.",
+       "excerpt": "Emmanuel Joseph Sieyès (3 May 1748 – 20 June 1836), usually known as the Abbé Sieyès (traditional French pronunciation: [sijɛːs]; modern pronunciation: [sjejɛs]), was a French Catholic priest, abbé, and political writer who was a leading political theorist of the French Revolution (1789–1799)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "jacques-roux",
+   "reviewed": true,
+   "reviewMethod": "operator request: clergy classified as religion; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-1dc80121701063e99cd906d62b6e93e46815bfebb956f74bda19c1b63edc653c",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jacques_Roux"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "1792년 제1공화국 수립 후 자크 루는 앙라제로 불린 정파에 속했다.",
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "excerpt": "When the French First Republic started in 1792, Roux became aligned with the political faction dubbed by their enemies as the Enragés (French for \"The Enraged Ones\" but also \"Madmen\").",
+       "locator": "plain-text extract characters 538:722; sha256 cd8afc52375444e7de3e2a5c219970c111ff1e888ad230283e21b6518afd14e2"
+      },
+      {
+       "claim": "그는 프랑스 혁명 기간 정치에 적극 참여한 혁명가였다.",
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "excerpt": "was a French Catholic Red priest and revolutionary who took an active role in politics during the French Revolution",
+       "locator": "characters 67:182; sha256 ce767b3200d73fcb50c21737c573834fc7349ad08b210af2cd90bc48fc41a72d"
+      },
+      {
+       "claim": "그는 극좌파의 주요 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "excerpt": "He became a major leader of the far-left.",
+       "locator": "characters 419:460; sha256 ce767b3200d73fcb50c21737c573834fc7349ad08b210af2cd90bc48fc41a72d"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "french-enrages",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": 1794,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+       "locator": "plain-text extract characters 0:183; sha256 cd8afc52375444e7de3e2a5c219970c111ff1e888ad230283e21b6518afd14e2",
+       "claim": "자크 루는 프랑스 가톨릭 사제이자 혁명가였다.",
+       "excerpt": "Jacques Roux (French: [ʒak ʁu]; 21 August 1752 – 10 February 1794) was a French Catholic Red priest and revolutionary who took an active role in politics during the French Revolution."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
