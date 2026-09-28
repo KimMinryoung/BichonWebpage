@@ -56,6 +56,9 @@
         var top = feed.getBoundingClientRect().top + window.scrollY;
         var height = Math.max(420, window.innerHeight - top - 12);
         feed.style.setProperty('--shorts-height', height + 'px');
+        // 카드 높이가 바뀌어도 보던 카드에 맞춘다(모바일 주소창이 접힐 때 등).
+        var current = rendered[currentIndex];
+        if (current) feed.scrollTop = current.offsetTop;
     }
 
     function fetchBucket() {
