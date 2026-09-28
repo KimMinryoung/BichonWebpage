@@ -1351,6 +1351,11 @@
         "twentieth-party-congress",
         "beria-purge"
       ],
+      "excerpts": {
+        "events": {
+          "beria-purge": "*"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -2150,6 +2155,11 @@
         "fall-of-france",
         "french-resistance"
       ],
+      "excerpts": {
+        "events": {
+          "fall-of-france": "vichy-constitutional-law-1940"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -2262,7 +2272,8 @@
       "excerpts": {
         "events": {
           "yalta-potsdam": "potsdam-declaration-1945",
-          "manchurian-operation": "soviet-declaration-war-japan-1945"
+          "manchurian-operation": "soviet-declaration-war-japan-1945",
+          "soviet-japanese-border-wars": "soviet-japanese-neutrality-pact-1941"
         }
       },
       "addedAt": "2026-08-31",
@@ -2676,6 +2687,11 @@
         "holodomor",
         "five-year-plans"
       ],
+      "excerpts": {
+        "events": {
+          "holodomor": "law-of-spikelets-1932"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -3243,6 +3259,11 @@
       "events": [
         "revolution-1905"
       ],
+      "excerpts": {
+        "events": {
+          "revolution-1905": "*"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -4272,6 +4293,11 @@
         "revolutions-1989",
         "berlin-wall"
       ],
+      "excerpts": {
+        "events": {
+          "revolutions-1989": "*"
+        }
+      },
       "addedAt": "2026-09-01",
       "aliases": {
         "ko": [
@@ -4515,6 +4541,11 @@
       "events": [
         "berlin-wall"
       ],
+      "excerpts": {
+        "events": {
+          "berlin-wall": "ulbricht-press-conference-1961"
+        }
+      },
       "addedAt": "2026-09-01",
       "aliases": {
         "ko": [
@@ -4756,6 +4787,11 @@
       "events": [
         "warsaw-uprising"
       ],
+      "excerpts": {
+        "events": {
+          "warsaw-uprising": "stalin-churchill-warsaw-adventure-1944"
+        }
+      },
       "addedAt": "2026-09-07",
       "aliases": {
         "ko": [
