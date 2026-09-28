@@ -1,0 +1,1115 @@
+{
+ "note": "Law and justice reclassification 2026-09-28",
+ "items": [
+  {
+   "id": "alexander-gorkin",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-420430c3678f3f832e2cf9266b406d2d3fa235012e438200149a51442ed9a1a8",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexander_Gorkin"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1957,
+     "endYear": 1972,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Alexander_Gorkin",
+       "locator": "plain-text extract characters 2327:2517; sha256 19868bbf39b7315454760613163e9dc36191692f57b15b184e87128d82985a08",
+       "claim": "고르킨은 1957~1972년 소련 최고재판소장을 지냈다.",
+       "excerpt": "In 1957–1972 he was Chairman of the Supreme Court of the Soviet Union, simultaneously in 1959–1961 he was Chairman of the Central Audit Commission of the Communist Party of the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "konstantin-gorshenin",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-f6e4a5467b528163e5ed1841b359dd08c06417ae905a5c47733edce40c121dff",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Konstantin_Gorshenin"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1937,
+     "endYear": 1956,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Gorshenin",
+       "locator": "plain-text extract characters 1294:1358; sha256 44dba88e3509bad4b4a63dd731576d568abd98022dc61640f04eef79c125d285",
+       "claim": "고르셰닌은 1943~1948년 소련 검찰총장을 지냈다.",
+       "excerpt": "1943–1948 – Prosecutor (Prosecutor General) of the Soviet Union;"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Gorshenin",
+       "locator": "plain-text extract characters 1359:1411; sha256 44dba88e3509bad4b4a63dd731576d568abd98022dc61640f04eef79c125d285",
+       "claim": "그는 1948~1956년 소련 법무장관을 지냈다.",
+       "excerpt": "1948–1956 – Minister of Justice of the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nikolai-krylenko",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-df7c359336fc70768c36ba34fd3e293b5274513e1dc08a036fc96d4a28f4e880",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nikolai_Krylenko"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1918,
+     "endYear": 1938,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Krylenko",
+       "locator": "plain-text extract characters 193:381; sha256 64f8ee2bc49b50fb5077150c597c1af076f31de54afe4f9864d191ac704b5c8e",
+       "claim": "크릴렌코는 소비에트 사법 체계의 여러 직책을 거쳐 법무인민위원과 러시아 공화국 검찰총장에 올랐다.",
+       "excerpt": "Krylenko served in a variety of posts in the Soviet legal system, rising to become People's Commissar for Justice and Prosecutor General of the Russian Soviet Federated Socialist Republic."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Krylenko",
+       "locator": "plain-text extract characters 0:192; sha256 64f8ee2bc49b50fb5077150c597c1af076f31de54afe4f9864d191ac704b5c8e",
+       "claim": "크릴렌코는 구볼셰비키이자 소련 정치가, 군 지휘관, 법률가였다.",
+       "excerpt": "Nikolai Vasilyevich Krylenko (Russian: Никола́й Васи́льевич Крыле́нко, IPA: [krɨˈlʲenkə]; 2 May 1885 – 29 July 1938) was an Old Bolshevik and Soviet politician, military commander, and jurist."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nikolai-rychkov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-9402c594c0f08fb6d5f48fca5c0ef2116a2c8d3aedeb1975c90e9bab2e2fe836",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nikolay_Rychkov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1922,
+     "endYear": 1948,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Nikolay_Rychkov",
+       "locator": "plain-text extract characters 0:97; sha256 6171ecc66c58a105345be1fff712c8962c956ad29e065358e48a3d3e111a7e43",
+       "claim": "리치코프는 소련의 정치가이자 법률가였다.",
+       "excerpt": "Nikolay Mikhailovich Rychkov (2 December 1897 – 28 March 1959) was a Soviet statesman and lawyer."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Nikolay_Rychkov",
+       "locator": "plain-text extract characters 998:1071; sha256 6171ecc66c58a105345be1fff712c8962c956ad29e065358e48a3d3e111a7e43",
+       "claim": "그는 1938~1948년 소련 법무인민위원(법무장관)을 지냈다.",
+       "excerpt": "1938–1948 – People's Commissar (Minister) of Justice of the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alexander-rekunkov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-1b82ccb53a4897b0d02e73ab77925ad61ee82e2bb2eb4f402356e32630232530",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexander_Rekunkov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": 1988,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Alexander_Rekunkov",
+       "locator": "plain-text extract characters 0:207; sha256 d2e55a1cc3b89552f52c04275f6a6d3ecad51dea8559db4d8d09160a42f557d4",
+       "claim": "레쿤코프는 1981~1988년 소련 검찰총장을 지낸 법률가였다.",
+       "excerpt": "Alexander Mikhailovich Rekunkov (Russian: Александр Михайлович Рекунков; 27 October 1920 – 23 May 1996) was a Soviet and Russian lawyer who served as Procurator General of the Soviet Union from 1981 to 1988."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Alexander_Rekunkov",
+       "locator": "plain-text extract characters 822:991; sha256 d2e55a1cc3b89552f52c04275f6a6d3ecad51dea8559db4d8d09160a42f557d4",
+       "claim": "그는 검찰청에 배치되어 로스토프주 지역 검사보로 경력을 시작했다.",
+       "excerpt": "After being discharged from hospital, he was assigned to work in the prosecutor's office and appointed Assistant Prosecutor of the Verkhne-Don District of Rostov Oblast."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pyotr-krasikov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-8c6c71ccc96f50072ce18c9ff0c44182085eee171855135884eb3b6208393838",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pyotr_Krasikov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1918,
+     "endYear": 1933,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Pyotr_Krasikov",
+       "locator": "plain-text extract characters 78:269; sha256 0f4ca95b05d5752cf7590ce878d58e496ab78fac54e04f11515aef642f44b004",
+       "claim": "크라시코프는 1924~1933년 소련 초대 검찰총장을 지낸 법률가였다.",
+       "excerpt": "5 October] 1870 – 20 August 1939) was a Russian revolutionary and Soviet politician, jurist and bureaucrat who was the first Procurator General of the Soviet Union, serving from 1924 to 1933."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Pyotr_Krasikov",
+       "locator": "plain-text extract characters 2791:2980; sha256 0f4ca95b05d5752cf7590ce878d58e496ab78fac54e04f11515aef642f44b004",
+       "claim": "1917년 혁명 뒤 그의 직책은 법률 분야였고 소비에트 법체계의 주요 설계자로 꼽힌다.",
+       "excerpt": "After the 1917 Russian Revolution his positions were related to legal issues and he is considered to be among the principal creators of the Soviet legal system, along with Andrey Vyshinsky."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "roman-rudenko",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-2b78117671005a1c5de04be2f61ad19a22375fc820efef96fd8464ea45bde651",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Roman_Rudenko"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1944,
+     "endYear": 1981,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Roman_Rudenko",
+       "locator": "plain-text extract characters 219:372; sha256 3806a2a5d26aa48f1ae96032ebe262ba97ccf82d54a26d1c8253d66f21c4d100",
+       "claim": "루덴코는 1944~1953년 우크라이나 검찰총장, 1953년 이후 소련 검찰총장을 지냈다.",
+       "excerpt": "Procurator-General of the Ukrainian Soviet Socialist Republic from 1944 to 1953, Rudenko became Procurator-General of the entire Soviet Union after 1953."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Roman_Rudenko",
+       "locator": "plain-text extract characters 373:513; sha256 3806a2a5d26aa48f1ae96032ebe262ba97ccf82d54a26d1c8253d66f21c4d100",
+       "claim": "그는 1946년 뉘른베르크 재판에서 소련 측 수석검사를 맡았다.",
+       "excerpt": "He is well known internationally for acting as chief prosecutor for the USSR at the 1946 trial of the major Nazi war criminals in Nuremberg."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dmitry-kursky",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-14266a8ad1083653f36ca37833c5957232356b75796438daffa9cc7fb10e38ae",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D1%80%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1918,
+     "endYear": 1928,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D1%80%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 0:153; sha256 9b7e1800fb30448731add7981eab294d7cd4351b43aa52a5537d37dbf92f2293",
+       "claim": "쿠르스키는 소련 최초의 검찰총장이자 러시아 공화국 법무인민위원이었다.",
+       "excerpt": "Дми́трий Ива́нович Ку́рский (22 октября 1874 — 20 декабря 1932) — первый советский генеральный прокурор, народный комиссар юстиции РСФСР, прокурор РСФСР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D1%80%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 1485:1624; sha256 9b7e1800fb30448731add7981eab294d7cd4351b43aa52a5537d37dbf92f2293",
+       "claim": "그는 1918년 8월부터 1928년 1월까지 법무인민위원 겸 첫 소비에트 검사였다.",
+       "excerpt": "С марта 1918 года — член коллегии, с августа 1918 года и до января 1928 года нарком юстиции РСФСР и одновременно первый советский прокурор."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "aron-solts",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-860f69379f770fa0dbbe71ae8b4b4d66f4351fe20466359b6a7afb42fd0f8cce",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D1%8C%D1%86%2C_%D0%90%D1%80%D0%BE%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1921,
+     "endYear": 1938,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D1%8C%D1%86%2C_%D0%90%D1%80%D0%BE%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 2305:2422; sha256 04eb2169e5b3b74d0a49a457068d152580dd8615ed7657d8c0e5d514242efa04",
+       "claim": "솔츠는 1921년부터 러시아 공화국 최고재판소 위원, 1923년부터 소련 최고재판소 위원이었다.",
+       "excerpt": "С 1921 года член Верховного суда РСФСР и заведующий юридическим отделом Рабкрина, с 1923 года — Верховного суда СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D1%8C%D1%86%2C_%D0%90%D1%80%D0%BE%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 2423:2538; sha256 04eb2169e5b3b74d0a49a457068d152580dd8615ed7657d8c0e5d514242efa04",
+       "claim": "그는 1935년부터 비신스키 아래 소련 부검찰총장을 지냈다.",
+       "excerpt": "С 1935 года — заместитель прокурора СССР А. Я. Вышинского, затем председатель юридической коллегии Верховного Суда."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vasily-ulrikh",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-94e90db054056d9026b2d20cd1c6ee473148afdc6ec0da105bcaea650526d4d7",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vasiliy_Ulrikh"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1926,
+     "endYear": 1948,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Vasiliy_Ulrikh",
+       "locator": "plain-text extract characters 0:176; sha256 506b47f1f05210a582e78444ab1d9f9175b5a38c1bb988e8c8bf7a40e843e4f4",
+       "claim": "울리흐는 스탈린 시대 대부분 동안 소련의 고위 판사였다.",
+       "excerpt": "Vasiliy Vasilievich Ulrikh (Russian: Васи́лий Васи́льевич У́льрих; 13 July 1889 – 7 May 1951) was a senior judge of the Soviet Union during most of the regime of Joseph Stalin."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vasiliy_Ulrikh",
+       "locator": "plain-text extract characters 1281:1380; sha256 506b47f1f05210a582e78444ab1d9f9175b5a38c1bb988e8c8bf7a40e843e4f4",
+       "claim": "그는 1926년 소련 최고재판소 군사참의회 의장이 되었다.",
+       "excerpt": "In 1926, Ulrikh became Chairman of the Military Collegium of the Supreme Court of the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vladimir-terebilov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-4a7bd1378069c7c8c7a81e10e008507ee8164d180c96411595b7f4edfae72510",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vladimir_Terebilov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1970,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Terebilov",
+       "locator": "plain-text extract characters 0:240; sha256 e32f04c7aa98477c5af44af354c20c4a884fa267c55d30a178ddcc3a250ef43b",
+       "claim": "테레빌로프는 1970~1984년 소련 법무장관을 지낸 판사이자 정치가였다.",
+       "excerpt": "Vladimir Ivanovich Terebilov (Russian: Владимир Иванович Теребилов; 5 March 1916 – 3 May 2004) was a Soviet judge and politician, who served as Ministry of Justice of the Soviet Union for slightly less than fourteen years from 1970 to 1984."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Terebilov",
+       "locator": "plain-text extract characters 856:939; sha256 e32f04c7aa98477c5af44af354c20c4a884fa267c55d30a178ddcc3a250ef43b",
+       "claim": "그는 1984년 소련 최고재판소장에 임명되었다.",
+       "excerpt": "Then Terebilov was appointed chairman of the Soviet supreme court on 23 April 1984."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lev-smirnov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-9a92f884e343a73552c03fed12231463985074574e217e9f9dacfca020809267",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lev_Smirnov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1934,
+     "endYear": 1984,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Lev_Smirnov",
+       "locator": "plain-text extract characters 0:248; sha256 2c59003013a94dc1ab9b8f904c33348997615f763a6af6c5b569411b9feaed60",
+       "claim": "스미르노프는 1972~1984년 소련 최고재판소장을 지낸 법률가였다.",
+       "excerpt": "Lev Nikolayevich Smirnov (Russian: Лев Николаевич Смирнов; June 21, 1911 – March 23, 1986) was a Soviet lawyer, Chairman of the Supreme Court of the Soviet Union in 1972–1984, Chairman of the Association of Soviet Lawyers, Hero of Socialist Labour."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ivan-akulov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-74fb552a1b2d831f73eff63f37d9a49a6c83810a58bd60024835cb5cc77894d0",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ivan_Akulov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1933,
+     "endYear": 1935,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ivan_Akulov",
+       "locator": "plain-text extract characters 1834:2103; sha256 eec9b54af3765b11d752aabc2b2617ff15ca6aab01141a1da7a46a2c8e13295c",
+       "claim": "아쿨로프는 1933년 소련 검찰총장으로 모스크바에 소환되었다.",
+       "excerpt": "In 1933, Akulov was recalled to Moscow, as USSR Prosecutor General, with Nikolai Krylenko and Andrei Vyshinsky as his deputies, in what may have been a move to build up the prosecutors' office as a counterweight to the OGPU, now that it was back under Yagoda's control."
+      }
+     ]
+    },
+    {
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1931,
+     "endYear": 1932,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ivan_Akulov",
+       "locator": "plain-text extract characters 1168:1262; sha256 eec9b54af3765b11d752aabc2b2617ff15ca6aab01141a1da7a46a2c8e13295c",
+       "claim": "그는 1931년 7월 OGPU 제1부의장으로 옮겼다.",
+       "excerpt": "In July 1931, Akulov was suddenly transferred to Moscow, as first deputy chairman of the OGPU."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grigory-safonov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-96424ab34918dee0fa9a0bf2b9efe0cc88b51bd4d25cf5a276044ecacb0ea0f4",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1935,
+     "endYear": 1953,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 989:1059; sha256 5bd1f659850ba6fb31ecd105f46d620099d047440a451b56bb9ae79281007849",
+       "claim": "사포노프는 1935년 12월부터 레닌그라드주 오쿨로보 지구 검사였다.",
+       "excerpt": "С декабря 1935 года прокурор Окуловского района Ленинградской области."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 1332:1380; sha256 5bd1f659850ba6fb31ecd105f46d620099d047440a451b56bb9ae79281007849",
+       "claim": "그는 1948년 2월부터 소련 검찰총장이었다.",
+       "excerpt": "С февраля 1948 года — Генеральный прокурор СССР."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "iona-nikitchenko",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-b0bce84aff626ebd9511dbd2e1c960bbcb107681c220da01bd9e52fe9b0c4b22",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Iona_Nikitchenko"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1920,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Iona_Nikitchenko",
+       "locator": "plain-text extract characters 0:169; sha256 39868e98309e0be478496b8eff2f68873afbf59e1be5c2fa9d92a90867ade78a",
+       "claim": "니키첸코는 소련 최고재판소에서 일한 판사였다.",
+       "excerpt": "Iona Timofeievich Nikitchenko (Russian: Иона Тимофеевич Никитченко; 28 June 1895 – 22 April 1967) was a Soviet judge who served on the Supreme Court of the Soviet Union."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Iona_Nikitchenko",
+       "locator": "plain-text extract characters 170:285; sha256 39868e98309e0be478496b8eff2f68873afbf59e1be5c2fa9d92a90867ade78a",
+       "claim": "그는 뉘른베르크 국제군사재판에서 소련 측 판사를 맡았다.",
+       "excerpt": "He later served on the International Military Tribunal during the Nuremberg trials as a judge for the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alexander-sukharev",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-33284b3cfd8361b15c6e864d57d2896230a0cb8527b8ded9a809fff24145c4c0",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D1%80%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1970,
+     "endYear": 1990,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D1%80%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 3334:3395; sha256 f854c55fcfd90302a329c58bedf2ac1b2fde7383c50e5444666c53e5d9c05b53",
+       "claim": "수하레프는 1984~1988년 러시아 공화국 법무장관이었다.",
+       "excerpt": "С марта 1984-го по февраль 1988 года — министр юстиции РСФСР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D1%80%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 3860:3929; sha256 f854c55fcfd90302a329c58bedf2ac1b2fde7383c50e5444666c53e5d9c05b53",
+       "claim": "그는 1988~1990년 소련 검찰총장이었다.",
+       "excerpt": "С 26 мая 1988-го по 15 октября 1990 года — Генеральный прокурор СССР."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ivan-golyakov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e1a46af24fa46e25d5c7a9459a9929d0ad6e14216ba991547ece4f9e7dcc8cd2",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ivan_Golyakov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1925,
+     "endYear": 1948,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ivan_Golyakov",
+       "locator": "plain-text extract characters 0:154; sha256 36e18875c5c3fb690a7008573d262526ea9aad4f7e23e64cd8a6b1176df2f0fa",
+       "claim": "골랴코프는 소련 검찰과 법원에서 활동한 인물이다.",
+       "excerpt": "Ivan Terentyevich Golyakov (July 6, 1888 (according to other sources: June 6), – March 18, 1961) was a figure in the Soviet prosecutor's office and court."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ivan_Golyakov",
+       "locator": "plain-text extract characters 2100:2165; sha256 36e18875c5c3fb690a7008573d262526ea9aad4f7e23e64cd8a6b1176df2f0fa",
+       "claim": "그는 1938~1948년 소련 최고재판소장이었다.",
+       "excerpt": "In 1938–1948 – Chairman of the Supreme Court of the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alexander-vinokurov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-15b4d0fa345a10d0f9fd401c1703567353037f65a4b2229c8052803b2e2756d8",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BD%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87_%28%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%29"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1924,
+     "endYear": 1938,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BD%D0%BE%D0%BA%D1%83%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87_%28%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%29",
+       "locator": "plain-text extract characters 1422:1477; sha256 26d8e52a625104041f347db2749da387282654e77473f7b27a2f709904afce62",
+       "claim": "비노쿠로프는 1924~1938년 소련 최고재판소장이었다.",
+       "excerpt": "С 1924 по 1938 год — председатель Верховного Суда СССР."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anatoly-volin",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-ee02a7859fb3800121dcd42ea8911a6d271520428c5319b33f03a5e01a48ce9f",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anatoly_Volin"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1933,
+     "endYear": 1957,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Volin",
+       "locator": "plain-text extract characters 0:200; sha256 914a189688a83d89b1dbe80ec8720eb8b1be792c00ef567070d86a15d2022344",
+       "claim": "볼린은 1948~1957년 소련 최고재판소장을 지낸 정치가이자 법률가였다.",
+       "excerpt": "Anatoly Antonovich Volin (Russian: Анатолий Антонович Волин; July 22, 1903 – August 2007) was a Soviet statesman and lawyer who served as chairman of the Supreme Court of the Soviet Union (1948–1957)."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Volin",
+       "locator": "plain-text extract characters 1413:1457; sha256 914a189688a83d89b1dbe80ec8720eb8b1be792c00ef567070d86a15d2022344",
+       "claim": "그는 1939~1948년 러시아 공화국 검사였다.",
+       "excerpt": "From 1939 to 1948 – Prosecutor of the RSFSR."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alexander-katusev",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-8dd05f7283db62d3a983491b00c19560453475324abc7cf26132a56d91b7075a",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D1%83%D1%81%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1966,
+     "endYear": 1991,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D1%83%D1%81%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 0:288; sha256 ca4acedbc0200a559adf712df73c922551aa3aebf2f8b6bb5e039d3829b08d27",
+       "claim": "카투세프는 소련 군 법률가로 군 검찰총장과 소련 부검찰총장을 지냈다.",
+       "excerpt": "Алекса́ндр Фили́ппович Ка́тусев (15 мая 1939, Быховский район, Могилёвская область — 21 августа 2000, Краснодарский край) — советский военный юрист, Главный военный прокурор, заместитель Генерального прокурора СССР, генерал-лейтенант юстиции, государственный советник юстиции 1-го класса."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D1%83%D1%81%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 1060:1198; sha256 ca4acedbc0200a559adf712df73c922551aa3aebf2f8b6bb5e039d3829b08d27",
+       "claim": "그는 1987~1989년 소련 부검찰총장, 1989~1991년 군 검찰총장이었다.",
+       "excerpt": "С 1987 по 1989 заместитель Генерального прокурора СССР, с 1989 по 1991 Главный военный прокурор и заместитель Генерального прокурора СССР."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nikolai-yanson",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-858b12a6967efb0801b100607c2068e827d4e5e9623ae9dc40f65d0f359d8f13",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1928,
+     "endYear": 1930,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 2244:2295; sha256 37cdf7ab58dfc821f80317af4f03397f9a27766fb3ca74275cb155885e5180d6",
+       "claim": "얀손은 1928~1930년 러시아 공화국 법무인민위원이었다.",
+       "excerpt": "В 1928—1930 годы — народный комиссар юстиции РСФСР."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vladimir-antonov-saratovsky",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-cbf37514ac7c616b1052dd543e35c1f177abb966309fd0c39bb799c0604f1c44",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vladimir_Antonov-Saratovsky"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1923,
+     "endYear": 1938,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Antonov-Saratovsky",
+       "locator": "plain-text extract characters 0:175; sha256 f6e4ea5cd94af6d516d48e71f2fa356e262330aa2bab0b43fd71ab3d50feb5bc",
+       "claim": "안토노프사라톱스키는 러시아 혁명가이자 소련 법률가, 정치가였다.",
+       "excerpt": "Vladimir Pavlovich Antonov-Saratovsky (Russian: Владимир Павлович Антонов-Саратовский; 31 July 1884 – 3 August 1965) was a Russian revolutionary, Soviet jurist, and statesman."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Antonov-Saratovsky",
+       "locator": "plain-text extract characters 1860:1952; sha256 f6e4ea5cd94af6d516d48e71f2fa356e262330aa2bab0b43fd71ab3d50feb5bc",
+       "claim": "그는 1923~1938년 소련 최고재판소 위원이었다.",
+       "excerpt": "From 1923 to 1938, Antonov-Saratovsky was a member of the Supreme Court of the Soviet Union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vyshinsky",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-be4c8aa800df613024d8eff0a2a2b7571c0c47e290f7efe48ec360baff42771d",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andrey_Vyshinsky"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": 1939,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Andrey_Vyshinsky",
+       "locator": "plain-text extract characters 202:302; sha256 7ba3105408e036a9d793246add83a3d7bde8f3fb91b436390d3c7ba7096ab4d8",
+       "claim": "비신스키는 스탈린의 모스크바 재판과 뉘른베르크 재판의 검사로 가장 잘 알려져 있다.",
+       "excerpt": "He is best known as a state prosecutor of Joseph Stalin's Moscow Trials and in the Nuremberg trials."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Andrey_Vyshinsky",
+       "locator": "plain-text extract characters 2984:3258; sha256 7ba3105408e036a9d793246add83a3d7bde8f3fb91b436390d3c7ba7096ab4d8",
+       "claim": "그는 새 소비에트 법체계에서 검사가 되었다.",
+       "excerpt": "Becoming a member of the nomenklatura, Vyshinsky became a prosecutor in the new Soviet legal system, began a rivalry with a fellow lawyer, Nikolai Krylenko, and in 1925 was elected rector of Moscow University, which he began to clear of \"unsuitable\" students and professors."
+      }
+     ]
+    },
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1940,
+     "endYear": 1953,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Andrey_Vyshinsky",
+       "locator": "plain-text extract characters 303:440; sha256 7ba3105408e036a9d793246add83a3d7bde8f3fb91b436390d3c7ba7096ab4d8",
+       "claim": "그는 1940년부터 외무차관, 1949~1953년 소련 외무장관을 지냈다.",
+       "excerpt": "He was the Soviet Foreign Minister from 1949 to 1953, after having served as Deputy Foreign Minister under Vyacheslav Molotov since 1940."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "peteris-stucka",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-2711790ee960fbc8b43379bd6c27238aeecbba3fb13c7c73f6df371ab12cf891",
+   "sources": [
+    "https://en.wikipedia.org/wiki/P%C4%93teris_Stu%C4%8Dka"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1932,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/P%C4%93teris_Stu%C4%8Dka",
+       "locator": "plain-text extract characters 1508:1914; sha256 0ad1de88b54b529f2f0c3c7b09b436a794e58b21fb2375094b4cc28fd50d4b01",
+       "claim": "스투치카는 첫 볼셰비키 정부의 법무인민위원으로 기존 사법기관을 폐지하고 인민법원으로 대체했다.",
+       "excerpt": "Appointed People's Commissar for Justice in the first Bolshevik government, on 7 November 1917, he was responsible for abolishing all existing judicial institutions, replacing them with local courts consisting of a judge and two assessors, created by local soviets, and for decreeing that existing laws should be treated as valid only where \"they are not in contradiction with the revolutionary conscience."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/P%C4%93teris_Stu%C4%8Dka",
+       "locator": "plain-text extract characters 3128:3203; sha256 0ad1de88b54b529f2f0c3c7b09b436a794e58b21fb2375094b4cc28fd50d4b01",
+       "claim": "그는 1923년 러시아 공화국 초대 최고재판소장에 임명되었다.",
+       "excerpt": "In 1923, Stučka, was appointed the first Chief Justice of the Russian SFSR."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "isaac-steinberg",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-5cde0d3a46ca3ce440ea06d88e86d46bdf9a2c1e10d75e3ed55a7e01981bbc98",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Isaac_Steinberg"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "시테인베르크는 좌파 사회혁명당원이자 정치인이었다.",
+       "source": "https://en.wikipedia.org/wiki/Isaac_Steinberg",
+       "excerpt": "Isaac Nachman Steinberg (Russian: Исаак Нахман Штейнберг; 13 July 1888 – 2 January 1957) was a lawyer, a Left Socialist-Revolutionary, politician, People's Commissar under Lenin, and a leader of the Jewish Territorialist movement and writer in Soviet Russia and in exile.",
+       "locator": "characters 0:271; sha256 b05a97601be947faaa221fbd250f36219249b7284d83640c2286eb391c71a660"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "russian-left-sr",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1917,
+     "endYear": 1918,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Isaac_Steinberg",
+       "locator": "plain-text extract characters 1760:1951; sha256 d6dcad83e640aeebe77cdf81c57fbac398f388e2a98385fabcedf817ae0ffd21",
+       "claim": "시테인베르크는 1917년 12월부터 1918년 3월까지 레닌 정부의 법무인민위원이었다.",
+       "excerpt": "From December 10, 1917, to March 1918, he was People's Commissar (Narkom) of Justice in Vladimir Lenin's government during the Bolsheviks' short-lived coalition with the left wing of the SRs."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "georgy-lomov-oppokov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e7574aa0a35766a20f13ae8ea7dbf37d4e2d6ebc1b7c35373ae3fb22be0f3ad9",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Georgy_Oppokov",
+    "https://ru.wikipedia.org/wiki/%D0%9E%D0%BF%D0%BF%D0%BE%D0%BA%D0%BE%D0%B2%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%98%D0%BF%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "endYear": 1934,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "로모프는 1917년 12월 최고국민경제회의 위원이 되었고 1931–34년 고스플란 부의장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Georgy_Oppokov",
+       "excerpt": "In December he was appointed a member of the Supreme Economic Council (Vesenkha).",
+       "locator": "characters 1852:1933; accessed 2026-09-27; sha256 301d9531d2ca29321d67582da1a58fdbd88b83655686ba59e042e7890db976e7"
+      },
+      {
+       "claim": "로모프는 1917년 12월 최고국민경제회의 위원이 되었고 1931–34년 고스플란 부의장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Georgy_Oppokov",
+       "excerpt": "In 1931–34, he was deputy head of Gosplan.",
+       "locator": "characters 2921:2963; accessed 2026-09-27; sha256 301d9531d2ca29321d67582da1a58fdbd88b83655686ba59e042e7890db976e7"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1917,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1917,
+     "endYear": 1917,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BF%D0%BF%D0%BE%D0%BA%D0%BE%D0%B2%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%98%D0%BF%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 1361:1412; sha256 170f91cb7ed48b093af5d64deb64c8bf8739b8d64995f9af3dd0ad01fc3e35ca",
+       "claim": "로모프는 1917년 10~11월 법무인민위원이었다.",
+       "excerpt": "1917—1917 — нарком юстиции (октябрь — ноябрь 1917)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pang-hak-se",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-6385fece2789b456bbd2475ec60c16744310a415b8ab2067bb6f1aa1c75b6a2a",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pang_Hak-se"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "그는 소련에서 전문 교육을 받고 내무인민위원부와 정보기관에서 일했다.",
+       "source": "https://en.wikipedia.org/wiki/Pang_Hak-se",
+       "excerpt": "He received professional training in the Soviet Union and worked for the People's Commissariat of Internal Affairs and intelligence agencies.",
+       "locator": "characters 556:697; sha256 200000ea5ec48f1d75438940b9c837b95bb606d5133fe47692f71c7a31c13809"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1960,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "1948년 북한 내각에서 내무성 부상 겸 정치보위국장이 되었고, 1951년부터 사회안전상, 1952년부터 내무상을 지내며 보안·치안 행정을 총괄했다.",
+       "source": "https://en.wikipedia.org/wiki/Pang_Hak-se",
+       "excerpt": "In September 1948, with the declaration on establishment and conducting of first parliamentary election to the Supreme People's Assembly, he was elected as a member of parliament and was appointed Deputy Minister of Internal Affairs and Director of the Political Security Bureau in the Cabinet of North Korea which was led by Premier Kim Il Sung. From March 1951 he served as Minister of Social Security and from October 1952 as Minister of Interior.",
+       "locator": "characters 900:1350; sha256 200000ea5ec48f1d75438940b9c837b95bb606d5133fe47692f71c7a31c13809"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1948,
+     "functionId": "security",
+     "affiliationId": "state-north-korea",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": "state-north-korea",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1960,
+     "endYear": 1992,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Pang_Hak-se",
+       "locator": "plain-text extract characters 1556:1658; sha256 200000ea5ec48f1d75438940b9c837b95bb606d5133fe47692f71c7a31c13809",
+       "claim": "방학세는 법조로 옮겨 1960년 11월 중앙재판소 부소장이 되었다.",
+       "excerpt": "He then turned to the legal profession, and was deputy director of the Central Court in November 1960."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Pang_Hak-se",
+       "locator": "plain-text extract characters 1760:1878; sha256 200000ea5ec48f1d75438940b9c837b95bb606d5133fe47692f71c7a31c13809",
+       "claim": "그는 1972년 12월 중앙재판소장에 임명되어 1982년·1986년 재임명되었다.",
+       "excerpt": "He was appointed president of the Central Court in December 1972, and was reappointed in April 1982 and December 1986."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "paul-levi",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-61d7bf2909988b0e09aca703f9bbe459fbfa2dae6e3fe3c2b9ecc86f27763bf6",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Paul_Levi"
+   ],
+   "activities": [
+    {
+     "endYear": 1921,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "레비는 1919년 KPD 주요 지도자 암살 이후 당의 중앙 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Paul_Levi",
+       "excerpt": "After the killing of the KPD's main leaders Rosa Luxemburg, Karl Liebknecht, and Leo Jogiches, Levi took over as the central leader of the Communist Party.",
+       "locator": "characters 2543:2698; sha256 80b26141e905027242e1a4c1b2c4c9e9598cb76e0f0c52941c0ed281a12addb5"
+      },
+      {
+       "claim": "레비는 1920년 코민테른 제2차 세계대회에 독일 대표단을 이끌며 당 지도자로서 활동했다.",
+       "source": "https://en.wikipedia.org/wiki/Paul_Levi",
+       "excerpt": "Levi headed the German delegation to the 2nd World Congress of the Communist International (Comintern) in Moscow in 1920",
+       "locator": "characters 2933:3053; sha256 80b26141e905027242e1a4c1b2c4c9e9598cb76e0f0c52941c0ed281a12addb5"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-communist",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "independent",
+     "relation": "independent",
+     "primary": false,
+     "startYear": 1906,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Paul_Levi",
+       "locator": "plain-text extract characters 821:947; sha256 80b26141e905027242e1a4c1b2c4c9e9598cb76e0f0c52941c0ed281a12addb5",
+       "claim": "레비는 1906년 프랑크푸르트에서 변호사 활동을 시작했다.",
+       "excerpt": "Levi started work as a lawyer in Frankfurt in 1906 and also joined the Social Democratic Party of Germany (SPD) the same year."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Paul_Levi",
+       "locator": "plain-text extract characters 1044:1115; sha256 80b26141e905027242e1a4c1b2c4c9e9598cb76e0f0c52941c0ed281a12addb5",
+       "claim": "그는 1913년부터 룩셈부르크의 정치 사건 변호를 맡았다.",
+       "excerpt": "Beginning in 1913, Levi was also Luxemburg's lawyer in political cases."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ho-hon",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal and judicial careers classified as law; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-edcfaf3824d8bfa293075d7861af2e35d22d03a52edbadb56f0cb6bf6827b6da",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ho_Hon"
+   ],
+   "activities": [
+    {
+     "endYear": 1951,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "허헌은 1946년 11월 남조선로동당 창당에 참여했다.",
+       "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+       "excerpt": "In November 1946, he participated in the formation of the South Korean Workers' Party.",
+       "locator": "characters 11242:11328; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6"
+      },
+      {
+       "claim": "남조선로동당 결성 후 허헌은 박헌영을 지지하며 당내 정치 활동을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+       "excerpt": "After the formation of the Workers' Party of South Korea, Lyuh Woon-hyung sat down in office and stopped the conflict with Pak Hon-yong. Around this time, Ho Hon followed, supporting Pak.",
+       "locator": "characters 11329:11516; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1946,
+     "functionId": "political-leadership",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "independent",
+     "relation": "independent",
+     "primary": false,
+     "startYear": 1907,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+       "locator": "plain-text extract characters 165:248; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6",
+       "claim": "허헌은 변호사로서 독립운동가들을 변론했다.",
+       "excerpt": "As a lawyer, he defended independence activists along with Lee In and Kim Byong-ro."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+       "locator": "plain-text extract characters 4247:4331; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6",
+       "claim": "3·1운동으로 그는 대표적인 항일 변호사가 되었다.",
+       "excerpt": "The March 1st Movement of March 1919 made him a representative anti-Japanese lawyer."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
