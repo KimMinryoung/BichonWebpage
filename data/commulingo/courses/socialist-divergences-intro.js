@@ -471,8 +471,8 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "엥겔스는 1890년 독일어판 서문에서, 1847년에 이 문서를 '사회주의' 선언이라고 부를 수 없었던 까닭을 무엇이라고 설명했을까요?",
-                "en": "In the preface to the 1890 German edition, how did Engels explain why in 1847 the document could not have been called a 'Socialist' Manifesto?"
+                "ko": "엥겔스는 『공산당 선언』 1890년 독일어판 서문에서, 1847년에 이 선언을 '사회주의' 선언이라고 부를 수 없었던 까닭을 무엇이라고 설명했을까요?",
+                "en": "In the preface to the 1890 German edition of the Communist Manifesto, how did Engels explain why in 1847 it could not have been called a 'Socialist' Manifesto?"
               },
               "choices": {
                 "ko": [
@@ -2207,8 +2207,8 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "베른슈타인은 \"최종 목표는 나에게 아무것도 아니며 운동이 전부다\"라는 자기 문장을 이 책의 서문에서 어떻게 해명했을까요?",
-                "en": "How did Bernstein, in the preface to this book, explain his own sentence that the final goal is nothing to him and the movement everything?"
+                "ko": "베른슈타인은 \"최종 목표는 나에게 아무것도 아니며 운동이 전부다\"라는 자기 문장을 『사회주의의 전제와 사회민주주의의 과제』(1899) 서문에서 어떻게 해명했을까요?",
+                "en": "How did Bernstein, in the preface to The Preconditions of Socialism (1899), explain his own sentence that the final goal is nothing to him and the movement everything?"
               },
               "choices": {
                 "ko": [

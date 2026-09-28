@@ -581,8 +581,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "1장의 상품 분석은 이후 화폐와 자본 분석으로 어떻게 이어지는가?",
-                    "en": "How does Chapter 1's analysis of the commodity lead toward the later analysis of money and capital?"
+                    "ko": "『자본론』 1권 1장 「상품」의 분석은 이후 화폐와 자본 분석으로 어떻게 이어지는가?",
+                    "en": "How does the analysis of the commodity in Capital, Volume I, Chapter 1, “Commodities,” lead toward the later analysis of money and capital?"
                   },
                   "choices": {
                     "ko": [
@@ -1114,8 +1114,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "1장에서는 가치형태가 논리적으로 전개되었고, 2장에서는 상품 소유자들이 실제로 교환한다. 이 둘을 이어 주는 매개는 무엇인가?",
-                    "en": "Chapter 1 develops the value-form logically, while Chapter 2 shows commodity owners actually exchanging. What mediates the two?"
+                    "ko": "『자본론』 1권 1장 「상품」에서는 가치형태가 논리적으로 전개되었고, 2장 「교환」에서는 상품 소유자들이 실제로 교환한다. 이 둘을 이어 주는 매개는 무엇인가?",
+                    "en": "Capital, Volume I, Chapter 1, “Commodities,” develops the value-form logically, while Chapter 2, “Exchange,” shows commodity owners actually exchanging. What mediates the two?"
                   },
                   "choices": {
                     "ko": [
@@ -1702,21 +1702,21 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "3장의 화폐 분석은 왜 4장의 자본 일반공식 M-C-M′로 이어지는가?",
-                    "en": "Why does Chapter 3's analysis of money lead into Chapter 4's general formula of capital, M-C-M′?"
+                    "ko": "『자본론』 1권 3장 「화폐 또는 상품 유통」의 화폐 분석은 왜 4장의 자본 일반공식 M-C-M′로 이어지는가?",
+                    "en": "Why does the analysis of money in Capital, Volume I, Chapter 3, “Money, or the Circulation of Commodities,” lead into Chapter 4's general formula of capital, M-C-M′?"
                   },
                   "choices": {
                     "ko": [
                       "화폐가 가치척도·유통수단·축장 형태로 독립성을 얻지만, 아직 가치증식 운동 자체는 설명되지 않았기 때문이다.",
                       "화폐가 등장하면 단순 상품유통 C-M-C와 자본의 운동 M-C-M′가 같은 공식이 되기 때문이다.",
                       "축장된 돈은 보유 기간이 길어질수록 생산과정 없이 잉여가치를 낳기 때문이다.",
-                      "화폐의 기능은 모두 국가 발행권에서 나오므로 다음 장은 법률 제도 분석으로 옮겨가기 때문이다."
+                      "화폐의 기능은 모두 국가 발행권에서 나오므로 4장은 법률 제도 분석으로 옮겨가기 때문이다."
                     ],
                     "en": [
                       "Because money gains independence as measure of value, means of circulation, and hoard, but the movement of valorization itself has not yet been explained.",
                       "Because once money appears, simple commodity circulation C-M-C and the movement of capital M-C-M′ become the same formula.",
                       "Because hoarded money produces surplus-value without a production process the longer it is held.",
-                      "Because all functions of money come from state issuance, so the next chapter shifts to legal institutions."
+                      "Because all functions of money come from state issuance, so Chapter 4 shifts to legal institutions."
                     ]
                   },
                   "answer": 0,
@@ -1977,21 +1977,21 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "3장에서 마르크스가 화폐형태의 모순으로부터 공황의 “형식적 가능성”만을 끌어내고 실제화는 뒤로 미루는 이유는 무엇인가?",
-                    "en": "Why does Marx draw only the “formal possibility” of crisis from the contradictions of the money-form in Chapter 3, deferring its actualization?"
+                    "ko": "『자본론』 1권 3장 「화폐 또는 상품 유통」에서 마르크스가 화폐형태의 모순으로부터 공황의 “형식적 가능성”만을 끌어내고 실제화는 뒤로 미루는 이유는 무엇인가?",
+                    "en": "Why does Marx draw only the “formal possibility” of crisis from the contradictions of the money-form in Capital, Volume I, Chapter 3, “Money, or the Circulation of Commodities,” deferring its actualization?"
                   },
                   "choices": {
                     "ko": [
                       "화폐형태의 모순은 공황의 형식적 가능성만을 보여줄 뿐이며, 그 가능성이 현실화되는 것은 단순유통을 넘어선 자본의 운동을 분석해야 알 수 있기 때문이다.",
                       "단순유통 단계에서 이미 공황의 구체적 원인과 규모가 모두 설명되어, 뒤의 장들은 같은 내용을 반복할 뿐이기 때문이다.",
                       "화폐형태의 모순은 이론적 가정일 뿐이며 실제 상품유통에서는 판매와 구매가 항상 균형을 이루기 때문이다.",
-                      "공황은 화폐와 무관하게 자연재해나 정치적 사건에서만 비롯되므로 이 장의 논의와 관련이 없기 때문이다."
+                      "공황은 화폐와 무관하게 자연재해나 정치적 사건에서만 비롯되므로 3장의 논의와 관련이 없기 때문이다."
                     ],
                     "en": [
                       "Because the contradictions of the money-form show only the formal possibility of crisis, and its actualization can be grasped only by analyzing the movement of capital beyond simple circulation.",
                       "Because the concrete causes and scale of crisis are already fully explained at the level of simple circulation, so later chapters merely repeat the same content.",
                       "Because the contradictions of the money-form are a mere theoretical assumption, since sale and purchase always balance in actual commodity circulation.",
-                      "Because crises stem only from natural disasters or political events unrelated to money, so this chapter's discussion is irrelevant to them."
+                      "Because crises stem only from natural disasters or political events unrelated to money, so Chapter 3's discussion is irrelevant to them."
                     ]
                   },
                   "answer": 0,
@@ -2673,8 +2673,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이 장은 M-C-M′이 “표면적으로 볼 때” 자본의 일반 공식이라고만 말하고 그친다. 이 조심스러운 표현은 『자본론』 1권 전체의 운동에서 어떤 다음 단계를 향해 열려 있는가?",
-                    "en": "The chapter only says that M-C-M′ is the general formula of capital “as it appears prima facie.” Where does this guarded phrasing open onto in the movement of Capital, Volume I as a whole?"
+                    "ko": "『자본론』 1권 4장 「자본의 일반 공식」은 M-C-M′이 “표면적으로 볼 때” 자본의 일반 공식이라고만 말하고 그친다. 이 조심스러운 표현은 1권 전체의 운동에서 어떤 다음 단계를 향해 열려 있는가?",
+                    "en": "Capital, Volume I, Chapter 4, “The General Formula for Capital,” only says that M-C-M′ is the general formula of capital “as it appears prima facie.” Where does this guarded phrasing open onto in the movement of Volume I as a whole?"
                   },
                   "choices": {
                     "ko": [
@@ -6149,8 +6149,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "잉여가치율이라는 척도가 확정되고 나면, 마르크스는 이어지는 장들에서 이 잣대로 무엇을 견주는가?",
-                    "en": "Once the rate of surplus-value is fixed as a measure, what does Marx go on to weigh with it in the chapters that follow?"
+                    "ko": "『자본론』 1권 9장에서 잉여가치율이라는 척도가 확정되고 나면, 마르크스는 이어지는 장들에서 이 잣대로 무엇을 견주는가?",
+                    "en": "Once Capital, Volume I, Chapter 9, fixes the rate of surplus-value as a measure, what does Marx go on to weigh with it in the chapters that follow?"
                   },
                   "choices": {
                     "ko": [
@@ -8225,8 +8225,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "봉제공장에 새 재봉틀이 도입되어 옷값이 싸지고 노동력 가치가 낮아졌다고 하자. 이런 생산성 혁명이 이후 협업과 매뉴팩처, 기계제 대공업 분석 전체와 계속 이어지는 이유는 무엇인가?",
-                    "en": "Suppose a new sewing machine cheapens clothing and lowers the value of labor-power. Why does this kind of productivity revolution keep reappearing across the later analyses of cooperation, manufacture, and machinery?"
+                    "ko": "봉제공장에 새 재봉틀이 도입되어 옷값이 싸지고 노동력 가치가 낮아졌다고 하자. 이런 생산성 혁명이 『자본론』 1권 13~15장의 협업·매뉴팩처·기계제 대공업 분석 전체와 계속 이어지는 이유는 무엇인가?",
+                    "en": "Suppose a new sewing machine cheapens clothing and lowers the value of labor-power. Why does this kind of productivity revolution keep reappearing across the analyses of cooperation, manufacture, and machinery in Capital, Volume I, Chapters 13–15?"
                   },
                   "choices": {
                     "ko": [
@@ -20053,8 +20053,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "앞 장들은 농민이 토지에서 쫓겨나 임금노동자로 만들어지는 과정을 다뤘다. 그런데 마르크스는 그 다음으로 「자본가들은 원래 어디서 왔는가」라고 다시 묻는다. 이 물음을 따로 던져야 하는 까닭은 어디에 있는가?",
-                    "en": "Earlier chapters traced how peasants were driven from the land and turned into wage-labourers. Marx then asks again where the capitalists originally came from. Why does that question have to be put separately?"
+                    "ko": "『자본론』 1권 27~28장은 농민이 쫓겨나 임금노동자가 되는 과정을 다뤘다. 마르크스는 29장에서 「자본가들은 원래 어디서 왔는가」를 다시 묻는다. 이 물음을 따로 던져야 하는 까닭은 어디에 있는가?",
+                    "en": "Chapters 27–28 of Capital, Volume I traced how peasants were driven from the land and turned into wage-labourers. In Chapter 29, “Genesis of the Capitalist Farmer,” Marx then asks again where the capitalists originally came from. Why does that question have to be put separately?"
                   },
                   "choices": {
                     "ko": [
@@ -24901,8 +24901,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 5장의 유통시간 분석은 곧바로 회전시간 분석으로 이어지는가?",
-                    "en": "Why does Chapter 5’s analysis of circulation time lead directly into the analysis of turnover time?"
+                    "ko": "왜 『자본론』 2권 5장 「유통시간」의 분석은 곧바로 회전시간 분석으로 이어지는가?",
+                    "en": "Why does the analysis of circulation time in Capital, Volume II, Chapter 5, “The Time of Circulation,” lead directly into the analysis of turnover time?"
                   },
                   "choices": {
                     "ko": [
@@ -25286,8 +25286,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "6장의 유통비용 분석이 뒤의 회전시간 분석으로 이어지는 가장 좋은 이유는 무엇인가?",
-                    "en": "Why does Chapter 6's analysis of circulation costs lead into the later analysis of turnover time?"
+                    "ko": "『자본론』 2권 6장 「유통비용」의 분석이 7장 이후의 회전시간 분석으로 이어지는 가장 좋은 이유는 무엇인가?",
+                    "en": "Why does the analysis of circulation costs in Capital, Volume II, Chapter 6, “The Costs of Circulation,” lead into the analysis of turnover time from Chapter 7 on?"
                   },
                   "choices": {
                     "ko": [
@@ -25521,8 +25521,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "7장이 8장의 고정자본·유동자본 분석으로 넘어가는 이유는 무엇인가?",
-                    "en": "Why does Chapter 7 lead into Chapter 8's analysis of fixed and circulating capital?"
+                    "ko": "『자본론』 2권 7장 「회전시간과 회전수」가 8장의 고정자본·유동자본 분석으로 넘어가는 이유는 무엇인가?",
+                    "en": "Why does Capital, Volume II, Chapter 7, “The Turnover Time and Number of Turnovers,” lead into Chapter 8's analysis of fixed and circulating capital?"
                   },
                   "choices": {
                     "ko": [
@@ -26874,19 +26874,19 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "스미스의 혼동이 왜 리카도 비판으로 이어지는가?",
-                    "en": "Why does Smith’s confusion lead into Marx’s critique of Ricardo?"
+                    "ko": "『자본론』 2권 10장 「고정자본과 유동자본 이론: 중농주의자와 애덤 스미스」에서 드러난 스미스의 혼동이 왜 11장의 리카도 비판으로 이어지는가?",
+                    "en": "In Capital, Volume II, Chapter 10, “Theories of Fixed and Circulating Capital. The Physiocrats and Adam Smith,” why does Smith’s confusion lead into Marx’s critique of Ricardo in Chapter 11?"
                   },
                   "choices": {
                     "ko": [
-                      "스미스의 혼동이 리카도에게 이어지므로 다음 장에서 그 효과를 비판해야 한다.",
-                      "리카도는 스미스의 혼동을 완전히 제거했고 다음 장은 보충 설명이다.",
+                      "스미스의 혼동이 리카도에게 이어지므로 11장에서 그 효과를 비판해야 한다.",
+                      "리카도는 스미스의 혼동을 완전히 제거했고 11장은 보충 설명이다.",
                       "리카도 비판은 가격 계산 오류 수정이며 가치 이전과 가치창조의 구분은 뒤따르는 문제다.",
                       "스미스의 문제는 중농주의의 농업 편향에서 비롯되어 리카도의 이윤율 논의와 분리된다."
                     ],
                     "en": [
-                      "Because Smith's confusion continues into Ricardo, the next chapter must criticize its effects.",
-                      "It treats Ricardo as having fully removed Smith's confusion, making the next chapter a mere supplement.",
+                      "Because Smith's confusion continues into Ricardo, Chapter 11 must criticize its effects.",
+                      "It treats Ricardo as having fully removed Smith's confusion, making Chapter 11 a mere supplement.",
                       "It reads the critique of Ricardo only as a correction of price calculation and makes the distinction between value transfer and value creation secondary.",
                       "It attributes Smith's problem only to Physiocratic agricultural bias and cuts it off from Ricardo's discussion of profit rates."
                     ]
@@ -28184,8 +28184,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "유통시간에서 마르크스가 직접 분석하려는 것은 무엇인가?",
-                    "en": "What is Marx directly analyzing in the chapter on circulation time?"
+                    "ko": "『자본론』 2권 14장 「유통시간」에서 마르크스가 직접 분석하려는 것은 무엇인가?",
+                    "en": "What is Marx directly analyzing in Capital, Volume II, Chapter 14, “The Time of Circulation”?"
                   },
                   "choices": {
                     "ko": [
@@ -28296,8 +28296,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "유통시간 장은 2권의 전체 논지에 무엇을 보태는가?",
-                    "en": "What does the chapter on The Time of Circulation add to the overall argument of Volume II?"
+                    "ko": "『자본론』 2권 14장 「유통시간」은 2권의 전체 논지에 무엇을 보태는가?",
+                    "en": "What does Capital, Volume II, Chapter 14, “The Time of Circulation,” add to the overall argument of Volume II?"
                   },
                   "choices": {
                     "ko": [
@@ -28585,8 +28585,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "회전시간이 투하자본량에 미치는 영향에서 마르크스가 직접 분석하려는 것은 무엇인가?",
-                    "en": "What is Marx directly analyzing in the chapter on the effect of turnover time on advanced capital?"
+                    "ko": "『자본론』 2권 15장 「회전시간이 투하자본량에 미치는 영향」에서 마르크스가 직접 분석하려는 것은 무엇인가?",
+                    "en": "What is Marx directly analyzing in Capital, Volume II, Chapter 15, “Effect of Turnover Time on Magnitude of Advanced Capital”?"
                   },
                   "choices": {
                     "ko": [
@@ -28697,8 +28697,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "회전시간이 투하자본량에 미치는 영향 장은 2권의 전체 논지에 무엇을 보태는가?",
-                    "en": "What does the chapter on Effect of Turnover Time on Magnitude of Advanced Capital add to the overall argument of Volume II?"
+                    "ko": "『자본론』 2권 15장 「회전시간이 투하자본량에 미치는 영향」은 2권의 전체 논지에 무엇을 보태는가?",
+                    "en": "What does Capital, Volume II, Chapter 15, “Effect of Turnover Time on Magnitude of Advanced Capital,” add to the overall argument of Volume II?"
                   },
                   "choices": {
                     "ko": [
@@ -28847,8 +28847,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "이 장이 다음의 '가변자본의 회전' 분석으로 넘어가는 이유는 무엇인가?",
-                    "en": "Why does this chapter lead into the later analysis of the turnover of variable capital?"
+                    "ko": "『자본론』 2권 15장 「회전시간이 투하자본량에 미치는 영향」이 16장의 '가변자본의 회전' 분석으로 넘어가는 이유는 무엇인가?",
+                    "en": "Why does Capital, Volume II, Chapter 15, “Effect of Turnover Time on Magnitude of Advanced Capital,” lead into Chapter 16's analysis of the turnover of variable capital?"
                   },
                   "choices": {
                     "ko": [
@@ -28986,8 +28986,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "가변자본의 회전에서 마르크스가 직접 분석하려는 것은 무엇인가?",
-                    "en": "What is Marx directly analyzing in the chapter on the turnover of variable capital?"
+                    "ko": "『자본론』 2권 16장 「가변자본의 회전」에서 마르크스가 직접 분석하려는 것은 무엇인가?",
+                    "en": "What is Marx directly analyzing in Capital, Volume II, Chapter 16, “The Turnover of Variable Capital”?"
                   },
                   "choices": {
                     "ko": [
@@ -29098,8 +29098,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "가변자본의 회전 장은 2권의 전체 논지에 무엇을 보태는가?",
-                    "en": "What does the chapter on The Turnover of Variable Capital add to the overall argument of Volume II?"
+                    "ko": "『자본론』 2권 16장 「가변자본의 회전」은 2권의 전체 논지에 무엇을 보태는가?",
+                    "en": "What does Capital, Volume II, Chapter 16, “The Turnover of Variable Capital,” add to the overall argument of Volume II?"
                   },
                   "choices": {
                     "ko": [
@@ -29248,8 +29248,8 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 16장의 가변자본 회전 분석 뒤에 17장의 잉여가치 유통 문제가 이어지는가?",
-                    "en": "Why does Chapter 16's analysis of variable-capital turnover lead into Chapter 17's problem of the circulation of surplus-value?"
+                    "ko": "왜 『자본론』 2권 16장 「가변자본의 회전」의 분석 뒤에 17장 「잉여가치의 유통」의 문제가 이어지는가?",
+                    "en": "Why does the analysis of variable-capital turnover in Capital, Volume II, Chapter 16, “The Turnover of Variable Capital,” lead into Chapter 17's problem of the circulation of surplus-value?"
                   },
                   "choices": {
                     "ko": [
@@ -29387,8 +29387,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 유통에서 마르크스가 직접 분석하려는 것은 무엇인가?",
-                    "en": "What is Marx directly analyzing in the chapter on the circulation of surplus-value?"
+                    "ko": "『자본론』 2권 17장 「잉여가치의 유통」에서 마르크스가 직접 분석하려는 것은 무엇인가?",
+                    "en": "What is Marx directly analyzing in Capital, Volume II, Chapter 17, “The Circulation of Surplus-Value”?"
                   },
                   "choices": {
                     "ko": [
@@ -29499,8 +29499,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "잉여가치의 유통 장은 2권의 전체 논지에 무엇을 보태는가?",
-                    "en": "What does the chapter on The Circulation of Surplus-Value add to the overall argument of Volume II?"
+                    "ko": "『자본론』 2권 17장 「잉여가치의 유통」은 2권의 전체 논지에 무엇을 보태는가?",
+                    "en": "What does Capital, Volume II, Chapter 17, “The Circulation of Surplus-Value,” add to the overall argument of Volume II?"
                   },
                   "choices": {
                     "ko": [
@@ -29900,19 +29900,19 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "서론 장은 2권의 전체 논지에 무엇을 보태는가?",
-                    "en": "What does the chapter on Introduction add to the overall argument of Volume II?"
+                    "ko": "『자본론』 2권 18장 「서론」은 2권의 전체 논지에 무엇을 보태는가?",
+                    "en": "What does Capital, Volume II, Chapter 18, “Introduction,” add to the overall argument of Volume II?"
                   },
                   "choices": {
                     "ko": [
                       "2권의 분석을 개별 순환과 회전에서 사회적 총자본의 재생산 도식으로 이동시킨다.",
-                      "앞 장의 회전 분석만으로 사회적 총생산물의 부문 구성이 설명된다.",
+                      "7~17장의 회전 분석만으로 사회적 총생산물의 부문 구성이 설명된다.",
                       "재생산 도식은 회계 도표이며 자본/수입 구분과 별개다.",
                       "사회적 총자본 분석은 개별 자본 분석의 반복이므로 새 범주가 필요 없다."
                     ],
                     "en": [
                       "It moves Volume II from individual circuits and turnover to the reproduction schemes of total social capital.",
-                      "It assumes the previous turnover analysis already explains the departmental composition of the total social product.",
+                      "It assumes the turnover analysis of Chapters 7–17 already explains the departmental composition of the total social product.",
                       "It treats reproduction schemes as diagrams for accounting convenience, unrelated to the distinction between capital and revenue.",
                       "It says total-social-capital analysis merely repeats individual-capital analysis and needs no new categories."
                     ]
@@ -30189,20 +30189,20 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "마르크스가 케네와 스미스의 재생산 설명을 다시 검토하면서 하려는 일은 무엇인가?",
-                    "en": "What is Marx doing when he re-examines Quesnay's and Smith's accounts of reproduction?"
+                    "ko": "『자본론』 2권 19장 「이 주제에 관한 이전의 설명들」에서 마르크스가 케네와 스미스의 재생산 설명을 다시 검토하면서 하려는 일은 무엇인가?",
+                    "en": "In Capital, Volume II, Chapter 19, “Former Presentations of the Subject,” what is Marx doing when he re-examines Quesnay's and Smith's accounts of reproduction?"
                   },
                   "choices": {
                     "ko": [
                       "중농주의자, 스미스 등 이전 경제학이 사회적 재생산을 어떻게 부분적으로 포착하고 또 왜 혼동했는지 검토한다.",
                       "선행 이론은 모두 오류로 폐기되고 마르크스의 재생산 도식은 아무 전사 없이 등장한다.",
-                      "이 장은 케네와 스미스의 사상사를 소개하는 부록이다.",
+                      "19장은 케네와 스미스의 사상사를 소개하는 부록이다.",
                       "이전 경제학은 사회적 총생산물의 교환 문제를 전혀 제기하지 못했다."
                     ],
                     "en": [
                       "It examines how earlier economists such as the Physiocrats and Smith partly grasped social reproduction and why they also confused it.",
                       "It discards all earlier theory as pure error and treats Marx's reproduction schemes as appearing without any prehistory.",
-                      "It reads the chapter only as an appendix on Quesnay and Smith, separate from clarifying reproduction categories.",
+                      "It reads Chapter 19 only as an appendix on Quesnay and Smith, separate from clarifying reproduction categories.",
                       "It says earlier political economy never posed the problem of exchange of the total social product at all."
                     ]
                   },
@@ -30301,8 +30301,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "이 주제에 관한 이전의 설명들 장은 전체 논지에서 어떤 역할을 하는가?",
-                    "en": "What role does the chapter on Former Presentations of the Subject play in the overall argument?"
+                    "ko": "『자본론』 2권 19장 「이 주제에 관한 이전의 설명들」은 전체 논지에서 어떤 역할을 하는가?",
+                    "en": "What role does Capital, Volume II, Chapter 19, “Former Presentations of the Subject,” play in the overall argument?"
                   },
                   "choices": {
                     "ko": [
@@ -30686,8 +30686,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "단순재생산 장은 전체 논지에서 어떤 역할을 하는가?",
-                    "en": "What role does the chapter on Simple Reproduction play in the overall argument?"
+                    "ko": "『자본론』 2권 20장 「단순재생산」은 전체 논지에서 어떤 역할을 하는가?",
+                    "en": "What role does Capital, Volume II, Chapter 20, “Simple Reproduction,” play in the overall argument?"
                   },
                   "choices": {
                     "ko": [
@@ -31087,8 +31087,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "축적과 확대재생산 장은 전체 논지에서 어떤 역할을 하는가?",
-                    "en": "What role does the chapter on Accumulation and Reproduction on an Expanded Scale play in the overall argument?"
+                    "ko": "『자본론』 2권 21장 「축적과 확대재생산」은 전체 논지에서 어떤 역할을 하는가?",
+                    "en": "What role does Capital, Volume II, Chapter 21, “Accumulation and Reproduction on an Expanded Scale,” play in the overall argument?"
                   },
                   "choices": {
                     "ko": [
@@ -31506,19 +31506,19 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "1장의 비용가격·이윤 분석은 왜 2장의 이윤율 분석으로 이어지는가?",
-                    "en": "Why does Chapter 1's analysis of cost-price and profit lead into Chapter 2's analysis of the rate of profit?"
+                    "ko": "『자본론』 3권 1장 「비용가격과 이윤」의 분석은 왜 2장의 이윤율 분석으로 이어지는가?",
+                    "en": "Why does the analysis in Capital, Volume III, Chapter 1, “Cost-Price and Profit,” lead into Chapter 2's analysis of the rate of profit?"
                   },
                   "choices": {
                     "ko": [
                       "이윤이 총투하자본의 성과처럼 나타나면, 잉여가치가 전체 자본에 대해 어떤 비율로 보이는지가 다음 문제가 된다.",
-                      "비용가격이 확인되면 잉여가치의 원천 문제는 끝나고 다음 장은 시장가격의 우연한 변동만 다룬다.",
+                      "비용가격이 확인되면 잉여가치의 원천 문제는 끝나고 2장은 시장가격의 우연한 변동만 다룬다.",
                       "이윤이 판매가격의 일부로 실현되면 상품가치 공식은 유통에서의 화폐 회전 공식으로 곧장 전개된다.",
                       "자본가의 비용 계산이 안정되면 불변자본과 가변자본의 구분은 기업 내부의 원가 항목으로 재배열된다."
                     ],
                     "en": [
                       "Once profit appears as the result of the total advanced capital, the next problem is the ratio in which surplus-value appears relative to that total capital.",
-                      "Once cost-price is identified, the source of surplus-value is settled and the next chapter treats only accidental market-price movements.",
+                      "Once cost-price is identified, the source of surplus-value is settled and Chapter 2 treats only accidental market-price movements.",
                       "Once profit is realized as part of selling price, the commodity-value formula develops directly into a formula for monetary turnover in circulation.",
                       "Once the capitalist's cost calculation stabilizes, the distinction between constant and variable capital is rearranged as internal cost items of the firm."
                     ]
@@ -31919,8 +31919,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "2장의 이윤율 분석은 왜 3장의 “이윤율과 잉여가치율의 관계”로 이어지는가?",
-                    "en": "Why does Chapter 2's analysis of the rate of profit lead into Chapter 3's “relation of the rate of profit to the rate of surplus-value”?"
+                    "ko": "『자본론』 3권 2장 「이윤율」의 분석은 왜 3장의 “이윤율과 잉여가치율의 관계”로 이어지는가?",
+                    "en": "Why does the analysis in Capital, Volume III, Chapter 2, “The Rate of Profit,” lead into Chapter 3's “relation of the rate of profit to the rate of surplus-value”?"
                   },
                   "choices": {
                     "ko": [
@@ -32069,15 +32069,15 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "2장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
-                    "en": "Which statement most accurately explains the systematic significance of Chapter 2?"
+                    "ko": "『자본론』 3권 2장 「이윤율」의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Capital, Volume III, Chapter 2, “The Rate of Profit”?"
                   },
                   "choices": {
                     "ko": [
                       "잉여가치가 총자본의 수익률로 나타나는 형식을 정식화해, 3장에서 그 비율과 잉여가치율의 관계를 더 엄밀하게 전개할 수 있게 한다.",
                       "1장의 비용가격 논의를 가격표 계산으로 좁혀, 3장에서 개별 상품의 판매전략으로 곧장 이동하게 한다.",
                       "이윤율을 착취율의 다른 이름으로 정리해, 뒤의 평균이윤 분석에서 자본구성 문제를 단순화한다.",
-                      "이윤율을 유통비 절감의 지표로 세워, 생산과정의 가치형성 문제를 이 장에서 마무리한다."
+                      "이윤율을 유통비 절감의 지표로 세워, 생산과정의 가치형성 문제를 2장에서 마무리한다."
                     ],
                     "en": [
                       "It formalizes the appearance of surplus-value as a return on total capital, allowing Chapter 3 to develop the relation between that ratio and the rate of surplus-value more rigorously.",
@@ -32330,8 +32330,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "3장 분석은 왜 4장의 “회전이 이윤율에 미치는 영향”으로 이어지는가?",
-                    "en": "Why does Chapter 3 lead into Chapter 4's analysis of the effect of turnover on the rate of profit?"
+                    "ko": "『자본론』 3권 3장 「이윤율과 잉여가치율의 관계」의 분석은 왜 4장의 “회전이 이윤율에 미치는 영향”으로 이어지는가?",
+                    "en": "Why does Capital, Volume III, Chapter 3, “The Relation of the Rate of Profit to the Rate of Surplus-Value,” lead into Chapter 4's analysis of the effect of turnover on the rate of profit?"
                   },
                   "choices": {
                     "ko": [
@@ -32743,21 +32743,21 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "4장의 회전 분석은 왜 5장의 불변자본 사용 절약 문제로 이어지는가?",
-                    "en": "Why does Chapter 4's analysis of turnover lead into Chapter 5's problem of economy in the use of constant capital?"
+                    "ko": "『자본론』 3권 4장 「회전이 이윤율에 미치는 영향」의 분석은 왜 5장의 불변자본 사용 절약 문제로 이어지는가?",
+                    "en": "Why does the analysis of turnover in Capital, Volume III, Chapter 4, “The Effect of the Turnover on the Rate of Profit,” lead into Chapter 5's problem of economy in the use of constant capital?"
                   },
                   "choices": {
                     "ko": [
                       "회전은 같은 잉여가치 생산을 더 작은 선대자본이나 더 적은 유휴자본으로 수행하게 하므로, 다음에는 불변자본 지출 절약이 이윤율에 미치는 효과가 문제가 된다.",
-                      "회전수가 정해지면 고정자본과 유동자본의 구분이 사라지므로, 다음 장은 생산수단의 물질적 형태를 떠난 순수 가격표를 다룬다.",
-                      "회전이 빨라지면 유통이 잉여가치의 원천으로 바뀌므로, 다음 장은 생산과정 없이 이윤이 생기는 방식을 다룬다.",
-                      "회전 분석은 연간 이윤율을 완결하므로, 다음 장은 이윤율 대신 지대와 이자의 분배 비율로 곧장 이동한다."
+                      "회전수가 정해지면 고정자본과 유동자본의 구분이 사라지므로, 5장은 생산수단의 물질적 형태를 떠난 순수 가격표를 다룬다.",
+                      "회전이 빨라지면 유통이 잉여가치의 원천으로 바뀌므로, 5장은 생산과정 없이 이윤이 생기는 방식을 다룬다.",
+                      "회전 분석은 연간 이윤율을 완결하므로, 5장은 이윤율 대신 지대와 이자의 분배 비율로 곧장 이동한다."
                     ],
                     "en": [
                       "Turnover lets the same surplus-value production be carried out with smaller advanced capital or less idle capital, so the next issue is how saving outlays of constant capital affects the profit rate.",
-                      "Once the number of turnovers is fixed, the distinction between fixed and circulating capital disappears, so the next chapter treats pure price tags apart from the material form of means of production.",
-                      "Faster turnover turns circulation into the source of surplus-value, so the next chapter treats how profit arises without a production process.",
-                      "Turnover analysis completes the annual rate of profit, so the next chapter moves directly to the distribution ratios of rent and interest."
+                      "Once the number of turnovers is fixed, the distinction between fixed and circulating capital disappears, so Chapter 5 treats pure price tags apart from the material form of means of production.",
+                      "Faster turnover turns circulation into the source of surplus-value, so Chapter 5 treats how profit arises without a production process.",
+                      "Turnover analysis completes the annual rate of profit, so Chapter 5 moves directly to the distribution ratios of rent and interest."
                     ]
                   },
                   "answer": 0,
@@ -33154,8 +33154,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "5장의 불변자본 절약 분석은 왜 6장의 가격변동 분석으로 이어지는가?",
-                    "en": "Why does Chapter 5's analysis of economy in constant capital lead into Chapter 6's analysis of price fluctuations?"
+                    "ko": "『자본론』 3권 5장 「불변자본 사용의 절약」의 분석은 왜 6장의 가격변동 분석으로 이어지는가?",
+                    "en": "Why does the analysis in Capital, Volume III, Chapter 5, “Economy in the Employment of Constant Capital,” lead into Chapter 6's analysis of price fluctuations?"
                   },
                   "choices": {
                     "ko": [
@@ -33304,21 +33304,21 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "5장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
-                    "en": "Which statement most accurately explains the systematic significance of Chapter 5?"
+                    "ko": "『자본론』 3권 5장 「불변자본 사용의 절약」의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Capital, Volume III, Chapter 5, “Economy in the Employment of Constant Capital”?"
                   },
                   "choices": {
                     "ko": [
                       "이윤율이 잉여가치율뿐 아니라 불변자본의 가치 크기, 공동 사용, 잔여물 활용, 노동조건 비용 전가에도 좌우됨을 보여준다.",
-                      "이 장은 불변자본이 새 가치의 원천임을 증명해 앞선 가변자본 분석을 보완한다.",
-                      "이 장은 비용 절감을 사회 전체의 순효율로 정리해 자본과 노동 사이의 이해 충돌을 중립화한다.",
-                      "이 장은 이윤율의 분모 문제를 끝내고 다음 장부터는 순수한 시장수요 분석으로 이동한다."
+                      "5장은 불변자본이 새 가치의 원천임을 증명해 앞선 가변자본 분석을 보완한다.",
+                      "5장은 비용 절감을 사회 전체의 순효율로 정리해 자본과 노동 사이의 이해 충돌을 중립화한다.",
+                      "5장은 이윤율의 분모 문제를 끝내고 6장부터는 순수한 시장수요 분석으로 이동한다."
                     ],
                     "en": [
                       "It shows that the profit rate depends not only on the rate of surplus-value but also on the value magnitude of constant capital, common use, residual-material utilization, and shifting the costs of labour conditions.",
-                      "The chapter proves that constant capital is a source of new value and thereby supplements the earlier analysis of variable capital.",
-                      "The chapter organizes cost saving as a net social efficiency and neutralizes the conflict of interest between capital and labour.",
-                      "The chapter completes the denominator problem of the profit rate and moves next to pure market-demand analysis."
+                      "Chapter 5 proves that constant capital is a source of new value and thereby supplements the earlier analysis of variable capital.",
+                      "Chapter 5 organizes cost saving as a net social efficiency and neutralizes the conflict of interest between capital and labour.",
+                      "Chapter 5 completes the denominator problem of the profit rate and moves next to pure market-demand analysis."
                     ]
                   },
                   "answer": 0,
@@ -33555,8 +33555,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "6장의 가격변동 분석은 왜 7장의 보충설명으로 이어지는가?",
-                    "en": "Why does Chapter 6's analysis of price fluctuations lead into Chapter 7's supplementary remarks?"
+                    "ko": "『자본론』 3권 6장 「가격 변동의 영향」의 분석은 왜 7장의 보충설명으로 이어지는가?",
+                    "en": "Why does the analysis of price fluctuations in Capital, Volume III, Chapter 6, “The Effect of Price Fluctuations,” lead into Chapter 7's supplementary remarks?"
                   },
                   "choices": {
                     "ko": [
@@ -33705,21 +33705,21 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "6장의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
-                    "en": "Which statement most accurately explains the systematic significance of Chapter 6?"
+                    "ko": "『자본론』 3권 6장 「가격 변동의 영향」의 체계적 의미를 가장 정확히 설명하는 것은 무엇인가?",
+                    "en": "Which statement most accurately explains the systematic significance of Capital, Volume III, Chapter 6, “The Effect of Price Fluctuations”?"
                   },
                   "choices": {
                     "ko": [
                       "이윤율의 운동이 잉여가치 생산뿐 아니라 원료·보조재 가격, 자본가치의 평가상승·평가절하, 자본 방출·묶임 속에서 굴절됨을 보여준다.",
-                      "이 장은 원료 가격이 잉여가치의 새 원천임을 밝혀 이윤율 공식에서 노동력 항목을 제거한다.",
-                      "이 장은 가격 변동을 구매부서의 기술 문제로 한정해 생산과정 분석과 분리한다.",
-                      "이 장은 세계시장 변동을 평균이윤율의 직접 원인으로 세워 개별 자본의 비용가격 분석을 끝낸다."
+                      "6장은 원료 가격이 잉여가치의 새 원천임을 밝혀 이윤율 공식에서 노동력 항목을 제거한다.",
+                      "6장은 가격 변동을 구매부서의 기술 문제로 한정해 생산과정 분석과 분리한다.",
+                      "6장은 세계시장 변동을 평균이윤율의 직접 원인으로 세워 개별 자본의 비용가격 분석을 끝낸다."
                     ],
                     "en": [
                       "It shows that the movement of the profit rate is refracted not only through surplus-value production but also through raw and auxiliary material prices, appreciation/depreciation of capital-value, and release/tie-up of capital.",
-                      "The chapter reveals raw-material prices as a new source of surplus-value and removes labour-power from the profit-rate formula.",
-                      "The chapter confines price fluctuation to a technical purchasing issue and separates it from analysis of production.",
-                      "The chapter makes world-market fluctuation the direct cause of the average rate of profit and closes the analysis of individual cost-price."
+                      "Chapter 6 reveals raw-material prices as a new source of surplus-value and removes labour-power from the profit-rate formula.",
+                      "Chapter 6 confines price fluctuation to a technical purchasing issue and separates it from analysis of production.",
+                      "Chapter 6 makes world-market fluctuation the direct cause of the average rate of profit and closes the analysis of individual cost-price."
                     ]
                   },
                   "answer": 0,
@@ -33956,8 +33956,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "7장의 보충 설명은 8장의 부문별 자본구성 논의로 어떻게 이어지는가?",
-                    "en": "How do Chapter 7’s supplementary remarks lead into Chapter 8’s discussion of branch-specific compositions of capital?"
+                    "ko": "『자본론』 3권 7장 「보충 설명」은 8장의 부문별 자본구성 논의로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 7, “Supplementary Remarks,” lead into Chapter 8’s discussion of branch-specific compositions of capital?"
                   },
                   "choices": {
                     "ko": [
@@ -34754,8 +34754,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "9장의 논의는 10장의 경쟁 분석으로 왜 이어져야 하는가?",
-                    "en": "Why must Chapter 9 lead into Chapter 10’s analysis of competition?"
+                    "ko": "『자본론』 3권 9장 「일반 이윤율의 형성과 가치의 생산가격으로의 전환」의 논의는 10장의 경쟁 분석으로 왜 이어져야 하는가?",
+                    "en": "Why must Capital, Volume III, Chapter 9, “Formation of a General Rate of Profit,” lead into Chapter 10’s analysis of competition?"
                   },
                   "choices": {
                     "ko": [
@@ -35169,8 +35169,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "10장의 경쟁 분석은 11장의 임금변동 논의로 어떻게 이어지는가?",
-                    "en": "How does Chapter 10’s analysis of competition lead into Chapter 11’s discussion of wage fluctuations?"
+                    "ko": "『자본론』 3권 10장 「경쟁을 통한 일반 이윤율의 균등화」의 분석은 11장의 임금변동 논의로 어떻게 이어지는가?",
+                    "en": "How does the analysis of competition in Capital, Volume III, Chapter 10, “Equalisation of the General Rate of Profit Through Competition,” lead into Chapter 11’s discussion of wage fluctuations?"
                   },
                   "choices": {
                     "ko": [
@@ -35991,8 +35991,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "12장의 보충 설명은 13장의 이윤율 저하 경향 논의로 어떻게 넘어가는가?",
-                    "en": "How does Chapter 12 lead into Chapter 13’s tendency of the rate of profit to fall?"
+                    "ko": "『자본론』 3권 12장 「보충 설명」은 13장의 이윤율 저하 경향 논의로 어떻게 넘어가는가?",
+                    "en": "How does Capital, Volume III, Chapter 12, “Supplementary Remarks,” lead into Chapter 13’s tendency of the rate of profit to fall?"
                   },
                   "choices": {
                     "ko": [
@@ -36817,21 +36817,21 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "14장은 15장의 내적 모순 분석으로 무엇을 넘겨주는가?",
-                    "en": "What does Chapter 14 hand over to Chapter 15’s analysis of internal contradictions?"
+                    "ko": "『자본론』 3권 14장 「상쇄 요인들」은 15장의 내적 모순 분석으로 무엇을 넘겨주는가?",
+                    "en": "What does Capital, Volume III, Chapter 14, “Counteracting Influences,” hand over to Chapter 15’s analysis of internal contradictions?"
                   },
                   "choices": {
                     "ko": [
                       "상쇄 요인이 있어도 법칙의 압력이 사라지지 않으며, 그 압력과 완화책이 축적ㆍ위기 모순 속에서 함께 전개된다는 문제다.",
                       "상쇄 요인이 법칙을 대체했으므로 위기는 외부 정책 실패로 설명된다는 문제다.",
                       "해외무역이 평균이윤율을 안정시키므로 과잉축적 분석이 유통론으로 이동한다는 문제다.",
-                      "착취 강화가 모든 모순을 해결하므로 다음 장은 잉여가치율 계산을 마무리한다는 문제다."
+                      "착취 강화가 모든 모순을 해결하므로 15장은 잉여가치율 계산을 마무리한다는 문제다."
                     ],
                     "en": [
                       "Even with counteracting causes, the pressure of the law remains, and pressure and remedies unfold together in contradictions of accumulation and crisis.",
                       "Counteracting causes replace the law, so crisis is explained by external policy failure.",
                       "Foreign trade stabilizes average profit, so overaccumulation analysis moves into circulation theory.",
-                      "Intensified exploitation resolves all contradictions, so the next chapter closes the calculation of surplus-value rate."
+                      "Intensified exploitation resolves all contradictions, so Chapter 15 closes the calculation of surplus-value rate."
                     ]
                   },
                   "answer": 0,
@@ -38431,8 +38431,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "18장은 19장의 화폐거래자본으로 어떻게 이어지는가?",
-                    "en": "How does Chapter 18 lead into Chapter 19’s money-dealing capital?"
+                    "ko": "『자본론』 3권 18장 「상인자본의 회전」은 19장의 화폐거래자본으로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 18, “The Turnover of Merchant's Capital,” lead into Chapter 19’s money-dealing capital?"
                   },
                   "choices": {
                     "ko": [
@@ -38832,8 +38832,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "19장은 21장의 이자 낳는 자본 분석으로 어떻게 이어지는가?",
-                    "en": "How does Chapter 19 lead into Chapter 21’s analysis of interest-bearing capital?"
+                    "ko": "『자본론』 3권 19장 「화폐거래자본」은 21장의 이자 낳는 자본 분석으로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 19, “Money-Dealing Capital,” lead into Chapter 21’s analysis of interest-bearing capital?"
                   },
                   "choices": {
                     "ko": [
@@ -39217,8 +39217,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "20장은 21장의 이자 낳는 자본으로 어떻게 이어지는가?",
-                    "en": "How does Chapter 20 lead into Chapter 21’s interest-bearing capital?"
+                    "ko": "『자본론』 3권 20장 「상인자본에 관한 역사적 사실들」은 21장의 이자 낳는 자본으로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 20, “Historical Facts about Merchant's Capital,” lead into Chapter 21’s interest-bearing capital?"
                   },
                   "choices": {
                     "ko": [
@@ -39602,8 +39602,8 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "21장은 다음 장의 이윤 분할 분석으로 어떤 문제를 넘겨주는가?",
-                    "en": "What problem does Chapter 21 hand over to the next analysis of profit division?"
+                    "ko": "『자본론』 3권 21장 「이자 낳는 자본」은 22장의 이윤 분할 분석으로 어떤 문제를 넘겨주는가?",
+                    "en": "What problem does Capital, Volume III, Chapter 21, “Interest-Bearing Capital,” hand over to Chapter 22’s analysis of profit division?"
                   },
                   "choices": {
                     "ko": [
@@ -40003,8 +40003,8 @@
                 {
                   "id": "q5",
                   "prompt": {
-                    "ko": "22장은 다음 장의 이자와 기업가이득 분석으로 어떻게 이어지는가?",
-                    "en": "How does Chapter 22 lead into the analysis of interest and profit of enterprise?"
+                    "ko": "『자본론』 3권 22장 「이윤의 분할, 이자율, 자연 이자율」은 23장의 이자와 기업가이득 분석으로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 22, “Division of Profit. Rate of Interest. Natural Rate of Interest,” lead into Chapter 23’s analysis of interest and profit of enterprise?"
                   },
                   "choices": {
                     "ko": [
@@ -40404,8 +40404,8 @@
                 {
                   "id": "q5",
                   "prompt": {
-                    "ko": "23장은 24장의 물신성 분석으로 어떻게 넘어가는가?",
-                    "en": "How does Chapter 23 lead into Chapter 24’s analysis of fetishism?"
+                    "ko": "『자본론』 3권 23장 「이자와 기업가이득」은 24장의 물신성 분석으로 어떻게 넘어가는가?",
+                    "en": "How does Capital, Volume III, Chapter 23, “Interest and Profit of Enterprise,” lead into Chapter 24’s analysis of fetishism?"
                   },
                   "choices": {
                     "ko": [
@@ -40526,8 +40526,8 @@
                 {
                   "id": "q4",
                   "prompt": {
-                    "ko": "사모펀드가 차입 인수 뒤 “운영 개선 성과”를 강조할 때, 23장의 질문은 무엇이어야 하는가?",
-                    "en": "When a private equity fund stresses “operational improvement” after a leveraged buyout, what question does Chapter 23 suggest?"
+                    "ko": "사모펀드가 차입 인수 뒤 “운영 개선 성과”를 강조할 때, 『자본론』 3권 23장 「이자와 기업가이득」의 질문은 무엇이어야 하는가?",
+                    "en": "When a private equity fund stresses “operational improvement” after a leveraged buyout, what question does Capital, Volume III, Chapter 23, “Interest and Profit of Enterprise,” suggest?"
                   },
                   "choices": {
                     "ko": [
@@ -40805,8 +40805,8 @@
                 {
                   "id": "q5",
                   "prompt": {
-                    "ko": "24장은 25장의 신용과 가공자본 논의로 어떻게 이어지는가?",
-                    "en": "How does Chapter 24 lead to Chapter 25 on credit and fictitious capital?"
+                    "ko": "『자본론』 3권 24장 「이자 낳는 자본 형태에서 자본관계의 외화」는 25장의 신용과 가공자본 논의로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 24, “Externalisation of the Relations of Capital in the Form of Interest-Bearing Capital,” lead to Chapter 25 on credit and fictitious capital?"
                   },
                   "choices": {
                     "ko": [
@@ -41206,8 +41206,8 @@
                 {
                   "id": "q5",
                   "prompt": {
-                    "ko": "25장은 26장의 화폐자본 축적 논의로 어떻게 이어지는가?",
-                    "en": "How does Chapter 25 lead into Chapter 26 on the accumulation of money-capital?"
+                    "ko": "『자본론』 3권 25장 「신용과 가공자본」은 26장의 화폐자본 축적 논의로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 25, “Credit and Fictitious Capital,” lead into Chapter 26 on the accumulation of money-capital?"
                   },
                   "choices": {
                     "ko": [
@@ -41761,8 +41761,8 @@
                 {
                   "id": "q5",
                   "prompt": {
-                    "ko": "26장의 체계적 의미를 가장 잘 설명한 것은 무엇인가?",
-                    "en": "Which statement best explains the systematic significance of Chapter 26?"
+                    "ko": "『자본론』 3권 26장 「화폐자본의 축적과 이자율에 미치는 영향」의 체계적 의미를 가장 잘 설명한 것은 무엇인가?",
+                    "en": "Which statement best explains the systematic significance of Capital, Volume III, Chapter 26, “Accumulation of Money-Capital. Its Influence on the Interest Rate”?"
                   },
                   "choices": {
                     "ko": [
@@ -42013,8 +42013,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "27장은 다음의 화폐자본과 현실자본 논의로 어떻게 이어지는가?",
-                    "en": "How does Chapter 27 lead into the later discussion of money-capital and real capital?"
+                    "ko": "『자본론』 3권 27장 「자본주의적 생산에서 신용의 역할」은 30~32장의 화폐자본과 현실자본 논의로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 27, “The Role of Credit in Capitalist Production,” lead into the later discussion of money-capital and real capital in Chapters 30–32?"
                   },
                   "choices": {
                     "ko": [
@@ -42414,8 +42414,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "28장이 29장의 은행자본 분석으로 넘어가기 전에 마련하는 기준은 무엇인가?",
-                    "en": "What criterion does Chapter 28 establish before moving to bank capital in Chapter 29?"
+                    "ko": "『자본론』 3권 28장 「유통수단과 자본: 투크와 풀러턴의 견해」가 29장의 은행자본 분석으로 넘어가기 전에 마련하는 기준은 무엇인가?",
+                    "en": "What criterion does Capital, Volume III, Chapter 28, “Medium of Circulation and Capital; Views of Tooke and Fullarton,” establish before moving to bank capital in Chapter 29?"
                   },
                   "choices": {
                     "ko": [
@@ -42799,8 +42799,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "29장이 다음 장의 화폐자본과 현실자본 구분으로 이어지는 이유는 무엇인가?",
-                    "en": "Why does Chapter 29 lead into the distinction between money-capital and real capital?"
+                    "ko": "『자본론』 3권 29장 「은행자본의 구성부분」이 30장의 화폐자본과 현실자본 구분으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does Capital, Volume III, Chapter 29, “Component Parts of Bank Capital,” lead into Chapter 30’s distinction between money-capital and real capital?"
                   },
                   "choices": {
                     "ko": [
@@ -43200,8 +43200,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "30장은 31장의 논의로 어떻게 이어지는가?",
-                    "en": "How does Chapter 30 lead into Chapter 31?"
+                    "ko": "『자본론』 3권 30장 「화폐자본과 현실자본 I」은 31장의 논의로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 30, “Money-Capital and Real Capital. I,” lead into Chapter 31?"
                   },
                   "choices": {
                     "ko": [
@@ -44407,8 +44407,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "33장은 34장의 은행법 비판으로 어떻게 이어지는가?",
-                    "en": "How does Chapter 33 lead into the critique of bank legislation in Chapter 34?"
+                    "ko": "『자본론』 3권 33장 「신용제도에서의 유통수단」은 34장의 은행법 비판으로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 33, “The Circulating Medium under the Credit System,” lead into the critique of bank legislation in Chapter 34?"
                   },
                   "choices": {
                     "ko": [
@@ -44792,8 +44792,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "34장은 35장의 귀금속과 환율 논의로 어떻게 이어지는가?",
-                    "en": "How does Chapter 34 lead into Chapter 35 on precious metal and exchange rates?"
+                    "ko": "『자본론』 3권 34장 「통화원리와 1844년 영국 은행법」은 35장의 귀금속과 환율 논의로 어떻게 이어지는가?",
+                    "en": "How does Capital, Volume III, Chapter 34, “The Currency Principle and the Bank Act of 1844,” lead into Chapter 35 on precious metal and exchange rates?"
                   },
                   "choices": {
                     "ko": [
@@ -45578,8 +45578,8 @@
                   "id": "q5",
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "36장이 3권의 다음 지대론으로 넘어가는 데 갖는 의미는 무엇인가?",
-                    "en": "What is the significance of Chapter 36 for the move to rent theory in Volume III?"
+                    "ko": "『자본론』 3권 36장 「전(前)자본주의적 관계」가 37장부터의 지대론으로 넘어가는 데 갖는 의미는 무엇인가?",
+                    "en": "What is the significance of Capital, Volume III, Chapter 36, “Pre-Capitalist Relations,” for the move to rent theory from Chapter 37 on?"
                   },
                   "choices": {
                     "ko": [
@@ -45964,8 +45964,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "37장은 뒤의 차액지대 논의로 넘어가기 전에 무엇을 정리하는가?",
-                    "en": "What does Chapter 37 establish before moving to differential rent?"
+                    "ko": "『자본론』 3권 37장 「서론」은 38장부터의 차액지대 논의로 넘어가기 전에 무엇을 정리하는가?",
+                    "en": "What does Capital, Volume III, Chapter 37, “Introduction,” establish before moving to differential rent from Chapter 38 on?"
                   },
                   "choices": {
                     "ko": [
@@ -46114,15 +46114,15 @@
                   "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "37장의 논의가 다음 장의 폭포 사례로 이어지는 지점은 어디인가?",
-                    "en": "Where does Chapter 37 connect to the waterfall example in the next chapter?"
+                    "ko": "『자본론』 3권 37장 「서론」의 논의가 38장의 폭포 사례로 이어지는 지점은 어디인가?",
+                    "en": "Where does Capital, Volume III, Chapter 37, “Introduction,” connect to the waterfall example in Chapter 38?"
                   },
                   "choices": {
                     "ko": [
-                      "토지에 묶인 자연조건이 독점될 때 초과이윤의 귀속이 바뀐다는 문제가 다음 장의 차액지대 일반론으로 이어진다.",
-                      "농업생산물이 생활수단이라는 사실이 다음 장의 임금률 결정 문제로 바로 이어진다.",
-                      "토지개량의 고정자본 성격이 다음 장의 상업신용과 어음 할인 문제로 이어진다.",
-                      "소농 소유의 해체 과정이 다음 장의 인구법칙과 실업자 형성 문제로 이어진다."
+                      "토지에 묶인 자연조건이 독점될 때 초과이윤의 귀속이 바뀐다는 문제가 38장의 차액지대 일반론으로 이어진다.",
+                      "농업생산물이 생활수단이라는 사실이 38장의 임금률 결정 문제로 바로 이어진다.",
+                      "토지개량의 고정자본 성격이 38장의 상업신용과 어음 할인 문제로 이어진다.",
+                      "소농 소유의 해체 과정이 38장의 인구법칙과 실업자 형성 문제로 이어진다."
                     ],
                     "en": [
                       "The issue of monopolized natural conditions changing the destination of surplus-profit leads into differential rent.",
@@ -46373,8 +46373,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "38장이 농업 차액지대 분석으로 넘어가기 전에 마련한 기준은 무엇인가?",
-                    "en": "What criterion does Chapter 38 establish before turning to agricultural differential rent?"
+                    "ko": "『자본론』 3권 38장 「차액지대: 일반적 고찰」이 39장의 농업 차액지대 분석으로 넘어가기 전에 마련한 기준은 무엇인가?",
+                    "en": "What criterion does Capital, Volume III, Chapter 38, “Differential Rent: General Remarks,” establish before turning to agricultural differential rent in Chapter 39?"
                   },
                   "choices": {
                     "ko": [
@@ -46523,8 +46523,8 @@
                   "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "38장의 폭포 사례가 39장의 토지 비옥도 표로 이어지는 방식은 무엇인가?",
-                    "en": "How does the waterfall example in Chapter 38 lead into the fertility tables of Chapter 39?"
+                    "ko": "『자본론』 3권 38장 「차액지대: 일반적 고찰」의 폭포 사례가 39장의 토지 비옥도 표로 이어지는 방식은 무엇인가?",
+                    "en": "How does the waterfall example in Capital, Volume III, Chapter 38, “Differential Rent: General Remarks,” lead into the fertility tables of Chapter 39?"
                   },
                   "choices": {
                     "ko": [
@@ -46782,21 +46782,21 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "39장의 차액지대 I과 40장의 차액지대 II는 계산 단위가 어떻게 다른가?",
-                    "en": "How does the unit of calculation differ between Chapter 39’s differential rent I and Chapter 40’s differential rent II?"
+                    "ko": "『자본론』 3권 39장의 차액지대 I과 40장의 차액지대 II는 계산 단위가 어떻게 다른가?",
+                    "en": "How does the unit of calculation differ between differential rent I in Capital, Volume III, Chapter 39, “The First Form of Differential Rent,” and Chapter 40’s differential rent II?"
                   },
                   "choices": {
                     "ko": [
                       "39장은 여러 토지 사이의 외연적 차이를 다루며, 40장은 같은 토지 안의 연속 투자 차이를 다룬다.",
-                      "화폐지대가 아니라 현물지대의 역사적 형태를 다루며, 다음 장은 화폐지대로 넘어간다.",
-                      "농업이 아니라 광업의 지대를 다루며, 다음 장은 곡물 생산으로 돌아간다.",
-                      "평균이윤율의 형성 이전을 다루며, 다음 장은 신용제도 이후의 이윤율을 다룬다."
+                      "화폐지대가 아니라 현물지대의 역사적 형태를 다루며, 40장은 화폐지대로 넘어간다.",
+                      "농업이 아니라 광업의 지대를 다루며, 40장은 곡물 생산으로 돌아간다.",
+                      "평균이윤율의 형성 이전을 다루며, 40장은 신용제도 이후의 이윤율을 다룬다."
                     ],
                     "en": [
                       "Chapter 39 treats extensive differences between different lands, while Chapter 40 treats successive investments on the same land.",
-                      "It treats rent in kind rather than money-rent; the next chapter moves to money-rent.",
-                      "It treats mining rather than agriculture; the next chapter returns to grain production.",
-                      "It treats the period before average profit forms; the next chapter treats profit after credit develops."
+                      "It treats rent in kind rather than money-rent; Chapter 40 moves to money-rent.",
+                      "It treats mining rather than agriculture; Chapter 40 returns to grain production.",
+                      "It treats the period before average profit forms; Chapter 40 treats profit after credit develops."
                     ]
                   },
                   "answer": 0,
@@ -47486,8 +47486,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "이 장에서 A는 무엇을 뜻하는가?",
-                    "en": "In this chapter, what does A mean?"
+                    "ko": "『자본론』 3권 41장 「생산가격 불변의 경우」에서 A는 무엇을 뜻하는가?",
+                    "en": "In Capital, Volume III, Chapter 41, “Case of Constant Price of Production,” what does A mean?"
                   },
                   "choices": {
                     "ko": [
@@ -47598,20 +47598,20 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "41장의 핵심은 왜 “가격이 올랐기 때문에 지대가 늘었다”는 설명으로 끝나지 않는가?",
-                    "en": "Why does Chapter 41 not end with the explanation “rent rises because price rises”?"
+                    "ko": "『자본론』 3권 41장 「생산가격 불변의 경우」의 핵심은 왜 “가격이 올랐기 때문에 지대가 늘었다”는 설명으로 끝나지 않는가?",
+                    "en": "Why does Capital, Volume III, Chapter 41, “Case of Constant Price of Production,” not end with the explanation “rent rises because price rises”?"
                   },
                   "choices": {
                     "ko": [
                       "가격을 A 기준으로 고정해도, 같은 면적에 추가 자본이 집중되는 방식과 생산성 차이에 따라 지대가 변할 수 있기 때문이다.",
-                      "마르크스는 이 장에서 곡물가격이 지대와 전혀 관계없다고 주장하기 때문이다.",
+                      "마르크스는 41장에서 곡물가격이 지대와 전혀 관계없다고 주장하기 때문이다.",
                       "가격이 변하지 않으면 모든 지대도 반드시 변하지 않는다는 결론을 내리기 때문이다.",
                       "지대는 항상 지주의 소비 규모로 정해지고 생산조건과는 무관하기 때문이다."
                     ],
                     "en": [
                       "Because even with price fixed by A, rent can change according to how additional capital is concentrated and how productive it is.",
-                      "Because Marx claims here that grain price has no relation at all to rent.",
-                      "Because the chapter concludes that if price does not change, rent cannot change either.",
+                      "Because Marx claims in Chapter 41 that grain price has no relation at all to rent.",
+                      "Because Chapter 41 concludes that if price does not change, rent cannot change either.",
                       "Because rent is always set by landlords’ consumption and has no relation to production conditions."
                     ]
                   },
@@ -47748,8 +47748,8 @@
                   "points": 3,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "41장을 42장·43장으로 넘어가기 전에 먼저 배치한 이유는 무엇인가?",
-                    "en": "Why is Chapter 41 placed before Chapters 42 and 43?"
+                    "ko": "『자본론』 3권 41장 「생산가격 불변의 경우」를 42장·43장으로 넘어가기 전에 먼저 배치한 이유는 무엇인가?",
+                    "en": "Why is Capital, Volume III, Chapter 41, “Case of Constant Price of Production,” placed before Chapters 42 and 43?"
                   },
                   "choices": {
                     "ko": [
@@ -48418,8 +48418,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "43장이 44장으로 이어지는 쟁점은 무엇인가?",
-                    "en": "What issue leads Chapter 43 into Chapter 44?"
+                    "ko": "『자본론』 3권 43장 「생산가격 상승의 경우」가 44장으로 이어지는 쟁점은 무엇인가?",
+                    "en": "What issue leads Capital, Volume III, Chapter 43, “Case of Rising Price of Production,” into Chapter 44?"
                   },
                   "choices": {
                     "ko": [
@@ -48827,8 +48827,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "44장이 45장의 절대지대로 넘어가는 지점은 무엇인가?",
-                    "en": "What leads from Chapter 44 to Chapter 45 on absolute rent?"
+                    "ko": "『자본론』 3권 44장 「가장 열등한 경작지에서도 생기는 차액지대」가 45장의 절대지대로 넘어가는 지점은 무엇인가?",
+                    "en": "What leads from Capital, Volume III, Chapter 44, “Differential Rent on the Worst Cultivated Land,” to Chapter 45 on absolute rent?"
                   },
                   "choices": {
                     "ko": [
@@ -49234,8 +49234,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "45장이 46장의 건축지·광산·토지가격 논의로 이어지는 이유는 무엇인가?",
-                    "en": "Why does Chapter 45 lead into building-site rent, mining rent, and land price in Chapter 46?"
+                    "ko": "『자본론』 3권 45장 「절대지대」가 46장의 건축지·광산·토지가격 논의로 이어지는 이유는 무엇인가?",
+                    "en": "Why does Capital, Volume III, Chapter 45, “Absolute Rent,” lead into building-site rent, mining rent, and land price in Chapter 46?"
                   },
                   "choices": {
                     "ko": [
@@ -50048,8 +50048,8 @@
                   "points": 2,
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "47장이 다음 장의 삼위일체 공식과 이어지는 지점은 무엇인가?",
-                    "en": "How does Chapter 47 lead into the Trinity Formula of the next chapter?"
+                    "ko": "『자본론』 3권 47장 「자본주의적 지대의 발생」이 48장의 삼위일체 공식과 이어지는 지점은 무엇인가?",
+                    "en": "How does Capital, Volume III, Chapter 47, “Genesis of Capitalist Ground-Rent,” lead into the Trinity Formula of Chapter 48?"
                   },
                   "choices": {
                     "ko": [
@@ -50455,8 +50455,8 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "삼위일체 공식이 제49장의 생산과정 분석으로 넘어가는 연결고리는 무엇인가?",
-                    "en": "How does the trinity formula lead into Chapter 49’s analysis of production?"
+                    "ko": "『자본론』 3권 48장 「삼위일체 공식」이 49장의 생산과정 분석으로 넘어가는 연결고리는 무엇인가?",
+                    "en": "How does Capital, Volume III, Chapter 48, “The Trinity Formula,” lead into Chapter 49’s analysis of production?"
                   },
                   "choices": {
                     "ko": [
@@ -50864,8 +50864,8 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "제49장이 제50장의 경쟁 환상 비판으로 이어지는 이유는 무엇인가?",
-                    "en": "Why does Chapter 49 lead into Chapter 50’s critique of competition illusions?"
+                    "ko": "『자본론』 3권 49장 「생산과정 분석에 관하여」가 50장의 경쟁 환상 비판으로 이어지는 이유는 무엇인가?",
+                    "en": "Why does Capital, Volume III, Chapter 49, “On the Analysis of the Process of Production,” lead into Chapter 50’s critique of competition illusions?"
                   },
                   "choices": {
                     "ko": [
@@ -51273,8 +51273,8 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "제50장의 경쟁 환상 비판이 제51장의 분배관계 논의로 이어지는 지점은 무엇인가?",
-                    "en": "How does Chapter 50’s critique of competition illusions lead into Chapter 51’s discussion of distribution relations?"
+                    "ko": "『자본론』 3권 50장 「경쟁이 만들어내는 환상」의 비판이 51장의 분배관계 논의로 이어지는 지점은 무엇인가?",
+                    "en": "How does the critique of competition illusions in Capital, Volume III, Chapter 50, “Illusions Created by Competition,” lead into Chapter 51’s discussion of distribution relations?"
                   },
                   "choices": {
                     "ko": [
@@ -51682,8 +51682,8 @@
                 {
                   "type": "multiple_choice",
                   "prompt": {
-                    "ko": "제51장이 마지막 계급 장으로 넘어가는 연결고리는 무엇인가?",
-                    "en": "How does Chapter 51 lead into the final chapter on classes?"
+                    "ko": "『자본론』 3권 51장 「분배관계와 생산관계」가 마지막 52장 「계급」으로 넘어가는 연결고리는 무엇인가?",
+                    "en": "How does Capital, Volume III, Chapter 51, “Distribution Relations and Production Relations,” lead into the final Chapter 52, “Classes”?"
                   },
                   "choices": {
                     "ko": [

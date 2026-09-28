@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const { loadCommuLingoDrills } = require('./drills');
 const { loadCommuLingoCatalog, loadCommuLingoLesson } = require('./shards');
+const { needsLessonContext } = require('./lesson-context');
 
 // 훈련장 쇼츠. 강좌 문항과 훈련장 덱(용어·인물·사건)을 한 화면에 한 장씩 넘기는
 // 짧은 카드로 다시 자른다. 새 원고를 쓰지 않고, 한 화면에 들어가지 않는 긴 문항은
@@ -113,17 +114,6 @@ function courseTopic(collection, chapter) {
         ko: (title.ko || '') + (n ? ' · ' + n + '장' : '') + (chapterTitle.ko ? ' 「' + chapterTitle.ko + '」' : ''),
         en: (title.en || '') + (n ? ' · Ch. ' + n : '') + (chapterTitle.en ? ' “' + chapterTitle.en + '”' : ''),
     };
-}
-
-// 장 제목을 붙여도 풀리지 않는 문항: 「이 문서」「이 장」처럼 레슨 맥락을 가리키거나,
-// 장과 장 사이의 연결을 묻는 문항. 카드 한 장에서는 무엇을 묻는지 알 수 없다.
-const CONTEXT_KO = /이 (문서|장|글|책|절|문헌|저작|논문|팸플릿|텍스트|강의|연설|서한|편지)(?=[\s은는이가을를의에서으로과와도만,.?]|$)|\d+장[이은의]?[^?]{0,40}(넘어|이어)|[」”] ?장[으의]로? (넘어|이어)|(다음|앞|마지막|뒤) (최종 )?장|뒤 장/;
-const CONTEXT_EN = /\bthis (chapter|document|text|pamphlet|work|book|section|article|letter|speech|lecture)\b|\b(next|following|previous|final) chapter\b/i;
-
-function needsLessonContext(question) {
-    const ko = [question.prompt.ko].concat(question.choices.ko).join(' ');
-    const en = [question.prompt.en].concat(question.choices.en).join(' ');
-    return CONTEXT_KO.test(ko) || CONTEXT_EN.test(en);
 }
 
 function courseCards() {
@@ -274,4 +264,4 @@ async function loadCommuLingoShorts() {
     return value;
 }
 
-module.exports = { loadCommuLingoShorts, leadSentences, needsLessonContext };
+module.exports = { loadCommuLingoShorts, leadSentences };

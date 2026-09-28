@@ -9,6 +9,8 @@
 // (rule, label) while the corpus is being rewritten. Rules listed in
 // BASELINE_RULES may be tolerated that way; every other rule blocks at once.
 
+const { needsLessonContext } = require('../../data/commulingo/lesson-context');
+
 const BASELINE_RULES = new Set([
   'length-ratio',
   'concept-brief',
@@ -317,6 +319,8 @@ function checkQuestion(out, question, lesson, index, ctx) {
     const template = locale === 'ko' ? (TEMPLATE_PROMPT_KO.test(text) || META_PROMPT_KO.test(text)) : TEMPLATE_PROMPT_EN.test(text);
     if (template) out.add('template-prompt', qLabel, qLabel + '.prompt.' + locale + ' is a template or meta-reading prompt');
   });
+
+  if (needsLessonContext(question)) out.add('lesson-context', qLabel, qLabel + ' refers to its lesson (이 문서/이 장/다음 장, this chapter) without naming the work or chapter');
 
   const explanation = question.explanation || {};
   ['ko', 'en'].forEach(function(locale) {
