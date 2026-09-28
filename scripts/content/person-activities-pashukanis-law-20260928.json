@@ -1,0 +1,56 @@
+{
+ "note": "Pashukanis law activity 2026-09-28",
+ "items": [
+  {
+   "id": "evgeny-pashukanis",
+   "reviewed": true,
+   "reviewMethod": "operator request: judicial and justice-commissariat career added as law; excerpts checked against retrieved Wikipedia plain-text extract",
+   "expectedRevision": "v1-4fe1aa6c9dd570bcd45473d71acb5918ca3a0ee9c81c0b859c2fa30b601ae070",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Evgeny_Pashukanis"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "대표 경력을 원문과 대조하여 scholarship 기능으로 분류함.",
+       "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+       "excerpt": "In August 1918, he became a judge in Moscow . Meanwhile, he launched his career as a legal scholar. He also held a post in the Ministry of Foreign Affairs and was an adviser to the Soviet embassy in Berlin , helping to draft the Rapallo Treaty of 1922. In 1924 he was transferred to full-time academic duties as a member of the Communist Academy .",
+       "locator": "Article text, line 154 in reviewed snapshot; accessed 2026-09-27; sha256 42fe17fdbdd1f2f0f2d02482ddf63990b5ba079bc2dd078a00904580bf08f452"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1924,
+     "functionId": "scholarship",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1918,
+     "endYear": 1937,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+       "locator": "plain-text extract characters 1394:1438; sha256 228f254c3e2ddd77e710d8d876909e69f5cecf3cca24d461c76b884e31fa0959",
+       "claim": "파슈카니스는 1918년 8월 모스크바에서 판사가 되었다.",
+       "excerpt": "In August 1918, he became a judge in Moscow."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+       "locator": "plain-text extract characters 5269:5413; sha256 228f254c3e2ddd77e710d8d876909e69f5cecf3cca24d461c76b884e31fa0959",
+       "claim": "그는 1936년 소련 법무인민위원 대리에 임명되었다.",
+       "excerpt": "In 1936, he was appointed as Deputy People's Commissar of Justice of the USSR and was proposed for membership in the Soviet Academy of Sciences."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
