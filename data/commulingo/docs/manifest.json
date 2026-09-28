@@ -387,6 +387,11 @@
       "events": [
         "october-revolution"
       ],
+      "excerpts": {
+        "terms": {
+          "declaration-rights-working-exploited-people": "declaration-rights-working-exploited-1918"
+        }
+      },
       "addedAt": "2026-08-02",
       "aliases": {
         "ko": [
@@ -935,6 +940,11 @@
       "events": [
         "great-terror"
       ],
+      "excerpts": {
+        "terms": {
+          "nkvd-order-00447": "order-00447"
+        }
+      },
       "aliases": {
         "ko": [
           "「NKVD 작전명령 제00439호」",
@@ -1036,6 +1046,12 @@
         "nazi-soviet-pact",
         "perestroika"
       ],
+      "excerpts": {
+        "terms": {
+          "molotov-ribbentrop-pact": "nonaggression-treaty-1939",
+          "secret-protocol-molotov-ribbentrop": "secret-protocol-1939"
+        }
+      },
       "addedAt": "2026-08-06",
       "aliases": {
         "ko": [
@@ -1529,6 +1545,11 @@
       "events": [
         "detente-salt"
       ],
+      "excerpts": {
+        "terms": {
+          "salt-i-interim-agreement": "salt-i-interim-agreement-1972"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -2359,6 +2380,11 @@
       "events": [
         "october-revolution"
       ],
+      "excerpts": {
+        "terms": {
+          "decree-on-the-eight-hour-working-day": "eight-hour-day-decree-1917"
+        }
+      },
       "addedAt": "2026-08-17",
       "aliases": {
         "ko": [
@@ -2987,6 +3013,11 @@
         "great-patriotic-war",
         "siege-of-leningrad"
       ],
+      "excerpts": {
+        "terms": {
+          "order-no-227": "order-227-1942"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -4319,6 +4350,11 @@
       "events": [
         "italian-campaign"
       ],
+      "excerpts": {
+        "terms": {
+          "italian-armistice": "cassibile-armistice-1943"
+        }
+      },
       "addedAt": "2026-09-01",
       "aliases": {
         "ko": [
@@ -5129,6 +5165,11 @@
       "events": [
         "french-revolution-1789-1799"
       ],
+      "excerpts": {
+        "terms": {
+          "french-constitution-1793": "france-constitution-1793"
+        }
+      },
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5244,6 +5285,12 @@
         "french-revolution-1789-1799",
         "french-revolutionary-wars-1792-1802"
       ],
+      "excerpts": {
+        "terms": {
+          "law-of-suspects-1793": "france-law-of-suspects-1793",
+          "law-of-22-prairial": "france-law-22-prairial-1794"
+        }
+      },
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5339,6 +5386,11 @@
         "french-revolution-1789-1799",
         "french-revolutionary-wars-1792-1802"
       ],
+      "excerpts": {
+        "terms": {
+          "constitution-of-the-year-viii": "constitution-year-viii-1799"
+        }
+      },
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5385,7 +5437,8 @@
       ],
       "excerpts": {
         "terms": {
-          "declaration-of-the-rights-of-man-1789": "france-rights-declaration-1789"
+          "declaration-of-the-rights-of-man-1789": "france-rights-declaration-1789",
+          "declaration-of-the-rights-of-woman-1791": "gouges-rights-of-woman-1791"
         }
       },
       "addedAt": "2026-09-13",
@@ -5446,6 +5499,13 @@
         "french-revolution-1789-1799",
         "french-revolutionary-wars-1792-1802"
       ],
+      "excerpts": {
+        "terms": {
+          "general-maximum-1793": "france-general-maximum-law-1793",
+          "ventose-decrees": "saint-just-ventose-reports-decrees-1794",
+          "conspiracy-of-equals": "marechal-manifesto-equals-1796"
+        }
+      },
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5479,6 +5539,12 @@
         "french-revolution-1789-1799",
         "french-revolutionary-wars-1792-1802"
       ],
+      "excerpts": {
+        "terms": {
+          "august-decrees-1789": "france-august-decrees-1789",
+          "le-chapelier-law": "france-le-chapelier-law-1791"
+        }
+      },
       "addedAt": "2026-09-14",
       "aliases": {
         "ko": [
@@ -5529,6 +5595,12 @@
         "french-revolution-1789-1799",
         "french-revolutionary-wars-1792-1802"
       ],
+      "excerpts": {
+        "terms": {
+          "declaration-of-pillnitz": "declaration-pillnitz-1791",
+          "brunswick-manifesto": "brunswick-manifesto-1792"
+        }
+      },
       "addedAt": "2026-09-14",
       "aliases": {
         "ko": [
@@ -5580,6 +5652,11 @@
         "french-revolution-1789-1799",
         "french-revolutionary-wars-1792-1802"
       ],
+      "excerpts": {
+        "terms": {
+          "levee-en-masse": "france-levee-en-masse-1793"
+        }
+      },
       "addedAt": "2026-09-14",
       "aliases": {
         "ko": [
