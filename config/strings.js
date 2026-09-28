@@ -573,6 +573,8 @@ const ko = {
             sources: '출처',
             primaryText: '원문',
             readInLibrary: '참고 문헌에서 읽기',
+            expandText: '전문 펼치기',
+            collapseText: '접기',
         },
         terms: {
             glossary: '용어 사전',
@@ -1158,6 +1160,8 @@ const en = {
             sources: 'Sources',
             primaryText: 'Primary text',
             readInLibrary: 'Read in the reference library',
+            expandText: 'Show full text',
+            collapseText: 'Collapse',
         },
         terms: {
             glossary: 'Glossary',
