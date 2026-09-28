@@ -1,6 +1,6 @@
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadCommuLingoTerms } = require('./terms-store');
-const { relatedDocsFor } = require('./docs-refs');
+const { relatedDocsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { getReportsForEvent } = require('../../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
@@ -203,6 +203,10 @@ async function buildEventPanel(eventId, lang) {
         // These carry the rendered prose the panel prints with <%- %>. The
         // panel has no escaped fallback on purpose: a caller that forgets them
         // should show 'undefined', not print the raw text unescaped.
+        // A source given as a site path links to that page under its title;
+        // the rest keep the template's own handling (URL or plain citation).
+        event.sourceItems = event.sources.map(source => (isSitePathSource(source)
+            ? presentSitePathSource(String(source).trim(), lang) : { raw: source }));
         event.questionHtml = link(event.question);
         event.summaryHtml = link(event.summary);
         const linkTimeline = () => {

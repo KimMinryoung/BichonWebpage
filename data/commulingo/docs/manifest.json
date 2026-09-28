@@ -5383,6 +5383,11 @@
       "events": [
         "french-revolution-1789-1799"
       ],
+      "excerpts": {
+        "terms": {
+          "declaration-of-the-rights-of-man-1789": "france-rights-declaration-1789"
+        }
+      },
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [

@@ -253,7 +253,51 @@ function getCommuLingoDocContent(doc) {
     return entry;
 }
 
+// Excerpts: a manifest entry may lend one of its pieces to a dictionary entry,
+// which then prints that piece in a reader box on its own page —
+//   "excerpts": { "terms": { "<term id>": "<heading id>" } }
+// The heading id is the piece's title (a collection's h1, as in `redirects`).
+function listCommuLingoDocExcerptsFor(kind, id) {
+    const out = [];
+    loadManifest().forEach(doc => {
+        const byId = doc.excerpts && doc.excerpts[kind];
+        const anchor = byId && Object.hasOwn(byId, id) ? byId[id] : null;
+        if (typeof anchor === 'string' && /^[A-Za-z0-9_-]+$/.test(anchor)) out.push({ doc, anchor });
+    });
+    return out;
+}
+
+// One piece of a document: from the heading carrying `anchor` to the next
+// heading of the same or a higher level. The title heading comes back as text
+// (the box prints its own), the headings inside drop one level to sit under
+// the entry page's h2, and the notes the piece calls are brought along. A
+// fragment link to anything else in the document goes to the reader instead.
+function getCommuLingoDocSection(doc, anchor) {
+    const { html } = getCommuLingoDocContent(doc);
+    const heads = [...html.matchAll(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/g)];
+    const start = heads.findIndex(head => (head[2].match(/\bid="([^"]+)"/) || [])[1] === anchor);
+    if (start === -1) return null;
+    const level = Number(heads[start][1]);
+    const next = heads.slice(start + 1).find(head => Number(head[1]) <= level);
+    let body = html.slice(heads[start].index + heads[start][0].length, next ? next.index : html.length)
+        .replace(/<\/article>\s*$/, '')
+        .replace(/<section[^>]*class="notes"[\s\S]*?<\/section>/g, '');
+    const noteIds = [...body.matchAll(/class="note-ref"[^>]*href="#([^"]+)"|href="#([^"]+)"[^>]*class="note-ref"/g)]
+        .map(m => m[1] || m[2]);
+    const notes = noteIds.map(noteId => {
+        const m = html.match(new RegExp(`<li[^>]*\\bid="${noteId.replace(/[^A-Za-z0-9_-]/g, '')}"[\\s\\S]*?</li>`));
+        return m ? m[0] : '';
+    }).filter(Boolean);
+    if (notes.length) body += `<section class="notes"><ol class="notes-list">${notes.join('')}</ol></section>`;
+    const ids = new Set([...body.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
+    body = body
+        .replace(/<(\/?)h([1-5])\b/g, (m, slash, n) => `<${slash}h${Math.max(3, Number(n) + 1)}`)
+        .replace(/href="#([^"]+)"/g, (full, id) => ids.has(id) ? full : `href="/commulingo/docs/${doc.id}#${id}"`);
+    return { title: headingText(heads[start][3]), html: body.trim() };
+}
+
 module.exports = {
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
     listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
+    listCommuLingoDocExcerptsFor, getCommuLingoDocSection,
 };

@@ -1,14 +1,13 @@
 const { searchableAliases } = require('./link-expressions');
 const { renderMarkdown } = require('../../utils/markdown');
 const { loadCommuLingoTerms } = require('./terms-store');
-const { relatedDocsFor } = require('./docs-refs');
+const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { renderAppView } = require('../../utils/render-app-view');
 const { getReportsForTerm } = require('../../services/report-mentions');
 const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termCategoryLabel } = require('./term-categories');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { genealogyLinksForEntry } = require('./genealogy-links');
 const { localize } = require('./localize');
-const { getCommuLingoDoc } = require('./docs-store');
 
 function presentTerm(raw, lang) {
     return {
@@ -66,24 +65,9 @@ const SOURCE_HOST_LABELS = {
     'cyber-lenin.com': { ko: '사이버 레닌', en: 'Cyber-Lenin' },
 };
 
-// A source written as a bare site path ('/commulingo/docs/<id>') cites one of
-// the site's own pages; a reference document is labelled with its title.
-function presentSitePath(text, lang) {
-    const path = text.match(/^\/[^\s)]*/)[0];
-    const note = text.slice(path.length).replace(/^[)\s]*[—–-]?\s*/, '').trim();
-    const docMatch = path.match(/^\/commulingo\/docs\/([a-z0-9-]+)\/?(?:[#?]|$)/);
-    const doc = docMatch ? getCommuLingoDoc(docMatch[1]) : null;
-    return {
-        url: path,
-        label: doc ? localize(doc.title, lang) : path,
-        note,
-        internal: true,
-    };
-}
-
 function presentSource(raw, lang) {
     const text = String(raw || '').trim();
-    if (/^\/[a-z0-9]/i.test(text)) return presentSitePath(text, lang);
+    if (isSitePathSource(text)) return presentSitePathSource(text, lang);
     const match = text.match(/https?:\/\/[^\s)]+/);
     const url = match ? match[0] : '';
     const head = (match ? text.slice(0, match.index) : text).replace(/[\s(]+$/, '').trim();
@@ -310,6 +294,7 @@ async function buildTermPanel(termId, lang) {
         sources: presentSources(term.sources, lang, relatedReports, relatedDocs),
         relatedReports,
         relatedDocs,
+        excerpts: docExcerptsFor('terms', termId, lang),
         genealogies: genealogyLinksForEntry('term', termId, relatedDocs, lang),
     };
 }

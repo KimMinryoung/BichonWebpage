@@ -15,7 +15,8 @@ const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadCommuLingoPeople, redirectTarget } = require('./people-store');
 const { loadCommuLingoCatalog } = require('./shards');
 const { standardizedFor } = require('./linkify');
-const { docRefId, listCommuLingoDocsFor } = require('./docs-store');
+const { docRefId, listCommuLingoDocsFor, getCommuLingoDoc,
+    listCommuLingoDocExcerptsFor, getCommuLingoDocSection } = require('./docs-store');
 const { localize } = require('./localize');
 
 const KINDS = ['people', 'terms', 'events'];
@@ -34,6 +35,52 @@ function relatedDocsFor(kind, id, lang) {
         console.error(`commulingo ${kind} related docs:`, e);
         return [];
     }
+}
+
+// Pieces of reference documents printed on an entry page (docs-store.js,
+// `excerpts`). The text is the document's own language, whatever the page's.
+function docExcerptsFor(kind, id, lang) {
+    try {
+        return listCommuLingoDocExcerptsFor(kind, id).map(({ doc, anchor }) => {
+            const section = getCommuLingoDocSection(doc, anchor);
+            if (!section) {
+                console.warn(`commulingo docs: ${doc.id} excerpt for ${kind} "${id}" has no heading "${anchor}"`);
+                return null;
+            }
+            return {
+                docId: doc.id,
+                docTitle: localize(doc.title, lang),
+                docLang: doc.docLang || 'ko',
+                anchor,
+                title: section.title,
+                html: section.html,
+            };
+        }).filter(Boolean);
+    } catch (e) {
+        console.error(`commulingo ${kind} doc excerpts:`, e);
+        return [];
+    }
+}
+
+// A source written as a bare site path ('/commulingo/docs/<id>') cites one of
+// the site's own pages; a reference document is labelled with its title.
+// Shared by the term and event panels, whose sources are otherwise shaped
+// differently.
+function presentSitePathSource(text, lang) {
+    const path = text.match(/^\/[^\s)]*/)[0];
+    const note = text.slice(path.length).replace(/^[)\s]*[—–-]?\s*/, '').trim();
+    const docMatch = path.match(/^\/commulingo\/docs\/([a-z0-9-]+)\/?(?:[#?]|$)/);
+    const doc = docMatch ? getCommuLingoDoc(docMatch[1]) : null;
+    return {
+        url: path,
+        label: doc ? localize(doc.title, lang) : path,
+        note,
+        internal: true,
+    };
+}
+
+function isSitePathSource(text) {
+    return /^\/[a-z0-9]/i.test(String(text || '').trim());
 }
 
 // One resolver per (standardized people, terms, events) generation, shared by
@@ -91,4 +138,7 @@ async function createDocRefResolver(lang) {
     return resolver;
 }
 
-module.exports = { createDocRefResolver, relatedDocsFor };
+module.exports = {
+    createDocRefResolver, relatedDocsFor, docExcerptsFor,
+    presentSitePathSource, isSitePathSource,
+};

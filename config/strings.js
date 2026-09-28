@@ -571,6 +571,8 @@ const ko = {
             relatedReports: '관련 보고서',
             report: '보고서',
             sources: '출처',
+            primaryText: '원문',
+            readInLibrary: '참고 문헌에서 읽기',
         },
         terms: {
             glossary: '용어 사전',
@@ -1154,6 +1156,8 @@ const en = {
             relatedReports: 'Related reports',
             report: 'Report',
             sources: 'Sources',
+            primaryText: 'Primary text',
+            readInLibrary: 'Read in the reference library',
         },
         terms: {
             glossary: 'Glossary',

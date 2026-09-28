@@ -4104,6 +4104,80 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-term-sources a { color: var(--link); }
 .commu-term-source-note { display: block; color: var(--text-muted); }
 
+/* A piece of a reference document printed on the entry page (manifest
+   `excerpts`). Set like the reader (commulingo-doc.css): long-form measure,
+   justified Korean prose, the editor's note marked off from the source. The
+   box scrolls on its own so a long text does not push the rest of the entry
+   out of reach; the link under it opens the piece in the full reader. */
+.commu-doc-excerpt {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg-surface);
+}
+.commu-doc-excerpt-head {
+    display: flex;
+    flex-direction: column;
+    gap: .15rem;
+    margin: 0;
+    padding: .75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+}
+.commu-doc-excerpt-head span { font-size: .78rem; color: var(--text-muted); }
+.commu-doc-excerpt-head strong { font-size: 1.02rem; color: var(--text-primary); }
+.commu-doc-excerpt-body {
+    max-height: min(65vh, 34rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: .4rem 1rem 1rem;
+    font-size: .95rem;
+    line-height: 1.85;
+    color: var(--text-primary);
+    overflow-wrap: break-word;
+}
+.commu-doc-excerpt-body:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+.commu-doc-excerpt-body p { margin: .6em 0; text-align: justify; word-break: normal; }
+.commu-doc-excerpt-body h3,
+.commu-doc-excerpt-body h4 {
+    margin: 1.1em 0 .3em;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+    word-break: keep-all;
+}
+.commu-doc-excerpt-body h4 { font-size: .95rem; }
+.commu-doc-excerpt-body .doc-byline { color: var(--text-secondary); font-size: .9em; text-align: start; }
+.commu-doc-excerpt-body .doc-editorial {
+    margin: .9rem 0 1.1rem;
+    padding: .6rem .8rem;
+    border-left: 3px solid var(--btn-primary);
+    background: var(--bg-inset);
+    font-size: .88em;
+    color: var(--text-secondary);
+}
+.commu-doc-excerpt-body .doc-editorial p { margin: 0 0 .4em; text-align: start; }
+.commu-doc-excerpt-body .doc-editorial ul { margin: .4em 0 0; padding-left: 1.15em; }
+.commu-doc-excerpt-body .doc-editorial li { text-align: start; word-break: break-word; }
+.commu-doc-excerpt-body .doc-editorial-label { font-size: .82em; font-weight: 600; color: var(--text-muted); }
+.commu-doc-excerpt-body blockquote {
+    margin: .8em 0;
+    padding-left: 1em;
+    border-left: 3px solid var(--border-emphasis);
+    color: var(--text-secondary);
+}
+.commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: 1; text-decoration: none; }
+.commu-doc-excerpt-body .notes-list { font-size: .85em; color: var(--text-muted); padding-left: 1.6em; }
+.commu-doc-excerpt-body .notes-list .back-link { text-decoration: none; margin-left: .25em; }
+.commu-doc-excerpt-more {
+    display: block;
+    padding: .6rem 1rem;
+    border-top: 1px solid var(--border);
+    font-size: .88rem;
+    color: var(--link);
+    text-decoration: none;
+}
+.commu-doc-excerpt-more:hover { text-decoration: underline; }
+
 /* Entity links inside dictionary prose, on every page that has them rather
    than per page type. These were scoped to .commu-term-page, so the same link
    on a history-event or person page fell through to the default anchor colour —
