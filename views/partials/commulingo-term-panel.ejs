@@ -73,7 +73,7 @@
             <ol>
                 <% p.sources.forEach(function(source) { %>
                 <li>
-                    <% if (source.url) { %><a href="<%= source.url %>" target="_blank" rel="noopener noreferrer"><%= source.label %></a><% } else { %><span><%= source.label %></span><% } %>
+                    <% if (source.url && source.internal) { %><a href="<%= source.url %>"><%= source.label %></a><% } else if (source.url) { %><a href="<%= source.url %>" target="_blank" rel="noopener noreferrer"><%= source.label %></a><% } else { %><span><%= source.label %></span><% } %>
                     <% if (source.note) { %><span class="commu-term-source-note"><%= source.note %></span><% } %>
                 </li>
                 <% }) %>

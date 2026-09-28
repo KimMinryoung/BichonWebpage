@@ -8,6 +8,7 @@ const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termCat
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { genealogyLinksForEntry } = require('./genealogy-links');
 const { localize } = require('./localize');
+const { getCommuLingoDoc } = require('./docs-store');
 
 function presentTerm(raw, lang) {
     return {
@@ -65,8 +66,24 @@ const SOURCE_HOST_LABELS = {
     'cyber-lenin.com': { ko: '사이버 레닌', en: 'Cyber-Lenin' },
 };
 
+// A source written as a bare site path ('/commulingo/docs/<id>') cites one of
+// the site's own pages; a reference document is labelled with its title.
+function presentSitePath(text, lang) {
+    const path = text.match(/^\/[^\s)]*/)[0];
+    const note = text.slice(path.length).replace(/^[)\s]*[—–-]?\s*/, '').trim();
+    const docMatch = path.match(/^\/commulingo\/docs\/([a-z0-9-]+)\/?(?:[#?]|$)/);
+    const doc = docMatch ? getCommuLingoDoc(docMatch[1]) : null;
+    return {
+        url: path,
+        label: doc ? localize(doc.title, lang) : path,
+        note,
+        internal: true,
+    };
+}
+
 function presentSource(raw, lang) {
     const text = String(raw || '').trim();
+    if (/^\/[a-z0-9]/i.test(text)) return presentSitePath(text, lang);
     const match = text.match(/https?:\/\/[^\s)]+/);
     const url = match ? match[0] : '';
     const head = (match ? text.slice(0, match.index) : text).replace(/[\s(]+$/, '').trim();
@@ -96,11 +113,12 @@ function urlPath(url) {
     }
 }
 
-// Self-citations that the related-reports panel already lists are dropped:
-// the same report should not appear twice on one page, once as a link and once
-// as its own evidence.
-function presentSources(raw, lang, relatedReports) {
+// Self-citations that the related-reports or reference-documents panel already
+// lists are dropped: the same page should not appear twice on one page, once as
+// a link and once as its own evidence.
+function presentSources(raw, lang, relatedReports, relatedDocs) {
     const shown = new Set((relatedReports || []).map(report => urlPath(report.href || '')));
+    (relatedDocs || []).forEach(doc => shown.add(`/commulingo/docs/${doc.id}`));
     return (raw || [])
         .map(source => presentSource(source, lang))
         .filter(source => !(source.internal && source.url && shown.has(urlPath(source.url))));
@@ -289,7 +307,7 @@ async function buildTermPanel(termId, lang) {
         term,
         definitionHtml,
         bodyHtml,
-        sources: presentSources(term.sources, lang, relatedReports),
+        sources: presentSources(term.sources, lang, relatedReports, relatedDocs),
         relatedReports,
         relatedDocs,
         genealogies: genealogyLinksForEntry('term', termId, relatedDocs, lang),
