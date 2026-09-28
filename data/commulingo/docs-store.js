@@ -256,13 +256,14 @@ function getCommuLingoDocContent(doc) {
 // Excerpts: a manifest entry may lend one of its pieces to a dictionary entry,
 // which then prints that piece in a reader box on its own page —
 //   "excerpts": { "terms": { "<term id>": "<heading id>" } }
-// The heading id is the piece's title (a collection's h1, as in `redirects`).
+// The heading id is the piece's title (a collection's h1, as in `redirects`);
+// "*" lends the whole document, for a short text that is the entry's subject.
 function listCommuLingoDocExcerptsFor(kind, id) {
     const out = [];
     loadManifest().forEach(doc => {
         const byId = doc.excerpts && doc.excerpts[kind];
         const anchor = byId && Object.hasOwn(byId, id) ? byId[id] : null;
-        if (typeof anchor === 'string' && /^[A-Za-z0-9_-]+$/.test(anchor)) out.push({ doc, anchor });
+        if (typeof anchor === 'string' && /^(\*|[A-Za-z0-9_-]+)$/.test(anchor)) out.push({ doc, anchor });
     });
     return out;
 }
@@ -275,10 +276,13 @@ function listCommuLingoDocExcerptsFor(kind, id) {
 function getCommuLingoDocSection(doc, anchor) {
     const { html } = getCommuLingoDocContent(doc);
     const heads = [...html.matchAll(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/g)];
-    const start = heads.findIndex(head => (head[2].match(/\bid="([^"]+)"/) || [])[1] === anchor);
+    // The whole document starts at its title h1 and runs to the end.
+    const start = anchor === '*'
+        ? (heads.length && heads[0][1] === '1' ? 0 : -1)
+        : heads.findIndex(head => (head[2].match(/\bid="([^"]+)"/) || [])[1] === anchor);
     if (start === -1) return null;
     const level = Number(heads[start][1]);
-    const next = heads.slice(start + 1).find(head => Number(head[1]) <= level);
+    const next = anchor === '*' ? null : heads.slice(start + 1).find(head => Number(head[1]) <= level);
     let body = html.slice(heads[start].index + heads[start][0].length, next ? next.index : html.length)
         .replace(/<\/article>\s*$/, '')
         .replace(/<section[^>]*class="notes"[\s\S]*?<\/section>/g, '')

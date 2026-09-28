@@ -37,4 +37,9 @@ const notes = gouges.html.match(/<li[^>]*id="gouges-rights-of-woman-1791--note-/
 assert.ok(refs.length > 0 && notes.length === refs.length, 'the notes a piece calls come with it');
 
 assert.strictEqual(getCommuLingoDocSection(doc, 'no-such-heading'), null);
+
+// "*" is the whole document: every piece of the collection, under its title.
+const whole = getCommuLingoDocSection(doc, '*');
+assert.strictEqual(whole.title, '프랑스 혁명 문헌집: 시민권과 해방');
+assert.ok(whole.html.includes('제17조') && whole.html.includes('노예제 폐지 법령'), 'runs to the end');
 console.log(`ok doc excerpts (${count} declared)`);

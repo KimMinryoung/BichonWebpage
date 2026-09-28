@@ -49,7 +49,8 @@ function docExcerptsFor(kind, id, lang) {
             }
             return {
                 docId: doc.id,
-                docTitle: localize(doc.title, lang),
+                // A whole document's title is the box's own heading already.
+                docTitle: anchor === '*' ? '' : localize(doc.title, lang),
                 docLang: doc.docLang || 'ko',
                 anchor,
                 title: section.title,
