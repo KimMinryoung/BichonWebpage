@@ -54,7 +54,9 @@
 
     function sizeFeed() {
         var top = feed.getBoundingClientRect().top + window.scrollY;
-        var height = Math.max(420, window.innerHeight - top - 12);
+        // 정수로 내린다. 높이가 소수점이면 카드 위치와 스크롤 위치가 1px 미만
+        // 어긋나 윗 카드 가장자리가 비친다.
+        var height = Math.max(420, Math.floor(window.innerHeight - top - 12));
         feed.style.setProperty('--shorts-height', height + 'px');
         // 카드 높이가 바뀌어도 보던 카드에 맞춘다(모바일 주소창이 접힐 때 등).
         var current = rendered[currentIndex];

@@ -4675,7 +4675,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     height: 100%;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    border-bottom: 1px solid var(--border);
 }
 
 /* 카드는 피드 높이로 고정하고, 답을 열어 넘치면 카드 안에서 스크롤한다.
