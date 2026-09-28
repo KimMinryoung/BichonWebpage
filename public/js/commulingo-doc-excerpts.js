@@ -6,9 +6,9 @@
 // one panel starts hidden and measures as zero, so a ResizeObserver waits for
 // the tab that shows it.
 (function () {
-    // Fold only when it hides a real amount: folding a text that is a few lines
-    // over the preview would cost a click to save a thumb's width of scrolling.
-    var SLACK_PX = 96;
+    // Fold only when it hides at least another preview's worth: folding a text
+    // a few paragraphs over the preview (the 1940 Vichy law, 554px on a phone)
+    // costs a click to save less than a screen of scrolling.
 
     function previewHeight(box) {
         box.classList.add('is-folded');
@@ -23,7 +23,7 @@
         if (!body || !button) return false;
         var full = body.scrollHeight;
         if (!full) return false; // hidden panel: not laid out yet
-        if (full <= previewHeight(box) + SLACK_PX) return true;
+        if (full <= previewHeight(box) * 2) return true;
         box.classList.add('is-folded');
         button.hidden = false;
         button.addEventListener('click', function () {
