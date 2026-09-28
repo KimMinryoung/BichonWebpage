@@ -1,6 +1,6 @@
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadCommuLingoTerms } = require('./terms-store');
-const { relatedDocsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
+const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { getReportsForEvent } = require('../../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
@@ -265,6 +265,7 @@ async function buildEventPanel(eventId, lang) {
         event: pure.event,
         relatedTerms: await relatedTermsForEvent(eventId, lang),
         relatedDocs: relatedDocsFor('events', eventId, lang),
+        excerpts: docExcerptsFor('events', eventId, lang),
         genealogies: genealogyLinksFor('event', eventId, lang),
         relatedReports,
         prevEvent: pure.prevEvent,

@@ -96,6 +96,7 @@ var sections = p.event.bodySections || [];
         <% if (!p.event.bodyHtml) { %>
         <section class="commu-person-detail-section commu-event-outcome" aria-labelledby="event-outcome"><h2 id="event-outcome"><%= strings.commuLingoViews.eventPanel.consequences %></h2><p><%- p.event.outcomeHtml %></p></section>
         <% } %>
+        <%- include('commulingo-doc-excerpts', { excerpts: p.excerpts, idPrefix: 'event-excerpt' }) %>
         <section class="commu-person-detail-section commu-section-wide commu-event-people" aria-labelledby="event-people">
             <h2 id="event-people"><%= strings.commuLingoViews.eventPanel.relatedPeople %> <span class="commu-event-people-count"><%= p.event.people.length %><%= strings.commuLingoViews.eventPanel.text %></span></h2>
             <% p.event.peopleGroups.forEach(function(group) { %>

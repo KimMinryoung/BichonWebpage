@@ -660,6 +660,11 @@
       "events": [
         "ussr-formation"
       ],
+      "excerpts": {
+        "events": {
+          "ussr-formation": "declaration-formation-ussr-1922"
+        }
+      },
       "addedAt": "2026-08-06",
       "aliases": {
         "ko": [
@@ -1065,6 +1070,9 @@
         "terms": {
           "molotov-ribbentrop-pact": "nonaggression-treaty-1939",
           "secret-protocol-molotov-ribbentrop": "secret-protocol-1939"
+        },
+        "events": {
+          "nazi-soviet-pact": "*"
         }
       },
       "addedAt": "2026-08-06",
@@ -2188,6 +2196,11 @@
         "great-patriotic-war",
         "nazi-soviet-pact"
       ],
+      "excerpts": {
+        "events": {
+          "great-patriotic-war": "*"
+        }
+      },
       "addedAt": "2026-08-17",
       "aliases": {
         "ko": [
@@ -2246,6 +2259,12 @@
         "yalta-potsdam",
         "manchurian-operation"
       ],
+      "excerpts": {
+        "events": {
+          "yalta-potsdam": "potsdam-declaration-1945",
+          "manchurian-operation": "soviet-declaration-war-japan-1945"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -2357,6 +2376,11 @@
       "events": [
         "french-resistance"
       ],
+      "excerpts": {
+        "events": {
+          "french-resistance": "*"
+        }
+      },
       "addedAt": "2026-08-17",
       "aliases": {
         "ko": [
@@ -2494,6 +2518,11 @@
       "events": [
         "kronstadt-1921"
       ],
+      "excerpts": {
+        "events": {
+          "kronstadt-1921": "petropavlovsk-resolution-1921"
+        }
+      },
       "addedAt": "2026-08-17",
       "aliases": {
         "ko": [
@@ -2705,6 +2734,9 @@
       "excerpts": {
         "terms": {
           "warsaw-pact": "*"
+        },
+        "events": {
+          "warsaw-pact": "*"
         }
       },
       "addedAt": "2026-08-17",
@@ -2747,6 +2779,11 @@
         "tito-stalin-split",
         "yugoslav-partisans"
       ],
+      "excerpts": {
+        "events": {
+          "tito-stalin-split": "cominform-resolution-yugoslavia-1948"
+        }
+      },
       "addedAt": "2026-08-17",
       "aliases": {
         "ko": [
@@ -2884,6 +2921,11 @@
         "french-popular-front",
         "february-1934-crisis"
       ],
+      "excerpts": {
+        "events": {
+          "french-popular-front": "*"
+        }
+      },
       "addedAt": "2026-08-17",
       "aliases": {
         "ko": [
@@ -3051,6 +3093,9 @@
       "excerpts": {
         "terms": {
           "order-no-227": "order-227-1942"
+        },
+        "events": {
+          "stalingrad": "paulus-ultimatum-1943"
         }
       },
       "addedAt": "2026-08-31",
@@ -3245,6 +3290,11 @@
         "winter-war",
         "siege-of-leningrad"
       ],
+      "excerpts": {
+        "events": {
+          "winter-war": "*"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -3298,6 +3348,11 @@
         "perestroika",
         "new-thinking-diplomacy"
       ],
+      "excerpts": {
+        "events": {
+          "afghanistan-war": "politburo-decision-a-1979"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -3704,6 +3759,11 @@
         "hungarian-revolution",
         "twentieth-party-congress"
       ],
+      "excerpts": {
+        "events": {
+          "hungarian-revolution": "presidium-decision-hungary-1956-10-31"
+        }
+      },
       "addedAt": "2026-08-31",
       "aliases": {
         "ko": [
@@ -4073,6 +4133,11 @@
       "events": [
         "greek-resistance"
       ],
+      "excerpts": {
+        "events": {
+          "greek-resistance": "*"
+        }
+      },
       "addedAt": "2026-09-01",
       "aliases": {
         "ko": [
@@ -4115,6 +4180,11 @@
       "events": [
         "battle-of-britain"
       ],
+      "excerpts": {
+        "events": {
+          "battle-of-britain": "directive-17-1940"
+        }
+      },
       "addedAt": "2026-09-01",
       "aliases": {
         "ko": [
@@ -4245,6 +4315,11 @@
       "events": [
         "italian-campaign"
       ],
+      "excerpts": {
+        "events": {
+          "italian-campaign": "grandi-resolution-1943"
+        }
+      },
       "addedAt": "2026-09-01",
       "aliases": {
         "ko": [
@@ -4529,6 +4604,11 @@
         "warsaw-uprising",
         "great-patriotic-war"
       ],
+      "excerpts": {
+        "events": {
+          "siege-of-leningrad": "future-of-petersburg-directive-1941"
+        }
+      },
       "addedAt": "2026-09-07",
       "aliases": {
         "ko": [
@@ -4730,6 +4810,9 @@
       "excerpts": {
         "terms": {
           "helsinki-final-act": "*"
+        },
+        "events": {
+          "helsinki-accords": "*"
         }
       },
       "addedAt": "2026-09-07",

@@ -23,16 +23,7 @@
             <div class="commu-person-markdown"><%- p.bodyHtml %></div>
         </section>
         <% } %>
-        <% (p.excerpts || []).forEach(function(excerpt, i) { %>
-        <section class="commu-person-detail-section commu-doc-excerpt-section" aria-labelledby="term-excerpt-<%= i %>">
-            <h2 id="term-excerpt-<%= i %>"><%= strings.commuLingoViews.termPanel.primaryText %></h2>
-            <div class="commu-doc-excerpt">
-                <p class="commu-doc-excerpt-head"><% if (excerpt.docTitle) { %><span><%= excerpt.docTitle %></span><% } %><strong><%= excerpt.title %></strong></p>
-                <div class="commu-doc-excerpt-body" lang="<%= excerpt.docLang %>" tabindex="0"><%- excerpt.html %></div>
-                <a class="commu-doc-excerpt-more" href="/commulingo/docs/<%= excerpt.docId %><%= excerpt.anchor === '*' ? '' : '#' + excerpt.anchor %>"><%= strings.commuLingoViews.termPanel.readInLibrary %> →</a>
-            </div>
-        </section>
-        <% }) %>
+        <%- include('commulingo-doc-excerpts', { excerpts: p.excerpts, idPrefix: 'term-excerpt' }) %>
         <% if (p.term.children && p.term.children.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-children">
             <h2 id="term-children"><%= strings.commuLingoViews.termPanel.withinThisEntry %></h2>

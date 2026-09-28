@@ -1,0 +1,14 @@
+<%# Pieces of reference documents printed on a dictionary entry page, in a
+    reader box (manifest `excerpts`, docs-refs.js docExcerptsFor). Shared by the
+    term and event panels; idPrefix keeps the headings apart when both panels
+    share one page. %>
+        <% (excerpts || []).forEach(function(excerpt, i) { %>
+        <section class="commu-person-detail-section commu-doc-excerpt-section" aria-labelledby="<%= idPrefix %>-<%= i %>">
+            <h2 id="<%= idPrefix %>-<%= i %>"><%= strings.commuLingoViews.termPanel.primaryText %></h2>
+            <div class="commu-doc-excerpt">
+                <p class="commu-doc-excerpt-head"><% if (excerpt.docTitle) { %><span><%= excerpt.docTitle %></span><% } %><strong><%= excerpt.title %></strong></p>
+                <div class="commu-doc-excerpt-body" lang="<%= excerpt.docLang %>" tabindex="0"><%- excerpt.html %></div>
+                <a class="commu-doc-excerpt-more" href="/commulingo/docs/<%= excerpt.docId %><%= excerpt.anchor === '*' ? '' : '#' + excerpt.anchor %>"><%= strings.commuLingoViews.termPanel.readInLibrary %> →</a>
+            </div>
+        </section>
+        <% }) %>
