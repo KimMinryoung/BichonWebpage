@@ -1,0 +1,337 @@
+{
+ "note": "Education reclassification 2026-09-28",
+ "items": [
+  {
+   "id": "nadezhda-krupskaya",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-3898550c5916c4da10de1683786ed1552b01d3c6f31154780baed7f6849afab8",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nadezhda_Krupskaya"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1939,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Nadezhda_Krupskaya",
+       "locator": "plain-text extract characters 1032:1190; sha256 051aeb1a38c559f46e9be4bbeddf10e7ccb5aee1bba54adf895697b09ae2704b",
+       "claim": "크룹스카야는 1929~1939년 교육 인민위원 대리로 소련 교육 체계와 도서관 제도에 큰 영향을 미쳤다.",
+       "excerpt": "She was deputy education commissar from 1929 to 1939, with strong influence over the Soviet educational system, including development of Soviet librarianship."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anton-makarenko",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-6d73cff081d33d362513e446e91c21f5c0ba97fdafebf533b1d848ddeb4f3249",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anton_Makarenko"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1920,
+     "endYear": 1939,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Anton_Makarenko",
+       "locator": "plain-text extract characters 159:238; sha256 69df0a00bd9fbb3c69db405ed4fb7f1f227a998316751dbd6c63a77a56082dcf",
+       "claim": "마카렌코는 소련의 교육자이자 사회사업가, 작가였다.",
+       "excerpt": "1 March] 1888 – 1 April 1939), was a Soviet educator, social worker and writer."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Anton_Makarenko",
+       "locator": "plain-text extract characters 239:379; sha256 69df0a00bd9fbb3c69db405ed4fb7f1f227a998316751dbd6c63a77a56082dcf",
+       "claim": "그는 소련에서 가장 영향력 있는 교육 이론가가 되었다.",
+       "excerpt": "He became the most influential educational theorist in the Soviet Union; along with promoting principles in educational theory and practice."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lunacharsky",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-359eed48ed8d0d074ae08670c41152c7ad1a90b9065e98c35a7c1220e08c7b28",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anatoly_Lunacharsky"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1929,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Lunacharsky",
+       "locator": "plain-text extract characters 133:360; sha256 07af13ccccb4c6312736a1e8372db29c8e43764808a7a3a84279e4b533354c5b",
+       "claim": "루나차르스키는 소련의 초대 교육인민위원이었다.",
+       "excerpt": "11 November] 1875 – 26 December 1933) was a Russian Marxist revolutionary and the first Soviet People's Commissar (minister) of Education, as well as an active playwright, critic, essayist, and journalist throughout his career."
+      }
+     ]
+    },
+    {
+     "functionId": "arts",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Lunacharsky",
+       "locator": "plain-text extract characters 133:360; sha256 07af13ccccb4c6312736a1e8372db29c8e43764808a7a3a84279e4b533354c5b",
+       "claim": "그는 평생 극작가·비평가·수필가·언론인으로 활동했다.",
+       "excerpt": "11 November] 1875 – 26 December 1933) was a Russian Marxist revolutionary and the first Soviet People's Commissar (minister) of Education, as well as an active playwright, critic, essayist, and journalist throughout his career."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "andrei-bubnov",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-7c89b63d3d9eb4559ace049f70dc354059bdbf8e68e07f70a9fd3c48e0699fc3",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andrei_Bubnov"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1929,
+     "endYear": 1937,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Andrei_Bubnov",
+       "locator": "plain-text extract characters 7308:7431; sha256 480ea73b6a02984ef31594351bed5daebe889e83ebe218335835b48242f1702e",
+       "claim": "부브노프는 1929년 루나차르스키의 뒤를 이어 교육인민위원이 되어 1937년 10월 체포될 때까지 재임했다.",
+       "excerpt": "In 1929, he replaced Lunacharsky as People's Commissar for Education, staying in this role till his arrest in October 1937."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Andrei_Bubnov",
+       "locator": "plain-text extract characters 7432:7600; sha256 480ea73b6a02984ef31594351bed5daebe889e83ebe218335835b48242f1702e",
+       "claim": "그는 교육인민위원으로서 실험적 교육을 끝내고 실용적 산업 기능 훈련으로 방향을 바꿨다.",
+       "excerpt": "As Commissar for Education, he ended the period of progressive, experimental educational practices and switched the emphasis to training in practical industrial skills."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vyacheslav-yelyutin",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-acc268e7ec375d9b4f5d7757aa1ed9a83491f671f0096a58694d91144dc32f7e",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1954,
+     "endYear": 1985,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 200:315; sha256 d90e72cc35d15e17afd92c42bc00df67dddaeaba8a8ea042fe38f4324f6b95f9",
+       "claim": "옐류틴은 1954~1959년 소련 고등교육장관, 1959~1985년 고등·중등전문교육장관이었다.",
+       "excerpt": "Министр высшего образования СССР (1954—1959), министр высшего и среднего специального образования СССР (1959—1985)."
+      }
+     ]
+    },
+    {
+     "functionId": "science",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 0:199; sha256 d90e72cc35d15e17afd92c42bc00df67dddaeaba8a8ea042fe38f4324f6b95f9",
+       "claim": "그는 금속공학자이자 교육자였다.",
+       "excerpt": "Вячеслав Петрович Елю́тин (26 февраля (11 марта) 1907 года, Саратов, Российская империя — 5 февраля 1993, Москва, Российская Федерация) — советский государственный деятель, учёный-металлург, педагог."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mikhail-prokofyev",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-fe2bfbecc9a58dcebc725e31ab7a210c8d0093829855d998c2512ebf7d189ced",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BA%D0%BE%D1%84%D1%8C%D0%B5%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1966,
+     "endYear": 1984,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BA%D0%BE%D1%84%D1%8C%D0%B5%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "plain-text extract characters 0:245; sha256 5226f63e71f1024ae61736cdda11b1c85753dc234aa148bf3538e870c45d007e",
+       "claim": "프로코피예프는 유기화학자이자 교육자로, 1966~1984년 소련 교육장관이었다.",
+       "excerpt": "Михаил Алексеевич Прокофьев (5 [18] ноября 1910, с. Воскресенское, Смоленская губерния — 29 апреля 1999, Москва) — советский и российский химик-органик, педагог, общественный и государственный деятель. Министр просвещения СССР в 1966—1984 годах."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vladimir-potemkin",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-0ed257ac26e96f7d06ac22e85f58157bce1a14f8315fdda72c7fe135fdfbfb66",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vladimir_Potemkin"
+   ],
+   "activities": [
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": null,
+     "endYear": 1940,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Potemkin",
+       "locator": "plain-text extract characters 4023:4145; sha256 3673f2e2764304106e891296055ba42a97d839af86a2ecb719d06f54ce564e1e",
+       "claim": "포툠킨은 1937년 모스크바로 돌아와 소련 외무인민위원 제1대리가 되었다.",
+       "excerpt": "In 1937 he returned to work in Moscow, taking the post of First Deputy People's Commissar for Foreign Affairs of the USSR."
+      }
+     ]
+    },
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1940,
+     "endYear": 1946,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Potemkin",
+       "locator": "plain-text extract characters 83:315; sha256 3673f2e2764304106e891296055ba42a97d839af86a2ecb719d06f54ce564e1e",
+       "claim": "그는 러시아 공화국 교육인민위원을 지낸 정치가·역사가·교육자·외교관이었다.",
+       "excerpt": "7 October] 1874 – 23 February 1946) was a Soviet statesman, historian, educator, diplomat, academic and scholar who served as the People's Commissar of Education of the Russian Soviet Federative Socialist Republic from 1940 to 1946."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "yuri-zhdanov",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-7944cfd6e329d53ef5d3a7823db82de61fe370ca2195e03531314bbeabe6f285",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Yuri_Zhdanov"
+   ],
+   "activities": [
+    {
+     "functionId": "education",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1957,
+     "endYear": 1988,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Yuri_Zhdanov",
+       "locator": "plain-text extract characters 141:250; sha256 1802a680585500511869d9ebcdb4d5415b35c91030aec326d44d6c5deae45de2",
+       "claim": "유리 즈다노프는 1957~1988년 로스토프 대학 총장이었다.",
+       "excerpt": "Doctor of Sciences in Chemical Sciences (1960), professor and rector of the University of Rostov (1957–1988)."
+      }
+     ]
+    },
+    {
+     "functionId": "propaganda",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1947,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Yuri_Zhdanov",
+       "locator": "plain-text extract characters 611:688; sha256 1802a680585500511869d9ebcdb4d5415b35c91030aec326d44d6c5deae45de2",
+       "claim": "그는 1947년 당 중앙위원회 과학부장에 임명되었다.",
+       "excerpt": "In 1947, he was appointed head of the Central Committee's Science Department."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "conrado-benitez",
+   "reviewed": true,
+   "reviewMethod": "operator request: educators and education commissars classified as education; excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-88c4116a511d1e2f2f61b2695f7e41e97f92668bb1e2c5363db45883d26803f8",
+   "sources": [
+    "https://www.ecured.cu/Conrado_Ben%C3%ADtez_Garc%C3%ADa"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "자원 교사로 농촌의 아동과 성인을 가르치는 문해 운동에 참여했다. 사후 이름을 딴 여단을 생전 소속으로 간주하지 않는다.",
+       "source": "https://www.ecured.cu/Conrado_Ben%C3%ADtez_Garc%C3%ADa",
+       "excerpt": "Se inició como maestro voluntario y fue ubicado en una escuela en las montañas de Sancti Spíritus, donde alternaba las clases de 44 niños por el día con otros tantos adultos por las noches, con el fin de erradicar el analfabetismo.",
+       "locator": "characters 781:1012; sha256 a2bfeda5f7080e8dbbeafa0e27fc4ac36c25c3a19c27679be925c904c4e8b16d"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": null,
+     "functionId": "education",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    }
+   ]
+  }
+ ]
+}
