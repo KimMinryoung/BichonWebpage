@@ -16,7 +16,7 @@
      already small; going below 12px gains nothing and crowds the screen edge. */
   padding-inline: clamp(12px, 2.5vw, 20px);
   padding-bottom: clamp(3rem, 8vw, 5rem);
-  line-height: 1.88;
+  line-height: var(--leading-prose);
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
@@ -52,7 +52,7 @@
 .book h1,
 .book h2,
 .book h3 {
-  line-height: 1.35;
+  line-height: var(--leading-snug);
   word-break: keep-all;
   text-wrap: balance;
   /* Clears the collapsed contents bar, which stays pinned at the top of the
@@ -106,7 +106,7 @@
   min-width: max-content;
   border-collapse: collapse;
   font-size: 0.88em;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
   overflow-wrap: normal;
 }
 
@@ -178,7 +178,7 @@
 .note-ref {
   font-size: 0.72em;
   vertical-align: super;
-  line-height: 1;
+  line-height: var(--leading-none);
   text-decoration: none;
   padding: 0 0.1em;
   /* 주석 끝의 ↩로 되돌아올 때의 착지점이기도 하다. 헤딩과 같은 값으로 컨트롤
@@ -223,7 +223,7 @@
   margin-top: clamp(2rem, 5vw, 3rem);
   padding: 0.7rem 0.9rem;
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: var(--leading-normal);
 }
 
 /* Two lines: the direction word, then the chapter it leads to. The heading is
@@ -291,7 +291,7 @@
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
-  line-height: 1.7;
+  line-height: var(--leading-relaxed);
   color: var(--text-muted);
 }
 
@@ -427,7 +427,7 @@
   margin-top: 0.3rem;
   padding-left: 1rem;
   font-size: 0.92em;
-  line-height: 1.8;
+  line-height: var(--leading-relaxed);
 }
 
 @media print {
@@ -460,7 +460,7 @@
 .doc-refs {
   margin: -0.2rem 0 1.8rem;
   font-size: 0.82rem;
-  line-height: 1.9;
+  line-height: var(--leading-prose);
   color: var(--text-muted);
   /* 본문 문단은 양쪽 맞춤이지만 이 줄은 아니다: 이름 목록이라 어절이 길고,
      맞춤을 걸면 마지막 줄 전까지 단어 사이가 벌어져 모바일에서 특히 성글다. */
@@ -620,7 +620,7 @@
   border: 1px solid var(--border);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   font-size: 0.85rem;
-  line-height: 1.5;
+  line-height: var(--leading-snug);
 }
 
 .fic-name-pop .fic-name-pop-label {

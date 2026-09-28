@@ -1,4 +1,4 @@
-.report-body { line-height: 1.88; }
+.report-body { line-height: var(--leading-prose); }
 /* Justified prose, matching the document reader; see the note in style.css for
    why word-break stays normal. Tables, code blocks and headings are excluded. */
 .report-body p,
@@ -46,12 +46,12 @@
 .research-series-label {
     color: var(--text-muted);
     font-size: 0.72rem;
-    line-height: 1.1;
+    line-height: var(--leading-tight);
 }
 
 .research-series-header h2 {
     font-size: 0.92rem;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     margin: 2px 0 0;
 }
 
@@ -82,7 +82,7 @@
     padding: 7px 10px;
     color: var(--text-primary);
     font-size: 0.84rem;
-    line-height: 1.3;
+    line-height: var(--leading-tight);
 }
 
 .research-series-list a:hover {

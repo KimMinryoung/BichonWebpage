@@ -34,9 +34,16 @@
   --text-lg: 1.125rem;
   --text-xl: 1.35rem;
   --text-2xl: clamp(1.55rem, 4vw, 2rem);
-  --leading-tight: 1.25;
+  /* Line-height scale. Pick by role, never a raw number:
+     none = icons/badges on one line, tight = headings, snug = labels and
+     compact lists, normal = UI text and short notes, relaxed = multi-line
+     summaries and panels, prose = long-form reading bodies. */
+  --leading-none: 1;
+  --leading-tight: 1.2;
+  --leading-snug: 1.45;
   --leading-normal: 1.6;
-  --leading-relaxed: 1.82;
+  --leading-relaxed: 1.8;
+  --leading-prose: 1.95;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;

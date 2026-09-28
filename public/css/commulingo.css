@@ -82,7 +82,7 @@
 
 .commulingo-hero p:last-child {
     color: var(--text-secondary);
-    line-height: 1.55;
+    line-height: var(--leading-normal);
 }
 
 .commulingo-total {
@@ -172,7 +172,7 @@
 
 .commu-chapter-card h2 {
     font-size: 1.05rem;
-    line-height: 1.35;
+    line-height: var(--leading-snug);
     margin: 0;
 }
 
@@ -182,7 +182,7 @@
     flex: 0 0 auto;
     font-size: 0.75rem;
     font-weight: 800;
-    line-height: 1;
+    line-height: var(--leading-none);
     padding: 5px 7px;
 }
 
@@ -198,7 +198,7 @@
     color: var(--text-secondary);
     display: -webkit-box;
     font-size: 0.88rem;
-    line-height: 1.42;
+    line-height: var(--leading-snug);
     margin: 0;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -210,7 +210,7 @@
     color: var(--text-secondary);
     display: -webkit-box;
     font-size: 0.84rem;
-    line-height: 1.42;
+    line-height: var(--leading-snug);
     margin: 0;
     overflow: hidden;
     padding-left: 9px;
@@ -285,7 +285,7 @@
 
 .commu-lesson-action-top strong {
     font-size: 0.88rem;
-    line-height: 1.2;
+    line-height: var(--leading-tight);
 }
 
 .commu-lesson-action-top span,
@@ -369,7 +369,7 @@
 .commu-intro-summary,
 .commu-intro-focus {
     color: var(--text-secondary);
-    line-height: 1.55;
+    line-height: var(--leading-normal);
     margin: 0 0 10px;
 }
 
@@ -391,7 +391,7 @@
     color: var(--text-primary);
     display: grid;
     gap: 6px;
-    line-height: 1.42;
+    line-height: var(--leading-snug);
     min-height: 104px;
     padding: 12px;
 }
@@ -399,13 +399,13 @@
 .commu-diagram-node strong {
     color: var(--link);
     font-size: 0.88rem;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
 }
 
 .commu-diagram-node small {
     color: var(--text-secondary);
     font-size: 0.82rem;
-    line-height: 1.42;
+    line-height: var(--leading-snug);
 }
 
 .commu-brief {
@@ -440,7 +440,7 @@
     display: grid;
     flex: 1 1 0;
     gap: 6px;
-    line-height: 1.42;
+    line-height: var(--leading-snug);
     min-width: 0;
     padding: 12px;
 }
@@ -448,13 +448,13 @@
 .commu-flow-step strong {
     color: var(--link);
     font-size: 0.88rem;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
 }
 
 .commu-flow-step small {
     color: var(--text-secondary);
     font-size: 0.82rem;
-    line-height: 1.42;
+    line-height: var(--leading-snug);
 }
 
 .commu-flow-arrow {
@@ -487,7 +487,7 @@
 .commu-contrast-side strong {
     color: var(--link);
     font-size: 0.88rem;
-    line-height: 1.3;
+    line-height: var(--leading-tight);
 }
 
 .commu-contrast-side ul {
@@ -495,7 +495,7 @@
     display: grid;
     font-size: 0.85rem;
     gap: 6px;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     margin: 0;
     padding-left: 18px;
 }
@@ -522,7 +522,7 @@
 .commu-brief-section ul {
     color: var(--text-secondary);
     font-size: 0.9rem;
-    line-height: 1.55;
+    line-height: var(--leading-normal);
     margin: 0;
 }
 
@@ -536,14 +536,14 @@
     background: var(--bg-surface);
     border-left: 4px solid var(--accent);
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     margin: -2px 0 16px;
     padding: 10px 12px;
 }
 
 .commu-question h2 {
     font-size: 1.35rem;
-    line-height: 1.35;
+    line-height: var(--leading-snug);
     margin-bottom: 18px;
 }
 
@@ -602,7 +602,7 @@
     color: var(--text-secondary);
     display: grid;
     gap: 6px;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     margin-bottom: 16px;
     padding: 12px 14px;
     animation: commu-feedback-rise 260ms ease;
@@ -627,7 +627,7 @@
     display: grid;
     gap: 6px;
     font-size: 0.92rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 
 .commu-source-label {
@@ -659,7 +659,7 @@
     color: var(--text-primary);
     display: block;
     font-size: 0.92rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     padding: 10px 12px;
 }
 
@@ -672,7 +672,7 @@
     display: inline-flex;
     font-size: 0.82rem;
     font-weight: 800;
-    line-height: 1;
+    line-height: var(--leading-none);
     padding: 8px 10px;
 }
 
@@ -900,7 +900,7 @@
 
 .commu-book-card h3 {
     font-size: 1.18rem;
-    line-height: 1.3;
+    line-height: var(--leading-tight);
     margin: 0 0 6px;
 }
 
@@ -908,7 +908,7 @@
     color: var(--text-secondary);
     display: -webkit-box;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     margin: 0;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -1050,13 +1050,13 @@
     margin: 8px 0 10px;
     color: var(--text-primary);
     font-size: 1.4rem;
-    line-height: 1.3;
+    line-height: var(--leading-tight);
 }
 
 .commu-graph-thesis {
     margin: 0 0 10px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-graph-hint {
@@ -1114,7 +1114,7 @@
     transform: translateX(-50%);
     color: var(--link);
     font-size: 1.1rem;
-    line-height: 1;
+    line-height: var(--leading-none);
 }
 
 .commu-graph-node-head {
@@ -1160,7 +1160,7 @@
 .commu-graph-node-text small {
     color: var(--text-muted);
     font-size: 0.88rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
 }
 
 .commu-graph-node-toggle {
@@ -1173,7 +1173,7 @@
     border: 1px solid var(--border);
     color: var(--text-secondary);
     font-size: 1.1rem;
-    line-height: 1;
+    line-height: var(--leading-none);
 }
 
 .commu-graph-node.is-open .commu-graph-node-toggle {
@@ -1219,7 +1219,7 @@
 .commu-graph-stage p {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 /* ── Misconception cards ────────────────────────────────────────── */
@@ -1272,7 +1272,7 @@
     margin: 0;
     color: var(--text-primary);
     font-weight: 600;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 
 .commu-myth-verdict {
@@ -1292,7 +1292,7 @@
     margin: 0;
     padding-top: 4px;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-myth-reveal {
@@ -1352,14 +1352,14 @@
 .commu-case-scene {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-case-question {
     margin: 0;
     color: var(--text-primary);
     font-weight: 600;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 
 .commu-case-answer {
@@ -1382,7 +1382,7 @@
 .commu-case-answer p {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-case-reveal {
@@ -1438,7 +1438,7 @@
 .commu-debate-line p {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-debate-toggle {
@@ -1466,7 +1466,7 @@
 .commu-debate-takeaway p {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 @media (max-width: 640px) {
@@ -1559,7 +1559,7 @@
     margin: 0;
     color: var(--text-muted);
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 
 .commu-dc-list {
@@ -1618,7 +1618,7 @@
 
 .commu-dc-title strong {
     font-size: 0.98rem;
-    line-height: 1.4;
+    line-height: var(--leading-snug);
 }
 
 .commu-dc-status {
@@ -1665,7 +1665,7 @@
 .commu-dc-briefing {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.75;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-dc-question {
@@ -1692,7 +1692,7 @@
     text-align: left;
     cursor: pointer;
     font-size: 0.92rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
 }
 
 button.commu-dc-option:hover { border-color: var(--link); }
@@ -1729,7 +1729,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     font-size: 0.85rem;
     font-weight: 400;
     color: var(--text-secondary);
-    line-height: 1.65;
+    line-height: var(--leading-normal);
     border-top: 1px dashed var(--border);
     padding-top: 8px;
 }
@@ -1768,7 +1768,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-dc-block p {
     margin: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
 }
 
 .commu-dc-redo,
@@ -1865,7 +1865,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-dc-profile {
     margin: 0;
     color: var(--text-primary);
-    line-height: 1.75;
+    line-height: var(--leading-relaxed);
     font-weight: 500;
 }
 
@@ -1879,7 +1879,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin: 0;
     color: var(--text-muted);
     font-size: 0.85rem;
-    line-height: 1.65;
+    line-height: var(--leading-normal);
 }
 
 @media (max-width: 640px) {
@@ -2131,7 +2131,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-muted);
     content: '›';
     font-size: 1.5rem;
-    line-height: 1;
+    line-height: var(--leading-none);
     position: absolute;
     /* The glyph is rotated, so its rendered box is wider than the unrotated one.
        At right: 8px it reached 5px past the summary and put the whole page into a
@@ -2215,7 +2215,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-role-category-copy h3 {
     font-size: 1.02rem;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     margin: 0 0 5px;
 }
 
@@ -2307,14 +2307,14 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-office-card-head h3 {
     color: var(--text-primary);
     font-size: 1.02rem;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     margin: 0 0 5px;
 }
 
 .commu-office-card-head p {
     color: var(--text-muted);
     font-size: 0.82rem;
-    line-height: 1.45;
+    line-height: var(--leading-snug);
     margin: 0;
 }
 
@@ -2339,7 +2339,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-muted);
     font-family: 'Courier New', monospace;
     font-size: 0.76rem;
-    line-height: 1.45;
+    line-height: var(--leading-snug);
     overflow-wrap: anywhere;
 }
 
@@ -2387,7 +2387,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-lineage-step p {
     color: var(--text-muted);
     font-size: 0.84rem;
-    line-height: 1.55;
+    line-height: var(--leading-normal);
     margin: 4px 0 0;
 }
 
@@ -2402,7 +2402,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-primary);
     font-size: 0.88rem;
     font-weight: 800;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     text-decoration: none;
 }
 
@@ -2415,7 +2415,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-secondary);
     font-size: 0.78rem;
     font-style: normal;
-    line-height: 1.35;
+    line-height: var(--leading-snug);
 }
 
 .commu-office-main em {
@@ -2472,7 +2472,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-muted);
     content: '›';
     font-size: 1.5rem;
-    line-height: 1;
+    line-height: var(--leading-none);
     position: absolute;
     /* The glyph is rotated, so its rendered box is wider than the unrotated one.
        At right: 8px it reached 5px past the summary and put the whole page into a
@@ -2766,7 +2766,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin: 0;
     font-size: 1.05rem;
     color: var(--text-primary);
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2825,7 +2825,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: inline-flex;
     align-items: center;
     border-radius: 2px;
-    line-height: 1;
+    line-height: var(--leading-none);
 }
 
 .commu-flag-link:hover,
@@ -2921,7 +2921,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-world-map-controls button {
     align-items: center; background: var(--btn-bg); border: 1px solid var(--border);
     color: var(--text-primary); cursor: pointer; display: flex; font: inherit; font-size: 1.15rem;
-    font-weight: 700; height: 34px; min-height: 34px; justify-content: center; line-height: 1; padding: 0; width: 34px; min-width: 34px; flex: 0 0 34px;
+    font-weight: 700; height: 34px; min-height: 34px; justify-content: center; line-height: var(--leading-none); padding: 0; width: 34px; min-width: 34px; flex: 0 0 34px;
 }
 .commu-world-map-controls button:hover,
 .commu-world-map-controls button:focus-visible { background: var(--btn-hover); }
@@ -2931,7 +2931,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-world-map-legend i { background: color-mix(in srgb, var(--accent) 62%, transparent); border: 1px solid var(--accent); display: inline-block; height: 12px; width: 20px; }
 .commu-world-map-legend i.is-historical { background: repeating-linear-gradient(135deg, transparent 0 4px, color-mix(in srgb, var(--clr-red) 65%, transparent) 4px 6px); border-color: var(--clr-red); border-style: dashed; }
 .commu-world-map-legend i.is-region { background: color-mix(in srgb, var(--link) 25%, transparent); border-color: var(--link); border-style: dotted; }
-.commu-world-map-note { color: var(--text-muted); font-size: .79rem; line-height: 1.55; margin: 9px 0 0; }
+.commu-world-map-note { color: var(--text-muted); font-size: .79rem; line-height: var(--leading-normal); margin: 9px 0 0; }
 .commu-country-groups { display: grid; gap: 1.2rem; }
 .commu-country-group > h2 { font-size: 1.08rem; margin: 0 0 .55rem; }
 .commu-country-grid { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
@@ -3011,7 +3011,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: inline-block;
     font-size: 0.74rem;
     font-weight: 600;
-    line-height: 1;
+    line-height: var(--leading-none);
     padding: 4px 8px;
     border-radius: 999px;
     border: 1px solid var(--border);
@@ -3051,7 +3051,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin: 0;
     font-size: 0.95rem;
     font-weight: 700;
-    line-height: 1.45;
+    line-height: var(--leading-snug);
     color: var(--text-primary);
 }
 
@@ -3099,7 +3099,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-muted));
     font-size: 0.9rem;
     font-style: italic;
-    line-height: 1.55;
+    line-height: var(--leading-normal);
     margin: 0;
     padding-left: 10px;
 }
@@ -3107,7 +3107,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-bio {
     margin: 0;
     font-size: 0.88rem;
-    line-height: 1.65;
+    line-height: var(--leading-relaxed);
     color: var(--text-secondary);
 }
 
@@ -3174,7 +3174,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     gap: 10px;
     align-items: baseline;
     font-size: 0.84rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
 }
 
 .commu-career-year {
@@ -3207,7 +3207,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-scene-chip {
     display: inline-block;
     font-size: 0.76rem;
-    line-height: 1;
+    line-height: var(--leading-none);
     padding: 5px 9px;
     border-radius: 999px;
     border: 1px solid var(--border);
@@ -3262,7 +3262,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     color: var(--text-primary);
     font-size: clamp(1.6rem, 3vw, 2.45rem);
     letter-spacing: 0;
-    line-height: 1.12;
+    line-height: var(--leading-tight);
     margin: 0;
 }
 
@@ -3304,7 +3304,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-hub-section h2 {
     color: var(--text-primary);
     font-size: 1.24rem;
-    line-height: 1.25;
+    line-height: var(--leading-tight);
     margin: 0 0 12px;
 }
 
@@ -3319,7 +3319,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-markdown {
     color: var(--text-secondary);
     font-size: 0.96rem;
-    line-height: 1.78;
+    line-height: var(--leading-prose);
 }
 
 .commu-person-markdown > *:first-child {
@@ -3347,7 +3347,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-markdown h6 {
     color: var(--text-primary);
     font-size: 1.05rem;
-    line-height: 1.35;
+    line-height: var(--leading-snug);
     margin: 1.2em 0 0.5em;
 }
 
@@ -3413,14 +3413,14 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     color: var(--text-primary);
     font-size: clamp(1.55rem, 3vw, 2.3rem);
     letter-spacing: 0;
-    line-height: 1.15;
+    line-height: var(--leading-tight);
     margin: 2px 0 7px;
 }
 
 .commu-hub-head p {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
     margin: 0;
 }
 
@@ -3532,10 +3532,10 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-card:hover .commu-event-original { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 .commu-event-card:hover .commu-event-category { color: var(--clr-cream, #f8edca); background: transparent; border-color: color-mix(in srgb, var(--clr-cream, #f8edca) 45%, var(--accent, #214d2e)); }
 .commu-event-card h2, .commu-event-card h3 { margin: .1rem 0 .15rem; font-size: 1.05rem; }
-.commu-event-card p, .commu-event-head > p { line-height: 1.65; }
+.commu-event-card p, .commu-event-head > p { line-height: var(--leading-normal); }
 /* Type scale taken from the person card: name 1.05rem, prose .88rem, meta
    .78rem, so the card has a hierarchy to scan rather than one flat block. */
-.commu-event-card p { margin: .45rem 0 0; font-size: .88rem; line-height: 1.6; }
+.commu-event-card p { margin: .45rem 0 0; font-size: .88rem; line-height: var(--leading-normal); }
 .commu-event-card .commu-event-period { font-size: .78rem; }
 
 /* Meta row above the title: original script, period, category. Mirrors
@@ -3568,8 +3568,8 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* The head paragraphs are the 개요, read as prose rather than card text, so
    they take the long-form scale below instead of the 1.65 card leading. The
    question line keeps its headline size. */
-.commu-event-head > p { font-size: .96rem; line-height: 1.85; }
-.commu-event-head > p.commu-event-question { font-size: 1.05rem; line-height: 1.6; }
+.commu-event-head > p { font-size: .96rem; line-height: var(--leading-relaxed); }
+.commu-event-head > p.commu-event-question { font-size: 1.05rem; line-height: var(--leading-normal); }
 /* ── Event location map (event-map-svg.js) ──
    Coastline-only SVG under the event head. Land/sea both derive from the
    theme tokens: mixing a little of --border into the surface makes land
@@ -3632,7 +3632,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-control-legend i.is-amber { background: color-mix(in srgb, var(--emap-amber) 34%, transparent); border-color: var(--emap-amber); }
 .commu-event-control-legend i.is-purple { background: color-mix(in srgb, var(--emap-purple) 34%, transparent); border-color: var(--emap-purple); }
 .commu-event-control-legend i.is-gray { background: color-mix(in srgb, var(--emap-gray) 34%, transparent); border-color: var(--emap-gray); }
-.commu-event-control-note { margin: .45rem 0 0; font-size: .8rem; line-height: 1.5; color: var(--text-muted); }
+.commu-event-control-note { margin: .45rem 0 0; font-size: .8rem; line-height: var(--leading-snug); color: var(--text-muted); }
 .commu-event-control-note a { color: inherit; }
 .emap-ref { fill: color-mix(in srgb, var(--text-primary) 65%, transparent); }
 .emap-label.is-ref { fill: var(--text-muted); font-size: 11px; }
@@ -3690,7 +3690,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     display: inline-flex; align-items: center; justify-content: center;
     min-width: 1.3rem; height: 1.3rem; margin-right: .45rem; padding: 0 .2rem;
     border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-    font-style: normal; font-size: .72rem; line-height: 1;
+    font-style: normal; font-size: .72rem; line-height: var(--leading-none);
     color: var(--text-primary);
 }
 .commu-event-timeline-list li[data-geo-num] { cursor: default; }
@@ -3705,7 +3705,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-tl-place {
     display: inline-block; margin-left: .5rem; padding: 0 .45rem;
     border: 1px solid color-mix(in srgb, var(--border) 55%, transparent); border-radius: 999px;
-    font-size: .74rem; font-weight: 600; line-height: 1.5; vertical-align: 1px;
+    font-size: .74rem; font-weight: 600; line-height: var(--leading-snug); vertical-align: 1px;
     color: var(--text-muted);
 }
 .commu-event-timeline-list li.is-place-match { background: color-mix(in srgb, var(--border) 6%, transparent); }
@@ -3772,7 +3772,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Tabs between the two halves of one subject (glossary entry / history entry).
    Built on the dictionary switcher: same gesture, one level down. */
 .commu-pair-tabs { margin: 1rem 0 0; }
-.commu-pair-tab span { display: flex; flex-direction: column; align-items: center; line-height: 1.25; }
+.commu-pair-tab span { display: flex; flex-direction: column; align-items: center; line-height: var(--leading-tight); }
 .commu-pair-tab small { font-weight: 400; font-size: .74rem; opacity: .7; letter-spacing: .02em; }
 .commu-pair-panel[hidden] { display: none; }
 /* An event body is the longest article on the site. Its `## ` parts are the
@@ -3781,7 +3781,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    rule, which is sized for the occasional heading inside a person section. */
 /* Long-form scale mirrors the reference reader (.book: 1.88 leading), one step
    under the UI text around it. */
-.commu-event-body .commu-person-markdown { line-height: 1.88; }
+.commu-event-body .commu-person-markdown { line-height: var(--leading-prose); }
 .commu-event-body .commu-person-markdown h2 {
     font-size: 1.22rem;
     margin: 2em 0 .7em;
@@ -3815,7 +3815,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     border-bottom: 1px solid var(--border);
 }
 .commu-event-toc ol { margin: 0; padding: 0; list-style: none; counter-reset: event-toc; }
-.commu-event-toc li { padding: 0; line-height: 1.5; counter-increment: event-toc; }
+.commu-event-toc li { padding: 0; line-height: var(--leading-snug); counter-increment: event-toc; }
 .commu-event-toc li + li { border-top: 1px solid var(--border); }
 .commu-event-toc a {
     display: grid;
@@ -3868,7 +3868,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
 .commu-event-toc .commu-section-flags { margin-right: .45rem; vertical-align: -1px; }
 .commu-event-toc .commu-section-flags .commu-flag { width: 17px; height: 12px; }
-.commu-event-timeline-list p { margin: .25rem 0 0; line-height: 1.6; }
+.commu-event-timeline-list p { margin: .25rem 0 0; line-height: var(--leading-normal); }
 
 /* 결과 and the timeline entries are read as continuous prose in the same column
    as the body, so they take the body's measure (.96rem/1.88 above); without it
@@ -3876,7 +3876,7 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-event-outcome p,
 .commu-event-timeline-list p {
     font-size: .96rem;
-    line-height: 1.88;
+    line-height: var(--leading-prose);
 }
 .commu-event-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .8rem; }
 .commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--accent, #b84f4f); font-style: normal; font-weight: 700; font-size: .9rem; }
@@ -4071,7 +4071,7 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 }
 .commu-dict-chip.is-active span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 /* The reference library's chips are links (script-less fallback to ?kind=…). */
-a.commu-dict-chip { display: inline-block; text-decoration: none; line-height: 1.3; }
+a.commu-dict-chip { display: inline-block; text-decoration: none; line-height: var(--leading-tight); }
 a.commu-dict-chip:hover { text-decoration: none; }
 
 .commu-docs-page .commu-event-grid,
@@ -4100,7 +4100,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-term-sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
 .commu-term-sources h2 { font-size: 1rem; margin: 0 0 .6rem; }
 .commu-term-sources ol { margin: 0; padding-left: 1.3rem; }
-.commu-term-sources li { margin-bottom: .5rem; font-size: .88rem; line-height: 1.55; }
+.commu-term-sources li { margin-bottom: .5rem; font-size: .88rem; line-height: var(--leading-normal); }
 .commu-term-sources a { color: var(--link); }
 .commu-term-source-note { display: block; color: var(--text-muted); }
 
@@ -4125,7 +4125,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     margin: 0;
     padding: .75rem 1rem;
     border-bottom: 1px solid var(--border);
-    line-height: 1.4;
+    line-height: var(--leading-snug);
 }
 .commu-doc-excerpt-head span { font-size: .78rem; color: var(--text-muted); }
 .commu-doc-excerpt-head strong { font-size: 1.02rem; color: var(--text-primary); }
@@ -4133,7 +4133,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     position: relative;
     padding: .4rem 1rem 1rem;
     font-size: .95rem;
-    line-height: 1.85;
+    line-height: var(--leading-prose);
     color: var(--text-primary);
     overflow-wrap: break-word;
 }
@@ -4170,7 +4170,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-excerpt-body h4 {
     margin: 1.1em 0 .3em;
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: var(--leading-snug);
     color: var(--text-primary);
     word-break: keep-all;
 }
@@ -4182,7 +4182,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     border-left: 3px solid var(--border-emphasis);
     color: var(--text-secondary);
 }
-.commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: 1; text-decoration: none; }
+.commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: var(--leading-none); text-decoration: none; }
 .commu-doc-excerpt-body .notes-list { font-size: .85em; color: var(--text-muted); padding-left: 1.6em; }
 .commu-doc-excerpt-body .notes-list .back-link { text-decoration: none; margin-left: .25em; }
 .commu-doc-excerpt-more {
@@ -4470,7 +4470,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-drill-promo p {
     color: var(--text-secondary);
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     margin: 0;
 }
 
@@ -4509,7 +4509,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-drill-card-desc {
     color: var(--text-secondary);
     font-size: 0.88rem;
-    line-height: 1.45;
+    line-height: var(--leading-snug);
 }
 
 .commu-drill-card-meta {
@@ -4527,7 +4527,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     color: var(--text-secondary);
     display: grid;
     gap: 6px;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
     margin: 0 0 16px;
     padding: 12px 14px;
 }
@@ -4584,7 +4584,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-drill-order-label {
     flex: 1;
-    line-height: 1.4;
+    line-height: var(--leading-snug);
 }
 
 .commu-drill-order-reveal {
@@ -4714,7 +4714,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-short-prompt {
     margin: 0;
     font-size: 1.3rem;
-    line-height: 1.4;
+    line-height: var(--leading-snug);
 }
 
 .commu-short-quote {
@@ -4731,7 +4731,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin: 0;
     font-family: var(--font-display);
     font-size: clamp(1.7rem, 7vw, 2.4rem);
-    line-height: 1.25;
+    line-height: var(--leading-tight);
 }
 
 .commu-short-reveal {
@@ -4775,14 +4775,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     color: var(--text-primary);
     font-size: 1.08rem;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
 }
 
 .commu-short-rest {
     margin: 0;
     color: var(--text-secondary);
     font-size: 0.92rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4815,7 +4815,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-politburo-intro,
 .commu-politburo-era-intro {
     color: var(--text-primary);
-    line-height: 1.65;
+    line-height: var(--leading-normal);
     margin: 0;
     word-break: normal;
 }
@@ -4824,7 +4824,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-politburo-era-intro {
     color: var(--text-muted);
     font-size: 0.88rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 
 .commu-politburo-era,
@@ -4952,7 +4952,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-congress-note {
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: var(--leading-normal);
     margin: 0;
     padding: 0 12px 4px;
 }
@@ -4969,7 +4969,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-politburo-sources {
     color: var(--text-muted);
     font-size: 0.85rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
     margin: 0;
 }
 
@@ -4989,14 +4989,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-person-politburo-stints li {
     font-size: 0.84rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     white-space: nowrap;
 }
 
 .commu-person-politburo-note {
     color: var(--text-muted);
     font-size: 0.84rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
     margin: 8px 0 0;
 }
 
@@ -5041,7 +5041,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     color: var(--text-muted);
     margin: 0;
     padding: .7rem .9rem;
-    line-height: 1.5;
+    line-height: var(--leading-snug);
 }
 .commu-event-relations-box {
     background: var(--bg-surface);
@@ -5057,7 +5057,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     align-items: center;
     gap: .15rem .75rem;
     padding: .62rem .9rem;
-    line-height: 1.45;
+    line-height: var(--leading-snug);
     text-decoration: none;
 }
 .commu-event-relations-title { flex: 1 1 14rem; min-width: 0; }
@@ -5122,7 +5122,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin: 12px 0;
     color: var(--text-muted);
     font-size: 0.82rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
 }
 .commu-updates-group {
     border-top: 1px solid var(--border);
@@ -5161,7 +5161,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin-top: 6px;
     color: var(--text-secondary);
     font-size: 0.82rem;
-    line-height: 1.65;
+    line-height: var(--leading-normal);
 }
 
 /* Landing page: align the menu to the frame, leaving reading space for copy. */
@@ -5186,7 +5186,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin: 0;
     color: var(--text-secondary);
     font-size: 0.88rem;
-    line-height: 1.6;
+    line-height: var(--leading-normal);
     word-break: keep-all;
     overflow-wrap: anywhere;
 }
@@ -5229,7 +5229,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commulingo-home .commu-book-group-title {
     font-size: 1.2rem;
-    line-height: 1.4;
+    line-height: var(--leading-snug);
     margin-bottom: 14px;
 }
 .commulingo-home .commu-book-card {
@@ -5241,7 +5241,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commulingo-home .commu-book-card h3 {
     font-size: 1.05rem;
-    line-height: 1.45;
+    line-height: var(--leading-snug);
 }
 @media (max-width: 560px) {
     .commulingo-home .commulingo-hero-main {

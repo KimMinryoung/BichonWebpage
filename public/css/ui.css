@@ -159,7 +159,7 @@ svg {
     display: block;
     margin-top: var(--space-1);
     font-size: var(--text-sm);
-    line-height: 1.45;
+    line-height: var(--leading-snug);
 }
 
 .ui-auth-switch {
@@ -221,7 +221,7 @@ svg {
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: var(--leading-tight);
     text-align: center;
     transition:
         color var(--duration-fast) var(--ease-standard),
@@ -304,7 +304,7 @@ svg {
     border: var(--border-width) solid var(--border);
     border-radius: var(--radius-sm);
     font-size: var(--text-xs);
-    line-height: 1.2;
+    line-height: var(--leading-tight);
 }
 
 /* A compact navigation row. The wrapper and individual links both use this
