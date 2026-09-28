@@ -4749,12 +4749,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     outline-offset: 3px;
 }
 
-.commu-short-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+.commu-short-more {
+    align-self: flex-start;
 }
 
 .commu-short-answer {

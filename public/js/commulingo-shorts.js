@@ -135,26 +135,23 @@
         observer.observe(article);
     }
 
+    // 「자세히 보기」는 답 바로 아래에 둔다. 해설이 길어 작은 화면에서 넘쳐도
+    // 링크는 보이게 하기 위해서다. 다음 카드는 위로 밀어 넘긴다.
     function showAnswer(card, after) {
         var answer = el('div', 'commu-short-answer');
         answer.appendChild(el('p', 'commu-short-answer-text', text(card.answer)));
-        if (card.explanation) answer.appendChild(el('p', 'commu-short-rest', text(card.explanation)));
-        after.appendChild(answer);
-        var actions = el('div', 'commu-short-actions');
         if (card.href) {
-            var more = el('a', 'commu-drill-lookup', strings.shortsMore || 'Learn more');
+            var more = el('a', 'commu-drill-lookup commu-short-more', strings.shortsMore || 'Learn more');
             more.href = card.href;
             more.target = '_blank';
             more.rel = 'noopener';
-            actions.appendChild(more);
+            answer.appendChild(more);
         }
-        var next = el('button', 'btn btn-small commu-short-next', (strings.shortsNext || 'Next card') + ' ↓');
-        next.type = 'button';
-        next.addEventListener('click', function() { goTo(currentIndex + 1); });
-        actions.appendChild(next);
-        after.appendChild(actions);
+        if (card.explanation) answer.appendChild(el('p', 'commu-short-rest', text(card.explanation)));
+        after.appendChild(answer);
         after.hidden = false;
-        next.focus({ preventScroll: true });
+        // 숨긴 버튼에서 초점이 사라지지 않게 피드로 옮겨 ↑↓로 계속 넘기게 한다.
+        feed.focus({ preventScroll: true });
     }
 
     // --------------------------------------------------------------- 넘기기
