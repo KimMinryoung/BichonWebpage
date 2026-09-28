@@ -269,7 +269,7 @@ function listCommuLingoDocExcerptsFor(kind, id) {
 
 // One piece of a document: from the heading carrying `anchor` to the next
 // heading of the same or a higher level. The title heading comes back as text
-// (the box prints its own), the headings inside drop one level to sit under
+// (the box prints its own), the editor's note stays in the reader, the headings inside drop one level to sit under
 // the entry page's h2, and the notes the piece calls are brought along. A
 // fragment link to anything else in the document goes to the reader instead.
 function getCommuLingoDocSection(doc, anchor) {
@@ -281,7 +281,8 @@ function getCommuLingoDocSection(doc, anchor) {
     const next = heads.slice(start + 1).find(head => Number(head[1]) <= level);
     let body = html.slice(heads[start].index + heads[start][0].length, next ? next.index : html.length)
         .replace(/<\/article>\s*$/, '')
-        .replace(/<section[^>]*class="notes"[\s\S]*?<\/section>/g, '');
+        .replace(/<section[^>]*class="notes"[\s\S]*?<\/section>/g, '')
+        .replace(/<aside[^>]*class="doc-editorial"[\s\S]*?<\/aside>/g, '');
     const noteIds = [...body.matchAll(/class="note-ref"[^>]*href="#([^"]+)"|href="#([^"]+)"[^>]*class="note-ref"/g)]
         .map(m => m[1] || m[2]);
     const notes = noteIds.map(noteId => {

@@ -4106,12 +4106,11 @@ a.commu-dict-chip:hover { text-decoration: none; }
 
 /* A piece of a reference document printed on the entry page (manifest
    `excerpts`). Set like the reader (commulingo-doc.css): long-form measure,
-   justified Korean prose, the editor's note marked off from the source. The
+   justified Korean prose, without the editor's note the reader carries. The
    box scrolls on its own so a long text does not push the rest of the entry
    out of reach; the link under it opens the piece in the full reader. */
 .commu-doc-excerpt {
     border: 1px solid var(--border);
-    border-radius: 6px;
     background: var(--bg-surface);
 }
 .commu-doc-excerpt-head {
@@ -4147,18 +4146,6 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 .commu-doc-excerpt-body h4 { font-size: .95rem; }
 .commu-doc-excerpt-body .doc-byline { color: var(--text-secondary); font-size: .9em; text-align: start; }
-.commu-doc-excerpt-body .doc-editorial {
-    margin: .9rem 0 1.1rem;
-    padding: .6rem .8rem;
-    border-left: 3px solid var(--btn-primary);
-    background: var(--bg-inset);
-    font-size: .88em;
-    color: var(--text-secondary);
-}
-.commu-doc-excerpt-body .doc-editorial p { margin: 0 0 .4em; text-align: start; }
-.commu-doc-excerpt-body .doc-editorial ul { margin: .4em 0 0; padding-left: 1.15em; }
-.commu-doc-excerpt-body .doc-editorial li { text-align: start; word-break: break-word; }
-.commu-doc-excerpt-body .doc-editorial-label { font-size: .82em; font-weight: 600; color: var(--text-muted); }
 .commu-doc-excerpt-body blockquote {
     margin: .8em 0;
     padding-left: 1em;
