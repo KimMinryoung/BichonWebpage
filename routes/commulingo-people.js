@@ -183,16 +183,12 @@ router.get('/offices/:officeId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.officeId === office.id));
         const relatedReports = await relatedReportsForTopic('office', office.id, lang);
         setShortPublicCache(res);
         res.render('public/commulingo-office', {
             office,
-            people,
             relatedReports,
             roleIconSvg,
-            roleHubHref,
-            linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? `${office.title} — People` : `${office.title} — 인물 사전`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,

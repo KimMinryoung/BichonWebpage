@@ -61,15 +61,6 @@
             </ol>
         </section>
 
-        <section class="commu-hub-section" aria-labelledby="office-people">
-            <h2 id="office-people"><%= strings.commuLingoViews.office.people2 %></h2>
-            <div class="commu-people-grid">
-                <% people.forEach(function(person) { %>
-                <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg }) %>
-                <% }) %>
-            </div>
-        </section>
-
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
         <section class="commu-hub-section commu-related-reports" aria-labelledby="related-reports">
             <h2 id="related-reports"><%= strings.commuLingoViews.office.relatedReports %></h2>
