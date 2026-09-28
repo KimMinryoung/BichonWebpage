@@ -43,10 +43,12 @@ function isPublicHtmlPath(reqPath) {
 function isPublicCommuLingoDataPath(reqPath) {
     const lessonPrefix = '/commulingo/lesson/';
     const drillDeckPrefix = '/commulingo/drill/deck/';
+    const shortsFeedPrefix = '/commulingo/drill/shorts/feed/';
     return reqPath === '/commulingo/catalog.json'
         || reqPath.startsWith('/commulingo/api/')
         || (reqPath.startsWith(lessonPrefix) && !reqPath.slice(lessonPrefix.length).includes('/'))
-        || (reqPath.startsWith(drillDeckPrefix) && !reqPath.slice(drillDeckPrefix.length).includes('/'));
+        || (reqPath.startsWith(drillDeckPrefix) && !reqPath.slice(drillDeckPrefix.length).includes('/'))
+        || (reqPath.startsWith(shortsFeedPrefix) && !reqPath.slice(shortsFeedPrefix.length).includes('/'));
 }
 
 function isLanguageSpecificPublicPath(reqPath) {

@@ -18,6 +18,14 @@
             </div>
         </header>
 
+        <section class="box commu-drill-promo" aria-label="<%= strings.commuLingo.shorts %>">
+            <div>
+                <h2><%= strings.commuLingo.shorts %></h2>
+                <p><%= strings.commuLingo.shortsDesc %></p>
+            </div>
+            <a class="btn btn-primary" href="/commulingo/drill/shorts"><%= strings.commuLingo.shortsOpen %></a>
+        </section>
+
         <div id="commuDrillDeckList">
         <% groups.forEach(function(group) { %>
         <section class="commu-drill-group" aria-label="<%= group.label %>">

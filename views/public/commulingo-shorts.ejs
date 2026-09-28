@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <%- include('../partials/head') %>
+</head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+
+    <main class="container commulingo-shell commu-shorts-shell" data-lang="<%= lang %>">
+        <script id="commulingo-shorts-meta" type="application/json"><%- JSON.stringify(shortsMeta).replace(/</g, '\\u003c') %></script>
+        <%- include('../partials/commulingo-crumb', {
+            trail: [
+                { label: strings.commuLingo.drill, href: '/commulingo/drill' },
+                { label: strings.commuLingo.shorts }
+            ] }) %>
+
+        <h1 class="visually-hidden"><%= strings.commuLingo.shorts %></h1>
+        <section class="commu-shorts" aria-label="<%= strings.commuLingo.shorts %>">
+            <p class="commu-shorts-streak" id="shortsStreak" aria-live="polite" hidden></p>
+            <div class="commu-shorts-feed" id="shortsFeed" tabindex="0" aria-describedby="shortsDesc">
+                <p class="commu-shorts-loading" id="shortsLoading"><%= strings.commuLingo.shortsLoading %></p>
+            </div>
+            <p class="visually-hidden" id="shortsDesc"><%= strings.commuLingo.shortsDesc %></p>
+        </section>
+        <%- include('../partials/commulingo-measurement') %>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <script>
+        window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
+    </script>
+    <script src="/js/commulingo-shorts.js?v=<%= assetVersion %>"></script>
+</body>
+</html>
