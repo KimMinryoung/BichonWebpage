@@ -56,8 +56,11 @@ const LENGTH_RATIO_MAX = 1.75;
 const EXPLANATION_MIN = { ko: 60, en: 80 };
 const CHOICE_FEEDBACK_MIN = 15;
 const HONORIFIC = /(습니다|습니까|십시오|세요|합니다|됩니다|입니다|였습니다|했습니다|봅니다|보세요)/;
-const TEMPLATE_PROMPT_KO = /\d+\s*장의\s*(체계적\s*)?(역할|의미|위치)(은|는)?\s*무엇/;
-const TEMPLATE_PROMPT_EN = /systematic (role|meaning|place) of chapter \d+/i;
+// Also the book-structure questions (how Chapter N leads into M, what a chapter
+// adds to the volume's argument, its place in the book): they test the table of
+// contents, not a concept, and read as nothing on a Shorts card.
+const TEMPLATE_PROMPT_KO = /\d+\s*장의\s*(체계적\s*)?(역할|의미|위치)(은|는)?\s*무엇|\d+\s*장[^?]{0,50}\d+\s*장[^?]{0,30}(이어|넘어|넘기|넘겨|준비|잇는)|체계적\s*(역할|의미|의의|위치)|전체\s*논지|책\s*전체|어떤 위치를 차지|결론 역할|출발점이 되는|넘기는 질문|넘기는가|(분석|논의|논증|비판|도식)[으이]?로 (이어|넘어)|분석 뒤에[^?]{0,20}(이어|따라)|넘어가는 발판|\d권 전체의 (출발점|결론)/;
+const TEMPLATE_PROMPT_EN = /systematic (role|meaning|place|significance)|overall argument|(book|volume) as a whole|Chapter \d+[^?]{0,80}\b(leads?|hands?|pass(es)?|prepares?)\b[^?]{0,60}Chapters? \d+|conclusion of Volume|starting point of Volume|\bleads? (in)?to (the )?(later |next )?(Volume \w+'?s? )?(analysis|discussion|scheme)|\b(hands?|pass(es)?) (over|on) to\b/i;
 const META_PROMPT_KO = /(핵심은 무엇인가|분석하는 것은 무엇인가|가장 정확한 요약|한 문장으로 압축|다음 중 올바른 설명|읽는 방식|원문에서|맥락화)/;
 // An explanation that opens by narrating the question's role in the lesson
 // arc (개념의 출발점은 …, 심화의 핵심은 …, 사례 적용에서는 …) tells the

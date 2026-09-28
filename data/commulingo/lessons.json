@@ -2662,52 +2662,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "『자본론』 1권 4장 「자본의 일반 공식」은 M-C-M′이 “표면적으로 볼 때” 자본의 일반 공식이라고만 말하고 그친다. 이 조심스러운 표현은 1권 전체의 운동에서 어떤 다음 단계를 향해 열려 있는가?",
-                    "en": "Capital, Volume I, Chapter 4, “The General Formula for Capital,” only says that M-C-M′ is the general formula of capital “as it appears prima facie.” Where does this guarded phrasing open onto in the movement of Volume I as a whole?"
+                    "ko": "상인이 £100로 면화를 사서 £110에 팔았다. 그는 이 £110을 금고에 넣어 두지 않고 곧바로 다시 면화를 사들인다. 마르크스의 분석으로 보면 이 운동은 왜 £110에서 멈추지 않는가?",
+                    "en": "A merchant buys cotton for £100 and sells it for £110. Instead of locking the £110 away, he at once buys cotton again. On Marx’s analysis, why does this movement not stop at £110?"
                   },
                   "choices": {
                     "ko": [
-                      "가치법칙에 따른 등가교환 아래서 잉여가치가 어떻게 발생하는지를 캐물어, 결국 노동력이라는 특수한 상품의 분석으로 나아가야 한다는 과제",
-                      "자본의 일반 공식이 이미 완결된 설명이므로, 다음 장들은 그것을 역사적 사례로 예시하는 데 그친다는 과제",
-                      "자본이 상업자본과 이자 낳는 자본으로만 존재하며 산업자본 분석은 불필요하다는 결론",
-                      "M과 M′의 차이가 순전히 유통 안의 우연한 사건이므로 더는 이론적으로 다룰 필요가 없다는 결론"
+                      "£110도 £100처럼 한정된 화폐액일 뿐이어서, 가치증식은 순환을 새로 시작할 때만 이어지기 때문이다",
+                      "상인 개인의 끝없는 탐욕이 채워지지 않는 한, 이윤을 좇는 거래도 그칠 줄 모르고 계속 되풀이되기 때문이다",
+                      "원래의 £100은 이미 회수했으니, 새로 생긴 이윤 £10만 다시 투입해 따로 불리려 하기 때문이다",
+                      "면화를 팔아 번 돈으로 결국 자기에게 필요한 물건을 사려면, 먼저 돈을 더 모아야 하기 때문이다"
                     ],
                     "en": [
-                      "The task of asking how surplus-value can arise under the exchange of equivalents governed by the law of value, leading toward the analysis of the special commodity labour-power",
-                      "The conclusion that the general formula already fully explains capital, so later chapters merely illustrate it with historical cases",
-                      "The conclusion that capital exists only as merchant capital and interest-bearing capital, making the analysis of industrial capital unnecessary",
-                      "The conclusion that the difference between M and M′ is a purely accidental event within circulation and needs no further theoretical treatment"
+                      "Like £100, £110 is only a limited sum of money, so value goes on expanding only by starting the circuit afresh",
+                      "As long as the merchant’s personal greed remains unsatisfied, his profit-seeking deals will go on repeating without pause",
+                      "Having recovered the original £100, he puts back only the new £10 of profit to make it grow separately",
+                      "To buy the things he himself needs with the money from cotton, he must first gather more money"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 자본의 운동형태를 세웠을 뿐, 잉여가치가 실제로 어디서 생기는지는 풀지 않은 채 “표면적으로” 라는 유보를 둔다. 상품유통은 등가교환을 원칙으로 하므로, 다음 문제는 등가끼리 교환하면서도 어떻게 잉여가 생기는가이며, 이 물음은 결국 사용할 때 가치를 낳는 특수한 상품, 노동력에 대한 분석으로 이어진다.",
-                    "en": "This chapter only establishes capital's form of movement, leaving where surplus-value actually arises unresolved, hence the guarded phrase “prima facie.” Since commodity circulation is governed by the exchange of equivalents, the next problem is how surplus can arise even while equivalents are exchanged, a question that leads to the analysis of the special commodity that creates value when used: labour-power."
+                    "ko": "£110은 £100보다 많지만 질로 보면 똑같은 화폐이고, 양으로 보면 역시 한정된 가치액이다. 유통에서 빼내 금고에 넣으면 퇴장화폐로 굳어 한 푼도 늘지 않으니, 증식이 목적인 한 £110도 다시 유통에 던져져야 한다. 탐욕이라는 설명이 솔깃하지만, 마르크스는 가치증식이라는 객관적 운동이 자본가의 주관적 목적이 된다고 본다. 그래서 자본으로서 화폐의 유통에는 한계가 없다.",
+                    "en": "£110 is more than £100, yet qualitatively it is the same thing, money, and quantitatively it is just as limited a sum. Withdrawn into a safe it petrifies into a hoard and not a farthing accrues to it, so while expansion is the aim, the £110 must be thrown back into circulation. Greed is the tempting answer, but for Marx the objective movement of self-expanding value becomes the capitalist’s subjective aim. That is why the circulation of capital has no limits."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "바로 이 유보 때문에 등가교환과 잉여가치의 양립이라는 문제가 열리고, 그것이 노동력 상품 분석으로 이어진다.",
-                      "공식 자체가 완결된 설명이라면 굳이 “표면적으로”라는 유보를 둘 이유가 없다는 점에서 이 선택지는 원문의 태도와 어긋난다.",
-                      "상업자본과 이자 낳는 자본은 이 공식이 어떻게 변형되어 나타나는지 보여줄 뿐, 산업자본 분석의 필요성을 없애지 않는다.",
-                      "M과 M′의 차이를 우연으로 처리하면 잉여가치라는 문제 자체가 사라져 버려, 뒤이은 장들의 논증과 맞지 않는다."
+                      "£100과 이윤 £10의 구분은 순환이 끝나는 순간 사라진다. 손에 남는 것은 다시 증식을 시작할 준비가 된 £110 하나이며, 그래서 한 순환의 끝이 곧 다음 순환의 출발점이 된다.",
+                      "탐욕은 수전노에게도 있지만, 수전노는 돈을 유통에서 빼내 지키려다 증식에 실패한다. 운동을 끝없게 만드는 것은 심리가 아니라 화폐로 시작해 화폐로 끝나는 M-C-M′의 형식이다.",
+                      "원래의 £100과 잉여가치 £10은 잠시 구별될 뿐, 순환이 끝나면 한 덩어리 £110이 된다. 그래서 새 순환에 들어가는 것은 이윤만이 아니라 £110 전체다.",
+                      "필요한 물건을 사서 쓰는 것은 사기 위해 파는 C-M-C의 목적이다. 그 운동은 소비라는 유통 밖의 목적에 묶여 끝이 있지만, M-C-M′은 목적이 운동 안에 있어 끝이 없다."
                     ],
                     "en": [
-                      "This very reservation opens the problem of reconciling equivalent exchange with surplus-value, which leads onward to the analysis of the commodity labour-power.",
-                      "If the formula already were a complete explanation there would be no reason for the guarded phrase 'prima facie,' so this option runs against the text's own stance.",
-                      "Merchant and interest-bearing capital only show how this formula appears in transformed guises; they do not remove the need to analyze industrial capital.",
-                      "Treating the M to M' difference as accidental would dissolve the very problem of surplus-value, which does not fit the argument of the chapters that follow."
+                      "The line between the £100 and the £10 of profit vanishes the moment the circuit closes. What remains is a single £110, as fit to start expanding as the £100 was, so each circuit’s end is the next one’s start.",
+                      "The miser shares the greed, yet by keeping money out of circulation he fails to make it grow. What makes the movement endless is not psychology but the form M-C-M′, which starts and ends with money.",
+                      "The original £100 and the £10 of surplus-value are distinct only for a moment; at the close they are one £110. So what enters the new circuit is the whole £110, not just the profit.",
+                      "Buying things for one’s own use is the aim of C-M-C, selling in order to buy. That movement is bounded by consumption, an aim outside circulation, whereas M-C-M′ carries its aim inside itself and never ends."
                     ]
-                  },
-                  "source": {
-                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch04.htm",
-                    "label": {
-                      "ko": "『자본론』 1권 4장 자본의 일반 공식",
-                      "en": "Capital I, Ch. 4 The General Formula for Capital"
-                    },
-                    "quote": {
-                      "ko": "그러므로 M-C-M′은 유통영역 안에서 언뜻 나타나는 대로의 자본의 일반 공식이다.",
-                      "en": "M—C—M′ is therefore in reality the general formula of capital as it appears prima facie within the sphere of circulation."
-                    }
                   }
                 }
               ]
@@ -10496,52 +10485,41 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "10장은 노동일 연장, 12장은 필요노동 단축을 다뤘다. 16장에서 마르크스가 두 방식을 함께 놓고 보려는 이유는 무엇인가?",
-                    "en": "Chapter 10 dealt with lengthening the working day, and Chapter 12 with shortening necessary labor. Why does Marx bring the two together in Chapter 16?"
+                    "ko": "노동일 12시간 가운데 필요노동이 6시간인 두 공장이 있다. A는 노동일을 14시간으로 늘렸고, B는 12시간을 유지했지만 생활수단이 싸져 필요노동이 4시간으로 줄었다. 두 공장에서 각각 무슨 일이 일어났는가?",
+                    "en": "Two factories each run a 12-hour working day with 6 hours of necessary labour. A lengthens the day to 14 hours; B keeps 12 hours, but cheaper means of subsistence cut necessary labour to 4 hours. What has happened in each?"
                   },
                   "choices": {
                     "ko": [
-                      "실제 자본주의 생산에서는 절대적 잉여가치와 상대적 잉여가치가 분리된 순수 형태가 아니라 서로 결합되어 작동하기 때문이다.",
-                      "두 방식이 서로 거의 같은 말이므로 하나만 남기기 위해서이다.",
-                      "상대적 잉여가치는 자본주의와 무관하고 절대적 잉여가치만 실제로 존재하기 때문이다.",
-                      "노동일과 생산성은 가치와 무관하므로 둘 다 폐기하기 위해서이다."
+                      "둘 다 잉여노동이 8시간이 됐다. A는 노동일 연장으로 절대적 잉여가치를, B는 필요노동 단축으로 상대적 잉여가치를 얻었다",
+                      "A만 잉여가치를 더 얻었다. B는 생산성이 올랐을 뿐이고, 노동자가 일하는 시간이 같으니 착취도 그대로다",
+                      "B의 이득은 노동력을 가치보다 싸게 산 데서 나왔다. 생활수단이 싸진 틈을 타 임금을 부당하게 깎았을 뿐이다",
+                      "둘 다 잉여노동이 2시간 늘었으니, 두 방법은 이름만 다를 뿐 자본에게는 서로 구별할 까닭이 없는 방식이다"
                     ],
                     "en": [
-                      "Because in actual capitalist production absolute and relative surplus-value do not exist as isolated pure forms but operate in combination.",
-                      "Because the two forms mean exactly the same thing and one can simply be discarded.",
-                      "Because relative surplus-value has nothing to do with capitalism and only absolute surplus-value really exists.",
-                      "Because the working day and productivity are unrelated to value and should both be abandoned."
+                      "In both, surplus labour is now 8 hours: A gains absolute surplus-value by lengthening the day, B relative surplus-value by shortening necessary labour",
+                      "Only A gains more surplus-value; B has merely raised productivity, and since the hours worked are unchanged, so is exploitation",
+                      "B’s gain comes from buying labour-power below its value, using cheaper subsistence as cover to cut wages unfairly",
+                      "Both add 2 hours of surplus labour, so the two methods differ only in name and capital has no reason to tell them apart"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "노동자를 형식적으로 자본에 종속시키기만 해도 노동일을 늘려 절대적 잉여가치를 뽑아낼 수 있지만, 마르크스가 보여주듯 상대적 잉여가치를 만드는 방법들 자체가 동시에 노동일을 늘리는 결과를 낳는다. 그래서 실제 공장에서는 두 방식이 한데 얽혀 나타난다.",
-                    "en": "Even mere formal subjection of labour to capital suffices to extract absolute surplus-value by lengthening the working day, but Marx shows that the very methods used to produce relative surplus-value simultaneously lengthen the working day. That is why, in an actual factory, both forms appear intertwined rather than separated."
+                    "ko": "두 공장 모두 잉여노동이 6시간에서 8시간으로 늘었지만 길은 다르다. 노동생산성과 강도가 주어져 있으면 잉여가치율은 노동일을 늘려야만 오르고, 노동일이 주어져 있으면 필요노동과 잉여노동의 비율을 바꿔야 오른다. 결과가 같으니 한 가지라고 여기기 쉽지만, 잉여가치율을 올리려는 순간 두 길의 차이가 드러난다. 한쪽은 노동일의 길이를, 다른 쪽은 생산과정 자체를 바꾼다.",
+                    "en": "In both factories surplus labour rises from 6 to 8 hours, but by different roads. With productivity and intensity given, the rate of surplus-value can rise only by lengthening the working day; with the day given, only by changing the ratio of necessary to surplus labour. Since the result looks the same, it is tempting to call them one method, yet the difference shows the moment capital tries to raise the rate: one changes the length of the day, the other the production process itself."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "형식적 종속만으로도 절대적 잉여가치가 나오지만, 상대적 잉여가치를 만드는 매뉴팩처와 기계제조차 노동일을 늘리는 경향을 낳는다는 데 주목하면 두 방식이 왜 겹치는지 더 또렷해진다.",
-                      "두 개념이 같은 말이라면 마르크스가 10장과 12장을 나눠 쓸 이유가 없다. 노동일 연장과 필요노동 단축은 서로 다른 기제이며 그 차이가 분석의 출발점이다.",
-                      "상대적 잉여가치는 매뉴팩처와 기계제 대공업이라는 구체적 역사적 형태로 원문 곳곳에서 다뤄지므로 실재하지 않는다는 말은 성립하지 않는다.",
-                      "노동일과 생산성은 각각 잉여노동과 필요노동의 크기를 정하는 핵심 변수이므로 가치와 무관하다는 진단은 원문의 논지와 반대다."
+                      "B의 방식은 노동자 생활수단을 만드는 산업의 생산성이 올라야 가능하다. 그래서 상대적 잉여가치는 한 공장 안의 일이 아니라 사회 전체의 기술과 생산을 바꾸는 과정과 묶여 있다.",
+                      "B의 노동자는 같은 12시간을 일하지만, 자기 임금의 등가를 4시간 만에 만들어 낸다. 나머지 8시간이 잉여노동이 되므로 노동시간이 같아도 착취도는 오른다.",
+                      "마르크스는 노동력이 가치대로 지불된다고 가정한다. 생활수단이 싸지면 노동력의 가치 자체가 떨어지므로, 임금을 깎지 않고도 더 적게 지불하는 셈이 된다.",
+                      "마르크스도 한 관점에서는 두 잉여가치가 서로를 포함한다고 말한다. 그러나 잉여가치율을 올리는 문제에 이르면, 노동일 연장과 필요노동 단축은 다른 조건을 요구하는 갈림길이 된다."
                     ],
                     "en": [
-                      "Formal subjection alone yields absolute surplus-value, but noting that manufacture and machinery, the very engines of relative surplus-value, also tend to lengthen the working day makes clear why the two overlap.",
-                      "If the two concepts meant the same thing, Marx would not have devoted separate chapters, ten and twelve, to them; lengthening the day and shortening necessary labor are distinct mechanisms.",
-                      "Relative surplus-value appears throughout the text in the concrete historical forms of manufacture and machinery, so calling it nonexistent misreads the argument.",
-                      "Working day and productivity are exactly the variables that fix the sizes of surplus and necessary labor, so claiming they are unrelated to value contradicts the text."
+                      "B’s method needs higher productivity in the industries that make the workers’ means of subsistence. That is why relative surplus-value is tied to changing society’s technique and production, not to one factory alone.",
+                      "B’s workers still work 12 hours, but they now reproduce the equivalent of their wage in 4. The other 8 are surplus labour, so exploitation rises even though the hours do not.",
+                      "Marx assumes labour-power is paid at its value. When subsistence gets cheaper, the value of labour-power itself falls, so capital pays less without cutting below value.",
+                      "From one standpoint Marx grants that each kind of surplus-value contains the other. But once the question is raising the rate, lengthening the day and shortening necessary labour become a fork with different conditions."
                     ]
-                  },
-                  "source": {
-                    "href": "https://www.marxists.org/archive/marx/works/1867-c1/ch16.htm",
-                    "label": {
-                      "ko": "『자본론』 1권 16장 절대적 잉여가치와 상대적 잉여가치",
-                      "en": "Capital I, Ch. 16 Absolute and Relative Surplus-Value"
-                    },
-                    "quote": {
-                      "ko": "우리는 상대적 잉여가치를 생산하는 방법들이 동시에 절대적 잉여가치를 생산하는 방법이기도 하다는 것을 보았다.",
-                      "en": "we have seen, how the methods of producing relative surplus-value, are, at the same time, methods of producing absolute surplus-value."
-                    }
                   }
                 },
                 {
@@ -12363,40 +12341,40 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "임금이 노동 전체의 대가처럼 나타나는 다음 국면으로 넘어가기에 앞서, 여러 공식을 비교해 둔 작업은 무엇을 준비해 두는가?",
-                    "en": "Before moving into the stage where wages appear as payment for all labor, what does this comparison of formulas prepare for?"
+                    "ko": "한 보고서는 영국 농업노동자가 새로 만든 가치의 1/4만 받고, 차지농업가가 3/4을 가져가 그 가운데 일부를 지주 등에게 넘긴다고 쓴다. 마르크스의 공식으로 이 사례를 읽으면 무엇이 보이는가?",
+                    "en": "A report says the English farm labourer gets only a quarter of the newly created value, while the farmer takes three quarters and passes part of it to the landlord and others. Read with Marx’s formulas, what does this case show?"
                   },
                   "choices": {
                     "ko": [
-                      "착취관계를 시간·화폐 비율로 정확히 표현하는 공식과, 그것을 흐리는 표현을 구별해 두어 이어지는 임금 분석의 토대를 놓는다.",
-                      "잉여가치율 공식이 충분하지 않으므로 임금 분석에서는 가치법칙을 버려야 한다고 결론낸다.",
-                      "불변자본이 새 가치를 만든다는 사실을 공식으로 증명한다.",
-                      "노동일과 필요노동의 구분이 실제로 없다는 점을 보여준다."
+                      "잉여노동 대 필요노동이 3:1이니 착취도는 300%이고, 지주에게 넘어갈 몫까지 모두 불불노동이다",
+                      "잉여가치는 새 가치의 75%이며, 잉여가치가 새 가치 전체를 넘을 수는 없으니 착취도는 100% 미만에 머문다",
+                      "착취가 드러나는 것은 차지농업가의 이윤뿐이며, 지주에게 가는 지대는 토지가 생산에 보탠 몫의 대가다",
+                      "3/4에는 종자와 농기구를 보전할 몫이 섞여 있으므로, 이 수치만으로는 잉여가치율을 계산할 수 없다"
                     ],
                     "en": [
-                      "It distinguishes formulas that precisely express the relation of exploitation in time and money ratios from those that blur it, laying the groundwork for the coming analysis of wages.",
-                      "It concludes that all formulas for the rate of surplus-value are wrong and that wage analysis must abandon the law of value.",
-                      "It proves by formula that constant capital creates new value.",
-                      "It shows that the distinction between working day and necessary labor does not really exist."
+                      "Surplus to necessary labour is 3:1, so exploitation is 300%, and even the landlord’s share is unpaid labour",
+                      "Surplus-value is 75% of the new value, and since it can never exceed the whole new value, exploitation stays below 100%",
+                      "Exploitation shows only in the farmer’s profit; the rent paid to the landlord rewards the land’s contribution to production",
+                      "The three quarters include the part that replaces seed and tools, so these figures alone cannot give the rate of surplus-value"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "공식 비교는 잉여가치율 분석을 정리하면서, 어떤 표현이 착취를 그대로 드러내고 어떤 표현이 이를 분배문제처럼 보이게 흐리는지 구별해둔다. 임금형태에서는 바로 이 흐려진 표현이 노동의 가격이라는 모습으로 전도되어 나타나므로, 이 구별이 뒤이어 임금을 분석할 때 그대로 필요해진다.",
-                    "en": "Comparing the formulas organizes the analysis of the rate of surplus-value by distinguishing which expressions reveal exploitation as it is and which blur it into something like a distribution problem. In the wage-form, precisely this blurred expression reappears inverted as the price of labor, so this distinction remains essential for the coming analysis of wages."
+                    "ko": "노동자 몫 1/4은 필요노동, 나머지 3/4은 잉여노동에 해당하므로 실제 착취도는 3:1, 곧 300%다. 잉여가치를 새 가치 전체로 나누면 75%가 나와 결코 100%를 넘을 수 없는 것처럼 보이지만, 그 식은 노동일이 어떤 비율로 나뉘는지만 보여 준다. 몫을 나누는 표현은 각자 기여한 만큼 가져가는 연합처럼 보이게 하지만, 3/4이 나중에 이윤이 되든 지대가 되든 그 실체는 불불노동이다.",
+                    "en": "The labourer’s quarter is necessary labour and the remaining three quarters surplus labour, so the real degree of exploitation is 3:1, or 300%. Dividing surplus-value by the whole new value yields 75% and makes it look as if the rate could never pass 100%, but that ratio shows only how the day is split. Talk of shares suggests an association where each takes what he contributed, yet whether the three quarters end up as profit or rent, in substance they are unpaid labour."
                   },
                   "choiceFeedback": {
                     "ko": [
-                      "마르크스는 이 습관이 자본주의적 생산양식 그 자체에서 비롯된다고 못 박는다. 잘못 고른 표기가 아니라 현실이 스스로 만들어 내는 외관이라는 뜻이다.",
-                      "가치법칙은 버려지지 않으며, 오히려 임금형태 분석은 이 법칙 위에서 착취의 은폐를 설명한다.",
-                      "불변자본은 이 장에서도 여전히 가치를 이전할 뿐 새로 창출하지 않는다는 전제가 유지된다.",
-                      "노동일과 필요노동의 구분은 이 장 전체의 전제이며, 오히려 이 구분이 있어야 공식 비교 자체가 가능하다."
+                      "같은 3/4을 두고도 분모를 새 가치 전체로 잡으면 75%, 필요노동으로 잡으면 300%가 된다. 분모를 무엇으로 삼느냐가 착취관계를 드러내기도 하고 감추기도 한다.",
+                      "잉여가치/새 가치 식은 분자가 분모의 일부라서 100%에 닿을 수 없다. 그러나 실제 착취도는 잉여노동을 필요노동과 견준 비율이라 100%를 얼마든지 넘을 수 있다.",
+                      "지대는 토지가 만든 가치가 아니라 차지농업가가 거둔 잉여가치에서 나뉘어 나가는 몫이다. 이윤·이자·지대는 모두 같은 불불노동이 굳어진 여러 형태다.",
+                      "사례의 수치는 새로 만든 가치만을 나눈 것이고, 불변자본을 보전하는 몫은 계산에서 이미 빠져 있다. 그래서 1/4 대 3/4이 곧바로 필요노동 대 잉여노동이 된다."
                     ],
                     "en": [
-                      "Marx insists that this habit originates in the capitalist mode of production itself: it is not a badly chosen notation but an appearance thrown up by the reality.",
-                      "The law of value is not abandoned; the analysis of the wage-form explains the concealment of exploitation precisely on its basis.",
-                      "Constant capital is still assumed here only to transfer value, not to create new value.",
-                      "The distinction between working day and necessary labor is the premise of this whole chapter; without it, comparing formulas would be impossible."
+                      "For the same three quarters, dividing by the whole new value gives 75% and dividing by necessary labour gives 300%. The choice of denominator can reveal the exploitation relation or hide it.",
+                      "In surplus-value over new value the numerator is part of the denominator, so it can never reach 100%. The real degree of exploitation compares surplus with necessary labour and can go well beyond 100%.",
+                      "Rent is not value made by the land but a share split off from the surplus-value the farmer collects. Profit, interest and rent are all forms into which the same unpaid labour crystallizes.",
+                      "The figures divide only the newly created value; the part replacing constant capital is already left out. So one quarter to three quarters maps straight onto necessary to surplus labour."
                     ]
                   },
                   "source": {
@@ -23275,27 +23253,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "화폐자본의 순환이 2권 전체의 출발점으로 중요한 이유는 무엇인가?",
-                    "en": "Why is the circuit of money-capital important as a starting point for Volume II?"
+                    "ko": "방적업자가 £422를 선대해 가치 £500인 면사 10,000파운드를 만들었다. 가치대로 8,440파운드만 팔렸고 나머지는 창고에 쌓였다. 그의 자본은 지금 어떤 처지인가?",
+                    "en": "A spinner advances £422 and turns out 10,000 lbs of yarn worth £500. Only 8,440 lbs sell at their value; the rest piles up in the warehouse. Where does his capital now stand?"
                   },
                   "choices": {
                     "ko": [
-                      "1권의 가치증식 분석을, 자본이 생산을 지나 다시 화폐로 돌아오고 반복되어야 하는 운동의 문제로 옮겨 놓기 때문이다.",
-                      "1권의 잉여가치 분석을 취소하고 유통만이 가치를 만든다고 주장하기 때문이다.",
-                      "자본주의에서는 생산이 끝나면 판매가 그 자체로 보장된다고 전제하기 때문이다.",
-                      "화폐형태가 사라진 뒤 생산자본만 남는다는 결론을 내기 때문이다."
+                      "선대한 £422는 돌아왔지만, 생산에서 이미 만들어진 잉여가치 £78은 남은 면사 속에 실현되지 못한 채 묶여 있다.",
+                      "£422가 화폐로 돌아왔으니 자본의 순환은 이미 끝났고, 창고에 남은 면사는 자본과 상관없는 재고일 뿐이다.",
+                      "남은 면사에 매겨진 £78은 아직 팔리지 않았으므로 생산에서 생긴 것이 아니라 앞으로 판매에서 생길 이윤이다.",
+                      "면사가 창고에 있어도 자본은 계속 기능하고 있으므로, 판매가 늦어진다고 해서 가치 창출이 멈추지는 않는다."
                     ],
                     "en": [
-                      "Because it moves the analysis of valorization from Volume I into the problem of capital’s movement through production, return to money, and repetition.",
-                      "Because it cancels Volume I’s analysis of surplus-value and claims circulation alone creates value.",
-                      "Because it assumes that once production is complete, sale is automatically guaranteed under capitalism.",
-                      "Because it concludes that the money-form disappears and only productive capital remains."
+                      "The £422 advanced has come back, but the £78 of surplus-value already produced is locked, unrealised, in the unsold yarn.",
+                      "Since £422 has returned as money, the circuit of capital is already complete, and the yarn left in the warehouse is mere stock unrelated to capital.",
+                      "The £78 attached to the remaining yarn has not been sold yet, so it arises not in production but as profit that the sale will create.",
+                      "Capital keeps functioning while the yarn sits in the warehouse, so slow sales do not interrupt the creation of value."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "2권은 잉여가치가 생산된다는 사실에서 멈추지 않는다. 자본은 그 가치를 실현하고 다시 선대되어야 하므로 순환과 회전의 문제가 중심이 된다.",
-                    "en": "Volume II does not stop at the fact that surplus-value is produced. Capital must realize that value and be advanced again, so circuit and turnover become central problems."
+                    "ko": "면사 10,000파운드가 상품자본인 까닭은 £422의 선대가치 위에 방적 노동이 만든 잉여가치 £78이 얹혀 있기 때문이다. 8,440파운드를 팔면 선대자본만 돌아오고, 잉여가치를 실현하려면 전량을 팔아야 한다. £78이 판매에서 생긴다고 보기 쉽지만 판매는 이미 만들어진 가치의 형태만 바꾼다. 창고의 면사는 생산물도 가치도 만들지 않으므로 판매 속도가 재생산 규모를 좌우한다.",
+                    "en": "The 10,000 lbs are commodity-capital because the spinning labour has added £78 of surplus-value on top of the £422 advanced. Selling 8,440 lbs recovers only the capital advanced; the whole mass must be sold to realise the surplus-value. It is tempting to think the £78 arises in the sale, but the sale only changes the form of value already produced. Yarn lying in the market creates neither product nor value, so the speed of sale governs the scale of reproduction."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스의 계산으로는 7,440파운드를 팔면 생산수단 값만, 8,440파운드를 팔면 선대자본 전체만 회수된다. 잉여가치는 나머지 1,560파운드에 들어 있다.",
+                      "순환의 끝은 M이 아니라 M′이다. £422 회수는 출발 금액으로 돌아온 것일 뿐이고, 증식된 가치가 화폐로 돌아와야 순환이 완결된다.",
+                      "실현과 생산을 혼동했다. £78은 방적 과정에서 노동력이 만든 가치이며, 판매는 그 가치를 상품 형태에서 화폐 형태로 옮길 뿐이다.",
+                      "상품자본과 생산자본을 혼동했다. 시장에 머무는 상품자본은 생산물도 가치도 만들지 않으며, 그동안 이 자본의 생산과정은 멈춰 있다."
+                    ],
+                    "en": [
+                      "Marx’s arithmetic: selling 7,440 lbs replaces only the means of production, 8,440 lbs the whole capital advanced; the surplus-value sits in the last 1,560 lbs.",
+                      "The circuit ends in M′, not M. Getting £422 back only returns to the starting sum; the circuit closes when the expanded value comes back as money.",
+                      "This confuses realisation with production. The £78 was created by labour-power in spinning; the sale only moves that value from commodity-form into money-form.",
+                      "This confuses commodity-capital with productive capital. Commodity-capital lying in the market produces neither product nor value, and meanwhile its production process stands still."
+                    ]
                   }
                 }
               ]
@@ -23676,27 +23668,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "생산자본의 순환이 2권의 재생산 분석으로 이어지는 이유는 무엇인가?",
-                    "en": "Why does the circuit of productive capital lead toward Volume II’s analysis of reproduction?"
+                    "ko": "호황기에 방적업자들이 면사를 도매상에게 잘 팔고 생산을 늘린다. 그런데 그 면사의 상당량은 소비자에게 가지 못한 채 도매상 창고에 쌓이고 있다. 마르크스의 분석으로 보면 무슨 일이 벌어지는가?",
+                    "en": "In a boom, spinners sell their yarn readily to wholesalers and expand output. Yet much of that yarn never reaches consumers and is piling up in the wholesalers’ warehouses. On Marx’s analysis, what is going on?"
                   },
                   "choices": {
                     "ko": [
-                      "P로 돌아오는 운동은 개별 자본만이 아니라 사회 전체에서 생산수단과 소비수단이 어떤 비율로 재생산되어야 하는가의 문제를 열기 때문이다.",
-                      "생산자본의 순환은 화폐와 상품 단계가 약해진 순환이기 때문이다.",
-                      "생산자본의 순환은 한 기업 내부 회계만 다루고 사회적 재생산과 무관하기 때문이다.",
-                      "재생산은 생산이 아니라 노동자의 여가시간만을 뜻하기 때문이다."
+                      "면사가 팔리면 방적자본은 다시 생산으로 돌아가므로, 실제 소비와 무관하게 재생산이 커지다가 지불 압박 속에 위기가 터진다.",
+                      "도매상에게 팔렸어도 최종 소비자가 사기 전까지 방적업자의 순환은 끊겨 있으므로, 생산 확대는 처음부터 일어날 수 없다.",
+                      "생산이 늘면 노동자의 고용과 소비도 늘어 수요가 뒤따르므로, 창고에 쌓인 면사도 시간이 지나면 제값에 팔리게 된다.",
+                      "위기가 온다면 먼저 소비자 수요가 줄어드는 모습으로 나타나고, 그 전까지는 자본과 자본 사이의 교환이 줄어들지 않는다."
                     ],
                     "en": [
-                      "Because the return to P opens the question not only for individual capitals but for society as a whole: in what proportions means of production and means of consumption must be reproduced.",
-                      "Because the return to P abolishes money and commodities, eliminating the problem of social proportions.",
-                      "Because the circuit of productive capital deals only with accounting inside one firm and has no relation to social reproduction.",
-                      "Because reproduction means only workers’ leisure time, not production."
+                      "Once yarn is sold, spinning capital returns to production, so reproduction swells whatever real consumption is, until payment pressure brings crisis.",
+                      "Even after sale to a wholesaler, the spinner’s circuit stays broken until a final consumer buys, so no expansion of production could take place at all.",
+                      "More production means more employment and consumption by workers, so demand follows and the stocked yarn will in time sell at its value.",
+                      "A crisis would first appear as falling consumer demand, and until then exchanges between one capital and another would not shrink."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산자본은 계속 P로 돌아와야 한다. 이 요구가 확대되면 사회 전체에서 부문 간 비율과 상호 의존의 문제가 등장한다.",
-                    "en": "Productive capital must continually return to P. When this requirement is expanded, the problem of proportions and interdependence among departments of social production appears."
+                    "ko": "방적업자의 순환이 이어지는 데 필요한 조건은 C′가 화폐로 바뀌는 것뿐이다. 사는 이가 소비자든 도매상이든, 팔리기만 하면 그 화폐로 노동력과 생산수단을 다시 사서 P로 돌아간다. 그래서 상품은 소비된 듯 보여도 상인 손에 머물 수 있다. 뒤따르는 물량이 싸게 팔리고 앞선 물량의 대금 지불일이 닥치면 투매가 일어나고, 위기는 소비 감소보다 자본 사이 교환의 감소로 먼저 드러난다.",
+                    "en": "All the spinner’s circuit requires is that C′ be turned into money. Whether a consumer or a wholesaler buys, the proceeds buy labour-power and means of production again and capital returns to P. So commodities can seem consumed while still lying with dealers. When later streams sell cheaper and payment on earlier ones falls due, forced sales follow, and the crisis shows first as a fall in exchanges of capital for capital, not in consumer demand."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이 점이 위기를 논할 때 중요하다고 했다. 대량생산의 직접 구매자는 다른 산업자본가 말고는 도매상뿐이라, 소비의 한계가 늦게 드러난다.",
+                      "개별 자본의 순환과 상품의 최종 소비를 혼동했다. 상품의 소비는 그 상품을 낳은 자본의 순환에 포함되지 않으므로 판매만으로 순환은 이어진다.",
+                      "노동자 소비가 늘 수 있다는 점은 맞지만, 그것은 생산 확대가 이끈 결과다. 앞선 물량이 겉보기로만 소비되었다는 사실은 결국 드러난다.",
+                      "위기의 첫 모습을 거꾸로 보았다. 마르크스는 위기가 개인 소비 수요의 직접 감소보다 자본과 자본의 교환, 곧 재생산 과정의 위축에서 보인다고 했다."
+                    ],
+                    "en": [
+                      "Marx flags this as important for the theory of crises: apart from other industrial capitalists, mass production’s only direct buyer is the wholesaler, so the limits of consumption surface late.",
+                      "This confuses the circuit of an individual capital with the final consumption of its product. That consumption lies outside the circuit, so the sale alone keeps it going.",
+                      "Workers’ consumption may indeed grow, but as a result of expanded production. It still comes out in the end that earlier streams were absorbed only apparently.",
+                      "This inverts the crisis’s first appearance. Marx says it shows not in a direct fall of individual consumer demand but in shrinking exchanges of capital for capital."
+                    ]
                   }
                 }
               ]
@@ -23927,27 +23933,41 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "상품자본의 순환이 2권의 사회적 재생산 분석으로 이어지는 이유는 무엇인가?",
-                    "en": "Why does the circuit of commodity-capital lead toward Volume II’s analysis of social reproduction?"
+                    "ko": "한 탄광이 올해 석탄 £1,100어치를 캤고, 그 안에 잉여가치 £100가 들어 있다. 석탄은 가정 난방용과 공장 보일러용으로 팔려 나간다. 내년에도 같은 규모로 석탄을 캐려면 무엇이 전제되는가?",
+                    "en": "A coal mine has raised £1,100 worth of coal this year, £100 of it surplus-value. The coal is sold for household heating and for factory boilers. What must be presupposed for the mine to raise coal on the same scale next year?"
                   },
                   "choices": {
                     "ko": [
-                      "C'의 판매와 재구매는 개별 자본 안에서 끝나지 않고, 사회 전체의 생산물 구성과 구매력, 부문 간 교환을 전제로 하기 때문이다.",
-                      "상품자본은 화폐와 생산을 모두 폐지하는 최종 형태이기 때문이다.",
-                      "상품자본의 순환은 사회 전체와 무관하고 한 창고의 재고만 다루기 때문이다.",
-                      "C'가 존재하면 생산수단과 소비수단의 비율 문제는 사라지기 때문이다."
+                      "석탄 전량이 가정의 개인 소비와 공장의 생산적 소비로 팔려 나가야 하므로, 소비 전체가 이 순환의 조건으로 들어온다.",
+                      "탄광이 선대한 £1,000만 회수되면 충분하므로, 잉여가치 £100가 담긴 나머지 석탄이 팔리는지는 순환과 상관이 없다.",
+                      "순환은 탄광 안의 생산에서 시작해 생산으로 끝나므로, 석탄을 누가 어떻게 소비하는지는 탄광 자본의 순환 밖의 일이다.",
+                      "가정의 난방은 자본의 운동과 무관한 개인 생활이므로, 순환의 조건이 되는 것은 공장 보일러로 팔리는 몫뿐이다."
                     ],
                     "en": [
-                      "Because the sale and repurchase of C' do not end inside an individual capital; they presuppose the composition of the total social product, purchasing power, and exchange between departments.",
-                      "Because commodity-capital is the final form that abolishes both money and production.",
-                      "Because the circuit of commodity-capital is unrelated to society as a whole and deals only with inventory in one warehouse.",
-                      "Because when C' exists, the problem of proportions between means of production and means of consumption disappears."
+                      "All the coal must sell into households’ individual and factories’ productive consumption, so consumption as a whole is a condition of this circuit.",
+                      "Recovering the £1,000 the mine advanced is enough, so whether the remaining coal carrying the £100 of surplus-value sells does not matter to the circuit.",
+                      "The circuit starts and ends with production inside the mine, so who consumes the coal and how lies outside the circuit of the mine’s capital.",
+                      "Household heating is private life with no bearing on the movement of capital, so only the share sold to factory boilers is a condition of the circuit."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "상품자본에서 출발하면 실현 문제가 사회적 문제로 확장된다. 사회 전체가 어떤 상품을 어떤 비율로 생산하고 교환해야 하는지가 중요해진다.",
-                    "en": "Starting from commodity-capital expands realization into a social problem. It becomes crucial what commodities society as a whole produces and exchanges, and in what proportions."
+                    "ko": "석탄 £1,100어치는 선대가치 £1,000과 잉여가치 £100를 함께 담은 상품자본이고, 이 순환은 그 총생산물에서 출발한다. 판매 뒤에야 운동은 다시 생산으로 가는 몫과 자본가의 수입으로 가는 몫으로 갈라지므로, 생산물 전체의 소비가 순환이 정상적으로 이어질 조건이 된다. 공장의 생산적 소비만 자본과 관련 있다고 보기 쉽지만, 노동자와 자본가의 개인 소비도 이 형태에서는 조건으로 들어온다.",
+                    "en": "The £1,100 of coal is commodity-capital holding both the £1,000 advanced and £100 of surplus-value, and this circuit starts from that total product. Only after the sale does the movement branch into the part returning to production and the part going to the capitalist as revenue, so consumption of the whole product is the condition for the circuit to run normally. Factory use may seem the only consumption that counts, but here workers’ and capitalists’ individual consumption enters too."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이 형태에서 사회 총생산물이 개인 소비 기금과 재생산 기금으로 나뉘는 과정까지 순환 안에 포함된다고 했다. 케네의 경제표가 이 형태를 토대로 삼은 까닭이다.",
+                      "C′와 선대가치 C를 혼동했다. 이 순환의 출발점은 잉여가치까지 담긴 석탄 전체이므로, 잉여가치 부분이 팔려야 자본가의 소비와 축적도 이어진다.",
+                      "생산자본의 순환 P…P의 시각을 그대로 옮겼다. 그 형태에서는 상품의 소비가 순환 밖에 있지만, 총생산물에서 출발하는 C′…C′에서는 소비 전체가 전제된다.",
+                      "개인 소비를 순환 밖으로 밀어냈다. 노동자의 개인 소비는 노동력을 재생산하고 자본가의 소비는 잉여가치를 수입으로 쓰는 길이어서, 둘 다 이 순환의 조건이다."
+                    ],
+                    "en": [
+                      "Marx says this form includes in the circuit the division of the total social product into an individual consumption fund and a reproduction fund, which is why Quesnay’s Tableau économique rests on it.",
+                      "This confuses C′ with the value advanced, C. The circuit starts from all the coal, surplus-value included, so that part must sell for the capitalist’s consumption and accumulation to go on.",
+                      "This carries over the view of P…P, where the commodity’s consumption lies outside the circuit. In C′…C′, which starts from the total product, consumption as a whole is presupposed.",
+                      "This pushes individual consumption outside the circuit. Workers’ consumption reproduces labour-power and capitalists’ spends surplus-value as revenue, so both are conditions of this circuit."
+                    ]
                   }
                 }
               ]
@@ -24077,27 +24097,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "빵 공장의 C'가 팔려야 밀가루 업체의 상품도 팔리고, 노동자의 소비수단도 계속 재생산된다. 이런 관점에서 3장의 역할을 가장 잘 설명하는 것은 무엇인가?",
-                    "en": "A bakery's C' must be sold for the flour supplier's commodity to be sold as well, and for workers' means of consumption to keep being reproduced. From this angle, which statement best explains the role of Chapter 3?"
+                    "ko": "외국무역이 없는 나라에서 올해 총생산물이 다 팔렸지만, 잉여생산물은 거의 사치품이고 생산성은 그대로다. 자본가들이 내년 생산을 크게 늘리려 할 때, 상품자본의 순환 C′…C′로 보면 무엇이 걸림돌인가?",
+                    "en": "In a country without foreign trade, this year’s whole product has been sold, but the surplus-product is almost all luxuries and productivity is unchanged. If capitalists want to expand sharply next year, what obstacle does the circuit of commodity-capital, C′…C′, reveal?"
                   },
                   "choices": {
                     "ko": [
-                      "C'의 실현 문제를 통해 개별 자본의 운동이 사회적 총자본의 재생산 문제로 넘어갈 수밖에 없음을 보여준다.",
-                      "상품자본이 가장 단순하므로 화폐와 생산 분석이 필요 없다는 결론을 낸다.",
-                      "상품 판매가 항상 그 자체로 이루어져 위기 가능성이 없다는 점을 증명한다.",
-                      "자본의 순환은 세 형식 중 하나만 알면 나머지는 모두 폐기해도 된다고 주장한다."
+                      "자본화할 잉여생산물이 추가 생산자본의 물질적 요소로 이미 생산되어 있어야 하는데, 사치품은 그 요소가 되지 못한다",
+                      "잉여가치가 이미 화폐로 실현되었으니, 그 돈으로 시장에서 추가 생산수단을 사들이면 확대는 가능하다",
+                      "사치품도 가치를 지니므로, 잉여가치의 크기만 충분하다면 어떤 형태로든 추가 자본으로 기능할 수 있다",
+                      "판매가 끝났으니 걸림돌은 없고, 자본가들이 사치품 소비를 줄여 저축하기로 마음먹기만 하면 된다"
                     ],
                     "en": [
-                      "Through the realization problem of C', it shows why the movement of individual capital must lead to the reproduction of total social capital.",
-                      "It concludes that commodity capital is the simplest form, so money and production analysis are unnecessary.",
-                      "It proves that commodity sale always happens by itself, so there is no possibility of crisis.",
-                      "It argues that if one of the three circuit forms is known, the others can all be discarded."
+                      "The surplus-product to be capitalised must already exist as material elements of additional productive capital, and luxuries cannot serve as such",
+                      "The surplus-value has already been realised in money, so buying additional means of production on the market with it makes expansion possible",
+                      "Luxuries have value too, so as long as surplus-value is large enough, it can serve as additional capital whatever form it takes",
+                      "The sales are done, so nothing stands in the way; the capitalists need only decide to spend less on luxuries and save"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "빵 공장의 상품이 팔리지 않으면 그 공장은 임금과 원료를 다시 선대하기 어렵고, 밀가루 업체도 판매처를 잃는다. 상품자본의 순환은 이런 연결 때문에 개별 자본 분석을 사회적 총자본의 재생산 문제로 밀고 간다.",
-                    "en": "If the bakery's commodity is not sold, it becomes difficult to advance wages and raw materials again, and the flour supplier also loses an outlet. For this reason, the circuit of commodity capital pushes the analysis from individual capital toward the reproduction of total social capital."
+                    "ko": "C′…C′는 총생산물에서 출발하므로, 팔렸는가를 넘어 그 생산물이 어떤 사용형태로 있는지를 묻게 한다. 생산성이 그대로라면 확대재생산은 자본화할 잉여생산물이 이미 추가 생산자본의 물질적 요소를 담고 있을 때만 가능하다. 돈이 있으니 사면 된다는 생각은 화폐자본의 순환만 본 것이다. 생산되지 않은 생산수단은 살 수 없으므로, 축적은 가치의 크기만이 아니라 생산물의 물질적 구성에 묶인다.",
+                    "en": "Because C′…C′ starts from the total product, it asks not only whether the product was sold but in what use-form it exists. With productivity unchanged, reproduction on an expanded scale is possible only if the surplus-product to be capitalised already contains the material elements of additional productive capital. ‘We have money, so we can buy’ sees only the circuit of money-capital. Unproduced means of production cannot be bought, so accumulation is bound to the product’s material make-up."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 생산성이 오르면 자본의 가치가 아니라 소재를 늘려 가치증식의 새 재료를 만든다고 덧붙인다. 그래서 사례의 조건에 생산성이 그대로라는 단서가 붙는다.",
+                      "화폐는 시장에 있는 상품만 살 수 있다. 사회 전체의 잉여생산물이 사치품뿐이라면, 추가 생산수단은 누구의 C′로도 공급되지 않아 화폐가 있어도 살 곳이 없다.",
+                      "가치의 크기와 사용형태를 혼동했다. 사치품은 교환가치를 지니지만 기계나 원료로 쓰일 수 없으므로, 추가 생산자본의 몸이 되지 못한다.",
+                      "저축은 화폐를 모을 뿐, 이미 사치품으로 생산된 물건을 생산수단으로 바꾸지 못한다. 확대의 전제는 결심이 아니라 지난해 생산이 어떤 물질로 이루어졌는가다."
+                    ],
+                    "en": [
+                      "Marx adds that higher productivity enlarges the substance of capital, not its value, and so creates new material for valorization. That is why the case specifies unchanged productivity.",
+                      "Money can buy only commodities that are on the market. If society’s entire surplus-product is luxuries, no one’s C′ supplies additional means of production, and money finds nothing to buy.",
+                      "This mixes up magnitude of value with use-form. Luxuries have exchange-value, but they cannot work as machines or raw materials, so they cannot become the body of additional productive capital.",
+                      "Saving piles up money but cannot turn goods already made as luxuries into means of production. The premise of expansion is not a decision but what material last year’s production consisted of."
+                    ]
                   }
                 }
               ]
@@ -25957,7 +25991,7 @@
                   "points": 2,
                   "prompt": {
                     "ko": "고정자본과 유동자본의 서로 다른 가치 이전 속도를 파악해야 하는 이유는 무엇인가?",
-                    "en": "What does Fixed Capital and Circulating Capital contribute to the overall argument of Volume II?"
+                    "en": "Why do we need to grasp that fixed and circulating capital transfer their value at different speeds?"
                   },
                   "choices": {
                     "ko": [
@@ -26106,27 +26140,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 고정자본·유동자본 구분은 투하자본의 총회전 분석으로 이어지는가?",
-                    "en": "Why does the distinction between fixed and circulating capital lead to the analysis of aggregate turnover?"
+                    "ko": "방직업자가 10년 쓰는 £10,000짜리 기계를 들였다. 제품이 팔릴 때마다 기계 몫으로 해마다 £1,000씩 돈이 모이자, 3년 뒤 모인 £3,000으로 설비를 늘리고 개량했다. 이 확장은 무엇인가?",
+                    "en": "A weaver installs a £10,000 machine that lasts ten years. As products sell, £1,000 a year accumulates as the machine’s share; after three years he uses the £3,000 to add and improve equipment. What is this expansion?"
                   },
                   "choices": {
                     "ko": [
-                      "선대자본 전체의 회전을 보려면, 구성부분별 가치 비중과 회전속도를 함께 합산해야 하기 때문이다.",
-                      "고정자본과 유동자본의 차이를 알면 각 부분의 회전속도 차이가 사라지기 때문이다.",
-                      "고정자본만 계산해도 유동자본은 같은 비율로 회전하기 때문이다.",
-                      "물리적 내구성만 알면 선대자본 전체의 회전은 따로 계산할 필요가 없기 때문이다."
+                      "고정자본에서 화폐로 떨어져 나온 가치를 다시 투하한 것으로, 잉여가치의 축적 없이도 사회적으로는 확대재생산이 된다.",
+                      "£3,000은 해마다 제품 판매로 남긴 이윤이므로, 이 확장은 잉여가치를 자본으로 바꾼 축적의 한 형태이다.",
+                      "기계는 아직 온전히 돌아가므로 그 가치도 기계 안에 그대로 남아 있고, £3,000은 원료와 임금이 회전하면서 남긴 돈이다.",
+                      "고정자본은 새로 늘릴 때마다 한 번에 전액을 선대해야 하므로, 적립금을 조금씩 설비에 넣는 방식의 확장은 성립하지 않는다."
                     ],
                     "en": [
-                      "Because to grasp turnover of total advanced capital, the value weight and turnover speed of each component must be combined.",
-                      "Because once fixed and circulating capital are distinguished, differences in turnover speed disappear.",
-                      "Because calculating fixed capital automatically gives the same rate for circulating capital.",
-                      "Because once physical durability is known, the turnover of total advanced capital need not be calculated."
+                      "Reinvested value detached as money from fixed capital: socially, reproduction on an expanded scale, with no surplus-value accumulated.",
+                      "The £3,000 is profit kept back from yearly sales, so this expansion is a form of accumulation, turning surplus-value into capital.",
+                      "The machine still runs whole, so its value remains inside it; the £3,000 is money left over from the turnover of raw materials and wages.",
+                      "Fixed capital must always be advanced in full at once whenever it is added, so an expansion that feeds a reserve fund into equipment bit by bit cannot occur."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "고정자본과 유동자본은 회전속도가 다르다. 따라서 선대자본 전체가 얼마나 빨리 회수되는지 보려면, 각 구성부분의 가치 비중과 회전속도를 종합해야 한다. 이것이 다음 장의 총회전 분석이다.",
-                    "en": "Fixed and circulating capital turn over at different speeds. To see how fast the total advanced capital is recovered, the value weight and turnover speed of each component must be synthesized. That is the analysis of aggregate turnover in the next chapter."
+                    "ko": "기계는 사용형태로는 10년 내내 공장에 온전히 남지만, 가치는 마모에 따라 조금씩 제품으로 옮겨 가 판매와 함께 화폐로 돌아오고 적립금으로 쌓인다. 교체 전에 이 돈을 설비 확장이나 개량에 넣으면 사회적으로 확대재생산이 된다. 이를 이윤의 축적으로 보기 쉽지만, 그 돈은 잉여가치가 아니라 고정자본에서 떨어져 나온 가치다. 고정자본의 가치가 사용형태와 따로 움직이기에 이런 확장이 가능하다.",
+                    "en": "The machine stays whole in the mill for ten years, but its value passes bit by bit into the products with wear, returns as money on their sale and builds up a reserve fund. Put into extra or better equipment before replacement, that money is, socially, reproduction on an expanded scale. It is tempting to call this accumulated profit, yet the money is not surplus-value but value detached from the fixed capital, possible only because that value moves separately from its use-form."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이 확장이 생산수단을 늘리면 외연적, 더 효율적으로 만들면 내포적 확대라고 했다. 농업처럼 조금씩 자본을 흡수하기 쉬운 부문일수록 잘 일어난다.",
+                      "축적과 고정자본의 가치 회수를 혼동했다. 기계 몫으로 모인 돈은 선대한 £10,000의 일부가 돌아온 것이며, 새로 만든 잉여가치가 아니다.",
+                      "사용형태와 가치를 혼동했다. 기계는 형태로는 온전하지만 그 가치는 마모만큼 제품으로 넘어가 판매와 함께 조금씩 화폐로 돌아온다.",
+                      "고정자본의 교체 시점과 가치 회수 방식을 혼동했다. 가치는 조금씩 돌아오므로, 부문의 성질에 따라 적립금을 쪼개어 재투하할 수 있다."
+                    ],
+                    "en": [
+                      "Marx calls this extensive expansion when means of production are added and intensive when they are made more effective. It comes most easily where capital can be absorbed gradually, as in agriculture.",
+                      "This confuses accumulation with the return of fixed capital’s value. The money set aside is part of the £10,000 advanced flowing back, not newly produced surplus-value.",
+                      "This confuses use-form with value. The machine stays whole in form, but its value passes into the products with wear and returns piece by piece as money when they sell.",
+                      "This confuses when fixed capital is replaced with how its value returns. Because value flows back piecemeal, a reserve fund can be reinvested in portions, as far as the branch allows."
+                    ]
                   }
                 }
               ]
@@ -26358,7 +26406,7 @@
                   "points": 2,
                   "prompt": {
                     "ko": "고정자본의 수명과 갱신 주기는 자본주의적 투자와 위기의 리듬에 어떤 의미를 갖는가?",
-                    "en": "What does The Aggregate Turnover of the Capital Advanced contribute to the overall argument of Volume II?"
+                    "en": "What do the lifespan and renewal cycle of fixed capital mean for the rhythm of capitalist investment and crises?"
                   },
                   "choices": {
                     "ko": [
@@ -27706,27 +27754,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 노동기간 분석 뒤에 생산시간 분석이 이어지는가?",
-                    "en": "Why does the analysis of the working period lead to the analysis of production time?"
+                    "ko": "노동일 길이가 같은 방적공장과 조선소가 위기로 여섯 달 동안 일을 멈췄다. 방적공장은 매주 면사를 완성해 왔고, 조선소의 배는 반쯤 지어진 채 서 있다. 두 곳의 타격은 어떻게 다른가?",
+                    "en": "A spinning mill and a shipyard with working days of equal length are halted for six months by a crisis. The mill finished yarn every week; the ship stands half-built. How does the blow differ between them?"
                   },
                   "choices": {
                     "ko": [
-                      "노동기간은 생산시간의 일부일 뿐이므로, 노동이 직접 작용하지 않는 생산시간 분석으로 넘어간다.",
-                      "노동기간은 생산시간 전체와 언제나 같다.",
-                      "노동기간 분석이 끝나면 자본의 시간 문제는 모두 생산 안에서 해결된다.",
-                      "생산시간 분석을 노동일 규제의 역사로 돌려 회전론의 다음 단계와 분리한다."
+                      "방적공장은 이후의 생산만 잃지만, 조선소는 이어진 생산행위 전체가 끊겨 이미 들인 노동과 생산수단이 미완성 배에 묶인다.",
+                      "두 곳 모두 멈춘 기간만큼 가치를 덜 만들 뿐이므로, 노동일 길이가 같다면 입는 타격의 성격도 같다고 보아야 한다.",
+                      "반쯤 지어진 배에도 이미 가치와 잉여가치가 들어 있으므로, 조선소는 미완성 선체를 팔아 선대한 자본을 회수하면 된다.",
+                      "조선소의 타격이 더 큰 까닭은 크레인 같은 고정자본의 비중이 방적공장보다 훨씬 커서, 멈춘 동안 입는 마모도 크기 때문이다."
                     ],
                     "en": [
-                      "Because the working period is only part of production time, the argument moves to production time in which labour may not be directly acting.",
-                      "It assumes the working period is always identical with total production time and does not analyze natural processes or technical waiting.",
-                      "It thinks that once the working period is analyzed, all temporal problems of capital are solved outside the market.",
-                      "It turns the analysis of production time into a history of working-day regulation, separating it from the next step in turnover theory."
+                      "The mill loses only later output; the shipyard’s connected act of production is cut, locking spent labour and means of production in an unfinished ship.",
+                      "Both simply create less value for as long as they stand idle, so with equal working days the blow must be of the same kind.",
+                      "The half-built ship already contains value and surplus-value, so the shipyard can recover its advanced capital by selling the unfinished hull.",
+                      "The shipyard suffers more because fixed capital such as cranes weighs far more there than in the mill, so wear during the stoppage is greater."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산시간은 노동기간을 넓힌 범주다. 노동기간은 직접 노동이 이어져 완성품을 만드는 시간이지만, 생산시간은 그보다 넓다. 포도주 숙성, 목재 건조, 생물학적 배양처럼 노동이 직접 작용하지 않아도 생산물이 아직 완성되지 않아 자본이 묶이는 시간이 있기 때문에, 다음 장은 생산시간 전체를 분석한다.",
-                    "en": "Production time widens the category of the working period. The working period is the time in which direct labour continues toward the finished product, but production time is broader. Wine aging, timber drying, and biological cultivation can tie up capital even when direct labour is not acting, so the next chapter analyzes production time as a whole."
+                    "ko": "방적공장의 노동일들은 날마다 완성품을 내는 분리된 크기지만, 조선소의 노동일들은 배 한 척이라는 하나의 노동기간으로 이어져 있다. 그래서 공사가 끊기면 이미 소비된 노동과 생산수단이 팔 수 없는 미완성품 속에 잠기고, 재개해도 그 사이 손상이 생긴다. 차이를 고정자본 비중 탓으로 보기 쉽지만, 마르크스는 두 부문의 자본 구성이 같아도 이 차이가 남는다고 본다. 긴 노동기간은 그만큼 위기에 취약하다.",
+                    "en": "The mill’s working days are discrete, each yielding finished yarn; the shipyard’s are joined into one working period that ends in a single ship. Cut the work off and the labour and means of production already consumed sink into a product that cannot be sold, and even on resumption it has deteriorated. One may blame the share of fixed capital, but Marx holds the difference stands even with identical capital composition. A long working period is that much more exposed to crises."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "미완성품은 아직 상품이 아니어서 유통에 들어가지 못한다. 그래서 긴 노동기간에서는 매주 새 유동자본을 보태야 하고, 중단되면 그 전부가 묶인다.",
+                      "노동일과 노동기간을 혼동했다. 하루 노동시간은 같아도, 완성품 하나를 위해 이어진 노동일 수가 다르면 중단의 결과가 달라진다.",
+                      "미완성품을 완성된 상품자본으로 여겼다. 가치와 잉여가치가 층층이 쌓였어도 완성된 사용가치가 아니므로 상품으로 유통될 수 없다.",
+                      "노동기간의 차이를 고정자본과 유동자본의 구분으로 설명했다. 마르크스는 두 부문의 고정·유동 비율이 같다고 가정해도 이 차이가 생긴다고 했다."
+                    ],
+                    "en": [
+                      "An unfinished product is not yet a commodity and cannot circulate. So a long working period needs fresh circulating capital every week, and a stoppage freezes all of it.",
+                      "This confuses the working day with the working period. Equal daily hours do not make equal outcomes when the number of connected days needed for one finished product differs.",
+                      "This treats the unfinished product as finished commodity-capital. Value and surplus-value have piled up in layers, but without a finished use-value it cannot circulate as a commodity.",
+                      "This explains the working period by the fixed-circulating distinction. Marx assumes equal proportions of fixed and circulating capital in both branches and the difference still arises."
+                    ]
                   }
                 }
               ]
@@ -28107,27 +28169,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 생산시간 분석 뒤에 유통시간 분석이 이어지는가?",
-                    "en": "Why does the analysis of production time lead to the analysis of circulation time?"
+                    "ko": "러시아 북부의 한 마을은 밭일을 한 해 130~150일밖에 할 수 없다. 농민들은 긴 겨울 동안 상인이 대 주는 실로 천을 짠다. 마르크스는 이 모습을 어떻게 설명하는가?",
+                    "en": "In a village of northern Russia, field work is possible only 130 to 150 days a year. Through the long winter the peasants weave cloth from yarn supplied by merchants. How does Marx account for this?"
                   },
                   "choices": {
                     "ko": [
-                      "생산 내부의 시간 구조를 다룬 뒤, 생산 밖에서 자본을 묶는 유통시간 분석으로 넘어간다.",
-                      "생산 내부의 대기시간을 다룬 뒤에는 판매와 구매의 시간은 회전 분석에서 제외된다.",
-                      "생산시간과 유통시간은 둘 다 달력 시간이므로 하나의 대기시간으로 합쳐진다.",
-                      "생산시간 분석 뒤에는 노동일의 역사로 돌아가며 상품 판매 문제는 2권의 주제가 아니다."
+                      "생산기간이 노동기간보다 길다는 사실이 농업과 농촌 부업을 결합시키고, 상인은 그 틈을 타 부업을 자본에 묶는다.",
+                      "겨울 동안에도 땅속의 곡물은 자라므로, 그 사이 천을 짜는 농민의 노동도 결국 곡물의 가치에 보태진다.",
+                      "겨울 부업은 오랜 농촌 관습일 뿐이며, 곡물의 생산시간과 노동시간이 어긋나는 사정과는 관계가 없다.",
+                      "생산시간과 노동시간의 어긋남은 자본과 노동자에게 똑같은 부담이므로, 공업이 농업에서 떨어져 나가면 양쪽 모두 형편이 나아진다."
                     ],
                     "en": [
-                      "After treating the time structure inside production, the argument moves to circulation time, which ties up capital outside production.",
-                      "It thinks that after internal production waiting time has been covered, the time of selling and buying can be excluded from turnover analysis.",
-                      "It treats production time and circulation time as the same calendar waiting time and says no distinction is needed.",
-                      "It says the analysis should return to the history of the working day and that commodity sale is not a topic of Volume II."
+                      "A production period longer than the working period joins farming to rural by-industry, and the merchant uses that gap to bind it to capital.",
+                      "Grain keeps growing under the snow all winter, so the peasants’ weaving in that time is ultimately added to the value of the grain.",
+                      "Winter by-work is simply an old rural custom and has nothing to do with the gap between the grain’s production time and its working time.",
+                      "The gap between production time and working time burdens capital and labourers equally, so both are better off once manufacture separates from agriculture."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "생산시간 분석은 자본이 생산 안에서 직접 노동시간보다 오래 묶일 수 있음을 보여 준다. 그러나 상품이 완성된 뒤에도 판매와 구매, 대금 회수 때문에 자본은 생산 밖에서 다시 묶일 수 있다. 그래서 다음 단계는 생산 밖의 시간, 곧 유통시간이다.",
-                    "en": "The analysis of production time shows that capital can be tied up inside production longer than direct labour-time. But after the commodity is completed, sale, purchase, and monetary recovery can tie capital up again outside production. The next step is therefore time outside production: circulation time."
+                    "ko": "겨울밀은 아홉 달 가까이 자라지만 밭일은 봄·여름·가을에 몰려 있어, 생산기간 가운데 노동기간은 일부일 뿐이다. 이 빈 시간이 농업과 농촌 가내공업이 결합하는 자연적 토대가 되고, 실을 대 주는 상인이 자본의 첫 발판을 얻는다. 곡물이 자라는 동안 가치도 쌓인다고 보기 쉽지만 노동이 멈춘 시간은 가치를 만들지 않는다. 공업이 분리되면 농촌 노동자는 임시 일거리에 더 기대게 된다.",
+                    "en": "Winter grain takes about nine months to mature, but field work bunches into spring, summer and autumn, so the working period is only part of the production period. That idle stretch is the natural basis for combining agriculture with rural domestic industry, and the merchant supplying yarn gives capital its first foothold. It is tempting to think value accrues while the grain grows, but time without labour creates none. Once manufacture separates, the rural labourer depends more on casual work."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 자본에게는 회전의 차이가 모두 평균화되지만 노동자에게는 그렇지 않다고 덧붙였다. 부업이 사라지면 겨울의 빈 시간은 고스란히 노동자의 몫이 된다.",
+                      "생산시간과 가치 형성을 혼동했다. 곡물이 자연과정에 맡겨진 시간은 자본을 묶어 둘 뿐이며, 천을 짜는 노동은 천의 가치에 들어간다.",
+                      "부업을 관습으로만 보면 그 경제적 근거가 사라진다. 농사일이 멈추는 긴 기간이 있기에 같은 사람들이 겨울마다 다른 일을 찾게 된다.",
+                      "자본과 노동자의 처지를 같게 보았다. 자본에게는 회전의 차이가 평균화되지만, 공업이 분리된 뒤 농촌 노동자는 임시 일거리에 의존해 형편이 나빠진다."
+                    ],
+                    "en": [
+                      "Marx adds that for capital all differences in turnover are evened out, but not for the labourer. When by-industry disappears, the idle winter falls wholly on the worker.",
+                      "This confuses production time with value creation. Time the grain spends under natural processes only ties up capital; the weaving labour goes into the value of the cloth.",
+                      "Treating by-work as mere custom drops its economic basis. Because field work stops for a long stretch, the same people seek other work every winter.",
+                      "This puts capital and labourer in the same position. For capital turnover differences are evened out, but after the separation the rural labourer depends on casual work and his condition worsens."
+                    ]
                   }
                 }
               ]
@@ -28522,27 +28598,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 14장의 유통시간 분석 뒤에 15장의 '필요 선대자본량' 문제가 바로 따라오는가?",
-                    "en": "Why does the question of the required advance in Chapter 15 follow directly from Chapter 14's analysis of circulation time?"
+                    "ko": "맨체스터의 면직물 공장이 주문받은 상품을 인도로 보낸다. 도착까지 4개월, 대금이 돌아오기까지 다시 4개월이 걸린다. 공장은 그동안에도 매주 생산을 이어 가려 한다. 유통시간의 관점에서 무엇이 필요한가?",
+                    "en": "A Manchester cotton mill ships goods made to order to India. They take four months to arrive, and the payment takes another four months to return. Meanwhile the mill wants to keep producing every week. In terms of circulation time, what does this require?"
                   },
                   "choices": {
                     "ko": [
-                      "판매와 구매에 걸리는 시간이 길수록 같은 생산을 이어 가기 위해 더 많은 자본을 미리 묶어야 하기 때문이다.",
-                      "생산이 끝나면 회전도 끝나므로, 유통시간은 다음 생산에 영향을 주지 않는다.",
-                      "유통시간이 길어지는 만큼 상품가치가 커져 추가 선대자본이 필요 없어진다.",
-                      "신용이 있으면 회수 지연은 자본량 문제가 아니라 결제 기술 문제로 바뀐다."
+                      "8개월 동안 그 자본은 생산자본으로 돌아오지 못하므로, 다른 자본 부분이 동시에 상품자본·화폐자본으로 있어야 한다",
+                      "주문생산이라 판매시간이 0이므로, 항해 기간은 운송비 문제일 뿐 자본의 회전과는 상관이 없다",
+                      "인도행 어음을 은행에서 할인받으면 대금 회수의 지연이 사라지므로, 미리 필요한 자본량은 생산 규모만으로 정해진다",
+                      "배에 실린 동안에도 자본은 가치를 계속 증식하므로, 회전이 길어져도 한 해의 잉여가치는 줄지 않는다"
                     ],
                     "en": [
-                      "The longer sale and purchase take, the more capital must be tied up in advance to keep the same production continuous.",
-                      "Once production is finished, turnover is finished, so circulation time does not affect the next production cycle.",
-                      "A longer circulation time raises commodity value, removing the need for additional advanced capital.",
-                      "With credit, delayed recovery becomes a payment-technology issue rather than a capital-magnitude issue."
+                      "For eight months that capital cannot return as productive capital, so other portions must exist at the same time as commodity- and money-capital",
+                      "Since the goods are made to order, selling time is zero, so the voyage is a matter of freight costs, not of the turnover of capital",
+                      "Having the bills drawn on India discounted at a bank removes the delay in returns, so the capital needed in advance is set by the scale of production alone",
+                      "Capital keeps expanding its value even while at sea, so a longer turnover does not reduce the year’s surplus-value"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "14장은 생산 밖의 시간이 자본 회전을 늦춘다는 점을 보여 준다. 그 시간이 길어지면 판매대금이 돌아오기 전에도 임금과 원료비를 다시 내야 하므로, 15장의 질문은 '같은 생산규모를 유지하려면 얼마를 동시에 선대해야 하는가'가 된다.",
-                    "en": "Chapter 14 shows that time outside production slows capital turnover. If that time lengthens, wages and materials must be paid again before sales money returns; Chapter 15 therefore asks how much must be advanced at the same time to maintain the same scale of production."
+                    "ko": "상품이 인도로 가는 4개월 동안 자본은 상품자본에 묶이고, 대금이 오는 4개월 뒤에야 다시 생산요소를 살 수 있다. 판매시간이 0이어도 이 8개월은 유통시간이다. 어음을 떠올리기 쉽지만, 마르크스는 이런 회전 차이가 오히려 신용 기한의 물질적 토대가 된다고 본다. 생산을 끊지 않으려면 자본의 여러 부분이 동시에 세 형태로 있어야 하며, 늘 화폐로 대기하는 부분을 경제학자들은 잊기 쉽다.",
+                    "en": "While the goods travel to India the capital is fettered as commodity-capital, and only when payment returns four months later can it buy elements of production again. Even with selling time at zero, those eight months are circulation time. Bills of exchange come to mind, but Marx treats such differences in turnover as a material basis of credit terms. Continuous production needs portions of capital in all three forms at once, and economists readily forget the part always waiting as money."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "공장의 자본은 한 형태에서 다른 형태로 차례로 옮겨 갈 뿐 아니라, 여러 부분이 동시에 생산자본·상품자본·화폐자본으로 나란히 존재한다. 유통시간이 길수록 생산 밖에 머무는 부분이 커진다.",
+                      "판매시간은 유통시간의 한 부분일 뿐이다. 시장까지 가는 동안과 대금이 돌아와 다시 생산요소로 바뀌는 동안에도 자본은 생산자본으로 기능하지 못한다.",
+                      "마르크스는 인도·중국 어음 기한이 항해 시간에 맞춰 정해졌다는 사례를 든다. 신용은 유통시간을 없애지 못하고 그 시간에 맞춰 짜이며, 기한을 억지로 줄이려던 시도는 실패해 철회되었다.",
+                      "항해 중인 자본은 상품자본으로 묶여 있을 뿐 새 가치를 만들지 않는다. 회전이 길어지면 같은 자본이 한 해에 생산자본으로 기능하는 횟수가 줄어든다."
+                    ],
+                    "en": [
+                      "The mill’s capital does not only pass from one form to the next; its portions exist side by side as productive, commodity- and money-capital. The longer the circulation time, the larger the part held outside production.",
+                      "Selling time is only one part of circulation time. While goods travel to market and while the money returns and is turned back into elements of production, the capital cannot function as productive capital.",
+                      "Marx cites how the usance of India and China bills was fixed around voyage times. Credit does not abolish circulation time but is shaped around it; an attempt to force shorter terms miscarried and was abandoned.",
+                      "Capital at sea is tied up as commodity-capital and creates no new value. A longer turnover means the same capital functions as productive capital fewer times in the year."
+                    ]
                   }
                 }
               ]
@@ -29795,27 +29885,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 잉여가치의 유통 분석은 3편의 사회적 재생산 도식으로 넘어가는 발판이 되는가?",
-                    "en": "Why does the analysis of the circulation of surplus-value become a bridge to the reproduction schemes of Part III?"
+                    "ko": "공장주가 해마다 잉여가치 £2,000를 화폐로 실현하지만, 새 공장동을 지으려면 £10,000가 든다. 돈이 모이는 동안 그는 이를 은행에 맡겨 이자를 받는다. 마르크스의 분석으로 이 돈은 무엇인가?",
+                    "en": "A mill-owner realises £2,000 of surplus-value in money each year, but a new factory wing costs £10,000. While the sum builds up, he keeps it in a bank and draws interest. On Marx’s analysis, what is this money?"
                   },
                   "choices": {
                     "ko": [
-                      "잉여가치가 축적되려면 추가 생산수단·소비수단·노동력이 사회적으로 맞물려 공급되어야 하기 때문이다.",
-                      "개별 기업의 이윤 저축이 사회 전체의 확대재생산을 설명하기 때문이다.",
-                      "생산된 잉여가치는 판매나 보충 조건 없이 곧바로 축적될 수 있기 때문이다.",
-                      "자본가의 사치소비와 생산 확대는 모두 돈을 쓰는 일이므로 구분할 필요가 없기 때문이다."
+                      "몇 해치 잉여가치가 쌓이기를 기다리는 잠재적 화폐자본이며, 신용을 통해 그동안 남의 손에서 자본으로 기능한다.",
+                      "은행에 맡겨 이자를 낳고 있으므로, 공장주는 생산 밖에서도 예금으로 새 잉여가치를 스스로 만들어 내고 있다.",
+                      "공장을 짓는 데 아직 쓰이지 않고 쌓여 있으니, 이 돈은 축적과 상관없는 자본가의 개인 소비 기금일 뿐이다.",
+                      "실현된 잉여가치가 생산에 들어가지 않고 쌓인다면, 판로가 막혀 자본의 순환이 멈췄다는 위기의 징후로 보아야 한다."
                     ],
                     "en": [
-                      "Because for surplus-value to be accumulated, additional means of production, means of consumption, and labour-power must be socially supplied in the right relation.",
-                      "Because if individual firms save profit, expanded reproduction across society is automatically explained.",
-                      "Because produced surplus-value can be accumulated directly without sale or replacement conditions.",
-                      "Because capitalist luxury consumption and productive expansion are both spending money, so no distinction is needed."
+                      "Latent money-capital waiting for several years’ surplus-value to accumulate, which meanwhile functions as capital in others’ hands through credit.",
+                      "Because it earns interest in the bank, the mill-owner is creating new surplus-value by himself through the deposit, outside production.",
+                      "Since it has not yet gone into building and just lies there, the money is simply the capitalist’s personal consumption fund, unrelated to accumulation.",
+                      "If realised surplus-value piles up instead of entering production, it must be read as a sign of crisis: markets are blocked and the circuit has stalled."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "이 장은 잉여가치가 생산된 뒤 자본가의 소비와 축적 경로로 갈라진다는 점을 보여 준다. 축적 경로를 택하면 개별 자본의 문제가 곧 사회 전체의 물질적 보충과 부문 간 비례 문제로 바뀐다. 이것이 다음 재생산 도식의 출발점이다.",
-                    "en": "This chapter shows that after production surplus-value divides into capitalist consumption and accumulation. If the path is accumulation, the individual capital's problem becomes a problem of material replacement and departmental proportions across society. That is the starting point of the reproduction schemes."
+                    "ko": "공장동 증축처럼 사업 전체를 늘리는 확장은 한 해 잉여가치로는 모자라 몇 해치 축적이 필요하다. 그 사이 잉여가치의 일부는 뒤에 추가 자본으로 쓰일 잠재적 화폐자본으로 쌓인다. 신용제도가 발달하면 이 돈은 이자를 받고 빌려져 다른 사람 손에서 자본으로 기능한다. 이자가 예금에서 저절로 자란다고 보기 쉽지만, 그 돈이 자본으로 일하는 곳은 빌려 간 사람의 사업이다.",
+                    "en": "Expanding the whole plant, such as adding a factory wing, needs more than one year’s surplus-value; it takes several years’ accumulation. Meanwhile part of the surplus-value is raked together as latent money-capital, meant to act as additional capital only later. With the credit system, that money is lent at interest and serves as capital in someone else’s hands. Interest may seem to grow from the deposit itself, but the money works as capital in the borrower’s business."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 잠재적 화폐자본의 가장 단순한 형태가 퇴장화폐이며, 대개는 국내 유통에서 빠져나와 개별 자본가 손에 쌓인 화폐라고 했다.",
+                      "이자의 출처를 예금 자체로 보았다. 공장주가 쓰지 못하는 화폐자본은 빌려 간 사람의 사업에서 자본으로 쓰이고, 이자는 그 사용의 대가로 치러진다.",
+                      "소비 기금과 축적 기금을 혼동했다. 이 돈은 자본가가 써 버릴 몫이 아니라 규모가 차면 추가 자본으로 투하되려고 모아 두는 잉여가치다.",
+                      "축적의 대기 단계를 순환의 정체로 읽었다. 잉여가치는 이미 팔려 화폐로 실현되었고, 확장에 필요한 최소 규모에 이를 때까지 모이는 중이다."
+                    ],
+                    "en": [
+                      "Marx notes that the simplest form of latent money-capital is a hoard, in most cases money withdrawn from domestic circulation and piled up by individual capitalists.",
+                      "This locates the source of interest in the deposit itself. The money the mill-owner cannot yet use works as capital in the borrower’s business, and interest is paid for that use.",
+                      "This confuses the consumption fund with the accumulation fund. The money is not for the capitalist to spend but surplus-value set aside to be invested once it is large enough.",
+                      "This reads the waiting stage of accumulation as a stalled circuit. The surplus-value has already been sold and realised; it is gathering until it reaches the scale expansion requires."
+                    ]
                   }
                 }
               ]
@@ -30210,27 +30314,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "18장의 서론이 이후 재생산 도식의 출발점이 되는 이유는 무엇인가?",
-                    "en": "Why does Chapter 18's introduction become the starting point for the later reproduction schemes?"
+                    "ko": "5년이 걸리는 철도 공사에 노동자 수천 명과 많은 철·석탄이 들어간다. 노동자들은 매주 먹고 입지만, 철도는 완공 전까지 쓸 수 있는 생산물을 하나도 내놓지 않는다. 마르크스는 이런 사업을 어떻게 분석하는가?",
+                    "en": "A railway that takes five years to build absorbs thousands of workers and much iron and coal. The workers eat and dress every week, yet until it is finished the railway yields no usable product. How does Marx analyse such an undertaking?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 자본의 순환·회전 분석을 사회 전체의 부문 간 교환과 가치보충 문제로 옮기기 때문이다.",
-                      "사회적 재생산을 가계 소비 문제로 줄일 수 있다는 점을 보이기 때문이다.",
-                      "개별 기업의 판매 성공만 확인하면 사회 전체도 재생산된다고 보기 때문이다.",
-                      "총자본을 개별 자본의 단순 합계로 계산하면 충분하다는 점을 보이기 때문이다."
+                      "오래 노동력과 생산수단을 빼내기만 하므로, 그 규모가 생활수단·생산수단을 대는 부문을 해치지 않아야 한다",
+                      "신용이나 주식회사로 자금을 모으면 개별 자본의 화폐 한계가 풀리므로, 이 사업의 문제는 거기서 해결된다",
+                      "이 문제는 화폐가 끼어들어 생기므로, 화폐자본이 사라진 사회화된 생산에서는 따로 따질 필요가 없어진다",
+                      "화폐자본의 크기가 생산 규모의 절대적 한계이므로, 투입할 화폐만 넉넉하게 모이면 다른 부문까지 걱정할 일은 없다"
                     ],
                     "en": [
-                      "Because it shifts the analysis from individual circuits and turnover to departmental exchange and value replacement for society as a whole.",
-                      "Because it shows that social reproduction can be reduced to household consumption.",
-                      "Because it treats individual sales success as enough to confirm reproduction of society as a whole.",
-                      "Because it shows that calculating total capital as the simple sum of individual capitals is enough."
+                      "It withdraws labour-power and means of production for years without return, so its scale must not injure the branches that supply them",
+                      "Raising funds through credit or joint-stock companies lifts the money limit on individual capital, and that settles the problem",
+                      "The problem arises because money gets involved, so under socialised production, where money-capital disappears, it need not be weighed",
+                      "The size of money-capital is the absolute limit of production, so with enough money to invest there is no need to worry about other branches"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "앞 장들에서는 개별 자본이 어떤 형태를 거쳐 돌아오는지를 보았다. 18장은 질문의 단위를 사회적 총자본으로 바꾼다. 이제 문제는 한 자본의 회전이 아니라 생산수단 부문과 소비수단 부문이 서로의 가치와 물질적 요소를 어떻게 보충하는가이다.",
-                    "en": "The previous chapters examined how individual capitals return through their forms. Chapter 18 changes the unit of analysis to total social capital. The problem is no longer one capital's turnover alone, but how the departments of means of production and means of consumption replace one another's value and material elements."
+                    "ko": "철도 노동자는 공사 내내 다른 부문이 만든 생활수단을 가져다 쓰지만, 그동안 사회에 돌려주는 생산물은 없다. 마르크스는 이 사정이 노동과정의 물질적 성격에서 생기지 사회형태에서 생기지 않는다고 본다. 그래서 화폐가 없는 사회화된 생산에서도 이런 사업의 규모는 계산되어야 한다. 자본주의에서는 신용과 주식회사가 개별 자본의 화폐 한계를 넘게 해 주지만, 그 대신 화폐시장의 교란과 서로 얽힌다.",
+                    "en": "Railway workers draw means of subsistence made in other branches throughout the work, while giving society no product in return. Marx traces this to the material character of the labour process, not to its social form, so even socialised production without money would have to calculate the scale of such undertakings. Under capitalism, credit and joint-stock companies break the money barrier of individual capital, but such firms then become entangled with disturbances in the money-market."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "노동기간이 짧은 부문은 생산물을 곧 돌려주지만, 긴 부문은 오랫동안 가져가기만 한다. 사회적 총자본의 재생산은 이 둘의 비율이 맞아야 무너지지 않는다.",
+                      "신용은 개별 자본가가 긴 사업을 떠맡을 수 있게 해 줄 뿐, 노동력과 생산수단이 오래 빠져나간다는 물질적 사정은 그대로다. 오히려 화폐시장 교란과 맞물린다.",
+                      "마르크스는 사회화된 생산에서도 긴 사업의 규모를 다른 부문을 해치지 않게 정해야 한다고 말한다. 화폐는 사라져도 노동과 생산물이 빠져나가는 물질적 사정은 남는다.",
+                      "마르크스는 같은 화폐자본으로도 노동강도, 자연력, 협업에 따라 생산 규모가 달라진다고 본다. 화폐는 이미 존재하는 노동력과 생산수단을 새로 만들어 내지 못한다."
+                    ],
+                    "en": [
+                      "Branches with short working periods soon return products, while long ones only draw for a long time. Reproduction of the social capital holds together only if the two stand in the right proportion.",
+                      "Credit lets an individual capitalist take on a long project, but the material fact that labour-power and means of production are withdrawn for years stays as it was, and the project gets tied up with money-market disturbances.",
+                      "Marx says socialised production too must fix the scale of long undertakings so as not to injure other branches. Money disappears, but the material drain of labour and products remains.",
+                      "Marx notes that the same money-capital can set different scales of production through intensity, natural forces and co-operation. Money cannot conjure up labour-power and means of production."
+                    ]
                   }
                 }
               ]
@@ -30625,27 +30743,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 19장의 선행 이론 비판 뒤에 20장의 단순재생산 도식이 바로 필요한가?",
-                    "en": "Why is Chapter 20’s simple reproduction scheme needed immediately after Chapter 19’s critique of earlier theory?"
+                    "ko": "한 경제학자가 말한다. 「직물업자가 산 실은 방적업자의 수입이고, 방적업자가 산 아마는 농민의 수입이다. 그러니 한 해 생산물 전체가 누군가의 수입이고, 나라는 그것을 다 소비해도 된다.」 마르크스는 이 추론을 어떻게 보는가?",
+                    "en": "An economist argues: “The yarn the weaver buys is the spinner’s income, and the flax the spinner buys is the farmer’s income. So the whole annual product is somebody’s income, and the nation may consume all of it.” How does Marx judge this reasoning?"
                   },
                   "choices": {
                     "ko": [
-                      "수입으로 소비될 부분과 생산수단으로 보충될 부분을 구분해, 같은 규모의 재생산 조건을 직접 보여 주어야 하기 때문이다.",
-                      "이론사 검토가 단순한 역사 소개로 끝나기 때문이다.",
-                      "국민소득 흐름만으로 이미 사회적 재생산이 충분히 설명되기 때문이다.",
-                      "생산물 가치 전체를 수입형태로 환원해도 불변자본 보전 문제가 없기 때문이다."
+                      "실과 아마는 생산수단의 몸을 하고 있어 소비될 수 없고, 소모된 불변자본을 현물로 보전해야 한다",
+                      "한 기업의 비용이 다른 기업의 수입인 것은 맞으므로, 수입을 모두 합하면 총생산물의 가치와 정확히 같아진다",
+                      "기계 같은 고정자본만 빼면 되고, 원료처럼 한 번에 소모되는 유동자본은 결국 수입으로 풀려 소비될 수 있다",
+                      "생산수단의 가격도 거슬러 올라가면 임금·이윤·지대로 분해되므로, 결국 전부를 수입으로 보아도 무리가 없다"
                     ],
                     "en": [
-                      "Because the parts consumed as revenue and the parts replacing means of production must be distinguished so the conditions of reproduction on the same scale can be shown directly.",
-                      "Because the review of earlier theory ends as mere historical description.",
-                      "Because national-income flows already explain social reproduction adequately.",
-                      "Because reducing the whole product to revenue forms leaves no problem of constant-capital replacement."
+                      "Yarn and flax exist in the bodily form of means of production; they cannot be consumed and must replace used-up constant capital in kind",
+                      "One firm’s cost really is another firm’s income, so adding up all incomes gives exactly the value of the total product",
+                      "Only fixed capital like machinery must be set aside; circulating capital such as raw material, used up at once, ends up as consumable income",
+                      "Trace the price of means of production back far enough and it resolves into wages, profit and rent, so treating all of it as income is fair"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "19장은 선행 이론의 한계가 불변자본 보전과 수입/자본 구분을 흐리는 데 있음을 정리한다. 그러면 다음 단계는 이 구분을 실제 부문 교환으로 보여 주는 것이다. 그래서 20장의 단순재생산 도식이 필요하다.",
-                    "en": "Chapter 19 shows that earlier theory blurred preservation of constant capital and the distinction between revenue and capital. The next step is to show that distinction in actual departmental exchange. That is why Chapter 20’s simple reproduction scheme is needed."
+                    "ko": "직물업자에게 실값은 자본의 선대이고, 실 자체는 다음 생산에서 다시 소모될 생산수단이다. 누군가의 수입이라는 점만 따라가면, 슈토르히가 세이에게 지적했듯 한 나라가 한 해 생산물을 전부 비생산적으로 소비해도 된다는 결론에 이른다. 가격을 임금·이윤·지대로 끝없이 분해하는 스미스식 설명이 솔깃하지만, 그것도 불변자본을 지워 버린다. 이 부분을 구별해야 사회적 재생산이 풀린다.",
+                    "en": "For the weaver, the money paid for yarn is an advance of capital, and the yarn itself is a means of production to be used up again. Follow only the fact that it is someone’s income and, as Storch objected to Say, you conclude that a nation could consume its whole annual product unproductively. Smith’s endless resolution of price into wages, profit and rent is tempting, but it erases constant capital too. Only by separating that part does social reproduction become intelligible."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "슈토르히는 한 나라의 불변자본을 이루는 생산물은 소비될 수 없다고 반박했다. 그러나 가치가 임금과 잉여가치로만 이루어진다는 스미스의 분석을 그대로 받아들여, 이 부분이 어디서 오는지는 설명하지 못했다.",
+                      "세이는 한 사람에게 자본의 선대인 것이 다른 사람에게는 수입이라며, 총생산물과 순생산물의 차이를 주관적인 것으로 만들었다. 그러나 그 차이는 생산물이 어떤 현물 형태로 있는지에 달린 객관적 구분이다.",
+                      "고정자본과 유동자본의 구분을 앞세운 것은 스미스의 약점이다. 원료도 불변자본의 일부라서, 소모된 만큼 현물로 보전되지 않으면 다음 생산이 같은 규모로 되풀이되지 못한다.",
+                      "스미스는 농기구와 말의 가격도 세 부분으로 분해된다며 문제를 뒤로 미뤘다. 그러나 어느 단계에서나 앞선 생산수단의 가치가 남아 있어, 불변자본은 분해로 사라지지 않는다."
+                    ],
+                    "en": [
+                      "Storch objected that products forming a nation’s constant capital cannot be consumed. Yet he kept Smith’s analysis of value into wages and surplus-value, so he could not say where that part came from.",
+                      "Say held that what is an advance of capital for one is revenue for another, making the difference between gross and net product subjective. But it is an objective distinction, set by the bodily form the product takes.",
+                      "Putting fixed versus circulating capital first is Smith’s weakness. Raw materials are also constant capital, and unless replaced in kind as they are used up, production cannot repeat on the same scale.",
+                      "Smith deferred the problem by saying the price of tools and horses also resolves into three parts. But at every stage the value of earlier means of production remains, so constant capital never dissolves away."
+                    ]
                   }
                 }
               ]
@@ -30733,7 +30865,7 @@
             "ko": "단순재생산 도식을 통해 생산수단 부문과 소비재 부문이 균형을 맞춰야 하는 조건을 설명한다.",
             "en": "Uses simple reproduction schemes to show the balance required between means of production and consumption goods."
           },
-          "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch20.htm",
+          "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch20_01.htm",
           "lessons": [
             {
               "id": "capital-v2-ch20-basic",
@@ -31148,7 +31280,7 @@
             "ko": "확대재생산 도식을 통해 축적이 부문 간 균형 조건을 더 복잡하게 만든다는 점을 보여 준다.",
             "en": "Uses expanded reproduction schemes to show how accumulation complicates the balance between departments."
           },
-          "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch21.htm",
+          "sourceUrl": "https://www.marxists.org/archive/marx/works/1885-c2/ch21_01.htm",
           "lessons": [
             {
               "id": "capital-v2-ch21-basic",
@@ -31439,27 +31571,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "왜 21장의 확대재생산 분석이 2권 전체의 결론 역할을 하는가?",
-                    "en": "Why does Chapter 21’s analysis of expanded reproduction function as the conclusion of Volume II?"
+                    "ko": "두 사회의 총생산물은 모두 8252. 갑: I 4000c+1000v+1000s, II 1500c+376v+376s. 을: I 4000c+875v+875s, II 1750c+376v+376s. 내년 확대재생산의 전제를 갖춘 쪽은?",
+                    "en": "Two societies each produce an annual product worth 8252. A: I 4000c+1000v+1000s, II 1500c+376v+376s. B: I 4000c+875v+875s, II 1750c+376v+376s. Which has the material premise for expanding production next year?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 자본의 순환과 회전 분석을 사회적 총자본의 축적 조건, 즉 부문 비례와 불균형 가능성으로 종합하기 때문이다.",
-                      "불균형은 결국 개별 기업의 경영 실패로 설명되기 때문이다.",
-                      "축적은 자본가가 돈을 아껴 두는 행위로 충분히 설명되기 때문이다.",
-                      "투자 총액만 늘면 부문 비례 문제는 사라진다는 결론에 이르기 때문이다."
+                      "갑이다. I(v+s) 2000이 IIc 1500보다 커서, I의 잉여생산물 500이 생산수단으로 남아 축적에 쓰일 수 있다",
+                      "갑이다. 잉여가치 총량이 1376으로 을보다 크니, 추가로 투자할 화폐가 그만큼 더 많이 모이기 때문이다",
+                      "을이다. 소비수단을 만드는 II부문이 더 커서, 새로 고용할 노동자를 먹여 살릴 여력이 더 크기 때문이다",
+                      "우열이 없다. 총생산물 가치가 같으니, 확대 여부는 자본가들이 잉여가치를 얼마나 저축하느냐에 달렸다"
                     ],
                     "en": [
-                      "Because it synthesizes the analysis of individual circuits and turnover into the accumulation conditions of total social capital: departmental proportions and possible disproportions.",
-                      "Because disproportions are ultimately explained only as failures of individual management.",
-                      "Because accumulation is sufficiently explained as the capitalist saving money.",
-                      "Because it concludes that a rise in total investment abolishes departmental proportionality problems."
+                      "A: its I(v+s) of 2000 exceeds IIc of 1500, so 500 of I’s surplus-product remains as means of production for accumulation",
+                      "A: its total surplus-value of 1376 exceeds B’s, so more money is gathered for additional investment",
+                      "B: its Department II, which makes means of consumption, is larger, so it can better feed the workers to be hired",
+                      "Neither: their product values are equal, so expansion depends only on how much surplus-value the capitalists save"
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "2권은 자본이 어떤 형태를 지나 되돌아오는지, 얼마나 빨리 회전하는지, 그리고 사회 전체에서 어떻게 보충되는지를 추적한다. 확대재생산 장은 이 흐름을 축적의 조건으로 모은다. 성장 자체가 생산수단과 소비수단의 비례, 추가 노동력의 재생산, 불균형 가능성을 포함한다는 점이 결론이다.",
-                    "en": "Volume II traces the forms through which capital returns, the speed of turnover, and the way capital is replaced socially. The chapter on expanded reproduction gathers these threads as the conditions of accumulation. Its conclusion is that growth itself includes proportions between means of production and consumption, reproduction of additional labour-power, and the possibility of disproportions."
+                    "ko": "두 사회의 생산물 가치는 같지만 기능적 배치가 다르다. 을에서는 I(v+s) 1750이 IIc 1750과 남김없이 교환되어 같은 규모로만 되풀이된다. 갑에서는 1500만 IIc와 교환되고 I의 잉여생산물 500이 생산수단으로 남는다. 잉여가치가 크다는 점에 끌리기 쉽지만, 추가 생산수단이 생산되어 있지 않으면 화폐로도 축적할 수 없다. 확대재생산은 생산물의 양이 아니라 요소의 질적 배치에서 시작된다.",
+                    "en": "The two products have equal value but a different functional arrangement. In B, I(v+s) of 1750 is exchanged without remainder for IIc of 1750, so production can only repeat on the same scale. In A only 1500 goes to IIc, and 500 of I’s surplus-product remains as means of production. The larger surplus-value is tempting, but money cannot buy means of production never made. Reproduction on an expanded scale begins with the qualitative arrangement of elements, not the size of the product."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "갑이 실제로 확대하려면 I의 추가 노동자가 쓸 소비수단을 II가 더 생산하고, II도 I의 생산수단을 사서 함께 축적해야 한다. 두 부문은 서로의 축적 재료를 공급한다.",
+                      "잉여가치의 양이 아니라 그것이 어떤 현물로 있는지가 관건이다. 을에서 I의 생산물은 모두 II의 불변자본 보전에 쓰이므로, 화폐가 있어도 살 추가 생산수단이 없다.",
+                      "노동자를 먹일 소비수단만으로는 늘어난 노동자가 쓸 기계와 원료를 마련할 수 없다. 을에서는 II의 불변자본을 보전하고 나면 I에 남는 생산수단이 없다.",
+                      "저축으로 화폐를 모아도 추가 생산수단이 생산되어 있지 않으면 쓸 곳이 없다. 마르크스는 같은 총생산물이라도 요소의 배치에 따라 단순재생산도, 확대재생산도 될 수 있다고 보인다."
+                    ],
+                    "en": [
+                      "For A to actually expand, II must produce more means of consumption for I’s extra workers and buy I’s means of production to accumulate too. Each department supplies the other’s material for accumulation.",
+                      "What matters is not the amount of surplus-value but the bodily form it takes. In B all of I’s product goes to replace II’s constant capital, so money finds no additional means of production to buy.",
+                      "Means of consumption for workers cannot provide the machines and materials the added workers need. In B, once II’s constant capital is replaced, I has no means of production left over.",
+                      "Saving can pile up money, but without additional means of production already made it has nothing to buy. Marx shows the same total product can ground simple or expanded reproduction depending on how its elements are arranged."
+                    ]
                   }
                 }
               ]
@@ -34490,27 +34636,41 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "7장이 1편을 마무리하면서 평균이윤 논의의 문턱을 여는 이유는 무엇인가?",
-                    "en": "Why does Chapter 7 close Part I while opening the threshold to the theory of average profit?"
+                    "ko": "두 공장이 임금 1,000파운드로 잉여가치 1,000파운드를 얻는다. 낭비를 줄인 A는 불변자본 9,000파운드로 이윤율 10%, B는 11,000파운드로 8⅓%다. A의 사장은 자기 수완이 이윤을 만든다고 말한다. 무엇이 맞는가?",
+                    "en": "Two firms each pay £1,000 in wages and obtain £1,000 of surplus-value. Firm A, cutting waste, works with £9,000 of constant capital and earns a 10% rate of profit; firm B needs £11,000 and earns 8⅓%. A’s owner says his acumen makes the profit. What is right?"
                   },
                   "choices": {
                     "ko": [
-                      "개별 이윤율을 움직이는 요인을 정리한 뒤, 그런 차이가 부문들 사이에 동시에 존재할 때 일반 이윤율 문제가 발생함을 보여 주기 때문이다.",
-                      "이윤율 차이가 회계상 표시방식에서만 생기므로 부문별 자본구성 분석은 불필요하다고 보기 때문이다.",
-                      "잉여가치율과 이윤율을 같은 개념으로 확정하여 이후 장들의 전환 문제를 단순화하기 때문이다.",
-                      "생산부문 차이를 소비자의 수요 강도 차이로 설명하고 시장가격 분석을 종결하기 때문이다."
+                      "수완은 같은 잉여가치를 더 적은 총자본에 대비시켰을 뿐이고, 잉여가치 자체는 노동자의 잉여노동에서 나왔다.",
+                      "A의 이윤율이 더 높으므로 A의 노동자가 B의 노동자보다 더 강도 높게 착취되었다고 보아야 한다.",
+                      "불변자본의 차이는 화폐가치 변화처럼 표시만 바꾼 것이어서, 두 공장의 실제 이윤율에는 차이가 없다.",
+                      "원료 구매와 관리의 효율도 가치를 더하는 활동이므로, 이윤 가운데 일부는 사장의 노동이 새로 만든 가치다."
                     ],
                     "en": [
-                      "Because after gathering the factors that move individual profit rates, it shows that when such differences coexist among branches the problem of a general rate of profit arises.",
-                      "It treats profit-rate differences as merely accounting presentation and therefore makes branch composition analysis unnecessary.",
-                      "Because it fixes the rate of surplus-value and the rate of profit as the same concept, simplifying the later transformation problem.",
-                      "Because it explains branch differences by differences in consumer demand and closes the analysis of market prices."
+                      "Acumen only set the same surplus-value against a smaller total capital; the surplus-value itself came from the workers’ surplus labour.",
+                      "Since A’s rate of profit is higher, A’s workers must have been exploited more intensely than B’s workers.",
+                      "The difference in constant capital only changes the money-expression, like a change in the value of gold, so the real rates of profit are equal.",
+                      "Efficient buying and management are value-adding activities, so part of the profit is new value created by the owner’s own labour."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "7장의 역할은 연결부다. 이윤율을 바꾸는 요인들을 하나의 자본 안에서 검토한 뒤, 8장부터는 그 차이가 여러 부문에 동시에 분포할 때 가치와 현실 이윤율 사이에 어떤 문제가 생기는지 다룬다.",
-                    "en": "Chapter 7 is a transition. After examining factors that alter the profit rate within one capital, Chapter 8 asks what happens when those differences are distributed simultaneously across branches."
+                    "ko": "두 공장은 같은 수의 노동자를 같은 정도로 착취해 똑같이 1,000파운드를 얻었다. 달라진 것은 잉여가치를 나누는 분모인 총자본이다. p'=s/(c+v)에서 c가 작으면 같은 s가 더 높은 이윤율로 나타난다. 사장의 효율을 가치의 원천으로 보기 쉽지만, 효율은 잉여가치가 표현되는 비율을 바꿀 뿐 그 양을 바꾸지 않는다. 바로 이 차이가 자본가에게 이윤이 착취가 아니라 자기 활동에서 나온다고 믿게 만든다.",
+                    "en": "Both firms exploit the same number of workers to the same degree and get the same £1,000. What differs is the denominator: in p' = s/(c+v), a smaller c makes the same s appear as a higher rate of profit. The tempting answer treats the owner’s efficiency as a source of value, but efficiency changes how surplus-value is expressed, not how much labour produces. Marx notes that this misleads the capitalist into crediting his profit to his own activity rather than to exploiting labour."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "같은 잉여가치가 경영에 따라 다른 이윤율로 나타나기 때문에, 이윤은 착취와 떨어진 독립적 원천에서 오는 것처럼 보이게 된다.",
+                      "착취도는 잉여가치율 s/v로 잰다. 두 공장 모두 1,000/1,000으로 같고, 달라진 것은 총자본을 분모로 삼는 이윤율뿐이다.",
+                      "금 가치 변화는 자본과 이윤을 같은 비율로 부풀리거나 줄여 이윤율을 그대로 둔다. 여기서는 v와 s가 같은데 c만 달라 이윤율이 실제로 달라졌다.",
+                      "관리가 낭비를 줄이면 불변자본 지출이 줄 뿐, 새로 더해지는 가치는 노동자의 노동에서 나온다. 이 보기는 자본가 자신이 빠지는 착시를 그대로 옮긴 것이다."
+                    ],
+                    "en": [
+                      "Because the same surplus-value shows up as different rates depending on management, profit comes to look as if it had an independent source apart from exploitation.",
+                      "Exploitation is measured by the rate of surplus-value s/v, which is 1,000/1,000 in both firms; only the rate of profit, computed on total capital, differs.",
+                      "A change in the value of gold inflates or shrinks capital and profit alike and leaves the rate untouched. Here v and s are equal while c differs, so the rate really changes.",
+                      "Cutting waste lowers the outlay on constant capital; the newly added value still comes from the workers’ labour. This choice repeats the capitalist’s own illusion."
+                    ]
                   }
                 }
               ]
@@ -36886,27 +37046,41 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "13장은 14장으로 어떤 질문을 넘기는가?",
-                    "en": "What question does Chapter 13 hand over to Chapter 14?"
+                    "ko": "셔츠 한 장에 새로 들어가는 노동이 10시간에서 2시간으로 줄었다. 그중 불불노동의 몫은 절반에서 4분의 3으로 커져 착취가 심해졌다. 그런데 한 장에 든 불불노동은 5시간에서 1.5시간으로 줄었고 이윤율도 떨어졌다. 왜인가?",
+                    "en": "The new labour in one shirt falls from 10 hours to 2. Its unpaid share rises from half to three quarters, so exploitation has intensified. Yet the unpaid labour per shirt drops from 5 hours to 1.5, and the rate of profit falls too. How can this be?"
                   },
                   "choices": {
                     "ko": [
-                      "이윤율 저하 경향이 있다면 왜 현실에서는 그 효과가 완만하고 불균등하게 나타나는가라는 질문이다.",
-                      "평균이윤이 성립했다면 상업자본이 왜 상품을 두 번 판매하는가라는 질문이다.",
-                      "생산가격이 가치와 다르면 지대가 어떤 토지에서 먼저 생기는가라는 질문이다.",
-                      "임금이 변하면 평균 구성 상품의 가격이 왜 고정되는가라는 질문이다."
+                      "더 큰 비율의 불불노동도 훨씬 줄어든 새 노동에서 떼어 낸 것이라, 생산수단에 비해 잉여가치가 작아진다.",
+                      "불불노동의 비율이 커졌으니 이윤율도 올라야 하며, 여기서 하락한 것은 판매 경쟁으로 가격을 너무 깎은 탓이다.",
+                      "한 장에 든 불불노동이 줄었으니 노동자에 대한 착취가 약해진 것이고, 그 결과로 이윤율이 떨어진 것이다.",
+                      "셔츠 값이 싸졌으니 이윤도 셔츠 가격에 비례해 줄었을 뿐이며, 자본 구성의 변화와는 관계가 없는 현상이다."
                     ],
                     "en": [
-                      "If there is a tendency for the profit rate to fall, why does its effect appear slowly and unevenly in reality?",
-                      "If average profit exists, why does commercial capital sell a commodity twice?",
-                      "If production price differs from value, on which land does rent first arise?",
-                      "If wages change, why does the price of average-composition commodities remain fixed?"
+                      "A larger unpaid share is cut from a much smaller amount of new labour, so surplus-value shrinks relative to the means of production.",
+                      "A larger unpaid share should raise the rate of profit, so the fall must come from price-cutting in the competition for sales.",
+                      "Less unpaid labour per shirt means exploitation of the workers has weakened, and that is why the rate of profit fell.",
+                      "The shirt got cheaper, so profit simply shrank in proportion to its price; the change in the composition of capital has nothing to do with it."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "13장은 법칙 그 자체를 세운다. 14장은 바로 그 법칙의 효과를 가로지르는 상쇄 요인을 설명한다.",
-                    "en": "Chapter 13 establishes the law as such. Chapter 14 explains the counteracting factors that cross its effects."
+                    "ko": "생산성이 오르면 셔츠 한 장이 흡수하는 산 노동이 크게 줄고, 값에서 원료와 기계 마모가 차지하는 비중이 커진다. 새 노동 가운데 불불노동의 비율이 50%에서 75%로 올라도, 2시간의 4분의 3은 10시간의 절반보다 작다. 착취율 상승과 이윤율 하락을 모순으로 보기 쉽지만, 이윤율은 잉여가치를 총자본에 대비시키므로 불변자본이 더 빨리 늘면 떨어진다. 그래서 이윤율 저하는 착취 약화의 표시가 아니다.",
+                    "en": "With higher productivity each shirt absorbs far less living labour, while raw materials and machine wear make up a growing part of its price. Even if the unpaid share of new labour rises from 50% to 75%, three quarters of 2 hours is less than half of 10. It looks contradictory that exploitation rises while the rate of profit falls, but the rate measures surplus-value against total capital, and constant capital grows faster. So a falling rate is no sign of weaker exploitation."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "마르크스는 이런 하락이 원료와 기계 같은 불변자본 요소가 싸지는 등의 사정으로 늦춰질 수는 있다고 덧붙인다. 방향을 정하는 것은 새 노동의 절대량 감소다.",
+                      "가격 경쟁은 이윤율 하락을 설명하지 못한다. 불불노동의 비율이 올라도 그 절대량이 줄면 총자본에 대한 잉여가치의 비율은 떨어질 수 있다.",
+                      "착취도는 불불노동과 지불노동의 비율로 잰다. 그 비율은 1:1에서 3:1로 높아졌으니, 줄어든 것은 착취율이 아니라 새로 더해진 노동의 양이다.",
+                      "셔츠 값이 내린 까닭 자체가 한 장에 든 산 노동이 줄고 생산수단의 몫이 커진 데 있다. 가격 하락은 자본 구성 변화가 개별 상품에 나타난 모습이다."
+                    ],
+                    "en": [
+                      "Marx adds that the fall can be slowed by cheaper elements of constant capital and similar circumstances; what sets the direction is the shrinking absolute amount of new labour.",
+                      "Price competition does not explain the fall. When the unpaid share rises but its absolute amount shrinks, surplus-value relative to total capital can still fall.",
+                      "Exploitation is measured by the ratio of unpaid to paid labour, which rose from 1:1 to 3:1. What shrank was the quantity of newly added labour, not the rate of exploitation.",
+                      "The shirt is cheaper precisely because it holds less living labour and a larger share of means of production. The lower price is how the changed composition of capital shows in a single commodity."
+                    ]
                   }
                 }
               ]
@@ -46234,30 +46408,44 @@
                 {
                   "id": "q5",
                   "type": "multiple_choice",
+                  "points": 2,
                   "prompt": {
-                    "ko": "35장은 신용제도 분석에서 어떤 위치를 차지하는가?",
-                    "en": "What place does Chapter 35 occupy in the analysis of the credit system?"
+                    "ko": "영국 투자자들이 인도 철도 건설에 수백만 파운드를 보낸다. 한 번은 금으로, 한 번은 레일로 보낸다고 하자. 윌슨은 어느 쪽이든 추가 화폐 수요를 낳아 영국 이자율을 올린다고 말한다. 마르크스는 어떻게 답하는가?",
+                    "en": "English investors send millions of pounds to build railways in India, once as gold and once as rails. Wilson says either way creates extra demand for money and raises the English interest rate. How does Marx answer?"
                   },
                   "choices": {
                     "ko": [
-                      "국내 신용과 은행법 논의를 세계화폐, 금 준비, 환율, 국제 지급압력으로 확장한다.",
-                      "국제 지급문제를 국내 은행권 발행량으로 환원해 통화원리를 보완한다.",
-                      "금 준비의 기능을 소매유통의 동전 수요 하나로 좁혀 설명한다.",
-                      "환율을 생산과 신용의 문제에서 떼어 낸 가격표로 다룬다."
+                      "금으로 보내면 대부 가능한 화폐자본이 빠져 환율과 금융시장을 압박하지만, 레일은 생산의 확대여서 그런 압박이 필연적이지 않다.",
+                      "어느 형태든 같은 자본의 이전이므로 환율과 이자율에 주는 영향도 같고, 형태의 차이는 운송 방식의 차이일 뿐이다.",
+                      "금이 빠져나가 환율이 영국에 불리해졌다면, 그것은 영국이 인도에 갚을 빚을 지고 있다는 뜻으로 보아야 한다.",
+                      "생산의 확대는 이자율을 끌어올리기 마련이므로, 레일 수출도 금 수출과 똑같이 영국의 할인율을 올린다."
                     ],
                     "en": [
-                      "It extends the discussion of domestic credit and bank law to world money, gold reserves, exchange rates, and international payment pressure.",
-                      "It supplements the currency principle by reducing international payments to domestic banknote issue.",
-                      "It narrows the function of gold reserves to small-coin demand in retail circulation.",
-                      "It treats exchange rates as price lists detached from production and credit."
+                      "Gold drains loanable money-capital and presses on the exchange and the money market; rails are an expansion of production and need not do so.",
+                      "Either form is the same transfer of capital, so the effect on exchange and interest is the same; the difference is only in how it is shipped.",
+                      "If gold leaves and the exchange turns against England, that must mean England owes a debt to India that it is paying off.",
+                      "Any expansion of production drives up interest, so exporting rails raises the English discount rate just as exporting gold does."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "35장은 신용제도가 국내 장부 안에서 닫히지 않음을 보여준다. 세계시장 결제는 금과 환율을 통해 국내 신용조건을 흔든다.",
-                    "en": "Chapter 35 shows that the credit system is not closed within domestic accounts. World-market settlement shakes domestic credit conditions through gold and exchange rates."
+                    "ko": "금과 레일은 같은 자본을 인도로 옮기는 두 형태다. 그러나 금은 곧바로 대부 가능한 화폐자본이자 화폐제도 전체의 기초라서, 금으로 보내면 런던 금융시장과 이자율에 직접 영향을 준다. 인도 어음이 모자라 금을 보내는 동안 환율은 영국에 불리해지지만 영국이 빚진 것은 아니다. 레일은 영국 생산의 확대일 뿐이다. 둘을 같게 본 윌슨의 오류는 화폐로서 금이 갖는 특수한 자리를 지운다.",
+                    "en": "Gold and rails are two forms of moving the same capital to India. But gold is directly loanable money-capital and the basis of the whole money system, so shipping it acts directly on the London money market and the interest rate. While bills on India fall short and gold must go, the exchange turns against England, though England owes nothing. Rails are simply an expansion of English production. Wilson’s mistake in equating the two erases gold’s special place as money."
                   },
-                  "points": 2
+                  "choiceFeedback": {
+                    "ko": [
+                      "금을 보내 인도의 구매력이 늘면 길게 보아 영국 상품 수요도 늘 수 있다. 그러나 당장의 금융시장 압박은 금이라는 형태에서 나온다.",
+                      "자본 이전이라는 점은 같아도 금은 곧바로 빌려줄 수 있는 화폐이고 레일은 그렇지 않다. 이 차이가 금융시장에 대한 영향을 가른다.",
+                      "환율이 불리해진 것은 런던에서 인도 어음 수요가 공급을 넘었기 때문이다. 빚을 갚아서가 아니라 특별히 큰 금액을 보내야 해서 생긴 일이다.",
+                      "마르크스는 생산의 확대가 이자율을 올리지 않고는 일어날 수 없다는 주장을 불합리하다고 본다. 추가 대부 수요는 생길 수도 있고 안 생길 수도 있다."
+                    ],
+                    "en": [
+                      "Sending gold may, in the long run, raise India’s demand for English goods by increasing its buying power; the immediate strain on the money market comes from the gold form.",
+                      "Both are transfers of capital, but gold is money that can be lent at once and rails are not. That difference decides the effect on the money market.",
+                      "The exchange turned because demand for bills on India in London exceeded their supply. It came from having to remit extraordinary sums, not from paying a debt.",
+                      "Marx calls it absurd that production cannot expand without driving up interest. Extra demand for loans may or may not arise."
+                    ]
+                  }
                 }
               ]
             },
@@ -48326,30 +48514,44 @@
                 },
                 {
                   "id": "q5",
-                  "points": 2,
                   "type": "multiple_choice",
+                  "points": 2,
                   "prompt": {
-                    "ko": "40장이 41-43장의 가격 불변·하락·상승 분석을 준비하는 방식은 무엇인가?",
-                    "en": "How does Chapter 40 prepare the constant, falling, and rising price analyses of Chapters 41-43?"
+                    "ko": "우등지 D 1에이커에 2½파운드씩 네 번 투자해 4쿼터에 이어 1, 3, 2쿼터를 더 얻었다. 공급이 늘어 A가 경작에서 빠져 밀값이 3파운드에서 1½파운드로 내렸는데 D의 지대는 9파운드에서 12파운드로 올랐다. 왜인가?",
+                    "en": "A tenant invests £2½ four times in one acre of the best soil D: after 4 qrs from the first portion, the others add 1, 3 and 2 qrs. The extra supply drives soil A out of cultivation and wheat falls from £3 to £1½ a quarter, yet D’s rent rises from £9 to £12. Why?"
                   },
                   "choices": {
                     "ko": [
-                      "추가투자의 생산성이 같을 수도, 낮아질 수도, 높아질 수도 있으므로 가격 변화 하나로 지대 변화를 설명할 수 없다는 틀을 세운다.",
-                      "차액지대 II는 오직 가격 상승에서만 생긴다고 결론내고 이후 장들은 그 상승폭만 계산한다.",
-                      "토지소유가 사라진 뒤에야 차액지대 II가 생긴다는 역사적 순서를 세운다.",
-                      "임대기간이 끝날 때만 생산가격이 형성된다는 법칙을 세운다."
+                      "D의 추가투자분도 새로 가격을 조절하는 B보다 많이 거두어, 가격이 내려도 초과생산물이 크게 늘었기 때문이다.",
+                      "추가투자의 수확이 줄면 생산가격이 오르기 마련이므로, 여기서 가격이 내린 것은 외국 곡물 수입 때문으로 보아야 한다.",
+                      "지대는 토지소유의 독점이 정하는 것이므로, 수확이나 가격 변화와 상관없이 지주가 계약 갱신 때 올려 받은 것이다.",
+                      "수확이 줄어드는 투자분은 초과이윤을 낳지 못하므로, 지대 상승은 첫 투자분의 비옥도가 높아진 결과로 보아야 한다."
                     ],
                     "en": [
-                      "It establishes that additional investment may have equal, lower, or higher productivity, so rent changes cannot be explained by price movement alone.",
-                      "It concludes that Differential Rent II arises only from price rises and later chapters merely calculate the rise.",
-                      "It establishes that Differential Rent II appears only after landownership disappears.",
-                      "It establishes that production price forms only when the lease expires."
+                      "D’s later portions still out-yield B, the new price-regulating soil, so the surplus-product grew enough to outweigh the lower price.",
+                      "Diminishing yields from additional investment normally raise the price of production, so the fall in price here must come from foreign grain imports.",
+                      "Rent is set by the monopoly of landownership, so the landlord simply raised it at lease renewal regardless of yields or prices.",
+                      "Investment portions with falling yields cannot produce surplus-profit, so the higher rent must mean the first portion’s fertility increased."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "40장은 경우 분석의 틀을 놓는다. 41장은 가격을 고정하고, 42장과 43장은 가격 변동을 넣어 같은 문제를 확장한다.",
-                    "en": "Chapter 40 sets up the cases; Chapter 41 fixes price, while Chapters 42 and 43 add price changes."
+                    "ko": "D의 산출은 4쿼터에서 10쿼터로 늘었고, 이제 가격을 조절하는 B는 같은 2½파운드로 2쿼터를 낸다. 차이 8쿼터를 1½파운드에 팔면 12파운드다. 뒤의 투자분은 생산성이 떨어졌어도 조절 토지보다 나았으므로 초과이윤이 늘었다. 수확이 줄면 가격이 오른다는 독법은 리카도처럼 한 경우만 일반화한 것이다. 가격 하락과 지대 상승이 함께 올 수 있으므로, 가격 변화만 보고 차액지대를 판단할 수 없다.",
+                    "en": "D’s output rose from 4 to 10 qrs, while B, now the regulating soil, yields 2 qrs for the same £2½. The difference of 8 qrs at £1½ is £12. The later portions were less productive, yet still better than the regulating soil, so surplus-profit grew. Reading diminishing yields as rising prices generalises, as Ricardo did, only one of several cases. Since falling prices and rising rent can go together, price movement alone cannot tell you what happens to differential rent."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "지대는 에이커당으로 올랐지만 추가 투자분마다의 초과이윤율은 줄었다. 한 관점에서는 생산성이 오르고 다른 관점에서는 내린 셈이다.",
+                      "리카도가 유일한 정상 경우로 삼은 것은 추가투자로도 공급이 모자라 가격이 오르는 경우다. 여기서는 추가 산출이 A를 밀어내 가격이 내렸다.",
+                      "여기 지대는 조절 토지 B와의 산출 차이로 정확히 계산된다. 독점이 아니라 생산성 차이가 12파운드라는 크기를 정한다.",
+                      "생산성이 줄어도 조절 토지보다 많이 거두면 초과이윤이 생긴다. 비옥도가 그대로여도 1, 3, 2쿼터의 차이만으로 지대가 는다."
+                    ],
+                    "en": [
+                      "Rent per acre rose while the rate of surplus-profit on each extra portion fell: productivity rose from one angle and fell from another.",
+                      "Ricardo’s one normal case is where extra investment still leaves supply short and price rises. Here the extra output pushed A out and price fell.",
+                      "This rent is calculated exactly from the yield gap with the regulating soil B. Productivity differences, not monopoly, set the size of £12.",
+                      "A portion that yields less than before still makes surplus-profit if it beats the regulating soil; fertility need not change for rent to grow."
+                    ]
                   }
                 }
               ]
@@ -49310,30 +49512,44 @@
                 },
                 {
                   "id": "q5",
-                  "points": 3,
                   "type": "multiple_choice",
+                  "points": 3,
                   "prompt": {
-                    "ko": "42장이 43장의 생산가격 상승 분석으로 넘기는 질문은 무엇인가?",
-                    "en": "What question does Chapter 42 pass on to Chapter 43’s analysis of rising production price?"
+                    "ko": "밀 1쿼터 가격이 3파운드에서 1½파운드로 반이 되고 최열등지 A는 경작에서 빠졌다. 그런데 우등지 C·D에 투하자본이 두 배 넘게 늘자 총화폐지대는 18파운드 그대로이고 에이커당 화폐지대는 올랐다. 어떻게 읽는가?",
+                    "en": "Wheat falls from £3 to £1½ a quarter and the worst soil A leaves cultivation. But once capital on the better soils C and D is more than doubled, total money-rent stays at £18 and money-rent per acre actually rises. How should this be read?"
                   },
                   "choices": {
                     "ko": [
-                      "가격이 내려갈 때와 반대로, 공급을 맞추려 더 나쁜 토지나 더 낮은 생산성의 투자분이 필요해지면 새 조절 기준과 지대가 어떻게 바뀌는가다.",
-                      "가격이 내려가면 절대지대가 영구히 사라지는가다.",
-                      "우등지가 많아지면 토지소유가 법적으로 폐지되는가다.",
-                      "화폐지대가 곡물지대보다 항상 먼저 증가하는가다."
+                      "우등지에 더 들어간 자본이 초과생산물을 두 배로 늘린 결과이며, 투하자본과 총산출에 대한 지대의 비율은 오히려 줄었다.",
+                      "가격이 반으로 내렸는데도 지대가 유지된 것은, 지주가 토지소유 독점으로 생산조건과 무관한 지대를 받아 내기 때문이다.",
+                      "에이커당 지대가 올랐으므로 총산출 가운데 지대로 넘어가는 몫도 커졌고, 그만큼 차지농의 이윤이 줄어든 것이다.",
+                      "곡물지대가 두 배가 되었으니 우등지의 자연 비옥도가 높아진 것이고, 그 개량 효과가 고스란히 지대로 넘어간 것이다."
                     ],
                     "en": [
-                      "Conversely, if supply requires worse land or less productive investment, how do the new regulating benchmark and rents change?",
-                      "Whether absolute rent permanently disappears when price falls.",
-                      "Whether abundant superior soils legally abolish landownership.",
-                      "Whether money-rent always rises before grain-rent."
+                      "More capital on the better soils doubled the surplus-product, while rent as a ratio to invested capital and to total output actually fell.",
+                      "Rent held up despite prices halving because landlords use their monopoly of landownership to extract rent independent of production conditions.",
+                      "Since rent per acre rose, rent’s share of total output must have grown too, cutting into the tenant farmers’ profit.",
+                      "Since grain-rent doubled, the natural fertility of the better soils must have risen, and the whole improvement passed into rent."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "42장은 기준이 더 좋은 조건으로 이동하는 하락 사례를 다룬다. 43장은 더 나쁜 조건이 필요해지는 상승 사례를 다룬다.",
-                    "en": "Chapter 42 treats a move to better regulating conditions; Chapter 43 treats the need for worse conditions and rising price."
+                    "ko": "가격이 50% 내리는 동안 초과생산물은 100% 늘었다. A가 빠지면서 B가 지대 없는 새 기준이 되고, 우등지에 더 들어간 자본이 그 기준 위에서 더 많은 쿼터의 차액을 낳았다. 지대 유지를 지주의 힘으로 읽기 쉽지만, 여기 지대는 새 기준과의 차이에서 나온다. 에이커당 지대가 올라도 투하자본 대비 지대율은 180%에서 80%로, 산출 속 몫도 줄었다. 지대는 무엇을 기준으로 재느냐에 따라 다르게 움직인다.",
+                    "en": "The price fell by 50% while the surplus-product rose by 100%. With A gone, B becomes the new rentless benchmark, and the extra capital on better soils yields more quarters of difference above it. It is tempting to credit landlords’ power, but this rent still comes from the gap with the new benchmark. Rent per acre rose, yet rent on invested capital fell from 180% to 80% and its share of output shrank. Rent moves differently depending on what you measure it against."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "곡물지대와 화폐지대, 에이커당 지대와 자본당 지대는 한 방향으로 움직이지 않는다. 가격 하락기에도 지대가 늘 수 있는 이유가 여기 있다.",
+                      "절대지대는 기준 토지까지 지대를 요구하는 문제다. 여기서는 새 기준 B의 지대가 사라졌고, 남은 지대는 모두 B와의 산출 차이다.",
+                      "에이커당 지대와 총산출 속 지대 비중은 다르다. D의 경우 곡물지대가 산출의 4분의 3에서 절반으로 줄었는데도 에이커당 지대는 올랐다.",
+                      "여기서는 추가투자분의 생산성이 처음과 같다고 가정한다. 비옥도가 아니라 우등지에 들어간 자본의 양이 늘어 쿼터 수가 불어났다."
+                    ],
+                    "en": [
+                      "Grain-rent and money-rent, rent per acre and rent per unit of capital, need not move together. That is how rent can grow even while prices fall.",
+                      "Absolute rent concerns rent demanded even from the benchmark soil. Here rent on the new benchmark B vanished; all remaining rent is yield difference from B.",
+                      "Rent per acre and rent’s share of output differ. On D the grain-rent fell from three quarters to half of output, yet rent per acre rose.",
+                      "The case assumes the extra investments are as productive as the first. The quarters multiplied because more capital went into the better soils, not because fertility rose."
+                    ]
                   }
                 }
               ]
@@ -50156,30 +50372,44 @@
                 },
                 {
                   "id": "q5",
-                  "points": 3,
                   "type": "multiple_choice",
+                  "points": 3,
                   "prompt": {
-                    "ko": "44장의 결론을 절대지대 문제로 연결하면 무엇을 묻게 되는가?",
-                    "en": "How does Chapter 44 lead into the problem of absolute rent?"
+                    "ko": "수요가 늘어 1쿼터를 더 생산해야 한다. 더 나쁜 땅 A-1에서는 4파운드, A에 자본을 더 넣으면 3¾파운드, 이미 지대를 내는 B에 더 넣으면 3½파운드가 든다. 그 뒤 1쿼터를 3파운드에 내던 A도 지대를 냈다. 왜인가?",
+                    "en": "Demand requires one more quarter of grain. It would cost £4 on worse soil A-1, £3¾ as extra capital on A, and £3½ as extra capital on the already rent-bearing soil B. Afterwards soil A, which produces a quarter for £3, also pays rent. Why?"
                   },
                   "choices": {
                     "ko": [
-                      "차액이 있는 투자분의 지대뿐 아니라, 차액이 없는 한계 토지도 토지소유 때문에 지대를 요구할 수 있는지를 묻게 된다.",
-                      "개량이 있으면 모든 지대가 이자로 환원되는지를 묻게 된다.",
-                      "최열등지는 항상 가장 높은 차액지대를 내는지를 묻게 된다.",
-                      "자유수입이 지대를 모두 폐지하는지를 묻게 된다."
+                      "더 좋은 땅 B의 추가투자가 가격을 조절하게 되어, 그 가격이 3파운드를 넘는 만큼 A도 차액지대를 낸다.",
+                      "A의 지대는 차액이 없는 한계 토지에도 지주가 토지소유 독점으로 받아 내는 것이어서 차액지대와 원천이 다르다.",
+                      "가격은 경작되는 가장 나쁜 토지가 조절하므로, A-1을 경작하지 않았다면 A에 지대가 생겼다는 계산은 착오다.",
+                      "A의 지대는 수요 급증으로 곡물이 귀해진 데 따른 일시적 독점가격이며, 생산조건의 차이와는 관계가 없다."
                     ],
                     "en": [
-                      "It asks not only about rent from differentials, but whether marginal land without a differential can demand rent because of landownership.",
-                      "It asks whether all rent becomes interest whenever improvement exists.",
-                      "It asks whether the worst soil always pays the highest differential rent.",
-                      "It asks whether free import abolishes all rent."
+                      "The extra investment on the better soil B now regulates the price, and since that price exceeds £3, soil A pays differential rent too.",
+                      "A’s rent is what landlords extract through the monopoly of landownership even from marginal land without a differential, so its source is different.",
+                      "Price is regulated by the worst soil in cultivation, so unless A-1 is tilled, the claim that A now bears rent is a miscalculation.",
+                      "A’s rent is a temporary monopoly price from grain becoming scarce under a surge in demand, unrelated to differences in production conditions."
                     ]
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "차액지대는 기준보다 나은 조건의 차액이다. 절대지대는 기준 자체도 토지소유 독점 때문에 지대를 요구할 수 있는가의 문제다.",
-                    "en": "Differential rent is a surplus above the benchmark; absolute rent asks whether the benchmark itself can demand rent through landownership monopoly."
+                    "ko": "추가 1쿼터를 가장 싸게 내는 곳은 새 열등지가 아니라 이미 지대를 내는 B의 추가투자분이다. 그래서 B가 시장가격을 조절하게 되는데, 엥겔스는 그 가격이 3½파운드가 아니라 B의 평균인 약 3⅑파운드라고 바로잡았다. 어느 쪽이든 3파운드를 넘으므로 A도 초과이윤을 얻는다. 이를 절대지대로 읽기 쉽지만, 여기 지대는 조절 가격과 개별 생산가격의 차이다. 최열등지는 고정된 땅이 아니라 가격을 조절하는 투자분이 정한다.",
+                    "en": "The cheapest source of the extra quarter is not new worse land but a further investment on soil B, which already pays rent. B therefore comes to regulate the market price; Engels corrected Marx’s figure, noting the price would be B’s average, about £3 1/9, rather than £3½. Either way it exceeds £3, so soil A earns a surplus-profit. It is tempting to read this as absolute rent, but the rent here is still the gap between the regulating price and A’s individual price of production."
+                  },
+                  "choiceFeedback": {
+                    "ko": [
+                      "차액지대 II가 작동하면 가격 상승의 한계를 더 좋은 토지가 정할 수 있다. 그러면 차액지대만으로도 경작지 전부가 지대를 낼 수 있다.",
+                      "절대지대는 가격을 조절하는 토지에서도 소유 때문에 지대가 생기는가의 문제다. 여기서 조절자는 B의 추가투자분이고, A의 지대는 그보다 싸게 생산해서 생긴 차액이다.",
+                      "조절 가격을 정하는 것은 땅 이름이 아니라 필요한 공급을 가장 싸게 내는 마지막 투자분이다. 이번에는 A-1보다 B의 추가투자가 쌌다.",
+                      "지대는 조절 가격과 A의 개별 생산가격 3파운드의 차이로 정해진다. 수요는 어떤 투자분이 필요해지는지를 정할 뿐이다."
+                    ],
+                    "en": [
+                      "Once differential rent II operates, better soil can set the limit of the rising price; then all cultivated land can yield rent through differential rent alone.",
+                      "Absolute rent asks whether rent arises even on the price-regulating land because of ownership. Here B’s extra investment regulates, and A’s rent is the gap from producing more cheaply.",
+                      "What sets the regulating price is not a soil’s name but the last investment that supplies the needed output most cheaply; this time B’s extra investment beat A-1.",
+                      "The rent is the difference between the regulating price and A’s individual price of production of £3. Demand only decides which investment becomes necessary."
+                    ]
                   }
                 }
               ]

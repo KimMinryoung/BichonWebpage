@@ -19,6 +19,8 @@
 
 카드 머리에는 강좌·장 번호·장 제목을 함께 적는다. 문항 원고 자체도 레슨 밖에서 읽히도록 쓴다. 기준점(『저작』이나 장 번호) 없이 「이 문서」「이 장」「다음 장」「the chapter」로 레슨을 가리키는 문항은 `validate-commulingo`의 `lesson-context` 규칙이 막는다(`data/commulingo/lesson-context.js`). 쇼츠도 같은 판정으로 걸러 내는 안전장치를 둔다. 2026-09-28에 이런 문항 119개를 원고에서 고쳐 현재 해당 문항은 0개다.
 
+「N장은 M장으로 어떻게 이어지는가」「N장의 체계적 의미는」「전체 논지에 무엇을 보태는가」처럼 책의 구성을 묻는 문항도 카드 한 장으로는 아무것도 가르치지 못한다. 2026-09-28에 이런 문항 137개를 각 장의 원문(marxists.org)과 대조해, 그 장의 사례·수치·논증을 구체적 상황으로 묻는 문항으로 새로 썼다. 같은 형태는 `validate-commulingo`의 `template-prompt` 규칙이 막는다.
+
 카드는 결정적인 묶음(2026-09-28 기준 49개, 묶음마다 강좌 20, 용어 8쌍, 인물 6, 사건 4)으로 나뉜다. `GET /commulingo/drill/shorts/feed/<n>?v=<version>`은 언어와 무관한 이중 언어 JSON이며 세션 없는 공개 데이터 경로(`config/route-policy.js`)다. 사전이나 강좌가 바뀌면 version이 바뀐다.
 
 ## 피드 순서 (`public/js/commulingo-shorts.js`)
