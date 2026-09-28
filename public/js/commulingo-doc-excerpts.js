@@ -6,10 +6,6 @@
 // one panel starts hidden and measures as zero, so a ResizeObserver waits for
 // the tab that shows it.
 (function () {
-    // Fold only when it hides at least another preview's worth: folding a text
-    // a few paragraphs over the preview (the 1940 Vichy law, 554px on a phone)
-    // costs a click to save less than a screen of scrolling.
-
     function previewHeight(box) {
         box.classList.add('is-folded');
         var h = box.querySelector('.commu-doc-excerpt-body').clientHeight;
@@ -23,6 +19,9 @@
         if (!body || !button) return false;
         var full = body.scrollHeight;
         if (!full) return false; // hidden panel: not laid out yet
+        // Fold only when it hides at least another preview's worth: folding a text
+        // a few paragraphs over the preview (the 1940 Vichy law, 554px on a phone)
+        // costs a click to save less than a screen of scrolling.
         if (full <= previewHeight(box) * 2) return true;
         box.classList.add('is-folded');
         button.hidden = false;
