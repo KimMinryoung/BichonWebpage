@@ -3322,6 +3322,17 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     line-height: var(--leading-prose);
 }
 
+/* Justified like the document reader (.book in commulingo-doc.css, which holds
+   the measurements): word-break: normal lets Korean break between characters so
+   the stretched gaps stay tight. Tables and headings stay ragged. */
+.commu-person-markdown p,
+.commu-person-markdown blockquote,
+.commu-person-markdown li {
+    text-align: justify;
+    word-break: normal;
+    hyphens: auto;
+}
+
 .commu-person-markdown > *:first-child {
     margin-top: 0;
 }
