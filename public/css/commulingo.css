@@ -908,7 +908,7 @@
     color: var(--text-secondary);
     display: -webkit-box;
     font-size: 0.9rem;
-    line-height: var(--leading-snug);
+    line-height: var(--leading-relaxed);
     margin: 0;
     overflow: hidden;
     -webkit-box-orient: vertical;
@@ -3099,7 +3099,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-muted));
     font-size: 0.9rem;
     font-style: italic;
-    line-height: var(--leading-normal);
+    line-height: var(--leading-relaxed);
     margin: 0;
     padding-left: 10px;
 }
@@ -3174,7 +3174,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     gap: 10px;
     align-items: baseline;
     font-size: 0.84rem;
-    line-height: var(--leading-snug);
+    line-height: var(--leading-normal);
 }
 
 .commu-career-year {
@@ -4527,7 +4527,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     color: var(--text-secondary);
     display: grid;
     gap: 6px;
-    line-height: var(--leading-normal);
+    line-height: var(--leading-relaxed);
     margin: 0 0 16px;
     padding: 12px 14px;
 }

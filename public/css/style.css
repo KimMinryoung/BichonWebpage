@@ -1165,7 +1165,7 @@ a.home-card:hover::after {
 .post-excerpt {
     color: var(--text-primary);
     font-size: 0.85rem;
-    line-height: var(--leading-normal);
+    line-height: var(--leading-relaxed);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
