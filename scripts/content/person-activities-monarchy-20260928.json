@@ -1,0 +1,699 @@
+{
+ "note": "Monarchy reclassification 2026-09-28",
+ "items": [
+  {
+   "id": "nicholas-ii",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-fe701f63e37e47daf16538616d85d351f7e45d3fddd2d46fd82c7debaef6f88e",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nicholas_II"
+   ],
+   "activities": [
+    {
+     "endYear": 1917,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "니콜라이 2세는 1894년부터 1917년 퇴위할 때까지 러시아 제국의 황제였다.",
+       "source": "https://en.wikipedia.org/wiki/Nicholas_II",
+       "excerpt": "Nicholas II (Nikolai Alexandrovich Romanov; 18 May [O.S. 6 May] 1868 – 17 July 1918) was Emperor of Russia from 1 November 1894 until his abdication in 1917.",
+       "locator": "characters 0:157; sha256 55c8db4f94a6e8235c1afade6636a288e2702bebc72cfbe32c40e4471db72762"
+      },
+      {
+       "claim": "그는 두마 설립 이후에도 국가 통치에 대한 독재적 통제를 유지했다.",
+       "source": "https://en.wikipedia.org/wiki/Nicholas_II",
+       "excerpt": "Despite ostensibly presiding over a constitutional monarchy, Nicholas resisted political reform and retained autocratic control over the nation's governance even after the establishment of the Duma.",
+       "locator": "characters 606:804; sha256 55c8db4f94a6e8235c1afade6636a288e2702bebc72cfbe32c40e4471db72762"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1894,
+     "functionId": "monarchy",
+     "affiliationId": "russian-empire",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "alexander-ii",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-4fd1def9c22e3a78d950be96464e503d274f1f962aa4a89f95a85a987ecaa016",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexander_II_of_Russia"
+   ],
+   "activities": [
+    {
+     "endYear": 1881,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "알렉산드르 2세는 1855년부터 1881년까지 러시아 제국의 황제로서 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexander_II_of_Russia",
+       "excerpt": "Alexander II (29 April 1818 – 13 March 1881) was Emperor of Russia, King of Poland, and Grand Duke of Finland from 2 March 1855 until his assassination on 13 March 1881.",
+       "locator": "characters 0:169; sha256 1fb475a5f8b4e7beb9b641060fab4344ab966bcc6a7de0775c5abe1975cf5fd5"
+      },
+      {
+       "claim": "그는 새 차르로서 러시아의 대외 정책과 전쟁 종결을 결정하는 국가 원수의 역할을 수행했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexander_II_of_Russia",
+       "excerpt": "The death of his father gave Alexander a diplomatic headache, for his father was engaged in open warfare in the southwest of his empire. On 15 January 1856, the new tsar took Russia out of the Crimean War on the very unfavourable terms of the Treaty of Paris (1856)",
+       "locator": "characters 5561:5826; sha256 1fb475a5f8b4e7beb9b641060fab4344ab966bcc6a7de0775c5abe1975cf5fd5"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1855,
+     "functionId": "monarchy",
+     "affiliationId": "russian-empire",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "alexander-iii",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-6fa744817f84a29cf0b82bbf100fbab865a1b9623e9075134ab58abc40f423c5",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexander_III_of_Russia"
+   ],
+   "activities": [
+    {
+     "endYear": 1894,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "알렉산드르 3세는 1881년부터 1894년 사망할 때까지 러시아 제국의 황제였다.",
+       "source": "https://en.wikipedia.org/wiki/Alexander_III_of_Russia",
+       "excerpt": "Alexander III (Russian: Александр III Александрович Романов, romanized: Aleksandr III Aleksandrovich Romanov; 10 March 1845 – 1 November 1894) was Emperor of Russia, King of Poland and Grand Duke of Finland from 13 March 1881 until his death in 1894.",
+       "locator": "characters 0:250; sha256 3df4c150ad722c2588cc99614e571b727b005e6299b5dbe82c6e4574f3fb3938"
+      },
+      {
+       "claim": "그는 1881년 아버지 알렉산드르 2세 암살 후 러시아 황제위에 올랐다.",
+       "source": "https://en.wikipedia.org/wiki/Alexander_III_of_Russia",
+       "excerpt": "On 13 March 1881 (N.S.) Alexander's father, Alexander II, was assassinated by members of the organization Narodnaya Volya. As a result, Alexander ascended to the Russian imperial throne in the village of Nennal.",
+       "locator": "characters 5362:5573; sha256 3df4c150ad722c2588cc99614e571b727b005e6299b5dbe82c6e4574f3fb3938"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1881,
+     "functionId": "monarchy",
+     "affiliationId": "russian-empire",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "haile-selassie-i",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-d7abc78e66877ac053c7f951d257818a0c4b51c135b571317613bf1f57776ad9",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Haile_Selassie"
+   ],
+   "activities": [
+    {
+     "endYear": 1974,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "하일레 셀라시에 1세는 1930년부터 1974년까지 에티오피아의 황제로서 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Haile_Selassie",
+       "excerpt": "Haile Selassie I (born  Ras Tafari Makonnen or Lij Tafari; 23 July 1892 – 27 August 1975) was Emperor of Ethiopia from 1930 to 1974.",
+       "locator": "characters 0:132; sha256 2a2eb3f87ed86d1dda3abc5c1ce883da40945074f9a8c489875136101df5bc90"
+      },
+      {
+       "claim": "그는 1930년 11월 2일 에티오피아 황제로 즉위하여 하일레 셀라시에 1세라는 재위명을 사용했다.",
+       "source": "https://en.wikipedia.org/wiki/Haile_Selassie",
+       "excerpt": "On 2 November 1930, after the death of Empress Zewditu, Tafari was crowned Negusa Nagast, literally \"King of Kings\", rendered in English as \"Emperor\". Upon his ascension, he took as his regnal name Haile Selassie I.",
+       "locator": "characters 4838:5053; sha256 2a2eb3f87ed86d1dda3abc5c1ce883da40945074f9a8c489875136101df5bc90"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1930,
+     "functionId": "monarchy",
+     "affiliationId": "state-ethiopia",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "norodom-sihanouk",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-c855e334c53022a4fde58daf3cfbd7504ec5008b574b04b74ffae7b78d6ba54e",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Norodom_Sihanouk"
+   ],
+   "activities": [
+    {
+     "endYear": 2004,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "시아누크는 캄보디아의 국왕, 국가원수, 총리를 역임하며 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+       "excerpt": "Norodom Sihanouk (; 31 October 1922 – 15 October 2012) was King, Chief of State and Prime Minister of Cambodia.",
+       "locator": "characters 0:111; sha256 0c943916bab0a899167c8c95a674a24db00851d62b2ae9419384412bf78b6a27"
+      },
+      {
+       "claim": "시아누크는 1941년 국왕으로 즉위하여 1953년 독립을 이끌었고, 1955년 퇴위 후 정치에 직접 참여했다.",
+       "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+       "excerpt": "When his grandfather Monivong died in 1941, Sihanouk became king amidst French colonial rule. After the Japanese occupation of Cambodia during World War II, he secured Cambodian independence from France in 1953. He abdicated in 1955 and was succeeded by his father, Suramarit, so as to directly participate in politics.",
+       "locator": "characters 695:1014; sha256 0c943916bab0a899167c8c95a674a24db00851d62b2ae9419384412bf78b6a27"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1941,
+     "functionId": "monarchy",
+     "affiliationId": "state-cambodia",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "louis-xvi",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-b42a7e433d5f119b0b8196dfbec74118a2833dd2e9d8bd4eb88a6fbf2ba100e5",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Louis_XVI"
+   ],
+   "activities": [
+    {
+     "endYear": 1792,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "루이 16세는 1774년 프랑스와 나바르의 국왕으로 즉위하여 1792년 왕정 폐지까지 재위했다.",
+       "source": "https://en.wikipedia.org/wiki/Louis_XVI",
+       "excerpt": "He became King of France and Navarre on his paternal grandfather's death on 10 May 1774, and reigned until the abolition of the monarchy on 21 September 1792.",
+       "locator": "characters 374:532; sha256 496a13a5e142d74e17f33e95e31c7a5f9b63a143a651dff9e121bb920e35f3b7"
+      },
+      {
+       "claim": "국왕으로서 루이 16세는 종교적 자유와 외교 정책을 중심으로 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Louis_XVI",
+       "excerpt": "As king, Louis XVI focused primarily on religious freedom and foreign policy.",
+       "locator": "characters 12795:12872; sha256 496a13a5e142d74e17f33e95e31c7a5f9b63a143a651dff9e121bb920e35f3b7"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1774,
+     "functionId": "monarchy",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "prince-paul-of-yugoslavia",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-607d01e4f8c309185c3d3ed5100564ff814c219a4189ecf52da34a54b96642d1",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Prince_Paul_of_Yugoslavia"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "그는 페테르 2세의 미성년 기간 동안 유고슬라비아 왕국의 섭정으로서 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Prince_Paul_of_Yugoslavia",
+       "excerpt": "was prince regent of the Kingdom of Yugoslavia during the minority of King Peter II",
+       "locator": "characters 209:292; sha256 0add9886bd28266889d1ddca79a471cfccb98085bf9fb332e1e5af0152c33bb7"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "monarchy",
+     "affiliationId": "state-yugoslavia",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "charles-x-of-france",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-2d98b648af48fa6a2bfd70eb813d1a7c100589e81239b2517bb5fbff012204c2",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles_X_of_France"
+   ],
+   "activities": [
+    {
+     "endYear": 1830,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "샤를 10세는 1824년부터 1830년까지 프랑스 국왕으로 재위했다.",
+       "source": "https://en.wikipedia.org/wiki/Charles_X_of_France",
+       "excerpt": "Charles X (Charles Philippe; 9 October 1757 – 6 November 1836) was King of France from 16 September 1824 until 2 August 1830.",
+       "locator": "characters 0:125; sha256 d8a7bd1850d99b868f412479d221da6220e39c8833c4041f01522507cf8e0f61"
+      },
+      {
+       "claim": "재위 중 국왕으로서 의회 해산과 선거권 제한, 언론 검열을 명한 통치 행위를 했다.",
+       "source": "https://en.wikipedia.org/wiki/Charles_X_of_France",
+       "excerpt": "He responded with the July Ordinances disbanding the Chamber of Deputies, limiting franchise, and reimposing press censorship.",
+       "locator": "characters 1601:1727; sha256 d8a7bd1850d99b868f412479d221da6220e39c8833c4041f01522507cf8e0f61"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1824,
+     "functionId": "monarchy",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "alexandra-feodorovna",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-dc5387ecb920bf0c04665ace576adb251660cbb47793a69f7302439a0c9f96f9",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexandra_Feodorovna_%28Alix_of_Hesse%29"
+   ],
+   "activities": [
+    {
+     "endYear": 1917,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "알렉산드라는 1894년부터 1917년까지 러시아 제국의 황후로서 니콜라이 2세의 배우자였다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandra_Feodorovna_%28Alix_of_Hesse%29",
+       "excerpt": "was the last empress of Russia as the consort of Nicholas II from their marriage on 26 November [O.S. 14 November] 1894 until his forced abdication on 15 March [O.S. 2 March] 1917.",
+       "locator": "characters 157:337; sha256 8f71a5477a54ceb0400ee1ab3c8789fd8ab7b754dfd4ab2de030d03fd059e583"
+      },
+      {
+       "claim": "그녀는 러시아 전제정치 유지를 지지하고 일부 정치 개혁에 반대했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandra_Feodorovna_%28Alix_of_Hesse%29",
+       "excerpt": "Alexandra supported the preservation of the Russian autocracy and opposed some proposed political reforms.",
+       "locator": "characters 1970:2076; sha256 8f71a5477a54ceb0400ee1ab3c8789fd8ab7b754dfd4ab2de030d03fd059e583"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1894,
+     "functionId": "monarchy",
+     "affiliationId": "russian-empire",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "hirohito",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-add69c9d9d13ccb51e4ce9b429de251154115e71c83e1532650f246382d6ce15",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hirohito"
+   ],
+   "activities": [
+    {
+     "endYear": 1989,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "히로히토는 1926년부터 1989년 사망까지 일본 천황이었고, 1947년 전후 헌법에서 그 지위는 '국가와 국민 통합의 상징'으로 재규정되었다.",
+       "source": "https://en.wikipedia.org/wiki/Hirohito",
+       "excerpt": "Emperor Shōwa (29 April 1901 – 7 January 1989), personal name Hirohito, was Emperor of Japan from 25 December 1926 until his death on 7 January 1989.",
+       "locator": "characters 0:149; accessed 2026-09-27; sha256 e32497e06b8f9444363bb82d179c25b8bd973cbf972bd08b5bfdf292396d4fe6"
+      },
+      {
+       "claim": "히로히토는 1926년부터 1989년 사망까지 일본 천황이었고, 1947년 전후 헌법에서 그 지위는 '국가와 국민 통합의 상징'으로 재규정되었다.",
+       "source": "https://en.wikipedia.org/wiki/Hirohito",
+       "excerpt": "Under Japan's post-war constitution, drafted by U.S. officials and enacted in 1947, his role as emperor was redefined as \"the symbol of the State and of the unity of the People\".",
+       "locator": "characters 3413:3591; accessed 2026-09-27; sha256 e32497e06b8f9444363bb82d179c25b8bd973cbf972bd08b5bfdf292396d4fe6"
+      },
+      {
+       "claim": "히로히토는 일본의 국가 원수로서 정치를 총괄했다.",
+       "source": "https://en.wikipedia.org/wiki/Hirohito",
+       "excerpt": "As Japan's head of state, Emperor Hirohito oversaw the rise of militarism in Japanese politics.",
+       "locator": "characters 1665:1760; sha256 3601f9c51bfc8ca1c1e4da8f1c799ec7573c0eaf5d1cd21d28fdbdf43ec684c8"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1926,
+     "functionId": "monarchy",
+     "affiliationId": "state-japan",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "michael-i-of-romania",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-937812d1b65db9320448d8456ec724b6226b5b894aea60b687e3766946f38c3b",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Michael_I_of_Romania"
+   ],
+   "activities": [
+    {
+     "endYear": 1947,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "미하이 1세는 1940~1947년 루마니아 국왕으로서 안토네스쿠 치하와 그로자 정부 아래에서 모두 실권 없는 명목상 군주였다.",
+       "source": "https://en.wikipedia.org/wiki/Michael_I_of_Romania",
+       "excerpt": "Although King Michael was formally the Supreme Head of the Army, named Conducător (\"Leader of the people\"), and entitled to appoint the Prime Minister with full powers, in reality he was forced to remain a figurehead for most of the war, until August 1944.",
+       "locator": "characters 5977:6233; accessed 2026-09-27; sha256 33ea18aa61c4a7e3e3e6b7b4dcd8a4ce2ac0046e6ee31f66529f7afcc8404e99"
+      },
+      {
+       "claim": "미하이 1세는 1940~1947년 루마니아 국왕으로서 안토네스쿠 치하와 그로자 정부 아래에서 모두 실권 없는 명목상 군주였다.",
+       "source": "https://en.wikipedia.org/wiki/Michael_I_of_Romania",
+       "excerpt": "For the next two-plus years, Michael functioned again as little more than a figurehead.",
+       "locator": "characters 9117:9204; accessed 2026-09-27; sha256 33ea18aa61c4a7e3e3e6b7b4dcd8a4ce2ac0046e6ee31f66529f7afcc8404e99"
+      },
+      {
+       "claim": "미하이 1세는 루마니아의 마지막 국왕으로 1927~1930년과 1940~1947년에 재위하며 국가원수로서 루마니아 국가기관을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Michael_I_of_Romania",
+       "excerpt": "Michael I (Romanian: Mihai I Romanian: [miˈhaj ɨnˈtɨj] ; 25 October 1921 – 5 December 2017) was the last king of Romania, reigning from 20 July 1927 to 8 June 1930 and again from 6 September 1940 until his forced abdication on 30 December 1947.",
+       "locator": "characters 0:244; sha256 f65d67ece79d4a14925d56bba01b78f1deeb87ebd3616dec07c7afccaa72801d"
+      },
+      {
+       "claim": "국왕으로서 총리를 임명하고 대외 동맹을 선언하는 등 국가 통치 행위를 수행했다.",
+       "source": "https://en.wikipedia.org/wiki/Michael_I_of_Romania",
+       "excerpt": "In 1944, Michael participated in a coup against Antonescu, appointed Constantin Sănătescu as his replacement, and subsequently declared an alliance with the Allies.",
+       "locator": "characters 1276:1440; sha256 f65d67ece79d4a14925d56bba01b78f1deeb87ebd3616dec07c7afccaa72801d"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1940,
+     "functionId": "monarchy",
+     "affiliationId": "state-romania",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "peter-ii-of-yugoslavia",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-9d524353498cdbc0cdebf8aee2cc3c7b465528da7a1391dc01b77ba5f302e59f",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Peter_II_of_Yugoslavia",
+    "https://royalfamily.org/dinasty/history-of-the-dynasty/"
+   ],
+   "activities": [
+    {
+     "endYear": 1945,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "페타르 2세는 1934~1945년 유고슬라비아 국왕이었으나 즉위 후 섭정이 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Peter_II_of_Yugoslavia",
+       "excerpt": "Peter II Karađorđević (Serbo-Croatian: Петар II Карађорђевић, Petar II Karađorđević; 6 September 1923 – 3 November 1970) was the last King of Yugoslavia, reigning from October 1934 until he was deposed in November 1945.",
+       "locator": "characters 0:219; accessed 2026-09-27; sha256 db55619fbb163e774d623f0f5668a47d6ae37db659caeee3b572e2fdf9a90173"
+      },
+      {
+       "claim": "페타르 2세는 1934~1945년 유고슬라비아 국왕이었으나 즉위 후 섭정이 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Peter_II_of_Yugoslavia",
+       "excerpt": "In view of the new monarch's youth, a regency was set up under his father's cousin Prince Paul.",
+       "locator": "characters 2227:2322; accessed 2026-09-27; sha256 db55619fbb163e774d623f0f5668a47d6ae37db659caeee3b572e2fdf9a90173"
+      },
+      {
+       "claim": "1941년 쿠데타로 섭정이 전복되자 페타르 2세가 성년으로 선포되어 왕권을 인수했다.",
+       "source": "https://royalfamily.org/dinasty/history-of-the-dynasty/",
+       "excerpt": "The Government and the Regency were overthrown, and King Peter II was declared of age and immediately assumed Royal powers from the Regency.",
+       "locator": "characters 9388:9528; sha256 41f426c9b5608ad28f9ed644109c61317bd008b7c3cef13c0b396ca8e2dda3f0"
+      },
+      {
+       "claim": "페타르 2세는 유고슬라비아 정부와 함께 조국을 떠나 런던에서 망명 정부를 이끌었다.",
+       "source": "https://royalfamily.org/dinasty/history-of-the-dynasty/",
+       "excerpt": "With the invasion of the Kingdom of Yugoslavia by the Nazis and their allies, King Peter II, as well as the Yugoslav Government, was forced to leave his homeland and, via Athens, Jerusalem, and Cairo, join other heads of state from occupied Europe in London.",
+       "locator": "characters 9715:9973; sha256 41f426c9b5608ad28f9ed644109c61317bd008b7c3cef13c0b396ca8e2dda3f0"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1934,
+     "functionId": "monarchy",
+     "affiliationId": "state-yugoslavia",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "victor-emmanuel-iii",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-806a520b7b285001323c7cf4a49ece42c6f355f9cf3c5d427f09941863a0b74f",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Victor_Emmanuel_III"
+   ],
+   "activities": [
+    {
+     "endYear": 1946,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "비토리오 에마누엘레 3세는 1900~1946년 이탈리아 국왕이었으나 파시스트 체제에서 그의 권한은 무솔리니 해임 대권 정도에 그쳤다.",
+       "source": "https://en.wikipedia.org/wiki/Victor_Emmanuel_III",
+       "excerpt": "Victor Emmanuel III (Italian: Vittorio Emanuele Ferdinando Maria Gennaro di Savoia; 11 November 1869 – 28 December 1947) was King of Italy from 29 July 1900 until his abdication on 9 May 1946.",
+       "locator": "characters 0:192; accessed 2026-09-27; sha256 4b75bf671ae89dd3b8597143a6c66c6fe32a5d265262ad5ada573a41bc1f422f"
+      },
+      {
+       "claim": "비토리오 에마누엘레 3세는 1900~1946년 이탈리아 국왕이었으나 파시스트 체제에서 그의 권한은 무솔리니 해임 대권 정도에 그쳤다.",
+       "source": "https://en.wikipedia.org/wiki/Victor_Emmanuel_III",
+       "excerpt": "By 1928, practically the only check on Mussolini's power was the King's prerogative of dismissing him from office.",
+       "locator": "characters 16428:16542; accessed 2026-09-27; sha256 4b75bf671ae89dd3b8597143a6c66c6fe32a5d265262ad5ada573a41bc1f422f"
+      },
+      {
+       "claim": "국왕으로서 그는 이탈리아의 총리를 임명하는 등 정부 구성의 핵심 권한을 행사했다.",
+       "source": "https://en.wikipedia.org/wiki/Victor_Emmanuel_III",
+       "excerpt": "By midday on 30 October, Mussolini had been appointed President of the Council of Ministers (Prime Minister), at the age of 39, with no previous experience of office, and with only 32 Fascist deputies in the Chamber.",
+       "locator": "characters 10322:10538; sha256 9c0e32e0d15339decf570a85539b2737173de7081e5cc25899fd29e3a2a8c6a3"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1900,
+     "functionId": "monarchy",
+     "affiliationId": "state-italy",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "puyi",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-bf69830f73d0b0f5f5ec26b783f8e7315d315a305fb30cff1d7ef263a073a9c9",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Puyi"
+   ],
+   "activities": [
+    {
+     "endYear": 1912,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "푸이는 1908년 두 살에 청 황제로 즉위했으나 섭정과 룽위 태후가 실제로 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Puyi",
+       "excerpt": "In 1908, chosen by Empress Dowager Cixi to succeed the childless Guangxu Emperor, Puyi ascended the throne at age two with his father Prince Chun as regent.",
+       "locator": "characters 511:667; accessed 2026-09-27; sha256 e637a6a834b532ab675e48cce16f00b3affd564cdde6ba7bd2ee72f899dd4d32"
+      },
+      {
+       "claim": "푸이는 1908년 두 살에 청 황제로 즉위했으나 섭정과 룽위 태후가 실제로 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Puyi",
+       "excerpt": "Empress dowager Longyu ruled with paramount authority over the Qing imperial court, and though she was not the de jure \"regent\", she was the de facto ruler of the Qing empire.",
+       "locator": "characters 6947:7122; accessed 2026-09-27; sha256 e637a6a834b532ab675e48cce16f00b3affd564cdde6ba7bd2ee72f899dd4d32"
+      },
+      {
+       "claim": "푸이는 청 왕조의 선통제로서 1908년부터 1912년까지 황제로 재위했다.",
+       "source": "https://en.wikipedia.org/wiki/Puyi",
+       "excerpt": "Puyi (Chinese: 溥儀; pinyin: Pǔ Yí; Wade–Giles: P'u-i; 7 February 1906 – 17 October 1967) was the last emperor of China, having reigned as the Xuantong Emperor of the Qing dynasty (1908–1912, with a brief restoration in 1917)",
+       "locator": "characters 0:223; sha256 17597b35ab7dfa1f6e80777b224de616e50e31bdf55898f64f787a1fffb4a08d"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1908,
+     "functionId": "monarchy",
+     "affiliationId": "china-qing",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1945,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "푸이는 1932년 만주국의 집정, 1934년 만주국의 황제로 즉위하여 국가원수로서 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Puyi",
+       "excerpt": "Following the Japanese invasion of Manchuria, Puyi was installed as chief executive of Manchukuo in 1932 and he was crowned emperor of Manchukuo in 1934.",
+       "locator": "characters 1068:1221; sha256 17597b35ab7dfa1f6e80777b224de616e50e31bdf55898f64f787a1fffb4a08d"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1932,
+     "functionId": "monarchy",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    }
+   ]
+  },
+  {
+   "id": "bogd-khan",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e5d54ae434ca94324a726ecaf19b156d28e351b92a20216e0f633334628634bb",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bogd_Khan"
+   ],
+   "activities": [
+    {
+     "endYear": 1924,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "보그드 칸은 제8대 젭춘담바 후툭투로서 티베트 불교 위계의 세 번째 인물이었고 보그드 칸국 티베트 불교의 영적 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Bogd_Khan",
+       "excerpt": "Born in Tibet, he was the third most important person in the Tibetan Buddhist hierarchy as the 8th Jebtsundamba Khutuktu, below only the Dalai Lama and Panchen Lama, and therefore also known as the \"Bogdo Lama\".",
+       "locator": "characters 210:421; accessed 2026-09-27; sha256 29299fc4fe17f1d371a8cc3f8c1ac319baabd8136fe3c9aed21cb4b7ba033bd2"
+      },
+      {
+       "claim": "보그드 칸은 제8대 젭춘담바 후툭투로서 티베트 불교 위계의 세 번째 인물이었고 보그드 칸국 티베트 불교의 영적 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Bogd_Khan",
+       "excerpt": "He was the spiritual leader of Tibetan Buddhism in the Bogd Khaganate.",
+       "locator": "characters 422:492; accessed 2026-09-27; sha256 29299fc4fe17f1d371a8cc3f8c1ac319baabd8136fe3c9aed21cb4b7ba033bd2"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1874,
+     "functionId": "religion",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "endYear": 1924,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "그는 1911년 12월 29일 새로운 몽골 국가의 보그드 칸으로 즉위하여 국가원수가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Bogd_Khan",
+       "excerpt": "On 29 December, the Khutuktu was formally installed as the Bogd Khan of the new Mongolian state.",
+       "locator": "characters 3363:3459; sha256 29299fc4fe17f1d371a8cc3f8c1ac319baabd8136fe3c9aed21cb4b7ba033bd2"
+      },
+      {
+       "claim": "1921년 혁명 이후에도 1924년 사망할 때까지 제한적 군주로서 왕위에 남아 국가원수직을 유지했다.",
+       "source": "https://en.wikipedia.org/wiki/Bogd_Khan",
+       "excerpt": "After the revolution in 1921 led by Damdin Sükhbaatar, the Bogd Khan was allowed to stay on the throne in a limited monarchy until his death in 1924",
+       "locator": "characters 3872:4020; sha256 29299fc4fe17f1d371a8cc3f8c1ac319baabd8136fe3c9aed21cb4b7ba033bd2"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1911,
+     "functionId": "monarchy",
+     "affiliationId": "state-mongolia",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "napoleon-bonaparte",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-70eeca35a0de57e932538dd3dac290af10585ee19ab0f761df5e05627bd18165",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Napoleon"
+   ],
+   "activities": [
+    {
+     "endYear": 1815,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "나폴레옹은 1804년부터 프랑스 황제로서 프랑스 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Napoleon",
+       "excerpt": "Napoleon Bonaparte (born Napoleone di Buonaparte; 15 August 1769 – 5 May 1821), later known by his regnal name Napoleon I, was Emperor of the French from 18 May 1804 until his first abdication in 1814, with a brief restoration during the Hundred Days in 1815.",
+       "locator": "characters 0:259; sha256 78fa13115d7425320bbadceb027cb28a6b8290ccada5dd256ef57d6f0cc623b0"
+      },
+      {
+       "claim": "나폴레옹은 1799년 브뤼메르 쿠데타 이후 제1통령으로서 프랑스 공화국 정부를 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Napoleon",
+       "excerpt": "In November 1799 Napoleon engineered the Coup of 18 Brumaire against the French Directory and became First Consul of the Republic.",
+       "locator": "characters 1231:1361; sha256 78fa13115d7425320bbadceb027cb28a6b8290ccada5dd256ef57d6f0cc623b0"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1799,
+     "functionId": "government",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "monarchy",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": false,
+     "startYear": 1804,
+     "endYear": 1815,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Napoleon",
+       "locator": "plain-text extract characters 0:259; sha256 b90d5a4da8f857f897a3d07243f513c4fc0c017d308f69f68394276ecf00b443",
+       "claim": "나폴레옹은 1804년 5월부터 1814년 첫 퇴위까지 프랑스인의 황제였다.",
+       "excerpt": "Napoleon Bonaparte (born Napoleone di Buonaparte; 15 August 1769 – 5 May 1821), later known by his regnal name Napoleon I, was Emperor of the French from 18 May 1804 until his first abdication in 1814, with a brief restoration during the Hundred Days in 1815."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "leopold-ii",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-dade3418b1b9d33e3908130b33f4d167f9d78cf071672ff1798a8ccd9f028961",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Leopold_II%2C_Holy_Roman_Emperor"
+   ],
+   "activities": [
+    {
+     "functionId": "monarchy",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": 1765,
+     "endYear": 1792,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Leopold_II%2C_Holy_Roman_Emperor",
+       "locator": "plain-text extract characters 0:277; sha256 d1843cf6994ed7bc7b11b03ac9d12359c50e6faa8b7ca2322ecce14926cae233",
+       "claim": "레오폴트 2세는 1765년부터 토스카나 대공, 1790~1792년 신성 로마 황제였다.",
+       "excerpt": "Leopold II (Peter Leopold Josef Anton Joachim Pius Gotthard; 5 May 1747 – 1 March 1792) was the penultimate Holy Roman Emperor, as well as King of Hungary, Croatia and Bohemia, and Archduke of Austria from 1790 to 1792, and Grand Duke of Tuscany from 1765 to 1790 as Leopold I."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "frederick-william-ii",
+   "reviewed": true,
+   "reviewMethod": "operator request: reigning monarchs, regents and consorts classified as monarchy; existing reign evidence kept, new excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-deeec313a6065c3f40852003ffac5928311d26dd52fb46e14128638c19425158",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Frederick_William_II_of_Prussia"
+   ],
+   "activities": [
+    {
+     "functionId": "monarchy",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": 1786,
+     "endYear": 1797,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Frederick_William_II_of_Prussia",
+       "locator": "plain-text extract characters 51:145; sha256 fdf29e8579967899b7241f66bb04ac89598ce3315402db21b57c98e095cf04a0",
+       "claim": "프리드리히 빌헬름 2세는 1786년부터 1797년 죽을 때까지 프로이센 국왕이었다.",
+       "excerpt": "; 25 September 1744 – 16 November 1797) was King of Prussia from 1786 until his death in 1797."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
