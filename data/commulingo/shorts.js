@@ -103,13 +103,27 @@ function pickCard({ id, key, topic, prompt, quoteHeading, quote, correct, distra
 
 // ------------------------------------------------------------ 강좌 문항
 
+// 문항은 장 안에서 풀도록 쓰였다. 따로 떼어 낸 카드에서는 장 제목까지 보여야
+// 「27장에서…」 같은 질문이 무엇을 묻는지 안다.
 function courseTopic(collection, chapter) {
     const title = collection.title || {};
+    const chapterTitle = chapter.title || {};
     const n = chapter.chapterNumber;
     return {
-        ko: (title.ko || '') + (n ? ' · ' + n + '장' : ''),
-        en: (title.en || '') + (n ? ' · Ch. ' + n : ''),
+        ko: (title.ko || '') + (n ? ' · ' + n + '장' : '') + (chapterTitle.ko ? ' 「' + chapterTitle.ko + '」' : ''),
+        en: (title.en || '') + (n ? ' · Ch. ' + n : '') + (chapterTitle.en ? ' “' + chapterTitle.en + '”' : ''),
     };
+}
+
+// 장 제목을 붙여도 풀리지 않는 문항: 「이 문서」「이 장」처럼 레슨 맥락을 가리키거나,
+// 장과 장 사이의 연결을 묻는 문항. 카드 한 장에서는 무엇을 묻는지 알 수 없다.
+const CONTEXT_KO = /이 (문서|장|글|책|절|문헌|저작|논문|팸플릿|텍스트|강의|연설|서한|편지)(?=[\s은는이가을를의에서으로과와도만,.?]|$)|\d+장[이은의]?[^?]{0,40}(넘어|이어)|[」”] ?장[으의]로? (넘어|이어)|(다음|앞|마지막|뒤) (최종 )?장|뒤 장/;
+const CONTEXT_EN = /\bthis (chapter|document|text|pamphlet|work|book|section|article|letter|speech|lecture)\b|\b(next|following|previous|final) chapter\b/i;
+
+function needsLessonContext(question) {
+    const ko = [question.prompt.ko].concat(question.choices.ko).join(' ');
+    const en = [question.prompt.en].concat(question.choices.en).join(' ');
+    return CONTEXT_KO.test(ko) || CONTEXT_EN.test(en);
 }
 
 function courseCards() {
@@ -128,6 +142,7 @@ function courseCards() {
                     const ko = question.choices && question.choices.ko;
                     const en = question.choices && question.choices.en;
                     if (!Array.isArray(ko) || !Array.isArray(en) || ko.length !== en.length) return;
+                    if (needsLessonContext(question)) return;
                     const correct = { ko: ko[answer], en: en[answer] };
                     if (!fits(correct, LIMITS.choice)) return;
                     // 오답 중 한 화면에 들어가는 것 하나를 문항 id로 고정해 고른다.
@@ -259,4 +274,4 @@ async function loadCommuLingoShorts() {
     return value;
 }
 
-module.exports = { loadCommuLingoShorts, leadSentences };
+module.exports = { loadCommuLingoShorts, leadSentences, needsLessonContext };
