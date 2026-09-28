@@ -1,0 +1,469 @@
+{
+ "note": "Legal scholars to law 2026-09-28",
+ "items": [
+  {
+   "id": "evgeny-pashukanis",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e365608e8abca699c3e2f34ffb8481cc396e5c4fa9a3878b2503c2898dff45a7",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Evgeny_Pashukanis"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "대표 경력을 원문과 대조하여 scholarship 기능으로 분류함.",
+       "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+       "excerpt": "In August 1918, he became a judge in Moscow . Meanwhile, he launched his career as a legal scholar. He also held a post in the Ministry of Foreign Affairs and was an adviser to the Soviet embassy in Berlin , helping to draft the Rapallo Treaty of 1922. In 1924 he was transferred to full-time academic duties as a member of the Communist Academy .",
+       "locator": "Article text, line 154 in reviewed snapshot; accessed 2026-09-27; sha256 42fe17fdbdd1f2f0f2d02482ddf63990b5ba079bc2dd078a00904580bf08f452"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1924,
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "endYear": 1937,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "파슈카니스는 1918년 8월 모스크바에서 판사가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+       "excerpt": "In August 1918, he became a judge in Moscow.",
+       "locator": "plain-text extract characters 1394:1438; sha256 228f254c3e2ddd77e710d8d876909e69f5cecf3cca24d461c76b884e31fa0959"
+      },
+      {
+       "claim": "그는 1936년 소련 법무인민위원 대리에 임명되었다.",
+       "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+       "excerpt": "In 1936, he was appointed as Deputy People's Commissar of Justice of the USSR and was proposed for membership in the Soviet Academy of Sciences.",
+       "locator": "plain-text extract characters 5269:5413; sha256 228f254c3e2ddd77e710d8d876909e69f5cecf3cca24d461c76b884e31fa0959"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "law",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  },
+  {
+   "id": "alexandros-svolos",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-18b1a1e30acd43168f76cb9c4b76890fa20e36738c8c85ca114b4bf3599f517c",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexandros_Svolos"
+   ],
+   "activities": [
+    {
+     "endYear": 1946,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "스볼로스는 1929년 아테네 대학 헌법학 교수직을 승계하여 1946년까지 재직했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandros_Svolos",
+       "excerpt": "In 1929 he succeeded his mentor, N. Saripolos, at the seat of Constitutional Law at Athens, a position he retained until 1946.",
+       "locator": "characters 970:1096; sha256 9367747304efc3b709b3102cc42d0f755c0e09f66e68bc93df9bf7784614b547"
+      },
+      {
+       "claim": "그는 그리스에서 가장 저명한 헌법학 전문가 중 한 명이었다.",
+       "source": "https://en.wikipedia.org/wiki/Alexandros_Svolos",
+       "excerpt": "Alexandros Svolos was among the most prominent experts on constitutional law in Greece, and held strong democratic and socialist views",
+       "locator": "characters 3244:3378; sha256 9367747304efc3b709b3102cc42d0f755c0e09f66e68bc93df9bf7784614b547"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1929,
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    }
+   ]
+  },
+  {
+   "id": "maurice-ahanhanzo-glele",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-27482136eca6fdd6e3bf2dcfb2e499be3d3e612ad81397aadee76520b353cf6f",
+   "sources": [
+    "https://lanation.bj/actualites/hommage-au-professeur-maurice-ahanhanzo-glele-une-fierte-nationale-aux-valeurs-intrinseques"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "모리스 아앙한조글레는 베냉의 1990년 헌법 제정에 주도적으로 기여한 저명한 법학자·헌법학자이다.",
+       "source": "https://lanation.bj/actualites/hommage-au-professeur-maurice-ahanhanzo-glele-une-fierte-nationale-aux-valeurs-intrinseques",
+       "excerpt": "Le professeur Maurice Ahanhanzo-Glèlè est un grand juriste, un grand constitutionnaliste. Il a été l’inspirateur à titre principal de la Constitution du 11 décembre 1990 et je lui rends honneur.",
+       "locator": "characters 901:1095; sha256 76ed4b5d1c81adeec28bff574c0db3ede3c121860f64b0527b076f363c9511b3"
+      },
+      {
+       "claim": "그는 교수이자 학자로서 뛰어난 경력을 쌓았으며, 소르본에서 가르친 바 있다.",
+       "source": "https://lanation.bj/actualites/hommage-au-professeur-maurice-ahanhanzo-glele-une-fierte-nationale-aux-valeurs-intrinseques",
+       "excerpt": "Maurice Ahanhanzo-Glèlè a fait une carrière remarquable comme professeur et scientifique. Il a été mon professeur quand j’étais à Paris Sorbonne Panthéon.",
+       "locator": "characters 1468:1622; sha256 76ed4b5d1c81adeec28bff574c0db3ede3c121860f64b0527b076f363c9511b3"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": null,
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    }
+   ]
+  },
+  {
+   "id": "alexei-kazannik",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-5ad8a4ea6087b4fc4e81f47d5ff076c599c8753ade404b1ebe9ae3ef5329546d",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Alexey_Kazannik"
+   ],
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "카잔니크는 1975년부터 1991년까지 옴스크 국립대학에서 노동·경제·농업법 부교수로 재직하며 학술·교육 활동을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Alexey_Kazannik",
+       "excerpt": "In 1975 he moved to Omsk and became an associate professor of the Department of Labor, Economics, and Agricultural Law of the Omsk State University, which he did until 1991.",
+       "locator": "characters 1089:1262; sha256 f16461924a2f1c28461890d786cdc8d8e3728ae05f7ac706f5e3ee1d32c80ef4"
+      },
+      {
+       "claim": "그는 옴스크 국립대학에서 법학을 가르쳤다.",
+       "source": "https://en.wikipedia.org/wiki/Alexey_Kazannik",
+       "excerpt": "Additionally, he taught law at Omsk State University.",
+       "locator": "characters 1516:1569; sha256 f16461924a2f1c28461890d786cdc8d8e3728ae05f7ac706f5e3ee1d32c80ef4"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": 1975,
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    }
+   ]
+  },
+  {
+   "id": "yevgeny-korovin",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-2c09a78dfa8c0254a72fe6a6470b281bc6d915511606bb4eab838dd5b325a559",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Yevgeny_Korovin"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Yevgeny_Korovin",
+       "locator": "plain-text extract characters 92:185; sha256 d199e2a20111e329d36c8cd6ef3c86cc845544310342b50957acddc48e800876",
+       "claim": "코로빈은 국제법을 전공한 소련 법학자였다.",
+       "excerpt": "30 September] 1892 – 23 November 1964) was a Soviet jurist specializing in international law."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Yevgeny_Korovin",
+       "locator": "plain-text extract characters 342:494; sha256 d199e2a20111e329d36c8cd6ef3c86cc845544310342b50957acddc48e800876",
+       "claim": "그는 모스크바 대학, 유엔, 헤이그 상설중재재판소에서 학술·법률 직책을 맡았다.",
+       "excerpt": "\" Korovin held several academic and legal positions at Moscow State University, the United Nations, and the Permanent Court of Arbitration in the Hague."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ivan-ilyin",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-93e1211e1fb3bb2c37e3e4527a612d1517bbcff472a8198fda81428ce77670e6",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ivan_Ilyin"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ivan_Ilyin",
+       "locator": "plain-text extract characters 113:250; sha256 9a5e99a9bf4c09743b82cf07104cce2441fb503c50adf1bff279c654729ef971",
+       "claim": "일린은 러시아의 법학자이자 종교·정치 철학자였다.",
+       "excerpt": "28 March] 1883 – 21 December 1954) was a Russian jurist, religious and political philosopher, publicist, orator, and a far-right thinker."
+      }
+     ]
+    },
+    {
+     "functionId": "scholarship",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ivan_Ilyin",
+       "locator": "plain-text extract characters 2302:2427; sha256 9a5e99a9bf4c09743b82cf07104cce2441fb503c50adf1bff279c654729ef971",
+       "claim": "그는 평생 우파 헤겔주의에 충실하며 세계사 속 국가·법·권력을 탐구했다.",
+       "excerpt": "Remaining true to Right Hegelianism throughout his life, Ilyin explored themes of statehood, law, and power in world history."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nikolai-ustryalov",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-e33abbd26ad61a89b7c7f4fba4bf9f8838b68a34a65dae8a4a55f4ba58959190",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nikolai_Ustryalov"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": 1913,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Ustryalov",
+       "locator": "plain-text extract characters 440:536; sha256 f6bf73a65f9d1468d6e50ae69d49b3efb2e8261856bb9e3a91a482fcbbf66fa6",
+       "claim": "우스트랄로프는 모스크바 대학에서 가르쳤다.",
+       "excerpt": "Teaching at Moscow University, he was initially a member of the Constitutional Democratic Party."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Ustryalov",
+       "locator": "plain-text extract characters 2786:2851; sha256 f6bf73a65f9d1468d6e50ae69d49b3efb2e8261856bb9e3a91a482fcbbf66fa6",
+       "claim": "그는 1920~1924년 하얼빈 법학부 학장이었다.",
+       "excerpt": "He was Dean of the Faculty of Law at Harbin from 1920 until 1924."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "igor-grazin",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-4a0f700a4ba7f29ab5ff4215f810cb2b3a45313d9ab087ed791129c5d0d74566",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Igor_Gr%C3%A4zin"
+   ],
+   "activities": [
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": true,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Igor_Gr%C3%A4zin",
+       "locator": "plain-text extract characters 474:546; sha256 b7d7b74d9ce34cb18ac234cb3578f2b21ae9ff81f04f39b893893e0755b9fa25",
+       "claim": "그라진은 타르투 국립대학 법학 교수로 경력을 시작했다.",
+       "excerpt": "Grazin began his career as a professor of law at Tartu State University."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sergei-muromtsev",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-41c374a4056911f8258b4ec78f034828bc2f2bf36ce0be37b31f9d20670c59a9",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sergey_Muromtsev"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "무롬체프는 헌정민주당(카데트당)의 창당자 중 한 명이었고 수년간 당 의장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Sergey_Muromtsev",
+       "excerpt": "In the late 19th century, he was among the creators of the Constitutional Democratic Party, better known as the KD or Cadet party, of which he was chairman for several years.",
+       "locator": "characters 369:543; sha256 377b20a721a79e6b6e1bb4ca601554c2f4c11e027c33c60c2f2245cbc33115b6"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "russian-kadets",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Sergey_Muromtsev",
+       "locator": "plain-text extract characters 207:300; sha256 377b20a721a79e6b6e1bb4ca601554c2f4c11e027c33c60c2f2245cbc33115b6",
+       "claim": "무롬체프는 모스크바 대학의 로마법 교수였다.",
+       "excerpt": "Muromtsev was a Russian nobleman from Tula and a Professor of Roman Law at Moscow University."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "konstantin-pobedonostsev",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-9c4e0f6f82f4aa6714cb4f947128f2316b21b0ce291d5b14f42d3183acf8c0b3",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Konstantin_Pobedonostsev"
+   ],
+   "activities": [
+    {
+     "endYear": 1905,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "포베도노스체프는 1880–1905년 신성종무원 총감으로 정교회를 감독했고, 러시아화 정책과 민족주의 선전에 큰 영향을 미쳤다.",
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Pobedonostsev",
+       "excerpt": "Between 1880 and 1905, he served as Over-Procurator of the Most Holy Synod, making him the non-clerical Russian official who supervised the Russian Orthodox Church.",
+       "locator": "characters 419:583; accessed 2026-09-27; sha256 e2eb88bf2ae88113eb9376a69770cdbce0517ce1cb93da484b99bb4c707dd6f9"
+      },
+      {
+       "claim": "포베도노스체프는 1880–1905년 신성종무원 총감으로 정교회를 감독했고, 러시아화 정책과 민족주의 선전에 큰 영향을 미쳤다.",
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Pobedonostsev",
+       "excerpt": "In the sphere of practical politics Pobedonostsev exercised considerable influence in the Russification policy of Alexander III. This found expression in nationalist propaganda.",
+       "locator": "characters 7668:7845; accessed 2026-09-27; sha256 e2eb88bf2ae88113eb9376a69770cdbce0517ce1cb93da484b99bb4c707dd6f9"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1880,
+     "functionId": "propaganda",
+     "affiliationId": "russian-empire",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1905,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "포베도노스체프는 1880년부터 1905년까지 러시아 제국의 성무원 최고검찰총장으로 재직하며 정부 행정을 담당했다.",
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Pobedonostsev",
+       "excerpt": "Between 1880 and 1905, he served as Over-Procurator of the Most Holy Synod, making him the non-clerical Russian official who supervised the Russian Orthodox Church.",
+       "locator": "characters 419:583; sha256 e2eb88bf2ae88113eb9376a69770cdbce0517ce1cb93da484b99bb4c707dd6f9"
+      },
+      {
+       "claim": "그는 제국 평의회 의원이자 성무원 최고검찰총장으로서 러시아 정교회를 실질적으로 관리하는 정부 관료였다.",
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Pobedonostsev",
+       "excerpt": "He became a member of the Council of the Empire, and in 1880, Chief Procurator of the Most Holy Synod. In the latter office, Pobedonostsev was operating head of the Russian Orthodox Church.",
+       "locator": "characters 2316:2505; sha256 e2eb88bf2ae88113eb9376a69770cdbce0517ce1cb93da484b99bb4c707dd6f9"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1880,
+     "functionId": "government",
+     "affiliationId": "russian-empire",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Pobedonostsev",
+       "locator": "plain-text extract characters 0:253; sha256 e2eb88bf2ae88113eb9376a69770cdbce0517ce1cb93da484b99bb4c707dd6f9",
+       "claim": "포베도노스체프는 러시아의 법학자이자 정치가였다.",
+       "excerpt": "Konstantin Petrovich Pobedonostsev (Russian: Константи́н Петро́вич Победоно́сцев, IPA: [kənstɐnʲˈtʲin pʲɪˈtrovʲɪtɕ pəbʲɪdɐˈnostsɨf]; 30 November 1827 – 23 March 1907) was a Russian jurist and statesman who served as an adviser to three Russian emperors."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "anatoly-sobchak",
+   "reviewed": true,
+   "reviewMethod": "operator request: legal scholarship classified as law (catalog v15); excerpts checked against retrieved Wikipedia plain-text extracts",
+   "expectedRevision": "v1-c1b69838156aaaacc5dc93a1c27017ce39fbf9d1137c3f5dd61546f511a01c73",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Anatoly_Sobchak"
+   ],
+   "activities": [
+    {
+     "endYear": 1996,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "솝차크는 1991년부터 1996년까지 상트페테르부르크 시장으로 재임하며 러시아 연방 국가기관에서 행정을 담당했다.",
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Sobchak",
+       "excerpt": "Sobchak was Mayor of Saint Petersburg from 1991 to 1996.",
+       "locator": "characters 5126:5182; sha256 dc555b96fe52b8c62fdf1d5d9b5b703dd86708bfe1a501704c2dddff21a2b07f"
+      },
+      {
+       "claim": "그는 시장 선거에서 승리하여 상트페테르부르크의 행정을 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Sobchak",
+       "excerpt": "Sobchak won the elections, and the city voted to return to its historical name of Saint Petersburg.",
+       "locator": "characters 3901:4000; sha256 dc555b96fe52b8c62fdf1d5d9b5b703dd86708bfe1a501704c2dddff21a2b07f"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1991,
+     "functionId": "government",
+     "affiliationId": "russia-federation",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "law",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "primary": false,
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Sobchak",
+       "locator": "plain-text extract characters 0:319; sha256 dc555b96fe52b8c62fdf1d5d9b5b703dd86708bfe1a501704c2dddff21a2b07f",
+       "claim": "솝차크는 러시아의 정치인이자 법학자였다.",
+       "excerpt": "Anatoly Aleksandrovich Sobchak (Russian: Анатолий Александрович Собчак, IPA: [ɐnɐˈtolʲɪj ɐlʲɪˈksandrəvʲɪtɕ sɐpˈtɕak]; 10 August 1937 – 19 February 2000) was a Russian politician and legal scholar, a co-author of the Constitution of the Russian Federation, and the first democratically elected mayor of Saint Petersburg."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
