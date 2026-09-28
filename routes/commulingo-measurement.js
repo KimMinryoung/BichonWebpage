@@ -21,8 +21,7 @@ router.post('/', rateLimit({ windowMs: 60000, limit: 120, standardHeaders: true,
     try {
         const exists = event.kind === 'lesson'
             ? loadCommuLingoCatalog().collections.some(c => (c.chapters || []).some(ch => (ch.lessons || []).some(l => l.id === event.contentId)))
-            // 쇼츠는 덱 하나가 아니라 여러 덱·강좌를 섞은 피드라 id를 따로 둔다.
-            : event.contentId === 'shorts' || (await loadCommuLingoDrills()).byId.has(event.contentId);
+            : (await loadCommuLingoDrills()).byId.has(event.contentId);
         if (!exists) return res.status(400).json({ error: 'unknown learning content' });
         await db.query(`INSERT INTO commulingo_learning_events
             (event_id, run_id, kind, content_id, content_version, lang, mode, event, step, correct)

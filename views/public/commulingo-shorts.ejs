@@ -16,13 +16,11 @@
 
         <h1 class="visually-hidden"><%= strings.commuLingo.shorts %></h1>
         <section class="commu-shorts" aria-label="<%= strings.commuLingo.shorts %>">
-            <p class="commu-shorts-streak" id="shortsStreak" aria-live="polite" hidden></p>
             <div class="commu-shorts-feed" id="shortsFeed" tabindex="0" aria-describedby="shortsDesc">
                 <p class="commu-shorts-loading" id="shortsLoading"><%= strings.commuLingo.shortsLoading %></p>
             </div>
             <p class="visually-hidden" id="shortsDesc"><%= strings.commuLingo.shortsDesc %></p>
         </section>
-        <%- include('../partials/commulingo-measurement') %>
     </main>
 
     <%- include('../partials/footer') %>

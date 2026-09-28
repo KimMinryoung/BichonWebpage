@@ -4637,7 +4637,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 /* 쇼츠 (/commulingo/drill/shorts) — 화면 높이 스크롤 상자 안에서 카드 한 장이
    한 화면을 채우고 위로 넘긴다. 높이는 JS가 상자 위치에서 계산해
-   --shorts-height로 준다. 선택지·피드백은 퀴즈 부품을 그대로 쓴다. */
+   --shorts-height로 준다. 질문 아래 버튼을 누르면 답과 해설이 열린다. */
 .commu-shorts {
     position: relative;
     margin-bottom: var(--space-6);
@@ -4667,25 +4667,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin: 0;
     padding: var(--space-6) var(--content-inset);
     color: var(--text-muted);
-}
-
-.commu-shorts-streak {
-    position: absolute;
-    top: 10px;
-    right: 14px;
-    z-index: 2;
-    margin: 0;
-    padding: 6px 10px;
-    border: 1px solid color-mix(in srgb, var(--accent-green) 58%, var(--border));
-    background: color-mix(in srgb, var(--accent-green) 26%, var(--bg-surface));
-    color: var(--text-primary);
-    font-size: 0.82rem;
-    font-weight: 800;
-    pointer-events: none;
-}
-
-.commu-shorts-streak.is-pop {
-    animation: commu-streak-pop 420ms ease;
 }
 
 .commu-short {
@@ -4734,16 +4715,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin: 0;
 }
 
-.commu-short-choices {
-    display: grid;
-    gap: 10px;
-}
-
-.commu-short-choices .commu-choice {
-    font-size: 1.02rem;
-    line-height: 1.45;
-}
-
 .commu-short-recall {
     margin: 0;
     color: var(--text-secondary);
@@ -4758,7 +4729,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 .commu-short-reveal {
-    min-height: 120px;
+    min-height: 96px;
     border: 1px dashed var(--border);
     background: var(--bg-surface);
     color: var(--text-secondary);
@@ -4778,45 +4749,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     outline-offset: 3px;
 }
 
-.commu-short-back {
-    margin: 0;
-    padding: 14px 16px;
-    border-left: 4px solid var(--accent);
-    background: var(--bg-surface);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    animation: commu-feedback-rise 260ms ease;
-}
-
-.commu-short-rate {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.commu-short-rate[hidden] {
-    display: none;
-}
-
-.commu-short-rate .btn.is-chosen {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-}
-
-.commu-short-after .commu-feedback {
-    margin-bottom: 12px;
-}
-
-.commu-short-lead {
-    color: var(--text-primary);
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.commu-short-rest {
-    font-size: 0.9rem;
-}
-
 .commu-short-actions {
     display: flex;
     flex-wrap: wrap;
@@ -4825,16 +4757,34 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     gap: 10px;
 }
 
-.commu-short-swipe {
-    margin: 10px 0 0;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    text-align: center;
+.commu-short-answer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 14px 16px;
+    border-left: 4px solid var(--accent);
+    background: var(--bg-surface);
+    animation: commu-feedback-rise 260ms ease;
+}
+
+.commu-short-answer-text {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.commu-short-rest {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .commu-shorts-streak.is-pop,
-    .commu-short-back {
+    .commu-short-answer {
         animation: none;
     }
 }

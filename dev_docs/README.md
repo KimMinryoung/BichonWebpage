@@ -11,7 +11,7 @@
 | CommuLingo 학습 활동 계측·테스트 제외·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
 | CommuLingo 신규 강좌 후보·실제 유입 판정 | [2026-09-27 후보](commulingo-course-candidates-20260927.md) |
 | CommuLingo 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
-| CommuLingo 훈련장 쇼츠(숏폼 카드 피드) | [카드 재료·순서·측정](commulingo-shorts.md) |
+| CommuLingo 훈련장 쇼츠(숏폼 카드 피드) | [카드 재료·순서](commulingo-shorts.md) |
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md), [2026-09-27 미등록 항목 등록](commulingo-history-courses-registration-20260927.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
 | CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
