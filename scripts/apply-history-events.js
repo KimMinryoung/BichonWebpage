@@ -11,10 +11,16 @@ const root = process.env.APP_ROOT || path.resolve(__dirname, '..');
 const { FLAG_NAMES } = require(path.join(root, 'data/commulingo/flag-icons'));
 const columns = ['title_ko', 'title_en', 'period_label', 'sort_order', 'question_ko', 'question_en',
     'summary_ko', 'summary_en', 'outcome_ko', 'outcome_en', 'body_ko', 'body_en',
-    'timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus'];
-const jsonColumns = new Set(['timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus']);
+    'timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides'];
+const jsonColumns = new Set(['timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides']);
+// Specs written before migration 193 have no sides / side; both default to null.
+const OPTIONAL = { sides: null };
+const fieldValue = (f, c) => (c in f ? f[c] : OPTIONAL[c]);
+// jsonb columns get SQL NULL for null, never the JSON value null (193 fixed four rows).
+const sqlValue = (c, v) => (jsonColumns.has(c) ? (v === null || v === undefined ? null : JSON.stringify(v)) : v);
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
-const personColumns = ['person_id', 'sort_order', 'relation_kind', 'relation_ko', 'relation_en', 'note_ko', 'note_en'];
+const personColumns = ['person_id', 'sort_order', 'relation_kind', 'relation_ko', 'relation_en', 'note_ko', 'note_en', 'side'];
+const personValue = (p, c) => (c === 'side' ? p.side ?? null : p[c]);
 const canonical = value => JSON.stringify(value, (_, v) => v && typeof v === 'object' && !Array.isArray(v)
     ? Object.fromEntries(Object.keys(v).sort().map(k => [k, v[k]])) : v);
 const equal = (a, b) => canonical(a) === canonical(b);
@@ -23,7 +29,8 @@ function validate(spec) {
     assert(spec.events.length && new Set(spec.events.map(e => e.id)).size === spec.events.length);
     for (const e of spec.events) {
         assert.equal(e.expected, null, 'this batch only creates new events');
-        assert.deepEqual(Object.keys(e.fields).sort(), [...columns].sort());
+        assert.deepEqual(Object.keys(e.fields).filter(c => !(c in OPTIONAL)).sort(), columns.filter(c => !(c in OPTIONAL)).sort());
+        assert(Object.keys(e.fields).every(c => columns.includes(c)), 'unknown event field');
         const f = e.fields;
         assert(Number.isInteger(f.sort_order));
         assert(f.countries.length && new Set(f.countries).size === f.countries.length);
@@ -35,6 +42,14 @@ function validate(spec) {
         }
         assert(e.sections.length >= 6);
         assert(f.focus === null || (f.focus.ko && f.focus.en), 'focus is {ko,en} or null');
+        const sides = fieldValue(f, 'sides');
+        if (sides !== null) {
+            assert(Array.isArray(sides) && sides.length >= 2, 'sides: two or more');
+            assert(f.focus === null, 'an event has focus or sides, not both');
+            sides.forEach(side => assert(/^[a-z0-9]+(-[a-z0-9]+)*$/.test(side.id) && side.label?.ko && side.label?.en, `bad side: ${JSON.stringify(side)}`));
+            assert.equal(new Set(sides.map(side => side.id)).size, sides.length, 'duplicate side id');
+        }
+        const sideIds = new Set((sides || []).map(side => side.id));
         assert(f.sources.length >= 10 && f.sources.every(u => /^https:\/\//.test(u)));
         assert.equal(new Set(f.sources).size, f.sources.length);
         assert(Object.keys(f.relations).every(k => ['related', 'parent'].includes(k)), 'relations are related[] and/or parent');
@@ -60,8 +75,10 @@ function validate(spec) {
         }
         assert.equal(new Set(e.people.map(p => p.person_id)).size, e.people.length);
         for (const p of e.people) {
-            assert.deepEqual(Object.keys(p).sort(), [...personColumns].sort());
+            assert.deepEqual(Object.keys(p).filter(c => c !== 'side').sort(), personColumns.filter(c => c !== 'side').sort());
             assert(RELATION_KINDS.includes(p.relation_kind));
+            if (p.side != null) assert(sideIds.has(p.side), `${e.id}/${p.person_id}: side ${p.side} is not one of the event's sides`);
+            if (sideIds.size) assert.notEqual(p.relation_kind, 'opponent', `${e.id}/${p.person_id}: with sides the opposing camp is a side, not opponent`);
             assert(p.relation_ko && p.relation_en && p.note_ko && p.note_en);
         }
     }
@@ -80,14 +97,14 @@ async function applyBatch(db, spec, { apply = false, backup } = {}) {
             const duplicate = (await client.query('SELECT id FROM commulingo_history_events WHERE id<>$1 AND (lower(title_en)=lower($2) OR title_ko=$3)', [e.id, e.fields.title_en, e.fields.title_ko])).rows;
             assert.equal(duplicate.length, 0, `duplicate subject: ${e.id}`);
             for (const id of [...(e.fields.relations.related || []), ...(e.fields.relations.parent ? [e.fields.relations.parent] : [])]) assert.equal((await client.query('SELECT 1 FROM commulingo_history_events WHERE id=$1', [id])).rowCount, 1, `missing related event: ${id}`);
-            if (old) for (const c of columns) assert(equal(old[c], e.fields[c]), `concurrent change: ${e.id}.${c}`);
+            if (old) for (const c of columns) assert(equal(old[c] ?? null, fieldValue(e.fields, c) ?? null), `concurrent change: ${e.id}.${c}`);
             if (old) before.events.push(old);
             const links = (await client.query('SELECT * FROM commulingo_history_event_people WHERE event_id=$1 ORDER BY sort_order,person_id', [e.id])).rows;
             before.people.push(...links);
             for (const p of e.people) {
                 assert.equal((await client.query('SELECT id FROM commulingo_people WHERE id=$1', [p.person_id])).rowCount, 1, `missing person: ${p.person_id}`);
                 const existing = links.find(l => l.person_id === p.person_id);
-                if (existing) for (const c of personColumns) assert(equal(existing[c], p[c]), `relationship conflict: ${e.id}/${p.person_id}.${c}`);
+                if (existing) for (const c of personColumns) assert(equal(existing[c] ?? null, personValue(p, c)), `relationship conflict: ${e.id}/${p.person_id}.${c}`);
             }
             report.push({ id: e.id, status: old ? 'unchanged' : (apply ? 'created' : 'ready'), missingPeople: e.people.filter(p => !links.some(l => l.person_id === p.person_id)).map(p => p.person_id) });
         }
@@ -96,10 +113,10 @@ async function applyBatch(db, spec, { apply = false, backup } = {}) {
             const entry = report.find(r => r.id === e.id);
             if (entry.status !== 'unchanged') {
                 await client.query(`INSERT INTO commulingo_history_events (id,${columns.join(',')}) VALUES ($1,${columns.map((c, i) => '$' + (i + 2) + (jsonColumns.has(c) ? '::jsonb' : '')).join(',')})`,
-                    [e.id, ...columns.map(c => jsonColumns.has(c) ? JSON.stringify(e.fields[c]) : e.fields[c])]);
+                    [e.id, ...columns.map(c => sqlValue(c, fieldValue(e.fields, c)))]);
             }
             for (const p of e.people.filter(p => entry.missingPeople.includes(p.person_id))) {
-                await client.query(`INSERT INTO commulingo_history_event_people (event_id,${personColumns.join(',')}) VALUES ($1,${personColumns.map((_, i) => '$' + (i + 2)).join(',')})`, [e.id, ...personColumns.map(c => p[c])]);
+                await client.query(`INSERT INTO commulingo_history_event_people (event_id,${personColumns.join(',')}) VALUES ($1,${personColumns.map((_, i) => '$' + (i + 2)).join(',')})`, [e.id, ...personColumns.map(c => personValue(p, c))]);
             }
         }
         await client.query(apply ? 'COMMIT' : 'ROLLBACK');

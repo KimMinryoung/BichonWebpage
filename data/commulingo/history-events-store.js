@@ -30,13 +30,15 @@ async function fetchEvents() {
                     timeline, sources, locations, no_auto_link, updated_at,
                     to_jsonb(commulingo_history_events)->'countries' AS countries,
                     to_jsonb(commulingo_history_events)->'relations' AS relations,
-                    to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions
+                    to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions,
+                    to_jsonb(commulingo_history_events)->'sides' AS sides
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
         ),
         client.query(
             `SELECT ep.event_id, ep.person_id, ep.relation_kind, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
+                    to_jsonb(ep)->>'side' AS side,
                     p.name_ko, p.name_en, p.cyrillic, p.years_label
              FROM commulingo_history_event_people ep
              JOIN commulingo_people p ON p.id = ep.person_id
@@ -49,6 +51,9 @@ async function fetchEvents() {
         peopleByEvent[row.event_id].push({
             id: row.person_id,
             kind: row.relation_kind || "unclassified",
+            // The camp this person acted for, one of the event's sides
+            // (migration 193); null for witnesses, historians, no side.
+            side: row.side || null,
             name: t(row.name_ko, row.name_en),
             cyrillic: row.cyrillic || '',
             years: row.years_label || '',
@@ -78,6 +83,9 @@ async function fetchEvents() {
         // (임시정부 on a French event is the GPRF, not the Russian one).
         noAutoLink: Array.isArray(row.no_auto_link) ? row.no_auto_link : [],
         relations: row.relations && typeof row.relations === 'object' && !Array.isArray(row.relations) ? row.relations : {},
+        // Named camps for events with no single focus (migration 193); the
+        // page groups people by side, then by relation kind.
+        sides: Array.isArray(row.sides) ? row.sides : [],
         people: peopleByEvent[row.id] || [],
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null,
     }));
@@ -110,6 +118,7 @@ async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
         return relation ? [{
             id: event.id,
             kind: relation.kind,
+            side: relation.side || null,
             period: event.period,
             title: event.title,
             relation: relation.relation,

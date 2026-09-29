@@ -118,6 +118,21 @@ function groupEventPeople(people, lang) {
     return groups;
 }
 
+// Events with no single focus name their sides (migration 193). The page then
+// shows one block per side, each grouped by kind as above, followed by the
+// people on no side (witnesses, historians). A person whose side is not one of
+// the event's sides is shown with the sideless people rather than dropped.
+function groupEventPeopleBySide(people, sides, lang) {
+    if (!Array.isArray(sides) || sides.length < 2) return null;
+    const known = new Set(sides.map(side => side.id));
+    const blocks = sides.map(side => {
+        const members = people.filter(person => person.side === side.id);
+        return { id: side.id, label: localize(side.label, lang), count: members.length, groups: groupEventPeople(members, lang) };
+    }).filter(block => block.count);
+    const rest = people.filter(person => !known.has(person.side));
+    return { sides: blocks, rest: groupEventPeople(rest, lang) };
+}
+
 function presentEvent(raw, lang) {
     const people = (raw.people || []).map(person => ({
         ...person,
@@ -140,6 +155,7 @@ function presentEvent(raw, lang) {
         countryFilter: countryFilter(raw.timeline, lang),
         people,
         peopleGroups: groupEventPeople(people, lang),
+        peopleBySide: groupEventPeopleBySide(people, raw.sides, lang),
     };
 }
 
@@ -300,4 +316,4 @@ function presentedEventList(raw, lang) {
 }
 
 
-module.exports = { buildEventPanel, pairedTermIdFor, presentedEventList };
+module.exports = { buildEventPanel, pairedTermIdFor, presentedEventList, groupEventPeopleBySide };
