@@ -3951,7 +3951,7 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-person-event-links li.is-unclassified a:hover { background: color-mix(in srgb, #5f6b78 70%, var(--clr-black, #010409)); border-color: #5f6b78; }
 /* Related-people groups by involvement kind */
 /* Events with named sides (migration 193): each camp is a framed panel with a
-   lettered header band, so the camp boundary reads before the kind groups
+   header band, so the camp boundary reads before the kind groups
    inside it. People outside every camp sit in a dashed, untinted frame. */
 .commu-event-people-side {
     margin-top: 1.6rem;
@@ -3966,12 +3966,6 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
     border-bottom: 1px solid color-mix(in srgb, var(--border) 28%, transparent);
     background: color-mix(in srgb, var(--text-primary) 6%, transparent);
     font-size: 1.15rem; font-weight: 700; letter-spacing: .01em;
-}
-.commu-event-people-side-mark {
-    display: inline-grid; place-items: center; flex: none;
-    width: 1.7rem; height: 1.7rem;
-    background: var(--text-primary); color: var(--bg-canvas);
-    font-family: 'Courier New', monospace; font-size: .95rem; font-weight: 700;
 }
 .commu-event-people-side-head .commu-event-people-group-count { margin-left: auto; font-size: .85rem; }
 .commu-event-people-side-body { padding: .2rem 1rem 1.1rem; }
