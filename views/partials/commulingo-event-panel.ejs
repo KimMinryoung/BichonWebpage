@@ -106,16 +106,16 @@ var sections = p.event.bodySections || [];
             </div>
             <% }) } %>
             <% if (p.event.peopleBySide) { %>
-            <% p.event.peopleBySide.sides.forEach(function(side) { %>
+            <% p.event.peopleBySide.sides.forEach(function(side, index) { %>
             <div class="commu-event-people-side" data-side="<%= side.id %>">
-                <h3 class="commu-event-people-side-head"><%= side.label %><span class="commu-event-people-group-count"><%= side.count %></span></h3>
-                <% renderPeopleGroups(side.groups, 'h4') %>
+                <h3 class="commu-event-people-side-head"><span class="commu-event-people-side-mark" aria-hidden="true"><%= String.fromCharCode(65 + index) %></span><span class="commu-event-people-side-label"><%= side.label %></span><span class="commu-event-people-group-count"><%= side.count %><%= strings.commuLingoViews.eventPanel.text %></span></h3>
+                <div class="commu-event-people-side-body"><% renderPeopleGroups(side.groups, 'h4') %></div>
             </div>
             <% }) %>
             <% if (p.event.peopleBySide.rest.length) { %>
             <div class="commu-event-people-side is-sideless">
-                <h3 class="commu-event-people-side-head"><%= strings.commuLingoViews.eventPanel.noSide %></h3>
-                <% renderPeopleGroups(p.event.peopleBySide.rest, 'h4') %>
+                <h3 class="commu-event-people-side-head"><span class="commu-event-people-side-label"><%= strings.commuLingoViews.eventPanel.noSide %></span></h3>
+                <div class="commu-event-people-side-body"><% renderPeopleGroups(p.event.peopleBySide.rest, 'h4') %></div>
             </div>
             <% } %>
             <% } else { renderPeopleGroups(p.event.peopleGroups, 'h3') } %>
