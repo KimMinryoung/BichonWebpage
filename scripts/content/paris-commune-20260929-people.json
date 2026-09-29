@@ -1,0 +1,771 @@
+{
+  "changedBy": "paris-commune-20260929",
+  "people": [
+    {
+      "id": "adolphe-thiers",
+      "groupId": "international-counterrevolutionary",
+      "givenName": {
+        "ko": "아돌프",
+        "en": "Adolphe"
+      },
+      "familyName": {
+        "ko": "티에르",
+        "en": "Thiers"
+      },
+      "nativeName": "Adolphe Thiers",
+      "years": "1797–1877",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "7월 왕정의 총리로, 1871년 파리 코뮌을 진압하고 제3공화국 초대 대통령이 된 정치가",
+        "en": "July Monarchy premier who as chief executive in 1871 crushed the Paris Commune and became the Third Republic’s first president"
+      },
+      "bio": {
+        "ko": "마르세유 출신 변호사·언론인으로 『프랑스 혁명사』를 써 이름을 알렸고, 1830년 7월 혁명에서 루이 필리프를 옹립한 뒤 7월 왕정의 내무장관과 총리를 지냈다. 1834년 리옹 견직공 봉기와 파리 봉기를 진압했다. 제2제정기에는 자유주의 야당의 지도자였다. 1871년 2월 국민의회가 그를 행정 수반으로 세웠고, 3월 18일 몽마르트르의 대포 회수가 실패하자 정부를 베르사유로 옮겨 5월 피의 주간에 코뮌을 진압했다. 1871년 8월 대통령이 되었고 독일 배상금을 조기에 갚았으나 1873년 왕당파 의회에 밀려 사임했다.",
+        "en": "A lawyer and journalist from Marseille who made his name with a History of the French Revolution, he helped bring Louis-Philippe to the throne in 1830 and served the July Monarchy as interior minister and premier, putting down the Lyon silk workers’ and Paris risings of 1834. Under the Second Empire he led the liberal opposition. The National Assembly made him chief executive in February 1871; when the seizure of the Montmartre cannon failed on 18 March he moved the government to Versailles and crushed the Commune in Bloody Week. President from August 1871, he paid off the German indemnity early but was forced out by the monarchist Assembly in 1873."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "뇌졸중",
+          "en": "Stroke"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "티에르"
+        ],
+        "en": [
+          "Thiers"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Adolphe_Thiers",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A lawyer and journalist from Marseille who made his name with a History of the French Revolution, he helped bring Louis-Philippe to the throne in 1830 and served the July Monarchy as interior minister and premier, putting down the Lyon silk workers’ and Paris risings of 1834. Under the Second Empire he led the liberal opposition. The National Assembly made him chief executive in February 1871; when the seizure of the Montmartre cannon failed on 18 March he moved the government to Versailles and crushed the Commune in Bloody Week. President from August 1871, he paid off the German indemnity early but was forced out by the monarchist Assembly in 1873.",
+          "source": "https://en.wikipedia.org/wiki/Adolphe_Thiers",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1797–1877",
+          "source": "https://en.wikipedia.org/wiki/Adolphe_Thiers",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "adolphe-thiers: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Adolphe_Thiers",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "adolphe-thiers: national background france",
+          "source": "https://en.wikipedia.org/wiki/Adolphe_Thiers",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "patrice-de-mac-mahon",
+      "groupId": "international-counterrevolutionary",
+      "givenName": {
+        "ko": "파트리스 드",
+        "en": "Patrice de"
+      },
+      "familyName": {
+        "ko": "마크마옹",
+        "en": "MacMahon"
+      },
+      "nativeName": "Patrice de Mac Mahon",
+      "years": "1808–1893",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "스당에서 포로가 되었다가 베르사유군을 이끌고 파리 코뮌을 진압했으며, 「도덕 질서」의 대통령이 된 원수",
+        "en": "Marshal captured at Sedan who led the Versailles army against the Paris Commune and became the president of “Moral Order”"
+      },
+      "bio": {
+        "ko": "아일랜드계 귀족 가문 출신 군인으로 알제리 정복과 크림 전쟁의 말라코프 공격, 1859년 마젠타 전투로 원수와 공작이 되었다. 1870년 샬롱군을 이끌고 메스를 구하러 가다 스당에서 부상당해 황제와 함께 포로가 되었다. 독일에서 풀려난 뒤 티에르의 베르사유군 사령관이 되어 1871년 5월 파리에 진입했고, 피의 주간의 진압과 대량 처형이 그의 지휘 아래 벌어졌다. 1873년 티에르를 이어 대통령이 되어 왕정복고를 기다리는 「도덕 질서」 정부를 이끌었고, 1877년 의회와의 충돌에서 패한 뒤 1879년 사임했다.",
+        "en": "A soldier from a family of Irish descent, he won his marshal’s baton and dukedom in the conquest of Algeria, the storming of the Malakoff in the Crimea and at Magenta in 1859. In 1870 he led the Army of Châlons to relieve Metz and was wounded and captured with the emperor at Sedan. Released by Germany, he commanded Thiers’s Versailles army, entered Paris in May 1871 and directed the repression and mass executions of Bloody Week. Succeeding Thiers as president in 1873, he led a “Moral Order” government awaiting a restoration, lost the 1877 confrontation with parliament and resigned in 1879."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "마크마옹 원수"
+        ],
+        "en": [
+          "MacMahon",
+          "Mac Mahon"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Patrice_de_MacMahon",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A soldier from a family of Irish descent, he won his marshal’s baton and dukedom in the conquest of Algeria, the storming of the Malakoff in the Crimea and at Magenta in 1859. In 1870 he led the Army of Châlons to relieve Metz and was wounded and captured with the emperor at Sedan. Released by Germany, he commanded Thiers’s Versailles army, entered Paris in May 1871 and directed the repression and mass executions of Bloody Week. Succeeding Thiers as president in 1873, he led a “Moral Order” government awaiting a restoration, lost the 1877 confrontation with parliament and resigned in 1879.",
+          "source": "https://en.wikipedia.org/wiki/Patrice_de_MacMahon",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1808–1893",
+          "source": "https://en.wikipedia.org/wiki/Patrice_de_MacMahon",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "patrice-de-mac-mahon: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Patrice_de_MacMahon",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "patrice-de-mac-mahon: national background france",
+          "source": "https://en.wikipedia.org/wiki/Patrice_de_MacMahon",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "louise-michel",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "루이즈",
+        "en": "Louise"
+      },
+      "familyName": {
+        "ko": "미셸",
+        "en": "Michel"
+      },
+      "nativeName": "Louise Michel",
+      "years": "1830–1905",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "코뮌의 바리케이드에서 싸우고 뉴칼레도니아로 유형된 뒤 아나키즘의 상징이 된 「붉은 처녀」",
+        "en": "Montmartre teacher who fought on the Commune’s barricades, was deported to New Caledonia and became the anarchist “Red Virgin”"
+      },
+      "bio": {
+        "ko": "오트마른의 성에서 하녀의 딸로 태어나 교사가 되었고, 1850년대 파리 몽마르트르에서 학교를 열며 공화파·사회주의 클럽에 드나들었다. 1871년 3월 18일 몽마르트르에서 대포를 지키러 나섰고, 코뮌 기간 감시위원회와 구급 활동, 방위군 대대에서 활동했다. 피의 주간 뒤 어머니 대신 자수해 법정에서 사형을 요구했으나 뉴칼레도니아 유형을 선고받았다. 그곳에서 카나크인의 1878년 봉기를 지지했다. 1880년 사면으로 돌아와 아나키스트로서 연설과 투옥을 거듭했고 1905년 마르세유에서 강연 여행 중 숨졌다.",
+        "en": "Born in a château in Haute-Marne to a servant, she became a teacher, opened a school in Montmartre in the 1850s and frequented republican and socialist clubs. On 18 March 1871 she turned out to defend the cannon on Montmartre, and during the Commune she served on the vigilance committee, in ambulance work and with a Guard battalion. After Bloody Week she surrendered in place of her mother, demanded death in court and was sentenced to deportation to New Caledonia, where she supported the Kanak revolt of 1878. Amnestied in 1880, she spoke and was jailed again and again as an anarchist, dying on a lecture tour in Marseille in 1905."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "폐렴",
+          "en": "Pneumonia"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "붉은 처녀"
+        ],
+        "en": [
+          "the Red Virgin"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Louise_Michel",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born in a château in Haute-Marne to a servant, she became a teacher, opened a school in Montmartre in the 1850s and frequented republican and socialist clubs. On 18 March 1871 she turned out to defend the cannon on Montmartre, and during the Commune she served on the vigilance committee, in ambulance work and with a Guard battalion. After Bloody Week she surrendered in place of her mother, demanded death in court and was sentenced to deportation to New Caledonia, where she supported the Kanak revolt of 1878. Amnestied in 1880, she spoke and was jailed again and again as an anarchist, dying on a lecture tour in Marseille in 1905.",
+          "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1830–1905",
+          "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "louise-michel: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "louise-michel: national background france",
+          "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "eugene-varlin",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "외젠",
+        "en": "Eugène"
+      },
+      "familyName": {
+        "ko": "바를랭",
+        "en": "Varlin"
+      },
+      "nativeName": "Eugène Varlin",
+      "years": "1839–1871",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "인터내셔널 파리 지부를 이끌고 코뮌의 재정을 맡았다가 피의 주간 마지막 날 총살된 제본공",
+        "en": "Bookbinder who led the Paris International, ran the Commune’s finances and was shot on the last day of Bloody Week"
+      },
+      "bio": {
+        "ko": "농가 출신으로 파리에서 제본공이 되어 1864년 제본공 파업을 이끌었고, 상호부조 조합과 협동 식당 「라 마르미트」를 세웠다. 국제노동자협회 파리 지부의 중심인물로 1868년 두 차례 재판을 받았고, 노동조합 연합회를 조직했다. 1871년 국민방위군 중앙위원회에 들어갔고 코뮌 의원으로 재정과 식량 공급을 맡았다. 공안위원회 설치에 반대한 소수파에 속했다. 5월 28일 붙잡혀 몽마르트르로 끌려가 군중에게 구타당한 뒤 총살되었다.",
+        "en": "A peasant’s son who became a bookbinder in Paris, he led the bookbinders’ strike of 1864 and founded mutual-aid societies and the cooperative restaurant La Marmite. The central figure of the International’s Paris section, he was tried twice in 1868 and organised a federation of trade unions. In 1871 he joined the Central Committee of the National Guard and, as a member of the Commune, handled finance and supplies; he belonged to the minority that opposed the Committee of Public Safety. Captured on 28 May, he was dragged to Montmartre, beaten by a crowd and shot."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Shot"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "바를랭"
+        ],
+        "en": [
+          "Varlin"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Varlin",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A peasant’s son who became a bookbinder in Paris, he led the bookbinders’ strike of 1864 and founded mutual-aid societies and the cooperative restaurant La Marmite. The central figure of the International’s Paris section, he was tried twice in 1868 and organised a federation of trade unions. In 1871 he joined the Central Committee of the National Guard and, as a member of the Commune, handled finance and supplies; he belonged to the minority that opposed the Committee of Public Safety. Captured on 28 May, he was dragged to Montmartre, beaten by a crowd and shot.",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Varlin",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1839–1871",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Varlin",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "eugene-varlin: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Varlin",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "eugene-varlin: national background france",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Varlin",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "charles-delescluze",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "샤를",
+        "en": "Charles"
+      },
+      "familyName": {
+        "ko": "들레클뤼즈",
+        "en": "Delescluze"
+      },
+      "nativeName": "Charles Delescluze",
+      "years": "1809–1871",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "1830·1848년 혁명을 거쳐 코뮌의 전쟁 대표가 되고 바리케이드에서 죽음을 택한 자코뱅 언론인",
+        "en": "Jacobin journalist of 1830 and 1848 who became the Commune’s war delegate and walked to his death on a barricade"
+      },
+      "bio": {
+        "ko": "드뢰 출신으로 1830년 7월 혁명에 가담했고, 1848년 2월 혁명 뒤 공화파 신문을 내며 활동하다 망명했다. 제2제정기에 체포되어 기아나 유형지 카옌에서 복역했고, 1868년 신문 『르 레베유』를 창간했다. 1871년 2월 국민의회 의원으로 뽑혔으나 코뮌에 참여하려고 사퇴했다. 자코뱅계 「독립 혁명가」로 공안위원이 되었고 5월 11일 민간인으로서 전쟁 대표를 맡았다. 5월 25일 패배가 분명해지자 샤토도 광장의 바리케이드 위로 걸어 올라가 총에 맞아 숨졌다.",
+        "en": "Born in Dreux, he fought in the July Revolution of 1830, published republican papers after February 1848 and went into exile. Arrested under the Second Empire, he served time in the penal colony of Cayenne in Guiana, and in 1868 founded the newspaper Le Réveil. Elected to the National Assembly in February 1871, he resigned to join the Commune. A Jacobin “independent revolutionary”, he sat on the Committee of Public Safety and on 11 May became war delegate as a civilian. On 25 May, with defeat certain, he climbed onto the barricade at the Château-d’Eau and was shot dead."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "전사",
+          "en": "Killed in action"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "들레클뤼즈"
+        ],
+        "en": [
+          "Delescluze",
+          "Louis Charles Delescluze"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Louis_Charles_Delescluze",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born in Dreux, he fought in the July Revolution of 1830, published republican papers after February 1848 and went into exile. Arrested under the Second Empire, he served time in the penal colony of Cayenne in Guiana, and in 1868 founded the newspaper Le Réveil. Elected to the National Assembly in February 1871, he resigned to join the Commune. A Jacobin “independent revolutionary”, he sat on the Committee of Public Safety and on 11 May became war delegate as a civilian. On 25 May, with defeat certain, he climbed onto the barricade at the Château-d’Eau and was shot dead.",
+          "source": "https://en.wikipedia.org/wiki/Louis_Charles_Delescluze",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1809–1871",
+          "source": "https://en.wikipedia.org/wiki/Louis_Charles_Delescluze",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "charles-delescluze: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Louis_Charles_Delescluze",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "charles-delescluze: national background france",
+          "source": "https://en.wikipedia.org/wiki/Louis_Charles_Delescluze",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "leo-frankel",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "레오",
+        "en": "Leó"
+      },
+      "familyName": {
+        "ko": "프랑켈",
+        "en": "Frankel"
+      },
+      "nativeName": "Frankel Leó",
+      "years": "1844–1896",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "파리 코뮌의 노동·교환위원회 대표로 노동 법령을 추진하고, 뒤에 헝가리 노동자당을 세운 금세공인",
+        "en": "Jeweller who headed the Commune’s Labour and Exchange Commission and later founded Hungary’s workers’ party"
+      },
+      "bio": {
+        "ko": "부다 근교 오부다의 유대인 가정에서 태어나 금세공인이 되었고, 독일을 거쳐 1867년 파리에 와 국제노동자협회 독일어권 지부에서 활동했다. 1870년 인터내셔널 재판에서 유죄를 받았다. 1871년 코뮌 의원으로 뽑힌 유일한 외국인으로 노동·교환위원회를 이끌며 제빵 야간 노동 금지와 버려진 작업장 법령을 추진했고, 공안위원회에 반대한 소수파에 섰다. 피의 주간에 부상을 입고 런던으로 탈출해 인터내셔널 총평의회 위원이 되었다. 1876년 헝가리로 돌아가 1880년 헝가리 전국노동자당을 세웠으며, 말년을 파리에서 보냈다.",
+        "en": "Born to a Jewish family in Óbuda, he trained as a jeweller, came to Paris via Germany in 1867 and worked in the International’s German-speaking section, being convicted in the International trial of 1870. The only foreigner elected to the Commune, he headed its Labour and Exchange Commission, pressed the ban on night work in bakeries and the abandoned-workshops decree, and sided with the minority against the Committee of Public Safety. Wounded in Bloody Week, he escaped to London and joined the General Council. Returning to Hungary in 1876, he founded the General Workers’ Party of Hungary in 1880 and spent his last years in Paris."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "레오 프랭켈"
+        ],
+        "en": [
+          "Leo Fränkel",
+          "Léo Frankel"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Le%C3%B3_Frankel",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a Jewish family in Óbuda, he trained as a jeweller, came to Paris via Germany in 1867 and worked in the International’s German-speaking section, being convicted in the International trial of 1870. The only foreigner elected to the Commune, he headed its Labour and Exchange Commission, pressed the ban on night work in bakeries and the abandoned-workshops decree, and sided with the minority against the Committee of Public Safety. Wounded in Bloody Week, he escaped to London and joined the General Council. Returning to Hungary in 1876, he founded the General Workers’ Party of Hungary in 1880 and spent his last years in Paris.",
+          "source": "https://en.wikipedia.org/wiki/Le%C3%B3_Frankel",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1844–1896",
+          "source": "https://en.wikipedia.org/wiki/Le%C3%B3_Frankel",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "leo-frankel: citizenship hungary",
+          "source": "https://en.wikipedia.org/wiki/Le%C3%B3_Frankel",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "leo-frankel: national background hungary",
+          "source": "https://en.wikipedia.org/wiki/Le%C3%B3_Frankel",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "jaroslaw-dabrowski",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "야로스와프",
+        "en": "Jarosław"
+      },
+      "familyName": {
+        "ko": "동브로프스키",
+        "en": "Dąbrowski"
+      },
+      "nativeName": "Jarosław Dąbrowski",
+      "years": "1836–1871",
+      "citizenship": {
+        "code": "poland"
+      },
+      "nationalOrigin": {
+        "code": "poland"
+      },
+      "role": {
+        "category": "military-commander"
+      },
+      "epithet": {
+        "ko": "1863년 폴란드 봉기의 조직자로, 코뮌군 장군이 되어 피의 주간에 몽마르트르에서 전사한 장교",
+        "en": "Organiser of the Polish rising of 1863 who became a general of the Commune and fell at Montmartre in Bloody Week"
+      },
+      "bio": {
+        "ko": "지토미르의 폴란드 귀족 가문에서 태어나 러시아군 참모 장교가 되었으나, 바르샤바에서 1863년 1월 봉기를 준비하다 봉기 직전 체포되었다. 시베리아 유형 도중 탈출해 1865년 파리로 망명했다. 1871년 코뮌은 그를 장군으로 임명해 뇌이·아니에르 등 서부 전선을 맡겼고, 그는 가장 유능한 지휘관으로 꼽혔다. 5월 21일 베르사유군이 성벽 안으로 들어왔다고 코뮌에 처음 알린 이도 그였다. 5월 23일 몽마르트르 부근 미라 거리의 바리케이드에서 치명상을 입고 숨졌다.",
+        "en": "Born into a Polish noble family in Zhytomyr, he became a Russian staff officer but was arrested in Warsaw while preparing the January Uprising of 1863, just before it broke out. Escaping on the way to Siberian exile, he reached Paris in 1865. In 1871 the Commune made him a general and gave him the western front at Neuilly and Asnières, where he was reckoned its ablest commander; on 21 May it was he who first reported that the Versailles army was inside the walls. He was mortally wounded on a barricade in the rue Myrha near Montmartre on 23 May."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "전사",
+          "en": "Killed in action"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "돔브로프스키",
+          "동브로프스키 장군"
+        ],
+        "en": [
+          "Jaroslav Dombrowski",
+          "Dombrowski"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jaros%C5%82aw_D%C4%85browski",
+        "https://en.wikipedia.org/wiki/Paris_Commune"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born into a Polish noble family in Zhytomyr, he became a Russian staff officer but was arrested in Warsaw while preparing the January Uprising of 1863, just before it broke out. Escaping on the way to Siberian exile, he reached Paris in 1865. In 1871 the Commune made him a general and gave him the western front at Neuilly and Asnières, where he was reckoned its ablest commander; on 21 May it was he who first reported that the Versailles army was inside the walls. He was mortally wounded on a barricade in the rue Myrha near Montmartre on 23 May.",
+          "source": "https://en.wikipedia.org/wiki/Jaros%C5%82aw_D%C4%85browski",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1836–1871",
+          "source": "https://en.wikipedia.org/wiki/Jaros%C5%82aw_D%C4%85browski",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "jaroslaw-dabrowski: citizenship poland",
+          "source": "https://en.wikipedia.org/wiki/Jaros%C5%82aw_D%C4%85browski",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "jaroslaw-dabrowski: national background poland",
+          "source": "https://en.wikipedia.org/wiki/Jaros%C5%82aw_D%C4%85browski",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "gustave-courbet",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "귀스타브",
+        "en": "Gustave"
+      },
+      "familyName": {
+        "ko": "쿠르베",
+        "en": "Courbet"
+      },
+      "nativeName": "Gustave Courbet",
+      "years": "1819–1877",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "writer-artist"
+      },
+      "epithet": {
+        "ko": "코뮌의 예술가 연맹을 이끌고 방돔 원주 철거의 책임을 지고 스위스로 망명한 사실주의 화가",
+        "en": "Realist painter who led the Commune’s Federation of Artists and went into Swiss exile blamed for the Vendôme Column"
+      },
+      "bio": {
+        "ko": "쥐라 지방 오르낭의 부농 가정에서 태어나 「오르낭의 매장」과 「돌 깨는 사람들」로 사실주의를 열었고, 프루동과 가까웠다. 1870년 레지옹 도뇌르를 거절했다. 1871년 코뮌의 예술가 연맹 의장으로 미술관의 자치와 검열 폐지를 요구했고, 6구 보궐선거에서 코뮌 의원이 되어 공안위원회에 반대한 소수파에 섰다. 방돔 원주를 옮기자고 제안한 일 때문에 피의 주간 뒤 6개월 금고를 선고받았고, 1873년 원주 재건 비용을 물라는 판결이 나자 스위스로 망명해 라투르드페이에서 숨졌다.",
+        "en": "Born to prosperous farmers in Ornans in the Jura, he launched Realism with A Burial at Ornans and The Stone Breakers and was close to Proudhon; in 1870 he refused the Legion of Honour. As president of the Commune’s Federation of Artists in 1871 he demanded self-government for museums and an end to censorship, and after winning a by-election in the 6th arrondissement he sided with the minority against the Committee of Public Safety. For proposing to remove the Vendôme Column he was sentenced to six months after Bloody Week; ordered in 1873 to pay for its rebuilding, he fled to Switzerland and died at La Tour-de-Peilz."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "쿠르베"
+        ],
+        "en": [
+          "Courbet"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gustave_Courbet",
+        "https://en.wikipedia.org/wiki/Vend%C3%B4me_Column"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to prosperous farmers in Ornans in the Jura, he launched Realism with A Burial at Ornans and The Stone Breakers and was close to Proudhon; in 1870 he refused the Legion of Honour. As president of the Commune’s Federation of Artists in 1871 he demanded self-government for museums and an end to censorship, and after winning a by-election in the 6th arrondissement he sided with the minority against the Committee of Public Safety. For proposing to remove the Vendôme Column he was sentenced to six months after Bloody Week; ordered in 1873 to pay for its rebuilding, he fled to Switzerland and died at La Tour-de-Peilz.",
+          "source": "https://en.wikipedia.org/wiki/Gustave_Courbet",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1819–1877",
+          "source": "https://en.wikipedia.org/wiki/Gustave_Courbet",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "gustave-courbet: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Gustave_Courbet",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "gustave-courbet: national background france",
+          "source": "https://en.wikipedia.org/wiki/Gustave_Courbet",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "eugene-pottier",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "외젠",
+        "en": "Eugène"
+      },
+      "familyName": {
+        "ko": "포티에",
+        "en": "Pottier"
+      },
+      "nativeName": "Eugène Pottier",
+      "years": "1816–1887",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "writer-artist"
+      },
+      "epithet": {
+        "ko": "파리 코뮌 의원으로 피의 주간 뒤 숨어서 「인터내셔널가」의 가사를 쓴 직물 도안공·시인",
+        "en": "Textile designer and poet, a member of the Commune, who wrote the words of “The Internationale” in hiding after Bloody Week"
+      },
+      "bio": {
+        "ko": "파리의 포장공 가정에서 태어나 직물 도안공으로 일하며 1830년대부터 노래와 시를 썼고, 1848년 6월 봉기에 가담했다. 도안공 조합을 세우고 국제노동자협회에 가입했다. 1871년 4월 2구 보궐선거로 코뮌 의원이 되었고, 피의 주간 뒤인 6월 숨어 지내며 「인터내셔널가」를 썼다. 궐석 사형 선고를 받고 미국으로 망명했다가 1880년 사면으로 돌아왔다. 1887년 가난 속에 숨졌고, 이듬해 피에르 드제이테르가 곡을 붙인 「인터내셔널가」는 세계 노동운동의 노래가 되었다.",
+        "en": "Born to a Paris box-maker, he worked as a textile designer and wrote songs and poems from the 1830s, taking part in the June Days of 1848. He founded a designers’ union and joined the International. Elected to the Commune in an April 1871 by-election for the 2nd arrondissement, he wrote “The Internationale” in hiding in June after Bloody Week. Condemned to death in absentia, he fled to the United States and returned under the 1880 amnesty. He died poor in 1887; the next year Pierre De Geyter set “The Internationale” to music and it became the anthem of the world labour movement."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "포티에"
+        ],
+        "en": [
+          "Pottier"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Pottier",
+        "https://en.wikipedia.org/wiki/The_Internationale"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a Paris box-maker, he worked as a textile designer and wrote songs and poems from the 1830s, taking part in the June Days of 1848. He founded a designers’ union and joined the International. Elected to the Commune in an April 1871 by-election for the 2nd arrondissement, he wrote “The Internationale” in hiding in June after Bloody Week. Condemned to death in absentia, he fled to the United States and returned under the 1880 amnesty. He died poor in 1887; the next year Pierre De Geyter set “The Internationale” to music and it became the anthem of the world labour movement.",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Pottier",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1816–1887",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Pottier",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "eugene-pottier: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Pottier",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "eugene-pottier: national background france",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Pottier",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "prosper-olivier-lissagaray",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "프로스페르올리비에",
+        "en": "Prosper-Olivier"
+      },
+      "familyName": {
+        "ko": "리사가레",
+        "en": "Lissagaray"
+      },
+      "nativeName": "Prosper-Olivier Lissagaray",
+      "years": "1838–1901",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "writer-artist"
+      },
+      "epithet": {
+        "ko": "파리 코뮌의 마지막 바리케이드에서 싸우고 망명지에서 『1871년 파리 코뮌의 역사』를 쓴 언론인",
+        "en": "Journalist who fought on the Commune’s last barricade and wrote the History of the Paris Commune of 1871 in exile"
+      },
+      "bio": {
+        "ko": "툴루즈의 바스크계 가정에서 태어나 제2제정기 공화파 강연가·언론인으로 활동하다 여러 차례 기소되었다. 1870년 전쟁 중 지방 국민방위정부의 군사 조직에 참여했고, 1871년 코뮌 기간 파리에서 신문 『악시옹』과 『트리뷴 뒤 푀플』을 냈다. 피의 주간에는 벨빌의 마지막 바리케이드까지 싸운 뒤 런던으로 탈출해 마르크스 가족과 가까워졌고 엘리너 마르크스와 약혼했다. 1876년 브뤼셀에서 『1871년 파리 코뮌의 역사』를 펴냈다. 1880년 사면 뒤 돌아와 신문 『라 바타유』를 냈다.",
+        "en": "Born in Toulouse to a Basque family, he was a republican lecturer and journalist under the Second Empire and was prosecuted several times. During the 1870 war he joined the military organisation of the provincial government of National Defence, and during the Commune he published the papers L’Action and Le Tribun du peuple in Paris. He fought to the last barricade in Belleville in Bloody Week, escaped to London, grew close to the Marx family and was engaged to Eleanor Marx. He published his History of the Paris Commune of 1871 in Brussels in 1876 and, after the 1880 amnesty, returned to edit La Bataille."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "리사가레"
+        ],
+        "en": [
+          "Lissagaray",
+          "Lissa"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Prosper-Olivier_Lissagaray",
+        "https://www.marxists.org/history/france/archive/lissagaray/index.htm"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born in Toulouse to a Basque family, he was a republican lecturer and journalist under the Second Empire and was prosecuted several times. During the 1870 war he joined the military organisation of the provincial government of National Defence, and during the Commune he published the papers L’Action and Le Tribun du peuple in Paris. He fought to the last barricade in Belleville in Bloody Week, escaped to London, grew close to the Marx family and was engaged to Eleanor Marx. He published his History of the Paris Commune of 1871 in Brussels in 1876 and, after the 1880 amnesty, returned to edit La Bataille.",
+          "source": "https://en.wikipedia.org/wiki/Prosper-Olivier_Lissagaray",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1838–1901",
+          "source": "https://en.wikipedia.org/wiki/Prosper-Olivier_Lissagaray",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "prosper-olivier-lissagaray: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Prosper-Olivier_Lissagaray",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "prosper-olivier-lissagaray: national background france",
+          "source": "https://en.wikipedia.org/wiki/Prosper-Olivier_Lissagaray",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    }
+  ]
+}
