@@ -78,7 +78,7 @@
 ## 다음 단계
 
 1. 다음 강좌는 후보 3(대숙청과 보안기관 1934–1941)이다. 그다음은 후보 4(초기 소련 경제 논쟁)다. 후보 1·2는 끝났다.
-2. 2~4주 뒤 같은 기준(신뢰 방문)으로 로그를 다시 집계한다. 강좌 링크 추가 효과는 `scripts/commulingo-learning-report.js`로 본다. 방문자 수를 세려면 nginx에서 Cloudflare 실제 IP(`CF-Connecting-IP`)를 해시로 남기는 설정이 필요하다.
+2. 2~4주 뒤 같은 기준(신뢰 방문)으로 로그를 다시 집계한다. 강좌 링크 추가 효과는 `scripts/commulingo-learning-report.js`로 본다. 방문자 수는 접근 로그 끝의 `vh=` 값으로 센다(2026-09-29 추가). 앱이 `CF-Connecting-IP`를 SESSION_SECRET 파생 키로 해시해 `X-Visitor-Hash`로 돌려주고(`middleware/visitor-hash.js`), nginx `combined_vh` 형식이 이를 기록한 뒤 응답에서 지운다. 원 IP는 남지 않는다. Cloudflare 캐시가 응답한 요청은 원 서버에 오지 않으므로 로그에도 없다. `vh=-`는 설정 이전 줄이거나 CF 헤더가 없는 요청이다.
 
 ## 새 short-learning 강좌 추가 절차 (2026-09-27 두 강좌에서 확인)
 
