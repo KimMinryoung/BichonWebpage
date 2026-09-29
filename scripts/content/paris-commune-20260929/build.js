@@ -316,9 +316,7 @@ const event = {
         sources,
         locations: [
             { label: { ko: '파리 시청', en: 'Hôtel de Ville, Paris' }, lat: 48.8566, lng: 2.3522, kind: 'main' },
-            { label: { ko: '몽마르트르', en: 'Montmartre' }, lat: 48.8867, lng: 2.3431, kind: 'place' },
             { label: { ko: '베르사유', en: 'Versailles' }, lat: 48.8049, lng: 2.1204, kind: 'place' },
-            { label: { ko: '페르라셰즈 묘지', en: 'Père Lachaise cemetery' }, lat: 48.8614, lng: 2.3933, kind: 'place' },
             { label: { ko: '리옹', en: 'Lyon' }, lat: 45.764, lng: 4.8357, kind: 'place' },
             { label: { ko: '마르세유', en: 'Marseille' }, lat: 43.2965, lng: 5.3698, kind: 'place' },
         ],

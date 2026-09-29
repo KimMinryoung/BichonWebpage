@@ -537,29 +537,11 @@
           },
           {
             "label": {
-              "ko": "몽마르트르",
-              "en": "Montmartre"
-            },
-            "lat": 48.8867,
-            "lng": 2.3431,
-            "kind": "place"
-          },
-          {
-            "label": {
               "ko": "베르사유",
               "en": "Versailles"
             },
             "lat": 48.8049,
             "lng": 2.1204,
-            "kind": "place"
-          },
-          {
-            "label": {
-              "ko": "페르라셰즈 묘지",
-              "en": "Père Lachaise cemetery"
-            },
-            "lat": 48.8614,
-            "lng": 2.3933,
             "kind": "place"
           },
           {
