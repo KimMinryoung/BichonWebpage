@@ -1,0 +1,68 @@
+// New people for the Second International batch, in the commulingo-people-upsert
+// payload shape. Socialist leaders join international-revolutionary (the Jaurès
+// precedent); MacDonald, later prime minister, foreign-statesmen.
+const W = t => 'https://en.wikipedia.org/wiki/' + t;
+const person = (id, groupId, [gko, gen], [fko, fen], nativeName, years, citizenship, origin, role, epithet, bio, fate, aliases, sources) => ({
+    id, groupId,
+    givenName: { ko: gko, en: gen }, familyName: { ko: fko, en: fen },
+    nativeName, years,
+    citizenship: { code: citizenship }, nationalOrigin: typeof origin === 'string' ? { code: origin } : origin,
+    role: { category: role },
+    epithet: { ko: epithet[0], en: epithet[1] },
+    bio: { ko: bio[0], en: bio[1] },
+    fate: { kind: fate[0], label: { ko: fate[1], en: fate[2] } },
+    aliases, sources,
+    evidence: [
+        { field: 'bio', claim: bio[1] },
+        { field: 'years', claim: years },
+        { field: 'citizenship', claim: `${id}: citizenship ${citizenship}` },
+        { field: 'nationalOrigin', claim: `${id}: national background ${typeof origin === 'string' ? origin : origin.code}` },
+    ].map(e => ({ ...e, source: sources[0], locator: 'Wikipedia article: lead, biography sections' })),
+});
+const SI = W('Second_International');
+const SCOT = { code: 'uk', label: { ko: '스코틀랜드', en: 'Scotland' } };
+
+module.exports = [
+    person('emile-vandervelde', 'international-revolutionary', ['에밀', 'Émile'], ['반데르벨데', 'Vandervelde'], 'Émile Vandervelde', '1866–1938', 'belgium', 'belgium', 'non-soviet-revolutionary',
+        ['국제사회주의사무국 의장으로 제2인터내셔널을 이끌다 1914년 벨기에 전시 정부에 입각한 사회주의자',
+            'Chairman of the International Socialist Bureau who led the Second International and joined Belgium’s wartime government in 1914'],
+        ['벨기에 노동당의 지도자이자 법학자로, 1900년부터 국제사회주의사무국 의장을 맡아 제2인터내셔널의 얼굴이 되었다. 1914년 8월 독일이 중립국 벨기에를 침공하자 국무장관으로 입각해 조국 방위를 지지했고, 치머발트 운동에 맞서 사무국을 지키려 했다. 전후 법무장관과 외무장관을 지내며 1925년 로카르노 조약에 서명했고, 1923년 노동사회주의 인터내셔널 의장이 되었다.',
+            'A leader of the Belgian Labour Party and a jurist, he chaired the International Socialist Bureau from 1900 and became the face of the Second International. When Germany invaded neutral Belgium in August 1914 he entered the government as minister of state and backed national defence, trying to hold the Bureau together against the Zimmerwald movement. After the war he served as justice and foreign minister, signing the Locarno treaties in 1925, and chaired the Labour and Socialist International from 1923.'],
+        ['natural', '자연사', 'Natural causes'], { ko: ['반데르벨데'], en: ['Vandervelde'] }, [W('%C3%89mile_Vandervelde'), SI]),
+    person('camille-huysmans', 'international-revolutionary', ['카미유', 'Camille'], ['하위스만스', 'Huysmans'], 'Camille Huysmans', '1871–1968', 'belgium', 'belgium', 'non-soviet-revolutionary',
+        ['1905~1922년 제2인터내셔널 서기로 전쟁 중 사무국을 지키고, 뒤에 벨기에 총리가 된 사회주의자',
+            'Secretary of the Second International from 1905 to 1922 who kept its Bureau alive in the war and later became Belgian prime minister'],
+        ['플랑드르 출신의 교사·언론인으로 1905년부터 1922년까지 국제사회주의사무국 서기를 맡았다. 전쟁이 나자 사무국을 중립국 네덜란드로 옮겨 교전국 정당들을 다시 모으려 했고, 1917년 스톡홀름 회의를 준비했다. 전간기 벨기에 하원 의원과 교육장관을 지냈고, 2차 대전 중 런던으로 망명해 다시 인터내셔널 서기를 맡았다. 1946~1947년 벨기에 총리를 지냈다.',
+            'A Flemish teacher and journalist, he was secretary of the International Socialist Bureau from 1905 to 1922. When war came he moved the Bureau to the neutral Netherlands, tried to bring the belligerent parties back together and prepared the Stockholm conference of 1917. Between the wars he was a Belgian deputy and education minister; in the Second World War he fled to London and again served as the International’s secretary. He was prime minister of Belgium in 1946–1947.'],
+        ['natural', '자연사', 'Natural causes'], { ko: ['하위스만스', '위스망스'], en: ['Huysmans'] }, [W('Camille_Huysmans'), SI]),
+    person('victor-adler', 'international-revolutionary', ['빅토어', 'Victor'], ['아들러', 'Adler'], 'Victor Adler', '1852–1918', 'austria', 'austria', 'non-soviet-revolutionary',
+        ['오스트리아 사회민주노동당을 세우고 이끌었으나 1914년 전쟁을 막지 못하고 지지한 지도자',
+            'Founder and leader of Austrian Social Democracy who could not stop the war in 1914 and backed it'],
+        ['프라하의 유대인 가정에서 태어난 의사로, 빈 노동자들의 참상을 보고 사회주의로 돌아서 1889년 하인펠트 대회에서 오스트리아 사회민주노동당을 통합해 세웠다. 다민족 제국 안에서 당을 「작은 인터내셔널」로 이끌었다. 1914년 7월 브뤼셀 사무국 회의에서 「전쟁은 이미 우리 곁에 있다」며 당의 무력함을 고백했고, 개인적 의구심에도 정부의 전쟁을 지지했다. 1918년 10월 공화국 과도정부의 외무장관이 되었으나 11월 11일 공화국 선포 하루 전에 숨졌다.',
+            'Born to a Jewish family in Prague, a physician turned socialist by the misery of Vienna’s workers, he united the Austrian Social Democratic Workers’ Party at the Hainfeld congress of 1889 and led it as a “little International” inside a multinational empire. At the Brussels Bureau meeting of July 1914 he confessed that “the war is already with us” and that his party was powerless, and despite private misgivings backed the government’s war. He became foreign minister of the provisional government in October 1918 but died on 11 November, a day before the republic was proclaimed.'],
+        ['natural', '자연사', 'Natural causes'], { ko: ['아들러'], en: ['Adler'] }, [W('Victor_Adler'), SI]),
+    person('robert-grimm', 'international-revolutionary', ['로베르트', 'Robert'], ['그림', 'Grimm'], 'Robert Grimm', '1881–1958', 'switzerland', 'switzerland', 'non-soviet-revolutionary',
+        ['1915년 치머발트 반전 회의를 조직하고 국제사회주의위원회를 이끈 스위스 사회주의자',
+            'Swiss socialist who organised the Zimmerwald anti-war conference of 1915 and chaired the International Socialist Commission'],
+        ['인쇄공 출신으로 스위스 사회민주당 좌파의 젊은 지도자가 되었고, 전쟁에 반대했다. 이탈리아 사회당과 함께 국제사회주의사무국과 별개인 반전 회의를 준비해 1915년 9월 치머발트 회의를 조직했고, 1915~1917년 치머발트 운동의 국제사회주의위원회 의장을 지냈다. 1917년 스위스 외무장관 호프만과 독일–러시아 강화 교섭에 관여한 사건으로 물러났다. 1918년 11월 스위스 총파업을 이끌어 투옥되었고, 뒤에 베른 주 정부와 연방의회에서 일했다.',
+            'A printer who became a young leader of the Swiss Social Democratic left, he opposed the war. With the Italian Socialist Party he prepared an anti-war conference independent of the International Socialist Bureau, organised the Zimmerwald conference of September 1915 and chaired the movement’s International Socialist Commission from 1915 to 1917. He had to step down in 1917 over the Grimm–Hoffmann affair, an attempt to broker a German–Russian peace with the Swiss foreign minister. He led the Swiss general strike of November 1918, was jailed, and later served in the Bern cantonal government and the federal parliament.'],
+        ['natural', '자연사', 'Natural causes'], { ko: ['그림'], en: ['Grimm'] }, [W('Robert_Grimm'), W('Zimmerwald_Conference')]),
+    person('jules-guesde', 'international-revolutionary', ['쥘', 'Jules'], ['게드', 'Guesde'], 'Jules Guesde', '1845–1922', 'france', 'france', 'non-soviet-revolutionary',
+        ['프랑스 마르크스주의 정당을 세운 원로로, 1914년 「신성 연합」 정부에 입각한 사회주의자',
+            'Veteran founder of French Marxist socialism who entered the Union sacrée government in 1914'],
+        ['파리코뮌을 지지했다가 망명한 언론인으로, 1880년 마르크스와 함께 프랑스 노동자당 강령을 작성하며 프랑스 마르크스주의의 대표가 되었다. 개혁주의자 조레스와 오랫동안 맞섰고, 1905년 통합 사회당(SFIO) 창당에 참여했다. 1907년 슈투트가르트 대회에서는 계급투쟁이 전쟁을 없앨 것이라며 특별한 반전 행동이 필요 없다고 주장했다. 1914년 8월 조국이 위협받는다고 보고 무임소 장관으로 입각해 1916년까지 「신성 연합」 정부에 있었다.',
+            'A journalist exiled for supporting the Paris Commune, he drafted the programme of the French Workers’ Party with Marx in 1880 and became the standard-bearer of French Marxism. He long opposed the reformist Jaurès and took part in founding the unified Socialist Party (SFIO) in 1905. At Stuttgart in 1907 he argued that class struggle would abolish war and that no special anti-war action was needed. In August 1914, seeing France itself in danger, he joined the Union sacrée government as a minister without portfolio and stayed until 1916.'],
+        ['natural', '자연사', 'Natural causes'], { ko: ['게드'], en: ['Guesde'] }, [W('Jules_Guesde'), SI]),
+    person('keir-hardie', 'international-revolutionary', ['키어', 'Keir'], ['하디', 'Hardie'], 'Keir Hardie', '1856–1915', 'uk', SCOT, 'non-soviet-revolutionary',
+        ['광부 출신으로 영국 노동당을 세우고, 반전 총파업을 주장하며 제1차 세계대전에 끝까지 반대한 사회주의자',
+            'Former miner who founded the British Labour Party and opposed the First World War to the end, urging an anti-war general strike'],
+        ['스코틀랜드의 가난한 집안에서 태어나 열 살 무렵부터 탄광에서 일했고, 광부 노조 조직가를 거쳐 1892년 노동자 출신 첫 하원 의원이 되었다. 1893년 독립노동당을 세우고 1906년 노동당의 첫 의회 지도자가 되었으며, 여성 참정권과 인도 자치를 지지했다. 1910년 코펜하겐 대회에서 전쟁을 막기 위한 군수 산업 총파업안을 제안했다. 1914년 7월 브뤼셀 사무국 회의에 참석했고, 전쟁 내내 반대하다 1915년 숨졌다.',
+            'Born into poverty in Scotland and working in the pits from about the age of ten, he rose as a miners’ organiser to become in 1892 the first working-class member of parliament. He founded the Independent Labour Party in 1893 and became Labour’s first parliamentary leader in 1906, supporting women’s suffrage and Indian self-rule. At Copenhagen in 1910 he proposed a general strike in the arms industries to prevent war. He attended the Brussels Bureau meeting of July 1914 and opposed the war until his death in 1915.'],
+        ['natural', '폐렴', 'Pneumonia'], { ko: ['하디'], en: ['Hardie', 'James Keir Hardie'] }, [W('Keir_Hardie'), SI]),
+    person('ramsay-macdonald', 'foreign-statesmen', ['램지', 'Ramsay'], ['맥도널드', 'MacDonald'], 'Ramsay MacDonald', '1866–1937', 'uk', SCOT, 'foreign-statesman',
+        ['1914년 전쟁공채 지지에 반대해 노동당 의장직을 내놓고, 뒤에 영국 첫 노동당 총리가 된 정치가',
+            'Politician who gave up the Labour chairmanship in 1914 over war credits and later became Britain’s first Labour prime minister'],
+        ['스코틀랜드 로시머스의 가난한 집안에서 태어나 독립노동당과 노동당의 조직가가 되었고, 1911년 노동당 의장이 되었다. 1914년 8월 노동당이 정부의 전쟁공채를 지지하자 의장직을 사임했고, 전쟁 반대로 거센 비난을 받았다. 1924년 영국 첫 노동당 총리가 되어 소련을 승인했고, 1929년 다시 총리가 되었다. 1931년 경제 위기 속에 보수당과 거국 내각을 꾸려 노동당에서 제명되었다. 1937년 항해 중 숨졌다.',
+            'Born into poverty in Lossiemouth, Scotland, he became an organiser of the Independent Labour Party and Labour and was chairman of the party from 1911. When Labour backed the government’s war credits in August 1914 he resigned the chairmanship and was fiercely attacked for his opposition to the war. In 1924 he became Britain’s first Labour prime minister and recognised the Soviet Union, returning as prime minister in 1929. Forming a National Government with the Conservatives in the crisis of 1931, he was expelled from Labour. He died at sea in 1937.'],
+        ['natural', '자연사', 'Natural causes'], { ko: ['맥도널드'], en: ['MacDonald', 'James Ramsay MacDonald'] }, [W('Ramsay_MacDonald'), SI]),
+];

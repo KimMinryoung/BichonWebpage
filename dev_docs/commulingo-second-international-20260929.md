@@ -1,0 +1,25 @@
+# 제2인터내셔널의 붕괴 사건 — 2026-09-29
+
+운영에 한·영 사건 `second-international-collapse-1914`(1907–1919, 정렬값 16 — 1차 세계대전 바로 뒤)과 신규 인물 7명을 등록하고, 참고 문헌 3편에 사건을 연결했다. 기존 사건·인물·학습 콘텐츠의 본문은 수정하지 않았다.
+
+- 본문 8개 절·17개 문단: 슈투트가르트~바젤의 반전 결의, 1914년 7월 위기와 브뤼셀 사무국 회의, 조레스 암살과 8월 4일, 사회애국주의와 반대자들, 독일 사민당의 균열(리프크네히트·유니우스·USPD), 치머발트와 킨탈, 1917년과 새 인터내셔널로의 길(레닌의 붕괴론, 스톡홀름, 베른 회의, 코민테른), 붕괴의 해석. 출처 30개(사이트 문헌 3편 포함), 연표 16개(지도 점 7개), 관련 사건은 1차 세계대전·독일 11월 혁명·파리 코뮌.
+- `focus`는 null이다. 사회애국주의 다수파와 반전 소수파가 같은 운동 안에서 갈라진 사건이라 opponent를 두지 않았다.
+- 인물 관계 27건: leader 9(반데르벨데·하위스만스·조레스·빅토어 아들러·하제·레닌·룩셈부르크·리프크네히트·그림), participant 18(에베르트·샤이데만·게드·카우츠키·베른슈타인·맥도널드·하디·무솔리니·플레하노프·체트킨·마르토프·트로츠키·지노비예프·라데크·발라바노바·라콥스키·콜라로프·뎁스).
+- 신규 인물 7명: 반데르벨데·하위스만스·빅토어 아들러·그림·게드·하디는 `international-revolutionary`(조레스 선례), 맥도널드는 `foreign-statesmen`. 하디·맥도널드의 출신은 「스코틀랜드」 라벨.
+- 문헌 manifest: `second-international-stuttgart-militarism-1907`, `second-international-basel-manifesto-1912`, `liebknecht-war-credits-statement-1914`의 `events`에 새 사건을 더했다.
+
+## 출처와 편집 기준
+
+본문 흐름은 영어 위키백과 Second International 항목의 전쟁·붕괴·해석 절, 치머발트·킨탈·USPD·인물 항목을 따랐다. marxists.org의 바젤 선언, 치머발트 선언, 레닌의 1914년 글 두 편과 『제2인터내셔널의 붕괴』, 룩셈부르크 『유니우스 팸플릿』을 인용했다. 「사회주의냐 야만이냐」는 룩셈부르크가 엥겔스를 인용한 문장임을 본문에 밝혔다. 체트킨의 1915년 여성 회의는 출처마다 개최지가 달라(베른/베를린) 장소를 쓰지 않았다. 모든 URL을 등록 전 HTTP 200으로 확인했다.
+
+## 재현과 검증
+
+- 정본: `scripts/content/second-international-collapse-20260929/build.js`·`people.js` → `node build.js`.
+- 인물: `scripts/commulingo-people-upsert scripts/content/second-international-collapse-20260929-people.json [--dry-run]`.
+- 사건: `scripts/apply-history-events.js`, 컨테이너 `/tmp/si/`, 백업 `/tmp/si/before-20260929.json`.
+- 스냅샷 갱신, 위치 감사 110개 통과, 인물 감사 4종 통과, 연표 지도 번호 한·영 7개 겹침 없음. 서버의 사건·인물 저장소가 새로 읽을 때까지 기다린 뒤 사건·인물·문헌 URL 82개를 Cloudflare에서 지웠다. 운영 한·영 200, 인물 링크·관련 사건 3개·문헌 3편의 사건 링크 확인.
+
+## 후속 후보
+
+- 마르셀 상바·귀스타브 에르베·헤르만 뮐러·아서 헨더슨·파벨 악셀로드 인물 카드.
+- 용어 `second-international`·`zimmerwald-movement`·`spd-war-credits-vote-1914`와 사건 본문의 교차 확인.

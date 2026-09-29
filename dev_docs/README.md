@@ -16,6 +16,7 @@
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
 | CommuLingo 파리 코뮌 사건 | [한영 사건·인물 10명·반영 기록](commulingo-paris-commune-20260929.md) |
 | CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
+| CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
 | CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
 | CommuLingo 중국 혁명·중화인민공화국 확장 | [중국 선반·시대 그룹, 사건 12편·인물 48명·용어 15개](commulingo-china-history-20260921.md) |
 | CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |
