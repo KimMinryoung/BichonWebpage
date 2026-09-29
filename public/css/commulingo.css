@@ -3928,6 +3928,8 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-event-people-grid > a.is-opponent .commu-event-person-relation, .commu-person-event-links li.is-opponent span, .commu-person-event-links li.is-opponent em { color: #a8a8a8; }
 .commu-event-people-grid > a.is-witness, .commu-person-event-links li.is-witness a { border-color: #7a6699; background: color-mix(in srgb, #7a6699 14%, transparent); }
 .commu-event-people-grid > a.is-witness .commu-event-person-relation, .commu-person-event-links li.is-witness span, .commu-person-event-links li.is-witness em { color: #a892cc; }
+.commu-event-people-grid > a.is-historian, .commu-person-event-links li.is-historian a { border-color: #4f8a80; background: color-mix(in srgb, #4f8a80 14%, transparent); }
+.commu-event-people-grid > a.is-historian .commu-event-person-relation, .commu-person-event-links li.is-historian span, .commu-person-event-links li.is-historian em { color: #7cbfb3; }
 /* Neutral, provisional look: auto-linked but role not yet classified (see routes/commulingo-events.js). */
 .commu-event-people-grid > a.is-unclassified, .commu-person-event-links li.is-unclassified a { border-color: #5f6b78; border-style: dashed; background: color-mix(in srgb, #5f6b78 10%, transparent); }
 .commu-event-people-grid > a.is-unclassified .commu-event-person-relation, .commu-person-event-links li.is-unclassified span, .commu-person-event-links li.is-unclassified em { color: #93a1b0; }
@@ -3945,6 +3947,7 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-person-event-links li.is-participant a:hover { background: color-mix(in srgb, #4d6f9c 70%, var(--clr-black, #010409)); border-color: #4d6f9c; }
 .commu-person-event-links li.is-opponent a:hover { background: color-mix(in srgb, #6f6f6f 70%, var(--clr-black, #010409)); border-color: #6f6f6f; }
 .commu-person-event-links li.is-witness a:hover { background: color-mix(in srgb, #7a6699 70%, var(--clr-black, #010409)); border-color: #7a6699; }
+.commu-person-event-links li.is-historian a:hover { background: color-mix(in srgb, #4f8a80 70%, var(--clr-black, #010409)); border-color: #4f8a80; }
 .commu-person-event-links li.is-unclassified a:hover { background: color-mix(in srgb, #5f6b78 70%, var(--clr-black, #010409)); border-color: #5f6b78; }
 /* Related-people groups by involvement kind */
 .commu-event-people-group { margin-top: 1.5rem; }
@@ -3965,6 +3968,7 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-event-people-group.is-opponent .commu-event-people-group-head { border-left-color: #6f6f6f; color: #a8a8a8; }
 .commu-event-people-group.is-target .commu-event-people-group-head { border-left-color: #a74a42; color: #cf6b5f; }
 .commu-event-people-group.is-witness .commu-event-people-group-head { border-left-color: #7a6699; color: #a892cc; }
+.commu-event-people-group.is-historian .commu-event-people-group-head { border-left-color: #4f8a80; color: #7cbfb3; }
 .commu-event-people-group.is-unclassified .commu-event-people-group-head { border-left-color: #5f6b78; color: #93a1b0; }
 
 /* Prev / next navigation between event pages. One slim bar per direction:

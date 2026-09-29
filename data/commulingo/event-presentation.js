@@ -75,18 +75,25 @@ async function relatedTermsForEvent(eventId, lang) {
 }
 
 // Related people are grouped by manner of involvement instead of one arbitrary
-// list. Order runs perpetrators → leadership → participants → opposition →
-// targets → witnesses → unclassified; unknown kinds fall through to the end.
+// list. Order runs leadership → implementers and commanders → participants →
+// opposition → targets → contemporary witnesses → later historians →
+// unclassified; unknown kinds fall through to the end. The definitions each
+// label stands for live in leninbot commulingo/people.py
+// (HISTORY_RELATION_KIND_DEFINITIONS, revised 2026-09-29): executor used to be
+// labelled "주도 · 집행" and was read as "drivers" by some content and as
+// "carried out orders" by the linking prompts, and witness mixed eyewitnesses
+// with historians writing decades later.
 // 'unclassified' is the neutral bucket for auto-linked people whose role has not
 // been classified yet — never silently treat a missing kind as a victim.
-const KIND_ORDER = ['executor', 'leader', 'participant', 'opponent', 'target', 'witness', 'unclassified'];
+const KIND_ORDER = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian', 'unclassified'];
 const KIND_LABELS = {
-    executor: { ko: '주도 · 집행', en: 'Drivers & enforcers' },
     leader: { ko: '지도부', en: 'Leadership' },
+    executor: { ko: '집행 · 지휘', en: 'Implementers & commanders' },
     participant: { ko: '참여', en: 'Participants' },
     opponent: { ko: '반대 · 저항', en: 'Opposition & resistance' },
     target: { ko: '대상 · 피해', en: 'Targets & victims' },
-    witness: { ko: '목격 · 증언', en: 'Witnesses' },
+    witness: { ko: '목격 · 기록', en: 'Witnesses & chroniclers' },
+    historian: { ko: '연구 · 해석', en: 'Historians & interpreters' },
     unclassified: { ko: '관련 · 미분류', en: 'Involved · unclassified' },
 };
 
