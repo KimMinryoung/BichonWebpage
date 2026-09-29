@@ -21,4 +21,4 @@
 ## 후속 후보
 
 - ~~에른스트 톨러·구스타프 란다우어·에밀 아이히호른·카를 레기엔 인물 카드.~~ 2026-09-29 gap #2074~2077 등록(야간 레인이 작성).
-- 룩셈부르크 관련 참고 문헌(`luxemburg-russian-revolution` 등)의 `events` 메타데이터 연결.
+- 2026-09-29 `luxemburg-russian-revolution`을 `october-revolution`에 연결했다. 1918년 옥중 원고라 11월 혁명과는 본문 근거가 없어 잇지 않았다.
