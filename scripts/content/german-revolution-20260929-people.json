@@ -1,0 +1,772 @@
+{
+  "changedBy": "german-revolution-20260929",
+  "people": [
+    {
+      "id": "friedrich-ebert",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "프리드리히",
+        "en": "Friedrich"
+      },
+      "familyName": {
+        "ko": "에베르트",
+        "en": "Ebert"
+      },
+      "nativeName": "Friedrich Ebert",
+      "years": "1871–1925",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "11월 혁명의 혁명정부를 이끌며 평의회 운동을 의회 민주주의로 돌리고 초대 대통령이 된 SPD 지도자",
+        "en": "SPD leader who headed the revolutionary government of 1918, steered the councils into parliamentary democracy and became the first president"
+      },
+      "bio": {
+        "ko": "하이델베르크의 재단사 집안에서 태어나 마구공으로 일하다 브레멘에서 당 활동가가 되었고, 1913년 베벨의 뒤를 이어 SPD 공동의장이 되었다. 전쟁 중 전쟁공채와 「성내 평화」를 지지했다. 1918년 11월 9일 재상직을 넘겨받아 인민대표평의회를 이끌었고, 그날 밤 그뢰너 장군과 비밀 협약을 맺어 군의 지지를 얻었다. 1919년 2월 국민의회에서 대통령으로 선출되어 좌우의 봉기를 군과 자유군단, 헌법 제48조의 긴급명령으로 눌렀다. 1925년 임기 중 맹장염 수술 뒤 숨졌다.",
+        "en": "Born to a tailor in Heidelberg, he worked as a saddler, became a party organiser in Bremen and in 1913 succeeded Bebel as SPD co-chairman. In the war he backed war credits and the Burgfrieden. Taking over the chancellorship on 9 November 1918, he led the Council of People’s Deputies and that night won the army’s support in a secret pact with General Groener. Elected president by the National Assembly in February 1919, he put down risings from left and right with the army, the Freikorps and emergency decrees under Article 48. He died in office in 1925 after an appendicitis operation."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "복막염",
+          "en": "Peritonitis"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "에베르트"
+        ],
+        "en": [
+          "Ebert"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Friedrich_Ebert",
+        "https://en.wikipedia.org/wiki/German_revolution_of_1918%E2%80%931919"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a tailor in Heidelberg, he worked as a saddler, became a party organiser in Bremen and in 1913 succeeded Bebel as SPD co-chairman. In the war he backed war credits and the Burgfrieden. Taking over the chancellorship on 9 November 1918, he led the Council of People’s Deputies and that night won the army’s support in a secret pact with General Groener. Elected president by the National Assembly in February 1919, he put down risings from left and right with the army, the Freikorps and emergency decrees under Article 48. He died in office in 1925 after an appendicitis operation.",
+          "source": "https://en.wikipedia.org/wiki/Friedrich_Ebert",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1871–1925",
+          "source": "https://en.wikipedia.org/wiki/Friedrich_Ebert",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "friedrich-ebert: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Friedrich_Ebert",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "friedrich-ebert: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Friedrich_Ebert",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "philipp-scheidemann",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "필리프",
+        "en": "Philipp"
+      },
+      "familyName": {
+        "ko": "샤이데만",
+        "en": "Scheidemann"
+      },
+      "nativeName": "Philipp Scheidemann",
+      "years": "1865–1939",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "1918년 11월 9일 제국의회 창문에서 공화국을 선포하고 바이마르 공화국 첫 총리가 된 SPD 정치가",
+        "en": "SPD politician who proclaimed the republic from a Reichstag window on 9 November 1918 and became Weimar’s first head of government"
+      },
+      "bio": {
+        "ko": "카셀의 인쇄공 출신으로 SPD 언론인을 거쳐 제국의회 의원이 되었고, 1918년 10월 막스 폰 바덴 내각에 무임소 장관으로 들어갔다. 11월 9일 리프크네히트가 사회주의 공화국을 선포하려 한다는 말을 듣고 먼저 제국의회 창문에서 공화국을 선포해 에베르트의 노여움을 샀다. 인민대표평의회 위원을 거쳐 1919년 2월 총리가 되었으나, 베르사유 조약 수락을 거부하며 6월 사임했다. 1920년대 카셀 시장을 지냈고 1922년 극우의 청산가리 테러를 피했다. 1933년 망명해 코펜하겐에서 숨졌다.",
+        "en": "A printer from Kassel who became an SPD journalist and Reichstag deputy, he joined Prince Max of Baden’s cabinet in October 1918. On 9 November, hearing that Liebknecht was about to proclaim a socialist republic, he proclaimed a republic first from a Reichstag window, to Ebert’s fury. A People’s Deputy, he became head of government in February 1919 but resigned in June rather than accept the Treaty of Versailles. He was mayor of Kassel in the 1920s, survived a far-right cyanide attack in 1922, went into exile in 1933 and died in Copenhagen."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "샤이데만"
+        ],
+        "en": [
+          "Scheidemann"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Philipp_Scheidemann",
+        "https://en.wikipedia.org/wiki/German_revolution_of_1918%E2%80%931919"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A printer from Kassel who became an SPD journalist and Reichstag deputy, he joined Prince Max of Baden’s cabinet in October 1918. On 9 November, hearing that Liebknecht was about to proclaim a socialist republic, he proclaimed a republic first from a Reichstag window, to Ebert’s fury. A People’s Deputy, he became head of government in February 1919 but resigned in June rather than accept the Treaty of Versailles. He was mayor of Kassel in the 1920s, survived a far-right cyanide attack in 1922, went into exile in 1933 and died in Copenhagen.",
+          "source": "https://en.wikipedia.org/wiki/Philipp_Scheidemann",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1865–1939",
+          "source": "https://en.wikipedia.org/wiki/Philipp_Scheidemann",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "philipp-scheidemann: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Philipp_Scheidemann",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "philipp-scheidemann: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Philipp_Scheidemann",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "gustav-noske",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "구스타프",
+        "en": "Gustav"
+      },
+      "familyName": {
+        "ko": "노스케",
+        "en": "Noske"
+      },
+      "nativeName": "Gustav Noske",
+      "years": "1868–1946",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "「누군가는 사냥개가 되어야 한다」며 자유군단을 키워 1919년 좌파 봉기를 진압한 SPD 국방장관",
+        "en": "SPD defence minister who said “someone has to be the bloodhound” and used the Freikorps to crush the left risings of 1919"
+      },
+      "bio": {
+        "ko": "브란덴부르크의 바구니 제조공 출신으로 SPD 언론인을 거쳐 1906년 제국의회 의원이 되었고 군사 문제 전문가로 알려졌다. 1918년 11월 정부 대표로 킬에 파견되어 수병 봉기를 수습하고 총독이 되었다. 크리스마스 위기 뒤 USPD가 떠난 인민대표평의회에 들어가 군사를 맡았고, 「누군가는 사냥개가 되어야 한다」며 자유군단을 조직해 1월 봉기와 3월 투쟁을 진압했다. 1919년 2월 초대 국방장관이 되었으나 1920년 카프 폭동 뒤 물러났다. 하노버 주지사를 지냈고 1944년 7월 음모 뒤 체포되었다.",
+        "en": "A basket-maker from Brandenburg who became an SPD journalist, he entered the Reichstag in 1906 and was known as its military expert. Sent to Kiel as the government’s representative in November 1918, he calmed the mutiny and became governor. After the Christmas crisis he joined the Council of People’s Deputies for military affairs and, saying “someone has to be the bloodhound”, organised the Freikorps that crushed the January rising and the March battles. First defence minister from February 1919, he resigned after the Kapp Putsch of 1920, later governed the province of Hanover and was arrested after the July 1944 plot."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "노스케"
+        ],
+        "en": [
+          "Noske"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gustav_Noske",
+        "https://en.wikipedia.org/wiki/German_revolution_of_1918%E2%80%931919"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A basket-maker from Brandenburg who became an SPD journalist, he entered the Reichstag in 1906 and was known as its military expert. Sent to Kiel as the government’s representative in November 1918, he calmed the mutiny and became governor. After the Christmas crisis he joined the Council of People’s Deputies for military affairs and, saying “someone has to be the bloodhound”, organised the Freikorps that crushed the January rising and the March battles. First defence minister from February 1919, he resigned after the Kapp Putsch of 1920, later governed the province of Hanover and was arrested after the July 1944 plot.",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Noske",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1868–1946",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Noske",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "gustav-noske: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Noske",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "gustav-noske: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Noske",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "max-von-baden",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "막스",
+        "en": "Max"
+      },
+      "familyName": {
+        "ko": "폰 바덴",
+        "en": "von Baden"
+      },
+      "nativeName": "Max von Baden",
+      "years": "1867–1929",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "1918년 휴전을 요청하고 황제의 퇴위를 발표한 뒤 재상직을 에베르트에게 넘긴 독일 제국 마지막 재상",
+        "en": "Last chancellor of the German Empire, who sought the armistice, announced the emperor’s abdication and handed power to Ebert"
+      },
+      "bio": {
+        "ko": "바덴 대공가의 후계자로 태어나 프로이센 군 장교를 지냈고, 전쟁 중에는 적십자와 전쟁 포로 구호 활동으로 온건파의 신망을 얻었다. 1918년 10월 3일 재상이 되어 SPD를 처음 입각시키고 연합국에 휴전을 요청했으며, 제국을 의회 책임 군주제로 바꾸는 헌법 개정을 이끌었다. 11월 9일 베를린이 시위대로 가득 차자 황제의 동의 없이 퇴위를 발표하고 재상직을 에베르트에게 넘긴 뒤 물러났다. 1920년 쿠르트 한과 함께 잘렘 기숙학교를 세웠다.",
+        "en": "Heir to the grand-ducal house of Baden and a former Prussian army officer, he won moderates’ respect in the war through Red Cross and prisoner-of-war relief work. Chancellor from 3 October 1918, he brought the SPD into government, asked the Allies for an armistice and carried the constitutional amendment that made the Empire a parliamentary monarchy. On 9 November, with Berlin full of demonstrators, he announced the emperor’s abdication without his consent, handed the chancellorship to Ebert and withdrew. In 1920 he founded the Salem boarding school with Kurt Hahn."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "막시밀리안 폰 바덴",
+          "바덴 공 막스"
+        ],
+        "en": [
+          "Prince Max of Baden",
+          "Maximilian of Baden"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Prince_Maximilian_of_Baden",
+        "https://en.wikipedia.org/wiki/German_revolution_of_1918%E2%80%931919"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Heir to the grand-ducal house of Baden and a former Prussian army officer, he won moderates’ respect in the war through Red Cross and prisoner-of-war relief work. Chancellor from 3 October 1918, he brought the SPD into government, asked the Allies for an armistice and carried the constitutional amendment that made the Empire a parliamentary monarchy. On 9 November, with Berlin full of demonstrators, he announced the emperor’s abdication without his consent, handed the chancellorship to Ebert and withdrew. In 1920 he founded the Salem boarding school with Kurt Hahn.",
+          "source": "https://en.wikipedia.org/wiki/Prince_Maximilian_of_Baden",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1867–1929",
+          "source": "https://en.wikipedia.org/wiki/Prince_Maximilian_of_Baden",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "max-von-baden: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Prince_Maximilian_of_Baden",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "max-von-baden: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Prince_Maximilian_of_Baden",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "hugo-haase",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "후고",
+        "en": "Hugo"
+      },
+      "familyName": {
+        "ko": "하제",
+        "en": "Haase"
+      },
+      "nativeName": "Hugo Haase",
+      "years": "1863–1919",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "전쟁에 반대해 독립사회민주당을 세우고 1918년 에베르트와 함께 인민대표평의회를 이끈 법률가",
+        "en": "Lawyer who founded the USPD against the war and co-chaired the Council of People’s Deputies with Ebert in 1918"
+      },
+      "bio": {
+        "ko": "동프로이센의 유대인 가정에서 태어난 변호사로 사회주의자 재판을 변호하며 이름을 알렸고, 1911년 베벨과 함께 SPD 공동의장이 되었다. 1914년 8월 전쟁공채에 반대했으나 당의 결정에 따라 제국의회에서 찬성 성명을 읽어야 했다. 1917년 전쟁에 반대하는 이들과 독립사회민주당(USPD)을 세웠다. 1918년 11월 인민대표평의회에서 에베르트와 공동의장을 맡았지만 크리스마스 위기 뒤 정부를 떠났다. 1919년 10월 제국의회 앞에서 총격을 받고 11월 숨졌다.",
+        "en": "Born to a Jewish family in East Prussia, he made his name as a lawyer defending socialists and in 1911 became SPD co-chairman alongside Bebel. In August 1914 he opposed war credits but had to read the party’s statement in their favour in the Reichstag. In 1917 he founded the Independent Social Democratic Party (USPD) with the war’s opponents. In November 1918 he co-chaired the Council of People’s Deputies with Ebert, leaving the government after the Christmas crisis. Shot outside the Reichstag in October 1919, he died in November."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "암살",
+          "en": "Assassinated"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "하제"
+        ],
+        "en": [
+          "Haase"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hugo_Haase",
+        "https://en.wikipedia.org/wiki/German_revolution_of_1918%E2%80%931919"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a Jewish family in East Prussia, he made his name as a lawyer defending socialists and in 1911 became SPD co-chairman alongside Bebel. In August 1914 he opposed war credits but had to read the party’s statement in their favour in the Reichstag. In 1917 he founded the Independent Social Democratic Party (USPD) with the war’s opponents. In November 1918 he co-chaired the Council of People’s Deputies with Ebert, leaving the government after the Christmas crisis. Shot outside the Reichstag in October 1919, he died in November.",
+          "source": "https://en.wikipedia.org/wiki/Hugo_Haase",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1863–1919",
+          "source": "https://en.wikipedia.org/wiki/Hugo_Haase",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "hugo-haase: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Hugo_Haase",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "hugo-haase: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Hugo_Haase",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "kurt-eisner",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "쿠르트",
+        "en": "Kurt"
+      },
+      "familyName": {
+        "ko": "아이스너",
+        "en": "Eisner"
+      },
+      "nativeName": "Kurt Eisner",
+      "years": "1867–1919",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "1918년 11월 뮌헨에서 왕정을 무너뜨리고 바이에른 인민국을 선포했다가 이듬해 암살된 언론인",
+        "en": "Journalist who overthrew the Bavarian monarchy in Munich in November 1918, proclaimed the People’s State and was assassinated the next year"
+      },
+      "bio": {
+        "ko": "베를린의 유대인 상인 가정에서 태어나 연극 평론가와 SPD 기관지 『포어베르츠』 편집인을 지냈고, 뒤에 뮌헨으로 옮겼다. 전쟁에 반대해 USPD에 들어갔고, 1918년 1월 군수 파업을 이끌다 투옥되었다. 11월 7일 테레지엔비제 집회에서 시위대를 이끌고 병영을 돌아 이튿날 바이에른 인민국을 선포하고 총리가 되었다. 독일의 전쟁 책임을 보여 주는 외교 문서를 공개해 우파의 증오를 샀다. 1919년 1월 선거에서 참패한 뒤 사임하러 가던 2월 21일 아르코발라이 백작에게 암살되었다.",
+        "en": "Born to a Jewish merchant family in Berlin, he was a theatre critic and editor of the SPD’s Vorwärts before moving to Munich. He joined the USPD against the war and was jailed for leading the munitions strike of January 1918. On 7 November he led demonstrators from a rally on the Theresienwiese round the barracks, and the next day proclaimed the People’s State of Bavaria and became premier. His publication of documents on German war guilt earned him the right’s hatred. Heavily defeated in the January 1919 election, he was assassinated by Count Arco-Valley on 21 February on his way to resign."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "암살",
+          "en": "Assassinated"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "아이스너"
+        ],
+        "en": [
+          "Eisner"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kurt_Eisner",
+        "https://en.wikipedia.org/wiki/People%27s_State_of_Bavaria"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a Jewish merchant family in Berlin, he was a theatre critic and editor of the SPD’s Vorwärts before moving to Munich. He joined the USPD against the war and was jailed for leading the munitions strike of January 1918. On 7 November he led demonstrators from a rally on the Theresienwiese round the barracks, and the next day proclaimed the People’s State of Bavaria and became premier. His publication of documents on German war guilt earned him the right’s hatred. Heavily defeated in the January 1919 election, he was assassinated by Count Arco-Valley on 21 February on his way to resign.",
+          "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1867–1919",
+          "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "kurt-eisner: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "kurt-eisner: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "richard-muller",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "리하르트",
+        "en": "Richard"
+      },
+      "familyName": {
+        "ko": "뮐러",
+        "en": "Müller"
+      },
+      "nativeName": "Richard Müller",
+      "years": "1880–1943",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "베를린 혁명적 직장위원을 이끌고 1918년 평의회 집행위원회 의장을 지낸 뒤 혁명사를 쓴 선반공",
+        "en": "Lathe operator who led Berlin’s Revolutionary Stewards, chaired the council Executive in 1918 and later wrote the revolution’s history"
+      },
+      "bio": {
+        "ko": "튀링겐 농촌 출신의 선반공으로 베를린 금속노조 선반공 부문의 지도자가 되었다. 전쟁 중 공장 대표들의 비밀 조직인 혁명적 직장위원을 이끌며 1916년 리프크네히트 체포 항의 파업, 1917년 4월과 1918년 1월의 대중 파업을 조직했다. 1918년 11월 9일 밤 제국의회를 점거해 평의회 선거를 소집했고, 대베를린 노동자·병사 평의회 집행위원회 의장으로 평의회 정권의 형식상 수반이 되었다. 뒤에 공산당에 들어갔다가 떠났고, 1924~1925년 세 권짜리 혁명사를 펴냈다.",
+        "en": "A lathe operator from rural Thuringia, he became a leader of the turners’ branch of the Berlin metalworkers’ union. In the war he led the Revolutionary Stewards, a clandestine network of factory delegates, organising the 1916 strike against Liebknecht’s arrest and the mass strikes of April 1917 and January 1918. On the night of 9 November 1918 he occupied the Reichstag and called council elections, and as chairman of the Executive Council of the Greater Berlin workers’ and soldiers’ councils was formal head of the council regime. He later joined and left the KPD, and published a three-volume history of the revolution in 1924–1925."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "리하르트 뮐러 (직장위원)"
+        ],
+        "en": [
+          "Richard Müller"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_M%C3%BCller_(socialist)",
+        "https://en.wikipedia.org/wiki/German_revolution_of_1918%E2%80%931919"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A lathe operator from rural Thuringia, he became a leader of the turners’ branch of the Berlin metalworkers’ union. In the war he led the Revolutionary Stewards, a clandestine network of factory delegates, organising the 1916 strike against Liebknecht’s arrest and the mass strikes of April 1917 and January 1918. On the night of 9 November 1918 he occupied the Reichstag and called council elections, and as chairman of the Executive Council of the Greater Berlin workers’ and soldiers’ councils was formal head of the council regime. He later joined and left the KPD, and published a three-volume history of the revolution in 1924–1925.",
+          "source": "https://en.wikipedia.org/wiki/Richard_M%C3%BCller_(socialist)",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1880–1943",
+          "source": "https://en.wikipedia.org/wiki/Richard_M%C3%BCller_(socialist)",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "richard-muller: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Richard_M%C3%BCller_(socialist)",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "richard-muller: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Richard_M%C3%BCller_(socialist)",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "eugen-levine",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "오이겐",
+        "en": "Eugen"
+      },
+      "familyName": {
+        "ko": "레비네",
+        "en": "Leviné"
+      },
+      "nativeName": "Eugen Leviné",
+      "years": "1883–1919",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아 (유대계)",
+          "en": "Russia (Jewish)"
+        }
+      },
+      "role": {
+        "category": "non-soviet-revolutionary"
+      },
+      "epithet": {
+        "ko": "1919년 바이에른 평의회 공화국을 이끌다 진압 뒤 총살된 공산주의자",
+        "en": "Communist who led the Bavarian Soviet Republic in 1919 and was shot after its fall"
+      },
+      "bio": {
+        "ko": "상트페테르부르크의 유대인 상인 가정에서 태어나 아버지를 여읜 뒤 어머니와 독일로 이주했고, 하이델베르크에서 공부했다. 1905년 러시아 혁명에 가담하러 돌아가 투옥되었다. 독일에서 USPD와 스파르타쿠스단에서 활동했고, 1919년 KPD의 파견으로 뮌헨에 갔다. 4월 13일 KPD가 톨러의 평의회 정부를 대신하자 그 지도자가 되어 붉은 군대를 조직하고 공장을 노동자 관리에 넘겼다. 5월 뮌헨이 함락된 뒤 체포되어 군사 법정에서 사형을 선고받고 6월 5일 슈타델하임 감옥에서 총살되었다.",
+        "en": "Born to a Jewish merchant family in St Petersburg, he moved to Germany with his mother after his father’s death and studied at Heidelberg. He returned to Russia to take part in the revolution of 1905 and was imprisoned. In Germany he worked in the USPD and the Spartacus League, and in 1919 the KPD sent him to Munich. When the KPD replaced Toller’s council government on 13 April he became its leader, raising a Red Army and putting factories under workers’ control. Captured after Munich fell in May, he was sentenced to death by a court martial and shot in Stadelheim prison on 5 June."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Shot"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "레비네"
+        ],
+        "en": [
+          "Leviné",
+          "Eugen Levine"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eugen_Levin%C3%A9",
+        "https://en.wikipedia.org/wiki/Bavarian_Soviet_Republic"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a Jewish merchant family in St Petersburg, he moved to Germany with his mother after his father’s death and studied at Heidelberg. He returned to Russia to take part in the revolution of 1905 and was imprisoned. In Germany he worked in the USPD and the Spartacus League, and in 1919 the KPD sent him to Munich. When the KPD replaced Toller’s council government on 13 April he became its leader, raising a Red Army and putting factories under workers’ control. Captured after Munich fell in May, he was sentenced to death by a court martial and shot in Stadelheim prison on 5 June.",
+          "source": "https://en.wikipedia.org/wiki/Eugen_Levin%C3%A9",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1883–1919",
+          "source": "https://en.wikipedia.org/wiki/Eugen_Levin%C3%A9",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "eugen-levine: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Eugen_Levin%C3%A9",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "eugen-levine: national background russia",
+          "source": "https://en.wikipedia.org/wiki/Eugen_Levin%C3%A9",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "wilhelm-groener",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "빌헬름",
+        "en": "Wilhelm"
+      },
+      "familyName": {
+        "ko": "그뢰너",
+        "en": "Groener"
+      },
+      "nativeName": "Wilhelm Groener",
+      "years": "1867–1939",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "military-commander"
+      },
+      "epithet": {
+        "ko": "1918년 에베르트와 비밀 협약을 맺어 장교단을 지키고, 뒤에 바이마르 국방·내무장관을 지낸 장군",
+        "en": "General who struck the 1918 secret pact with Ebert that preserved the officer corps and later served Weimar as defence and interior minister"
+      },
+      "bio": {
+        "ko": "뷔르템베르크 출신의 참모 장교로 철도 수송 전문가였고, 전쟁 중 전시청을 맡아 군수 생산과 노동 동원을 지휘했다. 1918년 10월 루덴도르프의 뒤를 이어 최고사령부 제1병참감이 되었고, 11월 황제에게 군이 더는 그를 따르지 않는다고 알렸다. 11월 10일 밤 에베르트와 전화로 비밀 협약을 맺어 군의 지지와 장교단 지휘 체계의 유지를 맞바꾸었다. 뒤에 교통장관, 국방장관, 내무장관을 지냈고 1932년 나치 돌격대 금지령으로 물러났다.",
+        "en": "A Württemberg staff officer and railway transport expert, he ran the War Office in the war, directing munitions production and labour mobilisation. In October 1918 he succeeded Ludendorff as First Quartermaster General and in November told the emperor that the army no longer stood behind him. On the night of 10 November he struck a secret telephone pact with Ebert, trading the army’s support for the preservation of the officer corps’ command. He later served as transport, defence and interior minister and fell in 1932 over his ban on the Nazi SA."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "그뢰너"
+        ],
+        "en": [
+          "Groener"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wilhelm_Groener",
+        "https://en.wikipedia.org/wiki/Ebert%E2%80%93Groener_pact"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A Württemberg staff officer and railway transport expert, he ran the War Office in the war, directing munitions production and labour mobilisation. In October 1918 he succeeded Ludendorff as First Quartermaster General and in November told the emperor that the army no longer stood behind him. On the night of 10 November he struck a secret telephone pact with Ebert, trading the army’s support for the preservation of the officer corps’ command. He later served as transport, defence and interior minister and fell in 1932 over his ban on the Nazi SA.",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Groener",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1867–1939",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Groener",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "wilhelm-groener: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Groener",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "wilhelm-groener: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Groener",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "waldemar-pabst",
+      "groupId": "international-counterrevolutionary",
+      "givenName": {
+        "ko": "발데마르",
+        "en": "Waldemar"
+      },
+      "familyName": {
+        "ko": "파프스트",
+        "en": "Pabst"
+      },
+      "nativeName": "Waldemar Pabst",
+      "years": "1880–1970",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "1919년 1월 로자 룩셈부르크와 카를 리프크네히트의 살해를 명령하고 카프 폭동에 가담한 자유군단 장교",
+        "en": "Freikorps officer who ordered the murders of Rosa Luxemburg and Karl Liebknecht in January 1919 and joined the Kapp Putsch"
+      },
+      "bio": {
+        "ko": "1919년 1월 최대 자유군단 부대인 근위기병소총사단의 참모 장교로, 붙잡혀 온 로자 룩셈부르크와 카를 리프크네히트를 심문한 뒤 살해를 명령했다. 뒤에 「내가 그들을 처형하게 했다」고 자랑했다. 1920년 카프 폭동에 주도적으로 가담했다가 오스트리아로 가서 우익 향토방위대 조직을 도왔고 추방되었다. 나치 독일에서는 나치당과 느슨한 관계에 머물며 공적 무대에서 물러났다. 1962년 인터뷰와 회고에서 노스케와 에베르트가 살해를 승인했다고 주장했으나 확인되지 않았다. 처벌받지 않고 1970년 뒤셀도르프에서 숨졌다.",
+        "en": "As staff officer of the Guards Cavalry Rifle Division, the largest Freikorps unit, he had Rosa Luxemburg and Karl Liebknecht interrogated after their capture in January 1919 and ordered them killed, later boasting “I had them executed”. A leading figure in the Kapp Putsch of 1920, he went to Austria to help organise the right-wing Heimwehr and was deported. In Nazi Germany he faded from public life, only loosely tied to the party. In a 1962 interview and his memoirs he claimed Noske and Ebert had approved the killings, which was never confirmed. Never punished, he died in Düsseldorf in 1970."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "파프스트"
+        ],
+        "en": [
+          "Pabst"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Waldemar_Pabst",
+        "https://en.wikipedia.org/wiki/Spartacist_uprising"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "As staff officer of the Guards Cavalry Rifle Division, the largest Freikorps unit, he had Rosa Luxemburg and Karl Liebknecht interrogated after their capture in January 1919 and ordered them killed, later boasting “I had them executed”. A leading figure in the Kapp Putsch of 1920, he went to Austria to help organise the right-wing Heimwehr and was deported. In Nazi Germany he faded from public life, only loosely tied to the party. In a 1962 interview and his memoirs he claimed Noske and Ebert had approved the killings, which was never confirmed. Never punished, he died in Düsseldorf in 1970.",
+          "source": "https://en.wikipedia.org/wiki/Waldemar_Pabst",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1880–1970",
+          "source": "https://en.wikipedia.org/wiki/Waldemar_Pabst",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "waldemar-pabst: citizenship germany",
+          "source": "https://en.wikipedia.org/wiki/Waldemar_Pabst",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "waldemar-pabst: national background germany",
+          "source": "https://en.wikipedia.org/wiki/Waldemar_Pabst",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    }
+  ]
+}

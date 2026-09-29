@@ -15,7 +15,7 @@
 
 - 정본: `scripts/content/paris-commune-20260929/build.js`(본문·연표·관계)와 `people.js`(인물) → `node build.js`가 `paris-commune-20260929.json`, `paris-commune-20260929-people.json`을 만든다.
 - 인물: `scripts/commulingo-people-upsert scripts/content/paris-commune-20260929-people.json [--dry-run]`. 국문 epithet 60자 제한과 사실 필드별 evidence 요구를 이 과정에서 맞췄다.
-- 사건: `scripts/apply-paris-commune.js`(프랑스 사건 스크립트 기반, `focus`와 관계 종류 7종 지원, 관련 사건 존재 확인). 기본 읽기 전용, 컨테이너 `/tmp/pc/`에 복사해 `APP_ROOT=/app DB_HOST=leninbot-pg ... --production`, 반영은 `--apply --backup=/tmp/pc/before-20260929.json`.
+- 사건: `scripts/apply-history-events.js`(당시 이름 `apply-paris-commune.js`. 프랑스 사건 스크립트 기반, `focus`와 관계 종류 7종 지원, 관련 사건 존재 확인. 독일 혁명 때 배치 공용으로 일반화). 기본 읽기 전용, 컨테이너 `/tmp/pc/`에 복사해 `APP_ROOT=/app DB_HOST=leninbot-pg ... --production`, 반영은 `--apply --backup=/tmp/pc/before-20260929.json`.
 - 첫 반영 뒤 `audit-event-locations`가 몽마르트르·페르라셰즈를 본부 마커(파리 시청)와 0.05° 이내 중복으로 잡아, 두 곳을 `locations`에서 빼고(연표 지도에는 남음) 그 칼럼만 갱신했다. 이후 위치 감사 108개 통과, 인물 감사 4종 통과, 연표 지도 번호 한·영 13개 겹침 없음.
 - 스냅샷 갱신, 사건·인물 페이지 48개 URL Cloudflare 제거. 운영 한·영 페이지 200, 절·인물·관련 사건 링크 확인.
 

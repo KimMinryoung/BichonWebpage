@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Paris Commune event batch (2026-09-29). Default: read-only preflight.
+// New history-event batch (scripts/content/<batch>.json). Default: read-only preflight.
 // APP_ROOT=/app DB_HOST=leninbot-pg node runner.js spec.json --production
 // Add --apply --backup=/tmp/unique-before.json to publish. People cards go first
 // through scripts/commulingo-people-upsert; this script never edits people.
@@ -14,14 +14,13 @@ const columns = ['title_ko', 'title_en', 'period_label', 'sort_order', 'question
     'timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus'];
 const jsonColumns = new Set(['timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus']);
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
-const BATCH = 'paris-commune-20260929';
 const personColumns = ['person_id', 'sort_order', 'relation_kind', 'relation_ko', 'relation_en', 'note_ko', 'note_en'];
 const canonical = value => JSON.stringify(value, (_, v) => v && typeof v === 'object' && !Array.isArray(v)
     ? Object.fromEntries(Object.keys(v).sort().map(k => [k, v[k]])) : v);
 const equal = (a, b) => canonical(a) === canonical(b);
 function validate(spec) {
-    assert.equal(spec.id, BATCH);
-    assert.deepEqual(spec.events.map(e => e.id), ['paris-commune-1871']);
+    assert(/^[a-z0-9-]+-\d{8}$/.test(spec.id), 'batch id like <topic>-YYYYMMDD');
+    assert(spec.events.length && new Set(spec.events.map(e => e.id)).size === spec.events.length);
     for (const e of spec.events) {
         assert.equal(e.expected, null, 'this batch only creates new events');
         assert.deepEqual(Object.keys(e.fields).sort(), [...columns].sort());
@@ -35,7 +34,7 @@ function validate(spec) {
             assert(Number.isFinite(m.lat) && Math.abs(m.lat) <= 85 && Number.isFinite(m.lng) && Math.abs(m.lng) <= 180);
         }
         assert(e.sections.length >= 6);
-        assert(f.focus.ko && f.focus.en);
+        assert(f.focus === null || (f.focus.ko && f.focus.en), 'focus is {ko,en} or null');
         assert(f.sources.length >= 10 && f.sources.every(u => /^https:\/\//.test(u)));
         assert.equal(new Set(f.sources).size, f.sources.length);
         assert(Array.isArray(f.relations.related));
@@ -73,7 +72,7 @@ async function applyBatch(db, spec, { apply = false, backup } = {}) {
         await client.query(apply ? 'BEGIN' : 'BEGIN READ ONLY');
         await client.query("SET LOCAL lock_timeout='3s'");
         await client.query("SET LOCAL statement_timeout='30s'");
-        if (apply) await client.query("SELECT pg_advisory_xact_lock(hashtext('paris-commune-20260929'))");
+        if (apply) await client.query('SELECT pg_advisory_xact_lock(hashtext($1))', [spec.id]);
         for (const e of spec.events) {
             const old = (await client.query('SELECT * FROM commulingo_history_events WHERE id=$1' + (apply ? ' FOR UPDATE' : ''), [e.id])).rows[0];
             const duplicate = (await client.query('SELECT id FROM commulingo_history_events WHERE id<>$1 AND (lower(title_en)=lower($2) OR title_ko=$3)', [e.id, e.fields.title_en, e.fields.title_ko])).rows;
@@ -114,7 +113,7 @@ async function main() {
     const files = args.filter(a => !a.startsWith('--'));
     assert.equal(files.length, 1, 'one spec.json required');
     const production = args.includes('--production');
-    const isolated = process.env.COMMULINGO_ISOLATED_TEST === '1' && process.env.DB_HOST === 'commulingo-paris-commune-test' && process.env.DB_NAME === 'commulingo_integrity_test';
+    const isolated = process.env.COMMULINGO_ISOLATED_TEST === '1' && process.env.DB_HOST === 'commulingo-history-events-test' && process.env.DB_NAME === 'commulingo_integrity_test';
     assert((production && process.env.DB_HOST === 'leninbot-pg') || (!production && isolated), 'explicit production or isolated destination required');
     const apply = args.includes('--apply'), backup = args.find(a => a.startsWith('--backup='))?.slice(9);
     assert(!production || !apply || backup, 'production apply requires a unique backup path');
