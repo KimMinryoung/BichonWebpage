@@ -1,0 +1,5500 @@
+{
+  "id": "event-sides-20260929",
+  "events": [
+    {
+      "event": "world-war-i",
+      "sides": [
+        {
+          "id": "entente",
+          "label": {
+            "ko": "협상국",
+            "en": "Entente Powers"
+          }
+        },
+        {
+          "id": "central-powers",
+          "label": {
+            "ko": "동맹국",
+            "en": "Central Powers"
+          }
+        },
+        {
+          "id": "antiwar-socialists",
+          "label": {
+            "ko": "반전 사회주의자",
+            "en": "Anti-war socialists"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "paul-von-hindenburg",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "fyodor-isidorovich-trukhin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "prince-paul-of-yugoslavia",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "yevhen-konovalets",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "hjalmar-siilasvuo",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "vladimir-dzhunkovsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "nikolai-gumilyov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "jean-jaures",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "nikolai-nikolaevich-romanov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "dimitar-blagoev",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "mikhail-zoshchenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "roman-malinovsky",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "entente"
+        },
+        {
+          "person_id": "franz-mehring",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "vladimir-viktorovich-sakharov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "konstantin-fedin",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "eduard-bernstein",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "karl-korsch",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "alexander-shapiro",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "angelica-balabanova",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "earl-browder",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "fyodor-rothstein",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "boris-souvarine",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "liebknecht",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "zetkin",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "alexandra-feodorovna",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "heinrich-brandler",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "sylvia-pankhurst",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "mikhail-diterikhs",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "anatoly-pepelyayev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "boris-feldman",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "matvey-skobelev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "maria-ulyanova",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "karl-kautsky",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "ivan-kutyakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "august-kork",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "stanislav-messing",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "ioakim-vatsetis",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "alexander-svechin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "ieronim-uborevich",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "boris-kamkov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "eduard-berzin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "grigory-grinko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "vasily-blyukher",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "moisei-rukhimovich",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "nikolai-krylenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "tukhachevsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "vernon-kellogg",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "bukharin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "andrei-snesarev",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "entente"
+        },
+        {
+          "person_id": "voldemar-ulmer",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "hans-von-manteuffel-szoege",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "friedrich-ebert",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "kurt-eisner",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "emile-vandervelde",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "ramsay-macdonald",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "jules-guesde",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "entente"
+        },
+        {
+          "person_id": "keir-hardie",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "robert-grimm",
+          "from_kind": "opponent",
+          "kind": "leader",
+          "side": "antiwar-socialists"
+        },
+        {
+          "person_id": "victor-adler",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "max-von-baden",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "wilhelm-groener",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "central-powers"
+        }
+      ],
+      "doubts": [
+        "prince-paul-of-yugoslavia: note only says he served; his WWI service (Serbian side) is thin in sources, entente assumed",
+        "konstantin-fedin: Russian civilian interned in Germany, not a member of any camp -> null",
+        "vernon-kellogg: neutral American relief (CRB, 1915-16, before US entry) -> null",
+        "eduard-bernstein: side taken from the relation (voted war credits Aug 1914); he turned anti-war in 1915 and co-founded USPD, so antiwar-socialists is defensible",
+        "karl-kautsky: centrist; the relation stresses his 1917 anti-war break, so antiwar-socialists; he did not oppose war credits in 1914",
+        "max-von-baden: POW/Red Cross relief work, but as a German prince and later chancellor (Oct 1918) he belonged to the Central Powers; null also defensible",
+        "karl-korsch: served in the German army while refusing to bear arms; kept on central-powers as serving soldier",
+        "bukharin: relation is about Brest (revolutionary war), marginal to WWI; placed with anti-war socialists",
+        "anti-war leadership: robert-grimm set as leader (Zimmerwald organizer, ISC chair); balabanova and zetkin executor (ISC secretary / organizer of 1915 women's conference); other former opponents participant",
+        "voldemar-ulmer: army not stated in note; assumed Russian imperial army",
+        "wilhelm-groener: linked after the initial read (61st row); central-powers executor"
+      ]
+    },
+    {
+      "event": "brest-litovsk",
+      "sides": [
+        {
+          "id": "soviet-government",
+          "label": {
+            "ko": "소비에트 정부·대표단",
+            "en": "Soviet government and delegation"
+          }
+        },
+        {
+          "id": "peace-opponents",
+          "label": {
+            "ko": "강화 반대파",
+            "en": "Opponents of the peace"
+          }
+        },
+        {
+          "id": "germany-and-allies",
+          "label": {
+            "ko": "독일과 그 동맹 세력",
+            "en": "Germany and its allies"
+          }
+        },
+        {
+          "id": "finnish-reds",
+          "label": {
+            "ko": "핀란드 적색정부",
+            "en": "Finnish Red government"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "lenin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "trotsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "bukharin",
+          "from_kind": "participant",
+          "kind": "leader",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "sokolnikov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "adolph-joffe",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "max-hoffmann",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "maria-spiridonova",
+          "from_kind": "opponent",
+          "kind": "leader",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "yakov-blumkin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "pavlo-skoropadskyi",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "carl-gustaf-emil-mannerheim",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "carl-manner",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finnish-reds"
+        },
+        {
+          "person_id": "kuusinen",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finnish-reds"
+        },
+        {
+          "person_id": "rudiger-von-der-goltz",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "pehr-evind-svinhufvud",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "volodymyr-vynnychenko",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "mykhailo-hrushevsky",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "germany-and-allies"
+        },
+        {
+          "person_id": "mark-natanson",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "konstantin-mekhonoshin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "prosh-proshian",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "andrei-kolegayev",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "nikolai-glebov-avilov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "vladimir-smirnov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "david-riazanov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "boris-kamkov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "lev-karakhan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "volodymyr-zatonsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "yuri-pyatakov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "nikolai-krylenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-government"
+        },
+        {
+          "person_id": "andrei-bubnov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "antonov-ovseenko",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "peace-opponents"
+        },
+        {
+          "person_id": "yakov-yurovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "peace-opponents"
+        }
+      ],
+      "doubts": [
+        "bukharin: changed participant -> leader, as head of the Left Communist revolutionary-war camp",
+        "trotsky: kept in soviet-government (delegation head, abstained to let Lenin win) although his 'neither war nor peace' line was a third position",
+        "carl-gustaf-emil-mannerheim: Finnish White commander who opposed the German intervention; placed with germany-and-allies because the White government allied with Germany",
+        "volodymyr-vynnychenko / mykhailo-hrushevsky: Central Rada made a separate peace with the Central Powers and invited German troops, hence germany-and-allies; the Rada was an independent actor, and Vynnychenko resigned before the treaty",
+        "yakov-blumkin: Left SR assassination of Mirbach carried out a party decision; kept participant, executor also defensible",
+        "boris-kamkov: Left SR co-leader with Spiridonova; set participant, leader defensible",
+        "nikolai-glebov-avilov: scuttled the Black Sea Fleet on government orders to keep it from Germany -> soviet-government executor"
+      ]
+    },
+    {
+      "event": "ukraine-1917-1921",
+      "sides": [
+        {
+          "id": "ukrainian-peoples-republic",
+          "label": {
+            "ko": "우크라이나 인민공화국",
+            "en": "Ukrainian People's Republic"
+          }
+        },
+        {
+          "id": "soviet-forces",
+          "label": {
+            "ko": "소비에트 세력",
+            "en": "Soviet forces"
+          }
+        },
+        {
+          "id": "hetmanate-and-whites",
+          "label": {
+            "ko": "헤트만국과 백군",
+            "en": "Hetmanate and Whites"
+          }
+        },
+        {
+          "id": "peasant-insurgents",
+          "label": {
+            "ko": "농민 반란군",
+            "en": "Peasant insurgents"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "pavlo-skoropadskyi",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "hetmanate-and-whites"
+        },
+        {
+          "person_id": "symon-petliura",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ukrainian-peoples-republic"
+        },
+        {
+          "person_id": "nestor-makhno",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "peasant-insurgents"
+        },
+        {
+          "person_id": "volin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "peasant-insurgents"
+        },
+        {
+          "person_id": "anton-denikin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "hetmanate-and-whites"
+        },
+        {
+          "person_id": "antonov-ovseenko",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "christian-rakovsky",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "jozef-pilsudski",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ukrainian-peoples-republic"
+        },
+        {
+          "person_id": "evgenia-bosch",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "vladimir-vernadsky",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "artyom-sergeyev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "volodymyr-vynnychenko",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ukrainian-peoples-republic"
+        },
+        {
+          "person_id": "mykhailo-hrushevsky",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ukrainian-peoples-republic"
+        },
+        {
+          "person_id": "nykyfor-hryhoriv",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "peasant-insurgents"
+        },
+        {
+          "person_id": "alexander-parkhomenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "yuri-lutovinov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "mikhail-tugan-baranovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ukrainian-peoples-republic"
+        },
+        {
+          "person_id": "robert-eideman",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "yakov-drobnis",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "gamarnik",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "vitaly-primakov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "grigory-grinko",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "moisei-rukhimovich",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "volodymyr-zatonsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "yuri-pyatakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "boris-shumyatsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-forces"
+        },
+        {
+          "person_id": "yevhen-konovalets",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "ukrainian-peoples-republic"
+        }
+      ],
+      "doubts": [
+        "pavlo-skoropadskyi / anton-denikin: German-backed Hetmanate and Denikin's Whites were distinct camps, grouped because both were anti-UNR and anti-Bolshevik and Skoropadskyi ended with a federation-with-Russia line; a separate 'Hetmanate' side is an alternative",
+        "jozef-pilsudski: Polish ally of the UNR only in 1920; placed with ukrainian-peoples-republic (label does not name Poland)",
+        "nykyfor-hryhoriv: fought for the Soviets until May 1919, then revolted; placed with peasant-insurgents",
+        "grigory-grinko: Borotbists were a Ukrainian left SR party allied with and then merged into the Bolsheviks; placed with soviet-forces",
+        "vladimir-vernadsky: witness (academy founder under the Hetmanate) -> null"
+      ]
+    },
+    {
+      "event": "soviet-polish-war",
+      "sides": [
+        {
+          "id": "soviet-russia",
+          "label": {
+            "ko": "소비에트 러시아",
+            "en": "Soviet Russia"
+          }
+        },
+        {
+          "id": "poland-and-unr",
+          "label": {
+            "ko": "폴란드와 페틀류라",
+            "en": "Poland and Petliura's Ukraine"
+          }
+        },
+        {
+          "id": "wrangel-whites",
+          "label": {
+            "ko": "브란겔의 백군",
+            "en": "Wrangel's Whites"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "lenin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "trotsky",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "tukhachevsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "stalin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "alexander-yegorov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "semyon-budyonny",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "voroshilov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "dzerzhinsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "radek",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "symon-petliura",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "pyotr-wrangel",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "wrangel-whites"
+        },
+        {
+          "person_id": "jozef-pilsudski",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "julian-marchlewski",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "sergey-kamenev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "feliks-kon",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "iosif-unshlikht",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "jan-dabski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "stanislaw-grabski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "lucjan-zeligowski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "stanislaw-bulak-balachowicz",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "maxime-weygand",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "wladyslaw-sikorski",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "kazimierz-sosnkowski",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "poland-and-unr"
+        },
+        {
+          "person_id": "aleksei-brusilov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "alexander-parkhomenko",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "stanislav-pestkovsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "ivan-kutyakov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "august-kork",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-russia"
+        },
+        {
+          "person_id": "konstantin-mekhonoshin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-russia"
+        }
+      ],
+      "doubts": [
+        "pyotr-wrangel: fought the Soviets at the same time but Poland refused cooperation with the Whites, so given his own side",
+        "maxime-weygand: French adviser on the Allied mission, actively advising the Polish staff -> poland-and-unr participant",
+        "stanislaw-bulak-balachowicz: fought under Polish command; his later independent Belarusian campaign still anti-Soviet -> poland-and-unr",
+        "julian-marchlewski: head of Polrevkom, a Soviet-sponsored provisional government; kept leader on the Soviet side, executor also defensible"
+      ]
+    },
+    {
+      "event": "first-united-front-1924-1927",
+      "sides": [
+        {
+          "id": "kuomintang",
+          "label": {
+            "ko": "국민당",
+            "en": "Kuomintang"
+          }
+        },
+        {
+          "id": "ccp-and-comintern",
+          "label": {
+            "ko": "공산당과 소련·코민테른",
+            "en": "CCP, Soviet Union and Comintern"
+          }
+        },
+        {
+          "id": "beiyang-warlords",
+          "label": {
+            "ko": "북양 군벌",
+            "en": "Beiyang warlords"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "sun-yat-sen",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "kuomintang"
+        },
+        {
+          "person_id": "chiang-kai-shek",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "kuomintang"
+        },
+        {
+          "person_id": "mikhail-borodin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "chen-duxiu",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "zhou-enlai",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "mao-zedong",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "wang-jingwei",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "kuomintang"
+        },
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "trotsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "mn-roy",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "adolph-joffe",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "li-dazhao",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "zhang-zuolin",
+          "from_kind": "opponent",
+          "kind": "leader",
+          "side": "beiyang-warlords"
+        },
+        {
+          "person_id": "he-long",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "zhu-de",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "kim-san",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "yeo-un-hyeong",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "kuomintang"
+        },
+        {
+          "person_id": "vasily-blyukher",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "andrei-bubnov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "ccp-and-comintern"
+        },
+        {
+          "person_id": "song-qingling",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "kuomintang"
+        }
+      ],
+      "doubts": [
+        "zhang-zuolin: opponent -> leader of the Beiyang warlords (Beijing government head, target of the Northern Expedition); executor defensible since the relation is about the embassy raid and Li Dazhao's execution",
+        "wang-jingwei / song-qingling: Wuhan KMT left; Song sided against Chiang and later with the CCP. A separate 'Wuhan KMT left' side is an alternative to lumping them into kuomintang",
+        "chiang-kai-shek: kept executor (Northern Expedition commander under Sun); by 1927 he led the KMT right, so leader is arguable",
+        "label ko '공산당과 소련·코민테른' is 12 chars; Soviet advisers (borodin, blyukher, bubnov, joffe) and Stalin/Trotsky/Roy placed here although advisers formally served the KMT",
+        "trotsky: critic of the united-front line inside the Soviet party; still in the CCP/Comintern camp",
+        "yeo-un-hyeong: joined the KMT at Sun's urging -> kuomintang",
+        "he-long: KMT army commander who led the Nanchang uprising and joined the CCP right after -> ccp-and-comintern"
+      ]
+    },
+    {
+      "event": "succession-struggle",
+      "sides": [
+        {
+          "id": "stalin-majority",
+          "label": {
+            "ko": "스탈린과 당 다수파",
+            "en": "Stalin and the party majority"
+          }
+        },
+        {
+          "id": "left-opposition",
+          "label": {
+            "ko": "좌익 반대파",
+            "en": "Left Opposition"
+          }
+        },
+        {
+          "id": "zinoviev-kamenev",
+          "label": {
+            "ko": "지노비예프·카메네프파",
+            "en": "Zinoviev–Kamenev group"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "lenin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": null
+        },
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "stalin-majority"
+        },
+        {
+          "person_id": "nadezhda-krupskaya",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "maria-volodicheva",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "lidia-fotieva",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "trotsky",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "zinoviev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "zinoviev-kamenev"
+        },
+        {
+          "person_id": "kamenev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "zinoviev-kamenev"
+        },
+        {
+          "person_id": "preobrazhensky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "timofei-sapronov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "bukharin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "stalin-majority"
+        },
+        {
+          "person_id": "frunze",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "stalin-majority"
+        },
+        {
+          "person_id": "robert-vincent-daniels",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "arkadi-maslow",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "alfred-rosmer",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "august-thalheimer",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "yakov-drobnis",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "ruth-fischer",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "boris-souvarine",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "boris-eltsin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "vladislav-kosior",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "pyotr-koganovich",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "vladimir-smirnov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "nikolai-glebov-avilov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "zinoviev-kamenev"
+        },
+        {
+          "person_id": "alexander-beloborodov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "andreu-nin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "alexander-voronsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "polikarp-mdivani",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "yuri-pyatakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "leonid-serebryakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "nikolai-muralov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "osinsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "nikolai-uglanov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "stalin-majority"
+        },
+        {
+          "person_id": "antonov-ovseenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        },
+        {
+          "person_id": "arkady-rozengolts",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "left-opposition"
+        }
+      ],
+      "doubts": [
+        "zinoviev / kamenev: in the triumvirate with Stalin 1923-25, New Opposition 1925, United Opposition with Trotsky 1926-27; given their own side because their camp changed",
+        "lenin: leader kept, side null; he stood above the camps (his testament was the struggle's central text, not a faction's program)",
+        "august-thalheimer: KPD leader blamed for the 1923 German October; not part of any Soviet camp -> null",
+        "arkadi-maslow / ruth-fischer: KPD ultra-left who backed the United Opposition (and were close to Zinoviev); placed with left-opposition",
+        "alfred-rosmer / boris-souvarine: expelled for defending Trotsky -> left-opposition (rosmer stays target)",
+        "alexander-voronsky: signing the 46 is doubtful in the literature (he was more a sympathizer); kept left-opposition per the relation",
+        "no opponents in this event, so no re-kinding needed"
+      ]
+    },
+    {
+      "event": "soviet-japanese-border-wars",
+      "sides": [
+        {
+          "id": "soviet-mongolia",
+          "label": {
+            "ko": "소련·몽골",
+            "en": "Soviet Union and Mongolia"
+          }
+        },
+        {
+          "id": "japan-manchukuo",
+          "label": {
+            "ko": "일본·만주국",
+            "en": "Japan and Manchukuo"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "lyushkov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "yezhov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "lev-mekhlis",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "vasily-blyukher",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "grigory-shtern",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "voroshilov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "frinovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "masanobu-tsuji",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "vasily-vinevitin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "zhukov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "michitaro-komatsubara",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "chiang-kai-shek",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "nikolai-feklenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "yakov-smushkevich",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "yasuoka-masaomi",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "hideki-tojo",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "sadao-araki",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "zhang-zuolin",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "kanji-ishiwara",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "konoe-fumimaro",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan-manchukuo"
+        },
+        {
+          "person_id": "hotsumi-ozaki",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-mongolia"
+        },
+        {
+          "person_id": "khorloogiin-choibalsan",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-mongolia"
+        }
+      ],
+      "doubts": [
+        "lyushkov: NKVD Far East chief who defected to Japan in June 1938 and gave it intelligence; placed with japan-manchukuo (his act served Japan), soviet-mongolia arguable by origin",
+        "hotsumi-ozaki: Japanese member of Sorge's Soviet spy ring -> soviet-mongolia participant",
+        "chiang-kai-shek: outside recipient of Soviet aid, not in either camp -> null",
+        "zhang-zuolin: killed by the Kwantung Army in 1928, a precursor rather than part of the camps -> null (target kept)",
+        "vasily-blyukher: kept leader of the Soviet side although he was later purged; not re-kinded to target since the relation is about command at Khasan",
+        "no opponents in this event"
+      ]
+    },
+    {
+      "event": "nazi-soviet-pact",
+      "sides": [
+        {
+          "id": "soviet-union",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        },
+        {
+          "id": "germany",
+          "label": {
+            "ko": "독일",
+            "en": "Germany"
+          }
+        },
+        {
+          "id": "britain-france",
+          "label": {
+            "ko": "영국·프랑스",
+            "en": "Britain and France"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "litvinov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "molotov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "ivan-maisky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "georgy-astakhov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "neville-chamberlain",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "britain-france"
+        },
+        {
+          "person_id": "reginald-drax",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "britain-france"
+        },
+        {
+          "person_id": "william-seeds",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "aime-doumenc",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "britain-france"
+        },
+        {
+          "person_id": "joachim-von-ribbentrop",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "germany"
+        },
+        {
+          "person_id": "willi-muenzenberg",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        }
+      ],
+      "doubts": [
+        "william-seeds: British ambassador in the talks, but kind witness -> side null per rule; could be britain-france if re-kinded participant",
+        "willi-muenzenberg: German communist exile who only criticised the pact; belongs to no negotiating camp -> null",
+        "molotov: kept participant, though as signatory and chief negotiator executor may fit better",
+        "neville-chamberlain: British PM kept participant; leader of britain-france side would also be defensible"
+      ]
+    },
+    {
+      "event": "winter-war",
+      "sides": [
+        {
+          "id": "soviet-union",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        },
+        {
+          "id": "finland",
+          "label": {
+            "ko": "핀란드",
+            "en": "Finland"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "molotov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "voroshilov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "kirill-meretskov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "timoshenko",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "zhdanov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "lev-mekhlis",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "kuusinen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "ivan-proskurov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "grigory-kulik",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "alexander-golovanov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "alexander-novikov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "aleksandr-tvardovsky",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "anatoly-gribkov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "boris-shaposhnikov",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "boris-shcherbina",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "dmitry-lelyushenko",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "ivan-yakovlev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "ivan-yakubovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "kirill-moskalenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "kuzma-derevyanko",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "kuzma-galitsky",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "mikhail-kirponos",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "mikhail-malinin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "mikhail-shumilov",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "nikolai-voronov",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "nikolai-yakovlev",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "pavel-batov",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "pavel-kurochkin",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "pavel-kutakhov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "pavel-rotmistrov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "pavel-rychagov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "pyotr-ivashutin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "vasil-mzhavanadze",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "vladimir-kryukov",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "yevgeny-ivanovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "carl-gustaf-emil-mannerheim",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finland"
+        },
+        {
+          "person_id": "juho-kusti-paasikivi",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "vasilevsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "eljas-erkko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "risto-ryti",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finland"
+        },
+        {
+          "person_id": "vaino-tanner",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "yeltsin",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "khrushchev",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "paavo-talvela",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "alexei-vinogradov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "jukka-rangell",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finland"
+        },
+        {
+          "person_id": "mikhail-semiryaga",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "edouard-daladier",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "erik-heinrichs",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "yuri-kilin",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "boris-yartsev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "aimo-cajander",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finland"
+        },
+        {
+          "person_id": "aarno-sakari-yrjo-koskinen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "andrei-zelentsov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "kyosti-kallio",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "finland"
+        },
+        {
+          "person_id": "grigori-krivosheyev",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "vaino-voionmaa",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "rudolf-walden",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "finland"
+        },
+        {
+          "person_id": "hjalmar-siilasvuo",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "finland"
+        },
+        {
+          "person_id": "yakov-surits",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        }
+      ],
+      "doubts": [
+        "kind corrections (not opponents): boris-shaposhnikov, dmitry-lelyushenko, kuzma-galitsky, mikhail-shumilov, nikolai-voronov, pavel-batov, pavel-kurochkin, vladimir-kryukov were 'leader' but are chief of staff / branch / corps / division / brigade commanders -> executor; revert if kind changes are out of scope",
+        "jukka-rangell: relation is about declaring war in June 1941 (Continuation War), not the Winter War; kept finland/leader but the link itself may be misplaced",
+        "paavo-talvela, erik-heinrichs: notes describe 1940-41 German-Finnish coordination (Continuation War prep); side finland but link relevance doubtful",
+        "edouard-daladier: French PM who only pushed aid to Finland -> outside government reacting, side null",
+        "alexei-vinogradov: executed by his own side after defeat; kept participant on soviet side (could be target of Mekhlis's reprisal, but not of the war's action)",
+        "kuusinen: puppet 'Finnish Democratic Republic' head placed on soviet side, not finland",
+        "aleksandr-tvardovsky: Soviet war correspondent but witness -> null per rule"
+      ]
+    },
+    {
+      "event": "fall-of-france",
+      "sides": [
+        {
+          "id": "french-republic",
+          "label": {
+            "ko": "프랑스 제3공화국",
+            "en": "French Third Republic"
+          }
+        },
+        {
+          "id": "germany",
+          "label": {
+            "ko": "독일",
+            "en": "Germany"
+          }
+        },
+        {
+          "id": "vichy",
+          "label": {
+            "ko": "비시 정부",
+            "en": "Vichy regime"
+          }
+        },
+        {
+          "id": "free-france",
+          "label": {
+            "ko": "자유 프랑스·레지스탕스",
+            "en": "Free France and Resistance"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "edouard-daladier",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "french-republic"
+        },
+        {
+          "person_id": "philippe-petain",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "vichy"
+        },
+        {
+          "person_id": "rene-bousquet",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "vichy"
+        },
+        {
+          "person_id": "charles-de-gaulle",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "free-france"
+        },
+        {
+          "person_id": "henri-rol-tanguy",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "free-france"
+        },
+        {
+          "person_id": "pierre-laval",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "vichy"
+        },
+        {
+          "person_id": "maurice-gamelin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "french-republic"
+        },
+        {
+          "person_id": "heinz-guderian",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "germany"
+        },
+        {
+          "person_id": "charles-huntziger",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "vichy"
+        },
+        {
+          "person_id": "robert-touchon",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "french-republic"
+        },
+        {
+          "person_id": "albert-lebrun",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "french-republic"
+        },
+        {
+          "person_id": "raoul-van-overstraeten",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "vincent-badie",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "french-republic"
+        },
+        {
+          "person_id": "dietrich-von-choltitz",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "germany"
+        },
+        {
+          "person_id": "aime-cesaire",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "ludovic-oscar-frossard",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "vichy"
+        }
+      ],
+      "doubts": [
+        "kind corrections (not opponents): maurice-gamelin leader->executor (army commander-in-chief, not the government); henri-rol-tanguy leader->executor (commanded the Paris FFI rising under de Gaulle's side). Revert if out of scope",
+        "charles-huntziger: signed the armistice as delegate of Petain's government (later Vichy war minister) -> vichy rather than french-republic",
+        "heinz-guderian: kept participant; a panzer corps commander could be executor",
+        "pierre-laval: kept participant; as Vichy head of government from 1942 executor/leader is arguable",
+        "aime-cesaire: subjected to Vichy censorship in Martinique; not in any camp -> null (target arguable)",
+        "raoul-van-overstraeten: Belgian adviser, witness -> null",
+        "Germany has no leader (Hitler not linked)"
+      ]
+    },
+    {
+      "event": "pacific-war",
+      "sides": [
+        {
+          "id": "allies",
+          "label": {
+            "ko": "연합국",
+            "en": "Allies"
+          }
+        },
+        {
+          "id": "japan",
+          "label": {
+            "ko": "일본 제국",
+            "en": "Empire of Japan"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "chiang-kai-shek",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "allies"
+        },
+        {
+          "person_id": "mao-zedong",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "allies"
+        },
+        {
+          "person_id": "hirohito",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan"
+        },
+        {
+          "person_id": "kanji-ishiwara",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan"
+        },
+        {
+          "person_id": "cordell-hull",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "allies"
+        },
+        {
+          "person_id": "isoroku-yamamoto",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "japan"
+        },
+        {
+          "person_id": "chester-w-nimitz",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "allies"
+        },
+        {
+          "person_id": "tadamichi-kuribayashi",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "japan"
+        },
+        {
+          "person_id": "mitsuru-ushijima",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "japan"
+        },
+        {
+          "person_id": "kantaro-suzuki",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan"
+        },
+        {
+          "person_id": "seishiro-itagaki",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "japan"
+        },
+        {
+          "person_id": "konoe-fumimaro",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "japan"
+        },
+        {
+          "person_id": "frank-jack-fletcher",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "allies"
+        },
+        {
+          "person_id": "raymond-a-spruance",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "allies"
+        },
+        {
+          "person_id": "alexander-vandegrift",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "allies"
+        },
+        {
+          "person_id": "togo-shigenori",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan"
+        },
+        {
+          "person_id": "mamoru-shigemitsu",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan"
+        },
+        {
+          "person_id": "yoshijiro-umezu",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "japan"
+        },
+        {
+          "person_id": "ho-chi-minh",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "allies"
+        }
+      ],
+      "doubts": [
+        "kind corrections (not opponents): isoroku-yamamoto, chester-w-nimitz, frank-jack-fletcher, raymond-a-spruance, alexander-vandegrift leader->executor (fleet/theater/task-force/division commanders, not heads of a side). Revert if out of scope",
+        "mao-zedong: CCP fought Japan within the united front but was not a formal Allied government -> allies, arguable",
+        "ho-chi-minh: Viet Minh resisted Japan and worked with OSS; placed in allies, but could be null",
+        "kanji-ishiwara, seishiro-itagaki: roles are the 1931 Manchurian Incident (pre-1941 background); side japan"
+      ]
+    },
+    {
+      "event": "yalta-potsdam",
+      "sides": [
+        {
+          "id": "soviet-union",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        },
+        {
+          "id": "united-states",
+          "label": {
+            "ko": "미국",
+            "en": "United States"
+          }
+        },
+        {
+          "id": "britain",
+          "label": {
+            "ko": "영국",
+            "en": "Britain"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "molotov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "gromyko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "vyshinsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "zhukov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "harry-s-truman",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "united-states"
+        },
+        {
+          "person_id": "franklin-d-roosevelt",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "united-states"
+        },
+        {
+          "person_id": "winston-churchill",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "britain"
+        },
+        {
+          "person_id": "vasilevsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-union"
+        },
+        {
+          "person_id": "herbert-vere-evatt",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "james-f-byrnes",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "united-states"
+        },
+        {
+          "person_id": "clement-attlee",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "britain"
+        },
+        {
+          "person_id": "naotake-sato",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "william-d-leahy",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "united-states"
+        },
+        {
+          "person_id": "john-lewis-gaddis",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "charles-e-bohlen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "united-states"
+        },
+        {
+          "person_id": "anthony-eden",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "britain"
+        },
+        {
+          "person_id": "edward-stettinius",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "united-states"
+        },
+        {
+          "person_id": "togo-shigenori",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "fyodor-gusev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-union"
+        }
+      ],
+      "doubts": [
+        "sides here are conference delegations of allied powers, not warring camps; if the editor prefers treating the conferences as one camp, return null instead",
+        "herbert-vere-evatt: Australian, acted at San Francisco against great-power veto, not a Yalta/Potsdam delegation -> null",
+        "togo-shigenori, naotake-sato: Japan was outside the conferences (target of the Soviet entry pledge) -> null",
+        "anthony-eden: note describes San Francisco co-chairing, but he was British foreign secretary at Yalta/Potsdam -> britain"
+      ]
+    },
+    {
+      "event": "marshall-plan",
+      "sides": [
+        {
+          "id": "western-bloc",
+          "label": {
+            "ko": "미국·서유럽",
+            "en": "US and Western Europe"
+          }
+        },
+        {
+          "id": "soviet-bloc",
+          "label": {
+            "ko": "소련·공산 진영",
+            "en": "Soviet bloc and communist parties"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "molotov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "zhdanov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "vyshinsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "klement-gottwald",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "wladyslaw-gomulka",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "walter-ulbricht",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "evgeny-varga",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "josip-broz-tito",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "maurice-thorez",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "togliatti",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "vladimir-semyonov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "george-c-marshall",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "western-bloc"
+        },
+        {
+          "person_id": "valerian-zorin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "rudolf-slansky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "ludvik-svoboda",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "william-l-clayton",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-bloc"
+        },
+        {
+          "person_id": "george-f-kennan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-bloc"
+        },
+        {
+          "person_id": "jacques-duclos",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "luigi-longo",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "georges-bidault",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-bloc"
+        },
+        {
+          "person_id": "alan-s-milward",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "vaclav-nosek",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "charles-e-bohlen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-bloc"
+        },
+        {
+          "person_id": "edvard-benes",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "milovan-djilas",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        },
+        {
+          "person_id": "barry-eichengreen",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "ernest-bevin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-bloc"
+        },
+        {
+          "person_id": "jan-masaryk",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "eugenio-reale",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-bloc"
+        }
+      ],
+      "doubts": [
+        "maurice-thorez: opponent -> participant (PCF leader opposing the plan inside the communist camp; mirrors togliatti)",
+        "josip-broz-tito: relation is the 1948 break with Stalin; in 1947 Yugoslavia was in the Cominform, but his linked role is the rupture -> null",
+        "ludvik-svoboda: non-party defence minister who let the 1948 coup pass; leaned communist but not formally in the camp -> null",
+        "edvard-benes, jan-masaryk: non-communist Czechoslovak leaders pressured by Moscow; belonged to neither bloc -> null, kind target kept",
+        "evgeny-varga: Soviet economist sanctioned for deviating from the two-camps line; still inside the soviet bloc",
+        "Czechoslovak coup (1948) people are mixed into this event; the camps fit it only loosely"
+      ]
+    },
+    {
+      "event": "berlin-blockade",
+      "sides": [
+        {
+          "id": "soviet-zone",
+          "label": {
+            "ko": "소련·동독 측",
+            "en": "Soviet Union and East German side"
+          }
+        },
+        {
+          "id": "western-allies",
+          "label": {
+            "ko": "서방 연합국·서베를린",
+            "en": "Western Allies and West Berlin"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "james-f-byrnes",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "vasily-sokolovsky",
+          "from_kind": "participant",
+          "kind": "executor",
+          "side": "soviet-zone"
+        },
+        {
+          "person_id": "lucius-d-clay",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "curtis-e-lemay",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "ernst-reuter",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "william-h-tunner",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "konrad-adenauer",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "ludwig-erhard",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "gail-halvorsen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "western-allies"
+        },
+        {
+          "person_id": "robert-murphy",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "friedrich-ebert-jr",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-zone"
+        },
+        {
+          "person_id": "wilhelm-pieck",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-zone"
+        }
+      ],
+      "doubts": [
+        "kind correction (not opponent): vasily-sokolovsky participant->executor (Soviet military governor who walked out of the ACC and ran the zone during the blockade). Revert if out of scope",
+        "robert-murphy: Clay's political adviser, clearly western camp, but kind witness -> null per rule; could be western-allies/participant",
+        "wilhelm-pieck: kept leader, but Stalin (the actual top of the Soviet side) is not linked; executor/participant arguable",
+        "james-f-byrnes: role is 1945-46 background (Potsdam, Stuttgart speech); side western-allies"
+      ]
+    },
+    {
+      "event": "tito-stalin-split",
+      "sides": [
+        {
+          "id": "soviet-cominform",
+          "label": {
+            "ko": "소련·코민포름",
+            "en": "Soviet Union and Cominform"
+          }
+        },
+        {
+          "id": "yugoslavia",
+          "label": {
+            "ko": "유고슬라비아",
+            "en": "Yugoslavia"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "josip-broz-tito",
+          "from_kind": "target",
+          "kind": "leader",
+          "side": "yugoslavia"
+        },
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "molotov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "dimitrov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "khrushchev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "edvard-kardelj",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "yugoslavia"
+        },
+        {
+          "person_id": "bulganin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "jawaharlal-nehru",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "boris-kidric",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "yugoslavia"
+        },
+        {
+          "person_id": "aleksandar-rankovic",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "yugoslavia"
+        },
+        {
+          "person_id": "jeronim-perovic",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "leonid-gibianskii",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "bela-kiraly",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "laszlo-ritter",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "arso-jovanovic",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "vladimir-bakaric",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "yugoslavia"
+        },
+        {
+          "person_id": "sreten-zujovic",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "andrija-hebrang",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "soviet-cominform"
+        },
+        {
+          "person_id": "milovan-djilas",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "yugoslavia"
+        },
+        {
+          "person_id": "vladimir-velebit",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "yugoslavia"
+        }
+      ],
+      "doubts": [
+        "josip-broz-tito: target -> leader of the yugoslavia side (the expulsion was aimed at the whole party he led; with sides he heads his camp). Keep target if the editor prefers",
+        "dimitrov: Bulgarian leader rebuked over the Balkan federation; Bulgaria joined the Cominform condemnation -> soviet-cominform, but his own role is ambiguous",
+        "arso-jovanovic, sreten-zujovic, andrija-hebrang: Yugoslav Cominformists/pro-Soviet dissidents -> soviet-cominform camp; arso-jovanovic 'executor' of a coup is doubtful (participant may fit; he was shot fleeing)",
+        "khrushchev, bulganin: 1955 reconciliation, Soviet side",
+        "jawaharlal-nehru: non-aligned partner, no camp -> null",
+        "bela-kiraly: Hungarian officer-witness -> null"
+      ]
+    },
+    {
+      "event": "korean-war",
+      "sides": [
+        {
+          "id": "north",
+          "label": {
+            "ko": "북측(조선·중국·소련)",
+            "en": "North: DPRK, China and USSR"
+          }
+        },
+        {
+          "id": "south",
+          "label": {
+            "ko": "남측(대한민국·유엔군)",
+            "en": "South: ROK and UN Command"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "stalin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "north"
+        },
+        {
+          "person_id": "kim-il-sung",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "north"
+        },
+        {
+          "person_id": "mao-zedong",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "zhou-enlai",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "yakov-malik",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "vasilevsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "north"
+        },
+        {
+          "person_id": "ivan-kozhedub",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "pyotr-pleshakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "mikhail-shalin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "zhu-de",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "ho-ka-i",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "mu-chong",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "syngman-rhee",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "south"
+        },
+        {
+          "person_id": "gromyko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "klement-gottwald",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "peng-dehuai",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "north"
+        },
+        {
+          "person_id": "lin-biao",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "malenkov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "north"
+        },
+        {
+          "person_id": "beria",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "north"
+        },
+        {
+          "person_id": "molotov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "north"
+        },
+        {
+          "person_id": "dwight-d-eisenhower",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "south"
+        },
+        {
+          "person_id": "harry-s-truman",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "south"
+        },
+        {
+          "person_id": "douglas-macarthur",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "south"
+        },
+        {
+          "person_id": "nam-il",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "north"
+        },
+        {
+          "person_id": "bruce-cumings",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "gao-gang",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "tsiang-tingfu",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "south"
+        },
+        {
+          "person_id": "william-stueck",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "william-k-harrison-jr",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "south"
+        },
+        {
+          "person_id": "deng-hua",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "north"
+        },
+        {
+          "person_id": "georgy-lobov",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "north"
+        },
+        {
+          "person_id": "mark-w-clark",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "south"
+        },
+        {
+          "person_id": "chae-byeong-deok",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "south"
+        },
+        {
+          "person_id": "edward-almond",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "south"
+        },
+        {
+          "person_id": "ernest-a-gross",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "south"
+        },
+        {
+          "person_id": "yevgeny-pepelyayev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "oliver-p-smith",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "south"
+        },
+        {
+          "person_id": "nikolai-sutyagin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "kang-kon",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "north"
+        },
+        {
+          "person_id": "kim-chaek",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "north"
+        },
+        {
+          "person_id": "raya-dunayevskaya",
+          "from_kind": "opponent",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "wang-hongwen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        },
+        {
+          "person_id": "yang-dezhi",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "north"
+        }
+      ],
+      "doubts": [
+        "raya-dunayevskaya: US Trotskyist who opposed the war from outside both camps; re-kinded opponent -> witness, side null (could alternatively be dropped from the event)",
+        "tsiang-tingfu: ROC delegate chairing the UNSC; placed on south (ROC backed the UN resolutions) though ROC did not fight",
+        "klement-gottwald: Czechoslovak leader in the Soviet bloc but only asked Stalin about the boycott; kept witness, side null",
+        "kind fixes (not opponents): georgy-lobov, oliver-p-smith, deng-hua, chae-byeong-deok leader->executor (commanded one part, not the top of a side); nam-il leader->executor (chief armistice delegate)",
+        "lin-biao: declined command; kept participant on north"
+      ]
+    },
+    {
+      "event": "sino-soviet-split",
+      "sides": [
+        {
+          "id": "soviet",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        },
+        {
+          "id": "china",
+          "label": {
+            "ko": "중국",
+            "en": "China"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "khrushchev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet"
+        },
+        {
+          "person_id": "mao-zedong",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "china"
+        },
+        {
+          "person_id": "suslov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "zhou-enlai",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "china"
+        },
+        {
+          "person_id": "deng-xiaoping",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "china"
+        },
+        {
+          "person_id": "andropov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "ivan-arkhipov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "pavel-yudin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "stepan-chervonenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "ponomarev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "gorbachev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet"
+        },
+        {
+          "person_id": "sergey-radchenko",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "shen-zhihua",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "wang-ming",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        }
+      ],
+      "doubts": [
+        "wang-ming: Chinese communist in Soviet exile who wrote Soviet-side propaganda against Mao; placed on soviet"
+      ]
+    },
+    {
+      "event": "cuban-missile-crisis",
+      "sides": [
+        {
+          "id": "soviet",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        },
+        {
+          "id": "cuba",
+          "label": {
+            "ko": "쿠바",
+            "en": "Cuba"
+          }
+        },
+        {
+          "id": "usa",
+          "label": {
+            "ko": "미국",
+            "en": "United States"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "khrushchev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet"
+        },
+        {
+          "person_id": "fidel-castro",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "cuba"
+        },
+        {
+          "person_id": "malinovsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "gromyko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "mikoyan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "che-guevara",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "cuba"
+        },
+        {
+          "person_id": "mikhail-yangel",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "semichastny",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "vasily-kuznetsov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "anatoly-dobrynin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "leonid-smirnov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "aleksandr-sakharovsky",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "oleg-troyanovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "issa-pliyev",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "valerian-zorin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "vasily-arkhipov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "vladimir-tolubko",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "vladimir-kasatonov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "anatoly-gribkov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "john-f-kennedy",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "usa"
+        },
+        {
+          "person_id": "robert-mcnamara",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "usa"
+        },
+        {
+          "person_id": "edward-lansdale",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "usa"
+        },
+        {
+          "person_id": "richard-heyser",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "george-ball",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "mcgeorge-bundy",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "graham-allison",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "dwight-d-eisenhower",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "arthur-lundahl",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "john-mccone",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "ted-sorensen",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "alexandr-fursenko",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "oleg-penkovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "nikolai-beloborodov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "igor-statsenko",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "robert-f-kennedy",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "adlai-stevenson",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "dean-rusk",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "u-thant",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "arthur-m-schlesinger-jr",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "michael-dobbs",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "fulgencio-batista",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "maxwell-taylor",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "usa"
+        },
+        {
+          "person_id": "sergo-mikoyan",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "llewellyn-thompson",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "georgi-bolshakov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "alexander-alexeyev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        }
+      ],
+      "doubts": [
+        "Cuba kept as its own side because Castro and Moscow split over the withdrawal (Mikoyan mission); merge into soviet if two sides preferred",
+        "oleg-penkovsky: Soviet GRU colonel spying for US/UK; placed on usa as the camp he acted for",
+        "fulgencio-batista: ousted in 1959, background only; kept target, side null",
+        "richard-heyser: US U-2 pilot kept witness/null; arguably usa participant",
+        "u-thant: UN mediator, side null",
+        "kind fixes: issa-pliyev leader->executor (commander of Soviet forces in Cuba); robert-mcnamara leader->executor (defense secretary under Kennedy)"
+      ]
+    },
+    {
+      "event": "detente-salt",
+      "sides": [
+        {
+          "id": "usa",
+          "label": {
+            "ko": "미국",
+            "en": "United States"
+          }
+        },
+        {
+          "id": "soviet",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "richard-nixon",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "usa"
+        },
+        {
+          "person_id": "henry-kissinger",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "usa"
+        },
+        {
+          "person_id": "jimmy-carter",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "anatoly-dobrynin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "brezhnev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet"
+        },
+        {
+          "person_id": "gromyko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "gerald-ford",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "henry-m-jackson",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "yuri-orlov",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "gerard-c-smith",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "lyndon-b-johnson",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "usa"
+        },
+        {
+          "person_id": "thomas-brimelow",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "usa"
+        },
+        {
+          "person_id": "charles-vanik",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "usa"
+        },
+        {
+          "person_id": "andrei-alexandrov-agentov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        }
+      ],
+      "doubts": [
+        "yuri-orlov: Soviet dissident arrested by his own government, not part of either negotiating camp; target, side null",
+        "thomas-brimelow: British diplomat who drafted the counterproposal for Kissinger; placed on usa (Western camp)",
+        "henry-m-jackson / charles-vanik: Congress opponents of Kissinger's detente, still on usa side"
+      ]
+    },
+    {
+      "event": "helsinki-accords",
+      "sides": [
+        {
+          "id": "east",
+          "label": {
+            "ko": "소련·동구권",
+            "en": "Soviet Union and Eastern Bloc"
+          }
+        },
+        {
+          "id": "west",
+          "label": {
+            "ko": "서방",
+            "en": "The West"
+          }
+        },
+        {
+          "id": "dissidents",
+          "label": {
+            "ko": "동구권 반체제 운동",
+            "en": "Eastern Bloc dissidents"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "molotov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "east"
+        },
+        {
+          "person_id": "brezhnev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "east"
+        },
+        {
+          "person_id": "gromyko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "east"
+        },
+        {
+          "person_id": "henry-kissinger",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "west"
+        },
+        {
+          "person_id": "sakharov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "dissidents"
+        },
+        {
+          "person_id": "adam-rapacki",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "east"
+        },
+        {
+          "person_id": "urho-kekkonen",
+          "from_kind": "leader",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "vaclav-havel",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "dissidents"
+        },
+        {
+          "person_id": "jiri-hajek",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "dissidents"
+        },
+        {
+          "person_id": "john-foster-dulles",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "west"
+        },
+        {
+          "person_id": "walter-stoessel",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "west"
+        },
+        {
+          "person_id": "jan-patocka",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "dissidents"
+        },
+        {
+          "person_id": "andrei-alexandrov-agentov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "east"
+        }
+      ],
+      "doubts": [
+        "urho-kekkonen: neutral host, side null; leader->participant since he led no camp",
+        "dissidents side: they acted after signature (Moscow Helsinki Group, Charter 77) against their own governments; merge or drop if the page should show only the negotiating camps"
+      ]
+    },
+    {
+      "event": "cambodian-regime-change-1975-1979",
+      "sides": [
+        {
+          "id": "khmer-rouge",
+          "label": {
+            "ko": "민주캄푸치아(크메르루주)",
+            "en": "Democratic Kampuchea (Khmer Rouge)"
+          }
+        },
+        {
+          "id": "prk-vietnam",
+          "label": {
+            "ko": "캄푸치아인민공화국·베트남",
+            "en": "PRK and Vietnam"
+          }
+        },
+        {
+          "id": "noncommunist",
+          "label": {
+            "ko": "비공산 저항세력",
+            "en": "Non-communist resistance"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "heng-samrin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "prk-vietnam"
+        },
+        {
+          "person_id": "pol-pot",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "khmer-rouge"
+        },
+        {
+          "person_id": "norodom-sihanouk",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "noncommunist"
+        },
+        {
+          "person_id": "khieu-samphan",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "khmer-rouge"
+        },
+        {
+          "person_id": "hun-sen",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "prk-vietnam"
+        },
+        {
+          "person_id": "pen-sovann",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "prk-vietnam"
+        },
+        {
+          "person_id": "nuon-chea",
+          "from_kind": "target",
+          "kind": "leader",
+          "side": "khmer-rouge"
+        },
+        {
+          "person_id": "son-sann",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "noncommunist"
+        },
+        {
+          "person_id": "van-tien-dung",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "prk-vietnam"
+        }
+      ],
+      "doubts": [
+        "nuon-chea: current kind target reflects the 2018 tribunal, outside the event; as KR 'Brother Number Two' re-kinded leader of khmer-rouge (keep target if the trial is meant)",
+        "norodom-sihanouk: nominal DK head of state 1975-76 then under house arrest; placed on noncommunist resistance per his relation (FUNCINPEC/CGDK)",
+        "event summary only covers 1975 DK rule; sides reflect the 1979 regime change and the resistance period in the title"
+      ]
+    },
+    {
+      "event": "solidarity-martial-law",
+      "sides": [
+        {
+          "id": "solidarity",
+          "label": {
+            "ko": "연대노조",
+            "en": "Solidarity"
+          }
+        },
+        {
+          "id": "government",
+          "label": {
+            "ko": "폴란드 당·정부",
+            "en": "Polish party-state"
+          }
+        },
+        {
+          "id": "soviet",
+          "label": {
+            "ko": "소련",
+            "en": "Soviet Union"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "tadeusz-mazowiecki",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "lech-walesa",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "bogdan-borusewicz",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "alina-pienkowska",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "anna-walentynowicz",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "john-paul-ii",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "stefan-wyszynski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "mieczyslaw-jagielski",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "government"
+        },
+        {
+          "person_id": "jerzy-borowczak",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "marian-jurczyk",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "wojciech-jaruzelski",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "government"
+        },
+        {
+          "person_id": "mieczyslaw-rakowski",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "government"
+        },
+        {
+          "person_id": "jan-rulewski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "jan-ludwiczak",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "henryka-krzywonos",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "roman-bartoszcze",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "stanislaw-kania",
+          "from_kind": "participant",
+          "kind": "leader",
+          "side": "government"
+        },
+        {
+          "person_id": "piotr-jaroszewicz",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "government"
+        },
+        {
+          "person_id": "andrzej-gwiazda",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "jacek-kuron",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "tadeusz-fiszbach",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "government"
+        },
+        {
+          "person_id": "zdzislaw-kurowski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "government"
+        },
+        {
+          "person_id": "adam-michnik",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "solidarity"
+        },
+        {
+          "person_id": "czeslaw-kiszczak",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "government"
+        },
+        {
+          "person_id": "konstantin-rusakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        }
+      ],
+      "doubts": [
+        "stefan-wyszynski: Primate mediating between church, state and Solidarity; side null",
+        "john-paul-ii: spiritual patron of Solidarity; placed on solidarity",
+        "konstantin-rusakov: only Soviet person; own side 'soviet' (could merge into government side, or null)",
+        "stanislaw-kania: PZPR first secretary until Oct 1981, participant->leader of government side",
+        "piotr-jaroszewicz: 1976 price-rise premier, background to the event; government executor"
+      ]
+    },
+    {
+      "event": "war-scare-1983",
+      "sides": [
+        {
+          "id": "soviet",
+          "label": {
+            "ko": "소련·동구권",
+            "en": "Soviet Union and Eastern Bloc"
+          }
+        },
+        {
+          "id": "nato",
+          "label": {
+            "ko": "미국·NATO",
+            "en": "United States and NATO"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "stanislav-petrov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "oleg-gordievsky",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "ronald-reagan",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "nato"
+        },
+        {
+          "person_id": "brezhnev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet"
+        },
+        {
+          "person_id": "andropov",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "soviet"
+        },
+        {
+          "person_id": "erich-mielke",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        },
+        {
+          "person_id": "anatoly-kornukov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "gennady-osipovich",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "soviet"
+        },
+        {
+          "person_id": "leonard-h-perroots",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "nato"
+        },
+        {
+          "person_id": "markus-wolf",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "yuri-votintsev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "soviet"
+        }
+      ],
+      "doubts": [
+        "oleg-gordievsky: KGB officer working for British intelligence; witness, side null",
+        "markus-wolf: East German spy chief but here a retrospective witness; side null",
+        "erich-mielke: Stasi chief supplying KGB; soviet participant"
+      ]
+    },
+    {
+      "event": "tiananmen-1989",
+      "sides": [
+        {
+          "id": "hardliners",
+          "label": {
+            "ko": "계엄을 결정한 당 지도부",
+            "en": "Party leadership behind martial law"
+          }
+        },
+        {
+          "id": "movement",
+          "label": {
+            "ko": "민주화 운동과 동조자",
+            "en": "Democracy movement and sympathisers"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "deng-xiaoping",
+          "from_kind": "executor",
+          "kind": "leader",
+          "side": "hardliners"
+        },
+        {
+          "person_id": "zhao-ziyang",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "li-peng",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "hardliners"
+        },
+        {
+          "person_id": "hu-yaobang",
+          "from_kind": "target",
+          "kind": "target",
+          "side": null
+        },
+        {
+          "person_id": "jiang-zemin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "hardliners"
+        },
+        {
+          "person_id": "wan-li",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "hardliners"
+        },
+        {
+          "person_id": "li-xiannian",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "hardliners"
+        },
+        {
+          "person_id": "bo-yibo",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "hardliners"
+        },
+        {
+          "person_id": "fang-lizhi",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "movement"
+        },
+        {
+          "person_id": "wei-jingsheng",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "movement"
+        },
+        {
+          "person_id": "gorbachev",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "george-h-w-bush",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        }
+      ],
+      "doubts": [
+        "deng-xiaoping: 종류를 executor에서 leader로 바꿈. 계엄과 소개를 최종 결정한 최고 지도자다.",
+        "hu-yaobang: 진영을 null로 둠. 그의 죽음이 시위의 계기가 되었을 뿐 사건 기간에 어느 쪽에서도 활동하지 않았다. target 종류도 잘 맞지 않지만 그대로 두었다.",
+        "zhao-ziyang: 진영을 movement로 둠. 계엄에 반대하고 광장의 학생들을 찾아갔다가 실각했다. 다만 운동의 일원이 아니라 당 지도부 안의 반대자였다.",
+        "wei-jingsheng: 진영을 movement로 둠. 1989년 운동 기간에는 수감 중이었고, 석방 청원의 대상이었다.",
+        "li-xiannian, bo-yibo: 종류를 executor 그대로 둠. 두 원로는 계엄 결정을 지지했을 뿐이어서 participant가 더 맞을 수도 있다.",
+        "george-h-w-bush: 외부 정부로서 반응만 했으므로 진영을 null로 둠."
+      ]
+    },
+    {
+      "event": "economic-reform-debate",
+      "sides": [
+        {
+          "id": "union-gov",
+          "label": {
+            "ko": "연방 정부의 온건 개혁안",
+            "en": "Union government's gradual reform"
+          }
+        },
+        {
+          "id": "radical",
+          "label": {
+            "ko": "500일 계획과 러시아공화국",
+            "en": "500-Day Plan and the Russian republic"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "gorbachev",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "ryzhkov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "leonid-abalkin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "stanislav-shatalin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "radical"
+        },
+        {
+          "person_id": "grigory-yavlinsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "radical"
+        },
+        {
+          "person_id": "abel-aganbegyan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "yeltsin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "radical"
+        },
+        {
+          "person_id": "maslyukov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "pavlov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "ivan-silayev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "radical"
+        },
+        {
+          "person_id": "kryuchkov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "gerashchenko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union-gov"
+        },
+        {
+          "person_id": "gaidar-yegor",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "radical"
+        },
+        {
+          "person_id": "artyom-tarasov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "arnold-voylukov",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "martin-malia",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "yevgeny-yasin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "radical"
+        },
+        {
+          "person_id": "nikolai-petrakov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "radical"
+        },
+        {
+          "person_id": "mikhail-shchadov",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "union-gov"
+        }
+      ],
+      "doubts": [
+        "구성상 문제: 한 나라 안의 정책 논쟁이다. 500일 계획을 두고 두 안이 실제로 맞섰으므로 진영을 두었지만, 협동조합과 광부 파업처럼 이 구도 밖의 사안도 함께 다룬다. 이 사건을 진영 없는 사건(null)으로 보는 것도 가능하다.",
+        "gorbachev: 진영을 union-gov로 둠. 두 안 사이에서 절충했지만, 결국 연방 정부안 쪽으로 기울었다.",
+        "abel-aganbegyan: 진영을 union-gov로 둠. 고르바초프의 지시로 절충안을 썼다.",
+        "gaidar-yegor: 진영을 radical로 둠. 1991~1992년 러시아 정부에서 활동했으며, 1990년 논쟁의 직접 당사자는 아니었다.",
+        "mikhail-shchadov: 진영을 union-gov로 둠. 연방 석탄공업장관으로 파업 광부들의 상대였고, target은 그대로 둠.",
+        "artyom-tarasov: 협동조합 스캔들의 당사자로, 두 개혁안 진영 밖에 있으므로 null로 둠."
+      ]
+    },
+    {
+      "event": "soviet-collapse",
+      "sides": [
+        {
+          "id": "gkchp",
+          "label": {
+            "ko": "비상위원회(쿠데타 세력)",
+            "en": "State Emergency Committee (putschists)"
+          }
+        },
+        {
+          "id": "resistance",
+          "label": {
+            "ko": "옐친과 쿠데타 저항 세력",
+            "en": "Yeltsin and the resistance to the coup"
+          }
+        },
+        {
+          "id": "union",
+          "label": {
+            "ko": "고르바초프와 연방·당 중앙",
+            "en": "Gorbachev and the Union and party centre"
+          }
+        },
+        {
+          "id": "republics",
+          "label": {
+            "ko": "해체에 나선 공화국 지도부",
+            "en": "Republic leaders who dissolved the Union"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "gorbachev",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "union"
+        },
+        {
+          "person_id": "yeltsin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "resistance"
+        },
+        {
+          "person_id": "kryuchkov",
+          "from_kind": "executor",
+          "kind": "leader",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "yazov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "pavlov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "gennady-yanayev",
+          "from_kind": "executor",
+          "kind": "leader",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "shevardnadze",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "yakovlev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "sergei-akhromeyev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "valentin-varennikov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "mikhail-moiseyev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "vadim-bakatin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "anatoly-lukyanov",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "nikolai-kruchina",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "baklanov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "boris-pugo",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "leonid-shebarshin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "gavriil-popov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "oleg-shenin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "valery-boldin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "vladislav-achalov",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "nazarbayev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "republics"
+        },
+        {
+          "person_id": "ivashko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "oleg-kalugin",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "yevgeny-shaposhnikov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "pavel-grachev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "alexander-lebed",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "konstantin-kobets",
+          "from_kind": "opponent",
+          "kind": "executor",
+          "side": "resistance"
+        },
+        {
+          "person_id": "yevgeny-primakov",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "ruslan-khasbulatov",
+          "from_kind": "opponent",
+          "kind": "executor",
+          "side": "resistance"
+        },
+        {
+          "person_id": "leonid-kravchuk",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "republics"
+        },
+        {
+          "person_id": "sergei-yevdokimov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "stanislav-shushkevich",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "republics"
+        },
+        {
+          "person_id": "vladimir-usov",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "resistance"
+        },
+        {
+          "person_id": "ilya-krichevsky",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "resistance"
+        },
+        {
+          "person_id": "vyacheslav-kebich",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "republics"
+        },
+        {
+          "person_id": "stephen-f-cohen",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "alexander-rutskoy",
+          "from_kind": "opponent",
+          "kind": "executor",
+          "side": "resistance"
+        },
+        {
+          "person_id": "gennady-burbulis",
+          "from_kind": "leader",
+          "kind": "executor",
+          "side": "resistance"
+        },
+        {
+          "person_id": "jack-matlock",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "dmitry-komar",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "resistance"
+        },
+        {
+          "person_id": "george-h-w-bush",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "david-m-kotz",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "edward-w-walker",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "sergey-surovikin",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "vitold-fokin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "republics"
+        },
+        {
+          "person_id": "vladimir-putin",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "ronald-grigor-suny",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        },
+        {
+          "person_id": "alexander-dzasokhov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "alfreds-rubiks",
+          "from_kind": "target",
+          "kind": "target",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "anatoly-malofeyev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "dzhumgalbek-amanbayev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "givi-gumbaridze",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "grigore-eremei",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "lembit-annus",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        },
+        {
+          "person_id": "pyotr-luchinsky",
+          "from_kind": "witness",
+          "kind": "witness",
+          "side": null
+        },
+        {
+          "person_id": "qahhor-mahkamov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "vladimir-movsisyan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "yefrem-sokolov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "yuri-prokofyev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "mikhail-surkov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "enn-arno-sillari",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "stepan-pogosyan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "absamat-masaliyev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "marju-lauristin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "republics"
+        },
+        {
+          "person_id": "yegor-yakovlev",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "resistance"
+        },
+        {
+          "person_id": "galina-semyonova",
+          "from_kind": "opponent",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "bessmertnykh",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "nishonov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "union"
+        },
+        {
+          "person_id": "viktor-grushko",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "gkchp"
+        }
+      ],
+      "doubts": [
+        "kryuchkov: 종류를 executor에서 leader로 바꿈. 쿠데타를 설계하고 주도한 사람이어서, 진영을 두면 쿠데타 세력의 정점에 선다.",
+        "gennady-yanayev: 종류를 executor에서 leader로 바꿈. 대통령 권한대행으로서 비상위원회의 공식 수반이었다.",
+        "gennady-burbulis: 종류를 leader에서 executor로 바꿈. 옐친 밑의 국가서기로서 벨로베자 합의문을 설계했을 뿐, 진영의 최고 결정권자는 아니었다.",
+        "yevgeny-primakov, vadim-bakatin: 진영을 resistance로 둠. 두 사람은 고르바초프 쪽 연방 관료였지만, 쿠데타 기간에 루츠코이와 함께 저항 편에서 움직였다.",
+        "shevardnadze, yakovlev: 진영을 resistance로 둠. 쿠데타를 경고했고, 쿠데타 때 백악관 쪽에 섰다.",
+        "yevgeny-shaposhnikov: 진영을 resistance로 둠. 소련 공군 총사령관이었지만 쿠데타 중단을 관철했다.",
+        "anatoly-lukyanov: 진영을 gkchp로 둠. 비상위원회에 가입하지는 않았으나 동조 혐의로 체포되었다. union으로 둘 수도 있다.",
+        "pavel-grachev: 진영을 null로 둠. 비상위원회에 협력하면서 백악관에 공격 계획을 몰래 알려 양쪽에 걸쳤다.",
+        "galina-semyonova, bessmertnykh: 진영을 union으로 둠. 당·정부 지도부 안에서 비상위원회를 거부했거나 가입을 거절했을 뿐, 저항 세력에 합류하지는 않았다.",
+        "dzhumgalbek-amanbayev, lembit-annus: 쿠데타 지지 입장을 밝힌 정치국원이어서 진영을 gkchp로 둠. alfreds-rubiks(target)도 gkchp로 둠. 나머지 정치국원은 union으로 둠. yuri-prokofyev는 실제로 쿠데타를 지지했다는 설이 있지만, 연결된 note 문구를 따라 union으로 두었다.",
+        "leonid-shebarshin: 쿠데타 뒤 고르바초프가 임명한 대행이어서 진영을 union으로 둠.",
+        "marju-lauristin: 에스토니아 독립을 확인한 의원이어서 진영을 republics로 둠.",
+        "vladimir-usov, ilya-krichevsky, dmitry-komar: 백악관 방어에 나섰다가 숨진 희생자여서 진영을 resistance로 둠.",
+        "george-h-w-bush, jack-matlock, vladimir-putin, pyotr-luchinsky(witness): 진영을 null로 둠."
+      ]
+    },
+    {
+      "event": "german-revolution-1918-1919",
+      "sides": [
+        {
+          "id": "spd-government",
+          "label": {
+            "ko": "SPD 혁명정부",
+            "en": "SPD revolutionary government"
+          }
+        },
+        {
+          "id": "councils-left",
+          "label": {
+            "ko": "평의회 운동과 공산주의 좌파",
+            "en": "Council movement and communist left"
+          }
+        },
+        {
+          "id": "old-order",
+          "label": {
+            "ko": "구체제와 군",
+            "en": "Old regime and army"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "friedrich-ebert",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "spd-government"
+        },
+        {
+          "person_id": "philipp-scheidemann",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "spd-government"
+        },
+        {
+          "person_id": "hugo-haase",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "spd-government"
+        },
+        {
+          "person_id": "richard-muller",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "luxemburg",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "liebknecht",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "kurt-eisner",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "eugen-levine",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "gustav-noske",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "spd-government"
+        },
+        {
+          "person_id": "wilhelm-groener",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "old-order"
+        },
+        {
+          "person_id": "waldemar-pabst",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "old-order"
+        },
+        {
+          "person_id": "max-von-baden",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "old-order"
+        },
+        {
+          "person_id": "paul-von-hindenburg",
+          "from_kind": "participant",
+          "kind": "leader",
+          "side": "old-order"
+        },
+        {
+          "person_id": "leo-jogiches",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "radek",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "wilhelm-pieck",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "paul-levi",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "franz-mehring",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "zetkin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "councils-left"
+        },
+        {
+          "person_id": "karl-kautsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "spd-government"
+        },
+        {
+          "person_id": "pierre-broue",
+          "from_kind": "historian",
+          "kind": "historian",
+          "side": null
+        }
+      ],
+      "doubts": [
+        "paul-von-hindenburg: 종류를 participant에서 leader로 바꿈. 참모총장으로서 구체제와 군 진영의 정점이었다. 실권은 그뢰너에게 있었으므로 participant로 남겨 둘 수도 있다.",
+        "hugo-haase: 진영을 spd-government로 둠. USPD 소속이지만 1918년 12월까지 인민대표평의회 공동의장이었다.",
+        "kurt-eisner: 진영을 councils-left로 둠. USPD 소속 바이에른 총리로 평의회에 기반했지만 공산주의자는 아니었다.",
+        "karl-kautsky: 진영을 spd-government로 둠. USPD 이론가로서 정부가 만든 사회화위원회에 참여했다. null로 둘 수도 있다.",
+        "radek: 볼셰비키 사절이었으므로 진영을 councils-left로 둠."
+      ]
+    },
+    {
+      "event": "second-international-collapse-1914",
+      "sides": [
+        {
+          "id": "social-patriots",
+          "label": {
+            "ko": "사회애국주의 다수파",
+            "en": "Social-patriotic majority"
+          }
+        },
+        {
+          "id": "antiwar",
+          "label": {
+            "ko": "반전 국제주의파",
+            "en": "Anti-war internationalists"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "emile-vandervelde",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "camille-huysmans",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": null
+        },
+        {
+          "person_id": "jean-jaures",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "victor-adler",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "hugo-haase",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "lenin",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "luxemburg",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "liebknecht",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "robert-grimm",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "friedrich-ebert",
+          "from_kind": "participant",
+          "kind": "leader",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "philipp-scheidemann",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "jules-guesde",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "karl-kautsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "eduard-bernstein",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "ramsay-macdonald",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "keir-hardie",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "benito-mussolini",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "plekhanov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "social-patriots"
+        },
+        {
+          "person_id": "zetkin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "martov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "trotsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "zinoviev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "radek",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "angelica-balabanova",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "christian-rakovsky",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "vasil-kolarov",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "eugene-v-debs",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "giacinto-menotti-serrati",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        },
+        {
+          "person_id": "fritz-platten",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "antiwar"
+        }
+      ],
+      "doubts": [
+        "friedrich-ebert: 종류를 participant에서 leader로 바꿈. SPD 공동의장으로서 전쟁을 지지한 다수파를 이끌었다.",
+        "camille-huysmans: 진영을 null로 둠. 국제사회주의사무국 서기로서 중립국에서 양쪽을 다시 잇는 일을 시도했다.",
+        "jean-jaures: 진영을 antiwar로 둠. 전쟁공채 표결과 치머발트 이전에 암살되었지만 끝까지 평화를 주장했다. 진영 분열 이전의 인물이므로 null로 둘 수도 있다.",
+        "hugo-haase: 진영을 antiwar로 둠. 8월 4일에는 당 규율에 따라 찬성 성명을 읽었지만, 그 뒤 반전파를 이끌었다.",
+        "karl-kautsky, eduard-bernstein: 진영을 antiwar로 둠. 1915년부터 반대로 돌아선 중앙파였다. 레닌의 기준에서는 국제주의자가 아니다.",
+        "benito-mussolini: 진영을 social-patriots로 둠. 당 다수파가 아니라 참전을 주장하다 제명된 인물이다.",
+        "ramsay-macdonald: 진영을 antiwar로 둠. 평화주의적 반대였다."
+      ]
+    },
+    {
+      "event": "sino-vietnamese-war-1979",
+      "sides": [
+        {
+          "id": "china",
+          "label": {
+            "ko": "중국과 캄보디아 동맹",
+            "en": "China and its Cambodian allies"
+          }
+        },
+        {
+          "id": "vietnam-ussr",
+          "label": {
+            "ko": "베트남과 그 동맹",
+            "en": "Vietnam and its allies"
+          }
+        }
+      ],
+      "people": [
+        {
+          "person_id": "deng-xiaoping",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "china"
+        },
+        {
+          "person_id": "le-duan",
+          "from_kind": "leader",
+          "kind": "leader",
+          "side": "vietnam-ussr"
+        },
+        {
+          "person_id": "xu-shiyou",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "china"
+        },
+        {
+          "person_id": "yang-dezhi",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "china"
+        },
+        {
+          "person_id": "van-tien-dung",
+          "from_kind": "executor",
+          "kind": "executor",
+          "side": "vietnam-ussr"
+        },
+        {
+          "person_id": "xu-xiangqian",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "china"
+        },
+        {
+          "person_id": "jimmy-carter",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "zbigniew-brzezinski",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": null
+        },
+        {
+          "person_id": "brezhnev",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "vietnam-ussr"
+        },
+        {
+          "person_id": "hoang-van-hoan",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "china"
+        },
+        {
+          "person_id": "pol-pot",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "china"
+        },
+        {
+          "person_id": "heng-samrin",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "vietnam-ussr"
+        },
+        {
+          "person_id": "norodom-sihanouk",
+          "from_kind": "participant",
+          "kind": "participant",
+          "side": "china"
+        }
+      ],
+      "doubts": [
+        "pol-pot, norodom-sihanouk: 진영을 china로 둠. 두 사람은 중국의 동맹과 반베트남 연합에 속했다. 라벨을 '중국과 캄보디아 동맹'처럼 넓히는 것도 고려할 만하다.",
+        "heng-samrin: 진영을 vietnam-ussr로 둠. 베트남이 세운 정권의 수반이었다.",
+        "hoang-van-hoan: 진영을 china로 둠. 베트남 정치국원 출신 친중파로, 전쟁 뒤 중국으로 망명했다.",
+        "jimmy-carter, zbigniew-brzezinski: 외부 정부로서 판단을 유보했을 뿐이어서 진영을 null로 둠."
+      ]
+    }
+  ],
+  "no_sides": [
+    {
+      "event": "volga-famine",
+      "reason": "A famine/relief episode, not a conflict between camps; Soviet authorities, ARA and the church acted around one disaster."
+    },
+    {
+      "event": "chernobyl",
+      "reason": "원전 사고와 국가 수습 작업으로, 서로 맞선 진영이 없는 재난이다."
+    },
+    {
+      "event": "nationalities-crisis",
+      "reason": "Armenian and Azerbaijani movements fought each other; centre vs republics would merge them into one side"
+    },
+    {
+      "event": "comintern-founding-1919-1921",
+      "reason": "볼셰비키 주도의 조직 창설이라는 단일 초점 사건이며, 연결된 인물은 거의 모두 가입·창설 쪽이고 반대 진영 인물(가입 반대파)은 연결돼 있지 않다."
+    }
+  ]
+}
