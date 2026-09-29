@@ -1,0 +1,249 @@
+#!/usr/bin/env node
+// First Indochina War event batch (2026-09-29). Source of truth for
+// ../first-indochina-war-20260929.json and ../first-indochina-war-20260929-people.json.
+// Edit here, run `node build.js`, commit the JSON with it.
+const fs = require('fs');
+const path = require('path');
+
+const W = t => 'https://en.wikipedia.org/wiki/' + t;
+const S = {
+    war: W('First_Indochina_War'),
+    august: W('August_Revolution'),
+    japaneseCoup: W('Japanese_coup_d%27%C3%A9tat_in_French_Indochina'),
+    famine: W('Vietnamese_famine_of_1945'),
+    declaration: 'https://www.marxists.org/reference/archive/ho-chi-minh/works/1945/declaration-independence.htm',
+    hoSainteny: W('Ho%E2%80%93Sainteny_agreement'),
+    argenlieu: W('Georges_Thierry_d%27Argenlieu'),
+    haiphong: W('Haiphong_incident'),
+    hanoi1946: W('Battle_of_Hanoi_(1946)'),
+    elysee: W('%C3%89lys%C3%A9e_Accords'),
+    stateOfVietnam: W('State_of_Vietnam'),
+    baoDai: W('B%E1%BA%A3o_%C4%90%E1%BA%A1i'),
+    rc4: W('Battle_of_Route_Coloniale_4'),
+    weiGuoqing: W('Wei_Guoqing'),
+    lattre: W('Jean_de_Lattre_de_Tassigny'),
+    pathetLao: W('Pathet_Lao'),
+    issarak: W('Khmer_Issarak'),
+    landReform: W('Land_reform_in_North_Vietnam'),
+    navarre: W('Henri_Navarre'),
+    dbp: W('Battle_of_Dien_Bien_Phu'),
+    vulture: W('Operation_Vulture'),
+    geneva: W('1954_Geneva_Conference'),
+    mendes: W('Pierre_Mend%C3%A8s_France'),
+    passage: W('Operation_Passage_to_Freedom'),
+    diem: W('Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m'),
+};
+
+const sections = [
+    {
+        heading: { ko: '1945년 8월 혁명과 베트남민주공화국', en: 'The August Revolution of 1945 and the Democratic Republic of Vietnam' },
+        paragraphs: [
+            {
+                ko: '1940년 일본은 프랑스령 인도차이나에 진주했지만 비시 프랑스의 식민 행정을 그대로 두고 뒤에서 지배했다. 1941년 호찌민과 인도차이나 공산당은 계급투쟁보다 민족 해방을 앞세운 통일전선 베트민(베트남 독립동맹)을 세웠다. 1945년 3월 9일 패전을 앞둔 일본은 쿠데타로 프랑스 행정을 무너뜨리고 바오다이 황제 아래 명목상 독립한 베트남 제국을 세웠다. 1944~1945년 북부 홍강 삼각주의 기근으로 100만~200만 명이 굶어 죽었다.',
+                en: 'Japan moved into French Indochina in 1940 but kept the Vichy colonial administration and ruled from behind it. In 1941 Ho Chi Minh and the Indochinese Communist Party founded the Viet Minh (League for the Independence of Vietnam), a united front that put national liberation ahead of class struggle. On 9 March 1945, facing defeat, Japan overthrew the French administration in a coup and set up a nominally independent Empire of Vietnam under Emperor Bảo Đại. In the famine of 1944–1945 one to two million people starved in the Red River Delta of the north.',
+                sources: [S.war, S.japaneseCoup, S.famine],
+            },
+            {
+                ko: '일본이 항복하자 베트민은 8월 혁명을 일으켜 19일 하노이의 관청을 접수했고, 큰 도시들의 권력 이양은 대체로 피 흘림 없이 이루어졌다. 바오다이는 8월 30일 후에에서 퇴위했다. 9월 2일 호찌민은 하노이 바딘 광장에서 미국 독립선언서의 「모든 사람은 평등하게 태어났다」를 인용하며 베트남민주공화국의 독립을 선언했다. 그러나 새 국가를 승인한 나라는 없었고, 연합국은 프랑스의 주권을 계속 인정했다.',
+                en: 'When Japan surrendered, the Viet Minh launched the August Revolution, taking over government buildings in Hanoi on the 19th; power in the major cities changed hands with little bloodshed. Bảo Đại abdicated in Huế on 30 August. On 2 September in Hanoi’s Ba Đình Square Ho Chi Minh declared the independence of the Democratic Republic of Vietnam, quoting the American Declaration of Independence: “All men are created equal.” No state recognised the new republic, and the Allies continued to recognise French sovereignty.',
+                sources: [S.august, S.declaration, S.war],
+            },
+            {
+                ko: '포츠담 회담의 결정에 따라 북위 16도선 이북은 루한이 이끈 중화민국군 20만 명이, 이남은 영국군이 점령해 일본군을 무장해제했다. 9월 사이공에 상륙한 영국·프랑스군은 계엄을 선포하고 도시를 장악했고, 10월 르클레르 장군의 프랑스군이 남부를 다시 점령해 나갔다.',
+                en: 'Under the Potsdam decisions, 200,000 Nationalist Chinese troops under Lu Han occupied the north down to the 16th parallel and British forces the south to disarm the Japanese. Franco-British troops landing in Saigon in September declared martial law and took the city, and from October General Leclerc’s French forces set about reoccupying the south.',
+                sources: [S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1946년: 협상에서 전쟁으로', en: '1946: from negotiation to war' },
+        paragraphs: [
+            {
+                ko: '장제스는 중국 내 프랑스 조계를 돌려받는 대신 중국군을 철수시키기로 하고 프랑스와 베트민에 타협을 압박했다. 1946년 3월 6일 호찌민과 프랑스 대표 장 생트니는 베트남민주공화국을 프랑스 연합 안의 인도차이나 연방에 속한 「자유 국가」로 인정하고 프랑스군의 북부 주둔을 허용하는 예비 협정을 맺었다. 이 과정에서 베트민은 중국군의 비호를 잃은 베트남국민당 등 경쟁 민족주의 세력을 대거 숙청했다.',
+                en: 'Chiang Kai-shek agreed to withdraw his troops in exchange for the return of French concessions in China and pressed France and the Viet Minh to compromise. On 6 March 1946 Ho Chi Minh and the French envoy Jean Sainteny signed a preliminary accord recognising the DRV as a “free state” within an Indochinese Federation of the French Union and allowing French troops into the north. In the process the Viet Minh purged rival nationalists such as the VNQDĐ, now bereft of Chinese protection.',
+                sources: [S.hoSainteny, S.war],
+            },
+            {
+                ko: '그러나 6월 고등판무관 다르장리외 제독은 협정을 어기고 코친차이나 자치 공화국을 세웠고, 파리 협상은 독립과 남부 통일 문제에서 결렬되었다. 9월 호찌민은 식민장관 무테와 임시 협정만 맺고 돌아왔다. 11월 23일 하이퐁의 관세 분쟁 끝에 프랑스 함대가 베트남인 구역을 포격해 2천~6천 명이 죽었다. 12월 19일 하노이에서 전투가 터졌고, 호찌민 정부는 수도를 버리고 북부 산악으로 들어갔다. 이날이 제1차 인도차이나 전쟁의 공식적인 시작이다.',
+                en: 'But in June High Commissioner Admiral d’Argenlieu broke the accord by setting up an autonomous Republic of Cochinchina, and the Paris negotiations broke down over independence and the unification of the south. In September Ho returned with only a temporary modus vivendi signed with Colonial Minister Moutet. On 23 November, after a customs dispute at Haiphong, the French fleet shelled the Vietnamese quarters, killing between 2,000 and 6,000. Fighting broke out in Hanoi on 19 December, and Ho’s government abandoned the capital for the northern mountains — the formal beginning of the First Indochina War.',
+                sources: [S.argenlieu, S.war, S.haiphong, S.hanoi1946],
+            },
+        ],
+    },
+    {
+        heading: { ko: '비엣박과 「바오다이 해법」', en: 'The Việt Bắc and the “Bảo Đại solution”' },
+        paragraphs: [
+            {
+                ko: '1947년 호찌민과 보응우옌잡은 북부 산림 지대인 비엣박으로 물러났다. 프랑스는 3월까지 주요 도시를 장악했고, 10~11월 레아 작전과 생튀르 작전으로 박깐의 베트민 지도부를 노렸지만 호찌민을 잡지 못했다. 전쟁은 도시와 도로를 쥔 프랑스와 농촌·산악을 쥔 베트민의 게릴라전이 되었다.',
+                en: 'In 1947 Ho Chi Minh and Võ Nguyên Giáp withdrew into the Việt Bắc, the forested mountains of the north. France held the main cities by March, and in October–November Operations Léa and Ceinture struck at the Viet Minh leadership at Bắc Kạn but failed to capture Ho. The war became a guerrilla struggle between a France holding the cities and roads and a Viet Minh holding the countryside and mountains.',
+                sources: [S.war],
+            },
+            {
+                ko: '프랑스는 정치적 대안으로 전 황제 바오다이를 내세웠다. 1949년 3월 엘리제 협정으로 코친차이나를 포함한 통일을 인정받은 바오다이는 6월 베트남국의 국가원수가 되었다. 그러나 외교와 국방은 여전히 프랑스가 쥐었고, 베트남국은 프랑스 연합의 「연합국」에 머물렀다. 두 해 전 호찌민이 비슷한 지위를 제안했을 때는 거절한 프랑스가 비공산 민족주의자를 모을 수 있는 온건한 선택지로 바오다이를 택한 것이다.',
+                en: 'As a political alternative France turned to the former emperor Bảo Đại. Granted unification including Cochinchina in the Élysée Accords of March 1949, he became Chief of State of the State of Vietnam in June. But France kept control of foreign policy and defence, and the State of Vietnam remained an “associated state” of the French Union. France had refused Ho a similar status two years earlier; it chose Bảo Đại as a moderate option who could rally non-Communist nationalists.',
+                sources: [S.elysee, S.stateOfVietnam, S.baoDai, S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1950년: 전쟁의 국제화', en: '1950: the war internationalised' },
+        paragraphs: [
+            {
+                ko: '1949년 중국 공산당의 승리로 베트민은 북쪽 국경 너머에 동맹을 얻었다. 1950년 1월 중국과 소련이 베트남민주공화국을 승인하자, 2월 미국과 영국은 바오다이의 베트남국을 승인했다. 4월 류사오치는 웨이궈칭을 중국 군사고문단장으로 보냈고, 중국은 병사를 훈련할 기지와 무기·식량·차량을 대 주었다. 잡은 지방군을 5개 정규 사단으로 재편했다.',
+                en: 'The Chinese Communist victory of 1949 gave the Viet Minh an ally across the northern border. When China and the Soviet Union recognised the DRV in January 1950, the United States and Britain recognised Bảo Đại’s State of Vietnam in February. In April Liu Shaoqi sent Wei Guoqing to head a Chinese Military Advisory Group, and China provided training camps, weapons, food and vehicles. Giáp reorganised his forces into five regular divisions.',
+                sources: [S.war, S.weiGuoqing],
+            },
+            {
+                ko: '미국은 중국 혁명과 6월 한국전쟁 발발 뒤 인도차이나를 반공 전선의 하나로 보기 시작했다. 트루먼은 5월 프랑스에 대한 재정 지원을 비밀리에 승인했고, 6월 30일 첫 군수품이 도착했다. 1954년에는 미국이 프랑스 전비의 80%를 대고 있었다. 1950년 9~10월 잡은 중국 국경의 4번 식민도로를 따라 공세를 펴 동케를 빼앗았고, 카오방에서 철수하던 프랑스군 약 6천 명이 섬멸되었다. 프랑스는 랑선까지 버렸고, 베트민은 통킹 북부 절반을 장악했다.',
+                en: 'After the Chinese revolution and the outbreak of the Korean War in June, the United States came to see Indochina as a front against communism. Truman secretly authorised financial aid to France in May, and the first supplies arrived on 30 June; by 1954 the United States was paying 80 per cent of France’s war effort. In September–October 1950 Giáp attacked along Colonial Route 4 on the Chinese border, taking Đông Khê and destroying some 6,000 French troops withdrawing from Cao Bằng. France abandoned Lạng Sơn as well, and the Viet Minh held the northern half of Tonkin.',
+                sources: [S.war, S.rc4],
+            },
+            {
+                ko: '같은 해 인도차이나 공산주의는 세 나라로 갈라져 조직되었다. 캄보디아에서는 4월 크메르 이사락 통일전선이 결성되었고, 라오스에서는 8월 수파누봉 왕자가 베트민 본부가 있던 뚜옌꽝에서 파테트라오 대회를 열었다. 1951년 2월 인도차이나 공산당은 베트남 노동당으로 이름을 바꿨다.',
+                en: 'That year Indochinese communism was reorganised along national lines. In Cambodia the United Issarak Front was founded in April, and in Laos Prince Souphanouvong convened the Pathet Lao congress in August at the Viet Minh headquarters in Tuyên Quang. In February 1951 the Indochinese Communist Party became the Workers’ Party of Vietnam.',
+                sources: [S.war, S.issarak, S.pathetLao],
+            },
+        ],
+    },
+    {
+        heading: { ko: '드 라트르 선과 교착', en: 'The De Lattre Line and stalemate' },
+        paragraphs: [
+            {
+                ko: '1950년 12월 부임한 드 라트르 드 타시니 장군은 홍강 삼각주를 둘러싼 요새선을 쌓았다. 1951년 1월 잡은 「총반격」을 선언하고 빈옌을 공격했지만 프랑스의 대규모 공습에 5천~6천 명을 잃고 물러났고, 3월 마오케와 5~6월 다이강에서도 패했다. 드 라트르는 베트민 지역의 작물을 불태우는 초토화 전술을 썼는데, 이는 베트남인의 분노를 키운 전략적 실패였다.',
+                en: 'General de Lattre de Tassigny, who arrived in December 1950, built a line of fortifications around the Red River Delta. In January 1951 Giáp declared a “general counter-offensive” and attacked Vĩnh Yên, but withdrew after losing 5,000–6,000 men to massive French air attack, and was beaten again at Mạo Khê in March and on the Day River in May–June. De Lattre burned crops in Viet Minh areas, a scorched-earth tactic that deepened Vietnamese anger and proved a strategic failure.',
+                sources: [S.war, S.lattre],
+            },
+            {
+                ko: '드 라트르가 1952년 1월 암으로 죽은 뒤 전쟁은 교착에 빠졌다. 호아빈 점령은 비싼 대가 끝에 포기되었고, 1952년 가을 잡은 서북부 흑강 유역을 휩쓸었다. 1953년 4월 베트민은 라오스로 진공해 파테트라오 정부를 세웠다. 5월 부임한 나바르 장군은 본국 정부에 이 전쟁은 이길 수 없으며 기대할 수 있는 최선은 교착이라고 보고했다. 한편 1953년부터 베트남민주공화국은 중국의 지도 아래 토지개혁을 벌여 지주를 공개 비판하고 투옥·처형했고, 뒤에 그 과오를 인정했다.',
+                en: 'After de Lattre died of cancer in January 1952 the war settled into stalemate. Hòa Bình was taken and abandoned at heavy cost, and in autumn 1952 Giáp swept the Black River valley of the northwest. In April 1953 the Viet Minh invaded Laos and set up a Pathet Lao government. General Navarre, arriving in May, reported to his government that the war could not be won and that the best France could hope for was stalemate. From 1953 the DRV carried out a land reform under Chinese guidance in which landlords were publicly denounced, imprisoned or executed — errors the government later admitted.',
+                sources: [S.war, S.navarre, S.landReform],
+            },
+        ],
+    },
+    {
+        heading: { ko: '디엔비엔푸', en: 'Điện Biên Phủ' },
+        paragraphs: [
+            {
+                ko: '나바르는 라오스로 가는 베트민의 길목을 막으려고 1953년 11월 20일 서북부 분지 디엔비엔푸에 낙하산 부대를 내려 요새를 쌓았다. 웨이궈칭은 10월 호찌민에게 나바르 계획의 사본을 건넸다고 전해진다. 잡은 12월부터 3월까지 4만 명이 넘는 병력과 산 위로 끌어올린 포병으로 1만 5천 명의 프랑스군을 에워쌌다. 소련제 트럭 약 400대와 중국이 보낸 포가 동원되었다.',
+                en: 'To block the Viet Minh route into Laos, Navarre dropped paratroopers into the northwestern valley of Điện Biên Phủ on 20 November 1953 and fortified it. Wei Guoqing is said to have handed Ho a copy of the Navarre plan in October. From December to March Giáp surrounded the 15,000 French troops with more than 40,000 men and artillery hauled onto the surrounding hills, using some 400 Soviet trucks and guns supplied by China.',
+                sources: [S.dbp, S.war, S.weiGuoqing],
+            },
+            {
+                ko: '3월 13일 공격이 시작되자 베트민 포병은 비행장을 부쉈고, 우기가 오면서 낙하산 보급도 어려워졌다. 미국은 필리핀 기지의 B-29로 포위를 풀자는 「독수리 작전」을 검토했지만 영국이 지지를 거부해 취소했다. 5월 7일 카스트리 장군의 요새는 함락되었다. 프랑스군 2만 명 가운데 최소 2,200명이 죽고 1만 1,721명이 포로가 되었으며, 베트민 사상자는 약 2만 5천 명이었다.',
+                en: 'When the attack began on 13 March, Viet Minh artillery wrecked the airstrips, and the monsoon made parachute supply ever harder. The United States considered Operation Vulture, B-29 raids from the Philippines to break the siege, but cancelled it when Britain refused support. General de Castries’s fortress fell on 7 May. Of some 20,000 French troops at least 2,200 died and 11,721 were captured; Viet Minh casualties were about 25,000.',
+                sources: [S.dbp, S.vulture, S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '제네바 협정과 분단', en: 'The Geneva Accords and partition' },
+        paragraphs: [
+            {
+                ko: '4월 26일 제네바에서 열린 회의는 디엔비엔푸 함락 이튿날 인도차이나 문제를 다루기 시작했다. 미국의 덜레스는 중국 대표단과의 접촉을 금지했고 5월 초 제네바를 떠났다. 영국의 이든은 협상 타결을, 프랑스의 비도는 체면 유지를 원했다. 6월 17일 넉 달 안에 휴전을 이루겠다고 약속한 피에르 망데스프랑스가 프랑스 총리가 되었다. 베트남민주공화국 대표 팜반동은 5월 25일 처음으로 분할을 제안했고, 중국의 저우언라이는 미국의 개입을 막기 위해 「현실적이고 온건한」 타협을 밀었다.',
+                en: 'The conference that opened in Geneva on 26 April took up Indochina the day after Điện Biên Phủ fell. The American Dulles forbade contact with the Chinese delegation and left Geneva in early May; Britain’s Eden wanted a negotiated settlement and France’s Bidault to save face. On 17 June Pierre Mendès France became French prime minister on a promise to achieve a ceasefire within four months. The DRV delegate Phạm Văn Đồng first proposed partition on 25 May, and China’s Zhou Enlai pressed a “realistic and moderate” compromise to forestall American intervention.',
+                sources: [S.geneva, S.mendes, S.war],
+            },
+            {
+                ko: '7월 21일 서명된 제네바 협정은 북위 17도선을 「임시 군사분계선」으로 삼아 베트남을 나누고, 1956년 국제 감시 아래 통일 선거를 치르기로 했다. 파테트라오는 라오스 북부 두 성에 모였고, 크메르 이사락은 해산되었다. 미국과 베트남국은 협정에 서명하지 않았다. 8월부터 북부 주민 수십만 명이 남쪽으로 옮겨 갔고, 6월 바오다이가 총리로 임명한 응오딘지엠은 1955년 국민투표로 바오다이를 몰아내고 남베트남 대통령이 되었다. 선거는 치러지지 않았고, 전쟁은 제2차 인도차이나 전쟁으로 이어졌다.',
+                en: 'The Geneva Accords signed on 21 July divided Vietnam at the 17th parallel as a “provisional military demarcation line” and provided for reunification elections under international supervision in 1956. The Pathet Lao regrouped in two northern Lao provinces and the Khmer Issarak disbanded. Neither the United States nor the State of Vietnam signed. From August hundreds of thousands moved from north to south, and Ngô Đình Diệm, appointed prime minister by Bảo Đại in June, ousted Bảo Đại in a 1955 referendum and became president of South Vietnam. The elections never took place, and the war passed into the Second Indochina War.',
+                sources: [S.geneva, S.war, S.passage, S.diem],
+            },
+            {
+                ko: '전쟁으로 베트민은 서방 역사가 추산 17만 5천~30만 명, 베트남 정부 집계 19만여 명이 죽거나 실종되었다. 프랑스 연합군은 7만 4천여 명이 죽었고 그 가운데 프랑스 본국 출신은 2만 685명이었다. 민간인 사망은 12만 5천~40만 명으로 추산된다. 디엔비엔푸의 승리는 식민지 독립운동에 영향을 주었고, 그해 11월 1일 알제리 전쟁이 시작되었다.',
+                en: 'The Viet Minh lost 175,000–300,000 dead or missing by Western estimates, some 191,000 by the Vietnamese government’s count. The French Union forces lost over 74,000 dead, 20,685 of them from metropolitan France, and civilian deaths are estimated at 125,000–400,000. The victory at Điện Biên Phủ inspired colonial independence movements, and the Algerian War began on 1 November that year.',
+                sources: [S.war],
+            },
+        ],
+    },
+];
+
+const P = (lat, lng, ko, en) => ({ kind: 'point', lat, lng, label: { ko, en } });
+const timeline = [
+    ['1945.03.09', '일본의 인도차이나 쿠데타', 'Japanese coup in Indochina', '일본이 프랑스 행정을 무너뜨리고 바오다이 아래 베트남 제국을 세웠다.', 'Japan overthrew the French administration and set up the Empire of Vietnam under Bảo Đại.', ['vietnam', 'japan', 'france']],
+    ['1945.08.19', '8월 혁명', 'August Revolution', '베트민이 하노이의 관청을 접수했다.', 'The Viet Minh took over government buildings in Hanoi.', ['vietnam'], P(21.0368, 105.8342, '하노이', 'Hanoi')],
+    ['1945.09.02', '독립 선언', 'Declaration of independence', '호찌민이 바딘 광장에서 베트남민주공화국을 선포했다.', 'Ho Chi Minh proclaimed the DRV in Ba Đình Square.', ['vietnam']],
+    ['1946.03.06', '호–생트니 협정', 'Ho–Sainteny agreement', '프랑스 연합 안의 「자유 국가」 인정과 프랑스군 북부 주둔에 합의했다.', 'Recognition as a “free state” within the French Union and French troops in the north.', ['vietnam', 'france']],
+    ['1946.11.23', '하이퐁 포격', 'Shelling of Haiphong', '프랑스 함대의 포격으로 2천~6천 명이 죽었다.', 'French naval shelling killed 2,000–6,000.', ['vietnam', 'france'], P(20.86, 106.68, '하이퐁', 'Haiphong')],
+    ['1946.12.19', '하노이 전투, 전쟁 개시', 'Battle of Hanoi; war begins', '호찌민 정부가 수도를 떠나 산악으로 들어갔다.', 'Ho’s government left the capital for the mountains.', ['vietnam', 'france']],
+    ['1947.10', '레아 작전', 'Operation Léa', '프랑스가 비엣박의 베트민 지도부를 노렸으나 실패했다.', 'France struck at the Viet Minh leadership in the Việt Bắc and failed.', ['vietnam', 'france'], P(22.15, 105.83, '박깐 (비엣박)', 'Bắc Kạn (Việt Bắc)')],
+    ['1949.06', '베트남국 수립', 'State of Vietnam', '엘리제 협정으로 바오다이가 국가원수가 되었다.', 'Under the Élysée Accords Bảo Đại became Chief of State.', ['vietnam', 'france']],
+    ['1950.01', '중·소의 승인', 'Chinese and Soviet recognition', '중국과 소련이 베트남민주공화국을 승인하고, 미·영이 베트남국을 승인했다.', 'China and the USSR recognised the DRV; the US and Britain the State of Vietnam.', ['china', 'soviet', 'usa', 'vietnam']],
+    ['1950.10', '4번 식민도로 전투', 'Battle of Route Coloniale 4', '카오방에서 철수하던 프랑스군 약 6천 명이 섬멸되었다.', 'Some 6,000 French troops withdrawing from Cao Bằng were destroyed.', ['vietnam', 'france'], P(22.67, 106.26, '카오방', 'Cao Bằng')],
+    ['1951.01.13', '빈옌 전투', 'Battle of Vĩnh Yên', '잡의 「총반격」이 드 라트르 선 앞에서 꺾였다.', 'Giáp’s “general counter-offensive” broke on the De Lattre Line.', ['vietnam', 'france']],
+    ['1953.11.20', '디엔비엔푸 강하', 'Paratroopers at Điện Biên Phủ', '프랑스가 서북부 분지에 요새를 세웠다.', 'France fortified the northwestern valley.', ['vietnam', 'france'], P(21.39, 103.02, '디엔비엔푸', 'Điện Biên Phủ')],
+    ['1954.05.07', '디엔비엔푸 함락', 'Fall of Điện Biên Phủ', '1만 1,721명의 프랑스군이 포로가 되었다.', '11,721 French troops were captured.', ['vietnam', 'france']],
+    ['1954.07.21', '제네바 협정', 'Geneva Accords', '17도선 분할과 1956년 통일 선거에 합의했다.', 'Partition at the 17th parallel and reunification elections in 1956 were agreed.', ['switzerland', 'vietnam', 'france', 'laos', 'cambodia']],
+    ['1954.08', '남쪽으로의 이주', 'Migration to the south', '북부 주민 수십만 명이 남쪽으로 옮겨 갔다.', 'Hundreds of thousands moved from north to south.', ['vietnam'], P(10.78, 106.7, '사이공', 'Saigon')],
+].map(([date, tko, ten, bko, ben, country, geo]) => ({
+    date, title: { ko: tko, en: ten }, body: { ko: bko, en: ben }, country, ...(geo ? { geo } : {}),
+}));
+
+const people = [
+    ['ho-chi-minh', 'leader', '베트남민주공화국 주석', 'President of the DRV', '베트민을 세우고 1945년 독립을 선언했으며 전쟁 내내 정부를 이끌었다.', 'Founded the Viet Minh, declared independence in 1945 and led the government throughout the war.'],
+    ['truong-chinh', 'leader', '공산당 총비서', 'Party general secretary', '1945년 8월 일본의 「대동아공영권」을 새로운 식민 지배라고 비판했다.', 'In August 1945 denounced Japan’s Co-Prosperity Sphere as a new colonial rule.'],
+    ['vo-nguyen-giap', 'executor', '베트남 인민군 총사령관', 'Commander of the People’s Army', '정규 사단을 조직해 4번 도로와 디엔비엔푸에서 프랑스군을 꺾었다.', 'Built regular divisions and defeated the French on Route 4 and at Điện Biên Phủ.'],
+    ['pham-van-dong', 'participant', '제네바 회의 대표', 'Delegate at Geneva', '5월 25일 처음으로 분할을 제안했고 감시위원회 아래 통일 선거를 주장했다.', 'First proposed partition on 25 May and argued for elections under local commissions.'],
+    ['souphanouvong', 'participant', '파테트라오 지도자', 'Pathet Lao leader', '1950년 뚜옌꽝에서 파테트라오 대회를 열었다.', 'Convened the Pathet Lao congress at Tuyên Quang in 1950.'],
+    ['wei-guoqing', 'participant', '중국 군사고문단장', 'Head of the Chinese Military Advisory Group', '1950년 파견되어 베트민에 군사 자문을 했고 제네바 회의에도 참석했다.', 'Sent in 1950 to advise the Viet Minh; also attended the Geneva conference.'],
+    ['zhou-enlai', 'participant', '중국 총리 겸 외교부장', 'Chinese premier and foreign minister', '제네바에서 미국의 개입을 막기 위한 온건한 타협을 밀었다.', 'Pressed a moderate compromise at Geneva to forestall American intervention.'],
+    ['molotov', 'participant', '소련 외무장관', 'Soviet foreign minister', '인도가 의장을 맡는 휴전 감시위원회를 제안했다.', 'Proposed a ceasefire commission chaired by India.'],
+    ['anthony-eden', 'participant', '영국 외무장관', 'British foreign secretary', '협상 타결을 원했고 미국의 공동 군사행동 요구를 지지하지 않았다.', 'Sought a negotiated settlement and did not back American calls for united action.'],
+    ['philippe-leclerc-de-hauteclocque', 'opponent', '프랑스 극동원정군 사령관', 'Commander of the French Far East Expeditionary Corps', '1945년 사이공에 도착해 남부 재점령을 지휘했다.', 'Arrived in Saigon in 1945 and directed the reoccupation of the south.'],
+    ['georges-thierry-dargenlieu', 'opponent', '인도차이나 고등판무관', 'High Commissioner for Indochina', '호–생트니 협정을 어기고 코친차이나 공화국을 세웠다.', 'Broke the Ho–Sainteny accord by setting up a Republic of Cochinchina.'],
+    ['bao-dai', 'opponent', '베트남국 국가원수', 'Chief of State of Vietnam', '1945년 퇴위했다가 1949년 프랑스가 내세운 베트남국의 원수가 되었다.', 'Abdicated in 1945 and in 1949 became head of the French-backed State of Vietnam.'],
+    ['jean-de-lattre-de-tassigny', 'opponent', '프랑스군 총사령관 겸 고등판무관', 'French commander and high commissioner', '드 라트르 선을 쌓아 1951년 베트민의 공세를 막았다.', 'Built the De Lattre Line and stopped the Viet Minh offensives of 1951.'],
+    ['henri-navarre', 'opponent', '프랑스 극동원정군 마지막 사령관', 'Last commander of the Expeditionary Corps', '디엔비엔푸 요새화를 결정했다.', 'Decided to fortify Điện Biên Phủ.'],
+    ['christian-de-castries', 'opponent', '디엔비엔푸 요새 사령관', 'Commander at Điện Biên Phủ', '5월 7일 요새 함락과 함께 포로가 되었다.', 'Was captured when the fortress fell on 7 May.'],
+    ['georges-bidault', 'opponent', '프랑스 외무장관', 'French foreign minister', '제네바 회의를 열고 프랑스의 입지를 지키려 했다.', 'Opened the Geneva conference and tried to preserve France’s position.'],
+    ['john-foster-dulles', 'opponent', '미국 국무장관', 'US secretary of state', '중국 대표단과의 접촉을 금지하고 5월 제네바를 떠났다.', 'Forbade contact with the Chinese delegation and left Geneva in May.'],
+    ['pierre-mendes-france', 'opponent', '프랑스 총리', 'French prime minister', '넉 달 안의 휴전을 약속하고 제네바 협정을 맺었다.', 'Promised a ceasefire within four months and concluded the Geneva Accords.'],
+    ['ngo-dinh-diem', 'opponent', '베트남국 총리', 'Prime minister of the State of Vietnam', '1954년 6월 바오다이가 총리로 임명했고, 1955년 국민투표로 바오다이를 몰아냈다.', 'Appointed prime minister by Bảo Đại in June 1954, he ousted Bảo Đại in a 1955 referendum.'],
+].map(([person_id, relation_kind, relation_ko, relation_en, note_ko, note_en], sort_order) => ({
+    person_id, sort_order, relation_kind, relation_ko, relation_en, note_ko, note_en,
+}));
+
+const sources = [];
+for (const s of sections) for (const p of s.paragraphs) for (const u of p.sources) if (!sources.includes(u)) sources.push(u);
+const body = lang => sections.map(s => '## ' + s.heading[lang] + '\n\n' + s.paragraphs.map(p =>
+    p[lang] + ' ' + p.sources.map(u => `[${sources.indexOf(u) + 1}](${u})`).join(' ')).join('\n\n')).join('\n\n');
+
+const event = {
+    id: 'first-indochina-war-1945-1954',
+    expected: null,
+    fields: {
+        title_ko: '8월 혁명과 제1차 인도차이나 전쟁',
+        title_en: 'The August Revolution and the First Indochina War',
+        period_label: '1945–1954',
+        sort_order: 138,
+        question_ko: '1945년 독립을 선언한 베트남민주공화국은 어떻게 식민지 재정복 전쟁을 이겼고, 왜 그 승리는 분단으로 끝났는가?',
+        question_en: 'How did the Democratic Republic of Vietnam, declared in 1945, win the war against colonial reconquest, and why did victory end in partition?',
+        summary_ko: '일본이 항복한 1945년 8월 베트민은 8월 혁명으로 권력을 잡고 9월 2일 베트남민주공화국을 선포했다. 프랑스의 재정복 시도는 1946년 12월 전쟁으로 번졌고, 1950년 중국과 미국이 양쪽을 지원하면서 냉전의 전선이 되었다. 1954년 5월 디엔비엔푸에서 프랑스군이 항복했고, 7월 제네바 협정은 베트남을 17도선에서 나누었다.',
+        summary_en: 'When Japan surrendered in August 1945 the Viet Minh took power in the August Revolution and proclaimed the Democratic Republic of Vietnam on 2 September. France’s attempt at reconquest became war in December 1946, and from 1950, with China and the United States backing the two sides, a front of the Cold War. The French surrendered at Điện Biên Phủ in May 1954, and the Geneva Accords of July divided Vietnam at the 17th parallel.',
+        outcome_ko: '프랑스의 인도차이나 지배가 끝나고 베트남·라오스·캄보디아의 독립이 인정되었다. 그러나 베트남은 17도선에서 나뉘었고, 약속된 1956년 통일 선거가 치러지지 않으면서 전쟁은 미국이 개입한 제2차 인도차이나 전쟁으로 이어졌다. 디엔비엔푸의 승리는 알제리를 비롯한 식민지 독립운동에 영향을 주었다.',
+        outcome_en: 'French rule in Indochina ended and the independence of Vietnam, Laos and Cambodia was recognised. But Vietnam was divided at the 17th parallel, and when the promised 1956 elections were never held the conflict passed into the Second Indochina War with American intervention. The victory at Điện Biên Phủ inspired colonial independence movements from Algeria onward.',
+        body_ko: body('ko'),
+        body_en: body('en'),
+        timeline,
+        sources,
+        locations: [
+            { label: { ko: '하노이', en: 'Hanoi' }, lat: 21.0285, lng: 105.8542, kind: 'main' },
+            { label: { ko: '디엔비엔푸', en: 'Điện Biên Phủ' }, lat: 21.39, lng: 103.02, kind: 'place' },
+            { label: { ko: '하이퐁', en: 'Haiphong' }, lat: 20.86, lng: 106.68, kind: 'place' },
+            { label: { ko: '카오방', en: 'Cao Bằng' }, lat: 22.67, lng: 106.26, kind: 'place' },
+            { label: { ko: '사이공', en: 'Saigon' }, lat: 10.78, lng: 106.7, kind: 'place' },
+        ],
+        countries: ['vietnam', 'france', 'china', 'soviet', 'usa', 'japan', 'laos', 'cambodia', 'switzerland'],
+        relations: { related: ['pacific-war', 'chinese-revolution-1949', 'korean-war', 'vietnam-reunification-1975-1976', 'lao-republic-1975'] },
+        no_auto_link: [],
+        link_expressions: [],
+        focus: { ko: '베트남민주공화국과 베트민', en: 'The Democratic Republic of Vietnam and the Viet Minh' },
+    },
+    sections,
+    people,
+};
+
+fs.writeFileSync(path.join(__dirname, '..', 'first-indochina-war-20260929.json'),
+    JSON.stringify({ id: 'first-indochina-war-20260929', events: [event] }, null, 2) + '\n');
+fs.writeFileSync(path.join(__dirname, '..', 'first-indochina-war-20260929-people.json'),
+    JSON.stringify({ changedBy: 'first-indochina-war-20260929', people: require('./people') }, null, 2) + '\n');
+console.log(`event ${event.id}: ${sections.length} sections, ${sources.length} sources, ${timeline.length} timeline, ${people.length} relations`);

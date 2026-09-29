@@ -1,0 +1,549 @@
+{
+  "changedBy": "first-indochina-war-20260929",
+  "people": [
+    {
+      "id": "bao-dai",
+      "groupId": "international-counterrevolutionary",
+      "givenName": {
+        "ko": "다이",
+        "en": "Đại"
+      },
+      "familyName": {
+        "ko": "바오",
+        "en": "Bảo"
+      },
+      "nativeName": "Bảo Đại",
+      "years": "1913–1997",
+      "citizenship": {
+        "code": "vietnam"
+      },
+      "nationalOrigin": {
+        "code": "vietnam"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "응우옌 왕조의 마지막 황제로 1945년 퇴위했다가 프랑스가 내세운 베트남국의 국가원수가 된 인물",
+        "en": "Last emperor of the Nguyễn dynasty, who abdicated in 1945 and returned as head of the French-backed State of Vietnam"
+      },
+      "bio": {
+        "ko": "응우옌 왕조의 13대이자 마지막 황제로 1926년 즉위해 프랑스 보호령 안남·통킹의 명목상 군주였다. 1945년 3월 일본이 프랑스 행정을 무너뜨리자 일본 아래 베트남 제국의 황제가 되었고, 8월 혁명 뒤 30일 후에에서 퇴위해 호찌민 정부의 「최고 고문」이 되었다. 곧 망명했다가 1949년 엘리제 협정으로 프랑스가 내세운 베트남국의 국가원수가 되었으나, 프랑스와 너무 가깝고 나라 밖에서 지내는 일이 많다는 비판을 받았다. 1955년 국민투표로 응오딘지엠에게 쫓겨났고 1997년 파리에서 숨졌다.",
+        "en": "The thirteenth and last emperor of the Nguyễn dynasty, he came to the throne in 1926 as nominal ruler of the French protectorates of Annam and Tonkin. When Japan overthrew the French in March 1945 he became emperor of the Japanese-sponsored Empire of Vietnam; after the August Revolution he abdicated in Huế on the 30th and became “supreme advisor” to Ho Chi Minh’s government. Soon in exile, he returned under the Élysée Accords of 1949 as Chief of State of the French-backed State of Vietnam, criticised as too close to France and too often abroad. Ousted by Ngô Đình Diệm in a 1955 referendum, he died in Paris in 1997."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "바오다이 황제"
+        ],
+        "en": [
+          "Bao Dai",
+          "Emperor Bảo Đại",
+          "Nguyễn Phúc Vĩnh Thụy"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i",
+        "https://en.wikipedia.org/wiki/First_Indochina_War"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "The thirteenth and last emperor of the Nguyễn dynasty, he came to the throne in 1926 as nominal ruler of the French protectorates of Annam and Tonkin. When Japan overthrew the French in March 1945 he became emperor of the Japanese-sponsored Empire of Vietnam; after the August Revolution he abdicated in Huế on the 30th and became “supreme advisor” to Ho Chi Minh’s government. Soon in exile, he returned under the Élysée Accords of 1949 as Chief of State of the French-backed State of Vietnam, criticised as too close to France and too often abroad. Ousted by Ngô Đình Diệm in a 1955 referendum, he died in Paris in 1997.",
+          "source": "https://en.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1913–1997",
+          "source": "https://en.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "bao-dai: citizenship vietnam",
+          "source": "https://en.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "bao-dai: national background vietnam",
+          "source": "https://en.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "ngo-dinh-diem",
+      "groupId": "international-counterrevolutionary",
+      "givenName": {
+        "ko": "딘지엠",
+        "en": "Đình Diệm"
+      },
+      "familyName": {
+        "ko": "응오",
+        "en": "Ngô"
+      },
+      "nativeName": "Ngô Đình Diệm",
+      "years": "1901–1963",
+      "citizenship": {
+        "code": "vietnam"
+      },
+      "nationalOrigin": {
+        "code": "vietnam"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "바오다이를 몰아내고 남베트남 초대 대통령이 되었다가 1963년 쿠데타 때 살해된 정치가",
+        "en": "Politician who became State of Vietnam premier in 1954, ousted Bảo Đại and was South Vietnam’s first president until killed in 1963"
+      },
+      "bio": {
+        "ko": "후에의 가톨릭 관료 집안에서 태어나 식민지 관리를 지낸 반공 민족주의자였다. 1954년 6월 제네바 회의 도중 바오다이가 베트남국 총리로 임명했다. 미국의 지원을 받아 1955년 국민투표로 바오다이를 몰아내고 남베트남(베트남 공화국)의 초대 대통령이 되었으며, 제네바 협정이 약속한 1956년 통일 선거는 치러지지 않았다. 가족 중심의 권위주의 통치와 불교도 탄압으로 반발을 샀고, 1963년 미국 중앙정보국이 지지한 쿠데타 때 붙잡혀 살해되었다.",
+        "en": "Born into a Catholic mandarin family in Huế and a former colonial official, he was an anti-communist nationalist. Bảo Đại appointed him prime minister of the State of Vietnam in June 1954, during the Geneva conference. With American support he ousted Bảo Đại in a 1955 referendum and became the first president of South Vietnam (the Republic of Vietnam), and the reunification elections promised at Geneva for 1956 were never held. His family-centred authoritarian rule and repression of Buddhists provoked opposition, and he was captured and killed in the CIA-backed coup of 1963."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "암살",
+          "en": "Assassinated"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "응오딘지엠",
+          "고딘디엠"
+        ],
+        "en": [
+          "Ngo Dinh Diem",
+          "Diem"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m",
+        "https://en.wikipedia.org/wiki/First_Indochina_War"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born into a Catholic mandarin family in Huế and a former colonial official, he was an anti-communist nationalist. Bảo Đại appointed him prime minister of the State of Vietnam in June 1954, during the Geneva conference. With American support he ousted Bảo Đại in a 1955 referendum and became the first president of South Vietnam (the Republic of Vietnam), and the reunification elections promised at Geneva for 1956 were never held. His family-centred authoritarian rule and repression of Buddhists provoked opposition, and he was captured and killed in the CIA-backed coup of 1963.",
+          "source": "https://en.wikipedia.org/wiki/Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1901–1963",
+          "source": "https://en.wikipedia.org/wiki/Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "ngo-dinh-diem: citizenship vietnam",
+          "source": "https://en.wikipedia.org/wiki/Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "ngo-dinh-diem: national background vietnam",
+          "source": "https://en.wikipedia.org/wiki/Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "henri-navarre",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "앙리",
+        "en": "Henri"
+      },
+      "familyName": {
+        "ko": "나바르",
+        "en": "Navarre"
+      },
+      "nativeName": "Henri Navarre",
+      "years": "1898–1983",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "프랑스 극동원정군의 마지막 사령관으로 디엔비엔푸 요새화를 결정해 1954년 패배를 맞은 장군",
+        "en": "Last commander of the French Far East Expeditionary Corps, who chose to fortify Điện Biên Phủ and met defeat there in 1954"
+      },
+      "bio": {
+        "ko": "1차·2차 세계대전을 치른 프랑스 육군 장군으로, 1953년 5월 살랑의 뒤를 이어 인도차이나 프랑스군 총사령관이 되었다. 부임 직후 본국 정부에 이 전쟁은 이길 수 없고 기대할 수 있는 최선은 교착이라고 보고했다. 도시와 주요 도로를 지키며 베트민을 협상으로 몰아넣는다는 「나바르 계획」에 따라, 라오스로 가는 베트민의 길목을 막으려 1953년 11월 디엔비엔푸에 낙하산 부대를 내려 요새를 세웠다. 1954년 5월 요새가 함락되면서 프랑스의 패배가 결정되었다.",
+        "en": "A French army general of both world wars, he succeeded Salan as commander of French forces in Indochina in May 1953, and soon reported to his government that the war could not be won and that stalemate was the best hope. Under the “Navarre plan” of holding the cities and main roads to force the Viet Minh to negotiate, he dropped paratroopers into Điện Biên Phủ in November 1953 to block the Viet Minh route into Laos and fortified the valley. The fall of the fortress in May 1954 sealed France’s defeat."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "나바르"
+        ],
+        "en": [
+          "Navarre"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Henri_Navarre",
+        "https://en.wikipedia.org/wiki/First_Indochina_War"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A French army general of both world wars, he succeeded Salan as commander of French forces in Indochina in May 1953, and soon reported to his government that the war could not be won and that stalemate was the best hope. Under the “Navarre plan” of holding the cities and main roads to force the Viet Minh to negotiate, he dropped paratroopers into Điện Biên Phủ in November 1953 to block the Viet Minh route into Laos and fortified the valley. The fall of the fortress in May 1954 sealed France’s defeat.",
+          "source": "https://en.wikipedia.org/wiki/Henri_Navarre",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1898–1983",
+          "source": "https://en.wikipedia.org/wiki/Henri_Navarre",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "henri-navarre: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Henri_Navarre",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "henri-navarre: national background france",
+          "source": "https://en.wikipedia.org/wiki/Henri_Navarre",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "christian-de-castries",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "크리스티앙",
+        "en": "Christian"
+      },
+      "familyName": {
+        "ko": "드 카스트리",
+        "en": "de Castries"
+      },
+      "nativeName": "Christian de Castries",
+      "years": "1902–1991",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "1954년 디엔비엔푸 요새를 지휘하다 함락과 함께 포로가 된 프랑스 장군",
+        "en": "French general who commanded the Điện Biên Phủ fortress in 1954 and was captured when it fell"
+      },
+      "bio": {
+        "ko": "프랑스의 오랜 귀족 가문 출신 기병 장교로, 2차 세계대전을 거쳐 인도차이나 전쟁에 참전했다. 1953년 12월 디엔비엔푸 요새의 지휘를 맡았다. 1954년 3월 13일 베트민의 공격이 시작되어 비행장이 포격으로 부서지고 우기로 보급이 끊기자 요새는 3개 거점만 남았다. 5월 7일 하노이의 코니 장군은 백기를 들지 말고 사격을 멈춘 뒤 장비를 파괴하라고 명령했고, 카스트리는 요새 함락과 함께 포로가 되었다가 제네바 협정 뒤 풀려났다.",
+        "en": "A cavalry officer from an old French noble family, he served through the Second World War and into the Indochina War, taking command at Điện Biên Phủ in December 1953. After the Viet Minh attack began on 13 March 1954, artillery wrecked the airstrips and the monsoon cut supply until only three strongpoints remained. On 7 May General Cogny in Hanoi ordered him to cease fire and destroy his equipment without raising a white flag, and de Castries was taken prisoner as the fortress fell, to be released after the Geneva Accords."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "카스트리",
+          "드 카스트리 장군"
+        ],
+        "en": [
+          "de Castries"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Christian_de_Castries",
+        "https://en.wikipedia.org/wiki/Battle_of_Dien_Bien_Phu"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A cavalry officer from an old French noble family, he served through the Second World War and into the Indochina War, taking command at Điện Biên Phủ in December 1953. After the Viet Minh attack began on 13 March 1954, artillery wrecked the airstrips and the monsoon cut supply until only three strongpoints remained. On 7 May General Cogny in Hanoi ordered him to cease fire and destroy his equipment without raising a white flag, and de Castries was taken prisoner as the fortress fell, to be released after the Geneva Accords.",
+          "source": "https://en.wikipedia.org/wiki/Christian_de_Castries",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1902–1991",
+          "source": "https://en.wikipedia.org/wiki/Christian_de_Castries",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "christian-de-castries: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Christian_de_Castries",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "christian-de-castries: national background france",
+          "source": "https://en.wikipedia.org/wiki/Christian_de_Castries",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "georges-thierry-dargenlieu",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "조르주",
+        "en": "Georges"
+      },
+      "familyName": {
+        "ko": "티에리 다르장리외",
+        "en": "Thierry d'Argenlieu"
+      },
+      "nativeName": "Georges Thierry d'Argenlieu",
+      "years": "1889–1964",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "counterrevolution"
+      },
+      "epithet": {
+        "ko": "고등판무관으로 코친차이나 공화국을 세워 인도차이나 전쟁의 길을 연 수도사 출신 제독",
+        "en": "Carmelite friar and Free French admiral whose Republic of Cochinchina as High Commissioner opened the road to war"
+      },
+      "bio": {
+        "ko": "브레스트 출신의 해군 장교로 1차 대전 뒤 카르멜회 수도사가 되었다가, 2차 대전 때 해군으로 돌아와 드골의 자유 프랑스 해군을 이끌었다. 1945년 10월 31일 인도차이나 고등판무관으로 부임해 식민 행정의 복구를 맡았다. 1946년 베트민 지도부가 프랑스에서 협상하는 동안, 3월 6일 호–생트니 협정을 어기고 코친차이나 자치 공화국을 세워 사실상 전쟁을 시작하게 했다. 하이퐁 포격 등 강경책을 이끌다 1947년 소환되었다.",
+        "en": "A naval officer from Brest who became a Carmelite friar after the First World War, he returned to the navy in the Second and led de Gaulle’s Free French naval forces. Arriving as High Commissioner for Indochina on 31 October 1945 to restore colonial administration, he set up an autonomous Republic of Cochinchina in 1946 while the Viet Minh leaders were negotiating in France, breaking the Ho–Sainteny agreement of 6 March and effectively starting the war. He directed a hard line including the Haiphong shelling and was recalled in 1947."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "다르장리외",
+          "다르장리외 제독"
+        ],
+        "en": [
+          "d'Argenlieu",
+          "Admiral d’Argenlieu"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Georges_Thierry_d%27Argenlieu",
+        "https://en.wikipedia.org/wiki/First_Indochina_War"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A naval officer from Brest who became a Carmelite friar after the First World War, he returned to the navy in the Second and led de Gaulle’s Free French naval forces. Arriving as High Commissioner for Indochina on 31 October 1945 to restore colonial administration, he set up an autonomous Republic of Cochinchina in 1946 while the Viet Minh leaders were negotiating in France, breaking the Ho–Sainteny agreement of 6 March and effectively starting the war. He directed a hard line including the Haiphong shelling and was recalled in 1947.",
+          "source": "https://en.wikipedia.org/wiki/Georges_Thierry_d%27Argenlieu",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1889–1964",
+          "source": "https://en.wikipedia.org/wiki/Georges_Thierry_d%27Argenlieu",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "georges-thierry-dargenlieu: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Georges_Thierry_d%27Argenlieu",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "georges-thierry-dargenlieu: national background france",
+          "source": "https://en.wikipedia.org/wiki/Georges_Thierry_d%27Argenlieu",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "pierre-mendes-france",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "피에르",
+        "en": "Pierre"
+      },
+      "familyName": {
+        "ko": "망데스프랑스",
+        "en": "Mendès France"
+      },
+      "nativeName": "Pierre Mendès France",
+      "years": "1907–1982",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "디엔비엔푸 패전 뒤 넉 달 안의 휴전을 약속하고 총리가 되어 1954년 제네바 협정을 맺은 프랑스 정치가",
+        "en": "French prime minister who promised a ceasefire within four months after Điện Biên Phủ and concluded the 1954 Geneva Accords"
+      },
+      "bio": {
+        "ko": "급진당 소속의 유대계 변호사·경제 전문가로, 전쟁 중 자유 프랑스에 가담했다. 인도차이나 전쟁을 일찍부터 비판했고, 디엔비엔푸 함락 뒤인 1954년 6월 17일 넉 달 안에 휴전을 이루지 못하면 물러나겠다고 약속하고 총리가 되었다. 7월 21일 제네바 협정으로 약속을 지켰다. 여덟 달 재임하는 동안 튀니지 자치를 인정했고, 그해 11월 알제리 전쟁이 시작되었다. 이스라엘과의 군사 협력과 프랑스 핵 개발의 토대를 놓았다.",
+        "en": "A Radical Party lawyer and economist of Jewish descent, he joined the Free French during the war. An early critic of the Indochina War, he became prime minister on 17 June 1954, after the fall of Điện Biên Phủ, promising to resign if he failed to secure a ceasefire within four months, and kept the promise with the Geneva Accords of 21 July. In eight months in office he conceded autonomy to Tunisia, and the Algerian War broke out that November; he also laid the groundwork for military co-operation with Israel and the French nuclear programme."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "망데스 프랑스"
+        ],
+        "en": [
+          "Mendès-France",
+          "Mendes France"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pierre_Mend%C3%A8s_France",
+        "https://en.wikipedia.org/wiki/First_Indochina_War"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A Radical Party lawyer and economist of Jewish descent, he joined the Free French during the war. An early critic of the Indochina War, he became prime minister on 17 June 1954, after the fall of Điện Biên Phủ, promising to resign if he failed to secure a ceasefire within four months, and kept the promise with the Geneva Accords of 21 July. In eight months in office he conceded autonomy to Tunisia, and the Algerian War broke out that November; he also laid the groundwork for military co-operation with Israel and the French nuclear programme.",
+          "source": "https://en.wikipedia.org/wiki/Pierre_Mend%C3%A8s_France",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1907–1982",
+          "source": "https://en.wikipedia.org/wiki/Pierre_Mend%C3%A8s_France",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "pierre-mendes-france: citizenship france",
+          "source": "https://en.wikipedia.org/wiki/Pierre_Mend%C3%A8s_France",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "pierre-mendes-france: national background france",
+          "source": "https://en.wikipedia.org/wiki/Pierre_Mend%C3%A8s_France",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "wei-guoqing",
+      "groupId": "china-mao-era",
+      "givenName": {
+        "ko": "궈칭",
+        "en": "Guoqing"
+      },
+      "familyName": {
+        "ko": "웨이",
+        "en": "Wei"
+      },
+      "nativeName": "韦国清",
+      "years": "1913–1989",
+      "citizenship": {
+        "code": "china"
+      },
+      "nationalOrigin": {
+        "code": "china",
+        "label": {
+          "ko": "중국 (좡족)",
+          "en": "China (Zhuang)"
+        }
+      },
+      "role": {
+        "category": "military-commander"
+      },
+      "epithet": {
+        "ko": "1950년 중국 군사고문단장으로 베트민에 파견되어 프랑스와의 전쟁을 자문한 좡족 장군",
+        "en": "Zhuang general sent in 1950 to head the Chinese Military Advisory Group to the Viet Minh, who also attended the Geneva conference"
+      },
+      "bio": {
+        "ko": "광시의 좡족 출신으로 홍군에 들어가 국공내전에서 제3야전군 제10병단 부정치위원을 지냈다. 1950년 4월 류사오치의 명으로 중국 군사고문단장이 되어 베트남에 파견되어 호찌민에게 프랑스와의 전쟁을 자문했다. 1953년 10월 호찌민에게 프랑스의 나바르 계획 사본을 건넸다고 전해지며, 1954년 저우언라이와 함께 제네바 회의에 참석했다. 뒤에 광시 주석(1958~1975), 정치국원(1973~1982), 인민해방군 총정치부 주임을 지냈고, 문화대혁명과 그 뒤의 숙청을 모두 비껴갔다.",
+        "en": "A Zhuang from Guangxi, he joined the Red Army and in the civil war was deputy political commissar of the Third Field Army’s Tenth Army Group. In April 1950 Liu Shaoqi sent him to Vietnam as head of the Chinese Military Advisory Group to advise Ho Chi Minh on the war with France. He is said to have handed Ho a copy of the French Navarre plan in October 1953, and he attended the 1954 Geneva conference with Zhou Enlai. He later chaired Guangxi (1958–1975), sat on the Politburo (1973–1982) and headed the PLA General Political Department, escaping the purges of the Cultural Revolution and after."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "위국청"
+        ],
+        "en": [
+          "Wei Kuo-ching"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wei_Guoqing",
+        "https://en.wikipedia.org/wiki/First_Indochina_War"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A Zhuang from Guangxi, he joined the Red Army and in the civil war was deputy political commissar of the Third Field Army’s Tenth Army Group. In April 1950 Liu Shaoqi sent him to Vietnam as head of the Chinese Military Advisory Group to advise Ho Chi Minh on the war with France. He is said to have handed Ho a copy of the French Navarre plan in October 1953, and he attended the 1954 Geneva conference with Zhou Enlai. He later chaired Guangxi (1958–1975), sat on the Politburo (1973–1982) and headed the PLA General Political Department, escaping the purges of the Cultural Revolution and after.",
+          "source": "https://en.wikipedia.org/wiki/Wei_Guoqing",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1913–1989",
+          "source": "https://en.wikipedia.org/wiki/Wei_Guoqing",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "wei-guoqing: citizenship china",
+          "source": "https://en.wikipedia.org/wiki/Wei_Guoqing",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "wei-guoqing: national background china",
+          "source": "https://en.wikipedia.org/wiki/Wei_Guoqing",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    }
+  ]
+}
