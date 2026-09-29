@@ -2,6 +2,7 @@ const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 // Retired glossary ids ride the same commulingo_id_redirects table the person
 // pages read, so merging two entries stays a DB-only edit. The people snapshot
 // is where those rows are loaded (it fetches every entity_type, not just its
@@ -89,7 +90,10 @@ router.get('/:termId', async (req, res) => {
         const panel = await buildTermPanel(termId, lang);
         if (!panel) {
             const merged = await mergedTermId(termId);
-            if (merged) return res.redirect(301, `/commulingo/terms/${encodeURIComponent(merged)}`);
+            // `person:<id>` retires a glossary entry that was really a person card.
+            const person = merged.startsWith('person:') ? merged.slice('person:'.length) : '';
+            if (person) return res.redirect(301, seo.languagePath(`/commulingo/people/${encodeURIComponent(person)}`, lang));
+            if (merged) return res.redirect(301, seo.languagePath(`/commulingo/terms/${encodeURIComponent(merged)}`, lang));
             return errorPage.notFound(res, {
                 message: lang === 'en' ? 'Term not found.' : '용어를 찾을 수 없습니다.',
                 backHref: '/commulingo/terms', backLabel: lang === 'en' ? 'Glossary' : '용어 사전',
