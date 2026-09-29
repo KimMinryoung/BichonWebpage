@@ -343,10 +343,18 @@ executor, participant, opponent, target, witness or historian as relation kinds.
 definitions live in leninbot `commulingo/relation_kinds.py` (revised 2026-09-29:
 executor is "집행 · 지휘", not the prime mover; witness is contemporary only; historian
 is later scholarship) and the page labels in `data/commulingo/event-presentation.js`.
-Opponent is camp-based against `commulingo_history_events.focus` (migration 192; 78 events
-have one). In an event without a focus, only people who tried to stop the event itself (an
-anti-war campaigner, a coup resister) are opponents; the column comment written with the
-migration predates that amendment. Check existing
+Opponent is camp-based against `commulingo_history_events.focus` (migration 192; 81 events
+have one). Events whose subject is clear (the Great Terror) keep focus + opponent. Events with
+no single focus (wars between states, splits, a revolutionary government that also crushed its
+left) name their camps instead (migration 193, 2026-09-29): `commulingo_history_events.sides`
+= `[{id, label:{ko,en}}]` (2+, exclusive with focus) and `commulingo_history_event_people.side`
+= one of those ids or NULL (witnesses, historians, mediators). The kind vocabulary stays the
+same; with sides there is no opponent — the opposing camp is another side. The page shows one
+block per side (kinds inside) and a final 「진영 밖」 block. 29 events have sides; volga-famine,
+chernobyl, nationalities-crisis and comintern-founding stay without focus or sides, where only
+people who tried to stop the event itself are opponents. Tools: `scripts/apply-event-sides.js`
+(batch assignment, refuses when a kind changed since drafting), `scripts/audit-event-sides.js`.
+Details: [event sides](commulingo-event-sides-20260929.md). Check existing
 section slugs and topics before adding another section to avoid duplicate coverage.
 Maintainer selection and schedules are defined in the leninbot repository; see the
 [editing plan](commulingo-people-editing-plan.md) for the inspected rules.
