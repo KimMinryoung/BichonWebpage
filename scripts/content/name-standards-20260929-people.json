@@ -1,0 +1,267 @@
+{
+ "changedBy": "claude-code",
+ "people": [
+  {
+   "id": "damdin-sukhbaatar",
+   "familyName": {
+    "ko": "수흐바타르",
+    "en": "Sükhbaatar"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_name"
+   ],
+   "patronymic": null,
+   "cyrillicPatronymic": ""
+  },
+  {
+   "id": "balingiin-tserendorj",
+   "familyName": {
+    "ko": "체렌도르지",
+    "en": "Tserendorj"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "cyrillic": "Цэрэндорж",
+   "aliases": {
+    "ko": [
+     "발링기인 체렌도르지",
+     "외몽골의 늙은 늑대",
+     "히체엥구이 군",
+     "히체엥구이 사이드"
+    ],
+    "en": [
+     "Balingiin Tserendorj",
+     "Балингийн Цэрэндорж",
+     "Khicheengüi Gün",
+     "Khicheengüi Said",
+     "Old Wolf of Outer Mongolia"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_name"
+   ],
+   "patronymic": null,
+   "cyrillicPatronymic": ""
+  },
+  {
+   "id": "soliin-danzan",
+   "familyName": {
+    "ko": "단잔",
+    "en": "Danzan"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "cyrillic": "Данзан",
+   "aliases": {
+    "ko": [
+     "솔린 단잔"
+    ],
+    "en": [
+     "Soliin Danzan",
+     "Solin Danzan",
+     "Солийн Данзан"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_name"
+   ]
+  },
+  {
+   "id": "tseren-ochiryn-dambadorj",
+   "cyrillic": "Дамбадорж",
+   "aliases": {
+    "ko": [
+     "체렌-오치린 담바도르지"
+    ],
+    "en": [
+     "Tseren-Ochiryn Dambadorj",
+     "Цэрэн-Очирын Дамбадорж"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_name"
+   ]
+  },
+  {
+   "id": "khorloogiin-choibalsan",
+   "aliases": {
+    "ko": [
+     "초이발산"
+    ],
+    "en": [
+     "Choibalsan",
+     "Khorloogiin Choibalsan",
+     "Хорлоогийн Чойбалсан"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_name"
+   ]
+  },
+  {
+   "id": "yumjaagiin-tsedenbal",
+   "aliases": {
+    "ko": [
+     "체덴발"
+    ],
+    "en": [
+     "Tsedenbal",
+     "Yumjaagiin Tsedenbal",
+     "Юмжаагийн Цэдэнбал"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_name"
+   ]
+  },
+  {
+   "id": "pang-hak-se",
+   "familyName": {
+    "ko": "방학세",
+    "en": "Pang Hak-se"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pang_Hak-se"
+   ],
+   "patronymic": null,
+   "cyrillicPatronymic": "",
+   "aliases": {
+    "ko": [
+     "방학세",
+     "판학세",
+     "니콜라이 판",
+     "니콜라이 이그나티예비치 판"
+    ],
+    "en": [
+     "Pang Hak-se",
+     "Pang Hak Se",
+     "Nikolai Pang",
+     "Nikolai Ignatyevich Pang"
+    ]
+   }
+  },
+  {
+   "id": "vang-pao",
+   "familyName": {
+    "ko": "방 빠오",
+    "en": "Vang Pao"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vang_Pao",
+    "https://en.wikipedia.org/wiki/Hmong_customs_and_culture"
+   ],
+   "patronymic": null,
+   "cyrillicPatronymic": ""
+  },
+  {
+   "id": "u-thant",
+   "familyName": {
+    "ko": "우 딴",
+    "en": "U Thant"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "citizenship": {
+    "code": "myanmar",
+    "label": {
+     "ko": "버마",
+     "en": "Burma"
+    }
+   },
+   "nationalOrigin": {
+    "code": "myanmar",
+    "label": {
+     "ko": "버마족",
+     "en": "Bamar"
+    }
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/U_Thant",
+    "https://en.wikipedia.org/wiki/Burmese_names"
+   ],
+   "evidence": [
+    {
+     "field": "citizenship",
+     "claim": "u-thant: citizenship myanmar (Burma)",
+     "source": "https://en.wikipedia.org/wiki/U_Thant",
+     "locator": "Wikipedia article: lead",
+     "excerpt": "Thant, known honorifically as U Thant, was a Burmese diplomat"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "u-thant: national origin Bamar (Burmese)",
+     "source": "https://en.wikipedia.org/wiki/U_Thant",
+     "locator": "Wikipedia article: lead, early life",
+     "excerpt": "Thant, known honorifically as U Thant, was a Burmese diplomat"
+    }
+   ]
+  },
+  {
+   "id": "gyula-horn",
+   "patronymic": null,
+   "cyrillicPatronymic": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Gyula_Horn",
+    "https://en.wikipedia.org/wiki/Hungarian_names"
+   ]
+  },
+  {
+   "id": "zhang-zuolin",
+   "patronymic": null,
+   "cyrillicPatronymic": "",
+   "aliases": {
+    "ko": [
+     "장쭤린",
+     "장작림",
+     "위팅",
+     "대원수",
+     "노원수"
+    ],
+    "en": [
+     "Zhang Zuolin",
+     "Chang Tso-lin",
+     "Yuting",
+     "Old Marshal"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Zhang_Zuolin",
+    "https://en.wikipedia.org/wiki/Courtesy_name"
+   ]
+  },
+  {
+   "id": "nam-il",
+   "patronymic": null,
+   "cyrillicPatronymic": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nam_Il"
+   ]
+  },
+  {
+   "id": "kamo",
+   "patronymic": null,
+   "cyrillicPatronymic": "",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kamo_(Bolshevik)"
+   ]
+  }
+ ]
+}

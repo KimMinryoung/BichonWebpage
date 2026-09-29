@@ -100,6 +100,7 @@ truth and the stored string only has to agree with them.
 | korea, north-korea, south-korea, china, vietnam | family first, fused (김무정, 펑더화이, 호찌민) | family first, spaced (Kim Mu-chong, Peng Dehuai, Le Duan) |
 | japan, hungary | family first, spaced (도쿠다 규이치, 카다르 야노시) | given first (Sen Katayama, János Kádár) |
 | cambodia | family first, spaced (폴 포트, 노로돔 시아누크) | family first, spaced (Hun Sen, Khieu Samphan) |
+| mongolia (no surname) | personal name alone (수흐바타르, 체덴발) | personal name alone (Sükhbaatar, Tsedenbal) |
 | everyone else | given first | given first |
 
 The rule keys on `citizenship_code` alone. An ethnic Hungarian with Romanian
@@ -119,6 +120,31 @@ three (키우 삼판 키우, 노로돔 시아누크 노로돔, 손 산 손) had 
 repeated at the end of the full name. Bare English family names that are
 ordinary words (Pol, Pen, Hun) are `alias` rows in the link blocklist; those
 people link only by full name.
+
+**Mongolian names (`SINGLE_NAME` in `native-script.js`, `_SINGLE_NAME` in
+leninbot):** a Mongolian name is the father's name in the genitive plus the
+person's own name (Yumjaagiin Tsedenbal, Balingiin Tserendorj), and people are
+called by the own name. The genitive form is not a surname, so the card holds
+the own name alone in `family_name_*` with `given_name_*` empty, the native
+line likewise (Цэдэнбал, not Юмжаагийн Цэдэнбал), and the full form goes to
+the aliases (발링기인 체렌도르지, Balingiin Tserendorj, Балингийн Цэрэндорж). The
+admin store and the leninbot curator reject a given part on a `mongolia` row.
+Titles that are the name the person is known by (보그드 칸) stay whole.
+
+**Patronymics** render between given and family in Western order, so two
+shapes are rejected on write and flagged by `audit-person-name-order.js`: a
+patronymic on a family-first or no-surname nation (호른 줄러 with János filed as
+one rendered 줄러 야노시 호른; 장쭤린's courtesy name 위팅 rendered 위팅 장쭤린),
+and a patronymic on a row with no given name (카모 rendered 아르샤코비치 카모).
+A second given name, courtesy name or a patronymic belonging to a real name
+behind a nickname goes to the aliases.
+
+Other no-surname or clan-first cases outside the table are stored whole in
+`family_name_*` (the mononym convention): 우 딴 (Burmese, `myanmar`; 우 is an
+honorific, Burmese names have no surname), 방 빠오 (Hmong — the clan name Vang
+comes first, while Lao names such as 카이손 폼비한 keep the Western order), and
+Soviet-citizen Koreans such as 방학세 and 허가이. Cleaned on 2026-09-29, with the
+spec kept in `scripts/content/name-standards-20260929-people.json`.
 
 Because the check keys off nationality fields, a wrong code produces a wrong
 name. **Citizenship is the state the person belonged to for the work they are

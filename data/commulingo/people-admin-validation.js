@@ -1,4 +1,4 @@
-const { checkNativeScript, familyFirstJoiner } = require('./native-script');
+const { checkNativeScript, familyFirstJoiner, isSingleNameNation } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { citizenshipOnlyCodes } = require('./nationality-policy.json');
 const { canonicalNationalityLabel } = require('./nationality-filter');
@@ -112,6 +112,40 @@ function composeFullName(given, family, lang, citizenshipCode) {
     return [given, family].filter(Boolean).join(' ');
 }
 
+// A no-surname nation (Mongolia) keeps the personal name alone in family; a
+// given part means a genitive patronymic was split off as if it were a name
+// (수흐바타르 수흐바타르, 체렌도르지 발링기인).
+function assertSingleName(parts, lang, citizenshipCode) {
+    if (!isSingleNameNation(citizenshipCode) || !parts.given) return;
+    throw badRequest(`'${citizenshipCode}' names have no surname: put only the personal name in `
+        + `familyName.${lang} and leave givenName.${lang} empty ("${parts.given}" given). `
+        + `The genitive patronymic form (발링기인 체렌도르지, Balingiin Tserendorj) belongs in aliases.`);
+}
+
+// Patronymics render between given and family in Western order, so a
+// family-first or no-surname nation cannot hold one: 호른 줄러 with János filed
+// as a patronymic rendered as 줄러 야노시 호른, 장쭤린 with his courtesy name as
+// 위팅 장쭤린. A second given name, a courtesy name or a Mongolian genitive
+// patronymic goes to the aliases instead.
+function assertNoPatronymicForNameOrder(state, citizenshipCode) {
+    const ordered = familyFirstJoiner(citizenshipCode, 'ko') !== null
+        || familyFirstJoiner(citizenshipCode, 'en') !== null
+        || isSingleNameNation(citizenshipCode);
+    if (!ordered || !(state.ko || state.en || state.native)) return;
+    throw badRequest(`'${citizenshipCode}' names take no patronymic ("${state.ko || state.en || state.native}" given): `
+        + 'the page would compose it Western-style between given and family name. Put a second given name, '
+        + 'courtesy name or genitive patronymic form in aliases and send patronymic: null.');
+}
+
+// A patronymic renders between given and family, so with no given part it
+// leads the name: 카모 + 아르샤코비치 read 아르샤코비치 카모, 방 빠오 + his
+// father's name read 넹추 방 방 빠오. A nickname or mononym takes no patronymic.
+function assertPatronymicHasGiven(parts, patronymic, lang) {
+    if (!patronymic || parts.given) return;
+    throw badRequest(`patronymic.${lang} "${patronymic}" needs a given name: with givenName.${lang} empty `
+        + 'it would render in front of the family name. Put the full form in aliases and send patronymic: null.');
+}
+
 // Name parts for one language from a payload: structured givenName/familyName
 // win; the legacy full `name` is split per the nationality's name order.
 function resolveNameParts(payload, lang, citizenshipCode) {
@@ -167,4 +201,4 @@ function assertIdKeepsLetters(id, nameEn) {
     }
 }
 
-module.exports = { foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate };
+module.exports = { foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate };

@@ -12,7 +12,7 @@ const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumn
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems } = require('./person-life-years');
-const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertPatronymicSeparate } = require('./people-admin-validation');
+const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate } = require('./people-admin-validation');
 
 // Person records for the CommuLingo admin API: list/get, create/update/
 // delete with the child tables (role, aliases, scenes, patronymic, career).
@@ -358,6 +358,11 @@ async function createPersonAdmin(rawPayload, options = {}) {
         if (!partsKo.full || !partsEn.full) {
             throw badRequest('name.ko and name.en (or givenName/familyName per language) are required');
         }
+        assertSingleName(partsKo, 'ko', citizenship.code);
+        assertSingleName(partsEn, 'en', citizenship.code);
+        assertNoPatronymicForNameOrder(patronymicState, citizenship.code);
+        assertPatronymicHasGiven(partsKo, patronymicState.ko, 'ko');
+        assertPatronymicHasGiven(partsEn, patronymicState.en, 'en');
         assertPatronymicSeparate(partsKo, patronymicState.ko, 'ko');
         assertPatronymicSeparate(partsEn, patronymicState.en, 'en');
         const nameKo = partsKo.full;
@@ -559,6 +564,8 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             if (!newPartsKo.full || !newPartsEn.full) {
                 throw badRequest('name.ko and name.en (or givenName/familyName per language) are required');
             }
+            assertSingleName(newPartsKo, 'ko', citizenship.code);
+            assertSingleName(newPartsEn, 'en', citizenship.code);
             set('name_ko', newPartsKo.full);
             set('name_en', newPartsEn.full);
             set('given_name_ko', newPartsKo.given);
@@ -571,6 +578,9 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         if (nameChanged || patronymicState.touched) {
             assertPatronymicSeparate(newPartsKo || storedParts('ko'), patronymicState.ko, 'ko');
             assertPatronymicSeparate(newPartsEn || storedParts('en'), patronymicState.en, 'en');
+            assertNoPatronymicForNameOrder(patronymicState, citizenship.code);
+            assertPatronymicHasGiven(newPartsKo || storedParts('ko'), patronymicState.ko, 'ko');
+            assertPatronymicHasGiven(newPartsEn || storedParts('en'), patronymicState.en, 'en');
         }
         if (payload.linkExpressions !== undefined) set('link_expressions', JSON.stringify(payload.linkExpressions));
         if (payload.epithet !== undefined) {

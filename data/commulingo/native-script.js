@@ -150,6 +150,20 @@ function familyFirstJoiner(code, lang) {
     return rule[lang] !== undefined ? rule[lang] : null;
 }
 
+// Nations whose people carry no surname, so the card shows the personal name
+// alone and it lives wholly in the family part (given stays empty). Mongolian
+// names are "father's name in the genitive + own name" — Yumjaagiin Tsedenbal
+// — and people are called by the own name: 체덴발, 수흐바타르, 초이발산. The
+// genitive patronymic (윰자깅, Balingiin) is never a surname, so it goes to the
+// aliases in full form (발링기인 체렌도르지), never into the name parts or the
+// native-name line (Цэдэнбал, not Юмжаагийн Цэдэнбал). Ported to leninbot
+// commulingo/people.py (_SINGLE_NAME) — keep the two in sync.
+const SINGLE_NAME = new Set(['mongolia']);
+
+function isSingleNameNation(code) {
+    return SINGLE_NAME.has(typeof code === 'string' ? code.trim() : '');
+}
+
 // Regnal numbers are Latin letters in every script: Николай II is a Cyrillic
 // name, not a mixed-script one. Drop those tokens before sniffing.
 const ROMAN_NUMERAL = /(^|\s)[IVXLCDM]+(?=$|\s)/g;
@@ -209,6 +223,8 @@ module.exports = {
     NATION_SCRIPTS,
     FAMILY_FIRST,
     familyFirstJoiner,
+    SINGLE_NAME,
+    isSingleNameNation,
     detectScripts,
     scriptsFor,
     checkNativeScript,

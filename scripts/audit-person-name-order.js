@@ -20,6 +20,10 @@
 //      Latin-script family-first nations (hungary, vietnam) lead with the family
 //      name — 'Király Béla', not 'Béla Király'; CJK-script names carry no
 //      internal space — '近衞文麿', not '近衞 文麿'.
+//   4. No-surname nations (Mongolia) carry no given part: the card shows the
+//      personal name alone (수흐바타르, not 수흐바타르 수흐바타르).
+//   5. No patronymic on a family-first or no-surname name (호른 줄러 with János
+//      rendered 줄러 야노시 호른), nor on a row with no given name.
 //
 // Usage (inside the frontend container):
 //   node scripts/audit-person-name-order.js
@@ -27,7 +31,7 @@
 
 require('dotenv').config();
 const db = require('../config/database');
-const { familyFirstJoiner, scriptsFor, detectScripts } = require('../data/commulingo/native-script');
+const { familyFirstJoiner, isSingleNameNation, scriptsFor, detectScripts } = require('../data/commulingo/native-script');
 const { composeFromParts } = require('../data/commulingo/people-standard');
 
 const CJK = new Set(['han', 'kana', 'hangul']);
@@ -49,8 +53,10 @@ function firstToken(text) {
         const { rows } = await db.query(
             `SELECT p.id, p.name_ko, p.name_en, p.cyrillic,
                     p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en,
-                    p.citizenship_code, p.origin_code
+                    p.citizenship_code, p.origin_code,
+                    pa.patronymic_ko, pa.patronymic_en, pa.cyrillic_patronymic
              FROM commulingo_people p
+             LEFT JOIN commulingo_person_patronymics pa ON pa.person_id = p.id
              ORDER BY p.id`
         );
 
@@ -85,8 +91,30 @@ function firstToken(text) {
                     problems.push(`${tag}: given_name_${lang} "${given}" with no family_name_${lang}`
                         + ' — a single token, mononym or fused name goes in family, not given');
                 }
+                // A no-surname nation (Mongolia) shows the personal name alone:
+                // a given part is a genitive patronymic split off as a name.
+                if (given && isSingleNameNation(code)) {
+                    problems.push(`${tag}: given_name_${lang} "${given}" — '${code}' names have no surname;`
+                        + ' the personal name goes alone in family, the patronymic form in aliases');
+                }
             }
             if (!anyParts) withoutParts += 1;
+
+            // 5. Patronymics render between given and family in Western order.
+            const patronymic = [row.patronymic_ko, row.patronymic_en, row.cyrillic_patronymic]
+                .map(v => (v || '').trim()).find(Boolean);
+            if (patronymic && (familyFirstJoiner(code, 'ko') !== null || familyFirstJoiner(code, 'en') !== null
+                || isSingleNameNation(code))) {
+                problems.push(`${tag}: patronymic "${patronymic}" on a '${code}' name — it would render`
+                    + ' Western-style (줄러 야노시 호른); a second given name or courtesy name goes to aliases');
+            }
+            for (const lang of ['ko', 'en']) {
+                const pat = (row[`patronymic_${lang}`] || '').trim();
+                if (pat && !(row[`given_name_${lang}`] || '').trim()) {
+                    problems.push(`${tag}: patronymic_${lang} "${pat}" with no given name — it would lead`
+                        + ' the name (아르샤코비치 카모)');
+                }
+            }
 
             // 3. Native-name line shape.
             const native = (row.cyrillic || '').trim();
