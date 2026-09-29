@@ -3111,6 +3111,16 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     color: var(--text-secondary);
 }
 
+/* Card prose follows the site's reading standard (design-system.md): justified,
+   with word-break: normal so Korean breaks between characters and the
+   stretched gaps stay tight. The epithet is a heading line and stays ragged. */
+.commu-person-moment,
+.commu-person-bio {
+    text-align: justify;
+    word-break: normal;
+    hyphens: auto;
+}
+
 .commu-person-more {
     border-top: 1px dashed var(--border);
     margin-inline: calc(-1 * var(--space-4));
