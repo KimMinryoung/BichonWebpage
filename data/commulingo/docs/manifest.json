@@ -6314,6 +6314,116 @@
         "국민의회",
         "중앙위원회"
       ]
+    },
+    {
+      "id": "france-jourdan-delbrel-conscription-law-1798",
+      "file": "france-jourdan-delbrel-conscription-law-1798.html",
+      "docLang": "ko",
+      "date": "1798-09-05",
+      "title": {
+        "ko": "주르당-델브렐 징병법 (1798년 9월 5일)",
+        "en": "Jourdan-Delbrel Conscription Law (5 September 1798)"
+      },
+      "description": {
+        "ko": "총재정부 시기 오백인회와 원로회가 의결해 혁명력 6년 프뤽티도르 19일(1798년 9월 5일) 성립한 육군 편성법 전문 63조. 스무 살부터 스물다섯 살까지의 프랑스인을 해마다 다섯 등급의 징병 명부에 올리고 가장 젊은 사람부터 불러내는 제도를 정했다. 『공화국 법률 공보』 제223호 원판에서 직접 전사하고 번역했다.",
+        "en": "The complete 63 articles of the Directory's law on the formation of the army of 19 Fructidor Year VI (5 September 1798), which enrolled every Frenchman aged 20 to 25 in five annual conscription classes called up youngest first."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "총재정부 시기 오백인회와 원로회가 의결해 혁명력 6년 프뤽티도르 19일(1798년 9월 5일) 성립한 육군 편성법 전문 63조. 스무 살부터 스물다섯 살까지의 프랑스인을 해마다 다섯 등급의 징병 명부에 올리고 가장 젊은 사람부터 불러내는 제도를 정했다. 『공화국 법률 공보』 제223호 원판에서 직접 전사하고 번역했다.",
+      "people": [
+        "jean-baptiste-jourdan"
+      ],
+      "terms": [
+        "chongjae-jeongbu",
+        "levee-en-masse"
+      ],
+      "events": [
+        "french-revolutionary-wars-1792-1802",
+        "french-revolution-1789-1799"
+      ],
+      "addedAt": "2026-09-30",
+      "aliases": {
+        "ko": [
+          "주르당법",
+          "주르당 법",
+          "『주르당-델브렐 법』"
+        ],
+        "en": [
+          "Jourdan Law",
+          "Jourdan-Delbrel Law",
+          "Loi Jourdan"
+        ]
+      },
+      "noAutoLink": [
+        "임시정부",
+        "국민의회",
+        "테르미도르",
+        "특별위원회",
+        "제58조"
+      ]
+    },
+    {
+      "id": "avnoj-resolutions-1942-1943",
+      "file": "avnoj-resolutions-1942-1943.html",
+      "docLang": "ko",
+      "date": "1942-11-27",
+      "title": {
+        "ko": "AVNOJ 창립 결의와 야이체 결정 (1942~1943)",
+        "en": "AVNOJ: the Bihać founding resolution and the Jajce decisions (1942–1943)"
+      },
+      "description": {
+        "ko": "1942년 11월 비하치에서 유고슬라비아 인민해방 반파시스트 평의회(AVNOJ)를 투쟁의 정치적 대표 기관으로 세운 창립 결의와, 1943년 11월 29일 야이체 제2차 회의가 AVNOJ를 최고 입법·집행 기관으로 선언하고 망명 정부의 권리를 박탈한 선언, 유고슬라비아를 평등한 인민들의 연방으로 세우기로 한 결정 제3호의 전문을 세르비아어 원문에서 옮겼다.",
+        "en": "Korean translation, from the Serbian originals, of the full texts of the resolution founding AVNOJ as the political representative body of the struggle at Bihać in November 1942, and of the Declaration of the Second Session at Jajce on 29 November 1943, which made AVNOJ the supreme legislative and executive body and stripped the government-in-exile of its rights, together with Decision No. 3 building Yugoslavia on the federal principle."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "번역 저본: 세르비아어 위키문헌 「Резолуција о оснивању Антифашистичког Већа Народног Ослобођења Југославије」(유고슬라비아 국립문서보관소 「Конститутивни акти Југославије」 전자판 전사), 「Декларација Другог заседања АВНОЈ-а」(Р. Марковић, М. Срдић, Устави и уставна документа социјалистичке Југославије 1942–1981, Београд 1981, 12–15쪽), 「Одлука II заседања АВНОЈ-а о изградњи Југославије на федеративном принципу」(Архив Србије и Црне Горе 전자판 전사). https://sr.wikisource.org/wiki/Одлуке_АВНОЈ-а_и_други_државноправни_акти_до_1945. 세르비아어 원문에서 옮김. 한국어 번역: CommuLingo (2026).",
+      "people": [
+        "josip-broz-tito",
+        "draza-mihailovic",
+        "peter-ii-of-yugoslavia"
+      ],
+      "terms": [
+        "avnoj",
+        "federal-principle-of-the-second-avnoj-session",
+        "peoples-s-liberation-committees",
+        "people-s-liberation-struggle-narodnooslobodila-ka-borba",
+        "ustase"
+      ],
+      "events": [
+        "yugoslav-partisans"
+      ],
+      "excerpts": {
+        "terms": {
+          "federal-principle-of-the-second-avnoj-session": "jajce-federal-decision-1943"
+        }
+      },
+      "addedAt": "2026-09-30",
+      "aliases": {
+        "ko": [
+          "AVNOJ 창립 결의",
+          "비하치 결의",
+          "야이체 선언",
+          "AVNOJ 제2차 회의 선언",
+          "연방 원칙에 따른 유고슬라비아 건설에 관한 결정"
+        ],
+        "en": [
+          "Bihać Resolution",
+          "Jajce Declaration",
+          "Declaration of the Second Session of AVNOJ",
+          "Decision on building Yugoslavia on the federal principle"
+        ]
+      },
+      "noAutoLink": [
+        "최고사령부",
+        "포포비치",
+        "파르티잔 투쟁"
+      ]
     }
   ],
   "redirects": {

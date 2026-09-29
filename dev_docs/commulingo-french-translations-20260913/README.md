@@ -1,6 +1,6 @@
 # 프랑스 혁명·혁명 전쟁 추가 문헌 번역
 
-2026-09-14 UTC 기준: 큐 22건 중 **21건을 참고문헌에 출판**, **주르당 징병법 1건은 원문 접근 장애로 보류**. 7개 문헌집과 단독 문헌 1개로 편집했다. 기존 문헌집 2개를 확장하고 새 참고문헌 6개를 등록했다. 출판한 큐 21건은 `done`과 실제 문헌집 `resolved_id`를 기록했고, 2052번만 `pending`이다. [출판 목록과 검증](publication/README.md)을 참조한다. 아래 `translations/` 링크는 재현용으로 보존한 최초 번역이며, 공개본은 `publication/`의 교정·편집본이다.
+2026-09-30 UTC 기준: 큐 22건 **모두 출판**. 2026-09-14에 21건을 출판했고, 주르당 징병법은 2026-09-30 Gallica 접근이 회복되어 원판에서 직접 전사·번역해 단독 문헌으로 등록했다(아래 「주르당 법」 절). 7개 문헌집과 단독 문헌 1개로 편집했다. 기존 문헌집 2개를 확장하고 새 참고문헌 6개를 등록했다. 출판한 큐 21건은 `done`과 실제 문헌집 `resolved_id`를 기록했고, 2052번만 `pending`이다. [출판 목록과 검증](publication/README.md)을 참조한다. 아래 `translations/` 링크는 재현용으로 보존한 최초 번역이며, 공개본은 `publication/`의 교정·편집본이다.
 
 ## 실행 설정과 사용량
 
@@ -37,7 +37,7 @@
 | 2049 | 외국 인민에 대한 형제애와 원조 법령 (1792년 11월 19일) | [번역 초안](translations/france-fraternity-decree-1792.html) |
 | 2050 | 점령지의 혁명 행정에 관한 법령 (1792년 12월 15일) | [번역 초안](translations/france-occupied-territories-decree-1792.html) |
 | 2051 | 국민총동원령 (1793년 8월 23일) | [번역 초안](translations/france-levee-en-masse-1793.html) |
-| 2052 | 주르당-델브렐 징병법 (1798년 9월 5일) | 원문 확보 보류 |
+| 2052 | 주르당-델브렐 징병법 (1798년 9월 5일) | 2026-09-30 출판: [공개본](https://cyber-lenin.com/commulingo/docs/france-jourdan-delbrel-conscription-law-1798) · [원판 전사](sources/jourdan-bulletin-223-transcription.fr.txt) |
 | 2013 | 생쥐스트의 방토즈 보고와 법령 (1794) | [번역 초안](translations/saint-just-ventose-reports-decrees-1794.html) |
 | 2014 | 여성 정치 결사 금지 보고와 법령 (1793년 10월 30일) | [번역 초안](translations/france-womens-clubs-ban-1793.html) |
 | 2053 | 바젤 평화조약: 프로이센·스페인 (1795) | [번역 초안](translations/treaties-basel-1795.html) |
@@ -48,11 +48,11 @@
 | 2015 | 송토나의 생도맹그 노예해방 포고 (1793년 8월 29일) | [번역 초안](translations/sonthonax-emancipation-proclamation-1793.html) |
 | 2058 | 알자바르티의 프랑스 점령 기록 (1798) | [번역 초안](translations/al-jabarti-french-occupation-1798.html) |
 
-## 주르당 법 원문 접근 장애
+## 주르당 법 (2026-09-30 출판)
 
-확인한 저본은 BnF/Gallica `bpt6k56398t`, Bulletin des lois 제223호, 법령 제1995호이다. 원판 `f491`에서 표제·1798년 9월 5일 날짜를 확인했고 `f491–494`(인쇄 1–4쪽)를 확보했다. 이후 `f495–502` 이미지 요청은 크기·연결 방식·요청 간격을 달리해도 서버가 연결을 종료했다. 공식 ALTO OCR 경로는 500 오류, 일반 텍스트/PDF 경로는 보안 확인 화면이었다. 4쪽에서 제15조가 끝나며 나머지 조항이 없으므로, 이 자료를 전문 번역한 것처럼 처리하지 않았다.
+저본은 BnF/Gallica `bpt6k56398t`, 『공화국 법률 공보』 제223호, 법률 제1995호(인쇄 1–16쪽, `f491–f506`)이다. 2026-09-14에는 `f495` 이후 이미지 요청이 막혀 보류했으나, 2026-09-30 IIIF 이미지(`/full/1600,/0/native.jpg`)가 200으로 응답했다. 16쪽 이미지를 [sources/](sources/)에 `jourdan-f491-1600.jpg`~`jourdan-f506-1600.jpg`로 보존하고, 원판을 눈으로 읽어 [전사본](sources/jourdan-bulletin-223-transcription.fr.txt)(SHA-256 `6775151c…e506f`)을 만들었다. 오백인회 의결 전문(전문·제1~63조·서명), 원로회 승인, 총재정부 공포·법무장관 인증까지가 법령의 경계다.
 
-재개 시 [IIIF manifest](sources/jourdan-iiif.json)의 `f495` 이후 실제 법령 종료·서명 경계를 먼저 확인한다. 원판 요청 URL 예: `https://gallica.bnf.fr/iiif/ark:/12148/bpt6k56398t/f495/full/1000,/0/native.jpg`. 현재 이 문헌의 번역 스펙은 없다.
+번역은 DeepSeek 하네스를 쓰지 않고 Claude가 프랑스어 전사본에서 직접 옮겼다. 번역어: Conseil des Cinq-Cents 오백인회, Conseil des Anciens 원로회, Directoire exécutif 총재정부, administration centrale de département 데파르트망 중앙행정청, administration municipale 시정 행정청, défenseurs conscrits 징집 수호자, conscription militaire 군사 징병(명부 등록의 뜻임을 해제에 밝힘), congé absolu 완전 제대증, haute-paie 가봉, garde nationale sédentaire 상주 국민방위대, commissaire des guerres 군정관, cinq années de fers 5년 도형. 혁명력 날짜는 원문대로 두고 첫 출현에 [ ]로 그레고리력을 붙였다. 성직자 시민헌법처럼 단독 문헌 `france-jourdan-delbrel-conscription-law-1798`로 등록했다(편 5개가 목차 h2, 조는 굵은 번호 문단). 자동 링크 가운데 달 이름 테르미도르, 특별위원회, 제58조가 다른 항목에 걸려 이 문서의 `noAutoLink`로 막았다. 운영 한·영 200, 63조 렌더, 390px 가로 넘침 없음, Cloudflare 9개 URL 갱신, 큐 2052 `done`을 확인했다.
 
 ## 재개·재검증
 
