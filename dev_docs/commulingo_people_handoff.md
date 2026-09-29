@@ -101,6 +101,7 @@ truth and the stored string only has to agree with them.
 | japan, hungary | family first, spaced (도쿠다 규이치, 카다르 야노시) | given first (Sen Katayama, János Kádár) |
 | cambodia | family first, spaced (폴 포트, 노로돔 시아누크) | family first, spaced (Hun Sen, Khieu Samphan) |
 | mongolia (no surname) | personal name alone (수흐바타르, 체덴발) | personal name alone (Sükhbaatar, Tsedenbal) |
+| ethiopia, eritrea, somalia (no surname) | whole name chain (멩기스투 하일레 마리암) | whole name chain (Mohamed Siad Barre) |
 | everyone else | given first | given first |
 
 The rule keys on `citizenship_code` alone. An ethnic Hungarian with Romanian
@@ -130,6 +131,19 @@ line likewise (Цэдэнбал, not Юмжаагийн Цэдэнбал), and t
 the aliases (발링기인 체렌도르지, Balingiin Tserendorj, Балингийн Цэрэндорж). The
 admin store and the leninbot curator reject a given part on a `mongolia` row.
 Titles that are the name the person is known by (보그드 칸) stay whole.
+
+**Ethiopian, Eritrean and Somali names** (same `SINGLE_NAME` set) are "own
+name + father's name (+ grandfather's)"; the father's name is not a surname.
+They are called by the whole chain, so the whole chain lives in
+`family_name_*` with `given_name_*` empty (멩기스투 하일레 마리암, 아트나푸
+아바테, 무함마드 시아드 바레) and the native line keeps it too. The own name or a
+customary short form is an alias (멩기스투, 시아드 바레). Before 2026-09-29 half
+of these rows split off the father's name as a surname, so bare 아바테·사마타르
+were offered as links. Monarchs keep the dictionary-wide regnal shape
+(하일레 셀라시에 + 1세), which the checks allow. Native script: Ethiopia takes
+Ge'ez or Latin (Oromo Qubee), Somalia Latin or Arabic, Eritrea all three —
+하일레 피다's native line had been a Russian transliteration and is now ኃይሌ ፊዳ.
+Spec: `scripts/content/name-standards-horn-of-africa-20260929-people.json`.
 
 **Patronymics** render between given and family in Western order, so two
 shapes are rejected on write and flagged by `audit-person-name-order.js`: a

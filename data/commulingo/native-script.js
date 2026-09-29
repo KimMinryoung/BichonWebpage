@@ -25,6 +25,7 @@ const SCRIPT_RANGES = [
     ['arabic', /[؀-ۿ]/],
     ['devanagari', /[ऀ-ॿ]/],
     ['bengali', /[ঀ-৿]/],
+    ['ethiopic', /[\u1200-\u139F\u2D80-\u2DDF]/],
     // Latin last: diacritics (ā, ș, ə) live in the extended blocks.
     ['latin', /[A-Za-zÀ-ɏḀ-ỿ]/],
 ];
@@ -112,6 +113,11 @@ const NATION_SCRIPTS = {
     israel: ['hebrew'],
     afghanistan: ['arabic'],
     greece: ['greek'],
+    // Amharic/Tigrinya in Ge'ez; Oromo and Somali write Latin (Qubee, 1972
+    // Somali orthography); older Somali and Eritrean names also appear in Arabic.
+    ethiopia: ['ethiopic', 'latin'],
+    eritrea: ['ethiopic', 'latin', 'arabic'],
+    somalia: ['latin', 'arabic'],
 };
 
 // Nations whose people write the family name first, and how the two parts
@@ -150,18 +156,30 @@ function familyFirstJoiner(code, lang) {
     return rule[lang] !== undefined ? rule[lang] : null;
 }
 
-// Nations whose people carry no surname, so the card shows the personal name
-// alone and it lives wholly in the family part (given stays empty). Mongolian
-// names are "father's name in the genitive + own name" — Yumjaagiin Tsedenbal
-// — and people are called by the own name: 체덴발, 수흐바타르, 초이발산. The
-// genitive patronymic (윰자깅, Balingiin) is never a surname, so it goes to the
-// aliases in full form (발링기인 체렌도르지), never into the name parts or the
-// native-name line (Цэдэнбал, not Юмжаагийн Цэдэнбал). Ported to leninbot
-// commulingo/people.py (_SINGLE_NAME) — keep the two in sync.
-const SINGLE_NAME = new Set(['mongolia']);
+// Nations whose people carry no surname. The name as people call it lives
+// wholly in the family part and given stays empty, so no father's name is
+// ever offered as a bare "family name" alias. Two shapes:
+// - Mongolia: "father's name in the genitive + own name" (Yumjaagiin
+//   Tsedenbal), called by the own name alone — 체덴발, 수흐바타르. The genitive
+//   form goes to the aliases (발링기인 체렌도르지), never into the name parts or
+//   the native-name line (Цэдэнбал, not Юмжаагийн Цэдэнбал).
+// - Ethiopia, Eritrea, Somalia: "own name + father's name (+ grandfather's)",
+//   called by the whole chain — 멩기스투 하일레 마리암, 무함마드 시아드 바레 —
+//   which is stored whole, native line included. The own name or a customary
+//   short form (멩기스투, 시아드 바레) goes to the aliases.
+// A monarch keeps the dictionary-wide regnal shape (하일레 셀라시에 + 1세).
+// Ported to leninbot commulingo/people.py (_SINGLE_NAME) — keep in sync.
+const SINGLE_NAME = new Set(['mongolia', 'ethiopia', 'eritrea', 'somalia']);
 
 function isSingleNameNation(code) {
     return SINGLE_NAME.has(typeof code === 'string' ? code.trim() : '');
+}
+
+// '1세', 'II' — the family slot of a monarch's name.
+const REGNAL_NUMBER = /^(?:[IVXLCDM]+|\d+세)$/;
+
+function isRegnalNumber(text) {
+    return REGNAL_NUMBER.test(String(text || '').trim());
 }
 
 // Regnal numbers are Latin letters in every script: Николай II is a Cyrillic
@@ -225,6 +243,7 @@ module.exports = {
     familyFirstJoiner,
     SINGLE_NAME,
     isSingleNameNation,
+    isRegnalNumber,
     detectScripts,
     scriptsFor,
     checkNativeScript,

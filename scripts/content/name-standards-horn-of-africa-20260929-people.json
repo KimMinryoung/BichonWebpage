@@ -1,0 +1,183 @@
+{
+ "changedBy": "claude-code",
+ "people": [
+  {
+   "id": "atnafu-abate",
+   "familyName": {
+    "ko": "아트나푸 아바테",
+    "en": "Atnafu Abate"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Atnafu_Abate",
+    "https://en.wikipedia.org/wiki/Ethiopian_name"
+   ],
+   "aliases": {
+    "ko": [
+     "아트나푸 아바테",
+     "아트나푸"
+    ],
+    "en": [
+     "Atnafu Abate",
+     "Atnafu"
+    ]
+   }
+  },
+  {
+   "id": "bahru-zewde",
+   "familyName": {
+    "ko": "바흐루 제우데",
+    "en": "Bahru Zewde"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bahru_Zewde",
+    "https://en.wikipedia.org/wiki/Ethiopian_name"
+   ]
+  },
+  {
+   "id": "haile-fida",
+   "familyName": {
+    "ko": "하일레 피다",
+    "en": "Haile Fida"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Haile_Fida",
+    "https://en.wikipedia.org/wiki/Ethiopian_name",
+    "https://am.wikipedia.org/?curid=9827"
+   ],
+   "cyrillic": "ኃይሌ ፊዳ",
+   "aliases": {
+    "ko": [
+     "하일레 피다 쿠마",
+     "메이손 의장"
+    ],
+    "en": [
+     "Haile Fida Kuma",
+     "Haaylee Fidaa"
+    ]
+   }
+  },
+  {
+   "id": "mengistu-haile-mariam",
+   "familyName": {
+    "ko": "멩기스투 하일레 마리암",
+    "en": "Mengistu Haile Mariam"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mengistu_Haile_Mariam",
+    "https://en.wikipedia.org/wiki/Ethiopian_name"
+   ],
+   "aliases": {
+    "ko": [
+     "멩기스투 하일레 마리암",
+     "멩기스투"
+    ],
+    "en": [
+     "Mengistu Haile Mariam",
+     "Mengistu"
+    ]
+   }
+  },
+  {
+   "id": "tafari-benti",
+   "familyName": {
+    "ko": "테파리 벤티",
+    "en": "Tafari Benti"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Tafari_Benti",
+    "https://en.wikipedia.org/wiki/Ethiopian_name"
+   ]
+  },
+  {
+   "id": "ahmed-ismail-samatar",
+   "familyName": {
+    "ko": "아흐메드 이스마일 사마타르",
+    "en": "Ahmed Ismail Samatar"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ahmed_Ismail_Samatar",
+    "https://en.wikipedia.org/wiki/Patronymic"
+   ]
+  },
+  {
+   "id": "hussein-kulmiye-afrah",
+   "familyName": {
+    "ko": "후세인 쿨미예 아프라",
+    "en": "Hussein Kulmiye Afrah"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hussein_Kulmiye_Afrah",
+    "https://en.wikipedia.org/wiki/Patronymic"
+   ]
+  },
+  {
+   "id": "mohamed-siad-barre",
+   "familyName": {
+    "ko": "무함마드 시아드 바레",
+    "en": "Mohamed Siad Barre"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Siad_Barre",
+    "https://en.wikipedia.org/wiki/Patronymic"
+   ],
+   "aliases": {
+    "ko": [
+     "무함마드 시아드 바레",
+     "시아드 바레"
+    ],
+    "en": [
+     "Mohamed Siad Barre",
+     "Siad Barre",
+     "Siyaad Barre"
+    ]
+   }
+  },
+  {
+   "id": "mohammad-ali-samatar",
+   "familyName": {
+    "ko": "모함마드 알리 사마타르",
+    "en": "Mohammad Ali Samatar"
+   },
+   "givenName": {
+    "ko": "",
+    "en": ""
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mohammad_Ali_Samatar",
+    "https://en.wikipedia.org/wiki/Patronymic"
+   ]
+  }
+ ]
+}

@@ -20,8 +20,9 @@
 //      Latin-script family-first nations (hungary, vietnam) lead with the family
 //      name — 'Király Béla', not 'Béla Király'; CJK-script names carry no
 //      internal space — '近衞文麿', not '近衞 文麿'.
-//   4. No-surname nations (Mongolia) carry no given part: the card shows the
-//      personal name alone (수흐바타르, not 수흐바타르 수흐바타르).
+//   4. No-surname nations (Mongolia, Ethiopia, Eritrea, Somalia) carry no
+//      given part (수흐바타르, not 수흐바타르 수흐바타르; 아트나푸 아바테 whole);
+//      monarchs keep the regnal shape (하일레 셀라시에 + 1세).
 //   5. No patronymic on a family-first or no-surname name (호른 줄러 with János
 //      rendered 줄러 야노시 호른), nor on a row with no given name.
 //
@@ -31,7 +32,7 @@
 
 require('dotenv').config();
 const db = require('../config/database');
-const { familyFirstJoiner, isSingleNameNation, scriptsFor, detectScripts } = require('../data/commulingo/native-script');
+const { familyFirstJoiner, isSingleNameNation, isRegnalNumber, scriptsFor, detectScripts } = require('../data/commulingo/native-script');
 const { composeFromParts } = require('../data/commulingo/people-standard');
 
 const CJK = new Set(['han', 'kana', 'hangul']);
@@ -91,11 +92,11 @@ function firstToken(text) {
                     problems.push(`${tag}: given_name_${lang} "${given}" with no family_name_${lang}`
                         + ' — a single token, mononym or fused name goes in family, not given');
                 }
-                // A no-surname nation (Mongolia) shows the personal name alone:
-                // a given part is a genitive patronymic split off as a name.
-                if (given && isSingleNameNation(code)) {
+                // A no-surname nation keeps the name whole in family: a given
+                // part is a father's name split off as if it were a surname.
+                if (given && isSingleNameNation(code) && !isRegnalNumber(family)) {
                     problems.push(`${tag}: given_name_${lang} "${given}" — '${code}' names have no surname;`
-                        + ' the personal name goes alone in family, the patronymic form in aliases');
+                        + ' the name as people call it goes whole in family (체렌도르지, 멩기스투 하일레 마리암)');
                 }
             }
             if (!anyParts) withoutParts += 1;

@@ -1,4 +1,4 @@
-const { checkNativeScript, familyFirstJoiner, isSingleNameNation } = require('./native-script');
+const { checkNativeScript, familyFirstJoiner, isSingleNameNation, isRegnalNumber } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { citizenshipOnlyCodes } = require('./nationality-policy.json');
 const { canonicalNationalityLabel } = require('./nationality-filter');
@@ -94,6 +94,8 @@ function splitFullName(full, lang, citizenshipCode) {
     if (!name) return { given: '', family: '' };
     // Single-token names (East Asian fused names, mononyms) live in family.
     if (!name.includes(' ')) return { given: '', family: name };
+    // No-surname nations keep the whole name in family (멩기스투 하일레 마리암).
+    if (isSingleNameNation(citizenshipCode)) return { given: '', family: name };
     // Family-first nationalities lead with the family name (Kim Mu-chong,
     // 도쿠다 규이치); everyone else ends with it.
     if (familyFirstJoiner(citizenshipCode, lang) !== null) {
@@ -112,14 +114,16 @@ function composeFullName(given, family, lang, citizenshipCode) {
     return [given, family].filter(Boolean).join(' ');
 }
 
-// A no-surname nation (Mongolia) keeps the personal name alone in family; a
-// given part means a genitive patronymic was split off as if it were a name
-// (수흐바타르 수흐바타르, 체렌도르지 발링기인).
+// A no-surname nation (Mongolia, Ethiopia, Eritrea, Somalia) keeps the name
+// whole in family; a given part means a father's name was split off as if it
+// were a surname (수흐바타르 수흐바타르, 아트나푸 + 아바테). Monarchs keep the
+// regnal shape (하일레 셀라시에 + 1세).
 function assertSingleName(parts, lang, citizenshipCode) {
-    if (!isSingleNameNation(citizenshipCode) || !parts.given) return;
-    throw badRequest(`'${citizenshipCode}' names have no surname: put only the personal name in `
-        + `familyName.${lang} and leave givenName.${lang} empty ("${parts.given}" given). `
-        + `The genitive patronymic form (발링기인 체렌도르지, Balingiin Tserendorj) belongs in aliases.`);
+    if (!isSingleNameNation(citizenshipCode) || !parts.given || isRegnalNumber(parts.family)) return;
+    throw badRequest(`'${citizenshipCode}' names have no surname: put the name as people call it in `
+        + `familyName.${lang} and leave givenName.${lang} empty ("${parts.given}" given) — `
+        + 'Mongolian: the own name alone (체렌도르지; the genitive form 발링기인 체렌도르지 goes to aliases); '
+        + 'Ethiopian/Eritrean/Somali: the whole chain (멩기스투 하일레 마리암).');
 }
 
 // Patronymics render between given and family in Western order, so a
