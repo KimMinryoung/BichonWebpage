@@ -6424,6 +6424,43 @@
         "포포비치",
         "파르티잔 투쟁"
       ]
+    },
+    {
+      "id": "sr-party-programme-1906",
+      "file": "sr-party-programme-1906.html",
+      "docLang": "ko",
+      "date": "1906-01",
+      "title": {
+        "ko": "사회혁명당 강령 (1906)",
+        "en": "Programme of the Socialist-Revolutionary Party (1906)"
+      },
+      "description": {
+        "ko": "1906년 1월 사회혁명당 제1차 당대회가 채택한 강령 전문. 산업 노동자에서 근로 농민까지를 한 노동계급으로 묶는 계급관, 민주공화국과 자결권 요구, 토지 사회화, 「국가 사회주의」 경계를 담았다. 러시아어 원문에서 옮겼다.",
+        "en": "Full Korean translation, from the Russian, of the programme adopted by the first congress of the Socialist-Revolutionary Party in January 1906: its view of one working class from industrial workers to the labouring peasantry, its demands for a democratic republic and self-determination, the socialisation of land, and its warning against \"state socialism\"."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Программа Партии социалистов-революционеров (1906), в: Полный сборник платформ всех русских политических партий. СПб., 1906. С. 19–28. 원문 언어: 러시아어. 전사본: 표트르 스톨리핀 유산 연구 재단 「러시아 개혁사 박물관」 전자 도서관, http://museumreforms.ru/node/13693. 한국어 전문 번역: CommuLingo (2026).",
+      "people": [
+        "victor-chernov"
+      ],
+      "terms": [
+        "socialist-revolutionary-party-srs",
+        "land-socialization",
+        "narodniks"
+      ],
+      "events": [
+        "revolution-1905"
+      ],
+      "addedAt": "2026-09-30",
+      "aliases": {
+        "ko": [
+          "「사회혁명당 강령」"
+        ],
+        "en": []
+      }
     }
   ],
   "redirects": {

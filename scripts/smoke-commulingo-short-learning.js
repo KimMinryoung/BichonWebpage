@@ -8,7 +8,7 @@ function issues(collections) {
   return out.issues;
 }
 assert.deepEqual(issues(courses), []);
-assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 108);
+assert.equal(courses.flatMap(c => c.chapters).flatMap(c => c.lessons).flatMap(l => l.questions).length, 126);
 assert.equal(courses[0].chapters.length, 9);
 assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.questions).length, 54);
 assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), Array.from({ length: 9 }, (_, i) => i + 1));
@@ -74,4 +74,4 @@ for (const href of ['javascript:alert(1)', 'https://www.marxists.org.evil.exampl
 const out = checks.createCollector();
 checks.checkSource(out, { kind: 'reference', href: '/commulingo/docs/french-revolution-intro', label: { ko: '자료', en: 'Source' }, quote: { ko: '요약', en: 'Paraphrase' } }, 'not-a-quotation');
 assert(out.issues.some(i => i.rule === 'source-shape'));
-console.log('Short learning: 108 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');
+console.log('Short learning: 126 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');

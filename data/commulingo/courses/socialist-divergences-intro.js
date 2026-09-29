@@ -13,20 +13,20 @@ module.exports = {
     "en": "Socialist Debates"
   },
   "badge": {
-    "ko": "짧은 학습 · 9편",
-    "en": "9 short lessons"
+    "ko": "짧은 학습 · 12편",
+    "en": "12 short lessons"
   },
   "description": {
-    "ko": "오언과 국제노동자협회에서 코민테른 21개 조건까지, 사회주의자들이 변화의 주체·국가·강령·개혁·민족·전쟁·민주주의·당을 두고 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
-    "en": "From Owen and the International Workingmen’s Association to the Comintern’s Twenty-One Conditions, compare where socialists divided over agency, the state, programmes, reform, the national question, war, democracy, and the party, using the participants’ own writings. Each lesson has a concept brief, six questions, and feedback."
+    "ko": "오언과 국제노동자협회에서 1920년 좌익 공산주의 논쟁까지, 사회주의자들이 변화의 주체·국가·강령·개혁·혁명의 성격·토지·민족·전쟁·민주주의·당과 대중 조직을 두고 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
+    "en": "From Owen and the International Workingmen’s Association to the Left communist debate of 1920, compare where socialists divided over agency, the state, programmes, reform, the character of the revolution, the land, the national question, war, democracy, and the party and mass organisations, using the participants’ own writings. Each lesson has a concept brief, six questions, and feedback."
   },
   "editorial": {
     "authoredAt": "2026-09-13",
-    "revision": 3,
+    "revision": 4,
     "interpretation": "Comparisons of the specified writings, not whole-career classifications",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
     "sourceNotesFile": "data/commulingo/docs/socialist-divergences-intro.html",
-    "revisedAt": "2026-09-27"
+    "revisedAt": "2026-09-30"
   },
   "chapters": [
     {
@@ -2437,9 +2437,979 @@ module.exports = {
       ]
     },
     {
-      "id": "socialist-divergences-intro-ch08",
+      "id": "socialist-divergences-intro-ch10",
       "volumeNumber": 12,
       "chapterNumber": 6,
+      "title": {
+        "ko": "1905년 혁명에서 노동자 정당은 권력을 잡아야 할까?",
+        "en": "Should the workers' party take power in the 1905 revolution?"
+      },
+      "sourceUrl": "https://www.marxists.org/archive/lenin/works/1905/tactics/index.htm",
+      "summary": {
+        "ko": "약 12분 · 1905년 러시아 사회민주노동당 멘셰비키 협의회의 임시정부 결의, 레닌의 『민주주의 혁명에서 사회민주주의의 두 가지 전술』, 트로츠키의 『결산과 전망』(1906)을 읽고, 모두가 부르주아 혁명이라고 본 혁명에서 노동자 정당이 정부에 들어갈지, 혁명이 어디까지 갈 수 있는지를 두고 어디서 갈렸는지 확인합니다.",
+        "en": "About 12 minutes · Read the Menshevik conference resolution of 1905 on a provisional government, Lenin's Two Tactics of Social-Democracy in the Democratic Revolution and Trotsky's Results and Prospects (1906), and see where they divided over whether the workers' party should enter the government in a revolution all of them called bourgeois, and how far that revolution could go."
+      },
+      "learningFocus": {
+        "ko": "멘셰비키가 혁명이나 봉기 자체에 반대했다고 읽기 쉽습니다. 협의회 결의는 봉기를 이끌고 부분적 권력 장악과 「혁명 코뮌」까지 허용했으며, 갈린 곳은 임시정부에 들어갈지였습니다. 레닌의 「노농 민주 독재」를 곧바로 사회주의 혁명으로 읽는 것도 흔한 오독입니다. 레닌은 그 승리가 부르주아 사회경제 관계를 곧바로 넘지 않는다고 했습니다. 트로츠키가 농민을 정부에서 배제하자고 했다는 읽기도 틀립니다. 그는 농민 지도자가 정부에 들어가야 하지만 주도권은 노동계급에 있어야 한다고 했습니다.",
+        "en": "It is easy to read the Mensheviks as opposing the revolution or the insurrection itself. Their conference resolution set out to lead the insurrection and even allowed partial seizures of power and \"revolutionary communes\"; the split was over entering the provisional government. Another common misreading takes Lenin's \"democratic dictatorship of the proletariat and the peasantry\" as a socialist revolution straight away; Lenin said such a victory would not directly overstep bourgeois social and economic relations. Nor did Trotsky want peasants kept out of government: he said peasant leaders should enter it, but the hegemony must belong to the working class."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 한 당의 두 대회",
+            "items": [
+              "1905년 1월 「피의 일요일」 뒤 러시아 전역에 파업과 봉기가 번지자, 러시아 사회민주노동당의 두 분파는 그해 봄 따로 모였습니다. 볼셰비키는 런던에서 제3차 당대회를, 멘셰비키는 제네바에서 협의회를 열었습니다.",
+              "두 분파 모두 러시아 혁명을 부르주아 혁명으로 보았습니다. 차리즘을 무너뜨리고 민주공화국을 세우는 혁명이지 곧바로 자본주의를 없애는 혁명은 아니라는 것입니다. 갈린 곳은 봉기가 이겨 임시혁명정부가 서면 노동자 정당이 거기 들어갈지, 그 혁명을 누가 이끌지였습니다.",
+              "레닌은 1905년 6~7월 두 대회의 결의를 조목조목 대조한 『두 가지 전술』을 썼습니다. 멘셰비키 협의회 결의의 문장은 이 책에 인용된 형태로 널리 읽혔습니다."
+            ]
+          },
+          {
+            "title": "멘셰비키 협의회 결의: 극단적 혁명 야당",
+            "items": [
+              "결의는 차리즘에 대한 결정적 승리가 승리한 인민 봉기에서 나오는 임시정부로도, 인민의 혁명적 압력 아래 제헌의회 소집을 결정하는 어떤 대의 기관의 발의로도 표시될 수 있다고 했습니다.",
+              "그 뒤의 새 국면은 정치적으로 해방된 부르주아 사회의 여러 요소가 자기 이해와 권력을 두고 서로 싸우는 과정이며, 이 역사적으로 부르주아적인 혁명의 과제를 떠맡는 임시정부는 혁명을 앞으로 밀 뿐 아니라 자본주의 체제의 기초를 위협하는 요인과도 싸워야 한다고 보았습니다.",
+              "그래서 사회민주당은 부르주아 정당과의 투쟁에서 손이 묶이지 않고 부르주아 민주주의에 흡수되지 않도록, 임시정부에서 권력을 잡거나 나누는 것을 목표로 삼지 말고 「극단적 혁명 야당」으로 남아야 한다고 결론지었습니다.",
+              "예외도 적었습니다. 봉기를 넓히고 정부를 교란하려는 목적의 부분적·일시적 권력 장악과 도시·지역의 「혁명 코뮌」은 배제하지 않았고, 혁명이 서유럽 선진국으로 번지는 경우에만 스스로 권력을 잡아 되도록 오래 쥐려 해야 한다고 했습니다."
+            ]
+          },
+          {
+            "title": "레닌: 노동자와 농민의 혁명적 민주 독재",
+            "items": [
+              "레닌은 부르주아 혁명이 부르주아지에게만 이로운 혁명이라는 생각이 멘셰비키의 오류라고 했습니다. 부르주아 혁명은 자본주의 사회경제 체제의 한계를 넘지 않는 혁명이지만, 대자본가와 「개명한」 지주에게 유리한 형태로도, 농민과 노동자에게 유리한 형태로도 일어날 수 있다는 것입니다.",
+              "차리즘에 대한 결정적 승리는 곧 「프롤레타리아트와 농민의 혁명적 민주 독재」이며, 그 승리는 부르주아 혁명을 아직 사회주의 혁명으로 바꾸지 않는다고 했습니다. 다만 그 승리가 유럽을 일깨우고, 부르주아지를 벗어던진 유럽 사회주의 프롤레타리아트가 러시아의 사회주의 혁명을 도울 것이라고 보았습니다.",
+              "「독재에는 하나의 의지가 필요하다」는 반론에는, 전제정·농노제·특권이라는 과거와 싸우는 데서는 노동자와 농민의 이해가 같아 하나의 의지가 가능하지만, 사적 소유와 임금노동에 맞선 사회주의 투쟁에서는 불가능하다고 답했습니다.",
+              "1917년 4월 「전술에 관한 편지」에서 레닌은 이 공식이 노동자·병사 대표 소비에트라는 뜻밖의 형태로 이미 실현되었으니 낡았다고 쓰고, 이제는 그 안의 프롤레타리아적 요소와 소부르주아적 요소를 가르는 것이 과제라고 했습니다."
+            ]
+          },
+          {
+            "title": "트로츠키: 노동자 정부와 영구혁명",
+            "items": [
+              "트로츠키는 1905년 혁명 직후 쓴 『결산과 전망』에서, 노동자가 권력을 잡는 시점은 생산력 수준이 아니라 계급투쟁의 관계와 국제 정세에 달렸으므로 경제적으로 뒤진 나라에서 선진국보다 먼저 올 수 있다고 했습니다. 1871년 소부르주아적인 파리를 예로 들었습니다.",
+              "농민·도시 소부르주아·지식인의 영향력 있는 지도자는 정부에 들어갈 수 있고 들어가야 하지만, 문제는 누가 정부 정책의 내용을 정하고 확고한 다수를 이루느냐이며, 주도권은 노동계급에 있어야 한다고 했습니다.",
+              "노동자 대표가 인질이 아니라 주도 세력으로 들어가면 최소 강령과 최대 강령의 경계가 무너진다고 했습니다. 8시간 노동제는 자본주의와 모순되지 않지만, 혁명기에 도입하면 자본가의 직장 폐쇄에 부딪히고 노동자 정부는 공장을 넘겨받는 집산주의 조치로 나아갈 수밖에 없다는 것입니다.",
+              "봉건제 폐지와 누진 소득세는 농민 대다수가 지지하겠지만, 농업 노동자 보호와 집산주의·국제주의 정책은 농민의 반발에 부딪힐 것이며, 유럽 프롤레타리아트의 직접적 국가 지원 없이는 러시아 노동계급이 권력을 지켜 지속적 사회주의 독재로 바꿀 수 없다고 했습니다. 그는 1919년 재간 서문에서 이 입장을 「영구혁명」이라 부르면서, 두 분파의 차이를 분열을 정당화할 만큼 깊지 않다고 본 것은 자신의 잘못이었다고 적었습니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "레닌, 『민주주의 혁명에서 사회민주주의의 두 가지 전술』(1905년 6~7월), 제3·5·6·10장. 멘셰비키 협의회 결의의 문장은 레닌이 이 책에 인용한 대목입니다.",
+              "트로츠키, 『결산과 전망』(1906), 「혁명과 프롤레타리아트」·「권력을 잡은 프롤레타리아트와 농민」·「프롤레타리아 체제」·「러시아의 노동자 정부와 사회주의」 장과 1919년 재간 서문.",
+              "레닌, 「전술에 관한 편지」(1917년 4월), 첫째 편지.",
+              "marxists.org의 영어 번역을 참고한 한국어 요약이며, 러시아어 원문과 문장별로 대조하지는 않았습니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: two meetings of one party",
+            "items": [
+              "After Bloody Sunday in January 1905, as strikes and risings spread across Russia, the two factions of the Russian Social-Democratic Labour Party met separately that spring: the Bolsheviks at a Third Congress in London, the Mensheviks at a conference in Geneva.",
+              "Both factions held that the Russian revolution was a bourgeois revolution: one that would overthrow tsarism and establish a democratic republic, not one that would abolish capitalism at once. They divided over whether the workers' party should enter a provisional revolutionary government if the insurrection won, and over who would lead the revolution.",
+              "In June and July 1905 Lenin wrote Two Tactics, comparing the two meetings' resolutions clause by clause. The wording of the Menshevik resolution became widely known in the form quoted there."
+            ]
+          },
+          {
+            "title": "The Menshevik resolution: extreme revolutionary opposition",
+            "items": [
+              "The resolution said a decisive victory over tsarism might be marked either by a provisional government emerging from a victorious popular insurrection, or by the revolutionary initiative of a representative institution that, under the direct revolutionary pressure of the people, decides to set up a constituent assembly.",
+              "The new phase that followed would be a struggle among the elements of a politically emancipated bourgeois society for their interests and for power, and a provisional government undertaking the tasks of this revolution, bourgeois in its historical nature, would have not only to advance revolutionary development but also to combat factors threatening the foundations of the capitalist system.",
+              "So that Social-Democracy would not have its hands tied in the struggle against the inconsistent bourgeois parties or be merged in bourgeois democracy, it concluded that the party must not set itself the aim of seizing or sharing power in the provisional government but must remain \"the party of extreme revolutionary opposition\".",
+              "It also named exceptions. It did not exclude a partial and episodic seizure of power and \"revolutionary communes\" in a city or district, solely to spread the insurrection and disrupt the government; and only if the revolution spread to the advanced countries of Western Europe should the party seek to seize power and hold it as long as possible."
+            ]
+          },
+          {
+            "title": "Lenin: the revolutionary-democratic dictatorship of the proletariat and the peasantry",
+            "items": [
+              "Lenin called it the Mensheviks' error to think a bourgeois revolution could benefit only the bourgeoisie. A bourgeois revolution does not go beyond the limits of the capitalist social and economic system, he wrote, but it can take a form advantageous mainly to the big capitalist and the \"enlightened\" landlord, or a form advantageous to the peasant and the worker.",
+              "A decisive victory over tsarism is the \"revolutionary-democratic dictatorship of the proletariat and the peasantry\", and such a victory will not yet turn the bourgeois revolution into a socialist one. But it would rouse Europe, and the socialist proletariat of Europe, having thrown off the bourgeoisie, would in turn help Russia to accomplish the socialist revolution.",
+              "To the objection that dictatorship requires a \"single will\", he answered that in the struggle against the past of autocracy, serfdom and privilege the interests of workers and peasants coincide and a single will is possible, but in the struggle for socialism against private property and wage labour it is not.",
+              "In his April 1917 Letters on Tactics Lenin wrote that the formula was already antiquated, having been realised in an unexpected form in the Soviet of Workers' and Soldiers' Deputies, and that the task now was to split the proletarian from the petty-bourgeois elements within it."
+            ]
+          },
+          {
+            "title": "Trotsky: a workers' government and permanent revolution",
+            "items": [
+              "In Results and Prospects, written just after 1905, Trotsky argued that when power passes to the workers depends not on the level of the productive forces but on class relations and the international situation, so workers could come to power in a backward country sooner than in an advanced one. He cited petty-bourgeois Paris in 1871.",
+              "Influential leaders of the peasantry, the urban petty bourgeoisie and the intelligentsia can and should enter the government, he wrote; the question is who determines the content of its policy and forms a solid majority within it, and the hegemony must belong to the working class.",
+              "Once workers' representatives enter the government as the leading force rather than as hostages, he argued, the line between minimum and maximum programme collapses. The eight-hour day does not contradict capitalist relations, but introduced in a revolution it would meet lockouts, and a workers' government would have to go over to collectivist measures by taking over the factories.",
+              "Abolition of feudalism and a progressive income tax would win most peasants, but protection of agricultural labourers and a collectivist and internationalist policy would meet peasant opposition, and without the direct state support of the European proletariat Russia's working class could not stay in power and turn its temporary rule into a lasting socialist dictatorship. In the 1919 preface he called this position \"permanent revolution\" and wrote that he had erred in judging the factions' differences too shallow to justify a split."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Lenin, Two Tactics of Social-Democracy in the Democratic Revolution (June to July 1905), chapters 3, 5, 6 and 10. The Menshevik resolution is cited as quoted there.",
+              "Trotsky, Results and Prospects (1906): the chapters \"Revolution and the Proletariat\", \"The Proletariat in Power and the Peasantry\", \"The Proletarian Regime\" and \"A Workers' Government in Russia and Socialism\", and the 1919 preface.",
+              "Lenin, Letters on Tactics (April 1917), first letter.",
+              "Korean summaries follow the English translations at marxists.org and have not been checked sentence by sentence against the Russian."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "극단적 혁명 야당",
+            "text": "멘셰비키 결의는 부르주아 혁명의 정부에 들어가면 손이 묶인다며 정부 밖에 머물자고 했습니다."
+          },
+          {
+            "title": "노농 민주 독재",
+            "text": "레닌은 노동자와 농민이 함께 차리즘을 끝까지 무너뜨리되 부르주아 관계는 곧바로 넘지 않는다고 했습니다."
+          },
+          {
+            "title": "노동자 정부의 논리",
+            "text": "트로츠키는 노동자가 주도하는 정부는 최소 강령에 머물 수 없어 집산주의로 나아간다고 했습니다."
+          },
+          {
+            "title": "유럽 혁명이라는 조건",
+            "text": "세 입장 모두 러시아 혁명의 운명을 서유럽 혁명과 이었지만, 그 무게는 서로 달랐습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Extreme revolutionary opposition",
+            "text": "The Menshevik resolution said entering the government of a bourgeois revolution would tie the party's hands, so it should stay outside."
+          },
+          {
+            "title": "Democratic dictatorship",
+            "text": "Lenin wanted workers and peasants to destroy tsarism thoroughly together without directly overstepping bourgeois relations."
+          },
+          {
+            "title": "Logic of a workers' government",
+            "text": "Trotsky held that a workers-led government could not stop at the minimum programme and would move to collectivism."
+          },
+          {
+            "title": "European revolution as condition",
+            "text": "All three tied the fate of the Russian revolution to revolution in the West, but gave it different weight."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "flow",
+        "ko": {
+          "title": "1905년의 논쟁에서 1917년의 수정까지",
+          "steps": [
+            {
+              "label": "1905년 봄 · 두 대회",
+              "note": "런던의 볼셰비키 제3차 당대회와 제네바의 멘셰비키 협의회가 임시정부 문제에 서로 다른 결의를 냅니다."
+            },
+            {
+              "label": "1905년 6~7월 · 『두 가지 전술』",
+              "note": "레닌이 두 결의를 대조하며 노동자와 농민의 혁명적 민주 독재를 내세웁니다."
+            },
+            {
+              "label": "1905년 10~12월 · 총파업과 소비에트",
+              "note": "페테르부르크 노동자 대표 소비에트가 생기고, 12월 「재무 선언」 뒤 대표들이 체포됩니다."
+            },
+            {
+              "label": "1906년 · 『결산과 전망』",
+              "note": "트로츠키가 노동자 정부가 최소 강령을 넘어 유럽 혁명에 기댈 수밖에 없다고 씁니다."
+            },
+            {
+              "label": "1917년 4월 · 「전술에 관한 편지」",
+              "note": "레닌이 옛 공식은 소비에트로 실현되어 낡았다고 쓰고, 혁명의 둘째 단계를 준비하자고 합니다."
+            }
+          ]
+        },
+        "en": {
+          "title": "From the 1905 debate to the 1917 revision",
+          "steps": [
+            {
+              "label": "Spring 1905 · Two meetings",
+              "note": "The Bolshevik Third Congress in London and the Menshevik conference in Geneva pass rival resolutions on a provisional government."
+            },
+            {
+              "label": "June to July 1905 · Two Tactics",
+              "note": "Lenin compares the resolutions and puts forward the revolutionary-democratic dictatorship of workers and peasants."
+            },
+            {
+              "label": "October to December 1905 · General strike and soviet",
+              "note": "The St Petersburg Soviet of Workers' Deputies forms; after its December Financial Manifesto its deputies are arrested."
+            },
+            {
+              "label": "1906 · Results and Prospects",
+              "note": "Trotsky writes that a workers' government must go beyond the minimum programme and rely on European revolution."
+            },
+            {
+              "label": "April 1917 · Letters on Tactics",
+              "note": "Lenin calls the old formula antiquated, realised in the soviets, and calls for preparing the second stage of the revolution."
+            }
+          ]
+        }
+      },
+      "lessons": [
+        {
+          "id": "socialist-divergences-intro-ch10-basic",
+          "level": "basic",
+          "title": {
+            "ko": "1905년 혁명에서 노동자 정당은 권력을 잡아야 할까?",
+            "en": "Should the workers' party take power in the 1905 revolution?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1905년 멘셰비키 협의회 결의는 왜 사회민주당이 임시정부에서 권력을 잡거나 나누는 것을 목표로 삼지 말아야 한다고 했을까요?",
+                "en": "Why did the 1905 Menshevik conference resolution say Social-Democracy must not aim to seize or share power in the provisional government?"
+              },
+              "choices": {
+                "ko": [
+                  "부르주아적 혁명의 임시정부는 자본주의의 기초를 위협하는 요인과도 싸워야 하므로, 거기 들어가면 부르주아 정당과의 투쟁에서 손이 묶이고 부르주아 민주주의에 흡수된다고 보았습니다.",
+                  "인민 봉기에는 원칙적으로 반대하며, 차르가 소집할 대의 기관이 제헌의회를 결정하는 합법적 길만이 혁명을 승리로 이끈다고 보았습니다.",
+                  "러시아는 곧바로 사회주의 혁명으로 나아갈 수 있으므로, 부르주아 정당과 섞인 임시정부 대신 노동자만의 정부를 세워야 한다고 보았습니다."
+                ],
+                "en": [
+                  "A provisional government of a bourgeois revolution would also have to combat factors threatening capitalism's foundations, so entering it would tie the party's hands against the bourgeois parties and merge it in bourgeois democracy.",
+                  "It opposed popular insurrection in principle and held that only the lawful path, a representative body convened by the tsar deciding on a constituent assembly, could bring the revolution to victory.",
+                  "Russia could go straight on to a socialist revolution, so instead of a provisional government mixed with bourgeois parties the workers should set up a government of their own."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "결의는 새 국면을 부르주아 사회 요소들의 상호 투쟁으로 보고, 그 임시정부가 자본주의 체제의 기초를 위협하는 요인과도 싸워야 한다고 했습니다. 그래서 정부 밖의 극단적 혁명 야당을 택했습니다.",
+                  "결의는 임시정부가 「승리한 인민 봉기에서 나온다」고 적었고, 레닌도 멘셰비키가 봉기를 이끄는 것을 목표로 삼았다고 확인합니다. 대의 기관의 결정은 결정적 승리의 한 형태로 나란히 적었을 뿐입니다.",
+                  "결의는 러시아 혁명을 역사적으로 부르주아적인 혁명으로 규정했습니다. 권력 장악은 혁명이 서유럽으로 번지는 경우에만 목표로 삼을 수 있다고 했습니다."
+                ],
+                "en": [
+                  "The resolution saw the new phase as a struggle among the elements of bourgeois society and said the provisional government would also have to combat factors threatening the foundations of capitalism. Hence extreme revolutionary opposition outside the government.",
+                  "The resolution said the provisional government \"will emerge from a victorious popular insurrection\", and Lenin confirms the Mensheviks aimed to lead the insurrection. A representative body's decision was listed alongside only as another form a decisive victory might take.",
+                  "The resolution defined the Russian revolution as bourgeois in its historical nature. It allowed the aim of seizing power only if the revolution spread to Western Europe."
+                ]
+              },
+              "explanation": {
+                "ko": "멘셰비키도 레닌도 러시아 혁명이 부르주아 혁명이라는 데서 출발했습니다. 결의는 그 전제에서 한 걸음 더 나아가, 차리즘이 무너진 뒤의 국면은 정치적으로 해방된 부르주아 사회의 여러 요소가 자기 이해와 권력을 놓고 다투는 과정이라고 보았습니다. 그런 혁명의 과제를 떠맡는 임시정부는 혁명을 밀고 나가는 동시에 자본주의 체제의 기초를 위협하는 요인과도 싸워야 합니다. 노동자 정당이 거기 들어가면 자기 계급의 요구를 스스로 누르는 자리에 서게 된다는 것이 결의의 논리였습니다. 그래서 결의는 사회민주당이 부르주아 정당의 불철저함과 싸울 손이 묶이지 않도록, 혁명 내내 들어서는 모든 정부에 대해 극단적 혁명 야당으로 남아야 한다고 결론지었습니다. 레닌은 바로 이 결론이 봉기를 이끌자는 결의의 앞부분과 모순된다고 비판했습니다.",
+                "en": "Both the Mensheviks and Lenin started from the premise that the Russian revolution was bourgeois. The resolution took a further step: after tsarism's fall, the new phase would be a struggle among the elements of a politically emancipated bourgeois society for their interests and for power. A provisional government undertaking such a revolution's tasks would have to push the revolution forward while also combating factors that threatened the foundations of the capitalist system. A workers' party inside it would find itself restraining its own class's demands; that was the resolution's logic. It therefore concluded that Social-Democracy, so as not to have its hands tied in fighting the inconsistency of the bourgeois parties, must remain the party of extreme revolutionary opposition to every government throughout the revolution. Lenin attacked precisely this conclusion as contradicting the resolution's own aim of leading the insurrection."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1905/tactics/ch05.htm",
+                "label": {
+                  "ko": "레닌, 『두 가지 전술』 제4·5장에 인용된 멘셰비키 협의회 결의 (1905)",
+                  "en": "Menshevik conference resolution as quoted in Lenin, Two Tactics, chapters 4 and 5 (1905)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "같은 멘셰비키 결의는 권력 장악을 어떤 경우에 예외로 허용했을까요?",
+                "en": "In which cases did the same Menshevik resolution allow an exception to the rule against taking power?"
+              },
+              "choices": {
+                "ko": [
+                  "봉기를 넓히고 정부를 교란하려는 부분적·일시적 권력 장악과 지역의 「혁명 코뮌」, 그리고 혁명이 서유럽 선진국으로 번지는 경우였습니다.",
+                  "제헌의회 선거에서 사회민주당이 다수를 얻어 합법적으로 정부를 구성할 권리를 얻는 경우와, 자유주의자가 참여를 요청하는 경우였습니다.",
+                  "자유주의 반대파가 먼저 정부를 세운 경우에 한해, 개혁을 감시할 장관 몇 자리를 받아 정부 안에서 극단적 야당 역할을 하는 경우였습니다."
+                ],
+                "en": [
+                  "A partial and episodic seizure of power and local \"revolutionary communes\" to spread the insurrection and disrupt the government, and the case of the revolution spreading to the advanced countries of Western Europe.",
+                  "The case of Social-Democracy winning a majority in the constituent assembly elections and so gaining the lawful right to form a government, and the case of the liberal parties formally inviting it into a coalition cabinet.",
+                  "Only where the liberal opposition had formed a government first, taking a few ministries to supervise reforms and playing the extreme opposition from inside the government."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "결의는 이 전술이 도시·지역에서의 부분적·일시적 권력 장악과 혁명 코뮌을 배제하지 않는다고 하고, 혁명이 서유럽으로 번질 때만 스스로 권력을 잡아 되도록 오래 쥐라고 했습니다.",
+                  "결의에 선거 다수라는 조건은 없습니다. 예외는 봉기를 돕는 일시적 장악과 서유럽 혁명이라는 국제적 조건 두 가지였습니다.",
+                  "결의가 말한 극단적 혁명 야당은 정부 안이 아니라 밖의 자리입니다. 혁명 중에 들어서는 모든 정부에 대해 야당으로 남는다는 것이 원칙이었습니다."
+                ],
+                "en": [
+                  "The resolution said these tactics did not exclude a partial and episodic seizure of power and revolutionary communes in a city or district, and only if the revolution spread to Western Europe should the party seize power and hold it as long as possible.",
+                  "The resolution sets no electoral condition. The exceptions were temporary seizures that helped the insurrection and the international condition of revolution in Western Europe.",
+                  "The extreme revolutionary opposition the resolution meant was a place outside the government, not inside it. The principle was to remain in opposition to every government that came and went during the revolution."
+                ]
+              },
+              "explanation": {
+                "ko": "멘셰비키 결의를 권력에 대한 단순한 거부로 읽으면 두 예외를 놓칩니다. 첫째, 결의는 한 도시나 지역에서 봉기를 넓히고 정부를 교란하려는 목적이라면 부분적·일시적 권력 장악과 「혁명 코뮌」 수립은 배제하지 않는다고 했습니다. 레닌은 이 단서를 두고 멘셰비키가 「아래로부터만」이라던 마르토프의 논리를 버리고 위로부터의 행동도 원칙적으로 인정한 셈이라고 지적했습니다. 둘째, 결의는 혁명이 사회주의의 조건이 어느 정도 성숙한 서유럽 선진국으로 번질 때에만 러시아 혁명의 좁은 역사적 범위가 넓어져 사회주의 개혁의 길이 열린다며, 그 경우에는 스스로 권력을 잡아 되도록 오래 쥐라고 했습니다. 러시아의 조건만으로는 노동자 정당이 권력을 잡을 때가 아니라는 판단과, 국제 혁명이라는 조건이 한 문장 안에 함께 있었습니다.",
+                "en": "Reading the Menshevik resolution as a simple refusal of power misses its two exceptions. First, it said it did not exclude a partial and episodic seizure of power and the establishment of \"revolutionary communes\" in a city or district, solely to spread the insurrection and disrupt the government. Lenin remarked that this reservation meant the Mensheviks had abandoned Martov's \"only from below\" and accepted action from above in principle. Second, it said that only if the revolution spread to the advanced countries of Western Europe, where conditions for socialism had reached a certain maturity, would the limited historical scope of the Russian revolution widen and the path of socialist reforms open, and in that event the party should seize power and hold it as long as possible. The judgement that Russian conditions alone did not make it the workers' party's time to rule sat in the same sentence as the condition of international revolution."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1905/tactics/ch10.htm",
+                "label": {
+                  "ko": "레닌, 『두 가지 전술』 제10장에 인용된 멘셰비키 협의회 결의 (1905)",
+                  "en": "Menshevik conference resolution as quoted in Lenin, Two Tactics, chapter 10 (1905)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 『두 가지 전술』에서 러시아 혁명이 부르주아 혁명이라는 데 동의하면서도, 왜 프롤레타리아트가 그 혁명에 큰 이해를 가진다고 했을까요?",
+                "en": "In Two Tactics, why did Lenin, while agreeing that the Russian revolution was bourgeois, say the proletariat had an enormous interest in it?"
+              },
+              "choices": {
+                "ko": [
+                  "부르주아 혁명은 자본주의의 한계를 넘지 않지만, 대자본과 지주에게 유리한 형태로도 노동자와 농민에게 유리한 형태로도 일어날 수 있기 때문이라고 했습니다.",
+                  "부르주아 혁명은 부르주아지에게만 이익이므로, 노동자는 거기서 한 발 떨어져 힘을 아끼다가 그 뒤에 올 사회주의 혁명에서 결정적으로 나서야 하기 때문이라고 했습니다.",
+                  "러시아 혁명은 이미 부르주아 관계를 넘어서고 있으므로, 부르주아 혁명이라는 규정은 외국 독자를 위한 겉옷일 뿐이기 때문이라고 했습니다."
+                ],
+                "en": [
+                  "A bourgeois revolution does not go beyond capitalism's limits, but it can take a form advantageous to big capital and the landlords or one advantageous to workers and peasants.",
+                  "A bourgeois revolution benefits only the bourgeoisie, so the workers should stand a step aside and save their strength in order to act decisively in the socialist revolution that would follow it.",
+                  "The Russian revolution was already overstepping bourgeois relations, so calling it bourgeois was only a cloak for foreign readers."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 민주주의 개혁이 자본주의를 무너뜨리지 않고 오히려 그 빠른 발전의 길을 연다고 인정하면서도, 그 혁명이 어떤 형태로 끝나느냐가 노동자에게 결정적이라고 했습니다.",
+                  "레닌은 부르주아 혁명이 부르주아지에게만 이로울 수 있다는 생각을 신이스크라파의 오해라고 불렀습니다. 그는 노동자가 가장 철저한 승리를 위해 앞장서야 한다고 했습니다.",
+                  "레닌은 오히려 결정적 승리조차 부르주아 혁명을 아직 사회주의 혁명으로 바꾸지 않는다고 강조했습니다. 규정을 겉옷으로 본 적이 없습니다."
+                ],
+                "en": [
+                  "Lenin granted that democratic reforms would not undermine capitalism but clear the ground for its rapid development, and yet held that the form in which the revolution ended was decisive for the workers.",
+                  "Lenin called the idea that a bourgeois revolution can benefit only the bourgeoisie the new-Iskraists' misunderstanding. He said the workers must lead the way to the most thoroughgoing victory.",
+                  "On the contrary, Lenin stressed that even a decisive victory would not yet turn the bourgeois revolution into a socialist one. He never treated the definition as a cloak."
+                ]
+              },
+              "explanation": {
+                "ko": "레닌은 러시아 혁명의 부르주아적 성격을 조금도 의심하지 않았습니다. 정치 체제의 민주적 개혁과 필요한 사회경제 개혁은 자본주의를 무너뜨리지 않고, 오히려 처음으로 넓고 빠른 「유럽식」 자본주의 발전의 토대를 닦아 부르주아지가 계급으로서 지배할 수 있게 한다고 보았습니다. 그런데 그는 여기서 노동자가 물러서야 한다는 결론을 끌어내지 않았습니다. 부르주아 혁명은 자본주의 사회경제 체제의 한계를 넘지 않는 혁명일 뿐, 반드시 부르주아지에게만 이로운 혁명은 아니라는 것입니다. 같은 부르주아 혁명이라도 대자본가·금융 거물·「개명한」 지주에게 유리한 타협으로 끝날 수도 있고, 농민과 노동자에게 유리한 철저한 형태로 끝날 수도 있습니다. 그래서 그는 노동자가 부르주아지의 불철저함을 넘어 혁명을 끝까지 밀어붙일 이해가 가장 크다고 했습니다. 멘셰비키와의 차이는 혁명의 성격이 아니라, 그 혁명 안에서 누가 주도하느냐에 있었습니다.",
+                "en": "Lenin had no doubt about the bourgeois character of the Russian revolution. Democratic reform of the political system and the necessary social and economic reforms would not undermine capitalism; they would for the first time clear the ground for a wide and rapid \"European\" development of capitalism and let the bourgeoisie rule as a class. Yet he did not conclude that the workers should step back. A bourgeois revolution is one that does not go beyond the limits of the capitalist social and economic system; it is not necessarily one that benefits only the bourgeoisie. The same bourgeois revolution could end in a compromise favouring the big capitalist, the financial magnate and the \"enlightened\" landlord, or in a thoroughgoing form favouring the peasant and the worker. That is why he said the workers had the greatest interest in pushing the revolution through, past the bourgeoisie's inconsistency. The difference from the Mensheviks lay not in the revolution's character but in who would lead within it."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1905/tactics/ch06.htm",
+                "label": {
+                  "ko": "레닌, 『민주주의 혁명에서 사회민주주의의 두 가지 전술』 제6장 (1905)",
+                  "en": "Lenin, Two Tactics of Social-Democracy in the Democratic Revolution, chapter 6 (1905)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 「독재에는 하나의 의지가 필요한데 노동자와 소부르주아의 의지는 하나일 수 없다」는 반론에 어떻게 답했을까요?",
+                "en": "How did Lenin answer the objection that dictatorship requires a single will and that workers and the petty bourgeoisie cannot share one?"
+              },
+              "choices": {
+                "ko": [
+                  "전제정·농노제·특권이라는 과거와 싸우는 민주주의 문제에서는 이해가 같아 하나의 의지가 가능하지만, 사적 소유에 맞선 사회주의 투쟁에서는 불가능하다고 했습니다.",
+                  "노동자와 농민은 사회주의에 대해서도 같은 이해를 지니므로, 이 독재가 차리즘을 무너뜨린 뒤 곧바로 생산수단의 사회화까지 함께 수행한다고 했습니다.",
+                  "하나의 의지는 사회민주당만 가질 수 있으므로, 독재는 당이 홀로 행사하고 농민 대표는 정부 밖에서 지지만 보내면 된다고 했습니다."
+                ],
+                "en": [
+                  "On questions of democracy, the struggle against the past of autocracy, serfdom and privilege, their interests coincide and a single will is possible; in the socialist struggle against private property it is not.",
+                  "Workers and peasants share the same interest in socialism too, so after overthrowing tsarism this dictatorship would go straight on to socialise the means of production together.",
+                  "Only Social-Democracy can have a single will, so the party alone would exercise the dictatorship while peasant representatives lent support from outside the government."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 이 독재에 과거와 미래가 있다고 했습니다. 과거와의 투쟁에서는 하나의 의지가 가능하고, 임금노동자가 고용주와 싸우는 미래에는 불가능하다는 것입니다.",
+                  "레닌은 오히려 사회주의 문제에서는 하나의 의지가 불가능하다고 했습니다. 그 길은 전제정에서 공화국이 아니라 소부르주아 민주공화국에서 사회주의로 가는 다음 길이라고 했습니다.",
+                  "레닌의 공식은 이름 그대로 프롤레타리아트와 농민의 독재입니다. 두 계급의 공동 대중적 힘이 반혁명을 압도할 수 있다는 데서 권력 유지의 가능성을 찾았습니다."
+                ],
+                "en": [
+                  "Lenin said this dictatorship has a past and a future. In the struggle against the past a single will is possible; in the future, where the wage worker fights the employer, it is not.",
+                  "On the contrary, Lenin said a single will is impossible on questions of socialism. That road leads not from autocracy to a republic but, next, from a petty-bourgeois democratic republic to socialism.",
+                  "Lenin's formula was, as its name says, a dictatorship of the proletariat and the peasantry. He located the possibility of holding power in the joint mass strength of the two classes outweighing the counter-revolution."
+                ]
+              },
+              "explanation": {
+                "ko": "반론은 신이스크라에서 나왔습니다. 독재는 하나의 의지를 전제하는데 프롤레타리아트와 소부르주아지 사이에 하나의 의지는 있을 수 없다는 것입니다. 레닌은 이것을 추상적인 「형이상학적」 해석이라고 불렀습니다. 한 측면에서는 하나의 의지가 있고 다른 측면에서는 없을 수 있다는 것입니다. 그는 이 독재에 과거와 미래가 있다고 했습니다. 과거는 전제정, 농노제, 군주제, 특권이며, 이와 싸우고 반혁명과 싸우는 데서는 노동자와 농민의 이해가 같아 하나의 의지가 가능합니다. 미래는 사적 소유와 싸우고 임금노동자가 고용주와 싸우는 사회주의 투쟁이며, 거기서는 하나의 의지가 불가능합니다. 그래서 이 독재는 부르주아 사회경제 관계를 곧바로 넘지 않는 민주 혁명의 권력으로 그려졌습니다. 같은 책에서 레닌은 그래서 지금의 「전 민주주의적」 운동 안에서도 프롤레타리아 정당의 완전한 계급적 독자성이 필수라고 했습니다.",
+                "en": "The objection came from the new Iskra: dictatorship presupposes a single will, and there can be no single will of the proletariat and the petty bourgeoisie. Lenin called this an abstract, \"metaphysical\" reading: there can be a single will in one respect and not in another. The dictatorship, he said, has a past and a future. Its past is autocracy, serfdom, monarchy and privilege, and in the struggle against these and against counter-revolution the interests of workers and peasants coincide, so a single will is possible. Its future is the struggle against private property, of the wage worker against the employer, the struggle for socialism, and there a single will is impossible. So the dictatorship was drawn as the power of a democratic revolution that would not directly overstep bourgeois social and economic relations. For the same reason, Lenin wrote in the same book, the complete class independence of the proletarian party within the present \"general democratic\" movement was obligatory."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1905/tactics/ch10.htm",
+                "label": {
+                  "ko": "레닌, 『두 가지 전술』 제10장 「혁명 코뮌과 노동자·농민의 혁명적 민주 독재」 (1905)",
+                  "en": "Lenin, Two Tactics, chapter 10, \"Revolutionary Communes and the Revolutionary-Democratic Dictatorship of the Proletariat and the Peasantry\" (1905)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "트로츠키는 『결산과 전망』에서 8시간 노동제를 예로 들어, 노동자가 주도하는 혁명 정부가 왜 최소 강령에 머물 수 없다고 했을까요?",
+                "en": "In Results and Prospects, how did Trotsky use the eight-hour day to argue that a workers-led revolutionary government could not stop at the minimum programme?"
+              },
+              "choices": {
+                "ko": [
+                  "8시간 노동제 자체는 자본주의와 모순되지 않지만, 혁명기에 도입하면 자본가가 공장을 닫고 노동자 정부는 그 공장을 수용하는 집산주의 조치로 답할 수밖에 없기 때문이라고 했습니다.",
+                  "8시간 노동제는 자본주의와 양립할 수 없는 요구이므로, 노동자 정부는 이를 최소 강령에서 빼고 사회주의 혁명이 끝난 뒤에야 도입해야 하기 때문이라고 했습니다.",
+                  "최소 강령은 혁명 뒤에도 그대로 두고, 공장의 사회화 같은 최대 강령 조치는 서유럽 혁명이 먼저 일어나기를 기다렸다가 제헌의회가 새 헌법으로 따로 정해야 하기 때문이라고 했습니다."
+                ],
+                "en": [
+                  "The eight-hour day does not itself contradict capitalism, but introduced in a revolution it would meet factory closures, and a workers' government could only answer with collectivist measures by taking over the factories.",
+                  "The eight-hour day is incompatible with capitalism, so a workers' government should drop it from the minimum programme and introduce it only after the socialist revolution was complete.",
+                  "The minimum programme would stay as it was after the revolution, and maximum-programme measures such as socialising factories would wait until the Western revolution had come first and then be settled separately by a new constitution."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "트로츠키는 부르주아 정부라면 공장 폐쇄 앞에서 물러서 8시간제를 거둬들이겠지만, 노동자 정부에게는 문을 닫은 공장을 수용해 사회화된 기초 위에서 생산을 조직하는 길 하나뿐이라고 했습니다.",
+                  "트로츠키는 반대로 8시간 노동제가 자본주의 관계와 전혀 모순되지 않아 사회민주당 최소 강령에 들어 있다고 적었습니다. 문제는 혁명기의 계급 저항이었습니다.",
+                  "트로츠키는 노동자 대표가 주도 세력으로 정부에 들어가는 순간 최소·최대 강령의 구분이 원칙상으로도 실천상으로도 의미를 잃는다고 했습니다."
+                ],
+                "en": [
+                  "Trotsky said a bourgeois government would retreat before the closures and drop the eight-hour day, whereas for a workers' government the only way out would be to expropriate the closed factories and organise production in them on a socialised basis.",
+                  "Trotsky said the opposite: the eight-hour day does not contradict capitalist relations at all, which is why it stands in the Social-Democratic minimum programme. The problem was class resistance during a revolution.",
+                  "Trotsky said that the moment workers' representatives entered the government as the leading force, the division between minimum and maximum programme lost all significance, in principle and in practice."
+                ]
+              },
+              "explanation": {
+                "ko": "트로츠키는 최소 강령과 최대 강령의 구분이 권력이 부르주아지에게 있을 때 깊은 의미를 지닌다고 인정했습니다. 부르주아지가 권력을 쥐고 있는 한 사적 소유와 양립할 수 없는 요구는 최소 강령에서 빠지고, 그런 요구는 프롤레타리아 독재를 전제하는 사회주의 혁명의 내용이 됩니다. 그런데 권력이 사회주의 다수를 가진 혁명 정부로 넘어가면 사정이 달라집니다. 8시간 노동제는 자본주의 관계와 모순되지 않지만, 계급 감정이 달아오른 혁명기에 도입하면 자본가는 직장 폐쇄와 공장 문 닫기로 맞설 것입니다. 부르주아 정부라면 여기서 물러서고 노동자를 진압하겠지만, 노동자 정부에게 공장 폐쇄는 노동시간을 늘릴 구실이 될 수 없고, 남은 길은 문을 닫은 공장을 수용해 사회화된 기초 위에서 생산을 조직하는 것뿐입니다. 이렇게 최소 강령에서 출발한 조치가 그 논리에 따라 집산주의 조치로 넘어갑니다. 멘셰비키와 레닌이 권력의 성격을 정하려 한 곳에서, 트로츠키는 권력을 잡은 계급이 놓일 처지에서 출발했습니다.",
+                "en": "Trotsky granted that the division between minimum and maximum programmes has deep significance while power lies with the bourgeoisie: as long as it rules, demands incompatible with private property are driven out of the minimum programme and form the content of a socialist revolution presupposing proletarian dictatorship. But once power passes to a revolutionary government with a socialist majority, things change. The eight-hour day does not contradict capitalist relations, yet introduced in a revolution amid heightened class passions it would meet lockouts and factory closures. A bourgeois government would retreat and suppress the workers; for a workers' government the closures could be no excuse for lengthening the working day, and the only way out would be to expropriate the closed factories and organise production on a socialised basis. So measures that began in the minimum programme pass, by their own logic, into collectivist ones. Where the Mensheviks and Lenin sought to define the character of the power, Trotsky started from the position the class holding power would find itself in."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/trotsky/1931/tpr/rp06.htm",
+                "label": {
+                  "ko": "트로츠키, 『결산과 전망』 「프롤레타리아 체제」 (1906)",
+                  "en": "Trotsky, Results and Prospects, \"The Proletarian Regime\" (1906)"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "트로츠키는 권력을 잡은 러시아 노동계급이 농민과 유럽에 대해 어떤 처지에 놓일 것이라고 보았을까요?",
+                "en": "What did Trotsky expect a Russian working class in power to face with regard to the peasantry and Europe?"
+              },
+              "choices": {
+                "ko": [
+                  "봉건제 폐지는 농민 전체가 지지하겠지만 집산주의·국제주의 정책은 농민의 반발을 부를 것이며, 유럽 프롤레타리아트의 직접적 국가 지원 없이는 권력을 지킬 수 없다고 보았습니다.",
+                  "농민은 사회주의에 이해가 없으므로 정부에 농민 대표를 절대 들여서는 안 되며, 노동계급은 농촌을 돌보지 않고도 러시아 안에서 사회주의를 이룰 수 있다고 보았습니다.",
+                  "농촌 공동체의 균등 이용 원칙이 사회주의의 토대이므로, 노동자 정부가 이에 기대기만 하면 서유럽 혁명을 기다리지 않고도 러시아 농민과 함께 곧바로 사회주의로 갈 수 있다고 보았습니다."
+                ],
+                "en": [
+                  "The whole peasantry would back abolition of feudalism, but a collectivist and internationalist policy would provoke peasant opposition, and without the direct state support of the European proletariat power could not be held.",
+                  "Peasants had no interest in socialism, so peasant representatives must never enter the government, and the working class could build socialism in Russia without attending to the countryside.",
+                  "The village commune's principle of equal use was the basis of socialism, so a workers' government had only to rely on it to go straight on to socialism together with the Russian peasants without waiting for revolution in the West."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "트로츠키는 노동자 정부가 권력을 잡자마자 농촌의 빈농과 부농, 농업 노동자와 농업 부르주아지의 적대에 기대야 할 것이라고 했고, 서유럽 사회주의 혁명이 일시적 지배를 사회주의 독재로 바꾸게 해 줄 것이라고 보았습니다.",
+                  "트로츠키는 농민 지도자가 정부에 들어갈 수 있고 들어가야 한다고 했습니다. 그가 문제 삼은 것은 누가 정부 안에서 확고한 다수와 주도권을 쥐느냐였습니다.",
+                  "농촌 공동체에 사회주의의 토대를 두는 것은 사회혁명당 강령의 관점에 가깝습니다. 트로츠키는 농민의 원시성과 고립이 노동자 정부 정책을 굳히는 데 큰 어려움이 될 것이라고 했습니다."
+                ],
+                "en": [
+                  "Trotsky said a workers' government would from the first have to rely on antagonisms between village poor and village rich, agricultural proletariat and agricultural bourgeoisie, and expected a socialist revolution in the West to let it turn temporary rule into a socialist dictatorship.",
+                  "Trotsky said peasant leaders can and should enter the government. What he questioned was who would hold the solid majority and the hegemony inside it.",
+                  "Grounding socialism in the village commune is closer to the Socialist-Revolutionary programme. Trotsky said the peasantry's primitiveness and isolation would create terrible difficulties for consolidating a workers' government's policy."
+                ]
+              },
+              "explanation": {
+                "ko": "트로츠키는 농민이 노동자 정부의 정책 가운데 무엇을 지지하고 무엇에 맞설지를 나누어 보았습니다. 부담을 짊어진 신분으로서 농민 전체가 봉건제 폐지를 지지하고, 대다수가 누진 소득세도 지지할 것입니다. 그러나 농업 프롤레타리아트를 보호하려는 입법은 다수의 적극적 공감을 얻지 못하고 소수의 적극적 반대에 부딪힙니다. 그러면 노동자 정부는 계급투쟁을 농촌으로 가져가 빈농과 부농의 적대에 기댈 수밖에 없습니다. 그는 노동자 정부 정책의 두 특징인 집산주의와 국제주의가 동맹자들의 반대에 부딪힐 것이며, 정책이 단호할수록 발밑의 땅이 좁고 흔들릴 것이라고 했습니다. 그래서 결론은 유럽이었습니다. 유럽 프롤레타리아트의 직접적 국가 지원 없이는 러시아 노동계급이 권력을 지켜 일시적 지배를 지속적 사회주의 독재로 바꿀 수 없고, 서유럽의 사회주의 혁명은 그것을 가능하게 한다는 것입니다. 멘셰비키 결의도 서유럽 혁명을 예외 조건으로 적었지만, 트로츠키에게 그것은 예외가 아니라 권력 장악 뒤의 필연적 과제였습니다.",
+                "en": "Trotsky sorted what the peasantry would support in a workers' government's policy and what it would resist. As the burden-bearing estate, the whole peasantry would back abolition of feudalism, and most would back a progressive income tax. But legislation to protect the agricultural proletariat would win no active sympathy from the majority and meet the active opposition of a minority. The workers' government would then have to carry the class struggle into the villages and rely on antagonisms between poor and rich peasants. The two main features of its policy, collectivism and internationalism, would meet opposition from its allies, and the more determined the policy, the narrower and shakier the ground beneath it. Hence the conclusion lay in Europe: without the direct state support of the European proletariat, Russia's working class could not stay in power and turn temporary rule into a lasting socialist dictatorship, while a socialist revolution in the West would make that possible. The Menshevik resolution also named revolution in the West, but as an exceptional condition; for Trotsky it was the unavoidable task once power had been taken."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/trotsky/1931/tpr/rp08.htm",
+                "label": {
+                  "ko": "트로츠키, 『결산과 전망』 「프롤레타리아 체제」·「러시아의 노동자 정부와 사회주의」 (1906)",
+                  "en": "Trotsky, Results and Prospects, \"The Proletarian Regime\" and \"A Workers' Government in Russia and Socialism\" (1906)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "socialist-divergences-intro-ch11",
+      "volumeNumber": 12,
+      "chapterNumber": 7,
+      "title": {
+        "ko": "토지는 누구의 것이 되어야 할까?",
+        "en": "Whose should the land be?"
+      },
+      "sourceUrl": "/commulingo/docs/sr-party-programme-1906",
+      "summary": {
+        "ko": "약 12분 · 1906년 1월 사회혁명당 제1차 당대회가 채택한 강령의 계급관과 「토지 사회화」, 레닌이 『두 가지 전술』(1905)에서 사회혁명당을 비판한 대목, 1917년 10월 26일 제2차 소비에트 대회의 토지 법령과 그 안에 들어간 「농민 위임」을 읽고, 사회혁명당과 사회민주당이 노동계급과 토지를 두고 어디서 갈렸는지 확인합니다.",
+        "en": "About 12 minutes · Read the class outlook and the \"socialisation of land\" in the programme adopted by the first congress of the Socialist-Revolutionary Party in January 1906, Lenin's criticism of the Socialist-Revolutionaries in Two Tactics (1905), and the Decree on Land of the Second Congress of Soviets on 26 October 1917 with the \"Peasant Mandate\" it incorporated, and see where Socialist-Revolutionaries and Social-Democrats divided over the working class and the land."
+      },
+      "learningFocus": {
+        "ko": "토지 사회화를 국가가 땅을 사들여 직접 경영하는 국유화로 읽기 쉽습니다. 강령은 토지를 상품 유통에서 빼내 전 인민의 재산으로 하되 공동체에서 중앙까지의 인민 자치 기관이 관리하고, 자기 노동에 따라 균등하게 쓰게 했습니다. 1917년 토지 법령을 볼셰비키가 만든 안으로 읽는 것도 흔한 오해입니다. 법령의 핵심인 농민 위임은 사회혁명당 쪽 신문이 지방 농민 위임을 엮은 것이었고, 레닌은 이를 공개적으로 인정했습니다.",
+        "en": "It is easy to read the socialisation of land as nationalisation, the state buying the land and running it directly. The programme took land out of commodity circulation and made it the property of the whole people, but put it under organs of popular self-government from the commune up to the centre and gave its use on an equal basis according to one's own labour. A common misreading also treats the 1917 Decree on Land as a Bolshevik scheme. Its core, the Peasant Mandate, was compiled from local peasant mandates by a newspaper on the Socialist-Revolutionary side, and Lenin said so openly."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 인민주의에서 사회혁명당으로",
+            "items": [
+              "사회혁명당은 1901~1902년 인민주의 계열 조직들이 합쳐 생겼고, 1905년 말~1906년 초 제1차 당대회에서 강령을 채택했습니다. 지식인·노동자·농민 일부에 기댔고, 1917년 말 제헌의회 선거에서 가장 많은 표를 얻었습니다.",
+              "러시아 사회민주노동당과 사회혁명당은 모두 전제정을 무너뜨리고 민주공화국과 제헌의회를 요구했습니다. 갈린 곳은 누가 사회주의의 주체인가, 농민과 그 공동체를 어떻게 볼 것인가, 토지를 어떻게 나눌 것인가였습니다."
+            ]
+          },
+          {
+            "title": "강령의 계급관과 최소 강령",
+            "items": [
+              "강령은 국제 혁명적 사회주의가 대중 속으로 스며들면서 산업 프롤레타리아트에서 근로 농민에 이르는 근로·피착취 주민의 모든 층이 스스로를 하나의 노동계급으로 의식하게 된다고 했습니다. 사회주의는 프롤레타리아화한 대중과 그렇지 않은 대중 모두의 자립적 창조 능력을 활용해야 한다고 적었습니다.",
+              "변혁의 강령은 노동·소유·경제의 사회화, 사적 소유와 함께 계급 분할 자체를 없애는 것입니다. 그 완전한 실현은 사회혁명당으로 조직된 노동계급의 완전한 승리와, 필요하면 그 일시적 혁명 독재를 전제한다고 했습니다.",
+              "그때까지 요구할 정치 조치로는 20세 이상 모든 시민의 보통·평등·직접·비밀 선거, 지역과 공동체에 넓은 자치를 주는 민주공화국, 민족 사이의 연방적 관계와 무조건적 자결권, 국민투표와 발안, 상비군 폐지와 인민 민병을 들었습니다."
+            ]
+          },
+          {
+            "title": "토지 사회화와 「국가 사회주의」 경계",
+            "items": [
+              "강령은 땅은 누구의 것도 아니며 쓸 권리는 노동만이 준다는 농민의 확신과 공동체적 전통에 기대겠다고 했습니다.",
+              "토지 사회화란 토지를 상품 유통에서 빼내 개인·집단의 사적 소유에서 전 인민의 공유재산으로 바꾸는 것입니다. 관리는 민주적이고 신분 구별 없는 농촌·도시 공동체부터 지역·중앙 기관까지의 인민 자치 기관이 맡고, 이용은 자기 노동을 바탕으로 소비 기준을 보장하는 균등 근로 이용이며, 지대는 특별 과세로 공공 필요에 돌리고, 토지는 보상 없이 넘어갑니다.",
+              "부르주아 국가 안의 사회화 조치에는, 민주화와 세력 관계와 조치의 성격이 노동계급의 관료 의존을 키우지 않도록 보장할 때에만 긍정적 태도를 취한다고 했습니다. 관료의 재정·정치 목적을 위한 「국가 사회주의」는 미봉책이자 독특한 국가자본주의라고 경고했습니다."
+            ]
+          },
+          {
+            "title": "사회민주당의 비판과 1917년 토지 법령",
+            "items": [
+              "레닌은 1905년 『두 가지 전술』에서, 농민 봉기가 완전히 이기고 모든 토지가 농민의 바람대로 재분배되더라도 자본주의는 무너지지 않고 오히려 발전이 빨라져 농민 자신의 계급 분해가 재촉된다고 했습니다. 이를 보지 못한다는 이유로 사회혁명당을 소부르주아지의 무의식적 이데올로그라 불렀습니다.",
+              "1917년 10월 26일 제2차 소비에트 대회의 토지 법령은 지주 토지 소유를 보상 없이 즉시 폐지하고, 지주·황실·수도원·교회 토지를 제헌의회까지 볼로스치 토지위원회와 군 농민 대표 소비에트의 처분에 맡겼습니다. 보통 농민과 보통 카자크의 토지는 몰수하지 않았습니다.",
+              "법령에 넣은 농민 위임은 전러시아 농민 대표 소비에트의 『이즈베스티야』가 지방 농민 위임 242건을 엮어 1917년 8월 19일 실은 것입니다. 토지 사적 소유를 영구히 없애고 매매·임대·저당을 금지하며, 자기 노동으로 경작하는 모든 시민에게 이용권을 주고, 고용 노동을 허용하지 않으며, 노동 기준이나 소비 기준에 따른 균등 이용을 정했습니다.",
+              "레닌은 법령과 위임을 사회혁명당이 썼다는 말에 누가 썼든 무슨 상관이냐며, 민주적 정부로서 동의하지 않더라도 인민 대중의 결정을 무시할 수 없다고 답했습니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "「사회혁명당 강령」(1906), 사이트 참고 문헌. 『러시아 모든 정당 강령 전집』(상트페테르부르크, 1906) 수록본을 러시아어에서 옮겼습니다.",
+              "레닌, 『민주주의 혁명에서 사회민주주의의 두 가지 전술』(1905), 제6장.",
+              "레닌, 제2차 전러시아 소비에트 대회의 토지 보고와 토지 법령(1917년 10월 26일). marxists.org 영어 번역을 참고한 한국어 요약입니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: from Populism to the Socialist-Revolutionary Party",
+            "items": [
+              "The Socialist-Revolutionary Party arose in 1901–1902 from the merger of Populist circles and adopted its programme at its first congress at the turn of 1905–1906. It drew on part of the intelligentsia, workers and peasants, and won the most votes in the Constituent Assembly elections at the end of 1917.",
+              "Both the Russian Social-Democratic Labour Party and the Socialist-Revolutionaries demanded the overthrow of the autocracy, a democratic republic and a constituent assembly. They divided over who the agent of socialism was, how to regard the peasantry and its commune, and how to settle the land."
+            ]
+          },
+          {
+            "title": "The programme's view of class and its minimum demands",
+            "items": [
+              "The programme said that as international revolutionary socialism penetrated the masses, all strata of the labouring and exploited population, from the industrial proletariat to the labouring peasantry, would come to see themselves as one working class. Socialism should use the independent creative capacity of both the proletarianised and the non-proletarianised masses.",
+              "The programme of the transformation is the socialisation of labour, property and the economy, abolishing with private property the division of society into classes itself. Its full realisation presupposes the complete victory of the working class organised in the Socialist-Revolutionary Party and, if need be, its temporary revolutionary dictatorship.",
+              "Among the political measures to be demanded meanwhile were universal, equal, direct and secret suffrage for all citizens from twenty, a democratic republic with wide autonomy for regions and communes, federative relations among nationalities and their unconditional right to self-determination, referendum and initiative, and the replacement of the standing army by a people's militia."
+            ]
+          },
+          {
+            "title": "Socialisation of land and the warning against \"state socialism\"",
+            "items": [
+              "The programme said it would rely on the peasants' conviction that the land belongs to no one and that only labour gives the right to use it, and on their communal traditions.",
+              "Socialisation of land means taking the land out of commodity circulation and turning it from the private property of individuals or groups into the common property of the whole people. It is managed by organs of popular self-government, from democratically organised communes without estate distinctions up to regional and central bodies; its use is equal and labour-based, securing a consumption norm on the basis of one's own labour; rent is turned to public needs by a special tax; and the land passes without compensation.",
+              "Towards measures socialising branches of the economy within the bourgeois state, the party would be positive only insofar as democratisation, the balance of forces and the measures themselves gave enough guarantees against increasing the working class's dependence on the ruling bureaucracy. It warned against \"state socialism\" as partly a system of half-measures and partly a peculiar state capitalism serving the bureaucracy's fiscal and political ends."
+            ]
+          },
+          {
+            "title": "The Social-Democratic critique and the 1917 Decree on Land",
+            "items": [
+              "In Two Tactics (1905) Lenin wrote that even complete success of a peasant insurrection and redistribution of all the land as the peasants wished would not destroy capitalism but speed its development and hasten the class disintegration of the peasantry itself. For failing to see this he called the Socialist-Revolutionaries unconscious ideologists of the petty bourgeoisie.",
+              "The Decree on Land of the Second Congress of Soviets on 26 October 1917 abolished landed proprietorship forthwith without compensation and placed landed, crown, monastery and church estates at the disposal of the volost land committees and the uyezd Soviets of Peasants' Deputies until the Constituent Assembly. The land of ordinary peasants and ordinary Cossacks was not to be confiscated.",
+              "The Peasant Mandate it incorporated had been compiled by the Izvestia of the All-Russian Soviet of Peasants' Deputies from 242 local peasant mandates and published on 19 August 1917. It abolished private ownership of land forever, banned its sale, lease and mortgage, gave the right of use to all citizens cultivating it by their own labour, did not permit hired labour, and set equal tenure by a labour or subsistence standard.",
+              "To the charge that the decree and the Mandate were drawn up by the Socialist-Revolutionaries, Lenin answered: what of it? As a democratic government, he said, it could not ignore the decision of the masses even if it disagreed."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Programme of the Socialist-Revolutionary Party (1906), in the site's reference library, translated from the Russian text in the Complete Collection of Platforms of All Russian Political Parties (St Petersburg, 1906).",
+              "Lenin, Two Tactics of Social-Democracy in the Democratic Revolution (1905), chapter 6.",
+              "Lenin, Report on Land and the Decree on Land at the Second All-Russia Congress of Soviets (26 October 1917). Korean summaries follow the English translation at marxists.org."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "하나의 노동계급",
+            "text": "사회혁명당 강령은 산업 노동자에서 근로 농민까지를 한 노동계급으로 묶었습니다."
+          },
+          {
+            "title": "토지 사회화",
+            "text": "땅을 상품에서 빼내 자치 기관이 관리하고 자기 노동에 따라 균등하게 쓰게 했습니다."
+          },
+          {
+            "title": "재분배의 귀결",
+            "text": "레닌은 균등한 재분배도 자본주의를 없애지 않고 농민의 분해를 재촉한다고 비판했습니다."
+          },
+          {
+            "title": "위임을 받아들인 법령",
+            "text": "1917년 토지 법령은 사회혁명당 쪽이 엮은 농민 위임을 그대로 지침으로 삼았습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "One working class",
+            "text": "The SR programme joined everyone from industrial workers to the labouring peasantry in one working class."
+          },
+          {
+            "title": "Socialisation of land",
+            "text": "Land was taken out of commerce, managed by self-governing bodies and used equally according to one's own labour."
+          },
+          {
+            "title": "What redistribution leads to",
+            "text": "Lenin argued that even equal redistribution would not abolish capitalism but hasten the peasants' differentiation."
+          },
+          {
+            "title": "A decree that took the Mandate",
+            "text": "The 1917 Decree on Land adopted as its guide the Peasant Mandate compiled on the SR side."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "토지와 노동계급을 보는 두 눈",
+          "left": {
+            "heading": "사회혁명당 강령 (1906)",
+            "rows": [
+              "주체: 산업 노동자에서 근로 농민까지 하나의 노동계급",
+              "토지: 상품 유통에서 빼내 전 인민의 공유재산으로",
+              "관리: 공동체에서 중앙까지 인민 자치 기관",
+              "이용: 자기 노동에 따른 균등 근로 이용",
+              "경계: 관료를 살찌우는 「국가 사회주의」"
+            ]
+          },
+          "right": {
+            "heading": "레닌의 시각 (1905~1917)",
+            "rows": [
+              "주체: 농민과 함께 싸우되 계급적으로 독자적인 노동자 정당",
+              "토지 재분배: 자본주의를 없애지 않고 발전을 재촉",
+              "농민: 재분배 뒤 계급 분해가 빨라짐",
+              "1917년: 사회혁명당 쪽이 엮은 농민 위임을 법령에 넣음",
+              "이유: 동의하지 않아도 대중의 결정을 무시할 수 없음"
+            ]
+          }
+        },
+        "en": {
+          "title": "Two ways of seeing the land and the working class",
+          "left": {
+            "heading": "Socialist-Revolutionary programme (1906)",
+            "rows": [
+              "Agent: one working class, from industrial workers to the labouring peasantry",
+              "Land: out of commodity circulation, common property of the whole people",
+              "Management: organs of popular self-government from commune to centre",
+              "Use: equal, labour-based use according to one's own labour",
+              "Warning: a \"state socialism\" that feeds the bureaucracy"
+            ]
+          },
+          "right": {
+            "heading": "Lenin's view (1905 to 1917)",
+            "rows": [
+              "Agent: a class-independent workers' party fighting alongside the peasants",
+              "Land redistribution: speeds capitalism's development rather than abolishing it",
+              "Peasantry: class differentiation hastens after redistribution",
+              "1917: the Peasant Mandate compiled on the SR side goes into the decree",
+              "Reason: the masses' decision cannot be ignored even without agreement"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "socialist-divergences-intro-ch11-basic",
+          "level": "basic",
+          "title": {
+            "ko": "토지는 누구의 것이 되어야 할까?",
+            "en": "Whose should the land be?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1906년 사회혁명당 강령은 사회주의 변혁을 이끌 「노동계급」에 누구를 넣었을까요?",
+                "en": "Whom did the 1906 Socialist-Revolutionary programme include in the \"working class\" that would carry out the socialist transformation?"
+              },
+              "choices": {
+                "ko": [
+                  "산업 프롤레타리아트에서 근로 농민에 이르는 근로·피착취 주민의 모든 층이 스스로를 하나의 노동계급으로 의식하게 된다고 했습니다.",
+                  "생산수단을 갖지 못한 공장 임금노동자만을 노동계급으로 보고, 땅을 가진 농민은 혁명의 일시적 동맹자로만 대우했습니다.",
+                  "농촌 공동체의 농민만이 사회주의의 담당자이며, 도시 공장 노동자는 자본주의가 만든 뿌리 없는 계층이라 변혁에서 제외했습니다."
+                ],
+                "en": [
+                  "It said all strata of the labouring and exploited population, from the industrial proletariat to the labouring peasantry, would come to see themselves as one working class.",
+                  "It counted only factory wage workers without means of production as the working class and treated land-holding peasants merely as temporary allies of the revolution.",
+                  "Only the peasants of the village commune could carry socialism; urban factory workers, a rootless stratum made by capitalism, were left out of the transformation."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "강령은 국제 혁명적 사회주의가 대중에 스며들면서 모든 근로·피착취 층이 계급적 단결에서 해방의 담보를 보게 된다고 하고, 프롤레타리아화한 대중과 그렇지 않은 대중의 창조 능력을 함께 쓰겠다고 했습니다.",
+                  "임금노동자와 농민을 나누는 쪽은 사회민주당의 관점에 가깝습니다. 사회혁명당 강령은 오히려 근로 농민까지를 같은 노동계급 안에 넣었습니다.",
+                  "강령은 산업 프롤레타리아트를 노동계급의 한쪽 끝으로 분명히 넣었고, 임금노동자의 산업 군대가 단결된 사회적 힘으로 묶이는 것을 자본주의 발전의 긍정적 측면으로 들었습니다."
+                ],
+                "en": [
+                  "The programme said that as international revolutionary socialism penetrated the masses, all labouring and exploited strata would see in their class unity the pledge of their liberation, and that it would use the creative capacity of proletarianised and non-proletarianised masses alike.",
+                  "Separating wage workers from peasants is closer to the Social-Democratic view. The SR programme instead put the labouring peasantry inside the same working class.",
+                  "The programme clearly placed the industrial proletariat at one end of the working class and counted the uniting of industrial armies of wage workers into a cohesive social force among the positive sides of capitalist development."
+                ]
+              },
+              "explanation": {
+                "ko": "사회민주당과 사회혁명당의 첫 갈림은 사회주의의 주체를 어디서 찾느냐였습니다. 사회혁명당 강령도 자본주의 발전이 임금노동자의 산업 군대를 단결된 힘으로 묶는다고 인정했습니다. 그러나 강령은 거기서 멈추지 않고, 착취당하는 모든 계급이 의식이 자라면서 투쟁을 하나로 묶게 되며, 산업 프롤레타리아트에서 근로 농민에 이르는 근로·피착취 주민의 모든 층이 스스로를 하나의 노동계급으로 의식하게 된다고 했습니다. 러시아처럼 자본주의의 창조적 측면과 파괴적 측면의 비율이 가장 불리한 나라에서, 근로 농민은 품팔이와 부업에 기대며 프롤레타리아의 극빈 임금에 겨우 맞먹는 소득을 얻는다는 진단도 이 판단을 뒷받침했습니다. 그래서 강령은 사회주의가 프롤레타리아화한 대중과 그렇지 않은 대중 모두의 자립적 창조 능력을 써야 한다고 적었습니다. 계급을 소유 관계로 좁게 긋는 대신, 착취당하고 제 노동으로 사는 사람들 전체를 한 계급으로 보는 관점입니다.",
+                "en": "The first divide between Social-Democrats and Socialist-Revolutionaries was where to find the agent of socialism. The SR programme also granted that capitalist development united industrial armies of wage workers into a cohesive force. But it went further: as consciousness grew, all exploited classes would unite their struggle, and all strata of the labouring and exploited population, from the industrial proletariat to the labouring peasantry, would come to see themselves as one working class. Its diagnosis of Russia supported this: in a country where the ratio of capitalism's creative to destructive sides was least favourable, the labouring peasant had to rely on by-trades and hired work and earned barely the pauper wage of a proletarian. Hence the programme wrote that socialism must use the independent creative capacity of proletarianised and non-proletarianised masses alike. Instead of drawing class narrowly by property relations, it treated everyone exploited and living by their own labour as one class."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "/commulingo/docs/sr-party-programme-1906",
+                "label": {
+                  "ko": "「사회혁명당 강령」 일반 원칙과 러시아의 조건 (1906)",
+                  "en": "Programme of the Socialist-Revolutionary Party, general principles and Russian conditions (1906)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "사회혁명당 강령이 말한 「토지 사회화」의 내용은 무엇이었을까요?",
+                "en": "What did the \"socialisation of land\" in the Socialist-Revolutionary programme mean?"
+              },
+              "choices": {
+                "ko": [
+                  "토지를 상품 유통에서 빼내 보상 없이 전 인민의 공유재산으로 하고, 공동체에서 중앙까지의 자치 기관이 관리하며 자기 노동에 따라 균등하게 쓰게 하는 것이었습니다.",
+                  "국가가 지주에게 시가대로 값을 치르고 토지를 사들여 도마다 큰 국영 농장을 세우고, 농민은 국가가 임금을 주는 그 농장의 노동자로 일하게 하여 생산을 늘리는 것이었습니다.",
+                  "토지를 농민 가구에 사유지로 나눠 주고 자유롭게 사고팔게 하여, 부지런한 농가가 땅을 넓혀 가도록 돕는 것이었습니다."
+                ],
+                "en": [
+                  "Taking land out of commodity circulation as common property of the whole people without compensation, managed by self-governing bodies from commune to centre and used equally by one's own labour.",
+                  "The state buying the land from the landlords at market price to set up large state farms in every province, with the peasants working on them as wage labourers paid by the state so as to raise output.",
+                  "Handing land to peasant households as private plots that could be freely bought and sold, helping industrious households expand their holdings."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "강령은 땅은 누구의 것도 아니며 쓸 권리는 노동만이 준다는 농민의 확신에 기대, 균등 근로 이용과 지대의 공공 환수, 지하자원의 국가 귀속, 무보상 이전을 원칙으로 적었습니다.",
+                  "강령은 토지가 보상 없이 전 인민의 재산이 된다고 했고, 관리를 국가 관료가 아니라 공동체부터 중앙까지의 인민 자치 기관에 맡겼습니다. 이용도 임금노동이 아니라 자기 노동이 기준이었습니다.",
+                  "강령은 바로 토지를 상품 유통에서 빼내는 것을 사회화의 정의로 삼았습니다. 사고팔 수 있는 사유지로 나누는 것은 그 반대입니다."
+                ],
+                "en": [
+                  "Relying on the peasants' conviction that the land belongs to no one and only labour gives the right to use it, the programme set out equal labour-based use, public collection of rent, state ownership of the subsoil and transfer without compensation.",
+                  "The programme said the land would become the property of the whole people without compensation and put it under organs of popular self-government from the commune to the centre, not state officials. Use was to rest on one's own labour, not wage labour.",
+                  "The programme defined socialisation precisely as taking land out of commodity circulation. Dividing it into saleable private plots is the opposite."
+                ]
+              },
+              "explanation": {
+                "ko": "사회화는 국유화와 같은 말이 아니었습니다. 강령의 토지 조항은 먼저 러시아 농민의 공동체적·근로적 관념, 특히 땅은 누구의 것도 아니고 쓸 권리는 오직 노동이 준다는 확신에 기대겠다고 밝힙니다. 그 위에서 토지 사회화를 정의합니다. 토지를 상품 유통에서 빼내 개인이나 집단의 사적 소유에서 전 인민의 공유재산으로 바꾸는 것입니다. 관리는 신분 구별 없이 민주적으로 조직된 농촌·도시 공동체에서 지역·중앙 기관에 이르는 인민 자치 기관이 맡습니다. 이용은 균등 근로 원칙에 따라, 개인이든 조합이든 자기 노동을 들이는 만큼 소비 기준을 보장합니다. 지대는 특별 과세로 공공 필요에 쓰고, 넓은 숲이나 어로처럼 지역을 넘는 용지는 더 넓은 자치 기관이 규율하며, 지하자원은 국가에 남깁니다. 토지는 보상 없이 넘어가고, 손해를 본 사람에게는 새 생활에 적응할 동안의 사회적 부조만 인정했습니다. 국가 관료가 경영하는 국영 농장도, 사고팔 수 있는 사유지 분배도 아니었습니다.",
+                "en": "Socialisation was not another word for nationalisation. The programme's land clause first declares that it will rely on the communal and labour outlook of the Russian peasantry, above all the conviction that the land belongs to no one and only labour gives the right to use it. On that basis it defines socialisation of land: taking land out of commodity circulation and turning it from the private property of individuals or groups into the common property of the whole people. It is managed by organs of popular self-government, from democratically organised rural and urban communes without estate distinctions up to regional and central bodies. Use is equal and labour-based, securing a consumption norm according to the labour one puts in, individually or in partnership. Rent goes to public needs through a special tax, forests and fisheries of more than local importance are regulated by wider bodies, and the subsoil stays with the state. The land passes without compensation, and those who lose by it are granted only public support while they adapt. It was neither state farms run by officials nor a distribution of saleable private plots."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "/commulingo/docs/sr-party-programme-1906#land",
+                "label": {
+                  "ko": "「사회혁명당 강령」 국민경제 영역 제3항 (1906)",
+                  "en": "Programme of the Socialist-Revolutionary Party, economic section, clause III (1906)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "사회혁명당 강령은 부르주아 국가가 경제 부문을 넘겨받는 조치를 어떻게 보았을까요?",
+                "en": "How did the Socialist-Revolutionary programme regard measures by which the bourgeois state took over branches of the economy?"
+              },
+              "choices": {
+                "ko": [
+                  "민주화와 세력 관계와 조치의 성격이 노동계급의 관료 의존을 키우지 않도록 보장할 때에만 긍정적으로 보고, 관료를 위한 「국가 사회주의」는 경계했습니다.",
+                  "국가가 기업을 많이 소유할수록 사회주의에 가까워지므로, 차르 정부가 하는 국영화도 조건 없이 지지해야 한다고 했습니다.",
+                  "부르주아 국가 안의 모든 사회화 조치를 원칙적으로 거부하고, 혁명 뒤 농촌 공동체가 스스로 나설 때까지는 의료나 교통 같은 어떤 공영 사업도 요구하지 않겠다고 했습니다."
+                ],
+                "en": [
+                  "It was positive only where democratisation, the balance of forces and the measures themselves guarded against greater working-class dependence on the bureaucracy, and warned against a bureaucratic \"state socialism\".",
+                  "The more enterprises the state owned the closer to socialism, so even nationalisation by the tsarist government should be supported unconditionally.",
+                  "It rejected in principle every socialising measure within the bourgeois state and would demand no public enterprise, not even in medicine or transport, until the village communes acted for themselves after the revolution."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "강령은 「국가 사회주의」가 한편으로는 노동계급을 잠재우는 미봉책의 체계이고, 다른 한편으로는 생산·상업 부문을 지배 관료의 재정·정치 목적을 위해 모으는 독특한 국가자본주의라고 했습니다.",
+                  "강령은 바로 이런 생각을 경계했습니다. 국가 소유 자체가 아니라 그것이 노동계급을 관료에 더 의존하게 만드는지를 기준으로 삼았습니다.",
+                  "강령은 무상 의료, 상수도·조명·교통의 공영화, 협동조합 신용처럼 지금 요구할 공공 사업을 길게 적었습니다. 사회화를 전면 거부하지 않았습니다."
+                ],
+                "en": [
+                  "The programme called \"state socialism\" partly a system of half-measures to lull the working class and partly a peculiar state capitalism concentrating branches of production and trade in the ruling bureaucracy's hands for its fiscal and political ends.",
+                  "The programme warned against exactly this idea. Its test was not state ownership as such but whether it made the working class more dependent on the bureaucracy.",
+                  "The programme listed many public undertakings to demand now: free medical care, municipal water, lighting and transport, credit for co-operatives. It did not reject socialisation outright."
+                ]
+              },
+              "explanation": {
+                "ko": "강령 제5항은 부르주아 국가의 틀 안에서 이미 국민경제의 이런저런 부문을 사회화하는 조치에 대한 태도를 정합니다. 사회혁명당은 그런 조치를 조건부로 지지했습니다. 정치 체제의 민주화, 사회 세력 사이의 관계, 조치 자체의 성격이 노동계급의 지배 관료 의존을 키우지 않는다는 충분한 보장을 줄 때에만 긍정적 태도를 취한다는 것입니다. 그리고 바로 그 때문에 노동계급에게 「국가 사회주의」를 경계하라고 경고했습니다. 그것은 노동계급을 잠재우는 미봉책의 체계이자, 여러 생산·상업 부문을 관료의 재정·정치 목적을 위해 그 손에 모으는 독특한 국가자본주의라는 것입니다. 앞의 제4항에서는 무상 의료, 상수도·조명·교통의 공영화, 협동조합 신용 같은 공공 사업을 요구했습니다. 공공 소유를 바라면서도 그것을 누가 통제하느냐를 따로 묻는 이 조항은, 강령 전체가 토지를 국가가 아니라 자치 기관에 맡긴 것과 같은 선 위에 있습니다.",
+                "en": "Clause V of the programme sets the attitude to measures that socialise branches of the national economy within the framework of the bourgeois state. The SRs supported them conditionally: the party would take a positive attitude only insofar as democratisation of the political system, the relations among social forces and the character of the measures themselves gave sufficient guarantees against increasing the working class's dependence on the ruling bureaucracy. For that very reason it warned the working class against \"state socialism\", partly a system of half-measures to lull it and partly a peculiar state capitalism concentrating branches of production and trade in the bureaucracy's hands for its fiscal and political ends. Clause IV just before it demanded public undertakings such as free medical care, municipal water, lighting and transport, and co-operative credit. Wanting public ownership while asking separately who controls it runs along the same line as the programme's decision to place land under self-governing bodies rather than the state."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "/commulingo/docs/sr-party-programme-1906#state-socialism",
+                "label": {
+                  "ko": "「사회혁명당 강령」 국민경제 영역 제4·5항 (1906)",
+                  "en": "Programme of the Socialist-Revolutionary Party, economic section, clauses IV and V (1906)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 1905년 『두 가지 전술』에서 사회혁명당의 토지 재분배 전망을 어떻게 비판했을까요?",
+                "en": "How did Lenin criticise the Socialist-Revolutionaries' prospect of land redistribution in Two Tactics (1905)?"
+              },
+              "choices": {
+                "ko": [
+                  "농민 봉기가 완전히 이기고 모든 토지가 농민의 바람대로 재분배되어도 자본주의는 무너지지 않고 발전이 빨라져, 농민 자신의 계급 분해가 재촉될 것이라고 했습니다.",
+                  "토지 재분배는 작은 농가를 늘려 봉건 잔재를 그대로 남기므로, 노동자는 지주 토지의 몰수에 반대하고 지주 농장을 대농장으로 근대화하라고 요구해야 한다고 했습니다.",
+                  "농민 공동체는 그대로 사회주의의 세포가 될 수 있으므로, 사회민주당도 사회혁명당의 토지 강령을 받아들여야 한다고 했습니다."
+                ],
+                "en": [
+                  "Even complete success of a peasant insurrection and redistribution of all the land as the peasants wished would not destroy capitalism but speed it up, hastening the peasantry's own class disintegration.",
+                  "Land redistribution would multiply small holdings and leave feudal survivals intact, so the workers should oppose confiscating the landed estates and demand that the landlords' farms be modernised into large estates.",
+                  "The village commune could become a cell of socialism as it stood, so Social-Democracy too should adopt the Socialist-Revolutionary land programme."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 이 진리를 보지 못하기 때문에 사회혁명당이 소부르주아지의 무의식적 이데올로그가 된다고 했고, 그래서 프롤레타리아 정당의 완전한 계급적 독자성이 필요하다고 했습니다.",
+                  "레닌은 지주 토지를 빼앗는 철저한 민주 혁명을 지지했습니다. 그의 비판은 재분배가 사회주의를 가져온다는 기대를 향했지, 몰수 자체를 향하지 않았습니다.",
+                  "레닌은 오히려 재분배가 자본주의 발전의 추진력이 된다고 보았습니다. 공동체를 사회주의의 세포로 보는 것은 그가 비판한 쪽의 관점입니다."
+                ],
+                "en": [
+                  "Lenin said failure to grasp this truth made the Socialist-Revolutionaries unconscious ideologists of the petty bourgeoisie, and that it followed that the proletarian party needed complete class independence.",
+                  "Lenin supported a thoroughgoing democratic revolution that took the landlords' land. His criticism was aimed at the expectation that redistribution would bring socialism, not at confiscation itself.",
+                  "On the contrary, Lenin saw redistribution as an impetus to capitalist development. Treating the commune as a cell of socialism is the view he was criticising."
+                ]
+              },
+              "explanation": {
+                "ko": "레닌의 비판은 토지를 농민에게 주자는 요구가 아니라, 그것이 무엇을 가져올지에 대한 전망을 겨누었습니다. 그는 러시아에 필요한 민주적 정치 개혁과 사회경제 개혁이 자본주의를 흔들지 않고 오히려 그 넓고 빠른 발전의 토대를 닦는다고 보았습니다. 사회혁명당은 상품 생산과 자본주의 생산의 발전 법칙을 모르기 때문에 이 생각을 이해하지 못한다고 했습니다. 농민 봉기가 완전히 성공하고 모든 토지가 농민의 이익과 바람대로 재분배되더라도, 곧 「흑토 재분배」 같은 것이 이루어지더라도 자본주의는 조금도 파괴되지 않고 오히려 발전에 추진력을 얻어 농민 자신의 계급 분해를 재촉한다는 것입니다. 균등하게 나눈 땅에서도 시장은 부농과 빈농을 가를 것이라는 판단입니다. 레닌은 이것을 이론만이 아니라 실천 정치의 문제로 보았습니다. 이 때문에 전 민주주의적 운동 안에서도 노동자 정당은 계급적으로 독자적이어야 한다고 결론지었습니다.",
+                "en": "Lenin's criticism was aimed not at the demand to give the land to the peasants but at the prospect of what it would bring. He held that the democratic political and socio-economic reforms Russia needed would not shake capitalism but clear the ground for its wide and rapid development. The Socialist-Revolutionaries, he said, could not grasp this because they did not know the laws of development of commodity and capitalist production. Even complete success of a peasant insurrection, even redistribution of all the land in the peasants' interest and as they wished, a \"Black Redistribution\" or the like, would not destroy capitalism at all but give it an impetus and hasten the class disintegration of the peasantry itself. Even on equally divided land the market would separate rich from poor peasants. Lenin treated this as a matter of practical politics as well as theory: it was why the workers' party had to remain class-independent even within the general democratic movement."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1905/tactics/ch06.htm",
+                "label": {
+                  "ko": "레닌, 『민주주의 혁명에서 사회민주주의의 두 가지 전술』 제6장 (1905)",
+                  "en": "Lenin, Two Tactics of Social-Democracy in the Democratic Revolution, chapter 6 (1905)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "1917년 10월 26일 토지 법령에 들어간 「농민 위임」은 어디서 나왔고, 토지 이용을 어떻게 정했을까요?",
+                "en": "Where did the \"Peasant Mandate\" incorporated in the Decree on Land of 26 October 1917 come from, and how did it regulate the use of land?"
+              },
+              "choices": {
+                "ko": [
+                  "농민 대표 소비에트의 『이즈베스티야』가 지방 농민 위임 242건을 엮은 것으로, 토지 매매·임대를 금지하고 고용 노동 없이 제 노동으로 경작하는 사람에게 균등하게 쓰게 했습니다.",
+                  "볼셰비키 중앙위원회가 준비한 국영 농장 계획으로, 모든 토지를 국가가 직접 경영하고 농민은 국가에 고용된 농업 노동자가 되게 했습니다.",
+                  "임시정부 농업부가 만든 안으로, 지주에게 보상을 약속하고 제헌의회가 열릴 때까지 토지 매매만 잠시 멈추게 했습니다."
+                ],
+                "en": [
+                  "The Izvestia of the Peasants' Soviet had compiled it from 242 local peasant mandates; it banned sale and lease of land and gave equal use to those cultivating it by their own labour without hired labour.",
+                  "It was a state-farm plan prepared by the Bolshevik Central Committee: all land would be run directly by the state, and peasants would become agricultural labourers employed by it.",
+                  "It was a draft of the Provisional Government's ministry of agriculture, promising compensation to landlords and merely suspending land sales until the Constituent Assembly met."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "위임은 토지 사적 소유를 영구히 없애고 모든 토지를 보상 없이 전 인민의 재산으로 하며, 노동 기준이나 소비 기준에 따라 균등하게 나누되 가구·농장·공동체·협동조합 같은 이용 형태는 마을마다 정하게 했습니다.",
+                  "법령은 토지를 볼로스치 토지위원회와 군 농민 대표 소비에트의 처분에 맡겼고, 위임은 이용 형태에 제한을 두지 않았습니다. 국영 농장 계획이 아니었습니다.",
+                  "법령 제1조는 지주 토지 소유를 보상 없이 즉시 폐지했습니다. 임시정부가 토지 문제를 미뤘다는 것이 레닌이 보고에서 한 비판이었습니다."
+                ],
+                "en": [
+                  "The Mandate abolished private ownership of land forever and made all land the property of the whole people without compensation, distributed equally by a labour or subsistence standard, leaving forms of tenure (household, farm, communal, co-operative) to each village.",
+                  "The decree placed the land at the disposal of the volost land committees and uyezd Peasants' Soviets, and the Mandate put no restriction on forms of tenure. It was not a state-farm plan.",
+                  "Article 1 of the decree abolished landed proprietorship forthwith without compensation. Lenin's report attacked the Provisional Government precisely for postponing the land question."
+                ]
+              },
+              "explanation": {
+                "ko": "10월 봉기 이튿날 제2차 소비에트 대회가 채택한 토지 법령은 먼저 지주 토지 소유를 보상 없이 즉시 폐지하고, 지주·황실·수도원·교회 토지를 가축·농기구·건물과 함께 제헌의회까지 볼로스치 토지위원회와 군 농민 대표 소비에트의 처분에 맡겼습니다. 그리고 제4조에서, 전러시아 농민 대표 소비에트의 『이즈베스티야』가 지방 농민 위임 242건을 엮어 1917년 8월 19일 제88호에 실은 농민 위임을 토지 개혁 실행의 지침으로 삼았습니다. 위임은 토지 사적 소유를 영구히 없애고 매매·구입·임대·저당을 금지하며, 모든 토지를 보상 없이 전 인민의 재산으로 하여 경작하는 모든 사람에게 쓰게 했습니다. 이용권은 자기 노동으로, 가족이나 조합과 함께 경작할 수 있는 동안에만 주어지고 고용 노동은 허용하지 않았습니다. 분배는 지역 조건에 따라 노동 기준이나 소비 기준을 따르는 균등 이용이었습니다. 사회혁명당 강령의 토지 사회화와 겹치는 원칙들이 소비에트 정부의 첫 법령에 들어간 것입니다.",
+                "en": "The Decree on Land adopted by the Second Congress of Soviets the day after the October rising first abolished landed proprietorship forthwith without compensation and placed the landed, crown, monastery and church estates, with their livestock, implements and buildings, at the disposal of the volost land committees and uyezd Soviets of Peasants' Deputies until the Constituent Assembly. Its fourth article then made the guide for the land reform the Peasant Mandate that the Izvestia of the All-Russian Soviet of Peasants' Deputies had compiled from 242 local mandates and published in No. 88 on 19 August 1917. The Mandate abolished private ownership of land forever, banned its sale, purchase, lease and mortgage, and made all land the property of the whole people without compensation, passing into the use of those who cultivate it. The right of use was granted only to those cultivating by their own labour, with family or in partnership, while able to do so; hired labour was not permitted. Distribution was equal, by a labour or subsistence standard depending on local conditions. Principles overlapping the SR socialisation of land entered the Soviet government's first decree."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1917/oct/25-26/26d.htm",
+                "label": {
+                  "ko": "레닌, 제2차 전러시아 소비에트 대회의 토지 보고와 토지 법령 (1917년 10월 26일)",
+                  "en": "Lenin, Report on Land and Decree on Land, Second All-Russia Congress of Soviets (26 October 1917)"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 토지 법령과 농민 위임을 사회혁명당이 썼다는 지적에 어떻게 답했을까요?",
+                "en": "How did Lenin answer the charge that the Decree on Land and the Peasant Mandate had been drawn up by the Socialist-Revolutionaries?"
+              },
+              "choices": {
+                "ko": [
+                  "누가 썼든 무슨 상관이냐며, 민주적 정부는 동의하지 않더라도 대중의 결정을 무시할 수 없고 농민이 법령을 적용하며 진리가 어디 있는지 스스로 깨달을 것이라고 했습니다.",
+                  "사회혁명당 안을 따른 것은 봉기 직후 농민을 달래려는 일시적 조치일 뿐이며, 제헌의회가 열리기 전에 이를 거두고 볼셰비키 중앙위원회의 국영 농장 안으로 바꾸겠다고 약속했습니다.",
+                  "법령은 사실 볼셰비키 강령에서 나왔고 사회혁명당이 오히려 볼셰비키의 안을 베꼈으니, 그 지적은 사실이 아니라고 반박했습니다."
+                ],
+                "en": [
+                  "He asked what it mattered who drew them up: as a democratic government it could not ignore the decision of the masses even if it disagreed, and the peasants, applying the decree, would themselves realise where the truth lay.",
+                  "Following the SR draft was only a temporary measure to pacify the peasants right after the rising, and he promised to withdraw it before the Constituent Assembly met and replace it with the Bolshevik Central Committee's state-farm plan.",
+                  "He denied the charge, saying the decree really came from the Bolshevik programme and that the SRs had in fact copied the Bolshevik draft."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 농민이 계속 사회혁명당을 따르고 제헌의회에서 다수를 주더라도 「그게 어떻단 말인가」라고 하겠다며, 경험이 가장 좋은 선생이고 누가 옳은지 보여 줄 것이라고 했습니다.",
+                  "레닌은 법령을 기만이라고 하지 않았고 국영 농장 계획을 약속하지도 않았습니다. 그는 대중의 결정을 존중해야 하는 이유로 민주적 정부라는 성격을 들었습니다.",
+                  "레닌은 사회혁명당이 썼다는 사실을 부인하지 않았습니다. 「누가 썼는지가 중요한가」라고 되물으며 받아들였습니다."
+                ],
+                "en": [
+                  "Lenin said that even if the peasants went on following the SRs and gave them a majority in the Constituent Assembly, he would still say \"what of it?\"; experience was the best teacher and would show who was right.",
+                  "Lenin neither called the decree a deception nor promised a state-farm plan. The reason he gave for respecting the masses' decision was the government's democratic character.",
+                  "Lenin did not deny that the SRs had drawn it up. He accepted it, asking whether it mattered who had."
+                ]
+              },
+              "explanation": {
+                "ko": "토지 보고에서 레닌은 법령 조문을 읽은 뒤, 법령과 위임을 사회혁명당이 썼다는 목소리가 나온다는 것을 스스로 꺼냈습니다. 그의 답은 「그게 어떻단 말인가, 누가 썼는지가 중요한가」였습니다. 민주적 정부로서 우리는 동의하지 않더라도 인민 대중의 결정을 무시할 수 없다는 것입니다. 그는 농민이 법령을 실제로 적용하고 지방에서 실행하는 경험의 불길 속에서 어디에 진리가 있는지 스스로 깨달을 것이며, 농민이 계속 사회혁명당을 따라 제헌의회에서 그 당에 다수를 주더라도 역시 그게 어떻단 말이냐고 하겠다고 했습니다. 경험이 가장 좋은 선생이라는 것입니다. 1905년에 레닌은 사회혁명당의 재분배 전망을 소부르주아적이라고 비판했습니다. 1917년의 그는 그 비판을 거두지 않은 채, 농민 대중이 요구한 형태의 토지 개혁을 먼저 법으로 만들고 그 결과를 경험에 맡기는 쪽을 택했습니다. 강령의 차이와 권력을 쥔 뒤의 선택이 같은 것이 아니었음을 보여 주는 대목입니다.",
+                "en": "In his report on land, after reading out the decree, Lenin himself raised the voices saying the decree and the Mandate had been drawn up by the Socialist-Revolutionaries. His answer was: what of it? Does it matter who drew them up? As a democratic government, he said, we cannot ignore the decision of the masses of the people, even though we may disagree with it. In the fire of experience, applying the decree and carrying it out locally, the peasants would themselves realise where the truth lay; and even if they went on following the SRs and gave that party a majority in the Constituent Assembly, he would still say, what of it? Experience was the best teacher. In 1905 Lenin had criticised the SR prospect of redistribution as petty-bourgeois. In 1917, without withdrawing that criticism, he chose to enact first the kind of land reform the peasant masses demanded and leave the outcome to experience. The passage shows that differences of programme and choices made once in power were not the same thing."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1917/oct/25-26/26d.htm",
+                "label": {
+                  "ko": "레닌, 제2차 전러시아 소비에트 대회의 토지 보고 (1917년 10월 26일)",
+                  "en": "Lenin, Report on Land, Second All-Russia Congress of Soviets (26 October 1917)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "socialist-divergences-intro-ch08",
+      "volumeNumber": 12,
+      "chapterNumber": 8,
       "title": {
         "ko": "민족의 분리권을 강령에 적어야 할까?",
         "en": "Should the right of nations to secede be in the programme?"
@@ -2920,7 +3890,7 @@ module.exports = {
     {
       "id": "socialist-divergences-intro-ch05",
       "volumeNumber": 12,
-      "chapterNumber": 7,
+      "chapterNumber": 9,
       "title": {
         "ko": "전쟁이 오면 인터내셔널은 무엇을 하기로 했을까?",
         "en": "What did the International resolve to do if war came?"
@@ -3393,7 +4363,7 @@ module.exports = {
     {
       "id": "socialist-divergences-intro-ch06",
       "volumeNumber": 12,
-      "chapterNumber": 8,
+      "chapterNumber": 10,
       "title": {
         "ko": "혁명을 지지하면서도 볼셰비키와 다를 수 있을까?",
         "en": "Can one support the revolution and still differ from the Bolsheviks?"
@@ -3874,7 +4844,7 @@ module.exports = {
     {
       "id": "socialist-divergences-intro-ch09",
       "volumeNumber": 12,
-      "chapterNumber": 9,
+      "chapterNumber": 11,
       "title": {
         "ko": "누구를 새 인터내셔널에 받아들일까?",
         "en": "Whom should the new International admit?"
@@ -4347,6 +5317,485 @@ module.exports = {
                 "label": {
                   "ko": "코민테른 가입 21개 조건 제17·19·21항과 엮은이 주 (1920)",
                   "en": "Twenty-one Conditions, conditions 17, 19 and 21 with editor's note (1920)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "socialist-divergences-intro-ch12",
+      "volumeNumber": 12,
+      "chapterNumber": 12,
+      "title": {
+        "ko": "공산주의자는 노동조합과 의회를 떠나야 할까?",
+        "en": "Should communists leave the trade unions and parliaments?"
+      },
+      "sourceUrl": "https://www.marxists.org/archive/lenin/works/1920/lwc/index.htm",
+      "summary": {
+        "ko": "약 12분 · 레닌의 『공산주의에서의 「좌익」 소아병』(1920년 4~5월 집필)과 이에 답한 헤르만 고르터의 『레닌 동지에게 보내는 공개편지』(1920년 여름, 판네쿡 인용 포함)를 읽고, 독일·네덜란드 좌익 공산주의자와 레닌이 지도자와 대중, 기존 노동조합, 의회 참여를 두고 어디서 갈렸는지 확인합니다. 이 좌익 흐름은 뒤에 평의회공산주의로 이어졌습니다.",
+        "en": "About 12 minutes · Read Lenin's \"Left-Wing\" Communism: An Infantile Disorder (written April to May 1920) and Herman Gorter's reply, Open Letter to Comrade Lenin (summer 1920, quoting Pannekoek), and see where the German and Dutch Left communists and Lenin divided over leaders and masses, the existing trade unions and participation in parliament. This Left current later fed into council communism."
+      },
+      "learningFocus": {
+        "ko": "고르터와 좌익 공산주의자가 조직과 규율 자체를 거부했다고 읽기 쉽습니다. 고르터는 지도자가 대중과 하나여야 하고 철의 규율과 중앙집권도 필요하다는 데 동의했고, 다만 서유럽에서는 올바른 지도자를 찾을 때까지 아래로부터 하겠다고 했습니다. 레닌이 개량주의 노조 지도부를 옹호했다는 읽기도 틀립니다. 그는 그들을 부르주아지의 앞잡이이자 노동 귀족이라 불렀고, 그렇기 때문에 대중이 있는 노조를 떠나서는 안 된다고 했습니다.",
+        "en": "It is easy to read Gorter and the Left communists as rejecting organisation and discipline as such. Gorter agreed that leaders should be one with the masses and that iron discipline and centralisation were needed; he said only that in Western Europe the work must be done from below until the right leaders were found. Nor did Lenin defend the reformist union leaderships. He called them agents of the bourgeoisie and a labour aristocracy, and for that very reason said communists must not abandon the unions where the masses were."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 독일 공산당의 분열",
+            "items": [
+              "1919년 10월 하이델베르크에서 열린 독일 공산당 제2차 대회는 의회 참여와 기존 노조 활동을 거부하던 반대파를 제명했고, 반대파는 1920년 4월 독일 공산주의 노동자당(KAPD)을 세웠습니다. 네덜란드의 고르터와 판네쿡이 이 흐름의 이론가였습니다.",
+              "레닌은 1920년 4~5월 『공산주의에서의 「좌익」 소아병』을 써서 6월 코민테른 제2차 대회를 앞두고 펴냈습니다. 고르터는 그 답장을 적군이 바르샤바로 진군하던 1920년 여름에 썼고, 영어판은 1921년 영국 『노동자 드레드노트』에 실렸습니다.",
+              "양쪽 모두 소비에트 권력과 프롤레타리아 독재를 지지했습니다. 고르터는 편지를 레닌의 책에서 많이 배웠다는 감사로 시작했습니다. 갈린 곳은 서유럽 혁명의 전술이었습니다."
+            ]
+          },
+          {
+            "title": "레닌: 지도자·당·계급·대중",
+            "items": [
+              "레닌은 「저쪽은 지도자의 독재, 이쪽은 대중의 독재」라는 독일 반대파의 구호를 인용하고, 계급은 대개 정당이 이끌며 정당은 가장 권위 있고 경험 많은 구성원들로 된 안정된 지도자 집단이 운영한다는 것은 기초적 사실이라고 했습니다. 당 원칙과 규율의 부정은 부르주아지를 위해 프롤레타리아트를 무장 해제하는 일이라고 했습니다.",
+              "반동적 노조에서 일하기를 거부하면 덜 발전하고 뒤처진 노동자 대중을 반동 지도자와 노동 귀족의 영향 아래 버려두게 된다며, 박해와 모욕을 무릅쓰고 대중이 있는 곳이면 어디서든 일해야 한다고 했습니다. 서유럽의 노동 귀족이 러시아보다 훨씬 강하다는 점은 인정했습니다.",
+              "의회제가 「역사적으로 낡았다」는 말은 선전의 의미에서는 옳지만 실천에서 극복된 것과는 거리가 멀다고 했습니다. 볼셰비키도 1917년 9~11월 제헌의회 선거에 참여했고, 그 참여가 뒤처진 대중에게 왜 그런 의회를 없애야 하는지 증명하는 데 도움이 되었다고 했습니다."
+            ]
+          },
+          {
+            "title": "고르터: 서유럽의 프롤레타리아트는 홀로 선다",
+            "items": [
+              "고르터는 러시아 혁명이 빈농의 도움으로 이겼지만 서유럽의 노동자는 홀로 서 있다고 했습니다. 서유럽의 빈농은 자본주의가 살아 있는 한 그 편에 설 것이고 소부르주아의 극히 일부만 도울 것이므로, 모든 전술은 이 사실 위에 서야 한다는 것입니다.",
+              "지도자가 대중과 하나여야 하고 철의 규율과 강한 중앙집권이 필요하다는 데는 동의했습니다. 그러나 서유럽에는 아직 대중을 지배하고 배신하는 제2인터내셔널형 지도자가 많으니, 올바른 지도자를 찾을 때까지 아래로부터, 대중 자신의 독재로 하겠다고 했습니다. 자신을 낭떠러지로 이끄는 산 안내인이라면 차라리 없이 가겠다는 비유를 들었습니다.",
+              "노조에 대해서는 판네쿡의 1920년 글을 길게 인용했습니다. 의회제가 대중에 대한 지도자의 정신적 지배를 구현하듯 노조는 물질적 지배를 구현하며, 제국주의 시대의 거대 노조는 조직을 장악한 관료층을 낳았다는 것입니다. 고르터는 낡은 노조를 부수고 대중이 스스로 결정하는 산업 조합과 노동자 연합을 세워야 한다고 했습니다.",
+              "의회에 대해서는 서유럽 노동자가 수백 년 동안 부르주아 대의제와 민주주의 관념에 젖어 있고, 의회제는 대중이 작은 몫만 맡는 지도자를 통한 투쟁의 전형이라서, 의회를 믿을수록 남이 혁명을 대신해 줄 것이라는 옛 약점에 빠진다고 했습니다."
+            ]
+          },
+          {
+            "title": "어디서 갈렸나",
+            "items": [
+              "레닌은 러시아의 경험, 곧 규율 있는 당과 대중이 있는 곳에서의 끈질긴 활동을 국제 전술의 기준으로 삼았습니다. 고르터는 계급 관계가 다른 서유럽에서는 대중이 스스로 수준을 높이는 것이 무엇보다 중요하다며, 작은 이익보다 대중의 의지와 행동의 성숙을 앞세웠습니다.",
+              "독일 공산주의 노동자당은 1920년 11월 코민테른에 동조 회원 자격으로 받아들여졌습니다. 당과 대중 조직, 의회를 둘러싼 이 논쟁은 뒤에 당 대신 노동자 평의회를 중심에 둔 평의회공산주의의 출발점의 하나가 되었습니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "레닌, 『공산주의에서의 「좌익」 소아병』(1920년 4~5월 집필, 6월 출판), 제5장 「독일의 좌익 공산주의: 지도자, 당, 계급, 대중」, 제6장 「혁명가는 반동적 노조에서 일해야 하는가?」, 제7장 「부르주아 의회에 참여해야 하는가?」와 편집자 주.",
+              "헤르만 고르터, 『레닌 동지에게 보내는 공개편지』(1920), 서론·노조 문제·의회제 절. 판네쿡의 1920년 글 인용을 포함합니다.",
+              "marxists.org 영어 번역을 참고한 한국어 요약이며, 러시아어·독일어·네덜란드어 원문과 문장별로 대조하지는 않았습니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: the split in the German Communist Party",
+            "items": [
+              "The Second Congress of the Communist Party of Germany, at Heidelberg in October 1919, expelled the opposition that rejected parliamentary work and activity in the existing unions; in April 1920 the opposition founded the Communist Workers' Party of Germany (KAPD). Gorter and Pannekoek in the Netherlands were theorists of this current.",
+              "Lenin wrote \"Left-Wing\" Communism: An Infantile Disorder in April and May 1920 and published it in June, ahead of the Comintern's Second Congress. Gorter wrote his reply in the summer of 1920, during the Red Army's march on Warsaw; the English version appeared in Britain's Workers' Dreadnought in 1921.",
+              "Both sides supported Soviet power and the dictatorship of the proletariat. Gorter opened his letter by thanking Lenin for how much he had learned from the book. The division was over tactics for revolution in Western Europe."
+            ]
+          },
+          {
+            "title": "Lenin: leaders, party, class, masses",
+            "items": [
+              "Lenin quoted the German opposition's slogan \"There the dictatorship of leaders; here the dictatorship of the masses\" and called it elementary that classes are usually led by political parties, and parties run by more or less stable groups of their most authoritative, influential and experienced members. Repudiating the party principle and party discipline, he said, disarms the proletariat in the interests of the bourgeoisie.",
+              "Refusing to work in reactionary trade unions, he wrote, leaves the insufficiently developed or backward masses of workers under the influence of reactionary leaders and the labour aristocracy; communists must work wherever the masses are, despite persecution and insult. He granted that the West's labour aristocracy was far stronger than Russia's.",
+              "Calling parliamentarianism \"historically obsolete\" is true in the propaganda sense but a far cry from overcoming it in practice. The Bolsheviks took part in the Constituent Assembly elections of September to November 1917, and that participation helped prove to the backward masses why such parliaments deserved to be done away with."
+            ]
+          },
+          {
+            "title": "Gorter: the Western proletariat stands alone",
+            "items": [
+              "Gorter wrote that the Russian revolution won with the help of the poor peasants, but the workers of Western Europe stand alone: the West's poor peasants would side with capitalism while it lived and only a tiny part of the lower middle class would help, so all tactics had to rest on this fact.",
+              "He agreed that leaders should be one with the masses and that iron discipline and strong centralisation were needed. But Western Europe still had many leaders of the Second International type who dominated and betrayed the masses, so until the right leaders were found the Left would do everything from below, through the dictatorship of the masses themselves. If a mountain guide led him towards the abyss, he said, he would rather go without one.",
+              "On the unions he quoted Pannekoek's 1920 essay at length: as parliamentarism embodies the leaders' spiritual power over the masses, the trade union movement embodies their material power, and the giant unions of the imperialist age had produced a bureaucracy that controlled the organisation. Gorter called for destroying the old unions and building industrial unions and workers' unions in which the masses decide for themselves.",
+              "On parliament he argued that Western workers had been steeped for centuries in bourgeois ideas of representation and democracy, and that parliamentarism is the typical form of struggle through leaders in which the masses play a minor part, so trusting parliament risked falling back into the old weakness of expecting others to make the revolution."
+            ]
+          },
+          {
+            "title": "Where they divided",
+            "items": [
+              "Lenin took the Russian experience, a disciplined party and persistent work wherever the masses were, as the standard for international tactics. Gorter held that in the West, with its different class relations, the masses raising themselves mattered above all, and put the ripening of the masses' will and deeds above small gains.",
+              "The KAPD was admitted to the Comintern as a sympathising member in November 1920. This dispute over party, mass organisations and parliament later became one starting point for council communism, which put workers' councils rather than the party at the centre."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Lenin, \"Left-Wing\" Communism: An Infantile Disorder (written April to May 1920, published June), chapters 5 \"Left-Wing Communism in Germany: The Leaders, the Party, the Class, the Masses\", 6 \"Should Revolutionaries Work in Reactionary Trade Unions?\" and 7 \"Should We Participate in Bourgeois Parliaments?\", with the editors' notes.",
+              "Herman Gorter, Open Letter to Comrade Lenin (1920): introduction and the sections on trade unions and parliamentarism, including his quotations from Pannekoek's 1920 essay.",
+              "Korean summaries follow the English translations at marxists.org and have not been checked sentence by sentence against the Russian, German or Dutch."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "지도자의 독재냐 대중의 독재냐",
+            "text": "독일 좌익은 두 독재를 맞세웠고, 레닌은 계급이 당과 지도자를 통해 이끌린다고 답했습니다."
+          },
+          {
+            "title": "홀로 선 서유럽 노동자",
+            "text": "고르터는 빈농의 도움이 없는 서유럽에서는 대중이 스스로 일어서야 한다고 했습니다."
+          },
+          {
+            "title": "노조: 남을까 부술까",
+            "text": "레닌은 대중이 있는 노조에서 일하라 했고, 고르터는 낡은 노조를 부수고 새 조합을 세우자고 했습니다."
+          },
+          {
+            "title": "의회: 연단인가 함정인가",
+            "text": "레닌은 의회를 대중을 설득하는 연단으로 썼고, 고르터는 지도자에게 기대는 습관을 굳힌다고 보았습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Leaders' or masses' dictatorship",
+            "text": "The German Left set the two dictatorships against each other; Lenin answered that classes are led through parties and leaders."
+          },
+          {
+            "title": "Western workers stand alone",
+            "text": "Gorter held that without poor peasants as allies, Western masses had to rise by themselves."
+          },
+          {
+            "title": "Unions: stay or break",
+            "text": "Lenin said work in the unions where the masses are; Gorter said break the old unions and build new ones."
+          },
+          {
+            "title": "Parliament: platform or trap",
+            "text": "Lenin used parliament as a platform to convince the masses; Gorter saw it entrenching reliance on leaders."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "1920년 서유럽 혁명의 두 전술",
+          "left": {
+            "heading": "레닌, 『「좌익」 소아병』 (1920)",
+            "rows": [
+              "지도자와 대중: 계급은 당이, 당은 경험 있는 지도자가 이끈다",
+              "규율: 당 원칙의 부정은 프롤레타리아트의 무장 해제",
+              "노조: 반동적이어도 대중이 있으니 그 안에서 일한다",
+              "의회: 낡았음을 대중에게 증명하려면 참여한다",
+              "기준: 러시아 경험의 국제적 의의"
+            ]
+          },
+          "right": {
+            "heading": "고르터, 『레닌 동지에게 보내는 공개편지』 (1920)",
+            "rows": [
+              "지도자와 대중: 올바른 지도자를 찾을 때까지 아래로부터",
+              "규율: 필요하지만 대중과 하나인 지도자가 먼저",
+              "노조: 지도자의 물질적 지배, 부수고 새 조합을 세운다",
+              "의회: 지도자에게 맡기는 부르주아 습관을 굳힌다",
+              "기준: 빈농 없이 홀로 선 서유럽 프롤레타리아트"
+            ]
+          }
+        },
+        "en": {
+          "title": "Two tactics for revolution in the West, 1920",
+          "left": {
+            "heading": "Lenin, \"Left-Wing\" Communism (1920)",
+            "rows": [
+              "Leaders and masses: classes are led by parties, parties by experienced leaders",
+              "Discipline: repudiating the party principle disarms the proletariat",
+              "Unions: reactionary, but the masses are there, so work inside them",
+              "Parliament: take part in order to prove to the masses it is obsolete",
+              "Standard: the international significance of the Russian experience"
+            ]
+          },
+          "right": {
+            "heading": "Gorter, Open Letter to Comrade Lenin (1920)",
+            "rows": [
+              "Leaders and masses: from below until the right leaders are found",
+              "Discipline: needed, but leaders at one with the masses must come first",
+              "Unions: the leaders' material power, to be broken and replaced",
+              "Parliament: entrenches the bourgeois habit of leaving things to leaders",
+              "Standard: a Western proletariat standing alone without poor peasants"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "socialist-divergences-intro-ch12-basic",
+          "level": "basic",
+          "title": {
+            "ko": "공산주의자는 노동조합과 의회를 떠나야 할까?",
+            "en": "Should communists leave the trade unions and parliaments?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 「지도자의 독재냐, 대중의 독재냐」라는 독일 좌익 반대파의 물음에 어떻게 답했을까요?",
+                "en": "How did Lenin answer the German Left opposition's question, \"dictatorship of the leaders or dictatorship of the masses?\""
+              },
+              "choices": {
+                "ko": [
+                  "계급은 대개 정당이 이끌고 정당은 경험 많은 지도자 집단이 운영한다는 기초적 사실을 뒤섞은 물음이라며, 당 원칙과 규율의 부정은 프롤레타리아트를 무장 해제한다고 했습니다.",
+                  "대중의 독재가 옳으므로 당은 스스로 해산하고, 공장마다 선출된 평의회가 지도자 없이 혁명을 직접 이끌어야 한다고 답했습니다.",
+                  "지도자와 대중은 영원히 대립하므로, 공산당은 대중의 선거를 거치지 않고 위에서 지도자를 임명해 대중을 이끌어야 한다고 답했습니다."
+                ],
+                "en": [
+                  "He said the question muddled the elementary fact that classes are usually led by parties run by groups of experienced leaders, and that repudiating the party principle and discipline disarms the proletariat.",
+                  "He answered that the dictatorship of the masses was right, so the party should dissolve itself and councils elected in every factory should lead the revolution directly, without leaders.",
+                  "He answered that leaders and masses are eternally opposed, so the Communist Party should appoint leaders from above without any election by the masses and lead them."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 이런 반대파의 주장이 규율 있는 조직된 행동을 할 수 없게 만드는 소부르주아적 산만함과 불안정으로 이어진다고 했고, 부르주아지를 이롭게 한다고 했습니다.",
+                  "당 없이 평의회로 가자는 것은 레닌이 비판한 쪽의 방향에 가깝습니다. 레닌은 당 원칙의 부정이야말로 공산주의 입장에서 무장 해제라고 했습니다.",
+                  "레닌은 지도자를 대중과 맞세우는 물음 자체를 뒤섞인 것이라 했습니다. 그가 말한 지도자는 가장 책임 있는 자리에 선출되는 권위 있는 구성원들이었습니다."
+                ],
+                "en": [
+                  "Lenin said such arguments led to the petty-bourgeois diffuseness and instability that make sustained, organised action impossible, and served the bourgeoisie.",
+                  "Going to councils without a party is closer to the side Lenin was criticising. He said repudiating the party principle was, from the communist standpoint, a disarmament.",
+                  "Lenin called the very question setting leaders against masses a muddle. The leaders he meant were authoritative members elected to the most responsible positions."
+                ]
+              },
+              "explanation": {
+                "ko": "독일 공산당 반대파는 「저쪽은 지도자의 독재, 이쪽은 대중의 독재」를 구호로 삼았습니다. 옛 사회민주당과 노조의 지도부가 전쟁과 혁명기에 대중을 배신한 경험이 그 뒤에 있었습니다. 레닌은 1903년부터 볼셰비즘의 발전을 지켜본 사람이라면 이런 논리가 낯익은 헛소리라는 것을 알 것이라며, 물음을 이렇게 세우는 것 자체가 사고의 혼란을 드러낸다고 했습니다. 대중은 계급으로 나뉘고, 오늘날의 문명국에서 계급은 대개 정당이 이끌며, 정당은 가장 권위 있고 영향력 있고 경험 많은 구성원들로 된 비교적 안정된 집단, 곧 가장 책임 있는 자리에 선출된 지도자들이 운영한다는 것은 초보적 사실이라는 것입니다. 그래서 그는 반대파가 이른 곳을 당 원칙과 당 규율의 부정이라고 요약하고, 그것은 부르주아지를 위해 프롤레타리아트를 완전히 무장 해제하는 일이라고 했습니다. 레닌에게 문제는 배신한 지도자를 없애는 것이 아니라, 대중과 결합된 다른 지도자와 당을 만드는 것이었습니다.",
+                "en": "The German Communist opposition made \"there the dictatorship of leaders, here the dictatorship of the masses\" its slogan, against the background of old Social-Democratic and union leaderships having betrayed the masses in war and revolution. Lenin said anyone who had followed Bolshevism since 1903 would recognise this as old and familiar rubbish, and that posing the question this way itself revealed confused thinking. It is elementary, he said, that the masses are divided into classes, that in present-day civilised countries classes are usually led by political parties, and that parties are run by more or less stable groups of their most authoritative, influential and experienced members, elected to the most responsible positions and called leaders. He summed up where the opposition had arrived as the repudiation of the party principle and party discipline, which completely disarms the proletariat in the interests of the bourgeoisie. For Lenin the task was not to do without the leaders who had betrayed, but to build a different party and leadership bound up with the masses."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1920/lwc/ch05.htm",
+                "label": {
+                  "ko": "레닌, 『「좌익」 소아병』 제5장 「독일의 좌익 공산주의: 지도자, 당, 계급, 대중」 (1920)",
+                  "en": "Lenin, \"Left-Wing\" Communism, chapter 5, \"The Leaders, the Party, the Class, the Masses\" (1920)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "고르터는 공개편지에서 지도자와 규율 문제에 대한 레닌의 비판에 어떻게 답했을까요?",
+                "en": "In his open letter, how did Gorter answer Lenin's criticism on leaders and discipline?"
+              },
+              "choices": {
+                "ko": [
+                  "지도자가 대중과 하나여야 하고 철의 규율과 중앙집권이 필요하다는 데 동의하면서도, 대중을 배신하지 않는 올바른 지도자를 찾을 때까지는 아래로부터 하겠다고 했습니다.",
+                  "지도자와 규율은 어떤 경우에도 필요 없으며, 공산주의는 당과 노조와 평의회를 포함한 모든 조직과 대표를 새로운 지배로 보고 거부하는 개인들의 자유로운 봉기라고 했습니다.",
+                  "레닌의 비판을 받아들여 당 지도부에 전적으로 복종하되, 대중의 뜻은 의회 선거 때만 물어 반영하자고 했습니다."
+                ],
+                "en": [
+                  "He agreed leaders should be one with the masses and that iron discipline and centralisation were needed, but said the work would be done from below until leaders who would not betray the masses were found.",
+                  "He said leaders and discipline were never needed and that communism was a free rising of individuals rejecting all organisation and representation, whether party, union or council, as a new form of domination.",
+                  "He accepted Lenin's criticism, calling for complete obedience to the party leadership while consulting the masses only at parliamentary elections."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "고르터는 자신을 낭떠러지로 이끄는 산 안내인이라면 없이 가겠다고 하면서, 올바른 안내인을 찾으면 이 탐색을 멈추고 그때 대중과 지도자가 정말 하나가 될 것이라고 했습니다.",
+                  "고르터는 오히려 규율과 중앙집권을 원한다고 분명히 했고, 좌익은 혁명 속에서 노동자 연합이라는 새 조직을 만들었습니다. 조직 일반의 거부가 아니었습니다.",
+                  "고르터는 의회를 대중의 뜻을 묻는 곳이 아니라 대중이 작은 몫만 맡는 지도자 중심 투쟁의 전형으로 보았습니다. 복종으로 답하지도 않았습니다."
+                ],
+                "en": [
+                  "Gorter said that if a mountain guide led him towards the abyss he would rather go without one, and that once the right guides were found the search would stop and mass and leader would really be one.",
+                  "On the contrary, Gorter said plainly that he wanted discipline and centralisation, and the Left had built a new organisation in the revolution, the workers' unions. This was not a rejection of organisation in general.",
+                  "Gorter saw parliament not as a place to consult the masses but as the typical leader-centred struggle in which the masses play a small part. Nor did he answer with obedience."
+                ]
+              },
+              "explanation": {
+                "ko": "고르터는 레닌이 「지도자의 독재냐 대중의 독재냐」 같은 물음을 비웃은 것에 대해, 그런 것은 물음이 되어서는 안 된다는 데 동의한다고 먼저 말했습니다. 지도자는 계급·대중과 하나가 되어야 하고, 철의 규율과 강한 중앙집권도 필요하다는 것입니다. 그러나 그는 서유럽에서는 이것이 아직 물음이라고 했습니다. 많은 나라에 대중을 지배하려 들고 배신하는 제2인터내셔널형 지도자가 여전히 있고, 좌익은 그렇지 않은 올바른 지도자를 찾는 중이라는 것입니다. 그래서 그런 지도자를 찾을 때까지는 모든 일을 아래로부터, 대중 자신의 독재로 하겠다고 했습니다. 자신을 낭떠러지로 이끄는 산 안내인이라면 차라리 없이 가겠다는 비유가 여기서 나옵니다. 올바른 지도자는 대중과 당과 노조가 안팎에서 가장 혹독하게 싸우는 가운데서만 찾아지고 길러진다고도 했습니다. 레닌과의 차이는 규율의 필요 여부가 아니라, 지도자와 대중의 통일이 이미 있는 전제냐 앞으로 싸워서 얻을 결과냐에 있었습니다.",
+                "en": "Gorter first said, of Lenin's scoffing at questions like \"dictatorship of leaders or of the masses\", that he agreed these should be no questions at all: leaders should form one whole with class and mass, and iron discipline and strong centralisation were needed. But in Western Europe, he said, they were still questions. Many countries still had leaders of the Second International type who tried to dominate and betrayed the masses, and the Left was still looking for the right leaders who would not. Until they were found, it would do everything from below, through the dictatorship of the masses themselves. This is where his image of the mountain guide comes in: if the guide leads you towards the abyss, better to go without one. The right leaders, he added, could be found and reared only through the fiercest struggle of the masses, parties and unions, internally as well. The difference from Lenin lay not in whether discipline was needed but in whether the unity of leaders and masses was a given premise or a result still to be won by struggle."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/gorter/1920/open-letter.htm",
+                "label": {
+                  "ko": "헤르만 고르터, 『레닌 동지에게 보내는 공개편지』 서론 (1920)",
+                  "en": "Herman Gorter, Open Letter to Comrade Lenin, introduction (1920)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "고르터는 서유럽 혁명의 전술이 러시아와 달라야 하는 까닭을 어디서 찾았을까요?",
+                "en": "Where did Gorter locate the reason why tactics for revolution in Western Europe had to differ from Russia's?"
+              },
+              "choices": {
+                "ko": [
+                  "러시아 혁명은 빈농의 도움으로 이겼지만, 서유럽의 빈농은 자본주의 편에 서고 소부르주아도 극히 일부만 도울 것이라 노동자는 홀로 싸워야 한다고 했습니다.",
+                  "서유럽의 농민은 오랜 자영농 전통 덕분에 러시아보다 더 혁명적이므로, 노동자와 농민의 동맹이 러시아보다 쉽게 이루어져 더 짧은 투쟁으로 이길 수 있다고 했습니다.",
+                  "서유럽의 부르주아지는 러시아보다 약하고 분열되어 있으므로, 소수 전위의 기습적 봉기만으로도 권력을 잡을 수 있다고 했습니다."
+                ],
+                "en": [
+                  "The Russian revolution won with the poor peasants' help, but the West's poor peasants would side with capitalism and only a tiny part of the lower middle class would help, so the workers had to fight alone.",
+                  "Thanks to their long tradition of independent farming, the peasants of Western Europe were more revolutionary than Russia's, so an alliance of workers and peasants would come more easily and win after a shorter struggle.",
+                  "The Western bourgeoisie was weaker and more divided than Russia's, so a surprise rising by a small vanguard would be enough to take power."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "고르터는 이것이 절대적 진리이며 우리 전술은 이 진리 위에 서야 하고, 이에 기대지 않는 전술은 프롤레타리아트를 끔찍한 패배로 이끈다고 했습니다.",
+                  "고르터는 정반대로 말했습니다. 서유럽의 빈농은 강령도 없고 토지를 요구하지도 않으며 끔찍한 위기 속에서도 자본주의 편에 설 것이라고 했습니다.",
+                  "고르터는 서유럽 적의 거대한 힘을 강조했습니다. 그래서 대중 전체가 훨씬 높은 수준으로 스스로를 끌어올려야 한다는 것이 그의 결론이었습니다."
+                ],
+                "en": [
+                  "Gorter said this was the absolute truth on which tactics must be based, and that tactics not based on it would lead the proletariat to terrible defeat.",
+                  "Gorter said the opposite: the West's poor peasants had no programme, did not claim the land, and would side with capitalism even amid terrible crises.",
+                  "Gorter stressed the gigantic force of the enemy in the West. His conclusion was that the masses as a whole had to raise themselves to a much higher level."
+                ]
+              },
+              "explanation": {
+                "ko": "고르터는 레닌의 글에서 늘 걸리는 대목이 노동자와 빈농을 세계 어디서나 나란히 혁명 세력으로 드는 문장이었다고 했습니다. 러시아와 동유럽 몇 나라, 그리고 서유럽 사이의 엄청난 차이를 분명히 인정하는 곳이 없다는 것입니다. 러시아에서는 큰 빈농 계급의 도움으로 혁명이 이겼습니다. 그러나 서유럽의 빈농은 자본주의가 조금이라도 살아 있는 한 그 편에 설 것이고, 소부르주아지도 경제적으로 하찮은 극히 일부만 노동자를 도울 것이라고 했습니다. 그래서 서유럽의 프롤레타리아트는 홀로 서 있으며, 이것이 절대적 진리이고 전술은 이 위에 서야 한다고 했습니다. 서유럽 공산당들이 레닌의 문장을 그대로 되풀이해 마치 빈농 봉기가 곧 일어날 것처럼 말하는 것은 판단을 흐린다고도 했습니다. 홀로 서서 가장 강한 자본주의와 싸워야 하는 계급이라면, 지도자나 외부의 도움이 아니라 대중 자신이 훨씬 높은 수준으로 올라서야 한다는 것이 노조와 의회에 대한 그의 결론으로 이어졌습니다.",
+                "en": "Gorter said the passage in Lenin's writings where he always grew wary was the one naming workers and poor peasants side by side as revolutionary factors all over the world, with nowhere a clear recognition of the immense difference between Russia and a few Eastern European countries on one side and Western Europe on the other. In Russia the revolution won with the help of a large class of poor peasants. In the West, he argued, the poor peasants would side with capitalism as long as it had any life left, and only a very slight, economically insignificant part of the lower middle class would help the workers. So the Western proletariat stands alone; this was the absolute truth, and tactics had to rest on it. Western Communist parties repeating Lenin's phrase as if a poor peasants' revolt might break out at any moment were leading judgement astray. For a class that must stand alone against the most powerful capitalism, the masses themselves, not leaders or outside help, had to rise to a far higher level, and that led to his conclusions on unions and parliament."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/gorter/1920/open-letter.htm",
+                "label": {
+                  "ko": "헤르만 고르터, 『레닌 동지에게 보내는 공개편지』 서론 「산업 노동자는 홀로 선다」 (1920)",
+                  "en": "Herman Gorter, Open Letter to Comrade Lenin, introduction, \"Industrial Workers Stand Alone\" (1920)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 공산주의자가 반동적 노동조합에서 일하기를 거부하면 무슨 일이 생긴다고 했을까요?",
+                "en": "What did Lenin say would happen if communists refused to work in reactionary trade unions?"
+              },
+              "choices": {
+                "ko": [
+                  "덜 발전하고 뒤처진 노동자 대중을 반동 지도자와 노동 귀족의 영향 아래 버려두게 되므로, 박해를 무릅쓰고 대중이 있는 곳이면 어디서든 일해야 한다고 했습니다.",
+                  "기존 노조 지도부는 노동자의 진정한 대표이므로, 공산주의자는 그들을 비판하지 말고 협력하여 노조의 단결을 지켜야 한다고 했습니다.",
+                  "자본주의 아래 노조는 쓸모가 없으므로, 공산주의자는 기존 노조에서 모두 탈퇴해 당 세포와 새로 만든 혁명적 산업 조합에서만 활동하며 대중을 그리로 끌어내야 한다고 했습니다."
+                ],
+                "en": [
+                  "It would leave the less developed and backward masses under the influence of reactionary leaders and the labour aristocracy, so communists must work wherever the masses are despite persecution.",
+                  "The existing union leaderships were the workers' true representatives, so communists should cooperate with them without criticism to preserve union unity.",
+                  "Unions were useless under capitalism, so communists should all leave the existing unions and work only in party cells and newly founded revolutionary industrial unions, drawing the masses out into them."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 노조와 노동자 협동조합이 바로 대중이 있는 조직이라며, 가장 반동적인 기관에서도 체계적이고 끈질기게 선동과 선전을 해야 한다고 했습니다.",
+                  "레닌은 기회주의·사회배외주의 노조 지도자를 부르주아지의 앞잡이, 자본가 계급의 노동 부관이라 불렀습니다. 그들과의 투쟁을 무자비하게 해야 한다고 했습니다.",
+                  "이것은 레닌이 「우스꽝스러운 이론」이라 부른 독일 좌익의 결론에 가깝습니다. 그는 노조를 떠나면 대중에게 영향을 미칠 길을 스스로 버린다고 했습니다."
+                ],
+                "en": [
+                  "Lenin said the trade unions and workers' co-operatives are the very organisations where the masses are to be found, and agitation and propaganda must be carried on systematically and persistently even in the most reactionary of them.",
+                  "Lenin called the opportunist, social-chauvinist union leaders agents of the bourgeoisie and labour lieutenants of the capitalist class. He said the struggle against them must be waged ruthlessly.",
+                  "This is close to the German Left conclusion Lenin called a \"ridiculous theory\". He said leaving the unions meant throwing away one's means of influencing the masses."
+                ]
+              },
+              "explanation": {
+                "ko": "레닌은 노조 지도부를 두둔하지 않았습니다. 그는 서유럽의 노조 지도자들, 곧 곰퍼스·주오·헨더슨·메르하임·레기엔 같은 이들이 러시아의 멘셰비키보다 훨씬 굳건한 기반을 가진 노동 귀족이며, 편협하고 이기적이며 제국주의에 물든 층이라고 했습니다. 그들과의 투쟁은 러시아보다 훨씬 어렵고 무자비하게 해야 한다는 것입니다. 그런데 바로 그렇기 때문에 노조를 떠나서는 안 된다고 했습니다. 반동적 노조에서 일하기를 거부하면 덜 발전하고 뒤처진 노동자 대중을 반동 지도자와 부르주아지의 앞잡이, 노동 귀족의 영향 아래 버려두게 된다는 것입니다. 대중을 돕고 그 공감과 지지를 얻으려면 지도자들의 박해와 트집과 모욕을 두려워하지 말고, 프롤레타리아·반프롤레타리아 대중이 있는 모든 기관과 단체에서, 그것이 아무리 반동적이어도 체계적이고 끈질기게 선전·선동해야 한다고 했습니다. 고르터가 새 조합으로 대중을 끌어내려 한 곳에서, 레닌은 대중이 지금 있는 자리로 들어가라고 했습니다.",
+                "en": "Lenin did not defend the union leaderships. He said Western union leaders, the Gomperses, Jouhaux, Hendersons, Merrheims and Legiens, formed a labour aristocracy with a far firmer footing than Russia's Mensheviks, narrow-minded, selfish and corrupted by imperialism, and that the struggle against them was much harder than in Russia and must be waged ruthlessly. Yet for exactly that reason, he said, communists must not leave the unions. Refusing to work in reactionary unions leaves the insufficiently developed or backward masses of workers under the influence of reactionary leaders, agents of the bourgeoisie and the labour aristocracy. To help the masses and win their sympathy and support, one must not fear the leaders' persecution, chicanery and insults, and must carry on agitation and propaganda systematically and persistently in every institution and association, however reactionary, where proletarian or semi-proletarian masses are found. Where Gorter wanted to draw the masses out into new unions, Lenin told communists to go where the masses already were."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1920/lwc/ch06.htm",
+                "label": {
+                  "ko": "레닌, 『「좌익」 소아병』 제6장 「혁명가는 반동적 노조에서 일해야 하는가?」 (1920)",
+                  "en": "Lenin, \"Left-Wing\" Communism, chapter 6, \"Should Revolutionaries Work in Reactionary Trade Unions?\" (1920)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "고르터가 공개편지에 인용한 판네쿡은 기존 노동조합이 왜 서유럽 혁명의 무기가 될 수 없다고 했을까요?",
+                "en": "Why did Pannekoek, as quoted in Gorter's open letter, say the existing trade unions could not be weapons of the Western revolution?"
+              },
+              "choices": {
+                "ko": [
+                  "의회제가 지도자의 정신적 지배를 구현하듯 노조는 대중에 대한 지도자의 물질적 지배를 구현하며, 거대해진 노조가 조직을 장악한 관료층을 낳았기 때문이라고 했습니다.",
+                  "노조가 너무 작고 흩어져 있어 고도로 조직된 자본에 맞설 힘이 없으니, 먼저 기존 지도부 아래 모든 노조를 하나로 합쳐 더 크고 집중된 관료 기구를 만들어야 하기 때문이라고 했습니다.",
+                  "노동자는 조직 없이도 자연발생적으로 혁명을 할 수 있으므로, 노조든 새 조합이든 어떤 노동자 조직도 혁명에 방해가 되기 때문이라고 했습니다."
+                ],
+                "en": [
+                  "As parliamentarism embodies the leaders' spiritual power, the unions embody their material power over the masses, and the giant unions had produced a bureaucracy that controlled the organisation.",
+                  "The unions were too small and scattered to stand up to highly organised capital, so all of them had first to be merged under the existing leaderships into one bigger and more centralised bureaucratic apparatus.",
+                  "Workers could make the revolution spontaneously without organisation, so any workers' organisation, old unions or new, would only obstruct it."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "판네쿡은 관료층이 재정·언론·하급 간부 임명을 쥐고 구성원의 종이 아니라 주인이 되었으며, 민주주의가 있다는 노조 안에서도 구성원은 관료에 맞서 제 뜻을 관철하지 못한다고 했습니다.",
+                  "판네쿡은 거대 노조가 국가 기관과 같은 발전 경향을 보인다는 것을 문제로 삼았습니다. 관료 기구를 더 키우자는 것은 그의 결론과 반대입니다.",
+                  "고르터는 낡은 노조 대신 대중이 스스로 결정하는 산업 조합과 노동자 연합을 혁명의 가장 좋은 무기라 했습니다. 조직 일반의 거부가 아니었습니다."
+                ],
+                "en": [
+                  "Pannekoek said the bureaucracy controlled the finances, the press and the appointment of lower officials, had become the master rather than the servant of the members, and that despite the democracy supposed to reign in the unions, members could not enforce their will against it.",
+                  "Pannekoek's complaint was that the giant unions developed like state bodies. Enlarging the bureaucratic apparatus is the opposite of his conclusion.",
+                  "Gorter called the industrial unions and workers' unions, in which the masses decide for themselves, the best weapons for the revolution in place of the old unions. This was not a rejection of organisation in general."
+                ]
+              },
+              "explanation": {
+                "ko": "고르터는 노조 문제의 근거를 판네쿡의 1920년 글로 댔습니다. 판네쿡은 의회제가 대중에 대한 지도자의 정신적 지배를 구현한다면 노조 운동은 물질적 지배를 구현한다고 했습니다. 자본주의 아래 노조는 프롤레타리아트를 묶는 자연스러운 조직이었고 마르크스도 처음부터 그 중요성을 보여 주었습니다. 그러나 발전한 자본주의, 특히 제국주의 시대에 노조는 국가 기관과 같은 발전 경향을 지닌 거대 조직이 되었고, 재정·언론·하급 간부 임명을 쥔 관료층을 낳았습니다. 그 관료층은 구성원의 종에서 주인이 되어 조직과 자신을 동일시하고, 구성원은 민주주의가 있다는 노조 안에서도 교묘하게 짜인 규약 앞에서 제 뜻을 관철하지 못한다는 것입니다. 판네쿡은 그래서 노조가 자본주의의 도구가 되었고, 지도자가 누구든 그 성격상 구성원을 노예로 만든다고 했습니다. 고르터는 여기서 낡은 노조를 부수고, 개인과 대중 자신이 직접 싸우고 결정하는 산업 조합과 노동자 연합을 세워야 한다는 결론을 끌어냈습니다. 레닌이 노조 안의 투쟁을 말한 곳에서, 좌익은 노조라는 형태 자체를 문제 삼았습니다.",
+                "en": "Gorter grounded his case on the unions in Pannekoek's 1920 essay. Pannekoek wrote that as parliamentarism embodies the leaders' spiritual power over the masses, the trade union movement embodies their material power. Under capitalism the unions were the natural organisations uniting the proletariat, and Marx had shown their importance from the start. But under developed capitalism, above all in the age of imperialism, they had become giant unions developing like the bodies of the bourgeois state itself, producing a bureaucracy that controlled the finances, the press and the appointment of lower officials. From servant of the rank and file it had become the master, identifying itself with the organisation, and despite the democracy supposed to reign there, members could not enforce their will against the cleverly built apparatus of statutes. So, he wrote, the unions had become tools of capitalism and by their nature made slaves of their members whoever the leaders were. From this Gorter drew the conclusion that the old unions must be destroyed and industrial unions and workers' unions built, in which individuals and masses themselves fight and decide directly. Where Lenin spoke of struggle inside the unions, the Left questioned the union form itself."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/gorter/1920/open-letter.htm",
+                "label": {
+                  "ko": "헤르만 고르터, 『레닌 동지에게 보내는 공개편지』 「노동조합 문제」, 판네쿡 인용 (1920)",
+                  "en": "Herman Gorter, Open Letter to Comrade Lenin, \"The Question of the Trade Unions\", quoting Pannekoek (1920)"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "레닌은 「의회제는 역사적으로 낡았다」는 독일 좌익의 주장에 어떻게 답했을까요?",
+                "en": "How did Lenin answer the German Left's claim that parliamentarianism was \"historically obsolete\"?"
+              },
+              "choices": {
+                "ko": [
+                  "선전의 의미에서는 옳지만 실천에서 극복된 것은 아니며, 볼셰비키도 1917년 제헌의회 선거에 참여했고 그 참여가 의회를 없애야 하는 까닭을 대중에게 증명하는 데 도움이 되었다고 했습니다.",
+                  "의회제는 역사적으로 낡지 않았고 사회주의로 가는 주된 길이므로, 공산당은 의회 다수를 얻어 법률로 사회주의를 도입해야 한다고 했습니다.",
+                  "의회제가 낡았다는 데 전적으로 동의하므로, 공산당은 모든 선거를 거부하고 소비에트가 설 때까지 의회 밖에서만 싸워야 한다고 했습니다."
+                ],
+                "en": [
+                  "It was true in the propaganda sense but not yet overcome in practice; the Bolsheviks too took part in the 1917 Constituent Assembly elections, and that helped prove to the masses why such parliaments should be done away with.",
+                  "Parliamentarianism was not historically obsolete but the main road to socialism, so the Communist Party should win a parliamentary majority and introduce socialism by law.",
+                  "He fully agreed that parliamentarianism was obsolete, so the Communist Party should boycott every election and fight only outside parliament until soviets were established."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "레닌은 자본주의도 수십 년 전에 역사적으로 낡았다고 선언할 수 있었지만 그것이 자본주의의 토대 위에서 오래 싸울 필요를 없애지는 않는다고 비유했습니다.",
+                  "레닌은 부르주아 의회제의 시대는 끝났고 프롤레타리아 독재의 시대가 시작되었다는 세계사적 판단을 받아들였습니다. 의회 다수로 사회주의를 도입하자는 것이 아니었습니다.",
+                  "이것은 레닌이 비판한 독일 좌익의 결론입니다. 그는 독일에 소비에트 공화국이 아직 없는데 의회 형태로의 「되돌아감」을 말하는 것은 빈말이라고 했습니다."
+                ],
+                "en": [
+                  "Lenin compared it with capitalism, which could with full justice have been declared historically obsolete decades earlier, without removing the need for a long, persistent struggle on the basis of capitalism.",
+                  "Lenin accepted the world-historical judgement that the era of bourgeois parliamentarianism was over and the era of proletarian dictatorship had begun. He was not proposing to introduce socialism through a parliamentary majority.",
+                  "This is the German Left conclusion Lenin criticised. He said that with no Soviet republic in Germany yet, talk of a \"reversion\" to parliamentary forms was an empty phrase."
+                ]
+              },
+              "explanation": {
+                "ko": "독일 좌익은 역사적·정치적으로 낡은 의회 투쟁 형태로 되돌아가는 것을 단호히 거부해야 한다고 했습니다. 레닌은 먼저 「되돌아감」이라는 말을 문제 삼았습니다. 독일에 이미 소비에트 공화국이 있는 것도 아닌데 무엇으로 되돌아간다는 말이냐는 것입니다. 이어 의회제가 「역사적으로 낡았다」는 것은 선전의 의미에서는 옳다고 인정했습니다. 세계사의 관점에서 부르주아 의회제의 시대는 끝났고 프롤레타리아 독재의 시대가 시작되었다는 것입니다. 그러나 그것은 실천에서 의회제를 극복한 것과는 거리가 멀다고 했습니다. 자본주의도 수십 년 전에 정당하게 역사적으로 낡았다고 선언할 수 있었지만 그 토대 위에서 오래 끈질기게 싸울 필요는 사라지지 않았다는 것입니다. 그는 볼셰비키가 1917년 9~11월 러시아 부르주아 의회인 제헌의회 선거에 참여한 경험을 들어, 소비에트 공화국이 이기기 몇 주 전은 물론 이긴 뒤에도 의회 참여가 뒤처진 대중에게 왜 그런 의회를 없애야 하는지 증명하고 해산을 쉽게 했다고 했습니다. 고르터가 의회가 지도자에게 기대는 습관을 굳힌다고 본 곳에서, 레닌은 의회를 대중이 스스로 그 한계를 확인하게 하는 연단으로 보았습니다.",
+                "en": "The German Left said any reversion to parliamentary forms of struggle, historically and politically obsolete, must be emphatically rejected. Lenin first seized on the word \"reversion\": there was no Soviet republic in Germany yet, so revert from what? He then granted that parliamentarianism was \"historically obsolete\" in the propaganda sense: from the standpoint of world history the era of bourgeois parliamentarianism was over and that of proletarian dictatorship had begun. But that was a far cry from overcoming it in practice. Capitalism could with full justice have been declared historically obsolete decades earlier, yet the need for a long and persistent struggle on its basis had not vanished. He cited the Bolsheviks' participation in the elections to the Constituent Assembly, Russia's bourgeois parliament, in September to November 1917, arguing that participation even a few weeks before the victory of a Soviet republic, and even after it, helped prove to the backward masses why such parliaments deserved to be done away with and made their dissolution easier. Where Gorter saw parliament entrenching reliance on leaders, Lenin saw it as a platform where the masses could see its limits for themselves."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/archive/lenin/works/1920/lwc/ch07.htm",
+                "label": {
+                  "ko": "레닌, 『「좌익」 소아병』 제7장 「부르주아 의회에 참여해야 하는가?」 (1920)",
+                  "en": "Lenin, \"Left-Wing\" Communism, chapter 7, \"Should We Participate in Bourgeois Parliaments?\" (1920)"
                 }
               }
             }
