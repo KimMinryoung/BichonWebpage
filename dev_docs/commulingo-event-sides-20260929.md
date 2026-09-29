@@ -22,7 +22,10 @@ focus가 없던 33개 사건을 네 묶음으로 나눠 초안을 만들고(조�
 - 반영: `scripts/apply-event-sides.js`(기본 읽기 전용, `--apply --backup` 필요). 목록의 각 인물이 초안 시점 역할(`from_kind`) 그대로일 때만 쓰고, 그 뒤 새로 연결된 인물은 건드리지 않고 보고한다. 백업 `/tmp/sd/before-20260929.json`. 반영 뒤 재실행 29건 모두 unchanged, `audit-event-sides.js` 통과(진영 없이 행동한 사람은 참고로만 표시).
 - 운영 확인: 중월전쟁(한국어 데스크톱·390px)·소련 해체·독일 혁명(영어) 페이지를 Playwright로 캡처해 진영 블록과 「진영 밖」 블록을 확인했다.
 
-## 남은 일 (leninbot)
+## leninbot 파이프라인 (같은 날, leninbot `185c641`)
 
-- 자동 연결 파이프라인은 아직 진영을 모른다. 진영이 있는 사건에 새로 붙는 인물은 side NULL로 「진영 밖」에 나오고, 파이프라인이 opponent를 붙이면 `audit-event-sides.js`가 잡는다. 파이프라인 프롬프트가 사건의 `sides`를 읽어 진영을 고르게 하고, `commulingo/relation_kinds.py`의 opponent 정의에 「진영이 있는 사건에서는 쓰지 않는다」를 더해야 한다.
+- 연결 단계(`commulingo/pipeline/event_links.py`)가 사건 목록에 진영을 싣고, 제안·검증 호출이 진영이 있는 사건에 `side`를 답한다. 목록에 없는 진영과 진영 있는 사건의 opponent는 선별 단계에서 거부하고, 검증이 다른 진영을 답하면 같은 tick에서 재제출받는다.
+- 작성기(`commulingo/people.py` `history_event_person`)가 side를 사건 진영과 대조하고, 진영 있는 사건의 opponent·진영 없는 사건의 side를 거부한다. side 없는 수정은 저장된 진영을 유지한다. `commulingo_event_link` 도구와 `get_event`도 side·sides를 다룬다. 정의는 `commulingo/relation_kinds.py`의 `SIDE_RULE`.
+- SQL로 직접 넣는 운영자 일괄 스크립트는 진영 있는 사건의 opponent를 거부한다. 상세는 leninbot `dev_docs/commulingo_pipeline.md`.
+- 파이프라인은 타이머로 매번 새 프로세스가 떠서 커밋 뒤 첫 실행부터 적용되었다(1차 대전에 새로 붙은 헤르만 호트가 `central-powers`로 들어감). 적용 전 옛 코드가 붙인 나폴레온 제르바스 1건은 `entente`로 직접 고쳤다. 채팅 도구를 쓰는 상주 서비스(telegram·api 등)는 재시작 전까지 옛 작성기를 쓴다.
 - 새 사건 등록은 `scripts/apply-history-events.js`가 `fields.sides`와 `people[].side`를 받는다(진영이 있으면 opponent 거부, focus와 동시 불가).
