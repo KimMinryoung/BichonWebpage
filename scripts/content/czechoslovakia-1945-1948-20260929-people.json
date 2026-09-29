@@ -1,0 +1,463 @@
+{
+  "changedBy": "czechoslovakia-1945-1948-20260929",
+  "people": [
+    {
+      "id": "zdenek-fierlinger",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "즈데네크",
+        "en": "Zdeněk"
+      },
+      "familyName": {
+        "ko": "피를링게르",
+        "en": "Fierlinger"
+      },
+      "nativeName": "Zdeněk Fierlinger",
+      "years": "1891–1976",
+      "citizenship": {
+        "code": "czechoslovakia"
+      },
+      "nationalOrigin": {
+        "code": "czechia"
+      },
+      "role": {
+        "category": "socialist-bloc-leader"
+      },
+      "epithet": {
+        "ko": "해방 뒤 첫 총리를 지내고 1948년 2월 공산당 편에 서서 사회민주당을 공산당에 합친 친소 사회민주주의자",
+        "en": "Pro-Soviet Social Democrat and first post-liberation premier who sided with the Communists in 1948 and merged his party into theirs"
+      },
+      "bio": {
+        "ko": "올로모우츠 출신의 외교관으로 네덜란드·루마니아·미국·스위스·오스트리아 대사를 거쳐 전쟁 중 모스크바 주재 망명정부 대사를 지내며 소련과 가까워졌다. 1945년 4월 코시체 정부의 총리가 되어 1946년 6월까지 민족전선 정부를 이끌었다. 사회민주당 지도자로서 공산당과의 긴밀한 협력을 주장했고, 1948년 2월 비공산당 장관들이 사임할 때 자리를 지키며 공개적으로 공산당을 지지했다. 쿠데타 뒤 사회민주당을 공산당에 합쳤고 공산 정권에서 고위직을 지냈다.",
+        "en": "A diplomat from Olomouc, he served as envoy to the Netherlands, Romania, the United States, Switzerland and Austria and, as the exile government’s ambassador in Moscow during the war, grew close to the Soviet Union. Prime minister of the Košice government from April 1945, he led the National Front government until June 1946. As Social Democratic leader he advocated close co-operation with the Communists, and when the non-Communist ministers resigned in February 1948 he stayed and openly backed the Communists. After the coup he merged the Social Democrats into the Communist Party and held high office under the regime."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "피를링게르"
+        ],
+        "en": [
+          "Fierlinger"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+        "https://en.wikipedia.org/wiki/1948_Czechoslovak_coup_d%27%C3%A9tat"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A diplomat from Olomouc, he served as envoy to the Netherlands, Romania, the United States, Switzerland and Austria and, as the exile government’s ambassador in Moscow during the war, grew close to the Soviet Union. Prime minister of the Košice government from April 1945, he led the National Front government until June 1946. As Social Democratic leader he advocated close co-operation with the Communists, and when the non-Communist ministers resigned in February 1948 he stayed and openly backed the Communists. After the coup he merged the Social Democrats into the Communist Party and held high office under the regime.",
+          "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1891–1976",
+          "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "zdenek-fierlinger: citizenship czechoslovakia",
+          "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "zdenek-fierlinger: national background czechia",
+          "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "antonin-zapotocky",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "안토닌",
+        "en": "Antonín"
+      },
+      "familyName": {
+        "ko": "자포토츠키",
+        "en": "Zápotocký"
+      },
+      "nativeName": "Antonín Zápotocký",
+      "years": "1884–1957",
+      "citizenship": {
+        "code": "czechoslovakia"
+      },
+      "nationalOrigin": {
+        "code": "czechia"
+      },
+      "role": {
+        "category": "socialist-bloc-leader"
+      },
+      "epithet": {
+        "ko": "노동조합 중앙평의회를 이끌고 1948년 2월 사건 뒤 총리, 1953년 대통령이 된 체코슬로바키아 공산주의자",
+        "en": "Czechoslovak Communist who led the trade-union central council, became prime minister after February 1948 and president in 1953"
+      },
+      "bio": {
+        "ko": "보헤미아 자콜라니 출신의 석공으로 사회민주당을 거쳐 공산당 창립에 참여했다. 독일 점령기에 체포되어 판크라츠 감옥과 드레스덴을 거쳐 1940년부터 작센하우젠 수용소에 갇혔다. 해방 뒤 귀국해 노동조합 중앙평의회 의장과 공산당 간부회 위원이 되었고, 1946년 제헌의회 의장을 잠시 지냈다. 1948년 6월 대통령이 된 고트발트의 뒤를 이어 총리가 되었고, 1953년 고트발트가 죽자 대통령이 되었다. 보다 온건한 통치를 원했으나 노보트니에게 밀렸다.",
+        "en": "A stonemason from Zákolany in Bohemia, he came from the Social Democrats to help found the Communist Party. Arrested under the German occupation, he was held in Pankrác prison and Dresden and from 1940 in Sachsenhausen concentration camp. Back home after liberation he became chairman of the Central Council of Trade Unions and a member of the Communist presidium, and briefly chaired the Constituent Assembly in 1946. He succeeded Gottwald as prime minister in June 1948 when Gottwald became president, and became president himself on Gottwald’s death in 1953. He favoured a more humane rule but was outflanked by Novotný."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "자포토츠키"
+        ],
+        "en": [
+          "Zápotocký",
+          "Zapotocky"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Anton%C3%ADn_Z%C3%A1potock%C3%BD",
+        "https://en.wikipedia.org/wiki/1948_Czechoslovak_coup_d%27%C3%A9tat"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A stonemason from Zákolany in Bohemia, he came from the Social Democrats to help found the Communist Party. Arrested under the German occupation, he was held in Pankrác prison and Dresden and from 1940 in Sachsenhausen concentration camp. Back home after liberation he became chairman of the Central Council of Trade Unions and a member of the Communist presidium, and briefly chaired the Constituent Assembly in 1946. He succeeded Gottwald as prime minister in June 1948 when Gottwald became president, and became president himself on Gottwald’s death in 1953. He favoured a more humane rule but was outflanked by Novotný.",
+          "source": "https://en.wikipedia.org/wiki/Anton%C3%ADn_Z%C3%A1potock%C3%BD",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1884–1957",
+          "source": "https://en.wikipedia.org/wiki/Anton%C3%ADn_Z%C3%A1potock%C3%BD",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "antonin-zapotocky: citizenship czechoslovakia",
+          "source": "https://en.wikipedia.org/wiki/Anton%C3%ADn_Z%C3%A1potock%C3%BD",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "antonin-zapotocky: national background czechia",
+          "source": "https://en.wikipedia.org/wiki/Anton%C3%ADn_Z%C3%A1potock%C3%BD",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "vladimir-clementis",
+      "groupId": "international-revolutionary",
+      "givenName": {
+        "ko": "블라디미르",
+        "en": "Vladimír"
+      },
+      "familyName": {
+        "ko": "클레멘티스",
+        "en": "Clementis"
+      },
+      "nativeName": "Vladimír Clementis",
+      "years": "1902–1952",
+      "citizenship": {
+        "code": "czechoslovakia"
+      },
+      "nationalOrigin": {
+        "code": "slovakia"
+      },
+      "role": {
+        "category": "socialist-bloc-leader"
+      },
+      "epithet": {
+        "ko": "얀 마사리크의 뒤를 이어 외무장관이 되었다가 1952년 슬란스키 재판에서 처형된 슬로바키아 공산주의자",
+        "en": "Slovak Communist who succeeded Jan Masaryk as foreign minister and was executed after the Slánský trial of 1952"
+      },
+      "bio": {
+        "ko": "슬로바키아 티소베츠 출신의 법률가로, 전간기 슬로바키아 지식인에게 큰 영향을 준 문화·정치 잡지 『다우』를 함께 편집한 좌파 지식인이었다. 공산당 의원으로 활동했다. 1948년 3월 얀 마사리크가 숨진 뒤 외무장관이 되어 1950년까지 재임했다. 「티토주의」와 「민족주의 편향」 혐의로 1952년 슬란스키 재판에서 사형을 선고받고 12월 3일 처형되었다. 뒷날 복권되었다.",
+        "en": "A lawyer from Tisovec in Slovakia, he was a left-wing intellectual who co-edited Dav, a cultural and political journal of great influence among interwar Slovak intellectuals. He sat as a Communist deputy. He became foreign minister after Jan Masaryk’s death in March 1948 and served until 1950. Accused of “Titoism” and “national deviation”, he was sentenced to death at the Slánský trial of 1952 and executed on 3 December; he was later rehabilitated."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "클레멘티스"
+        ],
+        "en": [
+          "Clementis"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+        "https://en.wikipedia.org/wiki/Rudolf_Sl%C3%A1nsk%C3%BD"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A lawyer from Tisovec in Slovakia, he was a left-wing intellectual who co-edited Dav, a cultural and political journal of great influence among interwar Slovak intellectuals. He sat as a Communist deputy. He became foreign minister after Jan Masaryk’s death in March 1948 and served until 1950. Accused of “Titoism” and “national deviation”, he was sentenced to death at the Slánský trial of 1952 and executed on 3 December; he was later rehabilitated.",
+          "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1902–1952",
+          "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "vladimir-clementis: citizenship czechoslovakia",
+          "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "vladimir-clementis: national background slovakia",
+          "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "petr-zenkl",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "페트르",
+        "en": "Petr"
+      },
+      "familyName": {
+        "ko": "젠클",
+        "en": "Zenkl"
+      },
+      "nativeName": "Petr Zenkl",
+      "years": "1884–1975",
+      "citizenship": {
+        "code": "czechoslovakia"
+      },
+      "nationalOrigin": {
+        "code": "czechia"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "1948년 2월 장관 사임을 이끌고 망명해 자유 체코슬로바키아 평의회를 이끈 국민사회당 의장",
+        "en": "National Socialist leader who led the ministers’ resignation in February 1948 and headed the exile Council of Free Czechoslovakia"
+      },
+      "bio": {
+        "ko": "보헤미아 타보르의 소상인 집안에서 태어나 교사가 되었고, 1937~1939년 프라하 시장을 지냈다. 독일 점령 뒤 체포되어 다하우와 부헨발트에 갇혔다가 1945년 미군에 의해 풀려났다. 전후 국민사회당 의장으로 다시 프라하 시장이 되었고, 1946년 선거에서 제2당을 이끌어 부총리가 되었다. 1947년 9월 마사리크·드르티나와 함께 폭발물 상자를 받았다. 1948년 2월 다른 비공산당 장관들과 함께 사임했고, 쿠데타 뒤 감시를 피해 망명해 1949~1974년 자유 체코슬로바키아 평의회 의장을 지냈다.",
+        "en": "Born to a small tradesman in Tábor in Bohemia, he became a teacher and was mayor of Prague from 1937 to 1939. Arrested after the German occupation, he was held in Dachau and Buchenwald until American troops freed him in 1945. As postwar chairman of the National Socialists he was again mayor of Prague and, after leading the second party in 1946, deputy prime minister. In September 1947 he, Masaryk and Drtina received boxes of explosives. He resigned with the other non-Communist ministers in February 1948, escaped surveillance after the coup and chaired the exile Council of Free Czechoslovakia from 1949 to 1974."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "젠클"
+        ],
+        "en": [
+          "Zenkl"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Petr_Zenkl",
+        "https://en.wikipedia.org/wiki/1948_Czechoslovak_coup_d%27%C3%A9tat"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "Born to a small tradesman in Tábor in Bohemia, he became a teacher and was mayor of Prague from 1937 to 1939. Arrested after the German occupation, he was held in Dachau and Buchenwald until American troops freed him in 1945. As postwar chairman of the National Socialists he was again mayor of Prague and, after leading the second party in 1946, deputy prime minister. In September 1947 he, Masaryk and Drtina received boxes of explosives. He resigned with the other non-Communist ministers in February 1948, escaped surveillance after the coup and chaired the exile Council of Free Czechoslovakia from 1949 to 1974.",
+          "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1884–1975",
+          "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "petr-zenkl: citizenship czechoslovakia",
+          "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "petr-zenkl: national background czechia",
+          "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "hubert-ripka",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "후베르트",
+        "en": "Hubert"
+      },
+      "familyName": {
+        "ko": "립카",
+        "en": "Ripka"
+      },
+      "nativeName": "Hubert Ripka",
+      "years": "1895–1958",
+      "citizenship": {
+        "code": "czechoslovakia"
+      },
+      "nationalOrigin": {
+        "code": "czechia"
+      },
+      "role": {
+        "category": "foreign-statesman"
+      },
+      "epithet": {
+        "ko": "전후 대외무역장관을 지내고 1948년 2월 사임 뒤 다시 망명한 국민사회당 정치가",
+        "en": "Postwar foreign trade minister who resigned in February 1948 and went back into exile"
+      },
+      "bio": {
+        "ko": "언론인 출신의 국민사회당 정치가로, 1940년 영국으로 건너가 런던 망명정부 외무부의 국무장관이 되었다. 1945년 귀국해 대외무역장관을 맡았고 1946~1948년 제헌의회 의원이었다. 1948년 2월 경찰 숙청에 항의해 사임한 비공산당 장관 가운데 하나였고, 공산당이 권력을 잡자 다시 나라를 떠났다. 망명 중에 체코슬로바키아와 뮌헨 협정, 1948년 2월 사건에 관한 책을 썼고, 1958년 1월 런던에서 숨졌다.",
+        "en": "A journalist turned National Socialist politician, he went to England in 1940 and became secretary of state in the foreign ministry of the London exile government. Returning in 1945, he became minister of foreign trade and sat in the Constituent Assembly from 1946 to 1948. One of the non-Communist ministers who resigned over the police purge in February 1948, he left the country again when the Communists took power. In exile he wrote on Czechoslovakia, Munich and the events of February 1948, and he died in London in January 1958."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "립카"
+        ],
+        "en": [
+          "Ripka"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hubert_Ripka",
+        "https://en.wikipedia.org/wiki/1948_Czechoslovak_coup_d%27%C3%A9tat"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A journalist turned National Socialist politician, he went to England in 1940 and became secretary of state in the foreign ministry of the London exile government. Returning in 1945, he became minister of foreign trade and sat in the Constituent Assembly from 1946 to 1948. One of the non-Communist ministers who resigned over the police purge in February 1948, he left the country again when the Communists took power. In exile he wrote on Czechoslovakia, Munich and the events of February 1948, and he died in London in January 1958.",
+          "source": "https://en.wikipedia.org/wiki/Hubert_Ripka",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1895–1958",
+          "source": "https://en.wikipedia.org/wiki/Hubert_Ripka",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "hubert-ripka: citizenship czechoslovakia",
+          "source": "https://en.wikipedia.org/wiki/Hubert_Ripka",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "hubert-ripka: national background czechia",
+          "source": "https://en.wikipedia.org/wiki/Hubert_Ripka",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    },
+    {
+      "id": "milada-horakova",
+      "groupId": "foreign-statesmen",
+      "givenName": {
+        "ko": "밀라다",
+        "en": "Milada"
+      },
+      "familyName": {
+        "ko": "호라코바",
+        "en": "Horáková"
+      },
+      "nativeName": "Milada Horáková",
+      "years": "1901–1950",
+      "citizenship": {
+        "code": "czechoslovakia"
+      },
+      "nationalOrigin": {
+        "code": "czechia"
+      },
+      "role": {
+        "category": "dissident"
+      },
+      "epithet": {
+        "ko": "나치와 공산당 모두에 맞서다 1950년 조작된 반역 재판으로 교수형에 처해진 체코의 여성 정치가",
+        "en": "Czech politician who resisted both the Nazis and the Communists and was hanged in 1950 after a fabricated treason trial"
+      },
+      "bio": {
+        "ko": "프라하 출신의 법률가로, 전간기 여성 권리 운동에 앞장섰다. 독일 점령기 지하 저항 운동에 참여했다가 1940년 게슈타포에 체포되어 테레진과 독일의 감옥을 거쳤고, 1945년 4월 미군에 의해 풀려났다. 전후 국민사회당 의원이 되었고 1947년 여성 잡지 『블라스타』를 창간했다. 1948년 2월 쿠데타 직후 항의의 뜻으로 의원직을 내놓았지만 망명하지 않고 프라하에서 활동을 이어 갔다. 1949년 9월 체포되어 고문을 동반한 신문 끝에 음모·반역 혐의로 사형을 선고받았고, 1950년 6월 27일 판크라츠 감옥에서 교수형에 처해졌다.",
+        "en": "A Prague lawyer, she was prominent in the interwar women’s rights movement. Active in the underground resistance under German occupation, she was arrested by the Gestapo in 1940, passed through Terezín and German prisons and was freed by American troops in April 1945. After the war she became a National Socialist deputy and in 1947 founded the women’s magazine Vlasta. She resigned her seat in protest shortly after the February 1948 coup but chose not to emigrate and stayed politically active in Prague. Arrested in September 1949 and interrogated under torture, she was sentenced to death for conspiracy and treason and hanged in Pankrác prison on 27 June 1950."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "호라코바"
+        ],
+        "en": [
+          "Horáková",
+          "Milada Horakova"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+        "https://en.wikipedia.org/wiki/1948_Czechoslovak_coup_d%27%C3%A9tat"
+      ],
+      "evidence": [
+        {
+          "field": "bio",
+          "claim": "A Prague lawyer, she was prominent in the interwar women’s rights movement. Active in the underground resistance under German occupation, she was arrested by the Gestapo in 1940, passed through Terezín and German prisons and was freed by American troops in April 1945. After the war she became a National Socialist deputy and in 1947 founded the women’s magazine Vlasta. She resigned her seat in protest shortly after the February 1948 coup but chose not to emigrate and stayed politically active in Prague. Arrested in September 1949 and interrogated under torture, she was sentenced to death for conspiracy and treason and hanged in Pankrác prison on 27 June 1950.",
+          "source": "https://en.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "years",
+          "claim": "1901–1950",
+          "source": "https://en.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "citizenship",
+          "claim": "milada-horakova: citizenship czechoslovakia",
+          "source": "https://en.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+          "locator": "Wikipedia article: lead, biography sections"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "milada-horakova: national background czechia",
+          "source": "https://en.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+          "locator": "Wikipedia article: lead, biography sections"
+        }
+      ]
+    }
+  ]
+}
