@@ -121,7 +121,9 @@ const NATION_SCRIPTS = {
 // order, as 국립국어원 and Korean reference works do); English follows each
 // nation's own romanization — family first for Korean/Chinese/Vietnamese
 // (Kim Mu-chong, Peng Dehuai, Le Duan), given first for Japanese and
-// Hungarian (Sen Katayama, János Kádár). Nations absent here use Western
+// Hungarian (Sen Katayama, János Kádár). Khmer names are family first and
+// spaced in both languages (폴 포트, 노로돔 시아누크 / Hun Sen, Khieu Samphan):
+// 노로돔 is the family, 시아누크 the given name. Nations absent here use Western
 // "given family". The rule keys on citizenship_code alone: an ethnic
 // Hungarian with Romanian papers (Tőkés) or a Korean with Soviet ones (허가이)
 // follows the citizenship's order, and a mononym or a fused single token
@@ -136,6 +138,7 @@ const FAMILY_FIRST = {
     vietnam: { ko: '', en: ' ' },
     japan: { ko: ' ', en: null },
     hungary: { ko: ' ', en: null },
+    cambodia: { ko: ' ', en: ' ' },
 };
 
 // The joiner between family and given when `code` writes the family name

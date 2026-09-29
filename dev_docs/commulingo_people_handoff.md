@@ -99,6 +99,7 @@ truth and the stored string only has to agree with them.
 | --- | --- | --- |
 | korea, north-korea, south-korea, china, vietnam | family first, fused (김무정, 펑더화이, 호찌민) | family first, spaced (Kim Mu-chong, Peng Dehuai, Le Duan) |
 | japan, hungary | family first, spaced (도쿠다 규이치, 카다르 야노시) | given first (Sen Katayama, János Kádár) |
+| cambodia | family first, spaced (폴 포트, 노로돔 시아누크) | family first, spaced (Hun Sen, Khieu Samphan) |
 | everyone else | given first | given first |
 
 The rule keys on `citizenship_code` alone. An ethnic Hungarian with Romanian
@@ -110,6 +111,14 @@ own order (`Kádár János`, `Hồ Chí Minh`) and CJK names are written solid
 of this and exits 1 on a mismatch; migration 156 (2026-09-01) is the case that
 motivated it — `hungary` was absent from the table, so all 28 Hungarians rendered
 given-first while their stored names disagreed with one another.
+
+Khmer names put the family name first (노로돔 is Sihanouk's family, 키우
+Samphan's), and Korean keeps the space. `cambodia` was added on 2026-09-29:
+before that all eight Cambodians had the parts stored the wrong way round, and
+three (키우 삼판 키우, 노로돔 시아누크 노로돔, 손 산 손) had the family name
+repeated at the end of the full name. Bare English family names that are
+ordinary words (Pol, Pen, Hun) are `alias` rows in the link blocklist; those
+people link only by full name.
 
 Because the check keys off nationality fields, a wrong code produces a wrong
 name. **Citizenship is the state the person belonged to for the work they are
