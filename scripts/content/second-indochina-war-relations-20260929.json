@@ -1,0 +1,90 @@
+{
+  "id": "second-indochina-war-relations-20260929",
+  "changes": [
+    {
+      "event": "cambodian-regime-change-1975-1979",
+      "column": "relations",
+      "expected": {
+        "related": [
+          "sino-vietnamese-war-1979",
+          "vietnam-reunification-1975-1976"
+        ]
+      },
+      "value": {
+        "related": [
+          "second-indochina-war-1955-1975",
+          "sino-vietnamese-war-1979",
+          "vietnam-reunification-1975-1976"
+        ]
+      }
+    },
+    {
+      "event": "first-indochina-war-1945-1954",
+      "column": "relations",
+      "expected": {
+        "related": [
+          "pacific-war",
+          "chinese-revolution-1949",
+          "korean-war",
+          "vietnam-reunification-1975-1976",
+          "lao-republic-1975"
+        ]
+      },
+      "value": {
+        "related": [
+          "second-indochina-war-1955-1975",
+          "pacific-war",
+          "chinese-revolution-1949",
+          "korean-war",
+          "vietnam-reunification-1975-1976",
+          "lao-republic-1975"
+        ]
+      }
+    },
+    {
+      "event": "lao-republic-1975",
+      "column": "relations",
+      "expected": {},
+      "value": {
+        "related": [
+          "second-indochina-war-1955-1975"
+        ]
+      }
+    },
+    {
+      "event": "sino-vietnamese-war-1979",
+      "column": "relations",
+      "expected": {
+        "related": [
+          "afghanistan-war",
+          "sino-soviet-split",
+          "cambodian-regime-change-1975-1979",
+          "vietnam-reunification-1975-1976",
+          "reform-and-opening",
+          "first-indochina-war-1945-1954"
+        ]
+      },
+      "value": {
+        "related": [
+          "second-indochina-war-1955-1975",
+          "afghanistan-war",
+          "sino-soviet-split",
+          "cambodian-regime-change-1975-1979",
+          "vietnam-reunification-1975-1976",
+          "reform-and-opening",
+          "first-indochina-war-1945-1954"
+        ]
+      }
+    },
+    {
+      "event": "vietnam-reunification-1975-1976",
+      "column": "relations",
+      "expected": {},
+      "value": {
+        "related": [
+          "second-indochina-war-1955-1975"
+        ]
+      }
+    }
+  ]
+}

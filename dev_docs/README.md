@@ -21,6 +21,7 @@
 | CommuLingo 코민테른의 인민전선 전환 사건 | [한영 사건·인물 관계 14건·디미트로프 문헌 연결·반영 기록](commulingo-comintern-popular-front-20260929.md) |
 | CommuLingo 체코슬로바키아 1945–1948 사건 | [인민민주주의 묶음 자식 문서·인물 6명·반영 기록](commulingo-czechoslovakia-1945-1948-20260929.md) |
 | CommuLingo 8월 혁명과 제1차 인도차이나 전쟁 | [한영 사건·인물 7명·반영 기록](commulingo-first-indochina-war-20260929.md) |
+| CommuLingo 제2차 인도차이나 전쟁 | [한영 사건·인물 4명·역방향 연결·반영 기록](commulingo-second-indochina-war-20260929.md) |
 | CommuLingo 중월전쟁 | [한영 사건·인물 4명·반영 기록](commulingo-sino-vietnamese-war-20260929.md) |
 | CommuLingo 사건 진영(sides) | [중심 주체 없는 사건의 진영 구조·29개 사건 배정](commulingo-event-sides-20260929.md) |
 | CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
