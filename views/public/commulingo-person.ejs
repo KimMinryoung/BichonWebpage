@@ -61,10 +61,13 @@
         <% if (person.activities && person.activities.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="person-activities">
             <h2 id="person-activities"><%= en ? 'Activities and affiliations' : '주요 활동과 소속' %></h2>
-            <ul class="commu-person-career">
+            <%# The year column exists only when some activity is dated; an empty
+                column pushed undated rows off the section's left edge. %>
+            <% var activitiesDated = person.activities.some(function(a) { return a.startYear || a.endYear; }); %>
+            <ul class="commu-person-career commu-person-activities">
             <% person.activities.forEach(function(a) { %>
-                <li><span class="commu-career-year"><%= a.startYear || '' %><%= a.startYear || a.endYear ? '–' : '' %><%= a.endYear || '' %></span>
-                    <span><a href="<%= a.href %>"><%= a.label %></a>
+                <li><% if (activitiesDated) { %><span class="commu-career-year"><%= a.startYear && a.startYear === a.endYear ? a.startYear : (a.startYear || '') + (a.startYear || a.endYear ? '–' : '') + (a.endYear || '') %></span><% } %>
+                    <span><a class="commu-person-activity-link" href="<%= a.href %>"><%= a.label %></a>
                     <% if (a.affiliationLabel) { %> · <span class="commu-person-affiliation"><% if (a.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %><%= a.affiliationLabel %></span><% } %>
                     </span></li>
             <% }) %>
