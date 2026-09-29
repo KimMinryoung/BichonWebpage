@@ -18,6 +18,7 @@
 | CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
 | CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
 | CommuLingo 코민테른의 창설 사건 | [한영 사건·인물 5명·문헌 연결·반영 기록](commulingo-comintern-founding-20260929.md) |
+| CommuLingo 코민테른의 인민전선 전환 사건 | [한영 사건·인물 관계 14건·디미트로프 문헌 연결·반영 기록](commulingo-comintern-popular-front-20260929.md) |
 | CommuLingo 체코슬로바키아 1945–1948 사건 | [인민민주주의 묶음 자식 문서·인물 6명·반영 기록](commulingo-czechoslovakia-1945-1948-20260929.md) |
 | CommuLingo 8월 혁명과 제1차 인도차이나 전쟁 | [한영 사건·인물 7명·반영 기록](commulingo-first-indochina-war-20260929.md) |
 | CommuLingo 중월전쟁 | [한영 사건·인물 4명·반영 기록](commulingo-sino-vietnamese-war-20260929.md) |

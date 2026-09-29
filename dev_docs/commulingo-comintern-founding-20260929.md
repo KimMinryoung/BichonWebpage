@@ -21,4 +21,4 @@
 ## 후속 후보
 
 - 도이미히·크리스피엔(아르투어)·로리오 카드는 2026-09-29 gap #2083~2085로 등록했다. 보르디가에는 같은 날 절 「코민테른 안의 분열과 제명(1919~1930)」을 더했다.
-- `dimitrov-7th-congress-1935`를 다룰 인민전선기 코민테른 사건(현재 `french-popular-front`만 있음).
+- ~~`dimitrov-7th-congress-1935`를 다룰 인민전선기 코민테른 사건~~ 2026-09-29 `comintern-popular-front-1934-1939`로 등록([기록](commulingo-comintern-popular-front-20260929.md)).
