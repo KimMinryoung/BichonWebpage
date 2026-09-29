@@ -342,7 +342,11 @@ Event relationships live in `commulingo_history_event_people` and use leader,
 executor, participant, opponent, target, witness or historian as relation kinds. The
 definitions live in leninbot `commulingo/relation_kinds.py` (revised 2026-09-29:
 executor is "집행 · 지휘", not the prime mover; witness is contemporary only; historian
-is later scholarship) and the page labels in `data/commulingo/event-presentation.js`. Check existing
+is later scholarship) and the page labels in `data/commulingo/event-presentation.js`.
+Opponent is camp-based against `commulingo_history_events.focus` (migration 192; 78 events
+have one). In an event without a focus, only people who tried to stop the event itself (an
+anti-war campaigner, a coup resister) are opponents; the column comment written with the
+migration predates that amendment. Check existing
 section slugs and topics before adding another section to avoid duplicate coverage.
 Maintainer selection and schedules are defined in the leninbot repository; see the
 [editing plan](commulingo-people-editing-plan.md) for the inspected rules.
