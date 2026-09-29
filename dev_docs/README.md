@@ -20,6 +20,7 @@
 | CommuLingo 코민테른의 창설 사건 | [한영 사건·인물 5명·문헌 연결·반영 기록](commulingo-comintern-founding-20260929.md) |
 | CommuLingo 체코슬로바키아 1945–1948 사건 | [인민민주주의 묶음 자식 문서·인물 6명·반영 기록](commulingo-czechoslovakia-1945-1948-20260929.md) |
 | CommuLingo 8월 혁명과 제1차 인도차이나 전쟁 | [한영 사건·인물 7명·반영 기록](commulingo-first-indochina-war-20260929.md) |
+| CommuLingo 중월전쟁 | [한영 사건·인물 4명·반영 기록](commulingo-sino-vietnamese-war-20260929.md) |
 | CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
 | CommuLingo 중국 혁명·중화인민공화국 확장 | [중국 선반·시대 그룹, 사건 12편·인물 48명·용어 15개](commulingo-china-history-20260921.md) |
 | CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |

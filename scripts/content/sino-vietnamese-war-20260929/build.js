@@ -1,0 +1,213 @@
+#!/usr/bin/env node
+// Sino-Vietnamese War event batch (2026-09-29). Source of truth for
+// ../sino-vietnamese-war-20260929.json and ../sino-vietnamese-war-20260929-people.json.
+// Edit here, run `node build.js`, commit the JSON with it.
+const fs = require('fs');
+const path = require('path');
+
+const W = t => 'https://en.wikipedia.org/wiki/' + t;
+const S = {
+    war: W('Sino-Vietnamese_War'),
+    cambodia: W('Cambodian%E2%80%93Vietnamese_War'),
+    hoa: W('Hoa_people'),
+    langSon: W('Battle_of_L%E1%BA%A1ng_S%C6%A1n_(1979)'),
+    xuShiyou: W('Xu_Shiyou'),
+    yangDezhi: W('Yang_Dezhi'),
+    vanTienDung: W('V%C4%83n_Ti%E1%BA%BFn_D%C5%A9ng'),
+    hoan: W('Ho%C3%A0ng_V%C4%83n_Hoan'),
+    conflicts: W('Sino-Vietnamese_conflicts_(1979%E2%80%931991)'),
+    johnsonReef: W('Johnson_South_Reef_skirmish'),
+    relations: W('China%E2%80%93Vietnam_relations'),
+};
+
+const sections = [
+    {
+        heading: { ko: '동맹의 균열', en: 'The alliance frays' },
+        paragraphs: [
+            {
+                ko: '중국은 제1차 인도차이나 전쟁 때 베트민을 지원한 동맹이었지만, 1950년대 후반 중소분열 뒤 베트남이 중국 편에 서지 않으면서 관계는 식어 갔다. 베트남 전쟁 동안 북베트남은 소련의 무기와 원조에 기대었고, 중국은 소련과 가까운 베트남이 남쪽 국경에서 자신을 포위할까 우려했다. 1970년대 초 중국은 키신저와 닉슨을 맞으며 미국과 손잡는 쪽으로 외교를 돌렸고, 1976년 마오가 죽고 덩샤오핑이 부상하자 개혁개방과 대소 견제를 위한 대미 협력을 본격화했다.',
+                en: 'China had been the Viet Minh’s ally in the First Indochina War, but relations cooled after the Sino-Soviet split of the late 1950s as Vietnam declined to side with China. During the Vietnam War North Vietnam relied on Soviet arms and aid, and China feared that a Vietnam close to Moscow would encircle it from the south. In the early 1970s China turned towards the United States, receiving Kissinger and Nixon, and after Mao’s death in 1976 and Deng Xiaoping’s rise it pursued reform and opening and co-operation with Washington against the Soviet Union.',
+                sources: [S.war],
+            },
+            {
+                ko: '1975년 베트남 전쟁의 승리 뒤 베트남은 스스로를 세계 3위의 군사 강국이라 불렀고, 이는 중국의 경계심을 키웠다. 중국은 베트남이 인도차이나 전체를 지배하려는 지역 패권을 추구한다고 보았고, 베트남이 라오스·캄보디아와 「특별한 관계」를 요구하자 이 의심은 굳어졌다. 크메르루주의 민주캄푸치아는 이 요구를 거부했다.',
+                en: 'After victory in the Vietnam War in 1975 Vietnam called itself the world’s third-largest military power, which heightened Chinese apprehension. China saw Vietnam as pursuing regional hegemony over all Indochina, a suspicion hardened when Vietnam called for a “special relationship” among the three Indochinese countries — a demand the Khmer Rouge regime of Democratic Kampuchea rejected.',
+                sources: [S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1978년의 파국: 화교·국경·캄보디아', en: '1978: the Hoa, the border and Cambodia' },
+        paragraphs: [
+            {
+                ko: '1975년 통일 뒤 갈등은 여러 갈래로 터졌다. 베트남은 1976년부터 남부의 화교(호아족)에게 베트남 국적을 받거나 떠나라고 요구했고, 1978년 3월의 차별 정책 뒤 많은 화교가 중국 남부로 도망쳤다. 25만 명에 이르는 호아족이 귀국을 신청하는 동안 국경 분쟁도 늘어나, 경계가 불분명한 164곳 227㎢를 둘러싼 충돌이 1974년 125건에서 1978년 2,175건으로 불었다. 1978년 8월 우의관 사건에서는 베트남 군경이 난민 2,500명을 중국 쪽으로 몰아냈다.',
+                en: 'After reunification in 1975 the conflict erupted on several fronts. From 1976 Vietnam required the ethnic Chinese (Hoa) in the south to take Vietnamese citizenship or leave, and after a discriminatory policy of March 1978 large numbers fled to southern China; as many as 250,000 Hoa applied to be repatriated. Border disputes multiplied too: clashes over 164 undemarcated places totalling 227 square kilometres rose from 125 in 1974 to 2,175 in 1978. In the Youyi Pass incident of August 1978 Vietnamese troops and police drove 2,500 refugees across the border into China.',
+                sources: [S.war, S.hoa],
+            },
+            {
+                ko: '캄보디아는 결정적인 쟁점이었다. 중국은 1975년 집권한 폴 포트의 크메르루주를 정치·군수·군사적으로 지원했지만, 크메르루주와 베트남의 관계는 국경 충돌로 적대로 바뀌었다. 1978년 6월 베트남은 경제상호원조회의에 가입했고, 소련의 군사 원조는 1977년 7,500만~1억 2,500만 달러에서 1978년 6억~8억 달러로 뛰었다. 7월 중국은 베트남 원조를 모두 끊고 전문가를 불러들였고, 베트남 공산당은 중국을 「직접적이고 위험한 적」이라 규정했다. 11월 3일 소련과 베트남은 25년 기한의 상호방위조약을 맺었다.',
+                en: 'Cambodia was the decisive issue. China gave political, logistical and military support to Pol Pot’s Khmer Rouge after they took power in 1975, but border clashes turned the Khmer Rouge and Vietnam into enemies. In June 1978 Vietnam joined the Council for Mutual Economic Assistance, and Soviet military aid rose from $75–125 million in 1977 to $600–800 million in 1978. In July China cut off all aid to Vietnam and recalled its experts, and the Vietnamese Communist Party named China a “direct and dangerous enemy”. On 3 November the Soviet Union and Vietnam signed a 25-year mutual defence treaty.',
+                sources: [S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '「교훈을 가르치겠다」', en: '“Teaching a lesson”' },
+        paragraphs: [
+            {
+                ko: '1978년 9월 중국 인민해방군 총참모부는 베트남을 캄보디아에서 끌어내고, 소련과 베트남의 지역 야심을 견제하며, 국경 침범을 막기 위한 군사 행동에 합의했다. 12월 8일 중앙군사위원회는 광저우·쿤밍 군구에 1월 10일까지 준비를 명령했다. 12월 25일 베트남은 민주캄푸치아를 침공해 1979년 1월 7일 프놈펜을 점령하고 헹 삼린 정권을 세웠다. 중국 대사관은 크메르루주와 함께 밀림으로 달아났다.',
+                en: 'In September 1978 the PLA General Staff agreed on a military campaign to force Vietnam out of Cambodia, check Soviet and Vietnamese ambitions in the region and stop border encroachments. On 8 December the Central Military Commission ordered the Guangzhou and Kunming military regions to be ready by 10 January. On 25 December Vietnam invaded Democratic Kampuchea, took Phnom Penh on 7 January 1979 and installed Heng Samrin; the Chinese embassy fled into the jungle with the Khmer Rouge.',
+                sources: [S.war, S.cambodia],
+            },
+            {
+                ko: '1979년 1월 29일 덩샤오핑은 처음으로 미국을 방문해, 중국이 베트남의 「야심」을 받아들일 수 없으며 교훈을 가르칠 준비가 되어 있다고 카터에게 말했다. 브레진스키에 따르면 카터는 판단을 유보했고, 중국 외교관들은 이를 암묵적 승인으로 받아들였다. 귀국한 덩은 2월 9일 공격을 최종 결정했다. 중국은 소련의 개입을 막으려 중소 국경의 전군에 비상 경계령을 내리고 국경 주민 약 30만 명을 소개했다.',
+                en: 'On 29 January 1979 Deng Xiaoping made his first visit to the United States and told Carter that China could not accept Vietnam’s “wild ambitions” and was prepared to teach it a lesson. According to Brzezinski, Carter reserved judgment, which Chinese diplomats took as tacit approval. Back home, Deng made the final decision to attack on 9 February. To deter Soviet intervention China put all its forces on the Sino-Soviet border on emergency alert and evacuated some 300,000 civilians from the border.',
+                sources: [S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1979년 2~3월의 전쟁', en: 'The war of February–March 1979' },
+        paragraphs: [
+            {
+                ko: '2월 17일 약 20만 명의 인민해방군이 탱크 200대와 함께 베트남 북부로 들어갔다. 1962년 중인전쟁 이후 첫 대규모 작전이었다. 동부 전선은 광저우 군구의 쉬스유가 까오방·랑선·꽝닌 방향으로, 서부 전선은 쿤밍 군구의 양더즈가 라오까이 등 서북부로 지휘했다. 베트남은 정규 사단을 아끼고 국경 민병과 지방군으로 게릴라전을 폈으며, 하노이 방어를 위해 병력을 남겨 두고 캄보디아와 남부의 부대를 북쪽으로 불러올렸다.',
+                en: 'On 17 February some 200,000 PLA troops with 200 tanks entered northern Vietnam, the PLA’s first major operation since the Sino-Indian War of 1962. Xu Shiyou of the Guangzhou region commanded the eastern front towards Cao Bằng, Lạng Sơn and Quảng Ninh, and Yang Dezhi of the Kunming region the western front in the northwest including Lào Cai. Vietnam held back its regular divisions and fought a guerrilla war with border militia and provincial troops, keeping forces for the defence of Hanoi and bringing units north from Cambodia and the south.',
+                sources: [S.war, S.xuShiyou, S.yangDezhi],
+            },
+            {
+                ko: '베트남은 2월 18~25일 제3·제4군구의 327·337사단을 서북부로 보내고, 3월 6~11일에는 캄보디아에 있던 제2군단을 하노이로 불러들였으며, 중부와 남부의 공군 연대들도 북쪽으로 옮겼다. 인민해방군은 1950년대 초 이후 대규모 실전을 치르지 않았고 무기와 차량도 대부분 낡았던 반면, 베트남군은 전쟁으로 단련되었고 미국과 소련의 현대식 무기를 갖추고 있었다. 그럼에도 인민해방군은 잘 싸웠다는 평가를 받았다.',
+                en: 'Between 18 and 25 February Vietnam sent the 327th and 337th Divisions of the 3rd and 4th Military Regions to the northwest, from 6 to 11 March brought the 2nd Corps back from Cambodia to Hanoi, and moved air regiments north from the centre and south. The PLA had seen no major combat since the early 1950s and most of its weapons and vehicles were obsolete, whereas the Vietnamese were battle-hardened and armed with modern American and Soviet weapons; even so, the PLA was judged to have fought well.',
+                sources: [S.war],
+            },
+            {
+                ko: '중국군은 15~20km를 전진한 뒤 기세가 꺾여 8개 사단을 더 투입했다. 랑선 북쪽 고지를 점령한 중국군은 캄보디아의 베트남군을 끌어내려 도시 앞에서 멈췄고, 사흘간의 시가전 끝에 3월 6일 랑선을 함락했다. 같은 날 중국은 「하노이로 가는 문이 열렸다」며 징벌 목적을 달성했다고 선언했고, 베트남은 전국 총동원령을 내렸다. 소련은 정보와 장비를 대고 캄보디아의 베트남군을 공수했으며 함대를 보냈지만, 직접 개입하지는 않았다. 소련이 보낸 장비는 탱크·장갑차 400대와 전투기 20대 등이었고, 1979년 베트남에는 소련 군사고문 5천~8천 명이 있었다.',
+                en: 'After advancing 15–20 kilometres the Chinese attack stalled and eight more divisions were committed. Having taken the heights north of Lạng Sơn, the PLA paused before the city to draw Vietnamese units back from Cambodia, and after three days of street fighting took Lạng Sơn on 6 March. That day China declared that “the gate to Hanoi is open” and its punitive mission accomplished, while Vietnam ordered a nationwide general mobilisation. The Soviet Union supplied intelligence and equipment, airlifted Vietnamese troops from Cambodia and sent ships, but did not intervene directly. Its deliveries included 400 tanks and armoured personnel carriers and 20 jet fighters, and 5,000–8,000 Soviet military advisers were in Vietnam in 1979.',
+                sources: [S.war, S.langSon],
+            },
+            {
+                ko: '철수하는 중국군은 초토화 전술로 기반 시설을 부수고 가축과 물자를 약탈해 베트남 최북단 성들의 경제를 크게 망가뜨렸다. 중국군은 3월 16일 국경을 넘어 돌아갔고, 양쪽은 모두 승리를 선언했다. 사상자 수는 지금도 불확실하다. 중국 군 내부에서 새어 나온 자료는 전사자를 6,954명으로, 베트남 측은 중국군 사상자를 4만 4천~6만 2,500명으로 주장했다. 중국은 베트남군 5만 7천 명과 민병 7만 명이 죽었다고 추산했고, 베트남 신문은 민간인 사망이 1만 명을 넘었다고 보도했다.',
+                en: 'Withdrawing Chinese troops used scorched-earth tactics, destroying infrastructure and carrying off livestock and equipment, which crippled the economy of Vietnam’s northernmost provinces. The PLA crossed back into China on 16 March, and both sides declared victory. Casualties remain uncertain: leaked Chinese military sources put Chinese dead at 6,954, while Vietnamese sources claimed 44,000–62,500 Chinese casualties; China estimated 57,000 Vietnamese soldiers and 70,000 militia killed, and the Vietnamese press reported more than 10,000 civilian deaths.',
+                sources: [S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '전쟁 뒤: 숙청, 난민, 캄보디아', en: 'After the war: purges, refugees, Cambodia' },
+        paragraphs: [
+            {
+                ko: '베트남은 협력 가능성을 이유로 1979년 봄 하노이의 호아족 약 8천 명을 남부의 「신경제구」로 보내고 북부 소수민족을 이주시켰다. 친중파로 알려진 전 정치국원 호앙반호안이 7월 카라치에서 중국으로 망명하자, 당은 친중파와 전쟁 중 투항한 이들을 숙청해 1979년 한 해에만 2만 468명을 제명했다. 화교 재산 몰수와 추방도 이어졌다.',
+                en: 'Citing possible collaboration, Vietnam sent some 8,000 Hoa from Hanoi to southern “New Economic Zones” in spring 1979 and resettled northern minorities. When the former Politburo member Hoàng Văn Hoan, known as pro-Chinese, defected to China via Karachi in July, the party purged pro-Chinese elements and those who had surrendered during the war, expelling 20,468 members in 1979 alone. Confiscation of Chinese property and expulsions continued.',
+                sources: [S.war, S.hoan],
+            },
+            {
+                ko: '포로는 1979년 5~6월에 교환되었다. 중국은 베트남군 1,636명을, 베트남은 중국군 238명을 붙잡고 있었다. 전쟁 비용 34억 5천만 위안은 중국의 1979~1980년 경제계획을 늦추었다. 키신저는 중국이 소련의 전략적 한계를 드러냈고, 그 무력함을 만회하려는 욕구가 이듬해 소련의 아프가니스탄 개입에 한몫했을 것이라고 보았다.',
+                en: 'Prisoners were exchanged in May–June 1979: China held 1,636 Vietnamese and Vietnam 238 Chinese. The war’s cost of 3.45 billion yuan delayed China’s 1979–1980 economic plan. Kissinger judged that China had exposed the limits of Soviet strategic reach, and speculated that the wish to compensate for that ineffectuality contributed to the Soviet intervention in Afghanistan a year later.',
+                sources: [S.war],
+            },
+            {
+                ko: '전쟁은 베트남을 캄보디아에서 물러나게 하지 못했다. 그러나 중국은 두 번째 침공의 위협과 크메르루주 게릴라 지원으로 베트남이 국경과 캄보디아 점령에 자원을 쏟게 만들었고, 시아누크와 손 산, 크메르루주를 묶어 헹 삼린 정권이 소련권 밖에서 승인받지 못하게 했다. 베트남은 소련에 더 기대어 깜라인만 해군 기지를 빌려주었다. 리콴유는 서방 언론이 실패로 본 중국의 징벌이 「동아시아의 역사를 바꿨다」고 썼다. 덩샤오핑은 인민해방군의 부진을 군 개혁의 명분으로 삼았다.',
+                en: 'The war did not force Vietnam out of Cambodia. But by threatening a second invasion and backing Khmer Rouge guerrillas, China made Vietnam pour resources into the border and the occupation, and by rallying Sihanouk, Son Sann and the Khmer Rouge it kept Heng Samrin’s regime unrecognised outside the Soviet bloc. Vietnam grew more dependent on Moscow and leased it the naval base at Cam Ranh Bay. Lee Kuan Yew wrote that the Chinese punitive action the Western press wrote off as a failure “changed the history of East Asia”, and Deng used the PLA’s poor showing to push through military reform.',
+                sources: [S.war],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1980년대의 국경 전쟁과 관계 정상화', en: 'Border war in the 1980s and normalisation' },
+        paragraphs: [
+            {
+                ko: '국경 충돌은 1980년대 내내 이어져 1984~1985년 절정에 이르렀다. 1984년 4월 중국군은 하장 성 비쑤옌의 라오산(로손) 고지를 공격해 점령했고, 1988년 3월에는 남사군도 존슨 남 암초에서 해전이 벌어졌고, 이 시기 중국은 남사군도의 여섯 개 암초를 차지했다. 무력 충돌은 1989년 베트남이 캄보디아에서 완전히 철수하기로 하면서 끝났다.',
+                en: 'Border clashes continued through the 1980s, peaking in 1984–1985. In April 1984 Chinese troops attacked and took the Laoshan heights at Vị Xuyên in Hà Giang province, and in March 1988 a naval battle was fought at Johnson South Reef in the Spratlys, where China took six reefs in this period. Armed conflict ended in 1989 when Vietnam agreed to withdraw fully from Cambodia.',
+                sources: [S.conflicts, S.johnsonReef, S.war],
+            },
+            {
+                ko: '1990년 9월 청두 비밀 정상회담에서 관계 정상화가 합의되었고, 1991년 11월 두 나라는 공식적으로 국교를 정상화했다. 1999년 국경 조약으로 육지 국경이 조정되면서 전통적인 국경 관문인 남관 관문을 포함해 전쟁 때 잃은 땅 일부가 중국 쪽에 들어가, 베트남 사회에 불만을 남겼다. 중국은 이 전쟁을 「대베트남 자위 반격전」이라 부르고, 베트남은 「북부 국경 수호 전쟁」이라 부른다.',
+                en: 'Normalisation was agreed at a secret summit in Chengdu in September 1990, and the two countries formally normalised relations in November 1991. A border treaty of 1999 adjusted the land frontier, leaving some land lost in the fighting, including the traditional Ải Nam Quan gate, on the Chinese side and causing resentment in Vietnam. China calls the conflict the “self-defensive counterattack against Vietnam”; Vietnam calls it the “war to defend the northern border”.',
+                sources: [S.war, S.relations],
+            },
+        ],
+    },
+];
+
+const P = (lat, lng, ko, en) => ({ kind: 'point', lat, lng, label: { ko, en } });
+const timeline = [
+    ['1978.03', '화교 차별 정책', 'Policy against the Hoa', '차별 정책 뒤 많은 호아족이 중국 남부로 도망쳤다.', 'After a discriminatory policy many Hoa fled to southern China.', ['vietnam', 'china']],
+    ['1978.06.28', '베트남의 경제상호원조회의 가입', 'Vietnam joins Comecon', '소련 군사 원조가 크게 늘었다.', 'Soviet military aid rose sharply.', ['vietnam', 'soviet']],
+    ['1978.07', '중국의 원조 중단', 'China ends aid', '중국이 원조를 끊고 전문가를 철수시켰다.', 'China cut off aid and recalled its experts.', ['china', 'vietnam']],
+    ['1978.08', '우의관 사건', 'Youyi Pass incident', '베트남 군경이 난민 2,500명을 중국 쪽으로 몰아냈다.', 'Vietnamese troops and police drove 2,500 refugees into China.', ['vietnam', 'china'], P(21.97, 106.71, '우의관 (남관)', 'Youyi Pass (Ải Nam Quan)')],
+    ['1978.11.03', '소련–베트남 상호방위조약', 'Soviet–Vietnamese defence treaty', '25년 기한의 동맹 조약이 맺어졌다.', 'A 25-year alliance treaty was signed.', ['soviet', 'vietnam']],
+    ['1978.12.25', '베트남의 캄보디아 침공', 'Vietnam invades Cambodia', '1979년 1월 7일 프놈펜이 함락되었다.', 'Phnom Penh fell on 7 January 1979.', ['vietnam', 'cambodia'], P(11.56, 104.92, '프놈펜', 'Phnom Penh')],
+    ['1979.01.29', '덩샤오핑의 미국 방문', 'Deng visits the United States', '카터에게 베트남에 교훈을 가르치겠다고 말했다.', 'He told Carter China would teach Vietnam a lesson.', ['china', 'usa']],
+    ['1979.02.17', '중국군의 침공', 'Chinese invasion', '약 20만 명이 동·서 두 방향으로 국경을 넘었다.', 'Some 200,000 troops crossed the border on eastern and western fronts.', ['china', 'vietnam'], P(22.67, 106.26, '까오방', 'Cao Bằng')],
+    ['1979.03.06', '랑선 함락과 철수 선언', 'Lạng Sơn falls; withdrawal announced', '중국은 징벌 목적 달성을 선언했고 베트남은 총동원령을 내렸다.', 'China declared its punitive aim achieved; Vietnam ordered general mobilisation.', ['china', 'vietnam'], P(21.85, 106.76, '랑선', 'Lạng Sơn')],
+    ['1979.03.16', '중국군 철수 완료', 'Chinese withdrawal complete', '초토화 전술 끝에 중국군이 국경을 넘어 돌아갔다.', 'After scorched-earth tactics the PLA crossed back.', ['china', 'vietnam']],
+    ['1979.07', '호앙반호안의 망명', 'Hoàng Văn Hoan defects', '카라치에서 중국 영사관으로 피신해 베이징으로 갔다.', 'He fled to the Chinese consulate in Karachi and on to Beijing.', ['vietnam', 'china']],
+    ['1984.04', '라오산 전투', 'Battle of Laoshan', '하장 성 비쑤옌의 고지를 중국군이 점령했다.', 'Chinese troops took the heights at Vị Xuyên, Hà Giang.', ['china', 'vietnam'], P(22.72, 104.87, '비쑤옌 (라오산)', 'Vị Xuyên (Laoshan)')],
+    ['1988.03', '존슨 남 암초 해전', 'Johnson South Reef skirmish', '남사군도에서 중국이 여섯 개 암초를 차지했다.', 'China took six reefs in the Spratlys.', ['china', 'vietnam']],
+    ['1991.11', '국교 정상화', 'Relations normalised', '1990년 청두 비밀 회담의 합의에 따라 관계를 정상화했다.', 'Relations were normalised following the secret Chengdu summit of 1990.', ['china', 'vietnam']],
+].map(([date, tko, ten, bko, ben, country, geo]) => ({
+    date, title: { ko: tko, en: ten }, body: { ko: bko, en: ben }, country, ...(geo ? { geo } : {}),
+}));
+
+const people = [
+    ['deng-xiaoping', 'leader', '중국 최고지도자', 'Paramount leader of China', '미국 방문 뒤 공격을 최종 결정했고, 군의 부진을 개혁의 명분으로 삼았다.', 'Made the final decision to attack after his US visit and used the army’s poor showing to justify reform.'],
+    ['le-duan', 'leader', '베트남 공산당 총비서', 'General Secretary of the Vietnamese Communist Party', '소련과 동맹하고 캄보디아를 침공한 베트남 지도부를 이끌었다.', 'Led the Vietnamese leadership that allied with Moscow and invaded Cambodia.'],
+    ['xu-shiyou', 'executor', '광저우 군구 사령관 · 동부 전선', 'Guangzhou region commander, eastern front', '까오방·랑선 방향의 동부 전선을 지휘했다.', 'Commanded the eastern front towards Cao Bằng and Lạng Sơn.'],
+    ['yang-dezhi', 'executor', '쿤밍 군구 사령관 · 서부 전선', 'Kunming region commander, western front', '서북부 방향의 서부 전선을 지휘했다.', 'Commanded the western front in the northwest.'],
+    ['van-tien-dung', 'executor', '베트남 인민군 총참모장', 'Chief of the General Staff', '캄보디아 침공과 중국과의 국경 전쟁을 지휘했다.', 'Directed the invasion of Cambodia and the border war with China.'],
+    ['xu-xiangqian', 'participant', '중국 국방부장', 'Chinese minister of defence', '국방부장으로 전쟁을 지휘하는 자리에 있었다.', 'As defence minister stood at the head of the war effort.'],
+    ['jimmy-carter', 'participant', '미국 대통령', 'US president', '덩샤오핑의 공격 계획에 판단을 유보했고, 중국은 이를 암묵적 승인으로 받아들였다.', 'Reserved judgment on Deng’s plan, which China took as tacit approval.'],
+    ['zbigniew-brzezinski', 'participant', '미국 국가안보보좌관', 'US national security adviser', '카터의 판단 유보를 전한 당사자였다.', 'Recorded Carter’s reservation of judgment.'],
+    ['brezhnev', 'participant', '소련 공산당 서기장', 'Soviet leader', '베트남과 동맹을 맺었으나 직접 개입하지 않고 원조와 공수에 그쳤다.', 'Allied with Vietnam but limited Soviet help to supplies and airlift without direct intervention.'],
+    ['hoang-van-hoan', 'participant', '전 정치국원 · 친중파', 'Former Politburo member, pro-Chinese', '전쟁 뒤 중국으로 망명해 베트남의 화교 박해를 비난했다.', 'Defected to China after the war and denounced Vietnam’s persecution of the Hoa.'],
+    ['pol-pot', 'participant', '크메르루주 지도자', 'Khmer Rouge leader', '중국의 동맹으로, 베트남의 침공으로 쫓겨난 뒤 중국의 지원을 받으며 게릴라전을 이어 갔다.', 'China’s ally, ousted by Vietnam’s invasion, fought on as a guerrilla with Chinese backing.'],
+    ['heng-samrin', 'participant', '캄푸치아인민공화국 수반', 'Head of the People’s Republic of Kampuchea', '베트남의 침공으로 세워진 정권의 수반이 되었다.', 'Became head of the regime installed by Vietnam’s invasion.'],
+    ['norodom-sihanouk', 'participant', '전 캄보디아 국왕', 'Former Cambodian king', '중국이 베트남 점령에 반대해 모은 연합의 한 축이었다.', 'One pillar of the coalition China rallied against the Vietnamese occupation.'],
+].map(([person_id, relation_kind, relation_ko, relation_en, note_ko, note_en], sort_order) => ({
+    person_id, sort_order, relation_kind, relation_ko, relation_en, note_ko, note_en,
+}));
+
+const sources = [];
+for (const s of sections) for (const p of s.paragraphs) for (const u of p.sources) if (!sources.includes(u)) sources.push(u);
+const body = lang => sections.map(s => '## ' + s.heading[lang] + '\n\n' + s.paragraphs.map(p =>
+    p[lang] + ' ' + p.sources.map(u => `[${sources.indexOf(u) + 1}](${u})`).join(' ')).join('\n\n')).join('\n\n');
+
+const event = {
+    id: 'sino-vietnamese-war-1979',
+    expected: null,
+    fields: {
+        title_ko: '중월전쟁',
+        title_en: 'The Sino-Vietnamese War',
+        period_label: '1978–1979',
+        sort_order: 278,
+        question_ko: '함께 프랑스·미국과 싸운 두 사회주의 국가는 왜 1979년 서로 전쟁을 벌였는가?',
+        question_en: 'Why did two socialist states that had fought France and America together go to war with each other in 1979?',
+        summary_ko: '1975년 통일 뒤 베트남은 소련과 동맹하고 화교를 추방했으며, 1978년 말 중국의 동맹인 크메르루주의 캄보디아를 침공했다. 덩샤오핑은 미국 방문 직후 「교훈을 가르치겠다」며 1979년 2월 17일 약 20만 명으로 베트남 북부를 공격했다. 중국군은 3월 6일 랑선을 점령한 뒤 징벌을 선언하고 16일 철수했으며, 국경 충돌은 1980년대 내내 이어졌다.',
+        summary_en: 'After reunification in 1975 Vietnam allied with the Soviet Union, drove out ethnic Chinese and at the end of 1978 invaded Cambodia, ruled by China’s Khmer Rouge allies. Just after visiting the United States, Deng Xiaoping vowed to “teach a lesson” and on 17 February 1979 sent some 200,000 troops into northern Vietnam. The PLA took Lạng Sơn on 6 March, declared its punishment complete and withdrew by the 16th, while border clashes went on through the 1980s.',
+        outcome_ko: '양쪽 모두 승리를 선언했지만 베트남은 캄보디아에서 물러나지 않았다. 중국은 베트남이 국경과 캄보디아에 자원을 쏟게 만들었고, 베트남은 소련에 더 의존하게 되었다. 두 나라는 1991년 11월 관계를 정상화했다. 사회주의 국가 사이의 전쟁은 중소분열이 만든 삼각 구도가 아시아에서 어떻게 작동했는지 보여 주었다.',
+        outcome_en: 'Both sides declared victory, but Vietnam did not leave Cambodia. China made Vietnam pour resources into the border and the occupation, and Vietnam became more dependent on Moscow. The two countries normalised relations in November 1991. A war between socialist states showed how the triangle created by the Sino-Soviet split worked in Asia.',
+        body_ko: body('ko'),
+        body_en: body('en'),
+        timeline,
+        sources,
+        locations: [
+            { label: { ko: '랑선', en: 'Lạng Sơn' }, lat: 21.85, lng: 106.76, kind: 'main' },
+            { label: { ko: '까오방', en: 'Cao Bằng' }, lat: 22.67, lng: 106.26, kind: 'place' },
+            { label: { ko: '라오까이', en: 'Lào Cai' }, lat: 22.48, lng: 103.97, kind: 'place' },
+            { label: { ko: '하노이', en: 'Hanoi' }, lat: 21.0285, lng: 105.8542, kind: 'place' },
+            { label: { ko: '프놈펜', en: 'Phnom Penh' }, lat: 11.56, lng: 104.92, kind: 'place' },
+        ],
+        countries: ['china', 'vietnam', 'soviet', 'cambodia', 'usa'],
+        relations: { related: ['afghanistan-war', 'sino-soviet-split', 'cambodian-regime-change-1975-1979', 'vietnam-reunification-1975-1976', 'reform-and-opening', 'first-indochina-war-1945-1954'] },
+        no_auto_link: [],
+        link_expressions: [],
+        focus: null,
+    },
+    sections,
+    people,
+};
+
+fs.writeFileSync(path.join(__dirname, '..', 'sino-vietnamese-war-20260929.json'),
+    JSON.stringify({ id: 'sino-vietnamese-war-20260929', events: [event] }, null, 2) + '\n');
+fs.writeFileSync(path.join(__dirname, '..', 'sino-vietnamese-war-20260929-people.json'),
+    JSON.stringify({ changedBy: 'sino-vietnamese-war-20260929', people: require('./people') }, null, 2) + '\n');
+console.log(`event ${event.id}: ${sections.length} sections, ${sources.length} sources, ${timeline.length} timeline, ${people.length} relations`);
