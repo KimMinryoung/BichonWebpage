@@ -26,6 +26,7 @@ const S = {
     ripka: W('Hubert_Ripka'),
     horakova: W('Milada_Hor%C3%A1kov%C3%A1'),
     slansky: W('Rudolf_Sl%C3%A1nsk%C3%BD'),
+    benes: W('Edvard_Bene%C5%A1'),
     koCoup: 'https://ko.wikipedia.org/wiki/1948%EB%85%84_%EC%B2%B4%EC%BD%94%EC%8A%AC%EB%A1%9C%EB%B0%94%ED%82%A4%EC%95%84_%EC%BF%A0%EB%8D%B0%ED%83%80',
 };
 
@@ -114,9 +115,9 @@ const sections = [
                 sources: [S.coup, S.zenkl, S.ripka, S.constitution, S.election1948],
             },
             {
-                ko: '6월 사회민주당은 공산당에 흡수되었다. 베네시는 6월 초 사임했고, 14일 고트발트가 대통령이 되었다. 9월 베네시가 숨지자 장례에는 말없는 군중이 모여 그와 함께 사라진 민주주의를 애도했다. 공산당 정권은 이 사건을 「승리의 2월」이라 불렀다.',
-                en: 'In June the Social Democrats were absorbed into the Communist Party. Beneš resigned in early June and on the 14th Gottwald became president. When Beneš died in September, a vast silent crowd came to his funeral to mourn him and the democracy he had stood for. The Communist regime called the events “Victorious February”.',
-                sources: [S.coup, S.fierlinger],
+                ko: '6월 사회민주당은 공산당에 흡수되었다. 베네시는 6월 7일 사임했고, 14일 고트발트가 대통령이 되었다. 9월 베네시가 숨지자 장례에는 말없는 군중이 모여 그와 함께 사라진 민주주의를 애도했다. 공산당 정권은 이 사건을 「승리의 2월」이라 불렀다.',
+                en: 'In June the Social Democrats were absorbed into the Communist Party. Beneš resigned on 7 June and on the 14th Gottwald became president. When Beneš died in September, a vast silent crowd came to his funeral to mourn him and the democracy he had stood for. The Communist regime called the events “Victorious February”.',
+                sources: [S.coup, S.fierlinger, S.benes],
             },
         ],
     },
@@ -152,7 +153,7 @@ const timeline = [
     ['1948.03.10', '얀 마사리크의 죽음', 'Death of Jan Masaryk', '외무장관이 체르닌 궁 창문 아래에서 숨진 채 발견되었다.', 'The foreign minister was found dead beneath a window of the Czernin Palace.', 'czechoslovakia'],
     ['1948.05.09', '5월 9일 헌법', 'Ninth-of-May Constitution', '「인민민주주의 국가」를 선언했고 베네시는 서명을 거부했다.', 'It declared a “people’s democratic state”; Beneš refused to sign.', 'czechoslovakia'],
     ['1948.05.30', '단일 명부 선거', 'Single-list election', '민족전선 명부가 공식적으로 89.2%를 얻었다.', 'The National Front list officially won 89.2 per cent.', 'czechoslovakia'],
-    ['1948.06.14', '고트발트 대통령 취임', 'Gottwald becomes president', '베네시가 사임하고 고트발트가 뒤를 이었다.', 'Beneš resigned and Gottwald succeeded him.', 'czechoslovakia'],
+    ['1948.06.14', '고트발트 대통령 취임', 'Gottwald becomes president', '6월 7일 사임한 베네시의 뒤를 고트발트가 이었다.', 'Gottwald succeeded Beneš, who had resigned on 7 June.', 'czechoslovakia'],
 ].map(([date, tko, ten, bko, ben, country, geo]) => ({
     date, title: { ko: tko, en: ten }, body: { ko: bko, en: ben }, country: Array.isArray(country) ? country : [country], ...(geo ? { geo } : {}),
 }));
