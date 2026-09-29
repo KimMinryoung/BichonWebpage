@@ -3952,7 +3952,7 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 /* Related-people groups by involvement kind */
 /* Events with named sides (migration 193): each camp is a framed panel with a
    header band, so the camp boundary reads before the kind groups
-   inside it. People outside every camp sit in a dashed, untinted frame. */
+   inside it. People outside every camp sit in a dashed frame under a grey band. */
 .commu-event-people-side {
     margin-top: 1.6rem;
     border: 1px solid color-mix(in srgb, var(--border) 38%, transparent);
@@ -3970,10 +3970,15 @@ h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px sol
 .commu-event-people-side-head .commu-event-people-group-count { margin-left: auto; font-size: .85rem; }
 .commu-event-people-side-body { padding: .2rem 1rem 1.1rem; }
 .commu-event-people-side.is-sideless {
+    margin-top: 2.2rem;
     border: 1px dashed color-mix(in srgb, var(--border) 38%, transparent);
     background: none;
 }
-.commu-event-people-side.is-sideless .commu-event-people-side-head { background: none; color: var(--text-muted); font-size: 1rem; }
+.commu-event-people-side.is-sideless .commu-event-people-side-head {
+    border-bottom-style: dashed;
+    background: color-mix(in srgb, var(--text-muted) 24%, transparent);
+    color: var(--text-secondary); font-size: 1rem;
+}
 .commu-event-people-side h4.commu-event-people-group-head { font-size: .92rem; }
 @media (max-width: 600px) {
     .commu-event-people-side-head { padding: .6rem .7rem; font-size: 1.05rem; }
