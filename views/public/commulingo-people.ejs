@@ -62,6 +62,21 @@
             <% }) %>
             </div>
         </section>
+        <% var collectionsList = (typeof personCollections !== 'undefined' && personCollections) || []; %>
+        <% if (collectionsList.length) { %>
+        <section class="commu-hub-section" aria-labelledby="collection-index-title">
+            <h2 id="collection-index-title"><%= en ? 'Political positions' : '정치적 입장별 모음' %></h2>
+            <div class="commu-office-grid">
+            <% collectionsList.forEach(function(c) { %>
+                <a class="commu-office-card commu-role-category-link" href="<%= c.href %>">
+                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(c.icon) %></span>
+                    <span class="commu-role-category-copy"><h3><%= c.title %></h3><p><%= c.personIds.length %> <%= en ? 'people' : '명' %></p></span>
+                    <span aria-hidden="true">→</span>
+                </a>
+            <% }) %>
+            </div>
+        </section>
+        <% } %>
         <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
         <% var roleCategoriesList = (typeof roleCategories !== 'undefined' && roleCategories) || []; %>
         <% if (officesList.length || roleCategoriesList.length) { %>

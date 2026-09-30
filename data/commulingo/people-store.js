@@ -49,6 +49,8 @@ async function fetchRows() {
         roleCategories,
         sections,
         redirects,
+        collections,
+        collectionMembers,
     ] = await readSnapshot(client => Promise.all([
         client.query(
             `SELECT id, shelf, range_label, title_ko, title_en, blurb_ko, blurb_en, updated_at
@@ -117,6 +119,16 @@ async function fetchRows() {
              FROM commulingo_id_redirects
              ORDER BY entity_type, from_id`
         ),
+        client.query(
+            `SELECT id, icon, title_ko, title_en, intro_ko, intro_en, updated_at
+             FROM commulingo_person_collections
+             ORDER BY sort_order, id`
+        ),
+        client.query(
+            `SELECT collection_id, person_id, updated_at
+             FROM commulingo_person_collection_members
+             ORDER BY collection_id, person_id`
+        ),
     ]));
 
     return {
@@ -132,6 +144,8 @@ async function fetchRows() {
         roleCategories: roleCategories.rows,
         sections: sections.rows,
         redirects: redirects.rows,
+        collections: collections.rows,
+        collectionMembers: collectionMembers.rows,
     };
 }
 
@@ -259,6 +273,21 @@ function rowsToPeopleData(rows) {
         sectionCounts[row.person_id] = (sectionCounts[row.person_id] || 0) + 1;
     });
 
+    // Curated lists for political positions (migration 213); a person may be in several.
+    const collectionMembers = {};
+    (rows.collectionMembers || []).forEach(row => {
+        markPersonUpdated(row.person_id, row.updated_at);
+        addListItem(collectionMembers, row.collection_id, row.person_id);
+    });
+    const collections = (rows.collections || []).map(row => ({
+        id: row.id,
+        icon: row.icon || '',
+        title: t(row.title_ko, row.title_en),
+        intro: t(row.intro_ko, row.intro_en),
+        personIds: collectionMembers[row.id] || [],
+        updatedAt: latestTimestamp(row.updated_at),
+    }));
+
     return {
         groups: rows.groups.map(row => ({
             id: row.id,
@@ -319,6 +348,7 @@ function rowsToPeopleData(rows) {
         sectionCounts,
         sections: sectionsByPerson,
         redirects: rowsToRedirects(rows.redirects),
+        collections,
     };
 }
 
@@ -328,7 +358,7 @@ const store = createDictionarySnapshotStore({
     snapshotPath: process.env.COMMULINGO_PEOPLE_SNAPSHOT
         || path.join(__dirname, 'people-snapshot.json'),
     fetchData: async () => rowsToPeopleData(await fetchRows()),
-    signatureTables: ['commulingo_id_redirects', 'commulingo_office_rows', 'commulingo_offices', 'commulingo_people', 'commulingo_people_groups', 'commulingo_person_aliases', 'commulingo_person_career_entries', 'commulingo_person_patronymics', 'commulingo_person_roles', 'commulingo_person_scenes', 'commulingo_person_sections', 'commulingo_role_categories'],
+    signatureTables: ['commulingo_id_redirects', 'commulingo_office_rows', 'commulingo_offices', 'commulingo_people', 'commulingo_people_groups', 'commulingo_person_aliases', 'commulingo_person_collection_members', 'commulingo_person_collections', 'commulingo_person_career_entries', 'commulingo_person_patronymics', 'commulingo_person_roles', 'commulingo_person_scenes', 'commulingo_person_sections', 'commulingo_role_categories'],
     isEmpty: data => !data.people.length,
     emptyErrorMessage: 'commulingo_people has no rows',
     emptyErrorCode: 'COMMULINGO_PEOPLE_EMPTY',

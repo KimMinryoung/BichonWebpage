@@ -374,6 +374,18 @@ function normalizeCommuLingoPeople(data, options = {}) {
     people.forEach(person => {
         person.institutionRoles = rolesByPersonId[person.id] || [];
     });
+    const collections = (data.collections || []).map(collection => ({
+        id: collection.id,
+        icon: collection.icon || '',
+        title: localize(collection.title, lang),
+        intro: localize(collection.intro, lang),
+        href: `/commulingo/roles/${collection.id}`,
+        personIds: (collection.personIds || []).filter(id => peopleById[id]),
+    }));
+    people.forEach(person => { person.collections = []; });
+    collections.forEach(collection => collection.personIds.forEach(id => {
+        peopleById[id].collections.push({ id: collection.id, title: collection.title, href: collection.href });
+    }));
     const groups = (data.groups || []).map(group => ({
         id: group.id,
         shelf: group.shelf || '',
@@ -388,6 +400,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
         lang,
         groups,
         offices,
+        collections,
         roleCategories: Object.entries(data.roleCategories || {}).reduce((index, [id, category]) => {
             index[id] = {
                 id,

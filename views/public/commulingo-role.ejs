@@ -19,6 +19,7 @@
             <span class="commu-person-medal" aria-hidden="true"><%- roleIconSvg(category.icon) %></span>
             <div>
                 <h1><%= category.label %></h1>
+                <% if (category.intro) { %><p><%= category.intro %></p><% } %>
                 <p><%= people.length %> <%= en ? (people.length === 1 ? 'person' : 'people') : '명' %></p>
             </div>
         </header>

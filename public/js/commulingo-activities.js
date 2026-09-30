@@ -1,5 +1,19 @@
 (function() {
     'use strict';
+    // Each dropdown lists only choices that still have people under the other
+    // one, so apply a change at once; the Apply button is the no-JS fallback.
+    var form = document.querySelector('.commu-activity-filters');
+    if (form) {
+        form.querySelectorAll('select').forEach(function(field) {
+            field.addEventListener('change', function() { form.submit(); });
+        });
+        var apply = form.querySelector('button[type="submit"]');
+        if (apply) apply.hidden = true;
+    }
+})();
+
+(function() {
+    'use strict';
     var input = document.querySelector('[data-affiliation-search]');
     var select = document.querySelector('#activity-affiliation');
     var panel = document.querySelector('[data-affiliation-search-panel]');

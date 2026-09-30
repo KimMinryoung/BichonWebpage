@@ -63,3 +63,15 @@ assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].officeId,
 assert(matchesActivities({ activities: [legacyOffice] }, { affiliationId: 'state-soviet', officeId: 'state-security' }));
 assert(!matchesActivities({ activities: [legacyOffice] }, { officeId: 'defence' }));
 console.log('Activity office lines passed');
+
+// Curated position collections (migration 213) attach to people independently of the role.
+{
+    const { normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
+    const person = id => ({ id, group: 'g', name: { ko: id, en: id }, years: '1900–1950', activities: [] });
+    const out = normalizeCommuLingoPeople({ groups: [], people: [person('a'), person('b')], personRoles: {}, roleCategories: {},
+        collections: [{ id: 'left-opposition', icon: 'git-branch', title: { ko: '좌파 비판', en: 'Left critics' }, intro: { ko: '소개', en: 'Intro' }, personIds: ['a', 'missing'] }] }, { lang: 'ko' });
+    assert.deepEqual(out.collections[0].personIds, ['a'], 'unknown members are dropped');
+    assert.equal(out.peopleById.a.collections[0].href, '/commulingo/roles/left-opposition');
+    assert.deepEqual(out.peopleById.b.collections, []);
+    console.log('Person collections passed');
+}

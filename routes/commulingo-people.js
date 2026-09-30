@@ -50,6 +50,7 @@ router.get('/people', async (req, res) => {
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             roleCategories,
+            personCollections: (standardized.collections || []).filter(c => c.personIds.length),
             activityFunctions: activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id })).length })),
             groupsMeta,
             peopleCount: standardized.people.length,
@@ -230,9 +231,12 @@ router.get('/activities', async (req, res) => {
             .filter(f => f.count > 0 || f.id === functionId);
         const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id, officeId })).length }))
             .filter(a => a.count > 0 || a.id === affiliationId);
-        // Institution lines narrow Soviet activities; they are not affiliations.
-        const offices = standardized.offices.map(o => ({ id: o.id, label: o.title, count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId, officeId: o.id })).length }))
-            .filter(o => o.count > 0 || o.id === officeId);
+        // Institution lines only narrow Soviet activities, so they are offered
+        // once a Soviet affiliation is chosen (or arrive in a link), never as a
+        // free-standing filter that dead-ends on other affiliations.
+        const offerOffices = officeId || activitiesModel.OFFICE_AFFILIATIONS.has(affiliationId);
+        const offices = offerOffices ? standardized.offices.map(o => ({ id: o.id, label: o.title, count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId, officeId: o.id })).length }))
+            .filter(o => o.count > 0 || o.id === officeId) : [];
         const groupedAffiliations = new Map();
         for (const a of affiliations) {
             const key = a.countryCode || 'international';
@@ -262,7 +266,12 @@ router.get('/roles/:categoryId', async (req, res) => {
         const mapped = activitiesModel.catalog.legacy[categoryId];
         if (mapped) return res.redirect(301, activitiesModel.activityHref({ functionId: mapped[0], affiliationId: mapped[1] }));
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
-        const category = standardized.roleCategories[categoryId];
+        // Political positions are curated collections (migration 213) served
+        // at the old role-category URL; other categories still list the role.
+        const collection = (standardized.collections || []).find(c => c.id === categoryId);
+        const category = collection
+            ? { id: collection.id, icon: collection.icon, label: collection.title, intro: collection.intro }
+            : standardized.roleCategories[categoryId];
         if (!category) {
             const renamed = redirectTarget(loaded.data, 'role-category', categoryId);
             if (renamed) return res.redirect(301, `/commulingo/roles/${renamed}`);
@@ -272,7 +281,9 @@ router.get('/roles/:categoryId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        const people = sortPeopleChronologically(standardized.people.filter(person => person.role && person.role.categoryId === category.id));
+        const people = sortPeopleChronologically(collection
+            ? collection.personIds.map(id => standardized.peopleById[id])
+            : standardized.people.filter(person => person.role && person.role.categoryId === category.id));
         const relatedReports = await relatedReportsForTopic('role', category.id, lang);
         setShortPublicCache(res);
         res.render('public/commulingo-role', {
@@ -283,9 +294,9 @@ router.get('/roles/:categoryId', async (req, res) => {
             roleHubHref,
             linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? `${category.label} — People` : `${category.label} — 인물 사전`,
-            pageDescription: lang === 'en'
+            pageDescription: category.intro || (lang === 'en'
                 ? `People in the ${category.label} role category.`
-                : `${category.label} 역할 범주의 인물들.`,
+                : `${category.label} 역할 범주의 인물들.`),
             pagePath: `/commulingo/roles/${category.id}`,
             jsonLd: commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
