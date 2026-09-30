@@ -424,7 +424,7 @@ names a group id):
 | soviet | `old-regime`, `bolshevik`, `stalin-era`, `thaw`, `perestroika` |
 | china | `china-old-regime` (구체제와 국민당), `china-revolution` (혁명 세대 1911–1949), `china-mao-era`, `china-reform` |
 | france | `france-revolution` (대혁명과 나폴레옹 시대 1774–1830) — migrations 188–189; `france-napoleon` 301s to it |
-| world | `international-revolutionary`, `foreign-statesmen`, `international-counterrevolutionary`, `scholar` |
+| world | `world-before-1917` (인터내셔널과 제국의 시대 1820–1917), `world-interwar` (혁명의 물결과 세계대전 1917–1945), `world-cold-war` (냉전과 탈식민 1945–현재), `scholar` — migration 218 |
 
 The China shelf follows the Soviet assignment rule: people who made the
 revolution stay in 혁명 세대 even when they ruled afterwards (Mao, Zhou, Liu
@@ -443,7 +443,17 @@ shelf is one group from Louis XVI to the July Revolution; coalition commanders o
 revolutionary wars (Howe, Nelson) sit there, 1830s socialists (Cabet, Owen)
 and Suvorov do not.
 
-`international-revolutionary` holds non-Soviet, non-Chinese revolutionaries (Luxemburg, Liebknecht, Gramsci, Guevara, ...). Convention for the world shelf: their `cyrillic` column carries the NATIVE-script name instead (Hồ Chí Minh, Amílcar Cabral, ...).
+The world shelf follows the same era rule (migration 218, 2026-09-30). It used
+to hold three camp groups without a time axis — 비소련 혁명가 alone had 407
+people born 1760–1957 — and camp is now carried by the primary activity and
+the position collections, so revolutionaries, statesmen and their opponents of
+one era share a group: Marx, Bismarck and the Communards before 1917;
+Luxemburg, Gramsci, Hitler and Churchill 1917–1945; Tito, Guevara and Pinochet
+after 1945. Placement is the era in which the role the person is in the
+dictionary for peaked (Hindenburg and Pétain interwar, Bevin and MacArthur
+after 1945). `scholar` stays separate: later scholarship about the history is
+not an era of it. The retired ids 301 through `commulingo_id_redirects`.
+World-shelf cards carry the NATIVE-script name in `cyrillic` (Hồ Chí Minh, Amílcar Cabral, ...).
 
 ## Key Files
 

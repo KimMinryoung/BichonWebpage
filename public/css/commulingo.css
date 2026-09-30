@@ -2502,7 +2502,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-people-group.is-old-regime .commu-people-group-head { border-left-color: #b08d3f; }
 .commu-people-group.is-bolshevik .commu-people-group-head { border-left-color: #c0453c; }
-.commu-people-group.is-international-revolutionary .commu-people-group-head { border-left-color: #9c2d3f; }
+.commu-people-group.is-world-before-1917 .commu-people-group-head { border-left-color: #7b5ea7; }
+.commu-people-group.is-world-interwar .commu-people-group-head { border-left-color: #9c2d3f; }
+.commu-people-group.is-world-cold-war .commu-people-group-head { border-left-color: #b0603a; }
 .commu-people-group.is-stalin-era .commu-people-group-head { border-left-color: #8a93a6; }
 .commu-people-group.is-thaw .commu-people-group-head { border-left-color: #4d8fc4; }
 .commu-people-group.is-perestroika .commu-people-group-head { border-left-color: #4aa578; }
@@ -2744,7 +2746,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-person-medal.is-old-regime { border-color: #b08d3f; color: #b08d3f; }
 .commu-person-medal.is-bolshevik { border-color: #c0453c; color: #c0453c; }
-.commu-person-medal.is-international-revolutionary { border-color: #9c2d3f; color: #9c2d3f; }
+.commu-person-medal.is-world-before-1917 { border-color: #7b5ea7; color: #7b5ea7; }
+.commu-person-medal.is-world-interwar { border-color: #9c2d3f; color: #9c2d3f; }
+.commu-person-medal.is-world-cold-war { border-color: #b0603a; color: #b0603a; }
 .commu-person-medal.is-stalin-era { border-color: #8a93a6; color: #8a93a6; }
 .commu-person-medal.is-thaw { border-color: #4d8fc4; color: #4d8fc4; }
 .commu-person-medal.is-perestroika { border-color: #4aa578; color: #4aa578; }
@@ -3076,7 +3080,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
 a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
 .commu-person-role-tag.is-old-regime { border-left-color: #b08d3f; }
 .commu-person-role-tag.is-bolshevik { border-left-color: #c0453c; }
-.commu-person-role-tag.is-international-revolutionary { border-left-color: #9c2d3f; }
+.commu-person-role-tag.is-world-before-1917 { border-left-color: #7b5ea7; }
+.commu-person-role-tag.is-world-interwar { border-left-color: #9c2d3f; }
+.commu-person-role-tag.is-world-cold-war { border-left-color: #b0603a; }
 .commu-person-role-tag.is-stalin-era { border-left-color: #8a93a6; }
 .commu-person-role-tag.is-thaw { border-left-color: #4d8fc4; }
 .commu-person-role-tag.is-perestroika { border-left-color: #4aa578; }
@@ -3246,7 +3252,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 .commu-person-detail-head.is-old-regime { border-left-color: #b08d3f; }
 .commu-person-detail-head.is-bolshevik { border-left-color: #c0453c; }
-.commu-person-detail-head.is-international-revolutionary { border-left-color: #9c2d3f; }
+.commu-person-detail-head.is-world-before-1917 { border-left-color: #7b5ea7; }
+.commu-person-detail-head.is-world-interwar { border-left-color: #9c2d3f; }
+.commu-person-detail-head.is-world-cold-war { border-left-color: #b0603a; }
 .commu-person-detail-head.is-stalin-era { border-left-color: #8a93a6; }
 .commu-person-detail-head.is-thaw { border-left-color: #4d8fc4; }
 .commu-person-detail-head.is-perestroika { border-left-color: #4aa578; }
