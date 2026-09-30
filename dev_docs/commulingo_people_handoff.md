@@ -454,7 +454,7 @@ Data and normalization:
   - validator lives here
 - `data/commulingo/people-store.js`
   - reads normalized DB tables into the public dictionary shape
-  - loads `commulingo_person_roles`, `commulingo_role_categories`, and per-person section counts
+  - loads per-person section counts (role tables dropped 2026-09-30)
   - exports `loadCommuLingoPersonSections(personId)` for detail/API body loads
   - used by runtime public page/API
 - `data/commulingo/people-admin-store.js`
@@ -533,24 +533,17 @@ immediate application for the generic AI write tools.
 
 The people page no longer uses emoji role icons. It uses Lucide-style inline SVG paths in `views/public/commulingo-people.ejs`.
 
-Person→role mappings live in `commulingo_person_roles`. During DB outages the
-last valid snapshot preserves the loaded roles. Offices carry their icon in `commulingo_offices.icon`,
-seeded from the `OFFICE_ICON` map in `data/commulingo/people-standard.js`.
+**2026-09-30: the role tables are gone** (migration 217 dropped
+`commulingo_person_roles` and `commulingo_role_categories`). A card's medal,
+tag and link come from the person's primary activity
+(`commulingo_people.activities`, see
+[commulingo-role-model-plan.md](commulingo-role-model-plan.md)); a `role` key
+sent by an old client is ignored. Offices still carry their icon in
+`commulingo_offices.icon`, seeded from `OFFICE_ICON` in
+`data/commulingo/people-standard.js`, and an activity may name its office line
+with `officeId`. The old role-category URLs are served by position collections,
+activity-filter redirects or pointer pages. The notes below on role rows are history.
 
-Office-less roles now use `commulingo_role_categories`; clients and agents
-should send `payload.role.category` for writer-artist / non-Soviet revolutionary /
-bloc reformer / Russian republic leader roles, or `payload.role.officeId` for
-institution-derived roles. Icons and localized labels are a frontend/runtime
-resolution concern, not an API-client concern. Runtime role resolution order:
-
-1. `person_roles.category_id` → category icon and category label
-2. legacy `person_roles.icon`, then office icon
-3. label fallback: category label → legacy explicit label → office title
-
-`commulingo_person_roles.icon`, `label_ko`, and `label_en` remain in the table
-only for backward compatibility with currently deployed code and older clients.
-Do not blank them during category backfill. A later manual cleanup can drop or
-clear those legacy columns after all deployed readers resolve categories first.
 Use icon ids, not raw SVG:
 
 - state-security: `eye`

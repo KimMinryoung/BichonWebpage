@@ -227,4 +227,10 @@ UI에는 첫 단계에서 국가·세력 수준을, 필요한 경우 그 안의 
 
 - 위키백과 문서를 찾지 못한 103명은 운영자 결정에 따라 외부 근거 없이 구 분류 그대로 활동을 넣었다. 소련 기관 계열은 기능·소련 소속·`officeId`, 연구자·이론가는 학술·연구, 작가·예술가는 문학·예술이다. 연구자·작가의 소속은 미확정이다.
 - 이 행에는 `basis: 'legacy-classification'` 표시가 붙고 evidence가 비어 있다. 검증은 이 표시가 있는 행만 근거 없이 받아들인다. Admin 스토어는 이 표시가 붙은 행을 새로 추가하거나 바꾸는 쓰기를 거부한다. 편집자는 저장된 행을 그대로 두거나, 근거 있는 활동으로 교체할 수만 있다. 활동 스키마의 evidence는 최소 개수를 스키마에서 빼고 검증 코드가 강제한다.
-- 활동이 없는 사람은 분류가 전혀 없는 아그네사 미로노바 한 명뿐이다. 이제 `commulingo_person_roles`와 호환 매핑 코드를 제거할 수 있다. 이것이 끝나면 `commulingo_person_roles`와 호환 매핑 코드를 제거할 수 있다. 이것들이 끝난 뒤에 `commulingo_person_roles`를 제거할 수 있다.
+- 분류가 전혀 없던 아그네사 미로노바는 migration 216에서 같은 표시로 문학·예술(구술 회고) 활동을 받았다. 이로써 모든 인물이 대표 활동을 가진다.
+
+### 구 role 표 제거 (2026-09-30, migration 217)
+
+- 프런트엔드(`8c4a397`)는 role 표를 읽거나 쓰지 않는다. 카드의 메달·태그·링크는 대표 활동에서 나오고, 호환 매핑(`displayActivities`의 legacy 분기)은 삭제했다. Admin 스토어는 `role` 키를 무시하고, 인물 revision 계산에서도 role을 뺐다(적용 시점에 모든 revision 값이 한 번 바뀜). 카드 감사는 대표 활동 1개를 요구한다.
+- `catalog.legacy`는 구 역할 URL(`/commulingo/roles/<id>`)을 활동 필터로 넘기는 용도로만 남는다. 입장 범주는 모음(213), 지역 범주는 안내 페이지(`retired-role-pages.js`)다.
+- leninbot 파이프라인도 role 표 조회와 role 생성·요구를 걷어낸 뒤 두 표(`commulingo_person_roles`, `commulingo_role_categories`)를 삭제했다. 삭제 직전 pg_dump는 gitignored `scripts/migrations/data/person-roles-20260930/`에 있다. 이것이 끝나면 `commulingo_person_roles`와 호환 매핑 코드를 제거할 수 있다. 이것들이 끝난 뒤에 `commulingo_person_roles`를 제거할 수 있다.
