@@ -62,9 +62,27 @@ async function getOfficeAdmin(officeId, options = {}) {
     };
 }
 
+// Row edits read the office's whole history for the revision log and pick the
+// next sort order from it, so two concurrent edits of one office must not
+// interleave. Every write locks the office row first (office -> office row, one
+// order everywhere, so no deadlock) and re-reads what it edits under the lock.
+async function lockOffice(client, officeId) {
+    await client.query('SELECT id FROM commulingo_offices WHERE id = $1 FOR UPDATE', [officeId]);
+}
+
+async function lockedOfficeRow(client, id) {
+    const found = await client.query('SELECT office_id FROM commulingo_office_rows WHERE id = $1', [id]);
+    if (!found.rows.length) return null;
+    const officeId = found.rows[0].office_id;
+    await lockOffice(client, officeId);
+    const again = await client.query('SELECT office_id FROM commulingo_office_rows WHERE id = $1 FOR UPDATE', [id]);
+    return again.rows.length && again.rows[0].office_id === officeId ? officeId : null;
+}
+
 async function createOfficeRowAdmin(officeId, payload, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(officeId, 'office id');
+        await lockOffice(client, id);
         const before = await getOfficeAdmin(id, { client });
         if (!before) {
             const err = new Error('office not found');
@@ -115,13 +133,12 @@ async function updateOfficeRowAdmin(rowId, payload, options = {}) {
             err.status = 400;
             throw err;
         }
-        const rowResult = await client.query('SELECT office_id FROM commulingo_office_rows WHERE id = $1', [id]);
-        if (!rowResult.rows.length) {
+        const officeId = await lockedOfficeRow(client, id);
+        if (!officeId) {
             const err = new Error('office row not found');
             err.status = 404;
             throw err;
         }
-        const officeId = rowResult.rows[0].office_id;
         const before = await getOfficeAdmin(officeId, { client });
         const sets = [];
         const values = [];
@@ -174,13 +191,12 @@ async function deleteOfficeRowAdmin(rowId, options = {}) {
             err.status = 400;
             throw err;
         }
-        const rowResult = await client.query('SELECT office_id FROM commulingo_office_rows WHERE id = $1', [id]);
-        if (!rowResult.rows.length) {
+        const officeId = await lockedOfficeRow(client, id);
+        if (!officeId) {
             const err = new Error('office row not found');
             err.status = 404;
             throw err;
         }
-        const officeId = rowResult.rows[0].office_id;
         const before = await getOfficeAdmin(officeId, { client });
         await client.query('DELETE FROM commulingo_office_rows WHERE id = $1', [id]);
         const after = await getOfficeAdmin(officeId, { client });

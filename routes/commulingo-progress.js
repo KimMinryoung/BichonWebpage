@@ -35,6 +35,13 @@ function normalizeAnswer(raw) {
         const t = Date.parse(value);
         return Number.isFinite(t) ? new Date(t) : null;
     };
+    // The newer lastAt wins on the server, so a stamp from a device whose clock
+    // runs ahead would freeze that question's record against every later
+    // answer. Clamp it to the server's now; `due` is a schedule and may be future.
+    const answeredAt = value => {
+        const t = stamp(value);
+        return t && t.getTime() > Date.now() ? new Date() : t;
+    };
     return {
         lessonId,
         questionId,
@@ -42,7 +49,7 @@ function normalizeAnswer(raw) {
         wrong: count(raw.wrong),
         streak: count(raw.streak),
         lastCorrect: raw.lastCorrect === true || raw.lastCorrect === 'true',
-        lastAt: stamp(raw.lastAt),
+        lastAt: answeredAt(raw.lastAt),
         due: raw.due ? stamp(raw.due) : null,
     };
 }

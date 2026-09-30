@@ -50,7 +50,7 @@ Python 인물/절 직접 SQL과 승인 경로를 제거하고 JS 공통 서비�
 - PATCH/기존 upsert CLI에 aliasEdits, careerEdits, sceneEdits를 추가했다. op은 add/update/remove이고 각각 언어+별칭 문자열, 경력 DB id, collection/episode 쌍으로 대상을 지정한다. 해당 전체 교체 필드와 동시에 보내면 400이며, 잘못된 참조·중복·알 수 없는 키도 400으로 거부한다. 요청당 각 작업 배열은 최대 100개다.
 - 경력 개별 수정은 행을 삭제 후 재생성하지 않는다. 다른 경력의 ID·정렬·내용은 유지하고, 수정한 경력의 생략한 언어·기간도 보존한다. 추가는 목록 끝에 붙고 삭제는 지정 행만 제거한다. 전체 계획을 먼저 검증한 뒤 같은 인물 잠금/트랜잭션/이력 경로에서 실행한다.
 - Admin getPerson은 읽기 전용 REPEATABLE READ에서 카드와 자식 행을 읽고 revision을 반환한다. revision은 영속 인물·별칭·경력·장면·부칭·역할·상세 절·직책 행 상태로 계산한다. 따라서 부모 updated_at을 갱신하지 않은 외부 자식 행 수정도 커밋된 상태라면 감지한다.
-- 인물 PATCH와 절 PUT 본문의 expectedRevision, 인물/절 DELETE 본문의 expectedRevision을 잠금 후 검사한다. 불일치는 409 revision_conflict/currentRevision, 잘못된 형식은 400이며 변경과 이력을 쓰지 않는다. 기존 클라이언트는 생략할 수 있으므로 모두가 자동 보호되는 것은 아니다. Python의 동시 쓰기 잠금/버전 통일은 아직 미완료다.
+- 인물 PATCH와 절 PUT 본문의 expectedRevision, 인물/절 DELETE 본문의 expectedRevision을 잠금 후 검사한다. 불일치는 409 revision_conflict/currentRevision, 잘못된 형식은 400이며 변경과 이력을 쓰지 않는다. 기존 클라이언트는 생략할 수 있으므로 모두가 자동 보호되는 것은 아니다. Python(leninbot)의 인물·절·용어 쓰기는 이제 frontend 편집 서비스 RPC를 거쳐 같은 revision 검사를 받는다(2026-09-30 확인).
 - 검증: 독립 PostgreSQL 17에서 기존 편집/복원/롤백 테스트 확장분 통과. 새 동시성 테스트는 두 연결의 실제 Lock 대기를 확인하고 인물 수정·절 수정·절 삭제·인물 삭제 모두 오래된 요청을 거부함을 확인했다. 외부 경력 수정이 버전을 무효화하는 것도 검증했다. 운영 인물 데이터·운영 DB는 변경하지 않았다.
 - 코드 반영: 검증한 파일만 원자적으로 작업 트리에 설치했다. 프런트엔드 이미지 재시작/배포는 아직 하지 않았다.
 - 최종 검증: `npm test` 전체와 lint 통과. `git diff --check` 통과. 일회용 테스트 컨테이너는 검증 후 종료한다.

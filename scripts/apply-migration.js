@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 // Apply a SQL migration file against the configured database.
+// Prefer scripts/apply-migration on the host: it runs as postgres (the frontend
+// role cannot CREATE) and records the file in schema_migrations.
 // Usage (from inside the frontend container):
 //   node scripts/apply-migration.js scripts/migrations/001_webauthn.sql
 
