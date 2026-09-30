@@ -8,65 +8,72 @@ var activeFunction = functions.find(f => f.id === filter.functionId);
 var activeAffiliation = affiliations.find(a => a.id === filter.affiliationId);
 var activeOffice = offices.find(o => o.id === filter.officeId);
 var resultLabel = [activeFunction && activeFunction.label, activeAffiliation && activeAffiliation.label, activeOffice && activeOffice.label].filter(Boolean).join(' · ');
-function officeHref(id) {
-    var params = new URLSearchParams({ lang });
-    if (filter.functionId) params.set('function', filter.functionId);
-    if (filter.affiliationId) params.set('affiliation', filter.affiliationId);
-    if (id) params.set('office', id);
+// Every filter is a link to the resulting URL (works without JS; the script
+// swaps #activity-browser in place). A new affiliation drops the institution
+// line, which only narrows Soviet affiliations.
+function hrefWith(changes) {
+    var next = { function: filter.functionId, affiliation: filter.affiliationId, office: filter.officeId };
+    if ('affiliation' in changes) next.office = '';
+    Object.assign(next, changes);
+    var params = new URLSearchParams();
+    ['function', 'affiliation', 'office'].forEach(function(key) { if (next[key]) params.set(key, next[key]); });
+    params.set('lang', lang);
     return '/commulingo/activities?' + params;
 }
-function clearFilter(key) {
-    var params = new URLSearchParams({ lang });
-    if (key !== 'function' && filter.functionId) params.set('function', filter.functionId);
-    if (key !== 'affiliation' && filter.affiliationId) params.set('affiliation', filter.affiliationId);
-    if (key !== 'office' && filter.officeId) params.set('office', filter.officeId);
-    return '/commulingo/activities?' + params;
-}
+function chip(href, label, count, active, icon) { %>
+    <a class="commu-dict-chip commu-activity-chip<%= active ? ' is-active' : '' %>" href="<%= href %>"<%- active ? ' aria-current="true"' : '' %>><% if (icon) { %><%- roleIconSvg(icon) %><% } %><%= label %><% if (count != null) { %> <span><%= count %></span><% } %></a>
+<% }
 %>
 <main class="container commulingo-shell commu-person-hub-page commu-activities-page">
     <%- include('../partials/commulingo-crumb', { trail: [{ label: en ? 'People' : '인물 사전', href: '/commulingo/people' }, { label: en ? 'Activities' : '기능·활동' }], dictJump: 'people' }) %>
     <header class="commu-hub-head"><div><h1><%= en ? 'Activities and affiliations' : '기능·활동과 국가·세력' %></h1>
         <p><%= en ? 'What people did, and whom they served in that activity.' : '인물이 수행한 활동과 그 활동에서의 소속을 함께 찾습니다.' %></p>
     </div></header>
-    <section class="commu-hub-section">
-        <form method="get" action="/commulingo/activities" class="commu-activity-filters">
-            <input type="hidden" name="lang" value="<%= lang %>">
-            <label><span><%= en ? 'Function / activity' : '기능·활동' %></span>
-                <select name="function"><option value=""><%= en ? 'All activities' : '모든 활동' %></option>
-                <% functions.forEach(function(f) { %><option value="<%= f.id %>" <%= filter.functionId === f.id ? 'selected' : '' %>><%= f.label %> (<%= f.count %>)</option><% }) %>
-                </select>
-            </label>
-            <div class="commu-activity-affiliation">
-                <label for="activity-affiliation"><%= en ? 'State / organization' : '국가·세력·조직' %></label>
-                <select id="activity-affiliation" name="affiliation"><option value=""><%= en ? 'All affiliations' : '모든 소속' %></option>
-                <% affiliationGroups.forEach(function(group) { %><optgroup label="<%= group.label %>">
-                    <% group.items.forEach(function(a) { %><option value="<%= a.id %>" <%= filter.affiliationId === a.id ? 'selected' : '' %>><%= a.parentId ? '↳ ' : '' %><%= a.label %> (<%= a.count %>)</option><% }) %>
-                </optgroup><% }) %>
-                </select>
-                <details class="commu-affiliation-search" data-affiliation-search-panel hidden>
-                    <summary><%= en ? 'Search this list' : '목록에서 검색' %></summary>
-                <input type="search" data-affiliation-search aria-label="<%= en ? 'Search countries and organizations' : '국가·조직 목록 검색' %>" placeholder="<%= en ? 'Search countries or organizations' : '국가·조직 이름으로 목록 좁히기' %>" aria-controls="activity-affiliation" aria-describedby="affiliation-search-status">
-                <span id="affiliation-search-status" class="commu-activity-search-status" role="status" hidden></span>
+    <section class="commu-hub-section commu-activity-browser" id="activity-browser" aria-busy="false">
+        <div class="commu-activity-facets">
+            <div class="commu-activity-facet">
+                <h2><%= en ? 'Activity' : '기능·활동' %></h2>
+                <div role="group" class="commu-activity-chips" aria-label="<%= en ? 'Activity' : '기능·활동' %>">
+                    <% chip(hrefWith({ function: '' }), en ? 'All' : '전체', allCounts.functions, !activeFunction) %>
+                    <% functions.forEach(function(f) { chip(hrefWith({ function: f.id }), f.label, f.count, f.id === filter.functionId, f.icon) }) %>
+                </div>
+            </div>
+            <div class="commu-activity-facet">
+                <h2><%= en ? 'State, movement or organization' : '국가·세력·조직' %></h2>
+                <div role="group" class="commu-activity-chips" aria-label="<%= en ? 'Most common affiliations' : '많이 찾는 소속' %>">
+                    <% chip(hrefWith({ affiliation: '' }), en ? 'All' : '전체', allCounts.affiliations, !activeAffiliation) %>
+                    <% topAffiliations.forEach(function(a) { chip(hrefWith({ affiliation: a.id }), a.label, a.count, a.id === filter.affiliationId, a.icon === 'hammer-sickle' ? 'hammer-sickle' : '') }) %>
+                </div>
+                <details class="commu-affiliation-picker" data-affiliation-picker>
+                    <summary><%= en ? 'All ' + affiliations.length + ' affiliations by country' : '나라별 전체 소속 ' + affiliations.length + '개에서 고르기' %></summary>
+                    <div class="commu-affiliation-picker-body">
+                        <input type="search" class="ui-control" data-affiliation-search hidden aria-label="<%= en ? 'Search countries and organizations' : '국가·조직 검색' %>" placeholder="<%= en ? 'Country or organization' : '국가·조직 이름' %>">
+                        <p class="commu-activity-search-status" role="status" data-affiliation-search-status hidden></p>
+                        <% affiliationGroups.forEach(function(group) { %>
+                        <section class="commu-affiliation-group" data-affiliation-group>
+                            <h3><%= group.label %></h3>
+                            <div class="commu-activity-chips is-wrap">
+                            <% group.items.forEach(function(a) { chip(hrefWith({ affiliation: a.id }), (a.parentId ? '↳ ' : '') + a.label, a.count, a.id === filter.affiliationId) }) %>
+                            </div>
+                        </section>
+                        <% }) %>
+                    </div>
                 </details>
             </div>
-            <div class="commu-activity-actions">
-                <button class="btn btn-primary" type="submit"><%= en ? 'Apply' : '적용' %></button>
-                <a class="btn" href="/commulingo/activities?lang=<%= lang %>"><%= en ? 'Reset' : '초기화' %></a>
+            <% if (offices.length) { %>
+            <div class="commu-activity-facet">
+                <h2><%= en ? 'Soviet institution line' : '소련 기관 계열' %></h2>
+                <div role="group" class="commu-activity-chips" aria-label="<%= en ? 'Soviet institution line' : '소련 기관 계열' %>">
+                    <% chip(hrefWith({ office: '' }), en ? 'All' : '전체', null, !activeOffice) %>
+                    <% offices.forEach(function(o) { chip(hrefWith({ office: o.id }), o.label, o.count, o.id === filter.officeId) }) %>
+                </div>
             </div>
-        </form>
-        <div class="commu-activity-results">
-            <h2><%= resultLabel || (en ? 'All' : '전체') %> <%= en ? 'people' : '인물' %> <span><%= total %><%= en ? '' : '명' %></span></h2>
-            <% if (activeFunction || activeAffiliation || activeOffice) { %><div class="commu-activity-selected" aria-label="<%= en ? 'Active filters' : '적용된 조건' %>">
-                <% if (activeFunction) { %><a href="<%= clearFilter('function') %>" aria-label="<%= activeFunction.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeFunction.label %> ×</a><% } %>
-                <% if (activeAffiliation) { %><a href="<%= clearFilter('affiliation') %>" aria-label="<%= activeAffiliation.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeAffiliation.label %> ×</a><% } %>
-                <% if (activeOffice) { %><a href="<%= clearFilter('office') %>" aria-label="<%= activeOffice.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeOffice.label %> ×</a><% } %>
-            </div><% } %>
+            <% } %>
         </div>
-        <% if (offices.length) { %><nav class="commu-activity-selected commu-activity-offices" aria-label="<%= en ? 'Narrow by Soviet institution line' : '소련 기관 계열로 좁히기' %>">
-            <span><%= en ? 'Institution line' : '기관 계열' %></span>
-            <a href="<%= officeHref('') %>" <%- activeOffice ? '' : 'aria-current="true"' %>><%= en ? 'All' : '전체' %></a>
-            <% offices.forEach(function(o) { %><a href="<%= officeHref(o.id) %>" <%- o.id === filter.officeId ? 'aria-current="true"' : '' %>><%= o.label %> <small><%= o.count %></small></a><% }) %>
-        </nav><% } %>
+        <div class="commu-activity-results" id="activity-results" tabindex="-1">
+            <h2 aria-live="polite"><%= resultLabel || (en ? 'All' : '전체') %> <%= en ? 'people' : '인물' %> <span><%= total %><%= en ? '' : '명' %></span></h2>
+            <% if (activeFunction || activeAffiliation || activeOffice) { %><a class="commu-activity-reset" href="<%= hrefWith({ function: '', affiliation: '' }) %>"><%= en ? 'Clear all' : '조건 모두 해제' %></a><% } %>
+        </div>
         <% if (!total) { %><p><%= en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.' %></p><% } %>
         <div class="commu-people-grid">
         <% people.forEach(function(person) { %>

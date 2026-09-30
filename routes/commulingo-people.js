@@ -230,7 +230,9 @@ router.get('/activities', async (req, res) => {
         // Keep active filters visible even when an existing link has no matches.
         const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId, officeId })).length }))
             .filter(f => f.count > 0 || f.id === functionId);
-        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id, officeId })).length }))
+        // Picking another affiliation drops the institution line (it only
+        // narrows Soviet affiliations), so affiliation counts ignore it.
+        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length }))
             .filter(a => a.count > 0 || a.id === affiliationId);
         // Institution lines only narrow Soviet activities, so they are offered
         // once a Soviet affiliation is chosen (or arrive in a link), never as a
@@ -249,7 +251,11 @@ router.get('/activities', async (req, res) => {
         if (officeId) query.set('office', officeId);
         const pagination = paginateList(people, people, { page: req.query.page || 1 }, `/commulingo/activities?${query}&page=`, { mark: false });
         setShortPublicCache(res);
-        res.render('public/commulingo-activities', { filter, functions, affiliations, affiliationGroups, offices, pagination, total: people.length,
+        const count = f => standardized.people.filter(p => activitiesModel.matchesActivities(p, f)).length;
+        const allCounts = { functions: count({ affiliationId, officeId }), affiliations: count({ functionId }) };
+        const topAffiliations = [...affiliations].sort((a, b) => b.count - a.count).slice(0, 8);
+        if (affiliationId && !topAffiliations.some(a => a.id === affiliationId)) topAffiliations.push(affiliations.find(a => a.id === affiliationId));
+        res.render('public/commulingo-activities', { filter, functions, affiliations, affiliationGroups, offices, allCounts, topAffiliations: topAffiliations.filter(Boolean), pagination, total: people.length,
             people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
             linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? 'People by activity and affiliation' : '기능·활동과 국가·세력별 인물',
