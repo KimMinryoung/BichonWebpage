@@ -1,0 +1,107 @@
+{
+ "note": "2026-09-30: activities for the three people whose card showed only a free-text legacy role label (item 4 of the role retirement); excerpts from retrieved Wikipedia plain-text extracts.",
+ "reviewMethod": "operator request; each excerpt located in the retrieved extract and read in context",
+ "add": {
+  "yeltsin": [
+   {
+    "functionId": "government",
+    "affiliationId": "russia-federation",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1991,
+    "endYear": 1999,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Yeltsin",
+      "locator": "plain-text extract characters 61:148; sha256 dd5b1b1f5f8ba0a4c5d229c65ed69cf54c085bf1d86f6d5b7b464fafcb695081",
+      "claim": "1991~1999년 러시아 대통령을 지냈다.",
+      "excerpt": "was a Soviet and Russian politician who served as President of Russia from 1991 to 1999"
+     }
+    ]
+   },
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "state-soviet",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1976,
+    "endYear": 1987,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Yeltsin",
+      "locator": "plain-text extract characters 678:755; sha256 dd5b1b1f5f8ba0a4c5d229c65ed69cf54c085bf1d86f6d5b7b464fafcb695081",
+      "claim": "1976년 소련공산당 스베르들롭스크주 위원회 제1서기가 되었다.",
+      "excerpt": "in 1976, he became First Secretary of the party's Sverdlovsk Oblast committee"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Yeltsin",
+      "locator": "plain-text extract characters 979:1083; sha256 dd5b1b1f5f8ba0a4c5d229c65ed69cf54c085bf1d86f6d5b7b464fafcb695081",
+      "claim": "1987년 소련공산당 정치국에서 처음으로 사임한 인물이 되었다.",
+      "excerpt": "In 1987, he was the first person to resign from the Politburo of the Communist Party of the Soviet Union"
+     }
+    ]
+   }
+  ],
+  "langfang": [
+   {
+    "functionId": "security",
+    "affiliationId": "state-soviet",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1931,
+    "endYear": 1956,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B3%D1%84%D0%B0%D0%BD%D0%B3%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 126:227; sha256 6289c6e820b06de6ee980f5f0cfad6d212df48ae5806162ae539639ad96df9ad",
+      "claim": "소련 국가보안기관 간부였고 1945~1956년 중장이었다.",
+      "excerpt": "советский деятель органов госбезопасности, генерал-лейтенант (с 9 июля 1945 г. по 17 августа 1956 г.)"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B3%D1%84%D0%B0%D0%BD%D0%B3%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 1088:1170; sha256 6289c6e820b06de6ee980f5f0cfad6d212df48ae5806162ae539639ad96df9ad",
+      "claim": "1931년부터 OGPU 경제국에서 근무했다.",
+      "excerpt": "С 1931 г. — практикант, помощник уполномоченного, а затем уполномоченный ЭКУ ОГПУ."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B3%D1%84%D0%B0%D0%BD%D0%B3%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 1858:1921; sha256 6289c6e820b06de6ee980f5f0cfad6d212df48ae5806162ae539639ad96df9ad",
+      "claim": "1940년 NKVD 국가보안총국 제3부 수사과장이었다.",
+      "excerpt": "в 1940 г. — начальник следственной части 3-го отдела ГУГБ НКВД."
+     }
+    ],
+    "officeId": "state-security"
+   }
+  ],
+  "nikolayev-zhurid": [
+   {
+    "functionId": "security",
+    "affiliationId": "state-soviet",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1919,
+    "endYear": 1938,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2-%D0%96%D1%83%D1%80%D0%B8%D0%B4%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%93%D0%B0%D0%BB%D0%B0%D0%BA%D1%82%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 1557:1611; sha256 c29a70a3665dd879b877a9f0751e1f737326796601d6d4f981e7e7fcd4e7c482",
+      "claim": "1919년 6월부터 체카의 군 방첩 부서에서 일했다.",
+      "excerpt": "С июня 1919 года работает в военной контрразведке ВЧК."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2-%D0%96%D1%83%D1%80%D0%B8%D0%B4%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%93%D0%B0%D0%BB%D0%B0%D0%BA%D1%82%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 195:376; sha256 c29a70a3665dd879b877a9f0751e1f737326796601d6d4f981e7e7fcd4e7c482",
+      "claim": "1936~1938년 NKVD 국가보안총국의 작전부·특별부·방첩부 부장을 지냈다.",
+      "excerpt": "начальник Оперативного отдела ГУГБ НКВД СССР (1936—1937), затем начальник Особого (5-го) отдела ГУГБ СССР (1937—1938), затем начальник Контрразведывательного отдела ГУГБ НКВД (1938)"
+     }
+    ],
+    "officeId": "state-security"
+   }
+  ]
+ },
+ "patch": {}
+}
