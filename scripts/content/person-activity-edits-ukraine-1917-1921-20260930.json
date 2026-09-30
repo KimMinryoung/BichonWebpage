@@ -1,0 +1,612 @@
+{
+ "note": "2026-09-30: 우크라이나 1917–1921 사건 인물 소속 재분류. 카탈로그 v18에서 state-ukraine(1917–1921·1991– 혼합)을 1991년 이후로 한정하고 우크라이나 인민공화국·우크라이나국(헤트만국)·소비에트 우크라이나(state-soviet 하위, 1917–1922)를 나눴다. 근거는 영어 위키백과 plain-text 발췌(locator = 발췌 문자 범위 + 발췌 전체 sha256).",
+ "reviewMethod": "operator request; each excerpt located in the retrieved extract and read in context; affiliation chosen by the government or army actually served, not by nationality",
+ "add": {
+  "nykyfor-hryhoriv": [
+   {
+    "functionId": "military",
+    "affiliationId": "ukraine-peoples-republic",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1917,
+    "endYear": 1919,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+      "locator": "plain-text extract characters 1245:1402; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603",
+      "claim": "1917년 말 우크라이나 인민군 의용연대를 만들고 페틀류라에게서 중령 계급을 받았다.",
+      "excerpt": "At the end of 1917, he created a volunteer regiment of the Ukrainian People's Army, for which he received the rank of lieutenant colonel from Symon Petliura."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+      "locator": "plain-text extract characters 2227:2362; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603",
+      "claim": "1918년 11월 반헤트만 봉기 뒤 6천 명 병력을 이끌고 우크라이나 인민군에 다시 합류했다.",
+      "excerpt": "Hryhoriv's 6,000-strong force rejoined the Ukrainian People's Army as a separate division under the command of otaman Oleksander Hrekov"
+     }
+    ]
+   },
+   {
+    "functionId": "military",
+    "affiliationId": "soviet-ukraine",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1919,
+    "endYear": 1919,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+      "locator": "plain-text extract characters 2705:3005; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603",
+      "claim": "1919년 2월 2일 우크라이나 SSR 정부와 우크라이나 적군 지휘부를 인정하고 넘어갔다.",
+      "excerpt": "On 2 February 1919, more than a month after the proclamation of the Ukrainian Soviet Socialist Republic in Kharkiv and three days before the capture of Kyiv by the Red Army, Hryhoriv agreed to recognize the suzerainty of the government of the Ukrainian SSR and the command of the Red Army in Ukraine."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+      "locator": "plain-text extract characters 4034:4115; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603",
+      "claim": "오데사 점령 뒤 우크라이나 소비에트 제6사단장이 되었다.",
+      "excerpt": "he was appointed commander of the newly established 6th Ukrainian Soviet Division"
+     }
+    ]
+   }
+  ],
+  "volodymyr-vynnychenko": [
+   {
+    "functionId": "arts",
+    "affiliationId": null,
+    "affiliationStatus": "unresolved",
+    "relation": "unresolved",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+      "locator": "plain-text extract characters 710:847; accessed 2026-09-30; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030",
+      "claim": "혁명 이전 우크라이나 모더니즘 문학의 대표 작가다.",
+      "excerpt": "He is recognized as a leading Ukrainian modernist writer of the pre-revolutionary era, and an author of short stories, novels, and plays."
+     }
+    ]
+   }
+  ],
+  "mykhailo-hrushevsky": [
+   {
+    "functionId": "legislature",
+    "affiliationId": "ukraine-peoples-republic",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1917,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mykhailo_Hrushevsky",
+      "locator": "plain-text extract characters 6296:6471; accessed 2026-09-30; sha256 3707cd1798ff886d29ab76fb6ccb98d29bfb49a12adf74286ebaf55ec1cc7ec2",
+      "claim": "1917년 3월 17일 혁명 의회인 우크라이나 중앙 라다의 의장으로 선출되었다.",
+      "excerpt": "Soon after the February Revolution, on 17 March 1917, Hrushevsky, still living in Moscow, was elected head of the revolutionary parliament, the Ukrainian Central Rada in Kyiv."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mykhailo_Hrushevsky",
+      "locator": "plain-text extract characters 6892:7018; accessed 2026-09-30; sha256 3707cd1798ff886d29ab76fb6ccb98d29bfb49a12adf74286ebaf55ec1cc7ec2",
+      "claim": "1918년 4월 29일 우크라이나 인민공화국 헌법이 채택되었다.",
+      "excerpt": "His government developed a project of the Constitution of the Ukrainian People's Republic, which was adopted on 29 April 1918."
+     }
+    ]
+   }
+  ],
+  "mikhail-tugan-baranovsky": [
+   {
+    "functionId": "economy",
+    "affiliationId": "ukraine-peoples-republic",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1917,
+    "endYear": 1917,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Tugan-Baranovsky",
+      "locator": "plain-text extract characters 6922:7103; accessed 2026-09-30; sha256 a14093e480c04ee70015f7d61f03a699d7354f65f5e35ef66941201fd34a9c0c",
+      "claim": "1917년 8~11월 중앙 라다 정부(총서기국)의 재무장관을 지냈다.",
+      "excerpt": "After February Revolution 1917 in Russian Empire he went back in Ukraine where he became a Finance minister in the government of Central Council of Ukraine (August – November 1917)."
+     }
+    ]
+   }
+  ],
+  "yevhen-konovalets": [
+   {
+    "functionId": "military",
+    "affiliationId": "ukraine-hetmanate",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevhen_Konovalets",
+      "locator": "plain-text extract characters 5537:5754; accessed 2026-09-30; sha256 9f3cf25903f36b0488bb2faf9791f18fa0041263e8e7c962c64b9d9bb5fff33f",
+      "claim": "1918년 8월 스코로파츠키가 우크라이나국에 충성을 맹세하는 조건으로 시치 소총대를 재건하고 코노발레츠를 지휘관으로 임명했다.",
+      "excerpt": "Skoropadsky agreed to restore the Sich Rifleman on the basis that it swore loyalty to the Ukrainian State, proclaiming the new unit by decree on 23 August with Konovalets as its commander and its base in Bila Tserkva."
+     }
+    ]
+   }
+  ],
+  "volin": [
+   {
+    "functionId": "propaganda",
+    "affiliationId": "ukrainian-insurgent-army-makhno",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Volin",
+      "locator": "plain-text extract characters 5994:6245; accessed 2026-09-30; sha256 9ff9b899dcd880b143d4a1b53e86468b7ac010ba531804a73dd67d6e310e0be7",
+      "claim": "마흐노 운동의 문화교육위원회에서 출판물을 편집하고 지역 대회를 조직했으며, 운동의 집행기구인 군사혁명평의회 의장도 맡았다.",
+      "excerpt": "Volin joined the movement's Cultural-Educational Commission, serving as an editor for its publications and organising its regional congresses, even going on to act as chairman of the Military Revolutionary Council (RVS), the movement's executive body."
+     }
+    ]
+   }
+  ],
+  "robert-eideman": [
+   {
+    "functionId": "military",
+    "affiliationId": "state-soviet",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1919,
+    "endYear": 1937,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Roberts_Eidemanis",
+      "locator": "plain-text extract characters 1608:1842; accessed 2026-09-30; sha256 700ccce1bae411f4954550a107e1dab2f2b9ca5349a124b9f02c5bb1999ecbc1",
+      "claim": "1919년 초부터 적군 소총사단들을 지휘해 크라스노프·데니킨군과 싸웠다.",
+      "excerpt": "At the beginning of 1919, Eidemanis commanded the 16th Rifle Division on the Don Front in the battles against General Krasnov, then as the commander of the 41st, later the 46th Rifle Division, he fought against Anton Denikin's troops."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Roberts_Eidemanis",
+      "locator": "plain-text extract characters 2133:2228; accessed 2026-09-30; sha256 700ccce1bae411f4954550a107e1dab2f2b9ca5349a124b9f02c5bb1999ecbc1",
+      "claim": "1921년 프룬제와 함께 우크라이나에서 마흐노 부대 토벌을 지휘했다.",
+      "excerpt": "There, together with Mikhail Frunze, he led the fight against Nestor Makhno's units in Ukraine."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Roberts_Eidemanis",
+      "locator": "plain-text extract characters 2429:2587; accessed 2026-09-30; sha256 700ccce1bae411f4954550a107e1dab2f2b9ca5349a124b9f02c5bb1999ecbc1",
+      "claim": "1932년 혁명군사평의회 위원이자 오소아비아힘 중앙평의회 의장이 되었다.",
+      "excerpt": "In 1932, Eidemanis became a member of the Revolutionary Military Council and the chairman of the Central Council of the Osoaviakhim paramilitary organization."
+     }
+    ]
+   }
+  ],
+  "mikhail-muravyov": [
+   {
+    "functionId": "military",
+    "affiliationId": "state-soviet",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1917,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Artemyevich_Muravyov",
+      "locator": "plain-text extract characters 4380:4563; accessed 2026-09-30; sha256 f98103324313470b921345292db83fcc6fc0e3355fc99e712d4fc952505372a9",
+      "claim": "10월 혁명 때 페트로그라드 군관구 총사령관으로 케렌스키-크라스노프군에 맞선 부대를 지휘했다.",
+      "excerpt": "He was then appointed commander-in-chief of the troops of the Petrograd Military District, and then appointed commander of the troops operating against the forces of Kerensky-Krasnov."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Artemyevich_Muravyov",
+      "locator": "plain-text extract characters 760:885; accessed 2026-09-30; sha256 f98103324313470b921345292db83fcc6fc0e3355fc99e712d4fc952505372a9",
+      "claim": "1918년 1월 적위대를 이끌고 중앙 라다에 맞서 키이우를 점령했다.",
+      "excerpt": "In January 1918 he led Red Guard units against the Central Rada of Ukraine and after the Battle of Kruty his forces took Kyiv"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Artemyevich_Muravyov",
+      "locator": "plain-text extract characters 1170:1258; accessed 2026-09-30; sha256 f98103324313470b921345292db83fcc6fc0e3355fc99e712d4fc952505372a9",
+      "claim": "이후 체코슬로바키아 군단과 싸우는 동부전선 사령관에 임명되었다.",
+      "excerpt": "after he had been named commander of the Eastern Front, fighting the Czechoslovak Legion"
+     }
+    ]
+   }
+  ],
+  "artyom-sergeyev": [
+   {
+    "functionId": "government",
+    "affiliationId": "state-soviet",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Fyodor_Sergeyev",
+      "locator": "plain-text extract characters 2712:2885; accessed 2026-09-30; sha256 e7359444800c5a4405dfb9891553dd5f0ad43f19de3b842e15a341669b17499f",
+      "claim": "1918년 도네츠크-크리비리흐 소비에트 공화국 인민위원회 의장 겸 국민경제 인민위원이었다.",
+      "excerpt": "In 1918, while Ukraine was under German occupation, Artyom was a chairman of the Sovnarkom of the separatist Donetsk-Krivoy Rog Soviet Republic and Narkom of Public Economy."
+     }
+    ]
+   },
+   {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-ukraine",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1919,
+    "endYear": 1919,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Fyodor_Sergeyev",
+      "locator": "plain-text extract characters 3368:3514; accessed 2026-09-30; sha256 e7359444800c5a4405dfb9891553dd5f0ad43f19de3b842e15a341669b17499f",
+      "claim": "1919년 우크라이나 소비에트 정부의 선동·선전 인민위원에 임명되었다.",
+      "excerpt": "In 1919, when Ukraine was occupied by the Bolsheviks again, Artyom was appointed People's Commissar for Agitation and Propaganda by Vladimir Lenin"
+     }
+    ]
+   }
+  ],
+  "oleksandr-shumsky": [
+   {
+    "functionId": "legislature",
+    "affiliationId": "ukraine-peoples-republic",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1917,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shumsky",
+      "locator": "plain-text extract characters 2777:2875; accessed 2026-09-30; sha256 c3fc420f35fb598449d523de22990cad91f3f87123caa57112e4dac3c566a2fa",
+      "claim": "우크라이나 사회혁명당 명부로 우크라이나 중앙 라다에 들어갔다.",
+      "excerpt": "He entered the Ukrainian Central Council, the Ukrainian parliament, on the party list of the UPSR."
+     }
+    ]
+   },
+   {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-ukraine",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1919,
+    "endYear": 1919,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shumsky",
+      "locator": "plain-text extract characters 4729:4897; accessed 2026-09-30; sha256 c3fc420f35fb598449d523de22990cad91f3f87123caa57112e4dac3c566a2fa",
+      "claim": "1919년 우크라이나 SSR 교육인민위원부 참사회에 들어갔다.",
+      "excerpt": "Following establishment of the Soviet regime in Ukraine, Shumsky was added to collegium of People's Commissariat of Education of the Ukrainian Socialist Soviet Republic"
+     }
+    ]
+   }
+  ],
+  "vladimir-vernadsky": [
+   {
+    "functionId": "science",
+    "affiliationId": "ukraine-hetmanate",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/National_Academy_of_Sciences_of_Ukraine",
+      "locator": "plain-text extract characters 4534:4687; accessed 2026-09-30; sha256 daede0d1aad8c26ef8bb3ea99111433bc511e08de32ccec5630b8681fec8a589",
+      "claim": "1918년 11월 27일 우크라이나 과학아카데미 창립총회에서 초대 원장으로 선출되었다.",
+      "excerpt": "At the first General Assembly (Constituent) that took place on 27 November 1918, academician Volodymyr Vernadsky was elected the President of the Academy"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/National_Academy_of_Sciences_of_Ukraine",
+      "locator": "plain-text extract characters 4986:5040; accessed 2026-09-30; sha256 daede0d1aad8c26ef8bb3ea99111433bc511e08de32ccec5630b8681fec8a589",
+      "claim": "아카데미의 임명은 모두 헤트만 스코로파츠키가 승인했다.",
+      "excerpt": "All appointments were approved by Hetman Skoropadskyi."
+     }
+    ]
+   }
+  ]
+ },
+ "patch": {
+  "pavlo-skoropadskyi": [
+   {
+    "match": {
+     "affiliationId": "state-ukraine"
+    },
+    "set": {
+     "affiliationId": "ukraine-hetmanate"
+    }
+   }
+  ],
+  "symon-petliura": [
+   {
+    "match": {
+     "affiliationId": "state-ukraine"
+    },
+    "set": {
+     "affiliationId": "ukraine-peoples-republic"
+    }
+   }
+  ],
+  "evgenia-bosch": [
+   {
+    "match": {
+     "affiliationId": "state-ukraine"
+    },
+    "set": {
+     "affiliationId": "soviet-ukraine"
+    }
+   }
+  ],
+  "yevhen-konovalets": [
+   {
+    "match": {
+     "affiliationId": "state-ukraine"
+    },
+    "set": {
+     "affiliationId": "ukraine-peoples-republic"
+    }
+   }
+  ],
+  "christian-rakovsky": [
+   {
+    "match": {
+     "affiliationId": "state-ukraine"
+    },
+    "set": {
+     "affiliationId": "soviet-ukraine",
+     "startYear": 1919,
+     "evidence": [
+      {
+       "claim": "라콥스키는 우크라이나 SSR의 정부 수반을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Christian_Rakovsky",
+       "excerpt": "Subsequently, he was a founding member of the Comintern, served as head of government in the Ukrainian SSR, and took part in negotiations at the Genoa Conference.",
+       "locator": "characters 1212:1374; sha256 7681a0a32411b9ad9975e5a88e5f67d2aada47456a46f1680c43490e75765d83"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Christian_Rakovsky",
+       "locator": "plain-text extract characters 27328:27547; accessed 2026-09-30; sha256 4c49ea4b4d6a38f2049d3fd2c204e3e957c1692f05b162278e3954c45513e050",
+       "claim": "1919년 1월 16일 퍄타코프의 뒤를 이어 우크라이나 임시 노농혁명정부 의장이 되었다.",
+       "excerpt": "After the subsequent Soviet offensive in Ukraine, Lenin appointed Rakovsky as the Chairman of the Provisional Revolutionary Government of the Workers and Peasants of Ukraine, replacing Georgy Pyatakov on 16 January 1919"
+      }
+     ]
+    }
+   }
+  ],
+  "yakov-drobnis": [
+   {
+    "match": {
+     "functionId": "political-leadership"
+    },
+    "set": {
+     "affiliationId": "soviet-ukraine",
+     "affiliationStatus": "confirmed",
+     "relation": "service"
+    }
+   }
+  ],
+  "yuri-pyatakov": [
+   {
+    "match": {
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "affiliationId": "soviet-ukraine",
+     "startYear": 1918,
+     "endYear": 1919,
+     "evidence": [
+      {
+       "claim": "그는 1917년 러시아 혁명 전후 우크라이나의 주요 볼셰비키 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Georgy_Pyatakov",
+       "excerpt": "He was a leading Bolshevik in Ukraine during and after the Russian Revolution of 1917.",
+       "locator": "characters 233:319; sha256 bd60f7ef4864cf00b449d0df060252798ed80c89d4b6feed680d3c64fcb7aa5b"
+      },
+      {
+       "claim": "10월 혁명 후 우크라이나 공산당의 초대 제1서기로 선출되었다.",
+       "source": "https://en.wikipedia.org/wiki/Georgy_Pyatakov",
+       "excerpt": "following the October Revolution was elected the first secretary of the Communist Party of Ukraine",
+       "locator": "characters 728:826; sha256 bd60f7ef4864cf00b449d0df060252798ed80c89d4b6feed680d3c64fcb7aa5b"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Georgy_Pyatakov",
+       "locator": "plain-text extract characters 6260:6411; accessed 2026-09-30; sha256 59424686ca96d25feaee9f43a280cc8c834119c3a81b49470037a70d21ecfd9c",
+       "claim": "1918년 7월 우크라이나 공산당(볼셰비키) 창립대회에서 중앙위원회 서기로 선출되었다.",
+       "excerpt": "At the founding congress of the Communist Party (Bolsheviks) of Ukraine, in Taganrog in July 1918, Pyatakov was elected as Central Committee Secretary."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Georgy_Pyatakov",
+       "locator": "plain-text extract characters 6784:6953; accessed 2026-09-30; sha256 59424686ca96d25feaee9f43a280cc8c834119c3a81b49470037a70d21ecfd9c",
+       "claim": "1918년 11월부터 1919년 1월 중순까지 우크라이나 임시 노농정부를 이끌었다.",
+       "excerpt": "From November 1918, after the German army withdrew from Ukraine, to mid-January 1919, Pyatakov was a head of the Provisional Worker's and Peasant's Government of Ukraine"
+      }
+     ]
+    }
+   }
+  ],
+  "anatoly-zheleznyakov": [
+   {
+    "match": {
+     "functionId": "military"
+    },
+    "set": {
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "endYear": 1919
+    }
+   }
+  ],
+  "nestor-makhno": [
+   {
+    "match": {
+     "affiliationId": "ukrainian-insurgent-army-makhno"
+    },
+    "set": {
+     "startYear": 1918,
+     "endYear": 1921,
+     "evidence": [
+      {
+       "claim": "마흐노는 우크라이나 독립 전쟁 중 혁명 반란군의 사령관이었다.",
+       "source": "https://en.wikipedia.org/wiki/Nestor_Makhno",
+       "excerpt": "was a Ukrainian anarchist revolutionary and the commander of the Revolutionary Insurgent Army of Ukraine during the Ukrainian War of Independence",
+       "locator": "characters 266:411; sha256 d37ab3a42655b11a4dd85d3f5e6fc6a31f54a71f9aafbb3e39cd9074ccae1247"
+      },
+      {
+       "claim": "마흐노는 군대를 재건하고 백군을 격파하며 남부 및 동부 우크라이나를 장악하는 군사 작전을 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Nestor_Makhno",
+       "excerpt": "Makhno rebuilt his army from the remains of Nykyfor Hryhoriv's forces in western Ukraine, routed the White Army at the Battle of Perehonivka, and captured most of southern and eastern Ukraine",
+       "locator": "characters 1868:2059; sha256 d37ab3a42655b11a4dd85d3f5e6fc6a31f54a71f9aafbb3e39cd9074ccae1247"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Nestor_Makhno",
+       "locator": "plain-text extract characters 490:602; accessed 2026-09-30; sha256 121bedd106b482fb6a40455568967fb61a65956287cd2ca6f32458a11d949f4c",
+       "claim": "마흐노 운동은 1918년부터 1921년까지 이어졌다.",
+       "excerpt": "a mass movement by the Ukrainian peasantry to establish anarchist communism in the country between 1918 and 1921"
+      }
+     ]
+    }
+   }
+  ],
+  "volin": [
+   {
+    "match": {
+     "functionId": "scholarship"
+    },
+    "set": {
+     "primary": false
+    }
+   }
+  ],
+  "robert-eideman": [
+   {
+    "match": {
+     "functionId": "arts"
+    },
+    "set": {
+     "primary": false
+    }
+   }
+  ],
+  "mikhail-muravyov": [
+   {
+    "match": {
+     "affiliationId": "russian-left-sr"
+    },
+    "set": {
+     "primary": false
+    }
+   }
+  ],
+  "artyom-sergeyev": [
+   {
+    "match": {
+     "affiliationId": "russian-rsdlp"
+    },
+    "set": {
+     "primary": false
+    }
+   }
+  ],
+  "vladimir-vernadsky": [
+   {
+    "match": {
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "startYear": null,
+     "endYear": null,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: science-nuclear-space).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D1%80%D0%BD%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Влади́мир Ива́нович Верна́дский (28 февраля [12 марта] 1863, Санкт-Петербург, Российская империя — 6 января 1945, Москва, СССР) — русский, украинский и советский учёный-естествоиспытатель, мыслитель и общественный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 b0d42749fae3a107068ceb7a7613f25ac8fb81920f360452354c7f02ebe6eb97"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Vernadsky",
+       "locator": "plain-text extract characters 9727:9834; accessed 2026-09-30; sha256 348b43265e0e3fbf012848067fa855164f33fd34852c4a8363abe7d8ee1e8fb3",
+       "claim": "1930년대 말과 1940년대 초 소련 원자폭탄 계획에 초기 자문 역할을 했다.",
+       "excerpt": "In the late 1930s and early 1940s Vernadsky played an early advisory role in the Soviet atomic bomb project"
+      }
+     ]
+    }
+   }
+  ],
+  "volodymyr-vynnychenko": [
+   {
+    "match": {
+     "functionId": "political-leadership"
+    },
+    "set": {
+     "functionId": "government",
+     "affiliationId": "ukraine-peoples-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1919,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+       "locator": "plain-text extract characters 172:322; accessed 2026-09-30; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030",
+       "claim": "빈니첸코는 우크라이나 인민공화국의 초대 총리였다.",
+       "excerpt": "was a Ukrainian statesman, political activist, writer, playwright and artist who served as the first prime minister of the Ukrainian People's Republic"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+       "locator": "plain-text extract characters 3936:4053; accessed 2026-09-30; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030",
+       "claim": "1917년 2월 혁명 뒤 우크라이나 총서기국(중앙 라다 정부)을 이끌었다.",
+       "excerpt": "After the February Revolution in Russia in 1917, Vynnychenko served as the head of the General Secretariat of Ukraine"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+       "locator": "plain-text extract characters 6986:7104; accessed 2026-09-30; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030",
+       "claim": "그가 결성한 집정내각은 우크라이나 인민공화국의 복원을 선포했다.",
+       "excerpt": "The Directorate, a temporary executive council of five, proclaimed the restoration of the Ukrainian People's Republic."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+       "locator": "plain-text extract characters 7490:7547; accessed 2026-09-30; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030",
+       "claim": "1919년 2월 10일 물러나 망명했다.",
+       "excerpt": "he stepped down on February 10, 1919 and emigrated abroad"
+      }
+     ]
+    }
+   }
+  ],
+  "nykyfor-hryhoriv": [
+   {
+    "match": {
+     "functionId": "military"
+    },
+    "set": {
+     "functionId": "military",
+     "affiliationId": null,
+     "affiliationStatus": "independent",
+     "relation": "independent",
+     "primary": true,
+     "startYear": 1919,
+     "endYear": 1919,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+       "locator": "plain-text extract characters 5194:5398; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603",
+       "claim": "흐리호리우 부대는 볼셰비키 지휘를 거부하고 농민들에게 \"오타만 흐리호리우의 빨치산\"으로 볼셰비키와 싸우자고 호소했다.",
+       "excerpt": "Hryhoriv's troops then stopped recognizing the Bolshevik command. They began to distribute leaflets, which called on peasants to fight against the Bolsheviks in the ranks of \"otaman Hryhoriv's partisans\"."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+       "locator": "plain-text extract characters 5498:5624; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603",
+       "claim": "1919년 5월 8일 우니베르살을 발표해 반볼셰비키 봉기를 일으켰다.",
+       "excerpt": "On 8 May 1919, Hryhoriv issued the Universal, in which he called for \"the Ukrainian people to take power into their own hands\""
+      }
+     ]
+    }
+   }
+  ]
+ }
+}
