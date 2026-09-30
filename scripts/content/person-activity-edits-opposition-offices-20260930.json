@@ -1,0 +1,767 @@
+{
+ "note": "2026-09-30: Soviet opposition factions, Kronstadt committee and US SWP added to the affiliation catalog (v16); members attached from retrieved Wikipedia plain-text extracts (locator = extract character range + sha256 of the extract). Institution lines (officeId) copied from the legacy role only where the stored activity's function matches that office.",
+ "reviewMethod": "operator request; each excerpt located in the retrieved extract and read in context; show-trial accusations alone were not accepted",
+ "add": {
+  "ivan-smirnov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": 1929,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Smirnov_%28politician%29",
+      "locator": "plain-text extract characters 2527:2597; sha256 5d0bd59ab8691fd065eb10866c5cf4c7a3b9263e6cb741e15dd9f0d5e71c5b86",
+      "claim": "1923년 트로츠키주의 반대파의 적극적 구성원이 되었다.",
+      "excerpt": "In 1923, Smirnov became an active member of the Trotskyist opposition."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Smirnov_%28politician%29",
+      "locator": "plain-text extract characters 3251:3344; sha256 5d0bd59ab8691fd065eb10866c5cf4c7a3b9263e6cb741e15dd9f0d5e71c5b86",
+      "claim": "1929년 10월 트로츠키주의와 결별했다.",
+      "excerpt": "In October 1929, Smirnov \"broke with Trotskyism\" and was reinstated in the Party in May 1930."
+     }
+    ]
+   }
+  ],
+  "preobrazhensky": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": 1929,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgeni_Preobrazhensky",
+      "locator": "plain-text extract characters 10433:10573; sha256 b302a365206ee63ea23334999282b08e2a381b77bf00fe031d9ee1f427d6f658",
+      "claim": "좌익반대파의 최초 지도자였다.",
+      "excerpt": "Preobrazhensky was the original leader of the Left Opposition, for a few months before Trotsky openly broke with Stalin after Lenin's death."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgeni_Preobrazhensky",
+      "locator": "plain-text extract characters 16229:16377; sha256 b302a365206ee63ea23334999282b08e2a381b77bf00fe031d9ee1f427d6f658",
+      "claim": "1929년 7월 트로츠키주의와의 결별을 선언했다.",
+      "excerpt": "On 13 July 1929, the three of them signed a letter in Pravda declaring that they had made an \"ideological and organizational break with Trotskyism\"."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-communists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgeni_Preobrazhensky",
+      "locator": "plain-text extract characters 7764:7914; sha256 b302a365206ee63ea23334999282b08e2a381b77bf00fe031d9ee1f427d6f658",
+      "claim": "1918년 좌익공산주의자 분파에 가담했다.",
+      "excerpt": "In 1918, Preobrazhensky joined the Left Communists faction, which opposed the draconian peace with Germany established by the Treaty of Brest-Litovsk."
+     }
+    ]
+   }
+  ],
+  "radek": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Radek",
+      "locator": "plain-text extract characters 9450:9609; sha256 aa58522426cdeb743298c9d3d21afee90aa4d720b8a0dd56a8b48f4fca2fc7e2",
+      "claim": "1923년부터 좌익반대파에 속했다.",
+      "excerpt": "Radek was part of the Left Opposition from 1923, writing his article 'Leon Trotsky: Organizer of Victory' shortly after Lenin's stroke in January of that year."
+     }
+    ]
+   }
+  ],
+  "smilga": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1926,
+    "endYear": 1929,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivar_Smilga",
+      "locator": "plain-text extract characters 7545:7630; sha256 17ca5ae229ec812c2254c9c487e5faa298901fcfcfdb353cacdb9bd7f4beaf55",
+      "claim": "1926년 무렵 트로츠키가 이끈 좌익반대파에 가담했다.",
+      "excerpt": "At some point in 1926, or earlier, Smilga joined the Left Opposition, led by Trotsky."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivar_Smilga",
+      "locator": "plain-text extract characters 9532:9887; sha256 17ca5ae229ec812c2254c9c487e5faa298901fcfcfdb353cacdb9bd7f4beaf55",
+      "claim": "1929년 7월 좌익반대파 지지를 철회했다.",
+      "excerpt": "In July 1929, along with Yevgeni Preobrazhensky, Karl Radek, he renounced his support for the Left Opposition, citing the reason that Joseph Stalin's rise would have meant the application of much of the Left's recommended policies, and that the dangers the Soviet state faced, from the outside as well as from within, required their \"return to the Party\"."
+     }
+    ]
+   }
+  ],
+  "mrachkovsky": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1927,
+    "endYear": 1927,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sergei_Mrachkovsky",
+      "locator": "plain-text extract characters 2483:2748; sha256 72ec87180823e0e32b31bcff79649a5e35edc1040f50381ce4fca2c1782255e1",
+      "claim": "1927년 9월 좌익반대파의 강령을 비밀리에 인쇄했다.",
+      "excerpt": "Zinoviev would end by deserting us and Stalin would trick us.\" In September 1927, when the Politburo, which was controlled by Stalin, banned the publication of a political programme drawn up by the left opposition, Mrachkovsky arranged to have it printed illegally."
+     }
+    ]
+   }
+  ],
+  "nikolai-muralov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": 1927,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolay_Muralov",
+      "locator": "plain-text extract characters 0:225; sha256 6aab745294c30f31087da2cabc62a87fa94d6e7a573d033f5b863460eb839e54",
+      "claim": "1923년 이후 좌익반대파의 구성원이 되었다.",
+      "excerpt": "Nikolay Ivanovich Muralov (Russian: Никола́й Ива́нович Мура́лов; 7 December 1877 – 1 February 1937) was a Bolshevik revolutionary leader and military commander in Russia, who after 1923 became a member of the Left Opposition."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolay_Muralov",
+      "locator": "plain-text extract characters 4954:5095; sha256 6aab745294c30f31087da2cabc62a87fa94d6e7a573d033f5b863460eb839e54",
+      "claim": "1927년 제15차 당대회에서 좌익반대파를 변호했다.",
+      "excerpt": "Muralov spoke in defense of the Left Opposition at the 15th Congress of the VKP(b) in December 1927, during which he was heckled mercilessly."
+     }
+    ]
+   }
+  ],
+  "leonid-serebryakov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1929,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Leonid_Serebryakov",
+      "locator": "plain-text extract characters 3495:3609; sha256 380111c5d3182230823ca3cde480cc8b434f0993811d23c69bfb831e94ab2362",
+      "claim": "1929년 좌익반대파 지지를 철회했다.",
+      "excerpt": "He renounced his support for the Left Opposition in 1929, and his party membership was reinstated in January 1930."
+     }
+    ]
+   }
+  ],
+  "timofei-sapronov": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-democratic-centralists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1926,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Timofei_Sapronov",
+      "locator": "plain-text extract characters 2203:2297; sha256 5c6c24fffab41b84a60a61623ef02cb310241a421c7f23bc979c970dec536833",
+      "claim": "민주집중파의 창립자였다.",
+      "excerpt": "He was a founder of the Moscow-based group known as the Democratic Centralists, of 'Dec-ists'."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Timofei_Sapronov",
+      "locator": "plain-text extract characters 3641:3954; sha256 5c6c24fffab41b84a60a61623ef02cb310241a421c7f23bc979c970dec536833",
+      "claim": "1926년 15인 그룹 성명을 주도했다.",
+      "excerpt": "Sapronov helped lay the groundwork for the United Opposition of the Trotskyist and Zinovite factions in 1926, but he and the former Democratic Centralists remained ultra-left, declaring in the statement of the Group of 15 that the Soviet Union was no longer a workers' state and that capitalism had been restored."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-communists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Timofei_Sapronov",
+      "locator": "plain-text extract characters 2063:2202; sha256 5c6c24fffab41b84a60a61623ef02cb310241a421c7f23bc979c970dec536833",
+      "claim": "1918년 좌익공산주의자를 지지했다.",
+      "excerpt": "In 1918, Sapronov supported the Left Communists, who opposed the Treaty of Brest-Litovsk, and was part of the left opposition from then on."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Timofei_Sapronov",
+      "locator": "plain-text extract characters 3462:3640; sha256 5c6c24fffab41b84a60a61623ef02cb310241a421c7f23bc979c970dec536833",
+      "claim": "46인 선언에 서명하고 좌익반대파에 합류했다.",
+      "excerpt": "He, along with Osinsky, Smirnov and Drobnis, signed The Declaration of 46 and later adhered to the Left Opposition, albeit as a separate grouping considered ultra-left within it."
+     }
+    ]
+   }
+  ],
+  "christian-rakovsky": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1927,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Christian_Rakovsky",
+      "locator": "plain-text extract characters 37114:37238; sha256 4c49ea4b4d6a38f2049d3fd2c204e3e957c1692f05b162278e3954c45513e050",
+      "claim": "레닌이 병으로 물러난 뒤 트로츠키의 좌익반대파에 가담했다.",
+      "excerpt": "After Lenin's illness and incapacitation, Rakovsky joined Leon Trotsky's Left Opposition and came into conflict with Stalin."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Christian_Rakovsky",
+      "locator": "plain-text extract characters 44527:44721; sha256 4c49ea4b4d6a38f2049d3fd2c204e3e957c1692f05b162278e3954c45513e050",
+      "claim": "1927년 11~12월 좌익반대파 패배 뒤 당에서 축출되었다.",
+      "excerpt": "Following the defeat of the Left Opposition in November–December 1927, Rakovsky was ousted from the Comintern, the Central Committee, and eventually from the Communist Party of the Soviet Union."
+     }
+    ]
+   }
+  ],
+  "yuri-pyatakov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1928,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgy_Pyatakov",
+      "locator": "plain-text extract characters 1130:1281; sha256 59424686ca96d25feaee9f43a280cc8c834119c3a81b49470037a70d21ecfd9c",
+      "claim": "1927년 좌익반대파 소속으로 당에서 제명되었고 1928년 복당했다.",
+      "excerpt": "In 1927, he was expelled from the party, led by Joseph Stalin, for his membership in Leon Trotsky's Left Opposition, but recanted and rejoined in 1928."
+     }
+    ]
+   },
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-left-communists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgy_Pyatakov",
+      "locator": "plain-text extract characters 5911:6099; sha256 59424686ca96d25feaee9f43a280cc8c834119c3a81b49470037a70d21ecfd9c",
+      "claim": "1918년 1월 좌익공산주의자의 지도자 가운데 하나였다.",
+      "excerpt": "In January 1918, Pyatakov was one of the leaders of the Left Communists, who opposed Lenin's decision to end the war with Germany through the Treaty of Brest-Litovsk (signed 3 March 1918)."
+     }
+    ]
+   }
+  ],
+  "evgenia-bosch": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgenia_Bosch",
+      "locator": "plain-text extract characters 8002:8043; sha256 db676315a777f538fe09dec5fb22223efebf340c94964745095f78179bc3f174",
+      "claim": "1923년 좌익반대파에 가담했다.",
+      "excerpt": "Bosch joined the Left Opposition in 1923."
+     }
+    ]
+   }
+  ],
+  "mikhail-lashevich": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1927,
+    "endYear": 1927,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Lashevich",
+      "locator": "plain-text extract characters 1261:1370; sha256 284e7becf5c5c500aa6ff5d6707faf8eb306ceb85195979b89a31ab53febb705",
+      "claim": "1927년 제15차 당대회에서 다른 트로츠키주의자들과 함께 제명되었다.",
+      "excerpt": "In 1927, at the 15th Congress of the VKP(b), he was expelled from the Party, together with other Trotskyists."
+     }
+    ]
+   }
+  ],
+  "vladimir-smirnov": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-democratic-centralists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1920,
+    "endYear": 1926,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Smirnov_%28politician%29",
+      "locator": "plain-text extract characters 5032:5266; sha256 c5eac5b50269f18ce8e49f0574a1ceee397c92396a4b98fd11ff8cf117d260c2",
+      "claim": "1920년 민주집중파를 결성했다.",
+      "excerpt": "During 1920, Smirnov, Osinsky, and Timofei Sapronov formed the Democratic Centralists, or 'Decists', a left wing opposition group that opposed the managerial system in industry, and advocated more democracy within the communist party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Smirnov_%28politician%29",
+      "locator": "plain-text extract characters 5411:5549; sha256 c5eac5b50269f18ce8e49f0574a1ceee397c92396a4b98fd11ff8cf117d260c2",
+      "claim": "1926년 15인 그룹을 결성해 연합반대파에 합류했다.",
+      "excerpt": "In 1926, he and Sapronov formed the \"Group of 15\", which joined the United Opposition headed by Trotsky, Grigory Zinoviev and Lev Kamenev."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-communists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Smirnov_%28politician%29",
+      "locator": "plain-text extract characters 2715:2928; sha256 c5eac5b50269f18ce8e49f0574a1ceee397c92396a4b98fd11ff8cf117d260c2",
+      "claim": "1918년 좌익공산주의자에 가담했다.",
+      "excerpt": "In January 1918, when the Bolsheviks were divided over whether to sign the Treaty of Brest-Litovsk with Germany, Smirnov joined the Left Communists, led by Bukharin, who advocated 'revolutionary war' with Germany."
+     }
+    ]
+   }
+  ],
+  "vladislav-kosior": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-democratic-centralists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1921,
+    "endYear": 1921,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%B8%D0%BE%D1%80%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%92%D0%B8%D0%BA%D0%B5%D0%BD%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 2084:2203; sha256 4fc2c25eb82253167a211fd37ba3bca87e0e685f26341191ab2430a837f31441",
+      "claim": "1921년 민주집중파 그룹의 구성원이었다.",
+      "excerpt": "В 1921 году Владимир Косиор был членом группы «демократического централизма», самораспустившейся после X съезда РКП(б)."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%B8%D0%BE%D1%80%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%92%D0%B8%D0%BA%D0%B5%D0%BD%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 2674:2744; sha256 4fc2c25eb82253167a211fd37ba3bca87e0e685f26341191ab2430a837f31441",
+      "claim": "1923년부터 좌익반대파에 속했고 46인 선언에 서명했다.",
+      "excerpt": "С 1923 года принадлежал к Левой оппозиции, подписал «Заявление 46-ти»."
+     }
+    ]
+   }
+  ],
+  "boris-eltsin": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": 1927,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D1%8C%D1%86%D0%B8%D0%BD%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 3987:4159; sha256 c7079d137ec63019a0df59730076d10cfc3ac5abcf98a54cda25dae31b29dee5",
+      "claim": "1923년부터 좌익반대파에 속했고 1927년 제명되었다.",
+      "excerpt": "С 1923 года принадлежал к левой оппозиции, подписал «заявление 46» в Политбюро ЦК РКП(б), за что в 1927 году был исключён из партии и в начале 1928 года сослан в Усть-Вымь."
+     }
+    ]
+   }
+  ],
+  "innokenty-stukov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-democratic-centralists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1920,
+    "endYear": 1921,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%83%D0%BA%D0%BE%D0%B2%2C_%D0%98%D0%BD%D0%BD%D0%BE%D0%BA%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 738:831; sha256 a57353c62aa4b0098c3d7dc5d58578b0674a32f8e422b1bb0659f75476e0b289",
+      "claim": "1920~1921년 민주집중파에 가담했다.",
+      "excerpt": "Являлся редактором издательства газеты «Советская Сибирь», в 1920—1921 примыкал к «децистам»."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1926,
+    "endYear": 1927,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%83%D0%BA%D0%BE%D0%B2%2C_%D0%98%D0%BD%D0%BD%D0%BE%D0%BA%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 832:924; sha256 a57353c62aa4b0098c3d7dc5d58578b0674a32f8e422b1bb0659f75476e0b289",
+      "claim": "1926~1927년 연합반대파에 참여했다.",
+      "excerpt": "В 1926—1927 участвовал в объединённой оппозиции, после чего был исключён из партии и сослан."
+     }
+    ]
+   }
+  ],
+  "yakov-drobnis": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-democratic-centralists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1922,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yakov_Drobnis",
+      "locator": "plain-text extract characters 2126:2238; sha256 445df1bcf23561321a81202620d51c5f247cf22b7ad75d9ec709e4a25a2b4564",
+      "claim": "사프로노프와 스미르노프가 이끈 민주집중파를 지지했다.",
+      "excerpt": "In this period, he supported the Democratic Centralist opposition group, led by Timofei Sapronov and Vladimir M."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yakov_Drobnis",
+      "locator": "plain-text extract characters 2248:2507; sha256 445df1bcf23561321a81202620d51c5f247cf22b7ad75d9ec709e4a25a2b4564",
+      "claim": "1922년 민주집중파 관여 때문에 우크라이나에서 소환되었다.",
+      "excerpt": "He was recalled from Ukraine in 1922, because of his involvement with the Democratic Centralists, and worked for the government of the Russian Federation for a year, then from 1923 to 27, for the Administrative and Financial Commission of the USSR government."
+     }
+    ]
+   }
+  ],
+  "antonov-ovseenko": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Antonov-Ovseenko",
+      "locator": "plain-text extract characters 16472:16647; sha256 4fee485bee16eb315bc85b09a090e3e26c901ae06900c546f2744d2bec668698",
+      "claim": "과거 트로츠키주의자였다.",
+      "excerpt": "Antonov-Ovseenko was the first former Trotskyist to be posthumously rehabilitated, and in 1956 was named in a speech by Anastas Mikoyan to the 20th party congress of the CPSU."
+     }
+    ]
+   }
+  ],
+  "shlyapnikov": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-workers-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1922,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+      "locator": "plain-text extract characters 13421:13518; sha256 06165d4121a86c13bebde61f28ad41d0f1094001da2ddc4bd7e2c0678417c76c",
+      "claim": "노동자 반대파의 지도자가 되었다.",
+      "excerpt": "Shliapnikov became leader of the Workers' Opposition movement inside the Russian Communist Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+      "locator": "plain-text extract characters 14075:14428; sha256 06165d4121a86c13bebde61f28ad41d0f1094001da2ddc4bd7e2c0678417c76c",
+      "claim": "1922년 22인 서한을 코민테른 집행위원회에 제출했다.",
+      "excerpt": "In 1922, Shliapnikov and some other trade-unionists from within and outside the Workers' Opposition, supported by Alexandra Kollontai, presented an appeal, called the Letter of the Twenty Two, to the Communist International Executive, requesting that the Comintern help heal a \"rift\" within the Russian Communist Party between Party leaders and workers."
+     }
+    ]
+   }
+  ],
+  "sergei-medvedev": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-workers-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1922,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sergei_Medvedev_%28revolutionary%29",
+      "locator": "plain-text extract characters 1402:1678; sha256 8e8fb719f9ffbc788a547332c8dd0ae2eb7e7bf0b58225498e10acf0739583b6",
+      "claim": "실랴프니코프 등과 함께 노동자 반대파에 참여했다.",
+      "excerpt": "Together with Alexander Shlyapnikov and others, he participated in the Workers' Opposition, a tendency of the Russian Communist Party, which called for worker initiative in managing the economy and for working-class members to prevail in leading organs of the Communist Party."
+     }
+    ]
+   }
+  ],
+  "yuri-lutovinov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-workers-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1920,
+    "endYear": 1920,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yury_Lutovinov",
+      "locator": "plain-text extract characters 1815:2013; sha256 53f175aed2b98ffc34b3c730e2a782e741408c2193ecc717356531003d302561",
+      "claim": "1920년 9월 제9차 당협의회에서 노동자 반대파의 대변인이었다.",
+      "excerpt": "He was the chief spokesman for the Workers' Opposition at the Ninth Party Conference in September 1920, where he excoriated the Party leadership in a speech that was never published in its entirety."
+     }
+    ]
+   }
+  ],
+  "gavriil-myasnikov": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-workers-group",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1923,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Gavril_Myasnikov",
+      "locator": "plain-text extract characters 4282:4512; sha256 45bf9925fce8e9b24b9915b7668fd89a863202e97061a613120e590f3f098eed",
+      "claim": "러시아공산당 노동자 그룹을 결성했다.",
+      "excerpt": "Even after his views had been condemned by the Central Committee, Myasnikov succeeded in getting them adopted by the party organisation in Motovilikha, where he formed a group called “Workers Group of the Russian Communist Party”."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Gavril_Myasnikov",
+      "locator": "plain-text extract characters 6041:6172; sha256 45bf9925fce8e9b24b9915b7668fd89a863202e97061a613120e590f3f098eed",
+      "claim": "1923년 노동자 그룹이 진압되었다.",
+      "excerpt": "Workers' Group was suppressed and later in 1923 Myasnikov was persuaded to return to Russia, where he was arrested and imprisoned."
+     }
+    ]
+   },
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-communists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": 1918,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Gavril_Myasnikov",
+      "locator": "plain-text extract characters 2316:2395; sha256 45bf9925fce8e9b24b9915b7668fd89a863202e97061a613120e590f3f098eed",
+      "claim": "1918년 좌익공산주의자였다.",
+      "excerpt": "Myasnikov was a Left Communist in 1918, opposed to the Treaty of Brest-Litovsk."
+     }
+    ]
+   }
+  ],
+  "vasily-kayurov": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-ryutin-group",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1932,
+    "endYear": 1932,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%8E%D1%80%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "plain-text extract characters 1743:1869; sha256 cb75c33718040baba8cf017537e8b2f8304ed5b44b38135a482fcef8f3647710",
+      "claim": "1932년 류틴 그룹으로 알려진 반대파 조직을 만들었다.",
+      "excerpt": "В 1932 году Каюров вместе с сыном Александром (1899—1937) создал оппозиционную группу, вошедшую в историю как «группа Рютина»."
+     }
+    ]
+   }
+  ],
+  "stepan-petrichenko": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "kronstadt-revolutionary-committee",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": 1921,
+    "endYear": 1921,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Stepan_Petrichenko",
+      "locator": "plain-text extract characters 0:380; sha256 e80ab1dc130c71ac715d74c87c0fa66d797bfeb83b9b8f230f690c285ad85e49",
+      "claim": "1921년 크론시타트 반란을 이끈 혁명위원회의 지도자였다.",
+      "excerpt": "Stepan Maximovich Petrichenko (Russian: Степан Максимович Петриченко; 1892 – June 2, 1947) was a Russian revolutionary, an anarchist politician, the head of the self-styled \"Soviet Republic of Soldiers and Fortress-Builders of Naissaar\" and in 1921, de facto leader of the Kronstadt Commune, and the leader of the revolutionary committee which led the Kronstadt rebellion of 1921."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Stepan_Petrichenko",
+      "locator": "plain-text extract characters 1794:1907; sha256 e80ab1dc130c71ac715d74c87c0fa66d797bfeb83b9b8f230f690c285ad85e49",
+      "claim": "크론시타트 봉기를 이끌었다.",
+      "excerpt": "Three years later,  Petrichenko led the Kronstadt uprising against the new Bolshevik government of Soviet Russia."
+     }
+    ]
+   }
+  ]
+ },
+ "patch": {
+  "stepan-petrichenko": [
+   {
+    "match": {
+     "functionId": "security",
+     "startYear": 1922
+    },
+    "set": {
+     "primary": false
+    }
+   }
+  ],
+  "james-p-cannon": [
+   {
+    "match": {
+     "functionId": "political-leadership",
+     "startYear": 1938
+    },
+    "set": {
+     "affiliationId": "party-us-swp",
+     "affiliationStatus": "confirmed",
+     "relation": "membership"
+    }
+   }
+  ],
+  "nikolai-krylenko": [
+   {
+    "match": {
+     "functionId": "military",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "defence"
+    }
+   }
+  ],
+  "vladimir-potemkin": [
+   {
+    "match": {
+     "functionId": "diplomacy",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "foreign-affairs"
+    }
+   }
+  ],
+  "vyshinsky": [
+   {
+    "match": {
+     "functionId": "diplomacy",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "foreign-affairs"
+    }
+   }
+  ],
+  "yuri-zhdanov": [
+   {
+    "match": {
+     "functionId": "propaganda",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "ideology-propaganda"
+    }
+   }
+  ],
+  "ivan-akulov": [
+   {
+    "match": {
+     "functionId": "security",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "state-security"
+    }
+   }
+  ],
+  "nikolai-antonov-gritsyuk": [
+   {
+    "match": {
+     "functionId": "security",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "state-security"
+    }
+   }
+  ],
+  "nikolai-kruchinkin": [
+   {
+    "match": {
+     "functionId": "security",
+     "affiliationId": "state-soviet"
+    },
+    "set": {
+     "officeId": "state-security"
+    }
+   }
+  ]
+ }
+}

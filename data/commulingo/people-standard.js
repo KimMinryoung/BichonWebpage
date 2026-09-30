@@ -246,7 +246,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         role: localize(entry.r, lang),
     }));
     const legacyRole = roleForPerson(raw, lang, data, officeTitles, officeIcons);
-    const activities = displayActivities(raw.activities, legacyRole, lang, raw);
+    const activities = displayActivities(raw.activities, legacyRole, lang, raw, officeTitles);
     const primaryActivity = activities.find(a => a.primary);
     return {
         schemaVersion: SCHEMA_VERSION,

@@ -212,22 +212,27 @@ router.get('/activities', async (req, res) => {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         const functionId = typeof req.query.function === 'string' ? req.query.function : '';
         const affiliationId = typeof req.query.affiliation === 'string' ? req.query.affiliation : '';
+        const officeId = typeof req.query.office === 'string' ? req.query.office : '';
         const merged = activitiesModel.catalog.retired?.[affiliationId];
         if (merged) {
             const query = new URLSearchParams(Object.entries(req.query).filter(([, v]) => typeof v === 'string'));
             query.set('affiliation', merged);
             return res.redirect(301, `${req.baseUrl}${req.path}?${query}`);
         }
-        if ((functionId && !activitiesModel.functions.has(functionId)) || (affiliationId && !activitiesModel.affiliations.has(affiliationId))) {
+        const officeKnown = id => standardized.offices.some(o => o.id === id);
+        if ((functionId && !activitiesModel.functions.has(functionId)) || (affiliationId && !activitiesModel.affiliations.has(affiliationId)) || (officeId && !officeKnown(officeId))) {
             return errorPage(res, 404, { message: lang === 'en' ? 'Activity filter not found.' : '활동 분류를 찾을 수 없습니다.' });
         }
-        const filter = { functionId, affiliationId };
+        const filter = { functionId, affiliationId, officeId };
         const people = sortPeopleChronologically(standardized.people.filter(p => activitiesModel.matchesActivities(p, filter)));
         // Keep active filters visible even when an existing link has no matches.
-        const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId })).length }))
+        const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId, officeId })).length }))
             .filter(f => f.count > 0 || f.id === functionId);
-        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length }))
+        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id, officeId })).length }))
             .filter(a => a.count > 0 || a.id === affiliationId);
+        // Institution lines narrow Soviet activities; they are not affiliations.
+        const offices = standardized.offices.map(o => ({ id: o.id, label: o.title, count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId, officeId: o.id })).length }))
+            .filter(o => o.count > 0 || o.id === officeId);
         const groupedAffiliations = new Map();
         for (const a of affiliations) {
             const key = a.countryCode || 'international';
@@ -236,9 +241,10 @@ router.get('/activities', async (req, res) => {
         }
         const affiliationGroups = [...groupedAffiliations.values()].sort((a,b) => a.label.localeCompare(b.label, lang));
         const query = new URLSearchParams({ function: functionId, affiliation: affiliationId, lang });
+        if (officeId) query.set('office', officeId);
         const pagination = paginateList(people, people, { page: req.query.page || 1 }, `/commulingo/activities?${query}&page=`, { mark: false });
         setShortPublicCache(res);
-        res.render('public/commulingo-activities', { filter, functions, affiliations, affiliationGroups, pagination, total: people.length,
+        res.render('public/commulingo-activities', { filter, functions, affiliations, affiliationGroups, offices, pagination, total: people.length,
             people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
             linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? 'People by activity and affiliation' : '기능·활동과 국가·세력별 인물',

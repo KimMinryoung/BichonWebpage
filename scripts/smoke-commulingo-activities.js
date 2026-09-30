@@ -49,3 +49,17 @@ for (const party of catalog.affiliations.filter(a => a.governingState)) {
     assert(state.socialistSystem);
     assert(party.criteria.includes('opposition'));
 }
+
+// Office (institution line) on an activity: Soviet affiliations only, known ids, filterable.
+const officeActivity = { ...primary, functionId: 'security', affiliationId: 'state-soviet', relation: 'service', startYear: 1937, endYear: 1938, officeId: 'state-security' };
+assert.deepEqual(validateActivities([officeActivity], sources, { officeIds: new Set(['state-security']) }), [officeActivity]);
+assert.throws(() => validateActivities([officeActivity], sources, { officeIds: new Set(['defence']) }), /unknown activity officeId/);
+assert.throws(() => validateActivities([{ ...officeActivity, affiliationId: 'china-prc', startYear: 1950, endYear: 1960 }], sources), /requires a Soviet/);
+const legacyOffice = displayActivities([], { officeId: 'state-security' }, 'ko', {}, { 'state-security': { ko: '국가보안 기관', en: 'State security agencies' } })[0];
+assert.equal(legacyOffice.officeId, 'state-security');
+assert.equal(legacyOffice.officeLabel, '국가보안 기관');
+assert.match(legacyOffice.href, /office=state-security/);
+assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].officeId, null);
+assert(matchesActivities({ activities: [legacyOffice] }, { affiliationId: 'state-soviet', officeId: 'state-security' }));
+assert(!matchesActivities({ activities: [legacyOffice] }, { officeId: 'defence' }));
+console.log('Activity office lines passed');

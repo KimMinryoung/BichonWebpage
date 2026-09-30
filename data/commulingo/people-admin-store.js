@@ -14,6 +14,11 @@ const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-v
 const { personLifeProblems } = require('./person-life-years');
 const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate } = require('./people-admin-validation');
 
+async function officeIdSet(client) {
+    const { rows } = await client.query('SELECT id FROM commulingo_offices');
+    return new Set(rows.map(row => row.id));
+}
+
 // Person records for the CommuLingo admin API: list/get, create/update/
 // delete with the child tables (role, aliases, scenes, patronymic, career).
 // Offices and sections have their own stores; name/nationality rules are in
@@ -444,7 +449,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         await replaceScenes(client, id, payload.scenes || []);
         await replaceCareer(client, id, payload.career || []);
         if (payload.activities !== undefined) {
-            validateActivities(payload.activities, payload.sources || options.sources || []);
+            validateActivities(payload.activities, payload.sources || options.sources || [], { officeIds: await officeIdSet(client) });
             await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
         }
         if (payload.role !== undefined) await replaceRole(client, id, payload.role);
@@ -641,7 +646,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
         if (payload.career !== undefined) await replaceCareer(client, id, payload.career);
         if (payload.activities !== undefined) {
-            validateActivities(payload.activities, payload.sources || options.sources || []);
+            validateActivities(payload.activities, payload.sources || options.sources || [], { officeIds: await officeIdSet(client) });
             await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
         }
         if (payload.role !== undefined) await replaceRole(client, id, payload.role);

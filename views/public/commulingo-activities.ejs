@@ -6,11 +6,13 @@
 <% var en = lang === 'en';
 var activeFunction = functions.find(f => f.id === filter.functionId);
 var activeAffiliation = affiliations.find(a => a.id === filter.affiliationId);
-var resultLabel = [activeFunction && activeFunction.label, activeAffiliation && activeAffiliation.label].filter(Boolean).join(' · ');
+var activeOffice = offices.find(o => o.id === filter.officeId);
+var resultLabel = [activeFunction && activeFunction.label, activeAffiliation && activeAffiliation.label, activeOffice && activeOffice.label].filter(Boolean).join(' · ');
 function clearFilter(key) {
     var params = new URLSearchParams({ lang });
     if (key !== 'function' && filter.functionId) params.set('function', filter.functionId);
     if (key !== 'affiliation' && filter.affiliationId) params.set('affiliation', filter.affiliationId);
+    if (key !== 'office' && filter.officeId) params.set('office', filter.officeId);
     return '/commulingo/activities?' + params;
 }
 %>
@@ -40,6 +42,11 @@ function clearFilter(key) {
                 <span id="affiliation-search-status" class="commu-activity-search-status" role="status" hidden></span>
                 </details>
             </div>
+            <% if (offices.length) { %><label><span><%= en ? 'Soviet institution line' : '소련 기관 계열' %></span>
+                <select name="office"><option value=""><%= en ? 'All institutions' : '모든 기관' %></option>
+                <% offices.forEach(function(o) { %><option value="<%= o.id %>" <%= filter.officeId === o.id ? 'selected' : '' %>><%= o.label %> (<%= o.count %>)</option><% }) %>
+                </select>
+            </label><% } %>
             <div class="commu-activity-actions">
                 <button class="btn btn-primary" type="submit"><%= en ? 'Apply' : '적용' %></button>
                 <a class="btn" href="/commulingo/activities?lang=<%= lang %>"><%= en ? 'Reset' : '초기화' %></a>
@@ -47,9 +54,10 @@ function clearFilter(key) {
         </form>
         <div class="commu-activity-results">
             <h2><%= resultLabel || (en ? 'All' : '전체') %> <%= en ? 'people' : '인물' %> <span><%= total %><%= en ? '' : '명' %></span></h2>
-            <% if (activeFunction || activeAffiliation) { %><div class="commu-activity-selected" aria-label="<%= en ? 'Active filters' : '적용된 조건' %>">
+            <% if (activeFunction || activeAffiliation || activeOffice) { %><div class="commu-activity-selected" aria-label="<%= en ? 'Active filters' : '적용된 조건' %>">
                 <% if (activeFunction) { %><a href="<%= clearFilter('function') %>" aria-label="<%= activeFunction.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeFunction.label %> ×</a><% } %>
                 <% if (activeAffiliation) { %><a href="<%= clearFilter('affiliation') %>" aria-label="<%= activeAffiliation.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeAffiliation.label %> ×</a><% } %>
+                <% if (activeOffice) { %><a href="<%= clearFilter('office') %>" aria-label="<%= activeOffice.label %> <%= en ? '— remove filter' : '조건 해제' %>"><%= activeOffice.label %> ×</a><% } %>
             </div><% } %>
         </div>
         <% if (!total) { %><p><%= en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.' %></p><% } %>
