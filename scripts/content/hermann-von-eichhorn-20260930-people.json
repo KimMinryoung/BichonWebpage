@@ -1,0 +1,145 @@
+{
+ "changedBy": "claude-eichhorn-20260930",
+ "people": [
+  {
+   "id": "hermann-von-eichhorn",
+   "groupId": "world-interwar",
+   "givenName": {
+    "ko": "헤르만",
+    "en": "Hermann"
+   },
+   "familyName": {
+    "ko": "폰 아이히호른",
+    "en": "von Eichhorn"
+   },
+   "nativeName": "Hermann von Eichhorn",
+   "years": "1848–1918",
+   "citizenship": {
+    "code": "germany"
+   },
+   "nationalOrigin": {
+    "code": "germany"
+   },
+   "epithet": {
+    "ko": "1918년 점령지 우크라이나의 군정총독으로 있다가 키예프에서 좌파 사회혁명당원에게 암살된 독일 원수",
+    "en": "German field marshal who governed occupied Ukraine in 1918 and was assassinated in Kiev by a Left SR"
+   },
+   "bio": {
+    "ko": "1866년 프로이센-오스트리아 전쟁과 1870–71년 프로이센-프랑스 전쟁에 참전하고 제18군단장까지 오른 프로이센 장교다. 제1차 세계대전에서는 1915년 1월부터 제10군을 이끌며 코브노와 그로드노를 점령했고, 1916년부터는 아이히호른 집단군도 지휘했으며 1917년 12월 원수가 되었다. 1918년 4월 3일 키예프 집단군 사령관 겸 점령지 우크라이나의 군정총독이 되었고, 7월 30일 키예프에서 좌파 사회혁명당원 보리스 돈스코이가 마차에 던진 폭탄에 목숨을 잃었다.",
+    "en": "A Prussian officer who fought in the wars of 1866 and 1870–71 and rose to command the XVIII Army Corps. In the First World War he led the 10th Army from January 1915, taking Kovno and Grodno, and from 1916 also Army Group Eichhorn; he was made field marshal in December 1917. On 3 April 1918 he became commander of Army Group Kiev and military governor of occupied Ukraine. On 30 July 1918 the Left Socialist-Revolutionary Boris Donskoy killed him in Kiev with a bomb thrown at his carriage."
+   },
+   "fate": {
+    "kind": "assassinated",
+    "label": {
+     "ko": "암살",
+     "en": "Assassinated"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "헤르만 에밀 고트프리트 폰 아이히호른"
+    ],
+    "en": [
+     "Hermann Emil Gottfried von Eichhorn"
+    ]
+   },
+   "linkExpressions": [
+    {
+     "text": "아이히호른",
+     "lang": "ko",
+     "role": "short",
+     "policy": "context"
+    },
+    {
+     "text": "Eichhorn",
+     "lang": "en",
+     "role": "short",
+     "policy": "context"
+    }
+   ],
+   "career": [
+    {
+     "y": "1866–1914",
+     "r": {
+      "ko": "프로이센군 입대, 1866·1870–71년 전쟁 참전, 제9사단장(1901–1904)·제18군단장(1904–1912)",
+      "en": "Joined the Prussian Army; fought in 1866 and 1870–71; commanded 9th Division (1901–1904) and XVIII Army Corps (1904–1912)"
+     }
+    },
+    {
+     "y": "1915–1918",
+     "r": {
+      "ko": "제10군 사령관, 코브노·그로드노 점령, 1916년부터 아이히호른 집단군 사령관, 1917년 원수",
+      "en": "Commander, 10th Army; took Kovno and Grodno; Army Group Eichhorn from 1916; field marshal 1917"
+     }
+    },
+    {
+     "y": "1918",
+     "r": {
+      "ko": "키예프 집단군 사령관 겸 우크라이나 군정총독, 7월 30일 키예프에서 암살",
+      "en": "Commander, Army Group Kiev, and military governor of Ukraine; assassinated in Kiev on 30 July"
+     }
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "state-germany",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "primary": true,
+     "startYear": 1866,
+     "endYear": 1918,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+       "locator": "plain-text extract characters 630:665; accessed 2026-09-30; sha256 e7e42a8adce25942b0ea216335cabd62aa0ad1cba6197bbf65e8ef1a2f915236",
+       "claim": "1866년 프로이센군에 입대했다.",
+       "excerpt": "He joined the Prussian Army in 1866"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+       "locator": "plain-text extract characters 1418:1524; accessed 2026-09-30; sha256 e7e42a8adce25942b0ea216335cabd62aa0ad1cba6197bbf65e8ef1a2f915236",
+       "claim": "1915년 1월부터 1918년 3월까지 제10군을 지휘했다.",
+       "excerpt": "He became the commanding general of the 10th Army on 21 January 1915, and commanded it until 5 March 1918."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+       "locator": "plain-text extract characters 2166:2298; accessed 2026-09-30; sha256 e7e42a8adce25942b0ea216335cabd62aa0ad1cba6197bbf65e8ef1a2f915236",
+       "claim": "1918년 4월 3일 키예프 집단군 사령관 겸 우크라이나 군정총독이 되었다.",
+       "excerpt": "On 3 April 1918, he became supreme commander of Army Group Kiev (Heeresgruppe Kiew) and simultaneously military governor of Ukraine."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn"
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "A Prussian officer who fought in the wars of 1866 and 1870–71 and rose to command the XVIII Army Corps. In the First World War he led the 10th Army from January 1915, taking Kovno and Grodno, and from 1916 also Army Group Eichhorn; he was made field marshal in December 1917. On 3 April 1918 he became commander of Army Group Kiev and military governor of occupied Ukraine. On 30 July 1918 the Left Socialist-Revolutionary Boris Donskoy killed him in Kiev with a bomb thrown at his carriage.",
+     "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+     "locator": "Wikipedia article: lead, biography, death"
+    },
+    {
+     "field": "years",
+     "claim": "1848–1918",
+     "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+     "locator": "Wikipedia article: lead, biography, death"
+    },
+    {
+     "field": "citizenship",
+     "claim": "hermann-von-eichhorn: citizenship germany",
+     "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+     "locator": "Wikipedia article: lead, biography, death"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "hermann-von-eichhorn: national background germany",
+     "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+     "locator": "Wikipedia article: lead, biography, death"
+    }
+   ]
+  }
+ ]
+}
