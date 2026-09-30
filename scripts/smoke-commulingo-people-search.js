@@ -27,4 +27,15 @@ assert.deepEqual(ids(searchPeople(snapshot, 'missing', sort)), { name: [], role:
 const updated = { groups: [{ people: [{ ...person, aliases: { ko: ['새별칭'] } }] }] };
 assert.equal(searchPeople(updated, '새별칭', sort).name.length, 1);
 assert.equal(searchPeople(snapshot, '새별칭', sort).name.length, 0);
+// Name hits rank by how much of the person's own name the query is, not by era:
+// a pseudonym alias and a longer surname come after the exact family name.
+const luca = (id, ko, family, aliases = []) => ({ id, names: { ko, family }, displayName: ko, aliases: { ko: aliases }, linkExpressions: [] });
+const lucaSnapshot = { groups: [{ people: [
+    luca('ksenofontov', '이반 크세노폰토비치 크세노폰토프', '크세노폰토프', ['루카']),
+    luca('lukacs', '루카치 죄르지', '루카치'),
+    luca('vasile-luca', '바실레 루카', '루카'),
+    luca('lucas', '존 P. 루카스', '루카스'),
+] }] };
+assert.deepEqual(searchPeople(lucaSnapshot, '루카', sort).name.map(p => p.id), ['vasile-luca', 'ksenofontov', 'lukacs', 'lucas']);
+assert.deepEqual(searchPeople(lucaSnapshot, '바실레 루카', sort).name.map(p => p.id), ['vasile-luca']);
 console.log('people search: ranking, bilingual aliases, AND matching, search fields, snapshot refresh passed');

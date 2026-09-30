@@ -26,6 +26,32 @@ function searchFields(person) {
     return { name: nameSearch, role: roleSearch, desc: descSearch };
 }
 
+// A name hit is ranked by how much of the person's own name the query is:
+// the whole name or surname, then whole words of it, then whole words of an
+// alias, then word prefixes, then any substring. '루카' finds 바실레 루카 (family
+// name) before a man whose pseudonym was 루카 and before 루카치.
+const WORD_SPLIT = /[\s\-‐–—·.,()'"«»「」]+/;
+function words(texts) {
+    return texts.filter(Boolean).join(' ').toLowerCase().split(WORD_SPLIT).filter(Boolean);
+}
+function nameRankFields(person, allNames) {
+    const n = person.names || {};
+    const primary = [n.ko, n.en, n.display, n.short, n.family, person.displayName, person.cyrillic].filter(Boolean).map(t => t.toLowerCase());
+    return {
+        primaryFull: new Set(primary.concat(primary.map(t => t.split(WORD_SPLIT).filter(Boolean).join(' ')))),
+        primaryWords: words(primary),
+        nameWords: allNames.split(WORD_SPLIT).filter(Boolean),
+    };
+}
+function nameRank(row, phrase, terms) {
+    if (row.primaryFull.has(phrase)) return 0;
+    if (terms.every(term => row.primaryWords.includes(term))) return 1;
+    if (terms.every(term => row.nameWords.includes(term))) return 2;
+    if (terms.every(term => row.primaryWords.some(word => word.startsWith(term)))) return 3;
+    if (terms.every(term => row.nameWords.some(word => word.startsWith(term)))) return 4;
+    return 5;
+}
+
 const indexes = new WeakMap();
 function searchPeople(standardized, query, sortPeople) {
     const hits = { name: [], role: [], desc: [] };
@@ -36,18 +62,23 @@ function searchPeople(standardized, query, sortPeople) {
         index = standardized.groups.flatMap(group => sortPeople(group.people).map(person => {
             const fields = searchFields(person);
             const role = fields.name + ' ' + fields.role;
-            return { person, name: fields.name, role, desc: role + ' ' + fields.desc };
+            return { person, name: fields.name, role, desc: role + ' ' + fields.desc, ...nameRankFields(person, fields.name) };
         }));
         indexes.set(standardized, index);
     }
+    const phrase = terms.join(' ');
+    const named = [];
     for (const row of index) {
         for (const key of ['name', 'role', 'desc']) {
             if (terms.every(term => row[key].includes(term))) {
-                hits[key].push(row.person);
+                if (key === 'name') named.push({ person: row.person, rank: nameRank(row, phrase, terms) });
+                else hits[key].push(row.person);
                 break;
             }
         }
     }
+    // Stable: people of equal rank keep the chronological order.
+    hits.name = named.sort((a, b) => a.rank - b.rank).map(hit => hit.person);
     return hits;
 }
 module.exports = { searchFields, searchPeople };
