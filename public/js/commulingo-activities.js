@@ -53,7 +53,19 @@
                 var doc = new window.DOMParser().parseFromString(html, 'text/html');
                 var next = doc.getElementById(ROOT);
                 if (!next) throw new Error('missing browser');
+                // Chip rows scroll sideways on phones; keep each row where the
+                // reader left it instead of snapping back to its start.
+                var offsets = {};
+                root.querySelectorAll('[data-facet]').forEach(function(row) { offsets[row.dataset.facet] = row.scrollLeft; });
                 root.replaceWith(next);
+                next.querySelectorAll('[data-facet]').forEach(function(row) {
+                    if (offsets[row.dataset.facet]) row.scrollLeft = offsets[row.dataset.facet];
+                    var active = row.querySelector('.is-active');
+                    if (!active) return;
+                    var box = row.getBoundingClientRect(), chip = active.getBoundingClientRect();
+                    if (chip.left < box.left) row.scrollLeft -= box.left - chip.left + 16;
+                    else if (chip.right > box.right) row.scrollLeft += chip.right - box.right + 16;
+                });
                 document.title = doc.title;
                 if (options.push) history.pushState({ activities: true }, '', url);
                 initSearch(next);

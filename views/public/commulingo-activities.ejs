@@ -33,14 +33,14 @@ function chip(href, label, count, active, icon) { %>
         <div class="commu-activity-facets">
             <div class="commu-activity-facet">
                 <h2><%= en ? 'Activity' : '기능·활동' %></h2>
-                <div role="group" class="commu-activity-chips" aria-label="<%= en ? 'Activity' : '기능·활동' %>">
+                <div role="group" class="commu-activity-chips" data-facet="function" aria-label="<%= en ? 'Activity' : '기능·활동' %>">
                     <% chip(hrefWith({ function: '' }), en ? 'All' : '전체', allCounts.functions, !activeFunction) %>
                     <% functions.forEach(function(f) { chip(hrefWith({ function: f.id }), f.label, f.count, f.id === filter.functionId, f.icon) }) %>
                 </div>
             </div>
             <div class="commu-activity-facet">
                 <h2><%= en ? 'State, movement or organization' : '국가·세력·조직' %></h2>
-                <div role="group" class="commu-activity-chips" aria-label="<%= en ? 'Most common affiliations' : '많이 찾는 소속' %>">
+                <div role="group" class="commu-activity-chips" data-facet="affiliation" aria-label="<%= en ? 'Most common affiliations' : '많이 찾는 소속' %>">
                     <% chip(hrefWith({ affiliation: '' }), en ? 'All' : '전체', allCounts.affiliations, !activeAffiliation) %>
                     <% topAffiliations.forEach(function(a) { chip(hrefWith({ affiliation: a.id }), a.label, a.count, a.id === filter.affiliationId, a.icon === 'hammer-sickle' ? 'hammer-sickle' : '') }) %>
                 </div>
@@ -63,7 +63,7 @@ function chip(href, label, count, active, icon) { %>
             <% if (offices.length) { %>
             <div class="commu-activity-facet">
                 <h2><%= en ? 'Soviet institution line' : '소련 기관 계열' %></h2>
-                <div role="group" class="commu-activity-chips" aria-label="<%= en ? 'Soviet institution line' : '소련 기관 계열' %>">
+                <div role="group" class="commu-activity-chips" data-facet="office" aria-label="<%= en ? 'Soviet institution line' : '소련 기관 계열' %>">
                     <% chip(hrefWith({ office: '' }), en ? 'All' : '전체', null, !activeOffice) %>
                     <% offices.forEach(function(o) { chip(hrefWith({ office: o.id }), o.label, o.count, o.id === filter.officeId) }) %>
                 </div>
