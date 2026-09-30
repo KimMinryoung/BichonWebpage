@@ -1,0 +1,56 @@
+{
+  "scope": "2026-09-30 nagy-imre-kremlin-1953-1955 문헌 별칭 4건; owner-approved 2026-09-30 link review",
+  "references": [
+    "/commulingo/docs/nagy-imre-kremlin-1953-1955"
+  ],
+  "decisions": [
+    {
+      "kind": "doc",
+      "id": "nagy-imre-kremlin-1953-1955",
+      "lang": "ko",
+      "text": "1953년 6월 모스크바 회담 기록",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-09-30 owner-approved 링크 검토: 연월과 회의를 함께 적은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "sourceSignature": "76480ce82f54aafa64b43c23b12a05e12611801266b0b4574079bf2b9abaf54c"
+    },
+    {
+      "kind": "doc",
+      "id": "nagy-imre-kremlin-1953-1955",
+      "lang": "ko",
+      "text": "1955년 1월 간부회의 너지 비판",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-09-30 owner-approved 링크 검토: 연월과 회의를 함께 적은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "sourceSignature": "64f1811765a22e1edfd928fcae9b5eb8d1269af348a4c726d61c943c9c01897d"
+    },
+    {
+      "kind": "doc",
+      "id": "nagy-imre-kremlin-1953-1955",
+      "lang": "en",
+      "text": "Moscow talks of June 1953",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-09-30 owner-approved 링크 검토: 연월과 회의를 함께 적은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "sourceSignature": "1eaca1e3b336b6c03a49169ba502896c8b6e046ef4d44690cfe08458a9da305c"
+    },
+    {
+      "kind": "doc",
+      "id": "nagy-imre-kremlin-1953-1955",
+      "lang": "en",
+      "text": "Presidium's criticism of Nagy in January 1955",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-09-30 owner-approved 링크 검토: 연월과 회의를 함께 적은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "sourceSignature": "36f0b4cd92d99a5b7c3eac5cc781d45f9c5763ec17e2f5fdfcc546789c163c1e"
+    }
+  ]
+}
