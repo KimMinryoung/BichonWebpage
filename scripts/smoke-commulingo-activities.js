@@ -75,3 +75,10 @@ console.log('Activity office lines passed');
     assert.deepEqual(out.peopleById.b.collections, []);
     console.log('Person collections passed');
 }
+
+// Retired regional role pages point only at catalog filters.
+for (const [id, page] of Object.entries(require('../data/commulingo/retired-role-pages'))) {
+    assert(page.label.ko && page.label.en && page.note.ko && page.note.en, id);
+    for (const [kind, ref] of page.links) assert((kind === 'function' ? catalog.functions : catalog.affiliations).some(x => x.id === ref), `${id}: ${kind} ${ref}`);
+}
+console.log('Retired role pages passed');

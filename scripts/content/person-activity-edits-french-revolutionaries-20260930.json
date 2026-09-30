@@ -1,0 +1,113 @@
+{
+ "note": "2026-09-30: activities for the four people whose only classification was the retired non-soviet-revolutionary role; excerpts from retrieved Wikipedia plain-text extracts (locator = extract character range + sha256 of the extract).",
+ "reviewMethod": "operator request; each excerpt located in the retrieved extract and read in context",
+ "add": {
+  "leger-felicite-sonthonax": [
+   {
+    "functionId": "government",
+    "affiliationId": "french-first-republic",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1792,
+    "endYear": 1794,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%A9ger-F%C3%A9licit%C3%A9_Sonthonax",
+      "locator": "plain-text extract characters 261:303; sha256 f32b91daada3fab19e49fbcb255f6095456f96bdca14388c5e0e7c7d42c16e45",
+      "claim": "공식 직함은 민정위원이었다.",
+      "excerpt": "His official title was Civil Commissioner."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%A9ger-F%C3%A9licit%C3%A9_Sonthonax",
+      "locator": "plain-text extract characters 304:409; sha256 f32b91daada3fab19e49fbcb255f6095456f96bdca14388c5e0e7c7d42c16e45",
+      "claim": "1792년 9월부터 폴브렐과 함께 생도맹그의 사실상 통치자가 되었다.",
+      "excerpt": "From September 1792, he and Polverel became the de facto rulers of Saint-Domingue's non-slave population."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%A9ger-F%C3%A9licit%C3%A9_Sonthonax",
+      "locator": "plain-text extract characters 1360:1435; sha256 f32b91daada3fab19e49fbcb255f6095456f96bdca14388c5e0e7c7d42c16e45",
+      "claim": "1793년 8월 북부 지방의 모든 노예 해방을 선포했다.",
+      "excerpt": "In August 1793, he proclaimed freedom for all slaves in the north province."
+     }
+    ]
+   }
+  ],
+  "jean-pierre-andre-amar": [
+   {
+    "functionId": "security",
+    "affiliationId": "french-first-republic",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1793,
+    "endYear": 1794,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jean-Pierre-Andr%C3%A9_Amar",
+      "locator": "plain-text extract characters 1166:1317; sha256 01214e328302c8b0565f49879d4d0dc911bfa2372d150bc34ff3e90737174fb4",
+      "claim": "1793년 9월 13일 보안위원회에 들어갔다.",
+      "excerpt": "After the ousting of the Girondists from the Convention in late May and early June 1793, Amar joined the Committee of General Security on September 13."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jean-Pierre-Andr%C3%A9_Amar",
+      "locator": "plain-text extract characters 1318:1397; sha256 01214e328302c8b0565f49879d4d0dc911bfa2372d150bc34ff3e90737174fb4",
+      "claim": "바디에와 함께 보안위원회에서 가장 영향력 있는 위원이었다.",
+      "excerpt": "He was, with Marc-Guillaume Alexis Vadier, one of its most influential members."
+     }
+    ]
+   }
+  ],
+  "pierre-joseph-cambon": [
+   {
+    "functionId": "economy",
+    "affiliationId": "french-monarchy",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1791,
+    "endYear": 1792,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pierre-Joseph_Cambon",
+      "locator": "plain-text extract characters 998:1114; sha256 e1bfd441c2b3bbdc769a148517a43791e77244d98af95135590cccfbbfc38b29",
+      "claim": "입법의회 재정위원회에서 가장 활발한 위원으로 국고 상태 검증을 자주 맡았다.",
+      "excerpt": "He was the most active member of the committee of finance and was often charged to verify the state of the treasury."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Pierre-Joseph_Cambon",
+      "locator": "plain-text extract characters 1485:1617; sha256 e1bfd441c2b3bbdc769a148517a43791e77244d98af95135590cccfbbfc38b29",
+      "claim": "국가 채무를 통합한 공채대장부가 1792년 그의 제안으로 만들어졌다.",
+      "excerpt": "This proposal was implemented in 1792 when the Great Book of the Public Debt was created as a consolidation of all the states debts."
+     }
+    ]
+   }
+  ],
+  "isaac-le-chapelier": [
+   {
+    "functionId": "legislature",
+    "affiliationId": "french-monarchy",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": 1789,
+    "endYear": 1791,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Isaac_Ren%C3%A9_Guy_le_Chapelier",
+      "locator": "plain-text extract characters 567:904; sha256 8e71b1fc438a0542bf50a8bfc89424af731fb9faffca6a33d4d23e47eeb4c476",
+      "claim": "1789년 8월 국민제헌의회 의장을 지냈고 1791년 헌법 대부분을 기초했다.",
+      "excerpt": "His influence in the National Constituent Assembly was considerable: he served as president 3–17 August 1789, presiding over the famous all-night session of 4–5 August, during which feudalism was abolished in France, and in late September 1789 was added to the Constitutional Committee, where he drafted much of the Constitution of 1791."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Isaac_Ren%C3%A9_Guy_le_Chapelier",
+      "locator": "plain-text extract characters 1443:1545; sha256 8e71b1fc438a0542bf50a8bfc89424af731fb9faffca6a33d4d23e47eeb4c476",
+      "claim": "그의 발의로 1791년 6월 14일 르 샤플리에 법이 제정되었다.",
+      "excerpt": "The measure was enacted law on 14 June 1791 in what became subsequently known as the Le Chapelier Law."
+     }
+    ]
+   }
+  ]
+ },
+ "patch": {}
+}

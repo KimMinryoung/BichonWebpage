@@ -41,6 +41,7 @@ const router = express.Router();
 const { cardTextLinker, peopleGroupCardsHtml, personBody } = require('../data/commulingo/people-presentation');
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 const { courseChaptersFor } = require('../data/commulingo/book-page');
+const RETIRED_ROLE_PAGES = require('../data/commulingo/retired-role-pages');
 
 router.get('/people', async (req, res) => {
     try {
@@ -265,6 +266,19 @@ router.get('/roles/:categoryId', async (req, res) => {
         const categoryId = typeof req.params.categoryId === 'string' ? req.params.categoryId.trim() : '';
         const mapped = activitiesModel.catalog.legacy[categoryId];
         if (mapped) return res.redirect(301, activitiesModel.activityHref({ functionId: mapped[0], affiliationId: mapped[1] }));
+        const retired = RETIRED_ROLE_PAGES[categoryId];
+        if (retired) {
+            const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+            const links = retired.links.map(([kind, id]) => {
+                const entry = (kind === 'function' ? activitiesModel.functions : activitiesModel.affiliations).get(id);
+                return { label: localize(entry.label, lang), icon: entry.icon, href: activitiesModel.activityHref(kind === 'function' ? { functionId: id } : { affiliationId: id }) };
+            });
+            setShortPublicCache(res);
+            const label = localize(retired.label, lang);
+            return res.render('public/commulingo-role-retired', { label, note: localize(retired.note, lang), links, roleIconSvg,
+                pageTitle: lang === 'en' ? `${label} — People` : `${label} — 인물 사전`,
+                pageDescription: localize(retired.note, lang), pagePath: `/commulingo/roles/${categoryId}` });
+        }
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
         // Political positions are curated collections (migration 213) served
         // at the old role-category URL; other categories still list the role.
