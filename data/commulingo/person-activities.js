@@ -76,13 +76,21 @@ function activityHref(a) {
     return `/commulingo/activities?${query}`;
 }
 
+// A function marked affiliationOptional (scholarship, arts) is usually done
+// without serving a state or party, so an unresolved affiliation there is not
+// a gap to announce on the card. It stays 'unresolved' in the data: nobody has
+// shown the work was independent either.
+function isUnresolvedGap(a) {
+    return a?.affiliationStatus === 'unresolved' && !functions.get(a.functionId)?.affiliationOptional;
+}
+
 // officeTitles: { [officeId]: { ko, en } } from commulingo_offices.
 function displayActivities(raw, lang, officeTitles = {}) {
     const rows = raw || [];
     return rows.filter(a => functions.has(a.functionId)).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
-            affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : a.affiliationStatus === 'unresolved' ? (lang === 'en' ? 'Affiliation unconfirmed' : '소속 미확정') : '',
+            affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : isUnresolvedGap(a) ? (lang === 'en' ? 'Affiliation unconfirmed' : '소속 미확정') : '',
             affiliationIcon: affiliation?.icon || '',
             officeLabel: a.officeId ? localize(officeTitles[a.officeId], lang) || '' : '',
             officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '',
@@ -107,4 +115,4 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { LEGACY_BASIS, assertNoNewLegacyBasis, OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };

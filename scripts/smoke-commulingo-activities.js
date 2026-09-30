@@ -30,6 +30,12 @@ assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'governm
 for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) assert(from == null || to == null || from <= to, a.id);
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '소속 미확정');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');
+// Scholarship and arts are usually done without serving a state or party: an
+// unresolved affiliation there is not announced as a gap on the card.
+for (const functionId of ['scholarship', 'arts']) {
+    assert(catalog.functions.find(f => f.id === functionId).affiliationOptional, functionId);
+    assert.equal(displayActivities([{ ...primary, functionId, affiliationId: null, affiliationStatus: 'unresolved', relation: 'unresolved' }], 'ko')[0].affiliationLabel, '');
+}
 console.log('Activity evidence, primary selection, periods and same-career filters passed');
 
 const stateActivity = {...primary, affiliationId:'china-prc', relation:'service', startYear:1950, endYear:1960};

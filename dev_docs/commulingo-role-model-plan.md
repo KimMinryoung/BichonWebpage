@@ -234,3 +234,9 @@ UI에는 첫 단계에서 국가·세력 수준을, 필요한 경우 그 안의 
 - 프런트엔드(`8c4a397`)는 role 표를 읽거나 쓰지 않는다. 카드의 메달·태그·링크는 대표 활동에서 나오고, 호환 매핑(`displayActivities`의 legacy 분기)은 삭제했다. Admin 스토어는 `role` 키를 무시하고, 인물 revision 계산에서도 role을 뺐다(적용 시점에 모든 revision 값이 한 번 바뀜). 카드 감사는 대표 활동 1개를 요구한다.
 - `catalog.legacy`는 구 역할 URL(`/commulingo/roles/<id>`)을 활동 필터로 넘기는 용도로만 남는다. 입장 범주는 모음(213), 지역 범주는 안내 페이지(`retired-role-pages.js`)다.
 - leninbot 파이프라인도 role 표 조회와 role 생성·요구를 걷어낸 뒤 두 표(`commulingo_person_roles`, `commulingo_role_categories`)를 삭제했다. 삭제 직전 pg_dump는 gitignored `scripts/migrations/data/person-roles-20260930/`에 있다. 이것이 끝나면 `commulingo_person_roles`와 호환 매핑 코드를 제거할 수 있다. 이것들이 끝난 뒤에 `commulingo_person_roles`를 제거할 수 있다.
+
+### 학술·예술의 소속 미확정 표시 (2026-09-30, 카탈로그 v17)
+
+- 대표 활동 소속 미확정 549건 중 384건이 학술·연구(265명 중 261)와 문학·예술(136명 중 123)이었다. 이 기능은 대개 국가·정당에 복무하지 않고 하는 일이라 미확정이 조사 공백이라기보다 해당 없음에 가깝다. 그런데 카드마다 '소속 미확정'이 붙어 실제 조사가 필요한 사람과 구별되지 않았다.
+- 카탈로그 기능에 `affiliationOptional: true`를 두었다(`scholarship`, `arts`). 이 기능의 미확정 행은 카드·상세에 소속 칸을 비워 둔다(`isUnresolvedGap`). 데이터는 `unresolved` 그대로다. 독립 활동이라는 근거도 없으므로 `independent`로 바꾸지 않는다. 확인된 연구기관·작가동맹 등은 이전처럼 `confirmed`로 저장하면 표시된다.
+- 나머지 기능의 미확정은 조사 대상이다. `scripts/report-person-unresolved-affiliations.js`가 기능별 명단을 낸다(`--all`은 보조 활동 포함). 해결은 근거를 붙여 Admin 스토어로 하며 국적을 복사하지 않는다.
