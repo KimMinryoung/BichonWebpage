@@ -18,6 +18,22 @@
         if (en) return false;
         return /^[가-힣]+$/.test(tail) && (particle.test(tail) || /^(?:기|식|파|계|군|적)$/.test(tail) || (/^(?:기|식|파|계|군|적)/.test(tail) && particle.test(tail.slice(1))));
     }
+    // A surname directly followed by another name is being used as a given name
+    // (그레고리 지노비예프, 울리히 폰 브록도르프, 앨리슨 K. 토머스): the person meant
+    // is someone else, so the bare family name must not link — unless the next
+    // word is one of that person's own names (총대주교 티혼).
+    const nameParticles = new Set(['폰', '판', '반', '드', '데', '디', '델', '알', '엘', '벤', '이븐', '르', 'von', 'van', 'de', 'di', 'del', 'al', 'el', 'ben', 'ibn', 'le']);
+    function followedByName(text, end, data, ids) {
+        const next = (text.slice(end).match(/^\s+([\p{L}\p{M}][\p{L}\p{M}.'’\-]*)/u) || [])[1];
+        if (!next) return false;
+        if (/^[A-ZА-Я]\.$/u.test(next)) return true;
+        const clean = normalize(next);
+        if (nameParticles.has(clean)) return true;
+        const forms = [clean];
+        if (!data.en) for (let i = 1; i < clean.length; i++) if (particle.test(clean.slice(i))) forms.push(clean.slice(0, i));
+        if (forms.some(form => ids.some(id => data.own[id] && data.own[id].has(form)))) return false;
+        return forms.some(form => form.length >= 2 && (data.given.has(form) || data.shortWords.has(form)));
+    }
     function compile(data) {
         if (!data) return null;
         const names = data.names || {};
@@ -27,6 +43,7 @@
         return {
             ...data,
             given: new Set(data.given || []),
+            shortWords: new Set(shortTokens.map(normalize)),
             own: Object.fromEntries(Object.entries(data.own || {}).map(([id, values]) => [id, new Set(values)])),
             fullPattern: fullTokens.length ? new RegExp(fullTokens.map(escape).join('|'), 'gu') : null,
             shortPattern: shortTokens.length ? new RegExp(shortTokens.map(escape).join('|'), 'gu') : null,
@@ -95,6 +112,7 @@
         const isShort = Boolean(data && data.shorts[alias]);
         if (!isShort) return policy === 'context' && !context.protectedNames.some(span => span.ids.includes(entryId)) ? null : entryId;
         if (!boundary(text, start, end, data.en)) return null;
+        if (followedByName(text, end, data, data.shorts[alias])) return null;
         const targets = context.targets.get(alias);
         if (targets && targets.size) {
             if (targets.size !== 1) return null;

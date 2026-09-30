@@ -50,6 +50,12 @@ const variants = buildPersonLinkIndex([
 assert.match(render('오시프 만델슈탐', { person: variants }), /people\/osip/);
 assert.match(render('슈미트에게서는 답이 왔다.', { person: ko }), /people\/schmidt/);
 assert.match(render('총리 슈미트는 말했다.', { person: ko }), /people\/schmidt/); // titles alone are not proof of another person
+// A surname followed by another name is someone's given name there.
+assert.doesNotMatch(render('슈미트 헬무트는 말했다.', { person: ko }), /people\/schmidt/);
+assert.doesNotMatch(render('슈미트 폰 브록도르프가 왔다.', { person: ko }), /people\/schmidt/);
+assert.doesNotMatch(render('Ford K. Thomas spoke.'), /people\/ford/);
+assert.match(render('슈미트 오토는 말했다.', { person: ko }), /people\/schmidt/); // his own given name
+assert.match(render('슈미트 총리는 말했다.', { person: ko }), /people\/schmidt/);
 
 const expressions = [
     { lang: 'en', text: 'Leslie Lynch King', role: 'identity', policy: 'auto' },
