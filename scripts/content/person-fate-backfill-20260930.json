@@ -1,0 +1,825 @@
+{
+  "changedBy": "commulingo-fate-backfill-20260930",
+  "people": [
+    {
+      "id": "abdul-fattah-ismail",
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "내전 중 사망",
+          "en": "Died in civil war"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Abdul_Fattah_Ismail"
+      ]
+    },
+    {
+      "id": "adrien-duport",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "결핵",
+          "en": "Tuberculosis"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Adrien_Duport"
+      ]
+    },
+    {
+      "id": "agostinho-mendes-de-carvalho",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "병사",
+          "en": "Illness"
+        }
+      },
+      "sources": [
+        "https://pt.wikipedia.org/wiki/Uanhenga_Xitu"
+      ]
+    },
+    {
+      "id": "albert-tevoedjre",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Albert_T%C3%A9vo%C3%A9djr%C3%A8"
+      ]
+    },
+    {
+      "id": "aleksei-polyansky",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "http://militera.lib.ru/bio/polyansky_ai/text.html"
+      ]
+    },
+    {
+      "id": "alexander-bogdanov",
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "수혈 실험 사고",
+          "en": "Blood transfusion accident"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alexander_Bogdanov"
+      ]
+    },
+    {
+      "id": "alexandre-de-lameth",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Alexandre_de_Lameth"
+      ]
+    },
+    {
+      "id": "alexei-yablokov",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "병사",
+          "en": "Illness"
+        }
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/Яблоков,_Алексей_Владимирович"
+      ]
+    },
+    {
+      "id": "arthur-henderson",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Arthur_Henderson"
+      ]
+    },
+    {
+      "id": "arthur-m-schlesinger-jr",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Arthur_M._Schlesinger_Jr."
+      ]
+    },
+    {
+      "id": "avraami-zavenyagin",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Avraami_Zavenyagin"
+      ]
+    },
+    {
+      "id": "ayaz-mutalibov",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "병사",
+          "en": "Illness"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ayaz_Mutallibov"
+      ]
+    },
+    {
+      "id": "bertrand-barere",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bertrand_Bar%C3%A8re"
+      ]
+    },
+    {
+      "id": "charles-fourier",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Charles_Fourier"
+      ]
+    },
+    {
+      "id": "cho-mansik",
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Cho_Man-sik"
+      ]
+    },
+    {
+      "id": "cipriano-de-rivas-cherif",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://es.wikipedia.org/wiki/Cipriano_Rivas_Cherif"
+      ]
+    },
+    {
+      "id": "dalila-cabrita-mateus",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://www.esquerda.net/artigo/faleceu-historiadora-dalila-mateus/34666"
+      ]
+    },
+    {
+      "id": "damdin-sukhbaatar",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "병사",
+          "en": "Illness"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Damdin_S%C3%BCkhbaatar"
+      ]
+    },
+    {
+      "id": "didier-ratsiraka",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Didier_Ratsiraka"
+      ]
+    },
+    {
+      "id": "emil-eichhorn",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Emil_Eichhorn"
+      ]
+    },
+    {
+      "id": "emmanuel-sieyes",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Emmanuel_Joseph_Siey%C3%A8s"
+      ]
+    },
+    {
+      "id": "eric-hobsbawm",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "폐렴·백혈병",
+          "en": "Pneumonia and leukaemia"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eric_Hobsbawm"
+      ]
+    },
+    {
+      "id": "ernst-daeumig",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://de.wikipedia.org/wiki/Ernst_D%C3%A4umig"
+      ]
+    },
+    {
+      "id": "federica-montseny",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Federica_Montseny"
+      ]
+    },
+    {
+      "id": "fernand-loriot",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "백혈병",
+          "en": "Leukemia"
+        }
+      },
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Fernand_Loriot"
+      ]
+    },
+    {
+      "id": "fred-halliday",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "암",
+          "en": "Cancer"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fred_Halliday"
+      ]
+    },
+    {
+      "id": "gracchus-babeuf",
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fran%C3%A7ois-No%C3%ABl_Babeuf"
+      ]
+    },
+    {
+      "id": "gustave-herve",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Gustave_Herv%C3%A9"
+      ]
+    },
+    {
+      "id": "haile-fida",
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Haile_Fida"
+      ]
+    },
+    {
+      "id": "henri-de-saint-simon",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Henri_de_Saint-Simon"
+      ]
+    },
+    {
+      "id": "hussein-kulmiye-afrah",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://www.wikidata.org/wiki/Q1639054"
+      ]
+    },
+    {
+      "id": "jean-baptiste-jourdan",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jean-Baptiste_Jourdan"
+      ]
+    },
+    {
+      "id": "jean-francois-varlet",
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "익사",
+          "en": "Drowned"
+        }
+      },
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Varlet"
+      ]
+    },
+    {
+      "id": "jose-eduardo-dos-santos",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "암",
+          "en": "Cancer"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jos%C3%A9_Eduardo_dos_Santos"
+      ]
+    },
+    {
+      "id": "jose-ramon-fernandez",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "http://www.cubadebate.cu/noticias/2019/01/06/fallecio-jose-ramon-fernandez-a-los-95-anos-de-edad/"
+      ]
+    },
+    {
+      "id": "karl-doenitz",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Karl_D%C3%B6nitz"
+      ]
+    },
+    {
+      "id": "kaysone-phomvihane",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "암",
+          "en": "Cancer"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kaysone_Phomvihane"
+      ]
+    },
+    {
+      "id": "koco-tashko",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://sq.wikipedia.org/wiki/Ko%C3%A7o_Tashko"
+      ]
+    },
+    {
+      "id": "louis-joseph-prince-of-conde",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Louis_Joseph,_Prince_of_Cond%C3%A9"
+      ]
+    },
+    {
+      "id": "lyushkov",
+      "fate": {
+        "kind": "murdered",
+        "label": {
+          "ko": "살해",
+          "en": "Murdered"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Genrikh_Lyushkov"
+      ]
+    },
+    {
+      "id": "mathieu-kerekou",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mathieu_K%C3%A9r%C3%A9kou"
+      ]
+    },
+    {
+      "id": "maximilien-robespierre",
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Maximilien_Robespierre"
+      ]
+    },
+    {
+      "id": "mohamed-siad-barre",
+      "fate": {
+        "kind": "deposed",
+        "label": {
+          "ko": "실각 1991 · 심장마비",
+          "en": "Removed 1991 · heart attack"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Siad_Barre"
+      ]
+    },
+    {
+      "id": "najati-sidqi",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Muhammad_Najati_Sidqi"
+      ]
+    },
+    {
+      "id": "napoleon-bonaparte",
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "유배 1815 · 위암",
+          "en": "Exiled 1815 · stomach cancer"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Napoleon"
+      ]
+    },
+    {
+      "id": "napoleon-zervas",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심부전",
+          "en": "Heart failure"
+        }
+      },
+      "sources": [
+        "https://military-history.fandom.com/wiki/Napoleon_Zervas"
+      ]
+    },
+    {
+      "id": "olympe-de-gouges",
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Olympe_de_Gouges"
+      ]
+    },
+    {
+      "id": "omer-nishani",
+      "fate": {
+        "kind": "suicide",
+        "label": {
+          "ko": "자살",
+          "en": "Suicide"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Omer_Nishani"
+      ]
+    },
+    {
+      "id": "paul-von-hindenburg",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "암",
+          "en": "Cancer"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Paul_von_Hindenburg"
+      ]
+    },
+    {
+      "id": "pen-sovann",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "병사",
+          "en": "Illness"
+        }
+      },
+      "sources": [
+        "https://english.cambodiadaily.com/2016/10/31/pen-sovann-former-prime-minister-dead-80/"
+      ]
+    },
+    {
+      "id": "pol-pot",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pol_Pot"
+      ]
+    },
+    {
+      "id": "ramiz-alia",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "폐질환",
+          "en": "Lung disease"
+        }
+      },
+      "sources": [
+        "https://balkaninsight.com/2011/10/07/albania-s-last-communist-leader-alia-dead-at-85/bi/all-balkan-countries/"
+      ]
+    },
+    {
+      "id": "richard-ratsimandrava",
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "암살",
+          "en": "Assassinated"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Ratsimandrava"
+      ]
+    },
+    {
+      "id": "robert-owen",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Owen"
+      ]
+    },
+    {
+      "id": "ruth-rewald",
+      "fate": {
+        "kind": "murdered",
+        "label": {
+          "ko": "살해 · 아우슈비츠",
+          "en": "Murdered · Auschwitz"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ruth_Rewald"
+      ]
+    },
+    {
+      "id": "semyon-kosberg",
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "교통사고",
+          "en": "Car crash"
+        }
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%B1%D0%B5%D1%80%D0%B3,_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%90%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87"
+      ]
+    },
+    {
+      "id": "souphanouvong",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장병",
+          "en": "Heart disease"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Souphanouvong"
+      ]
+    },
+    {
+      "id": "stanislav-strumilin",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D1%83%D0%BC%D0%B8%D0%BB%D0%B8%D0%BD,_%D0%A1%D1%82%D0%B0%D0%BD%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%93%D1%83%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%B2%D0%B8%D1%87"
+      ]
+    },
+    {
+      "id": "sylvain-marechal",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sylvain_Mar%C3%A9chal"
+      ]
+    },
+    {
+      "id": "theodore-vestal",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://ethiopiancrown.org/theodore-vestal-1933-2023/"
+      ]
+    },
+    {
+      "id": "tseren-ochiryn-dambadorj",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tseren-Ochiryn_Dambadorj"
+      ]
+    },
+    {
+      "id": "vladimir-treml",
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "sources": [
+        "https://econ.duke.edu/news/memoriam-vladimir-g-treml"
+      ]
+    },
+    {
+      "id": "yumjaagiin-tsedenbal",
+      "fate": {
+        "kind": "deposed",
+        "label": {
+          "ko": "실각 1984 · 담관암",
+          "en": "Removed 1984 · bile duct cancer"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yumjaagiin_Tsedenbal"
+      ]
+    }
+  ],
+  "_note": "expectedRevision is filled in per person right before applying (migration 218 changes the revision of world-shelf people). Source excerpts: person-fate-backfill-20260930-evidence.json; contested causes held back: person-fate-backfill-20260930-held.json."
+}

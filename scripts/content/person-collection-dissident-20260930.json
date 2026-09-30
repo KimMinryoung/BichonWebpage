@@ -1,0 +1,434 @@
+{
+  "collection": "dissident",
+  "criteria": "People who openly criticised the system inside a socialist state and were persecuted for it: open criticism made inside the state AND persecution for it. Not intra-party purges, not reform leaders unless they later became dissidents, not critics abroad.",
+  "reviewed": "2026-09-30",
+  "migration": "219",
+  "added": [
+    {
+      "id": "nikola-petkov",
+      "source": "https://en.wikipedia.org/wiki/Nikola_Petkov",
+      "excerpt": "From January 1945 he became a leader of the anti-communist United opposition. ... His parliamentary immunity was lifted on 5 June 1947 and he was arrested in the Parliament building itself ... After a show trial ... sentenced to death ... executed by hanging on 23 September 1947.",
+      "reason": "Open opposition in parliament and in the press inside the People's Republic of Bulgaria (proclaimed Sept 1946); arrested and hanged for it. Include only for consistency with Horáková; drop both if the collection is limited to non-party dissidents."
+    },
+    {
+      "id": "sakharov",
+      "source": "https://en.wikipedia.org/wiki/Andrei_Sakharov",
+      "excerpt": "[He] was arrested on 22 January 1980, following his public protests against the Soviet intervention in Afghanistan, and was sent to the city of Gorky ... Andropov, was prepared to call Sakharov 'Domestic Enemy Number One'.",
+      "reason": "Public human-rights advocacy; internal exile in Gorky."
+    },
+    {
+      "id": "andrei-sinyavsky",
+      "source": "https://en.wikipedia.org/wiki/Andrei_Sinyavsky",
+      "excerpt": "wrote works critical of Soviet society under the pseudonym Abram Tertz ... On 14 February 1966, Sinyavsky was sentenced to seven years on charges of 'anti-Soviet activity'.",
+      "reason": "Critical writings (published as tamizdat); tried and sent to labour camp."
+    },
+    {
+      "id": "andrei-amalrik",
+      "source": "https://en.wikipedia.org/wiki/Andrei_Amalrik",
+      "excerpt": "Amalrik was arrested on May 21, 1970 and convicted on November 12, receiving a sentence of three years in a labor camp in Kolyma. ... The KGB gave Amalrik an ultimatum: to emigrate or face another sentence.",
+      "reason": "Essay 'Will the Soviet Union Survive until 1984?' written in the USSR; camp, then forced emigration."
+    },
+    {
+      "id": "petro-grigorenko",
+      "source": "https://en.wikipedia.org/wiki/Petro_Grigorenko",
+      "excerpt": "In 1961, Petro Grigorenko started to openly criticize what he considered the excesses of the Khrushchev regime. ... Grigorenko was thereby forcibly committed to a special psychiatric hospital. ... stripped of his Soviet citizenship.",
+      "reason": "Open criticism, human-rights activism; psychiatric internment, loss of citizenship."
+    },
+    {
+      "id": "yuri-orlov",
+      "source": "https://en.wikipedia.org/wiki/Yuri_Orlov",
+      "excerpt": "In May 1976, he organized the Moscow Helsinki Group and became its chairman. ... On 15 May 1978, Orlov was sentenced to seven years of a labor camp and five years internal exile for his work with the Moscow Helsinki Group.",
+      "reason": "Founded the Helsinki Group; camp and exile for it."
+    },
+    {
+      "id": "zhores-medvedev",
+      "source": "https://en.wikipedia.org/wiki/Zhores_Medvedev",
+      "excerpt": "Between 1968 and 1970, Medvedev wrote ... Secrecy of Correspondence is Guaranteed by Law (about postal censorship in the USSR) ... this activity resulted in Medvedev's arrest and forced detention in the Kaluga psychiatric hospital in May 1970. ... stripped of his Soviet citizenship.",
+      "reason": "Writings against Lysenkoism and censorship; psychiatric detention, loss of citizenship."
+    },
+    {
+      "id": "roy-medvedev",
+      "source": "https://en.wikipedia.org/wiki/Roy_Medvedev",
+      "excerpt": "Medvedev was expelled from the Communist Party in 1969 after his book Let History Judge was published abroad. ... In the early 1960s, Medvedev was engaged in samizdat publications.",
+      "reason": "Samizdat and a book critical of Stalinism; party expulsion. Persecution was the mildest on this list (expulsion and loss of position, no arrest). Kept because the criteria allow expulsion with harassment."
+    },
+    {
+      "id": "solzhenitsyn",
+      "source": "https://en.wikipedia.org/wiki/Aleksandr_Solzhenitsyn",
+      "excerpt": "In 1969, Solzhenitsyn was expelled from the Union of Writers. ... On 12 February 1974, Solzhenitsyn was arrested and deported the next day from the Soviet Union to Frankfurt, West Germany and stripped of his Soviet citizenship.",
+      "reason": "Open writings and letters (including The Gulag Archipelago, 'a head-on challenge to the Soviet state'); expelled from the Writers' Union, arrested and deported. His 1945 arrest was for private letters, so it does not count here."
+    },
+    {
+      "id": "boris-pasternak",
+      "source": "https://en.wikipedia.org/wiki/Boris_Pasternak",
+      "excerpt": "[Doctor Zhivago contained criticisms of] Stalinism, Collectivisation, the Great Purge, and the Gulag ... smuggled to Italy and was first published there in 1957 ... the Union of Soviet Writers held a trial behind closed doors ... Pasternak had been expelled from the Union.",
+      "reason": "The novel was submitted for publication in the USSR and then published abroad. Expulsion, a press campaign and a threat of exile forced him to decline the Nobel Prize."
+    },
+    {
+      "id": "milovan-djilas",
+      "source": "https://en.wikipedia.org/wiki/Milovan_Đilas",
+      "excerpt": "His advocacy of greater democratic input into decision-making led him eventually to argue against the one-party state itself ... sentenced to three years imprisonment ... imprisoned again in April 1962 for publishing abroad Conversations with Stalin.",
+      "reason": "Borba articles, The New Class and interviews given in Yugoslavia; repeated prison terms."
+    },
+    {
+      "id": "vaclav-havel",
+      "source": "https://en.wikipedia.org/wiki/Václav_Havel",
+      "excerpt": "Havel co-founded the Committee for the Defense of the Unjustly Prosecuted in 1979 ... The Power of the Powerless (1978) ... His longest period in prison, from May 1979 to February 1983.",
+      "reason": "Charter 77, VONS and essays; repeated imprisonment."
+    },
+    {
+      "id": "jan-patocka",
+      "source": "https://en.wikipedia.org/wiki/Jan_Patočka",
+      "excerpt": "In January 1977 he became one of the original signatories and main spokespersons for the Charter 77 ... On March 3, 1977, he was held by the police for ten hours ... on March 13 he died.",
+      "reason": "Charter 77 spokesman; police interrogations and death after detention; long teaching ban."
+    },
+    {
+      "id": "jiri-hajek",
+      "source": "https://en.wikipedia.org/wiki/Jiří_Hájek",
+      "excerpt": "[He] emerged as one of three leading spokesmen of Charter 77 ... this caused his dismissal from high offices and even from the communist party (1970) ... became the target of police interrogations and threats.",
+      "reason": "A Prague Spring minister who became an open dissident (UN protest, Charter 77 spokesman); expelled, interrogated and harassed."
+    },
+    {
+      "id": "frantisek-kriegel",
+      "source": "https://en.wikipedia.org/wiki/František_Kriegel",
+      "excerpt": "voted against the Temporary Sojourn of the Soviet Army Treaty in October 1968 ... expelled from the party in 1969 ... He was among the first to sign Charter 77 ... He died in a Prague hospital under police control.",
+      "reason": "A reform leader who later became an open dissident (public vote against the treaty, Charter 77); expelled and kept under police surveillance until his death."
+    },
+    {
+      "id": "zdenek-mlynar",
+      "source": "https://en.wikipedia.org/wiki/Zdeněk_Mlynář",
+      "excerpt": "In the beginning of 1977, Mlynář became a signatory to Charter 77 ... He was expelled from the party in 1969 and, having played a key role in establishing Charter 77, forced to emigrate in 1977.",
+      "reason": "Charter 77 co-organiser; forced emigration."
+    },
+    {
+      "id": "ludvik-vaculik",
+      "source": "https://en.wikipedia.org/wiki/Ludvík_Vaculík",
+      "excerpt": "[His 1967 Writers' Congress speech] rejected the leading role of the party ... started Edice Petlice, a samizdat series ... all three were taken in for interrogation [delivering Charter 77] ... the official ban on his works was lifted in late 1989.",
+      "reason": "1967 speech, Two Thousand Words, samizdat, Charter 77; expulsion, publication ban, interrogations."
+    },
+    {
+      "id": "jacek-kuron",
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuroń",
+      "excerpt": "[Open Letter to the Party:] a 'central political bureaucracy' had emerged as a new exploitative class ... arrested on 19 March 1965 ... given 3 years in prison ... sentenced to 3 and a half years in jail [1969] ... SB forces arrested Kuroń [1981].",
+      "reason": "Open Letter and KOR; three imprisonments."
+    },
+    {
+      "id": "adam-michnik",
+      "source": "https://en.wikipedia.org/wiki/Adam_Michnik",
+      "excerpt": "he became involved in the activity of Workers' Defence Committee (KOR) ... editor or co-editor of underground newspapers ... sentenced to three years imprisonment ... accused of an 'attempt to overthrow socialism.'",
+      "reason": "1968 protests, KOR and samizdat; repeated imprisonment."
+    },
+    {
+      "id": "anna-walentynowicz",
+      "source": "https://en.wikipedia.org/wiki/Anna_Walentynowicz",
+      "excerpt": "joined the newly formed WZZ or Free Trade Unions of the Coast in 1978 ... distributed an underground newsheet at the shipyard ... fired by the shipyard on 7 August 1980 ... In total she spent 19 months in jail.",
+      "reason": "Free Trade Unions and samizdat; dismissal, internment and prison."
+    },
+    {
+      "id": "lech-walesa",
+      "source": "https://en.wikipedia.org/wiki/Lech_Wałęsa",
+      "excerpt": "In June 1978, he became an activist of the underground Free Trade Unions of the Coast ... In June 1976, Wałęsa lost his job at the Gdańsk Shipyard because of his continued involvement in illegal unions ... incarcerated for 11 months until 14 November 1982.",
+      "reason": "Independent-union organising; dismissal, surveillance, internment."
+    },
+    {
+      "id": "andrzej-gwiazda",
+      "source": "https://en.wikipedia.org/wiki/Andrzej_Gwiazda",
+      "excerpt": "In 1978, Gwiazda was one of the founders of Free Trade Unions of the Coast (WZZ) ... Arrested on 13 December 1981 ... released on 22 July 1984 ... arrested again ... and sentenced to five months.",
+      "reason": "WZZ founder and Solidarity vice-chair; interned and imprisoned."
+    },
+    {
+      "id": "bogdan-borusewicz",
+      "source": "https://en.wikipedia.org/wiki/Bogdan_Borusewicz",
+      "excerpt": "arrested in May 1968 ... on charges of printing and distributing opposition fliers ... became a part of the Workers' Defence Committee ... arrested and imprisoned in 1986.",
+      "reason": "KOR/WZZ activist; imprisoned in 1968 and 1986."
+    },
+    {
+      "id": "alina-pienkowska",
+      "source": "https://pl.wikipedia.org/wiki/Alina_Pienkowska",
+      "excerpt": "[en.wiki: one of the founders of the underground Free Trade Unions of the Coast; wrote for The Coastal Worker] ... \"13 grudnia 1981 ... została internowana\" ... \"W kwietniu 1980 została karnie przeniesiona\" ... \"wielokrotnie przeszukiwano jej mieszkanie.\"",
+      "reason": "WZZ activist and samizdat writer; punitive transfer, surveillance, house searches, internment. English Wikipedia does not mention the persecution; Polish Wikipedia does."
+    },
+    {
+      "id": "tadeusz-mazowiecki",
+      "source": "https://en.wikipedia.org/wiki/Tadeusz_Mazowiecki",
+      "excerpt": "Mazowiecki initiated a similar letter [to the Letter of 59] to the Polish United Workers' Party ... editor-in-chief of the Tygodnik Solidarność ... After martial law was declared in December 1981, he was arrested and imprisoned ... released on 23 December 1982.",
+      "reason": "Protest letters and Solidarity; interned for a year."
+    },
+    {
+      "id": "marian-jurczyk",
+      "source": "https://pl.wikipedia.org/wiki/Marian_Jurczyk",
+      "excerpt": "\"W sierpniu 1980 stanął na czele Międzyzakładowego Komitetu Strajkowego w Szczecinie\" ... \"internowano go ... od 13 grudnia 1981 do 18 listopada 1982\" ... \"tymczasowo aresztowany i oskarżony o przygotowania do obalenia ustroju PRL.\"",
+      "reason": "Solidarity regional leader; interned, then arrested and charged."
+    },
+    {
+      "id": "jan-rulewski",
+      "source": "https://en.wikipedia.org/wiki/Jan_Rulewski",
+      "excerpt": "in charge of the Bydgoszcz region of Solidarity ... He was assaulted by police during the Bydgoszcz events in 1981 ... interned during the martial law in Poland.",
+      "reason": "Solidarity leader; beaten by police and interned."
+    },
+    {
+      "id": "roman-bartoszcze",
+      "source": "https://en.wikipedia.org/wiki/Roman_Bartoszcze",
+      "excerpt": "In 1980 he broke with ZSL and joined oppositional Peasant Solidarity ... During Martial law he was arrested and imprisoned for two months as a result of his participation in the Bydgoszcz events.",
+      "reason": "Rural Solidarity organiser; imprisoned."
+    },
+    {
+      "id": "henryka-krzywonos",
+      "source": "https://pl.wikipedia.org/wiki/Henryka_Krzywonos-Strycharska",
+      "excerpt": "\"W stanie wojennym zajmowała się pomocą internowanym, była też kolporterką wydawnictw podziemnych. Była represjonowana, objęta nakazem opuszczenia Gdańska i pozbawiona możliwości zatrudnienia.\" ... \"Podczas jednej z rewizji została dotkliwie pobita.\"",
+      "reason": "Strike leader and underground distributor; beaten, banned from Gdańsk, barred from work."
+    },
+    {
+      "id": "jan-ludwiczak",
+      "source": "https://pl.wikipedia.org/wiki/Jan_Ludwiczak",
+      "excerpt": "\"w nocy z 12 na 13 grudnia 1981 roku został aresztowany\" ... [interned until 23 Dec 1982; distributed underground publications 1983–89] ... \"został przeniesiony na niższe stanowisko\" ... [detained and beaten during a 1983 house search].",
+      "reason": "Solidarity chairman at Wujek; internment, demotion, beating."
+    },
+    {
+      "id": "merab-kostava",
+      "source": "https://en.wikipedia.org/wiki/Merab_Kostava",
+      "excerpt": "In 1976 Kostava co-founded the Georgian Helsinki Group ... In 1977, Kostava and Gamsakhurdia were arrested and jailed, charged with spreading anti-Soviet propaganda.",
+      "reason": "Helsinki Group and samizdat; about ten years of prison, camp and exile."
+    },
+    {
+      "id": "zviad-gamsakhurdia",
+      "source": "https://en.wikipedia.org/wiki/Zviad_Gamsakhurdia",
+      "excerpt": "in 1977 they established the Georgian branch of the Helsinki Rights Watch Group ... Gamsakhurdia was arrested along with Kostava; they were accused of anti-Soviet activities ... sentenced to three years in prison and two in exile.",
+      "reason": "Helsinki Group and samizdat; imprisoned (his 1979 recantation was coerced)."
+    },
+    {
+      "id": "lagle-parek",
+      "source": "https://en.wikipedia.org/wiki/Lagle_Parek",
+      "excerpt": "participated in the signing of an open letter to the heads of government ... publication of Samizdat journals ... On 5 March 1983, Parek was arrested ... she served in Dubravlag labor camp.",
+      "reason": "Open letters and samizdat; labour camp."
+    },
+    {
+      "id": "tiit-madisson",
+      "source": "https://en.wikipedia.org/wiki/Tiit_Madisson",
+      "excerpt": "Madisson was a political prisoner of the Soviet Union from 1980 to 1986 ... smuggled an open letter from prison ... After a Deer park rally, of which he was one of the leaders, he was expelled from the Soviet Union in September 1987.",
+      "reason": "Imprisoned, then expelled after leading the Hirvepark rally."
+    },
+    {
+      "id": "heiki-ahonen",
+      "source": "https://searchworks.stanford.edu/view/wj801rn2446",
+      "excerpt": "Started being active in 1978 and signed his first document in 1980 ... Heiki Ahonen was arrested in 1983. Spent one year in Patarei prison. From 1984-1987 served his sentence in a Perm Oblast prison camp. ... Was arrested again in 1988 and sent to exile in Sweden.",
+      "reason": "Signed collective protest letters; imprisoned in a Perm camp; expelled. He has no English Wikipedia page; the source is a Stanford/VABAMU oral-history record."
+    },
+    {
+      "id": "abulfaz-elchibey",
+      "source": "https://en.wikipedia.org/wiki/Abulfaz_Elchibey",
+      "excerpt": "He soon joined the Soviet dissident movement, supporting the re-establishment of Azerbaijani independence. He was arrested in 1975 on charges of defaming the Soviet Union and spent 18 months in prison.",
+      "reason": "Soviet-era nationalist dissident; imprisoned for 'defaming the Soviet Union'. Wikipedia gives few details of the public criticism itself."
+    },
+    {
+      "id": "etibar-mammadov",
+      "source": "https://en.wikipedia.org/wiki/Etibar_Mammadov",
+      "excerpt": "while holding a press conference in Moscow City on January 26, 1990, on the massacres committed by the Soviet Union in Baku January 20, 1990, Etibar Mammadov was arrested and detained in the Lefortovo prison [for nine months].",
+      "reason": "Publicly denounced the Black January crackdown at a press conference; held in Lefortovo. Verified from a search-result summary of his Wikipedia page, not from a full-page fetch."
+    },
+    {
+      "id": "laszlo-tokes",
+      "source": "https://en.wikipedia.org/wiki/László_Tőkés",
+      "excerpt": "delivered sermons opposing the Romanian government's Systematisation program ... In an interview on Hungarian television in July 1989, Tőkés complained that many Romanians were unaware of their human rights ... ordered his eviction ... His electricity was cut off and his ration book was confiscated.",
+      "reason": "Public sermons and a TV interview inside Romania; Securitate harassment, eviction."
+    }
+  ],
+  "kept": [
+    {
+      "id": "fang-lizhi",
+      "source": "https://en.wikipedia.org/wiki/Fang_Lizhi",
+      "excerpt": "Many such essays and lectures expressed his liberal view on politics ... and criticisms on CCP dogma. ... Fang was again expelled from Chinese Communist Party in January 1987, and removed from his position as the vice president of the university. ... sought asylum at the U.S. embassy in Beijing.",
+      "reason": "Current member, keep. Public lectures/essays; party expulsion, dismissal, forced refuge and exile."
+    },
+    {
+      "id": "wei-jingsheng",
+      "source": "https://en.wikipedia.org/wiki/Wei_Jingsheng",
+      "excerpt": "\"We want to be the masters of our own destiny. We need no gods or emperors...\" ... detained as a political prisoner from 1979 to 1993 ... imprisoned again from 1994 to 1997 ... deported to the United States ... on 16 November 1997.",
+      "reason": "Current member, keep. Democracy Wall poster; 18 years in prison, deported."
+    },
+    {
+      "id": "milada-horakova",
+      "source": "https://en.wikipedia.org/wiki/Milada_Horáková",
+      "excerpt": "Shortly after the 1948 Czechoslovak coup d'état, she resigned from the parliament in protest. ... chose not to leave Czechoslovakia ... and continued to be politically active in Prague. ... arrested and accused of being the leader of an alleged plot to overthrow the Communist regime. ... hanged in Prague's Pankrác Prison on 27 June 1950.",
+      "reason": "Current member, keep WITH CAVEAT. The public act was her protest resignation plus continued open opposition activity; the charge itself was a fabricated conspiracy in a show trial. She is closer to an opposition-party politician than a classic dissident. Keep only if the collection accepts post-takeover opposition politicians; if so, nikola-petkov (below) qualifies equally."
+    }
+  ],
+  "dropped_after_review": [
+    {
+      "id": "stefan-wyszynski",
+      "reason": "Borderline include. As primate he openly refused the state's control of the Church (Non possumus) and was imprisoned for three years for it. Drop him if church leaders are out of scope.",
+      "source": "https://en.wikipedia.org/wiki/Stefan_Wyszyński",
+      "excerpt": "The episcopate, including Wyszyński, released a non possumus where they made their opposition clear. ... On 25 September 1953 he was imprisoned at Rywałd, and later placed under house arrest ... released on 26 October 1956."
+    },
+    {
+      "id": "stanislaw-hejmowski",
+      "reason": "Borderline include. His defence speeches at the 1956 Poznań trials publicly blamed state policy (per the DB bio). He was then subjected to a press campaign, a ruinous fine, suspension from practice and SB surveillance. The open criticism is sourced only from the DB bio; Polish Wikipedia does not quote the speeches.",
+      "source": "https://pl.wikipedia.org/wiki/Stanisław_Hejmowski",
+      "excerpt": "\"podjął się obrony robotników oskarżanych w procesach politycznych\" ... \"w mediach rozpoczęła się nagonka na osobę Hejmowskiego\" ... \"20 lipca 1961 podjęto decyzję [o] zawieszeniu w wykonywaniu czynności zawodowych.\""
+    },
+    {
+      "id": "gavriil-myasnikov",
+      "reason": "Borderline include. Early-Soviet critic whose public demand was for civil liberty (press freedom for all), not a leadership contest. Expelled, arrested and exiled. This separates him from the excluded intra-party factions (Trotsky, Sapronov, Shlyapnikov).",
+      "source": "https://en.wikipedia.org/wiki/Gavril_Myasnikov",
+      "excerpt": "freedom of the press to be restored for everyone 'from monarchists to anarchists inclusive' ... expelled from the party on 22 February 1922 ... was arrested by the OGPU in May 1923."
+    },
+    {
+      "id": "jerzy-borowczak",
+      "reason": "WZZ collaborator and strike initiator; dismissed under martial law. Weaker: only the dismissal is verified. The DB bio also says he was interned, which I did not verify.",
+      "source": "https://pl.wikipedia.org/wiki/Jerzy_Borowczak",
+      "excerpt": "\"W sierpniu 1980 razem z Bogdanem Borusewiczem ... zainicjował strajk w Stoczni Gdańskiej\" ... \"Należał do współpracowników Wolnych Związków Zawodowych Wybrzeża\" ... \"Po wprowadzeniu stanu wojennego dyscyplinarnie zwolniony.\""
+    },
+    {
+      "id": "wang-shiwei",
+      "reason": "Pre-1949 borderline, decided to include. The essay was published in the party's own Liberation Daily, so the criticism was public. He was persecuted by the CCP party-state apparatus of the Shaan-Gan-Ning Border Region, the de facto state he lived in, and is usually counted as the first dissident of the Chinese communist state. Drop him if 'socialist state' must mean the PRC after 1949.",
+      "source": "https://en.wikipedia.org/wiki/Wang_Shiwei",
+      "excerpt": "[Wild Lilies criticised] the unjustified privileges enjoyed by members of the CCP ... Wang was expelled from the CCP ... struggle sessions held over sixteen days, ended in June 1942 with Wang found guilty and imprisoned. He remained imprisoned until his execution five years later."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "mandelstam",
+      "reason": "The Stalin epigram was recited privately to a handful of people and never published. His arrest came from a denunciation, not open criticism. Excluded as not public; contrast Wang Shiwei, whose essay appeared in a party newspaper."
+    },
+    {
+      "id": "akhmatova",
+      "reason": "Requiem was written secretly and not circulated. The 1946 Zhdanov attack targeted her poetry, not open political criticism."
+    },
+    {
+      "id": "mikhail-zoshchenko",
+      "reason": "Satirist denounced in the 1946 Zhdanov campaign and expelled from the Writers' Union. His satire is not clearly open criticism of the system. A 1954 public refusal to accept the verdict exists in the literature, but I could not verify it on Wikipedia."
+    },
+    {
+      "id": "bulgakov",
+      "reason": "Plays banned and a letter to the government, but no arrest. The persecution was censorship only."
+    },
+    {
+      "id": "zamyatin",
+      "reason": "We was banned and a press campaign followed in 1929, but he left legally with Stalin's permission. His 1922 arrest was part of a general sweep of the intelligentsia, not a response to specific open criticism."
+    },
+    {
+      "id": "vasily-grossman",
+      "reason": "He submitted Life and Fate for publication and the KGB seized the manuscript. He himself was not arrested or expelled; the persecution fell on the text, not the person."
+    },
+    {
+      "id": "varlam-shalamov",
+      "reason": "His 1929 and 1937 arrests were for clandestine Left Opposition activity (distributing Lenin's Testament), which is not open dissent. Kolyma Tales circulated in samizdat without further persecution, and he later disavowed its publication abroad."
+    },
+    {
+      "id": "nikolai-berdyaev",
+      "reason": "Arrested in 1920 and 1922 and expelled on the Philosophers' Ship. The expulsion was a class-based sweep of non-Marxist intellectuals, not a response to specific open criticism."
+    },
+    {
+      "id": "ding-ling",
+      "reason": "Her 1942 'Thoughts on March 8' drew only criticism at the time. Her 1957 rightist label and labour camp were tied mainly to the factional 'Ding–Chen anti-party clique' case."
+    },
+    {
+      "id": "deng-tuo",
+      "reason": "Veiled allegorical essays; persecuted in the opening of the Cultural Revolution as part of the purge of Peng Zhen's Beijing apparatus. The criticism was not open."
+    },
+    {
+      "id": "wu-han",
+      "reason": "Hai Rui was written at Mao's suggestion. The attack on it was the opening move of an intra-party power struggle, not a response to open dissent."
+    },
+    {
+      "id": "peng-dehuai",
+      "reason": "His Lushan letter was internal and private; this is an intra-party purge."
+    },
+    {
+      "id": "yang-jisheng",
+      "reason": "Tombstone was published in Hong Kong and banned; he suffered travel restrictions but no arrest or dismissal. The persecution is too weak."
+    },
+    {
+      "id": "zhao-ziyang",
+      "reason": "Reform leader (a government role) placed under house arrest for opposing martial law inside the leadership. Belongs in the other collection."
+    },
+    {
+      "id": "dubcek",
+      "reason": "Reform leader. His later letters of protest (1974–75) came with surveillance, but his main role and persecution stem from leading the government."
+    },
+    {
+      "id": "josef-smrkovsky",
+      "reason": "Reform leader, expelled in normalization. Little later open dissent."
+    },
+    {
+      "id": "milan-kundera",
+      "reason": "1967 congress speech, then expelled from the party in 1970, lost his teaching job and was banned. He was purged for Prague Spring positions during the mass normalization purge and emigrated rather than dissenting afterwards. Weak; could be added if normalization purges count."
+    },
+    {
+      "id": "karel-kosik",
+      "reason": "Same as Kundera: expelled and lost his university post for Prague Spring positions, and police confiscated manuscripts in 1975, but he did not sign Charter 77 and was not an active dissident."
+    },
+    {
+      "id": "jaroslav-seifert",
+      "reason": "Signed Charter 77, but I found no concrete persecution beyond restricted publication; he received the Nobel Prize in 1984."
+    },
+    {
+      "id": "istvan-bibo",
+      "reason": "Imprisoned for serving as a minister in Nagy's 1956 revolutionary government. That is revolution or government participation, not dissent."
+    },
+    {
+      "id": "geza-losonczy",
+      "reason": "Member of the Nagy group, arrested for the 1956 revolutionary government. That belongs to the revolution/reform category."
+    },
+    {
+      "id": "miklos-gimes",
+      "reason": "Openly demanded Rajk's rehabilitation in 1955 and was expelled for it. He was executed, however, for the post-November 1956 underground resistance as part of the Nagy trial. Close to inclusion; I left him out because the main persecution was for the revolution."
+    },
+    {
+      "id": "stefan-staszewski",
+      "reason": "Critical of Gomułka and expelled in the 1968 anti-Zionist purge; later supported the opposition. The expulsion looks like part of the 1968 purge rather than a response to open criticism."
+    },
+    {
+      "id": "juri-mikk",
+      "reason": "MRP-AEG co-founder. The DB bio mentions a slander campaign and forcible return from Red Square, but I could not verify any persecution from an independent source (no Wikipedia page)."
+    },
+    {
+      "id": "igor-grazin",
+      "reason": "Legal scholar and USSR People's Deputy who challenged the official narrative in 1989; not persecuted."
+    },
+    {
+      "id": "oleg-kalugin",
+      "reason": "Publicly denounced the KGB inside the USSR in 1990 and was stripped of rank, decorations and pension by decree. This was reversed in 1991, and he was elected a deputy. The later 2002 conviction came from post-Soviet Russia. A KGB whistleblower rather than a dissident, with light persecution; could be added if desired."
+    },
+    {
+      "id": "valery-sablin",
+      "reason": "Armed naval mutiny (1975), executed for treason. Not open criticism by words, writing or organising."
+    },
+    {
+      "id": "jan-palach",
+      "reason": "Protest self-immolation. There was open protest but no state persecution of him."
+    },
+    {
+      "id": "gjergj-kokoshi",
+      "reason": "Albanian non-communist politician arrested in 1946 for opposing electoral restrictions: opposition-party politics. Sources conflict, per the DB bio. Consider alongside Petkov/Horáková."
+    },
+    {
+      "id": "cho-mansik",
+      "reason": "Detained by the Soviet occupation in 1946 for opposing trusteeship, before the DPRK existed. He was an opposition-party leader."
+    },
+    {
+      "id": "fyodor-raskolnikov",
+      "reason": "His open letter to Stalin was written abroad after defecting. Criticism from outside the state is excluded."
+    },
+    {
+      "id": "ignace-reiss",
+      "reason": "Broke with Stalin publicly from abroad. Excluded as criticism from outside."
+    },
+    {
+      "id": "victor-serge",
+      "reason": "Left Opposition member; arrested and exiled for intra-party oppositional activity. His major critical writing came from abroad."
+    },
+    {
+      "id": "nikolai-vavilov",
+      "reason": "Scientific dispute with Lysenko, not open political criticism. Arrested in the terror."
+    },
+    {
+      "id": "svetlana-alexievich",
+      "reason": "Her legal troubles (the Zinky Boys trial) came after 1991, not inside a socialist state."
+    },
+    {
+      "id": "nina-andreeva",
+      "reason": "Critic of perestroika; not persecuted."
+    }
+  ]
+}

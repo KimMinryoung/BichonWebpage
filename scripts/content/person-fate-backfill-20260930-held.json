@@ -1,0 +1,74 @@
+[
+  {
+    "id": "blokhin",
+    "kind": "suicide",
+    "label": {
+      "ko": "자살",
+      "en": "Suicide"
+    },
+    "source": "https://en.wikipedia.org/wiki/Vasily_Blokhin",
+    "excerpt": "The official cause of death was listed as suicide; however, his personnel files recorded that he died due to a heart attack.",
+    "uncertain": true,
+    "note": "Contested: official cause suicide vs. heart attack in personnel files."
+  },
+  {
+    "id": "jean-charles-pichegru",
+    "kind": "suicide",
+    "label": {
+      "ko": "옥중 자살",
+      "en": "Suicide in prison"
+    },
+    "source": "https://en.wikipedia.org/wiki/Jean-Charles_Pichegru",
+    "excerpt": "The government reported that he had committed suicide, but Napoleon has often been blamed for orchestrating the murder.",
+    "uncertain": true,
+    "note": "Found strangled in his cell in the Temple; officially suicide, murder suspected."
+  },
+  {
+    "id": "mikhail-lashevich",
+    "kind": "natural",
+    "label": {
+      "ko": "병사",
+      "en": "Illness"
+    },
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Lashevich",
+    "excerpt": "According to official sources, Lashevich died from gangrene in Harbin on 30 August 1928. Some other sources claim that he was either killed in a car accident or had committed suicide.",
+    "uncertain": true,
+    "note": "Official cause gangrene; alternative accounts say car accident or suicide."
+  },
+  {
+    "id": "nako-spiru",
+    "kind": "suicide",
+    "label": {
+      "ko": "자살",
+      "en": "Suicide"
+    },
+    "source": "https://en.wikipedia.org/wiki/Nako_Spiru",
+    "excerpt": "The next day he was found shot in his office. ... a second official announcement declared the death as suicide ... [later] said 'to have been murdered by the Sigurimi on behalf of Xoxe, or been forced to suicide'.",
+    "uncertain": true,
+    "note": "Official version suicide; after rehabilitation claimed murdered by Sigurimi or forced to suicide."
+  },
+  {
+    "id": "sergey-kruglov",
+    "kind": "killed",
+    "label": {
+      "ko": "열차 사고",
+      "en": "Hit by a train"
+    },
+    "source": "https://en.wikipedia.org/wiki/Sergei_Kruglov_(politician)",
+    "excerpt": "Kruglov died in 1977 under unclear circumstances. Several sources state that Kruglov died due to accidentally being hit by a train. Other sources suggest suicide or a heart attack",
+    "uncertain": true,
+    "note": "English article is 'Sergei Kruglov (politician)'. Russian Wikipedia: hit by a train near Pravda platform; date 6 June (ru) vs 6 July (en) 1977, year matches."
+  },
+  {
+    "id": "walter-lyman-brown",
+    "kind": "natural",
+    "label": {
+      "ko": "자연사",
+      "en": "Natural causes"
+    },
+    "source": "https://www.findagrave.com/memorial/101150576/walter-lyman-brown",
+    "excerpt": "Walter Lyman Brown, b. 5 Sep 1865, d. 15 Oct 1953, Belchertown, Massachusetts",
+    "uncertain": true,
+    "note": "No Wikipedia article (redirects to American Relief Administration). Given years 1880–1955 not confirmed: Find a Grave says 1865–1953, Jane Addams Digital Edition says 1865–1966; unverified these are the ARA director. No cause found."
+  }
+]
