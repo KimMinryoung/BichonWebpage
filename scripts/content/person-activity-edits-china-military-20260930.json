@@ -1,0 +1,843 @@
+{
+ "note": "2026-09-30: stored activities for the Chinese categories and military commanders shown only through the legacy role. Function from the old category; PRC-era careers -> china-prc (state service), leaders whose leadership lay before 1949 -> china-ccp, the Duke of Brunswick unresolved. Evidence: English Wikipedia lead sentence.",
+ "reviewMethod": "operator request 2026-09-30: treat the obvious as obvious; each lead read",
+ "add": {
+  "deng-xiaoping": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Deng_Xiaoping",
+      "locator": "plain-text extract lead sentence; sha256 8ce368a2d84b44cd3aa9c6fd9bc84ac4391fb504905ffd9cfc2ccabf6a07e6a2",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Deng Xiaoping (22 August 1904 – 19 February 1997) was a Chinese statesman, revolutionary, and political theorist who served as the paramount leader of the People's Republic of China (PRC) from 1978 to 1989."
+     }
+    ]
+   }
+  ],
+  "zhou-enlai": [
+   {
+    "functionId": "government",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhou_Enlai",
+      "locator": "plain-text extract lead sentence; sha256 c4d20edc88ae2325bdee2152c9cf8a9197f7adb5b4f8307c50518416ad22b939",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Zhou Enlai (Chinese: 周恩来; pinyin: Zhōu Ēnlái; Wade–Giles: Chou1 Ên1-lai2; 5 March 1898 – 8 January 1976) was a Chinese statesman, diplomat, and revolutionary who served as the first Premier of the People's Republic of China from October 1949 until his death in January 1976."
+     }
+    ]
+   }
+  ],
+  "mao-zedong": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mao_Zedong",
+      "locator": "plain-text extract lead sentence; sha256 a50578ec01f1cffa38b11bdaa4a6a89781d408801703b1c8d58c6febb439edc4",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Mao Zedong (26 December 1893 – 9 September 1976) was a Chinese communist revolutionary, political theorist and the founder of the People's Republic of China (PRC)."
+     }
+    ]
+   }
+  ],
+  "qu-qiubai": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Qu_Qiubai",
+      "locator": "plain-text extract lead sentence; sha256 f8497ee1b09d94883ab9ff2d571af796fe2341f55dd04da5af06ec458e4df084",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Qu Qiubai (Chinese: 瞿秋白; 29 January 1899 – 18 June 1935) was a Chinese writer, poet, translator, and political activist."
+     }
+    ]
+   }
+  ],
+  "zhu-de": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhu_De",
+      "locator": "plain-text extract lead sentence; sha256 1c4347e1defe43ded104dda0c94c955a947fcf1132d97183c0b597391a612faa",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Zhu De (1 December 1886 – 6 July 1976) was a Chinese general, military strategist, politician and revolutionary in the Chinese Communist Party (CCP)."
+     }
+    ]
+   }
+  ],
+  "liu-shaoqi": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Liu_Shaoqi",
+      "locator": "plain-text extract lead sentence; sha256 1611eda3af2c66a84e9d919ed9bc520e01ce8ddbb2b3c7c69e540100eadf0f19",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Liu Shaoqi (Chinese: 刘少奇; pronounced [ljǒʊ ʂâʊtɕʰǐ]; 24 November 1898 – 12 November 1969) was a Chinese revolutionary and politician."
+     }
+    ]
+   }
+  ],
+  "zhang-chunqiao": [
+   {
+    "functionId": "propaganda",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhang_Chunqiao",
+      "locator": "plain-text extract lead sentence; sha256 487542c6257b6b9a1bbfe46f2b7112a3146879db8478fe068b2bce22ab0d2bc7",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Zhang Chunqiao (Chinese: 张春桥; 1 February 1917 – 21 April 2005; also spelled as Chang Chun-chiao) was a Chinese political theorist, writer, and politician."
+     }
+    ]
+   }
+  ],
+  "wang-ming": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Wang_Ming",
+      "locator": "plain-text extract lead sentence; sha256 5ea8ab09dec23dd7518b70865c16237cd6d3aded5bb8e1d82396f1bb10a11958",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Wang Ming (Chinese: 王明; pinyin: Wáng Míng; May 23, 1904 – March 27, 1974) was a Chinese politician and senior leader of the early Chinese Communist Party (CCP)."
+     }
+    ]
+   }
+  ],
+  "jiang-qing": [
+   {
+    "functionId": "propaganda",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jiang_Qing",
+      "locator": "plain-text extract lead sentence; sha256 ebd9ff6ea5b9a96d0fb80e71769f26fe5b38578a6eafe1edbe7fcbb24d9c2579",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Jiang Qing (March 1914 (1914-03) – 14 May 1991 (1991-05-15); also spelled as Chiang Ch'ing), born Li Yunhe, also known as Li Jin, and briefly known by her stage name Lan Ping in the 1930s Shanghai, was a Chinese revolutionary, actress, and political figure."
+     }
+    ]
+   }
+  ],
+  "chen-yun": [
+   {
+    "functionId": "economy",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Chen_Yun",
+      "locator": "plain-text extract lead sentence; sha256 da3220934b96a9254faebdf5fecd6b6e9e32beb7c47436374abc409a9374143e",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Chen Yun (13 June 1905 – 10 April 1995) was a statesman of the Chinese Communist Party and the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "bo-gu-qin-bangxian": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Bo_Gu",
+      "locator": "plain-text extract lead sentence; sha256 7bd1ec9961a2450cac1c6fb44367fecd8c144a43bfda796d980859959079bd47",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Qin Bangxian, better known by his alias Bo Gu (4 May \n1907 – 8 April 1946) was a Chinese senior leader of the Chinese Communist Party and a member of the 28 Bolsheviks."
+     }
+    ]
+   }
+  ],
+  "gao-gang": [
+   {
+    "functionId": "economy",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Gao_Gang",
+      "locator": "plain-text extract lead sentence; sha256 dea162f03160b186fafe286ffbc967dae82a5fc2aa234446373a73f0cfcc6b42",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Gao Gang (Chinese: 高岗; Wade–Giles: Kao Kang; 1905 – August 1954) was a Chinese Communist Party (CCP) leader during the Chinese Civil War and the early years of the People's Republic of China (PRC)."
+     }
+    ]
+   }
+  ],
+  "lin-biao": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Lin_Biao",
+      "locator": "plain-text extract lead sentence; sha256 872c6b2a237e020706f570c003646150fbcf4b47011ca30f6d8a56838c9a555d",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Lin Biao (Chinese: 林彪; 5 December 1907 – 13 September 1971) was a Chinese military commander and politician."
+     }
+    ]
+   }
+  ],
+  "peng-dehuai": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Peng_Dehuai",
+      "locator": "plain-text extract lead sentence; sha256 173b3ec7f94d990c4804239b2d5dc8c0c258a8f1854fd17d3025c925d566e9da",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Peng Dehuai (October 24, 1898 – November 29, 1974; also spelled as Peng Teh-Huai) was a Chinese general and politician who was the Minister of National Defense from 1954 to 1959."
+     }
+    ]
+   }
+  ],
+  "deng-hua": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Deng_Hua",
+      "locator": "plain-text extract lead sentence; sha256 e3ebef5fd902409c29713dcb98672383ae576063065c60d3a6f0216f63fe41b0",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Deng Hua (simplified Chinese: 邓华; traditional Chinese: 鄧華; pinyin: Dèng Huá; 28 April 1910 – 3 July 1980) was a Chinese military leader and general of the People's Liberation Army."
+     }
+    ]
+   }
+  ],
+  "ye-jianying": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ye_Jianying",
+      "locator": "plain-text extract lead sentence; sha256 e1a7bef855de933257469c4c89f21ead82fa0b7b90dc03be3a88ae6e25cc7b2d",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Ye Jianying (simplified Chinese: 叶剑英; traditional Chinese: 葉劍英; Wade-Giles:Yeh Chien-ying; 28 April 1897 – 22 October 1986) was a Chinese Communist revolutionary leader and politician, one of the Ten Marshals of the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "nie-rongzhen": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nie_Rongzhen",
+      "locator": "plain-text extract lead sentence; sha256 07e827f11c5973c36e283d6b43cd0f2ef7666f2337fcd9ec0341c40005c90401",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Nie Rongzhen (Chinese: 聂荣臻; pinyin: Niè Róngzhēn; Wade–Giles: Nieh Jung-chen; December 29, 1899 – May 14, 1992) was a Marshal of the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "xu-xiangqian": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Xu_Xiangqian",
+      "locator": "plain-text extract lead sentence; sha256 fb35f5a2fcd72de2bf39ef896bafc1a4811fe3e2d026e2d87705b4df0153651c",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Xu Xiangqian (November 8, 1901 – September 21, 1990) was a Marshal of the People's Republic of China (PRC)."
+     }
+    ]
+   }
+  ],
+  "he-long": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/He_Long",
+      "locator": "plain-text extract lead sentence; sha256 f13584a0c7abe05c6f00a3ba681f2bbb896b6be73c28ab8db6bc2d5406ec73fd",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "He Long (simplified Chinese: 贺龙; traditional Chinese: 賀龍; pinyin: Hè Lóng; March 22, 1896 – June 9, 1969) was a Chinese revolutionary and a Marshal of the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "liu-bocheng": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Liu_Bocheng",
+      "locator": "plain-text extract lead sentence; sha256 f93d923ff47d9374fd4916fcadccbd2b63ee2be16558f57801bb871785638c56",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Liu Mingzhao (simplified Chinese: 刘明昭; traditional Chinese: 劉明昭; pinyin: Liú Míngzhāo; Wade–Giles: Liu Ming-chao; 4 December 1892 – 7 October 1986), more commonly known as Liu Bocheng (simplified Chinese: 刘伯承; traditional Chinese: 劉伯承; pinyin: Liú Bóchéng; Wade–Giles: Liu Po-ch'eng), was a Chinese military officer and Marshal of the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "li-lisan": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Li_Lisan",
+      "locator": "plain-text extract lead sentence; sha256 f9f7e683a62b0bb273b04bbebf8fc4973dcf682da472acdfcf8ecbcf8c2c0549",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Li Lisan (Chinese: 李立三; pinyin: Lǐ Lìsān; 18 November 1899 – 22 June 1967) was a Chinese politician, CPC Politburo member, and member of the Central People's Government Council."
+     }
+    ]
+   }
+  ],
+  "zhang-guotao": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhang_Guotao",
+      "locator": "plain-text extract lead sentence; sha256 6e813b1cfc138b13ffa1179984ccc5c7a9b78e68f2632afba5735a2d8769ef00",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Zhang Guotao (simplified Chinese: 张国焘; traditional Chinese: 張國燾, or Chang Kuo-tao; November 26, 1897 – December 3, 1979) was a Chinese revolutionary who was a founding member of the Chinese Communist Party (CCP) and rival to Mao Zedong."
+     }
+    ]
+   }
+  ],
+  "zhang-wentian": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhang_Wentian",
+      "locator": "plain-text extract lead sentence; sha256 f51cb35c6a349c0a5ff63a3b932fc74aafc4250002c23a4bc4da2fa62d52ab1d",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Zhang Wentian (30 August 1900 – 1 July 1976) was a Chinese politician who was a high-ranking leader of the Chinese Communist Party (CCP)."
+     }
+    ]
+   }
+  ],
+  "ren-bishi": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ren_Bishi",
+      "locator": "plain-text extract lead sentence; sha256 a3b962b2cee3613afc11d13775272b9209163ee5f8285812766b46d81a369873",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Ren Bishi (Chinese: 任弼时; pinyin: Rén Bìshí; Wade–Giles: Jen Pi-shih; 30 April 1904 – 27 October 1950) was a military and political leader in the early Chinese Communist Party (CCP)."
+     }
+    ]
+   }
+  ],
+  "li-dazhao": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Li_Dazhao",
+      "locator": "plain-text extract lead sentence; sha256 c9cf3268da059d198dd5237d0957f88e0114a21aad737164abe72b5bf5c1090c",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Li Dazhao (simplified Chinese: 李大钊; traditional Chinese: 李大釗; pinyin: Lǐ Dàzhāo; Wade–Giles: Li Ta-chao; 29 October 1889 – 28 April 1927) was a Chinese intellectual, revolutionary, and political activist who co-founded the Chinese Communist Party (CCP) with Chen Duxiu in 1921."
+     }
+    ]
+   }
+  ],
+  "peng-zhen": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Peng_Zhen",
+      "locator": "plain-text extract lead sentence; sha256 2228eb8e2f5e0a03507352af40e3c0689923ecfddd44fd81820748c84927119d",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Peng Zhen (pronounced [pʰə̌ŋ ʈʂə́n]; October 12, 1902 – April 26, 1997) was a Chinese politician and leading member of the Chinese Communist Party."
+     }
+    ]
+   }
+  ],
+  "chen-boda": [
+   {
+    "functionId": "propaganda",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Chen_Boda",
+      "locator": "plain-text extract lead sentence; sha256 84898ce4b691ba3bdcbd3734dceecd23ae1ba4a6d163ce21bf3bf4326031997b",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Chen Boda (29 July 1904 – 20 September 1989) was a Chinese Communist journalist, professor and political theorist who rose to power as the chief interpreter of Maoism (or \"Mao Zedong Thought\") in the first 20 years of the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "chen-yi": [
+   {
+    "functionId": "diplomacy",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Chen_Yi_%28marshal%29",
+      "locator": "plain-text extract lead sentence; sha256 eb94f62ae902bcc9f6638c0f3166a7ae9f81f9126e4e69f53f81ada9aa277167",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Chen Yi (Chinese: 陈毅; pinyin: Chén Yì; Wade–Giles: Ch'en I; August 26, 1901 – January 6, 1972) was a Chinese Communist military commander and politician."
+     }
+    ]
+   }
+  ],
+  "luo-ruiqing": [
+   {
+    "functionId": "security",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Luo_Ruiqing",
+      "locator": "plain-text extract lead sentence; sha256 df13d8980757e675798918b96003d4fcc3196a4f9f6faf212f4e5676c71255a1",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Luo Ruiqing (simplified Chinese: 罗瑞卿; traditional Chinese: 羅瑞卿; pinyin: Luó Ruìqīng; May 31, 1906 – August 3, 1978), formerly romanized as Lo Jui-ch'ing, was a Chinese army officer and politician, general of the People's Liberation Army."
+     }
+    ]
+   }
+  ],
+  "li-xiannian": [
+   {
+    "functionId": "economy",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Li_Xiannian",
+      "locator": "plain-text extract lead sentence; sha256 7a75f764f75f580448c52ce8453eca07ea54fd3a2b758053e61cd00c104458b1",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Li Xiannian ([lì ɕjɛ́nnjɛ̂n]; 23 June 1909 – 21 June 1992) was a Chinese Communist military and political leader, president of China from 1983 to 1988 under paramount leader Deng Xiaoping and then chairman of the Chinese People's Political Consultative Conference from 1988 until his death."
+     }
+    ]
+   }
+  ],
+  "deng-tuo": [
+   {
+    "functionId": "propaganda",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Deng_Tuo",
+      "locator": "plain-text extract lead sentence; sha256 ffd15ac48c1207c76d2e61ce12db2456ea38515e2fd8fd83b9fc64e3383bd1a5",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Deng Tuo (Chinese: 邓拓; pinyin: Dènɡ Tuò; c. 1911 – 17 May 1966), also known by the pen name Ma Nancun (Chinese: 马南邨; pinyin: Mǎ Náncūn), was a Chinese poet, intellectual and journalist."
+     }
+    ]
+   }
+  ],
+  "yao-wenyuan": [
+   {
+    "functionId": "propaganda",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yao_Wenyuan",
+      "locator": "plain-text extract lead sentence; sha256 7d46c8c900c094f9a23b4eb8eb00a1d6c0a578ea1aeb15778854176d4b235954",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Yao Wenyuan (January 12, 1931 – December 23, 2005) was a Chinese literary critic, politician, and member of the Gang of Four during China's Cultural Revolution."
+     }
+    ]
+   }
+  ],
+  "wang-hongwen": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Wang_Hongwen",
+      "locator": "plain-text extract lead sentence; sha256 a42479324a30e5a9380ccd244116189441887913688f0d82c9cb6bc4e91dccf0",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Wang Hongwen (December 1935 – 3 August 1992; also spelled as Wang Hung-wen) was a Chinese politician who was the youngest member of the Gang of Four."
+     }
+    ]
+   }
+  ],
+  "wang-dongxing": [
+   {
+    "functionId": "security",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Wang_Dongxing",
+      "locator": "plain-text extract lead sentence; sha256 5034dc134797d7b3b4a0975211b65b03b7cb2cb768eeaddd57167f2c705a42a4",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Wang Dongxing (Chinese: 汪东兴; pinyin: Wāng Dōngxìng; Wade–Giles: Wang1 Tung1-hsing4; 9 January 1916 – 21 August 2015) was a Chinese military commander and politician, famous for being the chief of Mao Zedong's personal bodyguard force, the 9th Bureau of the Ministry of Public Security (which included the 8341 Special Regiment)."
+     }
+    ]
+   }
+  ],
+  "rao-shushi": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Rao_Shushi",
+      "locator": "plain-text extract lead sentence; sha256 d54baf33e31082b210d7e629618b7032e753933dc54b5c7c8655c24a218953c4",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Rao Shushi (simplified Chinese: 饶漱石; traditional Chinese: 饒漱石; pinyin: Ráo Shùshí; Wade–Giles: Jao Shu-shih; 1903—1975) was a Chinese politician and a Chinese Communist Party (CCP) leader before he was purged in 1954 alongside Gao Gang."
+     }
+    ]
+   }
+  ],
+  "hua-guofeng": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Hua_Guofeng",
+      "locator": "plain-text extract lead sentence; sha256 124060fc05f54caf84eab79343c8efd08f35307961ab5c813b6c001ad33a9daf",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Hua Guofeng (born Su Zhu (苏铸); 16 February 1921 – 20 August 2008; also spelled as Hua Kuo-feng) was a Chinese politician who served as chairman of the Chinese Communist Party and the premier of China."
+     }
+    ]
+   }
+  ],
+  "hu-yaobang": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Hu_Yaobang",
+      "locator": "plain-text extract lead sentence; sha256 167e3cdb2256ff7a6c4b68fbca72ee82719789b38c81d162d26edfbaaa0f3e86",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Hu Yaobang (20 November 1915 – 15 April 1989) was a Chinese politician who was a high-ranking official of the People's Republic of China."
+     }
+    ]
+   }
+  ],
+  "zhao-ziyang": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhao_Ziyang",
+      "locator": "plain-text extract lead sentence; sha256 ba4b8809e200b49f121fd0963ce00090ae8887c40970fad749d2acc0146d86be",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Zhao Ziyang (17 October 1919 – 17 January 2005) was a Chinese politician."
+     }
+    ]
+   }
+  ],
+  "xi-zhongxun": [
+   {
+    "functionId": "government",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Xi_Zhongxun",
+      "locator": "plain-text extract lead sentence; sha256 7c8cb9e5984dda0e6916546a14acb4225975fa400414d86d428ba5caa32ddc12",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Xi Zhongxun (Chinese: 习仲勋; pinyin: Xí Zhòngxūn; 15 October 1913 – 24 May 2002) was a Chinese Communist politician."
+     }
+    ]
+   }
+  ],
+  "bo-yibo": [
+   {
+    "functionId": "economy",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Bo_Yibo",
+      "locator": "plain-text extract lead sentence; sha256 a3f18b1c293bc73a5600d7729a407b29a12bffaf661b5bc2cc6de681bb9f0e06",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Bo Yibo (Chinese: 薄一波; pinyin: Bó Yībō; Wade–Giles: Po2 I1-po1; 6 February 1908 – 15 January 2007) was one of the most senior political figures in China during the 1980s and 1990s."
+     }
+    ]
+   }
+  ],
+  "jiang-zemin": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jiang_Zemin",
+      "locator": "plain-text extract lead sentence; sha256 4aa9c1a947a216ad1e8de565354543528a5b3fd4cd71b15e3f0e2460f3b872df",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Jiang Zemin (17 August 1926 – 30 November 2022) was a Chinese politician who served as the general secretary of the Chinese Communist Party (CCP) and the fourth paramount leader of China from 1989 to 2002, as the chairman of the Central Military Commission from 1989 to 2004, and as the president of China from 1993 to 2003."
+     }
+    ]
+   }
+  ],
+  "li-peng": [
+   {
+    "functionId": "government",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Li_Peng",
+      "locator": "plain-text extract lead sentence; sha256 4d1bbe401b43c7d203c9327fb4035e8bbae6cbeb4c0db7496e2fbb99483591bc",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Li Peng (Chinese: 李鹏; pinyin: Lǐ Péng; 20 October 1928 – 22 July 2019) was a Chinese politician who served as the premier of China from 1987 to 1998, and as the chairman of the Standing Committee of the National People's Congress, China's top legislative body, from 1998 to 2003."
+     }
+    ]
+   }
+  ],
+  "yang-dezhi": [
+   {
+    "functionId": "military",
+    "affiliationId": "china-prc",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yang_Dezhi",
+      "locator": "plain-text extract lead sentence; sha256 3f9e0baeaa7730caffb0a4470aa0ec2e75e66039b704708f9cdfcdd00141cb44",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Yang Dezhi (simplified Chinese: 杨得志; traditional Chinese: 楊得志; pinyin: Yáng Dézhì; January 13, 1911 – October 25, 1994) was a Chinese general and politician."
+     }
+    ]
+   }
+  ],
+  "charles-william-ferdinand-of-brunswick": [
+   {
+    "functionId": "military",
+    "affiliationId": null,
+    "affiliationStatus": "unresolved",
+    "relation": "unresolved",
+    "primary": true,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Charles_William_Ferdinand%2C_Duke_of_Brunswick",
+      "locator": "plain-text extract lead sentence; sha256 4c519c9fc10e9ec3ee257573f6221c221e14d596845afd945e19a0957bdaf9c1",
+      "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+      "excerpt": "Charles William Ferdinand (German: Karl Wilhelm Ferdinand; 9 October 1735 – 10 November 1806) was the ruling prince of Brunswick-Wolfenbüttel, hereditary duke of Brunswick-Lüneburg and a military leader."
+     }
+    ]
+   }
+  ]
+ },
+ "patch": {}
+}
