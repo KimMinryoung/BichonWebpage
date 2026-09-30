@@ -24,7 +24,8 @@
     // word is one of that person's own names (총대주교 티혼).
     const nameParticles = new Set(['폰', '판', '반', '드', '데', '디', '델', '알', '엘', '벤', '이븐', '르', 'von', 'van', 'de', 'di', 'del', 'al', 'el', 'ben', 'ibn', 'le']);
     function followedByName(text, end, data, ids) {
-        const next = (text.slice(end).match(/^\s+([\p{L}\p{M}][\p{L}\p{M}.'’\-]*)/u) || [])[1];
+        // Quotes end the word: '코바치 이슈트반'이라는 still reads 이슈트반 + 이라는.
+        const next = (text.slice(end).match(/^\s+([\p{L}\p{M}][\p{L}\p{M}.\-]*)/u) || [])[1];
         if (!next) return false;
         if (/^[A-ZА-Я]\.$/u.test(next)) return true;
         const clean = normalize(next);
