@@ -1,0 +1,302 @@
+[
+ {
+  "id": "shevardnadze",
+  "name": "예두아르트 셰바르드나제",
+  "years": "1928–2014",
+  "office": "foreign-affairs"
+ },
+ {
+  "id": "matskevich",
+  "name": "블라디미르 마츠케비치",
+  "years": "1909–1998",
+  "office": "agriculture"
+ },
+ {
+  "id": "gerashchenko",
+  "name": "빅토르 게라셴코",
+  "years": "1937–2022",
+  "office": "economic-management"
+ },
+ {
+  "id": "kuusinen",
+  "name": "오토 빌레 쿠시넨",
+  "years": "1881–1964",
+  "office": "comintern"
+ },
+ {
+  "id": "konstantin-rokossovsky",
+  "name": "콘스탄틴 로코솝스키",
+  "years": "1896–1968",
+  "office": "defence"
+ },
+ {
+  "id": "sergei-biryuzov",
+  "name": "세르게이 비류조프",
+  "years": "1904/1905–1964",
+  "office": "defence"
+ },
+ {
+  "id": "boris-shumyatsky",
+  "name": "보리스 슈먀츠키",
+  "years": "1886–1938",
+  "office": "culture-literature"
+ },
+ {
+  "id": "nuritdin-mukhitdinov",
+  "name": "누리트딘 무히트디노프",
+  "years": "1917–2008",
+  "office": "party-secretariat-cadres"
+ },
+ {
+  "id": "lyushkov",
+  "name": "겐리흐 류시코프",
+  "years": "1900/1902–1945",
+  "office": "state-security"
+ },
+ {
+  "id": "yan-berzin",
+  "name": "얀 베르진",
+  "years": "1889–1938",
+  "office": "defence"
+ },
+ {
+  "id": "dzerzhinsky",
+  "name": "펠릭스 제르진스키",
+  "years": "1877–1926",
+  "office": "state-security"
+ },
+ {
+  "id": "martin-lacis",
+  "name": "마르틴 라치스",
+  "years": "1888–1938",
+  "office": "state-security"
+ },
+ {
+  "id": "aron-sheinman",
+  "name": "아론 셰인만",
+  "years": "1885–1944",
+  "office": "economic-management"
+ },
+ {
+  "id": "vasil-mzhavanadze",
+  "name": "바실 므자바나제",
+  "years": "1902–1988",
+  "office": "party-secretariat-cadres"
+ },
+ {
+  "id": "vasily-sergeevich-emelyanov",
+  "name": "바실리 예멜랴노프",
+  "years": "1901–1988",
+  "office": "science-nuclear-space"
+ },
+ {
+  "id": "aleksandr-korovushkin",
+  "name": "알렉산드르 코로부슈킨",
+  "years": "1909–1976",
+  "office": "economic-management"
+ },
+ {
+  "id": "aleksandr-panyushkin",
+  "name": "알렉산드르 파뉴시킨",
+  "years": "1905–1974",
+  "office": "state-security"
+ },
+ {
+  "id": "nikolai-shatalin",
+  "name": "니콜라이 샤탈린",
+  "years": "1904–1984",
+  "office": "party-secretariat-cadres"
+ },
+ {
+  "id": "pyotr-fedotov",
+  "name": "표트르 페도토프",
+  "years": "1900–1963",
+  "office": "state-security"
+ },
+ {
+  "id": "viktor-kuznetsov",
+  "name": "빅토르 쿠즈네초프",
+  "years": "1913–1991",
+  "office": "science-nuclear-space"
+ },
+ {
+  "id": "vladimir-bakhirev",
+  "name": "블라디미르 바히레프",
+  "years": "1916–1991",
+  "office": "heavy-military-industry"
+ },
+ {
+  "id": "markian-popov",
+  "name": "마르키안 포포프",
+  "years": "1902–1969",
+  "office": "defence"
+ },
+ {
+  "id": "lebedev-poliansky",
+  "name": "파벨 레베데프-폴랸스키",
+  "years": "1881–1948",
+  "office": "culture-literature"
+ },
+ {
+  "id": "mikhail-kozlovsky",
+  "name": "미하일 코즐롭스키",
+  "years": "?–?",
+  "office": "state-security"
+ },
+ {
+  "id": "nikolai-martynov",
+  "name": "니콜라이 마르티노프",
+  "years": "1910–1998",
+  "office": "central-planning"
+ },
+ {
+  "id": "nikolai-novikov-diplomat",
+  "name": "니콜라이 노비코프",
+  "years": "1903–1989",
+  "office": "foreign-affairs"
+ },
+ {
+  "id": "aram-khachaturian",
+  "name": "아람 하차투랸",
+  "years": "1903–1978",
+  "office": "culture-literature"
+ },
+ {
+  "id": "nikolai-golushko",
+  "name": "니콜라이 골루시코",
+  "years": "1937–2025",
+  "office": "state-security"
+ },
+ {
+  "id": "mikhail-yegorov",
+  "name": "미하일 예고로프",
+  "years": "1907–2000",
+  "office": "heavy-military-industry"
+ },
+ {
+  "id": "vagan-grigoryan",
+  "name": "바간 그리고랸",
+  "years": "1901/1902–1983",
+  "office": "ideology-propaganda"
+ },
+ {
+  "id": "sergei-shpigelglas",
+  "name": "세르게이 시피겔글라스",
+  "years": "1897–1940",
+  "office": "state-security"
+ },
+ {
+  "id": "alexander-krasnoshchyokov",
+  "name": "알렉산드르 크라스노쇼코프",
+  "years": "1880–1937",
+  "office": "economic-management"
+ },
+ {
+  "id": "alexander-smirnov",
+  "name": "알렉산드르 스미르노프",
+  "years": "1877–1938",
+  "office": "agriculture"
+ },
+ {
+  "id": "leonid-kravchuk",
+  "name": "레오니트 크랍추크",
+  "years": "1934–2022",
+  "office": "state-head"
+ },
+ {
+  "id": "alexander-alexeyev",
+  "name": "알렉산드르 알렉세예프",
+  "years": "1913–2001",
+  "office": "foreign-affairs"
+ },
+ {
+  "id": "mikhail-bonch-bruyevich",
+  "name": "미하일 본치-브루예비치",
+  "years": "1870–1956",
+  "office": "defence"
+ },
+ {
+  "id": "sergei-yevdokimov",
+  "name": "세르게이 예브도키모프",
+  "years": "1955–",
+  "office": "defence"
+ },
+ {
+  "id": "fuad-musayev",
+  "name": "푸아트 무사예프",
+  "years": "1938–2017",
+  "office": "party-secretariat-cadres"
+ },
+ {
+  "id": "helmut-grottrup",
+  "name": "헬무트 그뢰트루프",
+  "years": "1916–1981",
+  "office": "science-nuclear-space"
+ },
+ {
+  "id": "juozas-jermalavicius",
+  "name": "유오자스 예르말라비추스",
+  "years": "1940–2022",
+  "office": "ideology-propaganda"
+ },
+ {
+  "id": "maria-volodicheva",
+  "name": "마리야 볼로디체바",
+  "years": "1891–1973",
+  "office": "party-secretariat-cadres"
+ },
+ {
+  "id": "boris-mikhailov",
+  "name": "보리스 미하일로프",
+  "years": "",
+  "office": "science-nuclear-space"
+ },
+ {
+  "id": "valentin-bodiul",
+  "name": "발렌틴 보듈",
+  "years": "1951–2020",
+  "office": "economic-management"
+ },
+ {
+  "id": "nikolai-beloborodov",
+  "name": "니콜라이 벨로보로도프",
+  "years": "1910–2003",
+  "office": "defence"
+ },
+ {
+  "id": "nikolai-kuzmin",
+  "name": "니콜라이 쿠즈민",
+  "years": "1883–1938",
+  "office": "defence"
+ },
+ {
+  "id": "yefrem-sokolov",
+  "name": "예프렘 소콜로프",
+  "years": "1926–2022",
+  "office": "party-leadership"
+ },
+ {
+  "id": "ayaz-mutalibov",
+  "name": "아야즈 무탈리보프",
+  "years": "1938–2022",
+  "office": "nationalities-federal"
+ },
+ {
+  "id": "vyacheslav-kebich",
+  "name": "뱌체슬라프 케비치",
+  "years": "1936–2020",
+  "office": "head-of-government"
+ },
+ {
+  "id": "pavel-vasilyev",
+  "name": "파벨 바실리예프",
+  "years": "1885–?",
+  "office": "head-of-government"
+ },
+ {
+  "id": "vasily-karutsky",
+  "name": "바실리 카루츠키",
+  "years": "1900–1938",
+  "office": "state-security"
+ }
+]
