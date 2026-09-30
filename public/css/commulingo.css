@@ -5431,12 +5431,16 @@ a.commu-activity-chip { display: inline-flex; align-items: center; gap: .35rem; 
 }
 /* Activity names read as body text; the underline alone marks them as links. */
 .commu-person-activities li { font-size: var(--text-md); }
-.commu-person-activity-link {
-    color: var(--text-primary); font-weight: 600;
+.commu-person-activity-link, .commu-person-office-link, .commu-person-collections a {
+    color: var(--text-primary);
     text-decoration: underline; text-decoration-thickness: 1px;
     text-underline-offset: .2em;
     text-decoration-color: color-mix(in srgb, var(--text-primary) 45%, transparent);
 }
-.commu-person-activity-link:hover { color: var(--text-primary); text-decoration-color: currentColor; }
+.commu-person-activity-link { font-weight: 600; }
+.commu-person-activity-link:hover, .commu-person-office-link:hover, .commu-person-collections a:hover { color: var(--text-primary); text-decoration-color: currentColor; }
+/* The affiliation shares the activity's link (same filter URL) but keeps its quieter weight. */
+.commu-person-activity-link .commu-person-affiliation { display: inline; font-weight: 400; }
+.commu-person-activity-link .commu-person-affiliation .commu-role-icon { vertical-align: -3px; margin-right: var(--space-1); }
 .commu-person-affiliation { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-secondary); font-size: var(--text-sm); }
 .commu-person-affiliation .commu-role-icon { width: 16px; height: 16px; flex-shrink: 0; }
