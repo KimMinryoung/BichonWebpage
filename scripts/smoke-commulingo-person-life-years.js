@@ -52,6 +52,8 @@ for (const lang of ['ko', 'en']) {
 // of just one field must not bypass validation of its counterpart.
 async function main() {
     await assert.rejects(createPersonAdmin({ years: '현재' }), { status: 400 });
+    // Registration requires documented activities; a legacy role alone is refused before any write.
+    await assert.rejects(createPersonAdmin({ years: '1900–1950', role: { icon: 'book-open' } }), /activities are required on create/);
     await assert.rejects(createPersonAdmin({ years: '1987–', fate }), { status: 400 });
     const stored = { id: 'test-person', years_label: '1987–', fate_kind: '', fate_label_ko: '', fate_label_en: '' };
     const client = { query: async sql => {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Register or update CommuLingo people through the Admin store — the same
 // validation the /admin/api/commulingo/people endpoints run (native script,
-// name parts, patronymic separation, nationality codes, role required, short
+// name parts, patronymic separation, nationality codes, documented activities required, short
 // card labels) — instead of hand-written INSERT statements, which bypass all of
 // it (migration 167, 2026-09-05: voldemar-ulmer landed with no role row and a
 // sentence for a fate label).
@@ -21,7 +21,10 @@
 //   "citizenship": {"code": "soviet"}, "nationalOrigin": {"code": "estonia", "label": {"ko": "에스토니아 (스웨덴계)", "en": "Estonia (Swedish descent)"}},
 //   "epithet": {"ko": "...", "en": "..."}, "bio": {"ko": "...", "en": "..."},
 //   "fate": {"kind": "natural", "label": {"ko": "수용소에서 사망", "en": "Died in a labour camp"}},
-//   "role": {"officeId": "state-security"},              // or {"category": "..."} / {"icon": "..."}
+//   "activities": [{"functionId": "security", "affiliationId": "state-soviet", "affiliationStatus": "confirmed",
+//                   "relation": "service", "officeId": "state-security", "startYear": 1937, "endYear": 1938, "primary": true,
+//                   "evidence": [{"source": "<url in sources>", "locator": "...", "claim": "...", "excerpt": "..."}]}],
+//                                                        // required (activity-schema.json); legacy "role" is optional
 //   "aliases": {"ko": ["울메르", "V.A. 울메르"], "en": ["Ulmer", "V. A. Ulmer"]},
 //   "career": [...], "scenes": [...],
 //   "sections": [{"slug": "great-terror", "sortOrder": 193704, "heading": {"ko": "...", "en": "..."}, "body": {"ko": "...", "en": "..."}, "sources": [...]}]

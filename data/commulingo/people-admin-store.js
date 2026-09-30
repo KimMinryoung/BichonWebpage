@@ -349,6 +349,12 @@ async function createPersonAdmin(rawPayload, options = {}) {
     if (lifeProblems.length) throw badRequest(lifeProblems.join(' | '));
     assertPersonHeadwords(payload);
     if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
+    // A new person is registered with documented activities (function,
+    // affiliation, evidence — activity-schema.json); the card, filters and
+    // icon come from them. The legacy role is optional and being retired.
+    if (!Array.isArray(payload.activities) || !payload.activities.length) {
+        throw badRequest('activities are required on create: at least one documented activity with exactly one primary (functionId, affiliationId/affiliationStatus, relation, evidence); role is legacy and optional');
+    }
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
         await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-person-create'))");
@@ -387,11 +393,6 @@ async function createPersonAdmin(rawPayload, options = {}) {
             'SELECT COALESCE(MAX(sort_order), -1) + 1 AS next_sort FROM commulingo_people'
         );
         const years = parseLifeYears(payload.years || '');
-        // Every card belongs to an office, a category or at least an icon;
-        // a person without a role row is invisible to the office/category pages.
-        if ((!payload.role || typeof payload.role !== 'object') && !payload.activities?.length) {
-            throw badRequest('role is required on create: { officeId } (e.g. state-security), { category } or { icon }');
-        }
         const fateKo = payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), years.deathYear) : '';
         const fateEn = payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '';
         assertCardLabels({ fateKo, fateEn, citizenship, origin });
