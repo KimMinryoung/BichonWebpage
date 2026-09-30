@@ -20,7 +20,7 @@
 -- first group. Assignment follows the Soviet shelf rule: the era in which the
 -- public role a person is in the dictionary for peaked, not birth or death
 -- (Hindenburg and Pétain interwar, Luxemburg with Liebknecht in the German
--- revolution, Bevin and MacArthur after 1945). 732 people, reviewed from each
+-- revolution, Bevin and MacArthur after 1945). 742 people, reviewed from each
 -- epithet, primary activity and bio on 2026-09-30.
 --
 -- 이 역사를 연구한 사람들 (scholar) stays: it is not a camp but later
@@ -52,7 +52,7 @@ VALUES
 
 UPDATE commulingo_people_groups SET sort_order = 99, updated_at = NOW() WHERE id = 'scholar';
 
--- 47 people
+-- 51 people
 UPDATE commulingo_people SET group_id = 'world-before-1917', updated_at = NOW()
  WHERE group_id IN ('international-revolutionary', 'foreign-statesmen', 'international-counterrevolutionary')
    AND id IN (
@@ -65,9 +65,10 @@ UPDATE commulingo_people SET group_id = 'world-before-1917', updated_at = NOW()
     'jules-guesde', 'karl-kautsky', 'karl-marx', 'keir-hardie', 'leo-frankel',
     'louis-auguste-blanqui', 'louise-michel', 'martov', 'mikhail-bakunin', 'patrice-de-mac-mahon',
     'paul-lafargue', 'pavel-akselrod', 'prosper-olivier-lissagaray', 'pyotr-kropotkin',
-    'robert-owen', 'victor-adler', 'wilhelm-liebknecht', 'zetkin');
+    'robert-owen', 'victor-adler', 'wilhelm-liebknecht', 'zetkin',
+    'gustave-cluseret', 'louis-rossel', 'nathalie-le-mel', 'raoul-rigault');
 
--- 331 people
+-- 332 people
 UPDATE commulingo_people SET group_id = 'world-interwar', updated_at = NOW()
  WHERE group_id IN ('international-revolutionary', 'foreign-statesmen', 'international-counterrevolutionary')
    AND id IN (
@@ -142,9 +143,9 @@ UPDATE commulingo_people SET group_id = 'world-interwar', updated_at = NOW()
     'william-d-leahy', 'william-n-haskell', 'william-seeds', 'william-sholto-douglas',
     'william-z-foster', 'winston-churchill', 'wladyslaw-sikorski', 'yakov-slashchov',
     'yevhen-konovalets', 'yi-dong-hwi', 'yoshijiro-umezu', 'yosuke-matsuoka', 'zigfrids-meierovics',
-    'zigmas-angarietis');
+    'zigmas-angarietis', 'miklos-horthy');
 
--- 354 people
+-- 359 people
 UPDATE commulingo_people SET group_id = 'world-cold-war', updated_at = NOW()
  WHERE group_id IN ('international-revolutionary', 'foreign-statesmen', 'international-counterrevolutionary')
    AND id IN (
@@ -219,7 +220,8 @@ UPDATE commulingo_people SET group_id = 'world-cold-war', updated_at = NOW()
     'wilhelm-pieck', 'william-h-tunner', 'william-k-harrison-jr', 'william-l-clayton',
     'william-westmoreland', 'willy-brandt', 'wladyslaw-gomulka', 'wojciech-jaruzelski',
     'yeo-un-hyeong', 'yumjaagiin-tsedenbal', 'zbigniew-brzezinski', 'zdenek-fierlinger',
-    'zdenek-mlynar', 'zdzislaw-kurowski', 'zoltan-tildy');
+    'zdenek-mlynar', 'zdzislaw-kurowski', 'zoltan-tildy',
+    'duong-van-minh', 'jean-sainteny', 'lee-kuan-yew', 'lon-nol', 'raoul-salan');
 
 -- Anyone added to a retired group after this file was drafted stops the
 -- migration instead of being dropped with the group.
