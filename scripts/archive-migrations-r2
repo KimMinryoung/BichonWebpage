@@ -31,9 +31,8 @@ set -a; . ./.env; set +a
 MODE="${1:-}" FRONTEND_DIR="$FRONTEND_DIR" CREDENTIALS_DIRECTORY="$MOUNT" ./venv/bin/python - <<'EOF'
 import glob, hashlib, os, sys
 sys.path.insert(0, 'scripts'); sys.path.insert(0, '.')
-from _r2_backup import promote_systemd_credentials, r2_put
+from _r2_backup import promote_systemd_credentials, r2_list_keys as _list_keys, r2_put
 promote_systemd_credentials()
-from r2_retention import _list_keys
 
 BUCKET = 'cyber-lenin-backups'
 PREFIX = 'commulingo-migrations/'
