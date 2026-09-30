@@ -10,7 +10,6 @@ async function personRevision(client, personId) {
         'career', (SELECT jsonb_agg(to_jsonb(c) ORDER BY id) FROM commulingo_person_career_entries c WHERE person_id=p.id),
         'scenes', (SELECT jsonb_agg(to_jsonb(s) ORDER BY collection_id, episode_id) FROM commulingo_person_scenes s WHERE person_id=p.id),
         'patronymic', (SELECT to_jsonb(n) FROM commulingo_person_patronymics n WHERE person_id=p.id),
-        'role', (SELECT to_jsonb(r) FROM commulingo_person_roles r WHERE person_id=p.id),
         'sections', (SELECT jsonb_agg(to_jsonb(s) ORDER BY slug) FROM commulingo_person_sections s WHERE person_id=p.id),
         'offices', (SELECT jsonb_agg(to_jsonb(o) ORDER BY id) FROM commulingo_office_rows o WHERE person_id=p.id)
         )::text AS state FROM commulingo_people p WHERE p.id=$1`, [personId]);

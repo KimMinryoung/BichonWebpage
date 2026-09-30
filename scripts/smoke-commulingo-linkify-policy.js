@@ -99,7 +99,7 @@ const docs = [{
 }];
 
 const standardized = {
-    roleCategories: {},
+    collections: [],
     offices: [{ id: 'state-security', title: '국가보안기관' }],
 };
 

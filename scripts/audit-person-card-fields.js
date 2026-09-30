@@ -2,11 +2,11 @@
 // Backstop for CommuLingo people rows written by hand-run SQL: the card fields
 // the Admin API validates on write (data/commulingo/person-card-validation.js)
 // are not validated by psql. Migration 167 (2026-09-05) is the case that
-// motivated it — voldemar-ulmer was inserted with no role row, a sentence for
+// motivated it — voldemar-ulmer was inserted with no classification, a sentence for
 // a fate label and a birthplace for the national-origin label.
 //
 // Rules (exit 1 on any hit):
-//   - every person has a commulingo_person_roles row (office, category or icon);
+//   - every person has exactly one primary activity (commulingo_people.activities);
 //   - fate labels are short card labels, not sentences;
 //   - citizenship / national-origin labels are not birthplaces.
 //   - life dates use year ranges, with matching numeric columns;
@@ -27,9 +27,8 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             `SELECT p.id, p.years_label, p.birth_year, p.death_year, p.fate_kind, p.fate_label_ko, p.fate_label_en,
                     p.citizenship_label_ko, p.citizenship_label_en,
                     p.origin_label_ko, p.origin_label_en,
-                    r.person_id AS role_person_id, COALESCE(to_jsonb(p)->'activities', '[]'::jsonb) AS activities
+                    COALESCE(to_jsonb(p)->'activities', '[]'::jsonb) AS activities
              FROM commulingo_people p
-             LEFT JOIN commulingo_person_roles r ON r.person_id = p.id
              ORDER BY p.id`
         );
         const problems = [];
@@ -38,7 +37,7 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             for (const p of personLifeProblems(row.years_label, { kind: row.fate_kind, label: { ko: row.fate_label_ko, en: row.fate_label_en } })) problems.push(`${row.id}: ${p}`);
             const years = parseLifeYears(row.years_label);
             if (years.birthYear !== row.birth_year || years.deathYear !== row.death_year) problems.push(`${row.id}: birth_year/death_year disagree with years_label`);
-            if (!row.role_person_id && !row.activities?.some(a => a.primary)) problems.push(`${row.id}: no commulingo_person_roles row (set officeId, category or icon)`);
+            if ((row.activities || []).filter(a => a.primary).length !== 1) problems.push(`${row.id}: needs exactly one primary activity`);
             for (const p of fateLabelProblems({ ko: row.fate_label_ko, en: row.fate_label_en })) problems.push(`${row.id}: ${p}`);
             for (const p of nationalityLabelProblems({
                 citizenshipKo: row.citizenship_label_ko, citizenshipEn: row.citizenship_label_en,
@@ -55,7 +54,7 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             for (const p of problems) console.log(`  ${p}`);
             process.exitCode = 1;
         } else {
-            console.log(`OK — ${rows.length} people checked: valid life dates and fate metadata, role rows, short fate labels and nation origin labels.`);
+            console.log(`OK — ${rows.length} people checked: valid life dates and fate metadata, primary activities, short fate labels and nation origin labels.`);
         }
     } catch (err) {
         console.error(err);

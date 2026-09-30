@@ -77,19 +77,8 @@ function activityHref(a) {
 }
 
 // officeTitles: { [officeId]: { ko, en } } from commulingo_offices.
-function displayActivities(raw, legacyRole, lang, person = {}, officeTitles = {}) {
-    let rows = raw || [];
-    if (!rows.length) {
-        const key = legacyRole?.officeId || legacyRole?.categoryId || legacyRole?.category;
-        const mapped = catalog.legacy[key];
-        if (mapped) {
-            const before = catalog.legacyBeforeState?.[key];
-            const years = String(person.years || '').match(/[–−-]\s*(\d{4})\s*$/);
-            const affiliationId = before && years && Number(years[1]) < before.startYear ? before.affiliationId : mapped[1];
-            const officeId = OFFICE_AFFILIATIONS.has(affiliationId) && legacyRole.officeId || null;
-            rows = [{ functionId: mapped[0], affiliationId, officeId, primary: true, provenance: 'legacy-role' }];
-        }
-    }
+function displayActivities(raw, lang, officeTitles = {}) {
+    const rows = raw || [];
     return rows.filter(a => functions.has(a.functionId)).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,

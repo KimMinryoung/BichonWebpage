@@ -7,7 +7,7 @@ const { mergePersonPatch } = require('./people-patch');
 const { assertLinkExpressions } = require('./link-expressions');
 const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
-const { OFFICE_ICON, normalizeFateLabel } = require('./people-standard');
+const { normalizeFateLabel } = require('./people-standard');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
@@ -20,55 +20,11 @@ async function officeIdSet(client) {
 }
 
 // Person records for the CommuLingo admin API: list/get, create/update/
-// delete with the child tables (role, aliases, scenes, patronymic, career).
+// delete with the child tables (aliases, scenes, patronymic, career).
 // Offices and sections have their own stores; name/nationality rules are in
 // people-admin-validation.js; field helpers and the transaction/revision
 // primitives are shared with them.
 
-async function replaceRole(client, personId, role) {
-    if (role === undefined) return;
-    if (role === null) {
-        await client.query('DELETE FROM commulingo_person_roles WHERE person_id = $1', [personId]);
-        return;
-    }
-    if (!role || typeof role !== 'object') throw badRequest('role must be an object or null');
-
-    const category = typeof role.category === 'string' ? role.category.trim() : '';
-    const icon = typeof role.icon === 'string' ? role.icon.trim() : '';
-    const officeId = typeof role.officeId === 'string' ? role.officeId.trim() : '';
-    if (!category && !icon && !officeId) throw badRequest('role.category, role.icon, or role.officeId is required');
-    if (category) {
-        const categoryResult = await client.query('SELECT 1 FROM commulingo_role_categories WHERE id = $1', [category]);
-        if (!categoryResult.rows.length) throw badRequest('role.category not found');
-    }
-    if (!category && officeId) {
-        const officeResult = await client.query('SELECT 1 FROM commulingo_offices WHERE id = $1', [officeId]);
-        if (!officeResult.rows.length) throw badRequest('role.officeId not found');
-    }
-
-    const label = role.label || {};
-    await client.query(
-        `INSERT INTO commulingo_person_roles
-            (person_id, icon, office_id, category_id, label_ko, label_en, updated_at)
-         VALUES ($1, $2, NULLIF($3, ''), NULLIF($4, ''), $5, $6, NOW())
-         ON CONFLICT (person_id)
-         DO UPDATE SET
-            icon = EXCLUDED.icon,
-            office_id = EXCLUDED.office_id,
-            category_id = EXCLUDED.category_id,
-            label_ko = EXCLUDED.label_ko,
-            label_en = EXCLUDED.label_en,
-            updated_at = NOW()`,
-        [
-            personId,
-            category ? '' : icon,
-            category ? '' : officeId,
-            category,
-            category ? '' : contentLocalized(label, 'ko'),
-            category ? '' : localized(label, 'en'),
-        ]
-    );
-}
 
 // Card labels are short and never a place: the same rule the audit script
 // checks after hand-run SQL (data/commulingo/person-card-validation.js).
@@ -167,7 +123,6 @@ async function getPersonAdmin(personId, options = {}) {
         sceneResult,
         careerResult,
         officeRowResult,
-        roleResult,
     ] = await Promise.all([
         client.query(
             `SELECT patronymic_ko, patronymic_en, cyrillic_patronymic
@@ -205,16 +160,6 @@ async function getPersonAdmin(personId, options = {}) {
              ORDER BY o.sort_order, r.sort_order, r.id`,
             [id]
         ),
-        client.query(
-            `SELECT r.icon, r.office_id, r.category_id, r.label_ko, r.label_en,
-                    o.icon AS office_icon, o.title_ko AS office_title_ko, o.title_en AS office_title_en,
-                    c.icon AS category_icon, c.label_ko AS category_label_ko, c.label_en AS category_label_en
-             FROM commulingo_person_roles r
-             LEFT JOIN commulingo_offices o ON o.id = r.office_id
-             LEFT JOIN commulingo_role_categories c ON c.id = r.category_id
-             WHERE r.person_id = $1`,
-            [id]
-        ),
     ]);
 
     const person = rowToPerson(personResult.rows[0]);
@@ -246,21 +191,6 @@ async function getPersonAdmin(personId, options = {}) {
         body: t(row.body_ko, row.body_en),
         note: t(row.note_ko, row.note_en),
     }));
-    if (roleResult.rows.length) {
-        const role = roleResult.rows[0];
-        const categoryLabel = t(role.category_label_ko, role.category_label_en);
-        const legacyLabel = t(role.label_ko, role.label_en);
-        const officeLabel = t(role.office_title_ko, role.office_title_en);
-        person.role = {
-            category: role.category_id || '',
-            officeId: role.office_id || '',
-            icon: role.icon || '',
-            label: categoryLabel.ko || categoryLabel.en ? categoryLabel : (legacyLabel.ko || legacyLabel.en ? legacyLabel : officeLabel),
-            resolvedIcon: role.category_icon || role.icon || role.office_icon || OFFICE_ICON[role.office_id] || 'circle-help',
-        };
-    } else {
-        person.role = null;
-    }
     person.revision = await personRevision(client, id);
     return person;
 }
@@ -351,9 +281,9 @@ async function createPersonAdmin(rawPayload, options = {}) {
     if (payload.linkExpressions !== undefined) assertLinkExpressions(payload.linkExpressions);
     // A new person is registered with documented activities (function,
     // affiliation, evidence — activity-schema.json); the card, filters and
-    // icon come from them. The legacy role is optional and being retired.
+    // icon come from them. A legacy `role` key is ignored (the table is gone).
     if (!Array.isArray(payload.activities) || !payload.activities.length) {
-        throw badRequest('activities are required on create: at least one documented activity with exactly one primary (functionId, affiliationId/affiliationStatus, relation, evidence); role is legacy and optional');
+        throw badRequest('activities are required on create: at least one documented activity with exactly one primary (functionId, affiliationId/affiliationStatus, relation, evidence)');
     }
     return withTransaction(options, async client => {
         const id = requireId(payload.id, 'person id');
@@ -454,7 +384,6 @@ async function createPersonAdmin(rawPayload, options = {}) {
             validateActivities(payload.activities, payload.sources || options.sources || [], { officeIds: await officeIdSet(client) });
             await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
         }
-        if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         const person = await getPersonAdmin(id, { client });
         await recordEvidence(client, id, '', payload, options, person.revision);
         await writeRevision(client, 'person', id, 'create person', person, options.changedBy);
@@ -479,9 +408,6 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         validateEditorial(payload, options);
         if (!options.reviewed && reviewReasons('person', 'update', payload, before).length) {
             const error = badRequest('edit requires review; submit through the shared editorial service'); error.status = 422; throw error;
-        }
-        if (before.activities?.length && payload.role !== undefined && payload.activities === undefined) {
-            throw badRequest('this person uses activities; update activities with evidence instead of the legacy role');
         }
         const collections = planCollectionEdits(before, payload);
         payload = mergePersonPatch(before, payload);
@@ -652,7 +578,6 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             validateActivities(payload.activities, payload.sources || options.sources || [], { officeIds: await officeIdSet(client) });
             await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
         }
-        if (payload.role !== undefined) await replaceRole(client, id, payload.role);
         if (collections.aliases !== undefined) await replaceAliases(client, id, collections.aliases);
         if (collections.scenes !== undefined) await replaceScenes(client, id, collections.scenes);
         await applyCareerEdits(client, id, collections.career);

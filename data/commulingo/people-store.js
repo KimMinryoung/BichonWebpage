@@ -45,8 +45,6 @@ async function fetchRows() {
         careers,
         offices,
         officeRows,
-        personRoles,
-        roleCategories,
         sections,
         redirects,
         collections,
@@ -100,16 +98,6 @@ async function fetchRows() {
              ORDER BY office_id, sort_order, id`
         ),
         client.query(
-            `SELECT person_id, icon, office_id, category_id, label_ko, label_en, updated_at
-             FROM commulingo_person_roles
-             ORDER BY person_id`
-        ),
-        client.query(
-            `SELECT id, icon, label_ko, label_en, updated_at
-             FROM commulingo_role_categories
-             ORDER BY sort_order, id`
-        ),
-        client.query(
             `SELECT person_id, slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources, updated_at
              FROM commulingo_person_sections
              ORDER BY person_id, sort_order, id`
@@ -140,8 +128,6 @@ async function fetchRows() {
         careers: careers.rows,
         offices: offices.rows,
         officeRows: officeRows.rows,
-        personRoles: personRoles.rows,
-        roleCategories: roleCategories.rows,
         sections: sections.rows,
         redirects: redirects.rows,
         collections: collections.rows,
@@ -228,32 +214,6 @@ function rowsToPeopleData(rows) {
             note: t(row.note_ko, row.note_en),
             updatedAt: latestTimestamp(row.updated_at),
         });
-    });
-
-    const personRoles = {};
-    const officeUpdatedAt = Object.fromEntries(rows.offices.map(row => [row.id, row.updated_at]));
-    const roleCategoryUpdatedAt = Object.fromEntries(rows.roleCategories.map(row => [row.id, row.updated_at]));
-    rows.personRoles.forEach(row => {
-        markPersonUpdated(row.person_id, latestTimestamp(
-            row.updated_at,
-            officeUpdatedAt[row.office_id],
-            roleCategoryUpdatedAt[row.category_id],
-        ));
-        const label = t(row.label_ko, row.label_en);
-        personRoles[row.person_id] = {
-            icon: row.icon || '',
-            officeId: row.office_id || '',
-            categoryId: row.category_id || '',
-            label: label.ko || label.en ? label : null,
-        };
-    });
-
-    const roleCategories = {};
-    rows.roleCategories.forEach(row => {
-        roleCategories[row.id] = {
-            icon: row.icon || '',
-            label: t(row.label_ko, row.label_en),
-        };
     });
 
     // Full detail-page sections, snapshotted so /commulingo/people/<id> renders
@@ -343,8 +303,6 @@ function rowsToPeopleData(rows) {
         careers,
         patronymics,
         cyrillicPatronymics,
-        personRoles,
-        roleCategories,
         sectionCounts,
         sections: sectionsByPerson,
         redirects: rowsToRedirects(rows.redirects),
@@ -358,7 +316,7 @@ const store = createDictionarySnapshotStore({
     snapshotPath: process.env.COMMULINGO_PEOPLE_SNAPSHOT
         || path.join(__dirname, 'people-snapshot.json'),
     fetchData: async () => rowsToPeopleData(await fetchRows()),
-    signatureTables: ['commulingo_id_redirects', 'commulingo_office_rows', 'commulingo_offices', 'commulingo_people', 'commulingo_people_groups', 'commulingo_person_aliases', 'commulingo_person_collection_members', 'commulingo_person_collections', 'commulingo_person_career_entries', 'commulingo_person_patronymics', 'commulingo_person_roles', 'commulingo_person_scenes', 'commulingo_person_sections', 'commulingo_role_categories'],
+    signatureTables: ['commulingo_id_redirects', 'commulingo_office_rows', 'commulingo_offices', 'commulingo_people', 'commulingo_people_groups', 'commulingo_person_aliases', 'commulingo_person_collection_members', 'commulingo_person_collections', 'commulingo_person_career_entries', 'commulingo_person_patronymics', 'commulingo_person_scenes', 'commulingo_person_sections'],
     isEmpty: data => !data.people.length,
     emptyErrorMessage: 'commulingo_people has no rows',
     emptyErrorCode: 'COMMULINGO_PEOPLE_EMPTY',

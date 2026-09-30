@@ -47,10 +47,9 @@ router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         setShortPublicCache(res);
-        const { roleCategories, groupsMeta } = peopleShellFor(standardized, lang);
+        const { groupsMeta } = peopleShellFor(standardized);
         res.render('public/commulingo-people', {
             offices: standardized.offices,
-            roleCategories,
             personCollections: (standardized.collections || []).filter(c => c.personIds.length),
             activityFunctions: activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id })).length })),
             groupsMeta,
@@ -286,12 +285,11 @@ router.get('/roles/:categoryId', async (req, res) => {
                 pageDescription: localize(retired.note, lang), pagePath: `/commulingo/roles/${categoryId}` });
         }
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
-        // Political positions are curated collections (migration 213) served
-        // at the old role-category URL; other categories still list the role.
+        // The old role-category URLs: function categories redirect to their
+        // activity filter (above), regional ones are pointer pages (above) and
+        // political positions are curated collections (migration 213).
         const collection = (standardized.collections || []).find(c => c.id === categoryId);
-        const category = collection
-            ? { id: collection.id, icon: collection.icon, label: collection.title, intro: collection.intro }
-            : standardized.roleCategories[categoryId];
+        const category = collection && { id: collection.id, icon: collection.icon, label: collection.title, intro: collection.intro };
         if (!category) {
             const renamed = redirectTarget(loaded.data, 'role-category', categoryId);
             if (renamed) return res.redirect(301, `/commulingo/roles/${renamed}`);
@@ -301,9 +299,7 @@ router.get('/roles/:categoryId', async (req, res) => {
                 backLabel: lang === 'en' ? 'People' : '인물 사전',
             });
         }
-        const people = sortPeopleChronologically(collection
-            ? collection.personIds.map(id => standardized.peopleById[id])
-            : standardized.people.filter(person => person.role && person.role.categoryId === category.id));
+        const people = sortPeopleChronologically(collection.personIds.map(id => standardized.peopleById[id]));
         const relatedReports = await relatedReportsForTopic('role', category.id, lang);
         setShortPublicCache(res);
         res.render('public/commulingo-role', {

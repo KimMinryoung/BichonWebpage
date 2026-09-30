@@ -42,7 +42,6 @@ function validateEditorial(payload, options = {}, section = false) {
             throw badRequest(`evidence must identify the claim and page/section supporting ${field}`);
         }
     }
-    if (payload.role === null && !payload.activities?.length) throw badRequest('a person must retain a primary role');
     const flags = payload.reviewFlags ?? [];
     if (!Array.isArray(flags) || flags.some(f => !REVIEW_FLAGS.includes(f))) throw badRequest('invalid reviewFlags');
     return { sources, evidence, flags };

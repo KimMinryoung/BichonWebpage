@@ -7,5 +7,4 @@ API and are kept for the record, not for re-running:
 - `normalize-commulingo-fate-db.js` (2026-07-14) — normalized fate labels in commulingo_people.
 - `cloudflare-analytics.js` (2026-05-30) — one-time Cloudflare analytics pull; reads the retired `data/post-cache/`.
 
-Re-runnable tools stay in `scripts/` (audits, `seed-commulingo-person-roles.js`
-as the fresh-DB seed, `wrap-fic-names.js`, `bake-event-basemap.js`).
+Re-runnable tools stay in `scripts/` (audits, `wrap-fic-names.js`, `bake-event-basemap.js`).

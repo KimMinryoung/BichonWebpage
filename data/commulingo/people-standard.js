@@ -64,11 +64,9 @@ const ROLE_OFFICE_TITLES = {
     comintern: { ko: '코민테른', en: 'Comintern' },
 };
 
-// Person→role mappings live ONLY in the commulingo_person_roles DB table
-// (edited via the admin API or the leninbot agent). OFFICE_ICON seeds
-// commulingo_offices.icon and is the last-resort icon fallback; on DB
-// outage the file-fallback path renders default icons (crown/circle-help).
-// Changing which icon an office uses is an UPDATE on commulingo_offices.icon,
+// OFFICE_ICON seeds commulingo_offices.icon and is the last-resort icon
+// fallback for office pages. (People carry no role row any more: a card's
+// icon is its primary activity's function.) Changing which icon an office uses is an UPDATE on commulingo_offices.icon,
 // not an edit here — only a NEW glyph needs code (role-icons.js holds the SVG
 // paths, which are the one genuinely code-shaped thing in this area).
 const OFFICE_ICON = {
@@ -188,42 +186,7 @@ function buildSceneIndex(catalog, lang) {
     return sceneIndex;
 }
 
-function roleForPerson(person, lang, data, officeTitles, officeIcons) {
-    const id = person.id || '';
-    if (data && Object.prototype.hasOwnProperty.call(data, 'personRoles')) {
-        const mappedRole = (data.personRoles || {})[id];
-        if (!mappedRole && person.group === 'old-regime') {
-            const category = (data.roleCategories || {})['imperial-white'];
-            return {
-                icon: category && category.icon || 'crown',
-                officeId: '',
-                categoryId: category ? 'imperial-white' : '',
-                label: category ? localize(category.label, lang) : '',
-            };
-        }
-        if (!mappedRole) return { icon: 'circle-help', officeId: '', label: '' };
-
-        const officeId = mappedRole.officeId || '';
-        const categoryId = mappedRole.categoryId || '';
-        const category = categoryId ? (data.roleCategories || {})[categoryId] : null;
-        const categoryLabel = category ? localize(category.label, lang) : '';
-        const explicitLabel = mappedRole.label ? localize(mappedRole.label, lang) : '';
-        const officeLabel = officeId ? localize(officeTitles[officeId] || ROLE_OFFICE_TITLES[officeId], lang) : '';
-        return {
-            icon: category && category.icon || mappedRole.icon || officeIcons[officeId] || OFFICE_ICON[officeId] || 'circle-help',
-            officeId,
-            categoryId,
-            label: categoryLabel || explicitLabel || officeLabel || '',
-        };
-    }
-
-    // File-fallback path (DB unavailable): role mappings live only in the DB,
-    // so default icons are all we can offer.
-    if (person.group === 'old-regime') return { icon: 'crown', officeId: '', label: '' };
-    return { icon: 'circle-help', officeId: '', label: '' };
-}
-
-function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons) {
+function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
     const patronymic = localize((data.patronymics || {})[raw.id], lang);
     const cyrillicPatronymic = (data.cyrillicPatronymics || {})[raw.id] || '';
     const years = parseLifeYears(raw.years);
@@ -245,8 +208,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
         r: localize(entry.r, lang),
         role: localize(entry.r, lang),
     }));
-    const legacyRole = roleForPerson(raw, lang, data, officeTitles, officeIcons);
-    const activities = displayActivities(raw.activities, legacyRole, lang, raw, officeTitles);
+    const activities = displayActivities(raw.activities, lang, officeTitles);
     const primaryActivity = activities.find(a => a.primary);
     return {
         schemaVersion: SCHEMA_VERSION,
@@ -293,10 +255,10 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeIcons)
             ko: raw.aliases && Array.isArray(raw.aliases.ko) ? raw.aliases.ko : [],
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],
         },
-        legacyRole,
         activities,
         primaryActivity: primaryActivity || null,
-        role: primaryActivity ? { ...legacyRole, ...primaryActivity } : legacyRole,
+        // The card medal and tag: the primary activity (the legacy role table is gone).
+        role: primaryActivity || { icon: 'circle-help', label: '' },
         hasDetail: !!((data.sectionCounts || {})[raw.id]),
         career,
         scenes: (raw.scenes || [])
@@ -326,12 +288,8 @@ function normalizeCommuLingoPeople(data, options = {}) {
     const officeTitles = (data.offices || []).reduce((index, office) => {
         index[office.id] = office.title || {};
         return index;
-    }, {});
-    const officeIcons = (data.offices || []).reduce((index, office) => {
-        index[office.id] = office.icon || '';
-        return index;
-    }, {});
-    const people = (data.people || []).map(person => normalizePerson(person, data, lang, sceneIndex, officeTitles, officeIcons));
+    }, { ...ROLE_OFFICE_TITLES });
+    const people = (data.people || []).map(person => normalizePerson(person, data, lang, sceneIndex, officeTitles));
     const peopleById = people.reduce((index, person) => {
         index[person.id] = person;
         return index;
@@ -401,14 +359,6 @@ function normalizeCommuLingoPeople(data, options = {}) {
         groups,
         offices,
         collections,
-        roleCategories: Object.entries(data.roleCategories || {}).reduce((index, [id, category]) => {
-            index[id] = {
-                id,
-                icon: category.icon || '',
-                label: localize(category.label, lang),
-            };
-            return index;
-        }, {}),
         people,
         peopleById,
         officeDisplayOrder: OFFICE_DISPLAY_ORDER.slice(),
@@ -439,19 +389,6 @@ function validateCommuLingoPeople(data) {
             }
         });
     });
-    if (Object.prototype.hasOwnProperty.call(data, 'personRoles')) {
-        Object.entries(data.personRoles || {}).forEach(([personId, role]) => {
-            if (!peopleIds.has(personId)) issues.push({ level: 'error', code: 'person_role_unknown_person', personId });
-            const officeId = role && role.officeId || '';
-            const icon = role && role.icon || '';
-            const categoryId = role && role.categoryId || '';
-            if (!icon && !officeId && !categoryId) issues.push({ level: 'error', code: 'person_role_missing_icon', personId });
-            if (officeId && !officeIds.has(officeId)) issues.push({ level: 'error', code: 'person_role_unknown_office', personId, officeId });
-            if (categoryId && !(data.roleCategories || {})[categoryId]) {
-                issues.push({ level: 'error', code: 'person_role_unknown_category', personId, categoryId });
-            }
-        });
-    }
     return issues;
 }
 

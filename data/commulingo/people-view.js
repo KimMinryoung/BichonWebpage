@@ -63,23 +63,15 @@ function orderedPeopleGroupsMeta(standardized) {
     }));
 }
 
-// Shell of the people page (role-category chips + group headers): a pure
-// function of the standardized snapshot, rendered once per refresh per
-// language beside the memoized card fragments, instead of re-scanning
-// categories × people (~20k iterations) per request.
-const peopleShellMemo = new WeakMap(); // standardized -> { roleCategories, groupsMeta }
+// Shell of the people page (group headers): a pure function of the
+// standardized snapshot, rendered once per refresh per language beside the
+// memoized card fragments.
+const peopleShellMemo = new WeakMap(); // standardized -> { groupsMeta }
 
-function peopleShellFor(standardized, lang) {
+function peopleShellFor(standardized) {
     let shell = peopleShellMemo.get(standardized);
     if (!shell) {
-        const roleCategories = Object.values(standardized.roleCategories || {}).map(category => ({
-            ...category,
-            label: category.id === 'non-soviet-revolutionary'
-                ? (lang === 'en' ? 'Revolutionaries beyond the Soviet Union' : '소련 밖의 혁명가들')
-                : category.label,
-            peopleCount: standardized.people.filter(person => person.role && person.role.categoryId === category.id).length,
-        })).filter(category => category.peopleCount > 0);
-        shell = { roleCategories, groupsMeta: orderedPeopleGroupsMeta(standardized) };
+        shell = { groupsMeta: orderedPeopleGroupsMeta(standardized) };
         peopleShellMemo.set(standardized, shell);
     }
     return shell;

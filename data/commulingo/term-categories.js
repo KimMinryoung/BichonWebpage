@@ -5,8 +5,8 @@
 // that code is easier to reword than a migration. It is the other way round —
 // this directory is bind-mounted but still `require`d once, so rewording a
 // label meant a commit, an image rebuild and a container recreate, while the
-// person dictionary's parallel registry (commulingo_role_categories) has always
-// been a table you can UPDATE. Migration 115 moved these ten rows across.
+// person dictionary's parallel registry (commulingo_role_categories, dropped in
+// migration 217) was a table you could UPDATE. Migration 115 moved these ten rows across.
 //
 // Serving (memory → disk snapshot → DB, background refresh) comes from the
 // shared snapshot-store scaffold.

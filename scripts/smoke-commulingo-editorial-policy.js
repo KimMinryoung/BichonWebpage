@@ -5,7 +5,7 @@ const evidence = [{ field: 'bio', claim: 'Documented event', source: sources[0],
 validateEditorial({ bio: { ko: '확인한 사실' }, sources, evidence });
 assert.throws(() => validateEditorial({ bio: { ko: '주장' }, sources }), /evidence/);
 assert.throws(() => validateEditorial({ sources: [] }), /sources/);
-assert.throws(() => validateEditorial({ role: null, sources }), /role/);
+assert.doesNotThrow(() => validateEditorial({ role: null, sources }), 'a legacy role key is ignored now that people carry activities');
 assert.throws(() => validateEditorial({ fate: { label: { ko: '가'.repeat(23) } }, sources }), /22/);
 assert.throws(() => validateEditorial({ bio: { en: 'x'.repeat(901) }, sources, evidence }), /900/);
 assert.throws(() => validateEditorial({ sources, evidence: [{ ...evidence[0], locator: '' }] }), /locator/);

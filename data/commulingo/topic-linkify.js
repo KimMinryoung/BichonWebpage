@@ -22,7 +22,7 @@ const OFFICE_TERMS = {
 };
 
 // Builds an alias→topic index from the standardized people bundle
-// (normalizeCommuLingoPeople output: roleCategories by id, offices list).
+// (normalizeCommuLingoPeople output: position collections, offices list).
 function buildTopicLinkIndex(standardized, options = {}) {
     const lang = options.lang || 'ko';
     const en = lang === 'en';
@@ -35,12 +35,13 @@ function buildTopicLinkIndex(standardized, options = {}) {
             registerAlias(byAlias, tokens, alias, entry);
         });
     };
-    const roleCategories = (standardized && standardized.roleCategories) || {};
+    // Role-category ids live on as position collections at /commulingo/roles/:id.
+    const collections = (standardized && standardized.collections) || [];
     Object.keys(ROLE_TERMS).forEach(id => {
-        const category = roleCategories[id];
-        if (!category) return;
+        const collection = collections.find(item => item.id === id);
+        if (!collection) return;
         addTerms(ROLE_TERMS[id], {
-            id, kind: 'role', label: category.label, href: '/commulingo/roles/' + encodeURIComponent(id),
+            id, kind: 'role', label: collection.title, href: '/commulingo/roles/' + encodeURIComponent(id),
         });
     });
     const offices = (standardized && standardized.offices) || [];

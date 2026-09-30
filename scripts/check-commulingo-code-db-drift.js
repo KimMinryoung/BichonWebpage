@@ -4,22 +4,18 @@
 //
 //   docker exec leninbot-frontend node /app/scripts/check-commulingo-code-db-drift.js
 //
-// The registries that used to be arrays are tables now: role categories, term
-// categories, the link blocklist, retired-id redirects. What remains in code is
-// one of two things, and neither is a place to edit content:
+// The registries that used to be arrays are tables now: term categories, the
+// link blocklist, retired-id redirects. What remains in code is a FALLBACK the
+// DB overrides at runtime (office titles and icons) — used only when the
+// database is unreachable, so a rename here changes nothing while the site is
+// healthy and silently disagrees when it is not.
 //
-//   * a FALLBACK the DB overrides at runtime (office titles and icons) — used
-//     only when the database is unreachable, so a rename here changes nothing
-//     while the site is healthy and silently disagrees when it is not;
-//   * a SEED that only runs on a fresh database (the role-category list in
-//     seed-commulingo-person-roles.js).
-//
-// Both look authoritative to whoever opens the file next. This script is the
+// It looks authoritative to whoever opens the file next. This script is the
 // tripwire: it fails when a copy stops matching the table it shadows, which is
 // exactly the moment someone edited the wrong one.
 //
 // It does NOT check display order, where the code deliberately differs:
-// OFFICE_DISPLAY_ORDER groups roles on the person list by institutional weight,
+// OFFICE_DISPLAY_ORDER groups offices on the person list by institutional weight,
 // commulingo_offices.sort_order orders the office index chronologically.
 
 const path = require('path');
@@ -67,29 +63,6 @@ async function checkOfficeTitlesAndIcons() {
     });
 }
 
-async function checkRoleCategorySeed() {
-    const seedPath = path.join(__dirname, 'seed-commulingo-person-roles.js');
-    const src = fs.readFileSync(seedPath, 'utf8');
-    const block = src.split('const roleCategories = [')[1].split('];')[0];
-    const seeded = [...block.matchAll(/\['([a-z-]+)',\s*\d+,\s*'[^']*',\s*'([^']*)',\s*'([^']*)'\]/g)]
-        .map(m => ({ id: m[1], ko: m[2], en: m[3] }));
-    const { rows } = await db.query('SELECT id, label_ko, label_en FROM commulingo_role_categories');
-    checks.push(`role categories: ${rows.length} in DB, ${seeded.length} seeded`);
-    const byId = {};
-    rows.forEach(row => { byId[row.id] = row; });
-    seeded.forEach(entry => {
-        const row = byId[entry.id];
-        if (!row) {
-            return report('seed-commulingo-person-roles.js',
-                `${entry.id} would be re-created by a re-seed but is not in commulingo_role_categories (retired?)`);
-        }
-        if (row.label_ko !== entry.ko || row.label_en !== entry.en) {
-            report('seed-commulingo-person-roles.js',
-                `${entry.id} — DB "${row.label_ko}/${row.label_en}" vs seed "${entry.ko}/${entry.en}"`);
-        }
-    });
-}
-
 async function checkFlags() {
     const flagDir = path.join(__dirname, '..', 'public', 'flags');
     const files = fs.readdirSync(flagDir).filter(name => name.endsWith('.svg')).map(name => name.replace(/\.svg$/, ''));
@@ -114,7 +87,6 @@ async function checkFlags() {
 (async () => {
     try {
         await checkOfficeTitlesAndIcons();
-        await checkRoleCategorySeed();
         await checkFlags();
     } catch (err) {
         console.error('drift check failed to run:', err.message);

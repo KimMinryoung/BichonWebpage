@@ -74,8 +74,8 @@ async function inventory() {
     }
     const groups = (await db.query('SELECT group_id, count(*)::int AS n FROM commulingo_people WHERE id = ANY($1) GROUP BY 1', [newPeople])).rows;
     assert(groups.some(g => g.group_id === 'china-revolution'), 'new people sit on the China shelf');
-    const roles = (await db.query('SELECT count(*)::int AS n FROM commulingo_person_roles WHERE person_id = ANY($1)', [newPeople])).rows[0].n;
-    assert.equal(roles, spec.people.length, 'every new person has a role row');
+    const withActivity = (await db.query("SELECT count(*)::int AS n FROM commulingo_people WHERE id = ANY($1) AND jsonb_array_length(activities) > 0", [newPeople])).rows[0].n;
+    assert.equal(withActivity, spec.people.length, 'every new person has an activity');
     const evidence = (await db.query('SELECT count(*)::int AS n FROM commulingo_person_evidence WHERE person_id = ANY($1)', [newPeople])).rows[0].n;
     assert(evidence >= spec.people.length * 4, 'claim evidence recorded for every new person');
     const termLinks = (await db.query('SELECT count(*)::int AS n FROM commulingo_term_people WHERE term_id = ANY($1)', [newTerms])).rows[0].n;

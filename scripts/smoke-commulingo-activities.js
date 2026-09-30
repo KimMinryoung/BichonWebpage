@@ -13,17 +13,12 @@ const person = { activities: [{ functionId: 'military', affiliationId: 'soviet-p
 assert(!matchesActivities(person, { functionId: 'military', affiliationId: 'china-ccp' }), 'must match the same career, not a cross product');
 assert(matchesActivities(person, { functionId: 'diplomacy', affiliationId: 'china-ccp' }));
 assert(matchesActivities({ activities: [{ functionId: 'military', affiliationId: 'china-pla' }] }, { affiliationId: 'china-ccp' }));
-assert.equal(displayActivities([], { categoryId: 'ccp-security' }, 'ko')[0].affiliationId, 'china-prc');
-assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].affiliationId, null, 'research must not invent affiliation');
-assert.deepEqual(displayActivities([], { categoryId: 'counterrevolution' }, 'ko'), [], 'mixed political category is not a function');
 for (const entry of [...catalog.functions, ...catalog.affiliations]) assert(ICON_PATHS[entry.icon], `missing icon: ${entry.id}`);
 // Retired aliases remain valid, while socialist state IDs are restored.
 for (const [from, to] of Object.entries(catalog.retired)) {
     assert(!catalog.affiliations.some(a => a.id === from) && catalog.affiliations.some(a => a.id === to), from);
     assert.throws(() => validateActivities([{ ...primary, affiliationId: from }], sources), from);
 }
-assert.equal(displayActivities([], { categoryId: 'prc-government' }, 'ko')[0].affiliationId, 'china-prc');
-assert.equal(displayActivities([], { officeId: 'defence' }, 'ko')[0].affiliationId, 'state-soviet');
 for (const [key, [functionId, affiliationId]] of Object.entries(catalog.legacy)) {
     assert(catalog.functions.some(f => f.id === functionId), key);
     assert(!affiliationId || catalog.affiliations.some(a => a.id === affiliationId), key);
@@ -33,12 +28,10 @@ assert.throws(() => validateActivities([{ ...primary, functionId: 'government', 
 assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: 1793, endYear: 1794 }], sources));
 assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: null, endYear: null }], sources));
 for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) assert(from == null || to == null || from <= to, a.id);
-assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], null, 'ko')[0].affiliationLabel, '소속 미확정');
-assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], null, 'en')[0].affiliationLabel, 'Independent activity');
-console.log('Activity evidence, primary selection, periods, same-career filters and legacy boundaries passed');
+assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '소속 미확정');
+assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');
+console.log('Activity evidence, primary selection, periods and same-career filters passed');
 
-assert.equal(displayActivities([], { categoryId: 'ccp-leadership' }, 'ko', {years:'1889–1927'})[0].affiliationId, 'china-ccp');
-assert.equal(displayActivities([], { categoryId: 'ccp-leadership' }, 'ko', {years:'1893–1976'})[0].affiliationId, 'china-prc');
 const stateActivity = {...primary, affiliationId:'china-prc', relation:'service', startYear:1950, endYear:1960};
 assert.deepEqual(validateActivities([stateActivity], sources), [stateActivity]);
 assert.throws(() => validateActivities([{...stateActivity, relation:'membership'}], sources), /not party membership/);
@@ -55,11 +48,10 @@ const officeActivity = { ...primary, functionId: 'security', affiliationId: 'sta
 assert.deepEqual(validateActivities([officeActivity], sources, { officeIds: new Set(['state-security']) }), [officeActivity]);
 assert.throws(() => validateActivities([officeActivity], sources, { officeIds: new Set(['defence']) }), /unknown activity officeId/);
 assert.throws(() => validateActivities([{ ...officeActivity, affiliationId: 'china-prc', startYear: 1950, endYear: 1960 }], sources), /requires a Soviet/);
-const legacyOffice = displayActivities([], { officeId: 'state-security' }, 'ko', {}, { 'state-security': { ko: '국가보안 기관', en: 'State security agencies' } })[0];
+const legacyOffice = displayActivities([officeActivity], 'ko', { 'state-security': { ko: '국가보안 기관', en: 'State security agencies' } })[0];
 assert.equal(legacyOffice.officeId, 'state-security');
 assert.equal(legacyOffice.officeLabel, '국가보안 기관');
 assert.match(legacyOffice.href, /office=state-security/);
-assert.equal(displayActivities([], { categoryId: 'scholar' }, 'ko')[0].officeId, null);
 assert(matchesActivities({ activities: [legacyOffice] }, { affiliationId: 'state-soviet', officeId: 'state-security' }));
 assert(!matchesActivities({ activities: [legacyOffice] }, { officeId: 'defence' }));
 console.log('Activity office lines passed');
@@ -68,7 +60,7 @@ console.log('Activity office lines passed');
 {
     const { normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');
     const person = id => ({ id, group: 'g', name: { ko: id, en: id }, years: '1900–1950', activities: [] });
-    const out = normalizeCommuLingoPeople({ groups: [], people: [person('a'), person('b')], personRoles: {}, roleCategories: {},
+    const out = normalizeCommuLingoPeople({ groups: [], people: [person('a'), person('b')],
         collections: [{ id: 'left-opposition', icon: 'git-branch', title: { ko: '좌파 비판', en: 'Left critics' }, intro: { ko: '소개', en: 'Intro' }, personIds: ['a', 'missing'] }] }, { lang: 'ko' });
     assert.deepEqual(out.collections[0].personIds, ['a'], 'unknown members are dropped');
     assert.equal(out.peopleById.a.collections[0].href, '/commulingo/roles/left-opposition');
