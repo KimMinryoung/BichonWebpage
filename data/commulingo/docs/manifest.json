@@ -6465,6 +6465,69 @@
         ],
         "en": []
       }
+    },
+    {
+      "id": "nagy-imre-kremlin-1953-1955",
+      "file": "nagy-imre-kremlin-1953-1955.html",
+      "docLang": "ko",
+      "date": "1953-06-13",
+      "title": {
+        "ko": "너지 임레와 크렘린 — 1953년 6월 모스크바 회담과 1955년 1월 간부회의 비판",
+        "en": "Imre Nagy and the Kremlin: the Moscow talks of June 1953 and the Presidium's criticism of January 1955"
+      },
+      "description": {
+        "ko": "헝가리 측이 받아 적은 두 회의 기록. 1953년 6월 13·16일 크렘린에서 말렌코프·베리야·몰로토프 등은 라코시의 전횡과 과속 공업화, 대량 형사 처벌을 비판하고 너지 임레를 각료회의 의장으로 지명했다. 1955년 1월 8일 같은 간부회는 너지의 1954년 10월 20일 논문과 「새 단계」 노선을 반당적이라 규정하고, 「당과 함께하든지 당에 맞서든지」라며 라코시를 다시 지지했다.",
+        "en": "Two Hungarian records of meetings in the Kremlin. On 13 and 16 June 1953 Malenkov, Beria, Molotov and others condemned Rákosi's one-man rule, over-rapid industrialisation and mass prosecutions, and named Imre Nagy chairman of the Council of Ministers. On 8 January 1955 the same Presidium condemned Nagy's article of 20 October 1954 and his 'new stage' line as anti-party and backed Rákosi again: 'either with the party or against it'. Korean translation from the Hungarian."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Jegyzőkönyv a szovjet és a magyar párt- és állami vezetők tárgyalásairól, 1953. június 13–16. // Múltunk, 1992, 2–3. sz., 234–270. l.; Jegyzőkönyv az SZKP Elnöksége és az MDP PB delegációjának megbeszéléséről, 1955. január 8. (feljegyezte Szalai Béla, 1955. január 12.) // Múltunk, 1992, 4. sz., 141–148. l.; elektronikus kiadás: 1956-os Intézet, rev.hu",
+      "people": [
+        "nagy",
+        "matyas-rakosi",
+        "malenkov",
+        "beria",
+        "molotov",
+        "khrushchev",
+        "bulganin",
+        "mikoyan",
+        "voroshilov",
+        "kaganovich",
+        "erno-gero",
+        "istvan-dobi",
+        "andras-hegedus",
+        "mihaly-farkas",
+        "jozsef-revai",
+        "gabor-peter",
+        "andropov",
+        "suslov"
+      ],
+      "terms": [
+        "new-course-hungary-1953",
+        "kulak-list-hungary",
+        "collective-leadership",
+        "cult-of-personality",
+        "state-protection-authority-avh",
+        "hungarian-working-peoples-party",
+        "peoples-democracy"
+      ],
+      "events": [
+        "hungary-new-course-1953",
+        "beria-purge"
+      ],
+      "addedAt": "2026-09-30",
+      "aliases": {
+        "ko": [
+          "1953년 6월 모스크바 회담 기록",
+          "1955년 1월 간부회의 너지 비판"
+        ],
+        "en": [
+          "Moscow talks of June 1953",
+          "Presidium's criticism of Nagy in January 1955"
+        ]
+      }
     }
   ],
   "redirects": {
