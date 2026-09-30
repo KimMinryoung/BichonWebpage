@@ -82,3 +82,16 @@ for (const [id, page] of Object.entries(require('../data/commulingo/retired-role
     for (const [kind, ref] of page.links) assert((kind === 'function' ? catalog.functions : catalog.affiliations).some(x => x.id === ref), `${id}: ${kind} ${ref}`);
 }
 console.log('Retired role pages passed');
+
+// Legacy-classification activities: allowed without evidence, but only when already stored.
+{
+    const { assertNoNewLegacyBasis } = require('../data/commulingo/person-activities');
+    const legacyRow = { functionId: 'scholarship', affiliationId: null, affiliationStatus: 'unresolved', relation: 'unresolved', primary: true, startYear: null, endYear: null, evidence: [], basis: 'legacy-classification' };
+    assert.deepEqual(validateActivities([legacyRow], []), [legacyRow]);
+    assert.throws(() => validateActivities([{ ...legacyRow, basis: 'guess' }], []), /unknown activity basis/);
+    assert.throws(() => validateActivities([{ ...legacyRow, basis: undefined }], []), /requires evidence/);
+    assert.throws(() => assertNoNewLegacyBasis([legacyRow]), /only from the migration/);
+    assert.doesNotThrow(() => assertNoNewLegacyBasis([legacyRow], [legacyRow]));
+    assert.throws(() => assertNoNewLegacyBasis([{ ...legacyRow, functionId: 'arts' }], [legacyRow]), /only from the migration/);
+    console.log('Legacy-classification activities passed');
+}

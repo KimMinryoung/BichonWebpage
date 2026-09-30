@@ -17,13 +17,27 @@ function periodsOverlap(periods, start, end) {
 // affiliation must be the Soviet state, its party or the Comintern.
 const OFFICE_AFFILIATIONS = new Set(['state-soviet', 'soviet-party', 'comintern']);
 
+// basis 'legacy-classification': an activity carried over from the retired
+// role classification without cited evidence (migration 215, operator
+// decision 2026-09-30). Writers cannot add one; they may keep an existing one
+// (people-admin-store checks it against the stored row) or replace it with a
+// documented activity.
+const LEGACY_BASIS = 'legacy-classification';
+
+function assertNoNewLegacyBasis(next, stored = []) {
+    const kept = new Set((stored || []).filter(a => a?.basis === LEGACY_BASIS).map(a => JSON.stringify(a)));
+    if ((next || []).some(a => a?.basis === LEGACY_BASIS && !kept.has(JSON.stringify(a)))) {
+        throw badRequest('legacy-classification activities come only from the migration; add a documented activity with evidence instead');
+    }
+}
+
 function validateActivities(value, sources = [], { officeIds } = {}) {
     if (!Array.isArray(value) || !value.length || value.length > 30) throw badRequest('activities must contain 1–30 documented activities');
     if (value.filter(a => a?.primary === true).length !== 1) throw badRequest('activities requires exactly one primary activity');
     const seen = new Set();
     for (const a of value) {
         if (!a || typeof a !== 'object' || Array.isArray(a)) throw badRequest('invalid activity');
-        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','startYear','endYear','primary','evidence'].includes(key)) throw badRequest(`unknown activity field ${key}`);
+        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','startYear','endYear','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
         if (!functions.has(a.functionId)) throw badRequest('unknown activity functionId');
         if (!['confirmed','independent','unresolved'].includes(a.affiliationStatus)) throw badRequest('activity affiliationStatus is required');
         if (a.affiliationStatus === 'confirmed' ? !affiliations.has(a.affiliationId) : a.affiliationId != null) throw badRequest('activity affiliationId must match its confirmation status');
@@ -40,8 +54,10 @@ function validateActivities(value, sources = [], { officeIds } = {}) {
         if (a.affiliationId && !periodsOverlap(affiliations.get(a.affiliationId)?.periods, a.startYear, a.endYear)) {
             throw badRequest(`activity years ${a.startYear ?? ''}–${a.endYear ?? ''} fall outside the existence of ${a.affiliationId}`);
         }
-        if (!Array.isArray(a.evidence) || !a.evidence.length) throw badRequest('activity requires evidence');
-        for (const e of a.evidence) {
+        if (a.basis != null && a.basis !== LEGACY_BASIS) throw badRequest('unknown activity basis');
+        const evidence = a.basis === LEGACY_BASIS && a.evidence == null ? [] : a.evidence;
+        if (!Array.isArray(evidence) || (!evidence.length && a.basis !== LEGACY_BASIS)) throw badRequest('activity requires evidence');
+        for (const e of evidence) {
             if (!e || typeof e !== 'object' || !['source','locator','claim','excerpt'].every(k => typeof e[k] === 'string' && e[k].trim()) || !sources.includes(e.source)) throw badRequest('activity evidence requires a cited source, locator, claim and excerpt');
             if (Object.keys(e).some(k => !['source','locator','claim','excerpt'].includes(k))) throw badRequest('unknown activity evidence field');
         }
@@ -102,4 +118,4 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { LEGACY_BASIS, assertNoNewLegacyBasis, OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };

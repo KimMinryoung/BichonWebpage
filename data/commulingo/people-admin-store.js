@@ -1,4 +1,4 @@
-const { validateActivities } = require('./person-activities');
+const { validateActivities, assertNoNewLegacyBasis } = require('./person-activities');
 const { validateEditorial, reviewReasons, recordEvidence } = require('./person-editorial-policy');
 const { planCollectionEdits, applyCareerEdits } = require('./people-collection-edits');
 const { personRevision, assertExpectedRevision } = require('./people-edit-version');
@@ -450,6 +450,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         await replaceScenes(client, id, payload.scenes || []);
         await replaceCareer(client, id, payload.career || []);
         if (payload.activities !== undefined) {
+            assertNoNewLegacyBasis(payload.activities);
             validateActivities(payload.activities, payload.sources || options.sources || [], { officeIds: await officeIdSet(client) });
             await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
         }
@@ -647,6 +648,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
         if (payload.career !== undefined) await replaceCareer(client, id, payload.career);
         if (payload.activities !== undefined) {
+            assertNoNewLegacyBasis(payload.activities, before.activities);
             validateActivities(payload.activities, payload.sources || options.sources || [], { officeIds: await officeIdSet(client) });
             await client.query('UPDATE commulingo_people SET activities=$2::jsonb, updated_at=NOW() WHERE id=$1', [id, JSON.stringify(payload.activities)]);
         }
