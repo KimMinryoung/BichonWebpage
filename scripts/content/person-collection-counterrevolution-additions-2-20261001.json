@@ -1,0 +1,219 @@
+{
+ "collection": "counterrevolution",
+ "criteria": "People outside Russia who opposed revolutionary movements or socialist states by arms or politics: interventionists, fascist/Nazi regimes and commanders, colonial and Cold War anti-communist regimes and armies, and officials who directed anti-communist covert operations or containment policy. WWII Allied generals and diplomats without such a role are excluded.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "allen-dulles",
+   "source": "https://en.wikipedia.org/wiki/Allen_Dulles",
+   "locator": "plain-text extract characters 187:383; accessed 2026-10-01; sha256 06e7ce0eb53206bb20a99adc02c8cd76e9ebd4089e691551fe268a828fdd3c56",
+   "excerpt": "As head of the Central Intelligence Agency (CIA) during the early Cold War, he oversaw numerous activities, such as US involvement in the 1953 Iranian coup d'état, the 1954 Guatemalan coup d'état,",
+   "reason": "CIA director who directed covert operations against suspected communist governments."
+  },
+  {
+   "id": "john-foster-dulles",
+   "source": "https://en.wikipedia.org/wiki/John_Foster_Dulles",
+   "locator": "plain-text extract characters 315:484; accessed 2026-10-01; sha256 d846f203f4acdca231db4297d5bb7c68c44e28476081ee1f8ede89461fa5c61a",
+   "excerpt": "Dulles was a significant figure in the early Cold War era who pushed for an aggressive rollback campaign against communist regimes and their allies throughout the world.",
+   "reason": "Secretary of State who pushed rollback of communist regimes and built anti-communist alliances."
+  },
+  {
+   "id": "george-f-kennan",
+   "source": "https://en.wikipedia.org/wiki/George_F._Kennan",
+   "locator": "plain-text extract characters 97:197; accessed 2026-10-01; sha256 f6c4da89df6e71c120fcdea97527c7fa95775ecfacfdd9fbac03eeebeedaa1af",
+   "excerpt": "He was best known as an advocate of a policy of containment of Soviet expansion during the Cold War.",
+   "reason": "Architect of the containment policy."
+  },
+  {
+   "id": "harry-s-truman",
+   "source": "https://en.wikipedia.org/wiki/Harry_S._Truman",
+   "locator": "plain-text extract characters 324:439; accessed 2026-10-01; sha256 41b5c5bc70b2a49f87c8322dbc8d81b83a4dc18d9a542ec0650f6c194b0c7300",
+   "excerpt": "He established the Truman Doctrine and supported the founding of NATO to contain the expansion of Soviet communism.",
+   "reason": "Established the Truman Doctrine of containing communism."
+  },
+  {
+   "id": "dwight-d-eisenhower",
+   "source": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+   "locator": "plain-text extract characters 2909:2954; accessed 2026-10-01; sha256 e1d8e82439460e4f5bcc5299c70578e2a67960275869d1b7d026d41cdaa90633",
+   "excerpt": "Eisenhower approved the Bay of Pigs Invasion,",
+   "reason": "As president approved the CIA invasion plan against Cuba."
+  },
+  {
+   "id": "john-f-kennedy",
+   "source": "https://en.wikipedia.org/wiki/John_F._Kennedy",
+   "locator": "plain-text extract characters 1792:1932; accessed 2026-10-01; sha256 da22452a824b0fa7e3eef95cda8bfb5cc2f727aa4aa5993fcf522596a6086fae",
+   "excerpt": "In 1961, he authorized attempts to overthrow the Cuban government of Fidel Castro in the failed Bay of Pigs Invasion and Operation Mongoose.",
+   "reason": "Authorized the Bay of Pigs invasion and Operation Mongoose against Cuba."
+  },
+  {
+   "id": "lyndon-b-johnson",
+   "source": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+   "locator": "plain-text extract characters 2651:2751; accessed 2026-10-01; sha256 06a13d706ae85fe36768a2cc6e7ce84b12056e39ba24dd9b5e340b3fcf586051",
+   "excerpt": "Johnson's foreign policy prioritized containment of communism, including in the ongoing Vietnam War.",
+   "reason": "Escalated the Vietnam War under the policy of containing communism."
+  },
+  {
+   "id": "robert-mcnamara",
+   "source": "https://en.wikipedia.org/wiki/Robert_McNamara",
+   "locator": "plain-text extract characters 1635:1790; accessed 2026-10-01; sha256 37ebdd89c75e420590d8f7d43eb50f581bcedf6679ca88599d2e3f804123c741",
+   "excerpt": "McNamara and other U.S. policymakers feared that the fall of South Vietnam to a Communist regime would lead to the fall of other governments in the region.",
+   "reason": "Defence secretary who directed the US war to prevent a communist South Vietnam."
+  },
+  {
+   "id": "zbigniew-brzezinski",
+   "source": "https://en.wikipedia.org/wiki/Zbigniew_Brzezinski",
+   "locator": "plain-text extract characters 1624:1671; accessed 2026-10-01; sha256 cf29ec20cc9063f1e72934675478ebfbc0d2fe5878689dc9d808c31851e774b8",
+   "excerpt": "He was an advocate for anti-Soviet containment,",
+   "reason": "National Security Advisor and strong advocate of anti-Soviet containment."
+  },
+  {
+   "id": "ronald-reagan",
+   "source": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+   "locator": "plain-text extract characters 2172:2236; accessed 2026-10-01; sha256 2e394f436141ffa395838420e1bc4bbbabf254c35930eb85eb23c6f8155ed630",
+   "excerpt": "the secret and illegal sale of arms to Iran to fund the Contras,",
+   "reason": "President whose administration funded the anti-Sandinista Contras (borderline)."
+  },
+  {
+   "id": "winston-churchill",
+   "source": "https://en.wikipedia.org/wiki/Winston_Churchill",
+   "locator": "plain-text extract characters 30634:30745; accessed 2026-10-01; sha256 72827a17a2514d33053bd21ee61481c39a2ef11caa3802b4cab51d4ed5a9db9b",
+   "excerpt": "He initially supported using British troops to assist the anti-Bolshevik White forces in the Russian Civil War,",
+   "reason": "Advocated Allied intervention against the Bolsheviks and later proposed a cordon sanitaire."
+  },
+  {
+   "id": "raoul-salan",
+   "source": "https://en.wikipedia.org/wiki/Raoul_Salan",
+   "locator": "plain-text extract characters 166:278; accessed 2026-10-01; sha256 96f99eadbf4d735e3339d7d112f5daf2b72cd9abcda04d40ea768b231c0edf69",
+   "excerpt": "a clandestine terrorist organisation that sought to maintain French Algeria by preventing Algerian independence.",
+   "reason": "Founder of the OAS and commander in the Indochina and Algerian wars."
+  },
+  {
+   "id": "son-sann",
+   "source": "https://en.wikipedia.org/wiki/Son_Sann",
+   "locator": "plain-text extract characters 82:145; accessed 2026-10-01; sha256 e84097fb34875a55bf32d73b3565e2d6aac9dcc93554926d84f003d751acb679",
+   "excerpt": "was a Cambodian politician and anti-communist resistance leader",
+   "reason": "Led the anti-communist KPNLF resistance."
+  },
+  {
+   "id": "lon-nol",
+   "source": "https://en.wikipedia.org/wiki/Lon_Nol",
+   "locator": "plain-text extract characters 2814:2920; accessed 2026-10-01; sha256 5c99dda1c335f0936deba52ab98815ebc46a9cf26c98321b0e3c3866f0277667",
+   "excerpt": "his police being instrumental in the suppression of the small, clandestine communist movement in Cambodia.",
+   "reason": "Anti-communist ruler of the Khmer Republic who fought the Khmer Rouge and Viet Cong."
+  },
+  {
+   "id": "chiang-kai-shek",
+   "source": "https://en.wikipedia.org/wiki/Chiang_Kai-shek",
+   "locator": "plain-text extract characters 1070:1214; accessed 2026-10-01; sha256 77582f94fa1b1db11fcc10b3c2ef9cff35dcd852886babeee698324a7501c935",
+   "excerpt": "He broke the First United Front by purging the Chinese Communist Party (CCP) members in the Shanghai massacre, triggering the Chinese Civil War.",
+   "reason": "Purged the communists in 1927 and led the anti-communist Nationalist regime."
+  },
+  {
+   "id": "miklos-horthy",
+   "source": "https://en.wikipedia.org/wiki/Miklós_Horthy",
+   "locator": "plain-text extract characters 7792:7899; accessed 2026-10-01; sha256 99e0a7ebe65e207a5485f341a423ecd154e677858ed32b1363ba42b0257cb5b2",
+   "excerpt": "Forged out of a counter-revolutionary heritage, its governments advocated a \"nationalist Christian\" policy;",
+   "reason": "Regent of Hungary after the National Army defeated the 1919 Soviet Republic."
+  },
+  {
+   "id": "hermann-von-eichhorn",
+   "source": "https://en.wikipedia.org/wiki/Hermann_von_Eichhorn",
+   "locator": "plain-text extract characters 293:422; accessed 2026-10-01; sha256 e7e42a8adce25942b0ea216335cabd62aa0ad1cba6197bbf65e8ef1a2f915236",
+   "excerpt": "While serving as the military governor of Ukraine during the Russian Civil War, Eichhorn was assassinated by a Russian socialist.",
+   "reason": "German field marshal who governed occupied Ukraine in 1918."
+  },
+  {
+   "id": "wilhelm-keitel",
+   "source": "https://en.wikipedia.org/wiki/Wilhelm_Keitel",
+   "locator": "plain-text extract characters 117:279; accessed 2026-10-01; sha256 c71d2db0dc68f60ddcdae06996bc17fbfd9ddaa935adfc37dab00b90ced8c2ed",
+   "excerpt": "was a German field marshal who held office as chief of the Oberkommando der Wehrmacht (OKW), the high command of Nazi Germany's armed forces, during World War II.",
+   "reason": "Chief of the Nazi high command."
+  },
+  {
+   "id": "karl-doenitz",
+   "source": "https://en.wikipedia.org/wiki/Karl_Dönitz",
+   "locator": "plain-text extract characters 118:196; accessed 2026-10-01; sha256 836ca4cb398da397dba1911920e4063f25770f2c242e518d69660c12ea0478c5",
+   "excerpt": "briefly succeeded Adolf Hitler as the head of state of Germany in the Nazi era",
+   "reason": "Nazi naval commander who succeeded Hitler as head of state."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "john-mccone",
+   "reason": "CIA director with covert plots but the extract does not frame an anti-communist operation directly (borderline)."
+  },
+  {
+   "id": "robert-f-kennedy",
+   "reason": "Extract frames the Cuban Missile Crisis rather than a directing role in anti-communist operations."
+  },
+  {
+   "id": "richard-nixon",
+   "reason": "Known as anti-communist but his presidency is framed through détente."
+  },
+  {
+   "id": "henry-kissinger",
+   "reason": "Détente architect."
+  },
+  {
+   "id": "dean-rusk",
+   "reason": "Extract shows him noncommittal on Bay of Pigs."
+  },
+  {
+   "id": "maxwell-taylor",
+   "reason": "Military adviser, no directing role shown."
+  },
+  {
+   "id": "george-h-w-bush",
+   "reason": "CIA directorship framed through reform; president at Cold War end."
+  },
+  {
+   "id": "paul-nitze",
+   "reason": "Strategist moving between buildup and arms control."
+  },
+  {
+   "id": "henry-m-jackson",
+   "reason": "Hawkish senator, legislative role only."
+  },
+  {
+   "id": "charles-e-bohlen",
+   "reason": "Diplomat; no directing role shown."
+  },
+  {
+   "id": "georges-bidault",
+   "reason": "Extract does not frame anti-communist operations beyond expelling communists from government."
+  },
+  {
+   "id": "douglas-macarthur",
+   "reason": "Korean War commander but extract does not frame anti-communist role clearly (borderline)."
+  },
+  {
+   "id": "stepan-bandera",
+   "reason": "OUN leader; fought Soviets but extract evidence is thin (borderline)."
+  },
+  {
+   "id": "philippe-petain",
+   "reason": "Vichy collaborationist; not framed by anti-communism in extract."
+  },
+  {
+   "id": "pierre-laval",
+   "reason": "Vichy collaborationist; not framed by anti-communism."
+  },
+  {
+   "id": "souvanna-phouma",
+   "reason": "Neutralist."
+  },
+  {
+   "id": "alan-brooke",
+   "reason": "WWII Allied general."
+  },
+  {
+   "id": "bernard-montgomery",
+   "reason": "WWII Allied general."
+  },
+  {
+   "id": "george-c-marshall",
+   "reason": "WWII general; Marshall Plan role not tested."
+  }
+ ],
+ "migration": "222"
+}

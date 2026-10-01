@@ -2,7 +2,7 @@
 // era group (the group already shows the era). Collection membership is the
 // curated statement of position and wins; failing that, communist service is
 // read from the activities; everyone else stays neutral rather than guessed.
-const { affiliationMatches } = require('./person-activities');
+const { affiliationMatches, affiliations } = require('./person-activities');
 
 // First match wins: a person in two collections (dissident + reform leader,
 // fascist + counterrevolution) takes the earlier one. A future collection for
@@ -113,6 +113,13 @@ function resolvePosition(activities, collectionIds) {
     const rows = activities || [];
     const primary = rows.find(a => a.primary);
     if (primary && isCommunist(primary.affiliationId)) return { position: redTone(primary.affiliationId), collectionId: '' };
+    // A primary activity with no affiliation (a writer, a theorist) or with a
+    // movement rather than a state (Guevara's 26th of July Movement) does not
+    // settle the position; a documented communist activity then decides it.
+    // Service to a non-socialist state does not yield to it.
+    const communist = rows.find(a => isCommunist(a.affiliationId)
+        || (SOCIALIST_WINDOWS[a.affiliationId] && mostlySocialist(a, SOCIALIST_WINDOWS[a.affiliationId])));
+    if (primary && communist && affiliations.get(primary.affiliationId)?.kind !== 'state') return { position: isCommunist(communist.affiliationId) ? redTone(communist.affiliationId) : 'red', collectionId: '' };
     const windows = primary && SOCIALIST_WINDOWS[primary.affiliationId];
     if (windows && (rows.some(a => isCommunist(a.affiliationId)) || mostlySocialist(primary, windows))) return { position: 'red', collectionId: '' };
     const earlier = EARLIER_POSITIONS.find(([id]) => inCollection.has(id));

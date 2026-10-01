@@ -1,0 +1,346 @@
+{
+ "collection": "national-liberation",
+ "criteria": "Leaders and militants of 20th-century national liberation and anti-colonial movements in Asia, Africa, Latin America and the Middle East (for example PAIGC, FLN, ANC/MK, FRELIMO, MPLA, the Viet Minh and NLF, Sandino's army and the Korean independence movement). Communists who led such movements may be included. Colonial officials, Cold War anti-communist strongmen, scholars of these movements, and leaders of elected socialist governments or post-independence rulers whose significance lies elsewhere are excluded.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "cabral",
+   "source": "https://en.wikipedia.org/wiki/Amílcar_Cabral",
+   "locator": "plain-text extract characters 447:576; accessed 2026-10-01; sha256 577dbaa7dedd0997e9223f0ec597f229c8b03f580b2a4926673cacbc82bfc094",
+   "excerpt": "he led the nationalist movement of Guinea-Bissau and the Cape Verde Islands and the ensuing war of independence in Guinea-Bissau.",
+   "reason": "Founder of the PAIGC who led the independence war in Guinea-Bissau."
+  },
+  {
+   "id": "lumumba",
+   "source": "https://en.wikipedia.org/wiki/Patrice_Lumumba",
+   "locator": "plain-text extract characters 541:659; accessed 2026-10-01; sha256 8f72d43cbbac431a95a300b7fa770ed238ace5da10b1b6902d2e76bf2dcc189a",
+   "excerpt": "he played a significant role in the transformation of the Congo from a colony of Belgium into an independent republic.",
+   "reason": "Congolese nationalist leader of the decolonisation of the Belgian Congo."
+  },
+  {
+   "id": "kwame-nkrumah",
+   "source": "https://en.wikipedia.org/wiki/Kwame_Nkrumah",
+   "locator": "plain-text extract characters 722:827; accessed 2026-10-01; sha256 fa3db7cfa12397921da6215885de1fd47ec979fbd999be23dbdb18066afa2ade",
+   "excerpt": "Nkrumah returned to the Gold Coast to begin his political career as an advocate of national independence.",
+   "reason": "Led the Gold Coast to independence from Britain as a pan-Africanist nationalist."
+  },
+  {
+   "id": "fanon",
+   "source": "https://en.wikipedia.org/wiki/Frantz_Fanon",
+   "locator": "plain-text extract characters 484:607; accessed 2026-10-01; sha256 084e69c5ac777baa23785d716068da722c15b644c36412ff5be09001b87f163a",
+   "excerpt": "Fanon supported the Algerian War of independence (1954–1962) from France and joined the Algerian National Liberation Front.",
+   "reason": "Joined the FLN and became the leading theorist of anti-colonial struggle."
+  },
+  {
+   "id": "augusto-cesar-sandino",
+   "source": "https://en.wikipedia.org/wiki/Augusto_César_Sandino",
+   "locator": "plain-text extract characters 213:307; accessed 2026-10-01; sha256 966225b1499437d17118aa7655a93bc31d327565dd55b8d78aafdcc94e52b057",
+   "excerpt": "leader of a rebellion between 1927 and 1933 against the United States occupation of Nicaragua.",
+   "reason": "Led the guerrilla rebellion against the US occupation of Nicaragua."
+  },
+  {
+   "id": "farabundo-marti",
+   "source": "https://en.wikipedia.org/wiki/Farabundo_Martí",
+   "locator": "plain-text extract characters 2650:2740; accessed 2026-10-01; sha256 b105a4e50323a413499e9dff06064861acf39a507154de18b1554aa4ef0fa804",
+   "excerpt": "In the meantime, he worked with the Nicaraguan revolutionary leader Augusto César Sandino.",
+   "reason": "Salvadoran revolutionary who fought alongside Sandino's anti-occupation army."
+  },
+  {
+   "id": "agostinho-neto",
+   "source": "https://en.wikipedia.org/wiki/Agostinho_Neto",
+   "locator": "plain-text extract characters 194:297; accessed 2026-10-01; sha256 ffcc29eb9bb73048bfe6ce7f3f21756d7fd0569d79d10fc863b40f55980ca36f",
+   "excerpt": "after leading the Popular Movement for the Liberation of Angola (MPLA) during the war for independence.",
+   "reason": "Led the MPLA through Angola's war of independence from Portugal."
+  },
+  {
+   "id": "eduardo-mondlane",
+   "source": "https://en.wikipedia.org/wiki/Eduardo_Mondlane",
+   "locator": "plain-text extract characters 59:174; accessed 2026-10-01; sha256 b3675bbd0e3da877096351055450f706f849062520592c1bb4aa4ec49682c873",
+   "excerpt": "was a Mozambican revolutionary and anthropologist who was the founder of the Mozambican Liberation Front (FRELIMO).",
+   "reason": "Founder and first president of FRELIMO."
+  },
+  {
+   "id": "samora-machel",
+   "source": "https://en.wikipedia.org/wiki/Samora_Machel",
+   "locator": "plain-text extract characters 3646:3749; accessed 2026-10-01; sha256 0e8d5aa5646dfd8328733e458d11790d155a72e7fb3e1099cfbba8a38191fed5",
+   "excerpt": "After FRELIMO launched the independence war, on September 25, 1964, Machel soon became a key commander,",
+   "reason": "FRELIMO guerrilla commander in Mozambique's war of independence."
+  },
+  {
+   "id": "ho-chi-minh",
+   "source": "https://en.wikipedia.org/wiki/Hồ_Chí_Minh",
+   "locator": "plain-text extract characters 1647:1745; accessed 2026-10-01; sha256 5443b4666c89c2ef0f37eefe1aee1b4615ae9d7832f9062fb0941c9cd5c93a8d",
+   "excerpt": "Hồ founded and led the Việt Minh independence movement against the Japanese occupation of Vietnam,",
+   "reason": "Communist founder of the Viet Minh who led Vietnam's independence struggle against France and Japan."
+  },
+  {
+   "id": "lucio-lara",
+   "source": "https://en.wikipedia.org/wiki/Lúcio_Lara",
+   "locator": "plain-text extract characters 176:309; accessed 2026-10-01; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9",
+   "excerpt": "anti-colonial ideologist and one of the founding members (and president) of the Popular Movement for the Liberation of Angola (MPLA).",
+   "reason": "Anti-colonial ideologist and founding member of the MPLA."
+  },
+  {
+   "id": "iko-carreira",
+   "source": "https://en.wikipedia.org/wiki/Iko_Carreira",
+   "locator": "plain-text extract characters 618:783; accessed 2026-10-01; sha256 1c10d186c90735243c291e71f399b255f03c83f9e8a571191f45a2bf053a5207",
+   "excerpt": "He was an officer in the People's Movement for the Liberation of Angola (MPLA), Agostinho Neto's armed wing fighting against Portuguese colonial apartheid like rule.",
+   "reason": "MPLA military officer in the war against Portuguese colonial rule."
+  },
+  {
+   "id": "jawaharlal-nehru",
+   "source": "https://en.wikipedia.org/wiki/Jawaharlal_Nehru",
+   "locator": "plain-text extract characters 57:147; accessed 2026-10-01; sha256 ef18f97b16341c351c0e19e2471dedaccfbb1c1013831aef44f294105d5d01fb",
+   "excerpt": "Indian lawyer, anti-colonial nationalist, secular humanist, social democrat, and statesman",
+   "reason": "Principal leader of the Indian nationalist movement against British rule."
+  },
+  {
+   "id": "julius-nyerere",
+   "source": "https://en.wikipedia.org/wiki/Julius_Nyerere",
+   "locator": "plain-text extract characters 892:979; accessed 2026-10-01; sha256 d290ec6da20147e2caec23cd25dfd2aba009d9eaec54e2e2ee6505df81667434",
+   "excerpt": "In 1954, he helped form TANU, through which he campaigned for Tanganyikan independence.",
+   "reason": "Founded TANU and campaigned for Tanganyikan independence."
+  },
+  {
+   "id": "george-padmore",
+   "source": "https://en.wikipedia.org/wiki/George_Padmore",
+   "locator": "plain-text extract characters 269:379; accessed 2026-10-01; sha256 d63cf20e534e21662955aa730bb68c6de37c2b0b7c54f74fcfb74dbc9667d363",
+   "excerpt": "he moved to the Soviet Union, where he was active in the party, and working on African independence movements.",
+   "reason": "Comintern organiser of African anti-colonial movements and Pan-Africanist."
+  },
+  {
+   "id": "chris-hani",
+   "source": "https://en.wikipedia.org/wiki/Chris_Hani",
+   "locator": "plain-text extract characters 4231:4305; accessed 2026-10-01; sha256 eaff9b17818a478533218be7592309398f8f940a23cb52fe1426b567af9a995b",
+   "excerpt": "In Lesotho, Hani organised guerrilla operations of the MK in South Africa.",
+   "reason": "Commander in the ANC's armed wing Umkhonto we Sizwe."
+  },
+  {
+   "id": "ruth-first",
+   "source": "https://en.wikipedia.org/wiki/Ruth_First",
+   "locator": "plain-text extract characters 859:1031; accessed 2026-10-01; sha256 fcbc187ca18b2717d4e80b0e1d37a73afd63fee04d3a476815c986d82ea434b7",
+   "excerpt": "Like her parents, she joined the Communist Party, which was allied with the African National Congress in its struggle to overthrow the apartheid government of South Africa.",
+   "reason": "Communist activist in the ANC-allied struggle against apartheid (borderline)."
+  },
+  {
+   "id": "nguyen-thi-binh",
+   "source": "https://en.wikipedia.org/wiki/Nguyễn_Thị_Bình",
+   "locator": "plain-text extract characters 242:385; accessed 2026-10-01; sha256 cfec5b5ce363473d54487cc72bb48e82f035b6b223d36ebb60dedfc9da3f3ded",
+   "excerpt": "She became internationally known for her role as the Viet Cong (NLF)'s chief diplomat and leading its delegation to the Paris Peace Conference.",
+   "reason": "Chief diplomat of the National Liberation Front of South Vietnam."
+  },
+  {
+   "id": "vo-nguyen-giap",
+   "source": "https://en.wikipedia.org/wiki/Võ_Nguyên_Giáp",
+   "locator": "plain-text extract characters 1022:1107; accessed 2026-10-01; sha256 e68691f1e4abd37e8fc32f582612a9f91bec929cc8afd896f00289127df8e8ff",
+   "excerpt": "after the war led anti-colonial forces in the First Indochina War against the French.",
+   "reason": "Military commander of the Viet Minh against Japan and France."
+  },
+  {
+   "id": "le-duan",
+   "source": "https://en.wikipedia.org/wiki/Lê_Duẩn",
+   "locator": "plain-text extract characters 1249:1353; accessed 2026-10-01; sha256 88ba027a72beee32480f4e4aff7d3ae45de5fd968a807a583376a8d0e0d77fb9",
+   "excerpt": "During the First Indochina War (1946-1954), Lê Duẩn was an active revolutionary leader in South Vietnam.",
+   "reason": "Revolutionary leader in southern Vietnam during the war against France."
+  },
+  {
+   "id": "norodom-sihanouk",
+   "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+   "locator": "plain-text extract characters 852:906; accessed 2026-10-01; sha256 8ce969a20e3875ecfb5a35bf7abee636466bb5c90e3b9238a630ebc2a30a3116",
+   "excerpt": "he secured Cambodian independence from France in 1953.",
+   "reason": "Secured Cambodia's independence from France."
+  },
+  {
+   "id": "tan-malaka",
+   "source": "https://en.wikipedia.org/wiki/Tan_Malaka",
+   "locator": "plain-text extract characters 241:336; accessed 2026-10-01; sha256 1f65a297ba47d2e8fb8c79c064aff6c661b405fd23ad25e27189d7ef57cfebdb",
+   "excerpt": "He is also known as the Indonesian fighter, national hero, an independent guerrilla, and a spy.",
+   "reason": "Indonesian nationalist-communist and independence fighter."
+  },
+  {
+   "id": "mn-roy",
+   "source": "https://en.wikipedia.org/wiki/M._N._Roy",
+   "locator": "plain-text extract characters 2788:2865; accessed 2026-10-01; sha256 de30ba5fc8c612696107dab01e9954c474d47c0a8014ea83130ba59da0c6b816",
+   "excerpt": "giving radical nationalists like Roy an opportunity to build broader support.",
+   "reason": "Began as a radical nationalist in the Indian independence movement before becoming a communist."
+  },
+  {
+   "id": "kim-won-bong",
+   "source": "https://en.wikipedia.org/wiki/Kim_Won-bong",
+   "locator": "plain-text extract characters 99:169; accessed 2026-10-01; sha256 fd664a62d7c17a401b653650c5de5c9332388d11efb1faad01016078f3c8e959",
+   "excerpt": "was a Korean independence activist, anarchist militant and politician.",
+   "reason": "Founder of the Heroic Corps in the Korean independence movement."
+  },
+  {
+   "id": "kim-chaek",
+   "source": "https://en.wikipedia.org/wiki/Kim_Chaek",
+   "locator": "plain-text extract characters 329:442; accessed 2026-10-01; sha256 7c3476054ee6e30796886f87da8f26470d390583fc5a05a310816ca527bcb664",
+   "excerpt": "In 1927, Kim joined the Chinese Communist Party and the Anti-Japanese movement to oppose the Japanese occupation.",
+   "reason": "Anti-Japanese guerrilla fighter in the Korean independence struggle."
+  },
+  {
+   "id": "kim-il-sung",
+   "source": "https://en.wikipedia.org/wiki/Kim_Il_Sung",
+   "locator": "plain-text extract characters 588:660; accessed 2026-10-01; sha256 2fe3778d1515a1e9e3d18aef0156303a22d646e5a9e58ebee1bffb46d4aaf1fb",
+   "excerpt": "he became a communist and joined various anti-Japanese guerrilla groups,",
+   "reason": "Anti-Japanese guerrilla leader in the Korean independence struggle."
+  },
+  {
+   "id": "kim-tu-bong",
+   "source": "https://en.wikipedia.org/wiki/Kim_Tu-bong",
+   "locator": "plain-text extract characters 2478:2639; accessed 2026-10-01; sha256 2936101a8865a08a4e88a5dd58dceb25c961d6a8ad90c50069fc0fde317eac16",
+   "excerpt": "After the 1919 March First Movement, he and other members of the independence club fled into China and in April 1919 set up a provisional government in Shanghai.",
+   "reason": "Helped set up the Korean provisional government in Shanghai after the March First Movement."
+  },
+  {
+   "id": "mu-chong",
+   "source": "https://en.wikipedia.org/wiki/Mu_Chong",
+   "locator": "plain-text extract characters 59:143; accessed 2026-10-01; sha256 e4ff52d24f04417dd7a69316883770ec6df5906d792f97306d5bc52fc3df7f7f",
+   "excerpt": "was a Korean communist, independence activist, general and statesman of North Korea.",
+   "reason": "Korean independence activist and Eighth Route Army commander."
+  },
+  {
+   "id": "yi-dong-hwi",
+   "source": "https://en.wikipedia.org/wiki/Yi_Dong-hwi",
+   "locator": "plain-text extract characters 181:262; accessed 2026-10-01; sha256 d6fe60c9245c03763514eced7f1723bb30e7e7446110fc42cf5db83fdf5be2a1",
+   "excerpt": "He led armed actions against the Empire of Japan in an attempt to liberate Korea.",
+   "reason": "Led armed resistance to Japan and served as prime minister of the Korean provisional government."
+  },
+  {
+   "id": "yeo-un-hyeong",
+   "source": "https://en.wikipedia.org/wiki/Lyuh_Woon-hyung",
+   "locator": "plain-text extract characters 117:179; accessed 2026-10-01; sha256 d3afe6ea8b7ab6285ed5a772b537624aea71a395d53afd5802c3ece2c06bbe1d",
+   "excerpt": "was a Korean independence activist and reunification activist.",
+   "reason": "Korean independence activist of the provisional government."
+  },
+  {
+   "id": "cho-mansik",
+   "source": "https://en.wikipedia.org/wiki/Cho_Man-sik",
+   "locator": "plain-text extract characters 88:123; accessed 2026-10-01; sha256 ef82932dfa2834e410911bf7cde696036e74f7bb4c24906cff7b8d6c85cbfde7",
+   "excerpt": "was a Korean independence activist.",
+   "reason": "Nonviolent Korean independence activist against Japanese rule."
+  },
+  {
+   "id": "monja-jaona",
+   "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+   "locator": "plain-text extract characters 274:371; accessed 2026-10-01; sha256 32f3b43df79ca8395dc1095b05299da7fdd7a435406b345080985a9b62205d28",
+   "excerpt": "sided with MDRM during the ultimately unsuccessful Malagasy Uprising of 1947 against French rule.",
+   "reason": "Malagasy nationalist who joined the 1947 uprising against French rule."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "joaquim-chissano",
+   "reason": "Page shows only negotiation of the Lusaka Accord; no explicit FRELIMO liberation role in the extract."
+  },
+  {
+   "id": "fidel-castro",
+   "reason": "Cuban Revolution was an overthrow of a dictator rather than a national liberation movement against colonial rule; left to the existing communist/revolution collections."
+  },
+  {
+   "id": "che-guevara",
+   "reason": "Internationalist revolutionary of the Cuban Revolution; not framed as a national liberation leader."
+  },
+  {
+   "id": "raul-castro",
+   "reason": "Cuban Revolution leader, same reasoning as Fidel Castro."
+  },
+  {
+   "id": "salvador-allende",
+   "reason": "Elected socialist president, not a national liberation movement."
+  },
+  {
+   "id": "sun-yat-sen",
+   "reason": "Anti-Qing republican revolution, not an anti-colonial movement in the sense of the collection."
+  },
+  {
+   "id": "connolly",
+   "reason": "Irish republican; outside the regions listed in the criteria (borderline)."
+  },
+  {
+   "id": "aime-cesaire",
+   "reason": "Poet and politician of Négritude; anti-colonial writer rather than movement leader (borderline)."
+  },
+  {
+   "id": "pramoedya-ananta-toer",
+   "reason": "Novelist; imprisoned by the Dutch in 1947-49 but significance is literary."
+  },
+  {
+   "id": "walter-rodney",
+   "reason": "Historian and Guyanese opposition leader; scholar of African underdevelopment."
+  },
+  {
+   "id": "sankara",
+   "reason": "Post-independence military ruler of Burkina Faso."
+  },
+  {
+   "id": "lee-kuan-yew",
+   "reason": "Led Singapore to self-rule but significance is as a ruling anti-communist statesman."
+  },
+  {
+   "id": "stepan-bandera",
+   "reason": "Ukrainian far-right nationalist who collaborated with Nazi Germany; not an anti-colonial movement of the listed regions."
+  },
+  {
+   "id": "symon-petliura",
+   "reason": "Ukrainian nationalist in Europe; already in counterrevolution."
+  },
+  {
+   "id": "syngman-rhee",
+   "reason": "Korean independence figure but also Cold War anti-communist strongman, excluded by criteria."
+  },
+  {
+   "id": "ali-salem-al-beidh",
+   "reason": "Extract only states he joined the NLF in 1963; evidence too thin."
+  },
+  {
+   "id": "ali-ahmed-nasser-antar",
+   "reason": "No verifiable Wikipedia extract found."
+  },
+  {
+   "id": "kim-san",
+   "reason": "No verifiable Wikipedia extract found."
+  },
+  {
+   "id": "ho-hon",
+   "reason": "No verifiable Wikipedia extract found."
+  },
+  {
+   "id": "choe-yong-gon",
+   "reason": "Disambiguation page; no clear extract."
+  },
+  {
+   "id": "jose-eduardo-dos-santos",
+   "reason": "Post-independence ruler of Angola."
+  },
+  {
+   "id": "nito-alves",
+   "reason": "Post-independence MPLA interior minister, known for the 1977 coup attempt."
+  },
+  {
+   "id": "zhu-de",
+   "reason": "Chinese Red Army; Chinese revolution is not framed as national liberation here."
+  },
+  {
+   "id": "mao-zedong",
+   "reason": "Same as Zhu De; left to the China revolution collection."
+  },
+  {
+   "id": "aris-velouchiotis",
+   "reason": "European anti-occupation resistance, outside the criteria."
+  },
+  {
+   "id": "josip-broz-tito",
+   "reason": "European partisan war, outside the criteria."
+  },
+  {
+   "id": "agostinho-mendes-de-carvalho",
+   "reason": "Operator review: Evidence only calls him a writer and nationalist."
+  },
+  {
+   "id": "kim-jong-suk",
+   "reason": "Operator review: The cited article hedges her guerrilla role (\"purportedly\")."
+  }
+ ],
+ "migration": "222"
+}

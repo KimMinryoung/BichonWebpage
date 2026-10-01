@@ -1,0 +1,146 @@
+{
+ "collection": "western-marxist",
+ "criteria": "Marxist theorists outside the Soviet orthodoxy whose significance is their theory: Western Marxism and critical theory, council and left communism, and independent Marxist humanists and theorists of colonial and racial oppression. Soviet or official party ideologues, historians who merely wrote about Marxism, economists without a Marxist theoretical programme, and people whose significance is party leadership are excluded.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "gyorgy-lukacs",
+   "source": "https://en.wikipedia.org/wiki/György_Lukács",
+   "locator": "plain-text extract characters 221:354; accessed 2026-10-01; sha256 c6c1487835557ac5812bba304e9107e31448b51060c3941e576d1acc1931a23c",
+   "excerpt": "He was one of the founders of Western Marxism, an interpretive tradition that departed from the Soviet Marxist ideological orthodoxy.",
+   "reason": "Founder of Western Marxism and theorist of reification."
+  },
+  {
+   "id": "karl-korsch",
+   "source": "https://en.wikipedia.org/wiki/Karl_Korsch",
+   "locator": "plain-text extract characters 133:277; accessed 2026-10-01; sha256 c6a29c0b2c0d982f361fc7725d2113a886587078dc3a1a396afd6470c4d496a5",
+   "excerpt": "He is recognized as one of the \"dissidents\" that challenged the Marxism of the Second International of Karl Kautsky, Georgi Plekhanov and Lenin.",
+   "reason": "Co-founder of Western Marxism who challenged Second International and Leninist orthodoxy."
+  },
+  {
+   "id": "gramsci",
+   "source": "https://en.wikipedia.org/wiki/Antonio_Gramsci",
+   "locator": "plain-text extract characters 517:617; accessed 2026-10-01; sha256 1f8c3765f5f45937f6fb626b8adc32b54e076bb3430795a041762c4f820401ef",
+   "excerpt": "His Prison Notebooks are considered a highly original contribution to 20th-century political theory.",
+   "reason": "Marxist philosopher of hegemony and the Prison Notebooks."
+  },
+  {
+   "id": "herbert-marcuse",
+   "source": "https://en.wikipedia.org/wiki/Herbert_Marcuse",
+   "locator": "plain-text extract characters 404:533; accessed 2026-10-01; sha256 c3f0c2416cad02bd8f58906479fcbdfbc46c9d12d42540d0fd13ddbd9b2302ee",
+   "excerpt": "He was a prominent figure in the Frankfurt-based Institute for Social Research, which later became known as the Frankfurt School.",
+   "reason": "Frankfurt School critical theorist."
+  },
+  {
+   "id": "walter-benjamin",
+   "source": "https://en.wikipedia.org/wiki/Walter_Benjamin",
+   "locator": "plain-text extract characters 1104:1147; accessed 2026-10-01; sha256 c68f30554a379cc841b43555e250bd4b30a626a8e284120ca9ae42827190c467",
+   "excerpt": "He was associated with the Frankfurt School",
+   "reason": "Marxist cultural critic associated with the Frankfurt School."
+  },
+  {
+   "id": "ernst-bloch",
+   "source": "https://en.wikipedia.org/wiki/Ernst_Bloch",
+   "locator": "plain-text extract characters 73:106; accessed 2026-10-01; sha256 385b181d2b588ca763382ad209553a9807eda1cf59b4c151ca620eb4802673c2",
+   "excerpt": "was a German Marxist philosopher.",
+   "reason": "Marxist philosopher of utopia and hope who revised his view of the SED regime."
+  },
+  {
+   "id": "louis-althusser",
+   "source": "https://en.wikipedia.org/wiki/Louis_Althusser",
+   "locator": "plain-text extract characters 537:595; accessed 2026-10-01; sha256 3eeb88c0792cdba06efc9376de1c41f952dccafd4897aa6c04e0f2152100c939",
+   "excerpt": "Althusser is commonly referred to as a structural Marxist,",
+   "reason": "Founder of structural Marxism."
+  },
+  {
+   "id": "c-l-r-james",
+   "source": "https://en.wikipedia.org/wiki/C._L._R._James",
+   "locator": "plain-text extract characters 112:193; accessed 2026-10-01; sha256 9dcc24877c7c50d5e6d31da06be88baba5c2d1c4c6b274363f9857e61e5f4cba",
+   "excerpt": "was a Trinidadian historian, journalist, Trotskyist activist, and Marxist writer.",
+   "reason": "Marxist writer of Trotskyist and Pan-Africanist theory."
+  },
+  {
+   "id": "angela-davis",
+   "source": "https://en.wikipedia.org/wiki/Angela_Davis",
+   "locator": "plain-text extract characters 44:126; accessed 2026-10-01; sha256 617575630db983929dea4cb78f5f3f07eb4c1e7aae8da8b8df5d11b0c05fc385",
+   "excerpt": "is an American Marxist feminist political activist, philosopher, academic, author.",
+   "reason": "Marxist feminist philosopher and theorist of the prison-industrial complex."
+  },
+  {
+   "id": "raya-dunayevskaya",
+   "source": "https://en.wikipedia.org/wiki/Raya_Dunayevskaya",
+   "locator": "plain-text extract characters 2081:2350; accessed 2026-10-01; sha256 745bfaa15a2459464ec525f92e974a71bf5f9a54e7e8f4a653d7743fc63524d9",
+   "excerpt": "Her simultaneous study of the Russian economy and of Marx's early writings (later known as the Economic and Philosophical Manuscripts of 1844), led to her theory that not only was the USSR a \"state capitalist\" society, but that \"state capitalism\" was a new world stage.",
+   "reason": "Founder of Marxist humanism in the United States and theorist of state capitalism."
+  },
+  {
+   "id": "anton-pannekoek",
+   "source": "https://en.wikipedia.org/wiki/Anton_Pannekoek",
+   "locator": "plain-text extract characters 180:233; accessed 2026-10-01; sha256 83799dc2cdb957bd9d7a40cd1565fdf0160b27183418e077af6016c197006809",
+   "excerpt": "He was one of the main theorists of council communism",
+   "reason": "Main theorist of council communism and critic of Leninism."
+  },
+  {
+   "id": "mariategui",
+   "source": "https://en.wikipedia.org/wiki/José_Carlos_Mariátegui",
+   "locator": "plain-text extract characters 214:260; accessed 2026-10-01; sha256 83ff142e5b6abc41f4eb3dc3301026cedfaa9b949d0ac3d7e71f0dd61e5deb4b",
+   "excerpt": "was a Peruvian politician, and Marxist writer.",
+   "reason": "Peruvian Marxist writer who adapted Marxism to the Andes."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "bertolt-brecht",
+   "reason": "Wikipedia frames him as a playwright and theatre theorist; Marxist theory is not his framing (borderline)."
+  },
+  {
+   "id": "isaac-deutscher",
+   "reason": "Marxist historian and biographer; the criteria exclude historians who wrote about Marxism."
+  },
+  {
+   "id": "web-du-bois",
+   "reason": "Sociologist and civil rights leader; Marxism not his framing."
+  },
+  {
+   "id": "michal-kalecki",
+   "reason": "Economist; not a Marxist theoretical programme (borderline)."
+  },
+  {
+   "id": "david-riazanov",
+   "reason": "Editor and institute head within the Soviet system."
+  },
+  {
+   "id": "radovan-richta",
+   "reason": "Reform-communist philosopher of the scientific-technological revolution, not framed as outside orthodoxy (borderline)."
+  },
+  {
+   "id": "tony-cliff",
+   "reason": "Party builder and activist; his theory of state capitalism is not evident in the extract (kept for left-opposition)."
+  },
+  {
+   "id": "grace-lee-boggs",
+   "reason": "Philosopher and activist in Detroit; Marxist phase is early career (borderline)."
+  },
+  {
+   "id": "asja-lacis",
+   "reason": "Theatre director."
+  },
+  {
+   "id": "franz-mehring",
+   "reason": "Historian and journalist of pre-1917 German Marxism, not Western Marxism."
+  },
+  {
+   "id": "peter-fryer",
+   "reason": "Journalist."
+  },
+  {
+   "id": "balazs-nagy",
+   "reason": "Historian."
+  },
+  {
+   "id": "august-thalheimer",
+   "reason": "Operator review: Theorist of the Right Opposition (KPO) inside the communist movement rather than of Western Marxism."
+  }
+ ],
+ "migration": "222"
+}

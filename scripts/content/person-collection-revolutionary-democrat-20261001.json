@@ -1,0 +1,108 @@
+{
+ "collection": "revolutionary-democrat",
+ "criteria": "The radical Russian intelligentsia of roughly 1840-1870 who preceded the Narodniks: the Westernizing and utopian-socialist critics, journalists and publicists around Belinsky, Herzen, Ogarev, Chernyshevsky, Dobrolyubov and Pisarev, whose journals Sovremennik and Kolokol promoted democracy, anti-serfdom and socialist ideas. Slavophiles, liberals, Vekhi and religious philosophers, and anyone already in the narodnik collection are excluded.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "alexander-herzen",
+   "source": "https://en.wikipedia.org/wiki/Alexander_Herzen",
+   "locator": "plain-text extract characters 427:621; accessed 2026-10-01; sha256 2fcf23d513e86bcc1993339f02566b0c37b1d1df70725acf50dc1a4567946b06",
+   "excerpt": "With his writings, many composed while exiled in London, he attempted to influence the situation in Russia, contributing to a political climate that led to the emancipation of the serfs in 1861.",
+   "reason": "Exiled publisher of The Bell and founder of Russian peasant socialism."
+  },
+  {
+   "id": "nikolai-ogarev",
+   "source": "https://en.wikipedia.org/wiki/Nikolay_Ogaryov",
+   "locator": "plain-text extract characters 197:375; accessed 2026-10-01; sha256 6bff3ab9878833ffe64f8f4a8edfcf4c660140de74c8f5949af5301ccf7d4aeb",
+   "excerpt": "He was deeply critical of the limitations of the Emancipation reform of 1861, claiming that the serfs were not set free, but had simply exchanged one form of serfdom for another.",
+   "reason": "Poet and political activist who co-edited Kolokol with Herzen."
+  },
+  {
+   "id": "vissarion-belinsky",
+   "source": "https://en.wikipedia.org/wiki/Vissarion_Belinsky",
+   "locator": "plain-text extract characters 131:186; accessed 2026-10-01; sha256 ecf070750fd7d473de9b91469e9f6fc49ad45f328a0c8a4be1716043065e4760",
+   "excerpt": "was a Russian literary critic of Westernizing tendency.",
+   "reason": "Westernizing critic regarded as the father of the Russian radical intelligentsia."
+  },
+  {
+   "id": "chernyshevsky",
+   "source": "https://en.wikipedia.org/wiki/Nikolay_Chernyshevsky",
+   "locator": "plain-text extract characters 1085:1158; accessed 2026-10-01; sha256 d9e39f8978d47f512f2daac9925e27086c972eae5d077f26c37e0c71448ac5e1",
+   "excerpt": "Chernyshevsky developed revolutionary, democratic, and materialist views.",
+   "reason": "Leading revolutionary-democratic critic and novelist of the Sovremennik circle."
+  },
+  {
+   "id": "nikolai-dobrolyubov",
+   "source": "https://en.wikipedia.org/wiki/Nikolay_Dobrolyubov",
+   "locator": "plain-text extract characters 201:309; accessed 2026-10-01; sha256 875bf12248ad7d706191e9f601d9fc7d8757038f422bd45aee473252f3d53b7e",
+   "excerpt": "was a Russian poet, literary critic, journalist, and prominent figure of the Russian revolutionary movement.",
+   "reason": "Sovremennik critic and prominent figure of the revolutionary movement."
+  },
+  {
+   "id": "dmitry-pisarev",
+   "source": "https://en.wikipedia.org/wiki/Dmitry_Pisarev",
+   "locator": "plain-text extract characters 89:180; accessed 2026-10-01; sha256 12399e3deffc914372953c01cd46d7eb1cf1737a95a48e7f3c3dde65a5cc7b45",
+   "excerpt": "was a Russian literary critic and philosopher who was a central figure of Russian nihilism.",
+   "reason": "Central figure of 1860s Russian nihilism."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "nikolai-nekrasov",
+   "reason": "Wikipedia frames him as a poet and publisher of Sovremennik; extract does not frame political radicalism strongly enough (borderline)."
+  },
+  {
+   "id": "mikhail-saltykov-shchedrin",
+   "reason": "Extract only shows Sovremennik and Otechestvennye zapiski contributions; no explicit radical framing."
+  },
+  {
+   "id": "sergei-nechayev",
+   "reason": "Conspirator of 1869 closer to the narodnik terrorist tradition than to the intelligentsia of the circle."
+  },
+  {
+   "id": "mikhail-bakunin",
+   "reason": "Already in anarchist collection; anarchist rather than revolutionary democrat."
+  },
+  {
+   "id": "nikolai-danilevsky",
+   "reason": "Pan-Slavist."
+  },
+  {
+   "id": "konstantin-pobedonostsev",
+   "reason": "Conservative statesman."
+  },
+  {
+   "id": "mikhail-katkov",
+   "reason": "Conservative journalist."
+  },
+  {
+   "id": "pyotr-struve",
+   "reason": "Liberal."
+  },
+  {
+   "id": "yekaterina-kuskova",
+   "reason": "Liberal."
+  },
+  {
+   "id": "nikolai-berdyaev",
+   "reason": "Religious philosopher."
+  },
+  {
+   "id": "sergei-bulgakov",
+   "reason": "Religious philosopher."
+  },
+  {
+   "id": "mikhail-gershenzon",
+   "reason": "Vekhi author."
+  },
+  {
+   "id": "nikolai-fyodorov",
+   "reason": "Religious philosopher."
+  },
+  {
+   "id": "leo-tolstoy",
+   "reason": "Writer and religious anarchist, already in anarchist collection."
+  }
+ ],
+ "migration": "222"
+}

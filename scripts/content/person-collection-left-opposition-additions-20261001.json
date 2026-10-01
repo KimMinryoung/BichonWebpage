@@ -1,0 +1,152 @@
+{
+ "collection": "left-opposition",
+ "criteria": "People who criticised Lenin and the Bolshevik leadership from the left: Left SRs, party factions (Left Communists, Democratic Centralists, Workers' Opposition, Left Opposition), the Kronstadt rebellion, and later Trotskyism, council and left communism and calls to return to Leninist principles.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "andreu-nin",
+   "source": "https://en.wikipedia.org/wiki/Andreu_Nin",
+   "locator": "plain-text extract characters 3343:3502; accessed 2026-10-01; sha256 9f05a262c3ea965321467f0ea3dd59922a685fdb2ce7efdd15fbdf116249957f",
+   "excerpt": "From 1926 onwards, he belonged to the \"Left Opposition\" led by Trotsky, which opposed the rise of Joseph Stalin within the Communist Party of the Soviet Union,",
+   "reason": "Member of Trotsky's Left Opposition and founder of the Spanish Left Communists."
+  },
+  {
+   "id": "alfred-rosmer",
+   "source": "https://en.wikipedia.org/wiki/Alfred_Rosmer",
+   "locator": "plain-text extract characters 2082:2276; accessed 2026-10-01; sha256 02db56f3df23c9ee19f8c6826a9c477cc97e2e1991a4251c92164f3406898372",
+   "excerpt": "In 1923 and 1924 Rosmer was one of the top leaders of the PCF, until his expulsion in the fall of 1924 along with Boris Souvarine and Monatte for opposing the organised campaign against Trotsky.",
+   "reason": "Expelled from the PCF for defending Trotsky and later helped found the first Trotskyist movement in France."
+  },
+  {
+   "id": "boris-souvarine",
+   "source": "https://en.wikipedia.org/wiki/Boris_Souvarine",
+   "locator": "plain-text extract characters 4826:5016; accessed 2026-10-01; sha256 66c0e1ea85fbc0e7dd834a83943fe973a7bc7adf8f26faeb3ccef8855d6acba0",
+   "excerpt": "When Trotsky became the target of vilification in the All-Union Communist Party, Souvarine conveyed the French Communist Party's support for Trotsky to the Bolsheviks' 13th Congress in 1924.",
+   "reason": "Defended Trotsky against the party leadership and wrote that Bolshevik rule would become a dictatorship of the party and its leader."
+  },
+  {
+   "id": "c-l-r-james",
+   "source": "https://en.wikipedia.org/wiki/C._L._R._James",
+   "locator": "plain-text extract characters 3142:3237; accessed 2026-10-01; sha256 9dcc24877c7c50d5e6d31da06be88baba5c2d1c4c6b274363f9857e61e5f4cba",
+   "excerpt": "The following year, he joined a Trotskyist group that met to talk for hours in his rented room.",
+   "reason": "Trotskyist theorist and activist."
+  },
+  {
+   "id": "tony-cliff",
+   "source": "https://en.wikipedia.org/wiki/Tony_Cliff",
+   "locator": "plain-text extract characters 7652:7802; accessed 2026-10-01; sha256 7be8b3def9dc377e3db2c3f6b3c27d856cf0f617a768e83679bd0ee6ed32d277",
+   "excerpt": "Cliff was a revolutionary socialist in the Trotskyist tradition, attempting to make Vladimir Lenin's theory of the party effective in the present day.",
+   "reason": "Trotskyist founder of the state-capitalist tendency."
+  },
+  {
+   "id": "raya-dunayevskaya",
+   "source": "https://en.wikipedia.org/wiki/Raya_Dunayevskaya",
+   "locator": "plain-text extract characters 1035:1148; accessed 2026-10-01; sha256 745bfaa15a2459464ec525f92e974a71bf5f9a54e7e8f4a653d7743fc63524d9",
+   "excerpt": "By the following year she found a group of independent Trotskyists in Boston, led by Antoinette Buchholz Konikow,",
+   "reason": "Trotsky's former secretary and Trotskyist dissident who developed the state-capitalism theory."
+  },
+  {
+   "id": "grace-lee-boggs",
+   "source": "https://en.wikipedia.org/wiki/Grace_Lee_Boggs",
+   "locator": "plain-text extract characters 1391:1593; accessed 2026-10-01; sha256 ffa39c6eb3ec550f0883ce1e80166fafa14cbd22d3737becc6b4905c1c66d89d",
+   "excerpt": "Early in her career, Boggs translated Karl Marx's works and was actively involved in several leftist organizations, including the Workers Party, the Socialist Workers Party, and the Trotskyist movement.",
+   "reason": "Active in the Trotskyist movement and the Johnson-Forest tendency."
+  },
+  {
+   "id": "anton-pannekoek",
+   "source": "https://en.wikipedia.org/wiki/Anton_Pannekoek",
+   "locator": "plain-text extract characters 8535:8628; accessed 2026-10-01; sha256 83799dc2cdb957bd9d7a40cd1565fdf0160b27183418e077af6016c197006809",
+   "excerpt": "Pannekoek was a sharp critic of anarchism, social democracy, and Vladimir Lenin and Leninism.",
+   "reason": "Council communist who criticised Lenin and Leninism from the left."
+  },
+  {
+   "id": "sylvia-pankhurst",
+   "source": "https://en.wikipedia.org/wiki/Sylvia_Pankhurst",
+   "locator": "plain-text extract characters 556:669; accessed 2026-10-01; sha256 54beb982d7ef075e585e60596453d0d3b9e7d7d69af59ee3a4fc6ffacc6065dd",
+   "excerpt": "But as an advocate of workers' control, she rejected the Leninist party line and criticised the Bolshevik regime.",
+   "reason": "British left communist who criticised the Bolshevik regime from the left."
+  },
+  {
+   "id": "alexander-voronsky",
+   "source": "https://en.wikipedia.org/wiki/Aleksandr_Voronsky",
+   "locator": "plain-text extract characters 6764:6936; accessed 2026-10-01; sha256 a23d23a76ae0b08e232996020ff39471a5b626ff43f48188d406edd138d9b437",
+   "excerpt": "In October 1923, Voronsky signed The Declaration of 46, drawn up by Bolsheviks who were backing Trotsky in the power struggle that developed while Lenin was terminally ill.",
+   "reason": "Signed the Declaration of 46 and belonged to the Trotskyist opposition."
+  },
+  {
+   "id": "boris-donskoy",
+   "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+   "locator": "plain-text extract characters 116:191; accessed 2026-10-01; sha256 8d103c2f18ea7057d424f649e5f4d37e6cbb2bf4eaa5ff25c5265a1974ceec84",
+   "excerpt": "He was a member of the Left Socialist-Revolutionary party as SR-maximalist.",
+   "reason": "Left SR who assassinated Field Marshal Eichhorn in 1918."
+  },
+  {
+   "id": "irina-kakhovskaya",
+   "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+   "locator": "plain-text extract characters 263:356; accessed 2026-10-01; sha256 2d74fbfbeb9734739073c32fab41e47f211e516d57c08f93f61806982637666f",
+   "excerpt": "she was a representative of the Left Socialist-Revolutionaries during the Russian Revolution:",
+   "reason": "Left SR who organised the 1918 assassination of Eichhorn."
+  },
+  {
+   "id": "prosh-proshian",
+   "source": "https://en.wikipedia.org/wiki/Prosh_Proshian",
+   "locator": "plain-text extract characters 76:165; accessed 2026-10-01; sha256 020d7f0ec108bd0f1a90cbf023e2c4e42d51acb22acbc8819954dc19b0118215",
+   "excerpt": "was an Armenian revolutionary active in the Left Socialist Revolutionary Party (left SR).",
+   "reason": "Left SR People's Commissar for Post and Telegraphs."
+  },
+  {
+   "id": "trotsky",
+   "source": "https://en.wikipedia.org/wiki/Leon_Trotsky",
+   "locator": "plain-text extract characters 1732:1798; accessed 2026-10-01; sha256 3821172050aa316fa4df1b3e20d3f3af4f40e44328258a44839bd3e0c75407c9",
+   "excerpt": "Beginning in 1923, Trotsky led the party's Left Opposition faction",
+   "reason": "Founder and leader of the Left Opposition from 1923 and the namesake of Trotskyism; his followers are already members. Operator decision 2026-10-01; Zinoviev and Kamenev stay out (brief 1925–27 opposition, capitulated in 1928)."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "joaquin-maurin",
+   "reason": "Aligned with the international Right Opposition, not the left."
+  },
+  {
+   "id": "jan-sten",
+   "reason": "Right Opposition."
+  },
+  {
+   "id": "wang-shiwei",
+   "reason": "Trotskyism was only an accusation made against him; significance is Yan'an criticism."
+  },
+  {
+   "id": "olga-kameneva",
+   "reason": "Trotsky's sister but no opposition role in extract."
+  },
+  {
+   "id": "yakov-fishman",
+   "reason": "No verifiable extract showing opposition."
+  },
+  {
+   "id": "karl-korsch",
+   "reason": "Kept for western-marxist; left-communist ties not tested here."
+  },
+  {
+   "id": "trotsky",
+   "reason": "Not gray; already holds another position."
+  },
+  {
+   "id": "isaac-deutscher",
+   "reason": "Marxist historian of Trotsky, not an oppositionist."
+  },
+  {
+   "id": "hugo-eberlein",
+   "reason": "Official KPD functionary."
+  },
+  {
+   "id": "august-thalheimer",
+   "reason": "Right opposition (KPO)."
+  },
+  {
+   "id": "varlam-shalamov",
+   "reason": "Operator review: Significance is literary; joining a Trotskyist-leaning student group is too thin."
+  }
+ ],
+ "migration": "222"
+}

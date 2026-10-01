@@ -1,0 +1,715 @@
+{
+ "note": "2026-10-01: 입장 색이 없던(회색) 인물 중 공산당원·공산 국가 복무가 원문으로 확인되는 37명에 그 활동을 보조 활동으로 더함(배치 01). 근거는 위키백과 plain-text 발췌.",
+ "reviewMethod": "operator request; membership or post stated explicitly in a verbatim excerpt; fellow travellers, Komsomol and writers-union membership not counted",
+ "add": {
+  "che-guevara": [
+   {
+    "functionId": "economy",
+    "affiliationId": "state-cuba",
+    "affiliationStatus": "confirmed",
+    "relation": "service",
+    "primary": false,
+    "startYear": 1959,
+    "endYear": 1965,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Che_Guevara",
+      "locator": "plain-text extract characters 1385:1504; accessed 2026-10-01; sha256 cef5c0fe3e96493dba5329fdb4e3f011627eef8a11d7ca871b265b94844051de",
+      "claim": "체 게바라는 1959년 이후 쿠바 정부에서 산업부 장관과 국립은행 총재를 맡았다.",
+      "excerpt": "as minister of industries, helping spearhead a successful literacy campaign, serving as  president of the National Bank"
+     }
+    ]
+   }
+  ],
+  "carlos-marighella": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-brazilian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1934,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Carlos_Marighella",
+      "locator": "plain-text extract characters 1018:1196; accessed 2026-10-01; sha256 df56713757c5e48d22a729a7f1d8d055a94887a0842fcff427a6ca44d12b12e2",
+      "claim": "마리겔라는 1934년 공과대학을 그만두고 브라질 공산당(PCB)의 적극적 당원이 되었다.",
+      "excerpt": "In 1934, he left the Polytechnic School of Bahia, where he was pursuing a degree in civil engineering, in order to become an active member of the Brazilian Communist Party (PCB)."
+     }
+    ]
+   }
+  ],
+  "angela-davis": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-us-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1968,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Angela_Davis",
+      "locator": "plain-text extract characters 9057:9112; accessed 2026-10-01; sha256 617575630db983929dea4cb78f5f3f07eb4c1e7aae8da8b8df5d11b0c05fc385",
+      "claim": "앤절라 데이비스는 1968년 미국 공산당에 입당했다.",
+      "excerpt": "Davis had previously joined the Communist Party in 1968"
+     }
+    ]
+   }
+  ],
+  "louis-althusser": [
+   {
+    "functionId": "scholarship",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1948,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Louis_Althusser",
+      "locator": "plain-text extract characters 6724:6816; accessed 2026-10-01; sha256 3eeb88c0792cdba06efc9376de1c41f952dccafd4897aa6c04e0f2152100c939",
+      "claim": "알튀세르는 1948년 10월 프랑스 공산당(PCF)에 입당했다.",
+      "excerpt": "Althusser joined the French Communist Party (Parti communiste français, PCF) in October 1948"
+     }
+    ]
+   }
+  ],
+  "milan-kundera": [
+   {
+    "functionId": "arts",
+    "affiliationId": "party-czechoslovak-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1947,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Milan_Kundera",
+      "locator": "plain-text extract characters 1978:2033; accessed 2026-10-01; sha256 4037eeb1a5f706b0118160cf18a5d57145077fa6af7eb06048ca538798b88ea5",
+      "claim": "쿤데라는 18세 때인 1947년 체코슬로바키아 공산당에 입당했다.",
+      "excerpt": "he joined the Communist Party of Czechoslovakia in 1947"
+     }
+    ]
+   }
+  ],
+  "gyorgy-lukacs": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/György_Lukács",
+      "locator": "plain-text extract characters 4805:4860; accessed 2026-10-01; sha256 c6c1487835557ac5812bba304e9107e31448b51060c3941e576d1acc1931a23c",
+      "claim": "루카치는 1918년 갓 생긴 헝가리 공산당에 입당했다.",
+      "excerpt": "joined the fledgling Communist Party of Hungary in 1918"
+     }
+    ]
+   }
+  ],
+  "jaroslav-seifert": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-czechoslovak-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jaroslav_Seifert",
+      "locator": "plain-text extract characters 494:604; accessed 2026-10-01; sha256 b2e0920286b01294bcdaafe715f6f71f472406642485d4276d94ee36efce6cc5",
+      "claim": "자로슬라프 세이페르트는 체코슬로바키아 공산당(KSČ) 당원이었고 여러 공산당 계열 신문·잡지의 편집자였다.",
+      "excerpt": "He was a member of the Communist Party of Czechoslovakia (KSČ), the editor of a number of communist newspapers"
+     }
+    ]
+   }
+  ],
+  "peter-fryer": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-british-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1945,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Peter_Fryer",
+      "locator": "plain-text extract characters 487:541; accessed 2026-10-01; sha256 3f82d5e2c81e1f5d4446b39b3ae91a52137e0fa2c7052d6f96b5a05db8ff1b87",
+      "claim": "피터 프라이어는 1945년 영국 공산당 당원이 되었다.",
+      "excerpt": "In 1945, Fryer became a member of the Communist Party."
+     }
+    ]
+   }
+  ],
+  "ruth-first": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-south-african-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ruth_First",
+      "locator": "plain-text extract characters 859:960; accessed 2026-10-01; sha256 fcbc187ca18b2717d4e80b0e1d37a73afd63fee04d3a476815c986d82ea434b7",
+      "claim": "루스 퍼스트는 부모처럼 공산당(남아공 공산당)에 입당했다.",
+      "excerpt": "Like her parents, she joined the Communist Party, which was allied with the African National Congress"
+     }
+    ]
+   }
+  ],
+  "george-padmore": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-us-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1927,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/George_Padmore",
+      "locator": "plain-text extract characters 2947:3000; accessed 2026-10-01; sha256 d63cf20e534e21662955aa730bb68c6de37c2b0b7c54f74fcfb74dbc9667d363",
+      "claim": "조지 패드모어는 1927년 워싱턴에서 미국 공산당에 정식 입당했다.",
+      "excerpt": "Padmore officially joined the Communist Party in 1927"
+     }
+    ]
+   }
+  ],
+  "to-huu": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-vietnamese-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1938,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/To_Huu",
+      "locator": "plain-text extract characters 1976:2038; accessed 2026-10-01; sha256 084657014a723f2383babd3ab6289aaa04fc85d79e887a15f507a1484f085ed7",
+      "claim": "또 후(응우옌 낌타인)는 1938년 인도차이나 공산당에 입당했다.",
+      "excerpt": "then in 1938, he was admitted to the Indochina Communist Party"
+     }
+    ]
+   }
+  ],
+  "aime-cesaire": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1956,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Aimé_Césaire",
+      "locator": "plain-text extract characters 5967:6100; accessed 2026-10-01; sha256 376d8922e77ea861c641d0484fba16c15693b619b697e0be73baae42b0e9a664",
+      "claim": "에메 세제르는 1956년 헝가리 혁명 진압에 환멸을 느껴 프랑스 공산당(PCF) 탈당을 선언했다.",
+      "excerpt": "disillusioned with the Soviet Union after the 1956 suppression of the Hungarian Revolution. He announced his resignation from the PCF"
+     }
+    ]
+   }
+  ],
+  "alfred-rosmer": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1923,
+    "endYear": 1924,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alfred_Rosmer",
+      "locator": "plain-text extract characters 2082:2184; accessed 2026-10-01; sha256 02db56f3df23c9ee19f8c6826a9c477cc97e2e1991a4251c92164f3406898372",
+      "claim": "알프레드 로스메르는 1923~1924년 프랑스 공산당(PCF) 최고 지도자 중 한 명이었으며 1924년 가을 제명되었다.",
+      "excerpt": "In 1923 and 1924 Rosmer was one of the top leaders of the PCF, until his expulsion in the fall of 1924"
+     }
+    ]
+   }
+  ],
+  "aris-velouchiotis": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-greek-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Aris_Velouchiotis",
+      "locator": "plain-text extract characters 914:974; accessed 2026-10-01; sha256 c364804550141985e9d3376e372f846aacbf3acf657bcd5ead620b116d1cdf24",
+      "claim": "아리스 벨로우히오티스는 그리스 공산당(KKE) 당원이 되었다.",
+      "excerpt": "later became a member of the Communist Party of Greece (KKE)"
+     }
+    ]
+   }
+  ],
+  "august-thalheimer": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+      "locator": "plain-text extract characters 869:1003; accessed 2026-10-01; sha256 e76af2162de081aea86bfd75f1a36302446a579e147a14cc422ce82ab8eb83c6",
+      "claim": "아우구스트 탈하이머는 독일 공산당(KPD)의 창립 당원이 되었고 1920년대 초 그 주요 이론가로 인정받았다.",
+      "excerpt": "Thalheimer became a founding member of the Communist Party of Germany (KPD) and was recognised as its main theorist in the early 1920s"
+     }
+    ]
+   }
+  ],
+  "charles-tillon": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1932,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Charles_Tillon",
+      "locator": "plain-text extract characters 2558:2651; accessed 2026-10-01; sha256 821dfcb1abc081cb896ab630c527f6a0e044b0f0445b73b46713cc6b1061ed05",
+      "claim": "샤를 티용은 1932년 프랑스 공산당 중앙위원회에 들어갔고 정치국원이 되었다.",
+      "excerpt": "He entered the central committee of the party in 1932 and was made a member of the Politburo."
+     }
+    ]
+   }
+  ],
+  "c-l-r-james": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-us-swp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1940,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/C._L._R._James",
+      "locator": "plain-text extract characters 8936:9075; accessed 2026-10-01; sha256 9dcc24877c7c50d5e6d31da06be88baba5c2d1c4c6b274363f9857e61e5f4cba",
+      "claim": "C. L. R. 제임스는 미국 사회주의노동자당(SWP)에서 활동하다 1940년 맥스 섀크트먼과 함께 탈당했다.",
+      "excerpt": "By 1940, he had begun to doubt Trotsky's view of the Soviet Union as a degenerated workers' state. He left the SWP along with Max Shachtman"
+     }
+    ]
+   }
+  ],
+  "fritz-platten": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "comintern",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Fritz_Platten",
+      "locator": "plain-text extract characters 1752:1821; accessed 2026-10-01; sha256 06728e165aed2592cace177c7ce7aafda96a52d64044168bfd164fd0d91a3511",
+      "claim": "프리츠 플라텐은 공산주의 인터내셔널(코민테른) 창설에 참여했다.",
+      "excerpt": "Platten participated in the foundation of the Communist International"
+     }
+    ]
+   }
+  ],
+  "henk-sneevliet": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "comintern",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Henk_Sneevliet",
+      "locator": "plain-text extract characters 230:400; accessed 2026-10-01; sha256 2428fcb8b2886db0f7ac1e997c12285e80ef4db7b17375ef7f9ea803c6521cbe",
+      "claim": "헤니 스네이플리트는 코민테른 활동가로서 인도네시아 공산당(1914)과 중국 공산당(1921)의 결성을 이끌었다.",
+      "excerpt": "As a functionary of the Communist International, Sneevliet guided the formation of both the Communist Party of Indonesia in 1914, and the Chinese Communist Party in 1921."
+     }
+    ]
+   }
+  ],
+  "henri-rol-tanguy": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1987,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Henri_Rol-Tanguy",
+      "locator": "plain-text extract characters 2353:2475; accessed 2026-10-01; sha256 701818ac5ed294d139f245b9d585af270ab353dbe22f297869e56998604deda6",
+      "claim": "앙리 롤탕기는 군 경력을 마친 뒤 프랑스 공산당 중앙위원회에 들어가 1987년까지 머물렀다.",
+      "excerpt": "After his army career, Rol-Tanguy joined the central committee of the French Communist Party where he remained until 1987."
+     }
+    ]
+   }
+  ],
+  "hugo-eberlein": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": 1929,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Hugo_Eberlein",
+      "locator": "plain-text extract characters 1509:1635; accessed 2026-10-01; sha256 6b44890a51b97d29cc6192903fa4e5cd3b33be42170af5380b8b3527657e9587",
+      "claim": "후고 에버라인은 독일 공산당(KPD)의 창립 당원으로서 당 지도부에 선출되어 1929년까지 속했다.",
+      "excerpt": "At the end of the year he was a founding member of the KPD and was elected to its leadership, to which he belonged until 1929."
+     }
+    ]
+   }
+  ],
+  "john-reed": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1919,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_Reed_(journalist)",
+      "locator": "plain-text extract characters 577:644; accessed 2026-10-01; sha256 ee165ce7681d75bb2076a431fc56f55e2111ccb47b90c60cdd2c5314f4b74011",
+      "claim": "존 리드는 1919년 단명한 미국 공산노동당(Communist Labor Party of America)을 공동 창설했다.",
+      "excerpt": "co-founded the short-lived Communist Labor Party of America in 1919"
+     }
+    ]
+   }
+  ],
+  "joaquin-maurin": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-spanish-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1924,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Joaquín_Maurín",
+      "locator": "plain-text extract characters 1241:1373; accessed 2026-10-01; sha256 1ef5aa9c324fc380c5c10579eb42d02732aa0911f34492c342e6e6826ee5c634",
+      "claim": "호아킨 마우린은 1924년 자신의 라 바탈라 그룹을 스페인 공산당과 합병시키고 그 지역 조직(카탈루냐-발레아레스 공산주의 연맹)의 조직을 맡았다.",
+      "excerpt": "In 1924, he led his La Batalla into a merger with the Communist Party of Spain and took charge of organising the latter's local wing"
+     }
+    ]
+   }
+  ],
+  "julian-marchlewski": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1918,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Julian_Marchlewski",
+      "locator": "plain-text extract characters 3527:3684; accessed 2026-10-01; sha256 99b9bc6842977bc1e092cd7042ffad36388d9873d2151ea60bb32e56f0e29059",
+      "claim": "율리안 마르흘레프스키는 1918년 6월 포로 교환으로 석방되어 러시아로 추방된 뒤 볼셰비키에 가담했다.",
+      "excerpt": "was released in June 1918 as part of a prisoner exchange that followed the Treaty of Brest-Litovsk and was deported to Russia, where he joined the Bolsheviks"
+     }
+    ]
+   }
+  ],
+  "karl-korsch": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1920,
+    "endYear": 1926,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Korsch",
+      "locator": "plain-text extract characters 6651:6703; accessed 2026-10-01; sha256 c6a29c0b2c0d982f361fc7725d2113a886587078dc3a1a396afd6470c4d496a5",
+      "claim": "코르슈는 1926년 4월 30일 독일 공산당(KPD)에서 제명되었다.",
+      "excerpt": "On April 30, 1926, Korsch was expelled from the KPD."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Korsch",
+      "locator": "plain-text extract characters 5790:5849; accessed 2026-10-01; sha256 c6a29c0b2c0d982f361fc7725d2113a886587078dc3a1a396afd6470c4d496a5",
+      "claim": "카를 코르슈가 속한 독립사회민주당(USPD) 분파는 1920년 독일 공산당(KPD)에 합류했다.",
+      "excerpt": "faction which joined the Communist Party of Germany in 1920"
+     }
+    ]
+   }
+  ],
+  "luis-emilio-recabarren": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-chilean-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Luis_Emilio_Recabarren",
+      "locator": "plain-text extract characters 3346:3487; accessed 2026-10-01; sha256 394605b10ad094eefbe1ac09b36ac3fee150286c6dcfd1c3017905a46ca6d758",
+      "claim": "루이스 에밀리오 레카바렌은 자신이 속한 정당의 제3차 대회에 참여했고, 이 대회에서 제3인터내셔널 가입과 칠레 공산당으로의 전환이 결의되었다.",
+      "excerpt": "he participated in the third Congress of his party, where they agreed to join the Third International and become the Communist Party of Chile"
+     }
+    ]
+   }
+  ],
+  "sylvia-pankhurst": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-british-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sylvia_Pankhurst",
+      "locator": "plain-text extract characters 19402:19497; accessed 2026-10-01; sha256 54beb982d7ef075e585e60596453d0d3b9e7d7d69af59ee3a4fc6ffacc6065dd",
+      "claim": "실비아 팽크허스트는 영국 공산당(CPGB)에 '노동자의 드레드노트' 통제권을 넘기기를 거부하다가 제명되었다.",
+      "excerpt": "Pankhurst refused to hand over control of the Workers Dreadnought to the CPGB, and was expelled"
+     }
+    ]
+   }
+  ],
+  "pierre-georges": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pierre_Georges",
+      "locator": "plain-text extract characters 89:202; accessed 2026-10-01; sha256 8cf21ac7d1a97ae257a577cbcbdcfb88dd786d51228ea551a5e8307c0a62c1b7",
+      "claim": "피에르 조르주(파비앙 대령)는 독일 점령군에 대한 최초의 암살을 실행한 프랑스 공산당원 두 명 중 한 명이었다.",
+      "excerpt": "one of the two members of the French Communist Party who perpetrated the first assassinations of German personnel"
+     }
+    ]
+   }
+  ],
+  "viktor-kingissepp": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Viktor_Kingissepp",
+      "locator": "plain-text extract characters 682:817; accessed 2026-10-01; sha256 cfe2f97e16653637c6a4d340c01cbc724cea9d75da5298de6d4e0b7149245a72",
+      "claim": "빅토르 킹기세프는 2월 혁명 뒤 페트로그라드로 돌아와 볼셰비키와 적위대에 가담했다.",
+      "excerpt": "After the February revolution, he returned to Petrograd (as St Petersburg was now named), and joined the Bolsheviks and the Red Guards."
+     }
+    ]
+   }
+  ],
+  "vincas-kapsukas": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vincas_Mickevičius-Kapsukas",
+      "locator": "plain-text extract characters 7817:7940; accessed 2026-10-01; sha256 ce18d31fdfd9bb9450e9450559e8e3397365415e0c1dea9765eea727f791e611",
+      "claim": "빈카스 믹케비치우스-카프수카스는 미국에서 페트로그라드로 돌아와 러시아사회민주노동당(볼셰비키)에 입당했다.",
+      "excerpt": "He arrived from the United States to Petrograd and joined the Russian Social Democratic Labor Party (Bolshevik) (RSDLP(b))."
+     }
+    ]
+   }
+  ],
+  "zigmas-angarietis": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1916,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zigmas_Angarietis",
+      "locator": "plain-text extract characters 3153:3190; accessed 2026-10-01; sha256 e450552210665200cfffef2accccd258f749793c937edc5941de317908a3ded4",
+      "claim": "지그마스 앙가리에티스는 1916년 러시아사회민주노동당(볼셰비키)에 입당했다.",
+      "excerpt": "(RSDLP(b)), joining its ranks in 1916"
+     }
+    ]
+   }
+  ],
+  "choe-chang-ik": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-korean-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1927,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Choe_Chang-ik",
+      "locator": "plain-text extract characters 2552:2654; accessed 2026-10-01; sha256 ff823cc9a0b910557dd83fff4dee98546c7924189b01909f698d16040f1dc70b",
+      "claim": "최창익은 1927년 귀국하여 조선공산당에 가입하고 간부가 되었다.",
+      "excerpt": "In 1927, upon returning to Korea, he joined, and became an executive, of the Communist Party of Korea."
+     }
+    ]
+   }
+  ],
+  "juan-modesto": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-spanish-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1930,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Juan_Modesto",
+      "locator": "plain-text extract characters 406:484; accessed 2026-10-01; sha256 cc0d6ad74468e1172fdf6f773ee67633c24cddb13b8eb114456f1e0940bb8791",
+      "claim": "후안 모데스토(후안 기요토)는 1930년부터 스페인 공산당(PCE)에 소속되어 있었다.",
+      "excerpt": "Juan Guilloto was affiliated with the Communist Party of Spain (PCE) from 1930"
+     }
+    ]
+   }
+  ],
+  "boris-souvarine": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": null,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Souvarine",
+      "locator": "plain-text extract characters 180:227; accessed 2026-10-01; sha256 66c0e1ea85fbc0e7dd834a83943fe973a7bc7adf8f26faeb3ccef8855d6acba0",
+      "claim": "보리스 수바린은 프랑스 공산당의 창립 당원이었다.",
+      "excerpt": "A founding member of the French Communist Party"
+     }
+    ]
+   }
+  ],
+  "eugenio-reale": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-italian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1931,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Eugenio_Reale",
+      "locator": "plain-text extract characters 285:453; accessed 2026-10-01; sha256 13bd16398a7e2acc79c323f3ba9fe4db4c2c2d5695ca41b89e0f355b33447b5f",
+      "claim": "에우제니오 레알레는 1926년 이탈리아 공산당(PCI)에 접근했고 1931년 나폴리 당 지도자 중 한 명이 되었다.",
+      "excerpt": "In 1926 he approached the Italian Communist Party (PCI) and in 1931, after the exile of Giorgio Amendola, he became one of the main party leaders in the city of Naples."
+     }
+    ]
+   }
+  ],
+  "andreu-nin": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "soviet-left-opposition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1926,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andreu_Nin",
+      "locator": "plain-text extract characters 3343:3501; accessed 2026-10-01; sha256 9f05a262c3ea965321467f0ea3dd59922a685fdb2ce7efdd15fbdf116249957f",
+      "claim": "안드레우 닌은 1926년부터 소련 공산당 안에서 스탈린의 부상에 맞선 트로츠키의 좌익반대파에 속했다.",
+      "excerpt": "From 1926 onwards, he belonged to the \"Left Opposition\" led by Trotsky, which opposed the rise of Joseph Stalin within the Communist Party of the Soviet Union"
+     }
+    ]
+   }
+  ],
+  "web-du-bois": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-us-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1961,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois",
+      "locator": "plain-text extract characters 67157:67220; accessed 2026-10-01; sha256 66de0395679736942ba0f6b556c339f42d6fdaa47aaebdac2c020eb73742ab5a",
+      "claim": "W. E. B. 듀보이스는 1961년 10월, 93세의 나이에 공산당(미국 공산당)에 입당했다.",
+      "excerpt": "he joined the Communist Party in October 1961, at the age of 93"
+     }
+    ]
+   }
+  ]
+ }
+}

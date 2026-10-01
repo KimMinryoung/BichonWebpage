@@ -37,6 +37,12 @@ assert.equal(personPosition([{ primary: true, affiliationId: 'state-yugoslavia',
 assert.equal(personPosition(primary('state-vietnam'), []), '');
 assert.equal(personPosition([...primary('state-vietnam'), { primary: false, affiliationId: 'party-vietnamese-communist' }], []), 'red');
 
+// An unaffiliated primary (writer, theorist) takes the documented communist activity.
+assert.equal(personPosition([{ primary: true, affiliationId: null }, { primary: false, affiliationId: 'soviet-party' }], []), 'red-soviet');
+assert.equal(personPosition([{ primary: true, affiliationId: 'cuban-july-26' }, { primary: false, affiliationId: 'state-cuba', startYear: 1959 }], []), 'red');
+assert.equal(personPosition([{ primary: true, affiliationId: 'cuban-july-26' }, { primary: false, affiliationId: 'party-cuban-communist' }], []), 'red');
+assert.equal(personPosition([{ primary: true, affiliationId: 'state-usa' }, { primary: false, affiliationId: 'party-us-communist' }], []), '');
+
 // No evidence of a position: neutral, never guessed.
 assert.equal(personPosition(primary('state-usa'), []), '');
 assert.equal(personPosition(primary('russian-mensheviks'), []), '');
