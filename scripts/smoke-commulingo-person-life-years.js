@@ -35,7 +35,8 @@ assert.deepEqual(personLifeProblems('1894–1920', { kind: 'executed', label: { 
 assert(personLifeProblems('', { kind: 'natural', label: { en: 'Active scholar' } }).length);
 
 // Legacy snapshots must be safe even before the background refresh arrives.
-const card = fs.readFileSync(require.resolve('../views/partials/commulingo-person-card.ejs'), 'utf8');
+const cardPath = require.resolve('../views/partials/commulingo-person-card.ejs');
+const card = fs.readFileSync(cardPath, 'utf8');
 for (const lang of ['ko', 'en']) {
     for (const years of ['현재', '현대', '1987–현재', '1979?–', '?–']) {
         const person = normalizeCommuLingoPeople({ people: [{ id: 'test-person', years, fate }] }, { lang }).peopleById['test-person'];
@@ -43,7 +44,7 @@ for (const lang of ['ko', 'en']) {
         assert.equal(person.fateLabel, '');
         assert.deepEqual(person.fate, { kind: '', label: '' });
         assert(!/현재|현대/.test(person.years));
-        const html = ejs.render(card, { person, groupId: '', strings: { commuLingoViews: { personCard: {} } }, roleIconSvg: () => '', linkifyPersonText: text => text });
+        const html = ejs.render(card, { person, groupId: '', strings: { commuLingoViews: { personCard: {} } }, roleIconSvg: () => '', linkifyPersonText: text => text }, { filename: cardPath });
         assert(!html.includes('class="commu-fate'));
     }
 }
