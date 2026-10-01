@@ -17,13 +17,20 @@
             <% } %>
             <p><%- p.definitionHtml %></p>
         </header>
+        <%# An entry whose subject is a single document (manifest excerpt '*')
+            leads with the document; the commentary follows it. Excerpts of a
+            longer text stay below the commentary that introduces them. %>
+        <% var excerpts = p.excerpts || [];
+           var wholeDocs = excerpts.filter(function(e) { return e.anchor === '*'; });
+           var partialExcerpts = excerpts.filter(function(e) { return e.anchor !== '*'; }); %>
+        <%- include('commulingo-doc-excerpts', { excerpts: wholeDocs, idPrefix: 'term-document' }) %>
         <% if (p.bodyHtml) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-body">
             <h2 id="term-body"><%= strings.commuLingoViews.termPanel.inDepth %></h2>
             <div class="commu-person-markdown"><%- p.bodyHtml %></div>
         </section>
         <% } %>
-        <%- include('commulingo-doc-excerpts', { excerpts: p.excerpts, idPrefix: 'term-excerpt' }) %>
+        <%- include('commulingo-doc-excerpts', { excerpts: partialExcerpts, idPrefix: 'term-excerpt' }) %>
         <% if (p.term.children && p.term.children.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-children">
             <h2 id="term-children"><%= strings.commuLingoViews.termPanel.withinThisEntry %></h2>
