@@ -16,6 +16,7 @@ const COLLECTION_POSITIONS = [
     ['left-opposition', 'left-opposition'],
     ['dissident', 'dissident'],
     ['socialist-bloc-reform-leader', 'reform'],
+    ['western-marxist', 'western-marxist'],
 ];
 
 // Collections for an earlier stage of a career: they colour a card only when
@@ -25,6 +26,8 @@ const EARLIER_POSITIONS = [
     ['non-bolshevik-socialist', 'socialist'],
     ['narodnik', 'narodnik'],
     ['jacobin', 'jacobin'],
+    ['revolutionary-democrat', 'revolutionary-democrat'],
+    ['national-liberation', 'national-liberation'],
 ];
 
 // Communist parties, the Comintern and states whose catalog existence is

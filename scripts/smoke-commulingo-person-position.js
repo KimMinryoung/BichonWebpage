@@ -15,6 +15,9 @@ assert.equal(personPosition(primary('german-nazi'), ['counterrevolution', 'fasci
 assert.equal(personPosition(primary('russian-mensheviks'), ['non-bolshevik-socialist']), 'socialist');
 assert.equal(personPosition(primary('party-polish-pzpr'), ['non-bolshevik-socialist']), 'red');
 assert.equal(personPosition(primary('russian-narodnaya-volya'), ['narodnik']), 'narodnik');
+assert.equal(personPosition(primary('party-german-communist'), ['western-marxist']), 'western-marxist');
+assert.equal(personPosition(primary('state-vietnam', 1945), ['national-liberation']), 'red');
+assert.equal(personPosition(primary('party-paigc'), ['national-liberation']), 'national-liberation');
 
 // Each communist force keeps its own red; sub-affiliations follow their parent.
 assert.equal(personPosition(primary('state-soviet'), []), 'red-soviet');

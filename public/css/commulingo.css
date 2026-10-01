@@ -2748,18 +2748,27 @@ button.commu-dc-option:hover { border-color: var(--link); }
    detail head carry the position colour as a thick left stripe; the medal
    stays the activity icon. Each communist force keeps its own red (Soviet and
    Chinese flag reds). No known position, no stripe. */
+/* Colour families: communism is red (Soviet and Chinese flag reds); its
+   socialist neighbours are rose (social democracy) and wine (Western Marxism);
+   the pre-Marxist revolutionaries take earth tones (Narodniks, revolutionary
+   democrats) and the tricolour navy (Jacobins); critics within the socialist
+   world are orange (left), slate blue (dissidents) and green (reformers);
+   national liberation is gold; the anti-communist camp is white, fascism brown. */
 .pos-red-soviet { --pos: #b3261e; }
 .pos-red-china { --pos: #c4381f; }
 .pos-red { --pos: #8f2a33; }
+.pos-western-marxist { --pos: #7d3c6b; }
+.pos-socialist { --pos: #c25a7c; }
+.pos-left-opposition { --pos: #c4692c; }
+.pos-national-liberation { --pos: #c39a2e; }
+.pos-narodnik { --pos: #6f7a32; }
+.pos-revolutionary-democrat { --pos: #a39a5a; }
+.pos-jacobin { --pos: #31519a; }
+.pos-dissident { --pos: #5878a8; }
+.pos-reform { --pos: #4b9670; }
+.pos-fascist { --pos: #6e4b2e; }
 .pos-white { --pos: #fbfaf6; }
 .pos-anarchist { --pos: #111; }
-.pos-left-opposition { --pos: #c7702a; }
-.pos-dissident { --pos: #3d6fb6; }
-.pos-reform { --pos: #3f9a6a; }
-.pos-fascist { --pos: #6b4a2b; }
-.pos-socialist { --pos: #d0658c; }
-.pos-narodnik { --pos: #7a52a6; }
-.pos-jacobin { --pos: #24357a; }
 
 .commu-person-card[class*="pos-"] { border-left: 3px solid var(--pos); }
 /* White vanishes on the light theme and black on the dark one: frame both
