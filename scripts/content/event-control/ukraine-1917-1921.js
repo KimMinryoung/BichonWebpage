@@ -8,8 +8,8 @@
 // the neighbouring states are the Soviet-Polish War's. West of a front lies
 // Poland and its neighbours, with the Ukrainian governments laid over it.
 // Drawn by hand from the campaign record; no map is traced. The Makhnovist
-// areas are the Russian Civil War's too (civil-war.js parts); they, the
-// otaman areas and the risings behind the lines are sketched round the
+// areas and Hryhoriv's rising are the Russian Civil War's too (civil-war.js
+// parts); they, the other otaman areas and the risings behind the lines are sketched round the
 // towns the record names (Huliaipole, Oleksandrivsk, Yelysavethrad,
 // Trypillia, the Kholodny Yar); risings are hatched over whoever held the
 // ground.
@@ -19,7 +19,7 @@
 const { SEAS, westOf, BESSARABIA, CENTRAL_1917_12, UKRAINE_1917, CENTRAL_1918_03,
     CENTRAL_1918_08, KUBAN_1918_03, SOUTH_1918_08, SOUTH_1919_05, SOUTH_1919_10, UNR_1919_10, CRIMEA_1920,
     WRANGEL_1920, POLAND_1918_11, HULIAIPOLE_1918, MAKHNO_1918_12, MAKHNO_1919, MAKHNO_1919_10, MAKHNO_1919_12,
-    MAKHNO_PARTISAN_1920, MAKHNO_1920_10, MAKHNO_PARTISAN_1921 } = require('./civil-war').parts;
+    MAKHNO_PARTISAN_1920, MAKHNO_1920_10, MAKHNO_PARTISAN_1921, HRYHORIV_1919_05 } = require('./civil-war').parts;
 const { OBER_OST_1919, ZUNR_1919, UNR_1919_02, UNR_1919_04, NEIGHBOURS } = require('./soviet-polish-war').parts;
 const { UNR_1918_02 } = require('./brest-litovsk').parts;
 
@@ -57,11 +57,6 @@ const ZVENYHORODKA_1918 = [[49.75, 30.15], [49.8, 30.9], [49.5, 31.45], [49.1, 3
 // Spring and summer 1919: the otaman Zelenyi round Trypillia, against the
 // Soviets on both banks of the Dnieper.
 const ZELENYI_1919 = [[50.35, 30.35], [50.3, 31.1], [50.05, 31.6], [49.85, 31.3], [49.85, 30.6], [50.05, 30.3]];
-// Mid-May 1919: Hryhoriv's rising, from Cherkasy and Kremenchuk to
-// Yelysavethrad, Mykolaiv and Kherson, briefly Yekaterinoslav.
-const HRYHORIV_1919_05 = [[49.45, 31.6], [49.45, 32.3], [49.15, 33.4], [48.75, 34.3], [48.5, 35.0], [48.15, 34.6],
-    [47.9, 33.8], [47.3, 33.2], [46.6, 32.9], [46.45, 32.3], [46.85, 31.7], [47.6, 31.3], [48.2, 30.6], [48.7, 30.2],
-    [49.0, 30.6], [49.3, 31.2]];
 // Late June 1919: Denikin through Kharkiv and Yekaterinoslav to the
 // Dnieper, Northern Tavria and Crimea, with the Don and Tsaritsyn behind.
 const SOUTH_1919_06 = [[50.4, 36.3], [50.6, 37.6], [50.9, 39.3], [51.0, 41.0], [50.6, 43.0], [49.8, 45.0],

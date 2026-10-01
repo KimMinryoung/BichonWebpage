@@ -267,6 +267,12 @@ const MAKHNO_1920_10 = [[48.0, 35.7], [48.0, 36.7], [47.6, 36.9], [47.45, 36.4],
 const MAKHNO_PARTISAN_1921 = [[49.6, 33.5], [49.7, 35.5], [49.1, 37.6], [48.0, 38.0], [47.1, 37.4], [46.9, 35.5],
     [47.6, 34.3], [48.7, 33.2]];
 
+// Mid-May 1919: Hryhoriv's rising, from Cherkasy and Kremenchuk to
+// Yelysavethrad, Mykolaiv and Kherson, briefly Yekaterinoslav.
+const HRYHORIV_1919_05 = [[49.45, 31.6], [49.45, 32.3], [49.15, 33.4], [48.75, 34.3], [48.5, 35.0], [48.15, 34.6],
+    [47.9, 33.8], [47.3, 33.2], [46.6, 32.9], [46.45, 32.3], [46.85, 31.7], [47.6, 31.3], [48.2, 30.6], [48.7, 30.2],
+    [49.0, 30.6], [49.3, 31.2]];
+
 const phase = (date, label, parts) => ({ date, label, red: [EMPIRE], ...parts });
 
 module.exports = {
@@ -277,7 +283,7 @@ module.exports = {
     sea: SEAS,
     simplify: 0.2,
     base: 'white',
-    precedence: ['makhno', 'national', 'central', 'red'],
+    precedence: ['makhno', 'otaman', 'national', 'central', 'red'],
     overlays: ['makhnoPartisan'],
     carve: ['red'],
     sides: [
@@ -287,10 +293,11 @@ module.exports = {
         { id: 'national', label: { ko: '독립 국가와 인접국', en: 'Independent and neighbouring states' }, tone: 'gray' },
         { id: 'makhno', label: { ko: '마흐노 운동 지역', en: 'Makhnovist territory' }, tone: 'black' },
         { id: 'makhnoPartisan', label: { ko: '마흐노 유격 지역', en: 'Makhnovist partisan country' }, tone: 'black' },
+        { id: 'otaman', label: { ko: '흐리호리우 봉기 (1919년 5월)', en: 'Hryhoriv\'s rising (May 1919)' }, tone: 'green' },
     ],
     note: {
-        ko: '경계는 근사치이며 작전 기록을 바탕으로 개략적으로 그렸습니다. 전선 뒤의 봉기와 유격 지역, 백군 지역 안에 고립된 적군 거점(오렌부르크·우랄스크 등)은 표시하지 않았습니다. 마흐노 지역은 우크라이나 혁명 지도와 같으며, 빗금은 법외로 선언된 시기의 유격 지역입니다. 극동공화국(1920~1922)은 소비에트 측으로 칠했습니다.',
-        en: 'Boundaries are approximate, sketched from the campaign record. Uprisings and partisan areas behind the lines, and besieged Red strongholds inside White territory (Orenburg, Uralsk) are not shown. Makhno\'s region is that of the Ukrainian revolution map; hatching marks his partisan country while he was outlawed. The Far Eastern Republic (1920–1922) is coloured with the Soviet side.',
+        ko: '경계는 근사치이며 작전 기록을 바탕으로 개략적으로 그렸습니다. 마흐노·흐리호리우 밖의 전선 뒤 봉기와 유격 지역, 백군 지역 안에 고립된 적군 거점(오렌부르크·우랄스크 등)은 표시하지 않았습니다. 마흐노 지역과 흐리호리우 봉기(1919년 5월 중순의 최대 범위)는 우크라이나 혁명 지도와 같으며, 빗금은 법외로 선언된 시기의 유격 지역입니다. 극동공화국(1920~1922)은 소비에트 측으로 칠했습니다.',
+        en: 'Boundaries are approximate, sketched from the campaign record. Uprisings and partisan areas behind the lines other than Makhno\'s and Hryhoriv\'s, and besieged Red strongholds inside White territory (Orenburg, Uralsk) are not shown. Makhno\'s region and Hryhoriv\'s rising (at its height in mid-May 1919) are those of the Ukrainian revolution map; hatching marks his partisan country while he was outlawed. The Far Eastern Republic (1920–1922) is coloured with the Soviet side.',
     },
     sources: [],
     phases: [
@@ -308,6 +315,7 @@ module.exports = {
             white: [EAST_1919_05, NORTH_1919, SOUTH_1919_05],
             national: [FINLAND, westOf('1919.04'), TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
             makhno: [MAKHNO_1919],
+            otaman: [HRYHORIV_1919_05],
         }),
         phase('1919.10', { ko: '위기의 정점: 오룔과 페트로그라드', en: 'The crisis: Orel and Petrograd' }, {
             white: [EAST_1919_10, URAL_COSSACKS_1919, TRANSCASPIA_1919, NORTH_1919, SOUTH_1919_10, YUDENICH_1919],
@@ -339,6 +347,6 @@ module.exports = {
         UKRAINE_1917, POLAND_1918_11, CENTRAL_1918_03, CENTRAL_1918_08, EAST_1918_08, NORTH_1918, KUBAN_1918_03,
         SOUTH_1918_08, SOUTH_1919_05, SOUTH_1919_10, YUDENICH_1919, CRIMEA_1920, WRANGEL_1920,
         HULIAIPOLE_1918, MAKHNO_1918_12, MAKHNO_1919, MAKHNO_1919_10, MAKHNO_1919_12, MAKHNO_PARTISAN_1920,
-        MAKHNO_1920_10, MAKHNO_PARTISAN_1921,
+        MAKHNO_1920_10, MAKHNO_PARTISAN_1921, HRYHORIV_1919_05,
     },
 };
