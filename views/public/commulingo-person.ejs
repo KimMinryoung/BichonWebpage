@@ -22,11 +22,18 @@
 
         <header class="commu-person-detail-head<%= person.position ? ' pos-' + person.position : '' %>">
             <div class="commu-person-detail-top">
+                <%# Cards show the role by the medal alone; the detail head names it
+                    under the medal, so the meta row below keeps its room. %>
+                <div class="commu-person-detail-badge">
                 <% if (medalHref) { %>
                 <a class="commu-person-medal" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
                 <% } else { %>
                 <span class="commu-person-medal" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
                 <% } %>
+                <% if (person.role && person.role.label) { %>
+                <% if (medalHref) { %><a class="commu-person-role-tag" href="<%= medalHref %>" aria-hidden="true" tabindex="-1"><%= person.role.label %></a><% } else { %><span class="commu-person-role-tag"><%= person.role.label %></span><% } %>
+                <% } %>
+                </div>
                 <div class="commu-person-detail-title">
                     <h1><%= person.displayName || person.name %></h1>
                     <span><%= person.cyrillic %></span>

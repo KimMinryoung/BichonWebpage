@@ -3153,7 +3153,7 @@ a.commu-person-position:focus-visible {
     color: var(--text-primary);
 }
 
-/* Role-category tag on a person card (surfaces the person's category) */
+/* Role-category tag under the medal in the person detail head */
 .commu-person-role-tag {
     display: inline-block;
     max-width: 100%;
@@ -3337,6 +3337,14 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     display: flex;
     gap: 14px;
     margin-bottom: 12px;
+}
+
+.commu-person-detail-badge {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .commu-person-detail-head > .commu-person-meta {
@@ -3585,10 +3593,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     }
 
     .commu-person-top {
-        flex-wrap: wrap;
-    }
-
-    .commu-person-detail-top {
         flex-wrap: wrap;
     }
 

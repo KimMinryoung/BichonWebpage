@@ -3,16 +3,8 @@ var fateIcons = {
     executed: '✕', assassinated: '✕', murdered: '✕', killed: '✕', suicide: '✕',
     deposed: '↓', exile: '→', natural: '○'
 };
-var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 %>
     <div class="commu-person-meta">
-        <% if (person.role && person.role.label) { %>
-        <% if (medalHref) { %>
-        <a class="commu-person-role-tag" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
-        <% } else { %>
-        <span class="commu-person-role-tag"><%= person.role.label %></span>
-        <% } %>
-        <% } %>
         <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>
         <% if (person.primaryActivity.affiliationId) { %><a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
             <% if (person.primaryActivity.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %>
