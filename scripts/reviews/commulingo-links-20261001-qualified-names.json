@@ -1,0 +1,80 @@
+{
+  "scope": "2026-10-01 year-qualified names and context-only short names for events; owner-requested link review",
+  "references": [
+    "corpus occurrence count"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "czechoslovakia-1945-1948",
+      "lang": "ko",
+      "text": "1948년 2월 사건",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 연도를 붙인 체코슬로바키아 2월 사건. 발화 2건(자포토츠키·립카) 모두 이 사건. 맨 「2월 사건」은 일반 표현이라 넣지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "german-revolution-1918-1919",
+      "lang": "ko",
+      "text": "1918년 독일 혁명",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 연도를 붙여 1848·1923년 혁명과 구별한 독일 11월 혁명. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "german-revolution-1918-1919",
+      "lang": "ko",
+      "text": "1918~19년 독일 혁명",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 연도 범위를 붙인 독일 11월 혁명. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "great-leap-forward",
+      "lang": "ko",
+      "text": "대약진",
+      "role": "short",
+      "policy": "context",
+      "note": "2026-10-01 owner-requested 링크 검토: 「자본의 대약진」·불가리아 「대약진」 구상처럼 일반어로도 쓰여 문맥 확인: 같은 본문에 「대약진 운동」 등 승인된 이 사건 이름이 있을 때만 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "first-indochina-war-1945-1954",
+      "lang": "ko",
+      "text": "8월 혁명",
+      "role": "short",
+      "policy": "context",
+      "note": "2026-10-01 owner-requested 링크 검토: 발화 10건 모두 베트남 1945년 8월 혁명이지만 날짜형 일반 표현이라 문맥 확인: 같은 본문에 「1945년 8월 혁명」 등 승인된 이 사건 이름이 있을 때만 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "first-indochina-war-1945-1954",
+      "lang": "en",
+      "text": "August Revolution",
+      "role": "short",
+      "policy": "context",
+      "note": "2026-10-01 owner-requested 링크 검토: Vietnamese 1945 revolution in all 10 corpus uses, but a generic date name: links only beside an approved name of this event such as August Revolution of 1945.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    }
+  ]
+}

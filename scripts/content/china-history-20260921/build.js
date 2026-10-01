@@ -42,6 +42,7 @@ const LINK_EXPRESSIONS = {
         { text: "대약진 운동", lang: 'ko', role: 'identity', policy: 'search' },
         { text: "대약진운동", lang: 'ko', role: 'identity', policy: 'search' },
         { text: "Great Leap Forward", lang: 'en', role: 'identity', policy: 'search' },
+        { text: "대약진", lang: 'ko', role: 'identity', policy: 'search' },
     ],
     'reform-and-opening': [
         { text: "개혁개방", lang: 'ko', role: 'identity', policy: 'search' },

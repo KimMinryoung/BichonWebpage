@@ -288,6 +288,11 @@ const event = {
         link_expressions: [
             { text: "German Revolution of 1918", lang: 'en', role: 'identity', policy: 'search' },
             { text: "German November Revolution", lang: 'en', role: 'identity', policy: 'search' },
+            { text: "1918년 독일 혁명", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "1918~19년 독일 혁명", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "1918–1919년 독일 혁명", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "1918년 11월 독일 혁명", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "1919년 독일 혁명", lang: 'ko', role: 'identity', policy: 'search' },
         ],
         focus: null,
     },

@@ -420,6 +420,18 @@
             "lang": "en",
             "role": "identity",
             "policy": "search"
+          },
+          {
+            "text": "8월 혁명",
+            "lang": "ko",
+            "role": "identity",
+            "policy": "search"
+          },
+          {
+            "text": "August Revolution",
+            "lang": "en",
+            "role": "identity",
+            "policy": "search"
           }
         ],
         "focus": {

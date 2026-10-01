@@ -1,0 +1,44 @@
+{
+  "scope": "2026-10-01 dated names of the German Revolution of 1918–1919; owner-requested link review",
+  "references": [
+    "corpus occurrence count"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "german-revolution-1918-1919",
+      "lang": "ko",
+      "text": "1918–1919년 독일 혁명",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 연도 범위를 붙인 독일 11월 혁명(C. L. R. 제임스 절). 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "german-revolution-1918-1919",
+      "lang": "ko",
+      "text": "1918년 11월 독일 혁명",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 연월을 붙인 독일 11월 혁명(스투코프 절). 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "german-revolution-1918-1919",
+      "lang": "ko",
+      "text": "1919년 독일 혁명",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 1919년의 독일 혁명은 이 사건뿐(1848·1923년과 구별). 공개 보고서 발화 1건. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    }
+  ]
+}

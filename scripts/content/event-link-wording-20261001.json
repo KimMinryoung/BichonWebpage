@@ -1,0 +1,12 @@
+{
+  "id": "event-link-wording-20261001",
+  "changes": [
+    { "event": "prc-consolidation-1949-1956", "column": "outcome_ko", "from": "— 대약진 —", "to": "— 대약진 운동 —" },
+    { "event": "hundred-flowers-anti-rightist", "column": "outcome_ko", "from": "대약진의 과오를", "to": "대약진 운동의 과오를" },
+    { "event": "hundred-flowers-anti-rightist", "column": "body_ko", "from": "1958년 대약진의 과장 보고", "to": "1958년 대약진 운동의 과장 보고" },
+    { "event": "cultural-revolution", "column": "summary_ko", "from": "대약진의 실패로", "to": "대약진 운동의 실패로" },
+    { "event": "cultural-revolution", "column": "body_ko", "from": "## 기원: 대약진 이후의 두 노선", "to": "## 기원: 대약진 운동 이후의 두 노선" },
+    { "event": "reform-and-opening", "column": "body_ko", "from": "대약진을 좌경 오류로", "to": "대약진 운동을 좌경 오류로" },
+    { "event": "baltic-wars-of-independence", "column": "body_ko", "from": "목표는 독일 혁명과 연결되는 것", "to": "목표는 독일 11월 혁명과 연결되는 것" }
+  ]
+}

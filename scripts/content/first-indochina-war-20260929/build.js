@@ -240,6 +240,8 @@ const event = {
             { text: "First Indochina War", lang: 'en', role: 'identity', policy: 'search' },
             { text: "1945년 8월 혁명", lang: 'ko', role: 'identity', policy: 'search' },
             { text: "August Revolution of 1945", lang: 'en', role: 'identity', policy: 'search' },
+            { text: "8월 혁명", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "August Revolution", lang: 'en', role: 'identity', policy: 'search' },
         ],
         focus: { ko: '베트남민주공화국과 베트민', en: 'The Democratic Republic of Vietnam and the Viet Minh' },
     },

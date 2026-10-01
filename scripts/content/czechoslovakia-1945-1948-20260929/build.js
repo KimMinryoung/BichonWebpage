@@ -208,7 +208,9 @@ const event = {
         countries: ['czechoslovakia', 'soviet', 'poland'],
         relations: { parent: 'eastern-europe-peoples-democracies' },
         no_auto_link: [],
-        link_expressions: [],
+        link_expressions: [
+            { text: "1948년 2월 사건", lang: 'ko', role: 'identity', policy: 'search' },
+        ],
         focus: { ko: '체코슬로바키아 공산당', en: 'The Communist Party of Czechoslovakia' },
     },
     sections,

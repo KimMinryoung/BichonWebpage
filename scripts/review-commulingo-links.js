@@ -60,8 +60,19 @@ function projected(state) {
         if (rendered.links.some(link => link.id === forbidden)) throw new Error('Negative renderer regression: ' + text);
     }
     for (const d of decisions.filter(d => d.added)) {
-        const rendered = renderLinkedContent(d.text, indexes[d.lang], { surface: 'report' });
-        if (!rendered.links.length) throw new Error('Qualified expression does not link: ' + d.text);
+        const linksTo = text => renderLinkedContent(text, indexes[d.lang], { surface: 'report' }).links.some(link => link.id === d.id);
+        if (d.policy !== 'context') {
+            if (!linksTo(d.text)) throw new Error('Qualified expression does not link: ' + d.text);
+            continue;
+        }
+        // A context expression links only beside an approved name of the same entry.
+        const identity = future.rows.find(r => r.kind === d.kind && r.id === d.id && r.lang === d.lang && r.text !== d.text
+            && r.policy === 'auto' && (r.role === 'identity' || (r.role === 'legacy' && r.text === r.label)));
+        if (!identity) throw new Error('Context expression has no approved identity: ' + d.text);
+        if (linksTo(d.text)) throw new Error('Context expression links on its own: ' + d.text);
+        // Context word first: only the first mention of an entry links.
+        const html = renderLinkedContent(d.text + '. ' + identity.text, indexes[d.lang], { surface: 'report' }).html || '';
+        if (!html.includes('>' + d.text + '</a>')) throw new Error('Context expression does not link beside its identity: ' + d.text);
     }
     const samples = [];
     for (const d of decisions.filter(d => d.original479)) {
