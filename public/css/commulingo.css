@@ -3360,8 +3360,10 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 
 /* The medal keeps the left column and the name starts right of it, so a long
-   role tag never shifts either; the tag runs below both, left-aligned. */
+   role tag never shifts either. The medal is as tall as the two name lines
+   (--title-size and the 1.2 line heights below), and the tag sits under it. */
 .commu-person-detail-top {
+    --title-size: clamp(1.6rem, 3vw, 2.45rem);
     align-items: start;
     column-gap: 14px;
     display: grid;
@@ -3377,6 +3379,13 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-person-detail-top > .commu-person-detail-badge > .commu-person-medal {
     grid-column: 1;
     grid-row: 1;
+    height: calc(var(--title-size) * 1.2 + 4px + 0.98rem * 1.2);
+    width: calc(var(--title-size) * 1.2 + 4px + 0.98rem * 1.2);
+}
+
+.commu-person-detail-top .commu-person-medal .commu-role-icon {
+    height: 50%;
+    width: 50%;
 }
 
 .commu-person-detail-top .commu-person-role-tag {
@@ -3410,9 +3419,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 .commu-person-detail-title h1 {
     color: var(--text-primary);
-    font-size: clamp(1.6rem, 3vw, 2.45rem);
+    font-size: var(--title-size);
     letter-spacing: 0;
-    line-height: var(--leading-tight);
+    line-height: 1.2;
     margin: 0;
 }
 
@@ -3422,6 +3431,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 0.98rem;
     font-style: italic;
+    line-height: 1.2;
     margin-top: 4px;
 }
 
