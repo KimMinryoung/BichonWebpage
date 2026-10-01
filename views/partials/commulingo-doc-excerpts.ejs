@@ -9,7 +9,9 @@
                 <p class="commu-doc-excerpt-head"><% if (excerpt.docTitle) { %><span><%= excerpt.docTitle %></span><% } %><strong><%= excerpt.title %></strong></p>
                 <div class="commu-doc-excerpt-body" id="<%= idPrefix %>-body-<%= i %>" lang="<%= excerpt.docLang %>"><%- excerpt.html %></div>
                 <button type="button" class="commu-doc-excerpt-toggle" aria-controls="<%= idPrefix %>-body-<%= i %>" aria-expanded="false" data-expand="<%= strings.commuLingoViews.termPanel.expandText %>" data-collapse="<%= strings.commuLingoViews.termPanel.collapseText %>" hidden><%= strings.commuLingoViews.termPanel.expandText %></button>
-                <a class="commu-doc-excerpt-more" href="/commulingo/docs/<%= excerpt.docId %><%= excerpt.anchor === '*' ? '' : '#' + excerpt.anchor %>"><%= strings.commuLingoViews.termPanel.readInLibrary %> →</a>
+                <div class="commu-doc-excerpt-foot">
+                    <a class="btn btn-small" href="/commulingo/docs/<%= excerpt.docId %><%= excerpt.anchor === '*' ? '' : '#' + excerpt.anchor %>"><%= strings.commuLingoViews.termPanel.readInLibrary %> →</a>
+                </div>
             </div>
         </section>
         <% }) %>

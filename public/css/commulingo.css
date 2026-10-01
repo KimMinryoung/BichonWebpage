@@ -4378,15 +4378,12 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: var(--leading-none); text-decoration: none; }
 .commu-doc-excerpt-body .notes-list { font-size: .85em; color: var(--text-muted); padding-left: 1.6em; }
 .commu-doc-excerpt-body .notes-list .back-link { text-decoration: none; margin-left: .25em; }
-.commu-doc-excerpt-more {
-    display: block;
+/* Leaving for the library is a page change, so it is a .btn (design-system.md),
+   not a green text link. */
+.commu-doc-excerpt-foot {
     padding: .6rem 1rem;
     border-top: 1px solid var(--border);
-    font-size: .88rem;
-    color: var(--link);
-    text-decoration: none;
 }
-.commu-doc-excerpt-more:hover { text-decoration: underline; }
 
 /* Entity links inside dictionary prose, on every page that has them rather
    than per page type. These were scoped to .commu-term-page, so the same link
