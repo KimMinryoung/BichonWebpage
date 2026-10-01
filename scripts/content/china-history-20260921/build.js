@@ -32,6 +32,7 @@ const LINK_EXPRESSIONS = {
     ],
     'jiangxi-soviet-and-long-march': [
         { text: "Long March", lang: 'en', role: 'identity', policy: 'search' },
+        { text: "대장정", lang: 'ko', role: 'identity', policy: 'search' },
     ],
     'sino-japanese-war-1937-1945': [
         { text: "중일전쟁", lang: 'ko', role: 'identity', policy: 'search' },

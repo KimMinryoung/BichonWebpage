@@ -148,7 +148,8 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 `link_expressions`에도 넣었다(china-history·first-indochina·german-revolution build, french-events JSON).
 
 - 맨 「Cultural Revolution」은 일반 표현 위험(소련 문화혁명)이라 context로 두었다.
-- 일반어로도 쓰이는 「대장정」(블류헤르의 1918년 우랄 행군), 「대약진」(「자본의 대약진」), 「8월 혁명」·「August Revolution」,
+- 「대장정」은 같은 날 사용자 요청으로 자동 연결했다(`commulingo-links-20261001-long-march.json`). 유일한 오발화였던 블류헤르 카드의 「1918년 우랄 1,500㎞ 대장정」은 Admin 스토어 경로로 「행군」으로 고쳤다(편집 20813).
+- 일반어로도 쓰이는 「대약진」(「자본의 대약진」), 「8월 혁명」·「August Revolution」,
   「독일 혁명」·「November Revolution」(1848·1923, 러시아 혁명 기념일), 「톈안먼 사건」(1976), 「사회주의 개조」, 「2월 사건」은
   넣지 않았다. 대신 「대약진 운동」「1945년 8월 혁명」「German Revolution of 1918」「톈안먼 시위」처럼 고유한 형태를 넣었다.
   `review-commulingo-links.js`는 추가 표현이 단독으로 링크되는지 검사하므로 context 정책의 새 표현은 받지 않는다.

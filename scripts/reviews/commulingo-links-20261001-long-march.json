@@ -1,0 +1,20 @@
+{
+  "scope": "2026-10-01 대장정 short name for jiangxi-soviet-and-long-march; owner-requested link review",
+  "references": [
+    "corpus occurrence count"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "jiangxi-soviet-and-long-march",
+      "lang": "ko",
+      "text": "대장정",
+      "role": "short",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 홍군 대장정. 코퍼스 발화 41건 중 다른 행군을 가리킨 블류헤르 카드의 1건은 같은 날 「행군」으로 고쳤고(편집 20813), 나머지는 모두 이 사건. 표현 추가 후 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    }
+  ]
+}
