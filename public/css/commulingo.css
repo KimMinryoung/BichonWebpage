@@ -3359,19 +3359,35 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 
 
+/* The medal keeps the left column and the name starts right of it, so a long
+   role tag never shifts either; the tag runs below both, left-aligned. */
 .commu-person-detail-top {
-    align-items: flex-start;
-    display: flex;
-    gap: 14px;
+    align-items: start;
+    column-gap: 14px;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     margin-bottom: 12px;
+    row-gap: 6px;
 }
 
 .commu-person-detail-badge {
-    align-items: center;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 6px;
+    display: contents;
+}
+
+.commu-person-detail-top > .commu-person-detail-badge > .commu-person-medal {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.commu-person-detail-top .commu-person-role-tag {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+}
+
+.commu-person-detail-title {
+    grid-column: 2;
+    grid-row: 1;
 }
 
 /* The head card's edge already separates it from the first section, so that
