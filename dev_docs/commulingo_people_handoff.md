@@ -522,8 +522,6 @@ Main tables:
 - `commulingo_person_aliases`
 - `commulingo_person_scenes`
 - `commulingo_person_career_entries`
-- `commulingo_person_roles`
-- `commulingo_role_categories`
 - `commulingo_person_sections`
 - `commulingo_offices`
 - `commulingo_office_rows`
@@ -646,16 +644,9 @@ Notes:
 - Writes record snapshots in `commulingo_people_revisions`.
 - Deletes are real DB deletes.
 - Person create/update accepts optional localized `payload.moment` (`{ ko, en }` or string); absent leaves existing DB text untouched on update, and empty text is not rendered on public cards.
-- Person create/update accepts optional `payload.role`:
-  - absent: leave the existing role row untouched
-  - `null`: delete the role row
-  - object: prefer `{ category }` for office-less roles or `{ officeId }` for
-    institution roles; `category` must exist in `commulingo_role_categories`
-    and `officeId` must exist in `commulingo_offices`
-  - legacy `{ icon?, officeId?, label? }` remains accepted for back-compat, but
-    new clients and agents should not send icons for office-less categories
-  - when `category` is sent, the admin store writes `category_id`, clears
-    `office_id`, and writes empty legacy icon/label columns
+- Person create/update ignores a `payload.role` key; the role tables were
+  dropped in migration 217 and a card's classification comes from
+  `activities`.
 - Person section endpoints:
   - `GET /commulingo/admin/api/people/:personId/sections`
   - `GET /commulingo/admin/api/people/:personId/sections/:slug`

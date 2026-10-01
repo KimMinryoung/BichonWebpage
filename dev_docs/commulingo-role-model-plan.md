@@ -233,7 +233,7 @@ UI에는 첫 단계에서 국가·세력 수준을, 필요한 경우 그 안의 
 
 - 프런트엔드(`8c4a397`)는 role 표를 읽거나 쓰지 않는다. 카드의 메달·태그·링크는 대표 활동에서 나오고, 호환 매핑(`displayActivities`의 legacy 분기)은 삭제했다. Admin 스토어는 `role` 키를 무시하고, 인물 revision 계산에서도 role을 뺐다(적용 시점에 모든 revision 값이 한 번 바뀜). 카드 감사는 대표 활동 1개를 요구한다.
 - `catalog.legacy`는 구 역할 URL(`/commulingo/roles/<id>`)을 활동 필터로 넘기는 용도로만 남는다. 입장 범주는 모음(213), 지역 범주는 안내 페이지(`retired-role-pages.js`)다.
-- leninbot 파이프라인도 role 표 조회와 role 생성·요구를 걷어낸 뒤 두 표(`commulingo_person_roles`, `commulingo_role_categories`)를 삭제했다. 삭제 직전 pg_dump는 gitignored `scripts/migrations/data/person-roles-20260930/`에 있다. 이것이 끝나면 `commulingo_person_roles`와 호환 매핑 코드를 제거할 수 있다. 이것들이 끝난 뒤에 `commulingo_person_roles`를 제거할 수 있다.
+- leninbot 파이프라인도 role 표 조회와 role 생성·요구를 걷어낸 뒤 두 표(`commulingo_person_roles`, `commulingo_role_categories`)를 삭제했다. 삭제 직전 pg_dump는 gitignored `scripts/migrations/data/person-roles-20260930/`에 있다.
 
 ### 학술·예술의 소속 미확정 표시 (2026-09-30, 카탈로그 v17)
 
