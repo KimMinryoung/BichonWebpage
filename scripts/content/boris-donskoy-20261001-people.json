@@ -1,0 +1,135 @@
+{
+ "changedBy": "claude-donskoy-20261001",
+ "people": [
+  {
+   "id": "boris-donskoy",
+   "groupId": "bolshevik",
+   "givenName": {
+    "ko": "보리스",
+    "en": "Boris"
+   },
+   "familyName": {
+    "ko": "돈스코이",
+    "en": "Donskoy"
+   },
+   "patronymic": {
+    "ko": "미하일로비치",
+    "en": "Mikhailovich"
+   },
+   "cyrillicPatronymic": "Михайлович",
+   "nativeName": "Борис Донской",
+   "years": "1894–1918",
+   "citizenship": {
+    "code": "soviet"
+   },
+   "nationalOrigin": {
+    "code": "russia"
+   },
+   "epithet": {
+    "ko": "1918년 키예프에서 독일 원수 아이히호른을 폭탄으로 암살하고 교수형을 당한 좌파 사회혁명당 수병",
+    "en": "Left SR sailor who killed the German field marshal Eichhorn with a bomb in Kiev in 1918 and was hanged"
+   },
+   "bio": {
+    "ko": "랴잔현 농민 출신으로 열다섯 살에 페트로그라드로 나가 일했고, 1915년 발트 함대에 징집되었다. 1916년 좌파 사회혁명당에 들어가 수병 단식 투쟁을 조직하다 체포되었다. 2월 혁명으로 풀려나 크론시타트 집행위원회 위원이 되었고, 코르닐로프 반란 때 발트 수병 부대를 이끌었으며 10월 혁명 때는 이노 요새의 코미사르였다. 1918년 봄 이리나 카호프스카야와 함께 우크라이나로 가 독일 점령에 맞선 지하 조직을 꾸렸고 좌파 사회혁명당 전투조직에 들어갔다. 7월 30일 키예프에서 폭탄을 던져 독일 원수 헤르만 폰 아이히호른을 죽였고, 독일 군법회의에서 사형을 선고받아 8월 10일 공개 교수형을 당했다.",
+    "en": "A peasant from Ryazan Governorate who went to Petrograd at fifteen and was conscripted into the Baltic Fleet in 1915. He joined the Left Socialist-Revolutionaries in 1916 and was arrested for organising a sailors' hunger strike. Freed by the February Revolution, he sat on the Kronstadt executive committee, led Baltic sailors against Kornilov and in October 1917 was commissar of Fort Ino. In spring 1918 he went to Ukraine with Irina Kakhovskaya to organise resistance to the German occupation and joined the Left SR combat organisation. On 30 July 1918 in Kiev he threw the bomb that killed Field Marshal Hermann von Eichhorn; a German military court sentenced him to death and he was publicly hanged on 10 August."
+   },
+   "fate": {
+    "kind": "executed",
+    "label": {
+     "ko": "교수형",
+     "en": "Hanged"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "Boris Donskoi"
+    ]
+   },
+   "career": [
+    {
+     "y": "1915–1917",
+     "r": {
+      "ko": "발트 함대 수송선 아시아호 수병, 1916년 좌파 사회혁명당 가입",
+      "en": "Sailor on the transport Asia, Baltic Fleet; joined the Left SRs in 1916"
+     }
+    },
+    {
+     "y": "1917",
+     "r": {
+      "ko": "크론시타트 집행위원회 위원, 10월 혁명 때 이노 요새 코미사르",
+      "en": "Member of the Kronstadt executive committee; commissar of Fort Ino in the October Revolution"
+     }
+    },
+    {
+     "y": "1918",
+     "r": {
+      "ko": "좌파 사회혁명당 전투조직원, 7월 30일 키예프에서 아이히호른 암살, 8월 10일 교수형",
+      "en": "Member of the Left SR combat organisation; assassinated Eichhorn in Kiev on 30 July; hanged on 10 August"
+     }
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "organizing",
+     "affiliationId": "russian-left-sr",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "primary": true,
+     "startYear": 1916,
+     "endYear": 1918,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+       "locator": "plain-text extract characters 901:1061; accessed 2026-10-01; sha256 8d103c2f18ea7057d424f649e5f4d37e6cbb2bf4eaa5ff25c5265a1974ceec84",
+       "claim": "1916년 좌파 사회혁명당에 들어가 단식 투쟁과 반정부 선전을 조직하다 체포되었다.",
+       "excerpt": "In 1916 Donskoy joined the Left Socialist-Revolutionary Party and soon after that he was arrested for organizing a hunger strike and anti-government propaganda."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+       "locator": "plain-text extract characters 1907:2009; accessed 2026-10-01; sha256 8d103c2f18ea7057d424f649e5f4d37e6cbb2bf4eaa5ff25c5265a1974ceec84",
+       "claim": "1918년 4월 좌파 사회혁명당 전러시아 전투조직에 들어갔다.",
+       "excerpt": "In April 1918 Donskoy joined the All-Russian Battle Organization of the Left Socialist-Revolutionaries"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+       "locator": "plain-text extract characters 2347:2468; accessed 2026-10-01; sha256 8d103c2f18ea7057d424f649e5f4d37e6cbb2bf4eaa5ff25c5265a1974ceec84",
+       "claim": "1918년 7월 30일 아이히호른 원수에게 폭탄을 던져 그와 부관을 죽였다.",
+       "excerpt": "On July 30, 1918, he threw a bomb at the Field Marshal who soon died along with his adjutant Captain Walter von Dressler."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Boris_Donskoy",
+    "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%D0%B9,_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "A peasant from Ryazan Governorate who went to Petrograd at fifteen and was conscripted into the Baltic Fleet in 1915. He joined the Left Socialist-Revolutionaries in 1916 and was arrested for organising a sailors' hunger strike. Freed by the February Revolution, he sat on the Kronstadt executive committee, led Baltic sailors against Kornilov and in October 1917 was commissar of Fort Ino. In spring 1918 he went to Ukraine with Irina Kakhovskaya to organise resistance to the German occupation and joined the Left SR combat organisation. On 30 July 1918 in Kiev he threw the bomb that killed Field Marshal Hermann von Eichhorn; a German military court sentenced him to death and he was publicly hanged on 10 August.",
+     "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+     "locator": "Wikipedia article: lead, revolutionary activities, assassination of Eichhorn"
+    },
+    {
+     "field": "years",
+     "claim": "1894–1918",
+     "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+     "locator": "Wikipedia article: lead, revolutionary activities, assassination of Eichhorn"
+    },
+    {
+     "field": "citizenship",
+     "claim": "boris-donskoy: citizenship soviet (Soviet Russia, 1917–1918), following the other 1918 Left SR cards",
+     "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+     "locator": "Wikipedia article: lead, revolutionary activities, assassination of Eichhorn"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "boris-donskoy: national background russia",
+     "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+     "locator": "Wikipedia article: lead, revolutionary activities, assassination of Eichhorn"
+    }
+   ]
+  }
+ ]
+}
