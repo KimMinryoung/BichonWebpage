@@ -8,12 +8,12 @@ var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 var medalTitle = person.role && person.role.label ? person.role.label : (strings.commuLingoViews.personCard.contextMarker);
 %>
-<article class="commu-person-card" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
+<article class="commu-person-card<%= positionClass %>" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
     <div class="commu-person-top">
         <% if (medalHref) { %>
-        <a class="commu-person-medal<%= positionClass %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
+        <a class="commu-person-medal" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
         <% } else { %>
-        <span class="commu-person-medal<%= positionClass %>" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
+        <span class="commu-person-medal" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
         <% } %>
         <div class="commu-person-idbox">
             <h3><a href="<%= personHref %>" title="<%= person.displayName || person.name %>"><%= person.displayName || person.name %></a></h3>
@@ -23,9 +23,9 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
     <div class="commu-person-meta">
         <% if (person.role && person.role.label) { %>
         <% if (medalHref) { %>
-        <a class="commu-person-role-tag<%= positionClass %>" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
+        <a class="commu-person-role-tag" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
         <% } else { %>
-        <span class="commu-person-role-tag<%= positionClass %>"><%= person.role.label %></span>
+        <span class="commu-person-role-tag"><%= person.role.label %></span>
         <% } %>
         <% } %>
         <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>

@@ -2744,27 +2744,23 @@ button.commu-dc-option:hover { border-color: var(--link); }
     cursor: pointer;
 }
 
-/* Political position (data/commulingo/person-position.js): a person's medal
-   is filled with the position colour, the tag and detail head carry it as a
-   stripe. Each communist force keeps its own red (Soviet and Chinese flag
-   reds). No known position is grey, so white and black read as positions on
-   both themes. Hub-head medals (offices, collections) keep the plain style. */
-:where(.commu-person-card, .commu-person-detail-head) .commu-person-medal { --pos: #8b8f94; --pos-ink: #fff; }
+/* Political position (data/commulingo/person-position.js): the card and the
+   detail head carry the position colour as a thick left stripe; the medal
+   stays the activity icon. Each communist force keeps its own red (Soviet and
+   Chinese flag reds). No known position, no stripe. */
 .pos-red-soviet { --pos: #cc0000; }
 .pos-red-china { --pos: #de2910; }
 .pos-red { --pos: #a3262e; }
-.pos-white { --pos: #f7f5ef; --pos-ink: #2b2b2b; }
+.pos-white { --pos: #fbfaf6; }
 .pos-anarchist { --pos: #111; }
 .pos-left-opposition { --pos: #c7702a; }
 .pos-dissident { --pos: #3d6fb6; }
 .pos-reform { --pos: #3f9a6a; }
 
-.commu-person-card .commu-person-medal,
-.commu-person-detail-head .commu-person-medal { background: var(--pos); border-color: var(--pos); color: var(--pos-ink); }
-.commu-person-medal.pos-white,
-.commu-person-medal.pos-anarchist { border-color: var(--text-muted); }
-.commu-person-card .commu-person-medal[href]:hover,
-.commu-person-detail-head .commu-person-medal[href]:hover { background: var(--pos); color: var(--pos-ink); border-color: var(--link); }
+.commu-person-card[class*="pos-"] { border-left: 5px solid var(--pos); }
+/* White and black stripes vanish on one of the two themes; a hairline keeps their edge. */
+.commu-person-card.pos-white, .commu-person-card.pos-anarchist,
+.commu-person-detail-head.pos-white, .commu-person-detail-head.pos-anarchist { box-shadow: inset 1px 0 0 var(--text-muted); }
 
 
 /* .commu-role-icon lives in commulingo-crumb.css — the document reader loads
@@ -3087,11 +3083,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     text-overflow: ellipsis;
 }
 a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
-.commu-person-role-tag[class*="pos-"],
 .commu-person-detail-head[class*="pos-"] { border-left-color: var(--pos); }
-/* White and black stripes vanish on one of the two themes; a hairline keeps their edge. */
-.commu-person-role-tag.pos-white, .commu-person-role-tag.pos-anarchist,
-.commu-person-detail-head.pos-white, .commu-person-detail-head.pos-anarchist { box-shadow: inset 1px 0 0 var(--text-muted); }
 
 .commu-people-group-count,
 .commu-event-people-count {

@@ -27,9 +27,9 @@
         <header class="commu-person-detail-head<%= person.position ? ' pos-' + person.position : '' %>">
             <div class="commu-person-detail-top">
                 <% if (medalHref) { %>
-                <a class="commu-person-medal<%= person.position ? ' pos-' + person.position : '' %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
+                <a class="commu-person-medal" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
                 <% } else { %>
-                <span class="commu-person-medal<%= person.position ? ' pos-' + person.position : '' %>" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
+                <span class="commu-person-medal" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
                 <% } %>
                 <div class="commu-person-detail-title">
                     <h1><%= person.displayName || person.name %></h1>
