@@ -2435,6 +2435,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-office-page-link:hover {
     background: var(--bg-surface-hover);
     color: var(--text-primary);
+    text-decoration: none;
 }
 
 .commu-people-group {
