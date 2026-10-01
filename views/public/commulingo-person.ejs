@@ -39,7 +39,7 @@
                     <span><%= person.cyrillic %></span>
                 </div>
             </div>
-            <%- include('../partials/commulingo-person-meta', { person: person }) %>
+            <%- include('../partials/commulingo-person-meta', { person: person, showOtherPositions: true }) %>
             <%# The three header fields carry dictionary links like the card does,
                 and in reading order, so the first mention that links is the first
                 one reached. Each falls back to the escaped plain text. %>
@@ -64,7 +64,6 @@
                     </span></li>
             <% }) %>
             </ul>
-            <% if (person.collections && person.collections.length) { %><p class="commu-person-collections"><%= en ? 'Political positions' : '정치적 입장' %>: <% person.collections.forEach(function(c, i) { %><%= i ? ' · ' : '' %><a href="<%= c.href %>"><%= c.title %></a><% }) %></p><% } %>
         </section>
         <% } %>
         <% if (person.career.length) { %>

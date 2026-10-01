@@ -1,6 +1,6 @@
 // Card colour by political position (data/commulingo/person-position.js).
 const assert = require('node:assert/strict');
-const { personPosition } = require('../data/commulingo/person-position');
+const { personPosition, collectionPosition } = require('../data/commulingo/person-position');
 
 const primary = (affiliationId, startYear) => [{ primary: true, affiliationId, startYear }];
 
@@ -62,5 +62,10 @@ assert.equal(personPosition([{ primary: true, affiliationId: 'state-usa' }, { pr
 assert.equal(personPosition(primary('state-usa'), []), '');
 assert.equal(personPosition(primary('russian-mensheviks'), []), '');
 assert.equal(personPosition([], []), '');
+
+// Secondary chips in the detail head take each collection's own colour.
+assert.equal(collectionPosition('socialist-bloc-reform-leader'), 'reform');
+assert.equal(collectionPosition('communist'), 'red');
+assert.equal(collectionPosition('no-such-collection'), '');
 
 console.log('person position ok');

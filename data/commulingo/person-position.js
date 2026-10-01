@@ -138,4 +138,9 @@ function resolvePosition(activities, collectionIds) {
 
 const personPosition = (activities, collectionIds) => resolvePosition(activities, collectionIds).position;
 
-module.exports = { personPosition, resolvePosition, RED_LABELS, COLLECTION_POSITIONS, EARLIER_POSITIONS, RED_TONES };
+// The colour a collection carries on its own (the detail head's secondary
+// position chips); '' for a collection with no position colour.
+const COLLECTION_COLOURS = new Map([...COLLECTION_POSITIONS, ...EARLIER_POSITIONS]);
+const collectionPosition = id => COLLECTION_COLOURS.get(id) || '';
+
+module.exports = { personPosition, resolvePosition, collectionPosition, RED_LABELS, COLLECTION_POSITIONS, EARLIER_POSITIONS, RED_TONES };

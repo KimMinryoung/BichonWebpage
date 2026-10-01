@@ -1,5 +1,5 @@
 const { displayActivities } = require('./person-activities');
-const { resolvePosition, RED_LABELS } = require('./person-position');
+const { resolvePosition, collectionPosition, RED_LABELS } = require('./person-position');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
@@ -352,6 +352,13 @@ function normalizeCommuLingoPeople(data, options = {}) {
         person.positionTag = !position ? null
             : collection ? { label: collection.title, href: collection.href }
             : { label: localize(RED_LABELS[position], lang), href: '' };
+        // The collections the position chip does not name, for the detail head.
+        // A red collection under a red chip (the communist collection under
+        // Soviet communism) only repeats it.
+        const isRed = key => /^red(-|$)/.test(key);
+        person.otherPositions = person.collections.filter(c => c.id !== collectionId)
+            .map(c => ({ ...c, position: collectionPosition(c.id) }))
+            .filter(c => !(isRed(position) && isRed(c.position)));
     });
     const groups = (data.groups || []).map(group => ({
         id: group.id,

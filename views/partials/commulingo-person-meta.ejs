@@ -11,7 +11,7 @@ var fateIcons = {
             <%= person.primaryActivity.affiliationLabel %>
         <% if (person.primaryActivity.affiliationId) { %></a><% } else { %></span><% } %>
         <% } %>
-        <%- include('commulingo-person-position', { person: person }) %>
+        <%- include('commulingo-person-position', { person: person, showOtherPositions: typeof showOtherPositions !== 'undefined' && showOtherPositions }) %>
         <span class="commu-person-years">
             <% if (typeof flagImg === 'function') { %>
             <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.personCard.citizenship, nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>

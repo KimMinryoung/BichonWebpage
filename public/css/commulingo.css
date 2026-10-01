@@ -2843,6 +2843,22 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .pos-anarchist .commu-person-position {
     box-shadow: inset 0 0 0 1px var(--text-muted);
 }
+/* Secondary chips (detail head only): the person's other position collections,
+   outlined in their own colour so the filled chip stays the position. */
+.commu-person-position.is-secondary {
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--pos, var(--border));
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+.commu-person-position.is-secondary.pos-white,
+.commu-person-position.is-secondary.pos-anarchist {
+    box-shadow: inset 0 0 0 1px var(--text-muted);
+}
+a.commu-person-position.is-secondary:hover,
+a.commu-person-position.is-secondary:focus-visible {
+    color: var(--text-primary);
+}
 a.commu-person-position:hover,
 a.commu-person-position:focus-visible {
     color: var(--pos-ink);
@@ -5525,14 +5541,14 @@ a.commu-activity-chip { display: inline-flex; align-items: center; gap: .35rem; 
 }
 /* Activity names read as body text; the underline alone marks them as links. */
 .commu-person-activities li { font-size: var(--text-md); }
-.commu-person-activity-link, .commu-person-office-link, .commu-person-collections a {
+.commu-person-activity-link, .commu-person-office-link {
     color: var(--text-primary);
     text-decoration: underline; text-decoration-thickness: 1px;
     text-underline-offset: .2em;
     text-decoration-color: color-mix(in srgb, var(--text-primary) 45%, transparent);
 }
 .commu-person-activity-link { font-weight: 600; }
-.commu-person-activity-link:hover, .commu-person-office-link:hover, .commu-person-collections a:hover { color: var(--text-primary); text-decoration-color: currentColor; }
+.commu-person-activity-link:hover, .commu-person-office-link:hover { color: var(--text-primary); text-decoration-color: currentColor; }
 /* The affiliation shares the activity's link (same filter URL) but keeps its quieter weight. */
 .commu-person-activity-link .commu-person-affiliation { display: inline; font-weight: 400; }
 /* Inline, not the glyph's default block, so the icon stays on the line of the label. */

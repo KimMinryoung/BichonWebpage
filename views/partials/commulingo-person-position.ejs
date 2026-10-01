@@ -5,3 +5,8 @@
 <span class="commu-person-position"><%= person.positionTag.label %></span>
 <% } %>
 <% } %>
+<%# The detail head also names the person's other position collections, as
+    outlined chips after the filled one. Cards show only the filled chip. %>
+<% if (showOtherPositions && person.otherPositions) { person.otherPositions.forEach(function(c) { %>
+<a class="commu-person-position is-secondary<%= c.position ? ' pos-' + c.position : '' %>" href="<%= c.href %>"><%= c.title %></a>
+<% }) } %>
