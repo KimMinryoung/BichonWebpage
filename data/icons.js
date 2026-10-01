@@ -26,10 +26,10 @@
 // - stamp, users, gavel, hand-fist, glasses, sprout, chess-king, castle,
 // newspaper, unlink, vote, mic-off, map-pinned, rose: Lucide (MIT),
 // https://github.com/lucide-icons/lucide/blob/main/icons/
-// Everything else is Lucide (MIT) except three custom drawings: `fasces` (see
-// its entry), `commulingo`, a "political school" emblem (open book + filled
-// star), and `posts`, Bichon herself, a bob-haired figure matching the site
-// portrait.
+// Everything else is Lucide (MIT) except four custom drawings: `fasces` and
+// `phrygian-cap` (see their entries), `commulingo`, a "political school"
+// emblem (open book + filled star), and `posts`, Bichon herself, a bob-haired
+// figure matching the site portrait.
 
 const ICON_PATHS = {
     eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
@@ -94,6 +94,9 @@ const ICON_PATHS = {
     // here on Lucide's grid with a filled blade, which reads as an axe at 20px.
     fasces: '<path d="M15 2v20"/><path d="M11.5 8v14"/><path d="M18.5 8v14"/><path d="M10 12.5h10"/><path d="M10 18.5h10"/><path fill="currentColor" d="M15 3.5 7 2.5c-3 2-3 6 0 8l8-1.5Z"/>',
     'map-pinned': '<path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 01-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0112 0"/><path d="M4.474 15h-.197a1 1 0 00-.969.753l-1.097 4.35a1.5 1.5 0 001.444 1.898L20.344 22a1.5 1.5 0 001.446-1.897l-1.098-4.35a1 1 0 00-.969-.753h-.197"/><circle cx="12" cy="8" r="2"/>',
+    // Phrygian cap (bonnet rouge) for 자코뱅·프랑스 혁명 급진파. Lucide and MDI
+    // have none and Game Icons' version, cockade and all, collapses at 20px.
+    'phrygian-cap': '<rect x="4" y="17" width="16" height="4" rx="1"/><path d="M6 17c0-5 1-8 3-9.5C6.5 6.5 4 7 3 9.5c2.5-6 7.5-8 11.5-6.5 3.8 1.4 5.5 5 5.5 9V17"/><circle cx="14.5" cy="12" r="2"/>',
     // Opens the crumb bar on every CommuLingo page, standing for the section root.
     house: '<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
 
