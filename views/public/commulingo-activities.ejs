@@ -7,16 +7,16 @@
 var activeFunction = functions.find(f => f.id === filter.functionId);
 var activeAffiliation = affiliations.find(a => a.id === filter.affiliationId);
 var activeOffice = offices.find(o => o.id === filter.officeId);
-var resultLabel = [activeFunction && activeFunction.label, activeAffiliation && activeAffiliation.label, activeOffice && activeOffice.label].filter(Boolean).join(' · ');
+var resultLabel = [q && '“' + q + '”', activeFunction && activeFunction.label, activeAffiliation && activeAffiliation.label, activeOffice && activeOffice.label].filter(Boolean).join(' · ');
 // Every filter is a link to the resulting URL (works without JS; the script
 // swaps #activity-browser in place). A new affiliation drops the institution
 // line, which only narrows Soviet affiliations.
 function hrefWith(changes) {
-    var next = { function: filter.functionId, affiliation: filter.affiliationId, office: filter.officeId };
+    var next = { function: filter.functionId, affiliation: filter.affiliationId, office: filter.officeId, q: q };
     if ('affiliation' in changes) next.office = '';
     Object.assign(next, changes);
     var params = new URLSearchParams();
-    ['function', 'affiliation', 'office'].forEach(function(key) { if (next[key]) params.set(key, next[key]); });
+    ['function', 'affiliation', 'office', 'q'].forEach(function(key) { if (next[key]) params.set(key, next[key]); });
     params.set('lang', lang);
     return '/commulingo/activities?' + params;
 }
@@ -29,6 +29,21 @@ function chip(href, label, count, active, icon) { %>
     <header class="commu-hub-head"><div><h1><%= en ? 'Activities and affiliations' : '기능·활동과 국가·세력' %></h1>
         <p><%= en ? 'What people did, and whom they served in that activity.' : '인물이 수행한 활동과 그 활동에서의 소속을 함께 찾습니다.' %></p>
     </div></header>
+    <%# The people dictionary's search box, as a GET form so it works without
+        script; with script (commulingo-activities.js) typing swaps the browser
+        below in place. It sits outside #activity-browser so a swap keeps focus. %>
+    <form class="commu-people-search commu-activity-search" action="/commulingo/activities" method="get" role="search" data-activity-search>
+        <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
+        <input type="search" name="q" value="<%= q %>" class="commu-people-search-input"
+            placeholder="<%= strings.commuLingoViews.people.searchByNameAlias %>"
+            autocomplete="off" spellcheck="false" maxlength="200"
+            aria-label="<%= strings.commuLingoViews.people.searchPeople %>">
+        <% if (filter.functionId) { %><input type="hidden" name="function" value="<%= filter.functionId %>"><% } %>
+        <% if (filter.affiliationId) { %><input type="hidden" name="affiliation" value="<%= filter.affiliationId %>"><% } %>
+        <% if (filter.officeId) { %><input type="hidden" name="office" value="<%= filter.officeId %>"><% } %>
+        <input type="hidden" name="lang" value="<%= lang %>">
+        <button type="button" class="commu-people-search-clear" aria-label="<%= strings.commuLingoViews.people.clearSearch %>"<%= q ? '' : ' hidden' %>><%- roleIconSvg('x') %></button>
+    </form>
     <section class="commu-hub-section commu-activity-browser" id="activity-browser" aria-busy="false">
         <div class="commu-activity-facets">
             <div class="commu-activity-facet">
@@ -74,7 +89,7 @@ function chip(href, label, count, active, icon) { %>
             <h2 aria-live="polite"><%= resultLabel || (en ? 'All' : '전체') %> <%= en ? 'people' : '인물' %> <span><%= total %><%= en ? '' : '명' %></span></h2>
             <% if (activeFunction || activeAffiliation || activeOffice) { %><a class="commu-activity-reset" href="<%= hrefWith({ function: '', affiliation: '' }) %>"><%= en ? 'Clear all' : '조건 모두 해제' %></a><% } %>
         </div>
-        <% if (!total) { %><p><%= en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.' %></p><% } %>
+        <% if (!total) { %><p><%= q ? (en ? 'No people match this search and these filters.' : '검색어와 조건에 맞는 인물이 없습니다.') : (en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.') %></p><% } %>
         <div class="commu-people-grid">
         <% people.forEach(function(person) { %>
             <%- include('../partials/commulingo-person-card', { person, en, roleIconSvg, roleHubHref, flagImg }) %>
@@ -85,5 +100,6 @@ function chip(href, label, count, active, icon) { %>
 </main>
 <%- include('../partials/footer') %>
 <%- include('../partials/commulingo-person-card-click-script') %>
+<script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
 <script src="/js/commulingo-activities.js?v=<%= assetVersion %>" defer></script>
 </body></html>

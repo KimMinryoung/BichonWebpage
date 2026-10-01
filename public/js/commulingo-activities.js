@@ -68,9 +68,12 @@
                 });
                 document.title = doc.title;
                 if (options.push) history.pushState({ activities: true }, '', url);
+                else if (options.replace) history.replaceState({ activities: true }, '', url);
                 initSearch(next);
+                highlightCards(next);
                 var results = next.querySelector('#activity-results');
-                if (results) {
+                // Typing in the search box keeps the caret and the page where they are.
+                if (results && !options.typing) {
                     // Keep the reader where they were, unless the results head
                     // is off screen (e.g. after paging from the bottom).
                     var top = results.getBoundingClientRect().top;
@@ -93,7 +96,69 @@
         swap(url.href, { push: true, scrollToResults: !!link.closest('[data-commu-list-pager]') });
     });
 
-    window.addEventListener('popstate', function() { swap(location.href, { push: false }); });
+    window.addEventListener('popstate', function() {
+        if (searchInput) syncSearch(new URL(location.href).searchParams.get('q') || '');
+        swap(location.href, { push: false });
+    });
 
-    if (browser()) initSearch(browser());
+    // People search: the dictionary's search box narrows the filtered people
+    // (server ?q=, ranked like /commulingo/people). Typing replaces the history
+    // entry; Enter and the clear button add one.
+    var form = document.querySelector('[data-activity-search]');
+    var searchInput = form && form.querySelector('input[name="q"]');
+    var clearBtn = form && form.querySelector('.commu-people-search-clear');
+    var typingTimer = null;
+
+    function highlightCards(root) {
+        var query = searchInput ? searchInput.value.trim() : '';
+        var re = query && window.__commuSearch ? window.__commuSearch.pattern(query) : null;
+        if (!re) return;
+        root.querySelectorAll('.commu-person-card').forEach(function(card) { window.__commuSearch.highlight(card, re); });
+    }
+    function syncSearch(value) {
+        searchInput.value = value;
+        clearBtn.hidden = !value;
+    }
+    function searchUrl() {
+        var url = new URL(location.href);
+        var query = searchInput.value.trim();
+        if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
+        url.searchParams.delete('page');
+        return url.href;
+    }
+    function runSearch(options) {
+        clearTimeout(typingTimer);
+        clearBtn.hidden = !searchInput.value;
+        var url = searchUrl();
+        if (url !== location.href) swap(url, options);
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            clearBtn.hidden = !searchInput.value;
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(function() { runSearch({ replace: true, typing: true }); }, 250);
+        });
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && searchInput.value) {
+                event.preventDefault();
+                syncSearch('');
+                runSearch({ replace: true, typing: true });
+            }
+        });
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            runSearch({ push: true, scrollToResults: true });
+        });
+        clearBtn.addEventListener('click', function() {
+            syncSearch('');
+            runSearch({ push: true, typing: true });
+            searchInput.focus();
+        });
+    }
+
+    if (browser()) {
+        initSearch(browser());
+        highlightCards(browser());
+    }
 })();

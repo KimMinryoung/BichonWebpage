@@ -214,6 +214,7 @@ router.get('/activities', async (req, res) => {
         const functionId = typeof req.query.function === 'string' ? req.query.function : '';
         const affiliationId = typeof req.query.affiliation === 'string' ? req.query.affiliation : '';
         const officeId = typeof req.query.office === 'string' ? req.query.office : '';
+        const q = typeof req.query.q === 'string' ? req.query.q.trim().slice(0, 200) : '';
         const merged = activitiesModel.catalog.retired?.[affiliationId];
         if (merged) {
             const query = new URLSearchParams(Object.entries(req.query).filter(([, v]) => typeof v === 'string'));
@@ -225,19 +226,27 @@ router.get('/activities', async (req, res) => {
             return errorPage(res, 404, { message: lang === 'en' ? 'Activity filter not found.' : '활동 분류를 찾을 수 없습니다.' });
         }
         const filter = { functionId, affiliationId, officeId };
-        const people = sortPeopleChronologically(standardized.people.filter(p => activitiesModel.matchesActivities(p, filter)));
+        // A search narrows the pool the filters and their counts work on, with
+        // the people dictionary's ranking (name, then role, then text hits).
+        let pool = standardized.people;
+        if (q) {
+            const hits = searchPeople(standardized, q, sortPeopleChronologically);
+            pool = [...new Set([...hits.name, ...hits.role, ...hits.desc])];
+        }
+        const matched = pool.filter(p => activitiesModel.matchesActivities(p, filter));
+        const people = q ? matched : sortPeopleChronologically(matched);
         // Keep active filters visible even when an existing link has no matches.
-        const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId, officeId })).length }))
+        const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: pool.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId, officeId })).length }))
             .filter(f => f.count > 0 || f.id === functionId);
         // Picking another affiliation drops the institution line (it only
         // narrows Soviet affiliations), so affiliation counts ignore it.
-        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length }))
+        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: pool.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length }))
             .filter(a => a.count > 0 || a.id === affiliationId);
         // Institution lines only narrow Soviet activities, so they are offered
         // once a Soviet affiliation is chosen (or arrive in a link), never as a
         // free-standing filter that dead-ends on other affiliations.
         const offerOffices = officeId || activitiesModel.OFFICE_AFFILIATIONS.has(affiliationId);
-        const offices = offerOffices ? standardized.offices.map(o => ({ id: o.id, label: o.title, count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId, officeId: o.id })).length }))
+        const offices = offerOffices ? standardized.offices.map(o => ({ id: o.id, label: o.title, count: pool.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId, officeId: o.id })).length }))
             .filter(o => o.count > 0 || o.id === officeId) : [];
         const groupedAffiliations = new Map();
         for (const a of affiliations) {
@@ -248,13 +257,14 @@ router.get('/activities', async (req, res) => {
         const affiliationGroups = [...groupedAffiliations.values()].sort((a,b) => a.label.localeCompare(b.label, lang));
         const query = new URLSearchParams({ function: functionId, affiliation: affiliationId, lang });
         if (officeId) query.set('office', officeId);
+        if (q) query.set('q', q);
         const pagination = paginateList(people, people, { page: req.query.page || 1 }, `/commulingo/activities?${query}&page=`, { mark: false });
         setShortPublicCache(res);
-        const count = f => standardized.people.filter(p => activitiesModel.matchesActivities(p, f)).length;
+        const count = f => pool.filter(p => activitiesModel.matchesActivities(p, f)).length;
         const allCounts = { functions: count({ affiliationId, officeId }), affiliations: count({ functionId }) };
         const topAffiliations = [...affiliations].sort((a, b) => b.count - a.count).slice(0, 8);
         if (affiliationId && !topAffiliations.some(a => a.id === affiliationId)) topAffiliations.push(affiliations.find(a => a.id === affiliationId));
-        res.render('public/commulingo-activities', { filter, functions, affiliations, affiliationGroups, offices, allCounts, topAffiliations: topAffiliations.filter(Boolean), pagination, total: people.length,
+        res.render('public/commulingo-activities', { filter, q, functions, affiliations, affiliationGroups, offices, allCounts, topAffiliations: topAffiliations.filter(Boolean), pagination, total: people.length,
             people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
             linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? 'People by activity and affiliation' : '기능·활동과 국가·세력별 인물',
