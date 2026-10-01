@@ -3363,6 +3363,15 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     gap: 6px;
 }
 
+/* The head card's edge already separates it from the first section, so that
+   section sits right under it: no rule of its own, and a negative margin
+   takes back the shell's flex gap. */
+.commu-person-detail-head { margin-bottom: 0; }
+.commu-person-detail-head + .commu-person-detail-section {
+    border-top: 0;
+    margin-top: -8px;
+}
+
 .commu-person-detail-head > .commu-person-meta {
     margin-bottom: var(--space-3);
 }
