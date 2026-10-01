@@ -19,6 +19,21 @@ assert.equal(personPosition(primary('party-german-communist'), ['western-marxist
 assert.equal(personPosition(primary('state-vietnam', 1945), ['national-liberation']), 'red');
 assert.equal(personPosition(primary('party-paigc'), ['national-liberation']), 'national-liberation');
 
+// Explicit commitments cover pre-party communists and politically active
+// writers; they do not turn state employment into an inferred ideology.
+assert.equal(personPosition(primary(null), ['communist']), 'red');
+assert.equal(personPosition(primary('state-france'), ['communist']), 'red');
+assert.equal(personPosition(primary('soviet-party'), ['communist']), 'red-soviet');
+assert.equal(personPosition(primary('china-ccp'), ['communist']), 'red-china');
+assert.equal(personPosition(primary('soviet-party'), ['liberal-republican', 'communist']), 'liberal-republican');
+assert.equal(personPosition(primary(null), ['early-socialist']), 'socialist');
+assert.equal(personPosition(primary(null), ['revolutionary-socialist']), 'revolutionary-socialist');
+assert.equal(personPosition(primary('state-britain'), ['conservative']), 'conservative');
+assert.equal(personPosition(primary(null), ['monarchist']), 'monarchist');
+assert.equal(personPosition(primary(null), ['agrarian']), 'agrarian');
+assert.equal(personPosition(primary(null), ['nationalist']), 'nationalist');
+assert.equal(personPosition(primary(null), ['nationalist', 'fascist']), 'fascist');
+
 // Each communist force keeps its own red; sub-affiliations follow their parent.
 assert.equal(personPosition(primary('state-soviet'), []), 'red-soviet');
 assert.equal(personPosition(primary('soviet-ukraine'), []), 'red-soviet');

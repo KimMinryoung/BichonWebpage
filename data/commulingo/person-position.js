@@ -17,13 +17,23 @@ const COLLECTION_POSITIONS = [
     ['dissident', 'dissident'],
     ['socialist-bloc-reform-leader', 'reform'],
     ['western-marxist', 'western-marxist'],
+    ['monarchist', 'monarchist'],
+    ['conservative', 'conservative'],
+    ['liberal-republican', 'liberal-republican'],
+    ['agrarian', 'agrarian'],
+    ['nationalist', 'nationalist'],
 ];
 
 // Collections for an earlier stage of a career: they colour a card only when
 // the person's own affiliation does not make it red (a social democrat who
 // later led a ruling communist party is red).
 const EARLIER_POSITIONS = [
+    // Explicit intellectual or political commitments, including non-members
+    // and pre-party communists. Documented Soviet/Chinese service keeps its red.
+    ['communist', 'red'],
     ['non-bolshevik-socialist', 'socialist'],
+    ['early-socialist', 'socialist'],
+    ['revolutionary-socialist', 'revolutionary-socialist'],
     ['narodnik', 'narodnik'],
     ['jacobin', 'jacobin'],
     ['revolutionary-democrat', 'revolutionary-democrat'],

@@ -2773,6 +2773,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .pos-fascist { --pos: #6e4b2e; }
 .pos-white { --pos: #fbfaf6; --pos-ink: #0b0d0a; }
 .pos-anarchist { --pos: #111; }
+.pos-liberal-republican { --pos: var(--commu-position-liberal); }
+.pos-conservative { --pos: var(--commu-position-conservative); }
+.pos-monarchist { --pos: var(--commu-position-monarchist); }
+.pos-agrarian { --pos: var(--commu-position-agrarian); }
+.pos-nationalist { --pos: var(--commu-position-nationalist); }
+.pos-revolutionary-socialist { --pos: var(--commu-position-revolutionary-socialist); }
 
 /* The band is a pseudo-element rather than border-top so the hover and focus
    border colours leave it alone. */

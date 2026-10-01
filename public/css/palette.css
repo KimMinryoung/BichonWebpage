@@ -17,6 +17,14 @@
   --clr-red-deep: #2d1115;
   --clr-accent: #214d2e;
 
+  /* Additional CommuLingo political-position colour families. */
+  --commu-position-liberal: #365f87;
+  --commu-position-conservative: #455a64;
+  --commu-position-monarchist: #755393;
+  --commu-position-agrarian: #637236;
+  --commu-position-nationalist: #8a6d32;
+  --commu-position-revolutionary-socialist: #994757;
+
   /*
    * Design foundations
    * ------------------
