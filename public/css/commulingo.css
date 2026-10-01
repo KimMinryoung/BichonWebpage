@@ -4303,8 +4303,9 @@ a.commu-dict-chip:hover { text-decoration: none; }
    text starts folded to a preview with a button to unfold it
    (commulingo-doc-excerpts.js). It used to scroll inside its own box, which on
    a phone caught every swipe that landed on it and left the page hard to
-   scroll past; unfolded, the text reads on the page's one scroll. The link
-   under it opens the piece in the full reader. */
+   scroll past; unfolded, the text reads on the page's one scroll. The head
+   row is itself the link to the full reader, so the box's last row stays the
+   unfold toggle, the action readers actually use. */
 .commu-doc-excerpt {
     border: 1px solid var(--border);
     background: var(--bg-surface);
@@ -4313,15 +4314,21 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 .commu-doc-excerpt-head {
     display: flex;
-    flex-direction: column;
-    gap: .15rem;
-    margin: 0;
+    align-items: center;
+    gap: 1rem;
     padding: .75rem 1rem;
     border-bottom: 1px solid var(--border);
     line-height: var(--leading-snug);
+    color: var(--text-primary);
+    text-decoration: none;
 }
-.commu-doc-excerpt-head span { font-size: .78rem; color: var(--text-muted); }
-.commu-doc-excerpt-head strong { font-size: 1.02rem; color: var(--text-primary); }
+.commu-doc-excerpt-head:hover { background: var(--bg-surface-hover); color: var(--text-primary); text-decoration: none; }
+.commu-doc-excerpt-head:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+.commu-doc-excerpt-title { display: flex; flex-direction: column; gap: .15rem; flex: 1; min-width: 0; }
+.commu-doc-excerpt-title span { font-size: .78rem; color: var(--text-muted); }
+.commu-doc-excerpt-title strong { font-size: 1.02rem; color: var(--text-primary); }
+.commu-doc-excerpt-go { flex: none; font-size: .82rem; color: var(--text-muted); white-space: nowrap; }
+.commu-doc-excerpt-head:hover .commu-doc-excerpt-go { color: var(--text-primary); }
 .commu-doc-excerpt-body {
     position: relative;
     padding: .4rem 1rem 1rem;
@@ -4378,20 +4385,6 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: var(--leading-none); text-decoration: none; }
 .commu-doc-excerpt-body .notes-list { font-size: .85em; color: var(--text-muted); padding-left: 1.6em; }
 .commu-doc-excerpt-body .notes-list .back-link { text-decoration: none; margin-left: .25em; }
-/* The box's last row is itself the way to the library: the same full-width row
-   as the toggle above it, not a green text link and not a button nested in a row. */
-.commu-doc-excerpt-more {
-    display: block;
-    padding: .7rem 1rem;
-    border-top: 1px solid var(--border);
-    color: var(--text-primary);
-    font-size: .9rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-}
-.commu-doc-excerpt-more:hover { background: var(--bg-surface-hover); color: var(--text-primary); text-decoration: none; }
-.commu-doc-excerpt-more:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
 
 /* Entity links inside dictionary prose, on every page that has them rather
    than per page type. These were scoped to .commu-term-page, so the same link
