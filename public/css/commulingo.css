@@ -2772,6 +2772,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .pos-reform { --pos: #4b9670; --pos-ink: #0b0d0a; }
 .pos-fascist { --pos: #6e4b2e; }
 .pos-white { --pos: #fbfaf6; --pos-ink: #0b0d0a; }
+/* White needs a full-strength wash to show against the light cream surface. */
+[data-theme="light"] .pos-white { --pos-wash: 100%; }
 .pos-anarchist { --pos: #111; }
 .pos-liberal-republican { --pos: var(--commu-position-liberal); }
 .pos-conservative { --pos: var(--commu-position-conservative); }
@@ -2795,7 +2797,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 .commu-person-card[class*="pos-"] .commu-person-top,
 .commu-person-detail-head[class*="pos-"] {
-    background-image: linear-gradient(180deg, color-mix(in srgb, var(--pos) 16%, transparent), transparent 90%);
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--pos) var(--pos-wash, 16%), transparent), transparent 90%);
 }
 .commu-person-card[class*="pos-"] .commu-person-top { padding-top: 19px; }
 .commu-person-detail-head[class*="pos-"] {
@@ -2805,7 +2807,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     padding-top: 21px;
     position: relative;
 }
-/* White vanishes on the light theme and black on the dark one: the white band
+/* White has low contrast on light cream and black on the dark theme: the white band
    gets a hairline beneath it, and black becomes a black-and-grey hatch with a
    grey tint, which still reads as black but never merges into the card. */
 .commu-person-card.pos-white::before,
