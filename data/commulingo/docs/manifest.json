@@ -6529,6 +6529,56 @@
           "Presidium's criticism of Nagy in January 1955"
         ]
       }
+    },
+    {
+      "id": "sixteen-points-1956",
+      "file": "sixteen-points-1956.html",
+      "docLang": "ko",
+      "date": "1956-10-22",
+      "title": {
+        "ko": "16개조 — 부다페스트 공과대학생들의 결의 (1956)",
+        "en": "The Sixteen Points: Resolution of the Budapest Technical University Students (1956)"
+      },
+      "description": {
+        "ko": "1956년 10월 22일 밤 부다페스트 건설공업공과대학 학생총회가 채택하고 이튿날 전단으로 돌린 결의의 한국어 완역. 소련군 철수, 너지 임레 정부, 라코시 재판, 복수정당 비밀선거와 파업권, 우라늄 정보 공개, 언론·라디오 자유, 스탈린 동상 철거, 폴란드와의 연대까지 열여섯 조항과, 라디오와 신문이 전문 게재를 거부한 경위를 적은 학생들의 덧붙임을 함께 옮겼다. 헝가리어 원문에서 옮겼다.",
+        "en": "A complete Korean translation of the resolution adopted on the night of 22 October 1956 by the student assembly of the Budapest University of Building and Transport and circulated as a leaflet the next day: sixteen points running from the withdrawal of Soviet troops, a government under Imre Nagy and a trial for Rákosi to multi-party secret elections, the right to strike, disclosure of the uranium deals, a free press and radio, the removal of the Stalin statue and solidarity with Poland, together with the students' account of how radio and newspapers refused to print the full text. Translated from the Hungarian."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "A MEFESZ építőip. műszaki egyetemi diáknagygyűlés határozatának főbb politikai, gazdasági és eszmei pontjai, 1956. október 22. // 1956 plakátjai és röplapjai. Október 22.–november 5. Budapest: Zrínyi, 1991. 16. o.; elektronikus kiadás: Magyar Elektronikus Könyvtár (mek.oszk.hu/01900/01937)",
+      "people": [
+        "nagy",
+        "matyas-rakosi",
+        "mihaly-farkas"
+      ],
+      "terms": [
+        "sixteen-points-1956",
+        "mefesz-union-of-hungarian-university-and-academy-students",
+        "hungarian-working-peoples-party",
+        "planned-economy"
+      ],
+      "events": [
+        "hungarian-revolution"
+      ],
+      "excerpts": {
+        "terms": {
+          "sixteen-points-1956": "*"
+        }
+      },
+      "addedAt": "2026-10-01",
+      "aliases": {
+        "ko": [
+          "16개조 전문",
+          "「16개조」 전문",
+          "16개조 한국어 번역"
+        ],
+        "en": [
+          "full text of the Sixteen Points",
+          "Sixteen Points (full text)"
+        ]
+      }
     }
   ],
   "redirects": {
