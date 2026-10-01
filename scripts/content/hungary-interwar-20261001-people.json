@@ -1,0 +1,3612 @@
+{
+  "changedBy": "hungary-interwar-20261001",
+  "people": [
+    {
+      "id": "mihaly-karolyi",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "미하이",
+        "en": "Mihály"
+      },
+      "familyName": {
+        "ko": "카로이",
+        "en": "Károlyi"
+      },
+      "nativeName": "Károlyi Mihály",
+      "years": "1875–1955",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "과꽃 혁명으로 총리가 되고 헝가리 제1공화국 대통령을 지낸 자유주의 귀족",
+        "en": "Liberal aristocrat who came to power in the Aster Revolution and was president of the First Hungarian Republic"
+      },
+      "bio": {
+        "ko": "부유한 가톨릭 대귀족 가문 출신으로, 제1차 세계대전 중 즉각 강화를 요구한 의회 반전파를 이끌었다. 1918년 10월 과꽃 혁명으로 총리가 되었고, 11월 16일 인민공화국이 선포되자 임시 국가원수를 겸했으며 1919년 1월 대통령으로 인정되었다. 토지개혁의 본보기로 자기 가문의 영지를 소작인들에게 내주었다. 1919년 3월 빅스 각서로 정부가 무너진 뒤 평의회 공화국이 선포되었고, 7월 망명했다. 1946년 귀국해 1947~1949년 주프랑스 대사를 지냈으나 러이크 재판에 항의해 사임했고, 1955년 프랑스 방스에서 죽었다.",
+        "en": "Born into an extremely wealthy Catholic aristocratic family, he led the small anti-war faction in parliament that demanded an immediate peace during the First World War. The Aster Revolution of October 1918 made him prime minister; when the People’s Republic was proclaimed on 16 November he also became provisional head of state, and in January 1919 he was recognised as president. As an example for land reform he gave his family estates to his tenants. After his government fell over the Vix note in March 1919 the Soviet Republic was proclaimed, and in July he went into exile. He returned in 1946 and was ambassador to France from 1947 to 1949, resigning in protest at the Rajk trial, and died in Vence, France, in 1955."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Michael Károlyi"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+        "https://en.wikipedia.org/wiki/Aster_Revolution"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 4 March 1875 in Pest",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Early life",
+          "excerpt": "Mihály Károlyi was born on March 4, 1875, in the Károlyi Palace in the aristocratic palace district of Pest."
+        },
+        {
+          "field": "years",
+          "claim": "Died 19 March 1955 in Vence",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Post WW2",
+          "excerpt": "He died in Vence, France, on 19 March 1955 at the age of 80."
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian politician",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian politician who served as a leader of the short-lived and unrecognized First Hungarian Republic from 1918 to 1919"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian aristocratic family",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Early life",
+          "excerpt": "The Károlyi family were an illustrious, extremely wealthy, Catholic aristocratic family who had played an important role in Hungarian society since the 17th century."
+        },
+        {
+          "field": "bio",
+          "claim": "Led the anti-war faction",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "World War I",
+          "excerpt": "Károlyi became part of a small but very active pacifist anti-war maverick faction in the Hungarian parliament."
+        },
+        {
+          "field": "bio",
+          "claim": "Prime minister and president 1918–1919",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Lead",
+          "excerpt": "He served as prime minister between 1 and 16 November 1918 and as president between 16 November 1918 and 21 March 1919."
+        },
+        {
+          "field": "bio",
+          "claim": "Gave his estates to tenants",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Leading the Democratic Republic",
+          "excerpt": "To set an example, he gave all of his own vast family estates to his tenants."
+        },
+        {
+          "field": "bio",
+          "claim": "Ambassador to France, resigned over Rajk",
+          "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+          "locator": "Post WW2",
+          "excerpt": "In 1946, Károlyi, who by that time had become a socialist, returned to Hungary and from 1947 to 1949 served as the Hungarian Ambassador to France. In 1949, he resigned in protest over the show trial and execution of László Rajk."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+              "locator": "Lead",
+              "claim": "Prime minister and president of the First Hungarian Republic",
+              "excerpt": "He served as prime minister between 1 and 16 November 1918 and as president between 16 November 1918 and 21 March 1919."
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1947,
+          "endYear": 1949,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+              "locator": "Post WW2",
+              "claim": "Hungarian ambassador to France",
+              "excerpt": "from 1947 to 1949 served as the Hungarian Ambassador to France"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1910",
+          "r": {
+            "ko": "독립당 하원의원",
+            "en": "Member of parliament for the Party of Independence"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "헝가리 국민평의회 결성, 과꽃 혁명으로 총리",
+            "en": "Formed the Hungarian National Council; prime minister after the Aster Revolution"
+          }
+        },
+        {
+          "y": "1918–1919",
+          "r": {
+            "ko": "인민공화국 임시 국가원수·대통령",
+            "en": "Provisional head of state and president of the People’s Republic"
+          }
+        },
+        {
+          "y": "1919–1946",
+          "r": {
+            "ko": "망명(프랑스·영국)",
+            "en": "Exile in France and Britain"
+          }
+        },
+        {
+          "y": "1947–1949",
+          "r": {
+            "ko": "주프랑스 헝가리 대사",
+            "en": "Hungarian ambassador to France"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sandor-garbai",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "샨도르",
+        "en": "Sándor"
+      },
+      "familyName": {
+        "ko": "거르버이",
+        "en": "Garbai"
+      },
+      "nativeName": "Garbai Sándor",
+      "years": "1879–1947",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "평의회 공화국 혁명통치평의회 의장을 지낸 건설노동자 출신 사회민주주의자",
+        "en": "Bricklayer turned Social Democrat who chaired the Revolutionary Governing Council of the Hungarian Soviet Republic"
+      },
+      "bio": {
+        "ko": "키슈쿤할러스의 개신교 집안에서 자라 벽돌공으로 일하며 노동운동에 들어섰고, 1901년 사회민주당에 입당해 건설노동자 조합과 노동자보험기금을 이끌었다. 1919년 3월 21일 사회민주당과 공산당의 합당을 지지했고, 혁명통치평의회 의장으로서 평의회 공화국의 법적 국가원수 겸 총리가 되었으나 실권은 쿤 벨러에게 있었다. 붕괴 뒤 페이들 정부의 교육장관을 지냈고, 루마니아군에 붙잡혔다가 클루지에서 탈출해 브라티슬라바, 빈, 파리에서 망명 생활을 했다. 전후 귀국이 허락되지 않은 채 1947년 파리에서 죽었다.",
+        "en": "Raised in a Protestant family in Kiskunhalas, he worked as a bricklayer, joined the labour movement and in 1901 the Social Democratic Party, and led the building workers’ union and the Workers’ Insurance Fund. He backed the merger of the Social Democrats and Communists on 21 March 1919 and, as chairman of the Revolutionary Governing Council, became the Soviet Republic’s formal head of state and prime minister, though real power lay with Béla Kun. After the fall he was education minister in the Peidl government; captured by the Romanian army, he escaped from Cluj and lived in exile in Bratislava, Vienna and Paris. Refused permission to return after the war, he died in Paris in 1947."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+        "https://hu.wikipedia.org/wiki/Garbai_S%C3%A1ndor"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Lived 1879–1947",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+          "locator": "Lead",
+          "excerpt": "Sándor Garbai (27 March 1879 – 7 November 1947) was a Hungarian socialist politician"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian socialist politician",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian socialist politician who was the de jure leader of the Hungarian Soviet Republic as both its head of state and prime minister in 1919"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Grew up in a Calvinist family in Kiskunhalas",
+          "source": "https://hu.wikipedia.org/wiki/Garbai_S%C3%A1ndor",
+          "locator": "Életútja",
+          "excerpt": "Kiskunhalasi református családban nőtt fel"
+        },
+        {
+          "field": "bio",
+          "claim": "Bricklayer family; joined MSZDP in 1901",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+          "locator": "Life and political career",
+          "excerpt": "Garbai was born into the family of a Protestant bricklayer. An active participant in the labor movement from a young age, he joined the Social Democratic Party of Hungary (MSZDP) in 1901 and quickly rose through its ranks."
+        },
+        {
+          "field": "bio",
+          "claim": "Backed the merger; head of state and prime minister",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+          "locator": "Life and political career",
+          "excerpt": "This led to the foundation of the Hungarian Soviet Republic, with Garbai as the Chairman of the Central Executive Council, both head of state and prime minister."
+        },
+        {
+          "field": "bio",
+          "claim": "Escaped Romanian captivity and emigrated",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+          "locator": "Life and political career",
+          "excerpt": "Fearing reprisals, Garbai escaped from Romanian captivity in Cluj and fled to Czechoslovakia and first in settled Bratislava and then emigrated to Vienna."
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Paris",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+          "locator": "Life and political career",
+          "excerpt": "Garbai remained in Paris where he died on 7 November 1947."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+              "locator": "Life and political career",
+              "claim": "Chairman of the Revolutionary Governing Council",
+              "excerpt": "This led to the foundation of the Hungarian Soviet Republic, with Garbai as the Chairman of the Central Executive Council, both head of state and prime minister."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Garbai_S%C3%A1ndor",
+              "locator": "Emigrációban",
+              "claim": "Education minister in the Peidl government",
+              "excerpt": "1919. augusztus 1-jétől augusztus 6-áig közoktatásügyi miniszter a Peidl-kormányban."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1901",
+          "r": {
+            "ko": "사회민주당 입당",
+            "en": "Joined the Social Democratic Party"
+          }
+        },
+        {
+          "y": "1903",
+          "r": {
+            "ko": "건설노동자 전국연맹 의장",
+            "en": "Chairman of the National Federation of Building Workers"
+          }
+        },
+        {
+          "y": "1908",
+          "r": {
+            "ko": "노동자보험기금 의장",
+            "en": "Chairman of the Workers’ Insurance Fund"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "혁명통치평의회 의장",
+            "en": "Chairman of the Revolutionary Governing Council"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "페이들 정부 교육장관",
+            "en": "Education minister in the Peidl government"
+          }
+        },
+        {
+          "y": "1920–1947",
+          "r": {
+            "ko": "망명(브라티슬라바·빈·파리)",
+            "en": "Exile in Bratislava, Vienna and Paris"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tibor-szamuely",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "티보르",
+        "en": "Tibor"
+      },
+      "familyName": {
+        "ko": "서무엘리",
+        "en": "Szamuely"
+      },
+      "nativeName": "Szamuely Tibor",
+      "years": "1890–1919",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (유대계)",
+          "en": "Hungary (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "평의회 공화국의 군사 인민위원 대리로 적색 테러와 레닌 소년단을 이끈 공산주의자",
+        "en": "Communist deputy war commissar of the Hungarian Soviet Republic and a leading figure of its Red Terror"
+      },
+      "bio": {
+        "ko": "니레지하저의 유대계 가정에서 태어난 언론인으로, 제1차 세계대전 중 러시아군의 포로가 되었다. 10월 혁명 뒤 모스크바에서 쿤 벨러와 함께 헝가리인 포로 공산주의자들을 조직했고, 1918년 12월 독일 스파르타쿠스단 창립에도 참여했다. 평의회 공화국에서 군사 인민위원 대리와 교육 인민위원을 지냈으며, 그의 무장대는 레닌 소년단으로 불렸다. 반혁명 혐의자를 재판 없이 처형한 적색 테러의 중심인물로, 5월 말에는 모스크바로 날아가 레닌을 만났다. 1919년 8월 2일 오스트리아 국경을 넘다 붙잡혀 죽었는데, 당국은 자살로 발표했다.",
+        "en": "Born to a Jewish family in Nyíregyháza, he became a journalist and was taken prisoner by Russia during the First World War. After the October Revolution he organised Communist Hungarian prisoners of war in Moscow with Béla Kun, and in December 1918 he took part in founding the Spartacist League in Germany. In the Soviet Republic he was deputy people’s commissar of war and commissar of public education, and his guards became known as the Lenin Boys. A central figure of the Red Terror, which executed suspected counter-revolutionaries without trial, he flew to Moscow in late May to see Lenin. He died on 2 August 1919 after being caught crossing into Austria; the authorities reported that he had shot himself."
+      },
+      "fate": {
+        "kind": "suicide",
+        "label": {
+          "ko": "자살(이설 있음)",
+          "en": "Suicide (disputed)"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Tibor_Szamuely"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Lived 1890–1919",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Lead",
+          "excerpt": "Tibor Szamuely (December 27, 1890 – August 2, 1919) was a Hungarian communist politician and journalist"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian communist politician",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian communist politician and journalist who was Deputy People's Commissar of War and People's Commissar of Public Education during the Hungarian Soviet Republic"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Jewish family in Nyíregyháza",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Early life",
+          "excerpt": "Born in Nyíregyháza, in northeastern Hungary, Szamuely was the oldest son of five children of a Jewish family."
+        },
+        {
+          "field": "bio",
+          "claim": "Prisoner of war; organised Hungarian POWs with Kun",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Political career",
+          "excerpt": "In Moscow, he organised a communist group together with Béla Kun among the Hungarian prisoners of war."
+        },
+        {
+          "field": "bio",
+          "claim": "Spartacist League",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Political career",
+          "excerpt": "Szamuely later went to Germany and in December 1918, he participated in the formation of the Spartacist League, with Karl Liebknecht and Rosa Luxemburg."
+        },
+        {
+          "field": "bio",
+          "claim": "Red Terror and Lenin Boys",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Political career",
+          "excerpt": "He became a figure of the so-called \"Red Terror\" of Hungary. Szamuely's guards became nicknamed the \"Lenin Boys\" or \"Lenin Youth\"."
+        },
+        {
+          "field": "bio",
+          "claim": "Death at the Austrian border",
+          "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+          "locator": "Later life",
+          "excerpt": "Both Hungarian and Austrian authorities reported that Szamuely had shot himself while the Communist partisan who smuggled him across the border was searched."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+              "locator": "Lead",
+              "claim": "Deputy People's Commissar of War",
+              "excerpt": "was a Hungarian communist politician and journalist who was Deputy People's Commissar of War and People's Commissar of Public Education during the Hungarian Soviet Republic"
+            }
+          ]
+        },
+        {
+          "functionId": "security",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+              "locator": "Political career",
+              "claim": "Led the Red Terror",
+              "excerpt": "He became a figure of the so-called \"Red Terror\" of Hungary."
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+              "locator": "Political career",
+              "claim": "Member of the KMP Central Committee",
+              "excerpt": "He became a member of the Central Committee of the Hungarian Communist Party and joined the editing of the Red Paper."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1915",
+          "r": {
+            "ko": "러시아군 포로",
+            "en": "Captured by the Russian army"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "모스크바에서 헝가리인 포로 공산주의 그룹 조직",
+            "en": "Organised the Hungarian POW Communist group in Moscow"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "스파르타쿠스단 창립 참여",
+            "en": "Took part in founding the Spartacist League"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "헝가리 공산주의자당 중앙위원",
+            "en": "Member of the KMP Central Committee"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "군사 인민위원 대리, 교육 인민위원",
+            "en": "Deputy war commissar; commissar of public education"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jeno-landler",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "예뇌",
+        "en": "Jenő"
+      },
+      "familyName": {
+        "ko": "런들레르",
+        "en": "Landler"
+      },
+      "nativeName": "Landler Jenő",
+      "years": "1875–1928",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (유대계)",
+          "en": "Hungary (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "평의회 공화국의 내무 인민위원이자 붉은군대 지휘관을 지낸 노동 변호사 출신 공산주의자",
+        "en": "Labour lawyer turned Communist who was interior commissar and a Red Army commander in the Hungarian Soviet Republic"
+      },
+      "bio": {
+        "ko": "겔세의 유대계 가정에서 태어난 변호사로, 철도노동자 연맹의 법률고문으로서 1904년 전국 철도 파업 지도자들을 변호했다. 1908년 사회민주당에 들어갔고 점차 좌경화해 공산주의자가 되었다. 1919년 3월 감옥에서 쿤 벨러와 프롤레타리아 독재 도입에 합의했고, 평의회 공화국에서 내무·상업 인민위원을 지낸 뒤 붉은군대 제3군단장으로 북부 원정을 지휘했으며 7월에는 총사령관이 되었다. 붕괴 뒤 오스트리아로 망명해 망명 공산주의 운동을 이끌었다. 1928년 칸에서 죽었고 유골은 크렘린 벽에 안치되었다.",
+        "en": "Born to a Jewish family in Gelse, he became a lawyer and, as legal adviser to the railway workers’ federation, defended the leaders of the national railway strike in 1904. He joined the Social Democratic Party in 1908 and moved steadily left until he became a Communist. In March 1919 he agreed with Béla Kun in prison on introducing the dictatorship of the proletariat; in the Soviet Republic he was commissar for the interior and for trade, then commanded the Red Army’s III Corps in the northern campaign and became commander-in-chief in July. After the fall he emigrated to Austria and led the exiled Communist movement. He died in Cannes in 1928, and his ashes were placed in the Kremlin Wall."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심부전",
+          "en": "Heart failure"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+        "https://hu.wikipedia.org/wiki/Landler_Jen%C5%91",
+        "https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1gi_Tan%C3%A1csk%C3%B6zt%C3%A1rsas%C3%A1g"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Lived 1875–1928",
+          "source": "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+          "locator": "Lead",
+          "excerpt": "Jenő Landler (23 November 1875 – 25 February 1928) was a Hungarian politician and socialist leader."
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian politician",
+          "source": "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian politician and socialist leader"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Jewish family",
+          "source": "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+          "locator": "Lead",
+          "excerpt": "Born in to a Jewish family, he studied to be a lawyer"
+        },
+        {
+          "field": "bio",
+          "claim": "Railway workers’ lawyer; 1904 strike",
+          "source": "https://hu.wikipedia.org/wiki/Landler_Jen%C5%91",
+          "locator": "Életpályája",
+          "excerpt": "Miután megszerezte diplomáját, kinevezték a Magyar Vasutas Szövetség jogtanácsosának."
+        },
+        {
+          "field": "bio",
+          "claim": "Commissar and Red Army commander",
+          "source": "https://hu.wikipedia.org/wiki/Landler_Jen%C5%91",
+          "locator": "Életpályája",
+          "excerpt": "Szociáldemokrata politikusként a Tanácsköztársaság idején belügyi és kereskedelmi népbiztos, majd a magyar Vörös Hadsereg 3. hadtestének parancsnoka"
+        },
+        {
+          "field": "bio",
+          "claim": "Agreed with Kun in prison",
+          "source": "https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1gi_Tan%C3%A1csk%C3%B6zt%C3%A1rsas%C3%A1g",
+          "locator": "Előzményei, kikiáltása",
+          "excerpt": "Landler Jenő a Gyűjtőfogházban megegyezett Kun Béláékkal a proletárdiktatúra bevezetéséről"
+        },
+        {
+          "field": "bio",
+          "claim": "Exile and death",
+          "source": "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+          "locator": "Lead",
+          "excerpt": "Jenő Landler died in 1928 in exile in Cannes. His ashes were taken to Moscow and placed in the Kremlin wall."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+              "locator": "Lead",
+              "claim": "People’s commissar of interior affairs",
+              "excerpt": "After the Hungarian Revolution of 1919, he became people's commissar of interior affairs in the new communist government."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jen%C5%91_Landler",
+              "locator": "Lead",
+              "claim": "Red Army commander",
+              "excerpt": "He was also a commander of the Hungarian Red Army fighting the foreign troops of the interventionists."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1904",
+          "r": {
+            "ko": "철도 파업 지도자 변호",
+            "en": "Defended the leaders of the railway strike"
+          }
+        },
+        {
+          "y": "1908",
+          "r": {
+            "ko": "사회민주당 입당",
+            "en": "Joined the Social Democratic Party"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "내무·상업 인민위원",
+            "en": "Commissar for the interior and for trade"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "붉은군대 제3군단장, 7월 총사령관",
+            "en": "Commander of III Corps; commander-in-chief from July"
+          }
+        },
+        {
+          "y": "1919–1928",
+          "r": {
+            "ko": "오스트리아 망명, 망명 공산주의 운동 지도",
+            "en": "Exile in Austria; leader of the exiled Communist movement"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vilmos-bohm",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "빌모시",
+        "en": "Vilmos"
+      },
+      "familyName": {
+        "ko": "뵘",
+        "en": "Böhm"
+      },
+      "nativeName": "Böhm Vilmos",
+      "years": "1880–1949",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (유대계)",
+          "en": "Hungary (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "평의회 공화국의 국방 인민위원이자 붉은군대 총사령관을 지낸 사회민주당 지도자",
+        "en": "Social Democratic leader who was defence commissar and Red Army commander-in-chief of the Hungarian Soviet Republic"
+      },
+      "bio": {
+        "ko": "부다페스트의 유대계 가정에서 태어난 기계공으로, 금속노동자 조합 서기를 거쳐 사회민주당 지도부에 들어갔다. 1919년 1월 베린케이 정부의 국방장관이 되었고, 공산당과의 합당 협상에 참여했다. 평의회 공화국에서 국방 인민위원과 붉은군대 총사령관을 지냈고, 7월 빈 주재 공사로 가서 사회민주당 지도부의 위임으로 협상국 사절단과 평의회 정부의 퇴진을 합의했다. 망명 뒤 빈, 체코슬로바키아, 스웨덴에서 살았고, 1946~1948년 스웨덴 주재 헝가리 공사를 지내다 사회민주당이 공산당에 통합되자 사임했다. 1949년 스톡홀름에서 죽었다.",
+        "en": "Born to a middle-class Jewish family, he trained as a mechanic and rose through the iron and metal workers’ union to the Social Democratic leadership. He became war minister in the Berinkey government in January 1919 and took part in the merger talks with the Communists. In the Soviet Republic he was defence commissar and commander-in-chief of the Red Army, and in July, as envoy in Vienna, he agreed with the Entente missions, on behalf of the Social Democratic leadership, on removing the council government. In exile he lived in Vienna, Czechoslovakia and Sweden; he headed the Hungarian legation in Sweden from 1946 to 1948 and resigned when the Social Democrats were merged into the Communist Party. He died in Stockholm in 1949."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Wilhelm Böhm"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+        "https://hu.wikipedia.org/wiki/B%C3%B6hm_Vilmos"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Lived 1880–1949",
+          "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+          "locator": "Lead",
+          "excerpt": "6 January 1880 – 28 October 1949"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian Social Democrat and ambassador",
+          "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian Social Democrat and Hungary's ambassador to Sweden after World War II"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Middle-class Jewish family",
+          "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+          "locator": "Biography",
+          "excerpt": "He was born to a middle-class Jewish family."
+        },
+        {
+          "field": "bio",
+          "claim": "Metal workers’ union secretary",
+          "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+          "locator": "Biography",
+          "excerpt": "He became involved in the labour movement at an early stage in his career, assuming the role of secretary of the National Federation of Iron and Metal Workers."
+        },
+        {
+          "field": "bio",
+          "claim": "War minister, Red Army commander",
+          "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+          "locator": "Biography",
+          "excerpt": "In April, Böhm assumed the role of Commander-in-Chief of the Red Army."
+        },
+        {
+          "field": "bio",
+          "claim": "Agreed with the Entente on removing the council government",
+          "source": "https://hu.wikipedia.org/wiki/B%C3%B6hm_Vilmos",
+          "locator": "Életpályája",
+          "excerpt": "megegyezik az antantmissziókkal a tanácskormány eltávolításáról"
+        },
+        {
+          "field": "bio",
+          "claim": "Envoy in Sweden, resigned after the merger",
+          "source": "https://hu.wikipedia.org/wiki/B%C3%B6hm_Vilmos",
+          "locator": "Életpályája",
+          "excerpt": "Az MSZDP és az MKP egyesülése után lemondott tisztéről és 1948-tól ismét mint emigráns élt Stockholmban."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+              "locator": "Biography",
+              "claim": "Commander-in-chief of the Red Army",
+              "excerpt": "In April, Böhm assumed the role of Commander-in-Chief of the Red Army."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+              "locator": "Biography",
+              "claim": "War minister in the Berinkey government",
+              "excerpt": "in January 1919 he assumed the role of Minister of Defense in the Berinkey Government"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1946,
+          "endYear": 1948,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/B%C3%B6hm_Vilmos",
+              "locator": "Életpályája",
+              "claim": "Head of the Hungarian legation in Sweden",
+              "excerpt": "1946. május 1-jétől ismét Svédországban dolgozott, a magyar követség vezetője lett"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1911",
+          "r": {
+            "ko": "노동조합 평의회 위원",
+            "en": "Member of the Trade Union Council"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "베린케이 정부 국방장관",
+            "en": "War minister in the Berinkey government"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "국방 인민위원, 붉은군대 총사령관",
+            "en": "Defence commissar and Red Army commander-in-chief"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "빈 주재 공사",
+            "en": "Envoy in Vienna"
+          }
+        },
+        {
+          "y": "1946–1948",
+          "r": {
+            "ko": "스웨덴 주재 헝가리 공사",
+            "en": "Head of the Hungarian legation in Sweden"
+          }
+        }
+      ]
+    },
+    {
+      "id": "otto-korvin",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "오토",
+        "en": "Ottó"
+      },
+      "familyName": {
+        "ko": "코르빈",
+        "en": "Korvin"
+      },
+      "nativeName": "Korvin Ottó",
+      "years": "1894–1919",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (유대계)",
+          "en": "Hungary (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "평의회 공화국 정치조사국장으로 정치경찰을 이끈 공산주의자",
+        "en": "Communist who ran the political police of the Hungarian Soviet Republic as head of its political investigation department"
+      },
+      "bio": {
+        "ko": "부유한 유대계 가정에서 태어나 갈릴레이 서클에서 활동했고, 은행원으로 일하며 1918년 반군국주의 혁명적 사회주의자 지하조직을 이끌었다. 헝가리 공산주의자당 창립에 참여해 중앙위원이 되었고, 1919년 3월 21일 옥중에서 두 당의 합당 문서를 타자로 쳤다. 평의회 공화국에서 상점 사회화를 맡은 뒤 내무 인민위원부 정치조사국장으로 반혁명 혐의자를 추적했다. 붕괴 뒤 루카치 죄르지와 함께 지하당 재건을 맡았다가 체포되어 고문을 받았고, 1919년 12월 교수형에 처해졌다.",
+        "en": "Born into a wealthy, enlightened Jewish family, he was active in the Galileo Circle and, while working as a bank official, led the illegal anti-militarist group of revolutionary socialists in 1918. He helped found the Party of Communists in Hungary and joined its Central Committee, and on 21 March 1919 he typed the text of the merger of the two parties in prison. In the Soviet Republic he first handled the socialisation of shops and then, as head of the political investigation department of the interior commissariat, hunted suspected counter-revolutionaries. After the fall he stayed behind with György Lukács to rebuild the underground party, was arrested and tortured, and was hanged in December 1919."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "클레인 오토 (본명)"
+        ],
+        "en": [
+          "Ottó Klein (birth name)"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Lived 1894–1919",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Lead",
+          "excerpt": "Ottó Korvin (born Ottó Klein; 24 May 1894 – 28 December 1919) was a Hungarian communist who was politically active in the Hungarian Soviet Republic."
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian communist",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian communist who was politically active in the Hungarian Soviet Republic"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Jewish family",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Biography",
+          "excerpt": "Born into a wealthy, enlightened Jewish family"
+        },
+        {
+          "field": "bio",
+          "claim": "Led the anti-militarist group",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Biography",
+          "excerpt": "He became this group's leader and remained so when the Galileo Circle was again legalized after the Aster Revolution."
+        },
+        {
+          "field": "bio",
+          "claim": "Typed the merger text in prison",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Biography",
+          "excerpt": "In prison on March 21, he typed the text on the merger of the two parties (MSZDP and KMP)."
+        },
+        {
+          "field": "bio",
+          "claim": "Head of the political department",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Lead",
+          "excerpt": "He served as the chief of the Political Department of Internal Affairs."
+        },
+        {
+          "field": "bio",
+          "claim": "Arrested and hanged",
+          "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+          "locator": "Lead",
+          "excerpt": "After the fall of the Hungarian Soviet Republic, Korvin was arrested by counter-revolutionary forces and hanged."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "security",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+              "locator": "Lead",
+              "claim": "Chief of the Political Department of Internal Affairs",
+              "excerpt": "He served as the chief of the Political Department of Internal Affairs."
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ott%C3%B3_Korvin",
+              "locator": "Biography",
+              "claim": "Co-founder and Central Committee member of the KMP",
+              "excerpt": "He participated in the establishment of the Communist Party (KMP) and then became a member of the Central Committee."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1917",
+          "r": {
+            "ko": "갈릴레이 서클·반군국주의 운동 참여",
+            "en": "Joined the Galileo Circle and the anti-militarist movement"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "헝가리 공산주의자당 창립, 중앙위원",
+            "en": "Co-founded the KMP; Central Committee member"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "상점 사회화 담당",
+            "en": "In charge of socialising shops"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "내무 인민위원부 정치조사국장",
+            "en": "Head of the political investigation department"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gyula-peidl",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "줄러",
+        "en": "Gyula"
+      },
+      "familyName": {
+        "ko": "페이들",
+        "en": "Peidl"
+      },
+      "nativeName": "Peidl Gyula",
+      "years": "1873–1943",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "평의회 공화국 붕괴 뒤 엿새 동안 「노동조합 정부」를 이끈 인쇄공 출신 사회민주당 지도자",
+        "en": "Printer and Social Democratic leader who headed the six-day “trade-union government” after the fall of the Soviet Republic"
+      },
+      "bio": {
+        "ko": "죄르 주 러버즈드의 정육점 집안에서 태어난 식자공으로, 인쇄노동자 조합과 소비협동조합을 이끌고 1909년 사회민주당 지도부에 들어갔다. 1919년 베린케이 정부의 노동·복지장관을 지냈고, 공산당과의 합당과 프롤레타리아 독재 선포에 반대해 당직에서 물러났다. 1919년 8월 1일 평의회 정부가 사퇴하자 총리가 되어 평의회 공화국을 폐지하고 그 법령을 철회했지만, 8월 6일 루마니아군의 지원을 받은 프리드리히 이슈트반에게 쫓겨났다. 그 뒤 사회민주당 재건에 참여했고 1922~1931년 국회의원을 지냈다.",
+        "en": "Born in Ravazd in Győr County, the son of a butcher, he became a typesetter, led the printers’ union and the consumer co-operative movement, and joined the Social Democratic leadership in 1909. He was labour and welfare minister in the Berinkey government in 1919 and resigned his party posts in opposition to the merger with the Communists and the proclamation of the dictatorship of the proletariat. When the council government resigned on 1 August 1919 he became prime minister, abolished the Soviet Republic and revoked its decrees, but on 6 August he was ousted by István Friedrich with Romanian backing. He then helped rebuild the Social Democratic Party and sat in parliament from 1922 to 1931."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gyula_Peidl",
+        "https://hu.wikipedia.org/wiki/Peidl_Gyula"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Lived 1873–1943",
+          "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+          "locator": "Lead",
+          "excerpt": "Gyula Peidl (4 April 1873 – 22 January 1943) was a Hungarian trade union leader and social democrat politician"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian trade union leader",
+          "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian trade union leader and social democrat politician who served as prime minister and acting head of state of Hungary for 6 days in August 1919"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Ravazd, Győr County",
+          "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+          "locator": "Early life and career",
+          "excerpt": "Gyula Peidl was born on 4 April 1873 in Ravazd, Győr County."
+        },
+        {
+          "field": "bio",
+          "claim": "Butcher’s son, typesetter",
+          "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+          "locator": "Early life and career",
+          "excerpt": "His father, a butcher, died early, thus Peidl was raised by his mother."
+        },
+        {
+          "field": "bio",
+          "claim": "Labour minister; opposed the merger",
+          "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+          "locator": "Early life and career",
+          "excerpt": "In opposition to the union of the party with the Party of Communists in Hungary (KMP) at the beginning of the Hungarian Soviet Republic, he resigned his position in the leadership"
+        },
+        {
+          "field": "bio",
+          "claim": "Dissolved the Soviet Republic",
+          "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+          "locator": "His government",
+          "excerpt": "At its first meeting on 2 August 1919, it officially dissolved the Hungarian Soviet Republic and declared again the Hungarian People's Republic"
+        },
+        {
+          "field": "bio",
+          "claim": "Ousted by Friedrich; MP 1922–1931",
+          "source": "https://hu.wikipedia.org/wiki/Peidl_Gyula",
+          "locator": "Politikusi szerepe",
+          "excerpt": "1922-től 1931-ig nemzetgyűlési, illetve országgyűlési képviselő volt."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+              "locator": "Lead",
+              "claim": "Prime minister for six days in August 1919",
+              "excerpt": "served as prime minister and acting head of state of Hungary for 6 days in August 1919"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gyula_Peidl",
+              "locator": "Early life and career",
+              "claim": "Minister of Labour and Welfare",
+              "excerpt": "he was Minister of Labour and Welfare in the government of Dénes Berinkey"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1922,
+          "endYear": 1931,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Peidl_Gyula",
+              "locator": "Politikusi szerepe",
+              "claim": "Member of parliament 1922–1931",
+              "excerpt": "1922-től 1931-ig nemzetgyűlési, illetve országgyűlési képviselő volt."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1900–1918",
+          "r": {
+            "ko": "인쇄노동자 주간지 『티포그라피아』 편집",
+            "en": "Editor of the printers’ weekly Typographia"
+          }
+        },
+        {
+          "y": "1909",
+          "r": {
+            "ko": "사회민주당 지도부",
+            "en": "Social Democratic Party leadership"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "베린케이 정부 노동·복지장관",
+            "en": "Labour and welfare minister in the Berinkey government"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "「노동조합 정부」 총리",
+            "en": "Prime minister of the “trade-union government”"
+          }
+        },
+        {
+          "y": "1922–1931",
+          "r": {
+            "ko": "국회의원",
+            "en": "Member of parliament"
+          }
+        }
+      ]
+    },
+    {
+      "id": "istvan-bethlen",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "이슈트반",
+        "en": "István"
+      },
+      "familyName": {
+        "ko": "베틀렌",
+        "en": "Bethlen"
+      },
+      "nativeName": "Bethlen István",
+      "years": "1874–1946",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1921~1931년 총리로서 제한 선거와 국제연맹 차관으로 호르티 체제를 안정시킨 트란실바니아 귀족",
+        "en": "Transylvanian aristocrat who, as prime minister in 1921–1931, consolidated the Horthy regime with a restricted franchise and a League loan"
+      },
+      "bio": {
+        "ko": "트란실바니아의 오랜 귀족 가문 출신으로 1901년 자유주의자로 의회에 들어갔다. 1919년 세게드의 반혁명 세력에 합류했고, 1921년 4월 카를 왕의 첫 복귀 시도 뒤 총리가 되었다. 통일당을 세우고 1922년 선거법으로 농촌에 공개투표를 되살려 집권당의 승리를 굳혔으며, 사회민주당과 협정을 맺고 국제연맹 가입과 차관으로 경제를 안정시켰다. 1931년 대공황 속에 물러났고, 1941년 소련과의 전쟁에 반대했다. 1945년 소련군에 체포되어 1946년 모스크바의 감옥에서 죽었다.",
+        "en": "Scion of an old Transylvanian noble family, he entered parliament as a liberal in 1901. He joined the counter-revolution in Szeged in 1919 and became prime minister in April 1921, after King Charles’s first return attempt. He founded the Unity Party, secured its victories by restoring the open ballot in the countryside with the Franchise Act of 1922, concluded a pact with the Social Democrats, and stabilised the economy through League of Nations membership and a loan. He resigned in the Depression in 1931 and in 1941 opposed war with the Soviet Union. Arrested by the Soviets in 1945, he died in a Moscow prison in 1946."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "옥사",
+          "en": "Died in prison"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Bethlen István",
+          "Count István Bethlen"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+        "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1874, died 1946",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Lead",
+          "excerpt": "Count István Bethlen de Bethlen (8 October 1874 – 5 October 1946) was a Hungarian aristocrat and statesman and served as prime minister from 1921 to 1931."
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian statesman",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian aristocrat and statesman and served as prime minister from 1921 to 1931"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian noble family from Transylvania",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Early life",
+          "excerpt": "The scion of an old Bethlen de Bethlen noble family from Transylvania"
+        },
+        {
+          "field": "bio",
+          "claim": "Elected to parliament as a liberal in 1901",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Early career",
+          "excerpt": "Bethlen was elected to the Hungarian Parliament as a liberal in 1901."
+        },
+        {
+          "field": "bio",
+          "claim": "Founded the Unity Party and restored the open ballot",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Prime Minister",
+          "excerpt": "Furthermore, the Franchise Act replaced the secret ballot with the open ballot in rural areas"
+        },
+        {
+          "field": "bio",
+          "claim": "Joined the League of Nations",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Prime Minister",
+          "excerpt": "On 18 September 1922, Bethlen had Hungary join the League of Nations"
+        },
+        {
+          "field": "bio",
+          "claim": "Arrested by the Soviets and died in Moscow prison",
+          "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+          "locator": "Later life",
+          "excerpt": "Soon afterward, Bethlen was taken to Moscow, where he died in prison on 5 October 1946."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1921,
+          "endYear": 1931,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+              "locator": "Lead",
+              "claim": "Prime minister of Hungary 1921–1931",
+              "excerpt": "served as prime minister from 1921 to 1931"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1901,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen",
+              "locator": "Early career",
+              "claim": "Member of the Hungarian parliament",
+              "excerpt": "Bethlen was elected to the Hungarian Parliament as a liberal in 1901."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1901",
+          "r": {
+            "ko": "자유주의자로 의회 진출",
+            "en": "Enters parliament as a liberal"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "세게드 반혁명 세력 합류",
+            "en": "Joins the Szeged counter-revolution"
+          }
+        },
+        {
+          "y": "1921–1931",
+          "r": {
+            "ko": "총리",
+            "en": "Prime minister"
+          }
+        },
+        {
+          "y": "1921",
+          "r": {
+            "ko": "베틀렌–페이에르 협정",
+            "en": "Bethlen–Peyer Pact"
+          }
+        },
+        {
+          "y": "1922",
+          "r": {
+            "ko": "통일당 창당 · 선거법 개정",
+            "en": "Founds the Unity Party; Franchise Act"
+          }
+        },
+        {
+          "y": "1924",
+          "r": {
+            "ko": "국제연맹 차관",
+            "en": "League of Nations loan"
+          }
+        },
+        {
+          "y": "1945–1946",
+          "r": {
+            "ko": "소련에 체포, 모스크바에서 옥사",
+            "en": "Arrested by the Soviets; dies in a Moscow prison"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gyula-gombos",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "줄러",
+        "en": "Gyula"
+      },
+      "familyName": {
+        "ko": "굄뵈시",
+        "en": "Gömbös"
+      },
+      "nativeName": "Gömbös Gyula",
+      "years": "1886–1936",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "국민군 조직을 주도하고 1932~1936년 총리로서 헝가리를 이탈리아·독일 쪽으로 이끈 우익 급진파 장교",
+        "en": "Right-radical officer who organised the Szeged National Army and as prime minister in 1932–1936 steered Hungary towards Italy and Germany"
+      },
+      "bio": {
+        "ko": "톨너주 무르거에서 마을 교사의 아들로 태어나 오스트리아-헝가리군 장교로 제1차 세계대전에 나갔다. 1919년 세게드에서 준군사 단체 MOVE를 만들고 호르티의 국민군 조직을 주도했으며, 1921년 카를 왕의 복귀를 무력으로 막는 데 앞장섰다. 1929년 베틀렌 정부의 국방장관이 되었고 1932년 총리가 되었다. 무솔리니와 손잡고 1934년 로마 의정서에 서명했으며, 히틀러를 찾아간 첫 외국 정부 수반으로서 독일과 무역 협정을 맺었다. 1936년 뮌헨에서 병으로 죽었다.",
+        "en": "Born in Murga, Tolna County, the son of the village schoolmaster, he served as an Austro-Hungarian officer in the First World War. In Szeged in 1919 he founded the paramilitary MOVE and played a leading role in organising Horthy’s National Army, and in 1921 he led the armed opposition to King Charles’s return. He became defence minister in Bethlen’s government in 1929 and prime minister in 1932. He aligned with Mussolini, signing the Rome Protocols in 1934, and as the first foreign head of government to visit Hitler concluded a trade agreement with Germany. He died of illness in Munich in 1936."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "암",
+          "en": "Cancer"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Gömbös Gyula",
+          "Gyula Gombos"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+        "https://en.wikipedia.org/wiki/Rome_Protocols"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1886, died 1936",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Lead",
+          "excerpt": "Gyula Gömbös de Jákfa (26 December 1886 – 6 October 1936) was a Hungarian military officer and politician"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian officer and politician",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian military officer and politician who served as the Prime Minister of Hungary from 1932 until his death in 1936"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in the Kingdom of Hungary",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Background",
+          "excerpt": "Gömbös was born in Murga, Tolna County, Kingdom of Hungary"
+        },
+        {
+          "field": "bio",
+          "claim": "Founded MOVE in Szeged",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Background",
+          "excerpt": "Gömbös formed his own paramilitary group, the Hungarian National Defence Association (Magyar Országos Véderő Egylet, or MOVE)."
+        },
+        {
+          "field": "bio",
+          "claim": "Defence minister in 1929",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Rightward",
+          "excerpt": "In 1929, Gömbös was made a major general and was appointed Minister of Defense in the Bethlen government by Horthy."
+        },
+        {
+          "field": "bio",
+          "claim": "First foreign head of government to visit Hitler",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Premiership",
+          "excerpt": "Gömbös was the first foreign head of government to visit the Nazi leader"
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Munich in 1936",
+          "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+          "locator": "Death",
+          "excerpt": "died of testicular cancer in Munich on 6 October 1936"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1932,
+          "endYear": 1936,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+              "locator": "Lead",
+              "claim": "Prime minister of Hungary 1932–1936",
+              "excerpt": "served as the Prime Minister of Hungary from 1932 until his death in 1936"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1932,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gyula_G%C3%B6mb%C3%B6s",
+              "locator": "Background",
+              "claim": "Organised Horthy’s National Army; defence minister",
+              "excerpt": "played a leading role in organizing Horthy’s army"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1919",
+          "r": {
+            "ko": "MOVE 결성, 국민군 조직",
+            "en": "Founds MOVE; organises the National Army"
+          }
+        },
+        {
+          "y": "1921",
+          "r": {
+            "ko": "카를 왕 복귀 저지",
+            "en": "Opposes King Charles’s return by force"
+          }
+        },
+        {
+          "y": "1929",
+          "r": {
+            "ko": "국방장관",
+            "en": "Defence minister"
+          }
+        },
+        {
+          "y": "1932–1936",
+          "r": {
+            "ko": "총리",
+            "en": "Prime minister"
+          }
+        },
+        {
+          "y": "1934",
+          "r": {
+            "ko": "로마 의정서 서명",
+            "en": "Signs the Rome Protocols"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pal-teleki",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "팔",
+        "en": "Pál"
+      },
+      "familyName": {
+        "ko": "텔레키",
+        "en": "Teleki"
+      },
+      "nativeName": "Teleki Pál",
+      "years": "1879–1941",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "「붉은 지도」를 만든 지리학자로 두 차례 총리를 지내고 1941년 독일군 통과에 항의하듯 자살한 정치인",
+        "en": "Geographer of the “Red map” who was twice prime minister and killed himself in 1941 as German troops crossed Hungary"
+      },
+      "bio": {
+        "ko": "부다페스트에서 태어난 트란실바니아 귀족 가문 출신의 지리학자로, 대학 교수이자 학술원 회원, 헝가리 스카우트 연맹 수장이었다. 1918~1919년 1910년 인구조사에 바탕한 민족 분포도 「붉은 지도」를 만들었다. 1920년 외무장관으로 트리아농 조약 조인을 지켜보았고, 7월 총리가 되어 누메루스 클라우수스법 시기의 정부를 이끌다 1921년 4월 물러났다. 1939년 다시 총리가 되어 제2차 유대인법의 전문을 쓰고 제3차 유대인법을 준비했다. 1941년 4월 3일 독일군의 유고슬라비아 침공 통과가 확실해지자 자살했다.",
+        "en": "Born in Budapest to an aristocratic family from Transylvania, he was a geographer, university professor, member of the Academy of Sciences and chief scout of the Hungarian Scout Association. In 1918–19 he compiled the “Red map” of ethnic distribution based on the 1910 census. As foreign minister he attended the signing of the Treaty of Trianon in 1920, became prime minister in July and led the government of the numerus clausus period until April 1921. Prime minister again from 1939, he wrote the preamble to the Second Anti-Jewish Law and prepared the Third. He killed himself on 3 April 1941 when German troops were about to cross Hungary to invade Yugoslavia."
+      },
+      "fate": {
+        "kind": "suicide",
+        "label": {
+          "ko": "자살",
+          "en": "Suicide"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Teleki Pál",
+          "Count Pál Teleki"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+        "https://hu.wikipedia.org/wiki/Numerus_clausus"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1879, died 1941",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Lead",
+          "excerpt": "Count Pál János Ede Teleki de Szék (1 November 1879 – 3 April 1941) was a Hungarian politician"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian politician",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian politician who served as Prime Minister of the Kingdom of Hungary from 1920 to 1921 and from 1939 to 1941"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian aristocratic family from Transylvania",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Lead",
+          "excerpt": "He descended from an aristocratic family from Transylvania."
+        },
+        {
+          "field": "bio",
+          "claim": "Geographer, professor, chief scout",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Lead",
+          "excerpt": "He was also an expert in geography, a university professor, a member of the Hungarian Academy of Sciences, and chief scout of the Hungarian Scout Association."
+        },
+        {
+          "field": "bio",
+          "claim": "Compiled the Red map",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Early life",
+          "excerpt": "Based on the density of population according to the 1910 census, the so-called Red map was created for the peace talk in Treaty of Trianon."
+        },
+        {
+          "field": "bio",
+          "claim": "Anti-Jewish laws",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Legacy",
+          "excerpt": "Teleki wrote the preamble to the Second Anti-Jewish Law (1939) and prepared the Third Anti-Jewish Law in 1940."
+        },
+        {
+          "field": "bio",
+          "claim": "Suicide in April 1941",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+          "locator": "Germany enters Hungary, Teleki commits suicide",
+          "excerpt": "Teleki committed suicide with a pistol during the night of 3 April 1941"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1941,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Teleki",
+              "locator": "Lead",
+              "claim": "Prime minister 1920–1921 and 1939–1941",
+              "excerpt": "served as Prime Minister of the Kingdom of Hungary from 1920 to 1921 and from 1939 to 1941"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1918–1919",
+          "r": {
+            "ko": "「붉은 지도」 작성",
+            "en": "Compiles the “Red map”"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "외무장관, 트리아농 조약 조인",
+            "en": "Foreign minister at the signing of Trianon"
+          }
+        },
+        {
+          "y": "1920–1921",
+          "r": {
+            "ko": "총리",
+            "en": "Prime minister"
+          }
+        },
+        {
+          "y": "1938",
+          "r": {
+            "ko": "교육장관",
+            "en": "Minister of education"
+          }
+        },
+        {
+          "y": "1939–1941",
+          "r": {
+            "ko": "총리",
+            "en": "Prime minister"
+          }
+        },
+        {
+          "y": "1941",
+          "r": {
+            "ko": "자살",
+            "en": "Suicide"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pal-pronay",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "팔",
+        "en": "Pál"
+      },
+      "familyName": {
+        "ko": "프로너이",
+        "en": "Prónay"
+      },
+      "nativeName": "Prónay Pál",
+      "years": "1874–1947/1948",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1919~1921년 헝가리 백색테러에서 가장 잔혹한 장교 부대를 이끈 반혁명 준군사 지휘관",
+        "en": "Counter-revolutionary paramilitary commander who led the most brutal officer detachment of the Hungarian White Terror of 1919–1921"
+      },
+      "bio": {
+        "ko": "노그라드주 롬하니의 오랜 귀족 가문에서 태어난 직업 장교로, 1919년 세게드에서 호르티의 경호대를 맡고 첫 장교 부대를 만들었다. 그의 부대는 공산당원·사회민주당원·농민·유대인을 고문하고 살해해 헝가리 백색테러에서 가장 잔혹한 부대로 꼽힌다. 1921년 갈취 혐의로 유죄 판결을 받아 지휘권을 잃었고 카를 왕의 두 번째 복귀 시도에 가담했으며, 부대는 1922년 1월 해산되었다. 1930년대에 파시스트 대중운동을 꾸미다 실패했고, 1944년 10월 다시 유대인을 사냥하는 부대를 꾸렸다. 1945년 소련군에 붙잡혀 수용소에서 죽었다.",
+        "en": "Born to an old noble family in Romhány, Nógrád County, the career officer took command of Horthy’s bodyguard in Szeged in 1919 and formed the first officer detachment. Torturing and killing Communists, Social Democrats, peasants and Jews, his unit is considered the most brutal of the Hungarian White Terror. Convicted of extortion in 1921, he lost his command and joined King Charles’s second return attempt; his battalion was dissolved in January 1922. He failed to build a fascist mass movement in the 1930s and in October 1944 again assembled a squad to hunt Jews. Captured by Soviet troops in 1945, he died in the Gulag."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "수용소에서 사망",
+          "en": "Died in a labour camp"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Prónay Pál",
+          "Pal Pronay"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+        "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Horthy"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1874, died 1947 or 1948",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+          "locator": "Lead",
+          "excerpt": "Pál Prónay de Tótpróna et Blatnicza (November 2, 1874 – 1947 or 1948)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian officer",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian reactionary and paramilitary commander in the years following the First World War"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born to a Hungarian noble family in Nógrád County",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+          "locator": "National Army",
+          "excerpt": "Prónay was born in 1874 to an old and distinguished aristocratic family in the town of Romhány, Nógrád County, in northern Hungary."
+        },
+        {
+          "field": "bio",
+          "claim": "Most brutal commander of the White Terror",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+          "locator": "Lead",
+          "excerpt": "He is considered to have been the most brutal of the Hungarian National Army officers who led the White Terror"
+        },
+        {
+          "field": "bio",
+          "claim": "Battalion dissolved January 1922",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+          "locator": "End of Prónay's career",
+          "excerpt": "the government officially dissolved the unit in January 1922 and expelled its members from the army"
+        },
+        {
+          "field": "bio",
+          "claim": "Died in the Gulag",
+          "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+          "locator": "End of Prónay's career",
+          "excerpt": "Prónay was captured on 20 March 1945, held as a POW, sentenced by the Soviet authorities to twenty years forced labour on charges of sabotage and espionage, and died in the Gulag in either 1947 or 1948."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1922,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Pr%C3%B3nay",
+              "locator": "National Army",
+              "claim": "Officer detachment commander in the National Army",
+              "excerpt": "In the summer of 1919, Prónay formed the first partisan militia of what would later be called the “White Guard.”"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1919",
+          "r": {
+            "ko": "호르티 경호대장, 첫 장교 부대 창설",
+            "en": "Heads Horthy’s bodyguard; forms the first officer detachment"
+          }
+        },
+        {
+          "y": "1919–1921",
+          "r": {
+            "ko": "헝가리 백색테러 부대 지휘",
+            "en": "Leads a detachment in the Hungarian White Terror"
+          }
+        },
+        {
+          "y": "1921",
+          "r": {
+            "ko": "갈취죄 유죄, 카를 왕 복귀 시도 가담",
+            "en": "Convicted of extortion; joins King Charles’s return attempt"
+          }
+        },
+        {
+          "y": "1922",
+          "r": {
+            "ko": "부대 해산",
+            "en": "Battalion dissolved"
+          }
+        },
+        {
+          "y": "1932",
+          "r": {
+            "ko": "선동죄로 징역 6개월",
+            "en": "Six months for incitement"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "소련군에 체포",
+            "en": "Captured by Soviet troops"
+          }
+        }
+      ]
+    },
+    {
+      "id": "albert-apponyi",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "얼베르트",
+        "en": "Albert"
+      },
+      "familyName": {
+        "ko": "어포니",
+        "en": "Apponyi"
+      },
+      "nativeName": "Apponyi Albert",
+      "years": "1846–1933",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1920년 파리 강화회의에서 헝가리 대표단을 이끌고 국제연맹에서 트리아농 국경 수정을 호소한 귀족 정치인",
+        "en": "Aristocratic statesman who led Hungary’s delegation to the Paris peace talks in 1920 and pleaded for revising Trianon at the League"
+      },
+      "bio": {
+        "ko": "빈에서 태어난 백작으로, 1877년 의회에 들어가 반세기 동안 활동한 웅변가였다. 1906~1910년 교육장관으로 비헝가리계 학교에 헝가리어 교육을 강제한 1907년의 「어포니법」을 만들었다. 1920년 1월 파리 강화회의에서 헝가리 대표단을 이끌어 1월 16일 연설했으나 조건은 바뀌지 않았고, 3월 섭정 선거에서 호르티에게 졌다. 이후 합스부르크 정통주의 야당 의원이자 국제연맹 대표로 트리아농 국경의 부당함을 호소했다. 1933년 군축회의 참석차 머물던 제네바에서 죽었다.",
+        "en": "A count born in Vienna, he entered parliament in 1877 and was a leading orator for half a century. As education minister in 1906–1910 he drafted the Apponyi laws of 1907, which imposed Hungarian-language teaching on non-Hungarian schools. He led the Hungarian delegation at the Paris peace talks in January 1920 and spoke on 16 January, without changing the terms, and in March lost the regency vote to Horthy. Thereafter, as a legitimist opposition deputy and Hungary’s representative at the League of Nations, he denounced the injustice of the Trianon borders. He died in Geneva in 1933, where he had come for the Disarmament Conference."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Apponyi Albert",
+          "Count Albert Apponyi"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Albert_Apponyi",
+        "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Horthy"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1846, died 1933",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Lead",
+          "excerpt": "29 May 1846 – 7 February 1933"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian politician",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Lead",
+          "excerpt": "was a Hungarian aristocrat and politician"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian noble family",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Early life",
+          "excerpt": "He belonged to an ancient noble family dating back to the 13th century."
+        },
+        {
+          "field": "bio",
+          "claim": "Apponyi laws of 1907",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Minister of education",
+          "excerpt": "As the minister of education of the conservative-led government from 1906 to 1910 he drafted the laws passed in 1907, known as Apponyi laws or Lex Apponyi, in which the process of Magyarization culminated."
+        },
+        {
+          "field": "bio",
+          "claim": "Speech of 16 January 1920",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Apponyi's mission culminated in a speech to the negotiators at the Quai d'Orsay on 16 January 1920"
+        },
+        {
+          "field": "bio",
+          "claim": "Legitimist and League representative",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Later career",
+          "excerpt": "as an opposition member of Parliament, legitimist advocate of the Habsburgs as Kings of Hungary, and regular representative at the League of Nations"
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Geneva",
+          "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+          "locator": "Death",
+          "excerpt": "Albert Apponyi died on 7 February 1933 in Geneva, Switzerland"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1933,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+              "locator": "Later career",
+              "claim": "Head of the peace delegation and representative at the League of Nations",
+              "excerpt": "After leading the Hungarian delegation at the Paris Peace Conference, he remained active in politics and diplomacy"
+            }
+          ]
+        },
+        {
+          "functionId": "education",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1906,
+          "endYear": 1910,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+              "locator": "Minister of education",
+              "claim": "Minister of education 1906–1910",
+              "excerpt": "As the minister of education of the conservative-led government from 1906 to 1910"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1877,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Albert_Apponyi",
+              "locator": "Political career",
+              "claim": "Member of parliament from 1877",
+              "excerpt": "Only in 1877 was he elected"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1877",
+          "r": {
+            "ko": "의회 진출",
+            "en": "Enters parliament"
+          }
+        },
+        {
+          "y": "1906–1910",
+          "r": {
+            "ko": "교육장관, 1907년 어포니법",
+            "en": "Education minister; Apponyi laws of 1907"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "파리 강화 대표단장",
+            "en": "Heads the peace delegation in Paris"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "섭정 선거에서 호르티에게 패배",
+            "en": "Loses the regency vote to Horthy"
+          }
+        },
+        {
+          "y": "1923–1933",
+          "r": {
+            "ko": "국제연맹 대표",
+            "en": "Representative at the League of Nations"
+          }
+        }
+      ]
+    },
+    {
+      "id": "imre-sallai",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "임레",
+        "en": "Imre"
+      },
+      "familyName": {
+        "ko": "셜러이",
+        "en": "Sallai"
+      },
+      "nativeName": "Sallai Imre",
+      "years": "1897–1932",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1932년 비어토르바지 폭파 사건 뒤의 즉결재판 제도 아래 처형된 헝가리 공산당 지도자",
+        "en": "Hungarian Communist leader hanged in 1932 under the summary jurisdiction proclaimed after the Biatorbágy bombing"
+      },
+      "bio": {
+        "ko": "에르되퓔레에서 태어났고 1916년까지 홀렌데르라는 성을 썼다. 금융기관 사무원으로 일하며 제1차 세계대전 중 코르빈 오토와 반군국주의 운동을 조직하다 1918년 체포되었다. 1919년 평의회 공화국에서 내무 인민위원부 정치부의 코르빈 대리를 지냈다. 공화국이 무너지자 빈을 거쳐 모스크바로 망명해 국제적색구원회 일을 했고, 쿤 벨러의 제안으로 귀국해 불법 당 출판을 맡았다. 1932년 7월 체포되어 비어토르바지 폭파와 무관함에도 사형을 선고받고 7월 29일 퓌르시트 샨도르와 함께 교수형에 처해졌다.",
+        "en": "Born in Erdőfüle, he bore the surname Hollender until 1916. A bank clerk, he organised an anti-militarist movement with Ottó Korvin during the First World War and was arrested in 1918. In the 1919 Soviet Republic he was Korvin’s deputy in the political department of the people’s commissariat of the interior. After its fall he fled via Vienna to Moscow and worked for International Red Aid, and was sent home on Béla Kun’s proposal to run the illegal party press. Arrested in July 1932, he was sentenced to death although he had no part in the Biatorbágy bombing, and was hanged with Sándor Fürst on 29 July."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "홀렌데르 임레 (본명)"
+        ],
+        "en": [
+          "Imre Hollender (birth name)",
+          "Imre Sallay"
+        ]
+      },
+      "sources": [
+        "https://hu.wikipedia.org/wiki/Sallai_Imre",
+        "https://hu.wikipedia.org/wiki/Biatorb%C3%A1gyi_mer%C3%A9nylet"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1897, died 1932",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Lead",
+          "excerpt": "(Erdőfüle, 1897. december 17. – Budapest, 1932. július 29.)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian communist politician",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Lead",
+          "excerpt": "magántisztviselő, mozgalmi vezető, kommunista pártmunkás és politikus"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Erdőfüle",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Élete",
+          "excerpt": "Erdőfülén született."
+        },
+        {
+          "field": "bio",
+          "claim": "Birth name Hollender",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Lead",
+          "excerpt": "Sallai Imre, tévesen néhol Sallay, 1916-ig Hollender"
+        },
+        {
+          "field": "bio",
+          "claim": "Korvin’s deputy in 1919",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Élete",
+          "excerpt": "A Magyarországi Tanácsköztársaság idején a Belügyi Népbiztosság Politikai Osztályán Korvin Ottó helyettese volt"
+        },
+        {
+          "field": "bio",
+          "claim": "Sent home on Kun’s proposal",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Élete",
+          "excerpt": "Magyarországra küldése Moszkvából Kun Béla javaslatára történt, hogy az illegális kommunista sajtó feladatait dolgozza ki."
+        },
+        {
+          "field": "bio",
+          "claim": "Executed 29 July 1932",
+          "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+          "locator": "Kivégzése",
+          "excerpt": "az ítéletet 1932. július 29-én végrehajtották"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1932,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+              "locator": "Élete",
+              "claim": "Organiser of the illegal Communist press",
+              "excerpt": "Magyarországra küldése Moszkvából Kun Béla javaslatára történt, hogy az illegális kommunista sajtó feladatait dolgozza ki."
+            }
+          ]
+        },
+        {
+          "functionId": "security",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Sallai_Imre",
+              "locator": "Élete",
+              "claim": "Deputy head of the political department in 1919",
+              "excerpt": "a Belügyi Népbiztosság Politikai Osztályán Korvin Ottó helyettese volt"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1918",
+          "r": {
+            "ko": "반군국주의 운동으로 체포",
+            "en": "Arrested for anti-militarist agitation"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "내무 인민위원부 정치부 부부장",
+            "en": "Deputy head of the interior commissariat’s political department"
+          }
+        },
+        {
+          "y": "1919–1931",
+          "r": {
+            "ko": "빈·모스크바 망명, 국제적색구원회",
+            "en": "Exile in Vienna and Moscow; International Red Aid"
+          }
+        },
+        {
+          "y": "1931–1932",
+          "r": {
+            "ko": "귀국, 불법 당 출판 담당",
+            "en": "Returns to run the illegal party press"
+          }
+        },
+        {
+          "y": "1932",
+          "r": {
+            "ko": "체포, 즉결재판 후 처형",
+            "en": "Arrested and hanged after a summary trial"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sandor-furst",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "샨도르",
+        "en": "Sándor"
+      },
+      "familyName": {
+        "ko": "퓌르시트",
+        "en": "Fürst"
+      },
+      "nativeName": "Fürst Sándor",
+      "years": "1903–1932",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (유대계)",
+          "en": "Hungary (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "셜러이 임레와 함께 비어토르바지 사건을 구실로 한 즉결재판에서 처형된 헝가리 공산당 지도부 일원",
+        "en": "Member of the Hungarian Communist leadership hanged with Imre Sallai after a summary trial that used the Biatorbágy bombing as a pretext"
+      },
+      "bio": {
+        "ko": "룸에서 유대교 신자 부모 사이에 태어났다. 부다페스트의 고무 공장 사무원으로 일하며 사무직 노동자 조합에 속했고, 1926년 헝가리 공산당에 들어갔다. 1928년부터 거듭 체포되었다가 증거 부족으로 풀려났지만 직장을 잃었고, 1930년 당 지도부 일원이 되어 다시 체포되었다. 1932년 비어토르바지 폭파 사건 뒤 선포된 즉결재판 제도 아래 셜러이 임레와 함께 사형을 선고받았다. 헝가리 적색구원회의 구명 운동과 요제프 어틸러 등의 항의에도 7월 29일 교수형에 처해졌다.",
+        "en": "Born in Rum to Jewish parents, he worked as a clerk at a rubber factory in Budapest, belonged to the clerical workers’ union and joined the Communist Party in 1926. Repeatedly arrested from 1928 and released for lack of evidence, he lost his job; in 1930 he joined the party leadership and was soon arrested again. In 1932, under the summary jurisdiction proclaimed after the Biatorbágy bombing, he was sentenced to death together with Imre Sallai. Despite a campaign by the Hungarian Red Aid and protests by Attila József and others, he was hanged on 29 July."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Fürst Sándor",
+          "Sandor Furst"
+        ]
+      },
+      "sources": [
+        "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+        "https://hu.wikipedia.org/wiki/Biatorb%C3%A1gyi_mer%C3%A9nylet"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1903, died 1932",
+          "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+          "locator": "Lead",
+          "excerpt": "Fürst Sándor (Rum, 1903. november 27. – Budapest, 1932. július 29.)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian communist politician",
+          "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+          "locator": "Lead",
+          "excerpt": "magyar kommunista politikus"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born to Jewish parents",
+          "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+          "locator": "Élete",
+          "excerpt": "Fürst Mór és Vittmann Rozália zsidó vallású szülők gyermekeként született Rumon."
+        },
+        {
+          "field": "bio",
+          "claim": "Joined the KMP in 1926; repeatedly arrested",
+          "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+          "locator": "Élete",
+          "excerpt": "1926-ban lépett be a KMP-be, ezért 1928-tól kezdve sorozatosan letartóztatták"
+        },
+        {
+          "field": "bio",
+          "claim": "Party leadership from 1930",
+          "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+          "locator": "Élete",
+          "excerpt": "1930-ban a pártvezetőség tagja lett, ezért hamarosan újra letartóztatták."
+        },
+        {
+          "field": "bio",
+          "claim": "Sentenced with Sallai and hanged",
+          "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+          "locator": "Élete",
+          "excerpt": "A perben a bíróság Fürstöt Sallai Imrével együtt halálra ítélte."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1926,
+          "endYear": 1932,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/F%C3%BCrst_S%C3%A1ndor",
+              "locator": "Élete",
+              "claim": "Member of the illegal party leadership",
+              "excerpt": "1930-ban a pártvezetőség tagja lett"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1926",
+          "r": {
+            "ko": "헝가리 공산당 입당",
+            "en": "Joins the Communist Party"
+          }
+        },
+        {
+          "y": "1928–1930",
+          "r": {
+            "ko": "거듭 체포, 실직",
+            "en": "Repeatedly arrested; loses his job"
+          }
+        },
+        {
+          "y": "1930",
+          "r": {
+            "ko": "당 지도부 합류",
+            "en": "Joins the party leadership"
+          }
+        },
+        {
+          "y": "1932",
+          "r": {
+            "ko": "체포, 즉결재판 후 처형",
+            "en": "Arrested and hanged after a summary trial"
+          }
+        }
+      ]
+    },
+    {
+      "id": "karoly-peyer",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카로이",
+        "en": "Károly"
+      },
+      "familyName": {
+        "ko": "페이에르",
+        "en": "Peyer"
+      },
+      "nativeName": "Peyer Károly",
+      "years": "1881–1956",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1921년 베틀렌–페이에르 협정으로 사회민주당의 합법 활동을 얻어 낸 헝가리 사회민주주의·노동조합 지도자",
+        "en": "Hungarian Social Democratic and trade-union leader who won legal status for his party in the Bethlen–Peyer Pact of 1921"
+      },
+      "bio": {
+        "ko": "베스프렘주 바로실뢰드에서 태어난 기계공 출신으로 금속·광산 노동조합을 이끌었다. 1919년 평의회 공화국에서 광업 부문을 맡았고, 붕괴 뒤 페이들 정부의 내무장관과 후사르 정부의 노동·복지장관을 지냈다. 테러로 사회민주당이 선거를 거부하자 1920년 1월 사임하고 오스트리아로 피신했다. 1921년 귀국해 베틀렌 정부와 협정을 맺었고 1922~1944년 의원, 1927년부터 노동조합 평의회 서기장을 지냈다. 1944년 마우트하우젠 수용소에 갇혔다. 전후 공산당과의 합당에 반대해 1947년 제명된 뒤 미국으로 망명했고 1956년 뉴욕에서 죽었다.",
+        "en": "A machinist from Városlőd in Veszprém County, he led the metalworkers’ and miners’ unions. He ran the mining sector under the Soviet Republic in 1919 and after its fall was interior minister in the Peidl government and minister of labour and welfare under Huszár. When the Social Democrats boycotted the election because of the terror, he resigned in January 1920 and fled to Austria. Back in 1921, he concluded the pact with Bethlen’s government; he was a deputy from 1922 to 1944 and from 1927 general secretary of the Trade Union Council. In 1944 he was held in Mauthausen. Opposing the post-war merger with the Communists, he was expelled in 1947, emigrated to the United States and died in New York in 1956."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Peyer Károly",
+          "Karoly Peyer"
+        ]
+      },
+      "sources": [
+        "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+        "https://en.wikipedia.org/wiki/K%C3%A1roly_Peyer",
+        "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "Born 1881, died 1956",
+          "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+          "locator": "Lead",
+          "excerpt": "Peyer Károly (Városlőd, 1881. május 9. – New York, 1956. október 25.)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian Social Democratic politician",
+          "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+          "locator": "Lead",
+          "excerpt": "magyar szociáldemokrata politikus, miniszter"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Városlőd, Veszprém County",
+          "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+          "locator": "Az első világháború végéig",
+          "excerpt": "Peyer Károly 1881-ben született a Veszprém vármegyei Városlődön."
+        },
+        {
+          "field": "bio",
+          "claim": "Interior minister in the Peidl government",
+          "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+          "locator": "A forradalmak idején",
+          "excerpt": "A Tanácsköztársaság bukása után kinevezett úgynevezett „szakszervezeti kormányban” (Peidl-kormány) belügyminiszter lett."
+        },
+        {
+          "field": "bio",
+          "claim": "Resigned and fled to Austria in January 1920",
+          "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+          "locator": "A forradalmak idején",
+          "excerpt": "Peyer pedig 1920. január 16-án lemondott és Ausztriába menekült"
+        },
+        {
+          "field": "bio",
+          "claim": "Deputy 1922–1944; held in Mauthausen",
+          "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+          "locator": "A paktumtól a második világháború végéig",
+          "excerpt": "1922-től 1944-ig országgyűlési képviselő"
+        },
+        {
+          "field": "bio",
+          "claim": "Died of a heart attack in 1956",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A1roly_Peyer",
+          "locator": "Lead",
+          "excerpt": "Peyer died of a heart attack on 25 October 1956"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1922,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+              "locator": "A paktumtól a második világháború végéig",
+              "claim": "Social Democratic deputy 1922–1944",
+              "excerpt": "1922-től 1944-ig országgyűlési képviselő és 1931-től a szociáldemokrata frakció vezetője"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly",
+              "locator": "A forradalmak idején",
+              "claim": "Interior minister and minister of labour and welfare",
+              "excerpt": "(Peidl-kormány) belügyminiszter lett"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1913",
+          "r": {
+            "ko": "광산 노동조합 조직",
+            "en": "Organises the miners’ union"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "내무장관, 노동·복지장관",
+            "en": "Interior minister; minister of labour and welfare"
+          }
+        },
+        {
+          "y": "1920–1921",
+          "r": {
+            "ko": "오스트리아 망명",
+            "en": "Exile in Austria"
+          }
+        },
+        {
+          "y": "1921",
+          "r": {
+            "ko": "베틀렌–페이에르 협정",
+            "en": "Bethlen–Peyer Pact"
+          }
+        },
+        {
+          "y": "1922–1944",
+          "r": {
+            "ko": "국회의원",
+            "en": "Member of parliament"
+          }
+        },
+        {
+          "y": "1944–1945",
+          "r": {
+            "ko": "마우트하우젠 수용소",
+            "en": "Held in Mauthausen"
+          }
+        },
+        {
+          "y": "1947",
+          "r": {
+            "ko": "사회민주당에서 제명, 미국 망명",
+            "en": "Expelled from the party; emigrates to the United States"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bela-imredy",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "벨러",
+        "en": "Béla"
+      },
+      "familyName": {
+        "ko": "임레디",
+        "en": "Imrédy"
+      },
+      "nativeName": "Imrédy Béla",
+      "years": "1891–1946",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "외교를 독일 쪽으로 돌리고 제2차 유대인법을 낸 뒤 유대계 조상이 드러나 물러난 총리",
+        "en": "Prime minister who swung Hungary towards Germany and drafted the Second Jewish Law, then fell over his own Jewish ancestry"
+      },
+      "bio": {
+        "ko": "부다페스트의 가톨릭 가정에서 태어나 재무부에서 일한 경제 전문가로, 1932년 굄뵈시 내각의 재무장관, 1935년 국립은행 총재가 되었다. 1938년 5월 총리가 되어 그해 가을부터 외교를 독일·이탈리아 쪽으로 돌렸고, 그의 재임 중 제1차 빈 중재로 남부 슬로바키아가 헝가리에 돌아왔다. 독재적 개편과 제2차 유대인법을 추진했으나 1939년 2월 정적들이 그의 유대계 조상을 밝혀내 사임했다. 1940년 친파시스트 정당 헝가리 쇄신당을 세웠고, 1944년 독일 점령 뒤 스토여이 내각의 장관을 지냈다. 1946년 인민재판소의 사형 선고로 총살되었다.",
+        "en": "Born to a Catholic family in Budapest, he was an economist in the finance ministry who became Gömbös’s finance minister in 1932 and president of the National Bank in 1935. Prime minister from May 1938, he turned foreign policy towards Germany and Italy from that autumn, and under him the First Vienna Award returned southern Slovakia to Hungary. He pressed for a dictatorial reorganisation and the Second Jewish Law, but resigned in February 1939 when opponents exposed his Jewish ancestry. In 1940 he founded the pro-fascist Party of Hungarian Renewal, and after the German occupation of 1944 he served in Sztójay’s cabinet. Sentenced to death by a People’s Tribunal, he was shot in 1946."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Béla Imrédy",
+          "Bela Imredy",
+          "Imrédy Béla"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+        "https://hu.wikipedia.org/wiki/Imr%C3%A9dy_B%C3%A9la"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1891–1946",
+          "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+          "locator": "lead",
+          "excerpt": "29 December 1891 – 28 February 1946"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian prime minister",
+          "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+          "locator": "lead",
+          "excerpt": "was Prime Minister of Hungary from 1938 to 1939"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Budapest",
+          "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+          "locator": "biography",
+          "excerpt": "Born in Budapest to a Catholic family"
+        },
+        {
+          "field": "bio",
+          "claim": "Finance minister 1932, National Bank 1935",
+          "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+          "locator": "biography",
+          "excerpt": "In 1932, he was appointed Minister of Finance under the fascist Prime Minister Gyula Gömbös. Following his resignation in 1935, Imrédy took on the role of President of the Hungarian National Bank."
+        },
+        {
+          "field": "bio",
+          "claim": "pro-German turn from autumn 1938",
+          "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+          "locator": "biography",
+          "excerpt": "from the autumn of 1938 onward, he pivoted Hungary's foreign policy towards pro-German and pro-Italian policies"
+        },
+        {
+          "field": "bio",
+          "claim": "resigned over Jewish ancestry; founded Party of Hungarian Renewal",
+          "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+          "locator": "biography",
+          "excerpt": "founded the Party of Hungarian Renewal, a pro-fascist and antisemitic organization, in October of that year"
+        },
+        {
+          "field": "bio",
+          "claim": "First Vienna Award under his government",
+          "source": "https://hu.wikipedia.org/wiki/Imr%C3%A9dy_B%C3%A9la",
+          "locator": "bevezető",
+          "excerpt": "így 1938 novemberében, az első bécsi döntés hatására a tengelyhatalmak jelentős magyarlakta területet csatoltak vissza Magyarországhoz"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1938,
+          "endYear": 1939,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+              "locator": "biography",
+              "claim": "1938–1939년 헝가리 총리",
+              "excerpt": "When Darányi stepped down in May 1938, Regent Miklós Horthy appointed Imrédy as the new prime minister"
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1928,
+          "endYear": 1938,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Imr%C3%A9dy",
+              "locator": "biography",
+              "claim": "국립은행 이사와 총재, 재무장관",
+              "excerpt": "Imrédy was made Director of the Hungarian National Bank in 1928"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1928–1932",
+          "r": {
+            "ko": "헝가리 국립은행 이사",
+            "en": "Director, Hungarian National Bank"
+          }
+        },
+        {
+          "y": "1932–1935",
+          "r": {
+            "ko": "굄뵈시 내각 재무장관",
+            "en": "Finance minister under Gömbös"
+          }
+        },
+        {
+          "y": "1935–1938",
+          "r": {
+            "ko": "헝가리 국립은행 총재",
+            "en": "President, Hungarian National Bank"
+          }
+        },
+        {
+          "y": "1938–1939",
+          "r": {
+            "ko": "총리, 제2차 유대인법 제출",
+            "en": "Prime minister; introduced the Second Jewish Law"
+          }
+        },
+        {
+          "y": "1940–1944",
+          "r": {
+            "ko": "헝가리 쇄신당 창립·당수",
+            "en": "Founder and leader, Party of Hungarian Renewal"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "스토여이 내각 경제 담당 장관",
+            "en": "Minister of economic coordination under Sztójay"
+          }
+        }
+      ]
+    },
+    {
+      "id": "laszlo-bardossy",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "라슬로",
+        "en": "László"
+      },
+      "familyName": {
+        "ko": "바르도시",
+        "en": "Bárdossy"
+      },
+      "nativeName": "Bárdossy László",
+      "years": "1890–1946",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "커셔 폭격을 구실로 소련에 선전포고하고 유대인 추방을 승인한 전시 총리",
+        "en": "Wartime prime minister who declared war on the Soviet Union over the Kassa bombing and approved the deportation of Jews"
+      },
+      "bio": {
+        "ko": "솜버테이 출신의 법률가이자 외교관으로, 1922년 외무부로 옮겨 언론국장 등을 지냈다. 1941년 1월 외무장관이 되었고, 4월 텔레키가 자살하자 총리를 겸했다. 트리아농으로 잃은 땅을 되찾으려 친독 노선을 걸어 유고슬라비아 침공에 참여했고, 6월 커셔 폭격 뒤 의회 동의 없이 소련과의 전쟁 상태를 선언했으며, 영국·미국과도 전쟁에 들어갔다. 「외국인」 유대인 추방과 제3차 유대인법을 밀어붙였고, 1942년 3월 호르티에 의해 물러났다. 전후 인민재판소에서 사형을 선고받아 1946년 1월 총살되었다.",
+        "en": "A lawyer and diplomat from Szombathely, he moved to the foreign ministry in 1922 and headed its press department. He became foreign minister in January 1941 and, after Teleki’s suicide in April, prime minister as well. Seeking to regain lands lost at Trianon, he followed a pro-German line, joined the invasion of Yugoslavia, declared a state of war with the Soviet Union without parliament’s consent after the Kassa bombing in June, and took Hungary into war with Britain and the United States. He pushed through the deportation of “alien” Jews and the Third Jewish Law, and Horthy forced him out in March 1942. Sentenced to death by a People’s Court after the war, he was shot in January 1946."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "László Bárdossy",
+          "Laszlo Bardossy",
+          "Bárdossy László"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1890–1946",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "lead",
+          "excerpt": "10 December 1890 – 10 January 1946"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian prime minister",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "lead",
+          "excerpt": "served as Prime Minister of Hungary from April 1941 to March 1942"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Szombathely",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "Early life",
+          "excerpt": "Born at Szombathely on 10 December 1890"
+        },
+        {
+          "field": "bio",
+          "claim": "foreign minister then prime minister in 1941",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "lead",
+          "excerpt": "Bárdossy was appointed Foreign Minister in January 1941 and, following Pál Teleki's suicide in April, succeeded as Prime Minister."
+        },
+        {
+          "field": "bio",
+          "claim": "war with USSR, UK, US",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "lead",
+          "excerpt": "Afterwards, during his office Hungary became belligerent with the Soviet Union, United Kingdom and the United States."
+        },
+        {
+          "field": "bio",
+          "claim": "Third Jewish Law",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "Domestic policies",
+          "excerpt": "Bárdossy enacted the Third Jewish Law in August 1941"
+        },
+        {
+          "field": "bio",
+          "claim": "executed 1946",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+          "locator": "lead",
+          "excerpt": "He was executed by firing squad in January 1946."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1941,
+          "endYear": 1942,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+              "locator": "lead",
+              "claim": "1941–1942년 헝가리 총리",
+              "excerpt": "served as Prime Minister of Hungary from April 1941 to March 1942"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1922,
+          "endYear": 1942,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%A1rdossy",
+              "locator": "Early life",
+              "claim": "외무부 관료, 외무장관",
+              "excerpt": "In February 1922, he transferred to the newly established Ministry of Foreign Affairs"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1913–1922",
+          "r": {
+            "ko": "문교부 관료",
+            "en": "Official, Ministry of Culture and Education"
+          }
+        },
+        {
+          "y": "1922–1941",
+          "r": {
+            "ko": "외무부 언론국장, 외교관",
+            "en": "Press chief and diplomat, foreign ministry"
+          }
+        },
+        {
+          "y": "1941",
+          "r": {
+            "ko": "외무장관",
+            "en": "Foreign minister"
+          }
+        },
+        {
+          "y": "1941–1942",
+          "r": {
+            "ko": "총리 겸 외무장관, 대소련 참전",
+            "en": "Prime minister and foreign minister; war on the USSR"
+          }
+        },
+        {
+          "y": "1945–1946",
+          "r": {
+            "ko": "인민재판소 사형 선고, 처형",
+            "en": "Sentenced by a People’s Court and executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "miklos-kallay",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "미클로시",
+        "en": "Miklós"
+      },
+      "familyName": {
+        "ko": "칼러이",
+        "en": "Kállay"
+      },
+      "nativeName": "Kállay Miklós",
+      "years": "1887–1967",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "독일의 유대인 이송 요구를 거부하며 서방 연합국과 비밀 휴전을 꾀한 전시 총리",
+        "en": "Wartime prime minister who refused German deportation demands and sought a secret armistice with the Western Allies"
+      },
+      "bio": {
+        "ko": "서볼치 지방의 오랜 젠트리 가문 출신으로 주지사를 거쳐 1932~1935년 농업장관을 지냈고 베틀렌 계열의 보수파였다. 1941년 상원에서 제3차 유대인법에 반대표를 던졌다. 1942년 3월 호르티의 요청으로 총리가 되어 대소련 전쟁을 이어 가면서도 독일의 유대인 이송 요구를 거부하고 서방 연합국과 휴전을 협상했다. 1943년 9월 이스탄불 앞바다에서 비밀 예비 휴전이 맺어졌으나, 1944년 3월 독일이 헝가리를 점령하자 물러나 튀르키예 공사관에 숨었다. 1944년 10월 붙잡혀 다하우와 마우트하우젠에 갇혔다가 1945년 풀려났고, 1946년 망명해 뉴욕에서 숨졌다.",
+        "en": "From an old gentry family of Szabolcs County, he was a county lord-lieutenant and minister of agriculture from 1932 to 1935, a conservative of the Bethlen school. In 1941 he voted in the upper house against the Third Jewish Law. Made prime minister at Horthy’s request in March 1942, he kept up the war against the Soviet Union while refusing German demands to deport Hungary’s Jews and negotiating an armistice with the Western Allies. A secret preliminary armistice was signed off Istanbul in September 1943, but when Germany occupied Hungary in March 1944 he was ousted and hid in the Turkish legation. Captured in October 1944, he was held in Dachau and Mauthausen until freed in 1945; he went into exile in 1946 and died in New York."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Miklós Kállay",
+          "Miklos Kallay",
+          "Kállay Miklós",
+          "Nicholas Kállay"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1887–1967",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "lead",
+          "excerpt": "23 January 1887 – 14 January 1967"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian prime minister",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "lead",
+          "excerpt": "served as Prime Minister of Hungary during World War II, from 9 March 1942 to 22 March 1944"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian gentry family",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "Early life and career",
+          "excerpt": "The Kállay family was old and influential among the local gentry of their region"
+        },
+        {
+          "field": "bio",
+          "claim": "resisted Nazi pressure, contacted Allies",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "lead",
+          "excerpt": "Kállay successfully protected refugees and prisoners, resisted Nazi pressure regarding Jews, established contact with the Allies and negotiated conditions under which Hungary would switch sides against Germany."
+        },
+        {
+          "field": "bio",
+          "claim": "voted against Third Jewish Law",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "Early life and career",
+          "excerpt": "In August 1941 as a member of the Upper House, Kállay voted against the Third Anti-Jewish law"
+        },
+        {
+          "field": "bio",
+          "claim": "Turkish legation, Dachau, Mauthausen",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "Imprisonment",
+          "excerpt": "He was sent first to Dachau and then to Mauthausen."
+        },
+        {
+          "field": "bio",
+          "claim": "exile and death in New York",
+          "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+          "locator": "lead",
+          "excerpt": "He went into exile in 1946 and died two decades later in New York City."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1942,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+              "locator": "lead",
+              "claim": "1942–1944년 헝가리 총리",
+              "excerpt": "served as Prime Minister of Hungary during World War II, from 9 March 1942 to 22 March 1944"
+            }
+          ]
+        },
+        {
+          "functionId": "agriculture",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1932,
+          "endYear": 1935,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_K%C3%A1llay",
+              "locator": "Early life and career",
+              "claim": "농업장관",
+              "excerpt": "later as minister of agriculture (1932–1935)"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1921–1929",
+          "r": {
+            "ko": "서볼치 주 주지사",
+            "en": "Lord-lieutenant of Szabolcs County"
+          }
+        },
+        {
+          "y": "1929–1931",
+          "r": {
+            "ko": "상무부 차관",
+            "en": "Deputy under-secretary, Ministry of Trade"
+          }
+        },
+        {
+          "y": "1932–1935",
+          "r": {
+            "ko": "농업장관",
+            "en": "Minister of agriculture"
+          }
+        },
+        {
+          "y": "1942–1944",
+          "r": {
+            "ko": "총리, 연합국과 비밀 휴전 협상",
+            "en": "Prime minister; secret armistice talks with the Allies"
+          }
+        },
+        {
+          "y": "1944–1945",
+          "r": {
+            "ko": "튀르키예 공사관 피신, 다하우·마우트하우젠 수감",
+            "en": "Refuge in the Turkish legation; Dachau and Mauthausen"
+          }
+        },
+        {
+          "y": "1946–1967",
+          "r": {
+            "ko": "망명, 미국 정착",
+            "en": "Exile; settled in the United States"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gusztav-jany",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "구스타브",
+        "en": "Gusztáv"
+      },
+      "familyName": {
+        "ko": "야니",
+        "en": "Jány"
+      },
+      "nativeName": "Jány Gusztáv",
+      "years": "1883–1947",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1943년 1월 돈강에서 무너진 헝가리 제2군의 사령관",
+        "en": "Commander of the Hungarian Second Army destroyed on the Don in January 1943"
+      },
+      "bio": {
+        "ko": "하우칭거라는 성으로 태어나 루도비카 사관학교와 빈 군사대학을 나왔고, 제1차 세계대전 때 참모 장교로 복무했다. 1924년 비테즈 기사단에 들어가며 어머니의 성 야니를 택했고, 1931~1936년 루도비카 사관학교를 이끌었다. 1940년 3월 제2군 사령관이 되었고, 1942년 군을 이끌고 돈강으로 갔다. 1943년 1월 소련 공세 때 후퇴 금지 명령을 고수하다 군이 무너지자 병사들을 비겁하다고 비난하는 군령을 내렸다. 전후 스스로 귀국해 1947년 인민재판소에서 사형을 선고받고 총살되었고, 1993년 대법원에서 무죄로 복권되었다.",
+        "en": "Born Gusztáv Hautzinger, he trained at the Ludovika Academy and the Vienna war college and served as a staff officer in the First World War. On entering the Order of Vitéz in 1924 he took his mother’s surname, Jány, and from 1931 to 1936 he headed the Ludovika Academy. He became commander of the Second Army in March 1940 and led it to the Don in 1942. During the Soviet offensive of January 1943 he held to the no-retreat order, and when the army collapsed he issued an order of the day accusing his men of cowardice. Returning home voluntarily after the war, he was sentenced to death by a People’s Court and shot in 1947; the Supreme Court exonerated him in 1993."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "하우칭거 구스타브 (본명)"
+        ],
+        "en": [
+          "Gusztáv Jány",
+          "Gusztav Jany",
+          "Jány Gusztáv",
+          "Gusztáv Hautzinger (birth name)"
+        ]
+      },
+      "sources": [
+        "https://hu.wikipedia.org/wiki/J%C3%A1ny_Guszt%C3%A1v",
+        "https://en.wikipedia.org/wiki/Guszt%C3%A1v_J%C3%A1ny"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1883–1947",
+          "source": "https://en.wikipedia.org/wiki/Guszt%C3%A1v_J%C3%A1ny",
+          "locator": "lead",
+          "excerpt": "21 October 1883 – 26 November 1947"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian officer",
+          "source": "https://en.wikipedia.org/wiki/Guszt%C3%A1v_J%C3%A1ny",
+          "locator": "lead",
+          "excerpt": "was a Hungarian military officer during the Second World War"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born Hautzinger in Rajka",
+          "source": "https://hu.wikipedia.org/wiki/J%C3%A1ny_Guszt%C3%A1v",
+          "locator": "bevezető",
+          "excerpt": "Vitéz Jány Gusztáv (született Hautzinger) (Rajka, 1883. október 21."
+        },
+        {
+          "field": "bio",
+          "claim": "took mother's surname in 1924",
+          "source": "https://hu.wikipedia.org/wiki/J%C3%A1ny_Guszt%C3%A1v",
+          "locator": "A két világháború között",
+          "excerpt": "ekkor – ennek feltételeként – magyarosította vezetéknevét édesanyja nevére"
+        },
+        {
+          "field": "bio",
+          "claim": "infamous order of 24 January 1943",
+          "source": "https://hu.wikipedia.org/wiki/J%C3%A1ny_Guszt%C3%A1v",
+          "locator": "A második világháborúban",
+          "excerpt": "Hadseregének felbomlása láttán adta ki Jány „A 2. magyar hds. elvesztette becsületét…” kezdetű hírhedt parancsát"
+        },
+        {
+          "field": "bio",
+          "claim": "executed, exonerated 1993",
+          "source": "https://en.wikipedia.org/wiki/Guszt%C3%A1v_J%C3%A1ny",
+          "locator": "lead",
+          "excerpt": "After the war, he was found guilty of war crimes and executed by firing squad. He was posthumously exonerated in 1993 by the Supreme Court of Hungary."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1940,
+          "endYear": 1943,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/J%C3%A1ny_Guszt%C3%A1v",
+              "locator": "A két világháború között",
+              "claim": "헝가리 제2군 사령관",
+              "excerpt": "Horthy Miklós a Magyar 2. hadsereg parancsnokságával Jányt bízta meg 1940. március 1-jétől."
+            }
+          ]
+        },
+        {
+          "functionId": "education",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1931,
+          "endYear": 1936,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/J%C3%A1ny_Guszt%C3%A1v",
+              "locator": "A két világháború között",
+              "claim": "루도비카 사관학교 교장",
+              "excerpt": "1931. szeptember 1-jétől a Ludovika Akadémia I. főcsoportjának parancsnokaként öt évig vezette az intézményt."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1905",
+          "r": {
+            "ko": "루도비카 사관학교 졸업, 소위 임관",
+            "en": "Graduated from the Ludovika Academy; commissioned"
+          }
+        },
+        {
+          "y": "1914–1918",
+          "r": {
+            "ko": "제1차 세계대전 참모 장교",
+            "en": "Staff officer in the First World War"
+          }
+        },
+        {
+          "y": "1931–1936",
+          "r": {
+            "ko": "루도비카 사관학교 교장",
+            "en": "Head of the Ludovika Academy"
+          }
+        },
+        {
+          "y": "1940–1943",
+          "r": {
+            "ko": "제2군 사령관, 돈강 전투",
+            "en": "Commander, Second Army; the Don"
+          }
+        },
+        {
+          "y": "1947",
+          "r": {
+            "ko": "인민재판소 사형 선고, 처형",
+            "en": "Sentenced by a People’s Court and executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zoltan-schonherz",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "졸탄",
+        "en": "Zoltán"
+      },
+      "familyName": {
+        "ko": "쇤헤르츠",
+        "en": "Schönherz"
+      },
+      "nativeName": "Schönherz Zoltán",
+      "years": "1905–1942",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "독립위원회를 이끌어 반전 시위를 조직하다 1942년 처형된 공산당 지하 지도자",
+        "en": "Underground Communist leader who organised anti-war demonstrations through the Independence Committee and was executed in 1942"
+      },
+      "bio": {
+        "ko": "커셔(코시체)에서 태어나 프라하에서 공부하던 대학생 시절 노동운동에 들어갔다. 1938년 11월 제1차 빈 중재 뒤 지하로 들어가 헝가리에서 활동하며 공산당 연락원과 손잡았다. 1940년 12월부터 공산당의 반전 투쟁을 조직하고 독립위원회를 이끌어 1941년 10월 6일과 11월 1일의 시위를 열었다. 『네프서버』 1941년 성탄호를 준비했고, 1942년 2월 1일 지하 기관지 『서버드 네프』 창간호의 사설을 썼다. 1942년 7월 6일 체포되어 참모본부 특별재판소에서 사형을 선고받고 10월 9일 처형되었다.",
+        "en": "Born in Kassa (Košice), he joined the labour movement as a university student in Prague. After the First Vienna Award of November 1938 he went underground and worked in Hungary, linking up with the Communist Party’s representative. From December 1940 he organised the party’s anti-war struggle and led the Independence Committee, which staged the demonstrations of 6 October and 1 November 1941. He prepared the Christmas 1941 issue of Népszava and wrote the editorial of the first issue of the underground Szabad Nép on 1 February 1942. Arrested on 6 July 1942, he was sentenced to death by the special court of the Chief of the General Staff and executed on 9 October."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Zoltán Schönherz",
+          "Zoltan Schonherz",
+          "Schönherz Zoltán"
+        ]
+      },
+      "sources": [
+        "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1905–1942",
+          "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+          "locator": "bevezető",
+          "excerpt": "(Kassa, 1905. július 25. – Budapest, 1942. október 9.)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian engineer and labour leader",
+          "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+          "locator": "bevezető",
+          "excerpt": "magyar elektromérnök, pártmunkás, munkásmozgalmi vezető"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Kassa",
+          "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+          "locator": "bevezető",
+          "excerpt": "Schönherz Zoltán (Kassa, 1905. július 25."
+        },
+        {
+          "field": "bio",
+          "claim": "went underground after the First Vienna Award",
+          "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+          "locator": "Élete",
+          "excerpt": "majd az első bécsi döntést (1938. november) követően illegalitásba vonult és Magyarországon dolgozott tovább"
+        },
+        {
+          "field": "bio",
+          "claim": "Independence Committee demonstrations 1941",
+          "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+          "locator": "Élete",
+          "excerpt": "Ez a szervezet rendezte meg 1941. október 6-án a Batthyány-örökmécsesnél, valamint november 1-jén a Kossuth és Táncsics sírjánál lezajlott tüntetéseket."
+        },
+        {
+          "field": "bio",
+          "claim": "arrested and executed 1942",
+          "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+          "locator": "Élete",
+          "excerpt": "Az ítélet végrehajtására október 9-én került sor a Margit körúti fogház udvarán."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1940,
+          "endYear": 1942,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Sch%C3%B6nherz_Zolt%C3%A1n",
+              "locator": "Élete",
+              "claim": "공산당 반전 투쟁과 독립위원회 조직",
+              "excerpt": "1940 decemberétől szervezte a KMP háborúellenes harcát, valamint a Függetlenségi Bizottságot irányította."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1920년대",
+          "r": {
+            "ko": "프라하 대학생, 노동운동 참여",
+            "en": "Student in Prague; joined the labour movement"
+          }
+        },
+        {
+          "y": "1938",
+          "r": {
+            "ko": "제1차 빈 중재 뒤 지하로 들어가 헝가리에서 활동",
+            "en": "Went underground in Hungary after the First Vienna Award"
+          }
+        },
+        {
+          "y": "1940–1942",
+          "r": {
+            "ko": "공산당 반전 투쟁 조직, 독립위원회 지도",
+            "en": "Organised the party’s anti-war work; led the Independence Committee"
+          }
+        },
+        {
+          "y": "1942",
+          "r": {
+            "ko": "『서버드 네프』 창간호 사설 집필",
+            "en": "Wrote the editorial of the first Szabad Nép"
+          }
+        },
+        {
+          "y": "1942",
+          "r": {
+            "ko": "체포, 군 특별재판 사형 선고, 처형",
+            "en": "Arrested, sentenced by a military special court, executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ferenc-rozsa",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "페렌츠",
+        "en": "Ferenc"
+      },
+      "familyName": {
+        "ko": "로저",
+        "en": "Rózsa"
+      },
+      "nativeName": "Rózsa Ferenc",
+      "years": "1906–1942",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "지하 기관지 『서버드 네프』의 첫 편집인으로 1942년 체포되어 구금 중 숨진 공산주의자",
+        "en": "Communist who was the first editor of the underground Szabad Nép and died in custody after his arrest in 1942"
+      },
+      "bio": {
+        "ko": "부다페스트에서 태어나 카를스루에와 드레스덴에서 토목공학을 공부했고, 드레스덴 사회주의 학생연맹을 이끌며 나치의 위험을 경고하는 글을 썼다. 1931년 귀국해 형 리하르드의 권유로 지하 공산주의 운동에 들어갔고, 1935년 공산주의 청년동맹 간부가 되었다. 1938년부터 사회민주당과 노동조합 안의 공산당 조직을 만들었고, 1941년 6월 독소전쟁 뒤 지하로 들어가 「독립운동」을 이끌었다. 1942년 2월 『서버드 네프』 편집장이 되었다가 6월 1일 체포되었고, 2주 뒤 석연치 않은 상황에서 숨졌다.",
+        "en": "Born in Budapest, he studied civil engineering in Karlsruhe and Dresden, where he led the socialist students’ association and wrote warnings against the Nazis. Back in Hungary in 1931, he was drawn by his brother Richárd into the underground Communist movement and in 1935 joined the leadership of the Communist Youth League. From 1938 he built Communist cells inside the Social Democratic Party and the trade unions, and after June 1941 he went underground as a leader of the “independence movement”. Editor-in-chief of Szabad Nép from February 1942, he was arrested on 1 June and died two weeks later in unclear circumstances."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "구금 중 사망",
+          "en": "Died in custody"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Ferenc Rózsa",
+          "Ferenc Rozsa",
+          "Rózsa Ferenc"
+        ]
+      },
+      "sources": [
+        "https://hu.wikipedia.org/wiki/R%C3%B3zsa_Ferenc_(politikus)",
+        "https://en.wikipedia.org/wiki/Ferenc_R%C3%B3zsa"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1906–1942",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_R%C3%B3zsa",
+          "locator": "lead",
+          "excerpt": "4 December 1906 – 13 June 1942"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian Communist",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_R%C3%B3zsa",
+          "locator": "lead",
+          "excerpt": "was a Hungarian Communist leader, anti-fascist activist and journalist."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Budapest",
+          "source": "https://hu.wikipedia.org/wiki/R%C3%B3zsa_Ferenc_(politikus)",
+          "locator": "bevezető",
+          "excerpt": "Rózsa Ferenc (Budapest, 1906. december 4."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the underground movement through his brother",
+          "source": "https://hu.wikipedia.org/wiki/R%C3%B3zsa_Ferenc_(politikus)",
+          "locator": "Élete",
+          "excerpt": "Miután hazatért, Richárd bátyja bevonta az illegális kommunista mozgalomba."
+        },
+        {
+          "field": "bio",
+          "claim": "editor-in-chief of Szabad Nép from February 1942",
+          "source": "https://hu.wikipedia.org/wiki/R%C3%B3zsa_Ferenc_(politikus)",
+          "locator": "Élete",
+          "excerpt": "Az 1942. február 1-jétől a kommunista párt lapjának, a Szabad Népnek lett a főszerkesztője"
+        },
+        {
+          "field": "bio",
+          "claim": "arrested 1 June 1942, died in unclear circumstances",
+          "source": "https://hu.wikipedia.org/wiki/R%C3%B3zsa_Ferenc_(politikus)",
+          "locator": "Élete",
+          "excerpt": "Kétheti fogság után tisztázatlan körülmények között elhunyt"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "propaganda",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1942,
+          "endYear": 1942,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/R%C3%B3zsa_Ferenc_(politikus)",
+              "locator": "Élete",
+              "claim": "『서버드 네프』 편집장",
+              "excerpt": "Az 1942. február 1-jétől a kommunista párt lapjának, a Szabad Népnek lett a főszerkesztője"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1932,
+          "endYear": 1942,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ferenc_R%C3%B3zsa",
+              "locator": "Biography",
+              "claim": "공산당 지하 조직가",
+              "excerpt": "he returned to Hungary and became a member of the Hungarian Communist Party the next year"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1920년대",
+          "r": {
+            "ko": "카를스루에·드레스덴 유학, 사회주의 학생연맹 지도",
+            "en": "Studied in Karlsruhe and Dresden; led the socialist students’ association"
+          }
+        },
+        {
+          "y": "1932",
+          "r": {
+            "ko": "헝가리 공산당 입당",
+            "en": "Joined the Hungarian Communist Party"
+          }
+        },
+        {
+          "y": "1935",
+          "r": {
+            "ko": "공산주의 청년동맹 지도부",
+            "en": "Leadership of the Communist Youth League"
+          }
+        },
+        {
+          "y": "1938–1941",
+          "r": {
+            "ko": "사회민주당·노동조합 안 공산당 조직 구축",
+            "en": "Built Communist cells in the Social Democratic Party and unions"
+          }
+        },
+        {
+          "y": "1942",
+          "r": {
+            "ko": "『서버드 네프』 편집장, 체포 뒤 구금 중 사망",
+            "en": "Editor of Szabad Nép; died in custody after arrest"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,962 @@
+{
+  "id": "hungary-interwar-20261001",
+  "terms": [
+    {
+      "id": "lenin-boys",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lenin_Boys",
+        "https://en.wikipedia.org/wiki/Red_Terror_(Hungary)",
+        "https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1gi_Tan%C3%A1csk%C3%B6zt%C3%A1rsas%C3%A1g",
+        "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+        "https://en.wikipedia.org/wiki/B%C3%A9la_Kun"
+      ],
+      "fields": {
+        "term": {
+          "ko": "레닌 소년단",
+          "en": "Lenin Boys"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1919",
+          "en": "1919"
+        },
+        "startYear": 1919,
+        "endYear": 1919,
+        "definition": {
+          "ko": "헝가리 평의회 공화국 시기인 1919년 반혁명 진압에 동원된 공산당의 무장대. 체르니 요제프가 조직한 약 200명이 이렇게 자칭했고, 서무엘리 티보르의 장갑열차를 타고 전국을 돌며 반혁명 혐의자를 재판 없이 처형했다.",
+          "en": "The Communist paramilitary used to crush counter-revolution in the Hungarian Soviet Republic in 1919. Some two hundred men organised by József Cserny called themselves by this name; travelling the country on Tibor Szamuely’s armoured train, they executed suspected counter-revolutionaries without trial."
+        },
+        "body": {
+          "ko": "레닌 소년단은 반혁명이 의심되는 마을에서 인질을 잡고 처형했으며 농촌에서 식량을 징발했고, 6월의 칼로처 일대 농민 봉기를 유혈 진압했다. 사회민주당 출신 인민위원들의 요구로 국방 인민위원 뵘 빌모시가 4월 말 해산을 명령했고, 5월 19일 군이 괴될뢰에서 체르니 부대를 무장해제했지만 일부는 코르빈 오토의 정치조사국에 들어갔다.\n\n평의회 공화국 시기 테러의 사망자는 자료에 따라 300~600명, 또는 590명으로 추산된다. 평의회 공화국 붕괴 뒤 체르니와 대원 13명이 재판을 받고 1919년 12월 처형되었다.",
+          "en": "The Lenin Boys took and executed hostages in villages suspected of counter-revolution, requisitioned food in the countryside and bloodily suppressed the peasant rising around Kalocsa in June. At the demand of the commissars who had been Social Democrats, the defence commissar Vilmos Böhm ordered them dissolved at the end of April, and on 19 May the army disarmed the Cserny group at Gödöllő, though some of its men joined Ottó Korvin’s political investigation department.\n\nEstimates of the dead of the Soviet Republic’s terror range from 300–600 to 590. After the fall of the Soviet Republic Cserny and thirteen of his men were tried and executed in December 1919."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Lenin-fiúk",
+            "Lenin Youth"
+          ]
+        },
+        "people": [
+          "tibor-szamuely",
+          "otto-korvin",
+          "vilmos-bohm",
+          "bela-kun"
+        ],
+        "events": [
+          "hungarian-soviet-republic-1919"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The Communist paramilitary used to crush counter-revolution in the Hungarian Soviet Republic in 1919. Some two hundred men organised by József Cserny called themselves by this name; travelling the country on Tibor Szamuely’s armoured train, they executed suspected counter-revolutionaries without trial.",
+            "source": "https://en.wikipedia.org/wiki/Lenin_Boys",
+            "locator": "Lead; History; Execution"
+          },
+          {
+            "field": "body",
+            "claim": "The Lenin Boys took and executed hostages in villages suspected of counter-revolution, requisitioned food in the countryside and bloodily suppressed the peasant rising around Kalocsa in June. At the demand of the commissars who had been Social Democrats, the defence commissar Vilmos Böhm ordered the",
+            "source": "https://en.wikipedia.org/wiki/Lenin_Boys",
+            "locator": "Lead; History; Execution"
+          },
+          {
+            "field": "period",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/Lenin_Boys",
+            "locator": "Lead; History; Execution"
+          },
+          {
+            "field": "startYear",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/Lenin_Boys",
+            "locator": "Lead; History; Execution"
+          },
+          {
+            "field": "endYear",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/Lenin_Boys",
+            "locator": "Lead; History; Execution"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aster-revolution",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Aster_Revolution",
+        "https://ko.wikipedia.org/wiki/%EA%B3%BC%EA%BD%83_%ED%98%81%EB%AA%85",
+        "https://en.wikipedia.org/wiki/First_Hungarian_Republic"
+      ],
+      "fields": {
+        "term": {
+          "ko": "과꽃 혁명",
+          "en": "Aster Revolution"
+        },
+        "category": "party-state",
+        "period": {
+          "ko": "1918",
+          "en": "1918"
+        },
+        "startYear": 1918,
+        "endYear": 1918,
+        "definition": {
+          "ko": "1918년 10월 말 부다페스트에서 일어나 카로이 미하이를 총리로 세우고 헝가리 인민공화국 수립으로 이어진 혁명. 병사들이 모자의 장미 대신 과꽃(애스터)을 꽂은 데서 이름이 나왔다.",
+          "en": "The revolution in Budapest at the end of October 1918 that made Mihály Károlyi prime minister and led to the Hungarian People’s Republic. It takes its name from the asters soldiers wore in their caps in place of the rose."
+        },
+        "body": {
+          "ko": "10월 23일 카로이의 독립당과 급진당, 사회민주당이 헝가리 국민평의회를 세웠고, 10월 30일 국왕이 허디크 야노시를 총리로 임명하자 병사평의회가 부다페스트의 요지를 장악했다. 10월 31일 카로이가 총리가 되었고 같은 날 전 총리 티서 이슈트반이 살해되었다. 11월 16일 인민공화국이 선포되었다.\n\n카로이 정부는 군을 해산하고 협상국의 선의에 기대를 걸었지만 이웃 나라 군대의 점령으로 영토의 대부분을 잃었고, 1919년 3월 빅스 각서로 무너져 헝가리 평의회 공화국에 자리를 내주었다.",
+          "en": "On 23 October Károlyi’s Independence Party, the Radicals and the Social Democrats formed the Hungarian National Council, and when the king appointed János Hadik prime minister on 30 October the Soldiers’ Council seized key points in Budapest. Károlyi became prime minister on 31 October, the day the former premier István Tisza was killed, and the People’s Republic was proclaimed on 16 November.\n\nThe Károlyi government disbanded the army and relied on Entente goodwill, but lost most of the country to occupation by neighbouring armies; it fell over the Vix note in March 1919 and gave way to the Hungarian Soviet Republic."
+        },
+        "aliases": {
+          "ko": [
+            "애스터 혁명",
+            "국화 혁명"
+          ],
+          "en": [
+            "Chrysanthemum Revolution",
+            "Őszirózsás forradalom"
+          ]
+        },
+        "people": [
+          "mihaly-karolyi",
+          "vilmos-bohm"
+        ],
+        "events": [
+          "hungarian-soviet-republic-1919"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The revolution in Budapest at the end of October 1918 that made Mihály Károlyi prime minister and led to the Hungarian People’s Republic. It takes its name from the asters soldiers wore in their caps in place of the rose.",
+            "source": "https://en.wikipedia.org/wiki/Aster_Revolution",
+            "locator": "Lead; Events; Aftermath"
+          },
+          {
+            "field": "body",
+            "claim": "On 23 October Károlyi’s Independence Party, the Radicals and the Social Democrats formed the Hungarian National Council, and when the king appointed János Hadik prime minister on 30 October the Soldiers’ Council seized key points in Budapest. Károlyi became prime minister on 31 October, the day the ",
+            "source": "https://en.wikipedia.org/wiki/Aster_Revolution",
+            "locator": "Lead; Events; Aftermath"
+          },
+          {
+            "field": "period",
+            "claim": "1918",
+            "source": "https://en.wikipedia.org/wiki/Aster_Revolution",
+            "locator": "Lead; Events; Aftermath"
+          },
+          {
+            "field": "startYear",
+            "claim": "1918",
+            "source": "https://en.wikipedia.org/wiki/Aster_Revolution",
+            "locator": "Lead; Events; Aftermath"
+          },
+          {
+            "field": "endYear",
+            "claim": "1918",
+            "source": "https://en.wikipedia.org/wiki/Aster_Revolution",
+            "locator": "Lead; Events; Aftermath"
+          }
+        ]
+      }
+    },
+    {
+      "id": "slovak-soviet-republic",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Slovak_Soviet_Republic",
+        "https://en.wikipedia.org/wiki/Hungarian%E2%80%93Czechoslovak_War",
+        "https://hu.wikipedia.org/wiki/Magyarorsz%C3%A1gi_Tan%C3%A1csk%C3%B6zt%C3%A1rsas%C3%A1g"
+      ],
+      "fields": {
+        "term": {
+          "ko": "슬로바키아 평의회 공화국",
+          "en": "Slovak Soviet Republic"
+        },
+        "category": "party-state",
+        "period": {
+          "ko": "1919",
+          "en": "1919"
+        },
+        "startYear": 1919,
+        "endYear": 1919,
+        "definition": {
+          "ko": "헝가리 붉은군대의 북부 원정 중인 1919년 6월 16일 프레쇼우에서 선포되어 7월 7일까지 존속한 공산주의 국가. 체코인 언론인 안토닌 야노우셰크가 수반이었고 헝가리 평의회 공화국에 의존했다.",
+          "en": "A Communist state proclaimed in Prešov on 16 June 1919, during the Hungarian Red Army’s northern campaign, which lasted until 7 July. Headed by the Czech journalist Antonín Janoušek, it depended on the Hungarian Soviet Republic."
+        },
+        "body": {
+          "ko": "생산수단의 사회화와 노동자 20명 이상의 공장·대토지·금융기관의 국유화를 포고하고 혁명재판소와 붉은군대, 붉은 경비대를 세웠지만, 헝가리의 일부인지 독립국인지, 국경이 어디인지는 끝내 분명하지 않았다. 체코 역사가 야로슬라프 셰베크는 이를 슬로바키아에서 헝가리의 영향력을 되살리려는 덮개로도 본다.\n\n클레망소 각서에 따라 헝가리군이 6월 말부터 분계선 뒤로 물러나면서 소멸했고, 그 영토는 체코슬로바키아에 편입되었다.",
+          "en": "It decreed the socialisation of the means of production and the nationalisation of factories with more than twenty workers, large estates and financial institutions, and set up revolutionary tribunals, a Red Army and a red guard, but whether it was part of Hungary or independent, and where its borders lay, was never settled. The Czech historian Jaroslav Šebek sees it partly as a cover for renewing Hungarian influence in Slovakia.\n\nIt disappeared when Hungarian troops withdrew behind the demarcation line from late June under the Clemenceau note, and its territory was incorporated into Czechoslovakia."
+        },
+        "aliases": {
+          "ko": [
+            "슬로바키아 소비에트 공화국"
+          ],
+          "en": [
+            "Slovak Republic of Councils",
+            "Slovenská republika rád"
+          ]
+        },
+        "people": [
+          "bela-kun"
+        ],
+        "events": [
+          "hungarian-soviet-republic-1919"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A Communist state proclaimed in Prešov on 16 June 1919, during the Hungarian Red Army’s northern campaign, which lasted until 7 July. Headed by the Czech journalist Antonín Janoušek, it depended on the Hungarian Soviet Republic.",
+            "source": "https://en.wikipedia.org/wiki/Slovak_Soviet_Republic",
+            "locator": "Lead; History"
+          },
+          {
+            "field": "body",
+            "claim": "It decreed the socialisation of the means of production and the nationalisation of factories with more than twenty workers, large estates and financial institutions, and set up revolutionary tribunals, a Red Army and a red guard, but whether it was part of Hungary or independent, and where its borde",
+            "source": "https://en.wikipedia.org/wiki/Slovak_Soviet_Republic",
+            "locator": "Lead; History"
+          },
+          {
+            "field": "period",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/Slovak_Soviet_Republic",
+            "locator": "Lead; History"
+          },
+          {
+            "field": "startYear",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/Slovak_Soviet_Republic",
+            "locator": "Lead; History"
+          },
+          {
+            "field": "endYear",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/Slovak_Soviet_Republic",
+            "locator": "Lead; History"
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-terror-hungary",
+      "sources": [
+        "https://en.wikipedia.org/wiki/White_Terror_(Hungary)",
+        "https://hu.wikipedia.org/wiki/Feh%C3%A9rterror",
+        "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Horthy",
+        "https://hu.wikipedia.org/wiki/Orgov%C3%A1nyi_gyilkoss%C3%A1gok"
+      ],
+      "fields": {
+        "term": {
+          "ko": "헝가리 백색테러",
+          "en": "White Terror (Hungary)"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1919–1921",
+          "en": "1919–1921"
+        },
+        "startYear": 1919,
+        "endYear": 1921,
+        "definition": {
+          "ko": "헝가리 평의회 공화국이 무너진 1919년부터 1921년까지 호르티의 국민군 장교 부대들이 공산당원·사회민주당원·농민·유대인에게 저지른 보복 폭력. 재판 없는 처형과 포그롬, 수만 명의 투옥이 이어졌고, 사망자 추산은 300명에서 6,000명까지 갈린다.",
+          "en": "The retaliatory violence of 1919–1921 in which officer detachments of Horthy’s National Army killed and terrorised Communists, Social Democrats, peasants and Jews after the fall of the Hungarian Soviet Republic. It brought summary executions, pogroms and tens of thousands of imprisonments; estimates of the dead range from 300 to 6,000."
+        },
+        "body": {
+          "ko": "1919년 여름 세게드에서 창설된 국민군의 장교 부대들, 특히 프로너이 팔, 오시텐부르그모러베크 줄러, 헤이여시 이반의 부대가 주로 저질렀다. 이들은 형식상 정규군이었지만 지휘관에게 충성하는 사병처럼 움직였고, 평의회 공화국 지도부에 유대계가 많았다는 이유로 유대인 전체를 표적으로 삼았다. 1919년 11월 오르고바니 숲에서 36명이 살해되었고, 1920년 2월에는 『네프서버』 기자 쇼모지 벨러와 버초 벨러가 살해되었다.\n\n희생자 수는 연구에 따라 크게 다르다. 영어권 문헌은 1,500~6,000명 또는 1,000~5,000명을 들고, 헝가리 역사학계의 신중한 평가는 500~600명 안팎으로 본다. 1920년 여름부터 정부가 부대를 통제하기 시작했고 프로너이 대대는 1922년 1월 해산되었지만, 호르티는 섭정 사면으로 가해자들을 처벌에서 면제했다.",
+          "en": "It was committed mainly by officer detachments of the National Army founded in Szeged in the summer of 1919, above all those of Pál Prónay, Gyula Ostenburg-Moravek and Iván Héjjas. Formally regular troops, they acted like private battalions loyal to their commanders, and because many leaders of the Soviet Republic had been Jewish they targeted Jews as such. In November 1919 thirty-six people were killed in the forest of Orgovány, and in February 1920 the Népszava journalists Béla Somogyi and Béla Bacsó were murdered.\n\nEstimates of the dead vary widely: English-language accounts give 1,500–6,000 or 1,000–5,000, while cautious Hungarian assessments put it at around 500–600. The government began reining in the detachments in the summer of 1920 and Prónay’s battalion was dissolved in January 1922, but Horthy used the regent’s amnesty to shield the perpetrators from prosecution."
+        },
+        "aliases": {
+          "ko": [
+            "헝가리 백색 테러",
+            "헝가리의 백색테러"
+          ],
+          "en": [
+            "White Terror (Hungary)",
+            "Hungarian White Terror"
+          ]
+        },
+        "people": [
+          "miklos-horthy",
+          "pal-pronay",
+          "gyula-gombos"
+        ],
+        "events": [
+          "horthy-regime-1920-1938",
+          "hungarian-soviet-republic-1919"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The retaliatory violence of 1919–1921 in which officer detachments of Horthy’s National Army killed and terrorised Communists, Social Democrats, peasants and Jews after the fall of the Hungarian Soviet Republic. It brought summary executions, pogroms and tens of thousands of imprisonments; estimates of the dead range from 300 to 6,000.",
+            "source": "https://en.wikipedia.org/wiki/White_Terror_(Hungary)",
+            "locator": "Lead; First phase; End of the White Terror"
+          },
+          {
+            "field": "body",
+            "claim": "It was committed mainly by officer detachments of the National Army founded in Szeged in the summer of 1919, above all those of Pál Prónay, Gyula Ostenburg-Moravek and Iván Héjjas. Formally regular troops, they acted like private battalions loyal to their commanders, and because many leaders of the ",
+            "source": "https://en.wikipedia.org/wiki/White_Terror_(Hungary)",
+            "locator": "Lead; First phase; End of the White Terror"
+          },
+          {
+            "field": "period",
+            "claim": "1919–1921",
+            "source": "https://en.wikipedia.org/wiki/White_Terror_(Hungary)",
+            "locator": "Lead; First phase; End of the White Terror"
+          },
+          {
+            "field": "startYear",
+            "claim": "1919",
+            "source": "https://en.wikipedia.org/wiki/White_Terror_(Hungary)",
+            "locator": "Lead; First phase; End of the White Terror"
+          },
+          {
+            "field": "endYear",
+            "claim": "1921",
+            "source": "https://en.wikipedia.org/wiki/White_Terror_(Hungary)",
+            "locator": "Lead; First phase; End of the White Terror"
+          }
+        ]
+      }
+    },
+    {
+      "id": "treaty-of-trianon",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Treaty_of_Trianon",
+        "https://en.wikipedia.org/wiki/Albert_Apponyi",
+        "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Horthy",
+        "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen"
+      ],
+      "fields": {
+        "term": {
+          "ko": "트리아농 조약",
+          "en": "Treaty of Trianon"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1920–1921",
+          "en": "1920–1921"
+        },
+        "startYear": 1920,
+        "endYear": 1921,
+        "definition": {
+          "ko": "1920년 6월 4일 베르사유의 그랑 트리아농 궁에서 연합국과 헝가리가 맺은 제1차 세계대전 강화조약. 헝가리는 전쟁 전 영토의 28%, 인구의 36%만 남게 되었고, 헝가리인 330만 명이 이웃 나라의 소수민족이 되었다. 전간기 헝가리 정치는 이 국경의 수정을 중심 목표로 삼았다.",
+          "en": "The First World War peace treaty between the Allies and Hungary, signed in the Grand Trianon palace at Versailles on 4 June 1920. It left Hungary with 28 per cent of its pre-war territory and 36 per cent of its population, and made 3.3 million Hungarians minorities in neighbouring states. Revising its borders became the central aim of interwar Hungarian politics."
+        },
+        "body": {
+          "ko": "헝가리 대표단은 어포니 얼베르트가 이끌었고, 1920년 1월 16일 어포니가 연합국 최고회의에서 역사적 헝가리의 일체성을 호소했지만 조건은 바뀌지 않았다. 조약은 협상 없이 일괄 수락만 가능했고, 헝가리는 항의 속에 서명해 1920년 11월 16일 비준했으며 1921년 7월 26일 발효했다. 헝가리는 면적 93,073㎢, 인구 760만 명의 내륙국이 되었고, 영토는 체코슬로바키아·루마니아·세르브·크로아트·슬로베니아 왕국·오스트리아로 넘어갔다. 군대는 징병 없이 3만 5천 명으로 제한되었고 배상 의무가 지워졌다.\n\n「아니, 아니, 결코!」라는 구호가 상징하듯 조약 수정은 호르티 체제의 대외 정책을 이끌었다. 소협상의 견제 속에 베틀렌은 1920년대 중반까지 수정 요구를 접었으나, 1927년 이탈리아와 우호조약을 맺은 뒤 공개적으로 수정을 요구했고, 이 목표는 1930년대 헝가리를 이탈리아와 독일 쪽으로 이끌었다.",
+          "en": "The Hungarian delegation was led by Albert Apponyi, whose appeal to the Supreme Council for the unity of historic Hungary on 16 January 1920 did not change the terms. The treaty was dictated, to be accepted as a whole; Hungary signed under protest, ratified it on 16 November 1920, and it came into force on 26 July 1921. Hungary became a landlocked state of 93,073 square kilometres and 7.6 million people, its former lands going to Czechoslovakia, Romania, the Kingdom of Serbs, Croats and Slovenes and Austria. Its army was limited to 35,000 men without conscription, and it owed reparations.\n\nAs the slogan “No, no, never!” showed, revision drove the Horthy regime’s foreign policy. Held in check by the Little Entente, Bethlen shelved the demand until the mid-1920s, but after the 1927 treaty of friendship with Italy he called openly for revision, and the goal drew Hungary towards Italy and Germany in the 1930s."
+        },
+        "aliases": {
+          "ko": [
+            "트리아농 강화조약",
+            "트리아농 평화조약"
+          ],
+          "en": [
+            "Treaty of Trianon",
+            "Trianon Treaty",
+            "Peace Dictate of Trianon",
+            "Traité de Trianon"
+          ]
+        },
+        "people": [
+          "albert-apponyi",
+          "pal-teleki",
+          "miklos-horthy",
+          "istvan-bethlen"
+        ],
+        "events": [
+          "horthy-regime-1920-1938",
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The First World War peace treaty between the Allies and Hungary, signed in the Grand Trianon palace at Versailles on 4 June 1920. It left Hungary with 28 per cent of its pre-war territory and 36 per cent of its population, and made 3.3 million Hungarians minorities in neighbouring states. Revising its borders became the central aim of interwar Hungarian politics.",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Trianon",
+            "locator": "Lead; Treaty preparation and Conference at Trianon in Paris"
+          },
+          {
+            "field": "body",
+            "claim": "The Hungarian delegation was led by Albert Apponyi, whose appeal to the Supreme Council for the unity of historic Hungary on 16 January 1920 did not change the terms. The treaty was dictated, to be accepted as a whole; Hungary signed under protest, ratified it on 16 November 1920, and it came into f",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Trianon",
+            "locator": "Lead; Treaty preparation and Conference at Trianon in Paris"
+          },
+          {
+            "field": "period",
+            "claim": "1920–1921",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Trianon",
+            "locator": "Lead; Treaty preparation and Conference at Trianon in Paris"
+          },
+          {
+            "field": "startYear",
+            "claim": "1920",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Trianon",
+            "locator": "Lead; Treaty preparation and Conference at Trianon in Paris"
+          },
+          {
+            "field": "endYear",
+            "claim": "1921",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Trianon",
+            "locator": "Lead; Treaty preparation and Conference at Trianon in Paris"
+          }
+        ]
+      }
+    },
+    {
+      "id": "numerus-clausus-hungary-1920",
+      "sources": [
+        "https://hu.wikipedia.org/wiki/Numerus_clausus",
+        "https://en.wikipedia.org/wiki/Numerus_clausus",
+        "https://encyclopedia.ushmm.org/content/en/article/the-holocaust-in-hungary",
+        "https://en.wikipedia.org/wiki/Istv%C3%A1n_Bethlen"
+      ],
+      "fields": {
+        "term": {
+          "ko": "누메루스 클라우수스 (헝가리, 1920)",
+          "en": "Numerus clausus (Hungary, 1920)"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1920–1928",
+          "en": "1920–1928"
+        },
+        "startYear": 1920,
+        "endYear": 1928,
+        "definition": {
+          "ko": "1920년 9월 헝가리 국민의회가 통과시킨 법률 제25호. 각 「인종과 민족」 출신 대학생의 비율을 전국 인구 비율에 맞추도록 해, 유대인이라는 말 없이 사실상 유대인 학생을 제한했다. 제1차 세계대전 뒤 유럽 최초의 반유대법으로 꼽히며, 1928년 민족 비율 조항이 삭제되었다.",
+          "en": "Act XXV of 1920, passed by the Hungarian National Assembly in September 1920. By requiring each “race and nationality” to be represented among university students in proportion to its share of the population, it restricted Jewish students without naming them. It is regarded as the first anti-Jewish law in Europe after the First World War; the nationality quota was removed in 1928."
+        },
+        "body": {
+          "ko": "교육장관 할레르 이슈트반이 1920년 6월 22일 제출한 원안은 단순한 정원 규정이었지만, 집권당 안의 요구로 민족별 비율 조항이 들어갔다. 유대인은 인구의 약 6%였으나 1910년대 대학생의 약 15%, 인기 학부에서는 30% 이상이었다. 정원 219명의 국민의회에서 64명이 표결해 57명이 찬성했고, 총리 텔레키 팔 등은 표결에 나오지 않았다.\n\n영국 유대인 대표위원회의 제소를 국제연맹 이사회가 받아들이자 베틀렌 정부는 1928년 법률 제14호로 민족 비율 대신 사회 범주에 따른 기준을 도입했다. 일부 역사가는 이 법을 1938년 이후 반유대법들의 정신적 선구인 「0번째 유대인법」이라고 부른다.",
+          "en": "The original bill, tabled by the education minister István Haller on 22 June 1920, merely capped enrolment, but pressure within the governing party added the quota by nationality. Jews were about 6 per cent of the population but some 15 per cent of students in the 1910s and over 30 per cent in the popular faculties. Of the 219-member National Assembly 64 voted, 57 in favour, while Prime Minister Pál Teleki and others stayed away.\n\nAfter the League of Nations Council upheld a complaint by the Board of Deputies of British Jews, the Bethlen government replaced the nationality quota with social categories by Act XIV of 1928. Some historians call the law the “zeroth” Jewish law, the forerunner of the anti-Jewish laws from 1938."
+        },
+        "aliases": {
+          "ko": [
+            "1920년 누메루스 클라우수스법",
+            "헝가리 누메루스 클라우수스",
+            "헝가리 누메루스 클라우수스법"
+          ],
+          "en": [
+            "Hungarian numerus clausus",
+            "Numerus clausus law of 1920",
+            "Act XXV of 1920"
+          ]
+        },
+        "people": [
+          "pal-teleki",
+          "istvan-bethlen"
+        ],
+        "events": [
+          "horthy-regime-1920-1938",
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Act XXV of 1920, passed by the Hungarian National Assembly in September 1920. By requiring each “race and nationality” to be represented among university students in proportion to its share of the population, it restricted Jewish students without naming them. It is regarded as the first anti-Jewish law in Europe after the First World War; the nationality quota was removed in 1928.",
+            "source": "https://hu.wikipedia.org/wiki/Numerus_clausus",
+            "locator": "A numerus clausus-törvény; Hungary"
+          },
+          {
+            "field": "body",
+            "claim": "The original bill, tabled by the education minister István Haller on 22 June 1920, merely capped enrolment, but pressure within the governing party added the quota by nationality. Jews were about 6 per cent of the population but some 15 per cent of students in the 1910s and over 30 per cent in the p",
+            "source": "https://hu.wikipedia.org/wiki/Numerus_clausus",
+            "locator": "A numerus clausus-törvény; Hungary"
+          },
+          {
+            "field": "period",
+            "claim": "1920–1928",
+            "source": "https://hu.wikipedia.org/wiki/Numerus_clausus",
+            "locator": "A numerus clausus-törvény; Hungary"
+          },
+          {
+            "field": "startYear",
+            "claim": "1920",
+            "source": "https://hu.wikipedia.org/wiki/Numerus_clausus",
+            "locator": "A numerus clausus-törvény; Hungary"
+          },
+          {
+            "field": "endYear",
+            "claim": "1928",
+            "source": "https://hu.wikipedia.org/wiki/Numerus_clausus",
+            "locator": "A numerus clausus-törvény; Hungary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bethlen-peyer-pact",
+      "sources": [
+        "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum",
+        "https://hu.wikipedia.org/wiki/Peyer_K%C3%A1roly"
+      ],
+      "fields": {
+        "term": {
+          "ko": "베틀렌–페이에르 협정",
+          "en": "Bethlen–Peyer Pact"
+        },
+        "category": "factions",
+        "period": {
+          "ko": "1921",
+          "en": "1921"
+        },
+        "startYear": 1921,
+        "endYear": 1921,
+        "definition": {
+          "ko": "1921년 12월 22일 헝가리 총리 베틀렌 이슈트반의 정부와 페이에르 카로이가 대표한 사회민주당이 맺은 비밀 협정. 사회민주당은 공무원·철도원 조직, 대중 파업, 공화주의 선전을 포기하는 대가로 합법 활동과 노동조합 재건, 선거 참여를 보장받았다.",
+          "en": "The secret agreement of 22 December 1921 between the government of the Hungarian prime minister István Bethlen and the Social Democratic Party led by Károly Peyer. The party gave up organising civil servants and railwaymen, mass strikes and republican propaganda in return for legal activity, the rebuilding of its trade unions and participation in elections."
+        },
+        "body": {
+          "ko": "사회민주당 쪽에서는 페이에르와 퍼르커시 이슈트반, 미아키치 페렌츠가, 정부 쪽에서는 베틀렌과 각료 네 명이 서명했다. 당은 농업 노동자 사이의 선전을 제한하고 베틀렌의 외교 정책을 비판하지 않기로 했으며, 의석은 24석으로 묶였다. 정부는 좌파에 대한 보복을 멈추는 사면령을 내렸다. 협정은 1924년 12월 31일 『네프서버』에 전문이 실리며 공개되었다.\n\n협정으로 사회민주당은 1922년부터 1944년까지 의회에 의석을 가지며 합법적으로 활동했지만, 불법 상태의 공산당은 협정 밖에 남아 계속 탄압받았다. 공산당은 이 협정을 「노동 귀족」과 자본의 타협이자 배신으로 비난했다.",
+          "en": "It was signed for the Social Democrats by Peyer, István Farkas and Ferenc Miákits, and for the government by Bethlen and four ministers. The party agreed to limit its agitation among agricultural labourers and to refrain from criticising Bethlen’s foreign policy, and its seats were capped at 24; the government issued an amnesty ending reprisals against the left. The text became public when Népszava printed it in full on 31 December 1924.\n\nThe pact let the Social Democrats sit in parliament and work legally from 1922 to 1944, while the illegal Communist Party stayed outside it and remained persecuted. The Communists denounced it as a betrayal, a deal between the “labour aristocracy” and capital."
+        },
+        "aliases": {
+          "ko": [
+            "베틀렌-페이에르 협정",
+            "베틀렌–페이에르 밀약"
+          ],
+          "en": [
+            "Bethlen-Peyer Pact",
+            "Bethlen–Peyer-paktum"
+          ]
+        },
+        "people": [
+          "istvan-bethlen",
+          "karoly-peyer"
+        ],
+        "events": [
+          "horthy-regime-1920-1938"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The secret agreement of 22 December 1921 between the government of the Hungarian prime minister István Bethlen and the Social Democratic Party led by Károly Peyer. The party gave up organising civil servants and railwaymen, mass strikes and republican propaganda in return for legal activity, the rebuilding of its trade unions and participation in elections.",
+            "source": "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum",
+            "locator": "Az egyezség lényege; Utóhatásai"
+          },
+          {
+            "field": "body",
+            "claim": "It was signed for the Social Democrats by Peyer, István Farkas and Ferenc Miákits, and for the government by Bethlen and four ministers. The party agreed to limit its agitation among agricultural labourers and to refrain from criticising Bethlen’s foreign policy, and its seats were capped at 24; the",
+            "source": "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum",
+            "locator": "Az egyezség lényege; Utóhatásai"
+          },
+          {
+            "field": "period",
+            "claim": "1921",
+            "source": "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum",
+            "locator": "Az egyezség lényege; Utóhatásai"
+          },
+          {
+            "field": "startYear",
+            "claim": "1921",
+            "source": "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum",
+            "locator": "Az egyezség lényege; Utóhatásai"
+          },
+          {
+            "field": "endYear",
+            "claim": "1921",
+            "source": "https://hu.wikipedia.org/wiki/Bethlen%E2%80%93Peyer-paktum",
+            "locator": "Az egyezség lényege; Utóhatásai"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vienna-awards",
+      "sources": [
+        "https://en.wikipedia.org/wiki/First_Vienna_Award",
+        "https://en.wikipedia.org/wiki/Second_Vienna_Award"
+      ],
+      "fields": {
+        "term": {
+          "ko": "빈 중재",
+          "en": "Vienna Awards"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1938–1940",
+          "en": "1938–1940"
+        },
+        "startYear": 1938,
+        "endYear": 1940,
+        "definition": {
+          "ko": "나치 독일과 파시스트 이탈리아가 빈 벨베데레 궁에서 내린 두 차례의 영토 중재. 1938년 11월 2일 제1차 중재는 남부 슬로바키아와 남부 루테니아를 체코슬로바키아에서, 1940년 8월 30일 제2차 중재는 북부 트란실바니아를 루마니아에서 떼어 헝가리에 넘겼다.",
+          "en": "Two territorial arbitrations delivered by Nazi Germany and Fascist Italy at the Belvedere Palace in Vienna. The First Award of 2 November 1938 transferred southern Slovakia and southern Ruthenia from Czechoslovakia to Hungary; the Second Award of 30 August 1940 transferred Northern Transylvania from Romania to Hungary."
+        },
+        "body": {
+          "ko": "두 중재는 모두 독일 외무장관 리벤트로프와 이탈리아 외무장관 치아노가 주재했다. 제1차 빈 중재는 뮌헨 협정의 직접적 결과로, 헝가리는 약 1만 1900㎢와 인구 약 87만 명을 얻었다. 제2차 빈 중재는 헝가리와 루마니아의 협상이 결렬되고 양국 군대가 국경에 모인 상황에서 내려졌고, 북부 트란실바니아 4만 3492㎢가 헝가리로 넘어갔다.\n\n헝가리는 이로써 트리아농 조약으로 잃은 땅의 일부를 되찾았지만 독일·이탈리아에 더 깊이 묶였다. 진주 과정에서 이프와 트레즈네아에서 루마니아 주민이 학살되었다. 두 중재로 얻은 땅은 제2차 세계대전 뒤 모두 원래 나라에 돌아갔다.",
+          "en": "Both awards were presided over by the German foreign minister Ribbentrop and the Italian foreign minister Ciano. The First Vienna Award was a direct consequence of the Munich Agreement and gave Hungary about 11,900 km² with some 870,000 inhabitants. The Second Vienna Award came after Hungarian–Romanian talks broke down and both armies massed on the border, and gave Hungary the 43,492 km² of Northern Transylvania.\n\nHungary thus regained part of the lands lost at Trianon but was bound more tightly to Germany and Italy. Romanian villagers were massacred at Ip and Treznea as Hungarian troops marched in. All the territory gained by the two awards was returned after the Second World War."
+        },
+        "aliases": {
+          "ko": [
+            "제1차 빈 중재",
+            "제2차 빈 중재"
+          ],
+          "en": [
+            "First Vienna Award",
+            "Second Vienna Award",
+            "Vienna Arbitration",
+            "bécsi döntések"
+          ]
+        },
+        "people": [
+          "joachim-von-ribbentrop",
+          "galeazzo-ciano",
+          "miklos-horthy",
+          "bela-imredy",
+          "pal-teleki"
+        ],
+        "events": [
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Two territorial arbitrations delivered by Nazi Germany and Fascist Italy at the Belvedere Palace in Vienna. The First Award of 2 November 1938 transferred southern Slovakia and southern Ruthenia from Czechoslovakia to Hungary; the Second Award of 30 August 1940 transferred Northern Transylvania from Romania to Hungary.",
+            "source": "https://en.wikipedia.org/wiki/First_Vienna_Award",
+            "locator": "lead; Background; Award sections"
+          },
+          {
+            "field": "body",
+            "claim": "Both awards were presided over by the German foreign minister Ribbentrop and the Italian foreign minister Ciano. The First Vienna Award was a direct consequence of the Munich Agreement and gave Hungary about 11,900 km² with some 870,000 inhabitants. The Second Vienna Award came after Hungarian–Roman",
+            "source": "https://en.wikipedia.org/wiki/First_Vienna_Award",
+            "locator": "lead; Background; Award sections"
+          },
+          {
+            "field": "period",
+            "claim": "1938–1940",
+            "source": "https://en.wikipedia.org/wiki/First_Vienna_Award",
+            "locator": "lead; Background; Award sections"
+          },
+          {
+            "field": "startYear",
+            "claim": "1938",
+            "source": "https://en.wikipedia.org/wiki/First_Vienna_Award",
+            "locator": "lead; Background; Award sections"
+          },
+          {
+            "field": "endYear",
+            "claim": "1940",
+            "source": "https://en.wikipedia.org/wiki/First_Vienna_Award",
+            "locator": "lead; Background; Award sections"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hungarian-anti-jewish-laws",
+      "sources": [
+        "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+        "https://en.wikipedia.org/wiki/The_Holocaust_in_Hungary"
+      ],
+      "fields": {
+        "term": {
+          "ko": "헝가리 유대인법",
+          "en": "Hungarian anti-Jewish laws"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1938–1942",
+          "en": "1938–1942"
+        },
+        "startYear": 1938,
+        "endYear": 1942,
+        "definition": {
+          "ko": "1938~1942년 헝가리 의회가 독일 뉘른베르크법을 본떠 만든 일련의 반유대주의 법률. 제1차 법(1938)은 전문직과 상공업의 유대인 비율을 20%로 제한했고, 제2차 법(1939)은 유대인을 인종으로 정의하며 제한을 강화했으며, 제3차 법(1941)은 유대인과 비유대인의 결혼과 성관계를 금지했다.",
+          "en": "A series of antisemitic laws passed by the Hungarian parliament in 1938–1942 in emulation of Germany’s Nuremberg Laws. The First Law (1938) capped Jews at 20 per cent in the professions and business; the Second (1939) defined Jews racially and tightened the limits; the Third (1941) banned marriage and sexual relations between Jews and non-Jews."
+        },
+        "body": {
+          "ko": "제1차 유대인법은 더라니 정부가 제출해 임레디 정부 초기인 1938년 5월 통과되었다. 임레디가 1938년 12월 제출한 제2차 유대인법은 텔레키 정부 때인 1939년 5월 통과되어, 조부모 가운데 둘 이상이 유대인으로 태어난 사람을 유대인으로 보고 전문직 비율을 6%로 낮췄으며 공직과 신문 편집에서 유대인을 배제하고 투표권도 제한했다. 바르도시 정부는 1941년 8월 제3차 법을 만들었고, 1942년에는 유대인의 토지 소유를 금지하는 법이 뒤따랐다.\n\n이 법들로 수만 명이 일자리와 사업을 잃었고, 1939년 법만으로 약 25만 명이 생계를 잃었다. 군 복무에서 배제된 유대인 남성은 노동봉사로 징집되었다. 미국 홀로코스트 기념관은 이 시기를 헝가리 정부가 스스로 유대인을 박해한 홀로코스트의 첫 단계로 본다.",
+          "en": "The First Jewish Law, introduced by the Darányi government, passed in May 1938 at the start of Imrédy’s premiership. The Second, introduced by Imrédy in December 1938 and passed under Teleki in May 1939, counted as Jewish anyone with two or more grandparents born Jewish, cut the professional quota to 6 per cent, excluded Jews from public employment and newspaper editing and restricted their vote. Bárdossy’s government enacted the Third Law in August 1941, and a 1942 law banned Jews from owning land.\n\nTens of thousands lost jobs and businesses; the 1939 law alone cost some 250,000 people their livelihood. Jewish men, barred from the army, were conscripted into labour service. The US Holocaust Memorial Museum treats this period as the first stage of the Holocaust in Hungary, in which the Hungarian government persecuted Jews on its own initiative."
+        },
+        "aliases": {
+          "ko": [
+            "제1차 유대인법",
+            "제2차 유대인법",
+            "제3차 유대인법"
+          ],
+          "en": [
+            "First Jewish Law",
+            "Second Jewish Law",
+            "Third Jewish Law",
+            "zsidótörvények"
+          ]
+        },
+        "people": [
+          "bela-imredy",
+          "pal-teleki",
+          "laszlo-bardossy",
+          "miklos-horthy"
+        ],
+        "events": [
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A series of antisemitic laws passed by the Hungarian parliament in 1938–1942 in emulation of Germany’s Nuremberg Laws. The First Law (1938) capped Jews at 20 per cent in the professions and business; the Second (1939) defined Jews racially and tightened the limits; the Third (1941) banned marriage and sexual relations between Jews and non-Jews.",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+            "locator": "Anti-Jewish laws sections"
+          },
+          {
+            "field": "body",
+            "claim": "The First Jewish Law, introduced by the Darányi government, passed in May 1938 at the start of Imrédy’s premiership. The Second, introduced by Imrédy in December 1938 and passed under Teleki in May 1939, counted as Jewish anyone with two or more grandparents born Jewish, cut the professional quota t",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+            "locator": "Anti-Jewish laws sections"
+          },
+          {
+            "field": "period",
+            "claim": "1938–1942",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+            "locator": "Anti-Jewish laws sections"
+          },
+          {
+            "field": "startYear",
+            "claim": "1938",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+            "locator": "Anti-Jewish laws sections"
+          },
+          {
+            "field": "endYear",
+            "claim": "1942",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+            "locator": "Anti-Jewish laws sections"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kamianets-podilskyi-massacre",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kamianets-Podilskyi_massacre",
+        "https://encyclopedia.ushmm.org/content/en/article/kamenets-podolsk"
+      ],
+      "fields": {
+        "term": {
+          "ko": "카미야네츠포딜스키 학살",
+          "en": "Kamianets-Podilskyi massacre"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941",
+          "en": "1941"
+        },
+        "startYear": 1941,
+        "endYear": 1941,
+        "definition": {
+          "ko": "1941년 8월 27~28일 독일 점령하 소련 우크라이나의 카미야네츠포딜스키에서 프리드리히 예켈른 휘하의 친위대·경찰 부대가 유대인 2만 3600명을 쏘아 죽인 학살. 희생자 가운데 약 1만 6000명은 헝가리가 「외국인」이라며 추방한 유대인이었다.",
+          "en": "The shooting of 23,600 Jews at Kamianets-Podilskyi in German-occupied Soviet Ukraine on 27–28 August 1941 by SS and police units under Friedrich Jeckeln. Some 16,000 of the victims were Jews whom Hungary had deported as “aliens”."
+        },
+        "body": {
+          "ko": "헝가리가 소련에 선전포고한 뒤 외국인 관리 당국은 시민권을 증명하지 못하는 유대인을 추방하기로 했고, 바르도시 총리가 7월 12일 명령에 서명했다. 폴란드·러시아 출신 유대인과 난민뿐 아니라 서류를 갖추지 못한 헝가리 유대인과 카르파티아 지역의 공동체 전체가 쾨뢰시메죄를 거쳐 독일군에 넘겨졌다.\n\n추방자들은 콜로미야에서 카미야네츠포딜스키까지 걸어서 끌려가 현지 유대인과 함께 학살되었다. 「최종 해결」의 첫 대규모 학살 가운데 하나로 꼽히며, 바르도시는 전후 인민재판소에서 이 추방에 대한 책임을 추궁받았다.",
+          "en": "After Hungary declared war on the Soviet Union, the agency for foreign nationals decided to deport Jews who could not prove their citizenship, and Prime Minister Bárdossy signed the order on 12 July. Polish and Russian Jews and refugees, but also Hungarian Jews without papers and whole communities in the Carpathian region, were handed over to the Germans via Kőrösmező.\n\nThe deportees were marched from Kolomyia to Kamianets-Podilskyi and murdered together with the local Jews. It is counted among the first large-scale massacres of the “Final Solution”, and after the war Bárdossy was held to account for the deportations before a People’s Court."
+        },
+        "aliases": {
+          "ko": [
+            "카메네츠포돌스크 학살"
+          ],
+          "en": [
+            "Kamenets-Podolsk massacre",
+            "Kamianets-Podilskyi Massacre"
+          ]
+        },
+        "people": [
+          "laszlo-bardossy"
+        ],
+        "events": [
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The shooting of 23,600 Jews at Kamianets-Podilskyi in German-occupied Soviet Ukraine on 27–28 August 1941 by SS and police units under Friedrich Jeckeln. Some 16,000 of the victims were Jews whom Hungary had deported as “aliens”.",
+            "source": "https://en.wikipedia.org/wiki/Kamianets-Podilskyi_massacre",
+            "locator": "lead; History"
+          },
+          {
+            "field": "body",
+            "claim": "After Hungary declared war on the Soviet Union, the agency for foreign nationals decided to deport Jews who could not prove their citizenship, and Prime Minister Bárdossy signed the order on 12 July. Polish and Russian Jews and refugees, but also Hungarian Jews without papers and whole communities i",
+            "source": "https://en.wikipedia.org/wiki/Kamianets-Podilskyi_massacre",
+            "locator": "lead; History"
+          },
+          {
+            "field": "period",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Kamianets-Podilskyi_massacre",
+            "locator": "lead; History"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Kamianets-Podilskyi_massacre",
+            "locator": "lead; History"
+          },
+          {
+            "field": "endYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Kamianets-Podilskyi_massacre",
+            "locator": "lead; History"
+          }
+        ]
+      }
+    },
+    {
+      "id": "novi-sad-raid-1942",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Novi_Sad_raid",
+        "https://hu.wikipedia.org/wiki/%C3%9Ajvid%C3%A9ki_v%C3%A9rengz%C3%A9s_(1942)"
+      ],
+      "fields": {
+        "term": {
+          "ko": "노비사드 학살",
+          "en": "Novi Sad raid"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1942",
+          "en": "1942"
+        },
+        "startYear": 1942,
+        "endYear": 1942,
+        "definition": {
+          "ko": "1942년 1월 헝가리군과 헌병대가 병합된 바치카에서 파르티잔 소탕을 구실로 벌인 학살. 1월 6일 추루그에서 시작해 20~23일 노비사드(우이비데크)에서 절정에 이르렀고, 연구에 따라 약 3300~4100명, 대부분 세르비아인과 유대인이 죽었다.",
+          "en": "A massacre carried out in January 1942 by the Hungarian army and gendarmerie in annexed Bačka on the pretext of fighting Partisans. Beginning at Čurug on 6 January, it culminated in Novi Sad (Újvidék) on 20–23 January; estimates of the dead, mostly Serbs and Jews, range from about 3,300 to 4,100."
+        },
+        "body": {
+          "ko": "참모총장 솜버테이이 페렌츠가 징벌 작전을 명령했고, 바르도시 정부는 독일에 점령지 병력이 필요하다는 것을 보여 주려 했다. 노비사드에서 페케테헐미체이드네르 페렌츠의 부대는 혹한 속에 주민을 도나우강 강변으로 끌고 가 쏘고 시신을 얼음 구멍에 던졌다. 노비사드 시 행정장관 데아크 라슬로가 부다페스트에 알린 뒤에야 학살이 멈췄다.\n\n의원 버이치질린스키 엔드레가 의회에서 이를 고발했고, 칼러이 정부는 1943년 12월 책임자들을 군사재판에 넘겼으나 유죄 판결을 받은 장교들은 1944년 1월 독일로 달아났다. 헝가리어로는 「추운 날들」이라고도 불리며, 2013년 헝가리 대통령이 세르비아에 공식 사과했다.",
+          "en": "Chief of Staff Ferenc Szombathelyi ordered the punitive raids, and Bárdossy’s government wanted to show Germany that troops were needed in the occupied territories. In Novi Sad Ferenc Feketehalmy-Czeydner’s troops marched residents to the Danube in bitter cold, shot them and threw the bodies into holes in the ice. The killing stopped only after the city’s lord lieutenant, László Deák, alerted Budapest.\n\nThe deputy Endre Bajcsy-Zsilinszky denounced it in parliament, and Kállay’s government brought those responsible before a court martial in December 1943, but the convicted officers fled to Germany in January 1944. In Hungarian it is also called the “Cold Days”; in 2013 Hungary’s president formally apologised to Serbia."
+        },
+        "aliases": {
+          "ko": [
+            "우이비데크 학살",
+            "남부 바치카 습격"
+          ],
+          "en": [
+            "Novi Sad massacre",
+            "Újvidék massacre",
+            "Raid in southern Bačka",
+            "újvidéki vérengzés",
+            "újvidéki hideg napok"
+          ]
+        },
+        "people": [
+          "laszlo-bardossy",
+          "miklos-kallay",
+          "miklos-horthy"
+        ],
+        "events": [
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A massacre carried out in January 1942 by the Hungarian army and gendarmerie in annexed Bačka on the pretext of fighting Partisans. Beginning at Čurug on 6 January, it culminated in Novi Sad (Újvidék) on 20–23 January; estimates of the dead, mostly Serbs and Jews, range from about 3,300 to 4,100.",
+            "source": "https://en.wikipedia.org/wiki/Novi_Sad_raid",
+            "locator": "lead; Prelude; Aftermath"
+          },
+          {
+            "field": "body",
+            "claim": "Chief of Staff Ferenc Szombathelyi ordered the punitive raids, and Bárdossy’s government wanted to show Germany that troops were needed in the occupied territories. In Novi Sad Ferenc Feketehalmy-Czeydner’s troops marched residents to the Danube in bitter cold, shot them and threw the bodies into ho",
+            "source": "https://en.wikipedia.org/wiki/Novi_Sad_raid",
+            "locator": "lead; Prelude; Aftermath"
+          },
+          {
+            "field": "period",
+            "claim": "1942",
+            "source": "https://en.wikipedia.org/wiki/Novi_Sad_raid",
+            "locator": "lead; Prelude; Aftermath"
+          },
+          {
+            "field": "startYear",
+            "claim": "1942",
+            "source": "https://en.wikipedia.org/wiki/Novi_Sad_raid",
+            "locator": "lead; Prelude; Aftermath"
+          },
+          {
+            "field": "endYear",
+            "claim": "1942",
+            "source": "https://en.wikipedia.org/wiki/Novi_Sad_raid",
+            "locator": "lead; Prelude; Aftermath"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hungarian-labour-service",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Labour_service_in_Hungary_during_World_War_II",
+        "https://hu.wikipedia.org/wiki/Munkaszolg%C3%A1lat",
+        "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+        "https://en.wikipedia.org/wiki/Second_Army_(Hungary)"
+      ],
+      "fields": {
+        "term": {
+          "ko": "헝가리 노동봉사제",
+          "en": "Labour service (Hungary)"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1939–1945",
+          "en": "1939–1945"
+        },
+        "startYear": 1939,
+        "endYear": 1945,
+        "definition": {
+          "ko": "1939~1945년 헝가리가 유대인 남성과 「믿을 수 없는」 사람들을 정규군 대신 비무장 노동부대에 징집한 제도(munkaszolgálat). 1941년부터 유대인을 분리해 표식 완장을 채우고 동부전선 근처로 보냈으며, 1944년 3월 이전에만 2만 5000~4만 2000명이 죽었다.",
+          "en": "The Hungarian system (munkaszolgálat) that conscripted Jewish men and others deemed “unreliable” into unarmed labour units instead of the army in 1939–1945. From 1941 Jews were segregated, made to wear armbands and sent near the Eastern Front; 25,000–42,000 died before March 1944 alone."
+        },
+        "body": {
+          "ko": "1939년 국방법과 같은 해 5월의 정부령으로 텔레키 정부가 도입했다. 처음에는 군 복무에 부적합하다고 본 젊은이들의 단기 노동이었으나, 유대인법과 전쟁 속에 유대인과 소수민족, 좌파 반대자를 배제하고 모욕하는 제도로 커졌다.\n\n돈강의 제2군에는 약 1만 7000명의 유대인 노동봉사자가 따라갔다. 이들은 지뢰 제거와 중노동에 내몰렸고 굶주림과 감독관의 폭력으로 많이 죽었으며, 1943년 1월의 패주 때 손실이 특히 컸다. 시인 라드노티 미클로시와 작가 세르브 언털도 노동봉사 중에 숨졌다.",
+          "en": "It was introduced by the Teleki government under the 1939 defence act and a decree of May that year. At first short unarmed service for young men judged unfit for the army, amid the Jewish laws and the war it grew into an institution for excluding and humiliating Jews, national minorities and left-wing opponents.\n\nSome 17,000 Jewish labour servicemen accompanied the Second Army to the Don. Driven to clear mines and do heavy labour, many died of hunger and the violence of their guards, with especially heavy losses in the rout of January 1943. The poet Miklós Radnóti and the writer Antal Szerb died in labour service."
+        },
+        "aliases": {
+          "ko": [
+            "헝가리 노동봉사대"
+          ],
+          "en": [
+            "munkaszolgálat",
+            "Hungarian Labor Service System",
+            "Hungarian labour service"
+          ]
+        },
+        "people": [
+          "pal-teleki",
+          "gusztav-jany",
+          "miklos-kallay"
+        ],
+        "events": [
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The Hungarian system (munkaszolgálat) that conscripted Jewish men and others deemed “unreliable” into unarmed labour units instead of the army in 1939–1945. From 1941 Jews were segregated, made to wear armbands and sent near the Eastern Front; 25,000–42,000 died before March 1944 alone.",
+            "source": "https://en.wikipedia.org/wiki/Labour_service_in_Hungary_during_World_War_II",
+            "locator": "lead; Origins; Operation Barbarossa"
+          },
+          {
+            "field": "body",
+            "claim": "It was introduced by the Teleki government under the 1939 defence act and a decree of May that year. At first short unarmed service for young men judged unfit for the army, amid the Jewish laws and the war it grew into an institution for excluding and humiliating Jews, national minorities and left-w",
+            "source": "https://en.wikipedia.org/wiki/Labour_service_in_Hungary_during_World_War_II",
+            "locator": "lead; Origins; Operation Barbarossa"
+          },
+          {
+            "field": "period",
+            "claim": "1939–1945",
+            "source": "https://en.wikipedia.org/wiki/Labour_service_in_Hungary_during_World_War_II",
+            "locator": "lead; Origins; Operation Barbarossa"
+          },
+          {
+            "field": "startYear",
+            "claim": "1939",
+            "source": "https://en.wikipedia.org/wiki/Labour_service_in_Hungary_during_World_War_II",
+            "locator": "lead; Origins; Operation Barbarossa"
+          },
+          {
+            "field": "endYear",
+            "claim": "1945",
+            "source": "https://en.wikipedia.org/wiki/Labour_service_in_Hungary_during_World_War_II",
+            "locator": "lead; Origins; Operation Barbarossa"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,620 @@
+// The Horthy regime 1919–1938: the National Army and the Hungarian White
+// Terror, the regency, Trianon, the numerus clausus, Bethlen's consolidation,
+// the illegal Communist Party and its trials, the Depression, Gömbös and
+// Darányi up to the eve of the First Jewish Law. Built with ./lib.js; the
+// batch build.js assembles it with the other Hungarian events.
+const { W, HU, P, event, person, term } = require('./lib');
+
+const en = t => W(encodeURIComponent(t.replace(/ /g, '_')));
+const hu = t => HU(encodeURIComponent(t.replace(/ /g, '_')));
+
+const S = {
+    wt: en('White Terror (Hungary)'),
+    huWt: hu('Fehérterror'),
+    orgovany: hu('Orgoványi gyilkosságok'),
+    horthy: en('Miklós Horthy'),
+    hejjas: en('Iván Héjjas'),
+    pronay: en('Pál Prónay'),
+    ostenburg: hu('Ostenburg-Moravek Gyula'),
+    nh: hu('Nemzeti Hadsereg'),
+    hcp: en('Hungarian Communist Party'),
+    charles: en("Charles IV of Hungary's attempts to retake the throne"),
+    kingdom: en('Kingdom of Hungary (1920–1946)'),
+    trianon: en('Treaty of Trianon'),
+    apponyi: en('Albert Apponyi'),
+    teleki: en('Pál Teleki'),
+    nc: en('Numerus clausus'),
+    huNc: hu('Numerus clausus'),
+    ushmm: 'https://encyclopedia.ushmm.org/content/en/article/the-holocaust-in-hungary',
+    bethlen: en('István Bethlen'),
+    unity: en('Unity Party (Hungary)'),
+    paktum: hu('Bethlen–Peyer-paktum'),
+    peyer: hu('Peyer Károly'),
+    peyerEn: en('Károly Peyer'),
+    land: hu('Nagy Imre-féle földreform'),
+    olah: hu('Oláh György (újságíró)'),
+    rakosi: en('Mátyás Rákosi'),
+    vas: hu('Vas Zoltán (politikus)'),
+    bia: hu('Biatorbágyi merénylet'),
+    matuska: en('Szilveszter Matuska'),
+    sallai: hu('Sallai Imre'),
+    furst: hu('Fürst Sándor'),
+    gombos: en('Gyula Gömbös'),
+    rome: en('Rome Protocols'),
+    daranyi: en('Kálmán Darányi'),
+    gyor: hu('Győri program'),
+};
+
+const sections = [
+    {
+        heading: { ko: '세게드의 국민군과 헝가리 백색테러', en: 'The National Army of Szeged and the Hungarian White Terror' },
+        paragraphs: [
+            {
+                ko: '1919년 5월 30일, 프랑스군이 점령하고 있던 남부 도시 세게드에서 반공 정치인들이 반혁명 정부를 세웠다. 총리 카로이 줄러는 전쟁 영웅으로 여겨지던 전 오스트리아-헝가리 해군 사령관 호르티 미클로시에게 국방장관직과 반혁명군 지휘를 맡겼고, 호르티는 6월 6일 세게드에 도착해 포고로 국민군을 창설했다. 연합국의 요구로 내각이 개편되어 장관직을 잃은 뒤에도 그는 군 지휘부를 국방부에서 떼어 내 국민군을 계속 장악했다. 8월 1일 헝가리 평의회 공화국이 무너지고 8월 6일 루마니아군이 부다페스트에 들어오자, 호르티는 8월 9일 국민군을 싸우지 않고 도나우강 서쪽 지방으로 옮겨 발러톤호 남쪽의 시오포크에 사령부를 두었다. 강제 징집으로 9월 말에는 병력이 3만 명에 이르렀다.',
+                en: 'On 30 May 1919 anti-Communist politicians formed a counter-revolutionary government in the southern city of Szeged, then occupied by French troops. Its prime minister, Gyula Károlyi, asked Miklós Horthy, the former commander of the Austro-Hungarian Navy who was still regarded as a war hero, to be minister of war and to command a counter-revolutionary force; Horthy arrived in Szeged on 6 June and founded the National Army by decree. When the cabinet was reshuffled on Allied orders and he lost his ministry, he kept control of the National Army by detaching its command from the war ministry. After the Hungarian Soviet Republic fell on 1 August and Romanian troops entered Budapest on 6 August, Horthy moved the National Army without a fight on 9 August into the lands west of the Danube and set up headquarters at Siófok on Lake Balaton. Forced conscription brought it to 30,000 men by the end of September.',
+                sources: [S.horthy, S.nh, S.hcp],
+            },
+            {
+                ko: '국민군의 장교 부대들은 적색 테러에 대한 보복과 주민 위협을 내세워, 공산당 지지자로 의심되는 사람들을 재판 없이 처형하고 본보기로 공공장소에 매달았다. 가장 악명 높은 지휘관은 프로너이 팔이었고, 오시텐부르그모러베크 줄러, 레하르 언털, 그리고 케치케메트 일대의 헤이여시 이반이 비슷한 부대를 이끌었다. 이 부대들은 형식상 국민군 소속이었지만 지휘관 개인에게 광신적으로 충성하는 사병처럼 움직였다. 희생자는 주로 공산당원·사회민주당원·농민, 그리고 유대인이었다. 헝가리 유대인 대부분은 볼셰비키를 지지하지 않았지만, 평의회 공화국 지도부에 젊은 유대계 지식인이 많았다는 사실이 반유대 폭력으로 쉽게 옮겨 갔다. 피해는 호르티 사령부가 있던 시오포크 주변의 도나우강 서쪽 지방과 도나우강·티서강 사이의 평원에서 가장 컸다.',
+                en: 'Officer detachments of the National Army, citing revenge for the Red Terror and the need to cow the population, executed suspected Communist supporters without trial and hanged them in public places as a warning. The most notorious commander was Pál Prónay; Gyula Ostenburg-Moravek, Anton Lehár and, around Kecskemét, Iván Héjjas led similar units. Formally part of the National Army, these detachments acted like private battalions fanatically loyal to their commanders. Their victims were above all Communists, Social Democrats, peasants and Jews. Most Hungarian Jews had not supported the Bolsheviks, but many leaders of the Soviet Republic had been young Jewish intellectuals, and anger at the revolution passed easily into antisemitic violence. The worst-hit areas were the lands west of the Danube around Horthy’s headquarters at Siófok and the plain between the Danube and the Tisza.',
+                sources: [S.wt, S.horthy, S.pronay],
+            },
+            {
+                ko: '가장 널리 알려진 학살은 루마니아군이 케치케메트에서 물러난 직후에 일어났다. 1919년 11월 19일 밤 헤이여시의 부대원들은 구금 시설에서 36명을 끌어내 인근 오르고바니 숲으로 데려갔고, 이들은 그곳에서 살해되었다. 희생자는 지역 유대인이거나 부유해 보이는 주민이었고, 적색 테러에 가담했다고 볼 근거는 없었다. 이틀 앞선 11월 17일 이자크에서는 헤이여시 부대가 일으킨 포그롬으로 유대인 수백 명이 폭행과 약탈을 당하고 쫓겨났으며, 이 부대가 죽인 사람의 약 3분의 1이 유대인이었다. 1920년 2월 17일에는 오스텐부르크 부대의 장교들이 신문 『네프서버』의 기자 쇼모지 벨러와 버초 벨러를 살해해 호르티에 반대하는 세력에 경고를 보냈다.',
+                en: 'The best-known massacre came just after the Romanians left Kecskemét. On the night of 19 November 1919 Héjjas’s men took 36 people from custody to the nearby forest of Orgovány, where they were killed. The victims were local Jews or prosperous-looking residents who could not be assumed to have taken part in the Red Terror. Two days earlier, on 17 November, a pogrom by Héjjas’s detachment at Izsák saw hundreds of Jews beaten, robbed and driven out, and about a third of the detachment’s victims were Jewish. On 17 February 1920 officers of Ostenburg’s detachment murdered Béla Somogyi and Béla Bacsó, journalists of the newspaper Népszava, as a warning to the forces opposed to Horthy.',
+                sources: [S.orgovany, S.hejjas, S.ostenburg],
+            },
+            {
+                ko: '희생자 수는 지금도 논쟁 중이며 추산은 300명에서 6,000명까지 갈린다. 영어권 문헌은 1919~1921년 살해된 사람을 1,500~6,000명 또는 1,000~5,000명으로 들고, 헝가리 역사학계의 신중한 평가는 500~600명, 많아도 1,000명에 훨씬 못 미친다고 보며 300명이라는 추정도 있다. 헝가리어 문헌은 망명한 뵘 빌모시와 야시 오스카르가 내놓은 5,000명 안팎을 과장으로 본다. 재판 없이 투옥되거나 수용된 사람은 수만 명이었다. 호르티가 직접 잔학 행위에 가담한 증거는 없지만, 전기 작가 토머스 색미스터는 그가 장교 부대를 「암묵적으로 지지」했다고 평가했고 호르티는 이들을 「나의 가장 훌륭한 부하들」이라 불렀다. 그는 뒷날에도 「쇠 빗자루만이 나라를 깨끗이 쓸어 낼 수 있었다」며 사과하지 않았다.',
+                en: 'The death toll is still disputed, with estimates ranging from 300 to 6,000. English-language accounts give 1,500 to 6,000, or 1,000 to 5,000, people killed in 1919–1921; more cautious assessments in Hungarian historiography put it at 500 to 600, in any case well under 1,000, and one estimate is 300. Hungarian accounts regard the figure of about 5,000 given by the émigrés Vilmos Böhm and Oszkár Jászi as exaggerated. Tens of thousands were imprisoned or interned without trial. Horthy was never found to have taken part in atrocities himself, but his biographer Thomas Sakmyster concluded that he “tacitly supported” the officer detachments, whom Horthy called “my best men”. He later declined to apologise, writing that “an iron broom alone could sweep the country clean”.',
+                sources: [S.wt, S.hcp, S.huWt, S.horthy],
+            },
+        ],
+    },
+    {
+        heading: { ko: '왕 없는 왕국: 섭정 호르티와 카를 왕의 복귀 시도', en: 'A kingdom without a king: Regent Horthy and King Charles’s return attempts' },
+        paragraphs: [
+            {
+                ko: '영국 외교관 조지 클러크의 중재로 군사독재를 세우지 않겠다고 약속한 호르티는, 루마니아군이 물러난 1919년 11월 16일 국민군을 이끌고 부다페스트에 들어갔다. 그는 이 도시가 「붉은 누더기를 걸치고」 천 년의 전통을 저버렸다고 꾸짖은 뒤 용서하겠다고 연설했다. 루마니아군은 1920년 2월 25일 헝가리에서 완전히 철수했다. 1920년 1월 국민의회 선거를 앞두고 사회민주당은 테러 때문에 선거운동이 불가능하다며 선거를 거부했고, 노동·복지장관이던 페이에르 카로이는 1월 16일 사임하고 오스트리아로 피신했다. 3월 1일 국민의회는 왕국을 복원하고, 국민군 장교들이 의사당을 장악한 가운데 호르티를 섭정으로 뽑았다. 호르티는 131 대 7로 어포니 얼베르트를 이겼고, 총리 임면권, 의회 소집·해산권, 군 통수권 등 귀족 작위 수여와 교회 임명권을 뺀 국왕의 대권을 받아 낸 뒤에야 취임했다.',
+                en: 'Having promised the British diplomat George Clerk that he would not set up a military dictatorship, Horthy led the National Army into Budapest on 16 November 1919, after the Romanians had withdrawn. In a speech he arraigned the city for having “clothed herself in red rags” and disowned a thousand years of tradition, then declared it forgiven. Romanian troops finally left Hungary on 25 February 1920. Before the National Assembly election of January 1920 the Social Democrats decided on a boycott because the terror made campaigning impossible, and Károly Peyer, minister of labour and welfare, resigned on 16 January and fled to Austria. On 1 March the National Assembly restored the kingdom and, with National Army officers controlling the parliament building, elected Horthy regent. He defeated Albert Apponyi by 131 votes to 7 and took the oath only after he had been granted the king’s prerogatives, including the power to appoint and dismiss prime ministers, to convene and dissolve parliament and to command the armed forces, except the right to create nobles and the patronage of the Church.',
+                sources: [S.nh, S.horthy, S.peyer],
+            },
+            {
+                ko: '연합국이 합스부르크가의 복귀를 용납하지 않았으므로 헝가리는 법적으로는 왕국이지만 왕이 없는 나라가 되었다. 마지막 국왕 카를 4세(오스트리아 황제로서는 카를 1세)는 두 차례 왕위 회복을 시도했다. 1921년 3월 26일 부활절 토요일에 그는 위조 여권으로 스위스를 떠나 솜버테이에 나타났고 이튿날 부다페스트 왕궁으로 호르티를 찾아가 권력 이양을 요구했으나, 호르티는 즉시 떠나라고 거절했다. 이 「부활절 위기」 뒤 총리 텔레키 팔이 물러나고 4월 14일 베틀렌 이슈트반이 총리가 되었다. 10월에는 쇼프론에 주둔하던 오스텐부르크 부대와 레하르 언털 대령이 카를을 받들고 장갑열차로 부다페스트로 진군했다. 10월 23일 호르티와 굄뵈시 줄러가 독려한 정부군은 부더외르시 전투에서 이들을 막았고, 정부군 14명과 오스텐부르크 부대원 5명이 죽었다. 프로너이도 이 두 번째 시도에 가담했다.',
+                en: 'Because the Allies would not tolerate a Habsburg restoration, Hungary became a kingdom in law but without a king. The last king, Charles IV (Charles I as Austrian emperor), twice tried to regain his throne. On Holy Saturday, 26 March 1921, he left Switzerland on a forged passport and appeared in Szombathely; the next day he called on Horthy in the royal palace in Budapest and demanded power, but Horthy told him to leave at once. After this “Easter crisis” Prime Minister Pál Teleki stepped down, and István Bethlen became prime minister on 14 April. In October Ostenburg’s detachment, stationed in Sopron, and Colonel Antal Lehár set off for Budapest in armoured trains with Charles. On 23 October government troops rallied by Horthy and Gyula Gömbös stopped them in the Battle of Budaörs, in which 14 government soldiers and five of Ostenburg’s men were killed. Prónay too joined this second attempt.',
+                sources: [S.horthy, S.charles, S.pronay],
+            },
+            {
+                ko: '패배한 카를은 체포되어 마데이라섬으로 유배되었다. 10월 29일 체코슬로바키아 외무장관 에드바르트 베네시는 합스부르크가를 폐위하지 않으면 침공하겠다는 최후통첩을 보냈고, 11월 6일 헝가리 의회는 1713년 국사조칙을 무효화해 합스부르크가의 왕위 계승권을 없애는 법을 통과시켰다. 헝가리는 군주정으로 남았지만 왕을 뽑지 않았고, 호르티는 1944년까지 대통령에 가까운 지위의 섭정으로 남았다. 같은 시기 장교 부대의 시대도 끝나 갔다. 정부는 1920년 여름부터 부대를 통제하고 해산하기 시작했고, 프로너이는 1921년 유대계 부유한 정치인을 갈취한 혐의로 유죄 판결을 받아 지휘권을 잃었으며, 그의 대대는 1922년 1월 공식 해산되었다. 그러나 호르티는 섭정 사면으로 학살 가해자들을 처벌에서 면제했다.',
+                en: 'The defeated Charles was arrested and exiled to Madeira. On 29 October the Czechoslovak foreign minister Edvard Beneš issued an ultimatum threatening invasion unless the Habsburgs were dethroned, and on 6 November the Hungarian parliament passed a law nullifying the Pragmatic Sanction of 1713 and ending the Habsburgs’ right to the throne. Hungary remained a monarchy but chose no king, and Horthy stayed on as regent, in a president-like position, until 1944. The era of the officer detachments was ending too. From the summer of 1920 the government moved to rein them in and disband them; in 1921 Prónay was convicted of extorting a wealthy Jewish politician and lost his command, and his battalion was formally dissolved in January 1922. Horthy, however, used the regent’s amnesty to shield the perpetrators of the killings from prosecution.',
+                sources: [S.charles, S.kingdom, S.pronay, S.huWt],
+            },
+        ],
+    },
+    {
+        heading: { ko: '트리아농 조약과 「아니, 아니, 결코!」', en: 'The Treaty of Trianon and “No, no, never!”' },
+        paragraphs: [
+            {
+                ko: '헝가리 강화 대표단은 어포니 얼베르트가 이끌고 1920년 1월 7일 파리에 도착했다. 어포니는 1월 16일 연합국 최고회의에서 프랑스어로 연설하고 스스로 영어로 옮긴 뒤 이탈리아어로 마무리하며, 헝가리인의 자결권과 역사적 헝가리의 지리적·경제적 일체성을 내세워 헝가리는 이 국경을 결코 받아들이지 않고 수정을 추구할 것이라고 말했다. 대표단 자료에는 지리학자 텔레키 팔이 1910년 인구조사를 바탕으로 인구 밀도와 민족 분포를 함께 그린 이른바 「붉은 지도」도 들어 있었다. 연합국은 조건을 바꾸지 않았고, 강화회의 의장 밀랑의 동봉 서한은 「천 년 된 상황이라도 정의에 어긋나면 지속될 수 없다」며 국경을 1919년 초안대로 두었다.',
+                en: 'The Hungarian peace delegation, led by Albert Apponyi, arrived in Paris on 7 January 1920. On 16 January Apponyi addressed the Supreme Council, speaking in French, translating himself into English and concluding in Italian; invoking the Hungarians’ right of self-determination and the geographical and economic unity of historic Hungary, he declared that Hungary would never accept these borders and would pursue their revision. The delegation’s material included the so-called Red map, on which the geographer Pál Teleki combined population density with ethnic distribution from the 1910 census. The Allies did not change the terms, and the covering letter of the conference chairman, Millerand, kept the borders as drafted in 1919, stating that “the continuation of a situation, even if it is a thousand years old, is not justified if it is against justice”.',
+                sources: [S.trianon, S.apponyi, S.teleki],
+            },
+            {
+                ko: '조약은 1920년 6월 4일 베르사유의 그랑 트리아농 궁에서 조인되었다. 협상이 아니라 일괄 수락 여부만 고를 수 있는 조건이었고, 헝가리 대표단은 항의 속에 서명했다. 헝가리는 11월 16일 비준했고 조약은 1921년 7월 26일 발효했다. 조약 뒤 헝가리는 면적 93,073㎢, 인구 760만 명의 내륙국이 되었는데, 이는 전쟁 전 헝가리 왕국 면적의 28%, 인구의 36%였다. 역사적 영역을 기준으로 한 다른 계산은 영토의 72%, 인구의 58%를 잃었다고 본다. 체코슬로바키아·루마니아·세르브·크로아트·슬로베니아 왕국·오스트리아로 넘어간 지역에는 헝가리인 330만 명이 소수민족으로 남았다. 군대는 징병 없이 3만 5천 명으로 제한되었고, 해군은 사라졌으며, 이웃 나라들에 배상금을 물어야 했다.',
+                en: 'The treaty was signed in the Grand Trianon palace at Versailles on 4 June 1920. It was dictated rather than negotiated, to be accepted or rejected as a whole, and the Hungarian delegation signed under protest. Hungary ratified it on 16 November and it came into force on 26 July 1921. Post-Trianon Hungary was a landlocked state of 93,073 square kilometres and 7.6 million people — 28 per cent of the land and 36 per cent of the population of the pre-war kingdom. Another calculation, measured against the historical territory, has Hungary losing 72 per cent of its territory and 58 per cent of its population. The areas transferred to Czechoslovakia, Romania, the Kingdom of Serbs, Croats and Slovenes and Austria held 3.3 million Hungarians, who became minorities. The army was limited to 35,000 men without conscription, the navy ceased to exist, and Hungary had to pay reparations to its neighbours.',
+                sources: [S.trianon, S.kingdom],
+            },
+            {
+                ko: '트리아농은 전간기 헝가리 정치의 중심 문제가 되었다. 「아니, 아니, 결코!」(Nem, nem, soha!)라는 구호가 어디에나 내걸렸고, 1927년 영국 신문왕 로더미어 경이 『데일리 메일』에서 트리아농 국경을 비판하자 헝가리인 120만 명이 감사 서한에 서명했다. 한편 1921년 체코슬로바키아·루마니아·세르브·크로아트·슬로베니아 왕국은 헝가리의 공격에 공동 대응하는 방어 동맹인 소협상을 맺었고, 프랑스는 1924년 체코슬로바키아, 1926년 루마니아, 1927년 세르브·크로아트·슬로베니아 왕국과 동맹 조약을 맺어 이를 뒷받침했다. 역대 헝가리 정부는 국경 수정을 대외 정책의 목표로 삼았지만, 소협상의 군사력 앞에서 무력으로 이를 이룰 길은 막혀 있었다.',
+                en: 'Trianon became the central issue of interwar Hungarian politics. The slogan “Nem, nem, soha!” (“No, no, never!”) was everywhere, and when the British press magnate Lord Rothermere denounced the Trianon borders in his Daily Mail in 1927, 1.2 million Hungarians signed a letter of thanks. In 1921 Czechoslovakia, Romania and the Kingdom of Serbs, Croats and Slovenes formed the Little Entente, a defensive alliance against a Hungarian attack, and France backed it with treaties of alliance with Czechoslovakia in 1924, Romania in 1926 and the Kingdom of Serbs, Croats and Slovenes in 1927. Every Hungarian government made border revision the aim of its foreign policy, but the combined forces of the Little Entente ruled out achieving it by war.',
+                sources: [S.horthy, S.bethlen],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1920년 누메루스 클라우수스법과 「기독교 민족」 노선', en: 'The numerus clausus of 1920 and the “Christian national” course' },
+        paragraphs: [
+            {
+                ko: '역사가 데아크 이슈트반은 1919~1944년의 헝가리를 「우익 국가」로 규정한다. 반혁명에서 태어난 역대 정부는 「민족적 기독교」 정책을 내세우고 프랑스 혁명과 19세기의 자유주의·사회주의를 배척했으며, 헝가리를 볼셰비즘과 그 도구로 여긴 사회주의·코즈모폴리터니즘·프리메이슨에 맞서는 보루로 보았다. 이 노선이 처음 법으로 나타난 것이 1920년 누메루스 클라우수스법(1920년 법률 제25호)이다. 교육장관 할레르 이슈트반이 6월 22일 제출한 원안은 철저히 가르칠 수 있는 만큼만 학생을 받는다는 정원 규정이었으나, 집권당 안의 요구로 각 「인종과 민족」 출신 학생의 비율이 전국 인구 비율에 이르도록, 적어도 그 10분의 9가 되도록 한다는 조항이 들어갔다. 법은 혁명에 가담한 「불온」 인물의 입학도 막으려 했다.',
+                en: 'The historian István Deák calls Hungary between 1919 and 1944 “a rightist country”: born of the counter-revolution, its governments advocated a “nationalist Christian” policy, despised the French Revolution and spurned the liberal and socialist ideologies of the nineteenth century, and saw Hungary as a bulwark against Bolshevism and what they took to be its instruments — socialism, cosmopolitanism and freemasonry. The first law to embody this course was the numerus clausus law of 1920 (Act XXV of 1920). The original bill, tabled by the education minister István Haller on 22 June, merely limited enrolment to the number of students who could be properly taught, but pressure within the governing party added a clause that the share of students of each “race and nationality” should reach its share of the national population, or at least nine-tenths of it. The law also aimed to keep “subversive” participants in the revolutions out of the universities.',
+                sources: [S.horthy, S.huNc],
+            },
+            {
+                ko: '법문에 유대인이라는 말은 없었지만, 대학에서 인구 비율보다 많았던 집단은 사실상 유대인뿐이었다. 유대인은 인구의 약 6%였으나 1910년대 대학생의 약 15%였고, 의학·법학 등 인기 학부에서는 30%를 넘었다(1920년 고등교육 전체로는 10.4%). 1920년 9월 정원 219명의 국민의회에서 표결에 참여한 64명 가운데 57명이 찬성하고 7명이 반대했으며, 총리 텔레키 팔 등 일부 의원은 항의의 뜻으로 표결에 나오지 않았다. 미국 홀로코스트 기념관은 이 법을 제1차 세계대전 뒤 유럽에서 처음 제정된 반유대법으로 본다. 영국 유대인 대표위원회가 1925년 국제연맹 이사회에 트리아농 조약의 소수민족 보호 조항 위반으로 제소해 받아들여지자, 베틀렌 정부는 1928년 법률 제14호로 민족 비율 조항을 지우고 공무원·참전군인·소지주와 장인·기업인·상인이라는 사회 범주에 따른 기준으로 바꾸었다. 역사가 코바치 M. 마리어와 코모로치 게저는 이 법을 1938년 이후 반유대법들의 정신적 선구인 「0번째 유대인법」이라고 부른다.',
+                en: 'The text did not use the word Jew, but Jews were practically the only group over-represented in the universities: about 6 per cent of the population, they had made up some 15 per cent of students in the 1910s and more than 30 per cent in the popular faculties of medicine and law (10.4 per cent of all higher education in 1920). In September 1920, of the 219-member National Assembly, 64 deputies voted, 57 in favour and 7 against, while some, including Prime Minister Pál Teleki, stayed away in protest. The United States Holocaust Memorial Museum regards it as the first anti-Jewish law enacted in Europe after the First World War. After the Board of Deputies of British Jews complained to the League of Nations Council in 1925 that it breached the minority-protection clauses of the Treaty of Trianon and the Council upheld the complaint, the Bethlen government in 1928 (Act XIV of 1928) dropped the nationality quota and replaced it with social categories: civil servants, war veterans and officers, smallholders and artisans, industrialists and merchants. The historians Mária M. Kovács and Géza Komoróczy call it the “zeroth” Jewish law, the forerunner of the anti-Jewish laws from 1938.',
+                sources: [S.nc, S.huNc, S.ushmm, S.bethlen, S.kingdom],
+            },
+        ],
+    },
+    {
+        heading: { ko: '베틀렌의 안정화 (1921–1931)', en: 'Bethlen’s consolidation (1921–1931)' },
+        paragraphs: [
+            {
+                ko: '트란실바니아의 오랜 귀족 가문 출신인 베틀렌 이슈트반은 1921년 4월 14일 총리가 되어 10년 동안 재임했다. 그는 먼저 장교 부대와 급진파 학생들을 매수와 공직, 진급과 의석으로 체제 안에 끌어들였다. 베틀렌은 이들이 국내 공산당원 대부분을 죽여 공산당을 무너뜨리는 데 큰 몫을 한 「필요악」이지만, 장기적으로는 무모한 전쟁을 부를 위협이라고 보았다. 1922년 초 그는 여러 우익 세력을 묶어 통일당(정식 명칭 기독교 농민·소농·시민당)을 세웠고, 이 당은 같은 해 선거에서 압승한 뒤 이름을 바꿔 가며 1944년까지 집권당으로 남았다.',
+                en: 'István Bethlen, scion of an old Transylvanian noble family, became prime minister on 14 April 1921 and held office for ten years. He first brought the officer detachments and radical students into the system through bribery, civil-service posts, promotions and seats in parliament. Bethlen regarded the paramilitaries as a “necessary evil” that had done much to destroy the Communist Party by killing most of its members in Hungary, but in the long run as a threat that could drag the country into a reckless war. In early 1922 he gathered the right into the Unity Party (officially the Christian Farmers’, Smallholders’ and Civic Party), which won a landslide that year and, under changing names, remained the governing party until 1944.',
+                sources: [S.bethlen, S.unity],
+            },
+            {
+                ko: '1922년 선거법은 소득과 6년 거주, 6년 학력을 투표 조건으로 삼아 유권자를 인구의 29.5%로 줄였고, 부다페스트와 큰 도시를 뺀 농촌 선거구에서는 1918년 이전처럼 공개투표를 되살렸다. 하원 의석은 농촌 199석, 도시 46석으로 배분되었고, 야당 후보는 출마에 필요한 추천 서명을 집권당보다 훨씬 많이 모아야 했다. 총리가 임명한 주지사가 선거를 감독했고, 내무부가 지휘하는 경찰과 헌병대는 농촌의 야당 후보를 괴롭혔다. 통일당은 1922~1935년 네 차례 총선에서 평균 61%를 득표했다. 도시 선거구는 비교적 자유롭게 치러져 야당 의원들이 의회에 들어갔는데, 베틀렌은 이를 여론을 재는 지표이자 불만의 배출구로 활용했다.',
+                en: 'The Franchise Act of 1922 made income, six years’ residence and six years’ schooling conditions of the vote, cutting the electorate to 29.5 per cent of the population, and outside Budapest and the larger towns it brought back the open ballot that had existed before 1918. Rural districts received 199 seats in the lower house and urban ones 46, and opposition candidates needed far more nominating signatures than those of the governing party. Lord lieutenants appointed by the prime minister supervised the elections, and the police and gendarmerie under the interior ministry harassed opposition candidates in the countryside. The Unity Party averaged 61 per cent of the vote in the four general elections between 1922 and 1935. Urban elections were comparatively free and returned opposition deputies, whom Bethlen used as a barometer of public opinion and a safety valve for discontent.',
+                sources: [S.bethlen, S.kingdom],
+            },
+            {
+                ko: '1921년 12월 22일 정부와 사회민주당은 베틀렌–페이에르 협정을 맺었다. 사회민주당 쪽에서는 노동조합 지도자 페이에르 카로이와 함께 퍼르커시 이슈트반, 미아키치 페렌츠가, 정부 쪽에서는 베틀렌과 각료 네 명이 서명했다. 당은 공무원·철도원·우편 노동자를 조직하지 않고, 농업 노동자 사이의 선전을 제한하며, 대중 파업과 공화주의 선전, 베틀렌 외교 정책 비판을 그만두기로 했다. 그 대가로 당은 합법 활동과 노동조합 재건, 선거 참여를 보장받았고, 의석은 24석으로 묶였지만 좌파에 대한 보복을 멈추는 사면령이 나왔다. 비밀 협정이었으나 사회민주당 기관지 『네프서버』가 1924년 12월 31일 전문을 실었다. 사회민주당은 1922년부터 1944년까지 의회에 의석을 가졌고, 공산당은 이 협정을 「노동 귀족」과 자본의 타협이자 배신으로 보았다. 공산당은 협정 밖에 남아 계속 불법으로 탄압받았다.',
+                en: 'On 22 December 1921 the government and the Social Democratic Party concluded the Bethlen–Peyer Pact. It was signed for the party by the trade-union leader Károly Peyer together with István Farkas and Ferenc Miákits, and for the government by Bethlen and four ministers. The party undertook not to organise civil servants, railway and postal workers, to limit its agitation among agricultural labourers, and to give up mass strikes, republican propaganda and criticism of Bethlen’s foreign policy. In return it was guaranteed legal activity, the rebuilding of its unions and participation in elections; its seats were capped at 24, but an amnesty decree ended the reprisals against the left. Meant to be secret, the pact was published in full by the party paper Népszava on 31 December 1924. The Social Democrats held seats in parliament from 1922 to 1944; the Communists saw the pact as a betrayal, a deal between the “labour aristocracy” and capital. The Communist Party stayed outside it, illegal and persecuted.',
+                sources: [S.paktum, S.peyer],
+            },
+            {
+                ko: '베틀렌은 차관을 얻기 위해 당분간 트리아농 반대 운동을 접었다. 헝가리는 1922년 9월 18일 국제연맹에 가입했고, 1923년 12월 루마니아와 세르브·크로아트·슬로베니아 왕국에 20년 동안 금 크로네 2억을 배상하기로 합의해 차관의 길을 열었다. 1924년 7월 국제연맹 감독 아래 금 크로네 2억 5천만 규모의 차관이 런던에서 발행되었고, 절반은 런던 금융가에서, 나머지는 미국·이탈리아·스위스에서 왔다. 차관으로 인플레이션이 잡혔고, 1927년 새 화폐 펭괴가 도입되었으며, 1920년대 후반에는 산업과 농업 생산이 빠르게 늘었다. 노동자 의료보험 가입률은 1913년 30%에서 1927년 80%로 늘었다. 1927년 베틀렌은 파시스트 이탈리아와 우호조약을 맺었고, 경제가 나아지자 1928년 「우리는 지방을 잃은 것이 아니라 분할되었다」며 다시 공개적으로 트리아농을 공격했다.',
+                en: 'To obtain a loan Bethlen set aside his campaign against Trianon for the time being. Hungary joined the League of Nations on 18 September 1922 and in December 1923 agreed to pay Romania and the Kingdom of Serbs, Croats and Slovenes 200 million gold crowns in reparations over twenty years, which opened the way to credit. In July 1924 a loan of 250 million gold crowns under League supervision was floated in London, half from the City and the rest from the United States, Italy and Switzerland. The loan tamed inflation, a new currency, the pengő, was introduced in 1927, and industrial and farm output rose quickly in the late 1920s. The share of workers with medical insurance grew from 30 per cent in 1913 to 80 per cent in 1927. In 1927 Bethlen signed a treaty of friendship with Fascist Italy, and once the economy had recovered he again attacked Trianon openly, declaring in 1928: “We did not lose provinces. We were partitioned.”',
+                sources: [S.bethlen, S.kingdom],
+            },
+            {
+                ko: '안정은 농촌의 깊은 불평등 위에 서 있었다. 1920년대 초의 토지개혁에도 헝가리는 전형적인 농업국으로 남았고, 900만 국민의 절반이 농업으로 살았다. 인구의 0.06%에 불과한 대지주가 1,070개 영지로 경작지의 3분의 1 가까이를 차지했고, 중간 규모 지주가 또 3분의 1을 가졌으며, 인구의 3분의 1을 이루는 농업 노동자·영세농·땅 없는 머슴·날품팔이가 나머지 3분의 1을 나눠 가졌다. 이들을 다룬 1928년의 책 『300만 거지』는 헝가리 최초의 사회 조사 기록으로 꼽히는데, 지은이 올라 죄르지는 뒤에 임레디 벨러 진영에 선 극우 기자였다. 부다페스트는 서유럽에 견줄 생활 수준을 누렸지만, 농촌 주민 대다수는 도로·학교·의사도 없는 외딴 농가에서 극심한 빈곤과 문맹 속에 살았다.',
+                en: 'This stability rested on deep rural inequality. Despite the land reform of the early 1920s Hungary remained a typical agrarian country, with half of its nine million people living off the land. Great landowners, just 0.06 per cent of the population, held nearly a third of the farmland in 1,070 estates; medium owners held another third; and the farm labourers, dwarf-holders, landless estate servants, navvies and day labourers — a third of the population — shared the remaining third. The 1928 book about them, Three Million Beggars, is counted as Hungary’s first sociography; its author, György Oláh, was a far-right journalist who later sided with Béla Imrédy. Budapest enjoyed a standard of living comparable to Western Europe, while most country people lived in isolated farmsteads without roads, schools or doctors, in dire poverty and often illiterate.',
+                sources: [S.land, S.olah, S.kingdom],
+            },
+        ],
+    },
+    {
+        heading: { ko: '불법 공산당: 라코시 재판에서 셜러이·퓌르시트 처형까지', en: 'The illegal Communist Party: from the Rákosi trials to the hanging of Sallai and Fürst' },
+        paragraphs: [
+            {
+                ko: '평의회 공화국이 무너진 뒤 헝가리 공산당(KMP)은 불법화되었다. 쿤 벨러를 비롯한 지도부는 빈으로, 이어 모스크바로 망명해 임시 중앙위원회로 당을 유지하려 했고, 국내에는 합법 외곽 정당을 세웠으나 정부의 탄압으로 1927년에는 이름만 남았다. 당원은 해마다 줄어 극히 적었다. 버시 졸탄의 경력이 이 시기 당원들의 처지를 보여 준다. 1919년 열여섯 살에 입당한 그는 1921년 귀국했다가 붙잡혀 징역 10년을 받았고, 1922년 포로 교환으로 소련에 갔다. 1925년 코민테른의 지시로 다시 돌아왔다가 곧 체포되어 1926년 징역 6년을 받았고, 형은 1929년 13년 6개월로 늘어났다.',
+                en: 'After the fall of the Soviet Republic the Party of Communists in Hungary (KMP) was outlawed. Its leaders, Béla Kun among them, went into exile in Vienna and then Moscow and tried to hold the party together through a provisional central committee; inside Hungary they set up a legal front party, which government repression had reduced to a name by 1927. Membership shrank year by year and was minuscule. Zoltán Vas’s career shows what members faced. Having joined the party at sixteen in 1919, he came back in 1921, was caught and sentenced to ten years, and went to the Soviet Union in a prisoner exchange in 1922. Sent back by the Comintern in 1925, he was soon arrested again, sentenced in 1926 to six years, and in 1929 the sentence was raised to thirteen and a half.',
+                sources: [S.hcp, S.vas],
+            },
+            {
+                ko: '평의회 공화국의 인민위원이었던 라코시 마차시는 코민테른 요원으로 일하다 1924년 지하 당을 재건하려고 귀국해 체포되었다. 1925년 9월 검거된 공산당원들의 사건은 11월 14~16일 즉결재판소에 올랐으나 국내외의 항의로 일반 법원에 넘겨졌고, 1926년 7~8월의 첫 재판에서 라코시는 징역 8년 6개월을 받았다. 1934년 4월 형기가 끝나자 당국은 평의회 공화국 시기의 행위를 들어 반역·반란·살인 공모와 교사, 통화 위조 혐의로 그를 다시 기소했고, 1935년 1~2월의 두 번째 재판은 종신형을 선고했다. 라코시는 국제 공산주의 운동의 상징이 되었고, 스페인 내전의 국제여단에는 그의 이름을 딴 대대가 생겼다. 1940년 10월 30일 가석방된 그는 1849년 빌라고시에서 러시아군이 노획한 헝가리 혁명군 깃발과 맞바꾸는 형식으로 11월 2일 소련으로 떠났고, 버시 졸탄과 함께 11월 6일 모스크바에 도착했다.',
+                en: 'Mátyás Rákosi, a people’s commissar of the Soviet Republic who had since worked as a Comintern agent, returned in 1924 to rebuild the underground party and was arrested. The case of the Communists seized in September 1925 went before a summary court on 14–16 November, but after domestic and international protests it was referred to a regular court, and at the first trial in July–August 1926 Rákosi was sentenced to eight and a half years. When his term expired in April 1934 the authorities charged him again over his role in the Soviet Republic — with high treason, rebellion, complicity in and incitement to murder, and counterfeiting — and the second trial, in January–February 1935, sentenced him to life. Rákosi became a cause célèbre of the international Communist movement, and a battalion of the International Brigades in Spain bore his name. Paroled on 30 October 1940, he left for the Soviet Union on 2 November in exchange for the Hungarian revolutionary banners captured by Russian troops at Világos in 1849, and arrived in Moscow with Zoltán Vas on 6 November.',
+                sources: [S.rakosi],
+            },
+            {
+                ko: '1931년 9월 13일 0시 20분쯤 부다페스트 서쪽 비어토르바지 고가교에서 빈으로 가던 급행열차가 폭파되어 22명이 죽고 120명이 다쳤다. 현장에서 「노동자들이여, 너희에게는 권리가 없다. 그러니 우리가 자본가들에게 맞서 쟁취하겠다…」로 시작하는 편지가 발견되자, 카로이 줄러 정부는 공산주의 테러의 시작으로 보고 다음 날 전국에 즉결재판 제도(계엄)를 선포했으며, 9월 20일에는 반국가 조직 혐의자 전체로 그 적용을 넓혔다. 실제 범인은 독일과 오스트리아에서도 열차를 탈선시킨 머투시커 실베스테르로, 10월 빈에서 체포되어 자백했다. 그럼에도 즉결재판 제도는 유지되었다. 당시 굄뵈시 국방장관이 사건을 꾸몄다는 의혹이 널리 돌았고 지금도 이를 주장하는 역사가가 있지만 구체적 증거는 없으며, 머투시커가 앞서 다른 나라에서도 같은 범행을 했다는 사실은 이 의혹과 맞지 않는다.',
+                en: 'At about 12.20 a.m. on 13 September 1931 an express bound for Vienna was blown up on the Biatorbágy viaduct west of Budapest, killing 22 people and injuring 120. A letter found at the scene beginning “Workers, you have no rights, so we will win them against the capitalists…” led the government of Gyula Károlyi to treat the attack as the start of a Communist terror campaign; the next day it proclaimed summary jurisdiction (martial law) across the country and on 20 September extended it to anyone suspected of anti-state organising. The real culprit was Szilveszter Matuska, who had also derailed trains in Germany and Austria; he was arrested in Vienna in October and confessed. Martial law nevertheless stayed in force. A widespread suspicion at the time, still held by some historians, was that defence minister Gömbös had organised the attack, but there is no concrete evidence, and Matuska’s earlier attacks abroad tell against it.',
+                sources: [S.bia, S.matuska],
+            },
+            {
+                ko: '1932년 7월 지하 공산당의 지도자 셜러이 임레와 퓌르시트 샨도르가 체포되었다. 셜러이는 1919년 내무 인민위원부 정치부에서 코르빈 오토의 대리를 지냈고, 망명지 모스크바에서 국제적색구원회 일을 하다 쿤 벨러의 제안으로 귀국해 불법 당 출판을 맡고 있었다. 퓌르시트는 1926년 입당해 1930년 당 지도부에 들어간 사무직 노동자였다. 두 사람은 비어토르바지 사건과 무관했지만 즉결재판 제도에 따라 재판에 넘겨졌고, 두 주 동안 고문을 받은 끝에 사형을 선고받았다. 헝가리 적색구원회의 구명 운동과 국제적 항의, 시인 요제프 어틸러가 쓴 항의 전단에도 둘은 1932년 7월 29일 교수형에 처해졌다(비어토르바지 사건 문헌에는 28일로도 적혀 있다). 셜러이는 교수대에서 쿤 벨러의 이름을 외쳤다. 크게 약해진 당은 1936년 코민테른에 의해 해산되었다.',
+                en: 'In July 1932 two leaders of the underground Communist Party, Imre Sallai and Sándor Fürst, were arrested. Sallai had been Ottó Korvin’s deputy in the political department of the people’s commissariat of the interior in 1919, had worked for International Red Aid in Moscow exile, and had been sent home on Béla Kun’s proposal to run the illegal party press. Fürst, a clerical worker, had joined the party in 1926 and entered its leadership in 1930. Neither had anything to do with Biatorbágy, but both were tried under the summary procedure and, after two weeks of torture, sentenced to death. Despite a campaign by the Hungarian Red Aid, international protests and a leaflet written by the poet Attila József, they were hanged on 29 July 1932 (the literature on Biatorbágy also gives the 28th). Sallai shouted Béla Kun’s name on the gallows. The party, badly weakened, was dissolved by the Comintern in 1936.',
+                sources: [S.sallai, S.furst, S.bia, S.hcp],
+            },
+        ],
+    },
+    {
+        heading: { ko: '대공황과 굄뵈시의 우경화 (1931–1936)', en: 'The Depression and Gömbös’s turn to the right (1931–1936)' },
+        paragraphs: [
+            {
+                ko: '1929년 시작된 대공황은 헝가리의 번영을 빠르게 무너뜨렸고, 빈의 크레디트안슈탈트 은행 파산이 타격을 키웠다. 1929~1931년의 경제 붕괴 속에 베틀렌이 물러났고, 호르티는 카로이 줄러 내각을 거쳐 1932년 세게드 시절의 동지 굄뵈시 줄러를 총리로 임명했다. 굄뵈시는 1919년 국민군 조직을 주도하고 준군사 단체 MOVE를 만들었으며, 「인종 보호자」를 자처하는 인종주의 단체를 세운 반유대주의자였다. 여전히 통일당을 장악하던 베틀렌은 의회와 내각을 통해 통치하고 토지개혁과 인종법을 추진하지 않는다는 조건을 걸었고, 내무장관 케레스테시피셰르 페렌츠와 농업장관 칼러이 미클로시 같은 측근을 입각시켜 굄뵈시를 견제했다. 굄뵈시는 취임하며 반유대 발언을 공개적으로 철회했고, 산토 벨러가 이끈 유대인 지도부는 인종법을 만들지 않겠다는 약속을 받고 그를 지지했다. 굄뵈시는 이 약속을 지켰다.',
+                en: 'The Great Depression, which began in 1929, swiftly wrecked Hungary’s prosperity, and the failure of the Creditanstalt bank in Vienna deepened the blow. Amid the economic collapse of 1929–1931 Bethlen resigned, and after the cabinet of Gyula Károlyi Horthy appointed his old ally from Szeged, Gyula Gömbös, prime minister in 1932. Gömbös had led the organisation of the National Army in 1919, founded the paramilitary MOVE and set up an avowedly racist group calling itself “the race protectors”. Bethlen, who still controlled the Unity Party, made him promise to govern through parliament and the cabinet, to enact no land reform and to pass no racist laws, and hemmed him in with his own allies, such as Ferenc Keresztes-Fischer at the interior and Miklós Kállay at agriculture. On taking office Gömbös publicly recanted his antisemitism, and the Jewish leadership under Béla Szántó backed him in return for a promise of no racial legislation — a promise he kept.',
+                sources: [S.kingdom, S.bethlen, S.gombos],
+            },
+            {
+                ko: '굄뵈시는 대외적으로 트리아농 수정에 대한 지지와 불황 극복을 위한 무역을 구했다. 1933년 그가 이탈리아로 날아가 만난 무솔리니는 트리아농 조약 수정을 지지하고, 헝가리가 옛 영토를 되찾으려 유고슬라비아·루마니아와 전쟁을 하면 돕겠다고 약속했다. 히틀러가 독일 총리가 되자 굄뵈시는 그를 찾아간 첫 외국 정부 수반이 되었고, 곧 독일과 큰 무역 협정을 맺었다. 1934년 3월 17일 그는 무솔리니, 오스트리아 총리 엥겔베르트 돌푸스와 로마 의정서에 서명했다. 세 의정서는 정기 협의, 상호 무역 장벽 철폐, 밀 가격 하락에 따른 헝가리 지원, 아드리아해 항구 경유 수송 편의를 약속했고, 독일의 오스트리아 팽창에 맞서는 성격도 띠었다. 반면 히틀러는 체코슬로바키아에 대한 헝가리의 요구만 지지하고 루마니아·유고슬라비아에 대한 요구는 지지하지 않겠다고 했으며, 굄뵈시가 지나치게 친유대적이라고 여겼다.',
+                en: 'Abroad Gömbös sought backing for revising Trianon and trade to pull the economy out of the Depression. In 1933 he flew to Italy, where Mussolini approved revision of the Treaty of Trianon and promised Italian help if Hungary went to war with Yugoslavia and Romania to regain its former lands. When Hitler became German chancellor, Gömbös was the first foreign head of government to visit him, and soon signed a major trade agreement with Germany. On 17 March 1934 he signed the Rome Protocols with Mussolini and the Austrian chancellor Engelbert Dollfuss. The three protocols provided for regular consultation, the removal of trade barriers among the signatories, help for Hungary against the fall in the price of wheat and easier transit through the Adriatic ports, and were also aimed against German expansion into Austria. Hitler, by contrast, would back Hungary’s claims only against Czechoslovakia, not against Romania or Yugoslavia, and considered Gömbös far too pro-Jewish.',
+                sources: [S.gombos, S.rome],
+            },
+            {
+                ko: '국내에서 굄뵈시는 통일당을 민족통일당으로 바꾸고 「민족 사회생활의 완전한 통제」를 목표로 내걸었으며, 1935년 총선에서는 「계급 차별 없는 단일한 헝가리 민족」을 선전했다. 그는 히틀러에게 헝가리가 곧 나치당식 일당 국가가 될 것이라고 장담했고, 4년 동안 장교단에서 보수파를 몰아내고 자기 생각에 가까운 급진파를 승진시켜 1936년에는 군이 급진파의 거점이 되었다. 독일과의 무역 보장으로 독일은 헝가리의 주된 교역 상대가 되었고, 헝가리 경제는 독일에 의존하게 되었다. 굄뵈시는 가장 극단적인 목표를 이루지 못한 채 1936년 10월 6일 뮌헨에서 병으로 죽었다.',
+                en: 'At home Gömbös renamed the Unity Party the National Unity Party, declared its aim to be “total control of the nation’s social life”, and in the 1935 election promoted a “unitary Hungarian nation with no class distinctions”. He assured Hitler that Hungary would soon be a one-party state on the model of the Nazi party, and over four years purged conservatives from the officer corps and promoted radicals who shared his views, so that by 1936 the army was a stronghold of the radicals. Trade guarantees made Germany Hungary’s main trading partner, and the Hungarian economy became dependent on Germany’s. Gömbös died of illness in Munich on 6 October 1936 without realising his most extreme goals.',
+                sources: [S.unity, S.horthy, S.bethlen, S.kingdom, S.gombos],
+            },
+        ],
+    },
+    {
+        heading: { ko: '더라니 정부와 죄르 강령: 1938년의 문턱', en: 'Darányi and the Győr programme: the threshold of 1938' },
+        paragraphs: [
+            {
+                ko: '1936년 10월 12일 총리가 된 더라니 칼만은 베틀렌 노선의 헌정 질서 회복을 내세우면서도 굄뵈시의 유산과 크게 갈라서려 하지는 않았다. 그는 1937년 4월 화살십자당의 전신인 국민의지당을 금지하고 지도자 살러시 페렌츠를 징역 3년에 처했지만, 진보적 지식인 운동인 「3월 전선」도 경찰의 감시와 기소를 받았다. 섭정의 권한은 다시 넓어져, 호르티는 법률 시행을 1년까지 미룰 수 있게 되었고 의회에 책임지지 않게 되었다. 1938년 선거법은 마침내 비밀투표를 되살렸지만, 투표 연령을 남성 26~30세, 여성 30세로 높여 유권자를 25만~30만 명 줄였다.',
+                en: 'Kálmán Darányi, who became prime minister on 12 October 1936, promised a return to Bethlen’s constitutional course while avoiding a sharp break with Gömbös’s legacy. In April 1937 he banned the Party of National Will, forerunner of the Arrow Cross, and its leader Ferenc Szálasi was sentenced to three years in prison; but the March Front, a progressive intellectual movement, was also subjected to police harassment and prosecution. The regent’s powers were widened again: Horthy could now delay the implementation of laws for up to a year and was no longer accountable to parliament. The franchise law of 1938 at last restored the secret ballot, but by raising the voting age to 26–30 for men and 30 for women it cut the electorate by 250,000–300,000.',
+                sources: [S.daranyi],
+            },
+            {
+                ko: '1938년 3월 5일 더라니는 죄르에서 열린 민족통일당 대회에서 10억 펭괴 규모의 군비 확장 계획인 죄르 강령을 발표했다. 헝가리 국립은행 총재 임레디 벨러가 마련한 이 계획은 6억 펭괴의 일회성 재산세와 4억 펭괴의 차입으로 재원을 마련해 6억은 무장에, 4억은 농업·교통·광업 등 간접 국방 부문에 쓰도록 했다. 계획은 1938년 법률 제20호가 되었고, 트리아농 조약의 군비 제한은 사실상 무너졌다. 같은 3월 오스트리아 병합으로 헝가리가 나치 독일과 국경을 맞대게 되자 더라니는 친독 인사를 입각시키고 극우 세력과 협상해 화살십자당원의 출마를 허용했다. 보수파와 호르티의 불만 속에 그는 5월 11일 사임했다. 그의 정부가 의회에 낸 제1차 유대인법은 후임 임레디 정부 아래 1938년 5월 통과되어 일부 경제 부문에서 유대인의 비율을 20%로 묶었다. 이 법들과 헝가리가 추축국 쪽으로 기울어 가는 과정은 다음 사건에서 다룬다.',
+                en: 'On 5 March 1938, at a rally of the National Unity Party in Győr, Darányi announced the Győr programme, a rearmament plan of one billion pengő. Drawn up by Béla Imrédy, president of the Hungarian National Bank, it was to be financed by a one-off capital levy of 600 million pengő and loans of 400 million; 600 million would go to armaments and 400 million to indirect defence in agriculture, transport and mining. The plan became Act XX of 1938, and the arms limits of the Treaty of Trianon were in effect abandoned. When the Anschluss that same March made Hungary a neighbour of Nazi Germany, Darányi brought pro-German politicians into his cabinet and negotiated with the extreme right, agreeing to let Arrow Cross members stand for parliament. Amid the distrust of conservatives and Horthy’s displeasure he resigned on 11 May. The First Jewish Law his government had introduced passed under his successor Imrédy in May 1938, capping the share of Jews in certain sectors of the economy at 20 per cent. Those laws, and Hungary’s drift toward the Axis, belong to the next event.',
+                sources: [S.gyor, S.daranyi, S.ushmm],
+            },
+        ],
+    },
+];
+
+const timeline = [
+    ['1919.05.30', '세게드 반혁명 정부', 'Counter-revolutionary government in Szeged', '프랑스군 점령하의 세게드에서 반공 정치인들이 정부를 세웠다.', 'Anti-Communist politicians formed a government in French-occupied Szeged.', ['hungary', 'france'], P(46.253, 20.141, '세게드', 'Szeged')],
+    ['1919.06.06', '국민군 창설', 'National Army founded', '호르티가 세게드에서 포고로 국민군을 창설했다.', 'Horthy founded the National Army by decree in Szeged.', 'hungary'],
+    ['1919.08.06', '루마니아군 부다페스트 입성', 'Romanian troops enter Budapest', '평의회 공화국 붕괴 닷새 뒤 루마니아군이 수도에 들어왔다.', 'Five days after the Soviet Republic fell, Romanian troops entered the capital.', ['hungary', 'romania']],
+    ['1919.11.16', '호르티의 부다페스트 입성', 'Horthy enters Budapest', '루마니아군이 물러난 뒤 국민군이 수도에 들어갔다.', 'The National Army entered the capital after the Romanians withdrew.', 'hungary', P(47.4979, 19.0402, '부다페스트', 'Budapest')],
+    ['1919.11.19', '오르고바니 학살', 'Orgovány killings', '헤이여시 부대원들이 36명을 오르고바니 숲으로 끌고 가 살해했다.', 'Héjjas’s men took 36 people to the forest of Orgovány and killed them.', 'hungary', P(46.75, 19.47, '오르고바니', 'Orgovány')],
+    ['1920.03.01', '호르티 섭정 선출', 'Horthy elected regent', '국민의회가 왕국을 복원하고 131 대 7로 호르티를 섭정으로 뽑았다.', 'The National Assembly restored the kingdom and elected Horthy regent by 131 votes to 7.', 'hungary'],
+    ['1920.06.04', '트리아농 조약 조인', 'Treaty of Trianon signed', '헝가리는 전쟁 전 영토의 28%, 인구의 36%만 남게 되었다.', 'Hungary was left with 28 per cent of its pre-war territory and 36 per cent of its population.', ['hungary', 'france', 'romania', 'czechoslovakia', 'yugoslavia', 'austria'], P(48.814, 2.11, '그랑 트리아농', 'Grand Trianon')],
+    ['1920.09', '누메루스 클라우수스법', 'Numerus clausus law', '대학 입학을 민족 인구 비율로 제한해 사실상 유대인 학생을 줄였다.', 'University admission was tied to national population shares, in effect cutting Jewish enrolment.', 'hungary'],
+    ['1921.04.14', '베틀렌 총리 취임', 'Bethlen becomes prime minister', '카를 왕의 첫 복귀 시도 뒤 텔레키의 후임이 되었다.', 'He succeeded Teleki after King Charles’s first return attempt.', 'hungary'],
+    ['1921.10.23', '부더외르시 전투', 'Battle of Budaörs', '정부군이 카를 왕의 두 번째 복귀 시도를 막았다.', 'Government troops stopped King Charles’s second attempt to return.', 'hungary', P(47.461, 18.958, '부더외르시', 'Budaörs')],
+    ['1921.11.06', '합스부르크가 폐위', 'Habsburgs dethroned', '의회가 합스부르크가의 왕위 계승권을 없앴다.', 'Parliament abolished the Habsburgs’ right to the throne.', ['hungary', 'czechoslovakia']],
+    ['1921.12.22', '베틀렌–페이에르 협정', 'Bethlen–Peyer Pact', '사회민주당이 활동 제한을 받아들이는 대가로 합법 활동을 보장받았다.', 'The Social Democrats accepted limits on their activity in return for legal status.', 'hungary'],
+    ['1922.09.18', '국제연맹 가입', 'Hungary joins the League of Nations', '차관을 얻기 위한 첫 조건이었다.', 'It was the first condition for a loan.', 'hungary'],
+    ['1924.07', '국제연맹 차관', 'League of Nations loan', '금 크로네 2억 5천만 규모의 차관이 런던에서 발행되었다.', 'A loan of 250 million gold crowns was floated in London.', ['hungary', 'uk']],
+    ['1926.08', '라코시 첫 재판', 'First Rákosi trial', '라코시가 징역 8년 6개월을 선고받았다.', 'Rákosi was sentenced to eight and a half years.', 'hungary'],
+    ['1927', '이탈리아와 우호조약', 'Treaty of friendship with Italy', '베틀렌이 무솔리니의 이탈리아와 조약을 맺었다.', 'Bethlen concluded a treaty with Mussolini’s Italy.', ['hungary', 'italy']],
+    ['1931.09.13', '비어토르바지 고가교 폭파', 'Biatorbágy viaduct bombing', '22명이 죽었고, 정부는 공산당을 지목해 즉결재판 제도를 선포했다.', 'Twenty-two people died; the government blamed the Communists and proclaimed summary jurisdiction.', 'hungary', P(47.47, 18.82, '비어토르바지', 'Biatorbágy')],
+    ['1932.07.29', '셜러이·퓌르시트 처형', 'Sallai and Fürst hanged', '두 공산당 지도자가 즉결재판 끝에 교수형에 처해졌다.', 'The two Communist leaders were hanged after a summary trial.', 'hungary'],
+    ['1933', '굄뵈시의 히틀러 방문', 'Gömbös visits Hitler', '히틀러를 찾아간 첫 외국 정부 수반이 되었다.', 'He was the first foreign head of government to visit Hitler.', ['hungary', 'germany']],
+    ['1934.03.17', '로마 의정서', 'Rome Protocols', '이탈리아·오스트리아·헝가리가 협의와 경제 협력을 약속했다.', 'Italy, Austria and Hungary pledged consultation and economic co-operation.', ['hungary', 'italy', 'austria'], P(41.9028, 12.4964, '로마', 'Rome')],
+    ['1935.02', '라코시 종신형', 'Rákosi sentenced to life', '두 번째 재판에서 평의회 공화국 시기의 행위로 종신형을 받았다.', 'The second trial sentenced him to life for his role in the Soviet Republic.', 'hungary'],
+    ['1938.03.05', '죄르 강령', 'Győr programme', '더라니가 10억 펭괴 규모의 군비 확장 계획을 발표했다.', 'Darányi announced a rearmament plan of one billion pengő.', 'hungary', P(47.687, 17.634, '죄르', 'Győr')],
+    ['1940.11.06', '라코시의 소련 도착', 'Rákosi arrives in the Soviet Union', '1849년 혁명군 깃발과 맞바꾸는 형식으로 풀려나 모스크바에 도착했다.', 'Released in exchange for the banners of 1849, he arrived in Moscow.', ['hungary', 'soviet']],
+];
+
+const people = [
+    ['miklos-horthy', 'leader', '국민군 총사령관 · 섭정', 'National Army commander, regent', '국민군을 이끌고 장교 부대의 테러를 묵인했으며, 1920년 섭정이 되어 역대 총리를 임면했다.', 'Led the National Army, tolerated the officer detachments’ terror, and as regent from 1920 appointed and dismissed prime ministers.'],
+    ['istvan-bethlen', 'leader', '총리 (1921–1931)', 'Prime minister (1921–1931)', '통일당과 제한 선거, 사회민주당과의 협정, 국제연맹 차관으로 체제를 안정시켰다.', 'Consolidated the regime through the Unity Party, a restricted franchise, the pact with the Social Democrats and the League loan.'],
+    ['pal-teleki', 'leader', '총리 (1920–1921)', 'Prime minister (1920–1921)', '「붉은 지도」를 만들고 누메루스 클라우수스법이 통과된 시기의 정부를 이끌었으며 카를 왕의 첫 복귀 시도 뒤 물러났다.', 'Drew the Red map, headed the government when the numerus clausus passed, and stepped down after King Charles’s first return attempt.'],
+    ['gyula-gombos', 'leader', '국민군 조직자 · 총리 (1932–1936)', 'National Army organiser, prime minister (1932–1936)', '국민군 조직을 주도했고 총리로서 이탈리아·독일과 손잡고 로마 의정서에 서명했다.', 'Led the organisation of the National Army and as prime minister aligned Hungary with Italy and Germany and signed the Rome Protocols.'],
+    ['pal-pronay', 'executor', '장교 부대 지휘관', 'Officer detachment commander', '가장 잔혹한 장교 부대를 이끌었고 1921년 카를 왕의 두 번째 복귀 시도에 가담했다.', 'Commanded the most brutal officer detachment and joined King Charles’s second return attempt in 1921.'],
+    ['albert-apponyi', 'participant', '강화 대표단장', 'Head of the peace delegation', '1920년 1월 파리에서 헝가리 대표단을 이끌었고 섭정 선거에서 호르티에게 졌다.', 'Led the Hungarian delegation in Paris in January 1920 and lost the regency vote to Horthy.'],
+    ['karoly-peyer', 'participant', '사회민주당·노동조합 지도자', 'Social Democratic and trade-union leader', '1920년 테러를 피해 망명했다가 돌아와 1921년 베틀렌 정부와 협정을 맺었다.', 'Fled the terror in 1920, returned and concluded the 1921 pact with the Bethlen government.'],
+    ['benito-mussolini', 'participant', '이탈리아 총리', 'Italian prime minister', '1927년 우호조약과 1934년 로마 의정서로 헝가리의 국경 수정 요구를 후원했다.', 'Backed Hungary’s claims for revision through the 1927 treaty of friendship and the 1934 Rome Protocols.'],
+    ['adolf-hitler', 'participant', '독일 총리', 'German chancellor', '굄뵈시의 방문을 받고 무역 협정을 맺었으나 체코슬로바키아에 대한 헝가리 요구만 지지했다.', 'Received Gömbös and concluded a trade agreement, but backed Hungarian claims only against Czechoslovakia.'],
+    ['edvard-benes', 'opponent', '체코슬로바키아 외무장관', 'Czechoslovak foreign minister', '소협상을 주도했고 1921년 합스부르크 폐위를 요구하는 최후통첩을 보냈다.', 'Led the Little Entente and in 1921 issued an ultimatum demanding the Habsburgs’ dethronement.'],
+    ['bela-kun', 'opponent', '망명 공산당 지도자', 'Exiled Communist leader', '빈과 모스크바에서 불법 공산당을 이끌었고 셜러이를 국내로 보내자고 제안했다.', 'Led the illegal Communist Party from Vienna and Moscow and proposed sending Sallai home.'],
+    ['ferenc-szalasi', 'opponent', '국민의지당 지도자', 'Leader of the Party of National Will', '극우 반대파로, 1937년 당이 금지되고 징역 3년을 선고받았다.', 'A far-right opponent, his party was banned in 1937 and he was sentenced to three years.'],
+    ['matyas-rakosi', 'target', '투옥된 공산당 지도자', 'Imprisoned Communist leader', '1926년과 1935년 재판으로 15년 넘게 갇혔다가 1940년 소련으로 넘겨졌다.', 'Imprisoned for over fifteen years after the trials of 1926 and 1935, he was handed over to the Soviet Union in 1940.'],
+    ['zoltan-vas', 'target', '투옥된 공산당원', 'Imprisoned Communist', '거듭 투옥되었다가 1940년 라코시와 함께 풀려나 소련으로 갔다.', 'Repeatedly imprisoned, he was released with Rákosi in 1940 and went to the Soviet Union.'],
+    ['imre-sallai', 'target', '처형된 공산당 지도자', 'Executed Communist leader', '비어토르바지 사건 뒤의 즉결재판 제도 아래 1932년 교수형에 처해졌다.', 'Hanged in 1932 under the summary jurisdiction proclaimed after Biatorbágy.'],
+    ['sandor-furst', 'target', '처형된 공산당 지도자', 'Executed Communist leader', '셜러이와 함께 사형을 선고받고 1932년 교수형에 처해졌다.', 'Sentenced to death with Sallai and hanged in 1932.'],
+];
+
+// ---------------------------------------------------------------- people
+
+const newPeople = [
+    person({
+        id: 'istvan-bethlen', given: ['이슈트반', 'István'], family: ['베틀렌', 'Bethlen'], nativeName: 'Bethlen István', years: '1874–1946',
+        epithet: ['1921~1931년 총리로서 제한 선거와 국제연맹 차관으로 호르티 체제를 안정시킨 트란실바니아 귀족',
+            'Transylvanian aristocrat who, as prime minister in 1921–1931, consolidated the Horthy regime with a restricted franchise and a League loan'],
+        bio: ['트란실바니아의 오랜 귀족 가문 출신으로 1901년 자유주의자로 의회에 들어갔다. 1919년 세게드의 반혁명 세력에 합류했고, 1921년 4월 카를 왕의 첫 복귀 시도 뒤 총리가 되었다. 통일당을 세우고 1922년 선거법으로 농촌에 공개투표를 되살려 집권당의 승리를 굳혔으며, 사회민주당과 협정을 맺고 국제연맹 가입과 차관으로 경제를 안정시켰다. 1931년 대공황 속에 물러났고, 1941년 소련과의 전쟁에 반대했다. 1945년 소련군에 체포되어 1946년 모스크바의 감옥에서 죽었다.',
+            'Scion of an old Transylvanian noble family, he entered parliament as a liberal in 1901. He joined the counter-revolution in Szeged in 1919 and became prime minister in April 1921, after King Charles’s first return attempt. He founded the Unity Party, secured its victories by restoring the open ballot in the countryside with the Franchise Act of 1922, concluded a pact with the Social Democrats, and stabilised the economy through League of Nations membership and a loan. He resigned in the Depression in 1931 and in 1941 opposed war with the Soviet Union. Arrested by the Soviets in 1945, he died in a Moscow prison in 1946.'],
+        fate: ['natural', '옥사', 'Died in prison'],
+        aliases: { ko: [], en: ['Bethlen István', 'Count István Bethlen'] },
+        sources: [S.bethlen, S.paktum],
+        facts: {
+            years: { claim: 'Born 1874, died 1946', locator: 'Lead', excerpt: 'Count István Bethlen de Bethlen (8 October 1874 – 5 October 1946) was a Hungarian aristocrat and statesman and served as prime minister from 1921 to 1931.' },
+            citizenship: { claim: 'Hungarian statesman', locator: 'Lead', excerpt: 'was a Hungarian aristocrat and statesman and served as prime minister from 1921 to 1931' },
+            nationalOrigin: { claim: 'Hungarian noble family from Transylvania', locator: 'Early life', excerpt: 'The scion of an old Bethlen de Bethlen noble family from Transylvania' },
+            bio: [
+                { claim: 'Elected to parliament as a liberal in 1901', locator: 'Early career', excerpt: 'Bethlen was elected to the Hungarian Parliament as a liberal in 1901.' },
+                { claim: 'Founded the Unity Party and restored the open ballot', locator: 'Prime Minister', excerpt: 'Furthermore, the Franchise Act replaced the secret ballot with the open ballot in rural areas' },
+                { claim: 'Joined the League of Nations', locator: 'Prime Minister', excerpt: 'On 18 September 1922, Bethlen had Hungary join the League of Nations' },
+                { claim: 'Arrested by the Soviets and died in Moscow prison', locator: 'Later life', excerpt: 'Soon afterward, Bethlen was taken to Moscow, where he died in prison on 5 October 1946.' },
+            ],
+        },
+        activities: [
+            { functionId: 'government', affiliationId: 'state-hungary', startYear: 1921, endYear: 1931, primary: true, claim: 'Prime minister of Hungary 1921–1931', locator: 'Lead', excerpt: 'served as prime minister from 1921 to 1931' },
+            { functionId: 'legislature', affiliationId: 'state-hungary', startYear: 1901, endYear: 1944, claim: 'Member of the Hungarian parliament', locator: 'Early career', excerpt: 'Bethlen was elected to the Hungarian Parliament as a liberal in 1901.' },
+        ],
+        career: [
+            ['1901', '자유주의자로 의회 진출', 'Enters parliament as a liberal'],
+            ['1919', '세게드 반혁명 세력 합류', 'Joins the Szeged counter-revolution'],
+            ['1921–1931', '총리', 'Prime minister'],
+            ['1921', '베틀렌–페이에르 협정', 'Bethlen–Peyer Pact'],
+            ['1922', '통일당 창당 · 선거법 개정', 'Founds the Unity Party; Franchise Act'],
+            ['1924', '국제연맹 차관', 'League of Nations loan'],
+            ['1945–1946', '소련에 체포, 모스크바에서 옥사', 'Arrested by the Soviets; dies in a Moscow prison'],
+        ],
+    }),
+    person({
+        id: 'gyula-gombos', given: ['줄러', 'Gyula'], family: ['굄뵈시', 'Gömbös'], nativeName: 'Gömbös Gyula', years: '1886–1936',
+        epithet: ['국민군 조직을 주도하고 1932~1936년 총리로서 헝가리를 이탈리아·독일 쪽으로 이끈 우익 급진파 장교',
+            'Right-radical officer who organised the Szeged National Army and as prime minister in 1932–1936 steered Hungary towards Italy and Germany'],
+        bio: ['톨너주 무르거에서 마을 교사의 아들로 태어나 오스트리아-헝가리군 장교로 제1차 세계대전에 나갔다. 1919년 세게드에서 준군사 단체 MOVE를 만들고 호르티의 국민군 조직을 주도했으며, 1921년 카를 왕의 복귀를 무력으로 막는 데 앞장섰다. 1929년 베틀렌 정부의 국방장관이 되었고 1932년 총리가 되었다. 무솔리니와 손잡고 1934년 로마 의정서에 서명했으며, 히틀러를 찾아간 첫 외국 정부 수반으로서 독일과 무역 협정을 맺었다. 1936년 뮌헨에서 병으로 죽었다.',
+            'Born in Murga, Tolna County, the son of the village schoolmaster, he served as an Austro-Hungarian officer in the First World War. In Szeged in 1919 he founded the paramilitary MOVE and played a leading role in organising Horthy’s National Army, and in 1921 he led the armed opposition to King Charles’s return. He became defence minister in Bethlen’s government in 1929 and prime minister in 1932. He aligned with Mussolini, signing the Rome Protocols in 1934, and as the first foreign head of government to visit Hitler concluded a trade agreement with Germany. He died of illness in Munich in 1936.'],
+        fate: ['natural', '암', 'Cancer'],
+        aliases: { ko: [], en: ['Gömbös Gyula', 'Gyula Gombos'] },
+        sources: [S.gombos, S.rome],
+        facts: {
+            years: { claim: 'Born 1886, died 1936', locator: 'Lead', excerpt: 'Gyula Gömbös de Jákfa (26 December 1886 – 6 October 1936) was a Hungarian military officer and politician' },
+            citizenship: { claim: 'Hungarian officer and politician', locator: 'Lead', excerpt: 'was a Hungarian military officer and politician who served as the Prime Minister of Hungary from 1932 until his death in 1936' },
+            nationalOrigin: { claim: 'Born in the Kingdom of Hungary', locator: 'Background', excerpt: 'Gömbös was born in Murga, Tolna County, Kingdom of Hungary' },
+            bio: [
+                { claim: 'Founded MOVE in Szeged', locator: 'Background', excerpt: 'Gömbös formed his own paramilitary group, the Hungarian National Defence Association (Magyar Országos Véderő Egylet, or MOVE).' },
+                { claim: 'Defence minister in 1929', locator: 'Rightward', excerpt: 'In 1929, Gömbös was made a major general and was appointed Minister of Defense in the Bethlen government by Horthy.' },
+                { claim: 'First foreign head of government to visit Hitler', locator: 'Premiership', excerpt: 'Gömbös was the first foreign head of government to visit the Nazi leader' },
+                { claim: 'Died in Munich in 1936', locator: 'Death', excerpt: 'died of testicular cancer in Munich on 6 October 1936' },
+            ],
+        },
+        activities: [
+            { functionId: 'government', affiliationId: 'state-hungary', startYear: 1932, endYear: 1936, primary: true, claim: 'Prime minister of Hungary 1932–1936', locator: 'Lead', excerpt: 'served as the Prime Minister of Hungary from 1932 until his death in 1936' },
+            { functionId: 'military', affiliationId: 'state-hungary', startYear: 1919, endYear: 1932, claim: 'Organised Horthy’s National Army; defence minister', locator: 'Background', excerpt: 'played a leading role in organizing Horthy’s army' },
+        ],
+        career: [
+            ['1919', 'MOVE 결성, 국민군 조직', 'Founds MOVE; organises the National Army'],
+            ['1921', '카를 왕 복귀 저지', 'Opposes King Charles’s return by force'],
+            ['1929', '국방장관', 'Defence minister'],
+            ['1932–1936', '총리', 'Prime minister'],
+            ['1934', '로마 의정서 서명', 'Signs the Rome Protocols'],
+        ],
+    }),
+    person({
+        id: 'pal-teleki', given: ['팔', 'Pál'], family: ['텔레키', 'Teleki'], nativeName: 'Teleki Pál', years: '1879–1941',
+        epithet: ['「붉은 지도」를 만든 지리학자로 두 차례 총리를 지내고 1941년 독일군 통과에 항의하듯 자살한 정치인',
+            'Geographer of the “Red map” who was twice prime minister and killed himself in 1941 as German troops crossed Hungary'],
+        bio: ['부다페스트에서 태어난 트란실바니아 귀족 가문 출신의 지리학자로, 대학 교수이자 학술원 회원, 헝가리 스카우트 연맹 수장이었다. 1918~1919년 1910년 인구조사에 바탕한 민족 분포도 「붉은 지도」를 만들었다. 1920년 외무장관으로 트리아농 조약 조인을 지켜보았고, 7월 총리가 되어 누메루스 클라우수스법 시기의 정부를 이끌다 1921년 4월 물러났다. 1939년 다시 총리가 되어 제2차 유대인법의 전문을 쓰고 제3차 유대인법을 준비했다. 1941년 4월 3일 독일군의 유고슬라비아 침공 통과가 확실해지자 자살했다.',
+            'Born in Budapest to an aristocratic family from Transylvania, he was a geographer, university professor, member of the Academy of Sciences and chief scout of the Hungarian Scout Association. In 1918–19 he compiled the “Red map” of ethnic distribution based on the 1910 census. As foreign minister he attended the signing of the Treaty of Trianon in 1920, became prime minister in July and led the government of the numerus clausus period until April 1921. Prime minister again from 1939, he wrote the preamble to the Second Anti-Jewish Law and prepared the Third. He killed himself on 3 April 1941 when German troops were about to cross Hungary to invade Yugoslavia.'],
+        fate: ['suicide', '자살', 'Suicide'],
+        aliases: { ko: [], en: ['Teleki Pál', 'Count Pál Teleki'] },
+        sources: [S.teleki, S.huNc],
+        facts: {
+            years: { claim: 'Born 1879, died 1941', locator: 'Lead', excerpt: 'Count Pál János Ede Teleki de Szék (1 November 1879 – 3 April 1941) was a Hungarian politician' },
+            citizenship: { claim: 'Hungarian politician', locator: 'Lead', excerpt: 'was a Hungarian politician who served as Prime Minister of the Kingdom of Hungary from 1920 to 1921 and from 1939 to 1941' },
+            nationalOrigin: { claim: 'Hungarian aristocratic family from Transylvania', locator: 'Lead', excerpt: 'He descended from an aristocratic family from Transylvania.' },
+            bio: [
+                { claim: 'Geographer, professor, chief scout', locator: 'Lead', excerpt: 'He was also an expert in geography, a university professor, a member of the Hungarian Academy of Sciences, and chief scout of the Hungarian Scout Association.' },
+                { claim: 'Compiled the Red map', locator: 'Early life', excerpt: 'Based on the density of population according to the 1910 census, the so-called Red map was created for the peace talk in Treaty of Trianon.' },
+                { claim: 'Anti-Jewish laws', locator: 'Legacy', excerpt: 'Teleki wrote the preamble to the Second Anti-Jewish Law (1939) and prepared the Third Anti-Jewish Law in 1940.' },
+                { claim: 'Suicide in April 1941', locator: 'Germany enters Hungary, Teleki commits suicide', excerpt: 'Teleki committed suicide with a pistol during the night of 3 April 1941' },
+            ],
+        },
+        activities: [
+            { functionId: 'government', affiliationId: 'state-hungary', startYear: 1920, endYear: 1941, primary: true, claim: 'Prime minister 1920–1921 and 1939–1941', locator: 'Lead', excerpt: 'served as Prime Minister of the Kingdom of Hungary from 1920 to 1921 and from 1939 to 1941' },
+        ],
+        career: [
+            ['1918–1919', '「붉은 지도」 작성', 'Compiles the “Red map”'],
+            ['1920', '외무장관, 트리아농 조약 조인', 'Foreign minister at the signing of Trianon'],
+            ['1920–1921', '총리', 'Prime minister'],
+            ['1938', '교육장관', 'Minister of education'],
+            ['1939–1941', '총리', 'Prime minister'],
+            ['1941', '자살', 'Suicide'],
+        ],
+    }),
+    person({
+        id: 'pal-pronay', given: ['팔', 'Pál'], family: ['프로너이', 'Prónay'], nativeName: 'Prónay Pál', years: '1874–1947/1948',
+        epithet: ['1919~1921년 헝가리 백색테러에서 가장 잔혹한 장교 부대를 이끈 반혁명 준군사 지휘관',
+            'Counter-revolutionary paramilitary commander who led the most brutal officer detachment of the Hungarian White Terror of 1919–1921'],
+        bio: ['노그라드주 롬하니의 오랜 귀족 가문에서 태어난 직업 장교로, 1919년 세게드에서 호르티의 경호대를 맡고 첫 장교 부대를 만들었다. 그의 부대는 공산당원·사회민주당원·농민·유대인을 고문하고 살해해 헝가리 백색테러에서 가장 잔혹한 부대로 꼽힌다. 1921년 갈취 혐의로 유죄 판결을 받아 지휘권을 잃었고 카를 왕의 두 번째 복귀 시도에 가담했으며, 부대는 1922년 1월 해산되었다. 1930년대에 파시스트 대중운동을 꾸미다 실패했고, 1944년 10월 다시 유대인을 사냥하는 부대를 꾸렸다. 1945년 소련군에 붙잡혀 수용소에서 죽었다.',
+            'Born to an old noble family in Romhány, Nógrád County, the career officer took command of Horthy’s bodyguard in Szeged in 1919 and formed the first officer detachment. Torturing and killing Communists, Social Democrats, peasants and Jews, his unit is considered the most brutal of the Hungarian White Terror. Convicted of extortion in 1921, he lost his command and joined King Charles’s second return attempt; his battalion was dissolved in January 1922. He failed to build a fascist mass movement in the 1930s and in October 1944 again assembled a squad to hunt Jews. Captured by Soviet troops in 1945, he died in the Gulag.'],
+        fate: ['natural', '수용소에서 사망', 'Died in a labour camp'],
+        aliases: { ko: [], en: ['Prónay Pál', 'Pal Pronay'] },
+        sources: [S.pronay, S.horthy],
+        facts: {
+            years: { claim: 'Born 1874, died 1947 or 1948', locator: 'Lead', excerpt: 'Pál Prónay de Tótpróna et Blatnicza (November 2, 1874 – 1947 or 1948)' },
+            citizenship: { claim: 'Hungarian officer', locator: 'Lead', excerpt: 'was a Hungarian reactionary and paramilitary commander in the years following the First World War' },
+            nationalOrigin: { claim: 'Born to a Hungarian noble family in Nógrád County', locator: 'National Army', excerpt: 'Prónay was born in 1874 to an old and distinguished aristocratic family in the town of Romhány, Nógrád County, in northern Hungary.' },
+            bio: [
+                { claim: 'Most brutal commander of the White Terror', locator: 'Lead', excerpt: 'He is considered to have been the most brutal of the Hungarian National Army officers who led the White Terror' },
+                { claim: 'Battalion dissolved January 1922', locator: 'End of Prónay\'s career', excerpt: 'the government officially dissolved the unit in January 1922 and expelled its members from the army' },
+                { claim: 'Died in the Gulag', locator: 'End of Prónay\'s career', excerpt: 'Prónay was captured on 20 March 1945, held as a POW, sentenced by the Soviet authorities to twenty years forced labour on charges of sabotage and espionage, and died in the Gulag in either 1947 or 1948.' },
+            ],
+        },
+        activities: [
+            { functionId: 'military', affiliationId: 'state-hungary', startYear: 1919, endYear: 1922, primary: true, claim: 'Officer detachment commander in the National Army', locator: 'National Army', excerpt: 'In the summer of 1919, Prónay formed the first partisan militia of what would later be called the “White Guard.”' },
+        ],
+        career: [
+            ['1919', '호르티 경호대장, 첫 장교 부대 창설', 'Heads Horthy’s bodyguard; forms the first officer detachment'],
+            ['1919–1921', '헝가리 백색테러 부대 지휘', 'Leads a detachment in the Hungarian White Terror'],
+            ['1921', '갈취죄 유죄, 카를 왕 복귀 시도 가담', 'Convicted of extortion; joins King Charles’s return attempt'],
+            ['1922', '부대 해산', 'Battalion dissolved'],
+            ['1932', '선동죄로 징역 6개월', 'Six months for incitement'],
+            ['1945', '소련군에 체포', 'Captured by Soviet troops'],
+        ],
+    }),
+    person({
+        id: 'albert-apponyi', given: ['얼베르트', 'Albert'], family: ['어포니', 'Apponyi'], nativeName: 'Apponyi Albert', years: '1846–1933',
+        epithet: ['1920년 파리 강화회의에서 헝가리 대표단을 이끌고 국제연맹에서 트리아농 국경 수정을 호소한 귀족 정치인',
+            'Aristocratic statesman who led Hungary’s delegation to the Paris peace talks in 1920 and pleaded for revising Trianon at the League'],
+        bio: ['빈에서 태어난 백작으로, 1877년 의회에 들어가 반세기 동안 활동한 웅변가였다. 1906~1910년 교육장관으로 비헝가리계 학교에 헝가리어 교육을 강제한 1907년의 「어포니법」을 만들었다. 1920년 1월 파리 강화회의에서 헝가리 대표단을 이끌어 1월 16일 연설했으나 조건은 바뀌지 않았고, 3월 섭정 선거에서 호르티에게 졌다. 이후 합스부르크 정통주의 야당 의원이자 국제연맹 대표로 트리아농 국경의 부당함을 호소했다. 1933년 군축회의 참석차 머물던 제네바에서 죽었다.',
+            'A count born in Vienna, he entered parliament in 1877 and was a leading orator for half a century. As education minister in 1906–1910 he drafted the Apponyi laws of 1907, which imposed Hungarian-language teaching on non-Hungarian schools. He led the Hungarian delegation at the Paris peace talks in January 1920 and spoke on 16 January, without changing the terms, and in March lost the regency vote to Horthy. Thereafter, as a legitimist opposition deputy and Hungary’s representative at the League of Nations, he denounced the injustice of the Trianon borders. He died in Geneva in 1933, where he had come for the Disarmament Conference.'],
+        fate: ['natural', '자연사', 'Natural causes'],
+        aliases: { ko: [], en: ['Apponyi Albert', 'Count Albert Apponyi'] },
+        sources: [S.apponyi, S.horthy],
+        facts: {
+            years: { claim: 'Born 1846, died 1933', locator: 'Lead', excerpt: '29 May 1846 – 7 February 1933' },
+            citizenship: { claim: 'Hungarian politician', locator: 'Lead', excerpt: 'was a Hungarian aristocrat and politician' },
+            nationalOrigin: { claim: 'Hungarian noble family', locator: 'Early life', excerpt: 'He belonged to an ancient noble family dating back to the 13th century.' },
+            bio: [
+                { claim: 'Apponyi laws of 1907', locator: 'Minister of education', excerpt: 'As the minister of education of the conservative-led government from 1906 to 1910 he drafted the laws passed in 1907, known as Apponyi laws or Lex Apponyi, in which the process of Magyarization culminated.' },
+                { claim: 'Speech of 16 January 1920', locator: 'Paris Peace Conference', excerpt: 'Apponyi\'s mission culminated in a speech to the negotiators at the Quai d\'Orsay on 16 January 1920' },
+                { claim: 'Legitimist and League representative', locator: 'Later career', excerpt: 'as an opposition member of Parliament, legitimist advocate of the Habsburgs as Kings of Hungary, and regular representative at the League of Nations' },
+                { claim: 'Died in Geneva', locator: 'Death', excerpt: 'Albert Apponyi died on 7 February 1933 in Geneva, Switzerland' },
+            ],
+        },
+        activities: [
+            { functionId: 'diplomacy', affiliationId: 'state-hungary', startYear: 1920, endYear: 1933, primary: true, claim: 'Head of the peace delegation and representative at the League of Nations', locator: 'Later career', excerpt: 'After leading the Hungarian delegation at the Paris Peace Conference, he remained active in politics and diplomacy' },
+            { functionId: 'education', affiliationId: 'state-hungary', startYear: 1906, endYear: 1910, claim: 'Minister of education 1906–1910', locator: 'Minister of education', excerpt: 'As the minister of education of the conservative-led government from 1906 to 1910' },
+            { functionId: 'legislature', affiliationId: 'state-hungary', startYear: 1877, endYear: 1933, claim: 'Member of parliament from 1877', locator: 'Political career', excerpt: 'Only in 1877 was he elected' },
+        ],
+        career: [
+            ['1877', '의회 진출', 'Enters parliament'],
+            ['1906–1910', '교육장관, 1907년 어포니법', 'Education minister; Apponyi laws of 1907'],
+            ['1920', '파리 강화 대표단장', 'Heads the peace delegation in Paris'],
+            ['1920', '섭정 선거에서 호르티에게 패배', 'Loses the regency vote to Horthy'],
+            ['1923–1933', '국제연맹 대표', 'Representative at the League of Nations'],
+        ],
+    }),
+    person({
+        id: 'imre-sallai', given: ['임레', 'Imre'], family: ['셜러이', 'Sallai'], nativeName: 'Sallai Imre', years: '1897–1932',
+        epithet: ['1932년 비어토르바지 폭파 사건 뒤의 즉결재판 제도 아래 처형된 헝가리 공산당 지도자',
+            'Hungarian Communist leader hanged in 1932 under the summary jurisdiction proclaimed after the Biatorbágy bombing'],
+        bio: ['에르되퓔레에서 태어났고 1916년까지 홀렌데르라는 성을 썼다. 금융기관 사무원으로 일하며 제1차 세계대전 중 코르빈 오토와 반군국주의 운동을 조직하다 1918년 체포되었다. 1919년 평의회 공화국에서 내무 인민위원부 정치부의 코르빈 대리를 지냈다. 공화국이 무너지자 빈을 거쳐 모스크바로 망명해 국제적색구원회 일을 했고, 쿤 벨러의 제안으로 귀국해 불법 당 출판을 맡았다. 1932년 7월 체포되어 비어토르바지 폭파와 무관함에도 사형을 선고받고 7월 29일 퓌르시트 샨도르와 함께 교수형에 처해졌다.',
+            'Born in Erdőfüle, he bore the surname Hollender until 1916. A bank clerk, he organised an anti-militarist movement with Ottó Korvin during the First World War and was arrested in 1918. In the 1919 Soviet Republic he was Korvin’s deputy in the political department of the people’s commissariat of the interior. After its fall he fled via Vienna to Moscow and worked for International Red Aid, and was sent home on Béla Kun’s proposal to run the illegal party press. Arrested in July 1932, he was sentenced to death although he had no part in the Biatorbágy bombing, and was hanged with Sándor Fürst on 29 July.'],
+        fate: ['executed', '처형', 'Executed'],
+        aliases: { ko: ['홀렌데르 임레 (본명)'], en: ['Imre Hollender (birth name)', 'Imre Sallay'] },
+        sources: [S.sallai, S.bia],
+        facts: {
+            years: { claim: 'Born 1897, died 1932', locator: 'Lead', excerpt: '(Erdőfüle, 1897. december 17. – Budapest, 1932. július 29.)' },
+            citizenship: { claim: 'Hungarian communist politician', locator: 'Lead', excerpt: 'magántisztviselő, mozgalmi vezető, kommunista pártmunkás és politikus' },
+            nationalOrigin: { claim: 'Born in Erdőfüle', locator: 'Élete', excerpt: 'Erdőfülén született.' },
+            bio: [
+                { claim: 'Birth name Hollender', locator: 'Lead', excerpt: 'Sallai Imre, tévesen néhol Sallay, 1916-ig Hollender' },
+                { claim: 'Korvin’s deputy in 1919', locator: 'Élete', excerpt: 'A Magyarországi Tanácsköztársaság idején a Belügyi Népbiztosság Politikai Osztályán Korvin Ottó helyettese volt' },
+                { claim: 'Sent home on Kun’s proposal', locator: 'Élete', excerpt: 'Magyarországra küldése Moszkvából Kun Béla javaslatára történt, hogy az illegális kommunista sajtó feladatait dolgozza ki.' },
+                { claim: 'Executed 29 July 1932', locator: 'Kivégzése', excerpt: 'az ítéletet 1932. július 29-én végrehajtották' },
+            ],
+        },
+        activities: [
+            { functionId: 'organizing', affiliationId: 'party-hungarian-communist', startYear: 1918, endYear: 1932, primary: true, claim: 'Organiser of the illegal Communist press', locator: 'Élete', excerpt: 'Magyarországra küldése Moszkvából Kun Béla javaslatára történt, hogy az illegális kommunista sajtó feladatait dolgozza ki.' },
+            { functionId: 'security', affiliationId: 'state-hungary', startYear: 1919, endYear: 1919, claim: 'Deputy head of the political department in 1919', locator: 'Élete', excerpt: 'a Belügyi Népbiztosság Politikai Osztályán Korvin Ottó helyettese volt' },
+        ],
+        career: [
+            ['1918', '반군국주의 운동으로 체포', 'Arrested for anti-militarist agitation'],
+            ['1919', '내무 인민위원부 정치부 부부장', 'Deputy head of the interior commissariat’s political department'],
+            ['1919–1931', '빈·모스크바 망명, 국제적색구원회', 'Exile in Vienna and Moscow; International Red Aid'],
+            ['1931–1932', '귀국, 불법 당 출판 담당', 'Returns to run the illegal party press'],
+            ['1932', '체포, 즉결재판 후 처형', 'Arrested and hanged after a summary trial'],
+        ],
+    }),
+    person({
+        id: 'sandor-furst', given: ['샨도르', 'Sándor'], family: ['퓌르시트', 'Fürst'], nativeName: 'Fürst Sándor', years: '1903–1932',
+        origin: { code: 'hungary', label: { ko: '헝가리 (유대계)', en: 'Hungary (Jewish)' } },
+        epithet: ['셜러이 임레와 함께 비어토르바지 사건을 구실로 한 즉결재판에서 처형된 헝가리 공산당 지도부 일원',
+            'Member of the Hungarian Communist leadership hanged with Imre Sallai after a summary trial that used the Biatorbágy bombing as a pretext'],
+        bio: ['룸에서 유대교 신자 부모 사이에 태어났다. 부다페스트의 고무 공장 사무원으로 일하며 사무직 노동자 조합에 속했고, 1926년 헝가리 공산당에 들어갔다. 1928년부터 거듭 체포되었다가 증거 부족으로 풀려났지만 직장을 잃었고, 1930년 당 지도부 일원이 되어 다시 체포되었다. 1932년 비어토르바지 폭파 사건 뒤 선포된 즉결재판 제도 아래 셜러이 임레와 함께 사형을 선고받았다. 헝가리 적색구원회의 구명 운동과 요제프 어틸러 등의 항의에도 7월 29일 교수형에 처해졌다.',
+            'Born in Rum to Jewish parents, he worked as a clerk at a rubber factory in Budapest, belonged to the clerical workers’ union and joined the Communist Party in 1926. Repeatedly arrested from 1928 and released for lack of evidence, he lost his job; in 1930 he joined the party leadership and was soon arrested again. In 1932, under the summary jurisdiction proclaimed after the Biatorbágy bombing, he was sentenced to death together with Imre Sallai. Despite a campaign by the Hungarian Red Aid and protests by Attila József and others, he was hanged on 29 July.'],
+        fate: ['executed', '처형', 'Executed'],
+        aliases: { ko: [], en: ['Fürst Sándor', 'Sandor Furst'] },
+        sources: [S.furst, S.bia],
+        facts: {
+            years: { claim: 'Born 1903, died 1932', locator: 'Lead', excerpt: 'Fürst Sándor (Rum, 1903. november 27. – Budapest, 1932. július 29.)' },
+            citizenship: { claim: 'Hungarian communist politician', locator: 'Lead', excerpt: 'magyar kommunista politikus' },
+            nationalOrigin: { claim: 'Born to Jewish parents', locator: 'Élete', excerpt: 'Fürst Mór és Vittmann Rozália zsidó vallású szülők gyermekeként született Rumon.' },
+            bio: [
+                { claim: 'Joined the KMP in 1926; repeatedly arrested', locator: 'Élete', excerpt: '1926-ban lépett be a KMP-be, ezért 1928-tól kezdve sorozatosan letartóztatták' },
+                { claim: 'Party leadership from 1930', locator: 'Élete', excerpt: '1930-ban a pártvezetőség tagja lett, ezért hamarosan újra letartóztatták.' },
+                { claim: 'Sentenced with Sallai and hanged', locator: 'Élete', excerpt: 'A perben a bíróság Fürstöt Sallai Imrével együtt halálra ítélte.' },
+            ],
+        },
+        activities: [
+            { functionId: 'organizing', affiliationId: 'party-hungarian-communist', startYear: 1926, endYear: 1932, primary: true, claim: 'Member of the illegal party leadership', locator: 'Élete', excerpt: '1930-ban a pártvezetőség tagja lett' },
+        ],
+        career: [
+            ['1926', '헝가리 공산당 입당', 'Joins the Communist Party'],
+            ['1928–1930', '거듭 체포, 실직', 'Repeatedly arrested; loses his job'],
+            ['1930', '당 지도부 합류', 'Joins the party leadership'],
+            ['1932', '체포, 즉결재판 후 처형', 'Arrested and hanged after a summary trial'],
+        ],
+    }),
+    person({
+        id: 'karoly-peyer', given: ['카로이', 'Károly'], family: ['페이에르', 'Peyer'], nativeName: 'Peyer Károly', years: '1881–1956',
+        epithet: ['1921년 베틀렌–페이에르 협정으로 사회민주당의 합법 활동을 얻어 낸 헝가리 사회민주주의·노동조합 지도자',
+            'Hungarian Social Democratic and trade-union leader who won legal status for his party in the Bethlen–Peyer Pact of 1921'],
+        bio: ['베스프렘주 바로실뢰드에서 태어난 기계공 출신으로 금속·광산 노동조합을 이끌었다. 1919년 평의회 공화국에서 광업 부문을 맡았고, 붕괴 뒤 페이들 정부의 내무장관과 후사르 정부의 노동·복지장관을 지냈다. 테러로 사회민주당이 선거를 거부하자 1920년 1월 사임하고 오스트리아로 피신했다. 1921년 귀국해 베틀렌 정부와 협정을 맺었고 1922~1944년 의원, 1927년부터 노동조합 평의회 서기장을 지냈다. 1944년 마우트하우젠 수용소에 갇혔다. 전후 공산당과의 합당에 반대해 1947년 제명된 뒤 미국으로 망명했고 1956년 뉴욕에서 죽었다.',
+            'A machinist from Városlőd in Veszprém County, he led the metalworkers’ and miners’ unions. He ran the mining sector under the Soviet Republic in 1919 and after its fall was interior minister in the Peidl government and minister of labour and welfare under Huszár. When the Social Democrats boycotted the election because of the terror, he resigned in January 1920 and fled to Austria. Back in 1921, he concluded the pact with Bethlen’s government; he was a deputy from 1922 to 1944 and from 1927 general secretary of the Trade Union Council. In 1944 he was held in Mauthausen. Opposing the post-war merger with the Communists, he was expelled in 1947, emigrated to the United States and died in New York in 1956.'],
+        fate: ['natural', '심장마비', 'Heart attack'],
+        aliases: { ko: [], en: ['Peyer Károly', 'Karoly Peyer'] },
+        sources: [S.peyer, S.peyerEn, S.paktum],
+        facts: {
+            years: { claim: 'Born 1881, died 1956', locator: 'Lead', excerpt: 'Peyer Károly (Városlőd, 1881. május 9. – New York, 1956. október 25.)' },
+            citizenship: { claim: 'Hungarian Social Democratic politician', locator: 'Lead', excerpt: 'magyar szociáldemokrata politikus, miniszter' },
+            nationalOrigin: { claim: 'Born in Városlőd, Veszprém County', locator: 'Az első világháború végéig', excerpt: 'Peyer Károly 1881-ben született a Veszprém vármegyei Városlődön.' },
+            bio: [
+                { claim: 'Interior minister in the Peidl government', locator: 'A forradalmak idején', excerpt: 'A Tanácsköztársaság bukása után kinevezett úgynevezett „szakszervezeti kormányban” (Peidl-kormány) belügyminiszter lett.' },
+                { claim: 'Resigned and fled to Austria in January 1920', locator: 'A forradalmak idején', excerpt: 'Peyer pedig 1920. január 16-án lemondott és Ausztriába menekült' },
+                { claim: 'Deputy 1922–1944; held in Mauthausen', locator: 'A paktumtól a második világháború végéig', excerpt: '1922-től 1944-ig országgyűlési képviselő' },
+                { claim: 'Died of a heart attack in 1956', source: S.peyerEn, locator: 'Lead', excerpt: 'Peyer died of a heart attack on 25 October 1956' },
+            ],
+        },
+        activities: [
+            { functionId: 'legislature', affiliationId: 'state-hungary', startYear: 1922, endYear: 1944, primary: true, claim: 'Social Democratic deputy 1922–1944', locator: 'A paktumtól a második világháború végéig', excerpt: '1922-től 1944-ig országgyűlési képviselő és 1931-től a szociáldemokrata frakció vezetője' },
+            { functionId: 'government', affiliationId: 'state-hungary', startYear: 1919, endYear: 1920, claim: 'Interior minister and minister of labour and welfare', locator: 'A forradalmak idején', excerpt: '(Peidl-kormány) belügyminiszter lett' },
+        ],
+        career: [
+            ['1913', '광산 노동조합 조직', 'Organises the miners’ union'],
+            ['1919', '내무장관, 노동·복지장관', 'Interior minister; minister of labour and welfare'],
+            ['1920–1921', '오스트리아 망명', 'Exile in Austria'],
+            ['1921', '베틀렌–페이에르 협정', 'Bethlen–Peyer Pact'],
+            ['1922–1944', '국회의원', 'Member of parliament'],
+            ['1944–1945', '마우트하우젠 수용소', 'Held in Mauthausen'],
+            ['1947', '사회민주당에서 제명, 미국 망명', 'Expelled from the party; emigrates to the United States'],
+        ],
+    }),
+];
+
+// ---------------------------------------------------------------- terms
+
+const terms = [
+    term({
+        id: 'white-terror-hungary', ko: '헝가리 백색테러', en: 'White Terror (Hungary)', category: 'repression',
+        period: '1919–1921', startYear: 1919, endYear: 1921,
+        definition: ['헝가리 평의회 공화국이 무너진 1919년부터 1921년까지 호르티의 국민군 장교 부대들이 공산당원·사회민주당원·농민·유대인에게 저지른 보복 폭력. 재판 없는 처형과 포그롬, 수만 명의 투옥이 이어졌고, 사망자 추산은 300명에서 6,000명까지 갈린다.',
+            'The retaliatory violence of 1919–1921 in which officer detachments of Horthy’s National Army killed and terrorised Communists, Social Democrats, peasants and Jews after the fall of the Hungarian Soviet Republic. It brought summary executions, pogroms and tens of thousands of imprisonments; estimates of the dead range from 300 to 6,000.'],
+        body: ['1919년 여름 세게드에서 창설된 국민군의 장교 부대들, 특히 프로너이 팔, 오시텐부르그모러베크 줄러, 헤이여시 이반의 부대가 주로 저질렀다. 이들은 형식상 정규군이었지만 지휘관에게 충성하는 사병처럼 움직였고, 평의회 공화국 지도부에 유대계가 많았다는 이유로 유대인 전체를 표적으로 삼았다. 1919년 11월 오르고바니 숲에서 36명이 살해되었고, 1920년 2월에는 『네프서버』 기자 쇼모지 벨러와 버초 벨러가 살해되었다.\n\n희생자 수는 연구에 따라 크게 다르다. 영어권 문헌은 1,500~6,000명 또는 1,000~5,000명을 들고, 헝가리 역사학계의 신중한 평가는 500~600명 안팎으로 본다. 1920년 여름부터 정부가 부대를 통제하기 시작했고 프로너이 대대는 1922년 1월 해산되었지만, 호르티는 섭정 사면으로 가해자들을 처벌에서 면제했다.',
+            'It was committed mainly by officer detachments of the National Army founded in Szeged in the summer of 1919, above all those of Pál Prónay, Gyula Ostenburg-Moravek and Iván Héjjas. Formally regular troops, they acted like private battalions loyal to their commanders, and because many leaders of the Soviet Republic had been Jewish they targeted Jews as such. In November 1919 thirty-six people were killed in the forest of Orgovány, and in February 1920 the Népszava journalists Béla Somogyi and Béla Bacsó were murdered.\n\nEstimates of the dead vary widely: English-language accounts give 1,500–6,000 or 1,000–5,000, while cautious Hungarian assessments put it at around 500–600. The government began reining in the detachments in the summer of 1920 and Prónay’s battalion was dissolved in January 1922, but Horthy used the regent’s amnesty to shield the perpetrators from prosecution.'],
+        aliases: { ko: ['헝가리 백색 테러', '헝가리의 백색테러'], en: ['White Terror (Hungary)', 'Hungarian White Terror'] },
+        people: ['miklos-horthy', 'pal-pronay', 'gyula-gombos'],
+        events: ['horthy-regime-1920-1938', 'hungarian-soviet-republic-1919'],
+        sources: [S.wt, S.huWt, S.horthy, S.orgovany], locator: 'Lead; First phase; End of the White Terror',
+    }),
+    term({
+        id: 'treaty-of-trianon', ko: '트리아농 조약', en: 'Treaty of Trianon', category: 'international',
+        period: '1920–1921', startYear: 1920, endYear: 1921,
+        definition: ['1920년 6월 4일 베르사유의 그랑 트리아농 궁에서 연합국과 헝가리가 맺은 제1차 세계대전 강화조약. 헝가리는 전쟁 전 영토의 28%, 인구의 36%만 남게 되었고, 헝가리인 330만 명이 이웃 나라의 소수민족이 되었다. 전간기 헝가리 정치는 이 국경의 수정을 중심 목표로 삼았다.',
+            'The First World War peace treaty between the Allies and Hungary, signed in the Grand Trianon palace at Versailles on 4 June 1920. It left Hungary with 28 per cent of its pre-war territory and 36 per cent of its population, and made 3.3 million Hungarians minorities in neighbouring states. Revising its borders became the central aim of interwar Hungarian politics.'],
+        body: ['헝가리 대표단은 어포니 얼베르트가 이끌었고, 1920년 1월 16일 어포니가 연합국 최고회의에서 역사적 헝가리의 일체성을 호소했지만 조건은 바뀌지 않았다. 조약은 협상 없이 일괄 수락만 가능했고, 헝가리는 항의 속에 서명해 1920년 11월 16일 비준했으며 1921년 7월 26일 발효했다. 헝가리는 면적 93,073㎢, 인구 760만 명의 내륙국이 되었고, 영토는 체코슬로바키아·루마니아·세르브·크로아트·슬로베니아 왕국·오스트리아로 넘어갔다. 군대는 징병 없이 3만 5천 명으로 제한되었고 배상 의무가 지워졌다.\n\n「아니, 아니, 결코!」라는 구호가 상징하듯 조약 수정은 호르티 체제의 대외 정책을 이끌었다. 소협상의 견제 속에 베틀렌은 1920년대 중반까지 수정 요구를 접었으나, 1927년 이탈리아와 우호조약을 맺은 뒤 공개적으로 수정을 요구했고, 이 목표는 1930년대 헝가리를 이탈리아와 독일 쪽으로 이끌었다.',
+            'The Hungarian delegation was led by Albert Apponyi, whose appeal to the Supreme Council for the unity of historic Hungary on 16 January 1920 did not change the terms. The treaty was dictated, to be accepted as a whole; Hungary signed under protest, ratified it on 16 November 1920, and it came into force on 26 July 1921. Hungary became a landlocked state of 93,073 square kilometres and 7.6 million people, its former lands going to Czechoslovakia, Romania, the Kingdom of Serbs, Croats and Slovenes and Austria. Its army was limited to 35,000 men without conscription, and it owed reparations.\n\nAs the slogan “No, no, never!” showed, revision drove the Horthy regime’s foreign policy. Held in check by the Little Entente, Bethlen shelved the demand until the mid-1920s, but after the 1927 treaty of friendship with Italy he called openly for revision, and the goal drew Hungary towards Italy and Germany in the 1930s.'],
+        aliases: { ko: ['트리아농 강화조약', '트리아농 평화조약'], en: ['Treaty of Trianon', 'Trianon Treaty', 'Peace Dictate of Trianon', 'Traité de Trianon'] },
+        people: ['albert-apponyi', 'pal-teleki', 'miklos-horthy', 'istvan-bethlen'],
+        events: ['horthy-regime-1920-1938', 'hungary-axis-1938-1944'],
+        sources: [S.trianon, S.apponyi, S.horthy, S.bethlen], locator: 'Lead; Treaty preparation and Conference at Trianon in Paris',
+    }),
+    term({
+        id: 'numerus-clausus-hungary-1920', ko: '누메루스 클라우수스 (헝가리, 1920)', en: 'Numerus clausus (Hungary, 1920)', category: 'repression',
+        period: '1920–1928', startYear: 1920, endYear: 1928,
+        definition: ['1920년 9월 헝가리 국민의회가 통과시킨 법률 제25호. 각 「인종과 민족」 출신 대학생의 비율을 전국 인구 비율에 맞추도록 해, 유대인이라는 말 없이 사실상 유대인 학생을 제한했다. 제1차 세계대전 뒤 유럽 최초의 반유대법으로 꼽히며, 1928년 민족 비율 조항이 삭제되었다.',
+            'Act XXV of 1920, passed by the Hungarian National Assembly in September 1920. By requiring each “race and nationality” to be represented among university students in proportion to its share of the population, it restricted Jewish students without naming them. It is regarded as the first anti-Jewish law in Europe after the First World War; the nationality quota was removed in 1928.'],
+        body: ['교육장관 할레르 이슈트반이 1920년 6월 22일 제출한 원안은 단순한 정원 규정이었지만, 집권당 안의 요구로 민족별 비율 조항이 들어갔다. 유대인은 인구의 약 6%였으나 1910년대 대학생의 약 15%, 인기 학부에서는 30% 이상이었다. 정원 219명의 국민의회에서 64명이 표결해 57명이 찬성했고, 총리 텔레키 팔 등은 표결에 나오지 않았다.\n\n영국 유대인 대표위원회의 제소를 국제연맹 이사회가 받아들이자 베틀렌 정부는 1928년 법률 제14호로 민족 비율 대신 사회 범주에 따른 기준을 도입했다. 일부 역사가는 이 법을 1938년 이후 반유대법들의 정신적 선구인 「0번째 유대인법」이라고 부른다.',
+            'The original bill, tabled by the education minister István Haller on 22 June 1920, merely capped enrolment, but pressure within the governing party added the quota by nationality. Jews were about 6 per cent of the population but some 15 per cent of students in the 1910s and over 30 per cent in the popular faculties. Of the 219-member National Assembly 64 voted, 57 in favour, while Prime Minister Pál Teleki and others stayed away.\n\nAfter the League of Nations Council upheld a complaint by the Board of Deputies of British Jews, the Bethlen government replaced the nationality quota with social categories by Act XIV of 1928. Some historians call the law the “zeroth” Jewish law, the forerunner of the anti-Jewish laws from 1938.'],
+        aliases: { ko: ['1920년 누메루스 클라우수스법', '헝가리 누메루스 클라우수스', '헝가리 누메루스 클라우수스법'], en: ['Hungarian numerus clausus', 'Numerus clausus law of 1920', 'Act XXV of 1920'] },
+        people: ['pal-teleki', 'istvan-bethlen'],
+        events: ['horthy-regime-1920-1938', 'hungary-axis-1938-1944'],
+        sources: [S.huNc, S.nc, S.ushmm, S.bethlen], locator: 'A numerus clausus-törvény; Hungary',
+    }),
+    term({
+        id: 'bethlen-peyer-pact', ko: '베틀렌–페이에르 협정', en: 'Bethlen–Peyer Pact', category: 'factions',
+        period: '1921', startYear: 1921, endYear: 1921,
+        definition: ['1921년 12월 22일 헝가리 총리 베틀렌 이슈트반의 정부와 페이에르 카로이가 대표한 사회민주당이 맺은 비밀 협정. 사회민주당은 공무원·철도원 조직, 대중 파업, 공화주의 선전을 포기하는 대가로 합법 활동과 노동조합 재건, 선거 참여를 보장받았다.',
+            'The secret agreement of 22 December 1921 between the government of the Hungarian prime minister István Bethlen and the Social Democratic Party led by Károly Peyer. The party gave up organising civil servants and railwaymen, mass strikes and republican propaganda in return for legal activity, the rebuilding of its trade unions and participation in elections.'],
+        body: ['사회민주당 쪽에서는 페이에르와 퍼르커시 이슈트반, 미아키치 페렌츠가, 정부 쪽에서는 베틀렌과 각료 네 명이 서명했다. 당은 농업 노동자 사이의 선전을 제한하고 베틀렌의 외교 정책을 비판하지 않기로 했으며, 의석은 24석으로 묶였다. 정부는 좌파에 대한 보복을 멈추는 사면령을 내렸다. 협정은 1924년 12월 31일 『네프서버』에 전문이 실리며 공개되었다.\n\n협정으로 사회민주당은 1922년부터 1944년까지 의회에 의석을 가지며 합법적으로 활동했지만, 불법 상태의 공산당은 협정 밖에 남아 계속 탄압받았다. 공산당은 이 협정을 「노동 귀족」과 자본의 타협이자 배신으로 비난했다.',
+            'It was signed for the Social Democrats by Peyer, István Farkas and Ferenc Miákits, and for the government by Bethlen and four ministers. The party agreed to limit its agitation among agricultural labourers and to refrain from criticising Bethlen’s foreign policy, and its seats were capped at 24; the government issued an amnesty ending reprisals against the left. The text became public when Népszava printed it in full on 31 December 1924.\n\nThe pact let the Social Democrats sit in parliament and work legally from 1922 to 1944, while the illegal Communist Party stayed outside it and remained persecuted. The Communists denounced it as a betrayal, a deal between the “labour aristocracy” and capital.'],
+        aliases: { ko: ['베틀렌-페이에르 협정', '베틀렌–페이에르 밀약'], en: ['Bethlen-Peyer Pact', 'Bethlen–Peyer-paktum'] },
+        people: ['istvan-bethlen', 'karoly-peyer'],
+        events: ['horthy-regime-1920-1938'],
+        sources: [S.paktum, S.peyer], locator: 'Az egyezség lényege; Utóhatásai',
+    }),
+];
+
+module.exports = {
+    event: event({
+        id: 'horthy-regime-1920-1938',
+        title: { ko: '호르티 체제: 백색테러에서 우경화까지', en: 'The Horthy regime: from the White Terror to the turn to the right' },
+        period: '1919–1938', sortOrder: 66,
+        question: {
+            ko: '장교 부대의 테러에서 출발한 호르티 체제는 어떻게 20년 가까이 안정을 유지했고, 왜 1930년대에 파시즘 국가들 쪽으로 기울었는가?',
+            en: 'How did a regime born of the officer detachments’ terror keep itself stable for nearly twenty years, and why did it lean towards the fascist powers in the 1930s?',
+        },
+        summary: {
+            ko: '1919년 평의회 공화국이 무너진 뒤 호르티의 국민군 장교 부대들은 공산당원·사회민주당원·유대인을 겨냥한 헝가리 백색테러를 벌였고, 호르티는 1920년 왕 없는 왕국의 섭정이 되었다. 트리아농 조약으로 영토의 3분의 2 이상을 잃은 헝가리는 국경 수정을 국가 목표로 삼았고, 1920년 누메루스 클라우수스법으로 유럽 최초의 전후 반유대법을 만들었다. 베틀렌 이슈트반은 공개투표 선거법과 사회민주당과의 협정, 국제연맹 차관으로 체제를 안정시켰지만, 불법 공산당은 라코시 재판과 셜러이·퓌르시트 처형으로 짓눌렸다. 대공황 뒤 굄뵈시 줄러는 이탈리아·독일과 손잡았고, 1938년 더라니 정부의 죄르 강령과 제1차 유대인법은 다음 시대를 예고했다.',
+            en: 'After the Soviet Republic fell in 1919, officer detachments of Horthy’s National Army carried out the Hungarian White Terror against Communists, Social Democrats and Jews, and in 1920 Horthy became regent of a kingdom without a king. Stripped of more than two-thirds of its territory by the Treaty of Trianon, Hungary made border revision its national aim, and its numerus clausus of 1920 was Europe’s first post-war anti-Jewish law. István Bethlen stabilised the regime with an open-ballot franchise, a pact with the Social Democrats and a League of Nations loan, while the illegal Communist Party was crushed by the Rákosi trials and the hanging of Sallai and Fürst. After the Depression Gyula Gömbös aligned Hungary with Italy and Germany, and the Darányi government’s Győr programme and First Jewish Law of 1938 heralded the next era.',
+        },
+        outcome: {
+            ko: '헝가리는 의회와 선거를 유지한 보수 권위주의 체제로 남았지만, 공산당은 지하에서 거의 소멸했다. 트리아농 수정의 꿈과 반공주의는 1938년 이후 헝가리를 독일과의 동맹과 반유대법으로 이끌었다.',
+            en: 'Hungary remained a conservative authoritarian state that kept a parliament and elections, while the Communist Party all but vanished underground. The dream of revising Trianon and anti-Communism led Hungary after 1938 into alliance with Germany and anti-Jewish legislation.',
+        },
+        sections, timeline,
+        locations: [
+            ['부다페스트', 'Budapest', 47.4979, 19.0402, 'main'],
+            ['세게드', 'Szeged', 46.253, 20.141, 'place'],
+            ['시오포크', 'Siófok', 46.904, 18.058, 'place'],
+            ['오르고바니', 'Orgovány', 46.75, 19.47, 'place'],
+            ['그랑 트리아농', 'Grand Trianon', 48.814, 2.11, 'place'],
+            ['부더외르시', 'Budaörs', 47.461, 18.958, 'place'],
+            ['비어토르바지', 'Biatorbágy', 47.47, 18.82, 'place'],
+            ['죄르', 'Győr', 47.687, 17.634, 'place'],
+        ],
+        countries: ['hungary', 'romania', 'czechoslovakia', 'yugoslavia', 'austria', 'france', 'uk', 'italy', 'germany', 'soviet'],
+        relations: { related: ['hungarian-soviet-republic-1919', 'hungary-axis-1938-1944'] },
+        // The glossary's white-terror, red-terror and revisionism are the Russian
+        // and Bernsteinian ones; the Hungarian terror has its own term above.
+        noAutoLink: ['백색테러', '백색 테러', 'White Terror', '적색 테러', 'Red Terror'],
+        focus: { ko: '호르티 체제', en: 'The Horthy regime' },
+        people,
+    }),
+    people: newPeople,
+    terms,
+};

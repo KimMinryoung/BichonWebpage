@@ -96,7 +96,8 @@ async function applyBatch(db, spec, { apply = false, backup } = {}) {
             const old = (await client.query('SELECT * FROM commulingo_history_events WHERE id=$1' + (apply ? ' FOR UPDATE' : ''), [e.id])).rows[0];
             const duplicate = (await client.query('SELECT id FROM commulingo_history_events WHERE id<>$1 AND (lower(title_en)=lower($2) OR title_ko=$3)', [e.id, e.fields.title_en, e.fields.title_ko])).rows;
             assert.equal(duplicate.length, 0, `duplicate subject: ${e.id}`);
-            for (const id of [...(e.fields.relations.related || []), ...(e.fields.relations.parent ? [e.fields.relations.parent] : [])]) assert.equal((await client.query('SELECT 1 FROM commulingo_history_events WHERE id=$1', [id])).rowCount, 1, `missing related event: ${id}`);
+            // Related events may be other events of this batch; a parent must already exist.
+            for (const id of [...(e.fields.relations.related || []).filter(id => !spec.events.some(other => other.id === id)), ...(e.fields.relations.parent ? [e.fields.relations.parent] : [])]) assert.equal((await client.query('SELECT 1 FROM commulingo_history_events WHERE id=$1', [id])).rowCount, 1, `missing related event: ${id}`);
             if (old) for (const c of columns) assert(equal(old[c] ?? null, fieldValue(e.fields, c) ?? null), `concurrent change: ${e.id}.${c}`);
             if (old) before.events.push(old);
             const links = (await client.query('SELECT * FROM commulingo_history_event_people WHERE event_id=$1 ORDER BY sort_order,person_id', [e.id])).rows;
