@@ -2826,14 +2826,14 @@ button.commu-dc-option:hover { border-color: var(--link); }
 /* Position chip in the card meta row: the position named on its own colour
    (the colour alone does not tell rose from red). */
 .commu-person-position {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     max-width: 100%;
     padding: 2px 8px;
     background: var(--pos);
     color: var(--pos-ink);
     font-size: 0.74rem;
     font-weight: 700;
-    letter-spacing: 0.01em;
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
