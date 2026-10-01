@@ -240,6 +240,33 @@ const CRIMEA_1920 = [[46.2, 33.6], [45.9, 34.6], [45.5, 36.3], [45.1, 36.7], [44
 const WRANGEL_1920 = [[46.6, 32.6], [46.8, 33.3], [47.5, 34.3], [47.8, 35.1], [47.5, 36.3], [47.0, 37.3],
     [46.4, 37.0], [45.3, 36.6], [44.3, 34.5], [44.4, 33.3], [45.5, 32.4], [46.2, 32.2]];
 
+// The Makhnovists, shared with the Ukrainian map: their own territory and,
+// while outlawed, their partisan country round Huliaipole.
+// Autumn 1918: Makhno's partisans round Huliaipole and Dibrivka.
+const HULIAIPOLE_1918 = [[48.15, 35.9], [48.15, 36.7], [47.8, 37.0], [47.4, 36.8], [47.35, 36.0], [47.7, 35.6]];
+// December 1918 to January 1919: the Makhnovist region east of the Dnieper,
+// from Huliaipole towards Oleksandrivsk.
+const MAKHNO_1918_12 = [[48.25, 35.5], [48.3, 36.6], [48.0, 37.3], [47.4, 37.3], [47.1, 36.6], [47.25, 35.6],
+    [47.8, 35.25]];
+// February–May 1919: the Makhnovist brigade's ground inside the Soviet
+// front, out to Berdiansk and Mariupol.
+const MAKHNO_1919 = [[48.3, 35.4], [48.35, 36.7], [48.1, 37.4], [47.1, 37.6], [46.75, 36.8], [46.8, 35.9],
+    [47.3, 35.3], [47.85, 35.1]];
+// October–November 1919: the Makhnovist territory behind Denikin, from
+// Yekaterinoslav and Nikopol to Berdiansk and Melitopol.
+const MAKHNO_1919_10 = [[48.6, 34.7], [48.55, 35.5], [48.3, 36.3], [47.9, 37.2], [47.15, 37.5], [46.75, 36.8],
+    [46.65, 35.8], [46.75, 35.1], [47.2, 34.6], [47.55, 34.2], [48.1, 34.2]];
+// Mid-December 1919: what was left round Oleksandrivsk and Nikopol.
+const MAKHNO_1919_12 = [[47.95, 34.7], [47.95, 35.6], [47.8, 36.4], [47.4, 36.5], [47.3, 35.6], [47.5, 34.5]];
+// 1920: the outlawed Makhnovists' partisan country round Huliaipole.
+const MAKHNO_PARTISAN_1920 = [[48.4, 35.3], [48.5, 36.6], [48.1, 37.4], [47.4, 37.4], [47.2, 36.5], [47.4, 35.4],
+    [47.9, 35.1]];
+// October–November 1920: the allied Makhnovists' Huliaipole district.
+const MAKHNO_1920_10 = [[48.0, 35.7], [48.0, 36.7], [47.6, 36.9], [47.45, 36.4], [47.5, 35.8]];
+// 1921: Makhno's raids across the Left Bank, from Poltava to the Donbas.
+const MAKHNO_PARTISAN_1921 = [[49.6, 33.5], [49.7, 35.5], [49.1, 37.6], [48.0, 38.0], [47.1, 37.4], [46.9, 35.5],
+    [47.6, 34.3], [48.7, 33.2]];
+
 const phase = (date, label, parts) => ({ date, label, red: [EMPIRE], ...parts });
 
 module.exports = {
@@ -250,17 +277,20 @@ module.exports = {
     sea: SEAS,
     simplify: 0.2,
     base: 'white',
-    precedence: ['national', 'central', 'red'],
+    precedence: ['makhno', 'national', 'central', 'red'],
+    overlays: ['makhnoPartisan'],
     carve: ['red'],
     sides: [
         { id: 'red', label: { ko: '적군 (소비에트 정권)', en: 'Reds (Soviet power)' }, tone: 'red' },
         { id: 'white', label: { ko: '백군과 외국 간섭군', en: 'Whites and foreign intervention' }, tone: 'blue' },
         { id: 'central', label: { ko: '독일·오스트리아 점령', en: 'German and Austrian occupation' }, tone: 'amber' },
         { id: 'national', label: { ko: '독립 국가와 인접국', en: 'Independent and neighbouring states' }, tone: 'gray' },
+        { id: 'makhno', label: { ko: '마흐노 운동 지역', en: 'Makhnovist territory' }, tone: 'black' },
+        { id: 'makhnoPartisan', label: { ko: '마흐노 유격 지역', en: 'Makhnovist partisan country' }, tone: 'black' },
     ],
     note: {
-        ko: '경계는 근사치이며 작전 기록을 바탕으로 개략적으로 그렸습니다. 전선 뒤의 봉기와 유격 지역, 백군 지역 안에 고립된 적군 거점(오렌부르크·우랄스크 등), 마흐노 지역은 표시하지 않았습니다. 극동공화국(1920~1922)은 소비에트 측으로 칠했습니다.',
-        en: 'Boundaries are approximate, sketched from the campaign record. Uprisings and partisan areas behind the lines, besieged Red strongholds inside White territory (Orenburg, Uralsk) and Makhno\'s region are not shown. The Far Eastern Republic (1920–1922) is coloured with the Soviet side.',
+        ko: '경계는 근사치이며 작전 기록을 바탕으로 개략적으로 그렸습니다. 전선 뒤의 봉기와 유격 지역, 백군 지역 안에 고립된 적군 거점(오렌부르크·우랄스크 등)은 표시하지 않았습니다. 마흐노 지역은 우크라이나 혁명 지도와 같으며, 빗금은 법외로 선언된 시기의 유격 지역입니다. 극동공화국(1920~1922)은 소비에트 측으로 칠했습니다.',
+        en: 'Boundaries are approximate, sketched from the campaign record. Uprisings and partisan areas behind the lines, and besieged Red strongholds inside White territory (Orenburg, Uralsk) are not shown. Makhno\'s region is that of the Ukrainian revolution map; hatching marks his partisan country while he was outlawed. The Far Eastern Republic (1920–1922) is coloured with the Soviet side.',
     },
     sources: [],
     phases: [
@@ -277,22 +307,27 @@ module.exports = {
         phase('1919.05', { ko: '콜차크 춘계 공세의 정점', en: 'The height of Kolchak\'s spring offensive' }, {
             white: [EAST_1919_05, NORTH_1919, SOUTH_1919_05],
             national: [FINLAND, westOf('1919.04'), TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
+            makhno: [MAKHNO_1919],
         }),
         phase('1919.10', { ko: '위기의 정점: 오룔과 페트로그라드', en: 'The crisis: Orel and Petrograd' }, {
             white: [EAST_1919_10, URAL_COSSACKS_1919, TRANSCASPIA_1919, NORTH_1919, SOUTH_1919_10, YUDENICH_1919],
             national: [FINLAND, westOf('1919.10'), UNR_1919_10, TRANSCAUCASIA, BUKHARA_KHIVA, JAPAN_NORTH],
+            makhno: [MAKHNO_1919_10],
         }),
         phase('1920.03', { ko: '콜차크 처형과 노보로시스크 철수 뒤', en: 'After Kolchak\'s death and the Novorossiysk evacuation' }, {
             white: [EAST_1920_03, CRIMEA_1920],
             national: [FINLAND, westOf('1920.03'), TRANSCAUCASIA, BUKHARA, JAPAN_NORTH],
+            makhnoPartisan: [MAKHNO_PARTISAN_1920],
         }),
         phase('1920.08', { ko: '바르샤바 앞의 적군과 브랑겔', en: 'The Red Army before Warsaw; Wrangel' }, {
             white: [EAST_1920_08, WRANGEL_1920],
             national: [FINLAND, westOf('1920.08'), GEORGIA_ARMENIA, BUKHARA, JAPAN_NORTH],
+            makhnoPartisan: [MAKHNO_PARTISAN_1920],
         }),
         phase('1920.11', { ko: '리가 휴전과 크림 철수', en: 'The Riga armistice and the Crimean evacuation' }, {
             white: [PRIMORYE, NORTH_SAKHALIN],
             national: [FINLAND, westOf('1920.10'), GEORGIA_ARMENIA, JAPAN_NORTH],
+            makhno: [MAKHNO_1920_10],
         }),
         phase('1922.10', { ko: '블라디보스토크와 내전의 종결', en: 'Vladivostok and the end of the war' }, {
             white: [NORTH_SAKHALIN],
@@ -303,5 +338,7 @@ module.exports = {
         BALTIC_EDGE, FRONTS, northOf, westOf, SEAS, FINLAND, BESSARABIA, UNR_1919_10, CENTRAL_1917_12,
         UKRAINE_1917, POLAND_1918_11, CENTRAL_1918_03, CENTRAL_1918_08, EAST_1918_08, NORTH_1918, KUBAN_1918_03,
         SOUTH_1918_08, SOUTH_1919_05, SOUTH_1919_10, YUDENICH_1919, CRIMEA_1920, WRANGEL_1920,
+        HULIAIPOLE_1918, MAKHNO_1918_12, MAKHNO_1919, MAKHNO_1919_10, MAKHNO_1919_12, MAKHNO_PARTISAN_1920,
+        MAKHNO_1920_10, MAKHNO_PARTISAN_1921,
     },
 };

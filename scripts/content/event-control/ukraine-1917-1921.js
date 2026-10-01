@@ -8,7 +8,8 @@
 // the neighbouring states are the Soviet-Polish War's. West of a front lies
 // Poland and its neighbours, with the Ukrainian governments laid over it.
 // Drawn by hand from the campaign record; no map is traced. The Makhnovist
-// and otaman areas and the risings behind the lines are sketched round the
+// areas are the Russian Civil War's too (civil-war.js parts); they, the
+// otaman areas and the risings behind the lines are sketched round the
 // towns the record names (Huliaipole, Oleksandrivsk, Yelysavethrad,
 // Trypillia, the Kholodny Yar); risings are hatched over whoever held the
 // ground.
@@ -17,7 +18,8 @@
 
 const { SEAS, westOf, BESSARABIA, CENTRAL_1917_12, UKRAINE_1917, CENTRAL_1918_03,
     CENTRAL_1918_08, KUBAN_1918_03, SOUTH_1918_08, SOUTH_1919_05, SOUTH_1919_10, UNR_1919_10, CRIMEA_1920,
-    WRANGEL_1920, POLAND_1918_11 } = require('./civil-war').parts;
+    WRANGEL_1920, POLAND_1918_11, HULIAIPOLE_1918, MAKHNO_1918_12, MAKHNO_1919, MAKHNO_1919_10, MAKHNO_1919_12,
+    MAKHNO_PARTISAN_1920, MAKHNO_1920_10, MAKHNO_PARTISAN_1921 } = require('./civil-war').parts;
 const { OBER_OST_1919, ZUNR_1919, UNR_1919_02, UNR_1919_04, NEIGHBOURS } = require('./soviet-polish-war').parts;
 const { UNR_1918_02 } = require('./brest-litovsk').parts;
 
@@ -52,16 +54,6 @@ const UNR_1920_05 = [[51.5, 26.9], [51.4, 30.6], [50.8, 30.9], [50.45, 31.0], [5
 // and the occupiers, between Tarashcha, Kaniv, Zvenyhorodka and Uman.
 const ZVENYHORODKA_1918 = [[49.75, 30.15], [49.8, 30.9], [49.5, 31.45], [49.1, 31.4], [48.85, 31.0], [48.9, 30.4],
     [49.3, 30.1]];
-// Autumn 1918: Makhno's partisans round Huliaipole and Dibrivka.
-const HULIAIPOLE_1918 = [[48.15, 35.9], [48.15, 36.7], [47.8, 37.0], [47.4, 36.8], [47.35, 36.0], [47.7, 35.6]];
-// December 1918 to January 1919: the Makhnovist region east of the Dnieper,
-// from Huliaipole towards Oleksandrivsk.
-const MAKHNO_1918_12 = [[48.25, 35.5], [48.3, 36.6], [48.0, 37.3], [47.4, 37.3], [47.1, 36.6], [47.25, 35.6],
-    [47.8, 35.25]];
-// February–May 1919: the Makhnovist brigade's ground inside the Soviet
-// front, out to Berdiansk and Mariupol.
-const MAKHNO_1919 = [[48.3, 35.4], [48.35, 36.7], [48.1, 37.4], [47.1, 37.6], [46.75, 36.8], [46.8, 35.9],
-    [47.3, 35.3], [47.85, 35.1]];
 // Spring and summer 1919: the otaman Zelenyi round Trypillia, against the
 // Soviets on both banks of the Dnieper.
 const ZELENYI_1919 = [[50.35, 30.35], [50.3, 31.1], [50.05, 31.6], [49.85, 31.3], [49.85, 30.6], [50.05, 30.3]];
@@ -75,22 +67,8 @@ const HRYHORIV_1919_05 = [[49.45, 31.6], [49.45, 32.3], [49.15, 33.4], [48.75, 3
 const SOUTH_1919_06 = [[50.4, 36.3], [50.6, 37.6], [50.9, 39.3], [51.0, 41.0], [50.6, 43.0], [49.8, 45.0],
     [48.5, 45.5], [46.0, 47.0], [44.0, 47.5], [41.9, 48.5], [41.5, 41.5], [44.0, 34.0], [44.3, 32.5], [45.6, 32.4],
     [46.2, 33.6], [46.8, 34.4], [47.4, 34.6], [47.9, 34.9], [48.5, 34.9], [49.2, 35.2], [49.8, 35.6]];
-// October–November 1919: the Makhnovist territory behind Denikin, from
-// Yekaterinoslav and Nikopol to Berdiansk and Melitopol.
-const MAKHNO_1919_10 = [[48.6, 34.7], [48.55, 35.5], [48.3, 36.3], [47.9, 37.2], [47.15, 37.5], [46.75, 36.8],
-    [46.65, 35.8], [46.75, 35.1], [47.2, 34.6], [47.55, 34.2], [48.1, 34.2]];
-// Mid-December 1919: what was left round Oleksandrivsk and Nikopol.
-const MAKHNO_1919_12 = [[47.95, 34.7], [47.95, 35.6], [47.8, 36.4], [47.4, 36.5], [47.3, 35.6], [47.5, 34.5]];
 // 1919–1922: the Kholodny Yar forest republic near Chyhyryn.
 const KHOLODNY_YAR = [[49.3, 32.1], [49.3, 32.85], [49.0, 33.0], [48.8, 32.6], [48.85, 32.1]];
-// 1920: the outlawed Makhnovists' partisan country round Huliaipole.
-const MAKHNO_PARTISAN_1920 = [[48.4, 35.3], [48.5, 36.6], [48.1, 37.4], [47.4, 37.4], [47.2, 36.5], [47.4, 35.4],
-    [47.9, 35.1]];
-// October–November 1920: the allied Makhnovists' Huliaipole district.
-const MAKHNO_1920_10 = [[48.0, 35.7], [48.0, 36.7], [47.6, 36.9], [47.45, 36.4], [47.5, 35.8]];
-// 1921: Makhno's raids across the Left Bank, from Poltava to the Donbas.
-const MAKHNO_PARTISAN_1921 = [[49.6, 33.5], [49.7, 35.5], [49.1, 37.6], [48.0, 38.0], [47.1, 37.4], [46.9, 35.5],
-    [47.6, 34.3], [48.7, 33.2]];
 
 module.exports = {
     eventId: 'ukraine-1917-1921',
