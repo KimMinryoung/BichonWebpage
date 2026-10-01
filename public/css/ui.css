@@ -359,7 +359,9 @@ svg {
 .ui-crumb-item { display: flex; align-items: center; flex: 0 0 auto; min-width: 0; }
 .ui-crumb-item:last-child { flex: 1 1 auto; }
 .ui-crumb-link { display: flex; align-items: center; align-self: stretch; min-height: calc(var(--crumb-height) - 2 * var(--border-width)); gap: 5px; padding-inline: 6px; color: var(--text-secondary); font-size: 0.86rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
-.ui-crumb-link:hover { color: var(--link); text-decoration: none; }
+/* A colour shift alone on these small words went unnoticed; the whole crumb
+   fills with the primary green, the same pair of colours as .btn-primary. */
+.ui-crumb-link:hover { color: #fff; background: var(--btn-primary); text-decoration: none; }
 .ui-crumb-sep { flex: 0 0 auto; color: var(--text-muted); font-size: 0.8rem; }
 .ui-crumb-current { min-width: 0; padding-inline: 6px; overflow: hidden; color: var(--text-primary); font-size: 0.86rem; font-weight: 700; line-height: calc(var(--crumb-height) - 2 * var(--border-width)); text-overflow: ellipsis; white-space: nowrap; }
 
