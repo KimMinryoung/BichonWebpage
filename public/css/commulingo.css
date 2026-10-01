@@ -2424,7 +2424,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-office-page-link {
     border-top: 1px solid var(--border);
-    color: var(--link);
+    color: var(--text-primary);
     display: block;
     font-size: 0.82rem;
     font-weight: 800;
@@ -2553,9 +2553,12 @@ button.commu-dc-option:hover { border-color: var(--link); }
 /* 「목록으로 보기」 on a group header: the same cards as a plain paged page. */
 .commu-people-group-list-link {
     position: absolute; right: 38px; top: 12px;
-    font-size: 0.8rem; color: var(--link); text-decoration: none; white-space: nowrap;
+    font-size: 0.8rem; color: var(--text-muted); text-decoration: none; white-space: nowrap;
 }
-.commu-people-group-list-link:hover { text-decoration: underline; }
+/* A quiet way out of the row, as on the reference-text box head: no link green,
+   no underline; it darkens to the text colour on hover. */
+.commu-people-group-list-link:hover,
+.commu-people-group-list-link:focus-visible { color: var(--text-primary); text-decoration: none; }
 .commu-people-list-page .commu-hub-head h1 .commu-people-group-count { font-size: 0.7em; font-weight: 400; color: var(--text-muted); margin-left: .3rem; }
 
 .commu-people-range {
@@ -5271,12 +5274,10 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-event-relations-parent .commu-event-relations-title { font-weight: 700; }
 .commu-event-relations-parent .commu-event-relations-period { color: color-mix(in srgb, var(--clr-cream, #f8edca) 78%, transparent); }
 .commu-event-relations-parent:hover { color: var(--clr-white, #fff); text-decoration: none; }
-.commu-event-relations-parent:hover .commu-event-relations-title { text-decoration: underline; }
 .commu-event-relations-list { list-style: none; margin: 0; padding: 0; }
 .commu-event-relations-list li + li { border-top: 1px solid color-mix(in srgb, var(--border, #555) 35%, transparent); }
 .commu-event-relations-list a { color: var(--text-primary); }
 .commu-event-relations-list a:hover { color: var(--text-primary); background: var(--bg-surface-hover); text-decoration: none; }
-.commu-event-relations-list a:hover .commu-event-relations-title { text-decoration: underline; }
 .commu-event-relations-list .commu-event-relations-tag { color: var(--text-muted); }
 .commu-event-relations-list .is-current {
     color: var(--text-primary);

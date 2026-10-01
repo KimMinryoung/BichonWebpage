@@ -414,9 +414,24 @@
   text-decoration: none;
 }
 
-.doc-toc a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
+/* Each contents entry is a row: hover fills the row, no underline
+   (design-system.md). Scoped to the list so the crumb links in the same bar
+   keep their own treatment. */
+.doc-toc-parts a {
+  display: block;
+  margin-inline: -0.5rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.doc-toc-parts a:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface-hover);
+  text-decoration: none;
+}
+
+.doc-toc-parts a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
 }
 
 .doc-toc-part {
