@@ -1,0 +1,219 @@
+{
+ "collection": "jacobin",
+ "criteria": "Radical wing of the French Revolution acting in 1789-1799: Jacobin Club members and leaders, Montagnards (the Mountain) and members of the Committee of Public Safety, Cordeliers and Hebertists, Enrages, radical Paris Commune officials, and Babeuf's Conspiracy of the Equals. Girondins, Feuillants, moderates, royalists, generals without a radical political role, Napoleon, and nineteenth-century figures (Blanqui, Communards) are excluded unless they acted in the 1789-1799 radical camp.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "maximilien-robespierre",
+   "source": "https://en.wikipedia.org/wiki/Maximilien_Robespierre",
+   "locator": "plain-text extract characters 487:593; accessed 2026-10-01; sha256 b1e07daf73c4fc6651b2b5bfd86fcc6d39e64fe47d3cace6c7a6529fa1002e93",
+   "excerpt": "A radical Jacobin leader, Robespierre was elected as a deputy to the National Convention in September 1792",
+   "reason": "Robespierre was the leading Jacobin and Committee of Public Safety member."
+  },
+  {
+   "id": "louis-antoine-de-saint-just",
+   "source": "https://en.wikipedia.org/wiki/Louis_Antoine_de_Saint-Just",
+   "locator": "plain-text extract characters 375:483; accessed 2026-10-01; sha256 e06db1d0a4eb5ec51aea2cf21b52d788486ed6d88b9c31d41c6222cd3668089e",
+   "excerpt": "he was a member of the Mountain faction and a steadfast supporter and close friend of Maximilien Robespierre",
+   "reason": "Saint-Just was a Montagnard and Committee of Public Safety member."
+  },
+  {
+   "id": "georges-couthon",
+   "source": "https://en.wikipedia.org/wiki/Georges_Couthon",
+   "locator": "plain-text extract characters 2371:2420; accessed 2026-10-01; sha256 2381e542937d7bc3afd1bdc914aa54d800802d2cf9c2855a1cb5774300fe917d",
+   "excerpt": "He then joined the growing Jacobin Club of Paris.",
+   "reason": "Couthon was a Jacobin Club member and Committee of Public Safety triumvir with Robespierre."
+  },
+  {
+   "id": "jean-paul-marat",
+   "source": "https://en.wikipedia.org/wiki/Jean-Paul_Marat",
+   "locator": "plain-text extract characters 1116:1252; accessed 2026-10-01; sha256 5c5760ed8b713b1e448adf29e62af9674a66c7055f001be63452534abdf80b73",
+   "excerpt": "Marat was elected to the National Convention in September 1792 and aligned with the Montagnards in their struggle against the Girondins.",
+   "reason": "Marat was the radical journalist and Montagnard deputy."
+  },
+  {
+   "id": "georges-danton",
+   "source": "https://en.wikipedia.org/wiki/Georges_Danton",
+   "locator": "plain-text extract characters 219:271; accessed 2026-10-01; sha256 06ad018cc8257958cf6d9bcdb57cdaab6a84f1b652946e8a9bcc23db132e68d2",
+   "excerpt": "Danton became a famous orator of the Cordeliers Club",
+   "reason": "Danton was a Cordeliers leader and first president of the Committee of Public Safety."
+  },
+  {
+   "id": "camille-desmoulins",
+   "source": "https://en.wikipedia.org/wiki/Camille_Desmoulins",
+   "locator": "plain-text extract characters 8131:8192; accessed 2026-10-01; sha256 309e3691ce49c89df6bbd7498c43f14910924389131836d200230d29c261a600",
+   "excerpt": "Club des Cordeliers, which Desmoulins joined in February 1790",
+   "reason": "Desmoulins was a Cordeliers and Jacobin journalist who sat with the Mountain."
+  },
+  {
+   "id": "jacques-rene-hebert",
+   "source": "https://en.wikipedia.org/wiki/Jacques_Hébert",
+   "locator": "plain-text extract characters 1109:1193; accessed 2026-10-01; sha256 ca7ad10555393ef7193280c83357db16c2c6e141e3f9d2976036e3b610f3ddf9",
+   "excerpt": "A member of the Cordeliers club, Hébert supported the Insurrection of 10 August 1792",
+   "reason": "Hebert led the Hebertists and the Cordeliers sans-culotte radicals."
+  },
+  {
+   "id": "charles-philippe-ronsin",
+   "source": "https://en.wikipedia.org/wiki/Charles-Philippe_Ronsin",
+   "locator": "plain-text extract characters 245:382; accessed 2026-10-01; sha256 55f6dcde367dbcb234ba505816b86afd9b98693ef7951bbc35780e0af9d5afb5",
+   "excerpt": "He was an extreme radical leader of the French Revolution, and one of the many followers of Jacques-René Hébert, known as the Hébertists.",
+   "reason": "Ronsin commanded the Paris Revolutionary Army as an Hebertist."
+  },
+  {
+   "id": "antoine-francois-momoro",
+   "source": "https://en.wikipedia.org/wiki/Antoine-François_Momoro",
+   "locator": "plain-text extract characters 173:233; accessed 2026-10-01; sha256 8c70edc3aa62e4492bdc07ace301ece35bb2c8e34abb3c621126f8a0af539323",
+   "excerpt": "An important figure in the Cordeliers club and in Hébertisme",
+   "reason": "Momoro was a Cordeliers printer and Hebertist."
+  },
+  {
+   "id": "francois-nicolas-vincent",
+   "source": "https://en.wikipedia.org/wiki/François-Nicolas_Vincent",
+   "locator": "plain-text extract characters 239:368; accessed 2026-10-01; sha256 2e828f6372e951e7233b0a8f22c7e70bfc4563a4bdd6c533f72995e60f9e69e2",
+   "excerpt": "A member of the Cordelier Club, he is best known as a radical sans-culottes leader and prominent member of the Hébertist faction.",
+   "reason": "Vincent was a Cordelier and Hebertist leader."
+  },
+  {
+   "id": "pierre-gaspard-chaumette",
+   "source": "https://en.wikipedia.org/wiki/Pierre_Gaspard_Chaumette",
+   "locator": "plain-text extract characters 1213:1343; accessed 2026-10-01; sha256 b58786c21d53e54e8e07df27af73c650c20c956315dfce6d3d2ddfd1eef7e2af",
+   "excerpt": "Chaumette began his political career as member of the Jacobin Club editing the progressive Revolutions de Paris journal from 1790.",
+   "reason": "Chaumette was a Jacobin, then Paris Commune prosecutor and Hebertist leader."
+  },
+  {
+   "id": "jacques-roux",
+   "source": "https://en.wikipedia.org/wiki/Jacques_Roux",
+   "locator": "plain-text extract characters 586:671; accessed 2026-10-01; sha256 cd8afc52375444e7de3e2a5c219970c111ff1e888ad230283e21b6518afd14e2",
+   "excerpt": "Roux became aligned with the political faction dubbed by their enemies as the Enragés",
+   "reason": "Roux was the Enrage priest of the Paris sections."
+  },
+  {
+   "id": "jean-francois-varlet",
+   "source": "https://en.wikipedia.org/wiki/Jean-François_Varlet",
+   "locator": "plain-text extract characters 96:160; accessed 2026-10-01; sha256 0ab7fd265ccd044c3a6fc8c60a0360f9d91638089d2b48860671da006843be40",
+   "excerpt": "was a leader of the Enragés faction during the French Revolution",
+   "reason": "Varlet was a leader of the Enrages."
+  },
+  {
+   "id": "gracchus-babeuf",
+   "source": "https://en.wikipedia.org/wiki/Gracchus_Babeuf",
+   "locator": "plain-text extract characters 862:932; accessed 2026-10-01; sha256 29c76f25a14a2dfb1b3675af171c966937ca47531cac2ee349a4a3cfbd979c90",
+   "excerpt": "Babeuf was executed for his lead role in the Conspiracy of the Equals.",
+   "reason": "Babeuf led the Conspiracy of the Equals and developed a neo-Jacobin programme."
+  },
+  {
+   "id": "sylvain-marechal",
+   "source": "https://en.wikipedia.org/wiki/Sylvain_Maréchal",
+   "locator": "plain-text extract characters 3040:3142; accessed 2026-10-01; sha256 a5cc51e006f712fd9edcb5a050984d7a9b48c760bfcf79e4ea2e0bb7b9074f31",
+   "excerpt": "involvement in the latter's conspiracy was to find in Maréchal an early influence on utopian socialism",
+   "reason": "Marechal wrote the Manifesto of the Equals for Babeuf's conspiracy."
+  },
+  {
+   "id": "jean-pierre-andre-amar",
+   "source": "https://en.wikipedia.org/wiki/Jean-Pierre-André_Amar",
+   "locator": "plain-text extract characters 733:829; accessed 2026-10-01; sha256 01214e328302c8b0565f49879d4d0dc911bfa2372d150bc34ff3e90737174fb4",
+   "excerpt": "became a deputy to the National Convention for the département of Isère, and joined The Mountain",
+   "reason": "Amar was a Montagnard and member of the Committee of General Security."
+  },
+  {
+   "id": "bertrand-barere",
+   "source": "https://en.wikipedia.org/wiki/Bertrand_Barère",
+   "locator": "plain-text extract characters 367:456; accessed 2026-10-01; sha256 b0ea4bfe8f5f1d9bbe2ca2500d1053d886cdc35e44e3fbdcdfb64ae98eaf29f0",
+   "excerpt": "Barère as one of their leaders supported the foundation of the Committee of Public Safety",
+   "reason": "Barere sat with the Montagnards and served on the Committee of Public Safety."
+  },
+  {
+   "id": "lazare-carnot",
+   "source": "https://en.wikipedia.org/wiki/Lazare_Carnot",
+   "locator": "plain-text extract characters 200:250; accessed 2026-10-01; sha256 1affdbabfb97bfa1e5e558f8de0cc8daaf92c1ce23e0d74134ad9b596aa3ce04",
+   "excerpt": "a leading member of the Committee of Public Safety",
+   "reason": "Carnot was the Committee of Public Safety member who organised the revolutionary army."
+  },
+  {
+   "id": "jacques-louis-david",
+   "source": "https://en.wikipedia.org/wiki/Jacques-Louis_David",
+   "locator": "plain-text extract characters 11081:11149; accessed 2026-10-01; sha256 9875800e206b573429db26ccc6d3a42a032a801e22842dfac9c7de382663041a",
+   "excerpt": "a friend of Maximilien Robespierre, and a member of the Jacobin Club",
+   "reason": "David was a Jacobin Club member and Montagnard deputy."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "leger-felicite-sonthonax",
+   "reason": "Left the Jacobins to join the Girondins in 1791."
+  },
+  {
+   "id": "pierre-joseph-cambon",
+   "reason": "Co-founded the Montpellier Jacobin club but was a Convention finance specialist outside the core radical wing; borderline."
+  },
+  {
+   "id": "pierre-vergniaud",
+   "reason": "Girondin."
+  },
+  {
+   "id": "jacques-pierre-brissot",
+   "reason": "Girondin."
+  },
+  {
+   "id": "francois-buzot",
+   "reason": "Girondin."
+  },
+  {
+   "id": "charlotte-corday",
+   "reason": "Girondin sympathiser who killed Marat."
+  },
+  {
+   "id": "olympe-de-gouges",
+   "reason": "Girondin-aligned and executed for attacking Robespierre; not in the radical wing."
+  },
+  {
+   "id": "adrien-duport",
+   "reason": "Feuillant."
+  },
+  {
+   "id": "antoine-barnave",
+   "reason": "Feuillant."
+  },
+  {
+   "id": "alexandre-de-lameth",
+   "reason": "Moved to the Feuillants."
+  },
+  {
+   "id": "isaac-le-chapelier",
+   "reason": "Feuillant-era constitutional moderate."
+  },
+  {
+   "id": "emmanuel-sieyes",
+   "reason": "Centrist theorist of the Plain."
+  },
+  {
+   "id": "lafayette",
+   "reason": "Constitutional monarchist."
+  },
+  {
+   "id": "napoleon-bonaparte",
+   "reason": "Excluded by criteria."
+  },
+  {
+   "id": "louis-auguste-blanqui",
+   "reason": "Nineteenth-century figure."
+  },
+  {
+   "id": "charles-delescluze",
+   "reason": "Nineteenth-century Jacobin and Communard, not active 1789-99."
+  },
+  {
+   "id": "charles-francois-dumouriez",
+   "reason": "General who defected to Austria."
+  },
+  {
+   "id": "jean-baptiste-jourdan",
+   "reason": "Revolutionary general without a radical political role."
+  },
+  {
+   "id": "henri-de-saint-simon",
+   "reason": "Social thinker, not in the radical political wing."
+  }
+ ],
+ "migration": "221"
+}

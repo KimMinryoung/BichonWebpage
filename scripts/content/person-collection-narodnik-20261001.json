@@ -1,0 +1,188 @@
+{
+ "collection": "narodnik",
+ "criteria": "Russian revolutionary populists (Narodniks) of the 1860s-1880s whose substantial political activity belonged to that movement or its direct organisations (Chaikovsky Circle, 'going to the people', Zemlya i Volya, Narodnaya Volya, Chorny Peredel), including key theorists. Later Marxist or SR careers do not remove the earlier period, but people whose populist phase was trivial, writers or historians who merely wrote about the movement, nihilists/anarchists not identified as populists, and Tsarist officials targeted by it are excluded.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "andrei-zhelyabov",
+   "source": "https://en.wikipedia.org/wiki/Andrei_Zhelyabov",
+   "locator": "plain-text extract characters 126:210; accessed 2026-10-01; sha256 af67360e7f23b89f8620c14bbbec5f7a3c5c3c8e8b226df07f43a28732f75167",
+   "excerpt": "was a Russian revolutionary and member of the executive committee of Narodnaya Volya",
+   "reason": "Zhelyabov was a founding leader of Narodnaya Volya after belonging to Zemlya i Volya."
+  },
+  {
+   "id": "vera-figner",
+   "source": "https://en.wikipedia.org/wiki/Vera_Figner",
+   "locator": "plain-text extract characters 272:326; accessed 2026-10-01; sha256 31b7a0510af8cbc4df60b573b1ae6099984967aecf4bf353869d3d6d0279fb54",
+   "excerpt": "Figner was a leader of the clandestine Narodnaya Volya",
+   "reason": "Figner sat on the Narodnaya Volya Executive Committee and was active in Zemlya i Volya before it."
+  },
+  {
+   "id": "sofia-perovskaya",
+   "source": "https://en.wikipedia.org/wiki/Sofia_Perovskaya",
+   "locator": "plain-text extract characters 133:223; accessed 2026-10-01; sha256 cb7c173e42904eea97686ca70fc30d12cf80ce6037de0953f87cc4d29e641c26",
+   "excerpt": "was a Russian revolutionary and a member of the revolutionary organization Narodnaya Volya",
+   "reason": "Perovskaya belonged to the Chaikovsky Circle and led the Narodnaya Volya plot against Alexander II."
+  },
+  {
+   "id": "nikolai-kibalchich",
+   "source": "https://en.wikipedia.org/wiki/Nikolai_Kibalchich",
+   "locator": "plain-text extract characters 1066:1148; accessed 2026-10-01; sha256 fc058c82123ec003a245512f04e522ebc8ff6fd8ce653f99c149447a7db2ee97",
+   "excerpt": "He went on to join Narodnaya Volya in 1878, becoming their main explosives expert.",
+   "reason": "Kibalchich was Narodnaya Volya's chief bomb-maker."
+  },
+  {
+   "id": "nikolai-morozov",
+   "source": "https://en.wikipedia.org/wiki/Nikolai_Morozov_(revolutionary)",
+   "locator": "plain-text extract characters 2164:2284; accessed 2026-10-01; sha256 7043725544f09d5b3205ac915db839664defd0f7dc77659eca3be1ba2bb7fb75",
+   "excerpt": "He joined the more radical of the two factions, Narodnaya Volya (People's Will), eventually becoming one of its leaders.",
+   "reason": "Morozov went from the Chaikovsky Circle and Zemlya i Volya to leading Narodnaya Volya."
+  },
+  {
+   "id": "stepan-khalturin",
+   "source": "https://en.wikipedia.org/wiki/Stepan_Khalturin",
+   "locator": "plain-text extract characters 138:188; accessed 2026-10-01; sha256 75b5a8a9804e03da72f3fe61a2a824fac37222f87ea33b958833d58488c3a136",
+   "excerpt": "a Russian revolutionary, member of Narodnaya Volya",
+   "reason": "Khalturin was a Narodnaya Volya member who bombed the Winter Palace in 1880."
+  },
+  {
+   "id": "alexander-ulyanov",
+   "source": "https://en.wikipedia.org/wiki/Alexander_Ulyanov",
+   "locator": "plain-text extract characters 1994:2091; accessed 2026-10-01; sha256 5553cb97bc089a3ccfdea21769f7ed24fb04bcee1348fbc1d62aeafaab557850",
+   "excerpt": "In 1886 Ulyanov became a member of the \"terrorist faction\", which was part of the Narodnaya Volya",
+   "reason": "Ulyanov led a Narodnaya Volya-linked terrorist group that plotted against Alexander III."
+  },
+  {
+   "id": "pyotr-lavrov",
+   "source": "https://en.wikipedia.org/wiki/Pyotr_Lavrov",
+   "locator": "plain-text extract characters 92:142; accessed 2026-10-01; sha256 5e149092c0b639670322507801b6f54c06713e35d9515e33ea8179eb3d9289c4",
+   "excerpt": "a prominent Russian political theorist of Narodism",
+   "reason": "Lavrov's Historical Letters made him a founding theorist of Narodism."
+  },
+  {
+   "id": "nikolai-mikhailovsky",
+   "source": "https://en.wikipedia.org/wiki/Nikolay_Mikhaylovsky",
+   "locator": "plain-text extract characters 235:285; accessed 2026-10-01; sha256 4edc9a6a8b95baa6e19c67b2ebbb9c0b03193c5965afa2fa7e3078552754825f",
+   "excerpt": "one of the theoreticians of the Narodniki movement",
+   "reason": "Mikhailovsky was a leading theorist of the Narodnik movement."
+  },
+  {
+   "id": "pyotr-tkachev",
+   "source": "https://en.wikipedia.org/wiki/Pyotr_Tkachev",
+   "locator": "plain-text extract characters 1240:1324; accessed 2026-10-01; sha256 b8f9ac862c405bfbf87c4d6cc94d1785487752fd2296e21b08d85898cf3da131",
+   "excerpt": "Populists like Tkachev argued against waiting indefinitely for the social revolution",
+   "reason": "Tkachev was the Jacobin-conspiratorial wing theorist of Russian populism."
+  },
+  {
+   "id": "catherine-breshkovsky",
+   "source": "https://en.wikipedia.org/wiki/Catherine_Breshkovsky",
+   "locator": "plain-text extract characters 182:310; accessed 2026-10-01; sha256 59ab92436432d73f9603b667886dc7df1519f5f36ada74716caedd808a1b39c2",
+   "excerpt": "a major figure in the Russian socialist movement, a Narodnik, and later one of the founders of the Socialist Revolutionary Party",
+   "reason": "Breshkovsky was a \"going to the people\" Narodnik whose later SR role does not erase it."
+  },
+  {
+   "id": "mark-natanson",
+   "source": "https://en.wikipedia.org/wiki/Mark_Natanson",
+   "locator": "plain-text extract characters 175:279; accessed 2026-10-01; sha256 7f79c8a3e876778b383a711cba7940d0ffa8be6becfff49d9d1617cedef9e4b9",
+   "excerpt": "one of the founders of the Circle of Tchaikovsky, Land and Liberty and the Socialist-Revolutionary Party",
+   "reason": "Natanson co-founded the Chaikovsky Circle and Zemlya i Volya."
+  },
+  {
+   "id": "vera-zasulich",
+   "source": "https://en.wikipedia.org/wiki/Vera_Zasulich",
+   "locator": "plain-text extract characters 590:656; accessed 2026-10-01; sha256 4f596a2d743e3b8c0dc00f3312513c027bb9505464e94da24115ff2113413dec",
+   "excerpt": "she became a key figure in the populist Black Repartition movement",
+   "reason": "Zasulich was a populist in the Southern Rebels and Chorny Peredel before turning Marxist."
+  },
+  {
+   "id": "lev-deitch",
+   "source": "https://en.wikipedia.org/wiki/Leo_Deutsch",
+   "locator": "plain-text extract characters 602:683; accessed 2026-10-01; sha256 48b332bed9396ed806a36ccc3e1975122c040e630c6115de853d6f1ac08d3de2",
+   "excerpt": "he joined a Narodnik group in Kiev, and took part in the 'to the people' movement",
+   "reason": "Deutsch was a Narodnik in the going-to-the-people movement and a founder of Chorny Peredel."
+  },
+  {
+   "id": "sergei-stepniak-kravchinsky",
+   "source": "https://en.wikipedia.org/wiki/Sergey_Stepnyak-Kravchinsky",
+   "locator": "plain-text extract characters 1232:1337; accessed 2026-10-01; sha256 ab165984a0035e96d3947b1d4f5a59ba48b68363f845b71e7f0c587addbe07a8",
+   "excerpt": "He joined the Circle of Tchaikovsky, a group of like-minded Narodnik philosophers and political activists",
+   "reason": "Stepniak was a Chaikovsky Circle and Zemlya i Volya Narodnik who killed the gendarme chief Mezentsov."
+  },
+  {
+   "id": "plekhanov",
+   "source": "https://en.wikipedia.org/wiki/Georgi_Plekhanov",
+   "locator": "plain-text extract characters 6650:6764; accessed 2026-10-01; sha256 7057c3da5d209ecef62de172317b851a42330e53fc97e41c63b0308119e7d7c4",
+   "excerpt": "In the autumn of 1876, Plekhanov joined the newly founded populist organization Zemlia i Volia (Land and Liberty).",
+   "reason": "Plekhanov led the Chorny Peredel populists before founding Russian Marxism."
+  },
+  {
+   "id": "pavel-akselrod",
+   "source": "https://en.wikipedia.org/wiki/Pavel_Axelrod",
+   "locator": "plain-text extract characters 5545:5606; accessed 2026-10-01; sha256 a34b252c03386a9c929371361157e234c1ba198ba0934ad08439fb0927919424",
+   "excerpt": "he sided with the Chyorny Peredel (Black Repartition) faction",
+   "reason": "Axelrod was a populist organiser and Chorny Peredel figure in the 1870s before turning Marxist."
+  },
+  {
+   "id": "vladimir-burtsev",
+   "source": "https://en.wikipedia.org/wiki/Vladimir_Burtsev",
+   "locator": "plain-text extract characters 986:1049; accessed 2026-10-01; sha256 4c0d358cebc9c2b08fda1fceeae4a94f7a26b17c4695c400ca80bca21e01899e",
+   "excerpt": "As a member of Narodnaya Volya, he was imprisoned for two years",
+   "reason": "Burtsev was a Narodnaya Volya member and later edited Narodovolets."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "sergei-nechayev",
+   "reason": "Nihilist and Bakuninist conspirator of People's Retribution; not identified as a Narodnik, only brushed against Narodnaya Volya while imprisoned."
+  },
+  {
+   "id": "pyotr-kropotkin",
+   "reason": "Chaikovsky Circle member but defined by anarchism (already in the anarchist collection); borderline."
+  },
+  {
+   "id": "mikhail-bakunin",
+   "reason": "Anarchist ideological rival, not a Narodnik organisation member."
+  },
+  {
+   "id": "alexander-herzen",
+   "reason": "Precursor of populism, died before the movement formed."
+  },
+  {
+   "id": "chernyshevsky",
+   "reason": "Intellectual inspiration, not a participant in the movement."
+  },
+  {
+   "id": "dmitry-pisarev",
+   "reason": "Nihilist critic who died in 1868, before the Narodnik organisations."
+  },
+  {
+   "id": "vladimir-korolenko",
+   "reason": "Writer sympathetic to populists, not an organisational Narodnik."
+  },
+  {
+   "id": "viktor-kurnatovsky",
+   "reason": "Populist phase was a brief student episode before his Marxist career."
+  },
+  {
+   "id": "mikhail-olminsky",
+   "reason": "Narodnaya Volya membership was brief (arrested 1885) before his Bolshevik career."
+  },
+  {
+   "id": "vyacheslav-von-plehve",
+   "reason": "Tsarist interior minister, opponent."
+  },
+  {
+   "id": "sergei-zubatov",
+   "reason": "Tsarist police official, opponent."
+  },
+  {
+   "id": "victor-chernov",
+   "reason": "Neo-populist SR theorist born 1873; active after the Narodnik era."
+  },
+  {
+   "id": "nikolai-fedoseev",
+   "reason": "Early Marxist organiser, not a Narodnik."
+  }
+ ],
+ "migration": "221"
+}

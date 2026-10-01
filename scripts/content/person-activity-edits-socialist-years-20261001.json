@@ -1,0 +1,1697 @@
+{
+ "note": "2026-10-01: 사회주의 시기가 일부뿐인 국가에 소속된 대표 활동 47건의 시작·끝 연도를 채움. 카드 입장 색(data/commulingo/person-position.js)은 이 연도로 사회주의 시기 복무를 가린다. 근거는 위키백과 plain-text 발췌(locator = 발췌 문자 범위 + 발췌 전체 sha256). 공산당 활동이 기록에서 빠져 회색이던 4명(러이크·클레멘티스·라라·스보보다)에 당 활동을 보조 활동으로 더함.",
+ "reviewMethod": "operator request; each year excerpt verified verbatim in the retrieved extract; span = the role the stored activity describes",
+ "patch": {
+  "aleksandar-rankovic": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1944,
+     "endYear": 1966,
+     "evidence": [
+      {
+       "claim": "란코비치는 1944년 파르티잔 보안기구 OZNA를 창설하고, 전후 내무부 장관 겸 군사정보기구 UDBA의 수장을 맡았다.",
+       "source": "https://en.wikipedia.org/wiki/Aleksandar_Rankovi%C4%87",
+       "excerpt": "In May 1944, Ranković created OZNA, the Partisan's security agency. After the war, he became minister of the interior and chief of the military intelligence agency UDBA, which had replaced OZNA.",
+       "locator": "characters 3890:4084; sha256 a01654f5d50b1208837ead6862f8e19940f85b4bf158ce819feff80dd31faa56"
+      },
+      {
+       "claim": "코소보는 란코비치와 그의 비밀경찰 조직 아래 경찰국가가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Aleksandar_Rankovi%C4%87",
+       "excerpt": "During this time Kosovo became a police state under Ranković and his secret police force.",
+       "locator": "characters 6375:6464; sha256 a01654f5d50b1208837ead6862f8e19940f85b4bf158ce819feff80dd31faa56"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Aleksandar_Rankovi%C4%87",
+       "locator": "plain-text extract characters 3890:3957; accessed 2026-10-01; sha256 a01654f5d50b1208837ead6862f8e19940f85b4bf158ce819feff80dd31faa56",
+       "claim": "1944년 5월 란코비치는 파르티잔의 보안기구 OZNA를 창설했다.",
+       "excerpt": "In May 1944, Ranković created OZNA, the Partisan's security agency."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Aleksandar_Rankovi%C4%87",
+       "locator": "plain-text extract characters 8088:8190; accessed 2026-10-01; sha256 a01654f5d50b1208837ead6862f8e19940f85b4bf158ce819feff80dd31faa56",
+       "claim": "1966년 7월 란코비치와 그의 측근들이 직위에서 제거되었다.",
+       "excerpt": "The situation ended in July 1966 with the removal of Ranković and his associates from their positions."
+      }
+     ]
+    }
+   }
+  ],
+  "alois-indra": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1968,
+     "endYear": 1989,
+     "evidence": [
+      {
+       "claim": "인드라는 체코슬로바키아 공산당 중앙위원회 비서 및 간부회의 위원으로 당 최고 지도부에서 활동했다.",
+       "source": "https://en.wikipedia.org/wiki/Alois_Indra",
+       "excerpt": "From April 1968 to December 1971, he held the post of a member of the secretariat of the Central Committee of the Communist Party and, at the same time, the secretary of the Central Committee. From February 1971 to November 1989, he was a member of the Presidium of the Central Committee of the Communist Party.",
+       "locator": "characters 1402:1713; sha256 421d1f58aceef6b447f08551e86b8b3a70045975d46183cf64a61ef83ae33b22"
+      },
+      {
+       "claim": "인드라는 체코슬로바키아 공산당의 정치 지도자로서 당 내 강경 보수파를 대표했다.",
+       "source": "https://en.wikipedia.org/wiki/Alois_Indra",
+       "excerpt": "Alois Indra (17 March 1921 – 2 August 1990) was a Czechoslovak communist statesman. He was known for his hardline positions and represented the conservative wing of the Communist Party of Czechoslovakia during the Prague Spring.",
+       "locator": "characters 0:228; sha256 421d1f58aceef6b447f08551e86b8b3a70045975d46183cf64a61ef83ae33b22"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Alois_Indra",
+       "locator": "plain-text extract characters 1402:1531; accessed 2026-10-01; sha256 421d1f58aceef6b447f08551e86b8b3a70045975d46183cf64a61ef83ae33b22",
+       "claim": "1968년 4월부터 1971년 12월까지 공산당 중앙위원회 비서국 위원을 지냈다.",
+       "excerpt": "From April 1968 to December 1971, he held the post of a member of the secretariat of the Central Committee of the Communist Party"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Alois_Indra",
+       "locator": "plain-text extract characters 1595:1713; accessed 2026-10-01; sha256 421d1f58aceef6b447f08551e86b8b3a70045975d46183cf64a61ef83ae33b22",
+       "claim": "1971년 2월부터 1989년 11월까지 공산당 중앙위원회 간부회의 위원이었다.",
+       "excerpt": "From February 1971 to November 1989, he was a member of the Presidium of the Central Committee of the Communist Party."
+      }
+     ]
+    }
+   }
+  ],
+  "ana-pauker": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1944,
+     "endYear": 1952,
+     "evidence": [
+      {
+       "claim": "그녀는 제2차 세계대전 직후 루마니아 공산당의 비공식 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Ana_Pauker",
+       "excerpt": "She was also the unofficial leader of the Romanian Communist Party immediately after World War II.",
+       "locator": "characters 278:376; sha256 9f0cdd5c393fef06a1f08cef53a8ea4e753b8cf654595ed55c0ec43bcc842961"
+      },
+      {
+       "claim": "그녀는 당 지도부에서 공식적으로 2인자였고 중앙위원회 비서국 4인 중 한 명이었다.",
+       "source": "https://en.wikipedia.org/wiki/Ana_Pauker",
+       "excerpt": "Pauker formally held the number-two position in the Party leadership and was a member of the four-person Secretariat of the Central Committee.",
+       "locator": "characters 3915:4057; sha256 9f0cdd5c393fef06a1f08cef53a8ea4e753b8cf654595ed55c0ec43bcc842961"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ana_Pauker",
+       "locator": "plain-text extract characters 3277:3392; accessed 2026-10-01; sha256 f8cf79b1c431b6fbf7946df754282f8adb465690efe70d2200cce361861f1204",
+       "claim": "1944년 붉은 군대가 루마니아에 진입할 때 귀국해 전후 정부의 일원이 되었다.",
+       "excerpt": "She returned to Romania in 1944 when the Red Army entered the country, becoming a member of the post-war government"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ana_Pauker",
+       "locator": "plain-text extract characters 11572:11623; accessed 2026-10-01; sha256 f8cf79b1c431b6fbf7946df754282f8adb465690efe70d2200cce361861f1204",
+       "claim": "1952년 5월 파우커는 루카, 게오르게스쿠와 함께 숙청되었다.",
+       "excerpt": "Pauker, Luca, and Georgescu were purged in May 1952"
+      }
+     ]
+    }
+   }
+  ],
+  "antonin-zapotocky": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1948,
+     "endYear": 1957,
+     "evidence": [
+      {
+       "claim": "He became president in 1953 and served until his death in 1957.",
+       "source": "https://www.britannica.com/biography/Antonin-Zapotocky",
+       "excerpt": "Antonín Zápotocký (born Dec. 12, 1884, Zakolony, near Kladno, Bohemia, Austria-Hungary [now in Czech Republic]—died Nov. 13, 1957, Prague, Czechoslovakia [now in Czech Republic]) was a political leader, cofounder of the Communist Party of Czechoslovakia, and the native Czech leader who probably contributed most to the successful Communist coup of 1948.\n\nZápotocký was a member of the Social Democratic Party for 20 years before the founding of the Communist Party in 1921; he engaged in Communist activities while he served in the democratic Czech Parliament. An able organizer and propagandist, he helped set up the party press, form party labour unions and cooperatives, and organize the party under the leadership of Klement Gottwald.\n\nZápotocký served as secretary-general of the Communist Trade Unions from 1929 to 1939, an association that gave him political strength and recognition. Thus, after World War II when the Revolutionary Trade Union Movement, composed of all of Czechoslovakia’s organized labour, was formed in 1945, Zápotocký became its chairman. After the Communist takeover of the government in 1948, Zápotocký became a member of the political secretariat and premier of Czechoslovakia. He became president after the death of Gottwald in 1953 and held that position for the remainder of his life.",
+       "locator": "characters 103–1422"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Anton%C3%ADn_Z%C3%A1potock%C3%BD",
+       "locator": "plain-text extract characters 170:297; accessed 2026-10-01; sha256 b9232b7fd4a8637c711cee26c24f8ea6883c7fe20ac046aa1584f58842401753",
+       "claim": "1948년부터 1953년까지 체코슬로바키아 총리, 1953년부터 1957년까지 대통령을 지냈다.",
+       "excerpt": "He served as the Prime Minister of Czechoslovakia from 1948 to 1953, and then as President of Czechoslovakia from 1953 to 1957."
+      }
+     ]
+    }
+   }
+  ],
+  "arnaldo-ochoa": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1957,
+     "endYear": 1989,
+     "evidence": [
+      {
+       "claim": "오초아는 쿠바 군 장성이었다.",
+       "source": "https://en.wikipedia.org/wiki/Arnaldo_Ochoa",
+       "excerpt": "Arnaldo Tomás Ochoa Sánchez (1930 – July 13, 1989) was a Cuban army general who was executed alongside Antonio de la Guardia by the government of Fidel Castro",
+       "locator": "characters 0:158; sha256 2eb3fd0d1a913af7c806978598424545156e26bd9166d4992c040663a913e664"
+      },
+      {
+       "claim": "그는 에티오피아 주둔 쿠바 원정군 사령관을 맡아 오가덴 전쟁에서 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Arnaldo_Ochoa",
+       "excerpt": "In 1977 he was named commander of Cuban Expeditionary Forces in Ethiopia under the command of Soviet General Petrov. His successes during the Ogaden War impressed the Soviet commanders in the field.",
+       "locator": "characters 1862:2060; sha256 2eb3fd0d1a913af7c806978598424545156e26bd9166d4992c040663a913e664"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Arnaldo_Ochoa",
+       "locator": "plain-text extract characters 373:446; accessed 2026-10-01; sha256 2eb3fd0d1a913af7c806978598424545156e26bd9166d4992c040663a913e664",
+       "claim": "1957년 3월까지 오초아는 시에라마에스트라에서 카스트로의 게릴라군에 합류했다.",
+       "excerpt": "by March 1957 he had joined Castro's guerrilla army in the Sierra Maestra"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Arnaldo_Ochoa",
+       "locator": "plain-text extract characters 0:92; accessed 2026-10-01; sha256 2eb3fd0d1a913af7c806978598424545156e26bd9166d4992c040663a913e664",
+       "claim": "쿠바 육군 장성 오초아는 1989년 7월 13일 처형되었다.",
+       "excerpt": "Arnaldo Tomás Ochoa Sánchez (1930 – July 13, 1989) was a Cuban army general who was executed"
+      }
+     ]
+    }
+   }
+  ],
+  "atnafu-abate": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1974,
+     "endYear": 1977,
+     "evidence": [
+      {
+       "claim": "그는 에티오피아 혁명 당시 아디스아바바에 주둔한 제4사단의 소령으로 복무했다.",
+       "source": "https://en.wikipedia.org/wiki/Atnafu_Abate",
+       "excerpt": "At the time of the Ethiopian Revolution, he was serving as a major in the Fourth Division, stationed in Addis Ababa.",
+       "locator": "characters 426:542; sha256 4645ef5aaddda65d2d02838f6aa58fe56174b167c897094c1fff14caed07817d"
+      },
+      {
+       "claim": "그는 1976년 5월 에리트레아 전선의 정규군을 보충할 민병대를 모집·무장·훈련하는 활동을 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Atnafu_Abate",
+       "excerpt": "He directed the effort in May 1976 to recruit, arm and train tens of thousands of peasants who would serve as a militia to supplement the weary soldiers of the regular army fighting at the Eritrean front.",
+       "locator": "characters 3740:3944; sha256 4645ef5aaddda65d2d02838f6aa58fe56174b167c897094c1fff14caed07817d"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Atnafu_Abate",
+       "locator": "plain-text extract characters 609:674; accessed 2026-10-01; sha256 4645ef5aaddda65d2d02838f6aa58fe56174b167c897094c1fff14caed07817d",
+       "claim": "1974년 4월까지 아트나푸는 군·경 장교 집단에 합류했다.",
+       "excerpt": "By April 1974 he had joined the group of army and police officers"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Atnafu_Abate",
+       "locator": "plain-text extract characters 4327:4366; accessed 2026-10-01; sha256 4645ef5aaddda65d2d02838f6aa58fe56174b167c897094c1fff14caed07817d",
+       "claim": "아트나푸는 1977년 11월 11일 체포되었다.",
+       "excerpt": "Atnafu was arrested on 11 November 1977"
+      }
+     ]
+    }
+   }
+  ],
+  "bela-kovacs": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1945,
+     "endYear": 1946,
+     "evidence": [
+      {
+       "claim": "코바치 벨러는 1945년부터 1946년까지 헝가리 농업장관을 지낸 인물로, 농업·토지정책을 담당했다.",
+       "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Kov%C3%A1cs_%28politician%2C_1908%29",
+       "excerpt": "Béla Kovács (20 April 1908 – 21 June 1959) was a Hungarian politician, who served as Minister of Agriculture from 1945 to 1946 and in the Hungarian Revolution of 1956.",
+       "locator": "characters 0:167; sha256 17b2167c7264950cfc2de4dcdd9ebfbcba66919385c1efdfff0ff6c54a048c80"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Kov%C3%A1cs_%28politician%2C_1908%29",
+       "locator": "plain-text extract characters 1390:1438; accessed 2026-10-01; sha256 9adfddb792bf21a78bcae951eb1ad0640129e22d245c224cc1e48c3fe3f6e962",
+       "claim": "코바치 벨러는 1945~46년 농업장관이 되었다.",
+       "excerpt": "Kovács became minister of agriculture (1945–46)."
+      }
+     ]
+    }
+   }
+  ],
+  "duong-van-minh": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1940,
+     "endYear": 1975,
+     "evidence": [
+      {
+       "claim": "Military role, 1963 coup/junta, displacement, 1975 presidency and surrender, emigration and death.",
+       "source": "https://en.wikipedia.org/wiki/D%C6%B0%C6%A1ng_V%C4%83n_Minh",
+       "excerpt": "Dương Văn Minh (Vietnamese: [jɨəŋ van miŋ̟]  or [zɨəŋ van miŋ̟]; 16 February 1916 – 6 August 2001), popularly known as Big Minh, was a South Vietnamese politician and a senior general in the Army of the Republic of Vietnam (ARVN) and a politician during the presidency of Ngô Đình Diệm. In 1963, he became chief of a military junta after leading a coup in which Diệm was assassinated. Minh lasted only three months before being toppled by Nguyễn Khánh, but assumed power again as the fourth and last President of South Vietnam in April 1975, two days before surrendering to North Vietnamese forces. He earned his nickname \"Big Minh\", because he was approximately 1.83 m (6 ft) tall and weighed 90 kg (198 lb).\nBorn in Tiền Giang province in the Mekong Delta region of southern Vietnam, Minh joined the French Army at the start of World War II, and was captured and tortured by the Imperial Japanese, who invaded and seized French Indochina. After his release, he joined the French-backed Vietnamese National Army (VNA) and was imprisoned by the communist-dominated Viet Minh before breaking out. In 1955, after Vietnam was partitioned and the State of Vietnam controlled the southern half under Prime Minister Ngô Đình Diệm, Minh led the VNA in decisively defeating the Bình Xuyên paramilitary crime syndicate in street combat and dismantling the Hòa Hảo religious tradition's private army. This made him popular with the people and Diệm, but the latter later put him in a powerless position, regardi",
+       "locator": "characters 0–3397"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/D%C6%B0%C6%A1ng_V%C4%83n_Minh",
+       "locator": "plain-text extract characters 3905:3941; accessed 2026-10-01; sha256 35fd6f5bf1ae184270c848c158b4cf497dc730b4eb93dcfca1a7425f7444631c",
+       "claim": "1940년 즈엉반민은 군 경력을 시작했다.",
+       "excerpt": "He began his military career in 1940"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/D%C6%B0%C6%A1ng_V%C4%83n_Minh",
+       "locator": "plain-text extract characters 457:597; accessed 2026-10-01; sha256 35fd6f5bf1ae184270c848c158b4cf497dc730b4eb93dcfca1a7425f7444631c",
+       "claim": "1975년 4월 남베트남 마지막 대통령으로 다시 집권했고 이틀 뒤 북베트남군에 항복했다.",
+       "excerpt": "assumed power again as the fourth and last President of South Vietnam in April 1975, two days before surrendering to North Vietnamese forces"
+      }
+     ]
+    }
+   }
+  ],
+  "edward-raczynski": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1919,
+     "endYear": 1945,
+     "evidence": [
+      {
+       "claim": "1891–1993년의 에드바르트 라친스키는 폴란드의 외교관이자 정치인이었다.",
+       "source": "https://en.wikipedia.org/wiki/Edward_Raczy%C5%84ski",
+       "excerpt": "Edward Bernard Raczyński (1891–1993), son of E. A. Raczyński, Polish aristocrat, diplomat, politician and the President of Poland in exile between 1979 and 1986",
+       "locator": "characters 326:486; sha256 fa04a405e0861012d2368fefcbd43683418895f0fae6ab0fa021a96737dfb577"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Edward_Bernard_Raczy%C5%84ski",
+       "locator": "plain-text extract characters 1508:1559; accessed 2026-10-01; sha256 dbf4b4864a023ac2cf310fc797b6e126df91aa88e5a1d10cd074a11a3ce1b00f",
+       "claim": "1919년 5월 라친스키는 외교 업무에 소집되었다.",
+       "excerpt": "he was called to the diplomatic service in May 1919"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Edward_Bernard_Raczy%C5%84ski",
+       "locator": "plain-text extract characters 36996:37124; accessed 2026-10-01; sha256 dbf4b4864a023ac2cf310fc797b6e126df91aa88e5a1d10cd074a11a3ce1b00f",
+       "claim": "1945년 이후 영국 정부가 폴란드와의 조약을 파기하고 폴란드 정부에 대한 지지를 철회했다.",
+       "excerpt": "After 1945, when the government of the United Kingdom broke the pacts with Poland and withdrew support for the Polish government"
+      }
+     ]
+    }
+   }
+  ],
+  "elena-ceausescu": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1973,
+     "endYear": 1989,
+     "evidence": [
+      {
+       "claim": "루마니아 공산당 정치국에서 최고위 당 지도자로 활동했다.",
+       "source": "https://en.wikipedia.org/wiki/Elena_Ceau%C8%99escu",
+       "excerpt": "In June 1973, she became a member of the Politburo of the Romanian Communist Party, becoming the second most important and influential person after her husband.",
+       "locator": "characters 2256:2416; sha256 ae0dba784dac58c5f5a37ee45761b28a4d3e3ed167560ab844fa635badd28f1f"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Elena_Ceau%C8%99escu",
+       "locator": "plain-text extract characters 2256:2338; accessed 2026-10-01; sha256 ae0dba784dac58c5f5a37ee45761b28a4d3e3ed167560ab844fa635badd28f1f",
+       "claim": "1973년 6월 루마니아 공산당 정치국원이 되었다.",
+       "excerpt": "In June 1973, she became a member of the Politburo of the Romanian Communist Party"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Elena_Ceau%C8%99escu",
+       "locator": "plain-text extract characters 4390:4495; accessed 2026-10-01; sha256 ae0dba784dac58c5f5a37ee45761b28a4d3e3ed167560ab844fa635badd28f1f",
+       "claim": "1989년 12월 25일 트르고비슈테에서 남편과 함께 총살되었다.",
+       "excerpt": "On the afternoon of 25 December 1989 in Târgoviște, they were turned over to a firing squad and executed."
+      }
+     ]
+    }
+   }
+  ],
+  "geza-jeszenszky": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1990,
+     "endYear": 2014,
+     "evidence": [
+      {
+       "claim": "그는 헝가리 외무장관으로 임명되어 국가 외교를 담당했다.",
+       "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Jeszenszky",
+       "excerpt": "Prime Minister József Antall appointed his former pupil as Minister of Foreign Affairs.",
+       "locator": "characters 1848:1935; sha256 1a966a3a642c0e99478b35d683a8a1270f76673dc0f1390d17616421ed7b01df"
+      },
+      {
+       "claim": "그는 헝가리 특명전권대사로서 미국에서 외교 사절로 근무했다.",
+       "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Jeszenszky",
+       "excerpt": "From 1998 to 2002 he served a mission as Hungarian Ambassador Extraordinary and Plenipotentiary in the United States.",
+       "locator": "characters 2540:2657; sha256 1a966a3a642c0e99478b35d683a8a1270f76673dc0f1390d17616421ed7b01df"
+      },
+      {
+       "source": "https://hu.wikipedia.org/wiki/Jeszenszky_G%C3%A9za",
+       "locator": "plain-text extract characters 421:570; accessed 2026-10-01; sha256 964341151f373ee9ad04360fcc1948262e6d9635a62cddc34a50a32e31f0ab77",
+       "claim": "1990~1994년 안탈 내각의 외무장관, 1998~2002년 주미 대사, 2011~2014년 주노르웨이·아이슬란드 대사를 지냈다.",
+       "excerpt": "1990–1994 között az Antall-kormány külügyminisztere, 1998–2002 között Magyarország washingtoni, majd 2011–2014 között norvégiai és izlandi nagykövete"
+      }
+     ]
+    }
+   }
+  ],
+  "geza-losonczy": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1956,
+     "endYear": 1956,
+     "evidence": [
+      {
+       "claim": "원문에서 확인한 전문 경력에 따라 propaganda 기능으로 분류함.",
+       "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Losonczy",
+       "excerpt": "During the 1956 Hungarian revolution, he joined the Imre Nagy government as minister of press and propaganda affairs.",
+       "locator": "characters 181:298; sha256 1b67710bf6464f2199b9671c67144e504254cba4df21d41fe91d205987604a5c"
+      },
+      {
+       "claim": "원문에서 확인한 전문 경력에 따라 propaganda 기능으로 분류함.",
+       "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Losonczy",
+       "excerpt": "He and Zoltán Tildy held the government's last press conference on 3 November.",
+       "locator": "characters 299:377; sha256 1b67710bf6464f2199b9671c67144e504254cba4df21d41fe91d205987604a5c"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Losonczy",
+       "locator": "plain-text extract characters 181:298; accessed 2026-10-01; sha256 1b67710bf6464f2199b9671c67144e504254cba4df21d41fe91d205987604a5c",
+       "claim": "1956년 헝가리 혁명 중 로손치 게저는 너지 임레 정부의 언론·선전 담당 장관으로 입각했다.",
+       "excerpt": "During the 1956 Hungarian revolution, he joined the Imre Nagy government as minister of press and propaganda affairs."
+      }
+     ]
+    }
+   }
+  ],
+  "hafizullah-amin": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1979,
+     "endYear": 1979,
+     "evidence": [
+      {
+       "claim": "아민은 PDPA 총서기로서 아프가니스탄을 통치했으며, 이는 당 지도 활동에 해당한다.",
+       "source": "https://en.wikipedia.org/wiki/Hafizullah_Amin",
+       "excerpt": "He organized the Saur Revolution of 1978 and co-founded the Democratic Republic of Afghanistan (DRA), ruling Afghanistan as General Secretary of the People's Democratic Party.",
+       "locator": "characters 243:418; sha256 8c1961d89bd68d28ddbb40c1e9038bf0c9c363ceb7fc95be080611c5592ff72d"
+      },
+      {
+       "claim": "아민은 1979년 9월 PDPA 중앙위원회 총서기를 자칭하며 당과 국가의 최고 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Hafizullah_Amin",
+       "excerpt": "on 16 September 1979, Amin named himself Chairman of the Council of Ministers (head of government), Chairman of the Revolutionary Council (head of state), and General Secretary of the PDPA Central Committee (supreme leader).",
+       "locator": "characters 1708:1932; sha256 8c1961d89bd68d28ddbb40c1e9038bf0c9c363ceb7fc95be080611c5592ff72d"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Hafizullah_Amin",
+       "locator": "plain-text extract characters 138:241; accessed 2026-10-01; sha256 28325ac8e1b03a37954239eb204d4bca95e578b011e65a45fc00f1cdbcd1074d",
+       "claim": "아민은 1979년 9월부터 암살될 때까지 석 달 남짓 그 직위에 있었다.",
+       "excerpt": "who served in that position for a little over three months, from September 1979 until his assassination"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Hafizullah_Amin",
+       "locator": "plain-text extract characters 1708:1785; accessed 2026-10-01; sha256 28325ac8e1b03a37954239eb204d4bca95e578b011e65a45fc00f1cdbcd1074d",
+       "claim": "1979년 9월 16일 아민은 스스로 각료회의 의장에 올랐다.",
+       "excerpt": "on 16 September 1979, Amin named himself Chairman of the Council of Ministers"
+      }
+     ]
+    }
+   }
+  ],
+  "ho-chi-minh": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1945,
+     "endYear": 1969,
+     "evidence": [
+      {
+       "claim": "호치민은 인도차이나 공산당 창설에 핵심적 역할을 했고, 후신인 베트남 노동자당(베트남 공산당)을 사망까지 의장으로 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh",
+       "excerpt": "Hồ played a central role in establishing the Indochinese Communist Party in 1930 and later led its successor, the Workers' Party of Vietnam (renamed Communist Party of Vietnam after 1976), as chairman until his death.",
+       "locator": "characters 440:657; sha256 59da3f23240f904898b817e797e50254a9556d21bc3bbb4f7cabb82c8f1339cc"
+      },
+      {
+       "claim": "그는 1945년부터 1955년까지 초대 총리를, 1946년부터 사망할 때까지 초대 대통령을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh",
+       "excerpt": "He served as its first president from 1946 until his death in 1969 and as its first prime minister from 1945 to 1955.",
+       "locator": "characters 292:409; sha256 59da3f23240f904898b817e797e50254a9556d21bc3bbb4f7cabb82c8f1339cc"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh",
+       "locator": "plain-text extract characters 292:409; accessed 2026-10-01; sha256 5443b4666c89c2ef0f37eefe1aee1b4615ae9d7832f9062fb0941c9cd5c93a8d",
+       "claim": "1945년부터 1955년까지 초대 총리, 1946년부터 1969년 사망까지 초대 대통령을 지냈다.",
+       "excerpt": "He served as its first president from 1946 until his death in 1969 and as its first prime minister from 1945 to 1955."
+      }
+     ]
+    }
+   }
+  ],
+  "hoang-van-hoan": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1950,
+     "endYear": 1957,
+     "evidence": [
+      {
+       "claim": "Ambassador to China 1950–1957; vice-chairman of National Assembly Standing Committee 1958–1979; Politburo member 1956–1976, elected 1956 and reelected 1960 per reviewed correction.",
+       "source": "https://en.wikipedia.org/wiki/Ho%C3%A0ng_V%C4%83n_Hoan",
+       "excerpt": "Following independence, he served as Vice Chairman of the Standing Committee of the North Vietnam (and later all-Vietnam) National Assembly from 1958 to 1979, and was on the Politburo from 1960 to 1976.\n\n\n=== Relationship with China ===\nHoan was known for his pro-Chinese stance. During the years when North and South Vietnam were divided, he was a crucial link between North Vietnam and the People's Republic of China. He served as North Vietnam's first ambassador to China from 1950 to 1957.",
+       "locator": "characters 1403–1896"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ho%C3%A0ng_V%C4%83n_Hoan",
+       "locator": "plain-text extract characters 1823:1896; accessed 2026-10-01; sha256 09a6d5ed495206425afdb8566751d706cbf36671443605cef13833ad52dbc848",
+       "claim": "1950년부터 1957년까지 북베트남의 초대 주중 대사를 지냈다.",
+       "excerpt": "He served as North Vietnam's first ambassador to China from 1950 to 1957."
+      }
+     ]
+    }
+   }
+  ],
+  "hubert-ripka": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1945,
+     "endYear": 1948,
+     "evidence": [
+      {
+       "claim": "In 1945, Ripka was named Minister of Trade in the provisional government and returned from London in May.",
+       "source": "https://history.state.gov/historicaldocuments/frus1945v02/d586",
+       "excerpt": "While most officials of the Czechoslovak Government in Exile had departed from London for Czechoslovakia by the beginning of April 1945, various Ministries including a skeleton staff at the Czechoslovak Foreign Ministry under Minister of State Hubert Ripka remained in London to finish pending matters before returning to Czechoslovakia. When a new Czechoslovak Provisional Government was named by President Benes at Kosice on April 4, Ripka was named Minister of Trade, but he did not leave London for Czechoslovakia until May.↩",
+       "locator": "characters 6206–6735"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Hubert_Ripka",
+       "locator": "plain-text extract characters 735:802; accessed 2026-10-01; sha256 4843edc93e4aa3b8f019637ee1366ca54b7eafec24f833437d96f7a3d48af792",
+       "claim": "1945년 독일 패망 후 립카는 전후 정부에서 대외무역장관직에 올랐다.",
+       "excerpt": "took office in the postwar government as Minister for Foreign Trade"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Hubert_Ripka",
+       "locator": "plain-text extract characters 899:987; accessed 2026-10-01; sha256 4843edc93e4aa3b8f019637ee1366ca54b7eafec24f833437d96f7a3d48af792",
+       "claim": "1948년 2월 공산당이 권력을 장악하자 립카는 다시 체코슬로바키아를 떠났다.",
+       "excerpt": "With the Communist seizure of power in February 1948 Ripka left Czechoslovakia once more"
+      }
+     ]
+    }
+   }
+  ],
+  "jakub-berman": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1944,
+     "endYear": 1956,
+     "evidence": [
+      {
+       "claim": "베르만은 폴란드 공산주의 정치인이었다.",
+       "source": "https://en.wikipedia.org/wiki/Jakub_Berman",
+       "excerpt": "Jakub Berman (23 December 1901 – 10 April 1984) was a Polish communist politician.",
+       "locator": "characters 0:82; sha256 99a8f59658701853032c3763d3970d79cbe7abb1851bb4cb09789592f32b3942"
+      },
+      {
+       "claim": "그는 전후 폴란드에서 폴란드 노동자당과 이후 폴란드 통일노동자당의 정치국원으로서 당 지도부에서 활동했다.",
+       "source": "https://en.wikipedia.org/wiki/Jakub_Berman",
+       "excerpt": "in post-war communist Poland he was a member of the Politburo of the Polish Workers' Party (PPR) and then of the Polish United Workers' Party (PZPR).",
+       "locator": "characters 130:279; sha256 99a8f59658701853032c3763d3970d79cbe7abb1851bb4cb09789592f32b3942"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Jakub_Berman",
+       "locator": "plain-text extract characters 4620:4729; accessed 2026-10-01; sha256 0996a5619ac04e6506ceb9490ef51bfc840ab532730c53404c4eef32f46948f7",
+       "claim": "1944년 여름 베르만은 폴란드 노동자당 정치국에 합류해 폴란드로 돌아왔다.",
+       "excerpt": "In the summer of 1944, Berman joined the Politburo of the Polish Workers' Party (PPR) and returned to Poland."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Jakub_Berman",
+       "locator": "plain-text extract characters 388:427; accessed 2026-10-01; sha256 0996a5619ac04e6506ceb9490ef51bfc840ab532730c53404c4eef32f46948f7",
+       "claim": "1956년 베르만은 권력에서 제거되었다.",
+       "excerpt": "until he was removed from power in 1956"
+      }
+     ]
+    }
+   }
+  ],
+  "janos-kadar": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1956,
+     "endYear": 1988,
+     "evidence": [
+      {
+       "claim": "카다르는 헝가리 사회주의 노동자당의 서기장으로 32년간 당을 이끈 정치 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/J%C3%A1nos_K%C3%A1d%C3%A1r",
+       "excerpt": "János József Kádár (né Csermanek; 26 May 1912 – 6 July 1989) was a Hungarian Communist leader and the General Secretary of the Hungarian Socialist Workers' Party, a position he held for 32 years.",
+       "locator": "characters 0:195; sha256 2fdc2c48de8421553a09d9e7e18647c87ffdcc662aabcb545356fdba7fb52ab8"
+      },
+      {
+       "claim": "1956년 헝가리 혁명 중 카다르는 당 서기장직을 맡아 정치 지도부의 핵심이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/J%C3%A1nos_K%C3%A1d%C3%A1r",
+       "excerpt": "On 25 October 1956, during the Hungarian Revolution, Kádár replaced Ernő Gerő as General Secretary of the Party, taking part in Nagy's revolutionary government.",
+       "locator": "characters 1059:1219; sha256 2fdc2c48de8421553a09d9e7e18647c87ffdcc662aabcb545356fdba7fb52ab8"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/J%C3%A1nos_K%C3%A1d%C3%A1r",
+       "locator": "plain-text extract characters 1059:1170; accessed 2026-10-01; sha256 e23a15ac68c6c882d4bf267bbc16e9ac0222d28b992179faca494ba0cb36c7e4",
+       "claim": "1956년 10월 25일 카다르가 게레 에르뇌의 뒤를 이어 당 서기장이 되었다.",
+       "excerpt": "On 25 October 1956, during the Hungarian Revolution, Kádár replaced Ernő Gerő as General Secretary of the Party"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/J%C3%A1nos_K%C3%A1d%C3%A1r",
+       "locator": "plain-text extract characters 1831:1903; accessed 2026-10-01; sha256 e23a15ac68c6c882d4bf267bbc16e9ac0222d28b992179faca494ba0cb36c7e4",
+       "claim": "1988년 5월 22일 카다르는 서기장직에서 물러나 그로스 카로이가 후임이 되었다.",
+       "excerpt": "Kádár was succeeded by Károly Grósz as General Secretary on 22 May 1988."
+      }
+     ]
+    }
+   }
+  ],
+  "jose-ramon-fernandez": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1978,
+     "endYear": 2012,
+     "evidence": [
+      {
+       "claim": "호세 라몬 페르난데스는 쿠바의 각료회의 부의장을 지낸 정부·행정 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%B3n_Fern%C3%A1ndez",
+       "excerpt": "José Ramón Fernández Álvarez (November 4, 1923 – January 6, 2019) was a Cuban Communist leader who was a vice-president of the Council of Ministers.",
+       "locator": "characters 0:148; sha256 6d4dd4de8934306e2a43eb887d233a7d46838737a0fd8e4a3ee676eb3ae754a8"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%B3n_Fern%C3%A1ndez",
+       "locator": "plain-text extract characters 2222:2336; accessed 2026-10-01; sha256 872bc23c477a97218cbf1938c2f674c917384999ed0c671ad1e1aead661f13e1",
+       "claim": "1972년부터 1990년까지 교육부 장관을, 1978년부터 2012년 3월까지 각료회의 부의장을 지냈다.",
+       "excerpt": "Minister of Education from 1972 until 1990 and vice-president of the Council of Ministers from 1978 to March 2012."
+      }
+     ]
+    }
+   }
+  ],
+  "jose-van-dunem": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1975,
+     "endYear": 1977,
+     "evidence": [
+      {
+       "claim": "그는 앙골라 해방인민무장군(FAPLA) 참모부의 정치위원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Jacinto_Van-D%C3%BAnem",
+       "excerpt": "He was the political commissioner of the general staff of the People's Armed Forces of Liberation of Angola (FAPLA), a member of the Central Committee of the MPLA, and political commissioner of the Eastern Front (III Região Político-Militar).",
+       "locator": "characters 177:419; sha256 51a002ef44b90cd9dfca0a2984f9e8cc5708e1b5ca208a419aa26ed46db0a35f"
+      },
+      {
+       "claim": "그는 앙골라 독립전쟁과 내전에 적극 참여했다.",
+       "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Jacinto_Van-D%C3%BAnem",
+       "excerpt": "He actively participated in the Angolan war for Independence and the Angolan Civil War.",
+       "locator": "characters 420:507; sha256 51a002ef44b90cd9dfca0a2984f9e8cc5708e1b5ca208a419aa26ed46db0a35f"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Jacinto_Van-D%C3%BAnem",
+       "locator": "plain-text extract characters 3797:3917; accessed 2026-10-01; sha256 ba2a877a35fcd669e8d3571cfd09552dc848e37fe78f2488ac938d65e9e04030",
+       "claim": "1975년 3월 네투가 그를 FAPLA의 전국 정치위원이자 참모차장으로 임명했다.",
+       "excerpt": "In March 1975, Agostinho Neto named him the national political commissioner and sub-chief of the general staff of FAPLA."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Jacinto_Van-D%C3%BAnem",
+       "locator": "plain-text extract characters 5481:5573; accessed 2026-10-01; sha256 ba2a877a35fcd669e8d3571cfd09552dc848e37fe78f2488ac938d65e9e04030",
+       "claim": "1976~1977년 사이 그는 당과 국가의 직책에서 해임되었다.",
+       "excerpt": "led him to be removed from his positions with the party and the state between 1976 and 1977."
+      }
+     ]
+    }
+   }
+  ],
+  "kazimierz-sosnkowski": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1916,
+     "endYear": 1944,
+     "evidence": [
+      {
+       "claim": "손코프스키는 폴란드-소비에트 전쟁과 제2차 세계대전에서 지휘관으로 복무했고, 1943년 폴란드군 총사령관이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+       "excerpt": "He was a major political figure and an accomplished commander, notable in particular for his contributions during the Polish–Soviet War and World War II. After the death of General Władysław Sikorski in July 1943, Sosnkowski became Commander-in-chief of the Polish Armed Forces.",
+       "locator": "characters 170:448; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe"
+      },
+      {
+       "claim": "1920년 폴란드-소비에트 전쟁 중 손코프스키는 북부 전선에서 예비군을 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+       "excerpt": "During the Polish–Soviet War of 1920, Sosnkowski at first commanded the Reserve Army of 32,000 soldiers on the northern front.",
+       "locator": "characters 4257:4383; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+       "locator": "plain-text extract characters 3312:3433; accessed 2026-10-01; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe",
+       "claim": "1916년 9월 26일 손코프스키는 군단 제1여단의 지휘권을 넘겨받았다.",
+       "excerpt": "On 10 May 1916 Sosnkowski became a colonel, and on 26 September of that year he took over the command of the 1st Brigade."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+       "locator": "plain-text extract characters 11414:11482; accessed 2026-10-01; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe",
+       "claim": "1944년 9월 30일 손코프스키는 총사령관직에서 해임되었다.",
+       "excerpt": "on 30 September 1944 Sosnkowski was demoted from commander-in-chief."
+      }
+     ]
+    }
+   }
+  ],
+  "koci-xoxe": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1944,
+     "endYear": 1948,
+     "evidence": [
+      {
+       "claim": "코치 조제는 알바니아 내무부와 비밀경찰 시구리미를 총괄했다.",
+       "source": "https://en.wikipedia.org/wiki/Ko%C3%A7i_Xoxe",
+       "excerpt": "Xoxe, who headed the Ministry of the Interior and the secret police, the Sigurimi, was supported by Tito.",
+       "locator": "characters 2031:2136; sha256 df966859d838029a3180e28176c0c4a234cdd013a78c725b5bbd2967efbf7788"
+      },
+      {
+       "claim": "그는 알바니아 인민사회주의공화국의 내무부 장관을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Ko%C3%A7i_Xoxe",
+       "excerpt": "was an Albanian politician who served as Deputy Prime Minister and Minister of the Interior of the People's Socialist Republic of Albania",
+       "locator": "characters 67:204; sha256 df966859d838029a3180e28176c0c4a234cdd013a78c725b5bbd2967efbf7788"
+      },
+      {
+       "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7i_Xoxe",
+       "locator": "plain-text extract characters 1819:1909; accessed 2026-10-01; sha256 c903da2c4deb9e1980dc0d6744a8177a0304b92580c0d03d640e44bac46aa337",
+       "claim": "1944년 12월부터 1946년 3월까지 인민방위국 국장을 지냈다.",
+       "excerpt": "Në dhjetor të 1944 e deri në mars 1946 ishte drejtor i Drejtorisë së Mbrojtjes së Popullit"
+      },
+      {
+       "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7i_Xoxe",
+       "locator": "plain-text extract characters 122:185; accessed 2026-10-01; sha256 c903da2c4deb9e1980dc0d6744a8177a0304b92580c0d03d640e44bac46aa337",
+       "claim": "1946년 4월부터 1948년 11월까지 내무장관을 지냈다.",
+       "excerpt": "Ministër i Brendshëm gjatë periudhës prill, 1946 – nëntor, 1948"
+      }
+     ]
+    }
+   }
+  ],
+  "koco-tashko": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1923,
+     "endYear": 1947,
+     "evidence": [
+      {
+       "claim": "코초 타슈코는 1923-1924년 알바니아의 뉴욕 영사로 임명되어 알바니아를 대표하는 외교관으로 활동했다.",
+       "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7o_Tashko",
+       "excerpt": "Në vitet 1923-1924 Tashko u emërua dy herë konsull i Shqipërisë në Nju-Jork, titull diplomatik me të cilin në atë kohë Shqipëria përfaqësohej në Amerikë.",
+       "locator": "characters 1088:1241; sha256 19ea7652aa19020c1027c593e0af0173d5e9ce0318604df11dc9007d3cc486e3"
+      },
+      {
+       "claim": "코초 타슈코는 1946-1947년 알바니아의 모스크바 대사였고 1947년 외무차관을 맡았다.",
+       "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7o_Tashko",
+       "excerpt": "Në vitet 1946-1947 Koço Tashko emërohet ambasador i Shqipërisë në Moskë. Në vitin 1947 ai ngarkohet me detyrën e zëvendësministrit të Punëve të Jashtme",
+       "locator": "characters 1763:1914; sha256 19ea7652aa19020c1027c593e0af0173d5e9ce0318604df11dc9007d3cc486e3"
+      },
+      {
+       "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7o_Tashko",
+       "locator": "plain-text extract characters 1088:1163; accessed 2026-10-01; sha256 19ea7652aa19020c1027c593e0af0173d5e9ce0318604df11dc9007d3cc486e3",
+       "claim": "1923~1924년 타슈코는 두 차례 알바니아의 뉴욕 영사로 임명되었다.",
+       "excerpt": "Në vitet 1923-1924 Tashko u emërua dy herë konsull i Shqipërisë në Nju-Jork"
+      },
+      {
+       "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7o_Tashko",
+       "locator": "plain-text extract characters 1836:1914; accessed 2026-10-01; sha256 19ea7652aa19020c1027c593e0af0173d5e9ce0318604df11dc9007d3cc486e3",
+       "claim": "1947년 그는 외무차관 직책을 맡았다.",
+       "excerpt": "Në vitin 1947 ai ngarkohet me detyrën e zëvendësministrit të Punëve të Jashtme"
+      }
+     ]
+    }
+   }
+  ],
+  "le-duc-tho": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1968,
+     "endYear": 1973,
+     "evidence": [
+      {
+       "claim": "Took effective charge of North Vietnam’s delegation in Paris in 1968 and secret talks with Kissinger began in February 1970 and led to the January 1973 Accords.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%AA_%C4%90%E1%BB%A9c_Th%E1%BB%8D",
+       "excerpt": "The United States actively joined the Vietnam War during the early 1960s. Several rounds of Paris Peace Talks (some public, some secret) were held between 1968 and 1973. Xuân Thuỷ was the official head of the North Vietnamese delegation, but Thọ arrived in Paris in June 1968 to take effective control.[10] On his way to Paris, Thọ stopped in Moscow to meet the Soviet Premier Aleksei Kosygin. On Thọ's behalf, Kosygin sent President Lyndon B. Johnson a letter reading: \"My colleagues and I believe and have grounds to believe that an end to the bombing [of North Vietnam] would lead to a breakthrough in the peace talks\". While Xuân Thuỷ led the official negotiating team representing the Democratic Republic of Vietnam at the talks in Paris, Thọ and U.S. National Security Advisor Henry Kissinger beginning in February 1970 engaged in secret conversations that eventually led to a cease-fire as part of the Paris Peace Accords of 27 January 1973.",
+       "locator": "characters 3644–4592"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/L%C3%AA_%C4%90%E1%BB%A9c_Th%E1%BB%8D",
+       "locator": "plain-text extract characters 2215:2275; accessed 2026-10-01; sha256 3b1cb16925aff2cd46afcc7621071e5668ae0c9d6069f1e152bcf7c594037729",
+       "claim": "1968년 6월 레둑토는 파리에 도착해 북베트남 대표단의 실권을 쥐었다.",
+       "excerpt": "Thọ arrived in Paris in June 1968 to take effective control."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/L%C3%AA_%C4%90%E1%BB%A9c_Th%E1%BB%8D",
+       "locator": "plain-text extract characters 2832:2917; accessed 2026-10-01; sha256 3b1cb16925aff2cd46afcc7621071e5668ae0c9d6069f1e152bcf7c594037729",
+       "claim": "그와 키신저의 비밀 회담은 1973년 1월 27일 파리 평화협정의 휴전으로 이어졌다.",
+       "excerpt": "eventually led to a cease-fire as part of the Paris Peace Accords of 27 January 1973."
+      }
+     ]
+    }
+   }
+  ],
+  "lucio-lara": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1957,
+     "endYear": 1985,
+     "evidence": [
+      {
+       "claim": "라라는 MPLA의 창립 멤버였다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "excerpt": "Lara, a founding member of the MPLA, led the first MPLA members into Luanda on 8 November 1974.",
+       "locator": "characters 415:510; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9"
+      },
+      {
+       "claim": "그는 MPLA에 가입하여 당의 주요 이데올로그가 되었고 당의 마르크스주의 이데올로기 정립에 기여한 인물로 평가된다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "excerpt": "In 1957, he joined the MPLA (founded the previous year), becoming its main ideologue, being even attributed to him the elaboration of the Marxist ideology of the party, which would become the dominant current.",
+       "locator": "characters 2624:2833; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9"
+      },
+      {
+       "claim": "그는 1962년 MPLA 제1차 회의에서 조직·간부 비서 및 중앙위원회 위원으로 선출되었다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "excerpt": "He was elected at the first conference of the MPLA party, in December 1962, as secretary of the organization and cadres and as a member of the central committee of the MPLA.",
+       "locator": "characters 3532:3705; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9"
+      },
+      {
+       "claim": "그는 당의 사무총장으로 선출된 후 1964년 브라자빌로 이주했다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "excerpt": "After being elected as secretary general of the party, he moved permanently with his family to Brazzaville (in 1964)",
+       "locator": "characters 3995:4111; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9"
+      },
+      {
+       "claim": "1977년 그는 MPLA 중앙위원회에 재선되어 정치국에서 네투 다음가는 인물이자 당 부의장이 되었으며 조직과 이데올로기 부문을 책임졌다.",
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "excerpt": "On 10 December 1977, despite the tragic results of the purge, Lara was re-elected to the central committee of the MPLA, which made him the second most important member of the political bureau (after only Neto) and vice-president of the party, being responsible for the organization and the ideological sector.",
+       "locator": "characters 5887:6196; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "locator": "plain-text extract characters 2624:2708; accessed 2026-10-01; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9",
+       "claim": "1957년 라라는 MPLA에 가입해 당의 주요 이데올로그가 되었다.",
+       "excerpt": "In 1957, he joined the MPLA (founded the previous year), becoming its main ideologue"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+       "locator": "plain-text extract characters 7283:7378; accessed 2026-10-01; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9",
+       "claim": "1985년 도스산투스 대통령이 그를 MPLA 정치국에서 제외했다.",
+       "excerpt": "In 1985, Angolan President José Eduardo dos Santos removes him from the MPLA's political bureau"
+      }
+     ]
+    }
+   }
+  ],
+  "lucjan-zeligowski": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1915,
+     "endYear": 1926,
+     "evidence": [
+      {
+       "claim": "루치안 젤리고프스키는 폴란드 장군이자 군사 지휘관으로 제1차 세계대전, 폴란드-소비에트 전쟁, 제2차 세계대전에 참전했다.",
+       "source": "https://en.wikipedia.org/wiki/Lucjan_%C5%BBeligowski",
+       "excerpt": "Lucjan Żeligowski (Polish pronunciation: [ˈlut͡sjan ʐɛliˈɡɔfskʲi]; Belarusian: Люцыя́н Жаліго́ўскі; Russian: Люциа́н  Гу́ставович Желиго́вский; 17 October 1865 – 9 July 1947) was a Polish general, politician, military commander and veteran of World War I, the Polish-Soviet War and World War II.",
+       "locator": "characters 0:295; sha256 eb98c1792a02cf3d964f4d625714673ce57b14be37459b688754af03b6dedfcd"
+      },
+      {
+       "claim": "그는 젤리고프스키 반란과 중앙리투아니아 공화국 수반 역할로 기억되는 군사 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Lucjan_%C5%BBeligowski",
+       "excerpt": "He is mostly remembered for his role in  Żeligowski's Mutiny and as head of a short-lived Republic of Central Lithuania.",
+       "locator": "characters 296:416; sha256 eb98c1792a02cf3d964f4d625714673ce57b14be37459b688754af03b6dedfcd"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Lucjan_%C5%BBeligowski",
+       "locator": "plain-text extract characters 2013:2159; accessed 2026-10-01; sha256 7b00ce0880b328f52859fa14032059d3502128dee635d44df5afacd927eb15ba",
+       "claim": "1915년 하반기 폴란드 소총여단이 편성되면서 젤리고프스키가 제2대대장에 임명되었다.",
+       "excerpt": "In the second half of 1915, the formation of the Polish Rifle Brigade began in Bobruisk, with Żeligowski appointed commander of the 2nd Battalion."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Lucjan_%C5%BBeligowski",
+       "locator": "plain-text extract characters 7226:7403; accessed 2026-10-01; sha256 7b00ce0880b328f52859fa14032059d3502128dee635d44df5afacd927eb15ba",
+       "claim": "1925년 군무장관이 되었고 5월 쿠데타로 밀려났다가 복귀했으며 이듬해 퇴역했다.",
+       "excerpt": "In 1925 he also became the Polish Minister of Military Affairs. Ousted by Piłsudski's coup d'état (the May Coup), he was soon returned to the post. He retired the following year"
+      }
+     ]
+    }
+   }
+  ],
+  "ludvik-svoboda": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1941,
+     "endYear": 1950,
+     "evidence": [
+      {
+       "claim": "스보보다는 제2차 세계대전 중 소련 내 체코슬로바키아 군대의 조직과 지휘를 맡아 1차 체코슬로바키아 군단의 모체가 된 독립 야전대대를 조직했다.",
+       "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Svoboda",
+       "excerpt": "The activity of Svoboda throughout the rest of the war was connected with the organization and command of the Czechoslovak troops in the USSR. Svoboda, together with a group of 93 officers and non-commissioned officers that he prepared during the internment (the Oran Group), organized an independent field battalion from volunteers—Czechoslovak citizens who signed up from all over the USSR—which became the germ of the 1st Czechoslovak Army Corps.",
+       "locator": "characters 8218:8667; sha256 498a81fbd71cf607ef0bc32ccab1e98433f3d267dd6a6fcd894ea9c8da5386cc"
+      },
+      {
+       "claim": "1944년 9월 10일 루드비크 스보보다 준장이 1차 체코슬로바키아 군단의 지휘권을 인수했다.",
+       "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Svoboda",
+       "excerpt": "On 10 September 1944, command of the 1st Czechoslovak Corps passed from Brigadier General Jan Kratochvíl to Brigadier General Ludvík Svoboda (by order of the commander of the 1st Ukrainian Front, Marshal of the USSR Konev).",
+       "locator": "characters 10453:10676; sha256 498a81fbd71cf607ef0bc32ccab1e98433f3d267dd6a6fcd894ea9c8da5386cc"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Svoboda",
+       "locator": "plain-text extract characters 5496:5585; accessed 2026-10-01; sha256 583ed2eaee159d7e5dadc698cb327a08eca722be097ce1cc7540d2ce5fa16b20",
+       "claim": "1941년 7월 소련과 체코슬로바키아의 군사협정 체결 준비에 스보보다가 깊이 관여했다.",
+       "excerpt": "Lt. Col. Svoboda was significantly involved in the preparation of this military agreement"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Svoboda",
+       "locator": "plain-text extract characters 14516:14659; accessed 2026-10-01; sha256 583ed2eaee159d7e5dadc698cb327a08eca722be097ce1cc7540d2ce5fa16b20",
+       "claim": "1950년 스보보다는 소련의 압력으로 군에서 밀려났다.",
+       "excerpt": "Svoboda was forced out of the army (in which he had reached the rank of Army General in November 1945) in 1950 under pressure from the Soviets."
+      }
+     ]
+    }
+   }
+  ],
+  "marien-ngouabi": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1969,
+     "endYear": 1977,
+     "evidence": [
+      {
+       "claim": "응구아비는 콩고 노동당(PCT)을 창당하고 유일 합법 정당으로 삼아 당 지도 활동을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Marien_Ngouabi",
+       "excerpt": "Once in power, President Ngouabi changed the country's name to the People's Republic of the Congo, declaring it to be Africa's first Marxist–Leninist state, and founded the Congolese Workers' Party (Parti Congolais du Travail, PCT) as the country's only legal political party.",
+       "locator": "characters 2362:2638; sha256 24ab52bf2e7f3773699f28118830d468a74f3dae32e666f60506132a802988fa"
+      },
+      {
+       "claim": "응구아비는 PCT 중앙위원회 의장과 상임서기로 선출되어 당을 지도했다.",
+       "source": "https://en.wikipedia.org/wiki/Marien_Ngouabi",
+       "excerpt": "Ngouabi was re-elected to his post as Chairman of the PCT Central Committee on December 30, 1974; he was additionally elected as Permanent Secretary of the PCT.",
+       "locator": "characters 4623:4783; sha256 24ab52bf2e7f3773699f28118830d468a74f3dae32e666f60506132a802988fa"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Marien_Ngouabi",
+       "locator": "plain-text extract characters 104:215; accessed 2026-10-01; sha256 24ab52bf2e7f3773699f28118830d468a74f3dae32e666f60506132a802988fa",
+       "claim": "1969년부터 1977년 암살될 때까지 콩고 인민공화국 대통령으로서 당과 국가를 이끌었다.",
+       "excerpt": "served as the fourth President of the People's Republic of the Congo from 1969 until his assassination in 1977."
+      }
+     ]
+    }
+   }
+  ],
+  "mohammad-ali-samatar": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1970,
+     "endYear": 1987,
+     "evidence": [
+      {
+       "claim": "사마타르는 소말리아 국가군(SNA) 중장으로서 1970년대 후반 오가덴 전역에서 SNA 부대를 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Mohammad_Ali_Samatar",
+       "excerpt": "A lieutenant general in the Somali National Army (SNA), Samatar was a key figure in Somali politics throughout the 1970s and 1980s. During the Ogaden campaign of the late 1970s, he led all SNA units and their Western Somali Liberation Front (WSLF) affiliates.",
+       "locator": "characters 850:1109; sha256 7b38aa741b8aa7f43ba9aeb7c9ef863621514289f1658551abd161e4d24df481"
+      },
+      {
+       "claim": "그는 오가덴 전역 당시 소말리아 국가군의 최고 지휘관이었다.",
+       "source": "https://en.wikipedia.org/wiki/Mohammad_Ali_Samatar",
+       "excerpt": "In the late 1970s, Samatar was the Chief Commanding Officer of the Somali National Army during the Ogaden Campaign.",
+       "locator": "characters 3681:3796; sha256 7b38aa741b8aa7f43ba9aeb7c9ef863621514289f1658551abd161e4d24df481"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Mohammad_Ali_Samatar",
+       "locator": "plain-text extract characters 1129:1191; accessed 2026-10-01; sha256 7b38aa741b8aa7f43ba9aeb7c9ef863621514289f1658551abd161e4d24df481",
+       "claim": "1970년부터 1987년까지 국방장관을 지냈다.",
+       "excerpt": "He also served as national Defense Minister from 1970 to 1987."
+      }
+     ]
+    }
+   }
+  ],
+  "nguyen-thi-binh": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1969,
+     "endYear": 1976,
+     "evidence": [
+      {
+       "claim": "1969년 외교 직책",
+       "source": "https://vufo.org.vn/Liberation-Hero---Nguyen-Thi-Binh-12-49275.html?lang=en",
+       "excerpt": "Her work was outstanding; she was calm, determined and totally focussed on the cause of peace and unification. It is therefore no surprise that when the Paris Peace Conference on Viet Nam formally opened in January 1969, she was chosen as deputy head of the National Liberation Front delegation. Shortly afterwards she came to Britain and addressed crowds massed for peace in Trafalgar Square.\n\nA few months later, the NLF formed the Provisional Revolutionary Government of the Republic of South Viet Nam (PRG) and Nguyen Thi Binh became its minister of foreign affairs and head of its delegation in Paris, a position that she kept throughout what she described as “the longest peace negotiation in history.” Nguyen Thi Binh was the only woman to sign the Paris Agreement on Ending the War and Restoring Peace in Viet Nam on 27th January 1973. South Viet Nam was liberated on 30th April 1975 and the two parts of Viet Nam were 5nally brought together in 1976 as the Socialist Republic of Viet Nam.",
+       "locator": "characters 4311–5308"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_Th%E1%BB%8B_B%C3%ACnh",
+       "locator": "plain-text extract characters 1493:1613; accessed 2026-10-01; sha256 cfec5b5ce363473d54487cc72bb48e82f035b6b223d36ebb60dedfc9da3f3ded",
+       "claim": "1969년 그녀는 남베트남공화국 임시혁명정부의 외교부 장관에 임명되었다.",
+       "excerpt": "In 1969 she was appointed foreign minister of the Provisional Revolutionary Government of the Republic of South Vietnam."
+      },
+      {
+       "source": "https://vi.wikipedia.org/wiki/Nguy%E1%BB%85n_Th%E1%BB%8B_B%C3%ACnh",
+       "locator": "plain-text extract characters 5205:5275; accessed 2026-10-01; sha256 8019aaeeceae80249d87ed57ea36ec1529fc69079669f2715a536d9cab3e9ae9",
+       "claim": "1975년 4월 30일 이후 그녀는 교육부 장관(1976~1987)이 되었다.",
+       "excerpt": "Sau sự kiện 30 tháng 4, bà trở thành Bộ trưởng Bộ Giáo dục (1976–1987)"
+      }
+     ]
+    }
+   }
+  ],
+  "paulo-teixeira-jorge": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1976,
+     "endYear": 1984,
+     "evidence": [
+      {
+       "claim": "파울루 조르지는 앙골라 독립을 위한 포르투갈과의 협상을 이끌었고 알보르 협정의 설계자 중 한 명이었다.",
+       "source": "https://www.socialistinternational.org/news-events/in-memoriam/article/paulo-jorge-1929-2010-737",
+       "excerpt": "Respected for his honesty, principles and diplomacy, Paulo Jorge was chosen to lead the talks with Portugal for the independence of Angola and was one of the architects of the Alvor Accords which were signed in 1975.",
+       "locator": "characters 624:840; sha256 b6dc8ad440c46c29136c34bb02f9ef7f9d3fe13637807f26779d3d94a1907624"
+      },
+      {
+       "claim": "독립 후 그는 대통령 외교 담당 비서를 거쳐 외무장관을 역임하며 앙골라 국가에 봉사했다.",
+       "source": "https://www.socialistinternational.org/news-events/in-memoriam/article/paulo-jorge-1929-2010-737",
+       "excerpt": "Following independence, he continued service to his country, first as Secretary to the President of the Republic for Foreign Affairs, later assuming the post of Foreign Minister.",
+       "locator": "characters 841:1019; sha256 b6dc8ad440c46c29136c34bb02f9ef7f9d3fe13637807f26779d3d94a1907624"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Paulo_Teixeira_Jorge",
+       "locator": "plain-text extract characters 82:141; accessed 2026-10-01; sha256 73ed80562146af10f946fed2f0402929638035175bf3ca251093f90fc7f7ac47",
+       "claim": "1976년부터 1984년까지 앙골라 외무장관을 지냈다.",
+       "excerpt": "served as the Foreign Minister of Angola from 1976 to 1984."
+      }
+     ]
+    }
+   }
+  ],
+  "pavel-auersperg": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1969,
+     "endYear": 1986,
+     "evidence": [
+      {
+       "claim": "파벨 아우에스페르크는 체코슬로바키아 공산당의 정치인이자 정상화 시기 연방의회 민족원 의원이었다.",
+       "source": "https://cs.wikipedia.org/wiki/Pavel_Auersperg",
+       "excerpt": "byl český a československý politik Komunistické strany Československa a poslanec Sněmovny národů Federálního shromáždění za normalizace.",
+       "locator": "characters 66:202; sha256 57b8669ed62e6e5d4069aaff2ff708ece055c43e7c9c32b2bedce5a87dcfcbd3"
+      },
+      {
+       "source": "https://cs.wikipedia.org/wiki/Pavel_Auersperg",
+       "locator": "plain-text extract characters 862:914; accessed 2026-10-01; sha256 a88fb1c56bf7f0e2f6f2e605699bf1a80c430adf1a2e5a7c7dc2883eb8f3ae23",
+       "claim": "1969년 9월 26일 체코슬로바키아 공산당 중앙위원회 위원으로 전환되었다.",
+       "excerpt": "do funkce člena ÚV KSČ byl převeden k 26. září 1969."
+      },
+      {
+       "source": "https://cs.wikipedia.org/wiki/Pavel_Auersperg",
+       "locator": "plain-text extract characters 985:1015; accessed 2026-10-01; sha256 a88fb1c56bf7f0e2f6f2e605699bf1a80c430adf1a2e5a7c7dc2883eb8f3ae23",
+       "claim": "그는 1986년까지 체코슬로바키아 공산당 중앙위원회에 남았다.",
+       "excerpt": "V ÚV KSČ setrval do roku 1986."
+      }
+     ]
+    }
+   }
+  ],
+  "peko-dapcevic": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1941,
+     "endYear": 1955,
+     "evidence": [
+      {
+       "claim": "그는 유고슬라비아 제1 프롤레타리아 군단과 제1·4군 사령관을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Peko_Dap%C4%8Devi%C4%87",
+       "excerpt": "became commander of the Yugoslav 1st Proletarian Corps, 1st and 4th Armies",
+       "locator": "characters 213:287; sha256 ee7036fb7b2443daf3e655a05cc5509e2802ec0e1245e22acd7da20446fc60a2"
+      },
+      {
+       "claim": "1953년 유고슬라비아 총참모장으로 임명되었다.",
+       "source": "https://en.wikipedia.org/wiki/Peko_Dap%C4%8Devi%C4%87",
+       "excerpt": "In 1953, Dapčević was named Chief of the Yugoslav General Staff",
+       "locator": "characters 601:664; sha256 ee7036fb7b2443daf3e655a05cc5509e2802ec0e1245e22acd7da20446fc60a2"
+      },
+      {
+       "source": "https://sr.wikipedia.org/wiki/Пеко_Дапчевић",
+       "locator": "plain-text extract characters 3037:3175; accessed 2026-10-01; sha256 490c6d2403669ab7db31b8871d15f7d3ab515db5f8d30710425ac658b63495a5",
+       "claim": "1941년 7월 15일 그는 로브첸 빨치산 부대 사령관으로서 코슈첼라 전투를 지휘했다.",
+       "excerpt": "У борби на Кошћелама (на путу Цетиње–Ријека Црнојевића) 15. јула 1941. године, под његовом командом је најпре уништена моторизована колона"
+      },
+      {
+       "source": "https://sr.wikipedia.org/wiki/Пеко_Дапчевић",
+       "locator": "plain-text extract characters 9836:9905; accessed 2026-10-01; sha256 490c6d2403669ab7db31b8871d15f7d3ab515db5f8d30710425ac658b63495a5",
+       "claim": "1953년 1월 14일부터 1955년 4월 29일까지 유고슬라비아 인민군 총참모장을 지냈다.",
+       "excerpt": "а од 14. јануара 1953. до 29. априла 1955. Начелник Генералштаба ЈНА."
+      }
+     ]
+    }
+   }
+  ],
+  "petr-zenkl": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1937,
+     "endYear": 1974,
+     "evidence": [
+      {
+       "claim": "Mayor of Prague 1937–1939; returned as mayor in August 1945 until May 1946 and chairman of Czechoslovak National Social Party; deputy prime minister from May 1946; chairman of the exile Council of Free Czechoslovakia 1949–1974.",
+       "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+       "excerpt": "Petr Zenkl (13 June 1884 – 2 November 1975) was a Czech politician, government minister, mayor of Prague, chairman of the Czechoslovak National Social Party (1945–1948), deputy prime minister of Czechoslovakia (1946–1948) and the chairman of the exile Council of Free Czechoslovakia (1949–1974).\n\n\n== Biography ==\nPetr Zenkl was born as the eighth son of a small businessman, originally a tailor, in the South Bohemian town of Tábor. All of the children helped their father in his business and strived to earn money. His father was a Czech patriot, and consequently his children joined the Sokol movement. Zenkl studied at the gymnasium (grammar school) in Tábor and later graduated from the Philosophy Faculty of Charles University in Prague and in 1907 gained a doctorate. During his studies in Tábor he met a daughter of his history teacher, 16-year-old Pavla, and married her six years later in 1909.\nFrom 1911 Zenkl was active in local politics in Prague, more precisely in Karlín, which was until 1921 an independent town before its incorporation to Prague. In 1911 he became a member of the Karlín town council, and in 1919 became a mayor of Karlín. He lost his position when Karlín was incorporated into Prague in 1921–1922. As a member of the Prague city council, Zenkl was installed in 1937 to the position of Prague's mayor, replacing his successful predecessor, dr. Karel Baxa.\n\nShortly after the Nazi German occupation of Prague (March 1939) Zenkl was arrested and jailed in the Pankrác ",
+       "locator": "characters 0–3821"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+       "locator": "plain-text extract characters 1273:1334; accessed 2026-10-01; sha256 265e65d632dc254d361d389835f14b26805477633241e9c3c9023f56d537f842",
+       "claim": "1937년 프라하 시장에 취임했다.",
+       "excerpt": "Zenkl was installed in 1937 to the position of Prague's mayor"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+       "locator": "plain-text extract characters 226:294; accessed 2026-10-01; sha256 265e65d632dc254d361d389835f14b26805477633241e9c3c9023f56d537f842",
+       "claim": "1949년부터 1974년까지 망명 자유 체코슬로바키아 위원회 의장을 지냈다.",
+       "excerpt": "the chairman of the exile Council of Free Czechoslovakia (1949–1974)"
+      }
+     ]
+    }
+   }
+  ],
+  "prince-paul-of-yugoslavia": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1934,
+     "endYear": 1941,
+     "evidence": [
+      {
+       "claim": "그는 페테르 2세의 미성년 기간 동안 유고슬라비아 왕국의 섭정으로서 국가를 통치했다.",
+       "source": "https://en.wikipedia.org/wiki/Prince_Paul_of_Yugoslavia",
+       "excerpt": "was prince regent of the Kingdom of Yugoslavia during the minority of King Peter II",
+       "locator": "characters 209:292; sha256 0add9886bd28266889d1ddca79a471cfccb98085bf9fb332e1e5af0152c33bb7"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Prince_Paul_of_Yugoslavia",
+       "claim": "섭정 파블레 공은 1934~41년 유고슬라비아를 이끌었다.",
+       "excerpt": "As Prince Regent, Paul possessed very broad powers, but he was much less inclined to exercise these powers, leading Yugoslavia in the years 1934–41 to be labelled \"a dictatorship without a dictator\".",
+       "locator": "plain-text extract characters 6742:6941; accessed 2026-10-01; sha256 483a6dbec4ec2f2037d5a120ab761de14d1b917d41ab37f46dc35d0be7ea812f"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Prince_Paul_of_Yugoslavia",
+       "locator": "plain-text extract characters 34294:34449; accessed 2026-10-01; sha256 483a6dbec4ec2f2037d5a120ab761de14d1b917d41ab37f46dc35d0be7ea812f",
+       "claim": "1941년 3월 27일 군부 인사들이 파울을 권좌에서 강제로 축출했다.",
+       "excerpt": "On 27 March 1941, two days after Yugoslavia had signed the Tripartite Pact, Yugoslav military figures with British support forcibly removed Paul from power"
+      }
+     ]
+    }
+   }
+  ],
+  "tafari-benti": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1974,
+     "endYear": 1977,
+     "evidence": [
+      {
+       "claim": "데르그가 권력을 잡은 직후 국가를 통치하며 정책을 추진했음을 보여준다.",
+       "source": "https://countrystudies.us/ethiopia/30.htm",
+       "excerpt": "Soon after taking power, the Derg promoted Ye-Itiopia Hibretesebawinet (Ethiopian Socialism).",
+       "locator": "characters 57:150; sha256 f70145eb50d2bb31a19438bca8d7f5f1f46e542456a6b0885ef1193d6d2544b0"
+      },
+      {
+       "claim": "데르그 정부가 국가 차원의 토지 국유화 정책을 시행했음을 보여준다.",
+       "source": "https://countrystudies.us/ethiopia/30.htm",
+       "excerpt": "The Derg, however, adopted a radical approach, with the Land Reform Proclamation of March 1975, which nationalized all rural land, abolished tenancy, and put peasants in charge of enforcement.",
+       "locator": "characters 673:865; sha256 f70145eb50d2bb31a19438bca8d7f5f1f46e542456a6b0885ef1193d6d2544b0"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Tafari_Benti",
+       "locator": "plain-text extract characters 163:216; accessed 2026-10-01; sha256 1f2520dc25a089fe57bf6e3793569fd378d2f9641f14b933d73bf9e805df9c3e",
+       "claim": "1974년부터 1977년까지 에티오피아 국가원수로서 데르그의 제2대 의장을 지냈다.",
+       "excerpt": "served as head of state of Ethiopia from 1974 to 1977"
+      }
+     ]
+    }
+   }
+  ],
+  "traicho-kostov": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1944,
+     "endYear": 1949,
+     "evidence": [
+      {
+       "claim": "코스토프는 불가리아 공산당의 지도적 인물이었다.",
+       "source": "https://en.wikipedia.org/wiki/Traicho_Kostov",
+       "excerpt": "He was a leading figure of the Bulgarian Communist Party.",
+       "locator": "characters 118:175; sha256 86745ca7bf0a69918ad7d22c48eb539701b98e0834d501a9464f2c9a9d994bb9"
+      },
+      {
+       "claim": "그는 불가리아 공산당 중앙위원회 서기장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Traicho_Kostov",
+       "excerpt": "Traicho Kostov Djunev (1897), President of the Council of Ministers, General Secretary of the Central Committee of the Bulgarian Communist Party (executed)",
+       "locator": "characters 4625:4780; sha256 86745ca7bf0a69918ad7d22c48eb539701b98e0834d501a9464f2c9a9d994bb9"
+      },
+      {
+       "source": "https://bg.wikipedia.org/wiki/Трайчо_Костов",
+       "locator": "plain-text extract characters 3374:3531; accessed 2026-10-01; sha256 de717f4d9bb7f29680575e9c8b280d98a8daf8584cbd4d80d46f35560e8c72cb",
+       "claim": "1944년 9월 9일 코스토프는 소피아로 돌아와 불가리아 노동자당 중앙위원회 정치 서기직에 복귀했다.",
+       "excerpt": "На 9 септември 1944 година Костов заминава за София със специално изпратен за него автомобил, след което е върнат на поста политически секретар на ЦК на БРП."
+      },
+      {
+       "source": "https://bg.wikipedia.org/wiki/Трайчо_Костов",
+       "locator": "plain-text extract characters 6042:6125; accessed 2026-10-01; sha256 de717f4d9bb7f29680575e9c8b280d98a8daf8584cbd4d80d46f35560e8c72cb",
+       "claim": "1949년 3월 27일 불가리아 공산당 중앙위원회 총회가 코스토프를 비난해 정치국과 정부에서 해임하기로 했다.",
+       "excerpt": "Пленумът на ЦК на БКП от 27.3.1949 г. обвинява Трайчо Костов в антисъветска дейност"
+      }
+     ]
+    }
+   }
+  ],
+  "truong-chinh": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1940,
+     "endYear": 1987,
+     "evidence": [
+      {
+       "claim": "쯔엉찐은 1940년 인도차이나 공산당 서기장으로 선출되어 당을 지도했다.",
+       "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+       "excerpt": "In 1940, Trường Chinh was elected as the General Secretary of the Communist Party of Indochina.",
+       "locator": "characters 9714:9809; sha256 74ea9502ffecb40a99aa6dd2d29fa920ce69e68ad3b5ec2f43d663466a0c3575"
+      },
+      {
+       "claim": "그는 1951년 베트남 노동자당 중앙위원회 제1서기가 되어 당 지도부의 핵심 직위를 맡았다.",
+       "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+       "excerpt": "On 19 February 1951, Trường became First Secretary of the Workers' Party of Vietnam Central Committee.",
+       "locator": "characters 891:993; sha256 74ea9502ffecb40a99aa6dd2d29fa920ce69e68ad3b5ec2f43d663466a0c3575"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+       "locator": "plain-text extract characters 593:750; accessed 2026-10-01; sha256 c94b9f2c15421b13cf2c3d6358a085679b07e9a9d08047bf8e7a2238bbcd37e8",
+       "claim": "1940년 11월 9일부터 1945년 11월 11일까지 인도차이나 공산당 중앙위원회 서기장을 지냈다.",
+       "excerpt": "Between November 9, 1940 and November 11, 1945, when the party dissolved, Trường was  General Secretary of the Indochinese Communist Party Central Committee."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+       "locator": "plain-text extract characters 1358:1400; accessed 2026-10-01; sha256 c94b9f2c15421b13cf2c3d6358a085679b07e9a9d08047bf8e7a2238bbcd37e8",
+       "claim": "1981년부터 1987년까지 베트남 국가원수(국가평의회 의장)를 지냈다.",
+       "excerpt": "head of state of Vietnam from 1981 to 1987"
+      }
+     ]
+    }
+   }
+  ],
+  "van-tien-dung": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1953,
+     "endYear": 1978,
+     "evidence": [
+      {
+       "claim": "1953년 11월부터 1978년 5월까지 총참모장, 1954년 정전위원회 대표단장 역할로 잠시 중단",
+       "source": "https://vi.wikipedia.org/wiki/V%C4%83n_Ti%E1%BA%BFn_D%C5%A9ng",
+       "excerpt": "Trong cuộc kháng chiến chống Pháp, ông từng là Đại đoàn trưởng kiêm Chính uỷ Đại đoàn 320. Từ tháng 11 năm 1953 đến tháng 5 năm 1978, ông giữ chức Tổng Tham mưu trưởng Quân đội nhân dân Việt Nam, chỉ gián đoạn một thời gian ngắn vào năm 1954, khi ông làm Trưởng đoàn đại biểu của Bộ Tổng Tư lệnh Quân đội nhân dân Việt Nam trong Ủy ban Liên hiệp đình chiến thi hành Hiệp định Genève về Đông Dương.",
+       "locator": "characters 2953–3350"
+      },
+      {
+       "source": "https://vi.wikipedia.org/wiki/V%C4%83n_Ti%E1%BA%BFn_D%C5%A9ng",
+       "locator": "plain-text extract characters 3044:3147; accessed 2026-10-01; sha256 b73c2487bb5d5e5213139d1cc25b00e81b1eccf66e56fff00e988e1828e963dc",
+       "claim": "1953년 11월부터 1978년 5월까지 베트남 인민군 총참모장을 지냈다.",
+       "excerpt": "Từ tháng 11 năm 1953 đến tháng 5 năm 1978, ông giữ chức Tổng Tham mưu trưởng Quân đội nhân dân Việt Nam"
+      }
+     ]
+    }
+   }
+  ],
+  "vang-pao": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1960,
+     "endYear": 1975,
+     "evidence": [
+      {
+       "claim": "빠오 방은 라오스 왕립군의 소장이었다.",
+       "source": "https://en.wikipedia.org/wiki/Vang_Pao",
+       "excerpt": "was a major general in the Royal Lao Army and later a leader of the Hmong American community in the United States.",
+       "locator": "characters 81:195; sha256 0eeb5f0b146e90983ae835cea30b1bd019eb4daffdf32d1cc2d6c2c6a0f985f6"
+      },
+      {
+       "claim": "1960~70년대 그는 파테트 라오와 베트남 인민군에 맞서 싸운 '비밀군'을 지휘했다.",
+       "source": "https://en.wikipedia.org/wiki/Vang_Pao",
+       "excerpt": "During the 1960s/70s, he commanded the Secret Army, also known as the Hmong Army, a highly effective Central Intelligence Agency-trained and supported force that fought against the Pathet Lao and People's Army of Vietnam.",
+       "locator": "characters 2058:2279; sha256 0eeb5f0b146e90983ae835cea30b1bd019eb4daffdf32d1cc2d6c2c6a0f985f6"
+      },
+      {
+       "source": "https://fr.wikipedia.org/wiki/Vang_Pao",
+       "locator": "plain-text extract characters 1549:1631; accessed 2026-10-01; sha256 ac4ebabec157b18393cd15941b328d57cea2fbf10c7e210d08f2aae34db9d80a",
+       "claim": "1960년 12월 방 파오 장군이 CIA와 협력해 몽족 비정규군을 지휘하기 시작했다.",
+       "excerpt": "en décembre 1960, le général Vang Pao dirigera ainsi les forces irrégulières Hmong"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vang_Pao",
+       "locator": "plain-text extract characters 2922:3008; accessed 2026-10-01; sha256 53f476a992614a2655bc893a03320116550299d5edcb68c5f4c6901a07a8bd1a",
+       "claim": "1975년 공산 세력이 라오스에서 권력을 잡은 뒤 미국으로 이주했다.",
+       "excerpt": "Vang emigrated to the United States after the communists seized power in Laos in 1975."
+      }
+     ]
+    }
+   }
+  ],
+  "vasil-bilak": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1968,
+     "endYear": 1988,
+     "evidence": [
+      {
+       "claim": "빌랴크는 체코슬로바키아 공산당 중앙위원회 프레지디움 위원이자 당 비서로서 당의 외교와 이념에 중대한 영향력을 행사한 최고위 당 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Vasi%C4%BE_Bi%C4%BEak",
+       "excerpt": "from April 1968 until December 1988 he was a member of the Presidium of the Central Committee of the Communist Party of Czechoslovakia (ÚV KSČ). From November 1968 until December 1988 he was a secretary of ÚV KSČ with significant influence on the foreign policy and the ideology of the party.",
+       "locator": "characters 557:849; sha256 527c6ec935e4655b0dd8b482c6f20b3d5470ef5a974f5df0a56e015e37893dad"
+      },
+      {
+       "claim": "그는 KSČ 강경파의 대표적 인물로서 당 노선을 주도하고 정상화 과정에 참여한 정치 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Vasi%C4%BE_Bi%C4%BEak",
+       "excerpt": "In 1968 he belonged to the exponents of the hardline wing in the KSČ; he supported the Soviet invasion and participated in the so-called \"normalization process\" after the political liberalization called the Prague Spring.",
+       "locator": "characters 925:1146; sha256 527c6ec935e4655b0dd8b482c6f20b3d5470ef5a974f5df0a56e015e37893dad"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vasi%C4%BE_Bi%C4%BEak",
+       "locator": "plain-text extract characters 557:691; accessed 2026-10-01; sha256 527c6ec935e4655b0dd8b482c6f20b3d5470ef5a974f5df0a56e015e37893dad",
+       "claim": "1968년 4월부터 1988년 12월까지 체코슬로바키아 공산당 중앙위원회 상임간부회 위원이었다.",
+       "excerpt": "from April 1968 until December 1988 he was a member of the Presidium of the Central Committee of the Communist Party of Czechoslovakia"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vasi%C4%BE_Bi%C4%BEak",
+       "locator": "plain-text extract characters 702:769; accessed 2026-10-01; sha256 527c6ec935e4655b0dd8b482c6f20b3d5470ef5a974f5df0a56e015e37893dad",
+       "claim": "1968년 11월부터 1988년 12월까지 중앙위원회 비서였다.",
+       "excerpt": "From November 1968 until December 1988 he was a secretary of ÚV KSČ"
+      }
+     ]
+    }
+   }
+  ],
+  "vasile-luca": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1945,
+     "endYear": 1952,
+     "evidence": [
+      {
+       "claim": "바실레 루카는 1945년부터 1950년대 투옥될 때까지 루마니아 공산당의 지도적 구성원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Vasile_Luca",
+       "excerpt": "Vasile Luca (born László Luka; 8 June 1898 – 23 July 1963) was an Austro-Hungarian-born Romanian and Soviet communist politician, a leading member of the Romanian Communist Party (PCR) from 1945 and until his imprisonment in the 1950s.",
+       "locator": "characters 0:235; sha256 f8cd35e46542bb41a4eecd10810e413b61fd12a8e9e89a0ec77373b1584761c8"
+      },
+      {
+       "claim": "그는 루마니아 공산당의 당 서기가 되어 당 지도부에서 핵심 역할을 했다.",
+       "source": "https://en.wikipedia.org/wiki/Vasile_Luca",
+       "excerpt": "One year later, he became party secretary, and soon after the finance minister and the deputy premier in the Petru Groza cabinet which he had helped bring to power in February 1945",
+       "locator": "characters 5589:5769; sha256 f8cd35e46542bb41a4eecd10810e413b61fd12a8e9e89a0ec77373b1584761c8"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vasile_Luca",
+       "locator": "plain-text extract characters 130:234; accessed 2026-10-01; sha256 f8cd35e46542bb41a4eecd10810e413b61fd12a8e9e89a0ec77373b1584761c8",
+       "claim": "1945년부터 루마니아 공산당의 지도적 구성원이었다.",
+       "excerpt": "a leading member of the Romanian Communist Party (PCR) from 1945 and until his imprisonment in the 1950s"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vasile_Luca",
+       "claim": "1952년 1월 지도부 숙청이 승인된 뒤 루카는 3월 정부 직위에서 해임되고 5월 당에서 숙청되었다.",
+       "excerpt": "purging the leadership in January 1952 (Dej had traveled personally to Moscow for that purpose; Vyacheslav Molotov intervened on behalf of Pauker, whereas Lavrentiy Beria defended Georgescu) Luca was dismissed from government office in March, and purged from the party in May",
+       "locator": "plain-text extract characters 8456:8731; accessed 2026-10-01; sha256 f8cd35e46542bb41a4eecd10810e413b61fd12a8e9e89a0ec77373b1584761c8"
+      }
+     ]
+    }
+   }
+  ],
+  "vladimir-bakaric": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1944,
+     "endYear": 1983,
+     "evidence": [
+      {
+       "claim": "바카리치는 1944년 크로아티아 공산당 중앙위원회 서기로 임명되어 당 지도부의 핵심 직책을 맡았다.",
+       "source": "https://www.enciklopedija.hr/clanak/bakaric-vladimir",
+       "excerpt": "Nakon uklanjanja A. Hebranga, u listopadu 1944. postavljen za sekretara CK KPH, a u travnju 1945. postao je predsjednik prve vlade Hrvatske.",
+       "locator": "characters 983:1123; sha256 f884029a3cec1c200665a7bdbb0916e93d9fb2fcd1517347d2934c4fed156e57"
+      },
+      {
+       "claim": "그는 크로아티아 공산당 서기 및 당 의장, 유고슬라비아 공산당 중앙위원회와 집행부의 고위 직책을 역임하며 당·정치 지도자로서 활동했다.",
+       "source": "https://www.enciklopedija.hr/clanak/bakaric-vladimir",
+       "excerpt": "Obavljao je najviše dužnosti u Hrvatskoj i Jugoslaviji: sekretar CK KPH (SKH) do 1966., odnosno predsjednik CK SKH (1966–69), predsjednik vlade NRH do 1953., zatim predsjednik Sabora NRH (1953–63); član CK KPJ (od 1948), član Izvršnoga komiteta CK SKJ (od 1952), član Predsjedništva CK SKJ (od 1966) i Izvršnog biroa Predsjedništva SKJ (od 1969)",
+       "locator": "characters 1326:1671; sha256 f884029a3cec1c200665a7bdbb0916e93d9fb2fcd1517347d2934c4fed156e57"
+      },
+      {
+       "source": "https://hr.wikipedia.org/wiki/Vladimir_Bakarić",
+       "locator": "plain-text extract characters 3858:3902; accessed 2026-10-01; sha256 19ec4876b13f4cf16b22a651e9933603493a244ec3446049a3bff3a3be1f4e05",
+       "claim": "1944년 10월 크로아티아 공산당 중앙위원회 서기가 되었다.",
+       "excerpt": "U listopadu 1944. postao je sekretar CK KPH."
+      },
+      {
+       "source": "https://hr.wikipedia.org/wiki/Vladimir_Bakarić",
+       "locator": "plain-text extract characters 462:510; accessed 2026-10-01; sha256 19ec4876b13f4cf16b22a651e9933603493a244ec3446049a3bff3a3be1f4e05",
+       "claim": "1974년부터 사망할 때까지 유고슬라비아 연방 간부회(대통령단) 위원이었다.",
+       "excerpt": "od 1974. god. do smrti član Predsjedništva SFRJ."
+      },
+      {
+       "source": "https://hr.wikipedia.org/wiki/Vladimir_Bakarić",
+       "locator": "plain-text extract characters 51:77; accessed 2026-10-01; sha256 19ec4876b13f4cf16b22a651e9933603493a244ec3446049a3bff3a3be1f4e05",
+       "claim": "그는 1983년 1월 16일 자그레브에서 사망했다.",
+       "excerpt": "Zagreb, 16. siječnja 1983."
+      }
+     ]
+    }
+   }
+  ],
+  "vladimir-clementis": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1945,
+     "endYear": 1950,
+     "evidence": [
+      {
+       "claim": "He was appointed State Secretary for Foreign Affairs in April 1945.",
+       "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+       "excerpt": "In April 1945, Clementis was named State Secretary for Foreign Affairs in Zdeněk Fierlinger's government, which was formed in Košice during the retreat of the German forces. After the Czechoslovak coup d'état of 1948, which he helped organise, he succeeded Jan Masaryk as Minister of Foreign Affairs. As Deputy Minister, Clementis supported Czechoslovakia's rejection of the Marshall Plan in July 1947. He also opted for the incorporation of the area west of the Olza river and the Kłodzko Valley into Czechoslovakia, which led to a conflict with Poland.[2] As Minister of Foreign Affairs, he was instrumental in organizing Czechoslovakia's part in Operation Balak by providing assistance to the newly founded Israeli Air Force.",
+       "locator": "characters 3294–4022"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+       "locator": "plain-text extract characters 2681:2751; accessed 2026-10-01; sha256 c97fca82fc6c8e06cdd9b37cf05f98e044af2eb3d8bd3221de0cf8c9bdb9c742",
+       "claim": "1945년 4월 외무 국무장관에 임명되었다.",
+       "excerpt": "In April 1945, Clementis was named State Secretary for Foreign Affairs"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+       "locator": "plain-text extract characters 3407:3490; accessed 2026-10-01; sha256 c97fca82fc6c8e06cdd9b37cf05f98e044af2eb3d8bd3221de0cf8c9bdb9c742",
+       "claim": "1950년 그는 '일탈주의자'라는 비난 속에 사임을 강요받았다.",
+       "excerpt": "In 1950, Clementis was forced to resign amid accusations of being a \"deviationist\"."
+      }
+     ]
+    }
+   }
+  ],
+  "vladimir-velebit": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1943,
+     "endYear": 1967,
+     "evidence": [
+      {
+       "claim": "그는 유고슬라비아 대사로서 로마와 세인트 제임스 궁정에 파견되었다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Velebit",
+       "excerpt": "Among his notable post-World War II appointments were the Yugoslav Ambassador to Rome as well as the Court of St. James's and World Bank.",
+       "locator": "characters 251:388; sha256 42e786c0dd46fd73da5fa5d09e649ca191dd1c8c5d6cf9e5ccb0b8fb731acd84"
+      },
+      {
+       "claim": "그는 유고슬라비아 대외무역 차관과 UNECE 사무총장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Velebit",
+       "excerpt": "Additionally, he was Yugoslav Deputy Minister of Foreign Trade, and UNECE Executive Secretary from 1960 to 1967.",
+       "locator": "characters 389:501; sha256 42e786c0dd46fd73da5fa5d09e649ca191dd1c8c5d6cf9e5ccb0b8fb731acd84"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Velebit",
+       "locator": "plain-text extract characters 6065:6182; accessed 2026-10-01; sha256 12d611eb5968e5f352e505e1168eb04669ec74f88122df598e7763a1f88e9cc8",
+       "claim": "1943년 6월 벨레비트는 외국 군사사절단과 파르티잔 사이의 접촉 창구가 되었다.",
+       "excerpt": "In June 1943, Velebit became the point of contact for foreign military missions in their dealings with the Partisans."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Velebit",
+       "locator": "plain-text extract characters 8655:8709; accessed 2026-10-01; sha256 12d611eb5968e5f352e505e1168eb04669ec74f88122df598e7763a1f88e9cc8",
+       "claim": "그는 1967년 은퇴할 때까지 유럽경제위원회 사무총장직을 수행했다.",
+       "excerpt": "He performed this job up until his retirement in 1967."
+      }
+     ]
+    }
+   }
+  ],
+  "yumjaagiin-tsedenbal": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1940,
+     "endYear": 1984,
+     "evidence": [
+      {
+       "claim": "체덴발은 몽골인민혁명당의 서기장을 지내며 당을 지도했다.",
+       "source": "https://en.wikipedia.org/wiki/Yumjaagiin_Tsedenbal",
+       "excerpt": "He served as General Secretary of the ruling Mongolian People's Revolutionary Party from 1940 to 1954 and again from 1958 to 1984",
+       "locator": "characters 209:338; sha256 0e6ac250b189a757d1cff0edceb2fef863e14a4000bf8f559f1046a3c3c9016d"
+      },
+      {
+       "claim": "체덴발은 1952년부터 1984년까지 몽골인민공화국을 이끈 정치 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/Yumjaagiin_Tsedenbal",
+       "excerpt": "led the Mongolian People's Republic as a dictator from 1952 to 1984",
+       "locator": "characters 140:207; sha256 0e6ac250b189a757d1cff0edceb2fef863e14a4000bf8f559f1046a3c3c9016d"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Yumjaagiin_Tsedenbal",
+       "locator": "plain-text extract characters 209:338; accessed 2026-10-01; sha256 8778bad5cf6c1095234b0816706316288cccd2689fbe897e641f6de4314960ee",
+       "claim": "1940년부터 1954년까지, 그리고 1958년부터 1984년까지 몽골인민혁명당 서기장을 지냈다.",
+       "excerpt": "He served as General Secretary of the ruling Mongolian People's Revolutionary Party from 1940 to 1954 and again from 1958 to 1984"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Yumjaagiin_Tsedenbal",
+       "locator": "plain-text extract characters 140:207; accessed 2026-10-01; sha256 8778bad5cf6c1095234b0816706316288cccd2689fbe897e641f6de4314960ee",
+       "claim": "1952년부터 1984년까지 몽골인민공화국을 이끌었다.",
+       "excerpt": "led the Mongolian People's Republic as a dictator from 1952 to 1984"
+      }
+     ]
+    }
+   }
+  ],
+  "zdenek-fierlinger": [
+   {
+    "match": {
+     "primary": true
+    },
+    "set": {
+     "startYear": 1945,
+     "endYear": 1946,
+     "evidence": [
+      {
+       "claim": "1945년부터 1946년까지 총리",
+       "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+       "excerpt": "Just before the end of World War II in Europe, he in April 1945 became prime minister of the Czechoslovak government-in-exile and retained that post after the country was liberated later that year. On 10 May, Fierlinger flew into Prague aboard a Soviet plane.[29] Fierlinger took part in the victory parade in Prague and rode in the car in front of Beneš, who received the loudest cheers from the city's people.[30] Beneš had lowered his opinion of Fierlinger and told US Ambassador Laurence Steinhardt that he was \"superficial, unreliable, tricky and ignorant\".[31] Zeman and Karlsch wrote, \"He manipulated Beneš's disillusion with the West after Munich-he was Beneš's bad conscience\".[5]\n\nImmediately after the dropping of atomic bombs on the Japanese city of Hiroshima on 6 August 1945, followed by Nagasaki on 9 August, a delegation of Soviet geologists and Red Army officers started to take an immense interest in the uranium mine at Jáchymov, in the Sudetenland.[5] In response to complaints that the Soviets had taken virtual control of the mine in September, Fierlinger advised the local authorities to \"do nothing\".[32]\n\nWithout initially informing the minister of industry, Bohumil Laušman, Fierlinger opened up secret talks for Czechoslovakia to supply uranium, which the Soviet Union lacked, for the Soviet nuclear program.[32] On 12 September, Fierlinger handed Valerian Zorin, the Soviet ambassador in Prague, a draft treaty for Czechoslovakia to supply uranium at a fixed annual rate.[",
+       "locator": "characters 9765–15363"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+       "locator": "plain-text extract characters 33887:33965; accessed 2026-10-01; sha256 bda432331c2d70457ab1b37889d645d0cbde59cb5e632696c9cce85ca1587df4",
+       "claim": "1945년 4월 체코슬로바키아 망명정부의 총리가 되었다.",
+       "excerpt": "he in April 1945 became prime minister of the Czechoslovak government-in-exile"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Zden%C4%9Bk_Fierlinger",
+       "locator": "plain-text extract characters 38735:38786; accessed 2026-10-01; sha256 bda432331c2d70457ab1b37889d645d0cbde59cb5e632696c9cce85ca1587df4",
+       "claim": "그는 1946년 선거 때까지 총리직을 유지했다.",
+       "excerpt": "He remained prime minister until the 1946 elections"
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "add": {
+  "laszlo-rajk": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1941,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Rajk",
+      "locator": "plain-text extract characters 465:572; accessed 2026-10-01; sha256 31a0bb7ccd75cf0c1a71fdf2f4e9a30ddd6499d6982a5114431f9a2876e9f803",
+      "claim": "러이크는 일찍이 헝가리 공산당(KMP) 당원이 되었다.",
+      "excerpt": "his ties to Communism began at an early age when he became a member of the Communist Party of Hungary (KMP)"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Rajk",
+      "locator": "plain-text extract characters 861:1047; accessed 2026-10-01; sha256 31a0bb7ccd75cf0c1a71fdf2f4e9a30ddd6499d6982a5114431f9a2876e9f803",
+      "claim": "1941년 헝가리로 돌아와 지하 공산당 중앙위원회 서기가 되었다.",
+      "excerpt": "he was interned in France until 1941, when he was finally able to return to Hungary, where he became Secretary of the Communist Party Central Committee, an underground Communist movement"
+     }
+    ]
+   }
+  ],
+  "vladimir-clementis": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-czechoslovak-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1925,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladim%C3%ADr_Clementis",
+      "locator": "plain-text extract characters 1525:1707; accessed 2026-10-01; sha256 c97fca82fc6c8e06cdd9b37cf05f98e044af2eb3d8bd3221de0cf8c9bdb9c742",
+      "claim": "클레멘티스는 1925년부터 체코슬로바키아 공산당 당원이었고 슬로바키아에서 공산당 세포를 조직했다.",
+      "excerpt": "A member of the Communist Party of Czechoslovakia (KSČ) from 1925, Clementis ran a law practice in Bratislava from the early 1930s, while also organizing communist cells in Slovakia."
+     }
+    ]
+   }
+  ],
+  "lucio-lara": [
+   {
+    "functionId": "political-leadership",
+    "affiliationId": "party-angolan-mpla",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1957,
+    "endYear": 1985,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+      "locator": "plain-text extract characters 2624:2833; accessed 2026-10-01; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9",
+      "claim": "1957년 MPLA에 가입해 당의 주요 이데올로그가 되었고 당의 마르크스주의 노선을 정립했다.",
+      "excerpt": "In 1957, he joined the MPLA (founded the previous year), becoming its main ideologue, being even attributed to him the elaboration of the Marxist ideology of the party, which would become the dominant current."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+      "locator": "plain-text extract characters 310:414; accessed 2026-10-01; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9",
+      "claim": "독립전쟁과 내전 시기 MPLA 사무총장을 지냈다.",
+      "excerpt": "He served as General Secretary of the MPLA during the Angolan War of Independence and Angolan Civil War."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/L%C3%BAcio_Lara",
+      "locator": "plain-text extract characters 7283:7359; accessed 2026-10-01; sha256 d4b7655223ed6c448f17b9b76e29f986457ceffb22dcf4ab4b5f93dd34f4def9",
+      "claim": "1985년 도스산투스 대통령이 그를 MPLA 정치국에서 제외했다.",
+      "excerpt": "In 1985, Angolan President José Eduardo dos Santos removes him from the MPLA"
+     }
+    ]
+   }
+  ],
+  "ludvik-svoboda": [
+   {
+    "functionId": "organizing",
+    "affiliationId": "party-czechoslovak-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "primary": false,
+    "startYear": 1948,
+    "endYear": null,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Svoboda",
+      "locator": "plain-text extract characters 14312:14515; accessed 2026-10-01; sha256 583ed2eaee159d7e5dadc698cb327a08eca722be097ce1cc7540d2ce5fa16b20",
+      "claim": "1948년 2월 공산당 집권 뒤 스보보다는 공산당에 입당했고 1948년 선거에서 국민의회 의원이 되었다.",
+      "excerpt": "Svoboda, whose label had been that of an \"apolitical\" minister since the first days of his term, then joined the Communist Party and was elected as a deputy to the National Assembly at the 1948 election."
+     }
+    ]
+   }
+  ]
+ }
+}

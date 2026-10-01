@@ -1,0 +1,88 @@
+{
+ "collection": "counterrevolution",
+ "criteria": "People outside Russia who opposed revolutionary movements or socialist states by arms or politics: interventionists, fascist/Nazi regimes and commanders, colonial and Cold War anti-communist regimes and armies, and leaders of anti-communist exile bodies. Non-communist politicians merely ousted by a communist takeover are excluded unless they then led anti-communist resistance or exile organisations.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "vang-pao",
+   "source": "https://en.wikipedia.org/wiki/Vang_Pao",
+   "locator": "plain-text extract characters 2058:2279; accessed 2026-10-01; sha256 53f476a992614a2655bc893a03320116550299d5edcb68c5f4c6901a07a8bd1a",
+   "excerpt": "During the 1960s/70s, he commanded the Secret Army, also known as the Hmong Army, a highly effective Central Intelligence Agency-trained and supported force that fought against the Pathet Lao and People's Army of Vietnam.",
+   "reason": "Commanded the CIA-backed Hmong Secret Army against the Pathet Lao and North Vietnam."
+  },
+  {
+   "id": "petr-zenkl",
+   "source": "https://en.wikipedia.org/wiki/Petr_Zenkl",
+   "locator": "plain-text extract characters 226:295; accessed 2026-10-01; sha256 265e65d632dc254d361d389835f14b26805477633241e9c3c9023f56d537f842",
+   "excerpt": "the chairman of the exile Council of Free Czechoslovakia (1949–1974).",
+   "reason": "Chaired the anti-communist exile Council of Free Czechoslovakia for 25 years."
+  },
+  {
+   "id": "duong-van-minh",
+   "source": "https://en.wikipedia.org/wiki/Dương_Văn_Minh",
+   "locator": "plain-text extract characters 457:598; accessed 2026-10-01; sha256 35fd6f5bf1ae184270c848c158b4cf497dc730b4eb93dcfca1a7425f7444631c",
+   "excerpt": "assumed power again as the fourth and last President of South Vietnam in April 1975, two days before surrendering to North Vietnamese forces.",
+   "reason": "ARVN general who led South Vietnam's anti-communist state as head of state in 1963-64 and 1975."
+  },
+  {
+   "id": "kazimierz-sosnkowski",
+   "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+   "locator": "plain-text extract characters 4257:4383; accessed 2026-10-01; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe",
+   "excerpt": "During the Polish–Soviet War of 1920, Sosnkowski at first commanded the Reserve Army of 32,000 soldiers on the northern front.",
+   "reason": "Commanded Polish forces against the Red Army in 1920 and later led the Home Army against Soviet domination."
+  },
+  {
+   "id": "lucjan-zeligowski",
+   "source": "https://en.wikipedia.org/wiki/Lucjan_Żeligowski",
+   "locator": "plain-text extract characters 3595:3772; accessed 2026-10-01; sha256 7b00ce0880b328f52859fa14032059d3502128dee635d44df5afacd927eb15ba",
+   "excerpt": "During the Battle of Warsaw in 1920 his unit was attached to the 3rd Polish Army and took part in the pursuit of fleeing Bolshevik and Soviet forces at the Battle of the Niemen.",
+   "reason": "Commanded a unit that fought Bolshevik and Soviet forces in the Polish-Soviet War."
+  },
+  {
+   "id": "wladyslaw-sikorski",
+   "source": "https://en.wikipedia.org/wiki/Władysław_Sikorski",
+   "locator": "plain-text extract characters 292:446; accessed 2026-10-01; sha256 76b52157a1e382fe1ccd3cf9693734edc5e0a725e00b166c3bdc130ce14ee602",
+   "excerpt": "He fought with distinction in the Polish Legions during World War I, and later in the newly created Polish Army during the Polish–Soviet War of 1919–1921.",
+   "reason": "Senior Polish Army commander in the 1920 war against Soviet Russia (borderline: later allied with the USSR)."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "edward-raczynski",
+   "reason": "Diplomat and president of the Polish government in exile; Wikipedia text shows no active anti-communist armed or organisational leadership beyond holding the exile office."
+  },
+  {
+   "id": "hubert-ripka",
+   "reason": "Minister ousted by the 1948 coup who went into exile; no anti-communist organisation leadership documented."
+  },
+  {
+   "id": "bela-kovacs",
+   "reason": "Smallholder politician arrested by Soviet authorities; ousted, not an organised opponent (no usable Wikipedia extract found)."
+  },
+  {
+   "id": "ferenc-nagy",
+   "reason": "Coalition prime minister forced out by the communists; exiled but not documented leading anti-communist bodies."
+  },
+  {
+   "id": "prince-paul-of-yugoslavia",
+   "reason": "Regent pursuing Axis-leaning neutrality; not a revolutionary-movement opponent per se."
+  },
+  {
+   "id": "peter-ii-of-yugoslavia",
+   "reason": "King of the exile government; the evidence shows no active armed or political leadership against the revolutionary movement."
+  },
+  {
+   "id": "michael-i-of-romania",
+   "reason": "Borderline: 'royal strike' against the Groza government, but he was a monarch ousted by a communist takeover with no anti-communist organisation led."
+  },
+  {
+   "id": "souvanna-phouma",
+   "reason": "Neutralist who formed coalitions with the Pathet Lao; not clearly an anti-communist."
+  },
+  {
+   "id": "dusan-simovic",
+   "reason": "Anti-Axis coup leader; no opposition to revolutionary movements shown."
+  }
+ ],
+ "migration": "221"
+}

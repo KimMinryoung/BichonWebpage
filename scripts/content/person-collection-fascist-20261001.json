@@ -1,0 +1,223 @@
+{
+ "collection": "fascist",
+ "criteria": "People who founded, led or were members of fascist or Nazi parties, movements or regimes (NSDAP/SS, Italian National Fascist Party, Falange, national fascist movements and parties elsewhere), including those with an earlier socialist or communist career. Military officers, collaborators and royalists who merely served or sympathised without party membership or movement leadership are excluded.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "adolf-hitler",
+   "source": "https://en.wikipedia.org/wiki/Adolf_Hitler",
+   "locator": "plain-text extract characters 166:321; accessed 2026-10-01; sha256 fc7d474983b2e5bb62bf0ac2e8cdfa2787f3cba75b2ca6d39ba2a83f483371a4",
+   "excerpt": "He rose to power as the leader of the Nazi Party, becoming the chancellor of Germany in 1933 and then taking the title of Führer und Reichskanzler in 1934.",
+   "reason": "Led the Nazi Party and the Nazi state."
+  },
+  {
+   "id": "benito-mussolini",
+   "source": "https://en.wikipedia.org/wiki/Benito_Mussolini",
+   "locator": "plain-text extract characters 243:382; accessed 2026-10-01; sha256 2e0180e60ef7cba0b3fd0815a384f650657a10b20860015e9910dfafe4a2ba9c",
+   "excerpt": "he founded fascism in 1919 with the creation of the Fasci Italiani di Combattimento, which became the National Fascist Party (PNF) in 1921.",
+   "reason": "Founder of fascism and Duce of Fascist Italy, after an earlier socialist career."
+  },
+  {
+   "id": "hermann-goring",
+   "source": "https://en.wikipedia.org/wiki/Hermann_Göring",
+   "locator": "plain-text extract characters 10062:10138; accessed 2026-10-01; sha256 5030ab9c917ddbf4e9227ea5eddc9231b237cd9fdfbf00829471e00e355ba1f1",
+   "excerpt": "Göring joined the Nazi Party in 1922 after hearing a speech by Adolf Hitler.",
+   "reason": "Early Nazi Party member and senior leader of the Nazi state."
+  },
+  {
+   "id": "heinrich-himmler",
+   "source": "https://en.wikipedia.org/wiki/Heinrich_Himmler",
+   "locator": "plain-text extract characters 295:390; accessed 2026-10-01; sha256 4471a28a026b6857c7ff31327b066bb8c08c449f73b0b86527ad3cbdfab0e7c9",
+   "excerpt": "He was a leading member of the Nazi Party and one of the most powerful figures in Nazi Germany.",
+   "reason": "Leading Nazi Party member who headed the SS."
+  },
+  {
+   "id": "rudolf-hess",
+   "source": "https://en.wikipedia.org/wiki/Rudolf_Hess",
+   "locator": "plain-text extract characters 1150:1258; accessed 2026-10-01; sha256 6d2ddbc41ae61ab1049b7b1836ac2450a8ba3445734061652e4e5c9a40ec0264",
+   "excerpt": "He joined the Nazi Party on 1 July 1920 and was at Hitler's side on 8 November 1923 for the Beer Hall Putsch",
+   "reason": "Early Nazi Party member and Hitler's deputy."
+  },
+  {
+   "id": "joseph-goebbels",
+   "source": "https://en.wikipedia.org/wiki/Joseph_Goebbels",
+   "locator": "plain-text extract characters 698:786; accessed 2026-10-01; sha256 a827f943dc361825182b003a1f276f0298b6fbc0d5b8bda0e757831f3ffd1f60",
+   "excerpt": "He joined the Nazi Party in 1924 and worked with Gregor Strasser in its northern branch.",
+   "reason": "Nazi Party propaganda chief and minister."
+  },
+  {
+   "id": "reinhard-heydrich",
+   "source": "https://en.wikipedia.org/wiki/Reinhard_Heydrich",
+   "locator": "plain-text extract characters 8573:8609; accessed 2026-10-01; sha256 77c6e075e31f8809417b39fe171a8ced55030b8098cd6a5bfad4bae859a8caac",
+   "excerpt": "he joined the Nazi Party in Hamburg.",
+   "reason": "Joined the Nazi Party in 1931 and led SS intelligence and police agencies."
+  },
+  {
+   "id": "joachim-von-ribbentrop",
+   "source": "https://en.wikipedia.org/wiki/Joachim_von_Ribbentrop",
+   "locator": "plain-text extract characters 5145:5205; accessed 2026-10-01; sha256 c6828481c94e109795a39450fe267728314814743098a918887297686e4c2440",
+   "excerpt": "Ribbentrop and his wife joined the Nazi Party on 1 May 1932.",
+   "reason": "Nazi Party member and Nazi Germany's foreign minister."
+  },
+  {
+   "id": "karl-wolff",
+   "source": "https://en.wikipedia.org/wiki/Karl_Wolff",
+   "locator": "plain-text extract characters 1861:1957; accessed 2026-10-01; sha256 005beb20204b71df3fde4751fdfd821ac7424e8c46e46122f59b0fcc617f49d9",
+   "excerpt": "Wolff joined the Nazi Party with card number 695,131 and the Schutzstaffel (SS) in October 1931.",
+   "reason": "Nazi Party and SS member who became a senior SS leader."
+  },
+  {
+   "id": "klaus-barbie",
+   "source": "https://en.wikipedia.org/wiki/Klaus_Barbie",
+   "locator": "plain-text extract characters 2457:2517; accessed 2026-10-01; sha256 1cb747fd158388c55eafb60b7605d7d0eacb0807b26d22c784aa7e1d3c8301e3",
+   "excerpt": "On 1 May 1937, he became member 4,583,085 of the Nazi Party.",
+   "reason": "SS and Nazi Party member who was Gestapo chief in Lyon."
+  },
+  {
+   "id": "oskar-dirlewanger",
+   "source": "https://en.wikipedia.org/wiki/Oskar_Dirlewanger",
+   "locator": "plain-text extract characters 11272:11361; accessed 2026-10-01; sha256 908e4892cddb679953a8d8f9418ddda394850b4e06bb9f64fb37b15f42fa9b3a",
+   "excerpt": "The following year, he joined the NSDAP and its Sturmabteilung (SA) paramilitary militia.",
+   "reason": "Long-time NSDAP member who commanded an SS special unit."
+  },
+  {
+   "id": "heinz-reinefarth",
+   "source": "https://en.wikipedia.org/wiki/Heinz_Reinefarth",
+   "locator": "plain-text extract characters 1093:1185; accessed 2026-10-01; sha256 0fb9ba96d3b378ab21cde157840c5a2f7d2f84cacda4b9e209d2c82ffcdf6cb2",
+   "excerpt": "On 1 August 1932, he joined the Nazi Party and received party identification card 1,268,933.",
+   "reason": "Nazi Party member who became an SS general."
+  },
+  {
+   "id": "otto-skorzeny",
+   "source": "https://en.wikipedia.org/wiki/Otto_Skorzeny",
+   "locator": "plain-text extract characters 2314:2471; accessed 2026-10-01; sha256 f148e4e93185fe6c9071a2ed39efea1c274ee71e39351a5ade8672ea87346412",
+   "excerpt": "In May 1932, Skorzeny joined the Austrian Nazi organization and soon became a member of the Austrian branch of the Nazi Sturmabteilung (SA) in February 1934.",
+   "reason": "Austrian Nazi and SA member who became a Waffen-SS commando leader."
+  },
+  {
+   "id": "dino-grandi",
+   "source": "https://en.wikipedia.org/wiki/Dino_Grandi",
+   "locator": "plain-text extract characters 509:652; accessed 2026-10-01; sha256 67715c3f73009a451b4109cbd3c9362b3be82204232f74b8f2521ec26a98e344",
+   "excerpt": "He joined the Blackshirts at age 25, and was one of 35 Fascist delegates elected, along with Mussolini, in May 1921 to the Chamber of Deputies.",
+   "reason": "Fascist squad member, deputy and minister of Mussolini's regime."
+  },
+  {
+   "id": "galeazzo-ciano",
+   "source": "https://en.wikipedia.org/wiki/Galeazzo_Ciano",
+   "locator": "plain-text extract characters 515:582; accessed 2026-10-01; sha256 9e6b29bcd3a385074db6c2185df93ea2fca9fb5560481ce1c6228364be597ed1",
+   "excerpt": "father and son both took part in Mussolini's March on Rome in 1922.",
+   "reason": "Took part in the Fascist March on Rome in 1922 and sat on the Grand Council of Fascism as Mussolini's foreign minister."
+  },
+  {
+   "id": "jacques-doriot",
+   "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+   "locator": "plain-text extract characters 2784:2913; accessed 2026-10-01; sha256 970be57d7cb8a567ae170e960a8b94d8f33790d086049b9b9286ff1b84d9ce0c",
+   "excerpt": "By now embodying fascist more than socialist ideals, Doriot founded the ultra-nationalist Parti Populaire Français (PPF) in 1936.",
+   "reason": "Ex-communist who founded the fascist French Popular Party."
+  },
+  {
+   "id": "radola-gajda",
+   "source": "https://en.wikipedia.org/wiki/Radola_Gajda",
+   "locator": "plain-text extract characters 4407:4621; accessed 2026-10-01; sha256 bec6f6e7bb23406f04b3216c41d8b509df64fb1b378d11c0bc7379a0b818fe77",
+   "excerpt": "At the end of 1926 he took part in the founding of the National Fascist Community (Czech: Národní obec fašistická, NOF), modeled on Benito Mussolini's National Fascist Party and became its leader on 2 January 1927.",
+   "reason": "Leader of the Czech National Fascist Community."
+  },
+  {
+   "id": "pavel-bermondt-avalov",
+   "source": "https://en.wikipedia.org/wiki/Pavel_Bermondt-Avalov",
+   "locator": "plain-text extract characters 11328:11476; accessed 2026-10-01; sha256 4e3f57e8f8b9adc2d57562b78f94a411ff78c686f91a59e42358ba4f0df175c8",
+   "excerpt": "He joined the National Russian Liberation Movement, eventually becoming its leader and transforming it into the Russian National Socialist Movement.",
+   "reason": "Leader of the Russian National Socialist Movement, backed by the NSDAP."
+  },
+  {
+   "id": "francisco-franco",
+   "source": "https://en.wikipedia.org/wiki/Francisco_Franco",
+   "locator": "plain-text extract characters 1732:1891; accessed 2026-10-01; sha256 f310ef0c6e79b8ec849bebe54c8c928622c280e1bc651229824e3a2f11febbcc",
+   "excerpt": "He consolidated all Nationalist groups into the FET y de las JONS (also known as the Movimiento Nacional), and developed a cult of personality around his rule.",
+   "reason": "Merged the Falange into his single ruling party; Wikipedia says he became recognised as a fascist leader, though the regime's classification is debated."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "ion-antonescu",
+   "reason": "Borderline: Wikipedia says he 'sympathised with far-right and fascist politics' and shared the National Legionary State with the Iron Guard, but he was not a Legionary member and later crushed the Guard."
+  },
+  {
+   "id": "waldemar-pabst",
+   "reason": "Wikipedia: only 'vaguely linked to the Nazi Party, without ever joining'; Heimwehr/Freikorps figure."
+  },
+  {
+   "id": "wilhelm-keitel",
+   "reason": "Military officer; no Wikipedia statement of party identity."
+  },
+  {
+   "id": "francois-coty",
+   "reason": "Funder of far-right leagues; no Wikipedia statement of membership in a fascist party."
+  },
+  {
+   "id": "francois-de-la-rocque",
+   "reason": "Croix-de-Feu/PSF leader described as far-right, not fascist."
+  },
+  {
+   "id": "miklos-horthy",
+   "reason": "Authoritarian regent, not a fascist party leader."
+  },
+  {
+   "id": "ioannis-metaxas",
+   "reason": "Authoritarian dictator without a fascist party identity in the sources used."
+  },
+  {
+   "id": "philippe-petain",
+   "reason": "Vichy head, not a member of a fascist party."
+  },
+  {
+   "id": "pierre-laval",
+   "reason": "Vichy politician, not a member of a fascist party."
+  },
+  {
+   "id": "andrey-vlasov",
+   "reason": "Collaborationist general, not a fascist party member."
+  },
+  {
+   "id": "pyotr-krasnov",
+   "reason": "Cossack collaborator without fascist party membership."
+  },
+  {
+   "id": "victor-emmanuel-iii",
+   "reason": "Monarch who tolerated fascism, not a party member."
+  },
+  {
+   "id": "pietro-badoglio",
+   "reason": "Military officer who served the regime without party identity."
+  },
+  {
+   "id": "erich-von-manstein",
+   "reason": "Wehrmacht commander without party identity."
+  },
+  {
+   "id": "albert-kesselring",
+   "reason": "Wehrmacht commander without party identity."
+  },
+  {
+   "id": "alfred-jodl",
+   "reason": "Wehrmacht staff officer without party identity."
+  },
+  {
+   "id": "heinz-guderian",
+   "reason": "Wehrmacht commander without party identity."
+  },
+  {
+   "id": "erich-raeder",
+   "reason": "Navy commander without party identity."
+  },
+  {
+   "id": "dietrich-von-choltitz",
+   "reason": "Wehrmacht general without party identity."
+  },
+  {
+   "id": "paul-von-hindenburg",
+   "reason": "Conservative president, not a fascist."
+  }
+ ],
+ "migration": "221"
+}

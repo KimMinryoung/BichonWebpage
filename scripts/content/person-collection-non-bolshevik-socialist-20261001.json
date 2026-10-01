@@ -1,0 +1,740 @@
+{
+ "collection": "non-bolshevik-socialist",
+ "criteria": "People who carried out a substantial period of their political activity as socialists outside the Bolshevik/communist tradition: Mensheviks, right and centre Socialist Revolutionaries, the Bund, Plekhanov's Emancipation of Labour, Second International social democrats and labour parties (SPD, USPD, SFIO, British Labour, Finnish SDP, PSI, PSOE, PPS etc.) and democratic socialists. A later change of course (e.g. joining a communist party) does not remove the earlier period. Excludes Bolsheviks and communists whose socialist career was essentially communist, Left SRs and anarchists (separate collections), historians who merely studied these movements, liberals, and people only briefly or nominally members. Strict reading (operator, 2026-10-01): people who went on to found or lead a communist party or to serve a communist party-state are excluded even when their earlier social-democratic period was long.",
+ "reviewed": "2026-10-01",
+ "added": [
+  {
+   "id": "abram-gots",
+   "source": "https://en.wikipedia.org/wiki/Abram_Gots",
+   "locator": "plain-text extract characters 2510:2589; accessed 2026-10-01; sha256 36a78cb290d8b96378054f604fdf82b4b0c6bb83f7256a24aad266a978dd4665",
+   "excerpt": "He was the main defendant at the 1922 Moscow Trial of Socialist Revolutionaries",
+   "reason": "Gots was a Socialist-Revolutionary leader and later a defendant at the 1922 SR trial."
+  },
+  {
+   "id": "alexander-potresov",
+   "source": "https://en.wikipedia.org/wiki/Alexander_Potresov",
+   "locator": "plain-text extract characters 156:245; accessed 2026-10-01; sha256 f8fcd75b80032bc6bc6a47f7aa0dd980bae92128f6c284dcb61901f1bccb756b",
+   "excerpt": "one of the leaders of the Menshevik faction of the Russian Social Democratic Labour Party",
+   "reason": "Potresov was an Emancipation of Labour contact, Iskra editor and Menshevik leader."
+  },
+  {
+   "id": "angelica-balabanova",
+   "source": "https://en.wikipedia.org/wiki/Angelica_Balabanoff",
+   "locator": "plain-text extract characters 729:807; accessed 2026-10-01; sha256 71e9efc1f3aac4af45f60a53f27af4abc70c7b4bf2a377594de6d087e444e1af",
+   "excerpt": "joining the Italian Socialist Party (Partito Socialista Italiano; PSI) in 1900",
+   "reason": "Balabanoff was a long-time PSI and Zimmerwald socialist before and after her Comintern years."
+  },
+  {
+   "id": "arthur-crispien",
+   "source": "https://en.wikipedia.org/wiki/Arthur_Crispien",
+   "locator": "plain-text extract characters 451:568; accessed 2026-10-01; sha256 ab59dd4d4db88185c26e73d0a3ed8985957aaf3dc674d0d8aca2741125a7f045",
+   "excerpt": "He worked as a house and stage painter in Königsberg and joined the Social Democratic Party of Germany (SPD) in 1894.",
+   "reason": "Crispien was an SPD, then USPD, then SPD co-chairman."
+  },
+  {
+   "id": "arthur-henderson",
+   "source": "https://en.wikipedia.org/wiki/Arthur_Henderson",
+   "locator": "plain-text extract characters 186:280; accessed 2026-10-01; sha256 95b6774894d0cc11f426713ef51f4550ff37a9760f7f8d573f3eebe86b7b964b",
+   "excerpt": "uniquely, served three separate terms as Leader of the Labour Party in three different decades",
+   "reason": "Henderson was a Labour Party leader and cabinet minister."
+  },
+  {
+   "id": "august-bebel",
+   "source": "https://en.wikipedia.org/wiki/August_Bebel",
+   "locator": "plain-text extract characters 171:240; accessed 2026-10-01; sha256 fe59f62fea9b88c41316b74ce3e5a590fa55c40c6e82b699f2867b47ffe1dfef",
+   "excerpt": "he was a leader of the German workers' movement for over four decades",
+   "reason": "Bebel co-founded and led the SPD."
+  },
+  {
+   "id": "boris-savinkov",
+   "source": "https://en.wikipedia.org/wiki/Boris_Savinkov",
+   "locator": "plain-text extract characters 147:230; accessed 2026-10-01; sha256 17f9fc613f782650df3d974edf7c72e987eca2d5c2e446f53509efdb621ff8e4",
+   "excerpt": "As a leading figure in the Socialist Revolutionary Party's (SR) Combat Organization",
+   "reason": "Savinkov led the SR Combat Organization before turning against the Bolsheviks."
+  },
+  {
+   "id": "catherine-breshkovsky",
+   "source": "https://en.wikipedia.org/wiki/Catherine_Breshkovsky",
+   "locator": "plain-text extract characters 248:310; accessed 2026-10-01; sha256 59ab92436432d73f9603b667886dc7df1519f5f36ada74716caedd808a1b39c2",
+   "excerpt": "later one of the founders of the Socialist Revolutionary Party",
+   "reason": "Breshkovsky was an SR founder known as the grandmother of the Russian Revolution."
+  },
+  {
+   "id": "clement-attlee",
+   "source": "https://en.wikipedia.org/wiki/Clement_Attlee",
+   "locator": "plain-text extract characters 751:815; accessed 2026-10-01; sha256 8a5a2345752388a27a959e4f907e7f16600f3dd0823e3418e1f80dc0fe8dd651",
+   "excerpt": "He joined the Independent Labour Party, gave up his legal career",
+   "reason": "Attlee was an ILP and Labour leader and prime minister."
+  },
+  {
+   "id": "ernst-reuter",
+   "source": "https://en.wikipedia.org/wiki/Ernst_Reuter",
+   "locator": "plain-text extract characters 1775:1905; accessed 2026-10-01; sha256 85908354f42cec64f6088709f58fb9f7e013fb9cfaf7bb865ec6df69d2727162",
+   "excerpt": "He moved briefly to the Independent Social Democratic Party of Germany (USPD), and then returned to the Social Democrats for good.",
+   "reason": "Reuter was an SPD/USPD member who ended as an SPD mayor of West Berlin."
+  },
+  {
+   "id": "emile-vandervelde",
+   "source": "https://en.wikipedia.org/wiki/Émile_Vandervelde",
+   "locator": "plain-text extract characters 635:702; accessed 2026-10-01; sha256 c3d998748f356e51d9fd37aa56519d00679c0586413fbd628fc3d180b4e0c0f4",
+   "excerpt": "In 1886, he joined the newly formed Belgian Labour Party (POB–BWP).",
+   "reason": "Vandervelde led the Belgian Labour Party and the Second International."
+  },
+  {
+   "id": "friedrich-ebert",
+   "source": "https://en.wikipedia.org/wiki/Friedrich_Ebert",
+   "locator": "plain-text extract characters 215:288; accessed 2026-10-01; sha256 8719b08821c7fc8930dafe0fa22f0b12e67c4ab615b002c53274850303029119",
+   "excerpt": "Ebert was elected leader of the SPD on the death in 1913 of August Bebel.",
+   "reason": "Ebert led the SPD and became the first Weimar president."
+  },
+  {
+   "id": "friedrich-ebert-jr",
+   "source": "https://en.wikipedia.org/wiki/Friedrich_Ebert_Jr.",
+   "locator": "plain-text extract characters 500:568; accessed 2026-10-01; sha256 d9bbd756c830310c1e714800879315ab80ab804d421fd278df8d52e55f4842a8",
+   "excerpt": "In 1910, he joined the Socialist Workers' Youth and in 1913 the SPD.",
+   "reason": "Ebert Jr. was an SPD journalist for decades before joining the SED."
+  },
+  {
+   "id": "fyodor-dan",
+   "source": "https://en.wikipedia.org/wiki/Fyodor_Dan",
+   "locator": "plain-text extract characters 1421:1458; accessed 2026-10-01; sha256 9843087f848cca15cdc33a4530e17ce9b85908b04fb2124a83c97ffb5547bf6a",
+   "excerpt": "Dan helped Martov form the Mensheviks",
+   "reason": "Dan was a Menshevik leader."
+  },
+  {
+   "id": "giacinto-menotti-serrati",
+   "source": "https://en.wikipedia.org/wiki/Giacinto_Menotti_Serrati",
+   "locator": "plain-text extract characters 201:261; accessed 2026-10-01; sha256 8810939433c4eaaab75f400180329abcc51b1325fc0a57d8dd423242fd40b968",
+   "excerpt": "He was a central leader of the Italian Socialist Party (PSI)",
+   "reason": "Serrati led the PSI and edited Avanti!."
+  },
+  {
+   "id": "grigory-gershuni",
+   "source": "https://en.wikipedia.org/wiki/Grigory_Gershuni",
+   "locator": "plain-text extract characters 1138:1192; accessed 2026-10-01; sha256 5849765b5a2f806cc4be443c44f27aab6e8ecf3b82e7a536a50c03aa0c96c0a7",
+   "excerpt": "to establish the Socialist-Revolutionary Party in 1901",
+   "reason": "Gershuni co-founded the SR Party and its Combat Organization."
+  },
+  {
+   "id": "gustave-herve",
+   "source": "https://en.wikipedia.org/wiki/Gustave_Hervé",
+   "locator": "plain-text extract characters 759:877; accessed 2026-10-01; sha256 b526569c2c23e10dcc2d0f818c831cf5a704e16dc20471d923aeb8a0bea9409f",
+   "excerpt": "Before World War I Hervé was one of the most strident voices within both French socialism and the Second International",
+   "reason": "Herve was a prominent SFIO and Second International socialist before turning nationalist."
+  },
+  {
+   "id": "hermann-muller",
+   "source": "https://en.wikipedia.org/wiki/Hermann_Müller_(politician,_born_1876)",
+   "locator": "plain-text extract characters 216:316; accessed 2026-10-01; sha256 cada38c54311b00b289c8037ad3a35b6a091cdcf78757f849dbb6de0f80d6bd3",
+   "excerpt": "Müller rose quickly through the ranks of the Social Democratic Party (SPD) after joining it in 1893.",
+   "reason": "Muller was an SPD leader and Weimar chancellor."
+  },
+  {
+   "id": "hugo-haase",
+   "source": "https://en.wikipedia.org/wiki/Hugo_Haase",
+   "locator": "plain-text extract characters 543:602; accessed 2026-10-01; sha256 0facafb52136b40521aa2a0587c3f6fc826e82ec8cc1f7cbd2a64e79db3dcf15",
+   "excerpt": "joined the Social Democratic Party of Germany (SPD) in 1887",
+   "reason": "Haase was an SPD co-chair who founded the USPD."
+  },
+  {
+   "id": "irakli-tsereteli",
+   "source": "https://en.wikipedia.org/wiki/Irakli_Tsereteli",
+   "locator": "plain-text extract characters 341:430; accessed 2026-10-01; sha256 fe62fed311930000d80c614dc22c4f9f1ffd8bf3ce1c2fb0c85843b6e6a35a94",
+   "excerpt": "A member of the Menshevik faction of the RSDLP, Tsereteli was elected to the Duma in 1907",
+   "reason": "Tsereteli was a leading Menshevik and Petrograd Soviet figure."
+  },
+  {
+   "id": "ivan-kalyaev",
+   "source": "https://en.wikipedia.org/wiki/Ivan_Kalyayev",
+   "locator": "plain-text extract characters 110:155; accessed 2026-10-01; sha256 0cae705d413223289a92d5781f6503364df715e35ea5f3fc2052d71985444f1a",
+   "excerpt": "a member of the Socialist-Revolutionary Party",
+   "reason": "Kalyayev was an SR Combat Organization assassin."
+  },
+  {
+   "id": "jean-jaures",
+   "source": "https://en.wikipedia.org/wiki/Jean_Jaurès",
+   "locator": "plain-text extract characters 73:203; accessed 2026-10-01; sha256 d59146be0625860187ae2369eefaf899804fc12ff2cc5ad97b355ef98cfa2e42",
+   "excerpt": "commonly referred to as Jean Jaurès (French: [ʒɑ̃ ʒɔʁɛs] ; Occitan: Joan Jaurés [dʒuˈan dʒawˈɾes]), was a French socialist leader.",
+   "reason": "Jaures led the French socialists into the SFIO."
+  },
+  {
+   "id": "julian-besteiro",
+   "source": "https://en.wikipedia.org/wiki/Julián_Besteiro",
+   "locator": "plain-text extract characters 441:522; accessed 2026-10-01; sha256 e33332515c8b4353b222038d32753499adad6a947b2e930150effac3067b6d20",
+   "excerpt": "As the leader of the moderate wing of the Spanish Socialist Workers' Party (PSOE)",
+   "reason": "Besteiro led the moderate wing of the PSOE."
+  },
+  {
+   "id": "karl-kautsky",
+   "source": "https://en.wikipedia.org/wiki/Karl_Kautsky",
+   "locator": "plain-text extract characters 181:297; accessed 2026-10-01; sha256 1bb592fadc19038baf6ad9859a668c0d82854fb68764b03af55f01752e2416c2",
+   "excerpt": "he was for decades the leading theorist of the Social Democratic Party of Germany (SPD) and the Second International",
+   "reason": "Kautsky was the SPD's and the Second International's chief theorist."
+  },
+  {
+   "id": "keir-hardie",
+   "source": "https://en.wikipedia.org/wiki/Keir_Hardie",
+   "locator": "plain-text extract characters 101:196; accessed 2026-10-01; sha256 6dc39645c48ad97009c0846c995c9f3049f68dabe018dbd9e7eceb9420f7f9db",
+   "excerpt": "He was a founder of the Labour Party, and was its first parliamentary leader from 1906 to 1908.",
+   "reason": "Hardie founded the ILP and the Labour Party."
+  },
+  {
+   "id": "leon-blum",
+   "source": "https://en.wikipedia.org/wiki/Léon_Blum",
+   "locator": "plain-text extract characters 8486:8604; accessed 2026-10-01; sha256 1ff5716957bc428c289d8d076760e94e40191d356236adbac98a67939b98d7e9",
+   "excerpt": "joined the French Section of the Workers' International (French: Section française de l'Internationale ouvrière, SFIO)",
+   "reason": "Blum led the SFIO and the Popular Front."
+  },
+  {
+   "id": "ludovic-oscar-frossard",
+   "source": "https://en.wikipedia.org/wiki/Ludovic-Oscar_Frossard",
+   "locator": "plain-text extract characters 201:310; accessed 2026-10-01; sha256 0661a61b580884a03ee659232bbfbe78a333e00b72a3c59d3626106eb932d9e6",
+   "excerpt": "He was a founding member in 1905 and Secretary-General of the French Socialist Party (SFIO) from 1918 to 1920",
+   "reason": "Frossard was SFIO secretary-general before and after a brief PCF stint."
+  },
+  {
+   "id": "martov",
+   "source": "https://en.wikipedia.org/wiki/Julius_Martov",
+   "locator": "plain-text extract characters 93:170; accessed 2026-10-01; sha256 c42f4104e7c6a6ef184e8ce3960032e84d063f04c0e5e429ad99f57197d101eb",
+   "excerpt": "was a Russian Marxist theorist, revolutionary, and a leader of the Mensheviks",
+   "reason": "Martov founded and led the Mensheviks."
+  },
+  {
+   "id": "matvey-skobelev",
+   "source": "https://en.wikipedia.org/wiki/Matvey_Skobelev",
+   "locator": "plain-text extract characters 318:378; accessed 2026-10-01; sha256 528b99b6ef1bea8598ec5c07d5cee3b347bdeaa928318dc89724b91566e98d1d",
+   "excerpt": "He joined the Russian Social Democratic Labor Party in 1903.",
+   "reason": "Skobelev was a Menshevik Duma deputy and Provisional Government minister."
+  },
+  {
+   "id": "mikhail-liber",
+   "source": "https://en.wikipedia.org/wiki/Mikhail_Liber",
+   "locator": "plain-text extract characters 113:175; accessed 2026-10-01; sha256 3c5b23a04359c146c41393bcad5e5da64ea21dd6b4704a40934b220d894a56e1",
+   "excerpt": "was a leader of the General Jewish Workers' Union (the 'Bund')",
+   "reason": "Liber was a Bund leader and Menshevik."
+  },
+  {
+   "id": "mark-natanson",
+   "source": "https://en.wikipedia.org/wiki/Mark_Natanson",
+   "locator": "plain-text extract characters 4786:4888; accessed 2026-10-01; sha256 7f79c8a3e876778b383a711cba7940d0ffa8be6becfff49d9d1617cedef9e4b9",
+   "excerpt": "After some hesitation, Nathanson joined the Socialist Revolutionaries and became one of their leaders.",
+   "reason": "Natanson led the SR Party before joining the Left SRs in 1917."
+  },
+  {
+   "id": "nikolai-avksentiev",
+   "source": "https://en.wikipedia.org/wiki/Nikolai_Avksentiev",
+   "locator": "plain-text extract characters 1466:1534; accessed 2026-10-01; sha256 fed916af2bbadef59894954fb325931c616d9381809f9ac56e2aeeb53b1613a9",
+   "excerpt": "He was the leader of the right wing of the Socialist Revolutionaries",
+   "reason": "Avksentiev was a right-wing SR leader."
+  },
+  {
+   "id": "nikolai-chkheidze",
+   "source": "https://en.wikipedia.org/wiki/Nikolay_Chkheidze",
+   "locator": "plain-text extract characters 276:397; accessed 2026-10-01; sha256 a628afecab3da6955f9f5410cf9b911b057bed1578e9f9e1d4cc6dc644c5678e",
+   "excerpt": "He was a key figure in the February Revolution as the Menshevik president of the Executive Committee of Petrograd Soviet.",
+   "reason": "Chkheidze was a Menshevik leader of the Petrograd Soviet."
+  },
+  {
+   "id": "nikolai-sukhanov",
+   "source": "https://en.wikipedia.org/wiki/Nikolai_Sukhanov",
+   "locator": "plain-text extract characters 1268:1375; accessed 2026-10-01; sha256 1be4f9f759a828d6bc190b90e724fcc3be3e774f60837785646aff18f99a01cf",
+   "excerpt": "In 1903 he began to study Philology and Philosophy in Moscow, and joined the Socialist Revolutionary Party.",
+   "reason": "Sukhanov was an SR and Menshevik-internationalist chronicler of 1917."
+  },
+  {
+   "id": "pavel-akselrod",
+   "source": "https://en.wikipedia.org/wiki/Pavel_Axelrod",
+   "locator": "plain-text extract characters 286:412; accessed 2026-10-01; sha256 a34b252c03386a9c929371361157e234c1ba198ba0934ad08439fb0927919424",
+   "excerpt": "a co-founder, alongside Georgy Plekhanov, of the first Russian Marxist organization, the Emancipation of Labour group, in 1883",
+   "reason": "Axelrod co-founded Emancipation of Labour and became a Menshevik ideologist."
+  },
+  {
+   "id": "plekhanov",
+   "source": "https://en.wikipedia.org/wiki/Georgi_Plekhanov",
+   "locator": "plain-text extract characters 287:399; accessed 2026-10-01; sha256 7057c3da5d209ecef62de172317b851a42330e53fc97e41c63b0308119e7d7c4",
+   "excerpt": "in 1883 Plekhanov established the Emancipation of Labour group, the first Russian Marxist political organisation",
+   "reason": "Plekhanov founded Emancipation of Labour and later led the Mensheviks' defensist wing."
+  },
+  {
+   "id": "ramsay-macdonald",
+   "source": "https://en.wikipedia.org/wiki/Ramsay_MacDonald",
+   "locator": "plain-text extract characters 619:743; accessed 2026-10-01; sha256 a5f441b62e78f679f5f910ab312396e8fd72763f50ad09dc4ff22b937a4399f8",
+   "excerpt": "MacDonald, along with Keir Hardie and Arthur Henderson, was one of the three principal founders of the Labour Party in 1900.",
+   "reason": "MacDonald co-founded the Labour Party and led it."
+  },
+  {
+   "id": "robert-grimm",
+   "source": "https://en.wikipedia.org/wiki/Robert_Grimm",
+   "locator": "plain-text extract characters 53:137; accessed 2026-10-01; sha256 9547a5a8a3036e78e80e6eac5ce9f29b236ab08a859d63a255c1d02e4adfef34",
+   "excerpt": "was the leading Swiss Socialist politician during the first half of the 20th century",
+   "reason": "Grimm led Swiss social democracy and the Zimmerwald movement."
+  },
+  {
+   "id": "victor-adler",
+   "source": "https://en.wikipedia.org/wiki/Victor_Adler",
+   "locator": "plain-text extract characters 1972:2083; accessed 2026-10-01; sha256 2cbac1ace10a81c1aefd1ed9a202f1586fbdfbbc35993ee8196a64dbec84326f",
+   "excerpt": "At an 1888 conference in Hainfeld he formed the Social Democratic Workers' Party and became its first chairman.",
+   "reason": "Adler founded and led Austrian social democracy."
+  },
+  {
+   "id": "victor-chernov",
+   "source": "https://en.wikipedia.org/wiki/Victor_Chernov",
+   "locator": "plain-text extract characters 156:233; accessed 2026-10-01; sha256 31ed5a7178141f222294f9f585838bb0525b744b837de90bf99bf145f67c3441",
+   "excerpt": "was a principal founder and leader of the Socialist Revolutionary Party (PSR)",
+   "reason": "Chernov was the SR Party's chief ideologist."
+  },
+  {
+   "id": "vaino-tanner",
+   "source": "https://en.wikipedia.org/wiki/Väinö_Tanner",
+   "locator": "plain-text extract characters 1347:1415; accessed 2026-10-01; sha256 5191a886132babb980bcadc22b10dbc9b9cfd843c975e3aa1745ab2b23dc027d",
+   "excerpt": "he became Finland's leading Social Democratic Party (SDP) politician",
+   "reason": "Tanner led the Finnish SDP."
+  },
+  {
+   "id": "vaino-voionmaa",
+   "source": "https://en.wikipedia.org/wiki/Väinö_Voionmaa",
+   "locator": "plain-text extract characters 316:341; accessed 2026-10-01; sha256 99e7aa109c118a891d7cceff47c3b25fdab8889ffb8b83055ad503a364ac11e5",
+   "excerpt": "He was a Social Democrat.",
+   "reason": "Voionmaa was a Finnish Social Democrat politician and academic."
+  },
+  {
+   "id": "vera-zasulich",
+   "source": "https://en.wikipedia.org/wiki/Vera_Zasulich",
+   "locator": "plain-text extract characters 714:794; accessed 2026-10-01; sha256 4f596a2d743e3b8c0dc00f3312513c027bb9505464e94da24115ff2113413dec",
+   "excerpt": "she converted to Marxism and in 1883 co-founded the Emancipation of Labour group",
+   "reason": "Zasulich co-founded Emancipation of Labour and sided with the Mensheviks."
+  },
+  {
+   "id": "vladimir-voitinsky",
+   "source": "https://en.wikipedia.org/wiki/Vladimir_Voitinsky",
+   "locator": "plain-text extract characters 526:637; accessed 2026-10-01; sha256 534c4854b28a9a86a5619703f923581fef1b55a185a67f1fddcd3c97a145a3cb",
+   "excerpt": "he became close to the leading Georgian Menshevik Irakli Tsereteli and defected to the more moderate Mensheviks",
+   "reason": "Voitinsky was a Menshevik before his Comintern work."
+  },
+  {
+   "id": "wilhelm-liebknecht",
+   "source": "https://en.wikipedia.org/wiki/Wilhelm_Liebknecht",
+   "locator": "plain-text extract characters 173:240; accessed 2026-10-01; sha256 bfca2b5757327d228c9233e95e8b388614749d3b8cd2e2ce75d9b1109a7c77ef",
+   "excerpt": "A principal founder of the Social Democratic Party of Germany (SPD)",
+   "reason": "Liebknecht co-founded the SPD."
+  },
+  {
+   "id": "willy-brandt",
+   "source": "https://en.wikipedia.org/wiki/Willy_Brandt",
+   "locator": "plain-text extract characters 511:568; accessed 2026-10-01; sha256 e1a76adec1c20dea9a1734a0b6a697ad3b8974bb8cfac19bb26f12b7c4106a41",
+   "excerpt": "He was the first Social Democratic chancellor since 1930.",
+   "reason": "Brandt was an SPD leader and chancellor."
+  },
+  {
+   "id": "ivanoe-bonomi",
+   "source": "https://en.wikipedia.org/wiki/Ivanoe_Bonomi",
+   "locator": "plain-text extract characters 2747:2830; accessed 2026-10-01; sha256 83d944485c561da6111919a57b9eed4bb1b9000341aeaaec096a4a3f405c2f36",
+   "excerpt": "In March 1912 he, along with other members of the right wing of the Socialist Party",
+   "reason": "Bonomi was a reformist PSI leader expelled in 1912."
+  },
+  {
+   "id": "pitirim-sorokin",
+   "source": "https://en.wikipedia.org/wiki/Pitirim_Sorokin",
+   "locator": "plain-text extract characters 2914:2996; accessed 2026-10-01; sha256 67af381b33bab5e33479af298a600470838c56b36dcd2481cecb95d27703177a",
+   "excerpt": "During the Russian Revolution he was a member of the Socialist Revolutionary Party",
+   "reason": "Sorokin was an SR and Constituent Assembly deputy before becoming a sociologist."
+  },
+  {
+   "id": "volodymyr-vynnychenko",
+   "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+   "locator": "plain-text extract characters 7675:7745; accessed 2026-10-01; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030",
+   "excerpt": "Vynnychenko resigned from the Ukrainian Social Democratic Labour Party",
+   "reason": "Vynnychenko led the Ukrainian Social Democrats before founding a Ukrainian communist group."
+  },
+  {
+   "id": "lev-deitch",
+   "source": "https://en.wikipedia.org/wiki/Lev_Deutsch",
+   "locator": "plain-text extract characters 4882:4954; accessed 2026-10-01; sha256 48b332bed9396ed806a36ccc3e1975122c040e630c6115de853d6f1ac08d3de2",
+   "excerpt": "He sided the Mensheviks - Martov, Axelrod, Zasulich, Leon Trotsky et al.",
+   "reason": "Deich co-founded Emancipation of Labour and sided with the Mensheviks."
+  },
+  {
+   "id": "vladimir-groman",
+   "source": "https://en.wikipedia.org/wiki/Vladimir_Groman",
+   "locator": "plain-text extract characters 103:163; accessed 2026-10-01; sha256 55e866248fd15f181520f4a92e035de9a2627d748634f523151fc02dbd6876b4",
+   "excerpt": "was a Menshevik economist and statistician active in Gosplan",
+   "reason": "Groman was a Menshevik economist."
+  },
+  {
+   "id": "george-orwell",
+   "source": "https://en.wikipedia.org/wiki/George_Orwell",
+   "locator": "plain-text extract characters 74002:74098; accessed 2026-10-01; sha256 2e47b6b604de453ace0dddc8aa225b1eb676f72cd011a10458e3aadcb5af30f8",
+   "excerpt": "returned from Catalonia a staunch anti-Stalinist and joined the British Independent Labour Party",
+   "reason": "Orwell was an ILP member and democratic socialist."
+  },
+  {
+   "id": "jules-guesde",
+   "source": "https://en.wikipedia.org/wiki/Jules_Guesde",
+   "locator": "plain-text extract characters 2637:2794; accessed 2026-10-01; sha256 7f0e35ab5e1002a5f0748027816004bb53b34e095faf78610141afa858721c4b",
+   "excerpt": "It was in conjunction with Marx and Lafargue that he drew up the programme accepted by the National Congress of the French Workers' Party at Le Havre in 1880",
+   "reason": "Guesde founded French Marxist socialism and the SFIO."
+  },
+  {
+   "id": "kurt-eisner",
+   "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+   "locator": "plain-text extract characters 2094:2166; accessed 2026-10-01; sha256 44bfadf8d68fe370798eab2fc7bfd1fd174edc8c8cc833c4e3fd677086140ad4",
+   "excerpt": "Eisner joined the Independent Social Democratic Party of Germany in 1917",
+   "reason": "Eisner was a USPD leader and Bavarian revolutionary premier."
+  },
+  {
+   "id": "philipp-scheidemann",
+   "source": "https://en.wikipedia.org/wiki/Philipp_Scheidemann",
+   "locator": "plain-text extract characters 1909:1944; accessed 2026-10-01; sha256 85a45a252eb9374493a62441203fb685233e8c13688cb3230b5829a8c1928f72",
+   "excerpt": "In 1883, Scheidemann joined the SPD",
+   "reason": "Scheidemann was an SPD leader and Weimar chancellor."
+  },
+  {
+   "id": "gustav-noske",
+   "source": "https://en.wikipedia.org/wiki/Gustav_Noske",
+   "locator": "plain-text extract characters 785:875; accessed 2026-10-01; sha256 a368149fa08e4183a6a46fc080548d060aa925618c35a90c1e847039e2664bd5",
+   "excerpt": "In 1884, Noske joined the Social Democratic Party (SPD) and he also became a union member.",
+   "reason": "Noske was an SPD defence minister."
+  },
+  {
+   "id": "eugene-v-debs",
+   "source": "https://en.wikipedia.org/wiki/Eugene_V._Debs",
+   "locator": "plain-text extract characters 1638:1796; accessed 2026-10-01; sha256 55238306ee5b579e2c2c33a7214d32b689cc9c80707856471ce8e4bc1aa5e834",
+   "excerpt": "Debs was a founding member of the Social Democracy of America (1897), the Social Democratic Party of America (1898) and the Socialist Party of America (1901).",
+   "reason": "Debs founded and led American socialist parties."
+  },
+  {
+   "id": "eduard-bernstein",
+   "source": "https://en.wikipedia.org/wiki/Eduard_Bernstein",
+   "locator": "plain-text extract characters 84:148; accessed 2026-10-01; sha256 1fff36bbed8417bb82585d6460500d791fe550a5a352a9418408ff4b5dd5215a",
+   "excerpt": "was a German social democratic politician and socialist theorist",
+   "reason": "Bernstein was an SPD revisionist theorist."
+  },
+  {
+   "id": "marceau-pivert",
+   "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+   "locator": "plain-text extract characters 623:708; accessed 2026-10-01; sha256 8865c51493356e245a21a264c3b1922a3c9de3a1cee82484d6af022f73f2c0f9",
+   "excerpt": "Pivert organised the most left-wing members of the SFIO in his Gauche Révolutionnaire",
+   "reason": "Pivert led the SFIO's left wing."
+  },
+  {
+   "id": "jozef-pilsudski",
+   "source": "https://en.wikipedia.org/wiki/Józef_Piłsudski",
+   "locator": "plain-text extract characters 878:965; accessed 2026-10-01; sha256 be81f3bf58a826807e545828647dbdc33c3607eeb95c947abdb4aacf81e7964a",
+   "excerpt": "Early in his political career, Piłsudski became a leader of the Polish Socialist Party.",
+   "reason": "Pilsudski led the PPS before becoming a statesman."
+  },
+  {
+   "id": "vladimir-zenzinov",
+   "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+   "locator": "plain-text extract characters 622:679; accessed 2026-10-01; sha256 b05e5b994703c0622380e84ee0511904142df3e5ae114f120df4a7b1d89ae0be",
+   "excerpt": "He joined the Socialist-Revolutionary Party (PSR) in 1901",
+   "reason": "Zenzinov was an SR leader and exile."
+  },
+  {
+   "id": "alexander-parvus",
+   "source": "https://en.wikipedia.org/wiki/Parvus",
+   "locator": "plain-text extract characters 4427:4499; accessed 2026-10-01; sha256 99456a369f1d92854b677d042148d3d6aff242a3bb86a01aa0c7d012bba1ded9",
+   "excerpt": "he moved to Germany to join the Social Democratic Party of Germany (SPD)",
+   "reason": "Parvus was an SPD journalist and theorist."
+  },
+  {
+   "id": "paul-levi",
+   "source": "https://en.wikipedia.org/wiki/Paul_Levi",
+   "locator": "plain-text extract characters 821:947; accessed 2026-10-01; sha256 80b26141e905027242e1a4c1b2c4c9e9598cb76e0f0c52941c0ed281a12addb5",
+   "excerpt": "Levi started work as a lawyer in Frankfurt in 1906 and also joined the Social Democratic Party of Germany (SPD) the same year.",
+   "reason": "Levi was an SPD member before and after his KPD leadership."
+  },
+  {
+   "id": "largo-caballero",
+   "source": "https://en.wikipedia.org/wiki/Francisco_Largo_Caballero",
+   "locator": "plain-text extract characters 230:311; accessed 2026-10-01; sha256 3ba7a7f4d565889beea9382f9dd855992308a01f50a96707ab3006a89bfe27e6",
+   "excerpt": "He was one of the historic leaders of the Spanish Socialist Workers' Party (PSOE)",
+   "reason": "Largo Caballero was a PSOE and UGT leader."
+  },
+  {
+   "id": "paul-lafargue",
+   "source": "https://en.wikipedia.org/wiki/Paul_Lafargue",
+   "locator": "plain-text extract characters 7069:7177; accessed 2026-10-01; sha256 36c262bc4c8107da872718c01ed7d67c9a8def7253171d1b708ecdfcb2d98d35",
+   "excerpt": "he began directing the activities of the newly initiated French Workers' Party (Parti Ouvrier Français; POF)",
+   "reason": "Lafargue was a French Workers' Party Marxist and the first French socialist deputy."
+  },
+  {
+   "id": "kerensky",
+   "source": "https://en.wikipedia.org/wiki/Alexander_Kerensky",
+   "locator": "plain-text extract characters 475:572; accessed 2026-10-01; sha256 e19fc3f8e328c5b86a3b7c2b532ad32a8f31a039a5fcc310c8e4f2625e0d4f96",
+   "excerpt": "He was the leader of the social-democratic Trudovik faction of the Socialist Revolutionary Party.",
+   "reason": "Kerensky was a Trudovik/SR leader."
+  },
+  {
+   "id": "camille-huysmans",
+   "source": "https://en.wikipedia.org/wiki/Camille_Huysmans",
+   "locator": "plain-text extract characters 581:654; accessed 2026-10-01; sha256 b921235989e5cd276b023eb874876853198d2eac3660c20a9940b18057378ddb",
+   "excerpt": "Between 1905 and 1922 Huysmans was secretary of the Second International.",
+   "reason": "Huysmans was a Belgian Labour Party socialist and Second International secretary."
+  },
+  {
+   "id": "ferdinand-lassalle",
+   "source": "https://en.wikipedia.org/wiki/Ferdinand_Lassalle",
+   "locator": "plain-text extract characters 68:124; accessed 2026-10-01; sha256 f9347eb413fff10c3a312d623cc550b4ec5df1d02082040daac10a23da8b95db",
+   "excerpt": "was a German jurist, philosopher, and socialist activist",
+   "reason": "Lassalle founded the German workers' movement that became the SPD."
+  },
+  {
+   "id": "juan-negrin",
+   "source": "https://en.wikipedia.org/wiki/Juan_Negrín",
+   "locator": "plain-text extract characters 180:235; accessed 2026-10-01; sha256 4af575d173580b5ad8b6d9913117a7bfd98cf7b9acc804ee93d2e81d81f2aa4c",
+   "excerpt": "He was a leader of the Spanish Socialist Workers' Party",
+   "reason": "Negrin was a PSOE leader and republican premier."
+  },
+  {
+   "id": "ernst-toller",
+   "source": "https://en.wikipedia.org/wiki/Ernst_Toller",
+   "locator": "plain-text extract characters 1361:1434; accessed 2026-10-01; sha256 2f8e36177eeb78b29d8fa16aaf519374748545bce2723a9c09c78ddc6b0af319",
+   "excerpt": "Toller's party, the Independent Social Democratic Party of Germany (USPD)",
+   "reason": "Toller was a USPD member and Bavarian revolutionary."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "trotsky",
+   "reason": "Briefly Menshevik/unaffiliated Social Democrat but his socialist career was essentially Bolshevik/communist."
+  },
+  {
+   "id": "maria-spiridonova",
+   "reason": "Left SR (separate collection)."
+  },
+  {
+   "id": "boris-kamkov",
+   "reason": "Left SR."
+  },
+  {
+   "id": "isaac-steinberg",
+   "reason": "Left SR."
+  },
+  {
+   "id": "irina-kakhovskaya",
+   "reason": "Left SR."
+  },
+  {
+   "id": "boris-donskoy",
+   "reason": "Left SR."
+  },
+  {
+   "id": "prosh-proshian",
+   "reason": "Left SR."
+  },
+  {
+   "id": "yakov-fishman",
+   "reason": "Left SR."
+  },
+  {
+   "id": "mikhail-muravyov",
+   "reason": "Left SR turned Red commander."
+  },
+  {
+   "id": "andrei-kolegayev",
+   "reason": "Left SR."
+  },
+  {
+   "id": "yevno-azef",
+   "reason": "Police agent inside the SR Combat Organization; membership was provocation, not socialist activity."
+  },
+  {
+   "id": "alexander-antonov",
+   "reason": "Peasant-rebel leader of the Tambov uprising; local SR commander rather than a socialist politician (borderline)."
+  },
+  {
+   "id": "fanny-kaplan",
+   "reason": "Brief SR/anarchist background; known only for the 1918 shooting of Lenin (borderline)."
+  },
+  {
+   "id": "benito-mussolini",
+   "reason": "Led the PSI left until 1914, but later fascist; omitted as dominant identity is counterrevolutionary (borderline; criteria would technically admit the PSI period)."
+  },
+  {
+   "id": "sylvia-pankhurst",
+   "reason": "Suffragist and later communist; socialist period was the ILP/Workers' Socialist Federation toward communism (borderline)."
+  },
+  {
+   "id": "feliks-kon",
+   "reason": "PPS-Proletariat early, essentially Bolshevik/Comintern career."
+  },
+  {
+   "id": "yekaterina-kuskova",
+   "reason": "Economist who became liberal."
+  },
+  {
+   "id": "mikhail-tugan-baranovsky",
+   "reason": "Legal Marxist turned liberal/Ukrainian minister."
+  },
+  {
+   "id": "pavel-milyukov",
+   "reason": "Liberal (Kadet)."
+  },
+  {
+   "id": "pyotr-struve",
+   "reason": "Liberal."
+  },
+  {
+   "id": "israel-getzler",
+   "reason": "Historian of the Mensheviks."
+  },
+  {
+   "id": "robert-vincent-daniels",
+   "reason": "Historian."
+  },
+  {
+   "id": "helen-graham",
+   "reason": "Historian."
+  },
+  {
+   "id": "angel-vinas",
+   "reason": "Historian."
+  },
+  {
+   "id": "richard-overy",
+   "reason": "Historian."
+  },
+  {
+   "id": "orlando-figes",
+   "reason": "Historian."
+  },
+  {
+   "id": "vladimir-burtsev",
+   "reason": "Narodnik/SR-sympathetic historian and journalist rather than a party socialist."
+  },
+  {
+   "id": "nikolai-mikhailovsky",
+   "reason": "Populist theorist, pre-SR; not a Marxist/socialist-party member in this sense."
+  },
+  {
+   "id": "pyotr-lavrov",
+   "reason": "Populist, First International era; not in scope."
+  },
+  {
+   "id": "carl-gustaf-emil-mannerheim",
+   "reason": "Anti-socialist."
+  },
+  {
+   "id": "adolf-hitler",
+   "reason": "Nazi."
+  },
+  {
+   "id": "henk-sneevliet",
+   "reason": "SDAP early but essentially communist/Trotskyist career (not verified)."
+  },
+  {
+   "id": "boris-souvarine",
+   "reason": "SFIO briefly, essentially communist then anti-communist (not verified)."
+  },
+  {
+   "id": "willi-muenzenberg",
+   "reason": "Comintern organiser."
+  },
+  {
+   "id": "fritz-platten",
+   "reason": "Swiss communist."
+  },
+  {
+   "id": "gramsci",
+   "reason": "Italian communist (PSI youth period brief)."
+  },
+  {
+   "id": "togliatti",
+   "reason": "Communist."
+  },
+  {
+   "id": "dimitrov",
+   "reason": "Communist."
+  },
+  {
+   "id": "grigory-alexinsky",
+   "reason": "Bolshevik turned anti-Bolshevik (not verified)."
+  },
+  {
+   "id": "ernest-bevin",
+   "reason": "Trade-union leader and Labour minister; socialist identity incidental in the sources reviewed (borderline)."
+  },
+  {
+   "id": "herbert-vere-evatt",
+   "reason": "Australian Labor politician and jurist, not a socialist in the criteria sense."
+  },
+  {
+   "id": "alexander-troyanovsky",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "carl-manner",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "dimitar-blagoev",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "emil-eichhorn",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "ernst-daeumig",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "fernand-loriot",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "franz-mehring",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "ivan-maisky",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "kollontai",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "liebknecht",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "luxemburg",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "marcel-cachin",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "otto-grotewohl",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "sen-katayama",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "stanislav-strumilin",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "wilhelm-pieck",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "yuri-larin",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "zdenek-fierlinger",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  },
+  {
+   "id": "zetkin",
+   "reason": "Went on to found or lead a communist party or to serve the Soviet/socialist party-state; the operator chose the strict reading that excludes careers that ended in the communist tradition."
+  }
+ ],
+ "migration": "221"
+}

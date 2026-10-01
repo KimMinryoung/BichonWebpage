@@ -2756,6 +2756,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .pos-left-opposition { --pos: #c7702a; }
 .pos-dissident { --pos: #3d6fb6; }
 .pos-reform { --pos: #3f9a6a; }
+.pos-fascist { --pos: #6b4a2b; }
+.pos-socialist { --pos: #d0658c; }
+.pos-narodnik { --pos: #7a52a6; }
+.pos-jacobin { --pos: #24357a; }
 
 .commu-person-card[class*="pos-"] { border-left: 5px solid var(--pos); }
 /* White and black stripes vanish on one of the two themes; a hairline keeps their edge. */
