@@ -2748,9 +2748,9 @@ button.commu-dc-option:hover { border-color: var(--link); }
    detail head carry the position colour as a thick left stripe; the medal
    stays the activity icon. Each communist force keeps its own red (Soviet and
    Chinese flag reds). No known position, no stripe. */
-.pos-red-soviet { --pos: #cc0000; }
-.pos-red-china { --pos: #de2910; }
-.pos-red { --pos: #a3262e; }
+.pos-red-soviet { --pos: #b3261e; }
+.pos-red-china { --pos: #c4381f; }
+.pos-red { --pos: #8f2a33; }
 .pos-white { --pos: #fbfaf6; }
 .pos-anarchist { --pos: #111; }
 .pos-left-opposition { --pos: #c7702a; }
@@ -2761,10 +2761,34 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .pos-narodnik { --pos: #7a52a6; }
 .pos-jacobin { --pos: #24357a; }
 
-.commu-person-card[class*="pos-"] { border-left: 5px solid var(--pos); }
-/* White and black stripes vanish on one of the two themes; a hairline keeps their edge. */
+.commu-person-card[class*="pos-"] { border-left: 3px solid var(--pos); }
+/* White vanishes on the light theme and black on the dark one: frame both
+   stripes with a hairline on each side so they read as bars on either theme. */
 .commu-person-card.pos-white, .commu-person-card.pos-anarchist,
-.commu-person-detail-head.pos-white, .commu-person-detail-head.pos-anarchist { box-shadow: inset 1px 0 0 var(--text-muted); }
+.commu-person-detail-head.pos-white, .commu-person-detail-head.pos-anarchist {
+    box-shadow: -1px 0 0 var(--text-muted), inset 1px 0 0 var(--text-muted);
+}
+
+/* Position tag in the card meta row: the name of the position, with a dot in
+   the stripe colour (the colour alone does not tell rose from red). */
+.commu-person-position {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    text-decoration: none;
+}
+.commu-person-position::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--pos);
+    box-shadow: 0 0 0 1px var(--text-muted);
+    flex-shrink: 0;
+}
+a.commu-person-position:hover { color: var(--link); text-decoration: underline; }
 
 
 /* .commu-role-icon lives in commulingo-crumb.css — the document reader loads

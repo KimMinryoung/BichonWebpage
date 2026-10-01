@@ -1,5 +1,5 @@
 const { displayActivities } = require('./person-activities');
-const { personPosition } = require('./person-position');
+const { resolvePosition, RED_LABELS } = require('./person-position');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
@@ -345,7 +345,14 @@ function normalizeCommuLingoPeople(data, options = {}) {
     collections.forEach(collection => collection.personIds.forEach(id => {
         peopleById[id].collections.push({ id: collection.id, title: collection.title, href: collection.href });
     }));
-    people.forEach(person => { person.position = personPosition(person.activities, person.collections.map(c => c.id)); });
+    people.forEach(person => {
+        const { position, collectionId } = resolvePosition(person.activities, person.collections.map(c => c.id));
+        const collection = collectionId && person.collections.find(c => c.id === collectionId);
+        person.position = position;
+        person.positionTag = !position ? null
+            : collection ? { label: collection.title, href: collection.href }
+            : { label: localize(RED_LABELS[position], lang), href: '' };
+    });
     const groups = (data.groups || []).map(group => ({
         id: group.id,
         shelf: group.shelf || '',

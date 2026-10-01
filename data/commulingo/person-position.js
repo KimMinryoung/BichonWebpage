@@ -94,18 +94,28 @@ function mostlySocialist({ startYear, endYear }, windows) {
         || windows.reduce((sum, [from, to]) => sum + within(from, to), 0) * 2 > span;
 }
 
-// collectionIds: the collections the person belongs to.
-function personPosition(activities, collectionIds) {
+const RED_LABELS = {
+    'red-soviet': { ko: '소련 공산주의', en: 'Soviet communism' },
+    'red-china': { ko: '중국 공산주의', en: 'Chinese communism' },
+    red: { ko: '공산주의', en: 'Communism' },
+};
+
+// collectionIds: the collections the person belongs to. Returns the position
+// key and, when a collection decided it, that collection's id (the card's
+// position tag links there); a red read from the activities has none.
+function resolvePosition(activities, collectionIds) {
     const inCollection = new Set(collectionIds || []);
     const hit = COLLECTION_POSITIONS.find(([id]) => inCollection.has(id));
-    if (hit) return hit[1];
+    if (hit) return { position: hit[1], collectionId: hit[0] };
     const rows = activities || [];
     const primary = rows.find(a => a.primary);
-    if (primary && isCommunist(primary.affiliationId)) return redTone(primary.affiliationId);
+    if (primary && isCommunist(primary.affiliationId)) return { position: redTone(primary.affiliationId), collectionId: '' };
     const windows = primary && SOCIALIST_WINDOWS[primary.affiliationId];
-    if (windows && (rows.some(a => isCommunist(a.affiliationId)) || mostlySocialist(primary, windows))) return 'red';
+    if (windows && (rows.some(a => isCommunist(a.affiliationId)) || mostlySocialist(primary, windows))) return { position: 'red', collectionId: '' };
     const earlier = EARLIER_POSITIONS.find(([id]) => inCollection.has(id));
-    return earlier ? earlier[1] : '';
+    return earlier ? { position: earlier[1], collectionId: earlier[0] } : { position: '', collectionId: '' };
 }
 
-module.exports = { personPosition, COLLECTION_POSITIONS, EARLIER_POSITIONS, RED_TONES };
+const personPosition = (activities, collectionIds) => resolvePosition(activities, collectionIds).position;
+
+module.exports = { personPosition, resolvePosition, RED_LABELS, COLLECTION_POSITIONS, EARLIER_POSITIONS, RED_TONES };
