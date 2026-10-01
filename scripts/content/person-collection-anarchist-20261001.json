@@ -1,0 +1,156 @@
+{
+ "collection": "anarchist",
+ "criteria": "People who carried out a substantial period of their political activity as self-identified anarchists or inside anarchist organisations. A later change of course does not remove the earlier period. Historians of anarchism and people merely accused of it are not members.",
+ "reviewed": "2026-10-01",
+ "migration": "220",
+ "added": [
+  {
+   "id": "mikhail-bakunin",
+   "source": "https://en.wikipedia.org/wiki/Mikhail_Bakunin",
+   "excerpt": "18 May] 1814 – 1 July 1876) was a Russian revolutionary anarchist and political philosopher.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "louise-michel",
+   "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+   "excerpt": "Louise Michel (French: [lwiz miʃɛl] ; 29 May 1830 – 9 January 1905), also known by her nickname of Enjolras, was a French teacher, writer, poet, philosopher, Communard, and anarchist.",
+   "reason": "Communard who became an anarchist in New Caledonian exile and campaigned as one for the rest of her life."
+  },
+  {
+   "id": "pyotr-kropotkin",
+   "source": "https://en.wikipedia.org/wiki/Peter_Kropotkin",
+   "excerpt": "27 November] 1842 – 8 February 1921) was a Russian anarchist political philosopher and geographer known as a proponent of anarchist communism.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "leo-tolstoy",
+   "source": "https://en.wikipedia.org/wiki/Leo_Tolstoy",
+   "excerpt": "His literal interpretation of the ethical teachings of Jesus, centering on the Sermon on the Mount, caused him to become a fervent Christian anarchist and pacifist.",
+   "reason": "Christian anarchism is his stated political position (rejection of the state and organised violence), not a scholarly interest."
+  },
+  {
+   "id": "iosif-bleikhman",
+   "source": "https://en.wikipedia.org/wiki/Iosif_Bleikhman",
+   "excerpt": "He was the leader of the Petrograd Federation of Anarchist-Communists at the time of the Russian Revolution in 1917, organising a series of demonstrations against the Russian Provisional Government that culminated in the July Days.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "emma-goldman",
+   "source": "https://en.wikipedia.org/wiki/Emma_Goldman",
+   "excerpt": "Emma Goldman (June 27, 1869 – May 14, 1940) was a Russian-born anarchist revolutionary, political activist, and writer.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "alexander-berkman",
+   "source": "https://en.wikipedia.org/wiki/Alexander_Berkman",
+   "excerpt": "He was a leading member of the anarchist movement in the early 20th century, famous for both his political activism and his writing.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "gustav-landauer",
+   "source": "https://en.wikipedia.org/wiki/Gustav_Landauer",
+   "excerpt": "Gustav Landauer (German: [ˈlandaʊɐ]; 7 April 1870 – 2 May 1919) was a German anarchist writer and revolutionary.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "alexander-shapiro",
+   "source": "https://en.wikipedia.org/wiki/Alexander_Schapiro",
+   "excerpt": "Alexander \"Sanya\" Moiseyevich Schapiro or Shapiro (in Russian: Александр \"Саня\" Моисеевич Шапиро; 1882 or 1883 – December 5, 1946) was a Russian anarcho-syndicalist activist.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "volin",
+   "source": "https://en.wikipedia.org/wiki/Volin",
+   "excerpt": "11 August] 1882 – 18 September 1945), commonly known by his pseudonym Volin, was a Russian anarchist intellectual.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "nestor-makhno",
+   "source": "https://en.wikipedia.org/wiki/Nestor_Makhno",
+   "excerpt": "'Father Makhno'), was a Ukrainian anarchist revolutionary and the commander of the Revolutionary Insurgent Army of Ukraine during the Ukrainian War of Independence.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "anatoly-zheleznyakov",
+   "source": "https://en.wikipedia.org/wiki/Anatoli_Zhelezniakov",
+   "excerpt": "Anatoli Grigorievich Zhelezniakov (1895–1919) was a Russian anarchist and revolutionary best known for dispersing the short-lived Russian Constituent Assembly on Bolshevik orders during the October Revolution.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "buenaventura-durruti",
+   "source": "https://en.wikipedia.org/wiki/Buenaventura_Durruti",
+   "excerpt": "As a prominent member of the Confederación Nacional del Trabajo (CNT) and the Federación Anarquista Ibérica (FAI), Durruti was a key participant in the Spanish Revolution of 1936, and is remembered as a hero and martyr by the anarchist movement.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "cipriano-mera",
+   "source": "https://en.wikipedia.org/wiki/Cipriano_Mera",
+   "excerpt": "A bricklayer, he joined the anarchist movement and presided over the construction union of Madrid of the Confederación Nacional del Trabajo (CNT).",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "federica-montseny",
+   "source": "https://en.wikipedia.org/wiki/Federica_Montseny",
+   "excerpt": "Frederica Montseny i Mañé (Catalan: [munˈsɛɲ]; 1905–1994) was a Spanish anarchist and intellectual who was a notable member of the CNT and served as Minister of Health and Social Assistance in the government of the Second Spanish Republic during the Civil War.",
+   "reason": "Self-identified anarchist; the cited sentence names the anarchist activity."
+  },
+  {
+   "id": "victor-serge",
+   "source": "https://en.wikipedia.org/wiki/Victor_Serge",
+   "excerpt": "There, he associated with anarcho-individualist and illegalist circles, became a writer and editor for the journal L'Anarchie under the pen name Le Rétif (The Stubborn One), and was implicated with the Bonnot Gang.",
+   "reason": "Anarchist journalist (editor of L'Anarchie) from 1909 until he joined the Bolsheviks in 1919; included for that period."
+  },
+  {
+   "id": "kim-won-bong",
+   "source": "https://en.wikipedia.org/wiki/Kim_Wŏnbong",
+   "excerpt": "In 1919, Kim established the Heroic Corps, an anarchist group which carried out a six-year campaign of attacks against Japanese officials.",
+   "reason": "Founded the Heroic Corps, described as an anarchist group, and led its 1919–1925 campaign; included for that period, his later united-front and DPRK career notwithstanding."
+  }
+ ],
+ "excluded": [
+  {
+   "id": "afanasi-matushenko",
+   "reason": "No anarchist activity in the retrieved English Wikipedia article."
+  },
+  {
+   "id": "sergei-nechayev",
+   "reason": "Nihilist conspirator associated with Bakunin; not identified as an anarchist on his card or in the cited sources."
+  },
+  {
+   "id": "elizabeth-gurley-flynn",
+   "reason": "IWW syndicalist who became a Communist Party leader; not an anarchist organisation."
+  },
+  {
+   "id": "largo-caballero",
+   "reason": "Socialist (PSOE/UGT), worked alongside the CNT but was not an anarchist."
+  },
+  {
+   "id": "anton-pannekoek",
+   "reason": "Council communist, a Marxist current."
+  },
+  {
+   "id": "isaac-steinberg",
+   "reason": "Left Socialist-Revolutionary."
+  },
+  {
+   "id": "irina-kakhovskaya",
+   "reason": "SR Maximalist, then Left SR."
+  },
+  {
+   "id": "paul-avrich",
+   "reason": "Historian of anarchism."
+  },
+  {
+   "id": "aleksandr-shubin",
+   "reason": "Historian."
+  },
+  {
+   "id": "gabriel-jackson",
+   "reason": "Historian."
+  },
+  {
+   "id": "angel-vinas",
+   "reason": "Historian."
+  }
+ ]
+}
