@@ -1,0 +1,33 @@
+<%
+var fateIcons = {
+    executed: '✕', assassinated: '✕', murdered: '✕', killed: '✕', suicide: '✕',
+    deposed: '↓', exile: '→', natural: '○'
+};
+var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
+%>
+    <div class="commu-person-meta">
+        <% if (person.role && person.role.label) { %>
+        <% if (medalHref) { %>
+        <a class="commu-person-role-tag" href="<%= medalHref %>" onclick="event.stopPropagation()"><%= person.role.label %></a>
+        <% } else { %>
+        <span class="commu-person-role-tag"><%= person.role.label %></span>
+        <% } %>
+        <% } %>
+        <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>
+        <% if (person.primaryActivity.affiliationId) { %><a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
+            <% if (person.primaryActivity.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %>
+            <%= person.primaryActivity.affiliationLabel %>
+        <% if (person.primaryActivity.affiliationId) { %></a><% } else { %></span><% } %>
+        <% } %>
+        <%- include('commulingo-person-position', { person: person }) %>
+        <span class="commu-person-years">
+            <% if (typeof flagImg === 'function') { %>
+            <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.personCard.citizenship, nationalityHubHref('citizenship', person.citizenship.code)) %><% } %>
+            <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, strings.commuLingoViews.personCard.nationalBackground, nationalityHubHref('nationalOrigin', person.origin.code)) %><% } %>
+            <% } %>
+            <%= person.years %>
+        </span>
+        <% if (person.fateLabel) { %>
+        <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
+        <% } %>
+    </div>
