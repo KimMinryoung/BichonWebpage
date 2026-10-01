@@ -59,7 +59,7 @@
             <ul class="commu-person-career commu-person-activities">
             <% person.activities.forEach(function(a) { %>
                 <li><% if (activitiesDated) { %><span class="commu-career-year"><%= a.startYear && a.startYear === a.endYear ? a.startYear : (a.startYear || '') + (a.startYear || a.endYear ? '–' : '') + (a.endYear || '') %></span><% } %>
-                    <span><a class="commu-person-activity-link" href="<%= a.href %>"><%= a.label %><% if (a.affiliationLabel) { %> · <span class="commu-person-affiliation"><% if (a.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %><%= a.affiliationLabel %></span><% } %></a>
+                    <span><a class="commu-person-activity-link" href="<%= a.href %>"><%= a.label %><% if (a.affiliationLabel) { %> · <span class="commu-person-affiliation"><% if (a.affiliationIcon) { %><%- roleIconSvg(a.affiliationIcon) %><% } %><%= a.affiliationLabel %></span><% } %></a>
                     <% if (a.officeLabel) { %> · <a class="commu-person-office-link" href="<%= a.officeHref %>"><%= a.officeLabel %></a><% } %>
                     </span></li>
             <% }) %>

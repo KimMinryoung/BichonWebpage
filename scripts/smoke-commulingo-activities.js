@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { validateActivities, displayActivities, matchesActivities, catalog } = require('../data/commulingo/person-activities');
+const { validateActivities, displayActivities, matchesActivities, isUnresolvedGap, catalog } = require('../data/commulingo/person-activities');
 const { ICON_PATHS } = require('../data/icons');
 const evidence = [{ source: 'https://example.org/biography', locator: 'Career', claim: 'Service', excerpt: 'Documented service.' }];
 const primary = { functionId: 'security', affiliationId: 'china-ccp', affiliationStatus: 'confirmed', relation: 'membership', primary: true, startYear: 1939, endYear: 1948, evidence };
@@ -28,13 +28,15 @@ assert.throws(() => validateActivities([{ ...primary, functionId: 'government', 
 assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: 1793, endYear: 1794 }], sources));
 assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: null, endYear: null }], sources));
 for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) assert(from == null || to == null || from <= to, a.id);
-assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '소속 미확정');
+// An unresolved affiliation is a research-queue item, not something to show readers.
+assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '');
+assert.equal(displayActivities([{ ...primary, affiliationId: 'state-soviet' }], 'ko')[0].affiliationIcon, 'landmark');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');
 // Scholarship and arts are usually done without serving a state or party: an
-// unresolved affiliation there is not announced as a gap on the card.
+// unresolved affiliation there is not a research gap.
 for (const functionId of ['scholarship', 'arts']) {
     assert(catalog.functions.find(f => f.id === functionId).affiliationOptional, functionId);
-    assert.equal(displayActivities([{ ...primary, functionId, affiliationId: null, affiliationStatus: 'unresolved', relation: 'unresolved' }], 'ko')[0].affiliationLabel, '');
+    assert(!isUnresolvedGap({ functionId, affiliationStatus: 'unresolved' }), functionId);
 }
 console.log('Activity evidence, primary selection, periods and same-career filters passed');
 

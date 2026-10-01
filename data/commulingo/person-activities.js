@@ -78,8 +78,10 @@ function activityHref(a) {
 
 // A function marked affiliationOptional (scholarship, arts) is usually done
 // without serving a state or party, so an unresolved affiliation there is not
-// a gap to announce on the card. It stays 'unresolved' in the data: nobody has
-// shown the work was independent either.
+// a research gap. It stays 'unresolved' in the data: nobody has shown the work
+// was independent either. Other unresolved rows are the research queue
+// (scripts/report-person-unresolved-affiliations.js); readers see no label for
+// any unresolved affiliation, only a confirmed one or 독립 활동.
 function isUnresolvedGap(a) {
     return a?.affiliationStatus === 'unresolved' && !functions.get(a.functionId)?.affiliationOptional;
 }
@@ -90,7 +92,7 @@ function displayActivities(raw, lang, officeTitles = {}) {
     return rows.filter(a => functions.has(a.functionId)).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
-            affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : isUnresolvedGap(a) ? (lang === 'en' ? 'Affiliation unconfirmed' : '소속 미확정') : '',
+            affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : '',
             affiliationIcon: affiliation?.icon || '',
             officeLabel: a.officeId ? localize(officeTitles[a.officeId], lang) || '' : '',
             officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '',

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // Research queue for activity affiliations: activities whose affiliation is
 // still 'unresolved' in a function where the affiliation matters (every
-// function not marked affiliationOptional in activity-catalog.json). These are
-// the ones the card still labels 소속 미확정. Scholarship and arts are left out:
-// their unresolved rows are not shown as gaps (person-activities.js
+// function not marked affiliationOptional in activity-catalog.json). Readers
+// see no affiliation label for these. Scholarship and arts are left out:
+// their unresolved rows are not research gaps (person-activities.js
 // isUnresolvedGap). Report only, exit 0; resolve rows through the Admin store
 // with cited evidence, never by copying citizenship.
 //

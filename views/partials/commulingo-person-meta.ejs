@@ -7,7 +7,7 @@ var fateIcons = {
     <div class="commu-person-meta">
         <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>
         <% if (person.primaryActivity.affiliationId) { %><a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
-            <% if (person.primaryActivity.affiliationIcon === 'hammer-sickle') { %><%- roleIconSvg('hammer-sickle') %><% } %>
+            <% if (person.primaryActivity.affiliationIcon) { %><%- roleIconSvg(person.primaryActivity.affiliationIcon) %><% } %>
             <%= person.primaryActivity.affiliationLabel %>
         <% if (person.primaryActivity.affiliationId) { %></a><% } else { %></span><% } %>
         <% } %>
