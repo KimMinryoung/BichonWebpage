@@ -1,0 +1,162 @@
+{
+ "changedBy": "claude-kakhovskaya-20261001",
+ "people": [
+  {
+   "id": "irina-kakhovskaya",
+   "groupId": "bolshevik",
+   "givenName": {
+    "ko": "이리나",
+    "en": "Irina"
+   },
+   "familyName": {
+    "ko": "카홉스카야",
+    "en": "Kakhovskaya"
+   },
+   "patronymic": {
+    "ko": "콘스탄티노브나",
+    "en": "Konstantinovna"
+   },
+   "cyrillicPatronymic": "Константиновна",
+   "nativeName": "Ирина Каховская",
+   "years": "1887–1960",
+   "citizenship": {
+    "code": "soviet"
+   },
+   "nationalOrigin": {
+    "code": "russia"
+   },
+   "epithet": {
+    "ko": "1918년 아이히호른 암살을 조직하고 소련 감옥과 유형으로 반평생을 보낸 좌파 사회혁명당원",
+    "en": "Left SR who organised the 1918 assassination of the German field marshal Eichhorn in Kiev and spent decades in Soviet prisons and exile"
+   },
+   "bio": {
+    "ko": "데카브리스트 표트르 카홉스키의 종손녀로, 1905년 이후 사회혁명당 최대강령파에 들어가 1908년 징역형을 받고 네르친스크에서 스피리도노바와 함께 복역했다. 10월 혁명 뒤 좌파 사회혁명당에 합류했다. 1918년 당이 브레스트 강화에 맞선 테러를 재개하자 보리스 돈스코이와 키예프에서 아이히호른 암살을 준비했고, 헤트만 스코로파츠키 암살은 실패했다. 독일 군법회의의 사형 선고 뒤 1919년 1월 풀려났다. 1921년부터 소련의 유형과 1937년 재판, 크라스노야르스크 수용소를 거쳐 1954년 풀려났다.",
+    "en": "A grandniece of the Decembrist Pyotr Kakhovsky, she joined the SR Maximalists after 1905 and in 1908 was sentenced to hard labour, which she served at Nerchinsk alongside Maria Spiridonova. After the October Revolution she went with the Left Socialist-Revolutionaries and sat on the presidium of the Second Congress of Soviets. When the Left SR leadership resumed terror against the Brest-Litovsk peace in 1918, she and Boris Donskoy prepared the killing of Field Marshal Eichhorn in Kiev; her attempt on Hetman Skoropadskyi failed, and the Germans sentenced her to death but released her in January 1919. From 1921 she passed through Soviet exile, the 1937 \"All-Union SR Centre\" trial and the Krasnoyarsk camps, was released in 1954 and spent her last years keeping alive the memory of Spiridonova and Izmailovich."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "간암",
+     "en": "Liver cancer"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "Irina Kakhovskaia"
+    ]
+   },
+   "career": [
+    {
+     "y": "1906–1914",
+     "r": {
+      "ko": "사회혁명당 최대강령파, 1907년 체포, 네르친스크 징역",
+      "en": "SR Maximalist; arrested 1907; hard labour at Nerchinsk"
+     }
+    },
+    {
+     "y": "1917–1918",
+     "r": {
+      "ko": "좌파 사회혁명당, 제2차 소비에트 대회 간부회 위원",
+      "en": "Left SR; member of the presidium of the Second Congress of Soviets"
+     }
+    },
+    {
+     "y": "1918–1919",
+     "r": {
+      "ko": "좌파 사회혁명당 전투조직, 아이히호른 암살 조직, 독일 감옥에서 사형 선고 뒤 석방",
+      "en": "Left SR combat organisation; organised the Eichhorn assassination; sentenced to death by the Germans, released"
+     }
+    },
+    {
+     "y": "1921–1954",
+     "r": {
+      "ko": "체포와 유형, 1937년 징역 10년, 크라스노야르스크 수용소",
+      "en": "Arrests and exile; ten years in 1937; Krasnoyarsk camp"
+     }
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "organizing",
+     "affiliationId": "russian-left-sr",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "primary": true,
+     "startYear": 1917,
+     "endYear": 1919,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+       "locator": "plain-text extract characters 3767:3996; accessed 2026-10-01; sha256 2d74fbfbeb9734739073c32fab41e47f211e516d57c08f93f61806982637666f",
+       "claim": "10월 혁명 뒤 좌파 사회혁명당의 분리에 참여하고 제2차 소비에트 대회 간부회에서 이 당을 대표했다.",
+       "excerpt": "In the aftermath of the October Revolution Kakhovskaya participated in the secession of the Left Socialist-Revolutionaries from their old party, and represented them in the presidium of the Second All–Russian Congress of Soviets."
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+       "locator": "plain-text extract characters 4150:4301; accessed 2026-10-01; sha256 2d74fbfbeb9734739073c32fab41e47f211e516d57c08f93f61806982637666f",
+       "claim": "1918년 당 동지 보리스 돈스코이와 함께 아이히호른 원수 암살 준비를 맡았다.",
+       "excerpt": "Irina Kakhovskaya and her lover and party comrade Boris Donskoy were tasked with preparing an attempt on the life of Field Marshal Hermann von Eichhorn"
+      },
+      {
+       "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+       "locator": "plain-text extract characters 6045:6164; accessed 2026-10-01; sha256 2d74fbfbeb9734739073c32fab41e47f211e516d57c08f93f61806982637666f",
+       "claim": "1919년 데니킨 암살 시도가 무산된 로스토프에서 좌파 사회혁명당 사상을 선전했다.",
+       "excerpt": "In Rostov, where the attempt was to take place, Irina continued to promote the ideas of Left Socialist Revolutionaries."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F,_%D0%98%D1%80%D0%B8%D0%BD%D0%B0_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0"
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "A grandniece of the Decembrist Pyotr Kakhovsky, she joined the SR Maximalists after 1905 and in 1908 was sentenced to hard labour, which she served at Nerchinsk alongside Maria Spiridonova. After the October Revolution she went with the Left Socialist-Revolutionaries and sat on the presidium of the Second Congress of Soviets. When the Left SR leadership resumed terror against the Brest-Litovsk peace in 1918, she and Boris Donskoy prepared the killing of Field Marshal Eichhorn in Kiev; her attempt on Hetman Skoropadskyi failed, and the Germans sentenced her to death but released her in January 1919. From 1921 she passed through Soviet exile, the 1937 \"All-Union SR Centre\" trial and the Krasnoyarsk camps, was released in 1954 and spent her last years keeping alive the memory of Spiridonova and Izmailovich.",
+     "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+     "locator": "Wikipedia article: lead, biography"
+    },
+    {
+     "field": "years",
+     "claim": "1887–1960",
+     "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+     "locator": "Wikipedia article: lead, biography"
+    },
+    {
+     "field": "citizenship",
+     "claim": "irina-kakhovskaya: citizenship soviet, following the other Left SR cards",
+     "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+     "locator": "Wikipedia article: lead, biography"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "irina-kakhovskaya: national background russia",
+     "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+     "locator": "Wikipedia article: lead, biography"
+    }
+   ]
+  },
+  {
+   "id": "boris-donskoy",
+   "bio": {
+    "ko": "랴잔현 농민 출신으로 열다섯 살에 페트로그라드로 나가 일했고, 1915년 발트 함대에 징집되었다. 1916년 좌파 사회혁명당에 들어가 수병 단식 투쟁을 조직하다 체포되었다. 2월 혁명으로 풀려나 크론시타트 집행위원회 위원이 되었고, 코르닐로프 반란 때 발트 수병 부대를 이끌었으며 10월 혁명 때는 이노 요새의 코미사르였다. 1918년 봄 이리나 카홉스카야와 함께 우크라이나로 가 독일 점령에 맞선 지하 조직을 꾸렸고 좌파 사회혁명당 전투조직에 들어갔다. 7월 30일 키예프에서 폭탄을 던져 독일 원수 헤르만 폰 아이히호른을 죽였고, 독일 군법회의에서 사형을 선고받아 8월 10일 공개 교수형을 당했다.",
+    "en": "A peasant from Ryazan Governorate who went to Petrograd at fifteen and was conscripted into the Baltic Fleet in 1915. He joined the Left Socialist-Revolutionaries in 1916 and was arrested for organising a sailors' hunger strike. Freed by the February Revolution, he sat on the Kronstadt executive committee, led Baltic sailors against Kornilov and in October 1917 was commissar of Fort Ino. In spring 1918 he went to Ukraine with Irina Kakhovskaya to organise resistance to the German occupation and joined the Left SR combat organisation. On 30 July 1918 in Kiev he threw the bomb that killed Field Marshal Hermann von Eichhorn; a German military court sentenced him to death and he was publicly hanged on 10 August."
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Boris_Donskoy",
+    "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%D0%B9,_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "A peasant from Ryazan Governorate who went to Petrograd at fifteen and was conscripted into the Baltic Fleet in 1915. He joined the Left Socialist-Revolutionaries in 1916 and was arrested for organising a sailors' hunger strike. Freed by the February Revolution, he sat on the Kronstadt executive committee, led Baltic sailors against Kornilov and in October 1917 was commissar of Fort Ino. In spring 1918 he went to Ukraine with Irina Kakhovskaya to organise resistance to the German occupation and joined the Left SR combat organisation. On 30 July 1918 in Kiev he threw the bomb that killed Field Marshal Hermann von Eichhorn; a German military court sentenced him to death and he was publicly hanged on 10 August.",
+     "source": "https://en.wikipedia.org/wiki/Boris_Donskoy",
+     "locator": "Wikipedia article: lead, revolutionary activities, assassination of Eichhorn"
+    }
+   ],
+   "expectedRevision": "v1-a8f8653cea30865f8dce06cfcb11235f1ad81ab92734015486ebe524e7a18b36"
+  }
+ ]
+}
