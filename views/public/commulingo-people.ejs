@@ -65,7 +65,7 @@
         <% var collectionsList = (typeof personCollections !== 'undefined' && personCollections) || []; %>
         <% if (collectionsList.length) { %>
         <section class="commu-hub-section" aria-labelledby="collection-index-title">
-            <h2 id="collection-index-title"><%= en ? 'Political positions' : '정치적 입장별 모음' %></h2>
+            <h2 id="collection-index-title"><%= en ? 'Political positions' : '정치적 입장' %></h2>
             <div class="commu-office-grid">
             <% collectionsList.forEach(function(c) { %>
                 <a class="commu-office-card commu-role-category-link" href="<%= c.href %>">

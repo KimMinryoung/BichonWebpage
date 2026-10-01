@@ -72,7 +72,7 @@
                     </span></li>
             <% }) %>
             </ul>
-            <% if (person.collections && person.collections.length) { %><p class="commu-person-collections"><%= en ? 'Also in' : '포함된 모음' %>: <% person.collections.forEach(function(c, i) { %><%= i ? ' · ' : '' %><a href="<%= c.href %>"><%= c.title %></a><% }) %></p><% } %>
+            <% if (person.collections && person.collections.length) { %><p class="commu-person-collections"><%= en ? 'Political positions' : '정치적 입장' %>: <% person.collections.forEach(function(c, i) { %><%= i ? ' · ' : '' %><a href="<%= c.href %>"><%= c.title %></a><% }) %></p><% } %>
         </section>
         <% } %>
         <% if (person.career.length) { %>
