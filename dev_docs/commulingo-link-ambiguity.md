@@ -139,3 +139,18 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 사전 검증, `--apply`만 저장한다. 기존 표현의 source signature를 대조하고 백업을 남긴다.
 원래 후보 479건과 추가 승인된 모호한 별칭 19건·구체적 대체 이름 42건을 포함한다.
 역사적 사실 전체의 재감수가 아니라 표현의 의미·연결 대상에 대한 검토다.
+
+### 2026-10-01 사건 제목 일괄 승인
+
+미검토로 남아 있던 사건 24편(2026-09-13 프랑스, 09-21 중국, 09-29 묶음)의 제목 표현 63개와 추가 이름 26개를
+`scripts/reviews/commulingo-links-20261001-remaining-events.json`으로 승인했다(헝가리 3편은 같은 날
+`commulingo-links-20261001-hungary-events.json`). 이로써 검토 대기 사건 표현은 0건이다. 추가 이름은 각 사건 정본의
+`link_expressions`에도 넣었다(china-history·first-indochina·german-revolution build, french-events JSON).
+
+- 맨 「Cultural Revolution」은 일반 표현 위험(소련 문화혁명)이라 context로 두었다.
+- 일반어로도 쓰이는 「대장정」(블류헤르의 1918년 우랄 행군), 「대약진」(「자본의 대약진」), 「8월 혁명」·「August Revolution」,
+  「독일 혁명」·「November Revolution」(1848·1923, 러시아 혁명 기념일), 「톈안먼 사건」(1976), 「사회주의 개조」, 「2월 사건」은
+  넣지 않았다. 대신 「대약진 운동」「1945년 8월 혁명」「German Revolution of 1918」「톈안먼 시위」처럼 고유한 형태를 넣었다.
+  `review-commulingo-links.js`는 추가 표현이 단독으로 링크되는지 검사하므로 context 정책의 새 표현은 받지 않는다.
+- 알려진 오링크: 「프랑스 혁명」이 블랑키즘 용어의 「프랑스 혁명가 블랑키」와 「프랑스 혁명력」에도 걸린다.
+  사건 패스에는 phrase 차단이 없고 용어에는 페이지 단위 noAutoLink가 없어 본문 표현으로만 고칠 수 있다.

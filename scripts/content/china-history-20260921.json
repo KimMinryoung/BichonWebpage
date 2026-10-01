@@ -4831,7 +4831,26 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "신해혁명",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "Xinhai Revolution",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "1911 Revolution",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -5171,7 +5190,26 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "5·4 운동",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "5·4운동",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "May Fourth Movement",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -5678,7 +5716,20 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "북벌",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "Northern Expedition",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -6225,7 +6276,14 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "Long March",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -6840,7 +6898,20 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "중일전쟁",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "Second Sino-Japanese War",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -8652,7 +8723,26 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "대약진 운동",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "대약진운동",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "Great Leap Forward",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -9734,7 +9824,20 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "개혁개방",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "reform and opening",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {
@@ -10220,7 +10323,26 @@
      ]
     },
     "no_auto_link": [],
-    "link_expressions": []
+    "link_expressions": [
+     {
+      "text": "톈안먼 시위",
+      "lang": "ko",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "Tiananmen Square protests",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     },
+     {
+      "text": "Tiananmen protests",
+      "lang": "en",
+      "role": "identity",
+      "policy": "search"
+     }
+    ]
    },
    "people": [
     {

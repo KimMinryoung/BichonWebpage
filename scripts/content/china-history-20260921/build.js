@@ -13,6 +13,46 @@ const path = require('path');
 
 const BATCH_ID = 'china-history-20260921';
 
+// Reviewed link names beyond the titles (2026-10-01 link review,
+// scripts/reviews/commulingo-links-20261001-remaining-events.json).
+const LINK_EXPRESSIONS = {
+    'xinhai-revolution-1911': [
+        { text: "신해혁명", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "Xinhai Revolution", lang: 'en', role: 'identity', policy: 'search' },
+        { text: "1911 Revolution", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'may-fourth-and-ccp-founding': [
+        { text: "5·4 운동", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "5·4운동", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "May Fourth Movement", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'first-united-front-1924-1927': [
+        { text: "북벌", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "Northern Expedition", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'jiangxi-soviet-and-long-march': [
+        { text: "Long March", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'sino-japanese-war-1937-1945': [
+        { text: "중일전쟁", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "Second Sino-Japanese War", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'great-leap-forward': [
+        { text: "대약진 운동", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "대약진운동", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "Great Leap Forward", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'reform-and-opening': [
+        { text: "개혁개방", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "reform and opening", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+    'tiananmen-1989': [
+        { text: "톈안먼 시위", lang: 'ko', role: 'identity', policy: 'search' },
+        { text: "Tiananmen Square protests", lang: 'en', role: 'identity', policy: 'search' },
+        { text: "Tiananmen protests", lang: 'en', role: 'identity', policy: 'search' },
+    ],
+};
+
 function localizedPair(value, what) {
     if (!value || typeof value.ko !== 'string' || typeof value.en !== 'string' || !value.ko.trim() || !value.en.trim()) {
         throw new Error(`${what}: ko/en text required`);
@@ -119,7 +159,7 @@ function event(record) {
         countries,
         relations: related?.length ? { related } : {},
         no_auto_link: record.noAutoLink || [],
-        link_expressions: [],
+        link_expressions: LINK_EXPRESSIONS[id] || [],
     };
     const peopleRows = (people || []).map((p, i) => ({
         person_id: p.id, sort_order: i, relation_kind: p.kind,

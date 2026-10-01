@@ -235,7 +235,12 @@ const event = {
         countries: ['vietnam', 'france', 'china', 'soviet', 'usa', 'japan', 'laos', 'cambodia', 'switzerland'],
         relations: { related: ['pacific-war', 'chinese-revolution-1949', 'korean-war', 'vietnam-reunification-1975-1976', 'lao-republic-1975'] },
         no_auto_link: [],
-        link_expressions: [],
+        link_expressions: [
+            { text: "제1차 인도차이나 전쟁", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "First Indochina War", lang: 'en', role: 'identity', policy: 'search' },
+            { text: "1945년 8월 혁명", lang: 'ko', role: 'identity', policy: 'search' },
+            { text: "August Revolution of 1945", lang: 'en', role: 'identity', policy: 'search' },
+        ],
         focus: { ko: '베트남민주공화국과 베트민', en: 'The Democratic Republic of Vietnam and the Viet Minh' },
     },
     sections,

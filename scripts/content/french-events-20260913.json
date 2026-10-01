@@ -75,7 +75,20 @@
           ]
         },
         "no_auto_link": [],
-        "link_expressions": [],
+        "link_expressions": [
+          {
+            "lang": "ko",
+            "role": "related",
+            "text": "테르미도르",
+            "policy": "search"
+          },
+          {
+            "lang": "ko",
+            "role": "identity",
+            "text": "프랑스 대혁명",
+            "policy": "search"
+          }
+        ],
         "sources": [
           "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/monarchy-embattled",
           "https://revolution.chnm.org/exhibits/show/liberty--equality--fraternity/social-causes-of-revolution",

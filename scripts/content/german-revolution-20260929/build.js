@@ -285,7 +285,10 @@ const event = {
         countries: ['germany', 'france'],
         relations: { related: ['world-war-i', 'october-revolution', 'paris-commune-1871'] },
         no_auto_link: [],
-        link_expressions: [],
+        link_expressions: [
+            { text: "German Revolution of 1918", lang: 'en', role: 'identity', policy: 'search' },
+            { text: "German November Revolution", lang: 'en', role: 'identity', policy: 'search' },
+        ],
         focus: null,
     },
     sections,
