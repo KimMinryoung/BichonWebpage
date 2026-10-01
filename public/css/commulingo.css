@@ -2744,19 +2744,28 @@ button.commu-dc-option:hover { border-color: var(--link); }
     cursor: pointer;
 }
 
-.commu-person-medal.is-old-regime { border-color: #b08d3f; color: #b08d3f; }
-.commu-person-medal.is-bolshevik { border-color: #c0453c; color: #c0453c; }
-.commu-person-medal.is-world-before-1917 { border-color: #7b5ea7; color: #7b5ea7; }
-.commu-person-medal.is-world-interwar { border-color: #9c2d3f; color: #9c2d3f; }
-.commu-person-medal.is-world-cold-war { border-color: #b0603a; color: #b0603a; }
-.commu-person-medal.is-stalin-era { border-color: #8a93a6; color: #8a93a6; }
-.commu-person-medal.is-thaw { border-color: #4d8fc4; color: #4d8fc4; }
-.commu-person-medal.is-perestroika { border-color: #4aa578; color: #4aa578; }
-.commu-person-medal.is-china-old-regime { border-color: #9a7b4f; color: #9a7b4f; }
-.commu-person-medal.is-china-revolution { border-color: #d1473a; color: #d1473a; }
-.commu-person-medal.is-china-mao-era { border-color: #8c2f2f; color: #8c2f2f; }
-.commu-person-medal.is-china-reform { border-color: #3f9a8a; color: #3f9a8a; }
-.commu-person-medal.is-france-revolution { border-color: #3b5ba5; color: #3b5ba5; }
+/* Political position (data/commulingo/person-position.js): a person's medal
+   is filled with the position colour, the tag and detail head carry it as a
+   stripe. Each communist force keeps its own red (Soviet and Chinese flag
+   reds). No known position is grey, so white and black read as positions on
+   both themes. Hub-head medals (offices, collections) keep the plain style. */
+:where(.commu-person-card, .commu-person-detail-head) .commu-person-medal { --pos: #8b8f94; --pos-ink: #fff; }
+.pos-red-soviet { --pos: #cc0000; }
+.pos-red-china { --pos: #de2910; }
+.pos-red { --pos: #a3262e; }
+.pos-white { --pos: #f7f5ef; --pos-ink: #2b2b2b; }
+.pos-anarchist { --pos: #111; }
+.pos-left-opposition { --pos: #c7702a; }
+.pos-dissident { --pos: #3d6fb6; }
+.pos-reform { --pos: #3f9a6a; }
+
+.commu-person-card .commu-person-medal,
+.commu-person-detail-head .commu-person-medal { background: var(--pos); border-color: var(--pos); color: var(--pos-ink); }
+.commu-person-medal.pos-white,
+.commu-person-medal.pos-anarchist { border-color: var(--text-muted); }
+.commu-person-card .commu-person-medal[href]:hover,
+.commu-person-detail-head .commu-person-medal[href]:hover { background: var(--pos); color: var(--pos-ink); border-color: var(--link); }
+
 
 /* .commu-role-icon lives in commulingo-crumb.css — the document reader loads
    that file alone and the crumb's home glyph needs it. */
@@ -3078,19 +3087,11 @@ button.commu-dc-option:hover { border-color: var(--link); }
     text-overflow: ellipsis;
 }
 a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
-.commu-person-role-tag.is-old-regime { border-left-color: #b08d3f; }
-.commu-person-role-tag.is-bolshevik { border-left-color: #c0453c; }
-.commu-person-role-tag.is-world-before-1917 { border-left-color: #7b5ea7; }
-.commu-person-role-tag.is-world-interwar { border-left-color: #9c2d3f; }
-.commu-person-role-tag.is-world-cold-war { border-left-color: #b0603a; }
-.commu-person-role-tag.is-stalin-era { border-left-color: #8a93a6; }
-.commu-person-role-tag.is-thaw { border-left-color: #4d8fc4; }
-.commu-person-role-tag.is-perestroika { border-left-color: #4aa578; }
-.commu-person-role-tag.is-china-old-regime { border-left-color: #9a7b4f; }
-.commu-person-role-tag.is-china-revolution { border-left-color: #d1473a; }
-.commu-person-role-tag.is-china-mao-era { border-left-color: #8c2f2f; }
-.commu-person-role-tag.is-china-reform { border-left-color: #3f9a8a; }
-.commu-person-role-tag.is-france-revolution { border-left-color: #3b5ba5; }
+.commu-person-role-tag[class*="pos-"],
+.commu-person-detail-head[class*="pos-"] { border-left-color: var(--pos); }
+/* White and black stripes vanish on one of the two themes; a hairline keeps their edge. */
+.commu-person-role-tag.pos-white, .commu-person-role-tag.pos-anarchist,
+.commu-person-detail-head.pos-white, .commu-person-detail-head.pos-anarchist { box-shadow: inset 1px 0 0 var(--text-muted); }
 
 .commu-people-group-count,
 .commu-event-people-count {
@@ -3250,19 +3251,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     padding: 18px;
 }
 
-.commu-person-detail-head.is-old-regime { border-left-color: #b08d3f; }
-.commu-person-detail-head.is-bolshevik { border-left-color: #c0453c; }
-.commu-person-detail-head.is-world-before-1917 { border-left-color: #7b5ea7; }
-.commu-person-detail-head.is-world-interwar { border-left-color: #9c2d3f; }
-.commu-person-detail-head.is-world-cold-war { border-left-color: #b0603a; }
-.commu-person-detail-head.is-stalin-era { border-left-color: #8a93a6; }
-.commu-person-detail-head.is-thaw { border-left-color: #4d8fc4; }
-.commu-person-detail-head.is-perestroika { border-left-color: #4aa578; }
-.commu-person-detail-head.is-china-old-regime { border-left-color: #9a7b4f; }
-.commu-person-detail-head.is-china-revolution { border-left-color: #d1473a; }
-.commu-person-detail-head.is-china-mao-era { border-left-color: #8c2f2f; }
-.commu-person-detail-head.is-china-reform { border-left-color: #3f9a8a; }
-.commu-person-detail-head.is-france-revolution { border-left-color: #3b5ba5; }
 
 .commu-person-detail-top {
     align-items: flex-start;

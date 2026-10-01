@@ -570,7 +570,7 @@ Use icon ids, not raw SVG:
 - central-planning: `chart`
 - economic management: `coins`
 - Comintern: `globe`
-- non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11)
+- non-Soviet revolutionary: `flame` (accent #9c2d3f; was `rose`/#b84f7a until 2026-07-11) — card colours now follow political position, see commulingo-role-model-plan.md (2026-10-01)
 - socialist-bloc reform leader: `dove`
 - imperial establishment and White movement: `crown`
 - writer-artist (office-less role, label '작가·예술가'/'Writers and artists'): `feather`

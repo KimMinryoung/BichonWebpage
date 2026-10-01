@@ -35,7 +35,7 @@
             <h2 id="nationality-people"><%= strings.commuLingoViews.nationality.people2 %></h2>
             <div class="commu-people-grid">
                 <% people.forEach(function(person) { %>
-                <%- include('../partials/commulingo-person-card', { person: person, groupId: person.groupId, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %>
+                <%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %>
                 <% }) %>
             </div>
         </section>

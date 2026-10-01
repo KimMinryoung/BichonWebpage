@@ -24,12 +24,12 @@
             ],
             dictJump: 'people' }) %>
 
-        <header class="commu-person-detail-head is-<%= person.groupId %>">
+        <header class="commu-person-detail-head<%= person.position ? ' pos-' + person.position : '' %>">
             <div class="commu-person-detail-top">
                 <% if (medalHref) { %>
-                <a class="commu-person-medal is-<%= person.groupId %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
+                <a class="commu-person-medal<%= person.position ? ' pos-' + person.position : '' %>" href="<%= medalHref %>" title="<%= medalTitle %>" aria-label="<%= medalTitle %>"><%- roleIconSvg(person.role.icon) %></a>
                 <% } else { %>
-                <span class="commu-person-medal is-<%= person.groupId %>" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
+                <span class="commu-person-medal<%= person.position ? ' pos-' + person.position : '' %>" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
                 <% } %>
                 <div class="commu-person-detail-title">
                     <h1><%= person.displayName || person.name %></h1>
