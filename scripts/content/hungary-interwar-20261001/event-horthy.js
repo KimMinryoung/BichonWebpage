@@ -611,6 +611,7 @@ module.exports = {
         relations: { related: ['hungarian-soviet-republic-1919', 'hungary-axis-1938-1944'] },
         // The glossary's white-terror, red-terror and revisionism are the Russian
         // and Bernsteinian ones; the Hungarian terror has its own term above.
+        linkExpressions: [['ko', '호르티 체제'], ['en', 'Horthy regime']],
         noAutoLink: ['백색테러', '백색 테러', 'White Terror', '적색 테러', 'Red Terror'],
         focus: { ko: '호르티 체제', en: 'The Horthy regime' },
         people,

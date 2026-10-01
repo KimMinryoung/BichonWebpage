@@ -21,7 +21,7 @@
 - 오링크 방지: 러시아 내전의 `white-terror`·`red-terror`·`red-guards` 용어로 걸리지 않게 1919·호르티 사건에 `no_auto_link`(백색테러·백색 테러·적색 테러·White Terror·Red Terror, 1919는 Red Guard 추가, 마이그레이션 230·231)를 두었다. 용어 페이지에는 사건의 `no_auto_link`가 미치지 않으므로, 용어 본문(레닌 소년단·슬로바키아 평의회 공화국 등)은 「적색 테러」·「Red Guard」를 쓰지 않도록 표현을 바꿔 편집 서비스로 갱신했다. 「레닌 소년단」/「Lenin Boys」는 전역 phrase 차단(232)으로 레닌 인물 카드에 걸리지 않는다.
 
 - 사건과 같은 주제의 용어는 만들지 않는다. 처음에 만든 용어 `hungarian-soviet-republic`(헝가리 평의회 공화국)은 사건과 내용이 겹쳐 같은 날 233으로 지웠다(약 1시간 공개, 리디렉트 없음). 마이그레이션 134와 같은 원칙이다.
-- 사건 제목의 자동 링크는 운영자가 승인해야 켜진다(마이그레이션 178 이후 `commulingo_link_reviews`; 검토 행이 없으면 검색 전용). 2026-09-29의 체코슬로바키아·독일 혁명 사건처럼, 이 세 사건도 관리자 링크 검토 화면에서 승인해야 다른 페이지 본문의 「헝가리 평의회 공화국」 같은 이름이 사건으로 연결된다.
+- 사건 제목의 자동 링크는 운영자가 승인해야 켜진다(마이그레이션 178 이후 `commulingo_link_reviews`; 검토 행이 없으면 검색 전용). 같은 날 사용자 요청으로 `scripts/reviews/commulingo-links-20261001-hungary-events.json`을 `scripts/review-commulingo-links.js --apply`로 적용해 세 사건의 한·영 제목 8개와 추가 표현 3개(헝가리 소비에트 공화국, 호르티 체제, Horthy regime — 정본 `linkExpressions`)를 모두 auto로 승인했다. 코퍼스 발화(헝가리 평의회 공화국 8, Hungarian Soviet Republic 17, 헝가리 소비에트 공화국 3, 호르티 체제 6, Horthy regime 4)를 대조해 모두 해당 사건을 가리킴을 확인했다. 추축국 편 사건은 본문에 쓰이는 짧은 고유 표현이 없어 제목만 승인했다.
 
 ## 재현과 검증
 

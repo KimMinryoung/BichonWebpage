@@ -27,7 +27,7 @@ const relationsOf = rows => rows.map(([person_id, relation_kind, relation_ko, re
 
 // Assemble an event row for scripts/apply-history-events.js.
 function event({ id, title, period, sortOrder, question, summary, outcome, sections, timeline, locations, countries,
-    relations = {}, noAutoLink = [], focus = null, sides = null, people }) {
+    relations = {}, noAutoLink = [], linkExpressions = [], focus = null, sides = null, people }) {
     const sources = sourcesOf(sections);
     return {
         id, expected: null,
@@ -38,7 +38,7 @@ function event({ id, title, period, sortOrder, question, summary, outcome, secti
             body_ko: bodyOf(sections, sources, 'ko'), body_en: bodyOf(sections, sources, 'en'),
             timeline: timelineOf(timeline), sources,
             locations: locations.map(([ko, en, lat, lng, kind]) => ({ label: { ko, en }, lat, lng, kind })),
-            countries, relations, no_auto_link: noAutoLink, link_expressions: [], focus, sides,
+            countries, relations, no_auto_link: noAutoLink, link_expressions: linkExpressions.map(([lang, text]) => ({ text, lang, role: 'identity', policy: 'search' })), focus, sides,
         },
         sections, people: relationsOf(people),
     };

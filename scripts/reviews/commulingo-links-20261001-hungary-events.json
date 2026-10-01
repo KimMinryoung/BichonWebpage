@@ -1,0 +1,133 @@
+{
+  "scope": "2026-10-01 registered Hungary events (1919, Horthy, Axis) titles plus 3 added expressions; owner-requested link review",
+  "references": [
+    "dev_docs/commulingo-hungary-interwar-20261001.md",
+    "corpus occurrence count over terms/events/people/docs/reports"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "hungarian-soviet-republic-1919",
+      "lang": "ko",
+      "text": "헝가리 평의회 공화국",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 사건 제목이자 1919년 국가의 고유 이름. 코퍼스 발화 8건(용어 4·독일 혁명·호르티 사건·쿤 벨러 2) 모두 이 사건을 가리킴. 같은 이름의 용어는 233에서 삭제돼 충돌 없음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "hungarian-soviet-republic-1919",
+      "lang": "en",
+      "text": "The Hungarian Soviet Republic",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 관사가 붙은 제목. 1919년 헝가리 국가의 고유 이름이라 이 사건만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "hungarian-soviet-republic-1919",
+      "lang": "en",
+      "text": "Hungarian Soviet Republic",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 영문 고유 이름. 코퍼스 발화 17건(용어·독일 혁명·인물 카드) 모두 1919년 국가를 가리킴. Bavarian/Slovak Soviet Republic과는 문자열이 달라 겹치지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "hungarian-soviet-republic-1919",
+      "lang": "ko",
+      "text": "헝가리 소비에트 공화국",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 같은 국가의 다른 한국어 역명. 코민테른 용어·9평 문헌 등 발화 3건 모두 1919년 국가. 표현 추가 후 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "horthy-regime-1920-1938",
+      "lang": "ko",
+      "text": "호르티 체제: 백색테러에서 우경화까지",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 사건 제목 전체. 이 사건만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "horthy-regime-1920-1938",
+      "lang": "en",
+      "text": "The Horthy regime: from the White Terror to the turn to the right",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 관사가 붙은 영문 제목 전체. 이 사건만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "horthy-regime-1920-1938",
+      "lang": "en",
+      "text": "Horthy regime: from the White Terror to the turn to the right",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 영문 제목 전체. 이 사건만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "horthy-regime-1920-1938",
+      "lang": "ko",
+      "text": "호르티 체제",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 전간기 헝가리 체제의 고유 이름. 트리아농 조약·1956년 혁명·베틀렌·너지 문헌 발화 6건 모두 이 체제를 가리키며, 이 사건이 체제 전반을 다루는 중심 항목. 표현 추가 후 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "horthy-regime-1920-1938",
+      "lang": "en",
+      "text": "Horthy regime",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 영문 고유 이름. 트리아농·1956년 혁명·베틀렌 발화 4건 모두 전간기 체제. 표현 추가 후 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search",
+      "added": true
+    },
+    {
+      "kind": "event",
+      "id": "hungary-axis-1938-1944",
+      "lang": "ko",
+      "text": "추축국 편의 헝가리: 빈 중재에서 돈강까지",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 사건 제목 전체. 이 사건만 가리킴. 본문에 쓰이는 짧은 고유 표현이 없어 제목만 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "hungary-axis-1938-1944",
+      "lang": "en",
+      "text": "Hungary on the Axis side: from the Vienna Awards to the Don",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-01 owner-requested 링크 검토: 영문 제목 전체. 이 사건만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

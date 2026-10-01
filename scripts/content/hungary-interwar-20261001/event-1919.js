@@ -279,6 +279,7 @@ const ev = event({
     ],
     countries: ['hungary', 'romania', 'czechoslovakia', 'soviet', 'austria', 'france'],
     relations: { related: ['german-revolution-1918-1919', 'comintern-founding-1919-1921', 'october-revolution'] },
+    linkExpressions: [['ko', '헝가리 소비에트 공화국']],
     noAutoLink: ['백색테러', '백색 테러', '적색 테러', 'White Terror', 'Red Terror', 'Red Guard'],
     focus: { ko: '헝가리 평의회 공화국 혁명통치평의회', en: 'The Revolutionary Governing Council of the Hungarian Soviet Republic' },
     people,

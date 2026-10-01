@@ -427,7 +427,14 @@
           "Red Terror",
           "Red Guard"
         ],
-        "link_expressions": [],
+        "link_expressions": [
+          {
+            "text": "헝가리 소비에트 공화국",
+            "lang": "ko",
+            "role": "identity",
+            "policy": "search"
+          }
+        ],
         "focus": {
           "ko": "헝가리 평의회 공화국 혁명통치평의회",
           "en": "The Revolutionary Governing Council of the Hungarian Soviet Republic"
@@ -1446,7 +1453,20 @@
           "적색 테러",
           "Red Terror"
         ],
-        "link_expressions": [],
+        "link_expressions": [
+          {
+            "text": "호르티 체제",
+            "lang": "ko",
+            "role": "identity",
+            "policy": "search"
+          },
+          {
+            "text": "Horthy regime",
+            "lang": "en",
+            "role": "identity",
+            "policy": "search"
+          }
+        ],
         "focus": {
           "ko": "호르티 체제",
           "en": "The Horthy regime"
