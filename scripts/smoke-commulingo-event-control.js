@@ -24,7 +24,7 @@ assert.equal(loadEventControl('../etc/passwd'), null);
 // Every baked event: dated, captioned, toned and self-consistent.
 const fs = require('node:fs');
 const path = require('node:path');
-const TONES = new Set(['blue', 'red', 'amber', 'purple', 'gray']);
+const TONES = new Set(['blue', 'red', 'amber', 'purple', 'gray', 'green', 'black']);
 const bakedIds = fs.readdirSync(path.join(__dirname, '..', 'data', 'commulingo', 'event-control'))
     .filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, ''));
 assert(bakedIds.length >= 4, 'the four control events are baked');
@@ -42,6 +42,10 @@ for (const id of bakedIds) {
     }
     for (const phase of baked.phases) {
         assert(phase.label.ko && phase.label.en, `${id} ${phase.date} has both captions`);
+        for (const [side, rings] of Object.entries(phase.overlays || {})) {
+            assert(baked.sides.some(s => s.id === side && s.overlay), `${id} ${side} is an overlay side in the legend`);
+            assert(rings.every(ring => ring.length >= 8 && ring.every(Number.isFinite)));
+        }
         for (const [side, rings] of Object.entries(phase.areas)) {
             assert(sideIds.has(side), `${id} ${side} is in the legend`);
             assert.notEqual(side, baked.base, 'the base side is never drawn per phase');

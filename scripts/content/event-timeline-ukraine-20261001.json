@@ -1,0 +1,892 @@
+{
+  "id": "ukraine-timeline-20261001",
+  "changes": [
+    {
+      "event": "ukraine-1917-1921",
+      "column": "timeline",
+      "expected": [
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "After the February Revolution Ukrainian parties and associations in Kyiv formed the Central Rada under the historian Hrushevsky. In June its First Universal declared autonomy and set up a General Secretariat under Vynnychenko.",
+            "ko": "2월 혁명 뒤 키예프의 우크라이나 정당과 단체들이 역사학자 흐루셰프스키를 의장으로 중앙라다를 세웠다. 6월 제1차 우니베르살로 자치를 선언하고 빈니첸코의 총서기국을 구성했다."
+          },
+          "date": "1917.03.17",
+          "title": {
+            "en": "The Central Rada is formed",
+            "ko": "중앙라다 수립"
+          }
+        },
+        {
+          "geo": {
+            "lat": 49.99,
+            "lng": 36.23,
+            "kind": "point",
+            "label": {
+              "en": "Kharkiv",
+              "ko": "하리코프"
+            }
+          },
+          "body": {
+            "en": "The Third Universal proclaimed a People's Republic \"within the Russian federation\" and promised the abolition of private land and the eight-hour day. In December the Bolsheviks left the Congress of Soviets in Kyiv and set up a rival Soviet government in Kharkiv.",
+            "ko": "제3차 우니베르살이 「러시아 연방 안의」 인민공화국을 선포하고 토지 사유 폐지와 8시간 노동제를 약속했다. 12월 볼셰비키는 키예프의 소비에트 대회를 떠나 하리코프에서 경쟁하는 소비에트 정부를 세웠다."
+          },
+          "date": "1917.11.20",
+          "title": {
+            "en": "The Ukrainian People's Republic proclaimed",
+            "ko": "우크라이나 인민공화국 선포"
+          }
+        },
+        {
+          "geo": {
+            "lat": 51.07,
+            "lng": 31.96,
+            "kind": "point",
+            "label": {
+              "en": "Kruty",
+              "ko": "크루티"
+            }
+          },
+          "body": {
+            "en": "The Fourth Universal declared full independence. On 29 January a student unit trying to stop Muravyov's Soviet troops was cut down at Kruty, and after the Arsenal rising was crushed Soviet troops entered Kyiv on 9 February. Estimates put the dead of the following days' executions in the thousands.",
+            "ko": "제4차 우니베르살이 완전한 독립을 선언했다. 1월 29일 크루티에서 학생 부대가 무라비요프의 소비에트군을 막으려다 희생되었고, 아르세날 봉기가 진압된 뒤 2월 9일 소비에트군이 키예프에 들어왔다. 며칠간의 처형으로 수천 명이 죽었다는 추계가 있다."
+          },
+          "date": "1918.01.22–02.09",
+          "title": {
+            "en": "Independence declared, Kyiv lost",
+            "ko": "독립 선언과 키예프 상실"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "Under the separate peace of Brest some 450,000 German and Austro-Hungarian troops entered Ukraine, and the Rada returned to Kyiv on 1 March. The occupiers' grain demands and the Rada's land socialization law soon collided.",
+            "ko": "브레스트의 별도 강화에 따라 독일과 오스트리아-헝가리군 약 45만 명이 우크라이나에 진입했고, 라다는 3월 1일 키예프로 돌아왔다. 점령군의 곡물 요구와 라다의 토지 사회화 법은 곧 충돌했다."
+          },
+          "date": "1918.03.01",
+          "title": {
+            "en": "The Rada returns with the German army",
+            "ko": "독일군과 함께 돌아온 라다"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "The day after German soldiers searched the Rada chamber, a congress of landowners acclaimed Skoropadsky Hetman. The regime founded an Academy of Sciences and universities but returned land to the landlords and sent punitive detachments that armed the countryside. On 30 July the German commander Hermann von Eichhorn was assassinated.",
+            "ko": "독일 병사들이 라다 회의장을 수색한 다음 날 지주연합 대회가 스코로파츠키를 헤트만으로 추대했다. 정권은 과학 아카데미와 대학을 세웠지만 지주 토지를 되돌리고 형벌대를 보내 농촌을 무장시켰다. 7월 30일 독일 사령관 헤르만 폰 아이히호른이 암살되었다."
+          },
+          "date": "1918.04.29",
+          "title": {
+            "en": "The Hetman takes power",
+            "ko": "헤트만 집권"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "When the Hetman proclaimed federation with Russia after Germany's defeat, the Directory of Vynnychenko and Petliura rose against him. Konovalets's Sich Riflemen beat the Hetman's troops at Motovylivka, and Skoropadsky abdicated on 14 December and left with the Germans.",
+            "ko": "독일 패전 뒤 헤트만이 러시아와의 연방을 선언하자 빈니첸코와 페틀류라의 디렉토리아가 봉기했다. 코노발레츠의 시치 소총부대가 모토빌리우카에서 헤트만군을 격파했고, 스코로파츠키는 12월 14일 퇴위하고 독일군과 함께 떠났다."
+          },
+          "date": "1918.12.14",
+          "title": {
+            "en": "The Directory's victory",
+            "ko": "디렉토리아의 승리"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "In St Sophia Square the People's Republic and the Western Ukrainian People's Republic of Galicia proclaimed their union. Two weeks later Soviet troops retook Kyiv; Vynnychenko left the leadership and Petliura headed the Directory. Rakovsky's Soviet Ukrainian government was set up in Kharkiv.",
+            "ko": "소피아 광장에서 인민공화국과 갈리치아의 서우크라이나 인민공화국이 통합을 선언했다. 2주 뒤 소비에트군이 키예프를 다시 점령했고, 빈니첸코는 지도부를 떠나 페틀류라가 디렉토리아를 이끌었다. 하리코프에는 라콥스키의 소비에트 우크라이나 정부가 세워졌다."
+          },
+          "date": "1919.01.22–02.05",
+          "title": {
+            "en": "The Act of Unity and the second loss of Kyiv",
+            "ko": "통합 선언과 두 번째 키예프 상실"
+          }
+        },
+        {
+          "geo": {
+            "lat": 49.42,
+            "lng": 26.99,
+            "kind": "point",
+            "label": {
+              "en": "Proskuriv",
+              "ko": "프로스쿠로프"
+            }
+          },
+          "body": {
+            "en": "A Zaporozhian Cossack unit of the Directory killed more than 1,500 Jews in a few hours. Between 1918 and 1921 some 1,500 pogroms in Ukraine are estimated to have killed 50,000 to 100,000 people, with perpetrators among the Directory's troops, the otamans, the Whites and the Reds.",
+            "ko": "디렉토리아의 자포로제 카자크 부대가 몇 시간 동안 유대인 1,500명 이상을 살해했다. 1918년부터 1921년까지 우크라이나에서 1,500건 안팎의 포그롬으로 5만 명에서 10만 명이 죽은 것으로 추산되며, 가해자는 디렉토리아 부대, 아타만, 백군, 적군에 걸쳐 있었다."
+          },
+          "date": "1919.02.15",
+          "title": {
+            "en": "The Proskuriv pogrom",
+            "ko": "프로스쿠로프 포그롬"
+          }
+        },
+        {
+          "geo": {
+            "lat": 46.48,
+            "lng": 30.73,
+            "kind": "point",
+            "label": {
+              "en": "Odesa",
+              "ko": "오데사"
+            }
+          },
+          "body": {
+            "en": "The troops of the otaman Hryhoriv, then serving with the Soviets, took Kherson and Mykolaiv and entered Odesa as the French and Greek troops evacuated. It was in effect this peasant army that ended Allied intervention in the south.",
+            "ko": "소비에트군에 합류한 아타만 흐리호리우의 부대가 헤르손과 니콜라예프를 거쳐 프랑스군과 그리스군이 철수하는 오데사에 들어왔다. 남부의 연합국 개입을 끝낸 것은 사실상 이 농민군이었다."
+          },
+          "date": "1919.04.06",
+          "title": {
+            "en": "Hryhoriv enters Odesa",
+            "ko": "흐리호리우의 오데사 입성"
+          }
+        },
+        {
+          "geo": {
+            "lat": 48.51,
+            "lng": 32.26,
+            "kind": "point",
+            "label": {
+              "en": "Yelysavethrad",
+              "ko": "옐리사베트흐라드"
+            }
+          },
+          "body": {
+            "en": "Hryhoriv issued a \"Universal\" and rose against Soviet power, denouncing grain requisitioning and outsider officials. His troops massacred more than 1,500 Jews at Yelysavethrad. The rising was crushed by the end of May, and on 27 July he was shot by Makhno's men.",
+            "ko": "흐리호리우가 「우니베르살」을 발표하고 곡물 징발과 외지인 관료를 겨눠 소비에트 권력에 반란을 일으켰다. 그의 부대는 옐리사베트흐라드에서 유대인 1,500명 이상을 학살했다. 봉기는 5월 말 진압되었고, 7월 27일 그는 마흐노 측에 사살되었다."
+          },
+          "date": "1919.05.07",
+          "title": {
+            "en": "The Hryhoriv rising",
+            "ko": "흐리호리우 봉기"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "The Galician army, the Directory's troops and Bredov's Whites entered Kyiv on the same day. The Whites tore the Ukrainian flag from the city hall and the Ukrainians gave up the city. Denikin denied Ukrainian independence and cut support for Ukrainian schools.",
+            "ko": "갈리치아군과 디렉토리아군, 그리고 브레도프의 백군이 같은 날 키예프에 들어왔다. 백군이 시청의 우크라이나 깃발을 끌어내렸고, 우크라이나군은 도시를 내주었다. 데니킨은 우크라이나 독립을 부정하고 우크라이나어 학교의 지원을 끊었다."
+          },
+          "date": "1919.08.31",
+          "title": {
+            "en": "Two armies in Kyiv",
+            "ko": "키예프의 두 군대"
+          }
+        },
+        {
+          "geo": {
+            "lat": 48.44,
+            "lng": 30.59,
+            "kind": "point",
+            "label": {
+              "en": "Peregonovka",
+              "ko": "페레호놉카"
+            }
+          },
+          "body": {
+            "en": "The Makhnovists, outlawed in June, destroyed a White force at Peregonovka and within days crossed hundreds of kilometres of the White rear to seize Yekaterinoslav. Denikin, marching on Moscow, had to turn troops back.",
+            "ko": "6월 법외로 선언되었던 마흐노군이 페레호놉카에서 백군을 격파하고 며칠 만에 후방 수백 킬로미터를 가로질러 예카테리노슬라프를 점령했다. 모스크바로 향하던 데니킨은 병력을 돌려야 했다."
+          },
+          "date": "1919.09.26",
+          "title": {
+            "en": "Peregonovka: Makhno cuts the White rear",
+            "ko": "페레호놉카: 마흐노, 백군의 후방을 끊다"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "As Denikin's army, broken at Orel, fell back, Soviet troops took Kyiv again. The Galician army had made a truce with Denikin in November, and Petliura sent his remaining troops on the \"First Winter Campaign\" and left for Warsaw. In 1919 Kyiv changed hands four times.",
+            "ko": "오룔에서 꺾인 데니킨군이 물러나면서 소비에트군이 키예프를 다시 차지했다. 갈리치아군은 11월 데니킨과 정전했고, 페틀류라는 남은 병력을 「제1차 겨울 원정」에 보낸 뒤 바르샤바로 떠났다. 1919년 키예프의 주인은 네 번 바뀌었다."
+          },
+          "date": "1919.12.16",
+          "title": {
+            "en": "Soviet troops retake Kyiv",
+            "ko": "소비에트군의 키예프 재점령"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.23,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Warsaw",
+              "ko": "바르샤바"
+            }
+          },
+          "body": {
+            "en": "Petliura's agreement with Piłsudski won Polish recognition at the price of eastern Galicia and western Volhynia. The joint offensive entered Kyiv on 7 May, but no peasant rising followed, and when Budyonny's cavalry broke the front in June the Poles left the city.",
+            "ko": "페틀류라가 피우수트스키와 협정을 맺어 폴란드의 승인을 얻는 대신 동갈리치아와 서부 볼히니아를 넘겼다. 합동 공세로 5월 7일 키예프에 들어갔지만 농민 봉기는 없었고, 6월 부됸니의 기병군이 전선을 돌파하자 폴란드군은 도시를 떠났다."
+          },
+          "date": "1920.04.21",
+          "title": {
+            "en": "The Warsaw agreement and the Kyiv offensive",
+            "ko": "바르샤바 협정과 키예프 공세"
+          }
+        },
+        {
+          "geo": {
+            "lat": 47.66,
+            "lng": 36.26,
+            "kind": "point",
+            "label": {
+              "en": "Huliaipole",
+              "ko": "훌랴이폴레"
+            }
+          },
+          "body": {
+            "en": "Days after Crimea fell, Soviet forces attacked the Makhnovist units that had crossed the Sivash in the third alliance against Wrangel and surrounded Huliaipole. Makhno escaped into Romania in August 1921.",
+            "ko": "브란겔에 맞선 세 번째 동맹으로 시바시를 건넜던 마흐노 부대를 크림이 함락된 직후 소비에트군이 공격하고 훌랴이폴레를 포위했다. 마흐노는 1921년 8월 루마니아로 탈출했다."
+          },
+          "date": "1920.11.26",
+          "title": {
+            "en": "The attack on the Makhnovists",
+            "ko": "마흐노군에 대한 공격"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.88,
+            "lng": 28.38,
+            "kind": "point",
+            "label": {
+              "en": "Bazar",
+              "ko": "바자르"
+            }
+          },
+          "body": {
+            "en": "At Riga Poland recognized Soviet Ukraine and the People's Republic was not admitted as a party. In November Tiutiunnyk's \"Second Winter Campaign\" failed and 359 prisoners were shot at Bazar. The regular army's war of independence ended here.",
+            "ko": "리가 조약에서 폴란드는 소비에트 우크라이나를 승인했고 인민공화국은 당사자로 인정받지 못했다. 11월 티우티우니크의 「제2차 겨울 원정」이 실패해 바자르에서 포로 359명이 총살되었다. 정규군의 독립전쟁은 여기서 끝났다."
+          },
+          "date": "1921.03.18–11.21",
+          "title": {
+            "en": "The Treaty of Riga and Bazar",
+            "ko": "리가 조약과 바자르"
+          }
+        }
+      ],
+      "value": [
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "After the February Revolution Ukrainian parties and associations in Kyiv formed the Central Rada under the historian Hrushevsky. In June its First Universal declared autonomy and set up a General Secretariat under Vynnychenko.",
+            "ko": "2월 혁명 뒤 키예프의 우크라이나 정당과 단체들이 역사학자 흐루셰프스키를 의장으로 중앙라다를 세웠다. 6월 제1차 우니베르살로 자치를 선언하고 빈니첸코의 총서기국을 구성했다."
+          },
+          "date": "1917.03.17",
+          "title": {
+            "en": "The Central Rada is formed",
+            "ko": "중앙라다 수립"
+          }
+        },
+        {
+          "geo": {
+            "lat": 49.99,
+            "lng": 36.23,
+            "kind": "point",
+            "label": {
+              "en": "Kharkiv",
+              "ko": "하리코프"
+            }
+          },
+          "body": {
+            "en": "The Third Universal proclaimed a People's Republic \"within the Russian federation\" and promised the abolition of private land and the eight-hour day. In December the Bolsheviks left the Congress of Soviets in Kyiv and set up a rival Soviet government in Kharkiv.",
+            "ko": "제3차 우니베르살이 「러시아 연방 안의」 인민공화국을 선포하고 토지 사유 폐지와 8시간 노동제를 약속했다. 12월 볼셰비키는 키예프의 소비에트 대회를 떠나 하리코프에서 경쟁하는 소비에트 정부를 세웠다."
+          },
+          "date": "1917.11.20",
+          "title": {
+            "en": "The Ukrainian People's Republic proclaimed",
+            "ko": "우크라이나 인민공화국 선포"
+          }
+        },
+        {
+          "geo": {
+            "lat": 51.07,
+            "lng": 31.96,
+            "kind": "point",
+            "label": {
+              "en": "Kruty",
+              "ko": "크루티"
+            }
+          },
+          "body": {
+            "en": "The Fourth Universal declared full independence. On 29 January a student unit trying to stop Muravyov's Soviet troops was cut down at Kruty, and after the Arsenal rising was crushed Soviet troops entered Kyiv on 9 February. Estimates put the dead of the following days' executions in the thousands.",
+            "ko": "제4차 우니베르살이 완전한 독립을 선언했다. 1월 29일 크루티에서 학생 부대가 무라비요프의 소비에트군을 막으려다 희생되었고, 아르세날 봉기가 진압된 뒤 2월 9일 소비에트군이 키예프에 들어왔다. 며칠간의 처형으로 수천 명이 죽었다는 추계가 있다."
+          },
+          "date": "1918.01.22–02.09",
+          "title": {
+            "en": "Independence declared, Kyiv lost",
+            "ko": "독립 선언과 키예프 상실"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "Under the separate peace of Brest some 450,000 German and Austro-Hungarian troops entered Ukraine, and the Rada returned to Kyiv on 1 March. The occupiers' grain demands and the Rada's land socialization law soon collided.",
+            "ko": "브레스트의 별도 강화에 따라 독일과 오스트리아-헝가리군 약 45만 명이 우크라이나에 진입했고, 라다는 3월 1일 키예프로 돌아왔다. 점령군의 곡물 요구와 라다의 토지 사회화 법은 곧 충돌했다."
+          },
+          "date": "1918.03.01",
+          "title": {
+            "en": "The Rada returns with the German army",
+            "ko": "독일군과 함께 돌아온 라다"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "The day after German soldiers searched the Rada chamber, a congress of landowners acclaimed Skoropadsky Hetman. The regime founded an Academy of Sciences and universities but returned land to the landlords and sent punitive detachments that armed the countryside. On 30 July the German commander Hermann von Eichhorn was assassinated.",
+            "ko": "독일 병사들이 라다 회의장을 수색한 다음 날 지주연합 대회가 스코로파츠키를 헤트만으로 추대했다. 정권은 과학 아카데미와 대학을 세웠지만 지주 토지를 되돌리고 형벌대를 보내 농촌을 무장시켰다. 7월 30일 독일 사령관 헤르만 폰 아이히호른이 암살되었다."
+          },
+          "date": "1918.04.29",
+          "title": {
+            "en": "The Hetman takes power",
+            "ko": "헤트만 집권"
+          }
+        },
+        {
+          "date": "1918.06",
+          "geo": {
+            "kind": "point",
+            "lat": 49.08,
+            "lng": 30.97,
+            "label": {
+              "ko": "즈베니호로드카",
+              "en": "Zvenyhorodka"
+            }
+          },
+          "title": {
+            "ko": "즈베니호로드카–타라샤 봉기",
+            "en": "The Zvenyhorodka–Tarashcha rising"
+          },
+          "body": {
+            "ko": "헤트만 정권의 형벌대와 점령군의 곡물 징발에 맞서 키예프 남쪽 즈베니호로드카와 타라샤 일대의 농민 수만 명이 봉기했다. 봉기는 두 달 넘게 독일군에 진압되지 않았고, 봉기군 일부는 북쪽 중립지대로 빠져나가 뒤에 적군의 타라샤 연대가 되었다.",
+            "en": "Against the Hetman's punitive detachments and the occupiers' grain levies, tens of thousands of peasants rose around Zvenyhorodka and Tarashcha, south of Kyiv. The Germans could not put the rising down for more than two months, and part of the insurgents broke through north to the neutral zone and later became the Red Army's Tarashcha regiment."
+          }
+        },
+        {
+          "date": "1918.09.30",
+          "geo": {
+            "kind": "point",
+            "lat": 48.03,
+            "lng": 36.17,
+            "label": {
+              "ko": "디브리우카",
+              "en": "Dibrivka"
+            }
+          },
+          "title": {
+            "ko": "디브리우카: 「바치코」 마흐노",
+            "en": "Dibrivka: \"Batko\" Makhno"
+          },
+          "body": {
+            "ko": "훌랴이폴레 주변에서 유격전을 벌이던 마흐노의 소부대가 디브리우카 숲 근처에서 수가 훨씬 많은 오스트리아군 대대를 기습해 격파했다. 이 승리로 그는 「바치코(아버지)」로 불리기 시작했고, 연말까지 남동부 농촌이 마흐노 부대의 근거지가 되었다.",
+            "en": "Makhno's small band, fighting a guerrilla war around Huliaipole, surprised and routed a much larger Austrian battalion near the Dibrivka forest. The victory earned him the name \"Batko\" (father), and by the end of the year the south-eastern countryside was the Makhnovists' base."
+          }
+        },
+        {
+          "date": "1918.11.01",
+          "geo": {
+            "kind": "point",
+            "lat": 49.84,
+            "lng": 24.03,
+            "label": {
+              "ko": "리보프",
+              "en": "Lviv"
+            }
+          },
+          "title": {
+            "ko": "서우크라이나 인민공화국과 폴란드-우크라이나 전쟁",
+            "en": "West Ukraine and the Polish-Ukrainian war"
+          },
+          "body": {
+            "ko": "오스트리아-헝가리가 무너지자 갈리치아의 우크라이나 부대가 11월 1일 리보프를 장악했고, 11월 13일 서우크라이나 인민공화국이 선포되었다. 도시의 폴란드인 주민과 부대가 맞서면서 폴란드-우크라이나 전쟁이 시작되었고, 11월 22일 우크라이나군은 리보프에서 밀려났다.",
+            "en": "As Austria-Hungary collapsed, Ukrainian units in Galicia seized Lviv on 1 November, and the Western Ukrainian People's Republic was proclaimed on 13 November. The city's Poles took up arms, the Polish-Ukrainian war began, and on 22 November the Ukrainians were driven out of Lviv."
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "When the Hetman proclaimed federation with Russia after Germany's defeat, the Directory of Vynnychenko and Petliura rose against him. Konovalets's Sich Riflemen beat the Hetman's troops at Motovylivka, and Skoropadsky abdicated on 14 December and left with the Germans.",
+            "ko": "독일 패전 뒤 헤트만이 러시아와의 연방을 선언하자 빈니첸코와 페틀류라의 디렉토리아가 봉기했다. 코노발레츠의 시치 소총부대가 모토빌리우카에서 헤트만군을 격파했고, 스코로파츠키는 12월 14일 퇴위하고 독일군과 함께 떠났다."
+          },
+          "date": "1918.12.14",
+          "title": {
+            "en": "The Directory's victory",
+            "ko": "디렉토리아의 승리"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "In St Sophia Square the People's Republic and the Western Ukrainian People's Republic of Galicia proclaimed their union. Two weeks later Soviet troops retook Kyiv; Vynnychenko left the leadership and Petliura headed the Directory. Rakovsky's Soviet Ukrainian government was set up in Kharkiv.",
+            "ko": "소피아 광장에서 인민공화국과 갈리치아의 서우크라이나 인민공화국이 통합을 선언했다. 2주 뒤 소비에트군이 키예프를 다시 점령했고, 빈니첸코는 지도부를 떠나 페틀류라가 디렉토리아를 이끌었다. 하리코프에는 라콥스키의 소비에트 우크라이나 정부가 세워졌다."
+          },
+          "date": "1919.01.22–02.05",
+          "title": {
+            "en": "The Act of Unity and the second loss of Kyiv",
+            "ko": "통합 선언과 두 번째 키예프 상실"
+          }
+        },
+        {
+          "geo": {
+            "lat": 49.42,
+            "lng": 26.99,
+            "kind": "point",
+            "label": {
+              "en": "Proskuriv",
+              "ko": "프로스쿠로프"
+            }
+          },
+          "body": {
+            "en": "A Zaporozhian Cossack unit of the Directory killed more than 1,500 Jews in a few hours. Between 1918 and 1921 some 1,500 pogroms in Ukraine are estimated to have killed 50,000 to 100,000 people, with perpetrators among the Directory's troops, the otamans, the Whites and the Reds.",
+            "ko": "디렉토리아의 자포로제 카자크 부대가 몇 시간 동안 유대인 1,500명 이상을 살해했다. 1918년부터 1921년까지 우크라이나에서 1,500건 안팎의 포그롬으로 5만 명에서 10만 명이 죽은 것으로 추산되며, 가해자는 디렉토리아 부대, 아타만, 백군, 적군에 걸쳐 있었다."
+          },
+          "date": "1919.02.15",
+          "title": {
+            "en": "The Proskuriv pogrom",
+            "ko": "프로스쿠로프 포그롬"
+          }
+        },
+        {
+          "geo": {
+            "lat": 46.48,
+            "lng": 30.73,
+            "kind": "point",
+            "label": {
+              "en": "Odesa",
+              "ko": "오데사"
+            }
+          },
+          "body": {
+            "en": "The troops of the otaman Hryhoriv, then serving with the Soviets, took Kherson and Mykolaiv and entered Odesa as the French and Greek troops evacuated. It was in effect this peasant army that ended Allied intervention in the south.",
+            "ko": "소비에트군에 합류한 아타만 흐리호리우의 부대가 헤르손과 니콜라예프를 거쳐 프랑스군과 그리스군이 철수하는 오데사에 들어왔다. 남부의 연합국 개입을 끝낸 것은 사실상 이 농민군이었다."
+          },
+          "date": "1919.04.06",
+          "title": {
+            "en": "Hryhoriv enters Odesa",
+            "ko": "흐리호리우의 오데사 입성"
+          }
+        },
+        {
+          "geo": {
+            "lat": 48.51,
+            "lng": 32.26,
+            "kind": "point",
+            "label": {
+              "en": "Yelysavethrad",
+              "ko": "옐리사베트흐라드"
+            }
+          },
+          "body": {
+            "en": "Hryhoriv issued a \"Universal\" and rose against Soviet power, denouncing grain requisitioning and outsider officials. His troops massacred more than 1,500 Jews at Yelysavethrad. The rising was crushed by the end of May, and on 27 July he was shot by Makhno's men.",
+            "ko": "흐리호리우가 「우니베르살」을 발표하고 곡물 징발과 외지인 관료를 겨눠 소비에트 권력에 반란을 일으켰다. 그의 부대는 옐리사베트흐라드에서 유대인 1,500명 이상을 학살했다. 봉기는 5월 말 진압되었고, 7월 27일 그는 마흐노 측에 사살되었다."
+          },
+          "date": "1919.05.07",
+          "title": {
+            "en": "The Hryhoriv rising",
+            "ko": "흐리호리우 봉기"
+          }
+        },
+        {
+          "date": "1919.06.25",
+          "geo": {
+            "kind": "arrow",
+            "variant": "axis",
+            "points": [
+              [
+                48.3,
+                38.6
+              ],
+              [
+                49.25,
+                37.3
+              ],
+              [
+                49.95,
+                36.3
+              ]
+            ],
+            "actor": {
+              "ko": "데니킨의 의용군",
+              "en": "Denikin's Volunteer Army"
+            }
+          },
+          "title": {
+            "ko": "데니킨의 하리코프 점령",
+            "en": "Denikin takes Kharkiv"
+          },
+          "body": {
+            "ko": "6월 6일 트로츠키가 마흐노를 법외로 선언하는 사이 남부의 소비에트 전선이 무너졌다. 데니킨의 의용군은 돈바스에서 북서쪽으로 진격해 6월 25일 하리코프를 점령했고, 시쿠로의 카자크 기병은 훌랴이폴레를 거쳐 예카테리노슬라프를 차지했다.",
+            "en": "While Trotsky outlawed Makhno on 6 June, the Soviet southern front collapsed. Denikin's Volunteer Army advanced north-west from the Donbas and took Kharkiv on 25 June, and Shkuro's Cossack cavalry passed through Huliaipole to seize Yekaterinoslav."
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "The Galician army, the Directory's troops and Bredov's Whites entered Kyiv on the same day. The Whites tore the Ukrainian flag from the city hall and the Ukrainians gave up the city. Denikin denied Ukrainian independence and cut support for Ukrainian schools.",
+            "ko": "갈리치아군과 디렉토리아군, 그리고 브레도프의 백군이 같은 날 키예프에 들어왔다. 백군이 시청의 우크라이나 깃발을 끌어내렸고, 우크라이나군은 도시를 내주었다. 데니킨은 우크라이나 독립을 부정하고 우크라이나어 학교의 지원을 끊었다."
+          },
+          "date": "1919.08.31",
+          "title": {
+            "en": "Two armies in Kyiv",
+            "ko": "키예프의 두 군대"
+          }
+        },
+        {
+          "geo": {
+            "lat": 48.44,
+            "lng": 30.59,
+            "kind": "point",
+            "label": {
+              "en": "Peregonovka",
+              "ko": "페레호놉카"
+            }
+          },
+          "body": {
+            "en": "The Makhnovists, outlawed in June, destroyed a White force at Peregonovka and within days crossed hundreds of kilometres of the White rear to seize Yekaterinoslav. Denikin, marching on Moscow, had to turn troops back.",
+            "ko": "6월 법외로 선언되었던 마흐노군이 페레호놉카에서 백군을 격파하고 며칠 만에 후방 수백 킬로미터를 가로질러 예카테리노슬라프를 점령했다. 모스크바로 향하던 데니킨은 병력을 돌려야 했다."
+          },
+          "date": "1919.09.26",
+          "title": {
+            "en": "Peregonovka: Makhno cuts the White rear",
+            "ko": "페레호놉카: 마흐노, 백군의 후방을 끊다"
+          }
+        },
+        {
+          "date": "1919.10.27",
+          "geo": {
+            "kind": "point",
+            "lat": 47.84,
+            "lng": 35.14,
+            "label": {
+              "ko": "알렉산드롭스크",
+              "en": "Oleksandrivsk"
+            }
+          },
+          "title": {
+            "ko": "알렉산드롭스크 대회와 마흐노 해방구",
+            "en": "The Oleksandrivsk congress and the Makhnovist territory"
+          },
+          "body": {
+            "ko": "페레호놉카 뒤 마흐노군은 알렉산드롭스크, 베르댠스크, 니코폴을 거쳐 예카테리노슬라프까지 차지했다. 10월 27일부터 11월 2일까지 알렉산드롭스크에서 열린 농민·노동자·반란군 지역 대회는 자유 소비에트와 자주 관리를 결의했다. 그러나 전선의 징발과 처형은 계속되었고, 12월 백군의 반격과 발진티푸스가 해방구를 무너뜨렸다.",
+            "en": "After Peregonovka the Makhnovists took Oleksandrivsk, Berdiansk and Nikopol and then Yekaterinoslav. A regional congress of peasants, workers and insurgents at Oleksandrivsk, 27 October to 2 November, resolved on free soviets and self-management. Requisitions and executions at the front went on, and in December a White counter-attack and typhus broke the territory."
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.45,
+            "lng": 30.52,
+            "kind": "point",
+            "label": {
+              "en": "Kyiv",
+              "ko": "키예프"
+            }
+          },
+          "body": {
+            "en": "As Denikin's army, broken at Orel, fell back, Soviet troops took Kyiv again. The Galician army had made a truce with Denikin in November, and Petliura sent his remaining troops on the \"First Winter Campaign\" and left for Warsaw. In 1919 Kyiv changed hands four times.",
+            "ko": "오룔에서 꺾인 데니킨군이 물러나면서 소비에트군이 키예프를 다시 차지했다. 갈리치아군은 11월 데니킨과 정전했고, 페틀류라는 남은 병력을 「제1차 겨울 원정」에 보낸 뒤 바르샤바로 떠났다. 1919년 키예프의 주인은 네 번 바뀌었다."
+          },
+          "date": "1919.12.16",
+          "title": {
+            "en": "Soviet troops retake Kyiv",
+            "ko": "소비에트군의 키예프 재점령"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.23,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Warsaw",
+              "ko": "바르샤바"
+            }
+          },
+          "body": {
+            "en": "Petliura's agreement with Piłsudski won Polish recognition at the price of eastern Galicia and western Volhynia. The joint offensive entered Kyiv on 7 May, but no peasant rising followed, and when Budyonny's cavalry broke the front in June the Poles left the city.",
+            "ko": "페틀류라가 피우수트스키와 협정을 맺어 폴란드의 승인을 얻는 대신 동갈리치아와 서부 볼히니아를 넘겼다. 합동 공세로 5월 7일 키예프에 들어갔지만 농민 봉기는 없었고, 6월 부됸니의 기병군이 전선을 돌파하자 폴란드군은 도시를 떠났다."
+          },
+          "date": "1920.04.21",
+          "title": {
+            "en": "The Warsaw agreement and the Kyiv offensive",
+            "ko": "바르샤바 협정과 키예프 공세"
+          }
+        },
+        {
+          "date": "1920.06.05",
+          "geo": {
+            "kind": "arrow",
+            "variant": "red",
+            "points": [
+              [
+                49,
+                29.7
+              ],
+              [
+                49.5,
+                28.9
+              ],
+              [
+                50.25,
+                28.66
+              ]
+            ],
+            "actor": {
+              "ko": "부됸니의 제1기병군",
+              "en": "Budyonny's First Cavalry Army"
+            }
+          },
+          "title": {
+            "ko": "부됸니 기병군의 전선 돌파",
+            "en": "Budyonny breaks the front"
+          },
+          "body": {
+            "ko": "우만 쪽에서 올라온 부됸니의 제1기병군이 폴란드군 전선을 뚫고 지토미르와 베르디체프를 습격했다. 키예프의 폴란드군은 포위를 피해 6월 12일 도시를 떠났다.",
+            "en": "Coming up from the Uman direction, Budyonny's First Cavalry Army broke through the Polish front and raided Zhytomyr and Berdychiv. To avoid encirclement the Poles left Kyiv on 12 June."
+          }
+        },
+        {
+          "date": "1920.10",
+          "geo": {
+            "kind": "point",
+            "lat": 49.28,
+            "lng": 38.91,
+            "label": {
+              "ko": "스타로벨스크",
+              "en": "Starobilsk"
+            }
+          },
+          "title": {
+            "ko": "스타로벨스크 협정: 세 번째 동맹",
+            "en": "The Starobilsk agreement: the third alliance"
+          },
+          "body": {
+            "ko": "브란겔이 북타브리아에서 북쪽으로 진격하자 소비에트 정부와 마흐노군은 스타로벨스크에서 군사 협정을 맺었다. 마흐노군은 남부전선 사령부의 작전 지휘를 받는 대신 내부 조직을 유지하고, 투옥된 아나키스트의 석방과 선전 활동의 자유를 약속받았다.",
+            "en": "As Wrangel pushed north out of Northern Tavria, the Soviet government and the Makhnovists made a military agreement at Starobilsk. The Makhnovists came under the operational command of the Southern Front but kept their own organization, and were promised the release of imprisoned anarchists and freedom of propaganda."
+          }
+        },
+        {
+          "date": "1920.11.08",
+          "geo": {
+            "kind": "arrow",
+            "variant": "red",
+            "points": [
+              [
+                46.3,
+                34.35
+              ],
+              [
+                46,
+                34.25
+              ],
+              [
+                45.75,
+                34.4
+              ]
+            ],
+            "actor": {
+              "ko": "적군과 마흐노 부대",
+              "en": "Red Army and Makhnovists"
+            }
+          },
+          "title": {
+            "ko": "시바시 도하와 크림 함락",
+            "en": "Across the Sivash; Crimea falls"
+          },
+          "body": {
+            "ko": "11월 7일 밤부터 적군 부대가 얕은 시바시 만을 건너 페레코프 방어선의 측면을 쳤고, 카레트니크가 이끈 마흐노 부대도 크림 공격에 참여했다. 브란겔군은 11월 중순 크림 항구에서 배로 철수했다.",
+            "en": "From the night of 7 November Red units waded across the shallow Sivash to turn the Perekop line, and a Makhnovist force under Karetnyk joined the attack on Crimea. Wrangel's army left the Crimean ports by sea in mid-November."
+          }
+        },
+        {
+          "date": "1920.11.21",
+          "geo": {
+            "kind": "point",
+            "lat": 49.4,
+            "lng": 26.15,
+            "label": {
+              "ko": "즈브루치 강",
+              "en": "Zbruch"
+            }
+          },
+          "title": {
+            "ko": "즈브루치 강을 건넌 인민공화국군",
+            "en": "The People's Republic's army crosses the Zbruch"
+          },
+          "body": {
+            "ko": "폴란드와 소비에트의 휴전 뒤 홀로 남은 인민공화국군 2만여 명은 11월 10일 시작된 소비에트군의 공세에 밀려 즈브루치 강을 건넜고, 폴란드에 억류되었다.",
+            "en": "Left alone after the Polish-Soviet armistice, the People's Republic's army of some 20,000 was pushed back by the Soviet offensive that began on 10 November, crossed the Zbruch and was interned in Poland."
+          }
+        },
+        {
+          "geo": {
+            "lat": 47.66,
+            "lng": 36.26,
+            "kind": "point",
+            "label": {
+              "en": "Huliaipole",
+              "ko": "훌랴이폴레"
+            }
+          },
+          "body": {
+            "en": "Days after Crimea fell, Soviet forces attacked the Makhnovist units that had crossed the Sivash in the third alliance against Wrangel and surrounded Huliaipole. Makhno escaped into Romania in August 1921.",
+            "ko": "브란겔에 맞선 세 번째 동맹으로 시바시를 건넜던 마흐노 부대를 크림이 함락된 직후 소비에트군이 공격하고 훌랴이폴레를 포위했다. 마흐노는 1921년 8월 루마니아로 탈출했다."
+          },
+          "date": "1920.11.26",
+          "title": {
+            "en": "The attack on the Makhnovists",
+            "ko": "마흐노군에 대한 공격"
+          }
+        },
+        {
+          "geo": {
+            "lat": 50.88,
+            "lng": 28.38,
+            "kind": "point",
+            "label": {
+              "en": "Bazar",
+              "ko": "바자르"
+            }
+          },
+          "body": {
+            "en": "At Riga Poland recognized Soviet Ukraine and the People's Republic was not admitted as a party. In November Tiutiunnyk's \"Second Winter Campaign\" failed and 359 prisoners were shot at Bazar. The regular army's war of independence ended here.",
+            "ko": "리가 조약에서 폴란드는 소비에트 우크라이나를 승인했고 인민공화국은 당사자로 인정받지 못했다. 11월 티우티우니크의 「제2차 겨울 원정」이 실패해 바자르에서 포로 359명이 총살되었다. 정규군의 독립전쟁은 여기서 끝났다."
+          },
+          "date": "1921.03.18–11.21",
+          "title": {
+            "en": "The Treaty of Riga and Bazar",
+            "ko": "리가 조약과 바자르"
+          }
+        },
+        {
+          "date": "1921.08.28",
+          "geo": {
+            "kind": "point",
+            "lat": 48.24,
+            "lng": 28.28,
+            "label": {
+              "ko": "드네스트르 강",
+              "en": "Dniester"
+            }
+          },
+          "title": {
+            "ko": "마흐노의 망명",
+            "en": "Makhno goes into exile"
+          },
+          "body": {
+            "ko": "1921년 내내 좌안 우크라이나를 떠돌며 유격전을 이어 가던 마흐노는 부상한 몸으로 부하 수십 명과 함께 드네스트르 강을 건너 루마니아로 탈출했다. 홀로드니 야르 같은 숲과 마을의 농민 저항은 1922년까지 이어졌다.",
+            "en": "After a year of roaming guerrilla war across Left-Bank Ukraine, the wounded Makhno crossed the Dniester into Romania with a few dozen men. Peasant resistance in forests and villages such as the Kholodny Yar went on into 1922."
+          }
+        }
+      ]
+    }
+  ]
+}

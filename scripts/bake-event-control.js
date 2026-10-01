@@ -18,7 +18,9 @@
 // Output data/commulingo/event-control/<eventId>.json:
 // Spec fields: region (Natural Earth ADM0 codes), bounds (optional crop box
 // [[lat0, lng0], [lat1, lng1]]), sea (coastal waters, one or more [lat, lng] rings), base (the remainder side), precedence (drawn sides, highest first),
-// carve (sides the base's pockets cut; default all), simplify (degrees,
+// carve (sides the base's pockets cut; default all), overlays (sides drawn
+// as hatching over the others, such as risings behind a front: never cut
+// and cutting nothing), simplify (degrees,
 // default 0.08), focus (extra points
 // the map frame must include), sides [{ id, label, tone }], note, sources,
 // traced (the event's .traced.json), phases [{ date, label, <side>: items }].
@@ -29,7 +31,8 @@
 // admin-1 by `name`: modern provinces standing in for historical ones).
 //
 //   { eventId, base, focus?, region: [ring, ...], sides: [{ id, label, tone }], note, sources,
-//     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] } }] }
+//     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] },
+//                overlays?: { side: [ring, ...] } }] }
 // where a ring is a flat [lng, lat, ...] outline rounded to 0.01°. The
 // region is drawn once in the base side's colour (whatever no other side
 // holds); each phase's other sides are even-odd paths on top and never
@@ -267,7 +270,9 @@ function bakeEvent(spec, ne) {
     // pockets (cities, railway corridors) carved out of the sides named in
     // spec.carve; the base itself is the remainder, laid down once over the
     // whole region by the renderer, so no shared boundary is stored twice.
-    const drawn = spec.precedence || spec.sides.map(side => side.id).filter(id => id !== spec.base);
+    const layered = new Set(spec.overlays || []);
+    const drawn = spec.precedence || spec.sides.map(side => side.id)
+        .filter(id => id !== spec.base && !layered.has(id));
     const carved = new Set(spec.carve || drawn);
     const phases = spec.phases.map(phase => {
         const pockets = unionOf(phase[spec.base], spec.base, phase, traced);
@@ -281,7 +286,15 @@ function bakeEvent(spec, ne) {
             const rings = flatten(geom);
             if (rings.length) { areas[side] = rings; used.add(side); }
         }
-        return { date: phase.date, label: phase.label, traced: Boolean(phase.traced), areas };
+        const overlays = {};
+        for (const side of layered) {
+            const rings = flatten(within(unionOf(phase[side], side, phase, traced), region));
+            if (rings.length) { overlays[side] = rings; used.add(side); }
+        }
+        return {
+            date: phase.date, label: phase.label, traced: Boolean(phase.traced), areas,
+            ...(Object.keys(overlays).length ? { overlays } : {}),
+        };
     });
     used.add(spec.base);
     return {
@@ -291,7 +304,8 @@ function bakeEvent(spec, ne) {
         // event's own markers would crop the areas that matter.
         ...(spec.focus ? { focus: spec.focus } : {}),
         region: flatten(region),
-        sides: spec.sides.filter(side => used.has(side.id)),
+        sides: spec.sides.filter(side => used.has(side.id))
+            .map(side => (layered.has(side.id) ? { ...side, overlay: true } : side)),
         note: spec.note,
         sources: spec.sources,
         phases,

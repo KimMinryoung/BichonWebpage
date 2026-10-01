@@ -3645,7 +3645,9 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
    states; each event's legend below the map names what a tone means. */
 .commu-event-map, .commu-event-control {
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
-    --emap-purple: #7b5aa6; --emap-gray: #8d8d86;
+    --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a;
+    /* Ink: the anarchists' black, which turns light on a dark map. */
+    --emap-black: var(--text-primary);
 }
 .emap-ctl { stroke: none; fill-opacity: .32; }
 .emap-ctl-knock { fill: color-mix(in srgb, var(--border) 13%, var(--bg-surface)); stroke: none; }
@@ -3656,6 +3658,17 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .emap-ctl.is-amber { fill: var(--emap-amber); stroke: var(--emap-amber); }
 .emap-ctl.is-purple { fill: var(--emap-purple); stroke: var(--emap-purple); }
 .emap-ctl.is-gray { fill: var(--emap-gray); stroke: var(--emap-gray); }
+.emap-ctl.is-green { fill: var(--emap-green); stroke: var(--emap-green); }
+.emap-ctl.is-black { fill: var(--emap-black); stroke: var(--emap-black); }
+.emap-ctl.is-black.is-drawn { fill-opacity: .4; }
+/* Overlays (risings behind a front): stripes and a dashed edge over the
+   holder's colour. */
+.emap-ctl-hatch { stroke-width: 1; stroke-dasharray: 3 2; stroke-linejoin: round; }
+.emap-ctl-hatch.is-green { stroke: var(--emap-green); }
+.emap-ctl-hatch.is-black { stroke: var(--emap-black); }
+.emap-hatch-line { stroke-width: 1.6; }
+.emap-hatch-line.is-green { stroke: var(--emap-green); }
+.emap-hatch-line.is-black { stroke: var(--emap-black); }
 .emap-phase { display: none; }
 .emap-phase.is-current { display: inline; }
 .commu-event-control { margin-block: .7rem 1.1rem; }
@@ -3678,6 +3691,11 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-control-legend i.is-amber { background: color-mix(in srgb, var(--emap-amber) 34%, transparent); border-color: var(--emap-amber); }
 .commu-event-control-legend i.is-purple { background: color-mix(in srgb, var(--emap-purple) 34%, transparent); border-color: var(--emap-purple); }
 .commu-event-control-legend i.is-gray { background: color-mix(in srgb, var(--emap-gray) 34%, transparent); border-color: var(--emap-gray); }
+.commu-event-control-legend i.is-green { background: color-mix(in srgb, var(--emap-green) 34%, transparent); border-color: var(--emap-green); }
+.commu-event-control-legend i.is-black { background: color-mix(in srgb, var(--emap-black) 40%, transparent); border-color: var(--emap-black); }
+.commu-event-control-legend i.is-hatch { background: repeating-linear-gradient(-45deg, var(--hatch) 0 1.6px, transparent 1.6px 3.5px); border-style: dashed; }
+.commu-event-control-legend i.is-hatch.is-green { --hatch: var(--emap-green); }
+.commu-event-control-legend i.is-hatch.is-black { --hatch: var(--emap-black); }
 .commu-event-control-note { margin: .45rem 0 0; font-size: .8rem; line-height: var(--leading-snug); color: var(--text-muted); }
 .commu-event-control-note a { color: inherit; }
 .emap-ref { fill: color-mix(in srgb, var(--text-primary) 65%, transparent); }

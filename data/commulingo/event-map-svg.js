@@ -330,7 +330,8 @@ function controlRingsPath(rings, frame, project) {
 // The areas are built once, as <defs>, and drawn by layer(clipId) under
 // the land clip.
 function renderControlLayer(control, bounds, project, idBase) {
-    // Sides are coloured by tone (blue, red, amber, purple, gray), not by
+    // Sides are coloured by tone (blue, red, amber, purple, gray, green,
+    // black), not by
     // id, so every event reuses the same few map colours.
     const tones = new Map((control.sides || []).map(side => [side.id, side.tone || 'gray']));
     const tone = id => esc(tones.get(id) || 'gray');
@@ -344,6 +345,9 @@ function renderControlLayer(control, bounds, project, idBase) {
     // A drawn side first knocks the base colour out (a land-coloured copy),
     // or its translucent tone would mix with the base's into a third colour.
     // The outline lives once in <defs>; both copies are <use>s of it.
+    // Overlay sides (risings behind a front) are hatched over whoever holds
+    // the ground, without knocking it out: one stripe pattern per tone.
+    const hatches = new Set();
     control.phases.forEach((phase, i) => {
         uses.push(`<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`);
         for (const [side, rings] of Object.entries(phase.areas || {})) {
@@ -353,8 +357,20 @@ function renderControlLayer(control, bounds, project, idBase) {
             defs.push(`<path id="${id}" fill-rule="evenodd" d="${d}"/>`);
             uses.push(`<use href="#${id}" class="emap-ctl-knock"/><use href="#${id}" class="emap-ctl is-${tone(side)} is-drawn"/>`);
         }
+        for (const [side, rings] of Object.entries(phase.overlays || {})) {
+            const d = controlRingsPath(rings, bounds, project);
+            if (!d) continue;
+            const id = `${idBase}-${i}-${esc(side)}`;
+            hatches.add(tone(side));
+            defs.push(`<path id="${id}" fill-rule="evenodd" d="${d}"/>`);
+            uses.push(`<use href="#${id}" class="emap-ctl-hatch is-${tone(side)}" fill="url(#${idBase}-hatch-${tone(side)})"/>`);
+        }
         uses.push('</g>');
     });
+    for (const t of hatches) {
+        defs.push(`<pattern id="${idBase}-hatch-${t}" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">`
+            + `<line x1="0" y1="0" x2="0" y2="5" class="emap-hatch-line is-${t}"/></pattern>`);
+    }
     return {
         defs: `<defs>${defs.join('')}</defs>`,
         layer: clipId => `<g class="emap-control" clip-path="url(#${clipId})">${uses.join('')}</g>`,
