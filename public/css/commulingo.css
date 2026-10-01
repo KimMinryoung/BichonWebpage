@@ -2839,6 +2839,13 @@ button.commu-dc-option:hover { border-color: var(--link); }
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* The chip leads with its collection's glyph, small beside the activity medal. */
+.commu-person-position .commu-role-icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
 .pos-white .commu-person-position,
 .pos-anarchist .commu-person-position {
     box-shadow: inset 0 0 0 1px var(--text-muted);

@@ -1,12 +1,13 @@
 <% if (person.positionTag) { %>
+<% var positionIcon = person.positionTag.icon ? roleIconSvg(person.positionTag.icon) : ''; %>
 <% if (person.positionTag.href) { %>
-<a class="commu-person-position" href="<%= person.positionTag.href %>" onclick="event.stopPropagation()"><%= person.positionTag.label %></a>
+<a class="commu-person-position" href="<%= person.positionTag.href %>" onclick="event.stopPropagation()"><%- positionIcon %><%= person.positionTag.label %></a>
 <% } else { %>
-<span class="commu-person-position"><%= person.positionTag.label %></span>
+<span class="commu-person-position"><%- positionIcon %><%= person.positionTag.label %></span>
 <% } %>
 <% } %>
 <%# The detail head also names the person's other position collections, as
     outlined chips after the filled one. Cards show only the filled chip. %>
 <% if (showOtherPositions && person.otherPositions) { person.otherPositions.forEach(function(c) { %>
-<a class="commu-person-position is-secondary<%= c.position ? ' pos-' + c.position : '' %>" href="<%= c.href %>"><%= c.title %></a>
+<a class="commu-person-position is-secondary<%= c.position ? ' pos-' + c.position : '' %>" href="<%= c.href %>"><%- c.icon ? roleIconSvg(c.icon) : '' %><%= c.title %></a>
 <% }) } %>
