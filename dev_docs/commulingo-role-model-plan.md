@@ -157,7 +157,7 @@ UI에는 첫 단계에서 국가·세력 수준을, 필요한 경우 그 안의 
 - 법조 경력이 경력을 규정하는 24명은 `law`를 대표 활동으로 두었다. 다른 경력은 보조 활동으로 남겼다: 크릴렌코 군사, 아쿨로프 OGPU 보안, 비신스키 외교.
 - 대표 경력이 따로 있는 시테인베르크·로모프(법무인민위원), 방학세(중앙재판소장), 파울 레비·허헌(변호사)에게는 `law`를 보조 활동으로 더했다. 오스트레일리아 국가 소속이 카탈로그에 없어 에바트(고등법원 판사)는 제외했다.
 - 구 role과 기관 재임 연표(`state-security` office)는 호환을 위해 그대로 두었다. 백업은 gitignored `scripts/migrations/data/person-activities-20260928/`에 있다.
-- 기관 페이지(`/commulingo/offices/:id`)는 구 `role.officeId`로 묶던 소속 인물 목록을 없애고 조직 변천과 지도부 타임라인만 보여 준다. 인물 조회는 기능·활동과 국가·세력 필터로 한다. `law` 아이콘은 의사봉(`gavel`)이다.
+- 기관 페이지(`/commulingo/offices/:id`)는 구 `role.officeId`로 묶던 소속 인물 목록을 없애고 조직 변천과 지도부 타임라인만 보여 준다. 인물 조회는 기능·활동과 국가·세력 필터로 한다. `law` 아이콘은 천칭(`scale`)이다.
 
 ### 성직자 종교 재분류 (2026-09-28)
 
@@ -296,5 +296,5 @@ UI에는 첫 단계에서 국가·세력 수준을, 필요한 경우 그 안의 
 
 ### 범주 아이콘 중복 제거 (2026-10-01, migration 224)
 
-- 인물 사전 첫 화면의 기능 18개와 정치적 입장 21개가 서로 다른 아이콘을 하나씩 쓴다. 기능: 정부·행정 `stamp`(도장), 입법·국가 대표 `town-hall`(MDI), 사회운동·조직 `users`, 법률·사법 `gavel`. 입장: 아나키스트 `circle-a`(MDI의 원 안 A), 공산주의 `hammer-sickle`, 비볼셰비키 사회주의 `rose`, 자유주의·공화주의 `vote`, 파시스트·나치 `fasces`, 반체제 `mic-off`, 왕정 `chess-king`, 제정·백색진영 `castle`, 서구 마르크스주의 `glasses`, 초기 사회주의 `sprout`, 혁명적 사회주의 `hand-fist`, 혁명적 민주주의자 `newspaper`, 민족해방 `unlink`(끊어진 사슬), 민족주의 `map-pinned`. 나로드니키는 불꽃을 그대로 쓴다. 자코뱅은 천칭(혁명기 일반 평등 도상)에서 프리기아 모자 `phrygian-cap`(보네 루주)으로 바꿨다(migration 225).
+- 인물 사전 첫 화면의 기능 18개와 정치적 입장 21개가 서로 다른 아이콘을 하나씩 쓴다. 기능: 정부·행정 `stamp`(도장), 입법·국가 대표 `town-hall`(MDI), 사회운동·조직 `users`. 법률·사법은 천칭을 그대로 쓴다. 입장: 아나키스트 `circle-a`(MDI의 원 안 A), 공산주의 `hammer-sickle`, 비볼셰비키 사회주의 `rose`, 자유주의·공화주의 `vote`, 파시스트·나치 `fasces`, 반체제 `mic-off`, 왕정 `chess-king`, 제정·백색진영 `castle`, 서구 마르크스주의 `glasses`, 초기 사회주의 `sprout`, 혁명적 사회주의 `hand-fist`, 혁명적 민주주의자 `newspaper`, 민족해방 `unlink`(끊어진 사슬), 민족주의 `map-pinned`. 나로드니키는 불꽃을 그대로 쓴다. 자코뱅은 천칭(혁명기 일반 평등 도상)에서 프리기아 모자 `phrygian-cap`(보네 루주)으로 바꿨다(migration 225).
 - 글리프는 Lucide·MDI 원본을 `data/icons.js`에 옮겼다. 파스케스는 두 세트를 포함해 Iconify 전체에 없어서 Lucide 격자에 직접 그렸다(도끼날을 채워야 20px에서 도끼로 읽힌다). 프리기아 모자도 Game Icons(CC BY 3.0) 것이 20px에서 무너져 직접 그렸다. 기능 아이콘은 `activity-catalog.json`에, 입장 아이콘은 `commulingo_person_collections.icon`에 있다.
