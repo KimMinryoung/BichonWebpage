@@ -1,0 +1,7 @@
+<% if (person.positionTag) { %>
+<% if (person.positionTag.href) { %>
+<a class="commu-person-position" href="<%= person.positionTag.href %>" onclick="event.stopPropagation()"><%= person.positionTag.label %></a>
+<% } else { %>
+<span class="commu-person-position"><%= person.positionTag.label %></span>
+<% } %>
+<% } %>
