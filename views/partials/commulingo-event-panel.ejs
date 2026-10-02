@@ -143,9 +143,9 @@ var sections = p.event.bodySections || [];
             <h2 id="event-terms"><%= strings.commuLingoViews.eventPanel.relatedTerms %></h2>
             <div class="commu-term-chips">
                 <% p.relatedTerms.forEach(function(entry) { %>
-                <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>"><%= entry.term %></a>
+                <a class="commu-term-chip" href="/commulingo/terms/<%= encodeURIComponent(entry.id) %>" target="_blank" rel="noopener"><%= entry.term %></a>
                 <% entry.children.forEach(function(child) { %>
-                <a class="commu-term-chip is-child" href="/commulingo/terms/<%= encodeURIComponent(child.id) %>">└ <%= child.term %></a>
+                <a class="commu-term-chip is-child" href="/commulingo/terms/<%= encodeURIComponent(child.id) %>" target="_blank" rel="noopener">└ <%= child.term %></a>
                 <% }) %>
                 <% }) %>
             </div>
