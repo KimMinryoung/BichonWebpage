@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+// SED spelling unified as 「독일 사회주의통일당」 / 사회주의통일당 (2026-10-02, owner
+// decision: the majority form in events, terms and people). Source of truth for
+// ../sed-spelling-20261002-terms.json, the new glossary term that carries both
+// spellings as aliases. The event text itself is rewritten by migration 248.
+const fs = require('fs');
+const path = require('path');
+const { W, term } = require('../baltic-1940-1953-20261002/lib');
+
+const sed = term({
+    id: 'socialist-unity-party-of-germany',
+    ko: '독일 사회주의통일당', en: 'Socialist Unity Party of Germany',
+    category: 'party-state', period: '1946–1989', startYear: 1946, endYear: 1989,
+    definition: [
+        '1946년 4월 소련 점령지구에서 독일 공산당과 사회민주당 동부 조직이 소련 군정의 압력 아래 합쳐 만든 당. 1949년부터 1989년까지 독일민주공화국을 일당 지배한 마르크스-레닌주의 집권당이다.',
+        'The party formed in April 1946 when the Communist Party of Germany and the eastern branch of the Social Democratic Party merged in the Soviet occupation zone under pressure from the Soviet military administration; the Marxist–Leninist ruling party of the German Democratic Republic from 1949 to 1989.',
+    ],
+    body: [
+        '1946년 4월 21일 창당했고 빌헬름 피크와 오토 그로테볼이 공동의장을 맡았다. 동독과 소련의 공식 역사는 이를 자발적 통합으로 그렸지만, 소련 군정이 사회민주당 동부 조직에 큰 압력을 가했다. 당은 민주집중제에 따라 당대회·중앙위원회·정치국으로 짜였고, 실제 결정은 정치국과 서기국이 내렸다. 발터 울브리히트가 1950년대 초부터 1971년까지, 에리히 호네커가 1989년까지 당을 이끌었다.\n\n1989년 10월 18일 호네커가 물러나고 에곤 크렌츠가 뒤를 이었으나, 베를린 장벽이 열린 뒤 당은 무너졌다. 12월 1일 인민의회가 헌법에서 당의 지도적 역할 조항을 삭제했고, 12월 3일 중앙위원회와 정치국이 총사퇴했다. 12월 16일 임시 당대회에서 당은 마르크스-레닌주의를 버리고 이름에 「민주사회주의당」(PDS)을 덧붙였다. 한국어 문헌에서는 「사회통일당」「독일사회통일당」으로도 옮긴다.',
+        'Founded on 21 April 1946 with Wilhelm Pieck and Otto Grotewohl as co-chairmen, it was portrayed by official East German and Soviet histories as a voluntary merger, although the Soviet occupation authorities put great pressure on the eastern SPD. The party was organised on democratic centralism, from the Party Congress through the Central Committee to the Politburo, with decisions taken in practice by the Politburo and the Secretariat. Walter Ulbricht led it from the early 1950s until 1971 and Erich Honecker until 1989.\n\nOn 18 October 1989 Honecker was replaced by Egon Krenz, but the opening of the Berlin Wall destroyed the party politically. On 1 December the Volkskammer struck the clause on the SED’s leading role from the constitution, and on 3 December the entire Central Committee and Politburo resigned. At a special congress on 16 December the party abandoned Marxism–Leninism and added “Party of Democratic Socialism” (PDS) to its name.',
+    ],
+    aliases: {
+        ko: ['사회주의통일당', '독일사회주의통일당', '동독 사회주의통일당', '사회통일당', '독일사회통일당'],
+        en: ['SED', 'Socialist Unity Party', 'Sozialistische Einheitspartei Deutschlands'],
+    },
+    people: ['wilhelm-pieck', 'otto-grotewohl', 'walter-ulbricht', 'erich-honecker', 'egon-krenz'],
+    events: ['soviet-zone-gdr-1945-1949', 'east-german-uprising-1953', 'berlin-wall'],
+    sources: [W('Socialist_Unity_Party_of_Germany'), 'https://de.wikipedia.org/wiki/Sozialistische_Einheitspartei_Deutschlands'],
+    locator: 'lead; Early history; Party Congresses; 1989',
+});
+
+const BATCH = 'sed-spelling-20261002';
+fs.writeFileSync(path.join(__dirname, '..', `${BATCH}-terms.json`), JSON.stringify({ id: BATCH, terms: [sed] }, null, 2) + '\n');
+console.log(`term ${sed.id}: definition ko ${sed.fields.definition.ko.length}, body ko ${sed.fields.body.ko.length}`);

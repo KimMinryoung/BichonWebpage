@@ -1,0 +1,118 @@
+{
+  "scope": "2026-10-02 new term socialist-unity-party-of-germany (SED spelling unified as 사회주의통일당); owner-requested",
+  "references": [
+    "dev_docs/commulingo-wwi-east-germany-20261002.md"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "ko",
+      "text": "독일 사회주의통일당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 용어 등록과 함께 검토: 용어 표제어. 다른 대상과 겹치지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "ko",
+      "text": "사회주의통일당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 용어 등록과 함께 검토: 2026-10-02 표기 통일로 사건·용어·인물이 모두 이 약칭을 씀. 동독 집권당만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "ko",
+      "text": "독일사회주의통일당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 용어 등록과 함께 검토: 붙여 쓴 정식 이름. 기존 사건 본문에 쓰임. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "ko",
+      "text": "동독 사회주의통일당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 용어 등록과 함께 검토: 기존 용어 본문에 쓰인 형태. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "ko",
+      "text": "사회통일당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 용어 등록과 함께 검토: 통일 전 표기이자 한국어 문헌의 다른 번역. 참고문헌 번역문(naumov-stalin-i-nkvd)에 남아 있음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "ko",
+      "text": "독일사회통일당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 용어 등록과 함께 검토: 통일 전 정식 표기. 같은 당만 가리킴. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "en",
+      "text": "Socialist Unity Party of Germany",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the term registration: the headword; unique. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "en",
+      "text": "Socialist Unity Party",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the term registration: short English name; in this corpus it only means the SED. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "en",
+      "text": "SED",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the term registration: standard abbreviation, used with the full name in event bodies; no other entry uses it. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-unity-party-of-germany",
+      "lang": "en",
+      "text": "Sozialistische Einheitspartei Deutschlands",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the term registration: German original name. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}
