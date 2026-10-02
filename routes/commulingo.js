@@ -23,10 +23,11 @@ router.use((req, res, next) => {
     res.locals.roleIconSvg = roleIconSvg;
     res.locals.dictTabs = dictTabs;
     // Lists share a smaller sheet; detail, map and training pages retain all rules.
+    const homePage = /^\/\/?$/.test(req.path);
     const listPage = /^\/(?:people|events|terms)?\/?$/.test(req.path) || /^\/people\/list\/[^/]+\/?$/.test(req.path);
     res.locals.extraCss = [
         `/css/commulingo-crumb.css?v=${res.locals.assetVersion}`,
-        `/css/${listPage ? 'commulingo-lists' : 'commulingo'}.css?v=${res.locals.assetVersion}`,
+        `/css/${homePage ? 'commulingo-home' : listPage ? 'commulingo-lists' : 'commulingo'}.css?v=${res.locals.assetVersion}`,
     ];
     next();
 });

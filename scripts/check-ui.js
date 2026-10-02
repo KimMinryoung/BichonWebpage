@@ -28,7 +28,7 @@ for (const file of walk(viewsRoot, '.ejs')) {
 }
 
 const head = fs.readFileSync(path.join(viewsRoot, 'partials', 'head.ejs'), 'utf8');
-for (const stylesheet of ['palette.css', 'style.css', 'ui.css']) {
+for (const stylesheet of ['palette.css', 'site-core.css', 'ui.css']) {
     if (!head.includes(`/css/${stylesheet}`)) {
         errors.push(`views/partials/head.ejs: missing ${stylesheet}`);
     }

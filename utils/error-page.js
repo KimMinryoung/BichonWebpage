@@ -8,6 +8,7 @@
 const allStrings = require('../config/strings');
 const { iconPaths } = require('../data/icons');
 const seo = require('./seo');
+const { siteStyleModules } = require('./site-stylesheets');
 
 const FALLBACK_LANG = 'ko';
 
@@ -20,6 +21,7 @@ const FALLBACK_LANG = 'ko';
 // blank body instead of a page (observed 2026-08-02 in production).
 function fillLayoutLocals(res) {
     const locals = res.locals;
+    if (!locals.siteStyleModules) locals.siteStyleModules = siteStyleModules;
     if (!locals.lang) locals.lang = FALLBACK_LANG;
     if (!locals.strings) locals.strings = allStrings[locals.lang] || allStrings[FALLBACK_LANG];
     if (!locals.siteOrigin) locals.siteOrigin = seo.SITE_ORIGIN;

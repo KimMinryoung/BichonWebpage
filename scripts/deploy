@@ -214,7 +214,7 @@ warm "/"
 warm "/reports"
 warm "/hub"
 warm "/sitemap.xml"
-warm "/css/style.css"
+warm "/css/site-core.css"
 warm "/js/common.js"
 
 log "Deploy complete ($(git log --oneline -1))"

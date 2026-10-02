@@ -3,6 +3,7 @@
 // the session-derived identity. Also patches res.send on /en/ requests so
 // every HTML response (pages and fragments alike) gets its links localized.
 const seo = require('../utils/seo');
+const { siteStyleModules } = require('../utils/site-stylesheets');
 const allStrings = require('../config/strings');
 const { iconPaths } = require('../data/icons');
 const { sanitizeBasic, sanitizePost } = require('../utils/sanitize');
@@ -19,6 +20,7 @@ const {
 function viewLocals(req, res, next) {
     if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
 
+    res.locals.siteStyleModules = siteStyleModules;
     res.locals.siteOrigin = seo.SITE_ORIGIN;
     res.locals.absoluteUrl = seo.absoluteUrl;
     res.locals.languageUrl = (pathname, lang) => seo.languagePath(pathname, lang);

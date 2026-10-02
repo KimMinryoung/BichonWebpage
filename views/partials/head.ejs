@@ -74,7 +74,11 @@
 })();
 </script>
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
-<link rel="stylesheet" href="/css/style.css?v=<%= assetVersion %>">
+<link rel="stylesheet" href="/css/site-core.css?v=<%= assetVersion %>">
+<% const _siteModules = typeof siteStyleModules === 'function' ? siteStyleModules(_path) : []; %>
+<% _siteModules.forEach(function(module) { %>
+<link rel="stylesheet" href="/css/site-<%= module %>.css?v=<%= assetVersion %>">
+<% }); %>
 <link rel="stylesheet" href="/css/ui.css?v=<%= assetVersion %>">
 <% const _extraCss = (typeof extraCss === 'undefined' || !extraCss) ? [] : (Array.isArray(extraCss) ? extraCss : [extraCss]); %>
 <% _extraCss.forEach(function(stylesheet) { %>
