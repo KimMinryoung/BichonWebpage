@@ -3647,7 +3647,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 @media (max-width: 540px) {
     .commu-people-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .commu-office-rows li {
