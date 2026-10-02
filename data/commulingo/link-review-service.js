@@ -47,9 +47,18 @@ async function listingRows() {
     const doc = listCommuLingoDocs();
     if (!listing || listing.term !== term || listing.event !== event || listing.reviews !== reviews || listing.doc !== doc) {
         const rows = catalogue({ term, event, doc }, reviews);
-        listing = { term, event, reviews, doc, rows, pending: rows.filter(row => !row.reviewed).length };
+        listing = { term, event, reviews, doc, records: { term, event, doc }, rows, pending: rows.filter(row => !row.reviewed).length };
     }
     return listing;
+}
+function about(state, row) {
+    const record = state.records[row.kind].find(item => item.id === row.id);
+    if (!record) return null;
+    const pick = value => (typeof value === 'string' ? value : value && (value[row.lang] || value.ko || value.en)) || '';
+    const text = pick(row.kind === 'term' ? record.definition : row.kind === 'event' ? record.summary : record.description)
+        .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    return { period: row.kind === 'doc' ? String(record.date || '') : pick(record.period),
+        summary: text.length > 200 ? text.slice(0, 200) + '…' : text };
 }
 async function listReviews({ q = '', kind = '', pending = false, risk = false, offset = 0, limit = 60 } = {}) {
     const state = await listingRows();
@@ -57,7 +66,10 @@ async function listReviews({ q = '', kind = '', pending = false, risk = false, o
     const rows = state.rows.filter(row => (!kind || row.kind === kind) && (!pending || !row.reviewed)
         && (!risk || row.risks.length || row.collisions.length)
         && (!needle || [row.text, row.label, row.id].some(text => text.toLowerCase().includes(needle))));
-    return { total: rows.length, rows: rows.slice(offset, offset + Math.min(limit, 100)),
+    // Rows come grouped by entry (catalogue order); the page shows each
+    // entry once with what it is, so a reviewer can tell look-alikes apart.
+    const page = rows.slice(offset, offset + Math.min(limit, 100)).map(row => ({ ...row, about: about(state, row) }));
+    return { total: rows.length, rows: page,
         pending: state.pending };
 }
 function selectRow(state, input) {
