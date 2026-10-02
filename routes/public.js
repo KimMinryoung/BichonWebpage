@@ -31,7 +31,20 @@ const RECENT_LIMIT = 4;
 const { createPublicModelCache } = require('../utils/public-model-cache');
 const { sanitizeBasic } = require('../utils/sanitize');
 const { truncateHtml } = require('../utils/truncate-html');
+const { onTableChange } = require('../utils/db-change-listener');
 const homepageModels = createPublicModelCache();
+// Keys are `<source>:<lang>`; a write to a source table rereads that source.
+// A null table (listener reconnected) rereads everything.
+const HOMEPAGE_SOURCES = {
+    posts: 'posts', ai_diary: 'diaries', research_documents: 'research',
+    static_pages: 'pages', hub_curations: 'hub',
+};
+onTableChange(Object.keys(HOMEPAGE_SOURCES), async table => {
+    const source = table && HOMEPAGE_SOURCES[table];
+    // The pages loader reads the Redis list first; drop it so the reread sees the change.
+    if (!table || source === 'pages') await reportCache.clearPagesList();
+    homepageModels.invalidate(key => !source || key.startsWith(`${source}:`));
+});
 const excerptHtml = content => truncateHtml(sanitizeBasic(content), 200);
 
 

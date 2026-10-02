@@ -45,6 +45,12 @@ module.exports = {
     setPagesList: (data, lang = 'ko') =>
         setJson(`report:pages_list:${safeLang(lang)}`, data, LIST_TTL, 'report-cache pages list'),
 
+    async clearPagesList() {
+        try {
+            if (redis.isReady) await redis.del(['report:pages_list:ko', 'report:pages_list:en']);
+        } catch {}
+    },
+
     async clearAll() {
         try {
             if (!redis.isReady) return;

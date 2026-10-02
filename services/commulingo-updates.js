@@ -1,7 +1,12 @@
 const { createPublicModelCache } = require('../utils/public-model-cache');
 const { sanitizeBasic } = require('../utils/sanitize');
 const { truncateHtml } = require('../utils/truncate-html');
+const { onTableChange } = require('../utils/db-change-listener');
 const previews = createPublicModelCache();
+// Dictionary rows are read from the DB here; people and documents come from
+// in-memory snapshots, so their keys follow the snapshot object instead.
+onTableChange(['commulingo_history_events', 'commulingo_terms'],
+    () => previews.invalidate(key => key.startsWith('dictionary:')));
 
 const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
@@ -75,8 +80,7 @@ function recentCourse(lang) {
 
 const UPDATES_PER_KIND = 10;
 
-async function recentPeople(lang) {
-    const { data, source } = await loadCommuLingoPeople();
+function recentPeople(lang, { data, source }) {
     if (source === 'empty') throw new Error('People snapshot unavailable');
     return data.people
         .map(person => ({
@@ -126,19 +130,24 @@ async function recentDictionaryItems(lang) {
     return rows.map(row => dictionaryItem(row, lang));
 }
 
-function cachedItems(type, lang, load) {
+function cachedItems(type, lang, load, version) {
     return previews.get(`${type}:${lang}`, async () => (await load()).map(item => ({
         ...item,
         excerptHtml: truncateHtml(sanitizeBasic(item.summary), 200),
-    })));
+    })), { version });
 }
 
 async function loadCommuLingoUpdateGroups(lang = 'ko') {
     const safeLang = lang === 'en' ? 'en' : 'ko';
+    // Snapshot reads stay inside each kind's own failure: one broken source
+    // marks only that group unavailable.
+    const people = await loadCommuLingoPeople().catch(() => ({ data: null, source: 'empty' }));
+    let docs = null;
+    try { docs = listCommuLingoDocs(); } catch { /* recentDocs reports it */ }
     const [peopleResult, dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
-        cachedItems('person', safeLang, () => recentPeople(safeLang)),
+        cachedItems('person', safeLang, () => recentPeople(safeLang, people), people.data),
         cachedItems('dictionary', safeLang, () => recentDictionaryItems(safeLang)),
-        cachedItems('doc', safeLang, () => recentDocs(safeLang, UPDATES_PER_KIND)),
+        cachedItems('doc', safeLang, () => recentDocs(safeLang, UPDATES_PER_KIND), docs),
         cachedItems('course', safeLang, () => recentCourse(safeLang)),
     ]);
 

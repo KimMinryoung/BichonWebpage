@@ -35,6 +35,7 @@ function loadService(rows, people = [{
             id: 'course', title: { ko: '학습' }, releasedAt: '2026-09-05',
         }) },
         '../data/commulingo/localize': require('../data/commulingo/localize'),
+        '../utils/db-change-listener': { onTableChange: () => {} },
         '../data/commulingo/people-store': { loadCommuLingoPeople: async () => ({ data: { people } }) },
     };
     const sandbox = {

@@ -142,6 +142,8 @@ const server = app.listen(env.PORT, () => {
     // Same for the dictionary entry → course chapter index (seconds of CPU,
     // built in yielding steps).
     require('./data/commulingo/book-page').warmCourseChapters();
+    // Table-change notifications refresh the in-memory public previews.
+    require('./utils/db-change-listener').startDbChangeListener(require('./config/database'));
 });
 server.on('error', (err) => {
     console.error('[server] listen failed:', err.code || '', err.message);
