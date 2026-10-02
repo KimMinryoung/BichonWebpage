@@ -51,5 +51,5 @@
   - 이름: 빌헬름 2세·엔베르 파샤는 카를 1세처럼 이름 전체를 family에 둔다. 무스타파 케말 아타튀르크는 given 「무스타파 케말」에 linkExpressions 「무스타파 케말」/Mustafa Kemal·「케말 아타튀르크」, 맨 「케말」은 넣지 않았다. 빌헬름 2세 별칭에 맨 「카이저」를 넣지 않았다(야코프 카이저 대기). 엔베르는 citizenship·origin `turkey`(오스만 코드 없음), 출신 label에 아버지 가가우즈계 또는 알바니아계·어머니 타타르계를 남겼다.
   - 관계: 1차 세계대전 6행(빌헬름 2세·루덴도르프·엔베르 leader/central-powers, 윌슨·포슈 leader/entente, 케말 executor/central-powers; sort_order 1로 힌덴부르크 옆), 여파 8행(4거두 셋·케말·레너·슈트레제만 leader, 포슈·루덴도르프 participant). 사람 링크 표현은 링크 검토 대상(term·event·doc)이 아니어서 검토 파일은 없다.
   - 입장 모음: 마이그레이션 249(자유주의·공화주의 4, 비볼셰비키 사회주의 레너, 왕정 빌헬름 2세, 반혁명 루덴도르프, 민족주의 케말·엔베르; 포슈는 비움).
-  - **남은 일:** 사건 관계 반영(컨테이너에 스펙 복사 → `apply-history-events.js --production` dry run에서 두 사건 unchanged·missingPeople 확인 → `--apply --backup=/tmp/wwip/before-20261002.json`), `scripts/apply-migration scripts/migrations/249_commulingo_wwi_people_positions.sql`, 인물 감사 4종과 사건 페이지 오링크 확인. 이 세션의 권한 분류기가 컨테이너 쓰기·읽기를 막아 하지 못했다.
+  - 반영(2026-10-02): `apply-history-events.js`로 관계 14행 추가(두 사건 unchanged, 관계 수 269·28, 컨테이너 백업 `/tmp/wwip/people-links-before-20261002.json`), 마이그레이션 249 적용(9행). 인물 감사 4종·`audit-event-sides`·`audit-event-locations` 통과. `audit-family-name-collisions`의 새 이름 적중(루덴도르프·아타튀르크·포슈 선)은 모두 맞는 대상이고, 「레너드 H. 페루츠」의 「레너」는 실제 페이지에서 링크되지 않음을 확인했다.
   - 범위 밖 발견: 운영 DB에서 클레망소(`georges-clemenceau`)는 world-war-i 사건에 연결되어 있지 않다(여파에만 있음).
