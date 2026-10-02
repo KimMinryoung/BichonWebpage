@@ -217,9 +217,15 @@ if ! wait_healthy 3000; then
     exit 1
 fi
 log "Frontend is healthy."
+primary_up=$SECONDS
 for path in / /commulingo /commulingo/events/nazi-soviet-pact /commulingo/people/stalin /commulingo/terms/nep /reports; do
     warm "$path"
 done
+# nginx marks the primary unavailable for fail_timeout (10 s default) after
+# its last refused connection and sends everything to the standby meanwhile.
+# Removing the standby inside that window produced 502s (16:09:39-44 on
+# 2026-10-02), so wait it out from the moment the primary answers.
+while (( SECONDS - primary_up < 12 )); do sleep 1; done
 remove_standby
 
 # 7. Cleanup
