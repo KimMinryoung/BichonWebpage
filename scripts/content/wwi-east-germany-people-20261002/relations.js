@@ -1,7 +1,8 @@
 // Event links for the people registered from the queue in
 // dev_docs/commulingo-wwi-east-germany-people-queue-20261002.md, keyed by event.
 // rows: [personId, relationKind, relationKo, relationEn, noteKo, noteEn, side?]
-// sort_order is set per event in build.js. Events with sides take no opponent.
+// sort_order is set per event in build.js. A person registered earlier (EXISTING
+// in build.js) may be linked too. Events with sides take no opponent.
 module.exports = {
     'world-war-i': [
         ['wilhelm-ii', 'leader', '독일 황제', 'German Emperor', '1918년 11월 9일 공화국이 선포되면서 퇴위했다.', 'Abdicated as the republic was proclaimed on 9 November 1918.', 'central-powers'],
@@ -9,6 +10,7 @@ module.exports = {
         ['erich-ludendorff', 'leader', '독일군 병참총감', 'First Quartermaster General of the German army', '1916년 8월 힌덴부르크와 함께 참모본부를 넘겨받았고, 1918년 3월 미하엘 작전으로 춘계 공세를 열었다.', 'Took over the General Staff with Hindenburg in August 1916 and opened the spring offensive with Operation Michael in March 1918.', 'central-powers'],
         ['ferdinand-foch', 'leader', '연합군 총사령관', 'Allied supreme commander', '1918년 3월부터 연합군을 지휘했고, 춘계 공세가 멎은 7월부터 반격을 이끌었다.', 'Commanded the Allied armies from March 1918 and led the counter-attack after the spring offensive stalled in July.', 'entente'],
         ['enver-pasha', 'leader', '오스만 제국 육군장관', 'Ottoman war minister', '1914년 12월 사르카미시에서 10만 병력의 86%를 잃었다.', 'Lost 86% of his 100,000-strong force at Sarıkamış in December 1914.', 'central-powers'],
+        ['georges-clemenceau', 'leader', '프랑스 총리', 'French prime minister', '전쟁이 가장 어려웠던 1917년 11월 총리가 되어 독일에 대한 완전한 승리를 요구했다.', 'Became prime minister in November 1917, at one of the darkest hours of the war, and demanded total victory over Germany.', 'entente'],
         ['mustafa-kemal-ataturk', 'executor', '오스만군 지휘관', 'Ottoman commander', '갈리폴리 전투에서 이름을 떨쳤고, 뒤에 튀르키예 공화국을 세웠다.', 'Rose to prominence at Gallipoli and later founded the Republic of Turkey.', 'central-powers'],
     ],
     'world-war-i-aftermath-1918-1923': [

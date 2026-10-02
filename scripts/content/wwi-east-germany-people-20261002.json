@@ -1787,6 +1787,16 @@
           "side": "central-powers"
         },
         {
+          "person_id": "georges-clemenceau",
+          "sort_order": 1,
+          "relation_kind": "leader",
+          "relation_ko": "프랑스 총리",
+          "relation_en": "French prime minister",
+          "note_ko": "전쟁이 가장 어려웠던 1917년 11월 총리가 되어 독일에 대한 완전한 승리를 요구했다.",
+          "note_en": "Became prime minister in November 1917, at one of the darkest hours of the war, and demanded total victory over Germany.",
+          "side": "entente"
+        },
+        {
           "person_id": "mustafa-kemal-ataturk",
           "sort_order": 1,
           "relation_kind": "executor",

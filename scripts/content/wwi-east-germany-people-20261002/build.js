@@ -12,6 +12,8 @@ const { validate } = require('../../apply-history-events');
 const BATCH = 'wwi-east-germany-people-20261002';
 const people = ['wwi-a', 'wwi-b', 'gdr-a', 'gdr-b'].flatMap(slug => require(`./people-${slug}`));
 const relations = require('./relations');
+// Cards registered by other batches that are linked here (Clemenceau: hungary-interwar-20261001).
+const EXISTING = ['georges-clemenceau'];
 
 const seen = new Set();
 for (const { id } of people) {
@@ -33,7 +35,7 @@ crisis.fields.relations = { ...crisis.fields.relations, related: [...crisis.fiel
 const events = [war, aftermath, gdr, uprising, crisis].map(e => ({
     ...e, expected: null,
     people: relations[e.id].map(([person_id, relation_kind, relation_ko, relation_en, note_ko, note_en, side], i) => {
-        if (!seen.has(person_id)) throw new Error(`${e.id}: ${person_id} has no card in this batch`);
+        if (!seen.has(person_id) && !EXISTING.includes(person_id)) throw new Error(`${e.id}: ${person_id} has no card in this batch`);
         const sort_order = e.id === 'world-war-i' ? 1 : e.people.length + i;
         return { person_id, sort_order, relation_kind, relation_ko, relation_en, note_ko, note_en, ...(side ? { side } : {}) };
     }),
