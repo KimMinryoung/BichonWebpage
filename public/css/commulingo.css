@@ -5255,6 +5255,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
    colour rather than --link: the row is the control, and the olive link mix
    sinks into the dark canvas at list size. */
 .commu-event-relations { margin: 1.4rem 0 0; background: var(--bg-surface); }
+.commu-event-relations + .commu-event-relations { margin-top: .8rem; }
 .commu-event-relations-head {
     font-size: .82rem;
     letter-spacing: .04em;

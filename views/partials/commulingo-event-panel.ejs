@@ -16,10 +16,15 @@
 var sections = p.event.bodySections || [];
 %>
         <% if (p.event.relatedEvents && p.event.relatedEvents.length) {
+            /* Parent, children and siblings share the event's period; hand-picked
+               related ids may come from any era, so they get their own heading. */
             var relParent = p.event.relatedEvents.filter(function(e) { return e.kind === 'parent'; })[0];
-            var relRows = p.event.relatedEvents.filter(function(e) { return e.kind !== 'parent'; });
+            var relRows = p.event.relatedEvents.filter(function(e) { return e.kind !== 'parent' && e.kind !== 'related'; });
+            var relLinks = p.event.relatedEvents.filter(function(e) { return e.kind === 'related'; });
             var relLabel = en ? 'Documents from this period' : '이 시기의 문서';
+            var relLinksLabel = en ? 'Related documents' : '관련 문서';
         %>
+        <% if (relParent || relRows.length) { %>
         <nav class="commu-event-relations" aria-label="<%= relLabel %>">
             <h2 class="commu-event-relations-head"><%= relLabel %></h2>
             <div class="commu-event-relations-box">
@@ -32,13 +37,26 @@ var sections = p.event.bodySections || [];
                     <% if (entry.kind === 'self') { %>
                     <li class="is-current" aria-current="page"><span class="commu-event-relations-title"><%= entry.title %></span><span class="commu-event-relations-tag"><%= en ? 'This page' : '현재 문서' %></span><span class="commu-event-relations-period"><%= entry.period %></span></li>
                     <% } else { %>
-                    <li><a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><span class="commu-event-relations-title"><%= entry.title %></span><% if (entry.kind === 'related') { %><span class="commu-event-relations-tag"><%= en ? 'Related' : '관련 문서' %></span><% } %><span class="commu-event-relations-period"><%= entry.period %></span></a></li>
+                    <li><a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><span class="commu-event-relations-title"><%= entry.title %></span><span class="commu-event-relations-period"><%= entry.period %></span></a></li>
                     <% } %>
                     <% }) %>
                 </ol>
                 <% } %>
             </div>
         </nav>
+        <% } %>
+        <% if (relLinks.length) { %>
+        <nav class="commu-event-relations" aria-label="<%= relLinksLabel %>">
+            <h2 class="commu-event-relations-head"><%= relLinksLabel %></h2>
+            <div class="commu-event-relations-box">
+                <ul class="commu-event-relations-list">
+                    <% relLinks.forEach(function(entry) { %>
+                    <li><a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><span class="commu-event-relations-title"><%= entry.title %></span><span class="commu-event-relations-period"><%= entry.period %></span></a></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </nav>
+        <% } %>
         <% } %>
         <% if (sections.length >= 3) { %>
         <nav class="commu-event-toc" aria-label="<%= strings.commuLingoViews.eventPanel.contents %>">
