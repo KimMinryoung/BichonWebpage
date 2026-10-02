@@ -10,7 +10,7 @@ const path = require('path');
 const { validate } = require('../../apply-history-events');
 
 const BATCH = 'wwi-east-germany-people-20261002';
-const people = ['wwi-a', 'wwi-b'].flatMap(slug => require(`./people-${slug}`));
+const people = ['wwi-a', 'wwi-b', 'gdr-a', 'gdr-b'].flatMap(slug => require(`./people-${slug}`));
 const relations = require('./relations');
 
 const seen = new Set();
@@ -21,16 +21,21 @@ for (const { id } of people) {
 
 const { event: war } = require('../world-war-i-20261002/event-war');
 const { event: aftermath } = require('../world-war-i-20261002/event-aftermath');
-// Migration 247 added the aftermath overview to world-war-i's related list.
+const { event: gdr } = require('../east-germany-20261002/event-1945');
+const { event: uprising } = require('../east-germany-20261002/event-1953');
+const { event: crisis } = require('../eastern-europe-1953-1956-20261002/event');
+// Migration 247 added the aftermath overview to world-war-i's related list and
+// soviet-zone-gdr-1945-1949 to the 1953–1956 overview's.
 war.fields.relations = { related: [...require('../world-war-i-20261002/before-world-war-i.json').relations.related, 'world-war-i-aftermath-1918-1923'] };
+crisis.fields.relations = { ...crisis.fields.relations, related: [...crisis.fields.relations.related, 'soviet-zone-gdr-1945-1949'] };
 // New links sit after the stored ones, except on world-war-i, whose 263 stored
 // links put the leaders first (Hindenburg is 1): the new leaders join them there.
-const firstSort = { 'world-war-i': 1, 'world-war-i-aftermath-1918-1923': aftermath.people.length };
-const events = [war, aftermath].map(e => ({
+const events = [war, aftermath, gdr, uprising, crisis].map(e => ({
     ...e, expected: null,
     people: relations[e.id].map(([person_id, relation_kind, relation_ko, relation_en, note_ko, note_en, side], i) => {
         if (!seen.has(person_id)) throw new Error(`${e.id}: ${person_id} has no card in this batch`);
-        return { person_id, sort_order: firstSort[e.id] + (e.id === 'world-war-i' ? 0 : i), relation_kind, relation_ko, relation_en, note_ko, note_en, ...(side ? { side } : {}) };
+        const sort_order = e.id === 'world-war-i' ? 1 : e.people.length + i;
+        return { person_id, sort_order, relation_kind, relation_ko, relation_en, note_ko, note_en, ...(side ? { side } : {}) };
     }),
 }));
 validate({ id: BATCH, events });

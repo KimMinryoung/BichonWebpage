@@ -25,16 +25,16 @@
 | ✓ 엔베르 파샤 | Enver Pasha | 1차 세계대전 | leader / central-powers |
 | ✓ 카를 레너 | Karl Renner | 여파 | leader |
 | ✓ 구스타프 슈트레제만 | Gustav Stresemann | 여파 | leader |
-| 루돌프 헤른슈타트 | Rudolf Herrnstadt | 6월 봉기, 1953–56 개요 | participant / regime |
-| 빌헬름 차이서 | Wilhelm Zaisser | 6월 봉기, 1953–56 개요 | executor / regime |
-| 막스 페히너 | Max Fechner | 동독 1945–49, 6월 봉기 | participant / regime |
-| 에른스트 볼베버 | Ernst Wollweber | 6월 봉기 | executor / regime |
-| 안톤 아커만 | Anton Ackermann | 동독 1945–49 | participant |
-| 쿠르트 슈마허 | Kurt Schumacher | 동독 1945–49 | opponent |
-| 야코프 카이저 | Jakob Kaiser | 동독 1945–49 | opponent |
-| 오토 누슈케 | Otto Nuschke | 동독 1945–49 | participant |
-| 헤르만 마테른 | Hermann Matern | 동독 1945–49, 6월 봉기 | participant / regime |
-| 세르게이 튤파노프 | Sergei Tiulpanov | 동독 1945–49 | executor |
+| ✓ 루돌프 헤른슈타트 | Rudolf Herrnstadt | 6월 봉기, 1953–56 개요 | participant / regime |
+| ✓ 빌헬름 차이서 | Wilhelm Zaisser | 6월 봉기, 1953–56 개요 | executor / regime |
+| ✓ 막스 페히너 | Max Fechner | 동독 1945–49, 6월 봉기 | participant / regime |
+| ✓ 에른스트 볼베버 | Ernst Wollweber | 6월 봉기 | executor / regime |
+| ✓ 안톤 아커만 | Anton Ackermann | 동독 1945–49 | participant |
+| ✓ 쿠르트 슈마허 | Kurt Schumacher | 동독 1945–49 | opponent |
+| ✓ 야코프 카이저 | Jakob Kaiser | 동독 1945–49 | opponent |
+| ✓ 오토 누슈케 | Otto Nuschke | 동독 1945–49 | participant |
+| ✓ 헤르만 마테른 | Hermann Matern | 동독 1945–49, 6월 봉기 | participant / regime |
+| ✓ 세르게이 튤파노프 | Sergei Tiulpanov | 동독 1945–49 | executor |
 
 ## B — 한두 번 나오는 사람 (카드만, 사건 연결은 선택)
 
@@ -53,3 +53,8 @@
   - 입장 모음: 마이그레이션 249(자유주의·공화주의 4, 비볼셰비키 사회주의 레너, 왕정 빌헬름 2세, 반혁명 루덴도르프, 민족주의 케말·엔베르; 포슈는 비움).
   - 반영(2026-10-02): `apply-history-events.js`로 관계 14행 추가(두 사건 unchanged, 관계 수 269·28, 컨테이너 백업 `/tmp/wwip/people-links-before-20261002.json`), 마이그레이션 249 적용(9행). 인물 감사 4종·`audit-event-sides`·`audit-event-locations` 통과. `audit-family-name-collisions`의 새 이름 적중(루덴도르프·아타튀르크·포슈 선)은 모두 맞는 대상이고, 「레너드 H. 페루츠」의 「레너」는 실제 페이지에서 링크되지 않음을 확인했다.
   - 범위 밖 발견: 운영 DB에서 클레망소(`georges-clemenceau`)는 world-war-i 사건에 연결되어 있지 않다(여파에만 있음).
+- 2026-10-02 2묶음(✓ 표시 동독 10명): 카드 등록(edit 21132–21141), 정본 `people-gdr-a.js`·`people-gdr-b.js`, 근거 인용 191개(영·독·러 위키백과) 원문 대조. `build.js`는 이제 사건 5편을 다루고, 등록은 새 id만 골라 넣었다(1묶음 재upsert 안 함).
+  - 관계 14행: 동독 1945–49 7행(튤파노프 executor, 슈마허·카이저 opponent, 나머지 participant), 6월 봉기 5행(모두 regime), 1953–56 개요 2행. 관계 수 24·21·25. 아커만은 6월 봉기 본문에 나오지 않아 연결하지 않았다(독일어판은 1953년 차이서 지지로 해임됐다고 함).
+  - 입장 모음 250(공산주의 7, 비볼셰비키 사회주의 슈마허, 보수·기민 카이저·누슈케). 오링크 차단 251: 맨 「카이저」/kaiser는 대개 황제라 링크하지 않음(야코프 카이저는 전체 이름으로만), 「힐베르트와 아커만」/Hilbert and Ackermann(논리학자). 실제 페이지에서 확인.
+  - 판단: 튤파노프 사망 연도는 러·독판의 1984(영어판 1987). 출신 배경은 근거 부족으로 비움. 페히너 카드에는 사회주의통일당 부의장, 마테른 카드에는 1946년 몰수 주민투표가 출처에 없어 넣지 않았다(사건 관계 메모는 사건 본문 근거).
+  - 감사: 인물 감사 4종·`audit-event-sides` 통과.

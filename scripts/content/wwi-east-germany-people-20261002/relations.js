@@ -21,4 +21,24 @@ module.exports = {
         ['ferdinand-foch', 'participant', '연합군 총사령관', 'Allied supreme commander', '독일에 대한 휴전 조건을 작성했고, 베르사유 조약이 독일에 너무 관대하다고 비판했다.', 'Drew up the armistice terms for Germany and criticised the Treaty of Versailles as too lenient.'],
         ['erich-ludendorff', 'participant', '맥주홀 폭동의 공동 지도자', 'Co-leader of the Beer Hall Putsch', '1923년 11월 히틀러와 함께 뮌헨 맥주홀 폭동을 이끌었다.', 'Led the Munich Beer Hall Putsch with Hitler in November 1923.'],
     ],
+    'soviet-zone-gdr-1945-1949': [
+        ['sergei-tiulpanov', 'executor', '소련 군정청 선전국장', 'Head of the SMAD Propaganda Administration', '시민 정당의 지부를 여러 핑계로 묶어 두라고 비밀리에 지시했고, 네이마크는 그를 사회주의통일당을 「새로운 형태의 당」으로 만든 소련 측 인물로 꼽는다.', 'Secretly instructed SMAD offices to limit the bourgeois parties’ local groups on formal pretexts; Naimark identifies him as the Soviet official who shaped the SED into “a party of a new type”.'],
+        ['anton-ackermann', 'participant', '작센 파견 공산당 그룹 지도자', 'Leader of the KPD group sent to Saxony', '1945년 6월 11일 공산당 호소문을 써서 소비에트 체제 대신 「반파시즘 민주공화국」을 목표로 내걸었다.', 'Wrote the KPD appeal of 11 June 1945, which set “an anti-fascist, democratic republic” rather than the Soviet system as the aim.'],
+        ['hermann-matern', 'participant', '작센 공산당 지도자', 'Saxon KPD leader', '대기업 몰수를 주민투표에 부치자고 제안했다.', 'Proposed putting the expropriation to a popular vote.'],
+        ['max-fechner', 'participant', '사회주의통일당 부의장', 'Deputy chairman of the SED', '사회민주당 출신으로 울브리히트와 함께 통합당의 부의장이 되었다.', 'A Social Democrat, he became deputy chairman of the merged party alongside Ulbricht.'],
+        ['kurt-schumacher', 'opponent', '서방 점령지구 사회민주당 지도자', 'SPD leader in the western zones', '공산당과 사회민주당의 통합에 반대했다.', 'Opposed the merger of the Communists and Social Democrats.'],
+        ['jakob-kaiser', 'opponent', '소련 점령지구 기독교민주연합 대표', 'CDU leader in the Soviet zone', '공산당을 비판했다는 이유로 1947년 12월 에른스트 레머와 함께 군정청에 의해 물러났다.', 'Removed by SMAD with Ernst Lemmer in December 1947 for criticising the Communists.'],
+        ['otto-nuschke', 'participant', '기독교민주연합 대표', 'CDU leader', '카이저의 뒤를 이은 고분고분한 후임이었다.', 'Kaiser’s more pliant successor.'],
+    ],
+    'east-german-uprising-1953': [
+        ['rudolf-herrnstadt', 'participant', '《노이에스 도이칠란트》 편집장', 'Editor-in-chief of Neues Deutschland', '새 노선 공보문을 썼고 7월 정치국에서 집단지도 방안을 내놓았으나, 베리야와 이어진 「분파」로 몰려 숙청되었다.', 'Wrote the New Course communiqué and proposed collective leadership in the July Politburo, but was purged as a “faction” linked to Beria.', 'regime'],
+        ['wilhelm-zaisser', 'executor', '국가보안부 장관', 'Minister of State Security', '헤른슈타트와 함께 당 개편을 밀어붙였다가 7월 장관직을 잃고 정치국에서 쫓겨났다.', 'Pressed with Herrnstadt for a reorganisation of the party, then lost his ministry and his Politburo seat in July.', 'regime'],
+        ['max-fechner', 'participant', '법무장관', 'Minister of Justice', '파업 노동자 처벌을 누그러뜨리려 하다 7월 14일 해임되어 투옥되었다.', 'Tried to moderate the prosecution of striking workers and was dismissed on 14 July and imprisoned.', 'regime'],
+        ['ernst-wollweber', 'executor', '국가보안청장', 'Head of the State Secretariat for State Security', '내무부 산하로 격하된 국가보안 기구를 넘겨받았다.', 'Took over the state security apparatus after it was downgraded to a State Secretariat within the Interior Ministry.', 'regime'],
+        ['hermann-matern', 'participant', '정치국원', 'Politburo member', '7월 7~8일 정치국 회의에서 호네커와 함께 울브리히트 편에 섰다.', 'Sided with Ulbricht, together with Honecker, at the Politburo session of 7–8 July.', 'regime'],
+    ],
+    'eastern-europe-crisis-1953-1956': [
+        ['rudolf-herrnstadt', 'participant', '동독 반대파', 'East German oppositionist', '1953년 7월 말 차이서와 함께 정치국에서 쫓겨났다.', 'Expelled from the Politburo with Zaisser at the end of July 1953.'],
+        ['wilhelm-zaisser', 'executor', '동독 국가보안부 장관', 'East German Minister of State Security', '1953년 7월 말 헤른슈타트와 함께 정치국에서 쫓겨났다.', 'Expelled from the Politburo with Herrnstadt at the end of July 1953.'],
+    ],
 };
