@@ -3,6 +3,7 @@ const { localize } = require('./localize');
 const { getLinkIndexes, createLinker, clientPersonLinkPayload } = require('./linkify');
 const { blockedPhrases } = require('./link-blocklist');
 const { WORD_CHAR } = require('./people-linkify');
+const { snapshot, changedNeedles } = require('./link-index-diff');
 
 // Book and lesson page data: the memoized per-book payload (decision-history
 // links, linked chapter prose, dictionary chips) and the lesson linkifier.
@@ -210,29 +211,61 @@ function countMentions(text, phrase, lang) {
     return count;
 }
 
+// The previous build per language, so a new link-index generation (a
+// dictionary edit) re-links only the passages that contain a needle of what
+// changed (link-index-diff, the same test the report cache uses) and recounts
+// search-only expressions only where that list or the chapter text changed.
+// Passages are keyed by content, so an edited lesson is simply new text.
+const previousCourseBuild = {}; // lang -> { snapshot, passages, chapters, searchKey }
+
 async function buildCourseChapterIndex(indexes, catalog, lang) {
     const byEntry = new Map(); // `${kind}:${id}` -> [{ ..., hits }]
     const searchOnly = searchOnlyExpressions(indexes, lang);
+    const searchKey = JSON.stringify(searchOnly);
+    const previous = previousCourseBuild[lang];
+    const current = snapshot(indexes);
+    // null: no previous build or a change that cannot be traced to literals.
+    const needles = previous && current ? changedNeedles(previous.snapshot, current) : null;
+    const passages = new Map(); // block strings + text -> { lower, found }
+    const chapters = new Map(); // chapter text -> [[key, count]]
     for (const collection of (catalog && catalog.collections) || []) {
+        const blockStrings = collection.noAutoLink || [];
+        const blockKey = JSON.stringify(blockStrings);
         for (const chapter of collection.chapters || []) {
             const lesson = (chapter.lessons || [])[0];
             if (!lesson) continue;
             await new Promise(resolve => setImmediate(resolve));
             const hits = new Map();
-            const passages = chapterPassages(chapter, lang);
-            const chapterText = passages.join('\n');
-            searchOnly.forEach(({ key, text }) => {
-                const count = countMentions(chapterText, text, lang);
-                if (count >= SEARCH_ONLY_MIN_HITS) hits.set(key, (hits.get(key) || 0) + count);
-            });
-            for (const passage of passages) {
-                // Yield per passage, not per chapter: one long chapter took up
-                // to 7 s of uninterrupted CPU and stalled every request meanwhile.
-                await new Promise(resolve => setImmediate(resolve));
-                const linked = passageEntries(indexes, collection, passage);
+            const chapterPassageList = chapterPassages(chapter, lang);
+            const chapterText = chapterPassageList.join('\n');
+            let counts = previous && previous.searchKey === searchKey ? previous.chapters.get(chapterText) : null;
+            if (!counts) {
+                counts = [];
+                searchOnly.forEach(({ key, text }) => {
+                    const count = countMentions(chapterText, text, lang);
+                    if (count >= SEARCH_ONLY_MIN_HITS) counts.push([key, count]);
+                });
+            }
+            chapters.set(chapterText, counts);
+            counts.forEach(([key, count]) => hits.set(key, (hits.get(key) || 0) + count));
+            for (const passage of chapterPassageList) {
+                const passageKey = blockKey + '\u0000' + passage;
+                let linked = passages.get(passageKey) || (previous && previous.passages.get(passageKey));
+                if (linked && (!needles || needles.some(needle => linked.lower.includes(needle)))) linked = null;
+                if (!linked) {
+                    // Yield per passage, not per chapter: one long chapter took
+                    // up to 7 s of uninterrupted CPU and stalled every request.
+                    await new Promise(resolve => setImmediate(resolve));
+                    const found = passageEntries(indexes, collection, passage);
+                    linked = {
+                        lower: passage.normalize('NFC').toLowerCase(),
+                        found: Object.fromEntries(['people', 'terms', 'events'].map(kind => [kind, found[kind].map(entry => entry.id)])),
+                    };
+                }
+                passages.set(passageKey, linked);
                 for (const kind of ['people', 'terms', 'events']) {
-                    linked[kind].forEach(entry => {
-                        const key = kind + ':' + entry.id;
+                    linked.found[kind].forEach(id => {
+                        const key = kind + ':' + id;
                         hits.set(key, (hits.get(key) || 0) + 1);
                     });
                 }
@@ -251,6 +284,7 @@ async function buildCourseChapterIndex(indexes, catalog, lang) {
         }
     }
     byEntry.forEach(list => list.sort((a, b) => b.hits - a.hits));
+    if (current) previousCourseBuild[lang] = { snapshot: current, passages, chapters, searchKey };
     return byEntry;
 }
 
@@ -358,4 +392,4 @@ async function linkifyLessonPayload(lesson) {
     return lesson;
 }
 
-module.exports = { bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc, warmCourseChapters };
+module.exports = { bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc, warmCourseChapters, buildCourseChapterIndex };

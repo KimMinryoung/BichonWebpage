@@ -175,11 +175,15 @@ function standardizedFor(data, catalog, lang) {
     let entry = stdMemo.byLang[lang];
     if (!entry) {
         const standardized = normalizeCommuLingoPeople(data, { lang, catalog });
-        // One index over all people, with no excludeId: self-links are dropped
-        // at replace time so the same index serves every person's page.
+        let personIndex = null;
         entry = stdMemo.byLang[lang] = {
             standardized,
-            personIndex: buildPersonLinkIndex(standardized.people, { lang }),
+            get personIndexReady() { return personIndex !== null; },
+            // One index over all people, with no excludeId: self-links are
+            // dropped at replace time so the same index serves every person's
+            // page. Built on first use: callers that only want the
+            // standardized people never pay for it.
+            get personIndex() { return personIndex || (personIndex = buildPersonLinkIndex(standardized.people, { lang })); },
         };
     }
     return entry;
@@ -212,8 +216,20 @@ async function getLinkIndexes(lang) {
     }
     let entry = indexMemo.byLang[safeLang];
     if (!entry) {
-        const { standardized, personIndex } = standardizedFor(loaded.data, catalog, safeLang);
-        entry = indexMemo.byLang[safeLang] = {
+        const memo = indexMemo;
+        const people = standardizedFor(loaded.data, catalog, safeLang);
+        // Normalizing the people, building their index and building the
+        // other kinds each take 0.05-0.15 s of CPU; let waiting requests
+        // through between them. Another caller may finish this language meanwhile.
+        if (!people.personIndexReady) {
+            await new Promise(resolve => setImmediate(resolve));
+            if (memo.byLang[safeLang]) return memo.byLang[safeLang];
+            void people.personIndex;
+            await new Promise(resolve => setImmediate(resolve));
+            if (memo.byLang[safeLang]) return memo.byLang[safeLang];
+        }
+        const { standardized, personIndex } = people;
+        entry = memo.byLang[safeLang] = {
             lang: safeLang,
             standardized,
             doc: buildDocLinkIndex(docs, { lang: safeLang, reviews }),
