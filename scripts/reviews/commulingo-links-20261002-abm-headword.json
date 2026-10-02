@@ -1,0 +1,62 @@
+{
+  "scope": "2026-10-02 abm-treaty 한국어 표제어 변경 뒤 한국어 표현 재검토; owner-requested",
+  "references": [
+    "scripts/content/abm-treaty-headword-20261002-term.js"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "abm-treaty",
+      "lang": "ko",
+      "text": "탄도탄 요격미사일 조약",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 표제어를 「ABM 조약」에서 위키백과 표기 「탄도탄 요격미사일 조약」으로 바꾸며(사용자 지시) 재검토: 새 표제어. 1972년 미소 ABM 조약만 가리키는 고유한 조약명이다."
+    },
+    {
+      "kind": "term",
+      "id": "abm-treaty",
+      "lang": "ko",
+      "text": "ABM 조약",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 표제어를 「ABM 조약」에서 위키백과 표기 「탄도탄 요격미사일 조약」으로 바꾸며(사용자 지시) 재검토: 옛 표제어로 별칭에 남김. 1972년 미소 ABM 조약의 통용 약칭이며 다른 조약과 겹치지 않는다."
+    },
+    {
+      "kind": "term",
+      "id": "abm-treaty",
+      "lang": "ko",
+      "text": "ABM 제한 조약",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 표제어를 「ABM 조약」에서 위키백과 표기 「탄도탄 요격미사일 조약」으로 바꾸며(사용자 지시) 재검토: 1972년 미소 ABM 조약의 정식 명칭 축약. 기존 승인 유지."
+    },
+    {
+      "kind": "term",
+      "id": "abm-treaty",
+      "lang": "ko",
+      "text": "대탄도미사일 조약",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 표제어를 「ABM 조약」에서 위키백과 표기 「탄도탄 요격미사일 조약」으로 바꾸며(사용자 지시) 재검토: 1972년 미소 ABM 조약의 다른 번역어. 기존 승인 유지."
+    },
+    {
+      "kind": "term",
+      "id": "abm-treaty",
+      "lang": "ko",
+      "text": "탄도탄요격미사일 조약",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 표제어를 「ABM 조약」에서 위키백과 표기 「탄도탄 요격미사일 조약」으로 바꾸며(사용자 지시) 재검토: 표제어를 붙여 쓴 표기. 기존 승인 유지."
+    },
+    {
+      "kind": "term",
+      "id": "abm-treaty",
+      "lang": "ko",
+      "text": "ABMT",
+      "role": "short",
+      "policy": "auto",
+      "note": "2026-10-02 표제어를 「ABM 조약」에서 위키백과 표기 「탄도탄 요격미사일 조약」으로 바꾸며(사용자 지시) 재검토: ABM 조약의 영문 약어. 기존 자동 연결 유지."
+    }
+  ]
+}
