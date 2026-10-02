@@ -1,4 +1,6 @@
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
 const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoPeople } = require('./people-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
@@ -585,27 +587,38 @@ function deckMeta(deck) {
     };
 }
 
-let cache = null; // { termsRef, peopleRef, eventsRef, categoriesRef, value }
+// Drill decks change little and a build costs about a second of uninterrupted
+// CPU, so they are rebuilt at most once a day: past that age the current decks
+// keep serving while a new set is built in the background. The decks are kept
+// on disk, so a restart reuses them instead of building on the first detail
+// page. A deck may therefore trail a dictionary edit by up to a day.
+const MAX_AGE_MS = Number.parseInt(process.env.COMMULINGO_DRILLS_MAX_AGE_MS || String(24 * 60 * 60 * 1000), 10);
+const CACHE_PATH = process.env.COMMULINGO_DRILLS_CACHE_PATH || path.join(__dirname, '../cache/drills.json');
+// Saved decks are reused only by the code that built them.
+const CODE_VERSION = crypto.createHash('sha256')
+    .update(['drills.js', 'people-standard.js', 'person-life-years.js', 'localize.js']
+        .map(name => fs.readFileSync(path.join(__dirname, name), 'utf8')).join('\0'))
+    .digest('hex').slice(0, 16);
 
-async function loadCommuLingoDrills() {
+let current = null;    // installed value
+let rebuilding = null; // in-flight build
+
+async function buildDecks() {
     const terms = await loadCommuLingoTerms();
     const peopleLoaded = await loadCommuLingoPeople();
     const peopleData = peopleLoaded.data || {};
     const events = await loadCommuLingoHistoryEvents();
     const categories = await loadTermCategories();
-    if (cache && cache.termsRef === terms && cache.peopleRef === peopleData
-        && cache.eventsRef === events && cache.categoriesRef === categories) {
-        return cache.value;
-    }
-
-    const decks = [
+    return [
         ...buildTermDecks(terms, categories),
         ...buildPeopleDecks(peopleData),
         buildEventSceneDeck(events),
         buildEventPeopleDeck(events),
         ...buildTimelineDecks(events),
     ].filter(Boolean).map(capDeck);
+}
 
+function install(decks, builtAt) {
     const byId = new Map(decks.map(deck => [deck.id, deck]));
     const version = crypto.createHash('sha256')
         .update(JSON.stringify(decks))
@@ -632,9 +645,53 @@ async function loadCommuLingoDrills() {
     }
     const metaById = new Map(groups.flatMap(group => group.decks.map(meta => [meta.id, { ...meta, groupLabel: group.label }])));
 
-    const value = { version, groups, byId, byHref, metaById };
-    cache = { termsRef: terms, peopleRef: peopleData, eventsRef: events, categoriesRef: categories, value };
-    return value;
+    return { version, groups, byId, byHref, metaById, builtAt };
+}
+
+function readSaved() {
+    try {
+        const saved = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
+        if (saved.codeVersion !== CODE_VERSION || !Array.isArray(saved.decks) || !Number.isFinite(saved.builtAt)) return null;
+        return install(saved.decks, saved.builtAt);
+    } catch (err) {
+        if (err.code !== 'ENOENT') console.error('[drills] saved decks skipped:', err.message);
+        return null;
+    }
+}
+
+async function writeSaved(decks, builtAt) {
+    const temporary = CACHE_PATH + '.' + crypto.randomUUID() + '.tmp';
+    try {
+        await fs.promises.mkdir(path.dirname(CACHE_PATH), { recursive: true });
+        await fs.promises.writeFile(temporary, JSON.stringify({ codeVersion: CODE_VERSION, builtAt, decks }), { mode: 0o600 });
+        await fs.promises.rename(temporary, CACHE_PATH);
+    } catch (err) {
+        console.error('[drills] save skipped:', err.message);
+        await fs.promises.unlink(temporary).catch(() => {});
+    }
+}
+
+function rebuild() {
+    if (!rebuilding) {
+        rebuilding = (async () => {
+            const builtAt = Date.now();
+            const decks = await buildDecks();
+            current = install(decks, builtAt);
+            await writeSaved(decks, builtAt);
+            return current;
+        })().finally(() => { rebuilding = null; });
+    }
+    return rebuilding;
+}
+
+async function loadCommuLingoDrills() {
+    if (!current) current = readSaved();
+    // Only the very first build (no saved decks) is awaited.
+    if (!current) return rebuild();
+    if (Date.now() - current.builtAt >= MAX_AGE_MS) {
+        rebuild().catch(err => console.error('[drills] rebuild failed:', err.message));
+    }
+    return current;
 }
 
 // 사전 경로 여러 개(짝 페이지는 용어+사건)에 걸린 덱 메타를 허브 순서로.

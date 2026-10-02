@@ -6,6 +6,7 @@
 - 첫 화면은 `commulingo-home.css`, 인물·사건·용어 목록은 `commulingo-lists.css`를 받는다. 원본 `commulingo.css`의 필요한 선택자를 순서대로 추출한 파일이다. 원본 변경 뒤 `node scripts/build-commulingo-list-css.js`를 실행한다. SSR smoke가 생성물 일치를 검사한다. 상세·지도·훈련은 전체 CSS를 유지한다.
 - 공개 홈 데이터와 최근 업데이트는 소스·언어별로 메모리에 캐시하고, 값이 생긴 뒤에는 방문자가 재조회를 기다리지 않는다. 갱신 시점은 데이터 변경이다: 원본 테이블(posts, ai_diary, research_documents, static_pages, hub_curations, commulingo_history_events, commulingo_terms)의 문장 단위 트리거(마이그레이션 256)가 `public_cache` 채널로 알리고 `utils/db-change-listener.js`가 해당 키만 뒤에서 다시 읽는다. 인물·문헌 미리보기는 메모리 스냅숏 객체가 바뀌면, 강좌는 배포 때 바뀐다. 알림 연결이 끊겼다 이어지면 전체를 다시 읽고, 10분 주기 재조회는 놓친 알림의 안전장치다. 실패한 재조회는 기존 값을 유지하고 30초 뒤 재시도한다. 세션·진도·CSRF·완성 HTML은 캐시하지 않는다. 새 원본 테이블을 홈에 추가하면 트리거와 `HOMEPAGE_SOURCES`에 함께 등록한다.
 - 링크 색인의 별칭 패턴과 인명 문맥 패턴은 서버에서 글자 트라이(`data/commulingo/literal-pattern.js`)로 찾는다. 긴 것부터 정렬한 정규식 대안과 결과가 같고(전 보고서·강좌 단락·인물·용어·사건 24,782건 비교, `smoke-commulingo-literal-pattern.js`), 보고서 링크 처리는 약 15배 빠르다. `COMMULINGO_REGEX_PATTERNS=1`이면 정규식으로 돌아간다. 브라우저는 정규식을 쓴다.
+- 훈련 덱(`data/commulingo/drills.js`)은 하루에 한 번만 다시 만든다. 하루가 지나면 기존 덱을 내주면서 뒤에서 새로 만들고, 결과를 `data/cache/drills.json`(개발: `drills.dev.json`)에 저장해 재시작 때 다시 계산하지 않는다(생성 0.7초 → 읽기 0.06초). 덱 생성 코드가 바뀌면 저장본을 쓰지 않는다. 사전 상세 페이지의 「퀴즈로 익히기」도 이 덱을 쓰므로 사전 수정은 최대 하루 늦게 반영된다. 주기는 `COMMULINGO_DRILLS_MAX_AGE_MS`로 바꾼다.
 - 요약 정제와 자르기는 공개 캐시 생성 때, 강좌 요약·인물 정렬·활동별 인원수는 스냅숏 참조가 바뀔 때 계산한다.
 
 공통 사이트 CSS는 `style.css` 원본에서 `node scripts/build-site-css.js`로 생성한다. `site-core.css`는 모든 페이지에서, 나머지 `site-*.css`는 해당 경로에서만 `ui.css` 전에 읽는다. CommuLingo 첫 화면은 사전 검색·인물 카드·기관 목록 규칙을 받지 않는다. 구버전 HTML용 원본 파일은 유지한다.
