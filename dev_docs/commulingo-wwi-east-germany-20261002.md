@@ -45,7 +45,9 @@
   4. `node runner.js east-germany-20261002.json --production --apply --backup=…`
   5. `scripts/apply-migration scripts/migrations/247_commulingo_wwi_aftermath_eastern_europe_1953_1956.sql` — 새 사건 4개가 없으면 거부. 제2인터내셔널·독일 혁명·헝가리 평의회·새 노선·포즈난·헝가리 혁명의 상위를 정하고 형제가 된 related를 지운다. 1953–56 개요의 related에 동독 1945–49를 더한다(등록 순서상 개요 배치에 넣을 수 없음).
   6. 제목 링크 승인 `scripts/reviews/commulingo-links-20261002-wwi-east-germany.json`(`review-commulingo-links.js`), `audit-event-locations`·`audit-event-sides`.
-- 2026-10-02 상태: 운영 DB 읽기 전용 사전 점검 통과(여파·1953–56 개요 ready, 1차 대전 개정 7열 ready). 운영 쓰기는 이 세션의 권한 분류기가 막아 사용자 실행으로 남겼다.
+- 2026-10-02 반영 완료: 사건 4편 생성, 1차 대전 7열 개정, 247 적용(롤백 시험으로 결과 확인 뒤), 제목 표현 10개 auto 승인. 컨테이너 `/tmp/wwi/` 백업은 같은 날 재배포로 사라졌다. 1차 대전 개정 전 행은 `before-world-war-i.json`에 남아 있고, 나머지는 신규 생성이다.
+- `audit-event-locations`가 베를린 표시점 둘씩(동독 1945의 아트미랄스팔라스트와 경제위원회 건물, 6월 봉기의 동베를린과 스탈린알레)이 0.05° 안이라 잡아, 경제위원회 건물과 스탈린알레를 위치 목록에서 빼고 연표 지도 점으로만 둔다(`scripts/content/east-germany-locations-20261002.json`, `apply-event-text-fixes.js`; 정본 event-*.js도 고침). 재감사·`audit-event-sides` 통과.
+- 브라우저 확인(Playwright, 데스크톱): 다섯 문서의 상위·형제·related 패널이 설계대로 나오고, 본문 인물 링크가 모두 새 탭으로 열린다.
 
 ## 후속 후보
 

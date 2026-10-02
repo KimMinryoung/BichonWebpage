@@ -356,15 +356,6 @@
           },
           {
             "label": {
-              "ko": "라이프치거 슈트라세의 경제위원회 건물",
-              "en": "Economic Commission building, Leipziger Straße"
-            },
-            "lat": 52.5096,
-            "lng": 13.3837,
-            "kind": "place"
-          },
-          {
-            "label": {
               "ko": "브루흐뮐레",
               "en": "Bruchmühle"
             },
@@ -1251,15 +1242,6 @@
             "lat": 52.52,
             "lng": 13.405,
             "kind": "main"
-          },
-          {
-            "label": {
-              "ko": "스탈린알레·슈트라우스베르거 광장",
-              "en": "Stalinallee / Strausberger Platz"
-            },
-            "lat": 52.5182,
-            "lng": 13.4279,
-            "kind": "place"
           },
           {
             "label": {

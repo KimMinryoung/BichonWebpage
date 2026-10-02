@@ -271,10 +271,10 @@ const event = buildEvent({
         ['1949.10.07', '독일민주공화국 수립', 'GDR founded', '인민평의회가 임시 인민의회로 바뀌어 헌법을 발효시켰다.', 'The People’s Council reconstituted itself as the Provisional People’s Chamber and put the constitution into force.', 'east-germany', P(52.5096, 13.3837, '라이프치거 슈트라세의 경제위원회 건물', 'Economic Commission building, Leipziger Straße')],
         ['1949.10.10', '군정청에서 통제위원회로', 'From SMAD to Control Commission', '추이코프가 카를스호르스트에서 행정 기능을 새 정부에 넘기고 군정청은 소련 통제위원회가 되었다.', 'At Karlshorst Chuikov handed administrative functions to the new government, and SMAD became the Soviet Control Commission.', ['east-germany', 'soviet'], P(52.4856, 13.5292, '베를린-카를스호르스트', 'Berlin-Karlshorst')],
     ],
+    // Within 0.05° of another Berlin marker (audit-event-locations): kept only as a timeline map point.
     locations: [
         ['베를린-카를스호르스트', 'Berlin-Karlshorst', 52.4856, 13.5292, 'main'],
         ['아트미랄스팔라스트', 'Admiralspalast', 52.5209, 13.3880, 'place'],
-        ['라이프치거 슈트라세의 경제위원회 건물', 'Economic Commission building, Leipziger Straße', 52.5096, 13.3837, 'place'],
         ['브루흐뮐레', 'Bruchmühle', 52.5408, 13.8278, 'place'],
         ['드레스덴', 'Dresden', 51.0504, 13.7373, 'place'],
         ['부헨발트', 'Buchenwald', 51.0222, 11.2481, 'place'],

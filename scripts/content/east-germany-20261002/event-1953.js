@@ -270,9 +270,9 @@ const event = buildEvent({
         ['1953.07.26', '헤른슈타트·차이서 숙청', 'Herrnstadt and Zaisser purged', '제15차 중앙위원회 총회가 두 사람을 정치국과 중앙위원회에서 몰아냈다.', 'The Central Committee’s 15th plenum removed both from the Politburo and the Central Committee.', 'east-germany'],
         ['1953.07.27', '아이젠하워 소포', 'Eisenhower packages', '미국이 서베를린에서 동독 주민에게 식량 소포를 나누어 주기 시작했다.', 'The United States began handing out food parcels to East Germans in West Berlin.', ['usa', 'germany', 'east-germany']],
     ],
+    // Within 0.05° of another Berlin marker (audit-event-locations): kept only as a timeline map point.
     locations: [
         ['동베를린', 'East Berlin', 52.5200, 13.4050, 'main'],
-        ['스탈린알레·슈트라우스베르거 광장', 'Stalinallee / Strausberger Platz', 52.5182, 13.4279, 'place'],
         ['할레', 'Halle', 51.4825, 11.9697, 'place'],
         ['비터펠트', 'Bitterfeld', 51.6236, 12.3270, 'place'],
         ['라이프치히', 'Leipzig', 51.3397, 12.3731, 'place'],

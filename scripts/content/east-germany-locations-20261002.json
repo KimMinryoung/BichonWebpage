@@ -1,0 +1,255 @@
+{
+  "id": "east-germany-locations-20261002",
+  "changes": [
+    {
+      "event": "soviet-zone-gdr-1945-1949",
+      "column": "locations",
+      "expected": [
+        {
+          "label": {
+            "ko": "베를린-카를스호르스트",
+            "en": "Berlin-Karlshorst"
+          },
+          "lat": 52.4856,
+          "lng": 13.5292,
+          "kind": "main"
+        },
+        {
+          "label": {
+            "ko": "아트미랄스팔라스트",
+            "en": "Admiralspalast"
+          },
+          "lat": 52.5209,
+          "lng": 13.388,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "라이프치거 슈트라세의 경제위원회 건물",
+            "en": "Economic Commission building, Leipziger Straße"
+          },
+          "lat": 52.5096,
+          "lng": 13.3837,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "브루흐뮐레",
+            "en": "Bruchmühle"
+          },
+          "lat": 52.5408,
+          "lng": 13.8278,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "드레스덴",
+            "en": "Dresden"
+          },
+          "lat": 51.0504,
+          "lng": 13.7373,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "부헨발트",
+            "en": "Buchenwald"
+          },
+          "lat": 51.0222,
+          "lng": 11.2481,
+          "kind": "place"
+        }
+      ],
+      "value": [
+        {
+          "label": {
+            "ko": "베를린-카를스호르스트",
+            "en": "Berlin-Karlshorst"
+          },
+          "lat": 52.4856,
+          "lng": 13.5292,
+          "kind": "main"
+        },
+        {
+          "label": {
+            "ko": "아트미랄스팔라스트",
+            "en": "Admiralspalast"
+          },
+          "lat": 52.5209,
+          "lng": 13.388,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "브루흐뮐레",
+            "en": "Bruchmühle"
+          },
+          "lat": 52.5408,
+          "lng": 13.8278,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "드레스덴",
+            "en": "Dresden"
+          },
+          "lat": 51.0504,
+          "lng": 13.7373,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "부헨발트",
+            "en": "Buchenwald"
+          },
+          "lat": 51.0222,
+          "lng": 11.2481,
+          "kind": "place"
+        }
+      ]
+    },
+    {
+      "event": "east-german-uprising-1953",
+      "column": "locations",
+      "expected": [
+        {
+          "label": {
+            "ko": "동베를린",
+            "en": "East Berlin"
+          },
+          "lat": 52.52,
+          "lng": 13.405,
+          "kind": "main"
+        },
+        {
+          "label": {
+            "ko": "스탈린알레·슈트라우스베르거 광장",
+            "en": "Stalinallee / Strausberger Platz"
+          },
+          "lat": 52.5182,
+          "lng": 13.4279,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "할레",
+            "en": "Halle"
+          },
+          "lat": 51.4825,
+          "lng": 11.9697,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "비터펠트",
+            "en": "Bitterfeld"
+          },
+          "lat": 51.6236,
+          "lng": 12.327,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "라이프치히",
+            "en": "Leipzig"
+          },
+          "lat": 51.3397,
+          "lng": 12.3731,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "마그데부르크",
+            "en": "Magdeburg"
+          },
+          "lat": 52.1205,
+          "lng": 11.6276,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "괴를리츠",
+            "en": "Görlitz"
+          },
+          "lat": 51.1528,
+          "lng": 14.9873,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "예나",
+            "en": "Jena"
+          },
+          "lat": 50.9272,
+          "lng": 11.5892,
+          "kind": "place"
+        }
+      ],
+      "value": [
+        {
+          "label": {
+            "ko": "동베를린",
+            "en": "East Berlin"
+          },
+          "lat": 52.52,
+          "lng": 13.405,
+          "kind": "main"
+        },
+        {
+          "label": {
+            "ko": "할레",
+            "en": "Halle"
+          },
+          "lat": 51.4825,
+          "lng": 11.9697,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "비터펠트",
+            "en": "Bitterfeld"
+          },
+          "lat": 51.6236,
+          "lng": 12.327,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "라이프치히",
+            "en": "Leipzig"
+          },
+          "lat": 51.3397,
+          "lng": 12.3731,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "마그데부르크",
+            "en": "Magdeburg"
+          },
+          "lat": 52.1205,
+          "lng": 11.6276,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "괴를리츠",
+            "en": "Görlitz"
+          },
+          "lat": 51.1528,
+          "lng": 14.9873,
+          "kind": "place"
+        },
+        {
+          "label": {
+            "ko": "예나",
+            "en": "Jena"
+          },
+          "lat": 50.9272,
+          "lng": 11.5892,
+          "kind": "place"
+        }
+      ]
+    }
+  ]
+}
