@@ -17,6 +17,13 @@ if [[ "$FRONTEND_DATA_DIR" != /* || ! -d "$FRONTEND_DATA_DIR" ]]; then
     exit 2
 fi
 CONTAINER_NAME="leninbot-frontend"
+# The new image is first started, checked and warmed as a standby on
+# STANDBY_PORT, which nginx lists as the backup upstream; it answers while the
+# primary container on port 3000 is replaced, so a deploy has no 502 window
+# and the deploy's own checks never compete with visitors on the primary.
+STANDBY_NAME="leninbot-frontend-standby"
+STANDBY_PORT=3002
+NGINX_SITE="/etc/nginx/sites-available/leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
 REVISION_LABEL="com.cyber-lenin.frontend.git-revision"
@@ -33,8 +40,8 @@ log()  { echo -e "${GREEN}[deploy]${NC} $*"; }
 warn() { echo -e "${YELLOW}[deploy]${NC} $*"; }
 err()  { echo -e "${RED}[deploy]${NC} $*" >&2; }
 warm() {
-    local path="$1"
-    if curl -fsS --max-time 20 "http://localhost:3000${path}" > /dev/null 2>&1; then
+    local path="$1" port="${2:-3000}"
+    if curl -fsS --max-time 20 "http://localhost:${port}${path}" > /dev/null 2>&1; then
         log "Warmed ${path}"
     else
         warn "Warm-up failed for ${path}"
@@ -119,49 +126,58 @@ docker build \
     --build-arg "GIT_SHA=${LOCAL:0:12}" \
     -t "$IMAGE_NAME" .
 
-# 4. Recreate container
-log "Recreating container..."
-docker stop "$CONTAINER_NAME" 2>/dev/null || true
-docker rm "$CONTAINER_NAME" 2>/dev/null || true
-
-log "Running container as host user ${RUN_AS_UID_GID}."
-docker run -d \
-    --name "$CONTAINER_NAME" \
-    --user "$RUN_AS_UID_GID" \
-    --label "$REVISION_LABEL=$LOCAL" \
-    --add-host=host.docker.internal:host-gateway \
-    -p 127.0.0.1:3000:3000 \
-    --restart unless-stopped \
-    --env-file "$FRONTEND_DIR/.env" \
-    -v "$FRONTEND_DATA_DIR:/app/data" \
-    "$IMAGE_NAME"
-
-# Connect to the leninbot network for Redis and Postgres (leninbot-pg) access.
-docker network connect "$NETWORK" "$CONTAINER_NAME" 2>/dev/null || true
-
-# 5. Cleanup
-docker image prune -f > /dev/null
-
-# 6. Health check, then a route sweep. The container stays up either way;
-#    a non-zero exit here is the operator's signal to look, not a rollback.
-log "Waiting for health check..."
-elapsed=0
-healthy=0
-while (( elapsed < 30 )); do
-    if curl -sf --max-time 20 http://localhost:3000/health > /dev/null 2>&1; then
-        log "Frontend is healthy."
-        healthy=1
-        break
-    fi
-    sleep 2
-    elapsed=$((elapsed + 2))
-done
-
-if (( healthy == 0 )); then
-    err "Health check timed out — check logs with: docker logs $CONTAINER_NAME"
+# 4. Start the new image as a standby and check it before it serves anyone.
+run_container() {
+    local name="$1" port="$2" restart="$3"
+    docker run -d \
+        --name "$name" \
+        --user "$RUN_AS_UID_GID" \
+        --label "$REVISION_LABEL=$LOCAL" \
+        --add-host=host.docker.internal:host-gateway \
+        -p "127.0.0.1:${port}:3000" \
+        --restart "$restart" \
+        --env-file "$FRONTEND_DIR/.env" \
+        -v "$FRONTEND_DATA_DIR:/app/data" \
+        "$IMAGE_NAME" > /dev/null
+    # Connect to the leninbot network for Redis and Postgres (leninbot-pg) access.
+    docker network connect "$NETWORK" "$name" 2>/dev/null || true
+}
+wait_healthy() {
+    local port="$1" elapsed=0
+    while (( elapsed < 30 )); do
+        if curl -sf --max-time 20 "http://localhost:${port}/health" > /dev/null 2>&1; then
+            return 0
+        fi
+        sleep 1
+        elapsed=$((elapsed + 1))
+    done
+    return 1
+}
+remove_standby() {
+    docker stop "$STANDBY_NAME" > /dev/null 2>&1 || true
+    docker rm "$STANDBY_NAME" > /dev/null 2>&1 || true
+}
+# Any failure from here until the swap leaves the running version untouched.
+fail_standby() {
+    err "$*"
+    err "The previous version keeps serving. Standby logs: docker logs $STANDBY_NAME"
+    docker stop "$STANDBY_NAME" > /dev/null 2>&1 || true
     exit 1
+}
+
+if ! grep -q "127.0.0.1:${STANDBY_PORT} backup" "$NGINX_SITE" 2>/dev/null; then
+    warn "nginx has no backup upstream on ${STANDBY_PORT}: requests fail while the primary restarts."
+    warn "Install nginx/leninbot-frontend.conf (see dev_docs/frontend-operations.md)."
 fi
 
+remove_standby
+log "Starting standby on port ${STANDBY_PORT}..."
+run_container "$STANDBY_NAME" "$STANDBY_PORT" no
+wait_healthy "$STANDBY_PORT" || fail_standby "Standby health check timed out."
+log "Standby is healthy."
+
+# 5. Route sweep and data checks on the standby. A failure stops the deploy
+#    before the primary is touched.
 SWEEP_PATHS=(
     / /posts /reports /hub /ai-diary /chat
     /commulingo /commulingo/people /commulingo/people/stalin /commulingo/terms
@@ -172,28 +188,42 @@ SWEEP_PATHS=(
 )
 sweep_failed=0
 for path in "${SWEEP_PATHS[@]}"; do
-    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -H 'Accept-Language: ko' "http://localhost:3000${path}")"
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 -H 'Accept-Language: ko' "http://localhost:${STANDBY_PORT}${path}")"
     if [[ "$code" != "200" ]]; then
         err "Sweep: ${path} -> ${code}"
         sweep_failed=1
     fi
 done
-if (( sweep_failed )); then
-    err "Route sweep failed on the new container; inspect before moving on."
-    exit 1
-fi
+(( sweep_failed )) && fail_standby "Route sweep failed on the new image."
 log "Route sweep: ${#SWEEP_PATHS[@]} paths returned 200."
 
-if ! docker exec "$CONTAINER_NAME" node /app/scripts/check-commulingo-code-db-drift.js > /dev/null 2>&1; then
-    err "check-commulingo-code-db-drift.js failed — a code fallback/seed no longer matches its table."
-    exit 1
-fi
+docker exec "$STANDBY_NAME" node /app/scripts/check-commulingo-code-db-drift.js > /dev/null 2>&1 \
+    || fail_standby "check-commulingo-code-db-drift.js failed — a code fallback/seed no longer matches its table."
 log "CommuLingo code/DB drift check passed."
 
-if ! docker exec "$CONTAINER_NAME" node /app/scripts/audit-person-card-fields.js; then
-    err "Person card data audit failed — inspect life dates, fate and card metadata."
+docker exec "$STANDBY_NAME" node /app/scripts/audit-person-card-fields.js \
+    || fail_standby "Person card data audit failed — inspect life dates, fate and card metadata."
+
+# 6. Swap. The standby answers (nginx backup) from the moment the old primary
+#    stops until the new primary listens; then the primary is warmed before
+#    the standby goes away.
+log "Replacing the primary container..."
+docker stop "$CONTAINER_NAME" > /dev/null 2>&1 || true
+docker rm "$CONTAINER_NAME" > /dev/null 2>&1 || true
+log "Running container as host user ${RUN_AS_UID_GID}."
+run_container "$CONTAINER_NAME" 3000 unless-stopped
+if ! wait_healthy 3000; then
+    err "Primary health check timed out — the standby keeps serving; check: docker logs $CONTAINER_NAME"
     exit 1
 fi
+log "Frontend is healthy."
+for path in / /commulingo /commulingo/events/nazi-soviet-pact /commulingo/people/stalin /commulingo/terms/nep /reports; do
+    warm "$path"
+done
+remove_standby
+
+# 7. Cleanup
+docker image prune -f > /dev/null
 
 if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
     CHANGED_COMMULINGO_LESSONS="$(node scripts/changed-commulingo-lessons.js "$DEPLOYED" "$LOCAL" 2>/dev/null || true)"
@@ -210,8 +240,6 @@ if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
 fi
 
 log "Warming public pages..."
-warm "/"
-warm "/reports"
 warm "/hub"
 warm "/sitemap.xml"
 warm "/css/site-core.css"
