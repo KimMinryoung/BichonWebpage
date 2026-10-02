@@ -226,6 +226,9 @@ async function buildCourseChapterIndex(indexes, catalog, lang) {
                 if (count >= SEARCH_ONLY_MIN_HITS) hits.set(key, (hits.get(key) || 0) + count);
             });
             for (const passage of passages) {
+                // Yield per passage, not per chapter: one long chapter took up
+                // to 7 s of uninterrupted CPU and stalled every request meanwhile.
+                await new Promise(resolve => setImmediate(resolve));
                 const linked = passageEntries(indexes, collection, passage);
                 for (const kind of ['people', 'terms', 'events']) {
                     linked[kind].forEach(entry => {

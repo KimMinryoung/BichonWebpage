@@ -228,8 +228,23 @@ function personNameParts(person) {
     return parts.filter(part => part && part.length >= 2);
 }
 
+// Name parts and birth years are read once per person object: the deck builder
+// compares every person with every other one in the group (2,620 people made
+// that 8 s of CPU on the first request after a data change).
+const namePartsMemo = new WeakMap();
+const birthYearMemo = new WeakMap();
+function memoNameParts(person) {
+    let parts = namePartsMemo.get(person);
+    if (!parts) namePartsMemo.set(person, parts = personNameParts(person));
+    return parts;
+}
+function birthYearOf(person) {
+    if (!birthYearMemo.has(person)) birthYearMemo.set(person, parseLifeYears(person.years).birthYear);
+    return birthYearMemo.get(person);
+}
+
 function quoteNamesPerson(quoteText, person) {
-    const parts = personNameParts(person);
+    const parts = memoNameParts(person);
     return textContainsAny(quoteText.ko, parts, false) || textContainsAny(quoteText.en, parts, true);
 }
 
@@ -249,15 +264,26 @@ function buildPersonQuestion(person, groupPool, allPeople) {
     if (!style) return null;
     const quote = style === 'moment' ? moment : epithet;
 
-    const birthYear = parseLifeYears(person.years).birthYear;
+    const birthYear = birthYearOf(person);
     const usable = candidate => candidate.id !== person.id && !quoteNamesPerson(quote, candidate);
-    const near = pool => pool.filter(usable)
-        .sort((a, b) => yearDistance(birthYear, parseLifeYears(a.years).birthYear)
-            - yearDistance(birthYear, parseLifeYears(b.years).birthYear));
-    let candidates = near(groupPool).slice(0, 10);
+    // The nearest usable candidates by birth year. Sorting first and testing
+    // only until enough are found gives the same list as filtering everyone
+    // first (the sort is stable), without testing every name against the quote.
+    const near = (pool, limit, skip) => {
+        const out = [];
+        const byDistance = pool
+            .map(candidate => ({ candidate, distance: yearDistance(birthYear, birthYearOf(candidate)) }))
+            .sort((a, b) => a.distance - b.distance);
+        for (const { candidate } of byDistance) {
+            if (out.length >= limit) break;
+            if ((!skip || !skip.has(candidate.id)) && usable(candidate)) out.push(candidate);
+        }
+        return out;
+    };
+    let candidates = near(groupPool, 10);
     if (candidates.length < 3) {
         const have = new Set(candidates.map(item => item.id));
-        candidates = candidates.concat(near(allPeople).filter(item => !have.has(item.id)).slice(0, 10 - candidates.length));
+        candidates = candidates.concat(near(allPeople, 10 - candidates.length, have));
     }
 
     const name = loc(person.name);
