@@ -1,0 +1,30 @@
+{
+  "scope": "2026-10-02 registered overview event axis-occupied-europe-1939-1945 title; owner-requested event registration",
+  "references": [
+    "dev_docs/commulingo-occupied-europe-20261002.md"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "axis-occupied-europe-1939-1945",
+      "lang": "ko",
+      "text": "추축국 점령하의 유럽: 협력과 저항",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 짧은 표현은 따로 승인하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "axis-occupied-europe-1939-1945",
+      "lang": "en",
+      "text": "Axis-occupied Europe: collaboration and resistance",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event; no shorter expression approved. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

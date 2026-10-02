@@ -1,0 +1,17 @@
+{
+  "id": "occupied-europe-two-camps-20261002",
+  "changes": [
+    {
+      "event": "axis-occupied-europe-1939-1945",
+      "column": "body_ko",
+      "from": "저항운동은 정치적으로 두 진영으로 나뉘었다.",
+      "to": "저항운동은 정치적으로 크게 두 갈래였다."
+    },
+    {
+      "event": "axis-occupied-europe-1939-1945",
+      "column": "body_en",
+      "from": "Politically the resistance movements fell into two camps:",
+      "to": "Politically the resistance movements fell into two broad streams:"
+    }
+  ]
+}
