@@ -47,6 +47,7 @@ function event({ id, title, period, sortOrder, question, summary, outcome, secti
 // A person card in the scripts/commulingo-people-upsert payload shape.
 // Every fact needs a cited excerpt: `facts` gives one { excerpt, locator } per
 // fact field (years, citizenship, nationalOrigin, bio may have several), all from `sources`.
+// origin: null leaves the national origin unset when no source states it.
 // activities: [{ functionId, affiliationId, relation, startYear, endYear, primary, claim, excerpt, locator, source? }]
 function person({ id, groupId = 'world-interwar', given, family, nativeName, years, citizenship = 'hungary',
     origin = 'hungary', epithet, bio, fate, aliases, sources, facts, activities, career = [] }) {
@@ -59,7 +60,7 @@ function person({ id, groupId = 'world-interwar', given, family, nativeName, yea
         givenName: { ko: given[0], en: given[1] }, familyName: { ko: family[0], en: family[1] },
         nativeName, years,
         citizenship: typeof citizenship === 'string' ? { code: citizenship } : citizenship,
-        nationalOrigin: typeof origin === 'string' ? { code: origin } : origin,
+        ...(origin === null ? {} : { nationalOrigin: typeof origin === 'string' ? { code: origin } : origin }),
         epithet: { ko: epithet[0], en: epithet[1] },
         bio: { ko: bio[0], en: bio[1] },
         fate: { kind: fate[0], label: { ko: fate[1], en: fate[2] } },

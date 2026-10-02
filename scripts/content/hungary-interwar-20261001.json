@@ -899,6 +899,123 @@
           "relation_en": "Leader of the Anti-Bolshevik Committee in Vienna",
           "note_ko": "옛 지배층을 모아 빈에서 반볼셰비키 위원회를 이끌었다.",
           "note_en": "Gathered the old ruling class in the Anti-Bolshevik Committee he led in Vienna."
+        },
+        {
+          "person_id": "oszkar-jaszi",
+          "sort_order": 17,
+          "relation_kind": "participant",
+          "relation_ko": "급진당 지도자",
+          "relation_en": "Leader of the Radical Party",
+          "note_ko": "그의 급진당이 카로이의 독립48년당, 사회민주당과 함께 1918년 10월 헝가리 국민평의회를 세웠다.",
+          "note_en": "His Radical Party formed the Hungarian National Council with Károlyi’s Party of Independence and ’48 and the Social Democrats in October 1918."
+        },
+        {
+          "person_id": "istvan-tisza",
+          "sort_order": 18,
+          "relation_kind": "target",
+          "relation_ko": "전 총리",
+          "relation_en": "Former prime minister",
+          "note_ko": "과꽃 혁명으로 카로이가 총리가 된 1918년 10월 31일 병사들에게 살해되었다.",
+          "note_en": "Killed by soldiers on 31 October 1918, the day the Aster Revolution made Károlyi prime minister."
+        },
+        {
+          "person_id": "denes-berinkey",
+          "sort_order": 19,
+          "relation_kind": "participant",
+          "relation_ko": "인민공화국 총리",
+          "relation_en": "Prime minister of the People’s Republic",
+          "note_ko": "1919년 1월 총리가 되었고, 빅스 각서를 받아들이면 영토 보전이 위태롭지만 거부할 힘도 없다고 보고 내각과 함께 사임했다.",
+          "note_en": "Became prime minister in January 1919 and resigned with his cabinet over the Vix note, which he could neither accept without endangering the country’s territory nor reject."
+        },
+        {
+          "person_id": "fernand-vix",
+          "sort_order": 20,
+          "relation_kind": "participant",
+          "relation_ko": "협상국 군사사절단장",
+          "relation_en": "Head of the Entente military mission",
+          "note_ko": "1919년 3월 20일 헝가리군의 추가 철수를 명하는 각서를 카로이 정부에 전달해 베린케이 내각의 사임을 불렀다.",
+          "note_en": "On 20 March 1919 handed the Károlyi government the note ordering a further Hungarian withdrawal, which brought down the Berinkey cabinet."
+        },
+        {
+          "person_id": "jan-smuts",
+          "sort_order": 21,
+          "relation_kind": "participant",
+          "relation_ko": "파리 강화회의 사절",
+          "relation_en": "Envoy of the Paris Peace Conference",
+          "note_ko": "4월 부다페스트에 와서 빅스 각서보다 유리한 분계선과 봉쇄 해제를 제시했으나, 혁명통치평의회가 조건을 달자 협상을 끝내고 떠났다.",
+          "note_en": "Came to Budapest in April offering a better line than the Vix note and the lifting of the blockade, and broke off the talks when the Revolutionary Governing Council attached conditions."
+        },
+        {
+          "person_id": "georges-clemenceau",
+          "sort_order": 22,
+          "relation_kind": "opponent",
+          "relation_ko": "프랑스 총리",
+          "relation_en": "French prime minister",
+          "note_ko": "6월 붉은군대의 공격 중지를 요구하고 강화회의가 정한 국경을 통보해 북부 원정에서 얻은 땅에서 철수하게 했다.",
+          "note_en": "In June demanded a halt to the Red Army’s offensive and communicated the frontiers fixed by the conference, forcing the withdrawal from the ground won in the northern campaign."
+        },
+        {
+          "person_id": "gyula-karolyi",
+          "sort_order": 23,
+          "relation_kind": "opponent",
+          "relation_ko": "세게드 반혁명 정부 총리",
+          "relation_en": "Prime minister of the Szeged counter-revolutionary government",
+          "note_ko": "5월 30일 프랑스군이 점령한 세게드에서 반혁명 정부를 세웠고 호르티를 국방장관으로 삼았다.",
+          "note_en": "Set up the counter-revolutionary government in French-occupied Szeged on 30 May, with Horthy as war minister."
+        },
+        {
+          "person_id": "aurel-stromfeld",
+          "sort_order": 24,
+          "relation_kind": "participant",
+          "relation_ko": "붉은군대 참모장",
+          "relation_en": "Red Army chief of staff",
+          "note_ko": "붉은군대의 작전을 실제로 지휘해 북부 원정을 이끌었고, 클레망소 각서에 따른 철수에 항의해 사임했다.",
+          "note_en": "Directed the Red Army’s operations in the northern campaign and resigned in protest at the withdrawal under the Clemenceau note."
+        },
+        {
+          "person_id": "jozsef-cserny",
+          "sort_order": 25,
+          "relation_kind": "executor",
+          "relation_ko": "레닌 소년단 지휘관",
+          "relation_en": "Commander of the Lenin Boys",
+          "note_ko": "약 200명의 레닌 소년단을 조직해 재판 없는 처형을 벌였고, 붕괴 뒤 1919년 12월 처형되었다.",
+          "note_en": "Organised the two hundred or so Lenin Boys who carried out executions without trial, and was executed in December 1919."
+        },
+        {
+          "person_id": "istvan-friedrich",
+          "sort_order": 26,
+          "relation_kind": "opponent",
+          "relation_ko": "쿠데타 후 총리",
+          "relation_en": "Prime minister after the coup",
+          "note_ko": "8월 6일 「백악관 동지회」와 함께 루마니아군을 등에 업고 페이들 정부를 몰아냈고 이튿날 총리가 되었다.",
+          "note_en": "With the White House Comrades’ Association and Romanian backing, ousted the Peidl government on 6 August and became prime minister the next day."
+        },
+        {
+          "person_id": "archduke-joseph-august",
+          "sort_order": 27,
+          "relation_kind": "opponent",
+          "relation_ko": "자칭 섭정",
+          "relation_en": "Self-proclaimed regent",
+          "note_ko": "8월 7일 섭정을 자처하며 프리드리히를 총리로 임명했다.",
+          "note_en": "Declared himself regent on 7 August and appointed Friedrich prime minister."
+        },
+        {
+          "person_id": "antonin-janousek",
+          "sort_order": 28,
+          "relation_kind": "participant",
+          "relation_ko": "슬로바키아 평의회 공화국 수반",
+          "relation_en": "Head of the Slovak Soviet Republic",
+          "note_ko": "북부 원정 중 프레쇼우에서 선포된 슬로바키아 평의회 공화국을 이끌었다.",
+          "note_en": "Headed the Slovak Soviet Republic proclaimed in Prešov during the northern campaign."
+        },
+        {
+          "person_id": "charles-i-of-austria",
+          "sort_order": 29,
+          "relation_kind": "participant",
+          "relation_ko": "국왕",
+          "relation_en": "King",
+          "note_ko": "1918년 10월 30일 허디크 야노시를 총리로 임명했으나 병사들이 국민평의회에 충성을 맹세했고, 이튿날 카로이를 총리로 임명했다.",
+          "note_en": "Appointed János Hadik prime minister on 30 October 1918, whereupon the soldiers swore allegiance to the National Council, and named Károlyi prime minister the next day."
         }
       ]
     },
@@ -1937,6 +2054,114 @@
           "relation_en": "Minister of agriculture",
           "note_ko": "베틀렌의 측근으로 굄뵈시 내각에 들어가 총리를 견제했다.",
           "note_en": "A Bethlen associate placed in the Gömbös cabinet to check the prime minister."
+        },
+        {
+          "person_id": "ivan-hejjas",
+          "sort_order": 18,
+          "relation_kind": "executor",
+          "relation_ko": "장교 부대 지휘관",
+          "relation_en": "Officer detachment commander",
+          "note_ko": "케치케메트 일대의 부대를 이끌었고, 1919년 11월 그의 부대원들이 오르고바니 숲 학살과 이자크 포그롬을 저질렀다.",
+          "note_en": "Led the detachment around Kecskemét whose men carried out the Orgovány killings and the Izsák pogrom in November 1919."
+        },
+        {
+          "person_id": "gyula-ostenburg-moravek",
+          "sort_order": 19,
+          "relation_kind": "executor",
+          "relation_ko": "장교 부대 지휘관",
+          "relation_en": "Officer detachment commander",
+          "note_ko": "1920년 2월 그의 부대 장교들이 『네프서버』 기자 쇼모지 벨러와 버초 벨러를 살해했고, 1921년 10월 쇼프론에서 카를 왕을 받들고 부다페스트로 진군했다.",
+          "note_en": "Officers of his detachment murdered the Népszava journalists Béla Somogyi and Béla Bacsó in February 1920, and in October 1921 his detachment set off from Sopron for Budapest with King Charles."
+        },
+        {
+          "person_id": "antal-lehar",
+          "sort_order": 20,
+          "relation_kind": "participant",
+          "relation_ko": "장교 부대 지휘관 · 왕정주의 대령",
+          "relation_en": "Officer detachment commander, legitimist colonel",
+          "note_ko": "장교 부대를 이끌었고, 1921년 10월 오스텐부르크 부대와 함께 카를 왕을 받들고 장갑열차로 부다페스트로 진군했다.",
+          "note_en": "Led an officer detachment and in October 1921 set off for Budapest in armoured trains with King Charles and Ostenburg’s detachment."
+        },
+        {
+          "person_id": "bela-somogyi",
+          "sort_order": 21,
+          "relation_kind": "target",
+          "relation_ko": "살해된 『네프서버』 기자",
+          "relation_en": "Murdered Népszava journalist",
+          "note_ko": "1920년 2월 17일 오스텐부르크 부대의 장교들에게 버초 벨러와 함께 살해되었다.",
+          "note_en": "Murdered with Béla Bacsó by officers of Ostenburg’s detachment on 17 February 1920."
+        },
+        {
+          "person_id": "bela-bacso",
+          "sort_order": 22,
+          "relation_kind": "target",
+          "relation_ko": "살해된 『네프서버』 기자",
+          "relation_en": "Murdered Népszava journalist",
+          "note_ko": "1920년 2월 17일 오스텐부르크 부대의 장교들에게 쇼모지 벨러와 함께 살해되었다.",
+          "note_en": "Murdered with Béla Somogyi by officers of Ostenburg’s detachment on 17 February 1920."
+        },
+        {
+          "person_id": "istvan-haller",
+          "sort_order": 23,
+          "relation_kind": "participant",
+          "relation_ko": "교육장관",
+          "relation_en": "Education minister",
+          "note_ko": "1920년 6월 22일 누메루스 클라우수스법 원안을 제출했고, 집권당 안의 요구로 민족별 비율 조항이 더해졌다.",
+          "note_en": "Tabled the original numerus clausus bill on 22 June 1920, to which pressure within the governing party added the quota by nationality."
+        },
+        {
+          "person_id": "ferenc-keresztes-fischer",
+          "sort_order": 24,
+          "relation_kind": "participant",
+          "relation_ko": "내무장관",
+          "relation_en": "Interior minister",
+          "note_ko": "베틀렌의 측근으로 굄뵈시 내각에 들어가 총리를 견제했다.",
+          "note_en": "A Bethlen ally placed in the Gömbös cabinet to check the prime minister."
+        },
+        {
+          "person_id": "kalman-daranyi",
+          "sort_order": 25,
+          "relation_kind": "leader",
+          "relation_ko": "총리 (1936–1938)",
+          "relation_en": "Prime minister (1936–1938)",
+          "note_ko": "국민의지당을 금지하고 죄르 강령을 발표했으며, 오스트리아 병합 뒤 친독 인사를 입각시키고 극우와 협상하다 1938년 5월 사임했다.",
+          "note_en": "Banned the Party of National Will and announced the Győr programme; after the Anschluss he brought pro-German politicians into the cabinet and negotiated with the extreme right, and resigned in May 1938."
+        },
+        {
+          "person_id": "harold-harmsworth",
+          "sort_order": 26,
+          "relation_kind": "participant",
+          "relation_ko": "영국 신문왕",
+          "relation_en": "British press magnate",
+          "note_ko": "1927년 『데일리 메일』에서 트리아농 국경을 비판했고, 헝가리인 120만 명이 그에게 보내는 감사 서한에 서명했다.",
+          "note_en": "Denounced the Trianon borders in the Daily Mail in 1927, and 1.2 million Hungarians signed a letter of thanks to him."
+        },
+        {
+          "person_id": "engelbert-dollfuss",
+          "sort_order": 27,
+          "relation_kind": "participant",
+          "relation_ko": "오스트리아 총리",
+          "relation_en": "Austrian chancellor",
+          "note_ko": "1934년 3월 17일 무솔리니·굄뵈시와 로마 의정서에 서명했다.",
+          "note_en": "Signed the Rome Protocols with Mussolini and Gömbös on 17 March 1934."
+        },
+        {
+          "person_id": "charles-i-of-austria",
+          "sort_order": 28,
+          "relation_kind": "opponent",
+          "relation_ko": "마지막 국왕",
+          "relation_en": "Last king",
+          "note_ko": "1921년 3월과 10월 두 차례 왕위 회복을 시도했으나 호르티에게 거절당하고 부더외르시에서 막힌 뒤 마데이라섬으로 유배되었다.",
+          "note_en": "Tried twice, in March and October 1921, to regain his throne; rebuffed by Horthy and stopped at Budaörs, he was exiled to Madeira."
+        },
+        {
+          "person_id": "gyula-karolyi",
+          "sort_order": 29,
+          "relation_kind": "leader",
+          "relation_ko": "세게드 정부 총리 · 총리 (1931–1932)",
+          "relation_en": "Szeged prime minister, prime minister (1931–1932)",
+          "note_ko": "1919년 세게드에서 호르티에게 국방장관직을 맡겼고, 총리로서 1931년 비어토르바지 폭파 뒤 즉결재판 제도(계엄)를 선포했다.",
+          "note_en": "Gave Horthy the war ministry in Szeged in 1919 and, as prime minister, proclaimed summary jurisdiction (martial law) after the Biatorbágy bombing in 1931."
         }
       ]
     },
@@ -3014,6 +3239,105 @@
           "relation_en": "German propaganda minister",
           "note_ko": "1944년 3월 4일 일기에 헝가리의 「배신은 벌받아야 한다」고 적었다.",
           "note_en": "Wrote in his diary on 4 March 1944 that Hungary’s “treason had to be punished”."
+        },
+        {
+          "person_id": "dome-sztojay",
+          "sort_order": 26,
+          "relation_kind": "participant",
+          "relation_ko": "베를린 주재 헝가리 대사",
+          "relation_en": "Hungarian minister in Berlin",
+          "note_ko": "1940년 9월 삼국동맹이 맺어지자 헝가리가 루마니아보다 먼저 가입해야 한다고 재촉했다.",
+          "note_en": "When the Tripartite Pact was signed in September 1940, urged that Hungary join before Romania did."
+        },
+        {
+          "person_id": "karoly-bartha",
+          "sort_order": 27,
+          "relation_kind": "participant",
+          "relation_ko": "국방장관(1938–1942)",
+          "relation_en": "Defence minister 1938–1942",
+          "note_ko": "베르트와 함께 유고슬라비아 침공 참여를 다그쳤고, 참전하면 히틀러가 트리아농으로 잃은 땅을 돌려줄 것이라며 대소련 참전을 주장했다.",
+          "note_en": "With Werth, urged Horthy to join the invasion of Yugoslavia and argued for war on the USSR, claiming Hitler would restore the lands lost at Trianon."
+        },
+        {
+          "person_id": "henrik-werth",
+          "sort_order": 28,
+          "relation_kind": "participant",
+          "relation_ko": "참모총장(1938–1941)",
+          "relation_en": "Chief of the General Staff 1938–1941",
+          "note_ko": "버르터와 함께 유고슬라비아 침공 참여를 다그쳤고, 전쟁이 6주면 끝난다며 대소련 참전을 주장했다.",
+          "note_en": "With Bartha, urged Horthy to join the invasion of Yugoslavia and argued for war on the USSR, predicting it would be over in six weeks."
+        },
+        {
+          "person_id": "avgustyn-voloshyn",
+          "sort_order": 29,
+          "relation_kind": "opponent",
+          "relation_ko": "카르파티아 우크라이나 대통령",
+          "relation_en": "President of Carpatho-Ukraine",
+          "note_ko": "1939년 3월 15일 카르파티아 우크라이나의 독립 선언으로 대통령이 되었으나, 헝가리군이 3월 14~18일 루테니아를 점령했다.",
+          "note_en": "Became president when Carpatho-Ukraine declared independence on 15 March 1939, as Hungarian troops occupied Ruthenia on 14–18 March."
+        },
+        {
+          "person_id": "friedrich-jeckeln",
+          "sort_order": 30,
+          "relation_kind": "executor",
+          "relation_ko": "친위대·경찰 고위 지도자(남부 러시아·우크라이나)",
+          "relation_en": "Higher SS and Police Leader, southern Russia and Ukraine",
+          "note_ko": "휘하 친위대·경찰 부대가 카미야네츠포딜스키에서 헝가리가 추방한 유대인과 현지 유대인을 쏘아 죽였고, 희생자를 2만 3600명으로 보고했다.",
+          "note_en": "SS and police units under his command shot the Jews deported from Hungary and the local Jews at Kamianets-Podilskyi; he reported 23,600 victims."
+        },
+        {
+          "person_id": "ferenc-szombathelyi",
+          "sort_order": 31,
+          "relation_kind": "executor",
+          "relation_ko": "참모총장(1941–1944)",
+          "relation_en": "Chief of the General Staff 1941–1944",
+          "note_ko": "1942년 1월 파르티잔과의 교전을 구실로 바치카에서 징벌 작전을 명령했다.",
+          "note_en": "In January 1942 ordered the punitive raids in Bačka, taking a clash with Partisans as pretext."
+        },
+        {
+          "person_id": "ferenc-feketehalmy-czeydner",
+          "sort_order": 32,
+          "relation_kind": "executor",
+          "relation_ko": "제5군단장",
+          "relation_en": "Commander, Fifth Corps",
+          "note_ko": "그의 부대가 노비사드에서 주민을 도나우강 강변으로 끌고 가 쏘았고, 1943년 12월 군사재판에서 유죄를 받은 뒤 1944년 1월 독일로 달아났다.",
+          "note_en": "His troops marched residents of Novi Sad to the Danube and shot them; convicted by the court martial of December 1943, he fled to Germany in January 1944."
+        },
+        {
+          "person_id": "endre-bajcsy-zsilinszky",
+          "sort_order": 33,
+          "relation_kind": "opponent",
+          "relation_ko": "야당 의원",
+          "relation_en": "Opposition deputy",
+          "note_ko": "1941년 성탄호 『네프서버』에서 「독립전선」을 촉구했고, 노비사드 학살을 앞두고 바르도시에게 경고한 뒤 의회에서 「국가가 조직한 포그롬」이라 고발했다.",
+          "note_en": "Called for an “Independence Front” in the Christmas 1941 Népszava, warned Bárdossy before the Novi Sad raid and then denounced it in parliament as “a state-organized pogrom”."
+        },
+        {
+          "person_id": "jusztinian-seredi",
+          "sort_order": 34,
+          "relation_kind": "participant",
+          "relation_ko": "수좌대주교",
+          "relation_en": "Prince Primate",
+          "note_ko": "1943년 1월 말 베틀렌·대법원장과 함께 호르티에게 동부전선 철수와 노비사드 책임자 처벌을 건의했다.",
+          "note_en": "At the end of January 1943, with Bethlen and the chief justice, advised Horthy to withdraw from the Eastern Front and punish those responsible for Novi Sad."
+        },
+        {
+          "person_id": "adolf-eichmann",
+          "sort_order": 35,
+          "relation_kind": "participant",
+          "relation_ko": "친위대 유대인 문제 담당관",
+          "relation_en": "SS officer for Jewish affairs",
+          "note_ko": "1944년 3월 독일군 점령 준비와 함께 힘러에게서 헝가리 유대인을 아우슈비츠로 이송할 준비를 지시받았다.",
+          "note_en": "In March 1944, as the occupation was prepared, was instructed by Himmler to prepare the deportation of Hungary’s Jews to Auschwitz."
+        },
+        {
+          "person_id": "kalman-daranyi",
+          "sort_order": 36,
+          "relation_kind": "participant",
+          "relation_ko": "총리 (1936–1938)",
+          "relation_en": "Prime minister (1936–1938)",
+          "note_ko": "나치와 국내 반유대주의자를 함께 달래려고 제1차 유대인법을 내놓았고, 1938년 5월 물러나 임레디에게 자리를 넘겼다.",
+          "note_en": "Introduced the First Jewish Law to appease both the Nazis and Hungarian antisemites, and stepped down in May 1938 in favour of Imrédy."
         }
       ]
     }
