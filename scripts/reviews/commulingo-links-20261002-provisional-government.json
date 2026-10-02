@@ -1,0 +1,31 @@
+{
+  "scope": "2026-10-02 bare 임시정부 / Provisional Government: a common noun that linked every provisional government to the Russian one; owner-requested",
+  "references": [
+    "dev_docs/commulingo-hungary-interwar-20261001.md",
+    "owner: 임시정부는 흔한 용어니까 자동링크 걸지 말고 임시정부 (헝가리 1944) 식으로 만든다"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "russian-provisional-government",
+      "lang": "ko",
+      "text": "임시정부",
+      "role": "short",
+      "policy": "search",
+      "note": "2026-10-02 owner-requested: 「임시정부」는 러시아(1917)·헝가리(1944)·프랑스·한국 등 여러 나라의 임시정부를 가리키는 보통명사. 자동 연결하지 않고 검색 전용. 「러시아 임시정부」·「케렌스키 정부」 등 고유 표현은 그대로 링크된다. 다른 나라의 임시정부는 「임시정부 (1944년 헝가리)」처럼 한정된 표제어로 만든다.",
+      "original479": false,
+      "beforePolicy": "auto"
+    },
+    {
+      "kind": "term",
+      "id": "russian-provisional-government",
+      "lang": "en",
+      "text": "Provisional Government",
+      "role": "short",
+      "policy": "search",
+      "note": "2026-10-02 owner-requested: “Provisional Government” is a common noun used for many countries’ provisional governments. Search only; “Russian Provisional Government”, “Kerensky Government” etc. still link. Other countries’ provisional governments get qualified headwords such as “Provisional National Government (Hungary, 1944)”.",
+      "original479": false,
+      "beforePolicy": "auto"
+    }
+  ]
+}

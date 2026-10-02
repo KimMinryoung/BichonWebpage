@@ -1368,6 +1368,89 @@
           }
         ]
       }
+    },
+    {
+      "id": "provisional-national-government-hungary-1944",
+      "sources": [
+        "https://hu.wikipedia.org/wiki/Ideiglenes_Nemzeti_Korm%C3%A1ny",
+        "https://en.wikipedia.org/wiki/B%C3%A9la_Mikl%C3%B3s"
+      ],
+      "fields": {
+        "term": {
+          "ko": "임시정부 (1944년 헝가리)",
+          "en": "Provisional National Government (Hungary, 1944)"
+        },
+        "category": "party-state",
+        "period": {
+          "ko": "1944–1945",
+          "en": "1944–1945"
+        },
+        "startYear": 1944,
+        "endYear": 1945,
+        "definition": {
+          "ko": "1944년 12월 22일 붉은군대가 점령한 데브레첸에서 미클로시 벨러를 총리로 세워진 헝가리의 임시국민정부. 1945년 1월 소련과 휴전협정을 맺고 3월 토지개혁 포고를 냈으며, 11월 15일 틸디 졸탄 정부가 들어서면서 임무를 마쳤다.",
+          "en": "Hungary’s Provisional National Government, formed on 22 December 1944 in Red Army-occupied Debrecen with Béla Miklós as prime minister. It signed the armistice with the Soviet Union in January 1945, decreed land reform in March and ended its mandate on 15 November 1945, when Zoltán Tildy’s government took office."
+        },
+        "body": {
+          "ko": "데브레첸의 임시국민의회는 해방 지역의 국민위원회 대표들로 꾸려졌고, 정부 구성은 모스크바에서 승인된 헝가리 민족독립전선 정당들의 합의로 정해졌다. 살러시 정부 아래 독일 편에서 싸우던 헝가리군을 갈라놓기 위해, 10월 호르티의 휴전 호소를 따른 장군 셋 — 총리 미클로시 벨러, 참모총장 출신 뵈뢰시 야노시, 헌병 감찰관 출신 퍼러고 가보르 — 이 내각에 들어갔다. 내무장관은 국민농민당의 에르데이 페렌츠, 농업장관은 공산당의 너지 임레였다.\n\n1945년 1월 20일의 휴전협정으로 헝가리는 독일에 선전포고하고 3억 달러의 배상을 6년 안에 물기로 했다. 정부는 인민재판소를 세우고 친독 단체와 정당을 해산했으며 100홀드가 넘는 토지를 나누는 토지개혁 포고를 냈다. 봄에 부다페스트로 옮겨 가을 총선을 치렀다.",
+          "en": "The Provisional National Assembly in Debrecen was made up of delegates of the national committees in the liberated areas, and the government’s composition was fixed by an agreement among the parties of the Hungarian National Independence Front approved in Moscow. To split the Hungarian forces still fighting on the German side under Szálasi, three generals who had obeyed Horthy’s armistice call in October entered the cabinet: the prime minister Béla Miklós, the former chief of the general staff János Vörös and the former gendarmerie inspector Gábor Faragho. The interior ministry went to Ferenc Erdei of the National Peasant Party and agriculture to the Communist Imre Nagy.\n\nUnder the armistice of 20 January 1945 Hungary declared war on Germany and undertook to pay $300 million in reparations within six years. The government set up the people’s tribunals, dissolved pro-German organisations and parties and decreed a land reform dividing estates of over 100 hold. In spring it moved to Budapest, and in the autumn it held the parliamentary election."
+        },
+        "aliases": {
+          "ko": [
+            "임시국민정부",
+            "헝가리 임시국민정부",
+            "데브레첸 임시정부",
+            "데브레첸 임시국민정부"
+          ],
+          "en": [
+            "Provisional National Government",
+            "Provisional National Government of Hungary",
+            "Hungarian Provisional National Government",
+            "Debrecen government"
+          ]
+        },
+        "people": [
+          "bela-miklos",
+          "nagy",
+          "zoltan-tildy"
+        ],
+        "events": [
+          "hungary-1944-1945",
+          "hungary-1945-1949"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Hungary’s Provisional National Government, formed on 22 December 1944 in Red Army-occupied Debrecen with Béla Miklós as prime minister. It signed the armistice with the Soviet Union in January 1945, decreed land reform in March and ended its mandate on 15 November 1945, when Zoltán Tildy’s government took office.",
+            "source": "https://hu.wikipedia.org/wiki/Ideiglenes_Nemzeti_Korm%C3%A1ny",
+            "locator": "Története; A kormány fontosabb intézkedései; Prime Minister"
+          },
+          {
+            "field": "body",
+            "claim": "The Provisional National Assembly in Debrecen was made up of delegates of the national committees in the liberated areas, and the government’s composition was fixed by an agreement among the parties of the Hungarian National Independence Front approved in Moscow. To split the Hungarian forces still ",
+            "source": "https://hu.wikipedia.org/wiki/Ideiglenes_Nemzeti_Korm%C3%A1ny",
+            "locator": "Története; A kormány fontosabb intézkedései; Prime Minister"
+          },
+          {
+            "field": "period",
+            "claim": "1944–1945",
+            "source": "https://hu.wikipedia.org/wiki/Ideiglenes_Nemzeti_Korm%C3%A1ny",
+            "locator": "Története; A kormány fontosabb intézkedései; Prime Minister"
+          },
+          {
+            "field": "startYear",
+            "claim": "1944",
+            "source": "https://hu.wikipedia.org/wiki/Ideiglenes_Nemzeti_Korm%C3%A1ny",
+            "locator": "Története; A kormány fontosabb intézkedései; Prime Minister"
+          },
+          {
+            "field": "endYear",
+            "claim": "1945",
+            "source": "https://hu.wikipedia.org/wiki/Ideiglenes_Nemzeti_Korm%C3%A1ny",
+            "locator": "Története; A kormány fontosabb intézkedései; Prime Minister"
+          }
+        ]
+      }
     }
   ]
 }

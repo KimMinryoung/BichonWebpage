@@ -1,0 +1,85 @@
+{
+  "scope": "2026-10-02 new term 임시정부 (1944년 헝가리): proper aliases auto-linked; owner-requested",
+  "references": [
+    "dev_docs/commulingo-hungary-interwar-20261001.md"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "ko",
+      "text": "데브레첸 임시정부",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: 헝가리 임시국민정부(1944–1945)만 가리키는 고유 표현. 코퍼스 발화(미클로시 벨러 카드·1944 사건)는 모두 이 정부를 가리킴. 맨 「임시정부」는 자동 연결하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "ko",
+      "text": "임시국민정부",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: 헝가리 임시국민정부(1944–1945)만 가리키는 고유 표현. 코퍼스 발화(미클로시 벨러 카드·1944 사건)는 모두 이 정부를 가리킴. 맨 「임시정부」는 자동 연결하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "ko",
+      "text": "헝가리 임시국민정부",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: 헝가리 임시국민정부(1944–1945)만 가리키는 고유 표현. 코퍼스 발화(미클로시 벨러 카드·1944 사건)는 모두 이 정부를 가리킴. 맨 「임시정부」는 자동 연결하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "ko",
+      "text": "데브레첸 임시국민정부",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: 헝가리 임시국민정부(1944–1945)만 가리키는 고유 표현. 코퍼스 발화(미클로시 벨러 카드·1944 사건)는 모두 이 정부를 가리킴. 맨 「임시정부」는 자동 연결하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "en",
+      "text": "Provisional National Government",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: a proper expression for Hungary’s Provisional National Government (1944–1945) only; corpus uses (Béla Miklós card, the 1944 event) all refer to it. Bare “Provisional Government” stays search-only. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "en",
+      "text": "Provisional National Government of Hungary",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: a proper expression for Hungary’s Provisional National Government (1944–1945) only; corpus uses (Béla Miklós card, the 1944 event) all refer to it. Bare “Provisional Government” stays search-only. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "provisional-national-government-hungary-1944",
+      "lang": "en",
+      "text": "Hungarian Provisional National Government",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 owner-requested: a proper expression for Hungary’s Provisional National Government (1944–1945) only; corpus uses (Béla Miklós card, the 1944 event) all refer to it. Bare “Provisional Government” stays search-only. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

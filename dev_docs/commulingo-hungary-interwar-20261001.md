@@ -54,7 +54,8 @@
 - 용어 5개: 화살십자당, 마르가레테 작전, 판처파우스트 작전, 부다페스트 게토, 커스트네르 열차.
 - 다투는 수치: 이송 약 43만 7,000(USHMM) · 헌병대 43만 4,351 · 페젠마이어 43만 7,402를 나란히, 이송 중단일 7월 6일/7일, 도나우 강변 총살 1만~1만 5,000(많게는 3만 8,000 추계), 헝가리 유대인 희생 약 55만(USHMM)·56만 4,000여(브레이엄).
 - 오링크: 사건에 `noAutoLink: ['임시정부']`(러시아 임시정부 용어). 마이그레이션 238로 루츠크·오스발트 루츠/Oswald Lutz·István Lakatos 구절 차단, 239로 영어 맨 「He」(허룽의 성, 문장 첫 대명사와 겹쳐 4,436건 후보)를 차단했다. 차단 목록은 앱이 스냅샷을 다시 쓰는 1분쯤 뒤에 적용된다.
-- 남은 확인거리: 운영 사건 `hungary-1945-1949` 본문의 「임시정부」 4곳도 같은 용어로 걸릴 수 있다(그 사건은 고치지 않음). 민드센티 요제프는 카드가 없다.
+- 임시정부(사용자 결정): 「임시정부」/Provisional Government는 여러 나라에 쓰이는 보통명사라 `russian-provisional-government`의 맨 표현을 검색 전용(short/search)으로 바꿨다(`scripts/reviews/commulingo-links-20261002-provisional-government.json`). 「러시아 임시정부」·「케렌스키 정부」 등은 그대로 링크된다. 다른 나라의 임시정부는 한정된 표제어로 만든다 — 용어 「임시정부 (1944년 헝가리)」/Provisional National Government (Hungary, 1944)를 새로 만들고, 고유 별칭(데브레첸 임시정부·임시국민정부·헝가리 임시국민정부·Provisional National Government 등)을 auto로 승인했다(`...-hungary-provisional-government.json`). 그래서 1944 사건의 `noAutoLink: ['임시정부']`를 없애고 본문 첫 언급을 「임시국민정부」/the Provisional National Government로 바꿨다(편집 스크립트).
+- 민드센티 요제프 카드(`people-1944-c.js`, 사용자 요청): 출신 「헝가리(독일계 집안)」, 링크 표현 「민드센티 추기경」/Cardinal Mindszenty. `hungary-1945-1949`에 관계(target, 마이그레이션 240 — 172가 본문에만 두었던 인물), 입장 모음 보수·왕정(240), 용어 「국가보안기관 (ÁVH)」 관련 인물에 추가.
 
 ## 후속 후보
 

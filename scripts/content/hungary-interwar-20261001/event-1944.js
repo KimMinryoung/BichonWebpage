@@ -1,12 +1,14 @@
 // Hungary under German occupation, March 1944 – February 1945 (Hungary 1919–1944 batch, 2026-10-01).
 // Exports { event, people, terms } built with ./lib.js. Person cards live in
-// ./people-1944-a.js and ./people-1944-b.js.
+// ./people-1944-a.js, ./people-1944-b.js and ./people-1944-c.js.
 const { W, HU, P, event: buildEvent, term } = require('./lib');
 
 const E = t => W(encodeURI(t));
 const H = t => HU(encodeURI(t));
 const KO = t => 'https://ko.wikipedia.org/wiki/' + encodeURI(t);
 const S = {
+    huINK: H('Ideiglenes_Nemzeti_Kormány'),
+    miklosEn: E('Béla_Miklós'),
     marg: E('German_invasion_of_Hungary_(1944)'),
     huMarg: H('Margarethe_hadművelet'),
     holo: E('The_Holocaust_in_Hungary'),
@@ -162,8 +164,8 @@ const sections = [
                 sources: [S.lakatos, S.huBreakout, S.panzerfaust],
             },
             {
-                ko: '섭정의 뜻을 따른 장교는 드물었다. 8월부터 제1군 사령관이던 미클로시 벨러 상급대장은 추축국 이탈을 지지했는데, 10월 16일 독일군 사령부로 출두하라는 명령을 받자 체포를 의심해 부관과 부사관 둘을 데리고 전선을 넘어 소련군에 투항했다. 17일 아침 소련군 사령부가 있던 레스코에서 그는 라디오로 제1군 지휘관들에게 부대를 이끌고 넘어오라고 호소했지만, 이에 응한 사람은 연대장 한 명뿐이었고 그마저 독일군에 체포되어 처형되었다. 호르티를 도우려던 제2군 사령관 달노키 베레시 러요시는 독일군에 체포되었다. 소련 측과의 대항 정부 협상도 결실이 없었다. 미클로시는 12월 21일 데브레첸에서 열린 임시국민의회에서 임시정부의 총리로 뽑혔다.',
-                en: 'Few officers rallied to the regent. Colonel General Béla Miklós, commander of the First Army since August, supported leaving the Axis; ordered on 16 October to report to German headquarters and suspecting arrest, he crossed the front with an aide and two sergeants and went over to the Soviets. On the morning of the 17th, at the Soviet headquarters in Lesko, he appealed by radio to the commanders of the First Army to bring their units over, but only one regimental commander did so, and he was arrested and executed by the Germans. General Lajos Dálnoki Veress of the Second Army, who tried to come to Horthy’s aid, was arrested by the Germans. Talks with the Soviets on a Hungarian counter-government came to nothing; on 21 December the Provisional National Assembly at Debrecen elected Miklós head of a provisional government.',
+                ko: '섭정의 뜻을 따른 장교는 드물었다. 8월부터 제1군 사령관이던 미클로시 벨러 상급대장은 추축국 이탈을 지지했는데, 10월 16일 독일군 사령부로 출두하라는 명령을 받자 체포를 의심해 부관과 부사관 둘을 데리고 전선을 넘어 소련군에 투항했다. 17일 아침 소련군 사령부가 있던 레스코에서 그는 라디오로 제1군 지휘관들에게 부대를 이끌고 넘어오라고 호소했지만, 이에 응한 사람은 연대장 한 명뿐이었고 그마저 독일군에 체포되어 처형되었다. 호르티를 도우려던 제2군 사령관 달노키 베레시 러요시는 독일군에 체포되었다. 소련 측과의 대항 정부 협상도 결실이 없었다. 미클로시는 12월 21일 데브레첸에서 열린 임시국민의회에서 임시국민정부의 총리로 뽑혔다.',
+                en: 'Few officers rallied to the regent. Colonel General Béla Miklós, commander of the First Army since August, supported leaving the Axis; ordered on 16 October to report to German headquarters and suspecting arrest, he crossed the front with an aide and two sergeants and went over to the Soviets. On the morning of the 17th, at the Soviet headquarters in Lesko, he appealed by radio to the commanders of the First Army to bring their units over, but only one regimental commander did so, and he was arrested and executed by the Germans. General Lajos Dálnoki Veress of the Second Army, who tried to come to Horthy’s aid, was arrested by the Germans. Talks with the Soviets on a Hungarian counter-government came to nothing; on 21 December the Provisional National Assembly at Debrecen elected Miklós head of the Provisional National Government.',
                 sources: [S.miklos, S.huBreakout, S.lakatos],
             },
             {
@@ -239,8 +241,8 @@ const event = buildEvent({
         en: 'On 19 March 1944 German troops occupied Hungary, which had been seeking an armistice with the Allies. Regent Horthy stayed in office, and the Interior Ministry and gendarmerie of Döme Sztójay’s government, together with Eichmann’s commando, deported some 437,000 Jews to Auschwitz between May and July. Amid international protest Horthy halted the deportations in early July and in August installed the Lakatos government, which signed a preliminary armistice with the Soviet Union; but his armistice proclamation of 15 October collapsed under Germany’s Operation Panzerfaust and the Arrow Cross coup of Ferenc Szálasi. The Arrow Cross shot Budapest’s Jews on the banks of the Danube and sent them on foot to the border, while neutral diplomats saved people with protective papers. Encircled on 26 December 1944, Budapest fell to the Soviet army on 13 February 1945.',
     },
     outcome: {
-        ko: '미국 홀로코스트 기념관은 헝가리 통치하에 있던 약 82만 5,000명의 유대인 가운데 약 55만 명이 홀로코스트로 죽었다고 보며(역사가 랜돌프 브레이엄은 56만 4,000여 명으로 추산), 그 대부분인 약 50만 명이 독일 점령 뒤 한 해 사이에 살해되었다. 부다페스트는 폐허가 되었고, 데브레첸의 임시정부와 소련군 점령 아래 전후 헝가리가 시작되었다.',
-        en: 'The US Holocaust Memorial Museum estimates that some 550,000 of the roughly 825,000 Jews under Hungarian rule were killed in the Holocaust (the historian Randolph Braham estimated just over 564,000), about 500,000 of them in the single year after the German occupation. Budapest lay in ruins, and postwar Hungary began under the provisional government of Debrecen and Soviet occupation.',
+        ko: '미국 홀로코스트 기념관은 헝가리 통치하에 있던 약 82만 5,000명의 유대인 가운데 약 55만 명이 홀로코스트로 죽었다고 보며(역사가 랜돌프 브레이엄은 56만 4,000여 명으로 추산), 그 대부분인 약 50만 명이 독일 점령 뒤 한 해 사이에 살해되었다. 부다페스트는 폐허가 되었고, 데브레첸 임시정부와 소련군 점령 아래 전후 헝가리가 시작되었다.',
+        en: 'The US Holocaust Memorial Museum estimates that some 550,000 of the roughly 825,000 Jews under Hungarian rule were killed in the Holocaust (the historian Randolph Braham estimated just over 564,000), about 500,000 of them in the single year after the German occupation. Budapest lay in ruins, and postwar Hungary began under the Provisional National Government in Debrecen and Soviet occupation.',
     },
     sections,
     timeline: [
@@ -279,8 +281,6 @@ const event = buildEvent({
     ],
     countries: ['hungary', 'germany', 'soviet', 'romania', 'austria', 'poland', 'sweden', 'switzerland', 'usa', 'uk'],
     relations: { related: ['hungary-axis-1938-1944', 'great-patriotic-war', 'hungary-1945-1949', 'romania-1944-1948'] },
-    // 임시정부 is the Russian Provisional Government term almost everywhere else.
-    noAutoLink: ['임시정부'],
     focus: { ko: '독일 점령기의 헝가리', en: 'Hungary under German occupation' },
     people: [
         ['miklos-horthy', 'leader', '섭정', 'Regent', '점령 뒤에도 섭정 자리를 지켰고, 7월 초 유대인 이송을 멈추었으며, 10월 15일 휴전을 선언했다가 아들이 납치되자 살러시에게 권력을 넘기는 문서에 서명했다.', 'Stayed on as regent after the occupation, halted the deportations in early July and proclaimed an armistice on 15 October, then signed power over to Szálasi after his son was kidnapped.'],
@@ -323,7 +323,7 @@ const event = buildEvent({
     ],
 });
 
-const people = [...require('./people-1944-a'), ...require('./people-1944-b')];
+const people = [...require('./people-1944-a'), ...require('./people-1944-b'), ...require('./people-1944-c')];
 
 const terms = [
     term({
@@ -380,6 +380,18 @@ const terms = [
         people: ['rezso-kasztner', 'adolf-eichmann'],
         events: ['hungary-1944-1945'],
         sources: [S.kasztner, S.ushmm, S.holo], locator: 'lead; Organizer; Passengers; Journey',
+    }),
+    term({
+        id: 'provisional-national-government-hungary-1944', ko: '임시정부 (1944년 헝가리)', en: 'Provisional National Government (Hungary, 1944)', category: 'party-state',
+        period: '1944–1945', startYear: 1944, endYear: 1945,
+        definition: ['1944년 12월 22일 붉은군대가 점령한 데브레첸에서 미클로시 벨러를 총리로 세워진 헝가리의 임시국민정부. 1945년 1월 소련과 휴전협정을 맺고 3월 토지개혁 포고를 냈으며, 11월 15일 틸디 졸탄 정부가 들어서면서 임무를 마쳤다.',
+            'Hungary’s Provisional National Government, formed on 22 December 1944 in Red Army-occupied Debrecen with Béla Miklós as prime minister. It signed the armistice with the Soviet Union in January 1945, decreed land reform in March and ended its mandate on 15 November 1945, when Zoltán Tildy’s government took office.'],
+        body: ['데브레첸의 임시국민의회는 해방 지역의 국민위원회 대표들로 꾸려졌고, 정부 구성은 모스크바에서 승인된 헝가리 민족독립전선 정당들의 합의로 정해졌다. 살러시 정부 아래 독일 편에서 싸우던 헝가리군을 갈라놓기 위해, 10월 호르티의 휴전 호소를 따른 장군 셋 — 총리 미클로시 벨러, 참모총장 출신 뵈뢰시 야노시, 헌병 감찰관 출신 퍼러고 가보르 — 이 내각에 들어갔다. 내무장관은 국민농민당의 에르데이 페렌츠, 농업장관은 공산당의 너지 임레였다.\n\n1945년 1월 20일의 휴전협정으로 헝가리는 독일에 선전포고하고 3억 달러의 배상을 6년 안에 물기로 했다. 정부는 인민재판소를 세우고 친독 단체와 정당을 해산했으며 100홀드가 넘는 토지를 나누는 토지개혁 포고를 냈다. 봄에 부다페스트로 옮겨 가을 총선을 치렀다.',
+            'The Provisional National Assembly in Debrecen was made up of delegates of the national committees in the liberated areas, and the government’s composition was fixed by an agreement among the parties of the Hungarian National Independence Front approved in Moscow. To split the Hungarian forces still fighting on the German side under Szálasi, three generals who had obeyed Horthy’s armistice call in October entered the cabinet: the prime minister Béla Miklós, the former chief of the general staff János Vörös and the former gendarmerie inspector Gábor Faragho. The interior ministry went to Ferenc Erdei of the National Peasant Party and agriculture to the Communist Imre Nagy.\n\nUnder the armistice of 20 January 1945 Hungary declared war on Germany and undertook to pay $300 million in reparations within six years. The government set up the people’s tribunals, dissolved pro-German organisations and parties and decreed a land reform dividing estates of over 100 hold. In spring it moved to Budapest, and in the autumn it held the parliamentary election.'],
+        aliases: { ko: ['임시국민정부', '헝가리 임시국민정부', '데브레첸 임시정부', '데브레첸 임시국민정부'], en: ['Provisional National Government', 'Provisional National Government of Hungary', 'Hungarian Provisional National Government', 'Debrecen government'] },
+        people: ['bela-miklos', 'nagy', 'zoltan-tildy'],
+        events: ['hungary-1944-1945', 'hungary-1945-1949'],
+        sources: [S.huINK, S.miklosEn], locator: 'Története; A kormány fontosabb intézkedései; Prime Minister',
     }),
 ];
 
