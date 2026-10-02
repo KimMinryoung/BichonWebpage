@@ -96,6 +96,12 @@
             const li = node('li', '같은 표현을 쓰는 다른 항목: ');
             li.append(entryLink(other, row.lang, KIND_LABEL[other.kind] + ' · ' + other.label), ' (' + stateText(other) + ')'); $('review-warnings').append(li);
         });
+        const removable = row.source === 'alias' || row.source === 'expression';
+        $('review-reject').hidden = !removable; status('review-reject-status', '');
+        $('review-reject-note').textContent = removable
+            ? '잘못되었거나 표준이 아닌 별칭이면 반려합니다. 항목의 별칭에서 지워져 연결에도 검색에도 쓰이지 않습니다. 위 검토 근거 칸에 이유를 적은 뒤 누르세요.'
+            : { headword: '용어의 표제어라 반려할 수 없습니다. 바꾸려면 용어의 표제어를 고치세요.',
+                title: KIND_LABEL[row.kind] + ' 제목에서 나온 표현이라 반려할 수 없습니다. 연결을 막으려면 검색 전용으로 두세요.' }[row.source] || '';
         const form = $('review-decision').elements;
         form.policy.value = 'search'; form.role.value = row.text === row.label ? 'identity' : 'short'; form.note.value = '';
         $('review-samples').replaceChildren(); status('review-preview-status', '정책과 검토 근거를 입력한 뒤 미리보기를 실행하세요.');
@@ -132,6 +138,20 @@
                 section.append(a, node('p', sample.excerpt), comparison); $('review-samples').append(section);
             });
         } catch (error) { status('review-preview-status', error.message, true); }
+    });
+    $('review-reject').addEventListener('click', async () => {
+        if (!selected) return;
+        const note = $('review-decision').elements.note.value.trim();
+        if (note.length < 12) { status('review-reject-status', '위 검토 근거 칸에 반려 이유를 12자 이상 적어주세요.', true); return; }
+        const row = selected;
+        if (!confirm('「' + row.text + '」을(를) ' + KIND_LABEL[row.kind] + ' 「' + row.label + '」의 별칭에서 삭제합니다.')) return;
+        invalidate();
+        try {
+            await api('/reject', { kind: row.kind, id: row.id, lang: row.lang, text: row.text, note });
+            selected = null; $('review-editor').hidden = true;
+            await load();
+            status('review-status', '「' + row.text + '」을(를) 반려해 삭제했습니다. ' + $('review-status').textContent);
+        } catch (error) { status('review-reject-status', error.message, true); }
     });
     $('review-save').addEventListener('click', async () => {
         if (!token) return;

@@ -2,6 +2,16 @@ const { KINDS, key, normalize, signature, risks } = require('./link-review-polic
 const builders = {
     term: require('./term-linkify'), event: require('./event-linkify'), doc: require('./doc-linkify'),
 };
+// Where an expression comes from decides whether rejecting it can remove it:
+// aliases and explicit link expressions are data; a headword, an event title
+// (and its generated variants) or a document heading are not.
+function expressionSource(kind, record, lang, text) {
+    if ((record.linkExpressions || []).some(value => value.lang === lang && value.text === text)
+        && !(record.aliases?.[lang] || []).includes(text)) return 'expression';
+    if (kind === 'term') return text !== (record.term?.[lang] || record.term?.ko || record.term?.en) && (record.aliases?.[lang] || []).includes(text) ? 'alias' : 'headword';
+    if (kind === 'doc') return (record.aliases?.[lang] || []).includes(text) ? 'alias' : 'title';
+    return 'title';
+}
 function catalogue(records, reviews = new Map()) {
     const rows = [];
     for (const kind of KINDS) for (const record of records[kind] || []) for (const lang of ['ko', 'en']) {
@@ -12,6 +22,7 @@ function catalogue(records, reviews = new Map()) {
             rows.push({ kind, id: record.id, lang, text: expression.text,
                 label: (record.term || record.title || {})[lang] || record.id,
                 sourceSignature, sourceRole: expression.role, sourcePolicy: expression.policy,
+                source: expressionSource(kind, record, lang, expression.text),
                 role: current?.role || expression.role, policy: current?.policy || 'search',
                 reviewed: !!current, semanticReviewed: !!current?.reviewed_by && current.reviewed_by !== 'migration-178', note: current?.note || '', risks: risks(expression.text, lang) });
         }
@@ -46,4 +57,4 @@ function validateDecision(row, decision, rows) {
             && (other.role === 'identity' || (other.role === 'legacy' && other.text === other.label)))) fail('먼저 이 항목의 구체적인 이름을 자동 연결로 승인하세요.');
     }
 }
-module.exports = { catalogue, validateDecision, builders };
+module.exports = { expressionSource, catalogue, validateDecision, builders };

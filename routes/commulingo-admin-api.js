@@ -62,6 +62,9 @@ router.post('/link-reviews/preview', requireAuth, h(async (req, res) => {
 router.post('/link-reviews/save', requireAuth, h(async (req, res) => {
     res.json({ review: await linkReviewService.saveReview(req.body?.token, changedBy(req)) });
 }));
+router.post('/link-reviews/reject', requireAuth, h(async (req, res) => {
+    res.json(await linkReviewService.rejectExpression(req.body || {}, changedBy(req)));
+}));
 
 router.get('/people', h(async (req, res) => {
     const people = await listPeopleAdmin({

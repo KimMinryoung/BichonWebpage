@@ -74,6 +74,7 @@ Playwright로 열어 `july-days` 링크 0개와 ‘7월 위기’/‘July Crisis
   동시 승인은 advisory lock으로 직렬화한다. 정책과 변경 전후 이력은 같은 트랜잭션에 기록한다.
 - 승인 캐시는 PostgreSQL → 디스크 스냅샷 → 메모리로 제공한다. 조회가 완전히 불가능하고 스냅샷도
   없으면 미검토 표현처럼 자동 연결을 끈다. 저장 직후 강제 갱신하고 다른 프로세스는 약 60초 내 갱신한다.
+  반려는 표현을 항목에서 지운다: 용어 별칭(`commulingo_term_aliases`)과 용어·사건의 `link_expressions`, 문헌 manifest의 `aliases`·`linkExpressions`만 지울 수 있고 표제어·사건 제목·문헌 제목에서 나온 표현은 거부한다. 검토 행은 삭제하고 `commulingo_link_review_history`에 `{rejected, note}`를, 용어·사건은 revision을 남긴다. 문헌 반려는 Git이 추적하는 `data/commulingo/docs/manifest.json`을 바꾸므로 다음 배포 전에 커밋해야 한다.
   Admin 검토 목록(검색·페이지 이동)은 메모리의 사전·검토 스냅숏으로 만든 목록을 재사용한다. 다른 곳에서 고친 사전은 약 60초 안에 반영되고, 미리보기와 저장은 최신 데이터를 다시 읽어 revision을 비교한다.
 
 이름에 붙인 연도 괄호 뒤에서 영어 `\b`가 매칭되지 않던 문제도 수정했다.

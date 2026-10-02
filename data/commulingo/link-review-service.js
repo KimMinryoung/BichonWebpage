@@ -9,7 +9,9 @@ const { loadCommuLingoPeople } = require('./people-store');
 const { getLinkIndexes } = require('./linkify');
 const { renderLinkedContent } = require('./render-links');
 const { loadLinkReviews, refreshLinkReviews } = require('./link-reviews-store');
-const { catalogue, validateDecision, builders } = require('./link-review-catalog');
+const { catalogue, validateDecision, builders, expressionSource } = require('./link-review-catalog');
+const { writeRevision } = require('./admin-tx');
+const { updateDocMeta } = require('./docs-import');
 const { key, normalize, reviewMap } = require('./link-review-policy');
 const previews = new Map();
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -252,4 +254,67 @@ async function saveReviews(token, actor) {
     finally { client.release(); }
 }
 
-module.exports = { loadState, listReviews, previewLinks, saveReview, previewReviews, saveReviews, buildIndexes };
+// Rejecting an expression removes it from the entry: a wrong or non-standard
+// alias should neither link nor be searchable. Only aliases and explicit link
+// expressions are data that can go; a headword or title has to be renamed in
+// the entry itself. The review row goes too, and the history keeps the reason.
+async function rejectExpression(input, actor) {
+    const { kind, id, lang, text } = input || {};
+    if (!['term', 'event', 'doc'].includes(kind) || !['ko', 'en'].includes(lang)
+        || typeof id !== 'string' || typeof text !== 'string' || !text) fail('반려할 표현이 올바르지 않습니다.');
+    const note = typeof input.note === 'string' ? input.note.trim() : '';
+    if (note.length < 12 || note.length > 2000) fail('반려 근거를 12~2000자로 작성하세요.');
+    const keep = list => (list || []).filter(value => value !== text);
+    const keepExpressions = list => (list || []).filter(value => !(value.lang === lang && value.text === text));
+    const client = await db.connect();
+    let docPatch = null;
+    try {
+        await client.query('BEGIN');
+        await client.query("SET LOCAL lock_timeout = '3s'");
+        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-link-review'))");
+        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
+        if (kind === 'term') {
+            const term = (await client.query('SELECT term_ko, term_en, link_expressions FROM commulingo_terms WHERE id=$1 FOR UPDATE', [id])).rows[0];
+            if (!term) fail('용어를 찾을 수 없습니다.', 404);
+            const aliases = (await client.query('SELECT alias FROM commulingo_term_aliases WHERE term_id=$1 AND lang=$2', [id, lang])).rows.map(row => row.alias);
+            const record = { term: { ko: term.term_ko, en: term.term_en }, aliases: { [lang]: aliases }, linkExpressions: term.link_expressions || [] };
+            if (!['alias', 'expression'].includes(expressionSource('term', record, lang, text))) fail('표제어는 반려할 수 없습니다. 용어의 표제어를 고치세요.');
+            await client.query('DELETE FROM commulingo_term_aliases WHERE term_id=$1 AND lang=$2 AND alias=$3', [id, lang, text]);
+            const expressions = keepExpressions(term.link_expressions);
+            if (expressions.length !== (term.link_expressions || []).length) {
+                await client.query('UPDATE commulingo_terms SET link_expressions=$2::jsonb WHERE id=$1', [id, JSON.stringify(expressions)]);
+            }
+            await writeRevision(client, 'term', id, 'reject link expression', { lang, expression: text, note }, actor);
+        } else if (kind === 'event') {
+            const event = (await client.query('SELECT link_expressions FROM commulingo_history_events WHERE id=$1 FOR UPDATE', [id])).rows[0];
+            if (!event) fail('사건을 찾을 수 없습니다.', 404);
+            const expressions = keepExpressions(event.link_expressions);
+            if (expressions.length === (event.link_expressions || []).length) fail('사건 제목에서 나온 표현은 반려할 수 없습니다. 사건 제목을 고치세요.');
+            await client.query('UPDATE commulingo_history_events SET link_expressions=$2::jsonb WHERE id=$1', [id, JSON.stringify(expressions)]);
+            await writeRevision(client, 'history_event', id, 'reject link expression', { lang, expression: text, note }, actor);
+        } else {
+            const doc = listCommuLingoDocs().find(item => item.id === id);
+            if (!doc) fail('문헌을 찾을 수 없습니다.', 404);
+            const aliases = { ...(doc.aliases || {}), [lang]: keep(doc.aliases?.[lang]) };
+            const expressions = keepExpressions(doc.linkExpressions);
+            if (aliases[lang].length === (doc.aliases?.[lang] || []).length && expressions.length === (doc.linkExpressions || []).length) {
+                fail('문헌 제목에서 나온 표현은 반려할 수 없습니다.');
+            }
+            docPatch = { aliases, linkExpressions: expressions };
+        }
+        const old = (await client.query('DELETE FROM commulingo_link_reviews WHERE kind=$1 AND entity_id=$2 AND lang=$3 AND expression=$4 RETURNING *',
+            [kind, id, lang, text])).rows[0] || null;
+        await client.query('INSERT INTO commulingo_link_review_history (kind,entity_id,lang,expression,before_value,after_value) VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb)',
+            [kind, id, lang, text, JSON.stringify(old), JSON.stringify({ rejected: true, note, reviewed_by: actor })]);
+        // The manifest is a file: write it last, so a failure above leaves it untouched.
+        if (docPatch) updateDocMeta(id, docPatch);
+        await client.query('COMMIT');
+    } catch (error) { await client.query('ROLLBACK'); throw error; }
+    finally { client.release(); }
+    if (kind === 'term') await loadCommuLingoTerms({ fresh: true });
+    if (kind === 'event') await loadCommuLingoHistoryEvents({ fresh: true });
+    await refreshLinkReviews();
+    return { kind, id, lang, text, removed: true };
+}
+
+module.exports = { loadState, listReviews, rejectExpression, previewLinks, saveReview, previewReviews, saveReviews, buildIndexes };
