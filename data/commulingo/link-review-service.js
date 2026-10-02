@@ -8,7 +8,7 @@ const { listCommuLingoDocs, getCommuLingoDocContent } = require('./docs-store');
 const { loadCommuLingoPeople } = require('./people-store');
 const { getLinkIndexes } = require('./linkify');
 const { renderLinkedContent } = require('./render-links');
-const { refreshLinkReviews } = require('./link-reviews-store');
+const { loadLinkReviews, refreshLinkReviews } = require('./link-reviews-store');
 const { catalogue, validateDecision, builders } = require('./link-review-catalog');
 const { key, normalize, reviewMap } = require('./link-review-policy');
 const previews = new Map();
@@ -32,14 +32,33 @@ async function loadState(client = db) {
     const revision = hash([records, [...reviews.values()], people.data, reports, docVersions]);
     return { records, reviews, rows, revision, people: people.data, reports };
 }
+// The admin list runs on every search and page turn. loadState forces fresh
+// pulls of every dictionary and hashes them with people and reports (about
+// 0.6 s of DB time and as much blocking CPU), which the list never uses. It
+// reads the stores' current copies instead (write-gated, at most a minute
+// behind; a saved review refreshes the reviews store at once) and reuses the
+// catalogue while they are unchanged. Preview and save still load fresh and
+// compare revisions before writing.
+let listing = null;
+async function listingRows() {
+    const [term, event, reviews] = await Promise.all([
+        loadCommuLingoTerms(), loadCommuLingoHistoryEvents(), loadLinkReviews(),
+    ]);
+    const doc = listCommuLingoDocs();
+    if (!listing || listing.term !== term || listing.event !== event || listing.reviews !== reviews || listing.doc !== doc) {
+        const rows = catalogue({ term, event, doc }, reviews);
+        listing = { term, event, reviews, doc, rows, pending: rows.filter(row => !row.reviewed).length };
+    }
+    return listing;
+}
 async function listReviews({ q = '', kind = '', pending = false, risk = false, offset = 0, limit = 60 } = {}) {
-    const state = await loadState();
+    const state = await listingRows();
     const needle = String(q).normalize('NFC').toLowerCase();
     const rows = state.rows.filter(row => (!kind || row.kind === kind) && (!pending || !row.reviewed)
         && (!risk || row.risks.length || row.collisions.length)
         && (!needle || [row.text, row.label, row.id].some(text => text.toLowerCase().includes(needle))));
     return { total: rows.length, rows: rows.slice(offset, offset + Math.min(limit, 100)),
-        pending: state.rows.filter(row => !row.reviewed).length, revision: state.revision };
+        pending: state.pending };
 }
 function selectRow(state, input) {
     const row = state.rows.find(row => key(row.kind, row.id, row.lang, row.text) === key(input.kind, input.id, input.lang, input.text));

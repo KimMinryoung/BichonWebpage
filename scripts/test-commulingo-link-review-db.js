@@ -9,8 +9,10 @@ const db = require('../config/database');
 function stub(file, value) { require.cache[require.resolve(file)] = { id: require.resolve(file), filename: require.resolve(file), loaded: true, exports: value }; }
 const term = [{ id: 'fixture-link', term: { ko: '1917년 러시아 7월 사태', en: 'Russian July Days (1917)' }, aliases: { ko: ['7월 위기'], en: ['July Crisis'] }, body: { ko: '1917년 러시아 7월 사태와 7월 위기.' } }];
 const event = [{ id: 'fixture-wwi', title: { ko: '제1차 세계대전' }, body: { ko: '1914년 7월 위기가 전쟁으로 이어졌다.' } }];
-stub('../data/commulingo/terms-store', { loadCommuLingoTerms: async () => term });
-stub('../data/commulingo/history-events-store', { loadCommuLingoHistoryEvents: async () => event });
+// Fresh arrays per call: the fixtures are edited in place, and the review list
+// reuses its catalogue while the loaders return the same object.
+stub('../data/commulingo/terms-store', { loadCommuLingoTerms: async () => [...term] });
+stub('../data/commulingo/history-events-store', { loadCommuLingoHistoryEvents: async () => [...event] });
 stub('../data/commulingo/docs-store', { listCommuLingoDocs: () => [], getCommuLingoDocContent: () => null });
 stub('../data/commulingo/people-store', { loadCommuLingoPeople: async () => ({ data: { people: [], sections: {} } }) });
 // Keep the real createLinker/renderLinkedContent; only avoid loading production indexes.
