@@ -19,4 +19,9 @@
 - 정본 `scripts/content/revolution-1905-periphery-20261002/build.js`(반영 전 timeline·locations·sources 저장값 `before-*.json`) → `node build.js` → `../revolution-1905-periphery-20261002.json`.
 - `apply-event-text-fixes.js`(컨테이너 `/tmp/r1905/`)로 7칸을 한 트랜잭션에 반영, 백업 `/tmp/r1905/before-20261002.json`. 재실행 시 요약·연표·위치·출처는 unchanged지만 **본문 두 칸은 삽입 기준 문자열이 그대로 남아 있어 다시 들어간다** — 이 스펙을 다시 `--apply`하지 않는다.
 - 반영 전 링크 미리보기: 새 절·연표에서 걸리는 링크는 피의 일요일·총파업·얀 베르진·로자 룩셈부르크뿐이고 오링크 없음. `audit-event-locations` 통과.
-- 기존 이상(보고만): 영어 연표의 Potemkin(전함 포템킨 반란)이 인물 `vladimir-potemkin`으로 링크된다.
+- 영어 연표의 Potemkin이 인물 `vladimir-potemkin`으로 링크되던 문제는 아래 254로 해결.
+
+## 같은 날 후속: 링크 차단
+
+- 포툠킨(마이그레이션 254): 인물 `vladimir-potemkin`의 맨 성 「포툠킨」/Potemkin이 전함 포툠킨 언급(한 38·영 43회)을 모두 외교관 카드로 잇고 있었다. `kind='alias'`로 막고, 외교관을 가리키는 유일한 맨 성(독소 불가침조약 영어 본문)은 「Vladimir Potemkin」으로 고쳤다(`scripts/content/potemkin-link-20261002.json`, `apply-event-text-fixes.js`). 카드 표기 「포툠킨」은 국립국어원 러시아어 표기(ё→요)대로이고, 1905년 연표 제목만 관용 「포템킨」으로 남아 있다.
+- 레오폴트(255): 「레오폴트 2세」에서 서수를 뗀 「레오폴트」가 레오폴트 트레퍼·아베르바흐·하임슨·오쿨리츠키에 걸려, 사용자 지시로 맨 이름을 막고 「레오폴트 2세」만 링크한다.

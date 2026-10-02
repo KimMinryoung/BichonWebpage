@@ -1,0 +1,6 @@
+{
+  "id": "potemkin-link-20261002",
+  "changes": [
+    { "event": "nazi-soviet-pact", "column": "body_en", "from": "Deputy Foreign Commissar Potemkin summoned", "to": "Deputy Foreign Commissar Vladimir Potemkin summoned" }
+  ]
+}
