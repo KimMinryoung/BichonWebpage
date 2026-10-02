@@ -4,8 +4,14 @@
 # Usage:
 #   scripts/dev-preview [start|stop|restart|status|logs]
 #
+# The preview is off by default: start it for a development session and stop
+# it afterwards (it polls the DB like production and holds ~350 MB). It does
+# not come back after a reboot, and stops by itself DEV_PREVIEW_TTL after
+# start (default 4h; 0 keeps it running until `stop`).
+#
 # Defaults:
 #   DEV_PORT=3001
+#   DEV_PREVIEW_TTL=4h
 #   DEV_TAILSCALE_IFACE=tailscale0
 #   DEV_CONTAINER_NAME=leninbot-frontend-dev
 
@@ -20,6 +26,7 @@ IPV6_NETWORK="${DEV_DOCKER_IPV6_NETWORK:-leninbot_ipv6}"
 TAILSCALE_IFACE="${DEV_TAILSCALE_IFACE:-tailscale0}"
 TAILSCALE_IP="${DEV_TAILSCALE_IP:-}"
 DEV_PORT="${DEV_PORT:-3001}"
+TTL="${DEV_PREVIEW_TTL:-4h}"
 
 log() { printf '[dev-preview] %s\n' "$*"; }
 err() { printf '[dev-preview] %s\n' "$*" >&2; }
@@ -60,7 +67,6 @@ start_container() {
         --user "$(stat -c '%u:%g' "$FRONTEND_DIR/data")" \
         --add-host=host.docker.internal:host-gateway \
         -p "${TAILSCALE_IP}:${DEV_PORT}:3000" \
-        --restart unless-stopped \
         --env-file "$FRONTEND_DIR/.env" \
         -e NODE_ENV=development \
         -e DEV_MODE=1 \
@@ -84,6 +90,18 @@ start_container() {
     if docker network inspect "$IPV6_NETWORK" >/dev/null 2>&1; then
         docker network connect "$IPV6_NETWORK" "$CONTAINER_NAME" >/dev/null 2>&1 || true
     fi
+
+    schedule_stop
+}
+
+# Stop this container (by id, so a later restart is left alone) after TTL.
+schedule_stop() {
+    [[ "$TTL" == "0" ]] && return
+    local id
+    id="$(docker inspect -f '{{.Id}}' "$CONTAINER_NAME")"
+    setsid nohup bash -c "sleep '$TTL'; docker stop '$id' >/dev/null 2>&1; docker rm '$id' >/dev/null 2>&1" \
+        >/dev/null 2>&1 < /dev/null &
+    log "Stops automatically in ${TTL} (DEV_PREVIEW_TTL=0 to keep it; scripts/dev-preview stop when done)."
 }
 
 case "${1:-start}" in
@@ -97,7 +115,11 @@ case "${1:-start}" in
         stop_container
         ;;
     status)
-        docker ps --filter "name=^/${CONTAINER_NAME}$"
+        if docker ps -q --filter "name=^/${CONTAINER_NAME}$" | grep -q .; then
+            docker ps --filter "name=^/${CONTAINER_NAME}$"
+        else
+            log "stopped (scripts/dev-preview start to run it)"
+        fi
         ;;
     logs)
         docker logs -f "$CONTAINER_NAME"

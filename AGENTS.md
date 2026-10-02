@@ -10,6 +10,7 @@ When operating from the `root` account on the production server (cloud sessions 
 ## Deployment Safety
 
 - Do not recreate or restart the production `leninbot-frontend` container with an ad hoc `docker run`.
+- The dev preview (`leninbot-frontend-dev`) is off by default: `scripts/dev-preview start` when a task needs it, `scripts/dev-preview stop` when done (it also stops itself after `DEV_PREVIEW_TTL`, default 4h).
 - Use `scripts/deploy --restart` for production restarts so the required labels, host data mount, and the `leninbot_default` network are applied consistently.
 - The frontend connects to the local `leninbot-pg` Postgres container (`DB_HOST=leninbot-pg`) over the `leninbot_default` Docker network — the same network used for Redis. (The DB migrated off Supabase in July 2026; the old `leninbot_ipv6` network is no longer needed.)
 - If recent posts, reports, hub curations, or diary entries suddenly render as empty, check `docker logs leninbot-frontend` for connection errors to `:5432`, then check that `leninbot-pg` is healthy (`docker ps`) and that both containers share `leninbot_default`:
