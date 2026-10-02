@@ -12,3 +12,5 @@
 검증: `smoke-commulingo-site-css.js`, `smoke-commulingo-public-model-cache.js`, `smoke-commulingo-index-render.js`, `smoke-commulingo-updates-kinds.js`. 운영 검색 회귀는 `BASE_URL=https://cyber-lenin.com npm run test:commulingo-search:browser`.
 
 변경 전 Chromium 모바일 모의 측정(390×844, CPU 4배 지연, 1.6Mbps·RTT 150ms, 방문마다 새 컨텍스트, 페이지당 5회): 홈 LCP 중앙값 2.648초·CLS 0.028, CommuLingo 2.980초·CLS 0. 실행 자료는 `temp_dev/speed-before.json`에 보관한다. 실기기 Android/iOS 글꼴 검증은 별도로 필요하며 브라우저 기기 모의 설정은 실제 OS 글꼴을 재현하지 않는다.
+
+2026-10-02 CSS 분리 배포(`43e8ec6`) 운영 검증: 기존 전체 CSS와 36개 경로·펼침 상태의 계산된 스타일/크기가 동일했다. 한글·영문, 다크·라이트, 모바일·데스크톱, 문헌 리더·채팅·로그인을 포함했고 검색 회귀 검사도 통과했다. 브라우저 압축 전송량은 홈 CSS 19,204 → 12,033바이트(37% 감소), CommuLingo CSS 29,918 → 13,422바이트(55% 감소). 같은 모바일 조건의 각 5회 LCP 중앙값은 홈 1.192 → 1.204초, CommuLingo 0.996 → 0.884초였다. 홈은 측정 변동 범위에서 비슷하며 이미지가 LCP 요소다. CLS는 홈 0.0000724, CommuLingo 0으로 유지됐고 Pretendard 요청과 가로 넘침은 없었다. 자료: `temp_dev/css-split-{before,after}.json`, `temp_dev/css-module-ui-results.json`.
