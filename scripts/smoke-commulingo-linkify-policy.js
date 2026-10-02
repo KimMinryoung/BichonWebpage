@@ -228,9 +228,11 @@ assert.match(createLinker(ko, { surface: 'doc' }).plain('겨울전쟁 중에.'),
 
 // ── The four ways a surface may differ ─────────────────────────────────
 
-// newTab — learning content only.
-assert.match(linker('learning').plain('겨울전쟁'), /target="_blank" rel="noopener"/);
-['person', 'term', 'event', 'report', 'card'].forEach(surface => {
+// newTab — learning content and history events.
+['learning', 'event'].forEach(surface => {
+    assert.match(linker(surface).plain('겨울전쟁'), /target="_blank" rel="noopener"/, `${surface} opens a new tab`);
+});
+['person', 'term', 'report', 'card'].forEach(surface => {
     assert.doesNotMatch(linker(surface).plain('겨울전쟁 스탈린'), /target="_blank"/, `${surface} keeps links in place`);
 });
 

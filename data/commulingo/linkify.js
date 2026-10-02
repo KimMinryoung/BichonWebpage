@@ -105,10 +105,12 @@ const KIND_SPECS = {
 // The per-surface differences, in full.
 //
 //   kinds   — which dictionaries this surface's prose points at.
-//   newTab  — learning content only. A reader who follows a name out of a
-//             concept brief has to come back to the lesson they were in, and the
-//             book is a single page whose quiz position and answered state do
-//             not survive a navigation.
+//   newTab  — learning content, chat and history events. A reader who follows a
+//             name out of a concept brief has to come back to the lesson they
+//             were in, and the book is a single page whose quiz position and
+//             answered state do not survive a navigation. An event page is long
+//             reading the reader returns to after looking up a name (owner
+//             request, 2026-10-02).
 //   anchors — reports only. The first mention carries an id so a person or event
 //             page can deep-link into the report at the spot that names it
 //             (services/report-mentions.js).
@@ -124,7 +126,7 @@ const KIND_SPECS = {
 const SURFACES = {
     person: { kinds: KIND_ORDER },
     term: { kinds: KIND_ORDER },
-    event: { kinds: KIND_ORDER },
+    event: { kinds: KIND_ORDER, newTab: true },
     learning: { kinds: KIND_ORDER, newTab: true },
     report: { kinds: KIND_ORDER, anchors: true },
     // Reference-library full texts. A reader meeting 체르보네츠 or 가위차 inside a
