@@ -14,6 +14,9 @@ function loadService(rows, people = [{
     updatedAt: '2026-09-06T00:00:00Z',
 }]) {
     const dependencies = {
+        '../utils/public-model-cache': require('../utils/public-model-cache'),
+        '../utils/sanitize': require('../utils/sanitize'),
+        '../utils/truncate-html': require('../utils/truncate-html'),
         '../config/database': { query: async (sql, params) => {
             // A global LIMIT can drop an entire kind before the UI sees it.
             assert.match(sql, /PARTITION BY kind ORDER BY updated_at DESC NULLS LAST, id/);

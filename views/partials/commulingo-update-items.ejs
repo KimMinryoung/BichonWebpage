@@ -4,7 +4,7 @@
             <time datetime="<%= new Date(item.modified).toISOString() %>"><%= new Date(item.modified).toISOString().slice(0, 10) %></time>
             <a href="<%= item.href %>"><%= item.title %></a>
             <% if (item.summary) { %>
-                <div class="commu-updates-excerpt"><%- truncateHtml(sanitize(item.summary), 200) %></div>
+                <div class="commu-updates-excerpt"><%- item.excerptHtml %></div>
             <% } %>
         </li>
     <% }) %>

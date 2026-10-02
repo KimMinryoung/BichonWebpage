@@ -1,3 +1,4 @@
+const activitiesModel = require('./person-activities');
 const { renderMarkdown } = require('../../utils/markdown');
 const { loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
@@ -49,19 +50,22 @@ function shelfOf(group) {
 function orderedPeopleGroupsMeta(standardized) {
     const groups = standardized.groups || [];
     const ordered = SHELF_ORDER.flatMap(shelf => groups.filter(group => shelfOf(group) === shelf));
-    return ordered.map(group => ({
-        id: group.id,
-        shelf: shelfOf(group),
-        range: group.range,
-        title: group.title,
-        blurb: group.blurb,
-        count: group.people.length,
-        // In card order, so the shell can tell which page a #p-<id> deep link
-        // lands on.
-        personIds: sortPeopleChronologically(group.people).map(person => person.id).join(' '),
-        links: sortPeopleChronologically(group.people)
-            .map(person => ({ id: person.id, name: person.displayName || person.name })),
-    }));
+    return ordered.map(group => {
+        const people = sortPeopleChronologically(group.people);
+        return {
+            id: group.id,
+            shelf: shelfOf(group),
+            range: group.range,
+            title: group.title,
+            blurb: group.blurb,
+            count: group.people.length,
+            // In card order, so the shell can tell which page a #p-<id> deep link
+            // lands on.
+            personIds: people.map(person => person.id).join(' '),
+            links: people
+                .map(person => ({ id: person.id, name: person.displayName || person.name })),
+        };
+    });
 }
 
 // Shell of the people page (group headers): a pure function of the
@@ -69,10 +73,16 @@ function orderedPeopleGroupsMeta(standardized) {
 // memoized card fragments.
 const peopleShellMemo = new WeakMap(); // standardized -> { groupsMeta }
 
-function peopleShellFor(standardized) {
+function peopleShellFor(standardized, lang = 'ko') {
     let shell = peopleShellMemo.get(standardized);
     if (!shell) {
-        shell = { groupsMeta: orderedPeopleGroupsMeta(standardized) };
+        shell = {
+            groupsMeta: orderedPeopleGroupsMeta(standardized),
+            activityFunctions: activitiesModel.catalog.functions.map(f => ({
+                ...f, label: localize(f.label, lang),
+                count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id })).length,
+            })),
+        };
         peopleShellMemo.set(standardized, shell);
     }
     return shell;
@@ -80,8 +90,10 @@ function peopleShellFor(standardized) {
 
 // Chronological order for a person list: by birth year, then death year, then
 // name. People without a parsed birth year sort to the end. Returns a new array.
+const chronologicalMemo = new WeakMap();
 function sortPeopleChronologically(people) {
-    return (people || []).slice().sort((a, b) => {
+    if (people && chronologicalMemo.has(people)) return chronologicalMemo.get(people);
+    const sorted = (people || []).slice().sort((a, b) => {
         const ay = a.yearsData && a.yearsData.birthYear;
         const by = b.yearsData && b.yearsData.birthYear;
         if (ay && by && ay !== by) return ay - by;
@@ -92,6 +104,8 @@ function sortPeopleChronologically(people) {
         if (ad && bd && ad !== bd) return ad - bd;
         return (a.displayName || '').localeCompare(b.displayName || '');
     });
+    if (people) chronologicalMemo.set(people, sorted);
+    return sorted;
 }
 
 function localizedPersonSections(sections, lang) {

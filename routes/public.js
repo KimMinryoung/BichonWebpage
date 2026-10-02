@@ -28,19 +28,24 @@ const { createEntryRoutes, localizedEntry: localizedRecord } = require('./entry-
 const POSTS_PER_PAGE = 20;
 
 const RECENT_LIMIT = 4;
+const { createPublicModelCache } = require('../utils/public-model-cache');
+const { sanitizeBasic } = require('../utils/sanitize');
+const { truncateHtml } = require('../utils/truncate-html');
+const homepageModels = createPublicModelCache();
+const excerptHtml = content => truncateHtml(sanitizeBasic(content), 200);
 
 
 async function loadRecentReportItems(lang) {
     const [researchResult, pagesResult] = await Promise.allSettled([
-        researchStore.listResearch(lang, { limit: RECENT_LIMIT }),
-        (async () => {
+        homepageModels.get(`research:${lang}`, () => researchStore.listResearch(lang, { limit: RECENT_LIMIT })),
+        homepageModels.get(`pages:${lang}`, async () => {
             let pages = await reportCache.getPagesList(lang);
             if (!pages) {
                 pages = await pageStore.listPages(lang);
                 await reportCache.setPagesList(pages, lang);
             }
             return pages;
-        })(),
+        }),
     ]);
     const researchFiles = researchResult.status === 'fulfilled' ? researchResult.value : [];
     const pagesList = pagesResult.status === 'fulfilled' ? pagesResult.value : [];
@@ -68,17 +73,30 @@ router.get('/', async (req, res) => {
         // Fetch writing and CommuLingo previews in parallel. Each source can
         // fail independently without blanking the rest of the homepage.
         const [postsResult, diariesResult, researchResult, hubResult, commuLingoResult] = await Promise.allSettled([
-            db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
-            db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]),
-            (async () => {
-                return loadRecentReportItems(lang);
-            })(),
-            hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang }),
+            homepageModels.get(`posts:${lang}`, async () => {
+                const { rows } = await db.query('SELECT id, title, content, title_en, content_en, created_at FROM posts ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]);
+                return rows.map(row => {
+                    const post = localizedRecord(row, lang);
+                    return { id: post.id, title: post.title, created_at: post.created_at, excerptHtml: excerptHtml(post.content) };
+                });
+            }),
+            homepageModels.get(`diaries:${lang}`, async () => {
+                const { rows } = await db.query('SELECT id, title, content, title_en, content_en, created_at FROM ai_diary ORDER BY created_at DESC LIMIT $1', [RECENT_LIMIT]);
+                return rows.map(row => {
+                    const diary = localizedRecord(row, lang);
+                    return { id: diary.id, title: diary.title, created_at: diary.created_at, excerptHtml: excerptHtml(diary.content) };
+                });
+            }),
+            loadRecentReportItems(lang),
+            homepageModels.get(`hub:${lang}`, async () => (await hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang })).map(item => ({
+                slug: item.slug, title: item.title, source_publication: item.source_publication, published_at: item.published_at,
+                excerpt: item.context ? item.context.substring(0, 180) + (item.context.length > 180 ? '…' : '') : '',
+            }))),
             loadRecentCommuLingoItems(lang),
         ]);
 
-        const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => localizedRecord(row, lang)) : [];
-        const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value.rows.map(row => localizedRecord(row, lang)) : [];
+        const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value : [];
+        const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value : [];
         const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
         const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
         const recentCommuLingo = commuLingoResult.status === 'fulfilled' ? commuLingoResult.value : [];

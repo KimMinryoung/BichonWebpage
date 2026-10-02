@@ -69,7 +69,7 @@
                             </div>
                             <div class="commu-update-preview">
                                 <% if (item.summary) { %>
-                                    <p class="post-excerpt"><%- truncateHtml(sanitize(item.summary), 200) %></p>
+                                    <p class="post-excerpt"><%- item.excerptHtml %></p>
                                 <% } %>
                             </div>
                         </li>
@@ -117,7 +117,7 @@
                             <div class="post-meta">
                                 <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                             </div>
-                            <p class="post-excerpt"><%- truncateHtml(sanitize(diary.content), 200) %></p>
+                            <p class="post-excerpt"><%- diary.excerptHtml %></p>
                         </li>
                     <% }) %>
                 </ul>
@@ -143,8 +143,8 @@
                                     <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
                                 <% } %>
                             </div>
-                            <% if (it.context) { %>
-                                <p class="post-excerpt"><%= it.context.substring(0, 180) %><%= it.context.length > 180 ? '…' : '' %></p>
+                            <% if (it.excerpt) { %>
+                                <p class="post-excerpt"><%= it.excerpt %></p>
                             <% } %>
                         </li>
                     <% }) %>
@@ -166,7 +166,7 @@
                             <div class="post-meta">
                                 <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
                             </div>
-                            <p class="post-excerpt"><%- truncateHtml(sanitize(post.content), 200) %></p>
+                            <p class="post-excerpt"><%- post.excerptHtml %></p>
                         </li>
                     <% }) %>
                 </ul>

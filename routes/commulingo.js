@@ -22,23 +22,24 @@ router.use((req, res, next) => {
     res.locals.nationalityHubHref = nationalityHubHref;
     res.locals.roleIconSvg = roleIconSvg;
     res.locals.dictTabs = dictTabs;
-    // Every page under /commulingo wants the same two stylesheets, so they are
-    // set once here rather than repeated in fourteen res.render calls. The
-    // document reader builds its own <head> and links them itself.
+    // Lists share a smaller sheet; detail, map and training pages retain all rules.
+    const listPage = /^\/(?:people|events|terms)?\/?$/.test(req.path) || /^\/people\/list\/[^/]+\/?$/.test(req.path);
     res.locals.extraCss = [
         `/css/commulingo-crumb.css?v=${res.locals.assetVersion}`,
-        `/css/commulingo.css?v=${res.locals.assetVersion}`,
+        `/css/${listPage ? 'commulingo-lists' : 'commulingo'}.css?v=${res.locals.assetVersion}`,
     ];
     next();
 });
 
-const { summarizeBooks } = require('../data/commulingo/book-summary');
+const { summarizeBooks, groupBooks } = require('../data/commulingo/book-summary');
 
 router.get('/', asyncHandler(async (req, res) => {
     const catalog = loadCommuLingoCatalog();
+    const collections = summarizeBooks(catalog);
     res.render('public/commulingo-index', {
         updateGroups: await loadCommuLingoUpdateGroups(res.locals.lang),
-        books: { version: catalog.version, collections: summarizeBooks(catalog) },
+        books: { version: catalog.version, collections },
+        bookGroups: groupBooks(collections, res.locals.strings.commuLingo, res.locals.lang),
         pageTitle: res.locals.strings.commuLingo.title,
         pageDescription: res.locals.strings.commuLingo.description,
         pagePath: '/commulingo',

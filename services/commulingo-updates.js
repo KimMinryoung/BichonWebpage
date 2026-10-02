@@ -1,3 +1,8 @@
+const { createPublicModelCache } = require('../utils/public-model-cache');
+const { sanitizeBasic } = require('../utils/sanitize');
+const { truncateHtml } = require('../utils/truncate-html');
+const previews = createPublicModelCache();
+
 const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
@@ -71,7 +76,8 @@ function recentCourse(lang) {
 const UPDATES_PER_KIND = 10;
 
 async function recentPeople(lang) {
-    const { data } = await loadCommuLingoPeople();
+    const { data, source } = await loadCommuLingoPeople();
+    if (source === 'empty') throw new Error('People snapshot unavailable');
     return data.people
         .map(person => ({
             type: 'person',
@@ -120,30 +126,20 @@ async function recentDictionaryItems(lang) {
     return rows.map(row => dictionaryItem(row, lang));
 }
 
-// Memoize the event/term scan so it does not run on every homepage request.
-const DICTIONARY_MEMO_MS = Number(process.env.COMMULINGO_UPDATES_CACHE_MS || 60 * 1000);
-const dictionaryMemo = new Map();
-
-function recentDictionaryItemsCached(lang) {
-    const key = lang;
-    const cached = dictionaryMemo.get(key);
-    if (cached && Date.now() - cached.at < DICTIONARY_MEMO_MS) return cached.promise;
-    const promise = recentDictionaryItems(lang);
-    dictionaryMemo.set(key, { at: Date.now(), promise });
-    promise.catch(() => {
-        const current = dictionaryMemo.get(key);
-        if (current && current.promise === promise) dictionaryMemo.delete(key);
-    });
-    return promise;
+function cachedItems(type, lang, load) {
+    return previews.get(`${type}:${lang}`, async () => (await load()).map(item => ({
+        ...item,
+        excerptHtml: truncateHtml(sanitizeBasic(item.summary), 200),
+    })));
 }
 
 async function loadCommuLingoUpdateGroups(lang = 'ko') {
     const safeLang = lang === 'en' ? 'en' : 'ko';
     const [peopleResult, dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
-        recentPeople(safeLang),
-        recentDictionaryItemsCached(safeLang),
-        Promise.resolve().then(() => recentDocs(safeLang, UPDATES_PER_KIND)),
-        Promise.resolve().then(() => recentCourse(safeLang)),
+        cachedItems('person', safeLang, () => recentPeople(safeLang)),
+        cachedItems('dictionary', safeLang, () => recentDictionaryItems(safeLang)),
+        cachedItems('doc', safeLang, () => recentDocs(safeLang, UPDATES_PER_KIND)),
+        cachedItems('course', safeLang, () => recentCourse(safeLang)),
     ]);
 
     if (peopleResult.status === 'rejected') {

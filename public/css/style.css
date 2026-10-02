@@ -74,10 +74,15 @@
 }
 
 /* ===== Base ===== */
+h1, h2, h3 {
+    font-weight: var(--weight-heading);
+}
+
 body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     font-family: var(--font-sans);
+    letter-spacing: var(--tracking-body);
     line-height: var(--leading-normal);
     min-height: 100vh;
     min-height: 100dvh;
@@ -345,7 +350,7 @@ header {
 header h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--tracking-heading);
 }
 
 /* Compact header */
@@ -1148,7 +1153,7 @@ a.home-card:hover::after {
 .post-content h1 {
     margin-bottom: 15px;
     font-size: 1.3rem;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--tracking-heading);
 }
 
 .post-content .post-body {

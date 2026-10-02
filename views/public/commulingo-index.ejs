@@ -40,14 +40,16 @@
             <a class="btn btn-primary" href="/commulingo/drill"><%= strings.commuLingo.drillOpen %></a>
         </section>
 
-        <section class="commulingo-book-groups" id="commuBookList" aria-label="<%= strings.commuLingo.chooseBook %>"></section>
+        <section class="commulingo-book-groups" id="commuBookList" aria-label="<%= strings.commuLingo.chooseBook %>">
+            <%- include('../partials/commulingo-book-groups', { bookGroups }) %>
+        </section>
     </main>
 
     <%- include('../partials/footer') %>
     <script>
         window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
     </script>
-    <script src="/js/commulingo-schedule.js?v=<%= assetVersion %>"></script>
-    <script src="/js/commulingo-index.js?v=<%= assetVersion %>"></script>
+    <script defer src="/js/commulingo-schedule.js?v=<%= assetVersion %>"></script>
+    <script defer src="/js/commulingo-index.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

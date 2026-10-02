@@ -47,11 +47,11 @@ router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         setShortPublicCache(res);
-        const { groupsMeta } = peopleShellFor(standardized);
+        const { groupsMeta, activityFunctions } = peopleShellFor(standardized, lang);
         res.render('public/commulingo-people', {
             offices: standardized.offices,
             personCollections: (standardized.collections || []).filter(c => c.personIds.length),
-            activityFunctions: activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id })).length })),
+            activityFunctions,
             groupsMeta,
             peopleCount: standardized.people.length,
             pageSize: PAGE_SIZE,
