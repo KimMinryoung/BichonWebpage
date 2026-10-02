@@ -1,0 +1,74 @@
+{
+  "scope": "2026-10-02 registered Baltic 1940–1953 events (3) titles; owner-requested event registration",
+  "references": [
+    "dev_docs/commulingo-baltic-1940-1953-20261002.md"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "baltic-soviet-occupation-1940-1941",
+      "lang": "ko",
+      "text": "발트 3국 병합과 1941년 6월 추방",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 짧은 표현은 따로 승인하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "baltic-soviet-occupation-1940-1941",
+      "lang": "en",
+      "text": "The annexation of the Baltic states and the June 1941 deportation",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event; no shorter expression approved. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "baltic-german-occupation-1941-1944",
+      "lang": "ko",
+      "text": "독일 점령하의 발트 3국: 6월 봉기에서 홀로코스트와 1944년 퇴각까지",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 짧은 표현은 따로 승인하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "baltic-german-occupation-1941-1944",
+      "lang": "en",
+      "text": "The Baltic states under German occupation: from the June Uprising through the Holocaust to the retreat of 1944",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event; no shorter expression approved. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "baltic-sovietisation-1944-1953",
+      "lang": "ko",
+      "text": "발트 3국의 재점령: 숲의 형제들과 1949년의 추방",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 짧은 표현은 따로 승인하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "baltic-sovietisation-1944-1953",
+      "lang": "en",
+      "text": "The Soviet reoccupation of the Baltic states: the Forest Brothers and the deportations of 1949",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event; no shorter expression approved. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

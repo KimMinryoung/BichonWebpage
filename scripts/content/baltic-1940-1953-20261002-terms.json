@@ -1,0 +1,1231 @@
+{
+  "id": "baltic-1940-1953-20261002",
+  "terms": [
+    {
+      "id": "june-1941-deportation",
+      "sources": [
+        "https://en.wikipedia.org/wiki/June_deportation",
+        "https://en.wikipedia.org/wiki/Soviet_deportations_from_Estonia",
+        "https://en.wikipedia.org/wiki/Soviet_deportations_from_Lithuania",
+        "https://en.wikipedia.org/wiki/Latvian_Soviet_Socialist_Republic",
+        "https://ru.wikipedia.org/wiki/%D0%98%D1%8E%D0%BD%D1%8C%D1%81%D0%BA%D0%B0%D1%8F_%D0%B4%D0%B5%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%86%D0%B8%D1%8F_1941_%D0%B3%D0%BE%D0%B4%D0%B0",
+        "https://et.wikipedia.org/wiki/Juunik%C3%BC%C3%BCditamine"
+      ],
+      "fields": {
+        "term": {
+          "ko": "1941년 6월의 추방",
+          "en": "June 1941 Deportation"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941",
+          "en": "1941"
+        },
+        "startYear": 1941,
+        "endYear": 1941,
+        "definition": {
+          "ko": "1941년 5월 22일부터 6월 20일까지 소련이 1939~1940년에 점령한 에스토니아·라트비아·리투아니아와 서부 우크라이나·서부 벨라루스·몰다비아에서 수만 명을 소련 내지로 강제 이송한 작전. 발트 3국에서는 6월 13~14일 밤 동시에 시작되었고, 재판 없이 가족 단위로 끌려간 사람들 가운데 남자는 수용소로, 여자와 아이는 특별이주지로 보내졌다.",
+          "en": "The forced removal of tens of thousands of people into the interior of the Soviet Union, between 22 May and 20 June 1941, from Estonia, Latvia and Lithuania and from western Ukraine, western Belarus and Moldavia, all occupied by the USSR in 1939–1940. In the Baltic states it began simultaneously on the night of 13–14 June; whole families were taken without trial, the men sent to camps and the women and children to forced settlements."
+        },
+        "body": {
+          "ko": "작전은 1941년 5월 14일 소련공산당 중앙위원회와 인민위원회의의 공동 결정에 따라 NKVD가 지휘했고, 절차는 이반 세로프가 서명한 세로프 지령이 정했다. 대상은 옛 정치인과 관리, 장교, 경찰, 부유한 농민과 상인, 각종 단체의 지도자와 그 가족이었다.\n\n끌려간 사람의 수는 출처마다 다르다. 에스토니아는 9,156~1만 861명(약 1만 명), 라트비아는 1만 5,424명, 리투아니아는 NKVD 보고 1만 7,485명과 리투아니아 대학살·저항 연구 센터가 추적한 1만 6,246명이 있다. 화물차에 실려 간 사람들의 사망률은 매우 높았다. 여드레 뒤 독일이 소련을 침공해 추가 추방은 멈췄고, 발트 3국은 6월 14일을 추모일로 지킨다.",
+          "en": "Directed by the NKVD under a joint decree of 14 May 1941 of the Central Committee of the All-Union Communist Party and the Council of People’s Commissars, the operation followed a procedure set by the Serov Instructions, signed by Ivan Serov. Its targets were former politicians and officials, officers, policemen, wealthier farmers and traders, leaders of organisations, and their families.\n\nThe numbers differ by source: for Estonia 9,156 to 10,861 (about 10,000), for Latvia 15,424, and for Lithuania 17,485 in an NKVD report against 16,246 traced by the Genocide and Resistance Research Centre of Lithuania. Mortality among those carried off in cattle cars was very high. Germany’s invasion of the Soviet Union eight days later stopped further deportations, and the Baltic states keep 14 June as a day of remembrance."
+        },
+        "aliases": {
+          "ko": [
+            "6월 추방",
+            "1941년 6월 추방",
+            "발트 대추방",
+            "1941년 발트 대추방"
+          ],
+          "en": [
+            "June deportation",
+            "June deportations",
+            "June 1941 deportations",
+            "juuniküüditamine",
+            "jūnija deportācijas",
+            "birželio trėmimai"
+          ]
+        },
+        "people": [
+          "serov",
+          "beria",
+          "stalin"
+        ],
+        "events": [
+          "baltic-soviet-occupation-1940-1941"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The forced removal of tens of thousands of people into the interior of the Soviet Union, between 22 May and 20 June 1941, from Estonia, Latvia and Lithuania and from western Ukraine, western Belarus and Moldavia, all occupied by the USSR in 1939–1940. In the Baltic states it began simultaneously on the night of 13–14 June; whole families were taken without trial, the men sent to camps and the women and children to forced settlements.",
+            "source": "https://en.wikipedia.org/wiki/June_deportation",
+            "locator": "lead; Deportations; June deportation of 1941; First deportation in 1941; 14 June deportations"
+          },
+          {
+            "field": "body",
+            "claim": "Directed by the NKVD under a joint decree of 14 May 1941 of the Central Committee of the All-Union Communist Party and the Council of People’s Commissars, the operation followed a procedure set by the Serov Instructions, signed by Ivan Serov. Its targets were former politicians and officials, office",
+            "source": "https://en.wikipedia.org/wiki/June_deportation",
+            "locator": "lead; Deportations; June deportation of 1941; First deportation in 1941; 14 June deportations"
+          },
+          {
+            "field": "period",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/June_deportation",
+            "locator": "lead; Deportations; June deportation of 1941; First deportation in 1941; 14 June deportations"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/June_deportation",
+            "locator": "lead; Deportations; June deportation of 1941; First deportation in 1941; 14 June deportations"
+          },
+          {
+            "field": "endYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/June_deportation",
+            "locator": "lead; Deportations; June deportation of 1941; First deportation in 1941; 14 June deportations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "serov-instructions",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Serov_Instructions",
+        "https://en.wikipedia.org/wiki/Soviet_deportations_from_Lithuania",
+        "https://en.wikipedia.org/wiki/June_deportation"
+      ],
+      "fields": {
+        "term": {
+          "ko": "세로프 지령",
+          "en": "Serov Instructions"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941",
+          "en": "1941"
+        },
+        "startYear": 1941,
+        "endYear": 1941,
+        "definition": {
+          "ko": "1941년 6월 13~14일 리투아니아·라트비아·에스토니아에서 벌어진 대규모 추방의 절차를 정한 소련 국가보안 부인민위원 이반 세로프의 일급비밀 문서. 정식 제목은 「리투아니아, 라트비아, 에스토니아에서 반소비에트 분자의 추방을 수행하는 절차에 관하여」다.",
+          "en": "A top-secret document signed by Ivan Serov, Deputy People’s Commissar for State Security of the Soviet Union, setting the procedure for the mass deportations of 13–14 June 1941 from Lithuania, Latvia and Estonia; its full title was “On the Procedure for Carrying out the Deportation of Anti-Soviet Elements from Lithuania, Latvia, and Estonia”."
+        },
+        "body": {
+          "ko": "지령은 추방을 최대한 은밀하고 조용하고 빠르게 하라고 했고, 가족마다 옷과 식량, 부엌살림 등 100킬로그램까지만 가져가게 했다. 가장은 굴라크 노동수용소로, 나머지 가족은 먼 특별이주지로 보냈다. 실제로는 붙잡힌 사람들이 학대와 약탈을 당했다는 증언이 많다.\n\n원본에는 날짜와 번호가 없다. 1939~1941년의 여러 날짜가 거론되지만 NKGB는 1941년 2월 3일에야 생겼고, 시아울랴이에서 발견된 사본에는 6월 7일 접수 도장이 있어 1941년 2~6월 사이에 쓰인 것으로 본다. 1939년 10월 11일 베리야가 서명한 NKVD 명령 제001223호와 자주 혼동되는데, 미국 하원 위원회의 보고서가 지령 전문을 그 제목 아래 실은 데서 비롯된 것으로 보인다.",
+          "en": "The instructions required the deportations to be carried out as secretly, quietly and speedily as possible and limited each family to 100 kilograms of clothes, food and kitchenware. Heads of families were sent to Gulag labour camps and the other members to forced settlements in remote areas; in practice, witnesses testified, those seized were often abused and robbed.\n\nThe original bears no date or number. Dates from 1939 to 1941 have been cited, but the NKGB was created only on 3 February 1941, and a copy found in Šiauliai was stamped as received on 7 June, so the document must date from February–June 1941. It is often confused with NKVD Order No. 001223, signed by Beria on 11 October 1939, apparently because a US House select committee report printed the full text of the instructions under that heading."
+        },
+        "aliases": {
+          "ko": [
+            "세로프 훈령",
+            "세로프 지침"
+          ],
+          "en": [
+            "Serov Instructions",
+            "Serov instructions"
+          ]
+        },
+        "people": [
+          "serov",
+          "beria"
+        ],
+        "events": [
+          "baltic-soviet-occupation-1940-1941"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A top-secret document signed by Ivan Serov, Deputy People’s Commissar for State Security of the Soviet Union, setting the procedure for the mass deportations of 13–14 June 1941 from Lithuania, Latvia and Estonia; its full title was “On the Procedure for Carrying out the Deportation of Anti-Soviet Elements from Lithuania, Latvia, and Estonia”.",
+            "source": "https://en.wikipedia.org/wiki/Serov_Instructions",
+            "locator": "lead; Dating and confusion; First deportation in 1941"
+          },
+          {
+            "field": "body",
+            "claim": "The instructions required the deportations to be carried out as secretly, quietly and speedily as possible and limited each family to 100 kilograms of clothes, food and kitchenware. Heads of families were sent to Gulag labour camps and the other members to forced settlements in remote areas; in prac",
+            "source": "https://en.wikipedia.org/wiki/Serov_Instructions",
+            "locator": "lead; Dating and confusion; First deportation in 1941"
+          },
+          {
+            "field": "period",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Serov_Instructions",
+            "locator": "lead; Dating and confusion; First deportation in 1941"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Serov_Instructions",
+            "locator": "lead; Dating and confusion; First deportation in 1941"
+          },
+          {
+            "field": "endYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Serov_Instructions",
+            "locator": "lead; Dating and confusion; First deportation in 1941"
+          }
+        ]
+      }
+    },
+    {
+      "id": "welles-declaration",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Welles_Declaration",
+        "https://en.wikipedia.org/wiki/Sumner_Welles"
+      ],
+      "fields": {
+        "term": {
+          "ko": "웰스 선언",
+          "en": "Welles Declaration"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1940",
+          "en": "1940"
+        },
+        "startYear": 1940,
+        "endYear": 1940,
+        "definition": {
+          "ko": "1940년 7월 23일 미국 국무장관 대행 섬너 웰스가 발표한 성명. 1940년 6월 소련군의 에스토니아·라트비아·리투아니아 점령을 규탄하고 세 나라의 소련 병합을 외교적으로 승인하지 않는다고 밝혀, 1991년까지 이어진 미국의 불승인 정책의 출발점이 되었다.",
+          "en": "A statement issued on 23 July 1940 by Sumner Welles, the acting US Secretary of State, condemning the Soviet army’s occupation of Estonia, Latvia and Lithuania in June 1940 and refusing to recognise their annexation into the Soviet Union; it began the US policy of non-recognition that lasted until 1991."
+        },
+        "body": {
+          "ko": "선언은 무력에 의한 영토 변경을 인정하지 않는 1932년 스팀슨 독트린을 적용한 것으로, 웰스가 프랭클린 D. 루스벨트 대통령과 상의해 국무부 초안을 더 강한 문장으로 고쳤다. 미국은 그 직전인 7월 15일 발트 3국의 자산을 동결했고, 선언 뒤에도 세 나라의 공사들을 주권국 정부의 사절로 인정했다.\n\n선언은 미국·영국·소련 동맹 안에서 마찰의 원인이 되었지만 웰스는 이를 옹호했고, 1942년에는 병합이 「모든 도덕적 관점에서 변호할 수 없을 뿐 아니라 놀랄 만큼 어리석다」고 썼다. 미국은 소련과 군사적으로 맞서지 않았으나, 선언 덕분에 발트 국가들은 독립 외교 공관을 유지했고 행정명령 8484가 그 금융 자산을 보호했다. 이후의 모든 미국 대통령과 의회 결의가 그 취지를 이어받았다.",
+          "en": "An application of the Stimson Doctrine of 1932, which refused to recognise territorial changes made by force, the declaration was strengthened by Welles in consultation with President Franklin D. Roosevelt from a State Department draft. The United States had frozen the Baltic states’ assets on 15 July, and after the declaration it continued to recognise their envoys as representatives of sovereign governments.\n\nThe declaration became a point of contention within the American–British–Soviet alliance, but Welles defended it, writing in 1942 that the annexation was “not only indefensible from every moral standpoint, but likewise extraordinarily stupid.” The United States did not confront the Soviet Union militarily, but the declaration enabled the Baltic states to maintain independent diplomatic missions, and Executive Order 8484 protected their financial assets. Its essence was upheld by every later US president and by congressional resolutions."
+        },
+        "aliases": {
+          "ko": [
+            "웰스 성명"
+          ],
+          "en": [
+            "Welles declaration",
+            "Welles Statement"
+          ]
+        },
+        "people": [
+          "sumner-welles",
+          "franklin-d-roosevelt"
+        ],
+        "events": [
+          "baltic-soviet-occupation-1940-1941"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A statement issued on 23 July 1940 by Sumner Welles, the acting US Secretary of State, condemning the Soviet army’s occupation of Estonia, Latvia and Lithuania in June 1940 and refusing to recognise their annexation into the Soviet Union; it began the US policy of non-recognition that lasted until 1991.",
+            "source": "https://en.wikipedia.org/wiki/Welles_Declaration",
+            "locator": "lead; Background; Formulation; Impact"
+          },
+          {
+            "field": "body",
+            "claim": "An application of the Stimson Doctrine of 1932, which refused to recognise territorial changes made by force, the declaration was strengthened by Welles in consultation with President Franklin D. Roosevelt from a State Department draft. The United States had frozen the Baltic states’ assets on 15 Ju",
+            "source": "https://en.wikipedia.org/wiki/Welles_Declaration",
+            "locator": "lead; Background; Formulation; Impact"
+          },
+          {
+            "field": "period",
+            "claim": "1940",
+            "source": "https://en.wikipedia.org/wiki/Welles_Declaration",
+            "locator": "lead; Background; Formulation; Impact"
+          },
+          {
+            "field": "startYear",
+            "claim": "1940",
+            "source": "https://en.wikipedia.org/wiki/Welles_Declaration",
+            "locator": "lead; Background; Formulation; Impact"
+          },
+          {
+            "field": "endYear",
+            "claim": "1940",
+            "source": "https://en.wikipedia.org/wiki/Welles_Declaration",
+            "locator": "lead; Background; Formulation; Impact"
+          }
+        ]
+      }
+    },
+    {
+      "id": "baltic-mutual-assistance-treaties-1939",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Soviet%E2%80%93Estonian_Mutual_Assistance_Treaty",
+        "https://en.wikipedia.org/wiki/Soviet%E2%80%93Latvian_Mutual_Assistance_Treaty",
+        "https://en.wikipedia.org/wiki/Soviet%E2%80%93Lithuanian_Mutual_Assistance_Treaty",
+        "https://en.wikipedia.org/wiki/Soviet_occupation_of_the_Baltic_states_(1940)"
+      ],
+      "fields": {
+        "term": {
+          "ko": "상호원조조약 (1939년 발트)",
+          "en": "Soviet–Baltic Mutual Assistance Treaties (1939)"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1939",
+          "en": "1939"
+        },
+        "startYear": 1939,
+        "endYear": 1939,
+        "definition": {
+          "ko": "1939년 9~10월 소련이 에스토니아(9월 28일), 라트비아(10월 5일), 리투아니아(10월 10일)에 강요한 세 개의 양자 조약. 서로의 주권과 체제를 존중한다고 적었지만 소련군 기지와 주둔을 허용해, 1940년 6월 소련의 점령으로 이어졌다.",
+          "en": "The three bilateral treaties the Soviet Union forced on Estonia (28 September), Latvia (5 October) and Lithuania (10 October) in September–October 1939. They declared respect for each party’s sovereignty and system but admitted Soviet military bases and garrisons, which facilitated the Soviet occupation of June 1940."
+        },
+        "body": {
+          "ko": "소련은 폴란드 잠수함 오르젤의 탈출을 구실로 에스토니아의 중립을 문제 삼아 9월 24일 외무장관 카를 셀테르에게 조약을 요구했고, 라트비아는 외무장관 빌헬름스 문테르스가 서명했다. 조약은 제3국의 공격 때 군사 협력, 소련의 무기 지원, 기지 설치, 상대에 맞서는 동맹 금지, 정치·경제 체제와 주권의 불간섭을 담았다. 주둔 병력은 에스토니아 2만 5,000명, 라트비아 3만 명, 리투아니아 2만 명이었다.\n\n리투아니아와의 조약은 소련이 폴란드 침공으로 차지한 빌뉴스와 빌뉴스 지역 일부를 리투아니아에 넘겨주는 내용을 함께 담았다. 같은 조약을 거부한 핀란드는 1939년 11월 겨울전쟁으로 공격당했다. 1940년 6월 소련은 세 나라가 조약을 어기고 반소 동맹을 꾸몄다며 최후통첩을 보냈다.",
+          "en": "Using the escape of the Polish submarine Orzeł as a pretext to question Estonia’s neutrality, the Soviets demanded the treaty from the Estonian foreign minister Karl Selter on 24 September; in Latvia the foreign minister Vilhelms Munters signed. The treaties provided for military co-operation against an attack by a third party, Soviet help with armaments, the establishment of bases, a ban on alliances against the other party, and non-interference with each party’s political and economic systems and sovereignty. The garrisons were set at 25,000 troops in Estonia, 30,000 in Latvia and 20,000 in Lithuania.\n\nThe Lithuanian treaty also transferred to Lithuania Vilnius and part of the Vilnius Region, which the Soviets had taken in the invasion of Poland. Finland, which rejected a similar treaty, was attacked in the Winter War in November 1939. In June 1940 the Soviet Union sent the three states ultimatums, accusing them of violating the treaties and conspiring against it."
+        },
+        "aliases": {
+          "ko": [
+            "기지 조약 (1939년 발트)",
+            "소련–에스토니아 상호원조조약",
+            "소련–라트비아 상호원조조약",
+            "소련–리투아니아 상호원조조약",
+            "발트 상호원조조약"
+          ],
+          "en": [
+            "Soviet–Estonian Mutual Assistance Treaty",
+            "Soviet–Latvian Mutual Assistance Treaty",
+            "Soviet–Lithuanian Mutual Assistance Treaty",
+            "Baltic mutual assistance pacts",
+            "Soviet–Baltic mutual assistance pacts"
+          ]
+        },
+        "people": [
+          "molotov",
+          "stalin",
+          "vilhelms-munters"
+        ],
+        "events": [
+          "baltic-soviet-occupation-1940-1941",
+          "nazi-soviet-pact",
+          "winter-war"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The three bilateral treaties the Soviet Union forced on Estonia (28 September), Latvia (5 October) and Lithuania (10 October) in September–October 1939. They declared respect for each party’s sovereignty and system but admitted Soviet military bases and garrisons, which facilitated the Soviet occupation of June 1940.",
+            "source": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Estonian_Mutual_Assistance_Treaty",
+            "locator": "lead; Background; Articles of the treaty; Aftermath"
+          },
+          {
+            "field": "body",
+            "claim": "Using the escape of the Polish submarine Orzeł as a pretext to question Estonia’s neutrality, the Soviets demanded the treaty from the Estonian foreign minister Karl Selter on 24 September; in Latvia the foreign minister Vilhelms Munters signed. The treaties provided for military co-operation agains",
+            "source": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Estonian_Mutual_Assistance_Treaty",
+            "locator": "lead; Background; Articles of the treaty; Aftermath"
+          },
+          {
+            "field": "period",
+            "claim": "1939",
+            "source": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Estonian_Mutual_Assistance_Treaty",
+            "locator": "lead; Background; Articles of the treaty; Aftermath"
+          },
+          {
+            "field": "startYear",
+            "claim": "1939",
+            "source": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Estonian_Mutual_Assistance_Treaty",
+            "locator": "lead; Background; Articles of the treaty; Aftermath"
+          },
+          {
+            "field": "endYear",
+            "claim": "1939",
+            "source": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Estonian_Mutual_Assistance_Treaty",
+            "locator": "lead; Background; Articles of the treaty; Aftermath"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reichskommissariat-ostland",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Reichskommissariat_Ostland",
+        "https://en.wikipedia.org/wiki/Hinrich_Lohse",
+        "https://encyclopedia.ushmm.org/content/en/article/latvia"
+      ],
+      "fields": {
+        "term": {
+          "ko": "오스트란트 국가판무관부",
+          "en": "Reichskommissariat Ostland"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1941–1945",
+          "en": "1941–1945"
+        },
+        "startYear": 1941,
+        "endYear": 1945,
+        "definition": {
+          "ko": "나치 독일이 1941~1945년 리투아니아·라트비아·에스토니아와 벨라루스 서부에 둔 민정 점령 기구. 동부 점령지 장관 알프레트 로젠베르크 아래 국가판무관 힌리히 로제가 리가에서 다스렸고, 이 땅에서 친위대와 특수작전집단, 현지 보조경찰이 유대인 등 100만 명이 넘는 사람을 죽였다.",
+          "en": "The German civil occupation regime of 1941–1945 in Lithuania, Latvia, Estonia and western Belarus. Ruled from Riga by Reichskommissar Hinrich Lohse under Alfred Rosenberg’s Reich Ministry for the Occupied Eastern Territories, it was the territory in which the SS, the Einsatzgruppen and local auxiliary police killed over a million Jews and others."
+        },
+        "body": {
+          "ko": "1941년 7월 17일 히틀러의 포고로 설치가 정해졌고, 군정 시기를 거쳐 가을부터 민정이 들어섰다. 판무관부는 에스토니아(총판무관 카를지크문트 리츠만), 라트비아(오토하인리히 드레흐슬러), 리투아니아(테오도어 아드리안 폰 렌텔른), 백루테니아(빌헬름 쿠베)의 네 총관구로 나뉘었고, 각 총관구에는 현지인 협력 행정기구와 보조경찰이 있었다. 그러나 치안은 친위대·경찰 고위 지도자가, 경제와 노동력은 다른 중앙 기관이 쥐어 로젠베르크와 로제의 실권은 제한되었다.\n\n판무관부는 소련 국가·당 재산을 몰수하고 국유화된 농지를 옛 주인에게 돌려주었지만, 유대인 재산은 몰수했다. 동부 종합 계획은 이 지역을 독일화해 독일에 합치려 했다. 1943~1944년 붉은군대가 대부분을 되찾았고, 1944년 4월 백루테니아가 떨어져 나갔으며, 9월 로제 대신 에리히 코흐가 국가판무관이 되었다. 남은 행정기구는 1945년 5월까지 쿠를란트 포위망 안에서 버텼다.",
+          "en": "Its creation was decreed by Hitler on 17 July 1941, and after a period of military rule the civil administration took over from the autumn. It was divided into four general districts — Estonia under Generalkommissar Karl-Siegmund Litzmann, Latvia under Otto-Heinrich Drechsler, Lithuania under Theodor Adrian von Renteln and White Ruthenia under Wilhelm Kube — each with a native collaborationist administration and auxiliary police. But security lay with the Higher SS and Police Leader and the economy and labour with other central agencies, so Rosenberg and Lohse had limited real power.\n\nThe administration confiscated Soviet state and party property and returned nationalised farmland to its former owners, but confiscated Jewish property. Under Generalplan Ost the region was to be Germanised and joined to Germany. The Red Army recaptured most of it in 1943–1944; White Ruthenia was detached in April 1944, and in September Erich Koch replaced Lohse as Reichskommissar. The rump administration held out in the Courland Pocket until May 1945."
+        },
+        "aliases": {
+          "ko": [
+            "오스트란트",
+            "오스트란트 제국판무관부",
+            "동방 국가판무관부"
+          ],
+          "en": [
+            "Ostland",
+            "Reich Commissariat Ostland",
+            "RKO"
+          ]
+        },
+        "people": [
+          "hinrich-lohse",
+          "alfred-rosenberg",
+          "friedrich-jeckeln",
+          "hjalmar-mae",
+          "adolf-hitler"
+        ],
+        "events": [
+          "baltic-german-occupation-1941-1944",
+          "great-patriotic-war"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The German civil occupation regime of 1941–1945 in Lithuania, Latvia, Estonia and western Belarus. Ruled from Riga by Reichskommissar Hinrich Lohse under Alfred Rosenberg’s Reich Ministry for the Occupied Eastern Territories, it was the territory in which the SS, the Einsatzgruppen and local auxiliary police killed over a million Jews and others.",
+            "source": "https://en.wikipedia.org/wiki/Reichskommissariat_Ostland",
+            "locator": "lead; After Operation Barbarossa; Administrative and territorial organization; Policies"
+          },
+          {
+            "field": "body",
+            "claim": "Its creation was decreed by Hitler on 17 July 1941, and after a period of military rule the civil administration took over from the autumn. It was divided into four general districts — Estonia under Generalkommissar Karl-Siegmund Litzmann, Latvia under Otto-Heinrich Drechsler, Lithuania under Theodo",
+            "source": "https://en.wikipedia.org/wiki/Reichskommissariat_Ostland",
+            "locator": "lead; After Operation Barbarossa; Administrative and territorial organization; Policies"
+          },
+          {
+            "field": "period",
+            "claim": "1941–1945",
+            "source": "https://en.wikipedia.org/wiki/Reichskommissariat_Ostland",
+            "locator": "lead; After Operation Barbarossa; Administrative and territorial organization; Policies"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Reichskommissariat_Ostland",
+            "locator": "lead; After Operation Barbarossa; Administrative and territorial organization; Policies"
+          },
+          {
+            "field": "endYear",
+            "claim": "1945",
+            "source": "https://en.wikipedia.org/wiki/Reichskommissariat_Ostland",
+            "locator": "lead; After Operation Barbarossa; Administrative and territorial organization; Policies"
+          }
+        ]
+      }
+    },
+    {
+      "id": "einsatzgruppen",
+      "sources": [
+        "https://encyclopedia.ushmm.org/content/en/article/einsatzgruppen",
+        "https://en.wikipedia.org/wiki/Walter_Stahlecker",
+        "https://en.wikipedia.org/wiki/J%C3%A4ger_Report"
+      ],
+      "fields": {
+        "term": {
+          "ko": "특수작전집단 (아인자츠그루펜)",
+          "en": "Einsatzgruppen"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1939–1945",
+          "en": "1939–1945"
+        },
+        "startYear": 1939,
+        "endYear": 1945,
+        "definition": {
+          "ko": "나치 독일 친위대 보안경찰과 정보부(SD)의 기동 부대. 독일군을 따라 점령지에 들어가 「적」을 제거하는 임무를 맡았고, 1941년 소련 침공 뒤 주로 총살로 유대인을 비롯한 민간인 100만 명이 훨씬 넘게 살해했다.",
+          "en": "Mobile units of the SS Security Police and SD that followed the German army into occupied territory to eliminate perceived enemies. After the invasion of the Soviet Union in 1941 they murdered well over a million civilians, above all Jews, mostly in mass shootings."
+        },
+        "body": {
+          "ko": "특수작전집단은 1939년 폴란드 침공 때 이미 유대인 수천 명과 폴란드 엘리트 수만 명을 쏘았다. 1941년 6월 히틀러의 「절멸 전쟁」이 시작되자 A·B·C·D 네 집단, 약 3,000명이 공산당·소련 관리, 로마인, 그리고 무엇보다 나이와 성별을 가리지 않고 유대인을 겨냥했고, 첫 아홉 달 동안 50만 명이 넘는 사람을 총살하는 데 관여했다. 무장친위대, 질서경찰, 국방군과 현지 협력자들이 이들을 도왔다.\n\n북부집단군을 따라 발트 3국에 들어간 A집단은 발터 슈탈레커가 지휘했고, 1941년 겨울까지 유대인 24만 9,420명을 죽였다고 보고했다. 그 아래 카를 예거의 특무부대 3은 리투아니아에서 13만 7,346명의 처형을 집계한 「예거 보고서」를 남겼다. 총살의 부담을 줄이려 가스 트럭도 만들어졌지만, 소련 점령지에서는 끝까지 총살이 주된 방법이었다.",
+          "en": "The Einsatzgruppen had already shot thousands of Jews and tens of thousands of members of the Polish elite after the invasion of Poland in 1939. When Hitler’s “war of annihilation” began in June 1941, the four groups A, B, C and D, some 3,000 men, targeted Communist Party and Soviet state officials, Roma and above all Jews of any age or gender, and organised and helped carry out the shooting of more than half a million people in the first nine months. Units of the Waffen-SS, Order Police, Wehrmacht and local collaborators aided them.\n\nEinsatzgruppe A, which followed Army Group North into the Baltic states, was commanded by Walter Stahlecker and reported having murdered 249,420 Jews by the winter of 1941. Its Einsatzkommando 3 under Karl Jäger left the “Jäger Report”, tallying 137,346 executions in Lithuania. Gas vans were developed to spare the shooters, but mass shooting remained the main method throughout the occupied Soviet territories."
+        },
+        "aliases": {
+          "ko": [
+            "아인자츠그루펜",
+            "특수작전집단",
+            "특별행동대",
+            "기동 학살 부대"
+          ],
+          "en": [
+            "Einsatzgruppe",
+            "mobile killing units",
+            "Einsatzgruppe A"
+          ]
+        },
+        "people": [
+          "walter-stahlecker",
+          "karl-jager",
+          "reinhard-heydrich",
+          "heinrich-himmler",
+          "friedrich-jeckeln"
+        ],
+        "events": [
+          "baltic-german-occupation-1941-1944",
+          "great-patriotic-war"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Mobile units of the SS Security Police and SD that followed the German army into occupied territory to eliminate perceived enemies. After the invasion of the Soviet Union in 1941 they murdered well over a million civilians, above all Jews, mostly in mass shootings.",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/einsatzgruppen",
+            "locator": "Einsatzgruppen (USHMM); Einsatzgruppe A; Description"
+          },
+          {
+            "field": "body",
+            "claim": "The Einsatzgruppen had already shot thousands of Jews and tens of thousands of members of the Polish elite after the invasion of Poland in 1939. When Hitler’s “war of annihilation” began in June 1941, the four groups A, B, C and D, some 3,000 men, targeted Communist Party and Soviet state officials,",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/einsatzgruppen",
+            "locator": "Einsatzgruppen (USHMM); Einsatzgruppe A; Description"
+          },
+          {
+            "field": "period",
+            "claim": "1939–1945",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/einsatzgruppen",
+            "locator": "Einsatzgruppen (USHMM); Einsatzgruppe A; Description"
+          },
+          {
+            "field": "startYear",
+            "claim": "1939",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/einsatzgruppen",
+            "locator": "Einsatzgruppen (USHMM); Einsatzgruppe A; Description"
+          },
+          {
+            "field": "endYear",
+            "claim": "1945",
+            "source": "https://encyclopedia.ushmm.org/content/en/article/einsatzgruppen",
+            "locator": "Einsatzgruppen (USHMM); Einsatzgruppe A; Description"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kaunas-pogrom",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kaunas_pogrom",
+        "https://en.wikipedia.org/wiki/The_Holocaust_in_Lithuania",
+        "https://en.wikipedia.org/wiki/Walter_Stahlecker"
+      ],
+      "fields": {
+        "term": {
+          "ko": "카우나스 포그롬",
+          "en": "Kaunas pogrom"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941",
+          "en": "1941"
+        },
+        "startYear": 1941,
+        "endYear": 1941,
+        "definition": {
+          "ko": "독소전 첫 주인 1941년 6월 25~29일 리투아니아 카우나스에서 리투아니아인 무장대가 유대인을 학살한 사건. 특수작전집단 A의 발터 슈탈레커가 독일의 지시가 드러나지 않게 알기르다스 클리마이티스의 부대를 부추겨 일으켰다.",
+          "en": "The massacre of Jews by Lithuanian militias in Kaunas on 25–29 June 1941, in the first week of the German invasion of the Soviet Union. Walter Stahlecker of Einsatzgruppe A had the unit of Algirdas Klimaitis start it in a way that concealed German instigation."
+        },
+        "body": {
+          "ko": "리투아니아 행동주의 전선이 6월 23일 카우나스를 장악한 뒤, 25일 아침 도착한 슈탈레커는 리투아니아 보안경찰 본부에서 반유대 연설을 했다. 주민들이 선뜻 나서지 않자 그는 친위대 정보부(SD)가 틸지트에서 조직한 약 600명 규모의 클리마이티스 부대에 포그롬을 맡겼다. 25일 밤부터 유대인 교외 빌리얌폴레(슬로보트카)에서 살육이 시작되었고, 27일 리에투키스 차고에서는 수십 명의 유대인 남성이 군중 앞에서 쇠막대에 맞아 죽었다.\n\n희생자 수는 문헌마다 다르다. 슈탈레커는 6월 28일까지 카우나스에서 3,800명, 주변 마을에서 1,200명이 죽었다고 보고했지만 과장이라는 의심을 받고, 다른 문헌은 1,500~3,800명으로 적는다. 카를 예거는 6월 24일부터 7월 6일까지 카우나스에서 7,800명이 살해되었다고 기록했다. 책임이 현지인과 나치 가운데 어디에 먼저 있는지는 논쟁이 되어 왔고, 포그롬 뒤 체계적인 총살은 카우나스 요새의 제7·제9요새로 옮겨 갔다.",
+          "en": "After the Lithuanian Activist Front took control of Kaunas on 23 June, Stahlecker arrived on the morning of the 25th and delivered an antisemitic speech at the headquarters of the Lithuanian Security Police. When local Lithuanians proved unenthusiastic, he gave the task to Klimaitis’s unit of some 600 men, organised by the SD in Tilsit. The killing began on the night of the 25th in the Jewish suburb of Vilijampolė (Slobodka), and on the 27th several dozen Jewish men were beaten to death with a metal bar before a crowd at the Lietūkis garage.\n\nFigures differ. Stahlecker reported 3,800 dead in Kaunas and 1,200 in nearby towns by 28 June, though he is suspected of exaggerating, and other sources give 1,500–3,800. Karl Jäger recorded 7,800 Jews killed in Kaunas between 24 June and 6 July. Whether primary responsibility lay with local Lithuanians or with Nazi officials has been disputed. After the pogrom, systematic shootings moved to the Seventh and Ninth Forts of the Kaunas Fortress."
+        },
+        "aliases": {
+          "ko": [
+            "코브노 포그롬",
+            "리에투키스 차고 학살"
+          ],
+          "en": [
+            "Kovno pogrom",
+            "Lietūkis Garage Massacre"
+          ]
+        },
+        "people": [
+          "walter-stahlecker",
+          "karl-jager"
+        ],
+        "events": [
+          "baltic-german-occupation-1941-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The massacre of Jews by Lithuanian militias in Kaunas on 25–29 June 1941, in the first week of the German invasion of the Soviet Union. Walter Stahlecker of Einsatzgruppe A had the unit of Algirdas Klimaitis start it in a way that concealed German instigation.",
+            "source": "https://en.wikipedia.org/wiki/Kaunas_pogrom",
+            "locator": "lead; Background; Massacre; Responsibility"
+          },
+          {
+            "field": "body",
+            "claim": "After the Lithuanian Activist Front took control of Kaunas on 23 June, Stahlecker arrived on the morning of the 25th and delivered an antisemitic speech at the headquarters of the Lithuanian Security Police. When local Lithuanians proved unenthusiastic, he gave the task to Klimaitis’s unit of some 6",
+            "source": "https://en.wikipedia.org/wiki/Kaunas_pogrom",
+            "locator": "lead; Background; Massacre; Responsibility"
+          },
+          {
+            "field": "period",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Kaunas_pogrom",
+            "locator": "lead; Background; Massacre; Responsibility"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Kaunas_pogrom",
+            "locator": "lead; Background; Massacre; Responsibility"
+          },
+          {
+            "field": "endYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Kaunas_pogrom",
+            "locator": "lead; Background; Massacre; Responsibility"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ponary-massacre",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ponary_massacre",
+        "https://en.wikipedia.org/wiki/Ypatingasis_b%C5%ABrys",
+        "https://encyclopedia.ushmm.org/content/en/article/vilna"
+      ],
+      "fields": {
+        "term": {
+          "ko": "포나리 학살",
+          "en": "Ponary massacre"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941–1944",
+          "en": "1941–1944"
+        },
+        "startYear": 1941,
+        "endYear": 1944,
+        "definition": {
+          "ko": "1941년 7월부터 1944년 8월까지 빌뉴스 근교 포나리(파네리아이)에서 독일 친위대와 정보부(SD), 리투아니아인 「특수소대」가 사람들을 총살한 대량 학살. 희생자는 7만~10만 명으로 추정되며, 그 가운데 약 7만 명이 유대인이었고 나머지는 폴란드인과 소련군 포로 등이었다.",
+          "en": "The mass murder of 70,000–100,000 people, about 70,000 of them Jews and the rest mainly Poles and Soviet prisoners of war, by the German SD and SS and the Lithuanian Ypatingasis būrys at Ponary (Paneriai) outside Vilnius between July 1941 and August 1944."
+        },
+        "body": {
+          "ko": "총살은 1941년 7월 2일 특무부대 9가 빌뉴스에 오면서 시작되었고, 대부분의 사격은 80명가량의 리투아니아인 자원자 부대가 맡았다. 소련이 군용 비행장의 기름 저장고로 파 두었던 커다란 구덩이 여섯 개가 무덤이 되었다. 9월 빌뉴스 게토가 세워진 뒤에도 「작전」이 이어져, 1941년 말까지 포나리에서 살해된 유대인은 2만 1,700명(스나이더)부터 3만 3,500명(아라드), 약 4만 명(미국 홀로코스트 기념관)까지로 추정된다.\n\n1943년 소련군이 다가오자 나치는 「1005 작전」에 따라 수감자들로 「시신 부대」를 꾸려 시신을 파내 태우게 했다. 이들은 1944년 4월 19일 숟가락으로 판 굴로 탈출했고, 80명 가운데 살아남은 11명의 증언이 학살을 알렸다. 소련은 오랫동안 희생자를 「소련 시민」으로만 기렸고, 1991년에야 홀로코스트 희생자 기념비가 세워졌다.",
+          "en": "The shootings began when Einsatzkommando 9 arrived in Vilnius on 2 July 1941, with most of the killing done by a Lithuanian volunteer squad some 80 strong. Six large pits dug by the Soviets for the fuel tanks of a military airfield became the graves. The “actions” continued after the Vilnius ghetto was set up in September; estimates of the Jews killed at Ponary by the end of 1941 range from 21,700 (Timothy Snyder) to 33,500 (Yitzhak Arad) and about 40,000 (US Holocaust Memorial Museum).\n\nAs Soviet troops approached in 1943, the Nazis formed prisoners into “corpse units” under Aktion 1005 to dig up and burn the bodies. On 19 April 1944 they escaped through a tunnel dug with spoons, and the testimony of the 11 of the 80 who survived helped reveal the massacre. For decades the Soviet authorities commemorated the victims only as “Soviet citizens”; a monument to the Holocaust victims was erected only in 1991."
+        },
+        "aliases": {
+          "ko": [
+            "파네리아이 학살",
+            "포나리 숲 학살"
+          ],
+          "en": [
+            "Paneriai massacre",
+            "Ponar massacre"
+          ]
+        },
+        "people": [
+          "karl-jager"
+        ],
+        "events": [
+          "baltic-german-occupation-1941-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The mass murder of 70,000–100,000 people, about 70,000 of them Jews and the rest mainly Poles and Soviet prisoners of war, by the German SD and SS and the Lithuanian Ypatingasis būrys at Ponary (Paneriai) outside Vilnius between July 1941 and August 1944.",
+            "source": "https://en.wikipedia.org/wiki/Ponary_massacre",
+            "locator": "lead; Background; Massacres; Victims; Commemoration"
+          },
+          {
+            "field": "body",
+            "claim": "The shootings began when Einsatzkommando 9 arrived in Vilnius on 2 July 1941, with most of the killing done by a Lithuanian volunteer squad some 80 strong. Six large pits dug by the Soviets for the fuel tanks of a military airfield became the graves. The “actions” continued after the Vilnius ghetto ",
+            "source": "https://en.wikipedia.org/wiki/Ponary_massacre",
+            "locator": "lead; Background; Massacres; Victims; Commemoration"
+          },
+          {
+            "field": "period",
+            "claim": "1941–1944",
+            "source": "https://en.wikipedia.org/wiki/Ponary_massacre",
+            "locator": "lead; Background; Massacres; Victims; Commemoration"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Ponary_massacre",
+            "locator": "lead; Background; Massacres; Victims; Commemoration"
+          },
+          {
+            "field": "endYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Ponary_massacre",
+            "locator": "lead; Background; Massacres; Victims; Commemoration"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rumbula-massacre",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rumbula_massacre",
+        "https://encyclopedia.ushmm.org/content/en/article/riga",
+        "https://en.wikipedia.org/wiki/The_Holocaust_in_Latvia"
+      ],
+      "fields": {
+        "term": {
+          "ko": "룸불라 학살",
+          "en": "Rumbula massacre"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941",
+          "en": "1941"
+        },
+        "startYear": 1941,
+        "endYear": 1941,
+        "definition": {
+          "ko": "1941년 11월 30일과 12월 8일 라트비아 리가 남쪽 룸불라 숲과 그곳으로 가는 길에서 유대인 약 2만 5,000명이 살해된 사건. 리가 게토의 라트비아 유대인 약 2만 4,000명과 베를린에서 실려 온 유대인 약 1,000명이 희생되었고, 친위대·경찰 고위 지도자 프리드리히 예켈른이 지휘했다.",
+          "en": "The murder of some 25,000 Jews in or on the way to the Rumbula forest south of Riga, Latvia, on 30 November and 8 December 1941: about 24,000 Latvian Jews from the Riga ghetto and about 1,000 Jews transported from Berlin. It was commanded by the Higher SS and Police Leader Friedrich Jeckeln."
+        },
+        "body": {
+          "ko": "독일·오스트리아 유대인을 리가 게토로 보낼 자리를 마련하려고 하인리히 힘러는 우크라이나에서 바비 야르 학살 등을 지휘한 예켈른을 리가로 불렀다. 유대인을 노동력으로 쓰려던 국가판무관 힌리히 로제에게 힘러는 이것이 자기 명령이자 총통의 뜻이라고 전하게 했다. 일할 수 있는 남성은 「작은 게토」로 따로 갇혔고, 여성과 어린이, 노인은 10km를 걸어 미리 파 둔 구덩이로 끌려갔다. 사격은 예켈른의 독일인 대원 10~12명이 했고, 아라이스 특공대 등 라트비아 보조경찰은 행렬을 몰고 지켰다.\n\n바비 야르를 빼면 절멸수용소 가동 이전의 이틀간 학살로는 가장 컸다. 11월 30일 아침 가장 먼저 살해된 베를린 수송자 1,000명에 대해 힘러는 「청산하지 말라」고 전화로 지시했지만 이미 늦었다. 학살은 전후 뉘른베르크의 특수작전집단 재판의 근거가 되었고, 예켈른은 1946년 리가에서 교수형을 받았으며 빅토르스 아라이스는 1979년 서독 법원에서 종신형을 선고받았다.",
+          "en": "To make room in the Riga ghetto for Jews deported from Germany and Austria, Heinrich Himmler brought Jeckeln, who had directed Babi Yar and other massacres in Ukraine, to Riga, and told him to inform Reichskommissar Hinrich Lohse, who wanted to use the Jews as labour, that it was Himmler’s order and the Führer’s wish. Able-bodied men were separated into a “small ghetto”, while women, children and the elderly were marched ten kilometres to pits dug in advance. The shooting was done by 10 or 12 of Jeckeln’s German men; the Arajs Kommando and other Latvian auxiliaries drove and guarded the columns.\n\nExcept for Babi Yar, it was the biggest two-day Holocaust atrocity before the death camps began operating. Himmler telephoned an order that the 1,000 Berlin deportees, the first to be killed on the morning of 30 November, were not to be liquidated, but it came too late. The massacre formed part of the basis of the postwar Einsatzgruppen trial at Nuremberg; Jeckeln was hanged in Riga in 1946, and Viktors Arājs was sentenced to life imprisonment by a West German court in 1979."
+        },
+        "aliases": {
+          "ko": [
+            "룸불라 작전",
+            "예켈른 작전"
+          ],
+          "en": [
+            "Rumbula Action",
+            "Jeckeln Action"
+          ]
+        },
+        "people": [
+          "friedrich-jeckeln",
+          "heinrich-himmler",
+          "hinrich-lohse",
+          "viktors-arajs",
+          "reinhard-heydrich"
+        ],
+        "events": [
+          "baltic-german-occupation-1941-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The murder of some 25,000 Jews in or on the way to the Rumbula forest south of Riga, Latvia, on 30 November and 8 December 1941: about 24,000 Latvian Jews from the Riga ghetto and about 1,000 Jews transported from Berlin. It was commanded by the Higher SS and Police Leader Friedrich Jeckeln.",
+            "source": "https://en.wikipedia.org/wiki/Rumbula_massacre",
+            "locator": "lead; Friedrich Jeckeln; First transport of German Jews arrives in Riga; Justice"
+          },
+          {
+            "field": "body",
+            "claim": "To make room in the Riga ghetto for Jews deported from Germany and Austria, Heinrich Himmler brought Jeckeln, who had directed Babi Yar and other massacres in Ukraine, to Riga, and told him to inform Reichskommissar Hinrich Lohse, who wanted to use the Jews as labour, that it was Himmler’s order and",
+            "source": "https://en.wikipedia.org/wiki/Rumbula_massacre",
+            "locator": "lead; Friedrich Jeckeln; First transport of German Jews arrives in Riga; Justice"
+          },
+          {
+            "field": "period",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Rumbula_massacre",
+            "locator": "lead; Friedrich Jeckeln; First transport of German Jews arrives in Riga; Justice"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Rumbula_massacre",
+            "locator": "lead; Friedrich Jeckeln; First transport of German Jews arrives in Riga; Justice"
+          },
+          {
+            "field": "endYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Rumbula_massacre",
+            "locator": "lead; Friedrich Jeckeln; First transport of German Jews arrives in Riga; Justice"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arajs-kommando",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Arajs_Kommando",
+        "https://en.wikipedia.org/wiki/The_Holocaust_in_Latvia",
+        "https://en.wikipedia.org/wiki/Rumbula_massacre"
+      ],
+      "fields": {
+        "term": {
+          "ko": "아라이스 특공대",
+          "en": "Arajs Kommando"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941–1943",
+          "en": "1941–1943"
+        },
+        "startYear": 1941,
+        "endYear": 1943,
+        "definition": {
+          "ko": "1941~1943년 독일 점령하 라트비아에서 활동한 친위대 정보부(SD) 소속 라트비아인 준군사 부대. 빅토르스 아라이스가 이끌었고, 라트비아 홀로코스트의 주요 가해자로 약 2만 6,000명의 유대인을 죽였다.",
+          "en": "A paramilitary unit of Latvian volunteers under the SS Security Service (SD) in German-occupied Latvia in 1941–1943. Led by Viktors Arājs, it was one of the main perpetrators of the Holocaust in Latvia and killed some 26,000 Jews."
+        },
+        "body": {
+          "ko": "1941년 7월 1일 리가에서 특수작전집단 A의 발터 슈탈레커를 만난 아라이스는 이튿날 자발적으로 보이는 포그롬을 일으키라는 지시를 받았다. 대원은 대학생 단체, 해산된 라트비아군과 경찰, 아이즈사르기 출신 자원자였다. 부대는 7월 4일 밤 리가 회당 방화에 가담해 수백 명을 산 채로 태워 죽였고, 리에파야 학살에서는 직접 총살을 맡았고 룸불라 학살에서는 희생자를 구덩이로 몰고 지켰으며, 살라스필스 등 수용소 경비도 맡았다.\n\n1942년 중반부터는 벨라루스와 러시아의 대파르티잔 작전에 투입되어 1943년 「겨울 마법 작전」에서 파르티잔과 그 지지 혐의자 약 4,000명을 처형했다. 학살기에는 300~500명, 전성기에는 1,500명이었고, 1943년 말 해체되어 라트비아 군단에 편입되었다. 소련은 대원 352명을 처벌했고, 아라이스는 1979년 서독에서, 부지휘관 헤르베르츠 추쿠르스는 1965년 모사드에 암살되었다.",
+          "en": "Arājs met Walter Stahlecker of Einsatzgruppe A in Riga on 1 July 1941 and the next day was told to unleash a pogrom that would look spontaneous. Its members were volunteers from student fraternities, the disbanded Latvian army and police and the Aizsargi militia. On the night of 4 July it took part in burning Riga’s synagogues, where several hundred Jews were burned alive; at Liepāja it carried out shootings, at Rumbula it drove and guarded the victims, and it also guarded camps such as Salaspils.\n\nFrom mid-1942 it was used in anti-partisan operations in Belarus and Russia and in Operation Winterzauber in 1943 executed nearly 4,000 partisans or suspected supporters. It numbered 300–500 men during the killings of Latvian Jews and up to 1,500 at its peak, and was disbanded in late 1943 and merged into the Latvian Legion. The Soviets convicted 352 of its members; Arājs was sentenced in West Germany in 1979, and his deputy Herberts Cukurs was assassinated by the Mossad in 1965."
+        },
+        "aliases": {
+          "ko": [
+            "아라이스 코만도",
+            "아라이스 부대"
+          ],
+          "en": [
+            "Sonderkommando Arajs",
+            "Arājs Kommando",
+            "Arāja komanda"
+          ]
+        },
+        "people": [
+          "viktors-arajs",
+          "walter-stahlecker",
+          "friedrich-jeckeln"
+        ],
+        "events": [
+          "baltic-german-occupation-1941-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A paramilitary unit of Latvian volunteers under the SS Security Service (SD) in German-occupied Latvia in 1941–1943. Led by Viktors Arājs, it was one of the main perpetrators of the Holocaust in Latvia and killed some 26,000 Jews.",
+            "source": "https://en.wikipedia.org/wiki/Arajs_Kommando",
+            "locator": "lead; Formation; Activity; Prosecution"
+          },
+          {
+            "field": "body",
+            "claim": "Arājs met Walter Stahlecker of Einsatzgruppe A in Riga on 1 July 1941 and the next day was told to unleash a pogrom that would look spontaneous. Its members were volunteers from student fraternities, the disbanded Latvian army and police and the Aizsargi militia. On the night of 4 July it took part ",
+            "source": "https://en.wikipedia.org/wiki/Arajs_Kommando",
+            "locator": "lead; Formation; Activity; Prosecution"
+          },
+          {
+            "field": "period",
+            "claim": "1941–1943",
+            "source": "https://en.wikipedia.org/wiki/Arajs_Kommando",
+            "locator": "lead; Formation; Activity; Prosecution"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Arajs_Kommando",
+            "locator": "lead; Formation; Activity; Prosecution"
+          },
+          {
+            "field": "endYear",
+            "claim": "1943",
+            "source": "https://en.wikipedia.org/wiki/Arajs_Kommando",
+            "locator": "lead; Formation; Activity; Prosecution"
+          }
+        ]
+      }
+    },
+    {
+      "id": "forest-brothers",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Guerrilla_war_in_the_Baltic_states",
+        "https://ko.wikipedia.org/wiki/%EC%88%B2%EC%9D%98_%ED%98%95%EC%A0%9C%EB%93%A4",
+        "https://en.wikipedia.org/wiki/Lithuanian_partisans",
+        "https://en.wikipedia.org/wiki/Latvian_partisans"
+      ],
+      "fields": {
+        "term": {
+          "ko": "숲의 형제들",
+          "en": "Forest Brothers"
+        },
+        "category": "factions",
+        "period": {
+          "ko": "1944–1956",
+          "en": "1944–1956"
+        },
+        "startYear": 1944,
+        "endYear": 1956,
+        "definition": {
+          "ko": "제2차 세계대전 중과 그 뒤 소련의 점령에 맞서 숲을 근거지로 싸운 에스토니아·라트비아·리투아니아의 무장 파르티잔. 소련이 발트 3국을 다시 점령한 1944년부터 1956년 무렵까지 적어도 5만 명이 참여한 것으로 추정되며, 리투아니아에서 가장 조직적이었다.",
+          "en": "The Estonian, Latvian and Lithuanian armed partisans who fought the Soviet occupation from bases in the forests during and after World War II. At least 50,000 are estimated to have taken part between the Soviet reoccupation of 1944 and about 1956; the resistance was best organised in Lithuania."
+        },
+        "body": {
+          "ko": "말 자체는 1905년 혁명 때 발트 지역에서 처음 쓰였고, 「숲의 형제들」이라는 이름은 에스토니아와 라트비아에서 주로 쓰였다. 리투아니아에서는 「초록 사람들」(žaliukai)이나 그냥 파르티잔이라 불렀다. 1941년 여름 독소전쟁이 시작될 때 에스토니아의 숲의 형제들은 퇴각하는 소련군과 싸웠다. 1944~1945년 소련이 다시 들어오자 붉은군대 징집을 피한 사람들, 독일 편에서 싸운 병사들, 해산된 리투아니아 지역방위군 대원들이 숲으로 들어갔다.\n\n추정 규모는 적어도 5만 명(에스토니아·라트비아 각 1만, 리투아니아 3만)이며, 다른 추정은 라트비아를 1만~1만 5,000명으로 본다. 리투아니아에서는 1949년 리투아니아 자유 전사 연합이 결성되었다. 숲의 형제들은 MGB와 섬멸대대의 진압, 1948~1949년의 대량 추방과 집단화, 정보기관의 침투로 1950년대 초 대부분 무너졌고, 1953년 스탈린 사후의 사면으로 많은 이가 무기를 내려놓았다. 이 전쟁의 사망자는 적어도 5만 명이다.",
+          "en": "The term was first used in the Baltic region in the 1905 revolution, and “Forest Brothers” was used mainly in Estonia and Latvia; in Lithuania the partisans were called žaliukai (“green ones”) or simply partisans. When the German-Soviet war began in the summer of 1941, Estonian Forest Brothers fought the retreating Soviet forces. When the Soviets returned in 1944–1945, men evading Red Army conscription, soldiers who had fought on the German side and members of the disbanded Lithuanian Territorial Defense Force went into the forests.\n\nEstimates put their number at no fewer than 50,000 (10,000 each in Estonia and Latvia and 30,000 in Lithuania), with other estimates giving 10,000–15,000 for Latvia. In Lithuania the Union of Lithuanian Freedom Fighters was founded in 1949. Suppression by the MGB and the destruction battalions, the mass deportations and collectivisation of 1948–1949 and infiltration by the intelligence services broke most of the resistance by the early 1950s, and many laid down their arms under the amnesty after Stalin’s death in 1953. The war cost at least 50,000 lives."
+        },
+        "aliases": {
+          "ko": [
+            "숲의 형제",
+            "숲의 수사",
+            "발트 파르티잔"
+          ],
+          "en": [
+            "Forest Brethren",
+            "Forest Brother",
+            "metsavennad",
+            "mežabrāļi",
+            "Brothers of the Wood",
+            "guerrilla war in the Baltic states"
+          ]
+        },
+        "people": [
+          "jonas-zemaitis",
+          "adolfas-ramanauskas",
+          "juozas-luksa"
+        ],
+        "events": [
+          "baltic-sovietisation-1944-1953",
+          "baltic-independence"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The Estonian, Latvian and Lithuanian armed partisans who fought the Soviet occupation from bases in the forests during and after World War II. At least 50,000 are estimated to have taken part between the Soviet reoccupation of 1944 and about 1956; the resistance was best organised in Lithuania.",
+            "source": "https://en.wikipedia.org/wiki/Guerrilla_war_in_the_Baltic_states",
+            "locator": "lead; Background; Summer war; Guerrilla war; Decline of the resistance movements"
+          },
+          {
+            "field": "body",
+            "claim": "The term was first used in the Baltic region in the 1905 revolution, and “Forest Brothers” was used mainly in Estonia and Latvia; in Lithuania the partisans were called žaliukai (“green ones”) or simply partisans. When the German-Soviet war began in the summer of 1941, Estonian Forest Brothers fough",
+            "source": "https://en.wikipedia.org/wiki/Guerrilla_war_in_the_Baltic_states",
+            "locator": "lead; Background; Summer war; Guerrilla war; Decline of the resistance movements"
+          },
+          {
+            "field": "period",
+            "claim": "1944–1956",
+            "source": "https://en.wikipedia.org/wiki/Guerrilla_war_in_the_Baltic_states",
+            "locator": "lead; Background; Summer war; Guerrilla war; Decline of the resistance movements"
+          },
+          {
+            "field": "startYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Guerrilla_war_in_the_Baltic_states",
+            "locator": "lead; Background; Summer war; Guerrilla war; Decline of the resistance movements"
+          },
+          {
+            "field": "endYear",
+            "claim": "1956",
+            "source": "https://en.wikipedia.org/wiki/Guerrilla_war_in_the_Baltic_states",
+            "locator": "lead; Background; Summer war; Guerrilla war; Decline of the resistance movements"
+          }
+        ]
+      }
+    },
+    {
+      "id": "union-of-lithuanian-freedom-fighters",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Union_of_Lithuanian_Freedom_Fighters",
+        "https://lt.wikipedia.org/wiki/Lietuvos_laisv%C4%97s_kovos_s%C4%85j%C5%ABdis",
+        "https://en.wikipedia.org/wiki/Lithuanian_partisans",
+        "https://en.wikipedia.org/wiki/Adolfas_Ramanauskas"
+      ],
+      "fields": {
+        "term": {
+          "ko": "리투아니아 자유 전사 연합",
+          "en": "Union of Lithuanian Freedom Fighters"
+        },
+        "category": "factions",
+        "period": {
+          "ko": "1949–1953",
+          "en": "1949–1953"
+        },
+        "startYear": 1949,
+        "endYear": 1953,
+        "definition": {
+          "ko": "1949년 2월 리투아니아 파르티잔 지휘관들이 미나이치아이 마을에서 세운 무장 저항의 중앙 지휘 조직(LLKS). 요나스 제마이티스가 간부회 의장이었고, 2월 16일 스스로를 리투아니아의 최고 정치·군사 권력으로 선포했으나 1953년까지 소련 보안기관에 진압되었다.",
+          "en": "The central command of the Lithuanian armed resistance (LLKS), founded by the partisan commanders in the village of Minaičiai in February 1949. Chaired by Jonas Žemaitis, it proclaimed itself the supreme political and military authority in Lithuania on 16 February but was suppressed by the Soviet security agencies by 1953."
+        },
+        "body": {
+          "ko": "리투아니아어 이름은 Lietuvos laisvės kovos sąjūdis로, 「리투아니아 자유 투쟁 운동」이라고도 옮긴다. 1949년 2월 프리시켈리마스 군관구 사령관의 벙커에서 열린 첫 전국 지휘관 회의에서 이름과 지도부, 강령, 규약, 계급장 등이 정해졌고 기관지도 창간되었다. 조직에는 다이나바, 타우라스, 비티스, 케스투티스 등 여러 군관구가 속했다.\n\n1918년 독립선언 31주년인 2월 16일 채택된 선언은 회복될 리투아니아가 모든 시민에게 평등한 권리를 보장하는 민주국가여야 한다고 하고 공산당을 범죄 조직으로 규정했다. 의장 제마이티스는 1953년 체포되어 1954년 처형되었고, 1952년 지휘를 이어받은 아돌파스 라마나우스카스는 무장 투쟁 중단을 명령했다. 독립 회복 뒤 리투아니아 의회는 선언을 공식 법령으로 인정했다.",
+          "en": "Its Lithuanian name is Lietuvos laisvės kovos sąjūdis, also translated as the Movement of the Struggle for the Freedom of Lithuania. At the first all-Lithuanian meeting of partisan commanders in February 1949, held in the bunker of the commander of the Prisikėlimas district, its name, leadership, programme, statute and insignia were adopted and a press organ founded. It embraced the Dainava, Tauras, Vytis, Kęstutis and other partisan districts.\n\nThe declaration adopted on 16 February, the 31st anniversary of the 1918 Act of Independence, stated that the restored Lithuania should be a democratic state granting equal rights to every citizen and declared the Communist Party a criminal organisation. Its chairman Žemaitis was arrested in 1953 and executed in 1954, and Adolfas Ramanauskas, who took over in 1952, ordered an end to armed struggle. After independence was restored the Lithuanian parliament recognised the declaration as an official act."
+        },
+        "aliases": {
+          "ko": [
+            "LLKS",
+            "리투아니아 자유 투쟁 운동",
+            "리투아니아 자유투쟁운동"
+          ],
+          "en": [
+            "LLKS",
+            "Lietuvos laisvės kovos sąjūdis",
+            "Movement of the Struggle for the Freedom of Lithuania",
+            "Movement for the Struggle for Lithuanian Freedom"
+          ]
+        },
+        "people": [
+          "jonas-zemaitis",
+          "adolfas-ramanauskas",
+          "juozas-luksa"
+        ],
+        "events": [
+          "baltic-sovietisation-1944-1953"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The central command of the Lithuanian armed resistance (LLKS), founded by the partisan commanders in the village of Minaičiai in February 1949. Chaired by Jonas Žemaitis, it proclaimed itself the supreme political and military authority in Lithuania on 16 February but was suppressed by the Soviet security agencies by 1953.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Lithuanian_Freedom_Fighters",
+            "locator": "lead; Pokario metais; Decline: 1949–1953; 1949–1952"
+          },
+          {
+            "field": "body",
+            "claim": "Its Lithuanian name is Lietuvos laisvės kovos sąjūdis, also translated as the Movement of the Struggle for the Freedom of Lithuania. At the first all-Lithuanian meeting of partisan commanders in February 1949, held in the bunker of the commander of the Prisikėlimas district, its name, leadership, pr",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Lithuanian_Freedom_Fighters",
+            "locator": "lead; Pokario metais; Decline: 1949–1953; 1949–1952"
+          },
+          {
+            "field": "period",
+            "claim": "1949–1953",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Lithuanian_Freedom_Fighters",
+            "locator": "lead; Pokario metais; Decline: 1949–1953; 1949–1952"
+          },
+          {
+            "field": "startYear",
+            "claim": "1949",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Lithuanian_Freedom_Fighters",
+            "locator": "lead; Pokario metais; Decline: 1949–1953; 1949–1952"
+          },
+          {
+            "field": "endYear",
+            "claim": "1953",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Lithuanian_Freedom_Fighters",
+            "locator": "lead; Pokario metais; Decline: 1949–1953; 1949–1952"
+          }
+        ]
+      }
+    },
+    {
+      "id": "destruction-battalions",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Extermination_battalion",
+        "https://en.wikipedia.org/wiki/Lithuanian_partisans",
+        "https://et.wikipedia.org/wiki/Nikolai_Karotamm",
+        "https://en.wikipedia.org/wiki/Operation_Priboi"
+      ],
+      "fields": {
+        "term": {
+          "ko": "섬멸대대 (NKVD)",
+          "en": "Destruction battalions (NKVD)"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1941–1954",
+          "en": "1941–1954"
+        },
+        "startYear": 1941,
+        "endYear": 1954,
+        "definition": {
+          "ko": "1941년 독일의 침공 직후 NKVD 아래 만들어져 소련이 점령한 발트 3국과 서부 지역에서 탄압과 치안을 맡은 준군사 부대. 1944년 이후 다시 조직되어 숲의 형제들과 그 지지자를 진압하는 보조 전력이 되었고, 1954년 해체되었다.",
+          "en": "Paramilitary units created under the NKVD right after the German invasion of 1941 for repression and internal security in the Soviet-occupied Baltic states and the western Soviet Union. Restored after 1944 as an auxiliary force against the Forest Brothers and their supporters, they were dissolved in 1954."
+        },
+        "body": {
+          "ko": "러시아어로 「이스트레비텔리」(파괴자)라 불렸고, 리투아니아인은 이를 줄여 「스트리바이」라 했다. 1941년에는 붉은군대 후방의 안전을 지키고 옮길 수 없는 재산을 파괴하는 초토화 임무를 맡아 의심스러운 사람을 즉결 처형할 권한을 받았으며, 에스토니아에서는 이 해에 1,850명을 살해했다.\n\n독일군이 물러난 뒤 현지 지원자로 다시 만들어진 대대는 1945~1946년 「인민 방위」로 이름을 바꾸었다. 숲의 형제들의 실제·잠재적 지지자를 위협하고 매복과 수색에 나섰으며, 농민에게 벌목·토탄 채굴·도로 공사 의무를 강요하는 등 농촌에서 소비에트 정책을 집행했다. 에스토니아에서는 공산당 제1서기 니콜라이 카로탐이 섬멸대대 중앙참모부를 이끌었다. 1949년 3월 프리보이 작전의 작전조에도 섬멸대대원이 둘씩 들어갔다. 에스토니아 의회는 2002년 이를 범죄 조직으로 규정했다.",
+          "en": "Called istrebiteli (“destroyers”) in Russian, they were known to Lithuanians as stribai. In 1941 they secured the Red Army’s rear and destroyed property that could not be evacuated under the scorched-earth policy, with authority to execute suspicious persons summarily; in Estonia they murdered 1,850 people that year.\n\nRe-formed from local volunteers after the German retreat, the battalions were renamed “people’s defence” in 1945–1946. They terrorised actual and potential supporters of the Forest Brothers, joined ambushes and search patrols, and enforced Soviet policy in the countryside, for instance by forcing farmers to fulfil forestry, peat-cutting and road-building obligations. In Estonia the party’s First Secretary, Nikolai Karotamm, headed their central staff. Each operative team in Operation Priboi in March 1949 included two destruction battalion members. In 2002 the Estonian parliament declared the battalions a criminal organisation."
+        },
+        "aliases": {
+          "ko": [
+            "섬멸대대",
+            "구축대대",
+            "이스트레비텔리",
+            "스트리바이"
+          ],
+          "en": [
+            "destruction battalions",
+            "extermination battalions",
+            "istrebiteli",
+            "stribai",
+            "istrebki"
+          ]
+        },
+        "people": [
+          "nikolai-karotamm"
+        ],
+        "events": [
+          "baltic-sovietisation-1944-1953"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Paramilitary units created under the NKVD right after the German invasion of 1941 for repression and internal security in the Soviet-occupied Baltic states and the western Soviet Union. Restored after 1944 as an auxiliary force against the Forest Brothers and their supporters, they were dissolved in 1954.",
+            "source": "https://en.wikipedia.org/wiki/Extermination_battalion",
+            "locator": "lead; Authority; Estonia; Post-war activities; Legal appraisal"
+          },
+          {
+            "field": "body",
+            "claim": "Called istrebiteli (“destroyers”) in Russian, they were known to Lithuanians as stribai. In 1941 they secured the Red Army’s rear and destroyed property that could not be evacuated under the scorched-earth policy, with authority to execute suspicious persons summarily; in Estonia they murdered 1,850",
+            "source": "https://en.wikipedia.org/wiki/Extermination_battalion",
+            "locator": "lead; Authority; Estonia; Post-war activities; Legal appraisal"
+          },
+          {
+            "field": "period",
+            "claim": "1941–1954",
+            "source": "https://en.wikipedia.org/wiki/Extermination_battalion",
+            "locator": "lead; Authority; Estonia; Post-war activities; Legal appraisal"
+          },
+          {
+            "field": "startYear",
+            "claim": "1941",
+            "source": "https://en.wikipedia.org/wiki/Extermination_battalion",
+            "locator": "lead; Authority; Estonia; Post-war activities; Legal appraisal"
+          },
+          {
+            "field": "endYear",
+            "claim": "1954",
+            "source": "https://en.wikipedia.org/wiki/Extermination_battalion",
+            "locator": "lead; Authority; Estonia; Post-war activities; Legal appraisal"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eighth-plenum-estonian-communist-party-1950",
+      "sources": [
+        "https://et.wikipedia.org/wiki/M%C3%A4rtsipleenum",
+        "https://et.wikipedia.org/wiki/Nikolai_Karotamm",
+        "https://en.wikipedia.org/wiki/Johannes_K%C3%A4bin",
+        "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia"
+      ],
+      "fields": {
+        "term": {
+          "ko": "에스토니아 공산당 제8차 전원회의 (1950)",
+          "en": "Eighth Plenum of the Estonian Communist Party (1950)"
+        },
+        "category": "party-state",
+        "period": {
+          "ko": "1950",
+          "en": "1950"
+        },
+        "startYear": 1950,
+        "endYear": 1950,
+        "definition": {
+          "ko": "1950년 3월 21~26일 탈린에서 열린 에스토니아 공산당(볼셰비키) 중앙위원회 전원회의. 지도부가 부르주아 민족주의와의 싸움에 소홀했다는 모스크바의 결정에 따라 제1서기 니콜라이 카로탐을 요한네스 캐빈으로 바꾸었고, 작가·예술가·지식인을 「부르주아 민족주의자」로 몰아 숙청하는 계기가 되었다.",
+          "en": "The plenum of the Central Committee of the Communist Party (Bolsheviks) of Estonia held in Tallinn on 21–26 March 1950. Following a Moscow decision that the leadership had neglected the struggle against bourgeois nationalism, it replaced First Secretary Nikolai Karotamm with Johannes Käbin and opened a purge of writers, artists and intellectuals branded “bourgeois nationalists”."
+        },
+        "body": {
+          "ko": "에스토니아에서는 「3월 전원회의」(Märtsipleenum)라고 부른다. 1949년 스탈린이 지방 지도부를 다잡는 새 숙청에 나선 가운데, 레닌그라드 사건의 여파로 레닌그라드 당과 가깝다고 여겨진 에스토니아 지도부가 표적이 되었다. 한 개인의 투서로 시작된 중앙위원회 조사는 카로탐이 옛 부르주아 간부에 기대고 쿨라크를 비호한다고 결론지었고, 1950년 3월 7일 정치국이 「에스토니아 당 중앙위원회 사업의 오류와 결함」 결정을 승인했다.\n\n전원회의에서는 판텔레이몬 포노마렌코가 중앙위원회를 대표해 고발 연설을 했다. 곧이어 니골 안드레센, 한스 크루스, 헨드리크 알리크 등이 체포되었고, 과학아카데미에서는 한 해 동안 100명 넘게 해고되었으며 타르투 대학에서는 교수진 약 200명이 고발되고 학생 약 100명이 제적되었다. 각료회의 의장 아르놀트 베이메르는 1951년 3월 해임되었다. 캐빈은 1978년까지 당을 이끌었다.",
+          "en": "In Estonia it is known as the March Plenum (Märtsipleenum). As Stalin opened a new purge to discipline local leaderships in 1949, the Estonian leadership, considered close to the Leningrad party, became a target in the wake of the Leningrad Affair. A Central Committee investigation set off by one individual’s complaints concluded that Karotamm relied on old bourgeois cadres and defended kulaks, and on 7 March 1950 the Politburo approved the decision “On errors and shortcomings in the work of the Central Committee of the Estonian party”.\n\nAt the plenum Panteleimon Ponomarenko delivered the indictment on behalf of the Central Committee. Nigol Andresen, Hans Kruus, Hendrik Allik and others were arrested soon afterwards, more than a hundred people were dismissed from the Academy of Sciences within a year, and at Tartu University about 200 teaching staff were accused and nearly 100 students expelled. Arnold Veimer, chairman of the Council of Ministers, was removed in March 1951. Käbin led the party until 1978."
+        },
+        "aliases": {
+          "ko": [
+            "에스토니아 공산당 제8차 전원회의",
+            "에스토니아 제8차 전원회의",
+            "에스토니아 3월 전원회의"
+          ],
+          "en": [
+            "Eighth Plenum of the Estonian Communist Party",
+            "March Plenum (Estonia)",
+            "Märtsipleenum",
+            "8th Plenum of the Estonian Communist Party"
+          ]
+        },
+        "people": [
+          "nikolai-karotamm",
+          "johannes-kabin",
+          "panteleimon-ponomarenko"
+        ],
+        "events": [
+          "baltic-sovietisation-1944-1953"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The plenum of the Central Committee of the Communist Party (Bolsheviks) of Estonia held in Tallinn on 21–26 March 1950. Following a Moscow decision that the leadership had neglected the struggle against bourgeois nationalism, it replaced First Secretary Nikolai Karotamm with Johannes Käbin and opened a purge of writers, artists and intellectuals branded “bourgeois nationalists”.",
+            "source": "https://et.wikipedia.org/wiki/M%C3%A4rtsipleenum",
+            "locator": "lead; Pleenumi eel; Pleenumi ja pleenumijärgsed otsused"
+          },
+          {
+            "field": "body",
+            "claim": "In Estonia it is known as the March Plenum (Märtsipleenum). As Stalin opened a new purge to discipline local leaderships in 1949, the Estonian leadership, considered close to the Leningrad party, became a target in the wake of the Leningrad Affair. A Central Committee investigation set off by one in",
+            "source": "https://et.wikipedia.org/wiki/M%C3%A4rtsipleenum",
+            "locator": "lead; Pleenumi eel; Pleenumi ja pleenumijärgsed otsused"
+          },
+          {
+            "field": "period",
+            "claim": "1950",
+            "source": "https://et.wikipedia.org/wiki/M%C3%A4rtsipleenum",
+            "locator": "lead; Pleenumi eel; Pleenumi ja pleenumijärgsed otsused"
+          },
+          {
+            "field": "startYear",
+            "claim": "1950",
+            "source": "https://et.wikipedia.org/wiki/M%C3%A4rtsipleenum",
+            "locator": "lead; Pleenumi eel; Pleenumi ja pleenumijärgsed otsused"
+          },
+          {
+            "field": "endYear",
+            "claim": "1950",
+            "source": "https://et.wikipedia.org/wiki/M%C3%A4rtsipleenum",
+            "locator": "lead; Pleenumi eel; Pleenumi ja pleenumijärgsed otsused"
+          }
+        ]
+      }
+    },
+    {
+      "id": "operation-vesna",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Operation_Vesna",
+        "https://en.wikipedia.org/wiki/Soviet_deportations_from_Lithuania",
+        "https://en.wikipedia.org/wiki/Lithuanian_Soviet_Socialist_Republic"
+      ],
+      "fields": {
+        "term": {
+          "ko": "베스나 작전",
+          "en": "Operation Vesna"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1948",
+          "en": "1948"
+        },
+        "startYear": 1948,
+        "endYear": 1948,
+        "definition": {
+          "ko": "1948년 5월 22~24일 소련 국가보안부(MGB)가 리투아니아에서 숲의 형제들과 그 가족, 조력자를 추방한 작전. 공식 집계 4만 9,331명(다른 수치 3만 9,766명·4만 7,534명)으로 리투아니아에서 가장 큰 소련의 추방이었다.",
+          "en": "The deportation of Forest Brothers, their families and helpers from Lithuania carried out by the Soviet Ministry of State Security (MGB) on 22–24 May 1948. With an official tally of 49,331 (other figures 39,766 and 47,534), it was the largest Soviet deportation from Lithuania."
+        },
+        "body": {
+          "ko": "「베스나」는 러시아어로 봄이라는 뜻이다. 1948년 2월 21일 소련 각료회의 결정 제417-160ss호는 「숲의 형제들」과 그 가족, 「쿨라크」를 포함한 반소 파르티잔의 조력자를 추방 대상으로 정했다. 리투아니아인 외에 폴란드인과 벨라루스인도 추방되었다. 추방자는 이동이 엄격히 제한된 특별이주민 신분이 되었다.\n\n추방자는 주로 크라스노야르스크 지방(2만 3,467명), 이르쿠츠크주(1만 1,495명), 부랴트몽골 ASSR(4,038명)로 보내졌고, 약 2만 5,000명이 임업에, 나머지는 탄광과 콜호스에서 일했다. 어린이 약 1만 1,000명이 부모와 함께 추방되었다. 이가르카에서는 첫 몇 해 동안 리투아니아인 1,000~3,000명이 죽었고, 그곳의 리투아니아인 대부분은 1956~1961년에 돌아왔다.",
+          "en": "“Vesna” is Russian for spring. Decree No. 417-160ss of the USSR Council of Ministers of 21 February 1948 targeted the “forest brothers”, their families and “various helpers of anti-Soviet partisans, including kulaks”. Poles and Belarusians were deported as well as Lithuanians. The deportees became special settlers, severely restricted in movement.\n\nMost were sent to Krasnoyarsk Krai (23,467), Irkutsk Oblast (11,495) and the Buryat-Mongolian ASSR (4,038); about 25,000 worked in the forest industry and the rest in coal mines and kolkhozes. Some 11,000 children were deported with their parents. In Igarka 1,000–3,000 Lithuanians died in the first years, and most of the Lithuanians there returned between 1956 and 1961."
+        },
+        "aliases": {
+          "ko": [
+            "봄 작전 (1948)",
+            "오페라치야 베스나"
+          ],
+          "en": [
+            "Operation Spring (1948)",
+            "Operatsiya Vesna",
+            "Operation Vesna (1948)"
+          ]
+        },
+        "people": [],
+        "events": [
+          "baltic-sovietisation-1944-1953"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The deportation of Forest Brothers, their families and helpers from Lithuania carried out by the Soviet Ministry of State Security (MGB) on 22–24 May 1948. With an official tally of 49,331 (other figures 39,766 and 47,534), it was the largest Soviet deportation from Lithuania.",
+            "source": "https://en.wikipedia.org/wiki/Operation_Vesna",
+            "locator": "lead; Life in exile"
+          },
+          {
+            "field": "body",
+            "claim": "“Vesna” is Russian for spring. Decree No. 417-160ss of the USSR Council of Ministers of 21 February 1948 targeted the “forest brothers”, their families and “various helpers of anti-Soviet partisans, including kulaks”. Poles and Belarusians were deported as well as Lithuanians. The deportees became s",
+            "source": "https://en.wikipedia.org/wiki/Operation_Vesna",
+            "locator": "lead; Life in exile"
+          },
+          {
+            "field": "period",
+            "claim": "1948",
+            "source": "https://en.wikipedia.org/wiki/Operation_Vesna",
+            "locator": "lead; Life in exile"
+          },
+          {
+            "field": "startYear",
+            "claim": "1948",
+            "source": "https://en.wikipedia.org/wiki/Operation_Vesna",
+            "locator": "lead; Life in exile"
+          },
+          {
+            "field": "endYear",
+            "claim": "1948",
+            "source": "https://en.wikipedia.org/wiki/Operation_Vesna",
+            "locator": "lead; Life in exile"
+          }
+        ]
+      }
+    }
+  ]
+}
