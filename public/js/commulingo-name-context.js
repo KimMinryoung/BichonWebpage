@@ -1,9 +1,11 @@
-/* global module */
+/* global module, require */
 // One person-context policy, used by the server and the decision-book client.
 (function (root, factory) {
-    if (typeof module === 'object' && module.exports) module.exports = factory();
-    else root.CommuLingoNameContext = factory();
-})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+    // On the server the name patterns use the trie matcher (the same matches
+    // as the RegExp, much faster); the browser keeps the RegExp.
+    if (typeof module === 'object' && module.exports) module.exports = factory(require('../../data/commulingo/literal-pattern').createLiteralPattern);
+    else root.CommuLingoNameContext = factory(null);
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (createLiteralPattern) {
     'use strict';
     const word = /[\p{L}\p{M}\p{N}]/u;
     const escape = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -35,6 +37,11 @@
         if (forms.some(form => ids.some(id => data.own[id] && data.own[id].has(form)))) return false;
         return forms.some(form => form.length >= 2 && (data.given.has(form) || data.shortWords.has(form)));
     }
+    function namePattern(tokens) {
+        if (!tokens.length) return null;
+        return (createLiteralPattern && createLiteralPattern(tokens, { escape, unicode: true }))
+            || new RegExp(tokens.map(escape).join('|'), 'gu');
+    }
     function compile(data) {
         if (!data) return null;
         const names = data.names || {};
@@ -46,8 +53,8 @@
             given: new Set(data.given || []),
             shortWords: new Set(shortTokens.map(normalize)),
             own: Object.fromEntries(Object.entries(data.own || {}).map(([id, values]) => [id, new Set(values)])),
-            fullPattern: fullTokens.length ? new RegExp(fullTokens.map(escape).join('|'), 'gu') : null,
-            shortPattern: shortTokens.length ? new RegExp(shortTokens.map(escape).join('|'), 'gu') : null,
+            fullPattern: namePattern(fullTokens),
+            shortPattern: namePattern(shortTokens),
         };
     }
     function analyze(text, data) {

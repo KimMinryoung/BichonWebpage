@@ -5,7 +5,8 @@ const { publishedReportSlugs } = require('./research-series');
 // pages. Built from the same compiled HTML/link result used by report pages.
 // No name scanner or independently guessed mention anchors.
 //
-// Full texts refresh at most once per REFRESH_MS. Dictionary changes reuse
+// Full texts are reread when a research_documents write notifies (migration
+// 256), and otherwise once per REFRESH_MS as a safety net. Dictionary changes reuse
 // those rows and unchanged report renders; only changed report contributions
 // are removed/added to the reverse index. All work stays in the background.
 // Requests never await a full build, including after startup or dictionary edits.
@@ -14,11 +15,14 @@ const { publishedReportSlugs } = require('./research-series');
 const researchStore = require('../config/research-store');
 const { getReportLinkContext } = require('../data/commulingo/report-links');
 
-const REFRESH_MS = Number.parseInt(process.env.REPORT_MENTIONS_REFRESH_MS || '600000', 10);
+const { onTableChange } = require('../utils/db-change-listener');
+
+const REFRESH_MS = Number.parseInt(process.env.REPORT_MENTIONS_REFRESH_MS || '3600000', 10);
 const MAX_REPORTS_PER_ENTITY = 12;
 
 let memory = null;   // { byPerson: {ko,en}, byEvent: {ko,en}, …, at }
 let pending = null;  // coalesced in-flight build
+let rowsChanged = false; // a report write arrived; reread the texts
 
 function dateLabel(value) {
     if (!value) return '';
@@ -40,7 +44,8 @@ function docEntry(row) {
 async function buildIndex() {
     await restoreResearchCache();
     const previous = memory;
-    const fetchRows = !previous || Date.now() - previous.rowsAt >= REFRESH_MS;
+    const fetchRows = !previous || rowsChanged || Date.now() - previous.rowsAt >= REFRESH_MS;
+    if (fetchRows) rowsChanged = false;
     const [rows, ctxKo, ctxEn, slugsKo, slugsEn] = await Promise.all([
         fetchRows ? researchStore.listResearchTexts() : previous.rows,
         getReportLinkContext('ko'),
@@ -128,9 +133,18 @@ function refresh() {
     if (pending) return pending;
     pending = buildIndex()
         .then(index => { memory = index; return index; })
-        .finally(() => { pending = null; });
+        .finally(() => {
+            pending = null;
+            // A report written while this build read the texts needs another pass.
+            if (rowsChanged && memory) refresh().catch(err => console.error('report mentions refresh failed:', err.message));
+        });
     return pending;
 }
+
+onTableChange(['research_documents'], () => {
+    rowsChanged = true;
+    if (memory) refresh().catch(err => console.error('report mentions refresh failed:', err.message));
+});
 
 // An old index can contain anchors invalidated by an editorial link change.
 // Omit that optional section until the replacement is ready, without making

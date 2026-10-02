@@ -10,6 +10,7 @@ let builds = 0;
 let now = 0;
 const errors = [];
 const dependencies = {
+    '../utils/db-change-listener': { onTableChange: () => {} },
     './research-body': { restoreResearchCache: async () => {}, saveResearchCache: async () => {}, compileResearchBody: () => ({ links: [{ kind: 'term', id: 'nep', anchorId: 'term-nep' }] }) },
     './research-series': { publishedReportSlugs: async () => [] },
     '../config/research-store': {
@@ -64,7 +65,7 @@ const watchdog = setTimeout(() => {
     await flush();
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 1);
 
-    now = 600001;
+    now = 3600001; // the hourly safety-net reread
     assert.equal((await getReportsForTerm('nep', 'ko')).length, 1, 'TTL refresh retains matching anchors');
     assert.equal(builds, 2);
     rejectRows(new Error('database unavailable'));

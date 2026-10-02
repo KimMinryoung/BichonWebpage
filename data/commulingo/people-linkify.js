@@ -1,6 +1,7 @@
 const { expressionCandidates } = require('./link-expressions');
 const nameContext = require('../../public/js/commulingo-name-context');
 const { registerAlias } = require('./alias-registry');
+const { createLiteralPattern } = require('./literal-pattern');
 // The person alias index, plus the HTML-walking and escaping helpers every
 // index shares. Who links where, in what order, and how one link is written is
 // linkify.js; this file only answers which strings belong to which person.
@@ -251,10 +252,12 @@ function buildAliasPattern(tokens, blocked, en) {
         return empty;
     }
     const all = (blocked || []).concat(tokens).sort((a, b) => b.length - a.length);
-    const alternation = all.map(escapeRegExp).join('|');
     // Qualified names may end in ')' or punctuation; a trailing \b would
     // reject them at the end of a sentence. Check neighbouring letters instead.
-    const pattern = new RegExp(en ? '(?<![\\p{L}\\p{N}_])(' + alternation + ')(?![\\p{L}\\p{N}_])' : '(' + alternation + ')', en ? 'gu' : 'g');
+    // The trie matcher gives the same matches as this RegExp, much faster.
+    const pattern = createLiteralPattern(all, { escape: escapeRegExp, unicode: en, boundary: en, group: true })
+        || new RegExp(en ? '(?<![\\p{L}\\p{N}_])(' + all.map(escapeRegExp).join('|') + ')(?![\\p{L}\\p{N}_])'
+            : '(' + all.map(escapeRegExp).join('|') + ')', en ? 'gu' : 'g');
     // Literal alternatives, including blocked compounds, for incremental report invalidation.
     pattern.linkTokens = [...new Set(all)];
     return pattern;
