@@ -48,9 +48,11 @@ function event({ id, title, period, sortOrder, question, summary, outcome, secti
 // Every fact needs a cited excerpt: `facts` gives one { excerpt, locator } per
 // fact field (years, citizenship, nationalOrigin, bio may have several), all from `sources`.
 // origin: null leaves the national origin unset when no source states it.
+// linkExpressions: [[lang, text]] auto-linked forms that are not built from the
+// name parts (an alias like 오스텐부르크 or 카를 왕 only links through these).
 // activities: [{ functionId, affiliationId, relation, startYear, endYear, primary, claim, excerpt, locator, source? }]
 function person({ id, groupId = 'world-interwar', given, family, nativeName, years, citizenship = 'hungary',
-    origin = 'hungary', epithet, bio, fate, aliases, sources, facts, activities, career = [] }) {
+    origin = 'hungary', epithet, bio, fate, aliases, sources, facts, activities, career = [], linkExpressions = [] }) {
     const evidence = [];
     for (const [field, list] of Object.entries(facts)) for (const f of [].concat(list)) {
         evidence.push({ field, claim: f.claim, source: f.source || sources[0], locator: f.locator, excerpt: f.excerpt });
@@ -71,6 +73,7 @@ function person({ id, groupId = 'world-interwar', given, family, nativeName, yea
             evidence: [{ source: a.source || sources[0], locator: a.locator, claim: a.claim, excerpt: a.excerpt }],
         })),
         career: career.map(([y, ko, en]) => ({ y, r: { ko, en } })),
+        ...(linkExpressions.length ? { linkExpressions: linkExpressions.map(([lang, text]) => ({ text, lang, role: 'identity', policy: 'auto' })) } : {}),
     };
 }
 

@@ -967,14 +967,15 @@ const persons = [
     }),
     person({
         id: 'archduke-joseph-august',
-        given: ['', ''], family: ['요제프 아우구스트 대공', 'Archduke Joseph August'], nativeName: 'Joseph August von Österreich', years: '1872–1962',
+        linkExpressions: [['en', 'Archduke Joseph August']],
+        given: ['', ''], family: ['요제프 아우구스트 대공', 'Joseph August'], nativeName: 'Joseph August von Österreich', years: '1872–1962',
         origin: { code: 'hungary', label: { ko: '헝가리 (합스부르크-로트링겐 가문 헝가리 분가)', en: 'Hungary (Hungarian branch of the House of Habsburg-Lorraine)' } },
         epithet: ['오스트리아-헝가리군 마지막 원수로, 1919년 8월 잠시 헝가리 섭정을 자처한 합스부르크 대공',
             'Habsburg archduke and last field marshal of the Austro-Hungarian army who briefly declared himself regent of Hungary in August 1919'],
         bio: ['헝가리의 얼추트에서 합스부르크-로트링겐 가문의 헝가리(팔라틴) 분가에서 태어났다. 1890년 군에 들어가 제1차 세계대전에서 군단과 군, 집단군을 지휘했고, 1918년 10월 24일 오스트리아-헝가리군의 마지막 원수가 되었다. 10월 27일 카를 황제가 그를 헝가리의 전권 대리인(호모 레기우스)으로 삼았으나 과꽃 혁명으로 계획이 무산되었다. 평의회 공화국이 무너진 뒤 1919년 8월 카를을 대신하는 섭정으로서 국가원수가 되어 프리드리히 이슈트반을 총리로 임명했지만, 협상국이 합스부르크가의 국가원수를 인정하지 않아 8월 23일 물러났다. 호르티 시대에는 1936~1944년 헝가리 과학아카데미 원장을 지냈다. 1944년 헝가리를 떠났고 1962년 서독의 라인에서 죽었다.',
             'Born at Alcsút in Hungary into the Hungarian or Palatinal branch of the House of Habsburg-Lorraine, he entered the army in 1890, commanded a corps, an army and army groups in the First World War and on 24 October 1918 became the last field marshal of the Austro-Hungarian army. On 27 October Emperor Charles made him homo regius of Hungary, but the Aster Revolution put an end to his plans. After the fall of the Soviet Republic he became head of state in August 1919 as regent for Charles and appointed István Friedrich prime minister, but when it became clear that the Allies would not recognise a Habsburg as head of state he was forced to resign on 23 August. In the Horthy era he was president of the Hungarian Academy of Sciences from 1936 to 1944. He left Hungary in 1944 and died in Rain, West Germany, in 1962.'],
         fate: ['natural', '사망', 'Died'],
-        aliases: { ko: [], en: ['Joseph August of Austria', 'Archduke Joseph August of Austria', 'József Ágost'] },
+        aliases: { ko: [], en: ['Archduke Joseph August', 'Joseph August of Austria', 'Archduke Joseph August of Austria', 'József Ágost'] },
         sources: [S.josephAugust, S.huJosephAugust],
         facts: {
             years: { claim: 'Lived 1872–1962', locator: 'Lead', excerpt: '(9 August 1872 – 6 July 1962) was a prominent member of the House of Habsburg-Lorraine' },

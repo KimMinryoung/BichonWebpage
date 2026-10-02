@@ -3469,7 +3469,7 @@
       },
       "familyName": {
         "ko": "요제프 아우구스트 대공",
-        "en": "Archduke Joseph August"
+        "en": "Joseph August"
       },
       "nativeName": "Joseph August von Österreich",
       "years": "1872–1962",
@@ -3501,6 +3501,7 @@
       "aliases": {
         "ko": [],
         "en": [
+          "Archduke Joseph August",
           "Joseph August of Austria",
           "Archduke Joseph August of Austria",
           "József Ágost"
@@ -3698,6 +3699,14 @@
             "ko": "헝가리 과학아카데미 원장",
             "en": "President of the Hungarian Academy of Sciences"
           }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "Archduke Joseph August",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
         }
       ]
     },
@@ -5492,7 +5501,7 @@
         "en": "Gyula"
       },
       "familyName": {
-        "ko": "오시텐부르그모러베크",
+        "ko": "오스텐부르크모라베크",
         "en": "Ostenburg-Moravek"
       },
       "nativeName": "Ostenburg-Moravek Gyula",
@@ -5656,6 +5665,20 @@
             "ko": "헝가리 전국 파시스트당 창당",
             "en": "Founds the Hungarian National Fascist Party"
           }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "오스텐부르크",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Ostenburg",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
         }
       ]
     },
@@ -5892,6 +5915,14 @@
             "en": "Flees to Germany"
           }
         }
+      ],
+      "linkExpressions": [
+        {
+          "text": "Anton Lehár",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
       ]
     },
     {
@@ -6107,7 +6138,7 @@
         "en": "Socialist writer and Népszava journalist murdered with Béla Somogyi in 1920 for writing against the White Terror"
       },
       "bio": {
-        "ko": "커셔(코시체)에서 태어나 그곳의 『커셔이 너플로』에서 기자 생활을 시작했고, 1918년 장편소설 『세프치크 집안』을 냈다. 1919년 『네프서버』의 기자가 되어 프롤레타리아, 농민의 토지 갈망, 이주 문제를 다루었고, 헤이여시 이반·프로너이 팔·오시텐부르그모러베크 줄러의 이름으로 대표되는 백색테러를 비판했다. 이 때문에 1920년 2월 17일 편집인 쇼모지 벨러와 함께 오스텐부르크 부대에 끌려가 총살되었고, 시신은 도나우강에 버려졌다.",
+        "ko": "커셔(코시체)에서 태어나 그곳의 『커셔이 너플로』에서 기자 생활을 시작했고, 1918년 장편소설 『세프치크 집안』을 냈다. 1919년 『네프서버』의 기자가 되어 프롤레타리아, 농민의 토지 갈망, 이주 문제를 다루었고, 헤이여시 이반·프로너이 팔·오스텐부르크모라베크 줄러의 이름으로 대표되는 백색테러를 비판했다. 이 때문에 1920년 2월 17일 편집인 쇼모지 벨러와 함께 오스텐부르크 부대에 끌려가 총살되었고, 시신은 도나우강에 버려졌다.",
         "en": "Born in Kassa (Košice), he began as a journalist on the local Kassai Napló and published the novel A Sefcsik ház in 1918. In 1919 he joined Népszava, writing about proletarians, the peasants’ hunger for land and migration, and against the White Terror associated with the names of Iván Héjjas, Pál Prónay and Gyula Ostenburg-Moravek. For this the Ostenburg detachment abducted him and his editor Béla Somogyi on 17 February 1920 and shot them, throwing the bodies into the Danube."
       },
       "fate": {
@@ -7129,6 +7160,32 @@
             "en": "Backs the British Union of Fascists"
           }
         }
+      ],
+      "linkExpressions": [
+        {
+          "text": "로더미어",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "로더미어 경",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Rothermere",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Lord Rothermere",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
       ]
     },
     {
@@ -7596,6 +7653,44 @@
             "ko": "복자 선포",
             "en": "Beatified"
           }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "카를 4세",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "카를 왕",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "카를 국왕",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "King Charles",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Charles IV of Hungary",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Charles I of Austria",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
         }
       ]
     },

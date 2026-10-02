@@ -259,7 +259,7 @@
           "en": "The retaliatory violence of 1919–1921 in which officer detachments of Horthy’s National Army killed and terrorised Communists, Social Democrats, peasants and Jews after the fall of the Hungarian Soviet Republic. It brought summary executions, pogroms and tens of thousands of imprisonments; estimates of the dead range from 300 to 6,000."
         },
         "body": {
-          "ko": "1919년 여름 세게드에서 창설된 국민군의 장교 부대들, 특히 프로너이 팔, 오시텐부르그모러베크 줄러, 헤이여시 이반의 부대가 주로 저질렀다. 이들은 형식상 정규군이었지만 지휘관에게 충성하는 사병처럼 움직였고, 평의회 공화국 지도부에 유대계가 많았다는 이유로 유대인 전체를 표적으로 삼았다. 1919년 11월 오르고바니 숲에서 36명이 살해되었고, 1920년 2월에는 『네프서버』 기자 쇼모지 벨러와 버초 벨러가 살해되었다.\n\n희생자 수는 연구에 따라 크게 다르다. 영어권 문헌은 1,500~6,000명 또는 1,000~5,000명을 들고, 헝가리 역사학계의 신중한 평가는 500~600명 안팎으로 본다. 1920년 여름부터 정부가 부대를 통제하기 시작했고 프로너이 대대는 1922년 1월 해산되었지만, 호르티는 섭정 사면으로 가해자들을 처벌에서 면제했다.",
+          "ko": "1919년 여름 세게드에서 창설된 국민군의 장교 부대들, 특히 프로너이 팔, 오스텐부르크모라베크 줄러, 헤이여시 이반의 부대가 주로 저질렀다. 이들은 형식상 정규군이었지만 지휘관에게 충성하는 사병처럼 움직였고, 평의회 공화국 지도부에 유대계가 많았다는 이유로 유대인 전체를 표적으로 삼았다. 1919년 11월 오르고바니 숲에서 36명이 살해되었고, 1920년 2월에는 『네프서버』 기자 쇼모지 벨러와 버초 벨러가 살해되었다.\n\n희생자 수는 연구에 따라 크게 다르다. 영어권 문헌은 1,500~6,000명 또는 1,000~5,000명을 들고, 헝가리 역사학계의 신중한 평가는 500~600명 안팎으로 본다. 1920년 여름부터 정부가 부대를 통제하기 시작했고 프로너이 대대는 1922년 1월 해산되었지만, 호르티는 섭정 사면으로 가해자들을 처벌에서 면제했다.",
           "en": "It was committed mainly by officer detachments of the National Army founded in Szeged in the summer of 1919, above all those of Pál Prónay, Gyula Ostenburg-Moravek and Iván Héjjas. Formally regular troops, they acted like private battalions loyal to their commanders, and because many leaders of the Soviet Republic had been Jewish they targeted Jews as such. In November 1919 thirty-six people were killed in the forest of Orgovány, and in February 1920 the Népszava journalists Béla Somogyi and Béla Bacsó were murdered.\n\nEstimates of the dead vary widely: English-language accounts give 1,500–6,000 or 1,000–5,000, while cautious Hungarian assessments put it at around 500–600. The government began reining in the detachments in the summer of 1920 and Prónay’s battalion was dissolved in January 1922, but Horthy used the regent’s amnesty to shield the perpetrators from prosecution."
         },
         "aliases": {
@@ -275,7 +275,11 @@
         "people": [
           "miklos-horthy",
           "pal-pronay",
-          "gyula-gombos"
+          "gyula-gombos",
+          "ivan-hejjas",
+          "gyula-ostenburg-moravek",
+          "bela-somogyi",
+          "bela-bacso"
         ],
         "events": [
           "horthy-regime-1920-1938",
@@ -758,7 +762,8 @@
           ]
         },
         "people": [
-          "laszlo-bardossy"
+          "laszlo-bardossy",
+          "friedrich-jeckeln"
         ],
         "events": [
           "hungary-axis-1938-1944"
@@ -839,7 +844,10 @@
         "people": [
           "laszlo-bardossy",
           "miklos-kallay",
-          "miklos-horthy"
+          "miklos-horthy",
+          "ferenc-szombathelyi",
+          "ferenc-feketehalmy-czeydner",
+          "endre-bajcsy-zsilinszky"
         ],
         "events": [
           "hungary-axis-1938-1944"
