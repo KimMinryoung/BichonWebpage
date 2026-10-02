@@ -120,7 +120,7 @@ var sections = p.event.bodySections || [];
             <% var renderPeopleGroups = function(groups, headTag) { groups.forEach(function(group) { %>
             <div class="commu-event-people-group is-<%= group.kind %>">
                 <<%= headTag %> class="commu-event-people-group-head"><%= group.label %><span class="commu-event-people-group-count"><%= group.people.length %></span></<%= headTag %>>
-                <div class="commu-event-people-grid"><% group.people.forEach(function(person) { %><a class="is-<%= person.kind %>" href="/commulingo/people/<%= person.id %>"><span class="commu-event-person-relation"><%= person.relation %></span><strong><%= person.name %></strong><small><%= person.years %></small><p><%= person.note %></p></a><% }) %></div>
+                <div class="commu-event-people-grid"><% group.people.forEach(function(person) { %><a class="is-<%= person.kind %>" href="/commulingo/people/<%= person.id %>" target="_blank" rel="noopener"><span class="commu-event-person-relation"><%= person.relation %></span><strong><%= person.name %></strong><small><%= person.years %></small><p><%= person.note %></p></a><% }) %></div>
             </div>
             <% }) } %>
             <% if (p.event.peopleBySide) { %>
