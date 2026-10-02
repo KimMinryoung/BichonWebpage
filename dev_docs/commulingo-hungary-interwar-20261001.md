@@ -41,3 +41,13 @@
 - `hungary-1944`: 마르가레테 작전, 스토여이 정부와 유대인 이송(아이히만·엔드레·버키), 10월 15일과 화살십자당, 부다페스트 포위, 발렌베리. 신규 인물 후보는 스토여이 되메·베젠마이어·아이히만·엔드레 라슬로·버키 라슬로·러커토시 게저·미클로시 벨러·발렌베리·버이치질린스키 엔드레·페퍼빌덴브루흐(살러시는 등록됨).
 - 발트 3국 1940~1953년 3편(병합과 1941년 이송, 독일 점령과 홀로코스트, 재점령과 숲의 형제).
 - 카드가 없어 본문에만 나온 인물(2026-10-02 점검, 미등록 33명): 1919 야시 오스카르·티서 이슈트반·베린케이 데네시·빅스·스뮈츠·클레망소·카로이 줄러·시트롬펠드 어우렐·체르니 요제프·프리드리히 이슈트반·요제프 아우구스트 대공·야노우셰크 / 호르티 헤이야시 이반·오스텐부르크·레하르 언털·쇼모지 벨러·버초 벨러·할레르 이슈트반·케레스테시피셰르 페렌츠·더라니 칼만·로더미어·돌푸스·카를 왕 / 추축국 스토여이 되메·베르트 헨리크·솜버테이이 페렌츠·페케테할미체이드네르·버이치질린스키 엔드레·볼로신·예켈른·바르터 카로이·세레디 유스티니안·아이히만. 등록하면 각 사건 관계와 입장 모음 마이그레이션도 함께 넣는다.
+
+### 미등록 33명 등록 인수인계 (2026-10-02)
+
+- 범위: 위 33명 카드 등록 + 각 사건 관계 행 + 입장 모음 마이그레이션(다음 번호 234). 사건 본문은 고치지 않는다.
+- 정본: 인물 카드와 관계 행은 그 인물이 처음 나오는 사건 모듈에 넣는다(`event-1919.js`는 카드 배열 `persons`, 관계 배열 `people`; `event-horthy.js`·`event-axis.js`는 관계가 `event({... people: [...]})` 안이나 `const people` 쪽이므로 파일마다 확인할 것 — axis의 `const people`은 카드 배열이다). 같은 인물이 다른 사건에도 실질적으로 나오면 그 사건에도 관계 행을 단다(예: 야시 오스카르는 호르티 편에도, 케레스테시피셰르·스토여이는 여러 편에).
+- 한국어 카드 이름은 사건 본문의 기존 표기와 같아야 자동 링크가 걸린다. 본문을 grep해 표기를 맞추고, 표기법 위반이면 본문을 고치지 말고 보고한다. 카를 왕은 다른 '카를' 인물로 오링크되지 않게 별칭을 고유 표현으로만 둔다.
+- 근거: 영어·헝가리어 위키백과 본문을 받아 excerpt를 글자 그대로 대조한다. API로 받으면 편하다: `https://{lang}.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&titles=...`. 이전 세션 확인 결과 영어판 문서가 없거나 비어 있는 인물: Fernand Vix, Béla Somogyi(영어판 없음), Cserny József·Bacsó Béla(헝가리어판이 동음이의 문서 — 정확한 문서명 `Cserny József (politikus)` 류를 찾아야 함). 이 넷은 헝가리어판 등 다른 출처를 찾고, 근거가 부족하면 등록을 미루고 보고한다. Rothermere는 `Harold Harmsworth, 1st Viscount Rothermere`, Lehár는 `Antal Lehár`, Serédi는 `Jusztinián György Serédi`로 리디렉트된다.
+- 절차: 모듈 수정 → `node scripts/content/hungary-interwar-20261001/build.js` → 새 id만 골라 스펙 작성(이미 등록된 21명을 다시 upsert하지 않는다) → `scripts/commulingo-people-upsert <spec> --dry-run` → 실제 실행 → `apply-history-events.js`(컨테이너 `/tmp/hi2/runner.js`, 스펙 복사 후 `--production` dry run에서 `missingPeople` 확인 → `--apply --backup=/tmp/hi2/before-<날짜>.json`; 사건 행은 unchanged여야 한다) → 입장 모음 마이그레이션 → 스냅샷·인물 감사 4종·`audit-event-locations`·사건 페이지 오링크 확인 → npm test → 커밋·push.
+- 그룹: 비공산권 정치인은 `world-interwar`(히틀러·처칠·드골과 같음). 국적 코드는 기존 카드 예: 프랑스 `france`, 영국 `uk`, 독일 `germany`, 오스트리아 `austria`, 체코슬로바키아 `czechoslovakia`, 남아프리카는 `nationality-policy.json`에서 확인.
+
