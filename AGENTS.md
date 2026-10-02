@@ -37,7 +37,7 @@ Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content agai
 - Deploy, preview, data/cache, auth: [operations reference](dev_docs/frontend-operations.md).
 - CommuLingo people must go through the Admin store/upsert tool; do not bypass validation with direct INSERTs. Host-mounted data changes affect production immediately.
 - UI changes must follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
-- For CSS, layout, or client-side interaction changes, perform one browser check, preferably against production after deployment. Do not require browser checks for metadata, visibility, server-only, or documentation changes. Read user-referenced screenshots before diagnosing them.
+- For CSS, layout, or client-side interaction changes, perform one browser check, preferably against production after deployment. Do not require browser checks for metadata, visibility, server-only, or documentation changes. Read user-referenced screenshots before diagnosing them. Save verification screenshots under `temp_dev/screenshots/` (gitignored) or the session scratchpad, never in the repository root.
 - Keep this file limited to enduring constraints and routing links. Put formulas, procedures and completed-work history in topic documents. Current user instructions take precedence over past preferences.
 
 ## Cloud sessions and lone clones
