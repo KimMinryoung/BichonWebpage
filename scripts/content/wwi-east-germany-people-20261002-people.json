@@ -5225,6 +5225,2247 @@
         "en": "Ivanovich"
       },
       "cyrillicPatronymic": "Иванович"
+    },
+    {
+      "id": "gavrilo-princip",
+      "groupId": "world-before-1917",
+      "givenName": {
+        "ko": "가브릴로",
+        "en": "Gavrilo"
+      },
+      "familyName": {
+        "ko": "프린치프",
+        "en": "Princip"
+      },
+      "nativeName": "Гаврило Принцип",
+      "years": "1894–1918",
+      "citizenship": {
+        "code": "austria"
+      },
+      "nationalOrigin": {
+        "code": "serbia",
+        "label": {
+          "ko": "보스니아 세르비아계",
+          "en": "Bosnian Serb"
+        }
+      },
+      "epithet": {
+        "ko": "1914년 사라예보에서 프란츠 페르디난트 대공 부부를 쏘아 죽인 청년 보스니아 단원",
+        "en": "Young Bosnia member who shot dead Archduke Franz Ferdinand and his wife in Sarajevo in 1914"
+      },
+      "bio": {
+        "ko": "보스니아 서부의 가난한 세르비아계 농가에서 태어나 사라예보에서 공부했고, 1911년 오스트리아 지배에서 보스니아를 해방하고 남슬라브를 통일하려는 비밀 결사 청년 보스니아에 들어갔다. 반오스트리아 시위로 퇴학당해 베오그라드로 갔다. 세르비아 비밀 결사 흑수단에게 무기와 훈련을 받아, 1914년 6월 28일 사라예보에서 황위 계승자 프란츠 페르디난트 대공과 아내 조피를 권총으로 쏘아 죽였다. 이 암살이 7월 위기와 1차 세계대전으로 이어졌다. 재판에서 자신을 유고슬라비아 민족주의자라 밝혔고, 스무 살이 안 되어 사형을 면하고 징역 20년을 받았다. 1918년 테레지엔슈타트 요새 감옥에서 결핵으로 죽었다.",
+        "en": "Born to a poor Serb farming family in western Bosnia, he studied in Sarajevo and in 1911 joined Young Bosnia, a secret society seeking to free Bosnia from Austrian rule and unite the South Slavs. Expelled from school after anti-Austrian demonstrations, he went to Belgrade. Armed and trained through the Serbian secret society the Black Hand, on 28 June 1914 in Sarajevo he shot dead the heir to the throne, Archduke Franz Ferdinand, and his wife Sophie. The assassination set off the July Crisis and the First World War. At his trial he declared himself a Yugoslav nationalist; too young for the death penalty, he received twenty years. He died of tuberculosis in the prison of the Theresienstadt fortress in 1918."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "옥중 결핵으로 사망",
+          "en": "Died of tuberculosis in prison"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gavrilo_Princip"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1894–1918",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "25 July 1894 – 28 April 1918"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Austro-Hungarian subject",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "tried alongside 24 others, all Bosnians and thus Austro-Hungarian subjects"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Bosnian Serb",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "was a Bosnian Serb student who assassinated Archduke Franz Ferdinand"
+        },
+        {
+          "field": "bio",
+          "claim": "Born to a poor Serb family in western Bosnia; studied in Sarajevo",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "Princip was born in western Bosnia to a poor Serb family. Aged 13, he was sent to Sarajevo"
+        },
+        {
+          "field": "bio",
+          "claim": "Joined Young Bosnia in 1911",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "In 1911, he joined Young Bosnia, a secret local society aiming to free Bosnia from Austrian rule and achieve the unification of the South Slavs."
+        },
+        {
+          "field": "bio",
+          "claim": "Expelled, went to Belgrade",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "he was expelled from school and walked to Belgrade, Serbia, to continue his education"
+        },
+        {
+          "field": "bio",
+          "claim": "Black Hand supplied weapons and training",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "The Black Hand, a Serbian secret society with ties to Serbian military intelligence, provided the conspirators with weapons and training"
+        },
+        {
+          "field": "bio",
+          "claim": "Killed Franz Ferdinand and Sophie on 28 June 1914",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "On Sunday 28 June 1914, during the royal couple's visit to Sarajevo, the then-teenager Princip mortally wounded Franz Ferdinand and Sophie by firing a pistol into their convertible car."
+        },
+        {
+          "field": "bio",
+          "claim": "Set off the July Crisis and the war",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "The assassination set off the July Crisis, a series of events that within one month led to the outbreak of World War I."
+        },
+        {
+          "field": "bio",
+          "claim": "Declared himself a Yugoslav nationalist",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "I am a Yugoslav nationalist, aiming for the unification of all Yugoslavs"
+        },
+        {
+          "field": "bio",
+          "claim": "Spared death penalty, twenty years",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "Princip was spared the death penalty because of his age (19) and sentenced to twenty years in prison."
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Theresienstadt of tuberculosis in 1918",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "Imprisonment and death",
+          "excerpt": "held in solitary confinement at the Small Fortress in Theresienstadt (present-day Terezín, Czech Republic), where his tuberculosis worsened"
+        },
+        {
+          "field": "bio",
+          "claim": "Died 28 April 1918 of tuberculosis",
+          "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+          "locator": "lead",
+          "excerpt": "Princip died on 28 April 1918 of tuberculosis, worsened by harsh prison conditions"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": null,
+          "affiliationStatus": "independent",
+          "relation": "independent",
+          "startYear": 1911,
+          "endYear": 1914,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gavrilo_Princip",
+              "locator": "Joining Young Bosnia",
+              "claim": "Young Bosnia member who carried out the Sarajevo assassination",
+              "excerpt": "In 1911, Princip graduated from the fourth grade and joined Young Bosnia (Serbian: Mlada Bosna), a society with members from all three major Bosnian ethnic groups, that sought the liberation of Bosnia from Austro-Hungarian rule and the unification of all Southern Slavs in a common nation."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1911",
+          "r": {
+            "ko": "청년 보스니아 가입",
+            "en": "Joined Young Bosnia"
+          }
+        },
+        {
+          "y": "1914.06.28",
+          "r": {
+            "ko": "사라예보에서 프란츠 페르디난트 대공 부부 암살",
+            "en": "Assassinated Archduke Franz Ferdinand and his wife in Sarajevo"
+          }
+        },
+        {
+          "y": "1914.10",
+          "r": {
+            "ko": "징역 20년 선고",
+            "en": "Sentenced to twenty years"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "테레지엔슈타트 감옥에서 사망",
+            "en": "Died in Theresienstadt prison"
+          }
+        }
+      ]
+    },
+    {
+      "id": "franz-ferdinand",
+      "groupId": "world-before-1917",
+      "givenName": {
+        "ko": "",
+        "en": ""
+      },
+      "familyName": {
+        "ko": "프란츠 페르디난트",
+        "en": "Franz Ferdinand"
+      },
+      "nativeName": "Franz Ferdinand",
+      "years": "1863–1914",
+      "citizenship": {
+        "code": "austria"
+      },
+      "nationalOrigin": {
+        "code": "austria"
+      },
+      "epithet": {
+        "ko": "1914년 사라예보에서 암살되어 1차 세계대전의 직접 계기가 된 오스트리아-헝가리 황위 계승자",
+        "en": "Heir presumptive of Austria-Hungary whose assassination in Sarajevo in 1914 was the immediate cause of the First World War"
+      },
+      "bio": {
+        "ko": "그라츠에서 프란츠 요제프 황제의 동생 카를 루트비히 대공의 맏아들로 태어났다. 1889년 루돌프 황태자가 자살하고 1896년 아버지가 죽자 황위 계승자가 되었다. 조피 호테크와의 귀천상혼은 자녀의 계승권을 포기한 뒤에야 허락되었다. 군에 큰 영향력을 행사했고 1913년 전군 총감이 되었다. 성직주의와 반민주주의, 반헝가리주의를 신념으로 삼았으며, 제국 안 슬라브 민족들의 자치 확대를 주장하는 한편 세르비아에 대해서는 러시아와의 충돌을 경계해 신중론을 폈다. 1914년 6월 28일 사라예보에서 아내와 함께 가브릴로 프린치프에게 암살되었고, 이 사건이 7월 위기와 전쟁으로 이어졌다.",
+        "en": "Born in Graz, the eldest son of Archduke Karl Ludwig, the younger brother of Emperor Franz Joseph, he became heir presumptive after Crown Prince Rudolf’s suicide in 1889 and his father’s death in 1896. His morganatic marriage to Sophie Chotek was allowed only after he renounced his descendants’ rights to the throne. He exerted great influence over the armed forces and in 1913 became their inspector general. Clericalism, anti-democratic views and anti-Hungarianism were the cornerstones of his politics; he advocated more autonomy for the empire’s Slav peoples, but urged caution towards Serbia for fear of conflict with Russia. On 28 June 1914 he and his wife were assassinated in Sarajevo by Gavrilo Princip, setting off the July Crisis and the war."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "사라예보에서 암살",
+          "en": "Assassinated in Sarajevo"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "프란츠 페르디난트 대공"
+        ],
+        "en": [
+          "Archduke Franz Ferdinand",
+          "Francis Ferdinand"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1863–1914",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "18 December 1863 – 28 June 1914"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Heir presumptive of Austria-Hungary",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "was the heir presumptive to the throne of Austria-Hungary"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Graz, son of an Austrian archduke",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "Early life",
+          "excerpt": "Franz Ferdinand was born in Graz, then part of the Austrian Empire, the eldest son of Archduke Karl Ludwig of Austria"
+        },
+        {
+          "field": "bio",
+          "claim": "Eldest son of Karl Ludwig, younger brother of Franz Joseph",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "Franz Ferdinand was the eldest son of Archduke Karl Ludwig of Austria, the younger brother of Emperor Franz Joseph I of Austria."
+        },
+        {
+          "field": "bio",
+          "claim": "Heir presumptive after 1889 and 1896",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "Following the death of Crown Prince Rudolf in 1889 and the death of Karl Ludwig in 1896, Franz Ferdinand became the heir presumptive to the Austro-Hungarian throne."
+        },
+        {
+          "field": "bio",
+          "claim": "Rudolf’s suicide",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "Heir presumptive",
+          "excerpt": "In 1889, Ferdinand's cousin Crown Prince Rudolf committed suicide at his hunting lodge in Mayerling."
+        },
+        {
+          "field": "bio",
+          "claim": "Morganatic marriage",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "their morganatic marriage in 1900 was only allowed after he renounced his descendants' rights to the throne"
+        },
+        {
+          "field": "bio",
+          "claim": "Influence over the military; inspector general 1913",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "Franz Ferdinand held significant influence over the military, and in 1913, he was appointed inspector general of the Austro-Hungarian Armed Forces."
+        },
+        {
+          "field": "bio",
+          "claim": "Clericalism, anti-democratic views, anti-Hungarianism",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "Political views",
+          "excerpt": "The three cornerstones of Ferdinand's political conviction were clericalism, anti-democratic views, and anti-Hungarianism"
+        },
+        {
+          "field": "bio",
+          "claim": "Autonomy for Slav peoples",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "Political views",
+          "excerpt": "He advocated granting greater autonomy to ethnic groups within the Empire and addressing their grievances"
+        },
+        {
+          "field": "bio",
+          "claim": "Caution towards Serbia",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "Political views",
+          "excerpt": "He also advocated a cautious approach towards Serbia"
+        },
+        {
+          "field": "bio",
+          "claim": "Warned of conflict with Russia",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "Political views",
+          "excerpt": "warning that harsh treatment of Serbia would bring Austria-Hungary into open conflict with Russia, to the ruin of both empires"
+        },
+        {
+          "field": "bio",
+          "claim": "Assassinated with his wife by Princip; July Crisis",
+          "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+          "locator": "lead",
+          "excerpt": "On 28 June 1914, Franz Ferdinand and his wife were assassinated in Sarajevo by the 19-year-old Gavrilo Princip, a member of Young Bosnia. Franz Ferdinand's assassination led to the July Crisis"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "monarchy",
+          "affiliationId": "state-austria",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1896,
+          "endYear": 1914,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+              "locator": "Heir presumptive",
+              "claim": "Heir presumptive to the Austro-Hungarian throne",
+              "excerpt": "When Karl Ludwig died of typhoid fever in 1896, Franz Ferdinand became the heir presumptive to the Austro-Hungarian throne."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-austria",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1913,
+          "endYear": 1914,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Archduke_Franz_Ferdinand_of_Austria",
+              "locator": "Military career",
+              "claim": "Inspector general of the armed forces",
+              "excerpt": "Franz in 1913, as heir-presumptive to the elderly emperor, had been appointed inspector general of all the armed forces of Austria-Hungary"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1896",
+          "r": {
+            "ko": "오스트리아-헝가리 황위 계승자",
+            "en": "Heir presumptive of Austria-Hungary"
+          }
+        },
+        {
+          "y": "1900",
+          "r": {
+            "ko": "조피 호테크와 귀천상혼",
+            "en": "Morganatic marriage to Sophie Chotek"
+          }
+        },
+        {
+          "y": "1913",
+          "r": {
+            "ko": "전군 총감",
+            "en": "Inspector general of the armed forces"
+          }
+        },
+        {
+          "y": "1914.06.28",
+          "r": {
+            "ko": "사라예보에서 암살",
+            "en": "Assassinated in Sarajevo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alfred-von-tirpitz",
+      "groupId": "world-before-1917",
+      "givenName": {
+        "ko": "알프레트",
+        "en": "Alfred"
+      },
+      "familyName": {
+        "ko": "티르피츠",
+        "en": "von Tirpitz"
+      },
+      "nativeName": "Alfred von Tirpitz",
+      "years": "1849–1930",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "영국 해군에 맞설 대양함대를 건설해 건함 경쟁을 부르고 무제한 잠수함전을 주장한 독일 제독",
+        "en": "German admiral who built the High Seas Fleet to rival the Royal Navy, set off a naval arms race and urged unrestricted U-boat war"
+      },
+      "bio": {
+        "ko": "브란덴부르크주 퀴스트린에서 법률가의 아들로 태어났다. 1897~1916년 제국해군청 장관으로 작은 제국 해군을 영국 해군을 위협할 세계적 해군으로 키웠다. 「위험 이론」에 따른 1898~1912년 함대법으로 독일 해군은 세계 2위가 되었지만, 값비싼 건함 경쟁을 부르고 영국을 프랑스 쪽으로 더 가깝게 밀었다. 그는 해군력이 사회민주당에 대한 「진정제」가 되리라 보았다. 전쟁 중 대양함대가 영국의 해상 봉쇄를 깨지 못하자 무제한 잠수함전을 거세게 주장했고, 1916년 3월 사임했다. 1917년 협상에 의한 강화에 반대하는 극우 조국당을 함께 세워 의장이 되었고, 전후 독일국가인민당 의원을 지냈다. 1930년 죽었다.",
+        "en": "Born in Küstrin in Brandenburg, the son of a lawyer, he was State Secretary of the Imperial Naval Office from 1897 to 1916 and turned the modest Imperial Navy into a world-class force that could threaten the Royal Navy. The Fleet Acts of 1898–1912, built on his “risk theory”, gave Germany the second-largest navy in the world, but started a costly naval arms race and pushed Britain closer to France. He saw sea power as a “palliative against” the Social Democrats. When the High Seas Fleet could not break Britain’s blockade, he became an outspoken advocate of unrestricted submarine warfare, and resigned in March 1916. In 1917 he co-founded and chaired the far-right Fatherland Party, which opposed a negotiated peace, and after the war sat in the Reichstag for the German National People’s Party. He died in 1930."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "알프레트 티르피츠"
+        ],
+        "en": [
+          "Alfred Peter Friedrich von Tirpitz"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1849–1930",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "19 March 1849 – 6 March 1930"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German grand admiral",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "was a German grand admiral and State Secretary of the German Imperial Naval Office"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Küstrin, Prussian Brandenburg, son of a lawyer",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Family and early life",
+          "excerpt": "Tirpitz was born in Küstrin (today Kostrzyn in Poland) in the Prussian province of Brandenburg, the son of lawyer and later judge Rudolf Tirpitz"
+        },
+        {
+          "field": "bio",
+          "claim": "State Secretary 1897–1916",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "State Secretary of the German Imperial Naval Office, the administrative branch of the German Imperial Navy from 1897 until 1916"
+        },
+        {
+          "field": "bio",
+          "claim": "Turned the navy into a world-class force",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "Tirpitz took the modest Imperial Navy and, beginning in the 1890s, turned it into a world-class force that could threaten Britain's Royal Navy."
+        },
+        {
+          "field": "bio",
+          "claim": "Fleet Acts; second-largest navy",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Tirpitz Plan",
+          "excerpt": "Politically, the Tirpitz Plan was marked by the Fleet Acts of 1898, 1900, 1908 and 1912. By 1914, they had given Germany the second-largest naval force in the world"
+        },
+        {
+          "field": "bio",
+          "claim": "Naval arms race; Britain closer to France",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Tirpitz Plan",
+          "excerpt": "the expansion programme was sufficient to alarm the British, starting a costly naval arms race and pushing the British into closer ties with the French"
+        },
+        {
+          "field": "bio",
+          "claim": "Risk theory",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Tirpitz Plan",
+          "excerpt": "Tirpitz developed a \"risk theory\""
+        },
+        {
+          "field": "bio",
+          "claim": "Palliative against Social Democrats",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Tirpitz Plan",
+          "excerpt": "serve as a \"palliative against educated and uneducated Social Democrats\""
+        },
+        {
+          "field": "bio",
+          "claim": "Fleet could not end British command of the sea",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "his High Seas Fleet proved unable to end Britain's command of the sea and its chokehold on Germany's economy"
+        },
+        {
+          "field": "bio",
+          "claim": "Advocate of unrestricted submarine warfare",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "Tirpitz became an outspoken advocate for unrestricted submarine warfare"
+        },
+        {
+          "field": "bio",
+          "claim": "Resigned 15 March 1916",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "World War I",
+          "excerpt": "he finally resigned on 15 March 1916"
+        },
+        {
+          "field": "bio",
+          "claim": "Co-founded and chaired the Fatherland Party",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Fatherland Party",
+          "excerpt": "In September 1917 Grand Admiral Tirpitz became a co-founder of the Pan-Germanic and nationalist Fatherland Party (Deutsche Vaterlandspartei)."
+        },
+        {
+          "field": "bio",
+          "claim": "Party opposed a negotiated peace",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "Fatherland Party",
+          "excerpt": "The party attracted the opponents of a negotiated peace"
+        },
+        {
+          "field": "bio",
+          "claim": "Far-right party",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "lead",
+          "excerpt": "he became Chairman of the far-right German Fatherland Party"
+        },
+        {
+          "field": "bio",
+          "claim": "DNVP Reichstag deputy",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "After 1918",
+          "excerpt": "After Germany's defeat Tirpitz supported the right-wing German National People's Party (Deutschnationale Volkspartei, or DNVP) and sat for it in the Reichstag from 1924 until 1928."
+        },
+        {
+          "field": "bio",
+          "claim": "Died 1930",
+          "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+          "locator": "After 1918",
+          "excerpt": "Tirpitz died in Ebenhausen, near Munich, on 6 March 1930."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1897,
+          "endYear": 1916,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+              "locator": "lead",
+              "claim": "State Secretary of the Imperial Naval Office",
+              "excerpt": "State Secretary of the German Imperial Naval Office, the administrative branch of the German Imperial Navy from 1897 until 1916"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1924,
+          "endYear": 1928,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alfred_von_Tirpitz",
+              "locator": "After 1918",
+              "claim": "DNVP member of the Reichstag",
+              "excerpt": "sat for it in the Reichstag from 1924 until 1928"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1897–1916",
+          "r": {
+            "ko": "제국해군청 장관",
+            "en": "State Secretary of the Imperial Naval Office"
+          }
+        },
+        {
+          "y": "1898–1912",
+          "r": {
+            "ko": "함대법으로 대양함대 건설",
+            "en": "Built the High Seas Fleet through the Fleet Acts"
+          }
+        },
+        {
+          "y": "1917",
+          "r": {
+            "ko": "독일 조국당 공동 창당·의장",
+            "en": "Co-founder and chairman of the German Fatherland Party"
+          }
+        },
+        {
+          "y": "1924–1928",
+          "r": {
+            "ko": "독일국가인민당 제국의회 의원",
+            "en": "Reichstag deputy for the DNVP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "robert-nivelle",
+      "groupId": "world-before-1917",
+      "givenName": {
+        "ko": "로베르",
+        "en": "Robert"
+      },
+      "familyName": {
+        "ko": "니벨",
+        "en": "Nivelle"
+      },
+      "nativeName": "Robert Nivelle",
+      "years": "1856–1924",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france",
+        "label": {
+          "ko": "프랑스 (어머니는 영국인)",
+          "en": "French (English mother)"
+        }
+      },
+      "epithet": {
+        "ko": "1917년 니벨 공세가 실패해 프랑스군 항명 사태를 부르고 경질된 총사령관",
+        "en": "French commander-in-chief whose failed offensive of 1917 brought on the army mutinies and his dismissal"
+      },
+      "bio": {
+        "ko": "코레즈의 튈에서 프랑스인 아버지와 영국인 개신교도 어머니 사이에서 태어나 포병 장교가 되었고, 의화단 진압에도 참전했다. 1916년 5월 베르됭에서 페탱의 뒤를 이어 제2군 사령관이 되어 반격을 이끌었으나, 병사들의 목숨을 낭비했다는 비난을 받았다. 1916년 12월 서부전선 프랑스군 총사령관이 되었고, 1917년 4월 16일 슈맹 데 담에서 결정적 돌파를 장담하며 니벨 공세를 열었다. 예상한 1만 명과 달리 열흘 만에 13만 4천 명의 사상자를 내고도 공격을 이어 갔으나 돌파에 실패했다. 프랑스군 절반가량이 항명에 휩싸였고, 5월 15일 페탱에게 자리를 넘겼다. 북아프리카 사령관으로 밀려났고 1924년 죽었다.",
+        "en": "Born in Tulle, Corrèze, to a French father and an English Protestant mother, he became an artillery officer and served in the Boxer Rebellion. In May 1916 he succeeded Pétain in command of the Second Army at Verdun and led the counter-offensives, but was accused of wasting French lives. Made commander-in-chief on the Western Front in December 1916, he opened the Nivelle Offensive at the Chemin des Dames on 16 April 1917, promising a decisive breakthrough. Casualties reached 134,000 in ten days against the 10,000 he had predicted, yet he pressed on without breaking through. A mutiny spread through roughly half the French Army, and on 15 May he was replaced by Pétain. He was sent off to command in North Africa and died in 1924."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Robert Georges Nivelle"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Nivelle"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1856–1924",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "lead",
+          "excerpt": "15 October 1856 – 22 March 1924"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French general",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "lead",
+          "excerpt": "was a French artillery general officer who served in the Boxer Rebellion and the First World War"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "French father, English Protestant mother",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "Early life and career",
+          "excerpt": "had a French father and an English Protestant mother"
+        },
+        {
+          "field": "bio",
+          "claim": "Born in Tulle",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "Early life and career",
+          "excerpt": "Robert Georges Nivelle, born on 15 October 1856 in the French provincial town of Tulle in Corrèze"
+        },
+        {
+          "field": "bio",
+          "claim": "Succeeded Pétain at Verdun; accused of wasting lives",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "lead",
+          "excerpt": "In May 1916, he succeeded Philippe Pétain as commander of the French Second Army in the Battle of Verdun, leading counter-offensives that rolled back the German forces in late 1916. During these actions, he and General Charles Mangin were accused of wasting French lives."
+        },
+        {
+          "field": "bio",
+          "claim": "Commander-in-chief December 1916",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "lead",
+          "excerpt": "Nivelle was promoted to commander-in-chief of the French armies on the Western Front in December 1916"
+        },
+        {
+          "field": "bio",
+          "claim": "Offensive began 16 April 1917",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "Nivelle Offensive",
+          "excerpt": "After three postponements, the Nivelle Offensive began on 16 April 1917."
+        },
+        {
+          "field": "bio",
+          "claim": "134,000 casualties against 10,000 predicted; ordered attacks to continue",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "Nivelle Offensive",
+          "excerpt": "From 16 April to 25 April, there had been 134,000 casualties. Nivelle had said there would be about 10,000."
+        },
+        {
+          "field": "bio",
+          "claim": "Ordered the attacks to continue",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "Nivelle Offensive",
+          "excerpt": "he ordered the attacks to continue"
+        },
+        {
+          "field": "bio",
+          "claim": "Mutiny of roughly half the army",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "lead",
+          "excerpt": "When the costly offensive failed to achieve a breakthrough on the Western Front, a major mutiny occurred, affecting roughly half the French Army"
+        },
+        {
+          "field": "bio",
+          "claim": "Replaced by Pétain on 15 May",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "lead",
+          "excerpt": "Nivelle was replaced as commander-in-chief by Philippe Pétain on 15 May 1917."
+        },
+        {
+          "field": "bio",
+          "claim": "Sent to North Africa; died 1924",
+          "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+          "locator": "Dismissal",
+          "excerpt": "In December 1917 Nivelle was transferred by the French Government to the post of Commander-in-Chief of the French Army in North Africa"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1916,
+          "endYear": 1917,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Robert_Nivelle",
+              "locator": "lead",
+              "claim": "Commander-in-chief of the French armies on the Western Front",
+              "excerpt": "Nivelle was promoted to commander-in-chief of the French armies on the Western Front in December 1916"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1916.05",
+          "r": {
+            "ko": "베르됭 제2군 사령관",
+            "en": "Commander of the Second Army at Verdun"
+          }
+        },
+        {
+          "y": "1916.12",
+          "r": {
+            "ko": "서부전선 프랑스군 총사령관",
+            "en": "Commander-in-chief of the French armies on the Western Front"
+          }
+        },
+        {
+          "y": "1917.04",
+          "r": {
+            "ko": "니벨 공세",
+            "en": "Nivelle Offensive"
+          }
+        },
+        {
+          "y": "1917.12",
+          "r": {
+            "ko": "북아프리카 프랑스군 사령관",
+            "en": "Commander-in-chief of the French Army in North Africa"
+          }
+        }
+      ]
+    },
+    {
+      "id": "luigi-cadorna",
+      "groupId": "world-before-1917",
+      "givenName": {
+        "ko": "루이지",
+        "en": "Luigi"
+      },
+      "familyName": {
+        "ko": "카도르나",
+        "en": "Cadorna"
+      },
+      "nativeName": "Luigi Cadorna",
+      "years": "1850–1928",
+      "citizenship": {
+        "code": "italy"
+      },
+      "nationalOrigin": {
+        "code": "italy"
+      },
+      "epithet": {
+        "ko": "이손초강의 정면 공격을 되풀이하고 가혹한 군기로 다스리다 카포레토 패전 뒤 해임된 참모총장",
+        "en": "Italian chief of staff who repeated frontal assaults on the Isonzo, ruled by harsh discipline and was dismissed after Caporetto"
+      },
+      "bio": {
+        "ko": "피에몬테에서 장군의 아들로 태어나 포병 장교가 되었고, 엄격한 군기와 공세 교리로 이름이 났다. 1914~1917년 이탈리아군 참모총장으로 이손초강을 따라 공세를 거듭했다. 고리치아 점령 같은 성과도 있었으나 「소모전만이 전쟁을 끝낸다」며 큰 희생을 감수했다. 장교 217명을 해임하고 후퇴한 부대의 장교를 즉결 처형하게 했으며, 그의 휘하에서 약 750명이 처형되어 1차 세계대전 군대 가운데 가장 많았다. 1917년 10월 카포레토에서 독일-오스트리아군에 대패해 27만 5천 명이 포로가 되었고, 11월 7일 해임되었다. 1924년 무솔리니 정권 아래 원수가 되었고 1928년 죽었다.",
+        "en": "Born in Piedmont, the son of a general, he became an artillery officer known for strict discipline and the doctrine of the offensive. As chief of staff of the Italian Army in 1914–1917 he launched offensive after offensive along the Isonzo. There were gains such as Gorizia, but he accepted huge losses, holding that the war could only end through the exhaustion of men and resources. He dismissed 217 officers and ordered the summary execution of officers whose units retreated; about 750 soldiers were executed under him, the most of any army in the war. After the disaster at Caporetto in October 1917, where 275,000 soldiers were captured, he was dismissed on 7 November. He was made a Marshal of Italy in 1924 under Mussolini and died in 1928."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Luigi_Cadorna"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1850–1928",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "lead",
+          "excerpt": "4 September 1850 – 21 December 1928"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Italian general",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "lead",
+          "excerpt": "was an Italian general, Marshal of Italy and Count"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Piedmont to an Italian general",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "Early career",
+          "excerpt": "Luigi Cadorna was born to General Raffaele Cadorna in Verbania Pallanza, Piedmont in 1850."
+        },
+        {
+          "field": "bio",
+          "claim": "Artillery officer",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "Early career",
+          "excerpt": "he was commissioned as a second lieutenant of artillery in 1868"
+        },
+        {
+          "field": "bio",
+          "claim": "Strict discipline; doctrine of the offensive",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "Early career",
+          "excerpt": "Cadorna acquired a reputation for strict discipline and harsh punishment. He wrote a manual of infantry tactics, which laid stress on the doctrine of the offensive."
+        },
+        {
+          "field": "bio",
+          "claim": "Chief of Staff 1914–1917; Isonzo offensives",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "lead",
+          "excerpt": "most famous for being the Chief of Staff of the Italian Army from 1914 until late 1917 during World War I"
+        },
+        {
+          "field": "bio",
+          "claim": "Gains such as Gorizia",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "lead",
+          "excerpt": "Cadorna launched multiple offensives across the Isonzo front during which the Italian army made gains, most notably capturing Gorizia"
+        },
+        {
+          "field": "bio",
+          "claim": "Attrition",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "First World War",
+          "excerpt": "the current war can only end through the exhaustion of men and resources"
+        },
+        {
+          "field": "bio",
+          "claim": "Dismissed 217 officers; summary executions; 750 executed",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "Historiography",
+          "excerpt": "During the course of the war, Cadorna dismissed 217 officers, and during the Battle of Caporetto, he ordered the summary execution of officers whose units retreated"
+        },
+        {
+          "field": "bio",
+          "claim": "About 750 executed, the most in the war",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "Historiography",
+          "excerpt": "About 750 were executed, the highest number in any army in World War I."
+        },
+        {
+          "field": "bio",
+          "claim": "275,000 captured at Caporetto",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "First World War",
+          "excerpt": "The Italian Army retreated in disarray and seemed on the verge of total collapse; 275,000 soldiers were captured."
+        },
+        {
+          "field": "bio",
+          "claim": "Dismissed 7 November",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "First World War",
+          "excerpt": "On November 7, the Italian king and government dismissed Luigi Cadorna as Chief of Staff the Italian Army"
+        },
+        {
+          "field": "bio",
+          "claim": "Field Marshal 1924 under Mussolini; died 1928",
+          "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+          "locator": "Post-war",
+          "excerpt": "he was made a Field Marshal (Maresciallo d'Italia) in 1924, two years after Benito Mussolini had seized power. Cadorna died in Bordighera in 1928."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-italy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1917,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Luigi_Cadorna",
+              "locator": "lead",
+              "claim": "Chief of Staff of the Italian Army",
+              "excerpt": "most famous for being the Chief of Staff of the Italian Army from 1914 until late 1917 during World War I"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1914",
+          "r": {
+            "ko": "이탈리아군 참모총장",
+            "en": "Chief of Staff of the Italian Army"
+          }
+        },
+        {
+          "y": "1915–1917",
+          "r": {
+            "ko": "이손초 공세",
+            "en": "Isonzo offensives"
+          }
+        },
+        {
+          "y": "1917.11.07",
+          "r": {
+            "ko": "카포레토 패전 뒤 해임",
+            "en": "Dismissed after Caporetto"
+          }
+        },
+        {
+          "y": "1924",
+          "r": {
+            "ko": "이탈리아 원수",
+            "en": "Marshal of Italy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "john-maynard-keynes",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "존 메이너드",
+        "en": "John Maynard"
+      },
+      "familyName": {
+        "ko": "케인스",
+        "en": "Keynes"
+      },
+      "nativeName": "John Maynard Keynes",
+      "years": "1883–1946",
+      "citizenship": {
+        "code": "uk"
+      },
+      "nationalOrigin": {
+        "code": "uk"
+      },
+      "epithet": {
+        "ko": "강화회의에 항의해 재무부를 떠나 배상의 해악을 경고한 영국 경제학자",
+        "en": "British economist who left the Treasury in protest at the peace treaty and warned of the damage reparations would do"
+      },
+      "bio": {
+        "ko": "케임브리지에서 태어나 킹스 칼리지에서 수학을 공부했다. 1915년 재무부에 들어가 연합국 간 신용 조건을 설계했다. 파리 강화회의에서는 독일의 배상액을 지불 능력을 넘지 않게 하려 했으나 고위 협상에서 대부분 밀려났고, 조약에 실망해 재무부를 떠났다. 1919년 『평화의 경제적 귀결』로 조약의 해악을 예측해 국제적 명성을 얻었다. 대공황 속에서 유효수요가 경제활동 수준을 정한다고 보고 재정·통화 정책으로 불황에 맞설 것을 주장했으며, 1936년 『일반이론』을 냈다. 1944년 브레턴우즈 협상에서 영국 대표단을 이끌었으나 미국안에 밀렸다. 1946년 심장마비로 죽었다.",
+        "en": "Born in Cambridge, he studied mathematics at King’s College. Entering the Treasury in 1915, he designed the terms of credit between Britain and its continental allies. At the Paris Peace Conference he tried to keep Germany’s reparations within its capacity to pay but was largely excluded from the high-level talks, and the treaty’s outcome led to his resignation from the Treasury. The Economic Consequences of the Peace (1919), predicting the treaty’s damaging effects, made him internationally famous. In the Depression he argued that aggregate demand determined the level of economic activity and called for fiscal and monetary policy against slumps, publishing The General Theory in 1936. He led the British delegation at Bretton Woods in 1944, where the American plan largely prevailed. He died of heart attacks in 1946."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "케인스 경"
+        ],
+        "en": [
+          "Lord Keynes",
+          "John Maynard Keynes, 1st Baron Keynes"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/John_Maynard_Keynes"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1883–1946",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "lead",
+          "excerpt": "5 June 1883 – 21 April 1946"
+        },
+        {
+          "field": "citizenship",
+          "claim": "English economist",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "lead",
+          "excerpt": "was an English economist"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Cambridge, England",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Early life and education",
+          "excerpt": "John Maynard Keynes was born in Cambridge, England, on 5 June 1883, to an upper-middle-class family."
+        },
+        {
+          "field": "bio",
+          "claim": "Mathematics at King’s College",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "lead",
+          "excerpt": "Keynes was educated at King's College at the University of Cambridge, where he graduated in 1904 with a B.A. in mathematics."
+        },
+        {
+          "field": "bio",
+          "claim": "Treasury from 1915; inter-Allied credit",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "First World War",
+          "excerpt": "In January 1915 Keynes took up an official government position at the Treasury. Among his responsibilities were the design of terms of credit between Britain and its continental allies during the war"
+        },
+        {
+          "field": "bio",
+          "claim": "Sought to keep reparations payable",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Versailles peace conference",
+          "excerpt": "Keynes's main interest had been in trying to prevent Germany's compensation payments being set so high it would traumatise innocent German people, damage the nation's ability to pay"
+        },
+        {
+          "field": "bio",
+          "claim": "Excluded from the high-level talks",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Versailles peace conference",
+          "excerpt": "were able to ensure that both Keynes himself and the Treasury were largely excluded from formal high-level talks concerning reparations"
+        },
+        {
+          "field": "bio",
+          "claim": "Resigned from the Treasury",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Versailles peace conference",
+          "excerpt": "the result of the conference was a treaty which disgusted Keynes both on moral and economic grounds and led to his resignation from the Treasury"
+        },
+        {
+          "field": "bio",
+          "claim": "The Economic Consequences of the Peace",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Versailles peace conference",
+          "excerpt": "Keynes's analysis on the predicted damaging effects of the treaty appeared in the highly influential book, The Economic Consequences of the Peace, published in 1919."
+        },
+        {
+          "field": "bio",
+          "claim": "International fame",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Versailles peace conference",
+          "excerpt": "The Economic Consequences of the Peace gained Keynes international fame"
+        },
+        {
+          "field": "bio",
+          "claim": "Aggregate demand and fiscal/monetary policy",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "lead",
+          "excerpt": "He argued that aggregate demand (total spending in the economy) determined the overall level of economic activity"
+        },
+        {
+          "field": "bio",
+          "claim": "Fiscal and monetary policies against recessions",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "lead",
+          "excerpt": "Keynes advocated the use of fiscal and monetary policies to mitigate the adverse effects of economic recessions and depressions."
+        },
+        {
+          "field": "bio",
+          "claim": "General Theory 1936",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "During the Great Depression",
+          "excerpt": "Keynes's magnum opus, The General Theory of Employment, Interest and Money was published in 1936."
+        },
+        {
+          "field": "bio",
+          "claim": "Led the British delegation at Bretton Woods",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Second World War",
+          "excerpt": "Keynes was heavily involved, as leader of the British delegation and chairman of the World Bank commission, in the mid-1944 negotiations that established the Bretton Woods system."
+        },
+        {
+          "field": "bio",
+          "claim": "American plan prevailed",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Second World War",
+          "excerpt": "The US's greater negotiating strength, however, meant that the outcomes accorded more closely to the more conservative plans of Harry Dexter White."
+        },
+        {
+          "field": "bio",
+          "claim": "Died of heart attacks in 1946",
+          "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+          "locator": "Death",
+          "excerpt": "In 1946, Keynes suffered a series of heart attacks, which ultimately proved fatal."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "scholarship",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1909,
+          "endYear": 1946,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+              "locator": "lead",
+              "claim": "Economist whose writings founded Keynesian economics",
+              "excerpt": "was an English economist whose writings are considered the basis for the school of thought known as Keynesian economics"
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1915,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+              "locator": "First World War",
+              "claim": "Treasury official in the First World War",
+              "excerpt": "In January 1915 Keynes took up an official government position at the Treasury."
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1944,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+              "locator": "Second World War",
+              "claim": "Led the British delegation at Bretton Woods",
+              "excerpt": "Keynes was heavily involved, as leader of the British delegation and chairman of the World Bank commission, in the mid-1944 negotiations that established the Bretton Woods system."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1915–1919",
+          "r": {
+            "ko": "재무부 관리",
+            "en": "Treasury official"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "파리 강화회의 재무부 대표, 사임",
+            "en": "Treasury representative at the Paris Peace Conference; resigned"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "『평화의 경제적 귀결』",
+            "en": "The Economic Consequences of the Peace"
+          }
+        },
+        {
+          "y": "1936",
+          "r": {
+            "ko": "『고용, 이자 및 화폐의 일반이론』",
+            "en": "The General Theory of Employment, Interest and Money"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "브레턴우즈 회의 영국 대표단장",
+            "en": "Head of the British delegation at Bretton Woods"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wilhelm-cuno",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "빌헬름",
+        "en": "Wilhelm"
+      },
+      "familyName": {
+        "ko": "쿠노",
+        "en": "Cuno"
+      },
+      "nativeName": "Wilhelm Cuno",
+      "years": "1876–1933",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "루르 점령에 소극적 저항으로 맞서다 초인플레이션 속에 물러난 무당파 총리",
+        "en": "Non-party chancellor who answered the Ruhr occupation with passive resistance and fell amid hyperinflation"
+      },
+      "bio": {
+        "ko": "튀링겐 줄의 관료 집안에서 태어나 법학을 공부했고, 재무부 관리로 1차 세계대전 초 독일의 식량 공급을 조직했다. 1917년 해운회사 함부르크-아메리카 노선에 들어가 사장이 되었다. 1922년 11월 의회 표결 없이 대통령령으로 바이마르 공화국 최초의 무당파 총리가 되어 「실무 내각」을 꾸렸다. 1923년 1월 프랑스·벨기에군이 루르를 점령하자 소극적 저항을 호소했고, 그 비용을 주로 돈을 찍어 대면서 초인플레이션이 시작되었다. 파업의 물결 속에 8월 사회민주당이 낸 불신임으로 물러났다. 1932년 히틀러의 경제 자문에 참여했고 1933년 1월 죽었다.",
+        "en": "Born to a civil servant’s family in Suhl, he studied law and, as a Treasury official, helped organise Germany’s food supply early in the First World War. In 1917 he joined the Hamburg America shipping line, which he went on to head. In November 1922 he was appointed chancellor by presidential decree without a Reichstag vote, the first Weimar chancellor who belonged to no party, and formed a “business ministry”. When French and Belgian troops occupied the Ruhr in January 1923 he called for passive resistance; paying for it, mostly by printing money, began the run-up to hyperinflation. Amid a wave of strikes his cabinet resigned in August in the face of a no-confidence vote initiated by the SPD. In 1932 he joined in advising Hitler on economics, and he died in January 1933."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Wilhelm Carl Josef Cuno"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wilhelm_Cuno"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1876–1933",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "lead",
+          "excerpt": "2 July 1876 – 3 January 1933"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German businessman and politician",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "lead",
+          "excerpt": "was a German businessman and politician who was the chancellor of Germany from 1922 to 1923"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Suhl to a civil servant",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Early life",
+          "excerpt": "He was the son of the administrative civil servant August George Wilhelm Cuno"
+        },
+        {
+          "field": "bio",
+          "claim": "Born in Suhl",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Early life",
+          "excerpt": "Wilhelm Cuno was born on 2 July 1876 in Suhl"
+        },
+        {
+          "field": "bio",
+          "claim": "Studied law",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Early life",
+          "excerpt": "He studied law in Berlin and Heidelberg and was awarded a Juris Doctor."
+        },
+        {
+          "field": "bio",
+          "claim": "Treasury official; food supply in WWI",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "lead",
+          "excerpt": "Cuno helped organize Germany's food supply during the early years of World War I before he went to work for the Hamburg America shipping company in 1917"
+        },
+        {
+          "field": "bio",
+          "claim": "Appointed by decree without a Reichstag vote",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Chancellor",
+          "excerpt": "Cuno was appointed chancellor on 22 November 1922 by presidential decree and without a vote in the Reichstag. He was the first chancellor in the Weimar Republic who was not a member of a party."
+        },
+        {
+          "field": "bio",
+          "claim": "Business ministry",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "lead",
+          "excerpt": "he formed a \"business ministry\" made up primarily of men who were, like himself, political independents"
+        },
+        {
+          "field": "bio",
+          "claim": "Passive resistance",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Chancellor",
+          "excerpt": "The move, widely seen as illegal even outside Germany, caused the outraged Cuno government to call for passive resistance."
+        },
+        {
+          "field": "bio",
+          "claim": "Printing money began hyperinflation",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "lead",
+          "excerpt": "The payments, made possible primarily by printing money, began the runup to the German hyperinflation of 1923."
+        },
+        {
+          "field": "bio",
+          "claim": "Resigned in August 1923",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Chancellor",
+          "excerpt": "A wave of strikes against the government began in August 1923. On 12 August 1923, Cuno and his cabinet resigned in the face of a vote of no-confidence initiated by the Social Democratic Party (SPD)."
+        },
+        {
+          "field": "bio",
+          "claim": "Returned to HAPAG as director general",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Later life",
+          "excerpt": "In 1926, he once again became its director general."
+        },
+        {
+          "field": "bio",
+          "claim": "Advised Hitler in 1932",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Later life",
+          "excerpt": "In 1932, Cuno joined the industrialist Wilhelm Keppler to advise Adolf Hitler economically."
+        },
+        {
+          "field": "bio",
+          "claim": "Died January 1933",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+          "locator": "Later life",
+          "excerpt": "Cuno died suddenly on 3 January 1933 at Aumühle near Hamburg."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1922,
+          "endYear": 1923,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+              "locator": "lead",
+              "claim": "Chancellor of Germany 1922–1923",
+              "excerpt": "was the chancellor of Germany from 1922 to 1923 for a total of 264 days"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1907,
+          "endYear": 1916,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+              "locator": "Early career",
+              "claim": "Treasury official; Imperial Grain Agency",
+              "excerpt": "Cuno was employed by the federal Treasury Department in 1907"
+            }
+          ]
+        },
+        {
+          "functionId": "industry",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Wilhelm_Cuno",
+              "locator": "lead",
+              "claim": "Hamburg America Line executive",
+              "excerpt": "After his government resigned in August 1923, Cuno returned to the Hamburg America Line."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1915–1916",
+          "r": {
+            "ko": "제국 곡물청 책임자",
+            "en": "Head of the Imperial Grain Agency"
+          }
+        },
+        {
+          "y": "1917",
+          "r": {
+            "ko": "함부르크-아메리카 노선 입사",
+            "en": "Joined the Hamburg America Line"
+          }
+        },
+        {
+          "y": "1922–1923",
+          "r": {
+            "ko": "독일 총리",
+            "en": "Chancellor of Germany"
+          }
+        },
+        {
+          "y": "1926",
+          "r": {
+            "ko": "함부르크-아메리카 노선 사장",
+            "en": "Director general of the Hamburg America Line"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gustav-bauer",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "구스타프",
+        "en": "Gustav"
+      },
+      "familyName": {
+        "ko": "바우어",
+        "en": "Bauer"
+      },
+      "nativeName": "Gustav Bauer",
+      "years": "1870–1944",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "연합국의 최후통첩 아래 베르사유 조약을 받아들인 사회민주당 총리",
+        "en": "Social Democratic chancellor whose government accepted the Treaty of Versailles under an Allied ultimatum"
+      },
+      "bio": {
+        "ko": "동프로이센 다르케멘에서 태어나 변호사 사무원으로 일하다 사무직 노동조합을 세웠고, 1908~1918년 자유노동조합 총위원회 부의장을 지냈다. 1912년 사회민주당 제국의회 의원이 되었고 1918년 10월 막스 폰 바덴 내각의 노동장관이 되었다. 1919년 6월 샤이데만이 베르사유 조약에 항의해 사임하자, 조약을 비판해 왔으면서도 후임 총리를 맡아 조약 비준을 이끌었다. 재정 개혁과 사회보험 확대를 펼쳤으나, 1920년 3월 카프 폭동 때 반란군과 협상한 일로 정부가 물러났다. 뒤에 부총리 겸 재무장관을 지냈고, 바르마트 부패 사건으로 1925년 의원직을 내놓았다. 1944년 베를린에서 죽었다.",
+        "en": "Born in Darkehmen in the Province of Prussia, he worked as a lawyer’s clerk, co-founded the office employees’ union and was second chairman of the General Commission of Trade Unions from 1908 to 1918. Elected to the Reichstag for the SPD in 1912, he became labour secretary in Max von Baden’s cabinet in October 1918. When Scheidemann resigned in protest at the Treaty of Versailles in June 1919, Bauer, until then a vocal critic of the treaty, succeeded him and got it through the National Assembly. His government carried out tax reform and extended social insurance, but was forced out in March 1920 over the negotiations conducted with the Kapp putschists. He was later vice-chancellor and treasury minister, and the Barmat corruption scandal cost him his seat in 1925. He died in Berlin in 1944."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Gustav Adolf Bauer"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gustav_Bauer"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1870–1944",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "lead",
+          "excerpt": "6 January 1870 – 16 September 1944"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German SPD leader and chancellor",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "lead",
+          "excerpt": "was a German Social Democratic Party leader and the chancellor of Germany from June 1919 to March 1920"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Darkehmen, Province of Prussia",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Early life",
+          "excerpt": "Bauer was born on 6 January 1870 in Darkehmen, near Königsberg in the Province of Prussia"
+        },
+        {
+          "field": "bio",
+          "claim": "Lawyer’s clerk",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Early life",
+          "excerpt": "he worked as an office assistant and then as head clerk for a lawyer at Königsberg"
+        },
+        {
+          "field": "bio",
+          "claim": "Co-founded office employees’ union",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Early life",
+          "excerpt": "In 1895, he became president of the Union of Office Employees of Germany, a white-collar union that he co-founded."
+        },
+        {
+          "field": "bio",
+          "claim": "Second chairman of the General Commission 1908–1918",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Early life",
+          "excerpt": "In 1908, Bauer became the second chairman of the General Commission of Trade Unions in Berlin, a position he held until 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "Reichstag 1912; labour secretary October 1918",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Imperial Germany and the revolutionary period",
+          "excerpt": "In 1912, Bauer was elected to the Reichstag for the Social Democratic Party of Germany (SPD)"
+        },
+        {
+          "field": "bio",
+          "claim": "Labour secretary in Max von Baden’s cabinet",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Imperial Germany and the revolutionary period",
+          "excerpt": "In October 1918, he became state secretary (similar to a minister) in the Ministry of Labour in the cabinet of Max von Baden"
+        },
+        {
+          "field": "bio",
+          "claim": "Succeeded Scheidemann despite criticising the treaty",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Chancellor",
+          "excerpt": "Bauer accepted the position on 20 June, even though he had until then been a vocal critic of the Treaty."
+        },
+        {
+          "field": "bio",
+          "claim": "Got the treaty through the Assembly",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Chancellor",
+          "excerpt": "The National Assembly approved the Treaty 237 to 138 on 23 June, and representatives of Bauer's government signed it on 28 June."
+        },
+        {
+          "field": "bio",
+          "claim": "Tax reform and social benefits",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Chancellor",
+          "excerpt": "The Bauer cabinet was also responsible for a number of extensions of social benefits."
+        },
+        {
+          "field": "bio",
+          "claim": "Forced out after Kapp Putsch negotiations",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Chancellor",
+          "excerpt": "the Bauer government was forced to resign on 27 March, mostly as a result of the negotiations conducted with Kapp and his fellow conspirators"
+        },
+        {
+          "field": "bio",
+          "claim": "Vice-chancellor and treasury minister",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Post-chancellorship",
+          "excerpt": "Bauer rejoined the government in the cabinet of Joseph Wirth (Centre Party) in May 1921 as minister of the treasury and vice-chancellor."
+        },
+        {
+          "field": "bio",
+          "claim": "Barmat scandal; lost seat 1925",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "lead",
+          "excerpt": "In 1925, he was forced to resign his seat in the Reichstag due to his involvement in the fraud and bribery of the Barmat scandal."
+        },
+        {
+          "field": "bio",
+          "claim": "Died 1944 in Berlin",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+          "locator": "Later life",
+          "excerpt": "Bauer died in Hermsdorf (Berlin Reinickendorf) on 16 September 1944."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+              "locator": "lead",
+              "claim": "Chancellor June 1919–March 1920",
+              "excerpt": "the chancellor of Germany from June 1919 to March 1920"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-german-spd",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1895,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+              "locator": "Early life",
+              "claim": "Trade union leader",
+              "excerpt": "In 1908, Bauer became the second chairman of the General Commission of Trade Unions in Berlin, a position he held until 1918."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "party-german-spd",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1912,
+          "endYear": 1928,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+              "locator": "Imperial Germany and the revolutionary period",
+              "claim": "SPD Reichstag deputy",
+              "excerpt": "In 1912, Bauer was elected to the Reichstag for the Social Democratic Party of Germany (SPD)"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1921,
+          "endYear": 1922,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Bauer",
+              "locator": "Post-chancellorship",
+              "claim": "Vice-chancellor and treasury minister",
+              "excerpt": "Bauer rejoined the government in the cabinet of Joseph Wirth (Centre Party) in May 1921 as minister of the treasury and vice-chancellor."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1908–1918",
+          "r": {
+            "ko": "노동조합 총위원회 부의장",
+            "en": "Second chairman of the General Commission of Trade Unions"
+          }
+        },
+        {
+          "y": "1912",
+          "r": {
+            "ko": "제국의회 의원(사회민주당)",
+            "en": "Reichstag deputy (SPD)"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "노동장관",
+            "en": "Labour secretary"
+          }
+        },
+        {
+          "y": "1919–1920",
+          "r": {
+            "ko": "독일 총리",
+            "en": "Chancellor of Germany"
+          }
+        },
+        {
+          "y": "1921–1922",
+          "r": {
+            "ko": "부총리 겸 재무장관",
+            "en": "Vice-chancellor and treasury minister"
+          }
+        }
+      ]
+    },
+    {
+      "id": "george-curzon",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "조지",
+        "en": "George"
+      },
+      "familyName": {
+        "ko": "커즌",
+        "en": "Curzon"
+      },
+      "nativeName": "George Nathaniel Curzon",
+      "years": "1859–1925",
+      "citizenship": {
+        "code": "uk"
+      },
+      "nationalOrigin": {
+        "code": "uk"
+      },
+      "epithet": {
+        "ko": "인도 총독을 지내고 외무장관으로 커즌선과 로잔 조약 협상을 이끈 보수당 정치가",
+        "en": "Conservative viceroy of India and foreign secretary who gave his name to the Curzon Line and led the Allies at Lausanne"
+      },
+      "bio": {
+        "ko": "더비셔의 귀족 집안에서 태어나 이튼과 옥스퍼드를 거쳐 1885년 하원에 들어갔고, 러시아의 인도 위협을 경고하는 여행기를 썼다. 1899~1905년 인도 총독으로 행정 개혁을 폈지만, 1905년 벵골 분할로 민족주의를 갈라놓으려 했다는 비판을 받았고 재임 중 대기근이 겹쳤다. 1차 세계대전 중 로이드 조지의 전시 내각에 들어갔고, 1919년 10월 외무장관이 되어 소련-폴란드 경계안인 커즌선에 이름을 남겼다. 세브르 조약을 설계했고, 1922년 로잔 회의에서 연합국 수석 협상자로 튀르키예의 국경을 정했다. 1923년 총리 자리를 놓쳤고 1925년 죽었다.",
+        "en": "Born into an aristocratic Derbyshire family and educated at Eton and Oxford, he entered Parliament in 1885 and wrote travel books warning of a Russian threat to India. As Viceroy of India from 1899 to 1905 he pursued administrative reform, but his 1905 partition of Bengal was criticised as an attempt to divide Bengali nationalism, and a major famine coincided with his tenure. In the First World War he served in Lloyd George’s war cabinet; appointed Foreign Secretary in October 1919, he gave his name to the proposed Soviet-Polish boundary, the Curzon Line. He designed the Treaty of Sèvres and, as chief Allied negotiator at Lausanne in 1922, settled the borders of Turkey. Passed over for prime minister in 1923, he died in 1925."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "커즌 경"
+        ],
+        "en": [
+          "Lord Curzon",
+          "Marquess Curzon",
+          "George Nathaniel Curzon"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1859–1925",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "lead",
+          "excerpt": "11 January 1859 – 20 March 1925"
+        },
+        {
+          "field": "citizenship",
+          "claim": "British statesman",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "lead",
+          "excerpt": "was a British statesman, Conservative politician, explorer and writer who served as Viceroy of India from 1899 to 1905 and Foreign Secretary from 1919 to 1924"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Aristocratic family in Derbyshire",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "lead",
+          "excerpt": "Curzon was born in Derbyshire into an aristocratic family and educated at Eton College and Balliol College, Oxford, before entering Parliament in 1885."
+        },
+        {
+          "field": "bio",
+          "claim": "Travel books on the Russian threat",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "lead",
+          "excerpt": "underlined the perceived Russian threat to British control of India"
+        },
+        {
+          "field": "bio",
+          "claim": "Viceroy 1899",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Viceroy of India (1899–1905)",
+          "excerpt": "In January 1899 Curzon was appointed as Viceroy of India."
+        },
+        {
+          "field": "bio",
+          "claim": "Administrative commissions",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Indian reform",
+          "excerpt": "Within India, Curzon appointed a number of commissions to inquire into education, irrigation, police and other branches of administration"
+        },
+        {
+          "field": "bio",
+          "claim": "Partition of Bengal to weaken nationalism",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Indian reform",
+          "excerpt": "his intention was to divide Bengalis into religious and territorial grounds to weaken the growing nationalism"
+        },
+        {
+          "field": "bio",
+          "claim": "Famine during his tenure",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Indian famine",
+          "excerpt": "A major famine coincided with Curzon's time as viceroy in which 1 to 4.5 million people died."
+        },
+        {
+          "field": "bio",
+          "claim": "War cabinet of Lloyd George",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "lead",
+          "excerpt": "from late 1916 he was Leader of the House of Lords and served in the war cabinet of Prime Minister David Lloyd George"
+        },
+        {
+          "field": "bio",
+          "claim": "Foreign Secretary; Curzon Line",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Policy under Lloyd George",
+          "excerpt": "Curzon was appointed Foreign Secretary in October 1919. He gave his name to the British government's proposed Soviet-Polish boundary, the Curzon Line of December 1919."
+        },
+        {
+          "field": "bio",
+          "claim": "Designed the Treaty of Sèvres",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Policy under Lloyd George",
+          "excerpt": "He designed the Treaty of Sèvres (10 August 1920) between the victorious Allies and the Ottoman Empire."
+        },
+        {
+          "field": "bio",
+          "claim": "Chief negotiator at Lausanne",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Policy under Lloyd George",
+          "excerpt": "In 1922, he was the chief negotiator for the Allies of the Treaty of Lausanne, which officially ended the war with the Ottoman Empire and defined the borders of Turkey."
+        },
+        {
+          "field": "bio",
+          "claim": "Passed over for premiership 1923",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "lead",
+          "excerpt": "On Bonar Law's retirement as prime minister in 1923, Curzon was a contender for the office but was passed over in favour of Stanley Baldwin."
+        },
+        {
+          "field": "bio",
+          "claim": "Died 1925",
+          "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+          "locator": "Death",
+          "excerpt": "he died in London on 20 March 1925 at the age of 66"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1924,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+              "locator": "lead",
+              "claim": "Foreign Secretary 1919–1924",
+              "excerpt": "Foreign Secretary from 1919 to 1924"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1899,
+          "endYear": 1905,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+              "locator": "lead",
+              "claim": "Viceroy of India",
+              "excerpt": "served as Viceroy of India from 1899 to 1905"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-british-conservative",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1885,
+          "endYear": 1925,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/George_Curzon,_1st_Marquess_Curzon_of_Kedleston",
+              "locator": "lead",
+              "claim": "Conservative politician",
+              "excerpt": "was a British statesman, Conservative politician, explorer and writer"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1885",
+          "r": {
+            "ko": "하원 의원",
+            "en": "Member of Parliament"
+          }
+        },
+        {
+          "y": "1899–1905",
+          "r": {
+            "ko": "인도 총독",
+            "en": "Viceroy of India"
+          }
+        },
+        {
+          "y": "1916",
+          "r": {
+            "ko": "전시 내각, 상원 원내대표",
+            "en": "War cabinet; Leader of the House of Lords"
+          }
+        },
+        {
+          "y": "1919–1924",
+          "r": {
+            "ko": "외무장관",
+            "en": "Foreign Secretary"
+          }
+        },
+        {
+          "y": "1922–1923",
+          "r": {
+            "ko": "로잔 회의 연합국 수석 협상자",
+            "en": "Chief Allied negotiator at Lausanne"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "커즌 경",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Lord Curzon",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "ismet-inonu",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "이스메트",
+        "en": "İsmet"
+      },
+      "familyName": {
+        "ko": "이뇌뉘",
+        "en": "İnönü"
+      },
+      "nativeName": "İsmet İnönü",
+      "years": "1884–1973",
+      "citizenship": {
+        "code": "turkey"
+      },
+      "epithet": {
+        "ko": "로잔 조약을 협상하고 아타튀르크 뒤 튀르키예 2대 대통령이 된 군인·정치가",
+        "en": "Officer who negotiated the Treaty of Lausanne and succeeded Atatürk as Turkey’s second president"
+      },
+      "bio": {
+        "ko": "스미르나에서 태어난 오스만 장교로, 독립전쟁에서 대국민의회군 참모총장과 서부전선 사령관으로 1·2차 이뇌뉘 전투를 이겼다. 1922~1923년 로잔 회의의 튀르키예 수석 협상자로 커즌에 맞서며 세브르 조약을 로잔 조약으로 대체했다. 아타튀르크 아래 오래 총리를 지내며 세속화 개혁을 집행했고, 셰이크 사이드 반란 뒤 쿠르드인의 튀르크화를 밀어붙였으며 데르심 학살의 책임자로도 꼽힌다. 1938년 2대 대통령이 되어 「국가 지도자」 칭호를 받았고, 2차 세계대전에서 무장 중립을 지켰다. 1950년 선거 패배로 평화적으로 정권을 넘겼다. 1973년 죽었다.",
+        "en": "Born in Smyrna, an Ottoman officer, he won the First and Second Battles of İnönü in the War of Independence as chief of the General Staff and commander of the Western Front. As Turkey’s chief negotiator at Lausanne in 1922–1923 he faced down Curzon and replaced the Treaty of Sèvres with the Treaty of Lausanne. As prime minister for most of Atatürk’s presidency he carried out the secularising reforms; after the Sheikh Said revolt he pushed the Turkification of the Kurds, and he is considered one of those responsible for the Dersim massacre. Elected second president in 1938, he took the title “National Chief” and kept Turkey in armed neutrality in the Second World War. After defeat in the 1950 election he handed over power peacefully. He died in 1973."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "이스메트 파샤"
+        ],
+        "en": [
+          "İsmet Pasha",
+          "Ismet Inonu",
+          "Mustafa İsmet İnönü"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1884–1973",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "24 September 1884 – 25 December 1973"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Turkish politician and officer",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "was a Turkish politician and military officer who served as the president of Turkey from 1938 to 1950"
+        },
+        {
+          "field": "bio",
+          "claim": "Born in Smyrna",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Early life",
+          "excerpt": "was born in 1884 in Smyrna (İzmir)"
+        },
+        {
+          "field": "bio",
+          "claim": "Chief of General Staff; İnönü battles",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "he served as the first chief of the General Staff from 1922 to 1924 for the regular Turkish army, during which he commanded forces during the First and Second Battles of İnönü"
+        },
+        {
+          "field": "bio",
+          "claim": "Commander of the Western Front",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Turkish War of Independence",
+          "excerpt": "he was appointed commander of the Western Front of the Army of the GNA"
+        },
+        {
+          "field": "bio",
+          "claim": "Chief negotiator at Lausanne",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "He secured recognition of the Turkish victory by the Allies and replacing the imposed Treaty of Sèvres with the Treaty of Lausanne."
+        },
+        {
+          "field": "bio",
+          "claim": "Faced down Curzon",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Chief negotiator in Mudanya and Lausanne",
+          "excerpt": "After delivering his position, İsmet turned off his hearing aid during the speeches of British foreign secretary Lord Curzon."
+        },
+        {
+          "field": "bio",
+          "claim": "Executed Atatürk’s reforms as prime minister",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "As prime minister for most of Atatürk's presidency, İnönü executed many of Atatürk's modernizing and nationalist reforms."
+        },
+        {
+          "field": "bio",
+          "claim": "Turkification after Sheikh Said",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Nationalist policy",
+          "excerpt": "While dealing with the Sheikh Said revolt, İnönü proclaimed a Turkish nationalist policy and encouraged the Turkification of the non-Turkish population."
+        },
+        {
+          "field": "bio",
+          "claim": "Dersim massacre",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Nationalist policy",
+          "excerpt": "İnönü is also considered one of the perpetrators of the Dersim massacre"
+        },
+        {
+          "field": "bio",
+          "claim": "Second president; National Chief",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Prewar",
+          "excerpt": "was unanimously elected the second president of the Republic of Turkey"
+        },
+        {
+          "field": "bio",
+          "claim": "National Chief title",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "was granted the official title of Millî Şef (\"National Chief\") by the parliament"
+        },
+        {
+          "field": "bio",
+          "claim": "Armed neutrality",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "Turkey was able to maintain an armed neutrality during World War II"
+        },
+        {
+          "field": "bio",
+          "claim": "Peaceful transfer 1950",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "lead",
+          "excerpt": "1950 saw a peaceful transfer of power to the Democrats when the CHP suffered defeat in the elections."
+        },
+        {
+          "field": "bio",
+          "claim": "Died 1973",
+          "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+          "locator": "Death",
+          "excerpt": "On 25 December 1973, İsmet İnönü died of a heart attack at the age of 89."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1938,
+          "endYear": 1950,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+              "locator": "lead",
+              "claim": "President of Turkey 1938–1950",
+              "excerpt": "served as the president of Turkey from 1938 to 1950"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1924,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+              "locator": "lead",
+              "claim": "Chief of the General Staff; İnönü battles",
+              "excerpt": "he served as the first chief of the General Staff from 1922 to 1924 for the regular Turkish army, during which he commanded forces during the First and Second Battles of İnönü"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1922,
+          "endYear": 1923,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+              "locator": "Chief negotiator in Mudanya and Lausanne",
+              "claim": "Chief negotiator at Lausanne",
+              "excerpt": "İnönü was appointed as the chief negotiator of the Turkish delegation, both for the Armistice of Mudanya and for the Treaty of Lausanne."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1965,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/%C4%B0smet_%C4%B0n%C3%B6n%C3%BC",
+              "locator": "lead",
+              "claim": "Prime minister three times",
+              "excerpt": "as its prime minister three times: from 1923 to 1924, 1925 to 1937, and 1961 to 1965"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1921",
+          "r": {
+            "ko": "1·2차 이뇌뉘 전투",
+            "en": "First and Second Battles of İnönü"
+          }
+        },
+        {
+          "y": "1922–1923",
+          "r": {
+            "ko": "로잔 회의 튀르키예 수석 협상자",
+            "en": "Chief Turkish negotiator at Lausanne"
+          }
+        },
+        {
+          "y": "1923–1937",
+          "r": {
+            "ko": "총리(두 차례)",
+            "en": "Prime minister (twice)"
+          }
+        },
+        {
+          "y": "1938–1950",
+          "r": {
+            "ko": "튀르키예 대통령",
+            "en": "President of Turkey"
+          }
+        },
+        {
+          "y": "1961–1965",
+          "r": {
+            "ko": "총리",
+            "en": "Prime minister"
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,213 @@
+// Person cards for the First World War event (the Sarajevo assassination, the
+// naval race and the 1917 offensives), see lib.js person(). Excerpts are
+// verbatim from the cited pages.
+const { W, person } = require('../baltic-1940-1953-20261002/lib');
+
+const E = t => W(encodeURI(t));
+const S = {
+    princip: E('Gavrilo_Princip'),
+    franzFerdinand: E('Archduke_Franz_Ferdinand_of_Austria'),
+    tirpitz: E('Alfred_von_Tirpitz'),
+    nivelle: E('Robert_Nivelle'),
+    cadorna: E('Luigi_Cadorna'),
+};
+
+// Young Bosnia has no affiliation in the activity catalogue: Princip's
+// activity is recorded as independent, like fritz-platten's.
+const independent = card => ({
+    ...card,
+    activities: card.activities.map(a => ({ ...a, affiliationId: null, affiliationStatus: 'independent', relation: 'independent' })),
+});
+
+module.exports = [
+    independent(person({
+        id: 'gavrilo-princip', groupId: 'world-before-1917',
+        given: ['가브릴로', 'Gavrilo'], family: ['프린치프', 'Princip'], nativeName: 'Гаврило Принцип', years: '1894–1918',
+        citizenship: 'austria', origin: { code: 'serbia', label: { ko: '보스니아 세르비아계', en: 'Bosnian Serb' } },
+        epithet: ['1914년 사라예보에서 프란츠 페르디난트 대공 부부를 쏘아 죽인 청년 보스니아 단원', 'Young Bosnia member who shot dead Archduke Franz Ferdinand and his wife in Sarajevo in 1914'],
+        bio: ['보스니아 서부의 가난한 세르비아계 농가에서 태어나 사라예보에서 공부했고, 1911년 오스트리아 지배에서 보스니아를 해방하고 남슬라브를 통일하려는 비밀 결사 청년 보스니아에 들어갔다. 반오스트리아 시위로 퇴학당해 베오그라드로 갔다. 세르비아 비밀 결사 흑수단에게 무기와 훈련을 받아, 1914년 6월 28일 사라예보에서 황위 계승자 프란츠 페르디난트 대공과 아내 조피를 권총으로 쏘아 죽였다. 이 암살이 7월 위기와 1차 세계대전으로 이어졌다. 재판에서 자신을 유고슬라비아 민족주의자라 밝혔고, 스무 살이 안 되어 사형을 면하고 징역 20년을 받았다. 1918년 테레지엔슈타트 요새 감옥에서 결핵으로 죽었다.',
+            'Born to a poor Serb farming family in western Bosnia, he studied in Sarajevo and in 1911 joined Young Bosnia, a secret society seeking to free Bosnia from Austrian rule and unite the South Slavs. Expelled from school after anti-Austrian demonstrations, he went to Belgrade. Armed and trained through the Serbian secret society the Black Hand, on 28 June 1914 in Sarajevo he shot dead the heir to the throne, Archduke Franz Ferdinand, and his wife Sophie. The assassination set off the July Crisis and the First World War. At his trial he declared himself a Yugoslav nationalist; too young for the death penalty, he received twenty years. He died of tuberculosis in the prison of the Theresienstadt fortress in 1918.'],
+        fate: ['natural', '옥중 결핵으로 사망', 'Died of tuberculosis in prison'],
+        aliases: { ko: [], en: [] },
+        sources: [S.princip],
+        facts: {
+            years: { claim: '1894–1918', locator: 'lead', excerpt: '25 July 1894 – 28 April 1918' },
+            citizenship: { claim: 'Austro-Hungarian subject', locator: 'lead', excerpt: 'tried alongside 24 others, all Bosnians and thus Austro-Hungarian subjects' },
+            nationalOrigin: { claim: 'Bosnian Serb', locator: 'lead', excerpt: 'was a Bosnian Serb student who assassinated Archduke Franz Ferdinand' },
+            bio: [
+                { claim: 'Born to a poor Serb family in western Bosnia; studied in Sarajevo', locator: 'lead', excerpt: 'Princip was born in western Bosnia to a poor Serb family. Aged 13, he was sent to Sarajevo' },
+                { claim: 'Joined Young Bosnia in 1911', locator: 'lead', excerpt: 'In 1911, he joined Young Bosnia, a secret local society aiming to free Bosnia from Austrian rule and achieve the unification of the South Slavs.' },
+                { claim: 'Expelled, went to Belgrade', locator: 'lead', excerpt: 'he was expelled from school and walked to Belgrade, Serbia, to continue his education' },
+                { claim: 'Black Hand supplied weapons and training', locator: 'lead', excerpt: 'The Black Hand, a Serbian secret society with ties to Serbian military intelligence, provided the conspirators with weapons and training' },
+                { claim: 'Killed Franz Ferdinand and Sophie on 28 June 1914', locator: 'lead', excerpt: 'On Sunday 28 June 1914, during the royal couple\'s visit to Sarajevo, the then-teenager Princip mortally wounded Franz Ferdinand and Sophie by firing a pistol into their convertible car.' },
+                { claim: 'Set off the July Crisis and the war', locator: 'lead', excerpt: 'The assassination set off the July Crisis, a series of events that within one month led to the outbreak of World War I.' },
+                { claim: 'Declared himself a Yugoslav nationalist', locator: 'lead', excerpt: 'I am a Yugoslav nationalist, aiming for the unification of all Yugoslavs' },
+                { claim: 'Spared death penalty, twenty years', locator: 'lead', excerpt: 'Princip was spared the death penalty because of his age (19) and sentenced to twenty years in prison.' },
+                { claim: 'Died in Theresienstadt of tuberculosis in 1918', locator: 'Imprisonment and death', excerpt: 'held in solitary confinement at the Small Fortress in Theresienstadt (present-day Terezín, Czech Republic), where his tuberculosis worsened' },
+                { claim: 'Died 28 April 1918 of tuberculosis', locator: 'lead', excerpt: 'Princip died on 28 April 1918 of tuberculosis, worsened by harsh prison conditions' },
+            ],
+        },
+        activities: [
+            { functionId: 'organizing', affiliationId: 'state-austria', startYear: 1911, endYear: 1914, primary: true, claim: 'Young Bosnia member who carried out the Sarajevo assassination', locator: 'Joining Young Bosnia', excerpt: 'In 1911, Princip graduated from the fourth grade and joined Young Bosnia (Serbian: Mlada Bosna), a society with members from all three major Bosnian ethnic groups, that sought the liberation of Bosnia from Austro-Hungarian rule and the unification of all Southern Slavs in a common nation.' },
+        ],
+        career: [
+            ['1911', '청년 보스니아 가입', 'Joined Young Bosnia'],
+            ['1914.06.28', '사라예보에서 프란츠 페르디난트 대공 부부 암살', 'Assassinated Archduke Franz Ferdinand and his wife in Sarajevo'],
+            ['1914.10', '징역 20년 선고', 'Sentenced to twenty years'],
+            ['1918', '테레지엔슈타트 감옥에서 사망', 'Died in Theresienstadt prison'],
+        ],
+    })),
+    person({
+        id: 'franz-ferdinand', groupId: 'world-before-1917',
+        given: ['', ''], family: ['프란츠 페르디난트', 'Franz Ferdinand'], nativeName: 'Franz Ferdinand', years: '1863–1914',
+        citizenship: 'austria', origin: 'austria',
+        epithet: ['1914년 사라예보에서 암살되어 1차 세계대전의 직접 계기가 된 오스트리아-헝가리 황위 계승자', 'Heir presumptive of Austria-Hungary whose assassination in Sarajevo in 1914 was the immediate cause of the First World War'],
+        bio: ['그라츠에서 프란츠 요제프 황제의 동생 카를 루트비히 대공의 맏아들로 태어났다. 1889년 루돌프 황태자가 자살하고 1896년 아버지가 죽자 황위 계승자가 되었다. 조피 호테크와의 귀천상혼은 자녀의 계승권을 포기한 뒤에야 허락되었다. 군에 큰 영향력을 행사했고 1913년 전군 총감이 되었다. 성직주의와 반민주주의, 반헝가리주의를 신념으로 삼았으며, 제국 안 슬라브 민족들의 자치 확대를 주장하는 한편 세르비아에 대해서는 러시아와의 충돌을 경계해 신중론을 폈다. 1914년 6월 28일 사라예보에서 아내와 함께 가브릴로 프린치프에게 암살되었고, 이 사건이 7월 위기와 전쟁으로 이어졌다.',
+            'Born in Graz, the eldest son of Archduke Karl Ludwig, the younger brother of Emperor Franz Joseph, he became heir presumptive after Crown Prince Rudolf’s suicide in 1889 and his father’s death in 1896. His morganatic marriage to Sophie Chotek was allowed only after he renounced his descendants’ rights to the throne. He exerted great influence over the armed forces and in 1913 became their inspector general. Clericalism, anti-democratic views and anti-Hungarianism were the cornerstones of his politics; he advocated more autonomy for the empire’s Slav peoples, but urged caution towards Serbia for fear of conflict with Russia. On 28 June 1914 he and his wife were assassinated in Sarajevo by Gavrilo Princip, setting off the July Crisis and the war.'],
+        fate: ['assassinated', '사라예보에서 암살', 'Assassinated in Sarajevo'],
+        aliases: { ko: ['프란츠 페르디난트 대공'], en: ['Archduke Franz Ferdinand', 'Francis Ferdinand'] },
+        sources: [S.franzFerdinand],
+        facts: {
+            years: { claim: '1863–1914', locator: 'lead', excerpt: '18 December 1863 – 28 June 1914' },
+            citizenship: { claim: 'Heir presumptive of Austria-Hungary', locator: 'lead', excerpt: 'was the heir presumptive to the throne of Austria-Hungary' },
+            nationalOrigin: { claim: 'Born in Graz, son of an Austrian archduke', locator: 'Early life', excerpt: 'Franz Ferdinand was born in Graz, then part of the Austrian Empire, the eldest son of Archduke Karl Ludwig of Austria' },
+            bio: [
+                { claim: 'Eldest son of Karl Ludwig, younger brother of Franz Joseph', locator: 'lead', excerpt: 'Franz Ferdinand was the eldest son of Archduke Karl Ludwig of Austria, the younger brother of Emperor Franz Joseph I of Austria.' },
+                { claim: 'Heir presumptive after 1889 and 1896', locator: 'lead', excerpt: 'Following the death of Crown Prince Rudolf in 1889 and the death of Karl Ludwig in 1896, Franz Ferdinand became the heir presumptive to the Austro-Hungarian throne.' },
+                { claim: 'Rudolf’s suicide', locator: 'Heir presumptive', excerpt: 'In 1889, Ferdinand\'s cousin Crown Prince Rudolf committed suicide at his hunting lodge in Mayerling.' },
+                { claim: 'Morganatic marriage', locator: 'lead', excerpt: 'their morganatic marriage in 1900 was only allowed after he renounced his descendants\' rights to the throne' },
+                { claim: 'Influence over the military; inspector general 1913', locator: 'lead', excerpt: 'Franz Ferdinand held significant influence over the military, and in 1913, he was appointed inspector general of the Austro-Hungarian Armed Forces.' },
+                { claim: 'Clericalism, anti-democratic views, anti-Hungarianism', locator: 'Political views', excerpt: 'The three cornerstones of Ferdinand\'s political conviction were clericalism, anti-democratic views, and anti-Hungarianism' },
+                { claim: 'Autonomy for Slav peoples', locator: 'Political views', excerpt: 'He advocated granting greater autonomy to ethnic groups within the Empire and addressing their grievances' },
+                { claim: 'Caution towards Serbia', locator: 'Political views', excerpt: 'He also advocated a cautious approach towards Serbia' },
+                { claim: 'Warned of conflict with Russia', locator: 'Political views', excerpt: 'warning that harsh treatment of Serbia would bring Austria-Hungary into open conflict with Russia, to the ruin of both empires' },
+                { claim: 'Assassinated with his wife by Princip; July Crisis', locator: 'lead', excerpt: 'On 28 June 1914, Franz Ferdinand and his wife were assassinated in Sarajevo by the 19-year-old Gavrilo Princip, a member of Young Bosnia. Franz Ferdinand\'s assassination led to the July Crisis' },
+            ],
+        },
+        activities: [
+            { functionId: 'monarchy', affiliationId: 'state-austria', startYear: 1896, endYear: 1914, primary: true, claim: 'Heir presumptive to the Austro-Hungarian throne', locator: 'Heir presumptive', excerpt: 'When Karl Ludwig died of typhoid fever in 1896, Franz Ferdinand became the heir presumptive to the Austro-Hungarian throne.' },
+            { functionId: 'military', affiliationId: 'state-austria', startYear: 1913, endYear: 1914, claim: 'Inspector general of the armed forces', locator: 'Military career', excerpt: 'Franz in 1913, as heir-presumptive to the elderly emperor, had been appointed inspector general of all the armed forces of Austria-Hungary' },
+        ],
+        career: [
+            ['1896', '오스트리아-헝가리 황위 계승자', 'Heir presumptive of Austria-Hungary'],
+            ['1900', '조피 호테크와 귀천상혼', 'Morganatic marriage to Sophie Chotek'],
+            ['1913', '전군 총감', 'Inspector general of the armed forces'],
+            ['1914.06.28', '사라예보에서 암살', 'Assassinated in Sarajevo'],
+        ],
+    }),
+    person({
+        id: 'alfred-von-tirpitz', groupId: 'world-before-1917',
+        given: ['알프레트', 'Alfred'], family: ['티르피츠', 'von Tirpitz'], nativeName: 'Alfred von Tirpitz', years: '1849–1930',
+        citizenship: 'germany', origin: 'germany',
+        epithet: ['영국 해군에 맞설 대양함대를 건설해 건함 경쟁을 부르고 무제한 잠수함전을 주장한 독일 제독', 'German admiral who built the High Seas Fleet to rival the Royal Navy, set off a naval arms race and urged unrestricted U-boat war'],
+        bio: ['브란덴부르크주 퀴스트린에서 법률가의 아들로 태어났다. 1897~1916년 제국해군청 장관으로 작은 제국 해군을 영국 해군을 위협할 세계적 해군으로 키웠다. 「위험 이론」에 따른 1898~1912년 함대법으로 독일 해군은 세계 2위가 되었지만, 값비싼 건함 경쟁을 부르고 영국을 프랑스 쪽으로 더 가깝게 밀었다. 그는 해군력이 사회민주당에 대한 「진정제」가 되리라 보았다. 전쟁 중 대양함대가 영국의 해상 봉쇄를 깨지 못하자 무제한 잠수함전을 거세게 주장했고, 1916년 3월 사임했다. 1917년 협상에 의한 강화에 반대하는 극우 조국당을 함께 세워 의장이 되었고, 전후 독일국가인민당 의원을 지냈다. 1930년 죽었다.',
+            'Born in Küstrin in Brandenburg, the son of a lawyer, he was State Secretary of the Imperial Naval Office from 1897 to 1916 and turned the modest Imperial Navy into a world-class force that could threaten the Royal Navy. The Fleet Acts of 1898–1912, built on his “risk theory”, gave Germany the second-largest navy in the world, but started a costly naval arms race and pushed Britain closer to France. He saw sea power as a “palliative against” the Social Democrats. When the High Seas Fleet could not break Britain’s blockade, he became an outspoken advocate of unrestricted submarine warfare, and resigned in March 1916. In 1917 he co-founded and chaired the far-right Fatherland Party, which opposed a negotiated peace, and after the war sat in the Reichstag for the German National People’s Party. He died in 1930.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: ['알프레트 티르피츠'], en: ['Alfred Peter Friedrich von Tirpitz'] },
+        sources: [S.tirpitz],
+        facts: {
+            years: { claim: '1849–1930', locator: 'lead', excerpt: '19 March 1849 – 6 March 1930' },
+            citizenship: { claim: 'German grand admiral', locator: 'lead', excerpt: 'was a German grand admiral and State Secretary of the German Imperial Naval Office' },
+            nationalOrigin: { claim: 'Born in Küstrin, Prussian Brandenburg, son of a lawyer', locator: 'Family and early life', excerpt: 'Tirpitz was born in Küstrin (today Kostrzyn in Poland) in the Prussian province of Brandenburg, the son of lawyer and later judge Rudolf Tirpitz' },
+            bio: [
+                { claim: 'State Secretary 1897–1916', locator: 'lead', excerpt: 'State Secretary of the German Imperial Naval Office, the administrative branch of the German Imperial Navy from 1897 until 1916' },
+                { claim: 'Turned the navy into a world-class force', locator: 'lead', excerpt: 'Tirpitz took the modest Imperial Navy and, beginning in the 1890s, turned it into a world-class force that could threaten Britain\'s Royal Navy.' },
+                { claim: 'Fleet Acts; second-largest navy', locator: 'Tirpitz Plan', excerpt: 'Politically, the Tirpitz Plan was marked by the Fleet Acts of 1898, 1900, 1908 and 1912. By 1914, they had given Germany the second-largest naval force in the world' },
+                { claim: 'Naval arms race; Britain closer to France', locator: 'Tirpitz Plan', excerpt: 'the expansion programme was sufficient to alarm the British, starting a costly naval arms race and pushing the British into closer ties with the French' },
+                { claim: 'Risk theory', locator: 'Tirpitz Plan', excerpt: 'Tirpitz developed a "risk theory"' },
+                { claim: 'Palliative against Social Democrats', locator: 'Tirpitz Plan', excerpt: 'serve as a "palliative against educated and uneducated Social Democrats"' },
+                { claim: 'Fleet could not end British command of the sea', locator: 'lead', excerpt: 'his High Seas Fleet proved unable to end Britain\'s command of the sea and its chokehold on Germany\'s economy' },
+                { claim: 'Advocate of unrestricted submarine warfare', locator: 'lead', excerpt: 'Tirpitz became an outspoken advocate for unrestricted submarine warfare' },
+                { claim: 'Resigned 15 March 1916', locator: 'World War I', excerpt: 'he finally resigned on 15 March 1916' },
+                { claim: 'Co-founded and chaired the Fatherland Party', locator: 'Fatherland Party', excerpt: 'In September 1917 Grand Admiral Tirpitz became a co-founder of the Pan-Germanic and nationalist Fatherland Party (Deutsche Vaterlandspartei).' },
+                { claim: 'Party opposed a negotiated peace', locator: 'Fatherland Party', excerpt: 'The party attracted the opponents of a negotiated peace' },
+                { claim: 'Far-right party', locator: 'lead', excerpt: 'he became Chairman of the far-right German Fatherland Party' },
+                { claim: 'DNVP Reichstag deputy', locator: 'After 1918', excerpt: 'After Germany\'s defeat Tirpitz supported the right-wing German National People\'s Party (Deutschnationale Volkspartei, or DNVP) and sat for it in the Reichstag from 1924 until 1928.' },
+                { claim: 'Died 1930', locator: 'After 1918', excerpt: 'Tirpitz died in Ebenhausen, near Munich, on 6 March 1930.' },
+            ],
+        },
+        activities: [
+            { functionId: 'military', affiliationId: 'state-germany', startYear: 1897, endYear: 1916, primary: true, claim: 'State Secretary of the Imperial Naval Office', locator: 'lead', excerpt: 'State Secretary of the German Imperial Naval Office, the administrative branch of the German Imperial Navy from 1897 until 1916' },
+            { functionId: 'legislature', affiliationId: 'state-germany', startYear: 1924, endYear: 1928, claim: 'DNVP member of the Reichstag', locator: 'After 1918', excerpt: 'sat for it in the Reichstag from 1924 until 1928' },
+        ],
+        career: [
+            ['1897–1916', '제국해군청 장관', 'State Secretary of the Imperial Naval Office'],
+            ['1898–1912', '함대법으로 대양함대 건설', 'Built the High Seas Fleet through the Fleet Acts'],
+            ['1917', '독일 조국당 공동 창당·의장', 'Co-founder and chairman of the German Fatherland Party'],
+            ['1924–1928', '독일국가인민당 제국의회 의원', 'Reichstag deputy for the DNVP'],
+        ],
+    }),
+    person({
+        id: 'robert-nivelle', groupId: 'world-before-1917',
+        given: ['로베르', 'Robert'], family: ['니벨', 'Nivelle'], nativeName: 'Robert Nivelle', years: '1856–1924',
+        citizenship: 'france', origin: { code: 'france', label: { ko: '프랑스 (어머니는 영국인)', en: 'French (English mother)' } },
+        epithet: ['1917년 니벨 공세가 실패해 프랑스군 항명 사태를 부르고 경질된 총사령관', 'French commander-in-chief whose failed offensive of 1917 brought on the army mutinies and his dismissal'],
+        bio: ['코레즈의 튈에서 프랑스인 아버지와 영국인 개신교도 어머니 사이에서 태어나 포병 장교가 되었고, 의화단 진압에도 참전했다. 1916년 5월 베르됭에서 페탱의 뒤를 이어 제2군 사령관이 되어 반격을 이끌었으나, 병사들의 목숨을 낭비했다는 비난을 받았다. 1916년 12월 서부전선 프랑스군 총사령관이 되었고, 1917년 4월 16일 슈맹 데 담에서 결정적 돌파를 장담하며 니벨 공세를 열었다. 예상한 1만 명과 달리 열흘 만에 13만 4천 명의 사상자를 내고도 공격을 이어 갔으나 돌파에 실패했다. 프랑스군 절반가량이 항명에 휩싸였고, 5월 15일 페탱에게 자리를 넘겼다. 북아프리카 사령관으로 밀려났고 1924년 죽었다.',
+            'Born in Tulle, Corrèze, to a French father and an English Protestant mother, he became an artillery officer and served in the Boxer Rebellion. In May 1916 he succeeded Pétain in command of the Second Army at Verdun and led the counter-offensives, but was accused of wasting French lives. Made commander-in-chief on the Western Front in December 1916, he opened the Nivelle Offensive at the Chemin des Dames on 16 April 1917, promising a decisive breakthrough. Casualties reached 134,000 in ten days against the 10,000 he had predicted, yet he pressed on without breaking through. A mutiny spread through roughly half the French Army, and on 15 May he was replaced by Pétain. He was sent off to command in North Africa and died in 1924.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: [], en: ['Robert Georges Nivelle'] },
+        sources: [S.nivelle],
+        facts: {
+            years: { claim: '1856–1924', locator: 'lead', excerpt: '15 October 1856 – 22 March 1924' },
+            citizenship: { claim: 'French general', locator: 'lead', excerpt: 'was a French artillery general officer who served in the Boxer Rebellion and the First World War' },
+            nationalOrigin: { claim: 'French father, English Protestant mother', locator: 'Early life and career', excerpt: 'had a French father and an English Protestant mother' },
+            bio: [
+                { claim: 'Born in Tulle', locator: 'Early life and career', excerpt: 'Robert Georges Nivelle, born on 15 October 1856 in the French provincial town of Tulle in Corrèze' },
+                { claim: 'Succeeded Pétain at Verdun; accused of wasting lives', locator: 'lead', excerpt: 'In May 1916, he succeeded Philippe Pétain as commander of the French Second Army in the Battle of Verdun, leading counter-offensives that rolled back the German forces in late 1916. During these actions, he and General Charles Mangin were accused of wasting French lives.' },
+                { claim: 'Commander-in-chief December 1916', locator: 'lead', excerpt: 'Nivelle was promoted to commander-in-chief of the French armies on the Western Front in December 1916' },
+                { claim: 'Offensive began 16 April 1917', locator: 'Nivelle Offensive', excerpt: 'After three postponements, the Nivelle Offensive began on 16 April 1917.' },
+                { claim: '134,000 casualties against 10,000 predicted; ordered attacks to continue', locator: 'Nivelle Offensive', excerpt: 'From 16 April to 25 April, there had been 134,000 casualties. Nivelle had said there would be about 10,000.' },
+                { claim: 'Ordered the attacks to continue', locator: 'Nivelle Offensive', excerpt: 'he ordered the attacks to continue' },
+                { claim: 'Mutiny of roughly half the army', locator: 'lead', excerpt: 'When the costly offensive failed to achieve a breakthrough on the Western Front, a major mutiny occurred, affecting roughly half the French Army' },
+                { claim: 'Replaced by Pétain on 15 May', locator: 'lead', excerpt: 'Nivelle was replaced as commander-in-chief by Philippe Pétain on 15 May 1917.' },
+                { claim: 'Sent to North Africa; died 1924', locator: 'Dismissal', excerpt: 'In December 1917 Nivelle was transferred by the French Government to the post of Commander-in-Chief of the French Army in North Africa' },
+            ],
+        },
+        activities: [
+            { functionId: 'military', affiliationId: 'state-france', startYear: 1916, endYear: 1917, primary: true, claim: 'Commander-in-chief of the French armies on the Western Front', locator: 'lead', excerpt: 'Nivelle was promoted to commander-in-chief of the French armies on the Western Front in December 1916' },
+        ],
+        career: [
+            ['1916.05', '베르됭 제2군 사령관', 'Commander of the Second Army at Verdun'],
+            ['1916.12', '서부전선 프랑스군 총사령관', 'Commander-in-chief of the French armies on the Western Front'],
+            ['1917.04', '니벨 공세', 'Nivelle Offensive'],
+            ['1917.12', '북아프리카 프랑스군 사령관', 'Commander-in-chief of the French Army in North Africa'],
+        ],
+    }),
+    person({
+        id: 'luigi-cadorna', groupId: 'world-before-1917',
+        given: ['루이지', 'Luigi'], family: ['카도르나', 'Cadorna'], nativeName: 'Luigi Cadorna', years: '1850–1928',
+        citizenship: 'italy', origin: 'italy',
+        epithet: ['이손초강의 정면 공격을 되풀이하고 가혹한 군기로 다스리다 카포레토 패전 뒤 해임된 참모총장', 'Italian chief of staff who repeated frontal assaults on the Isonzo, ruled by harsh discipline and was dismissed after Caporetto'],
+        bio: ['피에몬테에서 장군의 아들로 태어나 포병 장교가 되었고, 엄격한 군기와 공세 교리로 이름이 났다. 1914~1917년 이탈리아군 참모총장으로 이손초강을 따라 공세를 거듭했다. 고리치아 점령 같은 성과도 있었으나 「소모전만이 전쟁을 끝낸다」며 큰 희생을 감수했다. 장교 217명을 해임하고 후퇴한 부대의 장교를 즉결 처형하게 했으며, 그의 휘하에서 약 750명이 처형되어 1차 세계대전 군대 가운데 가장 많았다. 1917년 10월 카포레토에서 독일-오스트리아군에 대패해 27만 5천 명이 포로가 되었고, 11월 7일 해임되었다. 1924년 무솔리니 정권 아래 원수가 되었고 1928년 죽었다.',
+            'Born in Piedmont, the son of a general, he became an artillery officer known for strict discipline and the doctrine of the offensive. As chief of staff of the Italian Army in 1914–1917 he launched offensive after offensive along the Isonzo. There were gains such as Gorizia, but he accepted huge losses, holding that the war could only end through the exhaustion of men and resources. He dismissed 217 officers and ordered the summary execution of officers whose units retreated; about 750 soldiers were executed under him, the most of any army in the war. After the disaster at Caporetto in October 1917, where 275,000 soldiers were captured, he was dismissed on 7 November. He was made a Marshal of Italy in 1924 under Mussolini and died in 1928.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: [], en: [] },
+        sources: [S.cadorna],
+        facts: {
+            years: { claim: '1850–1928', locator: 'lead', excerpt: '4 September 1850 – 21 December 1928' },
+            citizenship: { claim: 'Italian general', locator: 'lead', excerpt: 'was an Italian general, Marshal of Italy and Count' },
+            nationalOrigin: { claim: 'Born in Piedmont to an Italian general', locator: 'Early career', excerpt: 'Luigi Cadorna was born to General Raffaele Cadorna in Verbania Pallanza, Piedmont in 1850.' },
+            bio: [
+                { claim: 'Artillery officer', locator: 'Early career', excerpt: 'he was commissioned as a second lieutenant of artillery in 1868' },
+                { claim: 'Strict discipline; doctrine of the offensive', locator: 'Early career', excerpt: 'Cadorna acquired a reputation for strict discipline and harsh punishment. He wrote a manual of infantry tactics, which laid stress on the doctrine of the offensive.' },
+                { claim: 'Chief of Staff 1914–1917; Isonzo offensives', locator: 'lead', excerpt: 'most famous for being the Chief of Staff of the Italian Army from 1914 until late 1917 during World War I' },
+                { claim: 'Gains such as Gorizia', locator: 'lead', excerpt: 'Cadorna launched multiple offensives across the Isonzo front during which the Italian army made gains, most notably capturing Gorizia' },
+                { claim: 'Attrition', locator: 'First World War', excerpt: 'the current war can only end through the exhaustion of men and resources' },
+                { claim: 'Dismissed 217 officers; summary executions; 750 executed', locator: 'Historiography', excerpt: 'During the course of the war, Cadorna dismissed 217 officers, and during the Battle of Caporetto, he ordered the summary execution of officers whose units retreated' },
+                { claim: 'About 750 executed, the most in the war', locator: 'Historiography', excerpt: 'About 750 were executed, the highest number in any army in World War I.' },
+                { claim: '275,000 captured at Caporetto', locator: 'First World War', excerpt: 'The Italian Army retreated in disarray and seemed on the verge of total collapse; 275,000 soldiers were captured.' },
+                { claim: 'Dismissed 7 November', locator: 'First World War', excerpt: 'On November 7, the Italian king and government dismissed Luigi Cadorna as Chief of Staff the Italian Army' },
+                { claim: 'Field Marshal 1924 under Mussolini; died 1928', locator: 'Post-war', excerpt: 'he was made a Field Marshal (Maresciallo d\'Italia) in 1924, two years after Benito Mussolini had seized power. Cadorna died in Bordighera in 1928.' },
+            ],
+        },
+        activities: [
+            { functionId: 'military', affiliationId: 'state-italy', startYear: 1914, endYear: 1917, primary: true, claim: 'Chief of Staff of the Italian Army', locator: 'lead', excerpt: 'most famous for being the Chief of Staff of the Italian Army from 1914 until late 1917 during World War I' },
+        ],
+        career: [
+            ['1914', '이탈리아군 참모총장', 'Chief of Staff of the Italian Army'],
+            ['1915–1917', '이손초 공세', 'Isonzo offensives'],
+            ['1917.11.07', '카포레토 패전 뒤 해임', 'Dismissed after Caporetto'],
+            ['1924', '이탈리아 원수', 'Marshal of Italy'],
+        ],
+    }),
+];

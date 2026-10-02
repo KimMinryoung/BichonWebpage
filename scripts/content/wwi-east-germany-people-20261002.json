@@ -1805,6 +1805,55 @@
           "note_ko": "갈리폴리 전투에서 이름을 떨쳤고, 뒤에 튀르키예 공화국을 세웠다.",
           "note_en": "Rose to prominence at Gallipoli and later founded the Republic of Turkey.",
           "side": "central-powers"
+        },
+        {
+          "person_id": "gavrilo-princip",
+          "sort_order": 1,
+          "relation_kind": "executor",
+          "relation_ko": "사라예보 암살자",
+          "relation_en": "Sarajevo assassin",
+          "note_ko": "1914년 6월 28일 사라예보에서 프란츠 페르디난트 대공 부부를 쏘아 죽였다.",
+          "note_en": "Shot dead Archduke Franz Ferdinand and his wife in Sarajevo on 28 June 1914."
+        },
+        {
+          "person_id": "franz-ferdinand",
+          "sort_order": 1,
+          "relation_kind": "target",
+          "relation_ko": "오스트리아-헝가리 황위 계승자",
+          "relation_en": "Heir to the Austro-Hungarian throne",
+          "note_ko": "사라예보에서 암살되어 7월 위기의 발단이 되었다.",
+          "note_en": "His assassination in Sarajevo set off the July Crisis.",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "alfred-von-tirpitz",
+          "sort_order": 1,
+          "relation_kind": "executor",
+          "relation_ko": "독일 해군 장관",
+          "relation_en": "German naval secretary",
+          "note_ko": "영국 해군에 맞설 함대 건설을 이끌었다.",
+          "note_en": "Led the fleet-building programme meant to rival the Royal Navy.",
+          "side": "central-powers"
+        },
+        {
+          "person_id": "robert-nivelle",
+          "sort_order": 1,
+          "relation_kind": "executor",
+          "relation_ko": "프랑스군 총사령관",
+          "relation_en": "French commander-in-chief",
+          "note_ko": "1917년 4월 니벨 공세가 큰 손실만 남겨 프랑스군 항명 사태를 불렀다.",
+          "note_en": "His April 1917 offensive produced only heavy losses and set off the French army mutinies.",
+          "side": "entente"
+        },
+        {
+          "person_id": "luigi-cadorna",
+          "sort_order": 1,
+          "relation_kind": "executor",
+          "relation_ko": "이탈리아군 참모총장",
+          "relation_en": "Italian chief of staff",
+          "note_ko": "1915~1917년 이손초 강을 따라 정면 공격을 되풀이했다.",
+          "note_en": "Repeated frontal assaults along the Isonzo in 1915–1917.",
+          "side": "entente"
         }
       ]
     },
@@ -2814,6 +2863,60 @@
           "relation_en": "Co-leader of the Beer Hall Putsch",
           "note_ko": "1923년 11월 히틀러와 함께 뮌헨 맥주홀 폭동을 이끌었다.",
           "note_en": "Led the Munich Beer Hall Putsch with Hitler in November 1923."
+        },
+        {
+          "person_id": "gustav-bauer",
+          "sort_order": 28,
+          "relation_kind": "leader",
+          "relation_ko": "독일 총리",
+          "relation_en": "German chancellor",
+          "note_ko": "샤이데만의 뒤를 이어 연합국의 최후통첩에 굴복해 베르사유 조약을 받아들였다.",
+          "note_en": "Succeeded Scheidemann and gave way to the Allied ultimatum to accept the Treaty of Versailles."
+        },
+        {
+          "person_id": "wilhelm-cuno",
+          "sort_order": 29,
+          "relation_kind": "leader",
+          "relation_ko": "독일 총리",
+          "relation_en": "German chancellor",
+          "note_ko": "1923년 루르 점령에 맞서 「소극적 저항」을 호소했다.",
+          "note_en": "Called for “passive resistance” to the occupation of the Ruhr in 1923."
+        },
+        {
+          "person_id": "george-curzon",
+          "sort_order": 30,
+          "relation_kind": "participant",
+          "relation_ko": "영국 외무장관",
+          "relation_en": "British Foreign Secretary",
+          "note_ko": "로잔 회의에서 이뇌뉘와 8개월 동안 협상했다.",
+          "note_en": "Negotiated with İnönü for eight months at the Lausanne conference."
+        },
+        {
+          "person_id": "ismet-inonu",
+          "sort_order": 31,
+          "relation_kind": "participant",
+          "relation_ko": "튀르키예 대표",
+          "relation_en": "Turkish delegate",
+          "note_ko": "로잔 회의의 협상 대표로 1923년 로잔 조약을 이끌어 냈다.",
+          "note_en": "Chief negotiator at Lausanne, he secured the Treaty of Lausanne in 1923."
+        },
+        {
+          "person_id": "lucjan-zeligowski",
+          "sort_order": 32,
+          "relation_kind": "participant",
+          "relation_ko": "폴란드 장군",
+          "relation_en": "Polish general",
+          "note_ko": "1920년 10월 피우수트스키가 꾸민 「반란」으로 빌뉴스를 점령했다.",
+          "note_en": "Took Vilnius in the “mutiny” staged by Piłsudski in October 1920."
+        },
+        {
+          "person_id": "john-maynard-keynes",
+          "sort_order": 33,
+          "relation_kind": "historian",
+          "relation_ko": "경제학자, 『평화의 경제적 귀결』 저자",
+          "relation_en": "Economist; author of The Economic Consequences of the Peace",
+          "note_ko": "파리 회의의 영국 재무부 대표로, 조약을 「카르타고식 강화」라 부르며 배상이 유럽 경제를 흔들 것이라 경고했다.",
+          "note_en": "Principal British Treasury representative at Paris, he called the treaty a “Carthaginian peace” and warned that reparations would destabilise Europe’s economy."
         }
       ]
     },
