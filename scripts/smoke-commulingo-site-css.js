@@ -35,7 +35,7 @@ assert.match(home, /\.commu-book-progress-track/);
 assert.doesNotMatch(home, /\.commu-person-|\.commu-people-|\.commu-search-|\.commu-office-/);
 for (const [path, modules] of [
     ['/', ['lists', 'home']], ['/en/', ['lists', 'home']], ['/chat', ['chat']],
-    ['/auth/login', ['auth']], ['/auth/account', ['auth']], ['/admin/posts', ['lists', 'prose', 'auth', 'admin']],
+    ['/auth/login', ['auth']], ['/auth/account', ['auth', 'admin']], ['/en/auth/account/', ['auth', 'admin']], ['/admin/posts', ['lists', 'prose', 'auth', 'admin']],
     ['/posts?page=2', ['lists', 'prose']], ['/hub/x', ['lists', 'prose', 'hub']],
     ['/commulingo', []], ['/commulingo/people', []], ['/en/commulingo/terms/', []],
     ['/commulingo/people/list/old-regime', []], ['/commulingo/events/october', ['prose']],

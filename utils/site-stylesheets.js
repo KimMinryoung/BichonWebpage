@@ -5,6 +5,8 @@ function siteStyleModules(pagePath = '/') {
     if (path === '/') return ['lists', 'home'];
     if (path === '/chat') return ['chat'];
     if (/^\/admin(?:\/|$)/.test(path)) return ['lists', 'prose', 'auth', 'admin'];
+    // The account page lists passkeys in .posts-table, an admin-module rule.
+    if (path === '/auth/account') return ['auth', 'admin'];
     if (/^\/(?:auth|account)(?:\/|$)/.test(path)) return ['auth'];
     if (/^\/hub(?:\/|$)/.test(path)) return ['lists', 'prose', 'hub'];
     if (/^\/(?:posts|post|reports|ai-diary|novels|p)(?:\/|$)/.test(path)) return ['lists', 'prose'];
