@@ -1,0 +1,2677 @@
+{
+  "changedBy": "wwi-east-germany-people-20261002",
+  "people": [
+    {
+      "id": "woodrow-wilson",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "우드로",
+        "en": "Woodrow"
+      },
+      "familyName": {
+        "ko": "윌슨",
+        "en": "Wilson"
+      },
+      "nativeName": "Woodrow Wilson",
+      "years": "1856–1924",
+      "citizenship": {
+        "code": "usa"
+      },
+      "nationalOrigin": {
+        "code": "usa"
+      },
+      "epithet": {
+        "ko": "14개조와 국제연맹을 내걸었으나 상원 비준을 얻지 못한 미국 대통령",
+        "en": "US president whose Fourteen Points and League of Nations failed to win the Senate’s ratification"
+      },
+      "bio": {
+        "ko": "버지니아에서 태어나 프린스턴 대학교 총장과 뉴저지 주지사를 거쳐 1912년 대통령이 되었고, 취임 첫해 연방 관료 조직에 인종 분리를 들여왔다. 1917년 4월 독일의 무제한 잠수함전을 이유로 참전을 요청했고, 1918년 1월 14개조로 국제연맹과 민족자결의 구상을 내놓았다. 파리 강화회의에서 연맹 규약 기초를 이끌었지만 연맹을 위해 독일에 대한 여러 요구를 양보했다. 1919년 10월 뇌졸중으로 쓰러졌고 타협을 거부해 상원의 조약 비준이 무산되었다. 같은 시기 파머 습격의 「적색 공포」가 벌어졌다. 1919년 노벨 평화상을 받았고 1924년 죽었다.",
+        "en": "Born in Virginia, he was president of Princeton University and governor of New Jersey before winning the presidency in 1912, and in his first year imposed racial segregation across the federal bureaucracy. In April 1917 he asked Congress to declare war over unrestricted submarine warfare, and in January 1918 set out the Fourteen Points, with a League of Nations and self-determination. At the Paris Peace Conference he presided over the drafting of the League Covenant but conceded much to the other powers to get it. A stroke in October 1919 incapacitated him, and his refusal of a compromise sank the Senate’s ratification of the treaty. The Palmer Raids of the Red Scare came in the same years. He received the 1919 Nobel Peace Prize and died in 1924."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "토머스 우드로 윌슨"
+        ],
+        "en": [
+          "Thomas Woodrow Wilson"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Woodrow_Wilson"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1856–1924",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "Thomas Woodrow Wilson (December 28, 1856 – February 3, 1924) was the 28th president of the United States"
+        },
+        {
+          "field": "citizenship",
+          "claim": "28th president of the United States",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "was the 28th president of the United States, serving from 1913 to 1921"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Virginia, grew up in the American South",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "Born in Staunton, Virginia, Wilson grew up in the Southern United States during the American Civil War and Reconstruction era."
+        },
+        {
+          "field": "bio",
+          "claim": "PhD at Johns Hopkins; president of Princeton",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "After earning a PhD in history and political science from Johns Hopkins University, Wilson taught at several colleges prior to being appointed president of Princeton University"
+        },
+        {
+          "field": "bio",
+          "claim": "governor of New Jersey 1911–1913",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "Wilson served as the governor of New Jersey from 1911 to 1913"
+        },
+        {
+          "field": "bio",
+          "claim": "segregation of the federal bureaucracy",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "During his first year as president, Wilson authorized the widespread imposition of racial segregation inside the federal bureaucracy"
+        },
+        {
+          "field": "bio",
+          "claim": "asked for war in April 1917 over submarine warfare",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "lead",
+          "excerpt": "In April 1917, Wilson asked Congress for a declaration of war against Germany in response to its policy of unrestricted submarine warfare that sank American merchant ships."
+        },
+        {
+          "field": "bio",
+          "claim": "Fourteen Points of 8 January 1918",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Fourteen Points",
+          "excerpt": "On January 8, 1918, Wilson delivered a speech, known as the Fourteen Points, wherein he articulated his administration's long term war objectives."
+        },
+        {
+          "field": "bio",
+          "claim": "League, Poland, self-determination",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Fourteen Points",
+          "excerpt": "Other points included the evacuation of occupied territory, the establishment of an independent Poland, and self-determination for the peoples of Austria-Hungary and the Ottoman Empire."
+        },
+        {
+          "field": "bio",
+          "claim": "chaired the Covenant committee",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Wilson himself presided over the committee that drafted the Covenant of the League of Nations."
+        },
+        {
+          "field": "bio",
+          "claim": "conceded points for the League",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Paris Peace Conference",
+          "excerpt": "However, in pursuit of his League of Nations, Wilson conceded several points to the other powers present at the conference. Germany was required to permanently cede territory, pay war reparations, relinquish all of her overseas colonies and dependencies and submit to military occupation in the Rhineland."
+        },
+        {
+          "field": "bio",
+          "claim": "stroke in October 1919",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Health collapses",
+          "excerpt": "On October 2, 1919, Wilson suffered a serious stroke, leaving him paralyzed on his left side"
+        },
+        {
+          "field": "bio",
+          "claim": "forced the Nay vote of 19 March 1920",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Ratification debate and defeat",
+          "excerpt": "Wilson forced his supporters to vote Nay on March 19, 1920, thereby closing the issue."
+        },
+        {
+          "field": "bio",
+          "claim": "Palmer Raids, over 10,000 arrested",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Red Scare and Palmer Raids",
+          "excerpt": "Attorney General Palmer from November 1919 to January 1920 launched the Palmer Raids to suppress radical organizations. Over 10,000 people were arrested and 556 aliens were deported, including Emma Goldman."
+        },
+        {
+          "field": "bio",
+          "claim": "1919 Nobel Peace Prize",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Paris Peace Conference",
+          "excerpt": "For his efforts towards creating a lasting world peace, Wilson was awarded the 1919 Nobel Peace Prize."
+        },
+        {
+          "field": "bio",
+          "claim": "died February 1924",
+          "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+          "locator": "Post-presidency and death (1921–1924)",
+          "excerpt": "He died on February 3, 1924, at the age of 67."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-usa",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1913,
+          "endYear": 1921,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+              "locator": "lead",
+              "claim": "28th president of the United States",
+              "excerpt": "was the 28th president of the United States, serving from 1913 to 1921"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-usa",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+              "locator": "lead",
+              "claim": "attended the Paris Peace Conference and advocated the League of Nations",
+              "excerpt": "After the Allied victory in November 1918, Wilson attended the Paris Peace Conference. Wilson successfully advocated for the establishment of a multinational organization, the League of Nations"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-usa",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1911,
+          "endYear": 1913,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+              "locator": "lead",
+              "claim": "governor of New Jersey",
+              "excerpt": "Wilson served as the governor of New Jersey from 1911 to 1913"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1902–1910",
+          "r": {
+            "ko": "프린스턴 대학교 총장",
+            "en": "President of Princeton University"
+          }
+        },
+        {
+          "y": "1911–1913",
+          "r": {
+            "ko": "뉴저지 주지사",
+            "en": "Governor of New Jersey"
+          }
+        },
+        {
+          "y": "1913–1921",
+          "r": {
+            "ko": "미국 대통령",
+            "en": "President of the United States"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "14개조 발표",
+            "en": "Announced the Fourteen Points"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "파리 강화회의, 국제연맹 규약 기초 위원회 의장",
+            "en": "Paris Peace Conference; chaired the League Covenant committee"
+          }
+        }
+      ]
+    },
+    {
+      "id": "david-lloyd-george",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "데이비드",
+        "en": "David"
+      },
+      "familyName": {
+        "ko": "로이드 조지",
+        "en": "Lloyd George"
+      },
+      "nativeName": "David Lloyd George",
+      "years": "1863–1945",
+      "citizenship": {
+        "code": "uk"
+      },
+      "nationalOrigin": {
+        "code": "uk",
+        "label": {
+          "ko": "웨일스",
+          "en": "Wales"
+        }
+      },
+      "epithet": {
+        "ko": "대전 후반 영국을 이끌고 강화회의에서 독일에 대한 온건론을 편 자유당 총리",
+        "en": "Liberal prime minister who led Britain in the later war and argued for moderation towards Germany at the peace conference"
+      },
+      "bio": {
+        "ko": "맨체스터의 웨일스인 집안에서 태어나 급진 자유주의 웅변가로 이름을 얻었다. 재무장관으로 1909년 「인민 예산」과 국민보험법을 내 복지국가의 토대를 놓았다. 군수장관과 육군장관을 거쳐 1916년 12월 총리가 되었다. 파리 강화회의에서는 독일 경제를 무너뜨릴 막대한 배상에 반대하고 프랑스의 패권을 견제했다. 1921년 영국-소련 무역협정을 맺고 아일랜드 자유국 수립을 협상했으나 1922년 보수당이 연립에서 빠지자 사임했다. 1936년 히틀러를 만나 찬양하기도 했다. 1945년 죽었다.",
+        "en": "Born in Manchester to Welsh parents, he made his name as a radical Liberal orator. As chancellor of the exchequer he introduced the 1909 People’s Budget and the National Insurance Act, laying foundations of the welfare state. After serving as minister of munitions and secretary for war he became prime minister in December 1916. At the Paris Peace Conference he opposed reparations that would wreck the German economy and sought to check French dominance. In 1921 he concluded the Anglo-Soviet Trade Agreement and negotiated the creation of the Irish Free State, but resigned in 1922 when the Conservatives left the coalition. In 1936 he met Hitler and praised him. He died in 1945."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "1st Earl Lloyd-George of Dwyfor"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/David_Lloyd_George"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1863–1945",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "David Lloyd George, 1st Earl Lloyd-George of Dwyfor (17 January 1863 – 26 March 1945)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Prime Minister of the United Kingdom 1916–1922",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "was Prime Minister of the United Kingdom from 1916 to 1922"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born to Welsh parents",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Early life",
+          "excerpt": "to Welsh parents William George and Elizabeth Lloyd George"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Welsh as first language",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Early life",
+          "excerpt": "He was raised with Welsh as his first language"
+        },
+        {
+          "field": "bio",
+          "claim": "radical Liberal orator, Welsh devolution",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "Lloyd George gained a reputation as an orator and proponent of a Welsh blend of radical Liberal ideas that included support for Welsh devolution, the disestablishment of the Church of England in Wales, equality for labourers and tenant farmers, and reform of land ownership."
+        },
+        {
+          "field": "bio",
+          "claim": "People's Budget 1909",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "he proposed taxes on land ownership and high incomes in the 1909 People's Budget, which the Conservative-dominated House of Lords rejected"
+        },
+        {
+          "field": "bio",
+          "claim": "welfare state",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "His budget was enacted in 1910, with the National Insurance Act 1911 and other measures helping to establish the modern welfare state."
+        },
+        {
+          "field": "bio",
+          "claim": "Munitions, War, prime minister December 1916",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "In 1915, Lloyd George became Minister of Munitions and expanded artillery shell production for the war. In 1916, he was appointed Secretary of State for War"
+        },
+        {
+          "field": "bio",
+          "claim": "replaced Asquith; small war cabinet",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "Asquith proved ineffective as prime minister and was replaced by Lloyd George in December 1916.  He centralised authority by creating a smaller war cabinet."
+        },
+        {
+          "field": "bio",
+          "claim": "clashed at Paris; opposed crushing reparations",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Paris 1919",
+          "excerpt": "Lloyd George represented Britain at the Paris Peace Conference, clashing with French Prime Minister Georges Clemenceau, US President Woodrow Wilson, and Italian Prime Minister Vittorio Orlando."
+        },
+        {
+          "field": "bio",
+          "claim": "did not want to destroy the German economy",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Paris 1919",
+          "excerpt": "He did not want to utterly destroy the German economy and political system—as Clemenceau demanded—with massive reparations."
+        },
+        {
+          "field": "bio",
+          "claim": "plebiscite in Upper Silesia",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Paris 1919",
+          "excerpt": "Instead of handing over Upper Silesia (2,073,000 people), and the southern part of East Prussia (720,000 people) to Poland as was planned before, the plebiscite was organised."
+        },
+        {
+          "field": "bio",
+          "claim": "Anglo-Soviet Trade Agreement 1921",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Foreign policy crises",
+          "excerpt": "In 1921, Lloyd George successfully concluded the Anglo-Soviet Trade Agreement."
+        },
+        {
+          "field": "bio",
+          "claim": "Irish Free State; resigned 1922",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "which lasted until Lloyd George negotiated independence for the Irish Free State in 1921"
+        },
+        {
+          "field": "bio",
+          "claim": "Carlton Club; resigned",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "lead",
+          "excerpt": "The Carlton Club meeting decided the Conservatives should end the coalition and contest the next election alone. Lloyd George resigned as prime minister"
+        },
+        {
+          "field": "bio",
+          "claim": "pro-German after 1923",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Support for Nazi Germany",
+          "excerpt": "Lloyd George was consistently pro-German after 1923, in part due to his growing conviction that Germany had been treated unfairly at Versailles."
+        },
+        {
+          "field": "bio",
+          "claim": "met Hitler 1936, \"the greatest living German\"",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Support for Nazi Germany",
+          "excerpt": "In September 1936, he visited Germany to talk with Hitler. Hitler said he was pleased to have met \"the man who won the war\"; Lloyd George was moved, and called Hitler \"the greatest living German\"."
+        },
+        {
+          "field": "bio",
+          "claim": "died of cancer March 1945",
+          "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+          "locator": "Death",
+          "excerpt": "Lloyd George died of cancer at the age of 82 on 26 March 1945"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1916,
+          "endYear": 1922,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+              "locator": "lead",
+              "claim": "Prime Minister of the United Kingdom",
+              "excerpt": "was Prime Minister of the United Kingdom from 1916 to 1922"
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1908,
+          "endYear": 1915,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+              "locator": "lead",
+              "claim": "Chancellor of the Exchequer",
+              "excerpt": "After H. H. Asquith succeeded to the premiership in 1908, Lloyd George replaced him as Chancellor of the Exchequer."
+            }
+          ]
+        },
+        {
+          "functionId": "industry",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1915,
+          "endYear": 1916,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+              "locator": "lead",
+              "claim": "Minister of Munitions",
+              "excerpt": "In 1915, Lloyd George became Minister of Munitions and expanded artillery shell production for the war."
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+              "locator": "Paris 1919",
+              "claim": "represented Britain at the Paris Peace Conference",
+              "excerpt": "Lloyd George represented Britain at the Paris Peace Conference"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1890,
+          "endYear": 1945,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+              "locator": "lead",
+              "claim": "MP for Caernarvon Boroughs for 55 years",
+              "excerpt": "He won an 1890 by-election to become the Member of Parliament for Caernarvon Boroughs, and was continuously re-elected to the seat for 55 years."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1890",
+          "r": {
+            "ko": "하원의원(카나번 버러스)",
+            "en": "MP for Caernarvon Boroughs"
+          }
+        },
+        {
+          "y": "1908–1915",
+          "r": {
+            "ko": "재무장관",
+            "en": "Chancellor of the Exchequer"
+          }
+        },
+        {
+          "y": "1915–1916",
+          "r": {
+            "ko": "군수장관",
+            "en": "Minister of Munitions"
+          }
+        },
+        {
+          "y": "1916",
+          "r": {
+            "ko": "육군장관",
+            "en": "Secretary of State for War"
+          }
+        },
+        {
+          "y": "1916–1922",
+          "r": {
+            "ko": "영국 총리",
+            "en": "Prime Minister of the United Kingdom"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "파리 강화회의 영국 대표",
+            "en": "British representative at the Paris Peace Conference"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vittorio-emanuele-orlando",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "비토리오 에마누엘레",
+        "en": "Vittorio Emanuele"
+      },
+      "familyName": {
+        "ko": "오를란도",
+        "en": "Orlando"
+      },
+      "nativeName": "Vittorio Emanuele Orlando",
+      "years": "1860–1952",
+      "citizenship": {
+        "code": "italy"
+      },
+      "nationalOrigin": {
+        "code": "italy"
+      },
+      "epithet": {
+        "ko": "카포레토 뒤 총리로 승전을 이끌었으나 강화회의에서 영토 요구를 이루지 못한 정치가",
+        "en": "Italian prime minister who led the country to victory after Caporetto but failed to win its territorial claims at the peace conference"
+      },
+      "bio": {
+        "ko": "팔레르모에서 태어나 이름난 법학 교수가 되었고, 1897년부터 하원의원으로 활동한 자유주의자였다. 1917년 10월 카포레토 패전으로 정부가 무너지자 총리가 되어 카도르나를 해임하고 군을 재정비했으며, 1918년 비토리오 베네토 승리로 「승리의 총리」라 불렸다. 강화회의에서 런던 조약이 약속한 달마티아와 피우메를 요구했으나 얻지 못해 1919년 4월 회의를 떠났고 6월 사임했다. 「불구의 승리」는 무솔리니가 일어선 배경이 되었다. 처음엔 무솔리니를 지지했으나 1924년 마테오티 살해 뒤 결별했다. 1952년 로마에서 죽었다.",
+        "en": "Born in Palermo, he became a renowned law professor and from 1897 sat in the Chamber of Deputies as a Liberal. When the government fell after the defeat at Caporetto in October 1917 he became prime minister, dismissed Cadorna and rebuilt the army, and the victory of Vittorio Veneto in 1918 earned him the name “Premier of Victory”. At the peace conference he demanded Dalmatia, promised by the Treaty of London, and Fiume, obtained neither, walked out in April 1919 and resigned in June. The “mutilated victory” helped Mussolini’s rise. He at first supported Mussolini but broke with him after the murder of Matteotti in 1924. He died in Rome in 1952."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Vittorio Orlando"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1860–1952",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "lead",
+          "excerpt": "19 May 1860 – 1 December 1952"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Italian statesman, prime minister 1917–1919",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "lead",
+          "excerpt": "was an Italian statesman, who served as the prime minister of Italy from October 1917 to June 1919"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Palermo, Sicily",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Early life and career",
+          "excerpt": "Orlando was born in Palermo, Sicily."
+        },
+        {
+          "field": "bio",
+          "claim": "law professor; deputy from 1897; aligned with Giolitti",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Early life and career",
+          "excerpt": "Orlando taught law at the University of Palermo and was recognized as an eminent jurist. In 1897, he was elected in the Italian Chamber of Deputies"
+        },
+        {
+          "field": "bio",
+          "claim": "aligned with Giolitti",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Early life and career",
+          "excerpt": "He aligned himself with Giovanni Giolitti"
+        },
+        {
+          "field": "bio",
+          "claim": "prime minister after Caporetto",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Prime minister",
+          "excerpt": "After the Italian military disaster in World War I at Caporetto on 25 October 1917, which led to the fall of the Boselli government, Orlando became prime minister"
+        },
+        {
+          "field": "bio",
+          "claim": "fired Cadorna, appointed Diaz",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Prime minister",
+          "excerpt": "Orlando's first act as head of the government was to fire General Luigi Cadorna and appoint the well-respected General Armando Diaz in his place."
+        },
+        {
+          "field": "bio",
+          "claim": "Premier of Victory",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Prime minister",
+          "excerpt": "The fact that Italy recovered and ended up on the winning side in 1918 earned for Orlando the title \"Premier of Victory.\""
+        },
+        {
+          "field": "bio",
+          "claim": "claimed Fiume and Dalmatia, received neither",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Italy ended up claiming both and received neither, running up against Wilson's policy of national self-determination."
+        },
+        {
+          "field": "bio",
+          "claim": "Dalmatia promised in London Pact",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Prime minister",
+          "excerpt": "Italy was promised significant territorial gains in Dalmatia."
+        },
+        {
+          "field": "bio",
+          "claim": "left the conference 24 April 1919",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Orlando dramatically left the conference early on April 24, 1919."
+        },
+        {
+          "field": "bio",
+          "claim": "resigned 23 June; mutilated victory",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Orlando resigned on 23 June 1919, following his inability to acquire Fiume for Italy in the peace settlement. The so-called \"Mutilated victory\" was one of the causes of the rising of Benito Mussolini."
+        },
+        {
+          "field": "bio",
+          "claim": "supported then broke with Mussolini over Matteotti",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Fascism and final years",
+          "excerpt": "When Benito Mussolini seized power in 1922, Orlando initially tactically supported him, but broke with him over the murder of Giacomo Matteotti in 1924."
+        },
+        {
+          "field": "bio",
+          "claim": "Mafia accusations",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Controversies",
+          "excerpt": "Other authors say that Orlando was connected to the Mafia and mafiosi from beginning to end of his long parliamentary career, but no court ever investigated the issue."
+        },
+        {
+          "field": "bio",
+          "claim": "Constituent Assembly 1946; died 1952 in Rome",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Fascism and final years",
+          "excerpt": "In 1946, he was elected to the Constituent Assembly of Italy."
+        },
+        {
+          "field": "bio",
+          "claim": "died in Rome 1952",
+          "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+          "locator": "Fascism and final years",
+          "excerpt": "He died in 1952 in Rome."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-italy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+              "locator": "lead",
+              "claim": "Prime minister of Italy",
+              "excerpt": "served as the prime minister of Italy from October 1917 to June 1919"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-italy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+              "locator": "Paris Peace Conference",
+              "claim": "one of the Big Four at the Paris Peace Conference",
+              "excerpt": "Orlando was one of the Big Four, the main Allied leaders and participants at the Paris Peace Conference in 1919"
+            }
+          ]
+        },
+        {
+          "functionId": "law",
+          "affiliationId": "state-italy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1907,
+          "endYear": 1909,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+              "locator": "Prime minister",
+              "claim": "Minister of Justice",
+              "excerpt": "In 1907, he was appointed Minister of Justice, a role he retained until 1909."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-italy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1943,
+          "endYear": 1945,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vittorio_Emanuele_Orlando",
+              "locator": "lead",
+              "claim": "provisional president of the Chamber of Deputies",
+              "excerpt": "Orlando was the provisional president of the Chamber of Deputies between 1943 and 1945"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1897–1925",
+          "r": {
+            "ko": "하원의원(파르티니코)",
+            "en": "Deputy for Partinico"
+          }
+        },
+        {
+          "y": "1907–1909",
+          "r": {
+            "ko": "법무장관",
+            "en": "Minister of Justice"
+          }
+        },
+        {
+          "y": "1916",
+          "r": {
+            "ko": "내무장관",
+            "en": "Minister of the Interior"
+          }
+        },
+        {
+          "y": "1917–1919",
+          "r": {
+            "ko": "이탈리아 총리",
+            "en": "Prime minister of Italy"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "파리 강화회의 「4거두」",
+            "en": "One of the Big Four at the Paris Peace Conference"
+          }
+        },
+        {
+          "y": "1946",
+          "r": {
+            "ko": "제헌의회 의원",
+            "en": "Member of the Constituent Assembly"
+          }
+        }
+      ]
+    },
+    {
+      "id": "karl-renner",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카를",
+        "en": "Karl"
+      },
+      "familyName": {
+        "ko": "레너",
+        "en": "Renner"
+      },
+      "nativeName": "Karl Renner",
+      "years": "1870–1950",
+      "citizenship": {
+        "code": "austria"
+      },
+      "nationalOrigin": {
+        "code": "austria",
+        "label": {
+          "ko": "오스트리아 (모라비아의 독일계)",
+          "en": "Austria (ethnic German from Moravia)"
+        }
+      },
+      "epithet": {
+        "ko": "생제르맹 조약에 서명하고 1945년 제2공화국을 세운 오스트리아 사회민주당 지도자",
+        "en": "Austrian Social Democratic leader who signed the Treaty of Saint-Germain and founded the Second Republic in 1945"
+      },
+      "bio": {
+        "ko": "모라비아의 독일계 농가에서 태어나 빈에서 법학을 공부했고, 사회민주당에 들어가 1907년 제국의회 의원이 되었다. 민족 문제에서 「개인적 자치」를 내세운 오스트리아 마르크스주의 이론가로, 레닌과 스탈린의 비판을 받았다. 1918년 독일-오스트리아 공화국의 첫 총리가 되어 대연정을 이끌며 8시간 노동제 등을 도입했고, 생제르맹 조약으로 독일과의 합병 금지와 영토 상실을 받아들여야 했다. 1938년 합병을 지지했다. 1945년 4월 소련군의 지시로 임시정부를 세웠고 그해 대통령이 되었다. 1950년 빈에서 죽었다.",
+        "en": "Born to an ethnic German farming family in Moravia, he studied law in Vienna, joined the Social Democrats and entered the Imperial Council in 1907. An Austromarxist theorist of “personal autonomy” on the national question, he was criticised by Lenin and Stalin. In 1918 he became the first chancellor of German-Austria, leading a grand coalition that introduced the eight-hour day among other reforms, and had to accept the ban on union with Germany and the territorial losses of Saint-Germain. He supported the Anschluss in 1938. In April 1945, at Soviet direction, he formed a provisional government, and that year became president. He died in Vienna in 1950."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Karl_Renner"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1870–1950",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "lead",
+          "excerpt": "Karl Renner (14 December 1870 – 31 December 1950)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Austrian politician and jurist",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "lead",
+          "excerpt": "was an Austrian politician and jurist of the Social Democratic Workers' Party of Austria"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "ethnic German family in Moravia",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Early life",
+          "excerpt": "Renner was born the 18th child of an ethnic German family of poor wine-growers in Unter-Tannowitz"
+        },
+        {
+          "field": "bio",
+          "claim": "studied law in Vienna",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Early life",
+          "excerpt": "From 1890 to 1896 he studied law at the University of Vienna."
+        },
+        {
+          "field": "bio",
+          "claim": "joined SDAP 1896; Reichsrat from 1907",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Political career",
+          "excerpt": "In 1896, he joined the Social Democratic Workers' Party of Austria (SDAP), representing the party in the National Council (German: Reichsrat) from the 1907 elections until its dissolution in November 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "Der Kampf with Bauer",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Political career",
+          "excerpt": "he founded and edited the party's journal, Der Kampf, together with Otto Bauer and Adolf Braun"
+        },
+        {
+          "field": "bio",
+          "claim": "personal autonomy; Austro-Marxism",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Political career",
+          "excerpt": "On the nationality question, he upheld the so-called \"personal autonomy\""
+        },
+        {
+          "field": "bio",
+          "claim": "leader of Austro-Marxism",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Political career",
+          "excerpt": "As a theorist he was reckoned as one of the leaders of Austro-Marxism."
+        },
+        {
+          "field": "bio",
+          "claim": "denounced by Lenin, criticised by Stalin",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Political beliefs and scholarly contributions",
+          "excerpt": "His and Otto Bauer's ideas about the legal protection of cultural minorities were taken up by the Jewish Bund, but fiercely denounced by Vladimir Lenin. Joseph Stalin devoted a whole chapter to criticising Cultural National Autonomy in Marxism and the National Question."
+        },
+        {
+          "field": "bio",
+          "claim": "first State Chancellor of German-Austria",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "First Republic",
+          "excerpt": "Renner became the first head of government (\"State Chancellor\") of that newly established small German-speaking republic"
+        },
+        {
+          "field": "bio",
+          "claim": "grand coalition; social reforms",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "First Republic",
+          "excerpt": "backed by a grand coalition of Social Democrats and Christian Social Party. A wide range of social reforms were introduced by Renner's government, including unemployment insurance, paid holidays, the eight-hour workday"
+        },
+        {
+          "field": "bio",
+          "claim": "Saint-Germain delegation; losses",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "First Republic",
+          "excerpt": "He was the leader of the delegation that represented this new German-Austria in the negotiations of St. Germain"
+        },
+        {
+          "field": "bio",
+          "claim": "accepted ban on union and territorial losses",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "First Republic",
+          "excerpt": "There Renner had to accept that this new Austria was prohibited any political association with Germany and he had to accept the loss of German-speaking South Tyrol and the German-speaking parts of Bohemia and Moravia where he himself was born"
+        },
+        {
+          "field": "bio",
+          "claim": "welcomed the Anschluss",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "First Republic",
+          "excerpt": "he even welcomed the Anschluss in 1938"
+        },
+        {
+          "field": "bio",
+          "claim": "Soviets instructed him to form a provisional government",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Relationship with Nazism and Communism",
+          "excerpt": "On 20 April 1945, the Soviets, without asking their Western allies, instructed Renner to form a provisional government. Seven days later Renner's cabinet took office, declared the independence of Austria from Nazi Germany"
+        },
+        {
+          "field": "bio",
+          "claim": "elected president 20 November 1945",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Post–World War II",
+          "excerpt": "elected Renner as president on 20 November"
+        },
+        {
+          "field": "bio",
+          "claim": "antisemitism",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Antisemitism",
+          "excerpt": "stood out before and after the war due to vehement antisemitism"
+        },
+        {
+          "field": "bio",
+          "claim": "died in Vienna 1950",
+          "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+          "locator": "Post–World War II",
+          "excerpt": "Karl Renner died in 1950 in Vienna"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-austria",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+              "locator": "First Republic",
+              "claim": "Chancellor and foreign minister of the first three coalition cabinets",
+              "excerpt": "Renner was Chancellor of Austria of the first three coalition cabinets from 1918 until 1920 and at the same time Minister of Foreign Affairs"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-austria",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+              "locator": "First Republic",
+              "claim": "led the delegation at Saint-Germain",
+              "excerpt": "He was the leader of the delegation that represented this new German-Austria in the negotiations of St. Germain"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-austria",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1931,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+              "locator": "First Republic",
+              "claim": "President of the National Council",
+              "excerpt": "From 1931 to 1933, Renner was President of Parliament, the National Council of Austria."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-austria",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1945,
+          "endYear": 1950,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+              "locator": "lead",
+              "claim": "head of the 1945 provisional government, then president",
+              "excerpt": "was once again decisive in establishing the present Second Republic after the fall of Nazi Germany in 1945, becoming its first President after World War II"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1896",
+          "r": {
+            "ko": "오스트리아 사회민주노동자당 입당",
+            "en": "Joined the Social Democratic Workers’ Party of Austria"
+          }
+        },
+        {
+          "y": "1907–1918",
+          "r": {
+            "ko": "제국의회 의원",
+            "en": "Member of the Reichsrat"
+          }
+        },
+        {
+          "y": "1918–1920",
+          "r": {
+            "ko": "독일-오스트리아(오스트리아) 총리 겸 외무장관",
+            "en": "Chancellor and foreign minister of German-Austria (Austria)"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "생제르맹 조약 협상 대표단장",
+            "en": "Head of the delegation at Saint-Germain"
+          }
+        },
+        {
+          "y": "1931–1933",
+          "r": {
+            "ko": "국민의회 의장",
+            "en": "President of the National Council"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "임시정부 총리, 독립 선언",
+            "en": "Head of the provisional government; declared independence"
+          }
+        },
+        {
+          "y": "1945–1950",
+          "r": {
+            "ko": "오스트리아 대통령",
+            "en": "President of Austria"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gustav-stresemann",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "구스타프",
+        "en": "Gustav"
+      },
+      "familyName": {
+        "ko": "슈트레제만",
+        "en": "Stresemann"
+      },
+      "nativeName": "Gustav Stresemann",
+      "years": "1878–1929",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "1923년 총리로 소극적 저항을 끝내고 외무장관으로 로카르노 조약을 맺은 정치가",
+        "en": "Weimar chancellor who ended passive resistance in 1923 and, as foreign minister, concluded the Locarno treaties"
+      },
+      "bio": {
+        "ko": "베를린에서 태어나 1907년 국민자유당 의원이 되었고, 1차 세계대전 중에는 영토 병합과 무제한 잠수함전을 주장했다. 패전 뒤 독일인민당을 세웠고 점차 공화국을 받아들였다. 1923년 8월 총리 겸 외무장관이 되어 루르의 소극적 저항을 끝내고, 공산당이 들어간 작센·튀링겐 정부를 군대로 몰아냈으며, 렌텐마르크로 초인플레이션을 잡았다. 11월 불신임으로 물러났지만 죽을 때까지 외무장관으로 남아 도스안과 로카르노 조약, 국제연맹 가입을 이끌었고 1926년 노벨 평화상을 받았다. 1929년 뇌졸중으로 죽었다.",
+        "en": "Born in Berlin, he entered the Reichstag for the National Liberals in 1907 and during the war backed annexations and unrestricted submarine warfare. After the defeat he founded the German People’s Party and came to accept the republic. Chancellor and foreign minister from August 1923, he ended passive resistance in the Ruhr, used the army to remove the Saxon and Thuringian governments that included Communists, and halted hyperinflation with the Rentenmark. Ousted by a no-confidence vote in November, he remained foreign minister until his death, shaping the Dawes Plan, the Locarno treaties and entry into the League of Nations, and shared the 1926 Nobel Peace Prize. He died of a stroke in 1929."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Gustav Ernst Stresemann"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gustav_Stresemann"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1878–1929",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "10 May 1878 – 3 October 1929"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German statesman of the Weimar Republic",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "was a German statesman during the Weimar Republic who served as chancellor of Germany from August to November 1923 and as foreign minister from 1923 to 1929"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Berlin",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Early years",
+          "excerpt": "Stresemann was born on 10 May 1878 at 66 Köpenicker Straße in southeast Berlin"
+        },
+        {
+          "field": "bio",
+          "claim": "father a beer bottler",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Early years",
+          "excerpt": "His father worked as a beer bottler and distributor"
+        },
+        {
+          "field": "bio",
+          "claim": "studied political economy at Berlin and Leipzig",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "Stresemann attended the University of Berlin and Leipzig University, where he studied political economy, history and international law"
+        },
+        {
+          "field": "bio",
+          "claim": "Reichstag 1907 National Liberal",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "In 1907, he was elected to the Reichstag as a deputy for the National Liberal Party."
+        },
+        {
+          "field": "bio",
+          "claim": "wartime militarism and expansionism",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "During World War I, he was a vocal advocate for German militarism and expansionism."
+        },
+        {
+          "field": "bio",
+          "claim": "annexation aims; submarine warfare",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "First World War",
+          "excerpt": "He believed that Germany would need to annex Belgium, parts of north-east France, \"extensive\" lands in Eastern Europe and the French protectorate in Morocco"
+        },
+        {
+          "field": "bio",
+          "claim": "unrestricted submarine warfare",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "First World War",
+          "excerpt": "He was a vocal proponent of unrestricted submarine warfare."
+        },
+        {
+          "field": "bio",
+          "claim": "founded the DVP",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "He founded the German People's Party (DVP) and, despite his own monarchist beliefs, came to grudgingly accept Weimar democracy"
+        },
+        {
+          "field": "bio",
+          "claim": "DVP initially opposed the Republic",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Founding the German People's Party",
+          "excerpt": "Initially, Stresemann and the DVP opposed the Weimar Republic and supported a restoration of the monarchy."
+        },
+        {
+          "field": "bio",
+          "claim": "Vernunftrepublikaner",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Foreign minister 1923–1929",
+          "excerpt": "Stresemann was regarded as a Vernunftrepublikaner, (republican by reason)"
+        },
+        {
+          "field": "bio",
+          "claim": "chancellor August 1923",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Chancellor 1923",
+          "excerpt": "On 13 August 1923, Stresemann was appointed chancellor and foreign minister of a grand coalition government"
+        },
+        {
+          "field": "bio",
+          "claim": "ended passive resistance 26 September",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Chancellor 1923",
+          "excerpt": "On 26 September 1923, Stresemann announced the end to the passive resistance against the occupation of the Ruhr by the French and Belgians"
+        },
+        {
+          "field": "bio",
+          "claim": "Reichsexekution against Saxony and Thuringia",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Chancellor 1923",
+          "excerpt": "Stresemann used a Reichsexekution to send troops into the two states to remove the Communists from the governments"
+        },
+        {
+          "field": "bio",
+          "claim": "Rentenmark",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Chancellor 1923",
+          "excerpt": "The Stresemann government introduced a new currency, the Rentenmark, to end hyperinflation."
+        },
+        {
+          "field": "bio",
+          "claim": "resigned after confidence vote",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Chancellor 1923",
+          "excerpt": "after he lost a confidence vote on 23 November 1923, Stresemann and his cabinet resigned"
+        },
+        {
+          "field": "bio",
+          "claim": "remained foreign minister",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Foreign minister 1923–1929",
+          "excerpt": "Stresemann remained as foreign minister in the government of his successor, Wilhelm Marx from the Centre Party, and for the rest of his life"
+        },
+        {
+          "field": "bio",
+          "claim": "Dawes Plan, Locarno, League, Treaty of Berlin",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "His first major diplomatic success was the 1924 Dawes Plan, which reduced Germany's overall reparations commitment. It was followed by the Locarno Treaties in 1925"
+        },
+        {
+          "field": "bio",
+          "claim": "League admission; Treaty of Berlin",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "lead",
+          "excerpt": "led to Germany's admission to the League of Nations a year later. Stresemann also moved to improve relations with the Soviet Union through the 1926 Treaty of Berlin."
+        },
+        {
+          "field": "bio",
+          "claim": "Nobel Peace Prize 1926 with Briand",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Foreign minister 1923–1929",
+          "excerpt": "Stresemann was co-winner with Aristide Briand of the 1926 Nobel Peace Prize for their work on Locarno."
+        },
+        {
+          "field": "bio",
+          "claim": "died after strokes hours after Young Plan vote",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Health decline and death",
+          "excerpt": "He died of a series of strokes on 3 October 1929 at the age of 51"
+        },
+        {
+          "field": "bio",
+          "claim": "hours after the Young Plan vote",
+          "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+          "locator": "Health decline and death",
+          "excerpt": "His death came just hours after convincing the Reichstag to accept the Young Plan."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1929,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+              "locator": "lead",
+              "claim": "foreign minister 1923–1929",
+              "excerpt": "as foreign minister from 1923 to 1929"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1923,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+              "locator": "lead",
+              "claim": "chancellor August–November 1923",
+              "excerpt": "served as chancellor of Germany from August to November 1923"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1907,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+              "locator": "lead",
+              "claim": "Reichstag deputy",
+              "excerpt": "In 1907, he was elected to the Reichstag as a deputy for the National Liberal Party."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1907",
+          "r": {
+            "ko": "제국의회 의원(국민자유당)",
+            "en": "Reichstag deputy (National Liberal Party)"
+          }
+        },
+        {
+          "y": "1917",
+          "r": {
+            "ko": "국민자유당 대표",
+            "en": "Leader of the National Liberal Party"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "독일인민당 창당",
+            "en": "Founded the German People’s Party"
+          }
+        },
+        {
+          "y": "1923",
+          "r": {
+            "ko": "총리 겸 외무장관",
+            "en": "Chancellor and foreign minister"
+          }
+        },
+        {
+          "y": "1923–1929",
+          "r": {
+            "ko": "외무장관",
+            "en": "Foreign minister"
+          }
+        },
+        {
+          "y": "1925",
+          "r": {
+            "ko": "로카르노 조약",
+            "en": "Locarno Treaties"
+          }
+        },
+        {
+          "y": "1926",
+          "r": {
+            "ko": "노벨 평화상",
+            "en": "Nobel Peace Prize"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mustafa-kemal-ataturk",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "무스타파 케말",
+        "en": "Mustafa Kemal"
+      },
+      "familyName": {
+        "ko": "아타튀르크",
+        "en": "Atatürk"
+      },
+      "nativeName": "Mustafa Kemal Atatürk",
+      "years": "1881–1938",
+      "citizenship": {
+        "code": "turkey"
+      },
+      "nationalOrigin": {
+        "code": "turkey"
+      },
+      "epithet": {
+        "ko": "갈리폴리에서 이름을 얻고 국민운동을 이끌어 튀르키예 공화국을 세운 대통령",
+        "en": "Gallipoli commander who led the national movement and founded the Republic of Turkey as its first president"
+      },
+      "bio": {
+        "ko": "살로니카에서 태어나 청년 튀르크 운동에 가담했고, 1차 세계대전 때 갈리폴리 방어로 이름을 얻었다. 패전 뒤 1919년 5월 삼순에 상륙해 점령에 맞선 국민운동을 조직했고, 1920년 앙카라에 대국민의회를 열었다. 볼셰비키 정부의 금과 무기 지원을 받아 그리스군을 물리쳤고, 로잔 조약으로 승리를 인정받았다. 이 시기 아나톨리아의 아르메니아인·그리스인에 대한 인종 청소가 학살·추방·주민 교환으로 마무리되었다. 1922년 술탄제를 폐지하고 1923년 공화국의 초대 대통령이 되어 일당 체제 아래 세속화와 튀르크화 정책을 폈다. 1938년 죽었다.",
+        "en": "Born in Salonica, he joined the Young Turk movement and made his name defending Gallipoli in the First World War. After the defeat he landed at Samsun in May 1919 to organise the national movement against occupation, and in 1920 convened the Grand National Assembly in Ankara. With gold and arms from the Bolshevik government he defeated the Greek army, and the Treaty of Lausanne recognised the victory. In these years the ethnic cleansing of Anatolia’s Armenians and Greeks was completed through massacres, deportations and population exchange. He abolished the sultanate in 1922 and in 1923 became the first president of the republic, pursuing secularising reforms and Turkification under one-party rule. He died in 1938."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "케말 아타튀르크",
+          "케말 파샤"
+        ],
+        "en": [
+          "Kemal Atatürk",
+          "Mustafa Kemal Pasha",
+          "Kemal Pasha"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "c. 1881 – 10 November 1938",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "Mustafa Kemal Atatürk (c. 1881 – 10 November 1938) was a Turkish field marshal and statesman"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Founder and first president of the Republic of Turkey",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "was the founder of the Republic of Turkey and served as its first president from 1923 until his death in 1938"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Turkish field marshal and statesman",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "was a Turkish field marshal and statesman"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Salonica; CUP and Young Turks",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "Born in Salonica in the Ottoman Empire, Atatürk was early on persecuted for agitating against Sultan Abdul Hamid II's autocracy, joining opposition movements like the Committee of Union and Progress and the Young Turks."
+        },
+        {
+          "field": "bio",
+          "claim": "sidelined after denouncing the CUP leadership",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "Atatürk denounced CUP leadership for encouraging a politicised military –and was subsequently sidelined–"
+        },
+        {
+          "field": "bio",
+          "claim": "rose to prominence at Gallipoli",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "He rose to prominence with his role in the Defence of Gallipoli during World War I."
+        },
+        {
+          "field": "bio",
+          "claim": "commanded the 19th Division at Gallipoli",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "First World War (1914–1918)",
+          "excerpt": "Mustafa Kemal was given the task of organizing and commanding the 19th Division attached to the Fifth Army during the Battle of Gallipoli."
+        },
+        {
+          "field": "bio",
+          "claim": "reached Samsun, organised a national movement",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Turkish War of Independence (1919–1923)",
+          "excerpt": "On 19 May 1919, he reached Samsun. His first goal was the establishment of an organized national movement against the occupying forces."
+        },
+        {
+          "field": "bio",
+          "claim": "GNA opened in April 1920 with him as speaker",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Turkish War of Independence (1919–1923)",
+          "excerpt": "On 23 April 1920, the GNA opened with Mustafa Kemal as the speaker"
+        },
+        {
+          "field": "bio",
+          "claim": "Greek forces advancing from Smyrna, occupied May 1919",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Turkish War of Independence (1919–1923)",
+          "excerpt": "the Greek forces advancing eastward from Smyrna (today known as İzmir) that they had occupied in May 1919"
+        },
+        {
+          "field": "bio",
+          "claim": "Bolshevik gold and arms from autumn 1920",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Turkish War of Independence (1919–1923)",
+          "excerpt": "were made possible by a steady supply of gold and armaments to the Kemalists from the Russian Bolshevik government from the autumn of 1920 onwards"
+        },
+        {
+          "field": "bio",
+          "claim": "Sakarya 1921",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Turkish War of Independence (1919–1923)",
+          "excerpt": "The ensuing Battle of the Sakarya was fought from 23 August–13 September 1921 and ended with the defeat of the Greeks."
+        },
+        {
+          "field": "bio",
+          "claim": "Dumlupınar 1922",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Turkish War of Independence (1919–1923)",
+          "excerpt": "In August 1922, Mustafa Kemal launched an all-out attack on the Greek lines at Afyonkarahisar in the Battle of Dumlupınar"
+        },
+        {
+          "field": "bio",
+          "claim": "Lausanne; ethnic cleansing of Armenians and Greeks",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "During and after the war, the ethnic cleansing of Armenians and Greeks from Anatolia outside of Istanbul, including the Kars region invaded by the Kemalist armies, was largely completed via large-scale massacres, flight, expulsions, and the population exchange between Greece and Turkey."
+        },
+        {
+          "field": "bio",
+          "claim": "victory confirmed at Lausanne",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "confirmed in the Treaty of Lausanne"
+        },
+        {
+          "field": "bio",
+          "claim": "abolished the sultanate 1922, republic 1923",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "His government subsequently proceeded to abolish the Ottoman sultanate in 1922 and proclaimed the Republic of Turkey in 1923."
+        },
+        {
+          "field": "bio",
+          "claim": "one-party regime",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "By the mid-1920s, opponents to Atatürk's rule were suppressed as a one-party regime was cemented around him."
+        },
+        {
+          "field": "bio",
+          "claim": "Turkification",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "lead",
+          "excerpt": "His government carried out a policy of Turkification"
+        },
+        {
+          "field": "bio",
+          "claim": "died of cirrhosis in 1938",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Death and state funeral",
+          "excerpt": "He went to Istanbul for treatment, where he was diagnosed with cirrhosis."
+        },
+        {
+          "field": "bio",
+          "claim": "died 10 November 1938 in Dolmabahçe Palace",
+          "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+          "locator": "Death and state funeral",
+          "excerpt": "He died on 10 November 1938, at the age of 57, in the Dolmabahçe Palace."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1915,
+          "endYear": 1922,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+              "locator": "Turkish War of Independence (1919–1923)",
+              "claim": "Gallipoli division commander, later commander in chief of the GNA forces",
+              "excerpt": "On 5 August 1921, Mustafa Kemal was promoted to commander in chief of the forces by the GNA."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1938,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+              "locator": "lead",
+              "claim": "First president of the Republic of Turkey",
+              "excerpt": "was the founder of the Republic of Turkey and served as its first president from 1923 until his death in 1938"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1915",
+          "r": {
+            "ko": "갈리폴리 전투 제19사단장",
+            "en": "Commander of the 19th Division at Gallipoli"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "삼순 상륙, 국민운동 조직",
+            "en": "Landed at Samsun and organised the national movement"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "앙카라 대국민의회 의장",
+            "en": "Speaker of the Grand National Assembly in Ankara"
+          }
+        },
+        {
+          "y": "1921–1922",
+          "r": {
+            "ko": "사카리아·둠루프나르 전투 승리",
+            "en": "Victories at the Sakarya and Dumlupınar"
+          }
+        },
+        {
+          "y": "1923–1938",
+          "r": {
+            "ko": "튀르키예 공화국 초대 대통령",
+            "en": "First president of the Republic of Turkey"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "무스타파 케말",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Mustafa Kemal",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "케말 아타튀르크",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Kemal Atatürk",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "erich-ludendorff",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "에리히",
+        "en": "Erich"
+      },
+      "familyName": {
+        "ko": "루덴도르프",
+        "en": "Ludendorff"
+      },
+      "nativeName": "Erich Ludendorff",
+      "years": "1865–1937",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "힌덴부르크와 함께 독일의 전쟁을 지휘하고 전후 맥주홀 폭동에 가담한 장군",
+        "en": "General who directed Germany’s war with Hindenburg and later joined Hitler’s Beer Hall Putsch"
+      },
+      "bio": {
+        "ko": "포젠주의 평민 집안에서 태어나 참모본부에서 일했고, 1914년 리에주와 탄넨베르크로 이름을 얻었다. 1916년 8월 힌덴부르크와 함께 최고사령부를 넘겨받아 제1병참총감으로서 사실상의 군사독재 아래 전쟁을 지휘하고 힌덴부르크 계획을 밀어붙였다. 1918년 3월 미하엘 작전으로 춘계 공세를 열었으나 실패했고, 9월 즉각 휴전을 요구한 뒤 10월 해임되었다. 전후 비수설을 퍼뜨렸고 1920년 카프 폭동과 1923년 히틀러의 맥주홀 폭동에 가담했다. 1924~1928년 국가사회주의 자유운동 의원을 지냈다. 1937년 뮌헨에서 죽었다.",
+        "en": "Born to a commoner family in the Province of Posen, he served on the General Staff and won fame at Liège and Tannenberg in 1914. In August 1916 he and Hindenburg took over the Supreme Army Command; as First Quartermaster General he directed the war under a de facto military dictatorship and drove the Hindenburg Programme. His spring offensive, opened with Operation Michael in March 1918, failed; in September he demanded an immediate armistice and in October he was dismissed. After the war he spread the stab-in-the-back myth and took part in the Kapp Putsch of 1920 and Hitler’s Beer Hall Putsch of 1923. He sat in the Reichstag for the National Socialist Freedom Movement in 1924–1928 and died in Munich in 1937."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Erich Friedrich Wilhelm Ludendorff"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Erich_Ludendorff"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "9 April 1865 – 20 December 1937",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "9 April 1865 – 20 December 1937"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Prussian-born German general and politician",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "was a Prussian-born German general and politician"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German family descended from Pomeranian merchants",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Early life",
+          "excerpt": "His father was descended from Pomeranian merchants"
+        },
+        {
+          "field": "bio",
+          "claim": "non-noble family in the Province of Posen",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "Ludendorff came from a non-noble family in Kruszewnia in the Prussian Province of Posen."
+        },
+        {
+          "field": "bio",
+          "claim": "Schlieffen Plan",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "where he helped oversee the development of the Schlieffen Plan"
+        },
+        {
+          "field": "bio",
+          "claim": "Liège and Tannenberg",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "He achieved fame during World War I (1914–1918) for his central role in the German victories at Liège and Tannenberg in 1914."
+        },
+        {
+          "field": "bio",
+          "claim": "August 1916: Hindenburg head of OHL, himself First Quartermaster General",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "By the end of August 1916, Ludendorff successfully lobbied for Hindenburg's appointment as head of the Supreme Army Command and his own promotion to the rank of First Quartermaster General."
+        },
+        {
+          "field": "bio",
+          "claim": "military dictatorship in all but name",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "Once he and Hindenburg established a military dictatorship in all but name, Ludendorff directed Germany's entire military strategy and war effort for the rest of the conflict."
+        },
+        {
+          "field": "bio",
+          "claim": "Hindenburg Program",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "The Home Front",
+          "excerpt": "began by setting overambitious targets for military production in what they called the Hindenburg Program"
+        },
+        {
+          "field": "bio",
+          "claim": "Operation Michael 21 March 1918",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Western Front (1918)",
+          "excerpt": "The first attack, Operation Michael, was on 21 March 1918 near Cambrai."
+        },
+        {
+          "field": "bio",
+          "claim": "black day at Amiens",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Western Front (1918)",
+          "excerpt": "To Ludendorff, it was the \"black day in the history of the German Army\"."
+        },
+        {
+          "field": "bio",
+          "claim": "demanded an immediate armistice on 29 September",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Downfall",
+          "excerpt": "On 29 September 1918, Ludendorff and Hindenburg suddenly told an incredulous Kaiser that they could not guarantee the integrity of the Western front \"for two hours\", and they must have an immediate armistice."
+        },
+        {
+          "field": "bio",
+          "claim": "Kaiser accepted his resignation",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Downfall",
+          "excerpt": "The Kaiser called his commanders in, curtly accepting Ludendorff's resignation and then rejecting Hindenburg's."
+        },
+        {
+          "field": "bio",
+          "claim": "stab-in-the-back myth",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "After the war, Ludendorff became a prominent nationalist leader and a promoter of the stab-in-the-back myth, which posited that Germany's defeat and the settlement reached at Versailles were the result of a treasonous conspiracy by Marxists, Freemasons and Jews."
+        },
+        {
+          "field": "bio",
+          "claim": "Kapp Putsch and Beer Hall Putsch; 1925 election",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "He also took part in the failed 1920 Kapp Putsch and 1923 Beer Hall Putsch before unsuccessfully standing in the 1925 election for president."
+        },
+        {
+          "field": "bio",
+          "claim": "Reichstag for the NSFB 1924–1928",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Political career in the Republic",
+          "excerpt": "In 1924, he was elected to the Reichstag as a representative of the NSFB (a coalition of the German Völkisch Freedom Party (DVFP) and members of the Nazi Party), serving until 1928."
+        },
+        {
+          "field": "bio",
+          "claim": "1.1% in 1925",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "Political career in the Republic",
+          "excerpt": "but received only 1.1% of the vote"
+        },
+        {
+          "field": "bio",
+          "claim": "died of liver cancer in Munich",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+          "locator": "lead",
+          "excerpt": "Following his death from liver cancer in Munich in 1937"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1916,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+              "locator": "lead",
+              "claim": "First Quartermaster General directing Germany’s war effort",
+              "excerpt": "After his appointment as First Quartermaster General of the Great General Staff in 1916, Ludendorff oversaw virtually all decisions regarding Germany's strategy and war effort until the country's defeat in 1918."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1924,
+          "endYear": 1928,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Erich_Ludendorff",
+              "locator": "Political career in the Republic",
+              "claim": "Reichstag deputy for the NSFB",
+              "excerpt": "In 1924, he was elected to the Reichstag as a representative of the NSFB (a coalition of the German Völkisch Freedom Party (DVFP) and members of the Nazi Party), serving until 1928."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1914",
+          "r": {
+            "ko": "리에주 공략, 탄넨베르크 승리",
+            "en": "Liège and Tannenberg"
+          }
+        },
+        {
+          "y": "1916–1918",
+          "r": {
+            "ko": "제1병참총감",
+            "en": "First Quartermaster General"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "춘계 공세(미하엘 작전), 10월 해임",
+            "en": "Spring offensive (Operation Michael); dismissed in October"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "카프 폭동 가담",
+            "en": "Took part in the Kapp Putsch"
+          }
+        },
+        {
+          "y": "1923",
+          "r": {
+            "ko": "맥주홀 폭동 가담",
+            "en": "Took part in the Beer Hall Putsch"
+          }
+        },
+        {
+          "y": "1924–1928",
+          "r": {
+            "ko": "제국의회 의원(국가사회주의 자유운동)",
+            "en": "Reichstag deputy (NSFB)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wilhelm-ii",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "",
+        "en": ""
+      },
+      "familyName": {
+        "ko": "빌헬름 2세",
+        "en": "Wilhelm II"
+      },
+      "nativeName": "Wilhelm II.",
+      "years": "1859–1941",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "7월 위기에 오스트리아를 지원하고 1918년 퇴위해 망명한 마지막 독일 황제",
+        "en": "Last German Emperor, who backed Austria-Hungary in the July Crisis and abdicated and fled in 1918"
+      },
+      "bio": {
+        "ko": "프로이센 왕세자와 영국 빅토리아 여왕의 맏딸 사이에서 태어나 1888년 황제가 되었고, 1890년 비스마르크를 해임했다. 1900년 의화단 진압군에게 훈족처럼 싸우라고 연설했고, 함대 증강과 모로코 개입으로 독일을 고립시켰다. 1914년 7월 위기 때 오스트리아-헝가리에 군사 지원을 보장했다. 전쟁 중에는 결정을 최고사령부에 넘겨 힌덴부르크와 루덴도르프의 군사독재가 섰다. 1918년 11월 9일 퇴위가 발표되자 네덜란드로 망명했고, 네덜란드는 베르사유 조약이 정한 그의 인도를 거부했다. 1941년 도른에서 죽었다.",
+        "en": "The son of the Prussian crown prince and Queen Victoria’s eldest daughter, he became emperor in 1888 and dismissed Bismarck in 1890. In 1900 he urged the troops sent against the Boxers to fight like Huns, and his naval build-up and Moroccan interventions isolated Germany. In the July Crisis of 1914 he assured Austria-Hungary of military support. In the war he left decisions largely to the Supreme Army Command, leading to the de facto military dictatorship of Hindenburg and Ludendorff. When his abdication was announced on 9 November 1918 he went into exile in the Netherlands, which refused to extradite him as the Treaty of Versailles provided. He died at Doorn in 1941."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "카이저 빌헬름 2세",
+          "황제 빌헬름 2세"
+        ],
+        "en": [
+          "Kaiser Wilhelm II",
+          "William II, German Emperor",
+          "Friedrich Wilhelm Viktor Albert"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wilhelm_II"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "27 January 1859 – 4 June 1941",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "27 January 1859 – 4 June 1941"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Last German Emperor",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "was the last German Emperor from 1888 until his abdication in 1918"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Prussian prince of the Hohenzollern dynasty",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "Wilhelm was the son of Prince Frederick William and Victoria, Princess Royal"
+        },
+        {
+          "field": "bio",
+          "claim": "eldest grandchild of Queen Victoria",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "Through his mother, he was the eldest of the 42 grandchildren of Queen Victoria of the United Kingdom."
+        },
+        {
+          "field": "bio",
+          "claim": "became Kaiser in 1888",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "Frederick died just 99 days later, and his son succeeded him as Kaiser Wilhelm II."
+        },
+        {
+          "field": "bio",
+          "claim": "dismissed Bismarck in 1890; New Course",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "In March 1890, the young Kaiser dismissed longtime Chancellor Otto von Bismarck and assumed direct control over his nation's policies, embarking on a \"New Course\""
+        },
+        {
+          "field": "bio",
+          "claim": "Hun speech 1900",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "Hun speech of 1900",
+          "excerpt": "The Kaiser's farewell address to departing German soldiers commanded them, in the spirit of the Huns, to be merciless in battle."
+        },
+        {
+          "field": "bio",
+          "claim": "naval build-up and Morocco alienated Europe",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "he and his government did much to alienate the German Empire from most of Europe by initiating a massive naval build-up, contesting French control of Morocco"
+        },
+        {
+          "field": "bio",
+          "claim": "July Crisis guarantee to Austria-Hungary",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "In 1914, his diplomatic brinksmanship culminated in the guarantee of his country's military support to Austria-Hungary during the July Crisis which ultimately plunged all of Europe into World War I."
+        },
+        {
+          "field": "bio",
+          "claim": "left decisions to the Supreme Army Command; military dictatorship",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "lead",
+          "excerpt": "By August 1916, his broad delegation of power gave rise to a de facto military dictatorship that dominated the country's policies in his place for the rest of the conflict."
+        },
+        {
+          "field": "bio",
+          "claim": "Prince Max announced his abdication on 9 November 1918",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "Abdication and exile",
+          "excerpt": "Chancellor Prince Max of Baden announced Wilhelm's abdication of both titles on 9 November 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "exile in the Netherlands on 10 November",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "Abdication and exile",
+          "excerpt": "On 10 November, Wilhelm crossed the border by train and went into exile in the neutral Netherlands."
+        },
+        {
+          "field": "bio",
+          "claim": "Article 227; Dutch refused extradition",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "Abdication and exile",
+          "excerpt": "Article 227 expressly provided for the prosecution of Wilhelm \"for a supreme offence against international morality and the sanctity of treaties\", but the Dutch government refused to extradite him."
+        },
+        {
+          "field": "bio",
+          "claim": "died at Doorn in 1941",
+          "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+          "locator": "Death",
+          "excerpt": "Wilhelm died of a pulmonary embolism in Doorn, Netherlands, on 4 June 1941, at the age of 82"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "monarchy",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1888,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Wilhelm_II",
+              "locator": "lead",
+              "claim": "German Emperor and King of Prussia 1888–1918",
+              "excerpt": "was the last German Emperor from 1888 until his abdication in 1918"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1888",
+          "r": {
+            "ko": "독일 황제·프로이센 국왕 즉위",
+            "en": "German Emperor and King of Prussia"
+          }
+        },
+        {
+          "y": "1890",
+          "r": {
+            "ko": "비스마르크 해임, 「신노선」",
+            "en": "Dismissed Bismarck; the “New Course”"
+          }
+        },
+        {
+          "y": "1914",
+          "r": {
+            "ko": "7월 위기 때 오스트리아-헝가리에 지원 보장",
+            "en": "Guaranteed support to Austria-Hungary in the July Crisis"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "11월 9일 퇴위 발표, 네덜란드 망명",
+            "en": "Abdication announced on 9 November; exile in the Netherlands"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "카이저 빌헬름 2세",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Kaiser Wilhelm II",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "ferdinand-foch",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "페르디낭",
+        "en": "Ferdinand"
+      },
+      "familyName": {
+        "ko": "포슈",
+        "en": "Foch"
+      },
+      "nativeName": "Ferdinand Foch",
+      "years": "1851–1929",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "1918년 연합군 총사령관으로 반격을 이끌고 휴전 조건을 받아 낸 프랑스 원수",
+        "en": "French marshal who as Allied supreme commander in 1918 led the counter-offensive and dictated the armistice"
+      },
+      "bio": {
+        "ko": "타르브의 가톨릭 집안에서 태어났다. 1914년 마른 전투에서 제9군을 지휘해 이름을 얻었다. 1918년 3월 독일의 춘계 공세 앞에서 연합군 총사령관이 되어 프랑스·영국·미국군을 조율했고, 제2차 마른 전투 뒤 원수가 되어 전쟁을 끝낸 반격을 이끌었다. 11월 콩피에뉴에서 독일의 휴전 서명을 받았다. 강화회의에서 라인란트 분리를 주장했으나 15년 점령에 그치자 베르사유 조약이 너무 관대하다고 비판했다. 1920년 폴란드-소비에트 전쟁에서 폴란드에 조언해 폴란드 원수 칭호를 받았다. 1929년 파리에서 죽었다.",
+        "en": "Born into a Catholic family in Tarbes, he made his name commanding the Ninth Army at the Marne in 1914. Facing the German spring offensive in March 1918 he became Allied supreme commander, coordinating the French, British and American armies, and after the Second Battle of the Marne was made marshal and led the counter-offensive that ended the war. In November he received the German armistice at Compiègne. At the peace conference he called for separating the Rhineland, and when this was reduced to a fifteen-year occupation he criticised the Treaty of Versailles as too lenient. For his advice to Poland in the Polish-Soviet War of 1920 he was made a Marshal of Poland. He died in Paris in 1929."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "포슈 원수"
+        ],
+        "en": [
+          "Marshal Foch",
+          "Ferdinand Jean Marie Foch"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ferdinand_Foch"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "2 October 1851 – 20 March 1929",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "2 October 1851 – 20 March 1929"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French general, Marshal of France",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "was a French general, Marshal of France and a member of the Académie Française and Académie des Sciences"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Tarbes, south-western France",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "Early life",
+          "excerpt": "Ferdinand Foch was born in Tarbes, a municipality in the department of Hautes-Pyrénées, in southwestern France, into a modest, devout, middle-class Catholic family."
+        },
+        {
+          "field": "bio",
+          "claim": "Marne 1914, Ninth Army",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "Foch's prestige soared as a result of the victory at the Marne, for which he was widely credited as a chief protagonist while commanding the French Ninth Army."
+        },
+        {
+          "field": "bio",
+          "claim": "cooperated with the British at Ypres and the Somme",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "in which role he was required to cooperate with the British forces at Ypres and the Somme"
+        },
+        {
+          "field": "bio",
+          "claim": "Commander-in-Chief of the Allied Armies 26 March 1918",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "Foch was appointed \"Commander-in-Chief of the Allied Armies\" on 26 March 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "coordinated the Allies, stopped the offensive, counter-attacked",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "He successfully coordinated the French, British and American efforts, deftly handling his strategic reserves. He stopped the German offensive and launched a war-winning counterattack."
+        },
+        {
+          "field": "bio",
+          "claim": "Marshal after the Second Marne",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "He played a decisive role in halting a renewed German advance on Paris in the Second Battle of the Marne, after which he was promoted to Marshal of France."
+        },
+        {
+          "field": "bio",
+          "claim": "accepted the armistice",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "On 11 November 1918, Foch accepted the German request for an armistice."
+        },
+        {
+          "field": "bio",
+          "claim": "Rhine as the western military frontier",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Henceforward the Rhine ought to be the Western military frontier of the German countries."
+        },
+        {
+          "field": "bio",
+          "claim": "Lloyd George and Wilson objected; fifteen-year occupation",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "Paris Peace Conference",
+          "excerpt": "However, the British Prime Minister David Lloyd George and the American President Woodrow Wilson objected to the detachment of the Rhineland from Germany so that the balance of power would not be too much in favour of France, but agreed to Allied military occupation for fifteen years, which Foch thought insufficient to protect France."
+        },
+        {
+          "field": "bio",
+          "claim": "Versailles “a capitulation, a treason”",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "Paris Peace Conference",
+          "excerpt": "Foch considered the Treaty of Versailles to be \"a capitulation, a treason\""
+        },
+        {
+          "field": "bio",
+          "claim": "too lenient on Germany",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "lead",
+          "excerpt": "He considered the Treaty of Versailles too lenient on Germany."
+        },
+        {
+          "field": "bio",
+          "claim": "Marshal of Poland for advice in the Polish–Soviet War",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "Post-war career and legacy",
+          "excerpt": "for his advice during the Polish–Soviet War of 1920, as well as his pressure on Germany during the Greater Poland Uprising, he was awarded the title of Marshal of Poland in 1923"
+        },
+        {
+          "field": "bio",
+          "claim": "died in Paris 1929",
+          "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+          "locator": "Post-war career and legacy",
+          "excerpt": "Foch died of a heart attack, influenza, and pneumonia in Paris on 20 March 1929 at the age of 77."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ferdinand_Foch",
+              "locator": "lead",
+              "claim": "Supreme Allied Commander on the Western Front in 1918",
+              "excerpt": "He distinguished himself as Supreme Allied Commander on the Western Front during the First World War in 1918."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1914",
+          "r": {
+            "ko": "마른 전투 제9군 사령관",
+            "en": "Commander of the Ninth Army at the Marne"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "연합군 총사령관(3월 26일), 프랑스 원수(8월)",
+            "en": "Allied commander-in-chief (26 March); Marshal of France (August)"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "콩피에뉴 휴전",
+            "en": "Armistice at Compiègne"
+          }
+        },
+        {
+          "y": "1923",
+          "r": {
+            "ko": "폴란드 원수",
+            "en": "Marshal of Poland"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "포슈 원수",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Marshal Foch",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "enver-pasha",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "",
+        "en": ""
+      },
+      "familyName": {
+        "ko": "엔베르 파샤",
+        "en": "Enver Pasha"
+      },
+      "nativeName": "İsmail Enver Paşa",
+      "years": "1881–1922",
+      "citizenship": {
+        "code": "turkey"
+      },
+      "nationalOrigin": {
+        "code": "turkey",
+        "label": {
+          "ko": "튀르키예 (아버지 가가우즈계 또는 알바니아계, 어머니 타타르계)",
+          "en": "Turkish (father Gagauz or Albanian, mother Tatar)"
+        }
+      },
+      "epithet": {
+        "ko": "「세 파샤」의 전쟁장관으로 오스만을 참전시키고 아르메니아인 제노사이드를 주도한 군인",
+        "en": "War minister among the Three Pashas who took the Ottomans into the war and was a main perpetrator of the Armenian genocide"
+      },
+      "bio": {
+        "ko": "콘스탄티노플에서 태어나 통일진보위원회에 들어갔고 1908년 청년 튀르크 혁명의 영웅이 되었다. 1913년 쿠데타로 정부를 무너뜨리고 전쟁장관이 되어 탈라트·제말과 「세 파샤」로 제국을 다스렸다. 독일과의 동맹으로 오스만을 1차 세계대전에 끌어들였고, 1914년 12월 사르카미시에서 대군을 잃은 뒤 패배를 아르메니아인 탓으로 돌렸다. 아르메니아인·그리스인·아시리아인 제노사이드의 주요 가해자였다. 패전 뒤 달아나 궐석 사형을 선고받았다. 볼셰비키와 손잡았다가 1921년 중앙아시아에서 바스마치 반란군 편으로 넘어갔고, 1922년 붉은군대와 싸우다 죽었다.",
+        "en": "Born in Constantinople, he joined the Committee of Union and Progress and became a hero of the Young Turk Revolution of 1908. After the 1913 coup he became war minister and ruled the empire with Talat and Djemal as the Three Pashas. He took the Ottomans into the First World War in alliance with Germany, and after losing most of his army at Sarıkamış in December 1914 blamed the defeat on the Armenians. He was a main perpetrator of the Armenian, Greek and Assyrian genocides. After the defeat he fled and was sentenced to death in absentia. He worked with the Bolsheviks, then in 1921 in Central Asia went over to the Basmachi rebels, and was killed fighting the Red Army in 1922."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "붉은군대와 싸우다 전사",
+          "en": "Killed fighting the Red Army"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "이스마일 엔베르",
+          "엔베르 베이"
+        ],
+        "en": [
+          "İsmail Enver",
+          "Ismail Enver",
+          "Enver Bey",
+          "Enver Paşa"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Enver_Pasha"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "23 November 1881 – 4 August 1922",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "23 November 1881 – 4 August 1922"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Ottoman Minister of War 1914–1918",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "served as the Ottoman Empire's Minister of War from 1914 to 1918"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Turkish military officer",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "was a Turkish military officer, revolutionary, and convicted war criminal"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Father Gagauz or Albanian, mother Tatar",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Early life and career",
+          "excerpt": "Enver's father, Ahmed (c. 1860–1947), was either a Gagauz bridge-keeper in Monastir (Bitola), or an Albanian small town public prosecutor in the Balkans. His mother Ayşe Dilara was a Tatar."
+        },
+        {
+          "field": "bio",
+          "claim": "born in Constantinople",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Early life and career",
+          "excerpt": "İsmail Enver was born in Constantinople (Istanbul) on 23 November 1881."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the CUP; Young Turk Revolution leader",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "While stationed in Ottoman Macedonia, Enver joined the Committee of Union and Progress (CUP)"
+        },
+        {
+          "field": "bio",
+          "claim": "hero of the revolution",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "Along with Ahmed Niyazi, Enver was hailed as \"hero of the revolution\"."
+        },
+        {
+          "field": "bio",
+          "claim": "stormed the Sublime Porte in January 1913",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Balkan Wars and 1913 coup",
+          "excerpt": "On 23 January 1913, Enver and CUP leader Mehmed Talaat with a group of fifty Unionists stormed into the Sublime Porte and overthrew the government."
+        },
+        {
+          "field": "bio",
+          "claim": "Three Pashas; genocides",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "Along with Talaat and Djemal, he was one of the Three Pashas that ruled the Ottoman Empire during World War I and one of the principal perpetrators of the Armenian, Greek, and Assyrian genocides."
+        },
+        {
+          "field": "bio",
+          "claim": "alliance with Germany; Ottoman entry into the war",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "He initiated the formation of an alliance with Germany, and was instrumental in the Ottoman entry into World War I."
+        },
+        {
+          "field": "bio",
+          "claim": "Sarikamish; blamed Armenians",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "Enver led a disastrous attack on Russian forces in the Battle of Sarikamish, after which he blamed Armenians for his defeat."
+        },
+        {
+          "field": "bio",
+          "claim": "army froze in the mountains",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Battle of Sarikamish, 1914",
+          "excerpt": "a large portion of the 90,000-strong army froze to death in the Allahüekber Mountains or were killed by the Russians"
+        },
+        {
+          "field": "bio",
+          "claim": "escaped on a German submarine",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Armistice and exile",
+          "excerpt": "he escaped to Odessa by boarding a German submarine from Arnavutköy with seven other leaders of the CUP"
+        },
+        {
+          "field": "bio",
+          "claim": "condemned to death in absentia",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Armistice and exile",
+          "excerpt": "He was tried in absentia in the Turkish Courts-Martial of 1919–20 for crimes of \"plunging the country into war without a legitimate reason, forced deportation of Armenians and leaving the country without permission\" and condemned to death."
+        },
+        {
+          "field": "bio",
+          "claim": "met Bolshevik leaders in Moscow",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Armistice and exile",
+          "excerpt": "He also met with Bolshevik leaders, including Georgy Chicherin, Radek, Grigory Zinoviev and Vladimir Lenin."
+        },
+        {
+          "field": "bio",
+          "claim": "Baku Congress of the Peoples of the East",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Armistice and exile",
+          "excerpt": "Between 1 and 8 September 1920, he was in Baku for the Congress of the Peoples of the East"
+        },
+        {
+          "field": "bio",
+          "claim": "sent to Bukhara, defected to the Basmachi",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Last years",
+          "excerpt": "In November 1921 he was sent by Lenin to Bukhara in the Bukharan People's Soviet Republic to help suppress the Basmachi Revolt against the local pro-Moscow Bolshevik regime. Instead, however, he made secret contacts with some of the rebellion's leaders and, along with a small number of followers, defected to the Basmachi side."
+        },
+        {
+          "field": "bio",
+          "claim": "Red Army attack near Dushanbe, 4 August 1922",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "Last years",
+          "excerpt": "On 4 August 1922, as he allowed his troops to celebrate Eid al-Adha while retaining a guard of 30 men at his headquarters near the village of Ab-i-Derya near Dushanbe, the Red Army Bashkir cavalry brigade under the command of ethnic Armenian Yakov Melkumov (Hakob Melkumian), launched a surprise attack."
+        },
+        {
+          "field": "bio",
+          "claim": "killed in Bukhara fighting the Bolsheviks",
+          "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+          "locator": "lead",
+          "excerpt": "He attempted to realise his pan-Turkic ideals by leading the Basmachi Revolt against the Bolsheviks in Bukhara, where he was killed in 1922."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+              "locator": "lead",
+              "claim": "Ottoman War Minister and de facto commander-in-chief",
+              "excerpt": "As war minister and de facto Commander-in-Chief, Enver was one of the most powerful figures in the Ottoman government."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1908",
+          "r": {
+            "ko": "청년 튀르크 혁명 지도자",
+            "en": "Leader of the Young Turk Revolution"
+          }
+        },
+        {
+          "y": "1913",
+          "r": {
+            "ko": "내각 청사 습격 쿠데타",
+            "en": "Raid on the Sublime Porte"
+          }
+        },
+        {
+          "y": "1914–1918",
+          "r": {
+            "ko": "오스만 전쟁장관",
+            "en": "Ottoman War Minister"
+          }
+        },
+        {
+          "y": "1914",
+          "r": {
+            "ko": "사르카미시 전투 패배",
+            "en": "Defeat at Sarıkamış"
+          }
+        },
+        {
+          "y": "1919–1920",
+          "r": {
+            "ko": "궐석 사형 선고",
+            "en": "Sentenced to death in absentia"
+          }
+        },
+        {
+          "y": "1921–1922",
+          "r": {
+            "ko": "바스마치 반란 가담",
+            "en": "Joined the Basmachi revolt"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "Enver Paşa",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "İsmail Enver",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    }
+  ]
+}

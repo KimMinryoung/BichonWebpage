@@ -15,16 +15,16 @@
 
 | 본문 표기 | 영어 | 사건 | 제안 역할 / 진영 |
 | --- | --- | --- | --- |
-| 우드로 윌슨 | Woodrow Wilson | 1차 세계대전, 여파 | leader / entente; 여파 leader |
-| 데이비드 로이드 조지 | David Lloyd George | 여파 | leader |
-| 비토리오 에마누엘레 오를란도 | Vittorio Emanuele Orlando | 여파 | leader |
-| 무스타파 케말 | Mustafa Kemal | 1차 세계대전, 여파 | executor / central-powers; 여파 leader |
-| 에리히 루덴도르프 | Erich Ludendorff | 1차 세계대전, 여파 | leader / central-powers |
-| 빌헬름 2세 | Wilhelm II | 1차 세계대전 | leader / central-powers |
-| (페르디낭) 포슈 | Ferdinand Foch | 1차 세계대전, 여파 | leader / entente |
-| 엔베르 파샤 | Enver Pasha | 1차 세계대전 | leader / central-powers |
-| 카를 레너 | Karl Renner | 여파 | leader |
-| 구스타프 슈트레제만 | Gustav Stresemann | 여파 | leader |
+| ✓ 우드로 윌슨 | Woodrow Wilson | 1차 세계대전, 여파 | leader / entente; 여파 leader |
+| ✓ 데이비드 로이드 조지 | David Lloyd George | 여파 | leader |
+| ✓ 비토리오 에마누엘레 오를란도 | Vittorio Emanuele Orlando | 여파 | leader |
+| ✓ 무스타파 케말 | Mustafa Kemal | 1차 세계대전, 여파 | executor / central-powers; 여파 leader |
+| ✓ 에리히 루덴도르프 | Erich Ludendorff | 1차 세계대전, 여파 | leader / central-powers |
+| ✓ 빌헬름 2세 | Wilhelm II | 1차 세계대전 | leader / central-powers |
+| ✓ (페르디낭) 포슈 | Ferdinand Foch | 1차 세계대전, 여파 | leader / entente |
+| ✓ 엔베르 파샤 | Enver Pasha | 1차 세계대전 | leader / central-powers |
+| ✓ 카를 레너 | Karl Renner | 여파 | leader |
+| ✓ 구스타프 슈트레제만 | Gustav Stresemann | 여파 | leader |
 | 루돌프 헤른슈타트 | Rudolf Herrnstadt | 6월 봉기, 1953–56 개요 | participant / regime |
 | 빌헬름 차이서 | Wilhelm Zaisser | 6월 봉기, 1953–56 개요 | executor / regime |
 | 막스 페히너 | Max Fechner | 동독 1945–49, 6월 봉기 | participant / regime |
@@ -46,4 +46,10 @@
 
 ## 진행
 
-- 2026-10-02 큐 작성. 아직 처리한 사람 없음.
+- 2026-10-02 큐 작성.
+- 2026-10-02 1묶음(✓ 표시 10명, 1차 세계대전·여파 지도자): 카드는 Admin upsert로 운영에 등록했다(edit 21108–21117). 정본은 `scripts/content/wwi-east-germany-people-20261002/`(`people-wwi-a.js`·`people-wwi-b.js` 카드, `relations.js` 사건 관계, `node build.js` → `../wwi-east-germany-people-20261002{,-people}.json`). 근거 인용 203개를 받아 온 영어 위키백과 본문과 글자 그대로 대조했다. 편집 계약 한도(별칭 설명 ko 60·en 140자, 소개 ko 380·en 900자)에 맞춰 소개를 줄였다.
+  - 이름: 빌헬름 2세·엔베르 파샤는 카를 1세처럼 이름 전체를 family에 둔다. 무스타파 케말 아타튀르크는 given 「무스타파 케말」에 linkExpressions 「무스타파 케말」/Mustafa Kemal·「케말 아타튀르크」, 맨 「케말」은 넣지 않았다. 빌헬름 2세 별칭에 맨 「카이저」를 넣지 않았다(야코프 카이저 대기). 엔베르는 citizenship·origin `turkey`(오스만 코드 없음), 출신 label에 아버지 가가우즈계 또는 알바니아계·어머니 타타르계를 남겼다.
+  - 관계: 1차 세계대전 6행(빌헬름 2세·루덴도르프·엔베르 leader/central-powers, 윌슨·포슈 leader/entente, 케말 executor/central-powers; sort_order 1로 힌덴부르크 옆), 여파 8행(4거두 셋·케말·레너·슈트레제만 leader, 포슈·루덴도르프 participant). 사람 링크 표현은 링크 검토 대상(term·event·doc)이 아니어서 검토 파일은 없다.
+  - 입장 모음: 마이그레이션 249(자유주의·공화주의 4, 비볼셰비키 사회주의 레너, 왕정 빌헬름 2세, 반혁명 루덴도르프, 민족주의 케말·엔베르; 포슈는 비움).
+  - **남은 일:** 사건 관계 반영(컨테이너에 스펙 복사 → `apply-history-events.js --production` dry run에서 두 사건 unchanged·missingPeople 확인 → `--apply --backup=/tmp/wwip/before-20261002.json`), `scripts/apply-migration scripts/migrations/249_commulingo_wwi_people_positions.sql`, 인물 감사 4종과 사건 페이지 오링크 확인. 이 세션의 권한 분류기가 컨테이너 쓰기·읽기를 막아 하지 못했다.
+  - 범위 밖 발견: 운영 DB에서 클레망소(`georges-clemenceau`)는 world-war-i 사건에 연결되어 있지 않다(여파에만 있음).

@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+// People named in the First World War, aftermath, East Germany and 1953–1956
+// events without a card (queue: dev_docs/commulingo-wwi-east-germany-people-queue-20261002.md).
+// Cards live in people-*.js, event links in relations.js. `node build.js` writes
+//   ../wwi-east-germany-people-20261002-people.json  scripts/commulingo-people-upsert
+//   ../wwi-east-germany-people-20261002.json         scripts/apply-history-events.js
+// The event rows are the stored ones (status unchanged); only the new links are added.
+const fs = require('fs');
+const path = require('path');
+const { validate } = require('../../apply-history-events');
+
+const BATCH = 'wwi-east-germany-people-20261002';
+const people = ['wwi-a', 'wwi-b'].flatMap(slug => require(`./people-${slug}`));
+const relations = require('./relations');
+
+const seen = new Set();
+for (const { id } of people) {
+    if (seen.has(id)) throw new Error(`duplicate person ${id}`);
+    seen.add(id);
+}
+
+const { event: war } = require('../world-war-i-20261002/event-war');
+const { event: aftermath } = require('../world-war-i-20261002/event-aftermath');
+// Migration 247 added the aftermath overview to world-war-i's related list.
+war.fields.relations = { related: [...require('../world-war-i-20261002/before-world-war-i.json').relations.related, 'world-war-i-aftermath-1918-1923'] };
+// New links sit after the stored ones, except on world-war-i, whose 263 stored
+// links put the leaders first (Hindenburg is 1): the new leaders join them there.
+const firstSort = { 'world-war-i': 1, 'world-war-i-aftermath-1918-1923': aftermath.people.length };
+const events = [war, aftermath].map(e => ({
+    ...e, expected: null,
+    people: relations[e.id].map(([person_id, relation_kind, relation_ko, relation_en, note_ko, note_en, side], i) => {
+        if (!seen.has(person_id)) throw new Error(`${e.id}: ${person_id} has no card in this batch`);
+        return { person_id, sort_order: firstSort[e.id] + (e.id === 'world-war-i' ? 0 : i), relation_kind, relation_ko, relation_en, note_ko, note_en, ...(side ? { side } : {}) };
+    }),
+}));
+validate({ id: BATCH, events });
+
+const out = name => path.join(__dirname, '..', name);
+fs.writeFileSync(out(`${BATCH}.json`), JSON.stringify({ id: BATCH, events }, null, 2) + '\n');
+fs.writeFileSync(out(`${BATCH}-people.json`), JSON.stringify({ changedBy: BATCH, people }, null, 2) + '\n');
+for (const e of events) console.log(`event ${e.id}: ${e.people.length} new links`);
+console.log(`${people.length} people, ${people.reduce((n, p) => n + p.evidence.length + p.activities.length, 0)} cited excerpts`);
