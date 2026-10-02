@@ -3736,7 +3736,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* The head paragraphs are the 개요, read as prose rather than card text, so
    they take the long-form scale below instead of the 1.65 card leading. The
    question line keeps its headline size. */
-.commu-event-head > p { font-size: .875rem; line-height: var(--leading-relaxed); }
+.commu-event-head > p { font-size: .96rem; line-height: var(--leading-relaxed); }
 .commu-event-head > p.commu-event-question { font-size: 1.05rem; line-height: var(--leading-normal); }
 /* ── Event location map (event-map-svg.js) ──
    Coastline-only SVG under the event head. Land/sea both derive from the

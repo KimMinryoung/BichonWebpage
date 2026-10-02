@@ -26,7 +26,7 @@ for (const [name, css] of Object.entries(generated)) {
     assert.deepEqual(actual, expected[name]);
 }
 assert.doesNotMatch(generated.core, /\.chat-|\.posts-table|\.form-group|\.post-body|\.home-hero/);
-assert.equal((generated.core.match(/@font-face/g) || []).length, 7);
+assert.equal((generated.core.match(/@font-face/g) || []).length, 9);
 const home = buildListCss('home');
 assert.equal(fs.readFileSync('public/css/commulingo-home.css', 'utf8'), home);
 assert.match(home, /\.commu-updates\[open\]/);
