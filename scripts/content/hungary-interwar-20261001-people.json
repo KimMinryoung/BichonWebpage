@@ -11180,6 +11180,2660 @@
           }
         }
       ]
+    },
+    {
+      "id": "edmund-veesenmayer",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "에드문트",
+        "en": "Edmund"
+      },
+      "familyName": {
+        "ko": "페젠마이어",
+        "en": "Veesenmayer"
+      },
+      "nativeName": "Edmund Veesenmayer",
+      "years": "1904–1977",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "1944년 헝가리 주재 제국 전권대표로서 헝가리 정부에 유대인 이송을 압박한 친위대 외교관",
+        "en": "SS diplomat who, as Reich plenipotentiary in Hungary in 1944, pressed the Hungarian government to deport its Jews to Auschwitz"
+      },
+      "bio": {
+        "ko": "바트키싱겐에서 교사의 아들로 태어나 뮌헨에서 정치학을 공부해 1928년 박사 학위를 받았다. 1932년 나치당에 들어갔고, 오스트리아 슈슈니크 총리의 사임 공작, 1939년 체코슬로바키아 해체, 1941년 크로아티아 독립국 선포에 관여했다. 1944년 3월 독일의 헝가리 점령과 함께 친위대 여단지도자로서 헝가리 주재 제국 전권대표가 되어 게슈타포 등 국방군 밖의 점령 기관을 지휘했고, 헝가리 정부에 유대인의 아우슈비츠 이송을 압박했다. 6월에는 리벤트로프에게 약 34만 명의 유대인이 제국으로 넘겨졌다고 보고했고, 10월에는 화살십자당의 권력 장악을 도왔다. 1949년 빌헬름가 재판에서 징역 20년을 선고받았으나 1951년 풀려났고, 1977년 다름슈타트에서 숨졌다.",
+        "en": "Born in Bad Kissingen, the son of a schoolteacher, he studied political science in Munich and took his doctorate in 1928. He joined the Nazi Party in 1932 and took part in forcing the resignation of Austria’s Chancellor Schuschnigg, the dismemberment of Czechoslovakia in 1939 and the proclamation of the Independent State of Croatia in 1941. Promoted to SS-Brigadeführer, he became Reich plenipotentiary in Hungary when Germany occupied it in March 1944, with authority over all occupying forces except the Wehrmacht, chiefly the Gestapo, and pressed the Hungarian government to deport its Jews to Auschwitz. In June he cabled Ribbentrop that some 340,000 Jews had been delivered to the Reich, and in October he helped the Arrow Cross take power. Sentenced to 20 years at the Ministries Trial in 1949, he was released in 1951 and died in Darmstadt in 1977."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "베젠마이어"
+        ],
+        "en": [
+          "Edmund Veesenmayer"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+        "https://hu.wikipedia.org/wiki/Edmund_Veesenmayer"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1904–1977",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "lead",
+          "excerpt": "12 November 1904 – 24 December 1977"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German SS functionary",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "lead",
+          "excerpt": "was a high-ranking German SS functionary and Holocaust perpetrator during the Nazi era"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German economist and diplomat of the Third Reich",
+          "source": "https://hu.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "bevezető",
+          "excerpt": "vezető német közgazdász, a Harmadik Birodalom diplomatája"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "son of a schoolteacher from Oberstaufen",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Early life",
+          "excerpt": "Veesenmayer was the son of school teacher Franz Xaver Veesenmayer from Oberstaufen in Kempten (Allgäu)."
+        },
+        {
+          "field": "bio",
+          "claim": "born in Bad Kissingen",
+          "source": "https://hu.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "bevezető",
+          "excerpt": "Edmund Veesenmayer (Bad Kissingen, 1904. november 12."
+        },
+        {
+          "field": "bio",
+          "claim": "son of a schoolteacher",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Early life",
+          "excerpt": "Veesenmayer was the son of school teacher Franz Xaver Veesenmayer"
+        },
+        {
+          "field": "bio",
+          "claim": "doctorate in political science in Munich 1928",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Early life",
+          "excerpt": "From 1923 to 1926 he studied political science in Munich, where he received a doctorate in political science in 1928."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the Nazi Party in 1932",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "SS career",
+          "excerpt": "Veesenmayer joined the Nazi Party (NSDAP) in November 1932"
+        },
+        {
+          "field": "bio",
+          "claim": "Schuschnigg’s resignation",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "SS career",
+          "excerpt": "forcing the resignation of Chancellor Kurt Schuschnigg"
+        },
+        {
+          "field": "bio",
+          "claim": "dismembering Czechoslovakia 1939",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "SS career",
+          "excerpt": "His next job was dismembering Czechoslovakia and making Jozef Tiso's Slovakia subservient to Nazi Germany in March 1939."
+        },
+        {
+          "field": "bio",
+          "claim": "proclamation of the Independent State of Croatia 1941",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "SS career",
+          "excerpt": "Here, he arranged (with Ustashe leader Slavko Kvaternik) the proclamation of the Independent State of Croatia"
+        },
+        {
+          "field": "bio",
+          "claim": "Brigadeführer and Reich plenipotentiary in Hungary",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "SS career",
+          "excerpt": "On 15 March 1944, he was promoted to SS-Brigadeführer and became Reich plenipotentiary after the German occupation of Hungary."
+        },
+        {
+          "field": "bio",
+          "claim": "authority over occupying forces except the Wehrmacht, chiefly the Gestapo",
+          "source": "https://hu.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Élete",
+          "excerpt": "a Wehrmachton kívül minden megszállóerő (főleg a Gestapo) fölött rendelkezési joga volt"
+        },
+        {
+          "field": "bio",
+          "claim": "pressured Hungary to deport Jews to Auschwitz",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "lead",
+          "excerpt": "Installed as the German plenipotentiary to Hungary in March 1944, he pressured the Hungarian government to cooperate in deporting Hungarian Jews to the Auschwitz death camp."
+        },
+        {
+          "field": "bio",
+          "claim": "340,000 reported to Ribbentrop",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "SS career",
+          "excerpt": "On 15 June 1944, Veesenmayer told Joachim von Ribbentrop in a telegram that some 340,000 Jews had been delivered to the Reich."
+        },
+        {
+          "field": "bio",
+          "claim": "helped the Arrow Cross take power",
+          "source": "https://hu.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Élete",
+          "excerpt": "A Szálasi-puccs során segítséget nyújtott a nyilas hatalomátvételhez"
+        },
+        {
+          "field": "bio",
+          "claim": "20 years at the Ministries Trial 1949",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Trial and conviction",
+          "excerpt": "In the Ministries Trial in 1949, Veesenmayer received a sentence of 20 years' imprisonment"
+        },
+        {
+          "field": "bio",
+          "claim": "released 1951",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Trial and conviction",
+          "excerpt": "Veesenmayer was released on 16 December 1951."
+        },
+        {
+          "field": "bio",
+          "claim": "died in Darmstadt 1977",
+          "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+          "locator": "Trial and conviction",
+          "excerpt": "At the end of his life, he lived in Darmstadt, where he died in 1977."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1941,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+              "locator": "SS career",
+              "claim": "1944년 헝가리 주재 제국 전권대표",
+              "excerpt": "On 15 March 1944, he was promoted to SS-Brigadeführer and became Reich plenipotentiary after the German occupation of Hungary."
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "german-nazi",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1932,
+          "endYear": 1945,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Edmund_Veesenmayer",
+              "locator": "SS career",
+              "claim": "나치당원·친위대원",
+              "excerpt": "Veesenmayer joined the Nazi Party (NSDAP) in November 1932"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1928",
+          "r": {
+            "ko": "뮌헨에서 정치학 박사",
+            "en": "Doctorate in political science, Munich"
+          }
+        },
+        {
+          "y": "1932",
+          "r": {
+            "ko": "나치당 입당",
+            "en": "Joined the Nazi Party"
+          }
+        },
+        {
+          "y": "1939",
+          "r": {
+            "ko": "체코슬로바키아 해체 공작",
+            "en": "Worked on dismembering Czechoslovakia"
+          }
+        },
+        {
+          "y": "1941",
+          "r": {
+            "ko": "자그레브에서 크로아티아 독립국 선포 주선",
+            "en": "Arranged the proclamation of the Independent State of Croatia in Zagreb"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "헝가리 주재 제국 전권대표",
+            "en": "Reich plenipotentiary in Hungary"
+          }
+        },
+        {
+          "y": "1949–1951",
+          "r": {
+            "ko": "빌헬름가 재판 징역 20년, 1951년 석방",
+            "en": "Sentenced to 20 years at the Ministries Trial; released 1951"
+          }
+        }
+      ]
+    },
+    {
+      "id": "laszlo-endre",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "라슬로",
+        "en": "László"
+      },
+      "familyName": {
+        "ko": "엔드레",
+        "en": "Endre"
+      },
+      "nativeName": "Endre László",
+      "years": "1895–1946",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1944년 내무부 차관으로 버키 라슬로와 함께 헝가리 유대인의 게토 수용과 아우슈비츠 이송을 맡은 극우 관료",
+        "en": "Interior Ministry state secretary who in 1944 ran the ghettoisation and deportation of Hungary’s Jews with László Baky"
+      },
+      "bio": {
+        "ko": "어보니의 부유한 집안에서 태어나 제1차 세계대전에 경기병 장교로 싸웠고, 평의회 공화국이 무너진 뒤 MOVE 등 반혁명 단체에 가담해 잔혹함으로 이름났다. 1923년부터 15년 동안 괴될뢰 수석 군수, 1938년 페스트주 부지사를 지내며 반유대법이 미흡하다며 해수욕장 출입 금지 등을 독자적으로 가했다. 1944년 독일 점령 뒤 여로시 언도르 밑에서 내무부 차관이 되어 유대인 게토 수용과 이송에 폭넓은 권한을 받았고, 버키 라슬로와 함께 아이히만을 도와 5~7월 40만 명이 넘는 헝가리 유대인을 이송했다. 9월 해임되었으나 화살십자당 집권 뒤 작전 지역 민정 담당 정부위원이 되었다. 1945년 달아났다가 미군에 붙잡혀 넘겨졌고, 1946년 사형 선고를 받아 교수형을 당했다.",
+        "en": "Born into a wealthy Abony family, he served as a hussar officer in the First World War and after the fall of the Soviet Republic joined counter-revolutionary groups such as MOVE, noted for his extreme cruelty. Chief magistrate of Gödöllő from 1923 and deputy lord-lieutenant of Pest county from 1938, he called the anti-Jewish laws too mild and imposed his own restrictions, such as banning Jews from beaches. After the German occupation in 1944 he became state secretary under Interior Minister Andor Jaross with far-reaching powers to ghettoise and deport the Jews, and with László Baky helped Eichmann deport over 400,000 Hungarian Jews between May and July. Removed in September, he returned under the Arrow Cross as commissioner for civil administration in the operational areas. Captured by US forces after fleeing in 1945, he was handed back, sentenced to death and hanged in 1946."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형(교수형)",
+          "en": "Executed by hanging"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "László Endre",
+          "Laszlo Endre",
+          "Endre László"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+        "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1895–1946",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "lead",
+          "excerpt": "January 1, 1895 – March 29, 1946"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian right-wing politician",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "lead",
+          "excerpt": "was a Hungarian right-wing politician and collaborator with the Nazis during the Second World War"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian politician born in Abony",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "bevezető",
+          "excerpt": "fajvédő magyar politikus, belügyi államtitkár"
+        },
+        {
+          "field": "bio",
+          "claim": "born into a wealthy Abony family",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Early years",
+          "excerpt": "Born into a wealthy Abony family"
+        },
+        {
+          "field": "bio",
+          "claim": "hussar officer from 1915",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "Az első világháborúban 1915-től huszártisztként vett részt"
+        },
+        {
+          "field": "bio",
+          "claim": "joined counter-revolutionary organisations after the Soviet Republic",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "A Tanácsköztársaság bukása után részt vett ellenforradalmi szervezetek"
+        },
+        {
+          "field": "bio",
+          "claim": "MOVE, extreme cruelty",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Early years",
+          "excerpt": "He became involved in the right wing nationalist society Magyar Országos Véderő Egyesület (MOVE) during which he became noted for his extreme cruelty"
+        },
+        {
+          "field": "bio",
+          "claim": "chief magistrate of Gödöllő for 15 years from 1923",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "1923-ban Gödöllőn kinevezték főszolgabíróvá; e tisztséget 15 éven át töltötte be."
+        },
+        {
+          "field": "bio",
+          "claim": "deputy lord-lieutenant of Pest county 1938",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "1938-ban, miután Pest-Pilis-Solt-Kiskun vármegye alispánjává választották"
+        },
+        {
+          "field": "bio",
+          "claim": "own anti-Jewish restrictions",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Early years",
+          "excerpt": "Endre argued that the Hungarian government's anti-Jewish laws were not harsh enough, and on his own initiative he imposed further restrictions on Jewish life, such as banning Jews from beaches and spas"
+        },
+        {
+          "field": "bio",
+          "claim": "state secretary under Jaross",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Ministry of the Interior",
+          "excerpt": "was appointed state secretary in the Ministry of the Interior in the Nazi-controlled government under Interior Minister Andor Jaross"
+        },
+        {
+          "field": "bio",
+          "claim": "powers to ghettoise and deport",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Ministry of the Interior",
+          "excerpt": "He was given far-reaching powers to ghettoize and deport the country's Jewish population."
+        },
+        {
+          "field": "bio",
+          "claim": "more than 400,000 deported May–July 1944",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Ministry of the Interior",
+          "excerpt": "Along with László Baky, Endre and Jaross eagerly helped Adolf Eichmann amass and deport more than 400,000 Hungarian Jews between May and July 1944."
+        },
+        {
+          "field": "bio",
+          "claim": "removed in September",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Removal and return",
+          "excerpt": "Endre was removed from power in September of the same year"
+        },
+        {
+          "field": "bio",
+          "claim": "commissioner for civil administration in the operational areas",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "1944. október 29-én Szálasi a hadműveleti területek polgári közigazgatásának kormánybiztosává nevezte ki"
+        },
+        {
+          "field": "bio",
+          "claim": "fled, captured by US forces, extradited",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "1945 márciusában Németországba menekült, ott az amerikai csapatok fogságába esett, és a magyar állam kérésére kiadták."
+        },
+        {
+          "field": "bio",
+          "claim": "sentenced to death by the People’s Tribunal",
+          "source": "https://hu.wikipedia.org/wiki/Endre_L%C3%A1szl%C3%B3_(politikus)",
+          "locator": "Élete, pályafutása",
+          "excerpt": "A Népbíróság mint egyik háborús főbűnöst kötél általi halálra ítélte"
+        },
+        {
+          "field": "bio",
+          "claim": "hanged 1946",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+          "locator": "Trial and execution",
+          "excerpt": "Endre was hanged by way of the Austro-Hungarian pole method on March 29, 1946."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Endre",
+              "locator": "Ministry of the Interior",
+              "claim": "1944년 내무부 행정 차관",
+              "excerpt": "was appointed state secretary in the Ministry of the Interior in the Nazi-controlled government under Interior Minister Andor Jaross"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1915–1918",
+          "r": {
+            "ko": "경기병 장교",
+            "en": "Hussar officer"
+          }
+        },
+        {
+          "y": "1919–1921",
+          "r": {
+            "ko": "반혁명 단체 활동",
+            "en": "Active in counter-revolutionary groups"
+          }
+        },
+        {
+          "y": "1923–1938",
+          "r": {
+            "ko": "괴될뢰 수석 군수",
+            "en": "Chief magistrate of Gödöllő"
+          }
+        },
+        {
+          "y": "1938–1944",
+          "r": {
+            "ko": "페스트주 부지사",
+            "en": "Deputy lord-lieutenant of Pest county"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "내무부 행정 차관",
+            "en": "Administrative state secretary, Interior Ministry"
+          }
+        },
+        {
+          "y": "1944–1945",
+          "r": {
+            "ko": "작전 지역 민정 담당 정부위원",
+            "en": "Commissioner for civil administration in the operational areas"
+          }
+        },
+        {
+          "y": "1946",
+          "r": {
+            "ko": "인민재판소 사형 선고, 처형",
+            "en": "Sentenced by the People’s Tribunal and executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "laszlo-baky",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "라슬로",
+        "en": "László"
+      },
+      "familyName": {
+        "ko": "버키",
+        "en": "Baky"
+      },
+      "nativeName": "Baky László",
+      "years": "1898–1946",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "헌병대 출신의 국민사회주의자로, 1944년 내무부 차관으로서 엔드레 라슬로와 함께 유대인 이송을 맡은 인물",
+        "en": "Gendarmerie officer turned National Socialist who as state secretary for the interior in 1944 ran the deportation of Jews with László Endre"
+      },
+      "bio": {
+        "ko": "부다페스트에서 태어나 사관학교를 나와 제1차 세계대전에 장교로 싸웠고, 1919년 세게드에서 폭력적인 반혁명 활동으로 이름을 얻은 뒤 헌병대 지도자로 떠올랐다. 1938년 헌병 소장으로 물러나 헝가리 국민사회주의당에 들어갔고, 1939년 의원이 되었으며 독일 자금의 신문 『머저르샤그』 편집인이 되었다. 1944년 독일 점령 뒤 내무부 정무 차관이 되어 엔드레 라슬로와 함께 유대인 이송을 맡았고, 4월 4일 아이히만 특무대와의 회의를 주재해 유대인 재산을 빼앗고 도시 게토로 옮긴 뒤 독일로 이송하기로 정했다. 여름에 해임되고 반호르티 쿠데타 모의로 체포되었으나 화살십자당 집권 뒤 국가보안국장이 되었다. 1945년 오스트리아에서 붙잡혀 넘겨졌고, 1946년 교수형을 당했다.",
+        "en": "Born in Budapest, a military academy graduate and First World War officer, he made his name in Szeged in 1919 with violent counter-revolutionary work and rose to be one of the Gendarmerie’s leading figures. Retiring in 1938 as a major-general, he joined the Hungarian National Socialist Party, entered parliament in 1939 and edited the German-funded Magyarság. After the German occupation in 1944 he became political state secretary for the interior and, with László Endre, took charge of deporting the Jews; on 4 April he chaired a meeting with Eichmann’s officers that agreed to seize Jews’ possessions and move them into urban ghettos before deportation to Germany. Removed in the summer and arrested for plotting a coup against Horthy, he headed the National Security Office under the Arrow Cross. Arrested in Austria in 1945 and returned, he was hanged in 1946."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형(교수형)",
+          "en": "Executed by hanging"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "László Baky",
+          "Laszlo Baky",
+          "Baky László"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+        "https://hu.wikipedia.org/wiki/Baky_L%C3%A1szl%C3%B3"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1898–1946",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "13 September 1898 – 29 March 1946"
+        },
+        {
+          "field": "citizenship",
+          "claim": "leading member of the Hungarian Nazi movement",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "was a leading member of the Hungarian Nazi movement"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Hungarian far-right politician",
+          "source": "https://hu.wikipedia.org/wiki/Baky_L%C3%A1szl%C3%B3",
+          "locator": "bevezető",
+          "excerpt": "szélsőjobboldali magyar politikus a két világháború között"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Budapest",
+          "source": "https://hu.wikipedia.org/wiki/Baky_L%C3%A1szl%C3%B3",
+          "locator": "bevezető",
+          "excerpt": "Baky László (Budapest, 1898. szeptember 13."
+        },
+        {
+          "field": "bio",
+          "claim": "officer in World War I",
+          "source": "https://hu.wikipedia.org/wiki/Baky_L%C3%A1szl%C3%B3",
+          "locator": "Élete",
+          "excerpt": "Katonatisztként vett részt az első világháború harcaiban"
+        },
+        {
+          "field": "bio",
+          "claim": "academy graduate, Szeged 1919, gendarmerie leader",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "A military academy graduate, he came to prominence in Szeged in 1919 for his violent counterrevolutionary work and rose through the ranks to become one of the leading figures in the Gendarmerie."
+        },
+        {
+          "field": "bio",
+          "claim": "left as major-general in 1938 for the National Socialist Party",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "he finally left the gendarmes in 1938 (as a major-general) to join the Hungarian National Socialist Party"
+        },
+        {
+          "field": "bio",
+          "claim": "deputy 1939",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "He was elected as a deputy in 1939"
+        },
+        {
+          "field": "bio",
+          "claim": "editor of Magyarság",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "he was appointed editor of the German-funded newspaper Magyarság"
+        },
+        {
+          "field": "bio",
+          "claim": "state secretary under Jaross",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "Baky was elevated to state secretary in the Ministry of the Interior, under Andor Jaross."
+        },
+        {
+          "field": "bio",
+          "claim": "political state secretary",
+          "source": "https://hu.wikipedia.org/wiki/Baky_L%C3%A1szl%C3%B3",
+          "locator": "Élete",
+          "excerpt": "1944-ben a Belügyminisztérium politikai államtitkára lett."
+        },
+        {
+          "field": "bio",
+          "claim": "responsibility for deportations with Endre",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "Along with his fellow state secretary, László Endre, Baky eagerly accepted responsibility for deporting the country's Jews to the extermination camps."
+        },
+        {
+          "field": "bio",
+          "claim": "chaired the meeting of 4 April",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "On 4 April he chaired a meeting attended by senior members of Adolf Eichmann's commando unit"
+        },
+        {
+          "field": "bio",
+          "claim": "possessions seized, ghettos, deportation",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "in which it was agreed that Jews, having first had their possessions seized, would be moved into urban ghettos before deportation to Germany"
+        },
+        {
+          "field": "bio",
+          "claim": "removed and arrested for a coup plot",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "Baky was removed from his positions during the summer of 1944 and was then arrested after conspiring, unsuccessfully, to lead a coup against Miklós Horthy"
+        },
+        {
+          "field": "bio",
+          "claim": "head of the National Security Office",
+          "source": "https://hu.wikipedia.org/wiki/Baky_L%C3%A1szl%C3%B3",
+          "locator": "Élete",
+          "excerpt": "de a nyilas hatalomátvételt követően a Nemzetbiztonsági Iroda vezetője lett"
+        },
+        {
+          "field": "bio",
+          "claim": "fled, arrested in Austria",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "He fled the country in 1945 but was arrested in Austria and returned to Budapest."
+        },
+        {
+          "field": "bio",
+          "claim": "sentenced to death",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "Baky, Endre and Jaross were all tried, found guilty of crimes against the state and sentenced to death"
+        },
+        {
+          "field": "bio",
+          "claim": "hanged 1946",
+          "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+          "locator": "lead",
+          "excerpt": "Baky was hanged by the Austro-Hungarian pole method on 29 March 1946."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1944,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+              "locator": "lead",
+              "claim": "1944년 내무부 정무 차관",
+              "excerpt": "Baky was elevated to state secretary in the Ministry of the Interior, under Andor Jaross."
+            }
+          ]
+        },
+        {
+          "functionId": "security",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1938,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+              "locator": "lead",
+              "claim": "헌병대 지도자",
+              "excerpt": "A military academy graduate, he came to prominence in Szeged in 1919 for his violent counterrevolutionary work and rose through the ranks to become one of the leading figures in the Gendarmerie."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1939,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Baky",
+              "locator": "lead",
+              "claim": "1939년 의원 당선",
+              "excerpt": "He was elected as a deputy in 1939"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1914–1918",
+          "r": {
+            "ko": "제1차 세계대전 장교",
+            "en": "Officer in the First World War"
+          }
+        },
+        {
+          "y": "1919–1938",
+          "r": {
+            "ko": "헌병 장교, 소장으로 퇴역",
+            "en": "Gendarmerie officer, retired as major-general"
+          }
+        },
+        {
+          "y": "1939–1944",
+          "r": {
+            "ko": "국회의원, 『머저르샤그』 편집인",
+            "en": "Member of parliament; editor of Magyarság"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "내무부 정무 차관",
+            "en": "Political state secretary, Interior Ministry"
+          }
+        },
+        {
+          "y": "1944–1945",
+          "r": {
+            "ko": "국가보안국장",
+            "en": "Head of the National Security Office"
+          }
+        },
+        {
+          "y": "1946",
+          "r": {
+            "ko": "인민재판소 사형 선고, 처형",
+            "en": "Sentenced by the People’s Tribunal and executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "andor-jaross",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "언도르",
+        "en": "Andor"
+      },
+      "familyName": {
+        "ko": "여로시",
+        "en": "Jaross"
+      },
+      "nativeName": "Jaross Andor",
+      "years": "1896–1946",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "체코슬로바키아의 헝가리계 정치인에서 1944년 스토여이 내각의 내무장관이 되어 유대인 이송을 조직한 인물",
+        "en": "Hungarian minority leader in Czechoslovakia who, as interior minister in Sztójay’s cabinet in 1944, organised the deportation of Jews"
+      },
+      "bio": {
+        "ko": "헝가리 왕국 코마롬주 코마롬체히(오늘날 슬로바키아 체히)에서 태어나, 1920년대 초 트리아농 조약으로 떨어져 나간 펠비데크의 헝가리계 정치에 뛰어들었다. 1933년 헝가리 국민당 대표, 1935년 프라하 하원 의원이 되었고 통일 헝가리당 서기장을 지냈다. 1938년부터 1940년까지 헝가리 정부의 펠비데크 담당 무임소 장관을 지냈고, 1940년 임레디 벨러와 극우 정당 헝가리 쇄신당을 세웠다. 1944년 독일 점령 뒤 스토여이 내각의 내무장관이 되어 차관 버키 라슬로·엔드레 라슬로와 함께 유대인 이송을 조직했다. 8월 17일 호르티의 압력으로 물러났다. 전후 서쪽으로 달아났다가 미군에 붙잡혀 헝가리로 넘겨졌고, 인민재판소에서 사형을 선고받아 1946년 총살되었다.",
+        "en": "Born in Komáromcsehi, Komárom County (now Čechy, Slovakia), he entered the politics of the Hungarian minority in Upper Hungary, cut off by Trianon, in the early 1920s. He became chairman of the Hungarian National Party in 1933 and a deputy in Prague in 1935, and was general secretary of the United Hungarian Party. From 1938 to 1940 he was Hungary’s minister without portfolio for Upper Hungary, and in 1940 he co-founded the far-right Party of Hungarian Renewal with Béla Imrédy. As interior minister in Sztójay’s cabinet after the German occupation of 1944, he organised the deportation of the Jews with his state secretaries László Baky and László Endre. He resigned under Horthy’s pressure on 17 August. After the war he fled west, was captured by the Americans, handed over to Hungary, sentenced to death by the People’s Tribunal and shot in 1946."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형(총살)",
+          "en": "Executed by firing squad"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Andor Jaross",
+          "Jaross Andor"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andor_Jaross",
+        "https://hu.wikipedia.org/wiki/Jaross_Andor"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1896–1946",
+          "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+          "locator": "lead",
+          "excerpt": "23 May 1896 – 11 April 1946"
+        },
+        {
+          "field": "citizenship",
+          "claim": "politician in Czechoslovakia and later in Hungary",
+          "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+          "locator": "lead",
+          "excerpt": "was an ethnic Hungarian politician most active in interwar Czechoslovakia and later in Hungary during World War II"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "ethnic Hungarian",
+          "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+          "locator": "lead",
+          "excerpt": "was an ethnic Hungarian politician"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Komáromcsehi",
+          "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+          "locator": "lead",
+          "excerpt": "Born in Komáromcsehi, in the Komárom County of the Kingdom of Hungary (present-day Čechy, Slovakia)"
+        },
+        {
+          "field": "bio",
+          "claim": "entered Upper Hungary politics in the early 1920s",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "az 1920-as évek elején kapcsolódott be az anyaországtól a trianoni döntéssel elszakított Felvidék politikai életébe"
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Hungarian National Party 1933",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "1925-ben pedig a Magyar Nemzeti Párt egyik országos alelnöke lett, nyolc évvel később pedig elnöke"
+        },
+        {
+          "field": "bio",
+          "claim": "Prague Chamber of Deputies 1935",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "1935-ben a prágai Képviselőház tagjává vált."
+        },
+        {
+          "field": "bio",
+          "claim": "general secretary of the United Hungarian Party",
+          "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+          "locator": "lead",
+          "excerpt": "he became general secretary of the United Hungarian Party"
+        },
+        {
+          "field": "bio",
+          "claim": "minister without portfolio for Upper Hungary 1938–1940",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "1938-tól 1940-ig a felvidéki ügyek tárcanélküli minisztere volt a mindenkori magyar kormányban"
+        },
+        {
+          "field": "bio",
+          "claim": "founded the Party of Hungarian Renewal with Imrédy 1940",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "1940-ben Imrédy Bélával megalakította a szélsőjobboldali Magyar Megújulás Pártját."
+        },
+        {
+          "field": "bio",
+          "claim": "interior minister in the Sztójay cabinet",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "A Sztójay-kormányban belügyminiszteri tisztséget kapott."
+        },
+        {
+          "field": "bio",
+          "claim": "organised the deportation with Baky and Endre",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "Államtitkárai, Baky László és Endre László segítségével ekkor megszervezte a zsidók deportálását."
+        },
+        {
+          "field": "bio",
+          "claim": "resigned under Horthy’s pressure on 17 August 1944",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "1944. augusztus 17-én Horthy nyomására lemondott tisztségéről."
+        },
+        {
+          "field": "bio",
+          "claim": "fled west, captured by Americans",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "A háború után nyugatra menekült, ahol amerikai fogságba került."
+        },
+        {
+          "field": "bio",
+          "claim": "extradited and sentenced by the People’s Tribunal",
+          "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+          "locator": "Élete",
+          "excerpt": "végül Magyarországnak adták ki, ahol államtitkáraival együtt a népbíróság halálra ítélte, majd kivégezték"
+        },
+        {
+          "field": "bio",
+          "claim": "executed by firing squad",
+          "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+          "locator": "lead",
+          "excerpt": "After the war, Jaross was tried by the Hungarian authorities and executed by firing squad."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1938,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Andor_Jaross",
+              "locator": "lead",
+              "claim": "1944년 스토여이 내각 내무장관",
+              "excerpt": "Jaross was put in charge of the Interior Ministry"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-czechoslovakia",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1935,
+          "endYear": 1938,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/Jaross_Andor",
+              "locator": "Élete",
+              "claim": "프라하 하원 의원",
+              "excerpt": "1935-ben a prágai Képviselőház tagjává vált."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1925–1933",
+          "r": {
+            "ko": "헝가리 국민당 부대표",
+            "en": "Vice-chairman, Hungarian National Party"
+          }
+        },
+        {
+          "y": "1933",
+          "r": {
+            "ko": "헝가리 국민당 대표",
+            "en": "Chairman, Hungarian National Party"
+          }
+        },
+        {
+          "y": "1935–1938",
+          "r": {
+            "ko": "체코슬로바키아 하원 의원",
+            "en": "Member of the Czechoslovak Chamber of Deputies"
+          }
+        },
+        {
+          "y": "1938–1940",
+          "r": {
+            "ko": "펠비데크 담당 무임소 장관",
+            "en": "Minister without portfolio for Upper Hungary"
+          }
+        },
+        {
+          "y": "1940",
+          "r": {
+            "ko": "헝가리 쇄신당 창당",
+            "en": "Co-founded the Party of Hungarian Renewal"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "내무장관",
+            "en": "Interior minister"
+          }
+        },
+        {
+          "y": "1946",
+          "r": {
+            "ko": "인민재판소 사형 선고, 처형",
+            "en": "Sentenced by the People’s Tribunal and executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "geza-lakatos",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "게저",
+        "en": "Géza"
+      },
+      "familyName": {
+        "ko": "러커토시",
+        "en": "Lakatos"
+      },
+      "nativeName": "Lakatos Géza",
+      "years": "1890–1967",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "epithet": {
+        "ko": "1944년 8~10월 총리로서 유대인 이송을 멈추고 휴전을 준비했으나 화살십자당 쿠데타로 물러난 장군",
+        "en": "General who as prime minister in August–October 1944 halted the Jewish deportations and prepared an armistice until the Arrow Cross coup"
+      },
+      "bio": {
+        "ko": "부다페스트에서 태어나 1910년 루도비카 사관학교를 졸업했고, 1919년 헝가리 적군 사령부에서 복무하다 호르티의 국민군에 들어갔다. 1928~1934년 프라하 주재 무관을 지냈고 1943년 제2군, 1944년 4월 제1군 사령관이 되었다. 베틀렌 이슈트반의 천거로 1944년 8월 29일 스토여이의 후임 총리가 되어 은밀히 휴전 준비를 맡았고, 그의 정부는 유대인 이송을 멈추고 책임 차관들을 갈아치웠다. 10월 15일 판처파우스트 작전과 화살십자당 쿠데타로 휴전이 무산되자 밤새 페젠마이어와 협상한 끝에 호르티에게 항복을 권했고, 사임을 강요받고 독일 측에 갇혔다. 전후 기소되지 않았으나 연금과 땅을 빼앗겼고, 1965년 딸이 사는 애들레이드로 건너가 1967년 숨졌다.",
+        "en": "Born in Budapest, he graduated from the Ludovika Academy in 1910 and in 1919 served at the Hungarian Red Army’s headquarters before joining Horthy’s National Army. Military attaché in Prague from 1928 to 1934, he commanded the Second Army from 1943 and the First Army from April 1944. Recommended by István Bethlen, he succeeded Sztójay as prime minister on 29 August 1944 with a secret mandate to prepare an armistice; his government stopped the deportation of Jews and replaced the state secretaries responsible. When Operation Panzerfaust and the Arrow Cross coup thwarted the armistice on 15 October, he negotiated through the night with Veesenmayer, then urged Horthy to surrender; forced to resign, he was imprisoned by the Germans. Never prosecuted, he lost his pension and lands, and in 1965 joined his daughter in Adelaide, where he died in 1967."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "오스트레일리아에서 자연사",
+          "en": "Died in Australia"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Géza Lakatos",
+          "Geza Lakatos",
+          "Lakatos Géza"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+        "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1890–1967",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "lead",
+          "excerpt": "30 April 1890 – 21 May 1967"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian colonel general and prime minister",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "lead",
+          "excerpt": "was a colonel general in the Hungarian Army during World War II who served briefly as Prime Minister of Hungary"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Budapest",
+          "source": "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za",
+          "locator": "bevezető",
+          "excerpt": "Lakatos Géza (Budapest, 1890. április 30."
+        },
+        {
+          "field": "bio",
+          "claim": "Ludovika Academy 1910",
+          "source": "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za",
+          "locator": "Pályájának kezdete",
+          "excerpt": "1910-ben végezte el a Ludovika Akadémiát"
+        },
+        {
+          "field": "bio",
+          "claim": "brigade staff officer in World War I",
+          "source": "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za",
+          "locator": "I. világháború",
+          "excerpt": "az osztrák-magyar hadsereg egyik dandárjának vezérkari tisztjeként szolgált"
+        },
+        {
+          "field": "bio",
+          "claim": "Red Army HQ 1919, then the National Army",
+          "source": "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za",
+          "locator": "I. világháború",
+          "excerpt": "a Magyar Vörös Hadsereg gödöllői főparancsnokságán szolgált, végül beállt Horthy Miklós Nemzeti Hadseregébe"
+        },
+        {
+          "field": "bio",
+          "claim": "military attaché in Prague 1928–1934",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Officer",
+          "excerpt": "He was a military attaché in Prague from 1928 to 1934."
+        },
+        {
+          "field": "bio",
+          "claim": "Second Army 1943",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Officer",
+          "excerpt": "On 5 August 1943 he succeeded vitéz Gusztáv Jány as commander of the Second Army."
+        },
+        {
+          "field": "bio",
+          "claim": "First Army April 1944",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Officer",
+          "excerpt": "On 1 April 1944 he was appointed commander of the 1st Hungarian Army"
+        },
+        {
+          "field": "bio",
+          "claim": "recommended by Bethlen",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Officer",
+          "excerpt": "István Bethlen advised the regent of Hungary, Miklós Horthy, that he should sack the current prime minister, Döme Sztójay, and replace him with Lakatos."
+        },
+        {
+          "field": "bio",
+          "claim": "prime minister 29 August 1944, secretly charged with preparing an armistice",
+          "source": "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za",
+          "locator": "Politikai szerepe",
+          "excerpt": "1944. augusztus 29-én Horthy miniszterelnökké nevezte ki, és titokban megbízta a háborúból való kilépés és a fegyverszünet előkészítésével."
+        },
+        {
+          "field": "bio",
+          "claim": "stopped the deportation of Jews",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Prime Minister",
+          "excerpt": "stopped the deportation of Hungarian Jews"
+        },
+        {
+          "field": "bio",
+          "claim": "replaced the state secretaries responsible",
+          "source": "https://hu.wikipedia.org/wiki/Lakatos_G%C3%A9za",
+          "locator": "Politikai szerepe",
+          "excerpt": "leváltották a zsidók deportálásáért felelős államtitkárokat"
+        },
+        {
+          "field": "bio",
+          "claim": "Operation Panzerfaust",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Prime Minister",
+          "excerpt": "the Germans launched Operation Panzerfaust"
+        },
+        {
+          "field": "bio",
+          "claim": "Arrow Cross coup",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Prime Minister",
+          "excerpt": "The far-right Arrow Cross Party, backed by the Germans, immediately staged a coup and took full control of the government."
+        },
+        {
+          "field": "bio",
+          "claim": "negotiated with Veesenmayer through the night",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Operation Panzerfaust",
+          "excerpt": "Lakatos spent the rest of the night negotiating with Veesenmayer"
+        },
+        {
+          "field": "bio",
+          "claim": "urged Horthy to surrender",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Operation Panzerfaust",
+          "excerpt": "Lakatos told Horthy that he had a written promise that Horthy Jr. would not be executed and that Horthy would be spared if he surrendered."
+        },
+        {
+          "field": "bio",
+          "claim": "forced to resign, imprisoned by the Germans",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Operation Panzerfaust",
+          "excerpt": "Lakatos was forced to resign that day, and was imprisoned by the Germans in Sopronkőhida."
+        },
+        {
+          "field": "bio",
+          "claim": "not prosecuted",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Later Career",
+          "excerpt": "Lakatos was one of the few prime ministers from the Horthy era who were not prosecuted for war crimes under the new regime."
+        },
+        {
+          "field": "bio",
+          "claim": "pension revoked and lands confiscated",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Later Career",
+          "excerpt": "His military pension was revoked by the Communist authorities and his lands were also confiscated in 1949."
+        },
+        {
+          "field": "bio",
+          "claim": "went to Adelaide in 1965, died 1967",
+          "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+          "locator": "Later Career",
+          "excerpt": "Following his wife's death in 1965, the authorities permitted Lakatos to travel to Adelaide where his daughter lived since 1957. He died there two years later, in 1967."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1944,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+              "locator": "lead",
+              "claim": "1944년 8~10월 총리",
+              "excerpt": "served briefly as Prime Minister of Hungary, under regent Miklós Horthy from 29 August 1944, until 15 October 1944"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1910,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+              "locator": "Officer",
+              "claim": "제2군·제1군 사령관",
+              "excerpt": "On 5 August 1943 he succeeded vitéz Gusztáv Jány as commander of the Second Army."
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1928,
+          "endYear": 1934,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos",
+              "locator": "Officer",
+              "claim": "프라하 주재 무관",
+              "excerpt": "He was a military attaché in Prague from 1928 to 1934."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1910",
+          "r": {
+            "ko": "루도비카 사관학교 졸업",
+            "en": "Graduated from the Ludovika Academy"
+          }
+        },
+        {
+          "y": "1915–1918",
+          "r": {
+            "ko": "오스트리아-헝가리군 참모장교",
+            "en": "Staff officer, Austro-Hungarian army"
+          }
+        },
+        {
+          "y": "1928–1934",
+          "r": {
+            "ko": "프라하 주재 무관",
+            "en": "Military attaché in Prague"
+          }
+        },
+        {
+          "y": "1943–1944",
+          "r": {
+            "ko": "제2군 사령관",
+            "en": "Commander, Second Army"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "제1군 사령관",
+            "en": "Commander, First Army"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "총리(8월 29일~10월 15일)",
+            "en": "Prime minister (29 August – 15 October)"
+          }
+        },
+        {
+          "y": "1965–1967",
+          "r": {
+            "ko": "오스트레일리아 애들레이드 거주, 사망",
+            "en": "Lived and died in Adelaide, Australia"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bela-miklos",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "벨러",
+        "en": "Béla"
+      },
+      "familyName": {
+        "ko": "미클로시",
+        "en": "Miklós"
+      },
+      "nativeName": "Miklós Béla",
+      "years": "1890–1948",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (세케이)",
+          "en": "Hungarian (Székely)"
+        }
+      },
+      "epithet": {
+        "ko": "1944년 10월 소련군 쪽으로 넘어가 데브레첸 임시국민정부를 이끈 헝가리 제1군 사령관",
+        "en": "Commander of the Hungarian First Army who went over to the Soviets in October 1944 and headed the provisional government in Debrecen"
+      },
+      "bio": {
+        "ko": "부다페스트의 세케이 가문에서 태어나 1910년 루도비카 사관학교를 마치고 제1차 세계대전에 참전했다. 1933~1936년 베를린 주재 무관, 1942년 10월부터 호르티 섭정의 군사실장을 지냈고 1943년 상급대장이 되었다. 1944년 8월 1일 제1군 사령관이 되어 추축국 이탈을 지지했고, 10월 15일 이탈 시도가 실패하자 이튿날 소련군 쪽으로 넘어가 라디오로 휘하 지휘관들에게 투항을 호소했다. 12월 데브레첸 임시국민의회에서 임시국민정부 총리로 뽑혀 1945년 11월 총선까지 재임했고, 이 정부가 소련과 휴전하고 독일에 선전포고했으며 인민재판소를 세웠다. 1947년 헝가리 독립당 의원이 되었으나 의석을 박탈당해 물러났고 1948년 숨져 군의 예우 없이 묻혔다.",
+        "en": "Born in Budapest into a Székely family, he graduated from the Ludovica Military Academy in 1910 and fought in the First World War. He was military attaché in Berlin from 1933 to 1936, headed Horthy’s military office from October 1942 and became colonel general in 1943. Given command of the First Army on 1 August 1944, he supported leaving the Axis; after the failed attempt of 15 October he went over to the Soviets the next day and urged his commanders by radio to defect. In December the Interim National Assembly in Debrecen elected him prime minister of the Provisional National Government, which made the armistice with the Soviets, declared war on Germany and set up people’s tribunals; he served until the November 1945 elections. Elected for the Hungarian Independence Party in 1947, he lost his seat, withdrew from public life and died in 1948, buried without military honours."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사인 불명 사망",
+          "en": "Died of unknown causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "달노키 미클로시 벨러"
+        ],
+        "en": [
+          "Béla Miklós",
+          "Miklós Béla",
+          "Béla Miklós de Dálnok",
+          "Béla Dálnoki Miklós"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Béla_Miklós",
+        "https://hu.wikipedia.org/wiki/Miklós_Béla"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1890–1948",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "lead",
+          "excerpt": "11 June 1890 – 21 November 1948"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian officer and politician",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "lead",
+          "excerpt": "was a Hungarian military officer and politician who served as acting Prime Minister of Hungary"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born into a Székely family",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Early career",
+          "excerpt": "Béla Miklós was born into a Székely primipilus family in Budapest on 11 June 1890."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "old Székely family",
+          "source": "https://hu.wikipedia.org/wiki/Miklós_Béla",
+          "locator": "Élete és pályafutása",
+          "excerpt": "Ősi székely lófő családból származott."
+        },
+        {
+          "field": "bio",
+          "claim": "Ludovica 1910, hussar lieutenant, First World War",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Early career",
+          "excerpt": "After graduating from Ludovica Military Academy in 1910, he was promoted to Hussar Lieutenant. He participated in the First World War."
+        },
+        {
+          "field": "bio",
+          "claim": "military attaché in Berlin 1933–1936",
+          "source": "https://hu.wikipedia.org/wiki/Miklós_Béla",
+          "locator": "Élete és pályafutása",
+          "excerpt": "1933–1936 között Berlinben katonai attasé"
+        },
+        {
+          "field": "bio",
+          "claim": "head of Horthy’s military office October 1942; colonel general 1943",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Early career",
+          "excerpt": "he became military director of the office of Admiral Miklós Horthy, regent of Hungary, in October 1942. He was promoted to Colonel General in 1943."
+        },
+        {
+          "field": "bio",
+          "claim": "First Army from 1 August 1944, supported leaving the Axis",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Late World War II",
+          "excerpt": "Miklós became commanding general of the Hungarian First Army from 1 August 1944 and he supported leaving the Axis powers and joining the Red Army."
+        },
+        {
+          "field": "bio",
+          "claim": "the attempt to leave the war failed",
+          "source": "https://hu.wikipedia.org/wiki/Miklós_Béla",
+          "locator": "Az 1944-es kiugrási kísérlet",
+          "excerpt": "A kiugrási kísérlet azonban, a nem megfelelő előkészítettség miatt megbukott."
+        },
+        {
+          "field": "bio",
+          "claim": "defected on 16 October 1944",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Late World War II",
+          "excerpt": "On 16 October 1944, Miklós was ordered to appear at the headquarters of German General Heinrici. Suspicious of an eventual arrest, he defected through the Hungarian front with one of his aides and two sergeants."
+        },
+        {
+          "field": "bio",
+          "claim": "radio appeal to his commanders",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Late World War II",
+          "excerpt": "he spoke on the radio and made a plea for the commanding officers of his Hungarian First Army to defect with their units to the Soviets"
+        },
+        {
+          "field": "bio",
+          "claim": "elected head of the interim government in Debrecen, until November 1945",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Interim government",
+          "excerpt": "The Assembly elected the interim government, with Soviet approval, which was headed by Miklós. He remained in this post until the coming elections on 15 November 1945."
+        },
+        {
+          "field": "bio",
+          "claim": "armistice with the Soviets, war on Germany",
+          "source": "https://hu.wikipedia.org/wiki/Miklós_Béla",
+          "locator": "bevezető",
+          "excerpt": "Az általa vezetett nemzeti kormány kötötte meg a szovjetekkel való fegyverszünetet és üzent hadat a náci Németországnak"
+        },
+        {
+          "field": "bio",
+          "claim": "people’s tribunals",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Interim government",
+          "excerpt": "The Provisional National Government established the people's tribunes."
+        },
+        {
+          "field": "bio",
+          "claim": "Independence Party seat 1947, cancelled",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Later career",
+          "excerpt": "In the semi-free 1947 Hungarian parliamentary election, he won a seat for the party. However, all mandates of the Independence Party, which was defamed as \"fascist\", were canceled in November 1947"
+        },
+        {
+          "field": "bio",
+          "claim": "withdrew from public life",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Later career",
+          "excerpt": "After that, Miklós withdrew from public life."
+        },
+        {
+          "field": "bio",
+          "claim": "died 1948 of unknown causes, no military honours",
+          "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+          "locator": "Later career",
+          "excerpt": "He died one year later of unknown causes and was buried without military honour."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1944,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+              "locator": "Interim government",
+              "claim": "임시국민정부 총리",
+              "excerpt": "The Assembly elected the interim government, with Soviet approval, which was headed by Miklós. He remained in this post until the coming elections on 15 November 1945."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1910,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+              "locator": "Late World War II",
+              "claim": "헝가리군 장교, 제1군 사령관",
+              "excerpt": "Miklós became commanding general of the Hungarian First Army from 1 August 1944"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1947,
+          "endYear": 1947,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Béla_Miklós",
+              "locator": "Later career",
+              "claim": "1947년 독립당 의원 당선",
+              "excerpt": "In the semi-free 1947 Hungarian parliamentary election, he won a seat for the party."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1910",
+          "r": {
+            "ko": "루도비카 사관학교 졸업, 경기병 소위",
+            "en": "Graduated from the Ludovica Academy; hussar lieutenant"
+          }
+        },
+        {
+          "y": "1933–1936",
+          "r": {
+            "ko": "베를린 주재 무관",
+            "en": "Military attaché in Berlin"
+          }
+        },
+        {
+          "y": "1942–1944",
+          "r": {
+            "ko": "섭정 군사실장",
+            "en": "Head of the Regent’s military office"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "제1군 사령관, 10월 16일 소련군 쪽으로 넘어감",
+            "en": "Commander of the First Army; went over to the Soviets on 16 October"
+          }
+        },
+        {
+          "y": "1944–1945",
+          "r": {
+            "ko": "임시국민정부 총리",
+            "en": "Prime minister of the Provisional National Government"
+          }
+        },
+        {
+          "y": "1947",
+          "r": {
+            "ko": "헝가리 독립당 의원 당선, 의석 박탈",
+            "en": "Elected for the Hungarian Independence Party; seat cancelled"
+          }
+        }
+      ]
+    },
+    {
+      "id": "raoul-wallenberg",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "라울",
+        "en": "Raoul"
+      },
+      "familyName": {
+        "ko": "발렌베리",
+        "en": "Wallenberg"
+      },
+      "nativeName": "Raoul Wallenberg",
+      "years": "1912–?",
+      "citizenship": {
+        "code": "sweden"
+      },
+      "nationalOrigin": {
+        "code": "sweden",
+        "label": {
+          "ko": "스웨덴",
+          "en": "Swedish"
+        }
+      },
+      "epithet": {
+        "ko": "부다페스트 스웨덴 공사관에서 보호여권과 보호 가옥으로 유대인을 구하고 소련 구금 중 사라진 외교관",
+        "en": "Swedish diplomat who sheltered Budapest Jews with protective passports and safe houses, then vanished in Soviet custody"
+      },
+      "bio": {
+        "ko": "스톡홀름 근처에서 태어나 미국에서 건축을 공부했고, 1941년부터 무역회사 일로 부다페스트를 자주 오갔다. 1944년 6월 미국 전쟁난민위원회 구조 임무의 책임자로 뽑혀 7월 9일 스웨덴 공사관에 부임했고, 소지자를 스웨덴 국민으로 대우하게 하는 「보호여권」을 발급하고 건물 32채를 치외법권 구역으로 선포해 1만 명 가까이를 숨겼다. 10만 명 구조설은 과장으로 평가되며, 야드 바셈은 보호 서류를 받은 사람을 약 4,500명으로 본다. 1945년 1월 17일 포위전 중 스메르시에 간첩 혐의로 구금된 뒤 사라졌고, 소련은 1957년 그가 1947년 루뱌카에서 심장마비로 죽었다고 밝혔으나 사인과 날짜는 지금도 논란이다. 2016년 스웨덴 국세청이 그의 사망을 선고했다.",
+        "en": "Born near Stockholm, he studied architecture in the United States and from 1941 travelled often to Budapest for a trading company. Chosen in June 1944 to lead the rescue mission of the US War Refugee Board, he reached the Swedish legation in Budapest on 9 July issued “protective passports” identifying the bearers as Swedish subjects, and sheltered almost 10,000 people in 32 buildings he declared extraterritorial. Historians regard the claim that he saved 100,000 Jews as an exaggeration; Yad Vashem puts the number granted protective paperwork at about 4,500. Detained by SMERSH on suspicion of espionage during the siege on 17 January 1945, he disappeared; in 1957 the Soviet authorities said he had died of a heart attack in the Lubyanka in 1947, but the cause and date of his death have been disputed ever since. In 2016 the Swedish Tax Agency declared him dead."
+      },
+      "fate": {
+        "kind": "",
+        "label": {
+          "ko": "소련 구금 중 실종",
+          "en": "Disappeared in Soviet custody"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Raoul Wallenberg"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Raoul_Wallenberg"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "born 1912, disappeared 1945; date of death unknown",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "4 August 1912 – disappeared 17 January 1945"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Swedish diplomat",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "was a Swedish architect, businessman, diplomat, and humanitarian"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Swedish family",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Early life",
+          "excerpt": "Raoul Oscar Wallenberg (1888–1912), a Swedish naval officer"
+        },
+        {
+          "field": "bio",
+          "claim": "born at Lidingö near Stockholm",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Early life",
+          "excerpt": "Wallenberg was born in 1912 in Lidingö Municipality, near Stockholm"
+        },
+        {
+          "field": "bio",
+          "claim": "architecture degree, Michigan 1935",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Early life",
+          "excerpt": "Wallenberg graduated from the University of Michigan in 1935 with a degree in architecture."
+        },
+        {
+          "field": "bio",
+          "claim": "travelled to Budapest from 1941",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "World War II",
+          "excerpt": "He soon learned to speak Hungarian and, from 1941, made increasingly frequent travels to Budapest."
+        },
+        {
+          "field": "bio",
+          "claim": "appointed by the War Refugee Board’s Olsen in June 1944",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Recruitment by the War Refugee Board",
+          "excerpt": "Olsen was introduced to Wallenberg by Lauer in June 1944 and came away from the meeting impressed and, shortly thereafter, appointed Wallenberg to lead the mission."
+        },
+        {
+          "field": "bio",
+          "claim": "arrived at the Swedish legation on 9 July 1944",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Mission to Budapest",
+          "excerpt": "When Wallenberg reached the Swedish legation in Budapest on 9 July 1944"
+        },
+        {
+          "field": "bio",
+          "claim": "protective passports",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Mission to Budapest",
+          "excerpt": "they issued \"protective passports\" (German: Schutzpass), which identified the bearers as Swedish subjects awaiting repatriation and thus prevented their deportation."
+        },
+        {
+          "field": "bio",
+          "claim": "32 extraterritorial buildings",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Mission to Budapest",
+          "excerpt": "Wallenberg rented 32 buildings in Budapest and declared them to be extraterritorial, protected by diplomatic immunity."
+        },
+        {
+          "field": "bio",
+          "claim": "almost 10,000 people",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Mission to Budapest",
+          "excerpt": "The buildings eventually housed almost 10,000 people."
+        },
+        {
+          "field": "bio",
+          "claim": "100,000 an exaggeration; Yad Vashem about 4,500",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "historians regard that figure as an exaggeration; Yad Vashem estimates the number of people granted protective paperwork as about 4,500 individuals."
+        },
+        {
+          "field": "bio",
+          "claim": "detained by SMERSH on 17 January 1945 and disappeared",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "On 17 January 1945, during the Siege of Budapest by the Red Army, agents of SMERSH detained Wallenberg on suspicion of espionage, and he subsequently disappeared."
+        },
+        {
+          "field": "bio",
+          "claim": "Soviet 1957 account: died 1947 in the Lubyanka",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "In 1957, 12 years after his disappearance, he was reported by Soviet authorities to have died of a suspected myocardial infarction on 17 July 1947 while imprisoned in the Lubyanka"
+        },
+        {
+          "field": "bio",
+          "claim": "cause and date disputed",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "his cause and date of death have been disputed ever since"
+        },
+        {
+          "field": "bio",
+          "claim": "declared dead by the Swedish Tax Agency in 2016",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "lead",
+          "excerpt": "In 2016, the Swedish Tax Agency declared him dead in absentia, with the pro forma date of death noted as 31 July 1952."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1944,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+              "locator": "lead",
+              "claim": "부다페스트 스웨덴 공사관 외교관(구조 임무)",
+              "excerpt": "While serving as Sweden's special envoy in Budapest between July and December 1944, Wallenberg issued protective passports and sheltered Jews in buildings which he declared as Swedish territory."
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1936,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+              "locator": "World War II",
+              "claim": "중부유럽 무역회사 공동 소유주·국제 담당 이사",
+              "excerpt": "Within a year, Wallenberg was a joint owner and the International Director of the company."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1935",
+          "r": {
+            "ko": "미시간 대학 건축학 학위",
+            "en": "Architecture degree, University of Michigan"
+          }
+        },
+        {
+          "y": "1936–1944",
+          "r": {
+            "ko": "중부유럽 무역회사 근무, 공동 소유주",
+            "en": "Central European Trading Company; joint owner"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "부다페스트 스웨덴 공사관 부임, 보호여권 발급",
+            "en": "Joined the Swedish legation in Budapest; issued protective passports"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "스메르시에 구금된 뒤 실종",
+            "en": "Detained by SMERSH and disappeared"
+          }
+        },
+        {
+          "y": "2016",
+          "r": {
+            "ko": "스웨덴 국세청 사망 선고",
+            "en": "Declared dead by the Swedish Tax Agency"
+          }
+        }
+      ]
+    },
+    {
+      "id": "karl-pfeffer-wildenbruch",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카를",
+        "en": "Karl"
+      },
+      "familyName": {
+        "ko": "페퍼빌덴브루흐",
+        "en": "Pfeffer-Wildenbruch"
+      },
+      "nativeName": "Karl Pfeffer-Wildenbruch",
+      "years": "1888–1971",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "부다페스트 포위전에서 항복을 거부하고 독일군을 지휘한 무장친위대 제9산악군단장",
+        "en": "Commander of the Waffen-SS IX Mountain Corps who led the German forces in the siege of Budapest and refused to surrender"
+      },
+      "bio": {
+        "ko": "1907년 군에 들어가 제1차 세계대전 때 참모장교로 콘스탄티노플의 독일 군사사절단에서 일했다. 1919년 경찰로 옮겨 칠레 경찰대 책임자, 경찰학교 감찰총감을 지냈고, 친위대에 들어가 힘러의 참모부에서 일했다. 1939년 말 친위대 경찰사단을, 1943년 라트비아인 제6친위군단을 맡았다. 1944년 12월 부다페스트의 제9친위산악군단장이 되어 1944년 12월 24일부터 1945년 2월 11일까지 포위전에서 독일군을 지휘했고, 모든 항복 권유를 거부해 길고 참혹한 포위전으로 이어졌다. 탈출 시도가 실패한 뒤 소련군 포로가 되어 1949년 징역 25년을 선고받았고, 1955년 풀려나 1971년 빌레펠트에서 교통사고로 숨졌다.",
+        "en": "He joined the army in 1907 and in the First World War served as a General Staff officer, including with the German military mission in Constantinople. Moving to the police in 1919, he headed Chile’s Carabineros and became inspector general of police schools, then joined the SS and served on Himmler’s staff. He commanded the SS Polizei Division from late 1939 and the VI SS Army Corps (Latvian) from 1943. Appointed commander of the IX SS Mountain Corps in Budapest in December 1944, he led the German forces in the siege from 24 December 1944 to 11 February 1945 and refused all invitations to surrender, setting off a long and bloody siege. Taken prisoner by the Soviets after the failed breakout, he was sentenced in 1949 to 25 years, released in 1955 and killed in a traffic accident at Bielefeld in 1971."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "교통사고",
+          "en": "Traffic accident"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Karl Pfeffer-Wildenbruch",
+          "Karl Paul Pfeffer-Wildenbruch"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+        "https://de.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+        "https://en.wikipedia.org/wiki/Raoul_Wallenberg"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1888–1971",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "lead",
+          "excerpt": "12 June 1888 – 29 January 1971"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German SS and police official",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "lead",
+          "excerpt": "was a German SS and police (Ordnungspolizei) official during the Nazi era"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German officer born in Kalkberge-Rüdersdorf",
+          "source": "https://de.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Einleitung",
+          "excerpt": "* 12. Juni 1888 in Kalkberge-Rüdersdorf; † 29. Januar 1971 in Bielefeld) war ein deutscher Offizier"
+        },
+        {
+          "field": "bio",
+          "claim": "army 1907; General Staff; Constantinople",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "joined the army in 1907 and served in World War I. He joined the German General Staff, and served as a military attaché to the German military mission in Constantinople"
+        },
+        {
+          "field": "bio",
+          "claim": "police 1919",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "In August 1919 Pfeffer-Wildenbruch joined the police service"
+        },
+        {
+          "field": "bio",
+          "claim": "Chief of the Chilean Carabineros",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "In 1928 he went to Santiago de Chile, to serve as Chief of the Chilean Carabineros de Chile."
+        },
+        {
+          "field": "bio",
+          "claim": "inspector general of police schools 1936",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "from May 1936 he was the Inspector General of Police schools"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the SS, Himmler’s staff",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "Pfeffer-Wildenbruch joined the SS (No. 292 713) and served on the Personal Staff Reichsführer-SS"
+        },
+        {
+          "field": "bio",
+          "claim": "SS Polizei Division end of 1939",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "Pfeffer-Wildenbruch was given command of the 4th SS Polizei Division with the rank of SS-Gruppenführer"
+        },
+        {
+          "field": "bio",
+          "claim": "VI SS Army Corps (Latvian) 1943",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "In October 1943, Pfeffer-Wildenbruch was appointed commander of the newly formed VI SS Army Corps (Latvian)"
+        },
+        {
+          "field": "bio",
+          "claim": "IX SS Mountain Corps in Budapest, siege 24 December–11 February",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "In December 1944 Pfeffer-Wildenbruch was appointed commander of the IX SS Mountain Corps, stationed in Budapest, Hungary. He was in command of the German forces during the Battle of Budapest from 24 December 1944 to 11 February 1945."
+        },
+        {
+          "field": "bio",
+          "claim": "refused all invitations to surrender",
+          "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+          "locator": "Disappearance",
+          "excerpt": "the German commander of Budapest, SS Lieutenant General Karl Pfeffer-Wildenbruch, refused all invitations to surrender, setting in motion a protracted and bloody siege of Budapest"
+        },
+        {
+          "field": "bio",
+          "claim": "captured in the breakout",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "During the attempt to break out from Budapest, he was seriously wounded and was taken prisoner by the Soviet forces."
+        },
+        {
+          "field": "bio",
+          "claim": "breakout failed",
+          "source": "https://de.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Zeit des Nationalsozialismus",
+          "excerpt": "Als der Ausbruch aus Budapest seiner etwa 500-köpfigen Gruppe scheiterte"
+        },
+        {
+          "field": "bio",
+          "claim": "25 years in 1949; released 1955",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "On 10 August 1949 he was sentenced to 25 years. In 1955, he was released"
+        },
+        {
+          "field": "bio",
+          "claim": "traffic accident 1971",
+          "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+          "locator": "Career",
+          "excerpt": "Pfeffer-Wildenbruch was killed in a traffic accident on 29 January 1971 at Bielefeld."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "german-nazi",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1939,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+              "locator": "Career",
+              "claim": "무장친위대 사단장·군단장, 부다페스트 방어 지휘",
+              "excerpt": "He was in command of the German forces during the Battle of Budapest from 24 December 1944 to 11 February 1945."
+            }
+          ]
+        },
+        {
+          "functionId": "security",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1943,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+              "locator": "Career",
+              "claim": "경찰 지휘관, 경찰학교 감찰총감",
+              "excerpt": "from May 1936 he was the Inspector General of Police schools"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1907,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Karl_Pfeffer-Wildenbruch",
+              "locator": "Career",
+              "claim": "제1차 세계대전 참모장교",
+              "excerpt": "joined the army in 1907 and served in World War I. He joined the German General Staff"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1907–1919",
+          "r": {
+            "ko": "독일군 장교, 참모장교",
+            "en": "German army officer and General Staff officer"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "경찰 입직",
+            "en": "Joined the police"
+          }
+        },
+        {
+          "y": "1928",
+          "r": {
+            "ko": "칠레 경찰대 책임자",
+            "en": "Chief of the Chilean Carabineros"
+          }
+        },
+        {
+          "y": "1936",
+          "r": {
+            "ko": "경찰학교 감찰총감",
+            "en": "Inspector General of Police schools"
+          }
+        },
+        {
+          "y": "1939–1940",
+          "r": {
+            "ko": "친위대 경찰사단장",
+            "en": "Commander, SS Polizei Division"
+          }
+        },
+        {
+          "y": "1943–1944",
+          "r": {
+            "ko": "제6친위군단(라트비아인)장",
+            "en": "Commander, VI SS Army Corps (Latvian)"
+          }
+        },
+        {
+          "y": "1944–1945",
+          "r": {
+            "ko": "제9친위산악군단장, 부다페스트 방어 지휘",
+            "en": "Commander, IX SS Mountain Corps; defence of Budapest"
+          }
+        },
+        {
+          "y": "1945–1955",
+          "r": {
+            "ko": "소련 포로, 1949년 징역 25년 선고",
+            "en": "Soviet prisoner; sentenced to 25 years in 1949"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rezso-kasztner",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "레죄",
+        "en": "Rezső"
+      },
+      "familyName": {
+        "ko": "커스트네르",
+        "en": "Kasztner"
+      },
+      "nativeName": "Kasztner Rezső",
+      "years": "1906–1957",
+      "citizenship": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (이후 이스라엘)",
+          "en": "Hungary (later Israel)"
+        }
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (유대계)",
+          "en": "Hungary (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "아이히만과 협상해 유대인 1,684명을 「커스트네르 열차」로 스위스에 보낸 시온주의자 변호사",
+        "en": "Zionist lawyer who negotiated with Eichmann to send 1,684 Jews to Switzerland on what became known as the Kasztner train"
+      },
+      "bio": {
+        "ko": "콜로즈바르(클루지나포카)의 유대인 공동체에서 태어나 15세에 시온주의자가 되어 유대계 신문 『우이 켈레트』 기자와 변호사로 일했다. 1941년 부다페스트로 옮겨 난민을 국경 너머로 들여오던 부다페스트 구호구조위원회의 지도자가 되었다. 1944년 여름 아이히만과 협상해 돈과 금, 다이아몬드를 대가로 유대인 1,684명을 아우슈비츠 대신 스위스로 보내는 「커스트네르 열차」를 성사시켰다. 열차는 베르겐벨젠으로 돌려졌다가 8월과 12월 두 차례에 걸쳐 스위스에 닿았다. 전후 이스라엘에서 정부 대변인이 되었으나 나치 협력 고발을 둘러싼 1955년 재판에서 「악마에게 영혼을 팔았다」는 판결을 받았고, 1957년 3월 총격을 받아 숨졌다. 1958년 대법원은 혐의 두 가지를 뒤집었다.",
+        "en": "Born into the Jewish community of Kolozsvár (Cluj-Napoca), he became a Zionist at fifteen and worked as a journalist for the Jewish paper Új Kelet and as a lawyer. Moving to Budapest in 1941, he became a leader of the Budapest Aid and Rescue Committee, which smuggled Jewish refugees into Hungary. In the summer of 1944 he negotiated with Eichmann to let 1,684 Jews leave for Switzerland instead of Auschwitz on what became known as the Kasztner train, in exchange for money, gold and diamonds. Diverted to Bergen-Belsen, the passengers reached Switzerland in two groups in August and December 1944. After the war he moved to Israel and became a government spokesman, but a 1955 ruling in a trial over charges that he had collaborated with the Nazis said he had “sold his soul to the devil”; he was shot in March 1957 and died of his wounds. In 1958 the Supreme Court overturned two of the charges."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "암살",
+          "en": "Assassinated"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Rezső Kasztner",
+          "Kasztner Rezső",
+          "Rudolf Kastner",
+          "Israel Kastner",
+          "Rudolf Israel Kastner"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+        "https://hu.wikipedia.org/wiki/Kasztner_Rezső"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1906–1957",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "1906 – 15 March 1957"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian-Israeli journalist and lawyer",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "was a Hungarian-Israeli journalist and lawyer"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born into the Jewish community of Kolozsvár",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Childhood",
+          "excerpt": "into a local community of 15,000 Jews"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "his relatives were Kolozsvár Jews on the train list",
+          "source": "https://hu.wikipedia.org/wiki/Kasztner_Rezső",
+          "locator": "bevezető",
+          "excerpt": "szerepelt 388 kolozsvári zsidó neve, akik Kasztner rokonai"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Kolozsvár 1906",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Childhood",
+          "excerpt": "Kasztner was born in 1906 in Kolozsvár"
+        },
+        {
+          "field": "bio",
+          "claim": "Zionist at 15",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Education",
+          "excerpt": "he decided at the age of 15 to become a Zionist"
+        },
+        {
+          "field": "bio",
+          "claim": "law school, then Új Kelet",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Early career",
+          "excerpt": "He attended law school, as she wished, then worked full-time for Új Kelet after graduating"
+        },
+        {
+          "field": "bio",
+          "claim": "Új Kelet a Jewish newspaper",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Education",
+          "excerpt": "the local Jewish newspaper Új Kelet"
+        },
+        {
+          "field": "bio",
+          "claim": "moved to Budapest 1941",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Rise of Nazism",
+          "excerpt": "Kasztner, then 36 years old, decided to move to Budapest to look for a job"
+        },
+        {
+          "field": "bio",
+          "claim": "leader of the Aid and Rescue Committee",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "Kasztner was one of the leaders of the Budapest Aid and Rescue Committee (Va'adat Ezrah Vehatzalah, or Vaada), which smuggled Jewish refugees into Hungary during World War II."
+        },
+        {
+          "field": "bio",
+          "claim": "repeated meetings with Eichmann in summer 1944",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "Negotiations",
+          "excerpt": "During the summer of 1944, Kasztner repeatedly met with Adolf Eichmann"
+        },
+        {
+          "field": "bio",
+          "claim": "1,684 Jews to Switzerland for money, gold and diamonds",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "Kasztner negotiated with Adolf Eichmann, a senior SS officer and a mastermind of the Holocaust, to allow 1,684 Jews to leave instead for Switzerland on what became known as the Kastner train, in exchange for money, gold, and diamonds."
+        },
+        {
+          "field": "bio",
+          "claim": "diverted to Bergen-Belsen, then Switzerland in August and December 1944",
+          "source": "https://hu.wikipedia.org/wiki/Kasztner_Rezső",
+          "locator": "bevezető",
+          "excerpt": "Az utasokat először egy bergen-belseni különleges (a hírhedt koncentrációs táborhoz közeli) lágerbe vitték, majd több hónap után két részletben, az első 318 fős csoportot 1944 augusztusában, a másodikat négy hónappal később Svájcba engedték."
+        },
+        {
+          "field": "bio",
+          "claim": "Israel, spokesman 1952",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "Kasztner moved to Israel after the war, becoming a spokesman for the Ministry of Trade and Industry in 1952."
+        },
+        {
+          "field": "bio",
+          "claim": "accused of collaboration in 1953",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "In 1953 he was accused of having been a Nazi collaborator in a pamphlet self-published by freelance writer Malchiel Gruenwald."
+        },
+        {
+          "field": "bio",
+          "claim": "1955 ruling “sold his soul to the devil”",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "a ruling in 1955 that Kasztner had, in the words of Judge Benjamin Halevy, \"sold his soul to the devil\""
+        },
+        {
+          "field": "bio",
+          "claim": "shot March 1957, died 12 days later",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "Kasztner was shot on March 3, 1957, by Zeev Eckstein"
+        },
+        {
+          "field": "bio",
+          "claim": "died of his injuries",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "died of his injuries 12 days later"
+        },
+        {
+          "field": "bio",
+          "claim": "Supreme Court 1958 overturned two charges, upheld one",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "The Supreme Court of Israel overturned two of the charges against Kasztner in January 1958 in a 4–1 decision"
+        },
+        {
+          "field": "bio",
+          "claim": "assassinated 1957",
+          "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+          "locator": "lead",
+          "excerpt": "He was assassinated in 1957 after an Israeli court accused him of having \"sold his soul to the devil,\" a charge that was overturned by the Supreme Court of Israel in 1958."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1941,
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+              "locator": "lead",
+              "claim": "부다페스트 구호구조위원회 지도자",
+              "excerpt": "Kasztner was one of the leaders of the Budapest Aid and Rescue Committee (Va'adat Ezrah Vehatzalah, or Vaada), which smuggled Jewish refugees into Hungary during World War II."
+            }
+          ]
+        },
+        {
+          "functionId": "propaganda",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": null,
+          "endYear": 1941,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+              "locator": "Early career",
+              "claim": "유대계 신문 『우이 켈레트』 기자",
+              "excerpt": "He attended law school, as she wished, then worked full-time for Új Kelet after graduating"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-israel",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1952,
+          "endYear": 1955,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+              "locator": "lead",
+              "claim": "이스라엘 상공부 대변인",
+              "excerpt": "Kasztner moved to Israel after the war, becoming a spokesman for the Ministry of Trade and Industry in 1952."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1921",
+          "r": {
+            "ko": "시온주의 청년단 가입",
+            "en": "Joined a Zionist youth group"
+          }
+        },
+        {
+          "y": "1930년대",
+          "r": {
+            "ko": "『우이 켈레트』 기자, 변호사",
+            "en": "Journalist for Új Kelet; lawyer"
+          }
+        },
+        {
+          "y": "1941",
+          "r": {
+            "ko": "부다페스트로 이주",
+            "en": "Moved to Budapest"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "아이히만과 협상, 커스트네르 열차",
+            "en": "Negotiations with Eichmann; the Kasztner train"
+          }
+        },
+        {
+          "y": "1952",
+          "r": {
+            "ko": "이스라엘 상공부 대변인",
+            "en": "Spokesman, Israeli Ministry of Trade and Industry"
+          }
+        },
+        {
+          "y": "1955",
+          "r": {
+            "ko": "그루엔발트 명예훼손 재판 판결",
+            "en": "Ruling in the Gruenwald libel trial"
+          }
+        },
+        {
+          "y": "1957",
+          "r": {
+            "ko": "피격, 사망",
+            "en": "Shot and died of his wounds"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "Rudolf Kastner",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Israel Kastner",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Rudolf Israel Kastner",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "carl-lutz",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카를",
+        "en": "Carl"
+      },
+      "familyName": {
+        "ko": "루츠",
+        "en": "Lutz"
+      },
+      "nativeName": "Carl Lutz",
+      "years": "1895–1975",
+      "citizenship": {
+        "code": "switzerland"
+      },
+      "nationalOrigin": {
+        "code": "switzerland"
+      },
+      "epithet": {
+        "ko": "부다페스트 주재 스위스 부영사로 보호증서와 보호 가옥으로 유대인 수만 명을 구한 외교관",
+        "en": "Swiss vice-consul in Budapest who saved tens of thousands of Jews with protective letters and safe houses"
+      },
+      "bio": {
+        "ko": "스위스 발첸하우젠에서 태어나 1913년 미국으로 건너갔고, 1920년부터 스위스 영사 업무를 맡아 미국과 야파에서 일했다. 1942년 부다페스트 주재 스위스 부영사가 되어 유대인 기구와 협력했다. 1944년 헝가리 정부와 나치와 협상해 팔레스타인 이주용 보호증서 8,000장을 허가받았는데, 이를 개인이 아닌 가족 단위로 적용하고 모두 1~8,000번 번호를 단 증서를 수만 장 더 발급했다. 부다페스트 곳곳의 가옥 약 76채를 스위스 공사관 별관으로 선포했고, 그중 「유리집」에는 약 3,000명이 피신했다. 6만 2,000명 넘게 구한 것으로 평가되지만 전후 권한을 넘어섰다는 비판을 받았다가 1958년에야 복권되었고, 1965년 야드 바셈의 「열방의 의인」이 되었다.",
+        "en": "Born in Walzenhausen, Switzerland, he emigrated to the United States in 1913 and from 1920 worked in the Swiss consular service in the US and in Jaffa. Appointed Swiss vice-consul in Budapest in 1942, he cooperated with the Jewish Agency. In 1944 he negotiated with the Hungarian government and the Nazis for permission to issue 8,000 protective letters for emigration to Palestine, applied it to families rather than individuals, and issued tens of thousands more letters, all numbered between one and 8,000. He declared some 76 houses around Budapest annexes of the Swiss legation; about 3,000 people found refuge at the “Glass House”. Credited with saving over 62,000 Jews, he was criticised after the war for exceeding his authority and rehabilitated only in 1958; in 1965 Yad Vashem named him one of the Righteous Among the Nations."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "베른에서 사망",
+          "en": "Died in Bern"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Carl Lutz",
+          "Carl Robert Lutz"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Carl_Lutz"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1895–1975",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "lead",
+          "excerpt": "30 March 1895 – 12 February 1975"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Swiss diplomat",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "lead",
+          "excerpt": "was a Swiss diplomat who most notably served as the Swiss Vice Consul to Hungary in Budapest from 1942 until the end of World War II"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Walzenhausen, Switzerland",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Early life and education",
+          "excerpt": "Lutz was born 30 March 1895 in Walzenhausen, Switzerland"
+        },
+        {
+          "field": "bio",
+          "claim": "emigrated to the US in 1913",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Early life and education",
+          "excerpt": "In 1913, aged 18, Lutz emigrated to the United States"
+        },
+        {
+          "field": "bio",
+          "claim": "Swiss consular corps from 1920",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Early life and education",
+          "excerpt": "In 1920, Lutz found a job in the Swiss consular corps at the Swiss Legation in Washington, D.C."
+        },
+        {
+          "field": "bio",
+          "claim": "vice-consul in Jaffa 1935–1942",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Diplomatic career",
+          "excerpt": "He was assigned in January 1935 as vice-consul to the Swiss Consulate General in Jaffa"
+        },
+        {
+          "field": "bio",
+          "claim": "vice-consul in Budapest 1942, cooperated with the Jewish Agency",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Actions during the Second World War",
+          "excerpt": "Appointed in 1942 as Swiss vice-consul in Budapest, Hungary, Lutz soon began cooperating with the Jewish Agency for Israel."
+        },
+        {
+          "field": "bio",
+          "claim": "negotiated permission for 8,000 protective letters",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Actions during the Second World War",
+          "excerpt": "Lutz negotiated a special deal with the Hungarian government and the Nazis.  He gained permission to issue protective letters to 8,000 Hungarian Jews for emigration to Palestine."
+        },
+        {
+          "field": "bio",
+          "claim": "families, tens of thousands more letters numbered 1–8,000",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Actions during the Second World War",
+          "excerpt": "Lutz deliberately used his permission for 8,000 as applying to families rather than individuals, and proceeded to issue tens of thousands of additional protective letters, all of them bearing a number between one and 8,000."
+        },
+        {
+          "field": "bio",
+          "claim": "some 76 safe houses",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Actions during the Second World War",
+          "excerpt": "He also set up some 76 \"safe houses\" around Budapest, declaring them annexes of the Swiss legation"
+        },
+        {
+          "field": "bio",
+          "claim": "Glass House, about 3,000",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Actions during the Second World War",
+          "excerpt": "About 3,000 Hungarian Jews found refuge at the Glass House and in a neighboring building."
+        },
+        {
+          "field": "bio",
+          "claim": "saved over 62,000",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "lead",
+          "excerpt": "He is credited with saving over 62,000 Jews during the Second World War"
+        },
+        {
+          "field": "bio",
+          "claim": "criticised for exceeding authority; rehabilitated 1958",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Legacy and honours",
+          "excerpt": "Soon after the war, he was first criticized by the Swiss government for having exceeded his authority"
+        },
+        {
+          "field": "bio",
+          "claim": "rehabilitated 1958",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Legacy and honours",
+          "excerpt": "Many years later, in 1958, as part of Swiss national rethinking of the war years, Lutz was \"rehabilitated\" in terms of public reputation"
+        },
+        {
+          "field": "bio",
+          "claim": "Righteous Among the Nations 1965",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Legacy and honours",
+          "excerpt": "1965, Lutz was the first Swiss national named to the list of \"Righteous Among the Nations\" by Yad Vashem"
+        },
+        {
+          "field": "bio",
+          "claim": "died in Bern 1975",
+          "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+          "locator": "Personal life",
+          "excerpt": "Lutz died in Bern, Switzerland, in 1975, aged 79."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-switzerland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1961,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Carl_Lutz",
+              "locator": "lead",
+              "claim": "스위스 외교관, 부다페스트 주재 부영사",
+              "excerpt": "was a Swiss diplomat who most notably served as the Swiss Vice Consul to Hungary in Budapest from 1942 until the end of World War II"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1913",
+          "r": {
+            "ko": "미국 이주",
+            "en": "Emigrated to the United States"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "워싱턴 스위스 공사관 근무 시작",
+            "en": "Joined the Swiss Legation in Washington"
+          }
+        },
+        {
+          "y": "1935–1942",
+          "r": {
+            "ko": "야파 주재 스위스 부영사",
+            "en": "Swiss vice-consul in Jaffa"
+          }
+        },
+        {
+          "y": "1942–1945",
+          "r": {
+            "ko": "부다페스트 주재 스위스 부영사",
+            "en": "Swiss vice-consul in Budapest"
+          }
+        },
+        {
+          "y": "1952–1961",
+          "r": {
+            "ko": "브레겐츠 주재 스위스 총영사",
+            "en": "Swiss consul general in Bregenz"
+          }
+        },
+        {
+          "y": "1965",
+          "r": {
+            "ko": "열방의 의인",
+            "en": "Righteous Among the Nations"
+          }
+        }
+      ]
     }
   ]
 }

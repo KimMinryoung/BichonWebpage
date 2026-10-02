@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BATCH = 'hungary-interwar-20261001';
-const modules = ['1919', 'horthy', 'axis'].map(slug => require(`./event-${slug}`));
+const modules = ['1919', 'horthy', 'axis', '1944'].map(slug => require(`./event-${slug}`));
 const events = modules.map(m => m.event);
 const people = modules.flatMap(m => m.people || []);
 const terms = modules.flatMap(m => m.terms || []);

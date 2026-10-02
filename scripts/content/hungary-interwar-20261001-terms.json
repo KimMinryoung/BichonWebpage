@@ -965,6 +965,409 @@
           }
         ]
       }
+    },
+    {
+      "id": "arrow-cross-party",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Arrow_Cross_Party",
+        "https://en.wikipedia.org/wiki/Ferenc_Sz%C3%A1lasi"
+      ],
+      "fields": {
+        "term": {
+          "ko": "화살십자당",
+          "en": "Arrow Cross Party"
+        },
+        "category": "factions",
+        "period": {
+          "ko": "1935–1945",
+          "en": "1935–1945"
+        },
+        "startYear": 1935,
+        "endYear": 1945,
+        "definition": {
+          "ko": "살러시 페렌츠가 이끈 헝가리의 극우 국수주의 정당. 1935년 민족의지당으로 출발해 1939년 화살십자당으로 재건되었고, 1944년 10월 15일부터 1945년 3월 28일까지 「국민단결정부」로 헝가리를 통치하며 유대인과 로마인 수만 명을 학살하거나 이송했다.",
+          "en": "A Hungarian far-right ultranationalist party led by Ferenc Szálasi. Founded in 1935 as the Party of National Will and reconstituted in 1939 as the Arrow Cross Party, it ruled Hungary as the “Government of National Unity” from 15 October 1944 to 28 March 1945, murdering or deporting tens of thousands of Jews and Roma."
+        },
+        "body": {
+          "ko": "당은 1937년 금지되었다가 1939년 화살십자당으로 다시 세워졌고, 독일 나치당을 꽤 노골적으로 본떴다. 1944년 3월 독일이 헝가리를 점령한 뒤 스토여이 정부가 당을 합법화했고, 10월 15일 독일의 판처파우스트 작전으로 호르티가 물러나자 살러시가 「민족 지도자」가 되었다. 당원들은 부다페스트에서 유대인을 도나우강 강변으로 끌고 가 쏘았고, 유대인 수만 명을 강제노동과 도보 행진으로 오스트리아 국경에 보냈다.\n\n화살십자당 통치기에 살해된 민간인은 1만~1만 5,000명으로 추산되며 더 많게 보는 추계도 있다. 화살십자당 통치는 1945년 3월 28일 끝났고, 지도부는 전후 헝가리 법정에서 전범으로 재판받았다. 살러시와 측근 세 명은 1946년 3월 교수형에 처해졌다.",
+          "en": "Outlawed in 1937, the party was reconstituted in 1939 as the Arrow Cross Party and modelled fairly explicitly on the Nazi Party of Germany. After Germany occupied Hungary in March 1944 the Sztójay government legalised it, and when Germany’s Operation Panzerfaust removed Horthy on 15 October, Szálasi became “Leader of the Nation”. Its members marched Jews in Budapest to the Danube and shot them, and sent tens of thousands of Jews to forced labour and on foot to the Austrian border.\n\nEstimates of the civilians murdered under Arrow Cross rule run from 10,000 to 15,000, with some higher. Arrow Cross rule ended on 28 March 1945, and after the war its leaders were tried as war criminals by Hungarian courts; Szálasi and three of his key associates were hanged in March 1946."
+        },
+        "aliases": {
+          "ko": [
+            "화살십자당-헝가리주의 운동"
+          ],
+          "en": [
+            "Arrow Cross",
+            "Nyilaskeresztes Párt",
+            "Arrow Cross Party–Hungarist Movement",
+            "Nyilas"
+          ]
+        },
+        "people": [
+          "ferenc-szalasi",
+          "dome-sztojay",
+          "miklos-horthy",
+          "edmund-veesenmayer"
+        ],
+        "events": [
+          "hungary-1944-1945",
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A Hungarian far-right ultranationalist party led by Ferenc Szálasi. Founded in 1935 as the Party of National Will and reconstituted in 1939 as the Arrow Cross Party, it ruled Hungary as the “Government of National Unity” from 15 October 1944 to 28 March 1945, murdering or deporting tens of thousands of Jews and Roma.",
+            "source": "https://en.wikipedia.org/wiki/Arrow_Cross_Party",
+            "locator": "lead; Formation; Nazi support and killings of Jews; Arrow Cross rule; Post-war developments"
+          },
+          {
+            "field": "body",
+            "claim": "Outlawed in 1937, the party was reconstituted in 1939 as the Arrow Cross Party and modelled fairly explicitly on the Nazi Party of Germany. After Germany occupied Hungary in March 1944 the Sztójay government legalised it, and when Germany’s Operation Panzerfaust removed Horthy on 15 October, Szálasi",
+            "source": "https://en.wikipedia.org/wiki/Arrow_Cross_Party",
+            "locator": "lead; Formation; Nazi support and killings of Jews; Arrow Cross rule; Post-war developments"
+          },
+          {
+            "field": "period",
+            "claim": "1935–1945",
+            "source": "https://en.wikipedia.org/wiki/Arrow_Cross_Party",
+            "locator": "lead; Formation; Nazi support and killings of Jews; Arrow Cross rule; Post-war developments"
+          },
+          {
+            "field": "startYear",
+            "claim": "1935",
+            "source": "https://en.wikipedia.org/wiki/Arrow_Cross_Party",
+            "locator": "lead; Formation; Nazi support and killings of Jews; Arrow Cross rule; Post-war developments"
+          },
+          {
+            "field": "endYear",
+            "claim": "1945",
+            "source": "https://en.wikipedia.org/wiki/Arrow_Cross_Party",
+            "locator": "lead; Formation; Nazi support and killings of Jews; Arrow Cross rule; Post-war developments"
+          }
+        ]
+      }
+    },
+    {
+      "id": "operation-margarethe",
+      "sources": [
+        "https://en.wikipedia.org/wiki/German_invasion_of_Hungary_(1944)",
+        "https://hu.wikipedia.org/wiki/Margarethe_hadm%C5%B1velet",
+        "https://encyclopedia.ushmm.org/content/en/article/the-holocaust-in-hungary"
+      ],
+      "fields": {
+        "term": {
+          "ko": "마르가레테 작전",
+          "en": "Operation Margarethe"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1944",
+          "en": "1944"
+        },
+        "startYear": 1944,
+        "endYear": 1944,
+        "definition": {
+          "ko": "1944년 3월 19일 나치 독일이 동맹국 헝가리를 군사적으로 점령한 작전. 헝가리가 연합국과 휴전을 꾀하자 히틀러가 명령했고, 섭정 호르티를 자리에 둔 채 친독 스토여이 정부를 세워 헝가리 유대인의 대량 이송을 가능하게 했다.",
+          "en": "The military occupation of its ally Hungary by Nazi Germany on 19 March 1944. Ordered by Hitler when Hungary sought an armistice with the Allies, it kept Regent Horthy in office while installing the pro-German Sztójay government, opening the way to the mass deportation of Hungary’s Jews."
+        },
+        "body": {
+          "ko": "히틀러는 1943년 9월 이탈리아가 휴전하자 헝가리 점령 계획(마르가레테 1)을 세우게 했고, 1944년 3월 호르티를 클레스하임 성으로 불러 점령에 동의하는 의정서에 서명하게 했다. 3월 19일 독일군이 국경을 넘었을 때 헝가리군은 저항하지 않았고, 점령은 빠르고 거의 피를 흘리지 않고 끝났다. 호르티는 섭정 자리에 남았지만 칼러이 총리 대신 베를린 주재 대사 스토여이 되메를 앉혀야 했다.\n\n점령과 함께 에드문트 페젠마이어가 제국 전권대표로 부임했고, 야당 정치인과 망명 군인 등 수천 명이 체포되었다. 아이히만의 특별작전대가 들어와 헝가리 내무부·헌병대와 함께 5~7월 약 43만 7,000명의 유대인을 아우슈비츠로 이송했다.",
+          "en": "After Italy’s armistice in September 1943 Hitler had a plan drawn up for the occupation of Hungary (Margarethe I), and in March 1944 he summoned Horthy to Schloss Klessheim and had him sign a protocol accepting it. When German troops crossed the border on 19 March the Hungarian army did not resist, and the occupation was quick and almost bloodless. Horthy remained regent but had to replace Prime Minister Kállay with Döme Sztójay, the minister in Berlin.\n\nWith the occupation Edmund Veesenmayer arrived as Reich plenipotentiary, and thousands of people, including opposition politicians and refugee soldiers, were arrested. Eichmann’s special commando entered the country and, with the Hungarian Interior Ministry and gendarmerie, deported some 437,000 Jews to Auschwitz between May and July."
+        },
+        "aliases": {
+          "ko": [
+            "독일의 헝가리 점령",
+            "독일의 헝가리 침공 (1944)"
+          ],
+          "en": [
+            "German invasion of Hungary (1944)",
+            "German occupation of Hungary",
+            "Unternehmen Margarethe",
+            "Margarethe hadművelet"
+          ]
+        },
+        "people": [
+          "adolf-hitler",
+          "miklos-horthy",
+          "dome-sztojay",
+          "edmund-veesenmayer",
+          "maximilian-von-weichs",
+          "miklos-kallay"
+        ],
+        "events": [
+          "hungary-1944-1945",
+          "hungary-axis-1938-1944"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The military occupation of its ally Hungary by Nazi Germany on 19 March 1944. Ordered by Hitler when Hungary sought an armistice with the Allies, it kept Regent Horthy in office while installing the pro-German Sztójay government, opening the way to the mass deportation of Hungary’s Jews.",
+            "source": "https://en.wikipedia.org/wiki/German_invasion_of_Hungary_(1944)",
+            "locator": "lead; Course of events; Aftermath"
+          },
+          {
+            "field": "body",
+            "claim": "After Italy’s armistice in September 1943 Hitler had a plan drawn up for the occupation of Hungary (Margarethe I), and in March 1944 he summoned Horthy to Schloss Klessheim and had him sign a protocol accepting it. When German troops crossed the border on 19 March the Hungarian army did not resist, ",
+            "source": "https://en.wikipedia.org/wiki/German_invasion_of_Hungary_(1944)",
+            "locator": "lead; Course of events; Aftermath"
+          },
+          {
+            "field": "period",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/German_invasion_of_Hungary_(1944)",
+            "locator": "lead; Course of events; Aftermath"
+          },
+          {
+            "field": "startYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/German_invasion_of_Hungary_(1944)",
+            "locator": "lead; Course of events; Aftermath"
+          },
+          {
+            "field": "endYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/German_invasion_of_Hungary_(1944)",
+            "locator": "lead; Course of events; Aftermath"
+          }
+        ]
+      }
+    },
+    {
+      "id": "operation-panzerfaust",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Operation_Panzerfaust",
+        "https://ko.wikipedia.org/wiki/%ED%8C%90%EC%B2%98%ED%8C%8C%EC%9A%B0%EC%8A%A4%ED%8A%B8_%EC%9E%91%EC%A0%84",
+        "https://en.wikipedia.org/wiki/G%C3%A9za_Lakatos"
+      ],
+      "fields": {
+        "term": {
+          "ko": "판처파우스트 작전",
+          "en": "Operation Panzerfaust"
+        },
+        "category": "international",
+        "period": {
+          "ko": "1944",
+          "en": "1944"
+        },
+        "startYear": 1944,
+        "endYear": 1944,
+        "definition": {
+          "ko": "1944년 10월 헝가리를 독일 편에 붙잡아 두려고 독일이 벌인 작전. 섭정 호르티가 소련과 휴전을 선언한 10월 15일 오토 스코르체니의 친위대 특공대가 호르티의 아들을 납치했고, 호르티는 이튿날 퇴위하고 살러시 페렌츠를 총리로 임명하는 문서에 서명했다.",
+          "en": "A German operation of October 1944 to keep Hungary on the German side. On 15 October, as Regent Horthy proclaimed an armistice with the Soviets, Otto Skorzeny’s SS commandos kidnapped Horthy’s son, and the next day Horthy signed a document abdicating and appointing Ferenc Szálasi prime minister."
+        },
+        "body": {
+          "ko": "히틀러는 헝가리가 항복하면 루마니아가 이미 소련 편으로 넘어간 남쪽 측면이 열리고 발칸반도의 독일군이 고립될 것을 두려워했다. 스코르체니는 10월 15일 아침 티토의 밀사를 만나게 해 주겠다며 호르티의 아들을 꾀어내 붙잡았고, 그는 마우트하우젠 수용소에 갇혔다. 그날 낮 호르티의 휴전 선언이 방송되자 화살십자당이 독일의 도움으로 방송국을 장악했고, 스코르체니는 전차를 앞세워 왕궁 언덕으로 갔다.\n\n호르티는 아들의 목숨을 지키려고 퇴위 문서에 서명했고, 뒤에 「내 서명을 아들의 목숨과 맞바꾸었을 뿐」이라고 썼다. 그는 독일로 끌려갔고, 헝가리는 화살십자당 정권 아래 독일 편에서 끝까지 싸웠다.",
+          "en": "Hitler feared that a Hungarian surrender would expose his southern flank, where Romania had just joined the Soviets, and cut off the German troops in the Balkans. On the morning of 15 October Skorzeny lured Horthy’s son with a promise of a meeting with Tito’s envoys and seized him; he was held in Mauthausen. When Horthy’s armistice proclamation was broadcast that afternoon, the Arrow Cross seized the radio station with German help, and Skorzeny advanced on Castle Hill behind tanks.\n\nTo save his son’s life Horthy signed the abdication, later writing that he had “merely exchanged my signature for my son’s life”. He was taken to Germany, and Hungary fought on at Germany’s side under the Arrow Cross regime."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Unternehmen Panzerfaust",
+            "Unternehmen Eisenfaust"
+          ]
+        },
+        "people": [
+          "otto-skorzeny",
+          "miklos-horthy",
+          "edmund-veesenmayer",
+          "geza-lakatos",
+          "ferenc-szalasi",
+          "adolf-hitler"
+        ],
+        "events": [
+          "hungary-1944-1945"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "A German operation of October 1944 to keep Hungary on the German side. On 15 October, as Regent Horthy proclaimed an armistice with the Soviets, Otto Skorzeny’s SS commandos kidnapped Horthy’s son, and the next day Horthy signed a document abdicating and appointing Ferenc Szálasi prime minister.",
+            "source": "https://en.wikipedia.org/wiki/Operation_Panzerfaust",
+            "locator": "lead; Prelude; Horthy’s declaration of armistice; Capture of Horthy"
+          },
+          {
+            "field": "body",
+            "claim": "Hitler feared that a Hungarian surrender would expose his southern flank, where Romania had just joined the Soviets, and cut off the German troops in the Balkans. On the morning of 15 October Skorzeny lured Horthy’s son with a promise of a meeting with Tito’s envoys and seized him; he was held in Ma",
+            "source": "https://en.wikipedia.org/wiki/Operation_Panzerfaust",
+            "locator": "lead; Prelude; Horthy’s declaration of armistice; Capture of Horthy"
+          },
+          {
+            "field": "period",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Operation_Panzerfaust",
+            "locator": "lead; Prelude; Horthy’s declaration of armistice; Capture of Horthy"
+          },
+          {
+            "field": "startYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Operation_Panzerfaust",
+            "locator": "lead; Prelude; Horthy’s declaration of armistice; Capture of Horthy"
+          },
+          {
+            "field": "endYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Operation_Panzerfaust",
+            "locator": "lead; Prelude; Horthy’s declaration of armistice; Capture of Horthy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "budapest-ghetto",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Budapest_Ghetto",
+        "https://encyclopedia.ushmm.org/content/en/article/the-holocaust-in-hungary",
+        "https://en.wikipedia.org/wiki/The_Holocaust_in_Hungary"
+      ],
+      "fields": {
+        "term": {
+          "ko": "부다페스트 게토",
+          "en": "Budapest Ghetto"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1944–1945",
+          "en": "1944–1945"
+        },
+        "startYear": 1944,
+        "endYear": 1945,
+        "definition": {
+          "ko": "화살십자당 정부가 1944년 11월 29일 법령으로 부다페스트의 옛 유대인 구역에 세운 울타리 친 게토. 약 7만 명의 유대인이 갇혔고, 1945년 1월 17~18일 소련군에 해방되었다.",
+          "en": "The fenced ghetto created in the old Jewish quarter of Budapest by a decree of the Arrow Cross government on 29 November 1944. Some 70,000 Jews were confined there until Soviet troops liberated it on 17–18 January 1945."
+        },
+        "body": {
+          "ko": "게토는 도하니 거리 회당과 카진치 거리 회당이 있는 옛 유대인 구역의 몇 블록에 세워졌고, 높은 울타리로 둘러싸여 밖과 차단되었다. 음식 반입이 막히고 쓰레기가 치워지지 않았으며 시신이 거리에 쌓였고 장티푸스가 돌았다. 게토 안의 생활은 유대인 평의회가 꾸렸다. 중립국의 보호장을 가진 유대인은 따로 「국제 게토」에 살았다.\n\n미국 홀로코스트 기념관에 따르면 게토에서 약 3,000명이 죽었다. 1945년 1월 게토를 없애려던 계획은 막판에 저지되었는데, 그 공을 두고는 발렌베리 쪽 증언과 페를라스카의 증언이 엇갈린다.",
+          "en": "The ghetto occupied several blocks of the old Jewish quarter, including the Dohány Street and Kazinczy Street synagogues, and was surrounded by a high fence that cut it off from the outside world. No food was allowed in, rubbish was not collected, the dead lay in the streets and typhoid spread. Its inner life was run by the Central Jewish Council. Jews holding protective papers of neutral powers lived separately in the “international ghetto”.\n\nAccording to the US Holocaust Memorial Museum, some 3,000 people died in the ghetto. A plan to destroy it in January 1945 was stopped at the last minute; accounts crediting Wallenberg conflict with Perlasca’s."
+        },
+        "aliases": {
+          "ko": [
+            "페스트 게토"
+          ],
+          "en": [
+            "Pest ghetto",
+            "Budapest ghetto",
+            "pesti gettó"
+          ]
+        },
+        "people": [
+          "ferenc-szalasi",
+          "raoul-wallenberg",
+          "carl-lutz",
+          "adolf-eichmann"
+        ],
+        "events": [
+          "hungary-1944-1945"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The fenced ghetto created in the old Jewish quarter of Budapest by a decree of the Arrow Cross government on 29 November 1944. Some 70,000 Jews were confined there until Soviet troops liberated it on 17–18 January 1945.",
+            "source": "https://en.wikipedia.org/wiki/Budapest_Ghetto",
+            "locator": "lead; History; Saving the ghetto in January 1945"
+          },
+          {
+            "field": "body",
+            "claim": "The ghetto occupied several blocks of the old Jewish quarter, including the Dohány Street and Kazinczy Street synagogues, and was surrounded by a high fence that cut it off from the outside world. No food was allowed in, rubbish was not collected, the dead lay in the streets and typhoid spread. Its ",
+            "source": "https://en.wikipedia.org/wiki/Budapest_Ghetto",
+            "locator": "lead; History; Saving the ghetto in January 1945"
+          },
+          {
+            "field": "period",
+            "claim": "1944–1945",
+            "source": "https://en.wikipedia.org/wiki/Budapest_Ghetto",
+            "locator": "lead; History; Saving the ghetto in January 1945"
+          },
+          {
+            "field": "startYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Budapest_Ghetto",
+            "locator": "lead; History; Saving the ghetto in January 1945"
+          },
+          {
+            "field": "endYear",
+            "claim": "1945",
+            "source": "https://en.wikipedia.org/wiki/Budapest_Ghetto",
+            "locator": "lead; History; Saving the ghetto in January 1945"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kasztner-train",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kastner_train",
+        "https://encyclopedia.ushmm.org/content/en/article/the-holocaust-in-hungary",
+        "https://en.wikipedia.org/wiki/The_Holocaust_in_Hungary"
+      ],
+      "fields": {
+        "term": {
+          "ko": "커스트네르 열차",
+          "en": "Kasztner train"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1944",
+          "en": "1944"
+        },
+        "startYear": 1944,
+        "endYear": 1944,
+        "definition": {
+          "ko": "1944년 6월 30일 커스트네르 레죄가 아이히만과 협상해 몸값을 치르고 부다페스트에서 내보낸 열차. 1,600명이 넘는 유대인이 베르겐벨젠을 거쳐 8월과 12월에 스위스에 닿았다.",
+          "en": "The train that left Budapest on 30 June 1944 under a ransom deal Rezső Kasztner negotiated with Eichmann. Over 1,600 Jews reached Switzerland in August and December by way of Bergen-Belsen."
+        },
+        "body": {
+          "ko": "열차는 화물차 35량으로 이루어졌고, 헝가리 유대인 43만 7,000명이 아우슈비츠로 이송되던 1944년 5~7월에 조직되었다. 승객은 여러 사회 계층에서 골랐고 고아를 포함한 어린이가 약 273명이었다. 부유한 승객 150명이 1인당 1,500달러를 내 다른 승객의 몫까지 댔고, 금·다이아몬드·현금이 친위대 장교 쿠르트 베허에게 건네졌다. 열차는 베르겐벨젠으로 돌려져 승객들이 몇 주에서 몇 달씩 갇혀 있었다.\n\n거래는 큰 논쟁을 낳았다. 커스트네르는 아우슈비츠의 학살을 알고도 공동체 전체에 알리지 않았고 가족과 고향 콜로주바르 사람 388명을 태웠다는 비판을 받았다. 1955년 이스라엘의 명예훼손 재판에서 판사는 그가 「악마에게 영혼을 팔았다」고 했고, 그가 1957년 3월 암살된 뒤 대법원이 판결의 대부분을 뒤집었다.",
+          "en": "The train consisted of 35 cattle wagons and was organised during the deportations of May–July 1944, when 437,000 Hungarian Jews were sent to Auschwitz. Its passengers were chosen from a wide range of social classes and included around 273 children, many of them orphaned. The wealthiest 150 passengers paid $1,500 each to cover their own and the others’ escape, and gold, diamonds and cash were handed to the SS officer Kurt Becher. The train was diverted to Bergen-Belsen, where the passengers were held for weeks and in some cases months.\n\nThe deal was deeply controversial. Kasztner was criticised for knowing of the gassings at Auschwitz without alerting the wider community, and for including his family and 388 people from his home town of Kolozsvár. In a 1955 Israeli libel trial the judge ruled that he had “sold his soul to the devil”; after his assassination in March 1957 the Supreme Court overturned most of the ruling."
+        },
+        "aliases": {
+          "ko": [
+            "카스트너 열차"
+          ],
+          "en": [
+            "Kastner train",
+            "Kasztner transport",
+            "Kastner transport"
+          ]
+        },
+        "people": [
+          "rezso-kasztner",
+          "adolf-eichmann"
+        ],
+        "events": [
+          "hungary-1944-1945"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The train that left Budapest on 30 June 1944 under a ransom deal Rezső Kasztner negotiated with Eichmann. Over 1,600 Jews reached Switzerland in August and December by way of Bergen-Belsen.",
+            "source": "https://en.wikipedia.org/wiki/Kastner_train",
+            "locator": "lead; Organizer; Passengers; Journey"
+          },
+          {
+            "field": "body",
+            "claim": "The train consisted of 35 cattle wagons and was organised during the deportations of May–July 1944, when 437,000 Hungarian Jews were sent to Auschwitz. Its passengers were chosen from a wide range of social classes and included around 273 children, many of them orphaned. The wealthiest 150 passenger",
+            "source": "https://en.wikipedia.org/wiki/Kastner_train",
+            "locator": "lead; Organizer; Passengers; Journey"
+          },
+          {
+            "field": "period",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Kastner_train",
+            "locator": "lead; Organizer; Passengers; Journey"
+          },
+          {
+            "field": "startYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Kastner_train",
+            "locator": "lead; Organizer; Passengers; Journey"
+          },
+          {
+            "field": "endYear",
+            "claim": "1944",
+            "source": "https://en.wikipedia.org/wiki/Kastner_train",
+            "locator": "lead; Organizer; Passengers; Journey"
+          }
+        ]
+      }
     }
   ]
 }

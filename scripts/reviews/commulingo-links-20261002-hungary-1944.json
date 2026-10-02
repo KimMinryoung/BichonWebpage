@@ -1,0 +1,30 @@
+{
+  "scope": "2026-10-02 registered Hungary 1944–1945 event title; owner-requested event registration",
+  "references": [
+    "dev_docs/commulingo-hungary-interwar-20261001.md"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "hungary-1944-1945",
+      "lang": "ko",
+      "text": "독일 점령하의 헝가리: 마르가레테 작전에서 부다페스트 포위까지",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 본문에 쓰이는 짧은 고유 표현은 따로 승인하지 않음(추축국 편과 같은 기준). 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "hungary-1944-1945",
+      "lang": "en",
+      "text": "Hungary under German occupation: from Operation Margarethe to the siege of Budapest",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event. No shorter expression approved (same rule as the Axis event). Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}
