@@ -1,0 +1,341 @@
+// The aftermath of the First World War, 1918–1923: an overview of the
+// armistices, the revolutionary wave, the Paris peace treaties, the eastern
+// border wars and the crisis of 1923 (2026-10-02). Parent of
+// german-revolution-1918-1919 and hungarian-soviet-republic-1919 (the
+// migration sets the parent). Built with the Baltic batch's lib.js.
+const { W, P, event: buildEvent } = require('../baltic-1940-1953-20261002/lib');
+
+const E = t => W(encodeURI(t));
+const S = {
+    armistice: E('Armistice_of_11_November_1918'),
+    dissolution: E('Dissolution_of_Austria-Hungary'),
+    yugo: E('Creation_of_Yugoslavia'),
+    poland: E('Second_Polish_Republic'),
+    gaustria: E('Republic_of_German-Austria'),
+    wave: E('Revolutions_of_1917–1923'),
+    germanRev: E('German_revolution_of_1918–1919'),
+    hsr: E('Hungarian_Soviet_Republic'),
+    biennio: E('Biennio_Rosso'),
+    comintern: E('Comintern'),
+    paris: E('Paris_Peace_Conference_(1919–1920)'),
+    versailles: E('Treaty_of_Versailles'),
+    art231: E('Article_231_of_the_Treaty_of_Versailles'),
+    stgermain: E('Treaty_of_Saint-Germain-en-Laye_(1919)'),
+    trianon: E('Treaty_of_Trianon'),
+    neuilly: E('Treaty_of_Neuilly-sur-Seine'),
+    sevres: E('Treaty_of_Sèvres'),
+    turkish: E('Turkish_War_of_Independence'),
+    lausanne: E('Treaty_of_Lausanne'),
+    exchange: E('Population_exchange_between_Greece_and_Turkey'),
+    polsov: E('Polish–Soviet_War'),
+    estonia: E('Estonian_War_of_Independence'),
+    lithuania: E('Lithuanian_Wars_of_Independence'),
+    intervention: E('Allied_intervention_in_the_Russian_Civil_War'),
+    league: E('League_of_Nations'),
+    mandate: E('League_of_Nations_mandate'),
+    wilsonian: E('Wilsonian_idealism'),
+    egypt: E('1919_Egyptian_revolution'),
+    march1: E('March_First_Movement'),
+    amritsar: E('Jallianwala_Bagh_massacre'),
+    ho: E('Ho_Chi_Minh'),
+    ruhr: E('Occupation_of_the_Ruhr'),
+    inflation: E('Hyperinflation_in_the_Weimar_Republic'),
+    october: E('German_October'),
+    putsch: E('Beer_Hall_Putsch'),
+    keynes: E('The_Economic_Consequences_of_the_Peace'),
+    macmillan: E('Peacemakers_(book)'),
+};
+const ev = id => `/commulingo/events/${id}`;
+
+const sections = [
+    {
+        heading: { ko: '휴전과 제국의 해체', en: 'Armistices and the break-up of empires' },
+        paragraphs: [
+            {
+                ko: '「[1차 세계대전](' + ev('world-war-i') + ')」은 1918년 가을 몇 주 사이에 차례로 끝났다. 불가리아가 먼저 휴전했고, 오스만 제국은 10월 30일 무드로스 휴전으로, 오스트리아-헝가리는 11월 3일 빌라 주스티 휴전으로 싸움을 멈추었다. 마지막 남은 독일은 11월 11일 콩피에뉴 숲의 열차 안에서 연합군 총사령관 페르디낭 포슈가 작성한 휴전 협정에 서명했고, 협정은 파리 시각 오전 11시에 발효되었다. 그날 하루에도 2,738명이 죽었다. 협정은 독일군의 라인강 서안 철수와 연합군의 라인란트 점령을 정했지만 독일에 대한 해상봉쇄는 풀지 않았다.',
+                en: 'The [First World War](' + ev('world-war-i') + ') ended piecemeal over a few weeks in the autumn of 1918. Bulgaria was the first to sign an armistice; the Ottoman Empire stopped fighting under the Armistice of Mudros on 30 October and Austria-Hungary under the Armistice of Villa Giusti on 3 November. Germany, the last opponent left, signed the armistice largely written by the Allied Supreme Commander Ferdinand Foch in a railway carriage in the Compiègne Forest on 11 November; it came into force at 11 a.m. Paris time, and 2,738 men died on that last day alone. The terms required the withdrawal of German forces from west of the Rhine and Allied occupation of the Rhineland, but did not relax the naval blockade of Germany.',
+                sources: [S.armistice, S.turkish, S.stgermain],
+            },
+            {
+                ko: '합스부르크 제국은 휴전보다 먼저 안에서 무너지고 있었다. 카를 황제는 10월 16일 제국을 다섯 왕국의 연방으로 바꾸겠다는 「인민 선언」을 냈지만, 18일 미국 국무장관 랜싱은 연합국이 이미 체코인·슬로바키아인·남슬라브인의 대의를 지지하므로 자치만으로는 부족하다고 답했다. 10월 28일 체코 정치인들이 프라하에서 권력을 넘겨받았고, 29일 남슬라브인들은 슬로베니아인·크로아티아인·세르비아인 국가를 선포했다. 31일 헝가리의 카로이 미하이 정부는 오스트리아와의 연합을 폐기했다. 카를은 11월 11일 오스트리아 국정에서 손을 떼겠다고 선언했으나 퇴위하지는 않았다. 이튿날 독일-오스트리아 공화국이, 16일에는 헝가리 인민공화국이 선포되었다.',
+                en: 'The Habsburg empire was coming apart from within even before the armistice. On 16 October Emperor Karl issued the People’s Manifesto, proposing to turn the empire into a federation of five kingdoms, but on the 18th US Secretary of State Robert Lansing replied that the Allies were now committed to the causes of the Czechs, Slovaks and South Slavs and that autonomy was no longer enough. Czech politicians took over in Prague on 28 October; on the 29th the South Slavs proclaimed the State of Slovenes, Croats and Serbs; and on the 31st Mihály Károlyi’s government in Hungary repudiated the union with Austria. On 11 November Karl renounced any participation in Austrian affairs of state, though he did not abdicate. The Republic of German-Austria was proclaimed the next day, and the Hungarian People’s Republic on the 16th.',
+                sources: [S.dissolution],
+            },
+            {
+                ko: '폐허 위에서 새 나라들이 세워졌다. 폴란드에서는 섭정평의회가 10월 7일 독립 회복을 선언했고, 11월 10일 독일 마그데부르크의 감옥에서 풀려난 유제프 피우수트스키가 바르샤바에 돌아왔다. 이튿날 그는 군 총사령관이 되었고 14일에는 국가원수로서 모든 권한을 넘겨받았으며, 28일 그의 포고로 폴란드 여성은 투표권을 얻었다. 12월 1일 베오그라드에서는 세르비아 섭정 알렉산다르가 세르브·크로아트·슬로베니아 왕국을 선포했다. 오스만 왕조는 터키 독립전쟁 끝에 대국민의회가 군주제를 폐지하면서 막을 내렸다.',
+                en: 'New states were built on the ruins. In Poland the Regency Council announced its intention to restore independence on 7 October, and on 10 November Józef Piłsudski, freed from a German prison in Magdeburg, returned to Warsaw. He was made commander-in-chief the next day and on the 14th received all authority as Chief of State; on 28 November a decree of his gave Polish women the vote. On 1 December in Belgrade Prince Regent Alexander of Serbia proclaimed the Kingdom of Serbs, Croats and Slovenes. The Ottoman dynasty came to an end when, after the Turkish War of Independence, the Grand National Assembly abolished the monarchy.',
+                sources: [S.poland, S.yugo, S.turkish],
+            },
+        ],
+    },
+    {
+        heading: { ko: '혁명의 물결, 1918~1919', en: 'The revolutionary wave, 1918–1919' },
+        paragraphs: [
+            {
+                ko: '제국들이 무너진 자리에는 혁명이 밀려들었다. 러시아 혁명의 성공과 전쟁이 남긴 혼란에 자극받은 봉기와 파업, 병사 반란은 대부분 사회주의적이거나 반식민지적 성격을 띠었지만, 사회주의 봉기의 대다수는 오래가는 국가를 남기지 못했다. 볼셰비키는 세계 프롤레타리아 혁명이 임박했다고 믿었고, 1919년 3월 2~6일 모스크바에서 공산주의 인터내셔널을 창립해 이 물결을 조직하려 했다. 그 경위는 「[코민테른의 창설](' + ev('comintern-founding-1919-1921') + ')」 항목이 다룬다.',
+                en: 'Where empires collapsed, revolution flooded in. Uprisings, strikes and mutinies inspired by the success of the Russian Revolution and by the disorder the war left behind were mostly socialist or anti-colonial in nature, but most of the socialist revolts failed to create lasting states. Believing that world proletarian revolution was imminent, the Bolsheviks founded the Communist International at a congress in Moscow on 2–6 March 1919 to coordinate the wave. Its story is told in [The founding of the Comintern](' + ev('comintern-founding-1919-1921') + ').',
+                sources: [S.wave, S.comintern],
+            },
+            {
+                ko: '독일에서는 1918년 10월 말 킬의 수병들이 영국 함대와의 마지막 출격 명령을 거부하면서 혁명이 시작되었다. 11월 초 노동자·병사 평의회가 거의 저항 없이 전국의 권력을 넘겨받았고, 9일 베를린에서 공화국이 선포되었다. 그러나 평의회는 대부분 사회민주당과 독립사회민주당 당원으로 채워졌고, 군 지휘부의 권한만 빼앗았을 뿐 재산 몰수나 공장 점거는 거의 하지 않았다. 온건파가 평의회를 장악해 산업 국유화와 평의회 공화국을 바라던 좌파를 막았고, 1919년 1월 봉기가 진압되는 와중에 로자 룩셈부르크와 카를 리프크네히트가 자유군단에게 살해되었으며, 봄에는 바이에른과 브레멘의 평의회 공화국도 진압되었다. 자세한 과정은 「[독일 11월 혁명](' + ev('german-revolution-1918-1919') + ')」 항목에 있다.',
+                en: 'In Germany the revolution began at the end of October 1918, when sailors at Kiel refused orders to sail out against the British fleet. In early November workers’ and soldiers’ councils took power across the country with little resistance, and on the 9th a republic was proclaimed in Berlin. Yet the councils were made up almost entirely of SPD and USPD members; they deprived only the military commands of their power, and there were hardly any confiscations of property or occupations of factories. The moderates controlled most of the councils and blocked the left’s goals of nationalising key industries and setting up a council republic, and in the suppression of the January 1919 uprising Rosa Luxemburg and Karl Liebknecht were murdered by the Freikorps; in the spring the soviet republics of Bavaria and Bremen were crushed as well. The full story is in [The German Revolution of 1918–1919](' + ev('german-revolution-1918-1919') + ').',
+                sources: [S.germanRev],
+            },
+            {
+                ko: '도나우 유역에서도 같은 갈림길이 나타났다. 독일-오스트리아에서는 사회민주당이 이끄는 연립정부가 카를 레너를 총리로, 빅토어 아들러를 외무 책임자로 세우고, 새로 생긴 병사·노동자 평의회를 정부 안으로 끌어들이며 노동조합을 통해 사회정책을 펴서 사회주의 혁명의 호소력을 무디게 했다. 헝가리에서는 1919년 3월 21일 공산당과 사회민주당이 합당해 평의회 공화국을 세웠다. 쿤 벨러가 이끈 이 공화국은 협상국의 봉쇄를 풀지 못했고 쿤이 약속한 붉은 군대의 지원도 오지 않은 채, 133일 만인 8월 1일 루마니아군에 패해 무너졌다. 「[헝가리 평의회 공화국](' + ev('hungarian-soviet-republic-1919') + ')」 항목이 이를 다룬다.',
+                en: 'The same fork appeared along the Danube. In German-Austria a coalition led by the Social Democrats made Karl Renner chancellor and Victor Adler foreign minister, co-opted the newly created soldiers’ and workers’ councils and used its control of the trade unions to carry out social policies that blunted the appeal of socialist revolution. In Hungary the Communists and Social Democrats merged and set up the Soviet Republic on 21 March 1919. Led by Béla Kun, it never got the Entente to lift its blockade, the Red Army help Kun had promised never came, and after 133 days it fell on 1 August, defeated by Romania. It is covered in [The Hungarian Soviet Republic](' + ev('hungarian-soviet-republic-1919') + ').',
+                sources: [S.gaustria, S.hsr, S.wave],
+            },
+            {
+                ko: '이탈리아의 「붉은 2년」(1919~1920)은 실업과 물가 폭등 속에서 일어났다. 이탈리아 사회당의 당원은 25만 명, 사회주의 노동총동맹의 조합원은 200만 명으로 불어났다. 토리노와 밀라노에서는 안토니오 그람시가 러시아 소비에트의 이탈리아판으로 본 공장평의회가 생겨났고, 1920년 8~9월 무장한 금속 노동자들이 공장을 점거하면서 운동은 정점에 이르렀다. 그러나 그 뒤에는 파시스트 검은셔츠단의 폭력적 반동이 이어졌고, 1922년 베니토 무솔리니의 로마 진군으로 귀결되었다.',
+                en: 'Italy’s Biennio Rosso, the “two red years” of 1919–1920, broke out amid unemployment and soaring prices. The Italian Socialist Party grew to 250,000 members and the socialist General Confederation of Labour to two million. In Turin and Milan factory councils appeared, which Antonio Gramsci regarded as the Italian equivalent of Russia’s soviets, and the movement peaked in August and September 1920, when armed metalworkers occupied their factories. It was followed by the violent reaction of the fascist Blackshirts and, in 1922, by Benito Mussolini’s March on Rome.',
+                sources: [S.biennio],
+            },
+        ],
+    },
+    {
+        heading: { ko: '파리 강화회의와 베르사유 조약', en: 'The Paris Peace Conference and the Treaty of Versailles' },
+        paragraphs: [
+            {
+                ko: '강화의 출발점은 미국 대통령 우드로 윌슨이 1918년 1월 8일 발표한 14개조였다. 약 150명의 전문가 조사단의 연구를 바탕으로 한 14개조는 자유무역과 공개 외교, 군비 축소, 폴란드 국가 수립, 민족 경계에 따른 국경 재조정, 그리고 모든 국가의 정치적 독립과 영토 보전을 보장할 국제기구를 내세웠다. 독일 정부는 이 원칙을 바탕으로 휴전을 요청했다. 강화회의는 1919년 1월 18일 파리 케도르세의 프랑스 외무부에서 열렸다. 32개 나라와 민족의 대표가 모였지만 패전국은 발언권을 얻지 못했고, 러시아는 백군 측 대표만 참석했을 뿐 소비에트 정부는 초대받지 못했다.',
+                en: 'The starting point of the peace was the Fourteen Points announced by US President Woodrow Wilson on 8 January 1918. Based on the research of the Inquiry, a team of about 150 advisers, they called for free trade, open agreements, disarmament, a Polish state, the redrawing of borders along ethnic lines and an association of nations to guarantee the political independence and territorial integrity of all states. The German government asked for an armistice on the basis of these principles. The conference opened on 18 January 1919 at the French Foreign Ministry on the Quai d’Orsay in Paris. Diplomats from 32 countries and nationalities attended, but the defeated powers were given no voice, and Russia was represented only by the Whites, not by the Soviet government.',
+                sources: [S.versailles, S.paris],
+            },
+            {
+                ko: '주요 결정은 프랑스 총리 조르주 클레망소, 영국 총리 데이비드 로이드 조지, 윌슨, 이탈리아 총리 비토리오 에마누엘레 오를란도의 「4거두」가 145차례의 비공개 회의에서 내렸다. 클레망소는 독일을 경제·군사·영토 면에서 약화시켜 프랑스의 안전을 확보하려 했고, 결국 영미의 동맹 약속과 라인란트 15년 점령을 얻었다. 로이드 조지는 프랑스의 패권을 막고 볼셰비키 러시아에 대한 방벽으로서 독일을 어느 정도 되살려 두려 했다. 오를란도는 참전 대가로 약속받은 영토를 요구했지만 뜻을 이루지 못하고 한때 회의장을 떠났으며, 이탈리아 민족주의자들은 이를 「불구가 된 승리」라 불렀다.',
+                en: 'The major decisions were made by the “Big Four” — French Prime Minister Georges Clemenceau, British Prime Minister David Lloyd George, Wilson and Italian Prime Minister Vittorio Emanuele Orlando — in 145 closed sessions. Clemenceau sought French security by weakening Germany economically, militarily and territorially, and in the end accepted Anglo-American pledges of alliance in return for a fifteen-year occupation of the Rhineland. Lloyd George wanted to prevent French domination and keep a revived Germany as a counterweight and a deterrent to Bolshevik Russia. Orlando pressed for the territory Italy had been promised for entering the war, failed, and at one point left the conference; Italian nationalists called the result a “mutilated victory”.',
+                sources: [S.versailles, S.paris],
+            },
+            {
+                ko: '독일과의 조약은 독일에게서 영토 6만 5,000㎢와 인구 700만 명을 떼어 냈다. 알자스-로렌은 프랑스로 돌아갔고, 독일은 폴란드의 독립을 인정해야 했으며, 일부 국경 지대의 귀속은 주민투표에 맡겨졌다. 단치히는 국제연맹이 관리하는 자유시가 되었다. 해외 식민지는 모두 연맹의 위임통치령이 되었고, 산둥의 독일 이권은 중국이 아니라 일본에 넘어갔다. 독일군은 10만 명 이하로 제한되고 징병제와 공군이 금지되었으며, 라인란트는 15년 동안 연합군이 점령하기로 했다. 오스트리아와의 합병도 국제연맹의 동의 없이는 금지되었다.',
+                en: 'The treaty with Germany stripped it of 65,000 km² of territory and 7 million people. Alsace-Lorraine was returned to France; Germany had to recognise Polish independence, and several border areas were to be decided by plebiscite. Danzig became a Free City under the League of Nations. All the overseas colonies became League mandates, and the German concessions in Shandong went to Japan rather than to China. The German army was limited to 100,000 men, conscription and an air force were prohibited, and the Rhineland was to be occupied by Allied troops for fifteen years. Union with Austria was forbidden without the consent of the League.',
+                sources: [S.versailles],
+            },
+            {
+                ko: '가장 큰 논란을 부른 것은 배상 조항의 첫머리인 231조였다. 독일과 그 동맹국의 침략으로 연합국이 입은 모든 손실과 피해에 대해 독일이 책임을 진다는 문구는 미국 외교관들이 영국·프랑스와 미국의 입장을 절충해 쓴 것으로, 「죄」라는 말 없이 배상의 법적 근거를 세우려는 것이었고 다른 패전국 조약에도 같은 조항이 들어갔다. 그러나 독일인들은 이를 「전쟁 책임 조항」으로 받아들였다. 배상 위원회는 1921년 5월 5일 런던 지불 일정에서 총액을 1,320억 금마르크로 정했지만, 실제로 독일에 요구된 것은 그중 500억 금마르크였다. 1931년 지불이 끝날 때까지 독일이 낸 금액은 배상 위원회 집계로 약 206억 금마르크, 니얼 퍼거슨의 추산으로는 190억 금마르크 이하였다.',
+                en: 'The most contested clause was Article 231, the opening article of the reparations section. Its statement that Germany accepted responsibility for all the loss and damage suffered by the Allies as a consequence of the aggression of Germany and her allies was drafted by American diplomats as a compromise between the Anglo-French and American positions; it did not use the word guilt and was meant to lay a legal basis for reparations, and the other defeated powers’ treaties contained the same article. Germans nonetheless read it as a “war guilt clause”. In the London Schedule of Payments of 5 May 1921 the Reparation Commission set the total at 132 billion gold marks, of which Germany was actually required to pay 50 billion. By the time payments ended in 1931 Germany had paid about 20.6 billion gold marks by the reckoning of the Reparation Commission, and no more than 19 billion by Niall Ferguson’s estimate.',
+                sources: [S.art231, S.versailles],
+            },
+            {
+                ko: '독일 대표단은 협상에 참여하지 못한 채 조건을 통보받았다. 첫 민선 총리 필리프 샤이데만은 서명을 거부하고 사임했고, 후임 구스타프 바우어 정부는 몇몇 조항을 빼 달라고 했다가 전쟁 재개를 경고한 연합국의 최후통첩에 굴복했다. 조약은 사라예보 암살 5주년인 1919년 6월 28일 베르사유 궁전 거울의 방에서 서명되었다. 1871년 독일 제국이 선포된 바로 그 방을 클레망소가 일부러 골랐다. 독일인들은 정파를 가리지 않고 이 조약을 「강요된 명령(Diktat)」이라 불렀다.',
+                en: 'The German delegation was handed terms without being allowed to negotiate. Philipp Scheidemann, Germany’s first democratically elected head of government, resigned rather than sign, and the new government of Gustav Bauer asked for certain articles to be withdrawn before giving way to an Allied ultimatum threatening renewed war. The treaty was signed on 28 June 1919, the fifth anniversary of the Sarajevo assassination, in the Hall of Mirrors at Versailles — the room in which the German Empire had been proclaimed in 1871, chosen deliberately by Clemenceau. Germans of all political shades called it “the Diktat”.',
+                sources: [S.versailles],
+            },
+        ],
+    },
+    {
+        heading: { ko: '패전국들의 조약: 생제르맹·뇌이·트리아농·세브르에서 로잔까지', en: 'The other treaties: Saint-Germain, Neuilly, Trianon, Sèvres and Lausanne' },
+        paragraphs: [
+            {
+                ko: '오스트리아의 카를 레너 총리는 1919년 5월 생제르맹에 도착했지만 협상에서 배제되었고, 연합국의 최후통첩에 따라 9월 10일 조약에 서명했다. 조약은 오스트리아-헝가리의 해체를 확인했고, 옛 오스트리아 제국 영토의 60% 이상이 떨어져 나갔다. 88조는 국제연맹 이사회의 동의 없는 독일과의 통합을 금지했고, 이에 따라 「독일-오스트리아」라는 국호도 「오스트리아」로 바꾸어야 했다. 불가리아는 11월 27일 뇌이 조약으로 서트라키아를 잃어 에게해로 나가는 길이 막혔고, 군대를 2만 명으로 줄이고 1억 파운드의 배상금을 물어야 했다. 불가리아에서는 이를 「제2의 민족적 파국」이라 부른다.',
+                en: 'Austria’s Chancellor Karl Renner arrived at Saint-Germain in May 1919 only to find his delegation excluded from the negotiations, and signed the treaty under an Allied ultimatum on 10 September. It confirmed the dissolution of Austria-Hungary, and over 60 per cent of the prewar Austrian Empire’s territory was lost. Article 88 forbade union with Germany without the consent of the League Council, so the name “German-Austria” had to be changed to “Austria”. Bulgaria, under the Treaty of Neuilly of 27 November, lost Western Thrace and with it its outlet to the Aegean, and had to cut its army to 20,000 men and pay reparations of £100 million; in Bulgaria the treaty is known as the Second National Catastrophe.',
+                sources: [S.stgermain, S.neuilly],
+            },
+            {
+                ko: '헝가리와의 트리아농 조약은 1920년 6월 4일 베르사유의 그랑 트리아농에서 서명되었다. 헝가리는 옛 헝가리 왕국 영토의 28%, 인구의 36%만 남은 9만 3,073㎢, 760만 명의 내륙국이 되었고, 이웃 나라로 넘어간 땅에는 헝가리인 330만 명이 소수민족으로 남았다. 군대는 3만 5,000명으로 제한되었다. 연합국은 주민투표를 하지 않았고, 조약에 딸린 밀랑 서한은 투표를 해도 결과가 크게 다르지 않으리라고 설명했다. 헝가리 대표단은 항의 속에 서명했고 조약 개정 운동은 곧바로 시작되었다. 그 뒤의 헝가리 정치는 「[호르티 체제: 백색테러에서 우경화까지](' + ev('horthy-regime-1920-1938') + ')」 항목으로 이어진다.',
+                en: 'The Treaty of Trianon with Hungary was signed in the Grand Trianon at Versailles on 4 June 1920. Hungary became a landlocked state of 93,073 km² and 7.6 million people — 28 per cent of the land and 36 per cent of the population of the prewar kingdom — and 3.3 million Hungarians were left as minorities in the territories allotted to its neighbours. Its army was limited to 35,000 men. The Allies held no plebiscites; the Millerand letter accompanying the treaty explained that a popular consultation would not have produced significantly different results. The Hungarian delegation signed under protest, and agitation for revision began at once. Hungary’s later politics are followed in [The Horthy regime: from the White Terror to the turn to the right](' + ev('horthy-regime-1920-1938') + ').',
+                sources: [S.trianon],
+            },
+            {
+                ko: '오스만 제국과의 세브르 조약은 1920년 8월 10일 세브르의 도자기 공장 전시실에서 서명되었다. 조약은 튀르크인이 살지 않는 영토 대부분을 내놓게 하고 아나톨리아에 넓은 점령 구역을 두었으며, 아랍 땅에는 영국의 팔레스타인 위임통치령과 프랑스의 시리아·레바논 위임통치령이 들어섰다. 그러나 조약은 비준되지 않았다. 1919년 5월 15일 그리스군의 스미르나 상륙을 계기로 무스타파 케말이 이끄는 민족운동이 일어났고, 앙카라에 세워진 터키 대국민의회는 조약 서명자들의 시민권을 박탈했다. 소비에트 러시아의 지원도 결정적이었다. 소련 문서에 따르면 1920~1922년 소총 3만 9,000정과 함께 전시 터키 예산의 20분의 1에 해당하는 1,070만 터키 리라가 건네졌다.',
+                en: 'The Treaty of Sèvres with the Ottoman Empire was signed on 10 August 1920 in an exhibition room of the porcelain factory at Sèvres. It required the renunciation of most territory not inhabited by Turks, created large occupation zones in Anatolia and, in the Arab lands, introduced the British Mandate for Palestine and the French Mandate for Syria and Lebanon. It was never ratified. The Greek landing at Smyrna on 15 May 1919 had set off a national movement led by Mustafa Kemal, and the Grand National Assembly in Ankara stripped the treaty’s signatories of their citizenship. Soviet support was vital: according to Soviet documents, in 1920–1922 it included 39,000 rifles and 10.7 million Turkish lira, a twentieth of the Turkish wartime budget.',
+                sources: [S.sevres, S.turkish],
+            },
+            {
+                ko: '터키군은 사카리아에서 그리스군의 진격을 막고 대공세로 그들을 아나톨리아에서 몰아냈다. 1922년 10월 11일 무단야 휴전 뒤 11월 20일 로잔에서 회의가 열렸고, 이스메트 이뇌뉘와 영국 외무장관 커즌의 8개월에 걸친 협상 끝에 1923년 7월 24일 143개 조의 로잔 조약이 서명되었다. 조약은 터키의 독립을 인정하고 세브르보다 훨씬 유리한 국경을 주었다. 그에 앞서 1월 30일 체결된 협약에 따라 소아시아 등지의 그리스 정교도 약 122만 명과 그리스의 무슬림 35만~40만 명이 강제로 맞교환되었다. 터키 공화국은 10월 29일 선포되었다.',
+                en: 'Turkish forces checked the Greek advance at the Sakarya and drove the Greeks out of Anatolia in the Great Offensive. After the Armistice of Mudanya of 11 October 1922 a conference opened at Lausanne on 20 November, and after eight months of negotiation between İsmet İnönü and the British Foreign Secretary Lord Curzon the 143-article Treaty of Lausanne was signed on 24 July 1923. It recognised Turkish independence on terms far more favourable than Sèvres. Under a convention signed on 30 January 1923, about 1.22 million Greek Orthodox Christians from Asia Minor and elsewhere and 355,000–400,000 Muslims from Greece had already been forcibly exchanged. The Republic of Turkey was proclaimed on 29 October.',
+                sources: [S.turkish, S.lausanne, S.exchange],
+            },
+        ],
+    },
+    {
+        heading: { ko: '동쪽의 국경 전쟁과 신생국', en: 'Border wars and new states in the East' },
+        paragraphs: [
+            {
+                ko: '파리의 강화는 동유럽의 국경을 다 정하지 못했다. 독일이 항복하자 소비에트 러시아는 브레스트-리토프스크 조약을 폐기하고(「[브레스트 강화와 독일의 동방 점령](' + ev('brest-litovsk') + ')」 참조) 독일군이 버리고 간 땅으로 군대를 보냈다. 레닌은 새로 독립한 폴란드를 유럽으로 혁명을 퍼뜨리는 길목으로 보았고, 피우수트스키는 1772년 이전의 국경을 되살리려 했다. 1918년 11월 1일 르부프에서는 폴란드인과 우크라이나인 사이의 전쟁이 터졌다. 혁명과 내전, 외국군 점령이 뒤엉킨 우크라이나의 사정은 「[우크라이나 혁명과 전쟁](' + ev('ukraine-1917-1921') + ')」 항목이 다룬다.',
+                en: 'The peace made in Paris did not settle Eastern Europe’s borders. When Germany capitulated, Soviet Russia annulled the Treaty of Brest-Litovsk (see [Brest-Litovsk and Germany’s eastern occupation](' + ev('brest-litovsk') + ')) and moved forces westward into the lands the Germans had abandoned. Lenin saw newly independent Poland as a critical route for spreading revolution into Europe, while Piłsudski aimed to restore Poland’s pre-1772 borders. On 1 November 1918 war broke out between Poles and Ukrainians in Lwów. Ukraine, where revolution, civil war and foreign occupation were entangled, is covered in [Ukraine’s revolution and wars](' + ev('ukraine-1917-1921') + ').',
+                sources: [S.polsov, S.poland],
+            },
+            {
+                ko: '소비에트-폴란드 전쟁은 1919년 2월 14일부터 1921년 3월 18일까지 이어졌다. 1920년 4월 피우수트스키는 우크라이나 인민공화국의 시몬 페틀류라와 손잡고 키예프 공세에 나서 5월 7일 키예프를 점령했지만, 6월 붉은 군대의 반격에 밀려 8월에는 바르샤바까지 물러났다. 8월 12~25일 바르샤바 전투에서 폴란드군이 예상 밖의 승리를 거두며 전세가 뒤집혔고, 1921년 3월 18일 리가 조약이 맺어졌다. 새 국경은 커즌선에서 동쪽으로 약 200km 떨어진 곳에 그어져 오늘날의 우크라이나와 벨라루스 일부가 폴란드에 들어갔다. 자세한 경과는 「[소비에트-폴란드 전쟁](' + ev('soviet-polish-war') + ')」 항목에 있다.',
+                en: 'The Polish–Soviet War lasted from 14 February 1919 to 18 March 1921. In April 1920 Piłsudski, allied with Symon Petliura of the Ukrainian People’s Republic, launched the Kiev offensive and took Kiev on 7 May, but the Red Army counter-offensive from June drove the Poles back to Warsaw by August. The Polish victory at the Battle of Warsaw on 12–25 August turned the tide, and the Peace of Riga followed on 18 March 1921. The new border ran about 200 km east of the Curzon Line, giving Poland parts of present-day Ukraine and Belarus. The full story is in [The Soviet-Polish War](' + ev('soviet-polish-war') + ').',
+                sources: [S.polsov],
+            },
+            {
+                ko: '발트 연안에서도 신생국들은 전쟁으로 국경을 얻었다. 에스토니아는 영국과 핀란드의 지원을 받아 소비에트 러시아의 서진과 친독일 발트 향토방위군을 물리치고 1920년 2월 2일 타르투 조약을 맺었다. 리투아니아는 볼셰비키군과 베르몬트 군, 폴란드와 차례로 싸웠고, 1920년 10월 피우수트스키가 꾸민 젤리고프스키 장군의 「반란」으로 빌뉴스를 잃었다. 이 전쟁들은 「[발트 독립전쟁과 국경의 강화](' + ev('baltic-wars-of-independence') + ')」 항목이 다룬다.',
+                en: 'On the Baltic coast, too, the new states won their borders in war. Estonia, supported above all by Britain and Finland, defeated the Soviet Russian westward offensive and the pro-German Baltische Landeswehr and signed the Treaty of Tartu on 2 February 1920. Lithuania fought the Bolsheviks, the Bermontians and Poland in turn, and in October 1920 lost Vilnius to General Żeligowski’s staged “mutiny”, arranged by Piłsudski. These wars are covered in [Baltic wars of independence and border settlements](' + ev('baltic-wars-of-independence') + ').',
+                sources: [S.estonia, S.lithuania],
+            },
+            {
+                ko: '러시아 안에서는 연합국이 휴전 뒤에도 군대를 거두지 않았다. 처음에는 군수품이 독일 손에 들어가는 것을 막으려던 개입은 1918년 11월 이후 백군을 돕는 쪽으로 목표를 바꾸었고, 연합군은 아르한겔스크와 블라디보스토크에 상륙하고 발트해와 캅카스, 남러시아에도 손을 뻗었다. 서방 연합국은 1920년에 북러시아와 시베리아에서 철수했지만, 일본의 시베리아 개입은 1922년까지 이어졌고 북사할린 점령은 1925년까지 계속되었다. 이 전쟁은 「[내전과 열강의 개입](' + ev('civil-war') + ')」 항목에서 다룬다.',
+                en: 'Inside Russia the Allies did not withdraw their troops after the armistice. Begun to keep munitions from falling into German hands, the intervention changed its aim after November 1918 to helping the Whites: Allied troops landed at Arkhangelsk and Vladivostok and also intervened in the Baltic, the Caucasus and southern Russia. The western Allies ended their North Russian and Siberian interventions in 1920, but the Japanese intervention in Siberia continued until 1922, and Japan occupied northern Sakhalin until 1925. That war is covered in [The Civil War and Foreign Intervention](' + ev('civil-war') + ').',
+                sources: [S.intervention],
+            },
+        ],
+    },
+    {
+        heading: { ko: '국제연맹, 위임통치, 민족자결의 한계', en: 'The League of Nations, the mandates and the limits of self-determination' },
+        paragraphs: [
+            {
+                ko: '국제연맹 규약은 영국의 로버트 세실과 남아프리카의 얀 스뮈츠가 주로 설계했다. 스뮈츠는 패전국 식민지를 위임통치하는 제도도 제안했다. 강화회의는 1919년 1월 25일 연맹 창설안을 승인했고, 규약은 베르사유 조약의 제1부로 들어가 1920년 1월 10일 조약과 함께 발효되었다. 그러나 미국 상원은 1920년 3월 19일 비준 표결에서 49 대 35로 3분의 2에 미치지 못했고, 윌슨이 만든 연맹에 미국은 끝내 가입하지 않았다.',
+                en: 'The Covenant of the League of Nations was drafted principally by Britain’s Lord Robert Cecil and South Africa’s Jan Smuts. Smuts also proposed a mandate system for the captured colonies of the Central Powers. The conference approved the creation of the League on 25 January 1919, and the Covenant, as Part I of the Treaty of Versailles, came into force with the treaty on 10 January 1920. But on 19 March 1920 the US Senate’s 49–35 vote fell short of the two-thirds majority needed for ratification, and the United States never joined the League Wilson had championed.',
+                sources: [S.league],
+            },
+            {
+                ko: '규약 22조의 위임통치 제도는 병합하지 않는다는 원칙과 원주민의 복지를 위한 「문명의 신성한 위탁」을 내세웠다. 오스만 제국의 아랍 지역은 영국과 프랑스가, 아프리카의 나머지 독일 식민지는 영국·프랑스·벨기에가, 남서아프리카와 태평양 섬들은 남아프리카·오스트레일리아·뉴질랜드와 적도 이북의 일본이 나누어 맡았다. 역사가 수전 피더슨은 위임통치령의 식민 행정이 다른 식민지와 크게 다르지 않았다고 본다. 일본이 연맹 규약에 넣으려 한 인종평등안은 이민 문제를 우려한 오스트레일리아의 반대에 부딪쳤고, 영국 대표단이 제국의 단합을 위해 이를 포기하면서 채택되지 못했다.',
+                en: 'The mandate system of Article 22 rested on non-annexation and on administering territories as a “sacred trust of civilisation” for the benefit of their peoples. Britain and France took the Arab provinces of the Ottoman Empire; Britain, France and Belgium the remaining German colonies in Africa; South Africa, Australia and New Zealand took South West Africa and the Pacific islands south of the Equator, and Japan those north of it. The historian Susan Pedersen finds that colonial administration in the mandates did not differ substantially from that elsewhere. Japan’s Racial Equality Proposal for the Covenant ran into Australian opposition over immigration, and the British delegation, putting the unity of the Empire first, sacrificed it; it was not adopted.',
+                sources: [S.mandate, S.paris],
+            },
+            {
+                ko: '역사가 에레즈 마넬라는 1918~1919년을 식민지 세계가 윌슨의 민족자결 언설에 기대를 건 「윌슨의 순간」이라 부른다. 그 기대는 베르사유 조약이 식민 체제를 건드리지 않으면서 무너졌고, 실망은 각지의 저항으로 터져 나왔다. 이집트에서는 1919년 3월 8일 영국이 와프드당 지도자 사아드 자글룰을 체포해 몰타로 추방하자 전국적 봉기가 일어나 3월 15~31일에만 최소 800명이 죽었다. 조선에서는 1919년 3월 1일 독립선언서 낭독으로 시작된 3·1 운동이 1,500~1,800건의 시위로 번졌고 참가자는 80만~200만 명으로 추산된다. 1920년 한국 측 추산으로는 7,509명이 죽고 4만 6,948명이 체포되었으며, 운동은 대한민국 임시정부의 수립으로 이어졌다.',
+                en: 'The historian Erez Manela calls 1918–1919 the “Wilsonian moment”, when the colonised world placed its hopes in Wilson’s language of self-determination. Those hopes were dashed when the Treaty of Versailles left the colonial system intact, and the disillusionment broke out in protest movements. In Egypt the British arrest of the Wafd leader Saad Zaghloul on 8 March 1919 and his exile to Malta set off a nationwide revolution in which at least 800 people were killed between 15 and 31 March alone. In Korea the March First Movement, begun with public readings of the Declaration of Independence on 1 March 1919, spread to some 1,500–1,800 protests with an estimated 0.8 to 2 million participants; one Korean estimate of 1920 counted 7,509 deaths and 46,948 arrests, and the movement led to the creation of the Korean Provisional Government.',
+                sources: [S.wilsonian, S.egypt, S.march1],
+            },
+            {
+                ko: '인도 암리차르의 잘리안왈라 바그에서는 1919년 4월 13일 레지널드 다이어 준장의 군대가 출구를 막고 군중에게 발포해 379명에서 1,500명 이상이 죽었다. 중국에서는 산둥의 독일 이권을 일본에 넘긴 결정에 항의하는 5·4 운동이 일어났다. 그 뒤의 일은 「[5·4 운동과 중국공산당의 창당](' + ev('may-fourth-and-ccp-founding') + ')」 항목에 있다. 파리에 있던 베트남인 애국자 단체는 민족자결 원칙을 들어 인도차이나 주민의 권리를 요구하는 청원서를 클레망소와 윌슨에게 보냈으나 무시당했다. 청원의 얼굴이었던 응우옌아이꾸옥, 곧 뒷날의 호치민은 1920년 12월 투르 대회에서 제3인터내셔널 가입에 표를 던지고 프랑스 공산당의 창립 당원이 되었다.',
+                en: 'At Jallianwala Bagh in Amritsar, India, on 13 April 1919, troops under Brigadier-General Reginald Dyer blocked the exit and fired on the crowd, killing between 379 and more than 1,500 people. In China the decision to hand the German concessions in Shandong to Japan set off the May Fourth Movement; what followed is told in [May Fourth and the founding of the Chinese Communist Party](' + ev('may-fourth-and-ccp-founding') + '). In Paris a group of Vietnamese patriots, citing the principle of self-determination, sent a petition for the rights of the people of Indochina to Clemenceau and Wilson and was ignored. Nguyễn Ái Quốc, the public face of the petition and the future Ho Chi Minh, voted for the Third International at the Congress of Tours in December 1920 and became a founding member of the French Communist Party.',
+                sources: [S.amritsar, S.versailles, S.ho],
+            },
+        ],
+    },
+    {
+        heading: { ko: '1923년의 위기', en: 'The crisis of 1923' },
+        paragraphs: [
+            {
+                ko: '배상은 곧 무력 충돌을 불렀다. 독일은 1921년 6월 런던 지불 일정의 첫 현금 10억 금마르크를 냈지만 그 뒤로는 적은 현금만 냈고, 1922년 12월 목재 인도 불이행에 이어 1923년 1월 9일 배상 위원회는 석탄 인도 불이행을 선언했다. 1월 11일 프랑스와 벨기에 군대가 루르 공업지대를 점령했다. 빌헬름 쿠노 정부는 「소극적 저항」을 호소했고 제국의회는 이를 283 대 12로 승인했다. 광부와 철도 노동자가 점령군의 지시를 거부하면서 생산이 멈추었다. 점령 기간에 민간인 약 137명이 죽었고, 프랑스 당국은 12만~15만 건의 처벌을 내렸는데 대부분은 점령지 밖으로의 추방이었다.',
+                en: 'Reparations soon led to armed confrontation. Germany made the first cash payment of 1 billion gold marks under the London Schedule in June 1921 but only small cash payments thereafter; after a default on timber deliveries in December 1922, the Reparation Commission declared Germany in default on coal on 9 January 1923. On 11 January French and Belgian troops occupied the Ruhr. Chancellor Wilhelm Cuno’s government called for “passive resistance”, which the Reichstag approved by 283 votes to 12, and production stopped as miners and railway workers refused to obey the occupiers. An estimated 137 civilians were killed during the occupation, and the French authorities imposed between 120,000 and 150,000 sentences, the overwhelming majority of them expulsions from the occupied area.',
+                sources: [S.versailles, S.ruhr],
+            },
+            {
+                ko: '정부는 놀게 된 노동자와 기업을 지원하려고 지폐를 찍어 냈고, 이미 시작된 인플레이션은 걷잡을 수 없게 되었다. 1922년 중반 1달러에 320마르크이던 환율은 1923년 11월에는 1달러에 4조 2,105억 마르크가 되었다. 구스타프 슈트레제만의 새 정부는 9월 26일 소극적 저항을 끝냈고, 두 달 뒤 렌텐마르크를 도입해 통화를 안정시켰다. 1924년 도스안은 배상 지불을 다시 짜고 줄였으며, 프랑스와 벨기에는 1925년 8월까지 루르에서 철수했다.',
+                en: 'To support idled workers and businesses the government printed money, and the inflation already under way ran out of control. The mark, at 320 to the dollar in mid-1922, stood at 4.2105 trillion to the dollar by November 1923. Gustav Stresemann’s new government ended passive resistance on 26 September and two months later replaced the paper mark with the Rentenmark, stabilising the currency. The Dawes Plan of 1924 restructured and lowered the reparations payments, and France and Belgium withdrew from the Ruhr by August 1925.',
+                sources: [S.inflation, S.ruhr],
+            },
+            {
+                ko: '모스크바는 1923년의 독일을 1917년 여름의 러시아와 비슷한 상황으로 보았다. 코민테른 의장 그리고리 지노비예프는 8월 15일 독일 공산당에 다가오는 혁명적 위기에 대비하라고 지시했고 트로츠키도 동의했으며, 카를 라데크는 서두르자고 주장했다. 당 의장 하인리히 브란들러는 25만 3,000명의 공산당원이 싸울 준비가 되어 있다고 장담했다. 공산당은 10월 10일 작센 정부에 입각했지만, 21일 켐니츠의 노동자 회의가 총파업 호소에 호응하지 않자 봉기 계획을 취소했다. 그러나 함부르크와 브레멘에서는 공산당 지역 조직이 독자적으로 봉기했다가 경찰에 진압되었다. 국방군은 작센의 사회민주당-공산당 정부를 강제로 해산시켰다.',
+                en: 'Moscow saw Germany in 1923 as comparable to Russia in the summer of 1917. On 15 August the Comintern chairman Grigory Zinoviev instructed the KPD to prepare for an approaching revolutionary crisis, Trotsky expressly agreed, and Karl Radek pleaded for an early strike. The party chairman Heinrich Brandler assured Moscow that 253,000 Communists were ready to fight. The KPD entered the Saxon government on 10 October, but when a workers’ conference at Chemnitz on the 21st failed to back a call for a general strike, the rising was called off. Local branches of the party in Hamburg and Bremen nonetheless launched their own insurrections, which the police suppressed. The Reichswehr then forcibly deposed the SPD–KPD government of Saxony.',
+                sources: [S.october],
+            },
+            {
+                ko: '위협은 오른쪽에서도 왔다. 무솔리니의 로마 진군에 고무된 나치당 지도자 아돌프 히틀러는 에리히 루덴도르프와 함께 11월 8일 저녁 약 600명의 돌격대를 이끌고 뮌헨의 맥주홀 뷔르거브로이켈러를 덮쳐 「민족 혁명」을 선언했다. 이튿날 펠트헤른할레로 행진하던 약 2,000명은 경찰 저지선에 막혔고, 나치 당원 15명과 경찰 4명, 행인 1명이 죽었다. 히틀러는 반역죄로 5년형을 받았으나 9개월만 복역했고, 수감 중에 『나의 투쟁』을 구술했다. 이 사건으로 히틀러는 처음으로 전국에 이름을 알렸다.',
+                en: 'The threat came from the right as well. Inspired by Mussolini’s March on Rome, the Nazi Party leader Adolf Hitler, together with Erich Ludendorff, led some 600 SA men into the Bürgerbräukeller beer hall in Munich on the evening of 8 November and proclaimed the “national revolution”. The next day about 2,000 Nazis marching on the Feldherrnhalle were stopped by a police cordon; fifteen Nazis, four police officers and one bystander were killed. Hitler was sentenced to five years for treason but served only nine months, during which he dictated Mein Kampf. The putsch brought Hitler to national attention for the first time.',
+                sources: [S.putsch],
+            },
+            {
+                ko: '1923년은 전후 질서가 일단 굳어진 해이기도 했다. 7월 로잔 조약으로 강화 조약의 연쇄가 끝났고, 가을의 통화 안정과 이듬해의 도스안으로 독일의 위기는 가라앉았다. 코민테른이 불을 지피려 한 혁명들은 모두 실패로 끝났다. 볼셰비키는 세계 혁명에서 「일국 사회주의」로 방향을 돌렸고, 그 사이 1922년에는 소비에트 사회주의 공화국 연방이 세워졌다.',
+                en: '1923 was also the year the postwar order provisionally settled. The Treaty of Lausanne in July completed the series of peace treaties, and the currency stabilisation that autumn and the Dawes Plan the following year ended the German crisis. The revolutions the Comintern had tried to kindle had all failed. The Bolsheviks turned from world revolution to “socialism in one country”, and in the meantime, in 1922, the Union of Soviet Socialist Republics had been created.',
+                sources: [S.paris, S.ruhr, S.wave],
+            },
+        ],
+    },
+    {
+        heading: { ko: '해석: 「카르타고식 강화」 논쟁과 베르사유 체제', en: 'Interpretations: the “Carthaginian peace” debate and the Versailles system' },
+        paragraphs: [
+            {
+                ko: '베르사유 조약에 대한 평가는 존 메이너드 케인스에게서 시작되었다. 파리 회의에 영국 재무부 대표로 참석했던 케인스는 1919년 말 『평화의 경제적 귀결』에서 이 조약을 패자를 완전히 짓밟으려는 「카르타고식 강화」라 부르고, 배상이 독일의 지불 능력을 훨씬 넘어 유럽 경제 전체를 흔들 것이라 경고했다. 책은 여섯 달 만에 전 세계에서 10만 부가 팔리고 12개 언어로 번역되었으며, 그의 해석은 곧 학계의 정설이 되었다. 영국에서 독일이 부당한 대우를 받았다는 인식은 뒤에 히틀러에 대한 유화정책을 지지하는 여론의 바탕이 되었다. 반대편에서 프랑스의 포슈 원수는 조약이 독일에 너무 관대하다고 비판했다.',
+                en: 'The judgement of Versailles began with John Maynard Keynes. Keynes, who had been the principal representative of the British Treasury at the conference, called the treaty a “Carthaginian peace” — a peace meant to crush the defeated — in The Economic Consequences of the Peace, published at the end of 1919, and warned that reparations far beyond Germany’s capacity to pay would destabilise the whole European economy. In six months the book sold 100,000 copies worldwide and was translated into 12 languages, and his reading quickly became the academic orthodoxy. The British perception that Germany had been treated unfairly later underpinned public support for the appeasement of Hitler. From the other side, Marshal Foch criticised the treaty for treating Germany too leniently.',
+                sources: [S.keynes, S.versailles],
+            },
+            {
+                ko: '반론도 일찍부터 나왔다. 프랑스 경제학자 에티엔 망투는 1940년대에 쓴 『카르타고식 강화, 또는 케인스 씨의 경제적 귀결』에서 1927년 독일의 강철 생산이 1913년보다 30% 늘었다는 사실 등을 들어 케인스의 예측을 반박하고, 1933~1939년 독일의 재군비 지출이 해마다 배상 요구액의 일곱 배에 이르렀다고 지적했다. 샐리 마크스는 2013년, 외교사가들이 40년 가까이 조약이 평판보다 합리적이었다고 주장해 왔다고 썼다. 그는 일찍이 1978년에 231조가 전쟁의 「죄」를 말하지 않으며 배상의 법적 근거일 뿐이라고 했고, 루스 헤니그는 1995년 대부분의 연구자가 경제적으로 조약이 독일에 지나치게 가혹하지 않았다고 본다고 정리했다.',
+                en: 'Rebuttals came early too. In The Carthaginian Peace, or the Economic Consequences of Mr. Keynes, written in the 1940s, the French economist Étienne Mantoux disputed Keynes’s predictions — German steel output in 1927 was 30 per cent above 1913 — and argued that German rearmament spending in each year from 1933 to 1939 was seven times the reparations figure. Sally Marks wrote in 2013 that for nearly forty years diplomatic historians had argued that the treaty was more reasonable than its reputation suggests; she had argued as early as 1978 that Article 231 made no mention of war guilt and merely laid a legal basis for reparations, and Ruth Henig summarised in 1995 that most historians of the conference took the view that, in economic terms, the treaty was not unduly harsh on Germany.',
+                sources: [S.keynes, S.versailles, S.art231],
+            },
+            {
+                ko: '그렇다면 베르사유는 히틀러를 낳았는가. 캐나다 역사가 마거릿 맥밀런은 2001년 『피스메이커스』(미국판 『파리 1919』)에서 독일에 부과된 조건이 히틀러의 집권으로 이어지지 않았다고 주장했다. 독일 역사가 데틀레프 포이케르트는 중요한 것은 조약의 「실제」가 아니라 그것이 불가능한 강화라는 독일인의 「인식」이었으며, 유럽 정복을 꿈꾸게 했던 전시의 기대 때문에 어떤 강화든 민족주의적 반발을 불렀을 것이라 보았다. 231조에 관한 연구의 합의도 조약 자체가 나치즘을 낳았다기보다 별개로 자라난 극단주의와 대공황이 나치당을 권력으로 이끌었다는 쪽이다.',
+                en: 'Did Versailles, then, produce Hitler? The Canadian historian Margaret MacMillan argued in Peacemakers (2001; published in the United States as Paris 1919) that the conditions imposed on Germany did not lead to the rise of Hitler. The German historian Detlev Peukert held that what mattered was not the “reality” of the treaty but the German “perception” that it was an impossible peace, and that the millenarian hopes raised during the war, when Germany seemed about to conquer Europe, meant that any peace would have provoked a nationalist backlash. The scholarly consensus on Article 231 likewise holds that neither the article nor the treaty caused the rise of Nazism; an unconnected rise in extremism and the Great Depression brought the Nazi Party to power.',
+                sources: [S.macmillan, S.versailles, S.art231],
+            },
+            {
+                ko: '「베르사유 체제」라는 말로 묶이는 전후 질서의 약점은 누구도 만족시키지 못한 타협이었다는 데 있었다. 독일은 달래지지도, 화해하지도, 영구히 약해지지도 않았다. 미국은 조약을 비준하지 않고 따로 강화를 맺었으며, 패전한 독일은 1926년에야, 소비에트 러시아는 1934년에야 연맹에 들어갔다. 조약이 남긴 문제는 배상을 다시 짠 도스안과 영안, 독일과 서방의 관계를 개선한 로카르노 조약으로 이어졌다. 동시에 그 질서는 이 시기에 시작된 두 흐름, 곧 패전국의 조약 개정 요구와 식민지 세계의 반제국주의 운동에 끊임없이 도전받았다.',
+                en: 'The weakness of the postwar order known as the “Versailles system” lay in its being a compromise that left no one satisfied: Germany was neither pacified nor conciliated, nor permanently weakened. The United States never ratified the treaty and made a separate peace, and defeated Germany entered the League only in 1926, the Soviet Union only in 1934. The problems the treaty left led on to the Dawes and Young Plans, which reorganised reparations, and to the Locarno Treaties, which improved relations between Germany and the West. At the same time the order was continually challenged by two currents that began in these years: the defeated powers’ demands for revision, and the anti-imperialist movements of the colonial world.',
+                sources: [S.versailles, S.league],
+            },
+        ],
+    },
+];
+
+const event = buildEvent({
+    id: 'world-war-i-aftermath-1918-1923',
+    title: { ko: '1차 세계대전의 여파: 강화 조약과 혁명의 물결', en: 'The aftermath of the First World War: peace treaties and the revolutionary wave' },
+    period: '1918–1923',
+    sortOrder: 36,
+    question: {
+        ko: '1918년 가을의 휴전부터 1923년까지, 무너진 제국들의 자리에 어떤 국가와 국경이 세워졌고, 혁명의 물결과 승전국의 강화는 그 과정에서 어떻게 부딪쳤는가?',
+        en: 'Between the armistices of autumn 1918 and 1923, what states and borders took the place of the fallen empires, and how did the revolutionary wave and the victors’ peace collide in the process?',
+    },
+    summary: {
+        ko: '1918년 가을 불가리아·오스만·오스트리아-헝가리·독일이 차례로 휴전하면서 호엔촐레른·합스부르크 왕조가 무너지고 폴란드·체코슬로바키아·세르브-크로아트-슬로베니아 왕국 같은 신생국이 선포되었다. 독일·오스트리아·헝가리·바이에른에서는 노동자·병사 평의회가 일어났지만, 사회민주당의 통제와 진압, 고립 속에서 1919년 여름까지 대부분 꺾였다. 1919년 1월 파리에서 열린 강화회의는 4거두가 주도해 베르사유·생제르맹·뇌이·트리아농·세브르 조약과 국제연맹을 만들었고, 패전국은 협상에서 배제된 채 영토 상실과 군비 제한, 배상을 떠안았다. 동유럽의 국경은 소비에트-폴란드 전쟁과 발트 독립전쟁으로, 터키의 국경은 독립전쟁 끝의 1923년 로잔 조약으로 정해졌다. 민족자결의 약속에 기대를 건 이집트·조선·인도·중국의 운동은 식민 체제를 건드리지 않은 강화에 실망했다. 1923년 루르 점령과 초인플레이션, 공산당의 「독일의 10월」과 히틀러의 맥주홀 폭동이 이어졌지만, 그해 말 통화 안정과 함께 전후 질서는 일단 굳어졌다.',
+        en: 'As Bulgaria, the Ottoman Empire, Austria-Hungary and Germany signed armistices in the autumn of 1918, the Hohenzollern and Habsburg dynasties fell and new states such as Poland, Czechoslovakia and the Kingdom of Serbs, Croats and Slovenes were proclaimed. Workers’ and soldiers’ councils rose in Germany, Austria, Hungary and Bavaria, but under Social Democratic control, repression and isolation most were defeated by the summer of 1919. The peace conference that opened in Paris in January 1919, dominated by the Big Four, produced the treaties of Versailles, Saint-Germain, Neuilly, Trianon and Sèvres and the League of Nations; the defeated powers, excluded from the negotiations, bore territorial losses, disarmament and reparations. Eastern Europe’s borders were settled by the Polish–Soviet and Baltic wars, and Turkey’s by its war of independence and the Treaty of Lausanne in 1923. Movements in Egypt, Korea, India and China that had placed their hopes in self-determination were disillusioned by a peace that left the colonial system intact. In 1923 came the Ruhr occupation and hyperinflation, the Communists’ “German October” and Hitler’s Beer Hall Putsch, but with the currency stabilised at the end of the year the postwar order provisionally settled.',
+    },
+    outcome: {
+        ko: '1923년까지 유럽과 중동의 지도는 새로 그려졌다. 독일·오스트리아·헝가리·불가리아·터키는 영토를 잃었고, 수많은 사람이 새 국경 너머의 소수민족이 되거나 강제 교환으로 고향을 떠났다. 혁명은 러시아 밖에서 뿌리내리지 못했고, 사회민주당과 공산당의 분열과 우익 준군사 조직의 성장은 전간기 유럽 정치에 오래 남았다. 국제연맹은 미국과 소비에트 러시아 없이 출발했고, 위임통치는 사실상 식민 지배를 이어 갔다. 베르사유 체제는 패전국의 조약 개정 요구와 식민지의 반제국주의 운동이라는 두 도전 속에서 출발했다.',
+        en: 'By 1923 the map of Europe and the Middle East had been redrawn. Germany, Austria, Hungary, Bulgaria and Turkey lost territory, and many people became minorities beyond the new borders or were forced from their homes by compulsory exchange. Revolution failed to take root outside Russia, and the split between Social Democrats and Communists and the growth of right-wing paramilitaries left a lasting mark on interwar European politics. The League of Nations began without the United States or Soviet Russia, and the mandates in practice continued colonial rule. The Versailles system began life facing two challenges: the defeated powers’ demands for revision and the anti-imperialist movements of the colonies.',
+    },
+    sections,
+    timeline: [
+        ['1918.09.29', '불가리아 휴전', 'Bulgarian armistice', '바르다르 공세에 무너진 불가리아가 테살로니키에서 휴전에 서명했다.', 'Broken by the Vardar offensive, Bulgaria signed an armistice at Thessaloniki.', ['bulgaria', 'france', 'uk'], P(40.6401, 22.9444, '테살로니키', 'Thessaloniki')],
+        ['1918.10.28', '체코슬로바키아 독립', 'Czechoslovak independence', '체코 정치인들이 프라하에서 권력을 넘겨받고 독립 국가를 선포했다.', 'Czech politicians took over in Prague and proclaimed an independent state.', ['czechoslovakia', 'austria']],
+        ['1918.10.30', '무드로스 휴전', 'Armistice of Mudros', '오스만 제국이 렘노스섬 무드로스 항의 영국 군함에서 휴전에 서명했다.', 'The Ottoman Empire signed an armistice aboard a British warship at Moudros on Lemnos.', ['turkey', 'uk']],
+        ['1918.11.11', '콩피에뉴 휴전', 'Armistice of Compiègne', '독일이 휴전에 서명했고, 같은 날 카를 황제가 오스트리아 국정에서 물러났다.', 'Germany signed the armistice; the same day Emperor Karl withdrew from Austrian affairs of state.', ['germany', 'france', 'uk', 'usa', 'austria'], P(49.4275, 2.9064, '콩피에뉴 숲', 'Compiègne Forest')],
+        ['1918.11.14', '피우수트스키, 국가원수가 되다', 'Piłsudski becomes Chief of State', '섭정평의회가 해산하며 모든 권한을 피우수트스키에게 넘겼다.', 'The Regency Council dissolved itself and transferred all authority to Piłsudski.', 'poland'],
+        ['1918.12.01', '세르브·크로아트·슬로베니아 왕국', 'Kingdom of Serbs, Croats and Slovenes', '섭정 알렉산다르가 베오그라드에서 남슬라브 통일 왕국을 선포했다.', 'Prince Regent Alexander proclaimed the united South Slav kingdom in Belgrade.', ['yugoslavia', 'serbia']],
+        ['1919.01.18', '파리 강화회의 개막', 'Paris Peace Conference opens', '케도르세의 프랑스 외무부에서 승전국들의 강화회의가 열렸다.', 'The victors’ peace conference opened at the French Foreign Ministry on the Quai d’Orsay.', ['france', 'uk', 'usa', 'italy', 'japan'], P(48.8625, 2.3176, '케도르세', 'Quai d’Orsay')],
+        ['1919.03.01', '3·1 운동', 'March First Movement', '서울에서 독립선언서가 낭독되고 일제 지배에 맞선 시위가 전국으로 번졌다.', 'The Declaration of Independence was read in Seoul and protests against Japanese rule spread nationwide.', ['korea', 'japan'], P(37.5712, 126.9882, '탑골공원', 'Tapgol Park')],
+        ['1919.03.21', '헝가리 평의회 공화국', 'Hungarian Soviet Republic', '공산당과 사회민주당이 합당해 평의회 공화국을 선포했다.', 'Communists and Social Democrats merged and proclaimed the Soviet Republic.', 'hungary', P(47.4979, 19.0402, '부다페스트', 'Budapest')],
+        ['1919.05.04', '5·4 운동', 'May Fourth Movement', '베이징 학생들이 산둥 결정에 항의해 시위를 벌였다.', 'Beijing students protested the Shandong decision.', ['china', 'japan']],
+        ['1919.06.28', '베르사유 조약', 'Treaty of Versailles', '거울의 방에서 독일과의 강화 조약이 서명되었다.', 'The peace treaty with Germany was signed in the Hall of Mirrors.', ['germany', 'france', 'uk', 'usa', 'italy'], P(48.8049, 2.1204, '베르사유 궁전', 'Palace of Versailles')],
+        ['1919.09.10', '생제르맹 조약', 'Treaty of Saint-Germain', '오스트리아가 서명했고, 독일과의 통합이 금지되었다.', 'Austria signed; union with Germany was forbidden.', ['austria', 'france', 'uk', 'italy']],
+        ['1920.01.10', '국제연맹 출범', 'League of Nations founded', '베르사유 조약 발효와 함께 연맹 규약이 효력을 얻었다.', 'The Covenant came into force with the Treaty of Versailles.', ['france', 'uk', 'italy', 'japan']],
+        ['1920.06.04', '트리아농 조약', 'Treaty of Trianon', '헝가리는 옛 왕국 영토의 28%만 남았다.', 'Hungary was left with 28 per cent of the prewar kingdom’s territory.', ['hungary', 'france']],
+        ['1920.08.10', '세브르 조약', 'Treaty of Sèvres', '오스만 정부가 서명했지만 앙카라의 민족운동이 이를 거부했다.', 'The Ottoman government signed; the national movement in Ankara rejected it.', ['turkey', 'uk', 'france', 'greece', 'italy']],
+        ['1920.08.12', '바르샤바 전투', 'Battle of Warsaw', '25일까지 이어진 전투에서 폴란드군이 붉은 군대를 물리쳤다.', 'In fighting that lasted until the 25th, the Polish army defeated the Red Army.', ['poland', 'soviet'], P(52.2297, 21.0122, '바르샤바', 'Warsaw')],
+        ['1921.05.05', '런던 지불 일정', 'London Schedule of Payments', '배상 총액이 1,320억 금마르크로 정해졌다.', 'Total reparations were fixed at 132 billion gold marks.', ['germany', 'france', 'uk', 'belgium']],
+        ['1923.01.11', '루르 점령', 'Occupation of the Ruhr', '배상 불이행을 이유로 프랑스·벨기에군이 루르에 진주했다.', 'French and Belgian troops occupied the Ruhr over reparations defaults.', ['germany', 'france', 'belgium'], P(51.4556, 7.0116, '에센', 'Essen')],
+        ['1923.07.24', '로잔 조약', 'Treaty of Lausanne', '세브르 조약을 대신해 터키의 독립과 국경을 확정했다.', 'Superseding Sèvres, it confirmed Turkey’s independence and borders.', ['turkey', 'greece', 'uk', 'france', 'italy'], P(46.5228, 6.6346, '로잔', 'Lausanne')],
+        ['1923.11.08', '맥주홀 폭동', 'Beer Hall Putsch', '히틀러가 뮌헨에서 일으킨 쿠데타가 이튿날 경찰에 저지되었다.', 'Hitler’s coup in Munich was stopped by the police the next day.', 'germany'],
+    ],
+    locations: [
+        ['파리', 'Paris', 48.8566, 2.3522, 'main'],
+        ['베르사유', 'Versailles', 48.8049, 2.1204, 'place'],
+        ['콩피에뉴', 'Compiègne', 49.4179, 2.8261, 'place'],
+        ['베를린', 'Berlin', 52.5200, 13.4050, 'place'],
+        ['빈', 'Vienna', 48.2082, 16.3738, 'place'],
+        ['부다페스트', 'Budapest', 47.4979, 19.0402, 'place'],
+        ['바르샤바', 'Warsaw', 52.2297, 21.0122, 'place'],
+        ['에센', 'Essen', 51.4556, 7.0116, 'place'],
+        ['로잔', 'Lausanne', 46.5228, 6.6346, 'place'],
+    ],
+    countries: ['germany', 'austria', 'hungary', 'bulgaria', 'turkey', 'france', 'uk', 'usa', 'italy', 'japan', 'belgium', 'greece',
+        'poland', 'czechoslovakia', 'yugoslavia', 'serbia', 'soviet', 'ukraine', 'estonia', 'latvia', 'lithuania',
+        'egypt', 'korea', 'india', 'china', 'vietnam'],
+    relations: { related: ['world-war-i', 'civil-war', 'baltic-wars-of-independence', 'soviet-polish-war', 'comintern-founding-1919-1921', 'may-fourth-and-ccp-founding'] },
+    noAutoLink: ['리가 조약', 'Free City', 'Republic', '리안', '레프', '임시정부', 'Provisional Government', '연립정부'],
+    linkExpressions: [['ko', '1차 세계대전의 여파'], ['en', 'aftermath of the First World War']],
+    focus: null,
+    sides: null,
+    people: [
+        ['georges-clemenceau', 'leader', '프랑스 총리, 강화회의 의장', 'French prime minister; president of the peace conference', '독일의 약화와 라인란트 점령을 관철했고 거울의 방을 서명 장소로 골랐다.', 'Pressed for Germany’s weakening and the Rhineland occupation, and chose the Hall of Mirrors for the signing.'],
+        ['jan-smuts', 'participant', '남아프리카 대표', 'South African delegate', '국제연맹 규약을 설계하고 위임통치 제도를 제안했다.', 'Drafted the League Covenant and proposed the mandate system.'],
+        ['friedrich-ebert', 'leader', '독일 인민대표평의회 의장, 뒤에 대통령', 'Chairman of the Council of People’s Deputies, later Reich President', '평의회를 국민의회로 이끌었고, 1923년 가을 전국에 비상사태를 선포했다.', 'Steered the councils towards a National Assembly and declared a nationwide state of emergency in autumn 1923.'],
+        ['philipp-scheidemann', 'participant', '독일 총리', 'German chancellor', '베르사유 조약 서명을 거부하고 사임했다.', 'Resigned rather than sign the Treaty of Versailles.'],
+        ['luxemburg', 'target', '독일 공산당 창립자', 'Founder of the KPD', '1919년 1월 봉기 진압 중 자유군단에게 살해되었다.', 'Murdered by the Freikorps in the suppression of the January 1919 uprising.'],
+        ['liebknecht', 'target', '독일 공산당 창립자', 'Founder of the KPD', '룩셈부르크와 함께 1919년 1월 15일 살해되었다.', 'Murdered with Luxemburg on 15 January 1919.'],
+        ['charles-i-of-austria', 'participant', '마지막 오스트리아 황제', 'Last Austrian emperor', '연방화 선언을 냈으나 1918년 11월 퇴위 없이 국정에서 물러났다.', 'Issued the People’s Manifesto, then withdrew from affairs of state in November 1918 without abdicating.'],
+        ['victor-adler', 'participant', '독일-오스트리아 외무 책임자', 'Foreign minister of German-Austria', '사회민주당이 이끈 첫 공화국 정부에 들어갔다.', 'Joined the first Social Democrat-led government of the republic.'],
+        ['mihaly-karolyi', 'leader', '헝가리 총리, 임시 국가원수', 'Hungarian prime minister and provisional head of state', '오스트리아와의 연합을 폐기하고 헝가리 인민공화국을 선포했다.', 'Repudiated the union with Austria and proclaimed the Hungarian People’s Republic.'],
+        ['bela-kun', 'leader', '헝가리 평의회 공화국의 실권자', 'Leading figure of the Hungarian Soviet Republic', '133일 동안 존속한 평의회 공화국을 이끌었다.', 'Led the Soviet Republic, which lasted 133 days.'],
+        ['jozef-pilsudski', 'leader', '폴란드 국가원수', 'Polish Chief of State', '1918년 11월 권력을 넘겨받았고 키예프 공세와 바르샤바 전투를 지휘했다.', 'Took power in November 1918 and directed the Kiev offensive and the Battle of Warsaw.'],
+        ['symon-petliura', 'participant', '우크라이나 인민공화국 지도자', 'Leader of the Ukrainian People’s Republic', '1920년 피우수트스키와 동맹해 키예프 공세에 참여했다.', 'Allied with Piłsudski for the 1920 Kiev offensive.'],
+        ['lenin', 'leader', '소비에트 정부 수반', 'Head of the Soviet government', '폴란드를 유럽 혁명의 길목으로 보았고 코민테른 창립을 이끌었다.', 'Saw Poland as the route for revolution into Europe and led the founding of the Comintern.'],
+        ['zinoviev', 'leader', '코민테른 의장', 'Chairman of the Comintern', '1923년 8월 독일 공산당에 혁명적 위기에 대비하라고 지시했다.', 'Instructed the KPD in August 1923 to prepare for a revolutionary crisis.'],
+        ['radek', 'participant', '코민테른의 독일 전문가', 'Comintern’s Germany expert', '1923년 독일에서의 조기 봉기를 주장했다.', 'Pleaded for an early rising in Germany in 1923.'],
+        ['heinrich-brandler', 'participant', '독일 공산당 의장', 'Chairman of the KPD', '작센 정부에 들어갔으나 켐니츠 회의 뒤 봉기를 취소했다.', 'Entered the Saxon government but called off the rising after the Chemnitz conference.'],
+        ['gramsci', 'participant', '토리노 공장평의회 운동의 이론가', 'Theorist of the Turin factory councils', '공장평의회를 이탈리아의 소비에트로 보았다.', 'Saw the factory councils as Italy’s equivalent of the soviets.'],
+        ['benito-mussolini', 'participant', '파시스트 지도자', 'Fascist leader', '붉은 2년 뒤의 반동을 이끌고 1922년 로마 진군으로 집권했다.', 'Led the reaction after the Biennio Rosso and took power with the 1922 March on Rome.'],
+        ['ho-chi-minh', 'participant', '베트남 애국자 단체의 청원 대표', 'Public face of the Vietnamese patriots’ petition', '강화회의에 인도차이나 주민의 권리를 청원했으나 무시당했다.', 'Petitioned the peace conference for the rights of the people of Indochina and was ignored.'],
+        ['adolf-hitler', 'participant', '나치당 지도자', 'Nazi Party leader', '1923년 11월 뮌헨에서 맥주홀 폭동을 일으켰다.', 'Staged the Beer Hall Putsch in Munich in November 1923.'],
+    ],
+});
+
+module.exports = { event };

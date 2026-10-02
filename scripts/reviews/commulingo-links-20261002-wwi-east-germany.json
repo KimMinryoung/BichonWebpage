@@ -1,0 +1,118 @@
+{
+  "scope": "2026-10-02 registered events world-war-i-aftermath-1918-1923, eastern-europe-crisis-1953-1956, soviet-zone-gdr-1945-1949, east-german-uprising-1953 titles; owner-requested event registration",
+  "references": [
+    "dev_docs/commulingo-wwi-east-germany-20261002.md"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "world-war-i-aftermath-1918-1923",
+      "lang": "ko",
+      "text": "1차 세계대전의 여파: 강화 조약과 혁명의 물결",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "world-war-i-aftermath-1918-1923",
+      "lang": "en",
+      "text": "The aftermath of the First World War: peace treaties and the revolutionary wave",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "world-war-i-aftermath-1918-1923",
+      "lang": "ko",
+      "text": "1차 세계대전의 여파",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 개정한 1차 세계대전 본문이 이 표현으로 넘김. 다른 사건·용어와 겹치지 않고, 이 말이 나오는 문맥은 곧 이 개요 사건이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "world-war-i-aftermath-1918-1923",
+      "lang": "en",
+      "text": "aftermath of the First World War",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the rewritten World War I body hands over with this phrase; no other entry uses it and its contexts mean this overview. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "eastern-europe-crisis-1953-1956",
+      "lang": "ko",
+      "text": "스탈린 사후 동유럽의 위기, 1953–1956",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "eastern-europe-crisis-1953-1956",
+      "lang": "en",
+      "text": "Eastern Europe after Stalin: the crises of 1953–1956",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "soviet-zone-gdr-1945-1949",
+      "lang": "ko",
+      "text": "동독: 소련 군정에서 독일민주공화국까지",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "soviet-zone-gdr-1945-1949",
+      "lang": "en",
+      "text": "East Germany: from Soviet military administration to the German Democratic Republic",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "east-german-uprising-1953",
+      "lang": "ko",
+      "text": "1953년 동독 6월 봉기",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 사건 등록과 함께 검토: 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 짧은 「6월 봉기」는 따로 승인하지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "east-german-uprising-1953",
+      "lang": "en",
+      "text": "The East German uprising of 1953",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-02 reviewed with the event registration: the full event title, unique to this event; the shorter \"June uprising\" is not approved. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}
