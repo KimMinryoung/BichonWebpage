@@ -1,0 +1,471 @@
+{
+  "id": "poznan-1956-places-20261002",
+  "changes": [
+    {
+      "event": "poznan-1956",
+      "column": "body_ko",
+      "from": "라비차 공항으로",
+      "to": "와비차 공항으로"
+    },
+    {
+      "event": "poznan-1956",
+      "column": "timeline",
+      "expected": [
+        {
+          "body": {
+            "en": "Khrushchev's denunciation of Stalin at the Twentieth Party Congress set off de-Stalinization pressures across Eastern Europe.",
+            "ko": "제20차 소련 공산당 대회에서 흐루쇼프가 스탈린을 비판하면서 동유럽 전역에 탈스탈린화의 압력이 가해졌다."
+          },
+          "date": "1956.02",
+          "title": {
+            "en": "Khrushchev's Secret Speech",
+            "ko": "흐루쇼프의 비밀연설"
+          }
+        },
+        {
+          "body": {
+            "en": "Poland's hardline Stalinist leader Bolesław Bierut died suddenly in Moscow, reportedly from the shock of the Secret Speech; Edward Ochab became First Secretary and began cautious reforms.",
+            "ko": "폴란드의 강경 스탈린주의 지도자 볼레스와프 비에루트가 비밀연설의 충격 속에 모스크바에서 급서하고, 에드바르트 오하프가 제1서기가 되어 조심스러운 개혁을 시작했다."
+          },
+          "date": "1956.03.12",
+          "title": {
+            "en": "Death of Bierut, Ochab succeeds",
+            "ko": "비에루트 사망과 오하프의 승계"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.23,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Warsaw",
+              "ko": "바르샤바"
+            }
+          },
+          "body": {
+            "en": "A 27-member delegation from ZISPO negotiated in Warsaw for wage increases and tax refunds; Minister of Machine Industry Roman Fideliski made verbal promises.",
+            "ko": "포즈난 ZISPO 공장 노동자 대표단 27명이 바르샤바에서 임금 인상과 과도한 세금 환급을 요구했고, 기계공업부 장관 로만 피델스키가 구두 약속을 했다."
+          },
+          "date": "1956.06.23–26",
+          "title": {
+            "en": "ZISPO delegation negotiates in Warsaw",
+            "ko": "ZISPO 노동자 대표단의 바르샤바 협상"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.39,
+            "lng": 16.9,
+            "kind": "point",
+            "label": {
+              "en": "ZISPO works",
+              "ko": "ZISPO 공장"
+            }
+          },
+          "body": {
+            "en": "Fideliski arrived in Poznań and withdrew the previous day's promises. Word spread through the factory, enraging the workforce.",
+            "ko": "피델스키가 포즈난에 도착해 전날의 약속을 번복했다. 이 소식이 공장에 퍼지며 노동자들의 분노가 극에 달했다."
+          },
+          "date": "1956.06.27",
+          "title": {
+            "en": "The promises are withdrawn",
+            "ko": "약속의 번복"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.41,
+            "lng": 16.93,
+            "kind": "point",
+            "label": {
+              "en": "Poznań",
+              "ko": "포즈난"
+            }
+          },
+          "body": {
+            "en": "A strike at ZISPO began at 6:30 a.m. and swelled to roughly 100,000 in the streets. Protesters stormed party and security police buildings and seized a prison; from the afternoon, troops opened fire. Dozens were killed.",
+            "ko": "오전 6시 30분 ZISPO에서 파업이 시작되어 약 10만 명이 거리로 나섰다. 시위대는 당 청사와 보안국을 습격하고 감옥을 점거했으며, 오후부터 군대가 진입해 발포했다. 수십 명이 사망했다."
+          },
+          "date": "1956.06.28",
+          "title": {
+            "en": "From strike to uprising: 'Black Thursday'",
+            "ko": "파업에서 봉기로: '검은 목요일'"
+          }
+        },
+        {
+          "geo": {
+            "kind": "arrow",
+            "actor": {
+              "en": "Polish People’s Army",
+              "ko": "폴란드 인민군"
+            },
+            "label": {
+              "en": "to Poznań",
+              "ko": "포즈난 진압"
+            },
+            "points": [
+              [
+                52.23,
+                21.01
+              ],
+              [
+                52.41,
+                16.93
+              ]
+            ],
+            "variant": "red"
+          },
+          "body": {
+            "en": "Soviet Marshal and Polish Defence Minister Konstantin Rokossovsky ordered military suppression, dispatching his deputy General Stanislav Poplavsky to take field command in Poznań.",
+            "ko": "소비에트 원수이자 폴란드 국방장관인 콘스탄틴 로코솝스키가 군사 진압을 결정하고, 부관 스타니스와프 포프와프스키 장군을 포즈난에 파견해 지휘권을 넘겼다."
+          },
+          "date": "1956.06.28",
+          "title": {
+            "en": "Rokossovsky intervenes, Poplavsky dispatched",
+            "ko": "로코솝스키의 개입과 포프와프스키 파견"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.41,
+            "lng": 16.93,
+            "kind": "point",
+            "label": {
+              "en": "Poznań",
+              "ko": "포즈난"
+            }
+          },
+          "body": {
+            "en": "Prime Minister Józef Cyrankiewicz declared on the radio: 'any provocateur or lunatic who raises his hand against the people's government may be sure that this hand will be chopped off.' It remains one of the most infamous speeches in modern Polish history.",
+            "ko": "유제프 치란키에비치 총리가 라디오에 나와 '인민 정부에 손을 대는 자는 그 손이 잘릴 것'이라고 선언했다. 이 발언은 폴란드 현대사에서 가장 악명 높은 연설 중 하나로 남았다."
+          },
+          "date": "1956.06.29",
+          "title": {
+            "en": "Cyrankiewicz's radio address",
+            "ko": "치란키에비치의 라디오 연설"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.42,
+            "lng": 16.83,
+            "kind": "point",
+            "label": {
+              "en": "Ławica Airport",
+              "ko": "와비차 공항"
+            }
+          },
+          "body": {
+            "en": "Some 400 tanks and 10,000 troops completed the pacification of the city. 746 people were arrested and subjected to brutal interrogation at Ławica Airport.",
+            "ko": "전차 400여 대와 1만 명의 병력이 동원되어 봉기가 완전히 진압되었다. 746명이 체포되어 라비차 공항에서 가혹한 심문을 받았다."
+          },
+          "date": "1956.06.30",
+          "title": {
+            "en": "Suppression and arrests",
+            "ko": "봉기의 진압과 체포"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.41,
+            "lng": 16.93,
+            "kind": "point",
+            "label": {
+              "en": "Poznań",
+              "ko": "포즈난"
+            }
+          },
+          "body": {
+            "en": "The 'Trial of the Three,' the 'Trial of the Nine,' and the 'Trial of the Ten' resulted in sentences of 2-6 years. Defence lawyers publicly argued that the government bore responsibility for the bloodshed.",
+            "ko": "'3인 재판', '9인 재판', '10인 재판'이 열려 피고들에게 2년에서 6년형이 선고되었다. 변호인단이 정부의 책임을 공개적으로 제기하며 맞섰다."
+          },
+          "date": "1956.09–10",
+          "title": {
+            "en": "Trials of the insurgents",
+            "ko": "봉기 참가자 재판"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.23,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Warsaw",
+              "ko": "바르샤바"
+            }
+          },
+          "body": {
+            "en": "The Central Committee elected Władysław Gomułka as First Secretary. He acknowledged that the causes of Poznań lay in the party's own mistaken policies, not 'imperialist provocation,' amnestied the defendants, and launched limited de-Stalinization.",
+            "ko": "중앙위원회가 브와디스와프 고무우카를 제1서기로 선출했다. 고무우카는 포즈난의 원인이 '제국주의 책동'이 아니라 당의 잘못된 정책에 있다고 인정하고 피고들을 사면했으며, 제한적 탈스탈린화를 추진했다."
+          },
+          "date": "1956.10.21",
+          "title": {
+            "en": "Gomułka's return and 'Polish October'",
+            "ko": "고무우카의 복귀와 '폴란드 10월'"
+          }
+        },
+        {
+          "body": {
+            "en": "With the shock of Poznań June still reverberating, the Hungarian Revolution erupted in Budapest, starting as a solidarity demonstration.",
+            "ko": "포즈난 6월의 충격이 채 가시지 않은 가운데, 부다페스트에서 연대 시위로 시작된 헝가리 혁명이 발발했다."
+          },
+          "date": "1956.10.23",
+          "title": {
+            "en": "The Hungarian Revolution begins",
+            "ko": "헝가리 혁명의 시작"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.41,
+            "lng": 16.92,
+            "kind": "point",
+            "label": {
+              "en": "Mickiewicz Square",
+              "ko": "미츠키에비치 광장"
+            }
+          },
+          "body": {
+            "en": "Under pressure from Solidarity, the first memorial, the 'Poznań Crosses', was unveiled in Poznań. Romek Strzałkowski's mother and Lech Wałęsa attended.",
+            "ko": "연대노조의 압력으로 포즈난에 첫 추모비 '포즈난 십자가'가 세워졌다. 로메크 스트샤우코프스키의 어머니와 레흐 바웬사가 참석했다."
+          },
+          "date": "1981.06.28",
+          "title": {
+            "en": "First memorial erected",
+            "ko": "첫 추모비 건립"
+          }
+        }
+      ],
+      "value": [
+        {
+          "body": {
+            "en": "Khrushchev's denunciation of Stalin at the Twentieth Party Congress set off de-Stalinization pressures across Eastern Europe.",
+            "ko": "제20차 소련 공산당 대회에서 흐루쇼프가 스탈린을 비판하면서 동유럽 전역에 탈스탈린화의 압력이 가해졌다."
+          },
+          "date": "1956.02",
+          "title": {
+            "en": "Khrushchev's Secret Speech",
+            "ko": "흐루쇼프의 비밀연설"
+          }
+        },
+        {
+          "body": {
+            "en": "Poland's hardline Stalinist leader Bolesław Bierut died suddenly in Moscow, reportedly from the shock of the Secret Speech; Edward Ochab became First Secretary and began cautious reforms.",
+            "ko": "폴란드의 강경 스탈린주의 지도자 볼레스와프 비에루트가 비밀연설의 충격 속에 모스크바에서 급서하고, 에드바르트 오하프가 제1서기가 되어 조심스러운 개혁을 시작했다."
+          },
+          "date": "1956.03.12",
+          "title": {
+            "en": "Death of Bierut, Ochab succeeds",
+            "ko": "비에루트 사망과 오하프의 승계"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.23,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Warsaw",
+              "ko": "바르샤바"
+            }
+          },
+          "body": {
+            "en": "A 27-member delegation from ZISPO negotiated in Warsaw for wage increases and tax refunds; Minister of Machine Industry Roman Fideliski made verbal promises.",
+            "ko": "포즈난 ZISPO 공장 노동자 대표단 27명이 바르샤바에서 임금 인상과 과도한 세금 환급을 요구했고, 기계공업부 장관 로만 피델스키가 구두 약속을 했다."
+          },
+          "date": "1956.06.23–26",
+          "title": {
+            "en": "ZISPO delegation negotiates in Warsaw",
+            "ko": "ZISPO 노동자 대표단의 바르샤바 협상"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.39,
+            "lng": 16.9,
+            "kind": "point",
+            "label": {
+              "en": "ZISPO works",
+              "ko": "ZISPO 공장"
+            }
+          },
+          "body": {
+            "en": "Fideliski arrived in Poznań and withdrew the previous day's promises. Word spread through the factory, enraging the workforce.",
+            "ko": "피델스키가 포즈난에 도착해 전날의 약속을 번복했다. 이 소식이 공장에 퍼지며 노동자들의 분노가 극에 달했다."
+          },
+          "date": "1956.06.27",
+          "title": {
+            "en": "The promises are withdrawn",
+            "ko": "약속의 번복"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.4129,
+            "lng": 16.9097,
+            "kind": "point",
+            "label": {
+              "ko": "코하노프스키 가의 보안국 청사",
+              "en": "UB building, Kochanowskiego Street"
+            }
+          },
+          "body": {
+            "en": "A strike at ZISPO began at 6:30 a.m. and swelled to roughly 100,000 in the streets. Protesters stormed party and security police buildings and seized a prison; from the afternoon, troops opened fire. Dozens were killed.",
+            "ko": "오전 6시 30분 ZISPO에서 파업이 시작되어 약 10만 명이 거리로 나섰다. 시위대는 당 청사와 보안국을 습격하고 감옥을 점거했으며, 오후부터 군대가 진입해 발포했다. 수십 명이 사망했다."
+          },
+          "date": "1956.06.28",
+          "title": {
+            "en": "From strike to uprising: 'Black Thursday'",
+            "ko": "파업에서 봉기로: '검은 목요일'"
+          }
+        },
+        {
+          "geo": {
+            "kind": "arrow",
+            "actor": {
+              "en": "Polish People’s Army",
+              "ko": "폴란드 인민군"
+            },
+            "label": {
+              "en": "to Poznań",
+              "ko": "포즈난 진압"
+            },
+            "points": [
+              [
+                52.23,
+                21.01
+              ],
+              [
+                52.41,
+                16.93
+              ]
+            ],
+            "variant": "red"
+          },
+          "body": {
+            "en": "Soviet Marshal and Polish Defence Minister Konstantin Rokossovsky ordered military suppression, dispatching his deputy General Stanislav Poplavsky to take field command in Poznań.",
+            "ko": "소비에트 원수이자 폴란드 국방장관인 콘스탄틴 로코솝스키가 군사 진압을 결정하고, 부관 스타니스와프 포프와프스키 장군을 포즈난에 파견해 지휘권을 넘겼다."
+          },
+          "date": "1956.06.28",
+          "title": {
+            "en": "Rokossovsky intervenes, Poplavsky dispatched",
+            "ko": "로코솝스키의 개입과 포프와프스키 파견"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.3984,
+            "lng": 16.9008,
+            "kind": "point",
+            "label": {
+              "ko": "폴란드 라디오 포즈난 방송국",
+              "en": "Polish Radio Poznań"
+            }
+          },
+          "body": {
+            "en": "Prime Minister Józef Cyrankiewicz declared on the radio: 'any provocateur or lunatic who raises his hand against the people's government may be sure that this hand will be chopped off.' It remains one of the most infamous speeches in modern Polish history.",
+            "ko": "유제프 치란키에비치 총리가 라디오에 나와 '인민 정부에 손을 대는 자는 그 손이 잘릴 것'이라고 선언했다. 이 발언은 폴란드 현대사에서 가장 악명 높은 연설 중 하나로 남았다."
+          },
+          "date": "1956.06.29",
+          "title": {
+            "en": "Cyrankiewicz's radio address",
+            "ko": "치란키에비치의 라디오 연설"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.42,
+            "lng": 16.83,
+            "kind": "point",
+            "label": {
+              "en": "Ławica Airport",
+              "ko": "와비차 공항"
+            }
+          },
+          "body": {
+            "en": "Some 400 tanks and 10,000 troops completed the pacification of the city. 746 people were arrested and subjected to brutal interrogation at Ławica Airport.",
+            "ko": "전차 400여 대와 1만 명의 병력이 동원되어 봉기가 완전히 진압되었다. 746명이 체포되어 와비차 공항에서 가혹한 심문을 받았다."
+          },
+          "date": "1956.06.30",
+          "title": {
+            "en": "Suppression and arrests",
+            "ko": "봉기의 진압과 체포"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.41,
+            "lng": 16.93,
+            "kind": "point",
+            "label": {
+              "en": "Poznań",
+              "ko": "포즈난"
+            }
+          },
+          "body": {
+            "en": "The 'Trial of the Three,' the 'Trial of the Nine,' and the 'Trial of the Ten' resulted in sentences of 2-6 years. Defence lawyers publicly argued that the government bore responsibility for the bloodshed.",
+            "ko": "'3인 재판', '9인 재판', '10인 재판'이 열려 피고들에게 2년에서 6년형이 선고되었다. 변호인단이 정부의 책임을 공개적으로 제기하며 맞섰다."
+          },
+          "date": "1956.09–10",
+          "title": {
+            "en": "Trials of the insurgents",
+            "ko": "봉기 참가자 재판"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.23,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Warsaw",
+              "ko": "바르샤바"
+            }
+          },
+          "body": {
+            "en": "The Central Committee elected Władysław Gomułka as First Secretary. He acknowledged that the causes of Poznań lay in the party's own mistaken policies, not 'imperialist provocation,' amnestied the defendants, and launched limited de-Stalinization.",
+            "ko": "중앙위원회가 브와디스와프 고무우카를 제1서기로 선출했다. 고무우카는 포즈난의 원인이 '제국주의 책동'이 아니라 당의 잘못된 정책에 있다고 인정하고 피고들을 사면했으며, 제한적 탈스탈린화를 추진했다."
+          },
+          "date": "1956.10.21",
+          "title": {
+            "en": "Gomułka's return and 'Polish October'",
+            "ko": "고무우카의 복귀와 '폴란드 10월'"
+          }
+        },
+        {
+          "body": {
+            "en": "With the shock of Poznań June still reverberating, the Hungarian Revolution erupted in Budapest, starting as a solidarity demonstration.",
+            "ko": "포즈난 6월의 충격이 채 가시지 않은 가운데, 부다페스트에서 연대 시위로 시작된 헝가리 혁명이 발발했다."
+          },
+          "date": "1956.10.23",
+          "title": {
+            "en": "The Hungarian Revolution begins",
+            "ko": "헝가리 혁명의 시작"
+          }
+        },
+        {
+          "geo": {
+            "lat": 52.41,
+            "lng": 16.92,
+            "kind": "point",
+            "label": {
+              "en": "Mickiewicz Square",
+              "ko": "미츠키에비치 광장"
+            }
+          },
+          "body": {
+            "en": "Under pressure from Solidarity, the first memorial, the 'Poznań Crosses', was unveiled in Poznań. Romek Strzałkowski's mother and Lech Wałęsa attended.",
+            "ko": "연대노조의 압력으로 포즈난에 첫 추모비 '포즈난 십자가'가 세워졌다. 로메크 스트샤우코프스키의 어머니와 레흐 바웬사가 참석했다."
+          },
+          "date": "1981.06.28",
+          "title": {
+            "en": "First memorial erected",
+            "ko": "첫 추모비 건립"
+          }
+        }
+      ]
+    }
+  ]
+}
