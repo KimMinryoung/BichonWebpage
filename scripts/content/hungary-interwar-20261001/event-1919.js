@@ -249,6 +249,7 @@ const people = [
     ['mihaly-karolyi', 'participant', '인민공화국 대통령', 'President of the People’s Republic', '빅스 각서로 정부가 무너졌고, 그의 명의로 권력을 프롤레타리아트에 넘긴다는 포고가 나왔다.', 'His government fell over the Vix note, and a proclamation in his name handed power to the proletariat.'],
     ['gyula-peidl', 'opponent', '노동조합 정부 총리', 'Prime minister of the trade-union government', '합당과 독재에 반대해 물러났고 8월 1일 총리가 되어 평의회 정부의 법령을 철회했다.', 'Opposed the merger and dictatorship, then as prime minister from 1 August revoked the council decrees.'],
     ['miklos-horthy', 'opponent', '세게드 정부 국방장관 · 국민군 사령관', 'Szeged war minister, National Army commander', '세게드 반혁명 정부의 국민군을 이끌었고 11월 부다페스트에 들어와 이듬해 섭정이 되었다.', 'Led the Szeged counter-revolutionary National Army, entered Budapest in November and became regent the next year.'],
+    ['istvan-bethlen', 'opponent', '빈 반볼셰비키 위원회 지도자', 'Leader of the Anti-Bolshevik Committee in Vienna', '옛 지배층을 모아 빈에서 반볼셰비키 위원회를 이끌었다.', 'Gathered the old ruling class in the Anti-Bolshevik Committee he led in Vienna.'],
 ];
 
 const ev = event({

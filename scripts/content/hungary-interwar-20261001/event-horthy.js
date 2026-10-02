@@ -261,6 +261,8 @@ const people = [
     ['zoltan-vas', 'target', '투옥된 공산당원', 'Imprisoned Communist', '거듭 투옥되었다가 1940년 라코시와 함께 풀려나 소련으로 갔다.', 'Repeatedly imprisoned, he was released with Rákosi in 1940 and went to the Soviet Union.'],
     ['imre-sallai', 'target', '처형된 공산당 지도자', 'Executed Communist leader', '비어토르바지 사건 뒤의 즉결재판 제도 아래 1932년 교수형에 처해졌다.', 'Hanged in 1932 under the summary jurisdiction proclaimed after Biatorbágy.'],
     ['sandor-furst', 'target', '처형된 공산당 지도자', 'Executed Communist leader', '셜러이와 함께 사형을 선고받고 1932년 교수형에 처해졌다.', 'Sentenced to death with Sallai and hanged in 1932.'],
+    ['bela-imredy', 'participant', '국립은행 총재', 'Governor of the National Bank', '1938년 더라니 정부가 발표한 10억 펭괴 규모의 군비 확장 계획(죄르 강령)을 마련했다.', 'Drew up the one-billion-pengő rearmament plan (the Győr programme) announced by the Darányi government in 1938.'],
+    ['miklos-kallay', 'participant', '농업장관', 'Minister of agriculture', '베틀렌의 측근으로 굄뵈시 내각에 들어가 총리를 견제했다.', 'A Bethlen associate placed in the Gömbös cabinet to check the prime minister.'],
 ];
 
 // ---------------------------------------------------------------- people

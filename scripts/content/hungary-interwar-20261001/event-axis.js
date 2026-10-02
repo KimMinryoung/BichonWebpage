@@ -301,6 +301,9 @@ const event = buildEvent({
         ['ferenc-rozsa', 'opponent', '『서버드 네프』 편집인', 'Editor of Szabad Nép', '지하 기관지를 창간해 편집하다 1942년 체포되어 구금 중 숨졌다.', 'Founded and edited the underground party paper and died in custody after his arrest in 1942.'],
         ['janos-kadar', 'opponent', '공산당 지하 지도자', 'Underground Communist leader', '1943년 지도부를 맡아 공산당을 평화당으로 바꾸었다.', 'Took over the leadership in 1943 and turned the Communist Party into the Peace Party.'],
         ['gabor-peter', 'opponent', '공산당 지하 지도부원', 'Underground Communist leader', '1943년 대량 검거 뒤 카다르와 함께 새 지도부를 이루었다.', 'Formed the new leadership with Kádár after the mass arrests of 1943.'],
+        ['ferenc-szalasi', 'participant', '화살십자당 지도자', 'Arrow Cross leader', '1935년 극우 정당을 세웠고 이 당이 뒤에 화살십자당이 되었다.', 'Founded in 1935 the far-right party that grew into the Arrow Cross.'],
+        ['heinrich-himmler', 'participant', '친위대 전국지도자', 'Reichsführer-SS', '1944년 3월 독일군 점령 준비와 함께 아이히만에게 헝가리 유대인 이송 준비를 지시했다.', 'In March 1944, as the occupation was prepared, instructed Eichmann to prepare the deportation of Hungary’s Jews.'],
+        ['joseph-goebbels', 'witness', '독일 선전장관', 'German propaganda minister', '1944년 3월 4일 일기에 헝가리의 「배신은 벌받아야 한다」고 적었다.', 'Wrote in his diary on 4 March 1944 that Hungary’s “treason had to be punished”.'],
     ],
 });
 
