@@ -6,7 +6,7 @@ const path = require('node:path');
 require.cache[require.resolve('../config/database')] = { exports: {
     query: async () => ({ rows: [{ writes: '1', tables: 1 }] }),
 } };
-const { createDictionarySnapshotStore } = require('../data/commulingo/snapshot-store');
+const { createDictionarySnapshotStore, createRegistrySnapshotStore } = require('../data/commulingo/snapshot-store');
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'snapshot-test-'));
 let value = 1, pulls = 0, fail = false, hold, entered;
 const options = {
@@ -46,7 +46,19 @@ const options = {
     assert.deepEqual((await cold.load({ fresh: true })).data, [3], 'old disk shape survives outage');
     fail = false;
     const before = pulls;
-    for (let i = 0; i < 11; i++) await store.refresh({ force: false });
+    for (let i = 0; i < 61; i++) await store.refresh({ force: false });
     assert.equal(pulls, before + 1, 'periodic full pull remains enabled');
+
+    let rowPulls = 0;
+    const registry = createRegistrySnapshotStore({
+        label: 'test registry', refreshMs: 1e9, snapshotPath: path.join(dir, 'registry.json'),
+        signatureTables: ['test'], validateSnapshot: Array.isArray, install: rows => ({ rows }),
+        fetchRows: async () => { rowPulls++; return [{ value }]; },
+    });
+    const installed = await registry.load();
+    await registry.refresh({ force: false });
+    assert.equal(rowPulls, 1, 'unchanged registry tables skip the pull');
+    assert.equal(await registry.refresh(), installed, 'forced registry pull keeps identity');
+    assert.equal(rowPulls, 2);
     console.log('snapshot force, queued refresh, identity, outage, disk compatibility, periodic refresh passed');
 })().catch(err => { console.error(err); process.exitCode = 1; }).finally(() => fs.rmSync(dir, { recursive: true, force: true }));

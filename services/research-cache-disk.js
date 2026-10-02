@@ -30,6 +30,7 @@ class ResearchCacheDisk {
         this.version = version;
         this.restoring = null;
         this.writing = null;
+        this.savedChanges = null; // cache.changes at the last write or restore
     }
     restore() {
         if (!this.restoring) this.restoring = this.read();
@@ -43,6 +44,7 @@ class ResearchCacheDisk {
             const saved = JSON.parse(await fs.readFile(this.filename, 'utf8'));
             if (saved.version !== await this.version()) return;
             this.cache.import(saved.generations);
+            this.savedChanges = this.cache.changes;
             console.log('[report cache] restored saved render cache');
         } catch (error) {
             if (error.code !== 'ENOENT') console.error('[report cache] restore skipped:', error.message);
@@ -50,6 +52,10 @@ class ResearchCacheDisk {
     }
     save() {
         if (this.filename === '0') return Promise.resolve();
+        // The hourly mentions pass saves even when every report was a cache
+        // hit; rewriting the same ~28 MB file then is pure cost.
+        if (this.cache.changes === this.savedChanges) return this.writing || Promise.resolve();
+        this.savedChanges = this.cache.changes;
         // Serialize writes so a slower older snapshot cannot replace a newer one.
         this.writing = (this.writing || Promise.resolve()).then(async () => {
             const temporary = this.filename + '.' + randomUUID() + '.tmp';

@@ -41,6 +41,7 @@ const store = createRegistrySnapshotStore({
         `SELECT kind, lang, phrase FROM commulingo_link_blocklist ORDER BY kind, lang, phrase`
     )).rows,
     install,
+    signatureTables: ['commulingo_link_blocklist'],
     // A file written before `kind` existed would install every never-link
     // alias as a phrase, which silently re-links 리보프 and 톨스토이; one from
     // before the term kinds (migration 154) would silently re-link 전세계 and

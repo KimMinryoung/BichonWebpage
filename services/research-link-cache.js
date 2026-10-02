@@ -26,6 +26,7 @@ class ResearchLinkCache {
     constructor(limit = 500) {
         this.limit = limit;
         this.generations = new Map();
+        this.changes = 0; // bumped on every change export() would show
     }
     forIndexes(indexes) {
         const lang = indexes?.lang || (indexes?.person?.en ? 'en' : 'ko');
@@ -49,6 +50,8 @@ class ResearchLinkCache {
                 }
             }
         }
+        // An identical snapshot (no needles) exports the same bytes.
+        if (needles === null || needles.length) this.changes++;
         generation.indexes = indexes;
         generation.snapshot = next;
         this.generations.set(lang, generation);
@@ -94,6 +97,7 @@ class ResearchLinkCache {
     put(entries, key, html, result, reportStates = [], persistable = true) {
         if (entries.size >= this.limit) entries.delete(entries.keys().next().value);
         entries.set(key, { text: searchableHtml(html), result, reportStates, persistable });
+        this.changes++;
     }
 }
 

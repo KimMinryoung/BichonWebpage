@@ -41,6 +41,7 @@ const store = createRegistrySnapshotStore({
          ORDER BY sort_order, id`
     )).rows,
     install,
+    signatureTables: ['commulingo_term_categories'],
     validateSnapshot: rows => Array.isArray(rows) && rows.length > 0,
 });
 

@@ -29,10 +29,12 @@ const db = require('../../config/database');
 // so an unchanged sum over the store's tables means an unchanged snapshot.
 // The counters reset only when the server restarts, which merely forces a
 // full refresh. A full pull still happens every FULL_REFRESH_EVERY cycles so
-// a missed signal cannot go stale for more than ten minutes.
-// COMMULINGO_SNAPSHOT_SIGNATURE=0 turns the gate off.
+// a missed signal cannot go stale for more than an hour; each one costs the
+// people store about 0.2 s of uninterrupted hashing on top of the queries.
+// The registry stores use the same gate. COMMULINGO_SNAPSHOT_SIGNATURE=0
+// turns it off.
 const SIGNATURE_ENABLED = process.env.COMMULINGO_SNAPSHOT_SIGNATURE !== '0';
-const FULL_REFRESH_EVERY = 10;
+const FULL_REFRESH_EVERY = 60;
 
 async function readWriteSignature(tables) {
     const { rows } = await db.query(
@@ -43,6 +45,25 @@ async function readWriteSignature(tables) {
         [tables]
     );
     return { value: `${rows[0].writes}:${rows[0].tables}`, tables: rows[0].tables };
+}
+
+// Returns async () => signature string, or null when the gate is off or the
+// read failed (either way the caller does a full pull).
+function signatureReader(label, tables) {
+    let warned = false;
+    return async () => {
+        if (!SIGNATURE_ENABLED || !tables || !tables.length) return null;
+        try {
+            const sig = await readWriteSignature(tables);
+            if (sig.tables !== tables.length && !warned) {
+                warned = true;
+                console.warn(`[${label}] signature covers ${sig.tables}/${tables.length} tables; check the table list`);
+            }
+            return sig.value;
+        } catch (err) {
+            return null; // a failed read just means a full pull this cycle
+        }
+    };
 }
 
 function writeSnapshotFile(snapshotPath, label, serialized) {
@@ -89,21 +110,7 @@ function createDictionarySnapshotStore({
     let lastSnapshotHash = null; // sha1 of the last serialized snapshot
     let lastSignature = null;    // write-counter signature at the last full pull
     let cyclesSinceFull = 0;
-    let signatureWarned = false;
-
-    async function currentSignature() {
-        if (!SIGNATURE_ENABLED || !signatureTables || !signatureTables.length) return null;
-        try {
-            const sig = await readWriteSignature(signatureTables);
-            if (sig.tables !== signatureTables.length && !signatureWarned) {
-                signatureWarned = true;
-                console.warn(`[${label}] signature covers ${sig.tables}/${signatureTables.length} tables; check the table list`);
-            }
-            return sig.value;
-        } catch (err) {
-            return null; // a failed read just means a full pull this cycle
-        }
-    }
+    const currentSignature = signatureReader(label, signatureTables);
 
     function readSnapshotFile() {
         try {
@@ -239,11 +246,15 @@ function createRegistrySnapshotStore({
     fetchRows,         // async () => rows (raw, snapshot-shaped)
     install,           // rows => memory value (also the ref callers memoize on)
     validateSnapshot,  // rows => bool
+    signatureTables,   // optional: table names whose write counters gate a refresh
 }) {
     let memory = null;
     let pendingRefresh = null;
     let timerStarted = false;
     let lastSnapshotHash = null; // sha1 of the last serialized rows
+    let lastSignature = null;    // write-counter signature at the last full pull
+    let cyclesSinceFull = 0;
+    const currentSignature = signatureReader(label, signatureTables);
 
     function readSnapshotFile() {
         try {
@@ -264,10 +275,28 @@ function createRegistrySnapshotStore({
         return null;
     }
 
-    function refresh() {
-        if (pendingRefresh) return pendingRefresh;
-        pendingRefresh = fetchRows()
+    function refresh({ force = true } = {}) {
+        // A forced refresh (after a write) must not settle for a gated cycle
+        // that may have skipped the pull.
+        if (pendingRefresh) {
+            return force ? pendingRefresh.catch(() => {}).then(() => refresh()) : pendingRefresh;
+        }
+        pendingRefresh = (async () => {
+            // Same gate as the dictionary stores: the link reviews alone are
+            // 10k rows (3.6 MB) to fetch, serialize and hash every minute.
+            const signature = await currentSignature();
+            if (!force && signature && lastSignature && signature === lastSignature
+                && memory && cyclesSinceFull < FULL_REFRESH_EVERY) {
+                cyclesSinceFull += 1;
+                return null;
+            }
+            const rows = await fetchRows();
+            lastSignature = signature;
+            cyclesSinceFull = 0;
+            return rows;
+        })()
             .then(rows => {
+                if (!rows) return memory;
                 // An empty registry would quietly break what the registry
                 // protects (blank chips / re-enabled false links); keep the
                 // copy we have instead.
@@ -292,7 +321,7 @@ function createRegistrySnapshotStore({
     function ensureRefreshTimer() {
         if (timerStarted) return;
         timerStarted = true;
-        startTimer(label, refreshMs, refresh);
+        startTimer(label, refreshMs, () => refresh({ force: false }));
     }
 
     // Await before using the sync accessors. Memory → disk snapshot → DB.
@@ -319,7 +348,7 @@ function createRegistrySnapshotStore({
         load,
         refresh,
         getMemory: () => memory,
-        setMemory: value => { memory = value; lastSnapshotHash = null; return memory; },
+        setMemory: value => { memory = value; lastSnapshotHash = null; lastSignature = null; return memory; },
         snapshotPath,
     };
 }

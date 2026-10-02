@@ -28,6 +28,10 @@ const context = record => ({ lang: 'en', person: buildPersonLinkIndex([record], 
         assert.ok(!raw.includes('OLD BIO MUST NOT BE PERSISTED'));
         assert.ok(!raw.includes('"private"'));
         assert.equal((await fs.stat(filename)).mode & 0o777, 0o600);
+        await fs.rename(filename, filename + '.kept');
+        await disk.save();
+        await assert.rejects(fs.stat(filename), 'an unchanged cache is not rewritten');
+        await fs.rename(filename + '.kept', filename);
 
         const restarted = new ResearchLinkCache();
         await new ResearchCacheDisk(restarted, { filename, version: async () => 'v1' }).restore();
