@@ -186,17 +186,23 @@ async function buildEventPanel(eventId, lang) {
         if (index === -1) return null; // unknown ids stay uncached — crawler noise must not grow the map
         const paired = terms.find(item => item.sameSubjectEvent && item.sameSubjectEvent.id === eventId);
         // Dictionary links inside the event's own prose, on the shared policy
-        // (linkify.js). One linker for the whole page, so a term named in the
-        // summary and again in four timeline entries is a link once, at its
-        // first mention. The event itself is excluded, and so is the glossary
-        // entry that is the same subject: that entry's panel is the other half
-        // of this page, so linking its name would point the reader at the tab
-        // they are already on.
-        const linker = createLinker(indexes, {
+        // (linkify.js). One linker for the article, so a term named in the
+        // body and again in four timeline entries is a link once, at its
+        // first mention. The question and summary get a linker of their own:
+        // a person met in the summary and again halfway down the body would
+        // otherwise be linked only up top, and a reader who reaches the name
+        // mid-article would have to scroll back to find who it is. The event
+        // itself is excluded, and so is the glossary entry that is the same
+        // subject: that entry's panel is the other half of this page, so
+        // linking its name would point the reader at the tab they are
+        // already on.
+        const linkerOptions = {
             surface: 'event',
             exclude: { event: eventId, term: paired ? paired.id : '' },
             blockStrings: events[index].noAutoLink,
-        });
+        };
+        const ledeLinker = createLinker(indexes, linkerOptions);
+        const linker = createLinker(indexes, linkerOptions);
         const link = text => linker.plain(text);
         const event = presentEvent(events[index], lang);
         // Campaign-map numbering: the row keeps the same ①②… number its
@@ -230,8 +236,8 @@ async function buildEventPanel(eventId, lang) {
         // the rest keep the template's own handling (URL or plain citation).
         event.sourceItems = event.sources.map(source => (isSitePathSource(source)
             ? presentSitePathSource(String(source).trim(), lang) : { raw: source }));
-        event.questionHtml = link(event.question);
-        event.summaryHtml = link(event.summary);
+        event.questionHtml = ledeLinker.plain(event.question);
+        event.summaryHtml = ledeLinker.plain(event.summary);
         const linkTimeline = () => {
             event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
         };
