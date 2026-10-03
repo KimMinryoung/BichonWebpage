@@ -1,0 +1,92 @@
+{
+ "scope": "2026-10-03 new term committee-of-public-safety-paris-commune: headwords and aliases",
+ "references": [
+  "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+ ],
+ "decisions": [
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "ko",
+   "text": "공안위원회 (파리 코뮌)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "7e47144ef060b51167efca3457b175e7a8435b0c6613a30f0e88210af4d35b90"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "ko",
+   "text": "파리 코뮌 공안위원회",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "15e05314cf45f3a4f2b27da54cbafc336fd273686aef87d4169e87ddd353e5da"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "ko",
+   "text": "코뮌 공안위원회",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "9f120dd31dd82f7f345a9c926e22ce1199943f89948a1f7e0583626d7ffbfc10"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "en",
+   "text": "Committee of Public Safety (Paris Commune)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "6defc2ecd794eae52c602caee871cc7e8e54249c5ef6245ebba8d804b2a0581f"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "en",
+   "text": "Paris Commune Committee of Public Safety",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "7ad34123e85d24b3b98b8f978ca297f5948a10785b253a8e9234b40dc59ebf88"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "en",
+   "text": "Commune's Committee of Public Safety",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "9fdb3fd0d9a3c98ecfca25b92ab6d56ba8f4365b570c9554a6e9318564420df0"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety-paris-commune",
+   "lang": "en",
+   "text": "Commune’s Committee of Public Safety",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 검토: 1871년 파리 코뮌의 공안위원회만 가리키는 이름(코뮌 한정어 포함). 1793년 공안위원회와 구별되는 신규 항목. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "e4ab6bd87fc87a37d20e15ac0dbc56444a229c358d82d991ce654d4e01cf77a6"
+  }
+ ]
+}
