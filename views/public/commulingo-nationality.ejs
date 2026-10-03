@@ -10,32 +10,24 @@
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: strings.commuLingoViews.nationality.people, href: '/commulingo/people' },
-                { label: filter.label },
+                { label: strings.commuLingoViews.worldMap.title, href: '/commulingo/map' },
+                { label: filter.label, href: countryPageHref },
+                { label: filter.peopleLabel },
             ],
-            dictJump: 'people' }) %>
+            dictJump: 'map' }) %>
 
         <header class="commu-hub-head commu-nationality-hub-head">
             <span class="commu-nationality-hub-flag" aria-hidden="true"><%- flagImg(filter.code, filter.label) %></span>
             <div>
-                <span class="commu-nationality-kind"><%= filter.kindLabel %></span>
-                <h1><%= filter.label %></h1>
+                <h1><%= en ? filter.label + ': ' + filter.peopleLabel : filter.label + ' ' + filter.peopleLabel %></h1>
                 <p><%= people.length %> <%= en ? (people.length === 1 ? 'person' : 'people') : '명' %></p>
             </div>
         </header>
 
-        <section class="commu-world-map-panel is-country" aria-label="<%= filter.label %>">
-            <%- include('../partials/commulingo-world-map-controls', { copy: strings.commuLingoViews.worldMap }) %>
-            <div class="commu-world-map" data-world-map><%- mapSvg %></div>
-            <a class="btn btn-block commu-country-view-all" href="<%= countryPageHref %>"><span><%= strings.commuLingoViews.worldMap.openCountryHub %></span><span aria-hidden="true">→</span></a>
-            <p class="commu-world-map-note"><%= mapKind === 'modern' ? strings.commuLingoViews.worldMap.boundaryNote : strings.commuLingoViews.worldMap.historicalNote %></p>
-        </section>
-
-        <section class="commu-hub-section" aria-labelledby="nationality-people">
-            <h2 id="nationality-people"><%= strings.commuLingoViews.nationality.people2 %></h2>
+        <section class="commu-hub-section" aria-label="<%= filter.peopleLabel %>">
             <div class="commu-people-grid">
                 <% people.forEach(function(person) { %>
-                <%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %>
+                <%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, personFlagHref: personFlagHref }) %>
                 <% }) %>
             </div>
         </section>
@@ -43,6 +35,5 @@
 
     <%- include('../partials/footer') %>
     <%- include('../partials/commulingo-person-card-click-script') %>
-    <script src="/js/commulingo-world-map.js?v=<%= assetVersion %>" defer></script>
 </body>
 </html>

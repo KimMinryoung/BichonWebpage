@@ -58,14 +58,14 @@
         <section class="commu-hub-section" aria-labelledby="country-citizenship">
             <h2 id="country-citizenship" class="commu-country-section-head"><a href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><span><%= copy.citizenshipPeople %> <small><%= country.citizenshipCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
             <% if (country.citizenshipPreview.length) { %><div class="commu-people-grid">
-                <% country.citizenshipPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %><% }) %>
+                <% country.citizenshipPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, personFlagHref: personFlagHref }) %><% }) %>
             </div><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
         </section>
 
         <section class="commu-hub-section" aria-labelledby="country-origin">
             <h2 id="country-origin" class="commu-country-section-head"><a href="/commulingo/people/national-origin/<%= encodeURIComponent(country.code) %>"><span><%= copy.backgroundPeople %> <small><%= country.originCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
             <% if (country.originPreview.length) { %><div class="commu-people-grid">
-                <% country.originPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, nationalityHubHref: nationalityHubHref }) %><% }) %>
+                <% country.originPreview.forEach(function(person) { %><%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, personFlagHref: personFlagHref }) %><% }) %>
             </div><% } else { %><p class="commu-country-empty"><%= copy.noPeople %></p><% } %>
         </section>
 

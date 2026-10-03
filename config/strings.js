@@ -439,10 +439,6 @@ const ko = {
             previous: '이전',
             next: '다음',
         },
-        nationality: {
-            people: '인물 사전',
-            people2: '해당 인물',
-        },
         worldMap: {
             title: '세계 지도',
             description: '국기를 누르면 그 나라가 직접 연루된 사건, 소속 인물(주요 활동 당시 그 나라에 속했던 인물), 출신 인물(그 나라에 민족적·국가적 뿌리를 둔 인물)을 함께 볼 수 있습니다.',
@@ -486,7 +482,6 @@ const ko = {
             viewAll: '전체 인물 보기',
             noPeople: '현재 이 분류에 등록된 인물이 없습니다.',
             noEvents: '현재 직접 연루 국가로 분류된 사건이 없습니다.',
-            openCountryHub: '이 국가의 인물과 역사 사건 함께 보기',
         },
         office: {
             people: '인물 사전',
@@ -1047,10 +1042,6 @@ const en = {
             previous: 'Previous',
             next: 'Next',
         },
-        nationality: {
-            people: 'People',
-            people2: 'People',
-        },
         worldMap: {
             title: 'World Map',
             description: 'Select a flag to see the events it was directly involved in, its citizens (people who belonged to it during their main activity), and people of its origin (people with ethnic or national roots there).',
@@ -1094,7 +1085,6 @@ const en = {
             viewAll: 'View all people',
             noPeople: 'No people are currently registered in this classification.',
             noEvents: 'No events are currently classified with this country as a direct party.',
-            openCountryHub: 'View this country’s people and historical events',
         },
         office: {
             people: 'People',

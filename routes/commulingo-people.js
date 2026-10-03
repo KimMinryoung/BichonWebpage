@@ -16,9 +16,8 @@ const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
 const { flagImg, flagLabel } = require('../data/commulingo/flag-icons');
-const { nationalityHubHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
-const { countryHref, countryInfo } = require('../data/commulingo/country-geography');
-const { renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
+const { personFlagHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
+const { countryHref } = require('../data/commulingo/country-geography');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically } = require('../data/commulingo/people-view');
 
@@ -94,7 +93,7 @@ router.get('/people/search', async (req, res) => {
                 indexes = indexes || await getLinkIndexes(lang);
                 html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
                     strings: allStrings[lang], people, groupId: '', en: lang === 'en',
-                    roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
+                    roleIconSvg, roleHubHref, flagImg, personFlagHref,
                     linkifyPersonText: createCardTextLinker(indexes),
                 });
             }
@@ -265,7 +264,7 @@ router.get('/activities', async (req, res) => {
         const topAffiliations = [...affiliations].sort((a, b) => b.count - a.count).slice(0, 8);
         if (affiliationId && !topAffiliations.some(a => a.id === affiliationId)) topAffiliations.push(affiliations.find(a => a.id === affiliationId));
         res.render('public/commulingo-activities', { filter, q, functions, affiliations, affiliationGroups, offices, allCounts, topAffiliations: topAffiliations.filter(Boolean), pagination, total: people.length,
-            people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, nationalityHubHref,
+            people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, personFlagHref,
             linkifyPersonText: await cardTextLinker(res),
             pageTitle: lang === 'en' ? 'People by activity and affiliation' : '기능·활동과 국가·세력별 인물',
             pageDescription: lang === 'en' ? 'Explore people by what they did and the organizations they served.' : '인물이 수행한 활동과 그 활동의 국가·세력을 함께 살펴봅니다.',
@@ -357,19 +356,20 @@ async function renderNationalityPeople(req, res, kind) {
             filter,
             people: filter.people,
             countryPageHref: countryHref(code),
-            mapKind: countryInfo(code, lang).kind,
-            mapSvg: renderCountryMapSvg({ selectedCode: code, lang, countryLink: targetCode => nationalityHubHref(kind, targetCode) }),
             roleIconSvg,
             roleHubHref,
             linkifyPersonText: await cardTextLinker(res),
-            pageTitle: `${filter.kindLabel}: ${filter.label} — ${lang === 'en' ? 'People' : '인물 사전'}`,
+            pageTitle: lang === 'en'
+                ? `${filter.label}: ${filter.peopleLabel} — World Map`
+                : `${filter.label} ${filter.peopleLabel} — 세계 지도`,
             pageDescription: lang === 'en'
                 ? `People whose ${filter.kindLabel.toLowerCase()} is ${filter.label}.`
                 : `${filter.kindLabel}이(가) ${filter.label}인 인물들.`,
             pagePath: filter.href,
             jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
-                { name: filter.label, href: filter.href },
+                { name: lang === 'en' ? 'World Map' : '세계 지도', href: '/commulingo/map' },
+                ...(countryHref(code) ? [{ name: filter.label, href: countryHref(code) }] : []),
+                { name: filter.peopleLabel, href: filter.href },
             ]),
         });
     } catch (err) {

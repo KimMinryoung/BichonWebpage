@@ -96,9 +96,10 @@ body.commulingo-page > .admin-bar {
 }
 
 /* Narrow phones: the home segment keeps its icon and drops its label, and a
-   three-deep trail drops the current page — the page's own heading names it
-   one line further down. Two-deep trails (a book, a chart) keep their leaf,
-   which would otherwise leave the bar saying nothing but "⌂". */
+   trail three or more deep drops the current page — the page's own heading
+   names it one line further down — and keeps the parents that lead back.
+   Two-deep trails (a book, a chart) keep their leaf, which would otherwise
+   leave the bar saying nothing but "⌂". */
 @media (max-width: 560px) {
     .commu-crumb {
         gap: 2px 8px;
@@ -109,7 +110,7 @@ body.commulingo-page > .admin-bar {
         display: none;
     }
 
-    .commu-crumb-item:nth-child(3) {
+    .commu-crumb-item:last-child:nth-child(n+3) {
         display: none;
     }
 

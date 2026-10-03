@@ -4,7 +4,7 @@ const { paginateList } = require('./list-pagination');
 const { getLinkIndexes, createLinker, createCardTextLinker } = require('./linkify');
 const { roleIconSvg, roleHubHref } = require('./role-icons');
 const { flagImg } = require('./flag-icons');
-const { nationalityHubHref } = require('./nationality-filter');
+const { personFlagHref } = require('./nationality-filter');
 const { sortPeopleChronologically, localizedPersonSections } = require('./people-view');
 
 // Card prose (epithet, moment, bio) on the list and hub pages. Person names
@@ -54,7 +54,7 @@ async function peopleGroupCardsHtml(req, standardized, lang, group, page, baseUr
             roleIconSvg,
             roleHubHref,
             flagImg,
-            nationalityHubHref,
+            personFlagHref,
             linkifyPersonText: createCardTextLinker(indexes),
         });
         if (pagination) {

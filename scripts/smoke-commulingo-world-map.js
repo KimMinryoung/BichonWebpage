@@ -53,7 +53,10 @@ assert.match(countryRoute, /const PREVIEW_LIMIT = 4;/, 'country hubs should show
 assert.match(countryTemplate, /class="commu-country-sections"/, 'country hubs need compact section navigation');
 assert.match(countryTemplate, /class="commu-country-section-head"><a href=/, 'section headings must link to full lists');
 assert.match(countryTemplate, /\/commulingo\/events\?country=/, 'events heading must retain the country filter');
-assert.match(nationalityTemplate, /class="[^"]*\bbtn\b[^"]*\bcommu-country-view-all\b/, 'country-hub links must use the shared button CTA');
+assert.match(nationalityTemplate, /label: filter\.label, href: countryPageHref/, 'nationality lists sit under their country hub in the breadcrumb');
+const { personFlagHref } = require('../data/commulingo/nationality-filter');
+assert.strictEqual(personFlagHref('citizenship', 'russia'), '/commulingo/countries/russia#country-citizenship');
+assert.strictEqual(personFlagHref('nationalOrigin', 'russia'), '/commulingo/countries/russia#country-origin');
 assert.match(mapControls, /data-map-action="zoom-in"/, 'world maps need zoom controls');
 assert.match(mapControls, /data-map-action="reset"/, 'world maps need a scale reset control');
 assert.match(mapScript, /selected\.getBBox\(\)/, 'country maps need geometry-aware automatic fitting');

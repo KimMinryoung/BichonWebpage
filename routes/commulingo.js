@@ -5,7 +5,7 @@ const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { roleIconSvg } = require('../data/commulingo/role-icons');
 const { dictTabs } = require('../data/commulingo/dict-tabs');
 const { flagImg } = require('../data/commulingo/flag-icons');
-const { nationalityHubHref } = require('../data/commulingo/nationality-filter');
+const { personFlagHref } = require('../data/commulingo/nationality-filter');
 
 const router = express.Router();
 
@@ -19,7 +19,7 @@ const router = express.Router();
 // roleIconSvg and dictTabs everywhere).
 router.use((req, res, next) => {
     res.locals.flagImg = flagImg;
-    res.locals.nationalityHubHref = nationalityHubHref;
+    res.locals.personFlagHref = personFlagHref;
     res.locals.roleIconSvg = roleIconSvg;
     res.locals.dictTabs = dictTabs;
     // Lists share a smaller sheet; detail, map and training pages retain all rules.

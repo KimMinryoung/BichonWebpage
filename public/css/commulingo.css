@@ -3120,10 +3120,6 @@ a.commu-person-position:focus-visible {
 @media (pointer: coarse) {
     .commu-world-map-controls button { width: 40px; height: 40px; min-width: 40px; min-height: 40px; flex-basis: 40px; }
 }
-.commu-country-view-all {
-    justify-content: space-between;
-    margin-top: var(--space-2);
-}
 .commu-country-page .commu-hub-section { scroll-margin-top: 82px; }
 .commu-country-empty { color: var(--text-muted); }
 .commu-country-lineage { border: 1px solid var(--border); display: grid; margin-top: 14px; }
