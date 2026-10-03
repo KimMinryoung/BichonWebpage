@@ -73,8 +73,8 @@ router.get('/countries/:code', async (req, res) => {
             linkifyPersonText: createCardTextLinker(indexes),
             pageTitle: `${country.label} — ${lang === 'en' ? 'World Map' : '세계 지도'}`,
             pageDescription: lang === 'en'
-                ? `People and historical events directly connected with ${country.label}.`
-                : `${country.label}에 속했거나 이 나라를 출신 배경으로 둔 인물과 직접 관련된 역사 사건.`,
+                ? `Historical events and people directly connected with ${country.label}.`
+                : `${country.label}에 직접 관련된 역사 사건과, 이 나라에 속했거나 이 나라를 출신 배경으로 둔 인물.`,
             pagePath: country.href,
             jsonLd: commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'World Map' : '세계 지도', href: '/commulingo/map' },
