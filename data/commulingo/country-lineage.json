@@ -1,5 +1,5 @@
 {
- "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, restoration (to restored its independence from from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, so independence from the empire in 1917–1918 is russia -> x). Edges of one year are shown in file order (the Baltic restorations of September 1991 before the December dissolution). Only state-to-state succession between registered codes; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
+ "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, so independence from the empire in 1917–1918 is russia -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
  "edges": [
   {
    "from": "russia",
@@ -47,7 +47,19 @@
    "from": "russia",
    "to": "poland",
    "year": 1918,
-   "kind": "restoration"
+   "kind": "independence"
+  },
+  {
+   "from": "germany",
+   "to": "poland",
+   "year": 1918,
+   "kind": "independence"
+  },
+  {
+   "from": "austria",
+   "to": "poland",
+   "year": 1918,
+   "kind": "independence"
   },
   {
    "from": "russia",
@@ -113,19 +125,19 @@
    "from": "soviet",
    "to": "estonia",
    "year": 1991,
-   "kind": "restoration"
+   "kind": "independence"
   },
   {
    "from": "soviet",
    "to": "latvia",
    "year": 1991,
-   "kind": "restoration"
+   "kind": "independence"
   },
   {
    "from": "soviet",
    "to": "lithuania",
    "year": 1991,
-   "kind": "restoration"
+   "kind": "independence"
   },
   {
    "from": "soviet",

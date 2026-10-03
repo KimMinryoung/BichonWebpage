@@ -88,7 +88,7 @@ assert.deepEqual(directEventsFor(hubEvents, 'spain', 'ko').map(e => e.id), ['a',
 
 // Predecessor/successor states: registered codes, no self or duplicate edge,
 // and both sides read back on the hub.
-const LINEAGE_KINDS = ['union', 'annexation', 'dissolution', 'restoration', 'division', 'reunification', 'secession'];
+const LINEAGE_KINDS = ['union', 'annexation', 'dissolution', 'independence', 'division', 'reunification', 'secession'];
 const lineageEdges = require('../data/commulingo/country-lineage.json').edges;
 const edgeKeys = new Set();
 lineageEdges.forEach(edge => {
@@ -101,11 +101,12 @@ lineageEdges.forEach(edge => {
 });
 const { lineageFor, affiliationsFor, periodLabel } = require('../data/commulingo/map-presentation');
 const sovietLineage = lineageFor('soviet', 'ko');
-assert.deepEqual(sovietLineage.map(row => [row.year, row.kind, row.role, row.countries.length]), [[1922, 'union', 'to', 6], [1940, 'annexation', 'to', 3], [1991, 'restoration', 'from', 3], [1991, 'dissolution', 'from', 12]], 'same year, kind and side share one row');
+assert.deepEqual(sovietLineage.map(row => [row.year, row.kind, row.role, row.countries.length]), [[1922, 'union', 'to', 6], [1940, 'annexation', 'to', 3], [1991, 'independence', 'from', 3], [1991, 'dissolution', 'from', 12]], 'same year, kind and side share one row');
 const russiaLineage = lineageFor('russia', 'ko');
 assert.deepEqual(russiaLineage.map(row => [row.year, row.role, row.countries[0].code]), [[1917, 'from', 'finland'], [1918, 'from', 'georgia'], [1918, 'from', 'poland'], [1922, 'from', 'soviet'], [1991, 'to', 'soviet']], 'Russia meets the Soviet Union twice, in time order');
-assert.deepEqual(lineageFor('germany', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1949 division.from', '1990 reunification.to']);
-assert.deepEqual(lineageFor('latvia', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1918 secession.to', '1940 annexation.from', '1991 restoration.to']);
+assert.deepEqual(lineageFor('germany', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1918 independence.from', '1949 division.from', '1990 reunification.to']);
+assert.deepEqual(lineageFor('latvia', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1918 secession.to', '1940 annexation.from', '1991 independence.to']);
+assert.deepEqual(lineageFor('poland', 'ko').map(row => row.countries.map(item => item.code)), [['germany', 'russia', 'austria']], 'Poland independent of all three partitioning powers in one row');
 assert.deepEqual(lineageFor('spain', 'ko'), []);
 const lineageStrings = require('../config/strings');
 ['ko', 'en'].forEach(lang => LINEAGE_KINDS.forEach(kind => ['from', 'to'].forEach(role => {
