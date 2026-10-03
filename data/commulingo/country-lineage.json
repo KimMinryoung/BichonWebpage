@@ -1,47 +1,47 @@
 {
- "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, turkey the Ottoman Empire, austria Austria-Hungary, germany Prussia, uk the British Empire, and so on, so independence from the empire is that code -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes, colonial independence included, dated by effective independence except declarations the site follows (Vietnam 1945, Guinea-Bissau 1973, Timor-Leste 1975); dominions by the Statute of Westminster (1931, adopted 1942 by Australia and 1947 by New Zealand); Axis puppet states and wartime occupations are left out; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
+ "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, turkey the Ottoman Empire, austria Austria-Hungary, germany Prussia, uk the British Empire, and so on, so independence from the empire is that code -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes, colonial independence included, dated by effective independence except declarations the site follows when a revolutionary state declared and fought for it (Vietnam and Indonesia 1945, the Philippines 1898, Guinea-Bissau 1973, Timor-Leste 1975); dominions by the Statute of Westminster (1931, adopted 1942 by Australia and 1947 by New Zealand); Axis puppet states and wartime occupations are left out; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
  "edges": [
   {
    "from": "russia",
    "to": "finland",
    "year": 1917,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
    "to": "ukraine",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
    "to": "lithuania",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
    "to": "estonia",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
    "to": "georgia",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
    "to": "armenia",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
    "to": "azerbaijan",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
@@ -65,7 +65,7 @@
    "from": "russia",
    "to": "latvia",
    "year": 1918,
-   "kind": "secession"
+   "kind": "independence"
   },
   {
    "from": "russia",
@@ -802,7 +802,7 @@
   {
    "from": "netherlands",
    "to": "indonesia",
-   "year": 1949,
+   "year": 1945,
    "kind": "independence"
   },
   {
@@ -1362,6 +1362,18 @@
    "to": "timor-leste",
    "year": 2002,
    "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "philippines",
+   "year": 1898,
+   "kind": "independence"
+  },
+  {
+   "from": "philippines",
+   "to": "usa",
+   "year": 1899,
+   "kind": "annexation"
   }
  ]
 }
