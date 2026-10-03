@@ -3130,6 +3130,13 @@ a.commu-person-position:focus-visible {
 .commu-country-lineage-year { color: var(--text-muted); font-variant-numeric: tabular-nums; font-weight: 700; }
 .commu-country-lineage-text { align-items: center; display: flex; flex-wrap: wrap; gap: 6px; }
 .commu-country-lineage-text .is-attached { margin-left: -4px; }
+.commu-country-lineage-more { border-top: 1px solid var(--border); display: flex; flex-direction: column-reverse; }
+.commu-country-lineage-more > ol { border-bottom: 1px solid var(--border); }
+.commu-country-lineage-more summary { color: var(--text-muted); cursor: pointer; font-size: .85rem; list-style: none; padding: 10px 12px; }
+.commu-country-lineage-more summary::-webkit-details-marker { display: none; }
+.commu-country-lineage-more summary:hover, .commu-country-lineage-more summary:focus-visible { background: var(--btn-hover); }
+.commu-country-lineage-more summary .is-open, .commu-country-lineage-more[open] summary .is-closed { display: none; }
+.commu-country-lineage-more[open] summary .is-open { display: inline; }
 .commu-country-lineage a {
     align-items: center; border: 1px solid var(--border); color: inherit; display: inline-flex;
     gap: 7px; min-height: 34px; padding: 4px 9px; text-decoration: none;

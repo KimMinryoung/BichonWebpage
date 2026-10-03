@@ -466,6 +466,8 @@ const ko = {
             backgroundPeople: '이 나라를 출신 배경으로 둔 인물',
             relatedEvents: '직접 연루된 역사 사건',
             lineage: '국가 변천',
+            lineageMore: '{n}건 더 보기',
+            lineageLess: '접기',
             // {x} is where the counterpart flags go; keys are kind.role, role
             // being this country's side of the country-lineage.json edge. Text
             // right after {x} with no space (a particle) attaches to the flag.
@@ -1078,6 +1080,8 @@ const en = {
             backgroundPeople: 'People by national background',
             relatedEvents: 'Directly involved historical events',
             lineage: 'State changes',
+            lineageMore: 'Show {n} more',
+            lineageLess: 'Show less',
             lineageEvents: {
                 'union.from': 'Joined to form {x}', 'union.to': 'Formed by {x}',
                 'annexation.from': 'Annexed by {x}', 'annexation.to': 'Annexed {x}',

@@ -1,5 +1,5 @@
 {
- "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, so independence from the empire in 1917–1918 is russia -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
+ "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, turkey the Ottoman Empire, austria Austria-Hungary, germany Prussia, uk the British Empire, and so on, so independence from the empire is that code -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes, colonial independence included, dated by effective independence except declarations the site follows (Vietnam 1945, Guinea-Bissau 1973, Timor-Leste 1975); dominions by the Statute of Westminster (1931, adopted 1942 by Australia and 1947 by New Zealand); Axis puppet states and wartime occupations are left out; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
  "edges": [
   {
    "from": "russia",
@@ -330,6 +330,1038 @@
    "to": "ireland",
    "year": 1922,
    "kind": "secession"
+  },
+  {
+   "from": "france",
+   "to": "vietnam",
+   "year": 1945,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "angola",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "mozambique",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "usa",
+   "year": 1776,
+   "kind": "independence"
+  },
+  {
+   "from": "monaco",
+   "to": "france",
+   "year": 1793,
+   "kind": "annexation"
+  },
+  {
+   "from": "poland",
+   "to": "russia",
+   "year": 1795,
+   "kind": "annexation"
+  },
+  {
+   "from": "poland",
+   "to": "germany",
+   "year": 1795,
+   "kind": "annexation"
+  },
+  {
+   "from": "poland",
+   "to": "austria",
+   "year": 1795,
+   "kind": "annexation"
+  },
+  {
+   "from": "georgia",
+   "to": "russia",
+   "year": 1801,
+   "kind": "annexation"
+  },
+  {
+   "from": "france",
+   "to": "haiti",
+   "year": 1804,
+   "kind": "independence"
+  },
+  {
+   "from": "netherlands",
+   "to": "france",
+   "year": 1810,
+   "kind": "annexation"
+  },
+  {
+   "from": "spain",
+   "to": "paraguay",
+   "year": 1811,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "netherlands",
+   "year": 1813,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "monaco",
+   "year": 1814,
+   "kind": "independence"
+  },
+  {
+   "from": "denmark",
+   "to": "norway",
+   "year": 1814,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "argentina",
+   "year": 1816,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "chile",
+   "year": 1818,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "colombia",
+   "year": 1819,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "venezuela",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "mexico",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "peru",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "guatemala",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "el-salvador",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "honduras",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "nicaragua",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "costa-rica",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "panama",
+   "year": 1821,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "brazil",
+   "year": 1822,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "ecuador",
+   "year": 1822,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "bolivia",
+   "year": 1825,
+   "kind": "independence"
+  },
+  {
+   "from": "brazil",
+   "to": "uruguay",
+   "year": 1828,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "greece",
+   "year": 1830,
+   "kind": "independence"
+  },
+  {
+   "from": "netherlands",
+   "to": "belgium",
+   "year": 1830,
+   "kind": "secession"
+  },
+  {
+   "from": "colombia",
+   "to": "venezuela",
+   "year": 1830,
+   "kind": "secession"
+  },
+  {
+   "from": "colombia",
+   "to": "ecuador",
+   "year": 1830,
+   "kind": "secession"
+  },
+  {
+   "from": "haiti",
+   "to": "dominican-republic",
+   "year": 1844,
+   "kind": "independence"
+  },
+  {
+   "from": "dominican-republic",
+   "to": "spain",
+   "year": 1861,
+   "kind": "annexation"
+  },
+  {
+   "from": "spain",
+   "to": "dominican-republic",
+   "year": 1865,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "serbia",
+   "year": 1878,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "montenegro",
+   "year": 1878,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "romania",
+   "year": 1878,
+   "kind": "independence"
+  },
+  {
+   "from": "myanmar",
+   "to": "uk",
+   "year": 1886,
+   "kind": "annexation"
+  },
+  {
+   "from": "madagascar",
+   "to": "france",
+   "year": 1896,
+   "kind": "annexation"
+  },
+  {
+   "from": "spain",
+   "to": "cuba",
+   "year": 1902,
+   "kind": "independence"
+  },
+  {
+   "from": "colombia",
+   "to": "panama",
+   "year": 1903,
+   "kind": "secession"
+  },
+  {
+   "from": "sweden",
+   "to": "norway",
+   "year": 1905,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "bulgaria",
+   "year": 1908,
+   "kind": "independence"
+  },
+  {
+   "from": "korea",
+   "to": "japan",
+   "year": 1910,
+   "kind": "annexation"
+  },
+  {
+   "from": "china",
+   "to": "mongolia",
+   "year": 1911,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "albania",
+   "year": 1912,
+   "kind": "independence"
+  },
+  {
+   "from": "austria",
+   "to": "czechoslovakia",
+   "year": 1918,
+   "kind": "independence"
+  },
+  {
+   "from": "austria",
+   "to": "hungary",
+   "year": 1918,
+   "kind": "independence"
+  },
+  {
+   "from": "denmark",
+   "to": "iceland",
+   "year": 1918,
+   "kind": "independence"
+  },
+  {
+   "from": "turkey",
+   "to": "yemen",
+   "year": 1918,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "afghanistan",
+   "year": 1919,
+   "kind": "independence"
+  },
+  {
+   "from": "mongolia",
+   "to": "china",
+   "year": 1919,
+   "kind": "annexation"
+  },
+  {
+   "from": "china",
+   "to": "mongolia",
+   "year": 1921,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "egypt",
+   "year": 1922,
+   "kind": "independence"
+  },
+  {
+   "from": "italy",
+   "to": "vatican-city",
+   "year": 1929,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "canada",
+   "year": 1931,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "south-africa",
+   "year": 1931,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "iraq",
+   "year": 1932,
+   "kind": "independence"
+  },
+  {
+   "from": "ethiopia",
+   "to": "italy",
+   "year": 1936,
+   "kind": "annexation"
+  },
+  {
+   "from": "austria",
+   "to": "germany",
+   "year": 1938,
+   "kind": "annexation"
+  },
+  {
+   "from": "italy",
+   "to": "ethiopia",
+   "year": 1941,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "australia",
+   "year": 1942,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "lebanon",
+   "year": 1943,
+   "kind": "independence"
+  },
+  {
+   "from": "germany",
+   "to": "austria",
+   "year": 1945,
+   "kind": "independence"
+  },
+  {
+   "from": "japan",
+   "to": "korea",
+   "year": 1945,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "syria",
+   "year": 1946,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "jordan",
+   "year": 1946,
+   "kind": "independence"
+  },
+  {
+   "from": "usa",
+   "to": "philippines",
+   "year": 1946,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "pakistan",
+   "year": 1947,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "india",
+   "year": 1947,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "new-zealand",
+   "year": 1947,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "myanmar",
+   "year": 1948,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "sri-lanka",
+   "year": 1948,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "israel",
+   "year": 1948,
+   "kind": "independence"
+  },
+  {
+   "from": "netherlands",
+   "to": "indonesia",
+   "year": 1949,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "libya",
+   "year": 1951,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "libya",
+   "year": 1951,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "laos",
+   "year": 1953,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "cambodia",
+   "year": 1953,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "morocco",
+   "year": 1956,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "morocco",
+   "year": 1956,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "sudan",
+   "year": 1956,
+   "kind": "independence"
+  },
+  {
+   "from": "egypt",
+   "to": "sudan",
+   "year": 1956,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "tunisia",
+   "year": 1956,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "malaysia",
+   "year": 1957,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "ghana",
+   "year": 1957,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "guinea",
+   "year": 1958,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "cyprus",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "benin",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "cameroon",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "central-african-republic",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "chad",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "gabon",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "ivory-coast",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "madagascar",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "mali",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "mauritania",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "niger",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "nigeria",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "republic-of-congo",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "senegal",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "somalia",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "italy",
+   "to": "somalia",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "togo",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "burkina-faso",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "belgium",
+   "to": "congo",
+   "year": 1960,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "kuwait",
+   "year": 1961,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "sierra-leone",
+   "year": 1961,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "tanzania",
+   "year": 1961,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "algeria",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "belgium",
+   "to": "burundi",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "belgium",
+   "to": "rwanda",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "uganda",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "new-zealand",
+   "to": "samoa",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "jamaica",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "trinidad",
+   "year": 1962,
+   "kind": "independence"
+  },
+  {
+   "from": "singapore",
+   "to": "malaysia",
+   "year": 1963,
+   "kind": "union"
+  },
+  {
+   "from": "uk",
+   "to": "kenya",
+   "year": 1963,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "malta",
+   "year": 1964,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "malawi",
+   "year": 1964,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "zambia",
+   "year": 1964,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "maldives",
+   "year": 1965,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "gambia",
+   "year": 1965,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "botswana",
+   "year": 1966,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "lesotho",
+   "year": 1966,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "guyana",
+   "year": 1966,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "barbados",
+   "year": 1966,
+   "kind": "independence"
+  },
+  {
+   "from": "spain",
+   "to": "equatorial-guinea",
+   "year": 1968,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "eswatini",
+   "year": 1968,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "mauritius",
+   "year": 1968,
+   "kind": "independence"
+  },
+  {
+   "from": "australia",
+   "to": "nauru",
+   "year": 1968,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "tonga",
+   "year": 1970,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "fiji",
+   "year": 1970,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "bahrain",
+   "year": 1971,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "qatar",
+   "year": 1971,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "united-arab-emirates",
+   "year": 1971,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "bahamas",
+   "year": 1973,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "guinea-bissau",
+   "year": 1973,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "grenada",
+   "year": 1974,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "cape-verde",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "comoros",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "sao-tome-and-principe",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "australia",
+   "to": "papua-new-guinea",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "netherlands",
+   "to": "suriname",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "portugal",
+   "to": "timor-leste",
+   "year": 1975,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "seychelles",
+   "year": 1976,
+   "kind": "independence"
+  },
+  {
+   "from": "timor-leste",
+   "to": "indonesia",
+   "year": 1976,
+   "kind": "annexation"
+  },
+  {
+   "from": "france",
+   "to": "djibouti",
+   "year": 1977,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "solomon-islands",
+   "year": 1978,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "tuvalu",
+   "year": 1978,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "dominica",
+   "year": 1978,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "saint-lucia",
+   "year": 1979,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "kiribati",
+   "year": 1979,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "saint-vincent-and-the-grenadines",
+   "year": 1979,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "zimbabwe",
+   "year": 1980,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "vanuatu",
+   "year": 1980,
+   "kind": "independence"
+  },
+  {
+   "from": "france",
+   "to": "vanuatu",
+   "year": 1980,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "belize",
+   "year": 1981,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "antigua-and-barbuda",
+   "year": 1981,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "saint-kitts-and-nevis",
+   "year": 1983,
+   "kind": "independence"
+  },
+  {
+   "from": "uk",
+   "to": "brunei",
+   "year": 1984,
+   "kind": "independence"
+  },
+  {
+   "from": "usa",
+   "to": "marshall-islands",
+   "year": 1986,
+   "kind": "independence"
+  },
+  {
+   "from": "usa",
+   "to": "micronesia",
+   "year": 1986,
+   "kind": "independence"
+  },
+  {
+   "from": "kuwait",
+   "to": "iraq",
+   "year": 1990,
+   "kind": "annexation"
+  },
+  {
+   "from": "south-africa",
+   "to": "namibia",
+   "year": 1990,
+   "kind": "independence"
+  },
+  {
+   "from": "iraq",
+   "to": "kuwait",
+   "year": 1991,
+   "kind": "independence"
+  },
+  {
+   "from": "usa",
+   "to": "palau",
+   "year": 1994,
+   "kind": "independence"
+  },
+  {
+   "from": "indonesia",
+   "to": "timor-leste",
+   "year": 2002,
+   "kind": "independence"
   }
  ]
 }

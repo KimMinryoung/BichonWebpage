@@ -26,14 +26,22 @@
         <% if (country.lineage.length) { %>
         <section class="commu-country-lineage" aria-labelledby="country-lineage">
             <h2 id="country-lineage"><%= copy.lineage %></h2>
-            <ol>
-                <% country.lineage.forEach(function(row) { var phrase = copy.lineageEvents[row.kind + '.' + row.role].split('{x}'); %>
+            <% /* An empire's page (uk, france) runs to dozens of rows; past
+                  LINEAGE_SHOWN the rest fold behind a "N more" row. */
+               var LINEAGE_SHOWN = 8;
+               var lineageRow = function(row) { var phrase = copy.lineageEvents[row.kind + '.' + row.role].split('{x}'); %>
                 <li class="commu-country-lineage-row">
                     <span class="commu-country-lineage-year"><%= row.year %></span>
                     <span class="commu-country-lineage-text"><% if (phrase[0].trim()) { %><span><%= phrase[0].trim() %></span><% } %><% row.countries.forEach(function(item) { %><a href="<%= item.href %>"><%- flagImg(item.code, item.label) %><span><%= item.label %></span></a><% }) %><% if (phrase[1].trim()) { %><span<%- /^\s/.test(phrase[1]) ? '' : ' class="is-attached"' %>><%= phrase[1].trim() %></span><% } %></span>
                 </li>
-                <% }) %>
-            </ol>
+            <% }; %>
+            <ol><% country.lineage.slice(0, LINEAGE_SHOWN).forEach(lineageRow); %></ol>
+            <% if (country.lineage.length > LINEAGE_SHOWN) { %>
+            <details class="commu-country-lineage-more">
+                <summary><span class="is-closed"><%= copy.lineageMore.replace('{n}', country.lineage.length - LINEAGE_SHOWN) %></span><span class="is-open"><%= copy.lineageLess %></span></summary>
+                <ol start="<%= LINEAGE_SHOWN + 1 %>"><% country.lineage.slice(LINEAGE_SHOWN).forEach(lineageRow); %></ol>
+            </details>
+            <% } %>
         </section>
         <% } %>
 
