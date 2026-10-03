@@ -19,7 +19,9 @@ read-only) is formatted per language by `data/commulingo/career-period.js`
 (`1918.07–09`, `1920년대`/`1920s`, `2017–현재`/`2017–present`). Qualifiers:
 circa, decade, early/mid/late (of a decade), after, summer; end-only until,
 open (`1945–`), unknown (`1979–?`). Migrations 270–271 (2026-10-03) added the
-columns and converted every old label; the old `period_label` column went in 272.
+columns and converted every old label; 273 split the 100 multi-segment labels
+("1937/1957", "1919–1924, 1927–1929") into one row per segment; the old
+`period_label` column went in 272. Only 9 rows keep an override label.
 
 ## Structured name parts — added 2026-07-24
 
