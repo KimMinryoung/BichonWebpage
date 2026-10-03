@@ -165,3 +165,10 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 - 사용자 결정으로 1871년 기구를 용어 「공안위원회 (파리 코뮌)」(`committee-of-public-safety-paris-commune`, 제안 21167)로 분리하고 별칭 「파리 코뮌 공안위원회」「코뮌 공안위원회」/"Commune's Committee of Public Safety"를 자동 연결했다.
 - 코뮌 카드 6개(들레클뤼즈·리고·바를랭·프랑켈·쿠르베·로셀)와 파리 코뮌 사건 본문의 맨 표기를 「코뮌 공안위원회」로 고쳤다(`scripts/content/commune-public-safety-people-20261003.json` Admin upsert, `scripts/content/paris-commune-public-safety-20261003.json` 사건 문구). 리고 카드 한국어의 「3월 29일 공안위원회」는 보안위원회(Commission de Sûreté générale)를 잘못 옮긴 것이라 「코뮌 보안위원회」로 바로잡았다.
 - 그 뒤 1793년 항목의 맨 표기를 자동 연결로 바꿨다(`commulingo-links-20261003-public-safety-1793.json`). 같은 낱말을 페이지별로 다른 항목에 보내는 장치가 인물 페이지에는 없으므로, 동명 기구는 본문에 한정어를 붙여 구분한다.
+
+## 공유 성의 대표 인물 (2026-10-03)
+
+두 사람 이상이 같은 성을 쓰면 성 단독 표기는 자동 링크하지 않는다(`people-linkify.js`의 공유 단어 검사). 코퍼스에서 그 성이 거의 늘 한 사람을 가리키면 그 사람의 `link_expressions`에 `{role: "identity", policy: "auto"}`로 성을 넣어 대표로 삼는다 — identity 표현은 공유 단어 검사를 거치지 않는다. 이름이 붙은 표기(「아르템 미코얀」, 「로버트 케네디」)는 더 긴 표현이 먼저 맞으므로 그대로 다른 사람에게 간다. 성을 품은 다른 대상(「미코얀-구레비치」, 「케네디스쿨」)은 `commulingo_link_blocklist`의 `phrase`로 먼저 소비한다.
+
+- 지정: 미코얀/Mikoyan → `mikoyan`, 케네디/Kennedy → `john-f-kennedy`(`robert-f-kennedy`에는 「로버트 케네디」/Robert Kennedy). upsert 도구로 넣었다.
+- 같은 날 일반어 오링크도 막았다(데이터 마이그레이션 274·275): 「큰 그림」의 그림(294회 발화) → `alias` 차단, 도시 우한(56회) → `alias` 차단(역사가 우한은 자동 링크 안 됨), 「로렌츠 뤼티」 → `phrase` 차단, 중소 분열 사건의 단독 「뤼티」 → 사건 `no_auto_link`.
