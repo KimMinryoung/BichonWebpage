@@ -1,0 +1,4 @@
+{ "id": "paris-commune-public-safety-20261003", "changes": [
+  { "event": "paris-commune-1871", "column": "body_ko", "from": "1793년의 이름을 딴 공안위원회를 세우기로 했다", "to": "1793년의 이름을 딴 코뮌 공안위원회를 세우기로 했다" },
+  { "event": "paris-commune-1871", "column": "body_en", "from": "the Commune voted to create a Committee of Public Safety named after that of", "to": "the Commune voted to create the Commune's Committee of Public Safety, named after that of" }
+] }

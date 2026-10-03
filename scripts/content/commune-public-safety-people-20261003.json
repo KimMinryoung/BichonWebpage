@@ -1,0 +1,195 @@
+{
+ "people": [
+  {
+   "id": "charles-delescluze",
+   "bio": {
+    "ko": "드뢰 출신으로 1830년 7월 혁명에 가담했고, 1848년 2월 혁명 뒤 공화파 신문을 내며 활동하다 망명했다. 제2제정기에 체포되어 기아나 유형지 카옌에서 복역했고, 1868년 신문 『르 레베유』를 창간했다. 1871년 2월 국민의회 의원으로 뽑혔으나 코뮌에 참여하려고 사퇴했다. 자코뱅계 「독립 혁명가」로 공안위원이 되었고 5월 11일 민간인으로서 전쟁 대표를 맡았다. 5월 25일 패배가 분명해지자 샤토도 광장의 바리케이드 위로 걸어 올라가 총에 맞아 숨졌다.",
+    "en": "Born in Dreux, he fought in the July Revolution of 1830, published republican papers after February 1848 and went into exile. Arrested under the Second Empire, he served time in the penal colony of Cayenne in Guiana, and in 1868 founded the newspaper Le Réveil. Elected to the National Assembly in February 1871, he resigned to join the Commune. A Jacobin “independent revolutionary”, he sat on the Commune's Committee of Public Safety and on 11 May became war delegate as a civilian. On 25 May, with defeat certain, he climbed onto the barricade at the Château-d’Eau and was shot dead."
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+   ],
+   "expectedRevision": "v1-1fb1c1ebc6b87c4645d58a3349a1b809f24fbae9e6c596c22286f47a8112a61f",
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+     "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+     "locator": "Article lead and creation section",
+     "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+    }
+   ]
+  },
+  {
+   "id": "raoul-rigault",
+   "bio": {
+    "ko": "제2제정기 블랑키주의자로 활동하며 공화주의·무신론 신문에 글을 쓰고 정치 활동으로 여러 차례 투옥됐다. 1870년 9월 공화정 선포 뒤 파리 경찰청에서 정치 업무를 맡았고, 1871년 3월 코뮌 봉기 후 경찰청장이 됐다. 코뮌 평의원과 코뮌 보안위원회 위원장을 지냈으며, 4월 말 검사로 임명돼 인질 정책 집행과 반대파 체포에 관여했다. 피의 주간에 구금 중이던 변호사 귀스타브 쇼데를 처형하게 했고, 1871년 5월 24일 베르사유 정부군에 붙잡혀 재판 없이 총살됐다.",
+    "en": "A Blanquist under the Second Empire, Rigault wrote for republican and atheist newspapers and was repeatedly imprisoned for political activity. After the Republic was proclaimed in September 1870, he worked in the political section of the Paris police; following the Commune's uprising, he became head of the police prefecture in March 1871. He served as a Commune councillor and on its General Security Commission, then became its prosecutor in late April, participating in hostage policy and arrests of opponents. During Bloody Week he had the imprisoned lawyer Gustave Chaudey shot; on 24 May 1871, Versailles government troops captured and shot Rigault without trial."
+   },
+   "sections": [
+    {
+     "slug": "security-administration-hostage-policy",
+     "sortOrder": 187100,
+     "heading": {
+      "ko": "공안 담당과 인질 정책",
+      "en": "Security administration and hostage policy"
+     },
+     "body": {
+      "ko": "1871년 3월 20일 중앙위원회는 리고를 파리 경찰청에 파견했고, 이틀 뒤 그는 제8구에서 코뮌 평의원으로 선출됐다. 3월 29일 코뮌 보안위원회를 맡은 뒤에도 경찰청 민간 대표직을 겸했다. 군사 대표 뒤발이 사망한 후 리고는 경찰 조직과 제국기 경찰에 관한 지식을 이용해 인질과 용의자를 추적하고 체포하는 일을 조직했다. 4월 4일에는 파리 대주교 조르주 다르부아를, 13일에는 변호사 귀스타브 쇼데를 비롯해 뤼리에, 베르제레, 클뤼즐레 등 코뮌 내부의 인물들도 체포했다. 4월 24일 리고는 피의자 심문에서 비밀 보장이 지켜지지 않으면 수사를 이끌 수 없다고 선언했고, 평의원들의 면회도 제한했다. 경찰청장직에서 물러난 뒤 4월 26일 코뮌 검사로 임명되어 항복 후 처형됐다고 보고된 방위군 문제와 인질에 대한 대응을 조사하는 임무를 맡았다.\n\n5월 2일 리고는 코뮌 공안위원회 설치에 찬성표를 던졌다. 5월 17일 그는 유죄인 열 명을 놓치더라도 무고한 한 사람을 처벌하지 않겠다고 발언한 것으로 회의록에 기록됐지만, 같은 날 인질 사건을 심리할 기소 배심 구성도 제안했다. 5월 22일 인질들을 라 로케트 감옥으로 이송하는 일을 지휘했고, 다음 날 쇼데와 헌병 세 명의 총살을 명령했다. 24일에는 구금된 대주교와 인질 네 명의 처형을 젠통에게 맡겼다. 당시 인질 교환을 검토했다는 설명도 있으나, 이러한 조치들은 그의 재임 중 실제 체포와 처형 명령의 기록을 없애지 않는다.",
+      "en": "On 20 March 1871 the Central Committee delegated Rigault to the Paris police prefecture; six days later he was elected to the Commune by the 8th arrondissement. Appointed to the General Security Commission on 29 March, he continued as the police prefecture's civil delegate. After military delegate Duval's death, Rigault used his knowledge of the police and its imperial-era apparatus to organize the pursuit and arrest of hostages and suspects. On 4 April he had Georges Darboy, archbishop of Paris, arrested; on 13 April he arrested lawyer Gustave Chaudey. He also ordered or carried out arrests of Commune figures including Lullier, Bergeret, Cluseret and Brunel. On 24 April Rigault said he could not conduct investigations without secrecy and restricted visits by fellow councillors. After leaving the police prefecture, he was appointed Commune prosecutor on 26 April, tasked with investigating National Guardsmen reportedly shot after surrendering and the possible consequences for the hostages.\n\nRigault voted for the Commune's Committee of Public Safety on 2 May. The minutes record him saying on 17 May that he would rather let ten guilty people escape than strike one innocent person; on that same day, however, he proposed a jury of accusation to examine the hostage cases. On 22 May he directed the transfer of hostages to La Roquette prison, and the next day ordered Chaudey and three gendarmes shot. On 24 May he assigned Genton to execute the detained archbishop and four hostages. One account also reports that an exchange of hostages was contemplated, but this does not erase the documented arrests and execution orders made during Rigault's tenure."
+     },
+     "sources": [
+      "https://maitron.fr/rigault-raoul-georges-adolphe",
+      "https://www.commune1871.org/la-commune-de-paris/histoire-de-la-commune/illustres-communards/533-raoul-rigault",
+      "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+      "https://fr.wikipedia.org/wiki/Raoul_Rigault"
+     ],
+     "evidence": [
+      {
+       "field": "body",
+       "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+       "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+       "locator": "Article lead and creation section",
+       "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+      },
+      {
+       "field": "body",
+       "claim": "리고가 3월 29일 맡은 것은 보안위원회(Commission de Sûreté générale)다.",
+       "source": "https://fr.wikipedia.org/wiki/Raoul_Rigault",
+       "locator": "Section on the Commune",
+       "excerpt": "Le 29 mars, il est nommé à la tête de la Commission de Sûreté générale."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+    "https://fr.wikipedia.org/wiki/Raoul_Rigault"
+   ],
+   "expectedRevision": "v1-d84c787d1fcc89e019d0700bc9508fd2e0aeefe696364bd6558afdb56d4452f2",
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+     "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+     "locator": "Article lead and creation section",
+     "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+    },
+    {
+     "field": "bio",
+     "claim": "리고가 3월 29일 맡은 것은 보안위원회(Commission de Sûreté générale)다.",
+     "source": "https://fr.wikipedia.org/wiki/Raoul_Rigault",
+     "locator": "Section on the Commune",
+     "excerpt": "Le 29 mars, il est nommé à la tête de la Commission de Sûreté générale."
+    }
+   ]
+  },
+  {
+   "id": "eugene-varlin",
+   "bio": {
+    "ko": "농가 출신으로 파리에서 제본공이 되어 1864년 제본공 파업을 이끌었고, 상호부조 조합과 협동 식당 「라 마르미트」를 세웠다. 국제노동자협회 파리 지부의 중심인물로 1868년 두 차례 재판을 받았고, 노동조합 연합회를 조직했다. 1871년 국민방위군 중앙위원회에 들어갔고 코뮌 의원으로 재정과 식량 공급을 맡았다. 코뮌 공안위원회 설치에 반대한 소수파에 속했다. 5월 28일 붙잡혀 몽마르트르로 끌려가 군중에게 구타당한 뒤 총살되었다.",
+    "en": "A peasant’s son who became a bookbinder in Paris, he led the bookbinders’ strike of 1864 and founded mutual-aid societies and the cooperative restaurant La Marmite. The central figure of the International’s Paris section, he was tried twice in 1868 and organised a federation of trade unions. In 1871 he joined the Central Committee of the National Guard and, as a member of the Commune, handled finance and supplies; he belonged to the minority that opposed the Commune's Committee of Public Safety. Captured on 28 May, he was dragged to Montmartre, beaten by a crowd and shot."
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+   ],
+   "expectedRevision": "v1-70bf64228465757fb235ea36990ad798a27dcee6a66df9dd7be3169f48f51ba3",
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+     "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+     "locator": "Article lead and creation section",
+     "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+    }
+   ]
+  },
+  {
+   "id": "leo-frankel",
+   "moment": {
+    "ko": "1871년 5월 1일 코뮌 공안위원회 창설에 찬성했으나, 15일에는 이 위원회를 비판하는 소수파 선언에 서명했다.",
+    "en": "He voted to create the Commune's Committee of Public Safety on 1 May 1871, then signed the minority declaration criticizing it on 15 May."
+   },
+   "bio": {
+    "ko": "부다 근교 오부다의 유대인 가정에서 태어나 금세공인이 되었고, 독일을 거쳐 1867년 파리에 와 국제노동자협회 독일어권 지부에서 활동했다. 1870년 인터내셔널 재판에서 유죄를 받았다. 1871년 코뮌 의원으로 뽑힌 유일한 외국인으로 노동·교환위원회를 이끌며 제빵 야간 노동 금지와 버려진 작업장 법령을 추진했고, 코뮌 공안위원회에 반대한 소수파에 섰다. 피의 주간에 부상을 입고 런던으로 탈출해 인터내셔널 총평의회 위원이 되었다. 1876년 헝가리로 돌아가 1880년 헝가리 전국노동자당을 세웠으며, 말년을 파리에서 보냈다.",
+    "en": "Born to a Jewish family in Óbuda, he trained as a jeweller, came to Paris via Germany in 1867 and worked in the International’s German-speaking section, being convicted in the International trial of 1870. The only foreigner elected to the Commune, he headed its Labour and Exchange Commission, pressed the ban on night work in bakeries and the abandoned-workshops decree, and sided with the minority against the Commune's Committee of Public Safety. Wounded in Bloody Week, he escaped to London and joined the General Council. Returning to Hungary in 1876, he founded the General Workers’ Party of Hungary in 1880 and spent his last years in Paris."
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+   ],
+   "expectedRevision": "v1-4446c12c3d8bba15e5d3cbab932339dfbb4101301c49bc96822da535d5794a11",
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+     "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+     "locator": "Article lead and creation section",
+     "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+    },
+    {
+     "field": "moment",
+     "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+     "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+     "locator": "Article lead and creation section",
+     "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+    }
+   ]
+  },
+  {
+   "id": "gustave-courbet",
+   "bio": {
+    "ko": "쥐라 지방 오르낭의 부농 가정에서 태어나 「오르낭의 매장」과 「돌 깨는 사람들」로 사실주의를 열었고, 프루동과 가까웠다. 1870년 레지옹 도뇌르를 거절했다. 1871년 코뮌의 예술가 연맹 의장으로 미술관의 자치와 검열 폐지를 요구했고, 6구 보궐선거에서 코뮌 의원이 되어 코뮌 공안위원회에 반대한 소수파에 섰다. 방돔 원주를 옮기자고 제안한 일 때문에 피의 주간 뒤 6개월 금고를 선고받았고, 1873년 원주 재건 비용을 물라는 판결이 나자 스위스로 망명해 라투르드페이에서 숨졌다.",
+    "en": "Born to prosperous farmers in Ornans in the Jura, he launched Realism with A Burial at Ornans and The Stone Breakers and was close to Proudhon; in 1870 he refused the Legion of Honour. As president of the Commune’s Federation of Artists in 1871 he demanded self-government for museums and an end to censorship, and after winning a by-election in the 6th arrondissement he sided with the minority against the Commune's Committee of Public Safety. For proposing to remove the Vendôme Column he was sentenced to six months after Bloody Week; ordered in 1873 to pay for its rebuilding, he fled to Switzerland and died at La Tour-de-Peilz."
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+   ],
+   "expectedRevision": "v1-1ecbc7ad4d058f80d8ea1efcaa00613cae09e5656eff40fb0b8b6a38961965fd",
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+     "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+     "locator": "Article lead and creation section",
+     "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+    }
+   ]
+  },
+  {
+   "id": "louis-rossel",
+   "sections": [
+    {
+     "slug": "war-delegateship-resignation",
+     "sortOrder": 187100,
+     "heading": {
+      "ko": "전쟁 대표직과 사임",
+      "en": "War Delegateship and Resignation"
+     },
+     "body": {
+      "ko": "1871년 4월 30일 파리 코뮌은 클뤼세레를 대신해 로셀을 전쟁 대표로 임명했다. 로셀은 취임 직후 전쟁 회의를 열어 병력 규모와 배치, 이동 상황을 점검하고, 부대를 순회하며 창고를 확인할 감찰관 조직을 구상했다. 그는 무력하다고 판단한 포병 중앙위원회를 해산하기로 했으며, 기존 방어선 안쪽에 두 번째 바리케이드 선과 몽마르트르·트로카데로·팡테옹의 거점을 건설하도록 명령했다. 그러나 전쟁대표부의 권한을 둘러싸고 국민위병 중앙위원회 및 코뮌 공안위원회와 충돌했다. 5월 8일에는 공세에 나설 병력을 모으려 했으나 지휘관들이 충분한 병력을 결집하지 못했다고 판단했다. 이튿날 베르사유군이 이시 요새를 점령하자 로셀은 사임했다. 코뮌은 그의 사임을 받아들이지 않고 복귀를 요구했지만, 로셀은 거부했다. 5월 10일 코뮌은 로셀을 청문하지 않은 채 군사법정에 회부하기로 표결했다. 찬성 34명, 반대 2명, 기권 7명이었다. 이 과정은 전쟁 지휘의 통일성과 코뮌의 의사결정 권한을 둘러싼 대립을 드러냈다.",
+      "en": "On 30 April 1871, the Paris Commune appointed Rossel war delegate in place of Cluseret. On taking office, Rossel convened a council of war to review troop numbers, positions and movements, and proposed inspectors to visit units and check stores. He decided to dissolve the Artillery Central Committee, which he considered ineffective, and ordered a second line of barricades inside the existing defenses, along with strongpoints at Montmartre, the Trocadero and the Panthéon. His authority over military administration was contested by the National Guard’s Central Committee and the Commune's Committee of Public Safety. On 8 May, he concluded that commanders had failed to assemble enough men for an offensive. The next day, after the Versailles forces captured Fort Issy, Rossel resigned. The Commune refused to accept his resignation and asked him to return, but he declined. On 10 May it voted to refer him to a court-martial without first hearing him: 34 voted in favor, two against and seven abstained. The dispute exposed the conflict over unified military command and the Commune’s authority over its war administration."
+     },
+     "sources": [
+      "https://commune1871.org/la-commune-de-paris/histoire-de-la-commune/commune-1871-ephemeride/1237-commune-1871-ephemeride-10-mai-le-cas-rossel",
+      "https://commune1871.org/la-commune-de-paris/histoire-de-la-commune/commune-1871-ephemeride/1238-commune-1871-ephemeride-9-mai-louis-nathanael-rossel",
+      "https://marxist.com/history-of-the-paris-commune-of-1871/20.-rossel-replaces-cluseret.htm",
+      "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+     ],
+     "evidence": [
+      {
+       "field": "body",
+       "claim": "1871년 5월 1일 코뮌 평의회가 설치한 공안위원회는 1793년 위원회와 다른 코뮌 기구다(표기 한정).",
+       "source": "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)",
+       "locator": "Article lead and creation section",
+       "excerpt": "Ce n'est que le 1er mai 1871, que le Comité est accepté par 45 voix contre 23."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Comit%C3%A9_de_salut_public_(1871)"
+   ],
+   "expectedRevision": "v1-f3cac3b143cc3102a102545af077bb8e3379a666647b9aa49e688f5b7fc406a0"
+  }
+ ]
+}

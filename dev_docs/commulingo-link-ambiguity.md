@@ -158,3 +158,10 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 - 「프랑스 혁명」은 사건 패스에 phrase 차단이 없고 용어에는 페이지 단위 noAutoLink가 없어 본문 표현으로만 막을 수 있다.
   블랑키즘 용어의 「프랑스 혁명가 블랑키」는 같은 날 편집 서비스(제안 20812, 근거 포함)로 「프랑스의 혁명가」로 고쳤다.
   「프랑스 혁명력」(용어 4곳)은 1789년 혁명의 달력이라 링크를 그대로 둔다.
+
+## 2026-10-03 공안위원회 (1793 / 1871)
+
+- 미검토 표제어 220개 일괄 검토(`scripts/reviews/commulingo-links-20261003-pending-headwords.json`, 자동 201·검색 전용 19)에서 맨 「공안위원회」/"Committee of Public Safety"는 코뮌 인물 카드의 1871년 용례 때문에 검색 전용으로 남겼다.
+- 사용자 결정으로 1871년 기구를 용어 「공안위원회 (파리 코뮌)」(`committee-of-public-safety-paris-commune`, 제안 21167)로 분리하고 별칭 「파리 코뮌 공안위원회」「코뮌 공안위원회」/"Commune's Committee of Public Safety"를 자동 연결했다.
+- 코뮌 카드 6개(들레클뤼즈·리고·바를랭·프랑켈·쿠르베·로셀)와 파리 코뮌 사건 본문의 맨 표기를 「코뮌 공안위원회」로 고쳤다(`scripts/content/commune-public-safety-people-20261003.json` Admin upsert, `scripts/content/paris-commune-public-safety-20261003.json` 사건 문구). 리고 카드 한국어의 「3월 29일 공안위원회」는 보안위원회(Commission de Sûreté générale)를 잘못 옮긴 것이라 「코뮌 보안위원회」로 바로잡았다.
+- 그 뒤 1793년 항목의 맨 표기를 자동 연결로 바꿨다(`commulingo-links-20261003-public-safety-1793.json`). 같은 낱말을 페이지별로 다른 항목에 보내는 장치가 인물 페이지에는 없으므로, 동명 기구는 본문에 한정어를 붙여 구분한다.

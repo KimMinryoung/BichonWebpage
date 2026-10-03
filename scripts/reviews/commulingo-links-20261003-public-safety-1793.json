@@ -1,0 +1,32 @@
+{
+ "scope": "2026-10-03 committee-of-public-safety headwords search→auto after splitting the Paris Commune committee",
+ "references": [
+  "scripts/reviews/commulingo-links-20261003-commune-public-safety.json"
+ ],
+ "decisions": [
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety",
+   "lang": "ko",
+   "text": "공안위원회",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 재검토: 1871년 파리 코뮌 동명 기구는 별도 항목 committee-of-public-safety-paris-commune으로 분리하고 코뮌 인물 카드 6개와 파리 코뮌 사건 본문 표기를 「코뮌 공안위원회」/\"Commune's Committee of Public Safety\"로 고쳤다. 남은 맨 표기 발화는 모두 1793~1795년 국민공회 위원회. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "0ea552573849a6b079d3f0da75cea3927cd8d29ccdb69de49e904ab98247ddf9"
+  },
+  {
+   "kind": "term",
+   "id": "committee-of-public-safety",
+   "lang": "en",
+   "text": "Committee of Public Safety",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 링크 재검토: 1871년 파리 코뮌 동명 기구는 별도 항목 committee-of-public-safety-paris-commune으로 분리하고 코뮌 인물 카드 6개와 파리 코뮌 사건 본문 표기를 「코뮌 공안위원회」/\"Commune's Committee of Public Safety\"로 고쳤다. 남은 맨 표기 발화는 모두 1793~1795년 국민공회 위원회. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search",
+   "sourceSignature": "7d2f1797188608d0e3986cd482e49ee06a7a3089ab17e697f445466849a9bd01"
+  }
+ ]
+}
