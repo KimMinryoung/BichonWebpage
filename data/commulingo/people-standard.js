@@ -148,7 +148,10 @@ function parseDateToken(token, fallbackYear) {
     if (!token) return null;
     const cleaned = token.trim();
     if (/^\d{1,2}$/.test(cleaned) && fallbackYear) {
-        return { year: fallbackYear, month: Number.parseInt(cleaned, 10) };
+        const n = Number.parseInt(cleaned, 10);
+        // "1953.3–55": past 12 it can only be the abbreviated end year.
+        if (n > 12) return { year: Math.floor(fallbackYear / 100) * 100 + n, month: null };
+        return { year: fallbackYear, month: n };
     }
     const match = /^(\d{3,4})(?:\.(\d{1,2}))?$/.exec(cleaned);
     if (!match) return null;
@@ -164,6 +167,16 @@ function parsePeriod(label) {
     const parts = first.split(/[–-]/).map(part => part.trim()).filter(Boolean);
     if (!parts.length) return { label: value, start: null, end: null };
     const start = parseDateToken(parts[0], null);
+    // A bare two-digit end is a month only after a month ("1918.07–09").
+    // After a plain year it abbreviates the end year ("1917–18"), or, when
+    // that would precede the start, names a month of it ("1918-11").
+    if (start && start.month === null && /^\d{2}$/.test(parts[1] || '')) {
+        const n = Number.parseInt(parts[1], 10);
+        const year = Math.floor(start.year / 100) * 100 + n;
+        if (year > start.year) return { label: value, start, end: { year, month: null } };
+        if (n >= 1 && n <= 12) return { label: value, start: { year: start.year, month: n }, end: null };
+        return { label: value, start, end: null };
+    }
     const end = parseDateToken(parts[1], start ? start.year : null);
     return { label: value, start, end };
 }
