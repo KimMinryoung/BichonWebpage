@@ -67,3 +67,22 @@ for (const segment of ['citizenship', 'national-origin']) {
     assert.doesNotMatch(peopleMap, /class="wmap-marker[" ]/);
 }
 assert.equal(renderCountryMapSvg({ selectedCode: 'ukraine' }), territorySvg);
+
+// Country hub timeline: chronological rows, a one-line lead, and the separate
+// group of events where the country's people appear without it being a party.
+const { directEventsFor, peopleEventsFor, leadSentence, periodSortKey } = require('../data/commulingo/map-presentation');
+assert.ok(periodSortKey('1941–1944') < periodSortKey('1941–1945'), 'same start: shorter first');
+assert.ok(periodSortKey('1917.02–07') < periodSortKey('1917.10–1918.01'));
+assert.equal(periodSortKey(''), Infinity);
+assert.equal(leadSentence('짧은 첫 문장이다. 두 번째 문장.'), '짧은 첫 문장이다.');
+assert.ok(leadSentence('긴 '.repeat(60)).endsWith('…') && leadSentence('긴 '.repeat(60)).length <= 71);
+const hubEvents = [
+    { id: 'b', period: '1936–1939', title: { ko: '나중' }, summary: { ko: '요약.' }, countries: ['spain'], people: [] },
+    { id: 'a', period: '1934', title: { ko: '먼저' }, summary: { ko: '요약.' }, countries: ['spain'], people: [] },
+    { id: 'c', period: '1937', title: { ko: '숙청' }, summary: { ko: '요약.' }, countries: ['soviet'],
+        people: [{ id: 'nin', name: { ko: '닌' } }, { id: 'nin', name: { ko: '닌' } }, { id: 'other', name: { ko: '남' } }] },
+];
+assert.deepEqual(directEventsFor(hubEvents, 'spain', 'ko').map(e => e.id), ['a', 'b']);
+const hubPeople = [{ id: 'nin', origin: { code: 'spain' } }, { id: 'other', citizenship: { code: 'soviet' } }];
+assert.deepEqual(peopleEventsFor(hubEvents, hubPeople, 'spain', 'ko').map(e => [e.id, e.people]), [['c', ['닌']]]);
+assert.deepEqual(peopleEventsFor(hubEvents, hubPeople, 'soviet', 'ko'), [], 'party events are not repeated');

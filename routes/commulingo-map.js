@@ -7,7 +7,7 @@ const { countryCodes, countryInfo } = require('../data/commulingo/country-geogra
 const { renderWorldMapSvg, renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
 
 const router = express.Router();
-const { directEventsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
+const { directEventsFor, peopleEventsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
 const PREVIEW_LIMIT = 4;
 const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas', 'oceania'];
 
@@ -62,6 +62,7 @@ router.get('/countries/:code', async (req, res) => {
             citizenshipPreview: people.citizenship.slice(0, PREVIEW_LIMIT),
             originPreview: people.origin.slice(0, PREVIEW_LIMIT),
             events: relatedEvents,
+            peopleEvents: peopleEventsFor(events, standardized.people, code, lang),
         };
         setShortPublicCache(res);
         return res.render('public/commulingo-country', {

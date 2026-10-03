@@ -31,9 +31,16 @@
 
         <section class="commu-hub-section" aria-labelledby="country-events">
             <h2 id="country-events" class="commu-country-section-head"><a href="/commulingo/events?country=<%= encodeURIComponent(country.code) %>"><span><%= copy.relatedEvents %> <small><%= country.eventCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
-            <% if (country.events.length) { %><div class="commu-event-grid">
-                <% country.events.forEach(function(event) { %><a class="commu-event-card" href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><div class="commu-event-meta"><span class="commu-event-period"><%= event.period %></span></div><h3><%= event.title %></h3><p><%= event.summary %></p></a><% }) %>
-            </div><% } else { %><p class="commu-country-empty"><%= copy.noEvents %></p><% } %>
+            <% if (country.events.length) { %><ol class="commu-country-timeline">
+                <% country.events.forEach(function(event) { %><li><a href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><span class="commu-country-timeline-period"><%= event.period %></span><span class="commu-country-timeline-body"><strong><%= event.title %></strong><% if (event.lead) { %><span><%= event.lead %></span><% } %></span></a></li><% }) %>
+            </ol><% } else { %><p class="commu-country-empty"><%= copy.noEvents %></p><% } %>
+            <% if (country.peopleEvents.length) { %>
+            <h3 class="commu-country-subhead"><%= copy.peopleEvents %> <small><%= country.peopleEvents.length %></small></h3>
+            <p class="commu-country-subnote"><%= copy.peopleEventsNote %></p>
+            <ol class="commu-country-timeline">
+                <% country.peopleEvents.forEach(function(event) { %><li><a href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><span class="commu-country-timeline-period"><%= event.period %></span><span class="commu-country-timeline-body"><strong><%= event.title %></strong><span><%= copy.appearing %>: <%= event.people.join(', ') %></span></span></a></li><% }) %>
+            </ol>
+            <% } %>
         </section>
         <section class="commu-hub-section" aria-labelledby="country-citizenship">
             <h2 id="country-citizenship" class="commu-country-section-head"><a href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><span><%= copy.citizenshipPeople %> <small><%= country.citizenshipCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
