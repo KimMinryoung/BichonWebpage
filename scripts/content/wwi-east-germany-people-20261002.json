@@ -2917,6 +2917,24 @@
           "relation_en": "Economist; author of The Economic Consequences of the Peace",
           "note_ko": "파리 회의의 영국 재무부 대표로, 조약을 「카르타고식 강화」라 부르며 배상이 유럽 경제를 흔들 것이라 경고했다.",
           "note_en": "Principal British Treasury representative at Paris, he called the treaty a “Carthaginian peace” and warned that reparations would destabilise Europe’s economy."
+        },
+        {
+          "person_id": "saad-zaghloul",
+          "sort_order": 34,
+          "relation_kind": "participant",
+          "relation_ko": "와프드당 지도자",
+          "relation_en": "Leader of the Wafd",
+          "note_ko": "1919년 3월 영국이 그를 몰타로 추방하자 이집트 전역에서 봉기가 일어났다.",
+          "note_en": "His deportation to Malta by the British in March 1919 set off a nationwide uprising in Egypt."
+        },
+        {
+          "person_id": "reginald-dyer",
+          "sort_order": 35,
+          "relation_kind": "executor",
+          "relation_ko": "영국군 임시 준장",
+          "relation_en": "British temporary brigadier-general",
+          "note_ko": "1919년 4월 13일 암리차르 잘리안왈라 바그에서 출구를 막고 군중에게 발포하게 했다.",
+          "note_en": "Blocked the exit at Jallianwala Bagh in Amritsar on 13 April 1919 and had his troops fire on the crowd."
         }
       ]
     },
@@ -3703,6 +3721,69 @@
           "relation_en": "CDU leader",
           "note_ko": "카이저의 뒤를 이은 고분고분한 후임이었다.",
           "note_en": "Kaiser’s more pliant successor."
+        },
+        {
+          "person_id": "bruno-leuschner",
+          "sort_order": 24,
+          "relation_kind": "participant",
+          "relation_ko": "독일경제위원회 부위원장",
+          "relation_en": "Deputy chairman of the German Economic Commission",
+          "note_ko": "하인리히 라우 위원장 아래 젤프만과 함께 부위원장을 맡았고, 경제위원회는 사실상의 정부가 되었다.",
+          "note_en": "Served as deputy to chairman Heinrich Rau alongside Selbmann as the DWK became a government in all but name."
+        },
+        {
+          "person_id": "fritz-selbmann",
+          "sort_order": 25,
+          "relation_kind": "participant",
+          "relation_ko": "독일경제위원회 부위원장",
+          "relation_en": "Deputy chairman of the German Economic Commission",
+          "note_ko": "하인리히 라우 위원장 아래 로이슈너와 함께 부위원장을 맡았다.",
+          "note_en": "Served as deputy to chairman Heinrich Rau alongside Leuschner."
+        },
+        {
+          "person_id": "wolfgang-leonhard",
+          "sort_order": 26,
+          "relation_kind": "participant",
+          "relation_ko": "울브리히트 그룹의 막내",
+          "relation_en": "Youngest member of the Ulbricht Group",
+          "note_ko": "1955년 회고록에서 울브리히트가 「민주적으로 보여야 한다. 그러나 모든 것을 우리 손에 쥐고 있어야 한다」고 말했다고 전했다.",
+          "note_en": "Reported in his 1955 memoir Ulbricht’s remark: “It must look democratic, but we must have everything in hand.”"
+        },
+        {
+          "person_id": "andreas-hermes",
+          "sort_order": 27,
+          "relation_kind": "opponent",
+          "relation_ko": "기독교민주연합 의장",
+          "relation_en": "Chairman of the CDU",
+          "note_ko": "토지개혁에 보상을 요구하다 군정청의 압력으로 물러났다.",
+          "note_en": "Demanded compensation for the land reform and was forced by SMAD to resign."
+        },
+        {
+          "person_id": "erich-gniffke",
+          "sort_order": 28,
+          "relation_kind": "participant",
+          "relation_ko": "사회주의통일당 중앙서기국원",
+          "relation_en": "Member of the SED Central Secretariat",
+          "note_ko": "인민회의 참가자의 62%가 사회주의통일당원이었다고 추산했다.",
+          "note_en": "Estimated that 62 per cent of the People’s Congress participants belonged to the SED."
+        },
+        {
+          "person_id": "erich-ollenhauer",
+          "sort_order": 29,
+          "relation_kind": "participant",
+          "relation_ko": "서독 사회민주당 부의장",
+          "relation_en": "West German SPD deputy chairman",
+          "note_ko": "1945년 12월~1946년 4월 적어도 2만 명의 사회민주당원이 징계·투옥·살해되었다고 추산했다.",
+          "note_en": "Estimated that at least 20,000 Social Democrats were disciplined, imprisoned or killed between December 1945 and April 1946."
+        },
+        {
+          "person_id": "heinrich-rau",
+          "sort_order": 30,
+          "relation_kind": "leader",
+          "relation_ko": "독일경제위원회 위원장",
+          "relation_en": "Chairman of the German Economic Commission",
+          "note_ko": "1948년 사실상의 정부가 된 경제위원회를 이끌었다.",
+          "note_en": "Chaired the DWK, which became a government in all but name in 1948."
         }
       ]
     },
@@ -4553,6 +4634,66 @@
           "relation_en": "Politburo member",
           "note_ko": "7월 7~8일 정치국 회의에서 호네커와 함께 울브리히트 편에 섰다.",
           "note_en": "Sided with Ulbricht, together with Honecker, at the Politburo session of 7–8 July.",
+          "side": "regime"
+        },
+        {
+          "person_id": "fritz-selbmann",
+          "sort_order": 21,
+          "relation_kind": "participant",
+          "relation_ko": "중공업 장관",
+          "relation_en": "Minister of Heavy Industry",
+          "note_ko": "6월 16일 울브리히트와 그로테볼 대신 각료의 집 앞 군중 앞에 나섰으나 고함에 묻혔다.",
+          "note_en": "On 16 June faced the crowd outside the House of Ministries in place of Ulbricht and Grotewohl, and was shouted down.",
+          "side": "regime"
+        },
+        {
+          "person_id": "robert-havemann",
+          "sort_order": 22,
+          "relation_kind": "participant",
+          "relation_ko": "평화평의회 의장",
+          "relation_en": "President of the GDR Peace Council",
+          "note_ko": "6월 16일 젤프만과 함께 각료의 집 앞 군중 앞에 나섰으나 고함에 묻혔다.",
+          "note_en": "Came out with Selbmann to the crowd outside the House of Ministries on 16 June and was shouted down.",
+          "side": "regime"
+        },
+        {
+          "person_id": "hilde-benjamin",
+          "sort_order": 23,
+          "relation_kind": "executor",
+          "relation_ko": "법무장관",
+          "relation_en": "Minister of Justice",
+          "note_ko": "7월 페히너의 후임으로 법무장관이 되어 봉기 가담자에 대한 가혹한 판결을 이끌었다.",
+          "note_en": "Succeeded Fechner as justice minister in July and pressed for harsh sentences against those arrested.",
+          "side": "regime"
+        },
+        {
+          "person_id": "fred-oelssner",
+          "sort_order": 24,
+          "relation_kind": "participant",
+          "relation_ko": "정치국원",
+          "relation_en": "Politburo member",
+          "note_ko": "6월 2일 울브리히트·그로테볼과 함께 모스크바에서 소련의 「건전화 조치」를 넘겨받았다.",
+          "note_en": "Received the Soviet “measures to improve the health of the political situation” in Moscow with Ulbricht and Grotewohl on 2 June.",
+          "side": "regime"
+        },
+        {
+          "person_id": "heinrich-rau",
+          "sort_order": 25,
+          "relation_kind": "participant",
+          "relation_ko": "정치국원",
+          "relation_en": "Politburo member",
+          "note_ko": "7월 7~8일 정치국 회의에서 헤른슈타트의 집단지도 방안에 찬성했다.",
+          "note_en": "Backed Herrnstadt’s collective-leadership proposal at the Politburo session of 7–8 July.",
+          "side": "regime"
+        },
+        {
+          "person_id": "pyotr-dibrova",
+          "sort_order": 26,
+          "relation_kind": "executor",
+          "relation_ko": "베를린 소련 지구 사령관",
+          "relation_en": "Soviet commandant of Berlin",
+          "note_ko": "6월 17일 오후 1시 무렵 동베를린에 비상사태를 선포했고, 비상사태는 7월 11일에야 풀렸다.",
+          "note_en": "Declared a state of emergency in East Berlin around 1 p.m. on 17 June; it was not lifted until 11 July.",
           "side": "regime"
         }
       ]
@@ -5420,6 +5561,24 @@
           "relation_en": "East German Minister of State Security",
           "note_ko": "1953년 7월 말 헤른슈타트와 함께 정치국에서 쫓겨났다.",
           "note_en": "Expelled from the Politburo with Herrnstadt at the end of July 1953."
+        },
+        {
+          "person_id": "jozef-swiatlo",
+          "sort_order": 25,
+          "relation_kind": "participant",
+          "relation_ko": "폴란드 공안부 제10국 부국장",
+          "relation_en": "Deputy head of Department X, Polish Ministry of Public Security",
+          "note_ko": "1953년 12월 서방으로 망명해 공안부의 실상을 폭로했고, 이 일로 공안부가 약해졌다.",
+          "note_en": "His much-publicised defection in December 1953 and his revelations weakened the Ministry of Public Security."
+        },
+        {
+          "person_id": "ferenc-munnich",
+          "sort_order": 26,
+          "relation_kind": "participant",
+          "relation_ko": "헝가리 공산당 지도자",
+          "relation_en": "Hungarian communist leader",
+          "note_ko": "티토는 브리오니 회담에서 새 정부 수반으로 뮌니히 대신 카다르를 추천했다.",
+          "note_en": "At Brioni, Tito urged the Soviet leaders to install Kádár rather than Münnich as head of the new government."
         }
       ]
     }

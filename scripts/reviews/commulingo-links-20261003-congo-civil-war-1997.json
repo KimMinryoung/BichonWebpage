@@ -1,0 +1,107 @@
+{
+  "scope": "2026-10-03 new glossary term congo-civil-war-1997 (curation gap 1895, scripts/content/congo-civil-war-1997-20261003); migration 178 fail-closed needs review rows for the headword and aliases",
+  "references": [
+    "scripts/content/congo-civil-war-1997-20261003/build.js"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "ko",
+      "text": "콩고 공화국 내전 (1997–1999)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "ko",
+      "text": "1997년 콩고 내전",
+      "role": "identity",
+      "policy": "search",
+      "note": "2026-10-03 owner-requested: 「1997년 콩고 내전」은 1996~1997년 콩고 민주 공화국(자이르)의 제1차 콩고 전쟁과도 읽힐 수 있어 검색 전용.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "ko",
+      "text": "1997~1999년 콩고 공화국 내전",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "ko",
+      "text": "제2차 콩고 공화국 내전",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "ko",
+      "text": "제2차 브라자빌 내전",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "en",
+      "text": "Republic of the Congo Civil War (1997–1999)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "en",
+      "text": "Second Republic of the Congo Civil War",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "en",
+      "text": "Second Brazzaville-Congolese Civil War",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "congo-civil-war-1997",
+      "lang": "en",
+      "text": "Congo-Brazzaville civil war of 1997",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-03 owner-requested: 큐레이션 대기 1895로 새로 만든 용어(콩고 공화국 내전 1997–1999)의 고유 표제어·별칭. 이 전쟁만 가리키는 이름이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

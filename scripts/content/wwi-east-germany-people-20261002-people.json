@@ -7466,6 +7466,4365 @@
           }
         }
       ]
+    },
+    {
+      "id": "saad-zaghloul",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "사아드",
+        "en": "Saad"
+      },
+      "familyName": {
+        "ko": "자글룰",
+        "en": "Zaghloul"
+      },
+      "nativeName": "سعد زغلول",
+      "years": "1857–1927",
+      "citizenship": {
+        "code": "egypt"
+      },
+      "nationalOrigin": {
+        "code": "egypt"
+      },
+      "epithet": {
+        "ko": "1919년 몰타 추방이 이집트 혁명을 불러온 와프드당 창립 지도자",
+        "en": "Founding leader of the Wafd whose deportation to Malta in 1919 set off the Egyptian Revolution"
+      },
+      "bio": {
+        "ko": "나일강 삼각주의 농촌에서 태어나 알아즈하르와 카이로의 법률학교에서 공부하고 변호사가 되었다. 영국 점령 아래 판사, 교육장관(1906~1908), 법무장관(1910~1912)을 지냈고 1913년 입법의회 부의장이 되었다. 1918년 11월 보호령 폐지와 강화회의 대표권을 요구하며 와프드를 이끌었다. 영국이 1919년 3월 그를 몰타로 추방하자 1919년 이집트 혁명이 일어났다. 뒤에 세이셸로 다시 추방되었다가 1923년 돌아왔다. 1924년 선거에서 와프드당이 압승해 첫 와프드 정부의 총리가 되었으나, 그해 11월 수단 총독 리 스택이 암살되고 영국이 요구를 들이밀자 사임했다. 1927년 카이로에서 죽었다.",
+        "en": "Born in a village in the Nile Delta, he studied at al-Azhar and at a law school in Cairo and became a lawyer. Under the British occupation he served as a judge, minister of education (1906–1908) and minister of justice (1910–1912), and in 1913 became vice-president of the Legislative Assembly. In November 1918 he led the Wafd in demanding the end of the protectorate and a seat at the peace negotiations. When the British deported him to Malta in March 1919, the Egyptian Revolution of 1919 broke out. Exiled again to the Seychelles, he was allowed to return in 1923. After the Wafd’s landslide in the 1924 elections he formed the first Wafdist government, but resigned in November after the assassination of Sir Lee Stack, Governor-General of the Sudan, and the British demands that followed. He died in Cairo in 1927."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "사드 자글룰"
+        ],
+        "en": [
+          "Saad Zaghlul",
+          "Sa'd Zaghlul"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Saad_Zaghloul"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1857–1927",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "lead",
+          "excerpt": "(July 1857 – 23 August 1927)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Egyptian revolutionary and statesman",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "lead",
+          "excerpt": "was an Egyptian revolutionary and statesman"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in a village in the Nile Delta",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Education, activism and exile",
+          "excerpt": "Zaghloul was born in Ibyanah village in the Kafr el-Sheikh Governorate of Egypt's Nile Delta."
+        },
+        {
+          "field": "bio",
+          "claim": "Al-Azhar and a law school in Cairo",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Education, activism and exile",
+          "excerpt": "he attended Al-Azhar University and a French law school in Cairo"
+        },
+        {
+          "field": "bio",
+          "claim": "Judge, education and justice minister, vice-president of the Legislative Assembly",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Rise in the bureaucracy",
+          "excerpt": "In succession, Zaghloul was appointed judge, minister of education (1906–1908), minister of justice (1910–1912); and in 1913 he became vice-president of the Legislative Assembly."
+        },
+        {
+          "field": "bio",
+          "claim": "November 1918 demand to abolish the protectorate",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Timeline",
+          "excerpt": "Zaghloul and two other former members from the Legislative Assembly call upon the British high commissioner, asking for the abolition of the protectorate."
+        },
+        {
+          "field": "bio",
+          "claim": "Deported to Malta in March 1919",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Timeline",
+          "excerpt": "1919 March: Zaghloul and three other members of Wafd are deported to Malta."
+        },
+        {
+          "field": "bio",
+          "claim": "His absence led to the 1919 revolution",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Political history",
+          "excerpt": "Zaghloul's absence caused disturbances in Egypt, ultimately leading to the Egyptian Revolution of 1919."
+        },
+        {
+          "field": "bio",
+          "claim": "Exiled to the Seychelles",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Timeline",
+          "excerpt": "Allenby responds by deporting Zaghloul to the Seychelles in the Indian Ocean."
+        },
+        {
+          "field": "bio",
+          "claim": "Allowed to return in 1923",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Timeline",
+          "excerpt": "1923: Zaghloul is allowed to return to Egypt."
+        },
+        {
+          "field": "bio",
+          "claim": "First Wafdist government after the 1924 elections",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Political history",
+          "excerpt": "the elections of 12 January 1924 giving the Wafd Party an overwhelming majority, and two weeks later, led to Zaghloul forming the first Wafdist government"
+        },
+        {
+          "field": "bio",
+          "claim": "Resigned after Lee Stack’s assassination",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Political history",
+          "excerpt": "Following the assassination on 19 November 1924 of Sir Lee Stack, the Sirdar and Governor-General of the Sudan, and subsequent British demands which Zaghloul felt to be unacceptable, Zaghloul resigned."
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Cairo in 1927",
+          "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+          "locator": "Death",
+          "excerpt": "Saad Zaghloul died in Cairo on 23 August 1927"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": null,
+          "affiliationStatus": "independent",
+          "relation": "independent",
+          "startYear": 1918,
+          "endYear": 1927,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+              "locator": "Education, activism and exile",
+              "claim": "Founding leader of the Wafd Party",
+              "excerpt": "In 1918, he became politically active, as the founding leader of the Wafd Party, for which he was later arrested."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": null,
+          "affiliationStatus": "independent",
+          "relation": "independent",
+          "startYear": 1924,
+          "endYear": 1924,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+              "locator": "lead",
+              "claim": "Prime Minister of Egypt in 1924",
+              "excerpt": "He served as Prime Minister of Egypt from 26 January 1924 to 24 November 1924."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1906–1908",
+          "r": {
+            "ko": "교육장관",
+            "en": "Minister of education"
+          }
+        },
+        {
+          "y": "1910–1912",
+          "r": {
+            "ko": "법무장관",
+            "en": "Minister of justice"
+          }
+        },
+        {
+          "y": "1913",
+          "r": {
+            "ko": "입법의회 부의장",
+            "en": "Vice-president of the Legislative Assembly"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "와프드 창립 지도자",
+            "en": "Founding leader of the Wafd"
+          }
+        },
+        {
+          "y": "1919.03",
+          "r": {
+            "ko": "몰타로 추방, 1919년 이집트 혁명",
+            "en": "Deported to Malta; Egyptian Revolution of 1919"
+          }
+        },
+        {
+          "y": "1924",
+          "r": {
+            "ko": "이집트 총리",
+            "en": "Prime Minister of Egypt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "reginald-dyer",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "레지널드",
+        "en": "Reginald"
+      },
+      "familyName": {
+        "ko": "다이어",
+        "en": "Dyer"
+      },
+      "nativeName": "Reginald Dyer",
+      "years": "1864–1927",
+      "citizenship": {
+        "code": "uk"
+      },
+      "nationalOrigin": {
+        "code": "uk"
+      },
+      "epithet": {
+        "ko": "1919년 암리차르 잘리안왈라 바그에서 비무장 군중에게 발포를 명령한 영국 인도군 장교",
+        "en": "British Indian Army officer who ordered troops to fire on an unarmed crowd at Jallianwala Bagh in Amritsar in 1919"
+      },
+      "bio": {
+        "ko": "영국령 인도 펀자브의 머리에서 양조장 관리인의 아들로 태어나 샌드허스트를 나왔고, 벵골군으로 옮겨 국경 원정에 나갔다. 1차 세계대전에서 세이스탄 부대를 지휘했다. 임시 준장이던 1919년 4월 13일, 집회 금지령을 어기고 암리차르의 잘리안왈라 바그에 모인 군중에게 경고 없이 발포를 명령했다. 병사들은 출구 쪽을 향해 약 10분 동안 1,650발을 쏘았고, 공식 보고로도 최소 379명이 죽었다. 영국 여성이 습격당한 거리에서는 사람들을 배로 기어가게 했다. 헌터 위원회의 비판을 받고 사임을 강요당했으나, 영국에서는 「인도를 구한 사람」이라며 모금이 열렸다. 1927년 뇌출혈로 죽었다.",
+        "en": "Born in Murree in British Punjab, the son of a brewery manager, he graduated from Sandhurst and transferred to the Bengal Army, serving on frontier expeditions. In the First World War he commanded the Seistan Force. As a temporary brigadier-general on 13 April 1919 he ordered his troops, without warning, to fire on a crowd gathered at Jallianwala Bagh in Amritsar in defiance of his ban on meetings. The soldiers fired 1,650 rounds for about ten minutes, directed towards the exits, and even the official count was at least 379 dead. In the street where a British woman had been assaulted he made people crawl on their bellies. Criticised by the Hunter Committee, he was told to resign, while in Britain a fund was raised for “the man who saved India”. He died of a cerebral haemorrhage in 1927."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Reginald Edward Harry Dyer"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Reginald_Dyer"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1864–1927",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "lead",
+          "excerpt": "(9 October 1864 – 23 July 1927)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "British military officer",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "lead",
+          "excerpt": "was a British military officer in the Bengal Army and later the newly constituted British Indian Army"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Murree, British India, son of a brewer",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Life and career",
+          "excerpt": "Dyer was born on 9 October 1864 in Murree, in the Punjab province of British India, which is now in Pakistan. He was the son of Edward Dyer, a brewer who managed the Murree Brewery"
+        },
+        {
+          "field": "bio",
+          "claim": "Sandhurst graduate",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Life and career",
+          "excerpt": "enrolled at the Royal Military College of Sandhurst, from where he graduated in August 1885"
+        },
+        {
+          "field": "bio",
+          "claim": "Transferred to the Bengal Army",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Life and career",
+          "excerpt": "He transferred to the Bengal Army, initially joining the Bengal Staff Corps as a lieutenant in 1887."
+        },
+        {
+          "field": "bio",
+          "claim": "Commanded the Seistan Force in the First World War",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Life and career",
+          "excerpt": "During the First World War (1914–18), he commanded the Seistan Force"
+        },
+        {
+          "field": "bio",
+          "claim": "Responsible for the massacre as temporary brigadier-general",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "lead",
+          "excerpt": "As a temporary brigadier-general, he was responsible for the Jallianwala Bagh massacre that took place on 13 April 1919 in Amritsar"
+        },
+        {
+          "field": "bio",
+          "claim": "Meeting held in defiance of his orders",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Events of 13 April",
+          "excerpt": "By 12:30pm that day, Dyer was informed that, in defiance of his orders, a meeting was to be held in the Jallianwala Bagh."
+        },
+        {
+          "field": "bio",
+          "claim": "1,650 rounds over about ten minutes",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Events of 13 April",
+          "excerpt": "The shooting continued unabated for about 10 minutes, and the soldiers fired a total of 1,650 rounds of ammunition"
+        },
+        {
+          "field": "bio",
+          "claim": "No warning given",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Events of 13 April",
+          "excerpt": "Dyer's own testimony revealed that the crowd was not given any warning to disperse"
+        },
+        {
+          "field": "bio",
+          "claim": "Firing directed towards the exits",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Events of 13 April",
+          "excerpt": "the firing was directed towards the exit gates through which the people were running out"
+        },
+        {
+          "field": "bio",
+          "claim": "At least 379 killed per the official report",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "lead",
+          "excerpt": "The official report stated that this resulted in the killing of at least 379 people"
+        },
+        {
+          "field": "bio",
+          "claim": "Crawling order",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Subsequent events",
+          "excerpt": "Anyone wishing to proceed into the street between 6 am and 8 pm was made to crawl the 200 yards (180 m) on all fours, lying flat on their bellies."
+        },
+        {
+          "field": "bio",
+          "claim": "Hunter Committee criticism",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Reaction in Britain and British India",
+          "excerpt": "The committee's report criticised Dyer"
+        },
+        {
+          "field": "bio",
+          "claim": "Told to resign",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Reaction in Britain and British India",
+          "excerpt": "He was told later by the Commander-in-Chief in India, General Charles Monro, to resign his post and that he would not be reemployed."
+        },
+        {
+          "field": "bio",
+          "claim": "“The man who saved India” fund",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Reaction in Britain and British India",
+          "excerpt": "The Morning Post claimed Dyer was \"the man who saved India\" and started a benefit fund"
+        },
+        {
+          "field": "bio",
+          "claim": "Died of cerebral haemorrhage in 1927",
+          "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+          "locator": "Later life",
+          "excerpt": "He died of cerebral haemorrhage and arteriosclerosis on 23 July 1927."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1885,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Reginald_Dyer",
+              "locator": "lead",
+              "claim": "British and Bengal Army officer; temporary brigadier-general at Amritsar",
+              "excerpt": "As a temporary brigadier-general, he was responsible for the Jallianwala Bagh massacre that took place on 13 April 1919 in Amritsar"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1885",
+          "r": {
+            "ko": "샌드허스트 졸업, 영국군 임관",
+            "en": "Graduated from Sandhurst; commissioned in the British Army"
+          }
+        },
+        {
+          "y": "1887",
+          "r": {
+            "ko": "벵골군 전속",
+            "en": "Transferred to the Bengal Army"
+          }
+        },
+        {
+          "y": "1914–1918",
+          "r": {
+            "ko": "세이스탄 부대 지휘",
+            "en": "Commanded the Seistan Force"
+          }
+        },
+        {
+          "y": "1919.04.13",
+          "r": {
+            "ko": "잘리안왈라 바그 학살",
+            "en": "Jallianwala Bagh massacre"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "퇴역",
+            "en": "Retired"
+          }
+        }
+      ]
+    },
+    {
+      "id": "carl-legien",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카를",
+        "en": "Carl"
+      },
+      "familyName": {
+        "ko": "레기엔",
+        "en": "Legien"
+      },
+      "nativeName": "Carl Legien",
+      "years": "1861–1920",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "1918년 슈티네스와 노사 협정을 맺고 1920년 카프 폭동에 총파업으로 맞선 독일 자유노조 지도자",
+        "en": "German trade-union leader who signed the 1918 agreement with Stinnes and met the Kapp Putsch of 1920 with a general strike"
+      },
+      "bio": {
+        "ko": "마리엔부르크에서 태어나 고아원에서 자랐고 선반공이 되었다. 1885년 사회민주당에 들어갔고, 1890년부터 독일 노동조합 총위원회 위원장, 1893~1898년과 1903~1920년 제국의회 의원을 지냈다. 1913년 국제노동조합연맹 초대 회장이 되었다. 당의 우파를 이끌었고, 1차 세계대전에서는 성내 평화와 파업 포기를 지지했다. 1918년 11월 15일 후고 슈티네스와 협정을 맺어 고용주가 처음으로 노조를 노동자 대표로 인정하고 8시간 노동제와 사업장 노동자위원회를 받아들이게 했으나, 노조는 급진 사회주의자들의 요구를 거부했다. 1919년 독일노동조합총연맹 위원장이 되었고, 1920년 3월 카프 폭동에 맞서 총파업을 조직했다. 같은 해 베를린에서 죽었다.",
+        "en": "Born in Marienburg, he grew up in an orphanage and became a wood turner. He joined the Social Democrats in 1885, chaired the General Commission of the German Trade Unions from 1890, and sat in the Reichstag in 1893–1898 and 1903–1920. In 1913 he became the first President of the International Federation of Trade Unions. He led the SPD’s right wing, and in the First World War supported the civil truce and the renunciation of strikes. On 15 November 1918 he signed an agreement with Hugo Stinnes under which employers for the first time accepted the unions as workers’ representatives, with the eight-hour day and works councils, while the unions rejected the radical socialists’ demands. In 1919 he became chairman of the new General German Trade Union Federation (ADGB), and in March 1920 he organised the general strike against the Kapp Putsch. He died in Berlin later that year."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Carl Rudolf Legien"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Carl_Legien",
+        "https://de.wikipedia.org/wiki/Carl_Legien"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1861–1920",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "lead",
+          "excerpt": "(1 December 1861 – 26 December 1920)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German unionist and Social Democratic politician",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "lead",
+          "excerpt": "was a German  unionist, moderate Social Democratic politician"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German trade-union official born in Marienburg",
+          "source": "https://de.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Einleitung",
+          "excerpt": "in Marienburg (Westpreußen); † 26. Dezember 1920 in Berlin) war ein deutscher Gewerkschaftsfunktionär und Politiker (SPD)"
+        },
+        {
+          "field": "bio",
+          "claim": "Orphanage in Thorn; wood turner",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "Legien grew up in an orphanage in Thorn, Province of Prussia (now Toruń) from 1867 to 1875. He became a wood turner"
+        },
+        {
+          "field": "bio",
+          "claim": "Joined the SPD in 1885",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "He joined the Social Democratic Party of Germany (SPD) in 1885"
+        },
+        {
+          "field": "bio",
+          "claim": "Chairman of the General Commission from 1890",
+          "source": "https://de.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Gewerkschaftliche und parteipolitische Arbeit",
+          "excerpt": "Ab dem Jahr 1890 war er Vorsitzender der Generalkommission der Gewerkschaften Deutschlands mit Sitz in Hamburg"
+        },
+        {
+          "field": "bio",
+          "claim": "Reichstag member 1893–1898 and 1903–1920",
+          "source": "https://de.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Einleitung",
+          "excerpt": "Legien war von 1893 bis 1898 sowie von 1903 bis 1920 Mitglied des Reichstages."
+        },
+        {
+          "field": "bio",
+          "claim": "First President of the IFTU in 1913",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "first President of the International Federation of Trade Unions in 1913"
+        },
+        {
+          "field": "bio",
+          "claim": "Leader of the SPD right wing",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "He became the leader of the SPD's right wing and opposed its more leftist factions."
+        },
+        {
+          "field": "bio",
+          "claim": "Supported the civil truce",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "At the outbreak of World War I he supported the war with \"patriotic fervor\" and the SPD-majority’s Burgfriedenspolitik"
+        },
+        {
+          "field": "bio",
+          "claim": "Supported the renunciation of strikes",
+          "source": "https://de.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Gewerkschaftliche und parteipolitische Arbeit",
+          "excerpt": "Legien hatte im Weltkrieg den Beschluss auf Streikverzicht unterstützt"
+        },
+        {
+          "field": "bio",
+          "claim": "Stinnes–Legien agreement",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "On 15 November 1918 he signed the Stinnes-Legien Agreement with industrialist Hugo Stinnes, an agreement in which the German employers for the first time accepted nationwide unions as legitimate workers-organisations and which introduced an eight-hour day, workers councils in plants with more than 50 employees and parity employment offices."
+        },
+        {
+          "field": "bio",
+          "claim": "Unions rejected radical demands",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "while the unions rejected radical socialists’ demands"
+        },
+        {
+          "field": "bio",
+          "claim": "ADGB chairman in 1919",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "In 1919 he became the first Chairman of the Allgemeiner Deutscher Gewerkschaftsbund."
+        },
+        {
+          "field": "bio",
+          "claim": "General strike against the Kapp Putsch",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "He countered the right-wing Kapp Putsch of March 1920 by organizing a massive general strike in Germany"
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Berlin",
+          "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+          "locator": "Biography",
+          "excerpt": "Legien died after a short illness in Berlin"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": null,
+          "affiliationStatus": "independent",
+          "relation": "independent",
+          "startYear": 1890,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Carl_Legien",
+              "locator": "Einleitung",
+              "claim": "Chairman of the General Commission of the German Trade Unions and of the ADGB",
+              "excerpt": "Er war von 1890 bis 1919 Vorsitzender der Generalkommission der Gewerkschaften Deutschlands und anschließend bis zu seinem Tod Vorsitzender des daraus hervorgegangenen Allgemeinen Deutschen Gewerkschaftsbunds"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-spd",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1885,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Carl_Legien",
+              "locator": "Biography",
+              "claim": "SPD member and Reichstag deputy; leader of the party’s right wing",
+              "excerpt": "He became the leader of the SPD's right wing and opposed its more leftist factions."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1885",
+          "r": {
+            "ko": "사회민주당 입당",
+            "en": "Joined the SPD"
+          }
+        },
+        {
+          "y": "1890",
+          "r": {
+            "ko": "독일 노동조합 총위원회 위원장",
+            "en": "Chairman of the General Commission of the German Trade Unions"
+          }
+        },
+        {
+          "y": "1893",
+          "r": {
+            "ko": "제국의회 의원",
+            "en": "Elected to the Reichstag"
+          }
+        },
+        {
+          "y": "1913",
+          "r": {
+            "ko": "국제노동조합연맹 초대 회장",
+            "en": "First President of the International Federation of Trade Unions"
+          }
+        },
+        {
+          "y": "1918.11.15",
+          "r": {
+            "ko": "슈티네스-레기엔 협정",
+            "en": "Stinnes–Legien Agreement"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "독일노동조합총연맹 위원장",
+            "en": "Chairman of the ADGB"
+          }
+        },
+        {
+          "y": "1920.03",
+          "r": {
+            "ko": "카프 폭동에 맞선 총파업",
+            "en": "General strike against the Kapp Putsch"
+          }
+        }
+      ]
+    },
+    {
+      "id": "marcel-sembat",
+      "groupId": "world-before-1917",
+      "givenName": {
+        "ko": "마르셀",
+        "en": "Marcel"
+      },
+      "familyName": {
+        "ko": "상바",
+        "en": "Sembat"
+      },
+      "nativeName": "Marcel Sembat",
+      "years": "1862–1922",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "1914년 신성 연합 정부에 공공사업부 장관으로 들어간 프랑스 사회당 의원",
+        "en": "French Socialist deputy who joined the Union sacrée government as Minister of Public Works in 1914"
+      },
+      "bio": {
+        "ko": "센에우아즈의 보니에르쉬르센에서 태어나 법학 박사가 되어 변호사로 일했고, 언론인으로 《라 프티트 레퓌블리크》를 이끌었다. 블랑키주의 경향의 중앙혁명위원회에 들어가 그 후신 정당들을 거쳐 1905년 SFIO에 합류했다. 1893년부터 죽을 때까지 파리 18구의 노동자 지역에서 사회주의 의원으로 당선되었다. 1911년 평화주의 소책자 『왕을 세우라, 아니면 평화를 맺으라』를 썼지만, 1914년 8월 비비아니의 신성 연합 정부에 공공사업부 장관으로 들어가 브리앙 내각에서 1916년 12월까지 자리를 지켰다. 1920년 투르 대회에서 제3인터내셔널 가입에 반대표를 던졌다. 1922년 샤모니에서 뇌출혈로 죽었다.",
+        "en": "Born in Bonnières-sur-Seine in Seine-et-Oise, he took a doctorate in law and practised as a lawyer, and as a journalist edited La Petite République. He joined the Blanquist-leaning Central Revolutionary Committee and followed its successor parties into the SFIO in 1905. From 1893 until his death he was re-elected as a Socialist deputy for a working-class district in the 18th arrondissement of Paris. Author of the 1911 pacifist pamphlet Faites un roi, sinon faites la paix, he nevertheless entered Viviani’s Union sacrée government in August 1914 as Minister of Public Works, and kept the post under Briand until December 1916. At the Congress of Tours in 1920 he voted against joining the Third International. He died of a cerebral haemorrhage in Chamonix in 1922."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Marcel Étienne Sembat"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Marcel_Sembat",
+        "https://fr.wikipedia.org/wiki/Marcel_Sembat"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1862–1922",
+          "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "lead",
+          "excerpt": "19 October 1862 – 5 September 1922"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French lawyer and politician",
+          "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "lead",
+          "excerpt": "was a French lawyer and politician"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Bonnières-sur-Seine, France",
+          "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Early life",
+          "excerpt": "Marcel Sembat was born on 19 October 1862, in Bonnières-sur-Seine, then in Seine-et-Oise, France."
+        },
+        {
+          "field": "bio",
+          "claim": "Doctorate in law",
+          "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Early life",
+          "excerpt": "later received a PhD in law"
+        },
+        {
+          "field": "bio",
+          "claim": "Editor of La Petite République",
+          "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Journalism",
+          "excerpt": "From 1890 to 1897, he was the editor of La Petite République"
+        },
+        {
+          "field": "bio",
+          "claim": "Central Revolutionary Committee to the SFIO",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "il adhéra au Comité révolutionnaire central (parti socialiste de tendance blanquiste), qui devint en 1897 le Parti socialiste révolutionnaire, dont il fut un des dirigeants, puis le Parti socialiste de France en 1902 et la SFIO en 1905"
+        },
+        {
+          "field": "bio",
+          "claim": "Deputy for the 18th arrondissement from 1893, re-elected until his death",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "En 1893, il fut élu député socialiste indépendant de la Seine, dans la première circonscription du XVIIIe arrondissement de Paris"
+        },
+        {
+          "field": "bio",
+          "claim": "Working-class district",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "une banlieue entièrement ouvrière"
+        },
+        {
+          "field": "bio",
+          "claim": "Re-elected until death",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "Il fut constamment réélu jusqu'à son décès."
+        },
+        {
+          "field": "bio",
+          "claim": "Pacifist pamphlet, then minister in the Union sacrée government",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "Auteur d'un pamphlet pacifiste, Faites un roi sinon la paix, il fut néanmoins appelé au gouvernement comme ministre des Travaux publics, dans le gouvernement Viviani, dit gouvernement d'union sacrée"
+        },
+        {
+          "field": "bio",
+          "claim": "Kept the post under Briand until December 1916",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "Il fut maintenu dans ses fonctions dans le cabinet Briand jusqu'au 12 décembre 1916."
+        },
+        {
+          "field": "bio",
+          "claim": "Voted against the Third International at Tours",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Engagement politique",
+          "excerpt": "Au congrès de Tours en décembre 1920, il vota contre l'adhésion à la IIIe Internationale."
+        },
+        {
+          "field": "bio",
+          "claim": "Died of cerebral haemorrhage in Chamonix",
+          "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+          "locator": "Death",
+          "excerpt": "He died of cerebral hemorrhage on 5 September 1922, in Chamonix"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-sfio",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1905,
+          "endYear": 1922,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_Sembat",
+              "locator": "Engagement politique",
+              "claim": "One of the most prominent SFIO figures, Socialist deputy for Paris",
+              "excerpt": "Devenu député socialiste de Paris, il est l'une des figures les plus illustres de la SFIO."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1916,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Marcel_Sembat",
+              "locator": "lead",
+              "claim": "Minister of Public Works under Viviani and Briand",
+              "excerpt": "as Minister of Public Works from 26 August 1914 to 12 December 1916 under Prime Ministers René Viviani and Aristide Briand"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1890–1897",
+          "r": {
+            "ko": "《라 프티트 레퓌블리크》 편집인",
+            "en": "Editor of La Petite République"
+          }
+        },
+        {
+          "y": "1893",
+          "r": {
+            "ko": "센 도 하원의원 당선",
+            "en": "Elected deputy for the Seine"
+          }
+        },
+        {
+          "y": "1905",
+          "r": {
+            "ko": "SFIO 합류",
+            "en": "Joined the SFIO"
+          }
+        },
+        {
+          "y": "1914–1916",
+          "r": {
+            "ko": "공공사업부 장관(신성 연합 정부)",
+            "en": "Minister of Public Works (Union sacrée government)"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "투르 대회에서 제3인터내셔널 가입 반대",
+            "en": "Voted against joining the Third International at Tours"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wolfgang-leonhard",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "볼프강",
+        "en": "Wolfgang"
+      },
+      "familyName": {
+        "ko": "레온하르트",
+        "en": "Leonhard"
+      },
+      "nativeName": "Wolfgang Leonhard",
+      "years": "1921–2014",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "울브리히트 그룹의 막내로 귀국했다가 1949년 유고슬라비아로 탈출한 소련·동독 연구자",
+        "en": "Youngest member of the Ulbricht Group who fled to Yugoslavia in 1949 and became a leading Western scholar of Soviet communism"
+      },
+      "bio": {
+        "ko": "빈에서 블라디미르라는 이름으로 태어났다. 공산주의자인 어머니와 함께 1935년 소련으로 망명했으나 어머니는 1936년 체포되어 보르쿠타 수용소에서 12년을 보냈다. 코민테른 학교를 마치고 자유독일 방송의 아나운서가 되었고, 1945년 4월 30일 울브리히트 그룹의 일원으로 베를린에 돌아왔다. 공산당과 사회주의통일당 중앙위원회 선전선동부에서 일했고 1947년부터 당 대학에서 가르쳤다. 독일이 소련 체제를 그대로 따른다고 확신하게 되자 1949년 3월 프라하를 거쳐 유고슬라비아로 탈출했고, 1950년 서독으로 갔다. 1955년 회고록으로 널리 알려졌고, 1966~1987년 예일 대학에서 소련사를 가르쳤다.",
+        "en": "Born Vladimir Leonhard in Vienna, he went into Soviet exile with his Communist mother in 1935; she was arrested in 1936 and spent twelve years in the Vorkuta camps. After the Comintern school he became an announcer for Radio Free Germany, and on 30 April 1945 he returned to Berlin as a member of the Ulbricht Group. He worked in the agitation and propaganda department of the KPD and then SED Central Committee and from 1947 lectured at the party college. Convinced that Germany would replicate the Soviet system, he fled via Czechoslovakia to Yugoslavia in March 1949 and moved to West Germany in 1950. His 1955 memoir Die Revolution entlässt ihre Kinder became an international bestseller, and from 1966 to 1987 he taught Soviet history at Yale."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Wladimir Leonhard"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+        "https://de.wikipedia.org/wiki/Wolfgang_Leonhard"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1921–2014",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "lead",
+          "excerpt": "Wolfgang Leonhard (16 April 1921 – 17 August 2014) was a German political author and historian of the Soviet Union"
+        },
+        {
+          "field": "citizenship",
+          "claim": "German historian and publicist",
+          "source": "https://de.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Einleitung",
+          "excerpt": "war ein deutscher Historiker und Publizist"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German Communist whose family fled Hitler’s Germany",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "lead",
+          "excerpt": "A German Communist whose family had fled Hitler's Germany and who was educated in the Soviet Union"
+        },
+        {
+          "field": "bio",
+          "claim": "Born Vladimir in Vienna",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Early life",
+          "excerpt": "Wolfgang (originally Vladimir) Leonhard was born in Vienna"
+        },
+        {
+          "field": "bio",
+          "claim": "Exile in the Soviet Union in 1935",
+          "source": "https://de.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Jugend- und Erwachsenenjahre in der Sowjetunion",
+          "excerpt": "im Juni 1935 über Leningrad nach Moskau"
+        },
+        {
+          "field": "bio",
+          "claim": "Mother arrested in 1936; twelve years in Vorkuta",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "In the Soviet Union",
+          "excerpt": "Leonhard's mother was arrested by the secret police, NKVD, in October 1936, and had to do forced labour for the next 12 years, mainly in the camp of Vorkuta"
+        },
+        {
+          "field": "bio",
+          "claim": "Comintern school",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "In the Soviet Union",
+          "excerpt": "Leonhard's final exams at the Comintern school in the summer of 1943 coincided with the dissolution of the Comintern and the closure of the school."
+        },
+        {
+          "field": "bio",
+          "claim": "Announcer at Radio Free Germany",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "In the Soviet Union",
+          "excerpt": "made Leonhard an announcer at the Committee's radio station, \"Radio Free Germany\""
+        },
+        {
+          "field": "bio",
+          "claim": "Returned with the Ulbricht Group on 30 April 1945",
+          "source": "https://de.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Rückkehr nach Deutschland 1945",
+          "excerpt": "Wladimir Leonhard kehrte am 30. April 1945 als 24-jähriger Jungfunktionär mit Walter Ulbricht in der so genannten Gruppe Ulbricht nach Berlin zurück"
+        },
+        {
+          "field": "bio",
+          "claim": "Agitprop department of the KPD/SED Central Committee",
+          "source": "https://de.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Rückkehr nach Deutschland 1945",
+          "excerpt": "Von Juli 1945 bis September 1947 war Wolfgang Leonhard in der Abteilung Agitation und Propaganda des ZK der KPD (ab 1946 ZK der SED) tätig."
+        },
+        {
+          "field": "bio",
+          "claim": "Lecturer at the party college from 1947",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "In East Germany",
+          "excerpt": "In September 1947 he became a lecturer in the history department of the party's college Karl Marx."
+        },
+        {
+          "field": "bio",
+          "claim": "Convinced Germany would replicate the Soviet system",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Escape to Yugoslavia",
+          "excerpt": "This speech convinced Leonhard that Germany was not going to follow a different path to socialism, but would replicate the Soviet system."
+        },
+        {
+          "field": "bio",
+          "claim": "Fled to Yugoslavia via Czechoslovakia in March 1949",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Escape to Yugoslavia",
+          "excerpt": "In March 1949, he fled to Yugoslavia via Czechoslovakia."
+        },
+        {
+          "field": "bio",
+          "claim": "West Germany in 1950",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "lead",
+          "excerpt": "first defecting to Yugoslavia and then moving to West Germany in 1950"
+        },
+        {
+          "field": "bio",
+          "claim": "1955 memoir an international bestseller",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "In the West",
+          "excerpt": "His 1955 memoir, Die Revolution entlässt ihre Kinder (\"Child of the Revolution\"), was translated into many languages and was an international bestseller."
+        },
+        {
+          "field": "bio",
+          "claim": "Taught at Yale 1966–1987",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "In the West",
+          "excerpt": "Professor Leonhard taught Soviet history and the history of international Communism at Yale from 1966 to 1987."
+        },
+        {
+          "field": "bio",
+          "claim": "Died after a long illness",
+          "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+          "locator": "Death",
+          "excerpt": "Leonhard died on August 17, 2014, at a hospital in Daun, Germany, from a long illness at the age of 93."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "propaganda",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1945,
+          "endYear": 1949,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Wolfgang_Leonhard",
+              "locator": "Rückkehr nach Deutschland 1945",
+              "claim": "Agitprop department of the KPD/SED Central Committee, then lecturer at the party college",
+              "excerpt": "Von Juli 1945 bis September 1947 war Wolfgang Leonhard in der Abteilung Agitation und Propaganda des ZK der KPD (ab 1946 ZK der SED) tätig."
+            }
+          ]
+        },
+        {
+          "functionId": "education",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1947,
+          "endYear": 1949,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+              "locator": "In East Germany",
+              "claim": "Lecturer at the SED party college",
+              "excerpt": "In September 1947 he became a lecturer in the history department of the party's college Karl Marx."
+            }
+          ]
+        },
+        {
+          "functionId": "propaganda",
+          "affiliationId": "party-german-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1943,
+          "endYear": 1945,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Wolfgang_Leonhard",
+              "locator": "In the Soviet Union",
+              "claim": "Announcer at Radio Free Germany of the National Committee",
+              "excerpt": "made Leonhard an announcer at the Committee's radio station, \"Radio Free Germany\""
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1935",
+          "r": {
+            "ko": "어머니와 함께 소련으로 망명",
+            "en": "Went into Soviet exile with his mother"
+          }
+        },
+        {
+          "y": "1943",
+          "r": {
+            "ko": "자유독일 방송 아나운서",
+            "en": "Announcer at Radio Free Germany"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "울브리히트 그룹의 일원으로 베를린 귀환",
+            "en": "Returned to Berlin with the Ulbricht Group"
+          }
+        },
+        {
+          "y": "1947",
+          "r": {
+            "ko": "사회주의통일당 당 대학 강사",
+            "en": "Lecturer at the SED party college"
+          }
+        },
+        {
+          "y": "1949",
+          "r": {
+            "ko": "유고슬라비아로 탈출",
+            "en": "Fled to Yugoslavia"
+          }
+        },
+        {
+          "y": "1955",
+          "r": {
+            "ko": "회고록 출간",
+            "en": "Published his memoir"
+          }
+        },
+        {
+          "y": "1966–1987",
+          "r": {
+            "ko": "예일 대학 교수",
+            "en": "Professor at Yale"
+          }
+        }
+      ]
+    },
+    {
+      "id": "andreas-hermes",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "안드레아스",
+        "en": "Andreas"
+      },
+      "familyName": {
+        "ko": "헤르메스",
+        "en": "Hermes"
+      },
+      "nativeName": "Andreas Hermes",
+      "years": "1878–1964",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "바이마르 공화국 재무장관을 지내고 1945년 소련 점령지구 기독교민주연합을 세운 농업 정치가",
+        "en": "Weimar finance minister who founded the CDU in the Soviet zone in 1945 and was deposed for opposing the land reform"
+      },
+      "bio": {
+        "ko": "쾰른의 철도 노동자 집안에서 태어나 농학을 공부했고, 1911년부터 로마의 국제농업연구소에서 일했다. 1920년 가톨릭 중앙당 소속으로 식량장관이 되었고, 1922년부터 1923년 8월 쿠노 내각이 물러날 때까지 재무장관을 지냈다. 나치 집권 뒤 체포되었고 콜롬비아 정부의 경제 고문을 지냈다. 귀국한 뒤 괴르델러 일파와 이어져 7월 20일 사건 뒤 체포되었고, 1945년 1월 사형을 선고받았으나 아내가 집행을 늦춰 붉은 군대의 베를린 점령으로 살아남았다. 1945년 6월 베를린과 소련 점령지구 기독교민주연합의 첫 의장이 되었으나, 보상 없는 토지개혁을 비판해 12월 군정청에 의해 물러났다. 서독으로 옮겨 농민연맹 의장을 지내며 통일을 주장했다.",
+        "en": "The son of a Cologne railway worker, he studied agriculture and from 1911 worked at the International Institute of Agriculture in Rome. A member of the Catholic Centre Party, he became Minister of Food in 1920 and was Minister of Finance from 1922 until the Cuno cabinet resigned in August 1923. Arrested after the Nazis took power, he later served as an economic adviser to the government of Colombia. Back in Germany he joined the resistance around Goerdeler, was arrested after 20 July 1944 and sentenced to death in January 1945, but his wife delayed the execution until the Red Army took Berlin. On 26 June 1945 he became the first chairman of the CDU of Berlin and the Soviet zone; because he refused to agree to the land reform without compensation, SMAD deposed him in December. In the West he founded the German Farmers’ Association and argued for reunification."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andreas_Hermes",
+        "https://de.wikipedia.org/wiki/Andreas_Hermes"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1878–1964",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "lead",
+          "excerpt": "Andreas Hermes (16 July 1878 – 4 January 1964) was a German agricultural scientist and politician."
+        },
+        {
+          "field": "citizenship",
+          "claim": "German politician (Centre Party, CDU)",
+          "source": "https://de.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Einleitung",
+          "excerpt": "war ein deutscher Staatswissenschaftler und Politiker (Zentrum, CDU)"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Cologne, son of a railway worker",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Early life",
+          "excerpt": "Hermes was born on 16 July 1878 in Cologne, then part of the Prussian Rhine province, as the son of Andreas Hermes (1832–1884), a railway worker"
+        },
+        {
+          "field": "bio",
+          "claim": "Studied agricultural science",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Early life",
+          "excerpt": "Hermes studied agricultural science and philosophy at Bonn, Jena and Berlin."
+        },
+        {
+          "field": "bio",
+          "claim": "International Institute of Agriculture in Rome",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Early life",
+          "excerpt": "In 1911 Hermes was appointed director of the agricultural department of the International Institute of Agriculture in Rome."
+        },
+        {
+          "field": "bio",
+          "claim": "Centre Party; Minister of Food 1920",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Weimar Republic",
+          "excerpt": "He joined the Catholic Zentrum. In the first Müller cabinet Hermes became Reichsernährungsminister (Minister for Nutrition/Food) in March 1920."
+        },
+        {
+          "field": "bio",
+          "claim": "Minister of Finance until August 1923",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Weimar Republic",
+          "excerpt": "He stayed in that office until the resignation of the cabinet of Wilhelm Cuno in August 1923."
+        },
+        {
+          "field": "bio",
+          "claim": "Arrested and sentenced in 1933",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Nazi Germany",
+          "excerpt": "He was arrested, charged and, on 12 July, sentenced to four months in prison for his opposition to the Nazis."
+        },
+        {
+          "field": "bio",
+          "claim": "Adviser to the government of Colombia",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Nazi Germany",
+          "excerpt": "There he worked as an economic advisor to the government in Bogotá from 1936 to 1939."
+        },
+        {
+          "field": "bio",
+          "claim": "Contacts with Goerdeler and the Kreisau Circle",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Nazi Germany",
+          "excerpt": "From 1942, Hermes was in touch with members of the resistance like Carl Friedrich Goerdeler and the Kreisau Circle."
+        },
+        {
+          "field": "bio",
+          "claim": "Sentenced to death January 1945",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Nazi Germany",
+          "excerpt": "Immediately after 20 July 1944 he was arrested and on 11 January 1945 sentenced to death"
+        },
+        {
+          "field": "bio",
+          "claim": "Wife delayed execution until the Red Army took Berlin",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Nazi Germany",
+          "excerpt": "However, his wife succeeded in delaying his execution until the Red Army occupied Berlin."
+        },
+        {
+          "field": "bio",
+          "claim": "First chairman of the CDU of Berlin and the Soviet zone",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Post-war",
+          "excerpt": "On 26 June 1945 he was one of the founder-members and the first chairman of the Christlich-Demokratische Union (CDU) of Berlin and the Soviet-occupied zone."
+        },
+        {
+          "field": "bio",
+          "claim": "Forced out by SMAD over criticism of the land reform without compensation",
+          "source": "https://de.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Nachkriegszeit und Bonner Republik",
+          "excerpt": "Im Dezember 1945 wurde er wegen seiner Kritik an der entschädigungslosen Bodenreform in der SBZ von der Sowjetischen Militäradministration zum Rücktritt als CDU-Vorsitzender gezwungen."
+        },
+        {
+          "field": "bio",
+          "claim": "Founded the German Farmers’ Association",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Post-war",
+          "excerpt": "In 1948, he was elected president of the Deutscher Bauernverband, which he founded."
+        },
+        {
+          "field": "bio",
+          "claim": "Reunification, in opposition to Adenauer",
+          "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+          "locator": "Post-war",
+          "excerpt": "He founded the Gesellschaft für die Wiedervereinigung Deutschlands (Society for the Reunification of Germany) placing himself in opposition to the views of Konrad Adenauer."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1923,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Andreas_Hermes",
+              "locator": "Weimarer Republik",
+              "claim": "Reich Minister of Food, then Minister of Finance",
+              "excerpt": "Im darauffolgenden Jahr wurde er Reichsminister für Ernährung und Landwirtschaft, vom Oktober 1921 bis August 1923 leitete er das Reichsfinanzministerium."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-cdu",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1945,
+          "endYear": 1945,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+              "locator": "Post-war",
+              "claim": "First chairman of the CDU of Berlin and the Soviet zone",
+              "excerpt": "On 26 June 1945 he was one of the founder-members and the first chairman of the Christlich-Demokratische Union (CDU) of Berlin and the Soviet-occupied zone."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1928,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Andreas_Hermes",
+              "locator": "Weimar Republic",
+              "claim": "Member of the Reichstag for the Centre Party",
+              "excerpt": "In 1924 he was elected for the Zentrum to the Prussian Diet and in 1928 to the Reichstag."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1911–1914",
+          "r": {
+            "ko": "로마 국제농업연구소 부장",
+            "en": "Department director at the International Institute of Agriculture, Rome"
+          }
+        },
+        {
+          "y": "1920",
+          "r": {
+            "ko": "독일 식량장관",
+            "en": "Reich Minister of Food"
+          }
+        },
+        {
+          "y": "1922–1923",
+          "r": {
+            "ko": "독일 재무장관",
+            "en": "Reich Minister of Finance"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "나치 법정에서 사형 선고",
+            "en": "Sentenced to death by a Nazi court"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "소련 점령지구 기독교민주연합 의장, 12월 해임",
+            "en": "Chairman of the CDU in the Soviet zone; deposed in December"
+          }
+        },
+        {
+          "y": "1948",
+          "r": {
+            "ko": "독일 농민연맹 의장",
+            "en": "President of the German Farmers’ Association"
+          }
+        }
+      ]
+    },
+    {
+      "id": "erich-gniffke",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "에리히",
+        "en": "Erich"
+      },
+      "familyName": {
+        "ko": "그니프케",
+        "en": "Gniffke"
+      },
+      "nativeName": "Erich Gniffke",
+      "years": "1895–1964",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "동독 사회민주당을 재건하고 통합에 서명했으나 1948년 사회주의통일당을 탈당해 서쪽으로 간 조직가",
+        "en": "SPD organiser in the Soviet zone who signed the merger with the KPD, then left the SED in 1948 and fled west"
+      },
+      "bio": {
+        "ko": "엘빙의 조선소 노동자 집안에서 태어나 1913년 사회민주당에 들어갔고, 사무직 노조 간부로 브라운슈바이크에서 그로테볼과 함께 일했다. 나치 시기 사회민주당 저항 모임에 가담해 1938년 그로테볼과 함께 투옥되었다. 1945년 5월 그로테볼과 함께 베를린에서 사회민주당을 재건해 중앙위원회 위원이 되었고, 공산당과의 합의와 통합 선언에 사회민주당 쪽 첫 서명자로 이름을 올렸다. 1946년 사회주의통일당 중앙서기국원에 뽑혔으나 당의 스탈린화 속에 고립되었고, 1948년 9월 모든 직책에서 물러났다. 10월 「새로운 형태의 당」이 전체주의 독재로 이어질 것이라는 탈당 편지를 쓰고 서쪽으로 도피했다. 1964년 죽었다.",
+        "en": "The son of a shipyard worker in Elbing, he joined the SPD in 1913 and became a white-collar union official in Brunswick, where he worked closely with Otto Grotewohl. Under the Nazis he belonged to a Social Democratic resistance circle and was imprisoned with Grotewohl in 1938. In May 1945 he and Grotewohl rebuilt the SPD in Berlin; he sat on its Central Committee and was the first SPD signatory of the agreement with the KPD and of the unity declaration. Elected to the SED Central Secretariat in 1946, he was isolated as the party was Stalinised and in September 1948 was relieved of all functions. In October he wrote a letter of resignation warning that the “party of a new type” would lead to a totalitarian dictatorship, and fled to the West. He died in 1964."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://de.wikipedia.org/wiki/Erich_Gniffke"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1895–1964",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Einleitung",
+          "excerpt": "Erich Walter Gniffke (* 14. Februar 1895 in Elbing; † 4. September 1964 in Bad Kissingen) war ein deutscher Politiker (SPD, SED)."
+        },
+        {
+          "field": "citizenship",
+          "claim": "German politician (SPD, SED)",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Einleitung",
+          "excerpt": "war ein deutscher Politiker (SPD, SED)"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in West Prussia, son of a shipyard worker",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Erich Gniffke wurde in Westpreußen als Sohn eines Werftarbeiters geboren."
+        },
+        {
+          "field": "bio",
+          "claim": "Joined the SPD in 1913",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Als 18-Jähriger wurde er 1913 Mitglied der SPD."
+        },
+        {
+          "field": "bio",
+          "claim": "Union leader in Brunswick, close to Grotewohl",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "1929 wechselte er als Gewerkschaftsführer und Bezirksleiter nach Braunschweig."
+        },
+        {
+          "field": "bio",
+          "claim": "Worked closely with Grotewohl",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "in dem er eng mit dem damaligen Vorsitzenden Otto Grotewohl zusammenarbeitete"
+        },
+        {
+          "field": "bio",
+          "claim": "Social Democratic resistance; imprisoned with Grotewohl in 1938",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Gemeinsam mit diesem wurde er im August 1938 wieder im Rennelberg-Gefängnis inhaftiert."
+        },
+        {
+          "field": "bio",
+          "claim": "Rebuilt the SPD with Grotewohl in May 1945",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Unmittelbar nach der Befreiung vom Nationalsozialismus im Mai 1945 begann er gemeinsam mit Grotewohl in Berlin in der sowjetischen Besatzungszone mit dem Wiederaufbau der SPD."
+        },
+        {
+          "field": "bio",
+          "claim": "Member of the Central Committee",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Als sich der Gründerkreis im Juni als Zentralausschuss konstituierte, wurde er dort Mitglied."
+        },
+        {
+          "field": "bio",
+          "claim": "First SPD signatory of the agreements with the KPD",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "stand jeweils seine Unterschrift als erste von Seiten der SPD"
+        },
+        {
+          "field": "bio",
+          "claim": "Elected to the SED Central Secretariat",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Beim Vereinigungsparteitag am 21. und 22. April 1946 wurde Gniffke als eines von 14 Mitgliedern in das Zentralsekretariat der SED gewählt."
+        },
+        {
+          "field": "bio",
+          "claim": "Noticed the Stalinisation of the SED",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Während seiner Reisen in der SBZ bemerkte er schnell eine Stalinisierung der SED und dass Sozialdemokraten von Positionen entfernt wurden."
+        },
+        {
+          "field": "bio",
+          "claim": "Relieved of all functions 27 September 1948",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Am 27. September 1948 wurde er, mit Hinweis auf seine Arbeit im Volksrat, vom Zentralsekretariat aller Funktionen enthoben"
+        },
+        {
+          "field": "bio",
+          "claim": "Resignation letter of 28 October 1948",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "In dem Brief sah er voraus, dass die „Partei neuen Typus“ zur Vernichtung aller demokratischen Rechte und zu einer totalitären Diktatur führen werde."
+        },
+        {
+          "field": "bio",
+          "claim": "Fled to Frankfurt am Main",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Erich Gniffke flüchtete zuerst nach Frankfurt am Main."
+        },
+        {
+          "field": "bio",
+          "claim": "Died of a heart attack in 1964",
+          "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+          "locator": "Biografie",
+          "excerpt": "Er starb 1964 in Bad Kissingen an einem Herzinfarkt."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-german-spd",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1945,
+          "endYear": 1946,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+              "locator": "Biografie",
+              "claim": "Organiser of the rebuilt SPD in the Soviet zone and member of its Central Committee",
+              "excerpt": "Beim Aufbau der SPD spielte Gniffke wegen seines organisatorischen Talents eine wesentliche Rolle."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1946,
+          "endYear": 1948,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Erich_Gniffke",
+              "locator": "Biografie",
+              "claim": "Member of the SED Central Secretariat",
+              "excerpt": "Beim Vereinigungsparteitag am 21. und 22. April 1946 wurde Gniffke als eines von 14 Mitgliedern in das Zentralsekretariat der SED gewählt."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1913",
+          "r": {
+            "ko": "사회민주당 입당",
+            "en": "Joined the SPD"
+          }
+        },
+        {
+          "y": "1938",
+          "r": {
+            "ko": "그로테볼과 함께 투옥",
+            "en": "Imprisoned with Grotewohl"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "사회민주당 중앙위원회 위원",
+            "en": "Member of the SPD Central Committee"
+          }
+        },
+        {
+          "y": "1946",
+          "r": {
+            "ko": "사회주의통일당 중앙서기국원",
+            "en": "Member of the SED Central Secretariat"
+          }
+        },
+        {
+          "y": "1948",
+          "r": {
+            "ko": "모든 직책에서 물러나고 탈당, 서쪽으로 도피",
+            "en": "Relieved of all functions, left the SED and fled west"
+          }
+        }
+      ]
+    },
+    {
+      "id": "erich-ollenhauer",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "에리히",
+        "en": "Erich"
+      },
+      "familyName": {
+        "ko": "올렌하우어",
+        "en": "Ollenhauer"
+      },
+      "nativeName": "Erich Ollenhauer",
+      "years": "1901–1963",
+      "citizenship": {
+        "code": "germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "망명 사회민주당 간부로 돌아와 슈마허의 뒤를 이어 서독 사회민주당을 이끈 야당 지도자",
+        "en": "Exiled SPD functionary who succeeded Schumacher as SPD leader and leader of the West German opposition"
+      },
+      "bio": {
+        "ko": "마그데부르크에서 벽돌공의 아들로 태어나 1918년 사회민주당에 들어갔고, 사회주의 노동자 청년단을 이끌었다. 1933년 5월 당 집행부와 함께 프라하로 망명해 망명 사회민주당(소파데)을 꾸렸고, 파리와 리스본을 거쳐 런던에서 전쟁을 보냈다. 1946년 2월 귀국해 하노버의 슈마허 사무소에서 일했고, 그해 부의장이 되어 당 조직과 국제 관계를 맡았다. 1952년 슈마허가 죽자 당 의장, 원내대표, 야당 지도자가 되었다. 1953년과 1957년 총리 후보로 아데나워에게 졌고, 1959년 마르크스주의와 결별한 고데스베르크 강령을 뒷받침했다. 1963년 본에서 죽었다.",
+        "en": "Born in Magdeburg, the son of a bricklayer, he joined the SPD in 1918 and led the Socialist Workers’ Youth. In May 1933 he went into exile in Prague with the party executive, helped form the exiled SPD (Sopade), and by way of Paris and Lisbon spent the war in London. Returning in February 1946, he worked in Kurt Schumacher’s office in Hanover and that year became his deputy, running the party organisation and its international contacts. After Schumacher’s death in 1952 he became party chairman, parliamentary leader and leader of the opposition. He lost to Adenauer as candidate for chancellor in 1953 and 1957, and backed the 1959 Godesberg Programme, with which the SPD broke with Marxism. He died in Bonn in 1963."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "폐색전증",
+          "en": "Pulmonary embolism"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+        "https://de.wikipedia.org/wiki/Erich_Ollenhauer"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1901–1963",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "lead",
+          "excerpt": "Erich Ollenhauer (27 March 1901 – 14 December 1963) was the leader of the Social Democratic Party of Germany (SPD) from 1952 until 1963."
+        },
+        {
+          "field": "citizenship",
+          "claim": "German politician; SPD chairman and leader of the opposition",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Einleitung",
+          "excerpt": "war ein deutscher Politiker. Er war von 1952 bis 1963 SPD-Parteivorsitzender und Fraktionsvorsitzender der SPD im Deutschen Bundestag und somit auch Oppositionsführer."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Born in Magdeburg",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Early political career and exile",
+          "excerpt": "Ollenhauer was born in Magdeburg"
+        },
+        {
+          "field": "bio",
+          "claim": "Son of a bricklayer",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Familie und Ausbildung",
+          "excerpt": "sein Vater Wilhelm war Maurer"
+        },
+        {
+          "field": "bio",
+          "claim": "Joined the SPD in 1918",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Weimarer Republik",
+          "excerpt": "Im Jahr 1918 trat Ollenhauer der SPD bei."
+        },
+        {
+          "field": "bio",
+          "claim": "Chairman of the Socialist Workers’ Youth from 1928",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Weimarer Republik",
+          "excerpt": "Im Jahre 1928 übernahm er den Vorsitz und führte die SAJ als eine SPD-loyale Jugendorganisation."
+        },
+        {
+          "field": "bio",
+          "claim": "Exile in Prague; formed Sopade",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Zeit des Nationalsozialismus",
+          "excerpt": "Dort bildeten sie mit Paul Hertz, Friedrich Stampfer und weiteren die SoPaDe."
+        },
+        {
+          "field": "bio",
+          "claim": "Via Lisbon to London",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Zeit des Nationalsozialismus",
+          "excerpt": "Ein Jahr später gelangten die Ollenhauers nach London, wo sich die SoPaDe für die letzten Kriegsjahre eingerichtet hatte"
+        },
+        {
+          "field": "bio",
+          "claim": "Returned February 1946; Schumacher’s office in Hanover",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Nachkriegszeit",
+          "excerpt": "Ollenhauer kehrte im Februar 1946 nach Deutschland zurück. Er wurde Sekretär im SPD-Gründungsbüro von Kurt Schumacher in Hannover."
+        },
+        {
+          "field": "bio",
+          "claim": "Deputy leader in May 1946",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Early political career and exile",
+          "excerpt": "In May the same year, he was voted deputy leader of the SPD, behind Kurt Schumacher."
+        },
+        {
+          "field": "bio",
+          "claim": "Took over Schumacher’s international contacts",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Nachkriegszeit",
+          "excerpt": "übernahm dieser sämtliche internationalen Kontakte"
+        },
+        {
+          "field": "bio",
+          "claim": "Party leader after Schumacher’s death in 1952",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Leadership of the SPD",
+          "excerpt": "After Schumacher's unexpected death in 1952, the SPD elected Ollenhauer as its leader."
+        },
+        {
+          "field": "bio",
+          "claim": "Lost the 1953 and 1957 elections to Adenauer",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Leadership of the SPD",
+          "excerpt": "He ran as the SPD's candidate for Chancellor of Germany in the 1953 and 1957 German elections, both of which were lost to Konrad Adenauer's CDU."
+        },
+        {
+          "field": "bio",
+          "claim": "Supported the Godesberg Programme, which broke with Marxism",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Nachkriegszeit",
+          "excerpt": "Insbesondere sagte sich die SPD vom Marxismus los."
+        },
+        {
+          "field": "bio",
+          "claim": "Godesberg Programme backed by Ollenhauer",
+          "source": "https://de.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Nachkriegszeit",
+          "excerpt": "Das von den Reformern um Willy Brandt, Fritz Erler und Herbert Wehner forcierte und von Ollenhauer unterstützte Programm"
+        },
+        {
+          "field": "bio",
+          "claim": "Died in Bonn of a pulmonary embolism",
+          "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+          "locator": "Leadership of the SPD",
+          "excerpt": "Ollenhauer died in Bonn on 14 December 1963 from pulmonary embolism."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-spd",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1952,
+          "endYear": 1963,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+              "locator": "lead",
+              "claim": "SPD chairman",
+              "excerpt": "Erich Ollenhauer (27 March 1901 – 14 December 1963) was the leader of the Social Democratic Party of Germany (SPD) from 1952 until 1963."
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-german-spd",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1946,
+          "endYear": 1952,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+              "locator": "lead",
+              "claim": "Deputy chairman under Schumacher, running party organisation",
+              "excerpt": "He was a close ally of the chairman Kurt Schumacher, and worked on party organization."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1949,
+          "endYear": 1963,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Erich_Ollenhauer",
+              "locator": "Early political career and exile",
+              "claim": "Member of the Bundestag; leader of the opposition from 1952",
+              "excerpt": "Ollenhauer entered the Bundestag after the 1949 German federal elections."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1918",
+          "r": {
+            "ko": "사회민주당 입당",
+            "en": "Joined the SPD"
+          }
+        },
+        {
+          "y": "1928",
+          "r": {
+            "ko": "사회주의 노동자 청년단 의장",
+            "en": "Chairman of the Socialist Workers’ Youth"
+          }
+        },
+        {
+          "y": "1933",
+          "r": {
+            "ko": "프라하로 망명, 망명 사회민주당 집행부",
+            "en": "Exile in Prague; member of the exiled SPD executive"
+          }
+        },
+        {
+          "y": "1946",
+          "r": {
+            "ko": "사회민주당 부의장",
+            "en": "SPD deputy chairman"
+          }
+        },
+        {
+          "y": "1952–1963",
+          "r": {
+            "ko": "사회민주당 의장, 연방의회 야당 지도자",
+            "en": "SPD chairman and leader of the opposition"
+          }
+        }
+      ]
+    },
+    {
+      "id": "heinrich-rau",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "하인리히",
+        "en": "Heinrich"
+      },
+      "familyName": {
+        "ko": "라우",
+        "en": "Rau"
+      },
+      "nativeName": "Heinrich Rau",
+      "years": "1899–1961",
+      "citizenship": {
+        "code": "east-germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "독일경제위원회 위원장으로 동독 정부의 전신을 이끌고 경제 정책을 맡은 공산주의자",
+        "en": "Communist who chaired the German Economic Commission, the forerunner of the GDR government, and led East German economic policy"
+      },
+      "bio": {
+        "ko": "슈투트가르트 근교 포이어바흐에서 태어나 보슈 공장의 금속 프레스공으로 일했고, 스파르타쿠스단과 독립사회민주당을 거쳐 1919년 공산당에 들어갔다. 1920년대 공산당 농업 정책을 이끌었다. 나치 집권 뒤 투옥되었다가 소련으로 망명했고, 스페인 내전에서 제11국제여단을 지휘했다. 프랑스에서 억류되어 1942년 게슈타포에 넘겨졌고, 마우트하우젠 수용소에서 해방을 맞았다. 1948년 3월 독일경제위원회 위원장이 되어 화폐개혁과 경제계획을 이끌었다. 동독 정치국원과 부총리, 국가계획위원회 위원장을 지냈고, 1953년 7월 정치국에서 울브리히트 교체를 권했으나 자리를 지켰다. 기계공업장관과 대외무역장관을 지내다 1961년 심장마비로 죽었다.",
+        "en": "Born in Feuerbach near Stuttgart, he worked as a metal presser at Bosch and passed through the Spartacists and the USPD into the KPD in 1919, becoming the party’s leading agricultural policy maker in the 1920s. Imprisoned after the Nazis came to power, he emigrated to the Soviet Union and in the Spanish Civil War commanded the XI International Brigade. Interned in France and handed to the Gestapo by Vichy in 1942, he was liberated at Mauthausen. In March 1948 he became chairman of the German Economic Commission (DWK), which carried out the eastern currency reform and the first plans. In the GDR he was a Politburo member, deputy prime minister and chairman of the State Planning Commission; at the Politburo session of 8 July 1953 he recommended replacing Ulbricht, yet kept his posts. Minister of Machine Construction and then of Foreign Trade, he died of a heart attack in 1961."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Heiner Rau"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Heinrich_Rau",
+        "https://de.wikipedia.org/wiki/Heinrich_Rau"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1899–1961",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "lead",
+          "excerpt": "Heinrich Gottlob \"Heiner\" Rau (2 April 1899 – 23 March 1961) was a German communist politician"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Leading East German statesman",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "lead",
+          "excerpt": "and a leading East German statesman after World War II"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German communist born in Feuerbach near Stuttgart",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Early years until World War I",
+          "excerpt": "Rau was born in Feuerbach, now a part of Stuttgart, in the German Kingdom of Württemberg"
+        },
+        {
+          "field": "bio",
+          "claim": "Metal presser at Bosch",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Early years until World War I",
+          "excerpt": "There he completed his training as metal presser and remained until autumn 1920"
+        },
+        {
+          "field": "bio",
+          "claim": "Spartacists, USPD, KPD 1919",
+          "source": "https://de.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Leben",
+          "excerpt": "1916 trat er der Spartakusgruppe, 1917 der USPD und 1919 der KPD bei."
+        },
+        {
+          "field": "bio",
+          "claim": "Leading KPD agricultural policy maker",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "lead",
+          "excerpt": "From 1920 onward, he was a leading agricultural policy maker of the Communist Party of Germany (KPD)."
+        },
+        {
+          "field": "bio",
+          "claim": "Imprisoned, then exile in the USSR",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "lead",
+          "excerpt": "After his first imprisonment he emigrated in 1935 to the Soviet Union (USSR)."
+        },
+        {
+          "field": "bio",
+          "claim": "Commander of the XI International Brigade",
+          "source": "https://de.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Einleitung",
+          "excerpt": "Im Spanischen Bürgerkrieg war er zeitweise Brigadekommandeur der XI. Internationalen Brigade."
+        },
+        {
+          "field": "bio",
+          "claim": "Handed to the Gestapo by Vichy in 1942",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "lead",
+          "excerpt": "In 1939, he was arrested in France, and was delivered by the Vichy regime back to Nazi Germany in 1942."
+        },
+        {
+          "field": "bio",
+          "claim": "Mauthausen camp uprising",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Imprisonment, International Brigades, World War II",
+          "excerpt": "Afterwards he was sent to the Mauthausen Concentration Camp, where he remained until May 1945, when he participated in a camp rebellion as one of the organisers of a secret military camp organisation."
+        },
+        {
+          "field": "bio",
+          "claim": "DWK chairman from March 1948",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "German Economic Commission",
+          "excerpt": "In March 1948 Rau became chairman of the German Economic Commission (Deutsche Wirtschaftskommission or DWK), which during this period became the centralised administrative organisation for the Soviet Occupation Zone and the predecessor of the future East German government."
+        },
+        {
+          "field": "bio",
+          "claim": "Currency reform under Rau",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "German Economic Commission",
+          "excerpt": "the DWK under Rau's leadership, was forced to follow quickly with its own reform and issued an own currency too"
+        },
+        {
+          "field": "bio",
+          "claim": "Half-year and two-year plans",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "German Economic Commission",
+          "excerpt": "It was followed by a likewise accepted two-year plan for 1949 and 1950."
+        },
+        {
+          "field": "bio",
+          "claim": "Politburo member and deputy prime minister from 1950",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "1949–1953",
+          "excerpt": "in 1950 he became a full member of the Politburo as well as deputy chairman of the East German Council of Ministers"
+        },
+        {
+          "field": "bio",
+          "claim": "Chairman of the State Planning Commission",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "1949–1953",
+          "excerpt": "Between 1949 and 1950, Rau was Minister for Planning of the GDR and in 1950–1952 chairman of the National Planning Commission."
+        },
+        {
+          "field": "bio",
+          "claim": "Recommended replacing Ulbricht on 8 July 1953",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "1949–1953",
+          "excerpt": "Rau made a recommendation that Ulbricht be replaced"
+        },
+        {
+          "field": "bio",
+          "claim": "Kept most of his positions",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "1953–1961",
+          "excerpt": "Unlike some other rebels in the leadership, Rau kept most of his positions."
+        },
+        {
+          "field": "bio",
+          "claim": "Minister of Foreign Trade 1955–1961",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Foreign trade and foreign policy",
+          "excerpt": "Between 1955 and 1961 Rau served as Minister for Foreign Trade and Inter-German Trade."
+        },
+        {
+          "field": "bio",
+          "claim": "Died of a heart attack",
+          "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+          "locator": "Death",
+          "excerpt": "Rau, in poor health during his final years, died of a heart attack in East Berlin, in March 1961."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "economy",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1948,
+          "endYear": 1961,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+              "locator": "lead",
+              "claim": "DWK chairman, planning chief and economic minister",
+              "excerpt": "He was a leading economic politician and diplomat of East Germany and led various ministries at different times."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1949,
+          "endYear": 1961,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+              "locator": "1949–1953",
+              "claim": "SED Politburo candidate from 1949, full member from 1950",
+              "excerpt": "Rau became a member of the newly established Central Committee of the SED and candidate member of its Politburo"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "spanish-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1937,
+          "endYear": 1939,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+              "locator": "Imprisonment, International Brigades, World War II",
+              "claim": "Commissar, chief of staff and commander of the XI International Brigade",
+              "excerpt": "he joined the XI International Brigade and participated in the civil war as political commissar, beginning in May 1937, then as chief of staff and finally commander of the brigade"
+            }
+          ]
+        },
+        {
+          "functionId": "agriculture",
+          "affiliationId": "party-german-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+              "locator": "Berlin",
+              "claim": "Head of the KPD Central Committee’s agricultural division",
+              "excerpt": "In November 1920 Rau became a full-time party functionary and the secretary of the agricultural division of the Central Committee of the KPD in Berlin."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1919",
+          "r": {
+            "ko": "독일 공산당 입당",
+            "en": "Joined the KPD"
+          }
+        },
+        {
+          "y": "1923",
+          "r": {
+            "ko": "공산당 중앙위원회 농업부장",
+            "en": "Head of the KPD agricultural division"
+          }
+        },
+        {
+          "y": "1937–1938",
+          "r": {
+            "ko": "제11국제여단 지휘",
+            "en": "Commander of the XI International Brigade"
+          }
+        },
+        {
+          "y": "1943–1945",
+          "r": {
+            "ko": "마우트하우젠 수용소",
+            "en": "Mauthausen concentration camp"
+          }
+        },
+        {
+          "y": "1948–1949",
+          "r": {
+            "ko": "독일경제위원회 위원장",
+            "en": "Chairman of the German Economic Commission"
+          }
+        },
+        {
+          "y": "1950–1961",
+          "r": {
+            "ko": "사회주의통일당 정치국원, 부총리",
+            "en": "SED Politburo member; deputy prime minister"
+          }
+        },
+        {
+          "y": "1955–1961",
+          "r": {
+            "ko": "대외무역·독일내무역 장관",
+            "en": "Minister of Foreign and Inter-German Trade"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bruno-leuschner",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "브루노",
+        "en": "Bruno"
+      },
+      "familyName": {
+        "ko": "로이슈너",
+        "en": "Leuschner"
+      },
+      "nativeName": "Bruno Leuschner",
+      "years": "1910–1965",
+      "citizenship": {
+        "code": "east-germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "독일경제위원회의 계획 책임자에서 국가계획위원회 위원장이 된 동독 경제 계획가",
+        "en": "East German planner who ran planning in the German Economic Commission and then chaired the State Planning Commission"
+      },
+      "bio": {
+        "ko": "베를린 릭스도르프의 구두장이 아들로 사무원으로 일하며 야간에 경제학을 배웠고, 1931년 독일 공산당에 들어갔다. 나치 집권 뒤 지하 신문과 당 군사정보 조직에서 일하다 1936년 체포되어 6년형을 살았고, 작센하우젠과 마우트하우젠 강제수용소에서 1945년 해방을 맞았다. 전후 공산당 경제부를 세워 이끌었고, 1947년부터 독일경제위원회 창설에 큰 역할을 하며 계획을 맡아 1948년 반년 계획과 1949~1950년 2개년 계획을 짰다. 1952~1961년 라우의 뒤를 이어 국가계획위원회 위원장을 지냈고, 1958년 정치국원, 1955~1965년 각료회의 부의장이 되었다. 1961년 위원장직에서 물러나 상호경제원조회의 상임대표를 맡았고, 1965년 동베를린에서 죽었다.",
+        "en": "A shoemaker’s son from Rixdorf, Berlin, he worked as a clerk, studied economics at night and joined the KPD in 1931. Under the Nazis he worked for the illegal paper “Der Rote Wedding” and the party’s military intelligence apparatus until his arrest in 1936; sentenced to six years in prison, he was then held in Sachsenhausen and Mauthausen until 1945. After the war he built up and headed the KPD’s economic department, and from 1947 played a major part in creating the German Economic Commission, where he took charge of planning and drew up the half-year plan of 1948 and the two-year plan of 1949/50. He succeeded Heinrich Rau as chairman of the State Planning Commission (1952–1961), joined the Politburo in 1958 and was deputy premier from 1955 to 1965. Removed as planning chief in 1961, he became the GDR’s permanent representative to Comecon. He died in East Berlin in 1965."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Bruno Max Leuschner"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+        "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1910–1965",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "lead",
+          "excerpt": "12 August 1910 – 10 February 1965"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Politburo member and chairman of the GDR State Planning Commission",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Einleitung",
+          "excerpt": "war Mitglied des Politbüros des Zentralkomitees der SED und Vorsitzender der Staatlichen Plankommission der DDR"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German politician born in Rixdorf",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Einleitung",
+          "excerpt": "Bruno Max Leuschner (* 12. August 1910 in Rixdorf; † 10. Februar 1965 in Ost-Berlin)"
+        },
+        {
+          "field": "bio",
+          "claim": "son of a shoemaker",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Werdegang",
+          "excerpt": "Bruno Leuschner war der Sohn eines Schuhmachers"
+        },
+        {
+          "field": "bio",
+          "claim": "clerk; evening studies in economics",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "Biography",
+          "excerpt": "In the evenings he studied economics, philosophy and psychology at the Lessing University and the Friedrich Wilhelm University."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the KPD in 1931",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Werdegang",
+          "excerpt": "1931 trat er der KPD bei"
+        },
+        {
+          "field": "bio",
+          "claim": "Der Rote Wedding and the M-Apparat",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "Biography",
+          "excerpt": "He was a collaborator of the newspaper \"Der Rote Wedding\" and was also active in KPD's military intelligence M-Apparat."
+        },
+        {
+          "field": "bio",
+          "claim": "arrested 1936, six years in prison",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "Biography",
+          "excerpt": "In 1936, Leuschner was arrested and sentenced in 1937 by the District Court of Berlin to six years in prison for \"conspiracy to commit high treason\""
+        },
+        {
+          "field": "bio",
+          "claim": "Sachsenhausen and Mauthausen until 1945",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "Biography",
+          "excerpt": "He was then imprisoned in the Sachsenhausen and Mauthausen concentration camps until he was liberated in 1945."
+        },
+        {
+          "field": "bio",
+          "claim": "head of the KPD economic department",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Politik",
+          "excerpt": "Leuschner war 1945 am Aufbau der Wirtschaftsabteilung der KPD beteiligt, deren Vorsitzender er wurde."
+        },
+        {
+          "field": "bio",
+          "claim": "German Economic Commission; planning from 1948",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Politik",
+          "excerpt": "war er ab 1947 maßgeblich am Aufbau der Deutschen Wirtschaftskommission beteiligt, wo er zunächst Leiter der Abteilung für Wirtschaftsfragen und ab 1948 zuständig für Planung war"
+        },
+        {
+          "field": "bio",
+          "claim": "half-year plan 1948 and two-year plan 1949/50",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Politik",
+          "excerpt": "In dieser Funktion war er entscheidend an der Ausarbeitung des Halbjahresplanes 1948 und des Zweijahresplanes 1949/1950 beteiligt."
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the State Planning Commission 1952–1961, succeeding Rau",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "Biography",
+          "excerpt": "from 1952 to 1961 he was chairman of the State Planning Commission as the successor to Heinrich Rau"
+        },
+        {
+          "field": "bio",
+          "claim": "Politburo 1958; deputy chairman of the Council of Ministers 1955–1965",
+          "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+          "locator": "Biography",
+          "excerpt": "Leuschner was deputy chairman of the Council of Ministers of the GDR (1955–1965)"
+        },
+        {
+          "field": "bio",
+          "claim": "removed in 1961; Comecon representative",
+          "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+          "locator": "Politik",
+          "excerpt": "ab Juni 1962 Ständiger Vertreter der DDR im Exekutivkomitee des RGW"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "economy",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1947,
+          "endYear": 1949,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+              "locator": "Politik",
+              "claim": "Head of planning in the German Economic Commission",
+              "excerpt": "war er ab 1947 maßgeblich am Aufbau der Deutschen Wirtschaftskommission beteiligt, wo er zunächst Leiter der Abteilung für Wirtschaftsfragen und ab 1948 zuständig für Planung war"
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1950,
+          "endYear": 1961,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+              "locator": "Biography",
+              "claim": "First deputy chairman, then chairman of the State Planning Commission",
+              "excerpt": "From 1950 to 1952 he was first deputy chairman and from 1952 to 1961 he was chairman of the State Planning Commission as the successor to Heinrich Rau."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1953,
+          "endYear": 1965,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Bruno_Leuschner_(Politiker)",
+              "locator": "Politik",
+              "claim": "Politburo candidate from 1953, member from 1958",
+              "excerpt": "ab 1953 Kandidat und ab 1958 Mitglied des Politbüros des ZK der SED"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1955,
+          "endYear": 1965,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Bruno_Leuschner",
+              "locator": "Biography",
+              "claim": "Deputy chairman of the Council of Ministers",
+              "excerpt": "Leuschner was deputy chairman of the Council of Ministers of the GDR (1955–1965)"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1931",
+          "r": {
+            "ko": "독일 공산당 입당",
+            "en": "Joined the KPD"
+          }
+        },
+        {
+          "y": "1936–1945",
+          "r": {
+            "ko": "투옥, 작센하우젠·마우트하우젠 강제수용소 수감",
+            "en": "Imprisoned; held in Sachsenhausen and Mauthausen"
+          }
+        },
+        {
+          "y": "1947–1949",
+          "r": {
+            "ko": "독일경제위원회 계획 책임자",
+            "en": "In charge of planning at the German Economic Commission"
+          }
+        },
+        {
+          "y": "1952–1961",
+          "r": {
+            "ko": "국가계획위원회 위원장",
+            "en": "Chairman of the State Planning Commission"
+          }
+        },
+        {
+          "y": "1958",
+          "r": {
+            "ko": "사회주의통일당 정치국원",
+            "en": "SED Politburo member"
+          }
+        },
+        {
+          "y": "1962",
+          "r": {
+            "ko": "상호경제원조회의 상임대표",
+            "en": "Permanent representative to Comecon"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fritz-selbmann",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "프리츠",
+        "en": "Fritz"
+      },
+      "familyName": {
+        "ko": "젤프만",
+        "en": "Selbmann"
+      },
+      "nativeName": "Fritz Selbmann",
+      "years": "1899–1975",
+      "citizenship": {
+        "code": "east-germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "1953년 6월 16일 정부 청사 앞에서 파업 노동자들 앞에 나섰던 동독 중공업 장관",
+        "en": "East German heavy-industry minister who faced the striking workers outside the House of Ministries on 16 June 1953"
+      },
+      "bio": {
+        "ko": "헤센 라우터바흐의 구리 세공인 아들로 열일곱에 광부가 되었고, 1차 세계대전에 나가 1918년 병사평의회에 들었다. 1920년 독립사회민주당, 1922년 공산당에 들어가 작센 지구당 정치 책임자와 제국의회 의원이 되었다. 1933년 체포되어 감옥과 작센하우젠·플로센뷔르크 등 강제수용소에서 나치 시대를 버텼다. 전후 작센 경제·계획장관을 거쳐 독일경제위원회 부위원장이 되었고, 동독에서 공업장관과 중공업장관을 지냈다. 1953년 6월 16일 각료의 집 앞 군중 속에 들어가 책상 위에서 연설했으나 야유에 묻혔다. 1958년 울브리히트에게 「일탈적 태도」로 몰려 직책에서 밀려난 뒤 작가로 살았고, 1975년 동베를린에서 죽었다.",
+        "en": "The son of a coppersmith from Lauterbach in Hesse, he was working underground at seventeen, served in the First World War and in 1918 sat on a soldiers’ council. He joined the USPD in 1920 and the KPD in 1922, becoming the party’s political secretary in Saxony and a Reichstag deputy. Arrested in 1933, he survived the Nazi years in prisons and in concentration camps including Sachsenhausen and Flossenbürg. After the war he was Saxony’s minister for economics and planning, then deputy chairman of the German Economic Commission, and in the GDR minister of industry and of heavy industry. On 16 June 1953 he walked into the crowd outside the House of Ministries and tried to address it from a desk, but was whistled down. In 1958 Ulbricht pushed him out of his offices for a “deviant attitude”, and he turned to writing. He died in East Berlin in 1975."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Friedrich Wilhelm Selbmann"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+        "https://de.wikipedia.org/wiki/Fritz_Selbmann"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1899–1975",
+          "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "lead",
+          "excerpt": "29 September 1899 – 26 January 1975"
+        },
+        {
+          "field": "citizenship",
+          "claim": "KPD and SED functionary, minister and author in the GDR",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Einleitung",
+          "excerpt": "war ein deutscher KPD- und SED-Funktionär, Minister und Autor in der DDR"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Lauterbach, Hesse",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Einleitung",
+          "excerpt": "* 29. September 1899 in Lauterbach (Hessen); † 26. Januar 1975 in Ost-Berlin"
+        },
+        {
+          "field": "bio",
+          "claim": "son of a coppersmith; underground at 17; soldiers’ council 1918",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Leben",
+          "excerpt": "Fritz Selbmann, Sohn eines Kupferschmiedes, arbeitete bereits mit 17 Jahren unter Tage, war Soldat im Ersten Weltkrieg und 1918 Mitglied eines Arbeiter- und Soldatenrates."
+        },
+        {
+          "field": "bio",
+          "claim": "USPD 1920, KPD 1922",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Leben",
+          "excerpt": "1920 trat er in die USPD ein und 1922 in die KPD."
+        },
+        {
+          "field": "bio",
+          "claim": "political secretary in Saxony",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Leben",
+          "excerpt": "Er war 1930/31 politischer Sekretär im Bezirk Oberschlesien und im Anschluss bis 1933 im Bezirk Sachsen."
+        },
+        {
+          "field": "bio",
+          "claim": "Reichstag deputy 1932/33",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Leben",
+          "excerpt": "1932/33 Mitglied des Reichstages"
+        },
+        {
+          "field": "bio",
+          "claim": "arrested 1933; prisons and concentration camps",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Leben",
+          "excerpt": "Im gleichen Jahr wurde er verhaftet und überlebte den Nationalsozialismus in Zuchthäusern und KZs wie dem KZ Sachsenhausen und dem KZ Flossenbürg."
+        },
+        {
+          "field": "bio",
+          "claim": "Saxon economics and planning minister",
+          "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Soviet occupation zone",
+          "excerpt": "in December 1946 he was appointed Economics and Planning Minister in the State of Saxony, a position he retained till 1948"
+        },
+        {
+          "field": "bio",
+          "claim": "deputy chairman of the German Economic Commission",
+          "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Soviet occupation zone",
+          "excerpt": "He was appointed deputy chairman of the German Economic Commission"
+        },
+        {
+          "field": "bio",
+          "claim": "minister of industry, then heavy industry",
+          "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "German Democratic Republic (East Germany)",
+          "excerpt": "In the new government Selbmann was appointed Minister for Industry in 1949, and then, as the department was very soon subdivided, Minister for Heavy Industry in 1950."
+        },
+        {
+          "field": "bio",
+          "claim": "faced the strikers on 16 June 1953",
+          "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "1953",
+          "excerpt": "He displayed considerable courage, walking into the crowd of more than 10,000 angry strikers, and then clambering onto an office desk from which he attempted to address the crowd."
+        },
+        {
+          "field": "bio",
+          "claim": "whistled down",
+          "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "1953",
+          "excerpt": "but he drew only whistles from those nearest to him"
+        },
+        {
+          "field": "bio",
+          "claim": "pushed out by Ulbricht in 1958 for a deviant attitude; turned to writing",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Leben",
+          "excerpt": "Wegen „abweichender Haltung“ wurde er von Walter Ulbricht 1958 im Umfeld der sogenannten Schirdewan-Wollweber-Fraktion in der Parteiführung aus seinen politischen und staatlichen Ämtern gedrängt und verlegte sich auf die Schriftstellerei."
+        },
+        {
+          "field": "bio",
+          "claim": "died in East Berlin",
+          "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+          "locator": "Einleitung",
+          "excerpt": "† 26. Januar 1975 in Ost-Berlin"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1930,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+              "locator": "Leben",
+              "claim": "KPD political secretary in Upper Silesia and Saxony",
+              "excerpt": "Er war 1930/31 politischer Sekretär im Bezirk Oberschlesien und im Anschluss bis 1933 im Bezirk Sachsen."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1932,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+              "locator": "Crisis years",
+              "claim": "Reichstag deputy for Leipzig",
+              "excerpt": "He was elected not simply as a \"list candidate\", but as a representative of electoral district 29 (Leipzig)."
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1948,
+          "endYear": 1949,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+              "locator": "Soviet occupation zone",
+              "claim": "Deputy chairman of the German Economic Commission",
+              "excerpt": "He was appointed deputy chairman of the German Economic Commission"
+            }
+          ]
+        },
+        {
+          "functionId": "industry",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1949,
+          "endYear": 1955,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+              "locator": "lead",
+              "claim": "Minister of Industry and of Heavy Industry",
+              "excerpt": "he also served as Minister of Industry and Heavy Industry from 1949 to 1955"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1955,
+          "endYear": 1958,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fritz_Selbmann",
+              "locator": "lead",
+              "claim": "Deputy chairman of the Council of Ministers",
+              "excerpt": "as Deputy Minister-President of the Council of Ministers from 1955 to 1958"
+            }
+          ]
+        },
+        {
+          "functionId": "arts",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1969,
+          "endYear": 1975,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Fritz_Selbmann",
+              "locator": "Leben",
+              "claim": "Vice-president of the GDR Writers’ Association",
+              "excerpt": "Von 1969 bis 1975 war er einer der Vizepräsidenten des DDR-Schriftstellerverbandes."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1922",
+          "r": {
+            "ko": "독일 공산당 입당",
+            "en": "Joined the KPD"
+          }
+        },
+        {
+          "y": "1932–1933",
+          "r": {
+            "ko": "제국의회 의원",
+            "en": "Reichstag deputy"
+          }
+        },
+        {
+          "y": "1933–1945",
+          "r": {
+            "ko": "투옥, 작센하우젠·플로센뷔르크 강제수용소 수감",
+            "en": "Imprisoned; held in Sachsenhausen and Flossenbürg"
+          }
+        },
+        {
+          "y": "1948–1949",
+          "r": {
+            "ko": "독일경제위원회 부위원장",
+            "en": "Deputy chairman of the German Economic Commission"
+          }
+        },
+        {
+          "y": "1949–1955",
+          "r": {
+            "ko": "공업장관, 중공업장관",
+            "en": "Minister of Industry, then of Heavy Industry"
+          }
+        },
+        {
+          "y": "1958",
+          "r": {
+            "ko": "「일탈적 태도」로 직책에서 밀려남",
+            "en": "Pushed out of office for a “deviant attitude”"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hilde-benjamin",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "힐데",
+        "en": "Hilde"
+      },
+      "familyName": {
+        "ko": "벤야민",
+        "en": "Benjamin"
+      },
+      "nativeName": "Hilde Benjamin",
+      "years": "1902–1989",
+      "citizenship": {
+        "code": "east-germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "1953년 봉기 뒤 페히너를 이어 법무장관이 되어 가혹한 정치 재판을 이끈 동독 법률가",
+        "en": "East German jurist who succeeded Fechner as justice minister after the 1953 uprising and led its harsh political trials"
+      },
+      "bio": {
+        "ko": "안할트 베른부르크의 자유주의적 중산층 집안에서 태어나 독일 최초 세대의 여성 법학도로 공부했다. 사회민주당원이었다가 1926년 의사 게오르크 벤야민(발터 벤야민의 동생)과 결혼하고 1927년 공산당에 들어갔다. 나치 시대에 변호사 활동을 금지당했고, 남편은 1942년 마우트하우젠에서 죽었다. 전후 소련 점령지구 사법행정에서 일했고, 동독 최고재판소 부소장으로 여호와의 증인과 「국가의 적」에 대한 공개 재판을 이끌었다. 1953년 7월 15일 파업 노동자 처벌에 반대한 페히너를 이어 법무장관이 되었고, 봉기 가담자를 가혹하게 처벌해 「붉은 힐데」, 「붉은 프라이슬러」로 불렸다. 1967년 울브리히트에게 밀려 물러났고, 1989년 동베를린에서 죽었다.",
+        "en": "Born into a liberal middle-class family in Bernburg, Anhalt, she was among the first women to study law in Germany. A Social Democrat, she married the physician Georg Benjamin, brother of Walter Benjamin, in 1926 and joined the KPD in 1927. Barred from practising law under the Nazis, she lost her husband in Mauthausen in 1942. After the war she worked in the justice administration of the Soviet zone, and as vice-president of the GDR Supreme Court presided over show trials of political undesirables and Jehovah’s Witnesses. On 15 July 1953 she succeeded Max Fechner, who had opposed prosecuting the striking workers, as minister of justice, and her heavy sentences against those arrested in June earned her the names “Red Hilde” and “the Red Freisler”. Ulbricht forced her to resign in 1967. She died in East Berlin in 1989."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Hilde Lange"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+        "https://de.wikipedia.org/wiki/Hilde_Benjamin"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1902–1989",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "lead",
+          "excerpt": "5 February 1902 – 18 April 1989"
+        },
+        {
+          "field": "citizenship",
+          "claim": "East German judge and minister of justice 1953–1967",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "lead",
+          "excerpt": "was an East German judge who served as the Minister of Justice of the German Democratic Republic from 1953 to 1967"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Bernburg, Duchy of Anhalt",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Early life",
+          "excerpt": "Hilde Lange was born on 5 February 1902 in Bernburg, Duchy of Anhalt, into a middle class and liberal-minded Protestant family."
+        },
+        {
+          "field": "bio",
+          "claim": "among the first women to study law",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Early life",
+          "excerpt": "She was among the first women to study law in Germany"
+        },
+        {
+          "field": "bio",
+          "claim": "SPD member",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Early life",
+          "excerpt": "By this time, she was a member of the Social Democratic Party of Germany (SPD)."
+        },
+        {
+          "field": "bio",
+          "claim": "married Georg Benjamin, brother of Walter Benjamin",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Politics and early career",
+          "excerpt": "Georg was the brother of writer Walter Benjamin"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the KPD in 1927",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Politics and early career",
+          "excerpt": "She quit the moderate left-wing SPD and in 1927 joined her husband in the far-left Communist Party of Germany (KPD)."
+        },
+        {
+          "field": "bio",
+          "claim": "barred from practising law under the Nazis",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Politics and early career",
+          "excerpt": "she obtained a Berufsverbot and was forbidden to practice law after the Nazi rise to power in 1933"
+        },
+        {
+          "field": "bio",
+          "claim": "husband killed in Mauthausen 1942",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Politics and early career",
+          "excerpt": "until he was finally killed at the Mauthausen in 1942"
+        },
+        {
+          "field": "bio",
+          "claim": "Soviet-zone justice administration",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "German Democratic Republic",
+          "excerpt": "After the war, Benjamin was appointed head of the Personnel and Schools Department of the German Central Administration for Justice in the Soviet Occupation Zone"
+        },
+        {
+          "field": "bio",
+          "claim": "vice-president of the Supreme Court; show trials",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "German Democratic Republic",
+          "excerpt": "presided over a series of show trials against those identified as political undesirables, such as Johann Burianek and Wolfgang Kaiser, as well as against Jehovah's Witnesses"
+        },
+        {
+          "field": "bio",
+          "claim": "succeeded Fechner on 15 July 1953",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Minister of Justice",
+          "excerpt": "On 15 July 1953, Benjamin was appointed Minister of Justice of the German Democratic Republic, succeeding Max Fechner in the aftermath of the Uprising of 1953"
+        },
+        {
+          "field": "bio",
+          "claim": "Fechner opposed prosecuting the strikers",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Minister of Justice",
+          "excerpt": "Fechner had stated in an interview to Neues Deutschland that he opposed the prosecution of workers who had taken part in the 17 June strike"
+        },
+        {
+          "field": "bio",
+          "claim": "prosecuted those arrested in June",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Minister of Justice",
+          "excerpt": "Benjamin was responsible for the prosecution of those arrested during the June protests and strikes which, unlike her predecessor, she fully endorsed."
+        },
+        {
+          "field": "bio",
+          "claim": "nicknames",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Minister of Justice",
+          "excerpt": "earned Benjamin the nicknames \"Red Hilde\", \"The Red Freisler,\" and, \"The Red Guillotine.\""
+        },
+        {
+          "field": "bio",
+          "claim": "forced to resign in 1967",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Minister of Justice",
+          "excerpt": "In July 1967, Ulbricht forced Benjamin to resign"
+        },
+        {
+          "field": "bio",
+          "claim": "died in East Berlin in April 1989",
+          "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+          "locator": "Minister of Justice",
+          "excerpt": "She died in East Berlin in April 1989."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "law",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1949,
+          "endYear": 1953,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+              "locator": "German Democratic Republic",
+              "claim": "Vice-president of the GDR Supreme Court",
+              "excerpt": "she was appointed to a number of high-ranking positions, including the Vice President of the Supreme Court of the German Democratic Republic and a member of the Volkskammer"
+            }
+          ]
+        },
+        {
+          "functionId": "law",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1953,
+          "endYear": 1967,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+              "locator": "lead",
+              "claim": "Minister of Justice of the GDR",
+              "excerpt": "was an East German judge who served as the Minister of Justice of the German Democratic Republic from 1953 to 1967"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1954,
+          "endYear": 1989,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Hilde_Benjamin",
+              "locator": "Minister of Justice",
+              "claim": "Member of the SED Central Committee until her death",
+              "excerpt": "In 1954, she was appointed to the Central Committee of the SED and would remain a member until her death."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1927",
+          "r": {
+            "ko": "독일 공산당 입당",
+            "en": "Joined the KPD"
+          }
+        },
+        {
+          "y": "1949–1953",
+          "r": {
+            "ko": "동독 최고재판소 부소장",
+            "en": "Vice-president of the GDR Supreme Court"
+          }
+        },
+        {
+          "y": "1953–1967",
+          "r": {
+            "ko": "동독 법무장관",
+            "en": "GDR Minister of Justice"
+          }
+        },
+        {
+          "y": "1954",
+          "r": {
+            "ko": "사회주의통일당 중앙위원",
+            "en": "Member of the SED Central Committee"
+          }
+        },
+        {
+          "y": "1967",
+          "r": {
+            "ko": "울브리히트에 의해 사임",
+            "en": "Forced to resign by Ulbricht"
+          }
+        }
+      ]
+    },
+    {
+      "id": "robert-havemann",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "로베르트",
+        "en": "Robert"
+      },
+      "familyName": {
+        "ko": "하베만",
+        "en": "Havemann"
+      },
+      "nativeName": "Robert Havemann",
+      "years": "1910–1982",
+      "citizenship": {
+        "code": "east-germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "나치의 사형 선고를 살아남고 뒤에 사회주의통일당에서 쫓겨나 가택연금된 동독의 화학자·반체제 인사",
+        "en": "East German chemist who survived a Nazi death sentence and later, expelled from the SED, became a dissident under house arrest"
+      },
+      "bio": {
+        "ko": "뮌헨에서 태어나 베를린과 뮌헨에서 화학을 공부했고, 카이저 빌헬름 연구소에서 물리화학 박사 학위를 받았다. 저항 단체 「유럽 연합」을 세웠다가 1943년 게슈타포에 체포되어 사형을 선고받았으나, 전쟁에 필요한 연구를 이유로 집행이 거듭 미뤄져 살아남았다. 전후 베를린의 카이저 빌헬름 연구소들을 이끌다 미국 당국에 해임되었고, 1950년 훔볼트 대학교 물리화학 교수가 되어 인민의회 의원과 독일평화위원회 위원을 지냈다. 1953년 6월 16일 젤프만과 함께 정부 청사 앞 군중 앞에 섰다. 1963~1964년 강의 「도그마 없는 변증법」으로 당에서 쫓겨나고 교수직을 잃었다. 1976년 비어만 추방에 항의한 뒤 가택연금되었고, 1982년 그륀하이데에서 죽었다.",
+        "en": "Born in Munich, he studied chemistry in Munich and Berlin and took a doctorate in physical chemistry at the Kaiser Wilhelm Institute. A founder of the resistance group European Union, he was arrested by the Gestapo in 1943 and sentenced to death, but his execution was repeatedly postponed on the grounds that his research was needed, and he survived. After the war he headed Berlin’s Kaiser Wilhelm Institutes until the Americans dismissed him; in 1950 he became professor of physical chemistry at the Humboldt University, a member of the Volkskammer and of the German Peace Committee. On 16 June 1953 he faced the crowd outside the House of Ministries with Fritz Selbmann. His 1963–64 lectures, published as “Dialectics without Dogma”, cost him his party membership and his chair. After protesting Wolf Biermann’s expatriation in 1976 he was put under house arrest. He died in Grünheide in 1982."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Robert Hans Günther Havemann"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Havemann",
+        "https://de.wikipedia.org/wiki/Robert_Havemann"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1910–1982",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "lead",
+          "excerpt": "11 March 1910 – 9 April 1982"
+        },
+        {
+          "field": "citizenship",
+          "claim": "East German chemist, physicist and dissident",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "lead",
+          "excerpt": "was an East German chemist, physicist, and dissident"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "German chemist born in Munich",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Einleitung",
+          "excerpt": "* 11. März 1910 in München; † 9. April 1982 in Grünheide) war ein deutscher Chemiker"
+        },
+        {
+          "field": "bio",
+          "claim": "studied chemistry; doctorate at the Kaiser Wilhelm Institute",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Life and career",
+          "excerpt": "He studied chemistry in Berlin and Munich from 1929 to 1933, and then later received a doctorate in physical chemistry from the Kaiser Wilhelm Institute."
+        },
+        {
+          "field": "bio",
+          "claim": "founder of European Union; arrested 1943",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Life and career",
+          "excerpt": "was one of the founders of the resistance group, European Union. It was in connection with this group that he was arrested by the Gestapo in 1943."
+        },
+        {
+          "field": "bio",
+          "claim": "death sentence repeatedly postponed",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Life and career",
+          "excerpt": "He received a death sentence for treason, but his execution was continually postponed"
+        },
+        {
+          "field": "bio",
+          "claim": "research deemed important for the war",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "NS-Diktatur",
+          "excerpt": "Dabei wurde argumentiert, Havemann werde für „kriegswichtige“ Forschung benötigt."
+        },
+        {
+          "field": "bio",
+          "claim": "headed the Berlin Kaiser Wilhelm Institutes; dismissed by the US authorities",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Leben zwischen 1945 und 1965",
+          "excerpt": "Dieser verfügte im Januar 1948 Havemanns Entlassung als Leiter der Berliner Kaiser-Wilhelm-Gesellschaft"
+        },
+        {
+          "field": "bio",
+          "claim": "professor at the Humboldt University",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Life and career",
+          "excerpt": "He then became a professor of physical chemistry at the Humboldt University of Berlin."
+        },
+        {
+          "field": "bio",
+          "claim": "Volkskammer 1950–1963",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Leben zwischen 1945 und 1965",
+          "excerpt": "1950–1963 war er Mitglied der Volkskammer der DDR"
+        },
+        {
+          "field": "bio",
+          "claim": "German Peace Committee from 1950",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Leben zwischen 1945 und 1965",
+          "excerpt": "Seit 1950 war er Mitglied des Deutschen Friedenskomitees (später Friedensrat der DDR)"
+        },
+        {
+          "field": "bio",
+          "claim": "1963–64 lectures; expelled from the SED and dismissed",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Life and career",
+          "excerpt": "was expelled from the ruling Socialist Unity Party and dismissed from the University—officially because he gave an interview to a newspaper from West Germany"
+        },
+        {
+          "field": "bio",
+          "claim": "Dialektik ohne Dogma",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Ausschluss aus der SED 1964",
+          "excerpt": "veröffentlicht in der Bundesrepublik unter dem Titel: Dialektik ohne Dogma?"
+        },
+        {
+          "field": "bio",
+          "claim": "protested Biermann’s expatriation in 1976",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Hausarrest (1976 bis 1979)",
+          "excerpt": "1976 protestierte er gegen die Ausbürgerung seines Freundes, des regimekritischen Liedermachers Wolf Biermann, aus der DDR."
+        },
+        {
+          "field": "bio",
+          "claim": "house arrest from 1976",
+          "source": "https://en.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Life and career",
+          "excerpt": "He continued his work as a socialist critic and was put under house arrest in 1976, at his home in the village of Grünheide."
+        },
+        {
+          "field": "bio",
+          "claim": "died in Grünheide in 1982",
+          "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+          "locator": "Tod",
+          "excerpt": "Robert Havemann starb am 9. April 1982 in Grünheide"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "science",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1950,
+          "endYear": 1964,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+              "locator": "Leben zwischen 1945 und 1965",
+              "claim": "Director of the Institute of Physical Chemistry at the Humboldt University",
+              "excerpt": "Noch im gleichen Jahr wurde er zum Direktor des Instituts für Physikalische Chemie an der Humboldt-Universität in Ost-Berlin und zum Ordinarius für Physikalische Chemie ernannt."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1950,
+          "endYear": 1963,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Robert_Havemann",
+              "locator": "Leben zwischen 1945 und 1965",
+              "claim": "Member of the Volkskammer",
+              "excerpt": "1950–1963 war er Mitglied der Volkskammer der DDR"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1932",
+          "r": {
+            "ko": "독일 공산당 입당",
+            "en": "Joined the KPD"
+          }
+        },
+        {
+          "y": "1943",
+          "r": {
+            "ko": "게슈타포에 체포, 사형 선고",
+            "en": "Arrested by the Gestapo and sentenced to death"
+          }
+        },
+        {
+          "y": "1950",
+          "r": {
+            "ko": "훔볼트 대학교 물리화학 교수",
+            "en": "Professor of physical chemistry at the Humboldt University"
+          }
+        },
+        {
+          "y": "1950–1963",
+          "r": {
+            "ko": "인민의회 의원",
+            "en": "Member of the Volkskammer"
+          }
+        },
+        {
+          "y": "1964",
+          "r": {
+            "ko": "사회주의통일당에서 제명",
+            "en": "Expelled from the SED"
+          }
+        },
+        {
+          "y": "1976–1979",
+          "r": {
+            "ko": "그륀하이데에서 가택연금",
+            "en": "House arrest in Grünheide"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fred-oelssner",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "프레트",
+        "en": "Fred"
+      },
+      "familyName": {
+        "ko": "욀스너",
+        "en": "Oelßner"
+      },
+      "nativeName": "Fred Oelßner",
+      "years": "1903–1977",
+      "citizenship": {
+        "code": "east-germany"
+      },
+      "nationalOrigin": {
+        "code": "germany"
+      },
+      "epithet": {
+        "ko": "1958년까지 사회주의통일당의 수석 이데올로그였다가 쉬르데반 사건으로 정치국에서 쫓겨난 경제학자",
+        "en": "Economist and the SED’s chief ideologue until 1958, when he was expelled from the Politburo in the Schirdewan affair"
+      },
+      "bio": {
+        "ko": "라이프치히에서 태어나 1919년 독립사회민주당, 1920년 공산당에 들어갔고 당 신문 편집자로 일했다. 1926년 모스크바 국제 레닌 학교와 붉은 교수 연구소에서 공부했다. 1933년 망명해 파리에서 울브리히트의 비서로 일했고, 1936년 모스크바에서 「이념적 일탈」로 교직에서 쫓겨났으며, 전쟁 중에는 모스크바 방송 독일어부 편집장을 지냈다. 1945년 아커만 그룹과 함께 돌아와 당 선전·교육을 맡았고, 1950년 정치국원, 1950~1955년 선전 담당 중앙위원회 서기가 되어 당의 수석 이데올로그로 통했다. 1953년 6월 할레에서 봉기 진압 지휘부를 꾸렸다. 1956년 뒤 농업 전면 집단화에 반대하다 1958년 정치국에서 쫓겨났고, 과학아카데미 경제연구소장을 지냈다.",
+        "en": "Born in Leipzig, he joined the USPD in 1919 and the KPD in 1920 and worked as an editor on party papers. From 1926 he studied in Moscow at the International Lenin School and the Institute of Red Professors. In exile from 1933 he was Ulbricht’s secretary in Paris; in Moscow he lost his teaching posts in 1936 for alleged deviations, and in the war became chief editor of Moscow Radio’s German service. Returning with the Ackermann Group in 1945, he ran the party’s propaganda and education work, joined the Politburo in 1950 and was Central Committee secretary for propaganda from 1950 to 1955, effectively the party’s chief ideologue. In June 1953 he set up the command in Halle that put down the uprising. After 1956 he opposed the complete collectivisation of agriculture, and in 1958 he was expelled from the Politburo. He then directed the Institute of Economics of the Academy of Sciences."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Fred Oelssner",
+          "Fritz Larew"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+        "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1903–1977",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "lead",
+          "excerpt": "27 February 1903 – 7 November 1977"
+        },
+        {
+          "field": "citizenship",
+          "claim": "leading political figure in the GDR",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "lead",
+          "excerpt": "was a German communist politician, economist and a leading political figure in the German Democratic Republic (East Germany)"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Leipzig",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Provenance and early years",
+          "excerpt": "Fred Oelßner was born in Leipzig."
+        },
+        {
+          "field": "bio",
+          "claim": "USPD 1919, KPD 1920",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1919 trat er der Unabhängigen Sozialdemokratischen Partei Deutschlands (USPD), 1920 der Kommunistischen Partei Deutschlands (KPD) bei."
+        },
+        {
+          "field": "bio",
+          "claim": "editor on party papers",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1922 bis 1923 Redakteur an der Schlesischen Arbeiterzeitung in Breslau, danach Redakteur in Chemnitz und Stuttgart"
+        },
+        {
+          "field": "bio",
+          "claim": "International Lenin School and Institute of Red Professors",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1926 wurde Oelßner nach Moskau delegiert, wo er bis 1928 Schüler und 1929 Aspirant der Internationalen Lenin-Schule war. Danach war er Mitarbeiter der ökonomischen Fakultät des Instituts der Roten Professur."
+        },
+        {
+          "field": "bio",
+          "claim": "Ulbricht’s secretary in exile",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1933 emigrierte Oelßner nach Frankreich, wo er persönlicher Sekretär von Walter Ulbricht war."
+        },
+        {
+          "field": "bio",
+          "claim": "dismissed in 1936 for alleged ideological deviations",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Back in Moscow",
+          "excerpt": "In August 1936 Oelßner was dismissed from his teachings posts on account of alleged ideological deviations."
+        },
+        {
+          "field": "bio",
+          "claim": "chief editor of Moscow Radio’s German service",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1941 bis 1944 war er Redakteur, später Chefredakteur der deutschen Redaktion von Radio Moskau"
+        },
+        {
+          "field": "bio",
+          "claim": "returned with the Ackermann group",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1945 kehrte er mit der KPD-Gruppe um Anton Ackermann nach Deutschland zurück."
+        },
+        {
+          "field": "bio",
+          "claim": "Politburo 1950; propaganda secretary 1950–1955",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "German Democratic Republic",
+          "excerpt": "Oelßner was in office between 1950 and 1955 as Central Committee Secretary for Propaganda."
+        },
+        {
+          "field": "bio",
+          "claim": "chief ideologue until 1958",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "German Democratic Republic",
+          "excerpt": "Till 1958 he was effectively the party's chief ideologue."
+        },
+        {
+          "field": "bio",
+          "claim": "set up the Halle command against the 1953 uprising",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "Er konstituierte in Halle die Bezirkseinsatzleitung zur Niederschlagung des Aufstands vom 17. Juni 1953."
+        },
+        {
+          "field": "bio",
+          "claim": "opposed complete collectivisation",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "German Democratic Republic",
+          "excerpt": "Within the politburo Oelßner had emerged as a critic of plans for the \"complete collectivisation of agriculture\""
+        },
+        {
+          "field": "bio",
+          "claim": "expelled from the Politburo in 1958",
+          "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "German Democratic Republic",
+          "excerpt": "On 8 February 1958 Fred Oelßner was expelled from the Politburo and relieved of all his political and party offices"
+        },
+        {
+          "field": "bio",
+          "claim": "director of the Institute of Economics",
+          "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+          "locator": "Leben",
+          "excerpt": "1958 bis 1969 war er Direktor des Instituts für Wirtschaftswissenschaften der Deutschen Akademie der Wissenschaften."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "propaganda",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1950,
+          "endYear": 1955,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+              "locator": "German Democratic Republic",
+              "claim": "Central Committee secretary for propaganda",
+              "excerpt": "Oelßner was in office between 1950 and 1955 as Central Committee Secretary for Propaganda."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-german-sed",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1950,
+          "endYear": 1958,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+              "locator": "lead",
+              "claim": "Politburo member from 1950 until his expulsion in 1958",
+              "excerpt": "Oelßner became a member of the SED Politburo in 1950."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1955,
+          "endYear": 1958,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+              "locator": "German Democratic Republic",
+              "claim": "Deputy chairman of the Council of Ministers",
+              "excerpt": "In 1955 he also became a deputy chairman of the Ministerial Council."
+            }
+          ]
+        },
+        {
+          "functionId": "scholarship",
+          "affiliationId": "state-east-germany",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1958,
+          "endYear": 1969,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://de.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+              "locator": "Leben",
+              "claim": "Director of the Institute of Economics, Academy of Sciences",
+              "excerpt": "1958 bis 1969 war er Direktor des Instituts für Wirtschaftswissenschaften der Deutschen Akademie der Wissenschaften."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1920",
+          "r": {
+            "ko": "독일 공산당 입당",
+            "en": "Joined the KPD"
+          }
+        },
+        {
+          "y": "1926–1932",
+          "r": {
+            "ko": "모스크바 국제 레닌 학교·붉은 교수 연구소",
+            "en": "International Lenin School and Institute of Red Professors, Moscow"
+          }
+        },
+        {
+          "y": "1941–1944",
+          "r": {
+            "ko": "모스크바 방송 독일어부 편집장",
+            "en": "Chief editor of Moscow Radio’s German service"
+          }
+        },
+        {
+          "y": "1950–1958",
+          "r": {
+            "ko": "사회주의통일당 정치국원",
+            "en": "SED Politburo member"
+          }
+        },
+        {
+          "y": "1950–1955",
+          "r": {
+            "ko": "선전 담당 중앙위원회 서기",
+            "en": "Central Committee secretary for propaganda"
+          }
+        },
+        {
+          "y": "1958–1969",
+          "r": {
+            "ko": "과학아카데미 경제연구소장",
+            "en": "Director of the Institute of Economics, Academy of Sciences"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "Fred Oelssner",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "pyotr-dibrova",
+      "groupId": "stalin-era",
+      "givenName": {
+        "ko": "표트르",
+        "en": "Pyotr"
+      },
+      "familyName": {
+        "ko": "디브로바",
+        "en": "Dibrova"
+      },
+      "nativeName": "Пётр Диброва",
+      "years": "1901–1971",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "epithet": {
+        "ko": "1953년 6월 17일 동베를린에 비상사태를 선포한 소련 지구 사령관",
+        "en": "Soviet commandant of Berlin who declared a state of emergency in East Berlin on 17 June 1953"
+      },
+      "bio": {
+        "ko": "폴타바 현의 농민 집안에서 태어나 1918년 붉은 군대에 들어가 내전에 참가했고, 본래 성 하일로를 1925년 디브로바로 바꾸었다. 정치장교로 일하다 1940년 발트 특별군관구 군사회의 위원이 되었고, 독소전쟁 초기의 패배로 북서부 전선 군사회의 위원에서 물러났다. 볼호프 전선의 제59군과 제2충격군 군사회의 위원을 거쳐 1944년 제145소총사단장으로 비텝스크-오르샤 작전과 리가 작전에 참가했다가 중상을 입었다. 1952년부터 1956년까지 베를린 소련 지구 사령관을 지냈고, 1953년 6월 17일 봉기 때 동베를린에 비상사태를 선포했다. 그 뒤 프룬제 군사아카데미에서 일하다 1960년 퇴역했고, 1971년 모스크바에서 죽었다.",
+        "en": "Born into a peasant family in Poltava Governorate, he joined the Red Army in 1918 and fought in the Civil War; in 1925 he changed his birth surname Khailo to Dibrova. A political officer, he became a member of the military council of the Baltic Special Military District in 1940 and was removed from the military council of the North-Western Front after the defeats at the start of the German–Soviet war. After serving on the military councils of the 59th Army and the 2nd Shock Army on the Volkhov Front, he commanded the 145th Rifle Division in 1944 in the Vitebsk–Orsha and Riga operations until he was badly wounded. From 1952 to 1956 he was commandant of the Soviet sector of Berlin, and during the uprising of 17 June 1953 he declared a state of emergency in East Berlin. He then worked at the Frunze Military Academy, retired in 1960 and died in Moscow in 1971."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Pjotr Dibrowa",
+          "Pyotr Akimovich Dibrova"
+        ]
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+        "https://de.wikipedia.org/wiki/Pjotr_Akimowitsch_Dibrowa"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1901–1971",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "6 сентября 1901 — 30 сентября 1971, Москва"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Soviet military commander, commandant of Berlin, major general",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "советский военачальник. Участник Великой Отечественной войны, член Военного совета Северо-Западного фронта, член Военного совета 59-й и 2-й ударной армий Волховского фронта, командир 145-й стрелковой дивизии, комендант Берлина. Генерал-майор (1943)."
+        },
+        {
+          "field": "bio",
+          "claim": "born to a peasant family in Poltava Governorate",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Родился в деревне Шамраевка Полтавской губернии (ныне — в Полтавском районе Полтавской области) в семье крестьянина. В Красной Армии с 1918 года."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the Red Army in 1918; Civil War",
+          "source": "https://de.wikipedia.org/wiki/Pjotr_Akimowitsch_Dibrowa",
+          "locator": "Leben",
+          "excerpt": "Er trat 1918 der Roten Armee bei und nahm am Russischen Bürgerkrieg teil."
+        },
+        {
+          "field": "bio",
+          "claim": "changed his birth name Khailo to Dibrova in 1925",
+          "source": "https://de.wikipedia.org/wiki/Pjotr_Akimowitsch_Dibrowa",
+          "locator": "Leben",
+          "excerpt": "Seinen Geburtsnamen Chailo ließ er 1925 in Dibrowa ändern."
+        },
+        {
+          "field": "bio",
+          "claim": "military council of the Baltic Special Military District from December 1940",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "С декабря 1940 — член Военного совета Прибалтийского особого военного округа."
+        },
+        {
+          "field": "bio",
+          "claim": "removed from the North-Western Front military council after early defeats",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Великая Отечественная война",
+          "excerpt": "однако в связи с неудачами начального периода войны был смещён с этого поста"
+        },
+        {
+          "field": "bio",
+          "claim": "59th Army and 2nd Shock Army military councils, Volkhov Front",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Великая Отечественная война",
+          "excerpt": "С 18 декабря 1941 года по 16 июня 1942 года — член Военного совета 59-й армии Волховского фронта, с 17 июня 1942 по 5 декабря 1942 год — член Военного совета 2-й ударной армии"
+        },
+        {
+          "field": "bio",
+          "claim": "commander of the 145th Rifle Division in the Vitebsk–Orsha and Riga operations",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Великая Отечественная война",
+          "excerpt": "В апреле 1944 назначен командиром 145-й стрелковой дивизии. Вместе с ней участвовал в Витебско-Оршанской и Рижской операциях."
+        },
+        {
+          "field": "bio",
+          "claim": "badly wounded in September 1944",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Великая Отечественная война",
+          "excerpt": "29 сентября 1944 года был тяжело ранен в левую руку"
+        },
+        {
+          "field": "bio",
+          "claim": "commandant of the Soviet sector of Berlin January 1952 – July 1956",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Послевоенный период",
+          "excerpt": "С января 1952 по июль 1956 был комендантом советского сектора Берлина."
+        },
+        {
+          "field": "bio",
+          "claim": "declared the state of emergency in East Berlin on 17 June 1953",
+          "source": "https://de.wikipedia.org/wiki/Pjotr_Akimowitsch_Dibrowa",
+          "locator": "Leben",
+          "excerpt": "verkündete beim Aufstand vom 17. Juni 1953 den Ausnahmezustand für Ost-Berlin"
+        },
+        {
+          "field": "bio",
+          "claim": "Frunze Military Academy; retired in 1960",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Послевоенный период",
+          "excerpt": "Военной академии им. М. В. Фрунзе (Москва, июль 1956—1960). С 1960 года — в отставке."
+        },
+        {
+          "field": "bio",
+          "claim": "died in Moscow",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "30 сентября 1971, Москва"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1952,
+          "endYear": 1956,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Послевоенный период",
+              "claim": "Commandant of the Soviet sector of Berlin",
+              "excerpt": "С января 1952 по июль 1956 был комендантом советского сектора Берлина."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1941,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Великая Отечественная война",
+              "claim": "Military council member of the 59th Army and 2nd Shock Army; commander of the 145th Rifle Division",
+              "excerpt": "В апреле 1944 назначен командиром 145-й стрелковой дивизии."
+            }
+          ]
+        },
+        {
+          "functionId": "education",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1946,
+          "endYear": 1960,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%90%D0%BA%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Послевоенный период",
+              "claim": "Course head at the Frunze Military Academy",
+              "excerpt": "Начальник курса военно-исторического факультета Военной академии им. М. В. Фрунзе (июнь 1946 — январь 1952)."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1918",
+          "r": {
+            "ko": "붉은 군대 입대",
+            "en": "Joined the Red Army"
+          }
+        },
+        {
+          "y": "1941–1942",
+          "r": {
+            "ko": "볼호프 전선 제59군·제2충격군 군사회의 위원",
+            "en": "Military council of the 59th Army and 2nd Shock Army, Volkhov Front"
+          }
+        },
+        {
+          "y": "1943",
+          "r": {
+            "ko": "소장",
+            "en": "Major general"
+          }
+        },
+        {
+          "y": "1944",
+          "r": {
+            "ko": "제145소총사단장",
+            "en": "Commander of the 145th Rifle Division"
+          }
+        },
+        {
+          "y": "1952–1956",
+          "r": {
+            "ko": "베를린 소련 지구 사령관",
+            "en": "Commandant of the Soviet sector of Berlin"
+          }
+        },
+        {
+          "y": "1953",
+          "r": {
+            "ko": "6월 17일 동베를린 비상사태 선포",
+            "en": "Declared a state of emergency in East Berlin on 17 June"
+          }
+        }
+      ],
+      "patronymic": {
+        "ko": "아키모비치",
+        "en": "Akimovich"
+      },
+      "cyrillicPatronymic": "Акимович"
+    },
+    {
+      "id": "jozef-swiatlo",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "유제프",
+        "en": "Józef"
+      },
+      "familyName": {
+        "ko": "시비아트워",
+        "en": "Światło"
+      },
+      "nativeName": "Józef Światło",
+      "years": "1915–1994",
+      "citizenship": {
+        "code": "poland"
+      },
+      "nationalOrigin": {
+        "code": "poland",
+        "label": {
+          "ko": "폴란드 (유대계)",
+          "en": "Poland (Jewish)"
+        }
+      },
+      "epithet": {
+        "ko": "1953년 서방으로 망명해 폴란드 공안부의 고문과 숙청을 폭로한 제10국 부국장",
+        "en": "Deputy head of Poland’s security Department X whose 1953 defection and broadcasts exposed the ministry’s torture and purges"
+      },
+      "bio": {
+        "ko": "갈리치아 메디니의 유대인 가정에서 이자크 플라이슈파르브로 태어나 크라쿠프에서 제화공으로 일했고, 시온주의 단체를 거쳐 공산주의 청년동맹에서 활동했다. 1939년 독일군 포로가 되었다 탈출했으나 소련 내륙으로 끌려갔고, 1943년 결혼하며 아내의 성을 따랐다. 베를링 군의 정치장교를 거쳐 공안부에 들어가 국내군 체포와 1946년 국민투표 조작에 가담했다. 공안부 제10국 부국장으로 비에루트의 직접 지시를 받아 고무우카 등을 체포했다. 1953년 12월 5일 동베를린 출장 중 서베를린의 미군에 망명했고, 자유유럽방송으로 고문과 당내 투쟁을 폭로해 공안부 개편과 폴란드의 10월을 앞당겼다. 1994년 미국에서 죽었다.",
+        "en": "Born Izaak Fleischfarb into a Jewish family in Medyn in Galicia, he worked as a shoemaker in Kraków and moved from a Zionist group to the Communist Youth. Captured by the Germans in 1939, he escaped, only to be deported into the Soviet interior; in 1943 he married and took his wife’s surname. A political officer in Berling’s army, he joined the Ministry of Public Security, took part in arresting Home Army members and in falsifying the 1946 referendum, and as deputy director of its Department X arrested Gomułka and others on Bierut’s personal orders. On 5 December 1953, on official business in East Berlin, he defected to the US military mission in West Berlin. His revelations on Radio Free Europe about torture and the struggles inside the party led to the break-up of the ministry and contributed to the Polish October. He died in the United States in 1994."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "이자크 플라이슈파르브"
+        ],
+        "en": [
+          "Izaak Fleischfarb",
+          "Jozef Swiatlo"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+        "https://pl.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1915–1994",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "lead",
+          "excerpt": "1 January 1915 – 2 September 1994"
+        },
+        {
+          "field": "citizenship",
+          "claim": "High-ranking official of the Polish Ministry of Public Security",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "lead",
+          "excerpt": "was a high-ranking official in the Ministry of Public Security of Poland (UB)"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Polish security official of Jewish origin",
+          "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "wstęp",
+          "excerpt": "polski wysoki funkcjonariusz Ministerstwa Bezpieczeństwa Publicznego pochodzenia żydowskiego"
+        },
+        {
+          "field": "bio",
+          "claim": "born Izaak Fleischfarb into a Jewish family in Medyn, Galicia",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Biography",
+          "excerpt": "into a Jewish family in Medyn village near Zbarazh in Galicia (now Ukraine)"
+        },
+        {
+          "field": "bio",
+          "claim": "shoemaker in Kraków; Gordonia; Communist Youth from 1933",
+          "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Młodość",
+          "excerpt": "W młodości działał w organizacji syjonistycznej Gordonia, a następnie od 1933 roku w Komunistycznym Związku Młodzieży Polski w Krakowie."
+        },
+        {
+          "field": "bio",
+          "claim": "worked as a shoemaker in Kraków",
+          "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Młodość",
+          "excerpt": "pracował w Krakowie jako szewc"
+        },
+        {
+          "field": "bio",
+          "claim": "captured by the Germans, escaped, deported east by the Soviets",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Biography",
+          "excerpt": "Taken prisoner by the Germans, he escaped, only to be taken prisoner by the Red Army"
+        },
+        {
+          "field": "bio",
+          "claim": "married in 1943 and took his wife’s surname",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Biography",
+          "excerpt": "on 26 April 1943, he married Justyna Światło, taking her more Polish-sounding surname"
+        },
+        {
+          "field": "bio",
+          "claim": "political officer in Berling’s army",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Biography",
+          "excerpt": "Berling's Army), becoming a political officer"
+        },
+        {
+          "field": "bio",
+          "claim": "Home Army arrests and the 1946 referendum",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Biography",
+          "excerpt": "He was involved in arresting hundreds of members of Polish underground organization, Armia Krajowa, its leadership (the Trial of the Sixteen) and falsifying of the 1946 Polish referendum."
+        },
+        {
+          "field": "bio",
+          "claim": "Department X; Bierut’s orders; arrested Gomułka",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Biography",
+          "excerpt": "He received orders personally from the First Secretary of the Polish United Workers' Party Bolesław Bierut, and arrested such notable people as politicians Władysław Gomułka and Marian Spychalski"
+        },
+        {
+          "field": "bio",
+          "claim": "defected on 5 December 1953",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Defection to the West",
+          "excerpt": "On 5 December 1953, the day after meeting the Stasi chief, Światło defected to the U.S. military mission in West Berlin."
+        },
+        {
+          "field": "bio",
+          "claim": "RFE broadcasts on torture and party struggles",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Aftermath",
+          "excerpt": "Światło detailed the torture of prisoners under interrogation and politically motivated executions and struggles inside the Polish United Workers' Party."
+        },
+        {
+          "field": "bio",
+          "claim": "ministry broken up; contributed to the Polish October",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Aftermath",
+          "excerpt": "Światło's scandal contributed to the events of political liberalisation in Poland, known as the Polish October."
+        },
+        {
+          "field": "bio",
+          "claim": "ministry broken up in late 1954",
+          "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "Aftermath",
+          "excerpt": "first the 10th Department and soon the entire Ministry was broken up and reorganised"
+        },
+        {
+          "field": "bio",
+          "claim": "died 1994 in Stamford, Connecticut",
+          "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+          "locator": "wstęp",
+          "excerpt": "zm. 2 września 1994 w Stamford w stanie Connecticut"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "security",
+          "affiliationId": "state-poland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1945,
+          "endYear": 1953,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+              "locator": "Kariera w organach bezpieczeństwa PRL",
+              "claim": "Officer of the Ministry of Public Security; first deputy director of Department X",
+              "excerpt": "Po przemianowaniu biura na departament jego dyrektorem został Fejgin, a Józef Światło objął stanowisko pierwszego wicedyrektora"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-poland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1943,
+          "endYear": 1945,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_%C5%9Awiat%C5%82o",
+              "locator": "Biography",
+              "claim": "Political officer in the 1st Kościuszko Division",
+              "excerpt": "Światło eventually joined the Polish Forces in the East (Polish 1st Tadeusz Kościuszko Infantry Division, Berling's Army), becoming a political officer"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1943",
+          "r": {
+            "ko": "베를링 군 정치장교",
+            "en": "Political officer in Berling’s army"
+          }
+        },
+        {
+          "y": "1945",
+          "r": {
+            "ko": "공안부 입부",
+            "en": "Joined the Ministry of Public Security"
+          }
+        },
+        {
+          "y": "1950",
+          "r": {
+            "ko": "공안부 제10국 제1부국장",
+            "en": "First deputy director of Department X"
+          }
+        },
+        {
+          "y": "1953",
+          "r": {
+            "ko": "서베를린에서 미국으로 망명",
+            "en": "Defected to the US in West Berlin"
+          }
+        },
+        {
+          "y": "1954",
+          "r": {
+            "ko": "자유유럽방송으로 폭로",
+            "en": "Revelations on Radio Free Europe"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ferenc-munnich",
+      "groupId": "world-cold-war",
+      "givenName": {
+        "ko": "페렌츠",
+        "en": "Ferenc"
+      },
+      "familyName": {
+        "ko": "뮌니히",
+        "en": "Münnich"
+      },
+      "nativeName": "Münnich Ferenc",
+      "years": "1886–1967",
+      "citizenship": {
+        "code": "hungary"
+      },
+      "nationalOrigin": {
+        "code": "hungary",
+        "label": {
+          "ko": "헝가리 (독일계)",
+          "en": "Hungary (German descent)"
+        }
+      },
+      "epithet": {
+        "ko": "1956년 카다르와 함께 소련 개입을 지지하고 혁명 진압 뒤 총리가 된 헝가리 공산주의자",
+        "en": "Hungarian communist who backed Soviet intervention with Kádár in 1956 and became prime minister after the revolution was crushed"
+      },
+      "bio": {
+        "ko": "세레겔리에시의 독일계 가톨릭 집안에서 태어나 법학을 공부했고, 1차 세계대전 동부 전선에서 러시아군 포로가 되어 톰스크로 보내졌다. 그곳에서 볼셰비키에 가담해 국제 포로 부대를 이끌었고, 1918년 귀국해 헝가리 공산당 창당에 참여했으며 슬로바키아 평의회 공화국의 군사 인민위원을 지냈다. 1922~1936년 소련에서 살았고, 스페인 내전에서는 오토 플라터라는 이름으로 제11국제여단을 지휘했다. 전후 부다페스트 경찰청장과 외교관을 지냈다. 1956년 혁명 중 너지 정부의 내무장관이었으나 11월 카다르와 함께 모스크바에서 소련 무력 개입을 지지했고, 카다르 정부의 군·공안 장관으로 무장 경찰과 노동자 민병대 조직에 참여했으며 1958~1961년 총리를 지냈다.",
+        "en": "Born into a German Catholic family in Seregélyes, he studied law and was taken prisoner on the Eastern Front in 1915 and sent to Tomsk. There he joined the Bolsheviks and commanded an international POW unit; back in Hungary in 1918 he helped found the Hungarian Communist Party and was war commissar of the Slovak Soviet Republic. He lived in the Soviet Union from 1922 to 1936 and, under the name Otto Flatter, commanded the XI International Brigade in the Spanish Civil War. After the war he was Budapest’s chief of police and then a diplomat. In the 1956 revolution he was interior minister under Imre Nagy, but in November he went to Moscow with János Kádár and openly backed Soviet armed intervention. As minister of the armed forces and public security in Kádár’s government he helped organise the security regiments and the Workers’ Militia, and he was prime minister from 1958 to 1961."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Otto Flatter"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+        "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+        "https://de.wikipedia.org/wiki/Ferenc_M%C3%BCnnich"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1886–1967",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "18 November 1886 – 29 November 1967"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Hungarian communist politician; prime minister 1958–1961",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "was a Hungarian Communist politician who served as Chairman of the Council of Ministers of the People's Republic of Hungary from 1958 to 1961"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Roman Catholic family of German origin, born in Seregélyes",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "1956-ig",
+          "excerpt": "Münnich Ferenc a Fejér vármegyei Seregélyesen született, római katolikus német származású családban"
+        },
+        {
+          "field": "bio",
+          "claim": "studied law",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "1956-ig",
+          "excerpt": "Eperjesen és Kolozsvárott jogot tanult."
+        },
+        {
+          "field": "bio",
+          "claim": "captured 1915 and deported to Tomsk",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "His unit was captured in October 1915 and were deported to a prisoner of war camp in Tomsk, Siberia."
+        },
+        {
+          "field": "bio",
+          "claim": "commanded an international POW unit for the Bolsheviks",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "then served as a commander of an international POW unit fighting for the Bolsheviks"
+        },
+        {
+          "field": "bio",
+          "claim": "returned 1918 to help form the Hungarian Communist Party",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "returned to Hungary in September 1918 to help form the Hungarian Communist Party"
+        },
+        {
+          "field": "bio",
+          "claim": "war commissar of the Slovak Soviet Republic",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "then became a war commissar for the Slovak Soviet Republic"
+        },
+        {
+          "field": "bio",
+          "claim": "lived in the Soviet Union 1922–1936",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "Münnich resided in the Soviet Union from 1922-1936"
+        },
+        {
+          "field": "bio",
+          "claim": "commanded the XI International Brigade as Otto Flatter",
+          "source": "https://de.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "Leben",
+          "excerpt": "war zuletzt (unter dem Namen Otto Flatter) Kommandant der XI. Internationalen Brigade"
+        },
+        {
+          "field": "bio",
+          "claim": "Budapest chief of police; diplomat 1949–1956",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "returning to Hungary in 1945, where he served as the chief of police in Budapest. From 1949 to 1956 he held diplomatic posts in Helsinki, Sofia, Moscow, and Belgrade"
+        },
+        {
+          "field": "bio",
+          "claim": "interior minister in Nagy’s second government, 27 Oct – 3 Nov 1956",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "1956-ig",
+          "excerpt": "az 1956-os forradalom során október 27-étől november 3-ig Nagy Imre második kormányának belügyminiszteri tisztségét is viselte"
+        },
+        {
+          "field": "bio",
+          "claim": "in Moscow with Kádár, 2–3 November 1956",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "Kádárral Moszkvában",
+          "excerpt": "Kádár Jánossal a nyilvánosság tudomása nélkül 1956. november 2-án és 3-án Moszkvában tárgyalt"
+        },
+        {
+          "field": "bio",
+          "claim": "openly backed Soviet armed intervention",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "Kádárral Moszkvában",
+          "excerpt": "Münnich és Bata István nyíltan kiálltak a szovjet fegyveres beavatkozás szükségessége mellett"
+        },
+        {
+          "field": "bio",
+          "claim": "minister of the armed forces and public security from 4 November",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "A forradalom leverésekor és később",
+          "excerpt": "Münnich november 4-étől a Kádár János vezette első Kádár-kormányban a fegyveres erők és a közbiztonsági ügyek minisztere"
+        },
+        {
+          "field": "bio",
+          "claim": "organised the security regiments and the Workers’ Militia",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "A forradalom leverésekor és később",
+          "excerpt": "Részt vett a karhatalmi ezredek és a munkásőrség megszervezésében."
+        },
+        {
+          "field": "bio",
+          "claim": "prime minister 1958–1961",
+          "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+          "locator": "A forradalom leverésekor és később",
+          "excerpt": "A Kádár-kormány lemondását követően a Minisztertanács elnöke volt 1958 és 1961 között."
+        },
+        {
+          "field": "bio",
+          "claim": "died in Budapest in 1967",
+          "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+          "locator": "lead",
+          "excerpt": "Münnich died at 81 on 29 November 1967 in Budapest."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1956,
+          "endYear": 1961,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+              "locator": "lead",
+              "claim": "Minister of the armed forces and public security from November 1956; prime minister 1958–1961",
+              "excerpt": "After the Hungarian Revolution of 1956 Ferenc served as the minister for the armed forces and public security, and then as the Prime Minister from 1958 to 1961."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-hungarian-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+              "locator": "1956-ig",
+              "claim": "Founding member of the KMP; war commissar of the Slovak Soviet Republic",
+              "excerpt": "Hazatérése után a Kommunisták Magyarországi Pártja egyik alapító tagja és a Szlovák Tanácsköztársaság hadügyi népbiztosa"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-spain",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": null,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+              "locator": "1956-ig",
+              "claim": "Commander of the XI International Brigade in the Spanish Civil War",
+              "excerpt": "majd mint a XI. nemzetközi brigád parancsnoka"
+            }
+          ]
+        },
+        {
+          "functionId": "security",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1946,
+          "endYear": 1949,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+              "locator": "1956-ig",
+              "claim": "Budapest chief of police",
+              "excerpt": "előbb Budapest rendőrfőkapitánya volt (1946–1949)"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-hungary",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1949,
+          "endYear": 1956,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+              "locator": "lead",
+              "claim": "Diplomatic posts in Helsinki, Sofia, Moscow and Belgrade",
+              "excerpt": "From 1949 to 1956 he held diplomatic posts in Helsinki, Sofia, Moscow, and Belgrade"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-hungarian-socialist-workers",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1956,
+          "endYear": 1967,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ferenc_M%C3%BCnnich",
+              "locator": "lead",
+              "claim": "Member of the MSZMP Central Committee",
+              "excerpt": "member of the Central Committee from 1956 to 1967"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "y": "1915",
+          "r": {
+            "ko": "러시아군 포로, 톰스크 수용",
+            "en": "Captured by the Russians; held in Tomsk"
+          }
+        },
+        {
+          "y": "1918",
+          "r": {
+            "ko": "헝가리 공산당 창당 참여",
+            "en": "Co-founder of the Hungarian Communist Party"
+          }
+        },
+        {
+          "y": "1919",
+          "r": {
+            "ko": "슬로바키아 평의회 공화국 군사 인민위원",
+            "en": "War commissar of the Slovak Soviet Republic"
+          }
+        },
+        {
+          "y": "1936–1939",
+          "r": {
+            "ko": "스페인 내전 제11국제여단장",
+            "en": "Commander of the XI International Brigade in Spain"
+          }
+        },
+        {
+          "y": "1946–1949",
+          "r": {
+            "ko": "부다페스트 경찰청장",
+            "en": "Budapest chief of police"
+          }
+        },
+        {
+          "y": "1956",
+          "r": {
+            "ko": "너지 정부 내무장관, 카다르 정부 군·공안 장관",
+            "en": "Interior minister under Nagy; minister of the armed forces and public security under Kádár"
+          }
+        },
+        {
+          "y": "1958–1961",
+          "r": {
+            "ko": "헝가리 총리",
+            "en": "Prime minister of Hungary"
+          }
+        }
+      ]
     }
   ]
 }

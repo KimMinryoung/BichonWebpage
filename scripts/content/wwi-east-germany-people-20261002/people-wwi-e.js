@@ -1,0 +1,191 @@
+// Person cards for the First World War aftermath (Egypt 1919, Amritsar), the
+// German revolution (Stinnes–Legien agreement) and the collapse of the Second
+// International (Union sacrée ministers), see lib.js person(). Excerpts are
+// verbatim from the cited pages.
+const { person } = require('../baltic-1940-1953-20261002/lib');
+
+const wiki = (lang, t) => `https://${lang}.wikipedia.org/wiki/` + encodeURI(t);
+const S = {
+    zaghlul: wiki('en', 'Saad_Zaghloul'),
+    dyer: wiki('en', 'Reginald_Dyer'),
+    legien: wiki('en', 'Carl_Legien'),
+    deLegien: wiki('de', 'Carl_Legien'),
+    sembat: wiki('en', 'Marcel_Sembat'),
+    frSembat: wiki('fr', 'Marcel_Sembat'),
+};
+
+// Activities with no catalogue affiliation (the Wafd, Egyptian state offices,
+// the German trade unions) are recorded as independent, like gavrilo-princip's.
+const independent = a => ({ ...a, affiliationId: null, affiliationStatus: 'independent', relation: 'independent' });
+const withIndependent = (card, ids) => ({
+    ...card,
+    activities: card.activities.map((a, i) => ids.includes(i) ? independent(a) : a),
+});
+
+module.exports = [
+    withIndependent(person({
+        id: 'saad-zaghloul', groupId: 'world-interwar',
+        given: ['사아드', 'Saad'], family: ['자글룰', 'Zaghloul'], nativeName: 'سعد زغلول', years: '1857–1927',
+        citizenship: 'egypt', origin: 'egypt',
+        epithet: ['1919년 몰타 추방이 이집트 혁명을 불러온 와프드당 창립 지도자', 'Founding leader of the Wafd whose deportation to Malta in 1919 set off the Egyptian Revolution'],
+        bio: ['나일강 삼각주의 농촌에서 태어나 알아즈하르와 카이로의 법률학교에서 공부하고 변호사가 되었다. 영국 점령 아래 판사, 교육장관(1906~1908), 법무장관(1910~1912)을 지냈고 1913년 입법의회 부의장이 되었다. 1918년 11월 보호령 폐지와 강화회의 대표권을 요구하며 와프드를 이끌었다. 영국이 1919년 3월 그를 몰타로 추방하자 1919년 이집트 혁명이 일어났다. 뒤에 세이셸로 다시 추방되었다가 1923년 돌아왔다. 1924년 선거에서 와프드당이 압승해 첫 와프드 정부의 총리가 되었으나, 그해 11월 수단 총독 리 스택이 암살되고 영국이 요구를 들이밀자 사임했다. 1927년 카이로에서 죽었다.',
+            'Born in a village in the Nile Delta, he studied at al-Azhar and at a law school in Cairo and became a lawyer. Under the British occupation he served as a judge, minister of education (1906–1908) and minister of justice (1910–1912), and in 1913 became vice-president of the Legislative Assembly. In November 1918 he led the Wafd in demanding the end of the protectorate and a seat at the peace negotiations. When the British deported him to Malta in March 1919, the Egyptian Revolution of 1919 broke out. Exiled again to the Seychelles, he was allowed to return in 1923. After the Wafd’s landslide in the 1924 elections he formed the first Wafdist government, but resigned in November after the assassination of Sir Lee Stack, Governor-General of the Sudan, and the British demands that followed. He died in Cairo in 1927.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: ['사드 자글룰'], en: ['Saad Zaghlul', 'Sa\'d Zaghlul'] },
+        sources: [S.zaghlul],
+        facts: {
+            years: { claim: '1857–1927', locator: 'lead', excerpt: '(July 1857 – 23 August 1927)' },
+            citizenship: { claim: 'Egyptian revolutionary and statesman', locator: 'lead', excerpt: 'was an Egyptian revolutionary and statesman' },
+            nationalOrigin: { claim: 'Born in a village in the Nile Delta', locator: 'Education, activism and exile', excerpt: 'Zaghloul was born in Ibyanah village in the Kafr el-Sheikh Governorate of Egypt\'s Nile Delta.' },
+            bio: [
+                { claim: 'Al-Azhar and a law school in Cairo', locator: 'Education, activism and exile', excerpt: 'he attended Al-Azhar University and a French law school in Cairo' },
+                { claim: 'Judge, education and justice minister, vice-president of the Legislative Assembly', locator: 'Rise in the bureaucracy', excerpt: 'In succession, Zaghloul was appointed judge, minister of education (1906–1908), minister of justice (1910–1912); and in 1913 he became vice-president of the Legislative Assembly.' },
+                { claim: 'November 1918 demand to abolish the protectorate', locator: 'Timeline', excerpt: 'Zaghloul and two other former members from the Legislative Assembly call upon the British high commissioner, asking for the abolition of the protectorate.' },
+                { claim: 'Deported to Malta in March 1919', locator: 'Timeline', excerpt: '1919 March: Zaghloul and three other members of Wafd are deported to Malta.' },
+                { claim: 'His absence led to the 1919 revolution', locator: 'Political history', excerpt: 'Zaghloul\'s absence caused disturbances in Egypt, ultimately leading to the Egyptian Revolution of 1919.' },
+                { claim: 'Exiled to the Seychelles', locator: 'Timeline', excerpt: 'Allenby responds by deporting Zaghloul to the Seychelles in the Indian Ocean.' },
+                { claim: 'Allowed to return in 1923', locator: 'Timeline', excerpt: '1923: Zaghloul is allowed to return to Egypt.' },
+                { claim: 'First Wafdist government after the 1924 elections', locator: 'Political history', excerpt: 'the elections of 12 January 1924 giving the Wafd Party an overwhelming majority, and two weeks later, led to Zaghloul forming the first Wafdist government' },
+                { claim: 'Resigned after Lee Stack’s assassination', locator: 'Political history', excerpt: 'Following the assassination on 19 November 1924 of Sir Lee Stack, the Sirdar and Governor-General of the Sudan, and subsequent British demands which Zaghloul felt to be unacceptable, Zaghloul resigned.' },
+                { claim: 'Died in Cairo in 1927', locator: 'Death', excerpt: 'Saad Zaghloul died in Cairo on 23 August 1927' },
+            ],
+        },
+        activities: [
+            { functionId: 'political-leadership', affiliationId: null, startYear: 1918, endYear: 1927, primary: true, claim: 'Founding leader of the Wafd Party', locator: 'Education, activism and exile', excerpt: 'In 1918, he became politically active, as the founding leader of the Wafd Party, for which he was later arrested.' },
+            { functionId: 'government', affiliationId: null, startYear: 1924, endYear: 1924, claim: 'Prime Minister of Egypt in 1924', locator: 'lead', excerpt: 'He served as Prime Minister of Egypt from 26 January 1924 to 24 November 1924.' },
+        ],
+        career: [
+            ['1906–1908', '교육장관', 'Minister of education'],
+            ['1910–1912', '법무장관', 'Minister of justice'],
+            ['1913', '입법의회 부의장', 'Vice-president of the Legislative Assembly'],
+            ['1918', '와프드 창립 지도자', 'Founding leader of the Wafd'],
+            ['1919.03', '몰타로 추방, 1919년 이집트 혁명', 'Deported to Malta; Egyptian Revolution of 1919'],
+            ['1924', '이집트 총리', 'Prime Minister of Egypt'],
+        ],
+    }), [0, 1]),
+    person({
+        id: 'reginald-dyer', groupId: 'world-interwar',
+        given: ['레지널드', 'Reginald'], family: ['다이어', 'Dyer'], nativeName: 'Reginald Dyer', years: '1864–1927',
+        citizenship: 'uk', origin: 'uk',
+        epithet: ['1919년 암리차르 잘리안왈라 바그에서 비무장 군중에게 발포를 명령한 영국 인도군 장교', 'British Indian Army officer who ordered troops to fire on an unarmed crowd at Jallianwala Bagh in Amritsar in 1919'],
+        bio: ['영국령 인도 펀자브의 머리에서 양조장 관리인의 아들로 태어나 샌드허스트를 나왔고, 벵골군으로 옮겨 국경 원정에 나갔다. 1차 세계대전에서 세이스탄 부대를 지휘했다. 임시 준장이던 1919년 4월 13일, 집회 금지령을 어기고 암리차르의 잘리안왈라 바그에 모인 군중에게 경고 없이 발포를 명령했다. 병사들은 출구 쪽을 향해 약 10분 동안 1,650발을 쏘았고, 공식 보고로도 최소 379명이 죽었다. 영국 여성이 습격당한 거리에서는 사람들을 배로 기어가게 했다. 헌터 위원회의 비판을 받고 사임을 강요당했으나, 영국에서는 「인도를 구한 사람」이라며 모금이 열렸다. 1927년 뇌출혈로 죽었다.',
+            'Born in Murree in British Punjab, the son of a brewery manager, he graduated from Sandhurst and transferred to the Bengal Army, serving on frontier expeditions. In the First World War he commanded the Seistan Force. As a temporary brigadier-general on 13 April 1919 he ordered his troops, without warning, to fire on a crowd gathered at Jallianwala Bagh in Amritsar in defiance of his ban on meetings. The soldiers fired 1,650 rounds for about ten minutes, directed towards the exits, and even the official count was at least 379 dead. In the street where a British woman had been assaulted he made people crawl on their bellies. Criticised by the Hunter Committee, he was told to resign, while in Britain a fund was raised for “the man who saved India”. He died of a cerebral haemorrhage in 1927.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: [], en: ['Reginald Edward Harry Dyer'] },
+        sources: [S.dyer],
+        facts: {
+            years: { claim: '1864–1927', locator: 'lead', excerpt: '(9 October 1864 – 23 July 1927)' },
+            citizenship: { claim: 'British military officer', locator: 'lead', excerpt: 'was a British military officer in the Bengal Army and later the newly constituted British Indian Army' },
+            nationalOrigin: { claim: 'Born in Murree, British India, son of a brewer', locator: 'Life and career', excerpt: 'Dyer was born on 9 October 1864 in Murree, in the Punjab province of British India, which is now in Pakistan. He was the son of Edward Dyer, a brewer who managed the Murree Brewery' },
+            bio: [
+                { claim: 'Sandhurst graduate', locator: 'Life and career', excerpt: 'enrolled at the Royal Military College of Sandhurst, from where he graduated in August 1885' },
+                { claim: 'Transferred to the Bengal Army', locator: 'Life and career', excerpt: 'He transferred to the Bengal Army, initially joining the Bengal Staff Corps as a lieutenant in 1887.' },
+                { claim: 'Commanded the Seistan Force in the First World War', locator: 'Life and career', excerpt: 'During the First World War (1914–18), he commanded the Seistan Force' },
+                { claim: 'Responsible for the massacre as temporary brigadier-general', locator: 'lead', excerpt: 'As a temporary brigadier-general, he was responsible for the Jallianwala Bagh massacre that took place on 13 April 1919 in Amritsar' },
+                { claim: 'Meeting held in defiance of his orders', locator: 'Events of 13 April', excerpt: 'By 12:30pm that day, Dyer was informed that, in defiance of his orders, a meeting was to be held in the Jallianwala Bagh.' },
+                { claim: '1,650 rounds over about ten minutes', locator: 'Events of 13 April', excerpt: 'The shooting continued unabated for about 10 minutes, and the soldiers fired a total of 1,650 rounds of ammunition' },
+                { claim: 'No warning given', locator: 'Events of 13 April', excerpt: 'Dyer\'s own testimony revealed that the crowd was not given any warning to disperse' },
+                { claim: 'Firing directed towards the exits', locator: 'Events of 13 April', excerpt: 'the firing was directed towards the exit gates through which the people were running out' },
+                { claim: 'At least 379 killed per the official report', locator: 'lead', excerpt: 'The official report stated that this resulted in the killing of at least 379 people' },
+                { claim: 'Crawling order', locator: 'Subsequent events', excerpt: 'Anyone wishing to proceed into the street between 6 am and 8 pm was made to crawl the 200 yards (180 m) on all fours, lying flat on their bellies.' },
+                { claim: 'Hunter Committee criticism', locator: 'Reaction in Britain and British India', excerpt: 'The committee\'s report criticised Dyer' },
+                { claim: 'Told to resign', locator: 'Reaction in Britain and British India', excerpt: 'He was told later by the Commander-in-Chief in India, General Charles Monro, to resign his post and that he would not be reemployed.' },
+                { claim: '“The man who saved India” fund', locator: 'Reaction in Britain and British India', excerpt: 'The Morning Post claimed Dyer was "the man who saved India" and started a benefit fund' },
+                { claim: 'Died of cerebral haemorrhage in 1927', locator: 'Later life', excerpt: 'He died of cerebral haemorrhage and arteriosclerosis on 23 July 1927.' },
+            ],
+        },
+        activities: [
+            { functionId: 'military', affiliationId: 'state-uk', startYear: 1885, endYear: 1920, primary: true, claim: 'British and Bengal Army officer; temporary brigadier-general at Amritsar', locator: 'lead', excerpt: 'As a temporary brigadier-general, he was responsible for the Jallianwala Bagh massacre that took place on 13 April 1919 in Amritsar' },
+        ],
+        career: [
+            ['1885', '샌드허스트 졸업, 영국군 임관', 'Graduated from Sandhurst; commissioned in the British Army'],
+            ['1887', '벵골군 전속', 'Transferred to the Bengal Army'],
+            ['1914–1918', '세이스탄 부대 지휘', 'Commanded the Seistan Force'],
+            ['1919.04.13', '잘리안왈라 바그 학살', 'Jallianwala Bagh massacre'],
+            ['1920', '퇴역', 'Retired'],
+        ],
+    }),
+    withIndependent(person({
+        id: 'carl-legien', groupId: 'world-interwar',
+        given: ['카를', 'Carl'], family: ['레기엔', 'Legien'], nativeName: 'Carl Legien', years: '1861–1920',
+        citizenship: 'germany', origin: 'germany',
+        epithet: ['1918년 슈티네스와 노사 협정을 맺고 1920년 카프 폭동에 총파업으로 맞선 독일 자유노조 지도자', 'German trade-union leader who signed the 1918 agreement with Stinnes and met the Kapp Putsch of 1920 with a general strike'],
+        bio: ['마리엔부르크에서 태어나 고아원에서 자랐고 선반공이 되었다. 1885년 사회민주당에 들어갔고, 1890년부터 독일 노동조합 총위원회 위원장, 1893~1898년과 1903~1920년 제국의회 의원을 지냈다. 1913년 국제노동조합연맹 초대 회장이 되었다. 당의 우파를 이끌었고, 1차 세계대전에서는 성내 평화와 파업 포기를 지지했다. 1918년 11월 15일 후고 슈티네스와 협정을 맺어 고용주가 처음으로 노조를 노동자 대표로 인정하고 8시간 노동제와 사업장 노동자위원회를 받아들이게 했으나, 노조는 급진 사회주의자들의 요구를 거부했다. 1919년 독일노동조합총연맹 위원장이 되었고, 1920년 3월 카프 폭동에 맞서 총파업을 조직했다. 같은 해 베를린에서 죽었다.',
+            'Born in Marienburg, he grew up in an orphanage and became a wood turner. He joined the Social Democrats in 1885, chaired the General Commission of the German Trade Unions from 1890, and sat in the Reichstag in 1893–1898 and 1903–1920. In 1913 he became the first President of the International Federation of Trade Unions. He led the SPD’s right wing, and in the First World War supported the civil truce and the renunciation of strikes. On 15 November 1918 he signed an agreement with Hugo Stinnes under which employers for the first time accepted the unions as workers’ representatives, with the eight-hour day and works councils, while the unions rejected the radical socialists’ demands. In 1919 he became chairman of the new General German Trade Union Federation (ADGB), and in March 1920 he organised the general strike against the Kapp Putsch. He died in Berlin later that year.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: [], en: ['Carl Rudolf Legien'] },
+        sources: [S.legien, S.deLegien],
+        facts: {
+            years: { claim: '1861–1920', locator: 'lead', excerpt: '(1 December 1861 – 26 December 1920)' },
+            citizenship: { claim: 'German unionist and Social Democratic politician', locator: 'lead', excerpt: 'was a German  unionist, moderate Social Democratic politician' },
+            nationalOrigin: { claim: 'German trade-union official born in Marienburg', source: S.deLegien, locator: 'Einleitung', excerpt: 'in Marienburg (Westpreußen); † 26. Dezember 1920 in Berlin) war ein deutscher Gewerkschaftsfunktionär und Politiker (SPD)' },
+            bio: [
+                { claim: 'Orphanage in Thorn; wood turner', locator: 'Biography', excerpt: 'Legien grew up in an orphanage in Thorn, Province of Prussia (now Toruń) from 1867 to 1875. He became a wood turner' },
+                { claim: 'Joined the SPD in 1885', locator: 'Biography', excerpt: 'He joined the Social Democratic Party of Germany (SPD) in 1885' },
+                { claim: 'Chairman of the General Commission from 1890', source: S.deLegien, locator: 'Gewerkschaftliche und parteipolitische Arbeit', excerpt: 'Ab dem Jahr 1890 war er Vorsitzender der Generalkommission der Gewerkschaften Deutschlands mit Sitz in Hamburg' },
+                { claim: 'Reichstag member 1893–1898 and 1903–1920', source: S.deLegien, locator: 'Einleitung', excerpt: 'Legien war von 1893 bis 1898 sowie von 1903 bis 1920 Mitglied des Reichstages.' },
+                { claim: 'First President of the IFTU in 1913', locator: 'Biography', excerpt: 'first President of the International Federation of Trade Unions in 1913' },
+                { claim: 'Leader of the SPD right wing', locator: 'Biography', excerpt: 'He became the leader of the SPD\'s right wing and opposed its more leftist factions.' },
+                { claim: 'Supported the civil truce', locator: 'Biography', excerpt: 'At the outbreak of World War I he supported the war with "patriotic fervor" and the SPD-majority’s Burgfriedenspolitik' },
+                { claim: 'Supported the renunciation of strikes', source: S.deLegien, locator: 'Gewerkschaftliche und parteipolitische Arbeit', excerpt: 'Legien hatte im Weltkrieg den Beschluss auf Streikverzicht unterstützt' },
+                { claim: 'Stinnes–Legien agreement', locator: 'Biography', excerpt: 'On 15 November 1918 he signed the Stinnes-Legien Agreement with industrialist Hugo Stinnes, an agreement in which the German employers for the first time accepted nationwide unions as legitimate workers-organisations and which introduced an eight-hour day, workers councils in plants with more than 50 employees and parity employment offices.' },
+                { claim: 'Unions rejected radical demands', locator: 'Biography', excerpt: 'while the unions rejected radical socialists’ demands' },
+                { claim: 'ADGB chairman in 1919', locator: 'Biography', excerpt: 'In 1919 he became the first Chairman of the Allgemeiner Deutscher Gewerkschaftsbund.' },
+                { claim: 'General strike against the Kapp Putsch', locator: 'Biography', excerpt: 'He countered the right-wing Kapp Putsch of March 1920 by organizing a massive general strike in Germany' },
+                { claim: 'Died in Berlin', locator: 'Biography', excerpt: 'Legien died after a short illness in Berlin' },
+            ],
+        },
+        activities: [
+            { functionId: 'organizing', affiliationId: null, startYear: 1890, endYear: 1920, primary: true, claim: 'Chairman of the General Commission of the German Trade Unions and of the ADGB', source: S.deLegien, locator: 'Einleitung', excerpt: 'Er war von 1890 bis 1919 Vorsitzender der Generalkommission der Gewerkschaften Deutschlands und anschließend bis zu seinem Tod Vorsitzender des daraus hervorgegangenen Allgemeinen Deutschen Gewerkschaftsbunds' },
+            { functionId: 'political-leadership', affiliationId: 'party-german-spd', relation: 'membership', startYear: 1885, endYear: 1920, claim: 'SPD member and Reichstag deputy; leader of the party’s right wing', locator: 'Biography', excerpt: 'He became the leader of the SPD\'s right wing and opposed its more leftist factions.' },
+        ],
+        career: [
+            ['1885', '사회민주당 입당', 'Joined the SPD'],
+            ['1890', '독일 노동조합 총위원회 위원장', 'Chairman of the General Commission of the German Trade Unions'],
+            ['1893', '제국의회 의원', 'Elected to the Reichstag'],
+            ['1913', '국제노동조합연맹 초대 회장', 'First President of the International Federation of Trade Unions'],
+            ['1918.11.15', '슈티네스-레기엔 협정', 'Stinnes–Legien Agreement'],
+            ['1919', '독일노동조합총연맹 위원장', 'Chairman of the ADGB'],
+            ['1920.03', '카프 폭동에 맞선 총파업', 'General strike against the Kapp Putsch'],
+        ],
+    }), [0]),
+    person({
+        id: 'marcel-sembat', groupId: 'world-before-1917',
+        given: ['마르셀', 'Marcel'], family: ['상바', 'Sembat'], nativeName: 'Marcel Sembat', years: '1862–1922',
+        citizenship: 'france', origin: 'france',
+        epithet: ['1914년 신성 연합 정부에 공공사업부 장관으로 들어간 프랑스 사회당 의원', 'French Socialist deputy who joined the Union sacrée government as Minister of Public Works in 1914'],
+        bio: ['센에우아즈의 보니에르쉬르센에서 태어나 법학 박사가 되어 변호사로 일했고, 언론인으로 《라 프티트 레퓌블리크》를 이끌었다. 블랑키주의 경향의 중앙혁명위원회에 들어가 그 후신 정당들을 거쳐 1905년 SFIO에 합류했다. 1893년부터 죽을 때까지 파리 18구의 노동자 지역에서 사회주의 의원으로 당선되었다. 1911년 평화주의 소책자 『왕을 세우라, 아니면 평화를 맺으라』를 썼지만, 1914년 8월 비비아니의 신성 연합 정부에 공공사업부 장관으로 들어가 브리앙 내각에서 1916년 12월까지 자리를 지켰다. 1920년 투르 대회에서 제3인터내셔널 가입에 반대표를 던졌다. 1922년 샤모니에서 뇌출혈로 죽었다.',
+            'Born in Bonnières-sur-Seine in Seine-et-Oise, he took a doctorate in law and practised as a lawyer, and as a journalist edited La Petite République. He joined the Blanquist-leaning Central Revolutionary Committee and followed its successor parties into the SFIO in 1905. From 1893 until his death he was re-elected as a Socialist deputy for a working-class district in the 18th arrondissement of Paris. Author of the 1911 pacifist pamphlet Faites un roi, sinon faites la paix, he nevertheless entered Viviani’s Union sacrée government in August 1914 as Minister of Public Works, and kept the post under Briand until December 1916. At the Congress of Tours in 1920 he voted against joining the Third International. He died of a cerebral haemorrhage in Chamonix in 1922.'],
+        fate: ['natural', '자연사', 'Natural death'],
+        aliases: { ko: [], en: ['Marcel Étienne Sembat'] },
+        sources: [S.sembat, S.frSembat],
+        facts: {
+            years: { claim: '1862–1922', locator: 'lead', excerpt: '19 October 1862 – 5 September 1922' },
+            citizenship: { claim: 'French lawyer and politician', locator: 'lead', excerpt: 'was a French lawyer and politician' },
+            nationalOrigin: { claim: 'Born in Bonnières-sur-Seine, France', locator: 'Early life', excerpt: 'Marcel Sembat was born on 19 October 1862, in Bonnières-sur-Seine, then in Seine-et-Oise, France.' },
+            bio: [
+                { claim: 'Doctorate in law', locator: 'Early life', excerpt: 'later received a PhD in law' },
+                { claim: 'Editor of La Petite République', locator: 'Journalism', excerpt: 'From 1890 to 1897, he was the editor of La Petite République' },
+                { claim: 'Central Revolutionary Committee to the SFIO', source: S.frSembat, locator: 'Engagement politique', excerpt: 'il adhéra au Comité révolutionnaire central (parti socialiste de tendance blanquiste), qui devint en 1897 le Parti socialiste révolutionnaire, dont il fut un des dirigeants, puis le Parti socialiste de France en 1902 et la SFIO en 1905' },
+                { claim: 'Deputy for the 18th arrondissement from 1893, re-elected until his death', source: S.frSembat, locator: 'Engagement politique', excerpt: 'En 1893, il fut élu député socialiste indépendant de la Seine, dans la première circonscription du XVIIIe arrondissement de Paris' },
+                { claim: 'Working-class district', source: S.frSembat, locator: 'Engagement politique', excerpt: 'une banlieue entièrement ouvrière' },
+                { claim: 'Re-elected until death', source: S.frSembat, locator: 'Engagement politique', excerpt: 'Il fut constamment réélu jusqu\'à son décès.' },
+                { claim: 'Pacifist pamphlet, then minister in the Union sacrée government', source: S.frSembat, locator: 'Engagement politique', excerpt: 'Auteur d\'un pamphlet pacifiste, Faites un roi sinon la paix, il fut néanmoins appelé au gouvernement comme ministre des Travaux publics, dans le gouvernement Viviani, dit gouvernement d\'union sacrée' },
+                { claim: 'Kept the post under Briand until December 1916', source: S.frSembat, locator: 'Engagement politique', excerpt: 'Il fut maintenu dans ses fonctions dans le cabinet Briand jusqu\'au 12 décembre 1916.' },
+                { claim: 'Voted against the Third International at Tours', source: S.frSembat, locator: 'Engagement politique', excerpt: 'Au congrès de Tours en décembre 1920, il vota contre l\'adhésion à la IIIe Internationale.' },
+                { claim: 'Died of cerebral haemorrhage in Chamonix', locator: 'Death', excerpt: 'He died of cerebral hemorrhage on 5 September 1922, in Chamonix' },
+            ],
+        },
+        activities: [
+            { functionId: 'political-leadership', affiliationId: 'party-french-sfio', relation: 'membership', startYear: 1905, endYear: 1922, primary: true, claim: 'One of the most prominent SFIO figures, Socialist deputy for Paris', source: S.frSembat, locator: 'Engagement politique', excerpt: 'Devenu député socialiste de Paris, il est l\'une des figures les plus illustres de la SFIO.' },
+            { functionId: 'government', affiliationId: 'state-france', startYear: 1914, endYear: 1916, claim: 'Minister of Public Works under Viviani and Briand', locator: 'lead', excerpt: 'as Minister of Public Works from 26 August 1914 to 12 December 1916 under Prime Ministers René Viviani and Aristide Briand' },
+        ],
+        career: [
+            ['1890–1897', '《라 프티트 레퓌블리크》 편집인', 'Editor of La Petite République'],
+            ['1893', '센 도 하원의원 당선', 'Elected deputy for the Seine'],
+            ['1905', 'SFIO 합류', 'Joined the SFIO'],
+            ['1914–1916', '공공사업부 장관(신성 연합 정부)', 'Minister of Public Works (Union sacrée government)'],
+            ['1920', '투르 대회에서 제3인터내셔널 가입 반대', 'Voted against joining the Third International at Tours'],
+        ],
+    }),
+];

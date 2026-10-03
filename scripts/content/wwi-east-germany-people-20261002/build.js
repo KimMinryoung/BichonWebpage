@@ -10,7 +10,7 @@ const path = require('path');
 const { validate } = require('../../apply-history-events');
 
 const BATCH = 'wwi-east-germany-people-20261002';
-const people = ['wwi-a', 'wwi-b', 'gdr-a', 'gdr-b', 'wwi-c', 'wwi-d'].flatMap(slug => require(`./people-${slug}`));
+const people = ['wwi-a', 'wwi-b', 'gdr-a', 'gdr-b', 'wwi-c', 'wwi-d', 'wwi-e', 'gdr-c', 'gdr-d', 'gdr-e'].flatMap(slug => require(`./people-${slug}`));
 const relations = require('./relations');
 // Cards registered by other batches that are linked here (Clemenceau: hungary-interwar-20261001).
 const EXISTING = ['georges-clemenceau', 'lucjan-zeligowski'];
