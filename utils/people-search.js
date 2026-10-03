@@ -81,4 +81,21 @@ function searchPeople(standardized, query, sortPeople) {
     hits.name = named.sort((a, b) => a.rank - b.rank).map(hit => hit.person);
     return hits;
 }
-module.exports = { searchFields, searchPeople };
+
+// The alias a name hit came through, when the headword itself does not carry
+// the query: the card then says why it turned up (모스크빈 → 미하일 트릴리세르).
+// The page language's aliases come first, then the other's, then link forms.
+function matchedAlias(person, query, lang) {
+    const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) return '';
+    const n = person.names || {};
+    const primary = [n.ko, n.en, n.display, n.short, n.family, person.displayName, person.cyrillic].filter(Boolean).join(' ').toLowerCase();
+    if (terms.every(term => primary.includes(term))) return '';
+    const aliases = person.aliases || {};
+    const other = lang === 'en' ? 'ko' : 'en';
+    const candidates = [].concat(aliases[lang] || [], aliases[other] || [],
+        (person.linkExpressions || []).filter(item => item.role !== 'related').map(item => item.text));
+    return candidates.find(text => text && terms.every(term => text.toLowerCase().includes(term))) || '';
+}
+
+module.exports = { searchFields, searchPeople, matchedAlias };

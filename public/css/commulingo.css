@@ -2920,6 +2920,20 @@ a.commu-person-position:focus-visible {
     transition: color 0.16s ease;
 }
 
+/* A search hit that came through an alias names it under the headword. */
+.commu-person-alias-hit {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.commu-person-alias-hit mark {
+    background: none;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 /* Single meta line under the name, flush to the card's left edge:
    office label · nationality · years · fate */
 .commu-person-meta {

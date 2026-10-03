@@ -1,6 +1,6 @@
 const activitiesModel = require('../data/commulingo/person-activities');
 const { localizeHtmlLinks } = require('../utils/seo');
-const { searchPeople } = require('../utils/people-search');
+const { searchPeople, matchedAlias } = require('../utils/people-search');
 const express = require('express');
 const allStrings = require('../config/strings');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
@@ -94,6 +94,7 @@ router.get('/people/search', async (req, res) => {
                 indexes = indexes || await getLinkIndexes(lang);
                 html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
                     strings: allStrings[lang], people, groupId: '', en: lang === 'en',
+                    searchAliases: key === 'name' ? Object.fromEntries(people.map(p => [p.id, matchedAlias(p, query, lang)])) : {},
                     roleIconSvg, roleHubHref, flagImg, personFlagHref,
                     linkifyPersonText: createCardTextLinker(indexes),
                 });

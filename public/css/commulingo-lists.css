@@ -1211,6 +1211,18 @@ a.commu-person-position:focus-visible {
     font-style: italic;
     transition: color 0.16s ease;
 }
+.commu-person-alias-hit {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.commu-person-alias-hit mark {
+    background: none;
+    color: var(--text-primary);
+    font-weight: 600;
+}
 .commu-person-meta {
     display: flex;
     flex-wrap: wrap;

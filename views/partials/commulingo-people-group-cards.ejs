@@ -4,5 +4,5 @@
 // per data refresh per language (peopleGroupCardsHtml memo), not per request.
 %>
 <% people.forEach(function(person) { %>
-<%- include('./commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg }) %>
+<%- include('./commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, searchAlias: typeof searchAliases !== 'undefined' ? searchAliases[person.id] : '' }) %>
 <% }) %>

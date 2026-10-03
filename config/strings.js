@@ -551,6 +551,7 @@ const ko = {
             otherNames: '다른 이름',
         },
         personCard: {
+            matchedAlias: '검색된 별칭',
             contextMarker: '맥락 표식',
             citizenship: '소속 국가',
             nationalBackground: '출신 배경',
@@ -1163,6 +1164,7 @@ const en = {
             otherNames: 'Also known as',
         },
         personCard: {
+            matchedAlias: 'Matched alias',
             contextMarker: 'Context marker',
             citizenship: 'Citizenship',
             nationalBackground: 'National background',
