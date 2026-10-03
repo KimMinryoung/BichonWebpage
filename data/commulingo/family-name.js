@@ -2,7 +2,8 @@
 // a name a reader looks up: '니콜라이 2세' must not put '2세' in the index, nor
 // 'Nicholas II' an 'II'. Anything carrying brackets or a comma is a note that
 // leaked into the field, not a name.
-const NOT_A_FAMILY_NAME = /^(?:[ivxlcdm]+|\d+(?:세|st|nd|rd|th)?)$/i;
+// 'II of Greece' is still a regnal number, with the country that disambiguates it.
+const NOT_A_FAMILY_NAME = /^(?:[ivxlcdm]+|\d+(?:세|st|nd|rd|th)?)(?:\s+of\s+\S.*)?$/i;
 const NAME_PUNCTUATION = /[()[\]{}<>,;:"'`]/;
 
 // The family name to offer as a bare alias, or '' when there is none to trust.
