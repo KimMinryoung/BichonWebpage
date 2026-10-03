@@ -6,6 +6,7 @@ const { sourcesFor } = require('./person-editorial-policy');
 const { assertExpectedRevision } = require('./people-edit-version');
 const contract = require('./term-editorial-contract.json');
 const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
+const { carryLinkReviews } = require('./link-review-carry');
 
 const columns = {
     original: 'original', startYear: 'start_year', endYear: 'end_year',
@@ -13,7 +14,7 @@ const columns = {
 };
 const localized = { term: 'term', definition: 'definition', body: 'body', period: 'period' };
 const allowed = new Set([...Object.keys(columns), ...Object.keys(localized),
-    'id', 'sources', 'aliases', 'people', 'events', 'evidence', 'expectedRevision']);
+    'id', 'sources', 'aliases', 'people', 'events', 'evidence', 'expectedRevision', 'carryLinkReviews']);
 
 async function readTermEditorial(id, options = {}) {
     if (!options.client) return readSnapshot(client => readTermEditorial(id, { client }));
@@ -68,6 +69,7 @@ function validateFields(fields, current, action, sources) {
     if (!merged.category || typeof merged.category !== 'string') throw badRequest('category required');
     if (fields.id !== undefined && fields.id !== merged.id) throw badRequest('id mismatch');
     if (fields.original !== undefined && typeof fields.original !== 'string') throw badRequest('original must be text');
+    if (fields.carryLinkReviews !== undefined && typeof fields.carryLinkReviews !== 'boolean') throw badRequest('carryLinkReviews must be boolean');
     if (fields.aliases !== undefined && (!fields.aliases || typeof fields.aliases !== 'object'
         || Array.isArray(fields.aliases) || Object.entries(fields.aliases).some(([lang,values]) =>
             !['ko','en'].includes(lang) || !Array.isArray(values) || values.some(v => typeof v !== 'string' || !v.trim())))) throw badRequest('invalid aliases');
@@ -128,6 +130,13 @@ async function save(client, id, fields, current, action, actor, sources) {
             `INSERT INTO ${table}(term_id,${column},sort_order) VALUES ($1,$2,$3)`,[id,other,index]);
     }
     const after = await readTermEditorial(id,{client});
+    // carryLinkReviews: the headword was respelled, not repurposed, so link
+    // reviews valid under the old headword stay valid (link-review-carry.js).
+    if (fields.carryLinkReviews && current) {
+        const renames = Object.fromEntries(['ko','en'].filter(lang => current.term[lang] !== after.term[lang]).map(lang => [lang, current.term[lang]]));
+        const linkExpressions = (await client.query('SELECT link_expressions FROM commulingo_terms WHERE id=$1',[id])).rows[0].link_expressions || [];
+        await carryLinkReviews(client,'term',{ id, term: after.term, aliases: after.aliases, linkExpressions },renames,actor);
+    }
     for (const e of fields.evidence || []) await client.query(`INSERT INTO commulingo_term_evidence
         (term_id,field,claim,source,locator,excerpt,stance,revision,changed_by) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
         [id,e.field,e.claim,e.source,e.locator,e.excerpt || '',e.stance || 'supports',after.revision,actor]);
