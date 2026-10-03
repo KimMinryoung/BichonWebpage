@@ -31,6 +31,15 @@
             resultOne: copy.oneFound, resultMany: copy.manyFound, emptyLabel: copy.noneFound
         }) %>
         <div id="commu-country-list" class="commu-country-groups">
+            <section class="commu-country-group">
+                <h2><%= copy.internationalist %></h2>
+                <div class="commu-country-grid">
+                    <a class="commu-country-card" href="/commulingo/internationalist" data-search="국제주의 internationalism international 코민테른 comintern 인터내셔널">
+                        <span class="commu-country-card-icon"><%- internationalIcon %></span>
+                        <span><strong><%= copy.internationalist %></strong><small><%= copy.internationalistCard %> <%= internationalCount %></small></span>
+                    </a>
+                </div>
+            </section>
             <% groups.forEach(function(group) { %>
             <section class="commu-country-group">
                 <h2><%= group.label %></h2>
@@ -39,20 +48,12 @@
                     <a class="commu-country-card is-<%= country.kind %>" href="<%= country.href %>"
                         data-country-code="<%= country.code %>" data-search="<%= country.search %>">
                         <%- flagImg(country.code, country.label) %>
-                        <span><strong><%= country.label %></strong><small><%= copy.citizenship %> <%= country.citizenshipCount %> · <%= copy.background %> <%= country.originCount %> · <%= copy.events %> <%= country.eventCount %></small></span>
+                        <span><strong><%= country.label %></strong><small><%= copy.events %> <%= country.eventCount %> · <%= copy.citizenship %> <%= country.citizenshipCount %> · <%= copy.background %> <%= country.originCount %></small></span>
                     </a>
                     <% }) %>
                 </div>
             </section>
             <% }) %>
-            <section class="commu-country-group">
-                <h2><%= copy.internationalist %></h2>
-                <div class="commu-country-grid">
-                    <a class="commu-country-card" href="/commulingo/internationalist" data-search="국제주의 internationalism international 코민테른 comintern 인터내셔널">
-                        <span><strong><%= copy.internationalist %></strong><small><%= copy.internationalistCard %> <%= internationalCount %></small></span>
-                    </a>
-                </div>
-            </section>
         </div>
     </main>
     <%- include('../partials/footer') %>

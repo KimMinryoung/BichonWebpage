@@ -445,7 +445,7 @@ const ko = {
         },
         worldMap: {
             title: '세계 지도',
-            description: '등록된 모든 국가·지역의 위치를 살펴보세요. 인물과 사건이 아직 없는 국가는 목록에만 표시됩니다. 국기를 누르면 그 나라의 소속 인물(주요 활동 당시 그 나라에 속했던 인물), 출신 인물(그 나라를 출신·민족적 뿌리로 둔 인물), 관련 사건을 함께 볼 수 있습니다.',
+            description: '국기를 누르면 그 나라가 직접 연루된 사건, 소속 인물(주요 활동 당시 그 나라에 속했던 인물), 출신 인물(그 나라에 민족적·국가적 뿌리를 둔 인물)을 함께 볼 수 있습니다.',
             mapLabel: '국가와 지역 지도',
             legend: '지도 범례',
             modern: '현대 국가',
@@ -1053,7 +1053,7 @@ const en = {
         },
         worldMap: {
             title: 'World Map',
-            description: 'Explore all registered countries and regions. Countries with no people or events yet appear only in the list. Select a flag to see its citizens (people who belonged to it during their main activity), people of its national origin, and directly related events together.',
+            description: 'Select a flag to see the events it was directly involved in, its citizens (people who belonged to it during their main activity), and people of its origin (people with ethnic or national roots there).',
             mapLabel: 'Map of countries and regions',
             legend: 'Map legend',
             modern: 'Present-day country',

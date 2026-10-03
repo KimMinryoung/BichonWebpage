@@ -3069,6 +3069,8 @@ a.commu-person-position:focus-visible {
 .commu-country-card:focus-visible,
 .commu-country-card.is-map-active { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 .commu-country-card .commu-flag { flex: 0 0 auto; height: 22px; width: 32px; }
+.commu-country-card-icon { display: flex; flex: 0 0 32px; justify-content: center; }
+.commu-country-card-icon .commu-role-icon { height: 24px; width: 24px; }
 .commu-country-card span { min-width: 0; }
 .commu-country-card strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .commu-country-card small { color: var(--text-muted); display: block; font-size: .75rem; margin-top: 2px; }

@@ -9,7 +9,7 @@ const { renderWorldMapSvg, renderCountryMapSvg } = require('../data/commulingo/w
 const router = express.Router();
 const { directEventsFor, lineageFor, affiliationsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
 const PREVIEW_LIMIT = 4;
-const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas', 'oceania'];
+const CONTINENT_ORDER = ['eurasia', 'europe', 'asia', 'africa', 'americas', 'oceania'];
 
 router.get('/map', async (req, res) => {
     try {
@@ -29,6 +29,7 @@ router.get('/map', async (req, res) => {
             countries,
             groups,
             internationalCount,
+            internationalIcon: roleIconSvg('globe'),
             mapSvg: renderWorldMapSvg({ codes: countries.filter(country => country.totalCount > 0).map(country => country.code), lang }),
             pageTitle: lang === 'en' ? 'World Map — CommuLingo' : '세계 지도 — CommuLingo',
             pageDescription: lang === 'en'
