@@ -1,4 +1,5 @@
-const { badRequest, periodColumns, contentLocalized, localized } = require('./people-admin-fields');
+const { badRequest, contentLocalized, localized } = require('./people-admin-fields');
+const { periodColumns, PERIOD_COLUMNS, periodValues } = require('./career-period');
 const { assertStringList } = require('./headword-validation');
 const { mergeLocalizedPatch } = require('./people-patch');
 
@@ -88,14 +89,15 @@ function planCollectionEdits(before, payload) {
             career.splice(index, 1);
             continue;
         }
-        object(edit.entry, ['y', 'r'], 'careerEdits.entry');
-        if (!Object.keys(edit.entry).length) throw badRequest('career entry patch must contain y or r');
-        const stored = index < 0 ? { y: '', r: {} } : career[index];
-        const y = edit.entry.y === undefined ? stored.y : edit.entry.y;
-        if (typeof y !== 'string') throw badRequest('career entry.y must be a period label string');
+        object(edit.entry, ['period', 'r'], 'careerEdits.entry');
+        if (!Object.keys(edit.entry).length) throw badRequest('career entry patch must contain period or r');
+        const stored = index < 0 ? { period: undefined, r: {} } : career[index];
+        // A period is replaced whole, never merged: it is one value.
+        const period = edit.entry.period === undefined ? stored.period : edit.entry.period;
+        periodColumns(period, 'careerEdits.entry.period');
         const r = mergeLocalizedPatch(stored.r, edit.entry.r, 'career entry.r');
         if (!r.ko.trim() || !r.en.trim()) throw badRequest('career entry requires non-empty ko/en roles');
-        const entry = { ...stored, y, r };
+        const entry = { ...stored, period, r };
         if (index < 0) career.push(entry);
         else career[index] = entry;
     }
@@ -118,17 +120,17 @@ async function applyCareerEdits(client, personId, plan) {
     let nextSort = rows[0].next_sort;
     for (const entry of plan.entries) {
         if (entry.id !== undefined && !plan.touched.has(String(entry.id))) continue;
-        const p = periodColumns(entry.y);
-        const values = [personId, entry.y, p.startYear, p.startMonth, p.endYear, p.endMonth,
+        const values = [personId, ...periodValues(periodColumns(entry.period)),
             contentLocalized(entry.r, 'ko'), localized(entry.r, 'en')];
+        const n = values.length;
         if (entry.id === undefined) {
             await client.query(`INSERT INTO commulingo_person_career_entries
-                (person_id, period_label, start_year, start_month, end_year, end_month, role_ko, role_en, sort_order, updated_at)
-                VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,NOW())`, [...values, nextSort++]);
+                (person_id, ${PERIOD_COLUMNS.join(', ')}, role_ko, role_en, sort_order, updated_at)
+                VALUES (${values.map((_, i) => '$' + (i + 1)).join(',')},$${n + 1},NOW())`, [...values, nextSort++]);
         } else {
-            await client.query(`UPDATE commulingo_person_career_entries SET period_label=$2,
-                start_year=$3, start_month=$4, end_year=$5, end_month=$6, role_ko=$7, role_en=$8, updated_at=NOW()
-                WHERE person_id=$1 AND id=$9`, [...values, entry.id]);
+            await client.query(`UPDATE commulingo_person_career_entries SET
+                ${[...PERIOD_COLUMNS, 'role_ko', 'role_en'].map((c, i) => `${c}=$${i + 2}`).join(', ')}, updated_at=NOW()
+                WHERE person_id=$1 AND id=$${n + 1}`, [...values, entry.id]);
         }
     }
 }

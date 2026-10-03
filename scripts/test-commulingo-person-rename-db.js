@@ -25,7 +25,7 @@ async function run() {
             name: { ko: '검증 인물', en: 'Test Person' }, cyrillic: 'Test Person', role: { icon: 'book-open' },
             aliases: { ko: ['검증'], en: ['Tester'] },
             bio: { ko: '원래 소개', en: 'Original biography' },
-            career: [{ y: '1920–1925', r: { ko: '연구원', en: 'Researcher' } }],
+            career: [{ period: { start: [1920], end: [1925] }, r: { ko: '연구원', en: 'Researcher' } }],
         }, options);
         await sections.upsertPersonSectionAdmin(from, 'topic', {
             heading: { ko: '제목', en: 'Title' }, body: { ko: '본문', en: 'Body' },

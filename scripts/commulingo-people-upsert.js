@@ -26,7 +26,12 @@
 //                   "evidence": [{"source": "<url in sources>", "locator": "...", "claim": "...", "excerpt": "..."}]}],
 //                                                        // required (activity-schema.json); legacy "role" is optional
 //   "aliases": {"ko": ["울메르", "V.A. 울메르"], "en": ["Ulmer", "V. A. Ulmer"]},
-//   "career": [...], "scenes": [...],
+//   "career": [{"period": {"start": [1937], "end": [1938, 6]}, "r": {"ko": "...", "en": "..."}}],
+//                                                        // period is columns, never a label string:
+//                                                        // start/end [year, month?, day?], startQual/endQual,
+//                                                        // ongoing, label {ko,en} only when columns cannot say it
+//                                                        // (data/commulingo/career-period.js)
+//   "scenes": [...],
 //   "sections": [{"slug": "great-terror", "sortOrder": 193704, "heading": {"ko": "...", "en": "..."}, "body": {"ko": "...", "en": "..."}, "sources": [...]}]
 // }
 // An existing id is PATCHed with the fields given; a new id is created. Every

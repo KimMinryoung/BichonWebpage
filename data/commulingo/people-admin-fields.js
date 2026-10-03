@@ -1,9 +1,8 @@
-const { parsePeriod } = require('./people-standard');
 const { normalizeSovietKoreanText } = require('./korean-terminology');
 const { parseLifeYears: parsePersonLifeYears } = require('./person-life-years');
 
 // Small field helpers shared by the CommuLingo admin stores: bilingual
-// values, validation errors, and parsing of the free-text period labels.
+// values and validation errors. Periods: career-period.js.
 
 function t(ko, en) {
     return { ko: ko || '', en: en || '' };
@@ -29,16 +28,6 @@ function badRequest(message) {
 function parseLifeYears(label) {
     const { birthYear, deathYear } = parsePersonLifeYears(label);
     return { birthYear, deathYear };
-}
-
-function periodColumns(label) {
-    const period = parsePeriod(label || '');
-    return {
-        startYear: period.start ? period.start.year : null,
-        startMonth: period.start ? period.start.month : null,
-        endYear: period.end ? period.end.year : null,
-        endMonth: period.end ? period.end.month : null,
-    };
 }
 
 function requireId(id, label) {
@@ -72,4 +61,4 @@ function normalizeOffset(value) {
     return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
 }
 
-module.exports = { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, requireSlug, normalizeSources, normalizeLimit, normalizeOffset };
+module.exports = { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, requireSlug, normalizeSources, normalizeLimit, normalizeOffset };

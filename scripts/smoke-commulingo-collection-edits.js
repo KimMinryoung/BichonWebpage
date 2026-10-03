@@ -3,7 +3,7 @@ const { planCollectionEdits } = require('../data/commulingo/people-collection-ed
 const before = {
     aliases: { ko: ['이전 별칭'], en: ['Original alias'] },
     scenes: [['collection', 'episode']],
-    career: [{ id: '100', y: '1920–1925', r: { ko: '연구원', en: 'Researcher' } }],
+    career: [{ id: '100', period: { start: [1920], end: [1925] }, r: { ko: '연구원', en: 'Researcher' } }],
 };
 const plan = planCollectionEdits(before, {
     aliasEdits: [{ op: 'update', lang: 'ko', value: '이전 별칭', replacement: '새 별칭' }],
@@ -12,7 +12,7 @@ const plan = planCollectionEdits(before, {
 });
 assert.deepEqual(plan.aliases, { ko: ['새 별칭'], en: ['Original alias'] });
 assert.deepEqual(plan.scenes, [['collection', 'episode-2']]);
-assert.deepEqual(plan.career.entries[0], { id: '100', y: '1920–1925', r: { ko: '주임 연구원', en: 'Researcher' } });
+assert.deepEqual(plan.career.entries[0], { id: '100', period: { start: [1920], end: [1925] }, r: { ko: '주임 연구원', en: 'Researcher' } });
 assert.equal(before.career[0].r.ko, '연구원');
 assert.equal(before.aliases.ko[0], '이전 별칭');
 const invalid = [
@@ -27,6 +27,9 @@ const invalid = [
     { careerEdits: [{ op: 'update', id: '999', entry: { y: '1930' } }] },
     { careerEdits: [{ op: 'add', entry: { r: { ko: '직책' } } }] },
     { careerEdits: [{ op: 'update', id: '100', entry: { period: {} } }] },
+    { careerEdits: [{ op: 'update', id: '100', entry: { period: '1930' } }] },
+    { careerEdits: [{ op: 'update', id: '100', entry: { y: '1930' } }] },
+    { careerEdits: [{ op: 'update', id: '100', entry: { period: { start: [1930], end: [1920] } } }] },
     { careerEdits: [{ op: 'remove', id: true }] },
     { careerEdits: Array(101).fill({ op: 'remove', id: '100' }) },
 ];

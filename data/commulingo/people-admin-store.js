@@ -9,7 +9,8 @@ const { assertAliases, assertPersonHeadwords } = require('./headword-validation'
 const db = require('../../config/database');
 const { normalizeFateLabel, composeFromParts, composePersonName } = require('./people-standard');
 const { assertPersonAliases } = require('./person-alias-rules');
-const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
+const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues } = require('./career-period');
+const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems } = require('./person-life-years');
@@ -146,14 +147,14 @@ async function getPersonAdmin(personId, options = {}) {
             [id]
         ),
         client.query(
-            `SELECT id, period_label, start_year, start_month, end_year, end_month, role_ko, role_en
+            `SELECT id, ${PERIOD_COLUMNS.join(', ')}, role_ko, role_en
              FROM commulingo_person_career_entries
              WHERE person_id = $1
              ORDER BY sort_order, id`,
             [id]
         ),
         client.query(
-            `SELECT r.id, r.office_id, o.title_ko, o.title_en, r.period_label,
+            `SELECT r.id, r.office_id, o.title_ko, o.title_en, ${PERIOD_COLUMNS.map(c => 'r.' + c).join(', ')},
                     r.body_ko, r.body_en, r.note_ko, r.note_en
              FROM commulingo_office_rows r
              JOIN commulingo_offices o ON o.id = r.office_id
@@ -173,22 +174,17 @@ async function getPersonAdmin(personId, options = {}) {
         person.aliases[row.lang].push(row.alias);
     });
     person.scenes = sceneResult.rows.map(row => [row.collection_id, row.episode_id]);
-    person.career = careerResult.rows.map(row => ({
-        id: row.id,
-        y: row.period_label || '',
-        period: {
-            startYear: row.start_year,
-            startMonth: row.start_month,
-            endYear: row.end_year,
-            endMonth: row.end_month,
-        },
-        r: t(row.role_ko, row.role_en),
-    }));
+    // `y` is the formatted display, read-only; writes send `period`.
+    person.career = careerResult.rows.map(row => {
+        const period = periodFromRow(row);
+        return { id: row.id, period, y: formatBoth(period), r: t(row.role_ko, row.role_en) };
+    });
     person.institutionRows = officeRowResult.rows.map(row => ({
         id: row.id,
         officeId: row.office_id,
         officeTitle: t(row.title_ko, row.title_en),
-        years: row.period_label || '',
+        period: periodFromRow(row),
+        years: formatBoth(periodFromRow(row)),
         body: t(row.body_ko, row.body_en),
         note: t(row.note_ko, row.note_en),
     }));
@@ -268,25 +264,14 @@ async function replaceCareer(client, personId, career) {
     if (!career) return;
     await client.query('DELETE FROM commulingo_person_career_entries WHERE person_id = $1', [personId]);
     for (const [index, entry] of career.entries()) {
-        const label = entry.y || entry.period || '';
-        const cols = periodColumns(label);
+        const cols = periodColumns(entry && entry.period, `career[${index}].period`);
         const role = entry.r || entry.role || {};
+        const values = periodValues(cols);
         await client.query(
             `INSERT INTO commulingo_person_career_entries
-                (person_id, sort_order, period_label, start_year, start_month, end_year, end_month,
-                 role_ko, role_en, updated_at)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, NOW())`,
-            [
-                personId,
-                index,
-                label,
-                cols.startYear,
-                cols.startMonth,
-                cols.endYear,
-                cols.endMonth,
-                contentLocalized(role, 'ko'),
-                localized(role, 'en'),
-            ]
+                (person_id, sort_order, ${PERIOD_COLUMNS.join(', ')}, role_ko, role_en, updated_at)
+             VALUES (${[...Array(values.length + 4).keys()].map(i => '$' + (i + 1)).join(', ')}, NOW())`,
+            [personId, index, ...values, contentLocalized(role, 'ko'), localized(role, 'en')]
         );
     }
 }

@@ -217,8 +217,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
         return composePersonName(localize(raw.name, l), pat);
     };
     const career = ((data.careers || {})[raw.id] || []).map(entry => ({
-        period: parsePeriod(entry.y),
-        y: entry.y,
+        period: entry.period || null,
+        y: localize(entry.y, lang),
         r: localize(entry.r, lang),
         role: localize(entry.r, lang),
     }));
@@ -286,8 +286,8 @@ function normalizeOfficeRow(row, office, peopleById, lang) {
     return {
         officeId: office.id,
         personId: row.personId || '',
-        period: parsePeriod(row.years || ''),
-        years: row.years || '',
+        period: row.period || null,
+        years: localize(row.years, lang),
         body: localize(row.body, lang),
         role: localize(row.body, lang),
         name: person ? person.names.short : localize(row.name, lang),

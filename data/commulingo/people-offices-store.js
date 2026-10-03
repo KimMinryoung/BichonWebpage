@@ -1,5 +1,12 @@
 const db = require('../../config/database');
-const { t, localized, contentLocalized, periodColumns, requireId } = require('./people-admin-fields');
+const { t, localized, contentLocalized, requireId, badRequest } = require('./people-admin-fields');
+const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues } = require('./career-period');
+
+// `years` is the formatted display, read-only; writes send `period`.
+function rowPeriod(payload) {
+    if (payload.years !== undefined && payload.period === undefined) throw badRequest('years is read-only; send period');
+    return periodColumns(payload.period, 'period');
+}
 const { withTransaction, writeRevision } = require('./admin-tx');
 
 // Offices (기관) and their rows for the admin API: commulingo_offices /
@@ -31,7 +38,7 @@ async function getOfficeAdmin(officeId, options = {}) {
     );
     if (!officeResult.rows.length) return null;
     const rowsResult = await client.query(
-        `SELECT id, period_label, start_year, start_month, end_year, end_month,
+        `SELECT id, ${PERIOD_COLUMNS.join(', ')},
                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en
          FROM commulingo_office_rows
          WHERE office_id = $1
@@ -47,13 +54,8 @@ async function getOfficeAdmin(officeId, options = {}) {
         icon: officeRow.icon || '',
         rows: rowsResult.rows.map(row => ({
             id: row.id,
-            years: row.period_label || '',
-            period: {
-                startYear: row.start_year,
-                startMonth: row.start_month,
-                endYear: row.end_year,
-                endMonth: row.end_month,
-            },
+            period: periodFromRow(row),
+            years: formatBoth(periodFromRow(row)),
             body: t(row.body_ko, row.body_en),
             personId: row.person_id || '',
             name: t(row.name_ko, row.name_en),
@@ -93,23 +95,19 @@ async function createOfficeRowAdmin(officeId, payload, options = {}) {
             'SELECT COALESCE(MAX(sort_order), -1) + 1 AS next_sort FROM commulingo_office_rows WHERE office_id = $1',
             [id]
         );
-        const label = payload.years || payload.period || '';
-        const cols = periodColumns(label);
+        const periodVals = periodValues(rowPeriod(payload));
+        const p = i => '$' + (i + 3 + periodVals.length);
         const result = await client.query(
             `INSERT INTO commulingo_office_rows
-                (office_id, sort_order, period_label, start_year, start_month, end_year, end_month,
+                (office_id, sort_order, ${PERIOD_COLUMNS.join(', ')},
                  body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en, updated_at)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9,
-                     NULLIF($10, ''), $11, $12, $13, $14, NOW())
+             VALUES ($1, $2, ${periodVals.map((_, i) => '$' + (i + 3)).join(', ')}, ${p(0)}, ${p(1)},
+                     NULLIF(${p(2)}, ''), ${p(3)}, ${p(4)}, ${p(5)}, ${p(6)}, NOW())
              RETURNING id`,
             [
                 id,
                 Number.isInteger(payload.sortOrder) ? payload.sortOrder : sortResult.rows[0].next_sort,
-                label,
-                cols.startYear,
-                cols.startMonth,
-                cols.endYear,
-                cols.endMonth,
+                ...periodVals,
                 contentLocalized(payload.body, 'ko'),
                 localized(payload.body, 'en'),
                 payload.personId || '',
@@ -148,13 +146,8 @@ async function updateOfficeRowAdmin(rowId, payload, options = {}) {
         }
         if (payload.sortOrder !== undefined) set('sort_order', Number.parseInt(payload.sortOrder, 10) || 0);
         if (payload.years !== undefined || payload.period !== undefined) {
-            const label = payload.years || payload.period || '';
-            const cols = periodColumns(label);
-            set('period_label', label);
-            set('start_year', cols.startYear);
-            set('start_month', cols.startMonth);
-            set('end_year', cols.endYear);
-            set('end_month', cols.endMonth);
+            const vals = periodValues(rowPeriod(payload));
+            PERIOD_COLUMNS.forEach((column, i) => set(column, vals[i]));
         }
         if (payload.body !== undefined) {
             set('body_ko', contentLocalized(payload.body, 'ko'));

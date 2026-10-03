@@ -81,8 +81,8 @@ async function run() {
         assert.match(initialRevision, /^v1-[a-f0-9]{64}$/);
         await update({ expectedRevision: initialRevision, aliasEdits: [{ op: 'add', lang: 'en', value: 'Second alias' }],
             careerEdits: [
-                { op: 'add', entry: { y: '1920–1925', r: { ko: '연구원', en: 'Researcher' } } },
-                { op: 'add', entry: { y: '1926–1930', r: { ko: '교수', en: 'Professor' } } },
+                { op: 'add', entry: { period: { start: [1920], end: [1925] }, r: { ko: '연구원', en: 'Researcher' } } },
+                { op: 'add', entry: { period: { start: [1926], end: [1930] }, r: { ko: '교수', en: 'Professor' } } },
             ], sceneEdits: [{ op: 'add', scene: ['course', 'episode-1'] }] });
         const added = await get();
         assert.notEqual(added.revision, initialRevision);

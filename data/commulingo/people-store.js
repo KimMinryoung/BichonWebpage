@@ -1,4 +1,5 @@
 const db = require('../../config/database');
+const { periodFromRow, formatBoth, PERIOD_COLUMNS } = require('./career-period');
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
@@ -82,7 +83,7 @@ async function fetchRows() {
              ORDER BY person_id, sort_order, collection_id, episode_id`
         ),
         client.query(
-            `SELECT person_id, period_label, role_ko, role_en, updated_at
+            `SELECT person_id, ${PERIOD_COLUMNS.join(', ')}, role_ko, role_en, updated_at
              FROM commulingo_person_career_entries
              ORDER BY person_id, sort_order, id`
         ),
@@ -92,7 +93,7 @@ async function fetchRows() {
              ORDER BY sort_order, id`
         ),
         client.query(
-            `SELECT office_id, period_label, body_ko, body_en, person_id,
+            `SELECT office_id, ${PERIOD_COLUMNS.join(', ')}, body_ko, body_en, person_id,
                     name_ko, name_en, note_ko, note_en, updated_at
              FROM commulingo_office_rows
              ORDER BY office_id, sort_order, id`
@@ -186,8 +187,10 @@ function rowsToPeopleData(rows) {
     const careers = {};
     rows.careers.forEach(row => {
         markPersonUpdated(row.person_id, row.updated_at);
+        const period = periodFromRow(row);
         addListItem(careers, row.person_id, {
-            y: row.period_label || '',
+            period,
+            y: formatBoth(period),
             r: t(row.role_ko, row.role_en),
         });
     });
@@ -206,8 +209,10 @@ function rowsToPeopleData(rows) {
 
     const officeRowsByOffice = {};
     rows.officeRows.forEach(row => {
+        const period = periodFromRow(row);
         addListItem(officeRowsByOffice, row.office_id, {
-            years: row.period_label || '',
+            period,
+            years: formatBoth(period),
             body: t(row.body_ko, row.body_en),
             personId: row.person_id || '',
             name: t(row.name_ko, row.name_en),

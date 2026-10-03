@@ -21,7 +21,7 @@ const offices = require(path.join(root, 'data/commulingo/people-offices-store'))
     try {
         const N = 8;
         const made = await Promise.all(Array.from({ length: N }, (_, i) =>
-            offices.createOfficeRowAdmin(office, { years: `${1900 + i}–${1901 + i}`, name: { ko: `사람${i}`, en: `P${i}` } }, { changedBy: 'test' })));
+            offices.createOfficeRowAdmin(office, { period: { start: [1900 + i], end: [1901 + i] }, name: { ko: `사람${i}`, en: `P${i}` } }, { changedBy: 'test' })));
         const orders = (await db.query('SELECT sort_order FROM commulingo_office_rows WHERE office_id = $1', [office])).rows.map(r => r.sort_order);
         assert.strictEqual(new Set(orders).size, N, `sort orders must be distinct, got ${orders}`);
 

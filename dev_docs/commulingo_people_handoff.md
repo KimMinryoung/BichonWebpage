@@ -7,6 +7,20 @@ Storage and recovery: [operations reference](commulingo-database.md).
 
 This note is for the next person or AI agent continuing work on `/commulingo/people`.
 
+## Structured career/office periods — added 2026-10-03
+
+Career entries and office rows store the period as columns — `start_year/month/day`,
+`end_year/month/day`, `start_qual`/`end_qual`, `ongoing`, and an override
+`period_label_ko/en` only for periods the columns cannot say (conflicting
+sources, "일제 강점기"). Nothing parses a label: the API takes
+`period: {start: [y, m?, d?], end: [...]|null, startQual?, endQual?, ongoing?, label?}`
+and rejects strings; the shown text (`y` on careers, `years` on office rows,
+read-only) is formatted per language by `data/commulingo/career-period.js`
+(`1918.07–09`, `1920년대`/`1920s`, `2017–현재`/`2017–present`). Qualifiers:
+circa, decade, early/mid/late (of a decade), after, summer; end-only until,
+open (`1945–`), unknown (`1979–?`). Migrations 270–271 (2026-10-03) added the
+columns and converted every old label; the old `period_label` column went in 272.
+
 ## Structured name parts — added 2026-07-24
 
 `commulingo_people` now stores names as parts: `given_name_ko/en`,
@@ -710,7 +724,7 @@ entry of the upsert CLI. `123` is an example; use an actual row ID from GET.
 | Field | add | update | remove |
 | --- | --- | --- | --- |
 | aliasEdits | lang + value | lang + value + replacement string | lang + value |
-| careerEdits | entry: {y?, r:{ko,en}} | id + entry containing y and/or r | id |
+| careerEdits | entry: {period, r:{ko,en}} | id + entry containing period and/or r | id |
 | sceneEdits | scene: [collectionId, episodeId] | scene + replacement pair | scene |
 
 Each operation requires op. Operations run in array order, at most 100 per
