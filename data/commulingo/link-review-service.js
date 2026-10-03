@@ -300,7 +300,7 @@ async function rejectExpression(input, actor) {
             if (aliases[lang].length === (doc.aliases?.[lang] || []).length && expressions.length === (doc.linkExpressions || []).length) {
                 fail('문헌 제목에서 나온 표현은 반려할 수 없습니다.');
             }
-            docPatch = { aliases, linkExpressions: expressions };
+            docPatch = { aliases, ...(expressions.length !== (doc.linkExpressions || []).length ? { linkExpressions: expressions } : {}) };
         }
         const old = (await client.query('DELETE FROM commulingo_link_reviews WHERE kind=$1 AND entity_id=$2 AND lang=$3 AND expression=$4 RETURNING *',
             [kind, id, lang, text])).rows[0] || null;

@@ -114,6 +114,9 @@ function normalizeRefs(refs, label) {
 }
 
 // Canonical field order for manifest entries, applied on every write.
+const CANONICAL_FIELDS = new Set(['id', 'file', 'docLang', 'title', 'description', 'kind', 'source', 'linkExpressions',
+    'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt']);
+
 function canonicalEntry(entry) {
     const out = {
         id: entry.id,
@@ -219,9 +222,18 @@ function updateDocMeta(id, patch = {}) {
         events: patch.events !== undefined ? patch.events : current.events,
         addedAt: patch.addedAt !== undefined ? patch.addedAt : current.addedAt,
     });
-    manifest.docs[index] = merged;
+    // canonicalEntry rebuilds only the fields it knows. Keep everything else
+    // (excerpts, anchors, members, …) and the entry's key order, so a patch
+    // changes exactly what it names; a known field it dropped stays dropped.
+    const entry = {};
+    for (const key of Object.keys(current)) {
+        if (Object.hasOwn(merged, key)) entry[key] = merged[key];
+        else if (!CANONICAL_FIELDS.has(key)) entry[key] = current[key];
+    }
+    for (const key of Object.keys(merged)) if (!Object.hasOwn(entry, key)) entry[key] = merged[key];
+    manifest.docs[index] = entry;
     writeManifest(manifest);
-    return merged;
+    return entry;
 }
 
 function removeDoc(id) {

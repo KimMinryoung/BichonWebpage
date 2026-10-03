@@ -57,7 +57,7 @@ const ran = pattern => queries.some(q => pattern.test(q.sql));
 
     docs = [{ id: 'law', aliases: { ko: ['주르당 법', '징병법'] }, linkExpressions: [] }];
     await rejectExpression({ kind: 'doc', id: 'law', lang: 'ko', text: '주르당 법', note }, 'tester');
-    assert.deepEqual(docPatches[0], { id: 'law', patch: { aliases: { ko: ['징병법'] }, linkExpressions: [] } });
+    assert.deepEqual(docPatches[0], { id: 'law', patch: { aliases: { ko: ['징병법'] } } });
     await assert.rejects(rejectExpression({ kind: 'doc', id: 'law', lang: 'ko', text: '주르당-델브렐 징병법', note }, 'tester'), /제목/);
     assert.equal(docPatches.length, 1, 'a failed rejection leaves the manifest alone');
     console.log('link expression rejection: aliases and expressions removed with history; headwords and titles kept');

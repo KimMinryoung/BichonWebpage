@@ -63,7 +63,7 @@ assert.match(html, /terms\/glasnost/);
 // Existing manifest and PATCH: metadata edits must preserve linking controls.
 const docs = require('../data/commulingo/docs/manifest.json').docs;
 for (const doc of docs) canonicalEntry(doc);
-const original = { ...docs[0], linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
+const original = { ...docs[0], excerpts: { terms: { 'some-term': 'some-heading' } }, anchors: { x: 'y' }, linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
 const read = fs.readFileSync;
 const write = fs.writeFileSync;
 let saved;
@@ -75,6 +75,9 @@ try {
     assert.deepStrictEqual(saved.linkExpressions, original.linkExpressions);
     assert.deepStrictEqual(saved.noAutoLink, original.noAutoLink);
     assert.strictEqual(saved.date, '1921');
+    assert.deepStrictEqual(saved.excerpts, original.excerpts, 'fields canonicalEntry does not know survive a PATCH');
+    assert.deepStrictEqual(saved.anchors, original.anchors);
+    assert.deepStrictEqual(Object.keys(saved).slice(0, 3), Object.keys(original).slice(0, 3), 'key order kept');
     updateDocMeta(original.id, { aliases: { ko: ['『새 문헌』'] }, noAutoLink: [] });
     assert.deepStrictEqual(saved.aliases, { ko: ['『새 문헌』'] });
     assert.deepStrictEqual(saved.noAutoLink, []);
