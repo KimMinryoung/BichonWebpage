@@ -15,6 +15,7 @@ const { getLinkIndexes, createCardTextLinker } = require('../data/commulingo/lin
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
+const { otherNames } = require('../data/commulingo/person-other-names');
 const { flagImg, flagLabel } = require('../data/commulingo/flag-icons');
 const { personFlagHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
 const { countryHref } = require('../data/commulingo/country-geography');
@@ -426,6 +427,7 @@ router.get('/people/:personId', async (req, res) => {
         setShortPublicCache(res);
         res.render('public/commulingo-person', {
             person,
+            otherNames: otherNames(person, lang),
             epithetHtml,
             momentHtml,
             bioHtml,

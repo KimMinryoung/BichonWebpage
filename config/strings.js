@@ -548,6 +548,7 @@ const ko = {
             relatedReports: '관련 보고서',
             report: '보고서',
             backToCard: '카드로 돌아가기',
+            otherNames: '다른 이름',
         },
         personCard: {
             contextMarker: '맥락 표식',
@@ -1159,6 +1160,7 @@ const en = {
             relatedReports: 'Related reports',
             report: 'Report',
             backToCard: 'Back to card',
+            otherNames: 'Also known as',
         },
         personCard: {
             contextMarker: 'Context marker',

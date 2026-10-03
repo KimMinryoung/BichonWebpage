@@ -37,6 +37,9 @@
                 <div class="commu-person-detail-title">
                     <h1><%= person.displayName || person.name %></h1>
                     <span><%= person.cyrillic %></span>
+                    <% if (typeof otherNames !== 'undefined' && otherNames.length) { %>
+                    <p class="commu-person-other-names"><%= strings.commuLingoViews.person.otherNames %>: <%= otherNames.join(' · ') %></p>
+                    <% } %>
                 </div>
             </div>
             <%- include('../partials/commulingo-person-meta', { person: person, showOtherPositions: true }) %>
