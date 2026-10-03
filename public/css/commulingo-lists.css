@@ -390,9 +390,6 @@
     margin-bottom: 14px;
 }
 
-.commu-people-result-section#commu-people-result-role .commu-people-result-head {
-    border-left-color: var(--link);
-}
 
 .commu-people-result-section#commu-people-result-desc .commu-people-result-head {
     border-left-color: var(--text-muted);

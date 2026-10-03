@@ -10,20 +10,20 @@ function searchFields(person) {
         (person.aliases && person.aliases.en) || [],
         (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
     ).filter(Boolean).join(' ').toLowerCase();
-    const roleSearch = [
-        person.role && person.role.label,
-        (person.activities || []).map(a => [a.label, a.affiliationLabel].filter(Boolean).join(' ')).join(' ')
-    ].concat(
-        (person.career || []).map(function(item) { return item.r; }),
-        (person.institutionRoles || []).map(function(item) { return (item.role || '') + ' ' + (item.officeTitle || ''); })
-    ).filter(Boolean).join(' ').toLowerCase();
+    // Career lines and office titles are text the filters cannot reach, so they
+    // are searched with the description. The activity labels are not: the
+    // activities page filters by them, and a separate 'role' bucket left the
+    // reader guessing what had matched.
     const descSearch = [
         person.epithet,
         person.moment,
         person.bio,
         (person.linkExpressions || []).filter(function(item) { return item.role === 'related'; }).map(function(item) { return item.text; }).join(' ')
-    ].filter(Boolean).join(' ').toLowerCase();
-    return { name: nameSearch, role: roleSearch, desc: descSearch };
+    ].concat(
+        (person.career || []).map(function(item) { return item.r; }),
+        (person.institutionRoles || []).map(function(item) { return item.officeTitle; })
+    ).filter(Boolean).join(' ').toLowerCase();
+    return { name: nameSearch, desc: descSearch };
 }
 
 // A name hit is ranked by how much of the person's own name the query is:
@@ -54,22 +54,21 @@ function nameRank(row, phrase, terms) {
 
 const indexes = new WeakMap();
 function searchPeople(standardized, query, sortPeople) {
-    const hits = { name: [], role: [], desc: [] };
+    const hits = { name: [], desc: [] };
     const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     if (!terms.length) return hits;
     let index = indexes.get(standardized);
     if (!index) {
         index = standardized.groups.flatMap(group => sortPeople(group.people).map(person => {
             const fields = searchFields(person);
-            const role = fields.name + ' ' + fields.role;
-            return { person, name: fields.name, role, desc: role + ' ' + fields.desc, ...nameRankFields(person, fields.name) };
+            return { person, name: fields.name, desc: fields.name + ' ' + fields.desc, ...nameRankFields(person, fields.name) };
         }));
         indexes.set(standardized, index);
     }
     const phrase = terms.join(' ');
     const named = [];
     for (const row of index) {
-        for (const key of ['name', 'role', 'desc']) {
+        for (const key of ['name', 'desc']) {
             if (terms.every(term => row[key].includes(term))) {
                 if (key === 'name') named.push({ person: row.person, rank: nameRank(row, phrase, terms) });
                 else hits[key].push(row.person);

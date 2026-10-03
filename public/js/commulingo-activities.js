@@ -113,7 +113,7 @@
         var query = searchInput ? searchInput.value.trim() : '';
         var re = query && window.__commuSearch ? window.__commuSearch.pattern(query) : null;
         if (!re) return;
-        root.querySelectorAll('.commu-person-card').forEach(function(card) { window.__commuSearch.highlight(card, re); });
+        root.querySelectorAll('.commu-person-card').forEach(function(card) { window.__commuSearch.highlightPerson(card, re); });
     }
     function syncSearch(value) {
         searchInput.value = value;

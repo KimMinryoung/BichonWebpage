@@ -200,7 +200,7 @@
     var en = document.documentElement.lang === 'en';
     var results = document.getElementById('commu-people-results');
     var emptyMsg = document.getElementById('commu-people-result-empty');
-    var buckets = ['name', 'role', 'desc'].map(function(key) {
+    var buckets = ['name', 'desc'].map(function(key) {
         return {
             key: key,
             section: document.getElementById('commu-people-result-' + key),
@@ -263,7 +263,7 @@
         var holder = document.createElement('template');
         holder.innerHTML = data.html;
         var re = window.__commuSearch.pattern(query);
-        Array.prototype.forEach.call(holder.content.children, function(card) { window.__commuSearch.highlight(card, re); });
+        Array.prototype.forEach.call(holder.content.children, function(card) { window.__commuSearch.highlightPerson(card, re); });
         bucket.grid.appendChild(holder.content);
         if (data.next < data.total) {
             var more = document.createElement('button');

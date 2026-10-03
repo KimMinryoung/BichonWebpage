@@ -76,13 +76,13 @@ router.get('/people/search', async (req, res) => {
     const query = typeof req.query.q === 'string' ? req.query.q.trim() : '';
     const bucket = req.query.bucket;
     const offset = Number(req.query.offset || 0);
-    if (query.length > 200 || (bucket !== undefined && !['name', 'role', 'desc'].includes(bucket))
+    if (query.length > 200 || (bucket !== undefined && !['name', 'desc'].includes(bucket))
         || !Number.isSafeInteger(offset) || offset < 0) return res.status(400).json({ error: 'Invalid search' });
     try {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         const hits = searchPeople(standardized, query, sortPeopleChronologically);
         const buckets = {};
-        const keys = bucket ? [bucket] : ['name', 'role', 'desc'];
+        const keys = bucket ? [bucket] : ['name', 'desc'];
         // Show the strongest matches first. Lower ranks retain their full
         // counts, but their cards are fetched when the reader expands them.
         const initialBucket = bucket || keys.find(key => hits[key].length);
@@ -232,7 +232,7 @@ router.get('/activities', async (req, res) => {
         let pool = standardized.people;
         if (q) {
             const hits = searchPeople(standardized, q, sortPeopleChronologically);
-            pool = [...new Set([...hits.name, ...hits.role, ...hits.desc])];
+            pool = [...new Set([...hits.name, ...hits.desc])];
         }
         const matched = pool.filter(p => activitiesModel.matchesActivities(p, filter));
         const people = q ? matched : sortPeopleChronologically(matched);

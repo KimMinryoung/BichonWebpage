@@ -48,6 +48,15 @@ window.__commuSearch = (function() {
         });
     }
 
+    // A person card marks only the parts the people search reads (utils/
+    // people-search.js): names and aliases, the three text fields and the career
+    // lines. Years, fate, nationality and scene chips are not searched, and a mark
+    // there would say they were.
+    var PERSON_SEARCHED = '.commu-person-idbox, .commu-person-epithet, .commu-person-moment, .commu-person-bio, .commu-career-role';
+    function highlightPerson(card, re) {
+        Array.prototype.forEach.call(card.querySelectorAll(PERSON_SEARCHED), function(part) { highlight(part, re); });
+    }
+
     function terms(query) {
         return query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
     }
@@ -90,5 +99,5 @@ window.__commuSearch = (function() {
         }
         return { cancel: cancel, schedule: schedule };
     }
-    return { createRequests: createRequests, terms: terms, pattern: pattern, highlight: highlight, clearHighlights: clearHighlights };
+    return { createRequests: createRequests, terms: terms, pattern: pattern, highlight: highlight, highlightPerson: highlightPerson, clearHighlights: clearHighlights };
 })();
