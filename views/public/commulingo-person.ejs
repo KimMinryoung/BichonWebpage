@@ -38,7 +38,7 @@
                     <h1><%= person.displayName || person.name %></h1>
                     <span><%= person.cyrillic %></span>
                     <% if (typeof otherNames !== 'undefined' && otherNames.length) { %>
-                    <p class="commu-person-other-names"><%= strings.commuLingoViews.person.otherNames %>: <%= otherNames.join(' · ') %></p>
+                    <p class="commu-person-detail-other-names"><%= strings.commuLingoViews.person.otherNames %>: <%= otherNames.join(' · ') %></p>
                     <% } %>
                 </div>
             </div>

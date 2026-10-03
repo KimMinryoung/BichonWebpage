@@ -3484,7 +3484,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     margin-top: 4px;
 }
 
-.commu-person-other-names {
+.commu-person-detail-other-names {
     color: var(--text-muted);
     font-size: 0.88rem;
     line-height: 1.4;
