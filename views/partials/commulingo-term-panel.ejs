@@ -4,7 +4,7 @@
    Locals: p (the panel object from buildTermPanel), en. */
 %>
         <header class="commu-event-head">
-            <span class="commu-event-period"><%= p.term.original %><% if (p.term.period && p.term.period !== '개념') { %> · <%= p.term.period %><% } %></span>
+            <span class="commu-event-period"><%= p.term.original %><% if (p.term.period && p.term.period !== '개념') { %><% if (p.term.original) { %> · <% } %><%= p.term.period %><% } %></span>
             <h1><%= p.term.term %></h1>
             <% if (p.term.termOther) { %><p class="commu-event-question"><%= p.term.termOther %></p><% } %>
             <% if (p.term.parent) { %>

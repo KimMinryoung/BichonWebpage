@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // New glossary terms of a history batch (scripts/content/<batch>-terms.json:
-// { id, terms: [{ id, sources, fields }] }) through the term editorial service
+// { id, terms: [{ id, sources, fields, noOriginal? }] }) through the term editorial service
 // — submitTermEdit + reviewTermSuggestion, the same validation and revision
 // trail as the admin UI. Every term is written in one transaction; without
 // --apply the writes run and are rolled back, so a dry run exercises the real
@@ -28,6 +28,11 @@ async function main() {
         await client.query("SET LOCAL lock_timeout='3s'");
         for (const entry of spec.terms) {
             assert.equal((await client.query('SELECT 1 FROM commulingo_terms WHERE id=$1', [entry.id])).rowCount, 0, `term exists: ${entry.id}`);
+            // The term page heads with the original-language form; batches
+            // without it left 104 terms headless (2026-10-03). A purely
+            // descriptive heading with no original name says why instead.
+            assert(String(entry.fields.original || '').trim() || String(entry.noOriginal || '').trim(),
+                `${entry.id}: fields.original (native-script name) is required, or noOriginal: "<reason>"`);
             for (const id of entry.fields.people || []) assert.equal((await client.query('SELECT 1 FROM commulingo_people WHERE id=$1', [id])).rowCount, 1, `${entry.id}: missing person ${id}`);
             for (const id of entry.fields.events || []) assert.equal((await client.query('SELECT 1 FROM commulingo_history_events WHERE id=$1', [id])).rowCount, 1, `${entry.id}: missing event ${id}`);
             const submitted = await submitTermEdit({ id: entry.id, action: 'create', fields: entry.fields, sources: entry.sources, changedBy: spec.id }, { client });
