@@ -70,19 +70,28 @@ function summaryFor(people, events, code, lang) {
     };
 }
 
-// Direct predecessor and successor states (country-lineage.json), oldest
-// first. A code spanning two eras (Russia before and after the Soviet Union)
-// rightly appears on both sides, and the year tells them apart.
+// State changes involving the country (country-lineage.json) as one
+// chronological list, told from this country's side: role 'from' when the
+// edge leaves it (Russia joining the Soviet Union in 1922), 'to' when it
+// arrives (Russia out of the Soviet dissolution in 1991). A code spanning two
+// eras meets the same counterpart twice, so a predecessor/successor split
+// would list it on both sides; in time order it reads as what happened.
+// Edges of the same year, kind and role share a row (the 15 Soviet
+// successors).
 function lineageFor(code, lang) {
-    const side = (edges, other) => edges
-        .map(edge => ({ info: countryInfo(edge[other], lang), year: edge.year, kind: edge.kind }))
-        .filter(item => item.info)
-        .sort((a, b) => a.year - b.year || a.info.label.localeCompare(b.info.label, lang === 'en' ? 'en' : 'ko'))
-        .map(({ info, year, kind }) => ({ code: info.code, label: info.label, href: info.href, year, kind }));
-    return {
-        predecessors: side(LINEAGE.edges.filter(edge => edge.to === code), 'from'),
-        successors: side(LINEAGE.edges.filter(edge => edge.from === code), 'to'),
-    };
+    const rows = new Map();
+    LINEAGE.edges.forEach(edge => {
+        const role = edge.from === code ? 'from' : (edge.to === code ? 'to' : null);
+        const info = role && countryInfo(role === 'from' ? edge.to : edge.from, lang);
+        if (!info) return;
+        const key = `${edge.year}|${edge.kind}|${role}`;
+        if (!rows.has(key)) rows.set(key, { year: edge.year, kind: edge.kind, role, countries: [] });
+        rows.get(key).countries.push({ code: info.code, label: info.label, href: info.href });
+    });
+    const collator = lang === 'en' ? 'en' : 'ko';
+    return [...rows.values()]
+        .sort((a, b) => a.year - b.year)
+        .map(row => ({ ...row, countries: row.countries.sort((a, b) => a.label.localeCompare(b.label, collator)) }));
 }
 
 // Parties, factions, forces and organizations of a country with the people

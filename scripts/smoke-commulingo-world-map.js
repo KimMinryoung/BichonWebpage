@@ -101,11 +101,16 @@ lineageEdges.forEach(edge => {
 });
 const { lineageFor, affiliationsFor, periodLabel } = require('../data/commulingo/map-presentation');
 const sovietLineage = lineageFor('soviet', 'ko');
-assert.ok(sovietLineage.predecessors.some(item => item.code === 'russia' && item.year === 1922));
-assert.equal(sovietLineage.successors.length, 15);
+assert.deepEqual(sovietLineage.map(row => [row.year, row.kind, row.role, row.countries.length]), [[1922, 'union', 'to', 6], [1991, 'dissolution', 'from', 15]], 'same year, kind and side share one row');
 const russiaLineage = lineageFor('russia', 'ko');
-assert.deepEqual([russiaLineage.predecessors[0].code, russiaLineage.successors[0].code], ['soviet', 'soviet'], 'Russia sits on both sides of the Soviet Union');
-assert.deepEqual(lineageFor('spain', 'ko'), { predecessors: [], successors: [] });
+assert.deepEqual(russiaLineage.map(row => [row.year, row.role, row.countries[0].code]), [[1922, 'from', 'soviet'], [1991, 'to', 'soviet']], 'Russia meets the Soviet Union twice, in time order');
+assert.deepEqual(lineageFor('germany', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1949 division.from', '1990 reunification.to']);
+assert.deepEqual(lineageFor('spain', 'ko'), []);
+const lineageStrings = require('../config/strings');
+['ko', 'en'].forEach(lang => LINEAGE_KINDS.forEach(kind => ['from', 'to'].forEach(role => {
+    const phrase = lineageStrings[lang].commuLingoViews.worldMap.lineageEvents[`${kind}.${role}`];
+    assert.ok(phrase && phrase.split('{x}').length === 2, `lineage phrase ${lang} ${kind}.${role} needs one {x}`);
+})));
 
 // Affiliations: the activity catalog's parties and factions of a country with
 // their members; factions follow their party and a party counts its factions.

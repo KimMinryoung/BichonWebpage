@@ -23,17 +23,17 @@
             <p class="commu-world-map-note"><%= country.kind === 'modern' ? copy.boundaryNote : copy.historicalNote %></p>
         </section>
 
-        <% var lineageSides = [['predecessors', country.lineage.predecessors], ['successors', country.lineage.successors]].filter(function(side) { return side[1].length; }); %>
-        <% if (lineageSides.length) { %>
-        <section class="commu-country-lineage" aria-label="<%= copy.lineage %>">
-            <% lineageSides.forEach(function(side) { %>
-            <div class="commu-country-lineage-row">
-                <h2><%= copy[side[0]] %></h2>
-                <ul>
-                    <% side[1].forEach(function(item) { %><li><a href="<%= item.href %>"><%- flagImg(item.code, item.label) %><span><%= item.label %></span><small><%= item.year %> <%= copy.lineageKinds[item.kind] %></small></a></li><% }) %>
-                </ul>
-            </div>
-            <% }) %>
+        <% if (country.lineage.length) { %>
+        <section class="commu-country-lineage" aria-labelledby="country-lineage">
+            <h2 id="country-lineage"><%= copy.lineage %></h2>
+            <ol>
+                <% country.lineage.forEach(function(row) { var phrase = copy.lineageEvents[row.kind + '.' + row.role].split('{x}'); %>
+                <li class="commu-country-lineage-row">
+                    <span class="commu-country-lineage-year"><%= row.year %></span>
+                    <span class="commu-country-lineage-text"><% if (phrase[0].trim()) { %><span><%= phrase[0].trim() %></span><% } %><% row.countries.forEach(function(item) { %><a href="<%= item.href %>"><%- flagImg(item.code, item.label) %><span><%= item.label %></span></a><% }) %><% if (phrase[1].trim()) { %><span<%- /^\s/.test(phrase[1]) ? '' : ' class="is-attached"' %>><%= phrase[1].trim() %></span><% } %></span>
+                </li>
+                <% }) %>
+            </ol>
         </section>
         <% } %>
 

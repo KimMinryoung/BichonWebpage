@@ -3122,17 +3122,19 @@ a.commu-person-position:focus-visible {
 }
 .commu-country-page .commu-hub-section { scroll-margin-top: 82px; }
 .commu-country-empty { color: var(--text-muted); }
-.commu-country-lineage { border: 1px solid var(--border); display: grid; margin-top: 14px; }
-.commu-country-lineage-row { align-items: baseline; display: grid; gap: 8px 14px; grid-template-columns: 4rem minmax(0, 1fr); padding: 10px 12px; }
+.commu-country-lineage { border: 1px solid var(--border); margin-top: 14px; }
+.commu-country-lineage h2 { border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; margin: 0; padding: 8px 12px; }
+.commu-country-lineage ol { list-style: none; margin: 0; padding: 0; }
+.commu-country-lineage-row { align-items: baseline; display: grid; gap: 8px 14px; grid-template-columns: 3rem minmax(0, 1fr); padding: 10px 12px; }
 .commu-country-lineage-row + .commu-country-lineage-row { border-top: 1px solid var(--border); }
-.commu-country-lineage h2 { color: var(--text-muted); font-size: .85rem; margin: 0; }
-.commu-country-lineage ul { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.commu-country-lineage-year { color: var(--text-muted); font-variant-numeric: tabular-nums; font-weight: 700; }
+.commu-country-lineage-text { align-items: center; display: flex; flex-wrap: wrap; gap: 6px; }
+.commu-country-lineage-text .is-attached { margin-left: -4px; }
 .commu-country-lineage a {
     align-items: center; border: 1px solid var(--border); color: inherit; display: inline-flex;
     gap: 7px; min-height: 34px; padding: 4px 9px; text-decoration: none;
 }
 .commu-country-lineage a:hover, .commu-country-lineage a:focus-visible { background: var(--btn-hover); text-decoration: none; }
-.commu-country-lineage small { color: var(--text-muted); font-size: .75rem; }
 .commu-country-orgs { display: grid; gap: 14px 18px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 .commu-country-org-group h3 { border-bottom: 1px solid var(--border); font-size: .95rem; margin: 0 0 4px; padding-bottom: 6px; }
 .commu-country-org-group ul { list-style: none; margin: 0; padding: 0; }
@@ -3162,7 +3164,6 @@ a.commu-person-position:focus-visible {
     .commu-country-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .commu-country-sections a:nth-child(3) { border-left: 0; }
     .commu-country-sections a:nth-child(n+3) { border-top: 1px solid var(--border); }
-    .commu-country-lineage-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
