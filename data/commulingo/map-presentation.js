@@ -5,6 +5,7 @@ const { flagLabel } = require('./flag-icons');
 const { eventCountries } = require('./event-countries');
 const { countryInfo } = require('./country-geography');
 const LINEAGE = require('./country-lineage.json');
+const activities = require('./person-activities');
 
 
 // "1917.10–1918.01" -> start 191710, end 191801; the start orders the
@@ -84,22 +85,43 @@ function lineageFor(code, lang) {
     };
 }
 
-// Parties, factions, forces and organizations whose curated `countries`
-// include the code, grouped by kind in a fixed order and by start year
-// within a group.
-const ORG_KINDS = ['party', 'faction', 'force', 'organization', 'state'];
-function organizationsFor(terms, code, lang) {
-    const mine = (terms || []).filter(term => term.orgKind && (term.countries || []).includes(code));
-    return ORG_KINDS.map(kind => ({
-        kind,
-        terms: mine.filter(term => term.orgKind === kind)
-            .sort((a, b) => (a.startYear ?? Infinity) - (b.startYear ?? Infinity) || a.id.localeCompare(b.id))
-            .map(term => ({
-                id: term.id,
-                label: localize(term.term, lang),
-                period: localize(term.period, lang),
-            })),
-    })).filter(group => group.terms.length);
+// Parties, factions, forces and organizations of a country with the people
+// who belong to them: the person-activity affiliations (activity-catalog.json)
+// whose countryCode is the code, or, for code null, the international ones
+// with no country (the 국제주의 hub). A parent's count includes its
+// factions, as the activity filter does. Affiliations nobody is recorded in
+// are left out; factions follow their party.
+const AFFILIATION_KINDS = ['party', 'force', 'military', 'institution', 'international', 'state'];
+const MEMBER_PREVIEW = 6;
+function periodLabel(periods) {
+    return (periods || []).map(([from, to]) => from == null ? `–${to}` : (to == null ? `${from}–` : (from === to ? `${from}` : `${from}–${to}`))).join(', ');
+}
+function affiliationsFor(people, code, lang) {
+    const own = activities.catalog.affiliations.filter(a => (code ? a.countryCode === code : !a.countryCode));
+    const ids = new Set(own.map(a => a.id));
+    const start = a => (a.periods && a.periods[0] && a.periods[0][0]) ?? -Infinity;
+    const row = (a, isChild) => {
+        const members = sortPeopleChronologically((people || []).filter(person => activities.matchesActivities(person, { affiliationId: a.id })));
+        return {
+            id: a.id,
+            label: localize(a.label, lang),
+            period: periodLabel(a.periods),
+            href: `/commulingo/activities?affiliation=${encodeURIComponent(a.id)}`,
+            count: members.length,
+            members: members.slice(0, MEMBER_PREVIEW).map(person => ({ id: person.id, name: (person.names && person.names.short) || person.displayName || person.name })),
+            isChild,
+        };
+    };
+    return AFFILIATION_KINDS.map(kind => {
+        const rows = [];
+        own.filter(a => a.kind === kind && !(a.parentId && ids.has(a.parentId)))
+            .sort((a, b) => start(a) - start(b) || a.id.localeCompare(b.id))
+            .forEach(parent => {
+                rows.push(row(parent, false));
+                own.filter(a => a.parentId === parent.id).sort((a, b) => start(a) - start(b)).forEach(child => rows.push(row(child, true)));
+            });
+        return { kind, rows: rows.filter(r => r.count > 0) };
+    }).filter(group => group.rows.length);
 }
 
 async function loadMapData(lang) {
@@ -110,4 +132,4 @@ async function loadMapData(lang) {
     return { standardized: peopleData.standardized, events };
 }
 
-module.exports = { directEventsFor, lineageFor, organizationsFor, ORG_KINDS, leadSentence, periodSortKey, countryPeople, summaryFor, loadMapData };
+module.exports = { directEventsFor, lineageFor, affiliationsFor, periodLabel, leadSentence, periodSortKey, countryPeople, summaryFor, loadMapData };

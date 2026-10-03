@@ -1,0 +1,927 @@
+{
+ "id": "soviet-core-organizations-20261003",
+ "terms": [
+  {
+   "id": "communist-party-of-the-soviet-union",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Communist_Party_of_the_Soviet_Union",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%A1%D0%BE%D1%8E%D0%B7%D0%B0",
+    "https://en.wikipedia.org/wiki/Prague_Party_Conference"
+   ],
+   "fields": {
+    "term": {
+     "ko": "소련 공산당",
+     "en": "Communist Party of the Soviet Union"
+    },
+    "category": "party-state",
+    "period": {
+     "ko": "1912–1991",
+     "en": "1912–1991"
+    },
+    "startYear": 1912,
+    "endYear": 1991,
+    "definition": {
+     "ko": "1912년 1월 프라하 협의회에서 러시아 사회민주노동당의 볼셰비키가 독자 조직으로 갈라져 나와 만든 당. 1917년 10월 혁명으로 권력을 잡은 뒤 1991년까지 소련을 일당 지배한 마르크스-레닌주의 집권당이다.",
+     "en": "The party formed when the Bolsheviks of the Russian Social Democratic Labour Party constituted themselves as a separate organisation at the Prague Conference of January 1912; after taking power in the October Revolution of 1917 it was the Marxist–Leninist ruling party of the Soviet Union until 1991."
+    },
+    "body": {
+     "ko": "당명은 여러 번 바뀌었다. 1917년부터 러시아 사회민주노동당(볼셰비키), 1918년 3월 제7차 당대회에서 러시아 공산당(볼셰비키), 1925년 12월 제14차 당대회에서 전연방공산당(볼셰비키), 1952년 10월 제19차 당대회에서 소련 공산당이 되었다. 당은 민주집중제에 따라 당대회가 중앙위원회를 뽑고 중앙위원회가 정치국과 서기국을 뽑는 구조였으나, 실제 결정은 정치국과 서기국이 내렸다. 레닌 이후 스탈린(1922~1953), 흐루쇼프(1953~1964), 브레즈네프(1964~1982), 안드로포프, 체르넨코, 고르바초프(1985~1991)가 서기장 또는 제1서기로 당을 이끌었다.\n\n1977년 헌법 제6조는 당을 「소비에트 사회의 지도적이고 향도적인 힘」으로 규정했으나, 1990년 3월 인민대표대회가 이 조항을 고쳐 당의 권력 독점이 끝났다. 1991년 8월 쿠데타가 실패한 뒤 고르바초프는 8월 24일 서기장직을 사임했고, 옐친은 8월 23일 러시아 영토에서 당 활동을 정지하고 11월 6일 당을 금지하는 대통령령을 내렸다. 1992년 11월 30일 러시아 헌법재판소는 기층 당 조직까지 금지한 것은 위헌이라고 판단했다.",
+     "en": "The party changed its name several times: Russian Social Democratic Labour Party (Bolsheviks) from 1917, Russian Communist Party (Bolsheviks) at the Seventh Congress in March 1918, All-Union Communist Party (Bolsheviks) at the Fourteenth Congress in December 1925, and Communist Party of the Soviet Union at the Nineteenth Congress in October 1952. Under democratic centralism the Congress elected the Central Committee, which elected the Politburo and the Secretariat, though decisions were taken in practice by those two bodies. After Lenin it was led as General or First Secretary by Stalin (1922–1953), Khrushchev (1953–1964), Brezhnev (1964–1982), Andropov, Chernenko and Gorbachev (1985–1991).\n\nArticle 6 of the 1977 constitution called the party “the leading and guiding force of Soviet society” until the Congress of People’s Deputies amended it in March 1990, ending the party’s monopoly. After the failed coup of August 1991 Gorbachev resigned as General Secretary on 24 August, and Yeltsin decreed the suspension of the party’s activity in Russia on 23 August and its ban on 6 November. On 30 November 1992 the Russian Constitutional Court ruled that the ban on its primary organisations had been unconstitutional."
+    },
+    "aliases": {
+     "ko": [
+      "소련공산당",
+      "소비에트 연방 공산당",
+      "전연방공산당(볼셰비키)",
+      "러시아 공산당(볼셰비키)",
+      "러시아 사회민주노동당(볼셰비키)"
+     ],
+     "en": [
+      "CPSU",
+      "KPSS",
+      "VKP(b)",
+      "RKP(b)",
+      "RSDLP(b)",
+      "All-Union Communist Party (Bolsheviks)",
+      "Russian Communist Party (Bolsheviks)",
+      "Soviet Communist Party",
+      "КПСС"
+     ]
+    },
+    "people": [
+     "lenin",
+     "stalin",
+     "khrushchev",
+     "brezhnev",
+     "andropov",
+     "chernenko",
+     "gorbachev",
+     "yeltsin"
+    ],
+    "events": [
+     "october-revolution",
+     "ussr-formation",
+     "succession-struggle",
+     "great-terror",
+     "twentieth-party-congress",
+     "perestroika",
+     "soviet-collapse"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The party formed when the Bolsheviks of the Russian Social Democratic Labour Party constituted themselves as a separate organisation at the Prague Conference of January 1912; after taking power in the October Revolution of 1917 it was the Marxist–Leninist ruling party of the Soviet Union until 1991.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Soviet_Union",
+      "locator": "infobox (names); lead; Organization; Dissolution; ru: Названия, Запрет"
+     },
+     {
+      "field": "body",
+      "claim": "The party changed its name several times: Russian Social Democratic Labour Party (Bolsheviks) from 1917, Russian Communist Party (Bolsheviks) at the Seventh Congress in March 1918, All-Union Communist Party (Bolsheviks) at the Fourteenth Congress in December 1925, and Communist Party of the Soviet U",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Soviet_Union",
+      "locator": "infobox (names); lead; Organization; Dissolution; ru: Названия, Запрет"
+     },
+     {
+      "field": "period",
+      "claim": "1912–1991",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Soviet_Union",
+      "locator": "infobox (names); lead; Organization; Dissolution; ru: Названия, Запрет"
+     },
+     {
+      "field": "startYear",
+      "claim": "1912",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Soviet_Union",
+      "locator": "infobox (names); lead; Organization; Dissolution; ru: Названия, Запрет"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_the_Soviet_Union",
+      "locator": "infobox (names); lead; Organization; Dissolution; ru: Названия, Запрет"
+     },
+     {
+      "field": "definition",
+      "claim": "The Prague Conference (6th All-Russian Conference of the RSDLP), 5–17 January 1912, marked the effective emergence of the Bolsheviks as a separate party and elected their own Central Committee.",
+      "source": "https://en.wikipedia.org/wiki/Prague_Party_Conference",
+      "locator": "lead; Outcomes"
+     },
+     {
+      "field": "body",
+      "claim": "Constitutional Court ruling of 30 November 1992 found the ban on primary party organisations unconstitutional.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%A1%D0%BE%D1%8E%D0%B7%D0%B0",
+      "locator": "Запрет КПСС"
+     }
+    ]
+   }
+  },
+  {
+   "id": "central-committee-of-the-cpsu",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Central_Committee_of_the_Communist_Party_of_the_Soviet_Union",
+    "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%B8%D1%82%D0%B5%D1%82_%D0%9A%D0%9F%D0%A1%D0%A1",
+    "https://en.wikipedia.org/wiki/Prague_Party_Conference"
+   ],
+   "fields": {
+    "term": {
+     "ko": "소련 공산당 중앙위원회",
+     "en": "Central Committee of the Communist Party of the Soviet Union"
+    },
+    "category": "party-state",
+    "period": {
+     "ko": "1912–1991",
+     "en": "1912–1991"
+    },
+    "startYear": 1912,
+    "endYear": 1991,
+    "definition": {
+     "ko": "당대회가 선출하고 당대회와 당대회 사이에 소련 공산당을 이끈 최고 상설 기관. 정치국·서기국과 서기장을 뽑았고, 그 아래 부서 기구가 노멘클라투라로 국가와 사회의 주요 인사를 관리했다.",
+     "en": "The standing body, elected by the Party Congress, that led the Communist Party of the Soviet Union between congresses; it elected the Politburo, the Secretariat and the General Secretary, and its departmental apparatus controlled key appointments in state and society through the nomenklatura."
+    },
+    "body": {
+     "ko": "볼셰비키의 독자 중앙위원회는 1912년 1월 프라하 협의회에서 레닌·지노비예프 등 7명으로 처음 선출되었고, 스탈린은 뒤에 추가로 들어갔다. 위원은 정위원과 표결권 없는 후보위원으로 나뉘었고, 규모는 레닌 시기 수십 명에서 1986년 제27차 당대회 때 정위원 307명·후보위원 170명으로 커졌다. 당 규약상 전원회의는 6개월에 한 번 이상 열렸다. 1919년부터 1952년까지는 조직국도 두었다. 모스크바 스타라야 광장의 중앙위원회 기구는 이념·국제·국방·경제 등 부서로 나뉘어(1989년 20개에서 10개로 축소) 지역 당 조직, 대기업, 국가 기관, 외교관, 창작 단체의 간부 임명을 노멘클라투라 제도로 통제했다.\n\n레닌 시기에는 실제 토론과 표결이 이루어졌으나, 스탈린 시기에는 1934년 선출된 위원 139명 가운데 98명이 1936~1940년에 총살될 만큼 힘을 잃었다. 스탈린 사후 다시 비중이 커져 1957년 6월 전원회의는 주석단 다수파의 흐루쇼프 해임을 뒤집었고(반당 그룹 사건), 1964년 10월 전원회의는 흐루쇼프를 물러나게 했다. 1991년 8월 쿠데타 뒤 활동이 정지되었고, 11월 당 금지와 함께 사라졌다.",
+     "en": "The Bolsheviks’ own Central Committee was first elected at the Prague Conference of January 1912 with seven members including Lenin and Zinoviev, Stalin being co-opted later. Members were full or candidate (non-voting); the body grew from a few dozen under Lenin to 307 full and 170 candidate members elected at the Twenty-Seventh Congress in 1986. Party rules required a plenum at least once every six months, and an Orgburo existed from 1919 to 1952. The Central Committee apparatus on Staraya Square in Moscow was divided into departments for ideology, international affairs, defence, the economy and so on (cut from 20 to 10 in 1989) and controlled appointments in regional party organisations, major enterprises, state bodies, the diplomatic service and the creative unions through the nomenklatura.\n\nUnder Lenin it debated and voted in earnest, but under Stalin it was broken: of 139 members elected in 1934, 98 were shot between 1936 and 1940. Its weight returned after Stalin’s death: the June 1957 plenum overturned the Presidium majority’s attempt to remove Khrushchev (the Anti-Party Group affair), and the October 1964 plenum removed him. Its activity was suspended after the August 1991 coup, and it disappeared with the ban on the party in November."
+    },
+    "aliases": {
+     "ko": [
+      "소련공산당 중앙위원회",
+      "소련 공산당 중앙위",
+      "전연방공산당(볼셰비키) 중앙위원회"
+     ],
+     "en": [
+      "CPSU Central Committee",
+      "Central Committee of the CPSU",
+      "CC CPSU",
+      "ЦК КПСС"
+     ]
+    },
+    "people": [
+     "lenin",
+     "stalin",
+     "khrushchev",
+     "molotov",
+     "malenkov",
+     "kaganovich",
+     "brezhnev",
+     "suslov"
+    ],
+    "events": [
+     "great-terror",
+     "beria-purge",
+     "twentieth-party-congress",
+     "anti-party-group",
+     "soviet-collapse"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The standing body, elected by the Party Congress, that led the Communist Party of the Soviet Union between congresses; it elected the Politburo, the Secretariat and the General Secretary, and its departmental apparatus controlled key appointments in state and society through the nomenklatura.",
+      "source": "https://en.wikipedia.org/wiki/Central_Committee_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History (Lenin, Stalin, Khrushchev eras); ru: Пленумы, Аппарат ЦК, XXVII съезд"
+     },
+     {
+      "field": "body",
+      "claim": "The Bolsheviks’ own Central Committee was first elected at the Prague Conference of January 1912 with seven members including Lenin and Zinoviev, Stalin being co-opted later. Members were full or candidate (non-voting); the body grew from a few dozen under Lenin to 307 full and 170 candidate members",
+      "source": "https://en.wikipedia.org/wiki/Central_Committee_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History (Lenin, Stalin, Khrushchev eras); ru: Пленумы, Аппарат ЦК, XXVII съезд"
+     },
+     {
+      "field": "period",
+      "claim": "1912–1991",
+      "source": "https://en.wikipedia.org/wiki/Central_Committee_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History (Lenin, Stalin, Khrushchev eras); ru: Пленумы, Аппарат ЦК, XXVII съезд"
+     },
+     {
+      "field": "startYear",
+      "claim": "1912",
+      "source": "https://en.wikipedia.org/wiki/Central_Committee_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History (Lenin, Stalin, Khrushchev eras); ru: Пленумы, Аппарат ЦК, XXVII съезд"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991",
+      "source": "https://en.wikipedia.org/wiki/Central_Committee_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History (Lenin, Stalin, Khrushchev eras); ru: Пленумы, Аппарат ЦК, XXVII съезд"
+     },
+     {
+      "field": "body",
+      "claim": "Plenums not less than once every 6 months; apparatus cut from 20 to 10 departments in 1989; 27th Congress elected 307 members and 170 candidates; Orgburo 1919–1952.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%B8%D1%82%D0%B5%D1%82_%D0%9A%D0%9F%D0%A1%D0%A1",
+      "locator": "Пленумы; Аппарат ЦК; Состав"
+     },
+     {
+      "field": "body",
+      "claim": "Seven members were elected at the Prague Conference, including Lenin and Zinoviev; Stalin was subsequently co-opted.",
+      "source": "https://en.wikipedia.org/wiki/Prague_Party_Conference",
+      "locator": "Central Committee"
+     }
+    ]
+   }
+  },
+  {
+   "id": "politburo-of-the-cpsu",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Politburo_of_the_Communist_Party_of_the_Soviet_Union",
+    "https://en.wikipedia.org/wiki/Presidium_of_the_Central_Committee_of_the_Communist_Party_of_the_Soviet_Union"
+   ],
+   "fields": {
+    "term": {
+     "ko": "소련 공산당 정치국",
+     "en": "Politburo of the CPSU Central Committee"
+    },
+    "category": "party-state",
+    "period": {
+     "ko": "1919–1952, 1966–1991",
+     "en": "1919–1952, 1966–1991"
+    },
+    "startYear": 1919,
+    "endYear": 1991,
+    "definition": {
+     "ko": "소련 공산당 중앙위원회가 선출한 최고 정책 결정 기관. 1919년 3월 제8차 당대회가 상설 기구로 설치했고, 1952년부터 1966년까지는 주석단이라 불렸다.",
+     "en": "The supreme policy-making body elected by the Central Committee of the Communist Party of the Soviet Union, set up as a permanent organ by the Eighth Congress in March 1919 and called the Presidium from 1952 to 1966."
+    },
+    "body": {
+     "ko": "1917년 10월 혁명을 지휘하려고 임시 정치국을 둔 적이 있으나, 상설 정치국은 1919년 3월 25일 제8차 당대회 결정으로 레닌·트로츠키·스탈린·카메네프·크레스틴스키 5명으로 출범했다. 중앙위원회 전체가 논의하기에는 급한 문제를 다루는 기구였지만 곧 실질적 최고 권력 기관이 되었다. 정위원과 후보위원으로 이루어졌고, 대개 매주 회의를 열어 국가 정책을 정하고 지령을 내리며 인사를 승인했다.\n\n1952년 10월 제19차 당대회에서 이름이 주석단으로 바뀌었고, 1966년 제23차 당대회에서 다시 정치국이 되었다. 브레즈네프 시기 정치국은 1979년 아프가니스탄 개입 같은 결정을 내렸다. 1990년 제28차 당대회는 각 공화국 공산당 제1서기를 정치국에 넣어 처음으로 모든 공화국이 대표를 두게 했으나, 정치국은 국정 결정 기관으로서의 지위를 잃었다. 1991년 말 당이 금지되면서 해체되었다.",
+     "en": "A temporary Politburo had been created in October 1917 to direct the revolution, but the permanent Politburo was set up by the Eighth Congress on 25 March 1919 with five members: Lenin, Trotsky, Stalin, Kamenev and Krestinsky. Intended to handle questions too urgent to await the full Central Committee, it soon became the real seat of power. Made up of full and candidate members, it usually met weekly to formulate state policy, issue directives and ratify appointments.\n\nThe Nineteenth Congress renamed it the Presidium in October 1952, and the Twenty-Third Congress restored the name Politburo in 1966. Under Brezhnev it took decisions such as the 1979 intervention in Afghanistan. The Twenty-Eighth Congress in 1990 brought in the first secretaries of the republican parties, giving every republic a representative for the first time, but the Politburo was no longer the centre of state decision-making. It was disbanded when the party was banned in late 1991."
+    },
+    "aliases": {
+     "ko": [
+      "소련공산당 정치국",
+      "소련 공산당 중앙위원회 정치국"
+     ],
+     "en": [
+      "CPSU Politburo",
+      "Politburo of the CPSU",
+      "Soviet Politburo",
+      "Political Bureau of the CPSU Central Committee",
+      "Politburo of the Central Committee of the CPSU",
+      "Политбюро ЦК КПСС"
+     ]
+    },
+    "people": [
+     "lenin",
+     "trotsky",
+     "stalin",
+     "kamenev",
+     "krestinsky",
+     "zinoviev",
+     "brezhnev",
+     "gorbachev"
+    ],
+    "events": [
+     "succession-struggle",
+     "great-terror",
+     "anti-party-group",
+     "afghanistan-war",
+     "perestroika",
+     "soviet-collapse"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The supreme policy-making body elected by the Central Committee of the Communist Party of the Soviet Union, set up as a permanent organ by the Eighth Congress in March 1919 and called the Presidium from 1952 to 1966.",
+      "source": "https://en.wikipedia.org/wiki/Politburo_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History; Duties and responsibilities; 28th Congress"
+     },
+     {
+      "field": "body",
+      "claim": "A temporary Politburo had been created in October 1917 to direct the revolution, but the permanent Politburo was set up by the Eighth Congress on 25 March 1919 with five members: Lenin, Trotsky, Stalin, Kamenev and Krestinsky. Intended to handle questions too urgent to await the full Central Committ",
+      "source": "https://en.wikipedia.org/wiki/Politburo_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History; Duties and responsibilities; 28th Congress"
+     },
+     {
+      "field": "period",
+      "claim": "1919–1952, 1966–1991",
+      "source": "https://en.wikipedia.org/wiki/Politburo_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History; Duties and responsibilities; 28th Congress"
+     },
+     {
+      "field": "startYear",
+      "claim": "1919",
+      "source": "https://en.wikipedia.org/wiki/Politburo_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History; Duties and responsibilities; 28th Congress"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991",
+      "source": "https://en.wikipedia.org/wiki/Politburo_of_the_Communist_Party_of_the_Soviet_Union",
+      "locator": "lead; History; Duties and responsibilities; 28th Congress"
+     }
+    ]
+   }
+  },
+  {
+   "id": "red-army",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Red_Army",
+    "https://en.wikipedia.org/wiki/Great_Purge",
+    "https://en.wikipedia.org/wiki/Leon_Trotsky",
+    "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B1%D0%BE%D1%87%D0%B5-%D0%BA%D1%80%D0%B5%D1%81%D1%82%D1%8C%D1%8F%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F_%D0%B0%D1%80%D0%BC%D0%B8%D1%8F"
+   ],
+   "fields": {
+    "term": {
+     "ko": "붉은 군대",
+     "en": "Red Army"
+    },
+    "category": "party-state",
+    "period": {
+     "ko": "1918–1946",
+     "en": "1918–1946"
+    },
+    "startYear": 1918,
+    "endYear": 1946,
+    "definition": {
+     "ko": "1918년 1월 28일(구력 1월 15일) 인민위원회의의 법령으로 창설된 소비에트 러시아와 소련의 군대. 정식 이름은 노농 붉은 군대(RKKA)이며, 내전과 대조국전쟁을 치른 뒤 1946년 2월 25일 소련군으로 이름을 바꾸었다.",
+     "en": "The army of Soviet Russia and then the Soviet Union, the Workers’ and Peasants’ Red Army (RKKA), founded by decree of the Council of People’s Commissars on 28 January 1918; it fought the civil war and the Great Patriotic War and was renamed the Soviet Army on 25 February 1946."
+    },
+    "body": {
+     "ko": "1918년 3월부터 1925년 1월까지 육해군 인민위원이자 혁명군사회의 의장이었던 레프 트로츠키가 자원병 적위대를 징병제 군대로 키웠다. 그는 옛 제정 장교를 「군사 전문가」로 끌어들였고(1918년 장교의 약 4분의 3), 그들의 충성을 감시하도록 정치위원(코미사르)을 나란히 두었다. 1920년 무렵 병력은 약 650만 명에 이르렀고 내전에서 이겼다. 대규모 입대와 독일군과의 첫 전투가 있었던 1918년 2월 23일은 뒤에 붉은 군대의 날로 기념되었다.\n\n1937년 6월 비밀 군사법정이 미하일 투하쳅스키를 비롯한 지휘관들을 처단했고, 이어진 숙청에서 원수 다섯 명 가운데 세 명과 군·군단 사령관 대부분이 제거되었다. 1941년 6월 독일의 침공으로 시작된 대조국전쟁에서 약 3,440만 명을 동원해 전사·실종자 1,100만 명 이상을 잃었고, 1945년 5월 베를린을 점령했다. 1946년 2월 소련군으로 개칭되었다.",
+     "en": "Leon Trotsky, People’s Commissar for Military and Naval Affairs from March 1918 to January 1925 and chairman of the Revolutionary Military Council, built the army out of the volunteer Red Guards into a conscript force. He recruited former tsarist officers as “military specialists”—about three-quarters of its officers in 1918—and placed political commissars beside them to watch their loyalty. By 1920 the army numbered some 6.5 million men and had won the civil war. 23 February 1918, the first day of mass enlistment and of fighting against the German army, was later kept as Red Army Day.\n\nIn June 1937 a secret military tribunal condemned Mikhail Tukhachevsky and a group of other commanders, and in the purge that followed three of the five marshals and most army and corps commanders were removed. In the Great Patriotic War that began with the German invasion of June 1941 it mobilised about 34.4 million men and lost more than 11 million dead and missing, before taking Berlin in May 1945. In February 1946 it was renamed the Soviet Army."
+    },
+    "aliases": {
+     "ko": [
+      "노농 붉은 군대",
+      "노농적군",
+      "붉은군대"
+     ],
+     "en": [
+      "Workers' and Peasants' Red Army",
+      "RKKA",
+      "РККА"
+     ]
+    },
+    "people": [
+     "trotsky",
+     "ioakim-vatsetis",
+     "sergey-kamenev",
+     "frunze",
+     "tukhachevsky",
+     "voroshilov",
+     "semyon-budyonny",
+     "zhukov"
+    ],
+    "events": [
+     "civil-war",
+     "soviet-polish-war",
+     "great-terror",
+     "winter-war",
+     "great-patriotic-war",
+     "stalingrad"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The army of Soviet Russia and then the Soviet Union, the Workers’ and Peasants’ Red Army (RKKA), founded by decree of the Council of People’s Commissars on 28 January 1918; it fought the civil war and the Great Patriotic War and was renamed the Soviet Army on 25 February 1946.",
+      "source": "https://en.wikipedia.org/wiki/Red_Army",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "body",
+      "claim": "Leon Trotsky, People’s Commissar for Military and Naval Affairs from March 1918 to January 1925 and chairman of the Revolutionary Military Council, built the army out of the volunteer Red Guards into a conscript force. He recruited former tsarist officers as “military specialists”—about three-quarte",
+      "source": "https://en.wikipedia.org/wiki/Red_Army",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "body",
+      "claim": "People's Commissar for Military and Naval Affairs from 14 March 1918 to 12 January 1925; chairman of the Revolutionary Military Council 1918–1925",
+      "source": "https://en.wikipedia.org/wiki/Leon_Trotsky",
+      "locator": "infobox; Founding of the Red Army"
+     },
+     {
+      "field": "body",
+      "claim": "A secret military tribunal of a group of Red Army commanders, including Mikhail Tukhachevsky, in June 1937; the purge removed three of five marshals",
+      "source": "https://en.wikipedia.org/wiki/Great_Purge",
+      "locator": "Purge of the army"
+     },
+     {
+      "field": "period",
+      "claim": "1918–1946",
+      "source": "https://en.wikipedia.org/wiki/Red_Army",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "startYear",
+      "claim": "1918",
+      "source": "https://en.wikipedia.org/wiki/Red_Army",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "endYear",
+      "claim": "1946",
+      "source": "https://en.wikipedia.org/wiki/Red_Army",
+      "locator": "lead; History; Organization"
+     }
+    ]
+   }
+  },
+  {
+   "id": "komsomol",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Komsomol",
+    "https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D1%81%D0%BE%D1%8E%D0%B7%D0%BD%D1%8B%D0%B9_%D0%BB%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D1%8E%D0%B7_%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D0%B8"
+   ],
+   "fields": {
+    "term": {
+     "ko": "콤소몰",
+     "en": "Komsomol"
+    },
+    "category": "party-state",
+    "period": {
+     "ko": "1918–1991",
+     "en": "1918–1991"
+    },
+    "startYear": 1918,
+    "endYear": 1991,
+    "definition": {
+     "ko": "1918년 10월 29일 창립되어 1926년부터 전연방 레닌 공산주의 청년동맹(VLKSM)이라 불린 소련공산당의 청년 조직. 대체로 14~28세 청년을 당의 조력자이자 예비대로 조직했고, 1991년 9월 스스로 해산했다.",
+     "en": "The youth organisation of the Communist Party of the Soviet Union, founded on 29 October 1918 and known from 1926 as the All-Union Leninist Young Communist League (VLKSM); it organised young people aged roughly 14 to 28 as the party’s helper and reserve until it dissolved itself in September 1991."
+    },
+    "body": {
+     "ko": "모스크바의 제1차 대회에서 러시아 공산주의 청년동맹(RKSM)으로 출발해 1924년 레닌의 이름을 붙였고, 소련 결성 뒤인 1926년 3월 22일 전연방 레닌 공산주의 청년동맹이 되었다. 「당의 조력자이자 예비대」로서 당원을 길러 냈고 어린이 조직 피오네르를 지도했으며, 전시 동원과 흐루쇼프의 처녀지 개간, 바이칼-아무르 철도 건설 같은 대사업에 청년을 동원했다. 동맹원은 1938년 440만 명에서 1977년 3,600만 명 이상으로 늘었다.\n\n1937~1939년 숙청에서 초기 지도자 다수가 체포되었고, 1929~1938년 제1서기 알렉산드르 코사레프는 1939년 총살되었다. 뒤의 제1서기 알렉산드르 셸레핀과 블라디미르 세미차스트니는 KGB 의장으로 옮겨 갔다. 1991년 8월 쿠데타가 실패한 뒤 9월 27~28일 제22차 임시대회가 조직의 해산을 결정했다.",
+     "en": "Founded at its First Congress in Moscow as the Russian Communist Union of Youth (RKSM), it added Lenin’s name in 1924 and became the All-Union Leninist Young Communist League on 22 March 1926, after the formation of the USSR. Called the party’s “helper and reserve”, it supplied the party with new members, ran the Young Pioneers for children, and mobilised young people for the war effort and for great projects such as Khrushchev’s Virgin Lands campaign and the Baikal–Amur Mainline. Its membership grew from 4.4 million in 1938 to over 36 million by 1977.\n\nIn the purges of 1937–1939 many of its early leaders were arrested, and Aleksandr Kosarev, first secretary from 1929 to 1938, was shot in 1939. Later first secretaries such as Aleksandr Shelepin and Vladimir Semichastny went on to head the KGB. After the collapse of the August 1991 coup, the 22nd Extraordinary Congress of 27–28 September 1991 dissolved the organisation."
+    },
+    "aliases": {
+     "ko": [
+      "전연방 레닌 공산주의 청년동맹",
+      "레닌 공산주의 청년동맹"
+     ],
+     "en": [
+      "All-Union Leninist Young Communist League",
+      "Leninist Young Communist League",
+      "VLKSM",
+      "ВЛКСМ"
+     ]
+    },
+    "people": [
+     "aleksandr-kosarev",
+     "shelepin",
+     "semichastny",
+     "nikolai-ostrovsky",
+     "zoya-kosmodemyanskaya"
+    ],
+    "events": [
+     "great-terror",
+     "great-patriotic-war",
+     "soviet-collapse"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The youth organisation of the Communist Party of the Soviet Union, founded on 29 October 1918 and known from 1926 as the All-Union Leninist Young Communist League (VLKSM); it organised young people aged roughly 14 to 28 as the party’s helper and reserve until it dissolved itself in September 1991.",
+      "source": "https://en.wikipedia.org/wiki/Komsomol",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "body",
+      "claim": "Founded at its First Congress in Moscow as the Russian Communist Union of Youth (RKSM), it added Lenin’s name in 1924 and became the All-Union Leninist Young Communist League on 22 March 1926, after the formation of the USSR. Called the party’s “helper and reserve”, it supplied the party with new me",
+      "source": "https://en.wikipedia.org/wiki/Komsomol",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "body",
+      "claim": "Renamed РЛКСМ in 1924, ВЛКСМ on 22 March 1926; over 36 million members aged 14–28 by 1977; 4.4 million in 1938; Kosarev executed 1939; dissolved at the XXII Extraordinary Congress, 27–28 September 1991",
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%B5%D1%81%D0%BE%D1%8E%D0%B7%D0%BD%D1%8B%D0%B9_%D0%BB%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D1%8E%D0%B7_%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D0%B8",
+      "locator": "История; Численность; Репрессии; Роспуск"
+     },
+     {
+      "field": "period",
+      "claim": "1918–1991",
+      "source": "https://en.wikipedia.org/wiki/Komsomol",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "startYear",
+      "claim": "1918",
+      "source": "https://en.wikipedia.org/wiki/Komsomol",
+      "locator": "lead; History; Organization"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991",
+      "source": "https://en.wikipedia.org/wiki/Komsomol",
+      "locator": "lead; History; Organization"
+     }
+    ]
+   }
+  },
+  {
+   "id": "kgb",
+   "sources": [
+    "https://en.wikipedia.org/wiki/KGB",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B8%D1%82%D0%B5%D1%82_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A1%D0%A1%D0%A1%D0%A0"
+   ],
+   "fields": {
+    "term": {
+     "ko": "국가보안위원회(KGB)",
+     "en": "Committee for State Security (KGB)"
+    },
+    "category": "repression",
+    "period": {
+     "ko": "1954–1991",
+     "en": "1954–1991"
+    },
+    "startYear": 1954,
+    "endYear": 1991,
+    "definition": {
+     "ko": "베리야가 몰락한 뒤 1954년 3월 13일 내무부에서 갈라져 나와 1991년 12월까지 존속한 소련의 보안·정보기관. 해외 정보, 방첩, 정치 사찰과 국경경비대를 한데 맡았다.",
+     "en": "The Soviet Union’s security and intelligence agency from 13 March 1954 to December 1991, created out of the Ministry of Internal Affairs after Beria’s fall; it combined foreign intelligence, counter-intelligence, political policing and the border troops."
+    },
+    "body": {
+     "ko": "체카에서 GPU·OGPU, NKVD, MGB로 이어지는 계보를 이었고, 처음에는 각료회의 소속 위원회였다가 1978년 정식 국가위원회가 되었다. 의장은 이반 세로프(1954~1958), 알렉산드르 셸레핀(1958~1961), 블라디미르 세미차스트니(1961~1967), 유리 안드로포프(1967~1982), 비탈리 페도르추크(1982), 빅토르 체브리코프(1982~1988), 블라디미르 크류치코프(1988~1991)로 이어졌다. 제1총국이 해외 정보를, 제2총국이 방첩을 맡았고, 1967년 안드로포프 아래 신설된 제5국은 반체제 인사와 종교·민족 운동을 감시·탄압했으며 1989년 무렵 Z국으로 개칭되었다.\n\n크류치코프는 1991년 8월 미하일 고르바초프에 맞선 쿠데타의 주도자 가운데 하나였다. 쿠데타가 실패한 뒤 그는 체포되었고, 바딤 바카틴이 의장을 맡아 기관을 해체했다. 1991년 가을 중앙정보국·공화국간보안국·국경경비위원회로 나뉘었고, 12월 3일 KGB는 정식으로 폐지되었다. 그 기능은 러시아의 대외정보국(SVR)과 뒤에 연방보안국(FSB)이 되는 보안기관으로 넘어갔다.",
+     "en": "Its line of descent runs from the Cheka through the GPU/OGPU, the NKVD and the MGB; it was set up as a committee attached to the Council of Ministers and became a full state committee in 1978. Its chairmen were Ivan Serov (1954–1958), Aleksandr Shelepin (1958–1961), Vladimir Semichastny (1961–1967), Yuri Andropov (1967–1982), Vitaly Fedorchuk (1982), Viktor Chebrikov (1982–1988) and Vladimir Kryuchkov (1988–1991). The First Chief Directorate ran foreign intelligence and the Second counter-intelligence, and the Fifth Directorate, set up under Andropov in 1967, fought dissidents and religious and nationalist movements, renamed Directorate Z by 1989.\n\nKryuchkov was one of the leaders of the August 1991 coup against Mikhail Gorbachev; after its failure he was arrested and Vadim Bakatin took over to dismantle the agency. In the autumn of 1991 it was split into the Central Intelligence Service, the Inter-Republican Security Service and the Committee for the Protection of the State Border, and on 3 December 1991 the KGB was formally abolished. Its functions passed to the Russian SVR and to the security service that became the FSB."
+    },
+    "aliases": {
+     "ko": [
+      "KGB",
+      "카게베",
+      "소련 국가보안위원회"
+     ],
+     "en": [
+      "KGB",
+      "КГБ",
+      "Committee for State Security",
+      "KGB of the USSR"
+     ]
+    },
+    "people": [
+     "serov",
+     "shelepin",
+     "semichastny",
+     "andropov",
+     "chebrikov",
+     "kryuchkov",
+     "vadim-bakatin",
+     "sakharov"
+    ],
+    "events": [
+     "beria-purge",
+     "prague-spring",
+     "afghanistan-war",
+     "soviet-collapse"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The Soviet Union’s security and intelligence agency from 13 March 1954 to December 1991, created out of the Ministry of Internal Affairs after Beria’s fall; it combined foreign intelligence, counter-intelligence, political policing and the border troops.",
+      "source": "https://en.wikipedia.org/wiki/KGB",
+      "locator": "lead; History; Chairmen; Organization; 1991 coup and dissolution"
+     },
+     {
+      "field": "body",
+      "claim": "Its line of descent runs from the Cheka through the GPU/OGPU, the NKVD and the MGB; it was set up as a committee attached to the Council of Ministers and became a full state committee in 1978. Its chairmen were Ivan Serov (1954–1958), Aleksandr Shelepin (1958–1961), Vladimir Semichastny (1961–1967),",
+      "source": "https://en.wikipedia.org/wiki/KGB",
+      "locator": "lead; History; Chairmen; Organization; 1991 coup and dissolution"
+     },
+     {
+      "field": "body",
+      "claim": "Established 13 March 1954 under the Council of Ministers; state committee status in 1978; Fifth Directorate created 1967, renamed Directorate Z by 1989; split into Inter-republican Security Service, Central Intelligence Service and Committee for Border Protection; abolished 3 December 1991",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B8%D1%82%D0%B5%D1%82_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9_%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D0%B8_%D0%A1%D0%A1%D0%A1%D0%A0",
+      "locator": "История; Структура; Упразднение"
+     },
+     {
+      "field": "period",
+      "claim": "1954–1991",
+      "source": "https://en.wikipedia.org/wiki/KGB",
+      "locator": "lead; History; Chairmen; Organization; 1991 coup and dissolution"
+     },
+     {
+      "field": "startYear",
+      "claim": "1954",
+      "source": "https://en.wikipedia.org/wiki/KGB",
+      "locator": "lead; History; Chairmen; Organization; 1991 coup and dissolution"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991",
+      "source": "https://en.wikipedia.org/wiki/KGB",
+      "locator": "lead; History; Chairmen; Organization; 1991 coup and dissolution"
+     }
+    ]
+   }
+  },
+  {
+   "id": "nkvd",
+   "sources": [
+    "https://en.wikipedia.org/wiki/NKVD",
+    "https://en.wikipedia.org/wiki/Katyn_massacre",
+    "https://en.wikipedia.org/wiki/Great_Purge",
+    "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B0%D1%82_%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D1%85_%D0%B4%D0%B5%D0%BB_%D0%A0%D0%A1%D0%A4%D0%A1%D0%A0",
+    "https://en.wikipedia.org/wiki/Deportation_of_Koreans_in_the_Soviet_Union"
+   ],
+   "fields": {
+    "term": {
+     "ko": "내무인민위원부(NKVD)",
+     "en": "People's Commissariat for Internal Affairs (NKVD)"
+    },
+    "category": "repression",
+    "period": {
+     "ko": "1934–1946",
+     "en": "1934–1946"
+    },
+    "startYear": 1934,
+    "endYear": 1946,
+    "definition": {
+     "ko": "1934년 7월 10일 합동국가정치보안부(OGPU)를 흡수해 만든 소련의 전연방 내무인민위원부. 정치 경찰과 일반 경찰, 국경·국내 경비대, 수용소 체계를 한데 거느리며 1937~1938년 대숙청과 대규모 추방을 집행했고, 1946년 내무부(MVD)로 개칭되었다.",
+     "en": "The all-union People's Commissariat for Internal Affairs of the USSR, created on 10 July 1934 by absorbing the Joint State Political Directorate (OGPU). It combined the political police, the ordinary police, border and internal troops and the camp system, carried out the Great Purge of 1937–1938 and mass deportations, and was renamed the Ministry of Internal Affairs (MVD) in 1946."
+    },
+    "body": {
+     "ko": "같은 이름의 러시아 공화국 내무인민위원부는 1917년 10월 혁명 직후 세워져 민경과 지방 소비에트 행정을 맡았고 1930년 12월 15일 폐지되었다. 1934년 새로 만든 전연방 NKVD는 OGPU를 국가보안총국(GUGB)으로 편입하고 굴라크를 넘겨받았다. 겐리흐 야고다(1934~1936), 니콜라이 예조프(1936~1938), 라브렌티 베리야(1938~1945)가 차례로 이끌었고, 국가보안 부문은 1941년 2월 국가보안인민위원부(NKGB)로 떨어졌다가 7월 다시 합쳐졌으며 1943년 4월 다시 분리되었다.\n\n예조프 시기의 대숙청에서 NKVD는 작전명령 제00447호와 민족 작전을 집행했고, 1937~1938년에만 적어도 130만 명이 체포되고 68만 1,692명이 총살되었다. 트로이카 같은 재판 밖 기구가 판결을 내렸다. 1937년 극동의 조선인 강제 이주, 1940년 카틴 숲 등에서의 폴란드 포로 약 2만 2,000명 학살, 1940~1941년 발트 3국과 1944년 체첸·인구시·크림 타타르 등 민족 단위 추방도 NKVD가 수행했다. 1946년 3월 모든 인민위원부가 부(部)로 바뀌면서 NKVD는 내무부(MVD), NKGB는 국가보안부(MGB)가 되었다.",
+     "en": "An RSFSR People's Commissariat of the same name, set up right after the October Revolution of 1917, ran the militia and supervised local soviets until it was abolished on 15 December 1930. The all-union NKVD of 1934 took in the OGPU as its Main Directorate of State Security (GUGB) and inherited the Gulag. It was headed in turn by Genrikh Yagoda (1934–1936), Nikolai Yezhov (1936–1938) and Lavrentiy Beria (1938–1945); its state-security arm was split off as the NKGB in February 1941, merged back in July, and separated again in April 1943.\n\nIn the Great Purge under Yezhov the NKVD carried out Order No. 00447 and the national operations: in 1937 and 1938 alone at least 1.3 million people were arrested and 681,692 shot, with sentences passed by extrajudicial bodies such as the troikas. The NKVD also deported the Koreans of the Soviet Far East in 1937, killed some 22,000 Polish prisoners at Katyn and elsewhere in 1940, and carried out the deportations from the Baltic states in 1940–1941 and of whole peoples such as the Chechens, Ingush and Crimean Tatars in 1944. When all People's Commissariats became ministries in March 1946, the NKVD became the MVD and the NKGB the MGB."
+    },
+    "aliases": {
+     "ko": [
+      "NKVD",
+      "엔카베데",
+      "내무인민위원부",
+      "소련 내무인민위원부",
+      "소련 NKVD"
+     ],
+     "en": [
+      "NKVD",
+      "NKVD of the USSR",
+      "Narkomvnudel",
+      "Narodnyy komissariat vnutrennikh del",
+      "People's Commissariat of Internal Affairs"
+     ]
+    },
+    "people": [
+     "yagoda",
+     "yezhov",
+     "beria",
+     "stalin",
+     "merkulov",
+     "serov"
+    ],
+    "events": [
+     "great-terror",
+     "baltic-soviet-occupation-1940-1941",
+     "nazi-soviet-pact",
+     "great-patriotic-war"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The all-union People's Commissariat for Internal Affairs of the USSR, created on 10 July 1934 by absorbing the Joint State Political Directorate (OGPU). It combined the political police, the ordinary police, border and internal troops and the camp system, carried out the Great Purge of 1937–1938 and",
+      "source": "https://en.wikipedia.org/wiki/NKVD",
+      "locator": "lead; History; Leadership; Great Purge; Renaming 1946"
+     },
+     {
+      "field": "body",
+      "claim": "An RSFSR People's Commissariat of the same name, set up right after the October Revolution of 1917, ran the militia and supervised local soviets until it was abolished on 15 December 1930. The all-union NKVD of 1934 took in the OGPU as its Main Directorate of State Security (GUGB) and inherited the ",
+      "source": "https://en.wikipedia.org/wiki/NKVD",
+      "locator": "lead; History; Leadership; Great Purge; Renaming 1946"
+     },
+     {
+      "field": "period",
+      "claim": "1934–1946",
+      "source": "https://en.wikipedia.org/wiki/NKVD",
+      "locator": "lead; History; Leadership; Great Purge; Renaming 1946"
+     },
+     {
+      "field": "startYear",
+      "claim": "1934",
+      "source": "https://en.wikipedia.org/wiki/NKVD",
+      "locator": "lead; History; Leadership; Great Purge; Renaming 1946"
+     },
+     {
+      "field": "endYear",
+      "claim": "1946",
+      "source": "https://en.wikipedia.org/wiki/NKVD",
+      "locator": "lead; History; Leadership; Great Purge; Renaming 1946"
+     },
+     {
+      "field": "body",
+      "claim": "RSFSR NKVD founded 26 October (8 November) 1917, abolished 15 December 1930 by resolution of the USSR Central Executive Committee and Council of People's Commissars.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B0%D1%82_%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D1%85_%D0%B4%D0%B5%D0%BB_%D0%A0%D0%A1%D0%A4%D0%A1%D0%A0",
+      "locator": "lead; История"
+     },
+     {
+      "field": "body",
+      "claim": "About 22,000 Polish officers and other prisoners were executed by the NKVD in April–May 1940 (Katyn massacre).",
+      "source": "https://en.wikipedia.org/wiki/Katyn_massacre",
+      "locator": "lead"
+     },
+     {
+      "field": "body",
+      "claim": "In 1937 the NKVD deported about 172,000 Koreans from the Soviet Far East to Central Asia.",
+      "source": "https://en.wikipedia.org/wiki/Deportation_of_Koreans_in_the_Soviet_Union",
+      "locator": "lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "ogpu",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Joint_State_Political_Directorate",
+    "https://en.wikipedia.org/wiki/State_Political_Directorate",
+    "https://en.wikipedia.org/wiki/Gulag",
+    "https://en.wikipedia.org/wiki/Shakhty_Trial"
+   ],
+   "fields": {
+    "term": {
+     "ko": "국가정치보안부(GPU·OGPU)",
+     "en": "State Political Directorate (GPU/OGPU)"
+    },
+    "category": "repression",
+    "period": {
+     "ko": "1922–1934",
+     "en": "1922–1934"
+    },
+    "startYear": 1922,
+    "endYear": 1934,
+    "definition": {
+     "ko": "1922년 2월 6일 체카를 대신해 러시아 공화국 내무인민위원부 산하에 만든 국가정치보안부(GPU)와, 1923년 11월 15일 이를 소련 인민위원회의 직속으로 바꾼 합동국가정치보안부(OGPU). 1934년 7월 전연방 NKVD에 흡수될 때까지 소련의 정치 경찰이었다.",
+     "en": "The State Political Directorate (GPU), set up on 6 February 1922 under the RSFSR People's Commissariat for Internal Affairs to replace the Cheka, and the Joint State Political Directorate (OGPU) into which it was turned on 15 November 1923 under the Council of People's Commissars of the USSR; the Soviet political police until it was absorbed into the all-union NKVD in July 1934."
+    },
+    "body": {
+     "ko": "GPU는 체카보다 권한이 좁아 처음에는 혐의자를 마음대로 총살할 수 없고 법정에 넘겨야 했지만, 곧 재판 밖 처벌 권한을 되찾았다. 소련이 성립하자 전연방 기구인 OGPU로 바뀌었다. 펠릭스 제르진스키가 1926년 죽을 때까지, 이어 뱌체슬라프 멘진스키가 1934년까지 이끌었고, 부의장 겐리흐 야고다가 실무를 쥐었다. 본부는 모스크바 루뱐카에 있었다.\n\n1928년 3월 샤흐티 사건으로 스탈린 시기 공개 재판의 막을 열었고, 제1차 5개년 계획 동안 특별 트로이카를 통해 탈쿨라크화를 집행하며 수많은 농민을 유형·수용소·총살로 보냈다. 솔롭키 수용소를 운영했고 1930년 수용소 관리 기구를 세워 굴라크 체계를 만들었다. 1934년 7월 10일 OGPU는 새 전연방 NKVD의 국가보안총국(GUGB)이 되었다.",
+     "en": "The GPU had narrower powers than the Cheka and at first could not shoot suspects at will but had to bring them before judges, though it soon regained extrajudicial powers. With the formation of the Soviet Union it became the all-union OGPU. Felix Dzerzhinsky headed it until his death in 1926 and Vyacheslav Menzhinsky until 1934, with his deputy Genrikh Yagoda running day-to-day work; its headquarters was the Lubyanka in Moscow.\n\nThe Shakhty trial of March 1928 opened the series of Stalin-era show trials, and during the First Five-Year Plan the OGPU enforced dekulakization through special troikas, sending large numbers of peasants into exile, camps or execution. It ran the Solovki camp and in 1930 set up the camp administration that became the Gulag. On 10 July 1934 the OGPU became the Main Directorate of State Security (GUGB) of the new all-union NKVD."
+    },
+    "aliases": {
+     "ko": [
+      "GPU",
+      "OGPU",
+      "게페우",
+      "오게페우",
+      "국가정치보안부",
+      "합동국가정치보안부"
+     ],
+     "en": [
+      "GPU",
+      "OGPU",
+      "State Political Directorate",
+      "Joint State Political Directorate",
+      "Gosudarstvennoye politicheskoye upravleniye",
+      "Obyedinyonnoye gosudarstvennoye politicheskoye upravleniye"
+     ]
+    },
+    "people": [
+     "dzerzhinsky",
+     "menzhinsky",
+     "yagoda",
+     "stalin"
+    ],
+    "events": [
+     "holodomor"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The State Political Directorate (GPU), set up on 6 February 1922 under the RSFSR People's Commissariat for Internal Affairs to replace the Cheka, and the Joint State Political Directorate (OGPU) into which it was turned on 15 November 1923 under the Council of People's Commissars of the USSR; the So",
+      "source": "https://en.wikipedia.org/wiki/Joint_State_Political_Directorate",
+      "locator": "lead; History; Dekulakization; Shakhty trial; Gulag; Dissolution"
+     },
+     {
+      "field": "body",
+      "claim": "The GPU had narrower powers than the Cheka and at first could not shoot suspects at will but had to bring them before judges, though it soon regained extrajudicial powers. With the formation of the Soviet Union it became the all-union OGPU. Felix Dzerzhinsky headed it until his death in 1926 and Vya",
+      "source": "https://en.wikipedia.org/wiki/Joint_State_Political_Directorate",
+      "locator": "lead; History; Dekulakization; Shakhty trial; Gulag; Dissolution"
+     },
+     {
+      "field": "period",
+      "claim": "1922–1934",
+      "source": "https://en.wikipedia.org/wiki/Joint_State_Political_Directorate",
+      "locator": "lead; History; Dekulakization; Shakhty trial; Gulag; Dissolution"
+     },
+     {
+      "field": "startYear",
+      "claim": "1922",
+      "source": "https://en.wikipedia.org/wiki/Joint_State_Political_Directorate",
+      "locator": "lead; History; Dekulakization; Shakhty trial; Gulag; Dissolution"
+     },
+     {
+      "field": "endYear",
+      "claim": "1934",
+      "source": "https://en.wikipedia.org/wiki/Joint_State_Political_Directorate",
+      "locator": "lead; History; Dekulakization; Shakhty trial; Gulag; Dissolution"
+     },
+     {
+      "field": "definition",
+      "claim": "The GPU operated from 6 February 1922 to 15 November 1923 under the RSFSR NKVD, headed by Felix Dzerzhinsky, and did not have the right to shoot suspected counter-revolutionaries at will.",
+      "source": "https://en.wikipedia.org/wiki/State_Political_Directorate",
+      "locator": "lead; History"
+     },
+     {
+      "field": "body",
+      "claim": "The Gulag camp administration was established under the OGPU in 1930.",
+      "source": "https://en.wikipedia.org/wiki/Gulag",
+      "locator": "History"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mgb",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ministry_of_State_Security_(Soviet_Union)",
+    "https://en.wikipedia.org/wiki/Jewish_Anti-Fascist_Committee",
+    "https://en.wikipedia.org/wiki/Leningrad_affair",
+    "https://en.wikipedia.org/wiki/Doctors%27_plot",
+    "https://en.wikipedia.org/wiki/KGB"
+   ],
+   "fields": {
+    "term": {
+     "ko": "국가보안부(MGB)",
+     "en": "Ministry of State Security (MGB)"
+    },
+    "category": "repression",
+    "period": {
+     "ko": "1946–1953",
+     "en": "1946–1953"
+    },
+    "startYear": 1946,
+    "endYear": 1953,
+    "definition": {
+     "ko": "1946년 3월 15일 모든 인민위원부가 부로 바뀔 때 국가보안인민위원부(NKGB)가 이름을 바꾸어 생긴 소련의 국가보안 기관. 스탈린 만년의 정치 사건을 조작·수사했고, 1953년 3월 내무부(MVD)에 합쳐졌다.",
+     "en": "The Soviet state-security ministry formed on 15 March 1946, when all People's Commissariats became ministries and the People's Commissariat for State Security (NKGB) was renamed. It fabricated and investigated the political cases of Stalin's last years and was merged into the Ministry of Internal Affairs (MVD) in March 1953."
+    },
+    "body": {
+     "ko": "첫 장관 브세볼로드 메르쿨로프는 1946년 5월 빅토르 아바쿠모프로 교체되었다. 아바쿠모프는 1951년 7월 체포되었고, 세르게이 오골초프의 대행을 거쳐 8월 세묜 이그나티예프가 장관이 되었다. MGB는 해외 정보·방첩·군 방첩부터 집단농장과 공장의 정보원망까지 거느렸고, 재판 밖 판결 기구로 MGB 특별회의를 두었다.\n\n1948년 1월 솔로몬 미호엘스를 살해하고 그해 11월 유대인 반파시스트 위원회를 해산시켰으며, 1952년 위원들을 비밀 재판에 넘겼다. 1949~1950년 레닌그라드 사건에서는 니콜라이 보즈네센스키와 알렉세이 쿠즈네초프 등 레닌그라드 출신 간부를 처형으로 몰았고, 1953년 1월에는 의사들의 음모를 발표했다. 스탈린이 죽은 1953년 3월 5일 MGB는 베리야가 이끄는 MVD에 합쳐졌고, 1954년 3월 국가보안 업무는 국가보안위원회(KGB)로 옮겨졌다.",
+     "en": "Its first minister, Vsevolod Merkulov, was replaced in May 1946 by Viktor Abakumov. Abakumov was arrested in July 1951, and after Sergei Ogoltsov's brief acting tenure Semyon Ignatiev became minister in August. The MGB covered foreign intelligence, counterintelligence and military counterintelligence as well as networks of informers in collective farms and factories, and kept the Special Conference of the MGB as its extrajudicial sentencing body.\n\nIt murdered Solomon Mikhoels in January 1948, had the Jewish Anti-Fascist Committee dissolved that November and brought its members to a secret trial in 1952. In the Leningrad affair of 1949–1950 it drove Nikolai Voznesensky, Alexei Kuznetsov and other Leningrad officials to execution, and in January 1953 it announced the doctors' plot. On 5 March 1953, the day Stalin died, the MGB was merged into the MVD under Beria, and in March 1954 state security passed to the Committee for State Security (KGB)."
+    },
+    "aliases": {
+     "ko": [
+      "MGB",
+      "소련 국가보안부",
+      "소련 MGB"
+     ],
+     "en": [
+      "MGB",
+      "Ministry of State Security of the USSR",
+      "Ministerstvo gosudarstvennoy bezopasnosti"
+     ]
+    },
+    "people": [
+     "abakumov",
+     "ignatiev",
+     "merkulov",
+     "beria",
+     "stalin",
+     "solomon-mikhoels",
+     "voznesensky",
+     "alexei-kuznetsov"
+    ],
+    "events": [
+     "leningrad-affair",
+     "doctors-plot",
+     "beria-purge"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "The Soviet state-security ministry formed on 15 March 1946, when all People's Commissariats became ministries and the People's Commissariat for State Security (NKGB) was renamed. It fabricated and investigated the political cases of Stalin's last years and was merged into the Ministry of Internal Af",
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_State_Security_(Soviet_Union)",
+      "locator": "lead; Leadership; Structure; Successor"
+     },
+     {
+      "field": "body",
+      "claim": "Its first minister, Vsevolod Merkulov, was replaced in May 1946 by Viktor Abakumov. Abakumov was arrested in July 1951, and after Sergei Ogoltsov's brief acting tenure Semyon Ignatiev became minister in August. The MGB covered foreign intelligence, counterintelligence and military counterintelligenc",
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_State_Security_(Soviet_Union)",
+      "locator": "lead; Leadership; Structure; Successor"
+     },
+     {
+      "field": "period",
+      "claim": "1946–1953",
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_State_Security_(Soviet_Union)",
+      "locator": "lead; Leadership; Structure; Successor"
+     },
+     {
+      "field": "startYear",
+      "claim": "1946",
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_State_Security_(Soviet_Union)",
+      "locator": "lead; Leadership; Structure; Successor"
+     },
+     {
+      "field": "endYear",
+      "claim": "1953",
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_State_Security_(Soviet_Union)",
+      "locator": "lead; Leadership; Structure; Successor"
+     },
+     {
+      "field": "body",
+      "claim": "Solomon Mikhoels was murdered in January 1948 on MGB orders; the Jewish Anti-Fascist Committee was dissolved in November 1948 and its members tried in secret in 1952.",
+      "source": "https://en.wikipedia.org/wiki/Jewish_Anti-Fascist_Committee",
+      "locator": "Postwar; Trial"
+     },
+     {
+      "field": "body",
+      "claim": "Leningrad affair 1949–1950: Voznesensky, Kuznetsov and others executed in October 1950.",
+      "source": "https://en.wikipedia.org/wiki/Leningrad_affair",
+      "locator": "lead"
+     },
+     {
+      "field": "body",
+      "claim": "The doctors' plot was announced in Pravda on 13 January 1953.",
+      "source": "https://en.wikipedia.org/wiki/Doctors%27_plot",
+      "locator": "lead"
+     },
+     {
+      "field": "body",
+      "claim": "The KGB was established on 13 March 1954.",
+      "source": "https://en.wikipedia.org/wiki/KGB",
+      "locator": "lead"
+     }
+    ]
+   }
+  }
+ ]
+}

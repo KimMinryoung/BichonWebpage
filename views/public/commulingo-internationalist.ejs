@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="commulingo-page">
+    <%- include('../partials/nav') %>
+    <% var en = lang === 'en'; var copy = strings.commuLingoViews.worldMap; %>
+    <main class="container commulingo-shell commu-person-hub-page commu-country-page" data-lang="<%= lang %>">
+        <%- include('../partials/commulingo-crumb', {
+            trail: [{ label: copy.title, href: '/commulingo/map' }, { label: copy.internationalist }], dictJump: 'map' }) %>
+
+        <header class="commu-hub-head commu-world-map-head">
+            <span class="commu-world-map-head-icon" aria-hidden="true"><%- roleIconSvg('map') %></span>
+            <div><h1><%= copy.internationalist %></h1><p><%= copy.internationalistDescription %></p></div>
+        </header>
+
+        <section class="commu-hub-section" aria-labelledby="country-organizations">
+            <h2 id="country-organizations" class="commu-country-section-head"><span><%= copy.organizations %></span></h2>
+            <%- include('../partials/commulingo-affiliation-groups', { groups: affiliations, copy: copy, en: en }) %>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

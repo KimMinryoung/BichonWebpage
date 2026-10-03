@@ -1,0 +1,9 @@
+<% if (groups.length) { %><div class="commu-country-orgs">
+    <% groups.forEach(function(group) { %><section class="commu-country-org-group">
+        <h3><%= copy.affiliationKinds[group.kind] %></h3>
+        <ul><% group.rows.forEach(function(row) { %><li class="<%= row.isChild ? 'is-child' : '' %>">
+            <a class="commu-country-org-head" href="<%= row.href %>"><span><%= row.label %><% if (row.period) { %> <small><%= row.period %></small><% } %></span><span class="commu-country-org-count"><%= row.count %><%= en ? '' : copy.personUnit %> <span aria-hidden="true">→</span></span></a>
+            <p class="commu-country-org-members"><% row.members.forEach(function(person, i) { %><% if (i) { %>, <% } %><a href="/commulingo/people/<%= encodeURIComponent(person.id) %>"><%= person.name %></a><% }) %><% if (row.count > row.members.length) { %> <span><%= en ? 'and ' + (row.count - row.members.length) + ' more' : copy.membersMore + ' ' + (row.count - row.members.length) + copy.personUnit %></span><% } %></p>
+        </li><% }) %></ul>
+    </section><% }) %>
+</div><% } else { %><p class="commu-country-empty"><%= copy.noOrganizations %></p><% } %>

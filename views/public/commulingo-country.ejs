@@ -3,7 +3,7 @@
 <head><%- include('../partials/head') %></head>
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
-    <% var en = lang === 'en'; var copy = strings.commuLingoViews.worldMap; var orgCount = country.organizations.reduce(function(sum, group) { return sum + group.terms.length; }, 0); %>
+    <% var en = lang === 'en'; var copy = strings.commuLingoViews.worldMap; var orgCount = country.affiliations.reduce(function(sum, group) { return sum + group.rows.length; }, 0); %>
     <main class="container commulingo-shell commu-person-hub-page commu-country-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: copy.title, href: '/commulingo/map' }, { label: country.label }], dictJump: 'map' }) %>
@@ -52,12 +52,7 @@
         </section>
         <section class="commu-hub-section" aria-labelledby="country-organizations">
             <h2 id="country-organizations" class="commu-country-section-head"><span><%= copy.organizations %> <small><%= orgCount %></small></span></h2>
-            <% if (country.organizations.length) { %><div class="commu-country-orgs">
-                <% country.organizations.forEach(function(group) { %><section class="commu-country-org-group">
-                    <h3><%= copy.orgKinds[group.kind] %> <small><%= group.terms.length %></small></h3>
-                    <ul><% group.terms.forEach(function(term) { %><li><a href="/commulingo/terms/<%= encodeURIComponent(term.id) %>"><span><%= term.label %></span><% if (term.period) { %><small><%= term.period %></small><% } %></a></li><% }) %></ul>
-                </section><% }) %>
-            </div><% } else { %><p class="commu-country-empty"><%= copy.noOrganizations %></p><% } %>
+            <%- include('../partials/commulingo-affiliation-groups', { groups: country.affiliations, copy: copy, en: en }) %>
         </section>
 
         <section class="commu-hub-section" aria-labelledby="country-citizenship">

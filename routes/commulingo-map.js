@@ -5,10 +5,9 @@ const { getLinkIndexes, createCardTextLinker } = require('../data/commulingo/lin
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { countryCodes, countryInfo } = require('../data/commulingo/country-geography');
 const { renderWorldMapSvg, renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
-const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 
 const router = express.Router();
-const { directEventsFor, lineageFor, organizationsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
+const { directEventsFor, lineageFor, affiliationsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
 const PREVIEW_LIMIT = 4;
 const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas', 'oceania'];
 
@@ -24,10 +23,12 @@ router.get('/map', async (req, res) => {
             countries: countries.filter(country => country.continent === id)
                 .sort((a, b) => a.label.localeCompare(b.label, lang === 'en' ? 'en' : 'ko')),
         })).filter(group => group.countries.length);
+        const internationalCount = affiliationsFor(standardized.people, null, lang).reduce((sum, group) => sum + group.rows.length, 0);
         setShortPublicCache(res);
         res.render('public/commulingo-map', {
             countries,
             groups,
+            internationalCount,
             mapSvg: renderWorldMapSvg({ codes: countries.filter(country => country.totalCount > 0).map(country => country.code), lang }),
             pageTitle: lang === 'en' ? 'World Map — CommuLingo' : '세계 지도 — CommuLingo',
             pageDescription: lang === 'en'
@@ -44,6 +45,32 @@ router.get('/map', async (req, res) => {
     }
 });
 
+// Organizations that belong to no single country (the Comintern, the First
+// International) and their members — the 국제주의 hub beside the countries.
+router.get('/internationalist', async (req, res) => {
+    try {
+        const lang = res.locals.lang;
+        const { standardized } = await loadMapData(lang);
+        const label = lang === 'en' ? 'Internationalism' : '국제주의';
+        setShortPublicCache(res);
+        res.render('public/commulingo-internationalist', {
+            affiliations: affiliationsFor(standardized.people, null, lang),
+            pageTitle: `${label} — ${lang === 'en' ? 'World Map' : '세계 지도'}`,
+            pageDescription: lang === 'en'
+                ? 'International organizations that belong to no single country, and their members.'
+                : '어느 한 나라에 속하지 않는 국제 조직과 그 소속 인물.',
+            pagePath: '/commulingo/internationalist',
+            jsonLd: commuLingoBreadcrumb(lang, [
+                { name: lang === 'en' ? 'World Map' : '세계 지도', href: '/commulingo/map' },
+                { name: label, href: '/commulingo/internationalist' },
+            ], res.locals.urlLanguage),
+        });
+    } catch (err) {
+        console.error('commulingo internationalist hub:', err);
+        commuLingoLoadError(res, { message: { ko: '국제주의 페이지를 불러올 수 없습니다.', en: 'Failed to load the internationalism page.' } });
+    }
+});
+
 router.get('/countries/:code', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -54,7 +81,7 @@ router.get('/countries/:code', async (req, res) => {
             backHref: '/commulingo/map',
             backLabel: lang === 'en' ? 'World Map' : '세계 지도',
         });
-        const [{ standardized, events }, terms] = await Promise.all([loadMapData(lang), loadCommuLingoTerms()]);
+        const { standardized, events } = await loadMapData(lang);
         const people = countryPeople(standardized.people, code);
         const relatedEvents = directEventsFor(events, code, lang);
         const indexes = await getLinkIndexes(lang);
@@ -64,7 +91,7 @@ router.get('/countries/:code', async (req, res) => {
             originPreview: people.origin.slice(0, PREVIEW_LIMIT),
             events: relatedEvents,
             lineage: lineageFor(code, lang),
-            organizations: organizationsFor(terms, code, lang),
+            affiliations: affiliationsFor(standardized.people, code, lang),
         };
         setShortPublicCache(res);
         return res.render('public/commulingo-country', {

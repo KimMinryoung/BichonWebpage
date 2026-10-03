@@ -3137,14 +3137,17 @@ a.commu-person-position:focus-visible {
 .commu-country-lineage small { color: var(--text-muted); font-size: .75rem; }
 .commu-country-orgs { display: grid; gap: 14px 18px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 .commu-country-org-group h3 { border-bottom: 1px solid var(--border); font-size: .95rem; margin: 0 0 4px; padding-bottom: 6px; }
-.commu-country-org-group h3 small { color: var(--text-muted); font-size: .8em; font-weight: 500; }
 .commu-country-org-group ul { list-style: none; margin: 0; padding: 0; }
-.commu-country-org-group a {
-    align-items: baseline; color: inherit; display: flex; gap: 10px; justify-content: space-between;
-    padding: 6px 4px; text-decoration: none;
-}
-.commu-country-org-group a:hover, .commu-country-org-group a:focus-visible { background: var(--btn-hover); text-decoration: none; }
-.commu-country-org-group small { color: var(--text-muted); flex-shrink: 0; font-size: .78rem; font-variant-numeric: tabular-nums; }
+.commu-country-org-group li { border-bottom: 1px solid color-mix(in srgb, var(--border) 45%, transparent); padding: 6px 4px 8px; }
+.commu-country-org-group li.is-child { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 10px; }
+.commu-country-org-head { align-items: baseline; color: inherit; display: flex; gap: 10px; justify-content: space-between; text-decoration: none; }
+.commu-country-org-head > span:first-child { font-weight: 700; }
+.commu-country-org-head:hover, .commu-country-org-head:focus-visible { color: var(--link); text-decoration: none; }
+.commu-country-org-head small { color: var(--text-muted); font-size: .78rem; font-variant-numeric: tabular-nums; font-weight: 500; }
+.commu-country-org-count { color: var(--text-secondary); flex-shrink: 0; font-size: .82rem; }
+.commu-country-org-members { color: var(--text-secondary); font-size: .85rem; line-height: var(--leading-normal); margin: 3px 0 0; }
+.commu-country-org-members a { color: inherit; }
+.commu-country-org-members span { color: var(--text-muted); }
 .commu-country-timeline { border-top: 1px solid var(--border); list-style: none; margin: var(--space-2) 0 0; padding: 0; }
 .commu-country-timeline li { border-bottom: 1px solid var(--border); }
 .commu-country-timeline a {
