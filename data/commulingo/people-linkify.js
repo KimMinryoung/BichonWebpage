@@ -2,6 +2,7 @@ const { expressionCandidates } = require('./link-expressions');
 const nameContext = require('../../public/js/commulingo-name-context');
 const { registerAlias } = require('./alias-registry');
 const { createLiteralPattern } = require('./literal-pattern');
+const { familyNameOf } = require('./family-name');
 // The person alias index, plus the HTML-walking and escaping helpers every
 // index shares. Who links where, in what order, and how one link is written is
 // linkify.js; this file only answers which strings belong to which person.
@@ -87,22 +88,6 @@ function escapeHtml(value = '') {
 
 function escapeRegExp(value) {
     return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-// Regnal numbers are stored in the family-name field for monarchs but are never
-// a name a reader looks up: '니콜라이 2세' must not put '2세' in the index, nor
-// 'Nicholas II' an 'II'. Anything carrying brackets or a comma is a note that
-// leaked into the field, not a name.
-const NOT_A_FAMILY_NAME = /^(?:[ivxlcdm]+|\d+(?:세|st|nd|rd|th)?)$/i;
-const NAME_PUNCTUATION = /[()[\]{}<>,;:"'`]/;
-
-// The family name to offer as a bare alias, or '' when there is none to trust.
-// Taken from the structured part rather than the last word of the display name,
-// which is the given name in the naming orders Korean keeps (쿤 벨러).
-function familyNameOf(person) {
-    const name = String((person.names && person.names.family) || '').trim();
-    if (!name || NOT_A_FAMILY_NAME.test(name) || NAME_PUNCTUATION.test(name)) return '';
-    return name;
 }
 
 // Builds an alias→person index and a matching regex from the standardized

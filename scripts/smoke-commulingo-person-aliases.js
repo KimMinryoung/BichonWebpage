@@ -17,3 +17,17 @@ assert.equal(matchedAlias(trilisser, '모스크빈', 'ko'), '미하일 모스크
 assert.equal(matchedAlias(trilisser, 'moskvin', 'ko'), 'Mikhail Moskvin');
 assert.equal(matchedAlias(trilisser, '트릴리세르', 'ko'), '');
 console.log('ok matched alias');
+
+const { aliasProblem } = require('../data/commulingo/person-alias-rules');
+const names = { name: '미하일 트릴리세르', family: '트릴리세르', full: '미하일 아브라모비치 트릴리세르' };
+assert.equal(aliasProblem('미하일 모스크빈', 'ko', names), '');
+for (const bad of ['트릴리세르', '미하일 아브라모비치 트릴리세르', '이오페 (본명)', 'V. 크림스키', 'Миртов', '민ога', '片山潜', '본명 알렉산드르 그라프']) {
+    assert(aliasProblem(bad, 'ko', names), bad);
+}
+const enNames = { name: 'Charles de Gaulle', family: 'de Gaulle', full: 'Charles de Gaulle' };
+assert.equal(aliasProblem('de Gaulle', 'en', enNames), '', 'a multi-word family name is not offered by the linker');
+assert.equal(aliasProblem('Mil', 'en', { name: 'Mikhail Mil', family: 'Mil', full: 'Mikhail Leontyevich Mil' }), '', 'Mil reads as a numeral to the linker');
+assert.equal(aliasProblem('Douglas Macarthur', 'en', { name: 'Douglas MacArthur', family: 'MacArthur' }), '', 'case variants link separately');
+assert.equal(aliasProblem('Fayzulla Xoʻjayev', 'en', {}), '');
+for (const bad of ['born Ivashutich', 'Ioffe (birth name)', 'Генрих Эйхе', '山本五十六']) assert(aliasProblem(bad, 'en', {}), bad);
+console.log('ok person alias rules');

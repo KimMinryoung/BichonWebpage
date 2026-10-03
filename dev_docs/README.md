@@ -37,6 +37,7 @@
 | CommuLingo 프랑스 혁명 문헌집·기존 주소 이동 | [12편을 주제별 4편으로 통합](commulingo-french-reference-collections-20260913/README.md) |
 | CommuLingo DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
 | CommuLingo 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
+| CommuLingo 인물 별칭 등록 기준 | [별칭 표준과 2026-10-03 일괄 정리](commulingo-alias-standard.md) |
 | CommuLingo DB 후속 개선 후보 | [미구현 검토 목록](commulingo-database-followups.md) |
 | CommuLingo 인물 편집 개선 | [현행 규칙·구현 체크리스트](commulingo-people-editing-plan.md) |
 | CommuLingo 용어 편집·파이프라인 | [근거·revision·검토와 private RPC](commulingo-term-editorial.md) |

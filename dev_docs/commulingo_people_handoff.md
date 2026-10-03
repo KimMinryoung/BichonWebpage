@@ -128,7 +128,8 @@ person's own name (Yumjaagiin Tsedenbal, Balingiin Tserendorj), and people are
 called by the own name. The genitive form is not a surname, so the card holds
 the own name alone in `family_name_*` with `given_name_*` empty, the native
 line likewise (Цэдэнбал, not Юмжаагийн Цэдэнбал), and the full form goes to
-the aliases (발링기인 체렌도르지, Balingiin Tserendorj, Балингийн Цэрэндорж). The
+the aliases in Hangul and Latin (발링기인 체렌도르지, Balingiin Tserendorj;
+native-script forms are not aliases — see commulingo-alias-standard.md). The
 admin store and the leninbot curator reject a given part on a `mongolia` row.
 Titles that are the name the person is known by (보그드 칸) stay whole.
 

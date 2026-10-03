@@ -7,7 +7,8 @@ const { mergePersonPatch } = require('./people-patch');
 const { assertLinkExpressions } = require('./link-expressions');
 const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
-const { normalizeFateLabel } = require('./people-standard');
+const { normalizeFateLabel, composeFromParts, composePersonName } = require('./people-standard');
+const { assertPersonAliases } = require('./person-alias-rules');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, periodColumns, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
@@ -195,8 +196,29 @@ async function getPersonAdmin(personId, options = {}) {
     return person;
 }
 
+// The person's own names per language, read after this transaction's name
+// writes so a rename and its aliases are checked together.
+async function ownNames(client, personId) {
+    const { rows: [row] } = await client.query(
+        `SELECT p.name_ko, p.name_en, p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en, p.citizenship_code,
+                t.patronymic_ko, t.patronymic_en
+         FROM commulingo_people p LEFT JOIN commulingo_person_patronymics t ON t.person_id = p.id
+         WHERE p.id = $1`, [personId]);
+    if (!row) return {};
+    return Object.fromEntries(['ko', 'en'].map(lang => {
+        const given = row[`given_name_${lang}`] || '';
+        const family = row[`family_name_${lang}`] || '';
+        const patronymic = row[`patronymic_${lang}`] || '';
+        const full = given || family
+            ? composeFromParts(given, patronymic, family, lang, row.citizenship_code || '')
+            : composePersonName(row[`name_${lang}`] || '', patronymic);
+        return [lang, { name: row[`name_${lang}`], family, full }];
+    }));
+}
+
 async function replaceAliases(client, personId, aliases) {
     assertAliases(aliases);
+    assertPersonAliases(aliases, await ownNames(client, personId));
     await client.query('DELETE FROM commulingo_person_aliases WHERE person_id = $1', [personId]);
     for (const lang of ['ko', 'en']) {
         const values = Array.isArray(aliases[lang]) ? aliases[lang] : [];
@@ -376,7 +398,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
             await client.query('UPDATE commulingo_people SET link_expressions = $1::jsonb WHERE id = $2', [JSON.stringify(payload.linkExpressions), id]);
         }
         await replacePatronymic(client, id, patronymicState);
-        await replaceAliases(client, id, payload.aliases || { ko: [nameKo], en: [nameEn] });
+        await replaceAliases(client, id, payload.aliases || { ko: [], en: [] });
         await replaceScenes(client, id, payload.scenes || []);
         await replaceCareer(client, id, payload.career || []);
         if (payload.activities !== undefined) {
