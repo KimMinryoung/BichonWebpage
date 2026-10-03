@@ -1,0 +1,53 @@
+{
+ "scope": "2026-10-03 period names of the CPSU Politburo (RKP(b), VKP(b))",
+ "decisions": [
+  {
+   "kind": "term",
+   "id": "politburo-of-the-cpsu",
+   "lang": "ko",
+   "text": "러시아 공산당(볼셰비키) 정치국",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested: 1919년 이후 상설 정치국의 시기별 당 이름(RKP(b) 1918–1925, VKP(b) 1925–1952). 이 기구만 가리키므로 자동 연결(migration 262).",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "bc010092cc496e08573f6aeb74515956fa0e6752424198c7007ce9bebe8c6481"
+  },
+  {
+   "kind": "term",
+   "id": "politburo-of-the-cpsu",
+   "lang": "ko",
+   "text": "전연방공산당(볼셰비키) 정치국",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested: 1919년 이후 상설 정치국의 시기별 당 이름(RKP(b) 1918–1925, VKP(b) 1925–1952). 이 기구만 가리키므로 자동 연결(migration 262).",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "f3fc3adbcb029849383d33be92b37a8cc4c3bf49bd85491d5b566fde351612a8"
+  },
+  {
+   "kind": "term",
+   "id": "politburo-of-the-cpsu",
+   "lang": "en",
+   "text": "Politburo of the RKP(b)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested: 1919년 이후 상설 정치국의 시기별 당 이름(RKP(b) 1918–1925, VKP(b) 1925–1952). 이 기구만 가리키므로 자동 연결(migration 262).",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "5cda302916e678f950e85aacefe9269b5df1f0a8fc2079ae8a0531af5084dc0a"
+  },
+  {
+   "kind": "term",
+   "id": "politburo-of-the-cpsu",
+   "lang": "en",
+   "text": "Politburo of the VKP(b)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested: 1919년 이후 상설 정치국의 시기별 당 이름(RKP(b) 1918–1925, VKP(b) 1925–1952). 이 기구만 가리키므로 자동 연결(migration 262).",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "0ce967709eb6599915c1adca4fba1dc2e605b18868235834cde7559b732bdbb2"
+  }
+ ]
+}
