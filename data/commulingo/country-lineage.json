@@ -1,5 +1,5 @@
 {
- "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, turkey the Ottoman Empire, austria Austria-Hungary, germany Prussia, uk the British Empire, and so on, so independence from the empire is that code -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes, colonial independence included, dated by effective independence except declarations the site follows when a revolutionary state declared and fought for it (Vietnam and Indonesia 1945, the Philippines 1898, Guinea-Bissau 1973, Timor-Leste 1975); dominions by the Statute of Westminster (1931, adopted 1942 by Australia and 1947 by New Zealand); Axis puppet states and wartime occupations are left out; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
+ "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, independence (to became independent of from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, turkey the Ottoman Empire, austria Austria-Hungary, germany Prussia, uk the British Empire, and so on, so independence from the empire is that code -> x). Edges of one year are shown in file order (the Baltic independence of September 1991 before the December dissolution). Only state-to-state succession between registered codes, colonial independence included, dated by effective independence except declarations the site follows when a revolutionary state declared and fought for it (Vietnam and Indonesia 1945, the Philippines 1898, Guinea-Bissau 1973, Timor-Leste 1975); dominions by the Statute of Westminster (1931, adopted 1942 by Australia and 1947 by New Zealand); Axis puppet states and wartime occupations are left out, except the 1939 German-Soviet partition of Poland (annexation, restored from Germany 1945); empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
  "edges": [
   {
    "from": "russia",
@@ -1374,6 +1374,24 @@
    "to": "usa",
    "year": 1899,
    "kind": "annexation"
+  },
+  {
+   "from": "poland",
+   "to": "germany",
+   "year": 1939,
+   "kind": "annexation"
+  },
+  {
+   "from": "poland",
+   "to": "soviet",
+   "year": 1939,
+   "kind": "annexation"
+  },
+  {
+   "from": "germany",
+   "to": "poland",
+   "year": 1945,
+   "kind": "independence"
   }
  ]
 }
