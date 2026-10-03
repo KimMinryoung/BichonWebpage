@@ -1,0 +1,113 @@
+{
+ "scope": "2026-10-03 new term: nationality entry in Soviet passports",
+ "decisions": [
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "ko",
+   "text": "소련 여권의 민족란",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 이 제도만 가리키는 표제어·관용 표현이라 자동 연결.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "df57502a9993069d517395de9cfef74a9e2f844d035d7c8aeb07b85e823d234a"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "ko",
+   "text": "다섯째 칸",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 이 제도만 가리키는 표제어·관용 표현이라 자동 연결.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "ad6dc2fe043b633b2962176b0337ce991cf721c31b315b2428724d3813428ea3"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "ko",
+   "text": "퍄타야 그라파",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 이 제도만 가리키는 표제어·관용 표현이라 자동 연결.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "ad3ec1a306792611210f33dfe638a9d132ea41edbf0d24e1a432e60035745a40"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "en",
+   "text": "Nationality entry in Soviet passports",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 이 제도만 가리키는 표제어·관용 표현이라 자동 연결.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "81ef2cddc0d4de47f809e9f9afd8582d662f3cbb1649b06f3de12e710ddbd599"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "en",
+   "text": "fifth line",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 평범한 문장에도 쓰이는 표현이라 검색 전용.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "3d1a934d55f365de7582ed7bfc0ee9f513108237a75786c0d738828f222f624a"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "en",
+   "text": "pyataya grafa",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 이 제도만 가리키는 표제어·관용 표현이라 자동 연결.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "360a1fbf66fc6d84f7f7493b8777116bcc1c8688e278fb755d9bfbff86cde5aa"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "en",
+   "text": "fifth point",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 평범한 문장에도 쓰이는 표현이라 검색 전용.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "deaade191d0e18139625da2c52f91f5d325c6afa5d08ef05a215d0d54b58cfd5"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "en",
+   "text": "пятая графа",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 이 제도만 가리키는 표제어·관용 표현이라 자동 연결.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "ed945338b4d0ae2e95e983ad6e1e14f9b2873589dad5d2a67b25cecf31ac46a7"
+  },
+  {
+   "kind": "term",
+   "id": "soviet-passport-nationality-entry",
+   "lang": "en",
+   "text": "пятый пункт",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-03 owner-requested 신규 용어 「소련 여권의 민족란」: 평범한 문장에도 쓰이는 표현이라 검색 전용.",
+   "original479": true,
+   "beforePolicy": "search",
+   "sourceSignature": "a3eb7240ae1d837c84f368a9f195e147eed7b1b4b60010d5c73dca3314089a30"
+  }
+ ]
+}

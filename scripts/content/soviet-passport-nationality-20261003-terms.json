@@ -1,0 +1,171 @@
+{
+ "id": "soviet-passport-nationality-20261003",
+ "terms": [
+  {
+   "id": "soviet-passport-nationality-entry",
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9F%D1%8F%D1%82%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B0",
+    "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%85_(1932)",
+    "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D0%B0_%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2_%D0%A1%D0%A1%D0%A1%D0%A0_%D0%BE%D1%82_28.08.1974_%E2%84%96_677/I",
+    "https://www.svoboda.org/a/31379036.html",
+    "https://16.rosstat.gov.ru/storage/mediabank/1959.pdf",
+    "https://16.rosstat.gov.ru/storage/mediabank/UtXlGLc8/1979.pdf",
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%B8%D0%BD%D0%B0_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8",
+    "https://base.garant.ru/10103000/3ac805f6d87af32d44de92b042d51285/",
+    "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D0%B0_%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2_%D0%A1%D0%A1%D0%A1%D0%A0_%D0%BE%D1%82_28.08.1974_%E2%84%96_677"
+   ],
+   "fields": {
+    "term": {
+     "ko": "소련 여권의 민족란",
+     "en": "Nationality entry in Soviet passports"
+    },
+    "category": "nationalities",
+    "period": {
+     "ko": "1932–1991",
+     "en": "1932–1991"
+    },
+    "startYear": 1932,
+    "endYear": 1991,
+    "definition": {
+     "ko": "1932년 12월 도입된 소련 국내 여권에 소지자의 민족을 적게 한 기재 항목. 처음에는 본인이 말하는 대로 적었으나 1938년부터 부모의 민족에 따라 적게 되었고, 1991년 소련이 해체될 때까지 유지되었다. 러시아어로 흔히 「다섯째 칸(퍄타야 그라파)」이라 불렀다.",
+     "en": "The entry recording the holder’s nationality (natsional’nost’, i.e. ethnic origin) in the Soviet internal passport introduced in December 1932. At first written down as the holder declared it, from 1938 it was recorded according to the parents’ nationality, and it remained until the end of the USSR in 1991. In Russian it was commonly called the “fifth line” (pyataya grafa)."
+    },
+    "body": {
+     "ko": "1932년 12월 27일 소련 중앙집행위원회와 인민위원회의가 단일 여권 제도를 정하면서 함께 승인한 여권 규정은, 우선 도시와 노동자 거주지 등에 사는 16세 이상 주민에게 여권을 지니게 하고 이름, 출생 시기와 장소 다음 셋째 항목으로 민족을 적게 했다. 처음에는 받는 사람이 말하는 대로 적었으나, 1938년 4월 2일 내무인민위원부 회람 제65호는 부모의 「실제 민족적 출신」에 따라 적도록 했다. 1974년 8월 28일 각료회의 결정 제677호로 승인된 여권 제도 규정(새 여권은 1976~1981년에 교부)도 민족을 부모에 따라 적게 하고, 부모의 민족이 다르면 처음 여권을 받을 때 아버지나 어머니의 민족 가운데 하나를 고르게 했으며, 그 뒤로는 기재를 고칠 수 없다고 정했다. 여권은 16세가 되면 받았으므로 이 선택도 그때 이루어졌다. 반면 인구조사는 증명 서류를 요구하지 않고, 응답자가 스스로 속한다고 여기는 민족을 적었다.\n\n「다섯째 칸」이라는 말은 엄밀히는 여권이 아니라 여권 발급의 근거가 된 내무부 여권 기관의 간부 인사 기록표, 그리고 모든 국가 기관 인사 부서가 쓰던 같은 기록표의 다섯째 항목에서 나왔다. 1953~1973년 양식의 여권에서는 민족이 셋째, 사회적 신분이 다섯째 항목이었다. 이 말은 흔히 유대인임을 에둘러 가리키는 데 쓰였다. 스탈린 시기에는 민족을 기준으로 한 탄압과 민족 전체의 강제 이주가 벌어졌고, 그 뒤에도 유대인·독일인·크림 타타르인 등은 대학과 대학원 입학, 채용, 승진, 해외여행에서 공표되지 않은 차별을 받았다. 「다섯째 등급 장애인」이라는 반어적 표현은 여기서 생겼다.\n\n러시아 연방은 1997년 7월 8일 정부 결정 제828호로 새 여권을 정했고, 그해 10월 1일부터 교부된 이 여권에는 민족란이 없다. 1993년 헌법 제26조는 누구나 자신의 민족 소속을 스스로 정하고 밝힐 권리가 있으며, 누구도 이를 정하거나 밝히도록 강요받지 않는다고 규정한다.",
+     "en": "The passport regulations approved on 27 December 1932, when the USSR Central Executive Committee and Council of People’s Commissars established a single passport system, required passports at first of residents aged 16 and over in towns, workers’ settlements and certain other places, and listed nationality as the third item after name and time and place of birth. At first it was written down as the recipient stated it, but NKVD circular No. 65 of 2 April 1938 required it to be recorded according to the parents’ “actual national origin.” The Regulations on the Passport System approved by Council of Ministers resolution No. 677 of 28 August 1974 (new passports were issued in 1976–1981) likewise recorded nationality by the parents; where they differed, the holder chose the father’s or the mother’s nationality on receiving a first passport, and the entry could not be changed afterwards. Since passports were issued at 16, that was when the choice was made. Censuses, by contrast, required no documents and recorded the nationality respondents themselves claimed.\n\nStrictly, the phrase “fifth line” came not from the passport but from item 5 of the personnel record form (lichny listok po uchyotu kadrov) kept by the passport offices of the Interior Ministry as the basis for issuing a passport, and by the personnel departments of all state organisations. In the passports of the 1953–1973 pattern nationality was the third item and social status the fifth. The phrase was often used as a euphemism for being Jewish. Under Stalin there were repressions along national lines and deportations of entire peoples; afterwards Jews, Germans, Crimean Tatars and others met unannounced discrimination in university and graduate admissions, hiring, promotion and travel abroad, which gave rise to the ironic expression “invalid of the fifth group.”\n\nThe Russian Federation set out a new passport by government resolution No. 828 of 8 July 1997; issued from 1 October that year, it has no nationality entry. Article 26 of the 1993 constitution gives everyone the right to determine and state their national affiliation and says no one may be compelled to do so."
+    },
+    "aliases": {
+     "ko": [
+      "다섯째 칸",
+      "퍄타야 그라파"
+     ],
+     "en": [
+      "fifth line",
+      "pyataya grafa",
+      "fifth point",
+      "пятая графа",
+      "пятый пункт"
+     ]
+    },
+    "people": [],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Положение о паспортах approved 27.12.1932; item 9 lists «в) национальность» among data entered in the passport.",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%85_(1932)",
+      "locator": "header (ДАТА 27.12.1932); п. 1, п. 9"
+     },
+     {
+      "field": "definition",
+      "claim": "When passports were introduced in 1932 the nationality line was filled in from the recipients’ words; NKVD circular No. 65 of 2 April 1938 required recording by the parents’ actual national origin.",
+      "source": "https://www.svoboda.org/a/31379036.html",
+      "locator": "section on Soviet passport history (Kharun Sidorov)"
+     },
+     {
+      "field": "definition",
+      "claim": "Пятая графа / пятый пункт: figurative expression for the indication of nationality in documents.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D1%8F%D1%82%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B0",
+      "locator": "lead"
+     },
+     {
+      "field": "period",
+      "claim": "1932–1991",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%85_(1932)",
+      "locator": "date 27.12.1932"
+     },
+     {
+      "field": "startYear",
+      "claim": "1932",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%85_(1932)",
+      "locator": "date 27.12.1932"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991",
+      "source": "https://www.svoboda.org/a/31379036.html",
+      "locator": "Soviet passport system until the end of the USSR; replaced by Russian passport (see RF passport article)"
+     },
+     {
+      "field": "body",
+      "claim": "Passports required of citizens aged 16+ permanently living in towns, workers’ settlements, working in transport, state farms and new construction sites; nationality is item (в) after name and time/place of birth.",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%85_(1932)",
+      "locator": "п. 1, п. 9"
+     },
+     {
+      "field": "body",
+      "claim": "Joint resolution of the CEC and SNK of 27 Dec 1932 «Об установлении единой паспортной системы по Союзу ССР и обязательной прописки паспортов».",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BE_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%85_(1932)",
+      "locator": "see also / links"
+     },
+     {
+      "field": "body",
+      "claim": "NKVD circular No. 65 of 2 April 1938: «запись национальности должна быть произведена в соответствии с фактическим национальным происхождением родителей».",
+      "source": "https://www.svoboda.org/a/31379036.html",
+      "locator": "quoted text of the circular"
+     },
+     {
+      "field": "body",
+      "claim": "Resolution No. 677 of 28.08.1974 approved the Regulations on the passport system; new passports issued 1 Jan 1976 – 31 Dec 1981.",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D0%B0_%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2_%D0%A1%D0%A1%D0%A1%D0%A0_%D0%BE%D1%82_28.08.1974_%E2%84%96_677",
+      "locator": "п. 1, п. 2"
+     },
+     {
+      "field": "body",
+      "claim": "1974 Regulations п. 3: nationality recorded by the parents’; if different, by father’s or mother’s at the recipient’s wish on first issue; thereafter not subject to change. П. 1: passport obligatory from age 16.",
+      "source": "https://ru.wikisource.org/wiki/%D0%9F%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D0%B0_%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2_%D0%A1%D0%A1%D0%A1%D0%A0_%D0%BE%D1%82_28.08.1974_%E2%84%96_677/I",
+      "locator": "I. Общие положения, п. 1, п. 3"
+     },
+     {
+      "field": "body",
+      "claim": "1959 census recorded the nationality the respondent himself claimed; children’s nationality given by parents.",
+      "source": "https://16.rosstat.gov.ru/storage/mediabank/1959.pdf",
+      "locator": "section on the 1959 census"
+     },
+     {
+      "field": "body",
+      "claim": "1979 census forms were filled in from respondents’ words without requiring documents confirming the answers.",
+      "source": "https://16.rosstat.gov.ru/storage/mediabank/UtXlGLc8/1979.pdf",
+      "locator": "section on the 1979 census"
+     },
+     {
+      "field": "body",
+      "claim": "Column 5 for nationality was in the personnel record form of the MVD passport offices (not in the passport, as often mistakenly thought), on which the passport was based, and in such forms of all state organisations’ personnel departments.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D1%8F%D1%82%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B0",
+      "locator": "В СССР, para. 1"
+     },
+     {
+      "field": "body",
+      "claim": "In 1953–1973 Soviet passports the fifth item was social status and nationality the third; the idiom often denoted specifically Jewish nationality.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D1%8F%D1%82%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B0",
+      "locator": "Другие значения"
+     },
+     {
+      "field": "body",
+      "claim": "Repressions on national grounds and deportations of entire peoples under Stalin; post-Stalin unofficial discrimination of Jews, Germans, Crimean Tatars etc. in hiring, university and graduate admissions, promotion, travel abroad; the ironic expression «инвалид пятой группы».",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D1%8F%D1%82%D0%B0%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%B0",
+      "locator": "В СССР, paras. 4–5"
+     },
+     {
+      "field": "body",
+      "claim": "Government resolution No. 828 of 8 July 1997 approved the Regulations on the RF passport; replacement of USSR passports began 1 October 1997.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82_%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%B8%D0%BD%D0%B0_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8",
+      "locator": "infobox (дата введения); lead; references"
+     },
+     {
+      "field": "body",
+      "claim": "Nationality field absent from the Russian passport introduced in 1996–97, following Article 26 of the 1993 constitution.",
+      "source": "https://www.svoboda.org/a/31379036.html",
+      "locator": "section on the Russian Federation"
+     },
+     {
+      "field": "body",
+      "claim": "Constitution art. 26(1): everyone has the right to determine and state their national affiliation; no one may be compelled to determine and state it.",
+      "source": "https://base.garant.ru/10103000/3ac805f6d87af32d44de92b042d51285/",
+      "locator": "ст. 26 ч. 1"
+     }
+    ]
+   }
+  }
+ ]
+}
