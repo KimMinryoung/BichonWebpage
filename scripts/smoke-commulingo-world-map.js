@@ -107,6 +107,7 @@ assert.deepEqual(russiaLineage.map(row => [row.year, row.role, row.countries[0].
 assert.deepEqual(lineageFor('germany', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1918 independence.from', '1949 division.from', '1990 reunification.to']);
 assert.deepEqual(lineageFor('latvia', 'ko').map(row => `${row.year} ${row.kind}.${row.role}`), ['1918 secession.to', '1940 annexation.from', '1991 independence.to']);
 assert.deepEqual(lineageFor('poland', 'ko').map(row => row.countries.map(item => item.code)), [['germany', 'russia', 'austria']], 'Poland independent of all three partitioning powers in one row');
+assert.deepEqual(lineageFor('ireland', 'ko').map(row => `${row.year} ${row.kind}.${row.role} ${row.countries[0].code}`), ['1922 secession.to uk']);
 assert.deepEqual(lineageFor('spain', 'ko'), []);
 const lineageStrings = require('../config/strings');
 ['ko', 'en'].forEach(lang => LINEAGE_KINDS.forEach(kind => ['from', 'to'].forEach(role => {

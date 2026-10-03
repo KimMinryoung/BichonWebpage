@@ -324,6 +324,12 @@
    "to": "singapore",
    "year": 1965,
    "kind": "secession"
+  },
+  {
+   "from": "uk",
+   "to": "ireland",
+   "year": 1922,
+   "kind": "secession"
   }
  ]
 }
