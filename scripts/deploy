@@ -231,6 +231,9 @@ remove_standby
 
 # 7. Cleanup
 docker image prune -f > /dev/null
+# Every build leaves a ~300 MB "COPY . ." layer that BuildKit's default GC
+# keeps while the disk has room (42 GB by 2026-10-03); cap it, oldest first.
+docker builder prune -f --max-used-space 5GB > /dev/null || warn "Build cache prune failed."
 
 if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
     CHANGED_COMMULINGO_LESSONS="$(node scripts/changed-commulingo-lessons.js "$DEPLOYED" "$LOCAL" 2>/dev/null || true)"
