@@ -88,6 +88,7 @@ fi
 if [[ -n "$(git status --porcelain)" ]]; then
     err "Working tree has uncommitted changes; refusing to deploy a dirty tree."
     err "Commit and push the changes first, then run deploy again."
+    err "data/commulingo/docs/manifest.json changed by the admin screens is already live: commit it (see AGENTS.md)."
     git status --short >&2
     exit 1
 fi
