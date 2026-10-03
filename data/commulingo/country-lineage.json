@@ -1,6 +1,60 @@
 {
- "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), dissolution, division, reunification, secession. Only state-to-state succession between registered codes; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
+ "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), annexation (from annexed by to), dissolution, restoration (to restored its independence from from), division, reunification, secession. A code spans its eras (russia is also the Russian Empire, so independence from the empire in 1917–1918 is russia -> x). Edges of one year are shown in file order (the Baltic restorations of September 1991 before the December dissolution). Only state-to-state succession between registered codes; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
  "edges": [
+  {
+   "from": "russia",
+   "to": "finland",
+   "year": 1917,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "ukraine",
+   "year": 1918,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "lithuania",
+   "year": 1918,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "estonia",
+   "year": 1918,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "georgia",
+   "year": 1918,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "armenia",
+   "year": 1918,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "azerbaijan",
+   "year": 1918,
+   "kind": "secession"
+  },
+  {
+   "from": "russia",
+   "to": "poland",
+   "year": 1918,
+   "kind": "restoration"
+  },
+  {
+   "from": "russia",
+   "to": "latvia",
+   "year": 1918,
+   "kind": "secession"
+  },
   {
    "from": "russia",
    "to": "soviet",
@@ -38,6 +92,42 @@
    "kind": "union"
   },
   {
+   "from": "estonia",
+   "to": "soviet",
+   "year": 1940,
+   "kind": "annexation"
+  },
+  {
+   "from": "latvia",
+   "to": "soviet",
+   "year": 1940,
+   "kind": "annexation"
+  },
+  {
+   "from": "lithuania",
+   "to": "soviet",
+   "year": 1940,
+   "kind": "annexation"
+  },
+  {
+   "from": "soviet",
+   "to": "estonia",
+   "year": 1991,
+   "kind": "restoration"
+  },
+  {
+   "from": "soviet",
+   "to": "latvia",
+   "year": 1991,
+   "kind": "restoration"
+  },
+  {
+   "from": "soviet",
+   "to": "lithuania",
+   "year": 1991,
+   "kind": "restoration"
+  },
+  {
    "from": "soviet",
    "to": "russia",
    "year": 1991,
@@ -58,24 +148,6 @@
   {
    "from": "soviet",
    "to": "moldova",
-   "year": 1991,
-   "kind": "dissolution"
-  },
-  {
-   "from": "soviet",
-   "to": "estonia",
-   "year": 1991,
-   "kind": "dissolution"
-  },
-  {
-   "from": "soviet",
-   "to": "latvia",
-   "year": 1991,
-   "kind": "dissolution"
-  },
-  {
-   "from": "soviet",
-   "to": "lithuania",
    "year": 1991,
    "kind": "dissolution"
   },

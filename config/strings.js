@@ -471,7 +471,9 @@ const ko = {
             // right after {x} with no space (a particle) attaches to the flag.
             lineageEvents: {
                 'union.from': '{x} 결성에 참여', 'union.to': '결성, 참여국 {x}',
+                'annexation.from': '{x}에 병합', 'annexation.to': '{x} 병합',
                 'dissolution.from': '해체, 후계국 {x}', 'dissolution.to': '{x} 해체로 독립',
+                'restoration.from': '{x} 독립 회복', 'restoration.to': '{x}에서 독립 회복',
                 'division.from': '분단, {x} 성립', 'division.to': '{x} 분단으로 성립',
                 'reunification.from': '{x}에 통합되어 통일', 'reunification.to': '{x} 통합으로 통일',
                 'secession.from': '{x} 분리 독립', 'secession.to': '{x}에서 분리 독립',
@@ -1078,7 +1080,9 @@ const en = {
             lineage: 'State changes',
             lineageEvents: {
                 'union.from': 'Joined to form {x}', 'union.to': 'Formed by {x}',
+                'annexation.from': 'Annexed by {x}', 'annexation.to': 'Annexed {x}',
                 'dissolution.from': 'Dissolved into {x}', 'dissolution.to': 'Independent on the dissolution of {x}',
+                'restoration.from': '{x} restored independence', 'restoration.to': 'Restored independence from {x}',
                 'division.from': 'Divided; {x} founded', 'division.to': 'Founded in the division of {x}',
                 'reunification.from': 'Reunified into {x}', 'reunification.to': 'Reunified, absorbing {x}',
                 'secession.from': '{x} seceded', 'secession.to': 'Seceded from {x}',
