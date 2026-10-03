@@ -37,9 +37,6 @@
                 <div class="commu-person-detail-title">
                     <h1><%= person.displayName || person.name %></h1>
                     <span><%= person.cyrillic %></span>
-                    <% if (typeof otherNames !== 'undefined' && otherNames.length) { %>
-                    <p class="commu-person-detail-other-names"><%= strings.commuLingoViews.person.otherNames %>: <%= otherNames.join(' · ') %></p>
-                    <% } %>
                 </div>
             </div>
             <%- include('../partials/commulingo-person-meta', { person: person, showOtherPositions: true }) %>
@@ -51,6 +48,10 @@
             <p class="commu-person-moment"><%- typeof momentHtml !== 'undefined' ? momentHtml : person.moment %></p>
             <% } %>
             <p class="commu-person-bio"><%- typeof bioHtml !== 'undefined' ? bioHtml : person.bio %></p>
+            <%# Below the bio, so the title block keeps the medal row's height. %>
+            <% if (typeof otherNames !== 'undefined' && otherNames.length) { %>
+            <p class="commu-person-detail-other-names"><%= strings.commuLingoViews.person.otherNames %>: <%= otherNames.join(' · ') %></p>
+            <% } %>
         </header>
 
         <% if (person.activities && person.activities.length) { %>
