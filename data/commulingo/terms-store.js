@@ -24,7 +24,9 @@ async function fetchTerms() {
             `SELECT id, term_ko, term_en, original, period_label,
                     period_ko, period_en, start_year, end_year, category,
                     definition_ko, definition_en, body_ko, body_en, sources,
-                    parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions
+                    parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions,
+                    to_jsonb(commulingo_terms)->>'org_kind' AS org_kind,
+                    to_jsonb(commulingo_terms)->'countries' AS countries
              FROM commulingo_terms
              ORDER BY sort_order, id`
         ),
@@ -139,6 +141,11 @@ async function fetchTerms() {
         startYear: Number.isInteger(row.start_year) ? row.start_year : null,
         endYear: Number.isInteger(row.end_year) ? row.end_year : null,
         category: row.category || '',
+        // Organizations only (migration 259): party, faction, force,
+        // organization or state, and the countries whose political life the
+        // body belongs to — curated, never inferred from the text.
+        orgKind: row.org_kind || null,
+        countries: Array.isArray(row.countries) ? row.countries : [],
         definition: t(row.definition_ko, row.definition_en),
         body: t(row.body_ko, row.body_en),
         sources: Array.isArray(row.sources) ? row.sources : [],

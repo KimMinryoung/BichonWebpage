@@ -1,0 +1,245 @@
+{
+ "_comment": "Direct predecessor/successor states for the country hubs (/commulingo/countries/:code). from -> to in year; kind: union (joined to form), dissolution, division, reunification, secession. Only state-to-state succession between registered codes; empires without a code (Austria-Hungary, the Ottoman Empire) are left out.",
+ "edges": [
+  {
+   "from": "russia",
+   "to": "soviet",
+   "year": 1922,
+   "kind": "union"
+  },
+  {
+   "from": "ukraine",
+   "to": "soviet",
+   "year": 1922,
+   "kind": "union"
+  },
+  {
+   "from": "belarus",
+   "to": "soviet",
+   "year": 1922,
+   "kind": "union"
+  },
+  {
+   "from": "georgia",
+   "to": "soviet",
+   "year": 1922,
+   "kind": "union"
+  },
+  {
+   "from": "armenia",
+   "to": "soviet",
+   "year": 1922,
+   "kind": "union"
+  },
+  {
+   "from": "azerbaijan",
+   "to": "soviet",
+   "year": 1922,
+   "kind": "union"
+  },
+  {
+   "from": "soviet",
+   "to": "russia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "ukraine",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "belarus",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "moldova",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "estonia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "latvia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "lithuania",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "georgia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "armenia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "azerbaijan",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "kazakhstan",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "uzbekistan",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "turkmenistan",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "tajikistan",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "soviet",
+   "to": "kyrgyzstan",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "serbia",
+   "to": "yugoslavia",
+   "year": 1918,
+   "kind": "union"
+  },
+  {
+   "from": "montenegro",
+   "to": "yugoslavia",
+   "year": 1918,
+   "kind": "union"
+  },
+  {
+   "from": "yugoslavia",
+   "to": "slovenia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "yugoslavia",
+   "to": "croatia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "yugoslavia",
+   "to": "north-macedonia",
+   "year": 1991,
+   "kind": "dissolution"
+  },
+  {
+   "from": "yugoslavia",
+   "to": "bosnia-herzegovina",
+   "year": 1992,
+   "kind": "dissolution"
+  },
+  {
+   "from": "yugoslavia",
+   "to": "serbia",
+   "year": 2006,
+   "kind": "dissolution"
+  },
+  {
+   "from": "yugoslavia",
+   "to": "montenegro",
+   "year": 2006,
+   "kind": "dissolution"
+  },
+  {
+   "from": "serbia",
+   "to": "kosovo",
+   "year": 2008,
+   "kind": "secession"
+  },
+  {
+   "from": "czechoslovakia",
+   "to": "czechia",
+   "year": 1993,
+   "kind": "dissolution"
+  },
+  {
+   "from": "czechoslovakia",
+   "to": "slovakia",
+   "year": 1993,
+   "kind": "dissolution"
+  },
+  {
+   "from": "germany",
+   "to": "east-germany",
+   "year": 1949,
+   "kind": "division"
+  },
+  {
+   "from": "east-germany",
+   "to": "germany",
+   "year": 1990,
+   "kind": "reunification"
+  },
+  {
+   "from": "korea",
+   "to": "north-korea",
+   "year": 1948,
+   "kind": "division"
+  },
+  {
+   "from": "korea",
+   "to": "south-korea",
+   "year": 1948,
+   "kind": "division"
+  },
+  {
+   "from": "pakistan",
+   "to": "bangladesh",
+   "year": 1971,
+   "kind": "secession"
+  },
+  {
+   "from": "sudan",
+   "to": "south-sudan",
+   "year": 2011,
+   "kind": "secession"
+  },
+  {
+   "from": "ethiopia",
+   "to": "eritrea",
+   "year": 1993,
+   "kind": "secession"
+  },
+  {
+   "from": "malaysia",
+   "to": "singapore",
+   "year": 1965,
+   "kind": "secession"
+  }
+ ]
+}

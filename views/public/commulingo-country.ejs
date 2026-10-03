@@ -3,7 +3,7 @@
 <head><%- include('../partials/head') %></head>
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
-    <% var en = lang === 'en'; var copy = strings.commuLingoViews.worldMap; %>
+    <% var en = lang === 'en'; var copy = strings.commuLingoViews.worldMap; var orgCount = country.organizations.reduce(function(sum, group) { return sum + group.terms.length; }, 0); %>
     <main class="container commulingo-shell commu-person-hub-page commu-country-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: copy.title, href: '/commulingo/map' }, { label: country.label }], dictJump: 'map' }) %>
@@ -23,8 +23,23 @@
             <p class="commu-world-map-note"><%= country.kind === 'modern' ? copy.boundaryNote : copy.historicalNote %></p>
         </section>
 
+        <% var lineageSides = [['predecessors', country.lineage.predecessors], ['successors', country.lineage.successors]].filter(function(side) { return side[1].length; }); %>
+        <% if (lineageSides.length) { %>
+        <section class="commu-country-lineage" aria-label="<%= copy.lineage %>">
+            <% lineageSides.forEach(function(side) { %>
+            <div class="commu-country-lineage-row">
+                <h2><%= copy[side[0]] %></h2>
+                <ul>
+                    <% side[1].forEach(function(item) { %><li><a href="<%= item.href %>"><%- flagImg(item.code, item.label) %><span><%= item.label %></span><small><%= item.year %> <%= copy.lineageKinds[item.kind] %></small></a></li><% }) %>
+                </ul>
+            </div>
+            <% }) %>
+        </section>
+        <% } %>
+
         <nav class="commu-country-sections" aria-label="<%= copy.sectionNav %>">
             <a href="#country-events"><span><%= copy.events %></span><strong><%= country.eventCount %></strong></a>
+            <a href="#country-organizations"><span><%= copy.organizations %></span><strong><%= orgCount %></strong></a>
             <a href="#country-citizenship"><span><%= copy.citizenship %></span><strong><%= country.citizenshipCount %></strong></a>
             <a href="#country-origin"><span><%= copy.background %></span><strong><%= country.originCount %></strong></a>
         </nav>
@@ -34,14 +49,17 @@
             <% if (country.events.length) { %><ol class="commu-country-timeline">
                 <% country.events.forEach(function(event) { %><li><a href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><span class="commu-country-timeline-period"><%= event.period %></span><span class="commu-country-timeline-body"><strong><%= event.title %></strong><% if (event.lead) { %><span><%= event.lead %></span><% } %></span></a></li><% }) %>
             </ol><% } else { %><p class="commu-country-empty"><%= copy.noEvents %></p><% } %>
-            <% if (country.peopleEvents.length) { %>
-            <h3 class="commu-country-subhead"><%= copy.peopleEvents %> <small><%= country.peopleEvents.length %></small></h3>
-            <p class="commu-country-subnote"><%= copy.peopleEventsNote %></p>
-            <ol class="commu-country-timeline">
-                <% country.peopleEvents.forEach(function(event) { %><li><a href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><span class="commu-country-timeline-period"><%= event.period %></span><span class="commu-country-timeline-body"><strong><%= event.title %></strong><span><%= copy.appearing %>: <%= event.people.join(', ') %></span></span></a></li><% }) %>
-            </ol>
-            <% } %>
         </section>
+        <section class="commu-hub-section" aria-labelledby="country-organizations">
+            <h2 id="country-organizations" class="commu-country-section-head"><span><%= copy.organizations %> <small><%= orgCount %></small></span></h2>
+            <% if (country.organizations.length) { %><div class="commu-country-orgs">
+                <% country.organizations.forEach(function(group) { %><section class="commu-country-org-group">
+                    <h3><%= copy.orgKinds[group.kind] %> <small><%= group.terms.length %></small></h3>
+                    <ul><% group.terms.forEach(function(term) { %><li><a href="/commulingo/terms/<%= encodeURIComponent(term.id) %>"><span><%= term.label %></span><% if (term.period) { %><small><%= term.period %></small><% } %></a></li><% }) %></ul>
+                </section><% }) %>
+            </div><% } else { %><p class="commu-country-empty"><%= copy.noOrganizations %></p><% } %>
+        </section>
+
         <section class="commu-hub-section" aria-labelledby="country-citizenship">
             <h2 id="country-citizenship" class="commu-country-section-head"><a href="/commulingo/people/citizenship/<%= encodeURIComponent(country.code) %>"><span><%= copy.citizenshipPeople %> <small><%= country.citizenshipCount %></small></span><span class="commu-country-section-action"><%= en ? 'View all' : '전체보기' %> <span aria-hidden="true">→</span></span></a></h2>
             <% if (country.citizenshipPreview.length) { %><div class="commu-people-grid">

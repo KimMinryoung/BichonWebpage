@@ -68,9 +68,8 @@ for (const segment of ['citizenship', 'national-origin']) {
 }
 assert.equal(renderCountryMapSvg({ selectedCode: 'ukraine' }), territorySvg);
 
-// Country hub timeline: chronological rows, a one-line lead, and the separate
-// group of events where the country's people appear without it being a party.
-const { directEventsFor, peopleEventsFor, leadSentence, periodSortKey } = require('../data/commulingo/map-presentation');
+// Country hub timeline: chronological rows with a one-line lead.
+const { directEventsFor, leadSentence, periodSortKey } = require('../data/commulingo/map-presentation');
 assert.ok(periodSortKey('1941–1944') < periodSortKey('1941–1945'), 'same start: shorter first');
 assert.ok(periodSortKey('1917.02–07') < periodSortKey('1917.10–1918.01'));
 assert.equal(periodSortKey(''), Infinity);
@@ -83,6 +82,33 @@ const hubEvents = [
         people: [{ id: 'nin', name: { ko: '닌' } }, { id: 'nin', name: { ko: '닌' } }, { id: 'other', name: { ko: '남' } }] },
 ];
 assert.deepEqual(directEventsFor(hubEvents, 'spain', 'ko').map(e => e.id), ['a', 'b']);
-const hubPeople = [{ id: 'nin', origin: { code: 'spain' } }, { id: 'other', citizenship: { code: 'soviet' } }];
-assert.deepEqual(peopleEventsFor(hubEvents, hubPeople, 'spain', 'ko').map(e => [e.id, e.people]), [['c', ['닌']]]);
-assert.deepEqual(peopleEventsFor(hubEvents, hubPeople, 'soviet', 'ko'), [], 'party events are not repeated');
+
+// Predecessor/successor states: registered codes, no self or duplicate edge,
+// and both sides read back on the hub.
+const LINEAGE_KINDS = ['union', 'dissolution', 'division', 'reunification', 'secession'];
+const lineageEdges = require('../data/commulingo/country-lineage.json').edges;
+const edgeKeys = new Set();
+lineageEdges.forEach(edge => {
+    assert.ok(codes.includes(edge.from) && codes.includes(edge.to), `lineage: unregistered code in ${edge.from} -> ${edge.to}`);
+    assert.notEqual(edge.from, edge.to);
+    assert.ok(Number.isInteger(edge.year) && LINEAGE_KINDS.includes(edge.kind), `lineage: bad year/kind ${edge.from} -> ${edge.to}`);
+    const key = `${edge.from}>${edge.to}>${edge.year}`;
+    assert.ok(!edgeKeys.has(key), `lineage: duplicate ${key}`);
+    edgeKeys.add(key);
+});
+const { lineageFor, organizationsFor } = require('../data/commulingo/map-presentation');
+const sovietLineage = lineageFor('soviet', 'ko');
+assert.ok(sovietLineage.predecessors.some(item => item.code === 'russia' && item.year === 1922));
+assert.equal(sovietLineage.successors.length, 15);
+const russiaLineage = lineageFor('russia', 'ko');
+assert.deepEqual([russiaLineage.predecessors[0].code, russiaLineage.successors[0].code], ['soviet', 'soviet'], 'Russia sits on both sides of the Soviet Union');
+assert.deepEqual(lineageFor('spain', 'ko'), { predecessors: [], successors: [] });
+
+const orgTerms = [
+    { id: 'cheka', orgKind: 'state', countries: ['soviet'], startYear: 1917, term: { ko: '체카' }, period: { ko: '1917–1922' } },
+    { id: 'cpsu', orgKind: 'party', countries: ['soviet'], startYear: 1912, term: { ko: '소련 공산당' }, period: { ko: '' } },
+    { id: 'comintern', orgKind: 'organization', countries: [], startYear: 1919, term: { ko: '코민테른' }, period: { ko: '' } },
+    { id: 'nep', orgKind: null, countries: ['soviet'], term: { ko: '신경제정책' }, period: { ko: '' } },
+];
+assert.deepEqual(organizationsFor(orgTerms, 'soviet', 'ko').map(group => [group.kind, group.terms.map(term => term.id)]),
+    [['party', ['cpsu']], ['state', ['cheka']]], 'kind order, international and non-organization terms left out');

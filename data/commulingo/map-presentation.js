@@ -4,6 +4,7 @@ const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { flagLabel } = require('./flag-icons');
 const { eventCountries } = require('./event-countries');
 const { countryInfo } = require('./country-geography');
+const LINEAGE = require('./country-lineage.json');
 
 
 // "1917.10–1918.01" -> start 191710, end 191801; the start orders the
@@ -46,27 +47,6 @@ function directEventsFor(events, code, lang) {
         .map(event => eventRow(event, lang)));
 }
 
-// Events the country is not a party to, in which its people appear. Party
-// status stays curated (event.countries); this group only follows the event's
-// own cast, and names the people so the reader sees why it is listed.
-function peopleEventsFor(events, people, code, lang) {
-    const ofCountry = new Set((people || [])
-        .filter(person => (person.citizenship && person.citizenship.code === code)
-            || (person.origin && person.origin.code === code))
-        .map(person => person.id));
-    return chronological((events || []).filter(event => !eventCountries(event.countries).includes(code))
-        .map(event => {
-            const seen = new Set();
-            const names = (event.people || []).filter(person => {
-                if (!ofCountry.has(person.id) || seen.has(person.id)) return false;
-                seen.add(person.id);
-                return true;
-            }).map(person => localize(person.name, lang)).filter(Boolean);
-            return names.length ? { ...eventRow(event, lang), people: names } : null;
-        })
-        .filter(Boolean));
-}
-
 function countryPeople(people, code) {
     return {
         citizenship: sortPeopleChronologically((people || []).filter(person => person.citizenship && person.citizenship.code === code)),
@@ -89,6 +69,39 @@ function summaryFor(people, events, code, lang) {
     };
 }
 
+// Direct predecessor and successor states (country-lineage.json), oldest
+// first. A code spanning two eras (Russia before and after the Soviet Union)
+// rightly appears on both sides, and the year tells them apart.
+function lineageFor(code, lang) {
+    const side = (edges, other) => edges
+        .map(edge => ({ info: countryInfo(edge[other], lang), year: edge.year, kind: edge.kind }))
+        .filter(item => item.info)
+        .sort((a, b) => a.year - b.year || a.info.label.localeCompare(b.info.label, lang === 'en' ? 'en' : 'ko'))
+        .map(({ info, year, kind }) => ({ code: info.code, label: info.label, href: info.href, year, kind }));
+    return {
+        predecessors: side(LINEAGE.edges.filter(edge => edge.to === code), 'from'),
+        successors: side(LINEAGE.edges.filter(edge => edge.from === code), 'to'),
+    };
+}
+
+// Parties, factions, forces and organizations whose curated `countries`
+// include the code, grouped by kind in a fixed order and by start year
+// within a group.
+const ORG_KINDS = ['party', 'faction', 'force', 'organization', 'state'];
+function organizationsFor(terms, code, lang) {
+    const mine = (terms || []).filter(term => term.orgKind && (term.countries || []).includes(code));
+    return ORG_KINDS.map(kind => ({
+        kind,
+        terms: mine.filter(term => term.orgKind === kind)
+            .sort((a, b) => (a.startYear ?? Infinity) - (b.startYear ?? Infinity) || a.id.localeCompare(b.id))
+            .map(term => ({
+                id: term.id,
+                label: localize(term.term, lang),
+                period: localize(term.period, lang),
+            })),
+    })).filter(group => group.terms.length);
+}
+
 async function loadMapData(lang) {
     const [peopleData, events] = await Promise.all([
         loadStandardizedPeople(lang),
@@ -97,4 +110,4 @@ async function loadMapData(lang) {
     return { standardized: peopleData.standardized, events };
 }
 
-module.exports = { directEventsFor, peopleEventsFor, leadSentence, periodSortKey, countryPeople, summaryFor, loadMapData };
+module.exports = { directEventsFor, lineageFor, organizationsFor, ORG_KINDS, leadSentence, periodSortKey, countryPeople, summaryFor, loadMapData };

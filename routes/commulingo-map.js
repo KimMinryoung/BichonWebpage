@@ -5,9 +5,10 @@ const { getLinkIndexes, createCardTextLinker } = require('../data/commulingo/lin
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { countryCodes, countryInfo } = require('../data/commulingo/country-geography');
 const { renderWorldMapSvg, renderCountryMapSvg } = require('../data/commulingo/world-map-svg');
+const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
 
 const router = express.Router();
-const { directEventsFor, peopleEventsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
+const { directEventsFor, lineageFor, organizationsFor, countryPeople, summaryFor, loadMapData } = require('../data/commulingo/map-presentation');
 const PREVIEW_LIMIT = 4;
 const CONTINENT_ORDER = ['europe', 'asia', 'eurasia', 'africa', 'americas', 'oceania'];
 
@@ -53,7 +54,7 @@ router.get('/countries/:code', async (req, res) => {
             backHref: '/commulingo/map',
             backLabel: lang === 'en' ? 'World Map' : '세계 지도',
         });
-        const { standardized, events } = await loadMapData(lang);
+        const [{ standardized, events }, terms] = await Promise.all([loadMapData(lang), loadCommuLingoTerms()]);
         const people = countryPeople(standardized.people, code);
         const relatedEvents = directEventsFor(events, code, lang);
         const indexes = await getLinkIndexes(lang);
@@ -62,7 +63,8 @@ router.get('/countries/:code', async (req, res) => {
             citizenshipPreview: people.citizenship.slice(0, PREVIEW_LIMIT),
             originPreview: people.origin.slice(0, PREVIEW_LIMIT),
             events: relatedEvents,
-            peopleEvents: peopleEventsFor(events, standardized.people, code, lang),
+            lineage: lineageFor(code, lang),
+            organizations: organizationsFor(terms, code, lang),
         };
         setShortPublicCache(res);
         return res.render('public/commulingo-country', {
