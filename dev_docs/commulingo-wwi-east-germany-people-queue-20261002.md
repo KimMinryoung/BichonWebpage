@@ -66,6 +66,6 @@
   - 관계 17행: 여파 2(자글룰 participant, 다이어 executor), 동독 1945–49 7(라우 leader, 헤르메스 opponent, 나머지 participant), 6월 봉기 6(모두 regime; 디브로바·벤야민 executor), 1953–56 개요 2(시비아트워·뮌니히). 컨테이너 백업 `/tmp/hx/people-links-before-20261003.json`. 로이슈너는 1953 본문에 없어 연결하지 않았다.
   - 입장 모음 264(공산주의 9, 비볼셰비키 사회주의 레기엔·상바·그니프케·올렌하우어, 보수 헤르메스, 민족해방 자글룰, 반체제 하베만; 다이어는 비움). 오링크 차단 265: 맨 「라우」/rau(라우카아·라우터부르크), 「다이어」/dyer(다이어리), 「헤르메스」/hermes(신·Hermes 4). 맨 「벤야민」은 여전히 발터 벤야민으로 걸린다.
   - 판단: 자글룰 국적 코드 `egypt`(첫 사용), 와프드당 소속 코드가 없어 independent. 디브로바의 베를린 사령관 재임은 러시아어판 1952–1956. 뮌니히 카드 표기는 헝가리식 「뮌니히 페렌츠」이고, 사건 본문의 「페렌츠 뮌니히」에서는 「뮌니히」만 걸린다.
-  - 남은 것: 레기엔(german-revolution-1918-1919, spd-government)·상바(second-international-collapse-1914, social-patriots)·뮌니히(hungarian-revolution, opponent)의 사건 관계는 저장된 사건 행이 각 배치 JSON과 달라(relations) 아직 넣지 않았다.
+  - 다른 묶음의 사건 연결 3건은 마이그레이션 266으로 넣었다: 레기엔(german-revolution-1918-1919 participant/spd-government), 상바(second-international-collapse-1914 participant/social-patriots), 뮌니히(hungarian-revolution opponent, 카다르와 같은 쪽). 저장된 두 사건 행의 relations에 원래 배치 JSON 뒤로 parent가 붙어 `apply-history-events.js`가 거부하고, 헝가리 혁명은 배치 스펙이 없어서 관계 행만 넣었다.
   - 같은 날 DB 큐 1895는 용어 `congo-civil-war-1997`(「콩고 공화국 내전 (1997–1999)」, 링크 검토 `scripts/reviews/commulingo-links-20261003-congo-civil-war-1997.json`)로, 1916 코치 쇼제는 기존 카드가 이미 1945–46년 역할을 다뤄(보강 작업 63125) done으로 닫았다.
   - 감사: 인물 감사 4종·`audit-event-sides` 통과, 사건 페이지 4곳에서 새 링크 확인.
