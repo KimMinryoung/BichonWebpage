@@ -3005,7 +3005,7 @@ a.commu-person-position:focus-visible {
     padding: 12px; position: relative;
 }
 .commu-world-map-panel.is-country { margin-top: 14px; }
-.commu-world-map { overflow-x: auto; overscroll-behavior-inline: contain; }
+.commu-world-map { overflow: auto; overscroll-behavior: contain; }
 .commu-world-map .wmap-svg {
     display: block; font-family: inherit; height: auto; min-width: 720px; width: 100%;
 }

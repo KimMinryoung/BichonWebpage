@@ -13,6 +13,8 @@ assert.deepEqual(countryFilter([{ country: 'estonia' }, { country: 'estonia' }],
 assert.deepEqual(countryFilter([], 'ko'), []);
 assert.equal(flagsHtml([], 'ko'), '');
 assert.match(flagsHtml(['poland'], 'ko'), /alt="폴란드"/);
+assert.doesNotMatch(flagsHtml(['poland'], 'ko'), /<a /, 'unlinked by default (the contents list is already a link)');
+assert.match(flagsHtml(['poland'], 'ko', { linked: true }), /<a class="commu-flag-link" href="\/commulingo\/countries\/poland"/);
 const md = '## Frame {estonia latvia}\n\ntext {not a heading}\n\n## Plain\n\n## Bad {atlantis}\n## Tail   {uk}  \n';
 const split = splitSectionCountries(md);
 assert.deepEqual(split.sections, [['estonia', 'latvia'], [], [], ['uk']]);

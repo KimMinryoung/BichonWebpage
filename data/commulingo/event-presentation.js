@@ -216,7 +216,7 @@ async function buildEventPanel(eventId, lang) {
             ...(geoNums.has(i) ? { geoNum: geoNums.get(i) } : {}),
             ...(places.has(i) ? { place: places.get(i) } : {}),
             ...(control ? { controlPhase: phaseIndexForDate(control.phases, item.date) } : {}),
-            flagsHtml: flagsHtml(item.countries, lang),
+            flagsHtml: flagsHtml(item.countries, lang, { linked: true }),
         }));
         event.hasCountryFilter = event.countryFilter.length > 0;
         // Reading order, so the first mention that links is the first one a
@@ -249,15 +249,17 @@ async function buildEventPanel(eventId, lang) {
         if (event.bodyHtml) {
             event.bodyHtml = event.bodyHtml.replace(/<h2>([\s\S]*?)<\/h2>/g, (match, inner) => {
                 const id = `body-${event.bodySections.length + 1}`;
-                const flags = flagsHtml(split.sections[event.bodySections.length], lang);
+                const codes = split.sections[event.bodySections.length];
+                const flags = flagsHtml(codes, lang);
                 const flagsSpan = flags ? `<span class="commu-section-flags">${flags}</span>` : '';
+                const linkedFlags = flags ? `<span class="commu-section-flags">${flagsHtml(codes, lang, { linked: true })}</span>` : '';
                 // The heading may already hold dictionary links from linkify;
                 // the contents entry takes the text and leaves the markup behind,
                 // because a link inside a link does not nest. The text is still
                 // HTML-escaped from the markdown pass, and the template escapes
                 // again, so decode it here or a quoted heading reads &quot;.
                 event.bodySections.push({ id, label: decodeEntities(inner.replace(/<[^>]+>/g, '')).trim(), flagsHtml: flagsSpan });
-                return `<h2 id="${id}">${flagsSpan}${inner}</h2>`;
+                return `<h2 id="${id}">${linkedFlags}${inner}</h2>`;
             });
         }
         event.outcomeHtml = link(event.outcome);

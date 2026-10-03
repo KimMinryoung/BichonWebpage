@@ -8,6 +8,7 @@
 // typo in the DB neither breaks the page nor shows a broken image; the audit
 // script (audit-event-locations.js) reports them.
 const { hasFlag, flagLabel, flagImg } = require('./flag-icons');
+const { countryHref } = require('./country-geography');
 
 // -> unique valid codes, in the order written.
 function timelineCountries(value) {
@@ -39,8 +40,13 @@ function countryFilter(timeline, lang) {
     return codes.map(code => ({ code, label: flagLabel(code, lang), flagHtml: flagImg(code, flagLabel(code, lang)) }));
 }
 
-function flagsHtml(codes, lang) {
-    return (codes || []).map(code => flagImg(code, flagLabel(code, lang))).join('');
+// `linked` makes each flag an entrance to its country hub; leave it off where
+// the flags already sit inside a link (the contents list).
+function flagsHtml(codes, lang, { linked = false } = {}) {
+    return (codes || []).map(code => {
+        const label = flagLabel(code, lang);
+        return flagImg(code, label, undefined, linked ? countryHref(code) : undefined);
+    }).join('');
 }
 
 // Section tags. A `## ` heading in the body markdown may end in `{code}` or

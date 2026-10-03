@@ -8,8 +8,6 @@
     var controls = root.parentElement.querySelector('[data-world-map-controls]');
     var WORLD = { x: 0, y: 0, width: 1000, height: 480 };
     var MAX_ZOOM = 12;
-    var initialView = WORLD;
-    var currentView = WORLD;
 
     function setActive(code, active) {
         related.forEach(function (item) {
@@ -26,54 +24,68 @@
         item.addEventListener('blur', function () { setActive(code, false); });
     });
 
-    function clampView(view) {
-        var minWidth = WORLD.width / MAX_ZOOM;
-        var width = Math.max(minWidth, Math.min(WORLD.width, view.width));
-        var height = width * WORLD.height / WORLD.width;
-        var x = Math.max(WORLD.x, Math.min(WORLD.x + WORLD.width - width, view.x));
-        var y = Math.max(WORLD.y, Math.min(WORLD.y + WORLD.height - height, view.y));
-        return { x: x, y: y, width: width, height: height };
+    // Zoom like the event maps (commulingo-event-map.js): the SVG grows inside
+    // a fixed scrolling viewport, so every part of the enlarged map stays
+    // reachable by native scrolling, touch and keyboard while the controls
+    // stay put outside the scroller.
+    var MIN_BASE_WIDTH = 720;
+    var scale = 1;
+    var initialScale = 1;
+    var zoomIn = controls && controls.querySelector('[data-map-action="zoom-in"]');
+    var zoomOut = controls && controls.querySelector('[data-map-action="zoom-out"]');
+    root.tabIndex = 0;
+    root.setAttribute('role', 'region');
+    root.setAttribute('aria-label', svg.getAttribute('aria-label') || document.title);
+
+    function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
+    function baseWidth() { return Math.max(root.clientWidth, MIN_BASE_WIDTH); }
+
+    function fitHeight() {
+        var height = root.clientWidth >= MIN_BASE_WIDTH
+            ? root.clientWidth * WORLD.height / WORLD.width
+            : MIN_BASE_WIDTH * WORLD.height / WORLD.width;
+        root.style.height = height + 'px';
+        // A horizontal scrollbar takes its height out of the viewport.
+        root.style.height = (height + root.offsetHeight - root.clientHeight) + 'px';
     }
 
-    function setView(view) {
-        currentView = clampView(view);
-        svg.setAttribute('viewBox', [currentView.x, currentView.y, currentView.width, currentView.height]
-            .map(function (value) { return value.toFixed(2); }).join(' '));
-        if (!controls) return;
-        var zoomIn = controls.querySelector('[data-map-action="zoom-in"]');
-        var zoomOut = controls.querySelector('[data-map-action="zoom-out"]');
-        if (zoomIn) zoomIn.disabled = currentView.width <= WORLD.width / MAX_ZOOM + 0.1;
-        if (zoomOut) zoomOut.disabled = currentView.width >= WORLD.width - 0.1;
+    // Center on a point given in SVG units.
+    function centerOn(x, y) {
+        var unit = baseWidth() * scale / WORLD.width;
+        root.scrollLeft = x * unit - root.clientWidth / 2;
+        root.scrollTop = y * unit - root.clientHeight / 2;
     }
 
-    function selectedView() {
-        if (!root.closest('.commu-world-map-panel.is-country')) return WORLD;
+    function setScale(next, center) {
+        var unit = svg.getBoundingClientRect().width / WORLD.width;
+        var point = center || {
+            x: (root.scrollLeft + root.clientWidth / 2) / unit,
+            y: (root.scrollTop + root.clientHeight / 2) / unit,
+        };
+        scale = clamp(next, 1, MAX_ZOOM);
+        svg.style.minWidth = '0';
+        svg.style.maxWidth = 'none';
+        svg.style.width = (baseWidth() * scale) + 'px';
+        fitHeight();
+        centerOn(point.x, point.y);
+        if (zoomIn) zoomIn.disabled = scale >= MAX_ZOOM - 1e-6;
+        if (zoomOut) zoomOut.disabled = scale <= 1 + 1e-6;
+    }
+
+    // Country hubs open fitted to the selected territory; the overview opens
+    // at the full world, its scroll (on a phone) a little east of centre.
+    function initialFrame() {
+        var fallback = { scale: 1, center: { x: WORLD.width * 0.52, y: WORLD.height / 2 } };
         var selected = svg.querySelector('.wmap-highlight.is-selected');
-        if (!selected || typeof selected.getBBox !== 'function') return WORLD;
+        if (!selected || typeof selected.getBBox !== 'function') return fallback;
         var bounds = selected.getBBox();
-        if (!bounds.width || !bounds.height) return WORLD;
+        if (!bounds.width || !bounds.height) return fallback;
+        var center = { x: bounds.x + bounds.width / 2, y: bounds.y + bounds.height / 2 };
+        if (!root.closest('.commu-world-map-panel.is-country')) return { scale: 1, center: center };
         var width = Math.max(bounds.width * 1.9, WORLD.width / 8);
         var height = Math.max(bounds.height * 1.9, WORLD.height / 8);
-        var aspect = WORLD.width / WORLD.height;
-        if (width / height > aspect) height = width / aspect;
-        else width = height * aspect;
-        return clampView({
-            x: bounds.x + bounds.width / 2 - width / 2,
-            y: bounds.y + bounds.height / 2 - height / 2,
-            width: width,
-            height: height,
-        });
-    }
-
-    function zoom(multiplier) {
-        var width = currentView.width * multiplier;
-        var height = currentView.height * multiplier;
-        setView({
-            x: currentView.x + (currentView.width - width) / 2,
-            y: currentView.y + (currentView.height - height) / 2,
-            width: width,
-            height: height,
-        });
+        var fit = Math.min(WORLD.width / width, WORLD.height / height);
+        return { scale: clamp(fit, 1, MAX_ZOOM), center: center };
     }
 
     if (controls) {
@@ -81,28 +93,25 @@
             var button = event.target.closest('[data-map-action]');
             if (!button || button.disabled) return;
             var action = button.getAttribute('data-map-action');
-            if (action === 'zoom-in') zoom(0.72);
-            else if (action === 'zoom-out') zoom(1 / 0.72);
-            else if (action === 'reset') setView(initialView);
+            if (action === 'zoom-in') setScale(scale / 0.72);
+            else if (action === 'zoom-out') setScale(scale * 0.72);
+            else if (action === 'reset') setScale(initialScale, initialCenter);
         });
     }
 
-    // Compute the selected territory after SVG layout. Country hubs open at a
-    // fitted scale; the overview stays at the full-world extent.
+    var initialCenter = null;
+    // Compute the selected territory after SVG layout.
     requestAnimationFrame(function () {
-        initialView = selectedView();
-        setView(initialView);
+        var frame = initialFrame();
+        initialScale = frame.scale;
+        initialCenter = frame.center;
+        setScale(initialScale, initialCenter);
+    });
 
-        // The SVG stays wide enough for labels and controls on a phone. Center
-        // its horizontally scrollable viewport on the selected territory.
-        if (root.scrollWidth <= root.clientWidth) return;
-        var selected = root.querySelector('.wmap-marker.is-selected');
-        if (!selected) {
-            root.scrollLeft = Math.round((root.scrollWidth - root.clientWidth) * 0.52);
-            return;
-        }
-        var markerRect = selected.getBoundingClientRect();
-        var rootRect = root.getBoundingClientRect();
-        root.scrollLeft += markerRect.left + markerRect.width / 2 - rootRect.left - rootRect.width / 2;
+    var lastWidth = root.clientWidth;
+    window.addEventListener('resize', function () {
+        if (root.clientWidth === lastWidth) return;
+        lastWidth = root.clientWidth;
+        setScale(scale);
     });
 })();
