@@ -2920,8 +2920,9 @@ a.commu-person-position:focus-visible {
     transition: color 0.16s ease;
 }
 
-/* A search hit that came through an alias names it under the headword, as a
-   quiet chip in the card's own type rather than a highlight. */
+/* A search hit that came through an alias names it under the headword, in a
+   square-cornered box like the card's other tags; the search highlight marks
+   the matched part as it does in the name. */
 .commu-person-alias-hit {
     display: inline-flex;
     align-items: baseline;
@@ -2930,7 +2931,7 @@ a.commu-person-position:focus-visible {
     margin-top: 6px;
     padding: 3px 9px;
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: 0;
     background: var(--bg-surface);
     color: var(--text-primary);
     font-size: 0.76rem;

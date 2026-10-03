@@ -20,8 +20,6 @@ window.__commuSearch = (function() {
         var walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, {
             acceptNode: function(node) {
                 if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-                // A part that already names the match (the alias chip) stays plain.
-                if (node.parentElement && node.parentElement.closest('[data-no-search-hl]')) return NodeFilter.FILTER_REJECT;
                 return NodeFilter.FILTER_ACCEPT;
             }
         });

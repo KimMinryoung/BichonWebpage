@@ -15,7 +15,7 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
             <h3><a href="<%= personHref %>" title="<%= person.displayName || person.name %>"><%= person.displayName || person.name %></a></h3>
             <span class="commu-person-cyr"><%= person.cyrillic %></span>
             <% if (typeof searchAlias !== 'undefined' && searchAlias) { %>
-            <span class="commu-person-alias-hit" data-no-search-hl><span class="commu-person-alias-hit-label"><%= strings.commuLingoViews.personCard.matchedAlias %></span><%= searchAlias %></span>
+            <span class="commu-person-alias-hit"><span class="commu-person-alias-hit-label"><%= strings.commuLingoViews.personCard.matchedAlias %></span><%= searchAlias %></span>
             <% } %>
         </div>
     </div>

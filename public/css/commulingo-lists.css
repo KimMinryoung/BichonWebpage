@@ -1219,7 +1219,7 @@ a.commu-person-position:focus-visible {
     margin-top: 6px;
     padding: 3px 9px;
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: 0;
     background: var(--bg-surface);
     color: var(--text-primary);
     font-size: 0.76rem;
