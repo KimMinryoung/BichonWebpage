@@ -1,0 +1,9 @@
+{
+  "scope": "2026-10-03 volga-famine event: add the common names 볼가 대기근 / 볼가 기근 / Volga famine as auto-linking expressions; owner-requested link review",
+  "references": ["corpus occurrence count over terms/events/people/docs snapshots"],
+  "decisions": [
+    {"kind": "event", "id": "volga-famine", "lang": "ko", "text": "볼가 대기근", "role": "identity", "policy": "auto", "note": "2026-10-03 owner-requested 링크 검토: 1921~1922년 기근의 통용 이름. 리가 구호 협정 용어·플라토노프 등 발화 13건 모두 이 기근. 표현 추가 후 자동 연결.", "original479": false, "beforePolicy": "search", "added": true},
+    {"kind": "event", "id": "volga-famine", "lang": "ko", "text": "볼가 기근", "role": "identity", "policy": "auto", "note": "2026-10-03 owner-requested 링크 검토: 같은 기근의 짧은 이름. 교회 귀중품 몰수·ARA·후버·내전 문서 등 발화 15건 모두 1921~1922년 기근. 표현 추가 후 자동 연결.", "original479": false, "beforePolicy": "search", "added": true},
+    {"kind": "event", "id": "volga-famine", "lang": "en", "text": "Volga famine", "role": "identity", "policy": "auto", "note": "2026-10-03 owner-requested 링크 검토: 영문 통용 이름. 리가 협정·교회 귀중품 몰수·플라토노프·내전 문서 등 발화 17건 모두 1921~1922년 기근. 표현 추가 후 자동 연결.", "original479": false, "beforePolicy": "search", "added": true}
+  ]
+}
