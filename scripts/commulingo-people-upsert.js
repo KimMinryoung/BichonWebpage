@@ -68,8 +68,10 @@ function readSpec(arg) {
             const { sections, ...payload } = entry;
             if (!payload.id) throw new Error('every person needs an id');
             const existing = await getPersonAdmin(payload.id, { client });
+            // An update is checked against the revision just read, as a section is.
+            const fields = existing ? { expectedRevision: existing.revision, ...payload } : payload;
             const result = await submitPersonEdit({ target: 'person', action: existing ? 'update' : 'create',
-                id: payload.id, fields: payload, sources: payload.sources }, { client, changedBy });
+                id: payload.id, fields, sources: payload.sources }, { client, changedBy });
             console.log(`${result.status} ${payload.id} (edit ${result.suggestionId})`);
             if (result.status === 'pending' && sections?.length) throw new Error('review the person edit before adding its sections');
             for (const section of sections || []) {
