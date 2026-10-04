@@ -1,5 +1,4 @@
 const express = require('express');
-const cache = require('../config/report-cache');
 const researchStore = require('../config/research-store');
 const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger, markDegraded } = require('../utils/http');
@@ -23,11 +22,6 @@ function reportTitle(report) {
     return (report.content || `Report #${report.id}`).split('\n')[0].substring(0, 80);
 }
 
-// POST /cache/clear — manual cache purge
-router.post('/cache/clear', async (req, res) => {
-    if (!req.session.isAuthenticated) return res.status(403).send('Forbidden');
-    await cache.clearAll();
-    res.json({ cleared: true });
 });
 
 router.get(['/private', '/admin/private-reports'], (req, res) => {
@@ -52,35 +46,26 @@ router.get('/', async (req, res) => {
     try {
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
 
-        // Task reports — admin-only. Skip the entire fetch (and cache) for public viewers.
+        // Task reports — admin-only. Skip the fetch entirely for public viewers.
         let taskData = {
             reports: [], currentPage: 1, totalPages: 0, paginationBase: '/reports?page='
         };
         if (isAdmin) {
+            // Fetched from the backend on every view: an admin-only list on
+            // the same host, rarely opened, so a cache would only go stale.
             try {
-                const cached = await cache.getList(currentPage);
-                if (cached) {
-                    taskData = cached;
-                } else {
-                    const response = await fetchWithTimeout(
-                        `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`,
-                        { headers: { 'X-Admin-Key': ADMIN_KEY }, timeoutMs: 5000 }
-                    );
-                    if (!response.ok) throw new Error(`API ${response.status}`);
-
-                    const data = await response.json();
-                    const totalPages = Math.ceil(data.total / REPORTS_PER_PAGE);
-
-                    await Promise.all((data.reports || []).map(r => cache.setReport(r)));
-
-                    taskData = {
-                        reports: data.reports || [],
-                        currentPage,
-                        totalPages,
-                        paginationBase: '/reports?page='
-                    };
-                    await cache.setList(currentPage, taskData);
-                }
+                const response = await fetchWithTimeout(
+                    `${CHAT_API_URL}/reports?limit=${REPORTS_PER_PAGE}&offset=${offset}`,
+                    { headers: { 'X-Admin-Key': ADMIN_KEY }, timeoutMs: 5000 }
+                );
+                if (!response.ok) throw new Error(`API ${response.status}`);
+                const data = await response.json();
+                taskData = {
+                    reports: data.reports || [],
+                    currentPage,
+                    totalPages: Math.ceil(data.total / REPORTS_PER_PAGE),
+                    paginationBase: '/reports?page='
+                };
             } catch (e) {
                 console.error('Error loading task reports:', e);
             }
@@ -256,17 +241,6 @@ router.get('/:id', async (req, res) => {
         const id = parseInt(req.params.id);
         const pagePath = `/reports/${id}`;
 
-        // Check file cache (permanent — reports don't change)
-        const cached = await cache.getReport(id);
-        if (cached) {
-            return res.render('public/report-view', {
-                report: cached,
-                pageTitle: reportTitle(cached),
-                pagePath,
-                robotsMeta: 'noindex, nofollow'
-            });
-        }
-
         const response = await fetchWithTimeout(`${CHAT_API_URL}/reports/${id}`, {
             headers: { 'X-Admin-Key': ADMIN_KEY },
             timeoutMs: 5000
@@ -277,7 +251,6 @@ router.get('/:id', async (req, res) => {
 
         const data = await response.json();
         const report = data.report;
-        await cache.setReport(report);
 
         res.render('public/report-view', {
             report,

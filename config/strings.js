@@ -165,8 +165,6 @@ const ko = {
         linkCancel: '취소',
 
         // 채팅 로그
-        clearCache: '캐시 삭제',
-        cacheCleared: '삭제 완료',
 
         chatLogs: '채팅 로그',
         chatLogsFilterAll: '전체',
@@ -790,8 +788,6 @@ const en = {
         linkInsert: 'Insert',
         linkCancel: 'Cancel',
 
-        clearCache: 'Clear Cache',
-        cacheCleared: 'Cleared!',
 
         chatLogs: 'Chat Logs',
         chatLogsFilterAll: 'All',

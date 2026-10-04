@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
-const reportCache = require('../config/report-cache');
 const { MENUS, menuLabel } = require('../services/menu-views');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { CHAT_API_URL, leninbotAdminHeaders } = require('../config/services');
@@ -29,10 +28,6 @@ router.post('/logout', (req, res) => {
     });
 });
 
-// Clear the Redis caches (task reports fetched from the backend API)
-router.post('/cache/clear', requireAuth, async (req, res) => {
-    await reportCache.clearAll();
-    res.json({ cleared: true });
 });
 
 // Page views per site menu (services/menu-views.js), both languages summed,

@@ -37,7 +37,6 @@
                     <a href="/admin/commulingo-docs" class="btn"><%= strings.admin.commulingoDocs %></a>
                     <a href="/admin/chat-logs" class="btn"><%= strings.admin.chatLogs %></a>
                     <a href="/admin/passkeys" class="btn"><%= strings.admin.passkeys %></a>
-                    <button type="button" class="btn btn-danger" id="clear-cache-btn"><%= strings.admin.clearCache %></button>
             </div>
         </div>
 
@@ -102,22 +101,6 @@
         <% } %>
     </div>
 
-    <script>
-    document.getElementById('clear-cache-btn').addEventListener('click', async () => {
-        const btn = document.getElementById('clear-cache-btn');
-        btn.disabled = true;
-        btn.textContent = '...';
-        try {
-            const res = await fetch('/admin/cache/clear', {
-                method: 'POST',
-                headers: { 'x-csrf-token': '<%= csrfToken %>' }
-            });
-            if (res.ok) btn.textContent = '<%= strings.admin.cacheCleared %>';
-            else btn.textContent = 'Error';
-        } catch { btn.textContent = 'Error'; }
-        setTimeout(() => { btn.textContent = '<%= strings.admin.clearCache %>'; btn.disabled = false; }, 2000);
-    });
-    </script>
     <%- include('../partials/footer') %>
 </body>
 </html>
