@@ -5,6 +5,8 @@
 const { createClient } = require('redis');
 const fs = require('fs');
 
+// Database 0 is the frontend's (sessions, caches); leninbot uses database 1
+// of the same server. The defaults carry no database index, so they mean 0.
 function defaultRedisUrl() {
     if (process.env.REDIS_URL) return process.env.REDIS_URL;
     if (fs.existsSync('/.dockerenv')) return 'redis://leninbot-redis:6379';
