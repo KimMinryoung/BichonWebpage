@@ -9,6 +9,7 @@
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
+| Redis 사용·캐시·세션·백엔드 공유 | [2026-10-04 설계 검토](redis-design-review-20261004.md) |
 | CommuLingo 학습 활동 계측·테스트 제외·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
 | CommuLingo 신규 강좌 후보·실제 유입 판정 | [2026-09-27 후보](commulingo-course-candidates-20260927.md) |
 | CommuLingo 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
