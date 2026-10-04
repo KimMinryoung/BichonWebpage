@@ -1,0 +1,7 @@
+{
+  "id": "polish-party-wording-20261004",
+  "changes": [
+    { "event": "solidarity-martial-law", "column": "body_ko", "from": "폴란드 공산당 정치국은 충격에 빠졌다", "to": "폴란드 통일노동자당 정치국은 충격에 빠졌다" },
+    { "event": "revolutions-1989", "column": "body_ko", "from": "폴란드 공산당 체제는 살아남았지만", "to": "폴란드 공산 체제는 살아남았지만" }
+  ]
+}

@@ -1,0 +1,867 @@
+{
+ "id": "party-terms-e-20261004",
+ "terms": [
+  {
+   "id": "communist-party-of-china",
+   "affiliationId": "china-ccp",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chinese_Communist_Party",
+    "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A"
+   ],
+   "fields": {
+    "term": {
+     "ko": "중국 공산당",
+     "en": "Chinese Communist Party"
+    },
+    "original": "中国共产党 (中共)",
+    "category": "party-state",
+    "period": {
+     "ko": "1921–현재",
+     "en": "1921–present"
+    },
+    "startYear": 1921,
+    "definition": {
+     "ko": "1921년 7월 상하이에서 창당한 중국의 공산당. 러시아 공산당(볼셰비키)과 코민테른의 도움을 받아 천두슈와 리다자오가 세웠고, 국민당과의 합작과 내전을 거쳐 1949년 10월 1일 중화인민공화국을 수립했다. 그 뒤 유일 집권당으로 중국을 통치하며, 마르크스·레닌주의를 중국의 조건에 맞게 적용한다는 「중국 특색 사회주의」를 내세운다.",
+     "en": "Chinese communist party founded in Shanghai in July 1921. Established by Chen Duxiu and Li Dazhao with the help of the Russian Communist Party (Bolsheviks) and the Comintern, it went through alliance and civil war with the Kuomintang and proclaimed the People's Republic of China on 1 October 1949. It has since governed China as the sole ruling party and calls its adaptation of Marxism–Leninism to Chinese conditions \"socialism with Chinese characteristics\"."
+    },
+    "body": {
+     "ko": "10월 혁명과 5·4 운동의 영향 속에서 천두슈와 리다자오는 레닌주의와 세계 혁명을 처음 공개적으로 지지한 사람들이었다. 창당 대회는 1921년 7월 23일 상하이 프랑스 조계의 한 집에서 열렸고, 당시 당원은 57명, 중국인 대표는 13명이었다. 7월 30일 프랑스 경찰이 회의를 방해하자 대회는 저장성 자싱 남호의 유람선으로 옮겨 계속되었다. 리다자오와 천두슈는 참석하지 않았지만, 대회는 코민테른 지부로서 공산당을 세우기로 결의하고 천두슈를 지도자로 뽑았다. 중국어 출처에 따르면 당은 1922년 코민테른에 가입했다.\n\n코민테른과 소련은 국민당과 손잡았고, 당원들은 국민당에 들어가 제1차 국공합작을 이루었다. 당원은 1925년 제4차 대회 뒤 900명에서 2,428명으로 늘었다. 1927년 4월 장제스가 상하이에서 공산당원 5,000명을 학살했고, 같은 해 당은 2만 5천 명 가운데 약 1만 5천 명을 잃었다. 7월 15일 우한 국민당 정부도 공산당원을 축출하자 당은 홍군을 만들어 8월 1일 난창 봉기를 일으켰고, 마오쩌둥은 추수 봉기에 실패한 뒤 징강산으로 들어갔다. 천두슈는 당에서 쫓겨난 뒤 중국 트로츠키주의 운동을 이끌었고, 1929~1930년 당 조직을 장악한 리리싼의 노선은 실패로 끝났다. 1931년 11월 7일 장시성 루이진에서 중화 소비에트 공화국을 세웠으나 국민당의 포위 공격에 밀려 대장정에 나섰고, 1935년 1월 쭌이 회의에서 마오쩌둥이 정치국 상무위원으로 뽑혀 당 안의 지위를 굳혔다.\n\n1936년 12월 시안 사건 뒤 제2차 국공합작이 이루어졌다. 영어 출처에 따르면 두 당의 협력은 1940년에 사실상 끝났고, 공산당은 이 기간에 독자 근거지를 넓혔다. 마오쩌둥은 1943년 정치국 주석, 1945년 중앙위원회 주석이 되었다. 일본 항복 뒤 국공내전이 다시 벌어졌고, 당은 1949년 10월 1일 중화인민공화국을 선포했으며 국민당 정부는 타이완으로 물러났다.\n\n집권 뒤 당은 토지개혁과 5개년 계획을 시행했고, 1954년 헌법으로 연합 정부를 없애고 일당 체제를 세웠다. 1957년 반우파 투쟁에서 적어도 55만 명이 정치적 박해를 받았고, 대약진 운동은 1,500만~4,500만 명이 죽은 것으로 추정되는 대기근을 낳았다. 1960~1970년대에 소련 공산당과 갈라섰고, 문화대혁명 때 류사오치·덩샤오핑 등이 숙청되었다. 1976년 마오쩌둥이 죽은 뒤 화궈펑이 4인방을 제거했고, 1978년 최고 지도자가 된 덩샤오핑은 개혁개방과 「중국 특색 사회주의」를 내세웠다. 1989년 톈안먼 시위는 무력으로 진압되었다.\n\n장쩌민과 후진타오의 뒤를 이어 2012년 총서기가 된 시진핑은 반부패 운동을 벌이며 집단 지도 대신 총서기에게 권력을 집중했다. 당의 최고 기관은 5년마다 열리는 전국대표대회이고, 실제 권한은 정치국과 그 상무위원회에 있다. 중국어 출처에 인용된 당내 통계 공보에 따르면 2025년 말 당원은 10,128.6만 명이었다.",
+     "en": "Under the influence of the October Revolution and the May Fourth Movement, Chen Duxiu and Li Dazhao were among the first to publicly support Leninism and world revolution. The founding congress opened on 23 July 1921 in a house in the Shanghai French Concession; the party then had 57 members, and 13 Chinese delegates were present. When French police interrupted the meeting on 30 July, the congress moved to a tourist boat on South Lake in Jiaxing, Zhejiang. Neither Li nor Chen attended, but the congress resolved to found a communist party as a branch of the Comintern and elected Chen as its leader. According to the Chinese-language source, the party joined the Comintern in 1922.\n\nThe Comintern and the Soviets allied with the Kuomintang, and communists joined it, forming the First United Front. Membership grew from 900 to 2,428 after the 4th Congress in 1925. In April 1927 Chiang Kai-shek massacred 5,000 communists in Shanghai, and that year the party lost about 15,000 of its 25,000 members. When the Wuhan KMT government also expelled the communists on 15 July, the party founded the Red Army and staged the Nanchang uprising on 1 August; after the failed Autumn Harvest Uprising Mao Zedong withdrew to the Jinggang Mountains. Chen Duxiu, expelled from the party, went on to lead the Chinese Trotskyist movement, and the line of Li Lisan, who controlled the party organisation in 1929–1930, ended in failure. On 7 November 1931 the party founded the Chinese Soviet Republic at Ruijin in Jiangxi, but KMT encirclement campaigns forced it onto the Long March, and at the Zunyi Conference in January 1935 Mao was elected to the Politburo Standing Committee and consolidated his position.\n\nAfter the Xi'an Incident of December 1936 the Second United Front was formed. According to the English-language source, collaboration between the two parties had effectively ended by 1940, and the communists used the period to expand independent bases. Mao became Chairman of the Politburo in 1943 and Chairman of the Central Committee in 1945. After the Japanese surrender the civil war resumed; the party proclaimed the People's Republic of China on 1 October 1949, and the Nationalist government retreated to Taiwan.\n\nIn power the party carried out land reform and five-year plans, and the 1954 constitution abolished the coalition government and established one-party rule. The Anti-Rightist Campaign of 1957 persecuted at least 550,000 people, and the Great Leap Forward led to a famine with an estimated 15 to 45 million deaths. In the 1960s and 1970s the party split with the Communist Party of the Soviet Union, and during the Cultural Revolution leaders such as Liu Shaoqi and Deng Xiaoping were purged. After Mao's death in 1976 Hua Guofeng removed the Gang of Four, and Deng Xiaoping, paramount leader from 1978, launched reform and opening up and \"socialism with Chinese characteristics\". The Tiananmen Square protests of 1989 were crushed by force.\n\nXi Jinping, who succeeded Jiang Zemin and Hu Jintao as general secretary in 2012, has waged an anti-corruption campaign and centralised power in the general secretary at the expense of collective leadership. The party's highest body is the National Congress, held every five years, while real authority lies with the Politburo and its Standing Committee. According to the internal statistical bulletin cited by the Chinese-language source, the party had 101.286 million members at the end of 2025."
+    },
+    "aliases": {
+     "ko": [
+      "중국공산당"
+     ],
+     "en": [
+      "Communist Party of China",
+      "CCP",
+      "CPC"
+     ]
+    },
+    "people": [
+     "chen-duxiu",
+     "li-dazhao",
+     "mao-zedong",
+     "zhou-enlai",
+     "liu-shaoqi",
+     "deng-xiaoping",
+     "zhu-de",
+     "zhang-wentian",
+     "li-lisan",
+     "qu-qiubai"
+    ],
+    "events": [
+     "may-fourth-and-ccp-founding",
+     "first-united-front-1924-1927",
+     "jiangxi-soviet-and-long-march",
+     "sino-japanese-war-1937-1945",
+     "chinese-civil-war-1945-1949",
+     "chinese-revolution-1949",
+     "prc-consolidation-1949-1956",
+     "great-leap-forward",
+     "cultural-revolution",
+     "sino-soviet-split",
+     "tiananmen-1989"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1921 by Chen Duxiu and Li Dazhao with the help of the Far Eastern Bureaus of the Russian Communist Party (Bolsheviks) and the Comintern; won the civil war against the KMT and proclaimed the PRC on 1 October 1949; has since been the sole governing party; officially adapts Marxism–Leninism to Chinese conditions as socialism with Chinese characteristics.",
+      "source": "https://en.wikipedia.org/wiki/Chinese_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Founding congress 23 July 1921 in the Shanghai French Concession with 57 members and 13 delegates, moved to a boat at Jiaxing after 30 July; Chen elected leader; First United Front; 900 to 2,428 members after 1925; Shanghai massacre of 5,000 and loss of 15,000 of 25,000 members in 1927; Nanchang uprising 1 August 1927; Autumn Harvest Uprising; Li Lisan; Second United Front ended by 1940; Mao chairman 1943/1945; PRC 1949; 1954 constitution; Anti-Rightist Campaign at least 550,000; Great Leap famine 15–45 million; Sino-Soviet split; Cultural Revolution; Deng from 1978; Tiananmen 1989; Xi from 2012.",
+      "source": "https://en.wikipedia.org/wiki/Chinese_Communist_Party",
+      "locator": "en: History — Founding and early history; Chinese Civil War and Second Sino-Japanese War; Proclamation of the PRC and the Mao era; Reform and opening up; Xi Jinping and the new era"
+     },
+     {
+      "field": "body",
+      "claim": "Joined the Comintern in 1922; Chinese Soviet Republic founded at Ruijin on 7 November 1931; Zunyi Conference January 1935 added Mao to the Politburo Standing Committee; 101.286 million members at the end of 2025.",
+      "source": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A",
+      "locator": "zh: 導言; 歷史发展 — 党的成立与早期活动; 毛泽东逐渐确立领导地位"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1921 and still the governing party of the PRC.",
+      "source": "https://en.wikipedia.org/wiki/Chinese_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Formally constituted as the Communist Party of China on 23 July 1921.",
+      "source": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A",
+      "locator": "zh: 導言"
+     }
+    ]
+   }
+  },
+  {
+   "id": "kuomintang",
+   "affiliationId": "china-kmt",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kuomintang",
+    "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E5%9C%8B%E6%B0%91%E9%BB%A8"
+   ],
+   "fields": {
+    "term": {
+     "ko": "중국국민당",
+     "en": "Kuomintang"
+    },
+    "original": "中國國民黨 (國民黨, KMT)",
+    "category": "party-state",
+    "period": {
+     "ko": "1894–현재",
+     "en": "1894–present"
+    },
+    "startYear": 1894,
+    "definition": {
+     "ko": "쑨원이 1894년 하와이 호놀룰루에서 세운 흥중회를 기원으로 하고, 1919년 10월 10일 상하이에서 지금 이름으로 재편된 중국의 민족주의 정당. 삼민주의를 지도 이념으로 삼아 1928년부터 1949년까지 중화민국의 유일 집권당이었고, 국공내전에서 진 뒤 타이완으로 옮겨 1987년까지 계엄 아래 일당 통치를 했다. 지금은 타이완의 주요 정당이다.",
+     "en": "Chinese nationalist party that traces its origin to the Revive China Society founded by Sun Yat-sen in Honolulu, Hawaii, in 1894 and was reorganised under its present name in Shanghai on 10 October 1919. Guided by the Three Principles of the People, it was the sole ruling party of the Republic of China from 1928 to 1949; after losing the civil war it moved to Taiwan, which it ruled as a one-party state under martial law until 1987. It is now one of Taiwan's major parties."
+    },
+    "body": {
+     "ko": "쑨원은 1894년 11월 24일 호놀룰루에서 흥중회를 세웠고, 1905년 8월 20일 도쿄에서 다른 반청 단체와 합쳐 청조 타도와 공화국 수립을 내건 중국동맹회를 만들었다. 신해혁명으로 1912년 1월 1일 중화민국이 세워졌지만, 군사력이 없던 쑨원은 임시 대총통 자리를 위안스카이에게 넘겼다. 1912년 8월 25일 베이징 후광회관에서 동맹회와 다섯 개 소정당이 합쳐 국민당을 결성했고, 쑨원이 이사장, 황싱이 부이사장이 되었다. 국민당은 1912년 12월 첫 국회 선거에서 압승했으나 1913년 쑹자오런이 상하이에서 암살되었고, 위안스카이를 겨냥한 2차 혁명이 실패한 뒤 11월 위안스카이가 국민당을 해산했다. 쑨원은 1914년 7월 8일 도쿄에서 중화혁명당을 세웠지만, 자신에 대한 개인적 충성 서약을 요구해 황싱 등 옛 동지들이 참여를 거부했다. 1919년 10월 10일 상하이 프랑스 조계에서 당은 중국국민당으로 재편되었고, 1920년 본부를 광저우에 두었다.\n\n서방의 승인을 얻지 못한 국민당은 1923년 소련의 지원을 받아들였다. 코민테른 요원 미하일 보로딘 등 소련 고문들은 당을 러시아 공산당(볼셰비키)을 본뜬 레닌주의 조직으로 재편했고, 공산당원들은 당적을 유지한 채 국민당에 들어와 제1차 국공합작을 이루었다. 1924년 1월 광저우에서 열린 제1차 전국대표대회는 민족·민권·민생의 삼민주의를 채택했다. 1925년 쑨원이 죽은 뒤 실권은 황푸군관학교 교장 장제스에게 넘어갔고, 장제스는 1926년 7월 6일 당 지도권을 잡고 북벌에 나섰다. 1927년 4월 12일 상하이 학살로 공산당을 축출하면서 국공내전이 시작되었다. 국민혁명군은 1928년 베이징을 점령했고, 국민당은 수도를 난징으로 옮겨 「훈정」이라는 이름의 일당 통치를 시작했다.\n\n1931년 일본이 만주를 점령한 뒤에도 장제스는 공산당 토벌을 앞세웠고, 1934년 장시의 중화 소비에트 공화국은 무너졌다. 1936년 시안 사건으로 장제스는 공산당과 제2차 국공합작을 맺었고 이듬해 중일전쟁이 일어났지만, 이 동맹은 1941년 신사군 사건으로 끝났다. 1945년 일본이 항복한 뒤 1946년 전면적인 내전이 벌어졌다. 국민당 정부는 초인플레이션을 막지 못했고, 1948년 8월 발행한 금원권은 열 달 만에 가치를 잃었다. 1949년 말 국민당은 국보와 군인·피란민 200만 명을 데리고 타이완으로 물러났고, 대륙에 남은 일부 당원은 중국국민당혁명위원회를 세웠다.\n\n타이완에서는 1947년 2·28 사건 뒤 「백색 테러」로 3만 명이 넘는 사람이 죽거나 실종되었고, 1949년부터 1987년까지 계엄 아래 일당 통치가 이어졌다. 1970년대에 유엔 의석과 많은 나라의 외교 승인을 중화인민공화국에 내주었다. 1980년대 말 장징궈가 계엄과 야당 금지를 풀었고, 리덩후이는 민주화를 이어 1996년 첫 총통 직선에서 재선되었다. 2000년 총통 선거 패배로 72년에 걸친 국민당 총통 시대가 끝났고, 2008년 마잉주가 정권을 되찾았으나 2016년 다시 졌다. 2024년 선거에서 입법원 제1당이 되었으며, 중화민국을 중국의 유일한 대표로 보는 입장에서 「92 공식」을 받아들이고 현상 유지를 주장한다.",
+     "en": "Sun Yat-sen founded the Revive China Society in Honolulu on 24 November 1894, and on 20 August 1905 in Tokyo he joined with other anti-Qing groups to form the Tongmenghui, committed to overthrowing the Qing and founding a republic. The Xinhai Revolution produced the Republic of China on 1 January 1912, but Sun, who had no military power, ceded the provisional presidency to Yuan Shikai. On 25 August 1912 the Tongmenghui and five smaller parties merged at the Huguang Guild Hall in Beijing to form the Nationalist Party, with Sun as chairman and Huang Xing as deputy. It won the first parliamentary election in December 1912, but Song Jiaoren was assassinated in Shanghai in 1913, and after the failed Second Revolution against Yuan, Yuan dissolved the party in November. Sun founded the Chinese Revolutionary Party in Tokyo on 8 July 1914, but its oath of personal loyalty to him led Huang Xing and other old comrades to refuse to join. On 10 October 1919, in the Shanghai French Concession, the party was reorganised as the Kuomintang of China, and in 1920 it set up its headquarters in Canton.\n\nDenied recognition by the Western powers, the KMT accepted Soviet aid in 1923. Soviet advisers led by the Comintern agent Mikhail Borodin reorganised it as a Leninist party modelled on the Russian Communist Party (Bolsheviks), and communists joined it while keeping their own party membership, forming the First United Front. The First National Congress in Guangzhou in January 1924 adopted the Three Principles of the People: nationalism, democracy and people's livelihood. After Sun's death in 1925 real power passed to Chiang Kai-shek, superintendent of the Whampoa Military Academy, who took over the party leadership on 6 July 1926 and launched the Northern Expedition. His expulsion of the communists in the Shanghai massacre of 12 April 1927 began the Chinese Civil War. The National Revolutionary Army took Beijing in 1928, and the KMT moved the capital to Nanjing and began one-party rule under the name of \"political tutelage\".\n\nEven after Japan occupied Manchuria in 1931, Chiang gave priority to suppressing the communists, and the Chinese Soviet Republic in Jiangxi was destroyed in 1934. The Xi'an Incident of 1936 forced him into the Second United Front, and the Second Sino-Japanese War began the following year, but the alliance ended with the New Fourth Army incident of 1941. After Japan surrendered in 1945, full-scale civil war broke out in 1946. The Nationalist government failed to control hyperinflation, and the gold yuan introduced in August 1948 became worthless within ten months. At the end of 1949 the KMT retreated to Taiwan with national treasures and 2 million soldiers and refugees, and some members who stayed on the mainland founded the Revolutionary Committee of the Kuomintang.\n\nIn Taiwan, the February 28 incident of 1947 was followed by the White Terror, in which over 30,000 people were killed or disappeared, and one-party rule under martial law lasted from 1949 to 1987. In the 1970s the country lost its United Nations seat and much of its diplomatic recognition to the People's Republic of China. In the late 1980s Chiang Ching-kuo lifted martial law and the ban on opposition parties, and Lee Teng-hui continued democratisation and was re-elected in the first direct presidential election in 1996. Defeat in the 2000 presidential election ended 72 years of KMT presidencies; Ma Ying-jeou regained power in 2008, but the party lost again in 2016. It became the largest party in the Legislative Yuan in 2024 and, regarding the Republic of China as the sole representative of China, accepts the 1992 Consensus and favours the status quo."
+    },
+    "aliases": {
+     "ko": [
+      "중국 국민당"
+     ],
+     "en": [
+      "Chinese Nationalist Party",
+      "Nationalist Party of China",
+      "Kuomintang of China",
+      "Guomindang",
+      "KMT"
+     ]
+    },
+    "people": [
+     "sun-yat-sen",
+     "chiang-kai-shek",
+     "wang-jingwei",
+     "song-ziwen",
+     "tsiang-tingfu"
+    ],
+    "events": [
+     "xinhai-revolution-1911",
+     "first-united-front-1924-1927",
+     "jiangxi-soviet-and-long-march",
+     "sino-japanese-war-1937-1945",
+     "chinese-civil-war-1945-1949",
+     "chinese-revolution-1949"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded by Sun Yat-sen in Honolulu in 1894 as the Revive China Society and reformed under its current name in 1919 in the Shanghai French Concession; guided by the Three Principles of the People; sole ruling party of China 1928–1949; retreated to Taiwan in 1949 and ruled it under martial law until 1987; now a major party in Taiwan.",
+      "source": "https://en.wikipedia.org/wiki/Kuomintang",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Revive China Society 24 Nov 1894; Tongmenghui 20 Aug 1905; Nationalist Party formed 25 Aug 1912 at the Huguang Guild Hall; 1912 election victory; Song Jiaoren assassinated 1913; Second Revolution; dissolved by Yuan in November 1913; Chinese Revolutionary Party 8 July 1914; renamed 10 Oct 1919; Soviet aid and Borodin 1923; First Congress 1924; Chiang leader 6 July 1926; Shanghai massacre 12 April 1927; Beijing taken 1928; New Fourth Army incident 1941; gold yuan 1948; retreat with 2 million people; Revolutionary Committee of the KMT; 228 incident and White Terror over 30,000; martial law until 1987; 2000, 2008, 2016, 2024 elections.",
+      "source": "https://en.wikipedia.org/wiki/Kuomintang",
+      "locator": "en: History — Founding and Sun Yat-sen era; Under Chiang Kai-shek in mainland China; In Taiwan: 1945–present"
+     },
+     {
+      "field": "body",
+      "claim": "Nationalist Party founded at the Huguang Guild Hall on 25 August 1912 to contest the parliamentary elections; Song Jiaoren assassinated on 20 March 1913; the Chinese Revolutionary Party was reorganised as the Kuomintang of China on 10 October 1919; First National Congress 20–30 January 1924 adopted alliance with the Soviets and admission of communists.",
+      "source": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E5%9C%8B%E6%B0%91%E9%BB%A8",
+      "locator": "zh: 歷史 — 前身; 大陸時期"
+     },
+     {
+      "field": "period",
+      "claim": "Traces its foundation to the Revive China Society of 1894 and remains an active party in Taiwan.",
+      "source": "https://en.wikipedia.org/wiki/Kuomintang",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Its earliest predecessor, the Revive China Society, was founded in Honolulu on 24 November 1894.",
+      "source": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E5%9C%8B%E6%B0%91%E9%BB%A8",
+      "locator": "zh: 導言; 歷史 — 前身"
+     }
+    ]
+   }
+  },
+  {
+   "id": "communist-party-of-korea",
+   "affiliationId": "party-korean-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Communist_Party_of_Korea",
+    "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EA%B3%B5%EC%82%B0%EB%8B%B9"
+   ],
+   "fields": {
+    "term": {
+     "ko": "조선공산당",
+     "en": "Communist Party of Korea"
+    },
+    "original": "조선공산당 (朝鮮共産黨)",
+    "category": "party-state",
+    "period": {
+     "ko": "1925–1946",
+     "en": "1925–1946"
+    },
+    "startYear": 1925,
+    "endYear": 1946,
+    "definition": {
+     "ko": "1925년 4월 17일 경성에서 비밀리에 창립된 조선의 공산당. 치안유지법 아래 거듭 검거되며 재건과 와해를 되풀이했고, 파벌 다툼 끝에 1928년 12월 코민테른의 결정으로 해체되었다. 1945년 9월 박헌영이 재건했으며, 1946년 이북 조직은 북조선로동당으로, 이남 조직은 남조선로동당으로 합당했다.",
+     "en": "Korean communist party founded in secret in Seoul on 17 April 1925. Operating clandestinely under the Peace Preservation Law, it was repeatedly broken up by arrests and rebuilt, and after years of factional feuds it was disbanded by the Comintern in December 1928. Pak Hon-yong re-established it in September 1945, and in 1946 its northern organisation merged into the Workers' Party of North Korea and its southern organisation into the Workers' Party of South Korea."
+    },
+    "body": {
+     "ko": "조선 안에서 공산당을 세우려는 첫 시도는 1923년 정재달이 했으나 그는 1924년 체포되었다. 1925년 4월 17일 경성의 중국 음식점 아서원에서 15명이 조선공산당을 창립했다. 이날은 일본 경찰의 관심이 전조선기자대회에 쏠린 날이었다. 한국어 출처는 박헌영·김단야·조봉암 등이 창립을 주도했다고 적는다. 4월 18일 김찬의 집에서 열린 중앙집행위원회는 김재봉을 책임비서로 뽑았고, 같은 날 박헌영을 책임비서로 하는 고려공산청년회가 결성되었다. 당은 조동호를 소련에 보내 코민테른의 승인을 구했고, 1926년 5월 승인을 받았으며 1928년 9월 1일 코민테른 제6차 대회에서 정식으로 가입했다.\n\n1925년 11월 신의주에서 당원들이 일본 경찰과 충돌한 일을 계기로 당 문서가 드러나 약 100명이 검거되고 83명이 유죄 판결을 받았다(제1차 조선공산당 사건). 12월 강달영이 책임비서를 이어받았고 김재봉은 체포되었다. 1926년 3월 당원은 130명이었다. 당은 순종의 장례를 계기로 6·10 만세운동을 준비했으나 권오설 등 약 160명이 검거되고 강달영도 7월 17일 체포되었다(제2차 사건). 1926년 11월 일월회 계열이 낸 정우회 선언은 민족주의자와의 통일전선을 주장했고, 12월 제2차 당대회로 재조직된 당(이른바 ML당)도 1928년 2월 대거 검거되었다. 1928년 3월 책임비서가 된 차금봉은 7~8월 검거 때 체포되어 옥중에서 죽었다. 검거 인원은 영어 출처가 약 175명, 한국어 출처가 170여 명으로 적는다.\n\n코민테른의 방침에 따라 당은 1927년 결성된 신간회에 당원들을 참여시켰다. 그러나 창당 때부터 이어진 화요파·서울파·ML파 등의 파벌 다툼 때문에 코민테른은 1928년 12월 당을 해체했다. 한국어 출처는 이를 「12월 테제」에 따른 임시 해산으로 적는다. 이후 만주와 조선 안에서 이어진 재건 시도는 잇따른 검거로 실패했고, 코민테른은 1930년 당 재건 임무를 중국 공산당 만주성위원회에 맡겼다.\n\n해방 직후인 1945년 8월 이영 등이 장안파 공산당을 세웠고, 박헌영은 9월 11일 조선공산당을 재건했다. 장안파는 11월 23일 스스로 해산하고 박헌영 쪽에 합류했다. 10월 13일 평양에 조선공산당 북조선분국이 설치되어 김용범이 책임자가 되었고, 12월 김일성이 그 자리를 이었다. 북한 공식 사학은 10월 10일을 창당일로 기념한다. 당은 처음에 모스크바 3상회의의 신탁통치 결정에 반대했으나 1946년 1월 3일 지지로 돌아섰다. 북조선분국은 1946년 북조선공산당으로 바뀌어 조선신민당과 합당해 북조선로동당이 되었다. 개칭 시점은 영어 출처가 1946년 4월, 한국어 「조선로동당」 문서가 6월 22일로 다르게 적는다. 이남에서는 9월 당이 이끈 총파업에 25만 명이 넘는 노동자가 참여해 대구 10·1 사건으로 번졌고, 체포령을 피해 박헌영이 10월 월북한 뒤 11월 23일 조선신민당·조선인민당 일부와 합당해 남조선로동당이 결성되었다.",
+     "en": "The first attempt to organise a communist party inside Korea was made by Chŏng Chae-dal in 1923, but he was arrested in 1924. On 17 April 1925, 15 people founded the Communist Party of Korea at the Chinese restaurant Ya Shue Yuen in Seoul, on a day when the Japanese police were focused on the All-Korea Press Reporters' Conference. The Korean-language source names Pak Hon-yong, Kim Tan-ya and Cho Pong-am among the founders. On 18 April the Central Executive Committee met in Kim Ch'an's home and elected Kim Chae-bong as chair, and the same day the Koryŏ Communist Youth Association was formed with Pak Hon-yong as its secretary. The party sent Cho Tong-ho to the Soviet Union to seek Comintern recognition, which it received in May 1926; it was formally admitted at the Comintern's 6th World Congress on 1 September 1928.\n\nIn November 1925 a brawl between party members and Japanese police in Sinuiju led to the discovery of party documents; about 100 people were arrested and 83 convicted (the first Communist Party incident). Kang Tal-yŏng took over the leadership in December, and Kim Chae-bong was arrested. By March 1926 the party had 130 members. It prepared for the June Tenth Movement at the funeral of Emperor Sunjong, but around 160 people, including Kwon O-sŏl, were arrested and Kang was seized on 17 July (the second incident). The Declaration of Chŏng-u-hoe issued by the January Association in November 1926 called for a united front with nationalists, and the party reorganised at the Second Party Congress in December (the so-called ML party) was also hit by mass arrests in February 1928. Ch'a Kŭm-bong, secretary from March 1928, was arrested in the round-ups of July–August and died in prison. The English-language source puts those arrested at around 175, the Korean-language source at over 170.\n\nFollowing Comintern policy, the party had its members join Singanhoe, founded in 1927. But because of the feuds between the Tuesday, Seoul and ML factions that had plagued it from its foundation, the Comintern disbanded the party in December 1928; the Korean-language source describes this as a temporary dissolution under the December Theses. Later attempts to rebuild it in Manchuria and Korea failed under repeated arrests, and in 1930 the Comintern assigned the task to the Manchurian Provincial Committee of the Chinese Communist Party.\n\nRight after liberation in August 1945 Yi Yong and others formed the Changan group, and Pak Hon-yong re-established the Communist Party of Korea on 11 September; the Changan group dissolved itself and joined Pak on 23 November. On 13 October the North Korea Bureau of the party was set up in Pyongyang under Kim Yong-bom, whom Kim Il Sung replaced in December; official North Korean historiography celebrates 10 October as the party's foundation day. The party at first opposed the Moscow Conference's trusteeship plan but switched to supporting it on 3 January 1946. The North Korea Bureau became the Communist Party of North Korea in 1946 and merged with the New People's Party to form the Workers' Party of North Korea; the English-language source dates the renaming to April 1946, the Korean article on the Workers' Party of Korea to 22 June. In the south, a general strike led by the party in September drew more than 250,000 workers and grew into the Autumn Uprising; Pak Hon-yong fled north in October to escape an arrest warrant, and on 23 November the party merged with the New People's Party and part of the People's Party to form the Workers' Party of South Korea."
+    },
+    "aliases": {
+     "ko": [
+      "조선 공산당"
+     ],
+     "en": []
+    },
+    "people": [
+     "pak-hon-yong",
+     "kim-il-sung",
+     "choe-chang-ik"
+    ],
+    "events": [
+     "dprk-foundation-1946-1948"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded secretly in Seoul on 17 April 1925 under the Peace Preservation Law; repeatedly arrested and rebuilt; disbanded by the Comintern in December 1928 because of factional feuds; re-established by Pak Hon-yong on 11 September 1945; northern branch became part of the WPNK and the southern party merged into the WPSK in 1946.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Korea",
+      "locator": "en: lead; Foundation; Post-war period"
+     },
+     {
+      "field": "body",
+      "claim": "Chŏng Chae-dal 1923; founding by 15 people at Ya Shue Yuen on 17 April 1925; Kim Chae-bong elected 18 April; Comintern recognition May 1926 and admission 1 September 1928; Sinuiju arrests of about 100 (83 convicted); Kang Tal-yŏng; 130 members in March 1926; June Tenth Movement arrests of about 160; Chŏng-u-hoe declaration; Second Congress December 1926; arrests February 1928; Ch'a Kŭm-bong arrested and killed, about 175 arrested; Singanhoe; disbanded December 1928; 1930 task given to CCP Manchurian committee; Changan group; reestablishment 11 Sept 1945; North Korea Bureau 13 Oct 1945; trusteeship reversal 3 Jan 1946; CPNK April 1946; general strike over 250,000; SKWP 23 Nov 1946.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Korea",
+      "locator": "en: Foundation; Reforming the party; Singanhoe; Manchuria; Post-war period"
+     },
+     {
+      "field": "body",
+      "claim": "Founded at the Aseowon restaurant by Pak Hon-yong, Kim Tan-ya, Cho Pong-am and others; Koryŏ Communist Youth Association under Pak formed on 18 April; Kim Chae-bong first secretary; first and second party incidents; ML party; Ch'a Kŭm-bong and over 170 arrested in 1928; temporary dissolution under the December Theses; reestablished 11 September 1945; merged into the WPSK on 23 November 1946.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 도입부; 연혁 — 공산당 창당; 제1차·제2차·제3차·제4차 공산당 사건; 광복 이후; 후반 활동; 조선공산당 지도자"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from its founding in 1925 until the 1946 mergers that created the Workers' Parties of North and South Korea.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 도입부"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 17 April 1925.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Korea",
+      "locator": "en: Foundation"
+     },
+     {
+      "field": "endYear",
+      "claim": "Merged with the New People's Party and the People's Party into the WPSK on 23 November 1946.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 도입부; 재건파 조선공산당"
+     }
+    ]
+   }
+  },
+  {
+   "id": "workers-party-of-north-korea",
+   "affiliationId": "party-north-korean-workers",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Workers%27_Party_of_North_Korea",
+    "https://ko.wikipedia.org/wiki/%EB%B6%81%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+    "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9"
+   ],
+   "fields": {
+    "term": {
+     "ko": "북조선로동당",
+     "en": "Workers' Party of North Korea"
+    },
+    "original": "북조선로동당 (北朝鮮勞動黨)",
+    "category": "party-state",
+    "period": {
+     "ko": "1946–1949",
+     "en": "1946–1949"
+    },
+    "startYear": 1946,
+    "endYear": 1949,
+    "definition": {
+     "ko": "1946년 8월 28~30일 창립대회에서 북조선공산당과 조선신민당이 합당해 만든 38선 이북의 공산당. 조선신민당 출신 김두봉이 위원장, 김일성과 주영하가 부위원장이었으며, 1948년 조선민주주의인민공화국 수립을 주도했다. 1949년 6월 남조선로동당과 합당해 조선로동당이 되었다.",
+     "en": "Communist party north of the 38th parallel, formed at a founding congress on 28–30 August 1946 by the merger of the Communist Party of North Korea and the New People's Party of Korea. Kim Tu-bong of the New People's Party was chairman, with Kim Il Sung and Chu Yong-ha as vice chairmen, and the party led the founding of the Democratic People's Republic of Korea in 1948. In June 1949 it merged with the Workers' Party of South Korea to form the Workers' Party of Korea."
+    },
+    "body": {
+     "ko": "조선공산당 북조선분국은 1946년 서울의 중앙에서 떨어져 나와 북조선공산당이 되었고, 7월 22일 소련 당국이 만든 북조선민주주의민족통일전선을 이끌었다. 북조선공산당과 조선신민당은 7월 말 합당을 결정했고, 8월 28~30일 창립대회에서 북조선로동당을 세웠다. 영어 출처는 창당 당시 당원을 약 36만 6천 명, 세포를 약 1만 2천 개로 추정하지만, 영어 「조선신민당」 문서는 북조선공산당 13만 4천 명과 신민당 3만 5천 명을 합쳐 17만 명이 넘었다고 적는다. 신민당은 지식인층, 공산당은 노동자·농민층이 주된 기반이었고, 김일성은 창립대회에서 당이 근로 대중의 전위이며 순결성과 규율을 지켜야 한다고 연설했다.\n\n당 안에는 조선공산당에서 물려받은 네 파벌이 있었다. 허가이가 이끈 소련파, 일제 시기 국내에서 활동한 오기섭·주영하·김용범 등의 국내파, 김무정에 이어 김두봉과 최창익이 이끈 연안파, 그리고 김일성의 빨치산파였다. 빨치산파는 130~140명으로 처음에는 가장 약했으나 정부를 이끌던 김일성과 소련의 후원을 바탕으로 주도권을 잡았다. 첫 정치위원회는 연안파 6명, 소련파 3명, 국내파 2명, 빨치산파 2명으로 구성되었다.\n\n당은 북조선인민회의 의석의 36%를 차지했고 김두봉이 의장, 김일성이 북조선인민위원회 위원장이 되었다. 1947년 리·동 인민위원회 선거에서는 7만 454석 가운데 57.7%를 당원이 차지했다. 1947년 초 국내파를 겨냥한 숙청으로 4만~6만 명이 제명되었다. 1948년 3월 27~30일 제2차 대회에서 당은 당원 72만 5,762명, 세포 2만 9,762개를 내세웠고, 김일성은 오기섭 등 국내파를 비판했다. 기관지로 로동신문과 근로자를 냈다.\n\n1948년 9월 초 최고인민회의 대의원 212명 가운데 102명이 당원이었고, 최고인민회의는 조선민주주의인민공화국 수립을 선포하고 부위원장 김일성을 수상으로 세웠다. 1949년 6월 24일 당은 남조선로동당과 합당해 조선로동당이 되었다. 한국어 「조선로동당」 문서는 6월 24일 남로당을 흡수하고 6월 30일 이름을 바꾸었다고 적는다.",
+     "en": "The North Korea Bureau of the Communist Party of Korea broke away from the Seoul central committee in 1946 as the Communist Party of North Korea and on 22 July led the United Democratic National Front set up by the Soviet authorities. The Communist Party of North Korea and the New People's Party agreed to merge at the end of July, and the founding congress of 28–30 August established the Workers' Party of North Korea. The English-language source estimates about 366,000 members in around 12,000 cells at the founding, while the English article on the New People's Party gives more than 170,000, of whom 134,000 came from the communists and 35,000 from the New People's Party. The New People's Party drew on intellectuals and the communists on workers and peasants, and Kim Il Sung told the congress that the party was the vanguard of the working masses and must keep its purity and discipline.\n\nThe party inherited four factions from the Communist Party of Korea: the Soviet Koreans led by Ho Ka-i; the domestic faction of communists who had stayed in Korea under Japanese rule, such as O Ki-sop, Chu Yong-ha and Kim Yong-bom; the Yan'an faction led first by Mu Chong and then by Kim Tu-bong and Choe Chang-ik; and Kim Il Sung's guerrilla faction. With about 130 to 140 members the guerrillas were initially the weakest, but Kim's leadership of the government and Soviet backing gave them the upper hand. The first politburo had six members from the Yan'an faction, three Soviet Koreans, two from the domestic faction and two guerrillas.\n\nThe party held 36% of the seats in the People's Assembly of North Korea, which Kim Tu-bong chaired, while Kim Il Sung headed the People's Committee of North Korea. In the village and ward people's committee elections of 1947 party members won 57.7% of the 70,454 seats. A purge of the domestic faction in early 1947 expelled 40,000 to 60,000 members. At the Second Congress on 27–30 March 1948 the party claimed 725,762 members in 29,762 cells, and Kim Il Sung attacked O Ki-sop and other domestic communists. Its organs were Rodong Sinmun and Kunroja.\n\nIn early September 1948, 102 of the 212 deputies of the Supreme People's Assembly came from the party; the assembly proclaimed the Democratic People's Republic of Korea with vice chairman Kim Il Sung as prime minister. On 24 June 1949 the party merged with the Workers' Party of South Korea to form the Workers' Party of Korea; the Korean article on the Workers' Party of Korea says the WPSK was absorbed on 24 June and the name was changed on 30 June."
+    },
+    "aliases": {
+     "ko": [
+      "북로당",
+      "북조선노동당"
+     ],
+     "en": [
+      "Workers’ Party of North Korea",
+      "WPNK"
+     ]
+    },
+    "people": [
+     "kim-tu-bong",
+     "kim-il-sung",
+     "ho-ka-i",
+     "choe-chang-ik",
+     "mu-chong"
+    ],
+    "events": [
+     "dprk-foundation-1946-1948"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded at a congress on 28–30 August 1946 by merging the Communist Party of North Korea and the New People's Party; Kim Tu-bong chairman, Chu Yong-ha and Kim Il Sung vice chairmen; its vice chairman Kim Il Sung became prime minister of the DPRK in 1948; merged with the WPSK into the WPK on 24 June 1949.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_North_Korea",
+      "locator": "en: lead; Foundation of DPRK and merger into the Workers' Party of Korea"
+     },
+     {
+      "field": "body",
+      "claim": "About 366,000 members in 12,000 cells at founding; differing social bases; Kim Il Sung's congress speech; four factions and the guerrilla faction of 130–140; first politburo 6/3/2/2; 36% of People's Assembly seats; 57.7% of 70,454 local seats in 1947; 40,000–60,000 expelled in early 1947; Second Congress 27–30 March 1948 with 725,762 members in 29,762 cells; 102 of 212 SPA deputies; merger 24 June 1949; organs Rodong Sinmun and Kunroja.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_North_Korea",
+      "locator": "en: lead; Merger; Factionalism; United Front and participation in government; Second Congress; Foundation of DPRK and merger; Organs"
+     },
+     {
+      "field": "body",
+      "claim": "Founded on 28 August 1946 and reorganised into the WPK on 24 June 1949; published Rodong Sinmun and Kunroja.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%B6%81%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 도입부; 기관지"
+     },
+     {
+      "field": "body",
+      "claim": "North Korea Bureau renamed Communist Party of North Korea on 22 June 1946; merged with the New People's Party on 28–30 August 1946; WPSK absorbed on 24 June 1949 and name changed to Workers' Party of Korea on 30 June.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 역사; 제1차 당대회; 제2차 당대회"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from August 1946 to June 1949.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_North_Korea",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founding congress held on 28–30 August 1946.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_North_Korea",
+      "locator": "en: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "Reorganised into the Workers' Party of Korea on 24 June 1949.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%B6%81%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 도입부"
+     }
+    ]
+   }
+  },
+  {
+   "id": "workers-party-of-south-korea",
+   "affiliationId": "party-south-korean-workers",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Workers%27_Party_of_South_Korea",
+    "https://ko.wikipedia.org/wiki/%EB%82%A8%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9"
+   ],
+   "fields": {
+    "term": {
+     "ko": "남조선로동당",
+     "en": "Workers' Party of South Korea"
+    },
+    "original": "남조선로동당 (南朝鮮勞動黨)",
+    "category": "party-state",
+    "period": {
+     "ko": "1946–1949",
+     "en": "1946–1949"
+    },
+    "startYear": 1946,
+    "endYear": 1949,
+    "definition": {
+     "ko": "1946년 11월 23일 서울에서 조선공산당, 남조선신민당, 조선인민당 일부가 합당해 결성한 38선 이남의 공산당. 허헌이 위원장, 박헌영이 부위원장이었고, 미군정과 대한민국 정부에 맞서 총파업과 무장 투쟁을 이끌었다. 1949년 6월 북조선로동당과 비밀리에 합당해 조선로동당이 되었다.",
+     "en": "Communist party south of the 38th parallel, formed in Seoul on 23 November 1946 by the merger of the Communist Party of Korea, the South Korean New People's Party and part of the People's Party of Korea. Led by Ho Hon as chairman with Pak Hon-yong as vice chairman, it organised general strikes and armed struggle against the US military government and the Republic of Korea. In June 1949 it merged in secret with the Workers' Party of North Korea to form the Workers' Party of Korea."
+    },
+    "body": {
+     "ko": "정판사 위조지폐 사건 등으로 조선공산당의 활동이 거의 멈추자, 이남의 좌파는 조선공산당·조선인민당·남조선신민당을 합쳐 세력을 다시 묶으려 했다. 합당은 1946년 9월 3일 발표되었고, 11월 22~23일 첫 대회가 열려 허헌이 위원장, 박헌영이 부위원장으로 뽑혔다. 영어 출처는 조선인민당 가운데 이른바 「48인파」만 합류했다고 적는다. 여운형은 박헌영과 주도권을 다투다 갈라서 뒤에 근로인민당을 세웠고, 합당에 반대한 세력은 따로 사회로동당을 만들었다. 비합법 노동운동인 조선노동조합전국평의회(전평)가 당과 연결되어 있었다.\n\n미군정이 당을 불법화하자 당은 비밀 세포망을 조직했고, 영어 출처에 따르면 당원은 약 36만 명이었다. 당은 처음에 합법 활동과 함께 노동자·농민의 파업을 이끌었는데, 대표적인 것이 대구 10·1 사건이다. 단독 정부 수립 운동이 벌어지자 1947년부터 무장 게릴라 투쟁을 시작했고, 1948년 2월 7일 단독 정부 수립에 반대하는 총파업을 일으켰다. 4월 3일 당은 김달삼 등을 중심으로 제주도에서 무장 봉기를 일으켰고, 그 진압 과정에서 수만 명의 제주도민이 살해되었다.\n\n1948년 10월 국군 14연대의 남로당원 지창수가 제주 진압 명령을 거부하고 부대를 이끌고 봉기해 여수와 순천을 장악했다(여순 사건). 한국어 출처는 당중앙이 우발적인 봉기를 뒤늦게 승인한 것으로 보며, 진압 뒤 정부의 대대적 탄압으로 수천 명의 민간인이 공모자로 몰려 살해되었고 당은 사실상 와해되었다고 적는다. 1948년 제정된 국가보안법은 남로당을 불법화했고, 당 지도부의 상당수는 평양으로 옮겨 갔다.\n\n1948년 8월 남로당과 북로당은 연합중앙위원회를 두었고, 1949년 6월 24일 합당해 조선로동당이 되었다. 합당은 일반 당원에게도 숨긴 비밀 합당이어서 이남의 문서에는 한국전쟁 전까지 남로당이라는 이름이 계속 쓰였다. 합당 뒤 김일성이 위원장, 박헌영이 부위원장이 되었고, 옛 남로당원들은 국내파로 불렸다. 전쟁 중 보도연맹 학살로 당원과 공산주의 동조 혐의자 6만~20만 명이 한국군에게 살해되었다. 북쪽에서는 1953년 이승엽·박헌영이 「미제 간첩」 혐의로 구속된 것을 시작으로 남로당 출신 지도자들이 숙청되었다.",
+     "en": "With the Communist Party of Korea almost paralysed by affairs such as the Chŏngp'ansa counterfeiting case, the left in the south sought to regroup by merging the Communist Party, the People's Party and the South Korean New People's Party. The merger was announced on 3 September 1946 and the first congress, held on 22–23 November, elected Ho Hon chairman and Pak Hon-yong vice chairman. The English-language source says only a faction of the People's Party, the so-called \"forty-eighters\", joined. Lyuh Woon-hyung split from Pak after a struggle over leadership and later founded the Working People's Party, and opponents of the merger formed a separate Socialist Workers' Party. The clandestine labour movement of the All Korea Labor Union (Chŏnp'yŏng) was connected to the party.\n\nOutlawed by the US occupation authorities, the party organised a network of clandestine cells and, according to the English-language source, had around 360,000 members. At first it combined legal activity with strikes by workers and peasants, most notably the Daegu October incident. As the campaign for a separate southern government gathered pace it began armed guerrilla struggle in 1947 and on 7 February 1948 launched a general strike against a separate state. On 3 April it led an armed uprising on Jeju Island under Kim Dal-sam and others, in the suppression of which tens of thousands of islanders were killed.\n\nIn October 1948 Ji Chang-su, a party member in the army's 14th Regiment, refused orders to suppress Jeju and led the regiment in a revolt that seized Yeosu and Suncheon (the Yeosu–Suncheon incident). The Korean-language source sees the revolt as unplanned and only belatedly approved by the party centre, and says the government's sweeping crackdown afterwards killed thousands of civilians accused of complicity and left the party all but destroyed. The National Security Act passed in 1948 outlawed the party, and much of its leadership moved to Pyongyang.\n\nIn August 1948 the two Workers' Parties set up a joint central committee, and on 24 June 1949 they merged into the Workers' Party of Korea. The merger was kept secret even from ordinary members, so documents in the south went on using the name of the Workers' Party of South Korea until the Korean War. Kim Il Sung became chairman of the merged party and Pak Hon-yong deputy chairman, and former WPSK members became known as the domestic faction. During the war 60,000 to 200,000 party members and suspected sympathisers were killed by the South Korean army in the Bodo League massacre. In the north, the arrest of Yi Sung-yop and Pak Hon-yong as \"American spies\" in 1953 began the purge of the former WPSK leaders."
+    },
+    "aliases": {
+     "ko": [
+      "남로당",
+      "남조선노동당"
+     ],
+     "en": [
+      "Workers’ Party of South Korea",
+      "WPSK"
+     ]
+    },
+    "people": [
+     "pak-hon-yong",
+     "ho-hon"
+    ],
+    "events": [
+     "korean-war",
+     "dprk-foundation-1946-1948"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in Seoul on 23 November 1946 by the merger of the Communist Party of Korea, the South Korean New People's Party and the People's Party; Ho Hon chairman and Pak Hon-yong vice chairman; led strikes and armed struggle; secretly merged with the WPNK into the WPK in June 1949.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%82%A8%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 도입부; 좌파운동의 재정립; 좌익 운동"
+     },
+     {
+      "field": "body",
+      "claim": "Founded 23 November 1946 by the CPK, NPP and the forty-eighters of the People's Party; led by Ho Hon; linked to Chŏnp'yŏng; outlawed by US authorities; about 360,000 members; armed guerrilla struggle from 1947; general strikes February–March 1948; Jeju uprising 3 April 1948; outlawed by the National Security Act; leadership moved to Pyongyang; merged 24 June 1949; domestic faction; Kim Il Sung chairman and Pak deputy; Bodo League massacre of 60,000–200,000; Pak and others later purged.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_South_Korea",
+      "locator": "en: History"
+     },
+     {
+      "field": "body",
+      "claim": "Merger prompted by the Chŏngp'ansa case; Lyuh Woon-hyung left and founded the Working People's Party; Daegu 1 October incident; 7 February 1948 strike; Jeju 4·3 under Kim Dal-sam; Yeosu–Suncheon revolt led by Ji Chang-su, belatedly approved; crackdown killed thousands; August 1948 joint committee and secret June 1949 merger; Yi Sung-yop and Pak arrested in 1953.",
+      "source": "https://ko.wikipedia.org/wiki/%EB%82%A8%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 남조선로동당의 초기 역사; 대한민국에서 — 2·7파업, 제주 4·3 사건, 여순 14연대 반란사건, 이후; 조선민주주의인민공화국에서"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from 1946 to 1949.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_South_Korea",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 23 November 1946.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_South_Korea",
+      "locator": "en: History"
+     },
+     {
+      "field": "endYear",
+      "claim": "Merged with the WPNK on 24 June 1949.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_South_Korea",
+      "locator": "en: History"
+     }
+    ]
+   }
+  },
+  {
+   "id": "new-peoples-party-of-korea",
+   "affiliationId": "party-choson-new-people",
+   "sources": [
+    "https://en.wikipedia.org/wiki/New_People%27s_Party_of_Korea",
+    "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%8B%A0%EB%AF%BC%EB%8B%B9"
+   ],
+   "fields": {
+    "term": {
+     "ko": "조선신민당",
+     "en": "New People's Party of Korea"
+    },
+    "original": "조선신민당 (朝鮮新民黨)",
+    "category": "party-state",
+    "period": {
+     "ko": "1946",
+     "en": "1946"
+    },
+    "startYear": 1946,
+    "endYear": 1946,
+    "definition": {
+     "ko": "1946년 2월 16일 김두봉이 중국에서 돌아온 연안파 공산주의자들과 함께 조선독립동맹을 바탕으로 평양에서 창당한 정당. 조선공산당보다 온건한 입장으로 넓은 지지를 얻었으나, 1946년 8월 북조선공산당과 합당해 북조선로동당이 되었다. 이남의 남조선신민당은 11월 남조선로동당 결성에 참여했다.",
+     "en": "Party founded in Pyongyang on 16 February 1946 by Kim Tu-bong and the Yan'an communists returning from exile in China, on the basis of the Korean Independence League. Its more moderate positions than the Communist Party of Korea won it broad support, but in August 1946 it merged with the Communist Party of North Korea to form the Workers' Party of North Korea. Its southern counterpart, the South Korean New People's Party, took part in founding the Workers' Party of South Korea in November."
+    },
+    "body": {
+     "ko": "김두봉은 조선민족혁명당과 조선의용대에서 활동하다가 1942년 4월 화북의 연안에 정착했다. 그곳에서 최창익 일파와 김무정이 합류했고, 김두봉은 같은 해 7월 정치 조직인 조선독립동맹과 군사 조직인 조선의용군을 만들었다. 1945년 12월 13일 조직을 이끌고 귀국했으나 조선의용군은 무장 해제를 당했다. 조선독립동맹은 모스크바 3상회의 지지 성명을 냈고, 1946년 2월 이남에 백남운을 위원장으로 하는 경성특별위원회를 두었다.\n\n1946년 2월 8일 북조선임시인민위원회 부위원장으로 뽑힌 김두봉은 2월 16일 조선독립동맹을 바탕으로 조선신민당을 창당했다. 한국어 출처에 따르면 당명은 마오쩌둥의 신민주주의에서 땄다. 주석은 김두봉, 부주석은 최창익과 한빈이었고, 백남운·허정숙·박효삼 등이 주요 간부였다. 당은 조선공산당보다 온건한 입장을 취해 여러 계층에게 인기가 높았다.\n\n7월 22일 북조선공산당은 신민당·조선민주당·천도교청우당과 함께 북조선민주주의민족통일전선을 결성했다. 영어 출처에 따르면 스탈린의 직접 지시에 따라 7월 29일 두 당이 중앙위원회 합동 전원회의를 열어 합당에 합의했고, 8월 28~30일 창립대회에서 북조선로동당이 되었다. 새 당의 당원 17만여 명 가운데 13만 4천 명이 공산당, 3만 5천 명이 신민당 출신이었다. 한국어 출처는 이 합당이 소련의 압력 아래 추진되었다고 적는다.\n\n합당을 앞둔 7월 13일 신민당은 경성특별위원회를 남조선신민당 중앙위원회로 바꾸어 독립시켰다. 남조선신민당은 이남의 조선공산당·조선인민당과 합당을 논의했으나, 박헌영이 11월 남조선로동당을 세우자 둘로 갈라졌다. 중앙간부파는 남로당에 흡수되었고, 반간부파는 조선공산당 대회파, 조선인민당 31인파와 함께 사회로동당을 결성하면서 남조선신민당도 사라졌다.",
+     "en": "Kim Tu-bong, after working in the Korean National Revolutionary Party and the Korean Volunteer Corps, settled in Yan'an in North China in April 1942. There he was joined by Choe Chang-ik's group and Kim Mu-chong, and in July that year he formed the Korean Independence League as a political organisation and the Korean Volunteer Army as its military arm. He returned to Korea with his organisation on 13 December 1945, but the Volunteer Army was disarmed. The Independence League issued a statement supporting the Moscow Conference, and in February 1946 it set up a Seoul special committee in the south under Paek Nam-un.\n\nElected vice chairman of the Provisional People's Committee of North Korea on 8 February 1946, Kim Tu-bong founded the New People's Party on 16 February on the basis of the Independence League. According to the Korean-language source, the name came from Mao Zedong's New Democracy. Kim was chairman, Choe Chang-ik and Han Pin vice chairmen, and Paek Nam-un, Ho Jong-suk and Pak Hyo-sam were among its leading cadres. Its more moderate positions than the Communist Party made it popular with a wide range of people.\n\nOn 22 July the Communist Party of North Korea joined the New People's Party, the Democratic Party and the Chondoist Chongu Party to form the United Democratic National Front. According to the English-language source, on Stalin's direct orders the two parties held a joint plenum of their central committees on 29 July and agreed to merge, and the founding congress of 28–30 August created the Workers' Party of North Korea. Of its more than 170,000 members, 134,000 came from the Communist Party and 35,000 from the New People's Party. The Korean-language source says the merger was pursued under Soviet pressure.\n\nOn 13 July, ahead of the merger, the party turned its Seoul special committee into the independent central committee of the South Korean New People's Party. This party discussed a merger with the Communist Party and the People's Party in the south, but split when Pak Hon-yong founded the Workers' Party of South Korea in November. The central cadre faction was absorbed into the WPSK, while the anti-cadre faction formed the Socialist Workers' Party with the congress faction of the Communist Party and the group of 31 from the People's Party, and the South Korean New People's Party ceased to exist."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "New People’s Party of Korea"
+     ]
+    },
+    "people": [
+     "kim-tu-bong",
+     "choe-chang-ik"
+    ],
+    "events": [
+     "dprk-foundation-1946-1948"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed in Pyongyang on 16 February 1946 by Kim Tu-bong and communists exiled in China (the Yan'an faction), formerly the Independence League; more moderate than the CPK and popular; merged with the Communist Party of North Korea into the WPNK in August 1946; remaining members joined the WPSK on 23 November 1946.",
+      "source": "https://en.wikipedia.org/wiki/New_People%27s_Party_of_Korea",
+      "locator": "en: lead; History"
+     },
+     {
+      "field": "body",
+      "claim": "Kim Tu-bong settled in Yan'an in April 1942 and formed the Korean Independence League and Volunteer Army in July; returned 13 December 1945; Volunteer Army disarmed; Seoul special committee under Paek Nam-un; party founded 16 February 1946 and named after New Democracy; leadership Kim, Choe Chang-ik, Han Pin; merger under Soviet pressure; South Korean NPP created 13 July 1946; split over the WPSK and the Socialist Workers' Party.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%8B%A0%EB%AF%BC%EB%8B%B9",
+      "locator": "ko: 도입부; 조선신민당의 창당; 조선신민당의 합당과 소멸"
+     },
+     {
+      "field": "body",
+      "claim": "United Democratic National Front on 22 July 1946; joint plenum on 29 July on Stalin's orders; WPNK founded 28–30 August with over 170,000 members (134,000 communists, 35,000 from the NPP).",
+      "source": "https://en.wikipedia.org/wiki/New_People%27s_Party_of_Korea",
+      "locator": "en: History"
+     },
+     {
+      "field": "period",
+      "claim": "Existed only in 1946, from February to its merger in August.",
+      "source": "https://en.wikipedia.org/wiki/New_People%27s_Party_of_Korea",
+      "locator": "en: lead; History"
+     },
+     {
+      "field": "startYear",
+      "claim": "Formed on 16 February 1946.",
+      "source": "https://en.wikipedia.org/wiki/New_People%27s_Party_of_Korea",
+      "locator": "en: History"
+     },
+     {
+      "field": "endYear",
+      "claim": "Merged into the Workers' Party of North Korea in August 1946, about six months after its founding.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%8B%A0%EB%AF%BC%EB%8B%B9",
+      "locator": "ko: 조선신민당의 합당과 소멸"
+     }
+    ]
+   }
+  },
+  {
+   "id": "korean-democratic-party-north-korea",
+   "affiliationId": "party-korean-democratic",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Korean_Social_Democratic_Party",
+    "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%82%AC%ED%9A%8C%EB%AF%BC%EC%A3%BC%EB%8B%B9"
+   ],
+   "fields": {
+    "term": {
+     "ko": "조선민주당",
+     "en": "Korean Democratic Party (North Korea)"
+    },
+    "original": "조선민주당 (朝鮮民主黨)",
+    "category": "party-state",
+    "period": {
+     "ko": "1945–현재",
+     "en": "1945–present"
+    },
+    "startYear": 1945,
+    "definition": {
+     "ko": "1945년 11월 3일 조만식이 평양에서 창당한 정당. 기독교계 상공인과 지식인의 지지를 받았으나 조만식이 신탁통치에 반대하다 1946년 1월 소련 당국에 체포된 뒤 최용건이 이끌며 공산당에 종속된 위성 정당이 되었다. 1980년대 초 조선사회민주당으로 이름을 바꾸어 지금도 조선로동당의 우당으로 남아 있다.",
+     "en": "Party founded in Pyongyang on 3 November 1945 by Cho Man-sik. It drew support from Christian businessmen and intellectuals, but after Cho, who opposed the trusteeship plan, was arrested by the Soviet authorities in January 1946, it came under Choe Yong-gon and became a satellite of the communists. Renamed the Korean Social Democratic Party in the early 1980s, it survives as an allied party of the Workers' Party of Korea."
+    },
+    "body": {
+     "ko": "한국어 출처에 따르면 소련 군정은 1945년 10월 14일 조만식에게 그를 당수, 김일성을 부당수로 하는 정당을 만들자고 제안했다. 조만식은 분단 상태에서 정당을 만들면 분할이 굳어진다며 처음에는 반대했으나, 김일성의 거듭된 압력 끝에 11월 3일 평양에서 조선민주당을 창당했다. 당원 규모는 출처마다 다르다. 영어 출처는 몇 주 만에 약 50만 명이 되었으나 소련 보고서는 1946년 5월 14만 1천 명으로 적었다고 하고, 한국어 출처는 김일성의 계산으로 30만, 당 집계로 50만에 이르렀다고 적는다. 조만식은 비밀리에 공산주의에 동조하던 최용건을 부당수로 앉히라는 압력을 받았다.\n\n1945년 12월 모스크바 3상회의가 신탁통치를 결정하자 1946년 1월 2일 당 중앙위원회 전원회의는 반대를 의결했고, 1월 5일 조만식은 5도 인민위원회 위원장에서 물러났다가 곧 소련 당국에 체포되었다. 당 지도부의 상당수는 서울로 옮겨 새 본부를 세웠고, 1948년 5월 제헌 국회의원 선거에서 1석(이윤영)을 얻었다. 북쪽에서는 1946년 2월 24일 제1차 대회가 최용건을 당수로 뽑고 조만식을 「민족 반역자」로 규정했으며, 그 지지자들이 숙청되었다.\n\n당은 7월 22일 북조선민주주의민족통일전선에 들어가 공산당에 사실상 종속되었다. 1947년 4월 13~15일 제2차 대회는 「인민민주주의 혁명」론을 강령에 넣고 북조선로동당과 비슷한 조직 구조를 채택했다. 그래도 한동안 당원은 늘어 소련 문서는 1946년 12월 29만 1,459명, 1947년 5월 제2차 대회 결의는 27만 3,665명으로 적는다. 1948년 8월 선거에서 35석을 받았으나, 한국전쟁 중 많은 당원이 남쪽으로 넘어가 전쟁이 끝날 무렵 당원은 1만 명 아래로 줄었다.\n\n영어 출처에 따르면 1956년 2월 최용건이 조선로동당 부위원장이 되자 홍기황이 당수를 이었고, 홍기황은 1958년 비로동당 정당 숙청 때 간첩 혐의로 제거되었다. 한국어 출처는 최용건이 1958년까지 당수였고 강양욱이 그 뒤를 이었다고 적어 서로 다르다. 1958년 이후 지방 조직이 해체되어 1960년대에는 상부 조직만 남았다. 이름은 조선사회민주당으로 바뀌었는데, 영어 출처의 연혁은 1980년, 한국어 출처와 영어 출처의 이념 항목은 1981년(1월 28~29일 제6차 당대회)으로 적는다. 이후 당은 북한에 복수 정당제가 있다는 대외 선전에 쓰였고, 2026년 북한 매체는 리선권을 위원장으로 밝혔다.",
+     "en": "According to the Korean-language source, on 14 October 1945 the Soviet military government proposed to Cho Man-sik a party with Cho as leader and Kim Il Sung as deputy. Cho at first refused, fearing that founding parties under division would make the partition permanent, but after repeated pressure from Kim he founded the Korean Democratic Party in Pyongyang on 3 November. Figures for its size differ: the English-language source says it had around half a million members after a few weeks while Soviet reports gave 141,000 by May 1946, and the Korean-language source gives 300,000 by Kim Il Sung's count and 500,000 by the party's own. Cho was forced to appoint Choe Yong-gon, a secret communist sympathiser, as his deputy.\n\nWhen the Moscow Conference of December 1945 decided on a trusteeship, the party's Central Committee plenum voted against it on 2 January 1946; on 5 January Cho resigned as chairman of the People's Committee for the Five Provinces and was soon arrested by the Soviet authorities. Many party leaders moved to Seoul and set up a new headquarters, winning one seat (Yi Yun-yong) in the Constitutional Assembly election of May 1948. In the north, the First Congress on 24 February 1946 elected Choe Yong-gon leader and declared Cho \"a traitor to the nation\", and his supporters were purged.\n\nOn 22 July the party joined the United Democratic National Front and became in effect subordinate to the communists. Its Second Congress on 13–15 April 1947 wrote the theory of \"people's democratic revolution\" into its programme and adopted a structure resembling that of the Workers' Party of North Korea. Its membership still grew for a time: a Soviet document gives 291,459 in December 1946 and a resolution of the Second Congress 273,665 in May 1947. It was given 35 seats in the August 1948 elections, but during the Korean War many members went south, and by the end of the war membership had fallen below 10,000.\n\nAccording to the English-language source, when Choe Yong-gon became a vice chairman of the Workers' Party of Korea in February 1956, Hong Ki-hwang replaced him as leader, and Hong was removed on espionage charges in the 1958 purge of non-WPK parties; the Korean-language source instead says Choe led the party until 1958 and was followed by Kang Yang-uk. From 1958 its local organisations were dismantled, leaving only its top bodies by the 1960s. It was renamed the Korean Social Democratic Party, which the English history section dates to 1980 and the Korean source and the English ideology section to 1981 (the 6th Party Congress of 28–29 January). Since then it has served propaganda claiming that North Korea has a multi-party system, and in 2026 North Korean media identified Ri Son-gwon as its chairman."
+    },
+    "aliases": {
+     "ko": [
+      "조선사회민주당"
+     ],
+     "en": [
+      "Korean Social Democratic Party",
+      "KSDP"
+     ]
+    },
+    "people": [
+     "cho-mansik",
+     "choe-yong-gon"
+    ],
+    "events": [
+     "dprk-foundation-1946-1948"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed on 3 November 1945 as the Korean Democratic Party led by Cho Man-sik with support from Christian businessmen and intellectuals; Cho arrested by Soviet authorities in 1946 after opposing the trusteeship; Choe Yong-gon became leader and the party became a satellite of the WPK; renamed the Korean Social Democratic Party (1980 per the history section, 1981 per the ideology section); still exists.",
+      "source": "https://en.wikipedia.org/wiki/Korean_Social_Democratic_Party",
+      "locator": "en: lead; History; Ideology"
+     },
+     {
+      "field": "body",
+      "claim": "Half a million members within weeks versus 141,000 in Soviet reports (May 1946); Choe Yong-gon as deputy; plenum against trusteeship 2 January 1946; Cho resigned 5 January and was arrested; leaders moved to Seoul and won one seat in May 1948; First Congress 24 February 1946; joined the Front 22 July; Second Congress 13–15 April 1947; 291,459 and 273,665 members; 35 seats in 1948; below 10,000 after the war; Hong Ki-hwang leader from 1956 and purged 1958; offices shut 1959–1960; renamed 1980; Ri Son-gwon chairman per state media in March 2026.",
+      "source": "https://en.wikipedia.org/wiki/Korean_Social_Democratic_Party",
+      "locator": "en: History; Ideology; Organization"
+     },
+     {
+      "field": "body",
+      "claim": "Soviet proposal to Cho on 14 October 1945; founding on 3 November 1945; 300,000–500,000 members; Choe Yong-gon leader 1946–1958 and Kang Yang-uk from 1958; local organisations dissolved after 1958; renamed at the 6th Congress on 28–29 January 1981.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%82%AC%ED%9A%8C%EB%AF%BC%EC%A3%BC%EB%8B%B9",
+      "locator": "ko: 역사 — 창당; 김일성 등장 이후; 역대 지도부"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1945 and still active as the Korean Social Democratic Party.",
+      "source": "https://en.wikipedia.org/wiki/Korean_Social_Democratic_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded in Pyongyang on 3 November 1945.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EC%82%AC%ED%9A%8C%EB%AF%BC%EC%A3%BC%EB%8B%B9",
+      "locator": "ko: 역사 — 창당"
+     }
+    ]
+   }
+  },
+  {
+   "id": "workers-party-of-korea",
+   "affiliationId": "party-korean-workers",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea",
+    "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9"
+   ],
+   "fields": {
+    "term": {
+     "ko": "조선로동당",
+     "en": "Workers' Party of Korea"
+    },
+    "original": "조선로동당 (朝鮮勞動黨)",
+    "category": "party-state",
+    "period": {
+     "ko": "1949–현재",
+     "en": "1949–present"
+    },
+    "startYear": 1949,
+    "definition": {
+     "ko": "1949년 6월 북조선로동당과 남조선로동당이 합당해 만든 조선민주주의인민공화국(북한)의 집권당. 김일성이 위원장을 맡은 뒤 김정일·김정은으로 지도자가 이어졌고, 헌법은 국가가 당의 영도 밑에 모든 활동을 한다고 규정한다. 공식 지도 사상은 김일성-김정일주의와 주체사상이다.",
+     "en": "Ruling party of the Democratic People's Republic of Korea (North Korea), formed in June 1949 by the merger of the Workers' Party of North Korea and the Workers' Party of South Korea. Led first by Kim Il Sung and then by Kim Jong Il and Kim Jong Un, it is defined by the constitution as the party under whose leadership the state conducts all its activities. Its official guiding ideas are Kimilsungism–Kimjongilism and Juche."
+    },
+    "body": {
+     "ko": "당의 실질적 기원은 1945년 10월 10~13일 평양의 조선공산당 서북5도 당책임자 및 열성자 대회에서 설치된 조선공산당 북조선분국이다. 북한 학계는 김일성이 세웠다는 타도제국주의동맹에서 당의 기원을 찾는다. 분국은 1946년 북조선공산당이 되어 조선신민당과 합쳐 북조선로동당이 되었고, 1949년 6월 24일 남조선로동당과 합당했다. 한국어 출처에 따르면 6월 30일 조선로동당으로 이름을 바꾸고 김일성을 위원장, 박헌영과 허가이를 부위원장으로 뽑았다.\n\n1950년 6월 25일 북한의 남침으로 한국전쟁이 시작되었다. 당 안에는 국내파·소련파·연안파·빨치산파의 네 파벌이 있었는데, 김일성은 전쟁 뒤 1953~1955년 국내파, 1957~1958년 연안파, 1957~1962년 소련파를 차례로 숙청했다. 1956년 제3차 대회 뒤 8월 종파 사건이 일어났고, 연안파 김두봉도 1957년 실각했다. 김일성은 중소 분쟁에서 두 나라 사이를 오가며 그 영향력을 줄였고, 1966년 자주를 내건 주체 노선을 시작했다. 1967년에는 갑산파를 숙청했고, 1972년 주체사상을 국가 활동의 지도 지침으로 규정한 사회주의 헌법을 제정했다.\n\n1980년 제6차 대회에서 김정일이 후계자로 공식 선출되었다. 1994년 김일성이 죽은 뒤 김정일은 1997년 10월 8일 총비서에 올랐고, 군을 당과 국가보다 앞세운 선군정치를 펴 당 기구의 역할이 약해졌다. 1998년 헌법 개정으로 국방위원회가 최고 국가 기관이 되었다. 2010년 9월 28일 44년 만에 열린 제3차 당대표자회에서 김정은이 후계자로 확인되었고, 2011년 12월 17일 김정일이 죽었다.\n\n2012년 4월 11일 제4차 당대표자회는 김정은을 제1비서로 뽑고 김일성-김정일주의를 당의 유일한 지도 사상으로 당규약에 넣었다. 김정은 아래에서 당 기구가 되살아났고, 2016년 36년 만에 열린 제7차 대회는 그를 위원장으로, 2021년 제8차 대회는 총비서로 추대했다. 2021년부터 선군정치 대신 인민을 앞세우는 정치 방식을 내세우며 공산주의를 다시 당규약에 적었고, 2023년에는 통일 목표를 버렸다. 2026년 2월 19~25일 제9차 대회에서 김정은은 총비서로 재선출되었다. 한국에서는 국가보안법으로 금지되어 있다.",
+     "en": "The party's actual origin is the North Korea Bureau of the Communist Party of Korea, set up at a conference of party officials and activists from the five northwestern provinces held in Pyongyang on 10–13 October 1945. North Korean scholarship traces it instead to the Down-with-Imperialism Union said to have been founded by Kim Il Sung. The bureau became the Communist Party of North Korea in 1946 and merged with the New People's Party into the Workers' Party of North Korea, which merged with the Workers' Party of South Korea on 24 June 1949. According to the Korean-language source, the party took the name Workers' Party of Korea on 30 June and elected Kim Il Sung chairman, with Pak Hon-yong and Ho Ka-i as vice chairmen.\n\nNorth Korea invaded the South on 25 June 1950, beginning the Korean War. The party contained four factions, domestic, Soviet, Yan'an and guerrilla, and after the war Kim Il Sung purged the domestic faction in 1953–1955, the Yan'an faction in 1957–1958 and the Soviet Koreans in 1957–1962. The August faction incident followed the Third Congress of 1956, and the Yan'an leader Kim Tu-bong fell in 1957. Kim manoeuvred between the two sides in the Sino-Soviet split to reduce their influence and launched the Juche programme of self-reliance in 1966. He purged the Kapsan faction in 1967, and in 1972 a socialist constitution made Juche the guiding principle of state activity.\n\nAt the 6th Congress in 1980 Kim Jong Il was officially named successor. After Kim Il Sung's death in 1994, Kim Jong Il became General Secretary on 8 October 1997 and pursued Songun, military-first politics, which placed the army above the party and the state and weakened party institutions. A 1998 constitutional amendment made the National Defence Commission the highest state organ. The 3rd Party Conference of 28 September 2010, the first in 44 years, confirmed Kim Jong Un as heir, and Kim Jong Il died on 17 December 2011.\n\nThe 4th Party Conference of 11 April 2012 elected Kim Jong Un First Secretary and wrote Kimilsungism–Kimjongilism into the party rules as the party's only guiding idea. Party institutions revived under him: the 7th Congress of 2016, the first in 36 years, made him chairman, and the 8th Congress of 2021 general secretary. From 2021 the party replaced Songun with \"people-first politics\" and restored communism to the party rules, and in 2023 it abandoned the goal of Korean reunification. At the 9th Congress on 19–25 February 2026 Kim Jong Un was re-elected General Secretary. The party is banned in South Korea under the National Security Act."
+    },
+    "aliases": {
+     "ko": [
+      "조선노동당"
+     ],
+     "en": [
+      "Workers’ Party of Korea",
+      "Korean Workers' Party",
+      "Korean Workers’ Party",
+      "WPK"
+     ]
+    },
+    "people": [
+     "kim-il-sung",
+     "kim-jong-il",
+     "pak-hon-yong",
+     "ho-ka-i",
+     "kim-tu-bong",
+     "choe-yong-gon",
+     "kim-chaek",
+     "nam-il",
+     "ho-hon"
+    ],
+    "events": [
+     "dprk-foundation-1946-1948",
+     "korean-war"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Ruling party of North Korea founded in 1949 from the merger of the WPNK and WPSK; led by Kim Il Sung, then Kim Jong Il and Kim Jong Un; officially guided by Kimilsungism–Kimjongilism and committed to Juche.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea",
+      "locator": "en: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "Article 11 of the Socialist Constitution states that the DPRK conducts all activities under the leadership of the WPK.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 도입부"
+     },
+     {
+      "field": "body",
+      "claim": "North Korea Bureau 13 October 1945; CPNK 1946; WPNK founding congress 28–30 August 1946; merger 24 June 1949; Korean War from 25 June 1950; four factions; purges of domestic (1953–55), Yan'an (1957–58) and Soviet (1957–62) factions; August faction incident 1956; Kapsan faction 1967; Juche from 1966; Kim Jong Il successor at the 6th Congress 1980; General Secretary 8 October 1997; Songun; 1998 constitution; 3rd Conference 28 September 2010; Kim Jong Il died 17 December 2011; 4th Conference 11 April 2012; 7th Congress 2016; 8th Congress 2021; people-first politics; reunification abandoned 2023; 9th Congress 2026; banned in South Korea.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea",
+      "locator": "en: lead; History — Founding and early years; Kim Il Sung's consolidation of power; Kim Jong Il's rule; Kim Jong Un's rule"
+     },
+     {
+      "field": "body",
+      "claim": "North Korea Bureau created at the conference of 10–13 October 1945; DPRK scholarship traces origin to the Down-with-Imperialism Union; WPSK absorbed 24 June 1949 and renamed WPK on 30 June with Kim Il Sung chairman and Pak Hon-yong and Ho Ka-i vice chairmen; Kim Tu-bong fell in 1957; 1972 socialist constitution; 3rd Conference 2010 after 44 years; 9th Congress 19–25 February 2026.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%A1%B0%EC%84%A0%EB%A1%9C%EB%8F%99%EB%8B%B9",
+      "locator": "ko: 역사; 제3차 대회; 제5차 당대회; 당 대표자회; 역대 당 대회"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1949 and still the ruling party.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Created by the merger of 24 June 1949.",
+      "source": "https://en.wikipedia.org/wiki/Workers%27_Party_of_Korea",
+      "locator": "en: History — Founding and early years (1945–1953)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "japanese-communist-party",
+   "affiliationId": "party-japanese-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Japanese_Communist_Party",
+    "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%85%B1%E7%94%A3%E5%85%9A"
+   ],
+   "fields": {
+    "term": {
+     "ko": "일본 공산당",
+     "en": "Japanese Communist Party"
+    },
+    "original": "日本共産党 (日共)",
+    "category": "party-state",
+    "period": {
+     "ko": "1922–현재",
+     "en": "1922–present"
+    },
+    "startYear": 1922,
+    "definition": {
+     "ko": "1922년 7월 15일 도쿄에서 코민테른과 협의해 창당한 일본의 공산당. 창당 때부터 비합법 정당으로 탄압을 받았고, 1945년 연합군 점령 당국의 정치범 석방 뒤 합법 정당이 되었다. 1950년대 초의 무장 투쟁 노선을 버린 뒤 선거와 의회 밖 투쟁을 통한 「민주주의 혁명」을 내세우며, 현존하는 일본 정당 가운데 가장 오래되었다.",
+     "en": "Japanese communist party founded in Tokyo on 15 July 1922 in consultation with the Comintern. Illegal and repressed from its founding, it became a legal party after the Allied occupation authorities released political prisoners in 1945. Having abandoned the armed-struggle line of the early 1950s, it advocates a \"democratic revolution\" through elections and extra-parliamentary struggle, and it is the oldest active political party in Japan."
+    },
+    "body": {
+     "ko": "가타야마 센은 미국에서 공산주의자가 되어 미국 공산당 창립에 참여했고, 노사카 산조는 영국 공산당의 창립 당원이었다. 일본어 출처에 따르면 1921년 4월 사카이 도시히코·야마카와 히토시·곤도 에이조 등이 도쿄에서 준비회를 만들었고, 1922년 7월 15일 사카이·야마카와·곤도 등 8명이 시부야의 다카세 기요가 세 든 방에 모여 비합법 정당으로 일본 공산당을 창립했다. 영어 출처는 도쿠다 규이치가 일본 대표단과 코민테른의 회담 내용을 보고한 도쿄 모임에서 창당했다고 적는다. 11월 코민테른에 가입하며 받은 「22년 테제」 초안은 군주제 폐지, 18세 이상 남녀 보통선거, 8시간 노동제, 대토지 몰수와 소작지의 농민 인도, 중국·타이완·사할린·조선에서의 일본군 완전 철수를 요구했다.\n\n1923년 5월 경찰이 당원 명부를 찾아내 6월 5일 거의 모든 당원이 검거되었다. 당은 1924년 3월 모리가사키 회의에서 해산을 결정했으나, 코민테른의 그리고리 보이틴스키가 이를 거부하고 재건을 지시해 1926년 12월 4일 재건되었다. 이때의 이론적 지도자는 후쿠모토 가즈오였다. 1925년 치안유지법이 제정된 뒤 당은 특별고등경찰의 탄압을 받았고, 체포된 당원들은 「전향」을 강요당했다. 1928년 3월 15일 일제 검거로 1,200명이 체포되었고, 위원장 와타나베 마사노스케는 그해 10월 체포된 뒤 자결했다. 작가 고바야시 다키지는 경찰의 고문으로 죽었다. 1935년 3월 하카마다 사토미가 체포되면서 당은 조직을 잃었고, 패전까지 당원들은 투옥되거나 망명했다. 노사카는 옌안에서 일본인민해방연맹을 만들었다.\n\n1945년 10월 4일 연합군 총사령부 지령으로 정치범이 석방되자 도쿠다 규이치 등이 합법 정당으로 당을 재건했고, 12월 1~2일 19년 만의 당대회(제4차)를 열었다. 당원은 1945년 12월 1,180명에서 1947년 12월 7만 명, 1950년 4월 10만 명 이상으로 늘었다. 1946년 2월 당원 수는 영어 출처가 7,500명, 일본어 출처가 제5차 당대회 발표로 6,847명으로 적는다. 재일 조선인이 당의 중요한 지지 기반이었다. 당은 1949년 총선에서 의석을 4석에서 35석으로 늘렸다.\n\n1949년 가을부터 점령 당국과 일본 정부는 「레드 퍼지」로 공산당원과 그 혐의자 수만 명을 직장에서 쫓아냈다. 1950년 1월 코민포름이 당의 평화 노선을 비판하자 당은 분열했고, 「51년 강령」에 따라 무장 투쟁에 나섰다가 1952년 총선에서 35석을 모두 잃었다. 1955년 제6차 대회에서 무장 노선을 버렸고, 1958년 서기장이 된 미야모토 겐지는 소련·중국과 거리를 두고 중소 분쟁에서 중립을 지키며 복수 정당제를 지지했다. 1960년 안보 투쟁에서 당원은 4만 명에서 8만 명으로 늘었고, 1979년에는 국회 의석의 약 10%를 차지했다. 그 뒤 당세는 줄어 당원은 1990년 약 50만 명에서 2024년 1월 약 25만 명이 되었고, 2024년 1월 다무라 도모코가 시이 가즈오의 뒤를 이어 위원장이 되었다.",
+     "en": "Sen Katayama became a communist in the United States and was a founding member of the Communist Party USA, and Sanzō Nosaka was a founding member of the Communist Party of Great Britain. According to the Japanese-language source, Toshihiko Sakai, Hitoshi Yamakawa, Eizō Kondō and others formed a preparatory group in Tokyo in April 1921, and on 15 July 1922 eight people including Sakai, Yamakawa and Kondō met in a rented room of Kiyoshi Takase in Shibuya and founded the Japanese Communist Party as an illegal party. The English-language source says it was founded at a Tokyo meeting where Kyuichi Tokuda reported on sessions between the Japanese delegation and Comintern officials. The draft \"1922 Theses\" it received on joining the Comintern in November demanded abolition of the monarchy, universal suffrage for men and women over 18, the eight-hour day, confiscation of large estates and transfer of tenanted land to the peasants, and complete withdrawal of Japanese troops from China, Taiwan, Sakhalin and Korea.\n\nIn May 1923 the police found a membership roster, and on 5 June almost every member was arrested. The party decided to dissolve itself at the Morigasaki Conference in March 1924, but the Comintern's Grigori Voitinsky rejected this and ordered it rebuilt, and it was re-established on 4 December 1926 with Kazuo Fukumoto as its leading theorist. After the Peace Preservation Law of 1925 the party was repressed by the Special Higher Police, and arrested members were pressed to \"convert\". A round-up on 15 March 1928 arrested 1,200 people, and party chairman Masanosuke Watanabe killed himself after his arrest in October. The writer Takiji Kobayashi died under police torture. The arrest of Satomi Hakamada in March 1935 left the party without an organisation, and until the end of the war its members were either imprisoned or in exile; in Yan'an Nosaka founded the Japanese People's Emancipation League.\n\nWhen the Allied headquarters ordered the release of political prisoners on 4 October 1945, Kyuichi Tokuda and others rebuilt the party as a legal organisation, and on 1–2 December it held its 4th Congress, the first in nineteen years. Membership rose from 1,180 in December 1945 to 70,000 in December 1947 and over 100,000 by April 1950; for February 1946 the English-language source gives 7,500 and the Japanese-language source 6,847, the figure announced at the 5th Congress. Koreans in Japan were an important base of support. In the 1949 general election the party increased its seats from 4 to 35.\n\nFrom the autumn of 1949 the occupation authorities and the Japanese government carried out the Red Purge, firing tens of thousands of communists and suspected communists. When the Cominform criticised the party's peaceful line in January 1950, the party split and turned to armed struggle under the \"1951 Platform\", and in the 1952 general election it lost all 35 of its seats. The 6th Congress of 1955 renounced the militant line, and Kenji Miyamoto, General Secretary from 1958, distanced the party from the Soviet Union and China, stayed neutral in the Sino-Soviet split and supported a multi-party system. During the 1960 Anpo protests membership doubled from 40,000 to 80,000, and by 1979 the party held about 10% of the seats in the Diet. It has since declined: membership fell from about 500,000 in 1990 to about 250,000 in January 2024, when Tomoko Tamura succeeded Kazuo Shii as chair."
+    },
+    "aliases": {
+     "ko": [
+      "일본공산당"
+     ],
+     "en": [
+      "Communist Party of Japan",
+      "JCP"
+     ]
+    },
+    "people": [
+     "sen-katayama",
+     "tokuda-kyuichi",
+     "sanzo-nosaka"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1922 in consultation with the Comintern; illegal and repressed for twenty years; legalised in 1945 by the Allied occupation; renounced violent revolution and advocates a democratic revolution through elections and extra-parliamentary struggle; oldest active party in Japan.",
+      "source": "https://en.wikipedia.org/wiki/Japanese_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Katayama and Nosaka founding members of the CPUSA and CPGB; founded in Tokyo on 15 July 1922; arrests of 5 June 1923; dissolution at Morigasaki in March 1924 rejected by Voitinsky; re-established 4 December 1926 with Fukumotoism; Peace Preservation Law and tenkō; 1,200 arrested on 15 March 1928; Watanabe suicide 6 October 1928; Kobayashi Takiji killed; organisation lost after Hakamada's arrest on 3 March 1935; Nosaka in Yan'an; release order 4 October 1945; 4th Congress 1–2 December 1945; membership 1,180, 7,500, 70,000, over 100,000; Korean support; 4 to 35 seats in 1949; Red Purge; Cominform criticism and 1951 Platform; lost all seats in 1952; 6th Congress 1955; Miyamoto from 1958; Anpo membership 40,000 to 80,000; about 10% of Diet seats in 1979; Tamura succeeded Shii in January 2024.",
+      "source": "https://en.wikipedia.org/wiki/Japanese_Communist_Party",
+      "locator": "en: lead; History — Foundation; Outlawed and persecuted; Postwar reemergence; Red Purge and turn to violence; Anpo protests"
+     },
+     {
+      "field": "body",
+      "claim": "Preparatory group April 1921; founded 15 July 1922 by eight people in Takase Kiyoshi's rented room in Shibuya as an illegal party; joined the Comintern in November with the draft 1922 Theses (abolition of monarchy, suffrage at 18, eight-hour day, land to peasants, withdrawal from China, Taiwan, Sakhalin and Korea); dissolved in 1924; rebuilt 1926; about 220 released in October 1945; 6,847 members at the 5th Congress in February 1946; membership about 500,000 in 1990 and about 250,000 in January 2024.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%85%B1%E7%94%A3%E5%85%9A",
+      "locator": "ja: 概要; 歴史 — 第一次共産党; 第二次共産党; 日本の敗戦と合法化"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1922 and still active.",
+      "source": "https://en.wikipedia.org/wiki/Japanese_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 15 July 1922.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%85%B1%E7%94%A3%E5%85%9A",
+      "locator": "ja: 歴史 — 第一次共産党"
+     }
+    ]
+   }
+  },
+  {
+   "id": "communist-party-of-vietnam",
+   "affiliationId": "party-vietnamese-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Communist_Party_of_Vietnam",
+    "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3ng_C%E1%BB%99ng_s%E1%BA%A3n_Vi%E1%BB%87t_Nam"
+   ],
+   "fields": {
+    "term": {
+     "ko": "베트남 공산당",
+     "en": "Communist Party of Vietnam"
+    },
+    "original": "Đảng Cộng sản Việt Nam",
+    "category": "party-state",
+    "period": {
+     "ko": "1930–현재",
+     "en": "1930–present"
+    },
+    "startYear": 1930,
+    "definition": {
+     "ko": "1930년 2월 3일 응우옌아이꾸옥(호치민)이 홍콩에서 세 공산주의 조직을 통합해 창당한 베트남의 공산당. 인도차이나 공산당, 베트남 노동당을 거쳐 1976년 창당 때 이름으로 돌아왔다. 베트민을 통해 1945년 8월 혁명을 이끌었고, 프랑스·미국과의 전쟁을 거쳐 1976년 통일한 베트남 사회주의 공화국의 유일 합법 정당이다.",
+     "en": "Vietnamese communist party founded in Hong Kong on 3 February 1930 by Nguyen Ai Quoc (Ho Chi Minh) through the unification of three communist organisations. Known successively as the Indochinese Communist Party and the Workers' Party of Vietnam, it returned to its founding name in 1976. Through the Viet Minh it led the August Revolution of 1945, and after the wars against France and the United States it became the sole legal party of the Socialist Republic of Vietnam, unified in 1976."
+    },
+    "body": {
+     "ko": "당의 기원은 1925년 응우옌아이꾸옥이 코민테른의 자금 지원을 받아 세운 베트남 청년혁명회다. 1928년 광둥의 본부가 국민당에 파괴된 뒤 조직이 갈라져, 1929년 6월 17일 하노이에서 통킹 대표들이 인도차이나 공산당을, 같은 해 말 사이공의 다른 분파가 안남 공산당을 세웠다. 신월혁명당에서 나온 인도차이나 공산주의연맹도 있었다. 1930년 2월 3일 두 당과 연맹의 일부 성원이 홍콩에서 통합해 베트남 공산당을 세웠다. 베트남어 출처에 따르면 통합 회의는 1월 6일부터 2월 8일까지 열렸고, 연맹은 2월 24일 정식으로 합류했다. 1930년 10월 홍콩에서 열린 제1차 중앙위원회 회의에서 코민테른의 요구로 당명을 인도차이나 공산당으로 바꾸고 쩐푸를 첫 총비서로 뽑았다.\n\n1930~1931년 당은 응에띤 소비에트 운동을 이끌었으나, 프랑스 식민 당국의 진압으로 약 1,300명이 죽고 쩐푸 등 중앙위원들이 체포되거나 죽었다. 당은 1935년 레홍퐁의 지도로 재건되었고, 이듬해 하후이떱이 총비서가 되었다. 응우옌아이꾸옥은 민족주의를 이용한다는 비판을 받아 1930년대 초 지도부에서 밀려났다. 1930년대 중반 사이공에서는 트로츠키파와 함께 신문 『라 뤼트』를 내고 선거 명부를 같이 냈다. 1940년 코친차이나 봉기 실패 뒤 응우옌반끄와 하후이떱 등 중앙위원 다수가 처형되었고, 쯔엉찐·팜반동·보응우옌잡이 새 지도부로 떠올랐다. 1941년 2월 귀국한 호치민은 베트민을 세웠으며, 1944년 당원은 2,000~3,000명으로 추정된다.\n\n1945년 8월 베트민은 일본 항복 뒤의 공백을 틈타 전국 봉기를 일으켜 바오다이를 퇴위시켰고, 9월 2일 호치민이 베트남 민주 공화국 독립을 선언했다. 이 무렵 쩐반저우의 지휘 아래 트로츠키파와 독자 민족주의자들이 제거되었다. 연합군 점령 속에서 당은 1945년 11월 11일 스스로 해산을 선언하고 「인도차이나 마르크스주의 연구회」로 활동했지만, 실제로는 비밀리에 정부를 이끌었다. 1946년 말 프랑스와의 전쟁이 시작되었고, 1951년 2월 뚜옌꽝에서 열린 제2차 대회에서 당은 베트남 노동당으로 다시 공개되며 라오스·캄보디아 조직을 분리했다. 1953년부터 중국식 토지개혁을 시행했는데, 베트남어 출처는 81만 헥타르가 농민 200만 호에 분배되었으나 많은 억울한 죽음이 있었다고 적는다. 1954년 디엔비엔푸 승리와 제네바 회의로 북위 17도선 이북을 차지했다.\n\n1960년 하노이의 제3차 대회는 북부의 사회주의 건설과 남부 「해방」을 당의 과제로 정했고, 같은 해 남베트남 민족해방전선이 만들어졌다. 남부 당 조직은 인민혁명당이라는 이름으로 전선을 이끌었다. 1975년 4월 30일 남베트남이 무너지고 1976년 7월 2일 베트남 사회주의 공화국으로 통일되었으며, 1976년 12월 제4차 대회에서 노동당은 남부의 인민혁명당과 합쳐 다시 베트남 공산당이 되었다. 이 대회는 당원 155만 3,500명을 대표했다. 1986년 제6차 대회는 도이머이를 시작해 「사회주의 지향 시장경제」로 전환했고, 1988년 당은 사회당과 민주당을 흡수해 유일 정당이 되었다. 헌법 제4조가 당의 영도를 규정하며, 2006년 제10차 대회는 당원의 사영 경제 활동을 허용했다.",
+     "en": "The party traces its history to the Vietnamese Revolutionary Youth League founded by Nguyen Ai Quoc in 1925 with Comintern funding. After the Kuomintang destroyed its headquarters in Guangdong in 1928 the league split: on 17 June 1929 delegates from Tonkin founded the Communist Party of Indochina in Hanoi, and late that year a rival faction in Saigon declared itself the Communist Party of Annam. A third group, the Communist League of Indochina, grew out of the New Viet Revolutionary Party. On 3 February 1930 the two parties and individual members of the league merged in Hong Kong to form the Communist Party of Vietnam. According to the Vietnamese-language source, the unification conference sat from 6 January to 8 February and the league formally joined on 24 February. At the first Central Committee meeting in Hong Kong in October 1930 the party, at the Comintern's request, renamed itself the Indochinese Communist Party and elected Tran Phu its first general secretary.\n\nIn 1930–1931 the party led the Nghe-Tinh Soviet movement, but French repression killed about 1,300 people, and Tran Phu and other Central Committee members were arrested or killed. The party was rebuilt under Le Hong Phong in 1935, and Ha Huy Tap became general secretary the following year. Nguyen Ai Quoc was removed from the leadership in the early 1930s, criticised for using nationalism. In the mid-1930s the party's Saigon cells published the paper La Lutte with the Trotskyists and ran joint election lists. After the failed Cochinchina uprising of 1940 most of the Central Committee, including Nguyen Van Cu and Ha Huy Tap, were executed, and Truong Chinh, Pham Van Dong and Vo Nguyen Giap emerged as the new leadership. Ho Chi Minh returned in February 1941 and founded the Viet Minh; party membership in 1944 is estimated at 2,000 to 3,000.\n\nIn August 1945 the Viet Minh exploited the vacuum after Japan's surrender to launch a nationwide uprising that forced Bao Dai to abdicate, and on 2 September Ho Chi Minh proclaimed the independence of the Democratic Republic of Vietnam. Around this time Trotskyists and independent nationalists were hunted down under the direction of Tran Van Giau. Under Allied occupation the party declared its own dissolution on 11 November 1945 and operated as the \"Association for the Study of Marxism in Indochina\", while in reality continuing to lead the government in secret. War with France began at the end of 1946, and at the Second Congress in Tuyen Quang in February 1951 the party re-emerged as the Workers' Party of Vietnam and separated its Lao and Cambodian sections. From 1953 it carried out land reform on the Chinese model; the Vietnamese-language source says 810,000 hectares were distributed to 2 million peasant households but that many people were wrongly denounced and died. Victory at Dien Bien Phu and the Geneva Conference of 1954 left it in control of the north above the 17th parallel.\n\nThe Third Congress in Hanoi in 1960 set the tasks of building socialism in the north and \"liberating\" the south, and the National Liberation Front of South Vietnam was founded the same year, led by the party's southern branch under the name People's Revolutionary Party. South Vietnam collapsed on 30 April 1975, the country was formally reunified as the Socialist Republic of Vietnam on 2 July 1976, and at the Fourth Congress in December 1976 the Workers' Party merged with the People's Revolutionary Party and took back the name Communist Party of Vietnam; the congress represented 1,553,500 members. The Sixth Congress of 1986 launched Đổi Mới and the \"socialist-oriented market economy\", and in 1988 the party absorbed the Socialist and Democratic parties to become the only party. Article 4 of the constitution guarantees its leadership, and the Tenth Congress of 2006 allowed members to engage in private business."
+    },
+    "aliases": {
+     "ko": [
+      "인도차이나 공산당",
+      "베트남 노동당"
+     ],
+     "en": [
+      "Vietnamese Communist Party",
+      "VCP",
+      "Indochinese Communist Party",
+      "Workers' Party of Vietnam",
+      "Workers’ Party of Vietnam"
+     ]
+    },
+    "people": [
+     "ho-chi-minh",
+     "le-duan",
+     "truong-chinh",
+     "pham-van-dong",
+     "vo-nguyen-giap",
+     "le-duc-tho",
+     "to-huu"
+    ],
+    "events": [
+     "first-indochina-war-1945-1954",
+     "second-indochina-war-1955-1975",
+     "vietnam-reunification-1975-1976"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1930 by Ho Chi Minh by merging the Communist Party of Indochina, the Communist Party of Annam and members of the Communist League of Indochina in Kowloon, Hong Kong, from 3 February 1930; renamed ICP, then Workers' Party of Vietnam (1951), and Communist Party of Vietnam again in 1976; led the Viet Minh uprising of August 1945; sole legal party of the SRV.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Vietnam",
+      "locator": "en: lead; History — Rise to power (1925–1945); Vietnam War (1955–1975)"
+     },
+     {
+      "field": "body",
+      "claim": "Youth League 1925; split after 1928; Communist Party of Indochina 17 June 1929 and Communist Party of Annam; merger 3 February 1930; renamed ICP; Nghe-Tinh repression with about 1,300 killed; Le Hong Phong 1935; Ha Huy Tap; Ho removed in early 1930s; La Lutte with Trotskyists; 1940 Cochinchina uprising and executions; Truong Chinh, Pham Van Dong, Vo Nguyen Giap; Viet Minh 1941; 2,000–3,000 members in 1944; August 1945 uprising; independence 2 September; Trotskyists eliminated under Tran Van Giau; dissolution November 1945; Workers' Party 1951; land reform 1953; Geneva 1954; Third Congress 1960; NLF; PRP; reunification 2 July 1976; Fourth Congress 1976 with 1,553,500 members; Đổi Mới 1986; absorbed Socialist and Democratic parties in 1988; 2006 private business.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Vietnam",
+      "locator": "en: lead; History — Rise to power; Left opposition; First Indochina War; Vietnam War; Ruling party"
+     },
+     {
+      "field": "body",
+      "claim": "Founding conference in Hong Kong 6 January–8 February 1930 with the merger on 3 February and the League joining on 24 February; renamed ICP at the first Central Committee meeting 14–31 October 1930 with Tran Phu as first general secretary; self-dissolution 11 November 1945; Workers' Party at the Second Congress in Tuyen Quang in February 1951; land reform distributing 810,000 hectares to 2 million households with wrongful deaths; renamed CPV at the Fourth Congress 1976; Đổi Mới at the Sixth Congress 1986.",
+      "source": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3ng_C%E1%BB%99ng_s%E1%BA%A3n_Vi%E1%BB%87t_Nam",
+      "locator": "vi: Lịch sử — Các tổ chức tiền thân; Thành lập; Hoạt động chống Pháp; Tự giải tán; Đảng lãnh đạo tại miền Bắc; Đảng cầm quyền duy nhất tại Việt Nam"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1930 and still the ruling party.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Vietnam",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founding conference adopted the party's first statutes on 3 February 1930.",
+      "source": "https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3ng_C%E1%BB%99ng_s%E1%BA%A3n_Vi%E1%BB%87t_Nam",
+      "locator": "vi: Điều lệ; Thành lập"
+     }
+    ]
+   }
+  }
+ ]
+}

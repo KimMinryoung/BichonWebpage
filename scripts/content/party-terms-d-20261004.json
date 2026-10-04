@@ -1,0 +1,829 @@
+{
+ "id": "party-terms-d-20261004",
+ "terms": [
+  {
+   "id": "communist-party-of-czechoslovakia",
+   "affiliationId": "party-czechoslovak-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Communist_Party_of_Czechoslovakia",
+    "https://cs.wikipedia.org/wiki/Komunistick%C3%A1_strana_%C4%8Ceskoslovenska"
+   ],
+   "fields": {
+    "term": {
+     "ko": "체코슬로바키아 공산당",
+     "en": "Communist Party of Czechoslovakia"
+    },
+    "original": "Komunistická strana Československa (KSČ)",
+    "category": "party-state",
+    "period": {
+     "ko": "1921–1992",
+     "en": "1921–1992"
+    },
+    "startYear": 1921,
+    "endYear": 1992,
+    "definition": {
+     "ko": "1921년부터 1992년까지 존재한 체코슬로바키아의 마르크스·레닌주의 정당. 코민테른 지부로 제1공화국에서 합법 야당으로 활동하다 1938년 금지되었고, 1948년 2월 정변으로 권력을 잡아 1989년 벨벳 혁명까지 일당 지배를 했다. 1990년 체코·모라바 공산당과 슬로바키아 공산당의 연방으로 바뀐 뒤 1992년 해체되었다.",
+     "en": "A Marxist–Leninist party in Czechoslovakia that existed from 1921 to 1992. As the Czechoslovak section of the Comintern it was a legal opposition party in the First Republic until it was banned in 1938; it seized power in the February 1948 coup and ruled a one-party state until the Velvet Revolution of 1989. In 1990 it became a federation of the Communist Party of Bohemia and Moravia and the Communist Party of Slovakia, which was dissolved in 1992."
+    },
+    "body": {
+     "ko": "당은 체코슬로바키아 사회민주당 안에서 코민테른을 지지하던 마르크스·레닌주의 좌파가 갈라져 나와 생겼다. 좌파는 1920년 9월 대회에서 사회민주당(좌파)으로 독립했고, 12월 당 재산을 둘러싼 충돌 끝에 총파업을 선언했으나 진압되었다. 창당 대회는 1921년 5월 14~16일 프라하에서 열렸고, 바츨라프 슈투르츠가 의장, 보후미르 슈메랄이 부의장으로 뽑혔다. 체코어 출처에 따르면 대회에는 약 35만 명의 좌파 사회민주당원을 대표하는 대의원 569명이 참석했다. 당은 1925년 총선에서 93만 4223표(13.2%)와 41석으로 2위를 차지했고, 1928년에는 당원 약 13만 8000명으로 코민테른에서 두 번째로 큰 지부였다.\n\n1929년 2월 제5차 대회에서 클레멘트 고트발트가 이끄는 이른바 「카를린 소년들」이 지도부를 장악해 모스크바의 지도에 따르는 볼셰비키화를 추진했고, 반대파와 창당 세대 상당수가 제명되거나 떠났다. 당은 1929년 총선에서 75만 3220표로 30석을 얻었고, 1935년에는 84만 9495표로 30석을 지켰다. 1930년대 중반 코민테른의 지시에 따라 나치즘에 맞서 민주적 체코슬로바키아를 옹호하는 쪽으로 돌아섰다. 1938년 10월 20일 제2공화국 아래에서 금지되어 지하로 들어갔고, 지도부 다수는 소련으로 망명했다.\n\n당은 1945~1948년 연립정부에 참여했고, 1946년 선거에서 의회 제1당이 되어 고트발트가 총리가 되었다. 1948년 2월 정변 뒤에는 국민전선 의석의 3분의 2를 차지하며 사실상 권력을 독점했고, 1960년 7월 11일 헌법은 당의 「지도적 역할」을 명시했다. 1951년 루돌프 슬란스키 서기장 등 고위 당원이 「트로츠키주의·티토주의·시온주의 음모」 혐의로 체포되었고, 1952년 프라하 재판에서 슬란스키와 다른 피고 10명이 처형되었다. 영어 출처에 따르면 1948~1950년 숙청으로 거의 100만 명이 당에서 제거되었다.\n\n1968년 알렉산데르 둡체크가 이끈 개혁파가 「인간의 얼굴을 한 사회주의」를 내걸고 프라하의 봄을 시작했으나, 8월 21일 바르샤바 조약군이 침공했다. 1969년 4월 구스타프 후사크가 둡체크를 대신해 당 지도자가 되었고, 이어진 정상화 시기의 숙청으로 1970년 말까지 1968년 1월보다 약 27.8%의 당원이 줄었다. 1987년 밀로시 야케시가 서기장을 이어받았다.\n\n1989년 11월 벨벳 혁명 속에서 야케시와 간부회 전원이 사임했고, 11월 30일 헌법의 「지도적 역할」 조항이 삭제되었으며 당은 12월 권력을 내려놓았다. 1990년 11월 제18차 대회에서 당은 체코·모라바 공산당(KSČM)과 슬로바키아 공산당(KSS)의 연방(KSČS)이 되었다. 슬로바키아 쪽이 민주좌파당으로 이름을 바꾼 뒤 1991년 12월 탈퇴하면서 연방은 1992년 해체되었다. 체코의 1993년 법률과 슬로바키아의 법률은 당을 범죄 조직으로 규정했다.",
+     "en": "The party arose when the Marxist–Leninist left wing of the Czechoslovak Social Democratic Party, which supported the Comintern, broke away. The left constituted itself as the Social Democratic Party (Left) at a congress in September 1920, and after a clash over party property in December it called a general strike, which was suppressed. The founding congress met in Prague on 14–16 May 1921 and elected Václav Šturc chairman and Bohumír Šmeral vice-chairman. According to the Czech source, 569 delegates representing about 350,000 left social democrats attended. In the 1925 parliamentary election the party took second place with 934,223 votes (13.2%) and 41 seats, and in 1928, with about 138,000 members, it was the second-largest section of the Comintern.\n\nAt the Fifth Congress in February 1929 the so-called ‘Karlín boys’ led by Klement Gottwald took over the leadership and pushed through Bolshevisation under Moscow’s direction; opponents and many of the founding generation were expelled or left. The party won 30 seats with 753,220 votes in the 1929 election and held 30 seats with 849,495 votes in 1935. In the mid-1930s, on Comintern orders, it switched to defending democratic Czechoslovakia against Nazism. It was banned on 20 October 1938 under the Second Republic and went underground, and many of its leaders took refuge in the Soviet Union.\n\nThe party took part in coalition governments from 1945 to 1948, became the largest party in parliament in the 1946 election, and Gottwald became prime minister. After the February 1948 coup it held two-thirds of the seats in the National Front and in practice monopolised power; the constitution of 11 July 1960 enshrined its ‘leading role’. In 1951 General Secretary Rudolf Slánský and other senior members were arrested for a ‘Trotskyite–Titoite–Zionist conspiracy’, and after the Prague Trials of 1952 Slánský and ten other defendants were executed. According to the English source, nearly one million members were removed in the purges of 1948–1950.\n\nIn 1968 reformers led by Alexander Dubček launched the Prague Spring under the slogan of ‘socialism with a human face’, but Warsaw Pact forces invaded on 21 August. In April 1969 Gustáv Husák replaced Dubček as party leader, and the purges of the ensuing normalisation reduced the membership by about 27.8% between January 1968 and the end of 1970. In 1987 Miloš Jakeš succeeded him as General Secretary.\n\nDuring the Velvet Revolution of November 1989 Jakeš and the entire Presidium resigned; the constitutional ‘leading role’ clause was deleted on 30 November, and the party gave up power in December. At its 18th Congress in November 1990 the party became a federation (KSČS) of the Communist Party of Bohemia and Moravia (KSČM) and the Communist Party of Slovakia (KSS). After the Slovak side renamed itself the Party of the Democratic Left and withdrew in December 1991, the federation was dissolved in 1992. A Czech law of 1993 and a Slovak law declared the party a criminal organisation."
+    },
+    "aliases": {
+     "ko": [
+      "KSČ"
+     ],
+     "en": [
+      "KSČ",
+      "Czechoslovak Communist Party"
+     ]
+    },
+    "people": [
+     "klement-gottwald",
+     "rudolf-slansky",
+     "antonin-novotny",
+     "dubcek",
+     "gustav-husak",
+     "vasil-bilak",
+     "alois-indra",
+     "lubomir-strougal"
+    ],
+    "events": [
+     "czechoslovakia-1945-1948",
+     "prague-spring"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Marxist–Leninist party in Czechoslovakia 1921–1992, Comintern member, banned 1938, seized power in the 1948 coup and ruled until the 1989 Velvet Revolution; became a federation of KSČM and KSS/SDĽ in 1990 and dissolved in 1992.",
+      "source": "https://cs.wikipedia.org/wiki/Komunistick%C3%A1_strana_%C4%8Ceskoslovenska",
+      "locator": "cs: úvod; Po listopadu 1989 — en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Split of the Social Democratic left in 1920; founding congress 14–16 May 1921 (Šturc chairman, Šmeral vice-chairman, 569 delegates); 13.2% and 41 seats in 1925; 138,000 members in 1928; Gottwald's takeover at the Fifth Congress 1929; ban on 20 October 1938; 1946 election; 1948 coup; Slánský trial with 11 executed; Prague Spring and the 1968 invasion; Husák and normalisation purges; Jakeš; Velvet Revolution; KSČS federation 1990 and dissolution 1992; 1993 Czech law.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Czechoslovakia",
+      "locator": "en: History (1921–1945; 1945–1969; 1969–1992; Federal party and dissolution); Membership — cs: Vznik, 20. a 30. léta; Bolševizace strany; Únorový puč a 50. léta"
+     },
+     {
+      "field": "period",
+      "claim": "The party existed from 1921 to 1992.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Czechoslovakia",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founding congress held in Prague 14–16 May 1921.",
+      "source": "https://cs.wikipedia.org/wiki/Komunistick%C3%A1_strana_%C4%8Ceskoslovenska",
+      "locator": "cs: Vznik, 20. a 30. léta"
+     },
+     {
+      "field": "endYear",
+      "claim": "The federation of KSČM and SDĽ was formally dissolved in April 1992.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Czechoslovakia",
+      "locator": "en: Federal party and dissolution"
+     }
+    ]
+   }
+  },
+  {
+   "id": "romanian-communist-party",
+   "affiliationId": "party-romanian-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Romanian_Communist_Party",
+    "https://ro.wikipedia.org/wiki/Partidul_Comunist_Rom%C3%A2n"
+   ],
+   "fields": {
+    "term": {
+     "ko": "루마니아 공산당",
+     "en": "Romanian Communist Party"
+    },
+    "original": "Partidul Comunist Român (PCR)",
+    "category": "party-state",
+    "period": {
+     "ko": "1921–1989",
+     "en": "1921–1989"
+    },
+    "startYear": 1921,
+    "endYear": 1989,
+    "definition": {
+     "ko": "1921년 루마니아 사회당의 볼셰비키 지지 최대강령파가 세운 정당. 1924년 금지되어 1944년까지 코민테른 아래 소규모 비합법 조직으로 지냈고, 1947년부터 1989년까지 루마니아의 유일 합법 정당으로 통치했다. 1948~1965년에는 루마니아 노동자당이라는 이름을 썼고, 1989년 12월 루마니아 혁명으로 니콜라에 차우셰스쿠와 함께 무너져 공식 해산 절차 없이 사라졌다.",
+     "en": "A party founded in 1921 by the pro-Bolshevik maximalist wing of the Socialist Party of Romania. Banned in 1924, it remained a small illegal group under Comintern control until 1944, and from 1947 to 1989 it ruled Romania as the only legal party. Named the Romanian Workers' Party from 1948 to 1965, it collapsed together with Nicolae Ceaușescu in the Romanian Revolution of December 1989 and disappeared without a formal dissolution."
+    },
+    "body": {
+     "ko": "1921년 5월 8~12일 부쿠레슈티에서 열린 사회당 대회에서 최대강령파는 다수 지도자가 수감된 틈을 타 당을 사회공산당으로 바꾸는 안을 통과시켰고, 당은 곧 루마니아 공산당(PCdR)으로 이름을 바꾸었다. 대회는 코민테른 가입 표결 다음 날인 5월 12일 경찰의 개입과 체포로 중단되었다. 루마니아어 출처는 이 대회를 당의 제1차 대회로 보며, 첫 서기장은 게오르게 크리스테스쿠였다. 영어 출처에 따르면 사회당의 당원 약 4만 명 가운데 새 당에 남은 사람은 2000명에서 500명 정도였고, 루마니아어 출처는 당원이 1922년 약 2000명에서 제2차 세계대전 중 1000명 미만으로 줄었다고 적는다.\n\n코민테른 노선에 따라 당은 대루마니아를 트란실바니아·도브로자·베사라비아·부코비나를 「불법 점령」한 식민지적 존재로 보고 그 해체를 주장했다. 1924년 4월 11일 자유당 정부는 타타르부나르 봉기를 계기로 당을 금지했고, 당은 1944년까지 비합법 상태에 있었다. 당원 다수는 유대인·헝가리인·불가리아인 등 소수민족 출신이었고, 1924~1944년 서기장 가운데 루마니아인은 없었다. 활동가 다수가 투옥되거나 소련으로 망명하면서 경쟁하는 분파가 생겼다.\n\n1944년 「감옥파」가 소련의 승인 아래 서기장 슈테판 포리슈를 몰아내고 게오르게 게오르기우데지 등 3인 지도부를 세웠다. 8월 23일 당은 국민민주블록의 일원으로 미하이 1세 국왕과 군 장교들이 이온 안토네스쿠를 체포한 정변에 참여했다. 소련 점령군의 지원 아래 당은 1947년 12월 30일 국왕을 퇴위시키고 루마니아 인민공화국을 선포했다. 1948년 2월 사회민주당을 흡수해 루마니아 노동자당(PMR)이 되었고, 1952년 게오르기우데지는 스탈린의 승인을 얻어 아나 파우케르, 바실레 루카, 테오하리 제오르제스쿠를 숙청했다. 연속된 숙청으로 약 100만 명의 당원 가운데 30만~46만 5000명이 제명되었고, 1962년까지 경지의 96%가 집단농장에 편입되었다.\n\n1965년 3월 게오르기우데지가 죽자 니콜라에 차우셰스쿠가 서기장이 되었고, 7월 24일 당명이 루마니아 공산당으로 돌아갔다. 1968년 8월 차우셰스쿠는 바르샤바 조약군의 체코슬로바키아 침공에 공개적으로 반대했고, 당원은 1965년 약 140만 명에서 1976년 260만 명으로 늘었다. 이후 「7월 테제」로 다시 강경 노선을 취하며 개인숭배를 키웠고, 1974~1989년 서기장은 대통령직을 겸했다.\n\n1987년 브라쇼브 파업 뒤 위기가 깊어졌고, 1989년 3월 옛 당 간부들의 「6인 서한」이 차우셰스쿠를 비판했다. 차우셰스쿠는 1989년 11월 24일 다시 서기장에 선출되었지만, 한 달 뒤 티미쇼아라에서 시작된 12월 혁명으로 당과 함께 무너졌고 부부가 트르고비슈테에서 처형되었다. 당은 공식 해산 없이 사라졌고, 권력은 다수의 전 당원을 포함한 구국전선으로 넘어갔다.",
+     "en": "At the Socialist Party congress held in Bucharest on 8–12 May 1921 the maximalist wing, taking advantage of the imprisonment of most of the party's leaders, voted to turn the party into the Socialist-Communist Party, which soon renamed itself the Communist Party of Romania (PCdR). The congress was broken up by police intervention and arrests on 12 May, the day after the vote to join the Comintern. The Romanian source regards it as the party's first congress; the first general secretary was Gheorghe Cristescu. According to the English source, of the Socialist Party's roughly 40,000 members only between 2,000 and 500 remained in the new party, while the Romanian source says membership fell from about 2,000 in 1922 to fewer than 1,000 during the Second World War.\n\nFollowing the Comintern line, the party regarded Greater Romania as a colonial entity ‘illegally occupying’ Transylvania, Dobruja, Bessarabia and Bukovina and called for its breakup. On 11 April 1924 the Liberal government banned the party in the context of the Tatarbunary Uprising, and it remained illegal until 1944. Most of its members came from minorities such as Jews, Hungarians and Bulgarians, and none of its general secretaries between 1924 and 1944 was an ethnic Romanian. With many activists imprisoned or in Soviet exile, competing factions arose.\n\nIn 1944 the ‘prison faction’, with Soviet approval, deposed General Secretary Ștefan Foriș and installed a troika including Gheorghe Gheorghiu-Dej. On 23 August the party, as part of the National Democratic Bloc, took part in the coup in which King Michael I and army officers arrested Ion Antonescu. With the backing of the Soviet occupation forces the party forced the king to abdicate on 30 December 1947 and proclaimed the Romanian People's Republic. In February 1948 it absorbed the Social Democratic Party to form the Romanian Workers' Party (PMR), and in 1952 Gheorghiu-Dej, with Stalin's approval, purged Ana Pauker, Vasile Luca and Teohari Georgescu. The successive purges removed between 300,000 and 465,000 of roughly one million members, and by 1962 96% of the arable land had been collectivised.\n\nWhen Gheorghiu-Dej died in March 1965, Nicolae Ceaușescu became general secretary, and on 24 July the party reverted to the name Romanian Communist Party. In August 1968 Ceaușescu publicly opposed the Warsaw Pact invasion of Czechoslovakia, and membership grew from about 1.4 million in 1965 to 2.6 million in 1976. With the ‘July Theses’ he returned to a hard line and built up a personality cult; from 1974 to 1989 the general secretary was also President of Romania.\n\nThe crisis deepened after the Brașov strike of 1987, and in March 1989 the ‘Letter of the Six’ by former party officials criticised Ceaușescu. He was re-elected general secretary on 24 November 1989, but a month later he and the party were overthrown in the December revolution that began in Timișoara, and he and his wife were executed in Târgoviște. The party simply disappeared without a formal dissolution, and power passed to the National Salvation Front, which included many former members."
+    },
+    "aliases": {
+     "ko": [
+      "루마니아 노동자당"
+     ],
+     "en": [
+      "Communist Party of Romania",
+      "Romanian Workers' Party",
+      "Romanian Workers’ Party"
+     ]
+    },
+    "people": [
+     "gheorghe-gheorghiu-dej",
+     "ana-pauker",
+     "vasile-luca",
+     "teohari-georgescu",
+     "nicolae-ceausescu",
+     "elena-ceausescu"
+    ],
+    "events": [
+     "romania-1944-1948"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1921 by the pro-Bolshevik maximalist wing of the Socialist Party; outlawed in 1924; small illegal group under Comintern control; ruling and only legal party 1947–1989; Romanian Workers' Party 1948–1965; collapsed in the 1989 revolution without formal dissolution.",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Communist_Party",
+      "locator": "en: lead; Downfall — ro: introducere"
+     },
+     {
+      "field": "body",
+      "claim": "Congress of 8–12 May 1921 interrupted by police on 12 May; first secretary Gheorghe Cristescu; ban of 11 April 1924 after Tatarbunary; minority-dominated membership; Foriș deposed and Gheorghiu-Dej troika; 23 August 1944 coup; king's abdication 30 December 1947; PMR 1948; purge of Pauker, Luca and Georgescu 1952; 300,000–465,000 removed; collectivisation 96% by 1962; Ceaușescu 1965 and renaming on 24 July 1965; 1968 opposition to invasion; membership 1.4m to 2.6m; Brașov 1987; Letter of the Six; December 1989 revolution.",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Communist_Party",
+      "locator": "en: Establishment; 1944 Coup; Creation; Internal purges; Ceaușescu's rise; Downfall — ro: Înființarea"
+     },
+     {
+      "field": "period",
+      "claim": "The party existed from 1921 until its collapse in the 1989 revolution.",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "The congress of 8–12 May 1921 is considered the first congress of the PCR.",
+      "source": "https://ro.wikipedia.org/wiki/Partidul_Comunist_Rom%C3%A2n",
+      "locator": "ro: Înființarea"
+     },
+     {
+      "field": "endYear",
+      "claim": "The party collapsed in the Romanian Revolution of December 1989 and disappeared without formal dissolution.",
+      "source": "https://en.wikipedia.org/wiki/Romanian_Communist_Party",
+      "locator": "en: Downfall"
+     }
+    ]
+   }
+  },
+  {
+   "id": "bulgarian-communist-party",
+   "affiliationId": "party-bulgarian-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Bulgarian_Communist_Party",
+    "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F"
+   ],
+   "fields": {
+    "term": {
+     "ko": "불가리아 공산당",
+     "en": "Bulgarian Communist Party"
+    },
+    "original": "Българска комунистическа партия (БКП)",
+    "category": "party-state",
+    "period": {
+     "ko": "1919–1990",
+     "en": "1919–1990"
+    },
+    "startYear": 1919,
+    "endYear": 1990,
+    "definition": {
+     "ko": "1903년 분열로 생긴 불가리아 사회민주노동당 협의파가 1919년 코민테른에 가입하며 이름을 바꾼 정당. 1923년 9월 봉기가 실패한 뒤 1924년 금지되었고, 1944년 9월 9일 조국전선 정변으로 권력을 잡아 1990년까지 불가리아를 통치했다. 1990년 4월 3일 불가리아 사회당으로 이름을 바꾸었다.",
+     "en": "The party formed when the Narrow faction of the Bulgarian Social Democratic Workers' Party, created by the split of 1903, joined the Comintern in 1919 and changed its name. Banned in 1924 after the failure of the September Uprising of 1923, it took power in the Fatherland Front coup of 9 September 1944 and ruled Bulgaria until 1990. On 3 April 1990 it renamed itself the Bulgarian Socialist Party."
+    },
+    "body": {
+     "ko": "당의 뿌리는 1891년 부즐루자 대회에서 생긴 불가리아 사회민주당과, 1903년 분열로 생긴 불가리아 사회민주노동당 「협의 사회주의자」파다. 디미터르 블라고예프가 이끈 협의파는 제1차 세계대전에 반대하고 10월 혁명에 공감했으며, 1919년 5월 28일 소피아 대회에서 「불가리아 공산당(협의 사회주의자)」이라는 이름을 택하고 코민테른에 가입했다. 당은 1919년 8월 선거에서 18%와 47석을 얻었고, 1923년 6월 직전 당원은 3만 8000명이 넘었다.\n\n1923년 6월 9일 정변 때 중앙 지도부는 중립을 지켰으나, 코민테른의 압력으로 8월 새 봉기를 결정했고 게오르기 디미트로프와 바실 콜라로프가 9월 봉기를 이끌었다. 봉기는 실패했고, 1924년 4월 국가보호법에 따라 최고파기원이 당을 해산했다. 1925년 4월 16일 당 군사조직이 소피아의 성네델랴 성당 폭탄 테러를 일으켜 대규모 탄압을 불렀다. 1927년 합법 외곽 정당으로 노동자당이 만들어졌고, 1938년 비합법 공산당과 합쳐 불가리아 노동자당(공산주의자)이 되었다.\n\n1941년 6월 독일의 소련 침공 뒤 당은 무장투쟁을 선언하고 파르티잔 운동과 조국전선 결성을 이끌었다. 1944년 9월 9일 조국전선 쪽으로 넘어간 군 부대와 파르티잔이 소피아를 장악해 콘스탄틴 무라비예프 정부를 무너뜨렸다. 1946년 공화국 국민투표와 대국민의회 선거 뒤 디미트로프가 총리가 되었고, 1947년 야당 지도자들이 투옥되고 정당들이 해산되었다. 1948년 말 제5차 대회에서 당은 불가리아 공산당이라는 이름을 되찾았다. 1949년 7월 디미트로프가 죽은 뒤 벌코 체르벤코프가 제1서기가 되었고, 같은 해 트라이초 코스토프가 재판을 받고 12월 교수형에 처해졌다. 영어 출처는 당이 1946년부터, 불가리아어 출처는 1944년부터 나라를 통치했다고 적는다.\n\n1954년 토도르 지프코프가 제1서기가 되어 1989년까지 당을 이끌었다. 1956~1958년 농업 집단화가 마무리되었고, 불가리아는 1949년 경제상호원조회의, 1955년 바르샤바 조약기구 창설에 참여했으며 1968년 프라하의 봄 진압에도 군대를 보냈다. 1980년대 당은 튀르크계 주민 등의 이름을 불가리아식으로 바꾸게 한 이른바 「부흥 과정」을 벌였다. 1989년 말 당원은 약 100만 명이었다.\n\n1989년 11월 전원회의에서 지프코프가 물러나고 페터르 믈라데노프가 지도자가 되었다. 영어 출처에 따르면 믈라데노프는 12월 11일 당이 집권 보장을 포기한다고 발표했다. 1990년 초 제14차 임시 대회는 「민주적 사회주의 선언」을 채택했고, 당내 국민투표를 거쳐 1990년 4월 3일 불가리아 사회당으로 이름을 바꾸었다. 이후 몇몇 소규모 정당이 불가리아 공산당의 계승자를 자처했다.",
+     "en": "The party's roots lay in the Bulgarian Social Democratic Party founded at the Buzludzha congress of 1891 and in the ‘Narrow Socialists’ faction of the Bulgarian Social Democratic Workers' Party created by the split of 1903. Led by Dimitar Blagoev, the Narrow Socialists opposed the First World War and sympathised with the October Revolution, and at a congress in Sofia on 28 May 1919 they adopted the name ‘Bulgarian Communist Party (Narrow Socialists)’ and joined the Comintern. The party won 18% and 47 seats in the August 1919 election and had more than 38,000 members on the eve of June 1923.\n\nThe central leadership stayed neutral during the coup of 9 June 1923, but under Comintern pressure it decided in August on a new uprising, and Georgi Dimitrov and Vasil Kolarov led the September Uprising. The uprising failed, and in April 1924 the Supreme Court of Cassation dissolved the party under the Law for the Defence of the State. On 16 April 1925 the party's military organisation carried out the bombing of St Nedelya Church in Sofia, which brought massive repression. In 1927 a Workers' Party was set up as a legal front, and in 1938 it merged with the illegal Communist Party to form the Bulgarian Workers' Party (Communists).\n\nAfter the German invasion of the Soviet Union in June 1941 the party declared armed struggle and led the partisan movement and the formation of the Fatherland Front. On 9 September 1944 army units that had gone over to the Fatherland Front, aided by partisans, seized Sofia and overthrew the government of Konstantin Muraviev. After the 1946 referendum on the republic and the elections to the Grand National Assembly, Dimitrov became prime minister, and in 1947 opposition leaders were imprisoned and their parties dissolved. At its Fifth Congress at the end of 1948 the party resumed the name Bulgarian Communist Party. After Dimitrov died in July 1949, Valko Chervenkov became first secretary, and in the same year Traicho Kostov was tried and hanged in December. The English source dates the party's rule from 1946, the Bulgarian source from 1944.\n\nTodor Zhivkov became first secretary in 1954 and led the party until 1989. Agricultural collectivisation was completed in 1956–1958; Bulgaria was a founding member of Comecon in 1949 and of the Warsaw Pact in 1955, and sent troops to crush the Prague Spring in 1968. In the 1980s the party carried out the so-called ‘Revival Process’, forcing Turks and others to adopt Bulgarian names. At the end of 1989 the party had about one million members.\n\nAt the November 1989 plenum Zhivkov stepped down and Petar Mladenov became leader. According to the English source, Mladenov announced on 11 December that the party was giving up its guaranteed right to rule. In early 1990 the 14th Extraordinary Congress adopted a ‘Manifesto for Democratic Socialism’, and after an internal referendum the party renamed itself the Bulgarian Socialist Party on 3 April 1990. Several small parties later claimed to be the successor of the Bulgarian Communist Party."
+    },
+    "aliases": {
+     "ko": [
+      "불가리아 노동자당(공산주의자)"
+     ],
+     "en": [
+      "BKP",
+      "Bulgarian Workers' Party (Communists)",
+      "Bulgarian Workers’ Party (Communists)"
+     ]
+    },
+    "people": [
+     "dimitar-blagoev",
+     "dimitrov",
+     "vasil-kolarov",
+     "traicho-kostov",
+     "todor-zhivkov",
+     "petar-mladenov"
+    ],
+    "events": [
+     "bulgaria-1944-1949",
+     "eastern-europe-peoples-democracies"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Successor of the Narrow Socialists, founded in 1919 on joining the Comintern; banned in 1924; took power on 9 September 1944 through the Fatherland Front; ruled until 1990; renamed the Bulgarian Socialist Party on 3 April 1990.",
+      "source": "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "bg: увод; Опозиция на властта (1919 – 1944) — en: lead; Origins"
+     },
+     {
+      "field": "body",
+      "claim": "Buzludzha 1891 and the 1903 split; Blagoev; congress of 28 May 1919; 18% and 47 seats in 1919; 38,000 members before June 1923; neutrality on 9 June 1923; September Uprising led by Dimitrov and Kolarov; ban in April 1924; St Nedelya bombing 16 April 1925; Workers' Party 1927 and BRP(k) 1938; armed struggle from June 1941; 9 September 1944; Dimitrov prime minister 1946; name restored at Fifth Congress 1948; Chervenkov; Kostov hanged December 1949; Zhivkov 1954–1989; Revival Process; November 1989 plenum; renaming 3 April 1990.",
+      "source": "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "bg: Предистория; Опозиция на властта (1919 – 1944); В държавната власт (1944 – 1989); Трансформиране в БСП (1989 – 1990) — en: Ruling party; Post-1990"
+     },
+     {
+      "field": "period",
+      "claim": "The party was founded in 1919 and renamed the Bulgarian Socialist Party in 1990.",
+      "source": "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "bg: увод"
+     },
+     {
+      "field": "startYear",
+      "claim": "Officially adopted the name BKP (Narrow Socialists) at a congress in Sofia on 28 May 1919.",
+      "source": "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "bg: Опозиция на властта (1919 – 1944)"
+     },
+     {
+      "field": "endYear",
+      "claim": "On 3 April 1990 the BKP renamed itself the Bulgarian Socialist Party.",
+      "source": "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D1%83%D0%BD%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "bg: увод; Трансформиране в БСП (1989 – 1990)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hungarian-communist-party",
+   "affiliationId": "party-hungarian-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hungarian_Communist_Party",
+    "https://hu.wikipedia.org/wiki/Kommunist%C3%A1k_Magyarorsz%C3%A1gi_P%C3%A1rtja",
+    "https://hu.wikipedia.org/wiki/Magyar_Kommunista_P%C3%A1rt"
+   ],
+   "fields": {
+    "term": {
+     "ko": "헝가리 공산당",
+     "en": "Hungarian Communist Party"
+    },
+    "original": "Kommunisták Magyarországi Pártja (KMP); Magyar Kommunista Párt (MKP)",
+    "category": "party-state",
+    "period": {
+     "ko": "1918–1948",
+     "en": "1918–1948"
+    },
+    "startYear": 1918,
+    "endYear": 1948,
+    "definition": {
+     "ko": "1918년 11월 24일 부다페스트에서 「헝가리 공산주의자당」으로 창당해 1944년부터 「헝가리 공산당」이라는 이름을 쓴 정당. 1919년 쿤 벨러의 헝가리 평의회 공화국을 이끌었고, 호르티 체제 아래에서는 비합법·망명 조직으로 지냈다. 1945년 이후 라코시 마차시 아래 다른 정당을 무력화했고, 1948년 6월 사회민주당과 합쳐 헝가리 노동인민당이 되었다.",
+     "en": "A party founded in Budapest on 24 November 1918 as the Party of Communists in Hungary and known from 1944 as the Hungarian Communist Party. It led Béla Kun's Hungarian Soviet Republic in 1919 and survived the Horthy era as an illegal and émigré organisation. After 1945, under Mátyás Rákosi, it broke the other parties, and in June 1948 it merged with the Social Democrats to form the Hungarian Working People's Party."
+    },
+    "body": {
+     "ko": "당의 첫 조직은 러시아 포로수용소를 거친 쿤 벨러와 동료들이 1918년 10월 모스크바에서 꾸렸다. 이들은 11월 헝가리로 돌아와 11월 24일 부다페스트의 켈렌 요제프(코르빈 오토의 형)의 집에서 당을 창당했다. 영어 출처에 따르면 「헝가리 공산당」 대신 「헝가리 공산주의자당」이라는 이름을 택한 것은 당이 대표하던 부다페스트 공장 노동자 다수가 헝가리계가 아니었기 때문이다.\n\n1919년 2월 지도부 다수가 체포되었으나, 정치 위기를 수습하지 못한 사회민주당이 수감된 공산당 지도자들에게 도움을 청했고, 두 당은 3월 21일 합당하고 헝가리 평의회 공화국을 선포했다. 133일 동안 존속한 공화국은 산업 국유화와 대규모 농업 집단화를 추진했고, 6월 쿠데타 시도 뒤에는 비밀경찰을 동원한 테러를 벌였다. 공화국은 1919년 8월 1일 루마니아군에 패해 무너졌다.\n\n이어진 백색테러로 옛 지도부 다수가 처형되거나 빈으로 망명했다. 쿤은 망명지에서 당을 이끌다 1937년 스탈린의 숙청으로 처형되었다. 당은 1925년 합법 외곽 정당으로 헝가리 사회주의노동자당(MSZMP)을 만들었는데, 헝가리어 출처는 이 당이 1928년 금지되었다고 하고 영어 출처는 1927년에는 이름만 남았다고 적는다. 1932년 셜러이 임레와 퓌르시트 샨도르가 처형되었다. 1936년에 대해 영어 출처는 코민테른이 당을 해산했다고 쓰고, 헝가리어 출처는 당이 노동자 통일에 바탕한 반파시즘 저항을 목표로 정했다고 적는다.\n\n1942년 대량 체포로 지도부가 무너졌고, 1943년 당은 명목상 해산한 뒤 카다르 야노시가 이끄는 「평화당」으로 다시 섰다. 헝가리어 출처에 따르면 1944년 9월 공산당이라는 이름을 되찾았고, 소련에서 돌아온 게뢰 에르뇌, 너지 임레 등이 11월 5일 세게드에서 헝가리 공산당(MKP)의 임시 중앙지도부를 세웠다. 라코시 마차시는 1945년 2월 서기장이 되었다.\n\n당은 1945년 선거에서 16.96%를 얻었고, 내무장관이 된 러이크 라슬로와 소련군의 존재를 배경으로 라코시는 이른바 「살라미 전술」로 비공산 정당을 약화했다. 1947년 선거에서는 22.25%로 제1당이 되었는데, 헝가리어 출처는 당이 이른바 「파란 투표용지」를 대량으로 위조해 부정 투표를 했다고 적는다. 1947년 대형 은행과 종업원 100명 이상의 사업장이 국유화되었고, 1948년 6월 당은 사회민주당과 강제로 합당해 헝가리 노동인민당이 되었다.",
+     "en": "The first organisation of the party was set up in Moscow in October 1918 by Béla Kun and associates who had passed through Russian POW camps. They returned to Hungary in November and founded the party on 24 November in Budapest, in the flat of József Kelen, the brother of Ottó Korvin. According to the English source, the name ‘Party of Communists in Hungary’ was chosen instead of ‘Hungarian Communist Party’ because most of the Budapest factory workers it represented were not ethnic Hungarians.\n\nMost of the leaders were arrested in February 1919, but the Social Democrats, unable to master the political crisis, turned to the imprisoned communist leaders for help, and on 21 March the two parties merged and proclaimed the Hungarian Soviet Republic. During its 133 days the republic nationalised industry and launched a massive collectivisation of agriculture, and after an attempted coup in June it unleashed a terror campaign through its secret police. The republic fell on 1 August 1919 after its defeat by the Romanian army.\n\nIn the ensuing White Terror much of the old leadership was executed or fled to Vienna. Kun led the party from exile until he was executed in Stalin's purges in 1937. In 1925 the party created a legal cover party, the Socialist Workers' Party of Hungary (MSZMP); the Hungarian source says it was banned in 1928, while the English source says it existed in name only by 1927. Imre Sallai and Sándor Fürst were executed in 1932. For 1936 the English source says the Comintern dissolved the party, while the Hungarian source says the party then defined its goal as organising anti-fascist resistance based on workers' unity.\n\nMass arrests in 1942 destroyed the leadership, and in 1943 the party nominally dissolved itself and re-emerged as the Peace Party led by János Kádár. According to the Hungarian source it resumed the name Communist Party in September 1944, and on 5 November émigrés returning from the Soviet Union, including Ernő Gerő and Imre Nagy, set up the provisional central leadership of the Hungarian Communist Party (MKP) in Szeged. Mátyás Rákosi became general secretary in February 1945.\n\nThe party won 16.96% in the 1945 election, and with László Rajk as Minister of the Interior and the Red Army in the country, Rákosi weakened the non-communist parties with what he called ‘salami tactics’. In the 1947 election it became the largest party with 22.25%; the Hungarian source says the party forged large numbers of so-called ‘blue slips’ to cast fraudulent votes. Major banks and enterprises with more than 100 employees were nationalised in 1947, and in June 1948 the party was merged with the Social Democrats to form the Hungarian Working People's Party."
+    },
+    "aliases": {
+     "ko": [
+      "헝가리 공산주의자당"
+     ],
+     "en": [
+      "Party of Communists in Hungary",
+      "KMP"
+     ]
+    },
+    "people": [
+     "bela-kun",
+     "tibor-szamuely",
+     "otto-korvin",
+     "jeno-landler",
+     "imre-sallai",
+     "sandor-furst",
+     "janos-kadar",
+     "matyas-rakosi",
+     "laszlo-rajk",
+     "erno-gero"
+    ],
+    "events": [
+     "hungarian-soviet-republic-1919",
+     "hungary-1945-1949"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded on 24 November 1918 as the Party of Communists in Hungary; in power March–August 1919 under Béla Kun's Hungarian Soviet Republic; exile in the interwar period; renamed in 1944; under Rákosi built a one-party state; merged with the Social Democrats in 1948 to form the Hungarian Working People's Party.",
+      "source": "https://en.wikipedia.org/wiki/Hungarian_Communist_Party",
+      "locator": "en: lead; Foundation and early years; World War II and Communist takeover"
+     },
+     {
+      "field": "body",
+      "claim": "Founding in Kelen's flat on 24 November 1918; merger with MSZDP on 21 March 1919; legal cover MSZMP 1925, banned 1928; 1936 antifascist line; Peace Party 1943–1944, renamed Communist Party in September 1944; MKP in Szeged 5 November 1944; Rákosi general secretary February 1945; 16.96% in 1945 and 22.25% in 1947 with blue-slip fraud; nationalisations 1947; merger into MDP 1948. English source: Moscow origins, 133 days, fall on 1 August 1919, Kun executed, Sallai and Fürst executed 1932, Comintern dissolved the KMP in 1936, salami tactics.",
+      "source": "https://hu.wikipedia.org/wiki/Kommunist%C3%A1k_Magyarorsz%C3%A1gi_P%C3%A1rtja",
+      "locator": "hu (KMP): Története; Az alapítóülés; A Tanácsköztársaság; Horthy-korszak; Békepárt — hu (MKP): Alapítók; A hatalom megszerzése — en: Foundation and early years; Interwar period and exile; World War II and Communist takeover"
+     },
+     {
+      "field": "period",
+      "claim": "The party existed from its founding in 1918 until the merger of 1948.",
+      "source": "https://en.wikipedia.org/wiki/Hungarian_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "The KMP was founded on 24 November 1918.",
+      "source": "https://hu.wikipedia.org/wiki/Kommunist%C3%A1k_Magyarorsz%C3%A1gi_P%C3%A1rtja",
+      "locator": "hu (KMP): Története"
+     },
+     {
+      "field": "endYear",
+      "claim": "In 1948 the MKP merged with the MSZDP to form the Hungarian Working People's Party.",
+      "source": "https://hu.wikipedia.org/wiki/Magyar_Kommunista_P%C3%A1rt",
+      "locator": "hu (MKP): A hatalom megszerzése"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hungarian-socialist-workers-party",
+   "affiliationId": "party-hungarian-socialist-workers",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Hungarian_Socialist_Workers%27_Party",
+    "https://hu.wikipedia.org/wiki/Magyar_Szocialista_Munk%C3%A1sp%C3%A1rt"
+   ],
+   "fields": {
+    "term": {
+     "ko": "헝가리 사회주의노동자당",
+     "en": "Hungarian Socialist Workers' Party"
+    },
+    "original": "Magyar Szocialista Munkáspárt (MSZMP)",
+    "category": "party-state",
+    "period": {
+     "ko": "1956–1989",
+     "en": "1956–1989"
+    },
+    "startYear": 1956,
+    "endYear": 1989,
+    "definition": {
+     "ko": "1956년 헝가리 혁명 중 헝가리 노동인민당을 대신해 세워져 1989년까지 헝가리를 일당 통치한 마르크스·레닌주의 정당. 카다르 야노시가 1988년까지 이끌며 「굴라시 공산주의」와 신경제 메커니즘을 펼쳤다. 1989년 10월 7일 제14차 대회에서 해산하고 헝가리 사회당으로 다시 섰다.",
+     "en": "The Marxist–Leninist party that replaced the Hungarian Working People's Party during the Hungarian Revolution of 1956 and ruled Hungary as a one-party state until 1989. Led by János Kádár until 1988, it pursued ‘goulash communism’ and the New Economic Mechanism. At its 14th Congress on 7 October 1989 it dissolved itself and was refounded as the Hungarian Socialist Party."
+    },
+    "body": {
+     "ko": "1956년 10월 혁명 초기에 집권 헝가리 노동인민당은 빠르게 무너졌다. 10월 30일 공산당 지도자들은 노동인민당을 해산하고 새 당을 세우기로 했으며, 산토 졸탄의 제안으로 이름을 헝가리 사회주의노동자당으로 정했다. 산토는 1925~1927년 같은 이름으로 활동한 공산당 외곽 정당의 정치인이었다. 카다르 야노시, 너지 임레, 루카치 죄르지 등 7명으로 된 임시 집행위원회가 당을 이끌었고, 카다르는 11월 1일 저녁 라디오 연설로 창당을 발표했다.\n\n당은 처음 혁명을 지지했으나, 너지 정부가 바르샤바 조약 탈퇴를 선언하자 돌아섰다. 11월 2~3일 모스크바에 있던 카다르와 뮌니히 페렌츠 가운데 소련 지도부는 카다르에게 나라를 맡겼고, 11월 4일 소련의 지원 아래 카다르의 「혁명적 노동자·농민 정부」가 권력을 잡았다. 영어 출처에 따르면 혁명 뒤 정부는 350명을 처형했다.\n\n카다르는 「우리에게 반대하지 않는 자는 우리 편」이라는 구호 아래 이른바 「굴라시 공산주의」를 펼쳐, 다른 동구권 나라보다 일상의 자유를 넓혔다. 신경제 메커니즘은 시장 요소를 일부 들여와 생활수준을 높였지만, 당은 정치권력 독점과 검열을 유지했고 애국인민전선을 통해 후보를 걸러 냈다. 헝가리어 출처는 1973년과 1979년 석유 위기 뒤 생활수준을 지키려 외화 차관을 들인 것이 심각한 채무 함정으로 이어졌다고 적는다. 1986년 당원은 88만 3131명으로 성인 인구의 11.1%였다.\n\n1988년 5월 당 협의회에서 카다르는 실권을 잃고 그로스 카로이가 서기장이 되었다. 1989년 1월 28일 포즈거이 임레가 정치국 소위원회가 1956년 사건을 「인민 봉기」로 본다고 발표하면서 당내 변화가 빨라졌고, 네메트 미클로시, 호른 줄러, 녜르시 레죄, 포즈거이 등 급진 개혁파가 당 기구를 장악했다. 6월 26일 녜르시를 의장으로 한 4인 집단 지도부가 정치국을 대신했다.\n\n1989년 10월 7일 제14차 대회에서 당은 해산하고 헝가리 사회당(MSZP)으로 다시 섰으며, 사회당이 당 재산을 물려받았다. 2주 뒤 국회는 헌법에서 마르크스·레닌주의적 성격을 지우는 개정을 승인했다. 영어 출처에 따르면 그로스를 중심으로 한 소수파는 12월 17일 헝가리 공산주의노동자당을 세웠고, 헝가리어 출처는 사회당에 합류하지 않은 당원들이 12월 중순 대회를 이어 열어 튀르메르 줄러를 의장으로 뽑았으며 이 당이 1992년 노동자당으로 이름을 바꾸었다고 적는다.",
+     "en": "In the first days of the October 1956 revolution the ruling Hungarian Working People's Party collapsed rapidly. On 30 October communist leaders decided to dissolve it and found a new party, named the Hungarian Socialist Workers' Party on the proposal of Zoltán Szántó, who had been a politician of the communist cover party of the same name in 1925–1927. A seven-member Provisional Executive Committee including János Kádár, Imre Nagy and György Lukács led the party, and Kádár announced its founding in a radio speech on the evening of 1 November.\n\nThe party at first supported the revolution but turned against Nagy's government after it denounced the Warsaw Pact. Of Kádár and Ferenc Münnich, who were in Moscow on 2–3 November, the Soviet leadership entrusted the country to Kádár, and on 4 November his ‘Revolutionary Workers' and Peasants' Government’ took power with Soviet support. According to the English source, the government executed 350 people after the revolution.\n\nUnder the motto ‘he who is not against us is with us’ Kádár pursued so-called goulash communism, giving Hungarians more freedom in daily life than their Eastern Bloc neighbours. The New Economic Mechanism introduced some market elements and raised living standards, but the party kept its monopoly of political power and censorship and used the Patriotic People's Front to screen candidates. The Hungarian source says that foreign-currency loans taken after the oil crises of 1973 and 1979 to maintain living standards led to a serious debt trap. In 1986 the party had 883,131 members, 11.1% of the adult population.\n\nAt the national party conference of May 1988 Kádár lost power and Károly Grósz became general secretary. On 28 January 1989 Imre Pozsgay announced that a Politburo sub-committee regarded the events of 1956 as a ‘people's uprising’, accelerating change within the party, and radical reformers such as Miklós Németh, Gyula Horn, Rezső Nyers and Pozsgay took over the party machinery. On 26 June a four-man collective presidency chaired by Nyers replaced the Politburo.\n\nAt its 14th Congress on 7 October 1989 the party dissolved itself and was refounded as the Hungarian Socialist Party (MSZP), which inherited its assets. Two weeks later the National Assembly approved constitutional amendments removing its Marxist–Leninist character. According to the English source, a minority around Grósz founded the Hungarian Communist Workers' Party on 17 December; the Hungarian source says members who did not join the MSZP continued the congress in mid-December, elected Gyula Thürmer chairman, and renamed their party the Workers' Party in 1992."
+    },
+    "aliases": {
+     "ko": [
+      "헝가리 사회주의노동당"
+     ],
+     "en": [
+      "MSZMP",
+      "MSzMP",
+      "Hungarian Socialist Workers’ Party"
+     ]
+    },
+    "people": [
+     "janos-kadar",
+     "ferenc-munnich",
+     "nagy",
+     "gyorgy-lukacs",
+     "karoly-grosz",
+     "rezso-nyers",
+     "imre-pozsgay",
+     "miklos-nemeth",
+     "gyula-horn"
+    ],
+    "events": [
+     "hungarian-revolution"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Ruling Marxist–Leninist party of the Hungarian People's Republic 1956–1989, organised from the MDP during the 1956 revolution with Kádár as leader; goulash communism and the New Economic Mechanism; dissolved and refounded as the Hungarian Socialist Party on 7 October 1989.",
+      "source": "https://en.wikipedia.org/wiki/Hungarian_Socialist_Workers%27_Party",
+      "locator": "en: lead; Overview — hu: bevezető"
+     },
+     {
+      "field": "body",
+      "claim": "Decision of 30 October 1956 and Szántó's name proposal; seven-member Provisional Executive Committee; Kádár's radio announcement on 1 November; Kádár and Münnich in Moscow 2–3 November; oil-crisis debt; 883,131 members in 1986; Kádár's loss of power May 1988; 14th Congress 7 October 1989; Thürmer and the Workers' Party. English source: turn against Nagy, 4 November government, 350 executions, goulash communism, Pozsgay's 28 January 1989 statement, Nyers presidency 26 June 1989, Hungarian Communist Workers' Party 17 December 1989.",
+      "source": "https://hu.wikipedia.org/wiki/Magyar_Szocialista_Munk%C3%A1sp%C3%A1rt",
+      "locator": "hu: Közvetlen előzmények; Az MSZMP megalakulása; Kádár János szerepe; Az 1989-es fordulat; bevezető — en: Overview"
+     },
+     {
+      "field": "period",
+      "claim": "The party ruled Hungary between November 1956 and October 1989.",
+      "source": "https://hu.wikipedia.org/wiki/Magyar_Szocialista_Munk%C3%A1sp%C3%A1rt",
+      "locator": "hu: bevezető"
+     },
+     {
+      "field": "startYear",
+      "claim": "On 30 October 1956 communist leaders decided to dissolve the MDP and found the MSZMP; Kádár announced it on 1 November 1956.",
+      "source": "https://hu.wikipedia.org/wiki/Magyar_Szocialista_Munk%C3%A1sp%C3%A1rt",
+      "locator": "hu: Az MSZMP megalakulása"
+     },
+     {
+      "field": "endYear",
+      "claim": "On 7 October 1989 the MSZMP was dissolved and refounded as the Hungarian Socialist Party.",
+      "source": "https://en.wikipedia.org/wiki/Hungarian_Socialist_Workers%27_Party",
+      "locator": "en: Overview"
+     }
+    ]
+   }
+  },
+  {
+   "id": "league-of-communists-of-yugoslavia",
+   "affiliationId": "party-yugoslav-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/League_of_Communists_of_Yugoslavia",
+    "https://sh.wikipedia.org/wiki/Savez_komunista_Jugoslavije"
+   ],
+   "fields": {
+    "term": {
+     "ko": "유고슬라비아 공산주의자동맹",
+     "en": "League of Communists of Yugoslavia"
+    },
+    "original": "Savez komunista Jugoslavije (SKJ); Komunistička partija Jugoslavije (KPJ)",
+    "category": "party-state",
+    "period": {
+     "ko": "1919–1990",
+     "en": "1919–1990"
+    },
+    "startYear": 1919,
+    "endYear": 1990,
+    "definition": {
+     "ko": "1919년 세르브·크로아트·슬로베네 왕국에서 창당해 1920년부터 1952년까지 유고슬라비아 공산당이라는 이름을 쓴 정당. 왕정 아래 금지된 비합법 조직이었다가 제2차 세계대전 때 파르티잔 투쟁을 이끌었고, 1945년부터 1990년까지 유고슬라비아를 일당 통치했다. 1937년부터 1980년까지 요시프 브로즈 티토가 이끌었으며, 1948년 코민포름에서 축출된 뒤 노동자 자주관리 노선을 택했고 1990년 공화국별 정당으로 해체되었다.",
+     "en": "A party founded in 1919 in the Kingdom of Serbs, Croats and Slovenes and known from 1920 to 1952 as the Communist Party of Yugoslavia. An outlawed underground organisation under the monarchy, it led the Partisan struggle in the Second World War and ruled Yugoslavia as a one-party state from 1945 to 1990. Led by Josip Broz Tito from 1937 to 1980, it adopted workers' self-management after its expulsion from the Cominform in 1948 and broke up into republican parties in 1990."
+    },
+    "body": {
+     "ko": "1919년 4월 20~23일 베오그라드 통일 대회에서 세르비아 사회민주당과 보스니아 헤르체고비나 사회민주당 등이 합쳐 유고슬라비아 사회주의노동자당(공산주의자)을 세웠다. 1920년 6월 20~24일 부코바르 제2차 대회에서 좌파가 이겨 코민테른 노선을 전면 수용하고 당명을 유고슬라비아 공산당(KPJ)으로 바꾸었다. 당은 1920년 제헌의회 선거에서 419석 가운데 58석을 얻었다.\n\n1920년 12월 30일 정부는 「오브즈나나」 포고로 당 활동을 금지했고, 1921년 당 분파가 섭정 알렉산다르 암살을 꾀하고 전 내무장관 밀로라드 드라슈코비치를 살해하자 8월 국가보호법이 금지를 법제화했다. 당은 1928년까지 비합법으로 네 차례 대회를 열었으나 이후 20년 동안 대회를 열지 못했다. 1937~1940년 당 안의 숙청 속에서 티토가 지도권을 잡았고, 1940년 10월 자그레브에서 비밀리에 열린 제5차 전국협의회로 장악을 마무리했다. 티토의 지도권에 대해 영어 출처는 1939년 코민테른의 위임을, 세르보크로아트어 출처는 1940년 서기장 임명을 든다. 당원 수도 영어 출처는 1939년 6000명, 1941년 8000명이라 하고, 세르보크로아트어 출처는 전쟁 전 당원 1만 2000명 가운데 9000명이 전쟁에서 죽었다고 적는다.\n\n1941년 추축국의 유고슬라비아 침공 뒤 당의 군사 조직인 파르티잔이 내전과 저항전을 벌여 추축국과 그 협력 세력을 물리쳤다. 1945년 당은 인민전선을 통해 반대파를 무력화하며 일당 체제를 세웠다. 알바니아 편입 추진, 그리스 공산 게릴라 지원, 불가리아와의 접근이 소련과 충돌을 낳아 당은 1948년 티토-스탈린 결별로 코민포름에서 축출되었다. 1948~1951년 5만 명 넘는 당원이 반대파로 등록되어 제명되었고, 골리오토크 등 아드리아해 섬에 수용소가 세워졌다.\n\n당은 1950년 노동자 자주관리 법률을 도입해 소련 체제와 자신을 구별했고, 1952년 11월 2~7일 자그레브 제6차 대회에서 스탈린주의를 비판하며 유고슬라비아 공산주의자동맹(SKJ)으로 이름을 바꾸었다. 새 이름은 마르크스와 엥겔스가 참여한 1847~1852년의 공산주의자동맹에서 따왔다. 이후 당은 밀로반 질라스와의 갈등, 알렉산다르 란코비치 사건, 크로아티아의 봄과 개혁파 숙청을 겪었다.\n\n1980년 티토가 죽은 뒤 당은 의장이 해마다 바뀌는 집단 지도 체제를 택했고, 공화국 지부의 권한이 커졌다. 1987년 슬로보단 밀로셰비치가 세르비아 공산주의자동맹 의장이 되었다. 1990년 1월 제14차 대회에서 당은 권력 독점을 포기했으나, 세르비아와 슬로베니아 공산주의자의 대립 끝에 공화국별 정당으로 갈라졌다. 1991년 1월 22일 마지막 연방 기구가 스스로 폐지되었고, 2월 24일 보스니아 헤르체고비나 공산주의자동맹이 마지막으로 탈퇴했다.",
+     "en": "At the unification congress held in Belgrade on 20–23 April 1919 the Serbian Social Democratic Party, the Social Democratic Party of Bosnia and Herzegovina and others merged to form the Socialist Labour Party of Yugoslavia (Communists). At the Second Congress in Vukovar on 20–24 June 1920 the left prevailed, aligned the party entirely with the Comintern and renamed it the Communist Party of Yugoslavia (KPJ). In the 1920 Constitutional Assembly election it won 58 of 419 seats.\n\nOn 30 December 1920 the government outlawed the party by the Obznana decree, and after a party faction attempted to assassinate Regent Alexander and killed former Interior Minister Milorad Drašković in 1921, the Law on the Protection of the Realm made the ban statutory in August. The illegal party held four congresses up to 1928 but none for the following twenty years. Tito took control during the intra-party purges of 1937–1940 and completed his takeover at the Fifth Land Conference, held covertly in Zagreb in October 1940. On Tito's leadership the English source cites the Comintern mandate of 1939, the Serbo-Croatian source his appointment as general secretary in 1940. On membership, the English source gives 6,000 in 1939 and 8,000 in 1941, while the Serbo-Croatian source says 9,000 of the 12,000 pre-war members died in the war.\n\nAfter the Axis invasion of Yugoslavia in 1941 the party's military arm, the Partisans, fought a civil war and a resistance war and defeated the Axis and its local auxiliaries. In 1945 the party neutralised the opposition through the People's Front and established a one-party system. Its plans to integrate Albania, support for the Greek communist guerrillas and rapprochement with Bulgaria brought it into conflict with the USSR, and in 1948 the Tito–Stalin split led to its expulsion from the Cominform. In 1948–1951 more than 50,000 members were registered as opponents and expelled, and camps were built on Adriatic islands such as Goli Otok.\n\nThe party distinguished itself from the Soviet system by introducing workers' self-management legislation in 1950, and at the Sixth Congress in Zagreb on 2–7 November 1952 it criticised Stalinism and renamed itself the League of Communists of Yugoslavia (SKJ), a name inspired by the Communist League of 1847–1852 associated with Marx and Engels. It then went through the conflict with Milovan Đilas, the Ranković affair, and the Croatian Spring and the purge of reformists.\n\nAfter Tito's death in 1980 the party adopted a collective leadership with an annually rotating presidency, and the republican branches gained power. Slobodan Milošević became President of the League of Communists of Serbia in 1987. At the 14th Congress in January 1990 the party renounced its monopoly of power, but rifts between Serbian and Slovenian communists broke it up into republican parties. The last federal organ abolished itself on 22 January 1991, and on 24 February the League of Communists of Bosnia and Herzegovina, the last branch, left."
+    },
+    "aliases": {
+     "ko": [
+      "유고슬라비아 공산당"
+     ],
+     "en": [
+      "Communist Party of Yugoslavia",
+      "KPJ",
+      "SKJ",
+      "LCY"
+     ]
+    },
+    "people": [
+     "josip-broz-tito",
+     "edvard-kardelj",
+     "milovan-djilas",
+     "aleksandar-rankovic",
+     "andrija-hebrang"
+    ],
+    "events": [
+     "yugoslav-partisans",
+     "tito-stalin-split"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1919 in the Kingdom of Serbs, Croats and Slovenes, called the Communist Party of Yugoslavia 1920–1952; outlawed and underground until WWII; led the Partisans; one-party rule 1945–1990; led by Tito 1937–1980; expelled from the Cominform in 1948; self-management and Titoism; renamed in 1952.",
+      "source": "https://en.wikipedia.org/wiki/League_of_Communists_of_Yugoslavia",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Unification congress 20–23 April 1919; Vukovar congress 20–24 June 1920 and the KPJ name; 58 of 419 seats; Obznana 30 December 1920 and the 1921 Law on the Protection of the Realm; Tito's takeover 1937–1940 and the Fifth Land Conference; membership 6,000/8,000; People's Front; Tito–Stalin split and expulsion 1948; 50,000 expelled, Goli Otok; self-management 1950; renaming at the Sixth Congress 1952; collective leadership after 1980; Milošević 1987; 14th Congress January 1990; last federal organ abolished 22 January 1991. Serbo-Croatian source: four congresses until 1928, Tito general secretary 1940, 9,000 of 12,000 pre-war members killed, Sixth Congress 2–7 November 1952.",
+      "source": "https://en.wikipedia.org/wiki/League_of_Communists_of_Yugoslavia",
+      "locator": "en: Establishment; 1920 elections and ban; Tito assumes power; Drift to the one-party system; Break with the Soviet Union; Reform and conflict with Đilas; Decline and dissolution — sh: uvod; Savez komunista Jugoslavije"
+     },
+     {
+      "field": "period",
+      "claim": "Formed in 1919; one-party state until 1990.",
+      "source": "https://en.wikipedia.org/wiki/League_of_Communists_of_Yugoslavia",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Unification congress of the SRPJ(k) held in Belgrade on 20–23 April 1919.",
+      "source": "https://en.wikipedia.org/wiki/League_of_Communists_of_Yugoslavia",
+      "locator": "en: Establishment"
+     },
+     {
+      "field": "endYear",
+      "claim": "At the 14th Congress in January 1990 the SKJ renounced its monopoly and dissolved into republican parties.",
+      "source": "https://en.wikipedia.org/wiki/League_of_Communists_of_Yugoslavia",
+      "locator": "en: Decline and dissolution"
+     }
+    ]
+   }
+  },
+  {
+   "id": "party-of-labour-of-albania",
+   "affiliationId": "party-albanian-labour",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Party_of_Labour_of_Albania",
+    "https://sq.wikipedia.org/wiki/Partia_e_Pun%C3%ABs_e_Shqip%C3%ABris%C3%AB",
+    "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B1%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D1%82%D1%80%D1%83%D0%B4%D0%B0"
+   ],
+   "fields": {
+    "term": {
+     "ko": "알바니아 노동당",
+     "en": "Party of Labour of Albania"
+    },
+    "original": "Partia e Punës e Shqipërisë (PPSh); Partia Komuniste e Shqipërisë (PKSh)",
+    "category": "party-state",
+    "period": {
+     "ko": "1941–1991",
+     "en": "1941–1991"
+    },
+    "startYear": 1941,
+    "endYear": 1991,
+    "definition": {
+     "ko": "1941년 11월 8일 알바니아 공산당으로 창당해 1948년 이름을 바꾼 알바니아의 집권 정당. 민족해방운동을 이끌어 1944년 권력을 잡았고 1991년까지 유일 합법 정당으로 통치했다. 엔베르 호자가 1985년 죽을 때까지 이끌었으며, 1991년 6월 13일 알바니아 사회당으로 재창당했다.",
+     "en": "The ruling party of Albania, founded on 8 November 1941 as the Communist Party of Albania and renamed in 1948. Having led the National Liberation Movement, it took power in 1944 and ruled as the only legal party until 1991. Led by Enver Hoxha until his death in 1985, it refounded itself as the Socialist Party of Albania on 13 June 1991."
+    },
+    "body": {
+     "ko": "1920년대 알바니아는 공산당이 없는 유일한 발칸 국가였다. 1928년 8월 소련에서 첫 알바니아 공산당이 만들어졌지만, 1941년까지 국내에는 통일 조직이 없었고 공산주의자들은 서로 반목하는 작은 집단으로 흩어져 있었다. 1941년 6월 독일의 소련 침공 뒤 티토가 코민테른 지시에 따라 보낸 밀라딘 포포비치와 두샨 무고샤가 이 집단들을 묶었고, 1941년 11월 8~14일 창당 회의에서 엔베르 호자가 지도자가 되었다. 알바니아어 출처는 1948년까지 당 회의 문서를 유고슬라비아 쪽이 베오그라드의 지시에 따라 준비했다고 적는다.\n\n당은 1942년 결성된 민족해방운동의 중심 세력이었고, 1943년 8월부터 발리 콤베타르 등 다른 알바니아 세력과 싸웠다. 1944년 11월 29일 독일군을 몰아낸 뒤 당은 다른 동유럽 나라와 달리 연립정부 단계 없이 권력을 잡았다. 1945년 12월 2일 제헌의회 선거에서 당이 이끄는 민주전선의 단일 명부가 93.7%를 얻었다. 러시아어 출처는 1945년 당원이 2000명을 조금 넘었다고 적으며, 집권 시작을 영어 출처는 1944년, 러시아어 출처는 1945년으로 적는다.\n\n1947년 7월 스탈린이 농민이 다수인 나라 사정을 들어 개명을 권했고, 당은 1948년 제1차 대회에서 알바니아 노동당이 되었다. 같은 해 코치 조제 등 「티토주의자」가 숙청되었다. 스탈린 사후 당은 소련 블록에서 가장 강경한 반수정주의 정당이 되었고, 1961년 흐루쇼프와 결별하며 리리 벨리쇼바, 코초 타슈코 등 친소파를 숙청하고 중국 편에 섰다. 1968년 바르샤바 조약에서 공식 탈퇴했고, 마오쩌둥 사후 중국과도 멀어져 1978년 독자 노선을 선언했다.\n\n1985년 호자가 죽자 라미즈 알리아가 제1서기가 되어 점진적 개혁에 나섰다. 1990년 반공 시위가 번지자 알리아는 당의 권력 독점 포기와 복수정당제 도입을 발표했는데, 그 날짜를 영어 출처는 1990년 12월 11일, 러시아어 출처는 12월 12일로 적는다. 1991년 3월 31일 첫 복수정당 선거에서 당은 공식 집계 56.2%로 이겼지만, 이미 마르크스·레닌주의 정당이 아니었다.\n\n1991년 6월 13일 임시 대회에서 당은 마르크스·레닌주의를 버리고 알바니아 사회당으로 이름을 바꾸었다. 사회당은 이후 알바니아의 두 주요 정당 가운데 하나가 되었다. 러시아어 출처에 따르면 1992년 3월 민주당이 선거에서 이긴 뒤 알리아 등 옛 지도자들이 권력 남용 등의 혐의로 수감되었다.",
+     "en": "In the 1920s Albania was the only Balkan country without a communist party. The first Albanian Communist Party was formed in the Soviet Union in August 1928, but until 1941 there was no unified organisation inside Albania, and the communists were scattered in small, mutually hostile groups. After the German attack on the Soviet Union in June 1941, Miladin Popović and Dušan Mugoša, sent by Tito under Comintern directives, united these groups, and at the founding meeting of 8–14 November 1941 Enver Hoxha became leader. The Albanian source says that until 1948 the documents of the party's conferences were prepared by the Yugoslavs on Belgrade's instructions.\n\nThe party was the dominant element of the National Liberation Movement formed in 1942, and from August 1943 it fought other Albanian forces such as the Balli Kombëtar. After driving out the Germans on 29 November 1944 it took power without the intermediate coalition stage seen in other Eastern European countries. In the Constituent Assembly election of 2 December 1945 the single list of the party-led Democratic Front received 93.7%. The Russian source says the party had little more than 2,000 members in 1945, and it dates the start of the party's rule to 1945, while the English source gives 1944.\n\nIn July 1947 Stalin suggested a new name on the grounds that peasants were the majority, and at its First Congress in 1948 the party became the Party of Labour of Albania. In the same year ‘Titoists’ such as Koçi Xoxe were purged. After Stalin's death the party became the most rigidly anti-revisionist party in the Soviet bloc; in 1961 it broke with Khrushchev, purged pro-Moscow figures such as Liri Belishova and Koço Tashko, and sided with China. It formally withdrew from the Warsaw Pact in 1968, distanced itself from China after Mao's death, and declared its own path in 1978.\n\nAfter Hoxha died in 1985, Ramiz Alia became first secretary and began gradual reforms. As anti-communist protests spread in 1990, Alia announced that the party was abandoning its monopoly of power and moving to a multi-party system, on 11 December 1990 according to the English source and 12 December according to the Russian source. In the first multi-party election on 31 March 1991 the party officially won 56.2%, though it was no longer a Marxist–Leninist party.\n\nAt an extraordinary congress on 13 June 1991 the party renounced Marxism–Leninism and renamed itself the Socialist Party of Albania, which became one of the country's two major parties. According to the Russian source, after the Democratic Party won the election of March 1992, Alia and other former leaders were imprisoned on charges including abuse of power."
+    },
+    "aliases": {
+     "ko": [
+      "알바니아 공산당"
+     ],
+     "en": [
+      "Communist Party of Albania",
+      "Albanian Party of Labour"
+     ]
+    },
+    "people": [
+     "enver-hoxha",
+     "koci-xoxe",
+     "koco-tashko",
+     "ramiz-alia"
+    ],
+    "events": [
+     "albanian-socialist-transition-1944-1946"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Ruling and sole legal party of communist Albania 1944–1991, founded on 8 November 1941 as the Communist Party of Albania, renamed in 1948 on Stalin's recommendation, dissolved and refounded as the Socialist Party on 13 June 1991; dominated by Enver Hoxha.",
+      "source": "https://en.wikipedia.org/wiki/Party_of_Labour_of_Albania",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "First Albanian Communist Party formed in the USSR in August 1928; Popović and Mugoša unite the groups; founding 8 November 1941 with Hoxha; National Liberation Movement 1942; Germans driven out 29 November 1944; Democratic Front 93.7% on 2 December 1945; Stalin's renaming suggestion July 1947; break with Moscow 1961, Belishova and Tashko purged; Warsaw Pact exit 1968; own path 1978; Alia; monopoly abandoned 11 December 1990; 1991 elections; Socialist Party 1991. Albanian source: founding meeting 8–14 November 1941, Yugoslav-prepared documents, renaming at the First Congress 1948. Russian source: 2,000 members in 1945, Xoxe purged 1948, 12 December 1990, 56.2% on 31 March 1991, 13 June 1991 congress, arrests after March 1992.",
+      "source": "https://en.wikipedia.org/wiki/Party_of_Labour_of_Albania",
+      "locator": "en: Background; World War II; Hoxha era (1945–1985); Post-Hoxha (1985–1991) — sq: hyrje; Themelimi i Partisë — ru: Партийное правление; Внутренние конфликты; Падение режима; Трансформация партии"
+     },
+     {
+      "field": "period",
+      "claim": "The party existed from 1941 to 1991.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B1%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D1%82%D1%80%D1%83%D0%B4%D0%B0",
+      "locator": "ru: преамбула"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded as the Communist Party of Albania on 8 November 1941.",
+      "source": "https://sq.wikipedia.org/wiki/Partia_e_Pun%C3%ABs_e_Shqip%C3%ABris%C3%AB",
+      "locator": "sq: hyrje; Themelimi i Partisë"
+     },
+     {
+      "field": "endYear",
+      "claim": "The party dissolved on 13 June 1991 and refounded itself as the Socialist Party of Albania.",
+      "source": "https://en.wikipedia.org/wiki/Party_of_Labour_of_Albania",
+      "locator": "en: lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "mongolian-peoples-party",
+   "affiliationId": "party-mongolian-people",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mongolian_People%27s_Party",
+    "https://mn.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%B3%D0%BE%D0%BB_%D0%90%D1%80%D0%B4%D1%8B%D0%BD_%D0%9D%D0%B0%D0%BC"
+   ],
+   "fields": {
+    "term": {
+     "ko": "몽골 인민당",
+     "en": "Mongolian People's Party"
+    },
+    "original": "Монгол Ардын Нам (МАН); Монгол Ардын Хувьсгалт Нам (МАХН)",
+    "category": "party-state",
+    "period": {
+     "ko": "1920–현재",
+     "en": "1920–present"
+    },
+    "startYear": 1920,
+    "definition": {
+     "ko": "1920년 몽골 혁명가들이 공산주의 정당으로 세운 몽골에서 가장 오래된 정당. 1921년 몽골 혁명을 이끈 뒤 몽골 인민혁명당이라는 이름으로 1990년까지 몽골 인민공화국을 일당 통치했다. 1990년 민주화 뒤 복수정당제 아래 경쟁하는 정당이 되었고, 2010년 원래 이름을 되찾으며 사회민주주의를 채택했다.",
+     "en": "The oldest political party in Mongolia, founded as a communist party by Mongolian revolutionaries in 1920. After leading the Mongolian Revolution of 1921 it ruled the Mongolian People's Republic as a one-party state under the name Mongolian People's Revolutionary Party until 1990. After the democratic revolution of 1990 it became a party competing in a multi-party system, and in 2010 it restored its original name and adopted social democracy."
+    },
+    "body": {
+     "ko": "1919년 중국 베이양 정부군의 점령 아래 보도·초이발산 등의 영사관 언덕파와 단잔·수흐바타르 등의 동쿠레파라는 두 지하 저항 조직이 생겼다. 두 조직은 1920년 6월 25일 몽골 인민당으로 합쳤고, 단잔과 초이발산을 소련에 보내 8월 이르쿠츠크에서 협상했다. 영어 출처에 따르면 당은 1921년 3월 1일 캬흐타에서 정식으로 창당되어 임시인민정부를 세웠고, 몽골어 출처는 1921년 3월 1~3일 회의에서 중앙위원회를 뽑고 강령을 채택하면서 당이 정당의 성격을 갖추었다고 적는다.\n\n1921년 3월 18일 수흐바타르의 인민의용군이 캬흐타의 중국군을 물리쳤고, 몽골 유격군과 붉은 군대는 운게른 남작의 백군을 격파한 뒤 7월 6일 수도에 들어가 7월 11일 독립을 선언했다. 당은 코민테른의 권고에 따라 몽골 인민혁명당으로 이름을 바꾸었는데, 그 해를 영어 출처는 1924년, 몽골어 출처는 1925년으로 적는다.\n\n1928년부터 당은 급격히 좌경화해 가축을 강제로 집단화하고 사영 상업과 운송을 금지했으며 사원과 귀족을 공격했다. 700만 마리 넘는 가축이 죽어 1932년 봉기가 일어났고, 10월 몽골군과 소련군에 진압되었다. 1933년 조작된 룸베 사건으로 1500명 넘게 숙청되었고, 1936년 겐덴 총리가 실각해 소련에서 처형된 뒤 초이발산이 권력을 잡았다. 1937~1939년 공식 집계로 2만 5437명이 체포되고 2만 99명이 처형되었으며, 실제 희생자는 3만 5000명에서 10만 명으로 추산된다. 희생자 가운데 1만 8000명 넘게 라마승이었다.\n\n1952년 초이발산이 죽은 뒤 체덴발이 권력을 잡아 정적을 숙청하고 소련과의 협력을 강화했으며, 중소 분쟁에서 소련 편에 섰다. 1984년 8월 체덴발은 소련의 주도로 은퇴했고 바트뭉흐가 뒤를 이었다. 1989년 12월 10일 첫 민주화 시위가 일어났고, 1990년 3월 7일 몽골민주연합의 단식 농성 뒤 바트뭉흐는 3월 9일 정치국을 해산하고 사임했다. 몽골어 출처에 따르면 이때 헌법에서 당의 지도 조항도 삭제되었다.\n\n1990년 첫 복수정당 선거에서 당은 인민대회의 430석 가운데 357석을 얻었고, 1992년 새 헌법을 채택했다. 1996년 총선에서 처음 야당에 졌고, 2003년 사회주의 인터내셔널에 가입했다. 2010년 제26차 대회에서 대의원 99.3%의 찬성으로 몽골 인민당이라는 이름을 되찾고 사회민주주의로 노선을 바꾸었다. 이에 반발한 엥흐바야르 전 대통령은 같은 해 몽골 인민혁명당이라는 이름으로 새 당을 세웠고, 두 당은 2021년 다시 합쳤다. 당은 2016년 다시 집권해 2020년과 2024년 선거에서 과반을 지켰다.",
+     "en": "Under the occupation by Chinese Beiyang government troops in 1919, two underground resistance groups emerged: the Consular Hill group, including Bodoo and Choibalsan, and the East Khüree group, including Danzan and Sükhbaatar. The two groups united as the Mongolian People's Party on 25 June 1920 and sent Danzan and Choibalsan to the Soviet Union, where they negotiated in Irkutsk in August. According to the English source, the party was formally founded at Kyakhta on 1 March 1921 and formed the People's Provisional Government; the Mongolian source says that the meeting of 1–3 March 1921, which elected a Central Committee and adopted a programme, gave the organisation the full character of a political party.\n\nOn 18 March 1921 Sükhbaatar's People's Militia defeated the Chinese forces at Kyakhta, and Mongolian guerrillas and the Red Army defeated Baron Ungern's White forces, entered the capital on 6 July and declared independence on 11 July. On the advice of the Comintern the party renamed itself the Mongolian People's Revolutionary Party, in 1924 according to the English source and in 1925 according to the Mongolian source.\n\nFrom 1928 the party turned sharply left, forcibly collectivising livestock, banning private trade and transport, and attacking monasteries and the nobility. More than seven million head of livestock died, an uprising broke out in 1932 and was crushed in October by Mongolian and Soviet troops. The fabricated Lkhümbe Affair of 1933 led to the purge of more than 1,500 people, and after Prime Minister Genden was removed in 1936 and executed in the Soviet Union, Choibalsan took power. In 1937–1939, 25,437 people were officially arrested and 20,099 executed, with actual victims estimated at 35,000 to 100,000; more than 18,000 of them were lamas.\n\nAfter Choibalsan died in 1952, Tsedenbal took power, purged his rivals, deepened cooperation with the Soviet Union and sided with it in the Sino-Soviet split. In August 1984 Tsedenbal was forced into retirement in a Soviet-sponsored move and was succeeded by Batmönkh. The first pro-democracy demonstration took place on 10 December 1989, and after the Mongolian Democratic Union's hunger strike of 7 March 1990, Batmönkh dissolved the Politburo and resigned on 9 March. According to the Mongolian source, the constitutional clause on the party's leading role was dropped at this time.\n\nIn the first multi-party election of 1990 the party won 357 of the 430 seats in the People's Great Khural, and a new constitution was adopted in 1992. It lost a parliamentary election to the opposition for the first time in 1996 and joined the Socialist International in 2003. At the 26th Congress in 2010, with 99.3% of delegates in favour, it restored the name Mongolian People's Party and shifted to social democracy. In response, former president Enkhbayar founded a new party under the name Mongolian People's Revolutionary Party that year; the two parties reunited in 2021. The party returned to power in 2016 and kept its majority in the 2020 and 2024 elections."
+    },
+    "aliases": {
+     "ko": [
+      "몽골 인민혁명당",
+      "몽골인민혁명당"
+     ],
+     "en": [
+      "Mongolian People's Revolutionary Party",
+      "Mongolian People’s Revolutionary Party",
+      "MPRP"
+     ]
+    },
+    "people": [
+     "soliin-danzan",
+     "damdin-sukhbaatar",
+     "khorloogiin-choibalsan",
+     "yumjaagiin-tsedenbal"
+    ],
+    "events": [
+     "mongolian-republic-1921-1924"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded as a communist party in 1920, Mongolia's oldest party; led the 1921 revolution and became sole ruling party as the MPRP; multi-party system after 1990; restored its original name and adopted social democracy in 2010.",
+      "source": "https://en.wikipedia.org/wiki/Mongolian_People%27s_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Consular Hill and East Khüree groups; union on 25 June 1920; Irkutsk talks; founding at Kyakhta on 1 March 1921; Kyakhta 18 March, capital 6 July, independence 11 July 1921; renaming 1924; collectivisation from 1928 and 1932 uprising; Lkhümbe Affair 1933; Genden; purges 1937–1939 with 25,437 arrested and 20,099 executed; Tsedenbal; Batmönkh and the resignation of 9 March 1990; 357 of 430 seats; name restoration 2010; Enkhbayar's MPRP; reunion 2021; majorities 2016–2024. Mongolian source: founding meeting 1–3 March 1921, renaming in 1925, Politburo resignation in March 1990 and removal of the leading-role clause.",
+      "source": "https://en.wikipedia.org/wiki/Mongolian_People%27s_Party",
+      "locator": "en: Background; 1921 revolution; Armed uprising and purges; 1990 Democratic Revolution; Post-communism; Name restoration; Victories in the 2020s — mn: Түүх"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1920 and still active today.",
+      "source": "https://en.wikipedia.org/wiki/Mongolian_People%27s_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "The two groups united as the Mongolian People's Party on 25 June 1920.",
+      "source": "https://en.wikipedia.org/wiki/Mongolian_People%27s_Party",
+      "locator": "en: 1921 revolution"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lao-peoples-revolutionary-party",
+   "affiliationId": "party-lao-revolutionary",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lao_People%27s_Revolutionary_Party",
+    "https://fr.wikipedia.org/wiki/Parti_r%C3%A9volutionnaire_populaire_lao"
+   ],
+   "fields": {
+    "term": {
+     "ko": "라오인민혁명당",
+     "en": "Lao People's Revolutionary Party"
+    },
+    "original": "ພັກປະຊາຊົນປະຕິວັດລາວ",
+    "category": "party-state",
+    "period": {
+     "ko": "1955–현재",
+     "en": "1955–present"
+    },
+    "startYear": 1955,
+    "definition": {
+     "ko": "1955년 3월 22일 인도차이나 공산당 출신 라오스 공산주의자들이 「라오 인민당」으로 세운 라오스의 집권 정당. 파테트 라오를 통해 왕국 정부에 맞선 반란을 이끌고 북베트남군을 지원했으며, 1975년 12월 라오 인민민주공화국을 세운 뒤 유일 정당으로 통치하고 있다. 1972년 지금 이름으로 바꾸었고, 1980년대 중반부터 시장 개혁을 추진했다.",
+     "en": "The ruling party of Laos, founded on 22 March 1955 as the Lao People's Party by Lao communists from the former Indochinese Communist Party. Through the Pathet Lao it led the insurgency against the Royal Lao Government and supported North Vietnamese forces, and since establishing the Lao People's Democratic Republic in December 1975 it has ruled as the sole party. It took its present name in 1972 and began market reforms in the mid-1980s."
+    },
+    "body": {
+     "ko": "당의 전신은 1930년 호찌민이 세운 인도차이나 공산당이다. 영어 출처에 따르면 베트남인이 주도한 이 당에는 1945년 11월 11일 공식 해산할 때까지 캄보디아인이나 라오스인 당원이 없었으나, 프랑스어 출처는 1936년 라오스 지부가 생겼다고 적는다. 1946년부터 라오스인 간부 모집이 시작되어 하노이 대학 학생이던 카이손 폼비한과 누학 품사완이 가입했다. 1951년 2월 인도차이나 공산당이 베트남 노동당으로 바뀔 무렵 당원 2091명 가운데 라오스인은 81명이었다.\n\n1955년 3월 22일 창당 대회에서 라오 인민당이 세워졌다. 프랑스어 출처에 따르면 대회는 삼느아에서 비밀리에 열려 대의원 25명이 모였고, 당원은 약 300명으로 사실상 베트남 당의 라오스 지부였다. 당은 존재를 숨긴 채 파테트 라오와 라오 애국전선 같은 대중 전선을 통해 활동했다. 1959년 정부의 탄압으로 거의 궤멸했으나 북베트남의 지원이 늘면서 1960년대 초 나라의 절반 가까이를 장악했다. 1972년 2월 제2차 대회에서 라오인민혁명당으로 이름을 바꾸었다.\n\n1973년 2월 21일 평화 협정으로 수반나 푸마가 이끄는 임시 민족연합정부가 섰다. 1975년 파테트 라오가 비엔티안으로 가는 도로를 장악하고 시위로 각료 5명이 사임하는 가운데, 11월 26일 왕정이 퇴위에 동의했고 12월 1~2일 전국인민대표대회가 왕국을 폐지하고 라오 인민민주공화국을 세웠다. 1980년까지 인구의 10%가 나라를 떠났다. 집권 초 당은 비밀주의를 유지해 카이손 서기장은 대부분의 국민에게 알려지지 않았고, 라오 애국전선 의장이던 수파누봉 같은 운동의 공개 얼굴들은 뒤로 밀려났다.\n\n1978년 농업 집단화에 나섰으나 저항에 부딪혀 1981년 중단했고, 1990년에는 협동농장이 거의 사라졌다. 1986년 제4차 대회에서 소련식 계획경제를 해체하기 시작해 국영기업을 국가 예산에서 떼어 냈고, 1988년 외국인 투자에 우호적인 법률을 채택했다. 동구권 원조는 1988년 5200만 달러에서 1989년 100만 달러로 줄었고 1990년에는 끊겼다. 1990년 복수정당제를 요구한 통숙 사이상키 차관 등 관리 세 명은 투옥되었다.\n\n이후 채택된 새 헌법은 라오스를 당이 이끄는 인민민주국가로 규정했고, 헌법 제3조가 당의 권력 독점을 보장한다. 당 규약은 마르크스·레닌주의와 카이손 폼비한 사상을 지도 이념으로 삼으며, 당은 1990년대부터 사회주의의 물적 토대를 쌓는 수단으로 국가자본주의를 받아들였다. 카이손은 1955년부터 1992년 죽을 때까지 서기장이었고, 이후 캄타이 시판돈, 춤말리 사야손, 분냥 보라칫을 거쳐 2021년부터 통룬 시술릿이 서기장을 맡고 있다.",
+     "en": "The party's forerunner was the Indochinese Communist Party founded by Ho Chi Minh in 1930. According to the English source this Vietnamese-dominated party had no Cambodian or Laotian members until its formal dissolution on 11 November 1945, whereas the French source says a Lao section was founded in 1936. Recruitment of Lao cadres began in 1946, when Kaysone Phomvihane and Nouhak Phoumsavanh, students in Hanoi, joined. When the ICP became the Workers' Party of Vietnam in February 1951, only 81 of its 2,091 members were Lao.\n\nThe Lao People's Party was established at a founding congress on 22 March 1955. According to the French source, the congress met clandestinely in Sam Neua with 25 delegates, and the party had about 300 members and was in practice a Lao branch of the Vietnamese party. It kept its existence secret and worked through mass fronts such as the Pathet Lao and the Lao Patriotic Front. Nearly annihilated by government repression in 1959, it controlled nearly half the country by the early 1960s as North Vietnamese support increased. At its Second Congress in February 1972 it renamed itself the Lao People's Revolutionary Party.\n\nA peace agreement of 21 February 1973 set up a Provisional Government of National Unity led by Souvanna Phouma. In 1975, as the Pathet Lao seized the roads to Vientiane and protests forced five cabinet members to resign, the monarchy agreed on 26 November to abdicate, and on 1–2 December a National Congress of People's Representatives abolished the Kingdom and established the Lao People's Democratic Republic. By 1980 ten per cent of the population had left the country. In its first years in power the party remained secretive, so that General Secretary Kaysone was unknown to most citizens, and public faces of the movement such as Lao Patriotic Front chairman Souphanouvong were swept aside.\n\nThe party began collectivising agriculture in 1978, gave it up in 1981 in the face of resistance, and by 1990 virtually all cooperatives had ceased to exist. At the Fourth Congress in 1986 it began dismantling Soviet-style planning and severing state enterprises from the state budget, and in 1988 it adopted laws friendly to foreign investment. Aid from the Eastern Bloc fell from US$52 million in 1988 to US$1 million in 1989 and stopped in 1990. In 1990 three officials, including Vice-Minister Thongsouk Saisangkhi, who had called for a multi-party system, were imprisoned.\n\nA new constitution then defined Laos as a people's democratic state under the party's leadership, and Article 3 of the constitution guarantees the party's monopoly of power. The party statute names Marxism–Leninism and Kaysone Phomvihane Thought as guiding ideology, and from the 1990s the party adopted state capitalism as a tool for building the material base of socialism. Kaysone was general secretary from 1955 until his death in 1992; after Khamtai Siphandon, Choummaly Sayasone and Bounnhang Vorachith, Thongloun Sisoulith has been general secretary since 2021."
+    },
+    "aliases": {
+     "ko": [
+      "라오스 인민혁명당",
+      "라오 인민당"
+     ],
+     "en": [
+      "LPRP",
+      "Lao People's Party",
+      "Lao People’s Party"
+     ]
+    },
+    "people": [
+     "kaysone-phomvihane",
+     "nouhak-phoumsavan",
+     "souphanouvong"
+    ],
+    "events": [
+     "lao-republic-1975"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founding and sole ruling party of the Lao PDR, established on 22 March 1955 by former ICP members; led the insurgency and supported North Vietnam; took power in 1975; renamed LPRP in 1972; market reforms from the 1980s.",
+      "source": "https://en.wikipedia.org/wiki/Lao_People%27s_Revolutionary_Party",
+      "locator": "en: lead; Origins and the National Democratic Revolution (1945–1975)"
+     },
+     {
+      "field": "body",
+      "claim": "ICP founded 1930, dissolved 11 November 1945, no Lao members; Kaysone recruited 1946–47; 81 of 2,091 members Lao in 1951; founding congress 22 March 1955; near annihilation 1959; renamed LPRP February 1972; 1973 peace agreement; abdication 26 November and congress 1–2 December 1975; 10% exodus; collectivisation 1978–1981; Fourth Congress 1986; aid collapse 1988–1990; Thongsouk Saisangkhi imprisoned 1990; Article 3; Kaysone Phomvihane Thought; successive general secretaries. French source: Lao section 1936, Sam Neua congress with 25 delegates and about 300 members.",
+      "source": "https://en.wikipedia.org/wiki/Lao_People%27s_Revolutionary_Party",
+      "locator": "en: lead; Origins and the National Democratic Revolution (1945–1975); Ruling party of Laos (1975–present) — fr: introduction; Histoire"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1955 and the sole ruling party today.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_r%C3%A9volutionnaire_populaire_lao",
+      "locator": "fr: introduction"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founding congress of the Lao People's Party on 22 March 1955.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_r%C3%A9volutionnaire_populaire_lao",
+      "locator": "fr: Histoire"
+     }
+    ]
+   }
+  },
+  {
+   "id": "communist-party-of-kampuchea",
+   "affiliationId": "party-kampuchean-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Communist_Party_of_Kampuchea",
+    "https://fr.wikipedia.org/wiki/Parti_communiste_du_Kampuch%C3%A9a"
+   ],
+   "fields": {
+    "term": {
+     "ko": "캄푸치아 공산당",
+     "en": "Communist Party of Kampuchea"
+    },
+    "original": "បក្សកុម្មុយនីស្តកម្ពុជា",
+    "category": "party-state",
+    "period": {
+     "ko": "1951–1981",
+     "en": "1951–1981"
+    },
+    "startYear": 1951,
+    "endYear": 1981,
+    "definition": {
+     "ko": "1951년 인도차이나 공산당이 나라별로 나뉠 때 크메르 인민혁명당으로 생겨, 캄푸치아 노동자당을 거쳐 이름을 바꾼 캄보디아의 공산당. 1963년부터 폴 포트가 이끌었고 그 당원들은 크메르 루주로 불렸으며, 1975년 4월 권력을 잡아 민주 캄푸치아를 세웠다. 1979년 베트남군의 침공으로 쫓겨났고 1981년 공식 해산했다.",
+     "en": "The Cambodian communist party that emerged in 1951, when the Indochinese Communist Party was divided by country, as the Kampuchean People's Revolutionary Party and was later renamed via the Workers' Party of Kampuchea. Led by Pol Pot from 1963, its members were known as the Khmer Rouge; it took power in April 1975 and established Democratic Kampuchea. Driven out by the Vietnamese invasion of 1979, it was officially dissolved in 1981."
+    },
+    "body": {
+     "ko": "1951년 2월 인도차이나 공산당 대회가 캄보디아·라오스·베트남 공산당을 따로 세우기로 해, 손 응옥 민을 대리 의장으로 크메르 인민혁명당이 생겼다. 영어 출처는 창당 날짜와 첫 대회에 대해 자료마다 다르다고 적고, 프랑스어 출처는 당 규약이 1951년 8월 5일 공포되었다고 적는다. 1954년 제네바 회의 뒤 손 응옥 민 등 약 1000명의 당원이 북베트남으로 떠났고, 남은 이들은 합법 정당 프라체아촌을 만들어 1955년과 1958년 선거에 나섰다.\n\n1950년대 파리에서 공부한 폴 포트, 이엥 사리, 키우 삼판 등은 비밀 조직 「마르크스주의 서클」을 꾸렸고, 이들이 1960년대에 당 기구를 장악했다. 1960년 9월 28~30일 프놈펜 역의 빈 방에서 지도자 21명이 비밀 대회를 열어 당명을 캄푸치아 노동자당으로 바꾸고 투 사무트를 서기장, 누온 체아를 부서기장으로 뽑았다. 1962년 7월 20일 투 사무트가 정부에 살해된 뒤 1963년 2월 제2차 대회에서 폴 포트가 서기장이 되었다. 민주 캄푸치아 시기 당은 1960년을 창당 연도로 내세워 그 이전의 역사를 낮추었다.\n\n1963년 7월 폴 포트와 중앙위원회 대부분은 라타나키리주로 들어가 근거지를 세웠다. 당명을 캄푸치아 공산당으로 바꾼 시점은 출처마다 다르다. 영어 출처는 서두에서 1966년, 본문에서 1971년이라 쓰고, 프랑스어 출처는 1966년 9월 중앙위원회의 결정이라고 적는다. 당은 1968년 전국적 반란을 시작했고, 1970년 론 놀이 시아누크를 축출하자 망명한 시아누크가 당과 손잡아 크메르 루주가 주도하는 망명정부의 명목상 수반이 되었다. 1973년 당은 국토 대부분을 사실상 장악했고, 1975년 4월 17일 프놈펜을 점령했다.\n\n집권한 당은 「앙카르」(조직)라는 이름 뒤에 존재를 숨겼고, 1977년 9월 29일에야 폴 포트가 연설로 당의 존재를 공개했다. 당은 도시 주민을 농촌 협동농장으로 강제 이주시키고 학교·병원·공장을 닫았으며 화폐·은행·종교·사유재산을 폐지했다. 그 결과 처형·과로·질병·기아로 대량 사망이 일어났다. 1977~1978년 정점에 이른 숙청은 베트남과 연결되었다고 의심받은 구세대 당원들을 겨냥했다.\n\n1979년 초 펜 소반이 이끈 친베트남 반대파가 국경 근처에서 따로 대회를 열어 별도 정당을 이루었다. 1979년 1월 7일 베트남군과 캄푸치아 구국통일전선이 프놈펜을 점령해 캄푸치아 인민공화국을 세웠고, 폴 포트의 당은 타이 국경으로 물러나 게릴라전을 이어 갔다. 프랑스어 출처에 따르면 1981년 12월 폴 포트와 누온 체아가 「다른 민족 세력과 단결하기 위해」 해산을 결정해 당은 12월 6일 공식 해산했고, 민주 캄푸치아당이 그 자리를 대신했다.",
+     "en": "In February 1951 the congress of the Indochinese Communist Party decided to form separate Cambodian, Laotian and Vietnamese parties, and the Kampuchean People's Revolutionary Party came into being with Son Ngoc Minh as acting chairman. The English source notes that sources differ on the founding date and first congress, and the French source says the party statutes were promulgated on 5 August 1951. After the 1954 Geneva Conference about 1,000 members, including Son Ngoc Minh, left for North Vietnam, and those who stayed formed the legal Pracheachon party, which contested the elections of 1955 and 1958.\n\nIn the 1950s students in Paris, among them Pol Pot, Ieng Sary and Khieu Samphan, organised the secret Cercle Marxiste, and in the 1960s they took over the party apparatus. On 28–30 September 1960 twenty-one leaders held a secret congress in a vacant room of the Phnom Penh railway station, renamed the party the Workers' Party of Kampuchea, and appointed Tou Samouth general secretary and Nuon Chea deputy. After Tou Samouth was murdered by the government on 20 July 1962, Pol Pot became general secretary at the Second Congress in February 1963. Under Democratic Kampuchea the party projected 1960 as its founding date, downplaying its earlier history.\n\nIn July 1963 Pol Pot and most of the Central Committee moved to Ratanakiri Province to set up a base. Sources differ on when the party took the name Communist Party of Kampuchea: the English source gives 1966 in its introduction and 1971 in its history section, and the French source attributes it to a Central Committee decision of September 1966. The party launched a national insurgency in 1968, and after Lon Nol deposed Sihanouk in 1970, the exiled Sihanouk allied with the party and became the nominal head of a Khmer Rouge-dominated government-in-exile. By 1973 the party exercised de facto control over most of the country, and on 17 April 1975 it captured Phnom Penh.\n\nIn power the party hid behind the name Angkar (‘the Organisation’), and only on 29 September 1977 did Pol Pot reveal its existence in a speech. It forced urban residents into rural collective farms, closed schools, hospitals and factories, and abolished money, banking, religion and private property, causing mass deaths through execution, overwork, disease and starvation. Purges peaking in 1977–1978 targeted older members suspected of links to Vietnam.\n\nIn early 1979 a pro-Vietnamese dissident group led by Pen Sovann held its own congress near the border and formed a separate party. On 7 January 1979 Vietnamese forces and the Kampuchean United Front for National Salvation captured Phnom Penh and established the People's Republic of Kampuchea, and Pol Pot's party withdrew to the Thai border to wage guerrilla war. According to the French source, Pol Pot and Nuon Chea decided in December 1981 to dissolve the party in order to ‘unite with other national forces’, and it was officially dissolved on 6 December and replaced by the Party of Democratic Kampuchea."
+    },
+    "aliases": {
+     "ko": [
+      "크메르 공산당",
+      "캄푸치아 노동자당",
+      "앙카르"
+     ],
+     "en": [
+      "Khmer Communist Party",
+      "Workers' Party of Kampuchea",
+      "Workers’ Party of Kampuchea",
+      "Angkar"
+     ]
+    },
+    "people": [
+     "pol-pot",
+     "nuon-chea",
+     "khieu-samphan",
+     "pen-sovann"
+    ],
+    "events": [
+     "cambodian-regime-change-1975-1979"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Marxist-Leninist party in Kampuchea led by Pol Pot, members known as the Khmer Rouge; founded in 1951 as the KPRP, later the Workers' Party of Kampuchea; took power in April 1975 as Democratic Kampuchea; ousted in 1979; dissolved in 1981.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Kampuchea",
+      "locator": "en: lead; Foundation of the party and first divisions"
+     },
+     {
+      "field": "body",
+      "claim": "ICP division of February 1951 and Son Ngoc Minh; differing founding dates; 1,000 members to North Vietnam after Geneva; Pracheachon; Paris Cercle Marxiste; secret congress 28–30 September 1960 with Tou Samouth and Nuon Chea; Tou Samouth murdered 20 July 1962; Pol Pot general secretary February 1963; Ratanakiri July 1963; renaming dated 1966 (lead) and 1971 (history); insurgency 1968; Sihanouk's alliance; Phnom Penh 17 April 1975; Angkar and the speech of 29 September 1977; policies and mass deaths; purges 1977–1978; Pen Sovann's congress; 7 January 1979; dissolution 1981. French source: statutes 5 August 1951, renaming September 1966, dissolution on 6 December 1981.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Kampuchea",
+      "locator": "en: lead; Foundation of the party and first divisions; Paris students' group; Clandestine existence in Phnom Penh; Insurgency in rural Cambodia; Rise to power; Khmer Rouge in power; Angkar; Fall of the Khmer Rouge — fr: introduction; Lutte pour l’indépendance; Recomposition; Chute du régime khmer rouge et dissolution du parti"
+     },
+     {
+      "field": "period",
+      "claim": "Originally founded in 1951 and officially dissolved in 1981.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Kampuchea",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "The party was founded in 1951 when the ICP was divided into separate national parties.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Kampuchea",
+      "locator": "en: Foundation of the party and first divisions"
+     },
+     {
+      "field": "endYear",
+      "claim": "The CPK was officially dissolved on 6 December 1981.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_communiste_du_Kampuch%C3%A9a",
+      "locator": "fr: Chute du régime khmer rouge et dissolution du parti"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,884 @@
+{
+ "id": "party-terms-b-20261004",
+ "terms": [
+  {
+   "id": "nazi-party",
+   "affiliationId": "german-nazi",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nazi_Party",
+    "https://de.wikipedia.org/wiki/Nationalsozialistische_Deutsche_Arbeiterpartei"
+   ],
+   "fields": {
+    "term": {
+     "ko": "국가사회주의 독일 노동자당",
+     "en": "Nazi Party"
+    },
+    "original": "Nationalsozialistische Deutsche Arbeiterpartei (NSDAP)",
+    "category": "party-state",
+    "period": {
+     "ko": "1920–1945",
+     "en": "1920–1945"
+    },
+    "startYear": 1920,
+    "endYear": 1945,
+    "definition": {
+     "ko": "1920년 2월 뮌헨에서 독일 노동자당(DAP)이 이름을 바꾸어 생긴 독일의 극우 정당. 1921년부터 아돌프 히틀러가 이끌었고, 반유대주의·민족주의와 민주주의·마르크스주의 거부를 강령의 축으로 삼았다. 1933년 집권한 뒤 유일 합법 정당으로 제3제국을 지배했고, 1945년 연합국 관리위원회가 해산하고 금지했다.",
+     "en": "German far-right party formed in Munich in February 1920 when the German Workers' Party (DAP) changed its name. Led by Adolf Hitler from 1921, it built its programme on antisemitism and nationalism and on the rejection of democracy and Marxism. After taking power in 1933 it ruled the Third Reich as the only legal party, and in 1945 the Allied Control Council dissolved and banned it."
+    },
+    "body": {
+     "ko": "전신은 1919년 1월 5일 안톤 드렉슬러가 뮌헨에서 세운 독일 노동자당이었다. 국방군 정보원으로 이 당을 감시하던 히틀러는 1919년 9월 입당했고, 1920년 2월 24일 호프브로이하우스 집회에서 베르사유 조약 폐기, 유대인의 시민권 박탈, 「민족공동체」 강화를 내건 25개조 강령이 발표되면서 당명이 국가사회주의 독일 노동자당으로 바뀌었다. 독일어 출처에 따르면 공식 변경 등록은 2월 20일에 이미 이루어졌다. 히틀러는 1921년 7월 29일 특별 당대회에서 533 대 1로 드렉슬러를 대신해 당수가 되었고, 당은 지도자 원리에 따라 위에서 아래로 움직이는 조직이 되었다. 같은 해 당의 민병대인 돌격대가 만들어졌다.\n\n무솔리니의 로마 진군에 고무된 당은 1923년 11월 8~9일 뮌헨에서 맥주홀 폭동을 일으켰으나 실패했고, 11월 9일 금지되었다. 1925년 2월 다시 창당한 뒤에는 「합법 노선」으로 선거에 나섰다. 1928년 득표율은 2.6%에 그쳤지만 대공황 속에서 1930년 9월 18%로 제2당, 1932년 7월 37%로 제1당이 되었다. 당원은 1929년 13만 명이었고, 하위 중간계급이 지지의 중심이었다. 1933년 1월 30일 힌덴부르크 대통령이 히틀러를 총리로 임명했다.\n\n국회의사당 화재 뒤 긴급명령으로 기본권이 정지되었고, 3월 5일 선거에서 44%를 얻은 당은 3월 23일 수권법으로 입법권을 장악했다. 7월 14일 신당 결성 금지법으로 일당 체제가 법으로 굳어졌고, 12월 1일 당과 국가의 통일 보장법으로 당은 공법상 단체가 되었다. 1934년 6월 30일~7월 2일 「장검의 밤」으로 돌격대 지도부가 살해된 뒤 친위대의 비중이 커졌다. 당원은 1939년 530만 명, 1945년 약 800만 명에 이르렀다. 영어 출처는 1939~1945년 당이 이끈 정권이 유대인 550만~600만 명을 포함해 적어도 2,000만 명의 죽음에 책임이 있다고 적는다.\n\n1945년 9월 20일 연합국 관리위원회 포고 제2호가 당의 해산과 불법을 선언했고, 10월 10일 관리위원회법 제2호가 당과 모든 하부 조직을 폐지했다. 뉘른베르크 국제군사재판은 당 지도부를 범죄 조직으로 판정했다. 독일과 오스트리아에서는 당의 재건과 상징 사용이 금지되어 있다.",
+     "en": "Its forerunner was the German Workers' Party, founded in Munich by Anton Drexler on 5 January 1919. Hitler, who had been sent by the army to watch the party, joined in September 1919, and at a meeting in the Hofbräuhaus on 24 February 1920 the 25-point programme was announced, calling for the abrogation of the Treaty of Versailles, the removal of citizenship from Jews and the strengthening of the 'people's community', as the party took the name National Socialist German Workers' Party. According to the German-language source, the formal change of registration had already been made on 20 February. At a special congress on 29 July 1921 Hitler replaced Drexler as chairman by 533 votes to 1, and the party was run from the top down under the leader principle. In the same year it formed the SA as its militia.\n\nInspired by Mussolini's March on Rome, the party staged the Beer Hall Putsch in Munich on 8–9 November 1923; it failed, and the party was banned on 9 November. Refounded in February 1925, it pursued a 'path of legality' through elections. It won only 2.6% in 1928, but in the Great Depression it became the second-largest party with 18% in September 1930 and the largest with 37% in July 1932. It had 130,000 members in 1929, and its main support came from the lower middle classes. On 30 January 1933 President Hindenburg appointed Hitler chancellor.\n\nAfter the Reichstag fire an emergency decree suspended civil liberties; the party won 44% in the election of 5 March and took over legislative power through the Enabling Act of 23 March. The Law Against the Formation of Parties of 14 July fixed the one-party state in law, and the Law to Secure the Unity of Party and State of 1 December made the party a public corporation. After the SA leadership was killed in the Night of the Long Knives of 30 June–2 July 1934, the SS grew in importance. Membership reached 5.3 million in 1939 and about 8 million in 1945. The English-language source states that between 1939 and 1945 the regime led by the party was responsible for the deaths of at least twenty million people, including 5.5 to 6 million Jews.\n\nAllied Control Council Proclamation No. 2 of 20 September 1945 declared the party dissolved and illegal, and Control Council Law No. 2 of 10 October 1945 abolished it with all its subsidiary organisations. The International Military Tribunal at Nuremberg declared the party's leadership corps a criminal organisation. Refounding the party and using its symbols are banned in Germany and Austria."
+    },
+    "aliases": {
+     "ko": [
+      "나치당",
+      "나치스",
+      "NSDAP"
+     ],
+     "en": [
+      "National Socialist German Workers' Party",
+      "National Socialist German Workers’ Party",
+      "NSDAP"
+     ]
+    },
+    "people": [
+     "adolf-hitler",
+     "rudolf-hess",
+     "hermann-goring",
+     "heinrich-himmler",
+     "joseph-goebbels",
+     "alfred-rosenberg",
+     "adolf-eichmann"
+    ],
+    "events": [
+     "world-war-i-aftermath-1918-1923"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed in Munich in February 1920 by renaming the DAP; led by Hitler from 1921; programme of antisemitism, nationalism, anti-democracy and anti-Marxism; sole legal party 1933–1945; dissolved and banned by the Allied Control Council in 1945.",
+      "source": "https://de.wikipedia.org/wiki/Nationalsozialistische_Deutsche_Arbeiterpartei",
+      "locator": "de: Einleitung; Anfänge und Verbot 1920–1925; Parteiverbot 1945"
+     },
+     {
+      "field": "body",
+      "claim": "DAP founded by Drexler 5 Jan 1919; Hitler joined Sept 1919; 24 Feb 1920 renaming and 25-point programme; Hitler chairman 29 July 1921 by 533 to 1; Beer Hall Putsch and ban Nov 1923; refounded Feb 1925; 2.6% (1928), 18% (1930), 37% (July 1932); 130,000 members in 1929; chancellor 30 Jan 1933; Enabling Act; party law 14 July 1933; Night of the Long Knives; membership 5.3 million (1939), 8 million (1945); at least 20 million deaths.",
+      "source": "https://en.wikipedia.org/wiki/Nazi_Party",
+      "locator": "en: Origins and early years: 1918–1923; Adoption of Italian fascism: The Beer Hall Putsch; Rise to power: 1925–1933; Ascension and consolidation; After taking power; Defeat and abolition; General membership"
+     },
+     {
+      "field": "body",
+      "claim": "Formal re-registration on 20 February 1920; Law to Secure the Unity of Party and State made the NSDAP a public corporation; Proclamation No. 2 (20 Sept 1945) and Control Council Law No. 2 (10 Oct 1945); leadership corps declared criminal at Nuremberg.",
+      "source": "https://de.wikipedia.org/wiki/Nationalsozialistische_Deutsche_Arbeiterpartei",
+      "locator": "de: Anfänge und Verbot 1920–1925; Rolle im NS-Staat; Parteiverbot 1945"
+     },
+     {
+      "field": "period",
+      "claim": "Active from the renaming of February 1920 until its abolition in 1945.",
+      "source": "https://en.wikipedia.org/wiki/Nazi_Party",
+      "locator": "en: lead; Defeat and abolition"
+     },
+     {
+      "field": "startYear",
+      "claim": "Renamed NSDAP on 24 February 1920.",
+      "source": "https://de.wikipedia.org/wiki/Nationalsozialistische_Deutsche_Arbeiterpartei",
+      "locator": "de: Anfänge und Verbot 1920–1925"
+     },
+     {
+      "field": "endYear",
+      "claim": "Abolished by Control Council Law No. 2 on 10 October 1945.",
+      "source": "https://de.wikipedia.org/wiki/Nationalsozialistische_Deutsche_Arbeiterpartei",
+      "locator": "de: Parteiverbot 1945"
+     }
+    ]
+   }
+  },
+  {
+   "id": "christian-democratic-union-of-germany",
+   "affiliationId": "party-german-cdu",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Christian_Democratic_Union_of_Germany",
+    "https://de.wikipedia.org/wiki/Christlich_Demokratische_Union_Deutschlands"
+   ],
+   "fields": {
+    "term": {
+     "ko": "독일 기독교민주연합",
+     "en": "Christian Democratic Union of Germany"
+    },
+    "original": "Christlich Demokratische Union Deutschlands (CDU)",
+    "category": "party-state",
+    "period": {
+     "ko": "1945–현재",
+     "en": "1945–present"
+    },
+    "startYear": 1945,
+    "definition": {
+     "ko": "1945년 전후 독일 각지에서 가톨릭과 개신교를 아우르는 기독교 정당으로 세워진 중도우파 정당. 1950년 연방 차원의 당으로 결집했고, 콘라트 아데나워·헬무트 콜·앙겔라 메르켈 정부를 이끌며 서독과 통일 독일의 집권당 노릇을 오래 했다. 바이에른에서는 자매 정당 기독교사회연합(CSU)이 그 자리를 맡는다.",
+     "en": "Centre-right party founded across Germany after 1945 as an interdenominational Christian party of Catholics and Protestants. It came together at federal level in 1950 and, through the governments of Konrad Adenauer, Helmut Kohl and Angela Merkel, long served as the governing party of West and then reunified Germany. In Bavaria its sister party, the Christian Social Union (CSU), takes its place."
+    },
+    "body": {
+     "ko": "독일어 출처에 따르면 1945년 나치 독재가 무너진 직후 베를린·쾰른·프랑크푸르트·뮌헨 등지에서 서로 연락 없이 거의 동시에 기독교민주 정당이 생겨났다. 베를린에서는 6월 26일 창당 호소문 「독일 국민이여!」가 발표되었고, 라인란트와 베스트팔렌에서는 9월에 당이 섰다. 호소문 서명자는 대부분 나치에게 박해받은 사람이었고, 첫 당수 안드레아스 헤르메스는 1944년 7월 20일 히틀러 암살 기도에 연루되어 사형 선고를 받았다가 1945년 4월 풀려난 인물이었다. 당은 가톨릭 중앙당의 한계를 넘어 개신교도까지 아우르려 했고, 중앙당 출신인 아데나워를 비롯해 보수·자유주의 정당 출신도 합류했다.\n\n1947년 영국 점령지구 당이 만든 알렌 강령은 「기독교 사회주의」의 이름으로 자본주의 질서에서 벗어나자고 했으나, 1949년 뒤셀도르프 지침은 사회적 시장경제를 내세웠다. 1949년 첫 연방의회 선거에서 기민·기사 연합은 31.0%로 사회민주당(29.2%)을 앞섰고, 아데나워가 9월 15일 한 표 차로 초대 총리가 되었다. 1950년 5월 쾨니히스빈터 회의에서 연방 당이 결성되어 10월 고슬라르 첫 연방 전당대회에서 확인되었고, 아데나워가 당수로 뽑혔다. 서방 통합 노선을 택한 당은 1957년 선거에서 기사련과 함께 절대 과반을 얻었다.\n\n당은 1969년 사회민주당·자유민주당 연립에 밀려 처음 야당이 되었고, 빌리 브란트의 동방정책과 1970년 모스크바·바르샤바 조약에 반대했다. 1982년 헬무트 콜이 총리가 되어 1990년 통일을 이끌었으며, 1990년 10월 1~2일 동독의 기독교민주연합(동독 블록 정당)이 서독 당과 합쳤다. 콜 이후에는 앙겔라 메르켈이 2005년부터 2021년까지 총리를 지냈다. 2025년 연방의회 선거에서 기민·기사 연합은 다시 제1교섭단체가 되어 사회민주당과 대연정을 이루었다.",
+     "en": "According to the German-language source, Christian-democratic parties sprang up almost simultaneously and independently of one another in Berlin, Cologne, Frankfurt, Munich and elsewhere immediately after the collapse of the Nazi dictatorship in 1945. In Berlin the founding appeal 'Deutsches Volk!' was published on 26 June, and the party was formed in the Rhineland and Westphalia in September. Most signatories of the appeals had been persecuted by the Nazis, and the first chairman, Andreas Hermes, had been sentenced to death for involvement in the 20 July 1944 plot against Hitler before being freed in April 1945. The party set out to reach Protestants as well as Catholics, beyond the limits of the Catholic Centre Party, and drew in former Centre members such as Adenauer as well as conservatives and liberals.\n\nThe Ahlen Programme of 1947, shaped by the party in the British zone, called in the name of 'Christian socialism' for a departure from the capitalist order, but the Düsseldorf Guidelines of 1949 endorsed the social market economy. In the first Bundestag election of 1949 the CDU/CSU won 31.0%, just ahead of the SPD (29.2%), and Adenauer was elected the first chancellor by a majority of one vote on 15 September. The federal party was formed at a conference in Königswinter in May 1950 and confirmed at the first federal party congress at Goslar in October, where Adenauer was elected chairman. Committed to Western integration, the party won an absolute majority with the CSU in the 1957 election.\n\nThe party went into opposition for the first time when the SPD and FDP formed a coalition in 1969, and it opposed Willy Brandt's Ostpolitik and the Moscow and Warsaw treaties of 1970. Helmut Kohl became chancellor in 1982 and led reunification in 1990; on 1–2 October 1990 the East German CDU, a bloc party of the GDR, merged with the western party. After Kohl, Angela Merkel was chancellor from 2005 to 2021. In the 2025 federal election the CDU/CSU again became the largest group and formed a grand coalition with the SPD."
+    },
+    "aliases": {
+     "ko": [
+      "기독교민주연합",
+      "기민련",
+      "CDU"
+     ],
+     "en": [
+      "Christian Democratic Union",
+      "CDU"
+     ]
+    },
+    "people": [
+     "konrad-adenauer",
+     "helmut-kohl",
+     "andreas-hermes",
+     "jakob-kaiser"
+    ],
+    "events": [
+     "soviet-zone-gdr-1945-1949"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Interdenominational Christian party founded in 1945 that effectively succeeded the Centre Party; led federal governments 1949–1969, 1982–1998, 2005–2021 under Adenauer, Kohl and Merkel; the CSU takes its place in Bavaria.",
+      "source": "https://en.wikipedia.org/wiki/Christian_Democratic_Union_of_Germany",
+      "locator": "en: lead; Founding period"
+     },
+     {
+      "field": "definition",
+      "claim": "Founded 1945 and, in a second step, at the first federal party congress in 1950.",
+      "source": "https://de.wikipedia.org/wiki/Christlich_Demokratische_Union_Deutschlands",
+      "locator": "de: Einleitung; Verhältnis zur CSU"
+     },
+     {
+      "field": "body",
+      "claim": "Spontaneous independent foundings in 1945; Berlin appeal 26 June 1945; Rhineland/Westphalia September 1945; Hermes's death sentence and release; Ahlen Programme 1947; Düsseldorf Guidelines 1949; 31.0% vs 29.2% in 1949; Adenauer elected by one vote on 15 Sept 1949; Königswinter 11 May 1950; Goslar congress October 1950; absolute majority 1957; East and West CDU merged 1–2 Oct 1990.",
+      "source": "https://de.wikipedia.org/wiki/Christlich_Demokratische_Union_Deutschlands",
+      "locator": "de: Geschichte (Gründung); 1949–1963: Die Ära Adenauer; Wiedervereinigung; Parteitag"
+     },
+     {
+      "field": "body",
+      "claim": "Opposition from 1969 and opposition to Ostpolitik and the 1970 treaties; Kohl chancellor from 1982 and reunification; Merkel; CDU/CSU largest group after 2025 election and grand coalition with the SPD.",
+      "source": "https://en.wikipedia.org/wiki/Christian_Democratic_Union_of_Germany",
+      "locator": "en: Opposition against social-liberal governments (1969–1982); Kohl era (1982–1998); Merkel era; lead"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1945 and still active.",
+      "source": "https://en.wikipedia.org/wiki/Christian_Democratic_Union_of_Germany",
+      "locator": "en: lead; Founding period"
+     },
+     {
+      "field": "startYear",
+      "claim": "CDU established in Berlin on 26 June 1945.",
+      "source": "https://en.wikipedia.org/wiki/Christian_Democratic_Union_of_Germany",
+      "locator": "en: Founding period"
+     }
+    ]
+   }
+  },
+  {
+   "id": "french-workers-party",
+   "affiliationId": "party-french-workers",
+   "sources": [
+    "https://en.wikipedia.org/wiki/French_Workers%27_Party",
+    "https://fr.wikipedia.org/wiki/Parti_ouvrier_fran%C3%A7ais"
+   ],
+   "fields": {
+    "term": {
+     "ko": "프랑스 노동자당",
+     "en": "French Workers' Party"
+    },
+    "original": "Parti ouvrier français (POF)",
+    "category": "party-state",
+    "period": {
+     "ko": "1880–1902",
+     "en": "1880–1902"
+    },
+    "startYear": 1880,
+    "endYear": 1902,
+    "definition": {
+     "ko": "쥘 게드와 카를 마르크스의 사위 폴 라파르그가 세운 프랑스 최초의 마르크스주의 정당. 자본주의를 폐지하고 사회주의·공산주의 사회를 세우려는 혁명 정당이었다. 1902년 블랑키파와 합쳐 프랑스 사회당(PSdF)이 되었고, 이 당은 1905년 노동자 인터내셔널 프랑스 지부(SFIO)로 통합되었다.",
+     "en": "The first Marxist party in France, founded by Jules Guesde and Paul Lafargue, Karl Marx's son-in-law. A revolutionary party, it aimed to abolish capitalism and establish a socialist and communist society. In 1902 it merged with the Blanquists into the Socialist Party of France (PSdF), which in 1905 joined the French Section of the Workers' International (SFIO)."
+    },
+    "body": {
+     "ko": "당은 1879년에 생긴 프랑스 사회주의 노동자당 연맹(FTSF)에서 갈라져 나왔다. 영어 출처는 게드와 라파르그가 1880년에 당을 만들었고, 게드가 마르크스·엥겔스·라파르그의 도움을 받아 쓴 강령이 창립 대회에서 채택되었다고 적는다. 프랑스어 출처는 1882년 생테티엔 노동자 대회에서 개량주의적인 폴 브루스의 「가능주의파」와 갈라선 게드파 대의원 23명이 그해 9월 로안에 모여 노동자당(PO)을 세웠다고 적어, 창당 연도가 출처마다 다르다. 1885년 주간지 『르 소시알리스트』를 냈고, 1893년 이름을 프랑스 노동자당으로 바꾸었다.\n\n당원은 1889년 2,000명, 1893년 1만 명, 1898년 무렵 1만 6,000명이었고, 득표는 1889년 2만 5,000표에서 1898년 29만 5,000표로 늘어 사회주의 전체 득표의 40%를 차지했다. 당원의 60%가 섬유·금속·건설 노동자였고, 노르와 파드칼레가 가장 강한 지역이었다. 1892년 지방선거에서 루베·몽뤼송 등을 얻었고, 1893년 총선에서 게드를 비롯한 다섯 명이 하원의원이 되었다. 마르셀 카섕도 1891년 입당했다.\n\n1899년 사회주의자 알렉상드르 밀랑이 발데크루소 내각에 들어가자 당은 혁명 원칙으로 돌아가겠다고 선언했지만 의원 대부분은 따르지 않고 제명되거나 떠났다. 1902년 당은 블랑키파 혁명적 사회당 등과 합쳐 프랑스 사회당(PSdF)이 되었고, 1905년 이 당이 장 조레스의 프랑스 사회당(PSF)과 합쳐 노동자 인터내셔널 프랑스 지부를 세웠다.",
+     "en": "The party broke away from the Federation of the Socialist Workers' Party of France (FTSF), founded in 1879. The English-language source states that Guesde and Lafargue created the party in 1880 and that its programme, written by Guesde with input from Marx, Engels and Lafargue, was approved at the opening congress. The French-language source states that at the Saint-Étienne workers' congress of 1882 the 23 Guesdist delegates split from Paul Brousse's reformist 'possibilists' and met at Roanne in September to found the Parti ouvrier (PO), so the founding year differs between the sources. It began publishing the weekly Le Socialiste in 1885 and took the name French Workers' Party in 1893.\n\nMembership was 2,000 in 1889, 10,000 in 1893 and about 16,000 around 1898, while its vote grew from 25,000 in 1889 to 295,000 in 1898, 40 per cent of the socialist vote. Sixty per cent of members were textile, metal and building workers, and the Nord and Pas-de-Calais were its strongest areas. It won Roubaix, Montluçon and other towns in the municipal elections of 1892, and in the 1893 general election five of its members, Guesde among them, entered the Chamber of Deputies. Marcel Cachin joined in 1891.\n\nWhen the socialist Alexandre Millerand entered the Waldeck-Rousseau cabinet in 1899, the party declared a return to revolutionary principles, but most of its deputies did not follow and were expelled or left. In 1902 it merged with the Blanquist Revolutionary Socialist Party and others to form the Socialist Party of France (PSdF), which in 1905 united with Jean Jaurès's French Socialist Party (PSF) to found the French Section of the Workers' International."
+    },
+    "aliases": {
+     "ko": [
+      "POF"
+     ],
+     "en": [
+      "Parti ouvrier français",
+      "POF"
+     ]
+    },
+    "people": [
+     "jules-guesde",
+     "paul-lafargue",
+     "marcel-cachin"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "French socialist party created by Jules Guesde and Paul Lafargue, Marx's son-in-law; a revolutionary party aiming to abolish capitalism; merged in 1902 into the Socialist Party of France and in 1905 into the SFIO.",
+      "source": "https://en.wikipedia.org/wiki/French_Workers%27_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "First Marxist party in France; aimed to found a socialist and communist society.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_ouvrier_fran%C3%A7ais",
+      "locator": "fr: introduction"
+     },
+     {
+      "field": "body",
+      "claim": "Split from the FTSF (1879); created 1880; programme written by Guesde with Marx, Engels and Lafargue; Cachin joined 1891; Nord, Pas-de-Calais as bastions.",
+      "source": "https://en.wikipedia.org/wiki/French_Workers%27_Party",
+      "locator": "en: lead; Principal members"
+     },
+     {
+      "field": "body",
+      "claim": "1882 Saint-Étienne split and Roanne founding; Le Socialiste 1885; renamed POF 1893; 1892 municipal and 1893 legislative successes; membership and vote figures; social composition; Millerand crisis 1899; 1902 PSdF merger; 1905 SFIO.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_ouvrier_fran%C3%A7ais",
+      "locator": "fr: Histoire du Parti ouvrier; Les adhérents, les électeurs; La sociologie"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from 1880 (en) / 1882 (fr) until the 1902 merger.",
+      "source": "https://en.wikipedia.org/wiki/French_Workers%27_Party",
+      "locator": "en: lead — fr: introduction"
+     },
+     {
+      "field": "startYear",
+      "claim": "Created in 1880 by Guesde and Lafargue.",
+      "source": "https://en.wikipedia.org/wiki/French_Workers%27_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "Merged in 1902 into the Socialist Party of France.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_ouvrier_fran%C3%A7ais",
+      "locator": "fr: Histoire du Parti ouvrier"
+     }
+    ]
+   }
+  },
+  {
+   "id": "french-section-of-the-workers-international",
+   "affiliationId": "party-french-sfio",
+   "sources": [
+    "https://en.wikipedia.org/wiki/French_Section_of_the_Workers%27_International",
+    "https://fr.wikipedia.org/wiki/Section_fran%C3%A7aise_de_l%27Internationale_ouvri%C3%A8re"
+   ],
+   "fields": {
+    "term": {
+     "ko": "노동자 인터내셔널 프랑스 지부",
+     "en": "French Section of the Workers' International"
+    },
+    "original": "Section française de l'Internationale ouvrière (SFIO)",
+    "category": "party-state",
+    "period": {
+     "ko": "1905–1969",
+     "en": "1905–1969"
+    },
+    "startYear": 1905,
+    "endYear": 1969,
+    "definition": {
+     "ko": "1905년 쥘 게드의 프랑스 사회당(PSdF)과 장 조레스의 프랑스 사회당(PSF)이 제2인터내셔널의 압력으로 합쳐 만든 프랑스의 사회민주주의 정당. 1920년 투르 대회에서 다수파가 공산당으로 떨어져 나간 뒤에도 남았고, 1936년 인민전선 정부를 이끌었다. 1969년 오늘날의 사회당으로 재창당되었다.",
+     "en": "French social-democratic party formed in 1905 when Jules Guesde's Socialist Party of France (PSdF) and Jean Jaurès's French Socialist Party (PSF) merged under pressure from the Second International. It survived the departure of its majority to the Communists at the Tours Congress of 1920 and led the Popular Front government of 1936. In 1969 it was refounded as the present Socialist Party."
+    },
+    "body": {
+     "ko": "통합은 1905년 파리 글로브 대회에서 이루어졌다. 당은 다른 유럽 사회주의 정당과 달리 분권적이었고, 노동총동맹(CGT)이 정당으로부터의 독립을 내세운 탓에 노동조합에 기댈 수도 없었다. 사무총장 루이 뒤브뢰유는 행정을 맡았을 뿐이고, 의원단 대표이자 기관지 『뤼마니테』 주간인 조레스가 실질적 지도자였다. 득표율은 1906년 10%에서 1914년 17%로 올랐고, 프랑스어 출처에 따르면 당원은 통합 대회 때 3만 4,688명에서 1914년 9만 3,218명으로 늘었다.\n\n1914년 7월 28일 당은 「전쟁 반대」 선언을 냈으나, 7월 31일 조레스가 암살된 뒤 8월 4일 전쟁공채에 찬성했고 게드파와 블랑키파가 「신성한 단결」 정부에 들어갔다. 1920년 12월 투르 대회에서 공산주의 인터내셔널 가입안이 3,028표 대 1,022표(기권 327)로 통과되자 다수파는 공산주의 인터내셔널 프랑스 지부(뒷날의 프랑스 공산당)를 세웠고, 레옹 블룸이 이끈 소수파는 「낡은 집」을 지키며 SFIO로 남았다. 『뤼마니테』는 공산당 쪽으로 넘어갔다.\n\n1934년 2월 6일 극우 폭동 뒤 당은 공산당·급진당과 인민전선을 이루었고, 1936년 선거에서 처음으로 급진당보다 많은 표와 의석을 얻어 블룸이 첫 사회당 출신 총리가 되었다. 블룸 정부는 마티뇽 협정으로 단체교섭, 임금 인상, 2주 유급휴가, 주 40시간제를 도입했다. 1940년 패전 뒤 일부 당원은 페탱에게 전권을 주는 데 반대했고 많은 당원이 레지스탕스에 참여했지만, 전 사무총장 폴 포르처럼 협력한 이들도 있어 전전 장관 17명 가운데 14명이 1944년 재건된 당에서 제명되었다.\n\n해방 뒤 당은 공산당·인민공화운동과 3당 연립으로 사회보장 확대와 국유화를 추진했으나, 공산당에 득표에서 계속 뒤졌다. 1946년 기 몰레가 사무총장이 되었고, 1956~1957년 총리로서 알제리에서 강경 정책을 폈다. 1969년 대선에서 가스통 드페르가 5%에 그친 뒤, 그해 7월 이시레물리노 대회에서 당은 다른 단체와 합쳐 사회당으로 다시 태어났다.",
+     "en": "The merger took place at the Globe Congress in Paris in 1905. Unlike other European socialist parties the SFIO was decentralised, and it could not rely on the trade unions because the CGT insisted on its independence from parties. Secretary-general Louis Dubreuilh had an essentially administrative role; the real leader was Jaurès, head of the parliamentary group and director of L'Humanité. Its vote rose from 10 per cent in 1906 to 17 per cent in 1914, and according to the French-language source membership grew from 34,688 at the unity congress to 93,218 in 1914.\n\nOn 28 July 1914 the party issued a manifesto against the war, but after Jaurès was assassinated on 31 July it voted for war credits on 4 August, and Guesdists and Blanquists entered the government of the Union sacrée. At the Tours Congress in December 1920 affiliation to the Communist International was carried by 3,028 votes to 1,022 with 327 abstentions; the majority founded the French Section of the Communist International (the later French Communist Party), while the minority led by Léon Blum 'kept the old house' as the SFIO. L'Humanité passed to the Communists.\n\nAfter the far-right riots of 6 February 1934 the party joined the Communists and Radicals in the Popular Front, and in the 1936 election it won more votes and seats than the Radicals for the first time, making Blum the first Socialist prime minister. His government's Matignon Accords brought collective bargaining, wage rises, two weeks' paid holiday and the 40-hour week. After the defeat of 1940 some members refused full powers to Pétain and many joined the Resistance, but others, such as former secretary-general Paul Faure, collaborated, and 14 of the 17 pre-war SFIO ministers were expelled when the party was reconstituted in 1944.\n\nAfter the Liberation the party joined the Communists and the MRP in the tripartite coalition that extended social security and nationalisation, but it consistently trailed the Communists at the polls. Guy Mollet became secretary-general in 1946 and, as prime minister in 1956–1957, pursued a repressive policy in Algeria. After Gaston Defferre won only 5% in the 1969 presidential election, the party merged with other groups at the Issy-les-Moulineaux congress that July and was refounded as the Socialist Party."
+    },
+    "aliases": {
+     "ko": [
+      "SFIO"
+     ],
+     "en": [
+      "SFIO",
+      "Section française de l'Internationale ouvrière"
+     ]
+    },
+    "people": [
+     "jean-jaures",
+     "leon-blum",
+     "jules-guesde",
+     "marcel-sembat",
+     "ludovic-oscar-frossard"
+    ],
+    "events": [
+     "second-international-collapse-1914",
+     "comintern-founding-1919-1921",
+     "french-popular-front",
+     "french-resistance"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 1905 from the merger of Guesde's Socialist Party of France and Jaurès's French Socialist Party under pressure from the Second International; 1920 split; Popular Front government under Blum 1936; succeeded in 1969 by the Socialist Party.",
+      "source": "https://en.wikipedia.org/wiki/French_Section_of_the_Workers%27_International",
+      "locator": "en: lead; Background"
+     },
+     {
+      "field": "body",
+      "claim": "Globe Congress 1905; decentralised party; Dubreuilh administrative, Jaurès real leader; membership 34,688 → 93,218; manifesto of 28 July 1914; war credits 4 Aug; Tours vote 3,028 to 1,022 with 327 abstentions; Issy-les-Moulineaux 1969.",
+      "source": "https://fr.wikipedia.org/wiki/Section_fran%C3%A7aise_de_l%27Internationale_ouvri%C3%A8re",
+      "locator": "fr: Création de la SFIO; Première Guerre mondiale; Scission entre communistes et socialistes; Déclin et refondation"
+     },
+     {
+      "field": "body",
+      "claim": "Vote 10% (1906) to 17% (1914); Jaurès assassinated 31 July 1914; Blum keeps 'the old house'; Popular Front and 1936 victory; Matignon Accords; Vichy 80; 14 of 17 ministers expelled; tripartisme; Mollet PM 1956–57 and Algeria; Defferre 5% in 1969.",
+      "source": "https://en.wikipedia.org/wiki/French_Section_of_the_Workers%27_International",
+      "locator": "en: lead; Foundation and early years; Communist split and the Popular Front; World War II; Fourth Republic; Decline"
+     },
+     {
+      "field": "period",
+      "claim": "Existed under this name from 1905 to 1969.",
+      "source": "https://fr.wikipedia.org/wiki/Section_fran%C3%A7aise_de_l%27Internationale_ouvri%C3%A8re",
+      "locator": "fr: introduction"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded in 1905 at the Globe Congress.",
+      "source": "https://fr.wikipedia.org/wiki/Section_fran%C3%A7aise_de_l%27Internationale_ouvri%C3%A8re",
+      "locator": "fr: Création de la SFIO"
+     },
+     {
+      "field": "endYear",
+      "claim": "Became the Socialist Party at the Issy-les-Moulineaux congress in 1969.",
+      "source": "https://en.wikipedia.org/wiki/French_Section_of_the_Workers%27_International",
+      "locator": "en: Decline"
+     }
+    ]
+   }
+  },
+  {
+   "id": "french-communist-party",
+   "affiliationId": "party-french-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/French_Communist_Party",
+    "https://fr.wikipedia.org/wiki/Parti_communiste_fran%C3%A7ais"
+   ],
+   "fields": {
+    "term": {
+     "ko": "프랑스 공산당",
+     "en": "French Communist Party"
+    },
+    "original": "Parti communiste français (PCF)",
+    "category": "party-state",
+    "period": {
+     "ko": "1920–현재",
+     "en": "1920–present"
+    },
+    "startYear": 1920,
+    "definition": {
+     "ko": "1920년 12월 투르 대회에서 노동자 인터내셔널 프랑스 지부(SFIO)의 다수파가 공산주의 인터내셔널에 가입하며 세운 프랑스의 공산당. 처음 이름은 공산주의 인터내셔널 프랑스 지부(SFIC)였고, 1943년 현재 이름이 되었다. 인민전선과 레지스탕스를 거쳐 전후 프랑스 좌파의 제1세력이 되었으나 1970년대부터 세력이 줄었다.",
+     "en": "French communist party founded at the Tours Congress in December 1920, when the majority of the French Section of the Workers' International (SFIO) joined the Communist International. First called the French Section of the Communist International (SFIC), it took its present name in 1943. Through the Popular Front and the Resistance it became the leading force of the French left after the war, but its strength declined from the 1970s."
+    },
+    "body": {
+     "ko": "투르 대회의 다수파가 세운 새 당의 첫 사무총장은 뤼도비크오스카르 프로사르였고, 영어 출처는 호찌민이 창당에 참여한 선동가 가운데 하나였다고 적는다. 당은 곧 공산당-SFIC(PC-SFIC)로 이름을 바꾸었다. 1920년대에는 볼셰비키화와 1925년부터의 스탈린화를 겪으며 창립 당원이 잇달아 제명되었고, 리프 전쟁 때 모로코 봉기군과의 형제애를 주장하는 등 반식민주의를 내세웠다. 1924년 총선에서 9.8%와 26석을 얻었으나, 다른 정당과의 제휴를 거부한 1932년에는 8.3%로 떨어졌다. 1930년 모스크바의 요청으로 모리스 토레즈가 지도자가 되어 1964년까지 당을 이끌었다.\n\n1934년 2월 6일 극우 폭동 뒤 당은 SFIO·급진당과 인민전선을 이루었고, 1936년 선거에서 72석과 15%를 얻었지만 모스크바의 지시에 따라 블룸 정부에 참여하지 않고 지지만 했다. 스페인 공화국을 지원했고, 1938년 뮌헨 협정을 비난한 유일한 프랑스 정당이었다. 독소 불가침조약 뒤인 1939년 9월 26일 달라디에 정부가 당을 금지했다. 당은 1941년 봄부터 무장 저항에 나서 민족전선과 유격대(FTP)를 조직했으며, 1943년 공산주의 인터내셔널 해산에 따라 프랑스 공산당이 되었다. 해방 뒤에는 「총살된 7만 5,000명의 당」을 자처했는데, 프랑스어 출처는 역사가들이 정치 성향을 가리지 않은 총살·추방 레지스탕스 수를 2만 5,000명으로 본다고 적는다.\n\n1945년 10월 제헌의회 선거에서 26.2%로 제1당이 되었고, 1944~1947년 3당 연립에 참여해 사회보장 제도 수립에 관여했다. 1947년 5월 정부에서 밀려난 뒤 30년 동안 20%가 넘는 득표에도 정권에 들지 못했다. 1972년 사회당과 공동강령을 맺었으나 사회당에 세력을 내주었고, 1981~1984년 미테랑 정부와 1997~2002년 조스팽 정부에 참여했다. 2009년부터 좌파전선에 참여했고, 2026년 당비를 낸 당원 약 3만 7,600명을 내세운다.",
+     "en": "The first secretary-general of the new party founded by the Tours majority was Ludovic-Oscar Frossard, and the English-language source names Ho Chi Minh among the agitators involved in its creation. It soon took the name Communist Party–SFIC (PC-SFIC). In the 1920s it went through Bolshevisation and, from 1925, Stalinisation, with founding members expelled one after another, and it took an anticolonial stand, calling for fraternisation with the Moroccan insurgents during the Rif War. It won 9.8% and 26 deputies in the 1924 election but fell to 8.3% in 1932, when it refused all alliances. In 1930 Maurice Thorez took over the leadership at Moscow's request and led the party until 1964.\n\nAfter the far-right riots of 6 February 1934 the party formed the Popular Front with the SFIO and the Radicals; in 1936 it won 72 seats and 15%, but on Moscow's orders supported Blum's government without joining it. It backed the Spanish Republic and was the only French party to denounce the Munich Agreement of 1938. After the Nazi–Soviet Pact the Daladier government banned it on 26 September 1939. From the spring of 1941 the party turned to armed resistance, organising the National Front and the Francs-Tireurs et Partisans (FTP), and in 1943, after the dissolution of the Communist International, it became the French Communist Party. After the Liberation it called itself 'the party of the 75,000 shot'; the French-language source notes that historians put the number of resisters of all tendencies shot or deported at 25,000.\n\nIn the Constituent Assembly election of October 1945 it became the largest party with 26.2%, and it took part in the tripartite coalition of 1944–1947, helping to set up social security. Excluded from government in May 1947, it stayed out of office for thirty years despite winning more than 20% of the vote. It signed the Common Programme with the Socialist Party in 1972 but lost ground to it, and it served in Mitterrand's government in 1981–1984 and Jospin's in 1997–2002. From 2009 it took part in the Left Front, and in 2026 it claims some 37,600 dues-paying members."
+    },
+    "aliases": {
+     "ko": [
+      "PCF",
+      "공산주의 인터내셔널 프랑스 지부",
+      "SFIC"
+     ],
+     "en": [
+      "PCF",
+      "French Section of the Communist International",
+      "SFIC",
+      "PC-SFIC"
+     ]
+    },
+    "people": [
+     "maurice-thorez",
+     "jacques-duclos",
+     "marcel-cachin",
+     "ludovic-oscar-frossard",
+     "boris-souvarine",
+     "charles-tillon",
+     "andre-marty",
+     "henri-rol-tanguy",
+     "louis-althusser",
+     "aime-cesaire"
+    ],
+    "events": [
+     "comintern-founding-1919-1921",
+     "comintern-popular-front-1934-1939",
+     "french-popular-front",
+     "french-resistance",
+     "marshall-plan"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1920 at the Tours Congress by the SFIO majority joining the Comintern as the SFIC; PC-SFIC in 1921; PCF in 1943 after the Comintern's dissolution; leading left force after the war, declining from the 1970s.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_communiste_fran%C3%A7ais",
+      "locator": "fr: introduction; Fondation au congrès de Tours (1920)"
+     },
+     {
+      "field": "body",
+      "claim": "Frossard first secretary-general; Ho Chi Minh involved; anticolonialism and the Rif War; Thorez leader 1930–1964; only party to denounce Munich; banned 1939; National Front and FTP May 1941; excluded May 1947; >20% for 30 years; Mitterrand 1981–84, Jospin 1997–2002; Left Front from 2009.",
+      "source": "https://en.wikipedia.org/wiki/French_Communist_Party",
+      "locator": "en: History"
+     },
+     {
+      "field": "body",
+      "claim": "Bolshevisation and Stalinisation; 9.8% and 26 seats (1924); 8.3% (1932); Thorez 1930 at Moscow's request; 72 seats and 15% (1936) without joining government; ban decree 26 Sept 1939; PCF in 1943; '75,000 shot' vs 25,000; 26.2% in Oct 1945; Common Programme signed with the PS in 1972 (the English source gives 1973); about 37,600 members in 2026.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_communiste_fran%C3%A7ais",
+      "locator": "fr: Premières années (1921-1933); Front populaire et guerre d'Espagne; Attitude lors de la Seconde Guerre mondiale; Participation gouvernementale et succès électoraux; Programme commun (1970-1981); introduction"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1920 and still active.",
+      "source": "https://en.wikipedia.org/wiki/French_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded at the Tours Congress in December 1920.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_communiste_fran%C3%A7ais",
+      "locator": "fr: Fondation au congrès de Tours (1920)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "italian-socialist-party",
+   "affiliationId": "party-italian-socialist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Italian_Socialist_Party",
+    "https://it.wikipedia.org/wiki/Partito_Socialista_Italiano"
+   ],
+   "fields": {
+    "term": {
+     "ko": "이탈리아 사회당",
+     "en": "Italian Socialist Party"
+    },
+    "original": "Partito Socialista Italiano (PSI)",
+    "category": "party-state",
+    "period": {
+     "ko": "1892–1994",
+     "en": "1892–1994"
+    },
+    "startYear": 1892,
+    "endYear": 1994,
+    "definition": {
+     "ko": "1892년 제노바에서 이탈리아 노동자당이라는 이름으로 창당해 1895년 현재 이름을 쓴 이탈리아의 사회주의 정당. 1919년 총선에서 제1당이 되었으나 1921년 공산당의 분리와 파시즘의 집권으로 무너져 1926년 금지되었다. 전후 연립정부에 참여했고 1983~1987년 베티노 크락시가 총리를 지냈으며, 부패 스캔들(탄젠토폴리) 끝에 1994년 해산했다.",
+     "en": "Italian socialist party founded in Genoa in 1892 as the Party of Italian Workers and named Italian Socialist Party from 1895. It became the largest party in the 1919 election but was broken by the Communist split of 1921 and the rise of fascism, and was banned in 1926. After the war it joined coalition governments, Bettino Craxi was prime minister from 1983 to 1987, and it was dissolved in 1994 after the Tangentopoli corruption scandals."
+    },
+    "body": {
+     "ko": "당은 1892년 8월 14일 이탈리아 노동자당(1882년 밀라노 창당)과 필리포 투라티의 밀라노 사회주의 연맹 등 여러 노동자 단체가 모여 만들었고, 독일 사회민주당을 본보기로 삼았다. 1893년 레조에밀리아 대회에서 이탈리아 노동자 사회당으로, 1895년 파르마 대회에서 이탈리아 사회당으로 이름을 바꾸었다. 당 안에서는 투라티의 개량파와 최대강령파가 맞섰다. 1912년 레조에밀리아 대회에서 최대강령파가 이겨 비솔라티·보노미 등 우파 개량주의자를 제명했는데, 제명안을 낸 사람이 베니토 무솔리니였다.\n\n제1차 세계대전에서 당은 중립을 지켰다. 기관지 『아반티!』 편집장 무솔리니는 1914년 10월 「능동적 중립」을 주장하다 물러났고, 『포폴로 디탈리아』를 창간한 뒤 11월 29일 제명되었다. 1919년 볼로냐 대회에서 당은 공산주의 인터내셔널 가입을 결의했고, 그해 총선에서 32.0%와 156석으로 역대 최고 성적을 냈다. 1921년 리보르노 대회에서 자친토 메노티 세라티의 통일 최대강령파가 8만 9,028표, 아마데오 보르디가와 안토니오 그람시의 공산주의파가 5만 8,783표, 투라티의 개량파가 1만 4,695표를 얻었고, 공산주의파는 떨어져 나가 이탈리아 공산당을 세웠다. 1922년 10월에는 투라티와 자코모 마테오티의 개량파가 제명되어 통일사회당을 만들었다.\n\n1924년 마테오티가 파시스트에게 살해된 뒤 파시즘은 1925~1926년 사회당을 포함한 모든 야당을 없앴고, 지도부는 파리 등지로 망명했다. 1943년 파시즘 붕괴 뒤 당은 레지스탕스에 참여했고, 1946년 선거에서 20.7%로 공산당(18.9%)을 근소하게 앞섰다. 1947년 주세페 사라가트의 우파가 갈라져 나갔고, 피에트로 넨니가 이끈 당은 1956년 헝가리 혁명 진압 때까지 공산당과 동맹했다. 1963년부터 기독교민주당과 중도좌파 연립정부에 참여했고, 1976년 서기장이 된 크락시는 1983~1987년 공화국 최초의 사회당 출신 총리를 지냈다. 1990년대 초 탄젠토폴리 수사로 큰 타격을 입은 당은 1994년 선거에서 2.5%에 그쳤고, 같은 해 해산 절차에 들어갔다.",
+     "en": "The party was formed on 14 August 1892 by several workers' organisations, including the Italian Workers' Party (founded in Milan in 1882) and Filippo Turati's Milanese Socialist League, and was modelled on the Social Democratic Party of Germany. It became the Socialist Party of Italian Workers at the Reggio Emilia congress of 1893 and the Italian Socialist Party at the Parma congress of 1895. Within it Turati's Reformists faced the Maximalists. At the Reggio Emilia congress of 1912 the Maximalists won and expelled the right-wing reformists Bissolati and Bonomi, on a motion moved by Benito Mussolini.\n\nThe party stayed neutral in the First World War. Mussolini, editor of the party paper Avanti!, resigned in October 1914 after calling for 'active neutrality', founded Il Popolo d'Italia and was expelled on 29 November. At its 1919 congress in Bologna the party voted to join the Communist International, and in the election that year it won its best result ever, 32.0% and 156 seats. At the Livorno congress of 1921 Giacinto Menotti Serrati's Unitary Maximalists won 89,028 votes, the Communists of Amadeo Bordiga and Antonio Gramsci 58,783 and Turati's Reformists 14,695; the Communists broke away to found the Communist Party of Italy. In October 1922 the reformists of Turati and Giacomo Matteotti were expelled and formed the Unitary Socialist Party.\n\nAfter Matteotti was murdered by Fascists in 1924, the regime suppressed all opposition parties, the PSI included, in 1925–1926, and the leadership went into exile in Paris and elsewhere. After the fall of fascism in 1943 the party joined the Resistance, and in the 1946 election it narrowly led the Communists with 20.7% to 18.9%. Giuseppe Saragat's right wing split away in 1947, and the party under Pietro Nenni stayed allied with the Communists until the suppression of the Hungarian Revolution in 1956. From 1963 it joined centre-left coalition governments with Christian Democracy, and Craxi, secretary from 1976, was the first Socialist prime minister of the Republic in 1983–1987. Badly hit by the Tangentopoli investigations of the early 1990s, it won only 2.5% in the 1994 election and was put into liquidation the same year."
+    },
+    "aliases": {
+     "ko": [
+      "PSI"
+     ],
+     "en": [
+      "PSI",
+      "Partito Socialista Italiano"
+     ]
+    },
+    "people": [
+     "giacinto-menotti-serrati",
+     "benito-mussolini",
+     "amadeo-bordiga",
+     "gramsci"
+    ],
+    "events": [
+     "second-international-collapse-1914",
+     "world-war-i-aftermath-1918-1923",
+     "comintern-founding-1919-1921"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in Genoa in 1892 as the Party of Italian Workers, renamed Italian Socialist Party in 1895; largest party in 1919; Communist split and fascism; ban; Craxi PM 1983–87; disbanded 1994 after Tangentopoli.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Socialist_Party",
+      "locator": "en: lead; Early years; Rise of fascism; Bettino Craxi"
+     },
+     {
+      "field": "body",
+      "claim": "Founded 14 Aug 1892 on SPD model; renamings 1893 and 1895; Reformists vs Maximalists; 1919 Bologna Comintern vote; 32.0% and 156 seats in 1919; 1946 result 20.7% vs PCI 18.9%; Saragat split; alliance with PCI until 1956; centre-left from 1963; Craxi secretary 1976, PM 1983–87.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Socialist_Party",
+      "locator": "en: Early years; Rise of fascism; Post-World War II; Bettino Craxi"
+     },
+     {
+      "field": "body",
+      "claim": "Founding components (Partito Operaio Italiano 1882, Lega Socialista Milanese); 1912 expulsion moved by Mussolini; Mussolini resigned 20 Oct and expelled 29 Nov 1914; Livorno vote figures; reformists expelled 3 Oct 1922; suppression 1925–1926 (R.D. 1848/26); 2.5% in 1994; liquidation in 1994.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Socialista_Italiano",
+      "locator": "it: introduzione; La fondazione e i moti del 1898; L'ascesa dei massimalisti; Prima guerra mondiale e crisi del neutralismo; Scissione comunista e espulsione dei riformisti; Assassinio di Matteotti; Elezioni politiche del 1994"
+     },
+     {
+      "field": "period",
+      "claim": "Active from 1892 to 1994.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Socialista_Italiano",
+      "locator": "it: introduzione"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 14 August 1892 in Genoa.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Socialist_Party",
+      "locator": "en: Early years"
+     },
+     {
+      "field": "endYear",
+      "claim": "Put into liquidation in 1994.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Socialista_Italiano",
+      "locator": "it: introduzione"
+     }
+    ]
+   }
+  },
+  {
+   "id": "italian-communist-party",
+   "affiliationId": "party-italian-communist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+    "https://it.wikipedia.org/wiki/Partito_Comunista_Italiano"
+   ],
+   "fields": {
+    "term": {
+     "ko": "이탈리아 공산당",
+     "en": "Italian Communist Party"
+    },
+    "original": "Partito Comunista Italiano (PCI); 1921–1943 Partito Comunista d'Italia (PCd'I)",
+    "category": "party-state",
+    "period": {
+     "ko": "1921–1991",
+     "en": "1921–1991"
+    },
+    "startYear": 1921,
+    "endYear": 1991,
+    "definition": {
+     "ko": "1921년 1월 21일 리보르노에서 이탈리아 사회당에서 갈라져 나온 공산주의파가 이탈리아 공산당(PCd'I)으로 세운 정당. 파시즘 아래 지하에서 활동하며 레지스탕스의 중심이 되었고, 1943년 PCI로 이름을 바꾼 뒤 서방에서 가장 큰 공산당이 되었다. 1991년 해산해 좌파민주당(PDS)으로 재창당했다.",
+     "en": "Party founded in Livorno on 21 January 1921 as the Communist Party of Italy (PCd'I) by the communist faction that broke away from the Italian Socialist Party. It worked underground under fascism and became central to the Resistance, and after taking the name PCI in 1943 it became the largest communist party in the Western world. In 1991 it dissolved itself and was relaunched as the Democratic Party of the Left (PDS)."
+    },
+    "body": {
+     "ko": "당은 사회당 리보르노 대회가 공산주의 인터내셔널의 요구대로 개량파를 제명하기를 거부하자 떨어져 나와 세워졌다. 공식 이름은 공산주의 인터내셔널 이탈리아 지부 이탈리아 공산당이었고, 토리노의 『오르디네 누오보』 그룹(그람시)과 니콜라 봄바치의 최대강령파가 주축이었으며, 아마데오 보르디가가 서기로 뽑혔다. 1921년 총선에서 4.6%와 15석을 얻었다. 초기에는 사회당과의 어떤 제휴도 거부하는 보르디가의 좌파가 다수였으나, 공산주의 인터내셔널의 볼셰비키화 속에서 1926년 1월 리옹 제3차 대회에서 그람시의 테제가 채택되어 노선이 바뀌었다.\n\n파시스트 정권은 1926년 11월 5일 당을 해산했다. 1926년 그람시와 보르디가가 체포되었고, 영어 출처에 따르면 1927년 팔미로 톨리아티가 그람시를 대신해 서기가 되었다. 1926~1943년 정치범의 4분의 3 이상이 공산주의자였고, 당은 지하 조직망을 유지하며 1935년 에티오피아 전쟁 반대 운동을 벌였다. 1943년 5월 15일 공산주의 인터내셔널 해산에 따라 이탈리아 공산당(PCI)으로 이름을 바꾸었다. 1944년 3월 귀국한 톨리아티는 군주제 문제보다 반파시즘 투쟁을 앞세우는 「살레르노 전환」으로 정부에 들어갔고, 당을 대중정당으로 재건했다.\n\n1946년 선거에서 약 19%를 얻었고, 1947년 5월 정부에서 밀려난 뒤로는 줄곧 야당이었다. 당원은 1947년 230만 명으로 정점에 이르렀다. 1956년 헝가리 혁명 진압을 지지해 사회당과의 동맹이 끝났다. 엔리코 베를링구에르 아래에서 당은 1968년 바르샤바 조약군의 체코슬로바키아 침공을 비판하고 유로코뮤니즘과 기독교민주당과의 「역사적 타협」을 추구했으며, 1976년 선거에서 34.4%로 최고 득표를 기록했다. 1979년 소련의 아프가니스탄 침공 뒤 모스크바와 완전히 갈라섰다. 1989년 11월 아킬레 오케토가 「볼로니나 전환」을 선언했고, 1991년 2월 3일 리미니 제20차 대회에서 당은 찬성 807, 반대 75, 기권 49로 해산과 좌파민주당 창당을 결정했다. 반대파는 공산주의재건당을 세웠다.",
+     "en": "The party was founded when the communists walked out after the Socialist congress at Livorno refused to expel the reformists as the Communist International required. Its official name was Communist Party of Italy – Section of the Communist International; its main components were Gramsci's L'Ordine Nuovo group in Turin and Nicola Bombacci's Maximalists, and Amadeo Bordiga was elected secretary. It won 4.6% and 15 seats in the 1921 election. At first Bordiga's Left, which rejected any alliance with the Socialists, held the majority, but during the Comintern's Bolshevisation campaign the Third Congress at Lyon in January 1926 adopted Gramsci's theses and changed course.\n\nThe Fascist regime dissolved the party on 5 November 1926. Gramsci and Bordiga were arrested in 1926, and according to the English-language source Palmiro Togliatti was elected secretary in place of Gramsci in 1927. More than three quarters of political prisoners between 1926 and 1943 were communists; the party kept a clandestine network and campaigned against the Ethiopian war in 1935. On 15 May 1943, after the dissolution of the Communist International, it took the name Italian Communist Party (PCI). Returning in March 1944, Togliatti took the party into government through the 'Salerno turn', putting the anti-fascist struggle before the question of the monarchy, and rebuilt it as a mass party.\n\nIt won almost 19% in the 1946 election and, after being excluded from government in May 1947, remained in opposition. Its membership peaked at 2.3 million in 1947. Its support for the suppression of the Hungarian Revolution in 1956 ended the alliance with the Socialists. Under Enrico Berlinguer the party criticised the Warsaw Pact invasion of Czechoslovakia of 1968, pursued Eurocommunism and a 'Historic Compromise' with Christian Democracy, and reached its highest vote, 34.4%, in the 1976 election. After the Soviet invasion of Afghanistan it broke completely with Moscow in 1979. In November 1989 Achille Occhetto announced the 'Bolognina turn', and on 3 February 1991, at the 20th Congress in Rimini, the party voted by 807 to 75 with 49 abstentions to dissolve itself and found the Democratic Party of the Left. Opponents formed the Communist Refoundation Party."
+    },
+    "aliases": {
+     "ko": [
+      "PCI",
+      "PCd'I"
+     ],
+     "en": [
+      "PCI",
+      "Communist Party of Italy",
+      "PCd'I"
+     ]
+    },
+    "people": [
+     "gramsci",
+     "amadeo-bordiga",
+     "togliatti",
+     "luigi-longo",
+     "enrico-berlinguer",
+     "eugenio-reale"
+    ],
+    "events": [
+     "comintern-founding-1919-1921",
+     "marshall-plan"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Established in Livorno as the PCd'I on 21 January 1921 after seceding from the PSI; underground under fascism and major role in the Resistance; renamed 1943; largest communist party in the West; dissolved 1991 into the PDS.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Split over refusal to expel reformists; official name; L'Ordine Nuovo and Bombacci; Bordiga secretary; 4.6% and 15 seats; Bolshevisation; arrests 1926; Togliatti secretary 1927; three quarters of political prisoners; renamed 15 May 1943; 19% in 1946; exclusion May 1947; 2.3 million members 1947; Hungary 1956; Berlinguer; 34.4% in 1976; break with Moscow 1979; Bolognina turn.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+      "locator": "en: lead; Early years; Bolshevisation; Resistance to fascism; Post-war years; From the 1950s to the 1960s; Leadership of Enrico Berlinguer; Dissolution"
+     },
+     {
+      "field": "body",
+      "claim": "Lyon congress January 1926 and Gramsci's theses; suppressed on 5 November 1926; renamed 15 May 1943; Salerno turn March 1944; Bolognina 12 Nov 1989; Rimini congress and 3 Feb 1991 vote 807–75–49.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Comunista_Italiano",
+      "locator": "it: introduzione; Il Partito Comunista d'Italia; La svolta di Salerno; La svolta della Bolognina; Il XX Congresso"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from 1921 to 1991.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "First congress held in Livorno on 21 January 1921.",
+      "source": "https://en.wikipedia.org/wiki/Italian_Communist_Party",
+      "locator": "en: Early years"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved on 3 February 1991.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Comunista_Italiano",
+      "locator": "it: Il XX Congresso"
+     }
+    ]
+   }
+  },
+  {
+   "id": "national-fascist-party",
+   "affiliationId": "party-italian-fascist",
+   "sources": [
+    "https://en.wikipedia.org/wiki/National_Fascist_Party",
+    "https://it.wikipedia.org/wiki/Partito_Nazionale_Fascista"
+   ],
+   "fields": {
+    "term": {
+     "ko": "국가파시스트당",
+     "en": "National Fascist Party"
+    },
+    "original": "Partito Nazionale Fascista (PNF)",
+    "category": "party-state",
+    "period": {
+     "ko": "1921–1943",
+     "en": "1921–1943"
+    },
+    "startYear": 1921,
+    "endYear": 1943,
+    "definition": {
+     "ko": "1921년 11월 베니토 무솔리니가 이탈리아 전투자동맹을 정당으로 바꾸어 만든 이탈리아 파시즘의 정당. 1922년 로마 진군으로 정권을 잡았고, 1920년대 중후반부터 이탈리아 왕국의 유일 정당이 되었다. 1943년 7월 파시스트 대평의회가 무솔리니를 실각시킨 뒤 바돌리오 정부가 해산했다.",
+     "en": "The party of Italian fascism, created in November 1921 when Benito Mussolini turned the Italian Fasces of Combat into a party. It took power through the March on Rome in 1922 and from the mid-to-late 1920s was the only party of the Kingdom of Italy. After the Grand Council of Fascism deposed Mussolini in July 1943, the Badoglio government dissolved it."
+    },
+    "body": {
+     "ko": "무솔리니는 1919년 3월 23일 밀라노 산세폴크로 광장에서 이탈리아 전투자동맹을 세웠다. 1921년 11월 7~10일 로마에서 열린 제3차 대회에서 이미 31만 2,000명을 거느린 운동을 해산하고 국가파시스트당을 세웠으며, 첫 서기는 미켈레 비앙키였다. 초기에 검은셔츠단(스콰드리스티)은 포강 유역에서 사회주의자와 그 기관을 폭력으로 공격해 지주들의 지지를 얻었다. 당은 전투자동맹의 공화주의를 버리고 우파로 돌아섰고, 민족주의와 영토 확장, 계급 협조를 내세운 조합주의 경제를 주장했다.\n\n1922년 10월 24일 나폴리 대회에서 무솔리니는 「우리의 강령은 간단하다, 이탈리아를 다스리겠다」고 선언했다. 10월 28일 3만 명이 채 안 되는 파시스트가 로마 진군에 나섰고, 국왕 비토리오 에마누엘레 3세가 계엄령 서명을 거부한 뒤 10월 31일 무솔리니에게 조각을 맡겼다. 12월 15일 당의 최고기관인 파시스트 대평의회가 만들어졌다. 1923년 당은 이탈리아 민족주의자협회를 흡수했다. 아체르보법으로 선거제를 바꾼 당은 1924년 4월 선거에서 이겼고, 이를 비판한 사회주의자 자코모 마테오티가 살해되었다.\n\n이탈리아어 출처는 1926년 이른바 「초파시스트법」 뒤 당이 유일 합법 정당이 되었다고 적고, 영어 출처는 1925년 초부터 사실상 유일 정당이었고 1928년 법으로 공식화되었다고 적는다. 당원 자격은 1933년 공직의 기본 요건, 1938년 취업 요건이 되었고, 1939년 의회는 당원으로만 채워진 파쇼·조합원으로 바뀌었다. 1943년 7월 24~25일 대평의회가 디노 그란디의 의제를 가결한 뒤 무솔리니가 체포되었고, 피에트로 바돌리오 정부가 7월 27일 사실상 당을 해산한 뒤 8월 2일 법령으로 확정했다. 9월 독일이 구출한 무솔리니는 살로 공화국의 공화파시스트당으로 당을 되살렸다. 이탈리아 헌법은 해산된 파시스트당의 재건을 금지한다.",
+     "en": "Mussolini founded the Italian Fasces of Combat in Milan's Piazza San Sepolcro on 23 March 1919. At the Third Congress in Rome on 7–10 November 1921 the movement, which already had 312,000 members, was dissolved and the National Fascist Party was founded, with Michele Bianchi as its first secretary. In the early years the Blackshirts (squadristi) won the support of landowners by violently attacking socialists and their institutions in the Po Valley. The party dropped the republicanism of the Fasces and turned to the right, calling for nationalism, territorial expansion and a corporatist economy of class collaboration.\n\nAt the Fascist congress in Naples on 24 October 1922 Mussolini declared: 'Our program is simple: we want to rule Italy.' On 28 October fewer than 30,000 Fascists took part in the March on Rome; after King Victor Emmanuel III refused to sign the order for a state of siege, he asked Mussolini to form a cabinet on 31 October. On 15 December the Grand Council of Fascism was founded as the party's supreme organ. In 1923 the party absorbed the Italian Nationalist Association. Having changed the electoral law through the Acerbo Law, it won the elections of April 1924, and the Socialist Giacomo Matteotti, who denounced them, was murdered.\n\nThe Italian-language source says the party became the only legal party after the so-called 'leggi fascistissime' of 1926, while the English-language source says it was effectively the only permitted party from early 1925 and that a law of 1928 formalised this. Party membership became a basic requirement for public office in 1933 and for employment in 1938, and in 1939 parliament was replaced by the Chamber of Fasces and Corporations, filled only with party members. After the Grand Council passed Dino Grandi's motion on 24–25 July 1943, Mussolini was arrested; Pietro Badoglio's government dissolved the party de facto on 27 July and definitively by decree-law on 2 August. Rescued by the Germans in September, Mussolini revived it as the Republican Fascist Party of the Salò Republic. The Italian Constitution forbids the reorganisation of the dissolved Fascist party."
+    },
+    "aliases": {
+     "ko": [
+      "이탈리아 국가파시스트당",
+      "PNF"
+     ],
+     "en": [
+      "PNF",
+      "Partito Nazionale Fascista"
+     ]
+    },
+    "people": [
+     "benito-mussolini",
+     "dino-grandi",
+     "galeazzo-ciano"
+    ],
+    "events": [
+     "world-war-i-aftermath-1918-1923",
+     "italian-campaign"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Born in November 1921 from the transformation of the Fasci italiani di combattimento into a party; led the March on Rome in 1922; single party de facto and then de jure from the mid-to-late 1920s until 25 July 1943.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Nazionale_Fascista",
+      "locator": "it: introduzione"
+     },
+     {
+      "field": "definition",
+      "claim": "Dissolved after the Grand Council deposed Mussolini; banned by Badoglio's government on 27 July 1943.",
+      "source": "https://en.wikipedia.org/wiki/National_Fascist_Party",
+      "locator": "en: lead; The Fall of Mussolini"
+     },
+     {
+      "field": "body",
+      "claim": "Fasces founded 23 March 1919; Third Congress 7–10 Nov 1921; Blackshirt violence in the Po Valley; turn to the right; Naples speech; March on Rome under 30,000; King refused state of siege; cabinet 31 Oct; Grand Council 15 Dec; Acerbo Law and April 1924 election; one-party from 1925, formalised 1928; membership requirements 1933 and 1938; Grandi's motion; Republican Fascist Party; constitutional ban.",
+      "source": "https://en.wikipedia.org/wiki/National_Fascist_Party",
+      "locator": "en: lead; Historical background; March on Rome; Fascist government; The Fall of Mussolini"
+     },
+     {
+      "field": "body",
+      "claim": "Founded 9 Nov 1921 with 312,000 members and Michele Bianchi as first secretary; merged with the Italian Nationalist Association in 1923; sole party after the 1926 laws; Chamber of Fasces and Corporations 1939; dissolution de facto 27 July and by decree 2 Aug 1943.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Nazionale_Fascista",
+      "locator": "it: introduzione; Fondazione; Regime; Scioglimento"
+     },
+     {
+      "field": "period",
+      "claim": "Party from November 1921 until its dissolution in 1943.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Nazionale_Fascista",
+      "locator": "it: Fondazione; Scioglimento"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded in Rome on 9 November 1921.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Nazionale_Fascista",
+      "locator": "it: Fondazione"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved on 27 July / 2 August 1943.",
+      "source": "https://it.wikipedia.org/wiki/Partito_Nazionale_Fascista",
+      "locator": "it: Scioglimento"
+     }
+    ]
+   }
+  },
+  {
+   "id": "labour-party-uk",
+   "affiliationId": "party-british-labour",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Labour_Party_%28UK%29",
+    "https://en.wikipedia.org/wiki/History_of_the_Labour_Party_%28UK%29"
+   ],
+   "fields": {
+    "term": {
+     "ko": "영국 노동당",
+     "en": "Labour Party (UK)"
+    },
+    "original": "Labour Party",
+    "category": "party-state",
+    "period": {
+     "ko": "1900–현재",
+     "en": "1900–present"
+    },
+    "startYear": 1900,
+    "definition": {
+     "ko": "1900년 노동조합과 사회주의 단체가 의회에서 노동계급을 대표하려고 세운 노동대표위원회에서 출발한 영국의 중도좌파 정당. 1906년 노동당으로 이름을 바꾸었고, 1920년대 자유당을 대신해 보수당의 맞수가 되었다. 1945~1951년 클레멘트 애틀리 정부가 주요 산업을 국유화하고 국민보건서비스(NHS)를 세웠다.",
+     "en": "British centre-left party that grew out of the Labour Representation Committee, set up in 1900 by trade unions and socialist groups to represent the working class in Parliament. It took the name Labour Party in 1906 and in the 1920s replaced the Liberals as the main rival of the Conservatives. Clement Attlee's government of 1945–1951 nationalised major industries and created the National Health Service (NHS)."
+    },
+    "body": {
+     "ko": "노동조합회의(TUC)가 소집한 회의가 1900년 2월 26~27일 런던 패링던가의 메모리얼 홀에서 열렸고, 대의원 129명은 키어 하디의 동의안을 받아들여 노동대표위원회를 세웠다. 독립노동당 출신 램지 맥도널드가 서기가 되었다. 1901년 태프베일 판결로 파업이 사실상 불법이 되자 지지가 늘었고, 자유당과의 비밀 선거 협정 속에 1906년 총선에서 29석을 얻은 뒤 노동당으로 이름을 바꾸었다. 제1차 세계대전 때는 전쟁 지지를 두고 갈라졌으나 아서 헨더슨이 전시 내각에 들어갔다. 1918년 당헌에 시드니 웹이 쓴 제4조를 넣어 생산·분배·교환 수단의 공동 소유를 목표로 삼았다.\n\n1923년 선거 뒤 맥도널드가 자유당의 지지를 받아 첫 노동당 소수 정부를 세웠고, 소련을 승인했다. 1929년 287석으로 처음 제1당이 되어 두 번째 소수 정부를 꾸렸으나, 대공황 속에서 실업수당 삭감을 두고 내각이 갈라졌다. 1931년 맥도널드가 보수당과 「거국 정부」를 세우자 당은 그를 제명했고, 그해 선거에서 52석으로 줄었다. 1935년 154석으로 회복해 애틀리가 대표가 되었고, 1937년부터 체임벌린의 유화 정책에 반대했다.\n\n1940년 5월 처칠의 전시 연립정부에 들어가 애틀리가 부총리를 맡았다. 1945년 선거에서 1,200만 표(50%)와 393석으로 압승한 애틀리 정부는 잉글랜드 은행·석탄·철강·전기·가스·철도 등을 국유화하고 「요람에서 무덤까지」의 복지국가와 NHS를 세웠으며, 1947년 인도·파키스탄 독립을 승인했다. 1951년 패배 뒤 해럴드 윌슨(1964~1970, 1974~1976)과 제임스 캘러헌 아래에서 다시 집권했다. 1995년 토니 블레어는 제4조를 고쳐 공공 소유 약속을 버리고 「신노동당」을 내세웠고, 당은 1997~2010년 집권했다. 2024년 총선에서 이겨 다시 정권을 잡았다. 1923~1940년 노동사회주의 인터내셔널에, 1951년부터 사회주의 인터내셔널에 가입했다.",
+     "en": "A conference called by the Trades Union Congress (TUC) met at the Memorial Hall in Farringdon Street, London, on 26–27 February 1900, and its 129 delegates adopted Keir Hardie's motion to set up the Labour Representation Committee. Ramsay MacDonald of the Independent Labour Party became secretary. Support grew after the Taff Vale judgment of 1901 effectively made strikes illegal, and after winning 29 seats in the 1906 election under a secret pact with the Liberals it renamed itself the Labour Party. It was divided over support for the First World War, but Arthur Henderson joined the war cabinet. In 1918 it added to its constitution Clause IV, drafted by Sidney Webb, committing it to the common ownership of the means of production, distribution and exchange.\n\nAfter the 1923 election MacDonald formed the first Labour minority government with Liberal support, and it recognised the Soviet Union. In 1929 Labour became the largest party for the first time with 287 seats and formed a second minority government, but in the Great Depression the cabinet split over cuts in unemployment benefit. When MacDonald formed a 'national government' with the Conservatives in 1931, the party expelled him, and in that year's election it fell to 52 seats. It recovered to 154 seats in 1935, when Attlee became leader, and from 1937 it opposed Chamberlain's policy of appeasement.\n\nIn May 1940 it joined Churchill's wartime coalition, with Attlee as Deputy Prime Minister. Winning a landslide in 1945 with 12 million votes (50%) and 393 seats, the Attlee government nationalised the Bank of England, coal, steel, electricity, gas, the railways and other industries, built the 'cradle to grave' welfare state and the NHS, and granted independence to India and Pakistan in 1947. After its defeat in 1951 it governed again under Harold Wilson (1964–1970, 1974–1976) and James Callaghan. In 1995 Tony Blair rewrote Clause IV, dropping the commitment to public ownership, and launched 'New Labour'; the party governed from 1997 to 2010. It returned to power by winning the 2024 general election. It belonged to the Labour and Socialist International from 1923 to 1940 and has belonged to the Socialist International since 1951."
+    },
+    "aliases": {
+     "ko": [
+      "노동대표위원회"
+     ],
+     "en": [
+      "British Labour Party",
+      "Labour Representation Committee"
+     ]
+    },
+    "people": [
+     "keir-hardie",
+     "ramsay-macdonald",
+     "arthur-henderson",
+     "clement-attlee"
+    ],
+    "events": [
+     "second-international-collapse-1914"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1900 from the trade unions and socialist parties as the LRC; renamed Labour Party in 1906; overtook the Liberals in the early 1920s; Attlee government 1945–1951 nationalised industries and created the NHS.",
+      "source": "https://en.wikipedia.org/wiki/Labour_Party_%28UK%29",
+      "locator": "en: lead; Labour Representation Committee (1900–1906)"
+     },
+     {
+      "field": "body",
+      "claim": "Conference at Memorial Hall, 26–27 Feb 1900; 129 delegates passed Hardie's motion; MacDonald secretary; Taff Vale 1901; Clause IV adopted 1918, drafted by Sidney Webb.",
+      "source": "https://en.wikipedia.org/wiki/History_of_the_Labour_Party_%28UK%29",
+      "locator": "en (History): Labour Representation Committee; World War I"
+     },
+     {
+      "field": "body",
+      "claim": "29 seats in 1906 and renaming; Henderson in war cabinet; first minority government 1924 and recognition of USSR; 287 seats 1929; 1931 split and expulsion of MacDonald; 52 seats; 154 seats 1935; opposition to appeasement from 1937; wartime coalition; 1945 landslide (12 million votes, 393 seats); nationalisations, NHS; India and Pakistan 1947; Wilson and Callaghan; Clause IV rewritten 1995; governments 1997–2010; 2024 victory; LSI 1923–1940, SI since 1951.",
+      "source": "https://en.wikipedia.org/wiki/Labour_Party_%28UK%29",
+      "locator": "en: Labour Representation Committee; Early years; Labour forms a government; Second Labour Ministry; Wartime coalition; Attlee government; New Labour; Return to government; European and international affiliation"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1900 and still active.",
+      "source": "https://en.wikipedia.org/wiki/Labour_Party_%28UK%29",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "LRC established at the conference of 26–27 February 1900.",
+      "source": "https://en.wikipedia.org/wiki/History_of_the_Labour_Party_%28UK%29",
+      "locator": "en (History): Labour Representation Committee"
+     }
+    ]
+   }
+  },
+  {
+   "id": "conservative-party-uk",
+   "affiliationId": "party-british-conservative",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Conservative_Party_%28UK%29",
+    "https://en.wikipedia.org/wiki/History_of_the_Conservative_Party_%28UK%29"
+   ],
+   "fields": {
+    "term": {
+     "ko": "영국 보수당",
+     "en": "Conservative Party (UK)"
+    },
+    "original": "Conservative and Unionist Party",
+    "category": "party-state",
+    "period": {
+     "ko": "1834–현재",
+     "en": "1834–present"
+    },
+    "startYear": 1834,
+    "definition": {
+     "ko": "1834년 로버트 필이 탬워스 선언으로 토리당을 이어 세운 영국의 중도우파·우파 정당. 19세기에는 자유당과, 1920년대부터는 노동당과 양당 체제를 이루었다. 1912년 자유통일당과 합쳐 정식 이름이 보수통일당이 되었다.",
+     "en": "British centre-right to right-wing party founded in 1834 by Robert Peel, with the Tamworth Manifesto, as the successor of the Tory Party. It formed a two-party system with the Liberals in the 19th century and with Labour from the 1920s. After merging with the Liberal Unionists in 1912 its formal name became the Conservative and Unionist Party."
+    },
+    "body": {
+     "ko": "「보수」라는 이름은 1830년 존 윌슨 크로커가 『쿼털리 리뷰』에 쓴 글에서 제안되었고, 1834년 무렵 필 아래에서 정식으로 채택되었다. 1846년 곡물법 폐지를 두고 필 지지파와 벤저민 디즈레일리·더비 백작 등 보호무역파로 당이 갈라졌고, 오늘의 보수당은 필과 갈라선 보호무역파에서 이어진다. 더비와 디즈레일리는 1867년 선거법 개정으로 선거권을 넓혔고, 디즈레일리 아래에서 당은 대영제국 전성기 정치를 주도했다.\n\n1886년 아일랜드 자치에 반대한 자유통일당과 동맹을 맺어 솔즈베리 경과 아서 밸푸어 아래에서 20년 가운데 17년을 집권했으나, 1906년 자유무역 문제로 분열해 대패했다. 1912년 자유통일당과 합쳤다. 제1차 세계대전 중 연립정부를 지배했고, 1922년 보너 로와 스탠리 볼드윈이 연립을 깨고 단독으로 집권했다. 1931년 노동당 정부가 무너진 뒤 보수당 중심의 거국 정부를 이끌었고, 1940년 5월부터 윈스턴 처칠이 전시 연립정부를 이끌었으나 1945년 선거에서 노동당에 크게 졌다.\n\n1947년 산업 헌장으로 혼합경제와 노동권을 받아들였고, 1951년 정권을 되찾은 뒤 노동당이 세운 복지국가 대부분을 유지하는 「전후 합의」를 이었다. 1956년 수에즈 위기는 앤서니 이든에게 굴욕적인 패배였다. 1975년 당수가 된 마거릿 대처는 1979년 집권해 국영 산업의 매각과 노동조합 권한 축소를 추진했다. 2010~2024년 다섯 총리 아래 집권한 당은 2024년 총선에서 노동당에 패해 역대 최저 득표율로 제1야당이 되었다.",
+     "en": "The name 'Conservative' was suggested in an article by John Wilson Croker in the Quarterly Review in 1830 and formally adopted under Robert Peel around 1834. In 1846 the party split over the repeal of the Corn Laws between Peel's supporters and the Protectionists led by Benjamin Disraeli, Lord Stanley (later Earl of Derby) and others; the modern party descends from the Protectionists who broke with Peel. Derby and Disraeli widened the franchise with the Reform Act 1867, and under Disraeli the party dominated politics at the height of the British Empire.\n\nIn 1886 it formed an alliance with the Liberal Unionists, who opposed Irish Home Rule, and under Lord Salisbury and Arthur Balfour held power for all but three of the next twenty years, until it split over free trade and was heavily defeated in 1906. It merged with the Liberal Unionists in 1912. It dominated the coalition government during the First World War, and in 1922 Bonar Law and Stanley Baldwin broke up the coalition and governed alone. After the Labour government collapsed in 1931 it led a Conservative-dominated National Government, and from May 1940 Winston Churchill led the wartime coalition, but the party lost the 1945 election to Labour in a landslide.\n\nIts Industrial Charter of 1947 accepted the mixed economy and labour rights, and after regaining power in 1951 it kept most of Labour's welfare state as part of the 'post-war consensus'. The Suez Crisis of 1956 was a humiliating defeat for Anthony Eden. Margaret Thatcher, leader from 1975, came to power in 1979 and pursued the sale of state-owned industries and the reduction of trade union power. Having governed from 2010 to 2024 under five prime ministers, the party lost the 2024 general election to Labour with its lowest vote share ever and became the official opposition."
+    },
+    "aliases": {
+     "ko": [
+      "보수통일당"
+     ],
+     "en": [
+      "Conservative and Unionist Party",
+      "British Conservative Party"
+     ]
+    },
+    "people": [
+     "winston-churchill",
+     "neville-chamberlain",
+     "george-curzon",
+     "anthony-eden"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded in 1834 from the Tory Party; Peel founded it with the Tamworth Manifesto; two-party rivalry with the Liberals and, from 1922, Labour; 1912 merger with the Liberal Unionists formed the Conservative and Unionist Party; centre-right to right-wing.",
+      "source": "https://en.wikipedia.org/wiki/Conservative_Party_%28UK%29",
+      "locator": "en: lead; Origins"
+     },
+     {
+      "field": "body",
+      "claim": "Croker 1830 and adoption around 1834; Reform Act 1867; alliance with Liberal Unionists 1886; 1906 defeat over free trade; 1912 merger; WWI coalition; 1922 Bonar Law and Baldwin; 1931 National Government; Churchill 1940; 1945 defeat; Industrial Charter 1947; 1951 return and post-war consensus; Suez 1956; Thatcher 1975/1979; 2010–2024 governments; 2024 defeat with lowest vote share.",
+      "source": "https://en.wikipedia.org/wiki/Conservative_Party_%28UK%29",
+      "locator": "en: Origins; 1867–1914; First World War; 1920–1945; 1945–1975; 1975–1990; lead"
+     },
+     {
+      "field": "body",
+      "claim": "1846 split over the Corn Laws between Peel and the Protectionists (Bentinck, Disraeli, Stanley); modern party descends from the Protectionists.",
+      "source": "https://en.wikipedia.org/wiki/History_of_the_Conservative_Party_%28UK%29",
+      "locator": "en (History): Crisis over the Corn Laws"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1834 and still active.",
+      "source": "https://en.wikipedia.org/wiki/Conservative_Party_%28UK%29",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Name formally adopted under Peel around 1834 with the Tamworth Manifesto.",
+      "source": "https://en.wikipedia.org/wiki/History_of_the_Conservative_Party_%28UK%29",
+      "locator": "en (History): lead"
+     }
+    ]
+   }
+  }
+ ]
+}
