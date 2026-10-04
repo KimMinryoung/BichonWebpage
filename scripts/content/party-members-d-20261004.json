@@ -1,0 +1,969 @@
+{
+  "add": [
+    {
+      "personId": "deng-xiaoping",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1956,
+        "endYear": 1989,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Deng_Xiaoping",
+            "locator": "characters 20577:20696; sha256 8ce368a2d84b44cd3aa9c6fd9bc84ac4391fb504905ffd9cfc2ccabf6a07e6a2",
+            "claim": "덩샤오핑은 1956년 중국공산당 조직부장과 중앙군사위원회 위원이 되었다.",
+            "excerpt": "In 1956, he became Head of the Communist Party's Organization Department and member of the Central Military Commission."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Deng_Xiaoping",
+            "locator": "characters 31798:32385; sha256 8ce368a2d84b44cd3aa9c6fd9bc84ac4391fb504905ffd9cfc2ccabf6a07e6a2",
+            "claim": "덩샤오핑은 최고지도자 시기에 중국공산당 부주석(1977–1982), 당 중앙군사위원회 주석(1981–1989), 중앙고문위원회 주임(1982–1987)을 맡았다.",
+            "excerpt": "During his paramount leadership, his official state positions were Chairman of the Chinese People's Political Consultative Conference from 1978 to 1983 and Chairman of the Central Military Commission (an ad hoc body comprising the most senior members of the party elite) of the People's Republic of China from 1983 to 1990, while his official party positions were Vice Chairman of the Chinese Communist Party from 1977 to 1982, Chairman of the Central Military Commission of the Chinese Communist Party from 1981 to 1989 and Chairman of the Central Advisory Commission from 1982 to 1987."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "mao-zedong",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1949,
+        "endYear": 1976,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Mao_Zedong",
+            "locator": "characters 0:309; sha256 4a4f968e6dc9c6c1d033936c2e028bbe50e23d8997682e64cd64debf16e82ba4",
+            "claim": "마오쩌둥은 1949년부터 1976년 사망할 때까지 주로 중국공산당 주석으로서 최고지도자였다.",
+            "excerpt": "Mao Zedong (26 December 1893 – 9 September 1976) was a Chinese revolutionary, political theorist, and dictator who founded the People's Republic of China (PRC) and served as its paramount leader from 1949 until his death in 1976 primarily through his role as the Chairman of the Chinese Communist Party (CCP)."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Mao_Zedong",
+            "locator": "characters 50539:50708; sha256 4a4f968e6dc9c6c1d033936c2e028bbe50e23d8997682e64cd64debf16e82ba4",
+            "claim": "마오쩌둥은 1959년 국가주석에서 물러난 뒤에도 공산당 주석과 중앙군사위원회 주석 자리를 유지했다.",
+            "excerpt": "Mao stepped down as President of China on 27 April 1959, but retained other top positions such as Chairman of the Communist Party and of the Central Military Commission."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "peng-zhen",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1951,
+        "endYear": 1987,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Peng_Zhen",
+            "locator": "characters 2229:2350; sha256 2228eb8e2f5e0a03507352af40e3c0689923ecfddd44fd81820748c84927119d",
+            "claim": "펑전은 1951년부터 1966년까지 베이징시 당위원회 제1서기를 맡았다.",
+            "excerpt": "He also held the positions of First Secretary of the Beijing Municipal Committee, and Mayor of Beijing from 1951 to 1966."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Peng_Zhen",
+            "locator": "characters 2351:2443; sha256 2228eb8e2f5e0a03507352af40e3c0689923ecfddd44fd81820748c84927119d",
+            "claim": "펑전은 1956년부터 1966년까지 정치국 위원이었다.",
+            "excerpt": "In addition to being mayor, he was a high-ranking member of the Politburo from 1956 to 1966."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Peng_Zhen",
+            "locator": "characters 7072:7253; sha256 2228eb8e2f5e0a03507352af40e3c0689923ecfddd44fd81820748c84927119d",
+            "claim": "펑전은 1987년 11월 제13차 당대회 뒤 정치국에서 물러났다.",
+            "excerpt": "Peng left Politburo after the 13th Party Congress in November 1987 and retired from politics in March 1988 after Wan Li took over his position as Chairman of NPC Standing Committee."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "rao-shushi",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1949,
+        "endYear": 1954,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Rao_Shushi",
+            "locator": "characters 3986:4194; sha256 d54baf33e31082b210d7e629618b7032e753933dc54b5c7c8655c24a218953c4",
+            "claim": "라오수스는 1949년 중화인민공화국 수립 뒤에도 중국공산당 화둥국 서기를 맡았다.",
+            "excerpt": "After the formal establishment of People's Republic of China in 1949, Rao held the position of Chairman of Military and Political Committee of East China besides General Secretary of East China Bureau of CCP."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Rao_Shushi",
+            "locator": "characters 4407:4587; sha256 d54baf33e31082b210d7e629618b7032e753933dc54b5c7c8655c24a218953c4",
+            "claim": "라오수스는 1953년 중국공산당 조직부장이 되었다.",
+            "excerpt": "In 1953 Rao was transferred to Beijing and got promotion as Minister of Organization Department of CCP, which was in charge of senior cadres promotion and candidate recommendation."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "liu-shaoqi",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1945,
+        "endYear": 1966,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Liu_Shaoqi",
+            "locator": "characters 47731:47974; sha256 1611eda3af2c66a84e9d919ed9bc520e01ce8ddbb2b3c7c69e540100eadf0f19",
+            "claim": "류사오치는 1945년 제7차 당대회에서 중국공산당 중앙서기처 서기로 선출되었다.",
+            "excerpt": "At the 7th National Congress of the Chinese Communist Party held from 23 April – 11 June 1945, Liu was elected as Secretary of the Secretariat of the CCP Central Committee and Vice Chairman of the CCP Central Revolutionary Military Commission."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Liu_Shaoqi",
+            "locator": "characters 134:407; sha256 1611eda3af2c66a84e9d919ed9bc520e01ce8ddbb2b3c7c69e540100eadf0f19",
+            "claim": "류사오치는 1956년부터 1966년까지 중국공산당 제1부주석이었다.",
+            "excerpt": "He was the chairman of the Standing Committee of the National People's Congress from 1954 to 1959, first-ranking vice chairman of the Chinese Communist Party (CCP) from 1956 to 1966, and the chairman of the People's Republic of China (president of China) from 1959 to 1968."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "hua-guofeng",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1949,
+        "endYear": 2002,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Hua_Guofeng",
+            "locator": "characters 3175:3332; sha256 124060fc05f54caf84eab79343c8efd08f35307961ab5c813b6c001ad33a9daf",
+            "claim": "화궈펑은 1949년 8월 샹인현 당서기가 되었다.",
+            "excerpt": "He was appointed Party Secretary for Xiangyin County in August 1949, just before the establishment of the People's Republic of China in October of that year."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Hua_Guofeng",
+            "locator": "characters 10053:10262; sha256 124060fc05f54caf84eab79343c8efd08f35307961ab5c813b6c001ad33a9daf",
+            "claim": "화궈펑은 중국공산당 주석과 중앙군사위원회 주석에 임명되었다.",
+            "excerpt": "At an emergency Politburo meeting the next day, Hua Guofeng was appointed as chairman of the CCP and the chairman of the Central Military Commission (CMC), the governing body of People's Liberation Army (PLA)."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Hua_Guofeng",
+            "locator": "characters 19624:19950; sha256 124060fc05f54caf84eab79343c8efd08f35307961ab5c813b6c001ad33a9daf",
+            "claim": "화궈펑은 1982년 부주석직 폐지 뒤 2002년 11월 제16차 당대회까지 중앙위원으로 남았다.",
+            "excerpt": "Hua Guofeng was demoted to the position of junior Vice Chairman; and when this post was abolished in 1982, he continued to serve as an ordinary member of the Central Committee, a position which he held until the 16th Party Congress of November 2002, despite having passed the unofficial mandatory retirement age of 70 in 1991."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "hu-yaobang",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1964,
+        "endYear": 1989,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Hu_Yaobang",
+            "locator": "characters 6777:6941; sha256 167e3cdb2256ff7a6c4b68fbca72ee82719789b38c81d162d26edfbaaa0f3e86",
+            "claim": "후야오방은 1964년 산시성 당위원회 제1서기로 파견되었다.",
+            "excerpt": "Hu rose rapidly up the Communist Party hierarchy, until Mao sent Hu to work as First Party Secretary of Shaanxi in 1964, saying: \"He needs some practical training\"."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Hu_Yaobang",
+            "locator": "characters 138:298; sha256 167e3cdb2256ff7a6c4b68fbca72ee82719789b38c81d162d26edfbaaa0f3e86",
+            "claim": "후야오방은 1981–1982년 중국공산당 주석, 1982–1987년 총서기였다.",
+            "excerpt": "He held the top office of the Chinese Communist Party (CCP) from 1981 to 1987, first as Chairman from 1981 to 1982, then as General Secretary from 1982 to 1987."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Hu_Yaobang",
+            "locator": "characters 18696:18819; sha256 167e3cdb2256ff7a6c4b68fbca72ee82719789b38c81d162d26edfbaaa0f3e86",
+            "claim": "후야오방은 1989년 4월 정치국 회의 도중 심장마비를 일으킬 때까지 정치국 위원이었다.",
+            "excerpt": "On 8 April 1989, Hu suffered a heart attack while attending a Politburo meeting in Zhongnanhai to discuss education reform."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "zhao-ziyang",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1965,
+        "endYear": 1989,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Zhao_Ziyang",
+            "locator": "characters 6711:6774; sha256 ba4b8809e200b49f121fd0963ce00090ae8887c40970fad749d2acc0146d86be",
+            "claim": "자오쯔양은 1965년 광둥성 당서기가 되었다.",
+            "excerpt": "In 1965, Zhao became the Party secretary of Guangdong province."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Zhao_Ziyang",
+            "locator": "characters 74:278; sha256 ba4b8809e200b49f121fd0963ce00090ae8887c40970fad749d2acc0146d86be",
+            "claim": "자오쯔양은 1981–1982년 중국공산당 부주석, 1987–1989년 총서기였다.",
+            "excerpt": "He served as the premier of China from 1980 to 1987, as vice chairman of the Chinese Communist Party (CCP) from 1981 to 1982, and as the general secretary of the Chinese Communist Party from 1987 to 1989."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "wang-hongwen",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "china-ccp",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1973,
+        "endYear": 1976,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Wang_Hongwen",
+            "locator": "characters 2791:3042; sha256 a42479324a30e5a9380ccd244116189441887913688f0d82c9cb6bc4e91dccf0",
+            "claim": "왕훙원은 1973년 제10차 당대회에서 중국공산당 제2부주석이자 정치국 상무위원이 되었다.",
+            "excerpt": "At the 10th National Congress of the CCP in 1973, Wang, at the age of 38, was elevated to second ranking CCP vice chairman, and the third-ranking member of the Politburo Standing Committee (PSC), just behind Chairman Mao Zedong and Premier Zhou Enlai."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Wang_Hongwen",
+            "locator": "characters 489:664; sha256 a42479324a30e5a9380ccd244116189441887913688f0d82c9cb6bc4e91dccf0",
+            "claim": "왕훙원은 1976년 마오 사후 당내 정변으로 실각·체포되었다.",
+            "excerpt": "Following Mao's death in 1976, Wang was deposed in an intra-party coup, arrested and charged with \"counterrevolutionary activity\", then sentenced to life imprisonment in 1981."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "ho-chi-minh",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-vietnamese-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1930,
+        "endYear": 1969,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh",
+            "locator": "characters 410:657; sha256 5443b4666c89c2ef0f37eefe1aee1b4615ae9d7832f9062fb0941c9cd5c93a8d",
+            "claim": "호찌민은 1930년 인도차이나 공산당 창건을 주도했고 그 후신 베트남 노동당을 죽을 때까지 주석으로 이끌었다.",
+            "excerpt": "A committed Marxist–Leninist, Hồ played a central role in establishing the Indochinese Communist Party in 1930 and later led its successor, the Workers' Party of Vietnam (renamed Communist Party of Vietnam after 1976), as chairman until his death."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Ho_Chi_Minh",
+            "locator": "characters 36874:37095; sha256 5443b4666c89c2ef0f37eefe1aee1b4615ae9d7832f9062fb0941c9cd5c93a8d",
+            "claim": "호찌민은 1960년 9월 당 총서기에서 물러난 뒤에도 정치국원으로 남았다.",
+            "excerpt": "Hồ stepped down as General Secretary of the Vietnam Communist party in September 1960 and Lê Duẩn was officially named party leader, leaving Hồ to function in a secondary role as head of state and member of the Politburo."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "truong-chinh",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-vietnamese-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1940,
+        "endYear": 1986,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+            "locator": "characters 9714:9809; sha256 c94b9f2c15421b13cf2c3d6358a085679b07e9a9d08047bf8e7a2238bbcd37e8",
+            "claim": "쯔엉찐은 1940년 인도차이나 공산당 총서기로 선출되었다.",
+            "excerpt": "In 1940, Trường Chinh was elected as the General Secretary of the Communist Party of Indochina."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+            "locator": "characters 891:993; sha256 c94b9f2c15421b13cf2c3d6358a085679b07e9a9d08047bf8e7a2238bbcd37e8",
+            "claim": "쯔엉찐은 1951년 2월 베트남 노동당 중앙위원회 제1서기가 되었다.",
+            "excerpt": "On 19 February 1951, Trường became First Secretary of the Workers' Party of Vietnam Central Committee."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Tr%C6%B0%E1%BB%9Dng_Chinh",
+            "locator": "characters 1430:1556; sha256 c94b9f2c15421b13cf2c3d6358a085679b07e9a9d08047bf8e7a2238bbcd37e8",
+            "claim": "쯔엉찐은 1986년 7월 다시 총서기가 되어 1986년 12월까지 재임했다.",
+            "excerpt": "Following the death of Lê Duẩn in July 1986, Trường again became General Secretary, and held the post until December 18, 1986."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "aleksander-zawadzki",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1944,
+        "endYear": 1948,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://pl.wikipedia.org/wiki/Aleksander_Zawadzki",
+            "locator": "characters 6752:6827; sha256 0b44e48e655cfdc10d09907202e72f2ab54c534655fd0ec13a30ea647e16f19b",
+            "claim": "자바즈키는 1944년 8월부터 폴란드 노동자당 중앙위원회 정치국원이었다.",
+            "excerpt": "Od sierpnia 1944 był członkiem Biura Politycznego Komitetu Centralnego PPR."
+          },
+          {
+            "source": "https://pl.wikipedia.org/wiki/Aleksander_Zawadzki",
+            "locator": "characters 452:535; sha256 0b44e48e655cfdc10d09907202e72f2ab54c534655fd0ec13a30ea647e16f19b",
+            "claim": "자바즈키는 1944–1948년 폴란드 노동자당 정치국원, 1948년 중앙위원회 서기국원이었다.",
+            "excerpt": "członek Biura Politycznego KC PPR (sierpień 1944–1948) i Sekretariatu KC PPR (1948)"
+          }
+        ]
+      }
+    },
+    {
+      "personId": "aleksander-zawadzki",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-pzpr",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1948,
+        "endYear": 1964,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://pl.wikipedia.org/wiki/Aleksander_Zawadzki",
+            "locator": "characters 537:593; sha256 0b44e48e655cfdc10d09907202e72f2ab54c534655fd0ec13a30ea647e16f19b",
+            "claim": "자바즈키는 1948–1964년 폴란드 통일노동당 중앙위원·정치국원이었다.",
+            "excerpt": "członek KC PZPR i Biura Politycznego KC PZPR (1948–1964)"
+          },
+          {
+            "source": "https://pl.wikipedia.org/wiki/Aleksander_Zawadzki",
+            "locator": "characters 7514:7833; sha256 0b44e48e655cfdc10d09907202e72f2ab54c534655fd0ec13a30ea647e16f19b",
+            "claim": "자바즈키는 1948년부터 폴란드 통일노동당 조직국원·중앙위원·정치국원·중앙위원회 서기를 지냈다.",
+            "excerpt": "Pełnił szereg funkcji w PPR, a następnie od 1948 w Polskiej Zjednoczonej Partii Robotniczej: w 1948 członek Sekretariatu KC PPR i Biura Organizacyjnego KC PPR, w PZPR pełnił funkcje: członka Biura Organizacyjnego Komitetu Centralnego (1948–1954), członka KC i Biura Politycznego KC (od 1948), sekretarza KC (1948–1954)."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "zdzislaw-kurowski",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-pzpr",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1964,
+        "endYear": 1981,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://pl.wikipedia.org/wiki/Zdzis%C5%82aw_Kurowski",
+            "locator": "characters 722:806; sha256 987183e8d3ec235724ba94177460027b8174b9d883ac9340cb6f0a64b0246a9b",
+            "claim": "쿠로프스키는 1964–1966년 폴란드 통일노동당 바르샤바 도위원회 집행부원이었다.",
+            "excerpt": "W latach 1964–1966 zasiadał w egzekutywie Warszawskiego Komitetu Wojewódzkiego PZPR."
+          },
+          {
+            "source": "https://pl.wikipedia.org/wiki/Zdzis%C5%82aw_Kurowski",
+            "locator": "characters 807:938; sha256 987183e8d3ec235724ba94177460027b8174b9d883ac9340cb6f0a64b0246a9b",
+            "claim": "쿠로프스키는 폴란드 통일노동당 중앙위원회 후보위원(1968–1971)·위원(1971–1981)·서기국원(1975–1980)이었다.",
+            "excerpt": "Był zastępcą członka (1968–1971), a następnie członkiem (1971–1981) i członkiem Sekretariatu (1975–1980) Komitetu Centralnego PZPR."
+          },
+          {
+            "source": "https://pl.wikipedia.org/wiki/Zdzis%C5%82aw_Kurowski",
+            "locator": "characters 939:1126; sha256 987183e8d3ec235724ba94177460027b8174b9d883ac9340cb6f0a64b0246a9b",
+            "claim": "쿠로프스키는 1972–1975년 폴란드 통일노동당 비아위스토크 도위원회 제1서기였다.",
+            "excerpt": "Od stycznia 1972 do maja 1975 był I sekretarzem KW PZPR w Białymstoku, a od maja 1975 do kwietnia 1977 przewodniczącym rady głównej Federacji Socjalistycznych Związków Młodzieży Polskiej."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "vladimir-bakaric",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-yugoslav-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1944,
+        "endYear": 1969,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Vladimir_Bakari%C4%87",
+            "locator": "characters 1373:1536; sha256 0a0f11d15dc9c96de411cd07fd7853df69937eddafa4df014b68823da28d21ba",
+            "claim": "바카리치는 1944년부터 1969년까지 크로아티아 공산주의자동맹 서기·의장이었다.",
+            "excerpt": "From 1944 to 1969, he was chief secretary or the chairman of the League of Communists of Croatia and as such was a close collaborator of President Josip Broz Tito."
+          },
+          {
+            "source": "https://hr.wikipedia.org/wiki/Vladimir_Bakarić",
+            "locator": "characters 4701:5052; sha256 19ec4876b13f4cf16b22a651e9933603493a244ec3446049a3bff3a3be1f4e05",
+            "claim": "바카리치는 1948년 유고슬라비아 공산당 중앙위원, 1952년 집행위원, 1966년과 1969년 유고슬라비아 공산주의자동맹 간부회 위원이 되었다.",
+            "excerpt": "Od završetka rata obavljao je i visoke partijske funkcije: na V kongresu KPJ 1948. izabran je za člana CK KPJ, na VI kongresu 1952. za člana IK CK SKJ, 1966. postaje član Predsjedništva SKJ, na IX kongresu SKJ 1969. član Predsjedništva te član Izvršnog biroa Predsjedništva SKJ i kao takav bio je blizak suradnik jugoslavenskog vođe Josipa Broza Tita."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "josef-smrkovsky",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-czechoslovak-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1945,
+        "endYear": 1951,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://cs.wikipedia.org/wiki/Josef_Smrkovsk%C3%BD",
+            "locator": "characters 4609:4710; sha256 2e55909249fdfe332f88cf169329e0e4b995eca4da6ba465980110f7e4a26166",
+            "claim": "스므르코프스키는 1945–1951년 체코슬로바키아 공산당 중앙위원이었다.",
+            "excerpt": "V letech 1945–1951 působil jako člen ÚV KSČ, od roku 1946 byl navíc i poslanec Národního shromáždění."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Josef_Smrkovsk%C3%BD",
+            "locator": "characters 1186:1378; sha256 986e0ad745f95b2d2654c89bce5f8904b7188885f7100738708cdb908d884e2c",
+            "claim": "스므르코프스키는 1945년 이후 체코슬로바키아 공산당 중앙위원회 간부회에 보선되었다.",
+            "excerpt": "Although the Czech National Council was dissolved in 1945 and its members were unpopular with Soviet authorities, Smrkovský was co-opted into the presidium of the Central Committee of the KSČ."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "pavel-auersperg",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-czechoslovak-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1969,
+        "endYear": 1986,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://cs.wikipedia.org/wiki/Pavel_Auersperg",
+            "locator": "characters 862:914; sha256 a88fb1c56bf7f0e2f6f2e605699bf1a80c430adf1a2e5a7c7dc2883eb8f3ae23",
+            "claim": "아우어스페르크는 1969년 9월 26일 체코슬로바키아 공산당 중앙위원이 되었다.",
+            "excerpt": "do funkce člena ÚV KSČ byl převeden k 26. září 1969."
+          },
+          {
+            "source": "https://cs.wikipedia.org/wiki/Pavel_Auersperg",
+            "locator": "characters 985:1015; sha256 a88fb1c56bf7f0e2f6f2e605699bf1a80c430adf1a2e5a7c7dc2883eb8f3ae23",
+            "claim": "아우어스페르크는 1986년까지 체코슬로바키아 공산당 중앙위원회에 남았다.",
+            "excerpt": "V ÚV KSČ setrval do roku 1986."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "rezso-nyers",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-hungarian-socialist-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1957,
+        "endYear": 1989,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Rezs%C5%91_Nyers",
+            "locator": "characters 1506:1674; sha256 5acee71d1b0fbc194e72ff5da26fb91003e367097335dec424cae78cd9aa60dc",
+            "claim": "니에르시는 1957년 헝가리 사회주의노동자당 중앙위원이 되어 1989년까지 재임했다.",
+            "excerpt": "In 1957, a year after the MDP was reorganized as he Hungarian Socialist Workers' Party (MSZMP), Nyers was named to the Central Committee, remaining a member until 1989."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Rezs%C5%91_Nyers",
+            "locator": "characters 3505:3640; sha256 5acee71d1b0fbc194e72ff5da26fb91003e367097335dec424cae78cd9aa60dc",
+            "claim": "니에르시는 1989년 6월 26일 헝가리 사회주의노동자당 의장으로 선출되었다.",
+            "excerpt": "On 26 June 1989, Nyers was elected as president of the MSZMP, chairing a four-member collective presidency that replaced the Politburo."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "jose-eduardo-dos-santos",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-angolan-mpla",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1974,
+        "endYear": 2017,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Eduardo_dos_Santos",
+            "locator": "characters 4592:4781; sha256 450d9ff6e94d0a8aef9a0ce1ef2f25261202972aacc9514f161f240af35c98da",
+            "claim": "두스산투스는 1974년 9월 앙골라 해방인민운동 중앙위원·정치국원으로 선출되었다.",
+            "excerpt": "He was the MPLA representative to Yugoslavia, Zaire, and the People's Republic of China before he was elected to the Central Committee and Politburo of the MPLA in Moxico in September 1974."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Eduardo_dos_Santos",
+            "locator": "characters 5693:5949; sha256 450d9ff6e94d0a8aef9a0ce1ef2f25261202972aacc9514f161f240af35c98da",
+            "claim": "두스산투스는 1979년 9월 20일 앙골라 해방인민운동 의장으로 선출되었다.",
+            "excerpt": "After the natural death of Angola's first president, Agostinho Neto, on 10 September 1979, dos Santos was elected president of the MPLA on 20 September 1979, and took office as President of Angola and Commander-in-Chief of the Armed Forces on 21 September."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Eduardo_dos_Santos",
+            "locator": "characters 12667:12833; sha256 450d9ff6e94d0a8aef9a0ce1ef2f25261202972aacc9514f161f240af35c98da",
+            "claim": "두스산투스는 2017년 대통령직을 넘긴 뒤에도 앙골라 해방인민운동 의장으로 남았다.",
+            "excerpt": "He remained President of the MPLA and was therefore expected to continue playing a key role at the top of Angolan politics through the leadership of the ruling party."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "elbegdorj-rinchino",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-mongolian-people",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1921,
+        "endYear": 1924,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Rinchingiin_Elbegdorj",
+            "locator": "characters 2741:3007; sha256 eec7682f5257bd0553a4a775ca5d457f7cd4bb4726b439a5d35505b8d92512f3",
+            "claim": "린치노는 1921년 3월 몽골인민당 제1차 당대회를 이끈 인물 가운데 하나였다.",
+            "excerpt": "He was also a guiding presence at the first secret meeting of the Mongolian People's Party held in Troitskosavsk from 1921 March 1 to 3 (later known as the First Party Congress of the MPRP), where the provisional revolutionary government of Mongolia was established."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Rinchingiin_Elbegdorj",
+            "locator": "characters 4272:4403; sha256 eec7682f5257bd0553a4a775ca5d457f7cd4bb4726b439a5d35505b8d92512f3",
+            "claim": "린치노는 1924년 제3차 당대회에서 단잔과 대립했다.",
+            "excerpt": "After the purge of Bodoo, a rivalry developed between Elbegdorj and Danzan that came to a head at the Third Party Congress in 1924."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "ali-ahmed-nasser-antar",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-yemeni-socialist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1978,
+        "endYear": 1986,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%8A%20%D8%B9%D9%86%D8%AA%D8%B1",
+            "locator": "characters 2574:2861; sha256 6cf950c6c7172872e57a6e8abf39248c2563e0c6835d3cfe96b0142f0d1c4496",
+            "claim": "알리 안타르는 예멘 사회당 제1차 대회에서 정치국원으로 선출되었고 1985년 10월 제3차 대회까지 재선되었다.",
+            "excerpt": "كما انتخب  عضواً في المكتب السياسي للجنة المركزية للحزب الاشتراكي اليمني في المؤتمر الأول للحزب الاشتراكي اليمني ، وأعيد انتخابه في عضوية المكتب السياسي للحزب الاشتراكي اليمني في مؤتمره الاستثنائي ، كما أعيد انتخابه في عضوية المكتب السياسي للحزب في المؤتمر العام الثالث في أكتوبر 1985 م."
+          },
+          {
+            "source": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%8A%20%D8%B9%D9%86%D8%AA%D8%B1",
+            "locator": "characters 163:217; sha256 6cf950c6c7172872e57a6e8abf39248c2563e0c6835d3cfe96b0142f0d1c4496",
+            "claim": "알리 안타르는 1986년 1월 13일 아덴에서 살해되었다.",
+            "excerpt": "قُتل في مبنى القيادة المركزية في عدن يوم 13 يناير 1986"
+          }
+        ]
+      }
+    },
+    {
+      "personId": "mir-jafar-bagirov",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1933,
+        "endYear": 1953,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Mir_Jafar_Baghirov",
+            "locator": "characters 2477:2602; sha256 c07e0ca1328c5d4ddd306106942d786adc85ec9b6a16f0d150141a09ea85618f",
+            "claim": "바기로프는 1933년 12월부터 1953년 4월까지 아제르바이잔 공산당 중앙위원회 제1서기였다.",
+            "excerpt": "Baghirov was the first secretary of the Central Committee of the Azerbaijan Communist Party from December 1933 to April 1953."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Mir_Jafar_Baghirov",
+            "locator": "characters 3029:3312; sha256 c07e0ca1328c5d4ddd306106942d786adc85ec9b6a16f0d150141a09ea85618f",
+            "claim": "바기로프는 1953년 3월 소련공산당 중앙위원회 간부회 후보위원이 되었다.",
+            "excerpt": "On 7 March 1953, just after the death of Joseph Stalin, Baghirov was appointed a candidate member of the Presidium (Politburo) of the Central Committee, which meant that he was officially the most senior communist official based in any of the smaller Soviet republics outside Russia."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "nishonov",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1988,
+        "endYear": 1989,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Rafiq_Nishonov",
+            "locator": "characters 165:240; sha256 97e2e66f6299f40a3a120c2e4d365fbff019a97f7097b700d0efdb409099d1bf",
+            "claim": "니쇼노프는 우즈베크 SSR 공산당 제13대 제1서기였다.",
+            "excerpt": "was the thirteenth First Secretary of the Communist Party of the Uzbek SSR."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Rafiq_Nishonov",
+            "locator": "characters 241:321; sha256 97e2e66f6299f40a3a120c2e4d365fbff019a97f7097b700d0efdb409099d1bf",
+            "claim": "니쇼노프는 1988년 1월 12일부터 1989년 6월 23일까지 그 직을 맡았다.",
+            "excerpt": "Nishonov held this position for 17 months, from 12 January 1988 to 23 June 1989."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "alexei-snegov",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1930,
+        "endYear": 1937,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Alexei_Snegov",
+            "locator": "characters 615:747; sha256 7c120294162cb66ccca8926d5ac2da507d28c19fa10b3c59a2b32e7a0f431528",
+            "claim": "스네고프는 1930년 6월 우크라이나 공산당 중앙위원이 되었다.",
+            "excerpt": "During the NEP period, he was involved in party work in Ukraine and became a member of the Ukrainian central committee in June 1930."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Alexei_Snegov",
+            "locator": "characters 748:861; sha256 7c120294162cb66ccca8926d5ac2da507d28c19fa10b3c59a2b32e7a0f431528",
+            "claim": "스네고프는 1930년대 트빌리시·이르쿠츠크 등에서 여러 당 직책을 맡았다.",
+            "excerpt": "Throughout the 1930s, he held various party positions in Tbilisi, Irkutsk, Chelyabinsk, Chapayevsk, and Murmansk."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Alexei_Snegov",
+            "locator": "characters 916:1060; sha256 7c120294162cb66ccca8926d5ac2da507d28c19fa10b3c59a2b32e7a0f431528",
+            "claim": "스네고프는 1937년 6월 대숙청 때 체포되었다.",
+            "excerpt": "Snegov was arrested in June 1937 during Joseph Stalin's Great Purge, but was then acquitted and released following the arrest of Nikolai Yezhov."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "yefrem-sokolov",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1969,
+        "endYear": 1990,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Yefrem_Sokolov",
+            "locator": "characters 745:859; sha256 68cc16fe3934df79edec78f5c5cca98b1cdbc7ec32f7d7847f1a1b7add051b77",
+            "claim": "소콜로프는 1969년 중앙위원회 기구에 들어갔고 1977년 브레스트 당 책임자가 되었다.",
+            "excerpt": "In 1969, he became part of the apparatus of the Central Committee and was in 1977 appointed party chief for Brest."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Yefrem_Sokolov",
+            "locator": "characters 860:1058; sha256 68cc16fe3934df79edec78f5c5cca98b1cdbc7ec32f7d7847f1a1b7add051b77",
+            "claim": "소콜로프는 1987년 2월부터 1990년 11월까지 벨라루스 공산당 중앙위원회 제1서기였다.",
+            "excerpt": "From 6 February 1987 to 30 November 1990, he was First Secretary of the Central Committee of the Communist Party of Belarus, being the last one to serve as the de facto head of the Byelorussian SSR."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Yefrem_Sokolov",
+            "locator": "characters 274:399; sha256 68cc16fe3934df79edec78f5c5cca98b1cdbc7ec32f7d7847f1a1b7add051b77",
+            "claim": "소콜로프는 1990년 7월 소련공산당 제28기 정치국원으로 선출되었다.",
+            "excerpt": "Sokolov was a member of the 28th Politburo, elected on 14 July 1990 by the 1st Plenary Session of the 28th Central Committee."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "jahangir-muslimzade",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1985,
+        "endYear": 1988,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://az.wikipedia.org/wiki/Cahangir_M%C3%BCsl%C3%BCmzad%C9%99",
+            "locator": "characters 91:175; sha256 7602a95e20d31fec25f5bd11464c675067688dff566da98493e13d510ee3335c",
+            "claim": "뮈슬륌자데는 1985–1988년 아제르바이잔 공산당 숨가이트 시위원회 제1서기였다.",
+            "excerpt": "Azərbaycan Kommunist Partiyası Sumqayıt Şəhər Komitəsinin birinci katibi (1985–1988)"
+          },
+          {
+            "source": "https://az.wikipedia.org/wiki/Cahangir_M%C3%BCsl%C3%BCmzad%C9%99",
+            "locator": "characters 1090:1279; sha256 7602a95e20d31fec25f5bd11464c675067688dff566da98493e13d510ee3335c",
+            "claim": "뮈슬륌자데는 숨가이트 사건으로 1988년 3월 16일 시위원회 제1서기에서 해임되었다.",
+            "excerpt": "Həmin dövrdə o, Azərbaycan Kommunist Partiyası Sumqayıt Şəhər Komitəsinin birinci katibi seçilmiş, Sumqayıt hadisələri ilə əlaqədar olaraq 16 mart 1988-ci ildə vəzifəsindən azad olunmuşdur."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "jumber-patiashvili",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1985,
+        "endYear": 1989,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Jumber_Patiashvili",
+            "locator": "characters 349:485; sha256 052e058f6dd8b9bebc6c5a320abc5d6f962b0a50b7c722d2163121ab72e8d94b",
+            "claim": "파티아시빌리는 1985년 셰바르드나제의 뒤를 이어 그루지야 공산당 제1서기가 되었다.",
+            "excerpt": "Patiashvili, a nondescript party loyalist, succeeded Eduard Shevardnadze as the First Secretary of the Georgian Communist Party in 1985."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Jumber_Patiashvili",
+            "locator": "characters 95:161; sha256 052e058f6dd8b9bebc6c5a320abc5d6f962b0a50b7c722d2163121ab72e8d94b",
+            "claim": "파티아시빌리는 1985년부터 1989년까지 그루지야 SSR 공산당 지도자였다.",
+            "excerpt": "He was the Communist leader of the Georgian SSR from 1985 to 1989."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "sultan-galiev",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1917,
+        "endYear": 1923,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Mirsaid_Sultan-Galiev",
+            "locator": "characters 4743:4838; sha256 38213367f214b9ceb5294196fc6daf5d33ce4a2aa8d797cdb75edf7bd3f85452",
+            "claim": "술탄갈리예프는 1917년 11월 볼셰비키에 입당했다.",
+            "excerpt": "In November 1917 he joined the Bolshevik faction of the Russian Social Democratic Labour Party."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Mirsaid_Sultan-Galiev",
+            "locator": "characters 4957:5168; sha256 38213367f214b9ceb5294196fc6daf5d33ce4a2aa8d797cdb75edf7bd3f85452",
+            "claim": "술탄갈리예프는 1918년 1월 무슬림 중앙위원부에서 러시아 공산당 대표를 맡았다.",
+            "excerpt": "In January 1918 the Central Commissariat of Muslim affairs in Inner Russia and Siberia (Muskom), was set up under the chairmanship of Waxitov, with Sultan-Galiev as representative of the Russian Communist Party."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Mirsaid_Sultan-Galiev",
+            "locator": "characters 468:613; sha256 38213367f214b9ceb5294196fc6daf5d33ce4a2aa8d797cdb75edf7bd3f85452",
+            "claim": "술탄갈리예프는 1923년 투옥되고 공산당에서 제명되었다.",
+            "excerpt": "His views were seen as a direct threat to the policies of the Comintern; he was imprisoned briefly in 1923 and expelled from the Communist Party."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "armand",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1919,
+        "endYear": 1920,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%BC%D0%B0%D0%BD%D0%B4,_%D0%98%D0%BD%D0%B5%D1%81%D1%81%D0%B0",
+            "locator": "characters 5610:5671; sha256 b27c2291d6e869b650ce6f53383502b70a8ab9a78c7a9b726851ad6b0bf0766a",
+            "claim": "아르망은 1919–1920년 러시아 공산당(볼셰비키) 중앙위원회 여성부를 이끌었다.",
+            "excerpt": "В 1919—1920 годах Арманд возглавляла женский отдел ЦК РКП(б)."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "feliks-kon",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "soviet-party",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1918,
+        "endYear": 1921,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD,_%D0%A4%D0%B5%D0%BB%D0%B8%D0%BA%D1%81_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+            "locator": "characters 4302:4364; sha256 55ad306dc19400f480f2ada8b75bc64fef71eb041706aaf28a688ddc161b1318",
+            "claim": "콘은 1918년 러시아 공산당(볼셰비키)에 입당했다.",
+            "excerpt": "В 1918 году вступил в РКП(б), с зачётом партстажа с 1906 года."
+          },
+          {
+            "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD,_%D0%A4%D0%B5%D0%BB%D0%B8%D0%BA%D1%81_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+            "locator": "characters 4365:4556; sha256 55ad306dc19400f480f2ada8b75bc64fef71eb041706aaf28a688ddc161b1318",
+            "claim": "콘은 러시아 공산당 중앙위원회 폴란드국과 우크라이나 공산당 제1차 대회 조직국의 일원이었다.",
+            "excerpt": "С 1917 комиссар Харьковской губ. по польским делам, затем член коллегии НКИД УССР, Польского бюро при ЦК РКП(б), Оргбюро по созыву 1 съезда КП Украины, председатель Галицкого оргкомитета КПУ."
+          },
+          {
+            "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD,_%D0%A4%D0%B5%D0%BB%D0%B8%D0%BA%D1%81_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+            "locator": "characters 5512:5564; sha256 55ad306dc19400f480f2ada8b75bc64fef71eb041706aaf28a688ddc161b1318",
+            "claim": "콘은 1921년 3–12월 우크라이나 공산당 중앙위원회 책임비서였다.",
+            "excerpt": "В марте-декабре 1921 ответственный секретарь ЦК КПУ."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "kim-il-sung",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1949,
+        "endYear": 1994,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Kim_Il_Sung",
+            "locator": "characters 17970:18126; sha256 2fe3778d1515a1e9e3d18aef0156303a22d646e5a9e58ebee1bffb46d4aaf1fb",
+            "claim": "김일성은 1949년 6월 조선로동당 창당과 함께 당 위원장이 되었다.",
+            "excerpt": "In June 1949, the Workers' Party of North Korea merged with its southern counterpart to become the Workers' Party of Korea (WPK) with Kim as party chairman."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Kim_Il_Sung",
+            "locator": "characters 29422:29590; sha256 2fe3778d1515a1e9e3d18aef0156303a22d646e5a9e58ebee1bffb46d4aaf1fb",
+            "claim": "김일성의 직책은 1966년 10월 당 중앙위원회 위원장에서 총비서로 바뀌었다.",
+            "excerpt": "In October 1966, Kim convened the 2nd Conference of the WPK, when his position was renamed from Party Central Committee chairman to Central Committee General Secretary."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "choe-yong-gon",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1949,
+        "endYear": 1976,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 13526:13607; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 1949년 조선로동당 통합 때 공동 부위원장으로 선출되었다.",
+            "excerpt": "6월 30일 통합이 확정될 때 임시위원장이었고, 7월 1일 김일성을 조선로동당 위원장으로 추대할 때 박헌영 등과 함께 공동 부위원장에 선출되었다."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 18920:18984; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 1970년 11월 조선로동당 중앙위원·정치국 위원·비서로 선출되었다.",
+            "excerpt": "1970년 11월 조선로동당 중앙위원회 위원에 재선임되고, 조선로동당 정치국 위원, 당 비서국 비서에도 선출되었다."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 11157:11223; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 사망할 때까지 조선로동당 상무위원 등 당직을 보유했다.",
+            "excerpt": "최용건은 사망 때까지 조선사회민주당 위원장이었지만 동시에 조선로동당의 상무위원 등 조선로동당의 당직도 보유하고 있었다."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "fidel-castro",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-cuban-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1965,
+        "endYear": 2011,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Fidel_Castro",
+            "locator": "characters 160:308; sha256 f0acd05fd9ddbaa8c8bec624484d8905fb50ea7889b8bb82c5240cdd89e00ec5",
+            "claim": "피델 카스트로는 1965년부터 2011년까지 쿠바 공산당 제1서기였다.",
+            "excerpt": "He served as prime minister from 1959 to 1976, president from 1976 to 2008, and first secretary of the Communist Party of Cuba from 1965 until 2011."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Fidel_Castro",
+            "locator": "characters 87968:88084; sha256 f0acd05fd9ddbaa8c8bec624484d8905fb50ea7889b8bb82c5240cdd89e00ec5",
+            "claim": "피델 카스트로는 2011년 4월 19일 중앙위원회에서 물러나며 제1서기직을 내려놓았다.",
+            "excerpt": "On 19 April 2011, Castro resigned from the Communist Party central committee, thus stepping down as First Secretary."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "joaquim-chissano",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-mozambican-frelimo",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1986,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Joaquim_Chissano",
+            "locator": "characters 1754:1921; sha256 6557566c17d870283cfa814121a9f5309538f6da039cf4313852ddf811f351c3",
+            "claim": "시사노는 1986년 마셸 사망 뒤 모잠비크 해방전선 당수가 되었다.",
+            "excerpt": "Chissano succeeded to the presidency and became FRELIMO party leader in 1986 when Samora Machel's presidential aircraft crashed in mountainous terrain in South Africa."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "souphanouvong",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-lao-revolutionary",
+        "affiliationStatus": "confirmed",
+        "relation": "service",
+        "startYear": 1991,
+        "endYear": 1995,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Souphanouvong",
+            "locator": "characters 7640:7703; sha256 f37dc049ac36c5c03255d790f402f7447a5d43076e0a82c88a5028c368d57881",
+            "claim": "수파누웡은 1991년 라오 인민혁명당 중앙위원회 고문이 되었다.",
+            "excerpt": "In 1991, he became an advisor to the Party's Central Committee."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Souphanouvong",
+            "locator": "characters 8022:8096; sha256 f37dc049ac36c5c03255d790f402f7447a5d43076e0a82c88a5028c368d57881",
+            "claim": "수파누웡은 1995년 1월 9일 사망했다.",
+            "excerpt": "Souphanouvong died on 9 January 1995 in Vientiane, due to a heart disease."
+          }
+        ]
+      }
+    }
+  ],
+  "corrections": []
+}
