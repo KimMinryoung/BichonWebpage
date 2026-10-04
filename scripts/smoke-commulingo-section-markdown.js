@@ -11,4 +11,10 @@ assert.match(section.bodyHtml, /<h4>학교<\/h4>/);
 assert.doesNotMatch(section.bodyHtml, /<h2>/);
 assert.equal(renderMarkdown('###### 끝', { headingShift: 1 }), '<h6>끝</h6>');
 assert.equal(renderMarkdown('## 그대로'), '<h2>그대로</h2>');
-console.log('section markdown: body headings nest under the section heading');
+// Source links to Wikipedia titles with parentheses keep the whole address,
+// and text after the link keeps its own closing parenthesis.
+assert.equal(renderMarkdown('본문 [3](https://en.wikipedia.org/wiki/Treaty_of_Moscow_(1920)).'),
+    '<p>본문 <a href="https://en.wikipedia.org/wiki/Treaty_of_Moscow_(1920)" target="_blank" rel="noopener noreferrer">3</a>.</p>');
+assert.equal(renderMarkdown('(참고 [1](https://example.org/a))'),
+    '<p>(참고 <a href="https://example.org/a" target="_blank" rel="noopener noreferrer">1</a>)</p>');
+console.log('section markdown: body headings nest under the section heading; link targets keep balanced parentheses');

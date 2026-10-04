@@ -100,7 +100,10 @@ function inlineMarkdown(text, citationLinks = new Map(), footnoteDefinitions = n
         // stretched the justified line around it. Site-relative and in-page
         // targets link too, and stay in the same tab; anything with another
         // scheme is left exactly as written rather than turned into a link.
-        .replace(/\[([^\]]+)]\(([^)\s]+)\)/g, (match, label, href) => {
+        // A target may hold one level of balanced parentheses, as Wikipedia
+        // titles do (Treaty_of_Moscow_(1920)); without that the link ended at
+        // the first ")" and the rest of the address spilled into the text.
+        .replace(/\[([^\]]+)]\(((?:[^()\s]|\([^()\s]*\))+)\)/g, (match, label, href) => {
             if (/^https?:\/\//i.test(href)) {
                 return `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`;
             }
