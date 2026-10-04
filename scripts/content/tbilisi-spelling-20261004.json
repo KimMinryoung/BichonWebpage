@@ -1,0 +1,29 @@
+{
+  "id": "tbilisi-spelling-20261004",
+  "changes": [
+    {
+      "event": "ussr-formation",
+      "column": "body_ko",
+      "from": "이 갈등을 덮고 티플리스에서",
+      "to": "이 갈등을 덮고 트빌리시에서"
+    },
+    {
+      "event": "ussr-formation",
+      "column": "body_ko",
+      "from": "므디바니는 티플리스에서 직통",
+      "to": "므디바니는 트빌리시에서 직통"
+    },
+    {
+      "event": "ussr-formation",
+      "column": "body_ko",
+      "from": "특사로 티플리스에 파견된",
+      "to": "특사로 트빌리시에 파견된"
+    },
+    {
+      "event": "ussr-formation",
+      "column": "body_ko",
+      "from": "조사 위원장으로 티플리스에 파견했으나",
+      "to": "조사 위원장으로 트빌리시에 파견했으나"
+    }
+  ]
+}
