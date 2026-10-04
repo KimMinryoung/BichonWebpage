@@ -75,8 +75,9 @@ assert.strictEqual(S.merge(merged.map, remote).changed, false);
 // storage round trip
 S.save(map);
 assert.strictEqual(JSON.stringify(S.load()), JSON.stringify(map));
-// account ownership: anonymous records join the first account; another
-// account, or signing out, drops them; an id-less payload decides nothing
+// account ownership: anonymous records join the first account; signing out
+// keeps them for that account; another account drops them; an id-less
+// payload decides nothing
 const OWNER = 'commulingo-owner-v1';
 const PROGRESS = 'commulingo-progress-v1';
 store[PROGRESS] = '{"a":{}}';
@@ -90,6 +91,9 @@ assert.strictEqual(S.settleOwner({ authenticated: true, userId: 8 }), true);
 assert.strictEqual(store[OWNER], '8');
 assert.ok(!(PROGRESS in store) && !(S.KEY in store));
 store[PROGRESS] = '{"b":{}}';
-assert.strictEqual(S.settleOwner({ authenticated: false }), true);
-assert.ok(!(OWNER in store) && !(PROGRESS in store));
+assert.strictEqual(S.settleOwner({ authenticated: false }), false);
+assert.strictEqual(store[OWNER], '8');
+assert.strictEqual(store[PROGRESS], '{"b":{}}');
+assert.strictEqual(S.settleOwner({ authenticated: true, userId: 8 }), false);
+assert.strictEqual(store[PROGRESS], '{"b":{}}', 'study while signed out joins the same account');
 console.log('ok: commulingo schedule');

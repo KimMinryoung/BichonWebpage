@@ -27,7 +27,7 @@ Admin 인물 수정·삭제, 절 저장·삭제는 기존 상태를 읽기 전�
 
 `POST /commulingo/progress/answers`는 기존 정규화·최대 200개 제한을 거친 유효 항목 전체를 한 연결의 트랜잭션으로 저장한다. 하나라도 실패하면 전부 롤백한다. 더 큰 lastAt만 덮어쓰며 응답 `{saved: 유효 항목 수}`는 실제 변경 행 수와 다를 수 있다.
 
-브라우저 기록(`commulingo-progress-v1`·`commulingo-last-v1`·`commulingo-answers-v1`)은 `commulingo-owner-v1`에 계정 ID를 붙인다(`GET /commulingo/progress`의 `userId`, `CommuLingoSchedule.settleOwner`). 표시 없는 기록(익명 학습·이전 기록)은 처음 로그인한 계정에 합쳐지고, 다른 계정이 로그인하거나 로그아웃 상태로 확인되면 브라우저 기록을 지운 뒤 서버 기록만 받는다. 답안 업로드는 문항별 변경 세대를 확인해 늦게 온 성공 응답이 새 답안을 지우지 않게 하고, 실패는 5초~5분 backoff로 재시도하며 401/403은 다음 로그인까지 보류한다. localStorage 쓰기 실패는 학습 완료를 막지 않는다.
+브라우저 기록(`commulingo-progress-v1`·`commulingo-last-v1`·`commulingo-answers-v1`)은 `commulingo-owner-v1`에 계정 ID를 붙인다(`GET /commulingo/progress`의 `userId`, `CommuLingoSchedule.settleOwner`). 표시 없는 기록(익명 학습·이전 기록)은 처음 로그인한 계정에 합쳐진다. 로그아웃 상태(대개 24시간 세션 만료)에서는 기록을 지우지 않고 그 계정 표시 아래 계속 쌓았다가 같은 계정이 다시 로그인하면 합친다(채팅에서 계정에 연결된 브라우저의 비로그인 대화를 그 계정 것으로 보는 것과 같은 기준, 2026-10-04 소유자 결정). 다른 계정이 로그인하면 브라우저 기록을 지우고 그 계정의 서버 기록만 받는다. 공용 브라우저에서는 로그아웃 뒤 비로그인 방문자에게 이전 계정의 진도가 보인다. 답안 업로드는 문항별 변경 세대를 확인해 늦게 온 성공 응답이 새 답안을 지우지 않게 하고, 실패는 5초~5분 backoff로 재시도하며 401/403은 다음 로그인까지 보류한다. localStorage 쓰기 실패는 학습 완료를 막지 않는다.
 
 ## 검증과 적용
 

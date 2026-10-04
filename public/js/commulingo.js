@@ -391,8 +391,8 @@
             .then(function(res) { return res.ok ? res.json() : null; })
             .then(function(payload) {
                 if (!payload) return false;
-                // Another account's records (or ones left after signing out)
-                // were just removed from storage; forget them here too.
+                // Another account signed in and its predecessor's records were
+                // just removed from storage; forget them here too.
                 var dropped = Schedule && Schedule.settleOwner ? Schedule.settleOwner(payload) : false;
                 if (dropped) {
                     progress = {};

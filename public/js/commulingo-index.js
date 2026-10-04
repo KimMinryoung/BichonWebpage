@@ -81,8 +81,8 @@
             .then(function(res) { return res.ok ? res.json() : null; })
             .then(function(payload) {
                 if (!payload) return false;
-                // Records of another account (or left after signing out) are
-                // removed by settleOwner; repaint without them.
+                // Records of a previous account are removed by settleOwner
+                // when another one signs in; repaint without them.
                 var Schedule = window.CommuLingoSchedule;
                 var dropped = Schedule && Schedule.settleOwner ? Schedule.settleOwner(payload) : false;
                 if (dropped) progress = {};

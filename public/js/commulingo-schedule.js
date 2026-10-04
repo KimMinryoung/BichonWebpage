@@ -27,11 +27,13 @@
     }
 
     // The browser records the book page and the hub upload are tagged with the
-    // account that was signed in when they were adopted. Records from another
-    // account (or left behind after signing out) are dropped instead of being
-    // shown to, or merged into, whoever uses this browser next; untagged
-    // records (anonymous study, or kept from before the tag) join the first
-    // account that signs in. `payload` is a successful GET /commulingo/progress.
+    // account that was signed in when they were adopted. Signed out (often just
+    // an expired session), the records stay and keep growing under that tag
+    // and join that account at its next sign-in, as the chat history does with
+    // a browser bound to an account. Another account signing in drops them and
+    // takes its own from the server. Untagged records (anonymous study, or kept
+    // from before the tag) join the first account that signs in.
+    // `payload` is a successful GET /commulingo/progress.
     var OWNER_KEY = 'commulingo-owner-v1';
     var ACCOUNT_KEYS = ['commulingo-progress-v1', 'commulingo-last-v1', KEY];
 
@@ -49,10 +51,9 @@
                 store.setItem(OWNER_KEY, current);
                 return false;
             }
-            if (!current && !owner) return false;
+            if (!current) return false;
             ACCOUNT_KEYS.forEach(function(k) { store.removeItem(k); });
-            if (current) store.setItem(OWNER_KEY, current);
-            else store.removeItem(OWNER_KEY);
+            store.setItem(OWNER_KEY, current);
             return true;
         } catch (err) {
             return false;
