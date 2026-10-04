@@ -3,7 +3,7 @@ const cache = require('../config/report-cache');
 const researchStore = require('../config/research-store');
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
-const { fetchWithTimeout, clampInteger } = require('../utils/http');
+const { fetchWithTimeout, clampInteger, markDegraded } = require('../utils/http');
 const { titleFromMarkdown } = require('../utils/markdown');
 const errorPage = require('../utils/error-page');
 const { CHAT_API_URL, LENINBOT_ADMIN_KEY: ADMIN_KEY } = require('../config/services');
@@ -89,11 +89,15 @@ router.get('/', async (req, res) => {
         // Fetch research list directly from the shared database. Title/excerpt are returned
         // with the row, so no per-document request is needed.
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        // The public feed's sources; a failure is reported on the page (and
+        // as a 503 when nothing could be listed) rather than shown as "none".
+        let feedFailed = false;
         let researchFiles = [];
         try {
             researchFiles = await cachedResearchList(lang);
         } catch (e) {
             console.error('Error loading research list:', e);
+            feedFailed = true;
         }
 
         let privateReports = [];
@@ -114,6 +118,7 @@ router.get('/', async (req, res) => {
                 await cache.setPagesList(pagesList, lang);
             } catch (e) {
                 console.error('Error loading pages list:', e);
+                feedFailed = true;
             }
         }
 
@@ -150,6 +155,7 @@ router.get('/', async (req, res) => {
         // one query param drives both tabs.
         const researchTotalPages = Math.max(1, Math.ceil(researchItems.length / REPORTS_PER_PAGE));
         const pagedResearchItems = researchItems.slice(offset, offset + REPORTS_PER_PAGE);
+        if (feedFailed) markDegraded(res, { empty: researchItems.length === 0 });
 
         res.render('public/reports', {
             ...reportsListLocals(pagePath, isAdmin),
@@ -157,6 +163,7 @@ router.get('/', async (req, res) => {
             researchItems: pagedResearchItems,
             researchCurrentPage: currentPage,
             researchTotalPages,
+            feedFailed,
             robotsMeta: isAdmin ? 'noindex, nofollow' : undefined,
             jsonLd: seo.itemListJsonLd(
                 pagedResearchItems.map(item => ({ title: item.title, href: item.href })),
@@ -164,9 +171,10 @@ router.get('/', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching reports:', error);
+        markDegraded(res, { empty: true });
         res.render('public/reports', {
             ...reportsListLocals(pagePath, isAdmin),
-            reports: [], currentPage: 1, totalPages: 0, researchItems: [],
+            reports: [], currentPage: 1, totalPages: 0, researchItems: [], feedFailed: true,
         });
     }
 });

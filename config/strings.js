@@ -51,6 +51,8 @@ const ko = {
     // 공개 페이지
     public: {
         noPosts: '글이 아직 없다.',
+        listUnavailable: '목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.',
+        partlyUnavailable: '일부 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.',
         postedAt: '에 올림',
         updatedAt: '에 고침',
         backToList: '목록',
@@ -679,6 +681,8 @@ const en = {
 
     public: {
         noPosts: 'No posts yet.',
+        listUnavailable: 'The list could not be loaded. Please try again shortly.',
+        partlyUnavailable: 'Some lists could not be loaded. Please refresh shortly.',
         postedAt: ', posted',
         updatedAt: ', updated',
         backToList: 'List',

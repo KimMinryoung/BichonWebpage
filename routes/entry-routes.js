@@ -7,7 +7,7 @@
 const db = require('../config/database');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
-const { clampInteger } = require('../utils/http');
+const { clampInteger, markDegraded } = require('../utils/http');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 
 function localizedEntry(row, lang) {
@@ -75,7 +75,8 @@ function createEntryRoutes({
             res.render(listView, { ...pageData, ...baseLocals, jsonLd: itemList(entries) });
         } catch (error) {
             console.error(`Error fetching ${logLabel}:`, error);
-            res.render(listView, { [listKey]: [], currentPage: 1, totalPages: 0, ...baseLocals });
+            markDegraded(res, { empty: true });
+            res.render(listView, { [listKey]: [], currentPage: 1, totalPages: 0, loadFailed: true, ...baseLocals });
         }
     }
 

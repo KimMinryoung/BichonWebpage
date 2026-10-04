@@ -64,11 +64,11 @@ function hasSessionCookie(req) {
 }
 
 // A request the session store never needs to see: assets, cacheable text,
-// the CommuLingo data endpoints, the health probe, and public HTML from a
+// the CommuLingo data endpoints, the health/readiness probes, and public HTML from a
 // visitor without a session cookie. Such requests get an empty req.session.
 function isSessionFreeRequest(req) {
     if (req.method !== 'GET' && req.method !== 'HEAD') return false;
-    if (req.path === '/health') return true;
+    if (req.path === '/health' || req.path === '/ready') return true;
     if (isStaticAssetPath(req.path) || isCacheablePublicTextPath(req.path) || isPublicCommuLingoDataPath(req.path)) return true;
     return isPublicHtmlPath(req.path) && !hasSessionCookie(req);
 }

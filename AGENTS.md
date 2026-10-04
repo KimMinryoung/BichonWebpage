@@ -14,7 +14,7 @@ When operating from the `root` account on the production server (cloud sessions 
 - The admin screens write `data/commulingo/docs/manifest.json` directly (link-review rejections, document metadata edits); the change is already live. If you find it modified and not part of your own task, commit it yourself with a message naming the changed documents (`git diff` shows what the admin did), then push — do not ask the user to commit it.
 - Use `scripts/deploy --restart` for production restarts so the required labels, host data mount, and the `leninbot_default` network are applied consistently.
 - The frontend connects to the local `leninbot-pg` Postgres container (`DB_HOST=leninbot-pg`) over the `leninbot_default` Docker network — the same network used for Redis. (The DB migrated off Supabase in July 2026; the old `leninbot_ipv6` network is no longer needed.)
-- If recent posts, reports, hub curations, or diary entries suddenly render as empty, check `docker logs leninbot-frontend` for connection errors to `:5432`, then check that `leninbot-pg` is healthy (`docker ps`) and that both containers share `leninbot_default`:
+- If recent posts, reports, hub curations, or diary entries suddenly show "목록을 불러오지 못했습니다" (503) or `/ready` reports `db:false`, check `docker logs leninbot-frontend` for connection errors to `:5432`, then check that `leninbot-pg` is healthy (`docker ps`) and that both containers share `leninbot_default`:
 
 ```bash
 docker inspect leninbot-frontend --format '{{range $name,$net := .NetworkSettings.Networks}}{{println $name $net.IPAddress}}{{end}}'

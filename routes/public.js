@@ -13,6 +13,7 @@ const researchStore = require('../config/research-store');
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
+const { setNoStore } = require('../utils/http');
 const { sanitizePost } = require('../utils/sanitize');
 const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
@@ -60,10 +61,13 @@ async function loadRecentReportItems(lang) {
             return pages;
         }),
     ]);
+    if (researchResult.status === 'rejected' || pagesResult.status === 'rejected') {
+        console.error('homepage reports:', (researchResult.reason || pagesResult.reason || {}).message);
+    }
     const researchFiles = researchResult.status === 'fulfilled' ? researchResult.value : [];
     const pagesList = pagesResult.status === 'fulfilled' ? pagesResult.value : [];
 
-    return [
+    const items = [
         ...researchFiles.map(file => ({
             title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
             href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
@@ -77,6 +81,7 @@ async function loadRecentReportItems(lang) {
             summary: page.summary,
         })),
     ].sort((a, b) => b.modified - a.modified).slice(0, RECENT_LIMIT);
+    return { items, failed: researchResult.status === 'rejected' || pagesResult.status === 'rejected' };
 }
 
 // Homepage
@@ -110,9 +115,20 @@ router.get('/', async (req, res) => {
 
         const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value : [];
         const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value : [];
-        const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value : [];
+        const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value.items : [];
         const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
         const recentCommuLingo = commuLingoResult.status === 'fulfilled' ? commuLingoResult.value : [];
+        // A section that failed (with no earlier copy in the model cache) is
+        // hidden like an empty one; the page says so and is not cached. The
+        // menu cards still work, so the homepage itself stays a 200.
+        const settled = [postsResult, diariesResult, researchResult, hubResult, commuLingoResult];
+        const partlyFailed = settled.some(result => result.status === 'rejected')
+            || (researchResult.status === 'fulfilled' && researchResult.value.failed);
+        if (partlyFailed) {
+            settled.filter(result => result.status === 'rejected')
+                .forEach(result => console.error('homepage section:', result.reason && result.reason.message));
+            setNoStore(res);
+        }
 
         const indexItems = [
             ...recentPosts.map(post => ({ title: post.title, href: `/post/${post.id}` })),
@@ -127,6 +143,7 @@ router.get('/', async (req, res) => {
             recentResearch,
             recentHub,
             recentCommuLingo,
+            partlyFailed,
             pageTitle: '사이버-레닌과 비숑의 블로그',
             pageDescription: res.locals.strings.siteDescription,
             pagePath: '/',
@@ -141,7 +158,9 @@ router.get('/', async (req, res) => {
         });
     } catch (error) {
         console.error('Error fetching homepage data:', error);
+        setNoStore(res);
         res.render('public/index', {
+            partlyFailed: true,
             recentPosts: [],
             recentDiaries: [],
             recentResearch: [],

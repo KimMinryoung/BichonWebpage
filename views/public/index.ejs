@@ -51,6 +51,10 @@
             </a>
         </div>
 
+        <% if (typeof partlyFailed !== 'undefined' && partlyFailed) { %>
+            <div class="box" role="status"><p><%= strings.public.partlyUnavailable %></p></div>
+        <% } %>
+
         <!-- Recent CommuLingo updates -->
         <% if (recentCommuLingo && recentCommuLingo.length > 0) { %>
             <section class="home-section" aria-labelledby="recent-commulingo-title">

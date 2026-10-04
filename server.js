@@ -122,6 +122,7 @@ app.use('/reports', require('./routes/reports'));
 app.use('/hub', require('./routes/hub'));
 app.use('/p', require('./routes/pages'));
 app.get('/health', (req, res) => { res.status(200).send('ok'); });
+app.get('/ready', require('./utils/readiness').readyHandler);
 
 // 404 handler
 app.use((req, res) => {

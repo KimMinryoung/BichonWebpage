@@ -49,7 +49,7 @@
             <% } %>
         <% } else { %>
             <div class="box">
-                <p><%= strings.public.noDiaries %></p>
+                <p><%= typeof loadFailed !== 'undefined' && loadFailed ? strings.public.listUnavailable : strings.public.noDiaries %></p>
             </div>
         <% } %>
     </div>

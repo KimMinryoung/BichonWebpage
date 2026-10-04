@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const hubStore = require('../config/hub-store');
 const seo = require('../utils/seo');
-const { clampInteger } = require('../utils/http');
+const { clampInteger, markDegraded } = require('../utils/http');
 const errorPage = require('../utils/error-page');
 
 const PER_PAGE = 20;
@@ -42,9 +42,10 @@ router.get('/', async (req, res) => {
         });
     } catch (error) {
         console.error('Error loading hub list:', error);
+        markDegraded(res, { empty: true });
         res.render('public/hub', {
             ...hubListLocals(pagePath),
-            items: [], currentPage: 1, totalPages: 1,
+            items: [], currentPage: 1, totalPages: 1, loadFailed: true,
         });
     }
 });

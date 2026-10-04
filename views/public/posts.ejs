@@ -33,7 +33,7 @@
             <% } %>
         <% } else { %>
             <div class="box">
-                <p><%= strings.public.noPosts %></p>
+                <p><%= typeof loadFailed !== 'undefined' && loadFailed ? strings.public.listUnavailable : strings.public.noPosts %></p>
             </div>
         <% } %>
     </div>

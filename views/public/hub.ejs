@@ -50,7 +50,7 @@
             <% } %>
         <% } else { %>
             <div class="box">
-                <p><%= lang === 'ko' ? '아직 큐레이션이 없습니다.' : 'No curations yet.' %></p>
+                <p><%= typeof loadFailed !== 'undefined' && loadFailed ? strings.public.listUnavailable : (lang === 'ko' ? '아직 큐레이션이 없습니다.' : 'No curations yet.') %></p>
             </div>
         <% } %>
     </div>

@@ -18,6 +18,10 @@
 
         <!-- Research panel -->
         <div class="report-panel active" id="panel-research">
+            <% const researchFeedFailed = typeof feedFailed !== 'undefined' && feedFailed; %>
+            <% if (researchFeedFailed && researchItems && researchItems.length > 0) { %>
+                <div class="box" role="status"><p><%= strings.public.partlyUnavailable %></p></div>
+            <% } %>
             <% if (researchItems && researchItems.length > 0) { %>
                 <ul class="post-list">
                     <% researchItems.forEach(item => { %>
@@ -54,7 +58,7 @@
                 <% } %>
             <% } else { %>
                 <div class="box">
-                    <p><%= lang === 'ko' ? '아직 리서치가 없습니다.' : 'No research reports yet.' %></p>
+                    <p><%= researchFeedFailed ? strings.public.listUnavailable : (lang === 'ko' ? '아직 리서치가 없습니다.' : 'No research reports yet.') %></p>
                 </div>
             <% } %>
         </div>

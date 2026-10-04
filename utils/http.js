@@ -34,8 +34,20 @@ function setNoStore(res) {
     res.setHeader('Surrogate-Control', 'no-store');
 }
 
+// A list page rendered after one of its sources failed. Nothing may cache
+// it (the next request should retry), and when nothing at all could be shown
+// it is a 503 rather than a 200 page claiming the list is empty.
+function markDegraded(res, { empty }) {
+    setNoStore(res);
+    if (empty) {
+        res.status(503);
+        res.setHeader('Retry-After', '30');
+    }
+}
+
 module.exports = {
     fetchWithTimeout,
     clampInteger,
     setNoStore,
+    markDegraded,
 };
