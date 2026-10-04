@@ -30,6 +30,7 @@ Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content agai
 - A successful `scripts/deploy` run counts as the full release check: tests, health, route sweep, and built-in consistency audits. Rerun any of those manually only when the deploy reports a failure.
 - After deployment, verify one representative affected production route or response. Use a browser only for CSS, layout, rendered markup, or client-side interaction changes; do not perform both local and production browser passes by default.
 - Add broader route, database, cache, or infrastructure checks only when the change touches those systems or an observed failure points there.
+- Verify a live change through the origin: on the server `http://127.0.0.1:3000<path>`, elsewhere the public URL with a unique query (`?verify=<timestamp>`). The plain public URL may serve Cloudflare's edge copy of anonymous HTML for up to 60 s, and nothing purges it automatically (leninbot's purge is off unless `LENINBOT_CLOUDFLARE_PURGE=1`); refresh that copy with `node scripts/cloudflare-purge.js <paths>` only when it matters.
 
 ## Context and task references
 
