@@ -103,12 +103,19 @@ function displayActivities(raw, lang, officeTitles = {}) {
     });
 }
 
-function affiliationMatches(actual, wanted) {
+// With an activity, a faction also counts inside the party it was part of
+// until a year (factionOf: 볼셰비키·멘셰비키 → 러시아 사회민주노동당 until 1912)
+// when the activity began by then.
+function affiliationMatches(actual, wanted, activity) {
     const seen = new Set();
     while (actual && !seen.has(actual)) {
         if (actual === wanted) return true;
         seen.add(actual);
-        actual = affiliations.get(actual)?.parentId;
+        const row = affiliations.get(actual);
+        const began = activity ? activity.startYear ?? activity.endYear : null;
+        if (row?.factionOf && began != null && began <= row.factionOf.until
+            && affiliationMatches(row.factionOf.id, wanted)) return true;
+        actual = row?.parentId;
     }
     return false;
 }
@@ -116,7 +123,7 @@ function affiliationMatches(actual, wanted) {
 function matchesActivities(person, filter) {
     if (!filter.functionId && !filter.affiliationId && !filter.officeId) return true;
     return (person.activities || []).some(a => (!filter.functionId || a.functionId === filter.functionId)
-        && (!filter.affiliationId || affiliationMatches(a.affiliationId, filter.affiliationId))
+        && (!filter.affiliationId || affiliationMatches(a.affiliationId, filter.affiliationId, a))
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
