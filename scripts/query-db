@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# query-db — read-only queries against the production Postgres (leninbot-pg).
+#
+# Usage:
+#   scripts/query-db "SELECT id, title FROM ai_diary ORDER BY id DESC LIMIT 3"
+#
+# Logs in as leninbot_ro (pg_read_all_data, read-only transactions by default),
+# created by leninbot's scripts/setup_readonly_db_role.sh. Its password file is
+# readable only by grass; the frontend's own DB_PASSWORD is never used here.
+# Writes go through scripts/apply-migration or the Admin tools instead.
+
+set -euo pipefail
+
+PW_FILE="${DB_RO_PASSWORD_FILE:-$HOME/.config/leninbot/db_ro_password}"
+
+usage() {
+    echo "Usage: scripts/query-db \"SELECT ...\"" >&2
+    exit 2
+}
+
+[ "$#" -gt 0 ] || usage
+
+SQL="$*"
+SQL="$(printf '%s' "$SQL" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//; s/[[:space:]]*;[[:space:]]*$//')"
+[ -n "$SQL" ] || usage
+
+if printf '%s' "$SQL" | grep -q ';'; then
+    echo "query-db: multiple statements are not allowed" >&2
+    exit 2
+fi
+
+case "$(printf '%s' "$SQL" | awk '{print tolower($1)}')" in
+    select|with|show|explain) ;;
+    *)
+        echo "query-db: only SELECT/WITH/SHOW/EXPLAIN diagnostics are allowed" >&2
+        exit 2
+        ;;
+esac
+
+if [ ! -r "$PW_FILE" ]; then
+    echo "query-db: $PW_FILE not readable (run as grass; create it with leninbot's scripts/setup_readonly_db_role.sh)" >&2
+    exit 1
+fi
+
+PGPASSWORD="$(<"$PW_FILE")"
+export PGPASSWORD
+
+exec psql \
+    "host=${DB_RO_HOST:-127.0.0.1} port=${DB_RO_PORT:-5434} dbname=${DB_RO_NAME:-leninbot} user=${DB_RO_USER:-leninbot_ro} sslmode=prefer application_name=frontend-query-db" \
+    -X -q -v ON_ERROR_STOP=1 -A -F $'\t' -P pager=off \
+    --single-transaction \
+    -c "SET TRANSACTION READ ONLY" \
+    -c "$SQL"

@@ -18,6 +18,7 @@ Redis(세션 저장소) 장애 중에는 로그인 기능만 멈춘다. 사이�
 - 운영 재시작은 `scripts/deploy --restart`를 사용한다. 코드가 이미지에 복사되므로 단순 docker restart로 새 코드는 반영되지 않는다.
 - data/는 `/home/grass/frontend/data:/app/data`로 마운트되어 실시간 반영된다. 수정본을 검증한 후 원자적으로 교체하고 콘텐츠별 캐시 갱신 절차를 따른다.
 - DB 연결 이상 복구의 최소 절차는 [AGENTS.md](../AGENTS.md)에 있다.
+- 운영 DB 조회는 `scripts/query-db "SELECT ..."`. 읽기 전용 계정 `leninbot_ro`(leninbot `scripts/setup_readonly_db_role.sh`가 만든 계정, 비밀번호 `~/.config/leninbot/db_ro_password`, grass만 읽음)로 `127.0.0.1:5434`에 붙고, 문장 하나의 SELECT/WITH/SHOW/EXPLAIN만 받는다. DB 쪽에서도 쓰기를 거부한다. 서비스 비밀번호를 빌리지 않는다.
 
 ## CommuLingo 검색 회귀 검사
 
