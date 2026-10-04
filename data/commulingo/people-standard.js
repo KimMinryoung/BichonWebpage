@@ -1,4 +1,4 @@
-const { displayActivities } = require('./person-activities');
+const { displayActivities, affiliations } = require('./person-activities');
 const { resolvePosition, collectionPosition, RED_LABELS } = require('./person-position');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
@@ -200,6 +200,16 @@ function buildSceneIndex(catalog, lang) {
     return sceneIndex;
 }
 
+// The affiliation the card and header show next to the years: the primary
+// activity's, or — when the primary has none (탐보프 봉기를 이끈 안토노프) — the
+// latest documented party membership among the other activities.
+function badgeActivity(activities, primary) {
+    if (!primary || primary.affiliationLabel) return primary || null;
+    const year = a => a.endYear ?? a.startYear ?? -Infinity;
+    return activities.filter(a => a !== primary && a.affiliationStatus === 'confirmed' && affiliations.get(a.affiliationId)?.kind === 'party')
+        .reduce((best, a) => (!best || year(a) >= year(best) ? a : best), null) || primary;
+}
+
 function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
     const patronymic = localize((data.patronymics || {})[raw.id], lang);
     const cyrillicPatronymic = (data.cyrillicPatronymics || {})[raw.id] || '';
@@ -271,6 +281,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
         },
         activities,
         primaryActivity: primaryActivity || null,
+        badgeActivity: badgeActivity(activities, primaryActivity),
         // The card medal and tag: the primary activity (the legacy role table is gone).
         role: primaryActivity || { icon: 'circle-help', label: '' },
         hasDetail: !!((data.sectionCounts || {})[raw.id]),

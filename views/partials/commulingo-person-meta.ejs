@@ -3,13 +3,14 @@ var fateIcons = {
     executed: '✕', assassinated: '✕', murdered: '✕', killed: '✕', suicide: '✕',
     deposed: '↓', exile: '→', natural: '○'
 };
+var badge = person.badgeActivity || person.primaryActivity;
 %>
     <div class="commu-person-meta">
-        <% if (person.primaryActivity && person.primaryActivity.affiliationLabel) { %>
-        <% if (person.primaryActivity.affiliationId) { %><a class="commu-person-affiliation" href="<%= person.primaryActivity.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
-            <% if (person.primaryActivity.affiliationIcon) { %><%- roleIconSvg(person.primaryActivity.affiliationIcon) %><% } %>
-            <%= person.primaryActivity.affiliationLabel %>
-        <% if (person.primaryActivity.affiliationId) { %></a><% } else { %></span><% } %>
+        <% if (badge && badge.affiliationLabel) { %>
+        <% if (badge.affiliationId) { %><a class="commu-person-affiliation" href="<%= badge.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
+            <% if (badge.affiliationIcon) { %><%- roleIconSvg(badge.affiliationIcon) %><% } %>
+            <%= badge.affiliationLabel %>
+        <% if (badge.affiliationId) { %></a><% } else { %></span><% } %>
         <% } %>
         <%- include('commulingo-person-position', { person: person, showOtherPositions: typeof showOtherPositions !== 'undefined' && showOtherPositions }) %>
         <span class="commu-person-years">
