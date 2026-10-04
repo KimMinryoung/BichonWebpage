@@ -24,7 +24,7 @@ Claude에 초안을 받고, validator 규칙과 하네스 전용 규칙으로 �
   `temp_dev/commulingo-rewrite/marxists/<id>.json`(본문·절 앵커)으로. HTML 캐시는
   `scripts/lib/commulingo-source-text.js`와 공유해 발췌 검사기도 같은 파일을 읽는다.
 - `dump_chapter.js` — 파이썬 쪽에 장 데이터를 JSON으로 넘긴다.
-- `candidate.js` — 모델 출력 → 장 객체 정규화(id·points·answer·source.href 채움, 키
+- `candidate.js` — 모델 출력 → 장 객체 정규화(id·points·answer·source.href 채움. id는 `basis`(같은 레벨의 기존 문항)를 다듬은 것이면 그 id를 유지하고, 통째로 바꿨거나 `new`면 `q3-r20261004`처럼 새로 만든다 — 학습 기록이 옛 문항에서 넘어오지 않게. 판정은 `scripts/check-commulingo-question-ids.js`와 같다. 키
   순서 고정). gate와 apply가 같은 함수를 쓴다.
 - `gate.js <candidate> --chapter <id>` — `scripts/lib/commulingo-checks.js` 전부(baseline
   없이) + 하네스 규칙: 원문 인용 verbatim·앵커 존재, keep 문항 원문 유지, 용어 카드

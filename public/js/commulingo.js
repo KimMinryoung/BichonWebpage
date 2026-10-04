@@ -1120,9 +1120,11 @@
         var total = lessonQuestionCount(active.lesson);
         var perfect = active.mode === 'retry' ? active.missed.length === 0 : active.score === total;
         var firstScore = active.mode === 'retry' ? active.firstScore : active.score;
+        // Retrying the missed questions to all correct still completes the
+        // lesson, but the score stays the first attempt's.
         var item = {
             completed: perfect,
-            score: perfect ? total : (active.mode === 'retry' ? active.firstScore : active.score),
+            score: firstScore,
             totalQuestions: total,
             updatedAt: new Date().toISOString()
         };

@@ -10,10 +10,14 @@
 //   q: { basis: 'q3'|'new', prompt{ko,en}, choices{ko[4],en[4]} (correct first),
 //        explanation{ko,en}, choiceFeedback{ko[4],en[4]},
 //        source{ anchor?, label{ko,en}, quote{ko,en} } }
-// The harness fills id, type, points, answer and source.href.
+// The harness fills id, type, points, answer and source.href. A question keeps
+// the id of its `basis` when it is that question edited; a replaced or new
+// question gets a fresh id (scripts/check-commulingo-question-ids.js), so a
+// learner's history of the old question is not counted for it.
 const fs = require('fs');
 const path = require('path');
 const { loadCommuLingoBundle } = require('../../data/commulingo');
+const { isReplacement, replacementId } = require('../check-commulingo-question-ids');
 
 const CANDIDATES_DIR = path.join(__dirname, '..', '..', 'temp_dev', 'commulingo-rewrite', 'candidates');
 const MARXISTS_DIR = path.join(__dirname, '..', '..', 'temp_dev', 'commulingo-rewrite', 'marxists');
@@ -53,6 +57,24 @@ function normalizeCandidate(raw, chapter) {
     const lessons = chapter.lessons.map(function(lesson) {
         const level = lesson.level;
         const items = raw.lessons[level] || [];
+        const previous = new Map((lesson.questions || []).map(function(q) { return [q.id, q]; }));
+        const taken = new Set(previous.keys());
+        const kept = new Set();
+        function questionId(q, index) {
+            // basis is "basic/q3"; one taken from the other level is new here.
+            const ref = String(q.basis || '').split('/');
+            const ownId = ref.length === 2 && ref[0] === level ? ref[1] : (ref.length === 1 ? ref[0] : '');
+            const basis = ownId && previous.has(ownId) && !kept.has(ownId) ? ownId : null;
+            if (basis) {
+                const old = previous.get(basis);
+                const then = { prompt: (old.prompt && old.prompt.ko) || '', answer: ((old.choices && old.choices.ko) || [])[old.answer] || '' };
+                const now = { prompt: (q.prompt && q.prompt.ko) || '', answer: ((q.choices && q.choices.ko) || [])[0] || '' };
+                if (!isReplacement(then, now)) { kept.add(basis); return basis; }
+            }
+            const id = replacementId(basis || 'q' + (index + 1), taken);
+            taken.add(id);
+            return id;
+        }
         const questions = items.map(function(q, index) {
             if (!q || typeof q !== 'object') throw new Error(level + '[' + index + '] is not an object');
             const source = q.source && typeof q.source === 'object' ? {
@@ -73,7 +95,7 @@ function normalizeCandidate(raw, chapter) {
                 });
             }
             return orderKeys({
-                id: 'q' + (index + 1),
+                id: questionId(q, index),
                 type: 'multiple_choice',
                 points: level === 'advanced' ? 3 : 2,
                 prompt: q.prompt,

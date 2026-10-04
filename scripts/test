@@ -18,6 +18,8 @@ cd "$(dirname "$0")/.."
 # builds from, with the repo mounted read-only (tests never write into it).
 NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 0)"
 if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
+    # Needs git, which the image lacks; plain CommonJS, so the host node runs it.
+    node scripts/check-commulingo-question-ids.js || { echo "tests failed"; exit 1; }
     echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in node:24.21.0-alpine" >&2
     exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp \
         -v "$PWD:/app:ro" -w /app node:24.21.0-alpine sh scripts/test "$@"
@@ -44,6 +46,7 @@ run test-error-page node scripts/test-error-page.js
 run test-visitor-hash node scripts/test-visitor-hash.js
 run test-access-boundaries node scripts/test-access-boundaries.js
 run static-page-sanitize node scripts/smoke-static-page-sanitize.js
+run question-ids    node scripts/check-commulingo-question-ids.js
 for f in scripts/smoke-commulingo-*.js; do
     run "$(basename "$f" .js)" node "$f"
 done

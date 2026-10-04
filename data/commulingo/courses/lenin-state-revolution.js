@@ -33,7 +33,8 @@ function lesson(ch, level, titleKo, titleEn, questions) {
         title: t(titleKo, titleEn),
         questions: questions.map((item, index) => ({
             ...item,
-            id: `q${index + 1}`,
+            // An explicit id (a replaced question, scripts/check-commulingo-question-ids.js) wins over the position.
+            id: item.id || `q${index + 1}`,
             points: level === 'advanced' ? 3 : 2,
         })),
     };
