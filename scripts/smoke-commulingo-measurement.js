@@ -8,6 +8,9 @@ for (const cookie of ['commulingo_test', 'commulingo_measurement_off']) { const 
 for (const ua of ['Googlebot', 'HeadlessChrome', 'curl/8', 'python-requests', 'Playwright']) { const req = base(); req.headers['user-agent'] = ua; assert.equal(excluded(req, env), true); }
 assert.equal(excluded(base(), { ...env, DEV_MODE: '1' }), true);
 assert.equal(excluded(base(), { NODE_ENV: 'development' }), true);
+const own = { ...env, MEASUREMENT_EXCLUDED_IPS: '37.27.33.127, 2a01:4f9:c012:b463:' };
+for (const ip of ['37.27.33.127', '2a01:4f9:c012:b463::1', '2a01:4f9:c012:b463::abcd']) { const req = base(); req.headers['cf-connecting-ip'] = ip; assert.equal(excluded(req, own), true, ip); }
+for (const ip of ['37.27.33.12', '37.27.33.1270', '2a01:4f9:c012:b464::1']) { const req = base(); req.headers['cf-connecting-ip'] = ip; assert.equal(excluded(req, own), false, ip); }
 assert.equal(sameOrigin(base()), true);
 for (const origin of ['', 'https://evil.example', 'null', 'http://cyber-lenin.com']) { const req = base(); req.headers.origin = origin; assert.equal(sameOrigin(req), false); }
 const cross = base(); cross.headers['sec-fetch-site'] = 'cross-site'; assert.equal(sameOrigin(cross), false);

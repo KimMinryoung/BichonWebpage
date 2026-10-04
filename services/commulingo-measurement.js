@@ -1,6 +1,22 @@
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const BOT = /bot|spider|crawl|headless|playwright|puppeteer|curl|wget|python|node-fetch|undici|facebookexternalhit|slurp/i;
 
+// The visitor's address as Cloudflare saw it (nginx passes Cloudflare's edge
+// address as the peer). A request sent straight to the origin could forge the
+// header, but only to exclude itself from the counts.
+function clientIp(req) {
+    return String(req.headers['cf-connecting-ip'] || req.ip || '').trim();
+}
+
+// MEASUREMENT_EXCLUDED_IPS: comma-separated addresses whose visits are not
+// counted (this server's own, so agents' checks stay out); an entry ending in
+// ':' or '.' is a prefix (an IPv6 /64 such as "2a01:4f9:c012:b463:").
+function excludedIp(ip, env) {
+    if (!ip) return false;
+    return String(env.MEASUREMENT_EXCLUDED_IPS || '').split(',').map(s => s.trim()).filter(Boolean)
+        .some(entry => (/[:.]$/.test(entry) ? ip.startsWith(entry) : ip === entry));
+}
+
 function excluded(req, env = process.env) {
     const session = req.session || {};
     const host = (req.headers.host || '').split(':')[0];
@@ -9,7 +25,8 @@ function excluded(req, env = process.env) {
         || !!(session.isAuthenticated || session.adminUser || session.user?.is_admin)
         || req.cookies?.commulingo_test === '1' || req.cookies?.commulingo_measurement_off === '1'
         || req.headers['x-commulingo-test'] === '1'
-        || !req.headers['user-agent'] || BOT.test(req.headers['user-agent']);
+        || !req.headers['user-agent'] || BOT.test(req.headers['user-agent'])
+        || excludedIp(clientIp(req), env);
 }
 
 function sameOrigin(req) {
