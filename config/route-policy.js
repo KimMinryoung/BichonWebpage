@@ -73,6 +73,29 @@ function isSessionFreeRequest(req) {
     return isPublicHtmlPath(req.path) && !hasSessionCookie(req);
 }
 
+// Requests that cannot be served without the session store (Redis). The
+// site's content is public, so during a Redis outage everything else is
+// served as to an anonymous visitor (config/session.js); these get a 503:
+// sign-in/sign-up/account and passkeys, the admin screens and the writer,
+// per-account learning progress (answering "not signed in" there would make
+// the browser drop a signed-in learner's local records), and every write
+// that relies on the session's CSRF token. The anonymous writes are the chat
+// proxy, learning measurement, chat links and the IP-only admin docs API.
+const ANONYMOUS_WRITE_PREFIXES = ['/api/proxy/', '/commulingo/measurement', '/commulingo/chat-links', '/commulingo/admin/api/docs'];
+const SESSION_ONLY_PREFIXES = ['/auth', '/admin', '/writer', '/api/proxy/writer', '/commulingo/progress', '/commulingo/admin'];
+
+function startsWithSegment(reqPath, prefix) {
+    return reqPath === prefix || reqPath.startsWith(prefix.endsWith('/') ? prefix : `${prefix}/`);
+}
+
+function requiresSessionStore(req) {
+    const reqPath = req.path;
+    if (startsWithSegment(reqPath, '/commulingo/admin/api/docs')) return false;
+    if (SESSION_ONLY_PREFIXES.some(prefix => startsWithSegment(reqPath, prefix))) return true;
+    if (req.method === 'GET' || req.method === 'HEAD' || req.method === 'OPTIONS') return false;
+    return !ANONYMOUS_WRITE_PREFIXES.some(prefix => startsWithSegment(reqPath, prefix));
+}
+
 function setDynamicLanguageCacheHeaders(res) {
     res.vary('Cookie');
     res.vary('Accept-Language');
@@ -87,5 +110,6 @@ module.exports = {
     isLanguageSpecificPublicPath,
     hasSessionCookie,
     isSessionFreeRequest,
+    requiresSessionStore,
     setDynamicLanguageCacheHeaders,
 };

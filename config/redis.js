@@ -15,6 +15,10 @@ const REDIS_URL = defaultRedisUrl();
 
 const client = createClient({
     url: REDIS_URL,
+    // Fail commands while disconnected instead of queueing them until the
+    // reconnect: every caller already degrades (caches skip, the session gate
+    // serves anonymously), and a queued session read would hang the request.
+    disableOfflineQueue: true,
     socket: {
         // Capped exponential backoff (1s, 2s, 4s, 8s, then 10s) instead of the
         // library default that retries every ~500 ms for the whole outage.

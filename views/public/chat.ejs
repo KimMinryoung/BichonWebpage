@@ -45,8 +45,9 @@
             <button type="button" class="btn btn-secondary" id="historyBtn"><%= strings.public.chatHistory %></button>
         </div>
         <div class="chat-nav-group" id="chatNavGroup">
-            <%- include('../partials/nav') %>
+            <%- include('../partials/nav', { outageNoticeElsewhere: true }) %>
         </div>
+        <%- include('../partials/site-notice') %>
 
         <div class="container">
             <div class="chat-box" id="chatBox"

@@ -124,6 +124,10 @@
     order: 1;
     flex: 0 0 auto;
 }
+.chat-page > .site-notice {
+    order: 1;
+    flex: 0 0 auto;
+}
 
 .chat-topbar {
     order: 2;

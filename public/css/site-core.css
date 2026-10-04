@@ -163,6 +163,23 @@ nav:has(+ .admin-bar) {
 .admin-bar {
     border-top: none;
 }
+.site-notice {
+    border: var(--border-width) solid var(--border);
+    border-top: none;
+    background: var(--bg-surface);
+}
+.site-notice p {
+    max-width: calc(var(--content-frame) - 2 * var(--gutter));
+    margin: 0 auto;
+    padding: var(--space-3) var(--gutter);
+    border-left: 3px solid var(--accent-red);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+.site-notice strong {
+    color: var(--accent-red);
+    margin-right: var(--space-2);
+}
 
 nav .nav-content {
     display: flex;

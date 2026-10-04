@@ -224,6 +224,27 @@ nav:has(+ .admin-bar) {
     border-top: none;
 }
 
+/* Outage notice under the site menu (login unavailable while Redis is down).
+   Same frame as the menu; the red rule and the label carry the state, not
+   colour alone. */
+.site-notice {
+    border: var(--border-width) solid var(--border);
+    border-top: none;
+    background: var(--bg-surface);
+}
+.site-notice p {
+    max-width: calc(var(--content-frame) - 2 * var(--gutter));
+    margin: 0 auto;
+    padding: var(--space-3) var(--gutter);
+    border-left: 3px solid var(--accent-red);
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+.site-notice strong {
+    color: var(--accent-red);
+    margin-right: var(--space-2);
+}
+
 nav .nav-content {
     display: flex;
     justify-content: space-between;
@@ -1540,6 +1561,12 @@ footer .footer-tagline {
    overrides the order so the toggle bar sits on top and the menu expands
    beneath it. */
 .chat-nav-group {
+    order: 1;
+    flex: 0 0 auto;
+}
+
+/* The outage notice sits outside the collapsible menu, right after it. */
+.chat-page > .site-notice {
     order: 1;
     flex: 0 0 auto;
 }

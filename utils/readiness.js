@@ -1,8 +1,10 @@
 // Readiness, as opposed to /health (process alive). A container that answers
-// /health but cannot reach Postgres or Redis renders empty lists and drops
-// every session, so scripts/deploy waits on this before a standby or a new
-// primary may serve. Each check has its own short timeout; the response names
-// only which dependency failed, never connection details.
+// /health but cannot reach Postgres renders empty lists, so scripts/deploy
+// waits on this before a standby or a new primary may serve. Redis is
+// reported but not required: without it the site serves everything public
+// and only sign-in is down (config/session.js), so a deploy goes ahead with a
+// warning. Each check has its own short timeout; the response names only
+// which dependency failed, never connection details.
 const db = require('../config/database');
 const redis = require('../config/redis');
 
@@ -31,7 +33,7 @@ async function readiness() {
     for (const [name, result] of [['db', dbResult], ['redis', redisResult]]) {
         if (result.status === 'rejected') console.error(`[ready] ${name} check failed:`, result.reason && result.reason.message);
     }
-    return { ok: status.db && status.redis, ...status };
+    return { ok: status.db, ...status };
 }
 
 async function readyHandler(req, res) {

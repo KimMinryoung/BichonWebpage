@@ -52,6 +52,8 @@ const ko = {
     public: {
         noPosts: '글이 아직 없다.',
         listUnavailable: '목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.',
+        outageLabel: '장애 안내',
+        loginUnavailableNotice: '로그인 기능에 일시적인 장애가 있어 로그인과 학습 기록 동기화를 잠시 이용할 수 없습니다. 공개 콘텐츠는 로그인 없이 그대로 이용할 수 있습니다.',
         partlyUnavailable: '일부 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.',
         postedAt: '에 올림',
         updatedAt: '에 고침',
@@ -682,6 +684,8 @@ const en = {
     public: {
         noPosts: 'No posts yet.',
         listUnavailable: 'The list could not be loaded. Please try again shortly.',
+        outageLabel: 'Notice',
+        loginUnavailableNotice: 'Sign-in is temporarily unavailable, so signing in and syncing learning records are paused. All public content can still be used without signing in.',
         partlyUnavailable: 'Some lists could not be loaded. Please refresh shortly.',
         postedAt: ', posted',
         updatedAt: ', updated',

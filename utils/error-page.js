@@ -63,5 +63,6 @@ function renderErrorPage(res, status, { message, backHref = '/', backLabel, robo
 
 const notFound = (res, opts) => renderErrorPage(res, 404, opts);
 const serverError = (res, opts) => renderErrorPage(res, 500, opts);
+const serviceUnavailable = (res, opts) => renderErrorPage(res, 503, opts);
 
-module.exports = { notFound, serverError };
+module.exports = { notFound, serverError, serviceUnavailable };

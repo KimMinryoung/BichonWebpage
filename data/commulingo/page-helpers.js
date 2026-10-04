@@ -18,10 +18,11 @@ function setPublicDataCache(req, res, version) {
 
 // Every rendered CommuLingo page and fragment: thirty seconds, then serve
 // stale while revalidating (the dictionaries refresh once a minute). A request
-// with a session cookie may render the account menu and its CSRF token, so it
-// keeps the private policy instead of being marked shareable.
+// with a session cookie may render the account menu and its CSRF token, and a
+// page carrying the login-outage notice must not outlive the outage, so both
+// keep the private policy instead of being marked shareable.
 function setShortPublicCache(res) {
-    if (res.req && hasSessionCookie(res.req)) {
+    if ((res.req && hasSessionCookie(res.req)) || (res.locals && res.locals.loginUnavailable)) {
         setDynamicLanguageCacheHeaders(res);
         return;
     }

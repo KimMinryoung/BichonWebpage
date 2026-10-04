@@ -148,12 +148,16 @@ run_container() {
         return 1
     fi
 }
-# /ready answers 200 only when the container reaches Postgres and Redis;
-# /health would pass a process that renders empty lists with no sessions.
+# /ready answers 200 only when the container reaches Postgres; /health would
+# pass a process that renders empty lists. Redis is not required (the site
+# then runs anonymous-only with a sign-in outage notice) but is reported.
 wait_ready() {
     local port="$1" elapsed=0 body=""
     while (( elapsed < 45 )); do
         if body="$(curl -sf --max-time 5 "http://localhost:${port}/ready" 2>/dev/null)"; then
+            if [[ "$body" == *'"redis":false'* ]]; then
+                warn "Port ${port}: Redis unreachable — sign-in is down, public pages are served anonymously."
+            fi
             return 0
         fi
         sleep 1
@@ -184,7 +188,7 @@ remove_standby
 log "Starting standby on port ${STANDBY_PORT}..."
 run_container "$STANDBY_NAME" "$STANDBY_PORT" no || fail_standby "Standby container could not start."
 wait_ready "$STANDBY_PORT" || fail_standby "Standby readiness check failed."
-log "Standby is ready (Postgres and Redis reachable)."
+log "Standby is ready."
 
 # 5. Route sweep and data checks on the standby. A failure stops the deploy
 #    before the primary is touched.

@@ -81,6 +81,8 @@ const _navItems = [
         </div>
     </div>
 </nav>
+<%# The chat page keeps the menu in a collapsed drawer and shows the notice itself. %>
+<% if (typeof outageNoticeElsewhere === 'undefined' || !outageNoticeElsewhere) { %><%- include('site-notice') %><% } %>
 <% if (isAuthenticated) { %>
 <nav class="admin-bar" aria-label="<%= lang === 'en' ? 'Administration' : '관리자 메뉴' %>">
     <div class="nav-content">
