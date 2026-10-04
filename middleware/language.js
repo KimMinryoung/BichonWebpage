@@ -42,12 +42,14 @@ function redirectLanguageQuery(req, res, next) {
     res.redirect(303, seo.languagePath(req.path, requestedLang) + (query ? `?${query}` : ''));
 }
 
-// An /en/ URL refreshes the cookie; an English cookie on an unprefixed
+// An /en/ URL sets the cookie; an English cookie on an unprefixed
 // language-specific page redirects to its /en/ form.
 function redirectEnglishCookie(req, res, next) {
     if (req.urlLanguage === 'en') {
+        // Only when it changes: a response that sets a cookie is never
+        // cached at the edge, and every /en/ page used to set this one.
+        if (req.cookies.lang !== 'en') res.cookie('lang', 'en', languageCookieOptions(req));
         req.cookies.lang = 'en';
-        res.cookie('lang', 'en', languageCookieOptions(req));
         return next();
     }
     if ((req.method !== 'GET' && req.method !== 'HEAD')

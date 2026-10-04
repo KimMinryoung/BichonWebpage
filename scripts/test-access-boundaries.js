@@ -4,7 +4,9 @@
 // - CommuLingo's short public cache is never applied to a request carrying a
 //   session cookie, whose HTML can hold the account menu and CSRF token;
 // - during a Redis outage only account features are refused: which requests
-//   need the session store (route-policy requiresSessionStore).
+//   need the session store (route-policy requiresSessionStore);
+// - Cloudflare's edge may cache only anonymous public HTML answered 200/404
+//   without a cookie, never a degraded or session response.
 const assert = require('node:assert');
 
 function loadAuth(env) {
@@ -52,4 +54,33 @@ for (const [method, path] of [
     ['POST', '/api/proxy/chat'], ['GET', '/api/proxy/history'], ['POST', '/commulingo/measurement'],
     ['POST', '/commulingo/chat-links'], ['PATCH', '/commulingo/admin/api/docs/x'],
 ]) assert.strictEqual(needs(method, path), false, `${method} ${path} works without the session store`);
+const { cachePolicy } = require('../middleware/cache-policy');
+const { setNoStore } = require('../utils/http');
+function edgeHeader({ path = '/posts', cookies = {}, locals = {}, status = 200, setCookie = false, degrade = false } = {}) {
+    const headers = {};
+    let written = null;
+    const res = {
+        locals,
+        statusCode: status,
+        setHeader: (k, v) => { headers[k.toLowerCase()] = v; },
+        getHeader: k => headers[k.toLowerCase()],
+        removeHeader: k => { delete headers[k.toLowerCase()]; },
+        vary: () => {},
+        writeHead: function () { written = { ...headers }; },
+    };
+    cachePolicy({ method: 'GET', path, cookies }, res, () => {});
+    if (setCookie) res.setHeader('Set-Cookie', 'lang=en');
+    if (degrade) setNoStore(res);
+    res.writeHead(status);
+    return written['cloudflare-cdn-cache-control'];
+}
+assert.match(edgeHeader(), /^public, max-age=60/);
+assert.match(edgeHeader({ path: '/commulingo/people/stalin', status: 404 }), /max-age=60/);
+for (const [label, opts] of [
+    ['session cookie', { cookies: { 'connect.sid': 's:x' } }],
+    ['login outage notice', { locals: { loginUnavailable: true } }],
+    ['server error', { status: 500 }], ['unavailable', { status: 503 }],
+    ['cookie set', { setCookie: true }], ['degraded page', { degrade: true }],
+    ['versioned data endpoint', { path: '/commulingo/catalog.json' }], ['admin', { path: '/admin' }],
+]) assert.strictEqual(edgeHeader(opts), undefined, `no edge cache: ${label}`);
 console.log('access boundaries ok');

@@ -28,6 +28,7 @@ function clampInteger(value, { fallback, min, max }) {
 // Responses that must never be cached anywhere (redirect hops that set a
 // cookie, the nonogram page, the writer 404).
 function setNoStore(res) {
+    res.removeHeader('Cloudflare-CDN-Cache-Control');
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
     res.setHeader('Pragma', 'no-cache');
     res.setHeader('Expires', '0');
