@@ -1,0 +1,733 @@
+{
+  "add": [
+    {
+      "personId": "pak-hon-yong",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-south-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": 1949,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Pak_Hon-yong",
+            "locator": "characters 3666:3782; sha256 325f28f9d9a5a2ce6937000741b9ecf5ce03f4a8f3dc82d1b8774d5a76ce1d17",
+            "claim": "박헌영은 1946년 12월 남조선로동당을 조직하고 부위원장 두 명 가운데 하나가 되었다.",
+            "excerpt": "In December 1946, he organized the Workers Party of South Korea known as (남로당), and became one of two vice chairmen."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Pak_Hon-yong",
+            "locator": "characters 4002:4192; sha256 325f28f9d9a5a2ce6937000741b9ecf5ce03f4a8f3dc82d1b8774d5a76ce1d17",
+            "claim": "박헌영은 1948년 9월에도 남조선로동당 비서직을 유지했다.",
+            "excerpt": "In September 1948, while keeping his role as Secretary of the Workers' Party of South Korea, he became Deputy Prime Minister and Foreign Minister of the newly established North Korean state."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "ho-hon",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-south-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": 1948,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ko.wikipedia.org/wiki/%ED%97%88%ED%97%8C",
+            "locator": "characters 7718:7745; sha256 b39a56fe8661622ae6f21dad63ab573bf5c0776f5d782b875f0b7ad2248e0a26",
+            "claim": "허헌은 1946년 11월 남조선로동당 결성에 참여했다.",
+            "excerpt": "1946년 11월 남조선로동당 결성에 참여하였다."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%ED%97%88%ED%97%8C",
+            "locator": "characters 7746:7828; sha256 b39a56fe8661622ae6f21dad63ab573bf5c0776f5d782b875f0b7ad2248e0a26",
+            "claim": "허헌은 1946년 12월 2일부터 제2대 남조선로동당 위원장으로 활동했다.",
+            "excerpt": "남조선로동당이 결성된 뒤 여운형이 당수직에 앉았다가 박헌영과의 갈등으로 물러나자, 그는 1946년 12월 2일 제2대 남로당 위원장으로 활동하였다."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%ED%97%88%ED%97%8C",
+            "locator": "characters 7856:7930; sha256 b39a56fe8661622ae6f21dad63ab573bf5c0776f5d782b875f0b7ad2248e0a26",
+            "claim": "1947년 8월 미군정은 남로당 당수 허헌에게 체포령을 내렸다.",
+            "excerpt": "이후 1947년 8월 11일 미군정 당국은 남로당 당수 허헌에 대한 체포령을 내리면서 남한에서 공산주의 활동을 불법이라고 선언하였다."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "kim-il-sung",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-north-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": 1948,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Kim_Il_Sung",
+            "locator": "characters 17836:17969; sha256 2fe3778d1515a1e9e3d18aef0156303a22d646e5a9e58ebee1bffb46d4aaf1fb",
+            "claim": "김일성은 공산당과 조선신민당이 합당해 생긴 북조선로동당의 부위원장이 되었다.",
+            "excerpt": "The Communist Party merged with the New People's Party of Korea to form the Workers' Party of North Korea, with Kim as vice chairman."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "ho-ka-i",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-north-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": 1948,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Ho_Ka-i",
+            "locator": "characters 3204:3310; sha256 28c0e25d11710a36185324f9add0d44bfd1cea71d831c317c58b7e27047979a4",
+            "claim": "허가이는 귀국 후 북조선로동당의 지도적 직책을 맡았다.",
+            "excerpt": "Yet, when he arrived, he was instead placed in a leadership role within the Workers' Party of North Korea."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Ho_Ka-i",
+            "locator": "characters 4593:4826; sha256 28c0e25d11710a36185324f9add0d44bfd1cea71d831c317c58b7e27047979a4",
+            "claim": "허가이는 1948년 9월 당 중앙위원회 전원회의에서 주영하를 대신해 당 부위원장이 되었다.",
+            "excerpt": "At the third plenum of the Second Central Committee from September 24 to 25, 1948, Ho Kai replaced Chu Yong-ha as the vice-chairman of the party as well as the chairman of the inspection committee, where Kim Il Sung was the chairman."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "choe-chang-ik",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-north-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": 1948,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Ch%27oe_Ch%27angik",
+            "locator": "characters 3960:4123; sha256 ff823cc9a0b910557dd83fff4dee98546c7924189b01909f698d16040f1dc70b",
+            "claim": "최창익은 1946년 8월 신민당과 공산당의 합당에 참여했다.",
+            "excerpt": "In August of that year he was involved in the integration of the New Democratic Party and the Communist Party of Korea to North faction of Workers' Party of Korea."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Ch%27oe_Ch%27angik",
+            "locator": "characters 4124:4265; sha256 ff823cc9a0b910557dd83fff4dee98546c7924189b01909f698d16040f1dc70b",
+            "claim": "최창익은 1946년 9월 북조선로동당 중앙위원회 상무위원회에서 상업 담당으로 선출되었다.",
+            "excerpt": "In September the Workers' Party of North Korea's Central Committee, the Standing Committee, elected Ch'oe as commerce and business commissar."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Ch%27oe_Ch%27angik",
+            "locator": "characters 4447:4584; sha256 ff823cc9a0b910557dd83fff4dee98546c7924189b01909f698d16040f1dc70b",
+            "claim": "최창익은 1948년 북조선로동당 중앙위원회에 참석했다.",
+            "excerpt": "In 1948 he attended the Workers' Party of North Korea's Central Committee and the deputies of the North Korean Supreme People's Assembly."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "choe-yong-gon",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-north-korean-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 8972:9035; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 북조선로동당 당적을 숨긴 채 조선민주당에서 활동했다.",
+            "excerpt": "그는 조선공산당 북조선분국과 북조선로동당의 당적을 가지고 있으면서도 당적을 숨기고 조선민주당에 잠입하여 활동했다."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "kim-tu-bong",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-choson-new-people",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1946,
+        "endYear": 1946,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Kim_Tu-bong",
+            "locator": "characters 3606:3682; sha256 2936101a8865a08a4e88a5dd58dceb25c961d6a8ad90c50069fc0fde317eac16",
+            "claim": "김두봉은 1946년 2월 조선신민당 위원장이 되었다.",
+            "excerpt": "In February 1946, Kim Tu-bong became the chairman of the New People's Party."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EA%B9%80%EB%91%90%EB%B4%89",
+            "locator": "characters 5340:5377; sha256 5cd3ad57d25e1ad98f57f80563347e0926d458543ecd84d307960e288ffddf74",
+            "claim": "김두봉의 조선신민당은 1946년 8월 조선공산당과 합당했다.",
+            "excerpt": "1946년 8월 그의 조선신민당은 김일성의 조선공산당과 합당하였다."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "choe-yong-gon",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-korean-democratic",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1945,
+        "endYear": 1955,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 7837:7952; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 1945년 귀국해 조선민주당 창당에 참여하고 부당수가 되었다.",
+            "excerpt": "9월 귀국하여 그는 11월 3일 조선민주당의 조직에 참여하여 오산중학교 시절 스승이었던 조만식과 함께 조선사회민주당을 창당하고 조선민주당 중앙위원회 부위원장을 맡았고, 조선민주당 중앙당 부당수에 선출되었다."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 10126:10163; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 1946년 2월 28일 조선민주당 중앙위원장에 선출되었다.",
+            "excerpt": "1946년 2월 28일 최용건은 조선민주당 중앙위원장에 선출되었다."
+          },
+          {
+            "source": "https://ko.wikipedia.org/wiki/%EC%B5%9C%EC%9A%A9%EA%B1%B4",
+            "locator": "characters 10164:10195; sha256 b51af1905cd140906af7591c2678c19e8392f1c2c43e0993c1d99b111a0479be",
+            "claim": "최용건은 1955년까지 조선민주당 중앙위원회 위원장이었다.",
+            "excerpt": "이후 55년까지 그는 조선민주당 중앙위원회 위원장이었다."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "wladyslaw-gomulka",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1926,
+        "endYear": 1936,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gomu%C5%82ka",
+            "locator": "characters 5217:5408; sha256 96d7f73a77222c24c8a1f047faabff0e67db77ae233c2c2db7a2dc2f4a52ea30",
+            "claim": "고무우카는 1926년 말 폴란드 공산당에 입당했다.",
+            "excerpt": "In late 1926, while in Drohobych, Gomułka became a member of the illegal-but-functioning Communist Party of Poland (Komunistyczna Partia Polski, KPP) and was arrested for political agitation."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gomu%C5%82ka",
+            "locator": "characters 8305:8515; sha256 96d7f73a77222c24c8a1f047faabff0e67db77ae233c2c2db7a2dc2f4a52ea30",
+            "claim": "고무우카는 폴란드 공산당 실롱스크 지부 서기로 활동하다 1936년 4월 체포되었다.",
+            "excerpt": "Gomułka resumed his communist and labor conspiratorial activities and kept advancing within the KPP organization until, as the secretary of the Party's Silesian branch, he was arrested in Chorzów in April 1936."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "boleslaw-bierut",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1921,
+        "endYear": 1936,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+            "locator": "characters 7259:7519; sha256 64694a5d786c08d0b018e9a5b9c732d98690d8098af33df3802d35e8d0051e74",
+            "claim": "비에루트는 1921년 폴란드 공산당에 정식으로 입당했다.",
+            "excerpt": "Jerzy Eisler wrote: \"[...] in light of the Soviet archival materials, in 1927–32 Bierut was a member of the Communist Party of the Soviet Union (Bolsheviks), with his party seniority counted from 1921, the moment he formally joined the Polish communist party.\""
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+            "locator": "characters 6394:6617; sha256 64694a5d786c08d0b018e9a5b9c732d98690d8098af33df3802d35e8d0051e74",
+            "claim": "비에루트는 1927년 폴란드 공산당 제4차 대회에서 중앙위원회 임시 서기국원이 되었다.",
+            "excerpt": "During the Fourth Congress of the Communist Party of Poland (KPP, the new name of the KPRP), which took place from 22 May to 9 August 1927, Bierut became a member of the Temporary Secretariat of the Central Committee again."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+            "locator": "characters 8134:8287; sha256 64694a5d786c08d0b018e9a5b9c732d98690d8098af33df3802d35e8d0051e74",
+            "claim": "비에루트는 1936년 수감 중 폴란드 공산당에서 제명되었다.",
+            "excerpt": "In 1936, while imprisoned, he was excluded in absentia from the KPP for \"unworthy of a communist behaviour during the investigation and the court trial\"."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "edward-ochab",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1929,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Edward_Ochab",
+            "locator": "characters 3779:3856; sha256 6ee8e532b3b4a7f7c0382ee3e809496cc1dbe49040d644f0852df3fca0335ea2",
+            "claim": "오하프는 1929년 여름 폴란드 공산당에 입당했다.",
+            "excerpt": "Ochab became a member of the Communist Party of Poland in the summer of 1929."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Edward_Ochab",
+            "locator": "characters 159:303; sha256 6ee8e532b3b4a7f7c0382ee3e809496cc1dbe49040d644f0852df3fca0335ea2",
+            "claim": "오하프는 1929년부터 폴란드 공산당원으로 활동하며 여러 차례 투옥되었다.",
+            "excerpt": "As a member of the Communist Party of Poland from 1929, he was repeatedly imprisoned for his activities under the Polish government of the time."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "aleksander-zawadzki",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1923,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Aleksander_Zawadzki",
+            "locator": "characters 1792:1853; sha256 d040c1d652108edf008cecbb4cf0983846ed9a269384a5f06346508970a19ce3",
+            "claim": "자바츠키는 1923년 폴란드 공산당에 입당했다.",
+            "excerpt": "In 1923, he became a member of the Communist Party of Poland."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "jakub-berman",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1928,
+        "endYear": 1936,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Jakub_Berman",
+            "locator": "characters 849:955; sha256 0996a5619ac04e6506ceb9490ef51bfc840ab532730c53404c4eef32f46948f7",
+            "claim": "베르만은 1928년 폴란드 공산당에 입당했다.",
+            "excerpt": "Jakub became a member of the Communist Youth Union and in 1928 joined the Communist Party of Poland (KPP)."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Jakub_Berman",
+            "locator": "characters 2030:2328; sha256 0996a5619ac04e6506ceb9490ef51bfc840ab532730c53404c4eef32f46948f7",
+            "claim": "베르만은 1935~1936년 폴란드 공산당을 대리해 좌파 정기간행물 창간 작업을 했다.",
+            "excerpt": "Between 1935 and 1936, he worked with Aleksander Wat (as his tutor on behalf of the KPP) in an attempt to establish a leftist periodical, with the intention of the cooperation of the communists with other leftist forces in Poland (mostly the Polish Socialist Party (PPS)), within the popular front."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "iosif-unshlikht",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1919,
+        "endYear": 1924,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_Unszlicht",
+            "locator": "characters 2607:2672; sha256 0318f30ab6526e024204c526183e8152e3acb1a1761e6e7cdacfeedf6e142740",
+            "claim": "운쉴리흐트는 1919년 1월부터 러시아의 폴란드 공산주의 노동자당 그룹 중앙집행위원회 지도부에 있었다.",
+            "excerpt": "Od stycznia 1919 roku zasiadał we władzach CKW grup KPRP w Rosji."
+          },
+          {
+            "source": "https://pl.wikipedia.org/wiki/J%C3%B3zef_Unszlicht",
+            "locator": "characters 4537:4760; sha256 0318f30ab6526e024204c526183e8152e3acb1a1761e6e7cdacfeedf6e142740",
+            "claim": "운쉴리흐트는 1924년 폴란드 공산주의 노동자당의 초혁명파를 지지해 지도부 교체에 관여했다.",
+            "excerpt": "Na V Kongresie Kominternu w czerwcu 1924 roku działał na rzecz krytyków kierownictwa partii i poparł stanowisko frakcji ultrarewolucyjnej w KPRP, która ostatecznie doprowadziła do obalenia dotychczasowego kierownictwa KPRP."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "feliks-kon",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1919,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://pl.wikipedia.org/wiki/Feliks_Kon",
+            "locator": "characters 7785:7999; sha256 3f7b6b50f25d640c5d09b6410f1c351a2e63bff2b9e1eff90f58dd4d799ee5db",
+            "claim": "콘은 1919년 9월부터 러시아에서 폴란드 공산주의 노동자당 집행국원이었다.",
+            "excerpt": "Od września 1919, po zajęciu Ukrainy przez Siły Zbrojne Południa Rosji przebywał w Moskwie, był członkiem Biura Polskiego przy KC RKP(b) i Biura Wykonawczego Komunistycznej Partii Robotniczej Polski (KPRP) w RFSRR."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "sofia-dzerzhinskaya",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-polish-communist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1927,
+        "endYear": 1927,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://pl.wikipedia.org/wiki/Zofia_Dzier%C5%BCy%C5%84ska",
+            "locator": "characters 1660:1734; sha256 fc246e08b1cf62b9c3b43f92c25f93fc088ac941bef2f16c7b2e6a2067a6389b",
+            "claim": "제르진스카야는 1927년 모스크바 근교에서 열린 폴란드 공산당 제4차 대회에 참가했다.",
+            "excerpt": "W 1927 brała udział w IV Zjeździe Komunistycznej Partii Polski pod Moskwą."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "boleslaw-bierut",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-polish-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1943,
+        "endYear": 1944,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+            "locator": "characters 10326:10443; sha256 64694a5d786c08d0b018e9a5b9c732d98690d8098af33df3802d35e8d0051e74",
+            "claim": "비에루트는 1943년 여름 나치 점령 폴란드에 들어왔다.",
+            "excerpt": "In the summer of 1943, Bierut arrived in Nazi-occupied Poland, likely dispatched there as a trusted Soviet operative."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+            "locator": "characters 11053:11177; sha256 64694a5d786c08d0b018e9a5b9c732d98690d8098af33df3802d35e8d0051e74",
+            "claim": "비에루트는 바르샤바 도착 후 폴란드 노동자당 중앙위원이 되었다.",
+            "excerpt": "Upon his arrival in Warsaw, Bierut became a member of the Central Committee of the PPR, which comprised several individuals."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+            "locator": "characters 10740:10808; sha256 64694a5d786c08d0b018e9a5b9c732d98690d8098af33df3802d35e8d0051e74",
+            "claim": "비에루트는 1943년 11월 23일 당 서기국원이 되었다.",
+            "excerpt": "Bierut became a member of the party Secretariat on 23 November 1943."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "august-thalheimer",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "german-kpo",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1929,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+            "locator": "characters 1771:1899; sha256 e76af2162de081aea86bfd75f1a36302446a579e147a14cc422ce82ab8eb83c6",
+            "claim": "탈하이머는 독일 공산당에서 제명된 뒤 브란들러와 함께 독일 공산당 반대파(KPO)를 결성했다.",
+            "excerpt": "However, a year later, he and Brandler were expelled from the KPD and they went on to form the Communist Party Opposition (KPO)."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+            "locator": "characters 2704:2767; sha256 e76af2162de081aea86bfd75f1a36302446a579e147a14cc422ce82ab8eb83c6",
+            "claim": "탈하이머는 프랑스 망명 중에도 KPO와 함께 활동했다.",
+            "excerpt": "He soon returned to France again to work with the KPO in exile."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "jules-guesde",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-french-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1880,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Jules_Guesde",
+            "locator": "characters 2637:2897; sha256 7f0e35ab5e1002a5f0748027816004bb53b34e095faf78610141afa858721c4b",
+            "claim": "게드는 1880년 프랑스 노동자당 르아브르 대회가 채택한 강령을 마르크스·라파르그와 함께 작성했다.",
+            "excerpt": "It was in conjunction with Marx and Lafargue that he drew up the programme accepted by the National Congress of the French Workers' Party at Le Havre in 1880, which laid stress on the formation of an international labour party working by revolutionary methods."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Jules_Guesde",
+            "locator": "characters 3626:3902; sha256 7f0e35ab5e1002a5f0748027816004bb53b34e095faf78610141afa858721c4b",
+            "claim": "게드는 노동자당 강령의 사회입법안을 의회에 제출했다(1894년).",
+            "excerpt": "He brought forward various proposals in social legislation forming the programme of the Workers' Party, without reference to the divisions among the Socialists, and, on 20 November 1894, succeeded in raising a two days' discussion of the collectivist principle in the Chamber."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "marcel-cachin",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-french-workers",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1891,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Marcel_Cachin",
+            "locator": "characters 158:224; sha256 88f1e11d5c2ef909fd2083b6dc04545605db8268b1ecbbe175711c484024001a",
+            "claim": "카섕은 1891년 게드의 프랑스 노동자당에 입당했다.",
+            "excerpt": "In 1891, Cachin joined Jules Guesde's French Workers' Party (POF)."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "benito-mussolini",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-italian-socialist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1900,
+        "endYear": 1914,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Benito_Mussolini",
+            "locator": "characters 5880:5976; sha256 0d002f970dfe0084c9de4557e098a5c270fcc714cd689619af6306c457b4a45f",
+            "claim": "무솔리니는 1900년 이탈리아 사회당에 입당했다.",
+            "excerpt": "In 1900 he joined the Italian Socialist Party, where he became acquainted with Olindo Vernocchi."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Benito_Mussolini",
+            "locator": "characters 10901:10994; sha256 0d002f970dfe0084c9de4557e098a5c270fcc714cd689619af6306c457b4a45f",
+            "claim": "무솔리니는 1912년 이탈리아 사회당 전국 지도부 위원이 되었다.",
+            "excerpt": "In 1912, he became a member of the National Directorate of the Italian Socialist Party (PSI)."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Benito_Mussolini",
+            "locator": "characters 15645:15746; sha256 0d002f970dfe0084c9de4557e098a5c270fcc714cd689619af6306c457b4a45f",
+            "claim": "무솔리니는 1914년 참전론으로 사회당에서 제명되었다.",
+            "excerpt": "He was then accused of moral and political unworthiness and was subsequently expelled from the party."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "amadeo-bordiga",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-italian-socialist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1910,
+        "endYear": 1921,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Amadeo_Bordiga",
+            "locator": "characters 1231:1334; sha256 4b29fec702b764d892ce74fbac683f8b8acd281c9649415362ff52be022db7f0",
+            "claim": "보르디가는 1910년 이탈리아 사회당에 들어갔다.",
+            "excerpt": "He was introduced to the Italian Socialist Party (PSI) in 1910 by his secondary school physics teacher."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Amadeo_Bordiga",
+            "locator": "characters 2697:2906; sha256 4b29fec702b764d892ce74fbac683f8b8acd281c9649415362ff52be022db7f0",
+            "claim": "보르디가는 10월 혁명 뒤 이탈리아 사회당 안에 공산주의 기권파를 조직했다.",
+            "excerpt": "Following the October Revolution, Bordiga rallied to the communist movement and formed the communist abstentionist faction within the PSI, abstentionist in that it opposed participation in bourgeois elections."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "gramsci",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-italian-socialist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1913,
+        "endYear": 1921,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Antonio_Gramsci",
+            "locator": "characters 5216:5368; sha256 1f8c3765f5f45937f6fb626b8adc32b54e076bb3430795a041762c4f820401ef",
+            "claim": "그람시는 1913년 말 이탈리아 사회당에 입당했다.",
+            "excerpt": "Gramsci joined the Italian Socialist Party (PSI) in late 1913, where he would later occupy a key position and observe from Turin the Russian Revolution."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Antonio_Gramsci",
+            "locator": "characters 6810:7063; sha256 1f8c3765f5f45937f6fb626b8adc32b54e076bb3430795a041762c4f820401ef",
+            "claim": "그람시는 1917년 토리노에서 사회당 임시위원회 위원이 되었다.",
+            "excerpt": "In the wake of the arrest of Socialist Party leaders that followed the revolutionary riots in August 1917, Gramsci became one of Turin's leading socialists; he was elected to the party's provisional committee and also made editor of Il Grido del Popolo."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "dino-grandi",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-italian-fascist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1921,
+        "endYear": 1943,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://it.wikipedia.org/wiki/Dino_Grandi",
+            "locator": "characters 5427:5531; sha256 e20e56766e7c67f196ba2f8b4a6a48da3e9638433fc49903f93c39b32f399967",
+            "claim": "그란디는 갓 창당한 국가파시스트당의 전국 지도부에 들어갔다.",
+            "excerpt": "Da parte sua, Grandi entrò a far parte della direzione nazionale del neonato Partito Nazionale Fascista."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Dino_Grandi",
+            "locator": "characters 3629:3797; sha256 67715c3f73009a451b4109cbd3c9362b3be82204232f74b8f2521ec26a98e344",
+            "claim": "그란디는 1943년 7월 24일 파시스트 대평의회 회의에 위원으로 참석했다.",
+            "excerpt": "As the war began to have its devastating effect on Italy after the Allied invasion of Sicily, Grandi and other members of the Fascist Grand Council met on 24 July 1943."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "galeazzo-ciano",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-italian-fascist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1922,
+        "endYear": 1943,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Galeazzo_Ciano",
+            "locator": "characters 424:582; sha256 69366caa3a54ae7286996fe8d723a2c279864234d88ee314ba944ce98fdc9fb3",
+            "claim": "치아노는 1922년 무솔리니의 로마 진군에 참가했다.",
+            "excerpt": "He was the son of Admiral Costanzo Ciano, a founding member of the National Fascist Party; father and son both took part in Mussolini's March on Rome in 1922."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Galeazzo_Ciano",
+            "locator": "characters 878:1006; sha256 69366caa3a54ae7286996fe8d723a2c279864234d88ee314ba944ce98fdc9fb3",
+            "claim": "치아노는 1943년 7월 파시스트 대평의회 위원으로 무솔리니 축출에 가담했다.",
+            "excerpt": "In July 1943, Ciano was among the members of the Grand Council of Fascism that forced Mussolini's ousting and subsequent arrest."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "largo-caballero",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-spanish-socialist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1894,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Francisco_Largo_Caballero",
+            "locator": "characters 1161:1246; sha256 3ba7a7f4d565889beea9382f9dd855992308a01f50a96707ab3006a89bfe27e6",
+            "claim": "라르고 카바예로는 1894년 스페인 사회노동당에 입당했다.",
+            "excerpt": "He participated in a construction workers strike in 1890 and joined the PSOE in 1894."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Francisco_Largo_Caballero",
+            "locator": "characters 230:352; sha256 3ba7a7f4d565889beea9382f9dd855992308a01f50a96707ab3006a89bfe27e6",
+            "claim": "라르고 카바예로는 스페인 사회노동당의 역사적 지도자 가운데 하나였다.",
+            "excerpt": "He was one of the historic leaders of the Spanish Socialist Workers' Party (PSOE) and of the Workers' General Union (UGT)."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "juan-negrin",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-spanish-socialist",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1929,
+        "endYear": 1946,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Juan_Negr%C3%ADn",
+            "locator": "characters 5618:5814; sha256 4af575d173580b5ad8b6d9913117a7bfd98cf7b9acc804ee93d2e81d81f2aa4c",
+            "claim": "네그린은 1929년 봄 스페인 사회노동당에 입당했다.",
+            "excerpt": "Negrín joined the Spanish Socialist Workers' Party (PSOE) in the spring of 1929, at the height of the crisis of the dictatorship of General Miguel Primo de Rivera and the monarchy of Alfonso XIII."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Juan_Negr%C3%ADn",
+            "locator": "characters 1925:2005; sha256 4af575d173580b5ad8b6d9913117a7bfd98cf7b9acc804ee93d2e81d81f2aa4c",
+            "claim": "스페인 사회노동당은 1946년 네그린을 제명했다.",
+            "excerpt": "The PSOE expelled Negrín in 1946, but he was posthumously rehabilitated in 2008."
+          }
+        ]
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "personId": "wladyslaw-gomulka",
+      "find": {
+        "affiliationId": "party-polish-pzpr",
+        "startYear": 1943
+      },
+      "set": {
+        "affiliationId": "party-polish-workers"
+      },
+      "why": "1943–1947 활동은 1948년 12월 창당한 폴란드 통일노동자당(PZPR)이 아니라 폴란드 노동자당(PPR) 총서기 활동이다. 기존 근거 문장도 PPR을 말한다. 단 카탈로그상 PPR의 1944–1948 집권기 지배 체제 활동은 state-poland 몫이므로, 1943년(지하기)만 PPR로 두고 1944–1947을 state-poland로 나누는 방안도 검토 필요.",
+      "evidence": [
+        {
+          "source": "https://en.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gomu%C5%82ka",
+          "locator": "characters 812:949; sha256 96d7f73a77222c24c8a1f047faabff0e67db77ae233c2c2db7a2dc2f4a52ea30",
+          "claim": "고무우카는 1943년 지하 폴란드 노동자당의 총서기가 되었다.",
+          "excerpt": "In 1943, he became the leader of the left-wing resistance fighters, the general secretary of the underground Polish Workers' Party (PPR)."
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gomu%C5%82ka",
+          "locator": "characters 19171:19385; sha256 96d7f73a77222c24c8a1f047faabff0e67db77ae233c2c2db7a2dc2f4a52ea30",
+          "claim": "폴란드 통일노동자당은 1948년 12월 PPR과 폴란드 사회당의 합당으로 생겼다.",
+          "excerpt": "In December, soon after the PPR and Polish Socialist Party merged to form Polish United Workers' Party (PZPR) (which was essentially the PPR under a new name), Gomułka was dropped from the merged party's Politburo."
+        }
+      ]
+    }
+  ]
+}

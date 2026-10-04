@@ -79,14 +79,16 @@ def main():
                 result.append(act)
                 continue
             how, pid = verdict
-            counts[how] += 1
-            changed = True
             if how == 'move':
                 result.append(party_activity(act, pid))
             else:
                 result.append(act)
-                if not any(a.get('affiliationId') == pid for a in acts):
-                    result.append({**party_activity(act, pid), 'primary': False})
+                # Re-running finds the added party activity and leaves the card alone.
+                if any(a.get('affiliationId') == pid for a in acts):
+                    continue
+                result.append({**party_activity(act, pid), 'primary': False})
+            counts[how] += 1
+            changed = True
         if changed:
             sources = sorted({e['source'] for a in result for e in a.get('evidence', [])})
             people.append({'id': person['id'], 'activities': result, 'sources': sources})
