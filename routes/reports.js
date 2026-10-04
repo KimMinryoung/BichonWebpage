@@ -22,8 +22,6 @@ function reportTitle(report) {
     return (report.content || `Report #${report.id}`).split('\n')[0].substring(0, 80);
 }
 
-});
-
 router.get(['/private', '/admin/private-reports'], (req, res) => {
     res.redirect('/reports');
 });

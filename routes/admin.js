@@ -28,8 +28,6 @@ router.post('/logout', (req, res) => {
     });
 });
 
-});
-
 // Page views per site menu (services/menu-views.js), both languages summed,
 // in menu order; a menu without views shows zeros. Days are Korean dates.
 async function loadMenuViews(lang) {
