@@ -26,6 +26,18 @@ const router = express.Router();
 
 const { termListData, termGroupCardsHtml, buildTermPanel } = require('../data/commulingo/term-presentation');
 const { buildEventPanel } = require('../data/commulingo/event-presentation');
+const activitiesModel = require('../data/commulingo/person-activities');
+const { loadStandardizedPeople } = require('../data/commulingo/people-view');
+const { localize } = require('../data/commulingo/localize');
+
+// A term that names an affiliation links to the people filed under it.
+async function affiliationMembersFor(termId, lang) {
+    const affiliation = activitiesModel.affiliationByTerm.get(termId);
+    if (!affiliation) return null;
+    const { standardized } = await loadStandardizedPeople(lang);
+    const count = standardized.people.filter(p => activitiesModel.matchesActivities(p, { affiliationId: affiliation.id })).length;
+    return count ? { label: localize(affiliation.label, lang), count, href: activitiesModel.activityHref({ affiliationId: affiliation.id }) } : null;
+}
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 const { courseChaptersFor } = require('../data/commulingo/book-page');
 
@@ -110,6 +122,7 @@ router.get('/:termId', async (req, res) => {
             eventPanel: term.sameSubjectEvent
                 ? await buildEventPanel(term.sameSubjectEvent.id, lang)
                 : null,
+            affiliationMembers: await affiliationMembersFor(term.id, lang),
             practiceDecks: await practiceDecksFor(practiceHrefs, lang),
             courseChapters: await courseChaptersFor(
                 [`terms:${term.id}`].concat(term.sameSubjectEvent ? [`events:${term.sameSubjectEvent.id}`] : []), lang),

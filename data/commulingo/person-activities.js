@@ -3,6 +3,9 @@ const { localize } = require('./localize');
 const badRequest = message => require('./people-admin-fields').badRequest(message);
 const functions = new Map(catalog.functions.map(row => [row.id, row]));
 const affiliations = new Map(catalog.affiliations.map(row => [row.id, row]));
+// The glossary entries that name an affiliation (사회혁명당 → russian-sr), so the
+// term page can open the people filed under it and the filter can name the term.
+const affiliationByTerm = new Map(catalog.affiliations.flatMap(row => (row.termIds || []).map(termId => [termId, row])));
 
 // Affiliations with a bounded existence carry periods: [[start|null, end|null], ...].
 // One year of slack on each side absorbs founding and dissolution years.
@@ -117,4 +120,4 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };

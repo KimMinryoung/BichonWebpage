@@ -51,6 +51,14 @@
             </div>
         </section>
         <% } %>
+        <% if (p.affiliationMembers) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-members">
+            <h2 id="term-members"><%= strings.commuLingoViews.termPanel.affiliationMembers %></h2>
+            <ul class="commu-person-event-links">
+                <li><a href="<%= p.affiliationMembers.href %>"><span><%= strings.commuLingoViews.termPanel.affiliationMembersCount(p.affiliationMembers.count) %></span><strong><%= strings.commuLingoViews.termPanel.affiliationMembersRow(p.affiliationMembers.label) %></strong></a></li>
+            </ul>
+        </section>
+        <% } %>
         <% if (p.term.people.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-people">
             <h2 id="term-people"><%= strings.commuLingoViews.termPanel.relatedPeople %></h2>
