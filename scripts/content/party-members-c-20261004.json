@@ -1,0 +1,135 @@
+{
+  "add": [
+    {
+      "personId": "chris-hani",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-african-national-congress",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1957,
+        "endYear": 1993,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Chris_Hani",
+            "locator": "characters 1875:1924; sha256 eaff9b17818a478533218be7592309398f8f940a23cb52fe1426b567af9a995b",
+            "claim": "하니는 15세(1957년)에 ANC 청년동맹에 가입했다.",
+            "excerpt": "At the age of 15, he joined the ANC Youth League."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Chris_Hani",
+            "locator": "characters 10602:10696; sha256 eaff9b17818a478533218be7592309398f8f940a23cb52fe1426b567af9a995b",
+            "claim": "하니는 1993년 사망 당시 만델라 다음으로 인기 있는 ANC 지도자였다.",
+            "excerpt": "At the time of his death, he was the most popular ANC leader after his senior, Nelson Mandela."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "ruth-first",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-african-national-congress",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": null,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Ruth_First",
+            "locator": "characters 3502:3605; sha256 fcbc187ca18b2717d4e80b0e1d37a73afd63fee04d3a476815c986d82ea434b7",
+            "claim": "퍼스트는 공산당과 함께 아프리카민족회의의 당원이기도 했다.",
+            "excerpt": "First and Slovo were also members of the African National Congress, in addition to the Communist Party."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "fanon",
+      "activity": {
+        "functionId": "propaganda",
+        "affiliationId": "party-algerian-fln",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1955,
+        "endYear": 1961,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Frantz_Fanon",
+            "locator": "characters 8847:9032; sha256 0057835bd8bc27900ba04e29461878464df965e7f1f31d0a51217820a6802103",
+            "claim": "파농은 1955년 블리다에서 피에르 숄레와 접촉한 뒤 알제리 민족해방전선(FLN)에 가입했다.",
+            "excerpt": "Following the outbreak of the Algerian revolution in November 1954, Fanon joined the Front de Libération Nationale (FLN), after having made contact with Pierre Chaulet at Blida in 1955."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Frantz_Fanon",
+            "locator": "characters 10480:10686; sha256 0057835bd8bc27900ba04e29461878464df965e7f1f31d0a51217820a6802103",
+            "claim": "파농은 튀니스에서 FLN에 공개적으로 합류해 생애 끝(1961년)까지 기관지 『엘 무자히드』 편집진으로 글을 썼다.",
+            "excerpt": "Shortly afterwards, Fanon was expelled from Algeria and moved to Tunis, where he joined the FLN openly. He was part of the editorial collective of Al Moudjahid, for which he wrote until the end of his life."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "mn-roy",
+      "activity": {
+        "functionId": "organizing",
+        "affiliationId": "party-indian-congress",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1936,
+        "endYear": 1940,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/M._N._Roy",
+            "locator": "characters 14710:14903; sha256 de30ba5fc8c612696107dab01e9954c474d47c0a8014ea83130ba59da0c6b816",
+            "claim": "로이는 1936년 11월 석방된 뒤 코민테른의 보이콧 지시를 거슬러 인도 공산주의자들에게 인도 국민회의 가입을 촉구했다.",
+            "excerpt": "Released in November 1936 in bad health, Roy went to Allahabad for recovery. Defying the Comintern order to boycott the Indian National Congress, Roy urged Indian communists to join this Party."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/M._N._Roy",
+            "locator": "characters 16030:16083; sha256 de30ba5fc8c612696107dab01e9954c474d47c0a8014ea83130ba59da0c6b816",
+            "claim": "로이는 푸네에서 국민회의 안의 급진파 조직인 급진국민회의파 연맹을 결성했다.",
+            "excerpt": "In Pune, he formed his League of Radical Congressmen."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/M._N._Roy",
+            "locator": "characters 17042:17138; sha256 de30ba5fc8c612696107dab01e9954c474d47c0a8014ea83130ba59da0c6b816",
+            "claim": "로이는 1940년 국민회의와 관계를 끊고 급진민주당을 창당했다.",
+            "excerpt": "He severed connections with the Congress Party and created the Radical Democratic Party in 1940."
+          }
+        ]
+      }
+    },
+    {
+      "personId": "denis-sassou-nguesso",
+      "activity": {
+        "functionId": "political-leadership",
+        "affiliationId": "party-congolese-labour",
+        "affiliationStatus": "confirmed",
+        "relation": "membership",
+        "startYear": 1992,
+        "endYear": null,
+        "primary": false,
+        "evidence": [
+          {
+            "source": "https://en.wikipedia.org/wiki/Denis_Sassou_Nguesso",
+            "locator": "characters 3410:3565; sha256 8d845577217e49b22f8f5abd44db5896baf04940700a3cecb6fa46df129dfbb1",
+            "claim": "사수응게소는 1969년 12월 창당한 콩고 노동당(PCT)의 첫 중앙위원회 위원으로 선출되었다.",
+            "excerpt": "In December 1969, Sassou Nguesso was elected as a member of the first central committee of the new Congolese Labor Party (Parti Congolais du travail, PCT)."
+          },
+          {
+            "source": "https://en.wikipedia.org/wiki/Denis_Sassou_Nguesso",
+            "locator": "characters 15927:16067; sha256 8d845577217e49b22f8f5abd44db5896baf04940700a3cecb6fa46df129dfbb1",
+            "claim": "사수응게소는 2006년 12월 PCT 제5차 임시대회에서 중앙위원회 의장으로 재선되었다.",
+            "excerpt": "Sassou Nguesso was re-elected as President of the Central Committee of the PCT at the party's Fifth Extraordinary Congress in December 2006."
+          }
+        ]
+      }
+    }
+  ],
+  "corrections": []
+}

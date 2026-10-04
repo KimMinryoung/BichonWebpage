@@ -1,0 +1,351 @@
+{
+ "add": [
+  {
+   "personId": "ana-pauker",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-romanian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1921,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ana_Pauker",
+      "locator": "characters 1422:1655; sha256 f8cf79b1c431b6fbf7946df754282f8adb465690efe70d2200cce361861f1204",
+      "claim": "파우커는 1921년 대회에서 당을 장악하고 코민테른에 가입한 친볼셰비키 분파(훗날 루마니아 공산당)에서 활동했다.",
+      "excerpt": "She was active in the pro-Bolshevik faction of the group, the one that took control after the Party's Congress of 8–12 May 1921 and joined the Comintern under the name of Socialist-Communist Party (future Communist Party of Romania)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ana_Pauker",
+      "locator": "characters 3915:4057; sha256 f8cf79b1c431b6fbf7946df754282f8adb465690efe70d2200cce361861f1204",
+      "claim": "파우커는 당 지도부의 공식 2인자이자 중앙위원회 4인 서기국의 일원이었다.",
+      "excerpt": "Pauker formally held the number-two position in the Party leadership and was a member of the four-person Secretariat of the Central Committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasile-luca",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-romanian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1924,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vasile_Luca",
+      "locator": "characters 2547:2675; sha256 f8cd35e46542bb41a4eecd10810e413b61fd12a8e9e89a0ec77373b1584761c8",
+      "claim": "루카는 당이 불법화된 1924년 브라쇼브 지역위원회 서기로 선출되었다.",
+      "excerpt": "In 1924, as the party was outlawed and forced into the underground, Luca was elected secretary of the Brașov regional committee."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vasile_Luca",
+      "locator": "characters 2676:2837; sha256 f8cd35e46542bb41a4eecd10810e413b61fd12a8e9e89a0ec77373b1584761c8",
+      "claim": "루카는 1929년 루페니 파업 준비에 참여하며 국내 정치국원으로 선출되었다.",
+      "excerpt": "Participating in the preparations for the 1929 Lupeni Strike in the Jiu Valley, he was also elected, together with Alexandru Nicolschi, to the internal Politburo"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "teohari-georgescu",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-romanian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1929,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ro.wikipedia.org/wiki/Teohari_Georgescu",
+      "locator": "characters 611:665; sha256 2e56b2d4dc2b21dae2dbc2ad3fc7f5843497ca265de5a35022dd2093043810e9",
+      "claim": "게오르게스쿠는 1929년 루마니아 공산당원이 되었다.",
+      "excerpt": "A devenit membru al Partidului Comunist Român în 1929."
+     },
+     {
+      "source": "https://ro.wikipedia.org/wiki/Teohari_Georgescu",
+      "locator": "characters 666:777; sha256 2e56b2d4dc2b21dae2dbc2ad3fc7f5843497ca265de5a35022dd2093043810e9",
+      "claim": "게오르게스쿠는 1933년 당 활동으로 비밀경찰에 체포되었다.",
+      "excerpt": "Siguranța îl arestează în 1933 pentru activitățile sale, dar reușește să scape doar cu două luni de închisoare."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nicolae-ceausescu",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-romanian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1932,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nicolae_Ceau%C8%99escu",
+      "locator": "characters 4058:4199; sha256 b6c1ea71a268425bd966254cf2a66ebfbb4dac20e2a6f135c1def741b690c966",
+      "claim": "차우셰스쿠는 1932년 초 공산당원이 되어 당 활동에 참여했다.",
+      "excerpt": "Ceaușescu was soon involved in Communist Party activities (becoming a member in early 1932), but as a teenager he was given only small tasks."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nicolae_Ceau%C8%99escu",
+      "locator": "characters 6441:6594; sha256 b6c1ea71a268425bd966254cf2a66ebfbb4dac20e2a6f135c1def741b690c966",
+      "claim": "차우셰스쿠는 1944~1945년 공산주의청년동맹 서기를 지냈다.",
+      "excerpt": "After World War II, when Romania was beginning to fall under Soviet influence, Ceaușescu served as secretary of the Union of Communist Youth (1944–1945)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "elena-ceausescu",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-romanian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1939,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Elena_Ceau%C8%99escu",
+      "locator": "characters 841:980; sha256 ae0dba784dac58c5f5a37ee45761b28a4d3e3ed167560ab844fa635badd28f1f",
+      "claim": "엘레나 차우셰스쿠는 1939년 섬유공장 노동자로서 루마니아 공산당 부쿠레슈티 지부에 가입했다.",
+      "excerpt": "She joined the Bucharest branch of the Romanian Communist Party as a textile factory worker in 1939, and met 21-year-old Nicolae Ceaușescu."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "dimitrov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-bulgarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1945,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgi_Dimitrov",
+      "locator": "characters 723:778; sha256 d01f8e93cca2affad13c5e6ae75f48dbe2c87f3cf17b4653c21b26d12482233e",
+      "claim": "디미트로프는 1919년 불가리아 공산당 창당에 참여했다.",
+      "excerpt": "In 1919, he helped found the Bulgarian Communist Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgi_Dimitrov",
+      "locator": "characters 99:261; sha256 d01f8e93cca2affad13c5e6ae75f48dbe2c87f3cf17b4653c21b26d12482233e",
+      "claim": "디미트로프는 1933년부터 1949년까지 불가리아 공산당 중앙위원회 총비서였다.",
+      "excerpt": "was a Bulgarian communist politician and revolutionary who served as General Secretary of the Central Committee of the Bulgarian Communist Party from 1933 to 1949"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasil-kolarov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-bulgarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1945,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vasil_Kolarov",
+      "locator": "characters 1650:1778; sha256 c1dcf2a8bccbf030aaa8ca27bb027942d281f2b071dc52f96b13cf6713a1621a",
+      "claim": "콜라로프는 1919년 4월 창당한 불가리아 공산당의 초대 중앙위원회 서기로 선출되었다.",
+      "excerpt": "In April 1919, the Bulgarian Communist Party was established, with Kolarov elected the first Secretary of its Central Committee."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vasil_Kolarov",
+      "locator": "characters 1917:2048; sha256 c1dcf2a8bccbf030aaa8ca27bb027942d281f2b071dc52f96b13cf6713a1621a",
+      "claim": "콜라로프는 1921년 코민테른 3차 대회에 불가리아 공산당 대표로 참석했다.",
+      "excerpt": "was able to attend the 3rd World Congress held in Moscow the following year as the representative of the Bulgarian Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "traicho-kostov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-bulgarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": 1945,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://bg.wikipedia.org/wiki/Трайчо_Костов",
+      "locator": "characters 1569:1614; sha256 de717f4d9bb7f29680575e9c8b280d98a8daf8584cbd4d80d46f35560e8c72cb",
+      "claim": "코스토프는 1920년부터 불가리아 노동자당(공산당) 활동에 참여했다.",
+      "excerpt": "От 1920 г. участва в дейността на БРП (т.с.)."
+     },
+     {
+      "source": "https://bg.wikipedia.org/wiki/Трайчо_Костов",
+      "locator": "characters 2237:2328; sha256 de717f4d9bb7f29680575e9c8b280d98a8daf8584cbd4d80d46f35560e8c72cb",
+      "claim": "코스토프는 1931~1945년 당 중앙위원, 1937년부터 중앙위원회 서기였다.",
+      "excerpt": "Между 1931 – 1945 г. е член на ЦК на БРП (т.с.). От 1937 г. е секретар на ЦК на БРП (т.с.)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "todor-zhivkov",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-bulgarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1932,
+    "endYear": 1945,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Todor_Zhivkov",
+      "locator": "characters 4131:4271; sha256 8fe121739a2a8d3efb4e01b8dde508d1a42f636b0b087fb80cd0b0d104221c29",
+      "claim": "지브코프는 1932년 불가리아 노동자당(공산당)에 입당해 소피아 지역 당위원회에서 활동했다.",
+      "excerpt": "In 1932, he joined the BWP proper, later serving as secretary of its Second Borough Committee and as a member of its Sofia County Committee."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Todor_Zhivkov",
+      "locator": "characters 5288:5388; sha256 8fe121739a2a8d3efb4e01b8dde508d1a42f636b0b087fb80cd0b0d104221c29",
+      "claim": "지브코프는 1945년 불가리아 공산당 중앙위원 후보가 되었다.",
+      "excerpt": "He was elected to the BCP Central Committee as a candidate member in 1945 and a full member in 1948."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "koci-xoxe",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-albanian-labour",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1941,
+    "endYear": 1943,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://sq.wikipedia.org/wiki/Ko%C3%A7i_Xoxe",
+      "locator": "characters 1174:1361; sha256 c903da2c4deb9e1980dc0d6744a8177a0304b92580c0d03d640e44bac46aa337",
+      "claim": "조제는 알바니아 공산당 창당 회의 참가자이자 창당 때부터 정치국원·중앙위원이었다.",
+      "excerpt": "Është themelues dhe kryetar i parë i grupit komunist të Korçës dhe pjesëtar i mbledhjes themeluese të Partisë Komuniste Shqiptare, anëtar i Byrosë Politike dhe K.Q. të saj që nga krijimi."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B7%D0%BE%D0%B4%D0%B7%D0%B5%2C_%D0%9A%D0%BE%D1%87%D0%B8",
+      "locator": "characters 1020:1174; sha256 0c5fd4b3f67f3b2624dcd7c40f333d7024d59a3edc4594f53277fcbd3b18f779",
+      "claim": "조제는 1941년 알바니아 공산당(1948년부터 알바니아 노동당) 창당자 가운데 한 사람이었다.",
+      "excerpt": "В 1941 году Кочи Дзодзе стал одним из основателей Коммунистической партии Албании (КПА) (с 1948 — Албанская партия труда (АПТ)) во главе с Энвером Ходжей."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ramiz-alia",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-albanian-labour",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1943,
+    "endYear": 1943,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ramiz_Alia",
+      "locator": "characters 785:845; sha256 6aa0cf84c3c617de356987b0225ad4a5f5062223ed95b1c2b0cd066a36d5e4fd",
+      "claim": "알리아는 1943년 알바니아 공산당원이 되었다.",
+      "excerpt": "In 1943, he became a member of the Albanian Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "damdin-sukhbaatar",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-mongolian-people",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Damdin_S%C3%BCkhbaatar",
+      "locator": "characters 55:226; sha256 2d98745bab69bde92d58e40431cc479b60361cbe2fc87d5358971e736e5dee3c",
+      "claim": "수흐바타르는 몽골인민당의 창당자였다.",
+      "excerpt": "was a Mongolian revolutionary, founder of the Mongolian People's Party, and leader of the Mongolian partisan army that took Khüree during the Mongolian Revolution of 1921."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Damdin_S%C3%BCkhbaatar",
+      "locator": "characters 3790:3952; sha256 2d98745bab69bde92d58e40431cc479b60361cbe2fc87d5358971e736e5dee3c",
+      "claim": "그가 속한 단체는 1920년 6월 25일 몽골인민당으로 이름을 바꾸었다.",
+      "excerpt": "Consequently, the group was renamed the Mongolian People's Party on June 25, 1920, and lots were drawn to see who would travel to Russia to obtain Soviet support."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "khorloogiin-choibalsan",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-mongolian-people",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Khorloogiin_Choibalsan",
+      "locator": "characters 3129:3207; sha256 4d16c3cf91545cd2ca2084c682fb264e2c63b7311195df5fa16dd5566a20d7a5",
+      "claim": "초이발상이 참여한 새 조직은 1920년 6월 25일 몽골인민당이라는 이름을 채택했다.",
+      "excerpt": "On 25 June 1920, the new body adopted the name Mongolian People's Party (MPP)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Khorloogiin_Choibalsan",
+      "locator": "characters 6302:6442; sha256 4d16c3cf91545cd2ca2084c682fb264e2c63b7311195df5fa16dd5566a20d7a5",
+      "claim": "초이발상은 몽골인민당 창당 당원 가운데 한 사람이었다.",
+      "excerpt": "Despite his credentials as one of the MPP's founding members, he failed to advance beyond second-tier government posts throughout the 1920s."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nuon-chea",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-kampuchean-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1960,
+    "endYear": 1974,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nuon_Chea",
+      "locator": "characters 1998:2154; sha256 5c2e3c196cda25695110579c2717afeb5d69594e6b3ec1209c646f5180e0eeaa",
+      "claim": "누온 체아는 1960년 9월 캄푸치아 노동자당(훗날 캄푸치아 공산당) 부총비서로 선출되었다.",
+      "excerpt": "In September 1960 he was elected Deputy General Secretary of the Workers Party of Kampuchea, which was later renamed the Communist Party of Kampuchea (CPK)."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}
