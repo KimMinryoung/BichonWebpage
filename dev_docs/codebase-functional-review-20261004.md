@@ -17,7 +17,7 @@
 | A05 | 반영 | 브라우저 기록에 계정 소유자 표시. 다른 계정·로그아웃이면 지우고 서버 기록만 받음. 익명 기록은 첫 로그인 계정에 자동 합류(선택 UI는 두지 않음). |
 | A06 | 반영 | 문항별 변경 세대로 ACK 처리, 단일 전송, 실패 시 5초~5분 backoff, 401/403 보류. |
 | A07 | 반영 | 강좌 진도 저장과 채팅 localStorage/sessionStorage 접근을 예외 안전하게 처리. |
-| A08 | 일부 | manifest·본문을 임시 파일+rename으로 교체, 본문을 먼저 씀. expectedRevision 계약은 미착수. |
+| A08 | 닫음 | manifest·본문을 임시 파일+rename으로 교체, 본문을 먼저 씀. revision 계약은 하지 않기로 함: 관리자 문헌 편집 화면(`/admin/commulingo-docs`)은 쓰이지 않고, 저장 시 링크 표현·별칭·자동 링크 제외를 보내지 않아 링크 반려를 덮어쓰지 않는다. 남는 동시 저장 경합은 드물고, 서버 밖 `manifest.json` 직접 편집은 잠금으로도 막을 수 없다. |
 | A12 | 일부 | 세션 이력도 최신 N행을 시간순으로 반환. 이전 구간 cursor 페이지는 미착수. |
 | A13 | 반영 | 목록 page를 1~1000으로 clamp, 숫자가 아닌 상세 ID는 404. |
 | A15 | 일부 | `scripts/test-access-boundaries.js`(A02·A03), schedule smoke의 계정 소유 검사(A05), 문헌 정화 smoke(A04) 추가. |
