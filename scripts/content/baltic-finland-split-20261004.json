@@ -1,0 +1,708 @@
+{
+  "id": "baltic-finland-split-20261004",
+  "changes": [
+    {
+      "event": "baltic-wars-of-independence",
+      "column": "body_ko",
+      "from": "핀란드는 백군 승리 뒤에도 동쪽 국경 문제를 안고 있었다. 1918년과 1919년 핀란드 의용대는 동카렐리야와 페차모로 원정을 벌였고, 1919년 4월부터 6월까지 아우누스 원정은 카렐리야 주민의 봉기를 기대했으나 실패했다. 핀란드 의용군은 1919년 1월 에스토니아를 도왔고 파주 전투에서 큰 손실을 입었다. 그러나 핀란드는 유데니치와 함께 페트로그라드를 공격하지 않았다. 섭정 만네르헤임은 독립 승인과 동카렐리야를 조건으로 참전을 검토했지만 콜차크는 조건을 거부했고, 7월 대통령에 선출된 스톨베리는 개입에 반대했다. 1920년 6월 타르투에서 시작된 협상은 10월 14일 조약으로 끝났다. 핀란드는 북극해로 나가는 페차모를 얻고, 1919년 점령한 동카렐리야의 레폴라와 포라얘르비에서 철수했다. 소비에트 측은 동카렐리야에 자치를 약속했다. 이 조약은 에스토니아의 2월 타르투 조약과 혼동해서는 안 된다. 여기서 만들어진 국경 질서는 1921년 동카렐리야 봉기를 거쳐 1939년 [겨울전쟁](/commulingo/events/winter-war)의 배경이 되었다.",
+      "to": "핀란드도 같은 시기 동카렐리야와 아우누스로 원정을 벌였고, 1920년 10월 14일 소비에트 러시아와 따로 타르투 조약을 맺었다. 1918년 내전에서 이 조약까지의 과정은 [핀란드 독립과 내전](/commulingo/events/finland-1917-1920)에서 다룬다."
+    },
+    {
+      "event": "baltic-wars-of-independence",
+      "column": "body_en",
+      "from": "Finland, after the White victory, still had an unsettled eastern border. In 1918 and 1919 Finnish volunteers mounted expeditions into East Karelia and Petsamo, and the Aunus expedition of April to June 1919 hoped for a Karelian rising that never came. Finnish volunteers helped Estonia in January 1919 and suffered heavy losses at Paju. But Finland did not join Yudenich in attacking Petrograd. The regent Mannerheim considered intervention in return for recognition of independence and East Karelia, but Kolchak rejected the conditions, and Ståhlberg, elected president in July, opposed intervention. Negotiations that opened at Tartu in June 1920 ended in a treaty on 14 October. Finland gained Petsamo, with its outlet to the Arctic, and withdrew from Repola and Porajärvi in East Karelia, which it had occupied in 1919; the Soviet side promised autonomy for East Karelia. This treaty should not be confused with Estonia's Treaty of Tartu of February. The border order it created led through the East Karelian rising of 1921 to the background of the [Winter War](/commulingo/events/winter-war) of 1939.",
+      "to": "Finland too sent expeditions into East Karelia and Aunus in the same years and made its own Treaty of Tartu with Soviet Russia on 14 October 1920; its course from the civil war of 1918 to that treaty is told in [Finland: independence and civil war](/commulingo/events/finland-1917-1920)."
+    },
+    {
+      "event": "baltic-wars-of-independence",
+      "column": "timeline",
+      "expected": [
+        {
+          "geo": {
+            "lat": 56.95,
+            "lng": 24.11,
+            "kind": "point",
+            "label": {
+              "en": "Riga",
+              "ko": "리가"
+            }
+          },
+          "body": {
+            "en": "After Germany's defeat Päts's provisional government in Estonia and Voldemaras's cabinet in Lithuania took office on 11 November, and Latvia proclaimed independence in Riga on 18 November under Ulmanis. None of the governments had more than a few thousand troops.",
+            "ko": "독일 패전 뒤 에스토니아의 페츠 임시정부와 리투아니아의 볼데마라스 내각이 11월 11일 출범했고, 라트비아는 11월 18일 리가에서 독립을 선포하며 울마니스 정부를 세웠다. 어느 정부도 몇천 명 이상의 병력을 갖지 못했다."
+          },
+          "date": "1918.11.11–18",
+          "title": {
+            "en": "Three governments begin",
+            "ko": "세 정부의 출발"
+          },
+          "country": [
+            "estonia",
+            "latvia",
+            "lithuania"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 59.38,
+            "lng": 28.19,
+            "kind": "point",
+            "label": {
+              "en": "Narva",
+              "ko": "나르바"
+            }
+          },
+          "body": {
+            "en": "The Red Army took Narva and the next day a Commune of the Working People of Estonia under Jaan Anvelt was proclaimed. Soviet governments followed in Latvia and Lithuania in December, and Riga and Vilnius fell to the Red Army in early January 1919.",
+            "ko": "붉은 군대가 나르바를 점령하고 다음 날 얀 안벨트를 수반으로 하는 에스토니아 노동 코뮌이 선포되었다. 12월 라트비아와 리투아니아에도 소비에트 정부가 세워졌고, 1919년 1월 초 리가와 빌뉴스가 붉은 군대의 손에 들어갔다."
+          },
+          "date": "1918.11.28–29",
+          "title": {
+            "en": "Narva falls; the Estonian Workers' Commune",
+            "ko": "나르바 함락과 에스토니아 노동 코뮌"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 59.44,
+            "lng": 24.75,
+            "kind": "point",
+            "label": {
+              "en": "Tallinn",
+              "ko": "탈린"
+            }
+          },
+          "body": {
+            "en": "Alexander-Sinclair's light cruisers delivered 6,500 rifles and field guns, and on 26 and 27 December captured the Soviet destroyers Spartak and Avtroil and handed them to Estonia. Raskolnikov, aboard the Spartak, was taken prisoner.",
+            "ko": "알렉산더-싱클레어의 경순양함 편대가 소총 6,500정과 야포를 넘겨주고, 12월 26일과 27일 소비에트 구축함 스파르타크와 아프트로일을 나포해 에스토니아 해군에 넘겼다. 스파르타크에 탄 라스콜니코프는 포로가 되었다."
+          },
+          "date": "1918.12.12–27",
+          "title": {
+            "en": "The British squadron reaches Tallinn",
+            "ko": "영국 함대의 탈린 도착"
+          },
+          "country": [
+            "estonia",
+            "uk"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 58.38,
+            "lng": 26.72,
+            "kind": "point",
+            "label": {
+              "en": "Tartu",
+              "ko": "타르투"
+            }
+          },
+          "body": {
+            "en": "Under Laidoner, with armoured trains and Finnish volunteers in the lead, Estonian troops retook Tartu on 14 January and Narva on the 19th. Kuperjanov was killed at Paju on 31 January, and by early February the Red Army had been driven from Estonian soil.",
+            "ko": "라이도네르의 지휘 아래 장갑열차와 핀란드 의용군을 앞세운 에스토니아군이 1월 14일 타르투, 19일 나르바를 되찾았다. 1월 31일 파주 전투에서 쿠페르야노프가 전사했고, 2월 초 에스토니아 영토에서 붉은 군대가 밀려났다."
+          },
+          "date": "1919.01.07–31",
+          "title": {
+            "en": "Estonia's counteroffensive",
+            "ko": "에스토니아의 반격"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 56.51,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Liepāja",
+              "ko": "리예파야"
+            }
+          },
+          "body": {
+            "en": "Von Manteuffel's Landeswehr strike detachment tried to overthrow the Ulmanis government, and Ulmanis took refuge aboard a ship under British protection. Niedra's pro-German government was formed on 10 May, and on 22 May the German formations drove the Red Army from Riga.",
+            "ko": "폰 만토이펠의 향토방위군 돌격대가 울마니스 정부를 뒤엎으려 했고, 울마니스는 영국 함정의 보호 아래 배 위로 피신했다. 5월 10일 니에드라의 친독 정부가 세워졌고, 5월 22일 독일계 부대가 리가에서 붉은 군대를 몰아냈다."
+          },
+          "date": "1919.04.16",
+          "title": {
+            "en": "The Liepāja coup",
+            "ko": "리예파야 쿠데타"
+          },
+          "country": "latvia"
+        },
+        {
+          "geo": {
+            "lat": 57.31,
+            "lng": 25.27,
+            "kind": "point",
+            "label": {
+              "en": "Cēsis",
+              "ko": "체시스"
+            }
+          },
+          "body": {
+            "en": "The Estonian 3rd Division and Zemitāns's Northern Latvian brigade defeated the Landeswehr and the Iron Division. An Allied-brokered armistice on 3 July removed the Germans from Riga, and Ulmanis returned on 8 July.",
+            "ko": "에스토니아 제3사단과 제미탄스의 북라트비아 여단이 향토방위군과 철사단을 격파했다. 7월 3일 연합국 중재로 휴전이 맺어져 독일군이 리가에서 물러났고, 7월 8일 울마니스가 리가로 돌아왔다."
+          },
+          "date": "1919.06.19–23",
+          "title": {
+            "en": "The battle of Cēsis",
+            "ko": "체시스 전투"
+          },
+          "country": [
+            "latvia",
+            "estonia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 59.44,
+            "lng": 24.75,
+            "kind": "point",
+            "label": {
+              "en": "Tallinn",
+              "ko": "탈린"
+            }
+          },
+          "body": {
+            "en": "Formed in a day under pressure from the British mission, the Whites' Northwestern Government recognized Estonian independence. Yudenich and Kolchak did not accept it, and in September Estonia opened preliminary peace talks with the Soviets at Pskov.",
+            "ko": "영국 사절단의 압력 아래 하루 만에 구성된 백군의 북서정부가 에스토니아 독립을 인정했다. 유데니치와 콜차크는 이를 받아들이지 않았고, 에스토니아는 9월 프스코프에서 소비에트와 첫 강화 예비 회담을 열었다."
+          },
+          "date": "1919.08.11",
+          "title": {
+            "en": "The Northwestern Government recognizes Estonia",
+            "ko": "북서정부의 에스토니아 승인"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 60.01,
+            "lng": 29.77,
+            "kind": "point",
+            "label": {
+              "en": "Kronstadt",
+              "ko": "크론시타트"
+            }
+          },
+          "body": {
+            "en": "Admiral Cowan's British squadron attacked Kronstadt harbour with seven motor boats and aircraft, damaging the battleship Andrei Pervozvanny and sinking a submarine depot ship. Britain lost seventeen vessels and over a hundred men in the Baltic campaign.",
+            "ko": "코원 제독의 영국 편대가 어뢰정 7척과 항공기로 크론시타트 항구를 공격해 전함 안드레이 페르보즈반니를 손상시키고 잠수함 모함을 격침했다. 영국은 발트 작전에서 함정 17척과 백여 명을 잃었다."
+          },
+          "date": "1919.08.18",
+          "title": {
+            "en": "The Kronstadt motor boat raid",
+            "ko": "크론시타트 어뢰정 공습"
+          },
+          "country": "uk"
+        },
+        {
+          "geo": {
+            "lat": 59.77,
+            "lng": 30.34,
+            "kind": "point",
+            "label": {
+              "en": "Pulkovo",
+              "ko": "풀코보"
+            }
+          },
+          "body": {
+            "en": "The Northwestern Army advanced through Yamburg and Gatchina to the Pulkovo heights before the defence Trotsky organized and the 7th Army's counterattack drove it back. Estonian troops held only the flank and Finland did not move. Retreating to Narva, the army was disarmed by Estonia and thousands died of typhus in the camps.",
+            "ko": "북서군이 얌부르크와 가치나를 거쳐 풀코보 고지까지 진격했으나 트로츠키가 조직한 방어와 제7군의 반격에 밀려났다. 에스토니아군은 측면만 맡았고 핀란드는 움직이지 않았다. 나르바로 후퇴한 북서군은 에스토니아에 무장해제되어 수용소에서 발진티푸스로 수천 명이 죽었다."
+          },
+          "date": "1919.10.10–11.14",
+          "title": {
+            "en": "Yudenich's Petrograd offensive and retreat",
+            "ko": "유데니치의 페트로그라드 공세와 패퇴"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 56.95,
+            "lng": 24.11,
+            "kind": "point",
+            "label": {
+              "en": "Riga",
+              "ko": "리가"
+            }
+          },
+          "body": {
+            "en": "Bermondt-Avalov's West Russian Volunteer Army, swollen by German troops who refused to leave, seized Riga's west-bank suburbs. With support from British and French warships the Latvian army cleared the west bank on 11 November, and Bermondt's forces, beaten in Lithuania too, withdrew to Germany in December.",
+            "ko": "철수를 거부한 독일 병력이 합류한 베르몬트-아발로프의 서러시아 의용군이 리가 서안 교외를 점령했다. 라트비아군은 영국·프랑스 함정의 지원을 받아 11월 11일 강 서안을 되찾았고, 베르몬트군은 리투아니아에서도 패해 12월 독일로 물러났다."
+          },
+          "date": "1919.10.08–11.11",
+          "title": {
+            "en": "Bermondt's attack on Riga",
+            "ko": "베르몬트군의 리가 공격"
+          },
+          "country": "latvia"
+        },
+        {
+          "geo": {
+            "lat": 55.87,
+            "lng": 26.52,
+            "kind": "point",
+            "label": {
+              "en": "Daugavpils",
+              "ko": "다우가프필스"
+            }
+          },
+          "body": {
+            "en": "Latvian and Polish troops jointly attacked and took Daugavpils and by the end of January had pushed the Red Army out of Latgale. An armistice took effect on 1 February.",
+            "ko": "라트비아군과 폴란드군이 함께 다우가프필스를 공격해 점령하고 1월 말까지 라트갈레에서 붉은 군대를 밀어냈다. 2월 1일 휴전이 발효되었다."
+          },
+          "date": "1920.01.03",
+          "title": {
+            "en": "The joint Daugavpils operation",
+            "ko": "다우가프필스 합동 작전"
+          },
+          "country": [
+            "latvia",
+            "poland"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 58.38,
+            "lng": 26.72,
+            "kind": "point",
+            "label": {
+              "en": "Tartu",
+              "ko": "타르투"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia recognized Estonia's independence \"voluntarily and forever\" and paid 15 million gold roubles. It was the first treaty in which Soviet Russia fixed a frontier and recognized independence, and the first in which any state recognized Soviet Russia as a treaty partner.",
+            "ko": "소비에트 러시아가 에스토니아의 독립을 「자발적으로, 영원히」 승인하고 1,500만 금루블을 지불했다. 소비에트 러시아가 국경을 확정하고 독립을 승인한 첫 조약이었고, 어떤 국가가 소비에트 러시아를 조약 당사자로 승인한 첫 사례였다."
+          },
+          "date": "1920.02.02",
+          "title": {
+            "en": "Estonia's Treaty of Tartu",
+            "ko": "에스토니아 타르투 강화"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 55.75,
+            "lng": 37.62,
+            "kind": "point",
+            "label": {
+              "en": "Moscow",
+              "ko": "모스크바"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia recognized Lithuania's independence and its right to Vilnius. The Red Army handed the city, which it had occupied, to Lithuania on 26 August, but the treaty did not bind Poland.",
+            "ko": "소비에트 러시아가 리투아니아의 독립과 빌뉴스에 대한 권리를 인정했다. 붉은 군대가 점령한 빌뉴스는 8월 26일 리투아니아에 인도되었지만, 조약은 폴란드를 구속하지 않았다."
+          },
+          "date": "1920.07.12",
+          "title": {
+            "en": "Lithuania's Moscow treaty",
+            "ko": "리투아니아 모스크바 조약"
+          },
+          "country": "lithuania"
+        },
+        {
+          "geo": {
+            "lat": 56.95,
+            "lng": 24.11,
+            "kind": "point",
+            "label": {
+              "en": "Riga",
+              "ko": "리가"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia recognized Latvia's independence \"for all time\". This is distinct from the 1921 Treaty of Riga between Poland and the Soviets. On 16 September the Constituent Assembly passed a land reform law expropriating the manors.",
+            "ko": "소비에트 러시아가 라트비아의 독립을 「영원히」 승인했다. 폴란드와 소비에트 측의 1921년 리가 조약과 다른 조약이다. 9월 16일 제헌의회는 장원을 몰수하는 토지개혁법을 통과시켰다."
+          },
+          "date": "1920.08.11",
+          "title": {
+            "en": "Latvia's Treaty of Riga",
+            "ko": "라트비아 리가 강화"
+          },
+          "country": "latvia"
+        },
+        {
+          "geo": {
+            "lat": 54.69,
+            "lng": 25.28,
+            "kind": "point",
+            "label": {
+              "en": "Vilnius",
+              "ko": "빌뉴스"
+            }
+          },
+          "body": {
+            "en": "The League-mediated Suwałki Agreement fixed a demarcation line leaving Vilnius on the Lithuanian side. Before it took effect, on 9 October, Żeligowski's division seized Vilnius in a \"mutiny\" agreed with Piłsudski and set up Central Lithuania, incorporated into Poland in 1922 and never recognized by Lithuania.",
+            "ko": "국제연맹 중재로 맺은 수바우키 협정은 빌뉴스를 리투아니아 쪽에 두는 분계선을 정했다. 발효 전 10월 9일 젤리고프스키의 사단이 피우수트스키와 협의한 「항명」으로 빌뉴스를 점령하고 중부 리투아니아를 세웠다. 1922년 폴란드에 편입되었고 리투아니아는 이를 인정하지 않았다."
+          },
+          "date": "1920.10.07–09",
+          "title": {
+            "en": "The Suwałki Agreement and Żeligowski's seizure of Vilnius",
+            "ko": "수바우키 협정과 젤리고프스키의 빌뉴스 점령"
+          },
+          "country": [
+            "lithuania",
+            "poland"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 58.38,
+            "lng": 26.72,
+            "kind": "point",
+            "label": {
+              "en": "Tartu",
+              "ko": "타르투"
+            }
+          },
+          "body": {
+            "en": "Finland gained Petsamo and agreed to withdraw from Repola and Porajärvi in East Karelia, while the Soviet side promised East Karelian autonomy. It is a separate treaty from Estonia's of February. This border order became the background to the Winter War of 1939.",
+            "ko": "핀란드가 페차모를 얻고 동카렐리야의 레폴라와 포라얘르비에서 철수하기로 했으며, 소비에트 측은 동카렐리야 자치를 약속했다. 에스토니아의 2월 조약과는 별개의 조약이다. 이 국경 질서는 1939년 겨울전쟁의 배경이 되었다."
+          },
+          "date": "1920.10.14",
+          "title": {
+            "en": "Finland's Treaty of Tartu",
+            "ko": "핀란드 타르투 강화"
+          },
+          "country": "finland"
+        }
+      ],
+      "value": [
+        {
+          "geo": {
+            "lat": 56.95,
+            "lng": 24.11,
+            "kind": "point",
+            "label": {
+              "en": "Riga",
+              "ko": "리가"
+            }
+          },
+          "body": {
+            "en": "After Germany's defeat Päts's provisional government in Estonia and Voldemaras's cabinet in Lithuania took office on 11 November, and Latvia proclaimed independence in Riga on 18 November under Ulmanis. None of the governments had more than a few thousand troops.",
+            "ko": "독일 패전 뒤 에스토니아의 페츠 임시정부와 리투아니아의 볼데마라스 내각이 11월 11일 출범했고, 라트비아는 11월 18일 리가에서 독립을 선포하며 울마니스 정부를 세웠다. 어느 정부도 몇천 명 이상의 병력을 갖지 못했다."
+          },
+          "date": "1918.11.11–18",
+          "title": {
+            "en": "Three governments begin",
+            "ko": "세 정부의 출발"
+          },
+          "country": [
+            "estonia",
+            "latvia",
+            "lithuania"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 59.38,
+            "lng": 28.19,
+            "kind": "point",
+            "label": {
+              "en": "Narva",
+              "ko": "나르바"
+            }
+          },
+          "body": {
+            "en": "The Red Army took Narva and the next day a Commune of the Working People of Estonia under Jaan Anvelt was proclaimed. Soviet governments followed in Latvia and Lithuania in December, and Riga and Vilnius fell to the Red Army in early January 1919.",
+            "ko": "붉은 군대가 나르바를 점령하고 다음 날 얀 안벨트를 수반으로 하는 에스토니아 노동 코뮌이 선포되었다. 12월 라트비아와 리투아니아에도 소비에트 정부가 세워졌고, 1919년 1월 초 리가와 빌뉴스가 붉은 군대의 손에 들어갔다."
+          },
+          "date": "1918.11.28–29",
+          "title": {
+            "en": "Narva falls; the Estonian Workers' Commune",
+            "ko": "나르바 함락과 에스토니아 노동 코뮌"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 59.44,
+            "lng": 24.75,
+            "kind": "point",
+            "label": {
+              "en": "Tallinn",
+              "ko": "탈린"
+            }
+          },
+          "body": {
+            "en": "Alexander-Sinclair's light cruisers delivered 6,500 rifles and field guns, and on 26 and 27 December captured the Soviet destroyers Spartak and Avtroil and handed them to Estonia. Raskolnikov, aboard the Spartak, was taken prisoner.",
+            "ko": "알렉산더-싱클레어의 경순양함 편대가 소총 6,500정과 야포를 넘겨주고, 12월 26일과 27일 소비에트 구축함 스파르타크와 아프트로일을 나포해 에스토니아 해군에 넘겼다. 스파르타크에 탄 라스콜니코프는 포로가 되었다."
+          },
+          "date": "1918.12.12–27",
+          "title": {
+            "en": "The British squadron reaches Tallinn",
+            "ko": "영국 함대의 탈린 도착"
+          },
+          "country": [
+            "estonia",
+            "uk"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 58.38,
+            "lng": 26.72,
+            "kind": "point",
+            "label": {
+              "en": "Tartu",
+              "ko": "타르투"
+            }
+          },
+          "body": {
+            "en": "Under Laidoner, with armoured trains and Finnish volunteers in the lead, Estonian troops retook Tartu on 14 January and Narva on the 19th. Kuperjanov was killed at Paju on 31 January, and by early February the Red Army had been driven from Estonian soil.",
+            "ko": "라이도네르의 지휘 아래 장갑열차와 핀란드 의용군을 앞세운 에스토니아군이 1월 14일 타르투, 19일 나르바를 되찾았다. 1월 31일 파주 전투에서 쿠페르야노프가 전사했고, 2월 초 에스토니아 영토에서 붉은 군대가 밀려났다."
+          },
+          "date": "1919.01.07–31",
+          "title": {
+            "en": "Estonia's counteroffensive",
+            "ko": "에스토니아의 반격"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 56.51,
+            "lng": 21.01,
+            "kind": "point",
+            "label": {
+              "en": "Liepāja",
+              "ko": "리예파야"
+            }
+          },
+          "body": {
+            "en": "Von Manteuffel's Landeswehr strike detachment tried to overthrow the Ulmanis government, and Ulmanis took refuge aboard a ship under British protection. Niedra's pro-German government was formed on 10 May, and on 22 May the German formations drove the Red Army from Riga.",
+            "ko": "폰 만토이펠의 향토방위군 돌격대가 울마니스 정부를 뒤엎으려 했고, 울마니스는 영국 함정의 보호 아래 배 위로 피신했다. 5월 10일 니에드라의 친독 정부가 세워졌고, 5월 22일 독일계 부대가 리가에서 붉은 군대를 몰아냈다."
+          },
+          "date": "1919.04.16",
+          "title": {
+            "en": "The Liepāja coup",
+            "ko": "리예파야 쿠데타"
+          },
+          "country": "latvia"
+        },
+        {
+          "geo": {
+            "lat": 57.31,
+            "lng": 25.27,
+            "kind": "point",
+            "label": {
+              "en": "Cēsis",
+              "ko": "체시스"
+            }
+          },
+          "body": {
+            "en": "The Estonian 3rd Division and Zemitāns's Northern Latvian brigade defeated the Landeswehr and the Iron Division. An Allied-brokered armistice on 3 July removed the Germans from Riga, and Ulmanis returned on 8 July.",
+            "ko": "에스토니아 제3사단과 제미탄스의 북라트비아 여단이 향토방위군과 철사단을 격파했다. 7월 3일 연합국 중재로 휴전이 맺어져 독일군이 리가에서 물러났고, 7월 8일 울마니스가 리가로 돌아왔다."
+          },
+          "date": "1919.06.19–23",
+          "title": {
+            "en": "The battle of Cēsis",
+            "ko": "체시스 전투"
+          },
+          "country": [
+            "latvia",
+            "estonia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 59.44,
+            "lng": 24.75,
+            "kind": "point",
+            "label": {
+              "en": "Tallinn",
+              "ko": "탈린"
+            }
+          },
+          "body": {
+            "en": "Formed in a day under pressure from the British mission, the Whites' Northwestern Government recognized Estonian independence. Yudenich and Kolchak did not accept it, and in September Estonia opened preliminary peace talks with the Soviets at Pskov.",
+            "ko": "영국 사절단의 압력 아래 하루 만에 구성된 백군의 북서정부가 에스토니아 독립을 인정했다. 유데니치와 콜차크는 이를 받아들이지 않았고, 에스토니아는 9월 프스코프에서 소비에트와 첫 강화 예비 회담을 열었다."
+          },
+          "date": "1919.08.11",
+          "title": {
+            "en": "The Northwestern Government recognizes Estonia",
+            "ko": "북서정부의 에스토니아 승인"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 60.01,
+            "lng": 29.77,
+            "kind": "point",
+            "label": {
+              "en": "Kronstadt",
+              "ko": "크론시타트"
+            }
+          },
+          "body": {
+            "en": "Admiral Cowan's British squadron attacked Kronstadt harbour with seven motor boats and aircraft, damaging the battleship Andrei Pervozvanny and sinking a submarine depot ship. Britain lost seventeen vessels and over a hundred men in the Baltic campaign.",
+            "ko": "코원 제독의 영국 편대가 어뢰정 7척과 항공기로 크론시타트 항구를 공격해 전함 안드레이 페르보즈반니를 손상시키고 잠수함 모함을 격침했다. 영국은 발트 작전에서 함정 17척과 백여 명을 잃었다."
+          },
+          "date": "1919.08.18",
+          "title": {
+            "en": "The Kronstadt motor boat raid",
+            "ko": "크론시타트 어뢰정 공습"
+          },
+          "country": "uk"
+        },
+        {
+          "geo": {
+            "lat": 59.77,
+            "lng": 30.34,
+            "kind": "point",
+            "label": {
+              "en": "Pulkovo",
+              "ko": "풀코보"
+            }
+          },
+          "body": {
+            "en": "The Northwestern Army advanced through Yamburg and Gatchina to the Pulkovo heights before the defence Trotsky organized and the 7th Army's counterattack drove it back. Estonian troops held only the flank and Finland did not move. Retreating to Narva, the army was disarmed by Estonia and thousands died of typhus in the camps.",
+            "ko": "북서군이 얌부르크와 가치나를 거쳐 풀코보 고지까지 진격했으나 트로츠키가 조직한 방어와 제7군의 반격에 밀려났다. 에스토니아군은 측면만 맡았고 핀란드는 움직이지 않았다. 나르바로 후퇴한 북서군은 에스토니아에 무장해제되어 수용소에서 발진티푸스로 수천 명이 죽었다."
+          },
+          "date": "1919.10.10–11.14",
+          "title": {
+            "en": "Yudenich's Petrograd offensive and retreat",
+            "ko": "유데니치의 페트로그라드 공세와 패퇴"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 56.95,
+            "lng": 24.11,
+            "kind": "point",
+            "label": {
+              "en": "Riga",
+              "ko": "리가"
+            }
+          },
+          "body": {
+            "en": "Bermondt-Avalov's West Russian Volunteer Army, swollen by German troops who refused to leave, seized Riga's west-bank suburbs. With support from British and French warships the Latvian army cleared the west bank on 11 November, and Bermondt's forces, beaten in Lithuania too, withdrew to Germany in December.",
+            "ko": "철수를 거부한 독일 병력이 합류한 베르몬트-아발로프의 서러시아 의용군이 리가 서안 교외를 점령했다. 라트비아군은 영국·프랑스 함정의 지원을 받아 11월 11일 강 서안을 되찾았고, 베르몬트군은 리투아니아에서도 패해 12월 독일로 물러났다."
+          },
+          "date": "1919.10.08–11.11",
+          "title": {
+            "en": "Bermondt's attack on Riga",
+            "ko": "베르몬트군의 리가 공격"
+          },
+          "country": "latvia"
+        },
+        {
+          "geo": {
+            "lat": 55.87,
+            "lng": 26.52,
+            "kind": "point",
+            "label": {
+              "en": "Daugavpils",
+              "ko": "다우가프필스"
+            }
+          },
+          "body": {
+            "en": "Latvian and Polish troops jointly attacked and took Daugavpils and by the end of January had pushed the Red Army out of Latgale. An armistice took effect on 1 February.",
+            "ko": "라트비아군과 폴란드군이 함께 다우가프필스를 공격해 점령하고 1월 말까지 라트갈레에서 붉은 군대를 밀어냈다. 2월 1일 휴전이 발효되었다."
+          },
+          "date": "1920.01.03",
+          "title": {
+            "en": "The joint Daugavpils operation",
+            "ko": "다우가프필스 합동 작전"
+          },
+          "country": [
+            "latvia",
+            "poland"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 58.38,
+            "lng": 26.72,
+            "kind": "point",
+            "label": {
+              "en": "Tartu",
+              "ko": "타르투"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia recognized Estonia's independence \"voluntarily and forever\" and paid 15 million gold roubles. It was the first treaty in which Soviet Russia fixed a frontier and recognized independence, and the first in which any state recognized Soviet Russia as a treaty partner.",
+            "ko": "소비에트 러시아가 에스토니아의 독립을 「자발적으로, 영원히」 승인하고 1,500만 금루블을 지불했다. 소비에트 러시아가 국경을 확정하고 독립을 승인한 첫 조약이었고, 어떤 국가가 소비에트 러시아를 조약 당사자로 승인한 첫 사례였다."
+          },
+          "date": "1920.02.02",
+          "title": {
+            "en": "Estonia's Treaty of Tartu",
+            "ko": "에스토니아 타르투 강화"
+          },
+          "country": "estonia"
+        },
+        {
+          "geo": {
+            "lat": 55.75,
+            "lng": 37.62,
+            "kind": "point",
+            "label": {
+              "en": "Moscow",
+              "ko": "모스크바"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia recognized Lithuania's independence and its right to Vilnius. The Red Army handed the city, which it had occupied, to Lithuania on 26 August, but the treaty did not bind Poland.",
+            "ko": "소비에트 러시아가 리투아니아의 독립과 빌뉴스에 대한 권리를 인정했다. 붉은 군대가 점령한 빌뉴스는 8월 26일 리투아니아에 인도되었지만, 조약은 폴란드를 구속하지 않았다."
+          },
+          "date": "1920.07.12",
+          "title": {
+            "en": "Lithuania's Moscow treaty",
+            "ko": "리투아니아 모스크바 조약"
+          },
+          "country": "lithuania"
+        },
+        {
+          "geo": {
+            "lat": 56.95,
+            "lng": 24.11,
+            "kind": "point",
+            "label": {
+              "en": "Riga",
+              "ko": "리가"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia recognized Latvia's independence \"for all time\". This is distinct from the 1921 Treaty of Riga between Poland and the Soviets. On 16 September the Constituent Assembly passed a land reform law expropriating the manors.",
+            "ko": "소비에트 러시아가 라트비아의 독립을 「영원히」 승인했다. 폴란드와 소비에트 측의 1921년 리가 조약과 다른 조약이다. 9월 16일 제헌의회는 장원을 몰수하는 토지개혁법을 통과시켰다."
+          },
+          "date": "1920.08.11",
+          "title": {
+            "en": "Latvia's Treaty of Riga",
+            "ko": "라트비아 리가 강화"
+          },
+          "country": "latvia"
+        },
+        {
+          "geo": {
+            "lat": 54.69,
+            "lng": 25.28,
+            "kind": "point",
+            "label": {
+              "en": "Vilnius",
+              "ko": "빌뉴스"
+            }
+          },
+          "body": {
+            "en": "The League-mediated Suwałki Agreement fixed a demarcation line leaving Vilnius on the Lithuanian side. Before it took effect, on 9 October, Żeligowski's division seized Vilnius in a \"mutiny\" agreed with Piłsudski and set up Central Lithuania, incorporated into Poland in 1922 and never recognized by Lithuania.",
+            "ko": "국제연맹 중재로 맺은 수바우키 협정은 빌뉴스를 리투아니아 쪽에 두는 분계선을 정했다. 발효 전 10월 9일 젤리고프스키의 사단이 피우수트스키와 협의한 「항명」으로 빌뉴스를 점령하고 중부 리투아니아를 세웠다. 1922년 폴란드에 편입되었고 리투아니아는 이를 인정하지 않았다."
+          },
+          "date": "1920.10.07–09",
+          "title": {
+            "en": "The Suwałki Agreement and Żeligowski's seizure of Vilnius",
+            "ko": "수바우키 협정과 젤리고프스키의 빌뉴스 점령"
+          },
+          "country": [
+            "lithuania",
+            "poland"
+          ]
+        }
+      ]
+    }
+  ]
+}

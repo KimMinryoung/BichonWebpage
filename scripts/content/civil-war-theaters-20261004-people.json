@@ -2,6 +2,1897 @@
   "changedBy": "civil-war-theaters-20261004",
   "people": [
     {
+      "id": "kaarlo-juho-stahlberg",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카를로 유호",
+        "en": "Kaarlo Juho"
+      },
+      "familyName": {
+        "ko": "스톨베리",
+        "en": "Ståhlberg"
+      },
+      "nativeName": "Kaarlo Juho Ståhlberg",
+      "years": "1865–1952",
+      "citizenship": {
+        "code": "finland"
+      },
+      "nationalOrigin": {
+        "code": "finland"
+      },
+      "epithet": {
+        "ko": "공화국 헌법을 설계하고 내전 뒤 화해를 꾀한 핀란드의 초대 대통령",
+        "en": "Jurist who shaped Finland’s republican constitution and, as its first president, sought to reconcile the defeated Reds"
+      },
+      "bio": {
+        "ko": "1865년 수오무살미에서 태어난 법학자로, 청년핀란드당의 입헌주의자로서 러시아화에 법적으로 맞섰다. 1905~1907년 메헬린 상원의 통상·산업 담당 의원, 1908~1918년 헬싱키 대학 행정법 교수를 지냈고 1914년 의회 의장이었다. 1917년 헌법위원회 위원장이 되어 공화국 헌법안을 주도했고, 1918년 승자들의 입헌군주제 구상에 맞서 공화제를 지지했다. 1919년 7월 의회에서 만네르헤임을 143표 대 50표로 누르고 초대 대통령이 되어 소비에트 러시아와의 강화를 지지했으며, 적색 포로 대부분을 사면하고 타르투 조약을 비준했다. 1925년 재선에 나서지 않았고, 1930년 라푸아 운동 활동가들에게 납치되기도 했다. 1952년 숨졌다.",
+        "en": "Born in Suomussalmi in 1865, he was a jurist and a constitutionalist of the Young Finnish Party who resisted Russification by legal means. He was senator for trade and industry in the Mechelin Senate in 1905–1907, professor of administrative law at the University of Helsinki in 1908–1918 and Speaker of Parliament in 1914. As chairman of the Constitutional Council from 1917 he led the drafting of the republican constitution, and in 1918 he backed a republic against the constitutional monarchy favoured by the victors of the civil war. Elected the first president by Parliament in July 1919, defeating Mannerheim by 143 votes to 50, he favoured peace with Soviet Russia, pardoned most of the Red prisoners and ratified the Treaty of Tartu. He did not seek re-election in 1925, was kidnapped by Lapua Movement activists in 1930 and died in 1952."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "K. J. Ståhlberg",
+          "Kaarlo Juho Stahlberg",
+          "Carl Johan Ståhlberg"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+        "https://en.wikipedia.org/wiki/1919_Finnish_presidential_election",
+        "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%80%D1%82%D1%83%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D0%B8%D1%80%D0%BD%D1%8B%D0%B9_%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%A0%D0%A1%D0%A4%D0%A1%D0%A0_%D0%B8_%D0%A4%D0%B8%D0%BD%D0%BB%D1%8F%D0%BD%D0%B4%D0%B8%D0%B5%D0%B9"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1865–1952",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "lead",
+          "excerpt": "28 January 1865 – 22 September 1952"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Finnish jurist and first president of Finland",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "lead",
+          "excerpt": "was a Finnish jurist and academic who was one of the most important pioneers of republicanism in the country"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Suomussalmi, Grand Duchy of Finland",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Early life",
+          "excerpt": "Ståhlberg was born in Suomussalmi, in the Kainuu region of the Grand Duchy of Finland"
+        },
+        {
+          "field": "bio",
+          "claim": "constitutionalist resisting Russification",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Career as academic and civil servant",
+          "excerpt": "He was a \"constitutionalist\" – supporting the already existing Finnish constitutional framework and constitutional legislative policies, including legislative resistance, against the attempted Russification of Finland."
+        },
+        {
+          "field": "bio",
+          "claim": "member of the Young Finnish Party",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Career as academic and civil servant",
+          "excerpt": "becoming a member of the Young Finnish Party"
+        },
+        {
+          "field": "bio",
+          "claim": "senator for trade and industry, 1905",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Career as politician",
+          "excerpt": "In 1905, he was appointed as a Senator in the newly formed Senate of Leo Mechelin, with responsibility for trade and industry."
+        },
+        {
+          "field": "bio",
+          "claim": "professor of administrative law until 1918",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Career as politician",
+          "excerpt": "appointed as Professor of Administrative Law at the University of Helsinki, a position he retained until 1918"
+        },
+        {
+          "field": "bio",
+          "claim": "Speaker of Parliament, 1914",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Career as politician",
+          "excerpt": "Ståhlberg also served as Speaker of the Parliament in 1914."
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Constitutional Council, 1917",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Career as politician",
+          "excerpt": "Instead, the Social Democrat Oskari Tokoi was elected, with Ståhlberg being appointed as chairman of the Constitutional Council."
+        },
+        {
+          "field": "bio",
+          "claim": "his proposals became the 1919 constitution",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Architect of the Finnish constitution",
+          "excerpt": "His proposals would eventually be enacted as the Constitution of Finland in 1919."
+        },
+        {
+          "field": "bio",
+          "claim": "backed a republic against the monarchists in 1918",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Architect of the Finnish constitution",
+          "excerpt": "In 1918, Ståhlberg supported the idea of republic instead of a constitutional monarchy which was supported by more conservative victors of the civil war."
+        },
+        {
+          "field": "bio",
+          "claim": "elected president 25 July 1919 over Mannerheim, 143 to 50",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "First President of Finland",
+          "excerpt": "he was elected by Parliament as President of the Republic on 25 July 1919, defeating Carl Gustaf Mannerheim (the candidate supported by the National Coalition and Swedish People's parties) by 143 votes to 50."
+        },
+        {
+          "field": "bio",
+          "claim": "favoured a peace treaty with Soviet Russia",
+          "source": "https://en.wikipedia.org/wiki/1919_Finnish_presidential_election",
+          "locator": "lead",
+          "excerpt": "Ståhlberg favoured the signing of a peace treaty between Finland and the Soviet Russia"
+        },
+        {
+          "field": "bio",
+          "claim": "pardoned most Red prisoners",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "First President of Finland",
+          "excerpt": "most of the Red prisoners, despite the strong criticism that this aroused from many right-wing Finns"
+        },
+        {
+          "field": "bio",
+          "claim": "ratified the Treaty of Tartu on 11 December 1920",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%80%D1%82%D1%83%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D0%B8%D1%80%D0%BD%D1%8B%D0%B9_%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%BC%D0%B5%D0%B6%D0%B4%D1%83_%D0%A0%D0%A1%D0%A4%D0%A1%D0%A0_%D0%B8_%D0%A4%D0%B8%D0%BD%D0%BB%D1%8F%D0%BD%D0%B4%D0%B8%D0%B5%D0%B9",
+          "locator": "Подписание и ратификация",
+          "excerpt": "11 декабря 1920 года президент Финляндии Стольбергом ратифицировал договор"
+        },
+        {
+          "field": "bio",
+          "claim": "did not seek re-election in 1925",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Post-presidential life",
+          "excerpt": "Ståhlberg did not seek re-election in 1925"
+        },
+        {
+          "field": "bio",
+          "claim": "kidnapped by Lapua Movement activists in 1930",
+          "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+          "locator": "Post-presidential life",
+          "excerpt": "In 1930, activists from the right-wing Lapua Movement kidnapped him and his wife, attempting to send them to the Soviet Union"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-finland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1925,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+              "locator": "lead",
+              "claim": "First President of Finland, 1919–1925",
+              "excerpt": "He was the first president of Finland (1919–1925) and a liberal nationalist."
+            }
+          ]
+        },
+        {
+          "functionId": "law",
+          "affiliationId": "state-finland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+              "locator": "Architect of the Finnish constitution",
+              "claim": "Chairman of the Constitutional Council drafting the republican constitution",
+              "excerpt": "As chairman of the council, Ståhlberg was involved in the drafting and re-drafting of constitutional proposals during 1918"
+            }
+          ]
+        },
+        {
+          "functionId": "law",
+          "affiliationId": "state-finland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+              "locator": "Architect of the Finnish constitution",
+              "claim": "First President of the Supreme Administrative Court",
+              "excerpt": "Ståhlberg's appointment as the first President of the Supreme Administrative Court in 1918"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-finland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1914,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Kaarlo_Juho_St%C3%A5hlberg",
+              "locator": "Career as politician",
+              "claim": "Speaker of the Parliament of Finland",
+              "excerpt": "Ståhlberg also served as Speaker of the Parliament in 1914."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1905
+            ],
+            "end": [
+              1907
+            ]
+          },
+          "r": {
+            "ko": "메헬린 상원 의원(통상·산업 담당)",
+            "en": "Senator for trade and industry in the Mechelin Senate"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1908
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "헬싱키 대학 행정법 교수",
+            "en": "Professor of Administrative Law, University of Helsinki"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "핀란드 의회 의장",
+            "en": "Speaker of the Parliament of Finland"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "헌법위원회 위원장",
+            "en": "Chairman of the Constitutional Council"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "초대 최고행정법원장",
+            "en": "First President of the Supreme Administrative Court"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": [
+              1925
+            ]
+          },
+          "r": {
+            "ko": "핀란드 초대 대통령",
+            "en": "First President of Finland"
+          }
+        }
+      ]
+    },
+    {
+      "id": "edvard-gylling",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "에드바르드",
+        "en": "Edvard"
+      },
+      "familyName": {
+        "ko": "귈링",
+        "en": "Gylling"
+      },
+      "nativeName": "Edvard Gylling",
+      "years": "1881–1938",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "nationalOrigin": {
+        "code": "finland"
+      },
+      "epithet": {
+        "ko": "적색 핀란드의 재정 위원을 지내고 카렐리야 자치 공화국 정부를 이끈 핀란드 사회주의자",
+        "en": "Finnish socialist who was Red Finland’s commissar of finance and later headed the government of Soviet Karelia"
+      },
+      "bio": {
+        "ko": "1881년 쿠오피오에서 태어난 통계학자·경제학자로, 1909년 소작제 연구로 박사 학위를 받아 사회민주당의 농업 전문가가 되었다. 1908~1917년 사회민주당 의원이자 당 부의장이었고, 1917년 11월 쿠시넨과 「우리는 요구한다」를 썼다. 내전 때 인민대표위원회 재정 위원으로 3월 1일 소비에트 러시아와의 조약을 협상해 서명했고, 패전 무렵 비푸리 방어를 조직했다. 스웨덴으로 피해 핀란드 공산당 스톡홀름 사무국을 이끌다 1920년 레닌에게 카렐리야 자치를 보고했다. 1923~1935년 카렐리야 자치 공화국 인민위원회의 의장으로 핀란드화 정책을 폈으나 「민족주의적 쇼비니즘」으로 몰려 해임되었고, 1938년 모스크바에서 총살되었다.",
+        "en": "Born in Kuopio in 1881, the statistician and economist took his doctorate in 1909 with a thesis on crofting and became the Social Democrats’ agrarian expert. He sat in the Diet for the party from 1908 to 1917, was its vice chairman, and in November 1917 co-wrote “We demand” with Kuusinen. In the civil war he was Commissar of Finance of the People’s Delegation, led the talks for the 1 March treaty with Soviet Russia and signed it, and organised the defence of Viipuri at the end. Escaping to Sweden, he headed the Stockholm bureau of the Communist Party of Finland and in 1920 reported to Lenin on Karelian autonomy. As chairman of the Council of People’s Commissars of Soviet Karelia in 1923–1935 he pursued Finnicisation, was condemned for “nationalist chauvinism” and removed, and was shot in Moscow in 1938."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "에드바르드 오토 빌헬름 귈링"
+        ],
+        "en": [
+          "Edvard Otto Vilhelm Gylling"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Edvard_Gylling",
+        "https://en.wikipedia.org/wiki/Eero_Haapalainen"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1881–1938",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "lead",
+          "excerpt": "30 November 1881 – 14 June 1938"
+        },
+        {
+          "field": "citizenship",
+          "claim": "head of government of Soviet Karelia",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "lead",
+          "excerpt": "eventually becoming the leader of Soviet Karelia as Chairman of the Council of its People's Commissars from 1923 to 1935"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Kuopio, Finland",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Early life and career",
+          "excerpt": "Gylling was born in Kuopio in 1881 into a middle-class family."
+        },
+        {
+          "field": "bio",
+          "claim": "doctorate on the crofter institution, 1909",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Early life and career",
+          "excerpt": "He completed his doctorate at the Imperial Alexander University in Finland in 1909 with a thesis on the development of the crofter institution in Finland during the Swedish period"
+        },
+        {
+          "field": "bio",
+          "claim": "Social Democratic deputy 1908–1917 and vice chairman",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "lead",
+          "excerpt": "A member of the Diet of Finland for the Social Democratic Party of Finland from 1908 to 1917 and vice chairman of the party"
+        },
+        {
+          "field": "bio",
+          "claim": "co-authored \"We demand\" with Kuusinen",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Early life and career",
+          "excerpt": "In November 1917 he co-authored with Otto Wille Kuusinen the declaration Vi kräver (\"We demand\")"
+        },
+        {
+          "field": "bio",
+          "claim": "Commissar of Finance in the Red government",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Finnish Civil War",
+          "excerpt": "Gylling took charge of economic affairs in the Red government as Commissar of Finance"
+        },
+        {
+          "field": "bio",
+          "claim": "signed the 1 March 1918 treaty",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Finnish Civil War",
+          "excerpt": "signed in Saint Petersburg by Vladimir Lenin and Joseph Stalin from the Russian side and by Gylling and Oskari Tokoi from the Finnish side"
+        },
+        {
+          "field": "bio",
+          "claim": "organised the defence of Viipuri",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "Haapalainen and Edvard Gylling were one of the few leading Reds who stayed in Viipuri and organized the city's defense"
+        },
+        {
+          "field": "bio",
+          "claim": "headed the Stockholm bureau of the Communist Party of Finland",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Finnish Civil War",
+          "excerpt": "Instead, he went underground in Vyborg and then escaped to Sweden, where he headed the Stockholm bureau of the Communist Party of Finland"
+        },
+        {
+          "field": "bio",
+          "claim": "reported to Lenin on Karelian autonomy, May 1920",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Finnish Civil War",
+          "excerpt": "In May 1920, he travelled to Moscow at Lenin's invitation to report on the feasibility of creating an autonomous Karelian republic"
+        },
+        {
+          "field": "bio",
+          "claim": "Finnicisation policy in Karelia",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Soviet Karelia",
+          "excerpt": "With Lenin's authorisation, Gylling implemented a Finnicisation policy despite Finns being a clear minority in the region."
+        },
+        {
+          "field": "bio",
+          "claim": "accused of nationalist chauvinism",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Soviet Karelia",
+          "excerpt": "Gylling was accused of \"nationalist chauvinism\""
+        },
+        {
+          "field": "bio",
+          "claim": "removed in October 1935",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Soviet Karelia",
+          "excerpt": "He was removed from his post as head of government of the Karelian Soviet Republic in October 1935"
+        },
+        {
+          "field": "bio",
+          "claim": "executed at Kommunarka, 14 June 1938",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Arrest and execution",
+          "excerpt": "He was executed on 14 June 1938 at the Kommunarka shooting ground in Moscow."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1935,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+              "locator": "Soviet Karelia",
+              "claim": "Chairman of the Council of People’s Commissars of the Karelian ASSR",
+              "excerpt": "and Gylling served as Chairman of its Council of People's Commissars"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-finnish-social-democratic",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1908,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+              "locator": "lead",
+              "claim": "Social Democratic deputy and vice chairman of the party",
+              "excerpt": "A member of the Diet of Finland for the Social Democratic Party of Finland from 1908 to 1917 and vice chairman of the party"
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+              "locator": "Finnish Civil War",
+              "claim": "Commissar of Finance of the Finnish People’s Delegation (no catalog affiliation)",
+              "excerpt": "Gylling took charge of economic affairs in the Red government as Commissar of Finance"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-finnish-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+              "locator": "Finnish Civil War",
+              "claim": "Head of the Stockholm bureau of the Communist Party of Finland",
+              "excerpt": "where he headed the Stockholm bureau of the Communist Party of Finland"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1905
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "마르크스주의 잡지 「사회주의 평론」 편집장",
+            "en": "Editor-in-chief of the Marxist journal Sosialistinen aikakausilehti"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1908
+            ],
+            "end": [
+              1917
+            ]
+          },
+          "r": {
+            "ko": "핀란드 의회 의원(사회민주당), 당 부의장",
+            "en": "Social Democratic member of the Diet; party vice chairman"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "인민대표위원회 재정 위원",
+            "en": "Commissar of Finance, Finnish People’s Delegation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "핀란드 공산당 스톡홀름 사무국장",
+            "en": "Head of the Stockholm bureau of the Communist Party of Finland"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": [
+              1923
+            ]
+          },
+          "r": {
+            "ko": "카렐리야 노동 코뮌 지도",
+            "en": "Leading the Karelian Workers’ Commune"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1923
+            ],
+            "end": [
+              1935
+            ]
+          },
+          "r": {
+            "ko": "카렐리야 자치 소비에트 사회주의 공화국 인민위원회의 의장",
+            "en": "Chairman of the Council of People’s Commissars of the Karelian ASSR"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ali-aaltonen",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "알리",
+        "en": "Ali"
+      },
+      "familyName": {
+        "ko": "알토넨",
+        "en": "Aaltonen"
+      },
+      "nativeName": "Ali Aaltonen",
+      "years": "1884–1918",
+      "citizenship": {
+        "code": "finland"
+      },
+      "nationalOrigin": {
+        "code": "finland"
+      },
+      "epithet": {
+        "ko": "러시아 군 장교 출신으로 핀란드 적위대의 초대 총사령관이 된 노동 기자",
+        "en": "Labour journalist and former Russian army officer who became the first commander-in-chief of the Finnish Red Guards"
+      },
+      "bio": {
+        "ko": "1884년 얘므새의 가난한 농업노동자 집안에서 태어나 1903년 러시아 군에 들어갔고, 러일전쟁에 중위로 참전한 뒤 1905년 혁명의 사회주의자들과 어울리다 모스크바에서 투옥되고 군에서 쫓겨났다. 핀란드로 돌아와 투르쿠·비푸리·코트카의 노동 신문에서 일하며 사회민주당 당직도 맡았다. 1917년 10월 헬싱키에서 노동자 질서수비대를 조직했고, 11월 총파업 뒤 그 총사령관이 되었다. 1918년 1월 페트로그라드에서 술에 빠지고도 볼셰비키에게서 무기와 탄약을 대량으로 사들였으나, 1월 28일 에로 하팔라이넨으로 교체되었다. 탐페레 전투 마지막 밤 포위를 뚫고 나왔지만 라흐티 부근에서 붙잡혀 1918년 5월 헨날라 수용소에서 총살되었다.",
+        "en": "Born in 1884 to a poor land worker’s family in Jämsä, he joined the Russian Army in 1903, served as a lieutenant in the Russo-Japanese War, joined the socialists in the 1905 revolution, and was jailed in Moscow and expelled from the military. Back in Finland he worked for the labour press in Turku, Vyborg and Kotka and as a Social Democratic party official. In October 1917 he organised the Workers’ Order Guards in Helsinki and after the November general strike became their commander-in-chief. In January 1918, despite heavy drinking in Petrograd, he bought a large cargo of guns and ammunition from the Bolsheviks, but on 28 January he was replaced by Eero Haapalainen. He broke out of besieged Tampere on the battle’s last night, was captured near Lahti and was shot at the Hennala camp in May 1918."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "알렉시 알토넨"
+        ],
+        "en": [
+          "Aleksi Aaltonen"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+        "https://fi.wikipedia.org/wiki/Ali_Aaltonen"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1884–1918",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "lead",
+          "excerpt": "2 August 1884 – May 1918"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Finnish journalist",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "lead",
+          "excerpt": "was a Finnish journalist and former lieutenant of the Russian Imperial Army"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Jämsä, Finland",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Early years",
+          "excerpt": "Aaltonen was born to a poor land worker's family in Jämsä."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the Russian Army in 1903",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Early years",
+          "excerpt": "Aaltonen dropped out of high school in 1903 and joined the Russian Army."
+        },
+        {
+          "field": "bio",
+          "claim": "lieutenant in the Russo-Japanese War; socialist in 1905",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Early years",
+          "excerpt": "In 1904–1905 he served as a lieutenant in the Russo-Japanese War and was later affiliated with the socialist groups of the Russian revolution of 1905."
+        },
+        {
+          "field": "bio",
+          "claim": "jailed in Moscow and expelled from the military",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Early years",
+          "excerpt": "Aaltonen was jailed in Moscow and expelled from the military"
+        },
+        {
+          "field": "bio",
+          "claim": "labour journalist in Turku, Vyborg and Kotka",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Early years",
+          "excerpt": "After his release, Aaltonen returned to Finland and worked for the labour press in Turku, Vyborg and Kotka."
+        },
+        {
+          "field": "bio",
+          "claim": "Social Democratic party official",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Early years",
+          "excerpt": "He also worked as a party official for the Social Democrats."
+        },
+        {
+          "field": "bio",
+          "claim": "organised the Workers’ Order Guards in October 1917",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "In October 1917, Aaltonen was in Helsinki organizing the Workers' Order Guards, which soon became the Red Guards."
+        },
+        {
+          "field": "bio",
+          "claim": "elected commander-in-chief after the November strike",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "After the general strike in November, he was elected the commander-in-chief of the Order Guards as Adolf Taimi refused."
+        },
+        {
+          "field": "bio",
+          "claim": "bought arms from the Bolsheviks in Petrograd",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "Despite his heavy drinking in Saint Petersburg, which was known as Petrograd at the time, Aaltonen managed to buy a large cargo of guns and ammunition from the Bolsheviks."
+        },
+        {
+          "field": "bio",
+          "claim": "replaced by Haapalainen on 28 January",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "Finally, on 28 January, Aaltonen was replaced by Eero Haapalainen."
+        },
+        {
+          "field": "bio",
+          "claim": "broke out of besieged Tampere",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "On the night between the 5 and 6 April, Aaltonen led a unit of Reds that managed to break through the enemy siege and fled across the ice of lake Näsijärvi."
+        },
+        {
+          "field": "bio",
+          "claim": "way closed near Lahti",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "At the end of April, their way was closed by the German troops in the village of Nastola near Lahti."
+        },
+        {
+          "field": "bio",
+          "claim": "shot at the Hennala camp, May 1918",
+          "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "In the Finnish Civil War",
+          "excerpt": "Aaltonen was captured and taken to the Hennala camp, where he was shot by the Estonian colonel Hans Kalm in May 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "Finnish source: captured on 11 May in Hollola",
+          "source": "https://fi.wikipedia.org/wiki/Ali_Aaltonen",
+          "locator": "Pako Tampereelta ja kuolema",
+          "excerpt": "hänet vangittiin lauantaina 11. toukokuuta Hollolan pitäjän Miekkiön kylästä"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+              "locator": "lead",
+              "claim": "First commander-in-chief of the Finnish Red Guards (no catalog affiliation)",
+              "excerpt": "who served as the first commander-in-chief of the Finnish Red Guards from November 1917 to the end of January 1918"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1903,
+          "endYear": 1905,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+              "locator": "Early years",
+              "claim": "Lieutenant in the Imperial Russian Army in the Russo-Japanese War",
+              "excerpt": "In 1904–1905 he served as a lieutenant in the Russo-Japanese War"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-finnish-social-democratic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": null,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+              "locator": "Early years",
+              "claim": "Party official and labour journalist for the Social Democrats",
+              "excerpt": "He also worked as a party official for the Social Democrats."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1904
+            ],
+            "end": [
+              1905
+            ]
+          },
+          "r": {
+            "ko": "러시아 군 중위로 러일전쟁 참전",
+            "en": "Lieutenant in the Russian Army in the Russo-Japanese War"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "헬싱키 노동자 질서수비대 조직",
+            "en": "Organiser of the Workers’ Order Guards in Helsinki"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "노동자 질서수비대·적위대 초대 총사령관",
+            "en": "First commander-in-chief of the Order Guards and Red Guards"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "적위대 참모부, 해메 전선 참모",
+            "en": "Red Guard general staff; staff of the Häme Front"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eero-haapalainen",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "에로",
+        "en": "Eero"
+      },
+      "familyName": {
+        "ko": "하팔라이넨",
+        "en": "Haapalainen"
+      },
+      "nativeName": "Eero Haapalainen",
+      "years": "1880–1937",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "nationalOrigin": {
+        "code": "finland"
+      },
+      "epithet": {
+        "ko": "1918년 1~3월 핀란드 적위대 총사령관을 지낸 노동조합 지도자",
+        "en": "Trade union leader who commanded the Finnish Red Guards from January to March 1918"
+      },
+      "bio": {
+        "ko": "1880년 쿠오피오에서 태어나 헬싱키 대학 법학부를 다니다 노동운동에 뛰어들었다. 1905년 총파업 때 헬싱키 적위대 조직자의 한 사람이었고, 1907년 핀란드 노동조합연맹 초대 의장이 되었으나 1911년 음주 문제로 물러났다. 1917년 무장 혁명을 공공연히 주장한 급진파로 적위대 5인 위원회에 뽑혔고, 1918년 1월 군사 훈련도 없이 알리 알토넨의 뒤를 이어 적위대 총사령관이 되었다. 잇단 패배로 3월 20일 해임된 뒤 에드바르드 귈링과 비푸리 방어를 조직하다 5월 페트로그라드로 탈출했다. 망명 핀란드 공산당 창당에 참여했고 카렐리야 노동 코뮌에서 일했으나, 1937년 대숙청 때 체포되어 페트로자보츠크에서 총살되었다.",
+        "en": "Born in Kuopio in 1880, he joined the labour movement while studying law at Helsinki University. He was one of the leading Red Guard organisers in Helsinki during the 1905 general strike and in 1907 became the first chairman of the Finnish Trade Union Federation, losing the post in 1911 over his drinking. One of the most radical voices of 1917, openly calling for armed revolution, he was elected to the five-man committee of the Red Guards and in January 1918, without any military training, succeeded Ali Aaltonen as their commander-in-chief. Removed on 20 March after a series of defeats, he organised the defence of Viipuri with Edvard Gylling and escaped to Petrograd in May. He helped found the exiled Communist Party of Finland and worked in the Karelian Workers’ Commune, but was arrested in the Great Purge and shot in Petrozavodsk in 1937."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eero_Haapalainen"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1880–1937",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "lead",
+          "excerpt": "27 October 1880 – 27 November 1937"
+        },
+        {
+          "field": "citizenship",
+          "claim": "fled to Soviet Russia and lived in Soviet Karelia",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "lead",
+          "excerpt": "Haapalainen fled to Soviet Russia in May 1918 after the Reds' defeat where he joined the exile Communist Party of Finland and was active in Soviet Karelia."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Kuopio, Finland",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Early years",
+          "excerpt": "Eero Haapalainen was born on 27 October 1880 in the town of Kuopio in eastern Finland."
+        },
+        {
+          "field": "bio",
+          "claim": "entered the Helsinki law faculty in 1901",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Early years",
+          "excerpt": "entered the Helsinki University Faculty of Law in 1901"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the labour movement and the Social Democratic Party",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Early years",
+          "excerpt": "In Helsinki, he became involved with the labour movement and joined the Sawmill Workers' Union and the Social Democratic Party of Finland."
+        },
+        {
+          "field": "bio",
+          "claim": "Red Guard organiser in 1905",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Early years",
+          "excerpt": "Haapalainen was one of the leading Red Guard organizers in Helsinki during the 1905 general strike."
+        },
+        {
+          "field": "bio",
+          "claim": "first chairman of SAJ, 1907",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Early years",
+          "excerpt": "In April 1907, Haapalainen was elected as the first chairman of the Finnish Trade Union Federation (SAJ)"
+        },
+        {
+          "field": "bio",
+          "claim": "expelled from the office in 1911",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Early years",
+          "excerpt": "Haapalainen was expelled from the office in 1911 due to his alcoholism."
+        },
+        {
+          "field": "bio",
+          "claim": "radical calling for armed revolution",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "Haapalainen was one of the most radical persons in the labour movement, openly calling for armed revolution"
+        },
+        {
+          "field": "bio",
+          "claim": "elected to the five-man Red Guard committee",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "A month later, Haapalainen was elected to the five-men committee which was in charge of all Finnish Red Guards."
+        },
+        {
+          "field": "bio",
+          "claim": "replaced Aaltonen without military training",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "Haapalainen replaced Ali Aaltonen as the Red Guards' commander-in-chief, even though he did not have any military training."
+        },
+        {
+          "field": "bio",
+          "claim": "removed on 20 March",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "On 20 March, Haapalainen was removed as commander-in-chief of the Red Guards after a series of defeats."
+        },
+        {
+          "field": "bio",
+          "claim": "organised the defence of Viipuri with Gylling",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "Haapalainen and Edvard Gylling were one of the few leading Reds who stayed in Viipuri and organized the city's defense"
+        },
+        {
+          "field": "bio",
+          "claim": "fled to Petrograd in May",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Finnish Civil War",
+          "excerpt": "in May, fled to Petrograd on a motor boat"
+        },
+        {
+          "field": "bio",
+          "claim": "co-founder of the exiled Communist Party of Finland",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Life in the Soviet Union",
+          "excerpt": "was also one of the founders of the exile Communist Party of Finland in August 1918"
+        },
+        {
+          "field": "bio",
+          "claim": "posts in the Karelian Workers’ Commune",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Life in the Soviet Union",
+          "excerpt": "He held several posts in the Karelian Workers' Commune but was dismissed in 1923 due to his drinking problem."
+        },
+        {
+          "field": "bio",
+          "claim": "shot in Petrozavodsk, 27 November 1937",
+          "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+          "locator": "Death",
+          "excerpt": "On 27 November 1937, Haapalainen was shot in Petrozavodsk."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+              "locator": "lead",
+              "claim": "Commander-in-chief of the Finnish Red Guards (no catalog affiliation)",
+              "excerpt": "who served as the commander-in-chief of the Red Guards from January to March 1918 during the Finnish Civil War"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "party-finnish-social-democratic",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": null,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+              "locator": "Early years",
+              "claim": "Member of the Social Democratic Party of Finland",
+              "excerpt": "joined the Sawmill Workers' Union and the Social Democratic Party of Finland"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1907,
+          "endYear": 1911,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+              "locator": "Early years",
+              "claim": "First chairman of the Finnish Trade Union Federation (no catalog affiliation)",
+              "excerpt": "In April 1907, Haapalainen was elected as the first chairman of the Finnish Trade Union Federation (SAJ)"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-finnish-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1918,
+          "endYear": 1925,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+              "locator": "Life in the Soviet Union",
+              "claim": "Co-founder of the exiled Communist Party of Finland",
+              "excerpt": "was also one of the founders of the exile Communist Party of Finland in August 1918"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1923,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+              "locator": "Life in the Soviet Union",
+              "claim": "Several posts in the Karelian Workers’ Commune",
+              "excerpt": "He held several posts in the Karelian Workers' Commune"
+            }
+          ]
+        },
+        {
+          "functionId": "scholarship",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1931,
+          "endYear": 1935,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+              "locator": "Life in the Soviet Union",
+              "claim": "Head of the revolution research department of the Karelian Research Institute",
+              "excerpt": "his last assignment was the head of the revolution research department in the Karelian Research Institute in Petrozavodsk"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1907
+            ],
+            "end": [
+              1911
+            ]
+          },
+          "r": {
+            "ko": "핀란드 노동조합연맹(SAJ) 초대 의장",
+            "en": "First chairman of the Finnish Trade Union Federation (SAJ)"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "퀴미 제지공장 적위대 사령관, 적위대 5인 위원회 위원",
+            "en": "Commander of the Kymi Paper Mill Red Guard; member of the five-man Red Guard committee"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "적위대 총사령관, 인민대표위원회 위원",
+            "en": "Commander-in-chief of the Red Guards; member of the People’s Delegation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": [
+              1923
+            ]
+          },
+          "r": {
+            "ko": "카렐리야 노동 코뮌의 여러 직책",
+            "en": "Several posts in the Karelian Workers’ Commune"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1931
+            ],
+            "end": [
+              1935
+            ]
+          },
+          "r": {
+            "ko": "카렐리야 연구소 혁명사 연구부장",
+            "en": "Head of the revolution research department, Karelian Research Institute"
+          }
+        }
+      ]
+    },
+    {
+      "id": "oskari-tokoi",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "오스카리",
+        "en": "Oskari"
+      },
+      "familyName": {
+        "ko": "토코이",
+        "en": "Tokoi"
+      },
+      "nativeName": "Oskari Tokoi",
+      "years": "1873–1963",
+      "citizenship": {
+        "code": "finland"
+      },
+      "nationalOrigin": {
+        "code": "finland"
+      },
+      "epithet": {
+        "ko": "세계 최초의 사회민주주의자 정부 수반이 되었다가 적색 정부에 참여한 핀란드 노동 지도자",
+        "en": "Finnish labour leader who became the world’s first Social Democratic head of government and then joined the Red government"
+      },
+      "bio": {
+        "ko": "1873년 중부 포흐얀마의 칸누스에서 태어나 17살에 미국으로 건너가 광산에서 일하며 급진적 서부광부연맹에 들었다. 1900년 돌아와 1907년 사회민주당 의원이 되었고, 1912~1917년 핀란드 노동조합연맹 의장, 1913년 의회 의장을 지냈다. 1917년 상원 경제부 부의장, 곧 세계 최초의 사회민주주의 총리가 되었다. 내전 때 인민대표위원회 식량 위원을 맡아 소비에트 러시아와의 3월 1일 조약에 서명했고, 패전 뒤 러시아로 피했다. 1919~1920년 영국이 꾸린 무르만스크 군단의 정치 고문이 되어 핀란드 공산당에게서 사형 선고를 받았다. 1922~1949년 미국에서 사회민주주의 신문 『라이바야』를 만들었고, 1944년 「토코이 법」으로 내전 관련 혐의를 벗었다.",
+        "en": "Born in Kannus in Central Ostrobothnia in 1873, he emigrated to America at 17, worked in the mines and joined the radical Western Federation of Miners. Back in Finland from 1900, he entered Parliament for the Social Democrats in 1907, chaired the Finnish Trade Union Federation in 1912–1917 and was Speaker in 1913. In 1917 he became vice-chairman of the Senate’s economic department, the world’s first social democratic prime minister. In the civil war he was commissar for supply in the People’s Delegation, signed the 1 March treaty with Soviet Russia and fled to Russia after the defeat. In 1919–1920 he advised the British-organised Murmansk Legion, for which the Communist Party of Finland sentenced him to death. From 1922 to 1949 he edited the social democratic paper Raivaaja in the United States, and the 1944 Lex Tokoi cleared him of the civil war charges."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural causes"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "안티 오스카리 토코이",
+          "안티 오스카리 히르비"
+        ],
+        "en": [
+          "Antti Oskari Tokoi",
+          "Antti Oskari Hirvi"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+        "https://fi.wikipedia.org/wiki/Oskari_Tokoi",
+        "https://en.wikipedia.org/wiki/Edvard_Gylling"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1873–1963",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "lead",
+          "excerpt": "15 April 1873 – 4 April 1963"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Finnish socialist politician",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "lead",
+          "excerpt": "was a Finnish socialist politician who served as a leader of the Social Democratic Party of Finland"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Kannus, Central Ostrobothnia",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Early years",
+          "excerpt": "Oskari Tokoi was born as Antti Oskari Hirvi in Yliviirre parish, Kannus in the Central Ostrobothnia region of Finland"
+        },
+        {
+          "field": "bio",
+          "claim": "emigrated to America at 17",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Early years",
+          "excerpt": "the 17-year old Oskari quit the family farm to emigrate to America"
+        },
+        {
+          "field": "bio",
+          "claim": "miner; Western Federation of Miners",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "First American interlude",
+          "excerpt": "Tokoi worked in a series of coal and hard metal mines in Wyoming, Colorado, and the Dakota Territory, joining the radical Western Federation of Miners in connection with his employment."
+        },
+        {
+          "field": "bio",
+          "claim": "returned to Finland in 1900",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "First American interlude",
+          "excerpt": "Tokoi returned to Finland in 1900, where he worked as a farmer and a merchant."
+        },
+        {
+          "field": "bio",
+          "claim": "elected to Parliament in 1907",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Finnish political career",
+          "excerpt": "In 1907 Tokoi was elected to the parliament (Eduskunta) as a representative of the Social Democrats."
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Trade Union Federation 1912–1917",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Finnish political career",
+          "excerpt": "From 1912 to 1917 he was the chairman of the Finnish Trade Union Federation."
+        },
+        {
+          "field": "bio",
+          "claim": "Speaker in 1913",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Finnish political career",
+          "excerpt": "In 1913 Tokoi was elected as the speaker of the Eduskunta"
+        },
+        {
+          "field": "bio",
+          "claim": "vice-chairman of the Senate’s economic department, first social democratic prime minister",
+          "source": "https://fi.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Elämänvaiheet",
+          "excerpt": "1917 hänet nimitettiin Suomen Senaatin talousosaston varapuheenjohtajaksi. Tuolloin hänestä tuli maailman ensimmäinen sosiaalidemokraattinen pääministeri."
+        },
+        {
+          "field": "bio",
+          "claim": "commissar for supply in the People’s Delegation",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Finnish political career",
+          "excerpt": "worked as the \"commissar in charge of provisions\" (minister for supply) in the Finnish People's Delegation"
+        },
+        {
+          "field": "bio",
+          "claim": "signed the 1 March 1918 treaty",
+          "source": "https://en.wikipedia.org/wiki/Edvard_Gylling",
+          "locator": "Finnish Civil War",
+          "excerpt": "by Gylling and Oskari Tokoi from the Finnish side"
+        },
+        {
+          "field": "bio",
+          "claim": "fled to Russia after the war",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Finnish political career",
+          "excerpt": "After the war, fearing punishment from the victorious Whites, he fled to Russia."
+        },
+        {
+          "field": "bio",
+          "claim": "political advisor to the Murmansk Legion 1919–1920",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Final emigration",
+          "excerpt": "During 1919 and 1920, he worked as a political advisor to the Murmansk Legion"
+        },
+        {
+          "field": "bio",
+          "claim": "death sentence from the Communist Party of Finland",
+          "source": "https://fi.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Elämänvaiheet",
+          "excerpt": "Vasta perustettu Suomen Kommunistinen Puolue (SKP) langetti Kuusisen johdolla Tokoille ja tämän kumppaneille kuolemantuomion, jota ei koskaan peruttu."
+        },
+        {
+          "field": "bio",
+          "claim": "editor of Raivaaja 1922–1949",
+          "source": "https://fi.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Elämänvaiheet",
+          "excerpt": "Raivaaja-lehden toimittajana vuosina 1922–1949"
+        },
+        {
+          "field": "bio",
+          "claim": "Lex Tokoi, 1944",
+          "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+          "locator": "Final emigration",
+          "excerpt": "In 1944, the Finnish Parliament passed the so-called Lex Tokoi, by which Tokoi was exonerated of all charges related to the Finnish Civil War."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-finland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1917,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fi.wikipedia.org/wiki/Oskari_Tokoi",
+              "locator": "Elämänvaiheet",
+              "claim": "Vice-chairman of the Senate’s economic department (head of government), 1917",
+              "excerpt": "1917 hänet nimitettiin Suomen Senaatin talousosaston varapuheenjohtajaksi"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-finland",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1913,
+          "endYear": 1913,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+              "locator": "Finnish political career",
+              "claim": "Speaker of the Eduskunta",
+              "excerpt": "In 1913 Tokoi was elected as the speaker of the Eduskunta"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-finnish-social-democratic",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1907,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+              "locator": "lead",
+              "claim": "Leader of the Social Democratic Party of Finland",
+              "excerpt": "who served as a leader of the Social Democratic Party of Finland"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1912,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+              "locator": "Finnish political career",
+              "claim": "Chairman of the Finnish Trade Union Federation (no catalog affiliation)",
+              "excerpt": "From 1912 to 1917 he was the chairman of the Finnish Trade Union Federation."
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Oskari_Tokoi",
+              "locator": "Finnish political career",
+              "claim": "Commissar for supply in the Finnish People’s Delegation (no catalog affiliation)",
+              "excerpt": "worked as the \"commissar in charge of provisions\" (minister for supply) in the Finnish People's Delegation"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1907
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "핀란드 의회 의원(사회민주당)",
+            "en": "Social Democratic member of the Parliament of Finland"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1912
+            ],
+            "end": [
+              1917
+            ]
+          },
+          "r": {
+            "ko": "핀란드 노동조합연맹 의장",
+            "en": "Chairman of the Finnish Trade Union Federation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1913
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "핀란드 의회 의장",
+            "en": "Speaker of the Parliament of Finland"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "상원 경제부 부의장(정부 수반)",
+            "en": "Vice-chairman of the Senate’s economic department (head of government)"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "인민대표위원회 식량 위원",
+            "en": "Commissar for supply, Finnish People’s Delegation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "무르만스크 군단 정치 고문",
+            "en": "Political adviser to the Murmansk Legion"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1922
+            ],
+            "end": [
+              1949
+            ]
+          },
+          "r": {
+            "ko": "미국 『라이바야』 편집인",
+            "en": "Editor of Raivaaja in the United States"
+          }
+        }
+      ]
+    },
+    {
+      "id": "eino-rahja",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "에이노",
+        "en": "Eino"
+      },
+      "familyName": {
+        "ko": "라흐야",
+        "en": "Rahja"
+      },
+      "nativeName": "Eino Rahja",
+      "years": "1885–1936",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "nationalOrigin": {
+        "code": "finland"
+      },
+      "epithet": {
+        "ko": "레닌의 핀란드 피신을 도왔고 1918년 적위대 3인 지도부에 든 페테르부르크 핀란드인 볼셰비키",
+        "en": "Petrograd Finnish Bolshevik who helped Lenin escape to Finland in 1917 and sat on the Red Guards’ three-man command in 1918"
+      },
+      "bio": {
+        "ko": "1885년 크론시타트의 핀란드인 노동자 집안에서 태어나 페테르부르크에서 선반공으로 일했고, 1903년 러시아 사회민주노동당에 들어가 볼셰비키 편에 섰다. 1917년 여름 레닌의 핀란드 피신을 조직했고, 10월 혁명 무렵 레닌의 경호를 맡았다. 1917~1918년 겨울 동생 유카와 함께 핀란드 적위대의 무기를 구해 왔고, 1918년 3월 20일 하팔라이넨이 해임되자 에베르트 엘로란타·아돌프 타이미와 3인 지도부를 이루었다가 렘팰래 전선 사령관이 되었다. 패전 뒤 붉은 군대 군단장까지 올랐고, 핀란드 공산당에서 쿠시넨·만네르와 다투다 1927년 중앙위원회에서 밀려났다. 1935년 알코올 중독으로 군에서 쫓겨나 사형 선고를 받았으나 1936년 집행 전 결핵으로 죽었다.",
+        "en": "Born in Kronstadt in 1885 to a Petersburg Finnish working family, he worked in St Petersburg as a turner among other jobs and joined the Russian Social Democratic Labour Party in 1903, siding with the Bolsheviks. He organised Lenin’s escape to Finland in the summer of 1917 and guarded him around the October Revolution. Over the winter of 1917–1918 he and his brother Jukka procured arms for the Finnish Red Guards; when Haapalainen was dismissed on 20 March 1918 he formed a three-man command with Evert Eloranta and Adolf Taimi, then took over the Lempäälä front. After the defeat he rose to corps commander in the Red Army and quarrelled with Kuusinen and Manner in the Communist Party of Finland, which dropped him from its Central Committee in 1927. Expelled from the army for alcoholism in 1935 and sentenced to death, he died of tuberculosis in 1936 before the sentence was carried out."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사형 집행 전 병사",
+          "en": "Died of illness before execution"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "에이노 에이나리 라흐야"
+        ],
+        "en": [
+          "Eino Einari Rahja"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eino_Rahja",
+        "https://fi.wikipedia.org/wiki/Eino_Rahja"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1885–1936",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "lead",
+          "excerpt": "20 June 1885 – 26 April 1936"
+        },
+        {
+          "field": "citizenship",
+          "claim": "lived in Soviet Russia and served in the Red Army",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "he fled to the Russian SFSR where he lived for the rest of his life"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Petersburg Finn",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "johdanto",
+          "excerpt": "oli pietarinsuomalainen bolševikki ja puna-armeijan upseeri"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Kronstadt",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "Born in Kronstadt, Russian Empire"
+        },
+        {
+          "field": "bio",
+          "claim": "worked as a turner in St Petersburg",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Venäjän vallankumous ja Suomen sisällissota",
+          "excerpt": "Rahja työskenteli Pietarissa sorvarina"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the RSDLP in 1903, Bolshevik",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "He joined the Russian Social Democratic Labour Party in 1903, becoming aligned with the party's Bolshevik faction."
+        },
+        {
+          "field": "bio",
+          "claim": "organised Lenin’s escape to Finland in 1917",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "Rahja organized Lenin's temporary escape to Finland in the summer of 1917."
+        },
+        {
+          "field": "bio",
+          "claim": "Lenin’s bodyguard in October 1917",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "johdanto",
+          "excerpt": "Rahja toimi V. I. Leninin henkilökohtaisena turvamiehenä ja henkivartijana"
+        },
+        {
+          "field": "bio",
+          "claim": "procured arms for the Red Guards with his brother Jukka",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Venäjän vallankumous ja Suomen sisällissota",
+          "excerpt": "Vuodenvaihteessa 1917–1918 Eino ja Jukka Rahja hankkivat Suomen punakaarteille aseita."
+        },
+        {
+          "field": "bio",
+          "claim": "three-man command after Haapalainen, 20 March 1918",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Venäjän vallankumous ja Suomen sisällissota",
+          "excerpt": "20. maaliskuuta punakaartin ylipäällikkö Eero Haapalainen erotettiin ja tilalle nimitettiin Rahjan, Evert Elorannan ja Adolf Taimin muodostama kolmikko."
+        },
+        {
+          "field": "bio",
+          "claim": "commander of the Lempäälä front from 24 March",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Venäjän vallankumous ja Suomen sisällissota",
+          "excerpt": "kun hän 24. maaliskuuta alkaen toimi Lempäälän rintaman ylipäällikkönä"
+        },
+        {
+          "field": "bio",
+          "claim": "one of the most capable Red military leaders",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "During the Finnish Civil War, Rahja was one of the most capable military leaders of the Reds."
+        },
+        {
+          "field": "bio",
+          "claim": "corps commander in the Red Army",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "became, for example, a commander of the army corps (komkor) in the Red Army"
+        },
+        {
+          "field": "bio",
+          "claim": "criticised Kuusinen and Manner",
+          "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Sisällissodan jälkeen",
+          "excerpt": "Rahjat puolestaan arvostelivat SKP:n johtohahmoja, kuten Otto Wille Kuusista ja Kullervo Mannerta."
+        },
+        {
+          "field": "bio",
+          "claim": "expelled from the SKP Central Committee in 1927",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "Eino Rahja was expelled from the Central Committee of the Communist Party of Finland in 1927."
+        },
+        {
+          "field": "bio",
+          "claim": "expelled from the army, sentenced to death, died of tuberculosis",
+          "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+          "locator": "Life",
+          "excerpt": "Rahja was expelled from the army in 1935 for his alcoholism and later sentenced to death in 1936, however, he died in April 1936 from tuberculosis and alcohol abuse, before he could be executed."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+              "locator": "Venäjän vallankumous ja Suomen sisällissota",
+              "claim": "Member of the three-man command of the Finnish Red Guards; commander of the Lempäälä front (no catalog affiliation)",
+              "excerpt": "tilalle nimitettiin Rahjan, Evert Elorannan ja Adolf Taimin muodostama kolmikko"
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "soviet-party",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1903,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+              "locator": "Life",
+              "claim": "Bolshevik member of the RSDLP from 1903; organised Lenin’s escape in 1917",
+              "excerpt": "He joined the Russian Social Democratic Labour Party in 1903, becoming aligned with the party's Bolshevik faction."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1935,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+              "locator": "Life",
+              "claim": "Red Army commander, rising to komkor",
+              "excerpt": "became, for example, a commander of the army corps (komkor) in the Red Army"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-finnish-communist",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1918,
+          "endYear": 1927,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+              "locator": "Life",
+              "claim": "Leading member of the Communist Party of Finland until dropped from its Central Committee in 1927",
+              "excerpt": "Eino Rahja was expelled from the Central Committee of the Communist Party of Finland in 1927."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1903
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "러시아 사회민주노동당 입당(볼셰비키)",
+            "en": "Joined the RSDLP (Bolshevik)"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "레닌의 핀란드 피신 조직, 레닌 경호",
+            "en": "Organised Lenin’s escape to Finland; Lenin’s bodyguard"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "적위대 3인 지도부, 렘팰래 전선 사령관",
+            "en": "Three-man command of the Red Guards; commander of the Lempäälä front"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": [
+              1922
+            ]
+          },
+          "r": {
+            "ko": "붉은 군대 핀란드인 부대 정치위원·감찰관",
+            "en": "Commissar and inspector of the Red Army’s Finnish units"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1927
+            ]
+          },
+          "r": {
+            "ko": "핀란드 공산당 지도부",
+            "en": "Leadership of the Communist Party of Finland"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1935
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "붉은 군대에서 해임",
+            "en": "Expelled from the Red Army"
+          }
+        }
+      ]
+    },
+    {
       "id": "mirza-kuchik-khan",
       "groupId": "world-interwar",
       "givenName": {

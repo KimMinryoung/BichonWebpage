@@ -24,9 +24,58 @@ const ORIGINAL = {
     'khorezm-peoples-soviet-republic': 'Хорезмская Народная Советская Республика',
     'persian-socialist-soviet-republic': 'جمهوری شوروی سوسیالیستی ایران',
     turkkomissiya: 'Туркестанская комиссия ВЦИК и СНК РСФСР',
+    'finnish-red-guards': 'Punakaarti',
+    'finnish-white-guard': 'Suojeluskunta',
+    'peoples-delegation-of-finland': 'Suomen kansanvaltuuskunta',
+    'battle-of-tampere': 'Tampereen taistelu',
+    heimosodat: 'Heimosodat',
+    'treaty-of-tartu-finland-1920': 'Tarton rauha',
+    'kingdom-of-finland-1918': 'Suomen kuningaskunta',
 };
 
 const FRAMES = [
+    {
+        id: 'finland-1917-1920',
+        title: { ko: '핀란드 독립과 내전', en: 'Finland: independence and civil war' },
+        period: '1917.03–1920.10',
+        sortOrder: 41,
+        question: {
+            ko: '1917년 12월 독립을 선언한 핀란드는 왜 한 달 만에 적위대와 자위대의 내전에 빠졌고, 소비에트 러시아와 독일은 이 전쟁에서 어떤 역할을 했으며, 동쪽 국경은 1920년 타르투 조약으로 어떻게 정리되었나?',
+            en: 'Why did Finland, having declared independence in December 1917, fall into a civil war between the Red Guards and the Civil Guards within a month, what part did Soviet Russia and Germany play in it, and how was the eastern border settled by the Treaty of Tartu in 1920?',
+        },
+        summary: {
+            ko: '러시아 혁명 속에 자치를 되찾고 1917년 12월 독립을 선언한 핀란드는 1918년 1월 남부의 적색 핀란드와 북부의 백색 핀란드로 갈라졌다. 소비에트 러시아가 적위대를 거들었으나 만네르헤임의 백군과 독일 발트해 사단이 탐페레·헬싱키·비푸리를 차례로 차지했고, 전쟁 뒤의 처형과 수용소는 3만여 명의 희생 가운데 큰 몫을 차지했다. 독일 왕을 세우려던 계획은 독일의 패전으로 접혔고, 공화국은 동카렐리야 원정을 거쳐 1920년 소비에트 러시아와 타르투 조약을 맺었다.',
+            en: 'Having regained its autonomy in the Russian Revolution and declared independence in December 1917, Finland split in January 1918 into a Red south and a White north. Soviet Russia helped the Red Guards, but Mannerheim’s Whites and the German Baltic Sea Division took Tampere, Helsinki and Viipuri in turn, and executions and prison camps after the fighting accounted for a large share of the more than 30,000 dead. The plan for a German king collapsed with Germany’s defeat, and the republic, after expeditions into East Karelia, made the Treaty of Tartu with Soviet Russia in 1920.',
+        },
+        outcome: {
+            ko: '백군이 1918년 5월 승리하고 적위대 지도부는 소비에트 러시아로 망명해 핀란드 공산당을 세웠다. 1919년 공화국 헌법이 채택되었고, 1920년 10월 14일 타르투 조약으로 핀란드는 페차모를 얻고 동카렐리야의 레폴라와 포라얘르비에서 물러났다.',
+            en: 'The Whites won in May 1918, and the Red leadership fled to Soviet Russia and founded the Communist Party of Finland. A republican constitution was adopted in 1919, and under the Treaty of Tartu of 14 October 1920 Finland gained Petsamo and withdrew from Repola and Porajärvi in East Karelia.',
+        },
+        locations: [
+            ['헬싱키', 'Helsinki', 60.17, 24.94, 'main'],
+            ['탐페레', 'Tampere', 61.5, 23.76, 'place'],
+            ['바사', 'Vaasa', 63.1, 21.62, 'place'],
+            ['비푸리', 'Viipuri', 60.71, 28.75, 'place'],
+            ['라흐티', 'Lahti', 60.98, 25.66, 'place'],
+            ['한코', 'Hanko', 59.82, 22.97, 'place'],
+            ['타르투', 'Tartu', 58.38, 26.72, 'place'],
+        ],
+        countries: ['finland', 'russia', 'soviet', 'germany', 'estonia'],
+        relations: { parent: 'civil-war', related: ['baltic-wars-of-independence', 'brest-litovsk', 'winter-war'] },
+        sides: [
+            { id: 'reds', label: { ko: '적색 핀란드·적위대', en: 'Red Finland and the Red Guards' } },
+            { id: 'whites', label: { ko: '백색 핀란드·자위대', en: 'White Finland and the Civil Guards' } },
+            { id: 'finnish-republic', label: { ko: '핀란드 공화국 정부(1919~1920)', en: 'The government of the Finnish republic (1919–1920)' } },
+            { id: 'soviet-russia', label: { ko: '소비에트 러시아', en: 'Soviet Russia' } },
+            { id: 'germany', label: { ko: '독일 제국', en: 'The German Empire' } },
+            { id: 'russian-whites', label: { ko: '러시아 백군', en: 'The Russian Whites' } },
+        ],
+        // The Russian Red Guards and Red/White Terror terms must not catch the
+        // Finnish ones; "triumvirate" and the Finnish programme's "permanent
+        // revolution" point at other subjects. (Bare "Hall" is blocked site-wide, 281.)
+        noAutoLink: ['적위대', 'Red Guards', 'Red Guard', '적색 테러', 'Red Terror', '백색 테러', 'White Terror',
+            'triumvirate', 'permanent revolution'],
+    },
     {
         id: 'central-asia-1917-1924',
         title: { ko: '중앙아시아의 혁명과 전쟁', en: 'Revolution and war in Central Asia' },
@@ -147,7 +196,15 @@ const FRAMES = [
 ];
 
 const RANK = ['leader', 'executor', 'participant', 'target', 'witness', 'historian'];
-const OVERRIDES = {};
+const OVERRIDES = {
+    'finland-1917-1920': {
+        'nikolai-yudenich': { 6: 'russian-whites' },
+        'alexander-kolchak': { 6: 'russian-whites' },
+        'kaarlo-juho-stahlberg': { 6: 'finnish-republic' },
+        'vaino-tanner': { 6: 'finnish-republic' },
+        'vaino-voionmaa': { 6: 'finnish-republic' },
+    },
+};
 
 const events = FRAMES.filter(f => fs.existsSync(path.join(__dirname, f.id, 'sec.js'))).map(frame => {
     const part = require(`./${frame.id}/sec`);
