@@ -1,16 +1,13 @@
 const express = require('express');
-const { cachedResearchList } = require('../services/research-series');
+const { cachedResearchList, cachedPagesList } = require('../services/public-lists');
 const { asyncHandler } = require('../utils/async-handler');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
 const db = require('../config/database');
 const redis = require('../config/redis');
-const cache = require('../config/post-cache');
-const reportCache = require('../config/report-cache');
 const hubStore = require('../config/hub-store');
 const researchStore = require('../config/research-store');
-const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
 const { setNoStore } = require('../utils/http');
@@ -38,12 +35,10 @@ const homepageModels = createPublicModelCache();
 // A null table (listener reconnected) rereads everything.
 const HOMEPAGE_SOURCES = {
     posts: 'posts', ai_diary: 'diaries', research_documents: 'research',
-    static_pages: 'pages', hub_curations: 'hub',
+    hub_curations: 'hub',
 };
 onTableChange(Object.keys(HOMEPAGE_SOURCES), async table => {
     const source = table && HOMEPAGE_SOURCES[table];
-    // The pages loader reads the Redis list first; drop it so the reread sees the change.
-    if (!table || source === 'pages') await reportCache.clearPagesList();
     homepageModels.invalidate(key => !source || key.startsWith(`${source}:`));
 });
 const excerptHtml = content => truncateHtml(sanitizeBasic(content), 200);
@@ -52,14 +47,7 @@ const excerptHtml = content => truncateHtml(sanitizeBasic(content), 200);
 async function loadRecentReportItems(lang) {
     const [researchResult, pagesResult] = await Promise.allSettled([
         homepageModels.get(`research:${lang}`, () => researchStore.listResearch(lang, { limit: RECENT_LIMIT })),
-        homepageModels.get(`pages:${lang}`, async () => {
-            let pages = await reportCache.getPagesList(lang);
-            if (!pages) {
-                pages = await pageStore.listPages(lang);
-                await reportCache.setPagesList(pages, lang);
-            }
-            return pages;
-        }),
+        cachedPagesList(lang),
     ]);
     if (researchResult.status === 'rejected' || pagesResult.status === 'rejected') {
         console.error('homepage reports:', (researchResult.reason || pagesResult.reason || {}).message);
@@ -177,7 +165,6 @@ router.get('/', async (req, res) => {
 // ai-diary router is the same pipeline with different names).
 const postRoutes = createEntryRoutes({
     table: 'posts',
-    cache,
     perPage: POSTS_PER_PAGE,
     listView: 'public/posts',
     listKey: 'posts',
@@ -288,12 +275,7 @@ async function getResearchFiles(lang = 'ko') {
 }
 
 async function getPagesList(lang = 'ko') {
-    let pagesList = await reportCache.getPagesList(lang);
-    if (!pagesList) {
-        pagesList = await pageStore.listPages(lang);
-        await reportCache.setPagesList(pagesList, lang);
-    }
-    return pagesList || [];
+    return (await cachedPagesList(lang)) || [];
 }
 
 async function getHubItems(limit = 200, lang = 'ko') {

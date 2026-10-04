@@ -1,8 +1,7 @@
-const cache = require('../config/report-cache');
-const researchStore = require('../config/research-store');
+const { cachedResearchList } = require('./public-lists');
 
-// The published research list (Redis-warm, DB otherwise), the slug set the
-// renderer links against, and the series (연재) prev/next navigation.
+// The slug set the renderer links against and the series (연재) prev/next
+// navigation, both from the published research list (services/public-lists.js).
 
 function researchSeriesIdentity(item) {
     const episode = Number(item && item.series_order);
@@ -43,17 +42,6 @@ function buildResearchSeriesNav({ current, items, lang }) {
         previous: currentIndex > 0 ? seriesItems[currentIndex - 1] : null,
         next: currentIndex < seriesItems.length - 1 ? seriesItems[currentIndex + 1] : null,
     };
-}
-
-// The full published list, from Redis when it is warm (10 minute TTL, shared
-// with the listing page) and from the database otherwise. Three call sites want
-// it: the series nav, the listing, and the slug set below.
-async function cachedResearchList(lang) {
-    const cached = await cache.getResearchList(lang);
-    if (cached) return cached;
-    const items = await researchStore.listResearch(lang);
-    await cache.setResearchList(items, lang);
-    return items;
 }
 
 // Slugs a report may link to. Reports reference their predecessors by slug and

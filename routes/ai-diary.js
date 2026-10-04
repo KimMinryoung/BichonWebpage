@@ -2,13 +2,11 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
 const { requireAuth } = require('../middleware/auth');
-const cache = require('../config/diary-cache');
 const { sanitizeBasic } = require('../utils/sanitize');
 const { createEntryRoutes } = require('./entry-routes');
 
 const diaryRoutes = createEntryRoutes({
     table: 'ai_diary',
-    cache,
     perPage: 20,
     listView: 'public/ai-diary',
     listKey: 'diaries',
@@ -41,7 +39,6 @@ router.post('/:id/delete', requireAuth, async (req, res) => {
             return res.redirect('/ai-diary?message=일기를 찾을 수 없습니다.&type=error');
         }
 
-        await cache.deleteEntry(id);
         res.redirect('/ai-diary?message=일기가 삭제되었습니다.');
     } catch (error) {
         console.error('Error deleting diary:', error);

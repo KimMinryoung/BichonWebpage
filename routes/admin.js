@@ -3,8 +3,6 @@ const router = express.Router();
 const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
-const postCache = require('../config/post-cache');
-const diaryCache = require('../config/diary-cache');
 const reportCache = require('../config/report-cache');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { CHAT_API_URL, leninbotAdminHeaders } = require('../config/services');
@@ -30,9 +28,9 @@ router.post('/logout', (req, res) => {
     });
 });
 
-// Clear all caches
+// Clear the Redis caches (task reports fetched from the backend API)
 router.post('/cache/clear', requireAuth, async (req, res) => {
-    await Promise.all([postCache.clearAll(), diaryCache.clearAll(), reportCache.clearAll()]);
+    await reportCache.clearAll();
     res.json({ cleared: true });
 });
 
@@ -118,7 +116,6 @@ router.post('/posts/new', requireAuth, async (req, res) => {
             'INSERT INTO posts (title, content) VALUES ($1, $2)',
             [title, content]
         );
-        await postCache.invalidateIndex();
         res.redirect('/admin/posts?message=Post created successfully');
     } catch (error) {
         if (isConnectionError(error)) {
@@ -174,7 +171,6 @@ router.post('/posts/edit/:id', requireAuth, async (req, res) => {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
-        await postCache.deleteEntry(parseInt(postId));
         res.redirect('/post/' + postId);
     } catch (error) {
         if (isConnectionError(error)) {
@@ -201,7 +197,6 @@ router.post('/posts/delete/:id', requireAuth, async (req, res) => {
             return res.redirect('/admin/posts?message=Post not found&type=error');
         }
 
-        await postCache.deleteEntry(id);
         res.redirect('/admin/posts?message=Post deleted successfully');
     } catch (error) {
         console.error('Error deleting post:', error);

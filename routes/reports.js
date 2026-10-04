@@ -1,14 +1,14 @@
 const express = require('express');
 const cache = require('../config/report-cache');
 const researchStore = require('../config/research-store');
-const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const { fetchWithTimeout, clampInteger, markDegraded } = require('../utils/http');
 const { titleFromMarkdown } = require('../utils/markdown');
 const errorPage = require('../utils/error-page');
 const { CHAT_API_URL, LENINBOT_ADMIN_KEY: ADMIN_KEY } = require('../config/services');
 const { listPrivateReports, getPrivateReport } = require('../config/private-report-store');
-const { cachedResearchList, researchSeriesNavFor } = require('../services/research-series');
+const { researchSeriesNavFor } = require('../services/research-series');
+const { cachedResearchList, cachedPagesList } = require('../services/public-lists');
 const { renderResearch, researchMarkdown } = require('../services/research-render');
 
 const router = express.Router();
@@ -109,17 +109,12 @@ router.get('/', async (req, res) => {
             }
         }
 
-        // Fetch static-pages list (with cache)
-        let pagesList = await cache.getPagesList(lang);
-        if (!pagesList) {
-            pagesList = [];
-            try {
-                pagesList = await pageStore.listPages(lang);
-                await cache.setPagesList(pagesList, lang);
-            } catch (e) {
-                console.error('Error loading pages list:', e);
-                feedFailed = true;
-            }
+        let pagesList = [];
+        try {
+            pagesList = await cachedPagesList(lang);
+        } catch (e) {
+            console.error('Error loading pages list:', e);
+            feedFailed = true;
         }
 
         // Unified research-tab feed: research files + static pages, sorted by date desc.
@@ -222,33 +217,6 @@ router.get('/research/:filename', async (req, res) => {
         const slug = filename.replace(/\.md$/, '');
         const pagePath = `/reports/research/${slug}`;
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        let seriesNav = null;
-
-        // Check file cache
-        const cached = await cache.getResearch(filename, lang);
-        if (cached && (researchMarkdown(cached) || cached.html_body || cached.htmlBody)) {
-            if (wantsMarkdown) {
-                const cachedMarkdown = researchMarkdown(cached);
-                if (!cachedMarkdown) {
-                    return errorPage.notFound(res, { message: '마크다운 원문을 찾을 수 없습니다.', backHref: '/reports', backLabel: '목록으로' });
-                }
-                seo.setMarkdownSeoHeaders(res, pagePath, {
-                    lang: cached.has_translation && res.locals.urlLanguage === 'en' ? 'en' : 'ko',
-                });
-                res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
-                return res.type('text/markdown; charset=utf-8').send(cachedMarkdown);
-            }
-            const cachedMarkdown = researchMarkdown(cached);
-            const cachedTitle = cached.title || titleFromMarkdown(cachedMarkdown, slug.replace(/_/g, ' '));
-            seriesNav = await researchSeriesNavFor({ filename, slug, title: cachedTitle, ...cached }, lang);
-            return await renderResearch(res, {
-                filename,
-                slug,
-                pagePath,
-                data: { ...cached, title: cachedTitle },
-                seriesNav,
-            });
-        }
 
         const data = await researchStore.getResearch(filename, lang);
         if (!data) {
@@ -264,20 +232,7 @@ router.get('/research/:filename', async (req, res) => {
             return res.type('text/markdown; charset=utf-8').send(markdown);
         }
         const title = data.title || titleFromMarkdown(markdown, slug.replace(/_/g, ' '));
-        await cache.setResearch(filename, {
-            content: markdown,
-            html_body: data.html_body || data.htmlBody || '',
-            summary: data.summary || data.excerpt || '',
-            title,
-            series_slug: data.series_slug || '',
-            series_title: data.series_title || '',
-            series_order: data.series_order || null,
-            published_at: data.published_at || null,
-            updated_at: data.updated_at || null,
-            language: data.language || lang,
-            has_translation: Boolean(data.has_translation),
-        }, lang);
-        seriesNav = await researchSeriesNavFor({ filename, slug, title, ...data }, lang);
+        const seriesNav = await researchSeriesNavFor({ filename, slug, title, ...data }, lang);
 
         await renderResearch(res, {
             filename,
