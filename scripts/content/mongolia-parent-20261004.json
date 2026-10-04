@@ -1,0 +1,6 @@
+{
+  "id": "mongolia-parent-20261004",
+  "changes": [
+    { "event": "mongolian-republic-1921-1924", "column": "relations", "expected": {}, "value": { "parent": "civil-war" } }
+  ]
+}

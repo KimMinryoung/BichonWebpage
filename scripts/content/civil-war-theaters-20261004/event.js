@@ -31,9 +31,139 @@ const ORIGINAL = {
     heimosodat: 'Heimosodat',
     'treaty-of-tartu-finland-1920': 'Tarton rauha',
     'kingdom-of-finland-1918': 'Suomen kuningaskunta',
+    'sfatul-tarii': 'Sfatul Țării',
+    'moldavian-democratic-republic': 'Republica Democratică Moldovenească',
+    rumcherod: 'Румчерод',
+    'khotyn-uprising-1919': 'Хотинське повстання',
+    'tatarbunary-uprising-1924': 'Татарбунарське повстання',
+    'moldavian-assr-1924': 'Молдавская Автономная Советская Социалистическая Республика',
+    'union-of-bessarabia-with-romania': 'Unirea Basarabiei cu România',
+    'belarusian-peoples-republic': 'Беларуская Народная Рэспубліка',
+    'socialist-soviet-republic-of-byelorussia': 'Сацыялістычная Савецкая Рэспубліка Беларусь',
+    litbel: 'Литовско-Белорусская Советская Социалистическая Республика',
+    'slutsk-uprising-1920': 'Слуцкае паўстанне',
+    'first-all-belarusian-congress': 'Першы Усебеларускі з’езд',
+    'belarusian-socialist-hramada': 'Беларуская сацыялістычная грамада',
+    'all-russian-muslim-congress-1917': 'Первый Всероссийский мусульманский съезд',
+    'idel-ural-state': 'Идел-Урал штаты',
+    'bashkir-autonomy': 'Башҡортостан',
+    'crimean-tatar-qurultay-1917': 'Qırımtatar Milliy Qurultayı',
+    'crimean-peoples-republic': 'Qırım Halq Cumhuriyeti',
+    'crimean-assr-1921': 'Крымская АССР',
+    'tatar-assr-1920': 'Татарская АССР',
 };
 
 const FRAMES = [
+    {
+        id: 'volga-ural-crimea-1917-1921',
+        title: { ko: '볼가·우랄 무슬림과 크림 타타르의 민족운동', en: 'Volga-Ural Muslims and Crimean Tatars in revolution' },
+        period: '1917.05–1921.10',
+        sortOrder: 41,
+        question: {
+            ko: '1917년 연방제와 문화자치를 요구한 볼가·우랄의 타타르·바시키르인과 크림 타타르는 내전 속에서 어떤 자치 정부를 세웠고, 그 요구는 어떻게 바시키르·타타르·크림의 소비에트 자치 공화국으로 바뀌었나?',
+            en: 'What autonomous governments did the Tatars and Bashkirs of the Volga-Ural region and the Crimean Tatars, who in 1917 demanded federation and cultural autonomy, set up in the civil war, and how were those demands turned into the Bashkir, Tatar and Crimean Soviet autonomous republics?',
+        },
+        summary: {
+            ko: '1917년 5월 전러시아 무슬림 대회는 영토 연방제와 문화자치를 두고 갈렸고, 볼가·우랄에서는 이델-우랄 국가 구상과 발리디의 바시키르 자치가, 크림에서는 쿠룰타이와 크림 인민공화국이 생겨났다. 볼셰비키는 무슬림 인민위원부로 무슬림 공산주의자를 끌어들이는 한편 자치 정부들을 해산했고, 백군과 싸우던 바시키르 군은 1919년 소비에트 쪽으로 넘어왔다. 1919~1921년 바시키르·타타르·크림의 자치 소비에트 사회주의 공화국이 차례로 세워졌지만, 크림은 1920년 말 대규모 적색 테러와 기근을 겪었다.',
+            en: 'The All-Russian Muslim Congress of May 1917 split over territorial federation and cultural autonomy; in the Volga-Ural region came the plan for an Idel-Ural State and Validi’s Bashkir autonomy, and in Crimea the Qurultay and the Crimean People’s Republic. The Bolsheviks drew Muslim communists in through the Muslim Commissariat while dissolving the autonomous governments, and the Bashkir army that had fought alongside the Whites went over to the Soviets in 1919. Bashkir, Tatar and Crimean autonomous Soviet socialist republics followed in 1919–1921, but Crimea suffered a mass Red Terror and famine from the end of 1920.',
+        },
+        outcome: {
+            ko: '1919년 바시키르, 1920년 타타르, 1921년 크림 자치 소비에트 사회주의 공화국이 러시아 사회주의 연방 소비에트 공화국 안에 세워졌다. 발리디는 1920년 소비에트와 갈라서 중앙아시아의 바스마치로 갔고, 첼레비지한은 1918년 처형되었으며, 무슬림 민족공산주의는 1923년 술탄-갈리예프의 체포로 꺾였다.',
+            en: 'Bashkir (1919), Tatar (1920) and Crimean (1921) autonomous Soviet socialist republics were created within the Russian Soviet Federative Socialist Republic. Validi broke with the Soviets in 1920 and went to the Basmachi in Central Asia, Çelebicihan was executed in 1918, and Muslim national communism was broken with the arrest of Sultan-Galiev in 1923.',
+        },
+        locations: [
+            ['카잔', 'Kazan', 55.79, 49.11, 'main'],
+            ['우파', 'Ufa', 54.74, 55.97, 'place'],
+            ['오렌부르크', 'Orenburg', 51.77, 55.1, 'place'],
+            ['심페로폴', 'Simferopol', 44.95, 34.1, 'place'],
+            ['바흐치사라이', 'Bakhchysarai', 44.75, 33.86, 'place'],
+        ],
+        countries: ['russia', 'soviet', 'ukraine', 'germany'],
+        relations: { parent: 'civil-war', related: ['central-asia-1917-1924', 'ukraine-1917-1921', 'ussr-formation'] },
+        sides: [
+            { id: 'soviet-forces', label: { ko: '소비에트 세력', en: 'Soviet forces' } },
+            { id: 'muslim-national-movements', label: { ko: '무슬림 민족운동·자치 정부', en: 'Muslim national movements and autonomous governments' } },
+            { id: 'whites', label: { ko: '백군', en: 'The Whites' } },
+            { id: 'germany', label: { ko: '독일 점령군', en: 'German occupation forces' } },
+        ],
+        // Terms of other eras caught by ordinary phrases (AI "sycophancy", the
+        // 1924+ Military Collegium, perestroika "economic sovereignty"), Kazan's
+        // own revolutionary committee, and "Turko-" read as Iosif Turko.
+        noAutoLink: ['sycophancy', 'Turko', 'Military Collegium', 'economic sovereignty', '군사혁명위원회', 'Military Revolutionary Committee'],
+    },
+    {
+        id: 'belarus-1917-1921',
+        title: { ko: '벨라루스 인민공화국과 소비에트 벨로루시', en: 'The Belarusian People’s Republic and Soviet Belarus' },
+        period: '1917.03–1921.03',
+        sortOrder: 41,
+        question: {
+            ko: '서부 전선의 후방이던 벨라루스에서 1918년 독일 점령 아래 선포된 벨라루스 인민공화국과 1919년의 소비에트 벨로루시는 어떻게 경쟁했고, 왜 1921년 리가 조약은 이 땅을 폴란드와 소비에트 사이에 나누었나?',
+            en: 'In Belarus, the rear of the Western Front, how did the Belarusian People’s Republic proclaimed under German occupation in 1918 compete with the Soviet Belarus of 1919, and why did the Treaty of Riga of 1921 divide the land between Poland and the Soviets?',
+        },
+        summary: {
+            ko: '1917년 벨라루스 민족운동이 일어났지만 민스크의 실권은 서부 전선의 볼셰비키가 쥐었고, 12월 전벨라루스 대회는 해산되었다. 1918년 3월 독일 점령 아래 라다가 벨라루스 인민공화국의 독립을 선언했고, 독일군이 물러난 1919년 1월에는 벨로루시 사회주의 소비에트 공화국이 선포되어 곧 리투아니아와 합쳐 리트벨이 되었다. 폴란드의 진격과 반격 속에 라다는 갈라졌고, 1920년 소비에트 벨로루시가 다시 선포된 뒤 1921년 리가 조약으로 서벨라루스는 폴란드에 넘어갔다.',
+            en: 'A Belarusian national movement arose in 1917, but real power in Minsk lay with the Bolsheviks of the Western Front, and the All-Belarusian Congress of December was dispersed. In March 1918, under German occupation, the Rada declared the independence of the Belarusian People’s Republic; when the Germans left, the Socialist Soviet Republic of Byelorussia was proclaimed in January 1919 and soon merged with Lithuania as Litbel. Amid the Polish advance and the Soviet counter-attack the Rada split, Soviet Belarus was proclaimed again in 1920, and the Treaty of Riga of 1921 gave Western Belarus to Poland.',
+        },
+        outcome: {
+            ko: '1921년 3월 리가 조약으로 벨라루스는 폴란드의 서벨라루스와 소비에트 벨로루시로 나뉘었다. 벨라루스 인민공화국의 라다는 망명지에서 이어졌고, 소비에트 벨로루시는 1922년 소련 결성에 참여했다.',
+            en: 'The Treaty of Riga of March 1921 divided Belarus between Poland’s Western Belarus and Soviet Byelorussia. The Rada of the Belarusian People’s Republic continued in exile, and Soviet Byelorussia joined the formation of the USSR in 1922.',
+        },
+        locations: [
+            ['민스크', 'Minsk', 53.9, 27.56, 'main'],
+            ['빌뉴스', 'Vilnius', 54.69, 25.28, 'place'],
+            ['슬루츠크', 'Slutsk', 53.02, 27.55, 'place'],
+            ['브레스트', 'Brest', 52.1, 23.69, 'place'],
+            ['모지르', 'Mozyr', 52.05, 29.25, 'place'],
+        ],
+        countries: ['belarus', 'russia', 'soviet', 'germany', 'poland', 'lithuania'],
+        relations: { parent: 'civil-war', related: ['soviet-polish-war', 'baltic-wars-of-independence', 'brest-litovsk', 'ussr-formation'] },
+        // The 1930 "Union of Liberation of Belarus" case is not the Russian liberals'
+        // Union of Liberation; Minsk's own revolutionary committee and the WWII
+        // partisan term point elsewhere.
+        noAutoLink: ['해방동맹', '군사혁명위원회', 'Military Revolutionary Committee', 'partisan struggle'],
+        sides: [
+            { id: 'soviet-forces', label: { ko: '소비에트 세력', en: 'Soviet forces' } },
+            { id: 'belarusian-peoples-republic', label: { ko: '벨라루스 인민공화국', en: 'The Belarusian People’s Republic' } },
+            { id: 'poland', label: { ko: '폴란드', en: 'Poland' } },
+            { id: 'germany', label: { ko: '독일 점령군', en: 'German occupation forces' } },
+        ],
+    },
+    {
+        id: 'bessarabia-1917-1924',
+        title: { ko: '베사라비아의 혁명과 루마니아 합병', en: 'Bessarabia: revolution and union with Romania' },
+        period: '1917.03–1924.10',
+        sortOrder: 41,
+        question: {
+            ko: '러시아 제국의 베사라비아주는 어떻게 1917년 몰다비아 민주공화국을 거쳐 1918년 루마니아에 합병되었고, 소비에트 러시아가 인정하지 않은 이 국경은 왜 1919년과 1924년의 봉기, 그리고 드네스트르 동안의 몰다비아 자치 공화국으로 이어졌나?',
+            en: 'How did the Russian province of Bessarabia pass through the Moldavian Democratic Republic of 1917 into union with Romania in 1918, and why did this border, never recognized by Soviet Russia, lead to the risings of 1919 and 1924 and to the Moldavian autonomous republic east of the Dniester?',
+        },
+        summary: {
+            ko: '2월 혁명 뒤 베사라비아에서는 몰도바 민족운동과 농민의 토지 점거, 병사 위원회가 함께 일어났고, 1917년 12월 스파툴 처리이가 몰다비아 민주공화국을 선포했다. 1918년 1월 볼셰비키·룸체로드와 싸우며 루마니아군이 들어왔고, 스파툴 처리이는 그해 3월 조건부로, 12월 무조건으로 루마니아와의 합병을 결의했다. 소비에트 러시아는 이를 인정하지 않았고, 1919년 호틴·벤데르 봉기와 1924년 타타르부나리 봉기가 진압된 뒤 소련은 드네스트르 동안에 몰다비아 자치 소비에트 사회주의 공화국을 세웠다.',
+            en: 'After the February Revolution, Bessarabia saw a Moldovan national movement, peasant land seizures and soldiers’ committees rise together, and in December 1917 the Sfatul Țării proclaimed the Moldavian Democratic Republic. Romanian troops entered in January 1918, fighting the Bolsheviks and the Rumcherod, and the Sfatul Țării voted for union with Romania, conditionally in March and unconditionally in December. Soviet Russia never recognized it; after the Khotyn and Bender risings of 1919 and the Tatarbunary rising of 1924 were crushed, the USSR set up the Moldavian Autonomous Soviet Socialist Republic east of the Dniester.',
+        },
+        outcome: {
+            ko: '베사라비아는 1940년까지 루마니아 영토로 남았고, 1920년 파리 의정서로 연합국 일부의 승인을 얻었으나 소련은 끝내 인정하지 않았다. 1924년 10월 우크라이나 소비에트 사회주의 공화국 안에 몰다비아 자치 소비에트 사회주의 공화국이 세워졌다.',
+            en: 'Bessarabia remained Romanian until 1940; the Paris Protocol of 1920 won it recognition from some of the Allies, but the USSR never accepted it. In October 1924 the Moldavian Autonomous Soviet Socialist Republic was created within the Ukrainian Soviet Socialist Republic.',
+        },
+        locations: [
+            ['키시너우', 'Chișinău', 47.01, 28.86, 'main'],
+            ['벤데르', 'Bender', 46.83, 29.48, 'place'],
+            ['호틴', 'Khotyn', 48.51, 26.49, 'place'],
+            ['타타르부나리', 'Tatarbunary', 45.84, 29.61, 'place'],
+            ['티라스폴', 'Tiraspol', 46.84, 29.63, 'place'],
+            ['발타', 'Balta', 47.94, 29.62, 'place'],
+        ],
+        countries: ['moldova', 'romania', 'russia', 'soviet', 'ukraine'],
+        relations: { parent: 'civil-war', related: ['ukraine-1917-1921', 'world-war-i-aftermath-1918-1923'] },
+        // Namesakes on other cards (General Mark Clark, Konstantin Rudnev) and the
+        // 1917 Moldovan "socialist bloc", which is not the Cold War socialist camp.
+        noAutoLink: ['클라크', 'Clark', '루드네프', 'Rudnev', '사회주의 블록'],
+        sides: [
+            { id: 'soviet-forces', label: { ko: '소비에트 세력·봉기군', en: 'Soviet forces and insurgents' } },
+            { id: 'romania', label: { ko: '루마니아 왕국', en: 'The Kingdom of Romania' } },
+            { id: 'moldavian-council', label: { ko: '스파툴 처리이·몰다비아 민주공화국', en: 'The Sfatul Țării and the Moldavian Democratic Republic' } },
+        ],
+    },
     {
         id: 'finland-1917-1920',
         title: { ko: '핀란드 독립과 내전', en: 'Finland: independence and civil war' },
