@@ -87,9 +87,14 @@ function chip(href, label, count, active, icon) { %>
         </div>
         <div class="commu-activity-results" id="activity-results" tabindex="-1">
             <h2 aria-live="polite"><%= resultLabel || (en ? 'All' : '전체') %> <%= en ? 'people' : '인물' %> <span><%= total %><%= en ? '' : '명' %></span></h2>
-            <% if (activeAffiliation && activeAffiliation.termIds && activeAffiliation.termIds.length) { %><a class="commu-activity-reset" href="/commulingo/terms/<%= encodeURIComponent(activeAffiliation.termIds[0]) %>"><%= en ? 'Glossary entry' : '용어 사전 항목' %></a><% } %>
             <% if (activeFunction || activeAffiliation || activeOffice) { %><a class="commu-activity-reset" href="<%= hrefWith({ function: '', affiliation: '' }) %>"><%= en ? 'Clear all' : '조건 모두 해제' %></a><% } %>
         </div>
+        <%# The glossary entry for the chosen affiliation, as the row the term page links back from. %>
+        <% if (activeAffiliation && activeAffiliation.termIds && activeAffiliation.termIds.length) { %>
+        <ul class="commu-person-event-links commu-activity-term">
+            <li><a href="/commulingo/terms/<%= encodeURIComponent(activeAffiliation.termIds[0]) %>"><span><%= en ? 'Glossary' : '용어 사전' %></span><strong><%= activeAffiliation.label %></strong></a></li>
+        </ul>
+        <% } %>
         <% if (!total) { %><p><%= q ? (en ? 'No people match this search and these filters.' : '검색어와 조건에 맞는 인물이 없습니다.') : (en ? 'No people match these filters.' : '조건에 맞는 인물이 없습니다.') %></p><% } %>
         <div class="commu-people-grid">
         <% people.forEach(function(person) { %>

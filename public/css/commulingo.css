@@ -5656,6 +5656,7 @@ a.commu-activity-chip { display: inline-flex; align-items: center; gap: .35rem; 
 .commu-activity-results h2 { margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
 .commu-activity-results h2 span { color: var(--text-muted); font-size: var(--text-md); font-weight: normal; white-space: nowrap; }
 .commu-activity-reset { font-size: var(--text-sm); }
+.commu-activity-term { margin-bottom: var(--space-4); }
 .commu-activity-browser[aria-busy="true"] .commu-people-grid, .commu-activity-browser[aria-busy="true"] .commu-activity-results { opacity: .5; transition: opacity var(--duration-fast) var(--ease-standard); }
 @media (max-width: 640px) {
     /* One scrollable row per facet instead of a wall of wrapped chips. */
