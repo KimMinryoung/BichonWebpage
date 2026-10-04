@@ -1,0 +1,3700 @@
+{
+  "changedBy": "civil-war-theaters-20261004",
+  "people": [
+    {
+      "id": "mirza-kuchik-khan",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "미르자",
+        "en": "Mirza"
+      },
+      "familyName": {
+        "ko": "쿠착 칸",
+        "en": "Kuchik Khan"
+      },
+      "nativeName": "میرزا كوچک خان",
+      "years": "1880–1921",
+      "citizenship": {
+        "code": "iran"
+      },
+      "nationalOrigin": {
+        "code": "iran"
+      },
+      "epithet": {
+        "ko": "길란의 정글리 운동을 이끌고 1920년 길란 소비에트 공화국을 선포한 이란의 혁명가",
+        "en": "Iranian revolutionary who led the Jungle movement of Gilan and proclaimed the Soviet Republic of Gilan in 1920"
+      },
+      "bio": {
+        "ko": "1880년 라슈트에서 길란 상인의 아들로 태어나 이란 입헌혁명에 가담했고, 1909년 테헤란을 점령한 입헌파 부대의 하급 지휘관이었다. 1914~1915년 길란의 숲에서 정글리 운동을 일으켜 지방 자치, 중앙정부의 부패 척결, 외세 간섭 중단과 토지 개혁을 요구했다. 1920년 소비에트 함대가 엔젤리에 들어오자 내정 불간섭을 조건으로 손잡고 6월 5일 길란 소비에트 공화국을 선포해 그 수반이 되었으나, 토지 재분배를 거부해 공산주의자들과 갈라섰다. 1921년 5월 정부 수반으로 돌아왔지만 소련이 지원을 끊은 뒤 레자 칸의 정부군에 패했고, 탈레시 산지로 달아나다 동상으로 숨졌다. 잘린 머리는 라슈트에 내걸렸다.",
+        "en": "Born in Rasht in 1880, the son of a Gilani merchant, he joined the Iranian Constitutional Revolution and in 1909 was a junior commander of the constitutionalist force that took Tehran. In 1914–1915 he launched the Jungle movement in the forests of Gilan, demanding provincial autonomy, an end to central government corruption and foreign interference, and land reform. When a Soviet flotilla entered Enzeli in 1920 he agreed to cooperate on condition of non-interference, proclaimed the Soviet Republic of Gilan on 5 June and became its head, but split with the communists over his refusal to redistribute land. He returned as head of government in May 1921, but after the Soviets withdrew their support he was defeated by Reza Khan’s government troops and died of frostbite while fleeing into the Talesh mountains. His severed head was displayed in Rasht."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "도피 중 동사",
+          "en": "Froze to death while fleeing"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "미르자 쿠체크 칸",
+          "미르자 쿠치크 칸",
+          "쿠체크 칸"
+        ],
+        "en": [
+          "Mirza Kuchak Khan",
+          "Mirza Kuchek Khan",
+          "Mirza Koochek Khan",
+          "Kuchak Khan",
+          "Kuchek Khan"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+        "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80%D0%B7%D0%B0_%D0%9A%D1%83%D1%87%D0%B5%D0%BA-%D1%85%D0%B0%D0%BD",
+        "https://en.wikipedia.org/wiki/Jungle_Movement_of_Gilan",
+        "https://en.wikipedia.org/wiki/Persian_Socialist_Soviet_Republic",
+        "https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BB%D1%8F%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1880–1921",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "lead",
+          "excerpt": "October 12, 1880 – December 2, 1921"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Iranian revolutionary, head of the Gilan republic",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "lead",
+          "excerpt": "was an Iranian revolutionary leader and the president of the Gilan Socialist Soviet Republic"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Rasht to a Gilani merchant",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Early life",
+          "excerpt": "in the city of Rasht in northern Iran in 1880. His father was a merchant from Gilan."
+        },
+        {
+          "field": "bio",
+          "claim": "took part in the Constitutional Revolution and was wounded",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Political activities",
+          "excerpt": "He was injured during the Constitutionalist war"
+        },
+        {
+          "field": "bio",
+          "claim": "junior commander in the 1909 capture of Tehran",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Political activities",
+          "excerpt": "Mirza Kuchak Khan was one of the lower ranked commanders of the force that invaded the capital from the North"
+        },
+        {
+          "field": "bio",
+          "claim": "uprising began in 1914 and lasted until 1921",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "lead",
+          "excerpt": "This uprising started in 1914 and remained active against internal and foreign enemies until 1921"
+        },
+        {
+          "field": "bio",
+          "claim": "Jungle movement launched in October 1915 with Kuchik Khan among its founders",
+          "source": "https://en.wikipedia.org/wiki/Jungle_Movement_of_Gilan",
+          "locator": "Origins and beliefs (1915)",
+          "excerpt": "and Mirza Kuchik Khan, an experienced activist in the pro-democracy and nationalist Constitutional Revolution, among others, collectively launched the Jangal movement in the forests of Kasma, Gilan."
+        },
+        {
+          "field": "bio",
+          "claim": "demands of the movement",
+          "source": "https://en.wikipedia.org/wiki/Jungle_Movement_of_Gilan",
+          "locator": "Origins and beliefs (1915)",
+          "excerpt": "They demanded autonomous status for the province, an end to central government corruption, an end to foreign interference in affairs of local peoples, and land reform."
+        },
+        {
+          "field": "bio",
+          "claim": "conditions for cooperation with the Soviets",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Socialist Republic of Gilan",
+          "excerpt": "Mirza Kuchak Khan agreed to cooperate with the Soviet revolutionaries on some conditions including the announcement of the Socialist Republic of Gilan (also known as The Red Republic of the Jungle) under his leadership and lack of any direct intervention by the Soviets in the internal affairs of the republic."
+        },
+        {
+          "field": "bio",
+          "claim": "republic proclaimed on 5 June 1920",
+          "source": "https://en.wikipedia.org/wiki/Jungle_Movement_of_Gilan",
+          "locator": "Resumption of hostilities and Gilan SSR (1918–20)",
+          "excerpt": "The 11th Army captured Rasht on the 4 June and the Jangalis subsequently proclaimed the Socialist Soviet Republic of Gilan on 5 June."
+        },
+        {
+          "field": "bio",
+          "claim": "appointed head of the republic",
+          "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BB%D1%8F%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0",
+          "locator": "История",
+          "excerpt": "Главой республики был назначен Кучек-хан"
+        },
+        {
+          "field": "bio",
+          "claim": "no land redistribution, split with the communists",
+          "source": "https://en.wikipedia.org/wiki/Persian_Socialist_Soviet_Republic",
+          "locator": "Declaration of the republic",
+          "excerpt": "The republic did not redistribute land to poor peasants, to the dismay of the more radical forces of the Jangal movement."
+        },
+        {
+          "field": "bio",
+          "claim": "returned to head the government in May 1921",
+          "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BB%D1%8F%D0%BD%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0",
+          "locator": "Падение республики",
+          "excerpt": "Кучек-хан, опиравшийся на помещиков и духовенство, вновь возглавил правительство республики в мае 1921 году."
+        },
+        {
+          "field": "bio",
+          "claim": "Soviets withdrew support; defeated by Reza Khan",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Socialist Republic of Gilan",
+          "excerpt": "the Soviets decided not to further support the Socialist Republic of Gilan and as a result the government forces led by colonel Reza Khan (the future Reza Shah) overran the dispersed forces of the Jungle Republic."
+        },
+        {
+          "field": "bio",
+          "claim": "died of frostbite in the Talesh mountains",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Mirza's death",
+          "excerpt": "left alone in Talesh mountains around \"Masal\", both died of frostbite."
+        },
+        {
+          "field": "bio",
+          "claim": "head displayed in Rasht",
+          "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+          "locator": "Mirza's death",
+          "excerpt": "his head was displayed in Rasht"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1914,
+          "endYear": 1921,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+              "locator": "lead",
+              "claim": "Founder and leader of the Jungle movement, no catalog affiliation",
+              "excerpt": "He was the founder of a revolutionary movement based in the forests of Gilan in northern Iran that became known as the Nehzat-e Jangal (The Jungle Movement)."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1920,
+          "endYear": 1921,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80%D0%B7%D0%B0_%D0%9A%D1%83%D1%87%D0%B5%D0%BA-%D1%85%D0%B0%D0%BD",
+              "locator": "Биография",
+              "claim": "Head of the provisional government of the Gilan republic, no catalog affiliation",
+              "excerpt": "С июня по июль 1920 года и с мая по сентябрь 1921 года стоял во главе временного правительства этого государственного образования"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1909
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "입헌파 부대 하급 지휘관으로 테헤란 점령에 참가",
+            "en": "Junior commander in the constitutionalist capture of Tehran"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": [
+              1921
+            ]
+          },
+          "r": {
+            "ko": "길란 정글리 운동 지도자",
+            "en": "Leader of the Jungle movement of Gilan"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "길란 소비에트 공화국 임시정부 수반",
+            "en": "Head of the provisional government of the Soviet Republic of Gilan"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "길란 공화국 임시정부 수반 복귀",
+            "en": "Again head of the provisional government of the Gilan republic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alikhan-bukeikhanov",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "알리칸",
+        "en": "Alikhan"
+      },
+      "familyName": {
+        "ko": "부케이하노프",
+        "en": "Bukeikhanov"
+      },
+      "nativeName": "Әлихан Бөкейхан",
+      "years": "1866–1937",
+      "citizenship": {
+        "code": "soviet",
+        "label": {
+          "ko": "러시아 제국 → 소련",
+          "en": "Russian Empire → Soviet Union"
+        }
+      },
+      "nationalOrigin": {
+        "code": "kazakhstan"
+      },
+      "epithet": {
+        "ko": "알라시 당을 세우고 1917~1920년 알라시 오르다 정부를 이끈 카자흐 정치가",
+        "en": "Kazakh politician who founded the Alash party and led the Alash Orda government in 1917–1920"
+      },
+      "bio": {
+        "ko": "1866년(1870년 설도 있다) 세미팔라틴스크주에서 태어나 옴스크 기술학교와 상트페테르부르크 임업대학을 마쳤고, 아바이 쿠난바예프의 첫 전기를 썼다. 1905년 입헌민주당(카데트)에 들어가 1906년 국가 두마 의원이 되었고, 비보르크 호소문에 서명해 투옥된 뒤 1917년까지 사마라에서 유형 생활을 했다. 1917년 임시정부의 투르가이주 위원이 되었으나 카자흐 자치 문제로 카데트와 갈라서 알라시 당을 세웠고, 그해 알라시 오르다 정부 의장으로 뽑혔다. 1919년 말까지 시베리아의 백군 정부들 편에 섰다가 소비에트 권력과 타협했고, 모스크바에서 출판 일을 하다 1937년 총살되었다. 1989년 복권되었다.",
+        "en": "Born in Semipalatinsk Oblast in 1866 (some sources say 1870), he graduated from the Omsk Technical School and the Saint Petersburg Forestry Institute and wrote the first biography of Abay Kunanbayev. He joined the Constitutional Democrats (Kadets) in 1905, entered the State Duma in 1906 and, after signing the Vyborg Manifesto, was imprisoned and then lived in exile in Samara until 1917. Appointed the Provisional Government’s commissioner for Turgay Oblast in 1917, he broke with the Kadets over Kazakh autonomy, founded the Alash party and that year was elected head of the Alash Orda government. He sided with the White governments of Siberia until late 1919, then came to terms with Soviet power, worked in publishing in Moscow and was shot in 1937. He was rehabilitated in 1989."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "알리한 부케이하노프",
+          "알리한 보케이하노프",
+          "얼리한 뵈케이한"
+        ],
+        "en": [
+          "Alikhan Bokeikhanov",
+          "Alikhan Bokeikhan",
+          "Älihan Bökeihan"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+        "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1866–1937",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "lead",
+          "excerpt": "5 March 1866 – 27 September 1937"
+        },
+        {
+          "field": "citizenship",
+          "claim": "born in the Russian Empire, died in the USSR",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "Токраунская волость, Каркаралинский уезд, Семипалатинская область, Российская империя — 27 сентября 1937, Бутырская тюрьма, Москва, СССР"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born into a Kazakh family",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Early life",
+          "excerpt": "Alikhan Bukeikhanov was born into a Kazakh Muslim family on 5 March 1866"
+        },
+        {
+          "field": "bio",
+          "claim": "born 1866 or 1870 in Semipalatinsk Oblast",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Происхождение и детство",
+          "excerpt": "Алихан Букейханов родился 5 марта 1866 или 1870 года в ауле № 7 Токраунской волости Каркаралинского уезда, Семипалатинской области."
+        },
+        {
+          "field": "bio",
+          "claim": "Omsk Technical School and Forestry Institute",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Early life",
+          "excerpt": "Bukeikhanov graduated from the Russian-Kazakh School and Omsk Technical School in 1890. He later studied at the Saint Petersburg Forestry Institute, where he graduated from the Faculty of Economics in 1894."
+        },
+        {
+          "field": "bio",
+          "claim": "first biographer of Abay",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Early life",
+          "excerpt": "Bukeikhanov was the first biographer of Abay Kunanbayev"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the Kadets in 1905",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Political life",
+          "excerpt": "In 1905, Bukeikhanov's political activism began when he joined the Constitutional Democratic Party."
+        },
+        {
+          "field": "bio",
+          "claim": "Duma 1906, Vyborg petition",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Political life",
+          "excerpt": "He was elected to the State Duma of the Russian Empire as a member of that party in 1906 and signed the Vyborg petition to protest the dissolution of the Duma by the tsar."
+        },
+        {
+          "field": "bio",
+          "claim": "three months in prison for the Vyborg appeal",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Депутат Государственной думы",
+          "excerpt": "За подписание воззвания в конце 1907 года приговорён вместе с другими подписантами к 3 месяцам тюрьмы"
+        },
+        {
+          "field": "bio",
+          "claim": "exile in Samara 1908–1917",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Political life",
+          "excerpt": "In 1908, he was arrested again and exiled in Samara until 1917."
+        },
+        {
+          "field": "bio",
+          "claim": "commissioner of Turgay Oblast, March 1917",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Author of the idea of the First Kazakh Republic",
+          "excerpt": "On 19 March 1917, he was appointed as the Provisional Government Commissioner of Turgay Oblast."
+        },
+        {
+          "field": "bio",
+          "claim": "broke with the Kadets over Kazakh autonomy",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "С 1917 года",
+          "excerpt": "Но его пути с кадетами разошлись после Февральской революции, поскольку он перестал находить поддержку среди них в самом главном вопросе — предоставление автономии казахскому народу"
+        },
+        {
+          "field": "bio",
+          "claim": "founder of the Alash party",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "Основатель и один из лидеров партии «Алаш»."
+        },
+        {
+          "field": "bio",
+          "claim": "elected head of the Alash Orda government in 1917",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Author of the idea of the First Kazakh Republic",
+          "excerpt": "After the October Revolution, he was elected in 1917 as president of the Alash Orda government of Alash Autonomy."
+        },
+        {
+          "field": "bio",
+          "claim": "with the Siberian governments until late 1919",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "С 1917 года",
+          "excerpt": "В гражданской войне Букейханов и алашординцы были по «ту сторону баррикад» вместе с сибирскими правителями почти до конца 1919 года"
+        },
+        {
+          "field": "bio",
+          "claim": "publishing work in Moscow 1922–1927",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "С 1917 года",
+          "excerpt": "С 1922 по 1927 годы был литературным сотрудником Казахской секции Центрального издательства народов СССР в Москве."
+        },
+        {
+          "field": "bio",
+          "claim": "sentenced and shot on 27 September 1937",
+          "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "С 1917 года",
+          "excerpt": "27 сентября 1937 года осужден ВКВС за принадлежность к «террористической организации» и в тот же день расстрелян"
+        },
+        {
+          "field": "bio",
+          "claim": "rehabilitated in 1989",
+          "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+          "locator": "Political life",
+          "excerpt": "It was not until 1989 that the Soviet authorities rehabilitated him."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1917,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+              "locator": "lead",
+              "claim": "Leader of the Alash party and the Alash Orda government, no catalog affiliation",
+              "excerpt": "who led the Alash party and the provisional government of Alash Orda from 1917 to 1920"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "russian-kadets",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1905,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BA%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B8%D1%85%D0%B0%D0%BD_%D0%9D%D1%83%D1%80%D0%BC%D1%83%D1%85%D0%B0%D0%BC%D0%B5%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Член партии кадетов",
+              "claim": "Member of the Constitutional Democratic Party 1905–1917",
+              "excerpt": "С 1905 по 1917 год Букейханов являлся членом и сторонником Конституционно-демократической партии (партии кадетов)."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1895
+            ],
+            "end": [
+              1897
+            ]
+          },
+          "r": {
+            "ko": "옴스크 카자흐 아동 학교 수학 교사",
+            "en": "Mathematics teacher at the Omsk school for Kazakh children"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1906
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제1대 국가 두마 의원",
+            "en": "Member of the First State Duma"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1908
+            ],
+            "end": [
+              1917
+            ]
+          },
+          "r": {
+            "ko": "사마라 유형",
+            "en": "Exile in Samara"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "러시아 임시정부 투르가이주 위원",
+            "en": "Provisional Government commissioner for Turgay Oblast"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "알라시 오르다 정부 의장",
+            "en": "Head of the Alash Orda government"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1922
+            ],
+            "end": [
+              1927
+            ]
+          },
+          "r": {
+            "ko": "소련 중앙민족출판사 카자흐 분과 문학 편집원",
+            "en": "Literary staff member of the Kazakh section of the Central Publishing House of the Peoples of the USSR"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ibrahim-bek",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "",
+        "en": ""
+      },
+      "familyName": {
+        "ko": "이브라힘 벡",
+        "en": "Ibrahim Bek"
+      },
+      "nativeName": "Ibrohimbek Laqay",
+      "years": "1889–1931",
+      "citizenship": {
+        "code": "uzbekistan",
+        "label": {
+          "ko": "부하라 에미르국",
+          "en": "Emirate of Bukhara"
+        }
+      },
+      "nationalOrigin": {
+        "code": "uzbekistan",
+        "label": {
+          "ko": "우즈베크인 (로카이 부족)",
+          "en": "Uzbek (Lakai tribe)"
+        }
+      },
+      "epithet": {
+        "ko": "부하라 에미르의 복위를 내걸고 동부 부하라에서 싸운 로카이 부족 출신의 바스마치 지도자",
+        "en": "Lakai tribal chief who fought for the restoration of the Emir of Bukhara as the leading Basmachi commander in eastern Bukhara"
+      },
+      "bio": {
+        "ko": "1889년 무렵 부하라 에미르국 코크타시 마을에서 우즈베크 로카이 부족 장로의 막내아들로 태어났다. 1920년 부족의 벡이 되어 에미르 사이드 알림 칸을 섬겼고, 에미르가 망명한 뒤 그의 복위를 내걸고 동부 부하라의 여러 부족을 모아 바스마치를 이끌었다. 이슬람 보수주의를 내세워 자디드를 대열에서 몰아냈고, 엔베르 파샤를 의심해 한때 체포했다. 1926년 아프가니스탄으로 물러난 뒤에도 국경 너머로 습격을 이어 갔고, 그곳에서 아프가니스탄 정부군과도 싸웠다. 1931년 6월 소련 영내의 카피르니간강을 건너다 사로잡혀 타슈켄트로 압송되었고, 8월 31일 총살되었다. 2021년 우즈베키스탄 대법원이 복권했다.",
+        "en": "Born around 1889 in the village of Koktash in the Emirate of Bukhara, the youngest son of an elder of the Uzbek Lakai tribe, he became bek of his tribe in 1920 and entered the service of Emir Said Alim Khan. After the emir fled he rallied the tribes of eastern Bukhara and led the Basmachi in the name of the emir’s restoration. Championing Islamic conservatism, he drove the Jadids from the movement’s ranks and was so suspicious of Enver Pasha that he once arrested him. After withdrawing to Afghanistan in 1926 he kept raiding across the border and also fought Afghan government troops. Captured while crossing the Kafirnigan River on Soviet territory in June 1931, he was taken to Tashkent and shot on 31 August. Uzbekistan’s Supreme Court rehabilitated him in 2021."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "이브라힘 벡 로카이",
+          "이브라김 베크",
+          "이브로힘벡"
+        ],
+        "en": [
+          "Ibrahim Bek Lakai",
+          "Ibrahimbek Chaqabayev",
+          "Ibragim-bek"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+        "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1889–1931",
+          "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+          "locator": "lead",
+          "excerpt": "1889 – 31 August 1931"
+        },
+        {
+          "field": "citizenship",
+          "claim": "subject of the Emirate of Bukhara",
+          "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+          "locator": "Biography",
+          "excerpt": "Ibrahim Bek was born around 1889 in the Emirate of Bukhara."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Uzbek of the Lakai tribe",
+          "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+          "locator": "Biography",
+          "excerpt": "He hailed from the Lakai tribe, a group of Uzbeks distinguished by their tribal and regional identity."
+        },
+        {
+          "field": "bio",
+          "claim": "son of the elder of Koktash, of the Uzbek Lakai tribe",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Биография",
+          "excerpt": "Родился в семье аксакала (старосты) кишлака Кокташ Чакобая, происходившего из узбекского племени локай"
+        },
+        {
+          "field": "bio",
+          "claim": "youngest son",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Биография",
+          "excerpt": "Ибрагим-бек был младшим из сыновей."
+        },
+        {
+          "field": "bio",
+          "claim": "became bek of his tribe in 1920 and served the emir",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Биография",
+          "excerpt": "В 1920 году, став беком своего племени, поступил на службу к эмиру Бухары Сейид Алим-хану"
+        },
+        {
+          "field": "bio",
+          "claim": "united the tribes against the Bolsheviks",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Биография",
+          "excerpt": "Ибрагим-бек достиг определённых военных успехов, объединяя разнородные племена (до половины всех басмачей региона)"
+        },
+        {
+          "field": "bio",
+          "claim": "fought for the restoration of the emir 1921–1925",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Биография",
+          "excerpt": "В 1921—1925 годы Ибрагим-бек возглавил вооружённую борьбу за возвращение на престол свергнутого эмира Бухары Сеида Алим-хана."
+        },
+        {
+          "field": "bio",
+          "claim": "Islamic conservative ideology",
+          "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+          "locator": "Biography",
+          "excerpt": "Unlike secular, nationalist, or pan-Turkist factions within the Basmachi movement, Ibrahim Bek presented an Islamic conservative ideology"
+        },
+        {
+          "field": "bio",
+          "claim": "expelled the Jadids",
+          "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+          "locator": "Biography",
+          "excerpt": "Ibrahim Bek eventually expelled the jadids from within the Basmachi ranks and actively fought against Enver Pasha."
+        },
+        {
+          "field": "bio",
+          "claim": "suspicious of Enver Pasha, arrested him",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Биография",
+          "excerpt": "Ибрагим-бек отнёсся к нему с подозрением и даже взял под арест."
+        },
+        {
+          "field": "bio",
+          "claim": "withdrew to Afghanistan by June 1926",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Ставка в Афганистане",
+          "excerpt": "к июню 1926 года был разгромлен и вынужден снова отступить в Афганистан"
+        },
+        {
+          "field": "bio",
+          "claim": "raids from Afghanistan",
+          "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+          "locator": "Biography",
+          "excerpt": "Between 1926 and 1931, Ibrahim Bek led raids into Uzbekistan and Tajikistan."
+        },
+        {
+          "field": "bio",
+          "claim": "fought Afghan government forces",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Сражения с регулярными формированиями афганской армии",
+          "excerpt": "Одновременно вёл почти непрерывные боевые действия с боевыми отрядами пуштунов, направленными против него новым правителем Афганистана Надир-шахом."
+        },
+        {
+          "field": "bio",
+          "claim": "captured crossing the Kafirnigan on 23 June 1931",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Пленение и казнь",
+          "excerpt": "В бою 23 июня 1931 года Ибрагим-бек был пленён специальным отрядом ОГПУ под командованием Мукума Султанова во время переправы через реку Кафирниган"
+        },
+        {
+          "field": "bio",
+          "claim": "taken to Tashkent",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Пленение и казнь",
+          "excerpt": "Под конвоем был доставлен в Ташкент"
+        },
+        {
+          "field": "bio",
+          "claim": "shot after sentencing",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Пленение и казнь",
+          "excerpt": "Сразу же после оглашения приговора был расстрелян."
+        },
+        {
+          "field": "bio",
+          "claim": "rehabilitated in 2021",
+          "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B1%D1%80%D0%B0%D0%B3%D0%B8%D0%BC-%D0%B1%D0%B5%D0%BA",
+          "locator": "Реабилитация",
+          "excerpt": "Среди реабилитированных — курбаши Ибрагимбек Чакабоев."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1920,
+          "endYear": 1931,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+              "locator": "lead",
+              "claim": "Basmachi commander, no catalog affiliation",
+              "excerpt": "was an Uzbek leader in the Basmachi movement, a liberation movement in Central Asia, which fought against the Red Army"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "로카이 부족의 벡, 부하라 에미르 휘하 복무",
+            "en": "Bek of the Lakai tribe in the service of the Emir of Bukhara"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": [
+              1925
+            ]
+          },
+          "r": {
+            "ko": "에미르 복위를 위한 동부 부하라 무장 투쟁 지휘",
+            "en": "Led the armed struggle in eastern Bukhara for the emir’s restoration"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1926
+            ],
+            "end": [
+              1931
+            ]
+          },
+          "r": {
+            "ko": "아프가니스탄을 근거지로 소련 영내 습격",
+            "en": "Raids into Soviet territory from bases in Afghanistan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "said-alim-khan",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "사이드",
+        "en": "Said"
+      },
+      "familyName": {
+        "ko": "알림 칸",
+        "en": "Alim Khan"
+      },
+      "nativeName": "Said Olimxon",
+      "years": "1880–1944",
+      "citizenship": {
+        "code": "uzbekistan",
+        "label": {
+          "ko": "부하라 에미르국",
+          "en": "Emirate of Bukhara"
+        }
+      },
+      "nationalOrigin": {
+        "code": "uzbekistan",
+        "label": {
+          "ko": "우즈베크인 (망기트 왕조)",
+          "en": "Uzbek (Manghit dynasty)"
+        }
+      },
+      "epithet": {
+        "ko": "1920년 붉은 군대에 쫓겨 아프가니스탄으로 망명한 부하라 에미르국의 마지막 에미르",
+        "en": "Last Emir of Bukhara, driven into exile in Afghanistan by the Red Army in 1920"
+      },
+      "bio": {
+        "ko": "1880년 부하라에서 에미르 압둘아하드 칸의 아들로 태어나 열세 살에 상트페테르부르크로 보내져 니콜라이 사관학교에서 3년간 통치와 군사를 배웠고, 돌아와 나사프와 카르마나의 총독을 지냈다. 1911년 망기트 왕조의 12대이자 마지막 에미르가 되었다. 즉위 초에는 뇌물과 자의적 징세를 금하는 개혁을 내걸었으나 곧 전통파의 손을 들었고, 1917년 이후 청년부하라인 등 개혁파를 탄압했다. 1918년 3월 콜레소프가 이끈 볼셰비키의 공격을 물리쳤지만, 1920년 8월 말 부하라 작전 중 두샨베를 거쳐 카불로 달아났다. 망명지에서 영국과 손잡고 권력을 되찾으려 했고 바스마치를 지원했다고도 하며, 1944년 카불에서 숨졌다.",
+        "en": "Born in Bukhara in 1880, the son of Emir Abdulahad Khan, he was sent at thirteen to Saint Petersburg, where he spent three years at the Nicholas Cadet Corps studying government and military affairs, and on his return governed Nasaf and Karmana. In 1911 he became the twelfth and last emir of the Manghit dynasty. He began his reign with reforms against bribery and unauthorised taxation, but soon sided with the traditionalists, and after 1917 he repressed the reformers, the Young Bukharans among them. He repulsed the Bolshevik attack led by Kolesov in March 1918, but during the Bukhara operation at the end of August 1920 he fled via Dushanbe to Kabul. In exile he cooperated with the British in the hope of regaining power and is said to have supported the Basmachi; he died in Kabul in 1944."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "사이드 미르 무함마드 알림 칸",
+          "무함마드 알림 칸",
+          "세이드 알림 칸"
+        ],
+        "en": [
+          "Sayyid Mir Muhammad Alim Khan",
+          "Mohammed Alim Khan",
+          "Seyid Alim Khan"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+        "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+        "https://uz.wikipedia.org/wiki/Said_Olimxon"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1880–1944 (en: died 28 April, ru: 5 May 1944)",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "lead",
+          "excerpt": "3 January 1880 – 28 April 1944"
+        },
+        {
+          "field": "citizenship",
+          "claim": "ruler of the Emirate of Bukhara",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "lead",
+          "excerpt": "was the last emir of the Uzbek Manghit dynasty, rulers of the Emirate of Bukhara in Central Asia"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Uzbek, of the Manghit dynasty",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "преамбула",
+          "excerpt": "Представитель узбекского рода и династии Мангытов."
+        },
+        {
+          "field": "bio",
+          "claim": "son of Emir Abdulahad Khan",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "Биография",
+          "excerpt": "Его отцом был тогдашний эмир Бухары — Сеид Абдулахад-хан"
+        },
+        {
+          "field": "bio",
+          "claim": "sent to Saint Petersburg at thirteen",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "Early life",
+          "excerpt": "At the age of thirteen, Alim Khan was sent by his father Emir Abdulahad Khan to Saint Petersburg for three years to study government and modern military techniques."
+        },
+        {
+          "field": "bio",
+          "claim": "Nicholas Cadet Corps",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "Ранние годы",
+          "excerpt": "Был принят на учёбу в Санкт-Петербургский Николаевский кадетский корпус"
+        },
+        {
+          "field": "bio",
+          "claim": "governor of Nasaf and Karmana",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "Early life",
+          "excerpt": "he was appointed governor of the Nasef region for the next twelve years. He was then transferred to the northern province of Karmana"
+        },
+        {
+          "field": "bio",
+          "claim": "twelfth and last emir",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "преамбула",
+          "excerpt": "последний, 12-й, эмир Бухарского эмирата"
+        },
+        {
+          "field": "bio",
+          "claim": "early reforms against bribery and unauthorised taxes",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "Reign",
+          "excerpt": "He initially announced a rejection of personal gifts and prohibited officials from soliciting bribes or imposing unauthorized taxes."
+        },
+        {
+          "field": "bio",
+          "claim": "traditionalists prevailed",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "Reign",
+          "excerpt": "The power struggle between traditionalists and reformists concluded with the traditionalists gaining control"
+        },
+        {
+          "field": "bio",
+          "claim": "repressed the reformers after 1917",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "Свержение",
+          "excerpt": "После начала революции 1917 года в Российской империи и манифестаций в Бухаре эмир обрушился на сторонников демократических реформ (см. младобухарцы) с репрессиями."
+        },
+        {
+          "field": "bio",
+          "claim": "Bolshevik attack of March 1918 failed",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "Reign",
+          "excerpt": "The majority of Bukharans did not support an invasion and the ill-equipped and ill-disciplined Bolshevik army fled back to the Soviet stronghold at Tashkent."
+        },
+        {
+          "field": "bio",
+          "claim": "fled via Dushanbe to Kabul, died 1944",
+          "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+          "locator": "Deposition and death",
+          "excerpt": "the Emir Alim Khan fled, first to his base at Dushanbe (in present-day Tajikistan), and then finally to Kabul, Afghanistan, where he died in 1944."
+        },
+        {
+          "field": "bio",
+          "claim": "cooperated with Britain to regain power",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "преамбула",
+          "excerpt": "Сотрудничал с Британской империей в надежде вернуть власть и возродить эмират."
+        },
+        {
+          "field": "bio",
+          "claim": "reportedly supported the Basmachi",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%B8%D0%B4_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD",
+          "locator": "Свержение",
+          "excerpt": "В эмиграции зарабатывал себе на жизнь торговлей каракулем; по некоторым данным, поддерживал басмачество."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "monarchy",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1911,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+              "locator": "lead",
+              "claim": "Emir of Bukhara, no catalog affiliation",
+              "excerpt": "reigned from 3 January 1911 to 30 August 1920"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1896
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "러시아 정부로부터 부하라 왕세자로 확인받음",
+            "en": "Confirmed by the Russian government as Crown Prince of Bukhara"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1911
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "부하라 에미르",
+            "en": "Emir of Bukhara"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": [
+              1944
+            ]
+          },
+          "r": {
+            "ko": "아프가니스탄 망명",
+            "en": "Exile in Afghanistan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fyodor-kolesov",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "표도르",
+        "en": "Fyodor"
+      },
+      "familyName": {
+        "ko": "콜레소프",
+        "en": "Kolesov"
+      },
+      "nativeName": "Фёдор Колесов",
+      "years": "1891–1940",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "epithet": {
+        "ko": "1917~1918년 투르키스탄 소브나르콤 의장으로 코칸트 자치국을 무너뜨리고 부하라를 공격한 볼셰비키",
+        "en": "Bolshevik chairman of the Turkestan Sovnarkom in 1917–1918 who crushed the Kokand Autonomy and attacked Bukhara"
+      },
+      "bio": {
+        "ko": "1891년 우랄스크에서 태어나 오렌부르크와 타슈켄트에서 철도 사무원으로 일했다. 1917년 볼셰비키에 들어가 타슈켄트 소비에트 집행위원이 되었고, 제2차 전러시아 소비에트 대회에서 전러시아 중앙집행위원으로 뽑혔으며, 11월 타슈켄트 무장봉기를 조직했다. 1917년 11월부터 1918년 11월까지 투르키스탄 소브나르콤 의장으로서 무슬림을 최고 권력 기관에 들일 수 없다며 연립을 거부했고, 아슈하바드와 코칸트의 자치 시도를 무력으로 진압했다. 1918년 3월 청년부하라인과 함께 부하라 에미르를 무너뜨리려다 실패해 물러났다. 1923~1928년 극동 국민경제최고회의 의장을 지냈고, 뒤에 건축가로 일하다 1940년 모스크바에서 숨졌다.",
+        "en": "Born in Uralsk in 1891, he worked as a railway clerk in Orenburg and Tashkent. He joined the Bolsheviks in 1917, sat on the executive committee of the Tashkent Soviet, was elected to the All-Russian Central Executive Committee at the Second Congress of Soviets and helped organise the armed rising in Tashkent in November. As chairman of the Turkestan Sovnarkom from November 1917 to November 1918 he rejected a coalition, declaring that Muslims could not be admitted to the supreme organ of power, and put down by force the bids for autonomy in Ashgabat and Kokand. In March 1918 he tried with the Young Bukharans to overthrow the Emir of Bukhara and had to retreat. He chaired the Far Eastern Council of the National Economy in 1923–1928, later worked as an architect and died in Moscow in 1940."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Fedor Kolesov"
+        ]
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+        "https://en.wikipedia.org/wiki/Turkestan_Autonomy",
+        "https://uz.wikipedia.org/wiki/Kolesov_voqeasi"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1891–1940",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "20 мая (1 июня) 1891, Уральск, — 29 июля 1940, Москва"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Soviet statesman and party official",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "советский государственный и партийный деятель"
+        },
+        {
+          "field": "bio",
+          "claim": "railway clerk in Orenburg and Tashkent",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Работал конторщиком на железной дороге в Оренбурге, а с 1916 года — в Ташкенте."
+        },
+        {
+          "field": "bio",
+          "claim": "party member from 1917",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "преамбула",
+          "excerpt": "Член Коммунистической партии с 1917."
+        },
+        {
+          "field": "bio",
+          "claim": "Tashkent Soviet executive committee",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "С сентября 1917 член Исполкома Ташкентского совета"
+        },
+        {
+          "field": "bio",
+          "claim": "Second Congress of Soviets, elected to VTsIK",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "делегат 2-го Всероссийского съезда Советов  в Петрограде в октябре 1917 года, где был избран членом ВЦИК"
+        },
+        {
+          "field": "bio",
+          "claim": "organiser of the November rising in Tashkent",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "а также один из организаторов вооруженного восстания против власти представителей временного правительства в Ташкенте в ноябре 1917 года."
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Turkestan Sovnarkom, Nov 1917–Nov 1918",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "С ноября 1917 года по ноябрь 1918 года Ф. И. Колесов являлся председателем Совета Народных комиссаров (СНК) Туркестанской АССР"
+        },
+        {
+          "field": "bio",
+          "claim": "rejected a coalition with Muslims",
+          "source": "https://en.wikipedia.org/wiki/Turkestan_Autonomy",
+          "locator": "Establishment",
+          "excerpt": "Fyodor Kolesov, president of the Sovnarkom, firmly rejected the offer, stating that \"the inclusion of Muslims in the organ of supreme regional power is unacceptable at the present time\"."
+        },
+        {
+          "field": "bio",
+          "claim": "commanded the troops that crushed autonomy in Ashgabat and Kokand",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В этот период он лично командовал войсками, подавившими попытки создания автономии в Ашхабаде,"
+        },
+        {
+          "field": "bio",
+          "claim": "led the Red Guard units at Kagan, March 1918",
+          "source": "https://uz.wikipedia.org/wiki/Kolesov_voqeasi",
+          "locator": "Voqealar rivoji",
+          "excerpt": "Mart oyining birinchi kunlarida Xalq Komissarlari Kengashi raisi F. I. Kolesov boshchiligidagi Qizil gvardiya boʻlinmalari Kogonda toʻplandi"
+        },
+        {
+          "field": "bio",
+          "claim": "retreated towards Samarkand and Tashkent",
+          "source": "https://uz.wikipedia.org/wiki/Kolesov_voqeasi",
+          "locator": "Voqealar rivoji",
+          "excerpt": "Keyingi kurashning befoydaligini anglagan Kolesov qoʻshinlar bilan birga Kogon aholisini (asosan yevropaliklardan iborat) evakuatsiya qilib, Samarqand-Toshkent yoʻnalishi boʻyicha chekinishga qaror qilgan."
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Far Eastern VSNKh 1923–1928",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В 1923 — 1928 годах Ф. И. Колесов был председателем ВСНХ Дальнего Востока"
+        },
+        {
+          "field": "bio",
+          "claim": "studied architecture, then worked as an architect",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В 1929 — 1933 годах он учился в Московском архитектурном институте и в аспирантуре Академии архитектуры, затем работал архитектором."
+        },
+        {
+          "field": "bio",
+          "claim": "died in Moscow in 1940",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Скончался 29 июля 1940 г. в своей квартире в Москве"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Chairman of the Council of People's Commissars of Turkestan",
+              "excerpt": "С ноября 1917 года по ноябрь 1918 года Ф. И. Колесов являлся председателем Совета Народных комиссаров (СНК) Туркестанской АССР"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Personally commanded the troops that suppressed the autonomies in Ashgabat and Kokand and attacked Bukhara",
+              "excerpt": "В этот период он лично командовал войсками, подавившими попытки создания автономии в Ашхабаде,"
+            }
+          ]
+        },
+        {
+          "functionId": "economy",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1928,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Chairman of the Far Eastern Supreme Council of the National Economy",
+              "excerpt": "В 1923 — 1928 годах Ф. И. Колесов был председателем ВСНХ Дальнего Востока"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "타슈켄트 소비에트 집행위원, 전러시아 중앙집행위원",
+            "en": "Member of the Tashkent Soviet executive committee and of the All-Russian Central Executive Committee"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "투르키스탄 소브나르콤 의장",
+            "en": "Chairman of the Turkestan Sovnarkom"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제8차 러시아 공산당 대회 대의원",
+            "en": "Delegate to the Eighth Congress of the Russian Communist Party"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1923
+            ],
+            "end": [
+              1928
+            ]
+          },
+          "r": {
+            "ko": "극동 국민경제최고회의 의장",
+            "en": "Chairman of the Far Eastern Supreme Council of the National Economy"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1929
+            ],
+            "end": [
+              1933
+            ]
+          },
+          "r": {
+            "ko": "모스크바 건축대학·건축아카데미 수학",
+            "en": "Studied at the Moscow Architectural Institute and the Academy of Architecture"
+          }
+        }
+      ]
+    },
+    {
+      "id": "junaid-khan",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "",
+        "en": ""
+      },
+      "familyName": {
+        "ko": "주나이드 칸",
+        "en": "Junaid Khan"
+      },
+      "nativeName": "Jüneýit han",
+      "years": "1857–1938",
+      "citizenship": {
+        "code": "uzbekistan",
+        "label": {
+          "ko": "히바 칸국",
+          "en": "Khanate of Khiva"
+        }
+      },
+      "nationalOrigin": {
+        "code": "turkmenistan",
+        "label": {
+          "ko": "투르크멘인 (요무트 부족)",
+          "en": "Turkmen (Yomut tribe)"
+        }
+      },
+      "epithet": {
+        "ko": "1918~1920년 히바 칸국의 실권을 쥐고 소비에트 권력과 싸운 투르크멘 요무트 부족 지도자",
+        "en": "Yomut Turkmen chief who held real power in the Khanate of Khiva in 1918–1920 and fought Soviet rule for more than a decade"
+      },
+      "bio": {
+        "ko": "1857년(1862년 설도 있다) 투르크멘 요무트 부족 지도자의 아들로 태어나 마을의 재판관(카지)과 물 관리인(미라브)을 지냈고, 1912~1916년 투르크멘 봉기로 이름을 얻었다. 1918년 1월 히바의 칸 아스판디야르에게 군 총사령관으로 임명되었으나 칸을 암살하고 그 숙부 사이드 압둘라를 허수아비 칸으로 세워 실권을 쥐었다. 1918년 11월 페트로알렉산드롭스크를 포위했고 1919년 콜차크 정부와 연락했으나, 1920년 초 붉은 군대에 패해 카라쿰 사막으로 물러났다. 이후 호레즘 인민소비에트공화국과 투르크멘 SSR을 거듭 침공해 1924년 1월에는 히바를 포위했다. 페르시아와 아프가니스탄으로 망명해 1938년 헤라트 근처에서 숨졌다.",
+        "en": "Born in 1857 (some sources say 1862), the son of a Yomut Turkmen chief, he served as a village judge (kazi) and water distributor (mirab) and made his name in the Turkmen uprisings of 1912–1916. Appointed commander of the armed forces of Khiva by Asfandiyar Khan in January 1918, he had the khan assassinated, installed the khan’s uncle Sayyid Abdullah as a puppet and took real power. He besieged Petro-Alexandrovsk in November 1918 and in 1919 opened contact with Kolchak’s government, but in early 1920 the Red Army defeated him and he retreated into the Karakum desert. He then repeatedly invaded the Khorezm People’s Soviet Republic and the Turkmen SSR, besieging Khiva in January 1924. He went into exile in Persia and Afghanistan and died near Herat in 1938."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "무하메트 구르반",
+          "무하메트쿠르반 세르다르"
+        ],
+        "en": [
+          "Muhammet Gurban",
+          "Muhammet-Kurban Serdar"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+        "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+        "https://uz.wikipedia.org/wiki/Junaydxon"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1857 (or 1862)–1938",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "lead",
+          "excerpt": "(b.1857/62–1938)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "commander and de facto ruler of the Khanate of Khiva",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "lead",
+          "excerpt": "became the Chief of the Armed Forces and later the de facto and last ruler of the Khanate of Khiva"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Turkmen of the Yomut tribe",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+          "locator": "преамбула",
+          "excerpt": "По национальности туркмен из племени йомудов."
+        },
+        {
+          "field": "bio",
+          "claim": "born 1857 or 1862, son of a Yomut chief",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "Biography before 1917",
+          "excerpt": "Born in 1857 (according to other sources in 1862), Junaid Khan was the son of Khojibay, a powerful leader of the Yomut (Turkmen) tribe of Junaids and a wealthy man."
+        },
+        {
+          "field": "bio",
+          "claim": "village judge and water distributor",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "Biography before 1917",
+          "excerpt": "which allowed him to become first kazi (judge) in the village, and later a water distributor (mirab)."
+        },
+        {
+          "field": "bio",
+          "claim": "rose in the Turkmen uprisings of 1912–1916",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "lead",
+          "excerpt": "Gaining authority during the Turkmen uprisings of 1912-1916"
+        },
+        {
+          "field": "bio",
+          "claim": "appointed commander of the armed forces in January 1918",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "Rise to power in Khiva",
+          "excerpt": "In January 1918, Asfandiyar Khan appointed Muhammet-Kurban as the commander of the armed forces of the Khanate"
+        },
+        {
+          "field": "bio",
+          "claim": "assassinated the khan and installed his uncle as puppet",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "lead",
+          "excerpt": "Junaid arranged Isfandiyar's assassination and later enthroned the murdered Khan's uncle Sayid Abdullah as a puppet ruler, while himself becoming the real master of the Khanate."
+        },
+        {
+          "field": "bio",
+          "claim": "besieged Petro-Alexandrovsk on 24 November 1918",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+          "locator": "Первая война против советской власти в Туркестане",
+          "excerpt": "24 ноября Джунаид-хан, сумев собрать до 4000 всадников и 6000 так называемых «олджинцев» («трофейщиков»), осадил Петроалександровск."
+        },
+        {
+          "field": "bio",
+          "claim": "contact with Kolchak in September 1919",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+          "locator": "Вторая война против советской власти",
+          "excerpt": "В сентябре 1919 года Джунаид-хан устанавливает прямую связь с правительством Колчака."
+        },
+        {
+          "field": "bio",
+          "claim": "defeated in early 1920, retreated to the Karakum",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "Clashes with the Red Army",
+          "excerpt": "By early February 1920, the Khivan army under Junaid Khan was completely defeated and Junaid Khan retreated to Karakum desert."
+        },
+        {
+          "field": "bio",
+          "claim": "besieged Khiva in January 1924",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+          "locator": "Продолжение борьбы",
+          "excerpt": "В январе его отряд один за одним захватывает города Ташауз, Мангит, Шават, Газават, Ханки и Хазарасп, после чего начинает осаду Хивы и Новоургенча."
+        },
+        {
+          "field": "bio",
+          "claim": "invaded the Turkmen SSR in 1931",
+          "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+          "locator": "Продолжение борьбы",
+          "excerpt": "В апреле уже сам Джунаид-хан во главе нескольких басмаческих отрядов вторгается на территорию Красноводского района."
+        },
+        {
+          "field": "bio",
+          "claim": "fled to Persia and Afghanistan, died 1938",
+          "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+          "locator": "Clashes with the Red Army",
+          "excerpt": "finally fled first to Persia and then to Afghanistan where he eventually died in 1938."
+        },
+        {
+          "field": "bio",
+          "claim": "died near Herat",
+          "source": "https://uz.wikipedia.org/wiki/Junaydxon",
+          "locator": "lead",
+          "excerpt": "1938, Hirot atrofi, Afgʻoniston"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1931,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+              "locator": "Rise to power in Khiva",
+              "claim": "Commander of the Khivan forces and Basmachi leader, no catalog affiliation",
+              "excerpt": "In January 1918, Asfandiyar Khan appointed Muhammet-Kurban as the commander of the armed forces of the Khanate"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D1%83%D0%BD%D0%B0%D0%B8%D0%B4-%D1%85%D0%B0%D0%BD",
+              "locator": "преамбула",
+              "claim": "De facto ruler of Khiva, no catalog affiliation",
+              "excerpt": "фактический (последний) правитель Государства Хорезм"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1912
+            ],
+            "end": [
+              1916
+            ]
+          },
+          "r": {
+            "ko": "투르크멘 봉기 지도자",
+            "en": "Leader in the Turkmen uprisings"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "히바 칸국 군 총사령관",
+            "en": "Commander of the armed forces of the Khanate of Khiva"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "히바 칸국의 실질적 통치자",
+            "en": "De facto ruler of the Khanate of Khiva"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": [
+              1931
+            ]
+          },
+          "r": {
+            "ko": "카라쿰·페르시아·아프가니스탄을 근거지로 한 바스마치 지도자",
+            "en": "Basmachi leader operating from the Karakum, Persia and Afghanistan"
+          }
+        }
+      ]
+    },
+    {
+      "id": "william-s-graves",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "윌리엄 S.",
+        "en": "William S."
+      },
+      "familyName": {
+        "ko": "그레이브스",
+        "en": "Graves"
+      },
+      "nativeName": "William Sidney Graves",
+      "years": "1865–1940",
+      "citizenship": {
+        "code": "usa"
+      },
+      "nationalOrigin": {
+        "code": "usa"
+      },
+      "epithet": {
+        "ko": "1918~1920년 미국 시베리아 원정군을 이끌며 러시아 내전에 엄격한 중립을 지킨 장군",
+        "en": "General who led the American Expeditionary Force in Siberia in 1918–1920 and kept it strictly neutral in the Russian Civil War"
+      },
+      "bio": {
+        "ko": "1865년 텍사스에서 침례교 목사의 아들로 태어나 1889년 웨스트포인트를 졸업했고, 필리핀-미국 전쟁에 참전한 뒤 육군 참모본부에서 일했다. 1918년 윌슨 대통령의 직접 명령으로 미국 시베리아 원정군을 맡아 9월 블라디보스토크에 도착했다. 정치적 중립을 지키라는 명령에 따라 철도 운행과 체코슬로바키아 군단의 철수에 집중했고, 콜차크 쪽을 도우라는 압력을 거부했다. 세묘노프와 칼미코프 병사들의 살인과 약탈, 일본의 동시베리아 병합 의도를 비판했다. 마지막 미군은 1920년 4월 1일 떠났다. 1928년 퇴역해 회고록 『미국의 시베리아 모험』을 냈고, 1940년 뉴저지에서 숨졌다.",
+        "en": "Born in Texas in 1865, the son of a Baptist minister, he graduated from West Point in 1889, fought in the Philippine–American War and served on the Army General Staff. In 1918 he was given the American Expeditionary Force in Siberia on the direct orders of President Wilson and reached Vladivostok in September. Ordered to stay strictly apolitical, he concentrated on keeping the railway running and on the evacuation of the Czechoslovak Legion, and refused pressure to help Kolchak’s Whites. He condemned the killing and robbery committed by the soldiers of Semyonov and Kalmykov and suspected Japan of planning to annex eastern Siberia. The last American soldiers left on 1 April 1920. He retired in 1928, wrote the memoir America’s Siberian Adventure, and died in New Jersey in 1940."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "윌리엄 시드니 그레이브스",
+          "윌리엄 그레이브스"
+        ],
+        "en": [
+          "William Sidney Graves",
+          "William Graves"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/William_S._Graves",
+        "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D0%B9%D0%B2%D1%81,_%D0%A3%D0%B8%D0%BB%D1%8C%D1%8F%D0%BC_%D0%A1%D0%B8%D0%B4%D0%BD%D0%B5%D0%B9",
+        "https://en.wikipedia.org/wiki/American_Expeditionary_Force,_Siberia",
+        "https://en.wikipedia.org/wiki/Ivan_Kalmykov"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1865–1940",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "lead",
+          "excerpt": "March 27, 1865 – February 27, 1940"
+        },
+        {
+          "field": "citizenship",
+          "claim": "United States Army officer",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "lead",
+          "excerpt": "was a United States Army officer who commanded American forces in Siberia"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Texas to a Southern Baptist minister",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Early life and education",
+          "excerpt": "He was born on March 27, 1865, in Mount Calm, Texas, to the Reverend Andrew Carrol, a Southern Baptist minister and Evelyn Bennett."
+        },
+        {
+          "field": "bio",
+          "claim": "born in Texas, son of a Baptist minister",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Early life and education",
+          "excerpt": "He was born on March 27, 1865, in Mount Calm, Texas, to the Reverend Andrew Carrol, a Southern Baptist minister"
+        },
+        {
+          "field": "bio",
+          "claim": "graduated from West Point in 1889",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Early life and education",
+          "excerpt": "ultimately graduated forty-second in a class of forty-nine on June 12, 1889"
+        },
+        {
+          "field": "bio",
+          "claim": "served in the Philippine–American War 1899–1902",
+          "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D0%B9%D0%B2%D1%81,_%D0%A3%D0%B8%D0%BB%D1%8C%D1%8F%D0%BC_%D0%A1%D0%B8%D0%B4%D0%BD%D0%B5%D0%B9",
+          "locator": "Биография",
+          "excerpt": "В 1899—1902 участвовал в филиппино-американской войне."
+        },
+        {
+          "field": "bio",
+          "claim": "assistant chief of the Army General Staff",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "He was the assistant chief of the Army General Staff."
+        },
+        {
+          "field": "bio",
+          "claim": "sent to Siberia in 1918 on Wilson’s direct orders",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "he was given command of the 8th Division and sent to Siberia under direct orders from President Woodrow Wilson"
+        },
+        {
+          "field": "bio",
+          "claim": "arrived in Siberia in September 1918",
+          "source": "https://en.wikipedia.org/wiki/American_Expeditionary_Force,_Siberia",
+          "locator": "History",
+          "excerpt": "Although General Graves did not arrive in Siberia until September 4, 1918"
+        },
+        {
+          "field": "bio",
+          "claim": "ordered to remain strictly apolitical",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "His orders were to remain strictly apolitical amidst a politically turbulent situation."
+        },
+        {
+          "field": "bio",
+          "claim": "kept the railway operating",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "he settled on the idea of making sure the Trans-Siberian railroad stayed operational"
+        },
+        {
+          "field": "bio",
+          "claim": "mission to help the Czechoslovak Legion evacuate, not to fight the Bolsheviks",
+          "source": "https://en.wikipedia.org/wiki/American_Expeditionary_Force,_Siberia",
+          "locator": "History",
+          "excerpt": "General Graves believed their mission in Siberia was to provide protection for American-supplied property and to help the Czechoslovak Legion evacuate Russia, and that it did not include fighting against the Bolsheviks"
+        },
+        {
+          "field": "bio",
+          "claim": "refused pressure to help Kolchak",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "His troops did not intervene in the Russian Civil War despite strong pressure brought on him to help the White army of Admiral Kolchak."
+        },
+        {
+          "field": "bio",
+          "claim": "condemned the killings by Semyonov’s and Kalmykov’s soldiers",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Russian Civil War",
+          "excerpt": "Semeonoff and Kalmikoff soldiers, under the protection of Japanese troops, were roaming the country like wild animals, killing and robbing the people"
+        },
+        {
+          "field": "bio",
+          "claim": "suspected Japan of planning to annex eastern Siberia",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "He also believed that the Japanese had plans to annex part of Eastern Siberia"
+        },
+        {
+          "field": "bio",
+          "claim": "last US soldiers left on 1 April 1920",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "The last U.S. soldiers left Siberia on April 1, 1920."
+        },
+        {
+          "field": "bio",
+          "claim": "retired in 1928 and wrote America’s Siberian Adventure",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Military career",
+          "excerpt": "retired from the army in 1928.  He then wrote a book about his time in Siberia, entitled America's Siberian Adventure 1918-20."
+        },
+        {
+          "field": "bio",
+          "claim": "died in New Jersey in 1940",
+          "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+          "locator": "Death",
+          "excerpt": "Graves died on February 27, 1940, in Shrewsbury, New Jersey."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-usa",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+              "locator": "lead",
+              "claim": "Commander of the American Expeditionary Force, Siberia",
+              "excerpt": "commanded American forces in Siberia during the Siberian Expedition, part of the Allied Intervention in Russia"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-usa",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1889,
+          "endYear": 1928,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/William_S._Graves",
+              "locator": "Military career",
+              "claim": "United States Army officer from West Point graduation to retirement",
+              "excerpt": "retired from the army in 1928"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1889
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "웨스트포인트 졸업",
+            "en": "Graduated from West Point"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1899
+            ],
+            "end": [
+              1902
+            ]
+          },
+          "r": {
+            "ko": "필리핀-미국 전쟁 참전",
+            "en": "Served in the Philippine–American War"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1909
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "워싱턴 육군 참모본부 근무",
+            "en": "Assigned to the General Staff in Washington"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "준장 진급, 제8사단장",
+            "en": "Promoted brigadier general; commander of the 8th Division"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "미국 시베리아 원정군 사령관",
+            "en": "Commander of the American Expeditionary Force, Siberia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1928
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "퇴역",
+            "en": "Retired from the army"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ivan-kalmykov",
+      "groupId": "old-regime",
+      "givenName": {
+        "ko": "이반",
+        "en": "Ivan"
+      },
+      "familyName": {
+        "ko": "칼미코프",
+        "en": "Kalmykov"
+      },
+      "nativeName": "Иван Калмыков",
+      "years": "1890–1920",
+      "citizenship": {
+        "code": "russia"
+      },
+      "nationalOrigin": {
+        "code": "russia"
+      },
+      "epithet": {
+        "ko": "1918년 하바롭스크를 점령하고 재판 없는 총살과 약탈로 악명을 떨친 우수리 카자크 아타만",
+        "en": "Ataman of the Ussuri Cossacks who took Khabarovsk in 1918 and became notorious for shootings without trial and plunder"
+      },
+      "bio": {
+        "ko": "1890년 테레크주 그로즈니 지역에서 태어나 트빌리시 사관학교를 졸업했고, 1914년 우수리 카자크 연대로 옮겨 제1차 세계대전에서 성 게오르기 무기를 받았다. 1918년 1월 우수리 카자크군 아타만으로 뽑혀 볼셰비키와 싸웠고, 9월 5일 하바롭스크를 점령해 수비대장이 되었다. 그해 하바롭스크에서는 재판 없는 대량 총살이 잇따랐고, 그의 부대의 약탈·살인·강간은 콜차크를 비롯한 백군 지도자들의 분노를 샀다. 1920년 2월 하바롭스크 국립은행 지점의 금을 일본군 사령부에 몰래 넘기고 중국으로 건너갔다가 중국 당국에 체포되었고, 9월 초 탈주하다 사살되었다.",
+        "en": "Born in the Grozny district of the Terek Region in 1890, he graduated from the military school in Tbilisi, transferred to the Ussuri Cossack Regiment in 1914 and won the Sword of St. George in the First World War. Elected ataman of the Ussuri Cossack Host in January 1918, he fought the Bolsheviks and on 5 September took Khabarovsk, becoming head of its garrison. Mass shootings without trial followed in Khabarovsk that year, and the robbery, murder and rape committed by his men outraged White leaders, Kolchak first among them. In February 1920 he secretly handed the gold of the Khabarovsk branch of the State Bank to the Japanese command and crossed into China, where the Chinese authorities arrested him; in early September he was shot while trying to escape."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "탈주 중 사살",
+          "en": "Shot while escaping"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "아타만 칼미코프"
+        ],
+        "en": [
+          "Ataman Kalmykov"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+        "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1890–1920",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "lead",
+          "excerpt": "September 5, 1890 – September 1920"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Ataman of the Ussuri Cossacks and White general",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "lead",
+          "excerpt": "was an Ataman of the Ussuri Cossacks and General associated with the Anti-Bolshevik White Movement during the Russian Civil War"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "son of a Kharkov trader and a Terek Cossack mother",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Мать Ивана Калмыкова — местная терская казачка Калмыкова."
+        },
+        {
+          "field": "bio",
+          "claim": "born in the Grozny district of the Terek Region in 1890",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Youth",
+          "excerpt": "Ivan Kalmykov was born in the District of Grozny in the Terek Region on September 5, 1890."
+        },
+        {
+          "field": "bio",
+          "claim": "graduated from the military school in Tbilisi",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "По окончании Тифлисского Великого князя Михаила Николаевича военного училища по 1-му разряду"
+        },
+        {
+          "field": "bio",
+          "claim": "transferred to the Ussuri Cossack Regiment in 1914",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Youth",
+          "excerpt": "on January 20, 1914, he was transferred to the Ussuri Cossack Regiment"
+        },
+        {
+          "field": "bio",
+          "claim": "Sword of St. George in the First World War",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "World War I",
+          "excerpt": "During the war he received four awards, including the Order of St. Vladimir and the Sword of St. George"
+        },
+        {
+          "field": "bio",
+          "claim": "elected ataman of the Ussuri Cossack Host in January 1918",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Гражданская война",
+          "excerpt": "31.1.1918 г. на 4-м круге Уссурийского казачьего войска избран атаманом"
+        },
+        {
+          "field": "bio",
+          "claim": "took Khabarovsk on 5 September 1918 and headed its garrison",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Russian Civil War",
+          "excerpt": "on 5 September 1918 at the head of the Special Ussuri Cossack Detachment, he occupied Khabarovsk. On September 17, he took over as head of the Khabarovsk Garrison."
+        },
+        {
+          "field": "bio",
+          "claim": "mass shootings without trial in Khabarovsk in September 1918",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Гражданская война",
+          "excerpt": "В сентябре 1918 года в Хабаровске имело место несколько массовых расстрелов без суда и следствия."
+        },
+        {
+          "field": "bio",
+          "claim": "his soldiers’ crimes outraged White leaders, Kolchak first",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Russian Civil War",
+          "excerpt": "Kalmykov became infamous for the number of robberies, murders, and wanton rape and looting committed by his soldiers, which aroused the indignation of many leaders in the White Movement, first among them Admiral Kolchak himself."
+        },
+        {
+          "field": "bio",
+          "claim": "handed the Khabarovsk State Bank gold to the Japanese command",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Russian Civil War",
+          "excerpt": "Kalmykov seized 622 kg/1372 lb of gold from the Khabarovsk branch of the State Bank, secretly transferring it as a loan to the Japanese command."
+        },
+        {
+          "field": "bio",
+          "claim": "left Khabarovsk for China in February 1920",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Russian Civil War",
+          "excerpt": "the Ussuri Cossack detachment left Khabarovsk on February 13 and transferred the Ussuri Host to the Chinese territory over the ice"
+        },
+        {
+          "field": "bio",
+          "claim": "arrested by the Chinese military authorities",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Death",
+          "excerpt": "on March 8, the Ataman was arrested by the Chinese military authorities"
+        },
+        {
+          "field": "bio",
+          "claim": "shot while trying to escape in early September 1920",
+          "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+          "locator": "Death",
+          "excerpt": "At the beginning of September 1920, the Ataman, escorted by the convoy to Jilin once again attempted to flee from the city, wounded the Chinese officer, and was subsequently shot and killed by the Chinese soldiers during the escape attempt."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "russian-white",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+              "locator": "Russian Civil War",
+              "claim": "Ataman of the Ussuri Cossack Host and White general",
+              "excerpt": "promoted to him the rank of Major-General and elected him the Military Ataman of the Ussuri Cossack Army"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Ivan_Kalmykov",
+              "locator": "World War I",
+              "claim": "Officer of the Ussuri Cossack Regiment in the First World War",
+              "excerpt": "He took part in the First World War, holding the rank of Centurion (сотник) from 1915, then Captain (Подпоручик) from 1917, in the Ussuri Cossack Regiment."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "우수리 카자크 연대로 전속",
+            "en": "Transferred to the Ussuri Cossack Regiment"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "우수리 카자크군 아타만 선출",
+            "en": "Elected ataman of the Ussuri Cossack Host"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "하바롭스크 점령, 하바롭스크 수비대장",
+            "en": "Took Khabarovsk; head of the Khabarovsk garrison"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "소장 진급, 우수리 카자크군 군사 아타만",
+            "en": "Promoted major general; military ataman of the Ussuri Cossack Host"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "우수리 집단군 사령관, 중국으로 퇴각",
+            "en": "Commander of the Ussuri group of forces; retreated into China"
+          }
+        }
+      ],
+      "patronymic": {
+        "ko": "파블로비치",
+        "en": "Pavlovich"
+      },
+      "cyrillicPatronymic": "Павлович"
+    },
+    {
+      "id": "pyotr-shchetinkin",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "표트르",
+        "en": "Pyotr"
+      },
+      "familyName": {
+        "ko": "셰틴킨",
+        "en": "Shchetinkin"
+      },
+      "nativeName": "Пётр Щетинкин",
+      "years": "1884–1927",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "nationalOrigin": {
+        "code": "russia"
+      },
+      "epithet": {
+        "ko": "예니세이현의 파르티잔군을 이끌고 1921년 몽골에서 운게른을 넘겨받은 시베리아 파르티잔 지휘관",
+        "en": "Siberian partisan commander who led the partisan army of Yeniseysk Province and took custody of Ungern in Mongolia in 1921"
+      },
+      "bio": {
+        "ko": "1884년 랴잔현의 농민 가정에서 태어나 목수로 일했고, 1906년 징집되어 아친스크의 제29 시베리아 소총연대에서 복무했다. 제1차 세계대전에서 성 게오르기 십자 훈장 네 개를 모두 받아 장교가 되었고 1917년 이등대위에 올랐다. 1918년 3월 러시아 공산당(볼셰비키)에 입당했고, 아친스크가 백군에 넘어가자 지하로 들어가 1919년 1월 파르티잔 활동을 시작했다. 다른 파르티잔 부대와 합친 파르티잔군의 참모장으로 타이가를 700킬로미터 행군해 9월 미누신스크를 차지했다. 1921년 8월 그의 부대가 몽골에서 운게른을 넘겨받았다. 그 뒤 시베리아 국경수비대 참모장을 지냈고, 몽골 군사 고문으로 있던 1927년 울란바토르에서 숨졌다. 사인은 출처마다 엇갈린다.",
+        "en": "Born to a peasant family in Ryazan Province in 1884, he worked as a carpenter, was drafted in 1906 and served in the 29th Siberian Rifle Regiment at Achinsk. In the First World War he won all four classes of the Cross of St. George, was commissioned and by 1917 was a staff captain. He joined the Russian Communist Party (Bolsheviks) in March 1918; when Achinsk fell to the Whites he went underground and opened partisan operations in January 1919. As chief of staff of a partisan army formed by merging his detachment with another, he marched 700 kilometres south through the taiga and took Minusinsk in September. In August 1921 his detachment took custody of Ungern in Mongolia. He later served as chief of staff of the Siberian border troops, and died in Ulaanbaatar in 1927 while a military adviser in Mongolia; sources differ on the cause of death."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사인 논란",
+          "en": "Cause of death disputed"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "티무르 바토르",
+          "표트르 예료민"
+        ],
+        "en": [
+          "Timur Bator",
+          "Pyotr Yeryomin"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+        "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1884–1927",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "lead",
+          "excerpt": "December 21, 1884 (or January 2, 1885) – September 30, 1927"
+        },
+        {
+          "field": "citizenship",
+          "claim": "leader of the Soviet partisan movement in Siberia",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "lead",
+          "excerpt": "was a Russian staff captain who became one of the leaders of the Soviet partisan movement in Siberia during the Russian Civil War"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born to a Russian peasant family in Ryazan Oblast",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Early life",
+          "excerpt": "Shchetinkin was born to a peasant family in 1884 in Chufilovo Village, present day Spas-Klepiki, Ryazan Oblast."
+        },
+        {
+          "field": "bio",
+          "claim": "born to a peasant family in 1884",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Early life",
+          "excerpt": "Shchetinkin was born to a peasant family in 1884 in Chufilovo Village"
+        },
+        {
+          "field": "bio",
+          "claim": "worked as a carpenter",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Early life",
+          "excerpt": "As a young man he worked as a carpenter with his father."
+        },
+        {
+          "field": "bio",
+          "claim": "drafted in 1906, 29th Siberian Rifle Regiment at Achinsk",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Military",
+          "excerpt": "In 1906 he was drafted into the army and served in the 29th Siberian Rifle Regiment in Achinsk."
+        },
+        {
+          "field": "bio",
+          "claim": "all four Crosses of St. George, commissioned",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Military",
+          "excerpt": "as a bearer of all four classes of the Cross of St. George, was promoted to ensign"
+        },
+        {
+          "field": "bio",
+          "claim": "staff captain in 1917",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Military",
+          "excerpt": "In 1917 he became a staff captain."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the Communist Party in March 1918",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Guerrilla activity in the Civil War",
+          "excerpt": "He joined the Russian Communist Party in March 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "went underground after Achinsk fell to the Whites",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Guerrilla activity in the Civil War",
+          "excerpt": "After the fall of Achinsk to White Russian forces, Shchetinkin went underground"
+        },
+        {
+          "field": "bio",
+          "claim": "partisan detachment began operations on 5 January 1919",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "1918—1920",
+          "excerpt": "организовал партизанский отряд, который 5 января 1919 года приступил к активным действиям"
+        },
+        {
+          "field": "bio",
+          "claim": "chief of staff of the merged partisan army",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Guerrilla activity in the Civil War",
+          "excerpt": "Shchetinkin became chief of staff of the partisan army"
+        },
+        {
+          "field": "bio",
+          "claim": "700-km march through the taiga, Minusinsk taken in September 1919",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "1918—1920",
+          "excerpt": "Совершив 700-километровый переход через тайгу на юг, партизанские силы в сентябре 1919 года заняли Минусинск."
+        },
+        {
+          "field": "bio",
+          "claim": "his detachment took Ungern in August 1921",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "1921—1927",
+          "excerpt": "19 августа 1921 года отряд под командованием Щетинкина, входивший в состав 35-го кавалерийского полка РККА, захватил барона Унгерна, взятого в плен монгольским князем Бишерельту-гуном."
+        },
+        {
+          "field": "bio",
+          "claim": "chief of staff of the Siberian border troops 1922–1926",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "1921—1927",
+          "excerpt": "С октября 1922 до 1926 года — начальник штаба пограничных войск Сибирского пограничного округа."
+        },
+        {
+          "field": "bio",
+          "claim": "military adviser in Mongolia from 1926",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "1921—1927",
+          "excerpt": "В августе 1926 года приглашён правительством Монгольской народной республики в качестве военного советника и инструктора"
+        },
+        {
+          "field": "bio",
+          "claim": "died in Ulaanbaatar in 1927",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Later career",
+          "excerpt": "He died 30 September 1927 in Ulaanbaatar."
+        },
+        {
+          "field": "bio",
+          "claim": "sources differ on the cause of death",
+          "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+          "locator": "Later career",
+          "excerpt": "Sources differ on his cause of death"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "1918—1920",
+              "claim": "Red Guard commander and partisan leader in Yeniseysk Province, then commander of the Yenisei Rifle Division",
+              "excerpt": "вскоре Щетинкин был назначен командиром сформированной из партизан Енисейской стрелковой дивизии"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1921,
+          "endYear": 1921,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+              "locator": "Mongolia",
+              "claim": "Commanded the Red Army expeditionary detachment in Mongolia",
+              "excerpt": "In 1921 Shchetinkin commanded the Red Army expeditionary detachment"
+            }
+          ]
+        },
+        {
+          "functionId": "security",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1922,
+          "endYear": 1926,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%82%D0%B8%D0%BD%D0%BA%D0%B8%D0%BD,_%D0%9F%D1%91%D1%82%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "1921—1927",
+              "claim": "OGPU plenipotentiary office in Siberia and chief of staff of the Siberian border troops",
+              "excerpt": "С октября 1922 до 1926 года — начальник штаба пограничных войск Сибирского пограничного округа."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1906,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Pyotr_Shchetinkin",
+              "locator": "Military",
+              "claim": "Soldier and officer of the Imperial Russian Army",
+              "excerpt": "In 1906 he was drafted into the army and served in the 29th Siberian Rifle Regiment in Achinsk."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1906
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "징집, 제29 시베리아 소총연대 복무",
+            "en": "Drafted; served in the 29th Siberian Rifle Regiment"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "이등대위",
+            "en": "Staff captain"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "러시아 공산당(볼셰비키) 입당, 아친스크 적위대 지휘관",
+            "en": "Joined the Russian Communist Party (Bolsheviks); Red Guard commander at Achinsk"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "파르티잔군 부사령관 겸 참모장",
+            "en": "Deputy commander and chief of staff of the partisan army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "예니세이 소총 사단장",
+            "en": "Commander of the Yenisei Rifle Division"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "몽골 원정 부대 지휘관",
+            "en": "Commander in the Red Army expedition to Mongolia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1922
+            ],
+            "end": [
+              1926
+            ]
+          },
+          "r": {
+            "ko": "시베리아 국경수비대 참모장",
+            "en": "Chief of staff of the Siberian border troops"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1926
+            ],
+            "end": [
+              1927
+            ]
+          },
+          "r": {
+            "ko": "몽골 인민공화국 군사 고문",
+            "en": "Military adviser to the Mongolian People’s Republic"
+          }
+        }
+      ],
+      "patronymic": {
+        "ko": "예피모비치",
+        "en": "Yefimovich"
+      },
+      "cyrillicPatronymic": "Ефимович"
+    },
+    {
+      "id": "yakov-tryapitsyn",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "야코프",
+        "en": "Yakov"
+      },
+      "familyName": {
+        "ko": "트랴피친",
+        "en": "Tryapitsyn"
+      },
+      "nativeName": "Яков Тряпицын",
+      "years": "1897–1920",
+      "citizenship": {
+        "code": "soviet"
+      },
+      "nationalOrigin": {
+        "code": "russia"
+      },
+      "epithet": {
+        "ko": "1920년 니콜라옙스크나아무레를 점령했다가 주민과 포로를 처형하고 불태운 극동의 파르티잔 지휘관",
+        "en": "Far Eastern partisan commander who took Nikolayevsk-on-Amur in 1920, then executed its prisoners and burned the town"
+      },
+      "bio": {
+        "ko": "1897년 블라디미르현 무롬군의 농민 가정에서 태어나 기관사 조수로 일했다. 1916년 징집되어 제1차 세계대전에서 준위까지 올랐고 성 게오르기 십자 훈장을 두 번 받았다. 1918년 적위대에 들어가 사마라 봉기 진압에 참여했고, 1919년 연해주에서 자기 파르티잔 부대를 꾸렸다. 11월 35명으로 니콜라옙스크나아무레로 진군을 시작해 니콜라옙스크 전선 사령관이 되었고, 1920년 2월 도시에 들어간 뒤 3월 일본 수비대와의 전투에서 이겼다. 5월 말 일본 원군이 다가오자 남은 포로를 모두 처형하고 도시를 불태웠다. 7월 케르비에서 참모들과 함께 체포되어 즉석 재판 끝에 9일 총살되었다.",
+        "en": "Born to a peasant family in Murom district, Vladimir Province, in 1897, he worked as an assistant locomotive machinist. Drafted in 1916, he rose to ensign in the First World War and was twice awarded the Cross of St. George. He joined the Red Guard in 1918, took part in suppressing the Samara rising, and in 1919 formed his own partisan detachment in Primorye. In November he set out for Nikolayevsk-on-Amur with 35 fighters and became commander of the Nikolayevsk Front; he entered the town in February 1920 and won the fighting with the Japanese garrison in March. As a Japanese relief force approached at the end of May he executed all the remaining prisoners and burned the town. In July he was arrested at Kerbi with his staff and, after an improvised trial, shot on the 9th."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Yakov Tryapitsin"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+        "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%8F%D0%BF%D0%B8%D1%86%D1%8B%D0%BD,_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1897–1920",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "lead",
+          "excerpt": "(25 April 1897 – 9 July 1920)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Russian and Soviet military figure",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "lead",
+          "excerpt": "was a Russian and Soviet military and political figure"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born to a Russian peasant family in Vladimir Province",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "Yakov Ivanovich Tryapitsin was born on 25 April 1897 in the village of Savasleyka in the Muromsky District of the Vladimir Province of the Russian Empire, in the family of a peasant"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Murom district to a peasant family",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "in the village of Savasleyka in the Muromsky District of the Vladimir Province of the Russian Empire, in the family of a peasant"
+        },
+        {
+          "field": "bio",
+          "claim": "assistant locomotive machinist",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "In 1915 he entered the work of an assistant to the machinist on a locomotive"
+        },
+        {
+          "field": "bio",
+          "claim": "enlisted in 1916",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "In the summer of 1916, he was enlisted in the Kexholm Regiment of the Imperial Russian Army."
+        },
+        {
+          "field": "bio",
+          "claim": "ensign, twice awarded the Cross of St. George",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "rose to the rank of Ensign (Praporshchik), and was twice awarded the Cross of St. George"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the Red Guard in 1918",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "upon returning to Russia, he joined the Red Guard"
+        },
+        {
+          "field": "bio",
+          "claim": "suppression of the Samara insurrection",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Early life and career",
+          "excerpt": "He subsequently participated in the suppression of the Samara insurrection from June to October 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "organized his own partisan detachment in 1919",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Partisan commander",
+          "excerpt": "he left to the river Iman, where he organized his own Partisan detachment"
+        },
+        {
+          "field": "bio",
+          "claim": "set out for Nikolayevsk with 35 fighters on 10 November 1919",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Partisan commander",
+          "excerpt": "on 10 November 1919, a detachment of Tryapitsyn consisting of 35 initial fighters began their march from Vyatka to Nikolayevsk-on-Amur"
+        },
+        {
+          "field": "bio",
+          "claim": "commander of the Nikolayevsk Front",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Command of the Nikolayevsk Front",
+          "excerpt": "The staff of the Red Army headquarters of the Nikolayevsk Front included Yakov I. Tryapitsyn as front commander"
+        },
+        {
+          "field": "bio",
+          "claim": "entered the town after the February 1920 agreement",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Command of the Nikolayevsk Front",
+          "excerpt": "The Japanese were forced to sign an agreement on neutrality, on the basis of which parts of the Red Army entered the city."
+        },
+        {
+          "field": "bio",
+          "claim": "won the March fighting with the Japanese",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Far Eastern Command",
+          "excerpt": "The fighting lasted several days and ended with the victory of the Red Army."
+        },
+        {
+          "field": "bio",
+          "claim": "executed the remaining prisoners and burned the town in late May",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Nikolayevsk incident and death",
+          "excerpt": "In late May, as a Japanese relief expedition approached, Tryapitsyn ordered the evacuation of all Red Army soldiers, staff, and Soviet personnel from the city, and subsequently executed all of the remaining prisoners and burned the town to the ground."
+        },
+        {
+          "field": "bio",
+          "claim": "arrested at Kerbi on 7 July 1920 with his staff",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%8F%D0%BF%D0%B8%D1%86%D1%8B%D0%BD,_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Заговор и гибель",
+          "excerpt": "7 июля 1920 г. у таёжного поселка Керби Я. И. Тряпицын, вместе со всем штабом, командирами полков и работниками органов Советской власти в Сахалинской области, в результате заговора были арестованы"
+        },
+        {
+          "field": "bio",
+          "claim": "shot on 9 July after an improvised trial",
+          "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+          "locator": "Nikolayevsk incident and death",
+          "excerpt": "presided over a brief improvised trial in which Tryapitsin, his staff, regimental commanders, and the Chief of Staff of the Okhotsk Front, Nina Lebedeva, were condemned to death and subsequently shot on 9 July"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+              "locator": "lead",
+              "claim": "Red Guard, partisan commander and commander of the Nikolayevsk Front of the Red Army",
+              "excerpt": "he subsequently joined the Red Guards, and was appointed the Commander of the Nikolayevsk Front and the Nikolayevsk Military District of the Red Army of the Russian SFSR"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1920,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+              "locator": "Far Eastern Command",
+              "claim": "Commander of the Okhotsk Front of the People’s Revolutionary Army of the Far Eastern Republic",
+              "excerpt": "according to the order No. 66 of the Commander-in-Chief of the People's Revolutionary Army, he was appointed Commander of the Okhotsk Front"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1916,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Yakov_Tryapitsyn",
+              "locator": "Early life and career",
+              "claim": "Soldier and ensign of the Imperial Russian Army",
+              "excerpt": "In the summer of 1916, he was enlisted in the Kexholm Regiment of the Imperial Russian Army."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1916
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "러시아 제국군 복무, 준위",
+            "en": "Served in the Imperial Russian Army; ensign"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "적위대 입대, 사마라 봉기 진압 참여",
+            "en": "Joined the Red Guard; fought the Samara rising"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "연해주 파르티잔 부대 지휘관",
+            "en": "Commander of a partisan detachment in Primorye"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "붉은 군대 니콜라옙스크 전선 사령관",
+            "en": "Commander of the Nikolayevsk Front of the Red Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "극동공화국 인민혁명군 오호츠크 전선 사령관",
+            "en": "Commander of the Okhotsk Front of the Far Eastern Republic’s People’s Revolutionary Army"
+          }
+        }
+      ],
+      "patronymic": {
+        "ko": "이바노비치",
+        "en": "Ivanovich"
+      },
+      "cyrillicPatronymic": "Иванович"
+    },
+    {
+      "id": "pyotr-tokmakov",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "표트르",
+        "en": "Pyotr"
+      },
+      "familyName": {
+        "ko": "토크마코프",
+        "en": "Tokmakov"
+      },
+      "nativeName": "Пётр Токмаков",
+      "years": "?–1921",
+      "citizenship": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아 제국 → 소비에트 러시아",
+          "en": "Russian Empire → Soviet Russia"
+        }
+      },
+      "nationalOrigin": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아인",
+          "en": "Russian"
+        }
+      },
+      "epithet": {
+        "ko": "탐보프 연합 파르티잔 군 사령관이자 근로농민동맹 의장을 지낸 농민 출신 장교",
+        "en": "Peasant-born officer who commanded the United Partisan Army of Tambov and chaired the Union of Working Peasantry"
+      },
+      "bio": {
+        "ko": "탐보프주 키르사노프군 이노콥카 마을에서 태어나 1904년 러일전쟁 때 징집되었고, 상트페테르부르크에서 장기 복무했다. 제1차 세계대전에는 갈리치아에서 싸워 성 게오르기 십자훈장과 메달을 네 등급 모두 받았고, 1915년 장교로 임관해 1917년 중위에 올랐다. 브레스트 강화 뒤 고향에서 민경대원으로 일하다 1918년 유격대를 꾸렸다. 1920년 6월 제2봉기군 사령관, 11월 탐보프 연합 파르티잔 군 사령관이 되었고 근로농민동맹 의장도 겸했다. 러시아어 출처는 그가 1921년 2월 28일 보고슬롭카 마을 근처 교전에서 전사했다고 쓰지만, 영어 출처는 그의 죽음을 6월 무렵으로 적는다.",
+        "en": "Born in the village of Inokovka in Kirsanov district, Tambov province, he was conscripted in 1904 during the Russo-Japanese War and stayed on for extended service in St Petersburg. In the First World War he fought in Galicia, winning the full set of four St George Crosses and four St George Medals; he was commissioned in 1915 and made lieutenant in 1917. After the Treaty of Brest-Litovsk he returned home, worked in the local militia and in 1918 formed a partisan detachment. In June 1920 he took command of the 2nd Insurgent Army and in November of the United Partisan Army of the Tambov region, while also chairing the Union of Working Peasantry. The Russian-language source says he was killed in a clash near the village of Bogoslovka on 28 February 1921; the English-language source places his death around June 1921."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "전사",
+          "en": "Killed in action"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Peter Tokmakov",
+          "Petr Tokmakov"
+        ]
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+        "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BC%D0%B1%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5",
+        "https://en.wikipedia.org/wiki/Tambov_Rebellion"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "birth year unknown; died 28 February 1921",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "lead",
+          "excerpt": "(?—28 февраля 1921)"
+        },
+        {
+          "field": "years",
+          "claim": "English-language account: killed around June 1921, after Boguslavsky",
+          "source": "https://en.wikipedia.org/wiki/Tambov_Rebellion",
+          "locator": "Suppression",
+          "excerpt": "Two weeks later rebel commander Aleksandr Boguslavski was killed in combat. The same fate befell Tokmakov, Karas and Selianski."
+        },
+        {
+          "field": "citizenship",
+          "claim": "subject of the Russian Empire, officer of the Russian imperial army, leader of the Tambov uprising",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "lead",
+          "excerpt": "офицер военного времени Русской императорской армии (поручик), руководитель Тамбовского восстания 1920—1921 гг."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in a village of Tambov province, Russian Empire",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Родился в селе Иноковка Тамбовской губернии Кирсановского уезда Российской империи."
+        },
+        {
+          "field": "bio",
+          "claim": "conscripted 1904, extended service in St Petersburg",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В 1904 году, во время Русско-японской войны, был призван на службу в армию. Остался на сверхсрочную службу, которую проходил в Санкт-Петербурге"
+        },
+        {
+          "field": "bio",
+          "claim": "fought in Galicia, full set of St George crosses and medals",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Во ходе Первой мировой войны воевал в Галиции. За отвагу был награждён полным бантом георгиевского кавалера, четырьмя крестами и четырьмя Георгиевскими медалями."
+        },
+        {
+          "field": "bio",
+          "claim": "commissioned 1915",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В 1915 году Токмаков был произведён в чин прапорщика (стал офицером)."
+        },
+        {
+          "field": "bio",
+          "claim": "lieutenant 1917",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В 1917 году дослужился до чина поручика."
+        },
+        {
+          "field": "bio",
+          "claim": "returned home after Brest-Litovsk, militia",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "После Брест-Литовского мира с Германией, Токмаков возвращается на свою родину, в Тамбовскую губернию. в родное село Иноковку, где устраивается работать милиционером."
+        },
+        {
+          "field": "bio",
+          "claim": "formed a partisan detachment in 1918",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В 1918 году он организует партизанский отряд, покинув службу у большевиков."
+        },
+        {
+          "field": "bio",
+          "claim": "commander of the 2nd Insurgent Army, then of the United Partisan Army",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "В июне 1920 года П. М. Токмаков становится командующим 2-й повстанческой армией восставших, а затем в ноябре принимает командование Объединённой партизанской армией Тамбовской губернии"
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Union of Working Peasantry",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Токмаков был также председателем Союза трудового крестьянства (СТК) и являлся, таким образом, главой тамбовских повстанцев как по военной, так и по политической линии."
+        },
+        {
+          "field": "bio",
+          "claim": "killed 28 February 1921 near Bogoslovka",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "28 февраля 1921 года при боестолкновении (по сути обстреле колонны восставших) у села Богословка, от фактически шальной пули."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1921,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Commander of the 2nd Insurgent Army and of the United Partisan Army of Tambov, no catalog affiliation",
+              "excerpt": "В июне 1920 года П. М. Токмаков становится командующим 2-й повстанческой армией восставших, а затем в ноябре принимает командование Объединённой партизанской армией Тамбовской губернии"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1920,
+          "endYear": 1921,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Chairman of the Union of Working Peasantry, no catalog affiliation",
+              "excerpt": "Токмаков был также председателем Союза трудового крестьянства (СТК)"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1904,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Served in the Russian imperial army from 1904, lieutenant by 1917",
+              "excerpt": "В 1904 году, во время Русско-японской войны, был призван на службу в армию."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "russian-sr",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": null,
+          "endYear": 1921,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Tambov_Rebellion",
+              "locator": "Background",
+              "claim": "Described as an SR among the leaders of the Tambov force",
+              "excerpt": "The other leaders of this force were Alexander Antonov's younger brother, Dmitri Antonov, and the SR Peter Tokmakov."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1904
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "러일전쟁 때 징집, 장기 복무",
+            "en": "Conscripted during the Russo-Japanese War; extended service"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1915
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "장교 임관",
+            "en": "Commissioned as an officer"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "중위",
+            "en": "Lieutenant"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "고향 이노콥카에서 유격대 조직",
+            "en": "Formed a partisan detachment at Inokovka"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "6월 제2봉기군 사령관, 11월 탐보프 연합 파르티잔 군 사령관·근로농민동맹 의장",
+            "en": "Commander of the 2nd Insurgent Army (June); commander of the United Partisan Army of Tambov and chairman of the Union of Working Peasantry (November)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alexander-sapozhkov",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "알렉산드르",
+        "en": "Alexander"
+      },
+      "familyName": {
+        "ko": "사포시코프",
+        "en": "Sapozhkov"
+      },
+      "nativeName": "Александр Сапожков",
+      "years": "?–1920",
+      "citizenship": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아 제국 → 소비에트 러시아",
+          "en": "Russian Empire → Soviet Russia"
+        }
+      },
+      "nationalOrigin": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아인",
+          "en": "Russian"
+        }
+      },
+      "epithet": {
+        "ko": "1920년 징발에 맞서 「진리의 붉은 군대」를 일으킨 붉은 군대 사단장",
+        "en": "Red Army division commander who raised the \"Red Army of Truth\" against grain requisitioning in 1920"
+      },
+      "bio": {
+        "ko": "사마라주 노보우젠스크군의 농민 집안 출신으로, 제1차 세계대전에 참전해 1917년 소위로 노보우젠스크에 돌아와 군 소비에트 초대 의장이 되었다. 좌파 사회혁명당원이었으나 체코슬로바키아 군단 봉기 뒤 공산당에 들지 않은 채 공산주의자를 자처했다. 붉은 군대 제22사단장으로 1919년 우랄스크에서 80일 동안 포위를 버텼지만, 「서툰 지휘와 부대를 해치는 정치」를 이유로 전선에서 물러났다. 1920년 제9기병사단을 편성하다 해임되자 7월 14일 사단을 「제1 진리의 붉은 군대」로 바꾸어 봉기했고, 9월 6일 코임 아울 근처에서 추격대에 사살되었다.",
+        "en": "From a peasant family of Novouzensk district, Samara province, he fought in the First World War and returned to Novouzensk in 1917 as a second lieutenant, becoming the first chairman of the district soviet. A Left Socialist Revolutionary, after the revolt of the Czechoslovak Legion he called himself a communist without joining the party. As commander of the Red Army's 22nd Division he held Uralsk through an 80-day siege in 1919, but was removed from the front \"for inept command and a corrupting policy\". In 1920, while forming the 9th Cavalry Division, he learned of his dismissal and on 14 July renamed the division the \"1st Red Army of Truth\" and rose in revolt. He was killed by a pursuing detachment near the aul of Koim on 6 September 1920."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "추격대에 사살",
+          "en": "Killed by pursuing troops"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "알렉산드르 사포즈코프"
+        ],
+        "en": [
+          "Aleksandr Sapozhkov"
+        ]
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+        "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2%D0%B0"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "birth year unknown; died 6 September 1920",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "lead",
+          "excerpt": "(? — 6 сентября 1920)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Russian Empire veteran, Red Army commander in Soviet Russia",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Участвовал в Первой мировой войне, в 1917 в чине подпоручика вернулся в Новоузенск."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "from the peasantry of Novouzensk district, Samara province",
+          "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2%D0%B0",
+          "locator": "Александр Сапожков",
+          "excerpt": "Александр Сапожков происходил из крестьян Новоузенского уезда Самарской губернии."
+        },
+        {
+          "field": "bio",
+          "claim": "peasant family; WWI; second lieutenant back in Novouzensk 1917",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Родился в крестьянской семье. Участвовал в Первой мировой войне, в 1917 в чине подпоручика вернулся в Новоузенск."
+        },
+        {
+          "field": "bio",
+          "claim": "first chairman of the Novouzensk district soviet",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Стал первым председателем Новоузенского уездного совета"
+        },
+        {
+          "field": "bio",
+          "claim": "Left SR who called himself a communist without joining",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Был левым эсером, но после восстания Чехословацкого легиона стал называть себя коммунистом, однако не вступая в РКП(б)."
+        },
+        {
+          "field": "bio",
+          "claim": "headed the 22nd Division",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "А. В. Сапожков возглавил дивизию."
+        },
+        {
+          "field": "bio",
+          "claim": "80-day siege of Uralsk",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Осада длилась 80 дней"
+        },
+        {
+          "field": "bio",
+          "claim": "removed from the front",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "«за неумелое командование и за разлагающую политику… был убран с фронта и послан в тыл для формирование частей из собранных дезертиров»"
+        },
+        {
+          "field": "bio",
+          "claim": "charged with forming the 9th Cavalry Division",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Однако именно ему было поручено формирование в Бузулукском уезде Самарской губернии 9-й кавалерийской дивизии"
+        },
+        {
+          "field": "bio",
+          "claim": "Order No. 1 renaming the division, 14 July 1920",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "14 июля на дивизионном митинге в селе Погромное в 25 верстах от Бузулука А. В. Сапожков зачитал приказ № 1 о переименовании 9-й кавалерийской дивизии в 1-ю Красную армию «Правды»."
+        },
+        {
+          "field": "bio",
+          "claim": "learned of his dismissal on 9 July",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "9 июля А. В. Сапожков на встрече с близкими ему командирами сообщил о своей отставке и предложил «выразить протест вооружённой силой»."
+        },
+        {
+          "field": "bio",
+          "claim": "decisive fight near the aul of Koim, 6 September 1920",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "6 сентября 1920 состоялся решающий бой, когда отряд красноармейцев Тимашёва в количестве 70 человек настиг остатки восставших в районе аула Койм."
+        },
+        {
+          "field": "bio",
+          "claim": "killed at point-blank range",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Шевцов, видя, что живым взять Сапожкова не удастся, убил его, выстрелив в упор."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Red Guard brigade commander, then commander of the 22nd Division of the Red Army",
+              "excerpt": "Красногвардейские бригады А. В. Сапожкова и Чапаева, собиравшего отряды в соседнем Николаевском уезде, вошли в созданную июне 1918 4-ю армию Восточного фронта."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1920,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Leader of the \"1st Red Army of Truth\" revolt, no catalog affiliation",
+              "excerpt": "А. В. Сапожков зачитал приказ № 1 о переименовании 9-й кавалерийской дивизии в 1-ю Красную армию «Правды»."
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "First chairman of the Novouzensk district soviet",
+              "excerpt": "Стал первым председателем Новоузенского уездного совета, участник установления советской власти в уезде."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "russian-left-sr",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Member of the Left SRs until the Czechoslovak revolt",
+              "excerpt": "Был левым эсером"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": null,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Биография",
+              "claim": "Served in the First World War, second lieutenant by 1917",
+              "excerpt": "Участвовал в Первой мировой войне, в 1917 в чине подпоручика вернулся в Новоузенск."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "노보우젠스크군 소비에트 초대 의장",
+            "en": "First chairman of the Novouzensk district soviet"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "사마라주 혁명위원회 위원, 적위대 조직",
+            "en": "Member of the Samara provincial revolutionary committee; organised Red Guard units"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "붉은 군대 제22사단장, 우랄스크 80일 방어",
+            "en": "Commander of the Red Army 22nd Division; 80-day defence of Uralsk"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제9기병사단 편성, 7월 「제1 진리의 붉은 군대」 봉기",
+            "en": "Formed the 9th Cavalry Division; in July led the \"1st Red Army of Truth\" revolt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "nikolai-kakurin",
+      "groupId": "bolshevik",
+      "givenName": {
+        "ko": "니콜라이",
+        "en": "Nikolai"
+      },
+      "familyName": {
+        "ko": "카쿠린",
+        "en": "Kakurin"
+      },
+      "nativeName": "Николай Какурин",
+      "years": "1883–1936",
+      "citizenship": {
+        "code": "soviet",
+        "label": {
+          "ko": "러시아 제국 → 소련",
+          "en": "Russian Empire → Soviet Union"
+        }
+      },
+      "nationalOrigin": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아인",
+          "en": "Russian"
+        }
+      },
+      "epithet": {
+        "ko": "탐보프 진압군 참모장을 지내고 내전사를 쓴 붉은 군대 지휘관·군사사가",
+        "en": "Red Army commander who was chief of staff of the Tambov suppression and became a historian of the Civil War"
+      },
+      "bio": {
+        "ko": "1883년 오룔의 세습 귀족 장교 집안에서 태어나 니콜라이 군사아카데미를 마치고 참모본부 장교가 되었고, 제1차 세계대전에서 사단 참모장 직무를 맡았다. 1918년 우크라이나 인민공화국 군에, 1919년 갈리치아군에 복무했다. 1920년 붉은 군대에 들어가 폴란드-소비에트 전쟁에서 제10사단과 제3군을 지휘했고, 1921년 투하쳅스키 아래 탐보프 진압군 참모장으로서 독가스 사용을 명한 명령 제0116호에 서명했다. 같은 해 공산당에 입당했다. 1923년 붉은 군대 참모부 내전사 부장이 되어 세 권짜리 내전사를 썼다. 1930년 체포되어 1936년 야로슬라블 감옥에서 숨졌다.",
+        "en": "Born in Oryol in 1883 into a hereditary noble family of army officers, he graduated from the Nicholas General Staff Academy and in the First World War served as acting chief of staff of a division. In 1918 he joined the army of the Ukrainian People's Republic and in 1919 the Ukrainian Galician Army. Joining the Red Army in 1920, he commanded the 10th Division and the 3rd Army in the Polish–Soviet War; in 1921, as chief of staff of the Tambov forces under Mikhail Tukhachevsky, he co-signed Order No. 0116 on the use of poison gas against the insurgents. He joined the Communist Party the same year. In 1923 he became head of the Civil War history department at the Red Army Staff and was one of the authors of a three-volume history of the Civil War. Arrested in 1930, he died in Yaroslavl prison in 1936."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "옥사",
+          "en": "Died in prison"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Nikolay Kakurin",
+          "N. E. Kakurin"
+        ]
+      },
+      "sources": [
+        "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+        "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+        "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BC%D0%B1%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1883–1936",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "lead",
+          "excerpt": "(4 [16] сентября 1883 — 29 июля 1936)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Russian officer and Soviet military commander",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "lead",
+          "excerpt": "русский офицер Генерального штаба, советский военачальник, военный теоретик, публицист, историк и педагог."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "hereditary nobility of Oryol province, born in Oryol",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Из потомственных дворян Орловской губернии."
+        },
+        {
+          "field": "bio",
+          "claim": "born in Oryol into an officer's family",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Биография",
+          "excerpt": "Родился 4 (16) сентября 1883 года в Орле в многодетной семье офицера"
+        },
+        {
+          "field": "bio",
+          "claim": "graduated from the Nicholas Academy, General Staff",
+          "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+          "locator": "Biography",
+          "excerpt": "In 1910, he graduated from the Imperial Nicholas Military Academy as first of his class"
+        },
+        {
+          "field": "bio",
+          "claim": "acting chief of staff of the 71st Infantry Division",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Первая мировая война",
+          "excerpt": "09.10.1915 назначен исправляющим должность начальника штаба 71-й пехотной дивизии"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the UNR army in 1918",
+          "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+          "locator": "Biography",
+          "excerpt": "On 8 March, he joined the army of the Ukrainian People's Republic and became assistant to the chief of the General Staff of the Ukrainian People's Army."
+        },
+        {
+          "field": "bio",
+          "claim": "Ukrainian Galician Army from April 1919",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Гражданская война",
+          "excerpt": "С апреля 1919 года Какурин служил в украинской Галицкой армии"
+        },
+        {
+          "field": "bio",
+          "claim": "Red Army: 10th Division, march on Warsaw",
+          "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+          "locator": "Biography",
+          "excerpt": "on 1 August 1920 commander of the 10th Infantry Division, with which he took part in the War with Poland, in the Red Army's march on Warsaw and the subsequent battles."
+        },
+        {
+          "field": "bio",
+          "claim": "commander of the 3rd Army",
+          "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+          "locator": "Biography",
+          "excerpt": "from 24 October to 21 December 1920, the commander of the 3rd Army"
+        },
+        {
+          "field": "bio",
+          "claim": "chief of staff of the Tambov group; signed Order No. 0116",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Гражданская война",
+          "excerpt": "как начальник штаба подписал известный приказ № 0116 от 12 июня 1921 года о применении отравляющих веществ против скрывавшихся в лесу повстанцев."
+        },
+        {
+          "field": "bio",
+          "claim": "Order No. 0116 signed by Tukhachevsky and chief of staff Kakurin",
+          "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BC%D0%B1%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D0%B5",
+          "locator": "Разгром восстания",
+          "excerpt": "Начальник штаба войск Генштаба Какурин"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the RCP(b) in 1921",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Гражданская война",
+          "excerpt": "в 1921 году вступил в РКП(б) одним из первых кадровых русских офицеров."
+        },
+        {
+          "field": "bio",
+          "claim": "head of the Civil War history department from 1923",
+          "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+          "locator": "Biography",
+          "excerpt": "In 1923 he became the head of the Department of the History of the Civil War at the Red Army Headquarters"
+        },
+        {
+          "field": "bio",
+          "claim": "author of the three-volume history of the Civil War",
+          "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+          "locator": "Научно-преподавательская деятельность в РККА",
+          "excerpt": "Один из инициаторов создания и автор трёхтомной истории Гражданской войны (издана в 1928—1930 годах)."
+        },
+        {
+          "field": "bio",
+          "claim": "arrested 1930, sentenced 1932",
+          "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+          "locator": "Biography",
+          "excerpt": "On 19 August 1930, he was arrested, and on 19 February 1932, sentenced to 10 years in prison. He died in the Yaroslavl Prison in 1936."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1920,
+          "endYear": 1922,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+              "locator": "Biography",
+              "claim": "Red Army division and army commander; chief of staff of the Tambov group of forces",
+              "excerpt": "After Tukhachevsky was appointed commander of the Tambov Group of forces, he became the chief of staff of this group of forces and helped to suppress the Tambov Rebellion."
+            }
+          ]
+        },
+        {
+          "functionId": "scholarship",
+          "affiliationId": "state-soviet",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1923,
+          "endYear": 1930,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+              "locator": "Biography",
+              "claim": "Head of the Civil War history department of the Red Army Staff; military historian and theorist",
+              "excerpt": "In 1923 he became the head of the Department of the History of the Civil War at the Red Army Headquarters, and in 1925-1930 he worked again at the Military Academy named after Frunze."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "ukraine-peoples-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Nikolai_Kakurin",
+              "locator": "Biography",
+              "claim": "Assistant to the chief of the General Staff of the Ukrainian People's Army",
+              "excerpt": "On 8 March, he joined the army of the Ukrainian People's Republic and became assistant to the chief of the General Staff of the Ukrainian People's Army."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1902,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Служба в Русской императорской армии",
+              "claim": "General Staff officer of the Russian imperial army",
+              "excerpt": "В военную службу вступил 31.08.1902 в Санкт-Петербурге"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "soviet-party",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1921,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BA%D1%83%D1%80%D0%B8%D0%BD,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+              "locator": "Гражданская война",
+              "claim": "Joined the RCP(b) in 1921",
+              "excerpt": "в 1921 году вступил в РКП(б) одним из первых кадровых русских офицеров."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1910
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "니콜라이 군사아카데미 졸업, 참모본부 장교",
+            "en": "Graduated from the Nicholas General Staff Academy"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1915
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제71보병사단 참모장 직무대리",
+            "en": "Acting chief of staff of the 71st Infantry Division"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "우크라이나 인민군 참모총장 보좌",
+            "en": "Assistant to the chief of the General Staff of the Ukrainian People's Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "갈리치아군 제4군단 참모장",
+            "en": "Chief of staff of the 4th Corps of the Ukrainian Galician Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "붉은 군대 제10사단장, 제3군 사령관",
+            "en": "Commander of the Red Army 10th Division and the 3rd Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "탐보프 진압군 참모장",
+            "en": "Chief of staff of the Tambov group of forces"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1922
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "부하라·페르가나 지역 소비에트군 사령관",
+            "en": "Commander of Soviet troops in the Bukhara–Fergana region"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1923
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "붉은 군대 참모부 내전사 부장",
+            "en": "Head of the Civil War history department at the Red Army Staff"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1925
+            ],
+            "end": [
+              1930
+            ]
+          },
+          "r": {
+            "ko": "프룬제 군사아카데미 교관",
+            "en": "Lecturer at the Frunze Military Academy"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -25,6 +25,7 @@
 | CommuLingo 발트 3국 1939–1953 사건 | [소련 점령·독일 점령과 홀로코스트·재점령과 숲의 형제 3편, 인물·용어·반영 기록](commulingo-baltic-1940-1953-20261002.md) |
 | CommuLingo 추축국 점령하의 유럽 개요 사건 | [점령·협력·저항 개요와 하위 문서 7편 묶음·반영 순서](commulingo-occupied-europe-20261002.md) |
 | CommuLingo 1차 세계대전·여파, 동독, 1953–1956 위기 사건 | [세 묶음 설계·사건 5편·반영 순서](commulingo-wwi-east-germany-20261002.md), [인물 등록 큐](commulingo-wwi-east-germany-people-queue-20261002.md) |
+| CommuLingo 러시아 내전 하위 사건(중앙아시아·시베리아와 극동·탐보프와 농민 봉기) | [사건 3편·인물 13명·용어 17개·출처 주소 괄호 문제](commulingo-civil-war-theaters-20261004.md) |
 | CommuLingo 러시아 내전기 캅카스(자캅카스·북캅카스) 사건 | [사건 1편·인물 8명·용어 7개·반영 기록](commulingo-transcaucasia-1917-1921-20261004.md) |
 | CommuLingo 1905년 혁명의 제국 변경(발트·폴란드·핀란드·캅카스) | [절·연표 추가와 수치 기준](commulingo-revolution-1905-periphery-20261002.md) |
 | CommuLingo 체코슬로바키아 1945–1948 사건 | [인민민주주의 묶음 자식 문서·인물 6명·반영 기록](commulingo-czechoslovakia-1945-1948-20260929.md) |
