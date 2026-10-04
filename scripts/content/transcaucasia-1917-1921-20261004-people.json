@@ -1,0 +1,2289 @@
+{
+  "changedBy": "transcaucasia-1917-1921-20261004",
+  "people": [
+    {
+      "id": "noe-zhordania",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "노이",
+        "en": "Noe"
+      },
+      "familyName": {
+        "ko": "조르다니아",
+        "en": "Zhordania"
+      },
+      "nativeName": "ნოე ჟორდანია",
+      "years": "1868–1953",
+      "citizenship": {
+        "code": "georgia"
+      },
+      "nationalOrigin": {
+        "code": "georgia"
+      },
+      "epithet": {
+        "ko": "1918~1921년 그루지야 민주공화국 정부를 이끈 그루지야 멘셰비키의 지도자",
+        "en": "Leader of the Georgian Mensheviks who headed the government of the Democratic Republic of Georgia in 1918–1921"
+      },
+      "bio": {
+        "ko": "1868년 그루지야 서부 구리아에서 태어나 바르샤바 수의학교에서 마르크스주의를 받아들였고, 1890년대 그루지야 최초의 합법 마르크스주의 단체 메사메 다시를 이끌었다. 1903년 멘셰비키 편에 섰고 1906년 제1대 국가 두마 의원이 되었다. 1917년 트빌리시 소비에트와 그루지야 민족회의를 이끌었고, 1918년 5월 독립 선포 회의를 주재한 뒤 7월 그루지야 민주공화국 정부 수반이 되어 토지개혁과 사회 입법을 이끌었다. 1921년 붉은 군대의 침공으로 프랑스에 망명해 망명정부를 이끌다 1953년 파리 근교에서 숨졌다.",
+        "en": "Born in Guria, western Georgia, in 1868, he took up Marxism at the Warsaw Veterinary Institute and in the 1890s led Mesame Dasi, Georgia’s first legal Marxist organization. He sided with the Mensheviks in 1903 and sat in the First State Duma in 1906. In 1917 he chaired the Tbilisi Soviet and the National Council of Georgia; in May 1918 he headed the session that declared independence, and from July he led the government of the Democratic Republic of Georgia, carrying out land reform and social legislation. After the Red Army invasion of 1921 he went into exile in France, led the government-in-exile and died near Paris in 1953."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "노에 조르다니아",
+          "노에 요르다니아"
+        ],
+        "en": [
+          "Noe Jordania",
+          "Noy Zhordaniya"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Noe_Zhordania"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1868–1953",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "lead",
+          "excerpt": "15 January [O.S. 3 January] 1868 – January 11, 1953"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Georgian Menshevik politician who chaired the government of the Democratic Republic of Georgia",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "lead",
+          "excerpt": "was a Georgian journalist and Menshevik politician"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Guria, western Georgia",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Early life and background",
+          "excerpt": "to a petty landowner family living in the village of Lanchkhuti in Guria, western Georgia"
+        },
+        {
+          "field": "bio",
+          "claim": "graduated from the Georgian Orthodox Theological Seminary in Tbilisi",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Education",
+          "excerpt": "He then moved to Tbilisi where he graduated from the Georgian Orthodox Theological Seminary"
+        },
+        {
+          "field": "bio",
+          "claim": "took up Marxism in Warsaw",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Education",
+          "excerpt": "In 1891 he moved to Warsaw, Poland, and attended the Warsaw Veterinarian Institute. During this period young Zhordania understood the basics of Marxism."
+        },
+        {
+          "field": "bio",
+          "claim": "leader of Mesame Dasi in the 1890s",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Early career",
+          "excerpt": "in the 1890s he became a leader of the first legal Marxist organization in Georgia, called the Mesame Dasi (the Third Group)"
+        },
+        {
+          "field": "bio",
+          "claim": "sided with the Mensheviks at the 2nd Congress in 1903",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Early career",
+          "excerpt": "Having been elected as a delegate to the 2nd Congress of the Russian Social Democratic Labour Party (RSDLP) in 1903, he sided with the Menshevik faction and gained significant influence."
+        },
+        {
+          "field": "bio",
+          "claim": "elected to the First Duma in 1906, spokesman of the SD faction",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Early career",
+          "excerpt": "he was elected to the First State Duma from the Tiflis Governorate and became a spokesman for the Social-Democratic faction"
+        },
+        {
+          "field": "bio",
+          "claim": "chaired the Tbilisi soviet after February 1917",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Revolution and independence",
+          "excerpt": "After the 1917 February Revolution, he chaired the Tbilisi soviet"
+        },
+        {
+          "field": "bio",
+          "claim": "chair of the presidium of the National Council of Georgia, November 1917",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Revolution and independence",
+          "excerpt": "On November 26, 1917, he obtained a chair of the Presidium of the National Council of Georgia and played a leading role in the consolidation of Menshevik power in Georgia."
+        },
+        {
+          "field": "bio",
+          "claim": "headed the session that declared independence in May 1918",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Revolution and independence",
+          "excerpt": "in May 1918, when he headed a parliamentary session which declared the independent Democratic Republic of Georgia"
+        },
+        {
+          "field": "bio",
+          "claim": "head of government from 24 July 1918",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Revolution and independence",
+          "excerpt": "On July 24, 1918, he became Head of the Government of Georgia."
+        },
+        {
+          "field": "bio",
+          "claim": "land reform, legislation and de jure recognition",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Revolution and independence",
+          "excerpt": "his government had organized a successful land reform, adopted comprehensive social and political legislation, and cultivated widespread international ties, enabling Georgia to become the only Transcaucasian nation to earn de jure recognition from Soviet Russia and the Western powers"
+        },
+        {
+          "field": "bio",
+          "claim": "Soviet invasion of 1921 and the government-in-exile in France",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Revolution and independence",
+          "excerpt": "However, the invasion of the Soviet armies in February–March 1921 toppled the Georgian government, forcing Zhordania and many of his colleagues to seek refuge in France, where he led the government-in-exile"
+        },
+        {
+          "field": "bio",
+          "claim": "died at Leuville-sur-Orge in 1953",
+          "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+          "locator": "Emigration and death",
+          "excerpt": "Noe Zhordania died at the age of 85, on January 11, 1953, in Leuville-sur-Orge, where he is buried."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "state-georgia",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1921,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+              "locator": "lead",
+              "claim": "Chairman of the government of the Democratic Republic of Georgia, 1918–1921",
+              "excerpt": "later chaired the government of the Democratic Republic of Georgia from July 24, 1918, until March 18, 1921"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "russian-mensheviks",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1903,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Noe_Zhordania",
+              "locator": "Early career",
+              "claim": "Leading Menshevik from the 1903 congress",
+              "excerpt": "he sided with the Menshevik faction and gained significant influence"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1890
+            ],
+            "startQual": "decade"
+          },
+          "r": {
+            "ko": "메사메 다시 지도자",
+            "en": "Leader of Mesame Dasi"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1906
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제1대 국가 두마 의원",
+            "en": "Member of the First State Duma"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "트빌리시 소비에트 의장, 그루지야 국민평의회 의장",
+            "en": "Chairman of the Tbilisi Soviet and of the National Council of Georgia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1921
+            ]
+          },
+          "r": {
+            "ko": "그루지야 민주공화국 정부 수반",
+            "en": "Head of the government of the Democratic Republic of Georgia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": [
+              1953
+            ]
+          },
+          "r": {
+            "ko": "프랑스에서 망명정부 수반",
+            "en": "Head of the government-in-exile in France"
+          }
+        }
+      ]
+    },
+    {
+      "id": "evgeni-gegechkori",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "예브게니",
+        "en": "Evgeni"
+      },
+      "familyName": {
+        "ko": "게게치코리",
+        "en": "Gegechkori"
+      },
+      "nativeName": "ევგენი გეგეჭკორი",
+      "years": "1881–1954",
+      "citizenship": {
+        "code": "georgia"
+      },
+      "nationalOrigin": {
+        "code": "georgia"
+      },
+      "epithet": {
+        "ko": "자캅카스 위원부 의장을 거쳐 그루지야 민주공화국 외무장관을 지낸 멘셰비키 정치가",
+        "en": "Menshevik politician who chaired the Transcaucasian Commissariat and became foreign minister of the Democratic Republic of Georgia"
+      },
+      "bio": {
+        "ko": "1881년 마르트빌리의 귀족 집안에서 태어나 모스크바 대학 시절 사회민주주의 운동에 들어가 멘셰비키가 되었고, 1907~1912년 제3대 국가 두마 의원을 지냈다. 1917년 11월부터 1918년 3월까지 자캅카스 인민위원부 의장을 지냈고, 이어 자캅카스 세임 정부에서 전쟁장관을 맡았다. 1918년 5월 그루지야 독립선언서에 서명했고, 그루지야 민주공화국에서 외무장관·법무장관과 정부 부의장을 지냈다. 1921년 3월 프랑스로 망명했고, 1953년부터 1954년 파리에서 숨질 때까지 망명정부를 이끌었다.",
+        "en": "Born to a noble family in Martvili in 1881, he joined the Social Democratic movement as a student at Moscow University, became a Menshevik and sat in the Third State Duma from 1907 to 1912. From November 1917 to March 1918 he chaired the Transcaucasian Commissariat, then served as minister of war under the Transcaucasian Sejm. He signed the Georgian declaration of independence in May 1918 and was foreign minister, justice minister and deputy head of government of the Democratic Republic of Georgia. He left for France in March 1921 and from 1953 until his death in Paris in 1954 headed the government in exile."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "에브게니 게게치코리"
+        ],
+        "en": [
+          "Evgeny Gegechkori",
+          "Yevgeni Gegechkori"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Evgeni_Gegechkori"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1881–1954",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "(20 January 1881, in Martvili – 5 June 1954, in Paris)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Georgian politician, minister of the Democratic Republic of Georgia",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "was a Georgian nobleman, politician, and Social Democratic revolutionary"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Georgian nobleman",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "was a Georgian nobleman"
+        },
+        {
+          "field": "bio",
+          "claim": "noble family; student movement 1903; Mensheviks",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "Born of a noble family, he entered the Social Democratic student movement in 1903 during his studies at the Imperial Moscow University and soon joined the Menshevik wing of the Russian Social Democratic Labour Party."
+        },
+        {
+          "field": "bio",
+          "claim": "1905 revolution; Third Duma 1907–1912",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "He was involved in the 1905 revolution in Georgia and was elected a member to the Third State Duma for the Kutais Governorate from 1907 to 1912."
+        },
+        {
+          "field": "bio",
+          "claim": "Provisional Government commissar in western Georgia",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "During the February Revolution in 1917, Gegechkori became commissar for the Russian Provisional Government in western Georgia."
+        },
+        {
+          "field": "bio",
+          "claim": "chairman of the Transcaucasian Commissariat, Sejm, minister of war",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "From 28 November 1917 to 26 March 1918 he chaired the Transcaucasian Commissariat and served as minister of labor before leading the Transcaucasian Sejm and becoming its minister of war."
+        },
+        {
+          "field": "bio",
+          "claim": "signed the act of independence",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "On May 26, 1918, he signed the Act of Declaration of Independence of the Democratic Republic of Georgia."
+        },
+        {
+          "field": "bio",
+          "claim": "foreign minister, justice minister",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "he became its Minister of Foreign Affairs and also served as the Minister of Justice"
+        },
+        {
+          "field": "bio",
+          "claim": "deputy chairman of the government",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "Evgeni Gegechkori was appointed as the Deputy Chairman of the Government"
+        },
+        {
+          "field": "bio",
+          "claim": "left for France in March 1921",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "After the Red Army invasion of Georgia, Gegechkori left for France in March 1921."
+        },
+        {
+          "field": "bio",
+          "claim": "headed the government in exile from 1953",
+          "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+          "locator": "lead",
+          "excerpt": "From 1953 until his death, he headed the Georgian government in exile."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "state-georgia",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1921,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+              "locator": "lead",
+              "claim": "Minister of Foreign Affairs of the Democratic Republic of Georgia",
+              "excerpt": "After the establishment of the Democratic Republic of Georgia in May 1918, he became its Minister of Foreign Affairs"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+              "locator": "lead",
+              "claim": "Chairman of the Transcaucasian Commissariat, no catalog affiliation",
+              "excerpt": "From 28 November 1917 to 26 March 1918 he chaired the Transcaucasian Commissariat"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "russian-mensheviks",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1903,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+              "locator": "lead",
+              "claim": "Member of the Menshevik wing of the RSDLP",
+              "excerpt": "soon joined the Menshevik wing of the Russian Social Democratic Labour Party"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1907
+            ],
+            "end": [
+              1912
+            ]
+          },
+          "r": {
+            "ko": "제3대 국가 두마 의원",
+            "en": "Member of the Third State Duma"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "러시아 임시정부 서부 그루지야 위원",
+            "en": "Russian Provisional Government commissar for western Georgia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "자캅카스 위원부 의장",
+            "en": "Chairman of the Transcaucasian Commissariat"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1921
+            ]
+          },
+          "r": {
+            "ko": "그루지야 민주공화국 외무장관",
+            "en": "Minister of Foreign Affairs of the Democratic Republic of Georgia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1953
+            ],
+            "end": [
+              1954
+            ]
+          },
+          "r": {
+            "ko": "그루지야 망명정부 수반",
+            "en": "Head of the Georgian government in exile"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mammad-amin-rasulzade",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "마메드 아민",
+        "en": "Mammad Amin"
+      },
+      "familyName": {
+        "ko": "라술자데",
+        "en": "Rasulzade"
+      },
+      "nativeName": "Məhəmməd Əmin Rəsulzadə",
+      "years": "1884–1955",
+      "citizenship": {
+        "code": "azerbaijan"
+      },
+      "nationalOrigin": {
+        "code": "azerbaijan"
+      },
+      "epithet": {
+        "ko": "무사바트의 지도자로 1918년 아제르바이잔 국민평의회를 이끌어 아제르바이잔 민주공화국 독립을 선포한 정치가",
+        "en": "Musavat leader who headed the Azerbaijani National Council that declared the Azerbaijan Democratic Republic in 1918"
+      },
+      "bio": {
+        "ko": "1884년 바쿠 근처에서 태어나 1904년 무슬림 사회민주주의 조직 후메트를 세웠다. 1909년 이란 입헌혁명에 참여했고, 1913년 바쿠로 돌아와 무사바트의 지도자가 되었다. 1918년 5월 아제르바이잔 민족회의 의장으로서 5월 28일 아제르바이잔 공화국의 독립을 선포했다. 1920년 공화국이 무너진 뒤 저항을 지휘하다 체포되었으나, 예전에 이오시프 스탈린을 경찰로부터 숨겨 준 일 덕분에 풀려나 모스크바로 옮겨졌다. 1922년 핀란드로 탈출해 튀르키예·폴란드·루마니아에서 망명 생활을 했고, 1955년 앙카라에서 숨졌다.",
+        "en": "Born near Baku in 1884, he founded Hummet, a Muslim social-democratic organization, in 1904. He took part in the Iranian Constitutional Revolution in 1909, and after returning to Baku in 1913 he became the chief of Musavat. As head of the Azerbaijani National Council he declared the independence of the Azerbaijan Republic on 28 May 1918. After the republic fell in 1920 he directed resistance until his arrest, but because he had once hidden Joseph Stalin from the police he was released and taken to Moscow. He escaped to Finland in 1922, lived in exile in Turkey, Poland and Romania, and died in Ankara in 1955."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "마하마드 아민 라술자데",
+          "메메트 에민 레술자데"
+        ],
+        "en": [
+          "Mahammad Amin Rasulzade",
+          "Mammad Amin Rasulzadeh",
+          "Mehmet Emin Resulzade"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1884–1955",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "lead",
+          "excerpt": "(31 January 1884 – 6 March 1955)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Azerbaijani politician, head of the Azerbaijani National Council",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "lead",
+          "excerpt": "was an Azerbaijani politician, journalist and the head of the Azerbaijani National Council"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Azerbaijani, born near Baku",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Early life",
+          "excerpt": "Born on 31 January 1884 to Akhund Haji Molla Alakbar Rasulzadeh in Novkhany, near Baku"
+        },
+        {
+          "field": "bio",
+          "claim": "educated in Baku",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Early life",
+          "excerpt": "received his education at the Russian-Muslim Secondary School and then at the Technical College in Baku"
+        },
+        {
+          "field": "bio",
+          "claim": "founded Hummet in 1904 and edited its newspapers",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Early life",
+          "excerpt": "In 1904 he founded the first Muslim social-democrat organisation \"Hummet\" and became editor-in-chief of its newspapers"
+        },
+        {
+          "field": "bio",
+          "claim": "fled to Iran in 1909 for the Constitutional Revolution",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Early life",
+          "excerpt": "In 1909, under the persecution from Tsarist authorities, Rasulzade fled Baku to participate in the Iranian Constitutional Revolution of 1905–1911."
+        },
+        {
+          "field": "bio",
+          "claim": "co-founder of the Democrat Party of Persia",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Early life",
+          "excerpt": "became one of the founders of Democrat Party of Persia"
+        },
+        {
+          "field": "bio",
+          "claim": "fled to Istanbul in 1911",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Early life",
+          "excerpt": "Rasulzade fled to Istanbul, then capital of Ottoman Empire"
+        },
+        {
+          "field": "bio",
+          "claim": "returned 1913, joined Musavat and became its chief",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "joined the then secret Musavat (Equality) party in 1913"
+        },
+        {
+          "field": "bio",
+          "claim": "quickly became chief of Musavat",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "and quickly became its chief"
+        },
+        {
+          "field": "bio",
+          "claim": "head of the Muslim faction in the Seym; head of the National Council May 1918",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "Rasulzade became head of Muslim faction in the Seym, the parliament of the Transcaucasian Federation. After the dissolution of the Transcaucasian Federation, the Muslim faction re-organized into the Azerbaijani National Council, whose head Rasulzade was unanimously elected in May 1918."
+        },
+        {
+          "field": "bio",
+          "claim": "declared independence on 28 May 1918",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "On 28 May 1918 the Azerbaijani National Council, headed by Rasulzade, declared an independent Azerbaijan Republic."
+        },
+        {
+          "field": "bio",
+          "claim": "hid in Lahıc to direct resistance; arrested August 1920",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "Rasulzade left Baku and went into hiding in the mountainous village of Lahıc, Ismailli to direct the resistance to Sovietization. But in August 1920"
+        },
+        {
+          "field": "bio",
+          "claim": "released thanks to the rescue of Stalin",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "It was only due to an earlier rescue of Joseph Stalin, as Rasulzade hid Stalin from the police, that Rasulzade was released and transferred from Azerbaijan to Russia."
+        },
+        {
+          "field": "bio",
+          "claim": "Commissariat on Nations, escape to Finland 1922",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+          "excerpt": "For the next two years, Rasulzade worked as the press representative at the Commissariat on Nations in Moscow.  He was seconded to Saint Petersburg in 1922 from where he escaped to Finland."
+        },
+        {
+          "field": "bio",
+          "claim": "exile in Turkey",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Exile",
+          "excerpt": "For the rest of his life, Rasulzade lived in exile first in Turkey."
+        },
+        {
+          "field": "bio",
+          "claim": "Poland 1938, Romania 1940",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Exile",
+          "excerpt": "he went to Poland in 1938, where he met his wife, Wanda, niece of Polish statesman Józef Piłsudski, then to Romania in 1940"
+        },
+        {
+          "field": "bio",
+          "claim": "died 1955, buried in Ankara",
+          "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+          "locator": "Exile",
+          "excerpt": "He died in 1955, a broken man according to Thomas Goltz, and was buried in Cebeci Asri cemetery in Ankara."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1913,
+          "endYear": null,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+              "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+              "claim": "Chief of the Musavat party, no catalog affiliation",
+              "excerpt": "joined the then secret Musavat (Equality) party in 1913"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-azerbaijan",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1918,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+              "locator": "The Musavat Party and Azerbaijan Democratic Republic",
+              "claim": "Head of the Azerbaijani National Council, May 1918",
+              "excerpt": "the Azerbaijani National Council, whose head Rasulzade was unanimously elected in May 1918"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1904
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "후메트 창립",
+            "en": "Founded Hummet"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1909
+            ],
+            "end": [
+              1911
+            ]
+          },
+          "r": {
+            "ko": "이란 입헌혁명 참가, 페르시아 민주당 창립",
+            "en": "Iranian Constitutional Revolution; co-founded the Democrat Party of Persia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1913
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "무사바트 입당, 지도자",
+            "en": "Joined Musavat and became its chief"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "아제르바이잔 국민평의회 의장, 독립 선포",
+            "en": "Head of the Azerbaijani National Council; declaration of independence"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "체포 뒤 석방, 모스크바 민족인민위원부",
+            "en": "Arrested, released and sent to the Commissariat on Nations in Moscow"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1922
+            ],
+            "end": [
+              1955
+            ]
+          },
+          "r": {
+            "ko": "망명",
+            "en": "Exile"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alexander-khatisian",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "알렉산드르",
+        "en": "Alexander"
+      },
+      "familyName": {
+        "ko": "하티샨",
+        "en": "Khatisian"
+      },
+      "nativeName": "Ալեքսանդր Խատիսեան",
+      "years": "1874–1945",
+      "citizenship": {
+        "code": "armenia"
+      },
+      "nationalOrigin": {
+        "code": "armenia"
+      },
+      "epithet": {
+        "ko": "아르메니아 제1공화국의 외무장관·총리로 바투미 조약과 알렉산드로폴 조약에 서명한 다슈나크 정치가",
+        "en": "Dashnak foreign minister and prime minister of the First Republic of Armenia who signed the treaties of Batum and Alexandropol"
+      },
+      "bio": {
+        "ko": "1874년 트빌리시의 아르메니아인 귀족 가문에서 태어나 의사 교육을 받았고, 1910~1917년 트빌리시 시장을 지내며 1914년 아르메니아인 의용대 창설을 조직했다. 1917년 다슈나크에 들어갔다. 아르메니아 공화국의 외무장관으로 1918년 6월 바투미 조약에 서명했고, 1919년 5월부터 1920년 5월 봉기의 여파로 물러날 때까지 총리를 지냈다. 1920년 12월 3일 그가 이끈 대표단이 카즘 카라베키르와 알렉산드로폴 조약에 서명했으나, 권력이 이미 소비에트 당국에 넘어간 뒤라 무효로 여겨진다. 파리로 망명해 1945년 그곳에서 숨졌다.",
+        "en": "Born in Tbilisi in 1874 to a prominent Armenian family of noble origins, he trained as a doctor, was mayor of Tbilisi from 1910 to 1917 and in 1914 organized the Armenian volunteer detachments. He joined the Dashnaktsutyun in 1917. As foreign minister of the Republic of Armenia he signed the Treaty of Batum in June 1918, and he was prime minister from May 1919 until he resigned after the May Uprising of 1920. On 3 December 1920 a delegation led by him signed the Treaty of Alexandropol with Kâzım Karabekir, but power had already passed to the Soviet authorities and the treaty is held to be invalid. He went into exile in Paris and died there in 1945."
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "망명지에서 사망",
+          "en": "Died in exile"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "알렉산드르 하티시안"
+        ],
+        "en": [
+          "Alexander Khatisyan"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alexander_Khatisian"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1874–1945",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "lead",
+          "excerpt": "17 February 1874 – 10 March 1945"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Armenian politician, prime minister of the First Republic of Armenia",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "lead",
+          "excerpt": "was an Armenian politician, doctor and journalist"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born to a prominent Armenian family",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "to a prominent Armenian family of noble origins"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Tbilisi",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "Khatisian was born in Tiflis in the Tiflis Governorate of the Russian Empire (Tbilisi, Georgia)"
+        },
+        {
+          "field": "bio",
+          "claim": "trained as a doctor",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "received his training as a doctor at universities in Moscow, Kharkov and Germany"
+        },
+        {
+          "field": "bio",
+          "claim": "mayor of Tbilisi 1910–1917",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "He served as the mayor of Tiflis from 1910 to 1917."
+        },
+        {
+          "field": "bio",
+          "claim": "organized Armenian volunteer detachments in 1914",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "about the creation of Armenian volunteer detachments in the summer of 1914, which Khatisian enthusiastically supported and organized"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the ARF in 1917",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "In 1917, Khatisian became a member of the Armenian Revolutionary Federation."
+        },
+        {
+          "field": "bio",
+          "claim": "foreign minister, Treaty of Batum",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "After declaration of the First Republic of Armenia, he served as foreign minister and signed the Treaty of Batum with the Ottoman Empire."
+        },
+        {
+          "field": "bio",
+          "claim": "prime minister May 1919–May 1920, resigned after the May Uprising",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "then served as prime minister from May 1919 to May 1920, resigning in the aftermath of the Bolshevik-led May Uprising"
+        },
+        {
+          "field": "bio",
+          "claim": "sought aid in European capitals",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "After his resignation, he sought aid for the Republic of Armenia in various European capitals."
+        },
+        {
+          "field": "bio",
+          "claim": "Treaty of Alexandropol, invalid",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "On December 3, 1920, an Armenian delegation led by Khatisian signed the Treaty of Alexandropol with Kemalist Turkey, though the government it represented no longer existed (power had already been transferred to the new Soviet authorities), making the treaty illegal."
+        },
+        {
+          "field": "bio",
+          "claim": "exile in Paris and memoirs",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "Following the Soviet takeover of Armenia, Khatisian went into exile in Paris, France. He wrote his memoirs"
+        },
+        {
+          "field": "bio",
+          "claim": "died in Paris in 1945",
+          "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+          "locator": "Biography",
+          "excerpt": "He died in Paris on 10 March 1945 at the age of 71."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "diplomacy",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1920,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+              "locator": "Biography",
+              "claim": "Foreign minister of the First Republic of Armenia; signed the treaties of Batum and Alexandropol (no catalog affiliation)",
+              "excerpt": "he served as foreign minister and signed the Treaty of Batum with the Ottoman Empire"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1919,
+          "endYear": 1920,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+              "locator": "Biography",
+              "claim": "Prime minister of the First Republic of Armenia (no catalog affiliation)",
+              "excerpt": "then served as prime minister from May 1919 to May 1920"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1910,
+          "endYear": 1917,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+              "locator": "Biography",
+              "claim": "Mayor of Tbilisi (municipal office, no catalog affiliation)",
+              "excerpt": "He served as the mayor of Tiflis from 1910 to 1917."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1910
+            ],
+            "end": [
+              1917
+            ]
+          },
+          "r": {
+            "ko": "트빌리시 시장",
+            "en": "Mayor of Tbilisi"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "다슈나크 입당",
+            "en": "Joined the Dashnaktsutyun"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "아르메니아 외무장관, 바투미 조약 서명",
+            "en": "Foreign minister of Armenia; signed the Treaty of Batum"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": [
+              1920
+            ]
+          },
+          "r": {
+            "ko": "아르메니아 총리",
+            "en": "Prime minister of Armenia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "알렉산드로폴 조약 서명",
+            "en": "Signed the Treaty of Alexandropol"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": [
+              1945
+            ]
+          },
+          "r": {
+            "ko": "파리 망명",
+            "en": "Exile in Paris"
+          }
+        }
+      ]
+    },
+    {
+      "id": "andranik-ozanian",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "안드라니크",
+        "en": "Andranik"
+      },
+      "familyName": {
+        "ko": "오자냔",
+        "en": "Ozanian"
+      },
+      "nativeName": "Անդրանիկ Օզանյան",
+      "years": "1865–1927",
+      "citizenship": {
+        "code": "armenia"
+      },
+      "nationalOrigin": {
+        "code": "armenia"
+      },
+      "epithet": {
+        "ko": "아르메니아 공화국을 인정하지 않고 독자 부대를 이끌어 잔게주르를 지킨 아르메니아 페다이 지휘관",
+        "en": "Armenian fedayi commander who rejected the Republic of Armenia and held Zangezur with his own division"
+      },
+      "bio": {
+        "ko": "1865년 오스만 제국 샤빈카라히사르에서 태어나 다슈나크의 페다이 부대를 이끌었고, 제1차 세계대전 때 러시아군의 제1아르메니아 의용대대를 지휘했다. 아르메니아 공화국과 바투미 조약을 인정하지 않은 그는 1918년 특별타격사단을 이끌고 잔게주르를 장악했다. 역사가 도널드 블록섬은 그가 무슬림 마을을 파괴해 이 지역을 아르메니아인만의 땅으로 바꾸려 했다고 보고, 안트라니그 찰라비안은 그가 잔게주르의 아르메니아인을 지켰다고 본다. 1918년 12월 영국군의 요청으로 카라바흐 진격을 멈추었고, 1919년 부대를 해산했다. 1927년 미국 프레즈노에서 숨졌다.",
+        "en": "Born in Shabin-Karahisar in the Ottoman Empire in 1865, he led fedayi units of the Dashnaktsutyun and in the First World War commanded the first Armenian volunteer battalion of the Russian army. Refusing to recognize the Republic of Armenia or the Treaty of Batum, he took control of Zangezur with his Special Striking Division in 1918. The historian Donald Bloxham writes that he sought to make it homogeneously Armenian by destroying Muslim villages, while Antranig Chalabian argues that he saved Zangezur’s Armenians from annihilation. In December 1918 he halted his advance into Karabakh at British request, and in 1919 he disbanded his unit. He died in Fresno, California, in 1927."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "협심증",
+          "en": "Angina"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "안드라니크",
+          "안드라니크 장군"
+        ],
+        "en": [
+          "Andranik",
+          "General Andranik"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andranik"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1865–1927",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "lead",
+          "excerpt": "(25 February 1865 – 31 August 1927)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Armenian military commander and statesman",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "lead",
+          "excerpt": "was an Armenian military commander and statesman"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Armenian born in the Ottoman Empire",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Early life",
+          "excerpt": "Andranik Ozanian was born on 25 February 1865 in the town of Shabin-Karahisar (Şebinkarahisar), in the Sivas Vilayet of the Ottoman Empire"
+        },
+        {
+          "field": "bio",
+          "claim": "armed struggle from the late 1880s; ARF fedayi units",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "lead",
+          "excerpt": "Andranik entered the armed struggle against the Ottoman government and Kurdish irregulars in the late 1880s. After joining the Armenian Revolutionary Federation (Dashnaktsutyun), he led various fedayi units"
+        },
+        {
+          "field": "bio",
+          "claim": "broke with the ARF in 1907",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "lead",
+          "excerpt": "eventually breaking with the Dashnaktsutyun in 1907 over its brief rapprochement with the Young Turks"
+        },
+        {
+          "field": "bio",
+          "claim": "commander of the first Armenian volunteer battalion",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "lead",
+          "excerpt": "At the outbreak of World War I, Andranik was appointed commander of the first Armenian volunteer battalion within the Russian Imperial Army."
+        },
+        {
+          "field": "bio",
+          "claim": "entered Van on 19 May 1915",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "World War I",
+          "excerpt": "Andranik entered the liberated city on 19 May 1915"
+        },
+        {
+          "field": "bio",
+          "claim": "major-general, Western Armenian division",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Russian Revolution and Turkish reoccupation",
+          "excerpt": "Andranik, promoted to the rank of major-general by the Caucasus Front command, was appointed to lead the Corps' Western Armenian division."
+        },
+        {
+          "field": "bio",
+          "claim": "retreat from Erzurum",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Russian Revolution and Turkish reoccupation",
+          "excerpt": "Following an attempt to defend Erzurum against numerically superior Ottoman forces, Andranik retreated from the city."
+        },
+        {
+          "field": "bio",
+          "claim": "refused to recognize the republic or the Treaty of Batum",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "lead",
+          "excerpt": "He refused to recognize the First Republic of Armenia or the Treaty of Batum"
+        },
+        {
+          "field": "bio",
+          "claim": "proclaimed Nakhichevan part of Soviet Russia",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "First Republic of Armenia",
+          "excerpt": "In a defiant political move on 14 July 1918, Andranik proclaimed Nakhichevan an integral part of Soviet Russia"
+        },
+        {
+          "field": "bio",
+          "claim": "Special Striking Division in Zangezur",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Zangezur",
+          "excerpt": "As Ottoman forces advanced toward Nakhichevan, Andranik and his Special Striking Division transitioned to the rugged, mountainous terrain of Zangezur to establish a strategic defense."
+        },
+        {
+          "field": "bio",
+          "claim": "control over the district by September",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Zangezur",
+          "excerpt": "by September, he had established effective administrative and military control over the district"
+        },
+        {
+          "field": "bio",
+          "claim": "Bloxham: destroying Muslim villages",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Zangezur",
+          "excerpt": "According to historian Donald Bloxham, Andranik pursued a policy of transforming Zangezur into a demographically homogenous Armenian territory by destroying Muslim villages"
+        },
+        {
+          "field": "bio",
+          "claim": "Chalabian: saved the Armenians of Zangezur",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Zangezur",
+          "excerpt": "Conversely, Antranig Chalabian argues that Andranik's presence was the sole factor preventing the complete annihilation of the sixty thousand Armenian inhabitants of Zangezur"
+        },
+        {
+          "field": "bio",
+          "claim": "halted 40 km from Shusha at Thomson’s request",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Karabakh",
+          "excerpt": "By early December, Andranik was within 40 km (25 miles) of Shushi when he was intercepted by a message from the British commander in Baku, General W. M. Thomson."
+        },
+        {
+          "field": "bio",
+          "claim": "returned to Zangezur",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Karabakh",
+          "excerpt": "Andranik halted his campaign and returned to Zangezur"
+        },
+        {
+          "field": "bio",
+          "claim": "disbanded his unit in April 1919",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Departure",
+          "excerpt": "On 13 April 1919, Andranik arrived in Etchmiadzin"
+        },
+        {
+          "field": "bio",
+          "claim": "chose to disband his unit",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Departure",
+          "excerpt": "Andranik chose to disband his unit"
+        },
+        {
+          "field": "bio",
+          "claim": "relief work in Europe and the US",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Last years",
+          "excerpt": "From 1919 to 1922, Andranik traveled around Europe and the United States seeking support for the Armenian refugees."
+        },
+        {
+          "field": "bio",
+          "claim": "settled in Fresno in 1922",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Last years",
+          "excerpt": "Andranik and Nevarte moved to the United States and settled in Fresno in 1922."
+        },
+        {
+          "field": "bio",
+          "claim": "died of angina in 1927",
+          "source": "https://en.wikipedia.org/wiki/Andranik",
+          "locator": "Death",
+          "excerpt": "Andranik died from angina on 31 August 1927"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1919,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Andranik",
+              "locator": "Zangezur",
+              "claim": "Commander of the Special Striking Division in Zangezur, acting independently of the Armenian government (no catalog affiliation)",
+              "excerpt": "Andranik and his Special Striking Division transitioned to the rugged, mountainous terrain of Zangezur"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "russian-empire",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1916,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Andranik",
+              "locator": "World War I",
+              "claim": "Commander of the first Armenian volunteer battalion within the Imperial Russian Army",
+              "excerpt": "From November 1914 to August 1915, he spearheaded this unit of approximately 1,200 volunteers within the Imperial Russian Army during the Caucasus Campaign."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1892
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "아르메니아 혁명연맹 가입",
+            "en": "Joined the Armenian Revolutionary Federation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": [
+              1916
+            ]
+          },
+          "r": {
+            "ko": "러시아 제국군 제1아르메니아 의용대대장",
+            "en": "Commander of the first Armenian volunteer battalion, Imperial Russian Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "소장, 서아르메니아 사단장",
+            "en": "Major-general; commander of the Western Armenian division"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": [
+              1919
+            ]
+          },
+          "r": {
+            "ko": "특별타격사단장, 잔게주르",
+            "en": "Commander of the Special Striking Division in Zangezur"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1922
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "프레즈노 정착",
+            "en": "Settled in Fresno"
+          }
+        }
+      ],
+      "linkExpressions": [
+        {
+          "text": "안드라니크",
+          "lang": "ko",
+          "role": "identity",
+          "policy": "auto"
+        },
+        {
+          "text": "Andranik",
+          "lang": "en",
+          "role": "identity",
+          "policy": "auto"
+        }
+      ]
+    },
+    {
+      "id": "lionel-dunsterville",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "라이어널",
+        "en": "Lionel"
+      },
+      "familyName": {
+        "ko": "던스터빌",
+        "en": "Dunsterville"
+      },
+      "nativeName": "Lionel Charles Dunsterville",
+      "years": "1865–1946",
+      "citizenship": {
+        "code": "uk"
+      },
+      "nationalOrigin": {
+        "code": "uk"
+      },
+      "epithet": {
+        "ko": "1918년 던스터포스를 이끌고 페르시아를 가로질러 바쿠 방어에 나선 영국 장군",
+        "en": "British general who led Dunsterforce across Persia to defend Baku in 1918"
+      },
+      "bio": {
+        "ko": "1865년 스위스 로잔에서 태어나 러디어드 키플링과 같은 학교를 다녔고, 키플링의 소설 속 「스토키」의 모델이 되었다. 영국령 인도군 장교로 북서변경과 중국에서 복무했다. 1917년 말 메소포타미아 전선 등에서 뽑은 1,000명 미만의 연합군 부대 던스터포스의 지휘관이 되어 1918년 1월 바그다드를 출발해 페르시아를 가로질렀다. 1918년 8월 센트로카스피 독재 정부가 장악한 바쿠의 방어에 나섰으나, 9월 14일 오스만군의 공세 앞에서 바쿠를 버리고 물러났다. 1946년 잉글랜드 데번주에서 숨졌다.",
+        "en": "Born in Lausanne in 1865, he went to school with Rudyard Kipling and was the model for “Stalky” in Kipling’s stories. An officer of the British Indian Army, he served on the North-West Frontier and in China. At the end of 1917 he was given command of Dunsterforce, an Allied force of fewer than 1,000 men drawn from the Mesopotamian and other fronts, which left Baghdad in January 1918 and crossed Persia. In August 1918 he took up the defence of Baku, then held by the Centro Caspian Dictatorship, but on 14 September he abandoned the city before the Ottoman assault. He died in Devon, England, in 1946."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "자연사",
+          "en": "Natural death"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "라이어널 찰스 던스터빌",
+          "스토키"
+        ],
+        "en": [
+          "L. C. Dunsterville",
+          "Stalky"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Lionel_Dunsterville"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1865–1946",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "lead",
+          "excerpt": "(9 November 1865 – 18 March 1946)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "British Indian Army officer",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "lead",
+          "excerpt": "was a British Indian Army officer"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "son of a British Indian Army general",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early life",
+          "excerpt": "the son of Lieutenant General Lionel D'Arcy Dunsterville (1830–1912) of the Indian Army"
+        },
+        {
+          "field": "bio",
+          "claim": "born in Lausanne",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early life",
+          "excerpt": "Lionel Charles Dunsterville was born in Lausanne, Switzerland on 9 November 1865"
+        },
+        {
+          "field": "bio",
+          "claim": "schoolmate of Kipling",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early life",
+          "excerpt": "He went to school with Rudyard Kipling"
+        },
+        {
+          "field": "bio",
+          "claim": "model for Stalky",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early life",
+          "excerpt": "He served as the inspiration for the character \"Stalky\" in Kipling's collection of school stories Stalky & Co.."
+        },
+        {
+          "field": "bio",
+          "claim": "commissioned 1884",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early military career",
+          "excerpt": "Dunsterville was commissioned into the British Army as a lieutenant in the Royal Sussex Regiment on 23 August 1884."
+        },
+        {
+          "field": "bio",
+          "claim": "Indian Army, North-West Frontier, Waziristan",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early military career",
+          "excerpt": "He later transferred to the British Indian Army, was promoted to captain on 23 August 1895, and served on the North-West Frontier and in Waziristan."
+        },
+        {
+          "field": "bio",
+          "claim": "China during the Boxer Rebellion",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Early military career",
+          "excerpt": "As a railway staff officer he served in China during the Boxer Rebellion 1900–02"
+        },
+        {
+          "field": "bio",
+          "claim": "appointed to lead Dunsterforce at the end of 1917",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "First World War",
+          "excerpt": "At the end of 1917 the army appointed then-Major Dunsterville to lead an Allied force (Dunsterforce) of fewer than 1,000 Australian, British, Canadian and New Zealand troops, drawn from the Mesopotamian and Western Fronts"
+        },
+        {
+          "field": "bio",
+          "claim": "set out from Baghdad in January 1918",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "First World War",
+          "excerpt": "His mission set out from Baghdad in January 1918"
+        },
+        {
+          "field": "bio",
+          "claim": "fought the Jangali at Manjil",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "First World War",
+          "excerpt": "On his way to Bandar-e Anzali on the Persian Caspian Sea coast he also fought Mirza Kuchik Khan and his Jangali forces in Manjil."
+        },
+        {
+          "field": "bio",
+          "claim": "defence of Baku held by the Centro Caspian Dictatorship",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "First World War",
+          "excerpt": "Dunsterville was assigned to re-inforce the defence of the key oil-field and port of Baku (in present-day Azerbaijan), held from 26 July 1918 by the anti-Soviet Centro Caspian Dictatorship."
+        },
+        {
+          "field": "bio",
+          "claim": "arrived 6 August, abandoned Baku 14 September",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "First World War",
+          "excerpt": "Dunsterforce personnel first arrived in Baku on 6 August 1918. However, the British and their allies had to abandon Baku on 14 September 1918 in the face of an onslaught by 14,000 Ottoman troops"
+        },
+        {
+          "field": "bio",
+          "claim": "died at Torquay in 1946",
+          "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+          "locator": "Post-war years",
+          "excerpt": "Dunsterville died at the age of 80 in March 1946 at Torquay, Devon, England"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1917,
+          "endYear": 1918,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+              "locator": "lead",
+              "claim": "Commander of Dunsterforce",
+              "excerpt": "who led Dunsterforce across present-day Iraq and Iran towards the Caucasus and Baku during the First World War"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-uk",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1884,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Lionel_Dunsterville",
+              "locator": "Early military career",
+              "claim": "Officer of the British Army and the British Indian Army from 1884",
+              "excerpt": "Dunsterville was commissioned into the British Army as a lieutenant in the Royal Sussex Regiment on 23 August 1884."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1884
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "영국 육군 중위 임관",
+            "en": "Commissioned lieutenant, British Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1900
+            ],
+            "end": [
+              1902
+            ]
+          },
+          "r": {
+            "ko": "의화단 운동 때 중국 복무",
+            "en": "Service in China during the Boxer Rebellion"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1915
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "임시 준장, 젤룸 여단장",
+            "en": "Temporary brigadier general, commanding the Jhelum Brigade"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "던스터포스 지휘관",
+            "en": "Commander of Dunsterforce"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "소장 진급",
+            "en": "Promoted major-general"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kazim-karabekir",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "카즘",
+        "en": "Kâzım"
+      },
+      "familyName": {
+        "ko": "카라베키르",
+        "en": "Karabekir"
+      },
+      "nativeName": "Kâzım Karabekir",
+      "years": "1882–1948",
+      "citizenship": {
+        "code": "turkey"
+      },
+      "nationalOrigin": {
+        "code": "turkey"
+      },
+      "epithet": {
+        "ko": "터키 독립전쟁 동부 전선 사령관으로 1920년 아르메니아를 침공해 알렉산드로폴 조약을 받아 낸 장군",
+        "en": "Eastern Front commander of the Turkish War of Independence who invaded Armenia in 1920 and imposed the Treaty of Alexandropol"
+      },
+      "bio": {
+        "ko": "1882년 이스탄불에서 태어나 오스만 육군대학을 수석으로 졸업했고, 제1차 세계대전 때 갈리폴리와 쿠트, 캅카스 전선에서 싸웠다. 무스타파 케말의 국민운동에 가담해 독립전쟁의 동부 전선을 지휘했다. 1920년 9월 아르메니아를 침공해 카르스와 알렉산드로폴을 점령했고, 이 원정에서 그의 군대는 아르메니아 민간인 수만 명을 쫓아내고 학살했다. 12월 알렉산드로폴 조약에, 1921년 카르스 조약에 서명했다. 1924년 첫 야당 진보공화당을 세웠으나 당이 폐쇄되었고, 1946년 대국민의회 의장이 되어 1948년 재임 중 숨졌다.",
+        "en": "Born in Istanbul in 1882, he graduated at the top of his class from the Ottoman Military College and fought at Gallipoli, at Kut and on the Caucasus front in the First World War. Joining Mustafa Kemal’s national movement, he commanded the Eastern Front in the War of Independence. He invaded Armenia in September 1920 and took Kars and Alexandropol; during the campaign his army displaced and massacred tens of thousands of Armenian civilians. He signed the Treaty of Alexandropol in December and the Treaty of Kars in 1921. In 1924 he founded the Progressive Republican Party, the first opposition party, which was closed; elected speaker of the Grand National Assembly in 1946, he died in office in 1948."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "심장마비",
+          "en": "Heart attack"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "무사 카즘 카라베키르",
+          "카즘 제이레크"
+        ],
+        "en": [
+          "Musa Kâzım Karabekir",
+          "Kiazim Karabekir",
+          "Kazim Karabekir",
+          "Kâzım Zeyrek"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1882–1948",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "lead",
+          "excerpt": "1882 – 26 January 1948"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Turkish general and politician",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "lead",
+          "excerpt": "was a Turkish general and politician"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "Turkish family from the Karamanid region",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Early life",
+          "excerpt": "The Karabekir family traced its heritage back to the medieval Karamanid principality, in central Anatolia, where his family belonged to the Afshar tribe."
+        },
+        {
+          "field": "bio",
+          "claim": "born in Istanbul, son of an Ottoman general",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Early life",
+          "excerpt": "Karabekir was born in 1882 as the son of an Ottoman general, Mehmet Emin Pasha"
+        },
+        {
+          "field": "bio",
+          "claim": "top of his class at the Military College in 1902",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Early life",
+          "excerpt": "He continued his education at the Ottoman Military College, which he finished on 6 December 1902 at the top of his class."
+        },
+        {
+          "field": "bio",
+          "claim": "14th Division at Gallipoli",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "World War I",
+          "excerpt": "As commander of the 14th Division, Karabekir fought in the Battle of Gallipoli in the summer of 1915."
+        },
+        {
+          "field": "bio",
+          "claim": "18th Corps victory at Kut",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "World War I",
+          "excerpt": "In April 1916, he took over the command of the 18th Corps, which gained a great victory over the British forces led by General Charles Townshend during the Siege of Kut-al Amara in Iraq."
+        },
+        {
+          "field": "bio",
+          "claim": "2nd Corps on the Caucasus front",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "World War I",
+          "excerpt": "Karabekir was appointed commander of the 2nd Corps on the Caucasus front and fought bitterly against the Russian and Armenian forces for almost ten months."
+        },
+        {
+          "field": "bio",
+          "claim": "15th Army Corps at Erzurum, May 1918",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "World War I",
+          "excerpt": "In  May 1918 he became the commander of the 15th Army Corps in Erzurum"
+        },
+        {
+          "field": "bio",
+          "claim": "refused to surrender; joined the national movement; Eastern Front",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "gave Karabekir the order to surrender to Entente powers, which he refused to obey"
+        },
+        {
+          "field": "bio",
+          "claim": "joined Mustafa Kemal and commanded the Eastern Front",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "He pledged with Mustafa Kemal to join the Turkish national movement and then took command of the Eastern Front during the Turkish War of Independence"
+        },
+        {
+          "field": "bio",
+          "claim": "invasion of Armenia in September 1920",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "In early September 1920, Karabekir commenced a military invasion of Armenia."
+        },
+        {
+          "field": "bio",
+          "claim": "Kars 30 October, Alexandropol 6 November",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "the Turkish armies captured Kars on 30 October and occupied Alexandropol, Armenia's largest city at the time, on 6 November"
+        },
+        {
+          "field": "bio",
+          "claim": "Treaty of Alexandropol with Khatisian’s delegation",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "A ceasefire was concluded on 18 November between Karabekir and a delegation led by Alexander Khatisian."
+        },
+        {
+          "field": "bio",
+          "claim": "signed 3 December 1920",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "Karabekir affixed his signature under the peace agreement, the Treaty of Alexandropol, which was signed on 3 December 1920."
+        },
+        {
+          "field": "bio",
+          "claim": "massacre of Armenian civilians, about 60,000",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "Karabekir's army displaced and massacred tens of thousands of Armenian civilians during the campaign against Armenia, with conservative estimates placing the number killed at approximately 60,000."
+        },
+        {
+          "field": "bio",
+          "claim": "signed the Treaty of Kars",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Turkish War of Independence",
+          "excerpt": "to sign also the friendship agreement Treaty of Kars with the Soviet Union on 23 October 1921"
+        },
+        {
+          "field": "bio",
+          "claim": "Progressive Republican Party founded 1924",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "lead",
+          "excerpt": "He was the founder and leader of the Progressive Republican Party, the Turkish Republic's first opposition party to Atatürk"
+        },
+        {
+          "field": "bio",
+          "claim": "party closed 1925, imprisoned, acquitted",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Political career",
+          "excerpt": "The party was closed on 5 June 1925 by the government, and Karabekir was imprisoned by the Independence Tribunals with many of his party members but later acquitted and released."
+        },
+        {
+          "field": "bio",
+          "claim": "speaker 1946, died in office 1948",
+          "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+          "locator": "Political career",
+          "excerpt": "He was elected speaker of the parliament on 5 August 1946. He died in office at the age of 66 on 26 January 1948 in Ankara after a heart attack."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1902,
+          "endYear": 1924,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+              "locator": "lead",
+              "claim": "Ottoman and Turkish army commander; Eastern Front commander in the War of Independence",
+              "excerpt": "He was the commander of the Eastern Army of the Ottoman Empire during the Turkish War of Independence, and fought a successful military campaign against the Armenian Democratic Republic."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1924,
+          "endYear": 1925,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+              "locator": "lead",
+              "claim": "Founder and leader of the Progressive Republican Party (no catalog affiliation)",
+              "excerpt": "He was the founder and leader of the Progressive Republican Party"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-turkey",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1946,
+          "endYear": 1948,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/K%C3%A2z%C4%B1m_Karabekir",
+              "locator": "Political career",
+              "claim": "Speaker of the Grand National Assembly",
+              "excerpt": "He was elected speaker of the parliament on 5 August 1946."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1915
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "갈리폴리 전투 제14사단장",
+            "en": "Commander of the 14th Division at Gallipoli"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1918
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제15군단 사령관(에르주룸)",
+            "en": "Commander of the 15th Army Corps, Erzurum"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "아르메니아 침공, 알렉산드로폴 조약 서명",
+            "en": "Invasion of Armenia; signed the Treaty of Alexandropol"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1921
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "카르스 조약 서명",
+            "en": "Signed the Treaty of Kars"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1924
+            ],
+            "end": [
+              1925
+            ]
+          },
+          "r": {
+            "ko": "진보공화당 창당·당수",
+            "en": "Founder and leader of the Progressive Republican Party"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1946
+            ],
+            "end": [
+              1948
+            ]
+          },
+          "r": {
+            "ko": "대국민의회 의장",
+            "en": "Speaker of the Grand National Assembly"
+          }
+        }
+      ]
+    },
+    {
+      "id": "najmuddin-gotsinsky",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "나주무딘",
+        "en": "Najmuddin"
+      },
+      "familyName": {
+        "ko": "고친스키",
+        "en": "Gotsinsky"
+      },
+      "nativeName": "Нажмудин Гоцинский",
+      "years": "1859–1925",
+      "citizenship": {
+        "code": "russia",
+        "label": {
+          "ko": "러시아 제국",
+          "en": "Russian Empire"
+        }
+      },
+      "epithet": {
+        "ko": "북캅카스의 무프티로서 1918~1925년 다게스탄과 체첸의 반볼셰비키 봉기를 이끈 아바르인 종교 지도자",
+        "en": "Avar religious leader and mufti of the North Caucasus who led anti-Bolshevik uprisings in Dagestan and Chechnya in 1918–1925"
+      },
+      "bio": {
+        "ko": "1859년 다게스탄 고초브 마을의 아바르인 귀족 지주 집안에서 태어난 이슬람 학자다. 1917년 5월 북캅카스 산악민 연합 대회에서 북캅카스의 무프티가 되었고, 8월 다게스탄·체첸의 이맘으로 추대되었다가 사흘 만에 칭호를 내려놓았다. 1918년 볼셰비키와 싸웠고, 1919년 데니킨의 의용군을 공산주의자보다 덜한 악으로 보고 협력했다. 1920년 9월 다게스탄 봉기를 일으켜 이끌었으나 봉기는 1921년 5월 진압되었다. 체첸으로 옮겨 다시 봉기를 준비하다 1925년 9월 체포되어 그해 10월 총살되었다.",
+        "en": "Born in 1859 to an aristocratic Avar landowning family in the village of Gotsob in Dagestan, he was an Islamic scholar. In May 1917 the congress of the Union of Highlanders of the North Caucasus made him mufti of the North Caucasus, and in August he was proclaimed Imam of Dagestan and Chechnya but gave up the title three days later. He fought the Bolsheviks in 1918, and in 1919 he collaborated with Denikin’s Volunteer Army as a lesser evil than the communists. In September 1920 he raised and led the Dagestan uprising, which was put down in May 1921. Moving to Chechnya to prepare another rising, he was arrested in September 1925 and shot that October."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by shooting"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "나주무딘 도노고"
+        ],
+        "en": [
+          "Najmuddin of Gotzo",
+          "Nazhmudin Gotsinsky",
+          "Nazhmudin Donogo"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+        "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%9D%D0%B0%D0%B6%D0%BC%D1%83%D0%B4%D0%B8%D0%BD"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1859–1925",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "lead",
+          "excerpt": "(1859 – October 1925)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "born in Dagestan Oblast of the Russian Empire",
+          "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%9D%D0%B0%D0%B6%D0%BC%D1%83%D0%B4%D0%B8%D0%BD",
+          "locator": "lead",
+          "excerpt": "1859, Гоцоб, Дагестанская область, Российская империя"
+        },
+        {
+          "field": "bio",
+          "claim": "born to an aristocratic family in Gotsob",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Early life and career",
+          "excerpt": "Najmuddin was born in 1859 in the village of Gotsob, in the Russian Empire's Dagestan Oblast to an aristocratic family."
+        },
+        {
+          "field": "bio",
+          "claim": "Avar father",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Early life and career",
+          "excerpt": "His Avar father, Muhammad Donogo, had been a naib under Imam Shamil"
+        },
+        {
+          "field": "bio",
+          "claim": "joined the ulama",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Early life and career",
+          "excerpt": "joining the ulama after receiving a religious education"
+        },
+        {
+          "field": "bio",
+          "claim": "naib of Koisubu 1895–1903",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Early life and career",
+          "excerpt": "He next was naib of Koisubu Prefecture within the Avar District of Dagestan Oblast, the same office his father had held, from 1895 to 1903."
+        },
+        {
+          "field": "bio",
+          "claim": "supported February; Dagestan Oblast Provisional Executive Committee",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Revolution and the Mountainous Republic",
+          "excerpt": "Najmuddin supported the 1917 February Revolution, and after the revolution's success he became a member of the Dagestan Oblast Provisional Executive Committee"
+        },
+        {
+          "field": "bio",
+          "claim": "appointed mufti at the First Congress in Vladikavkaz",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Revolution and the Mountainous Republic",
+          "excerpt": "Najmuddin attended the First Congress of the Union of Highlanders of the North Caucasus, which took place in May 1917 in Vladikavkaz. There, he was appointed as mufti of the North Caucasus"
+        },
+        {
+          "field": "bio",
+          "claim": "appointed Imam on 17 August 1917",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Revolution and the Mountainous Republic",
+          "excerpt": "On 17 August 1917, Najmuddin was formally appointed as Imam of Dagestan and Chechnya"
+        },
+        {
+          "field": "bio",
+          "claim": "gave up the title three days later",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Revolution and the Mountainous Republic",
+          "excerpt": "Three days later, he was instructed to give up his title by the congress's attendees"
+        },
+        {
+          "field": "bio",
+          "claim": "confirmed as mufti",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Revolution and the Mountainous Republic",
+          "excerpt": "Najmuddin's status as mufti, rather than imam, was affirmed"
+        },
+        {
+          "field": "bio",
+          "claim": "fought the Red Army in 1918",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Resistance against the Bolsheviks",
+          "excerpt": "The Red Army and forces loyal to Najmuddin continued to clash until August 1918"
+        },
+        {
+          "field": "bio",
+          "claim": "saw Denikin as a lesser evil",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Collaboration with the Whites",
+          "excerpt": "he viewed Denikin as a lesser evil capable of defeating the communists"
+        },
+        {
+          "field": "bio",
+          "claim": "uprising in the Avar District, September 1920",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Uprising in Dagestan (1920–1921)",
+          "excerpt": "Najmuddin returned to Dagestan ahead of Said, leading an uprising in the Avar District in September 1920. The uprising soon spread across Dagestan"
+        },
+        {
+          "field": "bio",
+          "claim": "defeated in May 1921",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Uprising in Dagestan (1920–1921)",
+          "excerpt": "The uprising was eventually defeated in May 1921"
+        },
+        {
+          "field": "bio",
+          "claim": "Chechnya and British intelligence",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Uprising in Dagestan (1920–1921)",
+          "excerpt": "Najmuddin left for Chechnya, where he was in contact with British intelligence"
+        },
+        {
+          "field": "bio",
+          "claim": "1924–1925 insurgency in Chechnya, captured September 1925",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "lead",
+          "excerpt": "Following the failure of a 1924–1925 insurgency in Chechnya led by Najmuddin, he was captured by the Red Army in September 1925."
+        },
+        {
+          "field": "bio",
+          "claim": "arrested on 5 September",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Capture and execution",
+          "excerpt": "Najmuddin was arrested on 5 September."
+        },
+        {
+          "field": "bio",
+          "claim": "sentenced 15 October 1925, executed",
+          "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+          "locator": "Capture and execution",
+          "excerpt": "On 15 October 1925, Najmuddin was sentenced to execution by shooting in Rostov-on-Don. He was executed later that month."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1918,
+          "endYear": 1925,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+              "locator": "lead",
+              "claim": "Leader of anti-Bolshevik uprisings in Dagestan and Chechnya (no catalog affiliation)",
+              "excerpt": "who led multiple uprisings against the Bolsheviks during and after the Russian Civil War"
+            }
+          ]
+        },
+        {
+          "functionId": "religion",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1917,
+          "endYear": 1919,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+              "locator": "lead",
+              "claim": "Mufti of the North Caucasus and of the Mountainous Republic (no catalog affiliation)",
+              "excerpt": "Najmuddin first served as Mufti of the Mountainous Republic of the Northern Caucasus"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1895
+            ],
+            "end": [
+              1903
+            ]
+          },
+          "r": {
+            "ko": "아바르 관구 코이수부 구역 나이브",
+            "en": "Naib of Koisubu, Avar District"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "북캅카스 무프티",
+            "en": "Mufti of the North Caucasus"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1917
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "다게스탄·체첸 이맘으로 추대, 사흘 만에 사퇴",
+            "en": "Proclaimed Imam of Dagestan and Chechnya; gave up the title three days later"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "end": [
+              1921
+            ]
+          },
+          "r": {
+            "ko": "다게스탄 봉기 지도",
+            "en": "Led the Dagestan uprising"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1924
+            ],
+            "end": [
+              1925
+            ]
+          },
+          "r": {
+            "ko": "체첸 봉기",
+            "en": "Insurgency in Chechnya"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1925
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "체포, 로스토프나도누에서 처형",
+            "en": "Arrested; executed in Rostov-on-Don"
+          }
+        }
+      ]
+    }
+  ]
+}

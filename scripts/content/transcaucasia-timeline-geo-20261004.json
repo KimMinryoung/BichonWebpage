@@ -1,0 +1,1671 @@
+{
+  "id": "transcaucasia-timeline-geo-20261004",
+  "changes": [
+    {
+      "event": "transcaucasia-1917-1921",
+      "column": "timeline",
+      "expected": [
+        {
+          "geo": {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "kind": "point",
+            "label": {
+              "en": "Tbilisi",
+              "ko": "트빌리시"
+            }
+          },
+          "body": {
+            "en": "In Tbilisi, Georgian Mensheviks, the Musavat, the Dashnaks and others replaced the Ozakom with a government of their own that refused to recognise the Sovnarkom. Evgeni Gegechkori was its chairman.",
+            "ko": "트빌리시에서 그루지야 멘셰비키·무사바트·다슈나크 등이 오자콤을 대신하는 정부를 세우고 소브나르콤을 인정하지 않았다. 의장은 예브게니 게게치코리였다."
+          },
+          "date": "1917.11.28",
+          "title": {
+            "en": "Transcaucasian Commissariat formed",
+            "ko": "자캅카스 인민위원부 수립"
+          },
+          "country": [
+            "georgia",
+            "armenia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 39.75,
+            "lng": 39.49,
+            "kind": "point",
+            "label": {
+              "en": "Erzincan",
+              "ko": "에르진잔"
+            }
+          },
+          "body": {
+            "en": "Russian forces on the Caucasus Front and the Ottoman Third Army agreed a ceasefire. Russian soldiers headed home en masse and the front dissolved.",
+            "ko": "캅카스 전선의 러시아군과 오스만 제3군이 휴전했다. 러시아 병사들이 대거 귀향길에 오르며 전선이 무너졌다."
+          },
+          "date": "1917.12.18",
+          "title": {
+            "en": "Armistice of Erzincan",
+            "ko": "에르진잔 휴전"
+          },
+          "country": [
+            "russia",
+            "turkey"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.83,
+            "lng": 46.02,
+            "kind": "point",
+            "label": {
+              "en": "Shamkhor",
+              "ko": "샴코르"
+            }
+          },
+          "body": {
+            "en": "Azerbaijani armed bands attacked trains carrying Russian soldiers home near Shamkhor station. Russian-language sources put the dead at about 2,000.",
+            "ko": "샴코르역 일대에서 아제르바이잔 무장 집단이 귀환하는 러시아 병사들의 열차를 습격했다. 러시아어 출처에 따르면 약 2,000명이 죽었다."
+          },
+          "date": "1918.01.22–01.25",
+          "title": {
+            "en": "Shamkhor incident",
+            "ko": "샴코르 사건"
+          },
+          "country": [
+            "azerbaijan",
+            "russia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.4093,
+            "lng": 49.8671,
+            "kind": "point",
+            "label": {
+              "en": "Baku",
+              "ko": "바쿠"
+            }
+          },
+          "body": {
+            "en": "Fighting between the Baku Soviet with Dashnak units and the Musavat turned into a massacre of Muslims. Estimates of the dead range from about 3,000 to 12,000.",
+            "ko": "바쿠 소비에트와 다슈나크 부대가 무사바트 세력과 싸우는 과정에서 무슬림 주민이 대거 학살되었다. 사망자 추정치는 약 3,000명에서 1만 2천 명까지 엇갈린다."
+          },
+          "date": "1918.03.30–04.02",
+          "title": {
+            "en": "March Days in Baku",
+            "ko": "바쿠 3월 사태"
+          },
+          "country": [
+            "azerbaijan"
+          ]
+        },
+        {
+          "body": {
+            "en": "After the loss of Batumi, the Seim bowed to Ottoman demands and proclaimed an independent federal republic. Kars was handed to the Ottomans three days later.",
+            "ko": "바투미를 잃은 뒤 세임이 오스만의 요구에 따라 독립 연방 공화국을 선포했다. 사흘 뒤 카르스가 오스만에 넘어갔다."
+          },
+          "date": "1918.04.22",
+          "title": {
+            "en": "Transcaucasian Democratic Federative Republic proclaimed",
+            "ko": "자캅카스 민주연방공화국 선포"
+          },
+          "country": [
+            "georgia",
+            "armenia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.1,
+            "lng": 44.02,
+            "kind": "point",
+            "label": {
+              "en": "Sardarabad",
+              "ko": "사르다라바트"
+            }
+          },
+          "body": {
+            "en": "West of Yerevan, Armenian forces halted the Ottoman advance; fighting went on at the same time at Bash Abaran and Karakilisa.",
+            "ko": "예레반 서쪽에서 아르메니아군이 오스만군의 진격을 막았다. 바시아파란·카라킬리사에서도 같은 시기에 싸움이 벌어졌다."
+          },
+          "date": "1918.05.21–05.29",
+          "title": {
+            "en": "Battle of Sardarabad",
+            "ko": "사르다라바트 전투"
+          },
+          "country": [
+            "armenia",
+            "turkey"
+          ]
+        },
+        {
+          "body": {
+            "en": "On 26 May the Seim dissolved and Georgia declared independence; Azerbaijan and Armenia followed on the 28th. On 4 June all three signed the Treaty of Batum with the Ottoman Empire.",
+            "ko": "5월 26일 세임이 해산하고 그루지야가 독립을 선언했으며, 28일 아제르바이잔과 아르메니아가 뒤따랐다. 6월 4일 세 나라는 오스만과 바투미 조약을 맺었다."
+          },
+          "date": "1918.05.26–05.28",
+          "title": {
+            "en": "Federation dissolved, three states declare independence",
+            "ko": "연방 해체와 세 나라의 독립"
+          },
+          "country": [
+            "georgia",
+            "armenia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 42.1462,
+            "lng": 41.6719,
+            "kind": "point",
+            "label": {
+              "en": "Poti",
+              "ko": "포티"
+            }
+          },
+          "body": {
+            "en": "Two days after independence Georgia accepted German protection; some 3,000 German troops landed at Poti and the Ottoman advance was halted.",
+            "ko": "독립 이틀 뒤 그루지야는 독일의 보호를 받아들였고, 약 3,000명의 독일군이 포티항에 상륙해 오스만군의 진격을 막았다."
+          },
+          "date": "1918.05.28",
+          "title": {
+            "en": "Treaty of Poti: German protection",
+            "ko": "포티 조약 — 독일의 보호"
+          },
+          "country": [
+            "georgia",
+            "germany"
+          ]
+        },
+        {
+          "body": {
+            "en": "After Dunsterforce withdrew, the Ottoman-Azerbaijani army entered Baku, and 10,000–30,000 Armenians were massacred.",
+            "ko": "던스터포스가 철수한 뒤 오스만-아제르바이잔군이 바쿠에 들어왔고 아르메니아인 1만~3만 명이 학살되었다."
+          },
+          "date": "1918.09.15",
+          "title": {
+            "en": "Fall of Baku and the September Days",
+            "ko": "바쿠 함락과 9월 사태"
+          },
+          "country": [
+            "azerbaijan",
+            "turkey",
+            "uk"
+          ]
+        },
+        {
+          "body": {
+            "en": "Arrested at Krasnovodsk, 26 leaders of the Baku Commune were shot beside the Transcaspian Railway on the orders of the Ashkhabad Committee.",
+            "ko": "크라스노보드스크에서 체포된 바쿠 코뮌 지도자 26명이 아슈하바드 위원회의 결정으로 트랜스카스피아 철도변에서 총살되었다."
+          },
+          "date": "1918.09.20",
+          "title": {
+            "en": "Execution of the 26 Baku Commissars",
+            "ko": "26인 바쿠 코미사르 처형"
+          },
+          "country": [
+            "azerbaijan",
+            "uk"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.41,
+            "lng": 49.87,
+            "kind": "point",
+            "label": {
+              "en": "Baku",
+              "ko": "바쿠"
+            }
+          },
+          "body": {
+            "en": "General William Thomson entered Baku, vacated by the Ottomans, with British Indian and Russian troops, proclaimed himself military governor and imposed martial law.",
+            "ko": "오스만군이 물러난 바쿠에 윌리엄 톰슨 장군이 영국 인도군과 러시아 부대를 이끌고 들어와 군정 총독을 자처하고 계엄을 선포했다."
+          },
+          "date": "1918.11.17",
+          "title": {
+            "en": "Thomson's British troops enter Baku",
+            "ko": "톰슨의 영국군, 바쿠 진주"
+          },
+          "country": [
+            "uk",
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.37,
+            "lng": 49.84,
+            "kind": "point",
+            "label": {
+              "en": "Baku",
+              "ko": "바쿠"
+            }
+          },
+          "body": {
+            "en": "A parliament replaced the National Council. Musavat was the largest faction, minorities including Armenians and Russians held seats, and in 1919 it enfranchised women.",
+            "ko": "민족회의를 대신한 의회가 열렸다. 무사바트가 최대 분파였고 아르메니아인·러시아인 등 소수민족 대표도 의석을 얻었으며, 의회는 1919년 여성 참정권을 도입했다."
+          },
+          "date": "1918.12",
+          "title": {
+            "en": "Azerbaijani parliament opens",
+            "ko": "아제르바이잔 의회 개원"
+          },
+          "country": [
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 41.249,
+            "lng": 44.803,
+            "kind": "point",
+            "label": {
+              "en": "Sadakhlo",
+              "ko": "사다흘로"
+            }
+          },
+          "body": {
+            "en": "The two republics fought over Lori and Akhalkalaki. After Armenian forces advanced toward Tbilisi, a British-brokered ceasefire created the Lori neutral zone.",
+            "ko": "로리와 아할칼라키를 두고 두 공화국이 싸웠다. 아르메니아군이 트빌리시 가까이 진격한 뒤 영국의 중재로 휴전하고 로리 중립지대가 생겼다."
+          },
+          "date": "1918.12.07–12.31",
+          "title": {
+            "en": "Armeno-Georgian War",
+            "ko": "아르메니아-그루지야 전쟁"
+          },
+          "country": [
+            "georgia",
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 43.6,
+            "lng": 39.73,
+            "kind": "point",
+            "label": {
+              "en": "Sochi",
+              "ko": "소치"
+            }
+          },
+          "body": {
+            "en": "Denikin's forces captured the Georgian command at Gagra and pushed the Georgians beyond the Bzyb; British intervention later fixed the line on the Psou.",
+            "ko": "데니킨의 군대가 가그라에서 그루지야군 지휘부를 사로잡고 그루지야군을 브지브강 너머로 밀어냈다. 영국의 개입으로 뒤에 프소우강이 경계가 되었다."
+          },
+          "date": "1919.02.06",
+          "title": {
+            "en": "Whites drive back the Georgians at Sochi",
+            "ko": "백군, 소치 분쟁에서 그루지야군 격퇴"
+          },
+          "country": [
+            "russia",
+            "georgia",
+            "uk"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "kind": "point",
+            "label": {
+              "en": "Tbilisi",
+              "ko": "트빌리시"
+            }
+          },
+          "body": {
+            "en": "The Social Democrats (Mensheviks) won 81.5 percent and 109 of 130 seats; on 21 March Noe Zhordania formed a one-party government.",
+            "ko": "사회민주당(멘셰비키)이 81.5%를 얻어 130석 가운데 109석을 차지했다. 3월 21일 노이 조르다니아가 단독 정부를 꾸렸다."
+          },
+          "date": "1919.02.14",
+          "title": {
+            "en": "Georgian Constituent Assembly election",
+            "ko": "그루지야 제헌의회 선거"
+          },
+          "country": [
+            "georgia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.6013,
+            "lng": 43.0975,
+            "kind": "point",
+            "label": {
+              "en": "Kars",
+              "ko": "카르스"
+            }
+          },
+          "body": {
+            "en": "The Southwest Caucasus Republic surrendered to Armenian and British forces and the Kars Oblast passed to Armenia; the annexation of Nakhchivan followed in May.",
+            "ko": "서남캅카스 공화국이 아르메니아군과 영국군에 항복하고 카르스 주가 아르메니아에 편입되었다. 5월에는 나히체반 편입도 선포되었다."
+          },
+          "date": "1919.04.10",
+          "title": {
+            "en": "Armenia takes over Kars",
+            "ko": "아르메니아의 카르스 편입"
+          },
+          "country": [
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 42.98,
+            "lng": 47.5,
+            "kind": "point",
+            "label": {
+              "en": "Petrovsk",
+              "ko": "페트롭스크"
+            }
+          },
+          "body": {
+            "en": "The Whites took Petrovsk and Derbent, and under Denikin's ultimatum the government of the Mountainous Republic dissolved itself and fled to Tbilisi.",
+            "ko": "백군이 페트롭스크와 데르벤트를 점령하고, 데니킨의 최후통첩에 북캅카스 산악공화국 정부가 해산해 트빌리시로 망명했다."
+          },
+          "date": "1919.05",
+          "title": {
+            "en": "Volunteer Army occupies Dagestan",
+            "ko": "의용군, 다게스탄 점령"
+          },
+          "country": [
+            "russia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 42.96,
+            "lng": 46.1,
+            "kind": "point",
+            "label": {
+              "en": "Vedeno",
+              "ko": "베데노"
+            }
+          },
+          "body": {
+            "en": "Uzun-Hajji proclaimed a sharia monarchy under Ottoman protection, based at Vedeno, and fought Denikin's forces.",
+            "ko": "우준 하지가 베데노를 근거지로 오스만 술탄의 보호를 받는 샤리아 군주국을 선포하고 데니킨군과 싸웠다."
+          },
+          "date": "1919.09.19",
+          "title": {
+            "en": "North Caucasian Emirate proclaimed",
+            "ko": "북캅카스 에미르국 선포"
+          },
+          "country": [
+            "russia"
+          ]
+        },
+        {
+          "body": {
+            "en": "The Allied Supreme Council recognised the two republics (and later Armenia) de facto, while stating that their boundaries were not prejudged.",
+            "ko": "연합국 최고회의가 두 공화국(뒤이어 아르메니아)을 사실상 승인했지만, 국경 문제는 예단하지 않는다고 못박았다."
+          },
+          "date": "1920.01.12",
+          "title": {
+            "en": "Allies recognise Georgia and Azerbaijan de facto",
+            "ko": "연합국, 그루지야·아제르바이잔 사실상 승인"
+          },
+          "country": [
+            "uk",
+            "georgia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 39.76,
+            "lng": 46.75,
+            "kind": "point",
+            "label": {
+              "en": "Shusha",
+              "ko": "슈샤"
+            }
+          },
+          "body": {
+            "en": "After a failed Armenian uprising, Azerbaijani troops and townspeople burned Shusha's Armenian quarter and massacred its inhabitants; estimates range from 500 to 30,000 dead.",
+            "ko": "아르메니아인 봉기가 실패한 뒤 아제르바이잔 군대와 주민이 슈샤의 아르메니아인 구역을 불태우고 주민을 학살했다. 희생자 추정은 500명에서 3만 명까지 엇갈린다."
+          },
+          "date": "1920.03.22–26",
+          "title": {
+            "en": "Shusha massacre",
+            "ko": "슈샤 학살"
+          },
+          "country": [
+            "azerbaijan",
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.41,
+            "lng": 49.87,
+            "kind": "point",
+            "label": {
+              "en": "Baku",
+              "ko": "바쿠"
+            }
+          },
+          "body": {
+            "en": "As armoured trains crossed the border, the Azerbaijani parliament voted to hand over power and a Revolutionary Committee proclaimed a Soviet republic.",
+            "ko": "장갑열차가 국경을 넘은 날 밤 아제르바이잔 의회가 권력 이양을 의결했고, 혁명위원회가 소비에트 공화국을 선포했다."
+          },
+          "date": "1920.04.27–28",
+          "title": {
+            "en": "The 11th Army enters Baku",
+            "ko": "제11군의 바쿠 진입"
+          },
+          "country": [
+            "azerbaijan",
+            "soviet"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "kind": "point",
+            "label": {
+              "en": "Tbilisi",
+              "ko": "트빌리시"
+            }
+          },
+          "body": {
+            "en": "A Bolshevik attack on the Tbilisi military school was repulsed. On 7 May Soviet Russia recognized Georgian independence, and a secret supplement legalized the Communist Party in Georgia.",
+            "ko": "볼셰비키의 트빌리시 사관학교 습격이 격퇴되었다. 5월 7일 소비에트 러시아는 그루지야 독립을 인정했고, 그루지야는 비밀 부속서로 공산당을 합법화했다."
+          },
+          "date": "1920.05.03–05.07",
+          "title": {
+            "en": "Tbilisi coup attempt and Treaty of Moscow",
+            "ko": "트빌리시 쿠데타 시도와 모스크바 조약"
+          },
+          "country": [
+            "georgia",
+            "russia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.7894,
+            "lng": 43.8475,
+            "kind": "point",
+            "label": {
+              "en": "Alexandropol",
+              "ko": "알렉산드로폴"
+            }
+          },
+          "body": {
+            "en": "A Bolshevik revolutionary committee proclaimed Soviet Armenia in Alexandropol; government troops suppressed the revolt within four days.",
+            "ko": "볼셰비키가 세운 혁명위원회가 알렉산드로폴에서 소비에트 아르메니아를 선포했으나 정부군이 나흘 만에 진압했다."
+          },
+          "date": "1920.05.10–05.14",
+          "title": {
+            "en": "May Uprising in Armenia",
+            "ko": "아르메니아 5월 봉기"
+          },
+          "country": [
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.68,
+            "lng": 46.36,
+            "kind": "point",
+            "label": {
+              "en": "Ganja",
+              "ko": "간자"
+            }
+          },
+          "body": {
+            "en": "A revolt led by officers of the former Azerbaijani army grew to over ten thousand before the 11th Army crushed it with shelling and a general assault.",
+            "ko": "옛 아제르바이잔군 장교들이 일으킨 봉기가 1만 명 이상으로 커졌으나 제11군의 포격과 총공세로 진압되었다."
+          },
+          "date": "1920.05.26–31",
+          "title": {
+            "en": "Ganja revolt",
+            "ko": "간자 봉기"
+          },
+          "country": [
+            "azerbaijan"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 42.2257,
+            "lng": 43.9701,
+            "kind": "point",
+            "label": {
+              "en": "Tskhinvali",
+              "ko": "츠힌발리"
+            }
+          },
+          "body": {
+            "en": "A revolutionary committee declared Soviet power across South Ossetia, but the People's Guard retook Tskhinvali on 12 June. About 5,000 died and 20,000 fled.",
+            "ko": "혁명위원회가 남오세티야 전역의 소비에트 권력을 선포했으나 인민수비대가 6월 12일 츠힌발리를 되찾았다. 약 5,000명이 죽고 2만 명이 피란했다."
+          },
+          "date": "1920.06.08–06.12",
+          "title": {
+            "en": "Suppression of the South Ossetian uprising",
+            "ko": "남오세티야 봉기 진압"
+          },
+          "country": [
+            "georgia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 48.8236,
+            "lng": 2.2108,
+            "kind": "point",
+            "label": {
+              "en": "Sèvres",
+              "ko": "세브르"
+            }
+          },
+          "body": {
+            "en": "Armenia was recognized as \"free and independent\" and its western frontier left to US presidential arbitration, but the treaty was never ratified.",
+            "ko": "아르메니아는 「자유로운 독립국」으로 인정받고 서아르메니아 국경은 미국 대통령의 중재에 맡겨졌지만, 조약은 비준되지 않았다."
+          },
+          "date": "1920.08.10",
+          "title": {
+            "en": "Treaty of Sèvres",
+            "ko": "세브르 조약"
+          },
+          "country": [
+            "armenia",
+            "turkey"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 42.54,
+            "lng": 46.7,
+            "kind": "point",
+            "label": {
+              "en": "Khunzakh",
+              "ko": "훈자흐"
+            }
+          },
+          "body": {
+            "en": "A mountaineer revolt led by Gotsinsky seized most of highland Dagestan but was crushed by the Red Army after Georgia's Sovietisation; the Reds lost 5,000 dead.",
+            "ko": "고친스키가 이끈 산악민 봉기가 다게스탄 고지대 대부분을 장악했으나, 그루지야의 소비에트화 뒤 붉은 군대에 진압되었다. 붉은 군대는 5,000명을 잃었다."
+          },
+          "date": "1920.09–1921.05",
+          "title": {
+            "en": "Dagestan uprising",
+            "ko": "다게스탄 봉기"
+          },
+          "country": [
+            "soviet"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.6,
+            "lng": 43.1,
+            "kind": "point",
+            "label": {
+              "en": "Kars",
+              "ko": "카르스"
+            }
+          },
+          "body": {
+            "en": "Karabekir's Eastern Front army took Kars on 30 October and Alexandropol in early November; Armenia accepted a ceasefire on 18 November.",
+            "ko": "카라베키르의 동부전선군이 10월 30일 카르스, 11월 초 알렉산드로폴을 점령했고 아르메니아는 11월 18일 휴전에 응했다."
+          },
+          "date": "1920.09.13–11.18",
+          "title": {
+            "en": "Turkish invasion of Armenia",
+            "ko": "터키의 아르메니아 침공"
+          },
+          "country": [
+            "turkey",
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.18,
+            "lng": 44.51,
+            "kind": "point",
+            "label": {
+              "en": "Yerevan",
+              "ko": "예레반"
+            }
+          },
+          "body": {
+            "en": "The 11th Army crossed near Ijevan; the government handed over power on 2 December and the Red Army entered Yerevan on the 4th.",
+            "ko": "제11군이 이제반 방면으로 들어오고, 12월 2일 정부가 권력을 넘긴 뒤 4일 붉은 군대가 예레반에 입성했다."
+          },
+          "date": "1920.11.29–12.04",
+          "title": {
+            "en": "Sovietization of Armenia",
+            "ko": "아르메니아 소비에트화"
+          },
+          "country": [
+            "armenia",
+            "soviet"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.79,
+            "lng": 43.85,
+            "kind": "point",
+            "label": {
+              "en": "Alexandropol",
+              "ko": "알렉산드로폴"
+            }
+          },
+          "body": {
+            "en": "Khatisian's delegation signed away the Kars oblast and Surmalu to Turkey, but the treaty is regarded as invalid because the government had resigned the day before.",
+            "ko": "하티샨의 대표단이 카르스주와 수르말루를 터키에 넘기는 조약에 서명했으나, 전날 정부가 사임해 무효로 간주된다."
+          },
+          "date": "1920.12.03",
+          "title": {
+            "en": "Treaty of Alexandropol",
+            "ko": "알렉산드로폴 조약"
+          },
+          "country": [
+            "armenia",
+            "turkey"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 43.02,
+            "lng": 44.68,
+            "kind": "point",
+            "label": {
+              "en": "Vladikavkaz",
+              "ko": "블라디카프카스"
+            }
+          },
+          "body": {
+            "en": "The Soviet government created a Mountain autonomous republic of six districts and about 800,000 people covering the North Caucasus apart from Dagestan.",
+            "ko": "소비에트 정부가 다게스탄을 뺀 북캅카스에 6개 관구, 약 80만 명의 산악 자치공화국을 세웠다."
+          },
+          "date": "1921.01.20",
+          "title": {
+            "en": "Mountain ASSR founded",
+            "ko": "산악 자치 소비에트 사회주의 공화국 수립"
+          },
+          "country": [
+            "soviet"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.18,
+            "lng": 44.51,
+            "kind": "point",
+            "label": {
+              "en": "Yerevan",
+              "ko": "예레반"
+            }
+          },
+          "body": {
+            "en": "The Dashnaks retook Yerevan and held it for 42 days before a Red Army offensive drove them back to Zangezur.",
+            "ko": "다슈나크가 예레반을 되찾아 42일 동안 다스렸으나 붉은 군대의 공세로 잔게주르로 물러났다."
+          },
+          "date": "1921.02.13–04.02",
+          "title": {
+            "en": "February Uprising in Armenia",
+            "ko": "아르메니아 2월 봉기"
+          },
+          "country": [
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 41.72,
+            "lng": 44.79,
+            "kind": "point",
+            "label": {
+              "en": "Tbilisi",
+              "ko": "트빌리시"
+            }
+          },
+          "body": {
+            "en": "Crossing the border on the pretext of the Lori uprising, the 11th Army took Tbilisi after the fighting on the Kojori heights and proclaimed a Georgian Soviet republic.",
+            "ko": "로리 봉기를 구실로 국경을 넘은 제11군이 코조리 고지 전투 끝에 트빌리시에 들어가 그루지야 소비에트 공화국을 선포했다."
+          },
+          "date": "1921.02.16–25",
+          "title": {
+            "en": "Invasion of Georgia and fall of Tbilisi",
+            "ko": "그루지야 침공과 트빌리시 함락"
+          },
+          "country": [
+            "georgia",
+            "soviet"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 55.75,
+            "lng": 37.62,
+            "kind": "point",
+            "label": {
+              "en": "Moscow",
+              "ko": "모스크바"
+            }
+          },
+          "body": {
+            "en": "Soviet Russia and the Ankara government signed a friendship treaty leaving the Kars oblast to Turkey and Batumi to Georgia and making Nakhchivan autonomous under Azerbaijan's protection.",
+            "ko": "소비에트 러시아와 앙카라 정부가 우호 조약을 맺어 카르스주를 터키에, 바투미를 그루지야에 두고 나히체반을 아제르바이잔 보호하의 자치 지역으로 정했다."
+          },
+          "date": "1921.03.16",
+          "title": {
+            "en": "Treaty of Moscow",
+            "ko": "모스크바 조약"
+          },
+          "country": [
+            "soviet",
+            "turkey"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 41.64,
+            "lng": 41.64,
+            "kind": "point",
+            "label": {
+              "en": "Batumi",
+              "ko": "바투미"
+            }
+          },
+          "body": {
+            "en": "While Georgian troops fought the Turks in the streets, the Menshevik government left by sea into exile and the city passed to the Revolutionary Committee.",
+            "ko": "그루지야군이 터키군과 시가전을 벌이는 사이 멘셰비키 정부가 배로 망명했고, 도시는 혁명위원회에 넘어갔다."
+          },
+          "date": "1921.03.18–19",
+          "title": {
+            "en": "Battle of Batumi and the Georgian government's exile",
+            "ko": "바투미 전투와 그루지야 정부 망명"
+          },
+          "country": [
+            "georgia",
+            "turkey"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 39.38,
+            "lng": 46.25,
+            "kind": "point",
+            "label": {
+              "en": "Tatev",
+              "ko": "타테브"
+            }
+          },
+          "body": {
+            "en": "Proclaimed at a congress in Tatev, Nzhdeh's republic capitulated in July after a promise that Syunik would remain in Armenia.",
+            "ko": "타테브 대회가 독립을 선포한 은즈데의 공화국은 시우니크를 아르메니아에 남긴다는 약속을 받고 7월 항복했다."
+          },
+          "date": "1921.04–07",
+          "title": {
+            "en": "Republic of Mountainous Armenia",
+            "ko": "산악 아르메니아 공화국"
+          },
+          "country": [
+            "armenia"
+          ]
+        },
+        {
+          "geo": {
+            "lat": 40.6,
+            "lng": 43.1,
+            "kind": "point",
+            "label": {
+              "en": "Kars",
+              "ko": "카르스"
+            }
+          },
+          "body": {
+            "en": "Signed by Turkey and the three Soviet republics, it fixed borders that remain in place today.",
+            "ko": "터키와 세 소비에트 공화국이 서명해 오늘날까지 이어지는 국경을 확정했다."
+          },
+          "date": "1921.10.13",
+          "title": {
+            "en": "Treaty of Kars",
+            "ko": "카르스 조약"
+          },
+          "country": [
+            "turkey",
+            "armenia",
+            "azerbaijan",
+            "georgia"
+          ]
+        }
+      ],
+      "value": [
+        {
+          "date": "1917.11.28",
+          "title": {
+            "ko": "자캅카스 인민위원부 수립",
+            "en": "Transcaucasian Commissariat formed"
+          },
+          "body": {
+            "ko": "트빌리시에서 그루지야 멘셰비키·무사바트·다슈나크 등이 오자콤을 대신하는 정부를 세우고 소브나르콤을 인정하지 않았다. 의장은 예브게니 게게치코리였다.",
+            "en": "In Tbilisi, Georgian Mensheviks, the Musavat, the Dashnaks and others replaced the Ozakom with a government of their own that refused to recognise the Sovnarkom. Evgeni Gegechkori was its chairman."
+          },
+          "country": [
+            "georgia",
+            "armenia",
+            "azerbaijan"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "label": {
+              "ko": "트빌리시",
+              "en": "Tbilisi"
+            }
+          }
+        },
+        {
+          "date": "1917.12.18",
+          "title": {
+            "ko": "에르진잔 휴전",
+            "en": "Armistice of Erzincan"
+          },
+          "body": {
+            "ko": "캅카스 전선의 러시아군과 오스만 제3군이 휴전했다. 러시아 병사들이 대거 귀향길에 오르며 전선이 무너졌다.",
+            "en": "Russian forces on the Caucasus Front and the Ottoman Third Army agreed a ceasefire. Russian soldiers headed home en masse and the front dissolved."
+          },
+          "country": [
+            "russia",
+            "turkey"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 39.75,
+            "lng": 39.49,
+            "label": {
+              "ko": "에르진잔",
+              "en": "Erzincan"
+            }
+          }
+        },
+        {
+          "date": "1918.01.22–01.25",
+          "title": {
+            "ko": "샴코르 사건",
+            "en": "Shamkhor incident"
+          },
+          "body": {
+            "ko": "샴코르역 일대에서 아제르바이잔 무장 집단이 귀환하는 러시아 병사들의 열차를 습격했다. 러시아어 출처에 따르면 약 2,000명이 죽었다.",
+            "en": "Azerbaijani armed bands attacked trains carrying Russian soldiers home near Shamkhor station. Russian-language sources put the dead at about 2,000."
+          },
+          "country": [
+            "azerbaijan",
+            "russia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.83,
+            "lng": 46.02,
+            "label": {
+              "ko": "샴코르",
+              "en": "Shamkhor"
+            }
+          }
+        },
+        {
+          "date": "1918.03.30–04.02",
+          "title": {
+            "ko": "바쿠 3월 사태",
+            "en": "March Days in Baku"
+          },
+          "body": {
+            "ko": "바쿠 소비에트와 다슈나크 부대가 무사바트 세력과 싸우는 과정에서 무슬림 주민이 대거 학살되었다. 사망자 추정치는 약 3,000명에서 1만 2천 명까지 엇갈린다.",
+            "en": "Fighting between the Baku Soviet with Dashnak units and the Musavat turned into a massacre of Muslims. Estimates of the dead range from about 3,000 to 12,000."
+          },
+          "country": [
+            "azerbaijan"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.4093,
+            "lng": 49.8671,
+            "label": {
+              "ko": "바쿠",
+              "en": "Baku"
+            }
+          }
+        },
+        {
+          "date": "1918.04.22",
+          "title": {
+            "ko": "자캅카스 민주연방공화국 선포",
+            "en": "Transcaucasian Democratic Federative Republic proclaimed"
+          },
+          "body": {
+            "ko": "바투미를 잃은 뒤 세임이 오스만의 요구에 따라 독립 연방 공화국을 선포했다. 사흘 뒤 카르스가 오스만에 넘어갔다.",
+            "en": "After the loss of Batumi, the Seim bowed to Ottoman demands and proclaimed an independent federal republic. Kars was handed to the Ottomans three days later."
+          },
+          "country": [
+            "georgia",
+            "armenia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "date": "1918.05.21–05.29",
+          "title": {
+            "ko": "사르다라바트 전투",
+            "en": "Battle of Sardarabad"
+          },
+          "body": {
+            "ko": "예레반 서쪽에서 아르메니아군이 오스만군의 진격을 막았다. 바시아파란·카라킬리사에서도 같은 시기에 싸움이 벌어졌다.",
+            "en": "West of Yerevan, Armenian forces halted the Ottoman advance; fighting went on at the same time at Bash Abaran and Karakilisa."
+          },
+          "country": [
+            "armenia",
+            "turkey"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.1,
+            "lng": 44.02,
+            "label": {
+              "ko": "사르다라바트",
+              "en": "Sardarabad"
+            }
+          }
+        },
+        {
+          "date": "1918.05.26–05.28",
+          "title": {
+            "ko": "연방 해체와 세 나라의 독립",
+            "en": "Federation dissolved, three states declare independence"
+          },
+          "body": {
+            "ko": "5월 26일 세임이 해산하고 그루지야가 독립을 선언했으며, 28일 아제르바이잔과 아르메니아가 뒤따랐다. 6월 4일 세 나라는 오스만과 바투미 조약을 맺었다.",
+            "en": "On 26 May the Seim dissolved and Georgia declared independence; Azerbaijan and Armenia followed on the 28th. On 4 June all three signed the Treaty of Batum with the Ottoman Empire."
+          },
+          "country": [
+            "georgia",
+            "armenia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "date": "1918.05.28",
+          "title": {
+            "ko": "포티 조약 — 독일의 보호",
+            "en": "Treaty of Poti: German protection"
+          },
+          "body": {
+            "ko": "독립 이틀 뒤 그루지야는 독일의 보호를 받아들였고, 약 3,000명의 독일군이 포티항에 상륙해 오스만군의 진격을 막았다.",
+            "en": "Two days after independence Georgia accepted German protection; some 3,000 German troops landed at Poti and the Ottoman advance was halted."
+          },
+          "country": [
+            "georgia",
+            "germany"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 42.1462,
+            "lng": 41.6719,
+            "label": {
+              "ko": "포티",
+              "en": "Poti"
+            }
+          }
+        },
+        {
+          "date": "1918.09.15",
+          "title": {
+            "ko": "바쿠 함락과 9월 사태",
+            "en": "Fall of Baku and the September Days"
+          },
+          "body": {
+            "ko": "던스터포스가 철수한 뒤 오스만-아제르바이잔군이 바쿠에 들어왔고 아르메니아인 1만~3만 명이 학살되었다.",
+            "en": "After Dunsterforce withdrew, the Ottoman-Azerbaijani army entered Baku, and 10,000–30,000 Armenians were massacred."
+          },
+          "country": [
+            "azerbaijan",
+            "turkey",
+            "uk"
+          ]
+        },
+        {
+          "date": "1918.09.20",
+          "title": {
+            "ko": "26인 바쿠 코미사르 처형",
+            "en": "Execution of the 26 Baku Commissars"
+          },
+          "body": {
+            "ko": "크라스노보드스크에서 체포된 바쿠 코뮌 지도자 26명이 아슈하바드 위원회의 결정으로 트랜스카스피아 철도변에서 총살되었다.",
+            "en": "Arrested at Krasnovodsk, 26 leaders of the Baku Commune were shot beside the Transcaspian Railway on the orders of the Ashkhabad Committee."
+          },
+          "country": [
+            "azerbaijan",
+            "uk"
+          ]
+        },
+        {
+          "date": "1918.11.17",
+          "title": {
+            "ko": "톰슨의 영국군, 바쿠 진주",
+            "en": "Thomson's British troops enter Baku"
+          },
+          "body": {
+            "ko": "오스만군이 물러난 바쿠에 윌리엄 톰슨 장군이 영국 인도군과 러시아 부대를 이끌고 들어와 군정 총독을 자처하고 계엄을 선포했다.",
+            "en": "General William Thomson entered Baku, vacated by the Ottomans, with British Indian and Russian troops, proclaimed himself military governor and imposed martial law."
+          },
+          "country": [
+            "uk",
+            "azerbaijan"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.41,
+            "lng": 49.87,
+            "label": {
+              "ko": "바쿠",
+              "en": "Baku"
+            }
+          }
+        },
+        {
+          "date": "1918.12",
+          "title": {
+            "ko": "아제르바이잔 의회 개원",
+            "en": "Azerbaijani parliament opens"
+          },
+          "body": {
+            "ko": "민족회의를 대신한 의회가 열렸다. 무사바트가 최대 분파였고 아르메니아인·러시아인 등 소수민족 대표도 의석을 얻었으며, 의회는 1919년 여성 참정권을 도입했다.",
+            "en": "A parliament replaced the National Council. Musavat was the largest faction, minorities including Armenians and Russians held seats, and in 1919 it enfranchised women."
+          },
+          "country": [
+            "azerbaijan"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.37,
+            "lng": 49.84,
+            "label": {
+              "ko": "바쿠",
+              "en": "Baku"
+            }
+          }
+        },
+        {
+          "date": "1918.12.07–12.31",
+          "title": {
+            "ko": "아르메니아-그루지야 전쟁",
+            "en": "Armeno-Georgian War"
+          },
+          "body": {
+            "ko": "로리와 아할칼라키를 두고 두 공화국이 싸웠다. 아르메니아군이 트빌리시 가까이 진격한 뒤 영국의 중재로 휴전하고 로리 중립지대가 생겼다.",
+            "en": "The two republics fought over Lori and Akhalkalaki. After Armenian forces advanced toward Tbilisi, a British-brokered ceasefire created the Lori neutral zone."
+          },
+          "country": [
+            "georgia",
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 41.249,
+            "lng": 44.803,
+            "label": {
+              "ko": "사다흘로",
+              "en": "Sadakhlo"
+            }
+          }
+        },
+        {
+          "date": "1919.02.06",
+          "title": {
+            "ko": "백군, 소치 분쟁에서 그루지야군 격퇴",
+            "en": "Whites drive back the Georgians at Sochi"
+          },
+          "body": {
+            "ko": "데니킨의 군대가 가그라에서 그루지야군 지휘부를 사로잡고 그루지야군을 브지브강 너머로 밀어냈다. 영국의 개입으로 뒤에 프소우강이 경계가 되었다.",
+            "en": "Denikin's forces captured the Georgian command at Gagra and pushed the Georgians beyond the Bzyb; British intervention later fixed the line on the Psou."
+          },
+          "country": [
+            "russia",
+            "georgia",
+            "uk"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 43.6,
+            "lng": 39.73,
+            "label": {
+              "ko": "소치",
+              "en": "Sochi"
+            }
+          }
+        },
+        {
+          "date": "1919.02.14",
+          "title": {
+            "ko": "그루지야 제헌의회 선거",
+            "en": "Georgian Constituent Assembly election"
+          },
+          "body": {
+            "ko": "사회민주당(멘셰비키)이 81.5%를 얻어 130석 가운데 109석을 차지했다. 3월 21일 노이 조르다니아가 단독 정부를 꾸렸다.",
+            "en": "The Social Democrats (Mensheviks) won 81.5 percent and 109 of 130 seats; on 21 March Noe Zhordania formed a one-party government."
+          },
+          "country": [
+            "georgia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "label": {
+              "ko": "트빌리시",
+              "en": "Tbilisi"
+            }
+          }
+        },
+        {
+          "date": "1919.04.10",
+          "title": {
+            "ko": "아르메니아의 카르스 편입",
+            "en": "Armenia takes over Kars"
+          },
+          "body": {
+            "ko": "서남캅카스 공화국이 아르메니아군과 영국군에 항복하고 카르스 주가 아르메니아에 편입되었다. 5월에는 나히체반 편입도 선포되었다.",
+            "en": "The Southwest Caucasus Republic surrendered to Armenian and British forces and the Kars Oblast passed to Armenia; the annexation of Nakhchivan followed in May."
+          },
+          "country": [
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.6013,
+            "lng": 43.0975,
+            "label": {
+              "ko": "카르스",
+              "en": "Kars"
+            }
+          }
+        },
+        {
+          "date": "1919.05",
+          "title": {
+            "ko": "의용군, 다게스탄 점령",
+            "en": "Volunteer Army occupies Dagestan"
+          },
+          "body": {
+            "ko": "백군이 페트롭스크와 데르벤트를 점령하고, 데니킨의 최후통첩에 북캅카스 산악공화국 정부가 해산해 트빌리시로 망명했다.",
+            "en": "The Whites took Petrovsk and Derbent, and under Denikin's ultimatum the government of the Mountainous Republic dissolved itself and fled to Tbilisi."
+          },
+          "country": [
+            "russia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 42.98,
+            "lng": 47.5,
+            "label": {
+              "ko": "페트롭스크",
+              "en": "Petrovsk"
+            }
+          }
+        },
+        {
+          "date": "1919.09.19",
+          "title": {
+            "ko": "북캅카스 에미르국 선포",
+            "en": "North Caucasian Emirate proclaimed"
+          },
+          "body": {
+            "ko": "우준 하지가 베데노를 근거지로 오스만 술탄의 보호를 받는 샤리아 군주국을 선포하고 데니킨군과 싸웠다.",
+            "en": "Uzun-Hajji proclaimed a sharia monarchy under Ottoman protection, based at Vedeno, and fought Denikin's forces."
+          },
+          "country": [
+            "russia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 42.96,
+            "lng": 46.1,
+            "label": {
+              "ko": "베데노",
+              "en": "Vedeno"
+            }
+          }
+        },
+        {
+          "date": "1920.01.12",
+          "title": {
+            "ko": "연합국, 그루지야·아제르바이잔 사실상 승인",
+            "en": "Allies recognise Georgia and Azerbaijan de facto"
+          },
+          "body": {
+            "ko": "연합국 최고회의가 두 공화국(뒤이어 아르메니아)을 사실상 승인했지만, 국경 문제는 예단하지 않는다고 못박았다.",
+            "en": "The Allied Supreme Council recognised the two republics (and later Armenia) de facto, while stating that their boundaries were not prejudged."
+          },
+          "country": [
+            "uk",
+            "georgia",
+            "azerbaijan"
+          ]
+        },
+        {
+          "date": "1920.03.22–26",
+          "title": {
+            "ko": "슈샤 학살",
+            "en": "Shusha massacre"
+          },
+          "body": {
+            "ko": "아르메니아인 봉기가 실패한 뒤 아제르바이잔 군대와 주민이 슈샤의 아르메니아인 구역을 불태우고 주민을 학살했다. 희생자 추정은 500명에서 3만 명까지 엇갈린다.",
+            "en": "After a failed Armenian uprising, Azerbaijani troops and townspeople burned Shusha's Armenian quarter and massacred its inhabitants; estimates range from 500 to 30,000 dead."
+          },
+          "country": [
+            "azerbaijan",
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 39.76,
+            "lng": 46.75,
+            "label": {
+              "ko": "슈샤",
+              "en": "Shusha"
+            }
+          }
+        },
+        {
+          "date": "1920.04.27–28",
+          "title": {
+            "ko": "제11군의 바쿠 진입",
+            "en": "The 11th Army enters Baku"
+          },
+          "body": {
+            "ko": "장갑열차가 국경을 넘은 날 밤 아제르바이잔 의회가 권력 이양을 의결했고, 혁명위원회가 소비에트 공화국을 선포했다.",
+            "en": "As armoured trains crossed the border, the Azerbaijani parliament voted to hand over power and a Revolutionary Committee proclaimed a Soviet republic."
+          },
+          "country": [
+            "azerbaijan",
+            "soviet"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.41,
+            "lng": 49.87,
+            "label": {
+              "ko": "바쿠",
+              "en": "Baku"
+            }
+          }
+        },
+        {
+          "date": "1920.05.03–05.07",
+          "title": {
+            "ko": "트빌리시 쿠데타 시도와 모스크바 조약",
+            "en": "Tbilisi coup attempt and Treaty of Moscow"
+          },
+          "body": {
+            "ko": "볼셰비키의 트빌리시 사관학교 습격이 격퇴되었다. 5월 7일 소비에트 러시아는 그루지야 독립을 인정했고, 그루지야는 비밀 부속서로 공산당을 합법화했다.",
+            "en": "A Bolshevik attack on the Tbilisi military school was repulsed. On 7 May Soviet Russia recognized Georgian independence, and a secret supplement legalized the Communist Party in Georgia."
+          },
+          "country": [
+            "georgia",
+            "russia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 41.6938,
+            "lng": 44.8015,
+            "label": {
+              "ko": "트빌리시",
+              "en": "Tbilisi"
+            }
+          }
+        },
+        {
+          "date": "1920.05.10–05.14",
+          "title": {
+            "ko": "아르메니아 5월 봉기",
+            "en": "May Uprising in Armenia"
+          },
+          "body": {
+            "ko": "볼셰비키가 세운 혁명위원회가 알렉산드로폴에서 소비에트 아르메니아를 선포했으나 정부군이 나흘 만에 진압했다.",
+            "en": "A Bolshevik revolutionary committee proclaimed Soviet Armenia in Alexandropol; government troops suppressed the revolt within four days."
+          },
+          "country": [
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.7894,
+            "lng": 43.8475,
+            "label": {
+              "ko": "알렉산드로폴",
+              "en": "Alexandropol"
+            }
+          }
+        },
+        {
+          "date": "1920.05.26–31",
+          "title": {
+            "ko": "간자 봉기",
+            "en": "Ganja revolt"
+          },
+          "body": {
+            "ko": "옛 아제르바이잔군 장교들이 일으킨 봉기가 1만 명 이상으로 커졌으나 제11군의 포격과 총공세로 진압되었다.",
+            "en": "A revolt led by officers of the former Azerbaijani army grew to over ten thousand before the 11th Army crushed it with shelling and a general assault."
+          },
+          "country": [
+            "azerbaijan"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.68,
+            "lng": 46.36,
+            "label": {
+              "ko": "간자",
+              "en": "Ganja"
+            }
+          }
+        },
+        {
+          "date": "1920.06.08–06.12",
+          "title": {
+            "ko": "남오세티야 봉기 진압",
+            "en": "Suppression of the South Ossetian uprising"
+          },
+          "body": {
+            "ko": "혁명위원회가 남오세티야 전역의 소비에트 권력을 선포했으나 인민수비대가 6월 12일 츠힌발리를 되찾았다. 약 5,000명이 죽고 2만 명이 피란했다.",
+            "en": "A revolutionary committee declared Soviet power across South Ossetia, but the People's Guard retook Tskhinvali on 12 June. About 5,000 died and 20,000 fled."
+          },
+          "country": [
+            "georgia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 42.2257,
+            "lng": 43.9701,
+            "label": {
+              "ko": "츠힌발리",
+              "en": "Tskhinvali"
+            }
+          }
+        },
+        {
+          "date": "1920.08.10",
+          "title": {
+            "ko": "세브르 조약",
+            "en": "Treaty of Sèvres"
+          },
+          "body": {
+            "ko": "아르메니아는 「자유로운 독립국」으로 인정받고 서아르메니아 국경은 미국 대통령의 중재에 맡겨졌지만, 조약은 비준되지 않았다.",
+            "en": "Armenia was recognized as \"free and independent\" and its western frontier left to US presidential arbitration, but the treaty was never ratified."
+          },
+          "country": [
+            "armenia",
+            "turkey"
+          ]
+        },
+        {
+          "date": "1920.09–1921.05",
+          "title": {
+            "ko": "다게스탄 봉기",
+            "en": "Dagestan uprising"
+          },
+          "body": {
+            "ko": "고친스키가 이끈 산악민 봉기가 다게스탄 고지대 대부분을 장악했으나, 그루지야의 소비에트화 뒤 붉은 군대에 진압되었다. 붉은 군대는 5,000명을 잃었다.",
+            "en": "A mountaineer revolt led by Gotsinsky seized most of highland Dagestan but was crushed by the Red Army after Georgia's Sovietisation; the Reds lost 5,000 dead."
+          },
+          "country": [
+            "soviet"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 42.54,
+            "lng": 46.7,
+            "label": {
+              "ko": "훈자흐",
+              "en": "Khunzakh"
+            }
+          }
+        },
+        {
+          "date": "1920.09.13–11.18",
+          "title": {
+            "ko": "터키의 아르메니아 침공",
+            "en": "Turkish invasion of Armenia"
+          },
+          "body": {
+            "ko": "카라베키르의 동부전선군이 10월 30일 카르스, 11월 초 알렉산드로폴을 점령했고 아르메니아는 11월 18일 휴전에 응했다.",
+            "en": "Karabekir's Eastern Front army took Kars on 30 October and Alexandropol in early November; Armenia accepted a ceasefire on 18 November."
+          },
+          "country": [
+            "turkey",
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.6,
+            "lng": 43.1,
+            "label": {
+              "ko": "카르스",
+              "en": "Kars"
+            }
+          }
+        },
+        {
+          "date": "1920.11.29–12.04",
+          "title": {
+            "ko": "아르메니아 소비에트화",
+            "en": "Sovietization of Armenia"
+          },
+          "body": {
+            "ko": "제11군이 이제반 방면으로 들어오고, 12월 2일 정부가 권력을 넘긴 뒤 4일 붉은 군대가 예레반에 입성했다.",
+            "en": "The 11th Army crossed near Ijevan; the government handed over power on 2 December and the Red Army entered Yerevan on the 4th."
+          },
+          "country": [
+            "armenia",
+            "soviet"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.18,
+            "lng": 44.51,
+            "label": {
+              "ko": "예레반",
+              "en": "Yerevan"
+            }
+          }
+        },
+        {
+          "date": "1920.12.03",
+          "title": {
+            "ko": "알렉산드로폴 조약",
+            "en": "Treaty of Alexandropol"
+          },
+          "body": {
+            "ko": "하티샨의 대표단이 카르스주와 수르말루를 터키에 넘기는 조약에 서명했으나, 전날 정부가 사임해 무효로 간주된다.",
+            "en": "Khatisian's delegation signed away the Kars oblast and Surmalu to Turkey, but the treaty is regarded as invalid because the government had resigned the day before."
+          },
+          "country": [
+            "armenia",
+            "turkey"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.79,
+            "lng": 43.85,
+            "label": {
+              "ko": "알렉산드로폴",
+              "en": "Alexandropol"
+            }
+          }
+        },
+        {
+          "date": "1921.01.20",
+          "title": {
+            "ko": "산악 자치 소비에트 사회주의 공화국 수립",
+            "en": "Mountain ASSR founded"
+          },
+          "body": {
+            "ko": "소비에트 정부가 다게스탄을 뺀 북캅카스에 6개 관구, 약 80만 명의 산악 자치공화국을 세웠다.",
+            "en": "The Soviet government created a Mountain autonomous republic of six districts and about 800,000 people covering the North Caucasus apart from Dagestan."
+          },
+          "country": [
+            "soviet"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 43.02,
+            "lng": 44.68,
+            "label": {
+              "ko": "블라디카프카스",
+              "en": "Vladikavkaz"
+            }
+          }
+        },
+        {
+          "date": "1921.02.13–04.02",
+          "title": {
+            "ko": "아르메니아 2월 봉기",
+            "en": "February Uprising in Armenia"
+          },
+          "body": {
+            "ko": "다슈나크가 예레반을 되찾아 42일 동안 다스렸으나 붉은 군대의 공세로 잔게주르로 물러났다.",
+            "en": "The Dashnaks retook Yerevan and held it for 42 days before a Red Army offensive drove them back to Zangezur."
+          },
+          "country": [
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.18,
+            "lng": 44.51,
+            "label": {
+              "ko": "예레반",
+              "en": "Yerevan"
+            }
+          }
+        },
+        {
+          "date": "1921.02.16–25",
+          "title": {
+            "ko": "그루지야 침공과 트빌리시 함락",
+            "en": "Invasion of Georgia and fall of Tbilisi"
+          },
+          "body": {
+            "ko": "로리 봉기를 구실로 국경을 넘은 제11군이 코조리 고지 전투 끝에 트빌리시에 들어가 그루지야 소비에트 공화국을 선포했다.",
+            "en": "Crossing the border on the pretext of the Lori uprising, the 11th Army took Tbilisi after the fighting on the Kojori heights and proclaimed a Georgian Soviet republic."
+          },
+          "country": [
+            "georgia",
+            "soviet"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 41.72,
+            "lng": 44.79,
+            "label": {
+              "ko": "트빌리시",
+              "en": "Tbilisi"
+            }
+          }
+        },
+        {
+          "date": "1921.03.16",
+          "title": {
+            "ko": "모스크바 조약",
+            "en": "Treaty of Moscow"
+          },
+          "body": {
+            "ko": "소비에트 러시아와 앙카라 정부가 우호 조약을 맺어 카르스주를 터키에, 바투미를 그루지야에 두고 나히체반을 아제르바이잔 보호하의 자치 지역으로 정했다.",
+            "en": "Soviet Russia and the Ankara government signed a friendship treaty leaving the Kars oblast to Turkey and Batumi to Georgia and making Nakhchivan autonomous under Azerbaijan's protection."
+          },
+          "country": [
+            "soviet",
+            "turkey"
+          ]
+        },
+        {
+          "date": "1921.03.18–19",
+          "title": {
+            "ko": "바투미 전투와 그루지야 정부 망명",
+            "en": "Battle of Batumi and the Georgian government's exile"
+          },
+          "body": {
+            "ko": "그루지야군이 터키군과 시가전을 벌이는 사이 멘셰비키 정부가 배로 망명했고, 도시는 혁명위원회에 넘어갔다.",
+            "en": "While Georgian troops fought the Turks in the streets, the Menshevik government left by sea into exile and the city passed to the Revolutionary Committee."
+          },
+          "country": [
+            "georgia",
+            "turkey"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 41.64,
+            "lng": 41.64,
+            "label": {
+              "ko": "바투미",
+              "en": "Batumi"
+            }
+          }
+        },
+        {
+          "date": "1921.04–07",
+          "title": {
+            "ko": "산악 아르메니아 공화국",
+            "en": "Republic of Mountainous Armenia"
+          },
+          "body": {
+            "ko": "타테브 대회가 독립을 선포한 은즈데의 공화국은 시우니크를 아르메니아에 남긴다는 약속을 받고 7월 항복했다.",
+            "en": "Proclaimed at a congress in Tatev, Nzhdeh's republic capitulated in July after a promise that Syunik would remain in Armenia."
+          },
+          "country": [
+            "armenia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 39.38,
+            "lng": 46.25,
+            "label": {
+              "ko": "타테브",
+              "en": "Tatev"
+            }
+          }
+        },
+        {
+          "date": "1921.10.13",
+          "title": {
+            "ko": "카르스 조약",
+            "en": "Treaty of Kars"
+          },
+          "body": {
+            "ko": "터키와 세 소비에트 공화국이 서명해 오늘날까지 이어지는 국경을 확정했다.",
+            "en": "Signed by Turkey and the three Soviet republics, it fixed borders that remain in place today."
+          },
+          "country": [
+            "turkey",
+            "armenia",
+            "azerbaijan",
+            "georgia"
+          ],
+          "geo": {
+            "kind": "point",
+            "lat": 40.6,
+            "lng": 43.1,
+            "label": {
+              "ko": "카르스",
+              "en": "Kars"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "transcaucasia-1917-1921-20261004",
+  "changes": [
+    {
+      "event": "ussr-formation",
+      "column": "relations",
+      "expected": {},
+      "value": {
+        "related": [
+          "transcaucasia-1917-1921"
+        ]
+      }
+    }
+  ]
+}
