@@ -41,6 +41,28 @@
             </div>
         </div>
 
+        <% if (typeof menuViews !== 'undefined' && menuViews) { %>
+            <div class="box">
+                <h2><%= lang === 'en' ? 'Page views by menu' : '메뉴별 방문' %></h2>
+                <p class="ui-muted"><%= lang === 'en' ? 'Pages opened in a browser, detail pages included; operators and bots excluded.' : '브라우저에서 연 페이지 수(상세 페이지 포함). 운영자·봇 제외.' %></p>
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th><%= lang === 'en' ? 'Menu' : '메뉴' %></th>
+                            <th><%= lang === 'en' ? 'Today' : '오늘' %></th>
+                            <th><%= lang === 'en' ? '7 days' : '7일' %></th>
+                            <th><%= lang === 'en' ? '30 days' : '30일' %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% menuViews.forEach(row => { %>
+                            <tr><td><%= row.label %></td><td><%= row.today %></td><td><%= row.week %></td><td><%= row.month %></td></tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        <% } %>
+
         <% if (recentPosts && recentPosts.length > 0) { %>
             <div class="box">
                 <h2><%= strings.admin.recentPostsTitle %></h2>

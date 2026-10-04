@@ -80,8 +80,9 @@ function isSessionFreeRequest(req) {
 // per-account learning progress (answering "not signed in" there would make
 // the browser drop a signed-in learner's local records), and every write
 // that relies on the session's CSRF token. The anonymous writes are the chat
-// proxy, learning measurement, chat links and the IP-only admin docs API.
-const ANONYMOUS_WRITE_PREFIXES = ['/api/proxy/', '/commulingo/measurement', '/commulingo/chat-links', '/commulingo/admin/api/docs'];
+// proxy, learning measurement, chat links, menu view counts and the IP-only
+// admin docs API.
+const ANONYMOUS_WRITE_PREFIXES = ['/api/proxy/', '/commulingo/measurement', '/commulingo/chat-links', '/metrics/menu-view', '/commulingo/admin/api/docs'];
 const SESSION_ONLY_PREFIXES = ['/auth', '/admin', '/writer', '/api/proxy/writer', '/commulingo/progress', '/commulingo/admin'];
 
 function startsWithSegment(reqPath, prefix) {

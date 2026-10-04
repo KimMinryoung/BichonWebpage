@@ -28,3 +28,16 @@
         links.scrollLeft = current.offsetLeft - (links.clientWidth - current.offsetWidth) / 2;
     }
 })();
+
+// One page view for the site menu this page belongs to (routes/menu-views.js
+// maps the path; edge-cached pages never reach the server otherwise).
+(function() {
+    if (!window.fetch) return;
+    try {
+        fetch('/metrics/menu-view', {
+            method: 'POST', credentials: 'same-origin', keepalive: true,
+            headers: { 'Content-Type': 'application/json', 'x-commulingo-measurement': '1' },
+            body: JSON.stringify({ path: location.pathname })
+        }).catch(function() {});
+    } catch (e) {}
+})();

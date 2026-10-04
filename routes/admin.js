@@ -4,6 +4,7 @@ const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
 const reportCache = require('../config/report-cache');
+const { MENUS, menuLabel } = require('../services/menu-views');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { CHAT_API_URL, leninbotAdminHeaders } = require('../config/services');
 const { adminApiLimiter } = require('../middleware/rate-limit');
@@ -34,6 +35,27 @@ router.post('/cache/clear', requireAuth, async (req, res) => {
     res.json({ cleared: true });
 });
 
+// Page views per site menu (services/menu-views.js), both languages summed,
+// in menu order; a menu without views shows zeros. Days are Korean dates.
+async function loadMenuViews(lang) {
+    try {
+        const { rows } = await db.query(
+            `SELECT menu,
+                    COALESCE(SUM(views) FILTER (WHERE day = today), 0)::int AS today,
+                    COALESCE(SUM(views) FILTER (WHERE day > today - 7), 0)::int AS week,
+                    COALESCE(SUM(views), 0)::int AS month
+               FROM site_menu_views, (SELECT (now() AT TIME ZONE 'Asia/Seoul')::date AS today) t
+              WHERE day > today - 30
+              GROUP BY menu`
+        );
+        const byMenu = new Map(rows.map(row => [row.menu, row]));
+        return MENUS.map(([menu]) => ({ label: menuLabel(menu, lang), ...(byMenu.get(menu) || { today: 0, week: 0, month: 0 }) }));
+    } catch (err) {
+        console.error('menu views:', err.message);
+        return null;
+    }
+}
+
 // Dashboard
 router.get('/', requireAuth, async (req, res) => {
     try {
@@ -57,7 +79,8 @@ router.get('/', requireAuth, async (req, res) => {
                 totalPosts: totalResult[0].count,
                 recentPosts: recentResult[0].count
             },
-            recentPosts
+            recentPosts,
+            menuViews: await loadMenuViews(res.locals.lang),
         });
     } catch (error) {
         console.error('Dashboard error:', error);
