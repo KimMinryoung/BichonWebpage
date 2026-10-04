@@ -273,7 +273,7 @@ UI 테스트는 임시 로컬 Express 서버에서 실제 라우트·EJS·정적
 
 스크린샷은 `/tmp/strike-mobile.png`, `/tmp/strike-desktop.png`, `/tmp/strike-fatigue-before.png`, `/tmp/strike-fatigue-after.png` 등에 생성된다. 임시 산출물이므로 저장소에 보관된 자료가 아니다.
 
-`npm test`는 규칙 테스트를 포함하지만 **Playwright UI 테스트는 포함하지 않는다**. 지도·조작 수정 시 별도 실행한다. 호스트 Node가 20 미만이면 테스트 스크립트가 Node 20 Docker로 전환하므로 Docker 접근이 필요하다.
+`npm test`는 규칙 테스트를 포함하지만 **Playwright UI 테스트는 포함하지 않는다**. 지도·조작 수정 시 별도 실행한다. 호스트 Node가 24 미만이면 테스트 스크립트가 Node 24 Docker로 전환하므로 Docker 접근이 필요하다.
 
 기준 커밋 배포 시 규칙/UI 테스트, 전체 npm test, 운영 브라우저의 v3 저장·참여 그림·결과·구버전 안내, 배포 스크립트의 20개 경로 200 응답 및 DB 검사를 통과했다.
 

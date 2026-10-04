@@ -1,5 +1,5 @@
 # Pinned so a rebuild is reproducible; bump deliberately with the engines field.
-FROM node:20.20.2-alpine
+FROM node:24.21.0-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --omit=dev

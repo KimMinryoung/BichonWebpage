@@ -10,5 +10,5 @@ if [[ -x node_modules/.bin/eslint ]]; then
     exec node_modules/.bin/eslint "$@" .
 fi
 echo "[lint] no local eslint; running eslint@${ESLINT_VERSION} in docker" >&2
-exec docker run --rm -v "$PWD:/app:ro" -w /app -e HOME=/tmp node:20.20.2-alpine \
+exec docker run --rm -v "$PWD:/app:ro" -w /app -e HOME=/tmp node:24.21.0-alpine \
     sh -c "npm exec -y --package=eslint@${ESLINT_VERSION} -- eslint $* ." 

@@ -1,4 +1,4 @@
-// Read-only corpus check. Run with app DB access and Node 20; no data is edited.
+// Read-only corpus check. Run with app DB access and Node 24; no data is edited.
 const assert = require('node:assert/strict');
 const { performance } = require('node:perf_hooks');
 const store = require('../config/research-store');

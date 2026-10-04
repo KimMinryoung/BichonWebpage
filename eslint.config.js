@@ -1,6 +1,6 @@
 // Minimal ESLint: undefined identifiers and unused variables only. The
 // browser files are classic scripts (IIFE-wrapped, no modules); the server
-// side is CommonJS on Node 20. Run with scripts/lint (or `npm run lint`).
+// side is CommonJS on Node 24. Run with scripts/lint (or `npm run lint`).
 const browserGlobals = {
     window: 'readonly', document: 'readonly', navigator: 'readonly', location: 'readonly',
     fetch: 'readonly', FormData: 'readonly', URL: 'readonly', URLSearchParams: 'readonly',

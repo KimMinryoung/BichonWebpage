@@ -6,7 +6,7 @@
  * HTTP and is usually more convenient. See data/commulingo/docs/README.md.
  *
  * No host node binary — run via docker:
- *   docker run --rm -v /home/grass/frontend:/app -w /app node:20-alpine \
+ *   docker run --rm -v /home/grass/frontend:/app -w /app node:24-alpine \
  *     node scripts/import-commulingo-doc.js <input.html> --id <slug> [options]
  *
  * Options:
