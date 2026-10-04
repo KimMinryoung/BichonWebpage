@@ -23,7 +23,8 @@
 | A15 | 일부 | `scripts/test-access-boundaries.js`(A02·A03), schedule smoke의 계정 소유 검사(A05), 문헌 정화 smoke(A04) 추가. |
 | A16 | 일부 | 전체 재조회 주기·cache-policy 설명 정정. 모듈 분리는 미착수. |
 | A10 | 반영 | `/ready`(DB 필수·Redis는 보고만, 실패 시 503)를 deploy 대기·주 컨테이너 검사에 연결, Redis 장애 시 비로그인 기능만 제공하고 장애 공지(2026-10-04 후속), 네트워크 연결 실패 즉시 중단. 목록 원본 실패 시 안내+`no-store`, 빈 목록이면 503. 홈은 일부 실패 안내만(200). |
-| A09·A11·A14, F01~F04 | 보류 | 설계·계약 변경이나 제품 판단이 필요한 항목. |
+| A14 | 반영 | `/p/:slug` 본문을 서버에서 정화해 HTML로 보냄(`services/static-page-render.js`, sanitize-html). 브라우저 DOMPurify·CDN 의존 제거. 운영 14개 페이지(영어 포함 17개)를 브라우저에서 기존 DOMPurify 결과와 비교했고 본문 텍스트·요소·높이가 같았다. 차이는 개선 세 가지: `id="timeline"` 유지(목차 링크 복구), `target="_blank"` 유지, 영어 페이지 본문 링크의 `/en/` 현지화. JavaScript를 꺼도 본문·SVG가 보인다. |
+| A09·A11, F01~F04 | 보류 | 설계·계약 변경이나 제품 판단이 필요한 항목. |
 
 ## 검토 기준과 읽는 방법
 

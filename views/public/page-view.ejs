@@ -3,8 +3,6 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/report.css?v=<%= assetVersion %>">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" integrity="sha384-cwS6YdhLI7XS60eoDiC+egV0qHp8zI+Cms46R0nbn8JrmoAzV9uFL60etMZhAnSu" crossorigin="anonymous" defer></script>
 </head>
 <body>
     <%- include('../partials/nav') %>
@@ -22,8 +20,8 @@
                 </div>
             <% } %>
 
-            <div class="report-body" id="page-content"></div>
-            <script type="application/json" id="page-raw"><%- JSON.stringify(htmlBody).replace(/</g, '\\u003c') %></script>
+            <%# Sanitized on the server (services/static-page-render.js). %>
+            <div class="report-body" id="page-content"><%- contentHtml %></div>
         </article>
 
         <div class="box post-nav">
@@ -34,25 +32,5 @@
     </div>
 
     <%- include('../partials/footer') %>
-    <script>
-    // DOMContentLoaded so the deferred DOMPurify above is guaranteed loaded.
-    document.addEventListener('DOMContentLoaded', function() {
-        try {
-            var raw = document.getElementById('page-raw').textContent;
-            var html = JSON.parse(raw);
-            var sanitized = DOMPurify.sanitize(html, {
-                USE_PROFILES: { html: true, svg: true, svgFilters: true },
-                ADD_TAGS: ['style'],
-                FORBID_TAGS: ['script', 'iframe', 'form', 'input'],
-                FORBID_ATTR: ['onerror', 'onclick', 'onload', 'onmouseover']
-            });
-            document.getElementById('page-content').innerHTML = sanitized;
-        } catch (e) {
-            document.getElementById('page-content').textContent =
-                '페이지를 표시하는 중 오류가 발생했습니다.';
-            console.error(e);
-        }
-    });
-    </script>
 </body>
 </html>

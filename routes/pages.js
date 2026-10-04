@@ -3,11 +3,12 @@ const router = express.Router();
 const pageStore = require('../config/page-store');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
+const { renderStaticPageBody } = require('../services/static-page-render');
 
 // slug guard — mirror backend validation (alphanumeric + dash only)
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,79}$/;
 
-// GET /p/:slug — static page (HTML body is sanitized client-side via DOMPurify)
+// GET /p/:slug — static page, body sanitized and rendered on the server
 router.get('/:slug', async (req, res) => {
     const slug = req.params.slug;
     if (!SLUG_RE.test(slug)) {
@@ -25,7 +26,7 @@ router.get('/:slug', async (req, res) => {
             pageTitle: data.title,
             pageDescription: data.summary || seo.excerpt(data.html_body || '', 160),
             summary: data.summary || '',
-            htmlBody: data.html_body || '',
+            contentHtml: renderStaticPageBody(data.html_body),
             updatedAt: data.updated_at || null,
             pagePath,
             hasEnglishVersion: data.has_translation,
