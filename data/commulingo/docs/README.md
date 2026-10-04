@@ -187,9 +187,12 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 응답의 `toc` 미리보기에 잡티 제목이 보이면 `tocExclude` 정규식을 PATCH로
 추가한다. API가 쓴 파일은 호스트 `data/commulingo/docs/` 워킹트리에 그대로
 남으므로 확인 후 커밋/푸시할 것. 같은 일을 하는 CLI도 있다
-(`scripts/import-commulingo-doc.js`, node:20-alpine docker로 실행, `--help`
-대신 파일 상단 주석 참조). 아래는 수동으로 만들 때의 규칙(자동 변환 출력도
-같은 형식이어야 한다).
+(`scripts/import-commulingo-doc.js`, node:24-alpine docker로 실행, `--help`
+대신 파일 상단 주석 참조). API·CLI import는 본문을 `data/commulingo/doc-sanitize.js`
+허용 목록으로 정화한다(이벤트 속성·`javascript:` 주소·iframe/form/svg 등 제거,
+`<img>`의 data: 이미지는 허용). 새 태그·속성이 필요하면 허용 목록에 먼저 추가한다.
+`scripts/smoke-commulingo-doc-sanitize.js`가 저장된 모든 문헌이 정화로 바뀌지 않는지
+검사한다. 아래는 수동으로 만들 때의 규칙(자동 변환 출력도 같은 형식이어야 한다).
 
 1. 본문 fragment를 `<id>.html`로 저장한다.
    - 서두는 위의 **서두 틀**을 그대로 쓴다 (제목 → byline → 엮은이 주 상자).

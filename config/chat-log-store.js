@@ -30,8 +30,9 @@ async function listChatSessions({ accountUserId, fingerprints, limit, persona })
     return rows;
 }
 
-// Messages for one session (oldest first) or the most recent ones across
-// sessions (returned oldest first as well).
+// The most recent messages of one session or across sessions, returned oldest
+// first. The LIMIT keeps the newest rows, so a session longer than the limit
+// loses its beginning rather than its latest turns.
 async function listChatHistory({ accountUserId, fingerprints, limit, persona, sessionId }) {
     const params = [accountUserId || fingerprints, limit];
     const clauses = [accountUserId ? 'user_id = $1' : 'fingerprint = ANY($1)'];
@@ -61,11 +62,11 @@ async function listChatHistory({ accountUserId, fingerprints, limit, persona, se
                 created_at
            FROM chat_logs
           WHERE ${clauses.join(' AND ')}
-          ORDER BY created_at ${sessionId ? 'ASC' : 'DESC'}
+          ORDER BY created_at DESC, id DESC
           LIMIT $2`,
         params
     );
-    return sessionId ? rows : rows.reverse();
+    return rows.reverse();
 }
 
 module.exports = { listChatSessions, listChatHistory };

@@ -12,15 +12,15 @@
 set -u
 cd "$(dirname "$0")/.."
 
-# The app targets Node 20 (package.json engines, Dockerfile) and some deps are
+# The app targets Node 24 (package.json engines, Dockerfile) and some deps are
 # ESM-only, which an older host node cannot require(). When the host node is
 # too old, re-run this whole script inside the same pinned image the deploy
 # builds from, with the repo mounted read-only (tests never write into it).
 NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 0)"
-if [[ "${NODE_MAJOR:-0}" -lt 20 && -z "${TEST_IN_DOCKER:-}" ]]; then
-    echo "[test] host node $(node -v 2>/dev/null || echo missing) < 20; running in node:20.20.2-alpine" >&2
+if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
+    echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in node:24.21.0-alpine" >&2
     exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp \
-        -v "$PWD:/app:ro" -w /app node:20.20.2-alpine sh scripts/test "$@"
+        -v "$PWD:/app:ro" -w /app node:24.21.0-alpine sh scripts/test "$@"
 fi
 
 fail=0
@@ -42,6 +42,7 @@ run test-strike     node scripts/test-strike.js
 run test-nonogram   node scripts/test-nonogram.js
 run test-error-page node scripts/test-error-page.js
 run test-visitor-hash node scripts/test-visitor-hash.js
+run test-access-boundaries node scripts/test-access-boundaries.js
 for f in scripts/smoke-commulingo-*.js; do
     run "$(basename "$f" .js)" node "$f"
 done

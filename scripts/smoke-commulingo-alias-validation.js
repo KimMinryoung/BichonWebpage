@@ -66,10 +66,12 @@ for (const doc of docs) canonicalEntry(doc);
 const original = { ...docs[0], excerpts: { terms: { 'some-term': 'some-heading' } }, anchors: { x: 'y' }, linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
 const read = fs.readFileSync;
 const write = fs.writeFileSync;
+const rename = fs.renameSync;
 let saved;
 try {
     fs.readFileSync = () => JSON.stringify({ docs: [original] });
     fs.writeFileSync = (_path, content) => { saved = JSON.parse(content).docs[0]; };
+    fs.renameSync = () => {}; // the manifest write is temp file + rename
     updateDocMeta(original.id, { description: { ko: '수정' } });
     assert.deepStrictEqual(saved.aliases, original.aliases);
     assert.deepStrictEqual(saved.linkExpressions, original.linkExpressions);
@@ -90,5 +92,6 @@ try {
 } finally {
     fs.readFileSync = read;
     fs.writeFileSync = write;
+    fs.renameSync = rename;
 }
 console.log('OK — alias ambiguity, syntax, semantic alias regressions and document PATCH metadata');

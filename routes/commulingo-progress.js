@@ -55,6 +55,7 @@ function normalizeAnswer(raw) {
 }
 
 router.get('/progress', async (req, res) => {
+    res.setHeader('Cache-Control', 'private, no-store');
     if (!req.session.user || !req.session.user.id) {
         return res.json({ authenticated: false, progress: [], answers: {} });
     }
@@ -86,6 +87,8 @@ router.get('/progress', async (req, res) => {
         }
         res.json({
             authenticated: true,
+            // Lets the browser keep one account's local records from another's.
+            userId: req.session.user.id,
             progress: rows.map(row => ({
                 lessonId: row.lesson_id,
                 completed: row.completed,

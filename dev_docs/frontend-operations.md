@@ -5,7 +5,7 @@
 ## 검증과 배포
 
 - 검증은 변경 위험에 비례시킨다. 배포할 작은 변경은 사전에 해당 영역의 표적 검사 하나만 실행하고, 전체 검증은 `scripts/deploy`에 맡긴다. 같은 리비전에 `npm test`를 수동 실행한 뒤 deploy 안에서 다시 실행하지 않는다.
-- `npm test`는 EJS/SEO/정책/콘텐츠/파업 규칙 등을 검사하며 `scripts/deploy`가 자동 실행한다. 배포하지 않는 변경에서 전체 회귀 검사가 필요할 때만 별도로 실행한다. Node 20 미만의 호스트에서는 Docker로 실행한다.
+- `npm test`는 EJS/SEO/정책/콘텐츠/파업 규칙 등을 검사하며 `scripts/deploy`가 자동 실행한다. 배포하지 않는 변경에서 전체 회귀 검사가 필요할 때만 별도로 실행한다. Node 24 미만의 호스트에서는 Docker로 실행한다.
 - 동작을 유지하는 리팩터링은 `scripts/dev-preview`와 `scripts/diff-preview`로 운영/미리보기 렌더링을 비교한다. diff-preview 실행 중 다른 요청을 미리보기에 보내지 않는다. 기본 경로와 옵션은 스크립트에서 확인한다.
 - `scripts/deploy`는 npm test → 이미지 빌드 → 새 이미지를 대기 컨테이너(`leninbot-frontend-standby`, 127.0.0.1:3002)로 실행 → health → 주요 경로 → 코드/DB 일치·인물 카드 검사 → 주 컨테이너(3000) 교체 → 예열 → 대기 컨테이너 제거 순서다. 대기 컨테이너 단계에서 실패하면 기존 버전이 그대로 서비스한다. nginx는 3002를 `backup` upstream으로 두어 주 컨테이너가 재시작되는 동안 대기 컨테이너가 응답한다(502 없음). 저장소의 `nginx/leninbot-frontend.conf`를 고치면 `sudo cp nginx/leninbot-frontend.conf /etc/nginx/sites-available/leninbot-frontend && sudo nginx -t && sudo systemctl reload nginx`로 반영한다. 성공한 deploy는 전체 릴리스 검증으로 간주하며 같은 검사를 전후에 다시 돌리지 않는다. 배포 뒤에는 변경이 영향을 준 운영 경로 하나만 확인한다. 빌드 후 검증 실패 시에만 관련 로그와 검사를 추가로 확인한다.
 - 현재 deploy는 로컬 커밋과 **실제 운영 컨테이너의 revision label**을 비교한다.
@@ -35,7 +35,7 @@
 
 ## 인증
 
-Admin은 passkey-only이고 /admin/*는 ADMIN_ALLOWED_IPS 제한을 받는다. 소유자용 /writer는 공개 호스트에서 404다. RP 설정, 초기 등록, 복구는 [관리자 passkey 스킬](../.claude/skills/admin-passkeys/SKILL.md)을 해당 작업 때 읽는다.
+Admin은 passkey-only이고 /admin/*와 `/commulingo/admin/api`는 ADMIN_ALLOWED_IPS 제한을 받는다. 운영(`NODE_ENV=production`)에서 이 값이 비면 전부 거부하고, 개발 환경에서만 비어 있을 때 허용한다. 소유자용 /writer는 공개 호스트에서 404다. RP 설정, 초기 등록, 복구는 [관리자 passkey 스킬](../.claude/skills/admin-passkeys/SKILL.md)을 해당 작업 때 읽는다.
 
 ## CSS와 미리보기
 

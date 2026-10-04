@@ -11,7 +11,11 @@ const path = require('path');
 const vm = require('vm');
 
 const store = {};
-const sandbox = { localStorage: { getItem: k => (k in store ? store[k] : null), setItem: (k, v) => { store[k] = String(v); } } };
+const sandbox = { localStorage: {
+    getItem: k => (k in store ? store[k] : null),
+    setItem: (k, v) => { store[k] = String(v); },
+    removeItem: k => { delete store[k]; },
+} };
 sandbox.window = sandbox;
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '..', 'public', 'js', 'commulingo-schedule.js'), 'utf8'), sandbox);
 const S = sandbox.CommuLingoSchedule;
@@ -71,4 +75,21 @@ assert.strictEqual(S.merge(merged.map, remote).changed, false);
 // storage round trip
 S.save(map);
 assert.strictEqual(JSON.stringify(S.load()), JSON.stringify(map));
+// account ownership: anonymous records join the first account; another
+// account, or signing out, drops them; an id-less payload decides nothing
+const OWNER = 'commulingo-owner-v1';
+const PROGRESS = 'commulingo-progress-v1';
+store[PROGRESS] = '{"a":{}}';
+assert.strictEqual(S.settleOwner({ authenticated: false }), false);
+assert.strictEqual(S.settleOwner({ authenticated: true, userId: 7 }), false);
+assert.strictEqual(store[OWNER], '7');
+assert.ok(store[PROGRESS]);
+assert.strictEqual(S.settleOwner({ authenticated: true }), false);
+assert.strictEqual(S.settleOwner({ authenticated: true, userId: 7 }), false);
+assert.strictEqual(S.settleOwner({ authenticated: true, userId: 8 }), true);
+assert.strictEqual(store[OWNER], '8');
+assert.ok(!(PROGRESS in store) && !(S.KEY in store));
+store[PROGRESS] = '{"b":{}}';
+assert.strictEqual(S.settleOwner({ authenticated: false }), true);
+assert.ok(!(OWNER in store) && !(PROGRESS in store));
 console.log('ok: commulingo schedule');

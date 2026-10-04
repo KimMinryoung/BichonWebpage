@@ -47,7 +47,8 @@
 
     function loadLocalProgress() {
         try {
-            return JSON.parse(localStorage.getItem(storageKey) || '{}');
+            var parsed = JSON.parse(localStorage.getItem(storageKey) || '{}');
+            return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
         } catch (err) {
             return {};
         }
@@ -77,10 +78,16 @@
 
     function syncServerProgress() {
         return fetch('/commulingo/progress', { credentials: 'same-origin' })
-            .then(function(res) { return res.ok ? res.json() : { authenticated: false }; })
+            .then(function(res) { return res.ok ? res.json() : null; })
             .then(function(payload) {
-                if (!payload.authenticated) return false;
-                var changed = false;
+                if (!payload) return false;
+                // Records of another account (or left after signing out) are
+                // removed by settleOwner; repaint without them.
+                var Schedule = window.CommuLingoSchedule;
+                var dropped = Schedule && Schedule.settleOwner ? Schedule.settleOwner(payload) : false;
+                if (dropped) progress = {};
+                if (!payload.authenticated) return dropped;
+                var changed = dropped;
                 (payload.progress || []).forEach(function(item) {
                     var merged = mergeOne(progress[item.lessonId], {
                         completed: item.completed,

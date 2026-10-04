@@ -43,8 +43,10 @@ function validateEnv() {
     if (!LENINBOT_ADMIN_KEY) {
         console.warn('[env] LENINBOT_ADMIN_KEY is empty: admin proxies to the backend will be rejected upstream.');
     }
-    if (!str('ADMIN_ALLOWED_IPS')) {
-        console.warn('[env] ADMIN_ALLOWED_IPS is empty: /admin/* is reachable from every IP (allowlist disabled).');
+    if (!str('ADMIN_ALLOWED_IPS').split(',').some(ip => ip.trim())) {
+        console.warn(IS_PRODUCTION
+            ? '[env] ADMIN_ALLOWED_IPS is empty: every admin route and the CommuLingo admin API are refused.'
+            : '[env] ADMIN_ALLOWED_IPS is empty: admin routes are reachable from every IP (non-production).');
     }
     if (!IS_PRODUCTION) {
         console.info(`[env] NODE_ENV=${NODE_ENV}${DEV_MODE ? ' (DEV_MODE: view/static caching off)' : ''}`);

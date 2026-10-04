@@ -18,8 +18,13 @@
     // the hub through public/js/commulingo-schedule.js.
     var Schedule = window.CommuLingoSchedule || null;
     var answers = Schedule ? Schedule.load() : {};
+    // Unsent answer keys, each mapped to the generation of its latest change:
+    // an upload's success clears only the keys not changed again meanwhile.
     var dirtyAnswers = {};
+    var answerGeneration = 0;
     var answerSyncTimer = null;
+    var answerSyncInFlight = false;
+    var answerRetryDelay = 0;
 
     var els = {
         list: document.getElementById('commuLessonList'),
@@ -158,18 +163,28 @@
     }
 
     function queueAnswerSync(keys) {
-        keys.forEach(function(key) { dirtyAnswers[key] = true; });
-        if (answerSyncTimer) clearTimeout(answerSyncTimer);
-        answerSyncTimer = setTimeout(flushAnswerSync, 1500);
+        keys.forEach(function(key) { dirtyAnswers[key] = ++answerGeneration; });
+        scheduleAnswerSync(1500);
     }
 
+    function scheduleAnswerSync(delay) {
+        if (answerSyncTimer) clearTimeout(answerSyncTimer);
+        answerSyncTimer = setTimeout(flushAnswerSync, delay);
+    }
+
+    // One upload at a time, up to 200 records each. A failed upload retries
+    // with a growing delay (5 s to 5 min); 401/403 means the account is gone,
+    // so the records wait in this browser for the next sign-in instead.
     function flushAnswerSync() {
         answerSyncTimer = null;
+        if (answerSyncInFlight) return;
         var tokenMeta = document.querySelector('meta[name="csrf-token"]');
         var token = tokenMeta ? tokenMeta.getAttribute('content') : '';
         var keys = Object.keys(dirtyAnswers);
         if (!token || !keys.length || !Schedule) return;
-        var batch = keys.slice(0, 200).map(function(key) {
+        var sent = keys.slice(0, 200).map(function(key) { return { key: key, generation: dirtyAnswers[key] }; });
+        var batch = sent.map(function(item) {
+            var key = item.key;
             var ref = Schedule.splitKey(key);
             var entry = answers[key] || {};
             return {
@@ -183,16 +198,26 @@
                 due: entry.due
             };
         });
+        answerSyncInFlight = true;
         fetch('/commulingo/progress/answers', {
             method: 'POST',
             credentials: 'same-origin',
             headers: { 'Content-Type': 'application/json', 'x-csrf-token': token },
             body: JSON.stringify({ answers: batch })
         }).then(function(res) {
-            if (!res.ok) return;
-            batch.forEach(function(item) { delete dirtyAnswers[Schedule.key(item.lessonId, item.questionId)]; });
-            if (Object.keys(dirtyAnswers).length) queueAnswerSync([]);
-        }).catch(function() {});
+            answerSyncInFlight = false;
+            if (res.status === 401 || res.status === 403) return;
+            if (!res.ok) throw new Error('answer sync failed');
+            sent.forEach(function(item) {
+                if (dirtyAnswers[item.key] === item.generation) delete dirtyAnswers[item.key];
+            });
+            answerRetryDelay = 0;
+            if (Object.keys(dirtyAnswers).length) scheduleAnswerSync(1500);
+        }).catch(function() {
+            answerSyncInFlight = false;
+            answerRetryDelay = Math.min(Math.max(answerRetryDelay * 2, 5000), 300000);
+            scheduleAnswerSync(answerRetryDelay);
+        });
     }
 
     var capitalParts = {
@@ -317,14 +342,17 @@
 
     function loadLocalProgress() {
         try {
-            return JSON.parse(localStorage.getItem(storageKey) || '{}');
+            var parsed = JSON.parse(localStorage.getItem(storageKey) || '{}');
+            return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
         } catch (err) {
             return {};
         }
     }
 
+    // Blocked or full storage must not stop a lesson from finishing; the
+    // progress then lives in this page (and the account, when signed in).
     function saveLocalProgress() {
-        localStorage.setItem(storageKey, JSON.stringify(progress));
+        try { localStorage.setItem(storageKey, JSON.stringify(progress)); } catch (err) {}
     }
 
     function saveLast(lesson) {
@@ -360,10 +388,19 @@
 
     function syncServerProgress() {
         return fetch('/commulingo/progress', { credentials: 'same-origin' })
-            .then(function(res) { return res.ok ? res.json() : { authenticated: false }; })
+            .then(function(res) { return res.ok ? res.json() : null; })
             .then(function(payload) {
-                if (!payload.authenticated) return false;
-                var changed = mergeProgress(payload.progress || []);
+                if (!payload) return false;
+                // Another account's records (or ones left after signing out)
+                // were just removed from storage; forget them here too.
+                var dropped = Schedule && Schedule.settleOwner ? Schedule.settleOwner(payload) : false;
+                if (dropped) {
+                    progress = {};
+                    answers = {};
+                    dirtyAnswers = {};
+                }
+                if (!payload.authenticated) return dropped;
+                var changed = mergeProgress(payload.progress || []) || dropped;
                 Object.keys(progress).forEach(function(lessonId) {
                     postProgress(lessonId, progress[lessonId], true);
                 });

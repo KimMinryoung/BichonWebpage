@@ -26,6 +26,39 @@
         try { global.localStorage.setItem(KEY, JSON.stringify(map)); } catch (err) {}
     }
 
+    // The browser records the book page and the hub upload are tagged with the
+    // account that was signed in when they were adopted. Records from another
+    // account (or left behind after signing out) are dropped instead of being
+    // shown to, or merged into, whoever uses this browser next; untagged
+    // records (anonymous study, or kept from before the tag) join the first
+    // account that signs in. `payload` is a successful GET /commulingo/progress.
+    var OWNER_KEY = 'commulingo-owner-v1';
+    var ACCOUNT_KEYS = ['commulingo-progress-v1', 'commulingo-last-v1', KEY];
+
+    function settleOwner(payload) {
+        var store;
+        try { store = global.localStorage; } catch (err) { return false; }
+        if (!store || !payload) return false;
+        try {
+            // Signed in but no id (a server from before the tag): undecidable.
+            if (payload.authenticated && payload.userId == null) return false;
+            var owner = store.getItem(OWNER_KEY);
+            var current = payload.authenticated ? String(payload.userId) : null;
+            if (current && owner === current) return false;
+            if (current && !owner) {
+                store.setItem(OWNER_KEY, current);
+                return false;
+            }
+            if (!current && !owner) return false;
+            ACCOUNT_KEYS.forEach(function(k) { store.removeItem(k); });
+            if (current) store.setItem(OWNER_KEY, current);
+            else store.removeItem(OWNER_KEY);
+            return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
     function key(lessonId, questionId) {
         return lessonId + '/' + questionId;
     }
@@ -133,6 +166,7 @@
         isDue: isDue,
         dueList: dueList,
         nextDue: nextDue,
-        merge: merge
+        merge: merge,
+        settleOwner: settleOwner
     };
 })(typeof window !== 'undefined' ? window : this);

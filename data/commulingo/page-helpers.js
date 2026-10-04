@@ -3,6 +3,7 @@
 // events, terms, genealogy, politburo) import them without a require cycle.
 const seo = require('../../utils/seo');
 const errorPage = require('../../utils/error-page');
+const { hasSessionCookie, setDynamicLanguageCacheHeaders } = require('../../config/route-policy');
 
 // Public data endpoints (catalog.json, lesson and drill-deck JSON): immutable
 // for a year when the URL carries the current content version, else a short
@@ -16,8 +17,14 @@ function setPublicDataCache(req, res, version) {
 }
 
 // Every rendered CommuLingo page and fragment: thirty seconds, then serve
-// stale while revalidating (the dictionaries refresh once a minute).
+// stale while revalidating (the dictionaries refresh once a minute). A request
+// with a session cookie may render the account menu and its CSRF token, so it
+// keeps the private policy instead of being marked shareable.
 function setShortPublicCache(res) {
+    if (res.req && hasSessionCookie(res.req)) {
+        setDynamicLanguageCacheHeaders(res);
+        return;
+    }
     res.setHeader('Cache-Control', 'public, max-age=30, stale-while-revalidate=300');
 }
 

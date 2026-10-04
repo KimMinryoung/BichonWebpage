@@ -1,7 +1,7 @@
 // Authentication middleware for admin routes
 
 const errorPage = require('../utils/error-page');
-const { ADMIN_HOST } = require('../config/env');
+const { ADMIN_HOST, IS_PRODUCTION } = require('../config/env');
 
 let allowedIpsCache = null;
 function parseAllowedIps() {
@@ -21,7 +21,10 @@ function normalizeIp(ip) {
 
 function isAllowedIp(req) {
     const allowed = parseAllowedIps();
-    if (allowed.length === 0) return true; // Not configured → skip enforcement
+    // Unconfigured: open only outside production (local dev, the dev preview).
+    // In production a missing allowlist must not widen the IP-only admin API
+    // (people, offices, docs writes) to every address.
+    if (allowed.length === 0) return !IS_PRODUCTION;
     const clientIp = normalizeIp(req.ip);
     return allowed.includes(clientIp);
 }
@@ -81,6 +84,7 @@ function requireUser(req, res, next) {
 module.exports = {
     requireAuth,
     requireAdminIp,
+    isAllowedIp,
     redirectIfAuthenticated,
     requireWriterAdminSession,
     requireUser,

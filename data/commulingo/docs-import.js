@@ -8,6 +8,7 @@ const path = require('path');
 // identical fragments and manifest entries. Read-side serving lives in
 // docs-store.js; format rules in data/commulingo/docs/README.md.
 const { docRefId } = require('./docs-store');
+const { sanitizeDocHtml } = require('./doc-sanitize');
 
 const DOCS_DIR = path.join(__dirname, 'docs');
 const MANIFEST_PATH = path.join(DOCS_DIR, 'manifest.json');
@@ -54,6 +55,10 @@ function extractFragment(raw) {
             warnings.push(`contains a <${tag}> element — check it belongs to the document, not site chrome`);
         }
     });
+    const active = html.match(/\son[a-z]+\s*=|javascript:|<(?:iframe|object|embed|form|input|button|svg|math)\b/gi);
+    if (active) warnings.push(`removed ${active.length} active-content item(s) (event handlers, script URLs, embeds, forms)`);
+    html = sanitizeDocHtml(html);
+
     const inlineStyles = html.match(/\sstyle="/g);
     if (inlineStyles) warnings.push(`contains ${inlineStyles.length} inline style attribute(s) — reader CSS may not apply cleanly`);
 
@@ -85,8 +90,22 @@ function readManifest() {
     return JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
 }
 
+// Write to a unique temp file beside the target, then rename over it: a
+// reader (the server, the standby, a CLI run) sees the old file or the new
+// one, never a half-written manifest or fragment.
+function writeFileAtomic(target, content) {
+    const tmp = path.join(path.dirname(target), `.${path.basename(target)}.${process.pid}.${Date.now()}.tmp`);
+    try {
+        fs.writeFileSync(tmp, content);
+        fs.renameSync(tmp, target);
+    } catch (err) {
+        fs.rmSync(tmp, { force: true });
+        throw err;
+    }
+}
+
 function writeManifest(manifest) {
-    fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
+    writeFileAtomic(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
 }
 
 function langPair(value, fallback) {
@@ -185,7 +204,9 @@ function importDoc({ rawHtml, id, dryRun, force, overrides = {} }) {
 
     const toc = harvestTocPreview(html);
     if (!dryRun) {
-        fs.writeFileSync(path.join(DOCS_DIR, entry.file), html);
+        // Fragment first, manifest last: a failure in between leaves the old
+        // entry pointing at a complete file.
+        writeFileAtomic(path.join(DOCS_DIR, entry.file), html);
         if (existing !== -1) manifest.docs[existing] = entry;
         else manifest.docs.push(entry);
         writeManifest(manifest);

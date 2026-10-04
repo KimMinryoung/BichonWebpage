@@ -4,6 +4,7 @@
 
 | 작업 | 문서 |
 | --- | --- |
+| 웹서비스 코드·기능 설계 전체 개선 검토 | [근거·우선순위·후속 작업 완료 기준](codebase-functional-review-20261004.md) |
 | 사이트 디자인·레이아웃·공통 UI | [디자인 기준](design-system.md) |
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |

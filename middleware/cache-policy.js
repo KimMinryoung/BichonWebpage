@@ -1,7 +1,9 @@
-// Cache-Control for dynamic responses: public text and anonymous public HTML
-// are cacheable per language cookie (Vary), everything else that is HTML for
-// a logged-out visitor gets the same private/no-cache treatment. Static
-// assets have their own policy in config/static-assets.js.
+// Cache-Control for dynamic responses: public text, anonymous public HTML and
+// other HTML for a logged-out visitor get `private, no-cache` with
+// Vary: Cookie, Accept-Language (revalidated, never stored by a shared
+// cache). CommuLingo pages loosen this to a short public cache only for
+// requests without a session cookie (data/commulingo/page-helpers.js).
+// Static assets have their own policy in config/static-assets.js.
 const path = require('path');
 const {
     isCacheablePublicTextPath,

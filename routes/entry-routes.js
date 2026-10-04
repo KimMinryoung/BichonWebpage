@@ -7,6 +7,7 @@
 const db = require('../config/database');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
+const { clampInteger } = require('../utils/http');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
 
 function localizedEntry(row, lang) {
@@ -42,7 +43,7 @@ function createEntryRoutes({
 }) {
     async function list(req, res) {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        const currentPage = parseInt(req.query.page, 10) || 1;
+        const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
         const baseLocals = {
             pagePath: currentPage > 1 ? `${listBasePath}?page=${currentPage}` : listBasePath,
             pageTitle: listTitle(res),
@@ -81,7 +82,9 @@ function createEntryRoutes({
     async function detail(req, res) {
         try {
             const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-            const id = parseInt(req.params.id);
+            // "12abc" must not resolve to entry 12; 9 digits stay inside an int4 id.
+            if (!/^\d{1,9}$/.test(req.params.id)) return errorPage.notFound(res, notFoundOpts);
+            const id = Number(req.params.id);
 
             let entry = await cache.getEntry(id, lang);
             if (!entry) {

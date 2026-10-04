@@ -42,22 +42,41 @@
     var recovering = false;
     var recoveryContext = null; // { message, errorDiv } — set in catch, read by visibilitychange
 
+    // Web storage can throw, even on property access (blocked site data,
+    // private mode, quota). Chat must keep working then, only without
+    // remembering anything past this page.
+    function storageArea(name) {
+        try { return window[name] || null; } catch (e) { return null; }
+    }
+    var localStore = storageArea('localStorage');
+    var tabStore = storageArea('sessionStorage');
+    function storedValue(store, key) {
+        try { return store ? store.getItem(key) : null; } catch (e) { return null; }
+    }
+    function storeValue(store, key, value) {
+        try {
+            if (!store) return;
+            if (value === null) store.removeItem(key);
+            else store.setItem(key, value);
+        } catch (e) {}
+    }
+
     // 탭별 고유 세션 ID — 새로고침해도 유지되지만, 마지막 메시지 후
     // 6시간이 지난 탭 세션은 새 세션으로 시작한다. 모바일 브라우저는 탭을
     // 며칠씩 복원하므로, 이 컷오프가 없으면 옛 대화 하나에 계속 이어붙는다.
     var SESSION_STALE_MS = 6 * 60 * 60 * 1000;
-    var sessionId = sessionStorage.getItem('chatSessionId');
-    var lastMsgAt = parseInt(sessionStorage.getItem('chatLastMsgAt') || '0', 10);
+    var sessionId = storedValue(tabStore, 'chatSessionId');
+    var lastMsgAt = parseInt(storedValue(tabStore, 'chatLastMsgAt') || '0', 10);
     if (sessionId && lastMsgAt && (Date.now() - lastMsgAt) > SESSION_STALE_MS) {
         sessionId = null;
     }
     if (!sessionId) {
         sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
-        sessionStorage.setItem('chatSessionId', sessionId);
-        sessionStorage.removeItem('chatLastMsgAt');
+        storeValue(tabStore, 'chatSessionId', sessionId);
+        storeValue(tabStore, 'chatLastMsgAt', null);
     }
     function touchSessionActivity() {
-        sessionStorage.setItem('chatLastMsgAt', String(Date.now()));
+        storeValue(tabStore, 'chatLastMsgAt', String(Date.now()));
     }
 
     // UUID 생성 — crypto.randomUUID()는 secure context(https/localhost)에서만
@@ -73,12 +92,13 @@
         });
     }
 
-    // 고유 사용자 ID — localStorage에 영구 저장 (서버 재시작 후에도 유지, 탭 간 공유)
+    // 고유 사용자 ID — localStorage에 영구 저장 (서버 재시작 후에도 유지, 탭 간 공유).
+    // 저장할 수 없으면 이번 방문에만 쓰는 ID가 된다.
     function getUserId() {
-        var stored = localStorage.getItem('cl_user_id');
+        var stored = storedValue(localStore, 'cl_user_id');
         if (stored) return stored;
         var uid = randomUuid();
-        localStorage.setItem('cl_user_id', uid);
+        storeValue(localStore, 'cl_user_id', uid);
         return uid;
     }
     var userId = getUserId();
@@ -86,7 +106,7 @@
     // 선택된 대화 상대(페르소나) — localStorage에 영구 저장. 서버 /personas가
     // 카탈로그를 제공하며, 선택지가 2개 이상일 때만 셀렉터를 노출한다.
     var DEFAULT_PERSONA = 'cyber-lenin';
-    var selectedPersona = localStorage.getItem('cl_persona') || DEFAULT_PERSONA;
+    var selectedPersona = storedValue(localStore, 'cl_persona') || DEFAULT_PERSONA;
     var personaSelector = document.getElementById('personaSelector');
     var pageLang = (document.documentElement.getAttribute('lang') || 'ko').toLowerCase();
     var PERSONA_LABELS_EN = {
@@ -163,7 +183,7 @@
             // 저장된 선택이 더 이상 유효하지 않으면 서버 기본값으로 보정
             if (ids.indexOf(selectedPersona) === -1) {
                 selectedPersona = (data.default && ids.indexOf(data.default) !== -1) ? data.default : ids[0];
-                localStorage.setItem('cl_persona', selectedPersona);
+                storeValue(localStore, 'cl_persona', selectedPersona);
             }
             personaSelector.innerHTML = '';
             personas.forEach(function (p) {
@@ -180,7 +200,7 @@
                 if (busy) { personaSelector.value = selectedPersona; return; }
                 if (personaSelector.value === selectedPersona) return;
                 selectedPersona = personaSelector.value;
-                localStorage.setItem('cl_persona', selectedPersona);
+                storeValue(localStore, 'cl_persona', selectedPersona);
                 renderEmptyHint();
                 // 페르소나별 히스토리는 분리되므로 새 세션으로 시작한다.
                 startNewSession();
@@ -354,7 +374,7 @@
             var data = await res.json();
             renderSessionTurns(data.history || []);
             sessionId = sid;
-            sessionStorage.setItem('chatSessionId', sid);
+            storeValue(tabStore, 'chatSessionId', sid);
             touchSessionActivity();
             exitHistoryMode();
             return true;
@@ -367,8 +387,8 @@
     function startNewSession() {
         clearFeedbackTarget();
         sessionId = 'tab-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
-        sessionStorage.setItem('chatSessionId', sessionId);
-        sessionStorage.removeItem('chatLastMsgAt');
+        storeValue(tabStore, 'chatSessionId', sessionId);
+        storeValue(tabStore, 'chatLastMsgAt', null);
         chatBox.innerHTML = '';
         exitHistoryMode();
     }
