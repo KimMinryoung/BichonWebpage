@@ -14,6 +14,7 @@
   - 관리자 작업 보고서(`/reports` 태스크 탭)도 Redis 캐시 없이 매번 백엔드 API에서 받는다. 드물게 여는 관리자 화면이라 캐시가 오히려 오래된 내용을 남길 뿐이었다(소유자 판단). `config/report-cache.js`·`config/redis-json.js`, 관리자 「캐시 삭제」 버튼을 없앴다.
   - leninbot의 frontend Redis 캐시 삭제 코드(`publishing/post_edit.py`·`research.py`·`private_reports.py`, 번역 스크립트 두 개)를 모두 지웠다.
   - 이제 frontend의 Redis 사용은 세션과 sitemap·RSS·Atom XML 캐시(600초, 권장 작업 4는 유지)뿐이다.
+- 2026-10-04 권장 작업 5(R5) 반영: 계정 대화 조회가 계정에 연결된 브라우저 식별값의 미표시(`user_id` 없음) 행도 읽는다(frontend `config/chat-log-store.js`, leninbot `services/web_chat_store.py` `chat_identity_clause`). 장애 중 대화가 복구 뒤 계정 목록과 대화 맥락에 나온다. 반영 시점 기준 계정 2개에서 세션 5개·10개가 새로 보였다(연결된 브라우저에서 세션 만료 중 나눈 대화).
 
 ## 결론
 
