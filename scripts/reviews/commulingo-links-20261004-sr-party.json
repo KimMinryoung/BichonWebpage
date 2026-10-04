@@ -1,0 +1,19 @@
+{
+  "scope": "2026-10-04 사회혁명당 표기 통일: 토지 사회화 용어의 별칭 「에스에르 토지 강령」을 「사회혁명당 토지 강령」으로 바꿈; owner-requested",
+  "references": [
+    "scripts/content/sr-party-spelling-20261004.js"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "land-socialization",
+      "lang": "ko",
+      "text": "사회혁명당 토지 강령",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-04 표기 통일과 함께 검토: 옛 별칭 「에스에르 토지 강령」(auto)의 표기만 바꾼 것으로 사회혁명당의 토지 사회화 강령만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}
