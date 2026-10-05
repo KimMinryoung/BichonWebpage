@@ -23,6 +23,12 @@ const assert = require('node:assert/strict');
             console.log(JSON.stringify({ kind, query, ms: Date.now() - start, bytes: (await response.body()).length, total: data.total }));
             return data;
         }
+        // Filter options sit in dropdown panels; open the panel before a pick.
+        async function pickCategory(value) {
+            const option = page.locator('[data-category="' + value + '"]');
+            await option.evaluate(node => { node.closest('details').open = true; });
+            await option.click();
+        }
         await goto('/commulingo/terms');
         const before = requests.length;
         await input.focus(); await page.waitForTimeout(300);
@@ -36,7 +42,7 @@ const assert = require('node:assert/strict');
         assert(await page.locator('#commu-term-list').isVisible());
         const category = await page.locator('[data-category]').evaluateAll(nodes => nodes.find(n => Number(n.querySelector('span')?.textContent) > 24).dataset.category);
         let pending = page.waitForResponse(r => r.url().includes('/terms/search?') && r.status() === 200);
-        await page.locator('[data-category="' + category + '"]').click();
+        await pickCategory(category);
         data = await (await pending).json();
         assert(data.total > 24);
         await page.waitForFunction(() => document.querySelectorAll('#commu-term-list-results .commu-event-card').length === 24);
@@ -48,7 +54,7 @@ const assert = require('node:assert/strict');
         await page.waitForFunction(() => !document.querySelector('[aria-busy="true"]'));
         const secondIds = await page.locator('#commu-term-list-results a').evaluateAll(nodes => nodes.map(n => n.href));
         assert(secondIds.length > 0 && secondIds.every(id => !firstIds.includes(id)));
-        await page.locator('[data-category="' + category + '"]').click();
+        await pickCategory(category);
         assert(await page.locator('#commu-term-list').isVisible());
         let fail = true;
         await page.route('**/terms/search?*', async route => {
@@ -104,7 +110,7 @@ const assert = require('node:assert/strict');
         await page.waitForFunction(() => document.querySelectorAll('#commu-doc-list .commu-event-card').length === 24);
         const kind = await page.locator('[data-category]:not([data-category=""])').first().getAttribute('data-category');
         pending = page.waitForResponse(r => r.url().includes('/docs/search?') && r.status() === 200);
-        await page.locator('[data-category="' + kind + '"]').click(); await pending;
+        await pickCategory(kind); await pending;
         await page.waitForURL('**/docs?kind=' + kind);
         await goto('/commulingo/events');
         const countrySummary = page.locator('[data-event-country-filter] summary');

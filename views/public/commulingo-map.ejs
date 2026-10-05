@@ -8,10 +8,7 @@
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: copy.title }], dictJump: 'map' }) %>
 
-        <header class="commu-hub-head commu-world-map-head">
-            <span class="commu-world-map-head-icon" aria-hidden="true"><%- roleIconSvg('map') %></span>
-            <div><h1><%= copy.title %></h1><p><%= copy.description %></p></div>
-        </header>
+        <h1 class="commu-sr-only"><%= copy.title %></h1>
 
         <section class="commu-world-map-panel" aria-labelledby="world-map-heading">
             <h2 class="commu-sr-only" id="world-map-heading"><%= copy.mapLabel %></h2>
@@ -22,7 +19,7 @@
                 <span><i class="is-historical"></i><%= copy.historical %></span>
                 <span><i class="is-region"></i><%= copy.region %></span>
             </div>
-            <p class="commu-world-map-note"><%= copy.boundaryNote %></p>
+            <p class="commu-world-map-note"><%= copy.description %> <%= copy.boundaryNote %></p>
         </section>
 
         <%- include('../partials/commulingo-dict-search', {

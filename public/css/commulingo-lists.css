@@ -1555,7 +1555,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     white-space: nowrap;
 }
 .commu-event-period { display: block; color: var(--text-muted); font-weight: 700; letter-spacing: .04em; }
-.commu-event-card-link { font-weight: 700; }
 .commu-terms-page .commu-event-grid,
 .commu-events-page .commu-event-grid { align-items: start; }
 .commu-terms-page .commu-event-card p,
@@ -1571,21 +1570,21 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     display: block;
     overflow: visible;
 }
-.commu-dict-toolbar {
-    display: flex; flex-wrap: wrap; align-items: baseline;
-    justify-content: flex-end; gap: .5rem 1rem; margin-top: .3rem;
-}
-.commu-terms-page > .commu-dict-toolbar { margin-top: 0; }
-.commu-dict-sort { display: flex; gap: .5rem; font-size: .9rem; }
+.commu-dict-toolbar { margin: -1px 0; }
+.commu-dict-sort { display: grid; grid-template-columns: 1fr 1fr; border: 0; background: none; }
 .commu-dict-sort a {
-    padding: .2rem .6rem; border: 1px solid var(--border);
-    color: var(--text-muted); text-decoration: none;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 38px; border: 1px solid var(--border);
+    background: var(--bg-surface); color: var(--text-muted);
+    font-size: var(--text-sm); text-decoration: none;
 }
+.commu-dict-sort a + a { border-left: 0; }
 .commu-dict-sort a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 .commu-dict-sort a.is-active {
     color: var(--text-primary); font-weight: 700;
-    background: color-mix(in srgb, var(--accent) 30%, transparent);
+    box-shadow: inset 0 -3px 0 var(--accent-red);
 }
+.commu-dict-sort a.is-active:hover { background: var(--bg-surface); border-color: var(--border); color: var(--text-primary); }
 .commu-dict-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
 .commu-dict-chip {
     padding: .3rem .7rem; border: 1px solid var(--border);
@@ -1604,10 +1603,16 @@ a.commu-dict-chip { display: inline-block; text-decoration: none; line-height: v
 a.commu-dict-chip:hover { text-decoration: none; }
 
 .commu-events-page .commu-event-grid { scroll-margin-top: 4.5rem; }
-.commu-dict-index { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
+.commu-dict-index {
+    display: flex; gap: .3rem; margin-top: var(--space-2);
+    border: 0; background: none; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin;
+    padding-bottom: 2px;
+}
 .commu-dict-index a {
-    min-width: 2rem; padding: .2rem .4rem; border: 1px solid var(--border);
-    color: var(--text-muted); text-decoration: none; text-align: center;
+    display: flex; align-items: center; justify-content: center; flex: none;
+    min-width: 36px; min-height: 36px; box-sizing: border-box; padding: 0 .45rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted); text-decoration: none;
     font-size: .85rem;
 }
 .commu-dict-index a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
@@ -1973,7 +1978,11 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-people-facet-status { margin: 0 0 var(--space-3); color: var(--text-secondary); font-size: var(--text-sm); }
 .commu-people-facet-group + .commu-people-facet-group { margin-top: var(--space-3); }
 .commu-people-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-a.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; box-sizing: border-box; }
+.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; box-sizing: border-box; }
+.commu-dict-facet-value { min-width: 0; overflow: hidden; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
+.commu-dict-facet-value:empty { display: none; }
+.commu-dict-facet-value::before { content: '·'; margin-right: var(--space-2); }
+.commu-dict-facets .commu-people-facet > summary { max-width: 100%; box-sizing: border-box; }
 .commu-people-chip svg { width: 15px; height: 15px; flex: none; }
 .commu-people-chip small { color: var(--text-muted); font-size: var(--text-xs, .75rem); }
 .commu-people-chip.is-active small,

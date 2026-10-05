@@ -18,8 +18,21 @@
         var facets = Array.from(document.querySelectorAll('[data-commu-dict-chips][data-target="' + selector + '"]')).map(function(chipRoot) {
             var chips = Array.from(chipRoot.querySelectorAll('[data-category]'));
             var active = chips.find(function(chip) { return chip.classList.contains('is-active'); });
-            return { param: chipRoot.getAttribute('data-param') || 'kind', chips: chips, value: active ? active.getAttribute('data-category') : '' };
+            return {
+                param: chipRoot.getAttribute('data-param') || 'kind', chips: chips,
+                value: active ? active.getAttribute('data-category') : '',
+                details: chipRoot.closest('[data-commu-dict-facet]')
+            };
         });
+        // A pick closes its dropdown and names itself in the summary.
+        function showFacet(facet) {
+            if (!facet.details) return;
+            var chosen = facet.chips.find(function(chip) { return chip.classList.contains('is-active'); });
+            facet.details.classList.toggle('is-set', !!facet.value);
+            facet.details.querySelector('[data-commu-dict-facet-value]').textContent =
+                facet.value && chosen ? chosen.getAttribute('data-label') : '';
+            facet.details.open = false;
+        }
         function setFacetParams(params) {
             facets.forEach(function(facet) {
                 if (facet.value) params.set(facet.param, facet.value); else params.delete(facet.param);
@@ -176,6 +189,7 @@
                         other.classList.toggle('is-active', selected);
                         other.setAttribute('aria-pressed', String(selected));
                     });
+                    showFacet(facet);
                     page = 1;
                     run();
                 });
@@ -192,4 +206,21 @@
         if (input.value.trim()) run();
     }
     document.querySelectorAll('[data-commu-dict-search]').forEach(initialize);
+
+    // Dropdown filters close on a click outside or Escape, like the people facets.
+    var dropdowns = Array.from(document.querySelectorAll('[data-commu-dict-facet]'));
+    document.addEventListener('click', function(event) {
+        dropdowns.forEach(function(details) { if (!details.contains(event.target)) details.open = false; });
+    });
+    dropdowns.forEach(function(details) {
+        details.addEventListener('toggle', function() {
+            if (!details.open) return;
+            dropdowns.forEach(function(other) { if (other !== details) other.open = false; });
+        });
+        details.addEventListener('keydown', function(event) {
+            if (event.key !== 'Escape' || !details.open) return;
+            details.open = false;
+            details.querySelector('summary').focus();
+        });
+    });
 })();

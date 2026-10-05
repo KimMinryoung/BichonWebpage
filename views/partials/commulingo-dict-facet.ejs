@@ -1,0 +1,29 @@
+<%
+/* One filter of a dictionary list as a dropdown, the same <details> facet the
+   people and events pages use, so every dictionary filters with one control.
+   The options keep the .commu-dict-chip contract that
+   public/js/commulingo-dict-search.js reads (data-commu-dict-chips on the
+   group, data-category per option); the script also closes the panel and
+   writes the chosen label into the summary.
+
+   Params: title, ariaLabel, target, param (omit for ?kind=), allLabel,
+   allCount (optional), options [{ value, label, count, href? }], selected
+   (value or ''). Options with href render as links, so the filter works
+   without script. */
+var facetSelected = typeof selected === 'string' ? selected : '';
+var facetCurrent = options.find(function(option) { return option.value === facetSelected; });
+%>
+<details class="commu-people-facet<%= facetCurrent ? ' is-set' : '' %>" data-commu-dict-facet>
+    <summary><span class="commu-people-facet-title"><%= title %></span><span class="commu-dict-facet-value" data-commu-dict-facet-value><%= facetCurrent ? facetCurrent.label : '' %></span><%- roleIconSvg('chevron-down') %></summary>
+    <div class="commu-people-facet-panel">
+        <div class="commu-people-chips" data-commu-dict-chips data-target="<%= target %>"<% if (typeof param === 'string' && param) { %> data-param="<%= param %>"<% } %>
+            role="group" aria-label="<%= ariaLabel %>">
+            <% [{ value: '', label: allLabel, count: typeof allCount === 'number' ? allCount : null, href: typeof allHref === 'string' ? allHref : null }].concat(options).forEach(function(option) {
+                var on = option.value === facetSelected;
+                var tag = option.href ? 'a' : 'button'; %>
+            <<%= tag %> class="commu-dict-chip commu-people-chip<%= on ? ' is-active' : '' %>"<% if (option.href) { %> href="<%= option.href %>"<% } else { %> type="button"<% } %>
+                data-category="<%= option.value %>" data-label="<%= option.value ? option.label : '' %>" aria-pressed="<%= on ? 'true' : 'false' %>"><%= option.label %><% if (option.count !== null && option.count !== undefined) { %> <span><%= option.count %></span><% } %></<%= tag %>>
+            <% }) %>
+        </div>
+    </div>
+</details>

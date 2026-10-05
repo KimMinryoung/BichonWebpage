@@ -115,17 +115,27 @@ const HANGUL_INITIALS = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ',
 // Korean dictionaries file the doubled consonants under the plain one.
 const INITIAL_GROUP = { 'ㄲ': 'ㄱ', 'ㄸ': 'ㄷ', 'ㅃ': 'ㅂ', 'ㅆ': 'ㅅ', 'ㅉ': 'ㅈ' };
 
-// Index-bar key for a display term: Hangul initial consonant, Latin letter, or
-// '#' for anything else (digits, as in '1987년 체제').
+// Opening quotes and brackets (‘두 흐름’ 이론, 《종》, 「…」) are not a term's
+// first letter: the index files and sorts it under the word it starts with.
+const LEADING_MARKS = /^[\s\p{P}\p{S}]+/u;
+function indexLabel(label) {
+    const text = String(label || '').trim();
+    return text.replace(LEADING_MARKS, '') || text;
+}
+
+// Index-bar key for a display term: Hangul initial consonant, Latin letter
+// (accents folded, so É files under E), or '#' for anything else (digits, as
+// in '1987년 체제', and other scripts).
 function initialKey(label) {
-    const ch = String(label || '').trim().charAt(0);
+    const ch = indexLabel(label).charAt(0);
     if (!ch) return '#';
     const code = ch.charCodeAt(0);
     if (code >= 0xac00 && code <= 0xd7a3) {
         const initial = HANGUL_INITIALS[Math.floor((code - 0xac00) / 588)];
         return INITIAL_GROUP[initial] || initial;
     }
-    if (/[a-zA-Z]/.test(ch)) return ch.toUpperCase();
+    const base = ch.normalize('NFD').charAt(0);
+    if (/[a-zA-Z]/.test(base)) return base.toUpperCase();
     return '#';
 }
 
@@ -137,10 +147,12 @@ function decadeKey(startYear) {
 // Groups the sorted list into the sections the index bar jumps to: initial
 // letters when sorted by name, decades when sorted chronologically. Ids are
 // positional so Hangul never has to survive a round trip through an anchor.
+// A key the collation scatters (digits sort first, Cyrillic after Z) still gets
+// one group, at its first position, so the index bar never repeats a label.
 function groupTerms(terms, sort, lang) {
     const en = lang === 'en';
     const groups = [];
-    let current = null;
+    const byKey = new Map();
     terms.forEach(term => {
         let key;
         let label;
@@ -154,18 +166,20 @@ function groupTerms(terms, sort, lang) {
             key = initialKey(term.term);
             label = key;
         }
-        if (!current || current.key !== key) {
-            current = { key, label, id: 'commu-term-group-' + groups.length, terms: [] };
-            groups.push(current);
+        let group = byKey.get(key);
+        if (!group) {
+            group = { key, label, id: 'commu-term-group-' + groups.length, terms: [] };
+            byKey.set(key, group);
+            groups.push(group);
         }
-        current.terms.push(term);
+        group.terms.push(term);
     });
     return groups;
 }
 
 function sortTerms(terms, sort, lang) {
     const locale = lang === 'en' ? 'en' : 'ko';
-    const byName = (a, b) => a.term.localeCompare(b.term, locale);
+    const byName = (a, b) => indexLabel(a.term).localeCompare(indexLabel(b.term), locale);
     if (sort !== 'chrono') return terms.slice().sort(byName);
     return terms.slice().sort((a, b) => {
         const aYear = Number.isInteger(a.startYear) ? a.startYear : Infinity;

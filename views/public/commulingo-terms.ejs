@@ -26,22 +26,23 @@
             resultMany: strings.commuLingoViews.terms.termsFound,
             emptyLabel: strings.commuLingoViews.terms.noGlossaryTermsFound
         }) %>
-        <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-term-list"
-            role="group" aria-label="<%= strings.commuLingoViews.terms.filterByCategory %>">
-            <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= strings.commuLingoViews.terms.all %></button>
-            <% categories.forEach(function(category) { %>
-            <button type="button" class="commu-dict-chip" data-category="<%= category.id || '__none__' %>" aria-pressed="false"><%= category.label %> <span><%= category.count %></span></button>
-            <% }) %>
+        <% var termCopy = strings.commuLingoViews.terms; %>
+        <div class="commu-people-filterbar commu-dict-facets" role="group" aria-label="<%= en ? 'Filter terms' : '용어 조건' %>">
+            <%- include('../partials/commulingo-dict-facet', {
+                title: termCopy.category, ariaLabel: termCopy.filterByCategory,
+                target: '#commu-term-list', allLabel: termCopy.all,
+                options: categories.map(function(category) {
+                    return { value: category.id || '__none__', label: category.label, count: category.count };
+                }) }) %>
+            <% if (regions.length > 1) { %>
+            <%- include('../partials/commulingo-dict-facet', {
+                title: termCopy.region, ariaLabel: termCopy.filterByRegion,
+                target: '#commu-term-list', param: 'region', allLabel: termCopy.allRegions,
+                options: regions.map(function(region) {
+                    return { value: region.id, label: region.label, count: region.count };
+                }) }) %>
+            <% } %>
         </div>
-        <% if (regions.length > 1) { %>
-        <div class="commu-dict-chips" data-commu-dict-chips data-param="region" data-target="#commu-term-list"
-            role="group" aria-label="<%= strings.commuLingoViews.terms.filterByRegion %>">
-            <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= strings.commuLingoViews.terms.allRegions %></button>
-            <% regions.forEach(function(region) { %>
-            <button type="button" class="commu-dict-chip" data-category="<%= region.id %>" aria-pressed="false"><%= region.label %> <span><%= region.count %></span></button>
-            <% }) %>
-        </div>
-        <% } %>
         <% if (groups.length > 1) { %>
         <nav class="commu-dict-index" aria-label="<%= strings.commuLingoViews.terms.jumpToGroup %>">
             <% groups.forEach(function(group) { %>

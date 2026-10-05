@@ -50,12 +50,16 @@ body.commulingo-page > .admin-bar {
     width: 15px;
 }
 
+/* The negative end margin cancels the crumb's inline padding, so the last
+   jump (references) meets the bar's right border like the others meet their
+   neighbours instead of leaving a strip of padding beside its active fill. */
 .commu-crumb-slot {
     align-items: center;
     align-self: stretch;
     display: flex;
     flex: 0 0 auto;
     gap: 10px;
+    margin-right: -10px;
 }
 
 /* Icon-only jumps to the other dictionaries. A detail page used to offer the
@@ -76,6 +80,10 @@ body.commulingo-page > .admin-bar {
     justify-content: center;
     transition: background-color 0.15s ease;
     width: 34px;
+}
+
+.commu-crumb-jump-link:last-child {
+    border-right: 0;
 }
 
 .commu-crumb-jump-link .commu-role-icon {
@@ -104,6 +112,10 @@ body.commulingo-page > .admin-bar {
     .commu-crumb {
         gap: 2px 8px;
         padding: 0 8px;
+    }
+
+    .commu-crumb-slot {
+        margin-right: -8px;
     }
 
     .commu-crumb-home span {

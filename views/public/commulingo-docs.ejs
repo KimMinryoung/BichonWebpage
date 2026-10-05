@@ -19,17 +19,18 @@
             emptyLabel: strings.commuLingoViews.docs.noReferenceDocumentsFound
         }) %>
         <%
-        // Kind chips and the pager are links so the list works without script;
+        // Kind options and the pager are links so the list works without script;
         // Search and pagination fetch only the requested page of cards.
         %>
-        <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-doc-list"
-            role="group" aria-label="<%= strings.commuLingoViews.docs.filterByKind %>">
-            <a class="commu-dict-chip<%= kind ? '' : ' is-active' %>" href="/commulingo/docs"
-                data-category="" aria-pressed="<%= kind ? 'false' : 'true' %>"><%= strings.commuLingoViews.docs.all %> <span><%= docs.length %></span></a>
-            <% facets.forEach(function(facet) { %>
-            <a class="commu-dict-chip<%= facet.id === kind ? ' is-active' : '' %>" href="/commulingo/docs?kind=<%= encodeURIComponent(facet.id) %>"
-                data-category="<%= facet.id %>" aria-pressed="<%= facet.id === kind ? 'true' : 'false' %>"><%= facet.label %> <span><%= facet.count %></span></a>
-            <% }) %>
+        <div class="commu-people-filterbar commu-dict-facets">
+            <%- include('../partials/commulingo-dict-facet', {
+                title: strings.commuLingoViews.docs.kind, ariaLabel: strings.commuLingoViews.docs.filterByKind,
+                target: '#commu-doc-list', allLabel: strings.commuLingoViews.docs.all,
+                allCount: docs.length, allHref: '/commulingo/docs', selected: kind || '',
+                options: facets.map(function(facet) {
+                    return { value: facet.id, label: facet.label, count: facet.count,
+                        href: '/commulingo/docs?kind=' + encodeURIComponent(facet.id) };
+                }) }) %>
         </div>
         <section class="commu-event-grid" id="commu-doc-list" data-search-endpoint="/commulingo/docs/search" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.docs.referenceDocuments %>">
