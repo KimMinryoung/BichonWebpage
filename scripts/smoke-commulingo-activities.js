@@ -32,6 +32,11 @@ for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) 
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '');
 assert.equal(displayActivities([{ ...primary, affiliationId: 'state-soviet' }], 'ko')[0].affiliationIcon, 'landmark');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');
+// Party membership stays in the data but the page shows only the office held in that party.
+const membership = { ...primary, primary: false, startYear: 1930, endYear: 1960 };
+const office = { ...primary, relation: 'service', startYear: 1945, endYear: 1950 };
+assert.deepEqual(displayActivities([membership, office], 'ko').map(a => a.relation), ['service']);
+assert.equal(displayActivities([membership, { ...office, affiliationId: 'soviet-party' }], 'ko').length, 2);
 // Scholarship and arts are usually done without serving a state or party: an
 // unresolved affiliation there is not a research gap.
 for (const functionId of ['scholarship', 'arts']) {

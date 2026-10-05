@@ -89,10 +89,18 @@ function isUnresolvedGap(a) {
     return a?.affiliationStatus === 'unresolved' && !functions.get(a.functionId)?.affiliationOptional;
 }
 
+// A membership row stays in the data for the years someone belonged to the
+// party, but the page shows only the office held in it when there is one:
+// both rows render the same label, so a pair read as a duplicate.
+function shadowedMembership(a, rows) {
+    return a.relation === 'membership' && !a.primary && rows.some(b => b !== a && b.relation === 'service'
+        && b.functionId === a.functionId && b.affiliationId === a.affiliationId);
+}
+
 // officeTitles: { [officeId]: { ko, en } } from commulingo_offices.
 function displayActivities(raw, lang, officeTitles = {}) {
     const rows = raw || [];
-    return rows.filter(a => functions.has(a.functionId)).map(a => {
+    return rows.filter(a => functions.has(a.functionId) && !shadowedMembership(a, rows)).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
             affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : '',
