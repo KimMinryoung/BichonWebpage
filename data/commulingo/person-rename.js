@@ -8,15 +8,15 @@ const path = require('path');
 // the one UPDATE of commulingo_people carries aliases, career, sections, roles,
 // scenes, events, terms, office rows and enrichment. The columns below hold a
 // person id without a foreign key and are moved by hand. Finished history
-// (approved suggestions, revisions, tool logs) keeps the id it was recorded
-// under. leninbot's own work state (curation gaps, pipeline jobs) is not
-// touched here: leninbot follows renames through the admin MCP's
-// id_redirects_list (dev_docs/commulingo-admin-mcp.md).
+// (approved suggestions, done gaps, completed jobs, revisions, tool logs) keeps
+// the id it was recorded under.
 const ID_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const LOOSE_REFERENCES = [
     { table: 'commulingo_person_evidence', sql: 'UPDATE commulingo_person_evidence SET person_id=$2 WHERE person_id=$1' },
     { table: 'commulingo_editorial_notes', sql: "UPDATE commulingo_editorial_notes SET target_id=$2 WHERE target_type='person' AND target_id=$1" },
     { table: 'commulingo_agent_suggestions', sql: "UPDATE commulingo_agent_suggestions SET target_id=$2 WHERE target_type='person' AND target_id=$1 AND status='pending'" },
+    { table: 'commulingo_curation_gaps', sql: "UPDATE commulingo_curation_gaps SET target_id=$2 WHERE kind='person' AND target_id=$1 AND status='pending'" },
+    { table: 'commulingo_pipeline_jobs', sql: "UPDATE commulingo_pipeline_jobs SET target=$2 WHERE kind='person' AND target=$1 AND status NOT IN ('complete','cancelled')" },
 ];
 
 function validateRenames(renames) {

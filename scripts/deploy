@@ -134,8 +134,9 @@ run_container() {
     # Only the primary publishes the internal CommuLingo admin MCP listener
     # (dev_docs/commulingo-admin-mcp.md); the standby has no MCP port, so MCP
     # calls fail for the few seconds the primary is being replaced.
-    local mcp_publish=()
-    [[ "$name" == "$CONTAINER_NAME" ]] && mcp_publish=(-p "127.0.0.1:${MCP_PORT}:${MCP_PORT}")
+    # The CommuLingo pipeline scheduler likewise runs on the primary alone.
+    local mcp_publish=() pipeline_env=()
+    [[ "$name" == "$CONTAINER_NAME" ]] && mcp_publish=(-p "127.0.0.1:${MCP_PORT}:${MCP_PORT}") && pipeline_env=(-e COMMULINGO_PIPELINE_TICK=1)
     docker run -d \
         --name "$name" \
         --user "$RUN_AS_UID_GID" \
@@ -143,6 +144,7 @@ run_container() {
         --add-host=host.docker.internal:host-gateway \
         -p "127.0.0.1:${port}:3000" \
         "${mcp_publish[@]}" \
+        "${pipeline_env[@]}" \
         -e "MCP_PORT=${MCP_PORT}" \
         --restart "$restart" \
         --env-file "$FRONTEND_DIR/.env" \

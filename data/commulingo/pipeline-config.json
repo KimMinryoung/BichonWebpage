@@ -1,0 +1,14 @@
+{
+  "enabled": false,
+  "phase": "live",
+  "daily_cap_usd": 4.0,
+  "review_fraction": 0.3,
+  "stage_budget_usd": 0.2,
+  "canary_per_group_per_day": 1,
+  "discovery": false,
+  "term_event_overlap_allow": ["battle-of-lake-khasan"],
+  "term_enrichment_exclude": [],
+  "tick_seconds": 120,
+  "batch_limit": 12,
+  "plan_every_ticks": 15
+}

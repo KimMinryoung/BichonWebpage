@@ -165,6 +165,11 @@ try {
     console.error('[mcp] not started:', err.message);
 }
 
+// CommuLingo enrichment pipeline ticks, on the primary container only
+// (dev_docs/commulingo-agent-pipeline.md); the config file can still switch it off.
+let pipelineScheduler = null;
+if (process.env.COMMULINGO_PIPELINE_TICK === '1') pipelineScheduler = require('./services/commulingo-pipeline/tick').startScheduler();
+
 // Express 4 does not route async handler rejections anywhere; without these,
 // one rejected promise ends the process (Node ≥15 default) and a thrown
 // exception leaves it in an unknown state. Log the rejection and keep serving;
@@ -192,6 +197,7 @@ function shutdown(signal) {
     // long-lived chat/SSE streams would otherwise hold it open until the
     // force-exit above fired on every deploy.
     if (mcpServer) mcpServer.close();
+    if (pipelineScheduler) pipelineScheduler.stop();
     server.closeIdleConnections();
     const closeAll = setTimeout(() => server.closeAllConnections(), 2000);
     closeAll.unref();

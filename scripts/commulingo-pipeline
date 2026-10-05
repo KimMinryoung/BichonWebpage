@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# commulingo-pipeline — run scripts/commulingo-pipeline.js inside the production
+# container (see that file for the commands).
+set -euo pipefail
+exec docker exec -i "${CONTAINER_NAME:-leninbot-frontend}" node /app/scripts/commulingo-pipeline.js "$@"
