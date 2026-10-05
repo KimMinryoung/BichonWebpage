@@ -1,0 +1,1297 @@
+{
+ "add": [
+  {
+   "personId": "laszlo-rajk",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1931,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Rajk_L%C3%A1szl%C3%B3_%28politikus%29",
+      "locator": "characters 845:949; sha256 ac53a1e97312590f1b0308fa847d852068916be3c90a347921a1221cf8a4a06b",
+      "claim": "러이크 라슬로는 1931년 헝가리 공산주의자당에 입당했다.",
+      "excerpt": "1930-ban bekapcsolódott az illegális kommunista mozgalomba, 1931-ben tagja lett a KMP-nek és a KIMSZ-nek"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B9%D0%BA,_%D0%9B%D0%B0%D1%81%D0%BB%D0%BE",
+      "locator": "characters 1829:1958; sha256 619ad132ab843cf3ac4e76eed615ef4183862e70f2905b2b4254755d76a64e0f",
+      "claim": "러이크 라슬로는 1945년 귀국 뒤 부다페스트 당 조직을 이끌고 헝가리 공산주의자당 중앙위원·정치국원이 되었다.",
+      "excerpt": "После возвращения в Венгрию в мае 1945 года Ласло Райк возглавил партийную организацию Будапешта, стал членом ЦК и Политбюро КПВ."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "geza-losonczy",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1939,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Losonczy_G%C3%A9za",
+      "locator": "characters 572:673; sha256 13540b95b97f61c2088b016460c05a2cedf479236a749b4c6cb10d983dd3f904",
+      "claim": "로숀치 게저는 1939년 헝가리 공산주의자당에 입당했다.",
+      "excerpt": "1940-ben pedig a Népszava újságírója lett. Az ezt megelőző évben belépett a Magyar Kommunista Pártba."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jaroslav-seifert",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-czechoslovak-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1929,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jaroslav_Seifert",
+      "locator": "characters 494:618; sha256 b2e0920286b01294bcdaafe715f6f71f472406642485d4276d94ee36efce6cc5",
+      "claim": "야로슬라프 세이페르트는 체코슬로바키아 공산당 당원으로 공산당 신문·잡지를 편집했다.",
+      "excerpt": "He was a member of the Communist Party of Czechoslovakia (KSČ), the editor of a number of communist newspapers and magazines"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jaroslav_Seifert",
+      "locator": "characters 859:1036; sha256 b2e0920286b01294bcdaafe715f6f71f472406642485d4276d94ee36efce6cc5",
+      "claim": "야로슬라프 세이페르트는 1929년 3월 선언에 서명한 뒤 체코슬로바키아 공산당을 떠났다.",
+      "excerpt": "In March 1929, he and six other writers left the KSČ after signing a manifesto protesting against Bolshevized Stalinist-influenced tendencies in the new leadership of the party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "igor-grazin",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1975,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D1%8F%D0%B7%D0%B8%D0%BD,_%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1201:1229; sha256 f920a744dae3226ad509a71b8c4b011366d705b0ab1ed041f063e905a158050d",
+      "claim": "이고르 그랴진은 1975–1990년 소련공산당 당원이었다.",
+      "excerpt": "В 1975—1990 годах член КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andreu-nin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-spanish-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D1%83",
+      "locator": "characters 664:839; sha256 88e0134dbce43fe93243942835669b251a14d272d75a80e0559b4280d12fd08d",
+      "claim": "안드레우 닌은 1917년 처음에 스페인 사회노동당에 입당했다.",
+      "excerpt": "В 1917 году на него оказали сильное влияние как русская революция, так и местная всеобщая забастовка в августе; поначалу он вступил в Испанскую социалистическую рабочую партию"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andreu-nin",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-spanish-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D1%83",
+      "locator": "characters 932:1036; sha256 88e0134dbce43fe93243942835669b251a14d272d75a80e0559b4280d12fd08d",
+      "claim": "안드레우 닌은 스페인 공산당 창당에 참여했다.",
+      "excerpt": "Став известным деятелем рабочего движения, принял участие в основании Испанской коммунистической партии."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andreu-nin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-spanish-poum",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1935,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andreu_Nin",
+      "locator": "characters 4581:4900; sha256 3137f3c52a350ac324ca6fc27c134f173692d466dc547811640796569352c986",
+      "claim": "안드레우 닌은 1935년 마르크스주의통일노동자당 창당 때 집행위원이 되었고 이듬해 총서기로 뽑혔다.",
+      "excerpt": "When his group merged with Joaquín Maurín's Workers and Peasants' Bloc (BOC) to found the Workers' Party of Marxist Unification (POUM) in 1935, Nin was appointed a member of the new party's executive committee and editor of its publication, La Nueva Era; the following year he was elected general secretary of the POUM."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "wojciech-jaruzelski",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1947,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AF%D1%80%D1%83%D0%B7%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D0%BE%D0%B9%D1%86%D0%B5%D1%85",
+      "locator": "characters 4395:4518; sha256 c4a323fb4021826772f882128ea507c548c3e8edad84bf1d97fae8df91981f20",
+      "claim": "보이치에흐 야루젤스키는 1947년 폴란드 노동자당에 입당했다.",
+      "excerpt": "В 1947 году вступил в Польскую рабочую партию, с 1964 по январь 1990 — член ЦК Польской объединённой рабочей партии (ПОРП)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "wojciech-jaruzelski",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-pzpr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Wojciech_Jaruzelski",
+      "locator": "characters 8954:9031; sha256 baeead618c12f84cc5c3fd03fe07568c3735aed2b924b9f37e08b4984da556ab",
+      "claim": "보이치에흐 야루젤스키는 1948년 폴란드 통일노동당에 입당했다.",
+      "excerpt": "He joined Poland's Communist party, the Polish United Workers' Party, in 1948"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Wojciech_Jaruzelski",
+      "locator": "characters 244:389; sha256 baeead618c12f84cc5c3fd03fe07568c3735aed2b924b9f37e08b4984da556ab",
+      "claim": "보이치에흐 야루젤스키는 1981–1989년 폴란드 통일노동당 제1서기였다.",
+      "excerpt": "He was the First Secretary of the Polish United Workers' Party between 1981 and 1989, making him the last leader of the Polish People's Republic."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferenc-munnich",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8E%D0%BD%D0%BD%D0%B8%D1%85,_%D0%A4%D0%B5%D1%80%D0%B5%D0%BD%D1%86",
+      "locator": "characters 854:934; sha256 b4116f3f6053b88cccb8cc5fa6c83a91a2e185eb8081b1e678751e0d3e40f06d",
+      "claim": "뮌니히 페렌츠는 1917년 톰스크 포로수용소에서 볼셰비키당에 입당했다.",
+      "excerpt": "Находился в лагере для военнопленных в Томске, где в 1917 году вступил в РКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferenc-munnich",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+      "locator": "characters 664:784; sha256 258d31ec911948dcac000f2fc9e2d3d09c2a9cc3bcc5d85653243f87fb1a631c",
+      "claim": "뮌니히 페렌츠는 귀국 뒤 헝가리 공산주의자당 창립 당원이 되었다.",
+      "excerpt": "Hazatérése után a Kommunisták Magyarországi Pártja egyik alapító tagja és a Szlovák Tanácsköztársaság hadügyi népbiztosa"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferenc-munnich",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-socialist-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1956,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/M%C3%BCnnich_Ferenc",
+      "locator": "characters 3450:3494; sha256 258d31ec911948dcac000f2fc9e2d3d09c2a9cc3bcc5d85653243f87fb1a631c",
+      "claim": "뮌니히 페렌츠는 1956년 11월 11일 헝가리 사회주의노동자당 중앙위원이 되었다.",
+      "excerpt": "november 11-én pedig az MSZMP KB tagja lett."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8E%D0%BD%D0%BD%D0%B8%D1%85,_%D0%A4%D0%B5%D1%80%D0%B5%D0%BD%D1%86",
+      "locator": "characters 3555:3598; sha256 b4116f3f6053b88cccb8cc5fa6c83a91a2e185eb8081b1e678751e0d3e40f06d",
+      "claim": "뮌니히 페렌츠는 1957–1965년 헝가리 사회주의노동자당 정치국원이었다.",
+      "excerpt": "В 1957—1965 годах — член Политбюро ЦК ВСРП."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "eljas-erkko",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-finnish-national-progressive",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1933,
+    "endYear": 1936,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BA%D0%BA%D0%BE,_%D0%AE%D1%85%D0%BE",
+      "locator": "characters 2627:2710; sha256 346efa144015419ea327c1e4c4ab65cf17608ed5fb00c908d5de969081867742",
+      "claim": "엘리아스 에르코는 1933–1936년 핀란드 국민진보당 소속으로 의회 의원이었다.",
+      "excerpt": "С 1933 по 1936 год, Эркко был избран в Парламент Финляндии от Прогрессивной партии."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gyula-gombos",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-unity",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1922,
+    "endYear": 1924,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/G%C3%B6mb%C3%B6s_Gyula",
+      "locator": "characters 3698:3845; sha256 d99be549758d2fe96d47c06e2527b45db8210a8ff6d6b697c3143b14af4e5c9b",
+      "claim": "굄뵈시 줄러는 1922년 2월 창당된 헝가리 통일당에서 집행 부총재를 맡았다.",
+      "excerpt": "A kormánypárt és a kisgazdák fúziója révén 1922 februárjában Bethlen vezetésével létrejött Egységes Pártban ügyvezető alelnöki funkciót töltött be."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/G%C3%B6mb%C3%B6s_Gyula",
+      "locator": "characters 3846:3940; sha256 d99be549758d2fe96d47c06e2527b45db8210a8ff6d6b697c3143b14af4e5c9b",
+      "claim": "굄뵈시 줄러는 1924년 동지들과 함께 헝가리 통일당을 탈당했다.",
+      "excerpt": "1924-ben néhány elvbarátjával (pl. Eckhardt Tibor, Bajcsy-Zsilinszky Endre) kilépett az EP-ből"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gyula-gombos",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-unity",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1928,
+    "endYear": 1932,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/G%C3%B6mb%C3%B6s_Gyula",
+      "locator": "characters 5163:5247; sha256 d99be549758d2fe96d47c06e2527b45db8210a8ff6d6b697c3143b14af4e5c9b",
+      "claim": "굄뵈시 줄러는 1928년 인종수호당을 해산했다.",
+      "excerpt": "1928-ban, látva az EP megingathatatlan fölényét, Gömbös feloszlatta a Fajvédő Pártot"
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/G%C3%B6mb%C3%B6s_Gyula",
+      "locator": "characters 5409:5443; sha256 d99be549758d2fe96d47c06e2527b45db8210a8ff6d6b697c3143b14af4e5c9b",
+      "claim": "굄뵈시 줄러는 헝가리 통일당에 다시 입당했다.",
+      "excerpt": "Ismét belépett az Egységes Pártba."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gyula-gombos",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-life",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1932,
+    "endYear": 1936,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/G%C3%B6mb%C3%B6s_Gyula",
+      "locator": "characters 11197:11359; sha256 d99be549758d2fe96d47c06e2527b45db8210a8ff6d6b697c3143b14af4e5c9b",
+      "claim": "굄뵈시 줄러는 1932년 통일당을 국민통일당(헝가리 생활당의 전신)으로 개편하고 당을 장악했다.",
+      "excerpt": "Már 1932-ben átalakította az Egységes Pártot a Nemzeti Egység Pártjává (NEP), amiben fokozatosan háttérbe szorította Bethlent és konzervatív-liberális csoportját."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "bela-imredy",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-life",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1940,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Imr%C3%A9dy_B%C3%A9la",
+      "locator": "characters 16650:16775; sha256 32797c368ad031832d75f106ef2edcb238fd592244510b6f2fc75fe0a94c85dc",
+      "claim": "임레디 벨러는 1939년 3월부터 헝가리 생활당이라 불린 집권당 안에 20–25명의 고정 지지 세력을 두었다.",
+      "excerpt": "Az 1939 márciusától Magyar Élet Pártja néven működő kormánypárt berkein belül mintegy 20-25 fős állandó táborral rendelkezett"
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Imr%C3%A9dy_B%C3%A9la",
+      "locator": "characters 16934:17032; sha256 32797c368ad031832d75f106ef2edcb238fd592244510b6f2fc75fe0a94c85dc",
+      "claim": "임레디 벨러는 1940년 10월 집권당(헝가리 생활당)을 탈당하고 헝가리 쇄신당을 세웠다.",
+      "excerpt": "Ennek érdekében kilépett a kormánypártból (1940. október) és létrehozta a Magyar Megújulás Pártját"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "miklos-kallay",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-unity",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1929,
+    "endYear": 1932,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/K%C3%A1llay_Mikl%C3%B3s_%28politikus%29",
+      "locator": "characters 3338:3480; sha256 54aa33b68f0c48ce7ae2ba48254fc129fd1e7d69e9ce0555891de622c0de7544",
+      "claim": "칼러이 미클로시는 1929년부터 헝가리 통일당 소속 국회의원이었다.",
+      "excerpt": "1929–1935 között az Egységes Párt, illetve a Nemzeti Egység Pártja, majd 1935–1939 között pártonkívüli programmal volt országgyűlési képviselő"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "miklos-kallay",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-life",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1932,
+    "endYear": 1935,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/K%C3%A1llay_Mikl%C3%B3s_%28politikus%29",
+      "locator": "characters 3338:3480; sha256 54aa33b68f0c48ce7ae2ba48254fc129fd1e7d69e9ce0555891de622c0de7544",
+      "claim": "칼러이 미클로시는 1935년까지 국민통일당(헝가리 생활당) 소속 국회의원이었고 이후 무소속이었다.",
+      "excerpt": "1929–1935 között az Egységes Párt, illetve a Nemzeti Egység Pártja, majd 1935–1939 között pártonkívüli programmal volt országgyűlési képviselő"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "miklos-kallay",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-life",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1936,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/K%C3%A1llay_Mikl%C3%B3s_%28politikus%29",
+      "locator": "characters 3513:3558; sha256 54aa33b68f0c48ce7ae2ba48254fc129fd1e7d69e9ce0555891de622c0de7544",
+      "claim": "칼러이 미클로시는 굄뵈시 사망(1936) 뒤 집권당(헝가리 생활당)에 복귀했다.",
+      "excerpt": "Gömbös halála után visszatért a kormánypártba"
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/K%C3%A1llay_Mikl%C3%B3s_%28politikus%29",
+      "locator": "characters 4702:4781; sha256 54aa33b68f0c48ce7ae2ba48254fc129fd1e7d69e9ce0555891de622c0de7544",
+      "claim": "칼러이 미클로시는 1942년 3월 10일 총리가 되면서 집권당 당원이 되었다.",
+      "excerpt": "Kállay 1942. március 10-én lett miniszterelnök és egyúttal a kormánypárt tagja."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "istvan-dobi",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "party-hungarian-socialist-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1959,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Dobi",
+      "locator": "characters 4187:4304; sha256 b177e84e5010d09a1ecab3ed53f99c8f146598558ec457edbbe5cc3f783277d6",
+      "claim": "도비 이슈트반은 1959년 헝가리 사회주의노동자당에 정식 입당했다.",
+      "excerpt": "Having been a \"crypto-communist\" for many years, Dobi formally joined the Hungarian Socialist Workers' Party in 1959."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%B1%D0%B8,_%D0%98%D1%88%D1%82%D0%B2%D0%B0%D0%BD",
+      "locator": "characters 1198:1299; sha256 ab789bc7c87e805d9dfdefbfe0c71e1fd408409e3df23a9102a430d7fc42ac50",
+      "claim": "도비 이슈트반은 1959년 헝가리 사회주의노동자당에 들어가 곧바로 중앙위원이 되었다.",
+      "excerpt": "С 1959 года в Венгерской социалистической рабочей партии (ВСРП), где сразу же был введён в состав ЦК."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "istvan-dobi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-smallholders",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1936,
+    "endYear": 1949,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Dobi_Istv%C3%A1n",
+      "locator": "characters 2026:2055; sha256 4e07ae678d1f3af985d8f0db77be86b2a3c915eb9553d3ccd46cd3ef6fecc4db",
+      "claim": "도비 이슈트반은 1936년 독립소농당으로 옮겼다.",
+      "excerpt": "1936-ban lépett át az FKGP-be"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%B1%D0%B8,_%D0%98%D1%88%D1%82%D0%B2%D0%B0%D0%BD",
+      "locator": "characters 1013:1068; sha256 ab789bc7c87e805d9dfdefbfe0c71e1fd408409e3df23a9102a430d7fc42ac50",
+      "claim": "도비 이슈트반은 1947–1949년 독립소농당 위원장이었다.",
+      "excerpt": "1947—1949 — председатель Партии мелких сельских хозяев,"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "istvan-dobi",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1921,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Dobi_Istv%C3%A1n",
+      "locator": "characters 923:1114; sha256 4e07ae678d1f3af985d8f0db77be86b2a3c915eb9553d3ccd46cd3ef6fecc4db",
+      "claim": "도비 이슈트반은 1921년부터 노동운동에 참여해 헝가리 사회민주당 당원이 되었다.",
+      "excerpt": "1921-től kezdve fokozatosan kapcsolódott be a munkásmozgalomba, előbb belépett a Magyarországi Földmunkások Országos Szövetségébe, majd tagja lett a Magyarországi Szociáldemokrata Pártnak is."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-sukhanov",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 7138:7169; sha256 7898697b4a4bc5474245f7a0a409114c3acab0f48346780a5948a06dfbc41577",
+      "claim": "니콜라이 수하노프는 1920년대 초 독일 공산당에 입당했다.",
+      "excerpt": "Вступил в германскую компартию."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-sukhanov",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "russian-sr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1907,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Sukhanov",
+      "locator": "characters 1268:1375; sha256 1be4f9f759a828d6bc190b90e724fcc3be3e774f60837785646aff18f99a01cf",
+      "claim": "니콜라이 수하노프는 1903년 모스크바에서 공부를 시작하며 사회혁명당에 입당했다.",
+      "excerpt": "In 1903 he began to study Philology and Philosophy in Moscow, and joined the Socialist Revolutionary Party."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1777:1827; sha256 7898697b4a4bc5474245f7a0a409114c3acab0f48346780a5948a06dfbc41577",
+      "claim": "니콜라이 수하노프는 1906–1907년 사회혁명당과 조직적으로 결별했다.",
+      "excerpt": "В 1906—1907 годах организационно порвал с эсерами."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-sukhanov",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "russian-mensheviks",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3994:4093; sha256 7898697b4a4bc5474245f7a0a409114c3acab0f48346780a5948a06dfbc41577",
+      "claim": "니콜라이 수하노프는 1917년 5월 말 마르토프의 추천으로 멘셰비키 국제주의파에 들어갔다.",
+      "excerpt": "В конце мая 1917 года по рекомендации Ю. О. Мартова вступил в группу меньшевиков-интернационалистов"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 6843:6899; sha256 7898697b4a4bc5474245f7a0a409114c3acab0f48346780a5948a06dfbc41577",
+      "claim": "니콜라이 수하노프는 1920년 말 멘셰비키 당을 탈당했다.",
+      "excerpt": "В конце 1920 года Суханов вышел из меньшевистской партии"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferenc-keresztes-fischer",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-life",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1935,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Keresztes-Fischer_Ferenc",
+      "locator": "characters 4199:4344; sha256 b29df8c6d0a7c83f64facbe6c2d3c72ee263f32752bc79e2b87baf347b22b34a",
+      "claim": "케레스테시피셰르 페렌츠는 굄뵈시와의 갈등으로 칼러이 미클로시와 함께 집권당(국민통일당)을 탈당했다.",
+      "excerpt": "Bethlen István követőjeként a Gömbös Gyulával való konfliktus miatt kilépett a kormánypártból, s vele együtt egyébként Kállay Miklós is távozott."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "herbert-marcuse",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D0%B7%D0%B5,_%D0%93%D0%B5%D1%80%D0%B1%D0%B5%D1%80%D1%82",
+      "locator": "characters 1339:1589; sha256 93bbb5b6628cb9169a20e73d6ac477c1c514cf1828fbf059a7a4b1e9601eb88f",
+      "claim": "헤르베르트 마르쿠제는 1차 대전 말 독일 사회민주당 당원이었으나 룩셈부르크·리프크네히트 피살 뒤 탈당했다.",
+      "excerpt": "Сговор руководства Социал-демократической партии Германии с реакционными кругами высшего немецкого генералитета и известие об убийстве фрайкорами Розы Люксембург и Карла Либкнехта заставили его покинуть СДПГ, в рядах которой он состоял в конце войны."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kalman-daranyi",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-unity",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1932,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Dar%C3%A1nyi_K%C3%A1lm%C3%A1n_%28minisztereln%C3%B6k%29",
+      "locator": "characters 9315:9466; sha256 a1661ab6542647c627ae880b95331719a82ddff7ea25c8e6bf9b68bd497080df",
+      "claim": "더라니 칼만은 1927년 2월 헝가리 통일당 후보로 모숀머저로바르 보궐선거에 나섰다.",
+      "excerpt": "1927 februárjában saját kérésre felmentették főispáni pozíciójából és a kormányzó Egységes Párt színeiben indult a mosonmagyaróvári időközi választáson"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kalman-daranyi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-life",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1936,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Dar%C3%A1nyi_K%C3%A1lm%C3%A1n_%28minisztereln%C3%B6k%29",
+      "locator": "characters 18393:18528; sha256 a1661ab6542647c627ae880b95331719a82ddff7ea25c8e6bf9b68bd497080df",
+      "claim": "더라니 칼만은 국민통일당(헝가리 생활당) 안에서 당 지도자 자리를 넘겨받았다.",
+      "excerpt": "Darányi a NEP-en belül átvette a pártvezéri pozíciót és Bethlen megmaradt híveire támaszkodva megkezdte a radikális klikk kiszorítását."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andras-hegedus",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1942,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andr%C3%A1s_Heged%C3%BCs",
+      "locator": "characters 404:634; sha256 a61043694569d0be1f1e8e6876e4e4b5712154c04b107608d7e17ebf246f9941",
+      "claim": "헤게뒤시 언드라시는 1942년 불법 헝가리 공산주의자당 당원이 되었다.",
+      "excerpt": "Hegedüs first became involved in the underground communist movement during his university years and became a member of illegal Hungarian Communist Party when he studied railway engineering at Budapest Technical University in 1942."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andras-hegedus",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Heged%C3%BCs_Andr%C3%A1s_%28politikus%29",
+      "locator": "characters 1335:1459; sha256 27acf1238118809cd9eb3b63dbdd262529b932b56f22985c32dca3b44fc401a1",
+      "claim": "헤게뒤시 언드라시는 1951–1956년 헝가리 노동인민당 중앙지도부·정치국·서기국 위원이었다.",
+      "excerpt": "1950–1951-ben az MDP Központi Vezetősége Titkárságának, 1951–1956-ban a KV, a PB, a Titkárság és a Szervező Bizottság tagja."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andras-hegedus",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-socialist-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1973,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Heged%C3%BCs_Andr%C3%A1s_%28politikus%29",
+      "locator": "characters 3295:3371; sha256 27acf1238118809cd9eb3b63dbdd262529b932b56f22985c32dca3b44fc401a1",
+      "claim": "헤게뒤시 언드라시는 1973년 견해 차이로 헝가리 사회주의노동자당에서 제명되었다.",
+      "excerpt": "1973-ban eltérő politikai és ideológiai nézetei miatt kizárták az MSZMP-ből."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pal-maleter",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/P%C3%A1l_Mal%C3%A9ter",
+      "locator": "characters 729:777; sha256 404dfe66cf42d98980231b0f9d3e8a8fcd69bf05a1d73b7bd90fa2e35bc1aee3",
+      "claim": "말레테르 팔은 1945년 헝가리 공산주의자당에 입당했다.",
+      "excerpt": "In 1945 he joined the Hungarian Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pal-maleter",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-hungarian-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B5%D1%82%D0%B5%D1%80,_%D0%9F%D0%B0%D0%BB",
+      "locator": "characters 1380:1467; sha256 0520f0ca444273852ee7911aa711c4c58d5d77a21d7cb5ed4ae1d6803a25927f",
+      "claim": "말레테르 팔은 헝가리 공산주의자당(1948년부터 헝가리 노동인민당)에 입당했다.",
+      "excerpt": "Вступил в Коммунистическую партию Венгрии (с 1948 года — Венгерская партия трудящихся)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B5%D1%82%D0%B5%D1%80,_%D0%9F%D0%B0%D0%BB",
+      "locator": "characters 4043:4133; sha256 0520f0ca444273852ee7911aa711c4c58d5d77a21d7cb5ed4ae1d6803a25927f",
+      "claim": "1956년 봉기 때 말레테르 팔은 당원 장교로 일부 봉기군의 의심을 샀다.",
+      "excerpt": "для некоторых повстанцев армейский офицер и член партии Малетер был подозрительной фигурой"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kang-kon",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-korean-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Kang_Kon",
+      "locator": "characters 2295:2413; sha256 0fbd516d0de7790a1c84af4da2aa0a0247c6f8c947da93363b4af2d357f8e574",
+      "claim": "강건은 조선로동당 중앙위원이었다.",
+      "excerpt": "He was a member of the Central Committee of the Workers' Party of Korea and a member of the Supreme People's Assembly."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "paul-lafargue",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1902,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Paul_Lafargue",
+      "locator": "characters 7021:7177; sha256 36c262bc4c8107da872718c01ed7d67c9a8def7253171d1b708ecdfcb2d98d35",
+      "claim": "폴 라파르그는 쥘 게드·가브리엘 드빌과 함께 갓 창당된 프랑스 노동자당을 이끌었다.",
+      "excerpt": "Together with Jules Guesde and Gabriel Deville, he began directing the activities of the newly initiated French Workers' Party (Parti Ouvrier Français; POF)"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Paul_Lafargue",
+      "locator": "characters 7301:7384; sha256 36c262bc4c8107da872718c01ed7d67c9a8def7253171d1b708ecdfcb2d98d35",
+      "claim": "폴 라파르그는 이후 프랑스 노동자당의 가장 존경받는 이론가였다.",
+      "excerpt": "From then until his death, Lafargue remained the most respected theorist of the POF"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "markus-wolf",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1942,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D1%8C%D1%84,_%D0%9C%D0%B0%D1%80%D0%BA%D1%83%D1%81",
+      "locator": "characters 855:991; sha256 b90093d9ddd9943606cae41c5a48921aa64e5e635cc99a2588511fe14d130081",
+      "claim": "마르쿠스 볼프는 1942년 독일 공산당 당원이 되었다.",
+      "excerpt": "В 1942 году стал членом Коммунистической партии Германии, по указанию её руководства оставил институт и был направлен в школу Коминтерна"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "matyas-rakosi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-socialist-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1962,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/R%C3%A1kosi_M%C3%A1ty%C3%A1s",
+      "locator": "characters 14979:15119; sha256 886e65ccbd36377481b3f376800dacf5cb15d8f08c43defaa66c46d372899a33",
+      "claim": "라코시 마차시는 1962년 8월 15일 헝가리 사회주의노동자당에서 제명되었다.",
+      "excerpt": "1962. augusztus 15-én az MSZMP KB az általa dominált időszakban elkövetett törvénysértésekben viselt felelőssége miatt kizárta az MSZMP-ből."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "matyas-rakosi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1910,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/M%C3%A1ty%C3%A1s_R%C3%A1kosi",
+      "locator": "characters 5851:5948; sha256 c9b5e7ad1cd66813e1221a3937a183d23fc243e1635144ea2bce22779ad57588",
+      "claim": "라코시 마차시는 1910년 헝가리 사회민주당에 입당했다.",
+      "excerpt": "While still a student in Hungary, he joined the Hungarian Social Democratic Party (MSZDP) in 1910"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "matyas-rakosi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/M%C3%A1ty%C3%A1s_R%C3%A1kosi",
+      "locator": "characters 11671:11834; sha256 c9b5e7ad1cd66813e1221a3937a183d23fc243e1635144ea2bce22779ad57588",
+      "claim": "라코시 마차시는 1945년 헝가리 공산주의자당 총서기가 되었다.",
+      "excerpt": "When the Red Army set up a Soviet-approved government in Hungary (1944–1945), Rákosi was appointed General Secretary of the Hungarian Communist Party (MKP) (1945)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "matyas-rakosi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/M%C3%A1ty%C3%A1s_R%C3%A1kosi",
+      "locator": "characters 156:364; sha256 c9b5e7ad1cd66813e1221a3937a183d23fc243e1635144ea2bce22779ad57588",
+      "claim": "라코시 마차시는 1948–1956년 헝가리 노동인민당 총서기(뒤에 제1서기)였다.",
+      "excerpt": "He served first as General Secretary of the Hungarian Communist Party from 1945 to 1948 and then as General Secretary (later renamed First Secretary) of the Hungarian Working People's Party from 1948 to 1956."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "stepan-petrichenko",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D0%BD%D0%BA%D0%BE,_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1640:1738; sha256 4bc43e3623b8e347d171f33f1810152cb7cfc70405c38700dd46c7ae87a26910",
+      "claim": "스테판 페트리첸코는 1919년 볼셰비키당에 입당했으나 곧 재등록 과정에서 당을 떠났다.",
+      "excerpt": "В «партийную неделю» 1919 года вступил в РКП(б), но вскоре выбыл из партии в ходе перерегистрации."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sandor-kopacsi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-socialist-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1956,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Kop%C3%A1csi_S%C3%A1ndor",
+      "locator": "characters 1713:1920; sha256 1591e3d1b92468ff030fad68d87fbbc7906077bc95d1ef7baa07a1c10e5912c4",
+      "claim": "코파치 샨도르는 1956년 10월 31일 헝가리 사회주의노동자당 임시집행위원회 위원이 되었다.",
+      "excerpt": "1956. október 31-én, amikor a kommunista Magyar Dolgozók Pártja Magyar Szocialista Munkáspárttá alakult, és a hétfős vezetésbe (új neve: Ideiglenes Intézőbizottság) négy új ember került, Kopácsi is tag lett."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sandor-kopacsi",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Kop%C3%A1csi_S%C3%A1ndor",
+      "locator": "characters 927:1012; sha256 1591e3d1b92468ff030fad68d87fbbc7906077bc95d1ef7baa07a1c10e5912c4",
+      "claim": "코파치 샨도르는 1945년 헝가리 공산주의자당에 입당했다.",
+      "excerpt": "1945-ben belépett a Magyar Kommunista Pártba, és még ebben az évben rendőrtiszt lett."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "belsky",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "russian-bund",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": 1907,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9B%D0%B5%D0%B2_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 889:920; sha256 bdf4b356b317cd2b805a95859b194e2ffe6e1bbebb9c7d7b66641d8bdaaddd32",
+      "claim": "레프 벨스키는 1905–1907년 분트 소속이었다.",
+      "excerpt": "Состоял в БУНДе в 1905—1907 гг."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "belsky",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9B%D0%B5%D0%B2_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1102:1135; sha256 bdf4b356b317cd2b805a95859b194e2ffe6e1bbebb9c7d7b66641d8bdaaddd32",
+      "claim": "레프 벨스키는 1917년 6월부터 볼셰비키당 당원이었다.",
+      "excerpt": "Состоял в РСДРП(б) с июня 1917 г."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vyacheslav-karpinsky",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1076:1096; sha256 ab7068edcb8b2a1f5b148870de276e9d7d998071f9fd2bdf9be3f93cf4592147",
+      "claim": "뱌체슬라프 카르핀스키는 1898년부터 러시아 사회민주노동당 당원이었다.",
+      "excerpt": "Член РСДРП с 1898 г."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-chervyakov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Chervyakov",
+      "locator": "characters 858:957; sha256 a087d23a5a269cca0608bd1db164b5c307ef1c17a4279689c6485ced80902545",
+      "claim": "알렉산드르 체르뱌코프는 1917년 5월 볼셰비키당에 입당했다.",
+      "excerpt": "Born at Dukorki in 1892, he joined the Bolshevik Party in May 1917 and began to gain power quickly."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B2%D1%8F%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2099:2158; sha256 313a5e2b3c0b71b6ccab90469ae5a5a9b2d881c0f9abc538bc23e234923a66e3",
+      "claim": "알렉산드르 체르뱌코프는 1927–1937년 벨로루시야 공산당 중앙위 뷰로 위원이었다.",
+      "excerpt": "Бюро ЦК КП(б) Беларуси (29 ноября 1927 — 16 июня 1937 года)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-vannovsky",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": 1912,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 857:978; sha256 10b78608fc494287667eab7ccd9babb1e953e8a9fa51eb0a47f674a8cb0afd7d",
+      "claim": "알렉산드르 반놉스키는 1898년 러시아 사회민주노동당 창립 대회 대의원이었다.",
+      "excerpt": "Делегат первого, учредительного съезда РСДРП (Минск, 1898) от московского «Союза борьбы за освобождение рабочего класса»."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1813:1882; sha256 10b78608fc494287667eab7ccd9babb1e953e8a9fa51eb0a47f674a8cb0afd7d",
+      "claim": "알렉산드르 반놉스키는 1912년 기독교로 개종하고 러시아 사회민주노동당을 떠났다.",
+      "excerpt": "В 1912 году Александр Ванновский принял христианство и вышел из РСДРП"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valentina-tereshkova",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1962,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%B5%D1%88%D0%BA%D0%BE%D0%B2%D0%B0,_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%B0_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BD%D0%B0",
+      "locator": "characters 12496:12526; sha256 12e8c16cfef64dea8099ab1d1cca83dc6f2c4255421999593b888b19ee92ab57",
+      "claim": "발렌티나 테레슈코바는 1962년 3월부터 소련공산당 당원이었다.",
+      "excerpt": "C марта 1962 года — член КПСС."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Valentina_Tereshkova",
+      "locator": "characters 13572:13640; sha256 f3b9e0b719bb0e0aa558050afc80d813944f3f38b10a72b2b907ed44b9748aa0",
+      "claim": "발렌티나 테레슈코바는 1969–1991년 소련공산당 중앙위원이었다.",
+      "excerpt": "a member of the Central Committee of the Communist Party (1969–1991)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valentina-tereshkova",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "party-united-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 2008,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%B5%D1%88%D0%BA%D0%BE%D0%B2%D0%B0,_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%B0_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%BD%D0%B0",
+      "locator": "characters 13758:13865; sha256 12e8c16cfef64dea8099ab1d1cca83dc6f2c4255421999593b888b19ee92ab57",
+      "claim": "발렌티나 테레슈코바는 2008–2011년 통합 러시아 소속 야로슬라블주 의회 의원이었다.",
+      "excerpt": "В 2008—2011 годах — депутат Ярославской областной думы от партии «Единая Россия», заместитель председателя."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Valentina_Tereshkova",
+      "locator": "characters 15557:15747; sha256 f3b9e0b719bb0e0aa558050afc80d813944f3f38b10a72b2b907ed44b9748aa0",
+      "claim": "발렌티나 테레슈코바는 2011년 통합 러시아 당원으로 국가두마 의원에 뽑혔다.",
+      "excerpt": "On 4 December 2011, Tereshkova was elected to the State Duma, the lower house of the Russian legislature, as a representative of the Yaroslavl Oblast and a member of the United Russia party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vannikov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "russian-sr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1916,
+    "endYear": 1917,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1582:1667; sha256 cf2c983cec551d7acd833111ef4c585fb96f7c1d16082fc1573698b8fac12934",
+      "claim": "보리스 반니코프는 1916년 사회혁명당에 입당했으나 1917년 탈당했다.",
+      "excerpt": "В 1916 году вступил в Партию социалистов-революционеров, но в 1917 году вышел из неё."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vannikov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1962,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1868:1897; sha256 cf2c983cec551d7acd833111ef4c585fb96f7c1d16082fc1573698b8fac12934",
+      "claim": "보리스 반니코프는 1919년 볼셰비키당에 입당했다.",
+      "excerpt": "В 1919 году вступил в РКП(б)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 11793:11837; sha256 cf2c983cec551d7acd833111ef4c585fb96f7c1d16082fc1573698b8fac12934",
+      "claim": "보리스 반니코프는 1939–1961년 소련공산당 중앙위원이었다.",
+      "excerpt": "В 1939—1961 годах — член ЦК ВКП(б), ЦК КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "viktor-chernomyrdin",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1961,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Viktor_Chernomyrdin",
+      "locator": "characters 2438:2527; sha256 cd0b11c46d33f7aa61798f1e3dd836f0a9b74432b30c79ce04799a97559e5ba3",
+      "claim": "빅토르 체르노미르딘은 1961년 소련공산당 당원이 되었다.",
+      "excerpt": "In 1961, Chernomyrdin became a member of the  Communist Party of the Soviet Union (CPSU)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%BC%D1%8B%D1%80%D0%B4%D0%B8%D0%BD%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4456:4481; sha256 77e9a1a199779d45d563389b704c3776e24d518c3ab55c463e53548ddae28add",
+      "claim": "빅토르 체르노미르딘은 1986–1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1986—1990)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "viktor-chernomyrdin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-our-home-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1995,
+    "endYear": 2000,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%BC%D1%8B%D1%80%D0%B4%D0%B8%D0%BD%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 7174:7284; sha256 77e9a1a199779d45d563389b704c3776e24d518c3ab55c463e53548ddae28add",
+      "claim": "빅토르 체르노미르딘은 1995년 5월 12일 우리 집 러시아 의장으로 뽑혔다.",
+      "excerpt": "12 мая 1995 года был избран председателем Всероссийского общественно-политического движения «Наш дом — Россия»"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%BC%D1%8B%D1%80%D0%B4%D0%B8%D0%BD%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 12269:12323; sha256 77e9a1a199779d45d563389b704c3776e24d518c3ab55c463e53548ddae28add",
+      "claim": "빅토르 체르노미르딘은 1995–2000년 우리 집 러시아 지도자였다.",
+      "excerpt": "В 1995—2000 годах — лидер движения «Наш дом — Россия»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yegor-stroev",
+   "activity": {
+    "functionId": "agriculture",
+    "affiliationId": "party-united-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 2005,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%B5%D0%B2%2C_%D0%95%D0%B3%D0%BE%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3314:3375; sha256 68c03fdcdafb4fca5a00e4c30fbd8efe5fb34093a9cf1b2de58de0410da2b1ec",
+      "claim": "예고르 스트로예프는 2005년 11월 26일부터 통합 러시아 당원이다.",
+      "excerpt": "С 26 ноября 2005 года является членом партии «Единая Россия»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yegor-stroev",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1958,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%B5%D0%B2%2C_%D0%95%D0%B3%D0%BE%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 631:658; sha256 68c03fdcdafb4fca5a00e4c30fbd8efe5fb34093a9cf1b2de58de0410da2b1ec",
+      "claim": "예고르 스트로예프는 1958년 소련공산당에 입당했다.",
+      "excerpt": "В 1958 году вступил в КПСС."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%B5%D0%B2%2C_%D0%95%D0%B3%D0%BE%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1549:1685; sha256 68c03fdcdafb4fca5a00e4c30fbd8efe5fb34093a9cf1b2de58de0410da2b1ec",
+      "claim": "예고르 스트로예프는 1989–1991년 소련공산당 중앙위 서기, 1990년부터 정치국원이었다.",
+      "excerpt": "Секретарь ЦК КПСС в 1989—1991 годах, отвечал за политику в сфере сельского хозяйства, одновременно — член Политбюро ЦК КПСС с 1990 года."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}
