@@ -1,0 +1,63 @@
+{
+  "scope": "2026-10-05 정당 용어 1개의 표제어·별칭; owner-requested",
+  "references": [
+    "scripts/content/party-terms-20261004-finish.py"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "united-russia",
+      "lang": "ko",
+      "text": "통합 러시아",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-05 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "united-russia",
+      "lang": "en",
+      "text": "United Russia",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-05 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "united-russia",
+      "lang": "ko",
+      "text": "통합러시아당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-05 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "united-russia",
+      "lang": "ko",
+      "text": "통일 러시아",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-05 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "united-russia",
+      "lang": "en",
+      "text": "Yedinaya Rossiya",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-05 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}
