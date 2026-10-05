@@ -606,8 +606,9 @@ Current `/commulingo/people` UX:
 - Since 2026-10-05 the page is one explorer (`data/commulingo/people-explorer.js`,
   `public/js/commulingo-people.js`): a search box and a bar of six facet
   buttons — 기능·활동, 국가·세력 (with the Soviet institution line inside),
-  시대 (era groups), 정치적 입장 (collections), 국적 (citizenship), 출신 배경
-  (national origin). Each facet is a
+  정치적 입장 (collections), 국적 (citizenship), 출신 배경 (national origin),
+  and last 시대 (era groups, least important). Nationality chips use the
+  country's canonical name, never a person's annotated label. Each facet is a
   `<details>` panel of link chips with counts; every count applies the other
   conditions, and function + affiliation + office must hold on the same
   activity row. Set conditions show as removable chips under the bar.

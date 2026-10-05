@@ -92,17 +92,6 @@
                     <% }) %>
                 </div></details>
 
-                <% facetOpen('era', en ? 'Era' : '시대', !!activeEra) %>
-                    <% var openShelf = ''; %>
-                    <div class="commu-people-chips">
-                        <% chip(href({ eraId: '' }), en ? 'Any' : '전체', null, !activeEra) %>
-                    </div>
-                    <% facets.eras.forEach(function(era) { %>
-                    <% if (era.shelf !== openShelf) { %><% if (openShelf) { %></div><% } openShelf = era.shelf; %><h3><%= shelfTitles[era.shelf] || '' %></h3><div class="commu-people-chips"><% } %>
-                    <% chip(href({ eraId: era.id }), era.label, era.count, era.id === state.eraId, '', era.range) %>
-                    <% }) %>
-                    <% if (openShelf) { %></div><% } %>
-                </div></details>
 
                 <% if (facets.positions.length) { %>
                 <% facetOpen('position', en ? 'Position' : '정치적 입장', !!activePosition) %>
@@ -125,6 +114,18 @@
                     </section>
                 </div></details>
                 <% }) %>
+
+                <% facetOpen('era', en ? 'Era' : '시대', !!activeEra) %>
+                    <% var openShelf = ''; %>
+                    <div class="commu-people-chips">
+                        <% chip(href({ eraId: '' }), en ? 'Any' : '전체', null, !activeEra) %>
+                    </div>
+                    <% facets.eras.forEach(function(era) { %>
+                    <% if (era.shelf !== openShelf) { %><% if (openShelf) { %></div><% } openShelf = era.shelf; %><h3><%= shelfTitles[era.shelf] || '' %></h3><div class="commu-people-chips"><% } %>
+                    <% chip(href({ eraId: era.id }), era.label, era.count, era.id === state.eraId, '', era.range) %>
+                    <% }) %>
+                    <% if (openShelf) { %></div><% } %>
+                </div></details>
             </div>
 
             <% if (explore.conditions.length) { %>

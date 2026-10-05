@@ -158,7 +158,9 @@ function facetsFor(standardized, state, pool, lang) {
         const counts = new Map();
         for (const p of standardized.people) {
             const code = p[field]?.code;
-            if (code && !counts.has(code)) counts.set(code, { id: code, label: canonicalNationalityLabel(kind, code, p[field].label, lang), count: 0 });
+            // The country's own name: a person's label can carry notes
+            // (「출생지 기준 …」) that are about that person, not the option.
+            if (code && !counts.has(code)) counts.set(code, { id: code, label: canonicalNationalityLabel(kind, code, flagLabel(code, lang), lang), count: 0 });
         }
         for (const p of pool) if (p[field]?.code && matches(p, state, field)) counts.get(p[field].code).count++;
         return keep([...counts.values()], activeCode).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
@@ -186,7 +188,7 @@ function memoFacets(standardized, state, pool, lang) {
     return facets;
 }
 
-// The conditions as removable chips, in facet order.
+// The conditions as removable chips, in the bar's order.
 function activeConditions(state, facets, lang) {
     const en = lang === 'en';
     const find = (rows, id) => rows.find(r => r.id === id);
@@ -197,13 +199,13 @@ function activeConditions(state, facets, lang) {
     const affiliation = find(facets.affiliations, state.affiliationId);
     add('affiliationId', affiliation && (affiliation.kindLabel ? `${affiliation.label} (${affiliation.kindLabel})` : affiliation.label));
     add('officeId', find(facets.offices, state.officeId)?.label);
-    const era = find(facets.eras, state.eraId);
-    add('eraId', era && `${era.label} ${era.range}`);
     add('positionId', find(facets.positions, state.positionId)?.label, find(facets.positions, state.positionId)?.icon);
     const citizenship = find(facets.citizenships, state.citizenship);
     add('citizenship', citizenship && (en ? `Citizenship: ${citizenship.label}` : `국적: ${citizenship.label}`));
     const origin = find(facets.origins, state.origin);
     add('origin', origin && (en ? `Background: ${origin.label}` : `출신 배경: ${origin.label}`));
+    const era = find(facets.eras, state.eraId);
+    add('eraId', era && `${era.label} ${era.range}`);
     return chips;
 }
 
