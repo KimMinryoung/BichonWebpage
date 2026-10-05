@@ -2941,6 +2941,8 @@ a.commu-person-position:focus-visible {
    Unlike the event map, this learning map intentionally shows present-day
    political borders. Historical states are overlays composed from present
    successor territories and always carry an approximation note. */
+.commu-world-map-page { gap: 0; }
+.commu-world-map-page .commu-people-search { margin-top: 0; }
 .commu-world-map-head { display: flex; align-items: center; gap: 14px; }
 .commu-world-map-head-icon {
     align-items: center; background: var(--bg-surface); border: 1px solid var(--border);
@@ -2952,6 +2954,7 @@ a.commu-person-position:focus-visible {
     padding: 12px; position: relative;
 }
 .commu-world-map-panel.is-country { margin-top: 14px; }
+.commu-world-map-page > .commu-world-map-panel { margin: 0; }
 .commu-world-map { overflow: auto; overscroll-behavior: contain; }
 .commu-world-map .wmap-svg {
     display: block; font-family: inherit; height: auto; min-width: 720px; width: 100%;
