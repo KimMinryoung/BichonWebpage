@@ -8,6 +8,8 @@
     flex-direction: column;
     gap: 8px;
 }
+
+.commu-people-shell { gap: 0; }
 .commu-sr-only {
     position: absolute;
     width: 1px;
@@ -306,6 +308,8 @@
     gap: 0.5rem;
     margin: 9px 0 0;
 }
+
+.commu-people-shell > .commu-people-search { margin-top: 0; }
 
 .commu-people-search-icon {
     position: absolute;
@@ -768,18 +772,17 @@
     text-decoration: none;
 }
 
-.commu-people-group {
+.commu-people-era {
     margin-top: 17px;
 }
 
 .commu-people-group-head {
     background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
     border: 1px solid var(--border);
-    cursor: pointer;
     display: block;
-    list-style: none;
-    padding: 12px 38px 12px 14px;
-    position: relative;
+    padding: var(--space-3);
+    color: var(--text-primary);
+    text-decoration: none;
     transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
 }
 
@@ -787,6 +790,8 @@
 .commu-people-group-head:focus-visible {
     background: var(--bg-surface-hover);
     border-color: var(--link);
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 .commu-people-group-head:focus-visible {
@@ -794,34 +799,21 @@
     outline-offset: 2px;
 }
 
-.commu-people-group-head::-webkit-details-marker {
-    display: none;
+.commu-people-preview-toggle {
+    display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2);
+    min-height: var(--control-height); box-sizing: border-box; padding: 0 var(--space-3);
+    border: 1px solid var(--border); border-top: 0;
+    color: var(--text-muted); font-size: var(--text-sm); cursor: pointer; list-style: none;
 }
-
-.commu-people-group-head::after {
-    color: var(--text-muted);
-    content: '›';
-    font-size: 1.5rem;
-    line-height: var(--leading-none);
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    transition: color 0.16s ease, transform 0.16s ease;
-}
-
-.commu-people-group-head:hover::after,
-.commu-people-group-head:focus-visible::after {
-    color: var(--link);
-}
+.commu-people-preview-toggle::-webkit-details-marker { display: none; }
+.commu-people-preview-toggle:hover { color: var(--text-primary); background: var(--bg-surface-hover); }
+.commu-people-preview-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+.commu-people-preview-toggle .commu-role-icon { width: 15px; height: 15px; }
+.commu-people-group[open] > .commu-people-preview-toggle .commu-role-icon { transform: rotate(180deg); }
 .commu-people-group { scroll-margin-top: 4.5rem; }
 .commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
-.commu-people-group[open] .commu-people-group-head {
+.commu-people-group[open] > .commu-people-preview-toggle {
     margin-bottom: 14px;
-}
-
-.commu-people-group[open] .commu-people-group-head::after {
-    transform: translateY(-50%) rotate(-90deg);
 }
 .commu-people-shelf {
     background: var(--card-bg);
@@ -849,12 +841,11 @@
         margin: 0 14px;
     }
 }
-.commu-people-group-list-link {
-    position: absolute; right: 38px; top: 12px;
-    font-size: 0.8rem; color: var(--text-muted); text-decoration: none; white-space: nowrap;
-}
-.commu-people-group-list-link:hover,
-.commu-people-group-list-link:focus-visible { color: var(--text-primary); text-decoration: none; }
+
+.commu-people-group-meta { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); }
+.commu-people-group-action { font-size: var(--text-sm); color: var(--text-muted); white-space: nowrap; }
+.commu-people-group-head:hover .commu-people-group-action,
+.commu-people-group-head:focus-visible .commu-people-group-action { color: var(--text-primary); }
 
 .commu-people-range {
     font-family: 'Courier New', monospace;
@@ -1947,6 +1938,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     background: var(--text-secondary);
 }
 .commu-people-browser { margin-top: var(--space-4); }
+.commu-people-shell > .commu-people-browser { margin-top: 0; }
 .commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .commu-people-facet > summary {
     display: inline-flex; align-items: center; gap: var(--space-2);
@@ -2041,6 +2033,9 @@ a.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; mi
     .commu-people-facet > summary { width: 100%; box-sizing: border-box; padding: 0 var(--space-2); }
     .commu-people-facet > summary .commu-role-icon { margin-left: auto; }
     .commu-people-facet-panel { padding: var(--space-3); max-height: 65vh; }
+    .commu-people-shell .commu-people-filterbar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .commu-people-shell .commu-people-facet { min-width: 0; }
+    .commu-people-shell .commu-people-facet > summary { gap: var(--space-1); }
     .commu-people-row-link { grid-template-columns: 32px minmax(0, 1fr); padding-inline: var(--space-2); }
     .commu-people-row-icon { width: 32px; height: 32px; }
     .commu-people-row-meta { grid-column: 2; }

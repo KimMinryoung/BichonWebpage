@@ -9,6 +9,8 @@
     gap: 8px;
 }
 
+.commu-people-shell { gap: 0; }
+
 /* Page heading for assistive tech and crawlers on the dictionary pages, where
    the tab strip already names the section on screen. */
 .commu-sr-only {
@@ -1923,6 +1925,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin: 9px 0 0;
 }
 
+.commu-people-shell > .commu-people-search { margin-top: 0; }
+
 .commu-people-search-icon {
     position: absolute;
     left: 0.85rem;
@@ -2399,18 +2403,17 @@ button.commu-dc-option:hover { border-color: var(--link); }
     text-decoration: none;
 }
 
-.commu-people-group {
+.commu-people-era {
     margin-top: 17px;
 }
 
 .commu-people-group-head {
     background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
     border: 1px solid var(--border);
-    cursor: pointer;
     display: block;
-    list-style: none;
-    padding: 12px 38px 12px 14px;
-    position: relative;
+    padding: var(--space-3);
+    color: var(--text-primary);
+    text-decoration: none;
     transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
 }
 
@@ -2418,6 +2421,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-people-group-head:focus-visible {
     background: var(--bg-surface-hover);
     border-color: var(--link);
+    color: var(--text-primary);
+    text-decoration: none;
 }
 
 .commu-people-group-head:focus-visible {
@@ -2425,40 +2430,24 @@ button.commu-dc-option:hover { border-color: var(--link); }
     outline-offset: 2px;
 }
 
-.commu-people-group-head::-webkit-details-marker {
-    display: none;
+.commu-people-preview-toggle {
+    display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2);
+    min-height: var(--control-height); box-sizing: border-box; padding: 0 var(--space-3);
+    border: 1px solid var(--border); border-top: 0;
+    color: var(--text-muted); font-size: var(--text-sm); cursor: pointer; list-style: none;
 }
-
-.commu-people-group-head::after {
-    color: var(--text-muted);
-    content: '›';
-    font-size: 1.5rem;
-    line-height: var(--leading-none);
-    position: absolute;
-    /* The glyph is rotated, so its rendered box is wider than the unrotated one.
-       At right: 8px it reached 5px past the summary and put the whole page into a
-       4px horizontal scroll; 14px keeps it inside the 38px padding. */
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    transition: color 0.16s ease, transform 0.16s ease;
-}
-
-.commu-people-group-head:hover::after,
-.commu-people-group-head:focus-visible::after {
-    color: var(--link);
-}
+.commu-people-preview-toggle::-webkit-details-marker { display: none; }
+.commu-people-preview-toggle:hover { color: var(--text-primary); background: var(--bg-surface-hover); }
+.commu-people-preview-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+.commu-people-preview-toggle .commu-role-icon { width: 15px; height: 15px; }
+.commu-people-group[open] > .commu-people-preview-toggle .commu-role-icon { transform: rotate(180deg); }
 
 /* A group's pager sits under its grid; a page switch scrolls the group head
    back under the sticky bar. */
 .commu-people-group { scroll-margin-top: 4.5rem; }
 .commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
-.commu-people-group[open] .commu-people-group-head {
+.commu-people-group[open] > .commu-people-preview-toggle {
     margin-bottom: 14px;
-}
-
-.commu-people-group[open] .commu-people-group-head::after {
-    transform: translateY(-50%) rotate(-90deg);
 }
 
 
@@ -2498,15 +2487,10 @@ button.commu-dc-option:hover { border-color: var(--link); }
     }
 }
 
-/* 「목록으로 보기」 opens the people explorer with this era selected. */
-.commu-people-group-list-link {
-    position: absolute; right: 38px; top: 12px;
-    font-size: 0.8rem; color: var(--text-muted); text-decoration: none; white-space: nowrap;
-}
-/* A quiet way out of the row, as on the reference-text box head: no link green,
-   no underline; it darkens to the text colour on hover. */
-.commu-people-group-list-link:hover,
-.commu-people-group-list-link:focus-visible { color: var(--text-primary); text-decoration: none; }
+.commu-people-group-meta { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); }
+.commu-people-group-action { font-size: var(--text-sm); color: var(--text-muted); white-space: nowrap; }
+.commu-people-group-head:hover .commu-people-group-action,
+.commu-people-group-head:focus-visible .commu-people-group-action { color: var(--text-primary); }
 
 .commu-people-range {
     font-family: 'Courier New', monospace;
@@ -2691,8 +2675,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
 /* Political position (data/commulingo/person-position.js): the card and the
    detail head carry the position colour as a band across the top with the
    head area tinted below it, and the card names the position in a chip filled
-   with the same colour. The left stripe stays with the group headings, so era
-   and position colours do not read as one system. No known position, no band.
+   with the same colour. Era group headings use neutral borders.
+   No known position, no band.
    --pos-ink is the chip text: cream on the dark colours, ink on the light ones
    (each pairing at least 4:1). */
 /* Colour families: communism is red (Soviet and Chinese flag reds); its
@@ -5582,6 +5566,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
    removable chips; then the results or, with no condition, the era shelves.
    Options are .commu-dict-chip links. The script swaps #people-browser. */
 .commu-people-browser { margin-top: var(--space-4); }
+.commu-people-shell > .commu-people-browser { margin-top: 0; }
 .commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .commu-people-facet > summary {
     display: inline-flex; align-items: center; gap: var(--space-2);
@@ -5670,6 +5655,9 @@ a.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; mi
     .commu-people-facet > summary { width: 100%; box-sizing: border-box; padding: 0 var(--space-2); }
     .commu-people-facet > summary .commu-role-icon { margin-left: auto; }
     .commu-people-facet-panel { padding: var(--space-3); max-height: 65vh; }
+    .commu-people-shell .commu-people-filterbar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .commu-people-shell .commu-people-facet { min-width: 0; }
+    .commu-people-shell .commu-people-facet > summary { gap: var(--space-1); }
     .commu-people-row-link { grid-template-columns: 32px minmax(0, 1fr); padding-inline: var(--space-2); }
     .commu-people-row-icon { width: 32px; height: 32px; }
     .commu-people-row-meta { grid-column: 2; }

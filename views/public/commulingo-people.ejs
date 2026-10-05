@@ -176,8 +176,8 @@
             // Group shells only — the card grids (~8MB of markup) load per group
             // from /commulingo/people/cards?group=<id> when a group is opened.
             // data-people carries the member ids so #p-<id> deep links know which
-            // group to fetch; 「목록으로 보기」 opens this group's era filter,
-            // keeping every person reachable without a separate list page.
+            // group to fetch. The era header opens its filter; a separate
+            // disclosure below it previews the full cards in place.
             // The groups sit on boxed shelves (Soviet era sequence, Chinese era
             // sequence, the French Revolution, the wider world) in shelf order.
             var openShelfBox = '';
@@ -188,15 +188,22 @@
             <section class="commu-people-shelf is-shelf-<%= group.shelf %>" aria-labelledby="commu-people-<%= group.shelf %>-title">
             <h2 class="commu-people-shelf-head" id="commu-people-<%= group.shelf %>-title"><%= shelfTitles[group.shelf] || '' %></h2>
             <% } %>
-            <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
-                <summary class="commu-people-group-head">
-                    <span class="commu-people-range"><%= group.range %></span>
-                    <a class="commu-people-group-list-link" href="<%= href({ eraId: group.id, view: 'list' }) %>" onclick="event.stopPropagation()"><%= t.viewAsAList %></a>
+            <section class="commu-people-era">
+                <a class="commu-people-group-head" href="<%= href({ eraId: group.id, view: 'list' }) %>">
+                    <div class="commu-people-group-meta">
+                        <span class="commu-people-range"><%= group.range %></span>
+                        <span class="commu-people-group-action"><%= en ? 'View people' : '인물 보기' %> <span aria-hidden="true">→</span></span>
+                    </div>
                     <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= t.text %></span></h2>
                     <p><%= group.blurb %></p>
-                </summary>
-                <div class="commu-people-grid"></div>
-            </details>
+                </a>
+                <details class="commu-people-group" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
+                    <summary class="commu-people-preview-toggle" aria-label="<%= (en ? 'Preview cards: ' : '카드 미리보기: ') + group.title %>">
+                        <span><%= en ? 'Preview cards' : '카드 미리보기' %></span><%- roleIconSvg('chevron-down') %>
+                    </summary>
+                    <div class="commu-people-grid"></div>
+                </details>
+            </section>
             <% }) %>
             <% if (openShelfBox) { %></section><% } %>
 

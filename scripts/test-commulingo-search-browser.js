@@ -156,10 +156,36 @@ const assert = require('node:assert/strict');
         await input.press('Escape');
         assert.equal(await page.locator('.commu-country-group[hidden]').count(), 0);
         await goto('/commulingo/people?lang=ko');
-        const eraLink = page.locator('[data-group-id="china-old-regime"] .commu-people-group-list-link');
+        const eraLink = page.locator('.commu-people-group-head[href*="era=china-old-regime"]');
         assert.equal(await eraLink.getAttribute('href'), '/commulingo/people?era=china-old-regime');
         assert.equal(await page.locator('a[href*="/people/list/"]').count(), 0);
-        await eraLink.click();
+        for (const width of [360, 390, 640, 641, 1280, 1920]) {
+            await page.setViewportSize({ width, height: 900 });
+            await page.evaluate(() => window.scrollTo(0, 0));
+            const layout = await page.evaluate(() => {
+                const rect = selector => document.querySelector(selector).getBoundingClientRect();
+                const crumb = rect('.commu-crumb'), search = rect('[data-people-search]'), filters = rect('.commu-people-filterbar');
+                return { crumbGap: search.top - crumb.bottom, filterGap: filters.top - search.bottom,
+                    tops: Array.from(document.querySelectorAll('.commu-people-facet > summary'), node => node.getBoundingClientRect().top),
+                    overflow: document.documentElement.scrollWidth > innerWidth };
+            });
+            assert(Math.abs(layout.crumbGap) < 1 && Math.abs(layout.filterGap) < 1, 'people search gaps at ' + width);
+            assert(!layout.overflow, 'people filters overflow at ' + width);
+            if (width <= 640) {
+                assert.equal(layout.tops[0], layout.tops[2]);
+                assert.equal(layout.tops[3], layout.tops[5]);
+                assert(layout.tops[3] > layout.tops[0]);
+            }
+        }
+        const preview = page.locator('[data-group-id="china-old-regime"]');
+        await preview.locator('summary').focus();
+        await preview.locator('summary').press('Enter');
+        await preview.locator('.commu-person-card').first().waitFor();
+        assert(!(new URL(page.url())).searchParams.has('era'), 'preview keeps the era shelves');
+        assert(await preview.locator('.commu-person-bio').first().textContent(), 'preview keeps full biographies');
+        await preview.locator('summary').press('Enter');
+        assert.equal(await preview.getAttribute('open'), null);
+        await eraLink.locator('h2').click();
         await page.waitForURL('**/people?era=china-old-regime');
         assert(await page.locator('[data-facet="era"].is-set').count() > 0);
         assert(await page.locator('.commu-people-row').count() > 0);
