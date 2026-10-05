@@ -106,9 +106,45 @@ const assert = require('node:assert/strict');
         pending = page.waitForResponse(r => r.url().includes('/docs/search?') && r.status() === 200);
         await page.locator('[data-category="' + kind + '"]').click(); await pending;
         await page.waitForURL('**/docs?kind=' + kind);
-        await goto('/commulingo/events?country=france');
+        await goto('/commulingo/events');
+        const countrySummary = page.locator('[data-event-country-filter] summary');
+        await countrySummary.click();
+        const countryInput = page.locator('[data-country-search]');
+        await countryInput.fill('네덜란드');
+        assert.equal(await page.locator('[data-country-label]:visible').count(), 1);
+        await page.locator('[data-country-label="네덜란드"]').click();
+        await page.waitForURL('**/events?country=netherlands');
+        assert(await page.locator('.commu-people-condition').isVisible());
+        assert(await page.locator('#commu-event-list .commu-event-card').count() > 0);
+        await page.locator('.commu-people-condition').click();
+        await page.waitForURL('**/commulingo/events');
+        await countrySummary.click();
+        await page.locator('[data-country-label="프랑스"]').click();
+        await page.waitForURL('**/events?country=france');
         data = await search('events', '1789'); assert(data.total > 0);
         assert(requests.some(u => u.includes('/events/search?') && u.includes('country=france')));
+        await page.locator('.commu-people-condition').click();
+        await page.waitForURL('**/events?q=1789');
+        assert.equal(await input.inputValue(), '1789');
+        await input.press('Escape');
+        await page.waitForURL('**/commulingo/events');
+        await countrySummary.click();
+        for (const width of [360, 390, 1280, 1920]) {
+            await page.setViewportSize({ width, height: 900 });
+            for (const theme of ['dark', 'light']) {
+                await page.evaluate(value => document.documentElement.dataset.theme = value, theme);
+                assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'country filter overflow at ' + width);
+            }
+        }
+        await page.setViewportSize({ width: 390, height: 844 });
+        await page.screenshot({ path: '/tmp/events-country-filter-mobile.png' });
+        await countryInput.press('Escape');
+        assert(await countrySummary.evaluate(node => node === document.activeElement));
+        await goto('/en/commulingo/events?country=netherlands');
+        await countrySummary.click();
+        await countryInput.fill('France');
+        await page.locator('[data-country-label="France"]').click();
+        await page.waitForURL('**/en/commulingo/events?country=france');
         await goto('/en/commulingo/docs');
         data = await search('docs', 'revolution'); assert(data.total > 0);
         assert((await page.locator('#commu-doc-list a').first().getAttribute('href')).startsWith('/en/'));

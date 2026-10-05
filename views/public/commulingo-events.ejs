@@ -9,17 +9,9 @@
             trail: [{ label: strings.commuLingoViews.events.historicalEvents }],
             dictJump: 'events' }) %>
         <h1 class="commu-sr-only"><%= strings.commuLingoViews.events.historicalEvents2 %></h1>
-        <% if (selectedCountry) { %>
-        <div class="commu-country-event-filter">
-            <div class="commu-country-event-actions">
-                <a class="btn btn-small" href="<%= selectedCountry.href %>"><span aria-hidden="true">←</span> <%= selectedCountry.label %></a>
-                <a class="btn btn-small" href="/commulingo/events"><%= en ? 'All countries' : '모든 국가 사건' %> <span aria-hidden="true">→</span></a>
-            </div>
-            <h2><%= selectedCountry.label %> · <%= en ? 'Events' : '사건' %> <small><%= events.length %></small></h2>
-        </div>
-        <% } %>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-event-list',
+            searchValue: searchQuery,
             placeholder: strings.commuLingoViews.events.searchByPeriodEvent,
             ariaLabel: strings.commuLingoViews.events.searchHistoricalEvents,
             clearLabel: strings.commuLingoViews.events.clearSearch,
@@ -27,6 +19,32 @@
             resultMany: strings.commuLingoViews.events.eventsFound,
             emptyLabel: strings.commuLingoViews.events.noHistoricalEventsFound
         }) %>
+        <div class="commu-people-browser" data-event-country-filter>
+            <div class="commu-people-filterbar" role="group" aria-label="<%= en ? 'Filter events' : '사건 조건' %>">
+                <details class="commu-people-facet<%= selectedCountry ? ' is-set' : '' %>">
+                    <summary><span class="commu-people-facet-title"><%= en ? 'Country' : '국가' %></span><% if (selectedCountry) { %><span class="commu-sr-only"><%= en ? '(set)' : '(선택됨)' %></span><% } %><%- roleIconSvg('chevron-down') %></summary>
+                    <div class="commu-people-facet-panel">
+                        <input type="search" class="ui-control commu-people-facet-search" data-country-search hidden aria-label="<%= en ? 'Country name' : '나라 이름' %>" placeholder="<%= en ? 'Country name' : '나라 이름' %>">
+                        <p class="commu-people-facet-status" role="status" data-country-search-status hidden></p>
+                        <div class="commu-people-chips">
+                            <a class="commu-dict-chip commu-people-chip<%= !selectedCountry ? ' is-active' : '' %>" href="<%= filterHref('') %>" data-country-link<%- !selectedCountry ? ' aria-current="true"' : '' %>><%= en ? 'Any' : '전체' %></a>
+                            <% countries.forEach(function(country) { %>
+                            <a class="commu-dict-chip commu-people-chip<%= selectedCountry && selectedCountry.code === country.code ? ' is-active' : '' %>" href="<%= filterHref(country.code) %>" data-country-link data-country-label="<%= country.label %>"<%- selectedCountry && selectedCountry.code === country.code ? ' aria-current="true"' : '' %>><%= country.label %> <span><%= country.count %></span></a>
+                            <% }) %>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <% if (selectedCountry) { %>
+            <div class="commu-people-conditions">
+                <a class="commu-people-condition" href="<%= filterHref('') %>" data-country-link aria-label="<%= (en ? 'Remove ' : '조건 해제: ') + selectedCountry.label %>"><%= selectedCountry.label %><%- roleIconSvg('x') %></a>
+            </div>
+            <div class="commu-people-results-head">
+                <h2><%= selectedCountry.label %> · <%= en ? 'Events' : '사건' %> <small><%= events.length %></small></h2>
+                <a class="btn btn-small" href="<%= selectedCountry.href %>"><%= en ? 'Country overview' : '국가 개요' %> <span aria-hidden="true">→</span></a>
+            </div>
+            <% } %>
+        </div>
         <section class="commu-event-grid" id="commu-event-list" data-search-endpoint="/commulingo/events/search" data-country="<%= selectedCountry ? selectedCountry.code : '' %>" data-page="<%= pagination.current %>"
             aria-label="<%= strings.commuLingoViews.events.historicalEvents3 %>">
             <%- include('../partials/commulingo-events-cards', { events: pagination.pageItems }) %>
@@ -36,5 +54,6 @@
     <%- include('../partials/footer') %>
     <script defer src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
     <script defer src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
+    <script defer src="/js/commulingo-events.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

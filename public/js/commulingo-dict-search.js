@@ -87,6 +87,7 @@
         function updateUrl() {
             if (browse || input.value.trim()) return;
             var params = new URLSearchParams(window.location.search);
+            params.delete('q');
             setFacetParams(params);
             if (page > 1) params.set('page', page); else params.delete('page');
             var suffix = params.toString();
@@ -188,7 +189,7 @@
             run();
             root.scrollIntoView({ block: 'start' });
         });
-        if (input.value.trim()) { page = 1; run(); }
+        if (input.value.trim()) run();
     }
     document.querySelectorAll('[data-commu-dict-search]').forEach(initialize);
 })();

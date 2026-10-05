@@ -4,6 +4,7 @@
     <div class="commu-people-search">
         <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
         <input type="search" class="commu-people-search-input" data-commu-dict-search-input
+            value="<%= typeof searchValue === 'string' ? searchValue : '' %>"
             placeholder="<%= placeholder %>" autocomplete="off" spellcheck="false"
             aria-label="<%= ariaLabel %>">
         <span class="commu-dict-search-count" data-commu-dict-search-count aria-hidden="true" hidden></span>
