@@ -178,12 +178,12 @@ const assert = require('node:assert/strict');
             }
         }
         const preview = page.locator('[data-group-id="china-old-regime"]');
-        await preview.locator('summary').focus();
-        await preview.locator('summary').press('Enter');
+        await preview.locator('.commu-people-preview-toggle').focus();
+        await preview.locator('.commu-people-preview-toggle').press('Enter');
         await preview.locator('.commu-person-card').first().waitFor();
         assert(!(new URL(page.url())).searchParams.has('era'), 'preview keeps the era shelves');
         assert(await preview.locator('.commu-person-bio').first().textContent(), 'preview keeps full biographies');
-        await preview.locator('summary').press('Enter');
+        await preview.locator('.commu-people-preview-toggle').press('Enter');
         assert.equal(await preview.getAttribute('open'), null);
         await eraLink.locator('h2').click();
         await page.waitForURL('**/people?era=china-old-regime');
