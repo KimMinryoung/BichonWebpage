@@ -48,7 +48,7 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 
 ## frontend 파이프라인 (Node)
 
-- 작업 상태 테이블 `commulingo_pipeline_*`(jobs, attempts, artifacts, budget, sources, materials, …)를 frontend 소유로 넘긴다. 기존 데이터는 그대로 두고 이 저장소 마이그레이션이 이후 변경을 맡는다. `curation_gaps`·`person_review_jobs`도 다시 frontend 작업 상태가 된다(3단계에서 leninbot으로 넘겼던 것을 되돌림).
+- 작업 상태 테이블 `commulingo_pipeline_*`(jobs, attempts, artifacts, budget, scheduler, publications, materials, mentions)와 `curation_gaps`는 frontend 소유다(migration 288). 출처 캐시(`sources`, `fetch_cache`, `job_sources`)는 leninbot 조사 인프라다.
 - 후보 선정(planner): 지금 leninbot `planner.candidates`의 SQL을 그대로 frontend에서 실행한다. 소유자가 직접 읽으므로 MCP 경유가 필요 없다.
 - 단계: discover → research → draft → judge → validate → review → submit. 모델이 필요한 단계(research, draft, judge, review)는 일꾼 작업 하나다. validate·submit은 frontend 로컬(`editorial-pipeline-service.js`)이다.
 - 실행: 주 컨테이너 안 스케줄러(`COMMULINGO_PIPELINE_TICK=1`, `scripts/deploy`가 주 컨테이너에만 설정)가 `tick_seconds`마다 tick한다. advisory lock으로 한 번에 하나만 돈다. `plan_every_ticks`마다 검토 정산·예산 대기 해제·묶음·planner를 돌리고, 매 tick 최대 `batch_limit`개 단계를 진행한다. 설정은 `data/commulingo/pipeline-config.json`(호스트 마운트, 다음 tick부터 반영)이며 `enabled=false`면 아무것도 하지 않는다.
@@ -71,7 +71,7 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 | W2 | frontend | 파이프라인 골격: 작업 상태 테이블 소유 이전, tick·lease·예산, planner, 일꾼 클라이언트 | 완료(2026-10-05). `services/commulingo-pipeline/`, migration 288, `scripts/commulingo-pipeline`. 운영 데이터에서 frontend planner와 leninbot planner의 후보 40건이 순서까지 같음을 확인. `enabled=false` |
 | W3 | 양쪽 | 세션 작업 종류(leninbot `commulingo_editor`·`commulingo_review`), frontend research/draft/review/judge/validate/submit 단계, `scripts/commulingo-pipeline run <id>` | 완료(2026-10-05). job 63899(fritz-platten 절)가 조사·초안($0.004) → 독립 검토 승인($0.012) → 공개까지 진행, 사이트 반영·예산 정산·시도 기록 확인. 정기 실행(`enabled`)은 2026-10-01 소유자 중단 결정이 있어 켜지 않았다 |
 | W4 | 양쪽 | discover 단계(일꾼 `commulingo_discover`, 후보 → create 작업, 거절된 요청 gap은 skipped), MCP `entry_lookup`. 다른 주제·용어는 W3 경로를 그대로 쓴다 | 완료(2026-10-05). 등록된 인물(레닌) 요청 gap으로 확인: 모델이 거절($0.0005) → gap skipped, material 처리 기록 |
-| W5 | leninbot | leninbot 파이프라인·레인·운영 스크립트 삭제, 남은 읽기(채팅·롤플레이·KG 동기화) MCP 전환 | |
-| W6 | DB | leninbot DB 계정의 CommuLingo 테이블 권한 회수(관리자 MCP 5단계). leninbot은 지금 `postgres` 슈퍼유저로 접속하므로 먼저 전용 role로 바꿔야 한다 | |
+| W5 | 양쪽 | leninbot 파이프라인·레인·운영 스크립트·유닛 삭제, 큐레이터 도구 읽기·쓰기 전 검증·gap 기록·KG 동기화·분류 레지스트리·롤플레이·`/commulingo_review`를 MCP로(frontend `groups_list`·`entries_exist`·`event_raw`·`dataset_rows`·`changes_since`·`gap_file`·`doc_get`). frontend 옛 RPC 스크립트 삭제 | 완료(2026-10-05). leninbot 테스트 1,322 통과, KG 사실 15,852개 키 일치, 장기 실행 서비스 재시작 |
+| W6 | DB | leninbot DB 계정의 CommuLingo 테이블 권한 회수(관리자 MCP 5단계). leninbot은 지금 `postgres` 슈퍼유저로 접속하므로 먼저 전용 role로 바꿔야 한다(root: credstore 비밀번호 교체) | 남음 |
 
 이전 중에는 leninbot 정기 파이프라인을 멈춘 상태로 둔다(2026-10-01부터 타이머 disabled). frontend 파이프라인이 한 주제를 끝까지 처리하는 것을 확인하기 전에는 둘을 동시에 돌리지 않는다.

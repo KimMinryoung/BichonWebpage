@@ -13,12 +13,11 @@ readTermEditorial의 expectedRevision을 요구하고 한 언어만 지정하면
 
 submit은 실제 저장 검증을 SAVEPOINT에서 실행한 뒤 롤백하고 pending 제안을 만든다.
 review는 사유와 현재 revision을 검사하고 같은 저장 함수로 승인한다. 실패하면 관계·본문·
-근거·이력이 모두 롤백된다. 기존 `commulingo_person_review_jobs`는 새 용어 제안에도 사용하며
-Python 운영자 명령에서 인물과 동일하게 처리한다. 스키마의 person이라는 이름은 호환성을 위해 유지한다.
+근거·이력이 모두 롤백된다. `commulingo_person_review_jobs`(옛 leninbot 자동 검토 워커의 lease 표)는 2026-10-05부터 쓰지 않는다.
 
-`scripts/commulingo-term-service.js`는 read/submit/review/enrichment의 private JSON stdin RPC다.
-`scripts/commulingo-pipeline-service.js`는 인물·절·용어에 공통 read/validate/submit/review/enrichment를
-제공한다. 공개 HTTP 경로는 없다. 새 파이프라인의 모든 mutation은 idempotencyKey를 요구한다.
+leninbot은 관리자 MCP `editorial_store`(read/submit/review/enrichment)와 `editorial_pipeline`
+(인물·절·용어 공통 validate/submit/review/enrichment/note/publish)로 부른다. 공개 HTTP 경로는 없다
+(2026-10-05 이전의 `docker exec` stdin RPC 스크립트는 삭제). 새 파이프라인의 모든 mutation은 idempotencyKey를 요구한다.
 같은 키·요청은 같은 영수증을 반환하고 다른 요청으로 키를 재사용하면 거부한다.
 영수증과 제안·승인은 같은 트랜잭션에서 커밋한다. 작성기의 directApply 값으로 검토를 우회할 수 없다.
 
@@ -44,8 +43,8 @@ Python의 term_editorial_service와 legacy_shared_budget은 준비 이후 활성
 `review`에는 approve 결정과 사유, 독립적으로 확인한 citation/source/quote/finding checks가 필요하다.
 기존 submit/review 저장 함수를 하나의 외부 트랜잭션 안에서 실행하고, 선택적 원 제안 대체·작업 메모·
 영수증도 함께 커밋한다. 어떤 부분이라도 실패하면 공개 내용·제안·이력·영수증 전부 롤백된다.
-같은 요청의 재실행은 revision 재검사 전에 영수증을 반환한다. 이 명령은 private RPC에만 존재하며,
-공개 HTTP API나 LLM 도구로 노출하지 않는다. Python 검토 artifact도 같은 수정안 해시에 묶인다.
+같은 요청의 재실행은 revision 재검사 전에 영수증을 반환한다. 이 명령은 관리자 MCP와 frontend
+파이프라인 submit 단계에만 있으며 공개 HTTP API나 LLM 도구로 노출하지 않는다. Python 검토 artifact도 같은 수정안 해시에 묶인다.
 
 ## 분류(종류)와 지역 — migration 286
 

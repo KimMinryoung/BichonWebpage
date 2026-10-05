@@ -1,6 +1,6 @@
 # CommuLingo 관리자 MCP
 
-2026-10-05 설계. 1~3단계(조회·편집 도구, DB 감사, leninbot의 쓰기 전환)를 구현했고 나머지 단계는 아래 순서로 진행한다. 구현의 최종 기준은 `mcp/` 코드다.
+2026-10-05 설계·구현. leninbot의 CommuLingo 읽기·쓰기는 모두 이 MCP를 거친다(남은 것: DB 계정 권한 회수, 운영 도구). 보강 파이프라인은 [frontend 주관·leninbot 일꾼](commulingo-agent-pipeline.md) 구조로 옮겼다. 구현의 최종 기준은 `mcp/` 코드다.
 
 ## 목적과 경계
 
@@ -9,11 +9,12 @@ CommuLingo 데이터(인물·용어·사건·직책·제안·링크 리뷰·참�
 | 소유 | 테이블·자원 | 접근 |
 |---|---|---|
 | frontend | `commulingo_*` 콘텐츠·편집 테이블(인물·절·근거·보강·리비전·용어·사건·직책·`agent_suggestions`·`id_redirects`·`mcp_audit` 등), `data/commulingo/` | 이 MCP, Admin 화면, 이 저장소의 스크립트 |
-| leninbot | `commulingo_pipeline_*`(leninbot `commulingo/pipeline/schema.sql`), `commulingo_curation_gaps`(migration 125), `commulingo_person_review_jobs`(migration 177) — 큐레이터 작업 상태. [파이프라인 이전](commulingo-agent-pipeline.md) 뒤에는 frontend 소유로 돌아온다 | leninbot 내부 |
+| frontend(파이프라인) | 보강 작업 상태 `commulingo_pipeline_{jobs,artifacts,attempts,budget,scheduler,publications,materials,mentions}`(migration 288), `commulingo_curation_gaps` | `services/commulingo-pipeline/`, MCP `gap_file` |
+| leninbot | 조사 출처 캐시 `commulingo_pipeline_{sources,fetch_cache,job_sources}`, 일꾼 작업 `agent_worker_tasks` | leninbot 일꾼 |
 
-`curation_gaps`·`person_review_jobs`는 이 저장소의 마이그레이션이 만들었지만 leninbot만 읽고 쓰는 작업 상태라 3단계에서 leninbot 소유로 넘겼다. frontend 코드는 두 테이블과 `commulingo_pipeline_*`를 건드리지 않는다. 인물 id 변경(`person-rename.js`)도 이 테이블들을 옮기지 않고, leninbot이 `id_redirects_list`로 따라간다(`commulingo/id_sync.py`). 큐레이터에게 등록을 요청하는 gap은 leninbot 쪽 도구로 넣는다.
+`commulingo_person_review_jobs`(옛 leninbot 검토 워커의 lease 표)는 쓰지 않는다.
 
-leninbot의 CommuLingo 쓰기는 모두 이 MCP를 거친다(2단계 editorial 저장소, 3단계 사건·직책·제안 검토·백필). 예외는 운영자 일괄 텍스트 정리 스크립트 `commulingo_strip_em_dashes.py`·`commulingo_normalize_names.py` 두 개로, 5단계 전에 이 저장소의 콘텐츠 작업(`scripts/content/`)으로 옮긴다. 읽기는 아직 leninbot이 SQL로 직접 한다(4단계). 마지막에 DB 권한으로 경계를 강제한다.
+leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5). 큐레이터 도구의 읽기·쓰기 전 검증은 `commulingo/reads.py`, 쓰기는 `editorial_store`·`editorial_pipeline`·`people_upsert`·`gap_file`, KG 동기화는 `dataset_rows`·`changes_since`·`docs_list`·`doc_get`을 쓴다. 남은 결합은 DB 계정이다: leninbot은 아직 `postgres` 슈퍼유저로 접속하므로 권한 회수(5단계)는 전용 role 전환이 먼저다.
 
 ## 전송과 인증
 
@@ -52,10 +53,10 @@ leninbot의 CommuLingo 쓰기는 모두 이 MCP를 거친다(2단계 editorial �
 | 단계 | 저장소 | 내용 | 상태 |
 |---|---|---|---|
 | 1 | frontend | 리스너·토큰·scope·감사 로그, 조회 도구, `service_status`, Claude Code 등록 | 완료 |
-| 2 | 양쪽 | `edit` 도구, DB 감사 테이블, leninbot `person_service.py`·`pipeline/service.py`의 `docker exec`를 MCP 클라이언트로 교체 | 완료. 남은 일: 장기 실행 leninbot 서비스(telegram 등)가 재시작되어 새 코드를 읽은 뒤 `scripts/commulingo-{person,term,pipeline}-service.js`를 지우고, 그 스크립트를 직접 쓰는 leninbot `tests/test_commulingo_editor_db.py`를 바꾼다. leninbot 토큰을 credstore(`COMMULINGO_MCP_TOKEN`)로 옮긴다(root) |
-| 3 | 양쪽 | leninbot 작성기의 사건·사건 절·사건 인물·직책 행 쓰기와 제안 기록을 `content-editorial-service.js`로 옮김. 용어 직접 쓰기(구 경로) 삭제. 제안 검토 CLI·사건 연결 백필 2종을 MCP로 전환. `curation_gaps`·`person_review_jobs`를 leninbot 소유로 넘기고 rename 추종을 leninbot으로 옮김 | 완료. 남은 일: 일괄 정리 스크립트 2종 이식(5단계 전) |
-| 4 | 양쪽 | [보강 파이프라인 이전](commulingo-agent-pipeline.md)으로 대체(2026-10-05 결정): 파이프라인을 frontend로 옮기고 leninbot은 범용 일꾼으로 쓴다. 후보 선정 같은 무거운 읽기는 소유자가 직접 하고, leninbot에 남는 읽기(채팅·롤플레이·KG 동기화)만 MCP로 옮긴다 | 설계 |
-| 5 | DB | leninbot DB 계정의 frontend 소유 테이블 쓰기 권한 회수, 이어서 읽기 권한 회수. leninbot 테스트에 `commulingo_pipeline_*` 외 `commulingo_` SQL 금지 검사 | |
+| 2 | 양쪽 | `edit` 도구, DB 감사 테이블, leninbot `person_service.py`·`pipeline/service.py`의 `docker exec`를 MCP 클라이언트로 교체 | 완료. 옛 stdin RPC 스크립트 3개 삭제(2026-10-05) |
+| 3 | 양쪽 | leninbot 작성기의 사건·사건 절·사건 인물·직책 행 쓰기와 제안 기록을 `content-editorial-service.js`로 옮김. 제안 검토 CLI·사건 연결 백필을 MCP로 전환 | 완료 |
+| 4 | 양쪽 | [보강 파이프라인 이전](commulingo-agent-pipeline.md)(W1~W5)으로 대체: 파이프라인은 frontend, leninbot은 일꾼. leninbot의 남은 읽기(큐레이터 도구·검증·KG 동기화·롤플레이)를 MCP로, 옛 레인·운영 스크립트 삭제 | 완료 |
+| 5 | DB | leninbot DB 계정의 CommuLingo 테이블 권한 회수. leninbot은 `postgres` 슈퍼유저로 접속하므로 먼저 전용 role(+credstore 비밀번호, root 필요)로 바꾼다. leninbot의 CommuLingo SQL은 출처 캐시 3개뿐이다 | 남음 |
 | 6 | frontend | `ops` 도구: 허용 목록의 audit 스크립트, 최근 오류 로그, 메뉴 방문 집계, 읽기 전용 SQL | |
 
 `scripts/query-db`(사람용 `leninbot_ro` 조회)는 그대로 둔다.

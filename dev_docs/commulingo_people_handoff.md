@@ -363,9 +363,9 @@ different rule per page and a new entry had to be wired into four places.
 
 ## AI Agent Editing
 
-Python `commulingo/people.py` exposes target-specific person create/update
-and section save tools. Person reads and writes call the frontend's private
-`scripts/commulingo-person-service.js` through `docker exec` with JSON stdin.
+leninbot's `commulingo/people.py` exposes target-specific person create/update
+and section save tools. leninbot is a separate service: it reads and writes only
+through the admin MCP (`editorial_store`, `person_get`, …; dev_docs/commulingo-admin-mcp.md).
 Admin HTTP, upsert CLI, automatic edits and suggestion approvals all use
 `data/commulingo/person-editorial-service.js` and the Admin stores. There is no
 Python SQL fallback for people or their sections. Office/event/term tools retain
