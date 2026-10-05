@@ -80,7 +80,7 @@
                         <% chip(href({ affiliationId: '' }), en ? 'Any' : '전체', null, !activeAffiliation) %>
                         <% facets.topAffiliations.forEach(function(a) { chip(href({ affiliationId: a.id }), a.label, a.count, a.id === state.affiliationId, a.icon === 'hammer-sickle' ? 'hammer-sickle' : '', a.kindLabel) }) %>
                     </div>
-                    <h3><%= en ? 'All ' + facets.affiliations.length + ' by country' : '나라별 전체 ' + facets.affiliations.length + '개' %></h3>
+                    <h3><%= en ? 'All ' + facets.affiliations.length + ' affiliations' : '모든 소속 ' + facets.affiliations.length + '개' %></h3>
                     <% facetSearch(en ? 'Country or organization' : '국가·조직 이름') %>
                     <% facets.affiliationGroups.forEach(function(group) { %>
                     <section class="commu-people-facet-group" data-facet-group>
