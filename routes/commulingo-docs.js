@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
             facets,
             kind,
             pagination,
-            pageTitle: lang === 'en' ? 'Reference Library — CommuLingo' : '참고 문헌 — CommuLingo',
+            pageTitle: lang === 'en' ? 'Reference Library — CommuLingo' : '참고 문헌 — 공산링고',
             pageDescription: lang === 'en'
                 ? 'Full-text reference documents behind the CommuLingo dictionaries.'
                 : '공산링고 사전들의 바탕이 되는 참고 문헌 전문 서고.',

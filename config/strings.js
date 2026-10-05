@@ -235,6 +235,8 @@ const ko = {
 
     commuLingo: {
         title: '공산링고',
+        // Service name in page titles; `title` is the index heading.
+        name: '공산링고',
         description: '혁명 이론과 역사를 익히는 학습장',
         dictSectionTitle: '사전 · 자료실',
         dictSectionHint: '낯선 인물, 사건, 용어가 나오면 여기서 찾아보세요.',
@@ -511,7 +513,7 @@ const ko = {
         },
         people: {
             people: '인물 사전',
-            peopleOfTheRevolution: '인물 사전: 혁명과 소련의 사람들',
+            peopleOfTheRevolution: '인물 사전',
             searchByNameAlias: '이름 · 별칭 · 설명으로 검색…',
             searchPeople: '인물 검색',
             clearSearch: '검색 지우기',
@@ -857,6 +859,8 @@ const en = {
 
     commuLingo: {
         title: 'commulingo',
+        // Service name in page titles; `title` is the index heading.
+        name: 'CommuLingo',
         description: 'A learning space for revolutionary theory and history.',
         dictSectionTitle: 'Dictionaries & Library',
         dictSectionHint: 'Unfamiliar people, events, or terms? Look them up here.',
@@ -1130,7 +1134,7 @@ const en = {
         },
         people: {
             people: 'People',
-            peopleOfTheRevolution: 'People of the Revolution and the USSR',
+            peopleOfTheRevolution: 'People',
             searchByNameAlias: 'Search by name, alias, or bio…',
             searchPeople: 'Search people',
             clearSearch: 'Clear search',

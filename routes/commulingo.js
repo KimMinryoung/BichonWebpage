@@ -41,7 +41,7 @@ router.get('/', asyncHandler(async (req, res) => {
         updateGroups: await loadCommuLingoUpdateGroups(res.locals.lang),
         books: { version: catalog.version, collections },
         bookGroups: groupBooks(collections, res.locals.strings.commuLingo, res.locals.lang),
-        pageTitle: res.locals.strings.commuLingo.title,
+        pageTitle: res.locals.strings.commuLingo.name,
         pageDescription: res.locals.strings.commuLingo.description,
         pagePath: '/commulingo',
     });

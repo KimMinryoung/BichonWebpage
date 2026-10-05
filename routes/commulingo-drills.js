@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
                 label: localize(group.label, lang),
                 decks: group.decks.map(meta => localizedMeta(meta, lang)),
             })),
-            pageTitle: res.locals.strings.commuLingo.drill + ' — CommuLingo',
+            pageTitle: res.locals.strings.commuLingo.drill + ' — ' + res.locals.strings.commuLingo.name,
             pageDescription: res.locals.strings.commuLingo.drillDesc,
             pagePath: '/commulingo/drill',
             jsonLd: commuLingoBreadcrumb(lang, [

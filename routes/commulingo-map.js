@@ -31,7 +31,7 @@ router.get('/map', async (req, res) => {
             internationalCount,
             internationalIcon: roleIconSvg('globe'),
             mapSvg: renderWorldMapSvg({ codes: countries.filter(country => country.totalCount > 0).map(country => country.code), lang }),
-            pageTitle: lang === 'en' ? 'World Map — CommuLingo' : '세계 지도 — CommuLingo',
+            pageTitle: lang === 'en' ? 'World Map — CommuLingo' : '세계 지도 — 공산링고',
             pageDescription: lang === 'en'
                 ? 'Locate the countries and historical regions represented by CommuLingo people and events.'
                 : 'CommuLingo의 인물과 역사 사건에 등장하는 국가·역사의 지역을 세계지도에서 살펴봅니다.',

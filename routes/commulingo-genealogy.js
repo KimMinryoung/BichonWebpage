@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
         res.render('public/commulingo-genealogies', {
             charts,
             pagination,
-            pageTitle: lang === 'en' ? 'Genealogy Charts — CommuLingo' : '계보도 — CommuLingo',
+            pageTitle: lang === 'en' ? 'Genealogy Charts — CommuLingo' : '계보도 — 공산링고',
             pageDescription: lang === 'en'
                 ? 'Diagrams of how currents, doctrines and factions split and merged.'
                 : '사상과 이론, 분파가 갈라지고 합쳐진 흐름을 도표로 보는 계보도.',
@@ -54,7 +54,7 @@ router.get('/:chartId', (req, res) => {
             },
             svg: rendered.svg,
             svgWidth: rendered.width,
-            pageTitle: `${localize(chart.title, lang)} — CommuLingo`,
+            pageTitle: `${localize(chart.title, lang)} — ${res.locals.strings.commuLingo.name}`,
             pageDescription: localize(chart.description, lang),
             pagePath: `/commulingo/genealogy/${chart.id}`,
             jsonLd: commuLingoBreadcrumb(lang, [

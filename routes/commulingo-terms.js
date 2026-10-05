@@ -74,7 +74,7 @@ router.get('/', async (req, res) => {
             categories: data.categories,
             regions: data.regions,
             sort,
-            pageTitle: en ? 'Glossary — CommuLingo' : '용어 사전 — CommuLingo',
+            pageTitle: en ? 'Glossary — CommuLingo' : '용어 사전 — 공산링고',
             pageDescription: en
                 ? 'The concepts of Soviet and revolutionary history, connected to the people, events, and reports that use them.'
                 : '혁명과 소련사의 개념들을 인물·사건·보고서와 연결해 읽는 용어 사전.',

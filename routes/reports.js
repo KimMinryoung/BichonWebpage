@@ -27,11 +27,13 @@ router.get(['/private', '/admin/private-reports'], (req, res) => {
 });
 
 // Shared by the success and failure branches of the list render.
-function reportsListLocals(pagePath, isAdmin) {
+function reportsListLocals(res, pagePath, isAdmin) {
     return {
         pagePath,
-        pageTitle: '사이버-레닌 보고서',
-        pageDescription: '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
+        pageTitle: res.locals.strings.nav.reports,
+        pageDescription: res.locals.lang === 'en'
+            ? 'Research reports by Cyber-Lenin on current affairs, technology and AI sovereignty.'
+            : '사이버-레닌이 작성한 정세 분석, 기술, AI 주권 연구 보고서 목록입니다.',
         showTasks: isAdmin,
     };
 }
@@ -136,7 +138,7 @@ router.get('/', async (req, res) => {
         if (feedFailed) markDegraded(res, { empty: researchItems.length === 0 });
 
         res.render('public/reports', {
-            ...reportsListLocals(pagePath, isAdmin),
+            ...reportsListLocals(res, pagePath, isAdmin),
             ...taskData,
             researchItems: pagedResearchItems,
             researchCurrentPage: currentPage,
@@ -151,7 +153,7 @@ router.get('/', async (req, res) => {
         console.error('Error fetching reports:', error);
         markDegraded(res, { empty: true });
         res.render('public/reports', {
-            ...reportsListLocals(pagePath, isAdmin),
+            ...reportsListLocals(res, pagePath, isAdmin),
             reports: [], currentPage: 1, totalPages: 0, researchItems: [], feedFailed: true,
         });
     }

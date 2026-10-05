@@ -9,12 +9,14 @@ const PER_PAGE = 20;
 
 // GET /hub — list of curations
 // Shared by the success and failure branches of the list render.
-function hubListLocals(pagePath) {
+function hubListLocals(res, pagePath) {
     return {
         paginationBase: '/hub?page=',
         pagePath,
-        pageTitle: '큐레이션',
-        pageDescription: '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
+        pageTitle: res.locals.strings.nav.hub,
+        pageDescription: res.locals.lang === 'en'
+            ? 'Progressive writing selected by Cyber-Lenin, with why each piece was chosen and its context.'
+            : '사이버-레닌이 선별한 진보적인 글과 선정 이유, 맥락을 모은 큐레이션입니다.',
     };
 }
 
@@ -32,7 +34,7 @@ router.get('/', async (req, res) => {
         const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
 
         res.render('public/hub', {
-            ...hubListLocals(pagePath),
+            ...hubListLocals(res, pagePath),
             items,
             currentPage,
             totalPages,
@@ -44,7 +46,7 @@ router.get('/', async (req, res) => {
         console.error('Error loading hub list:', error);
         markDegraded(res, { empty: true });
         res.render('public/hub', {
-            ...hubListLocals(pagePath),
+            ...hubListLocals(res, pagePath),
             items: [], currentPage: 1, totalPages: 1, loadFailed: true,
         });
     }

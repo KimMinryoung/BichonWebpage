@@ -50,7 +50,7 @@ router.get('/book/:collectionId', async (req, res) => {
             bookFormat: collection.format || 'quiz',
             bookTitle,
             bookDescription: localize(collection.description, res.locals.lang),
-            pageTitle: bookTitle,
+            pageTitle: `${bookTitle} — ${res.locals.strings.commuLingo.name}`,
             pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
             pagePath: `/commulingo/book/${collection.id}`,
             jsonLd: commuLingoBreadcrumb(res.locals.lang, [

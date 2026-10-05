@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
             sources: localize(data.sources, lang),
             eras,
             congresses,
-            pageTitle: en ? 'The Soviet Politburo — CommuLingo' : '소련 정치국 — CommuLingo',
+            pageTitle: en ? 'The Soviet Politburo — CommuLingo' : '소련 정치국 — 공산링고',
             pageDescription: en
                 ? 'Membership of the Politburo and Presidium of the CPSU, 1917–1991, by era and by party congress.'
                 : '1917년부터 1991년까지 소련 공산당 정치국·간부회의 구성원을 시기별·당대회 기수별로 정리한 표.',

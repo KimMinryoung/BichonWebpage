@@ -71,10 +71,10 @@ router.get('/people', async (req, res) => {
             roleHubHref,
             pageTitle: active
                 ? (lang === 'en' ? `${resultLabel} — People` : `${resultLabel} — 인물 사전`)
-                : (lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들'),
+                : (lang === 'en' ? 'People — CommuLingo' : '인물 사전 — 공산링고'),
             pageDescription: lang === 'en'
-                ? 'The people who stood at the forks of the two decision-simulation history books.'
-                : '두 권의 결정 시뮬레이션 역사책, 그 갈림길에 서 있던 사람들.',
+                ? 'People of revolutionary and socialist history, found by activity, affiliation, era and position.'
+                : '혁명과 사회주의 역사의 인물들을 활동·소속·시대·직위로 찾는 인물 사전.',
             pagePath: '/commulingo/people',
         });
     } catch (err) {
