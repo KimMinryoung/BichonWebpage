@@ -55,8 +55,9 @@ const review = {
 // Discovery: which requested (or, with discovery on, mentioned) entries are
 // missing. The engine turns accepted candidates into create jobs.
 const discover = {
-    async request(job, artifacts) {
-        return { request: { kind: 'commulingo_discover', input: { job: workerJob(job), artifacts: workerArtifacts(artifacts) } } };
+    async request(job, artifacts, config) {
+        return { request: { kind: 'commulingo_discover', input: { job: workerJob(job), artifacts: workerArtifacts(artifacts),
+            settings: { term_event_overlap_allow: config.term_event_overlap_allow } } } };
     },
     async complete(job, artifacts, task) {
         return stageResult(task);
