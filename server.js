@@ -24,7 +24,7 @@ const { cachePolicy } = require('./middleware/cache-policy');
 const { sessionGate } = require('./config/session');
 const { a2aProxy, backendApiProxy } = require('./config/proxies');
 const { securityHeaders } = require('./config/security');
-const { staticAssets } = require('./config/static-assets');
+const { staticAssets, releasedAssets } = require('./config/static-assets');
 const { isSessionFreeRequest } = require('./config/route-policy');
 const redisClient = require('./config/redis');
 const db = require('./config/database');
@@ -87,6 +87,7 @@ app.use(viewLocals);
 app.use(cachePolicy);
 
 app.use(require('./routes/redirects'));
+app.use(releasedAssets);
 app.use(staticAssets);
 
 // Anonymous learning writes use their own strict Origin/JSON guard.

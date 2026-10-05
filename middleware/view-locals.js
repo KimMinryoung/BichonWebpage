@@ -10,6 +10,7 @@ const { sanitizeBasic, sanitizePost } = require('../utils/sanitize');
 const { truncateHtml } = require('../utils/truncate-html');
 const { normalizeLanguage, resolveLanguage, resolvePublicLanguage } = require('../utils/language');
 const { ASSET_VERSION } = require('../config/env');
+const { cssReleases, cssReleaseEnabled } = require('../config/css-releases');
 const {
     isStaticAssetPath,
     isCacheablePublicTextPath,
@@ -20,6 +21,15 @@ const {
 function viewLocals(req, res, next) {
     if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
 
+    if (cssReleaseEnabled) {
+        const snapshot = cssReleases.snapshot();
+        const send = res.send.bind(res);
+        res.send = body => {
+            const type = res.get('Content-Type') || '';
+            const html = typeof body === 'string' && (type ? /text\/html/i.test(type) : /^\s*</.test(body));
+            return send(html ? cssReleases.rewrite(body, snapshot) : body);
+        };
+    }
     res.locals.siteStyleModules = siteStyleModules;
     res.locals.siteOrigin = seo.SITE_ORIGIN;
     res.locals.absoluteUrl = seo.absoluteUrl;

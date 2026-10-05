@@ -81,3 +81,5 @@ data/cache/
 # Raw fetched sources for the French translation drafts (PDF/HTML dumps, ~36MB)
 dev_docs/commulingo-french-translations-20260913/sources/
 data/commulingo/docs/.*.tmp
+
+.css-releases/

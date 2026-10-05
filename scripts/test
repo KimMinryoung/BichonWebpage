@@ -37,6 +37,7 @@ run() {
     fi
 }
 
+run css-releases    node scripts/test-css-releases.js
 run check-ui        node scripts/check-ui.js
 run test-seo        node scripts/test-seo.js
 run evidence-count  node scripts/test-commulingo-evidence-count.js

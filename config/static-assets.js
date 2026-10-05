@@ -33,4 +33,19 @@ const staticAssets = express.static(path.join(__dirname, '..', 'public'), {
     }
 });
 
-module.exports = { staticAssets };
+// Serve only public payloads, never release metadata, staging or pointers.
+const releaseRoot = process.env.CSS_RELEASE_DIR;
+function releasedAssets(req, res, next) {
+    if (!req.path.startsWith('/assets/')) return next();
+    const match = req.path.match(/^\/assets\/([a-f0-9]{32})\/(.+)$/);
+    const { safeFile } = require('../scripts/lib/css-release');
+    if (!releaseRoot || !match || !safeFile(match[2])) {
+        return res.status(404).end();
+    }
+    res.sendFile(match[2], {
+        root: path.join(releaseRoot, 'releases', match[1], 'public'),
+        dotfiles: 'deny',
+        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+    }, err => { if (err && !res.headersSent) res.status(err.statusCode || 404).end(); });
+}
+module.exports = { staticAssets, releasedAssets };

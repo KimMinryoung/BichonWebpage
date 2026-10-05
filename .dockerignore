@@ -6,3 +6,5 @@ data
 public/img/game/raw
 public/puzzles/.*-backup
 temp_dev
+
+.css-releases/

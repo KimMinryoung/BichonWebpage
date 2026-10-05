@@ -14,7 +14,8 @@ function isCacheablePublicTextPath(reqPath) {
 }
 
 function isStaticAssetPath(reqPath) {
-    return reqPath.startsWith('/css/')
+    return reqPath.startsWith('/assets/')
+        || reqPath.startsWith('/css/')
         || reqPath.startsWith('/js/')
         || reqPath.startsWith('/fonts/')
         || reqPath.startsWith('/img/')

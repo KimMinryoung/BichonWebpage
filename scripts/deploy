@@ -71,6 +71,11 @@ for arg in "$@"; do
 done
 
 cd "$FRONTEND_DIR"
+export CSS_RELEASE_HOST_DIR="${CSS_RELEASE_HOST_DIR:-$(dirname "$FRONTEND_DATA_DIR")/.css-releases}"
+[[ "$CSS_RELEASE_HOST_DIR" == /* ]] || { echo "CSS_RELEASE_HOST_DIR must be absolute" >&2; exit 2; }
+mkdir -p "$CSS_RELEASE_HOST_DIR"
+exec 9>"$CSS_RELEASE_HOST_DIR/deploy.lock"
+flock -n 9 || { err "Another app/CSS deployment is running."; exit 1; }
 
 # 1. Check source and deployed revisions
 git fetch origin
@@ -121,6 +126,10 @@ if ! npm test --silent; then
     exit 1
 fi
 
+# Prepare compatible CSS before standby starts. Each app has an independent
+# pointer: a failed app deploy does not change the old app's CSS selection.
+node scripts/css-release-cli.js prepare "$LOCAL"
+
 # 3. Build image
 log "Building Docker image..."
 docker build \
@@ -146,9 +155,12 @@ run_container() {
         "${mcp_publish[@]}" \
         "${pipeline_env[@]}" \
         -e "MCP_PORT=${MCP_PORT}" \
+        -e "GIT_SHA=$LOCAL" \
+        -e CSS_RELEASE_DIR=/app/css-releases \
         --restart "$restart" \
         --env-file "$FRONTEND_DIR/.env" \
         -v "$FRONTEND_DATA_DIR:/app/data" \
+        -v "$CSS_RELEASE_HOST_DIR:/app/css-releases:ro" \
         "$IMAGE_NAME" > /dev/null || return 1
     # Connect to the leninbot network for Redis and Postgres (leninbot-pg)
     # access. Without it the container is alive but useless, so say so here
@@ -202,6 +214,17 @@ if ! grep -q "127.0.0.1:${STANDBY_PORT} backup" "$NGINX_SITE" 2>/dev/null; then
     warn "Install nginx/leninbot-frontend.conf (see dev_docs/frontend-operations.md)."
 fi
 
+swap_started=0
+cleanup_deploy() {
+    local code=$?
+    if (( code != 0 )); then
+        if (( swap_started == 0 )); then remove_standby;
+        else err "Deployment interrupted during/after primary swap; standby retained. Recover with scripts/deploy --restart."; fi
+    fi
+}
+trap cleanup_deploy EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 remove_standby
 log "Starting standby on port ${STANDBY_PORT}..."
 run_container "$STANDBY_NAME" "$STANDBY_PORT" no || fail_standby "Standby container could not start."
@@ -239,6 +262,7 @@ docker exec "$STANDBY_NAME" node /app/scripts/audit-person-card-fields.js \
 # 6. Swap. The standby answers (nginx backup) from the moment the old primary
 #    stops until the new primary listens; then the primary is warmed before
 #    the standby goes away.
+swap_started=1
 log "Replacing the primary container..."
 docker stop "$CONTAINER_NAME" > /dev/null 2>&1 || true
 docker rm "$CONTAINER_NAME" > /dev/null 2>&1 || true

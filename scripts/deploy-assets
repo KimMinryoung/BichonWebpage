@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# CSS-only publish, status and rollback; no Docker build or container restart.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+export CSS_RELEASE_HOST_DIR="${CSS_RELEASE_HOST_DIR:-$PWD/.css-releases}"
+[[ "$CSS_RELEASE_HOST_DIR" == /* ]] || { echo "CSS_RELEASE_HOST_DIR must be absolute" >&2; exit 2; }
+mkdir -p "$CSS_RELEASE_HOST_DIR"
+exec 9>"$CSS_RELEASE_HOST_DIR/deploy.lock"
+flock -n 9 || { echo 'Another app/CSS deployment is running' >&2; exit 1; }
+command="${1:-publish}"
+case "$command" in
+    status) exec node scripts/css-release-cli.js status ;;
+    publish|rollback)
+        app="$(docker inspect -f '{{ index .Config.Labels "com.cyber-lenin.frontend.git-revision" }}' leninbot-frontend)"
+        mount="$(docker inspect -f '{{range .Mounts}}{{if eq .Destination "/app/css-releases"}}{{.Source}}{{end}}{{end}}' leninbot-frontend)"
+        [[ "$mount" == "$CSS_RELEASE_HOST_DIR" ]] || { echo 'Deploy the app with the CSS release mount first (or set CSS_RELEASE_HOST_DIR to its mount)' >&2; exit 1; }
+        node scripts/css-release-cli.js "$command" "$app" "${2:-}"
+        ;;
+    *) echo 'Usage: scripts/deploy-assets [publish|status|rollback RELEASE_ID]' >&2; exit 2 ;;
+esac

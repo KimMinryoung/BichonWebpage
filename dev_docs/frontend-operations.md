@@ -52,3 +52,16 @@ Admin은 passkey-only이고 /admin/*와 `/commulingo/admin/api`는 ADMIN_ALLOWED
 - 운영은 127.0.0.1:3000에 바인딩된다. 모바일에서는 운영 도메인 또는 Tailscale 미리보기를 사용한다.
 - `scripts/dev-preview start|stop|restart|status|logs`: leninbot-frontend-dev, Tailscale :3001, DEV_MODE=1, view/static 캐시 비활성화. 평소에는 꺼 둔다(운영처럼 DB를 주기 조회하고 약 350MB를 쓴다). 개발 세션에서 `start`로 켜고 끝나면 `stop`한다. 재부팅 뒤 다시 켜지지 않고, 켠 뒤 `DEV_PREVIEW_TTL`(기본 4h, 0이면 끄지 않음)이 지나면 저절로 멈춘다. 운영 `scripts/deploy`와 마찬가지로 실행한 사람이 아니라 `data/` 소유자의 UID로 실행하므로 root로 실행해도 root 소유 파일이 생기지 않는다. 보고서 렌더 캐시는 운영과 섞이지 않게 `data/cache/report-renders.dev.json`을 따로 쓴다. 운영 캐시(`report-renders.json`)는 leninbot 파이프라인이 읽는다.
 - Android 원격 디버깅은 chrome://inspect를 사용할 수 있다.
+
+## CSS 독립 게시 (2026-10-05)
+
+- 최초 구조 전환 뒤 운영 컨테이너는 호스트 `.css-releases/`를 `/app/css-releases:ro`로 읽는다. nginx는 계속 Express로 프록시한다. 작업 중인 `public/`은 운영에 마운트하지 않는다.
+- CSS를 수정한 뒤 `node scripts/build-site-css.js`와 `node scripts/build-commulingo-list-css.js`로 필요한 파생 파일을 생성하고 커밋·푸시한다. `scripts/deploy-assets publish`는 **커밋된 HEAD**를 임시 디렉터리에 추출해 파생 파일 일치, CSS 구문, 로컬 의존 파일을 검사한 뒤 게시한다. 전체 테스트·이미지 빌드·컨테이너 교체는 실행하지 않는다. 배포 뒤 대표 화면만 브라우저로 확인한다.
+- `scripts/deploy-assets status`: 앱별 활성 릴리스와 소스 리비전. `.css-releases/history.jsonl`에는 이전/새 릴리스가 남는다. `scripts/deploy-assets rollback <32자리 릴리스 ID>`는 현재 앱과 호환되는 릴리스의 파일 해시를 검사한 뒤 원자적으로 되돌린다. 재빌드·재시작은 없다.
+- 전체 배포와 CSS 게시·롤백은 `.css-releases/deploy.lock`을 공유하고 동시 실행을 거부한다. 별도 worktree에서 작업하면 두 스크립트에 같은 절대 경로의 `CSS_RELEASE_HOST_DIR`를 지정한다. 기본 전체 배포 경로는 `FRONTEND_DATA_DIR` 부모 아래 `.css-releases`; CSS 게시 기본은 저장소 루트 아래 `.css-releases`다.
+- `/assets/<release>/css/...`와 해당 CSS의 폰트·이미지·import 의존 파일은 릴리스별 사본이며 1년 immutable이다. 이전 URL을 덮어쓰거나 삭제하지 않는다. 자동 삭제는 구현하지 않았으며, 보존 공간이 늘어나는 것은 의도한 정책이다. 삭제를 도입할 때에는 마지막 참조부터 최소 1년과 오래 열린 페이지를 고려해야 한다. staging·매니페스트·이력은 HTTP로 제공하지 않는다.
+- 앱의 full Git SHA별 `active/<sha>.json`을 요청 시작 때 한 번 캡처한다. HTML 캐시에서 나온 응답, 영어 페이지, 오류 페이지, preload와 스크립트에 전달하는 CSS URL까지 전송 시 같은 릴리스로 바꾼다. 새 포인터가 손상되거나 릴리스 검증이 실패하면 마지막 정상 릴리스를 유지한다. 처음부터 읽을 수 없으면 이미지 안의 기존 `/css/...?...`로 폴백한다. 비 HTML 응답과 JS URL은 기존 정책을 유지한다. 별도 정적 nonogram HTML은 CSS 파일 참조가 없으며 이 게시 경로에 포함하지 않는다.
+- EJS·JS·서버·의존성·폰트 원본·이미지 원본 변경은 기존 `scripts/deploy` 전체 경로를 사용한다. CSS 전용 게시에서는 운영 앱 리비전과 HEAD의 차이가 `public/css/*.css` 및 `dev_docs/`뿐인지 검사한다. CSS와 EJS/JS를 함께 바꾸어야 하는 작업도 전체 배포한다. 순수 CSS라도 현재 앱의 마크업·JS와의 호환성은 작성자가 확인한다.
+- 전체 배포는 새 앱의 CSS 릴리스를 standby 시작 전에 준비한다. 앱 리비전별 포인터이므로 standby 실패가 기존 앱의 CSS를 바꾸지 않는다. 같은 앱 재시작/재배포 또는 이전 앱 리비전으로 복귀할 때 이미 검증된 호환 포인터를 유지한다. swap 이전 중단은 standby를 정리하며 swap 이후 중단은 nginx가 쓸 standby를 남기고 복구 안내를 출력한다. 복구는 `scripts/deploy --restart`로 한다.
+- 게시 뒤 원본 HTML과 새 CSS URL을 확인한다. Cloudflare HTML 캐시는 별도로 최대 60초 및 stale-while-revalidate 기간 동안 이전 참조를 제공할 수 있다. 즉시 공개 반영이 필요한 경우에만 `node scripts/cloudflare-purge.js <영향 경로>`를 사용한다.
+- 배포 구조 회귀 테스트: `node scripts/test-css-releases.js` (전체 `scripts/test`에도 포함). 포인터 손상·누락·불완전 릴리스, 응답 스냅샷, 이전 URL 내용, 의존 파일, HTTP 캐시 정책·경로 차단, 잠금, 앱 호환 검사와 롤백을 검사한다.
