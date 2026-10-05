@@ -46,7 +46,7 @@ function reportMentionsByTerm(file = RENDER_CACHE) {
 // importance, the number of linked history events (2026-09-17).
 async function candidates(config, limit = 40) {
     const { rows } = await db.query(`SELECT 'person' AS kind, 'update' AS action, p.id AS target, topic.name AS topic,
-            100 - LEAST(${store.personEvents('p.id')}, 79) AS priority,
+            (100 - LEAST(${store.personEvents('p.id')}, 79))::int AS priority,
             'Commissioned missing information or evidence: ' || topic.name AS reason,
             concat_ws(':', p.updated_at::text,
                 (SELECT max(e.created_at)::text FROM commulingo_person_evidence e WHERE e.person_id=p.id),

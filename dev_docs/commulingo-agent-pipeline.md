@@ -40,7 +40,9 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 - 작업 상태 테이블 `commulingo_pipeline_*`(jobs, attempts, artifacts, budget, sources, materials, …)를 frontend 소유로 넘긴다. 기존 데이터는 그대로 두고 이 저장소 마이그레이션이 이후 변경을 맡는다. `curation_gaps`·`person_review_jobs`도 다시 frontend 작업 상태가 된다(3단계에서 leninbot으로 넘겼던 것을 되돌림).
 - 후보 선정(planner): 지금 leninbot `planner.candidates`의 SQL을 그대로 frontend에서 실행한다. 소유자가 직접 읽으므로 MCP 경유가 필요 없다.
 - 단계: discover → research → draft → judge → validate → review → submit. 모델이 필요한 단계(research, draft, judge, review)는 일꾼 작업 하나다. validate·submit은 frontend 로컬(`editorial-pipeline-service.js`)이다.
-- 실행: 주기 tick(컨테이너 안 스케줄러 또는 호스트 timer가 부르는 스크립트), 작업 lease, 일일 상한(`commulingo_pipeline_budget`), 실패·보류 처리. 지금 leninbot `engine.py`·`store.py`의 규칙을 옮긴다.
+- 실행: 주 컨테이너 안 스케줄러(`COMMULINGO_PIPELINE_TICK=1`, `scripts/deploy`가 주 컨테이너에만 설정)가 `tick_seconds`마다 tick한다. advisory lock으로 한 번에 하나만 돈다. `plan_every_ticks`마다 검토 정산·예산 대기 해제·묶음·planner를 돌리고, 매 tick 최대 `batch_limit`개 단계를 진행한다. 설정은 `data/commulingo/pipeline-config.json`(호스트 마운트, 다음 tick부터 반영)이며 `enabled=false`면 아무것도 하지 않는다.
+- 모델이 필요한 단계는 `request()`가 일꾼 요청을 만들고, 엔진이 `stage_budget_usd`를 예약한 뒤 일꾼에 맡기고 작업을 `deferred`로 대기시킨다(payload `waiting`: taskId, 예약). 다음 점유 때 끝났으면 실제 비용으로 정산하고 `complete()`가 결과를 단계 산출물로 바꾼다. 일꾼이 꺼져 있으면 실패로 세지 않고 다시 기다린다. 아직 없는 단계의 작업은 하루 미룬다.
+- 운영: `scripts/commulingo-pipeline list|show <id>|retry <id>|costs|plan [--apply]|consolidate [--apply]|tick [--force] [--plan]`.
 - 지시문: leninbot `commulingo/pipeline/prompts.py`와 `agents/commulingo_curator.py`의 CommuLingo 규칙(표기, 근거 형식, 분량)을 frontend 템플릿으로 옮긴다.
 - 알림: 보류·검토 필요 알림은 frontend 관리 화면에 표시하고, Telegram 알림이 필요하면 leninbot MCP의 알림 도구를 부른다(미정).
 
@@ -55,7 +57,7 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 | 단계 | 저장소 | 내용 | 상태 |
 |---|---|---|---|
 | W1 | leninbot | 일꾼 작업 표·실행 서비스·`/worker/mcp`(`agent_task_submit/get/cancel`), 조사 도구 카탈로그, validator 콜백, 출처 반환 | 완료(2026-10-05). frontend 컨테이너에서 위키 조회 작업($0.001)과 `editorial_validate` 왕복(거부 3회 후 통과) 확인 |
-| W2 | frontend | 파이프라인 골격: 작업 상태 테이블 소유 이전, tick·lease·예산, planner, 일꾼 클라이언트 | |
+| W2 | frontend | 파이프라인 골격: 작업 상태 테이블 소유 이전, tick·lease·예산, planner, 일꾼 클라이언트 | 완료(2026-10-05). `services/commulingo-pipeline/`, migration 288, `scripts/commulingo-pipeline`. 운영 데이터에서 frontend planner와 leninbot planner의 후보 40건이 순서까지 같음을 확인. `enabled=false` |
 | W3 | frontend | 첫 단계 이전: 인물 `basics` 보강(research → draft → validate → review → submit)을 일꾼으로 끝까지 실행 | |
 | W4 | frontend | 나머지 주제(bio, nationality, moment, sections, events)와 용어·gap·discover | |
 | W5 | leninbot | leninbot 파이프라인·레인·운영 스크립트 삭제, 남은 읽기(채팅·롤플레이·KG 동기화) MCP 전환 | |
