@@ -604,14 +604,15 @@ Design decision: do not use swords for defence. The Cheka/security tradition use
 Current `/commulingo/people` UX:
 
 - Since 2026-10-05 the page is one explorer (`data/commulingo/people-explorer.js`,
-  `public/js/commulingo-people.js`): a search box and a bar of five facet
+  `public/js/commulingo-people.js`): a search box and a bar of six facet
   buttons — 기능·활동, 국가·세력 (with the Soviet institution line inside),
-  시대 (era groups), 정치적 입장 (collections), 국적 (citizenship). Each facet is a
+  시대 (era groups), 정치적 입장 (collections), 국적 (citizenship), 출신 배경
+  (national origin). Each facet is a
   `<details>` panel of link chips with counts; every count applies the other
   conditions, and function + affiliation + office must hold on the same
   activity row. Set conditions show as removable chips under the bar.
 - URL is the state: `function`, `affiliation`, `office`, `era`, `position`,
-  `citizenship`, `q`, `sort` (`relevance` with a query, otherwise `chrono`;
+  `citizenship`, `origin`, `q`, `sort` (`relevance` with a query, otherwise `chrono`;
   `name`), `view` (`list` default, `cards`), `page`. Unknown ids 404. The
   script swaps `#people-browser` in place; without script every chip is a
   plain link and the search box is a GET form.

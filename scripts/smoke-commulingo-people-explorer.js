@@ -15,6 +15,7 @@ const people = [
     person('kang', 1898, 'mao', 'china', [{ functionId: 'security', affiliationId: 'china-ccp' }, { functionId: 'diplomacy', affiliationId: 'comintern' }]),
     person('scholar', 1920, 'scholars', 'france', [{ functionId: 'scholarship', affiliationId: null }]),
 ];
+people[2].origin = { code: 'korea', label: 'korea' };
 const standardized = {
     people,
     groups: [
@@ -37,6 +38,10 @@ assert.deepEqual(ids(run({ function: 'security', era: 'mao' })), ['kang']);
 assert.deepEqual(ids(run({ position: 'communist', citizenship: 'soviet' })), ['lenin', 'dzerzhinsky']);
 assert.deepEqual(ids(run({ affiliation: 'state-soviet', office: 'state-security' })), ['dzerzhinsky']);
 assert.deepEqual(ids(run({ sort: 'name' })), ['dzerzhinsky', 'kang', 'lenin', 'scholar']);
+
+assert.deepEqual(ids(run({ origin: 'korea' })), ['kang'], 'national background is its own facet');
+assert.deepEqual(ids(run({ origin: 'korea', citizenship: 'soviet' })), []);
+assert.equal(run({ function: 'security' }).facets.origins.find(o => o.id === 'korea').count, 1);
 
 // Each facet counts its options under the other conditions only.
 const security = run({ function: 'security' });
@@ -61,7 +66,7 @@ const chips = run({ function: 'security', era: 'mao' }).conditions;
 assert.deepEqual(chips.map(c => c.href), ['/commulingo/people?era=mao', '/commulingo/people?function=security']);
 
 // Unknown ids are broken links (404), not empty results.
-for (const [param, value] of [['function', 'nope'], ['affiliation', 'nope'], ['office', 'nope'], ['era', 'nope'], ['position', 'nope'], ['citizenship', 'atlantis']]) {
+for (const [param, value] of [['function', 'nope'], ['affiliation', 'nope'], ['office', 'nope'], ['era', 'nope'], ['position', 'nope'], ['citizenship', 'atlantis'], ['origin', 'atlantis']]) {
     assert.equal(explorer.unknownCondition(standardized, explorer.parseExplorerQuery({ [param]: value })), param);
 }
 assert.equal(explorer.unknownCondition(standardized, explorer.parseExplorerQuery({ function: 'security', era: 'mao' })), '');

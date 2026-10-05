@@ -35,6 +35,7 @@
     var activeEra = findActive(facets.eras, state.eraId);
     var activePosition = findActive(facets.positions, state.positionId);
     var activeCitizenship = findActive(facets.citizenships, state.citizenship);
+    var activeOrigin = findActive(facets.origins, state.origin);
     %>
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>" data-page-size="<%= pageSize %>">
         <%- include('../partials/commulingo-crumb', {
@@ -51,7 +52,7 @@
                 placeholder="<%= t.searchByNameAlias %>"
                 autocomplete="off" spellcheck="false" maxlength="200"
                 aria-label="<%= t.searchPeople %>">
-            <% [['function', 'functionId'], ['affiliation', 'affiliationId'], ['office', 'officeId'], ['era', 'eraId'], ['position', 'positionId'], ['citizenship', 'citizenship'], ['view', 'view']].forEach(function(pair) { if (state[pair[1]]) { %>
+            <% [['function', 'functionId'], ['affiliation', 'affiliationId'], ['office', 'officeId'], ['era', 'eraId'], ['position', 'positionId'], ['citizenship', 'citizenship'], ['origin', 'origin'], ['view', 'view']].forEach(function(pair) { if (state[pair[1]]) { %>
             <input type="hidden" name="<%= pair[0] %>" value="<%= state[pair[1]] %>">
             <% } }) %>
             <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= t.clearSearch %>"<%= state.q ? '' : ' hidden' %>><%- roleIconSvg('x') %></button>
@@ -112,15 +113,18 @@
                 </div></details>
                 <% } %>
 
-                <% facetOpen('citizenship', en ? 'Citizenship' : '국적', !!activeCitizenship) %>
+                <% [['citizenship', en ? 'Citizenship' : '국적', facets.citizenships, activeCitizenship],
+                    ['origin', en ? 'Background' : '출신 배경', facets.origins, activeOrigin]].forEach(function(nation) { %>
+                <% facetOpen(nation[0], nation[1], !!nation[3]) %>
                     <% facetSearch(en ? 'Country' : '나라 이름') %>
                     <section class="commu-people-facet-group" data-facet-group>
                         <div class="commu-people-chips">
-                            <% chip(href({ citizenship: '' }), en ? 'Any' : '전체', null, !activeCitizenship) %>
-                            <% facets.citizenships.forEach(function(c) { chip(href({ citizenship: c.id }), c.label, c.count, c.id === state.citizenship) }) %>
+                            <% chip(href({ [nation[0]]: '' }), en ? 'Any' : '전체', null, !nation[3]) %>
+                            <% nation[2].forEach(function(c) { chip(href({ [nation[0]]: c.id }), c.label, c.count, nation[3] === c) }) %>
                         </div>
                     </section>
                 </div></details>
+                <% }) %>
             </div>
 
             <% if (explore.conditions.length) { %>

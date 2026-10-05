@@ -7,7 +7,7 @@ const { peopleShellFor, sortPeopleChronologically } = require('./people-view');
 
 // The people explorer behind /commulingo/people: one search box and five
 // facets (activity, affiliation with its Soviet institution line, era group,
-// political position, citizenship) over the standardized snapshot. Every
+// political position, citizenship, national background) over the standardized snapshot. Every
 // state is a URL; with no condition the page shows the era shelves instead of
 // results. Pure functions of the snapshot — the route renders, this decides.
 
@@ -15,7 +15,7 @@ const { peopleShellFor, sortPeopleChronologically } = require('./people-view');
 // former /commulingo/activities parameters, kept so its links redirect as is.
 const PARAMS = [
     ['function', 'functionId'], ['affiliation', 'affiliationId'], ['office', 'officeId'],
-    ['era', 'eraId'], ['position', 'positionId'], ['citizenship', 'citizenship'],
+    ['era', 'eraId'], ['position', 'positionId'], ['citizenship', 'citizenship'], ['origin', 'origin'],
 ];
 const SORTS = ['relevance', 'chrono', 'name'];
 const VIEWS = ['list', 'cards'];
@@ -65,6 +65,7 @@ function unknownCondition(standardized, state) {
     if (state.eraId && !(standardized.groups || []).some(g => g.id === state.eraId)) return 'era';
     if (state.positionId && !(standardized.collections || []).some(c => c.id === state.positionId)) return 'position';
     if (state.citizenship && !standardized.people.some(p => p.citizenship?.code === state.citizenship)) return 'citizenship';
+    if (state.origin && !standardized.people.some(p => p.origin?.code === state.origin)) return 'origin';
     return '';
 }
 
@@ -78,6 +79,7 @@ function matches(person, state, skip = '') {
     if (skip !== 'era' && state.eraId && person.groupId !== state.eraId) return false;
     if (skip !== 'position' && state.positionId && !(person.collections || []).some(c => c.id === state.positionId)) return false;
     if (skip !== 'citizenship' && state.citizenship && person.citizenship?.code !== state.citizenship) return false;
+    if (skip !== 'origin' && state.origin && person.origin?.code !== state.origin) return false;
     if (skip === 'activity') return true;
     return activitiesModel.matchesActivities(person, activityFilter(state));
 }
@@ -150,17 +152,21 @@ function facetsFor(standardized, state, pool, lang) {
         id: c.id, icon: c.icon, label: c.title, count: positionCounts.get(c.id) || 0,
     })), state.positionId);
 
-    const citizenshipPool = pool.filter(p => matches(p, state, 'citizenship'));
-    const citizenshipCounts = new Map();
-    for (const p of standardized.people) {
-        const code = p.citizenship?.code;
-        if (code && !citizenshipCounts.has(code)) citizenshipCounts.set(code, { id: code, label: canonicalNationalityLabel('citizenship', code, p.citizenship.label, lang), count: 0 });
-    }
-    for (const p of citizenshipPool) if (p.citizenship?.code) citizenshipCounts.get(p.citizenship.code).count++;
-    const citizenships = keep([...citizenshipCounts.values()], state.citizenship)
-        .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
+    // Citizenship and national background are the person's two flags
+    // (person.citizenship, person.origin), each its own facet.
+    const nationalityFacet = (field, kind, activeCode) => {
+        const counts = new Map();
+        for (const p of standardized.people) {
+            const code = p[field]?.code;
+            if (code && !counts.has(code)) counts.set(code, { id: code, label: canonicalNationalityLabel(kind, code, p[field].label, lang), count: 0 });
+        }
+        for (const p of pool) if (p[field]?.code && matches(p, state, field)) counts.get(p[field].code).count++;
+        return keep([...counts.values()], activeCode).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
+    };
+    const citizenships = nationalityFacet('citizenship', 'citizenship', state.citizenship);
+    const origins = nationalityFacet('origin', 'nationalOrigin', state.origin);
 
-    return { functions, affiliations, affiliationGroups, topAffiliations, offices, eras, positions, citizenships };
+    return { functions, affiliations, affiliationGroups, topAffiliations, offices, eras, positions, citizenships, origins };
 }
 
 // Facet counts walk every option over the pool (the affiliation facet is
@@ -196,6 +202,8 @@ function activeConditions(state, facets, lang) {
     add('positionId', find(facets.positions, state.positionId)?.label, find(facets.positions, state.positionId)?.icon);
     const citizenship = find(facets.citizenships, state.citizenship);
     add('citizenship', citizenship && (en ? `Citizenship: ${citizenship.label}` : `국적: ${citizenship.label}`));
+    const origin = find(facets.origins, state.origin);
+    add('origin', origin && (en ? `Background: ${origin.label}` : `출신 배경: ${origin.label}`));
     return chips;
 }
 
