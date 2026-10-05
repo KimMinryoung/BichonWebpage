@@ -1,3 +1,7 @@
-// Stage registry. A stage missing here is deferred by the engine as not yet
-// ported (dev_docs/commulingo-agent-pipeline.md W3/W4 add them).
-module.exports = {};
+// Stage registry. research and draft are one author session (the editor),
+// review is independent; both run in the leninbot worker. A stage missing here
+// (discover) is deferred by the engine as not yet ported.
+const { editor, review } = require('./agent');
+const { judge, validate, submit } = require('./local');
+
+module.exports = { research: editor, draft: editor, review, judge, validate, submit };

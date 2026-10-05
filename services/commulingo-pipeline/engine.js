@@ -143,8 +143,11 @@ class Engine {
             await store.park(job, waiting, WAIT_SECONDS);
             return null;
         }
+        // A session whose usage is unknown (provider/process failure) keeps the
+        // whole reservation, as the leninbot engine did.
         const cost = Number(task.usage?.costUsd) || 0;
-        await store.settle(waiting.reservation, cost);
+        if (task.result?.costComplete !== false) await store.settle(waiting.reservation, cost);
+        if (task.result?.artifacts?.length) await store.saveArtifacts(job.id, task.result.artifacts);
         Object.assign(metrics, { worker_task: waiting.taskId, total_cost: cost, model_calls: task.usage?.modelCalls,
             provider_fallback: task.usage?.providerFallback, rejections: (task.rejections || []).slice(-12) });
         if (task.status !== 'done') throw new Error(`worker task ${waiting.taskId} ${task.status}: ${task.error || 'no result'}`);

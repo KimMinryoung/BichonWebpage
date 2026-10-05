@@ -151,6 +151,13 @@ async function park(job, waiting, seconds) {
     [job.id, job.lease_token, seconds, `waiting for worker task ${waiting.taskId}`, JSON.stringify({ waiting })], job));
 }
 
+// Session checkpoints a worker task returned (editor_checkpoint, fetch_failures).
+async function saveArtifacts(jobId, artifacts) {
+    for (const { stage, value } of artifacts) {
+        await db.query('INSERT INTO commulingo_pipeline_artifacts(job_id,stage,value) VALUES ($1,$2,$3::jsonb)', [jobId, stage, JSON.stringify(value)]);
+    }
+}
+
 async function startAttempt(job) {
     const id = randomUUID();
     await db.query('INSERT INTO commulingo_pipeline_attempts(id,job_id,stage) VALUES ($1,$2,$3)', [id, job.id, job.stage]);
@@ -355,8 +362,10 @@ async function listJobs(limit = 50) {
 }
 
 async function retry(jobId) {
-    const { rowCount } = await db.query(`UPDATE commulingo_pipeline_jobs SET status='ready', available_at=now(), attempts=0, last_error='',
-        updated_at=now() WHERE id=$1 AND status IN ('deferred','escalated')`, [jobId]);
+    const { rowCount } = await db.query(`UPDATE commulingo_pipeline_jobs SET status='ready',
+        stage=CASE WHEN stage='complete' AND payload->>'workflow'='editor' THEN 'research' ELSE stage END,
+        available_at=now(), attempts=0, last_error='', updated_at=now(), payload = payload - 'waiting'
+        WHERE id=$1 AND status IN ('deferred','escalated')`, [jobId]);
     return rowCount;
 }
 
@@ -368,7 +377,7 @@ async function costs() {
 
 module.exports = {
     LostLease, BudgetUnavailable, BUDGET_DAY_SQL, ACTIVE, SECTION_CAP, personEvents, personInGrace, termInGrace, termBodyEnough,
-    eventTitleMatch, termPriority, tx, enqueue, claim, finishStage, defer, park, startAttempt, finishAttempt, linkAttemptBudget,
+    eventTitleMatch, termPriority, tx, enqueue, claim, finishStage, defer, park, startAttempt, finishAttempt, linkAttemptBudget, saveArtifacts,
     reserve, settle, releaseBudgetWaits, releasePublicationWaits, publicationSlot, reprioritizePeople, retirePeopleInGrace,
     reprioritizeTerms, cancelDiscovery, consolidate, reconcileReviews, detail, listJobs, retry, costs,
 };

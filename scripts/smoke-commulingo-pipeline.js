@@ -50,6 +50,7 @@ stub('services/commulingo-pipeline/store.js', {
         return 'res-1';
     },
     settle: async (token, cost) => calls.push(['settle', token, cost]),
+    saveArtifacts: async (id, artifacts) => calls.push(['artifacts', id, artifacts.map(a => a.stage)]),
     park: async (job, waiting, seconds) => calls.push(['park', job.id, waiting.taskId, seconds]),
     defer: async (job, error, options) => calls.push(['defer', job.id, String(error.message || error), options]),
     finishStage: async (job, value, options) => calls.push(['finish', job.id, value, options]),
@@ -127,6 +128,15 @@ const job = (id, stage, extra = {}) => ({ id, stage, kind: 'person', action: 'up
     assert.equal(calls[1][0], 'defer');
     reset();
 
+    // A session task: checkpoints are stored even on failure; unknown usage keeps the reservation.
+    state.task = { status: 'failed', error: 'stage ended without validated result', usage: { costUsd: 0.1 },
+        result: { artifacts: [{ stage: 'editor_checkpoint', value: { draft: 1 } }], costComplete: false } };
+    state.queue = [parked()];
+    assert.equal((await engine.runOne()).status, 'error');
+    assert.deepEqual(calls.slice(0, 2).map(c => c[0]), ['artifacts', 'defer']);
+    assert.deepEqual(calls[0], ['artifacts', 4, ['editor_checkpoint']]);
+    reset();
+
     // Worker unreachable while parked: keep the handle and wait longer.
     state.workerDown = true;
     state.queue = [parked()];
@@ -148,6 +158,23 @@ const job = (id, stage, extra = {}) => ({ id, stage, kind: 'person', action: 'up
     assert.equal((await engine.runOne()).status, 'unported');
     state.queue = [job(8, 'submit')];
     assert.equal((await new Engine(stages, { ...config, phase: 'draft' }).runOne()).status, 'draft_ready');
+
+    // Shared stage helpers.
+    const { latest, currentArtifacts, writeRequest, reviewNoteChecks, topicsLabel } = require('../services/commulingo-pipeline/stages/shared');
+    const artifacts = [
+        { stage: 'research', value: { old: true } },
+        { stage: 'submit', value: { remaining_topics: ['sections'] } },
+        { stage: 'draft', value: { editor_version: 2, research: { baseline: 'v1-a' }, draft: { fields: { bio: 1 }, sources: ['s'] } } },
+        { stage: 'review', value: { decision: 'approve' } },
+    ];
+    assert.equal(currentArtifacts(artifacts).length, 2);
+    assert.deepEqual(latest(artifacts, 'research'), { baseline: 'v1-a' });
+    assert.deepEqual(latest(artifacts, 'review'), { decision: 'approve' });
+    assert.deepEqual(latest(artifacts, 'judge'), {});
+    assert.deepEqual(writeRequest({ kind: 'person', action: 'update', target: 'lenin' }, latest(artifacts, 'draft')),
+        { target: 'person', action: 'update', id: 'lenin', fields: { bio: 1 }, sources: ['s'], changedBy: 'commulingo-pipeline' });
+    assert.deepEqual(reviewNoteChecks([{ quote: 'q', citation_check: { verdict: 'supports' } }, 'x']), [{ quote: 'q' }, 'x']);
+    assert.equal(topicsLabel({ kind: 'person', topic: 'enrichment', payload: { topics: ['basics', 'bio'] } }), "['basics', 'bio']");
 
     console.log('commulingo pipeline ok');
 })().catch(err => {
