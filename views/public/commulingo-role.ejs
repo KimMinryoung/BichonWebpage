@@ -21,6 +21,7 @@
                 <h1><%= category.label %></h1>
                 <% if (category.intro) { %><p><%= category.intro %></p><% } %>
                 <p><%= people.length %> <%= en ? (people.length === 1 ? 'person' : 'people') : '명' %></p>
+                <p><a class="btn btn-small" href="/commulingo/people?position=<%= encodeURIComponent(category.id) %>"><%= en ? 'Narrow down with other conditions' : '다른 조건과 함께 찾기' %> →</a></p>
             </div>
         </header>
 

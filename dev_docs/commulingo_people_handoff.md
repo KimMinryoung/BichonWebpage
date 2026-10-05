@@ -603,7 +603,26 @@ Design decision: do not use swords for defence. The Cheka/security tradition use
 
 Current `/commulingo/people` UX:
 
-- The `인물 분류와 기관별 지도부 타임라인` index (role categories + the Soviet office timelines; the heading dropped its Soviet qualifier on 2026-09-21 when the Chinese categories arrived) is collapsed by default.
+- Since 2026-10-05 the page is one explorer (`data/commulingo/people-explorer.js`,
+  `public/js/commulingo-people.js`): a search box and a bar of five facet
+  buttons — 기능·활동, 국가·세력 (with the Soviet institution line inside),
+  시대 (era groups), 정치적 입장 (collections), 국적 (citizenship). Each facet is a
+  `<details>` panel of link chips with counts; every count applies the other
+  conditions, and function + affiliation + office must hold on the same
+  activity row. Set conditions show as removable chips under the bar.
+- URL is the state: `function`, `affiliation`, `office`, `era`, `position`,
+  `citizenship`, `q`, `sort` (`relevance` with a query, otherwise `chrono`;
+  `name`), `view` (`list` default, `cards`), `page`. Unknown ids 404. The
+  script swaps `#people-browser` in place; without script every chip is a
+  plain link and the search box is a GET form.
+- With no condition the era shelves and the office timeline index show as
+  before. With a condition the results show as one-line rows (50 a page) or
+  the full cards (24 a page). A query ranks name hits first and marks where
+  description hits begin.
+- `/commulingo/activities` 301-redirects here with its query; activity links
+  (`activityHref`) point here directly. `/commulingo/roles/<collection>`
+  stays as the curated page and links into the explorer with `?position=`.
+- The office timeline index (the Soviet office timelines) is collapsed by default and sits after the shelves.
 - Each individual office timeline card inside it is also collapsed by default.
 - Each office timeline card includes a small `기관 페이지 →` / `Office page →`
   link to `/commulingo/offices/:officeId`.

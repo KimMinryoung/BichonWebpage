@@ -1,0 +1,22 @@
+<%
+// One person as a row of the people explorer's list view: the whole row is
+// the link to the person page. Args: person, roleIconSvg, flagImg, en,
+// searchAlias (optional).
+var activity = person.primaryActivity;
+var badge = person.badgeActivity || activity;
+var roleLine = [activity && activity.label, badge && badge.affiliationLabel].filter(Boolean).join(' · ');
+%>
+<li class="commu-people-row" id="p-<%= person.id %>">
+    <a class="commu-people-row-link" href="/commulingo/people/<%= person.id %>">
+        <span class="commu-people-row-icon" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
+        <span class="commu-people-row-main">
+            <span class="commu-people-row-name"><strong><%= person.displayName || person.name %></strong><% if (person.cyrillic) { %> <span class="commu-people-row-native"><%= person.cyrillic %></span><% } %></span>
+            <% if (typeof searchAlias !== 'undefined' && searchAlias) { %><span class="commu-people-row-alias"><%= strings.commuLingoViews.personCard.matchedAlias %> <%= searchAlias %></span><% } %>
+            <% if (person.epithet) { %><span class="commu-people-row-epithet"><%= person.epithet %></span><% } %>
+        </span>
+        <span class="commu-people-row-meta">
+            <% if (roleLine) { %><span class="commu-people-row-role"><%= roleLine %></span><% } %>
+            <span class="commu-people-row-years"><% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.personCard.citizenship) %><% } %><%= person.years %></span>
+        </span>
+    </a>
+</li>

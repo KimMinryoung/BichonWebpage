@@ -76,7 +76,7 @@ function activityHref(a) {
     if (a.functionId) query.set('function', a.functionId);
     if (a.affiliationId) query.set('affiliation', a.affiliationId);
     if (a.officeId) query.set('office', a.officeId);
-    return `/commulingo/activities?${query}`;
+    return `/commulingo/people?${query}`;
 }
 
 // A function marked affiliationOptional (scholarship, arts) is usually done

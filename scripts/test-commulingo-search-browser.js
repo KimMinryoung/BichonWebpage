@@ -1,4 +1,4 @@
-/* global document, innerWidth */
+/* global document, innerWidth, location */
 // Read-only browser regression. BASE_URL selects preview or production.
 // Simulated failures are intercepted only in this browser.
 const { chromium } = require('playwright');
@@ -121,16 +121,19 @@ const assert = require('node:assert/strict');
         assert.equal(await page.locator('.commu-country-group[hidden]').count(), 0);
         await goto('/en/commulingo/people');
         await page.locator('#commu-people-search-input').fill('Lenin');
-        await page.locator('#commu-people-result-name-grid mark').first().waitFor();
-        const morePeople = page.locator('#commu-people-result-desc-grid button');
-        if (await morePeople.count()) {
-            await morePeople.click();
-            await page.locator('#commu-people-result-desc-grid .commu-person-card').first().waitFor();
-        }
+        await page.locator('#people-results').waitFor();
+        await page.locator('.commu-people-row-name mark').first().waitFor();
+        assert(page.url().includes('/en/commulingo/people?q=Lenin'));
+        assert((await page.locator('.commu-people-row-link').first().getAttribute('href')).startsWith('/en/'));
+        // A facet narrows the search in place and keeps the query.
+        await page.locator('details[data-facet="function"] > summary').click();
+        await page.locator('details[data-facet="function"] .commu-people-chip:not(.is-active)').first().click();
+        await page.waitForFunction(() => /function=/.test(location.search) && /q=Lenin/.test(location.search));
         await page.locator('#commu-people-search-input').fill('Stalin');
         await page.locator('#commu-people-search-input').press('Escape');
-        await page.waitForTimeout(300);
-        assert(await page.locator('#commu-people-results').isHidden());
+        await page.waitForFunction(() => !/q=/.test(location.search));
+        await page.goBack();
+        await page.waitForFunction(() => /q=Lenin/.test(location.search));
         assert.equal(errors.length, 0, errors.join('\n'));
         console.log('filters, paging, clear, retry, sorting, country scope, English, mobile, map and shared person highlighting passed');
     } finally { await browser.close(); }

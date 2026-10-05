@@ -1,4 +1,3 @@
-const activitiesModel = require('./person-activities');
 const { renderMarkdown } = require('../../utils/markdown');
 const { loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
@@ -73,15 +72,11 @@ function orderedPeopleGroupsMeta(standardized) {
 // memoized card fragments.
 const peopleShellMemo = new WeakMap(); // standardized -> { groupsMeta }
 
-function peopleShellFor(standardized, lang = 'ko') {
+function peopleShellFor(standardized) {
     let shell = peopleShellMemo.get(standardized);
     if (!shell) {
         shell = {
             groupsMeta: orderedPeopleGroupsMeta(standardized),
-            activityFunctions: activitiesModel.catalog.functions.map(f => ({
-                ...f, label: localize(f.label, lang),
-                count: standardized.people.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id })).length,
-            })),
         };
         peopleShellMemo.set(standardized, shell);
     }

@@ -1,23 +1,19 @@
 const activitiesModel = require('../data/commulingo/person-activities');
-const { localizeHtmlLinks } = require('../utils/seo');
-const { searchPeople, matchedAlias } = require('../utils/people-search');
+const explorer = require('../data/commulingo/people-explorer');
+const { languagePath } = require('../utils/seo');
 const express = require('express');
-const allStrings = require('../config/strings');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
 const { localize } = require('../data/commulingo/localize');
 const { redirectTarget } = require('../data/commulingo/people-store');
 const { loadCommuLingoPersonHistoryEvents } = require('../data/commulingo/history-events-store');
 const { relatedDocsFor } = require('../data/commulingo/docs-refs');
-const { renderAppView } = require('../utils/render-app-view');
-const { paginateList, PAGE_SIZE } = require('../data/commulingo/list-pagination');
-const { getLinkIndexes, createCardTextLinker } = require('../data/commulingo/linkify');
+const { PAGE_SIZE } = require('../data/commulingo/list-pagination');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
 const { otherNames } = require('../data/commulingo/person-other-names');
-const { flagImg, flagLabel } = require('../data/commulingo/flag-icons');
-const { personFlagHref, buildNationalityFilter } = require('../data/commulingo/nationality-filter');
+const { buildNationalityFilter } = require('../data/commulingo/nationality-filter');
 const { countryHref } = require('../data/commulingo/country-geography');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically } = require('../data/commulingo/people-view');
@@ -43,21 +39,40 @@ const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 const { courseChaptersFor } = require('../data/commulingo/book-page');
 const RETIRED_ROLE_PAGES = require('../data/commulingo/retired-role-pages');
 
+// The people explorer: search + facets over every person, and the era shelves
+// when no condition is set. Every state is a URL; commulingo-people.js swaps
+// #people-browser in place, so the same render serves links and script.
 router.get('/people', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
+        const state = explorer.parseExplorerQuery(req.query);
+        const merged = activitiesModel.catalog.retired?.[state.affiliationId];
+        if (merged) return res.redirect(301, languagePath(explorer.explorerHref(state, { affiliationId: merged, officeId: state.officeId, page: state.page }), lang));
+        const unknown = explorer.unknownCondition(standardized, state);
+        if (unknown) return errorPage.notFound(res, {
+            message: lang === 'en' ? 'This people filter does not exist.' : '없는 인물 분류 조건입니다.',
+            backHref: '/commulingo/people',
+            backLabel: lang === 'en' ? 'People' : '인물 사전',
+        });
+        const active = explorer.hasConditions(state);
+        const explore = explorer.exploreFor(standardized, state, lang);
         setShortPublicCache(res);
-        const { groupsMeta, activityFunctions } = peopleShellFor(standardized, lang);
+        const resultLabel = explore.conditions.map(c => c.label).join(' · ');
         res.render('public/commulingo-people', {
+            state,
+            active,
+            explore,
+            explorerHref: explorer.explorerHref,
             offices: standardized.offices,
-            personCollections: (standardized.collections || []).filter(c => c.personIds.length),
-            activityFunctions,
-            groupsMeta,
-            peopleCount: standardized.people.length,
+            groupsMeta: peopleShellFor(standardized).groupsMeta,
+            people: active ? explore.pagination.pageItems : [],
+            linkifyPersonText: active && explore.view === 'cards' ? await cardTextLinker(res) : null,
             pageSize: PAGE_SIZE,
             roleIconSvg,
             roleHubHref,
-            pageTitle: lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들',
+            pageTitle: active
+                ? (lang === 'en' ? `${resultLabel} — People` : `${resultLabel} — 인물 사전`)
+                : (lang === 'en' ? 'People of the Revolution and the USSR' : '인물 사전 — 혁명과 소련의 사람들'),
             pageDescription: lang === 'en'
                 ? 'The people who stood at the forks of the two decision-simulation history books.'
                 : '두 권의 결정 시뮬레이션 역사책, 그 갈림길에 서 있던 사람들.',
@@ -66,46 +81,6 @@ router.get('/people', async (req, res) => {
     } catch (err) {
         console.error('commulingo people:', err);
         commuLingoLoadError(res, { message: { ko: '인물 사전을 불러올 수 없습니다.', en: 'Failed to load people data.' } });
-    }
-});
-
-// Search the cached text index before rendering any cards. No DB query or
-// full-group HTML download is needed per keystroke. Limit each response to
-// one screenful per rank; subsequent pages are requested only on demand.
-router.get('/people/search', async (req, res) => {
-    const query = typeof req.query.q === 'string' ? req.query.q.trim() : '';
-    const bucket = req.query.bucket;
-    const offset = Number(req.query.offset || 0);
-    if (query.length > 200 || (bucket !== undefined && !['name', 'desc'].includes(bucket))
-        || !Number.isSafeInteger(offset) || offset < 0) return res.status(400).json({ error: 'Invalid search' });
-    try {
-        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
-        const hits = searchPeople(standardized, query, sortPeopleChronologically);
-        const buckets = {};
-        const keys = bucket ? [bucket] : ['name', 'desc'];
-        // Show the strongest matches first. Lower ranks retain their full
-        // counts, but their cards are fetched when the reader expands them.
-        const initialBucket = bucket || keys.find(key => hits[key].length);
-        let indexes;
-        for (const key of keys) {
-            const people = key === initialBucket ? hits[key].slice(offset, offset + 20) : [];
-            let html = '';
-            if (people.length) {
-                indexes = indexes || await getLinkIndexes(lang);
-                html = await renderAppView(req, 'partials/commulingo-people-group-cards', {
-                    strings: allStrings[lang], people, groupId: '', en: lang === 'en',
-                    searchAliases: key === 'name' ? Object.fromEntries(people.map(p => [p.id, matchedAlias(p, query, lang)])) : {},
-                    roleIconSvg, roleHubHref, flagImg, personFlagHref,
-                    linkifyPersonText: createCardTextLinker(indexes),
-                });
-            }
-            buckets[key] = { total: hits[key].length, next: offset + people.length, html: lang === 'en' ? localizeHtmlLinks(html, 'en') : html };
-        }
-        setShortPublicCache(res);
-        res.json({ buckets });
-    } catch (err) {
-        console.error('commulingo people search:', err);
-        res.status(500).json({ error: 'Failed to load people' });
     }
 });
 
@@ -134,7 +109,7 @@ router.get('/people/list/:groupId', async (req, res) => {
         const groupId = typeof req.params.groupId === 'string' ? req.params.groupId.trim() : '';
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
         const group = (standardized.groups || []).find(item => item.id === groupId);
-        const meta = peopleShellFor(standardized, lang).groupsMeta.find(item => item.id === groupId);
+        const meta = peopleShellFor(standardized).groupsMeta.find(item => item.id === groupId);
         if (!group) {
             const merged = redirectTarget(loaded.data, 'people-group', groupId);
             if (merged) return res.redirect(301, `/commulingo/people/list/${encodeURIComponent(merged)}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
@@ -209,72 +184,11 @@ router.get('/offices/:officeId', async (req, res) => {
     }
 });
 
-router.get('/activities', async (req, res) => {
-    try {
-        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
-        const functionId = typeof req.query.function === 'string' ? req.query.function : '';
-        const affiliationId = typeof req.query.affiliation === 'string' ? req.query.affiliation : '';
-        const officeId = typeof req.query.office === 'string' ? req.query.office : '';
-        const q = typeof req.query.q === 'string' ? req.query.q.trim().slice(0, 200) : '';
-        const merged = activitiesModel.catalog.retired?.[affiliationId];
-        if (merged) {
-            const query = new URLSearchParams(Object.entries(req.query).filter(([, v]) => typeof v === 'string'));
-            query.set('affiliation', merged);
-            return res.redirect(301, `${req.baseUrl}${req.path}?${query}`);
-        }
-        const officeKnown = id => standardized.offices.some(o => o.id === id);
-        if ((functionId && !activitiesModel.functions.has(functionId)) || (affiliationId && !activitiesModel.affiliations.has(affiliationId)) || (officeId && !officeKnown(officeId))) {
-            return errorPage(res, 404, { message: lang === 'en' ? 'Activity filter not found.' : '활동 분류를 찾을 수 없습니다.' });
-        }
-        const filter = { functionId, affiliationId, officeId };
-        // A search narrows the pool the filters and their counts work on, with
-        // the people dictionary's ranking (name, then role, then text hits).
-        let pool = standardized.people;
-        if (q) {
-            const hits = searchPeople(standardized, q, sortPeopleChronologically);
-            pool = [...new Set([...hits.name, ...hits.desc])];
-        }
-        const matched = pool.filter(p => activitiesModel.matchesActivities(p, filter));
-        const people = q ? matched : sortPeopleChronologically(matched);
-        // Keep active filters visible even when an existing link has no matches.
-        const functions = activitiesModel.catalog.functions.map(f => ({ ...f, label: localize(f.label, lang), count: pool.filter(p => activitiesModel.matchesActivities(p, { functionId: f.id, affiliationId, officeId })).length }))
-            .filter(f => f.count > 0 || f.id === functionId);
-        // Picking another affiliation drops the institution line (it only
-        // narrows Soviet affiliations), so affiliation counts ignore it.
-        const affiliations = activitiesModel.catalog.affiliations.map(a => ({ ...a, label: localize(a.label, lang), count: pool.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId: a.id })).length }))
-            .filter(a => a.count > 0 || a.id === affiliationId);
-        // Institution lines only narrow Soviet activities, so they are offered
-        // once a Soviet affiliation is chosen (or arrive in a link), never as a
-        // free-standing filter that dead-ends on other affiliations.
-        const offerOffices = officeId || activitiesModel.OFFICE_AFFILIATIONS.has(affiliationId);
-        const offices = offerOffices ? standardized.offices.map(o => ({ id: o.id, label: o.title, count: pool.filter(p => activitiesModel.matchesActivities(p, { functionId, affiliationId, officeId: o.id })).length }))
-            .filter(o => o.count > 0 || o.id === officeId) : [];
-        const groupedAffiliations = new Map();
-        for (const a of affiliations) {
-            const key = a.countryCode || 'international';
-            if (!groupedAffiliations.has(key)) groupedAffiliations.set(key, { label: localize(a.countryLabel, lang) || flagLabel(key, lang) || (lang === 'en' ? 'International organizations' : '국제조직'), items: [] });
-            groupedAffiliations.get(key).items.push(a);
-        }
-        const affiliationGroups = [...groupedAffiliations.values()].sort((a,b) => a.label.localeCompare(b.label, lang));
-        const query = new URLSearchParams({ function: functionId, affiliation: affiliationId, lang });
-        if (officeId) query.set('office', officeId);
-        if (q) query.set('q', q);
-        const pagination = paginateList(people, people, { page: req.query.page || 1 }, `/commulingo/activities?${query}&page=`, { mark: false });
-        setShortPublicCache(res);
-        const count = f => pool.filter(p => activitiesModel.matchesActivities(p, f)).length;
-        const allCounts = { functions: count({ affiliationId, officeId }), affiliations: count({ functionId }) };
-        const topAffiliations = [...affiliations].sort((a, b) => b.count - a.count).slice(0, 8);
-        if (affiliationId && !topAffiliations.some(a => a.id === affiliationId)) topAffiliations.push(affiliations.find(a => a.id === affiliationId));
-        res.render('public/commulingo-activities', { filter, q, functions, affiliations, affiliationGroups, offices, allCounts, topAffiliations: topAffiliations.filter(Boolean), pagination, total: people.length,
-            people: pagination.pageItems, roleIconSvg, roleHubHref, flagImg, personFlagHref,
-            linkifyPersonText: await cardTextLinker(res),
-            pageTitle: lang === 'en' ? 'People by activity and affiliation' : '기능·활동과 국가·세력별 인물',
-            pageDescription: lang === 'en' ? 'Explore people by what they did and the organizations they served.' : '인물이 수행한 활동과 그 활동의 국가·세력을 함께 살펴봅니다.',
-            pagePath: '/commulingo/activities' });
-    } catch (err) {
-        console.error('commulingo activities:', err);
-        commuLingoLoadError(res, { message: { ko: '활동 분류를 불러올 수 없습니다.', en: 'Failed to load activities.' } });
-    }
+// The former activity browser is the people explorer now; its links keep
+// their parameters (function, affiliation, office, q, page).
+router.get('/activities', (req, res) => {
+    const query = new URLSearchParams(Object.entries(req.query).filter(([, v]) => typeof v === 'string')).toString();
+    res.redirect(301, languagePath(`/commulingo/people${query ? `?${query}` : ''}`, res.locals.lang));
 });
 
 router.get('/roles/:categoryId', async (req, res) => {

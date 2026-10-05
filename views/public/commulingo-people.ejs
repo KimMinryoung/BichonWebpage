@@ -8,151 +8,244 @@
 
     <%
     var en = lang === 'en';
+    var facets = explore.facets;
+    var t = strings.commuLingoViews.people;
+    var shelfTitles = { soviet: t.peopleOfTheSoviet, china: t.peopleOfChina, france: t.peopleOfFrance, world: t.peopleBeyondTheSoviet };
+    var href = function(changes) { return explorerHref(state, changes); };
+    var findActive = function(rows, id) { return rows.find(function(r) { return r.id === id; }); };
+    // Every option is a link to the resulting URL: the page works without
+    // script, and commulingo-people.js swaps #people-browser in place.
+    function chip(url, label, count, isActive, icon, note) { %>
+        <a class="commu-dict-chip commu-people-chip<%= isActive ? ' is-active' : '' %>" href="<%= url %>"<%- isActive ? ' aria-current="true"' : '' %>><% if (icon) { %><%- roleIconSvg(icon) %><% } %><%= label %><% if (note) { %><small><%= note %></small><% } %><% if (count != null) { %> <span><%= count %></span><% } %></a>
+    <% }
+    // `current` marks a facet that holds a condition; the condition chips
+    // below the bar say which.
+    function facetOpen(key, title, current) { %>
+        <details class="commu-people-facet<%= current ? ' is-set' : '' %>" data-facet="<%= key %>">
+            <summary><span class="commu-people-facet-title"><%= title %></span><% if (current) { %><span class="commu-sr-only"><%= en ? '(set)' : '(선택됨)' %></span><% } %><%- roleIconSvg('chevron-down') %></summary>
+            <div class="commu-people-facet-panel">
+    <% }
+    function facetSearch(label) { %>
+                <input type="search" class="ui-control commu-people-facet-search" data-facet-search hidden aria-label="<%= label %>" placeholder="<%= label %>">
+                <p class="commu-people-facet-status" role="status" data-facet-search-status hidden></p>
+    <% }
+    var activeFunction = findActive(facets.functions, state.functionId);
+    var activeAffiliation = findActive(facets.affiliations, state.affiliationId);
+    var activeOffice = findActive(facets.offices, state.officeId);
+    var activeEra = findActive(facets.eras, state.eraId);
+    var activePosition = findActive(facets.positions, state.positionId);
+    var activeCitizenship = findActive(facets.citizenships, state.citizenship);
     %>
     <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>" data-page-size="<%= pageSize %>">
         <%- include('../partials/commulingo-crumb', {
-            trail: [{ label: strings.commuLingoViews.people.people }],
+            trail: [{ label: t.people }],
             dictJump: 'people' }) %>
 
-        <h1 class="commu-sr-only"><%= strings.commuLingoViews.people.peopleOfTheRevolution %></h1>
+        <h1 class="commu-sr-only"><%= t.peopleOfTheRevolution %></h1>
 
-        <div class="commu-people-search">
+        <%# Outside #people-browser so a swap keeps focus and caret. Without
+            script it is a GET form carrying the other conditions. %>
+        <form class="commu-people-search" action="/commulingo/people" method="get" role="search" data-people-search>
             <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
-            <input type="search" id="commu-people-search-input" class="commu-people-search-input"
-                placeholder="<%= strings.commuLingoViews.people.searchByNameAlias %>"
-                autocomplete="off" spellcheck="false"
-                aria-label="<%= strings.commuLingoViews.people.searchPeople %>">
-            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= strings.commuLingoViews.people.clearSearch %>" hidden><%- roleIconSvg('x') %></button>
-        </div>
+            <input type="search" name="q" value="<%= state.q %>" id="commu-people-search-input" class="commu-people-search-input"
+                placeholder="<%= t.searchByNameAlias %>"
+                autocomplete="off" spellcheck="false" maxlength="200"
+                aria-label="<%= t.searchPeople %>">
+            <% [['function', 'functionId'], ['affiliation', 'affiliationId'], ['office', 'officeId'], ['era', 'eraId'], ['position', 'positionId'], ['citizenship', 'citizenship'], ['view', 'view']].forEach(function(pair) { if (state[pair[1]]) { %>
+            <input type="hidden" name="<%= pair[0] %>" value="<%= state[pair[1]] %>">
+            <% } }) %>
+            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= t.clearSearch %>"<%= state.q ? '' : ' hidden' %>><%- roleIconSvg('x') %></button>
+        </form>
 
-        <div class="commu-people-results" id="commu-people-results" hidden>
-            <section class="commu-people-result-section" id="commu-people-result-name" hidden>
-                <div class="commu-people-result-head">
-                    <span class="commu-people-result-label"><%= strings.commuLingoViews.people.nameMatches %></span>
-                    <span class="commu-people-result-count" id="commu-people-result-name-count"></span>
-                </div>
-                <div class="commu-people-grid" id="commu-people-result-name-grid"></div>
-            </section>
-            <section class="commu-people-result-section" id="commu-people-result-desc" hidden>
-                <div class="commu-people-result-head">
-                    <span class="commu-people-result-label"><%= strings.commuLingoViews.people.mentionedInDescription %></span>
-                    <span class="commu-people-result-count" id="commu-people-result-desc-count"></span>
-                </div>
-                <div class="commu-people-grid" id="commu-people-result-desc-grid"></div>
-            </section>
-            <p class="commu-people-result-empty" id="commu-people-result-empty" role="status" aria-live="polite" hidden><%= strings.commuLingoViews.people.noPeopleFound %></p>
-        </div>
+        <section class="commu-people-browser" id="people-browser" aria-busy="false">
+            <div class="commu-people-filterbar" role="group" aria-label="<%= en ? 'Filter people' : '인물 조건' %>">
+                <% facetOpen('function', en ? 'Activity' : '기능·활동', !!activeFunction) %>
+                    <div class="commu-people-chips">
+                        <% chip(href({ functionId: '' }), en ? 'Any' : '전체', null, !activeFunction) %>
+                        <% facets.functions.forEach(function(f) { chip(href({ functionId: f.id }), f.label, f.count, f.id === state.functionId, f.icon) }) %>
+                    </div>
+                </div></details>
 
-        <section class="commu-hub-section" aria-labelledby="activity-index-title">
-            <h2 id="activity-index-title"><%= en ? 'Functions and activities' : '기능·활동별 인물' %></h2>
-            <div class="commu-office-grid">
-            <% ((typeof activityFunctions !== 'undefined' && activityFunctions) || []).forEach(function(f) { %>
-                <a class="commu-office-card commu-role-category-link" href="/commulingo/activities?function=<%= f.id %>">
-                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(f.icon) %></span>
-                    <span class="commu-role-category-copy"><h3><%= f.label %></h3><p><%= f.count %> <%= en ? 'people' : '명' %></p></span>
-                    <span aria-hidden="true">→</span>
-                </a>
-            <% }) %>
+                <% facetOpen('affiliation', en ? 'Affiliation' : '국가·세력', !!activeAffiliation) %>
+                    <p class="commu-people-facet-note"><%= en
+                        ? 'Affiliation of the activity itself, not citizenship. “State” is service in a state’s government, army or security; a party is party posts and membership.'
+                        : '국적이 아니라 그 활동을 한 곳입니다. ‘국가기관’은 정부·군·보안 등 국가 복무, 정당은 당 직책과 당원 활동입니다.' %></p>
+                    <% if (facets.offices.length) { %>
+                    <h3><%= en ? 'Soviet institution line' : '소련 기관 계열' %></h3>
+                    <div class="commu-people-chips">
+                        <% chip(href({ officeId: '' }), en ? 'Any' : '전체', null, !activeOffice) %>
+                        <% facets.offices.forEach(function(o) { chip(href({ officeId: o.id }), o.label, o.count, o.id === state.officeId) }) %>
+                    </div>
+                    <% } %>
+                    <h3><%= en ? 'Most people' : '인물이 많은 소속' %></h3>
+                    <div class="commu-people-chips">
+                        <% chip(href({ affiliationId: '' }), en ? 'Any' : '전체', null, !activeAffiliation) %>
+                        <% facets.topAffiliations.forEach(function(a) { chip(href({ affiliationId: a.id }), a.label, a.count, a.id === state.affiliationId, a.icon === 'hammer-sickle' ? 'hammer-sickle' : '', a.kindLabel) }) %>
+                    </div>
+                    <h3><%= en ? 'All ' + facets.affiliations.length + ' by country' : '나라별 전체 ' + facets.affiliations.length + '개' %></h3>
+                    <% facetSearch(en ? 'Country or organization' : '국가·조직 이름') %>
+                    <% facets.affiliationGroups.forEach(function(group) { %>
+                    <section class="commu-people-facet-group" data-facet-group>
+                        <h4><%= group.label %></h4>
+                        <div class="commu-people-chips">
+                        <% group.items.forEach(function(a) { chip(href({ affiliationId: a.id }), (a.parentId ? '↳ ' : '') + a.label, a.count, a.id === state.affiliationId, '', a.kindLabel) }) %>
+                        </div>
+                    </section>
+                    <% }) %>
+                </div></details>
+
+                <% facetOpen('era', en ? 'Era' : '시대', !!activeEra) %>
+                    <% var openShelf = ''; %>
+                    <div class="commu-people-chips">
+                        <% chip(href({ eraId: '' }), en ? 'Any' : '전체', null, !activeEra) %>
+                    </div>
+                    <% facets.eras.forEach(function(era) { %>
+                    <% if (era.shelf !== openShelf) { %><% if (openShelf) { %></div><% } openShelf = era.shelf; %><h3><%= shelfTitles[era.shelf] || '' %></h3><div class="commu-people-chips"><% } %>
+                    <% chip(href({ eraId: era.id }), era.label, era.count, era.id === state.eraId, '', era.range) %>
+                    <% }) %>
+                    <% if (openShelf) { %></div><% } %>
+                </div></details>
+
+                <% if (facets.positions.length) { %>
+                <% facetOpen('position', en ? 'Position' : '정치적 입장', !!activePosition) %>
+                    <div class="commu-people-chips">
+                        <% chip(href({ positionId: '' }), en ? 'Any' : '전체', null, !activePosition) %>
+                        <% facets.positions.forEach(function(p) { chip(href({ positionId: p.id }), p.label, p.count, p.id === state.positionId, p.icon) }) %>
+                    </div>
+                </div></details>
+                <% } %>
+
+                <% facetOpen('citizenship', en ? 'Citizenship' : '국적', !!activeCitizenship) %>
+                    <% facetSearch(en ? 'Country' : '나라 이름') %>
+                    <section class="commu-people-facet-group" data-facet-group>
+                        <div class="commu-people-chips">
+                            <% chip(href({ citizenship: '' }), en ? 'Any' : '전체', null, !activeCitizenship) %>
+                            <% facets.citizenships.forEach(function(c) { chip(href({ citizenship: c.id }), c.label, c.count, c.id === state.citizenship) }) %>
+                        </div>
+                    </section>
+                </div></details>
             </div>
-        </section>
-        <% var collectionsList = (typeof personCollections !== 'undefined' && personCollections) || []; %>
-        <% if (collectionsList.length) { %>
-        <section class="commu-hub-section" aria-labelledby="collection-index-title">
-            <h2 id="collection-index-title"><%= en ? 'Political positions' : '정치적 입장' %></h2>
-            <div class="commu-office-grid">
-            <% collectionsList.forEach(function(c) { %>
-                <a class="commu-office-card commu-role-category-link" href="<%= c.href %>">
-                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(c.icon) %></span>
-                    <span class="commu-role-category-copy"><h3><%= c.title %></h3><p><%= c.personIds.length %> <%= en ? 'people' : '명' %></p></span>
-                    <span aria-hidden="true">→</span>
-                </a>
-            <% }) %>
-            </div>
-        </section>
-        <% } %>
-        <% var officesList = (typeof offices !== 'undefined' && offices) || []; %>
-        <% if (officesList.length) { %>
-        <details class="commu-office-index" aria-label="<%= en ? 'Institution leadership timelines' : '기관별 지도부 타임라인' %>">
-            <summary class="commu-office-index-head">
-                <span class="commu-people-range">INDEX</span>
-                <h2><%= en ? 'Institution leadership timelines' : '기관별 지도부 타임라인' %></h2>
-            </summary>
-            <div class="commu-office-grid">
-                <a class="commu-office-card commu-role-category-link" href="/commulingo/politburo">
-                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
-                    <span class="commu-role-category-copy">
-                        <h3><%= strings.commuLingoViews.people.theSovietPolitburo %></h3>
-                        <p><%= strings.commuLingoViews.people.membership19171991By %></p>
-                    </span>
-                    <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-                </a>
-                <% officesList.forEach(function(office) { %>
-                <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
-                    <summary class="commu-office-card-head">
-                        <a class="commu-office-icon-link" href="/commulingo/offices/<%= office.id %>" title="<%= office.title %>" aria-label="<%= en ? 'Open ' + office.title + ' page' : office.title + ' 기관 페이지 열기' %>" onclick="event.stopPropagation()"><%- roleIconSvg(office.icon) %></a>
-                        <span class="commu-office-range"><%= office.range %></span>
-                        <h3><%= office.title %></h3>
-                        <p><%= office.blurb %></p>
-                    </summary>
-                    <ol class="commu-office-rows">
-                        <% office.rows.forEach(function(row) { %>
-                        <li>
-                            <span class="commu-office-years"><%= row.years %></span>
-                            <span class="commu-office-main">
-                                <% if (row.personId) { %>
-                                <a href="#p-<%= row.personId %>"><%= row.name %></a>
-                                <% } else { %>
-                                <strong><%= row.name %></strong>
-                                <% } %>
-                                <small><%= row.body %></small>
-                                <% if (row.note) { %><em><%= row.note %></em><% } %>
-                            </span>
-                        </li>
-                        <% }) %>
-                    </ol>
-                    <a class="commu-office-page-link" href="/commulingo/offices/<%= office.id %>"><%= strings.commuLingoViews.people.officePage %></a>
-                </details>
+
+            <% if (explore.conditions.length) { %>
+            <div class="commu-people-conditions">
+                <% explore.conditions.forEach(function(c) { %>
+                <a class="commu-people-condition" href="<%= c.href %>" aria-label="<%= (en ? 'Remove ' : '조건 해제: ') + c.label %>"><%= c.label %><%- roleIconSvg('x') %></a>
                 <% }) %>
+                <% if (explore.conditions.length > 1) { %><a class="commu-people-condition-reset" href="/commulingo/people"><%= en ? 'Clear all' : '모두 해제' %></a><% } %>
             </div>
-        </details>
-        <% } %>
+            <% } %>
 
-        <%
-        // Group shells only — the card grids (~8MB of markup) load per group
-        // from /commulingo/people/cards?group=<id> when a group is opened or a
-        // search begins. data-people carries the member ids so #p-<id> deep
-        // links know which group to fetch; the 「목록으로 보기」 link on each
-        // header is the server-rendered page of the same cards
-        // (/people/list/<id>), which keeps every person reachable for
-        // crawlers and script-less readers.
-        // The groups sit on boxed shelves (Soviet era sequence, Chinese era
-        // sequence, the French Revolution, the wider world), which orderedPeopleGroupsMeta
-        // returns in shelf order — so each shelf closes where the next opens.
-        var shelfTitles = {
-            soviet: strings.commuLingoViews.people.peopleOfTheSoviet,
-            china: strings.commuLingoViews.people.peopleOfChina,
-            france: strings.commuLingoViews.people.peopleOfFrance,
-            world: strings.commuLingoViews.people.peopleBeyondTheSoviet
-        };
-        var openShelf = '';
-        %>
-        <% groupsMeta.forEach(function(group) { %>
-        <% if (group.shelf !== openShelf) { %>
-        <% if (openShelf) { %></section><% } openShelf = group.shelf; %>
-        <section class="commu-people-shelf is-shelf-<%= group.shelf %>" aria-labelledby="commu-people-<%= group.shelf %>-title">
-        <h2 class="commu-people-shelf-head" id="commu-people-<%= group.shelf %>-title"><%= shelfTitles[group.shelf] || '' %></h2>
-        <% } %>
-        <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
-            <summary class="commu-people-group-head">
-                <span class="commu-people-range"><%= group.range %></span>
-                <a class="commu-people-group-list-link" href="/commulingo/people/list/<%= group.id %>" onclick="event.stopPropagation()"><%= strings.commuLingoViews.people.viewAsAList %></a>
-                <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= strings.commuLingoViews.people.text %></span></h2>
-                <p><%= group.blurb %></p>
-            </summary>
-            <div class="commu-people-grid"></div>
-        </details>
-        <% }) %>
-        <% if (openShelf) { %></section><% } %>
+            <% if (active) { %>
+            <div class="commu-people-results-head" id="people-results" tabindex="-1">
+                <h2 aria-live="polite"><%= explore.pagination.matched %><%= en ? (explore.pagination.matched === 1 ? ' person' : ' people') : '명' %></h2>
+                <div class="commu-people-results-tools">
+                    <span role="group" aria-label="<%= en ? 'Order' : '정렬' %>">
+                    <% explore.sorts.forEach(function(s) { %><a class="commu-people-tool<%= s.active ? ' is-active' : '' %>" href="<%= s.href %>"<%- s.active ? ' aria-current="true"' : '' %>><%= { relevance: en ? 'Best match' : '관련도순', chrono: en ? 'By birth' : '연대순', name: en ? 'A–Z' : '가나다순' }[s.id] %></a><% }) %>
+                    </span>
+                    <span role="group" aria-label="<%= en ? 'View' : '보기' %>">
+                    <% explore.views.forEach(function(v) { %><a class="commu-people-tool<%= v.active ? ' is-active' : '' %>" href="<%= v.href %>"<%- v.active ? ' aria-current="true"' : '' %>><%- roleIconSvg(v.id === 'list' ? 'list' : 'layout-grid') %><%= v.id === 'list' ? (en ? 'List' : '목록') : (en ? 'Cards' : '카드') %></a><% }) %>
+                    </span>
+                </div>
+            </div>
+            <%# The glossary entry for the chosen affiliation, as the row the term page links back from. %>
+            <% if (activeAffiliation && activeAffiliation.termIds.length) { %>
+            <a class="commu-people-term-link" href="/commulingo/terms/<%= encodeURIComponent(activeAffiliation.termIds[0]) %>"><span><%= en ? 'Glossary' : '용어 사전' %></span><strong><%= activeAffiliation.label %></strong><span aria-hidden="true">→</span></a>
+            <% } %>
+            <% if (!people.length) { %>
+            <p class="commu-people-result-empty"><%= state.q ? (en ? 'No people match this search and these conditions.' : '검색어와 조건에 맞는 인물이 없습니다.') : (en ? 'No people match these conditions.' : '조건에 맞는 인물이 없습니다.') %></p>
+            <% } else if (explore.view === 'cards') { %>
+            <div class="commu-people-grid">
+            <% people.forEach(function(person, i) { %>
+                <% if (i === explore.descStart) { %><p class="commu-people-result-divider"><%= t.mentionedInDescription %></p><% } %>
+                <%- include('../partials/commulingo-person-card', { person: person, en: en, roleIconSvg: roleIconSvg, roleHubHref: roleHubHref, flagImg: flagImg, searchAlias: explore.searchAliases[person.id] }) %>
+            <% }) %>
+            </div>
+            <% } else { %>
+            <ul class="commu-people-rows">
+            <% people.forEach(function(person, i) { %>
+                <% if (i === explore.descStart) { %><li class="commu-people-result-divider"><%= t.mentionedInDescription %></li><% } %>
+                <%- include('../partials/commulingo-person-row', { person: person, en: en, roleIconSvg: roleIconSvg, flagImg: flagImg, searchAlias: explore.searchAliases[person.id] }) %>
+            <% }) %>
+            </ul>
+            <% } %>
+            <%- include('../partials/commulingo-list-pager', { pagination: explore.pagination, en: en, target: '#people-browser' }) %>
+            <% } else { %>
+            <%
+            // Group shells only — the card grids (~8MB of markup) load per group
+            // from /commulingo/people/cards?group=<id> when a group is opened.
+            // data-people carries the member ids so #p-<id> deep links know which
+            // group to fetch; the 「목록으로 보기」 link on each header is the
+            // server-rendered page of the same cards (/people/list/<id>), which
+            // keeps every person reachable for crawlers and script-less readers.
+            // The groups sit on boxed shelves (Soviet era sequence, Chinese era
+            // sequence, the French Revolution, the wider world) in shelf order.
+            var openShelfBox = '';
+            %>
+            <% groupsMeta.forEach(function(group) { %>
+            <% if (group.shelf !== openShelfBox) { %>
+            <% if (openShelfBox) { %></section><% } openShelfBox = group.shelf; %>
+            <section class="commu-people-shelf is-shelf-<%= group.shelf %>" aria-labelledby="commu-people-<%= group.shelf %>-title">
+            <h2 class="commu-people-shelf-head" id="commu-people-<%= group.shelf %>-title"><%= shelfTitles[group.shelf] || '' %></h2>
+            <% } %>
+            <details class="commu-people-group is-<%= group.id %>" data-group-id="<%= group.id %>" data-people="<%= group.personIds %>">
+                <summary class="commu-people-group-head">
+                    <span class="commu-people-range"><%= group.range %></span>
+                    <a class="commu-people-group-list-link" href="/commulingo/people/list/<%= group.id %>" onclick="event.stopPropagation()"><%= t.viewAsAList %></a>
+                    <h2><%= group.title %> <span class="commu-people-group-count"><%= group.count %><%= t.text %></span></h2>
+                    <p><%= group.blurb %></p>
+                </summary>
+                <div class="commu-people-grid"></div>
+            </details>
+            <% }) %>
+            <% if (openShelfBox) { %></section><% } %>
+
+            <% if (offices.length) { %>
+            <details class="commu-office-index" aria-label="<%= en ? 'Institution leadership timelines' : '기관별 지도부 타임라인' %>">
+                <summary class="commu-office-index-head">
+                    <span class="commu-people-range">INDEX</span>
+                    <h2><%= en ? 'Institution leadership timelines' : '기관별 지도부 타임라인' %></h2>
+                </summary>
+                <div class="commu-office-grid">
+                    <a class="commu-office-card commu-role-category-link" href="/commulingo/politburo">
+                        <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
+                        <span class="commu-role-category-copy">
+                            <h3><%= t.theSovietPolitburo %></h3>
+                            <p><%= t.membership19171991By %></p>
+                        </span>
+                        <span class="commu-role-category-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <% offices.forEach(function(office) { %>
+                    <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
+                        <summary class="commu-office-card-head">
+                            <a class="commu-office-icon-link" href="/commulingo/offices/<%= office.id %>" title="<%= office.title %>" aria-label="<%= en ? 'Open ' + office.title + ' page' : office.title + ' 기관 페이지 열기' %>" onclick="event.stopPropagation()"><%- roleIconSvg(office.icon) %></a>
+                            <span class="commu-office-range"><%= office.range %></span>
+                            <h3><%= office.title %></h3>
+                            <p><%= office.blurb %></p>
+                        </summary>
+                        <ol class="commu-office-rows">
+                            <% office.rows.forEach(function(row) { %>
+                            <li>
+                                <span class="commu-office-years"><%= row.years %></span>
+                                <span class="commu-office-main">
+                                    <% if (row.personId) { %>
+                                    <a href="#p-<%= row.personId %>"><%= row.name %></a>
+                                    <% } else { %>
+                                    <strong><%= row.name %></strong>
+                                    <% } %>
+                                    <small><%= row.body %></small>
+                                    <% if (row.note) { %><em><%= row.note %></em><% } %>
+                                </span>
+                            </li>
+                            <% }) %>
+                        </ol>
+                        <a class="commu-office-page-link" href="/commulingo/offices/<%= office.id %>"><%= t.officePage %></a>
+                    </details>
+                    <% }) %>
+                </div>
+            </details>
+            <% } %>
+            <% } %>
+        </section>
     </main>
 
     <%- include('../partials/footer') %>

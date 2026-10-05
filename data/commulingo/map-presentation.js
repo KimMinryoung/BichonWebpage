@@ -115,7 +115,7 @@ function affiliationsFor(people, code, lang) {
             id: a.id,
             label: localize(a.label, lang),
             period: periodLabel(a.periods),
-            href: `/commulingo/activities?affiliation=${encodeURIComponent(a.id)}`,
+            href: `/commulingo/people?affiliation=${encodeURIComponent(a.id)}`,
             count: members.length,
             members: members.slice(0, MEMBER_PREVIEW).map(person => ({ id: person.id, name: (person.names && person.names.short) || person.displayName || person.name })),
             isChild,
