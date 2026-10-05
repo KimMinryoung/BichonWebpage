@@ -70,7 +70,7 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 | W1 | leninbot | 일꾼 작업 표·실행 서비스·`/worker/mcp`(`agent_task_submit/get/cancel`), 조사 도구 카탈로그, validator 콜백, 출처 반환 | 완료(2026-10-05). frontend 컨테이너에서 위키 조회 작업($0.001)과 `editorial_validate` 왕복(거부 3회 후 통과) 확인 |
 | W2 | frontend | 파이프라인 골격: 작업 상태 테이블 소유 이전, tick·lease·예산, planner, 일꾼 클라이언트 | 완료(2026-10-05). `services/commulingo-pipeline/`, migration 288, `scripts/commulingo-pipeline`. 운영 데이터에서 frontend planner와 leninbot planner의 후보 40건이 순서까지 같음을 확인. `enabled=false` |
 | W3 | 양쪽 | 세션 작업 종류(leninbot `commulingo_editor`·`commulingo_review`), frontend research/draft/review/judge/validate/submit 단계, `scripts/commulingo-pipeline run <id>` | 완료(2026-10-05). job 63899(fritz-platten 절)가 조사·초안($0.004) → 독립 검토 승인($0.012) → 공개까지 진행, 사이트 반영·예산 정산·시도 기록 확인. 정기 실행(`enabled`)은 2026-10-01 소유자 중단 결정이 있어 켜지 않았다 |
-| W4 | frontend | 나머지 주제(bio, nationality, moment, sections, events)와 용어·gap·discover | |
+| W4 | 양쪽 | discover 단계(일꾼 `commulingo_discover`, 후보 → create 작업, 거절된 요청 gap은 skipped), MCP `entry_lookup`. 다른 주제·용어는 W3 경로를 그대로 쓴다 | 완료(2026-10-05). 등록된 인물(레닌) 요청 gap으로 확인: 모델이 거절($0.0005) → gap skipped, material 처리 기록 |
 | W5 | leninbot | leninbot 파이프라인·레인·운영 스크립트 삭제, 남은 읽기(채팅·롤플레이·KG 동기화) MCP 전환 | |
 | W6 | DB | leninbot DB 계정의 CommuLingo 테이블 권한 회수(관리자 MCP 5단계). leninbot은 지금 `postgres` 슈퍼유저로 접속하므로 먼저 전용 role로 바꿔야 한다 | |
 
