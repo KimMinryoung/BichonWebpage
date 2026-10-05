@@ -185,7 +185,7 @@ router.get('/posts', postRoutes.list);
 router.get('/chat', (req, res) => {
     res.render('public/chat', {
         chatApiUrl: '/api/proxy',
-        pageTitle: 'Cyber-Lenin',
+        pageTitle: res.locals.strings.nav.chat,
         pageDescription: '자율 AI 에이전트 사이버-레닌과 대화하는 채팅 페이지입니다.',
         pagePath: '/chat',
     });

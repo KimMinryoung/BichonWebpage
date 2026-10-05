@@ -3,7 +3,7 @@
 <% const _path = (typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/'; %>
 <% const _isHome = _path === '/'; %>
 <% const _title = _isHome
-    ? (strings.siteSeoTitle || strings.siteName)
+    ? strings.siteName
     : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' | ' + strings.siteName : strings.siteName); %>
 <% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
 <% const _urlLang = (typeof urlLanguage !== 'undefined' && urlLanguage === 'en') ? 'en' : 'ko'; %>

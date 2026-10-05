@@ -28,13 +28,13 @@ async function main() {
     assert.strictEqual(inferLanguage({ headers: { 'accept-language': 'en-US,en;q=0.9' } }), 'en');
 
     const koHead = await renderHead('ko');
-    assert.ok(koHead.includes('<title>Cyber-Lenin — 정세 분석·정치경제·AI 주권 연구</title>'));
+    assert.ok(koHead.includes('<title>Cyber-Lenin</title>'));
     assert.ok(koHead.includes('국제 정세, 정치경제, 기술 민주주의, AI 주권'));
     assert.ok(koHead.includes('<link rel="canonical" href="https://cyber-lenin.com/">'));
     assert.ok(koHead.includes('hreflang="en" href="https://cyber-lenin.com/en/"'));
 
     const enHead = await renderHead('en');
-    assert.ok(enHead.includes('Geopolitics, Political Economy &amp; AI Sovereignty'));
+    assert.ok(enHead.includes('<title>Cyber-Lenin</title>'));
     assert.ok(enHead.includes('<link rel="canonical" href="https://cyber-lenin.com/en/">'));
     assert.ok(enHead.includes('hreflang="ko" href="https://cyber-lenin.com/"'));
 
