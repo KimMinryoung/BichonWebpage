@@ -1,4 +1,4 @@
-/* global document, innerWidth, location */
+/* global document, innerWidth, location, window */
 // Read-only browser regression. BASE_URL selects preview or production.
 // Simulated failures are intercepted only in this browser.
 const { chromium } = require('playwright');
