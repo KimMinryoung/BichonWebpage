@@ -275,7 +275,6 @@ router.get('/robots.txt', (req, res) => {
         'User-agent: *\n' +
         'Allow: /\n' +
         BLOCKED_FILTER_PATHS.flatMap(p => [`Disallow: ${p}\n`, `Disallow: /en${p}\n`]).join('') +
-        'Host: cyber-lenin.com\n' +
         'Sitemap: https://cyber-lenin.com/sitemap.xml\n' +
         '# RSS: https://cyber-lenin.com/rss.xml\n' +
         '# Atom: https://cyber-lenin.com/atom.xml\n'
