@@ -156,6 +156,15 @@ server.on('error', (err) => {
 server.keepAliveTimeout = 65 * 1000;
 server.headersTimeout = 66 * 1000;
 
+// CommuLingo admin MCP on its own internal port (dev_docs/commulingo-admin-mcp.md).
+// A bad client config must not take the site down with it.
+let mcpServer = null;
+try {
+    mcpServer = require('./mcp').startMcpServer();
+} catch (err) {
+    console.error('[mcp] not started:', err.message);
+}
+
 // Express 4 does not route async handler rejections anywhere; without these,
 // one rejected promise ends the process (Node ≥15 default) and a thrown
 // exception leaves it in an unknown state. Log the rejection and keep serving;
@@ -182,6 +191,7 @@ function shutdown(signal) {
     // server.close() only stops accepting; idle keep-alive sockets and the
     // long-lived chat/SSE streams would otherwise hold it open until the
     // force-exit above fired on every deploy.
+    if (mcpServer) mcpServer.close();
     server.closeIdleConnections();
     const closeAll = setTimeout(() => server.closeAllConnections(), 2000);
     closeAll.unref();

@@ -23,6 +23,7 @@ CONTAINER_NAME="leninbot-frontend"
 # and the deploy's own checks never compete with visitors on the primary.
 STANDBY_NAME="leninbot-frontend-standby"
 STANDBY_PORT=3002
+MCP_PORT=3100
 NGINX_SITE="/etc/nginx/sites-available/leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
@@ -130,12 +131,19 @@ docker build \
 # 4. Start the new image as a standby and check it before it serves anyone.
 run_container() {
     local name="$1" port="$2" restart="$3"
+    # Only the primary publishes the internal CommuLingo admin MCP listener
+    # (dev_docs/commulingo-admin-mcp.md); the standby has no MCP port, so MCP
+    # calls fail for the few seconds the primary is being replaced.
+    local mcp_publish=()
+    [[ "$name" == "$CONTAINER_NAME" ]] && mcp_publish=(-p "127.0.0.1:${MCP_PORT}:${MCP_PORT}")
     docker run -d \
         --name "$name" \
         --user "$RUN_AS_UID_GID" \
         --label "$REVISION_LABEL=$LOCAL" \
         --add-host=host.docker.internal:host-gateway \
         -p "127.0.0.1:${port}:3000" \
+        "${mcp_publish[@]}" \
+        -e "MCP_PORT=${MCP_PORT}" \
         --restart "$restart" \
         --env-file "$FRONTEND_DIR/.env" \
         -v "$FRONTEND_DATA_DIR:/app/data" \
