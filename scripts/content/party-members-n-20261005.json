@@ -1,0 +1,1863 @@
+{
+ "add": [
+  {
+   "personId": "james-f-byrnes",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1910,
+    "endYear": 1972,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/James_F._Byrnes",
+      "locator": "characters 4804:4860; sha256 518d7d32666bd59c0e5f8bc3f11ff6856e0f0e9c056d96ff7be92a04051f25c3",
+      "claim": "제임스 F. 번스는 1910년 미국 민주당 예비선거에서 승리했다.",
+      "excerpt": "In 1910, he narrowly won the Democratic primary for U.S."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/James_F._Byrnes",
+      "locator": "characters 23105:23143; sha256 518d7d32666bd59c0e5f8bc3f11ff6856e0f0e9c056d96ff7be92a04051f25c3",
+      "claim": "제임스 F. 번스는 1964년에도 미국 민주당원으로 남았다.",
+      "excerpt": "but Byrnes himself remained a Democrat"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "endre-bajcsy-zsilinszky",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "party-hungarian-unity",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1922,
+    "endYear": 1923,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Endre_Bajcsy-Zsilinszky",
+      "locator": "characters 4910:4983; sha256 477b89dc55d8cccc5725f3d93b80cb4cb2cd1b2911f237232a24d6496148140f",
+      "claim": "버이치질린스키 엔드레는 1922년 통일당 소속으로 의회에 선출되었다.",
+      "excerpt": "Elected to the Parliament as a representative of the Unity Party in 1922."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Endre_Bajcsy-Zsilinszky",
+      "locator": "characters 4984:5073; sha256 477b89dc55d8cccc5725f3d93b80cb4cb2cd1b2911f237232a24d6496148140f",
+      "claim": "버이치질린스키 엔드레는 1923년 굄뵈시 줄러와 함께 통일당을 떠나 새 당을 만들었다.",
+      "excerpt": "In 1923 he defected, with Gyula Gömbös, to form the Hungarian National Independence Party"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "endre-bajcsy-zsilinszky",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "party-hungarian-smallholders",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1939,
+    "endYear": 1944,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B9%D1%87%D0%B8-%D0%96%D0%B8%D0%BB%D0%B8%D0%BD%D1%81%D0%BA%D0%B8,_%D0%AD%D0%BD%D0%B4%D1%80%D0%B5",
+      "locator": "characters 442:539; sha256 e006c02a6271a9df912c21f45f11598603eff8d69f1c5dc20a84beed989b7acb",
+      "claim": "버이치질린스키 엔드레는 1939년부터 헝가리 독립소농당의 당원이자 지도자 가운데 한 명이었고 이 당 소속으로 의회에 선출되었다.",
+      "excerpt": "С 1939 года — член и один из лидеров Партии мелких сельских хозяев, избирался от неё в парламент."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jacek-kuron",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-polish-democratic-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1991,
+    "endYear": 1994,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuro%C5%84",
+      "locator": "characters 51157:51283; sha256 74d93c22093a86ce6be734b1e4a068adcf6e16b34ffb4287b6aa50bd40590310",
+      "claim": "야체크 쿠론은 하원에서 민주연합 의원단 부의장으로 선출되었다.",
+      "excerpt": "In the Sejm, he was eventually elected Deputy Chairman of the Democratic Union's parliamentary group alongside Aleksander Hall"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuro%C5%84",
+      "locator": "characters 51404:51483; sha256 74d93c22093a86ce6be734b1e4a068adcf6e16b34ffb4287b6aa50bd40590310",
+      "claim": "민주연합은 1994년 다른 정당들과 합쳐 자유연합이 되었다.",
+      "excerpt": "In 1994, the Democratic Union merged with other parties into the Freedom Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jacek-kuron",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-polish-freedom-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1994,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuro%C5%84",
+      "locator": "characters 3199:3261; sha256 74d93c22093a86ce6be734b1e4a068adcf6e16b34ffb4287b6aa50bd40590310",
+      "claim": "야체크 쿠론은 1994년부터 하원에서 자유연합을 대표했다.",
+      "excerpt": "In the Sejm, he represented the Freedom Union starting in 1994"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuro%C5%84",
+      "locator": "characters 55252:55324; sha256 74d93c22093a86ce6be734b1e4a068adcf6e16b34ffb4287b6aa50bd40590310",
+      "claim": "야체크 쿠론은 1995년 자유연합의 대통령 후보로 확정되었다.",
+      "excerpt": "On 2 April 1995, he was confirmed as the candidate for the Freedom Union"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "robert-mcnamara",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1978,
+    "endYear": 2009,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Robert_McNamara",
+      "locator": "characters 30539:30649; sha256 37ebdd89c75e420590d8f7d43eb50f581bcedf6679ca88599d2e3f804123c741",
+      "claim": "로버트 맥나마라는 1978년 소속 정당을 미국 민주당으로 바꾸었다.",
+      "excerpt": "He changed his party affiliation to Democrat in 1978, according to public records in the District of Columbia."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "robert-mcnamara",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1978,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Robert_McNamara",
+      "locator": "characters 30448:30538; sha256 37ebdd89c75e420590d8f7d43eb50f581bcedf6679ca88599d2e3f804123c741",
+      "claim": "로버트 맥나마라는 미국 공화당 등록 당원이었다.",
+      "excerpt": "According to a 1961 entry in Contemporary Biography, McNamara was a registered Republican."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Robert_McNamara",
+      "locator": "characters 30539:30649; sha256 37ebdd89c75e420590d8f7d43eb50f581bcedf6679ca88599d2e3f804123c741",
+      "claim": "로버트 맥나마라는 1978년 미국 공화당을 떠나 민주당으로 소속을 바꾸었다.",
+      "excerpt": "He changed his party affiliation to Democrat in 1978, according to public records in the District of Columbia."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "tadeusz-mazowiecki",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-democratic-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1991,
+    "endYear": 1994,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Tadeusz_Mazowiecki",
+      "locator": "characters 13996:14081; sha256 e3416a07b1eb5b86a307efd83974f74d1808abb3d6cdf40e8ee1c5fd2cbcff3e",
+      "claim": "타데우시 마조비에츠키는 1991년 민주연합 대표가 되었다.",
+      "excerpt": "In 1991, Mazowiecki became the chairman of the Democratic Union (later Freedom Union)"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Tadeusz_Mazowiecki",
+      "locator": "characters 275:343; sha256 e3416a07b1eb5b86a307efd83974f74d1808abb3d6cdf40e8ee1c5fd2cbcff3e",
+      "claim": "타데우시 마조비에츠키는 민주연합의 창립자이자 지도자였다.",
+      "excerpt": "He was the founder and leader of Democratic Union and Freedom Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "tadeusz-mazowiecki",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-freedom-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1994,
+    "endYear": 2002,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Tadeusz_Mazowiecki",
+      "locator": "characters 275:343; sha256 e3416a07b1eb5b86a307efd83974f74d1808abb3d6cdf40e8ee1c5fd2cbcff3e",
+      "claim": "타데우시 마조비에츠키는 자유연합의 창립자이자 지도자였다.",
+      "excerpt": "He was the founder and leader of Democratic Union and Freedom Union."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Tadeusz_Mazowiecki",
+      "locator": "characters 14726:14769; sha256 e3416a07b1eb5b86a307efd83974f74d1808abb3d6cdf40e8ee1c5fd2cbcff3e",
+      "claim": "타데우시 마조비에츠키는 2002년 11월 자유연합을 떠났다.",
+      "excerpt": "In November 2002, he left the Freedom Union"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ronald-reagan",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1962,
+    "endYear": 2004,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+      "locator": "characters 13649:13727; sha256 2e394f436141ffa395838420e1bc4bbbabf254c35930eb85eb23c6f8155ed630",
+      "claim": "로널드 레이건은 1962년 미국 공화당원으로 정식 등록했다.",
+      "excerpt": "In 1962, Reagan was dropped by GE, and he formally registered as a Republican."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+      "locator": "characters 165:267; sha256 2e394f436141ffa395838420e1bc4bbbabf254c35930eb85eb23c6f8155ed630",
+      "claim": "로널드 레이건은 미국 공화당원이었다.",
+      "excerpt": "A member of the Republican Party, he became an important figure in the American conservative movement."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ronald-reagan",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1962,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+      "locator": "characters 12258:12305; sha256 2e394f436141ffa395838420e1bc4bbbabf254c35930eb85eb23c6f8155ed630",
+      "claim": "로널드 레이건은 미국 민주당원으로 정치 활동을 시작했다.",
+      "excerpt": "Reagan began his political career as a Democrat"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+      "locator": "characters 13649:13727; sha256 2e394f436141ffa395838420e1bc4bbbabf254c35930eb85eb23c6f8155ed630",
+      "claim": "로널드 레이건은 1962년 공화당원으로 등록하며 미국 민주당을 떠났다.",
+      "excerpt": "In 1962, Reagan was dropped by GE, and he formally registered as a Republican."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "robert-f-kennedy",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1968,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Robert_F._Kennedy",
+      "locator": "characters 130:239; sha256 0e01641f3e439bf9dd0233b8c4f5d172d71f837f32ef329ac5da7e18ea5aef4d",
+      "claim": "로버트 F. 케네디는 미국 민주당원이었다.",
+      "excerpt": "A member of the Democratic Party, Kennedy served as the 64th United States attorney general from 1961 to 1964"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Robert_F._Kennedy",
+      "locator": "characters 2672:2794; sha256 0e01641f3e439bf9dd0233b8c4f5d172d71f837f32ef329ac5da7e18ea5aef4d",
+      "claim": "로버트 F. 케네디는 1968년 미국 민주당 대통령 후보 지명의 유력 주자였다.",
+      "excerpt": "During the 1968 presidential election, Kennedy became a leading candidate for the Democratic nomination for the presidency"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sandor-garbai",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1901,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/S%C3%A1ndor_Garbai",
+      "locator": "characters 355:455; sha256 b409b53b444c006f52e0cd54cd94190852960c8f45323ed7b6251d5c229e824d",
+      "claim": "거르버이 샨도르는 1901년 헝가리 사회민주당에 입당해 빠르게 당내 지위가 올랐다.",
+      "excerpt": "he joined the Social Democratic Party of Hungary (MSZDP) in 1901 and quickly rose through its ranks."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%80%D0%B1%D0%B0%D0%B8,_%D0%A8%D0%B0%D0%BD%D0%B4%D0%BE%D1%80",
+      "locator": "characters 391:466; sha256 446f645b83185574d9c6e3301a4def4a838bdabac6f9516a2df7843609b2f88e",
+      "claim": "거르버이 샨도르는 1901–1919년 헝가리 사회민주당 지도부의 일원이었다.",
+      "excerpt": "Член руководства Венгерской социал-демократической партии в 1901—1919 годах"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "tibor-szamuely",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Tibor_Szamuely",
+      "locator": "characters 425:511; sha256 f211216338fa6a0be896c2e0628dbb0417264b2657f280b5a86b4539c9d74025",
+      "claim": "서무엘리 티보르는 헝가리 사회민주당원으로 정치 활동을 시작했다.",
+      "excerpt": "started his political activities as a member of the Hungarian Social Democratic Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vilmos-bohm",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vilmos_B%C3%B6hm",
+      "locator": "characters 105:191; sha256 60ca96533ceaf441520ea937bc4c9a5c217e9417dd16442cbd906c7948b6c4e5",
+      "claim": "뵘 빌모시는 헝가리 사회민주당 정치인이었다.",
+      "excerpt": "was a Hungarian Social Democrat and Hungary's ambassador to Sweden after World War II."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "thalmann",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ernst_Th%C3%A4lmann",
+      "locator": "characters 4528:4639; sha256 cac28b77b673e882665cfb9e6d26074791b169c5f1b2c1b653946fa1220d6ecf",
+      "claim": "에른스트 텔만은 1917년 말 독일 독립사회민주당에 입당했다.",
+      "excerpt": "Towards the end of 1917, Thälmann became a member of the Independent Social Democratic Party of Germany (USPD)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ernst_Th%C3%A4lmann",
+      "locator": "characters 5052:5107; sha256 cac28b77b673e882665cfb9e6d26074791b169c5f1b2c1b653946fa1220d6ecf",
+      "claim": "에른스트 텔만은 1919년 3월부터 함부르크의 독일 독립사회민주당 위원장이었다.",
+      "excerpt": "From March 1919, he was chairman of the USPD in Hamburg"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ernst_Th%C3%A4lmann",
+      "locator": "characters 5397:5485; sha256 cac28b77b673e882665cfb9e6d26074791b169c5f1b2c1b653946fa1220d6ecf",
+      "claim": "에른스트 텔만은 1920년 11월 독일 공산당과 합친 친공산주의 분파에 섰다.",
+      "excerpt": "Thälmann sided with the pro-communist faction which merged with the KPD in November 1920"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "william-z-foster",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1901,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/William_Z._Foster",
+      "locator": "characters 1738:1873; sha256 537a86ad0ad47dcb3baeaffa7aca2b6091112335b21657b5cda9e91fe6d483ce",
+      "claim": "윌리엄 Z. 포스터는 1901년 미국 사회당에 입당했다.",
+      "excerpt": "Foster joined the Socialist Party of America in 1901 and was a member of its Oregon affiliate and later its Washington state affiliate."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "william-n-haskell",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/William_N._Haskell",
+      "locator": "characters 1933:2029; sha256 2465dea0f5e712ae8a8a2eaac12fd7d193f5d35264f88c1aab5a398a97b5815e",
+      "claim": "윌리엄 N. 해스켈은 미국 민주당 후보로 뉴욕주 부지사 선거에 나섰다.",
+      "excerpt": "Running as a Democrat, Haskell was an unsuccessful candidate for Lieutenant Governor of New York"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "john-mccone",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_A._McCone",
+      "locator": "characters 984:1045; sha256 ceaf19587ea1c951f315fa68be91f20724a3c1859cc60929454fc961ce93ebc5",
+      "claim": "존 매콘의 소속 정당은 미국 공화당이었다.",
+      "excerpt": "McCone's political affiliation was with the Republican Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "james-baker",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/James_Baker",
+      "locator": "characters 125:207; sha256 39256f2fbb22226b894aa700ca177a5d8a32ca69cf14205ae639ef02be9b82d7",
+      "claim": "제임스 베이커는 미국 공화당원이었다.",
+      "excerpt": "A member of the Republican Party, he served as the 10th White House chief of staff"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/James_Baker",
+      "locator": "characters 25753:25827; sha256 39256f2fbb22226b894aa700ca177a5d8a32ca69cf14205ae639ef02be9b82d7",
+      "claim": "제임스 베이커는 이전에 민주당원이었다가 공화당으로 옮겼다.",
+      "excerpt": "Wright claimed that Baker, a former Democrat and a Bush political intimate"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "henry-kissinger",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 2023,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Henry_Kissinger",
+      "locator": "characters 121:219; sha256 5640af9bbe5f3c04dbc6f78ced048e7030005f1d1a97e7faefa0a83b9ad69f02",
+      "claim": "헨리 키신저는 미국 공화당원이었다.",
+      "excerpt": "A member of the Republican Party, he served as the 7th national security advisor from 1969 to 1975"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "james-p-cannon",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1908,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/James_P._Cannon",
+      "locator": "characters 1064:1173; sha256 49356abb11e97e91229a59c7dd24ddda7e4427e8829b3f22bb66a39b4e58043e",
+      "claim": "제임스 P. 캐넌은 1908년 미국 사회당에 입당했다.",
+      "excerpt": "He joined the Socialist Party of America (SPA) in 1908 and the Industrial Workers of the World (IWW) in 1911."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jan-sierada",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "party-belarusian-hramada",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jan_Sierada",
+      "locator": "characters 764:834; sha256 2c7fa512cfa728593ff7420e2ef72a3c62f1b14d810e28925af1e8871a7348aa",
+      "claim": "얀 세라다는 벨라루스 사회주의 흐라마다의 적극적인 당원이었다.",
+      "excerpt": "Jan Sierada was an active member of the Belarusian Socialist Assembly."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anton-luckievic",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-belarusian-hramada",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Anton_Luckievich",
+      "locator": "characters 951:1172; sha256 78d7f46c2e157deb3539bbfa514aef612d698d8444b17d6bb54b5739bfdeb5e5",
+      "claim": "안톤 루츠케비치는 1903년 벨라루스 사회주의 흐라마다의 전신인 벨라루스 혁명 흐라마다를 공동 창당했다.",
+      "excerpt": "In 1903 Luckievič, together with his brother Ivan and another prominent figure of the Belarusian national movement, Vacłaŭ Ivanoŭski, founded the Belarusian Revolutionary Assembly (later the Belarusian Socialist Assembly)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vaclau-lastouski",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-belarusian-hramada",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1906,
+    "endYear": 1908,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vatslaw_Lastowski",
+      "locator": "characters 1526:1600; sha256 bc8183a8f8b430b61f10a42ae03c227e580c7b4675d8fc355c4ec08b70780b07",
+      "claim": "바츨라우 라스토우스키는 1906–1908년 벨라루스 사회주의 흐라마다의 당원이었다.",
+      "excerpt": "He was a member of the Belarusian Socialist Assembly between 1906 and 1908"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "adlai-stevenson",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1965,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Adlai_Stevenson_II",
+      "locator": "characters 12298:12475; sha256 b709a3b9efb9be3316f4dd022aab813307a90f09547b836167f76aeacb87e4be",
+      "claim": "애들레이 스티븐슨은 1948년 일리노이 주지사 선거의 미국 민주당 후보로 선택되었다.",
+      "excerpt": "In 1948, Stevenson was chosen by Jacob Arvey, leader of the powerful Chicago Democratic political organization, to be the Democratic candidate in the Illinois gubernatorial race"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jimmy-carter",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 2024,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jimmy_Carter",
+      "locator": "characters 177:274; sha256 02f066b3a12eb692fd7d1a692f4ba0d869450f67c8b48676ed3ed9559edfe82c",
+      "claim": "지미 카터는 미국 민주당원이었다.",
+      "excerpt": "A member of the Democratic Party, Carter served as the 76th governor of Georgia from 1971 to 1975"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "john-f-kennedy",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1963,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_F._Kennedy",
+      "locator": "characters 405:540; sha256 9db84927c0a1b86754885977c5f868728c314983e597b7422a36588fdfaa6733",
+      "claim": "존 F. 케네디는 미국 민주당원이었다.",
+      "excerpt": "A member of the Democratic Party, Kennedy represented Massachusetts in both houses of the United States Congress before his presidency."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BD%D0%BD%D0%B5%D0%B4%D0%B8,_%D0%94%D0%B6%D0%BE%D0%BD_%D0%A4%D0%B8%D1%86%D0%B4%D0%B6%D0%B5%D1%80%D0%B0%D0%BB%D0%B4",
+      "locator": "characters 17587:17673; sha256 bdc456c03c8bcc4555c67d19b4f560012b003630aae9d1ea2fb717fd35282599",
+      "claim": "존 F. 케네디는 1960년 미국 민주당 대통령 후보로 당선되었다.",
+      "excerpt": "Кеннеди, кандидат в президенты от Демократической партии, победил на выборах 1960 года"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jiri-hajek",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-czechoslovak-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ji%C5%99%C3%AD_H%C3%A1jek",
+      "locator": "characters 435:512; sha256 e1e7bdbf16121a901e3e8d045bdb77e675b962be28a6edaa93551f4f67324c5c",
+      "claim": "이르지 하예크는 젊어서부터 체코슬로바키아 사회민주당원이었다.",
+      "excerpt": "From a young age he was a member of the Czechoslovak Social Democratic Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ji%C5%99%C3%AD_H%C3%A1jek",
+      "locator": "characters 567:670; sha256 e1e7bdbf16121a901e3e8d045bdb77e675b962be28a6edaa93551f4f67324c5c",
+      "claim": "이르지 하예크는 1945–1948년 체코슬로바키아 사회민주당 소속 의원이었다.",
+      "excerpt": "After the war he became a member of parliament for the Czechoslovak Social Democratic Party (1945–1948)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "walter-ulbricht",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Walter_Ulbricht",
+      "locator": "characters 4300:4376; sha256 a8282d93f8645fd2d35bd84a31335177f8238e953fd17b813ca517e434506766",
+      "claim": "발터 울브리히트는 1917년 독일 독립사회민주당에 입당했다.",
+      "excerpt": "In 1917 he became a member of the Independent Social Democratic Party (USPD)"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Walter_Ulbricht",
+      "locator": "characters 4655:4713; sha256 a8282d93f8645fd2d35bd84a31335177f8238e953fd17b813ca517e434506766",
+      "claim": "발터 울브리히트는 1920년 독일 독립사회민주당 다수파와 함께 독일 공산당에 들어갔다.",
+      "excerpt": "Along with the bulk of the USPD, he joined the KPD in 1920"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jozef-pilsudski",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1893,
+    "endYear": 1914,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_Pi%C5%82sudski",
+      "locator": "characters 5976:6073; sha256 be81f3bf58a826807e545828647dbdc33c3607eeb95c947abdb4aacf81e7964a",
+      "claim": "유제프 피우수트스키는 1893년 폴란드 사회당에 입당했다.",
+      "excerpt": "In 1893, he joined the Polish Socialist Party (PPS), and helped organize their Lithuanian branch."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_Pi%C5%82sudski",
+      "locator": "characters 6402:6433; sha256 be81f3bf58a826807e545828647dbdc33c3607eeb95c947abdb4aacf81e7964a",
+      "claim": "유제프 피우수트스키는 1895년 폴란드 사회당 지도자가 되었다.",
+      "excerpt": "In 1895, he became a PPS leader"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_Pi%C5%82sudski",
+      "locator": "characters 11619:11704; sha256 be81f3bf58a826807e545828647dbdc33c3607eeb95c947abdb4aacf81e7964a",
+      "claim": "유제프 피우수트스키는 제1차 세계대전 발발 때까지 폴란드 사회당의 주요 지도자였다.",
+      "excerpt": "Piłsudski remained an important PPS leader until the outbreak of the First World War."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jukka-rangell",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "party-finnish-national-progressive",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D0%BB,_%D0%99%D0%BE%D1%85%D0%B0%D0%BD",
+      "locator": "characters 228:267; sha256 0f76aad933e2a38df6da0d3b178a70e45f3ba3aeeac2b725c076104d9ef09abc",
+      "claim": "유카 랑겔은 핀란드 국민진보당원이었다.",
+      "excerpt": "член Национальной прогрессивной партии."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "eduard-bernstein",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Eduard_Bernstein",
+      "locator": "characters 24556:24669; sha256 1fff36bbed8417bb82585d6460500d791fe550a5a352a9418408ff4b5dd5215a",
+      "claim": "에두아르트 베른슈타인은 1917년 4월 독일 독립사회민주당의 창당 당원이 되었다.",
+      "excerpt": "in April 1917, he became a founding member of the anti-war Independent Social Democratic Party of Germany (USPD)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Eduard_Bernstein",
+      "locator": "characters 25905:25976; sha256 1fff36bbed8417bb82585d6460500d791fe550a5a352a9418408ff4b5dd5215a",
+      "claim": "에두아르트 베른슈타인은 1919년 3월 독일 독립사회민주당을 정식으로 떠났다.",
+      "excerpt": "He formally left the USPD in March 1919 after it banned dual membership"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "franklin-d-roosevelt",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1945,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+      "locator": "characters 396:493; sha256 e4ef68e130af629ce89c8d8344c8b8c8f42240affac9a5222c609f669abbae79",
+      "claim": "프랭클린 D. 루스벨트는 미국 민주당원이었다.",
+      "excerpt": "A member of the Democratic Party, Roosevelt served in the New York State Senate from 1911 to 1913"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kazimierz-sosnkowski",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-polish-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1904,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+      "locator": "characters 1441:1492; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe",
+      "claim": "카지미에시 손코프스키는 1904년 폴란드 사회당에 입당했다.",
+      "excerpt": "Sosnkowski joined the Polish Socialist Party (PPS)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Kazimierz_Sosnkowski",
+      "locator": "characters 1493:1567; sha256 cbd7eaffaf698f1b6403f8d5b3ffb9e3e3de4bc4952e97c13fdfe61684775dfe",
+      "claim": "카지미에시 손코프스키는 1906년 2월 르부프에서 열린 폴란드 사회당 제8차 대회에 참가했다.",
+      "excerpt": "In February 1906, he participated in the VIII Congress of the PPS in Lwów."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "otto-grotewohl",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Otto_Grotewohl",
+      "locator": "characters 1449:1567; sha256 252cf47959ebcd0775cbd3ef21308e4046a2650da7e368c320db2becd5ade64f",
+      "claim": "오토 그로테볼은 전후 독일 독립사회민주당 지도자로 정치 경력을 시작했다.",
+      "excerpt": "He started his political career after the war as a leader of the Independent Social Democratic Party of Germany (USPD)"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Otto_Grotewohl",
+      "locator": "characters 1863:1953; sha256 252cf47959ebcd0775cbd3ef21308e4046a2650da7e368c320db2becd5ade64f",
+      "claim": "오토 그로테볼은 1922년 독일 독립사회민주당 다수와 함께 사회민주당으로 옮겼다.",
+      "excerpt": "In 1922, Grotewohl and the majority of the USPD members joined the Social Democratic Party"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-silayev",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "party-united-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 2008,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BB%D0%B0%D0%B5%D0%B2,_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 6274:6327; sha256 abb63a66e1e7d972aa09665f5d1d68440f7a1e6f4863c04e771e1a33c6f24cd1",
+      "claim": "이반 실라예프는 2008년 10월 통합 러시아에 입당했다.",
+      "excerpt": "В октябре 2008 года вступил в партию «Единая Россия»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ted-sorensen",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ted_Sorensen",
+      "locator": "characters 5522:5664; sha256 b940e291c3c000541fc6919b1478b9e1985cb7c92116ffc8c418d4f60737cd48",
+      "claim": "테드 소렌슨은 1970년 뉴욕주 연방 상원의원 선거에서 미국 민주당의 지명 후보였다.",
+      "excerpt": "During the 1970 United States Senate election in New York, Sorensen was the Democratic party's designee for the Democratic nomination for U.S."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "paul-levi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1922,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Paul_Levi",
+      "locator": "characters 6851:6922; sha256 80b26141e905027242e1a4c1b2c4c9e9598cb76e0f0c52941c0ed281a12addb5",
+      "claim": "파울 레비는 1922년 독일 독립사회민주당에 입당했고 그 뒤 이 당과 함께 사회민주당에 복귀했다.",
+      "excerpt": "In 1922 he joined the USPD, with whom he subsequently rejoined the SPD."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "william-l-clayton",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/William_L._Clayton",
+      "locator": "characters 2462:2535; sha256 018e9864d3237849d602bc395ad339858f779b1a6c66315f9236a3f2a95adb3c",
+      "claim": "윌리엄 L. 클레이턴은 미국 민주당원이었다.",
+      "excerpt": "Although he was a Democrat, he opposed the New Deal agricultural policies"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "emil-eichhorn",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Emil_Eichhorn",
+      "locator": "characters 736:804; sha256 26c0e36571a2c8e516855ba8c43fba358be485d695ab0d2affd71a13f170096c",
+      "claim": "로베르트 에밀 아이히호른은 1917년 독일 독립사회민주당 창당에 참여해 비슷한 역할을 맡았다.",
+      "excerpt": "he left with others to form the USPD where he played a similar role."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Emil_Eichhorn",
+      "locator": "characters 2006:2073; sha256 26c0e36571a2c8e516855ba8c43fba358be485d695ab0d2affd71a13f170096c",
+      "claim": "로베르트 에밀 아이히호른은 1920년 독일 독립사회민주당 좌파와 함께 독일 공산당에 들어갔다.",
+      "excerpt": "In 1920, Eichhorn joined the KPD when it merged with the USPD left."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "maximilien-robespierre",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "jacobin-club",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1794,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Maximilien_Robespierre",
+      "locator": "characters 9138:9203; sha256 b1e07daf73c4fc6651b2b5bfd86fcc6d39e64fe47d3cace6c7a6529fa1002e93",
+      "claim": "막시밀리앵 로베스피에르는 1790년 3월 31일 자코뱅 클럽 의장으로 선출되었다.",
+      "excerpt": "On 31 March 1790 he was elected as president of the Jacobin Club."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Maximilien_Robespierre",
+      "locator": "characters 487:593; sha256 b1e07daf73c4fc6651b2b5bfd86fcc6d39e64fe47d3cace6c7a6529fa1002e93",
+      "claim": "막시밀리앵 로베스피에르는 급진 자코뱅 지도자였다.",
+      "excerpt": "A radical Jacobin leader, Robespierre was elected as a deputy to the National Convention in September 1792"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georges-couthon",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "jacobin-club",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1791,
+    "endYear": 1794,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georges_Couthon",
+      "locator": "characters 2275:2370; sha256 2381e542937d7bc3afd1bdc914aa54d800802d2cf9c2855a1cb5774300fe917d",
+      "claim": "조르주 쿠통은 1791년 입법의회 의원으로 파리에 갔다.",
+      "excerpt": "In 1791, Couthon traveled to Paris to fulfill his duty as a deputy in the Legislative Assembly."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Georges_Couthon",
+      "locator": "characters 2371:2420; sha256 2381e542937d7bc3afd1bdc914aa54d800802d2cf9c2855a1cb5774300fe917d",
+      "claim": "조르주 쿠통은 이어 파리 자코뱅 클럽에 가입했다.",
+      "excerpt": "He then joined the growing Jacobin Club of Paris."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexandre-de-lameth",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "jacobin-club",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1789,
+    "endYear": 1791,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BC%D0%B5%D1%82,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80",
+      "locator": "characters 2951:3033; sha256 a4397c562c205fa2fe36a09e8531ff60c7529f74dc293785eb34200f4266a87a",
+      "claim": "알렉상드르 드 라메트는 1789년 말 자코뱅 클럽에 가입했다.",
+      "excerpt": "В конце 1789 года Ламет вступил в более влиятельную организацию — Якобинский клуб."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BC%D0%B5%D1%82,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80",
+      "locator": "characters 6207:6288; sha256 a4397c562c205fa2fe36a09e8531ff60c7529f74dc293785eb34200f4266a87a",
+      "claim": "알렉상드르 드 라메트는 자코뱅이었다가 뒤에 푀양파가 되었다.",
+      "excerpt": "так же, как и Александр, были депутатами Собрания, якобинцами, а затем фельянами."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "leszek-balcerowicz",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-freedom-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1995,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Leszek_Balcerowicz",
+      "locator": "characters 1607:1706; sha256 dc53a2bea75932fe710d8ee9b6739059db372af5c1b2afedb1373ae697c9d16e",
+      "claim": "레셰크 발체로비치는 1995–2000년 자유연합 대표였다.",
+      "excerpt": "Between 1995 and 2000 he was the chairman of Freedom Union, a centrist free-market political party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jacques-louis-david",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "jacobin-club",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1794,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacques-Louis_David",
+      "locator": "characters 11022:11150; sha256 9875800e206b573429db26ccc6d3a42a032a801e22842dfac9c7de382663041a",
+      "claim": "자크루이 다비드는 자코뱅 클럽 회원이었다.",
+      "excerpt": "In the beginning, David was a supporter of the Revolution, a friend of Maximilien Robespierre, and a member of the Jacobin Club."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B0%D0%B2%D0%B8%D0%B4,_%D0%96%D0%B0%D0%BA_%D0%9B%D1%83%D0%B8",
+      "locator": "characters 9602:9652; sha256 2debcca9a8bf4d8418c0c163bae2cacb17ee960cf32b8983487305f8721c8f08",
+      "claim": "자크루이 다비드는 1793년 6월 자코뱅 클럽 의장이 되었다.",
+      "excerpt": "в июне он был назначен президентом клуба якобинцев"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "woodrow-wilson",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1924,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+      "locator": "characters 133:206; sha256 8a463bb94a52027fb3873fba41a2c12bd08c8abf30c65accacd93b123af33373",
+      "claim": "우드로 윌슨은 진보 시대에 대통령을 지낸 유일한 미국 민주당원이었다.",
+      "excerpt": "He was the only Democrat to serve as president during the Progressive Era"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Woodrow_Wilson",
+      "locator": "characters 27252:27337; sha256 8a463bb94a52027fb3873fba41a2c12bd08c8abf30c65accacd93b123af33373",
+      "claim": "우드로 윌슨은 1916년 미국 민주당 전당대회에서 반대 없이 재지명되었다.",
+      "excerpt": "Wilson was renominated at the 1916 Democratic National Convention without opposition."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anatoly-sobchak",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-our-home-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1996,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D1%87%D0%B0%D0%BA,_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 8570:8652; sha256 17d549ba3649f828ddb10b4a5d29f96219a3581b6e325d48d0c461d73ff0028f",
+      "claim": "아나톨리 솝차크는 1996년 2월 우리 집 러시아 상트페테르부르크 지부에 가입했다.",
+      "excerpt": "В феврале 1996 года вступил в Петербургское отделение движения «Наш дом — Россия»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "lyndon-b-johnson",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1973,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+      "locator": "characters 18613:18698; sha256 f51324e4637dc58e074a765baf821c638897768912315b6ab47c0c1a29279b97",
+      "claim": "린든 B. 존슨은 1953년 1월 동료 미국 민주당 의원들에 의해 상원 소수당 원내대표로 뽑혔다.",
+      "excerpt": "In January 1953, Johnson was chosen by his fellow Democrats as Senate Minority Leader"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "harry-s-truman",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1972,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%83%D0%BC%D1%8D%D0%BD,_%D0%93%D0%B0%D1%80%D1%80%D0%B8",
+      "locator": "characters 250:321; sha256 b057d0b8b8899d2a68dce8d88c793eced7df22d1795b1cf8d6abc7e121c6b42b",
+      "claim": "해리 S. 트루먼은 1935–1945년 미국 민주당 소속 미주리주 연방 상원의원이었다.",
+      "excerpt": "член Сената США от штата Миссури (1935—1945) от Демократической партии."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ernst-reuter",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1922,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ernst_Reuter",
+      "locator": "characters 1686:1774; sha256 85908354f42cec64f6088709f58fb9f7e013fb9cfaf7bb865ec6df69d2727162",
+      "claim": "에른스트 로이터는 1922년 독일 공산당에서 제명되었다.",
+      "excerpt": "Although Reuter was seen as a favorite of Lenin, he was expelled from the party in 1922."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ernst_Reuter",
+      "locator": "characters 1775:1905; sha256 85908354f42cec64f6088709f58fb9f7e013fb9cfaf7bb865ec6df69d2727162",
+      "claim": "에른스트 로이터는 잠시 독일 독립사회민주당에 몸담았다가 사회민주당으로 돌아갔다.",
+      "excerpt": "He moved briefly to the Independent Social Democratic Party of Germany (USPD), and then returned to the Social Democrats for good."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "arthur-crispien",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Arthur_Crispien",
+      "locator": "characters 96:222; sha256 ab59dd4d4db88185c26e73d0a3ed8985957aaf3dc674d0d8aca2741125a7f045",
+      "claim": "아르투어 크리스피엔은 1920–1922년 독일 독립사회민주당 공동대표이자 이 당 소속 제국의회 의원이었다.",
+      "excerpt": "He was co-chairman and member of the Reichstag for the Independent Social Democratic Party of Germany, USPD, from 1920 - 1922."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Arthur_Crispien",
+      "locator": "characters 3129:3280; sha256 ab59dd4d4db88185c26e73d0a3ed8985957aaf3dc674d0d8aca2741125a7f045",
+      "claim": "아르투어 크리스피엔은 1919년 3월 독일 독립사회민주당 공동대표로 선출되었다.",
+      "excerpt": "resigned in April 1919 after being elected party co-chairman and member of the Executive Committee of the USPD together with Hugo Haase in early March."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mcgeorge-bundy",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/McGeorge_Bundy",
+      "locator": "characters 7946:8098; sha256 b755f0ab8953e98f10974ccfdfa8640e1d2cf1000045745075642a9cd8aebd35",
+      "claim": "맥조지 번디는 미국 공화당 등록 당원이었고, 민주당으로 옮기겠다는 제안은 케네디가 거절했다.",
+      "excerpt": "Bundy, a registered Republican, offered to switch parties to become a registered Democrat when he entered the White House but Kennedy declined the offer"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "matyas-rakosi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1910,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/M%C3%A1ty%C3%A1s_R%C3%A1kosi",
+      "locator": "characters 5885:5948; sha256 c9b5e7ad1cd66813e1221a3937a183d23fc243e1635144ea2bce22779ad57588",
+      "claim": "라코시 마차시는 1910년 헝가리 사회민주당에 입당했다.",
+      "excerpt": "he joined the Hungarian Social Democratic Party (MSZDP) in 1910"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "john-foster-dulles",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1959,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_Foster_Dulles",
+      "locator": "characters 228:283; sha256 d846f203f4acdca231db4297d5bb7c68c44e28476081ee1f8ede89461fa5c61a",
+      "claim": "존 포스터 덜레스는 미국 공화당원이었다.",
+      "excerpt": "A member of the Republican Party, he was briefly a U.S."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/John_Foster_Dulles",
+      "locator": "characters 9462:9539; sha256 d846f203f4acdca231db4297d5bb7c68c44e28476081ee1f8ede89461fa5c61a",
+      "claim": "존 포스터 덜레스는 미국 공화당의 저명한 인물이었다.",
+      "excerpt": "Dulles was a prominent Republican and a close associate of Governor Thomas E."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "aimo-cajander",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-finnish-national-progressive",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1943,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Aimo_Cajander",
+      "locator": "characters 707:807; sha256 32884d50ada4a2bf2d52518d830ed23592d189572831eb11c842ee8171553726",
+      "claim": "아이모 카얀데르는 1927년 핀란드 국민진보당에 입당했다.",
+      "excerpt": "Cajander joined in 1927 National Progressive Party and in 1928 he was chosen as Minister of Defence."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Aimo_Cajander",
+      "locator": "characters 312:364; sha256 32884d50ada4a2bf2d52518d830ed23592d189572831eb11c842ee8171553726",
+      "claim": "아이모 카얀데르는 1933–1943년 핀란드 국민진보당 대표였다.",
+      "excerpt": "chairman of the National Progressive Party 1933–1943"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "rezso-nyers",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1940,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Rezs%C5%91_Nyers",
+      "locator": "characters 813:859; sha256 5acee71d1b0fbc194e72ff5da26fb91003e367097335dec424cae78cd9aa60dc",
+      "claim": "녜르시 레죄는 1940년 헝가리 사회민주당에 입당했다.",
+      "excerpt": "He joined the Social Democratic Party in 1940."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "brent-scowcroft",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Brent_Scowcroft",
+      "locator": "characters 7375:7448; sha256 5b4e476c433fdc59e70ca83edfe4e90336101e50f948ff6412e6aafc23c69069",
+      "claim": "브렌트 스코크로프트는 미국 공화당 인사로서 이라크 정책을 비판했다.",
+      "excerpt": "Scowcroft was a leading Republican critic of American policy towards Iraq"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "james-webb",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/James_E._Webb",
+      "locator": "characters 10930:10973; sha256 f403e4a33363a2c5d9051dc4ba3dd7f1f1fc749703221a3c913738df6f119d9f",
+      "claim": "제임스 웨브는 존슨과 가까운 미국 민주당원이었다.",
+      "excerpt": "Webb was a Democrat tied closely to Johnson"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "john-j-mccloy",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_J._McCloy",
+      "locator": "characters 20797:20905; sha256 3a5ce3255343c597dab874889fe8bcc9a22d973d48f0b6bc2436d86f0291e2a5",
+      "claim": "존 J. 매클로이는 미국 공화당원이었다.",
+      "excerpt": "Although a Republican, he was the second-highest-ranking official in the War Department during World War II."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "risto-ryti",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-finnish-national-progressive",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Risto_Ryti",
+      "locator": "characters 4732:4859; sha256 2d31fd2ae3af136784c44f27b9204baf11901a7f896e40e68668289bb4dd4c9f",
+      "claim": "리스토 뤼티는 자유주의 성향의 핀란드 국민진보당 소속이었다.",
+      "excerpt": "Ryti's personal political success continued even after his liberal-oriented National Progressive Party shrank to a fringe party"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jozef-cyrankiewicz",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_Cyrankiewicz",
+      "locator": "characters 758:837; sha256 8723b017421f4856d475a411f6edb6600b99e4b96362a339e454ed115c7f409f",
+      "claim": "유제프 치란키에비치는 1935년 폴란드 사회당 크라쿠프 지부 서기가 되었다.",
+      "excerpt": "He became secretary of the Kraków branch of the Polish Socialist Party in 1935."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/J%C3%B3zef_Cyrankiewicz",
+      "locator": "characters 2293:2389; sha256 8723b017421f4856d475a411f6edb6600b99e4b96362a339e454ed115c7f409f",
+      "claim": "유제프 치란키에비치는 1946년 폴란드 사회당 중앙집행위원회 사무총장이 되었다.",
+      "excerpt": "he became secretary-general of the Polish Socialist Party's central executive committee in 1946."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "richard-nixon",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1994,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Richard_Nixon",
+      "locator": "characters 151:255; sha256 c0c217ba6d73046ceede29e2213b7d5c8434f0e5e0a6d1fc2be608201fe7539a",
+      "claim": "리처드 닉슨은 미국 공화당원이었다.",
+      "excerpt": "A member of the Republican Party, he represented California in both houses of the United States Congress"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "isaac-le-chapelier",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "jacobin-club",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1789,
+    "endYear": 1791,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Isaac_Ren%C3%A9_Guy_le_Chapelier",
+      "locator": "characters 2262:2382; sha256 8e71b1fc438a0542bf50a8bfc89424af731fb9faffca6a33d4d23e47eeb4c476",
+      "claim": "이자크 르 샤플리에는 자코뱅 클럽의 초대 의장이었다.",
+      "excerpt": "the Breton Club rented a Dominican monastery and became the Jacobin Club, of which Le Chapelier was the first president."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Isaac_Ren%C3%A9_Guy_le_Chapelier",
+      "locator": "characters 2695:2792; sha256 8e71b1fc438a0542bf50a8bfc89424af731fb9faffca6a33d4d23e47eeb4c476",
+      "claim": "이자크 르 샤플리에는 1791년 7월 샹드마르스 학살 며칠 뒤 자코뱅 클럽을 떠났다.",
+      "excerpt": "Within days, Le Chapelier joined the mass exodus of moderate deputies abandoning the Jacobin club"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "antoine-barnave",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "jacobin-club",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1791,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Antoine_Barnave",
+      "locator": "characters 2509:2656; sha256 3eb420592fe85a51e7d582e644598fd4795226a55f19922fc2666f7908af8188",
+      "claim": "앙투안 바르나브는 1791년까지 자코뱅 클럽의 대표적 회원이었고 그 선언문과 첫 규약을 썼다.",
+      "excerpt": "Until 1791, he was one of the preeminent members of the club known later as the Jacobin Club, of which he drew up the manifesto and first rulebook."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Antoine_Barnave",
+      "locator": "characters 12113:12242; sha256 3eb420592fe85a51e7d582e644598fd4795226a55f19922fc2666f7908af8188",
+      "claim": "앙투안 바르나브는 1791년 7월 18일 자코뱅 클럽에서 갈라져 나와 푀양파를 만들었다.",
+      "excerpt": "Barnave and the other two members of the triumvirate broke away from it and formed the Feuillant political group on 18 July 1791."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "isaac-deutscher",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-polish-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%B9%D1%87%D0%B5%D1%80,_%D0%98%D1%81%D0%B0%D0%B0%D0%BA",
+      "locator": "characters 3007:3053; sha256 d8ec2fe665c50979c45732eb1b79c575bd4fa94189e2987415fc456cbaeeb045",
+      "claim": "아이작 도이처는 폴란드 사회당원이었다.",
+      "excerpt": "Будучи членом Польской социалистической партии"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "web-du-bois",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-us-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1911,
+    "endYear": 1912,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois",
+      "locator": "characters 43639:43738; sha256 147c8790c1e96a1f69050e573e8b5c159b168da56882ebe5d6a16ea8ae200992",
+      "claim": "W. E. B. 듀보이스는 1911년 미국 사회당에 입당했다.",
+      "excerpt": "When Du Bois became editor of The Crisis magazine in 1911, he joined the Socialist Party of America"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois",
+      "locator": "characters 43853:44002; sha256 147c8790c1e96a1f69050e573e8b5c159b168da56882ebe5d6a16ea8ae200992",
+      "claim": "W. E. B. 듀보이스는 1912년 당규를 어기고 윌슨을 지지해 미국 사회당에서 물러나야 했다.",
+      "excerpt": "he supported the Democrat Woodrow Wilson in the 1912 presidential campaign, a breach of the rules, and was forced to resign from the Socialist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ligachev",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1993,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%B3%D0%B0%D1%87%D1%91%D0%B2%2C_%D0%95%D0%B3%D0%BE%D1%80_%D0%9A%D1%83%D0%B7%D1%8C%D0%BC%D0%B8%D1%87",
+      "locator": "characters 5709:5755; sha256 5d671625bf2c598b450840e809da55b19f0e227c1269aa033e3b625963be49be",
+      "claim": "예고르 리가초프는 1993년 2월부터 2013년 2월까지 러시아 연방 공산당 중앙위원이었다.",
+      "excerpt": "C февраля 1993 до февраля 2013 — Член ЦК КПРФ."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yegor_Ligachev",
+      "locator": "characters 4207:4328; sha256 653b7f611440f62e89076ecefe3f6ef05680d2f0f0f80f920c84a6661da6b7f1",
+      "claim": "예고르 리가초프는 러시아 연방 공산당 소속으로 국가두마 의원에 세 번 당선되었다.",
+      "excerpt": "Ligachev was elected three times to the Russian State Duma as a member for the Communist Party of the Russian Federation."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "oleg-shenin",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1993,
+    "endYear": 2000,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BD%D0%B8%D0%BD,_%D0%9E%D0%BB%D0%B5%D0%B3_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4210:4256; sha256 53a3e27a286a7c392a8e3300f03efd79cab4c14ddb0eccab659a6a9cd0054bf7",
+      "claim": "올레크 셰닌은 1993–2000년 러시아 연방 공산당 중앙위원이었다.",
+      "excerpt": "с 1993 по 2000 годы — член ЦИК КПРФ и ЦК КПРФ."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BD%D0%B8%D0%BD,_%D0%9E%D0%BB%D0%B5%D0%B3_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4542:4635; sha256 53a3e27a286a7c392a8e3300f03efd79cab4c14ddb0eccab659a6a9cd0054bf7",
+      "claim": "올레크 셰닌은 2000년 러시아 연방 공산당을 떠났다.",
+      "excerpt": "В этом же году покинул КПРФ, обвинив её руководство в отступлении от идейных норм социализма."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "grigory-romanov",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 2008,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Grigory_Romanov",
+      "locator": "characters 5054:5149; sha256 cb0097907365864e8b3dc6307140a420905b98d9a6eb87def4737639d815c897",
+      "claim": "그리고리 로마노프는 소련 해체 뒤 러시아 연방 공산당에 입당했다.",
+      "excerpt": "After the collapse of the Soviet Union, he joined the Communist Party of the Russian Federation"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Grigory_Romanov",
+      "locator": "characters 538:634; sha256 cb0097907365864e8b3dc6307140a420905b98d9a6eb87def4737639d815c897",
+      "claim": "그리고리 로마노프는 사망 전에 러시아 연방 공산당원이었다.",
+      "excerpt": "he lived as a pensioner, joining the Communist Party of the Russian Federation before his death."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gubenko",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%83%D0%B1%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3331:3351; sha256 d5fdf376d82b6d0991e29df9c28d73b3de916aa86d4a40edad51055c3cd88273",
+      "claim": "니콜라이 구벤코는 러시아 연방 공산당원이었다.",
+      "excerpt": "Являлся членом КПРФ."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%83%D0%B1%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3608:3676; sha256 d5fdf376d82b6d0991e29df9c28d73b3de916aa86d4a40edad51055c3cd88273",
+      "claim": "니콜라이 구벤코는 1997–2002년 러시아 연방 공산당 중앙위원회 상임간부회 위원이었다.",
+      "excerpt": "С 20 апреля 1997 года по 25 мая 2002 года — член Президиума ЦК КПРФ."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valentin-varennikov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Valentin_Varennikov",
+      "locator": "characters 6701:6819; sha256 955b207952a0bb813fb76ed038be52fde97b3f92524ebfb2e1283a32f4bc2649",
+      "claim": "발렌틴 바렌니코프는 1995년 러시아 연방 공산당원으로서 국가두마 의원에 당선되었다.",
+      "excerpt": "In 1995 Varennikov, as a member of the Communist Party of the Russian Federation, was elected deputy of the State Duma"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valentina-tereshkova",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "party-united-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Valentina_Tereshkova",
+      "locator": "characters 15557:15747; sha256 f3b9e0b719bb0e0aa558050afc80d813944f3f38b10a72b2b907ed44b9748aa0",
+      "claim": "발렌티나 테레슈코바는 2011년 12월 4일 통합 러시아 당원으로 국가두마 의원에 당선되었다.",
+      "excerpt": "On 4 December 2011, Tereshkova was elected to the State Duma, the lower house of the Russian legislature, as a representative of the Yaroslavl Oblast and a member of the United Russia party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sorge",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Richard_Sorge",
+      "locator": "characters 3434:3509; sha256 1e3d28ab5fb64ced1386690556dfe398c4c3d6bd2bbe9cc5654afb627866ddf5",
+      "claim": "리하르트 조르게는 독일 독립사회민주당에 입당했다.",
+      "excerpt": "He later joined the Independent Social Democratic Party and moved to Berlin"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "boris-gromov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-united-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 2005,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Gromov",
+      "locator": "characters 4136:4251; sha256 4bfc2255027e567dd2adc6fc8f767847aaf8985360c34855198cd588a0e898d6",
+      "claim": "보리스 그로모프는 2005년 11월 말 통합 러시아에 정식 입당했다.",
+      "excerpt": "At the end of November 2005, Gromov officially joined the United Russia party at the party congress in Krasnoyarsk."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Gromov",
+      "locator": "characters 3913:4021; sha256 4bfc2255027e567dd2adc6fc8f767847aaf8985360c34855198cd588a0e898d6",
+      "claim": "보리스 그로모프는 2004년 11월 통합 러시아 최고평의회 위원으로 선출되었다.",
+      "excerpt": "On 27 November 2004, at the United Russia party congress, Gromov was elected to the party's Supreme Council."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "viktor-chernomyrdin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-our-home-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1995,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Viktor_Chernomyrdin",
+      "locator": "characters 6975:7041; sha256 cd0b11c46d33f7aa61798f1e3dd836f0a9b74432b30c79ce04799a97559e5ba3",
+      "claim": "빅토르 체르노미르딘은 1995년 4월 우리 집 러시아를 창설했다.",
+      "excerpt": "In April 1995, he formed a political bloc called Our Home – Russia"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gherman-titov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 2000,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Gherman_Titov",
+      "locator": "characters 5051:5154; sha256 4a81896e2b3ade9a0c44ccd7f48ac2758c9f3e5e8c220e2dc2d38ad3c07951dc",
+      "claim": "게르만 티토프는 1995년 러시아 연방 공산당원으로 국가두마 의원에 당선되었다.",
+      "excerpt": "In 1995, he was elected to the State Duma as a member of the Communist Party of the Russian Federation."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexei-leonov",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "party-united-russia",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 2002,
+    "endYear": 2019,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexei_Leonov",
+      "locator": "characters 7339:7449; sha256 dae73d9b155e8efd314101b334796a7ca52325a3272f9c1c6f6a6498d003b584",
+      "claim": "알렉세이 레오노프는 2002년 12월 18일부터 통합 러시아 당원이었고 당 최고평의회 위원이었다.",
+      "excerpt": "He was a member of the United Russia party since 18 December 2002 and a member of the party's Supreme Council."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "richard-kosolapov",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Richard_Kosolapov",
+      "locator": "characters 7624:7699; sha256 c63b97a2ab4b281891e29d4ab867eef9b1eb647ccfa7c8fec0b644a508258f9b",
+      "claim": "리차르트 코솔라포프는 러시아 연방 공산당에 입당했다.",
+      "excerpt": "He became a member of the Communist Party of the Russian Federation (CPRF)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Richard_Kosolapov",
+      "locator": "characters 7700:7790; sha256 c63b97a2ab4b281891e29d4ab867eef9b1eb647ccfa7c8fec0b644a508258f9b",
+      "claim": "리차르트 코솔라포프는 러시아 연방 공산당 중앙위원이었다.",
+      "excerpt": "He was a member of the Central Committee of the Communist Party of the Russian Federation."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikhail-surkov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1993,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1262:1292; sha256 37825abcf5e7d586cb7cf0e8412d049b8e7525b48d6e3d8beaa1c726594835d5",
+      "claim": "미하일 수르코프는 1993년부터 러시아 연방 공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК (ЦИК) КПРФ с 1993 года"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1369:1484; sha256 37825abcf5e7d586cb7cf0e8412d049b8e7525b48d6e3d8beaa1c726594835d5",
+      "claim": "미하일 수르코프는 1997–2000년 러시아 연방 공산당 중앙위원회 서기였다.",
+      "excerpt": "на IV съезде КПРФ 20 апреля 1997 года избран секретарём ЦК КПРФ, проработал в этом качестве до 3 декабря 2000 года."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}
