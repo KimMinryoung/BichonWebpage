@@ -35,6 +35,17 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 
 실행은 leninbot의 작업 표 `agent_worker_tasks`와 `leninbot-worker`(동시 2개, 재시작 시 lease 만료 후 재실행)가 맡는다. 작업은 수 분씩 걸리므로 frontend는 제출 후 폴링한다. 비용은 leninbot LLM 감사에 `caller=commulingo`로 남고 결과의 `usage`로도 돌려준다.
 
+## CommuLingo 세션 작업 (W3, 소유자 결정 2026-10-05)
+
+조사·초안·검토 세션은 모델 실행 도중 계속 오가는 장치(나눠 제출 저장, P 문단 표시와 캐시 문단 도구, 인용 지지 검사, Jev 분류, 체크포인트 재개)로 이루어져 있어 범용 일꾼의 종결 검증 하나로 대신할 수 없다. 그래서 leninbot 세션 코드(`commulingo/pipeline/editor.py`·`workflow.py` Review)를 그대로 일꾼의 전용 작업 종류로 감쌌다(`worker/commulingo.py`).
+
+- `commulingo_editor`(research·draft 단계): 입력 `{job, artifacts}`. 세션은 항목 읽기와 초안 검증을 관리자 MCP로 하고, 결과 `{stage, artifacts(editor_checkpoint·fetch_failures), usage, costComplete}`를 돌려준다.
+- `commulingo_review`(review 단계): 같은 입력. 공개하지 않는 판정의 메모(`notes`)는 frontend가 남긴다.
+- 일꾼은 CommuLingo에 쓰지 않는다. 출처 캐시(`commulingo_pipeline_sources`·`fetch_cache`·`job_sources`)는 조사 인프라라 leninbot 소유로 남는다(migration 288의 주석과 달리).
+- CommuLingo 작성 규칙(큐레이터·검토자 지시문, 필드 형식)은 leninbot에 남는다. 데이터 접근은 MCP만 거친다.
+- frontend 로컬 단계(`stages/local.js`): judge(주제별 보강 판정 기록), validate, submit(독립 승인이 같은 패치 해시에 묶였는지 확인하고 `editorial-pipeline-service` publish를 한 트랜잭션으로).
+- 엔진은 일꾼 결과의 체크포인트 산출물을 실패해도 저장하고, 비용이 확정되지 않은 세션(`costComplete=false`)은 예약을 정산하지 않는다(leninbot 엔진과 같은 규칙).
+
 ## frontend 파이프라인 (Node)
 
 - 작업 상태 테이블 `commulingo_pipeline_*`(jobs, attempts, artifacts, budget, sources, materials, …)를 frontend 소유로 넘긴다. 기존 데이터는 그대로 두고 이 저장소 마이그레이션이 이후 변경을 맡는다. `curation_gaps`·`person_review_jobs`도 다시 frontend 작업 상태가 된다(3단계에서 leninbot으로 넘겼던 것을 되돌림).
@@ -58,7 +69,7 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 |---|---|---|---|
 | W1 | leninbot | 일꾼 작업 표·실행 서비스·`/worker/mcp`(`agent_task_submit/get/cancel`), 조사 도구 카탈로그, validator 콜백, 출처 반환 | 완료(2026-10-05). frontend 컨테이너에서 위키 조회 작업($0.001)과 `editorial_validate` 왕복(거부 3회 후 통과) 확인 |
 | W2 | frontend | 파이프라인 골격: 작업 상태 테이블 소유 이전, tick·lease·예산, planner, 일꾼 클라이언트 | 완료(2026-10-05). `services/commulingo-pipeline/`, migration 288, `scripts/commulingo-pipeline`. 운영 데이터에서 frontend planner와 leninbot planner의 후보 40건이 순서까지 같음을 확인. `enabled=false` |
-| W3 | frontend | 첫 단계 이전: 인물 `basics` 보강(research → draft → validate → review → submit)을 일꾼으로 끝까지 실행 | |
+| W3 | 양쪽 | 세션 작업 종류(leninbot `commulingo_editor`·`commulingo_review`), frontend research/draft/review/judge/validate/submit 단계, `scripts/commulingo-pipeline run <id>` | 완료(2026-10-05). job 63899(fritz-platten 절)가 조사·초안($0.004) → 독립 검토 승인($0.012) → 공개까지 진행, 사이트 반영·예산 정산·시도 기록 확인. 정기 실행(`enabled`)은 2026-10-01 소유자 중단 결정이 있어 켜지 않았다 |
 | W4 | frontend | 나머지 주제(bio, nationality, moment, sections, events)와 용어·gap·discover | |
 | W5 | leninbot | leninbot 파이프라인·레인·운영 스크립트 삭제, 남은 읽기(채팅·롤플레이·KG 동기화) MCP 전환 | |
 | W6 | DB | leninbot DB 계정의 CommuLingo 테이블 권한 회수(관리자 MCP 5단계). leninbot은 지금 `postgres` 슈퍼유저로 접속하므로 먼저 전용 role로 바꿔야 한다 | |

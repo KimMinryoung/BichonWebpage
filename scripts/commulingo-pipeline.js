@@ -20,7 +20,7 @@ const { Engine } = require('../services/commulingo-pipeline/engine');
     let result;
     if (command === 'list') result = await store.listJobs(100);
     else if (command === 'show') result = await store.detail(Number(arg));
-    else if (command === 'retry') result = { retried: await store.retry(Number(arg)) };
+    else if (command === 'retry') result = { retried: await require('../services/commulingo-pipeline/operations').retry(Number(arg)) };
     else if (command === 'costs') result = await store.costs();
     else if (command === 'plan') result = await planner.plan(config.load(), { apply: flag('--apply') });
     else if (command === 'consolidate') result = await store.consolidate({ apply: flag('--apply') });
