@@ -78,7 +78,7 @@
                     <h3><%= en ? 'Most people' : '인물이 많은 소속' %></h3>
                     <div class="commu-people-chips">
                         <% chip(href({ affiliationId: '' }), en ? 'Any' : '전체', null, !activeAffiliation) %>
-                        <% facets.topAffiliations.forEach(function(a) { chip(href({ affiliationId: a.id }), a.label, a.count, a.id === state.affiliationId, a.icon === 'hammer-sickle' ? 'hammer-sickle' : '', a.kindLabel) }) %>
+                        <% facets.topAffiliations.forEach(function(a) { chip(href({ affiliationId: a.id }), a.label, a.count, a.id === state.affiliationId, a.icon === 'hammer-sickle' ? 'hammer-sickle' : '') }) %>
                     </div>
                     <h3><%= en ? 'All ' + facets.affiliations.length + ' affiliations' : '모든 소속 ' + facets.affiliations.length + '개' %></h3>
                     <% facetSearch(en ? 'Country or organization' : '국가·조직 이름') %>
@@ -86,7 +86,7 @@
                     <section class="commu-people-facet-group" data-facet-group>
                         <h4><%= group.label %></h4>
                         <div class="commu-people-chips">
-                        <% group.items.forEach(function(a) { chip(href({ affiliationId: a.id }), (a.parentId ? '↳ ' : '') + a.label, a.count, a.id === state.affiliationId, '', a.kindLabel) }) %>
+                        <% group.items.forEach(function(a) { chip(href({ affiliationId: a.id }), (a.parentId ? '↳ ' : '') + a.label, a.count, a.id === state.affiliationId) }) %>
                         </div>
                     </section>
                     <% }) %>

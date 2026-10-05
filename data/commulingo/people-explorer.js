@@ -92,12 +92,6 @@ function sortPeople(people, sort, lang) {
     return sort === 'chrono' ? sortPeopleChronologically(people) : people;
 }
 
-// A state and its ruling party read alike (소련 / 소련공산당·볼셰비키), so
-// state affiliations say they mean service in its institutions.
-const KIND_LABELS = {
-    state: { ko: '국가기관', en: 'state' },
-};
-
 // Facet options with counts. Each count applies every other condition, the
 // way the old activities page counted function and affiliation chips; an
 // active option stays listed even at zero so the reader can see and drop it.
@@ -114,7 +108,8 @@ function facetsFor(standardized, state, pool, lang) {
     // Picking another affiliation drops the institution line, so these counts ignore it.
     const affiliations = keep(activitiesModel.catalog.affiliations.map(a => ({
         id: a.id, icon: a.icon, parentId: a.parentId || '', termIds: a.termIds || [],
-        label: localize(a.label, lang), kindLabel: KIND_LABELS[a.kind] ? localize(KIND_LABELS[a.kind], lang) : '',
+        // State labels already say 국가기관 / state institutions in the catalog.
+        label: localize(a.label, lang),
         countryCode: a.countryCode || '', countryLabel: localize(a.countryLabel, lang),
         count: countIn(activityPool, p => activitiesModel.matchesActivities(p, { functionId: state.functionId, affiliationId: a.id })),
     })), state.affiliationId);
@@ -201,7 +196,7 @@ function activeConditions(state, facets, lang) {
     if (state.q) add('q', `“${state.q}”`, 'search');
     add('functionId', find(facets.functions, state.functionId)?.label, find(facets.functions, state.functionId)?.icon);
     const affiliation = find(facets.affiliations, state.affiliationId);
-    add('affiliationId', affiliation && (affiliation.kindLabel ? `${affiliation.label} (${affiliation.kindLabel})` : affiliation.label));
+    add('affiliationId', affiliation && affiliation.label);
     add('officeId', find(facets.offices, state.officeId)?.label);
     add('positionId', find(facets.positions, state.positionId)?.label, find(facets.positions, state.positionId)?.icon);
     const citizenship = find(facets.citizenships, state.citizenship);

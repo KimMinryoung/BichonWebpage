@@ -53,7 +53,7 @@ assert.equal(count(security.facets.citizenships, 'soviet'), 1);
 assert.equal(security.facets.offices.length, 0, 'institution lines wait for a Soviet affiliation');
 assert.equal(run({ affiliation: 'state-soviet' }).facets.offices.length, 1);
 assert.equal(count(run({ affiliation: 'state-soviet' }).facets.affiliations, 'state-soviet'), 1);
-assert.equal(run({}).facets.affiliations.find(a => a.id === 'state-soviet').kindLabel, '국가기관');
+assert.equal(run({}).facets.affiliations.find(a => a.id === 'state-soviet').label, '소련 국가기관');
 
 // URLs: defaults stay out, a new affiliation drops the institution line, paging resets.
 const state = explorer.parseExplorerQuery({ function: 'security', affiliation: 'state-soviet', office: 'state-security', page: '3' });
