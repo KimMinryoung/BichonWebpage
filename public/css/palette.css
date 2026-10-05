@@ -1,6 +1,7 @@
 /* ==============================================
    Cyber-Lenin Color Palette
    Single-source brand colors + theme aliases.
+   Publish CSS-only changes with scripts/deploy-assets; retain old release URLs.
    ============================================== */
 
 :root {
