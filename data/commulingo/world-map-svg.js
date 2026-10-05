@@ -71,10 +71,9 @@ function centerFor(info) {
     return meta && meta.label ? meta.label : [0, 0];
 }
 
-function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLinks = false, countryLink } = {}) {
+function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLinks = false } = {}) {
     const valid = [...new Set((codes || []).filter(hasCountry))];
-    const infos = valid.map(code => countryInfo(code, lang)).filter(Boolean)
-        .map(info => countryLink ? { ...info, href: countryLink(info.code) } : info);
+    const infos = valid.map(code => countryInfo(code, lang)).filter(Boolean);
     const markers = markerPositions(infos.map(info => ({ ...info, center: centerFor(info) })));
     const selected = hasCountry(selectedCode) ? selectedCode : '';
     const label = lang === 'en' ? 'Interactive map of countries represented in CommuLingo' : 'CommuLingo에 등장하는 국가와 지역의 세계지도';
@@ -140,8 +139,8 @@ function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLin
     return parts.join('');
 }
 
-function renderCountryMapSvg({ selectedCode, lang = 'ko', countryLink } = {}) {
-    return renderWorldMapSvg({ codes: countryCodes(), selectedCode, lang, territoryLinks: true, countryLink });
+function renderCountryMapSvg({ selectedCode, lang = 'ko' } = {}) {
+    return renderWorldMapSvg({ codes: countryCodes(), selectedCode, lang, territoryLinks: true });
 }
 
 module.exports = { renderWorldMapSvg, renderCountryMapSvg };

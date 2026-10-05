@@ -186,10 +186,11 @@ Lithuania. Migration 062 corrected those two rows and repaired legacy
 patronymic gaps. Migration 058 had earlier fixed eight records whose
 citizenship slot contained a place of death or birth.
 
-The two flags are navigable facets. Citizenship links to
-`/commulingo/people/citizenship/:code`; national/ethnic background links to
-`/commulingo/people/national-origin/:code`. Both pages reuse the standard
-chronological person cards. Migration 063 corrects Kim Jong Il from a
+The two flags link to their country hub's citizenship or national-background
+section. Its “View all” link opens `/commulingo/people?citizenship=:code` or
+`/commulingo/people?origin=:code`, with search and combined filters. The old
+`/commulingo/people/citizenship/:code` and `/commulingo/people/national-origin/:code`
+URLs redirect there; their standalone list template and builder have been removed. Migration 063 corrects Kim Jong Il from a
 birthplace-derived Russian background to DPRK/Korean background.
 Migration 064 makes the same legacy correction for Dzerzhinsky: present-day
 Belarus is his birthplace geography, while his documented national background

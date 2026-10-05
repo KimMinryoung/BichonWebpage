@@ -2,20 +2,8 @@ const { hasFlag, flagLabel } = require('./flag-icons');
 const { countryHref } = require('./country-geography');
 
 const FILTER_KINDS = {
-    citizenship: {
-        personField: 'citizenship',
-        pathSegment: 'citizenship',
-        label: { ko: '소속 국가', en: 'Citizenship' },
-        peopleLabel: { ko: '소속 인물', en: 'Citizens' },
-        countrySection: 'country-citizenship',
-    },
-    nationalOrigin: {
-        personField: 'origin',
-        pathSegment: 'national-origin',
-        label: { ko: '출신 배경', en: 'National background' },
-        peopleLabel: { ko: '출신 인물', en: 'People of origin' },
-        countrySection: 'country-origin',
-    },
+    citizenship: { queryParam: 'citizenship', countrySection: 'country-citizenship' },
+    nationalOrigin: { queryParam: 'origin', countrySection: 'country-origin' },
 };
 
 // 조지아 is the US state; the country and the people are 그루지야 in Korean on
@@ -28,38 +16,14 @@ function canonicalNationalityLabel(kind, code, label, lang) {
     return label || flagLabel(code, lang);
 }
 
-function nationalityHubHref(kind, code) {
-    const config = FILTER_KINDS[kind];
-    if (!config || !hasFlag(code)) return '';
-    return `/commulingo/people/${config.pathSegment}/${encodeURIComponent(code)}`;
-}
-
-// A person's flag opens the country hub at the matching people section: the
-// hub carries the events and organizations too, and its "view all" leads on to
-// the full list. Codes without a hub keep the plain list.
+// A person's flag opens the country hub at the matching people section.
+// Codes without a hub link directly to the filtered people explorer.
 function personFlagHref(kind, code) {
     const config = FILTER_KINDS[kind];
-    const hub = config ? countryHref(code) : '';
-    return hub ? `${hub}#${config.countrySection}` : nationalityHubHref(kind, code);
+    if (!config || !hasFlag(code)) return '';
+    const hub = countryHref(code);
+    return hub ? `${hub}#${config.countrySection}`
+        : `/commulingo/people?${config.queryParam}=${encodeURIComponent(code)}`;
 }
 
-function buildNationalityFilter(people, kind, code, lang) {
-    const config = FILTER_KINDS[kind];
-    if (!config || !hasFlag(code)) return null;
-    const localizedKind = config.label[lang === 'en' ? 'en' : 'ko'];
-    const nationLabel = canonicalNationalityLabel(kind, code, flagLabel(code, lang), lang);
-    return {
-        kind,
-        code,
-        label: nationLabel,
-        kindLabel: localizedKind,
-        peopleLabel: config.peopleLabel[lang === 'en' ? 'en' : 'ko'],
-        href: nationalityHubHref(kind, code),
-        people: (people || []).filter(person => {
-            const value = person && person[config.personField];
-            return value && value.code === code;
-        }),
-    };
-}
-
-module.exports = { nationalityHubHref, personFlagHref, buildNationalityFilter, canonicalNationalityLabel };
+module.exports = { personFlagHref, canonicalNationalityLabel };

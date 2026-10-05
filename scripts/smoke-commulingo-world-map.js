@@ -46,14 +46,12 @@ assert.doesNotMatch(territorySvg, /class="wmap-marker[" ]/, 'country maps should
 assert.doesNotMatch(territorySvg, /class="wmap-territory" data-country-code="soviet"/, 'historical unions must not cover modern country links');
 const countryRoute = fs.readFileSync(require.resolve('../routes/commulingo-map.js'), 'utf8');
 const countryTemplate = fs.readFileSync(require.resolve('../views/public/commulingo-country.ejs'), 'utf8');
-const nationalityTemplate = fs.readFileSync(require.resolve('../views/public/commulingo-nationality.ejs'), 'utf8');
 const mapControls = fs.readFileSync(require.resolve('../views/partials/commulingo-world-map-controls.ejs'), 'utf8');
 const mapScript = fs.readFileSync(require.resolve('../public/js/commulingo-world-map.js'), 'utf8');
 assert.match(countryRoute, /const PREVIEW_LIMIT = 4;/, 'country hubs should show at most four people per group');
 assert.match(countryTemplate, /class="commu-country-sections"/, 'country hubs need compact section navigation');
 assert.match(countryTemplate, /class="commu-country-section-head"><a href=/, 'section headings must link to full lists');
 assert.match(countryTemplate, /\/commulingo\/events\?country=/, 'events heading must retain the country filter');
-assert.match(nationalityTemplate, /label: filter\.label, href: countryPageHref/, 'nationality lists sit under their country hub in the breadcrumb');
 const { personFlagHref } = require('../data/commulingo/nationality-filter');
 assert.strictEqual(personFlagHref('citizenship', 'russia'), '/commulingo/countries/russia#country-citizenship');
 assert.strictEqual(personFlagHref('nationalOrigin', 'russia'), '/commulingo/countries/russia#country-origin');
@@ -62,13 +60,6 @@ assert.match(mapControls, /data-map-action="reset"/, 'world maps need a scale re
 assert.match(mapScript, /selected\.getBBox\(\)/, 'country maps need geometry-aware automatic fitting');
 console.log(`world map: ${codes.length} country/region codes, geometry coverage and SVG links OK`);
 
-for (const segment of ['citizenship', 'national-origin']) {
-    const peopleMap = renderCountryMapSvg({ selectedCode: 'romania',
-        countryLink: code => `/commulingo/people/${segment}/${code}` });
-    assert.match(peopleMap, new RegExp(`data-country-code="bulgaria" href="/commulingo/people/${segment}/bulgaria"`));
-    assert.doesNotMatch(peopleMap, /href="\/commulingo\/countries\//);
-    assert.doesNotMatch(peopleMap, /class="wmap-marker[" ]/);
-}
 assert.equal(renderCountryMapSvg({ selectedCode: 'ukraine' }), territorySvg);
 
 // Country hub timeline: chronological rows with a one-line lead.
