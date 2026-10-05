@@ -9,7 +9,7 @@ const repo = path.resolve(__dirname, '..');
 const root = process.env.CSS_RELEASE_HOST_DIR || path.join(repo, '.css-releases');
 const git = (...args) => execFileSync('git', args, { cwd: repo, encoding: 'utf8' }).trim();
 function prepare(app, source) {
-    if (git('status', '--porcelain')) throw Error('Commit source changes before publishing CSS');
+    if (git('status', '--porcelain', '--untracked-files=no')) throw Error('Commit source changes before publishing CSS');
     const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'frontend-css-'));
     try {
         const archive = execFileSync('git', ['archive', source, 'public', 'scripts/build-site-css.js', 'scripts/build-commulingo-list-css.js'], { cwd: repo, maxBuffer: 100 * 1024 * 1024 });
