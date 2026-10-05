@@ -28,7 +28,18 @@ function audit(log, entry) {
     log(`[mcp-audit] ${JSON.stringify({ ts: new Date().toISOString(), ...entry })}`);
 }
 
-async function callTool(tools, client, params, log) {
+function failure(err) {
+    const out = { error: err.message || 'internal error', status: err.status || (err.code === 'invalid_arguments' ? 400 : 500) };
+    if (err.code && err.code !== 'invalid_arguments') out.code = String(err.code);
+    if (err.currentRevision) out.currentRevision = err.currentRevision;
+    return out;
+}
+
+// Every call gets a stdout audit line; edit-scope calls also get a DB row
+// (recordAudit) naming the target and actor the tool reports via tool.audit.
+// Clients are authenticated owner tools, so store messages (revision
+// conflicts, validation failures) go back verbatim as the old RPC did.
+async function callTool(tools, client, params, { log, recordAudit }) {
     const name = params && params.name;
     const tool = allowedTools(tools, client).find(t => t.name === name);
     const started = Date.now();
@@ -37,21 +48,30 @@ async function callTool(tools, client, params, log) {
         audit(log, { ...entry, outcome: 'denied', ms: 0 });
         return { error: { code: -32602, message: `unknown tool: ${entry.tool}` } };
     }
+    let args, outcome, value, problem;
     try {
-        const args = validateArguments(tool.inputSchema, params.arguments);
-        const value = await tool.handler(args, { client: client.name });
-        audit(log, { ...entry, outcome: 'ok', ms: Date.now() - started });
-        return { result: { content: [{ type: 'text', text: JSON.stringify(value ?? null) }],
-            structuredContent: value && typeof value === 'object' && !Array.isArray(value) ? value : { value } } };
+        args = validateArguments(tool.inputSchema, params.arguments);
+        value = await tool.handler(args, { client: client.name });
+        outcome = 'ok';
     } catch (err) {
-        const known = err.code === 'invalid_arguments' || (err.status && err.status < 500);
-        if (!known) console.error(`[mcp] ${entry.tool} failed:`, err);
-        audit(log, { ...entry, outcome: known ? 'rejected' : 'error', ms: Date.now() - started });
-        return { result: { content: [{ type: 'text', text: known ? err.message : 'internal error' }], isError: true } };
+        problem = failure(err);
+        outcome = problem.status < 500 ? 'rejected' : 'error';
+        if (outcome === 'error') console.error(`[mcp] ${entry.tool} failed:`, err);
     }
+    const ms = Date.now() - started;
+    audit(log, { ...entry, outcome, ms });
+    if (tool.scope === 'edit' && args) {
+        let described = {};
+        try { described = tool.audit ? tool.audit(args, client.name) : {}; } catch { /* audit is best effort */ }
+        await recordAudit({ ...entry, ...described, outcome, ms, error: problem && problem.error,
+            result: outcome === 'ok' && tool.summarize ? tool.summarize(value) : undefined });
+    }
+    if (problem) return { result: { content: [{ type: 'text', text: JSON.stringify(problem) }], structuredContent: problem, isError: true } };
+    return { result: { content: [{ type: 'text', text: JSON.stringify(value ?? null) }],
+        structuredContent: value && typeof value === 'object' && !Array.isArray(value) ? value : { value } } };
 }
 
-async function handleMessage(message, client, tools, log) {
+async function handleMessage(message, client, tools, context) {
     if (!message || message.jsonrpc !== '2.0' || typeof message.method !== 'string') {
         return rpcError(message && message.id, -32600, 'invalid request');
     }
@@ -73,13 +93,13 @@ async function handleMessage(message, client, tools, log) {
         })) } };
     }
     if (method === 'tools/call') {
-        const outcome = await callTool(tools, client, params, log);
+        const outcome = await callTool(tools, client, params, context);
         return outcome.error ? rpcError(id, outcome.error.code, outcome.error.message) : { jsonrpc: '2.0', id, result: outcome.result };
     }
     return rpcError(id, -32601, `method not found: ${method}`);
 }
 
-function createMcpApp({ clients, tools, log = console.log }) {
+function createMcpApp({ clients, tools, log = console.log, recordAudit = async () => {} }) {
     const app = express();
     app.disable('x-powered-by');
     app.use('/mcp', (req, res, next) => {
@@ -90,9 +110,9 @@ function createMcpApp({ clients, tools, log = console.log }) {
         req.mcpClient = client;
         next();
     });
-    app.post('/mcp', express.json({ limit: '1mb' }), async (req, res) => {
+    app.post('/mcp', express.json({ limit: '5mb' }), async (req, res) => {
         if (Array.isArray(req.body)) return res.status(400).json(rpcError(null, -32600, 'batch requests are not supported'));
-        const response = await handleMessage(req.body, req.mcpClient, tools, log);
+        const response = await handleMessage(req.body, req.mcpClient, tools, { log, recordAudit });
         if (!response) return res.status(202).end();
         res.setHeader('Cache-Control', 'no-store');
         res.json(response);

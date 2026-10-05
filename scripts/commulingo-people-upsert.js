@@ -40,10 +40,7 @@
 
 const fs = require('fs');
 const { db } = require('./lib/bootstrap');
-const { getPersonAdmin } = require('../data/commulingo/people-admin-store');
-const { submitPersonEdit } = require('../data/commulingo/person-editorial-service');
-const { listPersonSectionsAdmin } = require('../data/commulingo/people-sections-store');
-const { clearCommuLingoPeopleCache } = require('../data/commulingo/people-store');
+const { upsertPeople } = require('../data/commulingo/people-upsert');
 
 function readSpec(arg) {
     const raw = arg === '-' ? fs.readFileSync(0, 'utf8') : fs.readFileSync(arg, 'utf8');
@@ -63,45 +60,20 @@ function readSpec(arg) {
         process.exit(2);
     }
     let exitCode = 0;
-    let client;
     try {
         const { people, changedBy: specChangedBy } = readSpec(positional[0]);
         const changedBy = cbIndex >= 0 ? args[cbIndex + 1] : (specChangedBy || `commulingo-people-upsert:${process.env.USER || 'cli'}`);
-        client = await db.connect();
-        await client.query('BEGIN');
-        for (const entry of people) {
-            const { sections, ...payload } = entry;
-            if (!payload.id) throw new Error('every person needs an id');
-            const existing = await getPersonAdmin(payload.id, { client });
-            // An update is checked against the revision just read, as a section is.
-            const fields = existing ? { expectedRevision: existing.revision, ...payload } : payload;
-            const result = await submitPersonEdit({ target: 'person', action: existing ? 'update' : 'create',
-                id: payload.id, fields, sources: payload.sources }, { client, changedBy });
-            console.log(`${result.status} ${payload.id} (edit ${result.suggestionId})`);
-            if (result.status === 'pending' && sections?.length) throw new Error('review the person edit before adding its sections');
-            for (const section of sections || []) {
-                const current = await getPersonAdmin(payload.id, { client });
-                const exists = (await listPersonSectionsAdmin(payload.id, { client })).some(s => s.slug === section.slug);
-                const saved = await submitPersonEdit({ target: 'person_section', action: exists ? 'update' : 'create',
-                    id: payload.id, fields: { ...section, expectedRevision: section.expectedRevision ?? current.revision },
-                    sources: section.sources || payload.sources }, { client, changedBy });
-                console.log(`  ${saved.status} section ${section.slug}`);
-            }
+        const { results } = await upsertPeople(people, { dryRun, changedBy });
+        for (const row of results) {
+            console.log(`${row.status} ${row.id} (edit ${row.suggestionId})`);
+            for (const section of row.sections) console.log(`  ${section.status} section ${section.slug}`);
         }
-        if (dryRun) {
-            await client.query('ROLLBACK');
-            console.log(`dry run: ${people.length} person(s) validated, nothing written`);
-        } else {
-            await client.query('COMMIT');
-            clearCommuLingoPeopleCache();
-            console.log(`committed ${people.length} person(s); the site picks it up on the next people-store refresh (~60s)`);
-        }
+        console.log(dryRun ? `dry run: ${people.length} person(s) validated, nothing written`
+            : `committed ${people.length} person(s); the site picks it up on the next people-store refresh (~60s)`);
     } catch (err) {
-        if (client) await client.query('ROLLBACK').catch(() => {});
         console.error(`rejected: ${err.message}`);
         exitCode = 1;
     } finally {
-        if (client) client.release();
         await db.end().catch(() => {});
         process.exit(exitCode);
     }

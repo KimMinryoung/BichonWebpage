@@ -1,5 +1,6 @@
 // The small JSON Schema subset the MCP tools declare: an object of string,
-// integer and boolean properties (optionally enum / min / max / maxLength).
+// integer and boolean properties (optionally enum / min / max / maxLength),
+// plus opaque object/array payloads the editorial services validate themselves.
 // Unknown properties are rejected so a typo never silently means "no filter".
 
 function str(description, extra = {}) {
@@ -12,6 +13,14 @@ function int(description, minimum, maximum, extra = {}) {
 
 function bool(description) {
     return { type: 'boolean', description };
+}
+
+function obj(description) {
+    return { type: 'object', description };
+}
+
+function arr(description, maxItems = 200) {
+    return { type: 'array', description, maxItems };
 }
 
 function object(properties, required = []) {
@@ -45,6 +54,11 @@ function validateArguments(schema, args) {
             if (value < spec.minimum || value > spec.maximum) throw invalid(`${key} must be ${spec.minimum}–${spec.maximum}`);
         } else if (spec.type === 'boolean') {
             if (typeof value !== 'boolean') throw invalid(`${key} must be a boolean`);
+        } else if (spec.type === 'object') {
+            if (!value || typeof value !== 'object' || Array.isArray(value)) throw invalid(`${key} must be an object`);
+        } else if (spec.type === 'array') {
+            if (!Array.isArray(value)) throw invalid(`${key} must be an array`);
+            if (value.length > spec.maxItems) throw invalid(`${key} has more than ${spec.maxItems} items`);
         }
         if (spec.enum && !spec.enum.includes(value)) throw invalid(`${key} must be one of ${spec.enum.join(', ')}`);
         out[key] = value;
@@ -52,4 +66,4 @@ function validateArguments(schema, args) {
     return out;
 }
 
-module.exports = { str, int, bool, object, validateArguments };
+module.exports = { str, int, bool, obj, arr, object, validateArguments };
