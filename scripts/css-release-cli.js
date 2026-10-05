@@ -4,6 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 const { buildRelease, verifyRelease, atomicJson } = require('./lib/css-release');
+const { isRuntimePath } = require('./lib/runtime-paths');
 const repo = path.resolve(__dirname, '..');
 const root = process.env.CSS_RELEASE_HOST_DIR || path.join(repo, '.css-releases');
 const git = (...args) => execFileSync('git', args, { cwd: repo, encoding: 'utf8' }).trim();
@@ -61,7 +62,7 @@ try {
                 const removed = git('diff', '--diff-filter=D', '--name-only', app, source).split('\n').filter(file => /^public\/css\//.test(file));
                 if (removed.length) throw Error(`CSS removal requires full app deployment: ${removed.join(', ')}`);
                 const changed = git('diff', '--name-only', app, source).split('\n').filter(Boolean);
-                const incompatible = changed.filter(file => !/^public\/css\/.+\.css$/.test(file) && !/^dev_docs\//.test(file));
+                const incompatible = changed.filter(file => isRuntimePath(file) && !/^public\/css\/.+\.css$/.test(file));
                 if (incompatible.length) throw Error(`Full app deployment required: ${incompatible.join(', ')}`);
             }
             activate(prepare(app, source));

@@ -22,8 +22,8 @@ const NODE_ENV = str('NODE_ENV', 'development');
 const IS_PRODUCTION = NODE_ENV === 'production';
 const DEV_MODE = process.env.DEV_MODE === '1' || !IS_PRODUCTION;
 const PORT = str('PORT', '3000');
-// Asset cache-busting: explicit ASSET_VERSION, else the git SHA baked in at
-// image build, else boot time (which invalidates the CDN cache on restart).
+// Asset cache-busting: explicit ASSET_VERSION, else the git SHA scripts/deploy
+// passes to the container, else boot time (invalidates the CDN cache on restart).
 const ASSET_VERSION = str('ASSET_VERSION') || str('GIT_SHA') || String(Date.now());
 const SESSION_SECRET = str('SESSION_SECRET');
 const WEBCHAT_PROXY_SECRET = str('WEBCHAT_PROXY_SECRET');

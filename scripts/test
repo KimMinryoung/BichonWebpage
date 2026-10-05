@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# scripts/test — the host-side test set (no DB, no container, ~2 s).
+# scripts/test — the host-side test set (no DB, no container; parallel, ~8 s).
 #
 #   check-ui.js         compiles every EJS view + asserts the base CSS links
 #   test-seo.js         head.ejs SEO output + language resolution
@@ -25,15 +25,26 @@ if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
         -v "$PWD:/app:ro" -w /app node:24.21.0-alpine sh scripts/test "$@"
 fi
 
-fail=0
+# Tests are independent (ephemeral ports, mkdtemp scratch), so they run in
+# parallel up to one per CPU; results print in list order once all finish.
+logs="$(mktemp -d)"
+trap 'rm -rf "$logs"' EXIT
+max="$(nproc 2>/dev/null || echo 4)"
+count=0
+running=""
 run() {
-    local name="$1"; shift
-    if "$@" > /tmp/test-$$.log 2>&1; then
-        echo "ok   $name"
-    else
-        echo "FAIL $name"
-        sed 's/^/     /' /tmp/test-$$.log | tail -20
-        fail=1
+    count=$((count + 1))
+    local id name="$1"
+    id="$(printf '%03d' "$count")"
+    shift
+    printf '%s\n' "$name" > "$logs/$id.name"
+    ( "$@" > "$logs/$id.log" 2>&1; echo $? > "$logs/$id.status" ) &
+    running="$running $!"
+    set -- $running
+    if [ "$#" -ge "$max" ]; then
+        wait "$1"
+        shift
+        running="$*"
     fi
 }
 
@@ -60,7 +71,20 @@ run audit-commulingo-quality  node scripts/audit-commulingo-quality.js
 if [[ -x node_modules/.bin/eslint ]]; then
     run lint node_modules/.bin/eslint .
 fi
-rm -f /tmp/test-$$.log
+wait
+
+fail=0
+for name_file in "$logs"/*.name; do
+    id="${name_file%.name}"
+    name="$(cat "$name_file")"
+    if [ "$(cat "$id.status" 2>/dev/null)" = 0 ]; then
+        echo "ok   $name"
+    else
+        echo "FAIL $name"
+        sed 's/^/     /' "$id.log" | tail -20
+        fail=1
+    fi
+done
 
 if [[ $fail -ne 0 ]]; then
     echo "tests failed"

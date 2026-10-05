@@ -61,6 +61,9 @@ start_container() {
 
     stop_container
 
+    # The image holds dependencies only, so the working tree is the code. The
+    # empty tmpfs hides the host's node_modules (installed by the host's node)
+    # and lets Node fall through to the image's /node_modules.
     log "Starting ${CONTAINER_NAME} at http://${TAILSCALE_IP}:${DEV_PORT}"
     docker run -d \
         --name "$CONTAINER_NAME" \
@@ -74,15 +77,8 @@ start_container() {
         -e ASSET_VERSION=dev \
         -e REPORT_RENDER_CACHE_PATH=/app/data/cache/report-renders.dev.json \
         -e COMMULINGO_DRILLS_CACHE_PATH=/app/data/cache/drills.dev.json \
-        -v "$FRONTEND_DIR/config:/app/config" \
-        -v "$FRONTEND_DIR/data:/app/data" \
-        -v "$FRONTEND_DIR/middleware:/app/middleware" \
-        -v "$FRONTEND_DIR/public:/app/public" \
-        -v "$FRONTEND_DIR/routes:/app/routes" \
-        -v "$FRONTEND_DIR/services:/app/services" \
-        -v "$FRONTEND_DIR/utils:/app/utils" \
-        -v "$FRONTEND_DIR/views:/app/views" \
-        -v "$FRONTEND_DIR/server.js:/app/server.js" \
+        -v "$FRONTEND_DIR:/app" \
+        --mount type=tmpfs,destination=/app/node_modules \
         "$IMAGE_NAME" \
         node --watch server.js
 

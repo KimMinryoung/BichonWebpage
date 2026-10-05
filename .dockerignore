@@ -1,10 +1,4 @@
-node_modules
-.env
-.git
-*.log
-data
-public/img/game/raw
-public/puzzles/.*-backup
-temp_dev
-
-.css-releases/
+# The image holds dependencies only (see Dockerfile); send nothing else.
+*
+!package.json
+!package-lock.json

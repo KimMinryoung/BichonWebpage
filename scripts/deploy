@@ -3,8 +3,11 @@
 #
 # Usage:
 #   deploy [--restart]
-#       Pull latest code, rebuild Docker image, recreate container.
-#       Skips if already up-to-date unless --restart is passed.
+#       Pull latest code, extract it as a read-only code release, and replace
+#       the container. The image holds only Node and dependencies and is
+#       rebuilt only when Dockerfile/package*.json change. Skips when nothing
+#       the app reads changed (docs, host scripts) unless --restart is passed.
+#       A CSS-only change is faster with scripts/deploy-assets publish.
 
 set -euo pipefail
 
@@ -74,6 +77,10 @@ cd "$FRONTEND_DIR"
 export CSS_RELEASE_HOST_DIR="${CSS_RELEASE_HOST_DIR:-$(dirname "$FRONTEND_DATA_DIR")/.css-releases}"
 [[ "$CSS_RELEASE_HOST_DIR" == /* ]] || { echo "CSS_RELEASE_HOST_DIR must be absolute" >&2; exit 2; }
 mkdir -p "$CSS_RELEASE_HOST_DIR"
+# One read-only directory per deployed commit, mounted at /app.
+APP_RELEASE_HOST_DIR="${APP_RELEASE_HOST_DIR:-$(dirname "$FRONTEND_DATA_DIR")/.app-releases}"
+[[ "$APP_RELEASE_HOST_DIR" == /* ]] || { echo "APP_RELEASE_HOST_DIR must be absolute" >&2; exit 2; }
+mkdir -p "$APP_RELEASE_HOST_DIR"
 exec 9>"$CSS_RELEASE_HOST_DIR/deploy.lock"
 flock -n 9 || { err "Another app/CSS deployment is running."; exit 1; }
 
@@ -110,6 +117,19 @@ if [[ "$FORCE_RESTART" -eq 0 && "$LOCAL" == "$DEPLOYED" ]]; then
     exit 0
 fi
 
+if [[ "$FORCE_RESTART" -eq 0 && -n "$DEPLOYED" ]]; then
+    # An unknown deployed revision (diff fails) counts as a runtime change.
+    RUNTIME_CHANGES="$(node scripts/lib/runtime-paths.js "$DEPLOYED" "$LOCAL" 2>/dev/null || echo '?')"
+    if [[ -z "$RUNTIME_CHANGES" ]]; then
+        log "Only host-side files (docs, host scripts) changed since $DEPLOYED; the running app is unaffected."
+        log "Nothing to deploy. Use --restart to deploy $LOCAL anyway."
+        exit 0
+    fi
+    if ! grep -qvE '^public/css/.+\.css$' <<< "$RUNTIME_CHANGES"; then
+        warn "Only CSS changed: scripts/deploy-assets publish would skip the restart. Deploying fully."
+    fi
+fi
+
 if [[ -z "$DEPLOYED" ]]; then
     warn "No deployed revision label found; rebuilding ${LOCAL}."
 elif [[ "$LOCAL" != "$DEPLOYED" ]]; then
@@ -130,12 +150,41 @@ fi
 # pointer: a failed app deploy does not change the old app's CSS selection.
 node scripts/css-release-cli.js prepare "$LOCAL"
 
-# 3. Build image
-log "Building Docker image..."
-docker build \
-    --label "$REVISION_LABEL=$LOCAL" \
-    --build-arg "GIT_SHA=${LOCAL:0:12}" \
-    -t "$IMAGE_NAME" .
+# 3. Runtime image (dependencies only), tagged by the files that define it.
+DEPS_HASH="$(cat Dockerfile .dockerignore package.json package-lock.json | sha256sum | cut -c1-16)"
+RUNTIME_IMAGE="$IMAGE_NAME:deps-$DEPS_HASH"
+if docker image inspect "$RUNTIME_IMAGE" > /dev/null 2>&1; then
+    log "Dependencies unchanged; reusing image $RUNTIME_IMAGE."
+else
+    log "Building runtime image $RUNTIME_IMAGE (Dockerfile or dependencies changed)..."
+    docker build -t "$RUNTIME_IMAGE" .
+fi
+# scripts/dev-preview runs the untagged name.
+docker tag "$RUNTIME_IMAGE" "$IMAGE_NAME"
+
+# Code release: the committed tree minus host-only directories and data/
+# (mounted). Extracted once per commit, then reused by restarts.
+APP_DIR="$APP_RELEASE_HOST_DIR/$LOCAL"
+if [[ -d "$APP_DIR" ]]; then
+    log "Reusing code release $APP_DIR."
+    touch "$APP_DIR"
+else
+    log "Extracting code release $LOCAL..."
+    EXCLUDES=(':(exclude)data')
+    for dir in $(node -p "require('./scripts/lib/runtime-paths').RELEASE_EXCLUDES.join(' ')"); do
+        EXCLUDES+=(":(exclude)$dir")
+    done
+    stage="$(mktemp -d "$APP_RELEASE_HOST_DIR/.staging-XXXXXX")"
+    chmod 755 "$stage"
+    if ! git archive "$LOCAL" -- . "${EXCLUDES[@]}" | tar -x -C "$stage"; then
+        rm -rf "$stage"
+        err "Could not extract code release $LOCAL."
+        exit 1
+    fi
+    # Mount points inside the read-only /app.
+    mkdir "$stage/data" "$stage/css-releases"
+    mv "$stage" "$APP_DIR"
+fi
 
 # 4. Start the new image as a standby and check it before it serves anyone.
 run_container() {
@@ -159,9 +208,10 @@ run_container() {
         -e CSS_RELEASE_DIR=/app/css-releases \
         --restart "$restart" \
         --env-file "$FRONTEND_DIR/.env" \
+        -v "$APP_DIR:/app:ro" \
         -v "$FRONTEND_DATA_DIR:/app/data" \
         -v "$CSS_RELEASE_HOST_DIR:/app/css-releases:ro" \
-        "$IMAGE_NAME" > /dev/null || return 1
+        "$RUNTIME_IMAGE" > /dev/null || return 1
     # Connect to the leninbot network for Redis and Postgres (leninbot-pg)
     # access. Without it the container is alive but useless, so say so here
     # instead of letting the readiness wait time out.
@@ -283,10 +333,22 @@ done
 while (( SECONDS - primary_up < 12 )); do sleep 1; done
 remove_standby
 
-# 7. Cleanup
+# 7. Cleanup: keep the newest five code releases for quick restarts (the
+#    running one always), and drop runtime images of superseded dependency
+#    sets; an image a container still uses (e.g. dev-preview) refuses removal.
+rm -rf "$APP_RELEASE_HOST_DIR"/.staging-*
+kept=0
+while read -r rev; do
+    [[ "$rev" =~ ^[0-9a-f]+$ && ${#rev} -eq 40 ]] || continue
+    kept=$((kept + 1))
+    (( kept <= 5 )) || [[ "$rev" == "$LOCAL" ]] || rm -rf "${APP_RELEASE_HOST_DIR:?}/$rev"
+done < <(ls -1t "$APP_RELEASE_HOST_DIR")
+docker images "$IMAGE_NAME" --format '{{.Tag}}' | { command grep '^deps-' || true; } \
+    | while read -r tag; do
+        [[ "$tag" == "deps-$DEPS_HASH" ]] || docker rmi "$IMAGE_NAME:$tag" > /dev/null 2>&1 || true
+    done
 docker image prune -f > /dev/null
-# Every build leaves a ~300 MB "COPY . ." layer that BuildKit's default GC
-# keeps while the disk has room (42 GB by 2026-10-03); cap it, oldest first.
+# Cap BuildKit's cache (it reached 42 GB by 2026-10-03 when every deploy built).
 docker builder prune -f --max-used-space 5GB > /dev/null || warn "Build cache prune failed."
 
 if [[ -n "$DEPLOYED" && "$LOCAL" != "$DEPLOYED" ]]; then
