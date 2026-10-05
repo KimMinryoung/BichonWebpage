@@ -110,6 +110,28 @@ const tools = [
         summarize: summary,
     },
     {
+        name: 'gap_file',
+        description: 'File curation gaps an editor\'s text needed (person, term, event, doc): each gap is {kind, label {ko,en}, '
+            + 'target_id (existing entry too thin, or null), reason, priority 0-10}. Gaps the dictionaries already cover '
+            + '(name, alias, bracket variants; event titles for terms; document titles) are not filed. Returns filed, already_queued, already_covered.',
+        inputSchema: object({
+            gaps: arr('Gaps', 50),
+            eventId: str('The event whose text needed them'),
+            changedBy,
+        }, ['gaps', 'eventId']),
+        audit: ({ gaps, eventId, changedBy: actor }, client) => ({ command: 'file', targetType: 'curation_gap',
+            targetId: `${eventId}:${gaps.length}`, actor: actor || `mcp:${client}` }),
+        async handler({ gaps, eventId, changedBy: given }, { client }) {
+            for (const [i, gap] of gaps.entries()) {
+                if (!gap || typeof gap !== 'object' || !['person', 'term', 'event', 'doc'].includes(gap.kind)) throw badRequest(`gaps[${i}].kind must be person, term, event or doc`);
+                if (!gap.label || typeof gap.label !== 'object' || !String(gap.label.ko || '').trim()) throw badRequest(`gaps[${i}].label.ko is required`);
+            }
+            const { fileGaps } = require('../../data/commulingo/curation-gaps');
+            return fileGaps(gaps, eventId, actorOf(given, client));
+        },
+        summarize: value => ({ filed: value.filed.length, already_queued: value.already_queued.length, already_covered: value.already_covered.length }),
+    },
+    {
         name: 'people_upsert',
         description: 'Create or update people (with optional sections) in one transaction through the Admin store validation. Each person is the '
             + 'Admin create payload plus optional sections[]; an existing id is updated against its current revision. Spec format: '
