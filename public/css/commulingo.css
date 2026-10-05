@@ -2406,7 +2406,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-people-group-head {
     background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--border);
     cursor: pointer;
     display: block;
     list-style: none;
@@ -2462,19 +2461,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     transform: translateY(-50%) rotate(-90deg);
 }
 
-.commu-people-group.is-old-regime .commu-people-group-head { border-left-color: #b08d3f; }
-.commu-people-group.is-bolshevik .commu-people-group-head { border-left-color: #c0453c; }
-.commu-people-group.is-world-before-1917 .commu-people-group-head { border-left-color: #7b5ea7; }
-.commu-people-group.is-world-interwar .commu-people-group-head { border-left-color: #9c2d3f; }
-.commu-people-group.is-world-cold-war .commu-people-group-head { border-left-color: #b0603a; }
-.commu-people-group.is-stalin-era .commu-people-group-head { border-left-color: #8a93a6; }
-.commu-people-group.is-thaw .commu-people-group-head { border-left-color: #4d8fc4; }
-.commu-people-group.is-perestroika .commu-people-group-head { border-left-color: #4aa578; }
-.commu-people-group.is-china-old-regime .commu-people-group-head { border-left-color: #9a7b4f; }
-.commu-people-group.is-china-revolution .commu-people-group-head { border-left-color: #d1473a; }
-.commu-people-group.is-china-mao-era .commu-people-group-head { border-left-color: #8c2f2f; }
-.commu-people-group.is-china-reform .commu-people-group-head { border-left-color: #3f9a8a; }
-.commu-people-group.is-france-revolution .commu-people-group-head { border-left-color: #3b5ba5; }
 
 /* The person groups sit on two boxed shelves — the Soviet timeline and the
    people beyond it — in the same grammar as the index's book shelves: a card
@@ -2512,7 +2498,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     }
 }
 
-/* 「목록으로 보기」 on a group header: the same cards as a plain paged page. */
+/* 「목록으로 보기」 opens the people explorer with this era selected. */
 .commu-people-group-list-link {
     position: absolute; right: 38px; top: 12px;
     font-size: 0.8rem; color: var(--text-muted); text-decoration: none; white-space: nowrap;
