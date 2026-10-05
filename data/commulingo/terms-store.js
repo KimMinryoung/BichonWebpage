@@ -22,7 +22,7 @@ async function fetchTerms() {
     const [terms, aliases, people, events, relations] = await readSnapshot(client => Promise.all([
         client.query(
             `SELECT id, term_ko, term_en, original, period_label,
-                    period_ko, period_en, start_year, end_year, category,
+                    period_ko, period_en, start_year, end_year, category, region,
                     definition_ko, definition_en, body_ko, body_en, sources,
                     parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions
              FROM commulingo_terms
@@ -139,6 +139,7 @@ async function fetchTerms() {
         startYear: Number.isInteger(row.start_year) ? row.start_year : null,
         endYear: Number.isInteger(row.end_year) ? row.end_year : null,
         category: row.category || '',
+        region: row.region || '',
         definition: t(row.definition_ko, row.definition_en),
         body: t(row.body_ko, row.body_en),
         sources: Array.isArray(row.sources) ? row.sources : [],

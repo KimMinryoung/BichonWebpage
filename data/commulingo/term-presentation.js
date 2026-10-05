@@ -4,7 +4,7 @@ const { loadCommuLingoTerms } = require('./terms-store');
 const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { renderAppView } = require('../../utils/render-app-view');
 const { getReportsForTerm } = require('../../services/report-mentions');
-const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termCategoryLabel } = require('./term-categories');
+const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termRegionsWithCounts, termCategoryLabel } = require('./term-categories');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { genealogyLinksForEntry } = require('./genealogy-links');
 const { localize } = require('./localize');
@@ -207,6 +207,7 @@ async function termListData(lang, sort) {
             terms,
             groups: groupTerms(terms, sort, lang),
             categories: termCategoriesWithCounts(terms, lang),
+            regions: termRegionsWithCounts(terms, lang),
             categoriesRef,
         };
         byKey.set(key, data);

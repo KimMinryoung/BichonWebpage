@@ -49,6 +49,8 @@ data/commulingo/terms-snapshot.json.tmp
 # CommuLingo glossary category registry snapshot (same pattern)
 data/commulingo/term-categories-snapshot.json
 data/commulingo/term-categories-snapshot.json.tmp
+data/commulingo/term-regions-snapshot.json
+data/commulingo/term-regions-snapshot.json.tmp
 
 # CommuLingo link blocklist snapshot (same pattern)
 data/commulingo/link-blocklist-snapshot.json

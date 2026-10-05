@@ -45,8 +45,14 @@ router.get('/search', dictionarySearchRoute({
     kind: 'terms', view: 'partials/commulingo-term-cards', target: '#commu-term-list',
     load: async (req, lang) => {
         const sort = req.query.sort === 'chrono' ? 'chrono' : 'name';
+        // The region chips are a second facet beside the kind chips (?kind=).
+        const region = typeof req.query.region === 'string' ? req.query.region.slice(0, 100) : '';
         const data = await termListData(lang, sort);
-        return { items: data.terms, params: { sort } };
+        return {
+            items: data.terms,
+            accepts: region ? term => term.region === region : undefined,
+            params: region ? { sort, region } : { sort },
+        };
     },
 }));
 
@@ -66,6 +72,7 @@ router.get('/', async (req, res) => {
                 ? await termGroupCardsHtml(req, lang, sort, firstGroup.id)
                 : '',
             categories: data.categories,
+            regions: data.regions,
             sort,
             pageTitle: en ? 'Glossary — CommuLingo' : '용어 사전 — CommuLingo',
             pageDescription: en

@@ -13,10 +13,19 @@
         if (!list || !input || !clear || !status) return;
         input.maxLength = 200;
         var endpoint = list.getAttribute('data-search-endpoint');
-        var chipRoot = document.querySelector('[data-commu-dict-chips][data-target="' + selector + '"]');
-        var chips = chipRoot ? Array.from(chipRoot.querySelectorAll('[data-category]')) : [];
-        var active = chips.find(function(chip) { return chip.classList.contains('is-active'); });
-        var category = active ? active.getAttribute('data-category') : '';
+        // One chip row per facet: the kind row sends ?kind=, any other row
+        // names its own parameter (data-param, e.g. the glossary's region).
+        var facets = Array.from(document.querySelectorAll('[data-commu-dict-chips][data-target="' + selector + '"]')).map(function(chipRoot) {
+            var chips = Array.from(chipRoot.querySelectorAll('[data-category]'));
+            var active = chips.find(function(chip) { return chip.classList.contains('is-active'); });
+            return { param: chipRoot.getAttribute('data-param') || 'kind', chips: chips, value: active ? active.getAttribute('data-category') : '' };
+        });
+        function setFacetParams(params) {
+            facets.forEach(function(facet) {
+                if (facet.value) params.set(facet.param, facet.value); else params.delete(facet.param);
+            });
+        }
+        function anyFacet() { return facets.some(function(facet) { return !!facet.value; }); }
         var browse = list.hasAttribute('data-lazy') ? list : null;
         var indexBar = browse ? document.querySelector('.commu-dict-index') : null;
         if (browse) {
@@ -78,7 +87,7 @@
         function updateUrl() {
             if (browse || input.value.trim()) return;
             var params = new URLSearchParams(window.location.search);
-            if (category) params.set('kind', category); else params.delete('kind');
+            setFacetParams(params);
             if (page > 1) params.set('page', page); else params.delete('page');
             var suffix = params.toString();
             window.history.replaceState(null, '', location.pathname + (suffix ? '?' + suffix : '') + location.hash);
@@ -86,7 +95,7 @@
         function run(delay) {
             cancel();
             var query = input.value.trim();
-            var filtered = !!(query || category);
+            var filtered = !!query || anyFacet();
             clear.hidden = !query;
             retry.hidden = true;
             if (!endpoint) { applyLocal(query); return; }
@@ -112,7 +121,7 @@
             list.setAttribute('aria-busy', 'true');
             requests.schedule(function(request) {
                 var params = new URLSearchParams({ q: query, page: String(page) });
-                if (category) params.set('kind', category);
+                setFacetParams(params);
                 var source = browse || list;
                 ['sort', 'country'].forEach(function(key) {
                     var value = source.getAttribute('data-' + key);
@@ -154,19 +163,21 @@
                 if (first) location.href = first.href;
             }
         });
-        chips.forEach(function(chip) {
-            chip.addEventListener('click', function(event) {
-                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-                event.preventDefault();
-                var next = chip.getAttribute('data-category') || '';
-                category = category === next ? '' : next;
-                chips.forEach(function(other) {
-                    var selected = (other.getAttribute('data-category') || '') === category;
-                    other.classList.toggle('is-active', selected);
-                    other.setAttribute('aria-pressed', String(selected));
+        facets.forEach(function(facet) {
+            facet.chips.forEach(function(chip) {
+                chip.addEventListener('click', function(event) {
+                    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                    event.preventDefault();
+                    var next = chip.getAttribute('data-category') || '';
+                    facet.value = facet.value === next ? '' : next;
+                    facet.chips.forEach(function(other) {
+                        var selected = (other.getAttribute('data-category') || '') === facet.value;
+                        other.classList.toggle('is-active', selected);
+                        other.setAttribute('aria-pressed', String(selected));
+                    });
+                    page = 1;
+                    run();
                 });
-                page = 1;
-                run();
             });
         });
         if (pager) pager.addEventListener('click', function(event) {

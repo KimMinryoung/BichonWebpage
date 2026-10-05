@@ -10,7 +10,7 @@ const { carryLinkReviews } = require('./link-review-carry');
 
 const columns = {
     original: 'original', startYear: 'start_year', endYear: 'end_year',
-    category: 'category', parentId: 'parent_id', sortOrder: 'sort_order',
+    category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
 };
 const localized = { term: 'term', definition: 'definition', body: 'body', period: 'period' };
 const allowed = new Set([...Object.keys(columns), ...Object.keys(localized),
@@ -67,6 +67,7 @@ function validateFields(fields, current, action, sources) {
     if (merged.startYear != null && merged.endYear != null && merged.endYear < merged.startYear) throw badRequest('endYear precedes startYear');
     if (action==='create' && merged.startYear==null && /\b(1[5-9]\d{2}|20\d{2})\b/.test(`${merged.period.ko} ${merged.period.en}`)) throw badRequest('dated period requires startYear');
     if (!merged.category || typeof merged.category !== 'string') throw badRequest('category required');
+    if (merged.region != null && (typeof merged.region !== 'string' || !merged.region)) throw badRequest('region must be a region id or null');
     if (fields.id !== undefined && fields.id !== merged.id) throw badRequest('id mismatch');
     if (fields.original !== undefined && typeof fields.original !== 'string') throw badRequest('original must be text');
     if (fields.carryLinkReviews !== undefined && typeof fields.carryLinkReviews !== 'boolean') throw badRequest('carryLinkReviews must be boolean');
@@ -92,6 +93,10 @@ async function save(client, id, fields, current, action, actor, sources) {
     const value = validateFields({ ...fields, id }, current, action, sources);
     const category = await client.query('SELECT id FROM commulingo_term_categories WHERE id=$1', [value.category]);
     if (!category.rows.length) throw badRequest('unknown category');
+    if (value.region) {
+        const region = await client.query('SELECT id FROM commulingo_term_regions WHERE id=$1', [value.region]);
+        if (!region.rows.length) throw badRequest('unknown region');
+    }
     if (value.parentId) {
         const parent = (await client.query('SELECT parent_id FROM commulingo_terms WHERE id=$1', [value.parentId])).rows[0];
         const children = (await client.query('SELECT id FROM commulingo_terms WHERE parent_id=$1 LIMIT 1', [id])).rows;

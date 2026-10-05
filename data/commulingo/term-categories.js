@@ -1,12 +1,12 @@
-// Glossary category registry, read from commulingo_term_categories.
+// Glossary facet registries: kind (commulingo_term_categories) and main region
+// (commulingo_term_regions), one row per chip.
 //
-// The slug lives in commulingo_terms.category (migration 071); the bilingual
-// labels and their thematic order used to live in this file, on the reasoning
-// that code is easier to reword than a migration. It is the other way round —
-// this directory is bind-mounted but still `require`d once, so rewording a
-// label meant a commit, an image rebuild and a container recreate, while the
-// person dictionary's parallel registry (commulingo_role_categories, dropped in
-// migration 217) was a table you could UPDATE. Migration 115 moved these ten rows across.
+// The slugs live in commulingo_terms.category (migration 071) and
+// commulingo_terms.region (migration 286); the bilingual labels and their
+// order are tables so a relabel is one UPDATE. Migration 115 moved the
+// category labels out of this file; migration 286 split the category axis
+// into "what the term names" and moved Korea and the contemporary shelf onto
+// the region axis and the chronological sort.
 //
 // Serving (memory → disk snapshot → DB, background refresh) comes from the
 // shared snapshot-store scaffold.
@@ -14,9 +14,6 @@ const db = require('../../config/database');
 const path = require('path');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 
-// Order is thematic rather than alphabetical (theory and Soviet institutional
-// history first, then the contemporary and Korean material that would otherwise
-// sit unexplained among the 1920s entries), which is what sort_order carries.
 const UNCATEGORIZED = { id: '', ko: '미분류', en: 'Uncategorized' };
 
 function install(rows) {
@@ -26,37 +23,43 @@ function install(rows) {
         en: row.label_en || '',
     }));
     const byId = {};
-    list.forEach(category => { byId[category.id] = category; });
+    list.forEach(entry => { byId[entry.id] = entry; });
     return { list, byId };
 }
 
-const store = createRegistrySnapshotStore({
-    label: 'commulingo term categories',
-    refreshMs: Number.parseInt(process.env.COMMULINGO_TERM_CATEGORIES_CACHE_MS || '60000', 10),
-    snapshotPath: process.env.COMMULINGO_TERM_CATEGORIES_SNAPSHOT
-        || path.join(__dirname, 'term-categories-snapshot.json'),
-    fetchRows: async () => (await db.query(
-        `SELECT id, label_ko, label_en
-         FROM commulingo_term_categories
-         ORDER BY sort_order, id`
-    )).rows,
-    install,
-    signatureTables: ['commulingo_term_categories'],
-    validateSnapshot: rows => Array.isArray(rows) && rows.length > 0,
-});
+function registry(table, snapshotName, envPrefix) {
+    return createRegistrySnapshotStore({
+        label: `commulingo ${table.replace('commulingo_', '').replace(/_/g, ' ')}`,
+        refreshMs: Number.parseInt(process.env[`${envPrefix}_CACHE_MS`] || '60000', 10),
+        snapshotPath: process.env[`${envPrefix}_SNAPSHOT`] || path.join(__dirname, snapshotName),
+        fetchRows: async () => (await db.query(
+            `SELECT id, label_ko, label_en FROM ${table} ORDER BY sort_order, id`
+        )).rows,
+        install,
+        signatureTables: [table],
+        validateSnapshot: rows => Array.isArray(rows) && rows.length > 0,
+    });
+}
+
+const store = registry('commulingo_term_categories', 'term-categories-snapshot.json', 'COMMULINGO_TERM_CATEGORIES');
+const regionStore = registry('commulingo_term_regions', 'term-regions-snapshot.json', 'COMMULINGO_TERM_REGIONS');
 
 // Await this before rendering anything that calls the sync accessors below.
 // Serves memory → disk snapshot → DB, so a cold start with the DB down still
 // labels the chips.
 async function loadTermCategories() {
-    return (await store.load()).list;
+    const [categories] = await Promise.all([store.load(), regionStore.load()]);
+    return categories.list;
 }
 
-// The identity of the loaded registry, for callers memoizing rendered output:
-// when this object changes, labels may have changed with it.
+// The identity of the loaded registries, for callers memoizing rendered
+// output: a new object whenever either registry installs new rows.
+let ref = null;
 function termCategoriesRef() {
-    const memory = store.getMemory();
-    return memory ? memory.list : null;
+    const categories = store.getMemory(), regions = regionStore.getMemory();
+    if (!categories) return null;
+    if (!ref || ref.categories !== categories || ref.regions !== regions) ref = { categories, regions };
+    return ref;
 }
 
 function termCategoryLabel(id, lang) {
@@ -65,34 +68,35 @@ function termCategoryLabel(id, lang) {
     return lang === 'en' ? category.en : category.ko;
 }
 
-// Categories that actually have entries, in registry order, each with its
-// count. A category left empty in the data simply does not get a chip, and
-// rows whose category slug is unknown (or blank, as a freshly added term is)
-// collect under 'Uncategorized' at the end so nothing disappears from view.
-function termCategoriesWithCounts(terms, lang) {
-    const memory = store.getMemory();
+// Facet values that actually have entries, in registry order, each with its
+// count. An empty value simply does not get a chip, and rows whose slug is
+// unknown (or blank, as a freshly added term is) collect under
+// 'Uncategorized' at the end so nothing disappears from view.
+function withCounts(memory, terms, lang, field) {
     const known = memory ? memory.byId : {};
-    const registry = memory ? memory.list : [];
+    const list = memory ? memory.list : [];
     const counts = {};
     (terms || []).forEach(term => {
-        const id = known[term.category] ? term.category : '';
+        const id = known[term[field]] ? term[field] : '';
         counts[id] = (counts[id] || 0) + 1;
     });
-    const list = registry
-        .filter(category => counts[category.id])
-        .map(category => ({
-            id: category.id,
-            label: lang === 'en' ? category.en : category.ko,
-            count: counts[category.id],
-        }));
-    if (counts['']) {
-        list.push({
-            id: '',
-            label: lang === 'en' ? UNCATEGORIZED.en : UNCATEGORIZED.ko,
-            count: counts[''],
-        });
+    const out = list
+        .filter(entry => counts[entry.id])
+        .map(entry => ({ id: entry.id, label: lang === 'en' ? entry.en : entry.ko, count: counts[entry.id] }));
+    if (counts[''] && field === 'category') {
+        out.push({ id: '', label: lang === 'en' ? UNCATEGORIZED.en : UNCATEGORIZED.ko, count: counts[''] });
     }
-    return list;
+    return out;
+}
+
+function termCategoriesWithCounts(terms, lang) {
+    return withCounts(store.getMemory(), terms, lang, 'category');
+}
+
+// Regions show only known values: a term without a region is still listed
+// under "all" and every kind chip.
+function termRegionsWithCounts(terms, lang) {
+    return withCounts(regionStore.getMemory(), terms, lang, 'region');
 }
 
 module.exports = {
@@ -100,5 +104,6 @@ module.exports = {
     termCategoriesRef,
     termCategoryLabel,
     termCategoriesWithCounts,
+    termRegionsWithCounts,
     SNAPSHOT_PATH: store.snapshotPath,
 };

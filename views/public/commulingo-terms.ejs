@@ -33,6 +33,15 @@
             <button type="button" class="commu-dict-chip" data-category="<%= category.id || '__none__' %>" aria-pressed="false"><%= category.label %> <span><%= category.count %></span></button>
             <% }) %>
         </div>
+        <% if (regions.length > 1) { %>
+        <div class="commu-dict-chips" data-commu-dict-chips data-param="region" data-target="#commu-term-list"
+            role="group" aria-label="<%= strings.commuLingoViews.terms.filterByRegion %>">
+            <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= strings.commuLingoViews.terms.allRegions %></button>
+            <% regions.forEach(function(region) { %>
+            <button type="button" class="commu-dict-chip" data-category="<%= region.id %>" aria-pressed="false"><%= region.label %> <span><%= region.count %></span></button>
+            <% }) %>
+        </div>
+        <% } %>
         <% if (groups.length > 1) { %>
         <nav class="commu-dict-index" aria-label="<%= strings.commuLingoViews.terms.jumpToGroup %>">
             <% groups.forEach(function(group) { %>

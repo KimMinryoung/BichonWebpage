@@ -1,6 +1,7 @@
 const express = require('express');
 const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
+const seo = require('../utils/seo');
 const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const { localize } = require('../data/commulingo/localize');
 const { localizedMeta, deckBody } = require('../data/commulingo/drill-presentation');
@@ -102,6 +103,11 @@ router.get('/:deckId', async (req, res) => {
         const deckId = req.params.deckId;
         const drills = isSafeDeckId(deckId) ? await loadCommuLingoDrills() : null;
         const deck = drills ? drills.byId.get(deckId) : null;
+        // Glossary decks follow the category registry ('terms-<category>');
+        // a retired category's deck goes back to the hub rather than 404ing.
+        if (!deck && drills && deckId.startsWith('terms-')) {
+            return res.redirect(301, seo.languagePath('/commulingo/drill', lang));
+        }
         if (!deck) return errorPage.notFound(res, {
             message: lang === 'en' ? 'Training deck not found.' : '훈련 덱을 찾을 수 없습니다.',
             backHref: '/commulingo/drill', backLabel: res.locals.strings.commuLingo.drill,
