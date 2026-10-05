@@ -60,6 +60,8 @@ function reviewReasons(target, action, payload, before) {
     return [...new Set(reasons)];
 }
 
+const PARTY_IDS = new Set(require('./activity-catalog.json').affiliations.filter(a => a.kind === 'party').map(a => a.id));
+
 async function recordEvidence(client, personId, sectionSlug, payload, options, revision) {
     const topics = new Set();
     if (sectionSlug) topics.add('sections');
@@ -70,6 +72,11 @@ async function recordEvidence(client, personId, sectionSlug, payload, options, r
         if (['citizenship', 'nationalOrigin', 'origin'].includes(key)) topics.add('nationality');
     }
     if (topics.size) await client.query("UPDATE commulingo_person_enrichment SET status='open',review_after=NOW(),updated_at=NOW() WHERE person_id=$1 AND topic=ANY($2)", [personId, [...topics]]);
+    // A 'party' record saying no membership was found stops being true once a
+    // party activity is saved: it becomes complete, not reopened.
+    if ((payload.activities || []).some(a => PARTY_IDS.has(a?.affiliationId))) await client.query(`UPDATE commulingo_person_enrichment
+        SET status='complete', reason='party activity recorded', review_after=NOW()+INTERVAL '3650 days', updated_at=NOW()
+        WHERE person_id=$1 AND topic='party' AND status<>'complete'`, [personId]);
     for (const e of payload.evidence || []) await client.query(`INSERT INTO commulingo_person_evidence
         (person_id, section_slug, field, claim, source, locator, excerpt, stance, changed_by, revision)
         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)`,

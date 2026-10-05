@@ -88,7 +88,9 @@ async function reviewPersonSuggestion(id, approve, note, options = {}) {
 }
 
 async function saveEnrichment(request, options = {}) {
-    const topics = ['basics', 'nationality', 'bio', 'moment', 'events', 'sections'];
+    // 'party': whether the person's party membership was checked (2026-10-05). Only data;
+    // the card and page never show that someone had no party.
+    const topics = ['basics', 'nationality', 'bio', 'moment', 'events', 'sections', 'party'];
     const statuses = ['open', 'complete', 'not_applicable', 'sources_unavailable'];
     if (!topics.includes(request.topic) || !statuses.includes(request.status) || !request.reason?.trim()) throw badRequest('topic, status and reason are required');
     if (!Array.isArray(request.sources) || request.sources.some(s => typeof s !== 'string')) throw badRequest('sources must list the references inspected');
@@ -98,7 +100,8 @@ async function saveEnrichment(request, options = {}) {
         const person = await getPersonAdmin(id, { client });
         if (!person) throw badRequest('person not found');
         assertExpectedRevision(request.expectedRevision, person.revision, true);
-        const days = request.status === 'sources_unavailable' ? 90 : request.status === 'open' ? 0 : 180;
+        const days = request.status === 'sources_unavailable' ? 90 : request.status === 'open' ? 0
+            : request.topic === 'party' ? 3650 : 180;   // a checked party status is not re-run; a new party activity completes it
         await client.query(`INSERT INTO commulingo_person_enrichment
             (person_id,topic,status,reason,sources,revision,review_after,changed_by)
             VALUES ($1,$2,$3,$4,$5::jsonb,$6,NOW()+$7*INTERVAL '1 day',$8)

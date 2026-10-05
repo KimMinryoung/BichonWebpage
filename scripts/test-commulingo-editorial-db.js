@@ -60,6 +60,13 @@ async function run() {
         await service.submitPersonEdit({ target: 'person_section', action: 'update', id, fields: { ...patch, evidence: proof(patch) }, sources: [source] }, opts);
         assert.equal((await read()).enrichment[0].status, 'open', 'new section evidence reopens section review');
         await assert.rejects(service.saveEnrichment({ id, topic: 'sections', status: 'complete', reason: 'Old review', sources: [source], expectedRevision: current.revision }, opts), { status: 409 });
+        // 'party' records a checked membership status (2026-10-05); a saved party activity completes it.
+        await service.saveEnrichment({ id, topic: 'party', status: 'not_applicable', reason: 'Sources name no party',
+            sources: [source], expectedRevision: (await getPersonAdmin(id, { client })).revision }, opts);
+        await submit({ activities: [{ functionId: 'scholarship', affiliationId: 'party-french-communist', affiliationStatus: 'confirmed',
+            relation: 'membership', primary: true, startYear: 1930, endYear: 1950,
+            evidence: [{ source, locator: 'p. 3', claim: 'Joined the French Communist Party', excerpt: 'He joined the PCF in 1930.' }] }] });
+        assert.equal((await read()).enrichment.find(e => e.topic === 'party').status, 'complete', 'a party activity completes the party check');
         const deleted = await service.submitPersonEdit({ target: 'person', action: 'delete', id,
             fields: { expectedRevision: (await read()).revision }, sources: [source] }, opts);
         assert.equal(deleted.status, 'pending');
