@@ -258,11 +258,23 @@ router.get('/novels/:slug', async (req, res) => {
 // SEO 분석 업체 크롤러는 사람을 데려오지 않고 부하만 주므로 막는다. 검색엔진과
 // AI 검색·학습 봇은 그대로 둔다(내용 확산이 목적).
 const BLOCKED_CRAWLERS = ['SemrushBot', 'AhrefsBot', 'MJ12bot', 'DotBot', 'DataForSeoBot', 'BLEXBot'];
+// CommuLingo 사전의 쿼리 필터·검색·카드 조각과 필터로 넘기는 옛 주소는 조합이
+// 끝없이 늘어 봇이 같은 항목을 되풀이해 긁는다. 봇에게는 목록 첫 화면과 상세
+// 페이지만 연다(문헌 상세의 ?p= 쪽 넘김은 /commulingo/docs/<id> 아래라 막히지 않음).
+const BLOCKED_FILTER_PATHS = [
+    '/commulingo/people?', '/commulingo/people/cards?', '/commulingo/people/list/',
+    '/commulingo/people/citizenship/', '/commulingo/people/national-origin/',
+    '/commulingo/activities', '/commulingo/roles/',
+    '/commulingo/terms?', '/commulingo/terms/search?', '/commulingo/terms/cards?',
+    '/commulingo/docs?', '/commulingo/docs/search?',
+    '/commulingo/events?', '/commulingo/events/search?',
+];
 router.get('/robots.txt', (req, res) => {
     res.type('text/plain').send(
         BLOCKED_CRAWLERS.map(agent => `User-agent: ${agent}\nDisallow: /\n\n`).join('') +
         'User-agent: *\n' +
         'Allow: /\n' +
+        BLOCKED_FILTER_PATHS.flatMap(p => [`Disallow: ${p}\n`, `Disallow: /en${p}\n`]).join('') +
         'Host: cyber-lenin.com\n' +
         'Sitemap: https://cyber-lenin.com/sitemap.xml\n' +
         '# RSS: https://cyber-lenin.com/rss.xml\n' +
