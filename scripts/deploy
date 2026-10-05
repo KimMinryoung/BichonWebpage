@@ -98,13 +98,17 @@ else
     log "Local source is up-to-date with origin/master ($LOCAL)."
 fi
 
-if [[ -n "$(git status --porcelain)" ]]; then
+# The release is `git archive` of the commit, so untracked files never ship:
+# only uncommitted changes to tracked files block a deploy.
+if [[ -n "$(git status --porcelain --untracked-files=no)" ]]; then
     err "Working tree has uncommitted changes; refusing to deploy a dirty tree."
     err "Commit and push the changes first, then run deploy again."
     err "data/commulingo/docs/manifest.json changed by the admin screens is already live: commit it (see AGENTS.md)."
-    git status --short >&2
+    git status --short --untracked-files=no >&2
     exit 1
 fi
+UNTRACKED="$(git status --porcelain --untracked-files=normal | grep '^??' || true)"
+[[ -z "$UNTRACKED" ]] || log "Untracked files are not part of the release: $(wc -l <<<"$UNTRACKED") path(s)."
 
 DEPLOYED=$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$CONTAINER_NAME" 2>/dev/null || true)
 OLD_COMMULINGO_VERSION=""
