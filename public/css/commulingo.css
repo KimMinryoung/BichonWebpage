@@ -2132,6 +2132,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.commu-office-index .commu-office-grid { gap: 0; }
+
 .commu-office-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -2403,7 +2405,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     text-decoration: none;
 }
 
-.commu-people-era {
+.commu-people-shelf-head + .commu-people-era {
     margin-top: 17px;
 }
 
@@ -2451,11 +2453,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 
-/* The person groups sit on two boxed shelves — the Soviet timeline and the
-   people beyond it — in the same grammar as the index's book shelves: a card
-   that frames its accent-barred title and the group cards inside. The 9px
-   top margin plus the shell's 8px flex gap makes the same 17px rhythm the
-   group cards keep inside a shelf. */
+/* Regional shelves frame their title and a continuous stack of era groups.
+   Keep breathing room after the shelf title, with no gaps between eras. */
 .commu-people-shelf {
     background: var(--card-bg);
     border: 1px solid var(--border);

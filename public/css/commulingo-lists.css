@@ -501,6 +501,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.commu-office-index .commu-office-grid { gap: 0; }
+
 .commu-office-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -772,7 +774,7 @@
     text-decoration: none;
 }
 
-.commu-people-era {
+.commu-people-shelf-head + .commu-people-era {
     margin-top: 17px;
 }
 
