@@ -4,7 +4,7 @@ and corrections, each with Wikipedia excerpts) into people-upsert specs: every
 touched card is resubmitted with its whole activity list, so the Admin store
 validates it the same way as an edit in /admin.
 
-  python3 scripts/content/party-members-20261004-build.py <letters> > spec.json
+  python3 scripts/content/party-members-20261004-build.py <letters> [date, default 20261004] > spec.json
   scripts/commulingo-people-upsert spec.json [--dry-run]
 """
 import glob
@@ -26,9 +26,9 @@ def overlaps(a, b):
     return lo(a) <= hi(b) and lo(b) <= hi(a)
 
 
-def main(letters):
+def main(letters, date='20261004'):
     adds, fixes = {}, {}
-    for path in sorted(glob.glob(f'{ROOT}/scripts/content/party-members-[{letters}]-20261004.json')):
+    for path in sorted(glob.glob(f'{ROOT}/scripts/content/party-members-[{letters}]-{date}.json')):
         data = json.load(open(path))
         for row in data.get('add', []):
             adds.setdefault(row['personId'], []).append(row['activity'])
@@ -52,7 +52,7 @@ def main(letters):
             acts.append({**act, 'primary': False})
         sources = sorted({e['source'] for a in acts for e in a.get('evidence', [])})
         people.append({'id': pid, 'activities': acts, 'sources': sources})
-    json.dump({'changedBy': 'claude-party-members-20261004', 'people': people}, sys.stdout, ensure_ascii=False, indent=1)
+    json.dump({'changedBy': f'claude-party-members-{date}', 'people': people}, sys.stdout, ensure_ascii=False, indent=1)
 
 
-main(sys.argv[1])
+main(*sys.argv[1:3])
