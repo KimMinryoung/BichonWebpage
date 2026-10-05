@@ -1,0 +1,3681 @@
+{
+ "add": [
+  {
+   "personId": "radek",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": 1913,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Radek",
+      "locator": "characters 2515:2717; sha256 aa58522426cdeb743298c9d3d21afee90aa4d720b8a0dd56a8b48f4fca2fc7e2",
+      "claim": "카를 라데크는 1907년 라이프치히로 옮겨 독일 사회민주당에 입당했다.",
+      "excerpt": "In 1907, after his arrest in Poland and his escape from custody, Radek moved to Leipzig in Germany and joined the Social Democratic Party of Germany (SPD), working on the Party's Leipziger Volkszeitung."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Radek",
+      "locator": "characters 4215:4459; sha256 aa58522426cdeb743298c9d3d21afee90aa4d720b8a0dd56a8b48f4fca2fc7e2",
+      "claim": "1913년 독일 사회민주당 대회는 라데크의 제명을 확인했다.",
+      "excerpt": "The 1913 SPD Congress noted Radek's expulsion and then went on to decide in principle that no-one who had been expelled from a sister-party could join another party within the Second International and retrospectively applied this rule to Radek."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "radek",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1936,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Radek",
+      "locator": "characters 10279:10461; sha256 aa58522426cdeb743298c9d3d21afee90aa4d720b8a0dd56a8b48f4fca2fc7e2",
+      "claim": "카를 라데크는 1927년 반대파 시위를 조직해 소련공산당에서 제명되었다.",
+      "excerpt": "Radek was expelled from the Party in 1927 after helping to organise an independent demonstration on the 10th anniversary of the October Revolution with Grigory Zinoviev in Leningrad."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Radek",
+      "locator": "characters 10995:11331; sha256 aa58522426cdeb743298c9d3d21afee90aa4d720b8a0dd56a8b48f4fca2fc7e2",
+      "claim": "카를 라데크는 1930년 소련공산당에 복당해 중앙위원회 국제정보국을 이끌었다.",
+      "excerpt": "However, he was re-admitted in 1930 and was one of the few former oppositionists to retain a prominent place within the party, heading the International Information Bureau of the Russian Communist Party Central Committee as well as giving the address on foreign literature at the First Conference of the Union of Soviet Writers in 1934."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B5%D0%BA,_%D0%9A%D0%B0%D1%80%D0%BB_%D0%91%D0%B5%D1%80%D0%BD%D0%B3%D0%B0%D1%80%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 6113:6191; sha256 8adc64924d314d76fe9093cd341e1d5ff7db4e4df5be1387f8416b7935f36c05",
+      "claim": "카를 라데크는 1936년 다시 소련공산당에서 제명되고 체포되었다.",
+      "excerpt": "В 1936 году был вновь исключён из ВКП(б) и 16 сентября того же года арестован."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "radek",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-sdkpil",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1904,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Radek",
+      "locator": "characters 2158:2248; sha256 aa58522426cdeb743298c9d3d21afee90aa4d720b8a0dd56a8b48f4fca2fc7e2",
+      "claim": "카를 라데크는 1904년 폴란드왕국·리투아니아 사회민주당에 입당했다.",
+      "excerpt": "Radek joined the Social Democracy of the Kingdom of Poland and Lithuania (SDKPiL) in 1904."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-smirnov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": 1927,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Smirnov_%28politician%29",
+      "locator": "characters 549:700; sha256 c5eac5b50269f18ce8e49f0574a1ceee397c92396a4b98fd11ff8cf117d260c2",
+      "claim": "블라디미르 스미르노프는 1907년 볼셰비키에 입당했다.",
+      "excerpt": "He was drawn into revolutionary politics during the 1905 revolution, and joined the Bolsheviks in 1907, as a law student at Imperial Moscow University."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Smirnov_%28politician%29",
+      "locator": "characters 5582:5717; sha256 c5eac5b50269f18ce8e49f0574a1ceee397c92396a4b98fd11ff8cf117d260c2",
+      "claim": "블라디미르 스미르노프는 1927년 제15차 당대회에서 소련공산당에서 제명되었다.",
+      "excerpt": "Smirnov was expelled from the Communist Party at the 15th Party Congress in December 1927 along with the rest of the United Opposition."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-smirnov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BD%D0%B0%D1%80%D0%BA%D0%BE%D0%BC%29",
+      "locator": "characters 534:700; sha256 ba4c007831683bbc63537011e7099b2b23b50f58cdff577c156835f7533606f5",
+      "claim": "블라디미르 스미르노프는 1907년 러시아 사회민주노동당에 볼셰비키로 입당했다.",
+      "excerpt": "Участвовал в революции 1905—1907 годов; с 1907 года — член РСДРП, большевик, в партию вступил вместе с другими участниками марксистского кружка, среди которых были В."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BD%D0%B0%D1%80%D0%BA%D0%BE%D0%BC%29",
+      "locator": "characters 986:1158; sha256 ba4c007831683bbc63537011e7099b2b23b50f58cdff577c156835f7533606f5",
+      "claim": "블라디미르 스미르노프는 1917년 러시아 사회민주노동당(볼셰비키) 모스크바 위원회 위원이 되었다.",
+      "excerpt": "После Февральской революции Смирнов был переведён в Москву, где стал сотрудником, а затем членом редколлегии газеты «Социал-демократ», членом Московского комитета РСДРП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "avel-yenukidze",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Avel_Yenukidze",
+      "locator": "characters 161:331; sha256 515acf59c75a8d29a82d000112da5055ec82084ed2967b983de9256319c17b13",
+      "claim": "아벨 예누키제는 볼셰비키 고참으로 전연방공산당(볼셰비키) 중앙위원을 지냈다.",
+      "excerpt": "7 May] 1877 – 30 October 1937) was a prominent Georgian Old Bolshevik and, at one point, a member of the Central Committee of the All-Union Communist Party (b) in Moscow."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Avel_Yenukidze",
+      "locator": "characters 4745:4955; sha256 515acf59c75a8d29a82d000112da5055ec82084ed2967b983de9256319c17b13",
+      "claim": "아벨 예누키제는 1934년 제17차 당대회에서 소련공산당 중앙위원으로 선출되었다.",
+      "excerpt": "In February 1934, Yenukidze was elected a member of the Central Committee of the Communist Party of the Soviet Union (CC CPSU) at the party's 17th Congress—which later acquired the name \"the Executed Congress\"."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "avel-yenukidze",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Avel_Yenukidze",
+      "locator": "characters 1460:1529; sha256 515acf59c75a8d29a82d000112da5055ec82084ed2967b983de9256319c17b13",
+      "claim": "아벨 예누키제는 1898년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "He joined the Russian Social Democratic Labour Party (RSDLP) in 1898."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Avel_Yenukidze",
+      "locator": "characters 1938:2000; sha256 515acf59c75a8d29a82d000112da5055ec82084ed2967b983de9256319c17b13",
+      "claim": "아벨 예누키제는 러시아 사회민주노동당 분열 뒤 볼셰비키 분파에 들어갔다.",
+      "excerpt": "After the split in the RSDLP, he joined the Bolshevik faction."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andras-hegedus",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1942,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andr%C3%A1s_Heged%C3%BCs",
+      "locator": "characters 404:634; sha256 a61043694569d0be1f1e8e6876e4e4b5712154c04b107608d7e17ebf246f9941",
+      "claim": "헤게뒤시 언드라시는 1942년 불법 헝가리 공산주의자당에 입당했다.",
+      "excerpt": "Hegedüs first became involved in the underground communist movement during his university years and became a member of illegal Hungarian Communist Party when he studied railway engineering at Budapest Technical University in 1942."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andras-hegedus",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andr%C3%A1s_Heged%C3%BCs",
+      "locator": "characters 931:1050; sha256 a61043694569d0be1f1e8e6876e4e4b5712154c04b107608d7e17ebf246f9941",
+      "claim": "헤게뒤시 언드라시는 1948년부터 헝가리 노동인민당에서 활동하며 지도적 역할을 맡았다.",
+      "excerpt": "From 1948 onwards Hegedüs became involved with the Hungarian Working People's Party eventually taking on leading roles."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D0%B3%D0%B5%D0%B4%D1%8E%D1%88,_%D0%90%D0%BD%D0%B4%D1%80%D0%B0%D1%88",
+      "locator": "characters 1297:1434; sha256 b98c3293c6d6c690564b6098a4e5c19f496accb78b2d93c7a11ff5779a7185a2",
+      "claim": "헤게뒤시 언드라시는 1948~1951년 헝가리 노동인민당 농업·교통부에서 일하다 부장이 되었다.",
+      "excerpt": "С 1948 по 1949 — сотрудник отдела сельского хозяйства и сообщения Венгерской партии труда (ВПТ), который впоследствии возглавлял до 1951."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "peteris-stucka",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1932,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%83%D1%87%D0%BA%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3877:3955; sha256 195f7e60947b153516c076981f4781308197d5c85052ad1cbf7014bdbc639bb7",
+      "claim": "페테리스 스투치카는 러시아 공산당(볼셰비키) 중앙위원 후보·중앙위원을 지냈다.",
+      "excerpt": "Кандидат в члены ЦК РКП(б) (1918—1919, 1920—1921), член ЦК РКП(б) (1919—1920)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "peteris-stucka",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1906,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%83%D1%87%D0%BA%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1137:1349; sha256 195f7e60947b153516c076981f4781308197d5c85052ad1cbf7014bdbc639bb7",
+      "claim": "페테리스 스투치카는 1906년 러시아 사회민주노동당의 지역 조직이 된 라트비아 사회민주당 통합대회를 주재했다.",
+      "excerpt": "В 1906 году вернулся в Ригу, где председательствовал на объединительном съезде Латышской с.-д. партии, которая получила название Социал-демократическая партия Латышского края и стала территориальной частью РСДРП."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%83%D1%87%D0%BA%D0%B0,_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1449:1507; sha256 195f7e60947b153516c076981f4781308197d5c85052ad1cbf7014bdbc639bb7",
+      "claim": "페테리스 스투치카는 1915년부터 라트비아 사회민주당 지도부와 러시아 사회민주노동당 중앙위원회 사이 연락을 맡았다.",
+      "excerpt": "С 1915 обеспечивал связь руководства СДЛК с ЦК и ПК РСДРП."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "shlyapnikov",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1933,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+      "locator": "characters 1586:1698; sha256 06165d4121a86c13bebde61f28ad41d0f1094001da2ddc4bd7e2c0678417c76c",
+      "claim": "알렉산드르 실랴프니코프는 1903년 볼셰비키에 들어갔다고 스스로 밝혔다.",
+      "excerpt": "According to Shliapnikov himself, he joined the Bolsheviks in 1903, the year of their split with the Mensheviks."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+      "locator": "characters 15768:15878; sha256 06165d4121a86c13bebde61f28ad41d0f1094001da2ddc4bd7e2c0678417c76c",
+      "claim": "알렉산드르 실랴프니코프는 1933년 소련공산당에서 제명되었다.",
+      "excerpt": "Shliapnikov was expelled from the Communist Party in 1933 and imprisoned in 1935 for alleged political crimes."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "shlyapnikov",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+      "locator": "characters 2951:3161; sha256 06165d4121a86c13bebde61f28ad41d0f1094001da2ddc4bd7e2c0678417c76c",
+      "claim": "알렉산드르 실랴프니코프는 1907년 러시아 사회민주노동당(볼셰비키) 페테르부르크 위원이 되었다.",
+      "excerpt": "Later in 1907, the now 22-year-old Shliapnikov became a member of the Petersburg Committee of the RSDRP(b), and due to his growing prominence, at the end of 1907 his friends advised him to emigrate from Russia."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+      "locator": "characters 1325:1505; sha256 06165d4121a86c13bebde61f28ad41d0f1094001da2ddc4bd7e2c0678417c76c",
+      "claim": "알렉산드르 실랴프니코프는 소르모보에서 불법 문헌 배포를 맡은 일을 러시아 사회민주노동당 입문으로 여겼다.",
+      "excerpt": "While in Sormovo, he was entrusted with illegal literature to distribute back in Murom, which he later designated as his initiation into the Russian Social Democratic Labour Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sen-katayama",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-japanese-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1922,
+    "endYear": 1933,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sen_Katayama",
+      "locator": "characters 0:284; sha256 882df7831fb55394c8ae96afd55b4e1a8169afe89c87c916d9ff04f4c7d3fb13",
+      "claim": "가타야마 센은 1922년 일본 공산당을 공동 창당했다.",
+      "excerpt": "Sen Katayama (片山 潜, Katayama Sen; December 26, 1859 – November 5, 1933), born Yabuki Sugataro (藪木 菅太郎, Yabuki Sugatarō), was an early Japanese Marxist political activist and journalist, one of the original members of the CPUSA and co-founder, in 1922, of the Japanese Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sen-katayama",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sen_Katayama",
+      "locator": "characters 0:284; sha256 882df7831fb55394c8ae96afd55b4e1a8169afe89c87c916d9ff04f4c7d3fb13",
+      "claim": "가타야마 센은 미국 공산당 창당 당원 가운데 한 사람이었다.",
+      "excerpt": "Sen Katayama (片山 潜, Katayama Sen; December 26, 1859 – November 5, 1933), born Yabuki Sugataro (藪木 菅太郎, Yabuki Sugatarō), was an early Japanese Marxist political activist and journalist, one of the original members of the CPUSA and co-founder, in 1922, of the Japanese Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "litvinov",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1951,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Maxim_Litvinov",
+      "locator": "characters 2493:2627; sha256 ac09c1ed258a72b0c7b75aec5a2d7bcd72e71e9ce7033d958fc348b205aac1c3",
+      "claim": "막심 리트비노프는 레닌이 이끈 볼셰비키 분파의 창립 회원이었다.",
+      "excerpt": "He became a founding member of the Bolshevik faction under Vladimir Lenin, whom Litvinov first met in the British Museum Reading Room."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Maxim_Litvinov",
+      "locator": "characters 34859:35043; sha256 ac09c1ed258a72b0c7b75aec5a2d7bcd72e71e9ce7033d958fc348b205aac1c3",
+      "claim": "막심 리트비노프는 1941년 소련공산당 중앙위원회에서 해임되었다.",
+      "excerpt": "On 21 February 1941, Litvinov was dismissed from the Central Committee of the Communist Party on the pretext of his inability to discharge his obligations as a member of the committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "litvinov",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%82%D0%B2%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 859:941; sha256 8b122266805eb68a21eb64381964a1f90156ce59d126486e645e7e8e1bbed4c5",
+      "claim": "막심 리트비노프는 1898년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "В 1898 году Литвинов вступил в РСДРП; в 1900 году — член Киевского комитета РСДРП."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-yanson",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 492:531; sha256 37cdf7ab58dfc821f80317af4f03397f9a27766fb3ca74275cb155885e5180d6",
+      "claim": "니콜라이 얀손은 1905년 러시아 사회민주노동당에 입당한 볼셰비키였다.",
+      "excerpt": "В 1905 году вступил в РСДРП, большевик."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1349:1515; sha256 37cdf7ab58dfc821f80317af4f03397f9a27766fb3ca74275cb155885e5180d6",
+      "claim": "니콜라이 얀손은 러시아 공산당(볼셰비키)·전연방공산당(볼셰비키) 중앙통제위원회 위원과 서기를 지냈다.",
+      "excerpt": "На XII—XVI съездах партии избирался членом Центральной контрольной комиссии РКП(б)/ВКП(б) (ЦКК), в 1923-1927 годы секретарь ЦКК, в 1923—1934 годы член Президиума ЦКК."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-yanson",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 492:531; sha256 37cdf7ab58dfc821f80317af4f03397f9a27766fb3ca74275cb155885e5180d6",
+      "claim": "니콜라이 얀손은 1905년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "В 1905 году вступил в РСДРП, большевик."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BD%D1%81%D0%BE%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 532:567; sha256 37cdf7ab58dfc821f80317af4f03397f9a27766fb3ca74275cb155885e5180d6",
+      "claim": "니콜라이 얀손은 러시아 사회민주노동당(볼셰비키) 레발 위원회 위원이었다.",
+      "excerpt": "Член Ревельского комитета РСДРП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "chicherin",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1936,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgy_Chicherin",
+      "locator": "characters 3207:3392; sha256 2cde8f03faa422d54672546d0d687a39da0f3073ea389fc98f0c4e079d1e00c9",
+      "claim": "게오르기 치체린은 1918년 초 귀국해 정식으로 볼셰비키에 입당했다.",
+      "excerpt": "Upon his return to Russia in early 1918, Chicherin formally joined the Bolsheviks, and was appointed as Trotsky's deputy during the negotiations that led to the Treaty of Brest-Litovsk."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "chicherin",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%87%D0%B5%D1%80%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4888:4938; sha256 35c387fe095e33aecb82fa8583dfe4b4f624a36cc37048e9319b78018a01b4e1",
+      "claim": "게오르기 치체린은 1905년부터 러시아 사회민주노동당 당원이었다.",
+      "excerpt": "Член РСДРП с 1905, входил в берлинскую секцию КЗО."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%87%D0%B5%D1%80%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4939:5061; sha256 35c387fe095e33aecb82fa8583dfe4b4f624a36cc37048e9319b78018a01b4e1",
+      "claim": "게오르기 치체린은 1907년 러시아 사회민주노동당 재외중앙국 서기로 선출되었다.",
+      "excerpt": "В 1907 году Чичерин был избран секретарём Заграничного центрального бюро РСДРП, в этой должности был на лондонском съезде."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nariman-narimanov",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD%D0%BE%D0%B2%2C_%D0%9D%D0%B0%D1%80%D0%B8%D0%BC%D0%B0%D0%BD_%D0%9D%D0%B0%D0%B4%D0%B6%D0%B0%D1%84_%D0%BE%D0%B3%D0%BB%D1%8B",
+      "locator": "characters 16245:16310; sha256 3fd740dab6be5ab9f0115c84a75f17a8fbe3d8e41bd409c4283aa36d4f9773a8",
+      "claim": "나리만 나리마노프는 1917년 3월 러시아 사회민주노동당(볼셰비키) 바쿠 위원회 위원이 되었다.",
+      "excerpt": "В марте 1917 года становится членом Бакинского комитета РСДРП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nariman-narimanov",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": 1925,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nariman_Narimanov",
+      "locator": "characters 3814:3939; sha256 21d782e413f16829eec3aeda547aa0e8f149fb36547de737304791acaacbd05a",
+      "claim": "나리만 나리마노프는 1905년 혁명 때 볼셰비키 당에 입당했다.",
+      "excerpt": "During the 1905 Revolution, Narimanov joined the Bolshevik party, took an active part and led the student movement in Odessa."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nariman_Narimanov",
+      "locator": "characters 6087:6219; sha256 21d782e413f16829eec3aeda547aa0e8f149fb36547de737304791acaacbd05a",
+      "claim": "나리만 나리마노프는 1923년 러시아 공산당(볼셰비키) 중앙위원 후보로 선출되었다.",
+      "excerpt": "In April 1923, Narimanov was elected as a candidate for the Central Committee of the RKP(b) (Russian Communist Party of Bolsheviks)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "panteleimon-lepeshinsky",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1944,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BF%D0%B5%D1%88%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9F%D0%B0%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%D0%BC%D0%BE%D0%BD_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 753:837; sha256 246202e3284f6ab5cb8c2d0bc81f94961dea748247bcb34ec271185db4ee8ee4",
+      "claim": "판텔레이몬 레페신스키는 1903년부터 볼셰비키였다.",
+      "excerpt": "В революционном движении с 1880-х годов, в РСДРП с 1898 года, большевик с 1903 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BF%D0%B5%D1%88%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9F%D0%B0%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%D0%BC%D0%BE%D0%BD_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1704:1758; sha256 246202e3284f6ab5cb8c2d0bc81f94961dea748247bcb34ec271185db4ee8ee4",
+      "claim": "판텔레이몬 레페신스키는 전연방공산당(볼셰비키) 제15~18차 당대회 대의원이었다.",
+      "excerpt": "Делегат XV—XVIII съездов и XV—XVII конференций ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "panteleimon-lepeshinsky",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%BF%D0%B5%D1%88%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9F%D0%B0%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%D0%BC%D0%BE%D0%BD_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 753:837; sha256 246202e3284f6ab5cb8c2d0bc81f94961dea748247bcb34ec271185db4ee8ee4",
+      "claim": "판텔레이몬 레페신스키는 1898년부터 러시아 사회민주노동당 당원이었다.",
+      "excerpt": "В революционном движении с 1880-х годов, в РСДРП с 1898 года, большевик с 1903 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "rykov",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexei_Rykov",
+      "locator": "characters 2964:3155; sha256 2cfcc6b028045c810cc29e6ebe927c4e69eeac4a675f65b316666083c90d985e",
+      "claim": "알렉세이 리코프는 1898년 러시아 사회민주노동당에 입당하고 1903년 분열 때 볼셰비키 분파를 지지했다.",
+      "excerpt": "Rykov joined the Russian Social Democratic Labour Party (RSDLP) in 1898 and supported its Bolshevik faction when the party split into Bolsheviks and Mensheviks at its Second Congress in 1903."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "rykov",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexei_Rykov",
+      "locator": "characters 387:503; sha256 2cfcc6b028045c810cc29e6ebe927c4e69eeac4a675f65b316666083c90d985e",
+      "claim": "알렉세이 리코프는 1903년 분열 뒤 레닌이 이끈 볼셰비키 분파에 들어갔다.",
+      "excerpt": "After it split into Bolshevik and Menshevik factions in 1903, he joined the Bolshevik faction led by Vladimir Lenin."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexei_Rykov",
+      "locator": "characters 10772:10969; sha256 2cfcc6b028045c810cc29e6ebe927c4e69eeac4a675f65b316666083c90d985e",
+      "claim": "알렉세이 리코프는 1937년 소련공산당에서 제명되고 체포되었다.",
+      "excerpt": "As Stalin's Great Purge intensified in early 1937, Rykov and Bukharin were expelled from the Communist Party and arrested at the February–March 1937 meeting of the Central Committee on 27 February."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-beloborodov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Beloborodov",
+      "locator": "characters 2490:2626; sha256 68d088511d358cf27236a00be6917cae702b3b1d0facc8311b07863473d4dc0d",
+      "claim": "알렉산드르 벨로보로도프는 1907년 볼셰비키에 입당했다.",
+      "excerpt": "He joined the Bolsheviks in 1907, and created a local revolutionary organization in Solikamsk while working as an electrician in a mine."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Beloborodov",
+      "locator": "characters 1207:1412; sha256 68d088511d358cf27236a00be6917cae702b3b1d0facc8311b07863473d4dc0d",
+      "claim": "알렉산드르 벨로보로도프는 1919년 러시아 공산당 제8기 중앙위원회 조직국원으로 선출되었다.",
+      "excerpt": "In March 1919 he was elected a full member of the Orgburo of the 8th Central Committee of the Russian Communist Party, and subsequently became a candidate member of the 9th Central Committee in April 1920."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-beloborodov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Beloborodov",
+      "locator": "characters 288:442; sha256 68d088511d358cf27236a00be6917cae702b3b1d0facc8311b07863473d4dc0d",
+      "claim": "알렉산드르 벨로보로도프는 1907년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "Born in Alexandrovsk, in the Solikamsky Uyezd of the Perm Governorate of the Russian Empire, he joined the Russian Social Democratic Labour Party in 1907."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "stanislav-poplavsky",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1930,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Stanislav_Poplavsky",
+      "locator": "characters 468:545; sha256 13881a76e2eb07c2fa802893965a7cd20b457bfd4ca8984c37dd6950f9ed4be5",
+      "claim": "스타니스와프 포프와프스키는 1930년부터 소련공산당 당원이었다.",
+      "excerpt": "He was a member of the Communist Party of the Soviet Union from 1930 onwards."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "stanislav-poplavsky",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-polish-pzpr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Stanislav_Poplavsky",
+      "locator": "characters 5292:5451; sha256 13881a76e2eb07c2fa802893965a7cd20b457bfd4ca8984c37dd6950f9ed4be5",
+      "claim": "스타니스와프 포프와프스키는 1949~1956년 폴란드 통일노동당 중앙위원이었다.",
+      "excerpt": "He was also a deputy to the Polish Sejm (1947–1956), and from 1949 to 1956 he was a member of the Central Committee of the Polish United Workers' Party (PZPR)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valery-sablin",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1976,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Valery_Sablin",
+      "locator": "characters 0:298; sha256 5187cf550cd78dbe98618aea94d7a76dfc5fac5d6d64a6ab8873a050533d5126",
+      "claim": "발레리 사블린은 소련 해군 장교이자 소련공산당 당원이었다.",
+      "excerpt": "Valery Mikhailovich Sablin (Russian: Валерий Михайлович Саблин; 1 January 1939 – 3 August 1976) was a Soviet Navy officer and member of the Communist Party who in November 1975, while serving as the political officer on the anti-submarine frigate Storozhevoy, led a mutiny against the Soviet state."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Valery_Sablin",
+      "locator": "characters 2581:2729; sha256 5187cf550cd78dbe98618aea94d7a76dfc5fac5d6d64a6ab8873a050533d5126",
+      "claim": "발레리 사블린은 동기생 가운데 가장 먼저 소련공산당에 입당한 축이었다.",
+      "excerpt": "He excelled as a cadet, was noted for his dedication, became a company commander, and was one of the first in his class to join the Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sita-valles",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-angolan-mpla",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1977,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BB%D0%BB%D0%B8%D1%88,_%D0%A1%D0%B8%D1%82%D0%B0",
+      "locator": "characters 3740:3793; sha256 809810be79a40358e407c79efbf7813e72f42aa30cb88a37bc591b7185a0cfbb",
+      "claim": "시타 발레스는 귀국한 뒤 앙골라 해방인민운동에 가입했다.",
+      "excerpt": "Возвратившись на родину, Сита Валлиш вступила в МПЛА."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georgy-khrustalev-nosar",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D1%83%D1%81%D1%82%D0%B0%D0%BB%D1%91%D0%B2-%D0%9D%D0%BE%D1%81%D0%B0%D1%80%D1%8C,_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3267:3631; sha256 f835d15570168d359ec69d9c28d5da0c8e88527eeb16c9991e5f92b836f0e216",
+      "claim": "게오르기 흐루스탈료프-노사리는 페테르부르크 소비에트 의장이 된 뒤 러시아 사회민주노동당에 입당해 멘셰비키 분파에 합류했다.",
+      "excerpt": "Хрусталёв-Носарь был юрисконсультом «Союза рабочих печатного дела», завоевал доверие рабочих, защищая их в трудовых конфликтах, и после образования Петербургского совета рабочих депутатов 14 октября был единогласно избран председателем, чему немало способствовала и его беспартийность (позже Хрусталёв-Носарь вступил в РСДРП и присоединился к фракции меньшевиков)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "willi-muenzenberg",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Willi_M%C3%BCnzenberg",
+      "locator": "characters 2754:2887; sha256 ba1b0c3b7f598df7bbcb97b5ae68438e05491c6d1347249fb0fda15f0532556c",
+      "claim": "빌리 뮌첸베르크는 독일 공산당의 초기 당원이 되었다.",
+      "excerpt": "After arriving in Germany, Münzenberg joined the Spartacus League, and soon thereafter became one of the earliest members of the KPD."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Willi_M%C3%BCnzenberg",
+      "locator": "characters 4083:4148; sha256 ba1b0c3b7f598df7bbcb97b5ae68438e05491c6d1347249fb0fda15f0532556c",
+      "claim": "빌리 뮌첸베르크는 1924년 독일 공산당 소속으로 제국의회 의원에 당선되었다.",
+      "excerpt": "In 1924, Münzenberg was elected to the Reichstag as a KPD member."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Willi_M%C3%BCnzenberg",
+      "locator": "characters 537:770; sha256 ba1b0c3b7f598df7bbcb97b5ae68438e05491c6d1347249fb0fda15f0532556c",
+      "claim": "빌리 뮌첸베르크는 스탈린의 숙청 위협 속에 독일 공산당을 떠났다.",
+      "excerpt": "Condemned by Stalin to be purged and arrested for treason, Münzenberg left the KPD and in Paris became a leader of the German émigré anti-fascism and anti-Stalinist community until forced to flee the Nazi advance into France in 1940."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "zhang-chunqiao",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1938,
+    "endYear": 1977,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhang_Chunqiao",
+      "locator": "characters 310:474; sha256 0fcf1066e39852fcafb0ff57d19cc1f8ee9171fbcf1650dd346a368791a502a2",
+      "claim": "장춘차오는 1938년 중국공산당에 입당했다.",
+      "excerpt": "Zhang joined the Chinese Communist Party in 1938, later becoming a prominent journalist in charge of Jiefang Daily after the establishment of the People's Republic."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Zhang_Chunqiao",
+      "locator": "characters 5559:5697; sha256 0fcf1066e39852fcafb0ff57d19cc1f8ee9171fbcf1650dd346a368791a502a2",
+      "claim": "장춘차오는 1977년 7월 중국공산당에서 제명되었다.",
+      "excerpt": "He was expelled from the Communist Party in July 1977, and then sentenced to death with a two-year reprieve in 1984, alongside Jiang Qing."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ho-hon",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-south-korean-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1946,
+    "endYear": 1949,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+      "locator": "characters 11242:11328; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6",
+      "claim": "허헌은 1946년 11월 남조선로동당 결성에 참여했다.",
+      "excerpt": "In November 1946, he participated in the formation of the South Korean Workers' Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jacek-kuron",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-polish-pzpr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1952,
+    "endYear": 1964,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D1%80%D0%BE%D0%BD%D1%8C,_%D0%AF%D1%86%D0%B5%D0%BA",
+      "locator": "characters 434:556; sha256 13151e08966e7e518ac358ff8fab93db3b444e2bf92bf19d98e770f4c3aa7966",
+      "claim": "야체크 쿠론은 1952년 무렵 폴란드 통일노동당에 입당했다.",
+      "excerpt": "С 1952 года был штатным инструктором харцерской организации (СПХ) и вступил в Польскую объединённую рабочую партию (ПОРП)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuro%C5%84",
+      "locator": "characters 6620:6749; sha256 74d93c22093a86ce6be734b1e4a068adcf6e16b34ffb4287b6aa50bd40590310",
+      "claim": "야체크 쿠론은 1953년 폴란드 통일노동당에서 제명되었다.",
+      "excerpt": "However, he did not last in this position for long as in November 1953, he was expelled from the ZMP apparatus and from the PZPR."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacek_Kuro%C5%84",
+      "locator": "characters 7884:8131; sha256 74d93c22093a86ce6be734b1e4a068adcf6e16b34ffb4287b6aa50bd40590310",
+      "claim": "야체크 쿠론은 1956년 폴란드 통일노동당에 다시 입당했다.",
+      "excerpt": "In June 1956 he was readmitted into the PZPR after he became active in politics at the university, organizing rallies in what he later called the \"young guard of the proletarian masses\", and tried to unite the students and workers through the ZMS."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "iko-carreira",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-angolan-mpla",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Iko_Carreira",
+      "locator": "characters 618:783; sha256 1c10d186c90735243c291e71f399b255f03c83f9e8a571191f45a2bf053a5207",
+      "claim": "이코 카레이라는 앙골라 해방인민운동의 간부였다.",
+      "excerpt": "He was an officer in the People's Movement for the Liberation of Angola (MPLA), Agostinho Neto's armed wing fighting against Portuguese colonial apartheid like rule."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D1%80%D0%B5%D0%B9%D1%80%D0%B0,_%D0%AD%D0%BD%D1%80%D0%B8%D0%BA%D0%B5",
+      "locator": "characters 203:237; sha256 1e11012109199be19e992f54f42f35bfda391a1d73d39d4b7009ec1dd794adff",
+      "claim": "이코 카레이라는 앙골라 해방인민운동 최고 지도자 가운데 한 사람이었다.",
+      "excerpt": "Один из высших руководителей МПЛА."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "naum-eitingon",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nahum_Eitingon",
+      "locator": "characters 1647:1739; sha256 94f52ddf23f264f265498f3aec49e6549aedd62bb89774e035c9fe336a9c38d2",
+      "claim": "나움 에이팅곤은 1919년 소련공산당에 입당했다.",
+      "excerpt": "Following several promotions within the local labor bureaucracy, he joined the CPSU in 1919."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "konstantin-gorshenin",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Konstantin_Gorshenin",
+      "locator": "characters 123:220; sha256 44dba88e3509bad4b4a63dd731576d568abd98022dc61640f04eef79c125d285",
+      "claim": "콘스탄틴 고르셰닌은 1952~1956년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Candidate member of the Central Committee of the Communist Party of the Soviet Union (1952–1956)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "xu-shiyou",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1985,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Xu_Shiyou",
+      "locator": "characters 619:725; sha256 a1abf73f7de0054e9c64c3d62714ce11ea7335ac9271cbdc19a26a429d01f5d3",
+      "claim": "쉬스유는 1927년 중국공산당에 입당했다.",
+      "excerpt": "After having served as a lieutenant in the Kuomintang army, he joined the Chinese Communist Party in 1927."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Xu_Shiyou",
+      "locator": "characters 4554:4903; sha256 a1abf73f7de0054e9c64c3d62714ce11ea7335ac9271cbdc19a26a429d01f5d3",
+      "claim": "쉬스유는 1970~1974년 중국공산당 장쑤성 위원회 제1서기를 지냈다.",
+      "excerpt": "Among his deputies during the 1960s were future regional leaders Song Shilun, Wang Bicheng and Tan Qilong, As the armed forces were called in to restore administrative control, he became Director of the Jiangsu Provincial Revolutionary Committee (1968–74) and First Secretary of Jiangsu Provincial Committee of the Chinese Communist Party (1970–74)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jacques-doriot",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": 1934,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+      "locator": "characters 1241:1371; sha256 970be57d7cb8a567ae170e960a8b94d8f33790d086049b9b9286ff1b84d9ce0c",
+      "claim": "자크 도리오는 1920년 프랑스 공산당에 입당했다.",
+      "excerpt": "After being released, he returned to France and in 1920 joined the French Communist Party (PCF), quickly rising through the party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+      "locator": "characters 2216:2375; sha256 970be57d7cb8a567ae170e960a8b94d8f33790d086049b9b9286ff1b84d9ce0c",
+      "claim": "자크 도리오는 1934년 프랑스 공산당에서 제명되었다.",
+      "excerpt": "Although this would soon become official Communist Party policy, at the time it was seen as heretical and Doriot was expelled from the Communist Party in 1934."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "marceau-pivert",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-sfio",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": 1958,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+      "locator": "characters 264:602; sha256 8865c51493356e245a21a264c3b1922a3c9de3a1cee82484d6af022f73f2c0f9",
+      "claim": "마르소 피베르는 1920년 노동자 인터내셔널 프랑스 지부의 블룸파에 합류했다.",
+      "excerpt": "Active in the Syndicat National des Instituteurs (SNI), a staunch supporter of laïcité and a pacifist after service in World War I, Pivert joined the faction of the French Section of the Workers' International (SFIO) led by Léon Blum, which opposed affiliation to the Comintern in 1920, as opposed to the new French Communist Party (PCF)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+      "locator": "characters 603:777; sha256 8865c51493356e245a21a264c3b1922a3c9de3a1cee82484d6af022f73f2c0f9",
+      "claim": "마르소 피베르는 1930년대 초 노동자 인터내셔널 프랑스 지부 좌파를 혁명좌파 경향으로 조직했다.",
+      "excerpt": "In the early 1930s, Pivert organised the most left-wing members of the SFIO in his Gauche Révolutionnaire (\"Revolutionary Left\") tendency of which Daniel Guérin was a member."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+      "locator": "characters 2205:2340; sha256 8865c51493356e245a21a264c3b1922a3c9de3a1cee82484d6af022f73f2c0f9",
+      "claim": "마르소 피베르는 제2차 세계대전 뒤 노동자 인터내셔널 프랑스 지부에 다시 들어갔다.",
+      "excerpt": "Back in France after World War II, he saw the PSOP divided between some, who joined the PCF, and others, like him, who joined the SFIO."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "maurice-thorez",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-sfio",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Maurice_Thorez",
+      "locator": "characters 354:488; sha256 b14076bafec28cb0281fc6fd949c5d0cb9310b181e1fc1cafc95fb1d96ae8aca",
+      "claim": "모리스 토레즈는 1919년 노동자 인터내셔널 프랑스 지부에 입당했다.",
+      "excerpt": "He joined the French Section of the Workers' International (SFIO) in 1919 and was imprisoned several times for his political activism."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "miklos-gimes",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-hungarian-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1955,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Gimes",
+      "locator": "characters 587:704; sha256 1f15184000d450021165858775533056e0f66a78e101310b1310f2d0ba7a5a74",
+      "claim": "기메시 미클로시는 1955년 라이크 복권을 요구해 헝가리 노동인민당에서 제명되었다.",
+      "excerpt": "In 1955, he was expelled from the Hungarian Working People's Party for calling for the rehabilitation of László Rajk."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mihaly-farkas",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D1%80%D0%BA%D0%B0%D1%88,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9",
+      "locator": "characters 1942:2096; sha256 5636b46e397b999c5357dc649566999f63d4d5802a5f6beb2226a38ac6bbc1d0",
+      "claim": "퍼르커시 미하이는 1948년 헝가리 노동인민당 지도부에 들어갔다.",
+      "excerpt": "В 1948 году Фаркаш вошёл в руководство правящей Венгерской партии трудящихся (ВПТ), созданной после поглощения коммунистами Социал-демократической партии."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D1%80%D0%BA%D0%B0%D1%88,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9",
+      "locator": "characters 3184:3266; sha256 5636b46e397b999c5357dc649566999f63d4d5802a5f6beb2226a38ac6bbc1d0",
+      "claim": "퍼르커시 미하이는 헝가리 노동인민당에서 제명되었다.",
+      "excerpt": "Три месяца спустя комиссия исключила Фаркаша из ВПТ и лишила генеральского звания."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pierre-laval",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-french-sfio",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pierre_Laval",
+      "locator": "characters 484:688; sha256 424b0302a8858a043c96b678c00e4e716f722fc8a1a4551ff9533f2a20ba6e84",
+      "claim": "피에르 라발은 1914년 노동자 인터내셔널 프랑스 지부 소속으로 하원의원에 당선되었다.",
+      "excerpt": "In 1914, he was elected to the Chamber of Deputies as a member of the French Section of the Workers' International (SFIO), and he remained committed to his pacifist convictions during the First World War."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Pierre_Laval",
+      "locator": "characters 689:782; sha256 424b0302a8858a043c96b678c00e4e716f722fc8a1a4551ff9533f2a20ba6e84",
+      "claim": "피에르 라발은 1919년 선거 패배 뒤 노동자 인터내셔널 프랑스 지부를 떠났다.",
+      "excerpt": "After his defeat in the 1919 election, Laval left the SFIO and became mayor of Aubervilliers."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "olga-kameneva",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1902,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Olga_Kameneva",
+      "locator": "characters 860:988; sha256 0a66ad836d5624deadc67d8172cd301ea9ee39601264f72012d28726afc58389",
+      "claim": "올가 카메네바는 1902년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "Olga joined the Russian Social Democratic Labour Party in 1902 [1] and soon married Lev Kamenev, a fellow Marxist revolutionary."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evgeny-varga",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1964,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Eugen_Varga",
+      "locator": "characters 2130:2301; sha256 d8e488e6295869f01d7dab9d844c1d308e5e7585276aabb34b0ce67a7b53532e",
+      "claim": "예브게니 바르가는 모스크바에서 소련공산당에 입당했다.",
+      "excerpt": "Like most of his compatriots living and working in Moscow, he joined the Communist Party of the Soviet Union, but he also remained active in the Hungarian Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "antonov-ovseenko",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "russian-mensheviks",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1914,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2-%D0%9E%D0%B2%D1%81%D0%B5%D0%B5%D0%BD%D0%BA%D0%BE,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 385:510; sha256 c0d71a2fc54315182fae94d018460e90808a53f13561a92878873f421272ecf8",
+      "claim": "블라디미르 안토노프-옵세옌코는 1914년까지 멘셰비키였다.",
+      "excerpt": "Меньшевик до 1914 года, во время Первой мировой войны — меньшевик-интернационалист, в 1917 году вступил в партию большевиков."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Antonov-Ovseenko",
+      "locator": "characters 4950:5111; sha256 4fee485bee16eb315bc85b09a090e3e26c901ae06900c546f2744d2bec668698",
+      "claim": "블라디미르 안토노프-옵세옌코는 파리에서 멘셰비키 사무국 서기로 일했다.",
+      "excerpt": "In mid-1910, he illegally left Russia for Prussia, from which he was deported, ultimately settling in Paris, where he acted as secretary of the Menshevik bureau."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-potemkin",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Potemkin",
+      "locator": "characters 2003:2275; sha256 3673f2e2764304106e891296055ba42a97d839af86a2ecb719d06f54ce564e1e",
+      "claim": "블라디미르 포툠킨은 1919년 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "In 1919, he joined the Russian Communist Party (b) and until 1920 served on the fronts of the Civil War, holding the posts of a member of the Revolutionary Military Council of the Sixth Army, head of the political department of the Western and then of the Southern Fronts."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Potemkin",
+      "locator": "characters 4231:4325; sha256 3673f2e2764304106e891296055ba42a97d839af86a2ecb719d06f54ce564e1e",
+      "claim": "블라디미르 포툠킨은 1939년 전연방공산당(볼셰비키) 중앙위원으로 선출되었다.",
+      "excerpt": "In 1939 he was elected a member of the Central Committee of the All-Union Communist Party (b)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "roman-malinovsky",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1906,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Roman_Malinovsky",
+      "locator": "characters 1155:1300; sha256 5bcb4a722c9b85f8fcb49d4090bb81121d54e090211bacb667a3b39f9b8e9e48",
+      "claim": "로만 말리놉스키는 1906년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "In 1906, he found a job as a lathe operator and joined the Petersburg Metalworkers' Union and the Russian Social Democratic Labour Party (RSDLP)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Roman_Malinovsky",
+      "locator": "characters 2527:2659; sha256 5bcb4a722c9b85f8fcb49d4090bb81121d54e090211bacb667a3b39f9b8e9e48",
+      "claim": "로만 말리놉스키는 두마의 볼셰비키 의원단을 이끌었다.",
+      "excerpt": "He led the six-member Bolshevik group (two of whom were Okhrana agents) and was deputy chairman of the Social Democrats in the Duma."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "eric-hobsbawm",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-british-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1936,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Eric_Hobsbawm",
+      "locator": "characters 7487:7699; sha256 a49a6b9b5ab0b81ffba5a226711ec2b610c95b67b91927b1393b8917f312a961",
+      "claim": "에릭 홉스봄은 1936년 영국 공산당에 입당했다.",
+      "excerpt": "Hobsbawm joined the Sozialistischer Schülerbund (Association of Socialist Pupils), an offshoot of the Young Communist League of Germany, in Berlin in 1931, and the Communist Party of Great Britain (CPGB) in 1936."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Eric_Hobsbawm",
+      "locator": "characters 7876:8136; sha256 a49a6b9b5ab0b81ffba5a226711ec2b610c95b67b91927b1393b8917f312a961",
+      "claim": "에릭 홉스봄은 1956년 헝가리 침공 뒤에도 영국 공산당에 남았다.",
+      "excerpt": "The  Soviet invasion of Hungary in 1956 led thousands of its members to leave the British Communist Party – but Hobsbawm, unique among his colleagues, remained in the party but was mistrusted by its leadership and ceased political work by the end of the 1950s."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "stepan-shaumyan",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1918,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Stepan_Shaumian",
+      "locator": "characters 2631:2876; sha256 0f75a8a5d9c794d4386bda6d61be68693d734a1c88850fb72f14dff2a00b6109",
+      "claim": "스테판 샤우먄은 1903년 제2차 당대회의 분열 때 볼셰비키 편에 섰다.",
+      "excerpt": "In Europe, he met with such exiles from the Russian Empire as Lenin, Julius Martov and Georgi Plekhanov, and was present at the 2nd Congress of the RSDLP, in London, at which the party split into factions, and Shaumian sided with the Bolsheviks."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Stepan_Shaumian",
+      "locator": "characters 2877:3088; sha256 0f75a8a5d9c794d4386bda6d61be68693d734a1c88850fb72f14dff2a00b6109",
+      "claim": "스테판 샤우먄은 1904년 트빌리시에서 볼셰비키 조직가로 활동했다.",
+      "excerpt": "Shaumian returned to Tiflis in 1904, obtained a job as a teacher, while working illicitly as a Bolshevik organiser, leader of local Social Democrats in Tiflis, as well as a prolific writer of Marxist literature."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "dainis-ivans",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B2%D0%B0%D0%BD%D1%81,_%D0%94%D0%B0%D0%B9%D0%BD%D0%B8%D1%81",
+      "locator": "characters 1688:1760; sha256 a48e2d9ce4ff86676bb8c6b5f325f9bfc2fedad003050433931d695f216b9ee5",
+      "claim": "다이니스 이반스는 소련공산당 제19차 협의회 대의원이었다.",
+      "excerpt": "Был делегатом XIX конференции КПСС, Народным депутатом СССР (1989—1991)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yuri-afanasyev",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1954,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%90%D1%84%D0%B0%D0%BD%D0%B0%D1%81%D1%8C%D0%B5%D0%B2,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2439:2490; sha256 dd944d7ac8ccab171273ab0124aaa1178ee073f30cd971fc18677e09ebdea7c4",
+      "claim": "유리 아파나시예프는 1954년부터 소련공산당 당원이었고 1990년 탈당했다.",
+      "excerpt": "В 1990 году вышел из КПСС (был членом с 1954 года)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "lenin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Lenin",
+      "locator": "characters 991:1081; sha256 3da46bb08ee52460568761c112344533f1e8c0015080bbf35d28e05e63dd5187",
+      "claim": "블라디미르 레닌은 1903년 러시아 사회민주노동당 분열에서 볼셰비키 분파를 이끌었다.",
+      "excerpt": "In 1903, he took a key role in the RSDLP ideological split, leading the Bolshevik faction."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Lenin",
+      "locator": "characters 16161:16421; sha256 3da46bb08ee52460568761c112344533f1e8c0015080bbf35d28e05e63dd5187",
+      "claim": "블라디미르 레닌은 러시아 사회민주노동당 강령 초안을 썼다.",
+      "excerpt": "They continued their political agitation, as Lenin wrote for Iskra and drafted the RSDLP programme, attacking ideological dissenters and external critics, particularly the Socialist Revolutionary Party (SR), a Narodnik agrarian-socialist group founded in 1901."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "iosif-unshlikht",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Iosif_Unshlikht",
+      "locator": "characters 1187:1341; sha256 22d846df9c2466b2525f227cadc63029448eecbdf611b7edd62c32f95df22752",
+      "claim": "이오시프 운쉴리흐트는 1917년 2월 혁명 무렵 볼셰비키에 들어갔다.",
+      "excerpt": "At the time of the February Revolution, Unszlicht was in exile in Siberia, where he was elected a member of the Irkutsk soviet, and joined the Bolsheviks."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evdokimov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yefim_Yevdokimov",
+      "locator": "characters 2316:2364; sha256 7db2ad9b5f8f10612cbbfa76a039e18b8e73e27c74b24a1ca1d330d6a92aa73a",
+      "claim": "예핌 예브도키모프는 1918년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "In 1918, he joined the CPSU(b) and the Red Army."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yefim_Yevdokimov",
+      "locator": "characters 304:466; sha256 7db2ad9b5f8f10612cbbfa76a039e18b8e73e27c74b24a1ca1d330d6a92aa73a",
+      "claim": "예핌 예브도키모프는 1934년 전연방공산당(볼셰비키) 중앙위원이 되었다.",
+      "excerpt": "Yevdokimov became a member of the Central Committee of the All-Union Communist Party of Bolsheviks in 1934 and a deputy of the Supreme Soviet of the USSR in 1937."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vyacheslav-yelyutin",
+   "activity": {
+    "functionId": "education",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1929,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 403:427; sha256 d90e72cc35d15e17afd92c42bc00df67dddaeaba8a8ea042fe38f4324f6b95f9",
+      "claim": "뱌체슬라프 옐류틴은 1929년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) c 1929 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1544:1607; sha256 d90e72cc35d15e17afd92c42bc00df67dddaeaba8a8ea042fe38f4324f6b95f9",
+      "claim": "뱌체슬라프 옐류틴은 1961~1986년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1961—1986), кандидат в члены ЦК КПСС (1956—1961)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-nevsky",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Nevsky",
+      "locator": "characters 980:1048; sha256 daa8d9a6d7ae458dbdde7db83cb719e30cdaa3a663e54a9086e7f514e2a6b64f",
+      "claim": "블라디미르 넵스키는 1903년 러시아 사회민주노동당 분열 때 볼셰비키에 들어갔다.",
+      "excerpt": "He joined the Bolsheviks when the RSDLP split into factions in 1903."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Nevsky",
+      "locator": "characters 1815:1901; sha256 daa8d9a6d7ae458dbdde7db83cb719e30cdaa3a663e54a9086e7f514e2a6b64f",
+      "claim": "블라디미르 넵스키는 1906~1908년 페테르부르크 볼셰비키 위원회 집행부원이었다.",
+      "excerpt": "In 1906–08, he was a member of the executive of the St Petersburg Bolshevik committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valentyna-shevchenko",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1957,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%BE,_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%B0_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0",
+      "locator": "characters 610:632; sha256 9a788b8afe4fa9010e158a344b6f3d33893029a506294e0cb757c9ea1d236a87",
+      "claim": "발렌티나 셰우첸코는 1957년부터 소련공산당 당원이었다.",
+      "excerpt": "Член КПСС с 1957 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%B2%D1%87%D0%B5%D0%BD%D0%BA%D0%BE,_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD%D0%B0_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0",
+      "locator": "characters 1643:1668; sha256 9a788b8afe4fa9010e158a344b6f3d33893029a506294e0cb757c9ea1d236a87",
+      "claim": "발렌티나 셰우첸코는 1986~1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1986—1990)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sergei-lazo",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B7%D0%BE,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 488:548; sha256 cd0eea9cdb2a6ba6fdfbb499b7771df0eaf4a4c188efc68fca48b708bf2fff15",
+      "claim": "세르게이 라조는 1918년 봄부터 볼셰비키가 되었다.",
+      "excerpt": "В 1917 году стал левым эсером, а с весны 1918 — большевиком."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "matvei-berman",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1938,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Matvei_Berman",
+      "locator": "characters 434:476; sha256 0695fff0caa8b2e41ec5ad95036de4aefb132b8de6686c5a5789c69a2a62e37b",
+      "claim": "마트베이 베르만은 1917년 6월 볼셰비키에 입당했다.",
+      "excerpt": "Berman joined the Bolsheviks in June 1917."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Matvei_Berman",
+      "locator": "characters 1788:1946; sha256 0695fff0caa8b2e41ec5ad95036de4aefb132b8de6686c5a5789c69a2a62e37b",
+      "claim": "마트베이 베르만은 1938년 12월 소련공산당에서 제명되었다.",
+      "excerpt": "On December 23, 1938, he was expelled from the Soviet Communist Party, arrested the next day in the office of Georgi Malenkov, and sent to prison at Lubyanka."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kirill-shchelkin",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1940,
+    "endYear": 1968,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A9%D1%91%D0%BB%D0%BA%D0%B8%D0%BD%2C_%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3942:3966; sha256 a4a235356cf034c5782126075c42f4d1c918c7f3bb04a4490a3f87e0c362be4f",
+      "claim": "키릴 셸킨은 1940년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1940 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pavel-yudin",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1968,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pavel_Yudin",
+      "locator": "characters 367:782; sha256 e75cdd3659245faa410f663ebb0b65930a583e7cf4769068502ddae6cf579c68",
+      "claim": "파벨 유딘은 1918년 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "He joined the Russian Communist Party (b) in 1918, served in the Red Army 1919–21, and graduated from the Zinoviev University (later renamed the Stalin University) in Leningrad in 1924, after which he began a post graduate course at the Institute of Red Professors, where he was one of the minority of students who supported Joseph Stalin against the Right Opposition led by Nikolai Bukharin, who opposed the forced"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Pavel_Yudin",
+      "locator": "characters 8057:8270; sha256 e75cdd3659245faa410f663ebb0b65930a583e7cf4769068502ddae6cf579c68",
+      "claim": "파벨 유딘은 1952년 소련공산당 중앙위원과 상무위원 후보가 되었다.",
+      "excerpt": "He was back in Moscow in October 1952, for the 19th Congress of the Soviet Communist Party, at which he was made a member of the Central Committee and a candidate member of the Praesidium of the Central Committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladislav-kosior",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1928,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%B8%D0%BE%D1%80%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%92%D0%B8%D0%BA%D0%B5%D0%BD%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2880:3036; sha256 4fc2c25eb82253167a211fd37ba3bca87e0e685f26341191ab2430a837f31441",
+      "claim": "블라디슬라프 코시오르는 1928년 5월 반대파 소속을 이유로 전연방공산당(볼셰비키)에서 제명되었다.",
+      "excerpt": "В мае 1928 года за принадлежность к оппозиции В. Косиор был исключён из ВКП(б) и выслан в Автономную республику немцев Поволжья, в г. Покровск (ныне Энгельс"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-antonov-gritsyuk",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2-%D0%93%D1%80%D0%B8%D1%86%D1%8E%D0%BA%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%BE%D1%81%D0%B8%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 633:662; sha256 c8562fd246e06e9f1184f10f65215ba8e8e9dd99486b6e7ff147b53ef3566dc0",
+      "claim": "니콜라이 안토노프-그리추크는 1918년 2월부터 러시아 공산당(볼셰비키) 당원이었다.",
+      "excerpt": "В РКП(б) с февраля 1918 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "boris-paton",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1952,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Borys_Paton",
+      "locator": "characters 1258:1319; sha256 89f13af105b8656ffc4542eac5d331367ec85dbee1d28696d8b1d2a96d28d808",
+      "claim": "보리스 파톤은 1952년 소련공산당에 입당했다.",
+      "excerpt": "In 1952 Paton joined the Communist Party of the Soviet Union."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Borys_Paton",
+      "locator": "characters 6470:6577; sha256 89f13af105b8656ffc4542eac5d331367ec85dbee1d28696d8b1d2a96d28d808",
+      "claim": "보리스 파톤은 1986~1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "Member of the Central Committee of the 27th Congress of the Communist Party of the Soviet Union (1986–1990)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "katushev",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1952,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Konstantin_Katushev",
+      "locator": "characters 475:536; sha256 3708103cdb3f8832c964eff53fb9fd77472a45e0dc7dfb4284e0905f9a34e164",
+      "claim": "콘스탄틴 카투셰프는 1952년부터 소련공산당 당원이었다.",
+      "excerpt": "Member of the Communist Party of the Soviet Union since 1952."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Konstantin_Katushev",
+      "locator": "characters 0:416; sha256 3708103cdb3f8832c964eff53fb9fd77472a45e0dc7dfb4284e0905f9a34e164",
+      "claim": "콘스탄틴 카투셰프는 1968~1977년 소련공산당 중앙위원회 서기를 지냈다.",
+      "excerpt": "Konstantin Fedorovich Katushev (Russian: Константи́н Фёдорович Ка́тушев; 1 October 1927 – 5 April 2010) was a Soviet party official and statesman, Secretary of the Central Committee of the Communist Party of the Soviet Union (1968–77), Deputy Chairman of the Council of Ministers of the Soviet Union (1977–82), Chairman of the State Committee of the Soviet Union for Foreign Economic Relations (1985–88), Minister of"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "voroshilov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1969,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2,_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2128:2228; sha256 a151478e98b230bc82f2a2f12c7efe1027dd72e49fa999b9282e2355685ad4d0",
+      "claim": "클리멘트 보로실로프는 1903년 말 볼셰비키에 입당했다.",
+      "excerpt": "В члены Российской социалистической рабочей партии (большевиков) РСДРП(б) вступил в конце 1903 года."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Kliment_Voroshilov",
+      "locator": "characters 776:977; sha256 21261800687cddcfb80177795b3abdab394ca242aa18bc46e1691b12a3b6f3a8",
+      "claim": "클리멘트 보로실로프는 1921년 소련공산당 중앙위원으로 선출되었다.",
+      "excerpt": "Voroshilov was elected to the Central Committee of the Communist Party in 1921, and in 1925 Stalin appointed him People's Commissar for Military and Navy Affairs (later People's Commissar for Defence)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gromyko",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1931,
+    "endYear": 1989,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andrei_Gromyko",
+      "locator": "characters 5371:5581; sha256 2911a467a8f7cb04a095fe86b0774ae407252556a9b8b46fbbf2a4870246bf57",
+      "claim": "안드레이 그로미코는 1931년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "Gromyko became a member of the All-Union Communist Party Bolsheviks in 1931, something he had dreamed of since he learned about the \"difference between a poor farmer and a landowner, a worker and a capitalist\"."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "furtseva",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1974,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yekaterina_Furtseva",
+      "locator": "characters 0:191; sha256 ef3b1f85ffeb05bee85bf3132121cb7c237af532025e0b762e5bfb3791b07764",
+      "claim": "예카테리나 푸르체바는 소련공산당 당원이었다.",
+      "excerpt": "Yekaterina Alexeyevna Furtseva (Russian: Екатерина Алексеевна Фурцева; 7 December 1910 – 24 October 1974) was a Soviet politician and member of the Communist Party of the Soviet Union (CPSU)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yekaterina_Furtseva",
+      "locator": "characters 1106:1284; sha256 ef3b1f85ffeb05bee85bf3132121cb7c237af532025e0b762e5bfb3791b07764",
+      "claim": "예카테리나 푸르체바는 1954~1957년 소련공산당 모스크바 위원회 제1서기였다.",
+      "excerpt": "Under Nikita Khrushchev, who sympathized with her, Furtseva was the first secretary of Moscow Committee of the CPSU from 1954 to 1957, a job Khrushchev himself occupied in 1930s."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "amayak-kobulov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1932,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D1%83%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BC%D0%B0%D1%8F%D0%BA_%D0%97%D0%B0%D1%85%D0%B0%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 662:692; sha256 9da66edc1ff0cf4609e7e99fecf4464ca3531d017de258f74d90f350b53e35aa",
+      "claim": "아마야크 코불로프는 1932년 5월부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Состоял в ВКП(б) с мая 1932 г."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "benediktov",
+   "activity": {
+    "functionId": "agriculture",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1930,
+    "endYear": 1983,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Benediktov",
+      "locator": "characters 743:793; sha256 088cc46ac377ddf7ff4d576244b8ff996bad73aa6646cd210bfdd0de48f1b6a2",
+      "claim": "이반 베네딕토프는 1930년 공산당에 입당했다.",
+      "excerpt": "In 1930 he became a member of the Communist Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Benediktov",
+      "locator": "characters 281:355; sha256 088cc46ac377ddf7ff4d576244b8ff996bad73aa6646cd210bfdd0de48f1b6a2",
+      "claim": "이반 베네딕토프는 오랫동안 소련공산당 중앙위원이었다.",
+      "excerpt": "He was a long-term member of the Central Committee of the Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "karanadze",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1925,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%B0%D0%BD%D0%B0%D0%B4%D0%B7%D0%B5%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%A2%D0%B5%D0%BE%D1%84%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 319:355; sha256 dff875fbd01ba56e522bb6f6f9123a56da96e1526822a7f4783a8a6b5e7fd0e7",
+      "claim": "그리고리 카라나제는 1925년 1월 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В январе 1925 года вступил в ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "beria",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1953,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Lavrentiy_Beria",
+      "locator": "characters 3987:4194; sha256 76785fd7710f4677d5518b93ea5281d6dc96ba1ee2a5407e33f309add8ffa2c1",
+      "claim": "라브렌티 베리야는 1917년 3월 볼셰비키에 입당했다고 주장했다.",
+      "excerpt": "Beria attended a technical school in Sukhumi, and later claimed to have joined the Bolsheviks in March 1917 while a student in the Baku Polytechnicum (subsequently known as the Azerbaijan State Oil Academy)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Lavrentiy_Beria",
+      "locator": "characters 7488:7592; sha256 76785fd7710f4677d5518b93ea5281d6dc96ba1ee2a5407e33f309add8ffa2c1",
+      "claim": "라브렌티 베리야는 1934년 소련공산당 중앙위원이 되었다.",
+      "excerpt": "He became a member of the Central Committee of the Communist Party of the Soviet Union in February 1934."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikhail-kaganovich",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": 1941,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Kaganovich",
+      "locator": "characters 207:322; sha256 2bac78934c5af238d1637b0fbd2c76e0989951b03e148f74de312902d2925fe8",
+      "claim": "미하일 카가노비치는 1905년 볼셰비키에 입당했다.",
+      "excerpt": "A metal worker, Kaganovich joined the Bolsheviks in 1905 and fought with the Red Army during the Russian Civil War."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Kaganovich",
+      "locator": "characters 538:655; sha256 2bac78934c5af238d1637b0fbd2c76e0989951b03e148f74de312902d2925fe8",
+      "claim": "미하일 카가노비치는 1934년 공산당 중앙위원이 되었다.",
+      "excerpt": "In 1934, he was made a member of the Central Committee of the Communist Party and an alternate member of the Orgburo."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "tomsky",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1904,
+    "endYear": 1936,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Tomsky",
+      "locator": "characters 4484:4541; sha256 322dd239900e09fe51f8ad6fa3c948d011846e863692d44e8b1ac17c35681aa0",
+      "claim": "미하일 톰스키는 1904년 7월 정식으로 볼셰비키에 입당했다.",
+      "excerpt": "In July 1904, Tomsky formally joined the Bolshevik party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexei-kortunov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1973,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D1%82%D1%83%D0%BD%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3972:4010; sha256 d56cd76175b38e356eabf97663ba07dbc6a14c696c01078e21d33def699cbe4f",
+      "claim": "알렉세이 코르투노프는 1961~1973년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Кандидат в члены ЦК КПСС в 1961—73 гг."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "semyon-tsvigun",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1940,
+    "endYear": 1982,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B2%D0%B8%D0%B3%D1%83%D0%BD%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%9A%D1%83%D0%B7%D1%8C%D0%BC%D0%B8%D1%87",
+      "locator": "characters 411:460; sha256 552eeeaa26e342b8daed4606806518f1af0393440b3b201447b9c0d34709164b",
+      "claim": "세묜 츠비군은 1940년부터 전연방공산당(볼셰비키) 당원이었고 1981년 소련공산당 중앙위원이 되었다.",
+      "excerpt": "Член ВКП(б) с 1940 года, член ЦК КПСС (1981 год)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "valery-kalmykov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1942,
+    "endYear": 1974,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 574:598; sha256 812a0bd696d6a088acde1f507e46fc22c84829ae948abfcc2264ad53edb319ea",
+      "claim": "발레리 칼미코프는 1942년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1942 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%BC%D1%8B%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D0%BB%D0%B5%D1%80%D0%B8%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1397:1445; sha256 812a0bd696d6a088acde1f507e46fc22c84829ae948abfcc2264ad53edb319ea",
+      "claim": "발레리 칼미코프는 1961년부터 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС с 1961 года (кандидат в 1956—1961)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-yakovlev-engineer",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1938,
+    "endYear": 1989,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Yakovlev_%28engineer%29",
+      "locator": "characters 239:303; sha256 ea6f42d337203747e88ab7b98deec79249144413b24bd2074acb53a55ab943c7",
+      "claim": "알렉산드르 야코블레프는 1938년 소련공산당에 입당했다.",
+      "excerpt": "Yakovlev joined the Communist Party of the Soviet Union in 1938."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evald-ilyenkov",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1950,
+    "endYear": 1979,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Evald_Ilyenkov",
+      "locator": "characters 723:872; sha256 edce62c201e7231443c458dc5f57407fbca76cb70f2578d60cea1b3053762774",
+      "claim": "에발트 일리옌코프는 1950년 공산당에 입당했다.",
+      "excerpt": "After he was demobilized he continued his studies in the Faculty of Philosophy of the Moscow State University and joined the Communist Party in 1950."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "abram-deborin",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1928,
+    "endYear": 1963,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Abram_Deborin",
+      "locator": "characters 2041:2084; sha256 7968b9c6608fdc0b42ba640d0d935dafbef7ff8706686b028205d05a78eb8ebe",
+      "claim": "아브람 데보린은 1928년 공산당에 입당했다.",
+      "excerpt": "Deborin joined the Communist Party in 1928."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-chelomey",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1941,
+    "endYear": 1984,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BB%D0%BE%D0%BC%D0%B5%D0%B9,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3700:3729; sha256 ee923325c1e56476e8141c7018afa66523fb4fcb148eb43a77f0dcd00a78dca7",
+      "claim": "블라디미르 첼로메이는 1941년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В 1941 году вступил в ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-bryukhanov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Bryukhanov",
+      "locator": "characters 1157:1225; sha256 10a6a96c12e0edf7260e195e633a9da00eccc144032d430aa2e9addbac10fa64",
+      "claim": "니콜라이 브류하노프는 1907년 런던 당대회에 볼셰비키 대의원으로 참석했다.",
+      "excerpt": "He was a Bolshevik delegate to the RSDLP Congress in London in 1907."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Bryukhanov",
+      "locator": "characters 2676:2901; sha256 10a6a96c12e0edf7260e195e633a9da00eccc144032d430aa2e9addbac10fa64",
+      "claim": "니콜라이 브류하노프는 1927~1934년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "At the 15th Party Congress in December 1927, Bryukhanov was elected candidate (non-voting) member of the Central Committee of the Soviet Communist Party, a position which he kept until the 17th Party Congress in January 1934."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasily-ryabikov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1925,
+    "endYear": 1974,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B1%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 442:466; sha256 631f19d8510a055ed3802d477eeb734d066e210b0675728154cec6d0cf6b0c54",
+      "claim": "바실리 랴비코프는 1925년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1925 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B1%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 217:259; sha256 631f19d8510a055ed3802d477eeb734d066e210b0675728154cec6d0cf6b0c54",
+      "claim": "바실리 랴비코프는 1961~1974년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1961—1974, кандидат с 1952)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ieronim-uborevich",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ieronim_Uborevich",
+      "locator": "characters 884:1045; sha256 ba3bb21c25565be10456f18a7bcb722164831c56847806c6b59af5ee787c06c1",
+      "claim": "이에로님 우보레비치는 1917년 3월 러시아 사회민주노동당(볼셰비키)에 입당했다.",
+      "excerpt": "He joined the Russian Social Democratic Labour Party (b) in March 1917 and, after the October Revolution of that year, began recruiting Red Guards in Bessarabia."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ieronim_Uborevich",
+      "locator": "characters 3434:3666; sha256 ba3bb21c25565be10456f18a7bcb722164831c56847806c6b59af5ee787c06c1",
+      "claim": "이에로님 우보레비치는 1931~1937년 전연방공산당(볼셰비키) 중앙위원 후보였다.",
+      "excerpt": "He acted as a candidate member of the  Central Committee of the All-Union Communist Party (Bolsheviks) from 1931 to 1937 and from 1934 was a member of the military council of the People's Commissariat of Defense of the Soviet Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-novikov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 0:336; sha256 2849902c1085c849a8decff81b8a76a16ad8751ccd0f16c1c0581713add53d36",
+      "claim": "블라디미르 노비코프는 1961~1981년 소련공산당 중앙위원이었다.",
+      "excerpt": "Влади́мир Никола́евич Но́виков (23 ноября [6 декабря] 1907, Крестцы, Новгородская губерния — 21 июля 2000, Москва) — советский государственный и хозяйственный деятель, депутат Верховного Совета СССР 1, 5—10-го созывов, член ЦК КПСС (1961—1981), генерал-майор инженерно-артиллерийской службы (1944), Герой Социалистического Труда (1942)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1695:1870; sha256 2849902c1085c849a8decff81b8a76a16ad8751ccd0f16c1c0581713add53d36",
+      "claim": "블라디미르 노비코프는 1931년 전연방공산당(볼셰비키) 후보당원이 되었다.",
+      "excerpt": "Новиков занимался общественной работой, в 1931 году принят кандидатом в члены ВКП(б), в 1934 году заочно окончил ижевский филиал Ленинградского военно-механического института."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-zasyadko",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1963,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Zasyadko",
+      "locator": "characters 198:415; sha256 58b427ac39061f8bb86221f32138bb56837bf4b234aba91831160ec64430aac4",
+      "claim": "알렉산드르 자샤트코는 1952~1956년과 1961~1963년 소련공산당 중앙위원이었다.",
+      "excerpt": "He was a Hero of Socialist Labour (1957), Deputy of the Supreme Soviet of the Soviet Union of 2–6 Convocations and Member of the Central Committee of the Communist Party of the Soviet Union in 1952–1956 and 1961–1963."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sabit-orudzhev",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1939,
+    "endYear": 1981,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D1%83%D0%B4%D0%B6%D0%B5%D0%B2,_%D0%A1%D0%B0%D0%B1%D0%B8%D1%82_%D0%90%D1%82%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2284:2308; sha256 451926bfd9add1bbf182677c975649ee54431897d341d8da72ddbb653558b2b2",
+      "claim": "사비트 오루제프는 1939년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1939 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D1%83%D0%B4%D0%B6%D0%B5%D0%B2,_%D0%A1%D0%B0%D0%B1%D0%B8%D1%82_%D0%90%D1%82%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2389:2455; sha256 451926bfd9add1bbf182677c975649ee54431897d341d8da72ddbb653558b2b2",
+      "claim": "사비트 오루제프는 1981년 소련공산당 중앙위원이 되었다.",
+      "excerpt": "Кандидат в члены ЦК КПСС (1976—1981), член ЦК КПСС (с марта 1981)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "semyon-lavochkin",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1953,
+    "endYear": 1960,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B2%D0%BE%D1%87%D0%BA%D0%B8%D0%BD%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3945:4008; sha256 ec94d72be87a3496e2c781cc3266302e07f290aa0fbf75b77cd6be328936dc9c",
+      "claim": "세묜 라보치킨은 1953년부터 소련공산당 당원이었다.",
+      "excerpt": "Депутат ВС СССР 3—5 созывов (1950—1958), член КПСС с 1953 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "aleksei-stetsky",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1915,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Aleksei_Stetskii",
+      "locator": "characters 534:642; sha256 37d7c8ca906b25c466f3d8926cf4d43824e354e0cb90474b4e186b8848abee14",
+      "claim": "알렉세이 스테츠키는 1915년 볼셰비키당에 입당했다.",
+      "excerpt": "In 1915 he enrolled at the Petrograd Polytechnic University and joined the Bolshevik Party in the same year."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "lev-karakhan",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Lev_Karakhan",
+      "locator": "characters 197:289; sha256 cdec160f5e4801af8b18872c53ddf45d4b274e5f366975dd91fa717b95979d2e",
+      "claim": "레프 카라한은 1904년부터 러시아 사회민주노동당 당원이었고 1917년 5월 볼셰비키에 합류했다.",
+      "excerpt": "A member of the RSDLP from 1904, at first a Menshevik, he joined the Bolsheviks in May 1917."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-bagramyan",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1941,
+    "endYear": 1982,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Bagramyan",
+      "locator": "characters 936:1113; sha256 fb1091302223dc1b58308a47724d51858e4c09f02926e11ec8a5cf5db2b2b455",
+      "claim": "이반 바그라먄은 1941년에야 공산당에 입당했다.",
+      "excerpt": "He did not immediately join the Communist Party after the consolidation of the October Revolution, becoming a member only in 1941, a move atypical for a Soviet military officer."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasily-kazakov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1941,
+    "endYear": 1981,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1096:1117; sha256 a858d94096c49fdb37ab4b6a2dec856e87e309e4a30c52f9aecdff5b9ca71cb5",
+      "claim": "바실리 카자코프는 1941년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1941 г."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-dudorov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1977,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Dudorov",
+      "locator": "characters 261:299; sha256 d752872fae3d48f8bfb88e77c190da0932622fbd2f1164a978319edd3ed2d9cd",
+      "claim": "니콜라이 두도로프는 1927년 공산당에 입당했다.",
+      "excerpt": "In 1927 he joined the Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ryumin",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1943,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%8E%D0%BC%D0%B8%D0%BD%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3203:3273; sha256 6a9d8a125d2fd5ec31c939f9f7ae611be2b1c07c1b1f897f5def0d58dca551a8",
+      "claim": "미하일 류민은 1943년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В 1943 году вступил в ВКП(б), в 1952 году партия переименована в КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "merkulov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1925,
+    "endYear": 1953,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vsevolod_Merkulov",
+      "locator": "characters 1212:1250; sha256 a7ccf303f4a05c266aa8b634c30187e78944e0884df37e185c010f10703622d8",
+      "claim": "브세볼로드 메르쿨로프는 1925년 공산당에 입당했다.",
+      "excerpt": "He joined the Communist Party in 1925."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vsevolod_Merkulov",
+      "locator": "characters 2065:2165; sha256 a7ccf303f4a05c266aa8b634c30187e78944e0884df37e185c010f10703622d8",
+      "claim": "브세볼로드 메르쿨로프는 1939년 소련공산당 중앙위원으로 선출되었다.",
+      "excerpt": "In 1939, he was elected a member of the Central Committee of the Communist Party of the Soviet Union"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andropov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1939,
+    "endYear": 1984,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yuri_Andropov",
+      "locator": "characters 4399:4443; sha256 a2425eea324d9496d815199963dda5b31367eb42a69c1dcc748a49ad01eaa3cf",
+      "claim": "유리 안드로포프는 1939년 공산당에 입당했다.",
+      "excerpt": "Andropov joined the Communist Party in 1939."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yuri_Andropov",
+      "locator": "characters 43:217; sha256 a2425eea324d9496d815199963dda5b31367eb42a69c1dcc748a49ad01eaa3cf",
+      "claim": "유리 안드로포프는 1982년부터 1984년 사망까지 소련공산당 서기장이었다.",
+      "excerpt": "2 June] 1914 – 9 February 1984) was a Soviet politician who served as the general secretary of the Communist Party of the Soviet Union from late 1982 until his death in 1984."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sudoplatov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1928,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%BE%D0%B2,_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2453:2477; sha256 b42a149675f98383956fc994ce02f5ba679bf492ac9861dfcdea6df0be560f78",
+      "claim": "파벨 수도플라토프는 1928년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1928 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikhail-trilisser",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D0%BB%D0%B8%D1%81%D1%81%D0%B5%D1%80%2C_%D0%9C%D0%B5%D0%B5%D1%80_%D0%90%D0%B1%D1%80%D0%B0%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 630:838; sha256 f6bb671ef68424e76f0141dd66662488c4307b587137445baa01268a67dbe19c",
+      "claim": "미하일 트릴리세르는 1905년 혁명 때 볼셰비키 무장조직을 만들고 러시아 사회민주노동당(볼셰비키) 페테르부르크 위원으로 선출되었다.",
+      "excerpt": "Во время первой русской революции 1905 года организовал боевые и военные организации большевиков в Казани, затем в Санкт-Петербурге и Финляндском княжестве, был избран членом Петербургского комитета РСДРП(б)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D0%BB%D0%B8%D1%81%D1%81%D0%B5%D1%80%2C_%D0%9C%D0%B5%D0%B5%D1%80_%D0%90%D0%B1%D1%80%D0%B0%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 6836:6955; sha256 f6bb671ef68424e76f0141dd66662488c4307b587137445baa01268a67dbe19c",
+      "claim": "미하일 트릴리세르는 1927~1934년 전연방공산당(볼셰비키) 중앙통제위원회 위원이었다.",
+      "excerpt": "В 1927−1934 годах − член Центральной контрольной комиссии ВКП(б), с 1930 года − член Президиума ЦКК ВКП(б) и член ВЦИК."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "afanasyev",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1943,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sergey_Afanasyev_%28engineer%29",
+      "locator": "characters 386:531; sha256 9f7ff23376d85babedfd833c10f6ce5d505a257e81ffb8448ded3d5475697519",
+      "claim": "세르게이 아파나시예프는 1943년부터 소련공산당 당원이었다.",
+      "excerpt": "He graduated from the Bauman Moscow State Technical University in 1941, and was a member of the Communist Party of the Soviet Union (since 1943)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ryzhkov",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1956,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Ryzhkov",
+      "locator": "characters 2089:2159; sha256 7cc8d49aaad3b8c22d5549326ea2ac36dc247d2ac32c4cf866641eb998a16159",
+      "claim": "니콜라이 리시코프는 1956년 소련공산당에 입당했다.",
+      "excerpt": "Ryzhkov joined the Communist Party of the Soviet Union (CPSU) in 1956."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Ryzhkov",
+      "locator": "characters 2305:2436; sha256 7cc8d49aaad3b8c22d5549326ea2ac36dc247d2ac32c4cf866641eb998a16159",
+      "claim": "니콜라이 리시코프는 1981년 소련공산당 중앙위원으로 선출되었다.",
+      "excerpt": "Ryzhkov became First Deputy Chairman of the State Planning Committee in 1979 and was elected to the CPSU Central Committee in 1981."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasily-dinkov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1946,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 415:516; sha256 6d002b683491f34ed00419309e7a5120093524620db6c28ac73988b1c341d384",
+      "claim": "바실리 딘코프는 1946년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В 1942–1947 годах служил в армии, участник Великой Отечественной войны, в 1946 году вступил в ВКП(б)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1511:1539; sha256 6d002b683491f34ed00419309e7a5120093524620db6c28ac73988b1c341d384",
+      "claim": "바실리 딘코프는 1986~1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС в 1986—1990 гг."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-bazarov",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1901,
+    "endYear": 1917,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B7%D0%B0%D1%80%D0%BE%D0%B2,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1681:1827; sha256 ca0c1dbae962110ed8eaeeab3861e6b7f0f8406755c5dbe0735f5cb4d6543c2c",
+      "claim": "블라디미르 바자로프는 1901년 9월 러시아 사회민주노동당 모스크바 위원이 되었다.",
+      "excerpt": "В сентябре 1901 стал членом Московского комитета РСДРП, но уже 27 сентября все члены МК были арестованы, после чего Базаров был сослан в Енисейск."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Bazarov",
+      "locator": "characters 2552:2682; sha256 fec11d61a626e2979427d550e39c25b42c83d9763fec3a5fe3f37dc6b492ea6a",
+      "claim": "블라디미르 바자로프는 1904년 러시아 사회민주노동당 볼셰비키 분파에 들어갔다.",
+      "excerpt": "In 1904, Bazarov joined the Bolshevik faction of the Russian Social Democratic Labor Party (RSDLP), an organization headed by V.I."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%B7%D0%B0%D1%80%D0%BE%D0%B2,_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3537:3568; sha256 ca0c1dbae962110ed8eaeeab3861e6b7f0f8406755c5dbe0735f5cb4d6543c2c",
+      "claim": "블라디미르 바자로프는 1917년 여름 러시아 사회민주노동당을 탈당했다.",
+      "excerpt": "Летом 1917 года вышел из РСДРП."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yakov-malik",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1938,
+    "endYear": 1980,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D0%BA%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1200:1224; sha256 c2e41549007e5f53c5030f92e2c759f498f4890c76fb083bd4ffa788deb80d8f",
+      "claim": "야코프 말리크는 1938년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1938 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D0%BA%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 441:478; sha256 c2e41549007e5f53c5030f92e2c759f498f4890c76fb083bd4ffa788deb80d8f",
+      "claim": "야코프 말리크는 1952~1961년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Кандидат в члены ЦК КПСС (1952—1961)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-voronov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1968,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Voronov",
+      "locator": "characters 1624:1689; sha256 4f5dd5e530a17c1c3678d11bf40bea9de494338748a3a0a33b620fdefe58f418",
+      "claim": "니콜라이 보로노프는 1919년 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "In 1919, Voronov joined the Russian Communist Party (Bolsheviks)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-antipov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1912,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Antipov",
+      "locator": "characters 789:830; sha256 76d2b3acdac5e9f2df29db331f93e8af8d6138e8bccc032976605e5e9ae033a4",
+      "claim": "니콜라이 안티포프는 1912년 러시아 사회민주노동당(볼셰비키)에 입당했다.",
+      "excerpt": "In 1912 he joined the ranks of RSDLP (b)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Antipov",
+      "locator": "characters 127:364; sha256 76d2b3acdac5e9f2df29db331f93e8af8d6138e8bccc032976605e5e9ae033a4",
+      "claim": "니콜라이 안티포프는 1924~1937년 소련공산당 중앙위원이었다.",
+      "excerpt": "He was appointed Member of the Central Executive Committee of the Soviet Union and elected member of the Central Committee of the Communist Party of the Soviet Union (1924–1937) and candidate member of the Orgburo (1924–1925, 1928–1930)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-psurtsev",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1976,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolay_Psurtsev",
+      "locator": "characters 3077:3227; sha256 ffbb66d9958662215f7f58487a7cbff5b430ae9c672bcc1524bd5bd537de833a",
+      "claim": "니콜라이 프수르체프는 1961~1976년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Candidate member of the Central Committee of the Communist Party of the Soviet Union in 1961–1976, Colonel General of the Communication Troops (1945)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolay-semyonov",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1947,
+    "endYear": 1986,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 6645:6778; sha256 981d0a16279705e766c1d5d553dfabd4fe87cbc6e23c016008bb790ce4d6edec",
+      "claim": "니콜라이 세묘노프는 1947년 소련공산당에 입당했다.",
+      "excerpt": "В 1947 году вступил в КПСС, являлся кандидатом в члены ЦК КПСС с 1961 по 1966 год, трижды избирался депутатом Верховного Совета СССР."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-govorov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1949,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Govorov",
+      "locator": "characters 1239:1377; sha256 95f2052416376a2a2c6716ba85a867110b6f1cddcf20fea32d8f36919e04d1ef",
+      "claim": "블라디미르 고보로프는 1949년 소련공산당에 입당했다.",
+      "excerpt": "By the end of 1949, Govorov graduated from the Frunze Military Academy. That same year, he joined the Communist Party of the Soviet Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-kamentsev",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1954,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%86%D0%B5%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 724:746; sha256 08ec536847f5cb37a5778af0607fa1dbf23e3705272b3de4d0a64e006aedc078",
+      "claim": "블라디미르 카멘체프는 1954년부터 소련공산당 당원이었다.",
+      "excerpt": "Член КПСС с 1954 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D1%86%D0%B5%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1760:1793; sha256 08ec536847f5cb37a5778af0607fa1dbf23e3705272b3de4d0a64e006aedc078",
+      "claim": "블라디미르 카멘체프는 1986~1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС с 1986 по 1990 годы."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-nosenko",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1925,
+    "endYear": 1956,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Nosenko",
+      "locator": "characters 584:641; sha256 9a362cc7b2b24a1ddd0e32fdde91f6e2e90c3e3d4f6472b9ea6b4c916dfba11d",
+      "claim": "이반 노센코는 1925년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "Nosenko joined the All-Union Communist Party (b) in 1925."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasily-vakhrushev",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1947,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%85%D1%80%D1%83%D1%88%D0%B5%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 214:270; sha256 3a78139c0e5a67e65e32d383aca2b522593fa18cb4132af5589774e093665749",
+      "claim": "바실리 바흐루셰프는 1939년부터 전연방공산당(볼셰비키) 중앙위원이었다.",
+      "excerpt": "Депутат ВС СССР 1—2 созывов, член ЦК ВКП(б) с 1939 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%85%D1%80%D1%83%D1%88%D0%B5%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 933:1032; sha256 3a78139c0e5a67e65e32d383aca2b522593fa18cb4132af5589774e093665749",
+      "claim": "바실리 바흐루셰프는 1921~1923년 러시아 공산당(볼셰비키) 툴라 현 통제위원회 서기였다.",
+      "excerpt": "1921—1923 — секретарь Тульской губернской контрольной комиссии РКП(б), член губкома и губисполкома."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-chernavin",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1949,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%B0%D0%B2%D0%B8%D0%BD%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4030:4052; sha256 457c65a7e6b0d594a1253eaf80cd6f334446c5179e335f6c23dc5503e41dd287",
+      "claim": "블라디미르 체르나빈은 1949~1991년 소련공산당 당원이었다.",
+      "excerpt": "Член КПСС (1949—1991)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%B0%D0%B2%D0%B8%D0%BD%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 271:296; sha256 457c65a7e6b0d594a1253eaf80cd6f334446c5179e335f6c23dc5503e41dd287",
+      "claim": "블라디미르 체르나빈은 1986~1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1986—1990)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasily-chernyshev",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1952,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D1%8B%D1%88%D1%91%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1547:1573; sha256 ea5b6b45cfae257f4b61f30065dd936dfaae7957ddbc75a91e1794b53867ee5c",
+      "claim": "바실리 체르니셰프는 1917년부터 러시아 사회민주노동당(볼셰비키) 당원이었다.",
+      "excerpt": "Член РСДРП(б) с 1917 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-lyashko",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1942,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Oleksandr_Liashko",
+      "locator": "characters 1057:1138; sha256 0e3893b7358e73118944ad65a3fd2083c6f5f9afe1e39a148979dba158730990",
+      "claim": "알렉산드르 랴시코는 1942년 소련공산당에 입당했다.",
+      "excerpt": "He became a member of the Communist Party of the Soviet Union (CPSU) (b) in 1942."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Oleksandr_Liashko",
+      "locator": "characters 371:483; sha256 0e3893b7358e73118944ad65a3fd2083c6f5f9afe1e39a148979dba158730990",
+      "claim": "알렉산드르 랴시코는 1961~1989년 소련공산당 중앙위원이었다.",
+      "excerpt": "Liashko was also a member of the Central Committee of the Communist Party of the Soviet Union from 1961 to 1989."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "dmitry-pavlov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1941,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2127:2156; sha256 8f0e46a916ebd9ad2c28d9345c133ea28cfefc915a9b52955cc105b6d515b3f6",
+      "claim": "드미트리 파블로프는 1919년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "Вступил в ВКП(б) в 1919 году."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "aleksandr-serebrovsky",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1951:1990; sha256 84c7fbb548644453e3ed48ddf6320b2989134bcdf820f824328dd1a3fa5c42fc",
+      "claim": "알렉산드르 세레브롭스키는 1925~1937년 전연방공산당(볼셰비키) 중앙위원 후보였다.",
+      "excerpt": "Кандидат в члены ЦК ВКП(б) (1925—1937)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2112:2194; sha256 84c7fbb548644453e3ed48ddf6320b2989134bcdf820f824328dd1a3fa5c42fc",
+      "claim": "알렉산드르 세레브롭스키는 1937년 중앙위원 후보에서 제외되었다.",
+      "excerpt": ") выведен из состава кандидатов в члены ЦК ВКП(б) как разоблачённый «враг народа»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yuri-maksarev",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BA%D1%81%D0%B0%D1%80%D1%91%D0%B2%2C_%D0%AE%D1%80%D0%B8%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3209:3290; sha256 4f8ed2afdb32352e7b926375265470603912144c0aacf9a8807218249eeeec9c",
+      "claim": "유리 막사료프는 1952~1961년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Кандидат в члены ЦК КПСС в 1952—1961 годах, депутат ВС СССР 2 созыва (1946—1950)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-morozov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1943,
+    "endYear": 1979,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Aleksandr_Morozov_%28engineer%29",
+      "locator": "characters 11089:11184; sha256 77b6b919ff4692f286c3caf9db1b47cfc48f0c11ab38442976af1a3a723941ea",
+      "claim": "알렉산드르 모로조프는 1943년 공산당원이 되었다.",
+      "excerpt": "Member of the Communist Party in 1943, he was elected deputy of the Supreme Soviet of the USSR."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-pirozhkov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1300:1514; sha256 9fcea4c3ac9330dafc7d116995227a26829d94f3502915bc43c2e948843027a2",
+      "claim": "블라디미르 피로시코프는 1968년 소련공산당 알타이 지방위원회 제2서기에서 국가보안위원회로 옮겼다.",
+      "excerpt": "В 1968 году Владимир Пирожков с должности второго секретаря Алтайского крайкома КПСС решением Политбюро ЦК КПСС направлен на работу в органы безопасности и возглавил Управление кадров КГБ при Совете Министров СССР."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D1%80%D0%BE%D0%B6%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1233:1299; sha256 9fcea4c3ac9330dafc7d116995227a26829d94f3502915bc43c2e948843027a2",
+      "claim": "블라디미르 피로시코프는 소련공산당 중앙위원회 고등당학교를 마치고 당 사업을 했다.",
+      "excerpt": "Закончил ВПШ при ЦК КПСС, был на комсомольской и партийной работе."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "stepan-sitaryan",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%82%D0%B0%D1%80%D1%8F%D0%BD%2C_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%90%D1%80%D0%B0%D0%BC%D0%B0%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1269:1294; sha256 4819eba22b1d90eae8fa31bfeae50ec121aa97304cb97c6e777d48d30f77406e",
+      "claim": "스테판 시타랸은 1990~1991년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1990—1991)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "stepan-chervonenko",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1940,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 626:650; sha256 c3f7181a4f7db8ea795c0cce50fcef9bb85af26861b0742150078cb8c6edf013",
+      "claim": "스테판 체르보넨코는 1940년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1940 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-burdenko",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1938,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolay_Burdenko",
+      "locator": "characters 7342:7520; sha256 36a3b2e22c7e1b92f8323372c0938900b04cbf94c7b5d68b4dbb02ed911b2810",
+      "claim": "니콜라이 부르덴코는 1938년 소련공산당에 입당했다.",
+      "excerpt": "He also headed the All-Union Association of Surgeons and became a member of the USSR Academy of Sciences in 1938, the same year he joined the Communist Party of the Soviet Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-tarasov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1975,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%80%D0%B0%D1%81%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 183:220; sha256 55f3ce2aa943dca9faec21ff7741ff55adc298595bc5af4588bf998e262d3537",
+      "claim": "알렉산드르 타라소프는 1961~1975년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Кандидат в члены ЦК КПСС (1961—1975)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mefody-sveshnikov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1939,
+    "endYear": 1981,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D0%B5%D1%88%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%9C%D0%B5%D1%84%D0%BE%D0%B4%D0%B8%D0%B9_%D0%9D%D0%B0%D1%83%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 782:811; sha256 42a58531b41e7bcc13091e9bf70a56f034e33f38ca7be5374bdc67c24aaf28ca",
+      "claim": "메포디 스베시니코프는 1939년 전연방공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В 1939 году вступил в ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "grigory-kisunko",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1944,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%81%D1%83%D0%BD%D1%8C%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 6751:6780; sha256 723410ca27e8e259581b6c266fb6a174cdbaa0839c8e7041e4d0a08e6e67d9d9",
+      "claim": "그리고리 키순코는 1944년부터 전연방공산당(볼셰비키)·소련공산당 당원이었다.",
+      "excerpt": "Член ВКП(б)/КПСС с 1944 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "dmitry-volkogonov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D0%BA%D0%BE%D0%B3%D0%BE%D0%BD%D0%BE%D0%B2,_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2934:2964; sha256 f6ebdfdbfd12cdd2eee6dbcf16be2701c49ea2ae7001cb6f19937ff0f853b3a2",
+      "claim": "드미트리 볼코고노프는 1991년 5월 소련공산당을 탈당했다.",
+      "excerpt": "В мае 1991 года вышел из КПСС."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D0%BA%D0%BE%D0%B3%D0%BE%D0%BD%D0%BE%D0%B2,_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3029:3087; sha256 f6ebdfdbfd12cdd2eee6dbcf16be2701c49ea2ae7001cb6f19937ff0f853b3a2",
+      "claim": "드미트리 볼코고노프는 소련공산당 제27·28차 당대회 대의원이었다.",
+      "excerpt": "Делегат XXVII и XXVIII съездов КПСС, XIX конференции КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yakov-alksnis",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1916,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yakov_Alksnis",
+      "locator": "characters 534:681; sha256 46718487430b1cb77e0dee0c932f1a846c70a4a402364428bb53c19e195feb26",
+      "claim": "야코프 알크스니스는 1916년 볼셰비키당에 입당했다.",
+      "excerpt": "He attended school in Rāmnieki (1907–1913) and a teachers' seminary (college) in Valmiera (1913–1917), where he joined the Bolshevik Party in 1916."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yakov_Alksnis",
+      "locator": "characters 3503:3726; sha256 46718487430b1cb77e0dee0c932f1a846c70a4a402364428bb53c19e195feb26",
+      "claim": "야코프 알크스니스는 1937년 체포되어 공산당에서 제명되었다.",
+      "excerpt": "As the Great Purge continued, Alksnis was arrested by the NKVD as a part of the so-called \"Latvian Operation\" on 23 November 1937, expelled from the Communist Party, charged with setting up a \"Latvian fascist organization\"."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "sergei-rudenko",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1928,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Sergei_Rudenko_%28general%29",
+      "locator": "characters 481:519; sha256 44bfcce1ffc3b7f22336910fcca59177e27c8fc1446f45055892cffd092f9fa8",
+      "claim": "세르게이 루덴코는 1928년 공산당에 입당했다.",
+      "excerpt": "At 1928 he joined the Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-maslennikov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1924,
+    "endYear": 1954,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2344:2386; sha256 c18d9dffd2d93cf7692df3afd38ca86a7a0bef8f8216c3a2a2ca229b3ea2ccd1",
+      "claim": "이반 마슬렌니코프는 1924년 8월 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В августе 1924 года вступил в ряды РКП(б)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%81%D0%BB%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 256:301; sha256 c18d9dffd2d93cf7692df3afd38ca86a7a0bef8f8216c3a2a2ca229b3ea2ccd1",
+      "claim": "이반 마슬렌니코프는 1939~1954년 소련공산당 중앙위원 후보였다.",
+      "excerpt": "Кандидат в члены ЦК КПСС с 1939 по 1954 годы."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-petrov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1958,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Petrov_%28army_general%29",
+      "locator": "characters 166:298; sha256 c72cc394f98375e4c5bf62439d0a455530aa6942bc6ff35459753b56ba49c3d3",
+      "claim": "이반 페트로프는 1918년 볼셰비키당에 입당했다.",
+      "excerpt": "Born in Trubchevsk in 1896, he began his military service in the Red Army in 1918, the year when he also joined the Bolshevik Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikhail-khozin",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1979,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%B7%D0%B8%D0%BD%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2487:2548; sha256 9bf7afac09de097b699eb268111e3dc131ad0e895c8509c9184fd4033d2a82a6",
+      "claim": "미하일 호진은 1918년 10월부터 공산당원이었다.",
+      "excerpt": "С 3 октября 1918 года член партии ВКП(б), (старый большевик)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "iosif-shikin",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1973,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D0%BA%D0%B8%D0%BD,_%D0%98%D0%BE%D1%81%D0%B8%D1%84_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 305:329; sha256 9972023521f42352367dbc6a0c2a1fb73a5cc292520b9f43398a80226ac3367d",
+      "claim": "이오시프 시킨은 1927년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1927 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D0%BA%D0%B8%D0%BD,_%D0%98%D0%BE%D1%81%D0%B8%D1%84_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3604:3688; sha256 9972023521f42352367dbc6a0c2a1fb73a5cc292520b9f43398a80226ac3367d",
+      "claim": "이오시프 시킨은 1956~1973년 소련공산당 중앙감사위원이었다.",
+      "excerpt": "С 25 февраля 1956 по 30 июля 1973 года — член Центральной ревизионной комиссии КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anatoly-gribkov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1941,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B8%D0%B1%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1846:1914; sha256 c3711fee090036c63bd74a7a7968783338f6e713b58ef15c4371eafd2234a992",
+      "claim": "아나톨리 그리브코프는 1941년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1941 года (был кандидатом в члены партии с 1940 года)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B8%D0%B1%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 155:180; sha256 c3711fee090036c63bd74a7a7968783338f6e713b58ef15c4371eafd2234a992",
+      "claim": "아나톨리 그리브코프는 1981~1989년 소련공산당 중앙위원이었다.",
+      "excerpt": "Член ЦК КПСС (1981—1989)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "semyon-krivoshein",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1978,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%B2%D0%BE%D1%88%D0%B5%D0%B8%D0%BD%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 805:839; sha256 215f1dfa3d88838beb0afcfe67e4d76b2ae32f8f05fdb486569ffcf2aa60b8de",
+      "claim": "세묜 크리보셰인은 1919년 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В 1919 году вступил в ряды РКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "zinovy-ushakov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1930,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A3%D1%88%D0%B0%D0%BA%D0%BE%D0%B2-%D0%A3%D1%88%D0%B8%D0%BC%D0%B8%D1%80%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D0%B9_%D0%9C%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3254:3291; sha256 c40024bb2a00a3bfd1b75e49920776e5de137d7c809e02f946f9e1b7c5f297cd",
+      "claim": "지노비 우샤코프는 1930년 7월부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "с 29 июля 1930 года состоял в ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "august-kork",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/August_Kork",
+      "locator": "characters 6941:7000; sha256 6c185b2c34fd69ef81430948b82a8b64c6ec842d2766127e1411f397a82a6bce",
+      "claim": "아우구스트 코르크는 1927년 소련공산당에 입당했다.",
+      "excerpt": "In 1927, he joined the Communist Party of the Soviet Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vasily-shamshin",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1962,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%BC%D1%88%D0%B8%D0%BD%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1879:1901; sha256 8e9508ec8f873474325402142bf98baeae00f7b15d652d27b6aa5cee63df061b",
+      "claim": "바실리 샴신은 1962년부터 소련공산당 당원이었다.",
+      "excerpt": "Член КПСС с 1962 года."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%BC%D1%88%D0%B8%D0%BD%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2720:2745; sha256 8e9508ec8f873474325402142bf98baeae00f7b15d652d27b6aa5cee63df061b",
+      "claim": "바실리 샴신은 1986~1990년 소련공산당 중앙위원이었다.",
+      "excerpt": "1986—1990 — член ЦК КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "volodymyr-zatonsky",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Volodymyr_Zatonsky",
+      "locator": "characters 875:989; sha256 a4fa605042ad7a9172990d4faa981e74dcb3896d8a1b6ee79ed5932dcdb2b65d",
+      "claim": "볼로디미르 자톤스키는 1917년 3월 키이우 위원회 위원으로 볼셰비키에 합류했다.",
+      "excerpt": "In March 1917 he joined the Bolsheviks as the member of the Kyiv Committee, later joining the Kyiv revkom as well."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Volodymyr_Zatonsky",
+      "locator": "characters 3613:3822; sha256 a4fa605042ad7a9172990d4faa981e74dcb3896d8a1b6ee79ed5932dcdb2b65d",
+      "claim": "볼로디미르 자톤스키는 1934년 소련공산당 중앙위원 후보가 되었다.",
+      "excerpt": "After 8 years of absence, in 1934 he returned to the Central Committee of the Communist Party of Ukraine, and was a candidate for membership in the Central Committee of the Communist Party of the Soviet Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "boris-chernousov",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Chernousov",
+      "locator": "characters 505:702; sha256 3b93893dc1acc9ff452cfa3bfcbf8281cc4508ed1e771057bf8d8c49b688b81e",
+      "claim": "보리스 체르노우소프는 공산당에서 승진해 1948년 소련공산당 중앙위원회 부장이 되었다.",
+      "excerpt": "Chernousov quickly rose in ranks within the Communist party ending with the position of head of the department for trade unions, party and Komsomol organs within the CPSU Central Committee in 1948."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Chernousov",
+      "locator": "characters 940:1069; sha256 3b93893dc1acc9ff452cfa3bfcbf8281cc4508ed1e771057bf8d8c49b688b81e",
+      "claim": "보리스 체르노우소프는 공산당 내 모든 직책에서 해임되었다.",
+      "excerpt": "Chernousov was removed from all positions held in the Communist Party and was appointed director of the Moscow searchlight plant."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "viktor-grushko",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D1%83%D1%88%D0%BA%D0%BE%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1723:1806; sha256 13a68f63290d50b316165f3f0f11946c6d4ae827014c949ac0f57ed2891e0588",
+      "claim": "빅토르 그루슈코는 1990년 소련공산당 마지막 당대회 대의원으로 중앙위원에 선출되었다.",
+      "excerpt": "В 1990 году — делегат последнего съезда КПСС, на котором был избран членом ЦК КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "semyon-lobov",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1913,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Semyon_Lobov_%28politician%29",
+      "locator": "characters 332:421; sha256 0ace4cecc96f74442eacc514306aacf5ed020b66fd030fe7d6607dff0d1f0b41",
+      "claim": "세묜 로보프는 1913년 러시아 사회민주노동당 볼셰비키 분파에 들어갔다.",
+      "excerpt": "Lobov joined the Bolshevik faction of the Russian Social Democratic Labour Party in 1913."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Semyon_Lobov_%28politician%29",
+      "locator": "characters 1506:1658; sha256 0ace4cecc96f74442eacc514306aacf5ed020b66fd030fe7d6607dff0d1f0b41",
+      "claim": "세묜 로보프는 1924~1934년 전연방공산당(볼셰비키) 중앙위원이었다.",
+      "excerpt": "Lobov was a member of the Central Committee of the All-Union Communist Party (b) from 1924 to 1934 as well as a member of the Orgburo from 1930 to 1934."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vladimir-komarov-cosmonaut",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1952,
+    "endYear": 1967,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1592:1614; sha256 0900f84982982b0fe5af6959a5a2edb4f3fb794feea94330da3629dd097cf1ac",
+      "claim": "블라디미르 코마로프는 1952년부터 소련공산당 당원이었다.",
+      "excerpt": "С 1952 года член КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-tretyak",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1943,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Tretyak",
+      "locator": "characters 1006:1075; sha256 635401f68ab554fc2a71a30a19c8421af10bcdda63301fb9bb0a848a652a610a",
+      "claim": "이반 트레티야크는 1943년부터 소련공산당 당원이었다.",
+      "excerpt": "Since 1943 he was a member of the Communist Party of the Soviet Union"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-glebov-avilov",
+   "activity": {
+    "functionId": "industry",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1904,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Glebov-Avilov",
+      "locator": "characters 374:574; sha256 bf281877f89c267e44a887c111b482374483d444febd02b07beef59996bc39fc",
+      "claim": "니콜라이 글레보프-아빌로프는 1904년 볼셰비키가 되었다.",
+      "excerpt": "He became a Bolshevik in 1904, and during the 1905 Revolution he was active in Moscow, Kaluga and the Urals working in underground printshops, being hidden by the All-Russian Union of Railway Workers."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Glebov-Avilov",
+      "locator": "characters 1873:2020; sha256 bf281877f89c267e44a887c111b482374483d444febd02b07beef59996bc39fc",
+      "claim": "니콜라이 글레보프-아빌로프는 1917년 볼셰비키 협의회에서 중앙위원 후보로 선출되었다.",
+      "excerpt": "Returning to Petrograd, he was a delegate to the Bolshevik congress in May 1917, where he was elected an alternate member of the Central Committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "konstantin-mekhonoshin",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1913,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Konstantin_Mekhonoshin",
+      "locator": "characters 692:773; sha256 594a67f43d67e6f2413165b0dfbbd82ee85b1a2ba76de861d5c7a42c02f70ca4",
+      "claim": "콘스탄틴 메호노신은 1913년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "He became a member of the Russian Social Democratic Labour Party (RSDLP) in 1913."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Konstantin_Mekhonoshin",
+      "locator": "characters 1276:1365; sha256 594a67f43d67e6f2413165b0dfbbd82ee85b1a2ba76de861d5c7a42c02f70ca4",
+      "claim": "콘스탄틴 메호노신은 1917년 4월부터 러시아 사회민주노동당 군사조직의 주요 성원이었다.",
+      "excerpt": "He was a leading member of the Military Organization of the RSDLP starting in April 1917."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "leon-gaikis",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B9%D0%BA%D0%B8%D1%81,_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 334:360; sha256 874dec072460a5b2834027b93f511115ecea2c0a5aa8f98e588e7fcdf5231e9e",
+      "claim": "레온 가이키스는 1917년부터 소련공산당 당원이었다.",
+      "excerpt": "С 1917 года — член ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikhail-grigoryevich-yefremov",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1942,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Yefremov_%28military_commander%29",
+      "locator": "characters 202:330; sha256 1dc2f11f01675f12389161e175e833dfddc6a4e8c109346832b19195d0e54594",
+      "claim": "미하일 G. 예프레모프는 1919년 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "He took part in the October Revolution, joined the Russian Communist Party (b) in 1919, and became a division commander in 1921."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "viktor-zhuravlev",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%96%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D1%91%D0%B2%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2239:2280; sha256 dea15c12c8c9ea299cae89d26d2c9ff6f9924c8f728c2a454c18d432fb1e621d",
+      "claim": "빅토르 주라블료프는 제18차 당대회에서 전연방공산당(볼셰비키) 중앙위원 후보가 되었다.",
+      "excerpt": "Кандидат в члены ЦК ВКП(б) (XVIII съезд)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%96%D1%83%D1%80%D0%B0%D0%B2%D0%BB%D1%91%D0%B2%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2281:2368; sha256 dea15c12c8c9ea299cae89d26d2c9ff6f9924c8f728c2a454c18d432fb1e621d",
+      "claim": "빅토르 주라블료프는 1941년 2월 중앙위원 후보에서 제외되었다.",
+      "excerpt": "Исключён из кандидатов в члены ЦК ВКП(б) в феврале 1941 на XVIII партийной конференции."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yuri-votintsev",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1940,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%82%D0%B8%D0%BD%D1%86%D0%B5%D0%B2,_%D0%AE%D1%80%D0%B8%D0%B9_%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1150:1174; sha256 567a2760372ff7064e2019735af4168a3dc10a5b6c1fb09b63b6fbd4c1374659",
+      "claim": "유리 보틴체프는 1940년부터 전연방공산당(볼셰비키) 당원이었다.",
+      "excerpt": "Член ВКП(б) с 1940 года."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yuri_Votintsev",
+      "locator": "characters 1564:1725; sha256 36c681682d235bcde344dcb603cd805e7c2c9182a209f8c0bde12756aa61f71e",
+      "claim": "유리 보틴체프는 1990년 소련공산당 제28차 당대회 대의원으로 뽑혔다.",
+      "excerpt": "After retirement he was the veteran's organization chair for the capital's Oktyabrskiy region and was chosen as a delegate to the 1990 28th Congress of the CPSU."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "tsesarsky",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%81%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 535:618; sha256 1aaa8c4d69b5919fabb0ab19a352e9691a3363b623af721ce1bae4b577224e38",
+      "claim": "블라디미르 체사르스키는 1919년 사회혁명당에서 러시아 공산당(볼셰비키)으로 옮겼다.",
+      "excerpt": "В 1915 — 1919 годах эсер, украинский эсер-боротьбист, в 1919 году перешёл в РКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pavel-bulanov",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1937,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pavel_Bulanov",
+      "locator": "characters 1083:1164; sha256 d16387796ef8c9fadbc33455f68166e6e6cc57bdeea27a0dfaaf44498069f13f",
+      "claim": "파벨 불라노프는 1918년 가을 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "Bulanov joined the Russian Communist Party (b) (\"RCP (b)\") in the autumn of 1918."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Pavel_Bulanov",
+      "locator": "characters 3394:3581; sha256 d16387796ef8c9fadbc33455f68166e6e6cc57bdeea27a0dfaaf44498069f13f",
+      "claim": "파벨 불라노프는 1937년 소련공산당에서 제명되었다.",
+      "excerpt": "On March 29, 1937, Bulanov was arrested on Yezhov's orders, removed from the post of secretary, dismissed from the NKVD and expelled from the CPSU (b) as \"an ideologically alien element\"."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "zoltan-tildy",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-smallholders",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1929,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+      "locator": "characters 832:965; sha256 99d35b54f27a229dde254ceade629bba3258977f1060e257e6b1ba186bef22c6",
+      "claim": "틸디 졸탄은 1929년 너지 페렌츠 등과 함께 독립소농당에 입당했다.",
+      "excerpt": "In 1929, Tildy joined the Independent Smallholders' Party (FKgP) with other noted Hungarian political figures, including Ferenc Nagy."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}
