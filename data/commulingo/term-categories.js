@@ -68,6 +68,13 @@ function termCategoryLabel(id, lang) {
     return lang === 'en' ? category.en : category.ko;
 }
 
+// Blank for an unknown region: the card shows no region pill then.
+function termRegionLabel(id, lang) {
+    const memory = regionStore.getMemory();
+    const region = memory && memory.byId[id];
+    return region ? (lang === 'en' ? region.en : region.ko) : '';
+}
+
 // Facet values that actually have entries, in registry order, each with its
 // count. An empty value simply does not get a chip, and rows whose slug is
 // unknown (or blank, as a freshly added term is) collect under
@@ -103,6 +110,7 @@ module.exports = {
     loadTermCategories,
     termCategoriesRef,
     termCategoryLabel,
+    termRegionLabel,
     termCategoriesWithCounts,
     termRegionsWithCounts,
     SNAPSHOT_PATH: store.snapshotPath,

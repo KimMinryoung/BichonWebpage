@@ -4,7 +4,7 @@ const { loadCommuLingoTerms } = require('./terms-store');
 const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { renderAppView } = require('../../utils/render-app-view');
 const { getReportsForTerm } = require('../../services/report-mentions');
-const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termRegionsWithCounts, termCategoryLabel } = require('./term-categories');
+const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termRegionsWithCounts, termCategoryLabel, termRegionLabel } = require('./term-categories');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { genealogyLinksForEntry } = require('./genealogy-links');
 const { localize } = require('./localize');
@@ -16,6 +16,7 @@ function presentTerm(raw, lang) {
         // Blank for an entry whose category has not been set yet; the card
         // simply omits the pill rather than showing 'Uncategorized'.
         categoryLabel: raw.category ? termCategoryLabel(raw.category, lang) : '',
+        regionLabel: raw.region ? termRegionLabel(raw.region, lang) : '',
         term: localize(raw.term, lang),
         termOther: lang === 'en' ? localize(raw.term, 'ko') : localize(raw.term, 'en'),
         period: localize(raw.period, lang),
