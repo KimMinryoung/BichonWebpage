@@ -164,6 +164,28 @@ const tools = [
         },
     },
     {
+        name: 'entry_lookup',
+        description: 'Is this person or term already registered? Matches the id, the Korean/English name or headword, or an alias '
+            + '(case-insensitive). Also says whether the label is the title of a history event (such names are events, not glossary terms).',
+        inputSchema: object({
+            kind: str('Entry kind', { enum: ['person', 'term'] }),
+            id: str('Proposed id (slug)'),
+            label: str('Name or headword as written'),
+        }, ['kind', 'label']),
+        async handler({ kind, id, label }) {
+            const db = require('../../config/database');
+            const [table, aliases, foreign, column] = kind === 'person'
+                ? ['commulingo_people', 'commulingo_person_aliases', 'person_id', 'name']
+                : ['commulingo_terms', 'commulingo_term_aliases', 'term_id', 'term'];
+            const existing = (await db.query(`SELECT id FROM ${table}
+                    WHERE id=$1 OR lower(${column}_ko)=lower($2) OR lower(${column}_en)=lower($2)
+                    UNION SELECT ${foreign} FROM ${aliases} WHERE lower(alias)=lower($2) LIMIT 1`, [id || '', label])).rows[0];
+            const event = (await db.query(`SELECT id FROM commulingo_history_events
+                    WHERE lower(title_ko)=lower($1) OR ($1<>'' AND lower(title_en)=lower($1)) LIMIT 1`, [label])).rows[0];
+            return { existingId: existing ? existing.id : null, eventTitleMatch: event ? event.id : null };
+        },
+    },
+    {
         name: 'id_redirects_list',
         description: 'Retired ids and the id each now points to (person/term/event renames), oldest first. Callers that keep CommuLingo ids '
             + 'in their own state follow renames with this.',

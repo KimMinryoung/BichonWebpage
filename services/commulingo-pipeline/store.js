@@ -119,6 +119,7 @@ async function finishStage(job, value, { nextStage, status = 'ready', usage = {}
             'total_cost', 'model_calls', 'provider_fallback', 'worker_task', 'rejections', 'workflow'].includes(key)));
         await client.query('INSERT INTO commulingo_pipeline_artifacts(job_id,stage,value,metrics) VALUES ($1,$2,$3::jsonb,$4::jsonb)',
             [job.id, job.stage, JSON.stringify(value), JSON.stringify(metrics)]);
+        if (job.stage === 'discover') await finishDiscovery(client, job, value);
         const gaps = gapIds(job.payload || {});
         if (job.stage === 'research' && status === 'complete' && job.action === 'create'
             && value.reason === 'target already exists' && gaps.length) {
@@ -132,6 +133,37 @@ async function finishStage(job, value, { nextStage, status = 'ready', usage = {}
                 WHERE id = ANY($2::bigint[]) AND status='pending'`, [job.target, gaps]);
         }
     });
+}
+
+// Accepted discovery candidates become create jobs, prioritized by how many
+// materials mention them; the material is marked processed. A requested entry
+// (gap) the model declined stays visible as skipped, never as a pending
+// request nothing will pick up again.
+async function finishDiscovery(client, job, value) {
+    const payload = job.payload || {};
+    const materialId = payload.material_id;
+    for (const candidate of value.candidates || []) {
+        const next = { candidate, material_id: materialId, ...(payload.workflow ? { workflow: payload.workflow } : {}),
+            ...(materialId.startsWith('gap:') ? { gap_id: Number(materialId.split(':')[1]) } : {}) };
+        await client.query(`INSERT INTO commulingo_pipeline_mentions(kind,target,material_id,mention) VALUES ($1,$2,$3,$4)
+            ON CONFLICT(kind,target,material_id) DO UPDATE SET mention=EXCLUDED.mention`,
+        [candidate.kind, candidate.target, materialId, candidate.mention]);
+        const mentions = (await client.query('SELECT count(*)::int AS n FROM commulingo_pipeline_mentions WHERE kind=$1 AND target=$2',
+            [candidate.kind, candidate.target])).rows[0].n;
+        await client.query(`INSERT INTO commulingo_pipeline_jobs (kind,action,target,topic,reason,priority,payload)
+            VALUES ($1,'create',$2,'basics',$3,$4,$5::jsonb)
+            ON CONFLICT (kind,target,topic) WHERE status IN ${ACTIVE}
+            DO UPDATE SET priority=LEAST(commulingo_pipeline_jobs.priority, EXCLUDED.priority)`,
+        [candidate.kind, candidate.target, candidate.reason, 50 - Math.min(10, mentions), JSON.stringify(next)]);
+    }
+    await client.query(`INSERT INTO commulingo_pipeline_materials(material_id,content_hash) VALUES ($1,$2)
+        ON CONFLICT(material_id) DO UPDATE SET content_hash=EXCLUDED.content_hash, processed_at=now()`,
+    [materialId, payload.content_hash]);
+    if (materialId.startsWith('gap:') && !(value.candidates || []).length) {
+        await client.query(`UPDATE commulingo_curation_gaps SET status='skipped', resolution=$1, updated_at=now()
+            WHERE id=$2 AND status='pending'`,
+        [`Pipeline discovery declined: ${value.skip_reason || 'no reason recorded'}`, Number(materialId.split(':')[1])]);
+    }
 }
 
 // Drops a parked worker handle: the stage starts over on the next claim.

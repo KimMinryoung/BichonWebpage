@@ -52,4 +52,15 @@ const review = {
     },
 };
 
-module.exports = { editor, review, leaveNote };
+// Discovery: which requested (or, with discovery on, mentioned) entries are
+// missing. The engine turns accepted candidates into create jobs.
+const discover = {
+    async request(job, artifacts) {
+        return { request: { kind: 'commulingo_discover', input: { job: workerJob(job), artifacts: workerArtifacts(artifacts) } } };
+    },
+    async complete(job, artifacts, task) {
+        return stageResult(task);
+    },
+};
+
+module.exports = { editor, review, discover, leaveNote };
