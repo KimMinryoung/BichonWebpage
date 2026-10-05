@@ -33,8 +33,6 @@ async function run() {
         await client.query(`INSERT INTO commulingo_person_enrichment(person_id, topic, status, reason, revision, review_after, changed_by)
             VALUES ($1, 'bio', 'open', 'fixture', 'r1', now(), 'fixture')`, [from]);
         await client.query("INSERT INTO commulingo_editorial_notes(target_type, target_id, note, changed_by) VALUES ('person', $1, 'note', 'fixture')", [from]);
-        await client.query(`INSERT INTO commulingo_pipeline_jobs(kind, action, target, topic, reason, status)
-            VALUES ('person', 'update', $1, 'bio', 'fixture', 'ready'), ('person', 'update', $1, 'bio', 'fixture', 'complete')`, [from]);
         await client.query("INSERT INTO commulingo_id_redirects(entity_type, from_id, to_id) VALUES ('person', 'older-dup', $1)", [from]);
         const evidenceBefore = await count(client, 'SELECT count(*) FROM commulingo_person_evidence WHERE person_id=$1', [from]);
         assert.ok(evidenceBefore > 0, 'fixture writes person evidence');
@@ -49,7 +47,7 @@ async function run() {
         await client.query('ROLLBACK TO SAVEPOINT refusal');
 
         const [result] = await renamePersonIds([{ from, to, note: 'regression' }], options);
-        assert.equal(result.moved.commulingo_pipeline_jobs, 1, 'only the open job follows');
+        assert.equal(result.moved.commulingo_pipeline_jobs, undefined, "leninbot's jobs follow renames on its side");
         assert.equal(result.moved.redirectsRetargeted, 1);
 
         assert.equal(await admin.getPersonAdmin(from, options), null);
@@ -61,7 +59,6 @@ async function run() {
         assert.equal(await count(client, 'SELECT count(*) FROM commulingo_person_enrichment WHERE person_id=$1', [to]), 1);
         assert.equal(await count(client, 'SELECT count(*) FROM commulingo_person_evidence WHERE person_id=$1', [to]), evidenceBefore);
         assert.equal(await count(client, "SELECT count(*) FROM commulingo_editorial_notes WHERE target_id=$1", [to]), 1);
-        assert.equal(await count(client, "SELECT count(*) FROM commulingo_pipeline_jobs WHERE target=$1 AND status='complete'", [from]), 1, 'finished jobs keep their id');
         assert.equal(await count(client, "SELECT count(*) FROM commulingo_people_revisions WHERE entity_type='person' AND entity_id=$1", [from]), historyBefore, 'history keeps its id');
         assert.equal(await count(client, "SELECT count(*) FROM commulingo_people_revisions WHERE entity_type='person' AND entity_id=$1", [to]), 1);
         const redirects = (await client.query("SELECT from_id, to_id FROM commulingo_id_redirects WHERE entity_type='person' AND to_id=$1 ORDER BY from_id", [to])).rows;

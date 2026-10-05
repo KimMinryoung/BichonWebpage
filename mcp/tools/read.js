@@ -138,45 +138,49 @@ const tools = [
     },
     {
         name: 'suggestions_list',
-        description: 'Editorial suggestions (agent or admin edits awaiting or past review), newest first.',
+        description: 'Editorial suggestions (agent or admin edits awaiting or past review), newest first. Pass id for one suggestion (status is then ignored).',
         inputSchema: object({
-            status: str('Suggestion status', { enum: ['pending', 'approved', 'rejected'], default: 'pending' }),
+            id: str('One suggestion id'),
+            status: str('Suggestion status', { enum: ['pending', 'approved', 'rejected', 'all'], default: 'pending' }),
             targetType: str('Target type, e.g. person, person_section, term'),
             targetId: str('Target id'),
             includePatch: bool('Include patch_json and source_refs (default false)'),
             ...page,
         }),
-        async handler({ status, targetType, targetId, includePatch, limit, offset }) {
+        async handler({ id, status, targetType, targetId, includePatch, limit, offset }) {
+            if (id && !/^[0-9]{1,18}$/.test(id)) throw Object.assign(new Error('id must be numeric'), { status: 400 });
             const db = require('../../config/database');
             const { rows } = await db.query(
                 `SELECT id, target_type, target_id, action, confidence, status, suggested_by, reviewer, review_note,
                         created_at, reviewed_at${includePatch ? ', patch_json, source_refs' : ''},
                         count(*) OVER () AS total
                  FROM commulingo_agent_suggestions
-                 WHERE status = $1 AND ($2 = '' OR target_type = $2) AND ($3 = '' OR target_id = $3)
+                 WHERE ($6::bigint IS NOT NULL AND id = $6::bigint
+                        OR $6::bigint IS NULL AND ($1 = 'all' OR status = $1))
+                   AND ($2 = '' OR target_type = $2) AND ($3 = '' OR target_id = $3)
                  ORDER BY created_at DESC, id DESC LIMIT $4 OFFSET $5`,
-                [status, targetType || '', targetId || '', limit, offset]);
+                [status, targetType || '', targetId || '', limit, offset, id || null]);
             return { total: rows.length ? Number(rows[0].total) : 0, offset, items: rows.map(({ total, ...row }) => row) };
         },
     },
     {
-        name: 'curation_gaps_list',
-        description: 'Curation gaps (missing people/terms/links found while curating events), highest priority first.',
+        name: 'id_redirects_list',
+        description: 'Retired ids and the id each now points to (person/term/event renames), oldest first. Callers that keep CommuLingo ids '
+            + 'in their own state follow renames with this.',
         inputSchema: object({
-            status: str('Gap status', { enum: ['pending', 'done', 'skipped'], default: 'pending' }),
-            kind: str('Gap kind'),
-            eventId: str('Event the gap was found in'),
+            entityType: str('Entity type, e.g. person, term, history_event'),
+            since: str('Only redirects created at or after this ISO timestamp'),
             ...page,
         }),
-        async handler({ status, kind, eventId, limit, offset }) {
+        async handler({ entityType, since, limit, offset }) {
+            if (since && Number.isNaN(Date.parse(since))) throw Object.assign(new Error('since must be an ISO timestamp'), { status: 400 });
             const db = require('../../config/database');
             const { rows } = await db.query(
-                `SELECT id, kind, event_id, target_id, label_ko, label_en, reason, priority, status, resolved_id,
-                        resolution, claimed_by, claimed_at, created_by, created_at, updated_at, count(*) OVER () AS total
-                 FROM commulingo_curation_gaps
-                 WHERE status = $1 AND ($2 = '' OR kind = $2) AND ($3 = '' OR event_id = $3)
-                 ORDER BY priority DESC, created_at, id LIMIT $4 OFFSET $5`,
-                [status, kind || '', eventId || '', limit, offset]);
+                `SELECT entity_type, from_id, to_id, note, created_at, count(*) OVER () AS total
+                 FROM commulingo_id_redirects
+                 WHERE ($1 = '' OR entity_type = $1) AND ($2::timestamptz IS NULL OR created_at >= $2::timestamptz)
+                 ORDER BY created_at, entity_type, from_id LIMIT $3 OFFSET $4`,
+                [entityType || '', since || null, limit, offset]);
             return { total: rows.length ? Number(rows[0].total) : 0, offset, items: rows.map(({ total, ...row }) => row) };
         },
     },

@@ -7,6 +7,7 @@ const { str, bool, obj, arr, object } = require('../schema');
 
 const ACTOR = /^[A-Za-z0-9_.:@/-]{1,120}$/;
 const TARGETS = ['person', 'person_section', 'term'];
+const CONTENT_TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 
 function badRequest(message) {
     return Object.assign(new Error(message), { status: 400 });
@@ -21,6 +22,12 @@ function actorOf(changedBy, client) {
 const changedBy = str('Actor recorded on the edit (default mcp:<client>)', { maxLength: 120 });
 
 function editorialServices(target) {
+    if (CONTENT_TARGETS.includes(target)) {
+        const content = require('../../data/commulingo/content-editorial-service');
+        const unsupported = command => async () => { throw badRequest(`${command} is not available for ${target}`); };
+        return { submit: content.submitContentEdit, review: content.reviewContentSuggestion,
+            enrichment: unsupported('enrichment'), note: unsupported('note') };
+    }
     if (target === 'term') {
         const terms = require('../../data/commulingo/term-editorial-service');
         return { submit: terms.submitTermEdit, review: terms.reviewTermSuggestion, enrichment: terms.saveEnrichment, note: terms.saveNote };
@@ -41,10 +48,13 @@ const tools = [
         description: 'Direct editorial store call (as the Admin screens do). command submit: request {action: create|update|delete, id, fields '
             + '(updates need fields.expectedRevision from person_get/term_get), sources, confidence?, directApply?} — returns approved with the '
             + 'value, or pending (HTTP-202-like) when review is required. review: {suggestionId, approve, note}. enrichment: {id, topic, status, '
-            + 'reason, sources, expectedRevision}. note: {id, note, jobRef?}. Terms always stage as pending.',
+            + 'reason, sources, expectedRevision}. note: {id, note, jobRef?}. Terms always stage as pending. History events and office rows '
+            + '(history_event update; history_event_section create/update {heading, body, after?}; history_event_person create/update '
+            + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id) / update / delete (id = row id)) '
+            + 'apply at once unless directApply is false; they support submit and review only.',
         inputSchema: object({
             command: str('Store command', { enum: ['submit', 'review', 'enrichment', 'note'] }),
-            target: str('Target type', { enum: TARGETS, default: 'person' }),
+            target: str('Target type', { enum: [...TARGETS, ...CONTENT_TARGETS], default: 'person' }),
             request: obj('Command payload (see description)'),
             changedBy,
         }, ['command', 'request']),
@@ -97,37 +107,6 @@ const tools = [
             return upsertPeople(people, { dryRun, changedBy: actorOf(given, client) });
         },
         summarize: value => ({ dryRun: value.dryRun, results: value.results }),
-    },
-    {
-        name: 'office_row_save',
-        description: 'Create a holder row in an office (officeId, no rowId) or update one (rowId). row: {period, body?, personId?, name?, note?} as '
-            + 'in the Admin office editor.',
-        inputSchema: object({
-            officeId: str('Office id (create)'),
-            rowId: str('Row id (update)'),
-            row: obj('Row fields'),
-            changedBy,
-        }, ['row']),
-        audit: ({ officeId, rowId, changedBy: actor }, client) => ({ command: rowId ? 'update' : 'create', targetType: 'office_row',
-            targetId: rowId || officeId || '', actor: actor || `mcp:${client}` }),
-        async handler({ officeId, rowId, row, changedBy: given }, { client }) {
-            const offices = require('../../data/commulingo/people-offices-store');
-            const options = { changedBy: actorOf(given, client) };
-            if (!!officeId === !!rowId) throw badRequest('pass exactly one of officeId (create) or rowId (update)');
-            return { row: rowId ? await offices.updateOfficeRowAdmin(rowId, row, options) : await offices.createOfficeRowAdmin(officeId, row, options) };
-        },
-        summarize: value => ({ rowId: value.row && value.row.id }),
-    },
-    {
-        name: 'office_row_delete',
-        description: 'Delete one office holder row.',
-        inputSchema: object({ rowId: str('Row id'), changedBy }, ['rowId']),
-        audit: ({ rowId, changedBy: actor }, client) => ({ command: 'delete', targetType: 'office_row', targetId: rowId, actor: actor || `mcp:${client}` }),
-        async handler({ rowId, changedBy: given }, { client }) {
-            const { deleteOfficeRowAdmin } = require('../../data/commulingo/people-offices-store');
-            return deleteOfficeRowAdmin(rowId, { changedBy: actorOf(given, client) });
-        },
-        summarize: value => value,
     },
 ];
 
