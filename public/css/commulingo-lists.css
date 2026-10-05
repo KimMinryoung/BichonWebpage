@@ -9,7 +9,7 @@
     gap: 8px;
 }
 
-.commu-people-shell { gap: 0; }
+.commu-dict-shell { gap: 0; }
 .commu-sr-only {
     position: absolute;
     width: 1px;
@@ -309,7 +309,7 @@
     margin: 9px 0 0;
 }
 
-.commu-people-shell > .commu-people-search { margin-top: 0; }
+.commu-dict-shell .commu-people-search { margin-top: 0; }
 
 .commu-people-search-icon {
     position: absolute;
@@ -1940,7 +1940,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     background: var(--text-secondary);
 }
 .commu-people-browser { margin-top: var(--space-4); }
-.commu-people-shell > .commu-people-browser { margin-top: 0; }
+.commu-dict-shell > .commu-people-browser { margin-top: 0; }
 .commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .commu-people-facet > summary {
     display: inline-flex; align-items: center; gap: var(--space-2);

@@ -4,19 +4,11 @@
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
-    <main class="container commulingo-shell commu-terms-page" data-lang="<%= lang %>">
+    <main class="container commulingo-shell commu-dict-shell commu-terms-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: strings.commuLingoViews.terms.glossary }],
             dictJump: 'terms' }) %>
         <h1 class="commu-sr-only"><%= strings.commuLingoViews.terms.glossary %></h1>
-        <div class="commu-dict-toolbar">
-            <nav class="commu-dict-sort" aria-label="<%= strings.commuLingoViews.terms.sortOrder %>">
-                <a href="/commulingo/terms" class="<%= sort === 'name' ? 'is-active' : '' %>"
-                    <% if (sort === 'name') { %>aria-current="true"<% } %>><%= strings.commuLingoViews.terms.aZ %></a>
-                <a href="/commulingo/terms?sort=chrono" class="<%= sort === 'chrono' ? 'is-active' : '' %>"
-                    <% if (sort === 'chrono') { %>aria-current="true"<% } %>><%= strings.commuLingoViews.terms.chronological %></a>
-            </nav>
-        </div>
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-term-list',
             placeholder: strings.commuLingoViews.terms.searchByTermOriginal,
@@ -26,6 +18,14 @@
             resultMany: strings.commuLingoViews.terms.termsFound,
             emptyLabel: strings.commuLingoViews.terms.noGlossaryTermsFound
         }) %>
+        <div class="commu-dict-toolbar">
+            <nav class="commu-dict-sort" aria-label="<%= strings.commuLingoViews.terms.sortOrder %>">
+                <a href="/commulingo/terms" class="<%= sort === 'name' ? 'is-active' : '' %>"
+                    <% if (sort === 'name') { %>aria-current="true"<% } %>><%= strings.commuLingoViews.terms.aZ %></a>
+                <a href="/commulingo/terms?sort=chrono" class="<%= sort === 'chrono' ? 'is-active' : '' %>"
+                    <% if (sort === 'chrono') { %>aria-current="true"<% } %>><%= strings.commuLingoViews.terms.chronological %></a>
+            </nav>
+        </div>
         <div class="commu-dict-chips" data-commu-dict-chips data-target="#commu-term-list"
             role="group" aria-label="<%= strings.commuLingoViews.terms.filterByCategory %>">
             <button type="button" class="commu-dict-chip is-active" data-category="" aria-pressed="true"><%= strings.commuLingoViews.terms.all %></button>

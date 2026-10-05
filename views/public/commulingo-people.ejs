@@ -37,7 +37,7 @@
     var activeCitizenship = findActive(facets.citizenships, state.citizenship);
     var activeOrigin = findActive(facets.origins, state.origin);
     %>
-    <main class="container commulingo-shell commu-people-shell" data-lang="<%= lang %>" data-page-size="<%= pageSize %>">
+    <main class="container commulingo-shell commu-dict-shell commu-people-shell" data-lang="<%= lang %>" data-page-size="<%= pageSize %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [{ label: t.people }],
             dictJump: 'people' }) %>
