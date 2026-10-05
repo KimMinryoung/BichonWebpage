@@ -78,3 +78,13 @@ assert.deepEqual(ids(search), ['kang']);
 assert.equal(search.descStart, -1);
 assert.equal(run({ q: 'kang', page: '9' }).pagination.current, 1, 'a page past the end shows the last page');
 console.log('people explorer: same-activity facets, per-facet counts, URLs, unknown ids and search passed');
+
+// A country hub may have no people in one or both nationality sections.
+for (const [field, facet] of [['citizenship', 'citizenships'], ['origin', 'origins']]) {
+    const emptyState = explorer.parseExplorerQuery({ [field]: 'moldova' });
+    assert.equal(explorer.unknownCondition(standardized, emptyState), '');
+    const empty = run({ [field]: 'moldova' });
+    assert.deepEqual(ids(empty), []);
+    assert.equal(empty.facets[facet].find(option => option.id === 'moldova').count, 0);
+    assert.equal(empty.conditions.find(condition => condition.key === field).href, '/commulingo/people');
+}

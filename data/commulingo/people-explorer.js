@@ -1,6 +1,6 @@
 const activitiesModel = require('./person-activities');
 const { localize } = require('./localize');
-const { flagLabel } = require('./flag-icons');
+const { flagLabel, hasFlag } = require('./flag-icons');
 const { searchPeople, matchedAlias } = require('../../utils/people-search');
 const { canonicalNationalityLabel } = require('./nationality-filter');
 const { peopleShellFor, sortPeopleChronologically } = require('./people-view');
@@ -64,8 +64,8 @@ function unknownCondition(standardized, state) {
     if (state.officeId && !standardized.offices.some(o => o.id === state.officeId)) return 'office';
     if (state.eraId && !(standardized.groups || []).some(g => g.id === state.eraId)) return 'era';
     if (state.positionId && !(standardized.collections || []).some(c => c.id === state.positionId)) return 'position';
-    if (state.citizenship && !standardized.people.some(p => p.citizenship?.code === state.citizenship)) return 'citizenship';
-    if (state.origin && !standardized.people.some(p => p.origin?.code === state.origin)) return 'origin';
+    if (state.citizenship && !hasFlag(state.citizenship) && !standardized.people.some(p => p.citizenship?.code === state.citizenship)) return 'citizenship';
+    if (state.origin && !hasFlag(state.origin) && !standardized.people.some(p => p.origin?.code === state.origin)) return 'origin';
     return '';
 }
 
@@ -161,6 +161,10 @@ function facetsFor(standardized, state, pool, lang) {
             // The country's own name: a person's label can carry notes
             // (「출생지 기준 …」) that are about that person, not the option.
             if (code && !counts.has(code)) counts.set(code, { id: code, label: canonicalNationalityLabel(kind, code, flagLabel(code, lang), lang), count: 0 });
+        }
+        // Country hubs also link to valid countries with no people yet.
+        if (activeCode && hasFlag(activeCode) && !counts.has(activeCode)) {
+            counts.set(activeCode, { id: activeCode, label: flagLabel(activeCode, lang), count: 0 });
         }
         for (const p of pool) if (p[field]?.code && matches(p, state, field)) counts.get(p[field].code).count++;
         return keep([...counts.values()], activeCode).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
