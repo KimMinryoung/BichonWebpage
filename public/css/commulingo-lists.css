@@ -1573,6 +1573,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
     display: flex; flex-wrap: wrap; align-items: baseline;
     justify-content: flex-end; gap: .5rem 1rem; margin-top: .3rem;
 }
+.commu-terms-page > .commu-dict-toolbar { margin-top: 0; }
 .commu-dict-sort { display: flex; gap: .5rem; font-size: .9rem; }
 .commu-dict-sort a {
     padding: .2rem .6rem; border: 1px solid var(--border);
