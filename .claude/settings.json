@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(docker cp:*)",
-      "Bash(docker exec:*)"
+      "Bash(docker exec:*)",
+      "Bash(docker exec -i leninbot-frontend node /app/scripts/apply-history-terms.js:*)",
+      "Bash(docker exec -i leninbot-frontend node /app/scripts/review-commulingo-links.js:*)"
     ]
   },
   "hooks": {
