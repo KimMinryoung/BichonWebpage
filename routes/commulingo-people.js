@@ -13,8 +13,7 @@ const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { politburoCareerFor } = require('../data/commulingo/politburo-store');
 const { otherNames } = require('../data/commulingo/person-other-names');
-const { buildNationalityFilter } = require('../data/commulingo/nationality-filter');
-const { countryHref } = require('../data/commulingo/country-geography');
+const { hasFlag } = require('../data/commulingo/flag-icons');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically } = require('../data/commulingo/people-view');
 
@@ -254,52 +253,21 @@ router.get('/roles/:categoryId', async (req, res) => {
     }
 });
 
-async function renderNationalityPeople(req, res, kind) {
-    try {
-        const code = typeof req.params.code === 'string' ? req.params.code.trim() : '';
-        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
-        const filter = buildNationalityFilter(standardized.people, kind, code, lang);
-        if (!filter) {
-            return errorPage.notFound(res, {
-                message: lang === 'en' ? 'Nationality filter not found.' : '국적·배경 필터를 찾을 수 없습니다.',
-                backHref: '/commulingo/people',
-                backLabel: lang === 'en' ? 'People' : '인물 사전',
-            });
-        }
-        filter.people = sortPeopleChronologically(filter.people);
-        setShortPublicCache(res);
-        return res.render('public/commulingo-nationality', {
-            filter,
-            people: filter.people,
-            countryPageHref: countryHref(code),
-            roleIconSvg,
-            roleHubHref,
-            linkifyPersonText: await cardTextLinker(res),
-            pageTitle: lang === 'en'
-                ? `${filter.label}: ${filter.peopleLabel} — World Map`
-                : `${filter.label} ${filter.peopleLabel} — 세계 지도`,
-            pageDescription: lang === 'en'
-                ? `People whose ${filter.kindLabel.toLowerCase()} is ${filter.label}.`
-                : `${filter.kindLabel}이(가) ${filter.label}인 인물들.`,
-            pagePath: filter.href,
-            jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'World Map' : '세계 지도', href: '/commulingo/map' },
-                ...(countryHref(code) ? [{ name: filter.label, href: countryHref(code) }] : []),
-                { name: filter.peopleLabel, href: filter.href },
-            ]),
-        });
-    } catch (err) {
-        console.error(`commulingo ${kind} page:`, err);
-        return errorPage.serverError(res, {
-            message: res.locals.lang === 'en' ? 'Failed to load nationality data.' : '국적·배경 정보를 불러올 수 없습니다.',
-            backHref: '/commulingo/people',
-            backLabel: res.locals.lang === 'en' ? 'People' : '인물 사전',
-        });
-    }
+// Keep old nationality-list links working through the searchable people explorer.
+function redirectNationalityPeople(req, res, field) {
+    const code = req.params.code.trim();
+    const lang = res.locals.lang;
+    if (!hasFlag(code)) return errorPage.notFound(res, {
+        message: lang === 'en' ? 'Nationality filter not found.' : '국적·배경 필터를 찾을 수 없습니다.',
+        backHref: '/commulingo/people',
+        backLabel: lang === 'en' ? 'People' : '인물 사전',
+    });
+    const state = explorer.parseExplorerQuery(req.query);
+    return res.redirect(301, languagePath(explorer.explorerHref(state, { [field]: code }), lang));
 }
 
-router.get('/people/citizenship/:code', (req, res) => renderNationalityPeople(req, res, 'citizenship'));
-router.get('/people/national-origin/:code', (req, res) => renderNationalityPeople(req, res, 'nationalOrigin'));
+router.get('/people/citizenship/:code', (req, res) => redirectNationalityPeople(req, res, 'citizenship'));
+router.get('/people/national-origin/:code', (req, res) => redirectNationalityPeople(req, res, 'origin'));
 
 router.get('/people/:personId', async (req, res) => {
     try {
