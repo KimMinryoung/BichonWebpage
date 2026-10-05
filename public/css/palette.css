@@ -144,6 +144,7 @@
   --nav-bg: var(--clr-ink);
   --card-bg: var(--clr-ink);
   --input-bg: var(--clr-dark);
+  --search-bg: var(--clr-dark-raised);
   --overlay: rgba(1, 4, 9, 0.8);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   --code-bg: var(--clr-dark);
@@ -184,6 +185,7 @@
   --nav-bg: var(--clr-cream-light);
   --card-bg: var(--clr-cream-light);
   --input-bg: var(--clr-cream-light);
+  --search-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream-light));
   --overlay: rgba(13, 17, 23, 0.55);
   --shadow: 0 1px 3px rgba(13, 17, 23, 0.14);
   --code-bg: color-mix(in srgb, var(--clr-ink) 8%, var(--clr-cream-light));

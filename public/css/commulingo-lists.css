@@ -333,12 +333,14 @@
     padding: 0.72rem 2.4rem 0.72rem 2.5rem;
     font: inherit;
     color: var(--text-primary);
-    background: var(--card-bg);
+    background: var(--search-bg);
     border: 1px solid var(--border);
     border-radius: 0;
     outline: none;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
+
+.commu-people-search-input::placeholder { color: var(--text-muted); opacity: 1; }
 
 .commu-people-search-input:hover {
     border-color: color-mix(in srgb, var(--text-muted) 55%, var(--border));
@@ -398,7 +400,7 @@
     font-size: 0.82rem;
     white-space: nowrap;
     pointer-events: none;
-    background: var(--card-bg);
+    background: var(--search-bg);
 }
 .commu-dict-search-status {
     position: absolute;
