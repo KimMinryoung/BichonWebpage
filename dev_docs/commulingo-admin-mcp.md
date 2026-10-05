@@ -14,7 +14,7 @@ CommuLingo 데이터(인물·용어·사건·직책·제안·링크 리뷰·참�
 
 `commulingo_person_review_jobs`(옛 leninbot 검토 워커의 lease 표)는 쓰지 않는다.
 
-leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5). 큐레이터 도구의 읽기·쓰기 전 검증은 `commulingo/reads.py`, 쓰기는 `editorial_store`·`editorial_pipeline`·`people_upsert`·`gap_file`, KG 동기화는 `dataset_rows`·`changes_since`·`docs_list`·`doc_get`을 쓴다. 남은 결합은 DB 계정이다: leninbot은 아직 `postgres` 슈퍼유저로 접속하므로 권한 회수(5단계)는 전용 role 전환이 먼저다.
+leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5). 큐레이터 도구의 읽기·쓰기 전 검증은 `commulingo/reads.py`, 쓰기는 `editorial_store`·`editorial_pipeline`·`people_upsert`·`gap_file`, KG 동기화는 `dataset_rows`·`changes_since`·`docs_list`·`doc_get`을 쓴다. DB 계정도 분리했다: leninbot은 `leninbot_app`으로 접속하며 CommuLingo 테이블 권한이 없다(출처 캐시 3개만 소유). frontend 새 테이블을 leninbot이 써야 하면 그 마이그레이션에 `GRANT … TO leninbot_app`을 넣는다.
 
 ## 전송과 인증
 
@@ -56,7 +56,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 | 2 | 양쪽 | `edit` 도구, DB 감사 테이블, leninbot `person_service.py`·`pipeline/service.py`의 `docker exec`를 MCP 클라이언트로 교체 | 완료. 옛 stdin RPC 스크립트 3개 삭제(2026-10-05) |
 | 3 | 양쪽 | leninbot 작성기의 사건·사건 절·사건 인물·직책 행 쓰기와 제안 기록을 `content-editorial-service.js`로 옮김. 제안 검토 CLI·사건 연결 백필을 MCP로 전환 | 완료 |
 | 4 | 양쪽 | [보강 파이프라인 이전](commulingo-agent-pipeline.md)(W1~W5)으로 대체: 파이프라인은 frontend, leninbot은 일꾼. leninbot의 남은 읽기(큐레이터 도구·검증·KG 동기화·롤플레이)를 MCP로, 옛 레인·운영 스크립트 삭제 | 완료 |
-| 5 | DB | leninbot을 전용 로그인 `leninbot_app`으로 바꿔 CommuLingo 테이블 권한을 없앤다(leninbot `dev_docs/db_app_role.md`) | 준비 완료, 전환 대기(root) |
+| 5 | DB | leninbot을 전용 로그인 `leninbot_app`으로 바꿔 CommuLingo 테이블 권한을 없앴다(leninbot `dev_docs/db_app_role.md`) | 완료(2026-10-05) |
 | 6 | frontend | `ops` 도구: 허용 목록의 audit 스크립트, 최근 오류 로그, 메뉴 방문 집계, 읽기 전용 SQL | |
 
 `scripts/query-db`(사람용 `leninbot_ro` 조회)는 그대로 둔다.
