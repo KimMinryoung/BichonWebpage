@@ -72,6 +72,25 @@ const tools = [
         summarize: summary,
     },
     {
+        name: 'editorial_validate',
+        description: 'Dry-run an edit through the editorial store: validates and rolls back, writes nothing. value: {fields, sources}; '
+            + 'target/action/id say what it would edit. Used as the leninbot worker validator for draft results.',
+        inputSchema: object({
+            target: str('Target type', { enum: [...TARGETS, ...CONTENT_TARGETS] }),
+            action: str('Edit action', { enum: ['create', 'update', 'delete'] }),
+            id: str('Target id (office row: row id; office row create: office id)'),
+            value: obj('Proposed {fields, sources}'),
+        }, ['target', 'action', 'id', 'value']),
+        audit: ({ target, action, id }, client) => ({ command: 'validate', targetType: target, targetId: id, actor: `mcp:${client}` }),
+        async handler({ target, action, id, value }, { client }) {
+            if (!value.fields || typeof value.fields !== 'object' || Array.isArray(value.fields)) throw badRequest('value.fields must be an object');
+            if (value.sources !== undefined && !Array.isArray(value.sources)) throw badRequest('value.sources must be a list');
+            return editorialServices(target).submit({ target, action, id, fields: value.fields, sources: value.sources || [],
+                dryRun: true, directApply: false, changedBy: `mcp:${client}` });
+        },
+        summarize: summary,
+    },
+    {
         name: 'editorial_pipeline',
         description: 'Idempotent editorial pipeline (data/commulingo/editorial-pipeline-service.js). Mutating commands need request.idempotencyKey; '
             + 'a repeated key with the same request returns the stored receipt. validate is a dry run of submit. publish stages and approves in one '
