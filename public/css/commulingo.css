@@ -2943,7 +2943,7 @@ a.commu-person-position:focus-visible {
    successor territories and always carry an approximation note. */
 .commu-world-map-page { gap: 0; }
 .commu-world-map-page .commu-people-search { margin-top: 0; }
-.commu-world-map-head { display: flex; align-items: center; gap: 14px; }
+.commu-world-map-head { display: flex; align-items: center; gap: 14px; margin-bottom: 0; }
 .commu-world-map-head-icon {
     align-items: center; background: var(--bg-surface); border: 1px solid var(--border);
     display: flex; flex: 0 0 auto; height: 52px; justify-content: center; width: 52px;
