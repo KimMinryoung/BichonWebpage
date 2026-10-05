@@ -1,5 +1,7 @@
 # CommuLingo 카탈로그 밖 정당 인수인계 (2026-10-05)
 
+> **처리 완료 (2026-10-05, 카탈로그 v23).** 사용자 기준에 따라 중요 정당만 등록했다. 기준은 한 번이라도 집권한 정당, 그 나라의 대표 공산당, 집권하지 않았어도 정치적 영향력이 컸던 정당이다. 그 결과 정당 89개와 용어 87개, 링크 승인 451건을 넣었다(`scripts/content/party-catalog-backlog-20261005.py`·`party-backlog-groups-20261005.json`·`party-terms-[q-y]-20261005.json`). 인민의 의지와 지롱드파는 기존 「세력」 항목의 종류를 정당으로 바꿨다. 이미 그 활동이 있던 5명이 점검에서 빠진 것은 정당 종류만 읽었기 때문이다. 인물 92명에게 정당 활동을 넣었다(`party-members-[q-y]-20261005.json`). 기준 밖 정당만 있거나 당원 근거가 없는 47명은 `not_applicable`로 닫았다. 46명은 `party-backlog-not-applicable-20261005.json`, 비당원으로 명시된 클레망소 1명은 `party-backlog-status-20261005.json`이다. 이제 `party` 주제의 `open`은 0명이다. 아래 표는 처리 전 기록이다.
+
 2026-10-05 정당 소속 전수 점검에서 정당 활동을 넣지 못한 인물이 **144명** 남았다. 위키백과 원문으로 정당 소속은 확인했지만, 그 정당이 소속 카탈로그(`data/commulingo/activity-catalog.json`)에 없었기 때문이다. 이 인물들은 `commulingo_person_enrichment`의 `party` 주제가 `open`이고, 사유(`reason`)에 검수 메모가 그대로 남아 있다. 정당 활동을 넣으면 상태는 자동으로 `complete`가 된다(`data/commulingo/person-editorial-policy.js`).
 
 ```bash

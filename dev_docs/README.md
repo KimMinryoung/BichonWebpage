@@ -49,7 +49,7 @@
 | CommuLingo 인물 편집 개선 | [현행 규칙·구현 체크리스트](commulingo-people-editing-plan.md) |
 | CommuLingo 용어 편집·파이프라인 | [근거·revision·검토와 private RPC](commulingo-term-editorial.md) |
 | CommuLingo 기능·활동과 소속 분류 | [설계·구현·전환 상태](commulingo-role-model-plan.md) |
-| CommuLingo 카탈로그 밖 정당 백로그 | [미등록 정당과 인물 144명](commulingo-party-backlog-20261005.md) |
+| CommuLingo 카탈로그 밖 정당 백로그 (처리 완료) | [중요 정당 89개 등록·47명 종결](commulingo-party-backlog-20261005.md) |
 | CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
 | CommuLingo 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | SEO 인덱싱·크롤 관측 | [계획과 2026-09-27 관측](seo-indexing-plan.md) |
