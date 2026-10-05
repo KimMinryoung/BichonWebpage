@@ -1,6 +1,6 @@
 const { registerAlias } = require('./alias-registry');
 // Auto-links people-dictionary classification pages — role categories
-// (/commulingo/roles/:id) and offices (/commulingo/offices/:id) — inside
+// (/commulingo/people?position=:id) and offices (/commulingo/offices/:id) — inside
 // report prose. Unlike people/events, most classification labels are composite
 // display strings ('당 서기국 · 조직인사') that never appear verbatim in prose,
 // so ONLY the curated terms below link; there is no label-derived fallback.
@@ -35,13 +35,13 @@ function buildTopicLinkIndex(standardized, options = {}) {
             registerAlias(byAlias, tokens, alias, entry);
         });
     };
-    // Role-category ids live on as position collections at /commulingo/roles/:id.
+    // Role-category ids live on as position collections, the explorer's position filter.
     const collections = (standardized && standardized.collections) || [];
     Object.keys(ROLE_TERMS).forEach(id => {
         const collection = collections.find(item => item.id === id);
         if (!collection) return;
         addTerms(ROLE_TERMS[id], {
-            id, kind: 'role', label: collection.title, href: '/commulingo/roles/' + encodeURIComponent(id),
+            id, kind: 'role', label: collection.title, href: '/commulingo/people?position=' + encodeURIComponent(id),
         });
     });
     const offices = (standardized && standardized.offices) || [];

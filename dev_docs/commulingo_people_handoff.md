@@ -397,7 +397,7 @@ The people dictionary is now DB-backed at runtime.
   - `GET /commulingo/events/:eventId`
 - Detail page: `/commulingo/people/:personId`
 - Office hub page: `/commulingo/offices/:officeId`
-- Role-category hub page: `/commulingo/roles/:categoryId`
+- `/commulingo/roles/:categoryId`: redirects only (position collections → `/commulingo/people?position=`, function categories → activity filter); retired regional ids keep pointer pages
 - Admin CRUD API:
   - mounted at `/commulingo/admin/api`
   - protected by `requireAdminIp`
@@ -624,7 +624,7 @@ Current `/commulingo/people` UX:
   description hits begin.
 - `/commulingo/activities` 301-redirects here with its query; activity links
   (`activityHref`) point here directly. `/commulingo/roles/<collection>`
-  stays as the curated page and links into the explorer with `?position=`.
+  301-redirects to `?position=<collection>`; the separate collection page is gone.
 - The office timeline index (the Soviet office timelines) is collapsed by default and sits after the shelves.
 - Each individual office timeline card inside it is also collapsed by default.
 - Each office timeline card includes a small `기관 페이지 →` / `Office page →`

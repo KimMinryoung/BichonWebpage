@@ -15,7 +15,7 @@ const { politburoCareerFor } = require('../data/commulingo/politburo-store');
 const { otherNames } = require('../data/commulingo/person-other-names');
 const { hasFlag } = require('../data/commulingo/flag-icons');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
-const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically } = require('../data/commulingo/people-view');
+const { loadStandardizedPeople, peopleShellFor } = require('../data/commulingo/people-view');
 
 // The people dictionary: shell + card fragments, office /
 // role / nationality hubs, and the person page. Mounted by routes/commulingo.js.
@@ -189,37 +189,14 @@ router.get('/roles/:categoryId', async (req, res) => {
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
         // The old role-category URLs: function categories redirect to their
         // activity filter (above), regional ones are pointer pages (above) and
-        // political positions are curated collections (migration 213).
-        const collection = (standardized.collections || []).find(c => c.id === categoryId);
-        const category = collection && { id: collection.id, icon: collection.icon, label: collection.title, intro: collection.intro };
-        if (!category) {
-            const renamed = redirectTarget(loaded.data, 'role-category', categoryId);
-            if (renamed) return res.redirect(301, `/commulingo/roles/${renamed}`);
-            return errorPage.notFound(res, {
-                message: lang === 'en' ? 'Role category not found.' : '역할 범주를 찾을 수 없습니다.',
-                backHref: '/commulingo/people',
-                backLabel: lang === 'en' ? 'People' : '인물 사전',
-            });
-        }
-        const people = sortPeopleChronologically(collection.personIds.map(id => standardized.peopleById[id]));
-        const relatedReports = await relatedReportsForTopic('role', category.id, lang);
-        setShortPublicCache(res);
-        res.render('public/commulingo-role', {
-            category,
-            people,
-            relatedReports,
-            roleIconSvg,
-            roleHubHref,
-            linkifyPersonText: await cardTextLinker(res),
-            pageTitle: lang === 'en' ? `${category.label} — People` : `${category.label} — 인물 사전`,
-            pageDescription: category.intro || (lang === 'en'
-                ? `People in the ${category.label} role category.`
-                : `${category.label} 역할 범주의 인물들.`),
-            pagePath: `/commulingo/roles/${category.id}`,
-            jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
-                { name: category.label, href: `/commulingo/roles/${category.id}` },
-            ]),
+        // political positions are the explorer's position filter.
+        const collections = standardized.collections || [];
+        const id = collections.some(c => c.id === categoryId) ? categoryId : redirectTarget(loaded.data, 'role-category', categoryId);
+        if (id && collections.some(c => c.id === id)) return res.redirect(301, languagePath(explorer.explorerHref({}, { positionId: id }), lang));
+        return errorPage.notFound(res, {
+            message: lang === 'en' ? 'Role category not found.' : '역할 범주를 찾을 수 없습니다.',
+            backHref: '/commulingo/people',
+            backLabel: lang === 'en' ? 'People' : '인물 사전',
         });
     } catch (err) {
         console.error('commulingo role page:', err);
