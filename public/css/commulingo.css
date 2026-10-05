@@ -2521,7 +2521,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
    no underline; it darkens to the text colour on hover. */
 .commu-people-group-list-link:hover,
 .commu-people-group-list-link:focus-visible { color: var(--text-primary); text-decoration: none; }
-.commu-people-list-page .commu-hub-head h1 .commu-people-group-count { font-size: 0.7em; font-weight: 400; color: var(--text-muted); margin-left: .3rem; }
 
 .commu-people-range {
     font-family: 'Courier New', monospace;

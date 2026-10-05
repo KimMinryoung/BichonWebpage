@@ -38,7 +38,7 @@ for (const [path, modules] of [
     ['/auth/login', ['auth']], ['/auth/account', ['auth', 'admin']], ['/en/auth/account/', ['auth', 'admin']], ['/admin/posts', ['lists', 'prose', 'auth', 'admin']],
     ['/posts?page=2', ['lists', 'prose']], ['/hub/x', ['lists', 'prose', 'hub']],
     ['/commulingo', []], ['/commulingo/people', []], ['/en/commulingo/terms/', []],
-    ['/commulingo/people/list/old-regime', []], ['/commulingo/events/october', ['prose']],
+    ['/commulingo/people?era=old-regime', []], ['/commulingo/events/october', ['prose']],
     ['/commulingo/docs/manifesto', ['prose']], ['/games/strike/', []],
 ]) assert.deepEqual(siteStyleModules(path), modules, path);
 const ejs = require('ejs');

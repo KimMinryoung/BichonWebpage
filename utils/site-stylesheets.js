@@ -11,7 +11,7 @@ function siteStyleModules(pagePath = '/') {
     if (/^\/hub(?:\/|$)/.test(path)) return ['lists', 'prose', 'hub'];
     if (/^\/(?:posts|post|reports|ai-diary|novels|p)(?:\/|$)/.test(path)) return ['lists', 'prose'];
     if (/^\/commulingo(?:\/|$)/.test(path)
-        && !/^\/commulingo(?:\/(?:people|events|terms)(?:\/list\/[^/]+)?)?$/.test(path)) return ['prose'];
+        && !/^\/commulingo(?:\/(?:people|events|terms))?$/.test(path)) return ['prose'];
     return [];
 }
 module.exports = { siteStyleModules };

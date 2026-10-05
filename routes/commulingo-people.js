@@ -17,7 +17,7 @@ const { hasFlag } = require('../data/commulingo/flag-icons');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 const { loadStandardizedPeople, peopleShellFor, sortPeopleChronologically } = require('../data/commulingo/people-view');
 
-// The people dictionary: shell + card fragments, group list pages, office /
+// The people dictionary: shell + card fragments, office /
 // role / nationality hubs, and the person page. Mounted by routes/commulingo.js.
 
 // Public research reports that mention this classification page's curated
@@ -100,47 +100,25 @@ router.get('/people/cards', async (req, res) => {
     }
 });
 
-// One group as a plain, server-rendered page of cards with the site's pager:
-// the script-less and crawler view of the people dictionary, linked from each
-// group's header (「목록으로 보기」). Registered before /people/:personId.
+// Retired group pages now enter the people explorer's era filter. Keep old
+// bookmarks (including renamed groups) working without rendering a second UI.
 router.get('/people/list/:groupId', async (req, res) => {
     try {
         const groupId = typeof req.params.groupId === 'string' ? req.params.groupId.trim() : '';
         const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
-        const group = (standardized.groups || []).find(item => item.id === groupId);
-        const meta = peopleShellFor(standardized).groupsMeta.find(item => item.id === groupId);
-        if (!group) {
-            const merged = redirectTarget(loaded.data, 'people-group', groupId);
-            if (merged) return res.redirect(301, `/commulingo/people/list/${encodeURIComponent(merged)}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`);
-        }
-        if (!group || !meta) return errorPage.notFound(res, {
+        const groups = standardized.groups || [];
+        const canonicalId = redirectTarget(loaded.data, 'people-group', groupId);
+        const group = groups.find(item => item.id === groupId)
+            || groups.find(item => item.id === canonicalId);
+        if (!group) return errorPage.notFound(res, {
             message: lang === 'en' ? 'People group not found.' : '인물 그룹을 찾을 수 없습니다.',
             backHref: '/commulingo/people',
             backLabel: lang === 'en' ? 'People' : '인물 사전',
         });
-        const page = Math.max(1, Number.parseInt(req.query.page, 10) || 1);
-        const html = await peopleGroupCardsHtml(req, standardized, lang, group, page,
-            `/commulingo/people/list/${encodeURIComponent(groupId)}?page=`);
-        const cut = html.indexOf('<div data-commu-list-pager');
-        const total = Math.ceil(group.people.length / PAGE_SIZE);
-        const current = Math.min(page, Math.max(1, total));
-        setShortPublicCache(res);
-        res.render('public/commulingo-people-list', {
-            group: meta,
-            cardsHtml: cut === -1 ? html : html.slice(0, cut),
-            pagerHtml: cut === -1 ? '' : html.slice(cut),
-            current,
-            total,
-            pageTitle: (lang === 'en' ? `${meta.title} — People` : `${meta.title} — 인물 사전`) + (current > 1 ? ` (${current}/${total})` : ''),
-            pageDescription: meta.blurb,
-            pagePath: `/commulingo/people/list/${groupId}`,
-            jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
-                { name: meta.title, href: `/commulingo/people/list/${groupId}` },
-            ]),
-        });
+        const state = explorer.parseExplorerQuery(req.query);
+        res.redirect(301, languagePath(explorer.explorerHref(state, { eraId: group.id }), lang));
     } catch (err) {
-        console.error('commulingo people list:', err);
+        console.error('commulingo people list redirect:', err);
         commuLingoLoadError(res, { message: { ko: '인물 그룹을 불러올 수 없습니다.', en: 'Failed to load people group.' }, backHref: '/commulingo/people', backLabel: { ko: '인물 사전', en: 'People' } });
     }
 });

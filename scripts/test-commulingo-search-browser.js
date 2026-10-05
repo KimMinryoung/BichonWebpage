@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 (async () => {
     const browser = await chromium.launch({ headless: true });
     try {
-        const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+        const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, locale: 'ko-KR' });
         const errors = [], requests = [];
         page.on('pageerror', e => errors.push(e.message));
         page.on('request', r => requests.push(r.url()));
@@ -155,6 +155,19 @@ const assert = require('node:assert/strict');
         assert(!requests.slice(mapStart).some(u => u.includes('/search')));
         await input.press('Escape');
         assert.equal(await page.locator('.commu-country-group[hidden]').count(), 0);
+        await goto('/commulingo/people?lang=ko');
+        const eraLink = page.locator('[data-group-id="china-old-regime"] .commu-people-group-list-link');
+        assert.equal(await eraLink.getAttribute('href'), '/commulingo/people?era=china-old-regime');
+        assert.equal(await page.locator('a[href*="/people/list/"]').count(), 0);
+        await eraLink.click();
+        await page.waitForURL('**/people?era=china-old-regime');
+        assert(await page.locator('[data-facet="era"].is-set').count() > 0);
+        assert(await page.locator('.commu-people-row').count() > 0);
+        for (const prefix of ['', '/en']) {
+            const redirect = await page.request.get(origin + prefix + '/commulingo/people/list/china-old-regime', { maxRedirects: 0 });
+            assert.equal(redirect.status(), 301);
+            assert.equal(redirect.headers().location, prefix + '/commulingo/people?era=china-old-regime');
+        }
         await goto('/en/commulingo/people');
         await page.locator('#commu-people-search-input').fill('Lenin');
         await page.locator('#people-results').waitFor();

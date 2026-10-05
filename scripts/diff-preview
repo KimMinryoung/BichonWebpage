@@ -62,7 +62,7 @@ elif [[ -n "${PAGES_FILE:-}" ]]; then
 else
     PAGES=("${DEFAULT_PAGES[@]}")
     # The people-cards fragment needs a real group id; take the first one prod links.
-    GROUP="$(curl -s "$PROD/commulingo/people" | grep -o 'people/list/[A-Za-z0-9_-]*' | head -1 | cut -d/ -f3)"
+    GROUP="$(curl -s "$PROD/commulingo/people" | grep -o 'data-group-id="[A-Za-z0-9_-]*"' | head -1 | cut -d'"' -f2)"
     if [[ -n "$GROUP" ]]; then
         PAGES=("${PAGES[@]/GROUP/$GROUP}")
     else
