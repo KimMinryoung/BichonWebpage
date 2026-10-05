@@ -1,0 +1,847 @@
+{
+ "id": "party-terms-v-20261005",
+ "terms": [
+  {
+   "id": "ukrainian-party-of-socialist-revolutionaries",
+   "affiliationId": "party-ukrainian-sr",
+   "sources": [
+    "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+    "https://en.wikipedia.org/wiki/Ukrainian_Party_of_Socialist_Revolutionaries",
+    "https://uk.wikipedia.org/wiki/%D0%93%D1%80%D1%83%D1%88%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%A1%D0%B5%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "fields": {
+    "term": {
+     "ko": "우크라이나 사회혁명당",
+     "en": "Ukrainian Party of Socialist Revolutionaries"
+    },
+    "original": "Українська партія соціалістів-революціонерів (УПСР)",
+    "category": "parties",
+    "period": {
+     "ko": "1917–1950",
+     "en": "1917–1950"
+    },
+    "startYear": 1917,
+    "endYear": 1950,
+    "definition": {
+     "ko": "우크라이나 농민층의 이익을 대변한 우크라이나의 정당으로, 러시아 사회혁명당과 계통을 같이했다. 1917년 4월 키이우에서 전우크라이나 정당으로 정식 출범해 우크라이나 자치와 토지 국유화를 내걸었고, 전러시아 제헌의회 선거에서 우크라이나 득표의 절반을 얻었다. 중앙 라다와 우크라이나 인민공화국 정부에 참여했으며, 1950년 망명지에서 다른 사회주의 정당들과 합쳐 우크라이나 사회당이 되었다.",
+     "en": "A Ukrainian party that represented the interests of the Ukrainian peasantry and was related to the Russian Socialist Revolutionary Party. Formally constituted as an all-Ukrainian party in Kyiv in April 1917, it called for Ukrainian autonomy and the nationalisation of land, and won half of all votes in Ukraine in the election to the All-Russian Constituent Assembly. It took part in the Central Rada and the governments of the Ukrainian People's Republic, and in 1950, in emigration, it merged with other socialist parties into the Ukrainian Socialist Party."
+    },
+    "body": {
+     "ko": "우크라이나어 출처에 따르면 1905~1917년 심페로폴·오데사·키이우 등지에 우크라이나 사회혁명당 서클들이 있었고, 키이우에서는 비합법 기관지 「보로트바」(1913~1915)를 냈다. 1907년 타우리다·헤르손·폴타바 등지의 대표가 모인 조직대회는 러시아 당과 별개의 당을 세우기로 하고 중앙위원회를 뽑았으나, 1905~1907년 혁명 뒤의 탄압으로 드니프로 우크라이나에서는 활동이 멈추고 갈리치아에 해외 중앙위원회가 생겼다.\n\n2월 혁명 뒤 당은 1917년 4월 17~18일 키이우 창립대회에서 전우크라이나 정당으로 정식 출범해 임시 강령을 정하고 우크라이나의 영토 자치, 우크라이나 제헌의회 소집, 토지 국유화를 결의했다. 지도부는 주로 학생 출신(미콜라 코발렙스키, 레우코 코발리우, 파울로 흐리스튜크 등)이었고 미하일로 흐루셰프스키가 당과 함께했다. 「토지는 인민에게 무상으로」라는 선전으로 전러시아 제헌의회 선거에서 우크라이나 득표의 50%를 얻었고, 우크라이나 농민동맹은 당 지도부에 전적으로 의존했다.\n\n중앙 라다 시기에 당은 볼로디미르 빈니첸코 정부에 참여했고, 1918년 1월 제4차 우니베르살 뒤에는 브세볼로트 홀루보비치를 수반으로 하는 사회혁명당 정부가 섰다. 헤트만 국가 시기에는 비합법으로 활동했으며, 1918년 5월 제4차 대회에서 소비에트 권력과 볼셰비키와의 협력을 지지한 좌파(보로트비스트)와 우파 「중앙파」로 갈라졌다. 보로트비스트는 1919년 3월 「우크라이나 사회혁명당-보로트비스트(공산주의자)」로 이름을 바꾸었고, 중앙파는 헤트만 정권 타도에 참여해 디렉토리 아래 여러 정부에 각료를 냈다.\n\n1919년 말 일부 당원은 체코슬로바키아와 오스트리아로 망명했고, 흐루셰프스키 등은 빈에 해외대표단을 세워 1920년부터 기관지 「싸워라, 이기리라」를 내며 소비에트 러시아와의 화해를 추구했다. 1921년 초 망명 조직은 친소비에트 해외대표단, 미키타 샤포발의 프라하 그룹, 빈의 조직위원회로 갈라졌다가 1934년 프라하에서 공동 해외 중앙위원회로 다시 합쳤다. 제2차 세계대전 뒤 망명지에서 활동을 재개해 1948년 우크라이나 국민평의회 창설에 참여했고, 1950년 다른 사회주의 정당들과 함께 우크라이나 사회당으로 통합했다.",
+     "en": "According to the Ukrainian-language source, circles of the Ukrainian SRs existed in Simferopol, Odesa, Kyiv and elsewhere in 1905–1917, and the illegal organ Borotba (1913–1915) was published in Kyiv. An organising congress in 1907, attended by delegates from Taurida, Kherson, Poltava and other regions, resolved to found a party separate from the Russian one and elected a Central Committee, but repression after the 1905–1907 revolution halted activity in Dnieper Ukraine and led to a foreign central committee being formed in Galicia.\n\nAfter the February Revolution the party was formally constituted as an all-Ukrainian party at its founding congress in Kyiv on 17–18 April 1917, which adopted a provisional programme and resolutions for territorial autonomy of Ukraine, the convocation of a Ukrainian Constituent Assembly and the nationalisation of land. Its leadership consisted mainly of students (Mykola Kovalevsky, Levko Kovaliv, Pavlo Khrystiuk and others), and Mykhailo Hrushevsky worked with the party. Thanks to the slogan \"land to the people without compensation\" it won 50 percent of all votes in Ukraine in the election to the All-Russian Constituent Assembly, and the Ukrainian Peasant Union was wholly dependent on its leadership.\n\nUnder the Central Rada the party took part in Volodymyr Vynnychenko's government, and after the Fourth Universal of January 1918 an SR government headed by Vsevolod Holubovych was formed. Under the Hetmanate it worked illegally, and at its Fourth Congress in May 1918 it split into a left wing (the Borotbists), which favoured Soviet power and cooperation with the Bolsheviks, and a right wing, the so-called central current. The Borotbists renamed themselves the Ukrainian Party of Socialist Revolutionaries–Borotbists (Communists) in March 1919, while the central current helped overthrow the Hetmanate and supplied ministers to several governments under the Directorate.\n\nAt the end of 1919 some members emigrated to Czechoslovakia and Austria; Hrushevsky and others set up a foreign delegation in Vienna which from 1920 published the organ Boritesia – Poborete and sought reconciliation with Soviet Russia. In early 1921 the émigré organisation split into the pro-Soviet foreign delegation, the Prague group of Mykyta Shapoval and an organising committee in Vienna, which reunited in 1934 as a joint foreign Central Committee in Prague. After the Second World War the party resumed activity in emigration, took part in founding the Ukrainian National Council in 1948, and in 1950 merged with other socialist parties into the Ukrainian Socialist Party."
+    },
+    "aliases": {
+     "ko": [
+      "우크라이나 사회주의혁명당"
+     ],
+     "en": [
+      "UPSR",
+      "Ukrainian Socialist-Revolutionary Party"
+     ]
+    },
+    "people": [
+     "mykhailo-hrushevsky"
+    ],
+    "events": [
+     "ukraine-1917-1921"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Party reflecting the interests of the Ukrainian peasantry, related to the Russian SR party; constituted April 1917 in Kyiv; autonomy and land nationalisation; 50% of votes in Ukraine in the Constituent Assembly election; took part in Central Rada and UNR governments; merged into the Ukrainian Socialist Party in 1950.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+      "locator": "uk: вступ; Історія"
+     },
+     {
+      "field": "body",
+      "claim": "Circles 1905–1917 and Borotba; 1907 organising congress; repression and foreign CC in Galicia; 17–18 April 1917 congress and programme; student leadership; Hrushevsky cooperated; 50% of votes; Peasant Union; Vynnychenko and Holubovych governments; illegal under the Hetmanate; May 1918 split into Borotbists and central current; March 1919 renaming; Directorate governments.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+      "locator": "uk: Історія"
+     },
+     {
+      "field": "body",
+      "claim": "Emigration end of 1919; foreign delegation in Vienna and Boritesia – Poborete from 1920; split of early 1921; joint foreign CC in Prague 1934; Ukrainian National Council 1948; merger into the Ukrainian Socialist Party in 1950.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+      "locator": "uk: Історія"
+     },
+     {
+      "field": "body",
+      "claim": "Founded in April 1917 on the basis of SR groups and circles existing in Ukraine since 1905; left faction split off in 1918.",
+      "source": "https://en.wikipedia.org/wiki/Ukrainian_Party_of_Socialist_Revolutionaries",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Constituted as an all-Ukrainian party on 17–18 April 1917; in 1950 merged with other socialist parties into the Ukrainian Socialist Party.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+      "locator": "uk: Історія"
+     },
+     {
+      "field": "startYear",
+      "claim": "Constituted as an all-Ukrainian party in Kyiv on 17–18 April 1917.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+      "locator": "uk: Історія"
+     },
+     {
+      "field": "endYear",
+      "claim": "In 1950 the UPSR merged with other socialist parties into the Ukrainian Socialist Party.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D0%BE%D0%BD%D0%B5%D1%80%D1%96%D0%B2",
+      "locator": "uk: Історія"
+     },
+     {
+      "field": "people",
+      "claim": "Hrushevsky joined the UPSR and later led its foreign delegation in Vienna.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%93%D1%80%D1%83%D1%88%D0%B5%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE_%D0%A1%D0%B5%D1%80%D0%B3%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "uk: 1917 рік; Еміграція"
+     }
+    ]
+   }
+  },
+  {
+   "id": "ukrainian-social-democratic-labour-party",
+   "affiliationId": "party-ukrainian-sdlp",
+   "sources": [
+    "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0_%D1%80%D0%BE%D0%B1%D1%96%D1%82%D0%BD%D0%B8%D1%87%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F",
+    "https://en.wikipedia.org/wiki/Ukrainian_Social_Democratic_Labour_Party",
+    "https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D0%BB%D1%8E%D1%80%D0%B0_%D0%A1%D0%B8%D0%BC%D0%BE%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "fields": {
+    "term": {
+     "ko": "우크라이나 사회민주노동당",
+     "en": "Ukrainian Social Democratic Labour Party"
+    },
+    "original": "Українська соціал-демократична робітнича партія (УСДРП)",
+    "category": "parties",
+    "period": {
+     "ko": "1905–1950",
+     "en": "1905–1950"
+    },
+    "startYear": 1905,
+    "endYear": 1950,
+    "definition": {
+     "ko": "1905년 12월 혁명우크라이나당을 바탕으로 결성된 우크라이나의 마르크스주의 정당. 민족 문제와 우크라이나 자치를 앞세우며 러시아 사회민주노동당과 독립적으로 활동했다. 1917년 중앙 라다 시기에 볼로디미르 빈니첸코가 이끈 첫 우크라이나 정부를 주도했고, 디렉토리 시기에도 여러 정부 수반을 냈다. 망명지에서 활동을 이어가다 1950년 다른 사회주의 정당들과 우크라이나 사회당으로 통합했다.",
+     "en": "A Ukrainian Marxist party formed in December 1905 on the basis of the Revolutionary Ukrainian Party. Putting the national question and Ukrainian autonomy first, it acted independently of the Russian Social Democratic Labour Party. In 1917, under the Central Rada, it dominated the first Ukrainian government headed by Volodymyr Vynnychenko, and under the Directorate it supplied several heads of government. It continued in emigration and in 1950 merged with other socialist parties into the Ukrainian Socialist Party."
+    },
+    "body": {
+     "ko": "우크라이나어 출처는 당이 1905년 12월부터 1950년까지 활동했고, 지식인과 일부 노동자·농민으로 이루어졌으며, 1908년 당원이 약 3,000명이었다고 적는다. 영어 출처에 따르면 당은 1905년 혁명 중 하르키우에서 세워진 혁명우크라이나당(RUP)의 제2차 대회에서 공식 창당되어 독일 사회민주당의 에르푸르트 강령을 채택했다. 러시아 사회민주노동당에 우크라이나 프롤레타리아트의 유일한 대표로 인정받는 조건으로 합류를 제안했으나 합의에 이르지 못했고, 스톨리핀 반동기에는 유대인 분트, 일부 멘셰비키와 함께 행동했다.\n\n1908년 이후 경찰의 탄압으로 활동이 제한되었다. 지도자로는 볼로디미르 빈니첸코, 시몬 페틀류라, 드미트로 안토노비치, 레우 유르케비치, 미콜라 포르시 등이 있었다. 당은 1917년 4월 키이우 대회에서 활동을 재개해 우크라이나 자치를 요구했고, 중앙 라다 시기에는 빈니첸코 정부를 통해 집행 권력의 주된 짐을 맡았다. 그러나 토지 문제에 신중했던 탓에 대중의 지지를 우크라이나 사회혁명당에 내주었고, 제4차 우니베르살 이후 정부에는 당 소속 장관이 2명만 남았다.\n\n헤트만 국가 시기에는 야당이었고 페틀류라 등 지도자들이 한때 투옥되었다. 당은 우크라이나 국민연합에 참여해 정변과 디렉토리 구성을 준비했고, 빈니첸코(의장)와 페틀류라가 디렉토리에 들어갔다. 볼로디미르 체히우스키, 보리스 마르토스, 이사크 마제파 등 당 인사들이 정부를 이끌었다. 1919년 1월 제4차 대회에서 소비에트 권력 조직을 인정한 좌파 「독립파」와 디렉토리를 지지한 다수파로 갈라졌고, 2월에는 페틀류라가 탈당했다. 독립파는 1920년 1월 우크라이나 공산당(УКП)을 세웠다.\n\n망명지의 「우크라이나 사회민주노동당 해외대표단」은 프라하에 중심을 두고 사회주의 인터내셔널에 속했으며, 망명 우크라이나 인민공화국 정부에는 들어가지 않았으나 이를 지지했다. 제2차 세계대전 뒤 우크라이나 국민평의회 창설에 참여했고, 1950년 다른 사회주의 정당들과 우크라이나 사회당으로 통합했다.",
+     "en": "The Ukrainian-language source says the party was active from December 1905 to 1950, consisted of intelligentsia and partly of workers and peasants, and had about 3,000 members in 1908. According to the English-language source it was officially founded at the 2nd Congress of the Revolutionary Ukrainian Party (RUP), established in Kharkiv, during the Revolution of 1905, and adopted the Erfurt Programme of the Social Democratic Party of Germany. It proposed joining the Russian Social Democratic Labour Party on condition of being recognised as the sole representative of the Ukrainian proletariat, but no agreement was reached; during the Stolypin reaction it acted together with the Jewish Bund and partly with the Mensheviks.\n\nPolice persecution limited its activity after 1908. Its leaders included Volodymyr Vynnychenko, Symon Petliura, Dmytro Antonovych, Lev Yurkevych and Mykola Porsh. The party resumed activity at a congress in Kyiv in April 1917 and demanded Ukrainian autonomy, and under the Central Rada it carried the main burden of executive power through Vynnychenko's governments. Being more cautious on the land question, however, it lost mass support to the Ukrainian Party of Socialist Revolutionaries, and after the Fourth Universal only two of its ministers remained in the government.\n\nUnder the Hetmanate the party was in opposition and leaders such as Petliura were temporarily imprisoned. It took part in the Ukrainian National Union, in preparing the coup and in forming the Directorate, which Vynnychenko (as chairman) and Petliura joined. Party figures such as Volodymyr Chekhivsky, Borys Martos and Isaak Mazepa headed governments. At its Fourth Congress in January 1919 it split into a left \"independent\" faction, which accepted the organisation of Soviet power, and a majority that supported the Directorate; in February Petliura left the party. The independents founded the Ukrainian Communist Party (UKP) in January 1920.\n\nIn emigration the \"Foreign Delegation of the USDRP\" was based in Prague and belonged to the Socialist International; it did not join the UNR government in exile but was loyal to it. After the Second World War the party took part in founding the Ukrainian National Council and in 1950 merged with other socialist parties into the Ukrainian Socialist Party."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "USDRP",
+      "USDLP",
+      "Ukrainska sotsial-demokratychna robitnycha partiia"
+     ]
+    },
+    "people": [
+     "symon-petliura",
+     "volodymyr-vynnychenko"
+    ],
+    "events": [
+     "ukraine-1917-1921"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Marxist party active December 1905–1950; national question and autonomy; independent of the RSDLP; burden of executive power under the Central Rada (Vynnychenko governments); Directorate-era heads of government; merged in 1950 into the Ukrainian Socialist Party.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0_%D1%80%D0%BE%D0%B1%D1%96%D1%82%D0%BD%D0%B8%D1%87%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F",
+      "locator": "uk: вступ; Історія; На еміграції"
+     },
+     {
+      "field": "definition",
+      "claim": "Formed in 1905 from members of the Revolutionary Ukrainian Party; dominated the General Secretariat headed by Vynnychenko.",
+      "source": "https://en.wikipedia.org/wiki/Ukrainian_Social_Democratic_Labour_Party",
+      "locator": "en: lead; History"
+     },
+     {
+      "field": "body",
+      "claim": "About 3,000 members in 1908; cooperation with the Bund and Mensheviks; leaders; April 1917 congress; Vynnychenko governments; loss of support to the UPSR; two ministers after the Fourth Universal; opposition under the Hetmanate; Ukrainian National Union and Directorate; Chekhivsky, Martos, Mazepa governments; January 1919 split; Petliura leaves; UKP January 1920.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0_%D1%80%D0%BE%D0%B1%D1%96%D1%82%D0%BD%D0%B8%D1%87%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F",
+      "locator": "uk: вступ; Історія"
+     },
+     {
+      "field": "body",
+      "claim": "Foreign Delegation in Prague, member of the Socialist International, loyal to the UNR in exile; Ukrainian National Council; merger in 1950.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0_%D1%80%D0%BE%D0%B1%D1%96%D1%82%D0%BD%D0%B8%D1%87%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F",
+      "locator": "uk: На еміграції"
+     },
+     {
+      "field": "body",
+      "claim": "Founded December 1905 at the 2nd RUP Congress in Kharkiv-based RUP; Erfurt Programme; merger proposal to the RSDLP rejected.",
+      "source": "https://en.wikipedia.org/wiki/Ukrainian_Social_Democratic_Labour_Party",
+      "locator": "en: History"
+     },
+     {
+      "field": "period",
+      "claim": "Active from December 1905 to 1950.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0_%D1%80%D0%BE%D0%B1%D1%96%D1%82%D0%BD%D0%B8%D1%87%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F",
+      "locator": "uk: вступ"
+     },
+     {
+      "field": "startYear",
+      "claim": "Official foundation in December 1905 at the 2nd Party Congress of RUP.",
+      "source": "https://en.wikipedia.org/wiki/Ukrainian_Social_Democratic_Labour_Party",
+      "locator": "en: History"
+     },
+     {
+      "field": "endYear",
+      "claim": "In 1950 the USDRP merged with other socialist parties into the Ukrainian Socialist Party.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D1%81%D0%BE%D1%86%D1%96%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B0_%D1%80%D0%BE%D0%B1%D1%96%D1%82%D0%BD%D0%B8%D1%87%D0%B0_%D0%BF%D0%B0%D1%80%D1%82%D1%96%D1%8F",
+      "locator": "uk: На еміграції"
+     },
+     {
+      "field": "people",
+      "claim": "Petliura was elected to the USDRP Central Committee at the 2nd RUP congress and left the party in February 1919; Vynnychenko is listed among its leaders.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D0%BB%D1%8E%D1%80%D0%B0_%D0%A1%D0%B8%D0%BC%D0%BE%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "uk: Повернення в Україну; 1919—1920 роки. Союз із ЗУНР"
+     }
+    ]
+   }
+  },
+  {
+   "id": "organization-of-ukrainian-nationalists",
+   "affiliationId": "oun",
+   "sources": [
+    "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F_%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2",
+    "https://en.wikipedia.org/wiki/Organization_of_Ukrainian_Nationalists",
+    "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D1%86%D1%8C_%D0%84%D0%B2%D0%B3%D0%B5%D0%BD_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://uk.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%D0%B0_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Stepan_Bandera"
+   ],
+   "fields": {
+    "term": {
+     "ko": "우크라이나 민족주의자 조직",
+     "en": "Organization of Ukrainian Nationalists"
+    },
+    "original": "Організація українських націоналістів (ОУН)",
+    "category": "parties",
+    "period": {
+     "ko": "1929–",
+     "en": "1929–"
+    },
+    "startYear": 1929,
+    "definition": {
+     "ko": "1929년 2월 빈에서 우크라이나 군사조직(UVO)과 민족주의 학생 단체들이 통합해 세운 우크라이나 민족주의 운동 조직. 민족 혁명과 민족 독재를 거쳐 통일 독립국가를 세운다는 목표 아래 동갈리치아와 볼린을 중심으로 지하 활동·테러·정치적 암살을 벌였다. 1940년 반데라파(OUN-B)와 멜니크파(OUN-M)로 갈라졌고, 1993년 독립 우크라이나에서 사회단체로 합법화되었다.",
+     "en": "A Ukrainian nationalist movement founded in Vienna in February 1929 through the union of the Ukrainian Military Organisation (UVO) and nationalist student groups. Aiming at a united independent state to be achieved through national revolution and national dictatorship, it carried out underground work, terrorism and political assassinations, mainly in Eastern Galicia and Volhynia. In 1940 it split into the Bandera faction (OUN-B) and the Melnyk faction (OUN-M), and in 1993 it was legalised in independent Ukraine as a public organisation."
+    },
+    "body": {
+     "ko": "우크라이나어 출처는 OUN이 스스로를 정당이 아니라 운동으로 규정하고 갈리치아의 합법 우크라이나 정당들을 협력주의자로 비난했다고 적는다. 조직은 우크라이나 군사조직과 학생 민족주의 단체들의 통합으로 생겼고, 1929년 2월 빈 대회에서 예우헨 코노발레츠가 지도부 의장으로 선출되었다. 처음에는 드미트로 돈초우의 민족주의를 이념적 근거로 삼았으며, 우크라이나 국립과학원 역사연구소는 OUN을 「극우」 정치체제의 민족국가를 지향한 「우익 급진 운동」으로 규정한다.\n\n폴란드 지배 아래 갈리치아와 볼린에서 OUN은 폴란드인 지주 영지 방화, 국립학교와 전매품 보이콧, 자금 확보를 위한 관공서 습격 등 수백 건의 사보타주를 벌였다. 역사가 야로슬라우 흐리차크의 집계로 민족주의 지하조직은 63건의 암살 시도를 했고, 희생자의 다수는 우크라이나인이었다. 폴란드 내무장관 브로니스와프 피에라츠키 암살과 관련해 1935~1936년 바르샤바에서 스테판 반데라 등에 대한 재판이 열렸다. 1938년 소련 정권은 로테르담에서 코노발레츠를 암살했고, 안드리 멜니크 대령이 지도부를 이어받았다.\n\n1940년 2월 반데라 지지자들이 따로 혁명지도부를 세우면서 조직이 갈라졌고, 1941년 4월 크라쿠프 대회는 반데라를 지도자로 뽑았다. 두 분파 모두 독소 전쟁을 이용해 나치 독일과의 동맹으로 독립국가를 세우려 했다. 1941년 6월 30일 반데라파는 르비우에서 「우크라이나 국가 재건 선언」을 발표했으나, 반데라는 게슈타포에 체포되어 1942년 초 작센하우젠 수용소에 갇혔다. 1942년 가을 우크라이나 봉기군(UPA)이 창설되었고, 전쟁 말기 반데라파는 로만 슈헤비치가 이끄는 지도부 아래 활동했다.\n\n전후 두 분파의 지도자는 서방 연합국 점령 지역에 머물렀고, 조직은 1950년대까지 무장 지하투쟁을, 그 뒤에는 비무장 운동을 이어갔다. 영어 출처에 따르면 반데라는 1959년 뮌헨에서 KGB 요원에게 암살되었다. 우크라이나 독립 뒤 OUN은 구조를 키이우로 옮겨 멜니크파는 「우크라이나 민족주의자 조직」이라는 이름으로, 반데라파는 「우크라이나 민족주의자 회의」 당을 통해 활동했고, 1993년 사회단체로 합법화되었다.",
+     "en": "The Ukrainian-language source says the OUN defined itself as a movement rather than a party and condemned the legal Ukrainian parties of Galicia as collaborationist. It arose from the union of the Ukrainian Military Organisation with nationalist student groups, and at its congress in Vienna in February 1929 Yevhen Konovalets was elected head of its leadership. It initially drew on the nationalism of Dmytro Dontsov, and the Institute of History of Ukraine of the National Academy of Sciences defines the OUN as a \"right-radical movement\" oriented towards a national state with an \"ultra-right\" regime.\n\nUnder Polish rule in Galicia and Volhynia the OUN carried out hundreds of acts of sabotage, including arson on the estates of Polish landowners, boycotts of state schools and state monopolies, and raids on government offices to obtain funds. By the count of historian Yaroslav Hrytsak the nationalist underground made 63 assassination attempts, most of whose victims were Ukrainians. Stepan Bandera and others were tried in Warsaw in 1935–1936 over the assassination of the Polish interior minister Bronisław Pieracki. In 1938 the Soviet regime assassinated Konovalets in Rotterdam, and Colonel Andriy Melnyk took over the leadership.\n\nIn February 1940 the organisation split when Bandera's supporters set up a separate Revolutionary Leadership, and their congress in Kraków in April 1941 elected Bandera as leader. Both factions hoped to use the German–Soviet war to establish an independent state in alliance with Nazi Germany. On 30 June 1941 the Bandera faction proclaimed the Act of Restoration of the Ukrainian State in Lviv, but Bandera was arrested by the Gestapo and in early 1942 confined in Sachsenhausen concentration camp. The Ukrainian Insurgent Army (UPA) was created in autumn 1942, and at the end of the war the Bandera faction operated under a leadership headed by Roman Shukhevych.\n\nAfter the war the leaders of both factions remained in the Western Allied zones, and the organisation continued armed underground struggle into the 1950s and an unarmed movement thereafter. According to the English-language source Bandera was assassinated by a KGB agent in Munich in 1959. After Ukrainian independence the OUN moved its structures to Kyiv, the Melnyk faction under the name \"Organisation of Ukrainian Nationalists\" and the Bandera faction through the Congress of Ukrainian Nationalists party, and it was legalised as a public organisation in 1993."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "OUN",
+      "Organisation of Ukrainian Nationalists",
+      "Orhanizatsiia ukrainskykh natsionalistiv"
+     ]
+    },
+    "people": [
+     "yevhen-konovalets",
+     "stepan-bandera"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 3 (or 2) February 1929 in Vienna through the union of the UVO and nationalist student groups; aim of a united independent state through national revolution and dictatorship; underground activity, terrorism and political assassination; main region Eastern Galicia and Volhynia; split in 1940; legalised in 1993 as a public organisation.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F_%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2",
+      "locator": "uk: вступ; Становлення"
+     },
+     {
+      "field": "body",
+      "claim": "Movement not party; Konovalets; Dontsov; Institute of History definition; sabotage and 63 assassination attempts (Hrytsak); Warsaw trial 1935–1936; Konovalets killed in Rotterdam 1938; Melnyk; 1940 split; Kraków 1941; Act of 30 June 1941; Gestapo arrest and Sachsenhausen; UPA autumn 1942; Shukhevych; post-war; move to Kyiv and Congress of Ukrainian Nationalists; legalised 1993.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F_%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2",
+      "locator": "uk: вступ; Ідеологія; Боротьба з польським режимом; Розкол ОУН; Друга світова війна; Післявоєнний період"
+     },
+     {
+      "field": "body",
+      "claim": "Bandera assassinated in Munich in 1959 by KGB agent Bohdan Stashynsky.",
+      "source": "https://en.wikipedia.org/wiki/Stepan_Bandera",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Established on 2 February 1929 in Vienna, uniting the Ukrainian Military Organization with smaller radical nationalist groups; ideology influenced by Dontsov.",
+      "source": "https://en.wikipedia.org/wiki/Organization_of_Ukrainian_Nationalists",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in February 1929 in Vienna; legalised in Ukraine in 1993 as a public organisation and still active.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F_%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2",
+      "locator": "uk: вступ; Сучасний етап"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded 3 February (other sources 2 February) 1929 in Vienna.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%9E%D1%80%D0%B3%D0%B0%D0%BD%D1%96%D0%B7%D0%B0%D1%86%D1%96%D1%8F_%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D1%85_%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%96%D1%81%D1%82%D1%96%D0%B2",
+      "locator": "uk: вступ"
+     },
+     {
+      "field": "people",
+      "claim": "Konovalets was elected head of the OUN leadership at the 1929 Vienna congress.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%BB%D0%B5%D1%86%D1%8C_%D0%84%D0%B2%D0%B3%D0%B5%D0%BD_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "uk: Еміграція"
+     },
+     {
+      "field": "people",
+      "claim": "Bandera became one of the first OUN members in Western Ukraine in 1929 and later head of the OUN-B leadership.",
+      "source": "https://uk.wikipedia.org/wiki/%D0%91%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%D0%B0_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD_%D0%90%D0%BD%D0%B4%D1%80%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "uk: вступ; Діяльність в ОУН"
+     }
+    ]
+   }
+  },
+  {
+   "id": "azerbaijani-popular-front-party",
+   "affiliationId": "party-azerbaijani-popular-front",
+   "sources": [
+    "https://az.wikipedia.org/wiki/Az%C9%99rbaycan_Xalq_C%C9%99bh%C9%99si_Partiyas%C4%B1",
+    "https://en.wikipedia.org/wiki/Azerbaijani_Popular_Front_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "아제르바이잔 인민전선당",
+     "en": "Azerbaijani Popular Front Party"
+    },
+    "original": "Azərbaycan Xalq Cəbhəsi Partiyası (AXCP)",
+    "category": "parties",
+    "period": {
+     "ko": "1989–",
+     "en": "1989–"
+    },
+    "startYear": 1989,
+    "definition": {
+     "ko": "1989년 7월 창립된 아제르바이잔 인민전선을 모체로 1995년 정당으로 전환한 아제르바이잔의 정치 조직. 소련으로부터의 독립과 민주화를 내건 민족해방운동을 이끌었고, 1992년 의장 아불파즈 엘치베이가 대통령에 당선되었다. 1993년 정변으로 엘치베이가 실각한 뒤에는 헤이다르 알리예프·일함 알리예프 정권에 맞선 주요 야당이 되었다.",
+     "en": "An Azerbaijani political organisation that grew out of the Popular Front of Azerbaijan, founded in July 1989, and became a party in 1995. It led the national liberation movement for independence from the Soviet Union and democratisation, and its chairman Abulfaz Elchibey was elected president in 1992. After Elchibey was ousted in the 1993 coup it became one of the main opposition parties to the governments of Heydar Aliyev and Ilham Aliyev."
+    },
+    "body": {
+     "ko": "아제르바이잔어 출처에 따르면 인민전선을 만들자는 발상은 발트 지역에서 왔다. 1988년 여름 바쿠 학자 클럽에 모인 지식인들이 발트 인민전선을 본뜬 발기 그룹을 만들었고, 1989년 7월 16일 창립 회의에서 엘치베이가 의장으로 선출되었다. 인민전선은 1989년 10월 5일 아제르바이잔 SSR 각료회의 결정으로 국가 등록을 받았다. 영어 출처에 따르면 인민전선은 1980년대의 여러 비공식 단체를 통합해 대규모 시위를 벌였고, 1989년 아르메니아에 대한 철도 봉쇄를 시작했다.\n\n영어 출처에 따르면 인민전선은 독립 뒤 첫 대통령 아야즈 무탈리보프를 압박해 1992년 물러나게 했고, 같은 해 엘치베이가 대통령 선거에서 이겼다. 엘치베이 정부 아래 정당법·언론자유법 등이 제정되고 국가 통화 마나트가 도입되었으며, 1993년 4월 러시아군이 철수했다. 아제르바이잔어 출처에 따르면 1993년 6월 4일 간자 반란 뒤 엘치베이는 수도를 떠나 고향 켈레키로 갔고, 대통령 권한은 헤이다르 알리예프에게 넘어갔다.\n\n1995년 의회 선거에 사회단체의 참여가 허용되지 않자 「유르드」 출신의 「개혁파」가 정당화를 추진했고, 1995년 5월 25일 대회에서 인민전선은 아제르바이잔 인민전선당으로 전환해 9월 1일 법무부에 등록되었다. 같은 해 선거에서 당은 비례대표 득표율 9.6%를 얻었다. 당 안에서는 알리 케림리가 이끄는 「개혁파」와 「고전파」가 맞섰고, 2000년 7월 엘치베이가 앙카라에서 죽은 뒤 당은 사실상 둘로 갈라졌다.\n\n2000~2001년 두 분파는 각각 대회를 열어 따로 의장을 뽑았고, 케림리는 2001년 의장에 선출되었다. 영어 출처는 1993년 정변 이후 당이 여러 선거에서 배제되거나 선거를 거부했고, 당과 관련된 인물들이 알리예프 부자 정부의 탄압을 받았다고 적는다. 아제르바이잔어 출처에 따르면 당은 2006년 당사를 잃은 뒤 사실상 당사 없이 활동하고 있으며, 2023년 7월 법무부는 당의 등록 관련 신청에 부정적인 답을 냈다.",
+     "en": "According to the Azerbaijani-language source the idea of a popular front came from the Baltic region. In summer 1988 intellectuals gathered in the Baku Scientists' Club formed an initiative group modelled on the Baltic popular fronts, and at the founding conference on 16 July 1989 Elchibey was elected chairman. The Popular Front was registered by a decision of the Council of Ministers of the Azerbaijan SSR on 5 October 1989. According to the English-language source it united several informal organisations of the 1980s, staged mass protests and in 1989 initiated a rail blockade of Armenia.\n\nAccording to the English-language source the Popular Front pressured Ayaz Mutallibov, Azerbaijan's first president after independence, out of power in 1992, and Elchibey won the presidential election that year. Under his government laws on political parties and freedom of the press were adopted and the national currency, the manat, was introduced, and Russian troops withdrew in April 1993. According to the Azerbaijani-language source, after the Ganja revolt of 4 June 1993 Elchibey left the capital for his native village of Kalaki, and presidential powers passed to Heydar Aliyev.\n\nBecause public organisations were not allowed to run in the 1995 parliamentary election, the \"reformers\", who came from the Yurd group, pushed for conversion into a party: at a congress on 25 May 1995 the Popular Front became the Azerbaijani Popular Front Party, registered by the Ministry of Justice on 1 September. In that year's election the party won 9.6 percent of the proportional vote. Within the party the \"reformers\" led by Ali Karimli clashed with the \"classics\", and after Elchibey died in Ankara in July 2000 the party split de facto in two.\n\nIn 2000–2001 the two wings held separate congresses and elected their own chairmen, Karimli being elected chairman in 2001. The English-language source says that since the 1993 coup the party has been blocked from or boycotted several elections and that people associated with it have been repressed by the governments of Heydar and Ilham Aliyev. According to the Azerbaijani-language source the party has worked without a headquarters since losing its building in 2006, and in July 2023 the Ministry of Justice gave a negative reply concerning its registration."
+    },
+    "aliases": {
+     "ko": [
+      "아제르바이잔 인민전선",
+      "AXCP"
+     ],
+     "en": [
+      "APFP",
+      "Popular Front of Azerbaijan",
+      "Azərbaycan Xalq Cəbhəsi Partiyası"
+     ]
+    },
+    "people": [
+     "abulfaz-elchibey"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Successor of the Popular Front of Azerbaijan, the leading organisation of the national liberation movement; party founded on its basis in 1995 and registered on 1 September 1995.",
+      "source": "https://az.wikipedia.org/wiki/Az%C9%99rbaycan_Xalq_C%C9%99bh%C9%99si_Partiyas%C4%B1",
+      "locator": "az: giriş"
+     },
+     {
+      "field": "definition",
+      "claim": "Founded 1989 by Elchibey; anti-Soviet movement for independence; Elchibey elected in 1992; main opposition party to Heydar and Ilham Aliyev after the 1993 coup.",
+      "source": "https://en.wikipedia.org/wiki/Azerbaijani_Popular_Front_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Baltic origin; initiative group in 1988; founding conference 16 July 1989 and Elchibey elected chairman; registration 5 October 1989; Ganja revolt 4 June 1993; conversion into a party 25 May 1995, registration 1 September 1995; 9.6%; reformers and classics; Elchibey died July 2000; split; separate congresses 2000–2001; headquarters lost 2006; July 2023 ministry reply.",
+      "source": "https://az.wikipedia.org/wiki/Az%C9%99rbaycan_Xalq_C%C9%99bh%C9%99si_Partiyas%C4%B1",
+      "locator": "az: Hərəkat dövrü; Qiyam və sonrası; Parçalanma, birləşmə cəhdi və partiyalaşma; Qərargahı"
+     },
+     {
+      "field": "body",
+      "claim": "Union of informal organisations; rail blockade of Armenia 1989; Mutallibov forced out 1992; reforms and manat; Russian troops withdrew April 1993; repression and boycotts after 1993.",
+      "source": "https://en.wikipedia.org/wiki/Azerbaijani_Popular_Front_Party",
+      "locator": "en: lead; History"
+     },
+     {
+      "field": "period",
+      "claim": "Popular Front founded at the founding conference of 16 July 1989; the party continues to exist.",
+      "source": "https://az.wikipedia.org/wiki/Az%C9%99rbaycan_Xalq_C%C9%99bh%C9%99si_Partiyas%C4%B1",
+      "locator": "az: Hərəkat dövrü (1988–1995)"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founding conference of the Popular Front of Azerbaijan held on 16 July 1989.",
+      "source": "https://az.wikipedia.org/wiki/Az%C9%99rbaycan_Xalq_C%C9%99bh%C9%99si_Partiyas%C4%B1",
+      "locator": "az: Hərəkat dövrü (1988–1995)"
+     },
+     {
+      "field": "people",
+      "claim": "Elchibey was elected chairman of the Popular Front in 1989 and remained party chairman until his death in 2000.",
+      "source": "https://en.wikipedia.org/wiki/Azerbaijani_Popular_Front_Party",
+      "locator": "en: History"
+     }
+    ]
+   }
+  },
+  {
+   "id": "committee-of-union-and-progress",
+   "affiliationId": "party-cup",
+   "sources": [
+    "https://tr.wikipedia.org/wiki/%C4%B0ttihat_ve_Terakki_Cemiyeti",
+    "https://en.wikipedia.org/wiki/Committee_of_Union_and_Progress",
+    "https://en.wikipedia.org/wiki/Enver_Pasha"
+   ],
+   "fields": {
+    "term": {
+     "ko": "통일진보위원회",
+     "en": "Committee of Union and Progress"
+    },
+    "original": "İttihat ve Terakki Cemiyeti (اتحاد و ترقى جمعيتی)",
+    "category": "parties",
+    "period": {
+     "ko": "1889–1926",
+     "en": "1889–1926"
+    },
+    "startYear": 1889,
+    "endYear": 1926,
+    "definition": {
+     "ko": "1889년 이스탄불 군의학교 학생들이 비밀결사로 세운 오스만 제국의 혁명 조직이자 정당. 1908년 청년 튀르크 혁명으로 헌정을 되살렸고, 1913년 정변 뒤 탈라트·엔베르·제말 파샤의 지도 아래 1918년까지 제국을 독재로 통치하며 제1차 세계대전 참전과 아르메니아인 등에 대한 집단 학살로 이어진 정책을 주도했다. 1918년 패전 뒤 스스로 해산했고, 남은 연합파는 1926년 이즈미르 사건 뒤 숙청되었다.",
+     "en": "A revolutionary organisation and political party of the Ottoman Empire, founded as a secret society by students of the Imperial Military School of Medicine in Istanbul in 1889. It restored constitutional rule in the Young Turk Revolution of 1908 and, after the coup of 1913, ruled the empire as a dictatorship under Talat, Enver and Cemal Pasha until 1918, leading it into the First World War and pursuing policies that resulted in the genocide of Armenians and others. It dissolved itself after the defeat of 1918, and the remaining Unionists were purged after the İzmir affair of 1926."
+    },
+    "body": {
+     "ko": "튀르키예어 출처에 따르면 1889년 5월 21일 이스하크 쉬퀴티, 이브라힘 테모, 압둘라 제브데트 등 군의학교 학생들이 헌법의 부활과 압뒬하미트 2세 체제의 타도를 목표로 「오스만 연합 협회」라는 비밀 조직을 세웠다. 1896년 쿠데타 기도가 발각되어 국내 지도자들이 유배된 뒤에는 파리의 아흐메트 르자를 중심으로 한 망명 조직이 활동을 이었다. 1902년 제1차 청년 튀르크 대회에서 조직은 중앙집권파 아흐메트 르자와 분권파 사바하틴 왕자의 두 갈래로 나뉘었다.\n\n1906년 9월 셀라니크(테살로니키)에서 탈라트 등이 세운 오스만 자유협회는 1907년 9월 27일 파리 조직과 합쳐 「오스만 통일진보위원회」가 되었고, 이로써 조직은 군사적 성격도 띠게 되었다. 1907년 10월에는 무스타파 케말도 가입했다. 1908년 7월 레스네에서 니야지 베이가 봉기하면서 혁명이 시작되었고, 7월 24일 헌법이 다시 시행되어 제2차 입헌시대가 열렸다. 위원회는 처음에는 정부를 밖에서 통제했고, 1909년 「3월 31일 사건」을 진압한 뒤 압뒬하미트 2세를 폐위했다.\n\n1912년 「몽둥이 선거」에서 이겼으나 장교 집단의 압력으로 내각이 물러났고, 1913년 1월 23일 엔베르가 이끈 무장 집단이 정부 청사 바브알리를 습격해 권력을 잡았다. 같은 해 6월 마흐무트 셰브케트 파샤가 암살된 뒤 위원회는 집권당이 되어 사이트 할림 파샤 총리 아래 독재 체제를 세웠고, 엔베르·탈라트·제말 파샤가 당의 지도자가 되었다. 1914년 8월 2일 위원회 지도부는 정부와 술탄에게 알리지 않고 독일과 동맹을 맺어 제국을 제1차 세계대전에 끌어들였다. 영어 출처는 위원회 정권이 준군사조직 「특수조직」을 동원해 아르메니아인·폰토스 그리스인·아시리아인 집단 학살로 이어진 정책을 폈다고 적는다.\n\n패전이 확실해지자 1918년 10월 탈라트 내각이 사퇴했고, 11월 1일 임시 대회에서 위원회는 스스로 해산했다. 엔베르·탈라트·제말 파샤는 독일 어뢰정을 타고 이스탄불을 떠났다. 영어 출처에 따르면 지도자 상당수가 1920~1922년 아르메니아 혁명연맹의 「네메시스 작전」으로 암살되었고, 남은 연합파 대부분은 무스타파 케말의 민족운동과 공화인민당에 합류했다. 카라 케말이 1922년 위원회를 잠시 되살렸으나, 1926년 이즈미르 암살 음모 사건 뒤 남은 연합파는 숙청되었다.",
+     "en": "According to the Turkish-language source, on 21 May 1889 students of the Military School of Medicine including İshak Sükûti, İbrahim Temo and Abdullah Cevdet founded a secret organisation called the Committee of Ottoman Union, aiming to restore the constitution and overthrow the regime of Abdul Hamid II. After a coup plot was uncovered in 1896 and its leaders at home were exiled, the émigré organisation centred on Ahmet Rıza in Paris carried on. At the First Young Turk Congress in 1902 the movement split between the centralist Ahmet Rıza and the decentralist Prince Sabahaddin.\n\nThe Ottoman Freedom Society, founded in Salonica in September 1906 by Talat and others, merged with the Paris organisation on 27 September 1907 to form the Ottoman Committee of Union and Progress, which thus also acquired a military character; Mustafa Kemal joined in October 1907. The revolution began in July 1908 when Niyazi Bey took to the hills at Resne, and on 24 July the constitution was put back into force, opening the Second Constitutional Era. The committee at first controlled governments from outside, and after suppressing the 31 March Incident of 1909 it deposed Abdul Hamid II.\n\nIt won the 1912 \"Election of Clubs\", but pressure from a group of officers forced its cabinet to resign; on 23 January 1913 an armed group led by Enver raided the Sublime Porte and seized power. After Mahmud Şevket Pasha was assassinated in June 1913 the committee became the ruling party and established a dictatorship under Grand Vizier Said Halim Pasha, and Enver, Talat and Cemal Pasha became the leaders of the party. On 2 August 1914 the committee leadership concluded an alliance with Germany without informing the government or the sultan, bringing the empire into the First World War. The English-language source says the Unionist regime, with the help of its paramilitary Special Organisation, enacted policies resulting in the genocide of Armenians, Pontic Greeks and Assyrians.\n\nAs defeat became certain Talat's cabinet resigned in October 1918, and at an extraordinary congress on 1 November the committee dissolved itself. Enver, Talat and Cemal Pasha left Istanbul on a German torpedo boat. According to the English-language source several leaders were assassinated in 1920–1922 in Operation Nemesis by the Armenian Revolutionary Federation, while most remaining Unionists joined Mustafa Kemal's national movement and the Republican People's Party. Kara Kemal briefly revived the committee in 1922, but the remaining Unionists were purged after the alleged İzmir assassination plot of 1926."
+    },
+    "aliases": {
+     "ko": [
+      "연합진보위원회",
+      "이티하트 베 테라키"
+     ],
+     "en": [
+      "CUP",
+      "İttihat ve Terakki Cemiyeti",
+      "Society of Union and Progress"
+     ]
+    },
+    "people": [
+     "enver-pasha",
+     "mustafa-kemal-ataturk",
+     "kazim-karabekir",
+     "ismet-inonu"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 21 May 1889; secret society that brought about the Second Constitutional Era and became a party; dominated government after the 1913 raid; dissolved itself in 1918.",
+      "source": "https://tr.wikipedia.org/wiki/%C4%B0ttihat_ve_Terakki_Cemiyeti",
+      "locator": "tr: giriş; İttihat ve Terakki'nin sonu"
+     },
+     {
+      "field": "definition",
+      "claim": "Active 1889–1926; founded by medical students; Young Turk Revolution 1908; dictatorship 1913–1918 under Talat, Enver and Cemal; genocide of Armenians, Pontic Greeks and Assyrians; dissolution and purge after the İzmir affair.",
+      "source": "https://en.wikipedia.org/wiki/Committee_of_Union_and_Progress",
+      "locator": "en: lead; Purges and disintegration (1918–1926)"
+     },
+     {
+      "field": "body",
+      "claim": "Founding 21 May 1889; 1896 coup attempt; Ahmet Rıza in Paris; 1902 congress split; Ottoman Freedom Society 1906 and merger on 27 September 1907; Mustafa Kemal joined 29 October 1907; Resne uprising and 24 July 1908; 31 March Incident; 1912 Election of Clubs; raid of 23 January 1913; Mahmud Şevket Pasha assassination; Said Halim Pasha; Enver, Talat, Cemal leaders; alliance of 2 August 1914; dissolution on 1 November 1918; flight of the three pashas.",
+      "source": "https://tr.wikipedia.org/wiki/%C4%B0ttihat_ve_Terakki_Cemiyeti",
+      "locator": "tr: Tarihçe"
+     },
+     {
+      "field": "body",
+      "claim": "Special Organisation and genocide; Operation Nemesis 1920–1922; Unionists joined the national movement and the CHP; Kara Kemal revived CUP in January 1922; purge after the İzmir affair.",
+      "source": "https://en.wikipedia.org/wiki/Committee_of_Union_and_Progress",
+      "locator": "en: lead; Purges and disintegration (1918–1926)"
+     },
+     {
+      "field": "period",
+      "claim": "Active between 1889 and 1926.",
+      "source": "https://en.wikipedia.org/wiki/Committee_of_Union_and_Progress",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 21 May 1889 at the Military School of Medicine.",
+      "source": "https://tr.wikipedia.org/wiki/%C4%B0ttihat_ve_Terakki_Cemiyeti",
+      "locator": "tr: İttihad-ı Osmanî Cemiyeti'nin kuruluşu"
+     },
+     {
+      "field": "endYear",
+      "claim": "Remaining Unionists purged for good after the İzmir affair (section 1918–1926); active until 1926.",
+      "source": "https://en.wikipedia.org/wiki/Committee_of_Union_and_Progress",
+      "locator": "en: lead; Purges and disintegration (1918–1926)"
+     },
+     {
+      "field": "people",
+      "claim": "Enver was a member of the CUP central committee from 1908 to 1918.",
+      "source": "https://en.wikipedia.org/wiki/Enver_Pasha",
+      "locator": "en: lead; Aftermath"
+     },
+     {
+      "field": "people",
+      "claim": "Mustafa Kemal joined as member no. 322 on 29 October 1907; Karabekir and İnönü listed among former CUP cadres of the national struggle.",
+      "source": "https://tr.wikipedia.org/wiki/%C4%B0ttihat_ve_Terakki_Cemiyeti",
+      "locator": "tr: \"Osmanlı Hürriyet Cemiyeti\" ile birleşme; İttihat ve Terakki ve Millî Mücadele"
+     }
+    ]
+   }
+  },
+  {
+   "id": "republican-peoples-party-turkey",
+   "affiliationId": "party-turkish-chp",
+   "sources": [
+    "https://tr.wikipedia.org/wiki/Cumhuriyet_Halk_Partisi",
+    "https://en.wikipedia.org/wiki/Republican_People%27s_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "공화인민당 (터키)",
+     "en": "Republican People's Party (Turkey)"
+    },
+    "original": "Cumhuriyet Halk Partisi (CHP)",
+    "category": "parties",
+    "period": {
+     "ko": "1923–",
+     "en": "1923–"
+    },
+    "startYear": 1923,
+    "definition": {
+     "ko": "1923년 9월 무스타파 케말(아타튀르크)이 창당한 터키에서 가장 오래된 정당. 1946년까지 일당 체제의 집권당으로서 공화국 수립과 세속화·문자 개혁 등 「여섯 개의 화살」 원칙에 따른 개혁을 이끌었다. 1950년 선거에 져 정권을 평화적으로 넘겼고, 1960년대 이후 중도좌파·사회민주주의 노선으로 옮겼다. 1981년 군정 아래 해산되었다가 1992년 재건되었다.",
+     "en": "Turkey's oldest political party, founded by Mustafa Kemal (Atatürk) in September 1923. As the ruling party of the one-party regime until 1946 it led the founding of the republic and reforms such as secularisation and the alphabet reform under the principles of the \"Six Arrows\". It handed over power peacefully after losing the 1950 election and moved towards a centre-left, social-democratic line from the 1960s. Closed under military rule in 1981, it was re-established in 1992."
+    },
+    "body": {
+     "ko": "당의 뿌리는 터키 독립전쟁 중에 생긴 여러 저항 단체로, 이들은 1919년 시바스 회의에서 「아나톨리아·루멜리아 권리수호협회」로 통합되었다. 1923년 9월 9일 무스타파 케말은 「9개 원칙」을 발표하고 이틀 뒤 자신을 따르는 의원들로 「인민당」(Halk Fırkası)을 세웠다. 당은 곧 「공화인민당」(Cumhuriyet Halk Fırkası)으로 이름을 바꾸었고, 1935년 제4차 대회에서 지금의 이름인 Cumhuriyet Halk Partisi가 되었다. 튀르키예어 출처는 당이 실제로는 청년 튀르크와 통일진보위원회의 연속으로 평가되어 왔다고 적는다.\n\n1924년 카즘 카라베키르가 이끈 진보공화당이 생겼으나, 셰이크 사이드 반란 뒤 공화인민당 이외의 모든 정당이 금지되었고 터키는 자유공화당 시기를 빼면 1946년까지 일당 체제였다. 이 시기 당은 스위스 민법 채택, 여성 참정권, 라틴 문자로의 문자 개혁 등을 이끌었고, 1930년대에 공화주의·민족주의·세속주의·혁명주의·인민주의·국가주의의 「여섯 개의 화살」을 정식화해 1937년 헌법에 넣었다. 1938년 아타튀르크가 죽은 다음 날 이스메트 이뇌뉘가 대통령에 선출되어 당 지도권을 이어받았고, 제2차 세계대전 동안 중립 정책을 폈다.\n\n이뇌뉘는 1946년 복수정당 선거를 허용했고, 당은 1950년 선거에서 민주당에 져 정권을 평화적으로 넘겼다. 1960년 쿠데타 뒤 1961년 선거에서 제1당이 되어 터키 최초의 연립정부를 이끌었다. 노동장관 뷜렌트 에제비트가 이끈 「민주 좌파」 흐름을 따라 「중도좌파」 강령을 채택했고, 1972년 5월 이뇌뉘의 뒤를 이어 에제비트가 당대표가 되었다. 1977년 선거에서 당은 복수정당 시대 최고인 41%를 얻었다.\n\n1980년 쿠데타 뒤 1981년 공화인민당은 다른 모든 정당과 함께 해산되었다. 1992년 9월 9일 데니즈 바이칼이 1980년 이전 당원 다수와 함께 원래 이름으로 당을 재건했고, 1995년 사회민주인민당(SHP)이 공화인민당과 합쳤다. 2002년 선거부터 2026년 7월까지 당은 집권 정의개발당에 맞선 제1야당이었다.",
+     "en": "The party's roots lie in the resistance groups formed during the Turkish War of Independence, which were united at the Sivas Congress of 1919 as the Association for the Defence of the Rights of Anatolia and Rumelia. On 9 September 1923 Mustafa Kemal announced the \"Nine Principles\" and two days later founded the People's Party (Halk Fırkası) from deputies loyal to him. It soon took the name Republican People's Party (Cumhuriyet Halk Fırkası) and adopted its present name, Cumhuriyet Halk Partisi, at its Fourth Congress in 1935. The Turkish-language source notes that in practice it has been regarded as a continuation of the Young Turks and the Committee of Union and Progress.\n\nIn 1924 opponents led by Kâzım Karabekir formed the Progressive Republican Party, but after the Sheikh Said rebellion all parties other than the CHP were banned, and apart from the Free Republican Party episode Turkey was ruled as a one-party state until 1946. In this period the party carried out reforms including adoption of the Swiss Civil Code, women's suffrage and the alphabet reform to Latin letters, and in the 1930s it formulated the \"Six Arrows\" of republicanism, nationalism, secularism, revolutionism, populism and statism, which were written into the constitution in 1937. The day after Atatürk's death in 1938 İsmet İnönü was elected president and took over the party leadership, pursuing neutrality during the Second World War.\n\nİnönü permitted multi-party elections in 1946, and after losing the 1950 election to the Democrat Party the CHP handed over power peacefully. After the 1960 coup it emerged as the largest party in the 1961 election and led Turkey's first coalition government. Following the \"Democratic Left\" current led by labour minister Bülent Ecevit it adopted a \"left of centre\" programme, and in May 1972 Ecevit succeeded İnönü as party leader. In the 1977 election the party won 41 percent, its highest share of the multi-party era.\n\nAfter the 1980 coup the CHP was closed in 1981 together with all other parties. On 9 September 1992 Deniz Baykal re-established it under its original name with most of its pre-1980 members, and in 1995 the Social Democratic Populist Party (SHP) merged with the CHP. From the 2002 election until July 2026 it was the main opposition party to the governing Justice and Development Party."
+    },
+    "aliases": {
+     "ko": [
+      "터키 공화인민당",
+      "튀르키예 공화인민당"
+     ],
+     "en": [
+      "CHP",
+      "Cumhuriyet Halk Partisi",
+      "Republican People's Party (CHP)"
+     ]
+    },
+    "people": [
+     "mustafa-kemal-ataturk",
+     "ismet-inonu"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded by Mustafa Kemal Atatürk; Turkey's oldest party; Six Arrows; instrument of reforms in the one-party period; peaceful handover after 1950; centre-left from the 1960s and Ecevit 1972; closed after 1980 coup; re-founded 9 September 1992.",
+      "source": "https://tr.wikipedia.org/wiki/Cumhuriyet_Halk_Partisi",
+      "locator": "tr: giriş"
+     },
+     {
+      "field": "body",
+      "claim": "Sivas Congress 1919; 9 and 11 September 1923; renaming; 1935 congress name change; continuation of Young Turks/CUP; Progressive Republican Party 1924; ban; one-party rule until 1946; reforms; Six Arrows and 1937 constitution; İnönü takes leadership after Atatürk's death; neutrality; 1946 elections; 1950 handover; 1961 coalition; Ecevit and left of centre; İnönü until 8 May 1972; 41% in 1977; closure 1981; Baykal 1992; SHP merger 1995; main opposition 2002–July 2026.",
+      "source": "https://tr.wikipedia.org/wiki/Cumhuriyet_Halk_Partisi",
+      "locator": "tr: Tarihçe"
+     },
+     {
+      "field": "body",
+      "claim": "Founded 1923 by Atatürk; Kemalist one-party rule until 1946; social-democratic party today.",
+      "source": "https://en.wikipedia.org/wiki/Republican_People%27s_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Official foundation on 11 September 1923 (founding date accepted as 9 September 1923); party still active.",
+      "source": "https://tr.wikipedia.org/wiki/Cumhuriyet_Halk_Partisi",
+      "locator": "tr: Kuruluşu: 1919-1923"
+     },
+     {
+      "field": "startYear",
+      "claim": "Halk Fırkası founded in September 1923.",
+      "source": "https://tr.wikipedia.org/wiki/Cumhuriyet_Halk_Partisi",
+      "locator": "tr: Kuruluşu: 1919-1923"
+     },
+     {
+      "field": "people",
+      "claim": "Atatürk founded the party in 1923; İnönü took over its leadership after Atatürk's death and led it until 8 May 1972.",
+      "source": "https://tr.wikipedia.org/wiki/Cumhuriyet_Halk_Partisi",
+      "locator": "tr: Kuruluşu; İnönü dönemi; Politika değişiklikleri"
+     }
+    ]
+   }
+  },
+  {
+   "id": "communist-party-of-turkey-1920",
+   "affiliationId": "party-turkish-communist",
+   "sources": [
+    "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kom%C3%BCnist_Partisi_(1920)",
+    "https://en.wikipedia.org/wiki/Communist_Party_of_Turkey_(historical)",
+    "https://tr.wikipedia.org/wiki/N%C3%A2z%C4%B1m_Hikmet"
+   ],
+   "fields": {
+    "term": {
+     "ko": "터키 공산당 (1920)",
+     "en": "Communist Party of Turkey (1920)"
+    },
+    "original": "Türkiye Komünist Partisi (TKP)",
+    "category": "parties",
+    "period": {
+     "ko": "1920–1988",
+     "en": "1920–1988"
+    },
+    "startYear": 1920,
+    "endYear": 1988,
+    "definition": {
+     "ko": "1920년 9월 10일 바쿠 대회에서 무스타파 수피를 의장으로 창당된 터키의 공산당. 창당 이듬해 수피 등 지도부 15명이 트라브존 앞바다에서 살해되었고, 1920~1930년대 대부분을 비합법 정당으로 활동했다. 냉전기에는 주로 국외 지도부를 중심으로 비밀리에 활동하다가 1988년 터키 노동자당(TİP)과 합쳐 터키 통일공산당이 되었다.",
+     "en": "The communist party of Turkey founded at a congress in Baku on 10 September 1920 with Mustafa Suphi as chairman. The following year Suphi and fourteen other leaders were killed off Trabzon, and for most of the 1920s and 1930s it operated as an illegal party. During the Cold War it worked clandestinely, largely through its leadership abroad, until in 1988 it merged with the Workers' Party of Turkey (TİP) into the United Communist Party of Turkey."
+    },
+    "body": {
+     "ko": "튀르키예어 출처에 따르면 오스만 제국 시기의 사회주의 그룹들은 소규모에 머물렀고, 셰피크 휘스뉘가 이끈 터키 노동자농민사회당 등 일부가 뒤에 공산당에 합류했다. 통일진보위원회 정부에 반대하다 1913년 시노프로 유배된 무스타파 수피는 러시아로 탈출했고, 볼셰비즘의 영향을 받아 1920년 9월 10일 바쿠 대회에서 공산당을 세웠다. 영어 출처에 따르면 대회에는 대의원 74명이 참석해 수피를 의장으로, 에템 네자트를 총서기로 뽑았다.\n\n수피 일행은 독립전쟁을 지원하려고 무스타파 케말과 연락한 뒤 아나톨리아로 들어왔으나, 1921년 1월 28~29일 트라브존 앞바다에서 수피와 네자트 등 15명이 살해되었고, 이로써 당의 비합법 투쟁이 시작되었다. 1920년 12월 앙카라에서 당의 합법 조직으로 세운 터키 인민공산당(THİF)은 1921년 1월 폐쇄되었고, 1922년 9월 정부는 당을 다시 금지했다. 1924~1925년 비밀 대회에서 셰피크 휘스뉘가 총서기가 되었으나, 셰이크 사이드 반란 뒤 치안유지법으로 공화인민당 이외의 정치 조직은 모두 폐쇄되었다.\n\n1920년대 말 시인 나즘 히크메트가 이끈 반대파는 케말주의와 부르주아지에 맞선 프롤레타리아 혁명 투쟁을 주장하다 셰피크 휘스뉘에 의해 제명되었다. 당은 1940년대 초 재조직되어 제2차 세계대전 동안 반파시즘 노선을 따랐고, 1946년 합법 활동을 위해 두 정당을 세웠으나 같은 해 12월 모두 금지되었다. 1951년 대규모 검거 뒤에는 국외 대표 이스마일 빌렌이 해외 활동을 이끌었고, 망명한 나즘 히크메트가 여기에 크게 이바지했으며, 1958년 방송을 시작한 「비짐 라디오」가 활동의 중심이 되었다.\n\n1960년대에는 터키 노동자당(TİP)을 지지했고, 1970년대에는 이스마일 빌렌 총서기 아래 노동조합(DİSK)·청년·여성 운동에서 대중적 기반을 넓혔다. 1980년 쿠데타 뒤 간부 다수가 체포되고 일부는 고문으로 죽었다. 1987년 10월 TİP 의장 베히제 보란과 공산당 총서기 나비 야으즈는 두 당을 터키 통일공산당(TBKP)으로 합치기로 발표했고, 영어 출처는 1988년 이 합당으로 당의 활동이 끝났다고 적는다.",
+     "en": "According to the Turkish-language source, socialist groups in the Ottoman period remained small, and some, such as the Turkish Workers' and Peasants' Socialist Party led by Şefik Hüsnü, later joined the communist party. Mustafa Suphi, exiled to Sinop in 1913 for opposing the Union and Progress government, escaped to Russia and, under the influence of Bolshevism, founded the party at a congress in Baku on 10 September 1920. According to the English-language source the congress, with 74 delegates, elected Suphi chairman and Ethem Nejat general secretary.\n\nSuphi's group contacted Mustafa Kemal in order to support the War of Independence and entered Anatolia, but on 28–29 January 1921 Suphi, Nejat and thirteen others were killed off Trabzon, which marked the beginning of the party's illegal struggle. The Turkish People's Communist Party (THİF), founded in Ankara in December 1920 as the party's legal organisation, was closed in January 1921, and in September 1922 the government banned the party again. At a secret congress in 1924–1925 Şefik Hüsnü became general secretary, but after the Sheikh Said rebellion the Law on the Maintenance of Order closed all political organisations other than the CHP.\n\nAt the end of the 1920s an opposition group led by the poet Nâzım Hikmet, which called for proletarian revolutionary struggle against Kemalism and the bourgeoisie, was expelled by Şefik Hüsnü. The party was reorganised in the early 1940s and followed an anti-fascist line during the Second World War; in 1946 it set up two parties for legal work, both banned in December that year. After the mass arrests of 1951 its foreign representative İsmail Bilen directed activity abroad, with a major contribution from the exiled Nâzım Hikmet, and Bizim Radyo, which began broadcasting in 1958, became the main instrument of its work.\n\nIn the 1960s the party supported the Workers' Party of Turkey (TİP), and in the 1970s, under general secretary İsmail Bilen, it gained a mass base in the trade-union (DİSK), youth and women's movements. After the 1980 coup most of its cadres were arrested and some died under torture. In October 1987 TİP chairwoman Behice Boran and TKP general secretary Nabi Yağcı announced that the two parties would merge into the United Communist Party of Turkey (TBKP), and the English-language source says the party's existence ended with this merger in 1988."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Communist Party of Turkey (historical)"
+     ]
+    },
+    "people": [
+     "nazim-hikmet"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 10 September 1920 at the Baku congress; Mustafa Suphi founding chairman; killing off Trabzon 28/29 January 1921; illegal activity in the 1920s and 1930s.",
+      "source": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kom%C3%BCnist_Partisi_(1920)",
+      "locator": "tr: Mustafa Suphi ve 15'ler"
+     },
+     {
+      "field": "definition",
+      "claim": "Founded by Mustafa Suphi in 1920; clandestine through the Cold War; merged into the United Communist Party of Turkey in 1988.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Turkey_(historical)",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Ottoman socialist groups and TİÇSF; Suphi's exile and Baku congress; Trabzon killing; THİF; bans of 1921 and 1922; Şefik Hüsnü 1925; Takrir-i Sükun; Nâzım Hikmet's opposition expelled; 1940s reorganisation; TSP and TSEKP banned December 1946; 1951 arrests; İsmail Bilen; Bizim Radyo 1958; TİP support; 1970s growth; 1980 coup; October 1987 merger announcement.",
+      "source": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kom%C3%BCnist_Partisi_(1920)",
+      "locator": "tr: İlk yıllar; Baskı yılları; II. Dünya Savaşı ve sonrası; 1960'lar; 1970'ler; 1980'ler"
+     },
+     {
+      "field": "body",
+      "claim": "74 delegates elected Suphi chairman and Ethem Nejat general secretary; merger in 1988.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Turkey_(historical)",
+      "locator": "en: lead; Early history"
+     },
+     {
+      "field": "period",
+      "claim": "Active from 1920 until its dissolution in 1988.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Turkey_(historical)",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded at the Baku congress on 10 September 1920.",
+      "source": "https://tr.wikipedia.org/wiki/T%C3%BCrkiye_Kom%C3%BCnist_Partisi_(1920)",
+      "locator": "tr: Mustafa Suphi ve 15'ler"
+     },
+     {
+      "field": "endYear",
+      "claim": "In 1988 the party merged into the United Communist Party of Turkey.",
+      "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Turkey_(historical)",
+      "locator": "en: lead"
+     },
+     {
+      "field": "people",
+      "claim": "Nâzım Hikmet studied in Moscow as a TKP member from 1922 and signed a 1951 report as a TKP member.",
+      "source": "https://tr.wikipedia.org/wiki/N%C3%A2z%C4%B1m_Hikmet",
+      "locator": "tr: Moskova dönemi (1922-1928); Sürgün dönemi"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rikken-seiyukai",
+   "affiliationId": "party-japanese-seiyukai",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%86%B2%E6%94%BF%E5%8F%8B%E4%BC%9A",
+    "https://en.wikipedia.org/wiki/Rikken_Seiy%C5%ABkai",
+    "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B2%A1%E6%B4%8B%E5%8F%B3"
+   ],
+   "fields": {
+    "term": {
+     "ko": "입헌정우회",
+     "en": "Rikken Seiyūkai"
+    },
+    "original": "立憲政友会",
+    "category": "parties",
+    "period": {
+     "ko": "1900–1940",
+     "en": "1900–1940"
+    },
+    "startYear": 1900,
+    "endYear": 1940,
+    "definition": {
+     "ko": "1900년 9월 이토 히로부미를 초대 총재로 창당된 일본 제국의 정당. 정당내각제 확립을 꾀했으며, 사이온지 긴모치·하라 다카시·다카하시 고레키요·다나카 기이치·이누카이 쓰요시 등 총재들이 내각을 조직했다. 1925~1931년 입헌민정당과 함께 양당제를 이루었으나, 1932년 5·15 사건 뒤 정당내각이 끊겼고 1939년 분열한 끝에 1940년 해산했다.",
+     "en": "A political party of the Empire of Japan founded in September 1900 with Itō Hirobumi as its first president. It sought to establish party cabinet government, and its presidents Saionji Kinmochi, Hara Takashi, Takahashi Korekiyo, Tanaka Giichi and Inukai Tsuyoshi formed cabinets. From 1925 to 1931 it formed a two-party system with the Rikken Minseitō, but party cabinets ended after the May 15 Incident of 1932, and after splitting in 1939 the party dissolved in 1940."
+    },
+    "body": {
+     "ko": "제국의회가 열린 뒤 번벌 정부는 중의원 다수를 차지한 민당의 협찬 없이는 예산과 법률을 통과시킬 수 없었고, 원로 이토 히로부미는 정당내각제로의 이행을 모색했다. 1900년 9월 15일 헌정당(옛 자유당계) 등의 찬동을 얻어 이토를 초대 총재로 입헌정우회가 창당되어 중의원 152석으로 출발했고, 10월 제4차 이토 내각을 조직했다. 「당」이 아니라 「회」라 칭한 것은 국가 이익을 앞세운 이토의 정당관에서 나왔다.\n\n1903년 이토가 추밀원 의장으로 옮기자 사이온지 긴모치가 총재가 되었고, 이후 약 10년 동안 가쓰라 다로의 번벌과 정우회가 타협하며 번갈아 정권을 맡는 「게이엔 시대」가 이어졌다. 이 시기 당은 사이온지·하라 다카시·마쓰다 마사히사의 집단지도로 운영되었고, 철도 국유화 등 적극 정책과 이권 배분으로 세력을 넓히며 미쓰이·야스다 등 대재벌의 지지를 얻었다. 1913년 다이쇼 정변 뒤 하라가 총재가 되었고, 1918년 쌀 소동 속에서 성립한 하라 내각은 첫 본격적 정당내각으로 꼽힌다.\n\n1921년 하라가 암살된 뒤 다카하시 고레키요가 뒤를 이었으나 내분이 이어졌고, 1924년 도코나미 다케지로 등 과반이 탈당해 정우본당을 세웠다. 정우회는 제2차 호헌운동에 참여해 가토 다카아키 내각의 여당이 되었고, 1925년 육군 대장 다나카 기이치를 총재로 맞았다. 1927년 다나카 내각이 섰으나 1929년 「만주 모 중대사건」 처리에 실패해 물러났고, 이누카이 쓰요시가 총재가 되었다. 1931년 12월 이누카이 내각이 성립했고, 1932년 2월 총선에서 정우회는 사상 최다인 301석을 얻었다.\n\n1932년 5월 이누카이가 해군 군인들에게 암살된 5·15 사건 뒤 원로 사이온지는 「헌정의 상도」를 중단했고, 비정당 내각이 이어졌다. 정우회는 내각에 협력할지 맞설지 당론을 모으지 못했고, 1939년 혁신파(나카지마파)·정통파(구하라파)·중립파로 갈라졌다. 1940년 7월 16일 정통파와 통일파가, 7월 30일 혁신파가 해산함으로써 당은 사라졌다.",
+     "en": "After the Imperial Diet opened, the domain-clique governments could not pass budgets or laws without the support of the popular parties that held a majority in the House of Representatives, and the genrō Itō Hirobumi sought a transition to party cabinet government. On 15 September 1900 the Rikken Seiyūkai was founded with Itō as first president, with the support of the Kenseitō (the former Liberal Party line) and others, starting with 152 seats in the lower house, and in October it formed the fourth Itō cabinet. Its calling itself an \"association\" (kai) rather than a \"party\" reflected Itō's view of parties as subordinate to the national interest.\n\nWhen Itō moved to the presidency of the Privy Council in 1903, Saionji Kinmochi became party president, and for about ten years the Katsura Tarō clique and the Seiyūkai alternated in power by compromise (the Keien era). In this period the party was run collectively by Saionji, Hara Takashi and Matsuda Masahisa, expanded its strength through active policies such as railway nationalisation and the distribution of benefits, and won the backing of large zaibatsu such as Mitsui and Yasuda. After the Taishō political crisis of 1913 Hara became president, and the Hara cabinet formed amid the rice riots of 1918 is regarded as the first full party cabinet.\n\nAfter Hara was assassinated in 1921 Takahashi Korekiyo succeeded him, but internal strife continued, and in 1924 a majority led by Tokonami Takejirō left to form the Seiyūhontō. The Seiyūkai joined the Second Movement to Protect Constitutional Government and became a governing party in the Katō Takaaki cabinet, and in 1925 it took army general Tanaka Giichi as president. The Tanaka cabinet formed in 1927 resigned in 1929 after mishandling the \"certain grave incident in Manchuria\", and Inukai Tsuyoshi became president. The Inukai cabinet was formed in December 1931, and in the general election of February 1932 the Seiyūkai won a record 301 seats.\n\nAfter Inukai was assassinated by naval officers in the May 15 Incident of 1932, the genrō Saionji suspended the \"normal course of constitutional government\" and non-party cabinets followed. The Seiyūkai could not agree whether to cooperate with or oppose the cabinets, and in 1939 it split into the reformist (Nakajima), orthodox (Kuhara) and neutral factions. The party ceased to exist when the orthodox and unity factions dissolved on 16 July 1940 and the reformist faction on 30 July 1940."
+    },
+    "aliases": {
+     "ko": [
+      "릿켄 세이유카이"
+     ],
+     "en": [
+      "Seiyūkai",
+      "Seiyukai",
+      "Rikken Seiyukai"
+     ]
+    },
+    "people": [
+     "yosuke-matsuoka"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Party founded 1900 as Itō Hirobumi's ruling party to establish party cabinets; two-party system with the Minseitō 1925–1931; split in 1939 and dissolved in July 1940.",
+      "source": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%86%B2%E6%94%BF%E5%8F%8B%E4%BC%9A",
+      "locator": "ja: 冒頭; 概説"
+     },
+     {
+      "field": "body",
+      "claim": "Prehistory and Itō's aims; founding 15 September 1900 with 152 seats; fourth Itō cabinet; \"kai\"; Saionji president 1903; Keien era; collective leadership; railway nationalisation and zaibatsu support; Hara president after Taishō crisis; Hara cabinet 1918; Takahashi; Seiyūhontō 1924; Tanaka 1925 and cabinet 1927–1929; Inukai; 301 seats 1932; May 15 Incident; split 1939; dissolutions 16 and 30 July 1940.",
+      "source": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%86%B2%E6%94%BF%E5%8F%8B%E4%BC%9A",
+      "locator": "ja: 概説; 歴史"
+     },
+     {
+      "field": "body",
+      "claim": "Founded in 1900 by Itō Hirobumi as a pro-government alliance of bureaucrats and former Kenseitō members; most powerful party in the House 1900–1921; Seiyūhontō defection after Hara's assassination; Inukai premiership and May 15 incident.",
+      "source": "https://en.wikipedia.org/wiki/Rikken_Seiy%C5%ABkai",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Existed 1900–1940.",
+      "source": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%86%B2%E6%94%BF%E5%8F%8B%E4%BC%9A",
+      "locator": "ja: 冒頭"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 15 September 1900 with Itō as first president.",
+      "source": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%86%B2%E6%94%BF%E5%8F%8B%E4%BC%9A",
+      "locator": "ja: 結党"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved in July 1940.",
+      "source": "https://ja.wikipedia.org/wiki/%E7%AB%8B%E6%86%B2%E6%94%BF%E5%8F%8B%E4%BC%9A",
+      "locator": "ja: 概説"
+     },
+     {
+      "field": "people",
+      "claim": "Matsuoka was elected in 1930 as a Seiyūkai candidate and left the party in December 1933.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B2%A1%E6%B4%8B%E5%8F%B3",
+      "locator": "ja: 満鉄から代議士へ; 議員辞職"
+     }
+    ]
+   }
+  },
+  {
+   "id": "imperial-rule-assistance-association",
+   "affiliationId": "imperial-rule-assistance-association",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+    "https://en.wikipedia.org/wiki/Imperial_Rule_Assistance_Association"
+   ],
+   "fields": {
+    "term": {
+     "ko": "대정익찬회",
+     "en": "Imperial Rule Assistance Association"
+    },
+    "original": "大政翼賛会",
+    "category": "parties",
+    "period": {
+     "ko": "1940–1945",
+     "en": "1940–1945"
+    },
+    "startYear": 1940,
+    "endYear": 1945,
+    "definition": {
+     "ko": "1940년 10월 12일 제2차 고노에 내각 아래 출범해 1945년 6월까지 존속한 일본의 정치결사. 나치 독일을 본뜬 일국일당제를 목표로 한 신체제 운동에서 나왔고 기성 정당들이 해산해 합류했으나, 위헌론 등으로 일당독재 정당이 되지 못하고 정부의 사회 통제를 돕는 국민운동 조직에 머물렀다. 1945년 국민의용대에 흡수되어 해산했다.",
+     "en": "A Japanese political association launched on 12 October 1940 under the second Konoe cabinet and in existence until June 1945. It grew out of the New Order movement, which aimed at a one-party system modelled on Nazi Germany, and the existing parties dissolved to join it, but objections that one-party rule was unconstitutional prevented it from becoming a ruling dictatorial party, and it remained a national movement assisting government control of society. In 1945 it was absorbed into the Volunteer Fighting Corps and dissolved."
+    },
+    "body": {
+     "ko": "일본어 출처에 따르면 1932년 5·15 사건 뒤 정당이 신망을 잃자 관료와 육군의 혁신 세력 안에서 복수정당제를 일국일당제로 바꾸려는 움직임이 일었다. 1937년 제1차 고노에 내각이 성립하자 고노에 후미마로 총리를 당수로 한 신당 운동이 일었고, 사회대중당은 국가사회주의 체제의 수립을 강하게 주장했다. 그러나 1938년 국가총동원법 등이 통과되어 당초 목표가 이루어지자 운동은 일시 멈추었고, 고노에가 사임하면서 좌절되었다.\n\n1940년 7월 제2차 고노에 내각이 성립하자 신체제 준비회가 꾸려졌다. 고노에와 측근 사이에서는 일국일당제가 천황 대권과 충돌해 헌법 위반이 될 수 있다는 우려가 나왔다. 9월 27일 각의에서 「대정익찬회」라는 이름이 정해지고 고노에 총리가 총재에 취임했으며, 10월 12일 총리 관저에서 발회식이 열렸으나 고노에는 강령을 발표하지 않았다. 영어 출처에 따르면 익찬회는 입헌정우회·입헌민정당·국민동맹·사회대중당 등 기성 정당을 합쳐 만들어졌다.\n\n기획원 혁신 관료들이 짠 경제신체제 확립 요강은 재계의 반대로 크게 후퇴했고, 1941년 제국의회는 익찬회가 일국일당적 존재가 되는 것을 경계해 익찬회 예산을 3,700만 엔에서 800만 엔으로 깎았다. 고노에는 의회와 우익 세력에 영합해 개조를 결정했고, 1941년 4월 기획·정책·의회 3국이 폐지되고 지부장 등 요직을 내무 관료가 차지하면서 익찬회는 사실상 내무성의 보조 조직이 되었다.\n\n영어 출처에 따르면 1942년 총선 뒤 모든 의원은 익찬정치회에 가입해야 했다. 1945년 3월 본토 방위를 위한 국민의용대 결성이 각의에서 결정되어 대정익찬회와 대일본익찬장년단, 대일본부인회가 여기에 흡수되었고, 대정익찬회는 1945년 6월 해산했다. 일본어 출처는 해산일을 서두에서 6월 13일, 본문에서 6월 23일로 적고, 영어 출처는 6월 13일로 적는다.",
+     "en": "According to the Japanese-language source, after the May 15 Incident of 1932 discredited the parties, reformist forces among bureaucrats and the army began pushing to replace the multi-party system with a one-party system. When the first Konoe cabinet was formed in 1937 a movement arose for a new party headed by Prime Minister Konoe Fumimaro, and the Social Masses Party strongly advocated a national-socialist system. However, once the National Mobilization Law and related laws were passed in 1938 the movement paused, and it collapsed when Konoe resigned.\n\nWhen the second Konoe cabinet was formed in July 1940, a New Order preparatory committee was set up. Konoe and his advisers worried that a one-party system might conflict with the imperial prerogative and be unconstitutional. On 27 September the cabinet decided on the name Imperial Rule Assistance Association and Prime Minister Konoe became its president; the inaugural ceremony was held at the prime minister's official residence on 12 October, but Konoe issued no programme. According to the English-language source it was created by merging existing parties including the Rikken Seiyūkai, Rikken Minseitō, Kokumin Dōmei and Shakai Taishūtō.\n\nThe outline for a new economic order drawn up by reformist bureaucrats of the Cabinet Planning Board was largely watered down under business opposition, and in 1941 the Imperial Diet, wary that the association might become a single ruling party, cut its budget from 37 million to 8 million yen. Konoe yielded to the Diet and the right wing and decided on a reorganisation: in April 1941 the planning, policy and Diet bureaus were abolished and Home Ministry officials took over key posts such as branch heads, so that the association became in effect an auxiliary body of the Home Ministry.\n\nAccording to the English-language source, after the 1942 general election all Diet members were required to join the Imperial Rule Assistance Political Association. In March 1945 the cabinet decided to form the Volunteer Fighting Corps for the defence of the home islands, absorbing the Imperial Rule Assistance Association, the Greater Japan Imperial Rule Assistance Young Men's Corps and the Greater Japan Women's Association, and the association was dissolved in June 1945. The Japanese-language source gives the dissolution date as 13 June in its introduction and 23 June in its body; the English-language source gives 13 June."
+    },
+    "aliases": {
+     "ko": [
+      "다이세이 요쿠산카이"
+     ],
+     "en": [
+      "Taisei Yokusankai",
+      "IRAA"
+     ]
+    },
+    "people": [
+     "konoe-fumimaro"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Political association existing 12 October 1940 – June 1945; born of the movement for a one-party system on the Nazi model; constitutional objections reduced it to a national movement assisting government control.",
+      "source": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+      "locator": "ja: 冒頭"
+     },
+     {
+      "field": "definition",
+      "claim": "Created by Konoe by merging the existing parties on 12 October 1940.",
+      "source": "https://en.wikipedia.org/wiki/Imperial_Rule_Assistance_Association",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Movements after 1932; Konoe new-party movement 1937–1938; Social Masses Party; preparatory committee 1940; unconstitutionality debate; 27 September decision and Konoe as president; 12 October ceremony without programme; economic new order defeat; budget cut to 8 million yen; April 1941 reorganisation; Volunteer Fighting Corps March 1945; dissolution 23 June 1945.",
+      "source": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+      "locator": "ja: 歴史"
+     },
+     {
+      "field": "body",
+      "claim": "Merger of the parties; all Diet members required to join the IRAPA after the 1942 election; formally dissolved 13 June 1945.",
+      "source": "https://en.wikipedia.org/wiki/Imperial_Rule_Assistance_Association",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from 12 October 1940 to 13 June 1945.",
+      "source": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+      "locator": "ja: 冒頭"
+     },
+     {
+      "field": "startYear",
+      "claim": "Inaugurated on 12 October 1940.",
+      "source": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+      "locator": "ja: 冒頭; 翼賛会発足"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved in June 1945.",
+      "source": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+      "locator": "ja: 冒頭; 戦争への突入、国民義勇隊へ"
+     },
+     {
+      "field": "people",
+      "claim": "Prime Minister Konoe became president of the association at its creation.",
+      "source": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%94%BF%E7%BF%BC%E8%B3%9B%E4%BC%9A",
+      "locator": "ja: 翼賛会発足"
+     }
+    ]
+   }
+  }
+ ]
+}

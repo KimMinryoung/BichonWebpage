@@ -37,7 +37,12 @@ def main(letters, write, date='20261004'):
         f = t['fields']
         names = [('ko', f['term']['ko'], True), ('en', f['term']['en'], True)]
         names += [(lang, a, False) for lang in ('ko', 'en') for a in (f.get('aliases') or {}).get(lang, [])]
+        seen = set()
         for lang, text, headword in names:
+            # An alias repeating the headword would be a duplicate decision.
+            if (lang, text) in seen:
+                continue
+            seen.add((lang, text))
             policy = 'search' if not headword and short(text) else 'auto'
             why = ('정당의 표제어라 이 항목만 가리킨다. 자동 연결.' if headword else
                    '약칭·짧은 표기라 다른 글자열과 겹칠 수 있어 검색 전용.' if policy == 'search' else

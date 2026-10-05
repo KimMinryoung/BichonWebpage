@@ -45,8 +45,11 @@ def main(letters, date='20261004'):
             hits[0]['evidence'] = hits[0].get('evidence', []) + fix.get('evidence', [])
         for act in adds.get(pid, []):
             # A second stint in the same party is kept (pre-power membership
-            # beside ruling-period posts); an overlapping one is a duplicate.
-            if any(a.get('affiliationId') == act['affiliationId'] and overlaps(a, act) for a in acts):
+            # beside ruling-period posts), and so is a party post held during
+            # a membership (Allende's 1942–43 general secretaryship); the same
+            # function overlapping in the same party is a duplicate.
+            if any(a.get('affiliationId') == act['affiliationId'] and a.get('functionId') == act['functionId']
+                   and overlaps(a, act) for a in acts):
                 print(f'skip {pid}: already {act["affiliationId"]} in those years', file=sys.stderr)
                 continue
             acts.append({**act, 'primary': False})

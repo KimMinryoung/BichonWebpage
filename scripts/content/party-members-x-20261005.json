@@ -1,0 +1,366 @@
+{
+ "add": [
+  {
+   "personId": "mohammad-daoud-khan",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-afghan-national-revolutionary",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1978,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/National_Revolutionary_Party_of_Afghanistan",
+      "locator": "characters 247:351; sha256 4cf473c523b329c42876ba73e3df0bb72ece1bcbf980410ddef2dadb91bd452b",
+      "claim": "민족혁명당은 무함마드 다우드 칸이 세웠다.",
+      "excerpt": "The party was founded in April 1974 by the then Afghan Armed Forces official general Mohammad Daoud Khan"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8",
+      "locator": "characters 489:593; sha256 ae423d56153fe3f2246475635cb2f464c330d9f02d322350a6d9ca355dc138dc",
+      "claim": "다우드는 자기 정권의 사회적 기반을 넓히려고 민족혁명당을 세웠다.",
+      "excerpt": "В попытках расширить социальную базу для своего режима Дауд учредил Партию национальной революции (ПНР)."
+     },
+     {
+      "source": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%D9%85%D9%84%DB%8C",
+      "locator": "characters 842:995; sha256 1ee8843d1e231c80052fc39e67a0132dbdb4f0f7940b317b838121af5d351a06",
+      "claim": "당은 1978년 4월 사우르 혁명으로 다우드와 가족이 죽으면서 살아남지 못했다.",
+      "excerpt": "این حزب از انقلاب ثور در آوریل ۱۹۷۸ جان سالم به در نبرد که شاهد سرنگونی و مرگ داوود و خانواده‌اش و به قدرت رسیدن حزب کمونیست دموکراتیک خلق افغانستان بود."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "najati-sidqi",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "party-palestine-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A4%D7%9C%D7%92%D7%94_%D7%94%D7%A7%D7%95%D7%9E%D7%95%D7%A0%D7%99%D7%A1%D7%98%D7%99%D7%AA_%D7%A9%D7%9C_%D7%A4%D7%9C%D7%A9%D7%AA%D7%99%D7%A0%D7%94",
+      "locator": "characters 2157:2208; sha256 9f38a194b18ba1bdba5ff7b3779f43f1dea8c1554440599ef30d492a70f74446",
+      "claim": "나자티 시드키는 팔레스타인 공산당에 들어온 몇 안 되는 아랍인 가운데 하나로 하이파 지부를 이끌었다.",
+      "excerpt": "ביניהם היה מוחמד נג'אתי צדקי בין מובילי הסניף בחיפה"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Muhammad_Najati_Sidqi",
+      "locator": "characters 2750:2810; sha256 7ca3da219e19a7045201a8c9808fb934c0f94322152011a44e9f0d5af2771ed3",
+      "claim": "시드키는 하이파에서 당 지부를 감독했다.",
+      "excerpt": "Based in Haifa, where he supervised the Party's local branch"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Muhammad_Najati_Sidqi",
+      "locator": "characters 3049:3128; sha256 7ca3da219e19a7045201a8c9808fb934c0f94322152011a44e9f0d5af2771ed3",
+      "claim": "팔레스타인 공산당은 시드키에게 당의 아랍화를 맡겼다.",
+      "excerpt": "One of the tasks the Party assigned to Sidqi was to undertake this Arabisation."
+     },
+     {
+      "source": "https://ar.wikipedia.org/wiki/%D9%86%D8%AC%D8%A7%D8%AA%D9%8A_%D8%B5%D8%AF%D9%82%D9%8A",
+      "locator": "characters 3326:3496; sha256 ccdef34da47972af17e9e1e33bf6348e961231f51baadbf6b84a8a0be9c9f609",
+      "claim": "공산당은 1933년 6월 시드키를 파리로 몰래 내보냈다.",
+      "excerpt": "مع اشتداد المراقبة البريطانية، قام الحزب الشيوعي بتهريبه إلى الخارج في يونيو 1933 إلى باريس حيث تولى رئاسة تحرير مجلة الكومنترن الناطقة بالعربية، وكان اسمها الشرق العربي."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mohamed-siad-barre",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-somali-rsp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1976,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "characters 401:485; sha256 aad8f638d317712b5db6cfb92e38cdda51d0a7660f9c8a40146593202c536455",
+      "claim": "1976년 6월 창립대회는 시아드 바레를 당 서기장으로 뽑았다.",
+      "excerpt": "The congress elected a Central Committee, with Barre as the party general secretary."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "characters 486:772; sha256 aad8f638d317712b5db6cfb92e38cdda51d0a7660f9c8a40146593202c536455",
+      "claim": "시아드 바레는 5인 정치국원이었다.",
+      "excerpt": "A five-member politburo, consisting of Barre, Lt. General Mohammad Ali Samatar (vice president), Major General Hussein Kulmiye Afrah (2nd vice president), Brig. Ahmad Sulaymaan Abdullah and Brig. Ismail Ali Abukor (who was later replaced by Brig. Ahmad Mahamuud Faarah) was constituted."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "characters 6218:6297; sha256 17343d13bded92151e738e37313b0c0ca8cc70c0cbba6c0ba7f5890d95c67ccf",
+      "claim": "1986년 제3차 대회는 시아드 바레를 중앙위 서기장으로 재선했다.",
+      "excerpt": "Сиад Барре был переизбран генеральным секретарём ЦК СРСП на очередные пять лет."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "characters 1590:1643; sha256 aad8f638d317712b5db6cfb92e38cdda51d0a7660f9c8a40146593202c536455",
+      "claim": "1991년 바레 정권이 무너지면서 당은 해체되었다.",
+      "excerpt": "When Barre's regime fell in 1991, the SRSP dissolved."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mohammad-ali-samatar",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-somali-rsp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1976,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "characters 486:772; sha256 aad8f638d317712b5db6cfb92e38cdda51d0a7660f9c8a40146593202c536455",
+      "claim": "1976년 창립대회 뒤 구성된 5인 정치국에 부통령 모함마드 알리 사마타르가 들어갔다.",
+      "excerpt": "A five-member politburo, consisting of Barre, Lt. General Mohammad Ali Samatar (vice president), Major General Hussein Kulmiye Afrah (2nd vice president), Brig. Ahmad Sulaymaan Abdullah and Brig. Ismail Ali Abukor (who was later replaced by Brig. Ahmad Mahamuud Faarah) was constituted."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "hussein-kulmiye-afrah",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-somali-rsp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1976,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "characters 486:772; sha256 aad8f638d317712b5db6cfb92e38cdda51d0a7660f9c8a40146593202c536455",
+      "claim": "1976년 창립대회 뒤 구성된 5인 정치국에 제2부통령 후세인 쿨미예 아프라가 들어갔다.",
+      "excerpt": "A five-member politburo, consisting of Barre, Lt. General Mohammad Ali Samatar (vice president), Major General Hussein Kulmiye Afrah (2nd vice president), Brig. Ahmad Sulaymaan Abdullah and Brig. Ismail Ali Abukor (who was later replaced by Brig. Ahmad Mahamuud Faarah) was constituted."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mathieu-kerekou",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-benin-prpb",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1975,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "characters 112:166; sha256 d6d1e8986bfcf57246857a7ff0378ccea83abcf7045318acfe43c7346a23479e",
+      "claim": "베냉 인민혁명당은 1975년 마티외 케레쿠가 세웠다.",
+      "excerpt": "Il a été fondé en 1975 par le général Mathieu Kérékou."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8_%D0%91%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0",
+      "locator": "characters 887:974; sha256 10888043afb5035c4b360564f613bcd44263a7bf30871cf44f788c31acbee1b8",
+      "claim": "케레쿠는 줄곧 당 중앙위원회 의장이었다.",
+      "excerpt": "Председателем Центрального комитета партии бессменно был президент страны Матьё Кереку."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D1%80%D0%B5%D0%BA%D1%83,_%D0%9C%D0%B0%D1%82%D1%8C%D1%91",
+      "locator": "characters 1274:1437; sha256 f54ae08ea0c2cfedc3007f7c2b0b4cacddb47992bfaec11b809b15a813a7eb90",
+      "claim": "케레쿠는 1975년 11월 집권당을 만들고 1976년 창립대회에서 중앙위 의장으로 뽑혔다.",
+      "excerpt": "в ноябре 1975 года образовал правящую Партию народной революции (Народно-революционную партию) (на учредительном съезде в 1976 году был избран Председателем её ЦК)"
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "characters 1540:1566; sha256 d6d1e8986bfcf57246857a7ff0378ccea83abcf7045318acfe43c7346a23479e",
+      "claim": "당은 1990년 사라졌다.",
+      "excerpt": "Le parti disparait en 1990"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "albert-tevoedjre",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-dahomeyan-unity",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1960,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Albert_T%C3%A9vo%C3%A9djr%C3%A8",
+      "locator": "characters 1253:1398; sha256 888db78a80d2205eebb6b112277fdea735b86eaea572aa381427ee6adece5d3e",
+      "claim": "테보에즈르는 1960년 10월 정부직을 구했고 다호메 통일당 행정서기가 되었다.",
+      "excerpt": "In October 1960, Tévoédjrè applied for a government position. He received the job of administrative secretary of the Dahomeyan Unity Party (PDU)."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "characters 198:470; sha256 6a30c54ba83d7336ca9c4b0c8794297967c4ac313759e14f93ad1257ff7417fb",
+      "claim": "다호메 통일당은 테보에즈르가 공동 창립한 민족해방운동 등의 합당으로 1960년 11월 13일 생겼다.",
+      "excerpt": "Le PDU naît le 13 novembre 1960 de la fusion du Rassemblement démocratique dahoméen (RDD) dirigé par Hubert Maga, du Parti des nationalistes dahoméens (PND) mené par Sourou Migan Apithy, du Mouvement de libération nationale (MLN) cofondé par Jean Pliya et Albert Tévoédjrè"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nicephore-soglo",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-benin-renaissance",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1994,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Soglo",
+      "locator": "characters 1959:2129; sha256 c349f9c3dcdffa3fd597f680d1b9ea698810285a53008462efee0b35b3906d18",
+      "claim": "소글로는 1994년 아내가 세운 베냉 르네상스당의 지도자가 되었다.",
+      "excerpt": "In the following year, the Renaissance Party of Benin (known by the acronym PRB or RB) was founded by Rosine Vieyra Soglo; her husband became leader of the party in 1994."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Benin_Rebirth_Party",
+      "locator": "characters 321:349; sha256 127e3e9320b2dd74dcb2c45d3fa01a74e727982f6e6b3ecf5b80a65508cc7f77",
+      "claim": "베냉 르네상스당은 니세포르 소글로가 이끈다.",
+      "excerpt": "It is led by Nicéphore Soglo"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "didier-ratsiraka",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-arema",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1976,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Association_pour_la_renaissance_de_Madagascar",
+      "locator": "characters 228:318; sha256 8674e7800d5c4a3b7544a656b7bde376c4bfd028dddda50fb9fbf2f8fa1e1e4d",
+      "claim": "AREMA는 1976년 디디에 라치라카가 세웠다.",
+      "excerpt": "est un parti politique fondé en 1976 par l'ancien président de Madagascar Didier Ratsiraka"
+     },
+     {
+      "source": "https://mg.wikipedia.org/wiki/Andry_sy_Rihana_Enti-Manavotra_an'_i_Madagasikara",
+      "locator": "characters 0:74; sha256 d1571eb074b68337eab642c3dac77b0754505945c3189a6ea851a75beea2626b",
+      "claim": "AREMA는 디디에 라치라카가 만든 정당이다.",
+      "excerpt": "Ny AREMA dia antoko pôlitika eto Madagasikara noforonin-dRatsiraka Didier."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Didier_Ratsiraka",
+      "locator": "characters 174:225; sha256 4f0bab648b3a69a78c498b18d562a7421752789b25c0963052b23350c1f56906",
+      "claim": "라치라카는 AREMA의 창립자이다.",
+      "excerpt": "Fondateur du parti socialiste et nationaliste Arema"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "julius-nyerere",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-ccm",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1977,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+      "locator": "characters 2340:2368; sha256 417c50c96827ceefdc97fca1745fface15fb92faabae523967617ec330383752",
+      "claim": "니에레레는 1977~1990년 혁명당 의장이었다.",
+      "excerpt": "Julius Nyerere, 1977 - 1990,"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Chama_Cha_Mapinduzi",
+      "locator": "characters 1233:1323; sha256 241f12f1e1eb78d818906c332fa858e7f5ebe7eb5bf4f5a8821380cc0792d3b8",
+      "claim": "혁명당은 1977년 2월 5일 니에레레의 지도 아래 만들어졌다.",
+      "excerpt": "The party was created on 5 February 1977, under the leadership of Julius Kambarage Nyerere"
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": [
+  {
+   "personId": "saad-zaghloul",
+   "find": {
+    "functionId": "political-leadership",
+    "affiliationId": null,
+    "startYear": 1918
+   },
+   "set": {
+    "affiliationId": "party-wafd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919
+   },
+   "why": "기존 소속 미상(independent) political-leadership(1918–1927) 활동은 근거 문장이 「와프드당 창립 지도자」를 말하므로 새 활동을 덧붙이지 않고 소속을 와프드당으로 확정한다. 아랍어판 역대 당 대표 목록이 자글룰의 재임을 1919년부터 1927년 사망까지로 적고, 카탈로그 존속 기간도 1919년에 시작하므로 startYear를 1919로 맞춘다(대표단 결성 자체는 1918년 11월).",
+   "evidence": [
+    {
+     "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+     "locator": "characters 6715:6759; sha256 2194e6cbb88478f1e820c02bcac05ee521505228e501f99947cd5bd51975a404",
+     "claim": "와프드당 대표 명단에 사아드 자글룰이 1919년부터 1927년 사망 때까지 올라 있다.",
+     "excerpt": "سعد زعلول (من عام 1919، وحتى وفاته عام 1927)"
+    },
+    {
+     "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+     "locator": "characters 2400:2448; sha256 2194e6cbb88478f1e820c02bcac05ee521505228e501f99947cd5bd51975a404",
+     "claim": "이집트 대표단 창립자들은 자글룰을 대표로 뽑았다.",
+     "excerpt": "وأجمعوا على اختيار سعد زغلول رئيسًا للوفد المصري"
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Saad_Zaghloul",
+     "locator": "characters 1118:1231; sha256 7dafbc57356aa2caecd4aef97686f8cdbbb2e64524f06e7e4e5660215b2ef9bc",
+     "claim": "자글룰은 1918년 와프드당 창립 지도자로 정치 활동을 시작했다.",
+     "excerpt": "In 1918, he became politically active, as the founding leader of the Wafd Party, for which he was later arrested."
+    }
+   ]
+  },
+  {
+   "personId": "julius-nyerere",
+   "find": {
+    "functionId": "political-leadership",
+    "affiliationId": null,
+    "startYear": 1954
+   },
+   "set": {
+    "affiliationId": "party-tanu",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "endYear": 1977
+   },
+   "why": "기존 미해결 대표 활동(political-leadership 1954–1990)은 근거 문장이 TANU와 그 후신 CCM의 의장직을 함께 말한다. TANU(1954–1977) 의장직으로 소속을 확정하고 endYear를 1977로 줄이며, 1977–1990 CCM 의장직은 add에 별도 활동으로 넣었다. primary:true는 그대로 둔다.",
+   "evidence": [
+    {
+     "source": "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+     "locator": "characters 342:404; sha256 b41803f3af9e6910a91f9791c38c9d2ed753fe2424e087e7e41c450928e2ab24",
+     "claim": "TANU의 초대 의장은 줄리어스 니에레레였다.",
+     "excerpt": "Mwenyekiti wa kwanza wa TANU alikuwa Julius Kambarage Nyerere."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Tanganyika_African_National_Union",
+     "locator": "characters 675:851; sha256 720f6d0c6b21b5cf937266b251eafc8f191273ed0f0d0b3f117a0496ea2bbb44",
+     "claim": "TANU는 1977년 2월 5일 아프로시라지당과 합쳐 CCM이 되었다.",
+     "excerpt": "On 5 February 1977, the TANU merged with the ruling party in Zanzibar, the Afro-Shirazi Party (ASP), to form the current Revolutionary State Party or Chama Cha Mapinduzi (CCM)."
+    }
+   ]
+  }
+ ]
+}

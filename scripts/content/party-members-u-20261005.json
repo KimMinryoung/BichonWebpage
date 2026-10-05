@@ -1,0 +1,390 @@
+{
+ "add": [
+  {
+   "personId": "edvard-benes",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-czech-national-social",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1923,
+    "endYear": 1935,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://cs.wikipedia.org/wiki/%C4%8Cesk%C3%A1_strana_n%C3%A1rodn%C4%9B_soci%C3%A1ln%C3%AD",
+      "locator": "characters 7622:7697; sha256 081147b9e5604b12916edae9285965a876dc445474f56071e75575e28502649d",
+      "claim": "베네시는 1923년 국민사회당에 입당했다.",
+      "excerpt": "od roku 1923, kdy vstoupil do strany, i Edvard Beneš a jiní další politici."
+     },
+     {
+      "source": "https://cs.wikipedia.org/wiki/%C4%8Cesk%C3%A1_strana_n%C3%A1rodn%C4%9B_soci%C3%A1ln%C3%AD",
+      "locator": "characters 7022:7128; sha256 081147b9e5604b12916edae9285965a876dc445474f56071e75575e28502649d",
+      "claim": "베네시는 1926~1935년 국민사회당 부당수였다.",
+      "excerpt": "národní socialista Edvard Beneš, který byl v letech 1926–1935 místopředsedou národně socialistické strany."
+     },
+     {
+      "source": "https://cs.wikipedia.org/wiki/Edvard_Bene%C5%A1",
+      "locator": "characters 8312:8415; sha256 78484712a70cff562f56c1f2ee490908661c3f48479ca7d9e074b65d522767f6",
+      "claim": "베네시는 국민사회당 당원이자 부당수로서 당 정책에 큰 영향을 주었다.",
+      "excerpt": "Byl členem a místopředsedou tehdejší České strany národně sociální a významně ovlivňoval její politiku."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "petr-zenkl",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-czech-national-social",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://cs.wikipedia.org/wiki/%C4%8Cesk%C3%A1_strana_n%C3%A1rodn%C4%9B_soci%C3%A1ln%C3%AD",
+      "locator": "characters 10442:10480; sha256 081147b9e5604b12916edae9285965a876dc445474f56071e75575e28502649d",
+      "claim": "젠클은 1945년 재건된 국민사회당의 당수로 선출되었다.",
+      "excerpt": "Novým předsedou byl zvolen Petr Zenkl."
+     },
+     {
+      "source": "https://cs.wikipedia.org/wiki/Petr_Zenkl",
+      "locator": "characters 190:239; sha256 573dd981a7a486e2add1c6b149bbdab28a9cd702e54de4b9e443395d62261768",
+      "claim": "젠클은 1945~1948년 국민사회당 당수였다.",
+      "excerpt": "předseda národně socialistické strany (1945–1948)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "tomas-garrigue-masaryk",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-young-czech",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1890,
+    "endYear": 1893,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://cs.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Garrigue_Masaryk",
+      "locator": "characters 1259:1358; sha256 14838b53190fcf671a7b43a270108d3c64afdaf2a4f3ae292e545428cd87f449",
+      "claim": "마사리크는 1890년 청년체코당에 입당했고 이듬해 제국의회 의원으로 뽑혔다.",
+      "excerpt": "Roku 1890 vstoupil s přáteli do mladočeské strany a v dalším roce byl zvolen poslancem Říšské rady."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Garrigue_Masaryk",
+      "locator": "characters 4752:4912; sha256 9cd29d6aef87d4dbb620f1116461c7160b0bc6df15f5f3ae40763d627b224070",
+      "claim": "마사리크는 1891~1893년 청년체코당 소속으로 제국의회 의원을 지냈다.",
+      "excerpt": "Masaryk served in the Reichsrat from 1891 to 1893 with the Young Czech Party and from 1907 to 1914 in the Czech Progressive Party, which he had founded in 1900."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vaclav-klaus",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-czech-ods",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1991,
+    "endYear": 2002,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://cs.wikipedia.org/wiki/Ob%C4%8Dansk%C3%A1_demokratick%C3%A1_strana",
+      "locator": "characters 1067:1161; sha256 52c1c814779038053fce9fa7932c5fbb65c10558ea86f3c11a1f3556157b5c95",
+      "claim": "클라우스는 시민민주당의 창립자로 2002년까지 당수를 지냈다.",
+      "excerpt": "Jejím zakladatelem a předsedou až do roku 2002 byl Václav Klaus, následně zvolený prezidentem."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Klaus",
+      "locator": "characters 649:729; sha256 0aadb3165b0bb8143db97bbea3b1dfbbe4f9145f90f780d22f04ba59ca7f51ce",
+      "claim": "클라우스는 1991년 시민민주당을 주도적으로 공동 창당했다.",
+      "excerpt": "In 1991, Klaus was the principal co-founder of the Civic Democratic Party (ODS)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "iuliu-maniu",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-romanian-national",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1897,
+    "endYear": 1926,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Iuliu_Maniu",
+      "locator": "characters 1027:1227; sha256 098cb00df9e65ac420d4c912d0f9f951e7f3166a067b877df85886dbfb4f788e",
+      "claim": "마니우는 루마니아 국민당에 입당해 1897년 집단지도부 일원이 되었다.",
+      "excerpt": "Maniu joined the Romanian National Party of Transylvania and Banat (PNR), became a member of its collective leadership body in 1897, and represented it in the Budapest Parliament on several occasions."
+     },
+     {
+      "source": "https://ro.wikipedia.org/wiki/Partidul_Na%C8%9Bional_Rom%C3%A2n_din_Ungaria_%C8%99i_Transilvania",
+      "locator": "characters 6272:6443; sha256 ebec8d674975b44485f3ec33a4fe03ae78518fb1303a1d9739b0feff91ce8477",
+      "claim": "마니우는 1919년 8월 9일 당 협의회에서 당수로 선출되었다.",
+      "excerpt": "Conferința partidului din 9 august 1919 a ales în funcția de președinte pe Iuliu Maniu, în locul lui Gheorghe Pop de Băsești, care încetase din viață la 23 februarie 1919."
+     },
+     {
+      "source": "https://ro.wikipedia.org/wiki/Iuliu_Maniu",
+      "locator": "characters 7827:7967; sha256 52dcca89b54edab2be6b47c3ef800b4cbc0efe8705e178cccc8e47103fea0ff1",
+      "claim": "루마니아 국민당은 1926년 농민당과 합쳐 국민농민당이 되었다.",
+      "excerpt": "Partidul Național Român din Transilvania s-a unit în 1926 cu Partidul Țărănesc al lui Ion Mihalache, constituind Partidul Național Țărănesc."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "iuliu-maniu",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-romanian-national-peasants",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1926,
+    "endYear": 1947,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ro.wikipedia.org/wiki/Iuliu_Maniu",
+      "locator": "characters 7968:8097; sha256 52dcca89b54edab2be6b47c3ef800b4cbc0efe8705e178cccc8e47103fea0ff1",
+      "claim": "마니우는 1926~1933년과 1937~1947년 국민농민당 당수였다.",
+      "excerpt": "Iuliu Maniu a fost președinte al partidului (1926-1933 și 1937-1947) și de trei ori prim-ministru al României între 1928 și 1933."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Iuliu_Maniu",
+      "locator": "characters 3528:3811; sha256 098cb00df9e65ac420d4c912d0f9f951e7f3166a067b877df85886dbfb4f788e",
+      "claim": "마니우는 1926년 창당된 국민농민당의 당수가 되었다.",
+      "excerpt": "Citing fears that the PNL had ensured a grip over Romanian politics, the PNR and the Peasants' Party united in 1926, with Maniu becoming the President of the new political force, the National Peasants' Party (PNȚ), for the following seven years, and then again between 1937 and 1947."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "petru-groza",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-romanian-national",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Petru_Groza",
+      "locator": "characters 2729:3060; sha256 0195386cfe5e3b7d5d26707cd76886bda81e502beb4d34c2e0e29d2c8f44129c",
+      "claim": "그로자는 1918년 루마니아 국민당 당원으로 정계에 등장했다.",
+      "excerpt": "In 1918, at the war's end, he emerged on the political scene as a member of the Romanian National Party (PNR) and obtained a position on the Directory Council of Transylvania, convened by ethnic Romanian politicians who had voted in favour of union with Romania; he maintained his office over the course of the following two years."
+     },
+     {
+      "source": "https://ro.wikipedia.org/wiki/Petru_Groza",
+      "locator": "characters 2903:3029; sha256 5798012583d7c0d4f94059ab396db1461e562ef68a00cdc51cd63bd1fcdd2c15",
+      "claim": "그로자는 1919년 11월 총선에서 루마니아 국민당 명부로 의원에 당선되었다.",
+      "excerpt": "La alegerile parlamentare din noiembrie 1919, primele pe baza votului universal, Petru Groza este ales deputat pe listele PNR."
+     },
+     {
+      "source": "https://ro.wikipedia.org/wiki/Petru_Groza",
+      "locator": "characters 3030:3161; sha256 5798012583d7c0d4f94059ab396db1461e562ef68a00cdc51cd63bd1fcdd2c15",
+      "claim": "그로자는 1920년 3월 국민당을 떠났다.",
+      "excerpt": "În martie 1920 părăsește partidul împreună cu gruparea condusă de Octavian Goga și se înscrie în Partidul Poporului, pe 17 aprilie."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "petru-groza",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-romanian-peoples",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ro.wikipedia.org/wiki/Petru_Groza",
+      "locator": "characters 3030:3161; sha256 5798012583d7c0d4f94059ab396db1461e562ef68a00cdc51cd63bd1fcdd2c15",
+      "claim": "그로자는 1920년 4월 17일 인민당에 입당했다.",
+      "excerpt": "În martie 1920 părăsește partidul împreună cu gruparea condusă de Octavian Goga și se înscrie în Partidul Poporului, pe 17 aprilie."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Petru_Groza",
+      "locator": "characters 3352:3585; sha256 0195386cfe5e3b7d5d26707cd76886bda81e502beb4d34c2e0e29d2c8f44129c",
+      "claim": "그로자는 인민당에 입당해 아베레스쿠 3차 내각에서 장관을 지냈다.",
+      "excerpt": "In the mid-1920s, Groza, who had left the PNR after a conflict with Iuliu Maniu and had joined the People's Party, served as the Minister for Transylvania and Minister of Public Works and Communications in the Third Averescu cabinet."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "petru-groza",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-romanian-ploughmens-front",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1933,
+    "endYear": 1953,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ro.wikipedia.org/wiki/Petru_Groza",
+      "locator": "characters 4443:4573; sha256 5798012583d7c0d4f94059ab396db1461e562ef68a00cdc51cd63bd1fcdd2c15",
+      "claim": "그로자는 1933년 1월 8일 농민전선을 창설해 1953년까지 의장을 지냈다.",
+      "excerpt": "Revine pe scena publică pe 8 ianuarie 1933, când fondează Frontul Plugarilor, organizație al cărei președinte a fost până în 1953."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikola-petkov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-bulgarian-agrarian",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1932,
+    "endYear": 1947,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://bg.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%9F%D0%B5%D1%82%D0%BA%D0%BE%D0%B2",
+      "locator": "characters 1589:1670; sha256 52c0cc6ba33bfea171987bfcf9773d0451494f50f89bbf0acd5253a0d8148494",
+      "claim": "페트코프는 1932~1933년 농민민족동맹(스탐볼리스키파) 상임위원이었다.",
+      "excerpt": "Член е на Постоянното присъствие на БЗНС „Александър Стамболийски“ (1932 – 1933)."
+     },
+     {
+      "source": "https://bg.wikipedia.org/wiki/%D0%91%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8_%D0%B7%D0%B5%D0%BC%D0%B5%D0%B4%D0%B5%D0%BB%D1%81%D0%BA%D0%B8_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%B5%D0%BD_%D1%81%D1%8A%D1%8E%D0%B7",
+      "locator": "characters 13018:13172; sha256 2e76d9b656ef54cda8c3995aad9650a7d23198cad8751aa358d5428bada782ba",
+      "claim": "1945년 G. M. 디미트로프가 사임하자 페트코프가 농민민족동맹 지도자로 선출되었다.",
+      "excerpt": "След като съветският представител Сергей Бирюзов лично го заплашва с разпускане на БЗНС, Димитров подава оставка и на негово място е избран Никола Петков."
+     },
+     {
+      "source": "https://bg.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0_%D0%9F%D0%B5%D1%82%D0%BA%D0%BE%D0%B2",
+      "locator": "characters 328:437; sha256 52c0cc6ba33bfea171987bfcf9773d0451494f50f89bbf0acd5253a0d8148494",
+      "claim": "페트코프는 1947년 사형 선고를 받았다.",
+      "excerpt": "През 1947 г. е осъден на смърт чрез обесване заради съпротивата му срещу налагането на комунистическия режим."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-khatisian",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "armenian-revolutionary-federation",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+      "locator": "characters 1333:1409; sha256 807f18b05f88702740889c164ee591a0554faf02385dd7603a7899ebd998dbe6",
+      "claim": "하티시안은 1917년 아르메니아 혁명연맹에 입당했다.",
+      "excerpt": "In 1917, Khatisian became a member of the Armenian Revolutionary Federation."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%82%D0%B8%D1%81%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2287:2365; sha256 20b1623bcfbfe0c8091ed1a104f9a367b3ac954650b4fb2a73e3811767528ac3",
+      "claim": "하티시안은 2월 혁명 뒤 다슈나크추튠에 정식 입당했다.",
+      "excerpt": "После Февральской революции Хатисов официально вступил в партию «Дашнакцутюн»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andranik-ozanian",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "armenian-revolutionary-federation",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1892,
+    "endYear": 1907,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Andranik",
+      "locator": "characters 3787:3882; sha256 a02381a75355dbe558a2d84363e331546a0e5a64834c57d5e57c50c73b48ccf8",
+      "claim": "안드라니크는 1892년 아르메니아 혁명연맹에 입당했다.",
+      "excerpt": "In 1892, he joined the newly created Armenian Revolutionary Federation (ARF or Dashnaktsutyun)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B0%D0%BD%D1%8F%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B0%D0%BD%D0%B8%D0%BA_%D0%A2%D0%BE%D1%80%D0%BE%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4575:4761; sha256 267a50d5c39d7cc76fb459833e3c6e7c958cc7dbe9f1e450f50ce6ad78cb34a8",
+      "claim": "안드라니크는 1907년 제4차 당대회에서 탈당을 선언했다.",
+      "excerpt": "В 1907 году на IV съезде партии «Дашнакцутюн» Андраник объявил о выходе из её рядов из-за несогласия с действиями руководства, направленными на налаживание сотрудничества с младотурками."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "andranik-ozanian",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "armenian-revolutionary-federation",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1914,
+    "endYear": 1917,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B0%D0%BD%D1%8F%D0%BD,_%D0%90%D0%BD%D0%B4%D1%80%D0%B0%D0%BD%D0%B8%D0%BA_%D0%A2%D0%BE%D1%80%D0%BE%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1423:1596; sha256 267a50d5c39d7cc76fb459833e3c6e7c958cc7dbe9f1e450f50ce6ad78cb34a8",
+      "claim": "안드라니크는 다슈나크추튠 당원이었으나 1907~1914년 관계를 끊었다가 1917년 최종적으로 결별했다.",
+      "excerpt": "с 1891 года около года был членом партии «Гнчак», а затем — партии «Дашнакцутюн», причём дважды прерывал свои отношения с нею (в 1907—1914 гг. и с 1917 года — окончательно)."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": [
+  {
+   "personId": "viktor-mihaly-orban",
+   "find": {
+    "functionId": "political-leadership",
+    "affiliationId": null,
+    "startYear": 1993
+   },
+   "set": {
+    "affiliationId": "party-fidesz",
+    "affiliationStatus": "confirmed",
+    "relation": "membership"
+   },
+   "why": "기존 미해결 political-leadership(1993–) 활동은 근거 문장 모두 피데스 당대표직을 말한다. 카탈로그에 party-fidesz가 생기면 새 활동을 덧붙이지 않고 이 활동의 소속을 피데스로 확정한다.",
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Viktor_Orb%C3%A1n",
+     "locator": "characters 9032:9185; sha256 7f8d5535ee0184cfb226681b5d827ef38113b5da59cf6d3f5ede58f583952ba1",
+     "claim": "오르반은 1993년 4월 18일 피데스 초대 당대표가 되었다.",
+     "excerpt": "On 18 April 1993, Orbán became the first president of Fidesz, replacing the national board that had served as a collective leadership since its founding."
+    },
+    {
+     "source": "https://hu.wikipedia.org/wiki/Fidesz_%E2%80%93_Magyar_Polg%C3%A1ri_Sz%C3%B6vets%C3%A9g",
+     "locator": "characters 7325:7420; sha256 4c9995252817d7c887892e1676eed471e1dcd894334c320140acb60d53e3d4f3",
+     "claim": "1993년 당대회가 새로 만든 당대표직에 오르반을 선출했다.",
+     "excerpt": "az újonnan létrehozott elnöki pozícióba 1993-ban Orbán Viktort választotta a párt kongresszusa."
+    },
+    {
+     "source": "https://hu.wikipedia.org/wiki/Fidesz_%E2%80%93_Magyar_Polg%C3%A1ri_Sz%C3%B6vets%C3%A9g",
+     "locator": "characters 10410:10471; sha256 4c9995252817d7c887892e1676eed471e1dcd894334c320140acb60d53e3d4f3",
+     "claim": "2003년 당대회에서 오르반이 다시 당대표로 선출되었다.",
+     "excerpt": "A pártkongresszuson ismét Orbán Viktort választották elnökké."
+    }
+   ]
+  }
+ ]
+}

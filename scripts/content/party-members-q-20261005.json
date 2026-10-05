@@ -1,0 +1,353 @@
+{
+ "add": [
+  {
+   "personId": "david-lloyd-george",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-british-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1890,
+    "endYear": 1945,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+      "locator": "characters 8249:8497; sha256 744cd9d8bab25d21cebc878fae5f46428a4daaae816c0eaf62d1da1faa6bb7a4",
+      "claim": "로이드 조지는 1890년 4월 10일 보궐선거에서 자유당 하원의원으로 당선되었다.",
+      "excerpt": "Lloyd George's career as a member of parliament began when he was returned as a Liberal MP for Caernarfon Boroughs (now Caernarfon), narrowly winning the by-election on 10 April 1890, following the death of the Conservative member Edmund Swetenham."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/David_Lloyd_George",
+      "locator": "characters 3432:3547; sha256 744cd9d8bab25d21cebc878fae5f46428a4daaae816c0eaf62d1da1faa6bb7a4",
+      "claim": "로이드 조지는 1926년부터 1931년까지 자유당을 이끌었다.",
+      "excerpt": "After an awkward reunion with Asquith's faction in 1923, Lloyd George led the weak Liberal Party from 1926 to 1931."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Liberal_Party_(UK)",
+      "locator": "characters 30920:31059; sha256 e7a1295bc84022043bb94d3b2769a1380ce68d7abdbeff2f0bef727b567eafde",
+      "claim": "로이드 조지는 평생 자유당원으로 남았다.",
+      "excerpt": "Lloyd George remained a Liberal all his life, but he abandoned many standard Liberal principles in his crusade to win the war at all costs."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "john-maynard-keynes",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-british-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1946,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+      "locator": "characters 83334:83545; sha256 14d333f9d16cc02f92f4cd14f55e7799866aaac27db71eeca54ec3e526169cd4",
+      "claim": "케인스는 평생 자유당 당원이었다.",
+      "excerpt": "Keynes was a lifelong member of the Liberal Party, which until the 1920s had been one of the two main political parties in the United Kingdom, and as late as 1916 had often been the dominant power in government."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/John_Maynard_Keynes",
+      "locator": "characters 83735:83859; sha256 14d333f9d16cc02f92f4cd14f55e7799866aaac27db71eeca54ec3e526169cd4",
+      "claim": "1926년 로이드 조지가 당수가 된 뒤 케인스는 자유당의 경제정책 수립에 주요한 역할을 했다.",
+      "excerpt": "From 1926, when Lloyd George became leader of the Liberals, Keynes took a major role in defining the party's economic policy"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "edouard-daladier",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-radical",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1938,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/%C3%89douard_Daladier",
+      "locator": "characters 2315:2385; sha256 fcb4a1bb55377fbef4506b10797c29db14b795649fd420c5fbaef96709f93c94",
+      "claim": "달라디에는 1927~1930년과 1936~1938년 급진당 의장이었다.",
+      "excerpt": "Il est président du Parti radical de 1927 à 1930, puis de 1936 à 1938."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_radical_(France)",
+      "locator": "characters 11441:11543; sha256 1461147aef67748750e6861ceb43ddc5e347cc2939412a013b195c484ffcc22d",
+      "claim": "1927년 달라디에가 에두아르 에리오를 이어 당을 이끌었다.",
+      "excerpt": "En 1927, Édouard Daladier, un des Jeunes-Turcs du parti, succède à Édouard Herriot à la tête du parti."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/%C3%89douard_Daladier",
+      "locator": "characters 2081:2222; sha256 872058834b539861329e4a108abd3d41274ca2d9329db70e6e9068ad4cfc11df",
+      "claim": "달라디에는 급진사회당 후보에게 낙선한 뒤 그 당에 입당했다.",
+      "excerpt": "He subsequently sought election to the Paris Chamber of Deputies but lost to a Radical-Socialist Party candidate; he later joined that party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "vincent-badie",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-french-radical",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Vincent_Badie",
+      "locator": "characters 473:635; sha256 43c6cc093d1fd187cead981a54403c6335c9fd72f4752b8b0c6264ea517e80c9",
+      "claim": "바디는 젊은 시절부터 급진당에서 활동했다.",
+      "excerpt": "Avocat au barreau de Montpellier, il est élu engagé dès sa jeunesse au sein du Parti radical et entame dans les années 1930 une carrière politique d'abord locale."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vincent_Badie",
+      "locator": "characters 184:314; sha256 6a4d6d23f33968611f2d407cc07e31cfc3241037314732224043cf855cdc5046",
+      "claim": "바디는 1936년 급진당 후보로 하원의원에 당선되었다.",
+      "excerpt": "He was elected as Radical Party (PRS: Parti Radical Socialiste) candidate to the Chamber of Deputies in 1936 representing Hérault."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "albert-lebrun",
+   "activity": {
+    "functionId": "legislature",
+    "affiliationId": "party-french-democratic-alliance",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Albert_Lebrun",
+      "locator": "characters 866:1011; sha256 2b62c2e504265f7a34f75f618b3064cd24f55d010a1495eebd67d8553dc574a7",
+      "claim": "르브룅은 온건 공화파로서 민주공화동맹에 가입했다.",
+      "excerpt": "Républicain modéré, il rejoint l’Alliance républicaine démocratique, qui connaîtra plusieurs dénominations et avec laquelle il évoluera à droite."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Albert_Lebrun",
+      "locator": "characters 306:379; sha256 4af6e888814310f0ba8041ac3337a985c276383ee4d99febe55cf648d8bcaca6",
+      "claim": "르브룅은 중도우파 민주공화동맹 당원이었다.",
+      "excerpt": "He was a member of the centre-right Democratic Republican Alliance (ARD)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "paul-reynaud",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-democratic-alliance",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1938,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Paul_Reynaud",
+      "locator": "characters 2031:2261; sha256 6d5e830fdbe83692d4030b179fad6659b4e1bc7fa01a8526ba85195b95a6beb3",
+      "claim": "레노는 1919년 당선 직후 민주공화동맹으로 옮겨 그 부의장이 되었다.",
+      "excerpt": "Although he was first elected as part of the conservative \"Blue Horizon\" bloc in 1919, Reynaud shortly thereafter switched his allegiance to the centre-right Democratic Republican Alliance party, later becoming its vice-president."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Paul_Reynaud",
+      "locator": "characters 2540:2595; sha256 874fea570fc0a67d40691251f2303321bbd6db5f3dd988b44143698425dd3ae2",
+      "claim": "레노는 민주동맹 당원이었다.",
+      "excerpt": "Membre du parti de droite modérée Alliance démocratique"
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Alliance_r%C3%A9publicaine_d%C3%A9mocratique",
+      "locator": "characters 16669:16807; sha256 a1f0a5187b38f1b3f87c2aca8312d9f3795e4ea8691dfdba8b21e2ccbee53f57",
+      "claim": "레노는 1938년 뮌헨 협정 뒤 당에서 사임했다.",
+      "excerpt": "mené notamment par Paul Reynaud, Joseph Laniel et Louis Jacquinot (tous démissionnaires du parti à la suite des accords de Munich en 1938)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georges-bidault",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-mrp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1944,
+    "endYear": 1958,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Georges_Bidault",
+      "locator": "characters 9527:9694; sha256 92fc85ca5da13074b3ea6bf4b2f08cbd5a106a8e578c0bc24a835ad283bc831f",
+      "claim": "비도는 1944년 11월 26일 창당된 인민공화운동의 창당인 가운데 한 사람이었다.",
+      "excerpt": "Il est l'un des fondateurs du Mouvement républicain populaire (MRP, 26 novembre 1944), principale force politique chrétienne-démocrate qui ait jamais existé en France."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Mouvement_r%C3%A9publicain_populaire",
+      "locator": "characters 11744:11771; sha256 88cd612da47875fbf23700e1e728febd0de4862152d684d4b9a33bcf94c0c129",
+      "claim": "비도는 1949~1952년 인민공화운동 의장이었다.",
+      "excerpt": "Georges Bidault (1949-1952)"
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Georges_Bidault",
+      "locator": "characters 12898:13002; sha256 92fc85ca5da13074b3ea6bf4b2f08cbd5a106a8e578c0bc24a835ad283bc831f",
+      "claim": "비도는 1958년 인민공화운동과 결별하고 프랑스 기독교민주당을 만들었다.",
+      "excerpt": "Il se sépare du MRP et crée la Démocratie chrétienne de France qui n’aura qu’un succès électoral limité."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "charles-de-gaulle",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-rpf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1947,
+    "endYear": 1955,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Rally_of_the_French_People",
+      "locator": "characters 0:205; sha256 7085543a6aa6d5a1f73bf9edc92d91f7ef253002406e17a1ba250f56b7643bc1",
+      "claim": "프랑스 인민연합은 1947~1955년 존속했고 샤를 드골이 이끌었다.",
+      "excerpt": "The Rally of the French People (French: Rassemblement du Peuple Français [ʁasɑ̃bləmɑ̃ dy pœpl fʁɑ̃sɛ], RPF) was a right-wing French political party, existing from 1947 to 1955 and led by Charles de Gaulle."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Charles_de_Gaulle",
+      "locator": "characters 2272:2466; sha256 23e21e4a4cbdc80520aac4a8404cb06c500ff27b100314a641086f458e81c6c6",
+      "claim": "드골은 1947년 프랑스 인민연합을 창당했다.",
+      "excerpt": "Il fonde l'année suivante le Rassemblement du peuple français (RPF), mais son refus de tout compromis avec ce qu'il juge être un « régime des partis » l'écarte de toute responsabilité nationale."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "francois-de-la-rocque",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-psf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1936,
+    "endYear": 1940,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_social_fran%C3%A7ais",
+      "locator": "characters 0:239; sha256 c82252b521584b0498a8f78e6198ba978177db48e2230514b5ff2b9ab399d7c0",
+      "claim": "라 로크는 크루아드푀 해산 뒤 1936년 7월 6일 프랑스 사회당을 창당했다.",
+      "excerpt": "Le Parti social français (PSF) est un parti politique français de droite conservatrice à tendance nationaliste fondé le 6 juillet 1936 à la suite de la dissolution des Croix-de-Feu, par son chef le lieutenant-colonel François de La Rocque."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_social_fran%C3%A7ais",
+      "locator": "characters 37694:37814; sha256 c82252b521584b0498a8f78e6198ba978177db48e2230514b5ff2b9ab399d7c0",
+      "claim": "라 로크는 프랑스 사회당 의장이었다.",
+      "excerpt": "François de La Rocque, président du PSF, résistant (réseau Klan), arrêté par la Gestapo en 1943 et déporté en Allemagne."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pierre-taittinger",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-republican-federation",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+      "locator": "characters 11817:11880; sha256 80e5245b7c70fd1d5b6a4116afd4b0ec8de4426679dfe6e5dca0e063d049bf99",
+      "claim": "테탱제는 우파 정당인 공화연맹 당원이었다.",
+      "excerpt": "Il est membre d'un parti de droite, la Fédération républicaine."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+      "locator": "characters 17744:17865; sha256 80e5245b7c70fd1d5b6a4116afd4b0ec8de4426679dfe6e5dca0e063d049bf99",
+      "claim": "테탱제는 1931년 5월 공화연맹 전국평의회에서 공개적으로 사임했다.",
+      "excerpt": "Il s'éloigne alors de ce parti, démissionnant publiquement du Conseil national de la Fédération républicaine en mai 1931."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+      "locator": "characters 19371:19474; sha256 80e5245b7c70fd1d5b6a4116afd4b0ec8de4426679dfe6e5dca0e063d049bf99",
+      "claim": "테탱제는 다시 공화연맹에 가까워져 그 부의장 가운데 한 사람이 되었다.",
+      "excerpt": "Taittinger se rapproche à nouveau de la Fédération républicaine et en devient l'un des vice-présidents."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "engelbert-dollfuss",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-austrian-christian-social",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1934,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Engelbert_Dollfuss",
+      "locator": "characters 5123:5330; sha256 29fca57232e2062ae4c9df34849d7b86a774faf9420a4cc27b185dfd1da9d8e6",
+      "claim": "1932년 같은 기독사회당 소속인 미클라스 대통령이 돌푸스에게 총리직을 제안했다.",
+      "excerpt": "On 10 May 1932, Dollfuss, aged 39 and with only one year's experience in the Federal Government, was offered the office of Chancellor by President Wilhelm Miklas, also a member of the Christian-Social Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Engelbert_Dollfuss",
+      "locator": "characters 9578:9697; sha256 29fca57232e2062ae4c9df34849d7b86a774faf9420a4cc27b185dfd1da9d8e6",
+      "claim": "돌푸스는 1933년 9월 자신의 기독사회당을 다른 세력과 합쳐 조국전선을 만들었다.",
+      "excerpt": "In September 1933 Dollfuss merged his Christian Social Party with elements of other nationalist and conservative groups"
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Engelbert_Dollfu%C3%9F",
+      "locator": "characters 6302:6457; sha256 7f953459c5ca50b6c458c96506082bc2c56968cce602132fca9680ce564e54d5",
+      "claim": "1930년 돌푸스는 같은 당의 카를 바우고인이 이끄는 정부에서 연방철도 총재로 선임되었다.",
+      "excerpt": "Am 1. Oktober 1930 wurde er von der Bundesregierung unter seinem Parteifreund Carl Vaugoin zusätzlich zum Präsidenten der Bundesbahnen Österreichs gewählt."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "karl-renner",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-austrian-sdap",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1896,
+    "endYear": 1934,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Renner",
+      "locator": "characters 1128:1333; sha256 5498ef554bb17edb6f623e5d3bcc0c9453a832bf14a7e6c1f7334b1f13b11cfa",
+      "claim": "렌너는 1896년 오스트리아 사회민주노동자당에 입당했다.",
+      "excerpt": "In 1896, he joined the Social Democratic Workers' Party of Austria (SDAP), representing the party in the National Council (German: Reichsrat) from the 1907 elections until its dissolution in November 1918."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Karl_Renner",
+      "locator": "characters 89:179; sha256 ffd058fe0239535d1a798e407e48f5fdbf775056120230b6335030b616215590",
+      "claim": "렌너는 SDAP/SPÖ 소속 사회민주주의 정치인이었다.",
+      "excerpt": "war ein österreichischer sozialdemokratischer Politiker (SDAP/SPÖ), Staatsmann und Jurist."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}

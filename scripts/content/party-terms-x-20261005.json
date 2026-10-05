@@ -1,0 +1,981 @@
+{
+ "id": "party-terms-x-20261005",
+ "terms": [
+  {
+   "id": "national-revolutionary-party-afghanistan",
+   "affiliationId": "party-afghan-national-revolutionary",
+   "sources": [
+    "https://fa.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%D9%85%D9%84%DB%8C",
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8",
+    "https://en.wikipedia.org/wiki/National_Revolutionary_Party_of_Afghanistan",
+    "https://en.wikipedia.org/wiki/Mohammad_Daoud_Khan"
+   ],
+   "fields": {
+    "term": {
+     "ko": "민족혁명당 (아프가니스탄)",
+     "en": "National Revolutionary Party (Afghanistan)"
+    },
+    "original": "حزب انقلاب ملی (Hezb-e Enqelab-e Melli); ملي انقلابي ګوند",
+    "category": "parties",
+    "period": {
+     "ko": "1974–1978",
+     "en": "1974–1978"
+    },
+    "startYear": 1974,
+    "endYear": 1978,
+    "definition": {
+     "ko": "1973년 쿠데타로 왕정을 무너뜨린 무함마드 다우드 칸 대통령이 공화 정권의 지지 기반을 넓히려고 세운 아프가니스탄의 정당. 진보 세력을 하나로 묶는 우산 조직을 지향했고, 다른 정당이 모두 금지된 가운데 유일한 합법 정당이자 집권당이었다. 1978년 4월 사우르 혁명으로 다우드가 살해되면서 사라졌다.",
+     "en": "An Afghan party founded by President Mohammad Daoud Khan, who had overthrown the monarchy in the 1973 coup, to widen support for his republican regime. It aimed to be an umbrella for progressive forces and, with all other parties banned, was the ruling and only legal party. It disappeared when Daoud was killed in the Saur Revolution of April 1978."
+    },
+    "body": {
+     "ko": "다리어 출처에 따르면 민족혁명당은 1974년 무함마드 다우드 칸 대통령이 세웠다. 다우드는 1973년 무혈 쿠데타로 사촌인 국왕 무함마드 자히르 샤에게서 권력을 빼앗은 뒤, 공화 정권에 대한 대중의 지지를 얻으려고 이 당을 만들었다. 러시아어 출처도 1974~1978년 존속한 당으로, 그 기간 나라의 집권당이자 유일한 합법 정당이었다고 적는다.\n\n다우드는 이 당으로 1973년 자신의 집권을 도운 아프가니스탄 인민민주당에 대한 지지를 약화하려 했다. 이를 위해 당은 아프가니스탄의 모든 진보 분파를 아우르는 우산 조직이 되고자 했고, 지지를 모으기 위해 다른 정당들은 금지되었다. 영어 출처는 당이 반공 노선이었으면서도 대통령이 인민민주당원들에게 정부 참여를 요구하고 할크파와 파르참파의 해산을 촉구했다고 적는다. 다우드 인물 문서는 그가 1977년 당을 세웠고 같은 해 1월 로야 지르가가 대통령제 일당 체제를 담은 새 헌법을 승인했다고 적는다.\n\n당은 중앙위원회가 운영했고, 위원은 굴람 하이다르 라술리 소장, 국방장관 사이드 압둘라, 재무장관 압둘 마지드, 압둘 카이움 교수였다.\n\n1978년 4월 사우르 혁명으로 다우드와 그 가족이 살해되고 아프가니스탄 인민민주당이 권력을 잡으면서 당은 살아남지 못했다.",
+     "en": "According to the Dari source, the National Revolutionary Party was founded in 1974 by President Mohammad Daoud Khan. Daoud, who had taken power from his cousin King Mohammad Zahir Shah in a bloodless coup in 1973, formed it to win popular support for his republican regime. The Russian source likewise describes a party that existed from 1974 to 1978 and was then the ruling and only legal party in the country.\n\nDaoud also meant the party to undercut support for the People's Democratic Party of Afghanistan, which had helped him to power in 1973. To this end it sought to be an umbrella organisation for all progressive factions in Afghanistan, and other parties were banned to help it gather support. The English source adds that although the party was anti-communist, the president demanded that PDPA members join his government and called for the dissolution of the Khalq and Parcham factions. The article on Daoud dates the party's founding to 1977, the year in which a loya jirga approved, in January, a new constitution creating a presidential one-party system.\n\nThe party was run by a central committee made up of Major General Ghulam Haidar Rasuli, Defence Minister Sayyid Abdullah, Finance Minister Abdul Majid and Professor Abdul Qayyum.\n\nThe party did not survive the Saur Revolution of April 1978, in which Daoud and his family were killed and the People's Democratic Party of Afghanistan came to power."
+    },
+    "aliases": {
+     "ko": [
+      "아프가니스탄 민족혁명당"
+     ],
+     "en": [
+      "National Revolution Party (Afghanistan)",
+      "Hezb-e Enqelab-e Melli"
+     ]
+    },
+    "people": [
+     "mohammad-daoud-khan"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1974년 다우드가 창당, 공화 정권 지지 기반 확대·진보 세력 우산 조직, 다른 정당 금지, 1978년 사우르 혁명으로 소멸.",
+      "source": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%D9%85%D9%84%DB%8C",
+      "locator": "fa: lead; تاریخچه"
+     },
+     {
+      "field": "definition",
+      "claim": "1974~1978년 집권당이자 유일한 합법 정당.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8",
+      "locator": "ru: lead"
+     },
+     {
+      "field": "body",
+      "claim": "1973년 쿠데타 뒤 창당, 인민민주당 견제, 다른 정당 금지, 중앙위원 명단, 사우르 혁명.",
+      "source": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%D9%85%D9%84%DB%8C",
+      "locator": "fa: lead; تاریخچه"
+     },
+     {
+      "field": "body",
+      "claim": "반공 노선이면서 인민민주당원의 정부 참여 요구와 할크·파르참 해산 촉구.",
+      "source": "https://en.wikipedia.org/wiki/National_Revolutionary_Party_of_Afghanistan",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "다우드 인물 문서의 1977년 창당 서술과 1977년 1월 일당제 헌법.",
+      "source": "https://en.wikipedia.org/wiki/Mohammad_Daoud_Khan",
+      "locator": "en: Constitution of 1977"
+     },
+     {
+      "field": "period",
+      "claim": "1974~1978년 존속.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8",
+      "locator": "ru: lead"
+     },
+     {
+      "field": "people",
+      "claim": "다우드가 창당.",
+      "source": "https://en.wikipedia.org/wiki/National_Revolutionary_Party_of_Afghanistan",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "1974년 다우드가 창당.",
+      "source": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%D9%85%D9%84%DB%8C",
+      "locator": "fa: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "1978년 4월 사우르 혁명 뒤 소멸.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8",
+      "locator": "ru: lead; История"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wafd-party",
+   "affiliationId": "party-wafd",
+   "sources": [
+    "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+    "https://en.wikipedia.org/wiki/Wafd_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "와프드당",
+     "en": "Wafd Party"
+    },
+    "original": "حزب الوفد (Ḥizb al-Wafd)",
+    "category": "parties",
+    "period": {
+     "ko": "1918–1953, 1978–",
+     "en": "1918–1953, 1978–"
+    },
+    "startYear": 1918,
+    "definition": {
+     "ko": "제1차 세계대전 직후 사아드 자글룰이 이집트 독립을 요구하려고 꾸린 「이집트 대표단(와프드)」에서 출발한 이집트의 자유주의 민족주의 정당. 1919년 혁명을 거쳐 전쟁 직후부터 1930년대까지 가장 인기 있고 영향력 있는 정당이었고, 1923년 헌법 제정에 큰 역할을 했으며 1924년부터 1952년까지 대부분의 기간 내각을 맡았다. 1952년 혁명 뒤 1953년 1월 모든 정당과 함께 해산되었고, 1978년 「신와프드당」으로 다시 활동을 시작했다.",
+     "en": "An Egyptian liberal nationalist party that grew out of the \"Egyptian Delegation\" (Wafd) formed by Saad Zaghloul after the First World War to demand independence. After the Revolution of 1919 it was Egypt's most popular and influential party from the end of the war through the 1930s, played a major part in the 1923 constitution, and held office for most of the period from 1924 to 1952. It was dissolved with all other parties in January 1953 after the 1952 revolution and resumed activity in 1978 as the New Wafd Party."
+    },
+    "body": {
+     "ko": "아랍어 출처에 따르면 사아드 자글룰은 1918년 휴전 뒤 이집트 문제를 다루려고 이집트 대표단을 꾸리는 구상을 했다. 1918년 11월 13일 자글룰은 입법의회 동료 압둘 아지즈 파흐미, 알리 샤라위와 함께 영국 고등판무관 윈게이트를 만나 런던에 가서 이집트의 요구를 전하게 해 달라고 청했다. 윈게이트가 이들이 이집트 국민을 대표하지 않는다고 하자, 회견 한 시간 뒤 창립자들은 「이집트 대표단(와프드)」의 설립 규약을 정하고 자글룰을 대표로 뽑았으며, 대표 자격을 입증하려고 서명을 모았다. 영어 출처는 당이 1918년 11월에 창립되었다고 적는다.\n\n1919년 3월 8일 자글룰과 동료들이 체포되어 몰타로 유배되자 1919년 혁명이 터졌고, 이는 자글룰의 지도력과 와프드의 세력을 굳히는 계기가 되었다. 1924년 첫 실질적 총선에서 와프드는 입헌자유당, 국민당과 겨루어 의회 다수를 차지하고 당 대표 자글룰을 총리로 한 첫 의회 내각을 세웠다. 이후 와프드는 1924년부터 1952년까지 대부분의 기간 내각을 맡은 다수당이었고, 영어 출처는 1924년 선거에서 211석 가운데 179석, 1936년 선거에서 득표 89%와 157석을 얻었다고 적는다. 당 대표는 자글룰(1919~1927년 사망까지)과 무스타파 알나하스(1927~1953년 해산까지)였다.\n\n1936년 당은 청년들로 공개 준군사 조직 「푸른 셔츠단」을 만들었으나 1937년 준군사 조직을 금하는 칙령이 나왔다. 1936년 영국-이집트 조약을 둘러싼 대립 끝에 1938년 아흐마드 마히르와 마흐무드 파흐미 알누크라시가 제명되어 사드파 정당을 세웠고, 1942년에는 서기장 마크람 우바이드가 알나하스와 갈등 끝에 제명되어 「와프드 블록」을 만들었다. 영어 출처는 청년 동원의 실패와 1936년 조약 이후 영국 주둔에 대한 타협이 대중의 실망을 불렀다고 평가한다.\n\n1952년 자유장교단 혁명 뒤 혁명지도평의회가 1953년 1월 모든 정당을 해산하면서 와프드도 해산되었다. 당은 안와르 사다트 대통령이 복수 정당을 허용한 뒤인 1978년 「신와프드당」이라는 이름으로 정치 활동을 재개했고, 1946년 입당해 1948년 서기장을 지낸 푸아드 시라즈알딘이 그 대표가 되었다.",
+     "en": "According to the Arabic source, Saad Zaghloul conceived of forming an Egyptian delegation to take up the Egyptian question after the armistice of 1918. On 13 November 1918 Zaghloul and his Legislative Assembly colleagues Abd al-Aziz Fahmi and Ali Sha'rawi met the British High Commissioner Wingate to ask leave to go to London and present Egypt's demands. When Wingate suggested that they did not represent the Egyptian nation, the founders drew up the founding rules of the \"Egyptian Delegation\" (Wafd) within an hour of the meeting, chose Zaghloul as its head, and gathered signatures to prove their representative standing. The English source states that the party was founded in November 1918.\n\nThe arrest and exile of Zaghloul and his colleagues to Malta on 8 March 1919 set off the Revolution of 1919, which did much to establish Zaghloul's leadership and the Wafd's strength. In the first genuine legislative election in 1924 the Wafd defeated the Liberal Constitutional Party and the National Party, won a parliamentary majority and formed Egypt's first parliamentary government under its leader Zaghloul. Thereafter the Wafd, the majority party, held office for most of the period from 1924 to 1952; the English source records 179 of 211 seats in 1924 and 89% of the vote and 157 seats in 1936. Its leaders were Zaghloul (1919 until his death in 1927) and Mustafa el-Nahhas (1927 until the dissolution in 1953).\n\nIn 1936 the party formed an open paramilitary youth organisation, the \"Blue Shirts\", but a decree banning paramilitary organisations followed in 1937. Quarrels over the Anglo-Egyptian Treaty of 1936 led to the expulsion of Ahmad Mahir and Mahmoud Fahmi el-Nokrashy in 1938, who founded the Saadist party, and in 1942 secretary-general Makram Ebeid was expelled after a dispute with el-Nahhas and founded the Wafdist Bloc. The English source attributes the loss of popular support to the failure of youth mobilisation and to the party's accommodation of the British presence after the 1936 treaty.\n\nAfter the Free Officers' revolution of 1952 the Revolutionary Command Council dissolved all parties in January 1953, the Wafd among them. The party resumed political activity under the name New Wafd Party in 1978, after President Anwar Sadat permitted a multi-party system, under the leadership of Fouad Serageldin, who had joined the Wafd in 1946 and become its secretary-general in 1948."
+    },
+    "aliases": {
+     "ko": [
+      "와프드",
+      "신와프드당"
+     ],
+     "en": [
+      "Wafd",
+      "New Wafd Party",
+      "Hizb al-Wafd"
+     ]
+    },
+    "people": [
+     "saad-zaghloul"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "자유주의 민족주의 정당, 1차대전 뒤~1930년대 최대 정당, 1923년 헌법, 1952년 혁명 뒤 해산, 1978년 신와프드.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "1918년 11월 창립, 1953년 1월 해산.",
+      "source": "https://en.wikipedia.org/wiki/Wafd_Party",
+      "locator": "en: lead; Rise; Dissolution"
+     },
+     {
+      "field": "body",
+      "claim": "1918년 대표단 구상, 11월 13일 윈게이트 회견, 설립 규약과 자글룰 대표 선출, 1919년 유배와 혁명, 1924년 선거와 첫 의회 내각, 1924~1952년 집권.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: التأسيس"
+     },
+     {
+      "field": "body",
+      "claim": "당 대표 자글룰(1919~1927), 알나하스(1927~1953).",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: رؤساء حزب الوفد"
+     },
+     {
+      "field": "body",
+      "claim": "1938년 마히르·누크라시 제명과 사드파, 1942년 마크람 우바이드 제명과 와프드 블록, 1953년 1월 정당 해산.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: انشقاقات حزب الوفد"
+     },
+     {
+      "field": "body",
+      "claim": "1936년 푸른 셔츠단, 1937년 준군사 조직 금지 칙령.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: جماعة القمصان الزرقاء"
+     },
+     {
+      "field": "body",
+      "claim": "1924년 179/211석, 1936년 89%·157석, 청년 동원 실패, 영국 주둔 타협.",
+      "source": "https://en.wikipedia.org/wiki/Wafd_Party",
+      "locator": "en: Government party; Failures of youth mobilization; Accommodation of the British presence"
+     },
+     {
+      "field": "body",
+      "claim": "푸아드 시라즈알딘 1946년 입당, 1948년 서기장, 1978년 신와프드당 대표.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: أبرز الوزراء"
+     },
+     {
+      "field": "period",
+      "claim": "1918년 창립, 1953년 1월 해산, 1978년 신와프드당으로 재개.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: lead; انشقاقات حزب الوفد"
+     },
+     {
+      "field": "people",
+      "claim": "자글룰이 대표단 대표로 선출되고 1919~1927년 당 대표.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: التأسيس; رؤساء حزب الوفد"
+     },
+     {
+      "field": "startYear",
+      "claim": "1918년 창립.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D9%88%D9%81%D8%AF",
+      "locator": "ar: lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "palestine-communist-party-mandate",
+   "affiliationId": "party-palestine-communist",
+   "sources": [
+    "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+    "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A4%D7%9C%D7%92%D7%94_%D7%94%D7%A7%D7%95%D7%9E%D7%95%D7%A0%D7%99%D7%A1%D7%98%D7%99%D7%AA_%D7%A9%D7%9C_%D7%A4%D7%9C%D7%A9%D7%AA%D7%99%D7%A0%D7%94",
+    "https://en.wikipedia.org/wiki/Palestine_Communist_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "팔레스타인 공산당 (위임통치기)",
+     "en": "Palestine Communist Party (Mandatory Palestine)"
+    },
+    "original": "الحزب الشيوعي الفلسطيني; פאַלעסטינישע קומוניסטישע פּאַרטיי (PKP)",
+    "category": "parties",
+    "period": {
+     "ko": "1923–1948",
+     "en": "1923–1948"
+    },
+    "startYear": 1923,
+    "endYear": 1948,
+    "definition": {
+     "ko": "1923년 위임통치령 팔레스타인의 두 공산당이 합쳐 생긴 공산당으로, 1924년 코민테른 팔레스타인 지부로 인정되었다. 초기에는 유대인 이주 노동자가 대부분이었으나 반시온주의를 내걸었고, 코민테른의 요구로 아랍인 당원과 간부를 늘리는 「아랍화」를 추진했다. 1943년 민족 문제로 사실상 갈라져 아랍인 당원들은 민족해방동맹을 세웠고, 1948년 이스라엘 지역의 조직들이 합쳐 이스라엘 공산당이 되었다.",
+     "en": "The communist party of Mandatory Palestine, formed in 1923 by the merger of two communist parties and recognised in 1924 as the Palestinian section of the Comintern. Initially made up mostly of Jewish immigrant workers, it was nonetheless anti-Zionist, and at the Comintern's insistence it pursued \"Arabisation\" to bring in Arab members and cadres. In 1943 it effectively split over the national question, its Arab members founding the National Liberation League, and in 1948 the organisations within Israel merged to form the Communist Party of Israel."
+    },
+    "body": {
+     "ko": "아랍어 출처에 따르면 팔레스타인 공산주의 운동의 핵심은 1919년 3월 「포알레이 시온」에서 갈라져 나온 공산주의 집단이 결성한 「팔레스타인 사회주의노동자당」에서 시작되었다. 당은 1922년 요제프 베르거바르질라이가 이끄는 당과 하임 아우어바흐가 이끄는 당으로 갈라졌다가, 1923년 7월 제5차 대회에서 「팔레스타인 공산당」으로 통합했다. 이 대회는 아랍 민족운동을 영국 제국주의에 맞서는 기본 세력으로 보고 지지하기로 했고, 시온주의를 최종적으로 배격했다. 히브리어 출처는 당이 1923년 시온주의를 「영국 제국주의에 봉사하는 유대 부르주아 운동」으로 규정한 결의로 코민테른 가입 자격을 얻었다고 적는다.\n\n서기장 아우어바흐가 모스크바에서 협상한 끝에 코민테른 집행위원회는 당을 지부로 받아들이면서 유럽 이주 노동자 조직에서 「진정한 민족 정당」으로 바뀌도록 아랍 대중과 긴밀히 연결될 것을 요구했다. 히브리어 출처는 1924년 당이 히스타드루트에서 축출되고 코민테른 팔레스타인 지부가 되었다고 적는다. 당은 1924년 아랍어 주간지 「하이파」를 펴내고 아랍인 세포를 만들며, 리드완 알힐루와 나자티 시드키 같은 아랍인 간부를 모스크바 동방근로자공산대학에 보내 「아랍화」를 추진했다. 그러나 히브리어 출처는 1920년대 말까지 아랍인 당원은 소수에 그쳤다고 적는다.\n\n코민테른은 아랍화를 늦추던 유럽계 지도부를 여러 차례 교체했고, 1934년 리드완 알힐루가 서기장이 되어 1943년까지 그 자리에 있었다. 1943년 일부 유대인 당원이 반시온주의 노선을 누그러뜨리고 히스타드루트에 다시 가입하자고 주장하자, 그해 5월 중앙 지도부가 유대인이 이끄는 지부를 해산하고 일부 당원을 제명했다. 유대인 부분은 미쿠니스를 중심으로 당 밖에서 활동을 이어 갔고, 1943년 9월 하이파에서 푸아드 나사르, 에밀 하비비, 에밀 투마 등이 「팔레스타인 민족해방동맹」을 세웠다.\n\n1948년 9월 말 이스라엘이 장악한 지역에 남은 민족해방동맹 지부들이 팔레스타인 공산당과 합쳐 이스라엘 공산당을 이루었다. 아랍어 출처는 오늘날 라말라에 본부를 둔 팔레스타인 공산당이 이 역사적 정당과 민족해방동맹의 계승자를 자처한다고 적는다.",
+     "en": "According to the Arabic source, the nucleus of the communist movement in Palestine was the Socialist Workers' Party of Palestine, formed in March 1919 by a communist group that split from Poale Zion. It split in 1922 into a party led by Joseph Berger-Barzilai and one led by Haim Auerbach, which reunited as the Palestine Communist Party at the fifth congress in July 1923. That congress resolved to support the Arab national movement as a basic force resisting British imperialism and finally repudiated Zionism. The Hebrew source states that the 1923 resolution denouncing Zionism as \"a movement of the Jewish bourgeoisie serving British imperialism\" earned the party membership of the Comintern.\n\nAfter negotiations in Moscow by secretary-general Auerbach, the Comintern Executive admitted the party as a section on condition that it build the closest ties with the Arab masses and turn from an organisation of European immigrant workers into \"a genuine national party\". The Hebrew source records that in 1924 the party was expelled from the Histadrut and became the Palestinian section of the Comintern. The party pursued \"Arabisation\" by publishing an Arabic weekly, Haifa, from 1924, forming Arab cells and sending Arab cadres such as Radwan al-Hilu and Najati Sidqi to the Communist University of the Toilers of the East in Moscow. The Hebrew source notes, however, that only a handful of Arabs had joined by the end of the 1920s.\n\nThe Comintern replaced the European leadership that slowed Arabisation several times, and Radwan al-Hilu became secretary-general in 1934, holding the post until 1943. In 1943, when some Jewish members urged softening the anti-Zionist line and rejoining the Histadrut, the central leadership dissolved Jewish-led branches in May and expelled some members. The Jewish section continued outside the party around Mikunis, and in September 1943 Fuad Nassar, Emile Habibi, Emile Touma and others founded the National Liberation League in Palestine in Haifa.\n\nAt the end of September 1948 the League branches left in the areas controlled by Israel merged with the Palestine Communist Party to form the Communist Party of Israel. The Arabic source states that today's Palestinian Communist Party, based in Ramallah, regards itself as the successor of this historic party and of the National Liberation League."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Palestinian Communist Party (Mandate)",
+      "PKP (Palestine)"
+     ]
+    },
+    "people": [
+     "najati-sidqi"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1923년 두 당의 통합, 1924년 코민테른 지부, 유대인 다수·반시온주의.",
+      "source": "https://en.wikipedia.org/wiki/Palestine_Communist_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "아랍화 요구, 1943년 분열과 민족해방동맹, 1948년 이스라엘 공산당.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: العمال العرب وانحلال الحزب; عصبة التحرر الوطني; الحزب الشيوعي (في الداخل 1948)"
+     },
+     {
+      "field": "body",
+      "claim": "1919년 사회주의노동자당, 1922년 분열, 1923년 7월 제5차 대회 통합과 반시온주의 결의.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: نشأة الحزب وجذوره الأولى; حزب العمال الاشتراكي في فلسطين; المؤتمر الخامس والتحول للشيوعية"
+     },
+     {
+      "field": "body",
+      "claim": "아우어바흐의 모스크바 협상과 코민테른 가입 조건, 1924년 「하이파」, 아랍인 세포·간부 파견.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: نبذ ومعاداة الصهيونية; نشاطات الحزب والاندماج العربي; العمال العرب وانحلال الحزب"
+     },
+     {
+      "field": "body",
+      "claim": "1923년 반시온주의 결의로 코민테른 가입, 1924년 히스타드루트 축출, 아랍인 당원 소수.",
+      "source": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A4%D7%9C%D7%92%D7%94_%D7%94%D7%A7%D7%95%D7%9E%D7%95%D7%A0%D7%99%D7%A1%D7%98%D7%99%D7%AA_%D7%A9%D7%9C_%D7%A4%D7%9C%D7%A9%D7%AA%D7%99%D7%A0%D7%94",
+      "locator": "he: ראשיתה"
+     },
+     {
+      "field": "body",
+      "claim": "1934~1943년 알힐루 서기장, 1943년 5월 분열, 미쿠니스, 1943년 9월 민족해방동맹.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: العمال العرب وانحلال الحزب; عصبة التحرر الوطني; الحزب الشيوعي الفلسطيني –عصبة التحرر"
+     },
+     {
+      "field": "body",
+      "claim": "1948년 9월 말 이스라엘 공산당 결성, 오늘날 라말라의 당이 계승 자처.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: lead; الحزب الشيوعي (في الداخل 1948)"
+     },
+     {
+      "field": "period",
+      "claim": "1923년 통합, 1948년 이스라엘 공산당으로 합류.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: المؤتمر الخامس والتحول للشيوعية; الحزب الشيوعي (في الداخل 1948)"
+     },
+     {
+      "field": "people",
+      "claim": "나자티 시드키는 모스크바에 파견된 아랍인 간부였고 하이파 지부를 이끌었다.",
+      "source": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A4%D7%9C%D7%92%D7%94_%D7%94%D7%A7%D7%95%D7%9E%D7%95%D7%A0%D7%99%D7%A1%D7%98%D7%99%D7%AA_%D7%A9%D7%9C_%D7%A4%D7%9C%D7%A9%D7%AA%D7%99%D7%A0%D7%94",
+      "locator": "he: ראשיתה"
+     },
+     {
+      "field": "startYear",
+      "claim": "1923년 7월 제5차 대회에서 통합.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: المؤتمر الخامس والتحول للشيوعية"
+     },
+     {
+      "field": "endYear",
+      "claim": "1948년 9월 말 이스라엘 공산당으로 합류.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%B4%D9%8A%D9%88%D8%B9%D9%8A_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A",
+      "locator": "ar: الحزب الشيوعي (في الداخل 1948)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "somali-revolutionary-socialist-party",
+   "affiliationId": "party-somali-rsp",
+   "sources": [
+    "https://so.wikipedia.org/wiki/Xisbiga_Hantiwadaagga_Soomaaliyeed",
+    "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D9%8A_%D8%A7%D9%84%D8%AB%D9%88%D8%B1%D9%8A_%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84%D9%8A",
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+    "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "소말리아 혁명사회당",
+     "en": "Somali Revolutionary Socialist Party"
+    },
+    "original": "Xisbiga Hantiwadaagga Kacaanka Soomaaliyeed (XHKS); الحزب الاشتراكي الثوري الصومالي",
+    "category": "parties",
+    "period": {
+     "ko": "1976–1991",
+     "en": "1976–1991"
+    },
+    "startYear": 1976,
+    "endYear": 1991,
+    "definition": {
+     "ko": "1976년 무함마드 시아드 바레의 군사정권이 소련의 지도 아래 만든 소말리아 민주공화국의 집권당이자 유일한 합법 정당. 마르크스-레닌주의를 내세웠으나 이슬람 교리와 소말리 민족주의도 아울렀고, 당원은 가장 많을 때 약 2만 명이었다. 1991년 1월 시아드 바레 정권이 무너지면서 사라졌다.",
+     "en": "The ruling and only legal party of the Somali Democratic Republic, created in 1976 by Mohamed Siad Barre's military regime under Soviet guidance. It professed Marxism–Leninism while also embracing Islamic teachings and Somali nationalism, and had at most about 20,000 members. It ceased to exist when the Siad Barre regime fell in January 1991."
+    },
+    "body": {
+     "ko": "1969년 10월 21일 쿠데타 뒤 소말리아의 모든 정당이 금지되었고, 시아드 바레가 이끄는 군부는 사회주의 건설 노선을 선언했다. 러시아어 출처에 따르면 시아드 바레는 1971년 집권당 창설 의사를 밝혔고, 1976년 6월 27일 모가디슈에서 3,000명의 대의원이 모인 창립대회가 열렸다. 7월 1일 대회는 소말리아 혁명사회당 창당을 선포하고 당규·강령을 채택했으며, 최고혁명평의회를 해산하고 시아드 바레를 대통령으로 지명했다. 영어 출처에 따르면 대회는 시아드 바레를 서기장으로 뽑고, 그와 부통령 모함마드 알리 사마타르, 제2부통령 후세인 쿨미예 아프라, 아흐마드 술라이만 압둘라, 이스마일 알리 아부코르로 5인 정치국을 구성했다.\n\n아랍어 출처는 당이 마르크스-레닌주의 성향이면서 이슬람 교리와 소말리 민족주의를 아울렀고, 당원이 가장 많을 때 약 2만 명이었다고 적는다. 영어 출처는 당이 씨족을 넘어서는 정치 세력을 표방했으나 권력은 세 씨족에 집중되었고, 국가 정보기관과 나란히 움직이는 당 정보부서 「바드히스타 시스비가」를 두었다고 적는다. 1977년 에티오피아와의 전쟁 전까지 당은 소련 공산당, 독일 사회주의통일당과 관계를 맺었으나 동구권과 관계가 끊긴 뒤 이탈자들이 생겼다.\n\n1978년 4월 9일 쿠데타 시도 뒤, 1979년 1월 임시 당대회가 새 헌법안을 승인했고, 1979년 헌법은 일당제와 당의 지도적 역할을 규정했다. 그러나 1980년 10월 비상사태와 함께 최고혁명평의회가 부활해 당의 역할이 줄었고, 1981년 당은 아프리카 사회주의 인터내셔널에 가입했다. 1986년 11월 제3차 대회는 시아드 바레를 다시 서기장으로 뽑았다.\n\n1989년 12월 중앙위원회 임시 전원회의가 복수정당제를 되살리기로 했으나 내전을 막지 못했다. 1991년 1월 27일 시아드 바레 정권이 무너지면서 당은 사라졌다.",
+     "en": "After the coup of 21 October 1969 all Somali parties were banned, and the military led by Siad Barre proclaimed a course of building socialism. According to the Russian source, Siad Barre announced in 1971 his intention to form a ruling party, and on 27 June 1976 a founding congress of 3,000 delegates opened in Mogadishu. On 1 July the congress proclaimed the Somali Revolutionary Socialist Party, adopted its statutes and programme, dissolved the Supreme Revolutionary Council and named Siad Barre president. According to the English source the congress elected Siad Barre general secretary and formed a five-member politburo of Barre, Vice President Mohammad Ali Samatar, Second Vice President Hussein Kulmiye Afrah, Ahmad Sulaymaan Abdullah and Ismail Ali Abukor.\n\nThe Arabic source describes the party as Marxist–Leninist in orientation while embracing Islamic teachings and Somali nationalism, with a peak membership of about 20,000. The English source says the party was meant to transcend clan lines but power was concentrated in three clans, and that it had its own intelligence branch, Baadhista xisbiga, working in parallel with state intelligence. Before the war with Ethiopia in 1977 the party built ties with the Communist Party of the Soviet Union and the Socialist Unity Party of Germany, but after relations with the Eastern Bloc were broken splinter groups broke away.\n\nAfter the attempted coup of 9 April 1978, an extraordinary congress in January 1979 approved a draft constitution, and the 1979 constitution established the one-party system and the leading role of the party. With the state of emergency of October 1980, however, the Supreme Revolutionary Council was restored and the party's role declined; in 1981 it joined the Socialist Inter-African. The third congress in November 1986 re-elected Siad Barre general secretary.\n\nIn December 1989 an extraordinary plenum of the Central Committee resolved to restore a multi-party system, but this could not halt the civil war. The party ceased to exist when the Siad Barre regime fell on 27 January 1991."
+    },
+    "aliases": {
+     "ko": [
+      "XHKS"
+     ],
+     "en": [
+      "SRSP",
+      "Xisbiga Hantiwadaagga Kacaanka Soomaaliyeed"
+     ]
+    },
+    "people": [
+     "mohamed-siad-barre",
+     "mohammad-ali-samatar",
+     "hussein-kulmiye-afrah"
+    ],
+    "events": [
+     "somali-socialist-transition-1969-1976"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1976~1991년 집권당, 마르크스-레닌주의와 이슬람·민족주의, 최대 2만 명, 시아드 바레 몰락 뒤 소멸.",
+      "source": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B2%D8%A8_%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%D9%8A_%D8%A7%D9%84%D8%AB%D9%88%D8%B1%D9%8A_%D8%A7%D9%84%D8%B5%D9%88%D9%85%D8%A7%D9%84%D9%8A",
+      "locator": "ar: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "1976~1991년 소말리아를 다스린 정당.",
+      "source": "https://so.wikipedia.org/wiki/Xisbiga_Hantiwadaagga_Soomaaliyeed",
+      "locator": "so: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "시아드 바레 군사정권이 소련 지도 아래 창설.",
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "en: History"
+     },
+     {
+      "field": "body",
+      "claim": "1969년 정당 금지, 1971년 창당 의사, 1976년 6월 27일 창립대회, 7월 1일 창당 선포, 1979년 임시대회·헌법, 1980년 비상사태, 1981년 아프리카 사회주의 인터내셔널, 1986년 제3차 대회, 1989년 12월 복수정당제, 1991년 1월 27일 소멸.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "ru: Основание партии; История СРСП"
+     },
+     {
+      "field": "body",
+      "claim": "서기장 시아드 바레와 5인 정치국, 씨족 집중, 당 정보부서, 동구권 관계와 이탈.",
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "en: History; Organisation"
+     },
+     {
+      "field": "period",
+      "claim": "1976~1991년.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "ru: lead"
+     },
+     {
+      "field": "people",
+      "claim": "시아드 바레, 사마타르, 쿨미예 아프라가 5인 정치국원.",
+      "source": "https://en.wikipedia.org/wiki/Somali_Revolutionary_Socialist_Party",
+      "locator": "en: History"
+     },
+     {
+      "field": "startYear",
+      "claim": "1976년 7월 1일 창당 선포.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "ru: Основание партии"
+     },
+     {
+      "field": "endYear",
+      "claim": "1991년 1월 27일 정권 붕괴와 함께 소멸.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BC%D0%B0%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F",
+      "locator": "ru: История СРСП"
+     }
+    ]
+   }
+  },
+  {
+   "id": "peoples-revolutionary-party-of-benin",
+   "affiliationId": "party-benin-prpb",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+    "https://en.wikipedia.org/wiki/People's_Revolutionary_Party_of_Benin",
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8_%D0%91%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0"
+   ],
+   "fields": {
+    "term": {
+     "ko": "베냉 인민혁명당",
+     "en": "People's Revolutionary Party of Benin"
+    },
+    "original": "Parti de la révolution populaire du Bénin (PRPB)",
+    "category": "parties",
+    "period": {
+     "ko": "1975–1990",
+     "en": "1975–1990"
+    },
+    "startYear": 1975,
+    "endYear": 1990,
+    "definition": {
+     "ko": "1975년 마티외 케레쿠 장군이 세운 베냉 인민공화국의 정당으로, 1975년 11월 30일 헌법으로 유일 정당이 되었다. 마르크스-레닌주의를 표방하며 국유화와 농지·교육 개혁을 폈으나 1980년대 경제 위기 속에 1989년 이 이념을 버렸고, 1990년 복수정당제 복원과 함께 사라졌다.",
+     "en": "The party of the People's Republic of Benin, founded in 1975 by General Mathieu Kérékou and made the sole party by the constitution of 30 November 1975. It professed Marxism–Leninism and carried out nationalisations and agrarian and educational reforms, but amid the economic crisis of the 1980s it abandoned that ideology in 1989 and disappeared in 1990 with the restoration of multi-party politics."
+    },
+    "body": {
+     "ko": "프랑스어 출처에 따르면 베냉 인민혁명당은 군사 쿠데타로 집권한 마티외 케레쿠 정권이 들어선 1975년에 만들어졌고, 1975년 헌법으로 베냉 인민공화국의 유일 정당이 되었다. 헌법은 당에 「국가 사회생활의 모든 활동」을 이끄는 넓은 역할을 주었다. 러시아어 출처는 케레쿠가 1976년 창립대회에서 당 중앙위원회 의장으로 뽑혀 줄곧 그 자리를 지켰다고 적는다.\n\n1979년, 1984년, 1989년 의회 선거에는 이 당만이 후보를 냈고, 명부는 직업 범주별 할당제에 따라 꾸려졌다. 당이 집권한 15년 동안 베냉은 냉전에서 소련 편에 섰고, 국유화, 농지·학교·대학 개혁, 민주집중제, 정치경찰을 통해 독재 체제가 되었다. 1986년 무렵 경제 상황이 심각해지자 정권은 「마르크스-베냉주의」에 빗댄 「방임-레닌주의」라는 조롱을 들었고, 정치범 고문 같은 인권 침해 속에 교회와 노조가 점점 공공연히 정권에 반대했다.\n\n1989년 경제·사회 위기 속에 당은 마르크스-레닌주의를 포기해야 했지만 1990년까지 나라를 이끌었다. 1990년 복수정당제가 복원되고 과도정부가 세워진 뒤 당은 사라졌고, 진보세력연합이 그 뒤를 이었다. 케레쿠는 1991년 대통령 선거에서 니세포르 소글로에게 졌다가 1996년 다시 집권했다.",
+     "en": "According to the French source, the People's Revolutionary Party of Benin was created in 1975 with the advent of the regime of Mathieu Kérékou, who had taken power in a military coup, and became the sole party of the People's Republic of Benin under the 1975 constitution, which gave it a very broad role covering \"all activities of national social life\". The Russian source states that Kérékou was elected chairman of the party's Central Committee at its founding congress in 1976 and held the post throughout.\n\nIn the parliamentary elections of 1979, 1984 and 1989 the party was the only one to stand, with lists drawn up under quotas for socio-professional categories. During its fifteen years in power Benin sided with the USSR in the Cold War and, through nationalisations, agrarian, school and university reforms, democratic centralism and a political police, became a dictatorship. By 1986 the economy was in critical condition and the regime, already mocked as \"Marxism-Beninism\", earned the nickname \"laxism-Leninism\"; amid human rights abuses including torture of political prisoners, the church and the unions opposed it ever more openly.\n\nAmid the economic and social crisis of 1989 the party had to renounce Marxism–Leninism but remained at the head of the country until 1990. When multi-party politics was restored and a transitional government set up in 1990 the party disappeared, succeeded by the Union of Forces of Progress. Kérékou lost the 1991 presidential election to Nicéphore Soglo before returning to power in 1996."
+    },
+    "aliases": {
+     "ko": [
+      "PRPB"
+     ],
+     "en": [
+      "Parti de la révolution populaire du Bénin",
+      "PRPB"
+     ]
+    },
+    "people": [
+     "mathieu-kerekou"
+    ],
+    "events": [
+     "beninese-socialist-transition-1974-1990"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1975년 케레쿠가 창당, 1975년 11월 30일 헌법으로 유일 정당, 마르크스-레닌주의, 1990년 소멸.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "fr: lead"
+     },
+     {
+      "field": "body",
+      "claim": "1975년 헌법상 역할, 1979·1984·1989년 단독 선거, 소련 편, 국유화·개혁·정치경찰, 1986년 경제 위기, 인권 침해, 1989년 이념 포기, 1990년 소멸과 진보세력연합, 1991년 소글로 패배.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "fr: Historique; Politique"
+     },
+     {
+      "field": "body",
+      "claim": "케레쿠는 1976년 창립대회에서 중앙위 의장에 선출되어 줄곧 재임.",
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%B8_%D0%91%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0",
+      "locator": "ru: lead"
+     },
+     {
+      "field": "period",
+      "claim": "1975년 창당, 1990년 소멸.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "fr: lead; Historique"
+     },
+     {
+      "field": "people",
+      "claim": "케레쿠가 창당.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "fr: lead; Historique"
+     },
+     {
+      "field": "startYear",
+      "claim": "1975년 창당.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "fr: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "1990년 소멸.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_de_la_r%C3%A9volution_populaire_du_B%C3%A9nin",
+      "locator": "fr: Historique"
+     }
+    ]
+   }
+  },
+  {
+   "id": "dahomeyan-unity-party",
+   "affiliationId": "party-dahomeyan-unity",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+    "https://en.wikipedia.org/wiki/Dahomeyan_Unity_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "다호메 통일당",
+     "en": "Dahomeyan Unity Party"
+    },
+    "original": "Parti dahoméen de l'unité (PDU)",
+    "category": "parties",
+    "period": {
+     "ko": "1960–1963",
+     "en": "1960–1963"
+    },
+    "startYear": 1960,
+    "endYear": 1963,
+    "definition": {
+     "ko": "1960년 11월 13일 위베르 마가의 다호메 민주연합, 수루미강 아피티의 다호메 민족주의자당, 민족해방운동 등이 합쳐 생긴 다호메 공화국(지금의 베냉)의 정당. 그해 선거에서 국회 60석을 모두 차지했고, 1961년 주요 야당이 금지되면서 유일 합법 정당이 되었다. 1963년 10월 군사 쿠데타로 마가가 쫓겨난 뒤 해산되었다.",
+     "en": "A party of the Republic of Dahomey (now Benin) formed on 13 November 1960 by the merger of Hubert Maga's Dahomeyan Democratic Rally, Sourou-Migan Apithy's party, the National Liberation Movement and others. It won all 60 seats in that year's election and became the sole legal party when the main opposition was banned in 1961. It was dissolved after Maga was overthrown in a military coup in October 1963."
+    },
+    "body": {
+     "ko": "프랑스어 출처에 따르면 다호메 통일당은 1960년 11월 13일 위베르 마가가 이끄는 다호메 민주연합(RDD), 수루미강 아피티가 이끄는 다호메 민족주의자당(PND), 장 플리야와 알베르 테보에즈르가 함께 세운 민족해방운동(MLN), 그리고 여러 작은 이탈 세력이 합쳐 생겼고, 마가가 새 당의 지도자가 되었다. 북부 이슬람권 주민에 기반한 RDD와 남동부 요루바계에 기반한 PND의 지지층을 묶은 이 당은 종족·지역 분열 극복, 국민 통합, 긴축으로 국가 재정 균형, 아프리카 통일을 목표로 내걸고 「아프리카 사회주의」를 택했다.\n\n마가는 1960년 선거를 앞두고 새 헌법으로 선거 제도를 바꾸어 당이 국회 60석을 모두 차지하게 했고, 마가가 대통령, 아피티가 부통령이 되었다. 1961년 3월 21일 첫 대회에서 당은 아프리카 민주연합(RDA)에 가입하기로 했고, RDA는 기존 지부였던 쥐스탱 아오마데그베의 다호메 민주연맹(UDD) 대신 이 당을 다호메 지부로 받아들였다. UDD는 1961년 4월 10일 해산·금지되었고, 정보 담당 국무비서 알베르 테보에즈르가 5월 28일 쿠데타 음모 적발을 발표한 뒤 아오마데그베가 체포되면서 다호메는 일당제로 넘어갔다.\n\n마가는 창당 때 당 의장이었다가 1962년 당규 개정 뒤 서기장이 되었고, 정치국은 25명이었다. 1963년 10월 노조가 총파업을 촉구하는 가운데 크리스토프 소글로 대령이 이끄는 군이 27일 마가를 몰아냈고, 소글로는 칙령으로 당을 해산했다. 그 뒤 아오마데그베와 아피티가 새 유일 정당인 다호메 민주당을 만들었다.",
+     "en": "According to the French source, the Dahomeyan Unity Party was born on 13 November 1960 from the merger of Hubert Maga's Dahomeyan Democratic Rally (RDD), Sourou-Migan Apithy's Party of Dahomeyan Nationalists (PND), the National Liberation Movement (MLN) co-founded by Jean Pliya and Albert Tévoédjrè, and several small dissident groups, with Maga as leader of the new formation. Uniting the RDD's base among the Islamised population of the north and the PND's Yoruba base in the south-east, it set itself the goals of overcoming ethnic and regional divisions, national rallying, balancing the state budget through austerity and African unity, and opted for \"African socialism\".\n\nBefore the 1960 election Maga had a new constitution adopted that changed the electoral system and let the party win all 60 seats in the National Assembly, with Maga as President and Apithy as Vice-President. At its first conference on 21 March 1961 the party decided to join the African Democratic Rally (RDA), which accepted it as its Dahomeyan section in place of Justin Ahomadégbé's Dahomeyan Democratic Union (UDD). The UDD was dissolved and banned on 10 April 1961, and after Albert Tévoédjrè, Secretary of State for Information, announced on 28 May that a plot had been foiled, Ahomadégbé was arrested and Dahomey entered the era of the single party.\n\nMaga was the party's president at its founding and became its secretary-general after a change of statutes in 1962; its political bureau had 25 members. In October 1963, as the unions called for a general strike, the army led by Colonel Christophe Soglo overthrew Maga on the 27th, and Soglo dissolved the party by ordinance. Ahomadégbé and Apithy then formed a new single party, the Dahomeyan Democratic Party."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Parti dahoméen de l'unité"
+     ]
+    },
+    "people": [
+     "albert-tevoedjre"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1960년 11월 13일 합당, 60석 독식, 1961년 유일 정당, 1963년 해산.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: lead; Naissance; Vers le parti unique"
+     },
+     {
+      "field": "body",
+      "claim": "합당 세력과 마가 지도, 지역 기반, 강령과 아프리카 사회주의.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: Naissance"
+     },
+     {
+      "field": "body",
+      "claim": "1960년 선거, RDA 가입, UDD 금지, 테보에즈르의 음모 발표, 일당제.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: Vers le parti unique"
+     },
+     {
+      "field": "body",
+      "claim": "마가 의장·서기장, 25인 정치국, 1963년 10월 소글로 쿠데타와 해산, 다호메 민주당.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: Composition du bureau; Disparition"
+     },
+     {
+      "field": "period",
+      "claim": "1960년 11월 13일 창당, 1963년 해산.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: lead"
+     },
+     {
+      "field": "people",
+      "claim": "테보에즈르는 MLN 공동 창립자이자 당 행정서기.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: Naissance"
+     },
+     {
+      "field": "startYear",
+      "claim": "1960년 11월 13일 창당.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_dahom%C3%A9en_de_l'unit%C3%A9",
+      "locator": "fr: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "1963년 해산.",
+      "source": "https://en.wikipedia.org/wiki/Dahomeyan_Unity_Party",
+      "locator": "en: History"
+     }
+    ]
+   }
+  },
+  {
+   "id": "renaissance-party-of-benin",
+   "affiliationId": "party-benin-renaissance",
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Renaissance_du_B%C3%A9nin",
+    "https://en.wikipedia.org/wiki/Benin_Rebirth_Party",
+    "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Soglo"
+   ],
+   "fields": {
+    "term": {
+     "ko": "베냉 르네상스당",
+     "en": "Renaissance Party of Benin"
+    },
+    "original": "Renaissance du Bénin (RB)",
+    "category": "parties",
+    "period": {
+     "ko": "1992–",
+     "en": "1992–"
+    },
+    "startYear": 1992,
+    "definition": {
+     "ko": "1992년 3월 24일 로진 비에라 소글로가 남편 니세포르 소글로 대통령을 뒷받침하려고 세운 베냉의 자유주의 정당. 1995년 총선에서 제1당이 되었으나 니세포르 소글로는 1996년과 2001년 대통령 선거에서 마티외 케레쿠에게 졌다. 1994년부터 니세포르 소글로가 당을 이끌었다.",
+     "en": "A liberal Beninese party founded on 24 March 1992 by Rosine Vieyra Soglo to support her husband, President Nicéphore Soglo. It became the largest party in the 1995 legislative election, but Nicéphore Soglo lost the presidential elections of 1996 and 2001 to Mathieu Kérékou. Nicéphore Soglo led the party from 1994."
+    },
+    "body": {
+     "ko": "프랑스어 출처에 따르면 베냉 르네상스당은 1991년 대통령에 당선된 남편 니세포르 소글로를 뒷받침하려고 로진 비에라 소글로가 1992년 3월 24일 세웠고, 처음에는 그가 당을 이끌었다. 영어 출처는 로진 비에라 소글로가 새 정당을 세운 첫 베냉 여성이며, 정치 엘리트의 지지가 부족한 대통령을 받쳐 주려는 것이 창당 목적이었다고 적는다. 니세포르 소글로 인물 문서는 그가 1994년 당 지도자가 되었다고 적는다.\n\n당은 1995년 총선에서 83석 가운데 20석을 얻어 제1당이 되었으나, 1996년 대통령 선거에서 니세포르 소글로가 마티외 케레쿠에게 졌다. 1999년 총선에서 89석 가운데 27석으로 회복했지만, 2001년 대통령 선거에서 소글로가 다시 졌고 2003년 총선에서는 15석에 그쳤다.\n\n영어 출처에 따르면 니세포르 소글로가 나이 제한으로 출마할 수 없던 2006년 대통령 선거에는 아들 레아디 소글로가 당 후보로 나서 4위를 했고, 2007년 총선에서는 당이 「역동적 민주주의 동맹」에 참여했다. 니세포르 소글로는 2003년 이 당을 기반으로 코토누 시장이 되었다.",
+     "en": "According to the French source, the Renaissance Party of Benin was founded on 24 March 1992 by Rosine Vieyra Soglo to support her husband Nicéphore Soglo, elected president in 1991, and she led it at first. The English source adds that she was the first Beninese woman to found a new party, and that its purpose was to give political backing to a president who lacked support from the political elite. The article on Nicéphore Soglo states that he became leader of the party in 1994.\n\nThe party won 20 of 83 seats in the 1995 legislative election, becoming the largest political force, but Nicéphore Soglo was defeated by Mathieu Kérékou in the 1996 presidential election. It recovered to 27 of 89 seats in 1999, but Soglo lost the presidential election again in 2001 and the party won only 15 seats in 2003.\n\nAccording to the English source, in the 2006 presidential election, which Nicéphore Soglo could not contest because of the age limit, his son Lehady Soglo stood as the party's candidate and came fourth, and in the 2007 legislative election the party took part in the Alliance for a Dynamic Democracy. Nicéphore Soglo became Mayor of Cotonou in 2003 with the party's backing."
+    },
+    "aliases": {
+     "ko": [
+      "베냉 부흥당"
+     ],
+     "en": [
+      "Renaissance du Bénin",
+      "Benin Rebirth Party"
+     ]
+    },
+    "people": [
+     "nicephore-soglo"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1992년 3월 24일 로진 비에라 소글로가 남편을 위해 창당, 1995년 제1당, 1996·2001년 패배.",
+      "source": "https://fr.wikipedia.org/wiki/Renaissance_du_B%C3%A9nin",
+      "locator": "fr: lead; Histoire"
+     },
+     {
+      "field": "definition",
+      "claim": "자유주의 정당, 니세포르 소글로가 이끔.",
+      "source": "https://en.wikipedia.org/wiki/Benin_Rebirth_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "창당 경위, 1995·1999·2003년 총선, 1996·2001년 대선.",
+      "source": "https://fr.wikipedia.org/wiki/Renaissance_du_B%C3%A9nin",
+      "locator": "fr: lead; Histoire"
+     },
+     {
+      "field": "body",
+      "claim": "첫 여성 창당자, 창당 목적, 2006년 레아디 소글로, 2007년 동맹.",
+      "source": "https://en.wikipedia.org/wiki/Benin_Rebirth_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "1994년 니세포르 소글로 당 지도자, 2003년 코토누 시장.",
+      "source": "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Soglo",
+      "locator": "en: Biography"
+     },
+     {
+      "field": "period",
+      "claim": "1992년 창당, 현존.",
+      "source": "https://fr.wikipedia.org/wiki/Renaissance_du_B%C3%A9nin",
+      "locator": "fr: lead"
+     },
+     {
+      "field": "people",
+      "claim": "니세포르 소글로가 1994년부터 당 지도자.",
+      "source": "https://en.wikipedia.org/wiki/Nic%C3%A9phore_Soglo",
+      "locator": "en: Biography"
+     },
+     {
+      "field": "startYear",
+      "claim": "1992년 3월 24일 창당.",
+      "source": "https://fr.wikipedia.org/wiki/Renaissance_du_B%C3%A9nin",
+      "locator": "fr: lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "arema-madagascar",
+   "affiliationId": "party-arema",
+   "sources": [
+    "https://mg.wikipedia.org/wiki/Andry_sy_Rihana_Enti-Manavotra_an'_i_Madagasikara",
+    "https://fr.wikipedia.org/wiki/Association_pour_la_renaissance_de_Madagascar",
+    "https://en.wikipedia.org/wiki/Malagasy_Revolutionary_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "마다가스카르 혁명전위 (AREMA)",
+     "en": "AREMA (Vanguard of the Malagasy Revolution)"
+    },
+    "original": "AREMA: Antokin'ny Revolisiona Malagasy; Andry sy Rihana Enti-Manavotra an'i Madagasikara",
+    "category": "parties",
+    "period": {
+     "ko": "1976–",
+     "en": "1976–"
+    },
+    "startYear": 1976,
+    "definition": {
+     "ko": "1976년 디디에 라치라카가 마다가스카르 민주공화국을 세우면서 만든 정당으로, 처음 이름은 「마다가스카르 혁명전위」였다. 공식적으로 일당제는 아니었으나 사실상 제2공화국 정치를 지배했고, 1993년 라치라카가 선거에서 진 뒤 1997년 재집권했다. 2002년 정치 위기로 라치라카가 망명한 뒤 분열했으며, AREMA라는 약칭은 유지한 채 여러 번 이름을 바꾸었다.",
+     "en": "A Malagasy party founded by Didier Ratsiraka in 1976 when he established the Democratic Republic of Madagascar, originally named the Vanguard of the Malagasy Revolution. Although Madagascar was not formally a one-party state, it dominated the politics of the Second Republic; it lost power in 1993 and returned in 1997. It split after Ratsiraka's exile in the political crisis of 2002, and has changed its name several times while keeping the acronym AREMA."
+    },
+    "body": {
+     "ko": "말라가시어 출처에 따르면 AREMA는 디디에 라치라카가 1976년 만든 마다가스카르 정당이다. 프랑스어 출처에 따르면 1975년 군사 지도부에게서 권력을 넘겨받은 라치라카는 사회주의 혁명 헌장(「붉은 책」)을 펴내고 국민투표를 거쳐 마다가스카르 민주공화국 대통령이 된 뒤 「마다가스카르 혁명전위(AREMA)」를 세웠다. 영어 출처는 창당일을 1976년 3월 19일로 적는다.\n\n마다가스카르는 공식적으로 일당제가 아니라 「혁명수호전선」에 가입한 정당만 허용하는 단일 연합 체제였지만, 실제로는 AREMA가 제2공화국을 지배했다. 영어 출처는 당이 마르크스-레닌주의와 과학적 사회주의를 내세웠고 조선로동당과 특히 가까웠다고 적는다. 라치라카는 1982년과 1989년 재선되었으나 좌파와 자유주의 야당의 이중 반대에 부딪혔고, 1991년부터의 과도기를 거쳐 1993년 선거에서 알베르 자피에게 졌다.\n\n라치라카는 1997년 초 「마다가스카르 쇄신전위」로 이름을 바꾼 AREMA를 업고 대통령 선거에서 이겨 다시 집권했고, 1997년 11월 피에로 라자오나리벨로가 당 전국서기로 뽑혀 당을 재건했다. 당은 1998년 총선, 2001년 상원 선거 등에서 크게 이겼으나, 2001년 12월 대통령 선거 뒤 마르크 라발로마나나와의 대립으로 정치 위기가 일어났고 라치라카는 2002년 7월 나라를 떠났다.\n\n그 뒤 당은 라자오나리벨로파와 라치라카파로 갈라졌고, 2002년 총선에서 3석에 그쳤으며 2013년 선거에 불참해 의석을 잃었으나 해산되지는 않았다. 영어 출처에 따르면 당은 약칭 AREMA를 유지하며 여러 번 이름을 바꾸었고, 2020년에는 말라가시어 이름 「마다가스카르 혁명당(Antoko Revolisionera Malagasy)」을 채택했다.",
+     "en": "According to the Malagasy source, AREMA is a Malagasy party created by Didier Ratsiraka in 1976. According to the French source, Ratsiraka, who received power from the Military Directorate in 1975, published a Charter of the Malagasy Socialist Revolution (the \"Red Book\"), was elected President of the Democratic Republic of Madagascar after a referendum, and founded the Vanguard of the Malagasy Revolution (AREMA). The English source dates its founding to 19 March 1976.\n\nMadagascar was formally not a one-party state but a single-coalition system in which only parties belonging to the Front for the Defence of the Revolution were allowed; in practice AREMA dominated the Second Republic. The English source says the party espoused Marxism–Leninism and scientific socialism and was particularly close to the Workers' Party of Korea. Ratsiraka was re-elected in 1982 and 1989 but faced a double opposition from the left and from liberals, and after a transition from 1991 he lost the 1993 election to Albert Zafy.\n\nRatsiraka returned to power in early 1997 by winning the presidential election under the banner of AREMA, renamed Vanguard for the Renovation of Madagascar, and Pierrot Rajaonarivelo was elected national secretary in November 1997 to reorganise the party. It won the 1998 legislative and 2001 Senate elections, among others, but the dispute with Marc Ravalomanana after the December 2001 presidential election led to a political crisis, and Ratsiraka left the country in July 2002.\n\nThe party then split into Rajaonarivelo and Ratsiraka factions; it won only 3 seats in 2002, lost its seats after boycotting the 2013 elections, but was not dissolved. According to the English source it changed its name several times while keeping the acronym AREMA, and in 2020 adopted the Malagasy name Antoko Revolisionera Malagasy (Malagasy Revolutionary Party)."
+    },
+    "aliases": {
+     "ko": [
+      "AREMA",
+      "아레마"
+     ],
+     "en": [
+      "AREMA",
+      "Vanguard of the Malagasy Revolution",
+      "Association for the Rebirth of Madagascar",
+      "Malagasy Revolutionary Party"
+     ]
+    },
+    "people": [
+     "didier-ratsiraka"
+    ],
+    "events": [
+     "malagasy-socialist-transition-1972-1975"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1976년 라치라카가 창당, 1996~1997년 무렵 이름 변경.",
+      "source": "https://mg.wikipedia.org/wiki/Andry_sy_Rihana_Enti-Manavotra_an'_i_Madagasikara",
+      "locator": "mg: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "단일 연합 체제에서 제2공화국 지배, 1993년 패배, 1997년 재집권, 2002년 위기.",
+      "source": "https://fr.wikipedia.org/wiki/Association_pour_la_renaissance_de_Madagascar",
+      "locator": "fr: Création; Pouvoir de 1975 à 2002; Crise politique de 2002"
+     },
+     {
+      "field": "definition",
+      "claim": "약칭을 유지한 이름 변경.",
+      "source": "https://en.wikipedia.org/wiki/Malagasy_Revolutionary_Party",
+      "locator": "en: Name"
+     },
+     {
+      "field": "body",
+      "claim": "붉은 책, 민주공화국, 혁명수호전선, 1982·1989년 재선, 1993년 자피에게 패배, 1997년 재집권과 라자오나리벨로, 2001~2002년 위기, 분열, 2013년 불참.",
+      "source": "https://fr.wikipedia.org/wiki/Association_pour_la_renaissance_de_Madagascar",
+      "locator": "fr: Création; Pouvoir de 1975 à 2002; Crise politique de 2002; Depuis 2010"
+     },
+     {
+      "field": "body",
+      "claim": "1976년 3월 19일 창당, 마르크스-레닌주의, 조선로동당과의 관계, 2002년 3석, 이름 변경과 2020년 말라가시어 이름.",
+      "source": "https://en.wikipedia.org/wiki/Malagasy_Revolutionary_Party",
+      "locator": "en: Name; History; Ideology"
+     },
+     {
+      "field": "period",
+      "claim": "1976년 창당, 현존.",
+      "source": "https://fr.wikipedia.org/wiki/Association_pour_la_renaissance_de_Madagascar",
+      "locator": "fr: lead; Depuis 2010"
+     },
+     {
+      "field": "people",
+      "claim": "라치라카가 창당.",
+      "source": "https://mg.wikipedia.org/wiki/Andry_sy_Rihana_Enti-Manavotra_an'_i_Madagasikara",
+      "locator": "mg: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "1976년 창당.",
+      "source": "https://mg.wikipedia.org/wiki/Andry_sy_Rihana_Enti-Manavotra_an'_i_Madagasikara",
+      "locator": "mg: lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tanganyika-african-national-union",
+   "affiliationId": "party-tanu",
+   "sources": [
+    "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+    "https://en.wikipedia.org/wiki/Tanganyika_African_National_Union"
+   ],
+   "fields": {
+    "term": {
+     "ko": "탕가니카 아프리카 민족연합",
+     "en": "Tanganyika African National Union (TANU)"
+    },
+    "original": "Tanganyika African National Union (TANU)",
+    "category": "parties",
+    "period": {
+     "ko": "1954–1977",
+     "en": "1954–1977"
+    },
+    "startYear": 1954,
+    "endYear": 1977,
+    "definition": {
+     "ko": "1954년 7월 7일 탕가니카 아프리카인 협회를 바꾸어 세운 탕가니카의 민족주의 정당으로, 초대 의장은 줄리어스 니에레레였다. 식민 통치 아래 모든 선거에서 이기고 1961년 독립을 이끌었으며, 1962년 헌법으로 유일 정당이 되었다. 1977년 잔지바르의 아프로시라지당과 합쳐 혁명당(CCM)이 되었다.",
+     "en": "A Tanganyikan nationalist party founded on 7 July 1954 by transforming the Tanganyika African Association, with Julius Nyerere as its first chairman. It won every election under colonial rule and led the country to independence in 1961, becoming the sole party under the 1962 constitution. In 1977 it merged with the Afro-Shirazi Party of Zanzibar to form Chama Cha Mapinduzi (CCM)."
+    },
+    "body": {
+     "ko": "스와힐리어 출처에 따르면 TANU는 정치보다 문화에 치우쳤던 탕가니카 아프리카인 협회(TAA)에서 1954년 7월 7일 만들어졌고, 초대 의장은 줄리어스 캄바라게 니에레레였다. 니에레레는 1953년 TAA 회장으로 뽑혔고, 1953년 10월 10일 니에레레, 압둘와히드 사이크스, 앨리 사이크스, 도사 아지즈, 존 루피아가 TAA를 완전한 정당으로 바꾸는 방안을 논의했다. 창당 때 니에레레가 당원증 1번을 받았다. 영어 출처는 17명의 창립자를 적는다.\n\nTANU는 식민 통치 아래 모든 선거에서 이겼고, 1961년 독립까지 탕가니카를 이끄는 정당이 되었다. 1962년 헌법은 사회주의 나라들의 일당제를 본떠 TANU를 유일 정당으로 만들었다. 영어 출처에 따르면 1964년부터 당은 「탄자니아 아프리카 민족연합」으로 불렸고, 노동자·농민이 주요 생산·교환 수단을 통제하는 자립 경제의 사회주의 국가 건설을 정책으로 삼았다(「우자마」, 「아루샤 선언」).\n\n1977년 2월 5일 TANU는 잔지바르의 집권당 아프로시라지당과 합쳐 지금의 혁명당(차마 차 마핀두지, CCM)이 되었다.",
+     "en": "According to the Swahili source, TANU was formed on 7 July 1954 from the Tanganyika African Association (TAA), which had been more cultural than political, and its first chairman was Julius Kambarage Nyerere. Nyerere had been elected president of the TAA in 1953, and on 10 October 1953 Nyerere, Abdulwahid Sykes, Ally Sykes, Dossa Aziz and John Rupia met to discuss turning the TAA into a full political party. At the founding Nyerere received TANU membership card No. 1. The English source lists seventeen founders.\n\nTANU won every election under colonial rule and became the party leading Tanganyika until independence in 1961. The 1962 constitution made TANU the sole party, following the one-party model of socialist countries. According to the English source the party was called the Tanzania African National Union from 1964, and its policy was to build a self-reliant socialist state with the major means of production and exchange under the control of peasants and workers (Ujamaa; the Arusha Declaration).\n\nOn 5 February 1977 TANU merged with the Afro-Shirazi Party, the ruling party of Zanzibar, to form the present Chama Cha Mapinduzi (CCM)."
+    },
+    "aliases": {
+     "ko": [
+      "TANU",
+      "탄자니아 아프리카 민족연합"
+     ],
+     "en": [
+      "TANU",
+      "Tanzania African National Union"
+     ]
+    },
+    "people": [
+     "julius-nyerere"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1954년 7월 7일 TAA에서 창당, 초대 의장 니에레레, 식민 통치하 선거 승리, 1961년 독립, 1962년 유일 정당, 1977년 CCM.",
+      "source": "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "sw: lead"
+     },
+     {
+      "field": "body",
+      "claim": "1953년 니에레레 TAA 회장, 1953년 10월 10일 회합, 당원증 1번.",
+      "source": "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "sw: Mtiririko wa upatikanaji uhuru"
+     },
+     {
+      "field": "body",
+      "claim": "17명 창립자, 1964년 개칭, 사회주의 정책, 1977년 2월 5일 합당.",
+      "source": "https://en.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "1954년 창당, 1977년 CCM으로 합당.",
+      "source": "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "sw: lead"
+     },
+     {
+      "field": "people",
+      "claim": "니에레레가 초대 의장.",
+      "source": "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "sw: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "1954년 7월 7일 창당.",
+      "source": "https://sw.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "sw: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "1977년 2월 5일 아프로시라지당과 합당.",
+      "source": "https://en.wikipedia.org/wiki/Tanganyika_African_National_Union",
+      "locator": "en: lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chama-cha-mapinduzi",
+   "affiliationId": "party-ccm",
+   "sources": [
+    "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+    "https://en.wikipedia.org/wiki/Chama_Cha_Mapinduzi"
+   ],
+   "fields": {
+    "term": {
+     "ko": "혁명당 (탄자니아)",
+     "en": "Chama Cha Mapinduzi (CCM)"
+    },
+    "original": "Chama cha Mapinduzi (CCM)",
+    "category": "parties",
+    "period": {
+     "ko": "1977–",
+     "en": "1977–"
+    },
+    "startYear": 1977,
+    "definition": {
+     "ko": "1977년 2월 5일 본토의 탕가니카 아프리카 민족연합(TANU)과 잔지바르의 아프로시라지당이 합쳐 생긴 탄자니아의 집권당. 1992년까지 유일 합법 정당이었고, 복수정당제가 돌아온 뒤에도 모든 대통령 선거에서 이기며 연합공화국과 잔지바르의 대통령을 모두 배출했다. 오랫동안 「우자마와 자립」 노선을 따랐다.",
+     "en": "The ruling party of Tanzania, formed on 5 February 1977 by the merger of the mainland Tanganyika African National Union (TANU) and the Afro-Shirazi Party of Zanzibar. It was the only legal party until 1992 and, even after multi-party politics returned, has won every presidential election and supplied every president of the Union and of Zanzibar. For many years it followed the line of Ujamaa and self-reliance."
+    },
+    "body": {
+     "ko": "스와힐리어 출처에 따르면 혁명당(차마 차 마핀두지, CCM)은 1977년 2월 5일 줄리어스 니에레레가 이끄는 본토의 TANU와 잔지바르의 아프로시라지당이 합쳐 생겼다. 이 합당은 본토와 섬 사이의 결속을 다지고 일당제 시기 연합공화국을 이끌 단일 정당을 만들려는 것이었다. 영어 출처에 따르면 1977년부터 1992년까지 유일 합법 정당이었고, 당 전국 의장이 5년마다 대통령 후보로 자동 지명되어 국민투표로 확인받았다.\n\n당은 오랫동안 1967년 「아루샤 선언」으로 정책의 힘을 얻은 「우자마와 자립」 노선을 따랐고, 이에 따라 경제가 공공의 손에 놓이고 우자마 마을에서의 공동생활이 강조되었다. 영어 출처는 오늘날 당이 혼합경제 노선을 따르며, 권위주의적이라는 평을 받는다고 적는다.\n\n1992년 7월 1일 복수정당제가 다시 도입된 뒤에도 당은 1995년부터 모든 대통령 선거에서 이기고 의회 다수를 유지했으나, 야당은 공정성과 개표 조작 문제를 제기했다. 당 의장은 줄리어스 니에레레(1977~1990), 알리 하산 음위니(1990~1996), 벤저민 음카파(1996~2006), 자카야 키퀘테(2006~2016), 존 마구풀리(2016~2021), 사미아 술루후 하산(2021~ )이다.",
+     "en": "According to the Swahili source, Chama Cha Mapinduzi (CCM) was formed on 5 February 1977 by the merger of the mainland TANU, led by Julius Nyerere, and the Afro-Shirazi Party of Zanzibar. The merger was meant to strengthen solidarity between the mainland and the islands and to create a single party to lead the United Republic in the one-party era. According to the English source it was the only legal party from 1977 to 1992, and every five years its national chairman was automatically nominated for president and confirmed by referendum.\n\nFor many years the party followed the line of Ujamaa and self-reliance, given policy force by the Arusha Declaration of 1967, under which the economy was placed in public hands and communal life in Ujamaa villages was stressed. The English source says that today the party espouses a mixed economic approach and has been described as authoritarian.\n\nAfter multi-party politics was reintroduced on 1 July 1992, the party won every presidential election from 1995 onwards and kept its parliamentary majority, though the opposition raised complaints about fairness and vote-rigging. Its chairmen have been Julius Nyerere (1977–1990), Ali Hassan Mwinyi (1990–1996), Benjamin Mkapa (1996–2006), Jakaya Kikwete (2006–2016), John Magufuli (2016–2021) and Samia Suluhu Hassan (2021– )."
+    },
+    "aliases": {
+     "ko": [
+      "차마 차 마핀두지",
+      "탄자니아 혁명당",
+      "CCM"
+     ],
+     "en": [
+      "Chama Cha Mapinduzi",
+      "CCM",
+      "Party of the Revolution (Tanzania)"
+     ]
+    },
+    "people": [
+     "julius-nyerere"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "1977년 2월 5일 TANU·ASP 합당, 집권당, 복수정당제 뒤에도 모든 대선 승리, 우자마와 자립.",
+      "source": "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+      "locator": "sw: lead; Historia; Itikadi"
+     },
+     {
+      "field": "definition",
+      "claim": "1977~1992년 유일 합법 정당.",
+      "source": "https://en.wikipedia.org/wiki/Chama_Cha_Mapinduzi",
+      "locator": "en: History"
+     },
+     {
+      "field": "body",
+      "claim": "합당 목적, 우자마·아루샤 선언, 선거, 역대 의장.",
+      "source": "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+      "locator": "sw: lead; Itikadi; Uchaguzi"
+     },
+     {
+      "field": "body",
+      "claim": "1977~1992년 유일 정당, 의장 자동 지명, 1992년 7월 1일 개헌, 혼합경제, 권위주의 평가.",
+      "source": "https://en.wikipedia.org/wiki/Chama_Cha_Mapinduzi",
+      "locator": "en: lead; History; Ideology"
+     },
+     {
+      "field": "period",
+      "claim": "1977년 창당, 현존.",
+      "source": "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+      "locator": "sw: lead"
+     },
+     {
+      "field": "people",
+      "claim": "니에레레가 1977~1990년 의장.",
+      "source": "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+      "locator": "sw: Uchaguzi"
+     },
+     {
+      "field": "startYear",
+      "claim": "1977년 2월 5일 창당.",
+      "source": "https://sw.wikipedia.org/wiki/Chama_cha_Mapinduzi",
+      "locator": "sw: lead"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,886 @@
+{
+ "id": "party-terms-w-20261005",
+ "terms": [
+  {
+   "id": "japan-democratic-party-1954",
+   "affiliationId": "party-japan-democratic",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%B0%91%E4%B8%BB%E5%85%9A",
+    "https://en.wikipedia.org/wiki/Japan_Democratic_Party"
+   ],
+   "fields": {
+    "term": {
+     "ko": "일본민주당",
+     "en": "Japan Democratic Party"
+    },
+    "original": "日本民主党 (Nihon Minshutō)",
+    "category": "parties",
+    "period": {
+     "ko": "1954–1955",
+     "en": "1954–1955"
+    },
+    "startYear": 1954,
+    "endYear": 1955,
+    "definition": {
+     "ko": "1954년 11월 자유당의 하토야마 이치로계와 개진당 등 반(反)요시다 보수 세력이 모여 만든 일본의 보수 정당. 창당 직후 제1차 하토야마 내각을 세웠고 1955년 총선에서 제1당이 되었다. 1955년 11월 자유당과 합당(보수합동)해 자유민주당을 결성하면서 사라졌다.",
+     "en": "A Japanese conservative party formed in November 1954 by the anti-Yoshida conservatives, chiefly the Hatoyama Ichirō group of the Liberal Party and the Kaishintō. It formed the first Hatoyama cabinet soon after its founding and became the largest party in the 1955 general election. It disappeared in November 1955 when it merged with the Liberal Party (the “conservative merger”) to form the Liberal Democratic Party."
+    },
+    "body": {
+     "ko": "일본어 출처에 따르면 1954년 일본 정계는 전전 2대 보수 정당의 계보를 잇는 자유당·개진당과, 좌우로 갈라진 일본사회당이 정립한 상태였다. 제5차 요시다 내각은 자유당 단독 여당에 개진당의 각외 협력으로 유지되었으나, 요시다 시게루의 「원맨」 체제가 길어지면서 하토야마 이치로계 반주류파와 당내 항쟁이 이어졌다. 1954년 3월 조선(造船) 비리를 계기로 자유당과 개진당을 합친 보수 신당 구상이 나왔다가 6월에 좌절되자, 그 협의회를 이용해 자유당 하토야마계·개진당·일본자유당이 반요시다 신당을 추진했고, 11월 24일 일본민주당이 창당되었다. 요시다는 중의원 해산을 시도했으나 실패했고, 12월 10일 제1차 하토야마 이치로 내각이 출범했다.\n\n영어 출처는 창당자로 하토야마 이치로, 전 외무대신 시게미쓰 마모루, 훗날 총리가 되는 기시 노부스케를 들고, 하토야마가 1953년 자유당을 떠나 만든 세력과 시게미쓰가 이끈 개진당이 합쳐 생겼다고 적는다. 시게미쓰는 당 부총재를 지냈다. 소수 여당이던 민주당은 1955년 1월 24일 중의원을 해산했고, 2월 27일 제27회 총선에서 제1당이 되었으나 과반에는 미치지 못했다. 사회당은 좌우파를 합치면 민주당과 거의 맞먹는 의석을 얻었다.\n\n사회당의 성장에 맞서 민주당과 자유당의 합동, 이른바 보수합동이 정치 일정에 올랐다. 민주당에서는 미키 부키치 총무회장과 기시 노부스케 간사장이 합동을 이끌었으나, 미키 다케오·마쓰무라 겐조 등 옛 개진당 좌파는 보수·혁신 양당제가 건전한 의회정치를 해친다며 반대했다. 1955년 10월 13일 사회당 재통일과 재계의 요구에 힘입어 11월 15일 보수합동이 실현되어 자유민주당이 결성되었다. 같은 해 8월에는 교과서의 편향을 문제 삼은 소책자 『우려할 만한 교과서 문제』를 펴내 논쟁을 일으켰다. 일본어 출처는 자민당 안의 세이와카이 등 파벌이 이 당의 흐름을 이었으며, 「보수 본류」인 자유당계에 대비해 「보수 방류」로 불렸다고 적는다.",
+     "en": "According to the Japanese source, Japanese politics in 1954 was a three-way contest between the Liberal Party and the Kaishintō, heirs of the two prewar conservative parties, and the Japan Socialist Party, split into left and right wings. The fifth Yoshida cabinet rested on the Liberal Party alone with outside cooperation from the Kaishintō, but the prolonged “one-man” rule of Yoshida Shigeru fed a long intra-party struggle with the anti-mainstream Hatoyama Ichirō faction. In March 1954, amid the shipbuilding scandal, a new conservative party merging the Liberals and the Kaishintō was proposed; when this collapsed in June, its joint council was used to plan an anti-Yoshida party of the Liberal Hatoyama faction, the Kaishintō and the Japan Liberal Party, and the Japan Democratic Party was founded on 24 November. Yoshida tried and failed to dissolve the House of Representatives, and the first Hatoyama Ichirō cabinet took office on 10 December.\n\nThe English source names Ichirō Hatoyama, former foreign minister Mamoru Shigemitsu and future Prime Minister Nobusuke Kishi as founders, and says the party arose from the merger of the group Hatoyama had led out of the Liberal Party in 1953 with the Shigemitsu-led Kaishintō. Shigemitsu served as the party’s vice-president. As a minority ruling party, the Democrats dissolved the House of Representatives on 24 January 1955; in the 27th general election of 27 February they became the largest party but fell short of a majority, while the Socialists, left and right combined, won almost as many seats.\n\nWith the Socialists rising, a merger of the Democrats and the Liberals, the so-called conservative merger, came onto the agenda. In the Democratic Party it was driven by General Council chairman Miki Bukichi and secretary-general Nobusuke Kishi, while former left-leaning Kaishintō members such as Miki Takeo and Matsumura Kenzō opposed it, arguing that a two-party system of conservatives and progressives would hinder healthy parliamentary politics. Spurred by the reunification of the Socialists on 13 October 1955 and by demands from business, the merger was realised on 15 November 1955 and the Liberal Democratic Party was formed. In August that year the party had published a pamphlet on “deplorable” bias in school textbooks, which provoked controversy. The Japanese source says LDP factions such as the Seiwakai carried on its lineage and were called the “conservative side-stream”, as opposed to the Liberal “mainstream”."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Nihon Minshutō"
+     ]
+    },
+    "people": [
+     "mamoru-shigemitsu"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 24 Nov 1954 by the Hatoyama faction of the Liberals, the Kaishintō and the Japan Liberal Party; first Hatoyama cabinet; largest party in 1955; merged into the LDP on 15 Nov 1955.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%B0%91%E4%B8%BB%E5%85%9A",
+      "locator": "ja: 冒頭; 党史"
+     },
+     {
+      "field": "body",
+      "claim": "Three-party situation in 1954; Yoshida one-man rule; failed merger plan; founding 24 Nov 1954; first Hatoyama cabinet 10 Dec; dissolution 24 Jan 1955 and 27 Feb election; conservative merger led by Miki Bukichi and Kishi, opposed by Miki Takeo and Matsumura; LDP 15 Nov 1955; textbook pamphlet; Seiwakai lineage.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%B0%91%E4%B8%BB%E5%85%9A",
+      "locator": "ja: 党史; 教科書問題"
+     },
+     {
+      "field": "body",
+      "claim": "Founded by Hatoyama, Shigemitsu and Kishi on 24 Nov 1954 from Hatoyama’s group and the Kaishintō; merged with the Liberals on 15 Nov 1955.",
+      "source": "https://en.wikipedia.org/wiki/Japan_Democratic_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Existed from 1954 to 1955.",
+      "source": "https://en.wikipedia.org/wiki/Japan_Democratic_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 24 November 1954.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%B0%91%E4%B8%BB%E5%85%9A",
+      "locator": "ja: 党史"
+     },
+     {
+      "field": "endYear",
+      "claim": "Merged into the LDP on 15 November 1955.",
+      "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%B0%91%E4%B8%BB%E5%85%9A",
+      "locator": "ja: 党史"
+     }
+    ]
+   }
+  },
+  {
+   "id": "liberal-democratic-party-japan",
+   "affiliationId": "party-japanese-ldp",
+   "sources": [
+    "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+    "https://en.wikipedia.org/wiki/Liberal_Democratic_Party_(Japan)"
+   ],
+   "fields": {
+    "term": {
+     "ko": "자유민주당 (일본)",
+     "en": "Liberal Democratic Party (Japan)"
+    },
+    "original": "自由民主党 (Jiyū Minshutō, 自民党)",
+    "category": "parties",
+    "period": {
+     "ko": "1955–",
+     "en": "1955–"
+    },
+    "startYear": 1955,
+    "definition": {
+     "ko": "1955년 11월 자유당과 일본민주당이 합당(보수합동)해 만든 일본의 보수 정당. 일본사회당과 함께 「55년 체제」를 이루며 1993년까지 38년 동안 단독으로 정권을 잡았다. 1993~1994년과 2009~2012년 두 차례 야당이 되었을 뿐 전후 일본에서 가장 오래 여당을 지냈다.",
+     "en": "A Japanese conservative party formed in November 1955 by the merger of the Liberal Party and the Japan Democratic Party (the “conservative merger”). Together with the Japan Socialist Party it made up the “1955 system” and governed alone for 38 years until 1993. Apart from two spells in opposition, 1993–1994 and 2009–2012, it has been the longest-serving ruling party in postwar Japan."
+    },
+    "body": {
+     "ko": "일본어 출처에 따르면 자유민주당은 일본사회당의 성장을 우려한 자유당과 일본민주당이 합쳐 1955년 11월 15일 결당대회를 열어 출범했다. 앞서 10월 13일 좌우로 갈라졌던 사회당이 재통일하자 재계의 압력 속에 요시다 시게루와 하토야마 이치로의 항쟁이 끝나고 보수합동이 실현되었으며, 중의원 299명·참의원 118명의 단일 보수 정당이 생겼다. 출처는 당이 이타가키 다이스케의 자유당을 원류로, 전전의 입헌정우회와 입헌민정당을 기원으로 삼는다고 적는다. 1958년 총선에서 자민당과 사회당이 의석의 99% 이상을 차지하면서 자민당 우위의 「55년 체제」가 자리 잡았다. 출처는 또 당이 결성 직전인 1954년부터 1964년까지 미국 중앙정보국(CIA)의 자금 지원을 받은 사실이 뒷날 드러났으며, 미국 정부는 이를 인정했으나 자민당은 부인한다고 적는다.\n\n당 운영은 오랫동안 집행부의 힘이 약하고 중진들이 만든 「파벌」 사이의 흥정으로 이루어졌는데, 출처는 한 선거구에 여러 후보를 내야 하는 중선거구제를 그 원인으로 들고 금권정치의 온상이 되었다고 적는다. 1960년대에는 이케다 내각의 소득배증계획과 사토 내각의 장기 집권으로 고도성장기를 이끌었고, 1970년대에는 다나카 가쿠에이의 금맥 문제와 1976년 록히드 사건, 같은 해 총선의 첫 과반 실패로 「보혁 백중」 시대를 겪었다.\n\n1993년 미야자와 내각 불신임 뒤 치른 총선에서 과반에 이르지 못해 호소카와 모리히로의 비자민·비공산 연립정권이 들어서면서, 결당 이후 이어진 단독 장기 집권이 끝났다. 1994년 6월 사회당 위원장 무라야마 도미이치를 총리로 내세운 자민·사회·사키가케 연립으로 여당에 복귀했고, 1999년부터 공명당과 연립을 이루었다. 2001년 이후 고이즈미 준이치로가 「성역 없는 구조개혁」을 내걸고 장기 집권했다.\n\n2009년 8월 총선에서 119석에 그쳐 민주당에 정권을 내주고 처음으로 중의원 제1당 자리를 잃었다. 2012년 12월 총선에서 294석을 얻어 공명당과 함께 정권에 복귀했고, 이후 2020년까지 아베 신조의 「아베 1강」 체제가 이어졌다. 공명당과의 연립은 2025년 10월 끝났고, 그 뒤 일본 유신회와 협력해 정권을 이어 가고 있다.",
+     "en": "According to the Japanese source, the Liberal Democratic Party was launched at a founding convention on 15 November 1955 by the merger of the Liberal Party and the Japan Democratic Party, alarmed by the rise of the Japan Socialist Party. After the Socialists, split into left and right wings, reunited on 13 October, pressure from business ended the struggle between Yoshida Shigeru and Hatoyama Ichirō and the conservative merger was achieved, creating a single conservative party with 299 members of the House of Representatives and 118 of the House of Councillors. The source traces the party to Itagaki Taisuke’s Liberal Party and to the prewar Rikken Seiyūkai and Rikken Minseitō. In the 1958 general election the LDP and the Socialists together took more than 99 percent of the seats, establishing the LDP-dominated “1955 system”. The source also says it later emerged that from 1954, just before its formation, until 1964 the party received funding from the US Central Intelligence Agency; the US government has acknowledged this, while the LDP denies it.\n\nFor a long time the party leadership was weak and politics ran on bargaining between “factions” formed by senior politicians; the source attributes this to the multi-member constituency system, which required several candidates per district, and says it bred money politics. In the 1960s it led the high-growth era through the Ikeda cabinet’s income-doubling plan and the long Satō government; in the 1970s Tanaka Kakuei’s money scandal, the Lockheed affair of 1976 and the party’s first loss of a majority in that year’s election brought an era of near parity with the opposition.\n\nIn 1993, after a no-confidence vote against the Miyazawa cabinet, the party fell short of a majority in the ensuing election and Hosokawa Morihiro’s non-LDP, non-Communist coalition took power, ending the single-party rule maintained since the party’s founding. In June 1994 it returned to government in a coalition with the Socialists and Sakigake under Socialist chairman Murayama Tomiichi as prime minister, and from 1999 it governed in coalition with Kōmeitō. From 2001 Koizumi Jun’ichirō held power for a long period under the banner of “structural reform without sanctuaries”.\n\nIn the August 2009 election it won only 119 seats, handing power to the Democratic Party and losing its position as the largest party in the House of Representatives for the first time. Winning 294 seats in December 2012, it returned to power with Kōmeitō, and Abe Shinzō’s dominance continued until 2020. The coalition with Kōmeitō ended in October 2025, after which the party has governed in cooperation with Nippon Ishin no Kai."
+    },
+    "aliases": {
+     "ko": [
+      "일본 자유민주당",
+      "일본 자민당"
+     ],
+     "en": [
+      "Jiyū Minshutō",
+      "Jimintō"
+     ]
+    },
+    "people": [
+     "mamoru-shigemitsu"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed in 1955 by the merger of the Liberal Party and the Japan Democratic Party; formed the 1955 system with the JSP; 38 years in power until 1993; in opposition 1993–1994 and 2009–2012; longest-serving ruling party in postwar Japan.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 冒頭; 概説"
+     },
+     {
+      "field": "body",
+      "claim": "Founding convention 15 Nov 1955; JSP reunification; 299+118 members; origins; 1958 election; CIA funding 1954–1964.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 概説; 保守合同による結党と55年体制成立"
+     },
+     {
+      "field": "body",
+      "claim": "Factions and multi-member districts; income doubling; Satō; Tanaka, Lockheed, first loss of majority 1976.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 概説; 高度経済成長と党安定期; 保革伯仲と党内抗争"
+     },
+     {
+      "field": "body",
+      "claim": "1993 loss of power and Hosokawa coalition; 1994 coalition with JSP and Sakigake; coalition with Kōmeitō from 1999; Koizumi.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 55年体制崩壊、他党との連立時代の到来; 聖域なき構造改革と野党再転落"
+     },
+     {
+      "field": "body",
+      "claim": "2009 defeat with 119 seats; 2012 return with 294 seats; Abe dominance to 2020; end of Kōmeitō coalition Oct 2025 and cooperation with Ishin.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 冒頭; 聖域なき構造改革と野党再転落; 再度の政権与党復帰と安倍一強"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1955 and still active as Japan’s ruling party.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 冒頭; 概説"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founding convention on 15 November 1955.",
+      "source": "https://ja.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E6%B0%91%E4%B8%BB%E5%85%9A_(%E6%97%A5%E6%9C%AC)",
+      "locator": "ja: 保守合同による結党と55年体制成立"
+     }
+    ]
+   }
+  },
+  {
+   "id": "democratic-party-cambodia",
+   "affiliationId": "party-cambodian-democratic",
+   "sources": [
+    "https://km.wikipedia.org/wiki/%E1%9E%82%E1%9E%8E%E1%9E%94%E1%9E%80%E1%9F%92%E1%9E%9F%E1%9E%94%E1%9F%92%E1%9E%9A%E1%9E%87%E1%9E%B6%E1%9E%92%E1%9E%B7%E1%9E%94%E1%9E%8F%E1%9F%81%E1%9E%99%E1%9F%92%E1%9E%99_(%E1%9E%80%E1%9E%98%E1%9F%92%E1%9E%96%E1%9E%BB%E1%9E%87%E1%9E%B6)",
+    "https://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_(Cambodge)",
+    "https://en.wikipedia.org/wiki/Democratic_Party_(Cambodia)"
+   ],
+   "fields": {
+    "term": {
+     "ko": "민주당 (캄보디아)",
+     "en": "Democratic Party (Cambodia)"
+    },
+    "original": "ក្រុមប្រជាធិបតេយ្យ (Krom Pracheathipatei); Parti démocrate",
+    "category": "parties",
+    "period": {
+     "ko": "1946–1957",
+     "en": "1946–1957"
+    },
+    "startYear": 1946,
+    "endYear": 1957,
+    "definition": {
+     "ko": "1946년 시소왓 유테봉 왕자 등이 만든 캄보디아의 독립 지향 정당. 1946년과 1947년 선거에서 압승해 1955년 시아누크의 상쿰이 등장할 때까지 캄보디아 정치를 주도했다. 1955년 선거에서 상쿰에 패한 뒤 탄압을 받다가 1957년 8월 스스로 해산했다.",
+     "en": "A pro-independence Cambodian party founded in 1946 by Prince Sisowath Youtevong and others. Winning landslides in the elections of 1946 and 1947, it dominated Cambodian politics until Sihanouk’s Sangkum appeared in 1955. Defeated by the Sangkum in the 1955 election and then repressed, it dissolved itself in August 1957."
+    },
+    "body": {
+     "ko": "프랑스어 출처에 따르면 민주당은 1946년 4월 1930년대 민족주의 인사 심 바르, 바탐방의 지식인 이우 쾨스 등 프놈펜 시소왓 고등학교 출신 엘리트들이 만들었고, 프랑스에서 돌아온 왕족 시소왓 유테봉 왕자의 명성에 힘입었다. 크메르어·영어 출처는 유테봉이 프랑스 사회당(SFIO) 당원이었다고 적는다. 당은 1946년 9월 제헌의회 선거에서 67석 가운데 50석을 차지했다. 노로돔 노린뎃 왕자의 자유당, 노로돔 몬타나 왕자의 진보민주당과 달리 즉각 독립을 주장했고, 타이가 지원하는 크메르 이사락 저항운동을 애국 세력으로 보아 프랑스 식민 당국의 반감을 샀다. 1947년 7월 유테봉이 34세로 숨진 것은 당에 큰 타격이었다.\n\n1947년 총선에서 당은 74석 가운데 54석을 얻었는데, 프랑스어 출처는 젊은 활동가 가운데 훗날 폴 포트가 되는 살롯 사르, 이엥 사리, 후 님, 인 탐 등이 있었다고 적는다. 1948년 옘 삼보르 등 일부 의원이 자유당으로 넘어가고 1950년 당 지도자 이우 쾨스가 암살되면서 당은 분열했지만, 지식인 엘리트와 도시 관리·교육층의 지지를 유지했다. 1952년 6월 대회는 경제학자 손 산을 당 총재로 뽑았으나, 6월 15일 시아누크 국왕이 후이 칸통 내각을 해임하고 직접 정부를 맡으면서 당은 밀려나기 시작했다.\n\n독립 뒤 당은 파리에서 돌아온 켕 반삭 등 급진파의 영향으로 왼쪽으로 기울었고, 1955년 초 노로돔 푸리사라 왕자를 서기장으로 하는 새 중앙위원회를 뽑았다. 1955년 국왕에서 물러난 시아누크가 상쿰을 만들자 펜 누트 등 일부 지도자가 당을 떠났다. 경찰과 민병대의 폭력과 협박 속에 치러진 9월 선거에서 상쿰은 82%의 득표로 모든 의석을 차지했고 민주당은 12%에 그쳤다.\n\n1957년 8월 11일 왕궁에서 시아누크가 민주당 지도자 다섯 명과 공개 토론을 벌였고, 이들은 왕궁을 나서다 군인과 경비병에게 폭행당했다. 프랑스어 출처는 이 사건 직후 당이 스스로 해산했다고 적는다. 1970년 론 놀의 쿠데타 뒤 쿠데타 주역의 한 사람인 인 탐이 같은 이름의 당을 되살렸고, 1991년 파리 평화협정 뒤에도 다시 세웠으나 1993년 선거에서 의석을 얻지 못했다.",
+     "en": "According to the French source, the Democratic Party was founded in April 1946 by members of the educated elite who had studied at the Lycée Sisowath in Phnom Penh, such as Sim Var, a nationalist of the 1930s, and Ieu Koeus, an intellectual from Battambang, and it benefited from the prestige of Prince Sisowath Youtevong, a royal who had returned from France. The Khmer and English sources say Youtevong had been a member of the French Section of the Workers’ International. In the Constituent Assembly elections of September 1946 the party won 50 of 67 seats. Unlike the Liberal Party of Prince Norodom Norindeth and the Progressive Democrats of Prince Norodom Montana, it called for immediate independence and regarded the Thai-backed Khmer Issarak resistance as patriots, angering the colonial authorities. The death of Youtevong at 34 in July 1947 was a heavy blow to the party.\n\nIn the 1947 elections the party won 54 of 74 seats; the French source says its young activists included Saloth Sar, later Pol Pot, Ieng Sary, Hu Nim and In Tam. The defection of Yem Sambaur and other deputies to the Liberals in 1948 and the assassination of party leader Ieu Koeus in 1950 split the party, but it kept the support of the intellectual elite and urban officials and educated classes. A congress in June 1952 chose the economist Son Sann as party president, but on 15 June King Sihanouk dismissed the Huy Kanthoul government and took charge of a cabinet himself, beginning the party’s marginalisation.\n\nAfter independence the party moved leftward under the influence of radicals back from Paris such as Keng Vannsak, and early in 1955 it elected a new central committee with Prince Norodom Phurissara as secretary-general. When Sihanouk, having abdicated in 1955, created the Sangkum, some leaders such as Penn Nouth left to join him. In the September election, held amid police and militia violence and intimidation, the Sangkum took all seats with 82 percent of the vote and the Democrats won only 12 percent.\n\nOn 11 August 1957 Sihanouk held a public debate with five Democratic leaders at the Royal Palace, and on leaving the palace they were beaten by soldiers and guards. The French source says the party dissolved itself shortly afterwards. After Lon Nol’s coup of 1970, In Tam, one of the coup leaders, revived a party of the same name, and he founded it again after the 1991 Paris peace agreements, but it won no seats in the 1993 election."
+    },
+    "aliases": {
+     "ko": [
+      "캄보디아 민주당"
+     ],
+     "en": [
+      "Krom Pracheathipatei",
+      "Parti démocrate (Cambodge)"
+     ]
+    },
+    "people": [
+     "son-sann",
+     "pol-pot",
+     "norodom-sihanouk"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed in 1946 by Prince Sisowath Youtevong; dominant party from 1946 until the creation of the Sangkum in 1955; dissolved in August 1957.",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%82%E1%9E%8E%E1%9E%94%E1%9E%80%E1%9F%92%E1%9E%9F%E1%9E%94%E1%9F%92%E1%9E%9A%E1%9E%87%E1%9E%B6%E1%9E%92%E1%9E%B7%E1%9E%94%E1%9E%8F%E1%9F%81%E1%9E%99%E1%9F%92%E1%9E%99_(%E1%9E%80%E1%9E%98%E1%9F%92%E1%9E%96%E1%9E%BB%E1%9E%87%E1%9E%B6)",
+      "locator": "km: lead; រំកិលទៅឆ្វេងនិយម និងការចាញ់ក្រោយឯករាជ្យ"
+     },
+     {
+      "field": "body",
+      "claim": "Founding April 1946; 1946 and 1947 elections; Youtevong’s death; activists; Yem Sambaur and Ieu Koeus; Son Sann president June 1952; dismissal of Huy Kanthoul; leftward shift and Phurissara; 1955 defeat; 11 Aug 1957 debate and beating; self-dissolution; In Tam revivals and 1993.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_(Cambodge)",
+      "locator": "fr: Période coloniale; Les débuts du Cambodge indépendant; Tentatives de renaissance par In Tam"
+     },
+     {
+      "field": "body",
+      "claim": "Youtevong had been a member of the SFIO; 50 of 67 seats; Penn Nouth left; 12% vs 82%; dissolved August 1957.",
+      "source": "https://en.wikipedia.org/wiki/Democratic_Party_(Cambodia)",
+      "locator": "en: lead; In the colonial-era government; Radicalization and post-independence defeat"
+     },
+     {
+      "field": "period",
+      "claim": "Dominated national politics from its creation in 1946 until 1955; dissolved in August 1957.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_(Cambodge)",
+      "locator": "fr: intro; La dissolution"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded in April 1946.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_(Cambodge)",
+      "locator": "fr: La naissance"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved itself in August 1957.",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%82%E1%9E%8E%E1%9E%94%E1%9E%80%E1%9F%92%E1%9E%9F%E1%9E%94%E1%9F%92%E1%9E%9A%E1%9E%87%E1%9E%B6%E1%9E%92%E1%9E%B7%E1%9E%94%E1%9E%8F%E1%9F%81%E1%9E%99%E1%9F%92%E1%9E%99_(%E1%9E%80%E1%9E%98%E1%9F%92%E1%9E%96%E1%9E%BB%E1%9E%87%E1%9E%B6)",
+      "locator": "km: រំកិលទៅឆ្វេងនិយម និងការចាញ់ក្រោយឯករាជ្យ"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sangkum-reastr-niyum",
+   "affiliationId": "party-sangkum",
+   "sources": [
+    "https://km.wikipedia.org/wiki/%E1%9E%9F%E1%9E%84%E1%9F%92%E1%9E%82%E1%9E%98%E1%9E%9A%E1%9E%B6%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9E%93%E1%9E%B7%E1%9E%99%E1%9E%98",
+    "https://fr.wikipedia.org/wiki/Sangkum_Reastr_Niyum",
+    "https://en.wikipedia.org/wiki/Norodom_Sihanouk"
+   ],
+   "fields": {
+    "term": {
+     "ko": "상쿰",
+     "en": "Sangkum"
+    },
+    "original": "សង្គមរាស្ត្រនិយម (Sangkum Reastr Niyum)",
+    "category": "parties",
+    "period": {
+     "ko": "1955–1970",
+     "en": "1955–1970"
+    },
+    "startYear": 1955,
+    "endYear": 1970,
+    "definition": {
+     "ko": "1955년 노로돔 시아누크가 왕위에서 물러난 뒤 만든 캄보디아의 정치 조직. 정식 이름은 「상쿰 레아스트르 니윰」(인민사회주의공동체)이다. 시아누크는 정당이 아닌 「운동」이라 했으나 사실상 시아누크파 정당으로 움직였고, 1955년부터 1970년 시아누크가 축출될 때까지 캄보디아를 통치했다.",
+     "en": "A Cambodian political organisation created in 1955 by Norodom Sihanouk after he abdicated the throne. Its full name was Sangkum Reastr Niyum (Popular Socialist Community). Sihanouk called it a “movement” rather than a party, but it functioned in practice as a Sihanoukist party and governed Cambodia from 1955 until Sihanouk was deposed in 1970."
+    },
+    "body": {
+     "ko": "크메르어 출처는 상쿰이 1955년 3월 22일 노로돔 시아누크가 만든 정치 조직이라고 적고, 프랑스어 출처는 국왕이 1955년 3월 3일 부왕 노로돔 수라마릿에게 양위한 뒤 같은 해 4월 9월 총선에 나서려고 상쿰을 만들었다고 적는다. 상쿰은 회원에게 다른 정치 조직에 속하지 않을 것을 요구했고, 크메르어 출처는 그 이념을 민족주의·보수주의·왕정 수호와 불교 보수주의로 요약하며 「불교 사회주의」는 실제 사회주의와 관계가 없었다고 평가한다. 1955년 5월 론 놀과 니엑 티울롱의 크메르 혁신당, 삼 니안의 인민당, 답 추온의 「승리한 동북」당 등 왕당파 우파 정당들이 합류했다.\n\n1955년 선거는 답 추온이 이끈 경찰과 민병대의 폭력과 협박 속에 치러졌고, 상쿰은 82%를 얻어 전 의석을 차지했다. 총리가 된 시아누크는 상쿰 대회에서 거수로 헌법 개정을 통과시켰고, 이런 전국 대회가 정당을 넘어선 직접민주주의를 표방했으나 실제로는 시아누크의 정책을 승인하는 자리였다. 상쿰은 1958년과 1962년 선거에서도 전 의석을 차지했다. 후 님, 후 윤, 키우 삼판 같은 공산주의자들도 상쿰 안에서 직책을 맡았고, 민주당 세력은 1957년부터 흡수되었다.\n\n1960년대 중반부터 체제 안의 균열이 커졌다. 1966년 선거에서 론 놀과 시소왓 시리크 마탁이 이끄는 우파가 압승하자 시아누크는 좌파 「그림자 내각」을 만들어 맞섰고, 1967년 바탐방 삼롯 농민 봉기 이후 좌파에 대한 탄압이 거세졌다. 1970년 3월 18일 론 놀과 인 탐, 시리크 마탁이 장악한 우파가 시아누크를 축출했고, 상쿰은 3월 24일 새 서기장이 임명되었음에도 정치 무대에서 사라졌다. 크메르어 출처는 상쿰이 1971년 2월 18일 공식 해산되었다고 적는다. 10여 년 뒤 옛 상쿰 인사들은 푼신펙 창설에 참여했다.",
+     "en": "The Khmer source says the Sangkum was a political organisation created by Norodom Sihanouk on 22 March 1955, while the French source says the king abdicated in favour of his father Norodom Suramarit on 3 March 1955 and founded the Sangkum in April to contest the September general election. The Sangkum required its members not to belong to any other political formation; the Khmer source sums up its ideology as nationalism, conservatism, defence of the monarchy and Buddhist conservatism, and judges that its “Buddhist socialism” had nothing to do with real socialism. In May 1955 right-wing monarchist parties joined it, including the Khmer Renovation Party of Lon Nol and Nhiek Tioulong, Sam Nhean’s People’s Party and Dap Chhuon’s “Victorious North-East” party.\n\nThe 1955 election took place amid violence and intimidation by police and militia under Dap Chhuon, and the Sangkum won all seats with 82 percent of the vote. Sihanouk, now prime minister, had a Sangkum congress approve constitutional reform by show of hands; such national congresses claimed to offer direct democracy above parties but in practice endorsed Sihanouk’s policies. The Sangkum again took every seat in the elections of 1958 and 1962. Communists such as Hu Nim, Hou Yuon and Khieu Samphan accepted posts within the Sangkum, and the Democrats were absorbed from 1957.\n\nFrom the mid-1960s fault lines widened within the regime. When the right wing led by Lon Nol and Sisowath Sirik Matak won a landslide in the 1966 election, Sihanouk countered with a left-wing “shadow government”, and repression of the left intensified after the Samlaut peasant revolt in Battambang in 1967. On 18 March 1970 the right wing controlled by Lon Nol, In Tam and Sirik Matak deposed Sihanouk, and the Sangkum vanished from political life despite the appointment of a new secretary-general on 24 March. The Khmer source says it was formally dissolved on 18 February 1971. About a decade later former Sangkum members took part in founding FUNCINPEC."
+    },
+    "aliases": {
+     "ko": [
+      "인민사회주의공동체",
+      "상쿰 레아스트르 니윰"
+     ],
+     "en": [
+      "Sangkum Reastr Niyum",
+      "Popular Socialist Community",
+      "Communauté socialiste populaire"
+     ]
+    },
+    "people": [
+     "norodom-sihanouk",
+     "son-sann",
+     "khieu-samphan",
+     "lon-nol"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Political organisation created by Sihanouk in 1955; a movement rather than a party; governed Cambodia 1955–1970.",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%9F%E1%9E%84%E1%9F%92%E1%9E%82%E1%9E%98%E1%9E%9A%E1%9E%B6%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9E%93%E1%9E%B7%E1%9E%99%E1%9E%98",
+      "locator": "km: lead"
+     },
+     {
+      "field": "definition",
+      "claim": "Functioned in fact as a Sihanoukist party; allowed Sihanouk to exercise power 1955–1970.",
+      "source": "https://fr.wikipedia.org/wiki/Sangkum_Reastr_Niyum",
+      "locator": "fr: intro; Un mouvement au-dessus des partis"
+     },
+     {
+      "field": "body",
+      "claim": "Abdication 3 March 1955; founding April 1955; membership rule; parties joining in May 1955; 1955 election violence and 82%; congresses; 1958 and 1962; communists in the Sangkum; Democrats absorbed 1957; 1966 election and shadow government; Samlaut 1967; deposition 18 March 1970; new secretary-general 24 March; FUNCINPEC.",
+      "source": "https://fr.wikipedia.org/wiki/Sangkum_Reastr_Niyum",
+      "locator": "fr: Historique; Un mouvement au-dessus des partis"
+     },
+     {
+      "field": "body",
+      "claim": "Founded 22 March 1955; ideology; Buddhist socialism unrelated to real socialism; formally dissolved 18 February 1971.",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%9F%E1%9E%84%E1%9F%92%E1%9E%82%E1%9E%98%E1%9E%9A%E1%9E%B6%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9E%93%E1%9E%B7%E1%9E%99%E1%9E%98",
+      "locator": "km: lead; ស្ថាបនកម្ម; លក្ខណៈគោលនយោបាយ"
+     },
+     {
+      "field": "period",
+      "claim": "Sihanouk exercised power through the Sangkum from 1955 to 1970.",
+      "source": "https://fr.wikipedia.org/wiki/Sangkum_Reastr_Niyum",
+      "locator": "fr: intro"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded in 1955 (22 March per km, April per fr).",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%9F%E1%9E%84%E1%9F%92%E1%9E%82%E1%9E%98%E1%9E%9A%E1%9E%B6%E1%9E%9F%E1%9F%92%E1%9E%9A%E1%9F%92%E1%9E%8F%E1%9E%93%E1%9E%B7%E1%9E%99%E1%9E%98",
+      "locator": "km: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "Vanished after Sihanouk was deposed on 18 March 1970.",
+      "source": "https://fr.wikipedia.org/wiki/Sangkum_Reastr_Niyum",
+      "locator": "fr: Historique"
+     }
+    ]
+   }
+  },
+  {
+   "id": "funcinpec",
+   "affiliationId": "party-funcinpec",
+   "sources": [
+    "https://km.wikipedia.org/wiki/%E1%9E%82%E1%9E%8E%E1%9E%94%E1%9E%80%E1%9F%92%E1%9E%9F%E1%9E%A0%E1%9F%8A%E1%9F%92%E1%9E%9C%E1%9E%BB%E1%9E%93%E1%9E%9F%E1%9F%8A%E1%9E%B7%E1%9E%93%E1%9E%94%E1%9F%89%E1%9E%B7%E1%9E%85",
+    "https://en.wikipedia.org/wiki/FUNCINPEC"
+   ],
+   "fields": {
+    "term": {
+     "ko": "푼신펙",
+     "en": "FUNCINPEC"
+    },
+    "original": "Front uni national pour un Cambodge indépendant, neutre, pacifique et coopératif (FUNCINPEC); គណបក្សហ៊្វុនស៊ិនប៉ិច",
+    "category": "parties",
+    "period": {
+     "ko": "1981–",
+     "en": "1981–"
+    },
+    "startYear": 1981,
+    "definition": {
+     "ko": "1981년 노로돔 시아누크가 캄보디아 인민공화국 정부에 맞선 저항운동으로 만든 캄보디아의 왕당파 정당. 이름은 「독립·중립·평화·협력의 캄보디아를 위한 민족통일전선」의 프랑스어 머리글자다. 1993년 유엔 감독 선거에서 제1당이 되어 캄보디아 인민당과 공동 정부를 이끌었으나, 1997년 무력 충돌 이후 세력이 줄어들었다.",
+     "en": "A Cambodian royalist party founded by Norodom Sihanouk in 1981 as a resistance movement against the People’s Republic of Kampuchea. Its name is the French acronym for “National United Front for an Independent, Neutral, Peaceful and Cooperative Cambodia”. It won the most seats in the UN-supervised election of 1993 and co-led the government with the Cambodian People’s Party, but its strength declined after the armed clashes of 1997."
+    },
+    "body": {
+     "ko": "영어 출처에 따르면 시아누크는 1981년 3월 21일 북한 평양에서 왕당파 저항운동 푼신펙을 창설했다. 크메르어 출처는 창설 장소를 파리, 시기를 1981년 2월로 적고, 망명한 크메르 저명인사 100명 가운데서 중앙위원회를 꾸렸다고 적는다. 1982년 6월 22일 푼신펙은 손 산의 크메르 인민민족해방전선(KPNLF), 크메르 루주와 함께 망명정부인 민주 캄푸치아 연합정부를 이루었고, 시아누크가 그 대통령이 되었다. 같은 해 9월 친푼신펙 저항군들이 합쳐 시아누크국민군(ANS)이 만들어졌다.\n\n1989년 8월 시아누크는 푼신펙 총재에서 물러나고 니엑 티울롱이 뒤를 이었으며, 아들 노로돔 라나리드가 사무총장이 되었다. 시아누크는 1991년 7월 당적을 버리고 최고국민평의회 의장이 되었고, 같은 해 10월 파리 평화협정에는 라나리드가 당을 대표해 서명했다. 1992년 2월 라나리드가 총재로 선출되었고, 8월 유엔 캄보디아 과도통치기구(UNTAC) 아래에서 정식 정당으로 등록했다.\n\n1993년 5월 선거에서 푼신펙은 45.47%를 얻어 120석 가운데 58석을 차지했고, 캄보디아 인민당(CPP)과 연립정부를 세워 라나리드가 제1총리, 훈 센이 제2총리가 되었다. 그러나 1997년 7월 양측 계열 부대가 프놈펜에서 충돌한 끝에 라나리드가 실각했다. 1998년 선거에서는 2위로 인민당의 하위 연립 상대가 되었고, 2006년 라나리드가 니엑 분차이에게 밀려 당에서 쫓겨났다.\n\n이후 2003년·2008년·2013년 선거를 거치며 득표와 의석이 줄었고, 2013년에는 국회 의석을 하나도 얻지 못했다. 2015년 1월 라나리드가 총재로 복귀했으며, 2018년 선거에서는 인민당에 이어 2위를 했으나 의석은 얻지 못했다.",
+     "en": "According to the English source, Sihanouk founded the royalist resistance movement FUNCINPEC on 21 March 1981 in Pyongyang, North Korea. The Khmer source gives the place as Paris and the date as February 1981, and says a central committee was formed from 100 prominent exiled Khmers. On 22 June 1982 FUNCINPEC formed the Coalition Government of Democratic Kampuchea, a government-in-exile, with Son Sann’s Khmer People’s National Liberation Front (KPNLF) and the Khmer Rouge, and Sihanouk became its president. In September that year pro-FUNCINPEC resistance armies merged into the Armée Nationale Sihanoukiste (ANS).\n\nIn August 1989 Sihanouk stepped down as FUNCINPEC president and was succeeded by Nhiek Tioulong, while his son Norodom Ranariddh became secretary-general. Sihanouk gave up his party membership in July 1991 to become chairman of the Supreme National Council, and Ranariddh signed the Paris Peace Accords for the party in October that year. Ranariddh was elected president in February 1992, and in August the party registered formally as a political party under the United Nations Transitional Authority in Cambodia (UNTAC).\n\nIn the May 1993 election FUNCINPEC won 45.47 percent of the vote and 58 of 120 seats, and formed a coalition government with the Cambodian People’s Party (CPP) in which Ranariddh became First Prime Minister and Hun Sen Second Prime Minister. In July 1997, however, forces aligned with the two sides clashed in Phnom Penh, and Ranariddh was ousted. After coming second in the 1998 election it became the CPP’s junior coalition partner, and in 2006 Ranariddh was ousted from the party by Nhek Bun Chhay.\n\nIts vote and seats then fell in the elections of 2003, 2008 and 2013, and in 2013 it won no seats in the National Assembly. Ranariddh returned as president in January 2015, and in the 2018 election the party came second to the CPP but won no seats."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "National United Front for an Independent, Neutral, Peaceful and Cooperative Cambodia",
+      "Front uni national pour un Cambodge indépendant, neutre, pacifique et coopératif"
+     ]
+    },
+    "people": [
+     "norodom-sihanouk",
+     "hun-sen"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Royalist party; meaning of the French acronym; founded 1981 by Sihanouk as a resistance movement against the PRK; plurality in 1993 and co-led government with the CPP; ouster of Ranariddh in 1997.",
+      "source": "https://en.wikipedia.org/wiki/FUNCINPEC",
+      "locator": "en: lead; Name"
+     },
+     {
+      "field": "definition",
+      "claim": "Royalist party in Cambodia; acronym expansion; declining appeal since 1998.",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%82%E1%9E%8E%E1%9E%94%E1%9E%80%E1%9F%92%E1%9E%9F%E1%9E%A0%E1%9F%8A%E1%9F%92%E1%9E%9C%E1%9E%BB%E1%9E%93%E1%9E%9F%E1%9F%8A%E1%9E%B7%E1%9E%93%E1%9E%94%E1%9F%89%E1%9E%B7%E1%9E%85",
+      "locator": "km: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Founded 21 March 1981 in Pyongyang; CGDK 22 June 1982; ANS September 1982; Sihanouk resigns August 1989; leaves July 1991; Ranariddh signs Paris accords; president Feb 1992; registration Aug 1992; 1993 result 45.47% and 58/120; co-premiers; July 1997 clashes; 1998; 2006 ouster; decline 2003–2013; return 2015; 2018.",
+      "source": "https://en.wikipedia.org/wiki/FUNCINPEC",
+      "locator": "en: History"
+     },
+     {
+      "field": "body",
+      "claim": "Founded in Paris in February 1981 with a central committee drawn from 100 exiled Khmers.",
+      "source": "https://km.wikipedia.org/wiki/%E1%9E%82%E1%9E%8E%E1%9E%94%E1%9E%80%E1%9F%92%E1%9E%9F%E1%9E%A0%E1%9F%8A%E1%9F%92%E1%9E%9C%E1%9E%BB%E1%9E%93%E1%9E%9F%E1%9F%8A%E1%9E%B7%E1%9E%93%E1%9E%94%E1%9F%89%E1%9E%B7%E1%9E%85",
+      "locator": "km: ការបង្កើតហ៊្វុនស៊ិនប៉ិចនិងអេអ៊ែនអ៊ែស (ANS)"
+     },
+     {
+      "field": "period",
+      "claim": "Founded in 1981 and still active; the current acting president is Norodom Chakravuth.",
+      "source": "https://en.wikipedia.org/wiki/FUNCINPEC",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 21 March 1981 (February 1981 per km).",
+      "source": "https://en.wikipedia.org/wiki/FUNCINPEC",
+      "locator": "en: 1980s"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lao-national-progressive-party",
+   "affiliationId": "party-lao-national-progressive",
+   "sources": [
+    "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+    "https://fr.wikipedia.org/wiki/Parti_progressiste_lao",
+    "https://en.wikipedia.org/wiki/Souvanna_Phouma",
+    "https://en.wikipedia.org/wiki/Lao_People's_Rally"
+   ],
+   "fields": {
+    "term": {
+     "ko": "라오스 국민진보당",
+     "en": "Lao National Progressive Party"
+    },
+    "original": "ພັກຊາດກ້າວຫນ້າ (Phak Xat Kao Na)",
+    "category": "parties",
+    "period": {
+     "ko": "1950–1958",
+     "en": "1950–1958"
+    },
+    "startYear": 1950,
+    "endYear": 1958,
+    "definition": {
+     "ko": "1950년 옛 라오 이사라 출신의 시엥 마오, 수반나 푸마, 카타이 돈 사소릿이 만든 라오스 왕국의 정당. 1951년과 1955년 국민의회 선거에서 승리했고, 당 지도자 수반나 푸마가 총리가 되었다. 1958년 선거 뒤 독립당과 합당해 라오 인민연합을 만들면서 해산했다.",
+     "en": "A party of the Kingdom of Laos founded in 1950 by Xieng Mao, Souvanna Phouma and Katay Don Sasorith, all former members of the Lao Issara. It won the National Assembly elections of 1951 and 1955, and its leader Souvanna Phouma became prime minister. It dissolved after the 1958 election when it merged with the Independent Party to form the Lao People’s Rally."
+    },
+    "body": {
+     "ko": "영어 출처에 따르면 국민진보당은 1950년 옛 라오 이사라 회원인 시엥 마오, 수반나 푸마, 카타이 돈 사소릿이 창당했다. 프랑스어 출처도 1950년 창당한 라오스 정당으로 적는다. 1951년 8월 국민의회 선거에서 당은 39석 가운데 19석을 얻어 압승으로 평가받았고, 1955년에는 39석 가운데 23석을 얻었다. 수반나 푸마의 문서는 1951년 선거 결과를 15석으로 적어 출처마다 차이가 있다. 당 지도자 수반나 푸마는 1951년 총리가 되어 1954년까지 재임했다.\n\n1958년 보궐선거에서 패한 뒤 당은 같은 해 6월 독립당과 합쳐 라오 인민연합을 결성하면서 해산했다. 새 당은 36석을 가졌고 지도자의 한 사람인 푸이 사나니콘이 1958년 8월 총리가 되었다. 라오 인민연합은 1960년 선거에서 17석으로 줄었으며, 그 뒤 수반나 푸마가 지도자가 되었을 때는 사실상 활동이 끝난 상태였다.",
+     "en": "According to the English source, the National Progressive Party was founded in 1950 by former Lao Issara members Xieng Mao, Souvanna Phouma and Katay Don Sasorith; the French source likewise describes it as a Lao party founded in 1950. In the National Assembly elections of August 1951 it won 19 of 39 seats, considered a landslide, and in 1955 it won 23 of 39. The article on Souvanna Phouma gives the 1951 result as 15 seats, so the sources differ. The party’s leader Souvanna Phouma became prime minister in 1951 and held office until 1954.\n\nAfter its defeat in the supplementary elections of 1958, the party dissolved in June that year when it merged with the Independent Party to form the Lao People’s Rally. The new party held 36 seats, and one of its leaders, Phoui Sananikone, became prime minister in August 1958. The Lao People’s Rally fell to 17 seats in the 1960 elections, and by the time Souvanna Phouma became its leader it was effectively defunct."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Phak Xat Kao Na",
+      "National Progressive Party (Laos)",
+      "Parti progressiste lao"
+     ]
+    },
+    "people": [
+     "souvanna-phouma"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 1950 by former Lao Issara members Xieng Mao, Souvanna Phouma and Katay; won 1951 and 1955 elections; leader Souvanna became PM; merged into the Lao People’s Rally after 1958.",
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Founding; 19 of 39 seats in August 1951; 23 of 39 in 1955; leader Souvanna PM; dissolution after 1958.",
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Lao party founded in 1950; merged with the Independent Party in 1958 to form the Lao People’s Rally.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_progressiste_lao",
+      "locator": "fr: intro"
+     },
+     {
+      "field": "body",
+      "claim": "Souvanna became PM in 1951 under the National Progressive Party banner winning 15 of 39 seats; PM until 1954.",
+      "source": "https://en.wikipedia.org/wiki/Souvanna_Phouma",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Merger in June 1958 after the supplementary elections; 36 seats; Phoui Sananikone PM August 1958; 17 seats in 1960; Souvanna leader when effectively defunct.",
+      "source": "https://en.wikipedia.org/wiki/Lao_People's_Rally",
+      "locator": "en: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Founded 1950; merged in 1958.",
+      "source": "https://fr.wikipedia.org/wiki/Parti_progressiste_lao",
+      "locator": "fr: intro"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded in 1950.",
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "en: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved in 1958 by merging into the Lao People’s Rally.",
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "en: lead"
+     }
+    ]
+   }
+  },
+  {
+   "id": "peoples-action-party-singapore",
+   "affiliationId": "party-singapore-pap",
+   "sources": [
+    "https://en.wikipedia.org/wiki/People's_Action_Party",
+    "https://en.wikipedia.org/wiki/Lee_Kuan_Yew"
+   ],
+   "fields": {
+    "term": {
+     "ko": "인민행동당 (싱가포르)",
+     "en": "People's Action Party"
+    },
+    "original": "People's Action Party (PAP); Parti Tindakan Rakyat; 人民行动党",
+    "category": "parties",
+    "period": {
+     "ko": "1954–",
+     "en": "1954–"
+    },
+    "startYear": 1954,
+    "definition": {
+     "ko": "1954년 리콴유 등이 창당한 싱가포르의 정당. 처음에는 중도좌파 정당이었으나 1959년 집권한 뒤 좌파를 축출하고 중도우파로 옮겨 갔다. 1959년부터 지금까지 끊임없이 정권을 잡아 싱가포르를 사실상의 일당 우위 국가로 만들었다.",
+     "en": "A Singaporean party founded in 1954 by Lee Kuan Yew and others. Initially a centre-left party, it expelled its left wing after taking power in 1959 and shifted to the centre-right. It has governed without interruption since 1959, making Singapore a de facto dominant-party state."
+    },
+    "body": {
+     "ko": "영어 출처에 따르면 리콴유, 토친차이, 고켕스위 등은 1940년대~1950년대 초 런던의 반식민 학생 단체 말라야 포럼에서 활동했고, 싱가포르로 돌아와 노조·학생 지도자들과 손잡고 정당을 준비했다. 인민행동당은 1954년 11월 21일 정당으로 등록되었고, 리콴유가 사무총장, 토친차이가 창당 의장을 맡았다. 1955년 첫 선거에서 리콴유와 공동 창당자 림친시옹 등 3명이 당선되었다. 1957년 노조 출신 「공산주의」 계열이 중앙집행위원회 의석의 절반을 차지했으나 림유혹 정부가 이들을 대거 체포했고, 리콴유는 사무총장에 복귀했다.\n\n1959년 총선에서 승리해 집권한 뒤 리콴유가 총리가 되었다. 1961년 말레이시아 합병안과 당내 권력 투쟁을 둘러싸고 좌파가 이탈해 림친시옹을 사무총장으로 하는 바리산 소시알리스를 만들었고, 당의 51개 지부 가운데 35개가 이쪽으로 넘어갔다. 1963년 싱가포르가 말레이시아 연방에 들어간 뒤 인민행동당은 연방 차원에서 야당으로 활동했고, 연합말레이국민조직(UMNO)과의 갈등 끝에 싱가포르는 1965년 8월 9일 말레이시아에서 떨어져 나왔다.\n\n독립 뒤 1966년 바리산 소시알리스가 의회에서 물러났고, 인민행동당은 1968·1972·1976·1980년 선거에서 모든 의석을 차지했다. 1981년 보궐선거에서 노동자당이 처음 의석을 얻었으나, 이후에도 인민행동당은 매번 60% 이상의 득표와 80% 이상의 의석을 얻어 개헌 가능한 3분의 2 의석을 유지해 왔다. 출처는 당이 노조 중앙조직 전국노동조합회의(NTUC)와 공무원 조직에도 큰 영향력을 행사한다고 적는다.\n\n리콴유는 1990년 총리직을 고촉통에게 넘겼고, 1992년 사무총장에서도 물러났다. 2004년 리셴룽이 총리가 되었고, 2024년 12월 로런스 웡이 사무총장에 선출되었다. 영어 출처는 오늘날의 인민행동당을 사회적 보수주의와 경제적 자유주의를 결합한 중도우파 정당으로 분류한다.",
+     "en": "According to the English source, Lee Kuan Yew, Toh Chin Chye and Goh Keng Swee had been active in the Malayan Forum, a London-based anti-colonial student group of the 1940s and early 1950s, and after returning to Singapore they prepared a party with trade union and student leaders. The People’s Action Party was registered on 21 November 1954, with Lee as secretary-general and Toh as founding chairman. In its first election in 1955 three candidates, including Lee and co-founder Lim Chin Siong, were elected. In 1957 the trade-union “communist” faction won half the seats on the Central Executive Committee, but Lim Yew Hock’s government arrested them en masse and Lee returned as secretary-general.\n\nThe party won the 1959 general election, and Lee became prime minister. In 1961 disputes over the plan for merger with Malaysia and an internal power struggle led the left wing to break away and form the Barisan Sosialis under Lim Chin Siong as secretary-general, taking 35 of the party’s 51 branches. After Singapore joined Malaysia in 1963 the PAP acted as an opposition party at federal level, and conflict with the United Malays National Organisation ended with Singapore’s separation from Malaysia on 9 August 1965.\n\nAfter independence the Barisan Sosialis withdrew from Parliament in 1966, and the PAP won every seat in the elections of 1968, 1972, 1976 and 1980. The Workers’ Party won its first seat at a by-election in 1981, but the PAP has since taken over 60 percent of the vote and over 80 percent of the seats at every election, keeping the two-thirds majority needed to amend the constitution. The source says the party exerts strong influence over the National Trades Union Congress (NTUC) and the civil service.\n\nLee handed the premiership to Goh Chok Tong in 1990 and stepped down as secretary-general in 1992. Lee Hsien Loong became prime minister in 2004, and Lawrence Wong was elected secretary-general in December 2024. The English source classifies today’s PAP as a centre-right party combining social conservatism and economic liberalism."
+    },
+    "aliases": {
+     "ko": [
+      "싱가포르 인민행동당"
+     ],
+     "en": [
+      "PAP",
+      "Parti Tindakan Rakyat"
+     ]
+    },
+    "people": [
+     "lee-kuan-yew"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Established in 1954 as a centre-left party; after 1959 Lee repositioned it and expelled the left in 1961; shift to centre-right; governed continuously; de facto one-party state.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Malayan Forum; registration 21 Nov 1954; Lee secretary-general, Toh chairman; 1955 election; 1957 CEC and arrests.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: History; Formation"
+     },
+     {
+      "field": "body",
+      "claim": "Lee restored as secretary-general on 20 October 1957.",
+      "source": "https://en.wikipedia.org/wiki/Lee_Kuan_Yew",
+      "locator": "en: Strikes and power struggle"
+     },
+     {
+      "field": "body",
+      "claim": "1959 victory; 1961 split and Barisan Sosialis with 35 of 51 branches; merger years; separation 9 August 1965.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: First years in government; Great Split of 1961; Barisan Sosialis; Merger years, 1963–1965"
+     },
+     {
+      "field": "body",
+      "claim": "1966 withdrawal of Barisan; all seats 1968–1980; 1981 by-election; >60% of votes and >80% of seats; NTUC and civil service influence.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: lead; Post-independence, 1965–present"
+     },
+     {
+      "field": "body",
+      "claim": "Lee PM until 1990; Lee Hsien Loong PM 2004; Lawrence Wong secretary-general Dec 2024; centre-right ideology.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: lead; Leadership transitions"
+     },
+     {
+      "field": "period",
+      "claim": "Established in 1954 and the current governing party.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Officially registered on 21 November 1954.",
+      "source": "https://en.wikipedia.org/wiki/People's_Action_Party",
+      "locator": "en: Formation"
+     }
+    ]
+   }
+  },
+  {
+   "id": "liberal-party-south-korea",
+   "affiliationId": "party-korean-liberal",
+   "sources": [
+    "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EB%8B%B9_(%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD)",
+    "https://en.wikipedia.org/wiki/Liberal_Party_(South_Korea)",
+    "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%B9%EB%A7%8C"
+   ],
+   "fields": {
+    "term": {
+     "ko": "자유당 (대한민국)",
+     "en": "Liberal Party (South Korea)"
+    },
+    "original": "自由黨 (자유당, Jayudang)",
+    "category": "parties",
+    "period": {
+     "ko": "1951–1970",
+     "en": "1951–1970"
+    },
+    "startYear": 1951,
+    "endYear": 1970,
+    "definition": {
+     "ko": "1951년 12월 이승만 대통령을 총재로 창당된 대한민국의 정당. 제1공화국 내내 여당으로 1952년 발췌개헌 등으로 이승만의 장기 집권을 뒷받침했다. 1960년 4·19 혁명 뒤 몰락했고, 1961년 5·16 군사정변으로 해산된 뒤 1963년 일부 세력이 재창당했으나 1970년 신민당에 흡수되었다.",
+     "en": "A South Korean party founded in December 1951 with President Syngman Rhee as its head. As the ruling party throughout the First Republic it underpinned Rhee’s long rule, including through the 1952 constitutional amendment. It collapsed after the April Revolution of 1960, was dissolved after the military coup of 16 May 1961, was re-founded by some of its members in 1963, and was absorbed into the New Democratic Party in 1970."
+    },
+    "body": {
+     "ko": "한국어 출처에 따르면 이승만은 1952년 대통령 선거를 앞두고 1951년 8월 15일 정당 조직 의사를 밝혔고, 주중 대사였던 이범석에게 신당 창당을 맡겼다. 이범석은 조선민족청년단 조직을 기반으로 국민회·대한청년단·대한노동조합총연맹·농민조합연맹·대한부인회 등 5개 사회단체를 끌어들였다. 1951년 12월 17일 이범석 중심의 「원외 자유당」이, 12월 23일 소장파 의원 중심의 「원내 자유당」이 각각 출범해 처음부터 두 갈래로 나뉘었고, 이승만은 총재로 추대되었다.\n\n자유당은 1952년 발췌개헌으로 이승만에게 독재의 길을 터 주었다는 비난을 받았다. 이승만은 부통령 후보로 나선 이범석 대신 무소속 함태영을 밀었고, 이후 족청계를 견제하려고 이범석을 부당수에서 평당원으로 격하시키고 이기붕을 당내 2인자로 끌어올렸다. 원내 자유당의 지도자였던 장면은 탈당해 1954년 호헌동지회에 참여했다. 영어 출처는 당이 일민주의를 내세우고 서구식 자유주의를 부정적으로 보았으며, 「반공·반일」을 국가 가치로 내건 극우 반공 정당이었다고 평가한다.\n\n1960년 3·15 부정선거와 4·19 혁명 뒤 이승만은 4월 24일 총재직에서 물러났다. 당은 6월 임시 전당대회에서 당명 변경을 시도했으나 무산되었고, 제2공화국 아래에서 야당으로 명맥을 이었다. 1961년 5·16 군사정변 뒤 해산되었으며, 1963년 정치활동이 허용되자 일부 세력이 장택상을 수석최고위원으로 재창당했지만 옛 자유당 세력의 일부만을 대표했다. 재창당한 당은 제6대·제7대 총선에서 한 명도 당선시키지 못했고, 1970년 1월 신민당에 흡수 통합되었다.",
+     "en": "According to the Korean source, ahead of the 1952 presidential election Syngman Rhee announced on 15 August 1951 his intention to organise a party and entrusted its creation to Lee Beom-seok, then ambassador to China. Lee built on the organisation of the Korean National Youth Association and brought in five social organisations, including the National Association for the Rapid Realisation of Korean Independence, the Korean Youth Corps, the Korean Federation of Labour, the Peasant Federation and the Korean Women’s Association. On 17 December 1951 an “extra-parliamentary Liberal Party” centred on Lee Beom-seok was launched, and on 23 December a “parliamentary Liberal Party” of younger legislators, so the party was split from the start; Rhee was installed as its president.\n\nThe party was condemned for opening the way to Rhee’s dictatorship through the 1952 “excerpt” constitutional amendment. Rhee backed the independent Ham Tae-young instead of Lee Beom-seok as vice-presidential candidate, and later, to check Lee’s youth-corps faction, demoted Lee from deputy leader to ordinary member and raised Yi Ki-poong to second place in the party. Chang Myon, a leader of the parliamentary Liberals, left the party and joined the Society for Upholding the Constitution in 1954. The English source characterises it as a far-right anti-communist party that promoted Ilminism, viewed Western-style liberalism negatively and put forward “anti-communist and anti-Japanese” values.\n\nAfter the rigged election of 15 March 1960 and the April Revolution, Rhee resigned as party president on 24 April. An attempt to rename the party at an extraordinary convention in June failed, and the party survived in opposition under the Second Republic. It was dissolved after the military coup of 16 May 1961; when political activity was allowed again in 1963, some of its members re-founded it with Chang Taek-sang as chief supreme councillor, but it represented only part of the old Liberal forces. The re-founded party won no seats in the sixth and seventh National Assembly elections and was absorbed into the New Democratic Party in January 1970."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Jayudang"
+     ]
+    },
+    "people": [
+     "syngman-rhee"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded 17 December 1951 with Rhee as leader; ruling party in the First Republic; crisis after 1960; dissolved after 16 May 1961; re-founded 1963; absorbed into the New Democratic Party in 1970.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EB%8B%B9_(%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD)",
+      "locator": "ko: 개요; 야당화"
+     },
+     {
+      "field": "body",
+      "claim": "Rhee’s 15 Aug 1951 announcement; Lee Beom-seok entrusted; five social organisations; extra- and intra-parliamentary Liberal parties; 1952 amendment; Ham Tae-young; demotion of Lee Beom-seok and rise of Yi Ki-poong; Chang Myon left 1954; Rhee president; 1960 convention; dissolution 1961; 1963 re-founding under Chang Taek-sang; no seats; absorbed January 1970.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EB%8B%B9_(%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD)",
+      "locator": "ko: 창당 과정; 여당; 야당화; 역대 전당대회"
+     },
+     {
+      "field": "body",
+      "claim": "Far-right anti-communist party; Ilminism; anti-communist and anti-Japanese values.",
+      "source": "https://en.wikipedia.org/wiki/Liberal_Party_(South_Korea)",
+      "locator": "en: lead; Ideology"
+     },
+     {
+      "field": "body",
+      "claim": "Rhee resigned as Liberal Party president on 24 April 1960.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%B9%EB%A7%8C",
+      "locator": "ko: 4·19 혁명"
+     },
+     {
+      "field": "period",
+      "claim": "Founded 17 December 1951; ruling party until 1960; dissolved 1961; re-founded 1963; absorbed into the New Democratic Party on 24 January 1970.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EB%8B%B9_(%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD)",
+      "locator": "ko: 개요; 역대 전당대회"
+     },
+     {
+      "field": "startYear",
+      "claim": "Founded on 17 December 1951.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EB%8B%B9_(%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD)",
+      "locator": "ko: 개요"
+     },
+     {
+      "field": "endYear",
+      "claim": "Absorbed into the New Democratic Party in January 1970.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9E%90%EC%9C%A0%EB%8B%B9_(%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD)",
+      "locator": "ko: 야당화; 역대 전당대회"
+     }
+    ]
+   }
+  },
+  {
+   "id": "korean-socialist-party-1918",
+   "affiliationId": "party-korean-socialist-1918",
+   "sources": [
+    "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%9D%B8%EC%82%AC%ED%9A%8C%EB%8B%B9",
+    "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+    "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+    "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8F%99%ED%9C%98"
+   ],
+   "fields": {
+    "term": {
+     "ko": "한인사회당",
+     "en": "Korean Socialist Party (1918)"
+    },
+    "original": "韓人社會黨",
+    "category": "parties",
+    "period": {
+     "ko": "1918–1921",
+     "en": "1918–1921"
+    },
+    "startYear": 1918,
+    "endYear": 1921,
+    "definition": {
+     "ko": "1918년 5월 이동휘를 중심으로 하바롭스크에서 결성된 조선인의 좌파 독립운동 단체. 한국어 출처는 이를 한인이 만든 최초의 사회주의 정당으로 본다. 1921년 5월 고려공산당(상하이파)으로 이름을 바꾸었다.",
+     "en": "A left-wing Korean independence organisation formed in Khabarovsk in May 1918 around Yi Tong-hwi. The Korean source regards it as the first socialist party founded by Koreans. In May 1921 it was renamed the Korean Communist Party (Shanghai faction)."
+    },
+    "body": {
+     "ko": "한국어 출처에 따르면 한인사회당은 1918년 5월 11일(러시아 구력 4월 28일) 하바롭스크에서 이동휘가 중심이 되어 결성되었다. 이동휘는 1911년 105인 사건 뒤 러시아 연해주로 망명했다가 1917년 케렌스키 임시정부에 체포되었고, 하바롭스크의 볼셰비키 김알렉산드라의 도움으로 풀려났다. 출처는 그가 영국·미국·프랑스와 일본군이 러시아 혁명에 무력 개입하자 「러시아의 사회주의혁명과 한국의 민족해방운동을 결합해야 한다」고 주장하며 이동녕과 갈라선 뒤 당을 만들었다고 적는다.\n\n고려공산당 문서는 한인사회당이 이동휘·박애·전일 등이 중심이 되고 볼셰비키당에서 파견된 원동인민위원회 의장 크라스노쇼코프의 지원을 받아 만들어졌으며, 당시 코민테른의 인정을 받은 유일한 조선 사회주의 정당이었다고 적는다. 이동휘는 같은 무렵 연해주에서 한인적위군 편성에도 참여했다. 초기 성격은 민족해방을 위한 편의적 공산주의 단체였다.\n\n1919년 이동휘가 한인사회당 당수로서 상하이 대한민국 임시정부의 국무총리에 취임하면서 임시정부는 민족·사회주의 세력의 연합정부 형태를 띠었다. 그러나 임시정부 구성원들과의 노선 차이로 당은 임시정부에서 탈퇴했고, 1921년 5월 고려공산당으로 이름을 바꾸었다. 이 당은 이르쿠츠크에서 결성된 고려공산당과 구별해 상하이파 고려공산당이라 부른다.",
+     "en": "According to the Korean source, the Korean Socialist Party was formed in Khabarovsk on 11 May 1918 (28 April Old Style) with Yi Tong-hwi at its centre. Yi had fled to the Russian Maritime Province after the 105-Person Incident of 1911, was arrested by the Kerensky Provisional Government in 1917 and was freed with the help of the Khabarovsk Bolshevik Alexandra Kim. The source says that when Britain, the United States, France and Japan intervened militarily against the Russian Revolution, he argued that “Russia’s socialist revolution must be combined with Korea’s national liberation movement”, parted ways with Yi Dong-nyeong and founded the party.\n\nThe article on the Korean Communist Party says the Korean Socialist Party was formed around Yi Tong-hwi, Pak Ae, Chŏn Il and others with the support of Krasnoshchekov, chairman of the Far Eastern People’s Commissariat sent by the Bolshevik party, and that it was then the only Korean socialist party recognised by the Comintern. Around the same time Yi Tong-hwi took part in organising a Korean Red Guard in the Maritime Province. In its early form it was an expedient communist organisation serving national liberation.\n\nIn 1919 Yi Tong-hwi took office as premier of the Provisional Government of the Republic of Korea in Shanghai as leader of the Korean Socialist Party, giving the Provisional Government the character of a coalition of nationalist and socialist forces. Differences of line with other members of the Provisional Government led the party to withdraw from it, however, and in May 1921 it was renamed the Korean Communist Party. To distinguish it from the Korean Communist Party formed in Irkutsk, it is called the Shanghai faction of the Korean Communist Party."
+    },
+    "aliases": {
+     "ko": [],
+     "en": [
+      "Hanin Sahoedang"
+     ]
+    },
+    "people": [
+     "yi-dong-hwi",
+     "kim-alexandra-petrovna"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed in Khabarovsk on 11 May 1918 around Yi Tong-hwi; left-wing independence organisation; first Korean socialist party.",
+      "source": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%9D%B8%EC%82%AC%ED%9A%8C%EB%8B%B9",
+      "locator": "ko: 개요 (lead)"
+     },
+     {
+      "field": "definition",
+      "claim": "Renamed the Korean Communist Party in May 1921.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 고려공산당(상해파)"
+     },
+     {
+      "field": "body",
+      "claim": "Yi’s exile after the 105-Person Incident; arrest; intervention; parting with Yi Dong-nyeong; founding of the party.",
+      "source": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%9D%B8%EC%82%AC%ED%9A%8C%EB%8B%B9",
+      "locator": "ko: 개요"
+     },
+     {
+      "field": "body",
+      "claim": "Release with Alexandra Kim’s help; founding 11 May 1918 in Khabarovsk; Korean Red Guard.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8F%99%ED%9C%98",
+      "locator": "ko: 독립운동 활동"
+     },
+     {
+      "field": "body",
+      "claim": "Founders Yi Tong-hwi, Pak Ae, Chŏn Il; support from Krasnoshchekov; only Comintern-recognised Korean socialist party; character; withdrawal from the Provisional Government; renamed May 1921.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 고려공산당(상해파)"
+     },
+     {
+      "field": "body",
+      "claim": "Yi took office as premier as leader of the Korean Socialist Party; Shanghai faction distinguished from Irkutsk.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "ko: lead"
+     },
+     {
+      "field": "period",
+      "claim": "Formed 11 May 1918; renamed in May 1921.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 고려공산당(상해파)"
+     },
+     {
+      "field": "startYear",
+      "claim": "Formed on 11 May 1918.",
+      "source": "https://ko.wikipedia.org/wiki/%ED%95%9C%EC%9D%B8%EC%82%AC%ED%9A%8C%EB%8B%B9",
+      "locator": "ko: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "Renamed the Korean Communist Party in May 1921.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 고려공산당(상해파)"
+     }
+    ]
+   }
+  },
+  {
+   "id": "korean-communist-party-shanghai-faction",
+   "affiliationId": "party-koryo-communist",
+   "sources": [
+    "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+    "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+    "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8F%99%ED%9C%98"
+   ],
+   "fields": {
+    "term": {
+     "ko": "상하이파 고려공산당",
+     "en": "Korean Communist Party (Shanghai faction)"
+    },
+    "original": "高麗共産黨 (上海派)",
+    "category": "parties",
+    "period": {
+     "ko": "1921–1922",
+     "en": "1921–1922"
+    },
+    "startYear": 1921,
+    "endYear": 1922,
+    "definition": {
+     "ko": "1921년 5월 이동휘가 한인사회당을 모체로 상하이에서 조직한 조선인의 공산당. 같은 시기 이르쿠츠크에서 결성된 고려공산당과 구별해 상하이파라 부른다. 두 파의 대립이 심해지자 코민테른은 1922년 12월 두 당을 모두 해체했다.",
+     "en": "A Korean communist party organised in Shanghai in May 1921 by Yi Tong-hwi on the basis of the Korean Socialist Party. It is called the Shanghai faction to distinguish it from the Korean Communist Party formed in Irkutsk at the same time. As the rivalry between the two factions intensified, the Comintern dissolved both parties in December 1922."
+    },
+    "body": {
+     "ko": "한국어 출처에 따르면 상하이파 고려공산당은 1921년 중국 상하이에서 이동휘를 중심으로 결성된 사회주의 단체로, 1918년 5월 11일 결성된 한인사회당을 모체로 했다. 이동휘는 1921년 1월 말 임시정부 개혁 문제로 대통령 이승만, 이동녕·이시영·신규식 등과 대립해 임시정부를 탈퇴한 뒤 창당에 나섰고, 이를 「민족운동」에서 「사회운동」으로의 전환이라고 평가했다. 주요 인물은 이동휘, 김립, 박진순, 이한영 등이었다.\n\n당은 코민테른 극동국 서기 보이틴스키와 긴밀히 연결되었고, 중국·일본의 사회주의자 및 국내의 장덕수, 최팔용 등과도 연계를 맺었다. 한편 이르쿠츠크에서는 1921년 5월 4~17일 한인공산주의자대회가 열려 이 당과 맞서는 또 하나의 고려공산당이 결성되었다. 두 파는 소련 정부와 코민테른의 정통성 인정과 지원을 두고 경쟁했고, 한인 무장부대 통수권을 둘러싼 대립은 1921년 자유시 참변으로 이어졌다.\n\n코민테른은 두 파의 화해와 통합을 권했으나 실패하자 1922년 12월 두 당을 모두 해체하고, 1923년 2월 극동총국 아래 꼬르뷰로를 설치해 통일된 공산당을 조직하게 했다. 한국어 출처는 상하이파와 이르쿠츠크파의 무원칙한 파쟁이 초기 공산주의 운동뿐 아니라 민족해방운동 전체에 악영향을 미쳤다고 평가한다.",
+     "en": "According to the Korean source, the Shanghai faction of the Korean Communist Party was a socialist organisation formed in Shanghai, China, in 1921 around Yi Tong-hwi, on the basis of the Korean Socialist Party founded on 11 May 1918. Yi had left the Provisional Government at the end of January 1921 after clashing with President Syngman Rhee and with Yi Dong-nyeong, Yi Si-yeong, Shin Kyu-sik and others over its reform, then set about founding the party, describing this as a shift from a “national movement” to a “social movement”. Its leading figures were Yi Tong-hwi, Kim Rip, Pak Chin-sun and Yi Han-yŏng.\n\nThe party was closely linked with Voitinsky, secretary of the Comintern’s Far Eastern Bureau, and had ties with Chinese and Japanese socialists and with Chang Tŏk-su and Ch’oe P’al-yong at home. In Irkutsk, meanwhile, a congress of Korean communists on 4–17 May 1921 formed a rival Korean Communist Party. The two factions competed for recognition and support from the Soviet government and the Comintern, and their struggle over command of Korean armed units led to the Free City Incident of 1921.\n\nWhen its calls for reconciliation and unification failed, the Comintern dissolved both parties in December 1922 and in February 1923 set up the Korburo under its Far Eastern Bureau to organise a unified communist party. The Korean source judges that the unprincipled factional strife between the Shanghai and Irkutsk groups harmed not only the early communist movement but the national liberation movement as a whole."
+    },
+    "aliases": {
+     "ko": [
+      "고려공산당 (상하이파)",
+      "상해파 고려공산당",
+      "상하이 고려공산당"
+     ],
+     "en": [
+      "Koryo Communist Party (Shanghai faction)"
+     ]
+    },
+    "people": [
+     "yi-dong-hwi",
+     "grigory-voitinsky"
+    ],
+    "events": [],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Formed in Shanghai in 1921 around Yi Tong-hwi on the basis of the Korean Socialist Party; distinguished from the Irkutsk party; dissolved by the Comintern in December 1922.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "ko: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Formed 1921 in Shanghai from the Korean Socialist Party; leading figures; ties with Voitinsky and others; dissolution Dec 1922 and Korburo.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "ko: lead"
+     },
+     {
+      "field": "body",
+      "claim": "Irkutsk congress 4–17 May 1921; rivalry; Free City Incident; Comintern dissolution Dec 1922; Korburo Feb 1923; assessment.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9",
+      "locator": "ko: 고려공산당(이르쿠츠크파); 파벌의 결과"
+     },
+     {
+      "field": "body",
+      "claim": "Yi left the Provisional Government at the end of January 1921 and founded the party, calling it a shift from national to social movement.",
+      "source": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8F%99%ED%9C%98",
+      "locator": "ko: 대한민국 임시정부 국무총리 활동과 고려공산당 상하이파 활동"
+     },
+     {
+      "field": "period",
+      "claim": "Formed May 1921; dissolved December 1922.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "ko: lead"
+     },
+     {
+      "field": "startYear",
+      "claim": "Formed in May 1921.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "ko: lead"
+     },
+     {
+      "field": "endYear",
+      "claim": "Dissolved by the Comintern in December 1922.",
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "ko: lead"
+     }
+    ]
+   }
+  }
+ ]
+}

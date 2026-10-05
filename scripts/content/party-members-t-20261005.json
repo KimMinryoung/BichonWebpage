@@ -1,0 +1,423 @@
+{
+ "add": [
+  {
+   "personId": "andrievs-niedra",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-latvian-farmers-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://lv.wikipedia.org/wiki/Andrievs_Niedra",
+      "locator": "characters 2590:2682; sha256 d7aab7b475a2cb1d28866c23599da28acbb3cefd13223fbadcd711e65aa46896",
+      "claim": "니에드라는 1917년 7월 라트비아 농민연합 대회에 참여해 의장단에 선출되었다.",
+      "excerpt": "Niedra aktīvi piedalījās savienības kongresā 1917. gada jūlijā, kur viņu ievēlēja prezidijā."
+     },
+     {
+      "source": "https://lv.wikipedia.org/wiki/Andrievs_Niedra",
+      "locator": "characters 2683:2804; sha256 d7aab7b475a2cb1d28866c23599da28acbb3cefd13223fbadcd711e65aa46896",
+      "claim": "그는 농민연합 당원으로서 울마니스에 반대하는 입장을 취했다.",
+      "excerpt": "Kā Zemnieku savienības biedrs nostājās pret Kārli Ulmani, kurš runāja par sadarbību ar sociāldemokrātiem un agrārreformu."
+     },
+     {
+      "source": "https://lv.wikipedia.org/wiki/Andrievs_Niedra",
+      "locator": "characters 7980:8077; sha256 d7aab7b475a2cb1d28866c23599da28acbb3cefd13223fbadcd711e65aa46896",
+      "claim": "그는 농민연합에 입당해 울마니스 노선에 맞서는 다른 분파를 만들었다.",
+      "excerpt": "Viņš iestājās Zemnieku savienībā, kurā izveidoja otru spārnu pret Kārļa Ulmaņa politisko virzību."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivars-godmanis",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-latvias-way",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1997,
+    "endYear": 2007,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://lv.wikipedia.org/wiki/Ivars_Godmanis",
+      "locator": "characters 3107:3256; sha256 e46dbab1a8c8fe55b187bf97b42dc0299ba8116b1bf9c33f2bf0211e3d639769",
+      "claim": "고드마니스는 1997년 「라트비아의 길」에 참여하며 정치에 복귀했다.",
+      "excerpt": "1997. gadā I. Godmanis atgriezās politikā, iesaistoties partijā \"Latvijas Ceļš\", kurā darbojās daudzi viņa LTF un Augstākās Padomes laika domubiedri."
+     },
+     {
+      "source": "https://lv.wikipedia.org/wiki/Ivars_Godmanis",
+      "locator": "characters 3434:3643; sha256 e46dbab1a8c8fe55b187bf97b42dc0299ba8116b1bf9c33f2bf0211e3d639769",
+      "claim": "그는 2004년 「라트비아의 길」 당수로 선출되었고, 2007년 합당 뒤 LPP/LC 공동 당수가 되었다.",
+      "excerpt": "2004. gadā ievēlēts par \"Latvijas Ceļa\" priekšsēdētāju, bet pēc tā apvienošanās ar Latvijas Pirmo partiju 2007. gadā kļuva par apvienības LPP/LC līdzpriekšsēdētāju kopā ar otras partijas līderi Aināru Šleseru."
+     },
+     {
+      "source": "https://lv.wikipedia.org/wiki/Latvijas_Ce%C4%BC%C5%A1",
+      "locator": "characters 771:825; sha256 8ed25a2b45504f370af807a36032e720b65411326948780e797981163aa5f110",
+      "claim": "고드마니스는 2004~2007년 「라트비아의 길」 당수였다.",
+      "excerpt": "Jānis Naglis (2003—2004) un Ivars Godmanis (2004—2007)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "antanas-smetona",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-lithuanian-nationalist-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1924,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://lt.wikipedia.org/wiki/Antanas_Smetona",
+      "locator": "characters 1595:1685; sha256 be62a2926c3f8d46c8a30e95f86387126686c006126a5d9fef047aca38fcde1b",
+      "claim": "스메토나는 1924년 리투아니아 민족주의자연합 조직자의 한 사람이었고 1925~1926년 그 의장을 지냈다.",
+      "excerpt": "1924 m. vienas Lietuvių tautininkų sąjungos organizatorių, jos pirmininkas (1925–1926 m.)."
+     },
+     {
+      "source": "https://lt.wikipedia.org/wiki/Lietuvi%C5%B3_tautinink%C5%B3_s%C4%85junga",
+      "locator": "characters 1291:1382; sha256 2a5a1c73a77e570bc93b9d8efc1466775d63178e0338dac0eb30021149cb0951",
+      "claim": "1926년 쿠데타 뒤 민족주의자연합의 지도자 스메토나가 다시 대통령이 되었다.",
+      "excerpt": "po 1926 m. perversmo šalies prezidentu vėl tapo tautininkų sąjungos lyderis Antanas Smetona"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "augustinas-voldemaras",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-lithuanian-nationalist-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1924,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://lt.wikipedia.org/wiki/Augustinas_Voldemaras",
+      "locator": "characters 2566:2720; sha256 02569dc3b3ae7729a2173bdf13c7c2ba9dc52dd29ba0110baed7923d402a0e2d",
+      "claim": "볼데마라스는 1924년 리투아니아 민족주의자연합을 세웠고, 1926년 이 당 소속으로 제3대 의회 의원에 당선되었다.",
+      "excerpt": "1924 m. įkūrė Lietuvių tautininkų sąjungą. 1926 m. išrinktas III Seimo atstovu nuo Lietuvių tautininkų sąjungos (kartu su Antanu Smetona ir Vladu Mironu)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Augustinas_Voldemaras",
+      "locator": "characters 7490:7616; sha256 c55b66a9d71e6247c224bc50e961dbbb6c39f75759b39888093d8ec103bf7bcd",
+      "claim": "1926년 쿠데타 무렵 볼데마라스와 스메토나는 민족주의자연합의 지도자였다.",
+      "excerpt": "They appealed for support to Voldemaras and Antanas Smetona, now leaders of the Lithuanian Nationalist Union, and both agreed."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "landsbergis",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-lithuanian-homeland-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1993,
+    "endYear": 2003,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://lt.wikipedia.org/wiki/Vytautas_Landsbergis",
+      "locator": "characters 4615:4785; sha256 34e5d0dd1bef4b25ad53b38ce209502667edbbafdb8ab9072f5d3b52feaea609",
+      "claim": "란츠베르기스는 1993년 5월 1일 창당된 조국연합(리투아니아 보수당)의 당수로 선출되어 2003년까지 재임했다.",
+      "excerpt": "1993 m. gegužės 1 d. steigiant Lietuvos konservatorių partiją, išrinktas jos pirmininku. 1995, 1998 ir 2000 m. išrinktas juo pakartotinai ir ėjo šias pareigas iki 2003 m."
+     },
+     {
+      "source": "https://lt.wikipedia.org/wiki/T%C4%97vyn%C4%97s_s%C4%85junga_%E2%80%93_Lietuvos_krik%C5%A1%C4%8Dionys_demokratai",
+      "locator": "characters 722:809; sha256 da4ab2ce3f547e60e2d392ce8e63e417165d09cdacc64c34c972d2aac37cbabd",
+      "claim": "조국연합의 창립자이자 당수인 란츠베르기스는 1996년 의회 의장이 되었다.",
+      "excerpt": "Tuometinis partijos įkūrėjas ir pirmininkas Vytautas Landsbergis tapo Seimo pirmininku."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "albertas-simenas",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-lithuanian-christian-democrats",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1994,
+    "endYear": 2008,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://lt.wikipedia.org/wiki/Albertas_%C5%A0im%C4%97nas",
+      "locator": "characters 1519:1641; sha256 1c39358083a65ca400fb60c32239ab87cde74ba363bf3c843df1c297e563c1c7",
+      "claim": "시메나스는 1994년부터 리투아니아 기독민주당, 2001년부터 리투아니아 기독민주당(LKD), 2008년부터 조국연합-리투아니아 기독민주당 당원이다.",
+      "excerpt": "Nuo 1994 m. Lietuvos krikščionių demokratų partijos, nuo 2001 m. Lietuvos krikščionių demokratų, nuo 2008 m. TS-LKD narys."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Albertas_%C5%A0im%C4%97nas",
+      "locator": "characters 1177:1284; sha256 4856a0631fa0b41ec6e6fd42d29240d023e43fb20104b09a770b535711e6b081",
+      "claim": "그는 1994년 리투아니아 기독민주당에 입당했다.",
+      "excerpt": "In 1994, he joined the Lithuanian Christian Democratic Party and was elected to the Seventh Seimas in 1996."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "istvan-tisza",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1886,
+    "endYear": 1906,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Tisza_Istv%C3%A1n",
+      "locator": "characters 3031:3122; sha256 e27224238f3338a957d5697c70b43eda2a085805b7096d58d00399299f6ac63c",
+      "claim": "티서는 1886년부터 자유당 강령으로 의원이 되었다.",
+      "excerpt": "1886-tól a Szabadelvű Párt programjával képviselő, 1892-ig a vízaknai kerületet képviselte."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Tisza_Istv%C3%A1n",
+      "locator": "characters 4989:5115; sha256 e27224238f3338a957d5697c70b43eda2a085805b7096d58d00399299f6ac63c",
+      "claim": "그는 자유당 9인 위원회 위원으로 당의 군사 강령을 만들었다.",
+      "excerpt": "Mint a Szabadelvű Párt kilences bizottságának tagja, szívós munkásságot fejtett ki a párt katonai programjának elkészítésében."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Tisza_Istv%C3%A1n",
+      "locator": "characters 11421:11522; sha256 e27224238f3338a957d5697c70b43eda2a085805b7096d58d00399299f6ac63c",
+      "claim": "헌정 평화가 이루어지자 그의 발의로 자유당이 만장일치로 해산을 결의했다.",
+      "excerpt": "Az alkotmányos béke létrejöttével, indítványára a szabadelvű párt egyhangúlag kimondotta feloszlását."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Tisza",
+      "locator": "characters 3869:3948; sha256 715e6940f231d57ea91aa036fa4835701bfce8e1426c2c61aa829cd48f9a7fc9",
+      "claim": "티서는 1886년 자유당 소속으로 첫 의석을 얻었다.",
+      "excerpt": "He won his first parliamentary electoral mandate in 1886 with the Liberal Party"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "albert-apponyi",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-hungarian-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1900,
+    "endYear": 1903,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Apponyi_Albert",
+      "locator": "characters 4173:4305; sha256 b24a1c70cace4645e0095ceb471d6af94a0d2d56717573f8e241923007bbb6a2",
+      "claim": "어포니의 국민당은 1900년 2월 자유당과 합쳤다.",
+      "excerpt": "Pártja 1892 októberében a Nemzeti Párt nevet vette fel és ezt a nevet viselte 1900 februárjáig, mikor egyesült a Szabadelvű Párttal."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Apponyi_Albert",
+      "locator": "characters 9128:9220; sha256 b24a1c70cace4645e0095ceb471d6af94a0d2d56717573f8e241923007bbb6a2",
+      "claim": "어포니는 셀 칼만과 합의해 자기 당과 함께 자유당에 합류했다.",
+      "excerpt": "Széll-lel Apponyi egyezségre jutott, így pártjával együtt csatlakozott a Szabadelvű Párthoz."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Apponyi_Albert",
+      "locator": "characters 10645:10738; sha256 b24a1c70cace4645e0095ceb471d6af94a0d2d56717573f8e241923007bbb6a2",
+      "claim": "그는 11월 3일 하원 의장직을 내려놓은 뒤 11월 26일 자유당을 탈당했다.",
+      "excerpt": "November 26-án tehát kilépett a pártból, miután a házelnökségről már november 3-án lemondott."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "albert-apponyi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-independence",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1904,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Apponyi_Albert",
+      "locator": "characters 11841:11950; sha256 b24a1c70cace4645e0095ceb471d6af94a0d2d56717573f8e241923007bbb6a2",
+      "claim": "어포니는 1904년 말 독립당 당원이 되어 1904/1905년 선거운동을 이끌었다.",
+      "excerpt": "Apponyi, aki végképp csalódott a hatvanhetes politikában, még az év végén tagja lett a Függetlenségi Pártnak."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Apponyi_Albert",
+      "locator": "characters 14509:14580; sha256 b24a1c70cace4645e0095ceb471d6af94a0d2d56717573f8e241923007bbb6a2",
+      "claim": "1914년 코슈트 페렌츠가 죽은 뒤 어포니가 당수가 되었다.",
+      "excerpt": "Kossuth Ferenc 1914-ben bekövetkezett halála után ő lett a párt elnöke."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/F%C3%BCggetlens%C3%A9gi_%C3%A9s_48-as_P%C3%A1rt",
+      "locator": "characters 879:1043; sha256 b9bd0378f8eaabfd726cf24e83512118bc028d0cc1447a50663e8c165834ff0b",
+      "claim": "어포니는 1914년 독립과 48년당의 마지막 당수가 되었다.",
+      "excerpt": "1914-ben, Kossuth Ferenc halála után, Apponyi Albert gróf lett a következő, és egyben az utolsó Függetlenségi és Negyvennyolcas Párt elnöke, amely 1918-ig működött."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mihaly-karolyi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-independence",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1910,
+    "endYear": 1916,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+      "locator": "characters 4156:4250; sha256 456060790719b2977f950e84312a42306f770aa30cb4caa83c32af6d8e98869b",
+      "claim": "카로이는 1910년 야당인 독립당 소속으로 의회에 당선되었다.",
+      "excerpt": "In 1910, Károlyi was elected to Parliament as a member of the opposition Party of Independence"
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/F%C3%BCggetlens%C3%A9gi_%C3%A9s_48-as_P%C3%A1rt",
+      "locator": "characters 4998:5152; sha256 b9bd0378f8eaabfd726cf24e83512118bc028d0cc1447a50663e8c165834ff0b",
+      "claim": "1916년 당시 당수였던 카로이가 탈당해 카로이당을 세웠다.",
+      "excerpt": "1916-ban a párt akkori elnöke, Károlyi Mihály kilépett a pártból, és megalapította a Függetlenségi és 48-as (Károlyi) Pártot, vagy röviden Károlyi-pártot."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "istvan-friedrich",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-independence",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1912,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Friedrich_Istv%C3%A1n",
+      "locator": "characters 623:735; sha256 dcae9058534488ec068c781c8d5b87b4489664e66b1d46026d4757600b1af484",
+      "claim": "프리드리히는 1912년 독립과 48년당에 입당했다.",
+      "excerpt": "1912-ben belépett a Függetlenségi és Negyvennyolcas Pártba és kapcsolatba került a szabadkőműves-mozgalommal is."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Friedrich",
+      "locator": "characters 1917:2036; sha256 db40f234ff7280b07fbbe69b0b8a76ded8f900bbc6b9752e734c1d2f32726890",
+      "claim": "그는 1912년 카로이의 독립당에 입당했다.",
+      "excerpt": "In 1912 he joined the Independence Party of Mihály Károlyi and was considered as part of the left wing of the liberals."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "istvan-friedrich",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-christian-national",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Kereszt%C3%A9ny_Nemzeti_Egyes%C3%BCl%C3%A9s_P%C3%A1rtja",
+      "locator": "characters 469:610; sha256 32018c200de97afc91774f7e089d8a756ed936b56cf44e1b2e19367e71c39b15",
+      "claim": "기독교민족연합당은 1919년 10월 24일 프리드리히의 지도 아래 결성되었다.",
+      "excerpt": "A Keresztény Nemzeti Párt és a Keresztényszociális Gazdasági Párt egyesülésével jött létre 1919. október 24-én, Friedrich István vezetésével."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Friedrich_Istv%C3%A1n",
+      "locator": "characters 2901:3094; sha256 dcae9058534488ec068c781c8d5b87b4489664e66b1d46026d4757600b1af484",
+      "claim": "그는 1920년 4월 기독교민족연합당을 탈당해 별도 정당을 세웠다.",
+      "excerpt": "1920 áprilisában kilépett a Keresztény Nemzeti Egyesülés Pártjából és külön pártot alapított, amely 1922-ben egyesült Andrássy csoportjával és felvette a Szövetkezett Keresztény Ellenzék nevet."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Istv%C3%A1n_Friedrich",
+      "locator": "characters 17847:17977; sha256 db40f234ff7280b07fbbe69b0b8a76ded8f900bbc6b9752e734c1d2f32726890",
+      "claim": "그는 1920년 선거에서 기독교민족연합당 후보로 당선되었다.",
+      "excerpt": "In the elections of February 1920, Friedrich was elected by the KNEP but almost immediately formed an own group with his followers"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "geza-jeszenszky",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-democratic-forum",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1988,
+    "endYear": 1996,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://hu.wikipedia.org/wiki/Jeszenszky_G%C3%A9za_(k%C3%BCl%C3%BCgyminiszter)",
+      "locator": "characters 3798:3966; sha256 200608f0b22a2183e06796a71ef1f154d56a30d14c5cb5097592060109114412",
+      "claim": "예센스키는 1988년 9월 헝가리 민주포럼 창립 당원이 되었고 첫 전국위원회 위원으로 뽑혔다.",
+      "excerpt": "Ott volt az 1987-es első lakiteleki találkozón, majd 1988 szeptemberében a Magyar Demokrata Fórum alapító tagja lett. Az első országos választmány tagjává választották."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Jeszenszky_G%C3%A9za_(k%C3%BCl%C3%BCgyminiszter)",
+      "locator": "characters 3967:4076; sha256 200608f0b22a2183e06796a71ef1f154d56a30d14c5cb5097592060109114412",
+      "claim": "그는 1989~1990년 민주포럼 외교위원장을 지냈고 1990년 전국 의장단 위원으로 뽑혔다.",
+      "excerpt": "1989–1990 között az MDF külügyi bizottságának a vezetője. 1990-ben az országos elnökség tagjává választották."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Jeszenszky_G%C3%A9za_(k%C3%BCl%C3%BCgyminiszter)",
+      "locator": "characters 5480:5541; sha256 200608f0b22a2183e06796a71ef1f154d56a30d14c5cb5097592060109114412",
+      "claim": "그는 1996년 민주포럼 제10차 전국대회 뒤 탈당했다.",
+      "excerpt": "1996-ban, az MDF X. országos gyűlése után kilépett a pártból."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferenc-szalasi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "arrow-cross-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1935,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ferenc_Sz%C3%A1lasi",
+      "locator": "characters 115:165; sha256 98d6462201be0c3dcb50445ffc7cc08646f8216c3d58f91b6f0b5229362c257f",
+      "claim": "살러시는 극우 파시스트 화살십자당의 창립자였다.",
+      "excerpt": "founder of the far-right fascist Arrow Cross Party"
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Sz%C3%A1lasi_Ferenc",
+      "locator": "characters 895:1039; sha256 26efbf08e4529ce077d24e2e730496e2957def3bf6a60679c41d6cc86ea7913d",
+      "claim": "그는 수감 중 화살십자당 지도자로 선포되었다.",
+      "excerpt": "Börtönben a szélsőjobboldali náci Nyilaskeresztes Párt vezetőjének kiáltották ki, amely gyorsan az ország egyik legerősebb politikai ereje lett."
+     },
+     {
+      "source": "https://hu.wikipedia.org/wiki/Sz%C3%A1lasi_Ferenc",
+      "locator": "characters 9289:9430; sha256 26efbf08e4529ce077d24e2e730496e2957def3bf6a60679c41d6cc86ea7913d",
+      "claim": "그는 1935년 3월 4일 화살십자를 상징으로 한 민족의지당 창당을 선언했다.",
+      "excerpt": "1935. március 4-én bejelentette a Nemzeti Akarat Pártjának (NAP) megalakulását, melyet május 1-jén a belügyminisztériumban is bejegyeztetett."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}

@@ -1,0 +1,66 @@
+{
+ "changedBy": "claude-party-backlog-20261005",
+ "items": [
+  {
+   "id": "georges-clemenceau",
+   "topic": "party",
+   "status": "not_applicable",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Georges_Clemenceau",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B5%D0%BC%D0%B0%D0%BD%D1%81%D0%BE,_%D0%96%D0%BE%D1%80%D0%B6",
+    "https://fr.wikipedia.org/wiki/Parti_r%C3%A9publicain,_radical_et_radical-socialiste"
+   ],
+   "reason": "2026-10-05 정당 백로그 정리: 프랑스어판 급진당 문서가 클레망소는 1901년 창당된 급진당에 가입하지 않았다고 명시(비당원)."
+  },
+  {
+   "id": "sofia-perovskaya",
+   "topic": "party",
+   "status": "complete",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Sophia_Perovskaya",
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F,_%D0%A1%D0%BE%D1%84%D1%8C%D1%8F_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%BD%D0%B0"
+   ],
+   "reason": "2026-10-05 정당 백로그 정리: 카드에 이미 있던 인민의 의지 활동이 카탈로그 v23에서 정당 종류로 바뀌어 정당 활동으로 인정됨."
+  },
+  {
+   "id": "andrei-zhelyabov",
+   "topic": "party",
+   "status": "complete",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Andrei_Zhelyabov",
+    "https://ru.wikipedia.org/wiki/%D0%96%D0%B5%D0%BB%D1%8F%D0%B1%D0%BE%D0%B2,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "reason": "2026-10-05 정당 백로그 정리: 카드에 이미 있던 인민의 의지 활동이 카탈로그 v23에서 정당 종류로 바뀌어 정당 활동으로 인정됨."
+  },
+  {
+   "id": "alexander-ulyanov",
+   "topic": "party",
+   "status": "complete",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Aleksandr_Ulyanov",
+    "https://ru.wikipedia.org/wiki/%D0%A3%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87"
+   ],
+   "reason": "2026-10-05 정당 백로그 정리: 카드에 이미 있던 인민의 의지 활동이 카탈로그 v23에서 정당 종류로 바뀌어 정당 활동으로 인정됨."
+  },
+  {
+   "id": "nikolai-morozov",
+   "topic": "party",
+   "status": "complete",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nikolai_Morozov_(revolutionary)",
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%80%D0%BE%D0%B7%D0%BE%D0%B2,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "reason": "2026-10-05 정당 백로그 정리: 카드에 이미 있던 인민의 의지 활동이 카탈로그 v23에서 정당 종류로 바뀌어 정당 활동으로 인정됨."
+  },
+  {
+   "id": "francois-buzot",
+   "topic": "party",
+   "status": "complete",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Buzot",
+    "https://ru.wikipedia.org/wiki/%D0%91%D1%8E%D0%B7%D0%BE,_%D0%A4%D1%80%D0%B0%D0%BD%D1%81%D1%83%D0%B0"
+   ],
+   "reason": "2026-10-05 정당 백로그 정리: 카드에 이미 있던 지롱드파 활동이 카탈로그 v23에서 정당 종류로 바뀌어 정당 활동으로 인정됨."
+  }
+ ]
+}

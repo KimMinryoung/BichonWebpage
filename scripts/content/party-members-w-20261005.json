@@ -1,0 +1,303 @@
+{
+ "add": [
+  {
+   "personId": "mamoru-shigemitsu",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-japan-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1954,
+    "endYear": 1955,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Japan_Democratic_Party",
+      "locator": "characters 208:332; sha256 39bc7a7400babc3fdf8093a637060e5423be5f03387f7e4b1944ff8a94a74f23",
+      "claim": "시게미쓰 마모루는 하토야마 이치로, 기시 노부스케와 함께 일본민주당을 창당했다.",
+      "excerpt": "the party was founded by Ichirō Hatoyama, former foreign minister Mamoru Shigemitsu and future Prime Minister Nobusuke Kishi"
+     },
+     {
+      "source": "https://ja.wikipedia.org/wiki/%E9%87%8D%E5%85%89%E8%91%B5",
+      "locator": "characters 3491:3510; sha256 463a25f77fc9221b3aa4f7ac54a204f213ac13db794657c8cdc56a80eb1611ad",
+      "claim": "시게미쓰는 개진당 총재와 일본민주당 부총재를 지냈다.",
+      "excerpt": "改進党総裁・日本民主党副総裁を務めた。"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mamoru-shigemitsu",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-japanese-ldp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1955,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ja.wikipedia.org/wiki/%E9%87%8D%E5%85%89%E8%91%B5",
+      "locator": "characters 3776:3808; sha256 463a25f77fc9221b3aa4f7ac54a204f213ac13db794657c8cdc56a80eb1611ad",
+      "claim": "시게미쓰는 1955년 보수합동으로 자유민주당이 창당될 때 참여했다.",
+      "excerpt": "1955年（昭和30年）の保守合同による自由民主党の結党に参加。"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "son-sann",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-cambodian-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1952,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Son_Sann",
+      "locator": "characters 1303:1404; sha256 e84097fb34875a55bf32d73b3565e2d6aac9dcc93554926d84f003d751acb679",
+      "claim": "손 산은 민주당 초기 지지자로 당 운영위원회 위원이 되었다.",
+      "excerpt": "An early supporter of the Khmer Democratic Party, Son Sann became a member of its steering committee."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Parti_d%C3%A9mocrate_(Cambodge)",
+      "locator": "characters 23280:23350; sha256 9f46c91844a1bf524275aaadb87b51bb5790a14728aa735f52cba5e081804e5c",
+      "claim": "1952년 6월 초 민주당 대회가 손 산을 당 총재로 지명했다.",
+      "excerpt": "le congrès nommait un économiste réputé, Son Sann, président du parti."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Son_Sann",
+      "locator": "characters 1808:1909; sha256 e84097fb34875a55bf32d73b3565e2d6aac9dcc93554926d84f003d751acb679",
+      "claim": "손 산은 1952년 민주당이 「분쇄」된 뒤 당 지도부에서 물러났다.",
+      "excerpt": "Following the \"crushing\" of the Democrat Party in 1952, he resigned from the leadership of the party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "son-sann",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-sangkum",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Son_Sann",
+      "locator": "characters 1910:2130; sha256 e84097fb34875a55bf32d73b3565e2d6aac9dcc93554926d84f003d751acb679",
+      "claim": "손 산은 상쿰 당원으로 정계에 복귀해 1950년대 말~1960년대 초 여러 정부에서 일했다.",
+      "excerpt": "He re-entered politics as a member of the Sangkum party and served in several governments in the late 1950s to the early 1960s holding various posts before becoming president of the National Bank of Cambodia (1955–1968)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "norodom-sihanouk",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-sangkum",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1955,
+    "endYear": 1970,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+      "locator": "characters 11282:11583; sha256 8ce969a20e3875ecfb5a35bf7abee636466bb5c90e3b9238a630ebc2a30a3116",
+      "claim": "시아누크는 1955년 4월 자신의 정당 상쿰(인민사회주의공동체)의 결성을 발표했다.",
+      "excerpt": "In April 1955, before leaving for a summit with Asian and African states in Bandung, Indonesia, Sihanouk announced the formation of his own political party, the Popular Socialist Community (Sangkum), and expressed interest in participating in the general elections slated to be held in September 1955."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+      "locator": "characters 18851:18937; sha256 8ce969a20e3875ecfb5a35bf7abee636466bb5c90e3b9238a630ebc2a30a3116",
+      "claim": "1960년 국가원수가 된 뒤에도 시아누크는 상쿰 지도자로 정치에 적극 관여했다.",
+      "excerpt": "At the same time, he continued to play an active role in politics as Sangkum's leader."
+     },
+     {
+      "source": "https://fr.wikipedia.org/wiki/Sangkum_Reastr_Niyum",
+      "locator": "characters 135:226; sha256 77887e649c1806585a32961a8a1afbcdbddbfd15c486233f0edb6daa22f27788",
+      "claim": "상쿰은 1955년부터 1970년까지 시아누크가 권력을 행사하게 해 준 그의 정치 조직이었다.",
+      "excerpt": "création du prince Norodom Sihanouk et qui lui a permis d’exercer le pouvoir de 1955 à 1970"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "norodom-sihanouk",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-funcinpec",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1981,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/FUNCINPEC",
+      "locator": "characters 2479:2585; sha256 62e08e0af5637c30fd1de41ae0e7b0fe8fec1aa656beb883e57c7c8849c9d778",
+      "claim": "시아누크는 1981년 3월 21일 왕당파 저항운동 푼신펙을 창설했다.",
+      "excerpt": "On 21 March 1981, Sihanouk founded FUNCINPEC, a royalist resistance movement, from Pyongyang, North Korea."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+      "locator": "characters 36624:36737; sha256 8ce969a20e3875ecfb5a35bf7abee636466bb5c90e3b9238a630ebc2a30a3116",
+      "claim": "시아누크는 1989년 푼신펙 총재에서 물러났으나 평당원으로 남았다.",
+      "excerpt": "The following month, Sihanouk resigned as president of FUNCINPEC but remained in the party as an ordinary member."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Norodom_Sihanouk",
+      "locator": "characters 37109:37203; sha256 8ce969a20e3875ecfb5a35bf7abee636466bb5c90e3b9238a630ebc2a30a3116",
+      "claim": "시아누크는 1991년 7월 푼신펙을 완전히 떠났다.",
+      "excerpt": "In July 1991 Sihanouk left FUNCINPEC altogether and was elected as the chairperson of the SNC."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "souvanna-phouma",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-lao-national-progressive",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1950,
+    "endYear": 1958,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "characters 121:231; sha256 b07ab8df105285b40bf3dfd7cea6595e30b4c0a76b223a81db7ac86a26f3085a",
+      "claim": "수반나 푸마는 1950년 시엥 마오, 카타이 돈 사소릿과 함께 국민진보당을 창당했다.",
+      "excerpt": "The party was founded in 1950 by former Lao Issara members Xieng Mao, Souvanna Phouma, and Katay Don Sasorith."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "characters 402:461; sha256 b07ab8df105285b40bf3dfd7cea6595e30b4c0a76b223a81db7ac86a26f3085a",
+      "claim": "수반나 푸마는 국민진보당의 지도자였다.",
+      "excerpt": "The party's leader, Souvanna Phouma, became prime minister."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/National_Progressive_Party_(Laos)",
+      "locator": "characters 463:582; sha256 b07ab8df105285b40bf3dfd7cea6595e30b4c0a76b223a81db7ac86a26f3085a",
+      "claim": "국민진보당은 1958년 선거 뒤 독립당과 합당해 해산했다.",
+      "excerpt": "Following the 1958 election, the party dissolved when it merged with the Independent Party into the Lao People's Rally."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "lee-kuan-yew",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-singapore-pap",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1954,
+    "endYear": 1992,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Lee_Kuan_Yew",
+      "locator": "characters 12808:12951; sha256 324ccecf4c6c707919c27d198d861aa76797705ecb093f501540c5d82d98f5f8",
+      "claim": "리콴유는 1954년 창당된 인민행동당의 사무총장이 되어 1957년 잠시를 빼고 1992년까지 그 자리를 지켰다.",
+      "excerpt": "Lee became secretary-general of the party, a post he held until 1992, barring a brief period in 1957 when the post was taken up by T. T. Rajah."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Lee_Kuan_Yew",
+      "locator": "characters 72537:72653; sha256 324ccecf4c6c707919c27d198d861aa76797705ecb093f501540c5d82d98f5f8",
+      "claim": "리콴유는 1992년 12월 2일 사무총장에서 물러나 고촉통에게 넘겼다.",
+      "excerpt": "Lee subsequently stepped down as secretary-general of the PAP and was succeeded by Goh Chok Tong on 2 December 1992."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "syngman-rhee",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-korean-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1951,
+    "endYear": 1960,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%B9%EB%A7%8C",
+      "locator": "characters 93772:93810; sha256 9895643316678bdaa5ba1966bef35c220ab131e0993a5ed58ea1b5898b287ad7",
+      "claim": "이승만은 1951년 11월 자유당 창당과 총재직을 수락했다.",
+      "excerpt": "1951년 11월 19일 이승만은 자유당 창당과 총재직을 수락하였다."
+     },
+     {
+      "source": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%B9%EB%A7%8C",
+      "locator": "characters 114852:114908; sha256 9895643316678bdaa5ba1966bef35c220ab131e0993a5ed58ea1b5898b287ad7",
+      "claim": "이승만은 1960년 4월 24일 4·19 유혈사태의 책임을 지고 자유당 총재직을 사퇴했다.",
+      "excerpt": "4월 24일 4.19 유혈사태에 책임을 지고 자유당 총재직을 사퇴하고 대통령직에만 전념하겠다 하였다."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yi-dong-hwi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-korean-socialist-1918",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1921,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%8F%99%ED%9C%98",
+      "locator": "characters 2021:2126; sha256 fdecb39194d749e4702fd73b81e932bd2e540c5059b89ba793d52a4eea501cc5",
+      "claim": "이동휘는 1918년 5월 11일 하바롭스크에서 한인사회당을 조직했다.",
+      "excerpt": "그리하여 1918년 5월 11일(러시아 구력 율리우스력 4월 28일) 하바로프스크에서 한인사회당(韓人社會黨)을 조직하고 연해주에서 한인적위군(韓人赤衛軍)을 편성하는 활동에 적극 참여하였다."
+     },
+     {
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "characters 131:196; sha256 3d5de1544ff5394f4063e6adc4542afd4027872b3efb05e96bcf8ad5a3c4f76b",
+      "claim": "이동휘는 한인사회당 당수로서 임시정부 국무총리에 취임했다.",
+      "excerpt": "당시 상해임시정부는 이동휘가 한인사회당 당수로서 국무총리에 취임함으로써 민족,사회주의 세력의 연합정부 형태를 띠었다."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "yi-dong-hwi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-koryo-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1921,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "characters 0:50; sha256 3d5de1544ff5394f4063e6adc4542afd4027872b3efb05e96bcf8ad5a3c4f76b",
+      "claim": "상하이파 고려공산당은 1921년 이동휘를 중심으로 상하이에서 결성되었다.",
+      "excerpt": "상하이 고려공산당은 1921년 중국 상하이에서 이동휘를 중심으로 결성된 사회주의 단체이다."
+     },
+     {
+      "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_(%EC%83%81%ED%95%98%EC%9D%B4)",
+      "locator": "characters 339:419; sha256 3d5de1544ff5394f4063e6adc4542afd4027872b3efb05e96bcf8ad5a3c4f76b",
+      "claim": "상하이파 고려공산당은 1922년 12월 코민테른 주도로 해체되었다.",
+      "excerpt": "1922년 12월 코민테른 주도로 이르쿠츠크 고려공산당과 함께 해체되었고, 이후 꼬르뷰로(1923.2)를 설치, 통일된 공산당을 조직하게 했다."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}

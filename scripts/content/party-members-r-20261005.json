@@ -1,0 +1,305 @@
+{
+ "add": [
+  {
+   "personId": "alois-mock",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-austrian-ovp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1979,
+    "endYear": 1989,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Alois_Mock",
+      "locator": "characters 2002:2133; sha256 8c2902db34f386922d5dbdf389539829f659ca070c21953bcbdd97b9db058602",
+      "claim": "알로이스 모크는 1979년부터 1989년까지 오스트리아 국민당 연방 당수였다.",
+      "excerpt": "Außerdem war Mock von 1979 (Wahl am 7. Juli 1979 bei einem Sonderparteitag mit 97,5 % der Stimmen) bis 1989 ÖVP-Bundesparteiobmann."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Alois_Mock",
+      "locator": "characters 78:153; sha256 d12ffd1010ce529129d52f149a93381d56c6b74ffaf007f068ba2937a5c1cbfb",
+      "claim": "모크는 오스트리아 국민당 당원인 정치인이었다.",
+      "excerpt": "was an Austrian politician and member of the Austrian People's Party (ÖVP)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "manuel-azana",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-spanish-republican-left",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1934,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://es.wikipedia.org/wiki/Izquierda_Republicana",
+      "locator": "characters 1786:1862; sha256 5587ff7ed23941bce2a607835ccc2c279eca46a952f127f4153bd75a46c8372a",
+      "claim": "아사냐는 공화좌파를 창당하고 첫 전국평의회 의장이 되었다.",
+      "excerpt": "Azaña se convirtió en el presidente del primer Consejo Nacional del partido."
+     },
+     {
+      "source": "https://es.wikipedia.org/wiki/Manuel_Aza%C3%B1a",
+      "locator": "characters 44808:45112; sha256 30bb4b7c2aea3baba7c5d2d0dd02618f808146aacb85439042c913808c125c35",
+      "claim": "공화행동 등이 합쳐 아사냐를 의장으로 하는 공화좌파가 1934년 4월 생겨났다.",
+      "excerpt": "En este contexto, se produjo la disolución de Acción Republicana para fusionarse con la Organización Republicana Gallega Autónoma y con el Partido Radical Socialista Independiente en la nueva formación llamada Izquierda Republicana, que nacería a principios de abril bajo la presidencia del propio Azaña."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "francisco-franco",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-spanish-fet-jons",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1937,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://es.wikipedia.org/wiki/Francisco_Franco",
+      "locator": "characters 554:817; sha256 ea8f5484bb96d53c610de7a7086aa684e25a7826f31a3937e134b704b025abc2",
+      "claim": "프랑코는 1937년 4월 FET y de las JONS의 전국 지도자가 되었다.",
+      "excerpt": "En abril de 1937, se autoproclamó jefe nacional de la Falange Española Tradicionalista y de las Juntas de Ofensiva Nacional Sindicalista (FET y de las JONS), partido único resultado de la fusión de la Falange Española de las JONS y de la Comunión Tradicionalista."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fritz-platten",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-swiss-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1911,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Fritz_Platten",
+      "locator": "characters 757:818; sha256 04f158c0aa012631de110dc6ec8e2de3c216418ea7fa7fd328bbf0d726f602fb",
+      "claim": "플라텐은 1911년 스위스 사회민주당에 입당했다.",
+      "excerpt": "1911 trat er der Sozialdemokratischen Partei der Schweiz bei."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Fritz_Platten",
+      "locator": "characters 610:752; sha256 06728e165aed2592cace177c7ce7aafda96a52d64044168bfd164fd0d91a3511",
+      "claim": "플라텐은 스위스 사회민주당원으로 1915~1919년 당 서기를 지냈다.",
+      "excerpt": "Platten began his political career as a member of the Social Democratic Party of Switzerland, of which he was secretary between 1915 and 1919."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fritz-platten",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-swiss-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1921,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Fritz_Platten",
+      "locator": "characters 1662:1745; sha256 04f158c0aa012631de110dc6ec8e2de3c216418ea7fa7fd328bbf0d726f602fb",
+      "claim": "플라텐은 1921년 스위스 공산당 창당 당원이었고 당 서기를 맡았다.",
+      "excerpt": "1921 gehörte er zu den Gründungsmitgliedern der KPS und fungierte als ihr Sekretär."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gustav-stresemann",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-national-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": 1918,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Gustav_Stresemann",
+      "locator": "characters 6950:7086; sha256 ad77445215c701145b3ec49a3194494a6b734bb3c24779536f4710b59f0bfd02",
+      "claim": "슈트레제만은 1903년 국민자유당에 입당했다.",
+      "excerpt": "Im Zuge der Auflösung des Vereins trat er 1903 der Nationalliberalen Partei bei, für die er 1906 in den Dresdner Stadtrat gewählt wurde."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Gustav_Stresemann",
+      "locator": "characters 7035:7114; sha256 f6e579e7e2d209063fbda3373a2433c14e8d02ed1fcc4a1ba22ff59e8a77db5d",
+      "claim": "슈트레제만은 1917년 국민자유당 지도자 자리를 이어받았다.",
+      "excerpt": "After Bassermann's death in 1917, Stresemann succeeded him as the party leader."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gustav-stresemann",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-dvp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": 1929,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Gustav_Stresemann",
+      "locator": "characters 18141:18245; sha256 ad77445215c701145b3ec49a3194494a6b734bb3c24779536f4710b59f0bfd02",
+      "claim": "1918년 12월 15일 독일인민당이 창당되고 슈트레제만이 만장일치로 의장에 선출되었다.",
+      "excerpt": "Am 15. Dezember wurde die DVP offiziell gegründet. Stresemann wurde einstimmig zum Vorsitzenden gewählt."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Deutsche_Volkspartei",
+      "locator": "characters 3680:3739; sha256 8da4642d1f097bec89ced474c7077e629cd2159b779ce3668a91702cfbeb633f",
+      "claim": "슈트레제만은 1929년 죽을 때까지 독일인민당 의장이었다.",
+      "excerpt": "Stresemann blieb bis zu seinem Tod 1929 Parteivorsitzender."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "wilhelm-cuno",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-dvp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Wilhelm_Cuno",
+      "locator": "characters 3592:3901; sha256 74cd27b57e5504c29f97af7758053a4cfe629271bffc44ea67902fd7f5b3d392",
+      "claim": "쿠노는 독일인민당에 입당했다가 카프 폭동 때 당의 태도에 반발해 탈당했다.",
+      "excerpt": "Die bürgerlichen Parteien traten in dieser Zeit mehrfach an den wertkonservativen Wirtschaftsführer heran, der sich schließlich zum Beitritt in die Deutsche Volkspartei entschloss. Als diese seines Erachtens im Kapp-Putsch eine uneindeutige Haltung einnahm, trat er aus der DVP aus und blieb fortan parteilos."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alfred-von-tirpitz",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-german-dnvp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1924,
+    "endYear": 1928,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Alfred_von_Tirpitz",
+      "locator": "characters 23651:23822; sha256 6c3d828bd8feac6752069f5a9a305094c3455e1790e991b7970dc5d9e4fba762",
+      "claim": "티르피츠는 1924~1928년 독일국가인민당 소속 제국의회 의원이었다.",
+      "excerpt": "Ab 1924 war Tirpitz als Abgeordneter der Deutschnationalen Volkspartei (DNVP) Mitglied des Reichstags, aus dem er sich 1928 zurückzog und seine politische Arbeit beendete."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Deutschnationale_Volkspartei",
+      "locator": "characters 5173:5366; sha256 f07ad4586b1363f11cb9f122197aa51a52e237b04de222d2d52b48f1d04cfc58",
+      "claim": "독일국가인민당 문서는 티르피츠를 당의 가장 잘 알려진 창당자·당원 가운데 하나로 꼽는다.",
+      "excerpt": "Die bekanntesten Gründer und Mitglieder waren Oskar Hergt (ehemaliger preußischer Finanzminister), Alfred von Tirpitz (Großadmiral im Ersten Weltkrieg und Begründer der deutschen Hochseeflotte)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferdinand-lassalle",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-adav",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1863,
+    "endYear": 1864,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Allgemeiner_Deutscher_Arbeiterverein",
+      "locator": "characters 5751:5814; sha256 a9491ab3e433c68645f10f0d7a2321cc7c441e6ccf63156d769fbc1257f3161d",
+      "claim": "라살레는 1863년 전독일노동자협회 창립 때 회장으로 선출되었다.",
+      "excerpt": "Lassalle wurde für zunächst fünf Jahre zum Präsidenten gewählt."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Allgemeiner_Deutscher_Arbeiterverein",
+      "locator": "characters 173:297; sha256 a9491ab3e433c68645f10f0d7a2321cc7c441e6ccf63156d769fbc1257f3161d",
+      "claim": "라살레는 협회의 핵심 창립자였고 1864년에 죽었다.",
+      "excerpt": "Maßgeblicher Gründer war Ferdinand Lassalle. Nach dessen Tod im Jahr 1864 kam es zu Auseinandersetzungen um seine Nachfolge."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "karl-marx",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "communist-league",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1847,
+    "endYear": 1852,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Bund_der_Kommunisten",
+      "locator": "characters 1277:1406; sha256 46278f139b08e2ccbecccfbfb5c981592a310546e73d659ad414b55576be454f",
+      "claim": "마르크스는 1847년 동맹에 가입했다.",
+      "excerpt": "Hier brachten die im selben Jahr dem Bund beigetretenen Karl Marx und Friedrich Engels zusammen mit Wilhelm Wolff ihre Ideen ein."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Bund_der_Kommunisten",
+      "locator": "characters 3587:3655; sha256 46278f139b08e2ccbecccfbfb5c981592a310546e73d659ad414b55576be454f",
+      "claim": "1848년 파리에서 마르크스와 엥겔스가 정식으로 동맹 지도부를 맡았다.",
+      "excerpt": "Dort übernahmen Marx und Engels auch formell die Führung des Bundes."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Bund_der_Kommunisten",
+      "locator": "characters 9258:9352; sha256 46278f139b08e2ccbecccfbfb5c981592a310546e73d659ad414b55576be454f",
+      "claim": "동맹은 1852년 11월 마르크스의 제안으로 해산되었다.",
+      "excerpt": "Nach dieser schweren Niederlage wurde der Bund im November auf Antrag von Karl Marx aufgelöst."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "friedrich-engels",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "communist-league",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1847,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://de.wikipedia.org/wiki/Bund_der_Kommunisten",
+      "locator": "characters 1277:1406; sha256 46278f139b08e2ccbecccfbfb5c981592a310546e73d659ad414b55576be454f",
+      "claim": "엥겔스는 1847년 동맹에 가입했다.",
+      "excerpt": "Hier brachten die im selben Jahr dem Bund beigetretenen Karl Marx und Friedrich Engels zusammen mit Wilhelm Wolff ihre Ideen ein."
+     },
+     {
+      "source": "https://de.wikipedia.org/wiki/Bund_der_Kommunisten",
+      "locator": "characters 3587:3655; sha256 46278f139b08e2ccbecccfbfb5c981592a310546e73d659ad414b55576be454f",
+      "claim": "1848년 파리에서 마르크스와 엥겔스가 정식으로 동맹 지도부를 맡았다.",
+      "excerpt": "Dort übernahmen Marx und Engels auch formell die Führung des Bundes."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}

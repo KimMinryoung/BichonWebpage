@@ -1,0 +1,413 @@
+{
+ "add": [
+  {
+   "personId": "georgios-papandreou",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-greek-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1923,
+    "endYear": 1935,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+      "locator": "characters 6105:6340; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a",
+      "claim": "게오르기오스 파판드레우는 1923년 12월 선거에서 베니젤로스파 자유당 소속 레스보스 의원으로 당선되었다.",
+      "excerpt": "In the December 1923 elections, he was elected as a Venizelist Liberal Party member of parliament for Lésvos, and served as finance minister for just 11 days in June 1925, education minister in 1930–1932 and transport minister in 1933."
+     },
+     {
+      "source": "https://el.wikipedia.org/wiki/%CE%9A%CF%8C%CE%BC%CE%BC%CE%B1_%CF%84%CF%89%CE%BD_%CE%A6%CE%B9%CE%BB%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CE%BD",
+      "locator": "characters 3772:3904; sha256 15ed23f3726c5a0fefe7f30bab52331508583c0897abcf55db74edde7a2a3589",
+      "claim": "1935년 3월 1일 쿠데타 시도의 여파로 파판드레우는 자유당에서 떠났다.",
+      "excerpt": "Νέα απόπειρα πραξικοπήματος την 1η Μαρτίου 1935, είχε σαν αποτέλεσμα την αποχώρηση του Γεωργίου Παπανδρέου από το Κόμμα Φιλελευθέρων"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georgios-papandreou",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-greek-liberal",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": 1958,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+      "locator": "characters 1716:1831; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a",
+      "claim": "파판드레우는 1945년 이후 소포클리스 베니젤로스 아래에서 자유당 부당수가 되었다.",
+      "excerpt": "He resigned in early January 1945 and rose to becoming deputy leader of the Liberal Party under Sofoklis Venizelos."
+     },
+     {
+      "source": "https://el.wikipedia.org/wiki/%CE%9A%CF%8C%CE%BC%CE%BC%CE%B1_%CF%84%CF%89%CE%BD_%CE%A6%CE%B9%CE%BB%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CE%BD",
+      "locator": "characters 5343:5564; sha256 15ed23f3726c5a0fefe7f30bab52331508583c0897abcf55db74edde7a2a3589",
+      "claim": "1952년 선거 패배 뒤 파판드레우가 자유당 지도부를 맡았다.",
+      "excerpt": "Μετά την ήττα των Φιλελευθέρων στις εκλογές του 1952 από τον Ελληνικό Συναγερμό του Αλεξάνδρου Παπάγου, ο Σοφοκλής Βενιζέλος αποσύρθηκε προσωρινά από την πολιτική και την ηγεσία του κόμματος ανέλαβε ο Γεώργιος Παπανδρέου."
+     },
+     {
+      "source": "https://el.wikipedia.org/wiki/%CE%9A%CF%8C%CE%BC%CE%BC%CE%B1_%CF%84%CF%89%CE%BD_%CE%A6%CE%B9%CE%BB%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CE%BD",
+      "locator": "characters 6213:6406; sha256 15ed23f3726c5a0fefe7f30bab52331508583c0897abcf55db74edde7a2a3589",
+      "claim": "1958년 11월 당수 선거에서 소포클리스 베니젤로스가 재선되자 파판드레우는 자유당을 떠났다.",
+      "excerpt": "Μετά την επανεκλογή του Σοφοκλή Βενιζέλου το κόμμα διασπάστηκε κι έτσι αποχώρησαν βασικά στελέχη όπως ο Γεώργιος Παπανδρέου, ο Κωνσταντίνος Μητσοτάκης, ο Γεώργιος Μαύρος, ο Ιωάννης Ζίγδης, κ.α."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georgios-papandreou",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-greek-centre-union",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1961,
+    "endYear": 1968,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+      "locator": "characters 8765:8938; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a",
+      "claim": "파판드레우는 1961년 중도연합을 창당했다.",
+      "excerpt": "In 1961, Papandreou revived Greek liberalism by founding the Centre Union Party, a confederation of old liberal Venizelists, social democrats and dissatisfied conservatives."
+     },
+     {
+      "source": "https://el.wikipedia.org/wiki/%CE%88%CE%BD%CF%89%CF%83%CE%B7_%CE%9A%CE%AD%CE%BD%CF%84%CF%81%CE%BF%CF%85",
+      "locator": "characters 6321:6421; sha256 a482621e03f9696976fe0479b0a4e38375f8dababf25848fdcdc0814db7ff296",
+      "claim": "파판드레우는 중도연합을 이끈 8인 운영위원회의 위원장을 맡았다.",
+      "excerpt": "Η Ένωση Κέντρου διοικούνταν από οκταμελή επιτροπή της οποίας πρόεδρος ανέλαβε ο Γεώργιος Παπανδρέου."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Centre_Union",
+      "locator": "characters 15911:16049; sha256 f4b32020a964e4f580f1d9386c36297eed0894453d6e8cb3070d85cdcfabf640",
+      "claim": "파판드레우는 1968년 11월 1일 사망할 때까지 중도연합을 이끌었다.",
+      "excerpt": "Georgios Papandreou died on 1 November 1968 and the Centre Union, now illegal, was placed under the titular leadership of Georgios Mavros."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georgios-papagos",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-greek-rally",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1951,
+    "endYear": 1955,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://el.wikipedia.org/wiki/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CF%8C%CF%82_%CE%A3%CF%85%CE%BD%CE%B1%CE%B3%CE%B5%CF%81%CE%BC%CF%8C%CF%82",
+      "locator": "characters 99:170; sha256 011efd4ca13a72e650b72171f5ff7cf85acb912edcd0e3aad297e6ee88a90078",
+      "claim": "알렉산드로스 파파고스 원수는 그리스 연합의 창립자이자 당수였다.",
+      "excerpt": "Ιδρυτής και πρόεδρος του κόμματος ήταν ο στρατάρχης Αλέξανδρος Παπάγος."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Greek_Rally",
+      "locator": "characters 1543:1616; sha256 cae5b7b3b130c689f7ae378bcc4a8717a162a4937c151c5a78aa081766b9e8f9",
+      "claim": "그리스 연합은 당수 파파고스가 1955년 10월 사망하면서 사실상 끝났다.",
+      "excerpt": "The party effectively ended with the death of its leader in October 1955."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "juho-kusti-paasikivi",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-finnish-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1918,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fi.wikipedia.org/wiki/J._K._Paasikivi",
+      "locator": "characters 9002:9145; sha256 b404d7c8fc555615714ae367595967ba94a4cf70da5c7d36432c61aac2bf8195",
+      "claim": "파시키비는 러시아화 정책에 순응 노선을 취한 구핀란드파(핀란드당)의 적극적인 당원이었다.",
+      "excerpt": "Paasikivi toimi aktiivisesti jäsenenä vanhasuomalaisissa, jotka harjoittivat myöntyväisyyspolitiikkaa ja kompromisseja venäläistämistä vastaan."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Juho_Kusti_Paasikivi",
+      "locator": "characters 4086:4167; sha256 07a693bed10ee3fc661154219e51c65729194c68694ea21cafb8b27c17c80966",
+      "claim": "파시키비는 1907–1909년과 1910–1913년 핀란드당 소속 의원이었다.",
+      "excerpt": "Paasikivi served as a Finnish Party member of Parliament 1907–1909 and 1910–1913."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Juho_Kusti_Paasikivi",
+      "locator": "characters 142:241; sha256 07a693bed10ee3fc661154219e51c65729194c68694ea21cafb8b27c17c80966",
+      "claim": "파시키비는 1918년 핀란드당이 해체될 때까지 이 당을 대표했다.",
+      "excerpt": "Representing the Finnish Party until its dissolution in 1918 and then the National Coalition Party,"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "juho-kusti-paasikivi",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-finnish-national-coalition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fi.wikipedia.org/wiki/J._K._Paasikivi",
+      "locator": "characters 13577:13693; sha256 b404d7c8fc555615714ae367595967ba94a4cf70da5c7d36432c61aac2bf8195",
+      "claim": "파시키비는 1918년 핀란드당의 후신으로 창당된 국민연합당에 입당했다.",
+      "excerpt": "Hän kuului monarkian kannattajiin ja liittyi Suomalaisen puolueen seuraajaksi vuonna 1918 perustettuun Kokoomukseen."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Juho_Kusti_Paasikivi",
+      "locator": "characters 6411:6657; sha256 07a693bed10ee3fc661154219e51c65729194c68694ea21cafb8b27c17c80966",
+      "claim": "파시키비는 1934년 국민연합당 당수가 되었다.",
+      "excerpt": "In 1934 he became chairman of the conservative National Coalition Party, as a champion of democracy, and successfully rehabilitated the party after its suspicious closeness to the Lapua movement and the failed coup d'état, the Mäntsälä Rebellion."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pehr-evind-svinhufvud",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-young-finnish",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1906,
+    "endYear": 1918,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pehr_Evind_Svinhufvud",
+      "locator": "characters 5388:5549; sha256 61e266872930d6825bb0e19031a386167822020a719fc1de322b1161fafd8a86",
+      "claim": "스빈후부드는 1906년 청년핀란드당 소속으로 새 의회 의원에 선출되었다.",
+      "excerpt": "Svinhufvud played a key role in the birth of a new parliamentary system in 1905 and he was elected as a Young Finnish Party member of the new Parliament in 1906."
+     },
+     {
+      "source": "https://fi.wikipedia.org/wiki/P._E._Svinhufvud",
+      "locator": "characters 415:523; sha256 8ec6638e6f6bcdb5f9d5607647032e3ea1e52e0c98ba0f31a40f226d4db38787",
+      "claim": "스빈후부드는 청년핀란드당 출신이었고 1918년 국민연합당 창당과 함께 그 당원이 되었다.",
+      "excerpt": "Puoluetaustaltaan hän oli nuorsuomalainen. Vuonna 1918 hänestä tuli kokoomuslainen, kun puolue perustettiin."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pehr-evind-svinhufvud",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-finnish-national-coalition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://fi.wikipedia.org/wiki/P._E._Svinhufvud",
+      "locator": "characters 458:523; sha256 8ec6638e6f6bcdb5f9d5607647032e3ea1e52e0c98ba0f31a40f226d4db38787",
+      "claim": "스빈후부드는 1918년 국민연합당이 창당되자 그 당원이 되었다.",
+      "excerpt": "Vuonna 1918 hänestä tuli kokoomuslainen, kun puolue perustettiin."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Pehr_Evind_Svinhufvud",
+      "locator": "characters 13177:13276; sha256 61e266872930d6825bb0e19031a386167822020a719fc1de322b1161fafd8a86",
+      "claim": "스빈후부드는 1925년 국민연합당의 대통령 후보였다.",
+      "excerpt": "In 1925 he was the presidential candidate for the conservative Kokoomus party, but was not elected."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "paavo-talvela",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-finnish-national-coalition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Paavo_Talvela",
+      "locator": "characters 4190:4269; sha256 31fd25a2c09dcb5fc0f286f6736f35795a10c930c380d9c96eacc0a99d93170c",
+      "claim": "탈벨라는 1936년 국민연합당 당원으로 총선에 출마했으나 낙선했다.",
+      "excerpt": "Talvela ran for parliament as a member of Kokoomus in 1936 but was not elected."
+     },
+     {
+      "source": "https://fi.wikipedia.org/wiki/Paavo_Talvela",
+      "locator": "characters 13358:13416; sha256 1b7f2f0f877acaa0bdaa64dc1d20a0c6c5dcdaf174bef44853b9b0028500a478",
+      "claim": "탈벨라는 국민연합당 당원으로 정치에도 참여했다.",
+      "excerpt": "Talvela osallistui myös politiikkaan Kokoomuksen riveissä."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kyosti-kallio",
+   "activity": {
+    "functionId": "agriculture",
+    "affiliationId": "party-young-finnish",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ky%C3%B6sti_Kallio",
+      "locator": "characters 1956:2070; sha256 864e1278f9d9b2546a269fc088aa1553f06b899eb1113e18767797584050af39",
+      "claim": "칼리오는 제1차 러시아화 시기에 청년핀란드당 당원으로 정계에 들어섰다.",
+      "excerpt": "Kallio entered politics during the first Russification campaign of Finland as a member of the Young Finnish Party."
+     },
+     {
+      "source": "https://fi.wikipedia.org/wiki/Ky%C3%B6sti_Kallio",
+      "locator": "characters 3860:3996; sha256 d22772cf4a5b372d84ef40d9ef160cd6f109c4954f90fc9766e63e18e772218e",
+      "claim": "칼리오는 청년핀란드당이 농촌 문제를 소홀히 한다고 보아 농민동맹으로 당적을 옮겼다.",
+      "excerpt": "Hän vaihtoi nuorsuomalaisen puolueen Maalaisliittoon lähinnä sen vuoksi, ettei se kiinnittänyt riittävästi huomiota maaseutukysymykseen."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kyosti-kallio",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-finnish-agrarian",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ky%C3%B6sti_Kallio",
+      "locator": "characters 2166:2263; sha256 864e1278f9d9b2546a269fc088aa1553f06b899eb1113e18767797584050af39",
+      "claim": "칼리오는 갓 창당된 농민동맹에 입당해 가장 유력한 지도자 가운데 한 사람이 되었다.",
+      "excerpt": "He joined the newly founded Agrarian League in 1906 and became one of its most prominent leaders."
+     },
+     {
+      "source": "https://fi.wikipedia.org/wiki/Ky%C3%B6sti_Kallio",
+      "locator": "characters 3997:4097; sha256 d22772cf4a5b372d84ef40d9ef160cd6f109c4954f90fc9766e63e18e772218e",
+      "claim": "칼리오는 1912년까지, 그리고 1914–1917년 다시 농민동맹 원내단 의장을 지냈다.",
+      "excerpt": "Kallio toimi maalaisliiton eduskuntaryhmän puheenjohtajana vuoteen 1912 sekä toistamiseen 1914–1917."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "urho-kekkonen",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-finnish-agrarian",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1933,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Urho_Kekkonen",
+      "locator": "characters 11968:12179; sha256 7f39f33da2a62a02430c4b457247cc37c0b12c7bb6f8614ae02db5da924c4a94",
+      "claim": "케코넨은 1933년 농민동맹(뒤의 중앙당)에 입당했다.",
+      "excerpt": "In 1933 he joined the Agrarian League (later renamed the Centre Party), became a civil servant at the Ministry of Agriculture and made his first unsuccessful attempt at getting elected to the Finnish Parliament."
+     },
+     {
+      "source": "https://fi.wikipedia.org/wiki/Urho_Kekkonen",
+      "locator": "characters 8138:8296; sha256 ef80c3526a7a06ea0f39e0e7160e57ea0cd020be4ff0235fc70e427b9a1c53f7",
+      "claim": "케코넨은 1935년부터 대통령에 선출될 때까지 농민동맹 중앙위원회 위원을 지냈다.",
+      "excerpt": "Maalaisliitossa Kekkonen nousi nopeasti merkittävään asemaan ja toimi puolueen keskushallituksen jäsenenä vuodesta 1935 alkaen presidentiksi valintaansa asti."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jaan-tonisson",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-estonian-people",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1932,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://et.wikipedia.org/wiki/Eesti_Rahvaerakond",
+      "locator": "characters 117:211; sha256 c2a594843b9802776b577cadb6c75fc4b30516f3eaffb713569289917d5e24f0",
+      "claim": "에스토니아 인민당은 1919년 3월 얀 퇴니손의 지도 아래 창당되었다.",
+      "excerpt": "Eesti rahvaerakond asutati märtsis 1919, Asutava Kogu valimiste eel Jaan Tõnissoni juhtimisel."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+      "locator": "characters 9894:10037; sha256 c7b6f54327180ff67907c9f0256e950b43558065f3417c8ec24d04090a4f264f",
+      "claim": "퇴니손은 제헌의회 선거를 앞두고 자신의 당을 에스토니아 인민당으로 개편했다.",
+      "excerpt": "For the elections to the Estonian Constituent Assembly, Tõnisson had yet again transformed his party, this time to the Estonian People's Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "endel-lippmaa",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "party-estonian-coalition",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1991,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Endel_Lippmaa",
+      "locator": "characters 2230:2284; sha256 941a01f7d90379e7fa0d2569cb03a0ea054c2e984e7238fad11d1c358436e315",
+      "claim": "리프마는 연립당 창당 당원이었다.",
+      "excerpt": "Later he was a founding member of the Coalition Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "marju-lauristin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-estonian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1990,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://et.wikipedia.org/wiki/Sotsiaaldemokraatlik_Erakond",
+      "locator": "characters 5921:6000; sha256 d33208204c1efead224a188124195687c3d31c012f0446eb528a1d5159d67fba",
+      "claim": "라우리스틴은 1990년 9월 8일부터 1995년까지 에스토니아 사회민주당(ESDP) 의장이었다.",
+      "excerpt": "Erakonna esimehed: Eiki Nestor 1995−28.04.1996, Marju Lauristin 8.09.1990–1995."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_(Estonia)",
+      "locator": "characters 1125:1169; sha256 c6b4ea0cbc69e9d2a8bf90720b7c1223eb54e3a1db22ef94f039e42cf98094a0",
+      "claim": "라우리스틴은 에스토니아 사회민주당의 첫 지도자였다.",
+      "excerpt": "The ESDP's first leader was Marju Lauristin."
+     },
+     {
+      "source": "https://et.wikipedia.org/wiki/Marju_Lauristin",
+      "locator": "characters 2110:2175; sha256 b3cfc0829a125a43b61b9c868ddd14baa794533925b08af52e2222267cf448bc",
+      "claim": "라우리스틴은 2025년 기준으로도 사회민주당 당원이다.",
+      "excerpt": "Ta kuulub ka 2025. aasta seisuga Sotsiaaldemokraatlikku Erakonda."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}

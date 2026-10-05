@@ -1,0 +1,350 @@
+{
+ "add": [
+  {
+   "personId": "jan-smuts",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-south-african-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1911,
+    "endYear": 1934,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jan_Smuts",
+      "locator": "characters 1320:1469; sha256 4bda0d371c9463cb1a8e6192334b7435f0bfbe413aa2bb5eb9d6c77dc0040ed0",
+      "claim": "스뮈츠는 보타와 함께 남아프리카당을 창당했다.",
+      "excerpt": "He and Botha established the South African Party, with Botha becoming the union's first prime minister and Smuts holding multiple cabinet portfolios."
+     },
+     {
+      "source": "https://af.wikipedia.org/wiki/Suid-Afrikaanse_Party",
+      "locator": "characters 385:670; sha256 1ff07b7406995f676f95bd0fc3ffe9bc8983d9eed15a54e50b4972a89f0b28a2",
+      "claim": "스뮈츠는 1919년 보타의 뒤를 이어 1934년 국민당과의 합당 때까지 남아프리카당 당수였다.",
+      "excerpt": "Die eerste leier van die party was genl. Louis Botha, wat met sy dood in Augustus 1919 opgevolg is deur genl. Jan Christian Smuts, wat die leier was tot en met die samesmelting van die party met die Nasionale Party onder leiding van genl. James Barry Munnik Hertzog op 5 Desember 1934."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jan-smuts",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-south-african-united",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1934,
+    "endYear": 1950,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://af.wikipedia.org/wiki/Verenigde_Party",
+      "locator": "characters 2038:2151; sha256 a03392fc03f9d2077c0ee7eea58231eed02e2daed06e14ae5667877fb8357f6e",
+      "claim": "연합당은 1934년 헤르초흐와 스뮈츠의 연정에서 창당되었다.",
+      "excerpt": "Die party is in 1934 gestig uit ’n koalisie tussen genl. James Barry Munnik Hertzog en genl. Jan Christian Smuts."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/United_Party_(South_Africa)",
+      "locator": "characters 1832:1943; sha256 fe87e432f753476665ef1b3c0184b6da3e973f397a9482bc99280040dd027f80",
+      "claim": "스뮈츠는 1939년 헤르초흐의 뒤를 이어 제2차 세계대전과 전후 몇 해 동안 연합당과 나라를 이끌었다.",
+      "excerpt": "Smuts succeeded him and led the party and the country throughout World War II and the immediate post-war years."
+     },
+     {
+      "source": "https://af.wikipedia.org/wiki/Verenigde_Party",
+      "locator": "characters 72258:72483; sha256 a03392fc03f9d2077c0ee7eea58231eed02e2daed06e14ae5667877fb8357f6e",
+      "claim": "스뮈츠가 1950년 9월 사망하자 연합당 전국대회는 스트라우스를 후임 당수로 뽑았다.",
+      "excerpt": "Smuts is op 11 September 1950 aan ’n hartaanval oorlede en in Desember daardie jaar kies die Uniale kongres van die party vir adv. Jacobus Gideon Nel Strauss, gebore naby Calvinia in die Kaapprovinsie in 1900, as sy opvolger."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ali-abdullah-saleh",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-yemen-gpc",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1982,
+    "endYear": 2017,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ali_Abdullah_Saleh",
+      "locator": "characters 7248:7444; sha256 f5aec9eb12056e58dc5caf78e8a9823fe117f0b88275aab7ceaa3a1a20536188",
+      "claim": "살레는 1982년 8월 30일 국민전체회의 총서기로 선출되었다.",
+      "excerpt": "Saleh was promoted to major general in 1980, elected as the secretary-general of the General People's Congress party on 30 August 1982, and re-elected president of the Yemen Arab Republic in 1983."
+     },
+     {
+      "source": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%8A_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%84%D9%87_%D8%B5%D8%A7%D9%84%D8%AD",
+      "locator": "characters 20392:20501; sha256 4d452fef71a4f0c57f527bdc9c179d3774e3a3b68149b43e38ff78d1e1e37ec7",
+      "claim": "살레는 2017년 12월 피살될 때까지 국민전체회의 의장으로 남았다.",
+      "excerpt": "بقي صالح رئيسا لحزب المؤتمر الشعبي العام وبقي يمارس عمله السياسي كرئيس لحزب المؤتمر حتى مقتله في ديسمبر 2017."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "salvador-allende",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-chilean-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1933,
+    "endYear": 1973,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://es.wikipedia.org/wiki/Salvador_Allende",
+      "locator": "characters 11212:11464; sha256 dc6ad04767715de4a84be42e1ecc4f46b5b53feeba09f75c340753624d04d340",
+      "claim": "아옌데는 1933년 칠레 사회당 창당에 참여해 발파라이소 지부를 조직했고 평생 이 당에 남았다.",
+      "excerpt": "En 1933, participó en la fundación del Partido Socialista de Chile (PS) —junto a Eugenio Matte Hurtado, Marmaduque Grove, Eugenio González, Oscar Schnake y otros—,​ organizando la sede de Valparaíso y manteniéndose en este partido durante toda su vida."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "salvador-allende",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-chilean-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1942,
+    "endYear": 1943,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://es.wikipedia.org/wiki/Salvador_Allende",
+      "locator": "characters 14537:14640; sha256 dc6ad04767715de4a84be42e1ecc4f46b5b53feeba09f75c340753624d04d340",
+      "claim": "아옌데는 1942년부터 1943년 6월까지 칠레 사회당 총서기를 지냈다.",
+      "excerpt": "En 1942 se convirtió en secretario general del Partido Socialista, cargo que ocupó hasta junio de 1943."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fulgencio-batista",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-cuban-progressive-action",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1949,
+    "endYear": 1959,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://es.wikipedia.org/wiki/Fulgencio_Batista",
+      "locator": "characters 12334:12543; sha256 b19ff57a2331db89dacabef5ddbe74311b9e9ac9e3c0bed4b0bbbfd2c6b218d7",
+      "claim": "바티스타는 1949년 통일행동당을 창당했고, 이 당은 1954년 진보행동당으로 이름을 바꾸었다.",
+      "excerpt": "Batista fundó el Partido Acción Unitaria (PAU) en 1949, y decidió postularse para las elecciones presidenciales de 1952 (nunca realizadas). En 1954 ese partido cambió el nombre a Partido de Acción Progresista."
+     },
+     {
+      "source": "https://es.wikipedia.org/wiki/Partido_de_Acci%C3%B3n_Progresista",
+      "locator": "characters 0:98; sha256 0c3716014a42040be11e61c66168c8be665549375c2e67654adbfe4911f3dc57",
+      "claim": "진보행동당은 바티스타가 이끈 쿠바 정당이었다.",
+      "excerpt": "El Partido Acción Progresista (PAP) fue un partido político cubano dirigido por Fulgencio Batista."
+     },
+     {
+      "source": "https://es.wikipedia.org/wiki/Partido_de_Acci%C3%B3n_Progresista",
+      "locator": "characters 1364:1427; sha256 0c3716014a42040be11e61c66168c8be665549375c2e67654adbfe4911f3dc57",
+      "claim": "진보행동당은 1959년 쿠바 혁명 뒤 해산되었다.",
+      "excerpt": "El partido se disolvió después de la Revolución Cubana de 1959."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "julio-antonio-mella",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-mexican-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1926,
+    "endYear": 1928,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BB%D1%8C%D1%8F,_%D0%A5%D1%83%D0%BB%D0%B8%D0%BE_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D0%BE",
+      "locator": "characters 831:995; sha256 197d83d3511a977cee37621af3bc11c616fe83fcfed75b3e84fdb90a882640fc",
+      "claim": "메야는 1926년 초 멕시코로 망명해 멕시코 공산당 중앙위원이 되었다.",
+      "excerpt": "После объявления голодовки его освободили и в начале 1926 году он эмигрировал в Мексику, где стал членом центрального комитета Мексиканской коммунистической партии."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BB%D1%8C%D1%8F,_%D0%A5%D1%83%D0%BB%D0%B8%D0%BE_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D0%BE",
+      "locator": "characters 996:1101; sha256 197d83d3511a977cee37621af3bc11c616fe83fcfed75b3e84fdb90a882640fc",
+      "claim": "메야는 1928년 7월 트로츠키주의 혐의로 멕시코 공산당 중앙위원회에서 제명되었다.",
+      "excerpt": "В июле 1928 года по обвинению в троцкистских взглядах Мелья был исключён из состава ЦК компартии Мексики."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "farabundo-marti",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-salvadoran-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1930,
+    "endYear": 1932,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://es.wikipedia.org/wiki/Farabundo_Mart%C3%AD",
+      "locator": "characters 9460:9608; sha256 317f878659bf3241c4acef4eb0cf9ef027ede59112149a6d661cd64a6886178f",
+      "claim": "마르티는 1930년 창당한 살바도르 공산당의 지도자였다.",
+      "excerpt": "Fue dirigente del Partido Comunista Salvadoreño (PCS), fundado en 1930, mientras El Salvador vivía los efectos de la crisis económica internacional."
+     },
+     {
+      "source": "https://es.wikipedia.org/wiki/Farabundo_Mart%C3%AD",
+      "locator": "characters 12186:12349; sha256 317f878659bf3241c4acef4eb0cf9ef027ede59112149a6d661cd64a6886178f",
+      "claim": "1932년 1월 국가경찰은 살바도르 공산당 지도자 마르티를 체포했다.",
+      "excerpt": "La Policía Nacional arrestó al líder del PCS, Agustín Farabundo Martí y a los dirigentes de agrupaciones estudiantiles universitarias, Alfonso Luna y Mario Zapata."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "edgar-savisaar",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-estonian-centre",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1991,
+    "endYear": 1995,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://et.wikipedia.org/wiki/Edgar_Savisaar",
+      "locator": "characters 408:474; sha256 8b9b94568851ccd1835f0f4eaac9c3d23692c5b801504cf02b3a023581551e04",
+      "claim": "사비사르는 1991–1995년과 1996–2016년 에스토니아 중앙당 당수였다.",
+      "excerpt": "Aastatel 1991–1995 ja 1996–2016 oli ta Eesti Keskerakonna esimees."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Edgar_Savisaar",
+      "locator": "characters 0:153; sha256 35ae90bbafa79361c2d747627af694a8031550ff8bd3bac4865e9e2268ac7e00",
+      "claim": "사비사르는 중앙당 창립자 가운데 한 명이었다.",
+      "excerpt": "Edgar Savisaar (31 May 1950 – 29 December 2022) was an Estonian politician, one of the founding members of Popular Front of Estonia and the Centre Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "edgar-savisaar",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-estonian-centre",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1996,
+    "endYear": 2016,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://et.wikipedia.org/wiki/Edgar_Savisaar",
+      "locator": "characters 408:474; sha256 8b9b94568851ccd1835f0f4eaac9c3d23692c5b801504cf02b3a023581551e04",
+      "claim": "사비사르는 1996년부터 2016년까지 다시 에스토니아 중앙당 당수를 지냈다.",
+      "excerpt": "Aastatel 1991–1995 ja 1996–2016 oli ta Eesti Keskerakonna esimees."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Edgar_Savisaar",
+      "locator": "characters 3851:4010; sha256 35ae90bbafa79361c2d747627af694a8031550ff8bd3bac4865e9e2268ac7e00",
+      "claim": "사비사르가 중앙당 당수로 복귀하자 일부 지도급 당원이 탈당해 발전당을 만들었다.",
+      "excerpt": "His return to the Centre Party leader's post evoked a split, as some leading members disillusioned with Savisaar's leadership style left to found Arengupartei."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": [
+  {
+   "personId": "kwame-nkrumah",
+   "find": {
+    "functionId": "political-leadership",
+    "affiliationId": null
+   },
+   "set": {
+    "affiliationId": "party-ghana-cpp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1949
+   },
+   "why": "기존 미해결 political-leadership 활동의 근거 문장은 모두 회의인민당(CPP) 창당과 당 지도를 말한다. 카탈로그에 party-ghana-cpp가 생기면 새 활동을 덧붙이지 않고 이 활동의 소속을 CPP로 확정한다.",
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Kwame_Nkrumah",
+     "locator": "characters 19719:19890; sha256 fa3db7cfa12397921da6215885de1fd47ec979fbd999be23dbdb18066afa2ade",
+     "claim": "은크루마는 1949년 6월 12일 회의인민당 창당을 선언했다.",
+     "excerpt": "On 12 June 1949, he announced the formation of the Convention People's Party (CPP), with the word \"convention\" chosen, according to Nkrumah, \"to carry the masses with us\"."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Convention_People's_Party",
+     "locator": "characters 11319:11604; sha256 ba4a3612b2d77e6bfcb37b51e1127cbbf42a6a5f1b48d37ce4b19dc070606b15",
+     "claim": "회의인민당은 은크루마를 의장으로 하여 결성되었다.",
+     "excerpt": "Kojo Botsio sent a telegram to the UGCC Working Committee informing them about the formation of the CPP under the chairmanship of Nkrumah with the aim of \"Self-Government Now for Chiefs and People of the Gold Coast, a democratic government and a higher living standard for the people\"."
+    }
+   ]
+  },
+  {
+   "personId": "mariategui",
+   "find": {
+    "functionId": "political-leadership",
+    "affiliationId": null
+   },
+   "set": {
+    "affiliationId": "party-peruvian-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership"
+   },
+   "why": "기존 미해결 political-leadership(1928–1930) 활동의 근거 문장은 모두 페루 사회당 창당과 총서기직을 말한다. 카탈로그에 party-peruvian-socialist가 생기면 이 활동의 소속을 확정한다.",
+   "evidence": [
+    {
+     "source": "https://es.wikipedia.org/wiki/Jos%C3%A9_Carlos_Mari%C3%A1tegui",
+     "locator": "characters 9052:9170; sha256 bdefe47c331b99a044ab6c45b664ea34d4171cf960f32b9523a5400fd0103350",
+     "claim": "마리아테기는 1928년 10월 7일 페루 사회당을 창당하고 이듬해 총서기가 되었다.",
+     "excerpt": "El 7 de octubre de 1928 funda el Partido Socialista Peruano, convirtiéndose un año más tarde en su secretario general."
+    },
+    {
+     "source": "https://es.wikipedia.org/wiki/Partido_Socialista_del_Per%C3%BA_(1928)",
+     "locator": "characters 1203:1245; sha256 cc3163b2b5da12032e1863f1526544563fdcb8b9fccb27a735f89417e3dfa1b8",
+     "claim": "창당 당시 조직표에서 마리아테기는 총서기였다.",
+     "excerpt": "José Carlos Mariátegui: Secretario General"
+    }
+   ]
+  },
+  {
+   "personId": "julio-antonio-mella",
+   "find": {
+    "functionId": "political-leadership",
+    "affiliationId": null
+   },
+   "set": {
+    "affiliationId": "party-cuban-communist-1925",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1925,
+    "endYear": 1929
+   },
+   "why": "기존 미해결 political-leadership 활동의 첫 근거는 메야가 원래의 쿠바 공산당(1925) 창립자라는 문장이다. 카탈로그에 party-cuban-communist-1925가 생기면 이 활동의 소속을 확정한다. 1926년 제명, 1927년 복당, 1929년 1월 피살.",
+   "evidence": [
+    {
+     "source": "https://es.wikipedia.org/wiki/Julio_Antonio_Mella",
+     "locator": "characters 5458:5576; sha256 a52da3e6c648c1037fef03f7d67b0b7eb3d6765968fb7f1dbc07b69b8a97da10",
+     "claim": "메야는 쿠바 공산당 창당에 참여하고 첫 중앙위원회 위원이 되었다.",
+     "excerpt": "Julio Antonio Mella participó en la fundación del Partido Comunista de Cuba y fue miembro de su primer Comité Central."
+    },
+    {
+     "source": "https://es.wikipedia.org/wiki/Julio_Antonio_Mella",
+     "locator": "characters 9684:10020; sha256 a52da3e6c648c1037fef03f7d67b0b7eb3d6765968fb7f1dbc07b69b8a97da10",
+     "claim": "메야는 1926년 쿠바 공산당에서 제명되었다가 1927년 복당했다.",
+     "excerpt": "Mella es expulsado en 1926 del Partido Comunista de Cuba por dos años. Un año más tarde, en enero de 1927, la instancia de mayor rango de la Internacional Comunista, el Secretariado Político, calificaba la expulsión de Mella del Partido como actitud sectaria y exigía una revisión de dicha decisión. En 1927 es readmitido en el partido."
+    }
+   ]
+  }
+ ]
+}

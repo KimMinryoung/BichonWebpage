@@ -1,0 +1,1460 @@
+[
+ {
+  "id": "party-british-liberal",
+  "countryCode": "uk",
+  "ko": "영국 자유당",
+  "en": "Liberal Party (UK)",
+  "periods": [
+   [
+    1859,
+    1988
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "david-lloyd-george",
+   "john-maynard-keynes"
+  ]
+ },
+ {
+  "id": "party-french-radical",
+  "countryCode": "france",
+  "ko": "급진사회당",
+  "en": "Radical Party (France)",
+  "periods": [
+   [
+    1901,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "edouard-daladier",
+   "vincent-badie",
+   "georges-clemenceau"
+  ]
+ },
+ {
+  "id": "party-french-democratic-alliance",
+  "countryCode": "france",
+  "ko": "민주공화동맹",
+  "en": "Democratic Republican Alliance",
+  "periods": [
+   [
+    1901,
+    1978
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "albert-lebrun",
+   "paul-reynaud"
+  ]
+ },
+ {
+  "id": "party-french-mrp",
+  "countryCode": "france",
+  "ko": "인민공화운동",
+  "en": "Popular Republican Movement (MRP)",
+  "periods": [
+   [
+    1944,
+    1967
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "georges-bidault"
+  ]
+ },
+ {
+  "id": "party-french-rpf",
+  "countryCode": "france",
+  "ko": "프랑스 인민연합",
+  "en": "Rally of the French People (RPF)",
+  "periods": [
+   [
+    1947,
+    1955
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "charles-de-gaulle"
+  ]
+ },
+ {
+  "id": "party-french-psf",
+  "countryCode": "france",
+  "ko": "프랑스 사회당 (1936)",
+  "en": "French Social Party (PSF)",
+  "periods": [
+   [
+    1936,
+    1940
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "francois-de-la-rocque"
+  ]
+ },
+ {
+  "id": "party-french-republican-federation",
+  "countryCode": "france",
+  "ko": "공화연맹",
+  "en": "Republican Federation",
+  "periods": [
+   [
+    1903,
+    1948
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "pierre-taittinger"
+  ]
+ },
+ {
+  "id": "party-austrian-christian-social",
+  "countryCode": "austria",
+  "ko": "기독사회당 (오스트리아)",
+  "en": "Christian Social Party (Austria)",
+  "periods": [
+   [
+    1891,
+    1934
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "engelbert-dollfuss"
+  ]
+ },
+ {
+  "id": "party-austrian-sdap",
+  "countryCode": "austria",
+  "ko": "오스트리아 사회민주당",
+  "en": "Social Democratic Party of Austria (SDAP/SPÖ)",
+  "periods": [
+   [
+    1889,
+    1934
+   ],
+   [
+    1945,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "karl-renner"
+  ]
+ },
+ {
+  "id": "party-austrian-ovp",
+  "countryCode": "austria",
+  "ko": "오스트리아 국민당",
+  "en": "Austrian People's Party (ÖVP)",
+  "periods": [
+   [
+    1945,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "alois-mock"
+  ]
+ },
+ {
+  "id": "party-spanish-republican-left",
+  "countryCode": "spain",
+  "ko": "공화좌파",
+  "en": "Republican Left (Spain)",
+  "periods": [
+   [
+    1934,
+    1960
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "manuel-azana"
+  ]
+ },
+ {
+  "id": "party-spanish-fet-jons",
+  "countryCode": "spain",
+  "ko": "팔랑헤",
+  "en": "FET y de las JONS (Falange)",
+  "periods": [
+   [
+    1937,
+    1977
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "francisco-franco"
+  ]
+ },
+ {
+  "id": "party-swiss-social-democratic",
+  "countryCode": "switzerland",
+  "ko": "스위스 사회민주당",
+  "en": "Social Democratic Party of Switzerland",
+  "periods": [
+   [
+    1888,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "fritz-platten"
+  ]
+ },
+ {
+  "id": "party-swiss-communist",
+  "countryCode": "switzerland",
+  "ko": "스위스 공산당",
+  "en": "Communist Party of Switzerland",
+  "periods": [
+   [
+    1921,
+    1940
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "fritz-platten"
+  ]
+ },
+ {
+  "id": "party-german-national-liberal",
+  "countryCode": "germany",
+  "ko": "국민자유당 (독일)",
+  "en": "National Liberal Party (Germany)",
+  "periods": [
+   [
+    1867,
+    1918
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "gustav-stresemann"
+  ]
+ },
+ {
+  "id": "party-german-dvp",
+  "countryCode": "germany",
+  "ko": "독일인민당",
+  "en": "German People's Party (DVP)",
+  "periods": [
+   [
+    1918,
+    1933
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "gustav-stresemann",
+   "wilhelm-cuno"
+  ]
+ },
+ {
+  "id": "party-german-dnvp",
+  "countryCode": "germany",
+  "ko": "독일국가인민당",
+  "en": "German National People's Party (DNVP)",
+  "periods": [
+   [
+    1918,
+    1933
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "alfred-von-tirpitz"
+  ]
+ },
+ {
+  "id": "party-german-adav",
+  "countryCode": "germany",
+  "ko": "전독일노동자협회",
+  "en": "General German Workers' Association (ADAV)",
+  "periods": [
+   [
+    1863,
+    1875
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "ferdinand-lassalle"
+  ]
+ },
+ {
+  "id": "communist-league",
+  "countryCode": "germany",
+  "ko": "공산주의자동맹",
+  "en": "Communist League",
+  "periods": [
+   [
+    1847,
+    1852
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "karl-marx",
+   "friedrich-engels"
+  ]
+ },
+ {
+  "id": "party-greek-liberal",
+  "countryCode": "greece",
+  "ko": "자유당 (그리스)",
+  "en": "Liberal Party (Greece)",
+  "periods": [
+   [
+    1910,
+    1961
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "georgios-papandreou"
+  ]
+ },
+ {
+  "id": "party-greek-centre-union",
+  "countryCode": "greece",
+  "ko": "중도연합",
+  "en": "Centre Union",
+  "periods": [
+   [
+    1961,
+    1976
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "georgios-papandreou"
+  ]
+ },
+ {
+  "id": "party-greek-rally",
+  "countryCode": "greece",
+  "ko": "그리스 연합",
+  "en": "Greek Rally",
+  "periods": [
+   [
+    1951,
+    1956
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "georgios-papagos"
+  ]
+ },
+ {
+  "id": "party-finnish-party",
+  "countryCode": "finland",
+  "ko": "핀란드당",
+  "en": "Finnish Party",
+  "periods": [
+   [
+    1860,
+    1918
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "juho-kusti-paasikivi"
+  ]
+ },
+ {
+  "id": "party-young-finnish",
+  "countryCode": "finland",
+  "ko": "청년핀란드당",
+  "en": "Young Finnish Party",
+  "periods": [
+   [
+    1894,
+    1918
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "pehr-evind-svinhufvud",
+   "kyosti-kallio"
+  ]
+ },
+ {
+  "id": "party-finnish-national-coalition",
+  "countryCode": "finland",
+  "ko": "국민연합당 (핀란드)",
+  "en": "National Coalition Party (Finland)",
+  "periods": [
+   [
+    1918,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "juho-kusti-paasikivi",
+   "pehr-evind-svinhufvud",
+   "paavo-talvela"
+  ]
+ },
+ {
+  "id": "party-finnish-agrarian",
+  "countryCode": "finland",
+  "ko": "농민동맹 (핀란드)",
+  "en": "Agrarian League / Centre Party (Finland)",
+  "periods": [
+   [
+    1906,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "urho-kekkonen",
+   "kyosti-kallio"
+  ]
+ },
+ {
+  "id": "party-estonian-people",
+  "countryCode": "estonia",
+  "ko": "에스토니아 인민당",
+  "en": "Estonian People's Party",
+  "periods": [
+   [
+    1919,
+    1932
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "jaan-tonisson"
+  ]
+ },
+ {
+  "id": "party-estonian-coalition",
+  "countryCode": "estonia",
+  "ko": "연립당 (에스토니아)",
+  "en": "Estonian Coalition Party",
+  "periods": [
+   [
+    1991,
+    2002
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "endel-lippmaa"
+  ]
+ },
+ {
+  "id": "party-estonian-social-democratic",
+  "countryCode": "estonia",
+  "ko": "에스토니아 사회민주당",
+  "en": "Social Democratic Party (Estonia)",
+  "periods": [
+   [
+    1990,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "marju-lauristin"
+  ]
+ },
+ {
+  "id": "party-latvian-farmers-union",
+  "countryCode": "latvia",
+  "ko": "라트비아 농민연합",
+  "en": "Latvian Farmers' Union",
+  "periods": [
+   [
+    1917,
+    1934
+   ],
+   [
+    1990,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "andrievs-niedra"
+  ]
+ },
+ {
+  "id": "party-latvias-way",
+  "countryCode": "latvia",
+  "ko": "라트비아의 길",
+  "en": "Latvian Way",
+  "periods": [
+   [
+    1993,
+    2007
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "ivars-godmanis"
+  ]
+ },
+ {
+  "id": "party-lithuanian-nationalist-union",
+  "countryCode": "lithuania",
+  "ko": "리투아니아 민족주의자연합",
+  "en": "Lithuanian Nationalists' Union",
+  "periods": [
+   [
+    1924,
+    1940
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "antanas-smetona",
+   "augustinas-voldemaras"
+  ]
+ },
+ {
+  "id": "party-lithuanian-homeland-union",
+  "countryCode": "lithuania",
+  "ko": "조국연합 (리투아니아)",
+  "en": "Homeland Union (Lithuania)",
+  "periods": [
+   [
+    1993,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "landsbergis"
+  ]
+ },
+ {
+  "id": "party-lithuanian-christian-democrats",
+  "countryCode": "lithuania",
+  "ko": "리투아니아 기독민주당",
+  "en": "Lithuanian Christian Democrats",
+  "periods": [
+   [
+    1905,
+    2008
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "albertas-simenas"
+  ]
+ },
+ {
+  "id": "party-hungarian-liberal",
+  "countryCode": "hungary",
+  "ko": "자유당 (헝가리)",
+  "en": "Liberal Party (Hungary)",
+  "periods": [
+   [
+    1875,
+    1906
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "istvan-tisza",
+   "albert-apponyi"
+  ]
+ },
+ {
+  "id": "party-hungarian-independence",
+  "countryCode": "hungary",
+  "ko": "독립당 (헝가리)",
+  "en": "Party of Independence and '48",
+  "periods": [
+   [
+    1884,
+    1918
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mihaly-karolyi",
+   "albert-apponyi",
+   "istvan-friedrich"
+  ]
+ },
+ {
+  "id": "party-hungarian-christian-national",
+  "countryCode": "hungary",
+  "ko": "기독교민족연합당",
+  "en": "Christian National Union Party",
+  "periods": [
+   [
+    1919,
+    1922
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "istvan-friedrich"
+  ]
+ },
+ {
+  "id": "arrow-cross-party",
+  "countryCode": "hungary",
+  "ko": "화살십자당",
+  "en": "Arrow Cross Party",
+  "periods": [
+   [
+    1935,
+    1945
+   ]
+  ],
+  "existingTerm": "arrow-cross-party",
+  "people": [
+   "ferenc-szalasi"
+  ]
+ },
+ {
+  "id": "party-hungarian-democratic-forum",
+  "countryCode": "hungary",
+  "ko": "헝가리 민주포럼",
+  "en": "Hungarian Democratic Forum (MDF)",
+  "periods": [
+   [
+    1987,
+    2011
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "geza-jeszenszky"
+  ]
+ },
+ {
+  "id": "party-fidesz",
+  "countryCode": "hungary",
+  "ko": "피데스",
+  "en": "Fidesz",
+  "periods": [
+   [
+    1988,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "viktor-mihaly-orban"
+  ]
+ },
+ {
+  "id": "party-czech-national-social",
+  "countryCode": "czechoslovakia",
+  "ko": "체코슬로바키아 국민사회당",
+  "en": "Czechoslovak National Social Party",
+  "periods": [
+   [
+    1897,
+    1948
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "edvard-benes",
+   "petr-zenkl"
+  ]
+ },
+ {
+  "id": "party-young-czech",
+  "countryCode": "czechoslovakia",
+  "ko": "청년체코당",
+  "en": "Young Czech Party",
+  "periods": [
+   [
+    1874,
+    1918
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "tomas-garrigue-masaryk"
+  ]
+ },
+ {
+  "id": "party-czech-ods",
+  "countryCode": "czechia",
+  "ko": "시민민주당",
+  "en": "Civic Democratic Party (ODS)",
+  "periods": [
+   [
+    1991,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "vaclav-klaus"
+  ]
+ },
+ {
+  "id": "party-romanian-national",
+  "countryCode": "romania",
+  "ko": "루마니아 국민당",
+  "en": "Romanian National Party",
+  "periods": [
+   [
+    1881,
+    1926
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "iuliu-maniu",
+   "petru-groza"
+  ]
+ },
+ {
+  "id": "party-romanian-national-peasants",
+  "countryCode": "romania",
+  "ko": "국민농민당",
+  "en": "National Peasants' Party",
+  "periods": [
+   [
+    1926,
+    1947
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "iuliu-maniu"
+  ]
+ },
+ {
+  "id": "party-romanian-peoples",
+  "countryCode": "romania",
+  "ko": "인민당 (루마니아)",
+  "en": "People's Party (Romania, 1918–1938)",
+  "periods": [
+   [
+    1918,
+    1938
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "petru-groza"
+  ]
+ },
+ {
+  "id": "party-romanian-ploughmens-front",
+  "countryCode": "romania",
+  "ko": "농민전선",
+  "en": "Ploughmen's Front",
+  "periods": [
+   [
+    1933,
+    1953
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "petru-groza"
+  ]
+ },
+ {
+  "id": "party-bulgarian-agrarian",
+  "countryCode": "bulgaria",
+  "ko": "불가리아 농민민족동맹",
+  "en": "Bulgarian Agrarian National Union",
+  "periods": [
+   [
+    1899,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "nikola-petkov"
+  ]
+ },
+ {
+  "id": "armenian-revolutionary-federation",
+  "countryCode": "russia",
+  "ko": "아르메니아 혁명연맹",
+  "en": "Armenian Revolutionary Federation",
+  "periods": [
+   [
+    1890,
+    null
+   ]
+  ],
+  "existingTerm": "armenian-revolutionary-federation",
+  "people": [
+   "alexander-khatisian",
+   "andranik-ozanian"
+  ]
+ },
+ {
+  "id": "party-ukrainian-sr",
+  "countryCode": "ukraine",
+  "ko": "우크라이나 사회혁명당",
+  "en": "Ukrainian Party of Socialist Revolutionaries",
+  "periods": [
+   [
+    1917,
+    1950
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mykhailo-hrushevsky"
+  ]
+ },
+ {
+  "id": "party-ukrainian-sdlp",
+  "countryCode": "ukraine",
+  "ko": "우크라이나 사회민주노동당",
+  "en": "Ukrainian Social Democratic Labour Party",
+  "periods": [
+   [
+    1905,
+    1950
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "symon-petliura"
+  ]
+ },
+ {
+  "id": "oun",
+  "countryCode": "ukraine",
+  "ko": "우크라이나 민족주의자 조직",
+  "en": "Organization of Ukrainian Nationalists (OUN)",
+  "periods": [
+   [
+    1929,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "stepan-bandera",
+   "yevhen-konovalets"
+  ]
+ },
+ {
+  "id": "party-azerbaijani-popular-front",
+  "countryCode": "azerbaijan",
+  "ko": "아제르바이잔 인민전선당",
+  "en": "Azerbaijani Popular Front Party",
+  "periods": [
+   [
+    1989,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "abulfaz-elchibey"
+  ]
+ },
+ {
+  "id": "party-cup",
+  "countryCode": "turkey",
+  "ko": "통일진보위원회",
+  "en": "Committee of Union and Progress",
+  "periods": [
+   [
+    1889,
+    1926
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "enver-pasha"
+  ]
+ },
+ {
+  "id": "party-turkish-chp",
+  "countryCode": "turkey",
+  "ko": "공화인민당",
+  "en": "Republican People's Party (CHP)",
+  "periods": [
+   [
+    1923,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mustafa-kemal-ataturk",
+   "ismet-inonu"
+  ]
+ },
+ {
+  "id": "party-turkish-communist",
+  "countryCode": "turkey",
+  "ko": "터키 공산당",
+  "en": "Communist Party of Turkey",
+  "periods": [
+   [
+    1920,
+    1988
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "nazim-hikmet"
+  ]
+ },
+ {
+  "id": "party-japanese-seiyukai",
+  "countryCode": "japan",
+  "ko": "입헌정우회",
+  "en": "Rikken Seiyūkai",
+  "periods": [
+   [
+    1900,
+    1940
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "yosuke-matsuoka"
+  ]
+ },
+ {
+  "id": "imperial-rule-assistance-association",
+  "countryCode": "japan",
+  "ko": "대정익찬회",
+  "en": "Imperial Rule Assistance Association",
+  "periods": [
+   [
+    1940,
+    1945
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "konoe-fumimaro"
+  ]
+ },
+ {
+  "id": "party-japan-democratic",
+  "countryCode": "japan",
+  "ko": "일본민주당",
+  "en": "Japan Democratic Party",
+  "periods": [
+   [
+    1954,
+    1955
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mamoru-shigemitsu"
+  ]
+ },
+ {
+  "id": "party-japanese-ldp",
+  "countryCode": "japan",
+  "ko": "자유민주당 (일본)",
+  "en": "Liberal Democratic Party (Japan)",
+  "periods": [
+   [
+    1955,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mamoru-shigemitsu"
+  ]
+ },
+ {
+  "id": "party-cambodian-democratic",
+  "countryCode": "cambodia",
+  "ko": "민주당 (캄보디아)",
+  "en": "Democratic Party (Cambodia)",
+  "periods": [
+   [
+    1946,
+    1957
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "son-sann"
+  ]
+ },
+ {
+  "id": "party-sangkum",
+  "countryCode": "cambodia",
+  "ko": "상쿰",
+  "en": "Sangkum",
+  "periods": [
+   [
+    1955,
+    1970
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "norodom-sihanouk",
+   "son-sann"
+  ]
+ },
+ {
+  "id": "party-funcinpec",
+  "countryCode": "cambodia",
+  "ko": "푼신펙",
+  "en": "FUNCINPEC",
+  "periods": [
+   [
+    1981,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "norodom-sihanouk"
+  ]
+ },
+ {
+  "id": "party-lao-national-progressive",
+  "countryCode": "laos",
+  "ko": "라오스 국민진보당",
+  "en": "Lao National Progressive Party",
+  "periods": [
+   [
+    1950,
+    1958
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "souvanna-phouma"
+  ]
+ },
+ {
+  "id": "party-singapore-pap",
+  "countryCode": "singapore",
+  "ko": "인민행동당",
+  "en": "People's Action Party",
+  "periods": [
+   [
+    1954,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "lee-kuan-yew"
+  ]
+ },
+ {
+  "id": "party-korean-liberal",
+  "countryCode": "south-korea",
+  "ko": "자유당 (대한민국)",
+  "en": "Liberal Party (South Korea)",
+  "periods": [
+   [
+    1951,
+    1970
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "syngman-rhee"
+  ]
+ },
+ {
+  "id": "party-korean-socialist-1918",
+  "countryCode": "korea",
+  "ko": "한인사회당",
+  "en": "Korean Socialist Party (1918)",
+  "periods": [
+   [
+    1918,
+    1921
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "yi-dong-hwi"
+  ]
+ },
+ {
+  "id": "party-koryo-communist",
+  "countryCode": "korea",
+  "ko": "상하이파 고려공산당",
+  "en": "Korean Communist Party (Shanghai faction)",
+  "periods": [
+   [
+    1921,
+    1922
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "yi-dong-hwi"
+  ]
+ },
+ {
+  "id": "party-afghan-national-revolutionary",
+  "countryCode": "afghanistan",
+  "ko": "민족혁명당 (아프가니스탄)",
+  "en": "National Revolutionary Party (Afghanistan)",
+  "periods": [
+   [
+    1974,
+    1978
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mohammad-daoud-khan"
+  ]
+ },
+ {
+  "id": "party-wafd",
+  "countryCode": "egypt",
+  "ko": "와프드당",
+  "en": "Wafd Party",
+  "periods": [
+   [
+    1918,
+    1953
+   ],
+   [
+    1978,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "saad-zaghloul"
+  ]
+ },
+ {
+  "id": "party-palestine-communist",
+  "countryCode": "palestine",
+  "ko": "팔레스타인 공산당",
+  "en": "Palestine Communist Party",
+  "periods": [
+   [
+    1923,
+    1948
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "najati-sidqi"
+  ]
+ },
+ {
+  "id": "party-somali-rsp",
+  "countryCode": "somalia",
+  "ko": "소말리아 혁명사회당",
+  "en": "Somali Revolutionary Socialist Party",
+  "periods": [
+   [
+    1976,
+    1991
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mohamed-siad-barre",
+   "mohammad-ali-samatar",
+   "hussein-kulmiye-afrah"
+  ]
+ },
+ {
+  "id": "party-benin-prpb",
+  "countryCode": "benin",
+  "ko": "베냉 인민혁명당",
+  "en": "People's Revolutionary Party of Benin",
+  "periods": [
+   [
+    1975,
+    1990
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mathieu-kerekou"
+  ]
+ },
+ {
+  "id": "party-dahomeyan-unity",
+  "countryCode": "benin",
+  "ko": "다호메 통일당",
+  "en": "Dahomeyan Unity Party",
+  "periods": [
+   [
+    1960,
+    1963
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "albert-tevoedjre"
+  ]
+ },
+ {
+  "id": "party-benin-renaissance",
+  "countryCode": "benin",
+  "ko": "베냉 르네상스당",
+  "en": "Renaissance Party of Benin",
+  "periods": [
+   [
+    1992,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "nicephore-soglo"
+  ]
+ },
+ {
+  "id": "party-arema",
+  "countryCode": "madagascar",
+  "ko": "마다가스카르 혁명전위 (AREMA)",
+  "en": "AREMA (Vanguard of the Malagasy Revolution)",
+  "periods": [
+   [
+    1976,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "didier-ratsiraka"
+  ]
+ },
+ {
+  "id": "party-tanu",
+  "countryCode": "tanzania",
+  "ko": "탕가니카 아프리카 민족연합",
+  "en": "Tanganyika African National Union (TANU)",
+  "periods": [
+   [
+    1954,
+    1977
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "julius-nyerere"
+  ]
+ },
+ {
+  "id": "party-ccm",
+  "countryCode": "tanzania",
+  "ko": "혁명당 (탄자니아)",
+  "en": "Chama Cha Mapinduzi (CCM)",
+  "periods": [
+   [
+    1977,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "julius-nyerere"
+  ]
+ },
+ {
+  "id": "party-ghana-cpp",
+  "countryCode": "ghana",
+  "ko": "회의인민당",
+  "en": "Convention People's Party (CPP)",
+  "periods": [
+   [
+    1949,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "kwame-nkrumah"
+  ]
+ },
+ {
+  "id": "party-south-african-party",
+  "countryCode": "south-africa",
+  "ko": "남아프리카당",
+  "en": "South African Party",
+  "periods": [
+   [
+    1911,
+    1934
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "jan-smuts"
+  ]
+ },
+ {
+  "id": "party-south-african-united",
+  "countryCode": "south-africa",
+  "ko": "연합당 (남아프리카)",
+  "en": "United Party (South Africa)",
+  "periods": [
+   [
+    1934,
+    1977
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "jan-smuts"
+  ]
+ },
+ {
+  "id": "party-yemen-gpc",
+  "countryCode": "yemen",
+  "ko": "국민전체회의",
+  "en": "General People's Congress (Yemen)",
+  "periods": [
+   [
+    1982,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "ali-abdullah-saleh"
+  ]
+ },
+ {
+  "id": "party-chilean-socialist",
+  "countryCode": "chile",
+  "ko": "칠레 사회당",
+  "en": "Socialist Party of Chile",
+  "periods": [
+   [
+    1933,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "salvador-allende"
+  ]
+ },
+ {
+  "id": "party-cuban-progressive-action",
+  "countryCode": "cuba",
+  "ko": "진보행동당",
+  "en": "Progressive Action Party (Cuba)",
+  "periods": [
+   [
+    1949,
+    1959
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "fulgencio-batista"
+  ]
+ },
+ {
+  "id": "party-cuban-communist-1925",
+  "countryCode": "cuba",
+  "ko": "쿠바 공산당 (1925)",
+  "en": "Communist Party of Cuba (1925)",
+  "periods": [
+   [
+    1925,
+    1961
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "julio-antonio-mella"
+  ]
+ },
+ {
+  "id": "party-mexican-communist",
+  "countryCode": "mexico",
+  "ko": "멕시코 공산당",
+  "en": "Mexican Communist Party",
+  "periods": [
+   [
+    1919,
+    1981
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "julio-antonio-mella"
+  ]
+ },
+ {
+  "id": "party-salvadoran-communist",
+  "countryCode": "el-salvador",
+  "ko": "살바도르 공산당",
+  "en": "Communist Party of El Salvador",
+  "periods": [
+   [
+    1930,
+    1995
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "farabundo-marti"
+  ]
+ },
+ {
+  "id": "party-peruvian-socialist",
+  "countryCode": "peru",
+  "ko": "페루 사회당",
+  "en": "Peruvian Socialist Party (1928)",
+  "periods": [
+   [
+    1928,
+    1930
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "mariategui"
+  ]
+ },
+ {
+  "id": "party-estonian-centre",
+  "countryCode": "estonia",
+  "ko": "에스토니아 중앙당",
+  "en": "Estonian Centre Party",
+  "periods": [
+   [
+    1991,
+    null
+   ]
+  ],
+  "existingTerm": null,
+  "people": [
+   "edgar-savisaar"
+  ]
+ }
+]
