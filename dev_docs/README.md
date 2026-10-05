@@ -9,6 +9,7 @@
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
+| CSS 독립 배포 구조 개선 | [2026-10-05 인수인계·설계 초안](frontend-static-assets-deployment-handoff-20261005.md) |
 | CommuLingo 관리자 MCP·leninbot 연동 경계 | [설계·단계·등록](commulingo-admin-mcp.md) |
 | CommuLingo 보강 파이프라인(frontend 주관·leninbot 일꾼) | [설계·일꾼 API·단계](commulingo-agent-pipeline.md) |
 | Redis 사용·캐시·세션·백엔드 공유 | [2026-10-04 설계 검토](redis-design-review-20261004.md) |
