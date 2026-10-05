@@ -186,7 +186,7 @@
   --nav-bg: var(--clr-cream-light);
   --card-bg: var(--clr-cream-light);
   --input-bg: var(--clr-cream-light);
-  --search-bg: #fff0e3;
+  --search-bg: color-mix(in srgb, var(--clr-red) 16%, var(--clr-cream-light));
   --overlay: rgba(13, 17, 23, 0.55);
   --shadow: 0 1px 3px rgba(13, 17, 23, 0.14);
   --code-bg: color-mix(in srgb, var(--clr-ink) 8%, var(--clr-cream-light));
