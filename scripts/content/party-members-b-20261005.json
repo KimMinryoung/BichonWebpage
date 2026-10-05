@@ -1,0 +1,2023 @@
+{
+ "add": [
+  {
+   "personId": "leo-jogiches",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Leo_Jogiches",
+      "locator": "characters 14804:15000; sha256 c1dc66241f2ad82ba86a5174dd7c6acc59f65d80e1b5081e8c61370989b27f50",
+      "claim": "레오 요기헤스는 1917년 창당한 독일 독립사회민주당의 당원이었다.",
+      "excerpt": "About 170,000 members remained with the old pro-war SPD, with the new USPD claiming a membership of 120,000 at its launch — including among its ranks Jogiches and the members of the Spartakusbund."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "leo-jogiches",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Leo_Jogiches",
+      "locator": "characters 7452:7625; sha256 c1dc66241f2ad82ba86a5174dd7c6acc59f65d80e1b5081e8c61370989b27f50",
+      "claim": "레오 요기헤스는 1907년 러시아 사회민주노동당 런던 대회에서 중앙위원회 후보위원으로 선출되었다.",
+      "excerpt": "Jogiches attended the 1907 London Congress of the Russian Social Democratic Labour Party, where he was elected a candidate member of the party's governing Central Committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "luxemburg",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Rosa_Luxemburg",
+      "locator": "characters 871:966; sha256 5962622a7acf6d6c3b1cf71486b4ce7305761ffdde1d82e015d61b08eee5e29f",
+      "claim": "로자 룩셈부르크는 1898년 독일로 옮긴 뒤 독일 사회민주당 혁명파의 대표적 인물이 되었다.",
+      "excerpt": "After moving to Germany in 1898, she became the foremost voice of the SPD's revolutionary wing."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Rosa_Luxemburg",
+      "locator": "characters 212:395; sha256 5962622a7acf6d6c3b1cf71486b4ce7305761ffdde1d82e015d61b08eee5e29f",
+      "claim": "로자 룩셈부르크는 독일 사회민주당의 주요 이론가였다.",
+      "excerpt": "She was a leading theorist of the Social Democratic Party of Germany (SPD) and later co-founded the anti-war Spartacus League, which evolved into the Communist Party of Germany (KPD)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "luxemburg",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-sdkpil",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1893,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Rosa_Luxemburg",
+      "locator": "characters 699:870; sha256 5962622a7acf6d6c3b1cf71486b4ce7305761ffdde1d82e015d61b08eee5e29f",
+      "claim": "로자 룩셈부르크는 폴란드왕국·리투아니아 사회민주당을 공동 창당했다.",
+      "excerpt": "She co-founded the Social Democracy of the Kingdom of Poland and Lithuania (SDKPiL), a party that rejected Polish nationalism in favour of an international class struggle."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Rosa_Luxemburg",
+      "locator": "characters 8691:8853; sha256 5962622a7acf6d6c3b1cf71486b4ce7305761ffdde1d82e015d61b08eee5e29f",
+      "claim": "로자 룩셈부르크의 그룹은 1893년 폴란드왕국 사회민주당을 창당했다.",
+      "excerpt": "In 1893, this group founded a new party, the Social Democracy of the Kingdom of Poland (SDKP), in opposition to the recently unified Polish Socialist Party (PPS)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "edward-gierek",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1931,
+    "endYear": 1934,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Edward_Gierek",
+      "locator": "characters 3265:3374; sha256 5807e40dac3dd18c4fee1ef312bd59967df268e255fcb102de0273ea0ee322d3",
+      "claim": "에드바르트 기에레크는 1931년 프랑스 공산당에 입당했고 1934년 파업을 조직해 폴란드로 추방되었다.",
+      "excerpt": "Gierek joined the French Communist Party in 1931, and in 1934 was deported to Poland for organising a strike."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "edward-gierek",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Edward_Gierek",
+      "locator": "characters 3917:4053; sha256 5807e40dac3dd18c4fee1ef312bd59967df268e255fcb102de0273ea0ee322d3",
+      "claim": "에드바르트 기에레크는 폴란드 노동자당 벨기에 지부를 공동 창설했다.",
+      "excerpt": "He was a co-founder of the Belgian branch of the Polish Workers' Party (PPR) and a chairman of the National Council of Poles in Belgium."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Edward_Gierek",
+      "locator": "characters 4263:4488; sha256 5807e40dac3dd18c4fee1ef312bd59967df268e255fcb102de0273ea0ee322d3",
+      "claim": "에드바르트 기에레크는 1948년 12월 폴란드 노동자당 카토비체 지구 조직 소속으로 통합 대회에 참가했다.",
+      "excerpt": "Working in the Katowice district PPR organisation, in December 1948, as a Sosnowiec delegate he participated in the PPR-PPS unification congress, which resulted in the establishment of the Polish United Workers' Party (PZPR)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "max-fechner",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Max_Fechner",
+      "locator": "characters 222:322; sha256 7eeeec4f4fa9d6021a36dcdff07957e6a8172464f36025d06cc46b891916a01a",
+      "claim": "막스 페히너는 1917년부터 1922년까지 독일 독립사회민주당 당원이었다.",
+      "excerpt": "He joined the SPD in 1910, was a member of the USPD from 1917 to 1922, and then returned to the SPD."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "max-fechner",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-sed",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1973,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Max_Fechner",
+      "locator": "characters 739:854; sha256 7eeeec4f4fa9d6021a36dcdff07957e6a8172464f36025d06cc46b891916a01a",
+      "claim": "막스 페히너는 전후 독일 사회주의통일당 당원이 되어 집행위원회와 중앙위원회에 선출되었다.",
+      "excerpt": "After the war, Fechner became a member of the SED, he was elected to its Executive Committee and Central Committee."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Max_Fechner",
+      "locator": "characters 1848:1896; sha256 7eeeec4f4fa9d6021a36dcdff07957e6a8172464f36025d06cc46b891916a01a",
+      "claim": "막스 페히너는 1958년 6월 독일 사회주의통일당 당원 자격을 회복했다.",
+      "excerpt": "In June 1958, he was reinstated as a SED member."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kurt-eisner",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1898,
+    "endYear": 1917,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+      "locator": "characters 1262:1352; sha256 44bfadf8d68fe370798eab2fc7bfd1fd174edc8c8cc833c4e3fd677086140ad4",
+      "claim": "쿠르트 아이스너는 1898년 독일 사회민주당에 입당했다.",
+      "excerpt": "Eisner was always an open republican as well as a Social-Democrat, joining the SPD in 1898"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+      "locator": "characters 2094:2196; sha256 44bfadf8d68fe370798eab2fc7bfd1fd174edc8c8cc833c4e3fd677086140ad4",
+      "claim": "쿠르트 아이스너는 1917년 독일 독립사회민주당으로 옮겼다.",
+      "excerpt": "Eisner joined the Independent Social Democratic Party of Germany in 1917, at the height of World War I"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "kurt-eisner",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Kurt_Eisner",
+      "locator": "characters 2094:2290; sha256 44bfadf8d68fe370798eab2fc7bfd1fd174edc8c8cc833c4e3fd677086140ad4",
+      "claim": "쿠르트 아이스너는 1917년 독일 독립사회민주당에 입당했다.",
+      "excerpt": "Eisner joined the Independent Social Democratic Party of Germany in 1917, at the height of World War I, and was convicted of treason in 1918 for his role in inciting a strike of munitions workers."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "karl-korsch",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Korsch",
+      "locator": "characters 4860:5042; sha256 c6a29c0b2c0d982f361fc7725d2113a886587078dc3a1a396afd6470c4d496a5",
+      "claim": "카를 코르슈는 1917년 독일 독립사회민주당에 입당했다.",
+      "excerpt": "In 1917, he joined the Independent Social Democratic Party of Germany (USPD), which had broken away from the Social Democratic Party of Germany over the latter's support for the war."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Korsch",
+      "locator": "characters 5761:5850; sha256 c6a29c0b2c0d982f361fc7725d2113a886587078dc3a1a396afd6470c4d496a5",
+      "claim": "카를 코르슈는 1920년 독일 독립사회민주당 내 공산당 합류파와 함께 독일 공산당으로 옮겼다.",
+      "excerpt": "Korsch  was part of the USPD faction which joined the Communist Party of Germany in 1920."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "karl-kautsky",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Kautsky",
+      "locator": "characters 117:298; sha256 1bb592fadc19038baf6ad9859a668c0d82854fb68764b03af55f01752e2416c2",
+      "claim": "카를 카우츠키는 수십 년 동안 독일 사회민주당의 대표 이론가였다.",
+      "excerpt": "One of the most authoritative promulgators of orthodox Marxism, he was for decades the leading theorist of the Social Democratic Party of Germany (SPD) and the Second International."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Kautsky",
+      "locator": "characters 2598:2662; sha256 1bb592fadc19038baf6ad9859a668c0d82854fb68764b03af55f01752e2416c2",
+      "claim": "카를 카우츠키는 1922년 독일 사회민주당에 복귀했다.",
+      "excerpt": "He rejoined the SPD in 1922 but his influence steadily declined."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "karl-kautsky",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Kautsky",
+      "locator": "characters 38193:38361; sha256 1bb592fadc19038baf6ad9859a668c0d82854fb68764b03af55f01752e2416c2",
+      "claim": "카를 카우츠키는 1917년 4월 고타 대회에서 독일 독립사회민주당을 공동 창당했다.",
+      "excerpt": "In April 1917, Kautsky, along with Bernstein, Haase, and other oppositionists, founded the Independent Social Democratic Party of Germany (USPD) at a congress in Gotha."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Kautsky",
+      "locator": "characters 2598:2662; sha256 1bb592fadc19038baf6ad9859a668c0d82854fb68764b03af55f01752e2416c2",
+      "claim": "카를 카우츠키는 1922년 독일 사회민주당으로 돌아갔다.",
+      "excerpt": "He rejoined the SPD in 1922 but his influence steadily declined."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fred-oelssner",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "party-german-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+      "locator": "characters 3029:3237; sha256 5231977d06efad56aba3693a9cac9c817ba71031de89a957abb0ea2893c846c9",
+      "claim": "프레트 욀스너는 1920년 12월 독일 공산당에 정식 입당했다.",
+      "excerpt": "However, the USPD seems to have remained relatively active in the Halle-Merseburg locality (where Oelßner was based) through 1920, and it was only in December 1920 that he formally joined the Communist Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fred-oelssner",
+   "activity": {
+    "functionId": "propaganda",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1919,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Fred_Oel%C3%9Fner",
+      "locator": "characters 2132:2296; sha256 5231977d06efad56aba3693a9cac9c817ba71031de89a957abb0ea2893c846c9",
+      "claim": "프레트 욀스너는 1919년 5월 독일 독립사회민주당에 입당했다.",
+      "excerpt": "Despite still only being sixteen, Oelßner joined the Independent Social Democratic Party (\"Unabhängige Sozialdemokratische Partei Deutschlands\" / USPD) in May 1919."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "pak-hon-yong",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-korean-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1950,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Pak_Hon-yong",
+      "locator": "characters 4193:4305; sha256 325f28f9d9a5a2ce6937000741b9ecf5ce03f4a8f3dc82d1b8774d5a76ce1d17",
+      "claim": "박헌영은 남북 정당이 통합되자 조선로동당 비서가 되었다.",
+      "excerpt": "Pak became Secretary of the Workers' Party of Korea when the Northern and Southern parties united in April 1950."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "choe-yong-gon",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1936,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Choe_Yong-gon_%28official%29",
+      "locator": "characters 1132:1224; sha256 893307d40ed1ab77001424135e970be95476cad179f4f649863d0fce38483528",
+      "claim": "최용건은 1936년 중국공산당에 입당했다.",
+      "excerpt": "Choe joined the Chinese Communist Party and the Northeast Anti-Japanese United Army in 1936."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "angelica-balabanova",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Angelica_Balabanoff",
+      "locator": "characters 1285:1389; sha256 71e9efc1f3aac4af45f60a53f27af4abc70c7b4bf2a377594de6d087e444e1af",
+      "claim": "안젤리카 발라바노바는 1917년 러시아로 가서 볼셰비키에 가담했다.",
+      "excerpt": "When the Russian Revolution broke out in 1917, Balabanoff travelled to Russia and joined the Bolsheviks."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "angelica-balabanova",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-italian-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1900,
+    "endYear": 1930,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Angelica_Balabanoff",
+      "locator": "characters 584:808; sha256 71e9efc1f3aac4af45f60a53f27af4abc70c7b4bf2a377594de6d087e444e1af",
+      "claim": "안젤리카 발라바노바는 1900년 이탈리아 사회당에 입당했다.",
+      "excerpt": "After graduating with degrees in philosophy and literature, she settled in Rome and began to organize immigrant workers in the textile industry, joining the Italian Socialist Party (Partito Socialista Italiano; PSI) in 1900."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Angelica_Balabanoff",
+      "locator": "characters 2710:2867; sha256 71e9efc1f3aac4af45f60a53f27af4abc70c7b4bf2a377594de6d087e444e1af",
+      "claim": "안젤리카 발라바노바는 1930년 이탈리아 사회당 분열 때 별도 정당을 만들었다.",
+      "excerpt": "as a maximalist, Balabanoff dissented from the leadership's desire for \"fusion\" and formed a new political grouping, the Italian Socialist Party (Maximalist)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anatoly-lukyanov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-russian-cprf",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1993,
+    "endYear": 2019,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Anatoly_Lukyanov",
+      "locator": "characters 245:424; sha256 379b5ed9f9441657f03624637ee82939d718cf6e17cc4290346135da6c48b7d7",
+      "claim": "아나톨리 루키야노프는 1993년 러시아연방 공산당 창당자 가운데 하나였다.",
+      "excerpt": "One of the founders of the Communist Party of the Russian Federation (CPRF) in 1993, he was described by its leader Gennady Zyuganov as having been the Deng Xiaoping of the party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Anatoly_Lukyanov",
+      "locator": "characters 2848:3049; sha256 379b5ed9f9441657f03624637ee82939d718cf6e17cc4290346135da6c48b7d7",
+      "claim": "아나톨리 루키야노프는 러시아연방 공산당 중앙자문위원회 의장을 지냈다.",
+      "excerpt": "Lukyanov was the Chairman of the Central Advisory Council of the Communist Party of the Russian Federation, and the senior adviser to party leader Gennady Zyuganov, since co-founding the party in 1993."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anatoly-lukyanov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Anatoly_Lukyanov",
+      "locator": "characters 2210:2343; sha256 379b5ed9f9441657f03624637ee82939d718cf6e17cc4290346135da6c48b7d7",
+      "claim": "아나톨리 루키야노프는 1987년 소련공산당 중앙위원회 비서, 1988년 정치국 후보위원이 되었다.",
+      "excerpt": "Lukyanov was a secretary of the CPSU Central Committee from January 1987 and a candidate member of the Politburo from September 1988."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evgenia-bosch",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1901,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgenia_Bosch",
+      "locator": "characters 2083:2242; sha256 db676315a777f538fe09dec5fb22223efebf340c94964745095f78179bc3f174",
+      "claim": "예브게니야 보시는 1901년 러시아 사회민주노동당 당원이 되었다.",
+      "excerpt": "In 1901, at 22, she became a member of the Russian Social Democratic Labour Party (RSDLP) and after the II Party Congress joined the Bolshevik faction in 1903."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgenia_Bosch",
+      "locator": "characters 3104:3197; sha256 db676315a777f538fe09dec5fb22223efebf340c94964745095f78179bc3f174",
+      "claim": "예브게니야 보시는 러시아 사회민주노동당 키이우 위원회를 이끌었다.",
+      "excerpt": "Bosch was head of the Kyiv Committee of the Russian Social Democratic Worker's Party (RSDRP)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evgenia-bosch",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1925,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgenia_Bosch",
+      "locator": "characters 4607:4724; sha256 db676315a777f538fe09dec5fb22223efebf340c94964745095f78179bc3f174",
+      "claim": "예브게니야 보시는 2월 혁명 뒤 볼셰비키 서남부 지역 당 위원회 위원장으로 선출되었다.",
+      "excerpt": "She moved soon afterwards to Kyiv, where she was elected chairman of the party committee for the Southwestern region."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Yevgenia_Bosch",
+      "locator": "characters 4494:4606; sha256 db676315a777f538fe09dec5fb22223efebf340c94964745095f78179bc3f174",
+      "claim": "예브게니야 보시는 2월 혁명 뒤 가장 먼저 귀국한 볼셰비키 망명자였다.",
+      "excerpt": "After the February Revolution, Bosch and Pyatakov were among the first Bolshevik emigres to return to Petrograd."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "henk-sneevliet",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-indonesian-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1914,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Henk_Sneevliet",
+      "locator": "characters 2412:2547; sha256 2428fcb8b2886db0f7ac1e997c12285e80ef4db7b17375ef7f9ea803c6521cbe",
+      "claim": "헨크 스네블릿은 1914년 인도네시아 공산당의 전신인 동인도 사회민주연합을 공동 창립했다.",
+      "excerpt": "In 1914, he was a co-founder of the Indies Social Democratic Association (ISDV), in which both Dutch and Indonesian people were active."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Henk_Sneevliet",
+      "locator": "characters 3945:4149; sha256 2428fcb8b2886db0f7ac1e997c12285e80ef4db7b17375ef7f9ea803c6521cbe",
+      "claim": "헨크 스네블릿은 코민테른 2차 대회에 인도네시아 공산당 대표로 참석했다.",
+      "excerpt": "The same year he was also present at the 2nd World Congress of the Communist International in Moscow as a representative of the Partai Komunis Indonesia (PKI), which was the successor to Sneevliet's ISDV."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "adam-rapacki",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-pzpr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Adam_Rapacki",
+      "locator": "characters 124:287; sha256 6d992f12c7242f872548205221b0e040fb4317d678683a96db5e1945cdcdf3e6",
+      "claim": "아담 라파츠키는 1948년 폴란드 통일노동당 중앙위원회와 정치국에 들어갔다.",
+      "excerpt": "He started in the socialist movement but in 1948 joined the Central Committee of the new Polish United Workers' Party (PZPR), and became a member of its Politburo."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "adam-rapacki",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-polish-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Adam_Rapacki",
+      "locator": "characters 1967:2055; sha256 6d992f12c7242f872548205221b0e040fb4317d678683a96db5e1945cdcdf3e6",
+      "claim": "아담 라파츠키는 1945년 8월 폴란드 사회당에 입당했다.",
+      "excerpt": "He joined the Polish Socialist Party in August 1945 and moved to Warsaw in January 1946."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BF%D0%B0%D1%86%D0%BA%D0%B8%D0%B9,_%D0%90%D0%B4%D0%B0%D0%BC",
+      "locator": "characters 3988:4054; sha256 cc76ed12e3a09ab8848bb5578100aeeefa5544a752916933fb9084e211ce1aa4",
+      "claim": "아담 라파츠키는 1945–1948년 폴란드 사회당 당원이었다.",
+      "excerpt": "В 1945–1948 состоял в Польской социалистической партии (PPS, ППС)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "czeslaw-kiszczak",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-pzpr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": 1990,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%89%D0%B0%D0%BA,_%D0%A7%D0%B5%D1%81%D0%BB%D0%B0%D0%B2",
+      "locator": "characters 944:1065; sha256 8193b24bb14c5cb958ddf47f881bd2d636de3f5ebb067af4af495ecbca5272b6",
+      "claim": "체스와프 키슈차크는 소속 정당이 1948년 폴란드 통일노동당으로 바뀐 뒤에도 당원이었다.",
+      "excerpt": "В 1945 году стал членом Польской рабочей партии, преобразованной в 1948 году в Польскую объединённую рабочую партию ПОРП."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Czes%C5%82aw_Kiszczak",
+      "locator": "characters 4824:4937; sha256 617c2eedada9fa66c7f755ce37c1e2d7d4b882828780ddea8be15d87cddae0c1",
+      "claim": "체스와프 키슈차크는 1982년 폴란드 통일노동당 정치국 후보위원, 1986년 정위원이 되었다.",
+      "excerpt": "In 1982 he became a deputy member of the Politburo of the Polish United Workers' Party and a full member in 1986."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "czeslaw-kiszczak",
+   "activity": {
+    "functionId": "security",
+    "affiliationId": "party-polish-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1945,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%89%D0%B0%D0%BA,_%D0%A7%D0%B5%D1%81%D0%BB%D0%B0%D0%B2",
+      "locator": "characters 944:1065; sha256 8193b24bb14c5cb958ddf47f881bd2d636de3f5ebb067af4af495ecbca5272b6",
+      "claim": "체스와프 키슈차크는 1945년 폴란드 노동자당 당원이 되었다.",
+      "excerpt": "В 1945 году стал членом Польской рабочей партии, преобразованной в 1948 году в Польскую объединённую рабочую партию ПОРП."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Czes%C5%82aw_Kiszczak",
+      "locator": "characters 1666:1770; sha256 617c2eedada9fa66c7f755ce37c1e2d7d4b882828780ddea8be15d87cddae0c1",
+      "claim": "체스와프 키슈차크는 전후 귀국하자마자 폴란드 노동자당에 입당했다.",
+      "excerpt": "After the war Kiszczak returned to Poland, joined the communist Polish Workers' Party almost immediately"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "eino-rahja",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+      "locator": "characters 330:444; sha256 989eb62c4844bf35b5cffd79003230b8776e0b9923969f580a4876c8a69c829b",
+      "claim": "에이노 라흐야는 1903년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "He joined the Russian Social Democratic Labour Party in 1903, becoming aligned with the party's Bolshevik faction."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "eino-rahja",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-finnish-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%85%D1%8C%D1%8F,_%D0%AD%D0%B9%D0%BD%D0%BE_%D0%90%D0%B1%D1%80%D0%B0%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 942:1078; sha256 48d62c4ad38148ad4e4903d0174efe94c7789cd6dcb4b46bb3667d68cd6e45e5",
+      "claim": "에이노 라흐야는 핀란드 공산당 창당 조직자이자 1918–1927년 중앙위원이었다.",
+      "excerpt": "Один из организаторов Коммунистической партии Финляндии, член ЦК КПФ в 1918—1927 годах, делегат от КПФ на I—III-м конгрессах Коминтерна."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Eino_Rahja",
+      "locator": "characters 792:885; sha256 989eb62c4844bf35b5cffd79003230b8776e0b9923969f580a4876c8a69c829b",
+      "claim": "에이노 라흐야는 1927년 핀란드 공산당 중앙위원회에서 축출되었다.",
+      "excerpt": "Eino Rahja was expelled from the Central Committee of the Communist Party of Finland in 1927."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mieczyslaw-jagielski",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-polish-pzpr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1948,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mieczys%C5%82aw_Jagielski",
+      "locator": "characters 2204:2337; sha256 d3a52eaa7805cf75fa889d95648776570e65357d201a0add18ef67d681c4ab74",
+      "claim": "미에치스와프 야기엘스키는 1948년 폴란드 통일노동당 당원이 되었다.",
+      "excerpt": "When the Polish Worker's Party transformed into the Polish United Workers' Party (PZPR) in 1948, he became a member of the new party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mieczys%C5%82aw_Jagielski",
+      "locator": "characters 582:768; sha256 d3a52eaa7805cf75fa889d95648776570e65357d201a0add18ef67d681c4ab74",
+      "claim": "미에치스와프 야기엘스키는 1971년 폴란드 통일노동당 정치국원이 되었다.",
+      "excerpt": "After he left his position as Minister of Agriculture in 1970, Jagielski became a Deputy Prime Minister, and the next year, a member of the Politburo of the Polish United Workers' Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mieczyslaw-jagielski",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "party-polish-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1948,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mieczys%C5%82aw_Jagielski",
+      "locator": "characters 2113:2203; sha256 d3a52eaa7805cf75fa889d95648776570e65357d201a0add18ef67d681c4ab74",
+      "claim": "미에치스와프 야기엘스키는 1944년 또는 1946년 폴란드 노동자당에 입당했다.",
+      "excerpt": "Jagielski signed up to the Polish Workers' Party (PPR) in 1944, or in 1946 (sources vary)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mieczys%C5%82aw_Jagielski",
+      "locator": "characters 2204:2337; sha256 d3a52eaa7805cf75fa889d95648776570e65357d201a0add18ef67d681c4ab74",
+      "claim": "미에치스와프 야기엘스키는 1948년 폴란드 노동자당이 통합될 때까지 당원이었다.",
+      "excerpt": "When the Polish Worker's Party transformed into the Polish United Workers' Party (PZPR) in 1948, he became a member of the new party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "christian-rakovsky",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Christian_Rakovsky",
+      "locator": "characters 23634:23842; sha256 4c49ea4b4d6a38f2049d3fd2c204e3e957c1692f05b162278e3954c45513e050",
+      "claim": "크리스티안 라콥스키는 1917년 12월 또는 1918년 초 볼셰비키에 가담했다.",
+      "excerpt": "Present in the internationalist faction of the Mensheviks, he joined the Bolsheviks in December 1917 or early 1918, after the October Revolution (although he was occasionally listed among the Old Bolsheviks)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Christian_Rakovsky",
+      "locator": "characters 44527:44721; sha256 4c49ea4b4d6a38f2049d3fd2c204e3e957c1692f05b162278e3954c45513e050",
+      "claim": "크리스티안 라콥스키는 1927년 좌익반대파 패배 뒤 소련공산당 중앙위원회와 당에서 축출되었다.",
+      "excerpt": "Following the defeat of the Left Opposition in November–December 1927, Rakovsky was ousted from the Comintern, the Central Committee, and eventually from the Communist Party of the Soviet Union."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "irina-kakhovskaya",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-sr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1917,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+      "locator": "characters 3274:3531; sha256 2d74fbfbeb9734739073c32fab41e47f211e516d57c08f93f61806982637666f",
+      "claim": "이리나 카홉스카야는 1917년 2월 혁명 뒤 사회혁명당 치타 위원회 창설에 참여했다.",
+      "excerpt": "After the outbreak of the  1917 February Revolution, the other political prisoners from the Nerchinsk Katorga were released as well and she collaborated with Maria Spiridonova in the creation of the Chita Committee of the Party of Socialist Revolutionaries."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Irina_Kakhovskaya",
+      "locator": "characters 3767:3910; sha256 2d74fbfbeb9734739073c32fab41e47f211e516d57c08f93f61806982637666f",
+      "claim": "이리나 카홉스카야는 10월 혁명 뒤 좌파가 사회혁명당에서 분리할 때 함께 나갔다.",
+      "excerpt": "In the aftermath of the October Revolution Kakhovskaya participated in the secession of the Left Socialist-Revolutionaries from their old party"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ho-ka-i",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1930,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ho_Ka-i",
+      "locator": "characters 1393:1521; sha256 28c0e25d11710a36185324f9add0d44bfd1cea71d831c317c58b7e27047979a4",
+      "claim": "허가이는 22세에 소련공산당에 입당했다.",
+      "excerpt": "Throughout the 1920s, Ho Ka-i attended conferences and meetings in the USSR and at the age of 22, he joined the Communist Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ho_Ka-i",
+      "locator": "characters 1935:2108; sha256 28c0e25d11710a36185324f9add0d44bfd1cea71d831c317c58b7e27047979a4",
+      "claim": "허가이는 여러 해 소련공산당 비서로 일했다.",
+      "excerpt": "Working under the Communist Party, he served as secretary for many years, upgrading his family out of the lower class because of his dedication and his service to the party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jose-ramon-fernandez",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-cuban-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%B3n_Fern%C3%A1ndez",
+      "locator": "characters 2583:2724; sha256 872bc23c477a97218cbf1938c2f674c917384999ed0c671ad1e1aead661f13e1",
+      "claim": "호세 라몬 페르난데스는 1975년부터 쿠바 공산당 중앙위원이었다.",
+      "excerpt": "Fernández Álvarez took part in the seven Congresses of the Cuban Communist Party and beginning in 1975 was a member of the Central Committee."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jos%C3%A9_Ram%C3%B3n_Fern%C3%A1ndez",
+      "locator": "characters 2725:2839; sha256 872bc23c477a97218cbf1938c2f674c917384999ed0c671ad1e1aead661f13e1",
+      "claim": "호세 라몬 페르난데스는 쿠바 공산당 3차 대회에서 정치국 후보위원으로 선출되었다.",
+      "excerpt": "At the third congress of the Cuban Communist Party, he was elected as a Substitute Member of the Political Bureau."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-konovalov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-kadets",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%29",
+      "locator": "characters 6593:6675; sha256 90fdab37e374c7452324e970a5d9e3e45352fdfe0bf0cd8d50be1472c6859978",
+      "claim": "알렉산드르 코노발로프는 1917년 7월 입헌민주당에 입당해 중앙위원으로 선출되었다.",
+      "excerpt": "С июля 1917 года — член Конституционно-демократической партии, был избран в её ЦК."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%29",
+      "locator": "characters 7448:7554; sha256 90fdab37e374c7452324e970a5d9e3e45352fdfe0bf0cd8d50be1472c6859978",
+      "claim": "알렉산드르 코노발로프는 1920–1921년 입헌민주당 파리 그룹 의장을 지냈다.",
+      "excerpt": "Продолжил участие в деятельности кадетской партии, в 1920—1921 годах был председателем её парижской группы"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-ustryalov",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "russian-kadets",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Ustryalov",
+      "locator": "characters 440:536; sha256 f6bf73a65f9d1468d6e50ae69d49b3efb2e8261856bb9e3a91a482fcbbf66fa6",
+      "claim": "니콜라이 우스트랴로프는 처음에 입헌민주당 당원이었다.",
+      "excerpt": "Teaching at Moscow University, he was initially a member of the Constitutional Democratic Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "john-reed",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-us-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/John_Reed_%28journalist%29",
+      "locator": "characters 22352:22517; sha256 1cffaf001a842739a2c1944a4092b2ad1d00d1b5b54c3ba49460e3b68ac8ec43",
+      "claim": "존 리드는 미국 사회당 좌파로 활동하다 1919년 8월 30일 전국 대회에서 축출되었다.",
+      "excerpt": "Affiliated with the Left Wing of the Socialist Party, Reed with the other radicals was expelled from the National Socialist Convention in Chicago on August 30, 1919."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-rutskoy",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%86%D0%BA%D0%BE%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 12733:12763; sha256 25b6a374235f6e4809fc1d5f473567e075b701f5b07305919a133f2dbcae798d",
+      "claim": "알렉산드르 루츠코이는 러시아 공화국 공산당 중앙위원으로 선출되었다.",
+      "excerpt": "Был избран членом ЦК КП РСФСР."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%86%D0%BA%D0%BE%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 14652:14806; sha256 25b6a374235f6e4809fc1d5f473567e075b701f5b07305919a133f2dbcae798d",
+      "claim": "알렉산드르 루츠코이는 1991년 소련공산당에서 제명되었다.",
+      "excerpt": "Партийная организация политуправления ВВС, где Руцкой состоял на учёте, поддержала решение ЦК и исключила его из рядов КПСС «за фракционную деятельность»."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ivan-golyakov",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ivan_Golyakov",
+      "locator": "characters 723:888; sha256 36e18875c5c3fb690a7008573d262526ea9aad4f7e23e64cd8a6b1176df2f0fa",
+      "claim": "이반 골랴코프는 1918년 볼셰비키당에 입당해 농촌 세포 비서를 맡았다.",
+      "excerpt": "In 1918, he joined the ranks of the Russian Social Democratic Labor Party (Bolsheviks), created a party cell in the countryside and took the post of secretary in it."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evgeny-pashukanis",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+      "locator": "characters 732:882; sha256 228f254c3e2ddd77e710d8d876909e69f5cecf3cca24d461c76b884e31fa0959",
+      "claim": "예브게니 파슈카니스는 17세에 상트페테르부르크에서 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "Influenced by his family, particularly his uncle, he joined the Russian Social Democratic Workers' Party (RSLDP) in Saint Petersburg at the age of 17."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mayakovsky",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": 1910,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Mayakovsky",
+      "locator": "characters 3904:4158; sha256 cc6db064b20973abf740aa739445cdef23d593fe4c25d46384d38d4228726e45",
+      "claim": "블라디미르 마야콥스키는 1907년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "In 1907 Mayakovsky became a member of his gymnasium's underground Social Democrats' circle, taking part in numerous activities of the Russian Social Democratic Labour Party (RSDLP), which he, given the nickname \"Comrade Konstantin\", joined the same year."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Vladimir_Mayakovsky",
+      "locator": "characters 5319:5393; sha256 cc6db064b20973abf740aa739445cdef23d593fe4c25d46384d38d4228726e45",
+      "claim": "블라디미르 마야콥스키는 1910년 석방 뒤 러시아 사회민주노동당을 떠났다.",
+      "excerpt": "Having left the RSDLP (never to re-join it), he concentrated on education."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fyodor-uglov",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1931,
+    "endYear": 1991,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A3%D0%B3%D0%BB%D0%BE%D0%B2,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 421:443; sha256 3ddfd9d98ea5e7cf50f580d740f455d59fb3d182080571c2e09247d1fa279801",
+      "claim": "표도르 우글로프는 1931년부터 소련공산당 당원이었다.",
+      "excerpt": "Член КПСС с 1931 года."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "liebknecht",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1900,
+    "endYear": 1916,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Liebknecht",
+      "locator": "characters 4468:4614; sha256 ade5694e831ab36a3e8cfb2a3e909d46173cadeb17130b4240c01977e0c5587f",
+      "claim": "카를 리프크네히트는 1900년 독일 사회민주당에 입당했다.",
+      "excerpt": "He joined the Social Democratic Party (SPD) in 1900 and in 1904, along with his colleague Hugo Haase, he became known abroad as a political lawyer"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Karl_Liebknecht",
+      "locator": "characters 757:878; sha256 ade5694e831ab36a3e8cfb2a3e909d46173cadeb17130b4240c01977e0c5587f",
+      "claim": "카를 리프크네히트는 1916년 독일 사회민주당에서 제명되었다.",
+      "excerpt": "Liebknecht was expelled from the party for his views in 1916, and again imprisoned for leading an anti-war demonstration."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gao-gang",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1926,
+    "endYear": 1954,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Gao_Gang",
+      "locator": "characters 198:346; sha256 41d5c8b400dd7f5bd1305ca43b2d8d90a2db168ebbcfc70993bb62bdafcce1be",
+      "claim": "가오강은 1926년 중국공산당에 입당했다.",
+      "excerpt": "Born in rural Shaanxi province in 1905, Gao Gang joined the party in 1926 and led a revolutionary guerrilla base there during the Chinese Civil War."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Gao_Gang",
+      "locator": "characters 2123:2187; sha256 41d5c8b400dd7f5bd1305ca43b2d8d90a2db168ebbcfc70993bb62bdafcce1be",
+      "claim": "가오강은 1945년 중국공산당 정치국원이 되었다.",
+      "excerpt": "In 1945, Gao joined the Politburo of the Chinese Communist Party"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "liu-bocheng",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1926,
+    "endYear": 1986,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Liu_Bocheng",
+      "locator": "characters 2360:2471; sha256 f93d923ff47d9374fd4916fcadccbd2b63ee2be16558f57801bb871785638c56",
+      "claim": "류보청은 1926년 5월 중국공산당에 입당했다.",
+      "excerpt": "In May 1926, Liu joined the Chinese Communist Party (CCP) and was appointed military commissioner of Chongqing."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "li-xiannian",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1927,
+    "endYear": 1992,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Li_Xiannian",
+      "locator": "characters 1857:2014; sha256 7a75f764f75f580448c52ce8453eca07ea54fd3a2b758053e61cd00c104458b1",
+      "claim": "리셴녠은 1927년 12월 중국공산당에 입당했다.",
+      "excerpt": "He joined the Chinese Communist Party in December 1927, and served as an army captain and political commissar for the Chinese Red Army during the Long March."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Li_Xiannian",
+      "locator": "characters 291:396; sha256 7a75f764f75f580448c52ce8453eca07ea54fd3a2b758053e61cd00c104458b1",
+      "claim": "리셴녠은 1956–1987년 중국공산당 정치국원이었다.",
+      "excerpt": "He was a full member of the Politburo from 1956 to 1987, and of its Standing Committee from 1977 to 1987."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "heinrich-rau",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1917,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Heinrich_Rau",
+      "locator": "characters 3508:3694; sha256 272fd540a6afe5de62aba020e73ca0e22a5286e9d0a7488ee17fdd7a5edfbba7",
+      "claim": "하인리히 라우는 1917년 독일 독립사회민주당에 입당했고 1919년 독일 공산당으로 옮겼다.",
+      "excerpt": "In accordance with the politics of the Spartacists, in 1917 he joined the left-wing Independent Social Democratic Party of Germany (USPD) and in 1919 the Communist Party of Germany (KPD)"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "boris-kamkov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-sr",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1904,
+    "endYear": 1917,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Kamkov",
+      "locator": "characters 482:639; sha256 e5185d527538601f9aa9bf1987f63d6823a6cf13ea15cf5ea03d7c6f6baaf94c",
+      "claim": "보리스 캄코프는 사회혁명당에 입당해 1904년 전투조직 구성원이 되었다.",
+      "excerpt": "As a youth he became involved in radical politics and joined the Socialist-Revolutionary Party (PSR), becoming a member of its 'Combat Organisation' in 1904."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Boris_Kamkov",
+      "locator": "characters 2013:2144; sha256 e5185d527538601f9aa9bf1987f63d6823a6cf13ea15cf5ea03d7c6f6baaf94c",
+      "claim": "보리스 캄코프는 1917년 사회혁명당에서 갈라져 나온 좌파 정당을 이끌었다.",
+      "excerpt": "He was one of the leaders of the Party of Left Socialist-Revolutionaries, which broke away from the PSR in the late summer of 1917."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-protopopov",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "russian-octobrists",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Alexander_Protopopov",
+      "locator": "characters 1807:1933; sha256 5ac767370aa3619e0961aaaaa934ba7b20b8052b678128ded397da4166b41dfb",
+      "claim": "알렉산드르 프로토포포프는 1907년 10월당 소속으로 국가두마 의원에 선출되었다.",
+      "excerpt": "Protopopov was elected in 1907 as a member of the centralist Octobrist Party as a delegate to both the Third and Fourth Dumas."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jiang-qing",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "china-ccp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1933,
+    "endYear": 1977,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jiang_Qing",
+      "locator": "characters 7034:7082; sha256 ebd9ff6ea5b9a96d0fb80e71769f26fe5b38578a6eafe1edbe7fcbb24d9c2579",
+      "claim": "장칭은 1933년 2월 중국공산당에 정식 입당했다.",
+      "excerpt": "In February 1933, she officially joined the CCP."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jiang_Qing",
+      "locator": "characters 972:1154; sha256 ebd9ff6ea5b9a96d0fb80e71769f26fe5b38578a6eafe1edbe7fcbb24d9c2579",
+      "claim": "장칭은 중국공산당 정치국원이었고 마오쩌둥 사후 체포되어 당에서 제명되었다.",
+      "excerpt": "A Politburo member at the Ninth and Tenth Central Committees and de facto leader of the Cultural Revolution Group, she was arrested following Mao's death and expelled from the party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "august-thalheimer",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+      "locator": "characters 372:473; sha256 e76af2162de081aea86bfd75f1a36302446a579e147a14cc422ce82ab8eb83c6",
+      "claim": "아우구스트 탈하이머는 제1차 세계대전 전 독일 사회민주당 당원이었다.",
+      "excerpt": "Thalheimer was a member of the Social Democratic Party of Germany (SPD) prior to the First World War."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jules-guesde",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-sfio",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": 1922,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Jules_Guesde",
+      "locator": "characters 4117:4275; sha256 7f0e35ab5e1002a5f0748027816004bb53b34e095faf78610141afa858721c4b",
+      "claim": "쥘 게드의 당은 1905년 노동자 인터내셔널 프랑스 지부로 통합되었다.",
+      "excerpt": "All socialist tendencies were then unified in 1905 in the French Section of the Workers' International (SFIO), the French section of the Second International."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Jules_Guesde",
+      "locator": "characters 5659:5772; sha256 7f0e35ab5e1002a5f0748027816004bb53b34e095faf78610141afa858721c4b",
+      "claim": "쥘 게드는 투르 대회에서 노동자 인터내셔널 프랑스 지부에 남았다.",
+      "excerpt": "After the armistice, in the Congress of Tours, he chose the \"old house\" SFIO following Léon Blum and Jean Longuet"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "marcel-cachin",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-french-sfio",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": 1920,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Marcel_Cachin",
+      "locator": "characters 225:380; sha256 88f1e11d5c2ef909fd2083b6dc04545605db8268b1ecbbe175711c484024001a",
+      "claim": "마르셀 카섕은 1905년 노동자 인터내셔널 프랑스 지부에 입당했다.",
+      "excerpt": "In 1905, he joined the new French Section of the Workers' International (SFIO) and won election to the Chamber of Deputies, representing the Seine in 1914."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Marcel_Cachin",
+      "locator": "characters 957:1095; sha256 88f1e11d5c2ef909fd2083b6dc04545605db8268b1ecbbe175711c484024001a",
+      "claim": "마르셀 카섕은 1920년 투르 대회에서 프랑스 공산당 창당에 참여했다.",
+      "excerpt": "In 1920, at the Tours Congress, Cachin became one of the founders of the French Communist Party (SFIC) and joined the Third International."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "christopher-woodhouse",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-british-conservative",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Montague_Woodhouse%2C_5th_Baron_Terrington",
+      "locator": "characters 102:295; sha256 358bc3c0a2b99069bf400ecc84ade3e6dd665b81634daa6f7d51214fd2020a75",
+      "claim": "크리스토퍼 몬터규 우드하우스는 영국 보수당 정치인으로 옥스퍼드 하원의원을 지냈다.",
+      "excerpt": "Woodhouse, was a British army SOE officer, MI6 intelligence officer and Conservative politician who served as Member of Parliament (MP) for Oxford from 1959 to 1966 and again from 1970 to 1974."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "jeno-landler",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-hungarian-social-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1906,
+    "endYear": 1919,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80,_%D0%95%D0%BD%D1%91",
+      "locator": "characters 754:864; sha256 51506e0435f4652e5c1e9a580ed386d55434b6efdfa5a21ee8d0ebc5378b5ca8",
+      "claim": "런들레르 예뇌는 1906년 헝가리 사회민주당에 입당했다.",
+      "excerpt": "В 1906 году вступил в Социал-демократическую партию Венгрии, в 1908 году стал видным деятелем её левого крыла."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%BB%D0%B5%D1%80,_%D0%95%D0%BD%D1%91",
+      "locator": "characters 1386:1437; sha256 51506e0435f4652e5c1e9a580ed386d55434b6efdfa5a21ee8d0ebc5378b5ca8",
+      "claim": "런들레르 예뇌는 1919년부터 헝가리 공산당원이었다.",
+      "excerpt": "С 1919 года — член Коммунистической партии Венгрии."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "cordell-hull",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1955,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Cordell_Hull",
+      "locator": "characters 220:324; sha256 ff631f097265eded22d04b19a662a5e8f0f7aa45c98ec66cae25b193778706c7",
+      "claim": "코델 헐은 미국 민주당 소속이었다.",
+      "excerpt": "A member of the Democratic Party, he is the longest-serving secretary of state in United States history."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Cordell_Hull",
+      "locator": "characters 902:1030; sha256 ff631f097265eded22d04b19a662a5e8f0f7aa45c98ec66cae25b193778706c7",
+      "claim": "코델 헐은 민주당 전국위원회 위원장을 지냈다.",
+      "excerpt": "He served in Congress for over two decades, interrupted only briefly by a term as chairman of the Democratic National Committee."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mao-zedong",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "china-kmt",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1924,
+    "endYear": 1927,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mao_Zedong",
+      "locator": "characters 19678:19812; sha256 4a4f968e6dc9c6c1d033936c2e028bbe50e23d8997682e64cd64debf16e82ba4",
+      "claim": "마오쩌둥은 1924년 중국국민당 1차 대회에서 중앙집행위원회 후보위원으로 선출되었다.",
+      "excerpt": "At the First KMT Congress, held in Guangzhou in early 1924, Mao was elected an alternate member of the KMT Central Executive Committee"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mao_Zedong",
+      "locator": "characters 19035:19204; sha256 4a4f968e6dc9c6c1d033936c2e028bbe50e23d8997682e64cd64debf16e82ba4",
+      "claim": "마오쩌둥은 중국국민당 선전부장까지 올랐다.",
+      "excerpt": "Mao enthusiastically agreed with this decision, arguing for an alliance across China's socio-economic classes, and eventually rose to become propaganda chief of the KMT."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-rychkov",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolay_Rychkov",
+      "locator": "characters 405:515; sha256 6171ecc66c58a105345be1fff712c8962c956ad29e065358e48a3d3e111a7e43",
+      "claim": "니콜라이 리치코프는 1918년 러시아 공산당(볼셰비키) 7차 대회 대의원이었다.",
+      "excerpt": "1918 – Delegate to the 7th Congress of the Russian Communist Party (Bolsheviks), joined the \"Left Communists\";"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "dwight-d-eisenhower",
+   "activity": {
+    "functionId": "military",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1952,
+    "endYear": 1969,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+      "locator": "characters 1212:1277; sha256 e1d8e82439460e4f5bcc5299c70578e2a67960275869d1b7d026d41cdaa90633",
+      "claim": "드와이트 아이젠하워는 1952년 미국 공화당 후보로 대선에 나섰다.",
+      "excerpt": "In 1952, Eisenhower entered the presidential race as a Republican"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+      "locator": "characters 43547:43681; sha256 e1d8e82439460e4f5bcc5299c70578e2a67960275869d1b7d026d41cdaa90633",
+      "claim": "드와이트 아이젠하워는 미국 공화당 대통령 후보가 되어 당선되었다.",
+      "excerpt": "Meanwhile, Eisenhower had become the Republican Party nominee for president of the United States, a contest that he won on November 4."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anatoly-volin",
+   "activity": {
+    "functionId": "law",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1925,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Anatoly_Volin",
+      "locator": "characters 636:706; sha256 914a189688a83d89b1dbe80ec8720eb8b1be792c00ef567070d86a15d2022344",
+      "claim": "아나톨리 볼린은 1925년 10월부터 소련공산당 당원이었다.",
+      "excerpt": "Member of the Russian Communist Party (Bolsheviks) since October 1925."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "nikolai-semashko",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Semashko_(medicine)",
+      "locator": "characters 2020:2135; sha256 94206db9c24990346194154ee131d2dffd21b255b334f8a044b3206faea61965",
+      "claim": "니콜라이 세마슈코는 1912년 볼셰비키 프라하 협의회에서 보고했다.",
+      "excerpt": "At the Sixth (Prague) All-Russia Conference of the RSDLP (1912) Semashko delivered a report on the insurance sector"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Nikolai_Semashko_(medicine)",
+      "locator": "characters 2367:2492; sha256 94206db9c24990346194154ee131d2dffd21b255b334f8a044b3206faea61965",
+      "claim": "니콜라이 세마슈코는 1917년 9월 볼셰비키 지구 의원단 의장으로 선출되었다.",
+      "excerpt": "Returning to Moscow in September 1917, he was elected chairman of the Bolshevik faction of the Pyatnitskaya district council."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "alexander-rekunkov",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D0%BD%D0%BA%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2075:2106; sha256 fcc35ecea88cc5c775095da7a848b24a8d2cc42031eae46720f99949a0f33415",
+      "claim": "알렉산드르 레쿤코프는 1981–1989년 소련공산당 중앙위원이었다.",
+      "excerpt": "В 1981—1989 годах член ЦК КПСС."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "fyodor-dan",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1902,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Fyodor_Dan",
+      "locator": "characters 1035:1164; sha256 9843087f848cca15cdc33a4530e17ce9b85908b04fb2124a83c97ffb5547bf6a",
+      "claim": "표도르 단은 1902년 러시아 사회민주노동당에 입당했다.",
+      "excerpt": "On his return, he joined the Russian Social Democratic Labour Party in 1902 and went to London for their Second Congress in 1903."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Fyodor_Dan",
+      "locator": "characters 135:268; sha256 9843087f848cca15cdc33a4530e17ce9b85908b04fb2124a83c97ffb5547bf6a",
+      "claim": "표도르 단은 러시아 사회민주노동당 멘셰비키파 창설에 참여했다.",
+      "excerpt": "was a Russian political activist and journalist who helped found the Menshevik faction of the Russian Social Democratic Labour Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "evgeni-gegechkori",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Evgeni_Gegechkori",
+      "locator": "characters 176:392; sha256 7d106ddd5004ed03046068da0203e311a42222f1767537359a6b88ee7a6a06ef",
+      "claim": "예브게니 게게치코리는 1903년 무렵 러시아 사회민주노동당 멘셰비키파에 가담했다.",
+      "excerpt": "Born of a noble family, he entered the Social Democratic student movement in 1903 during his studies at the Imperial Moscow University and soon joined the Menshevik wing of the Russian Social Democratic Labour Party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikhail-lifshitz",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Lifshitz",
+      "locator": "characters 3063:3146; sha256 f402e0291a3b21b39913a8797a9702a4d0669e336b6c4e3fed132380bf1553ed",
+      "claim": "미하일 리프시츠는 1954년 무렵 소련공산당에서 제명되었다는 기록이 있다.",
+      "excerpt": "According to some sources, at that stage, he was expelled from the Communist Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Mikhail_Lifshitz",
+      "locator": "characters 3147:3237; sha256 f402e0291a3b21b39913a8797a9702a4d0669e336b6c4e3fed132380bf1553ed",
+      "claim": "미하일 리프시츠는 소련공산당 당원으로서 중징계를 받았을 수도 있다.",
+      "excerpt": "Yet he perhaps was merely severely sanctioned as a member, coming very close to expulsion."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "filipp-makharadze",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1903,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Filipp_Makharadze",
+      "locator": "characters 493:652; sha256 df549446c2494c8f0a104b102239ed58493ef3633c423872ce4c045d70af3e3a",
+      "claim": "필리프 마하라제는 1903년 러시아 사회민주노동당 캅카스 연합위원회에 들어갔다.",
+      "excerpt": "In 1903, he joined the Caucasian Joint Committee of the Russian Social Democratic Labour Party and played an active role in the 1905 Revolution in the Caucasus"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "gavriil-myasnikov",
+   "activity": {
+    "functionId": "organizing",
+    "affiliationId": "russian-rsdlp",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8F%D1%81%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2,_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%B8%D0%BB_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+      "locator": "characters 1009:1125; sha256 52c41fc103a09c30edaf72af96cd2b76d5ae7a2f533ed6808724602ce5035adc",
+      "claim": "가브릴 먀스니코프는 1905년 9월 러시아 사회민주노동당 당원이 되었다.",
+      "excerpt": "В мае 1905 года вступил в партию социалистов-революционеров, но в сентябре 1905 года покинул её и стал членом РСДРП."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Gavril_Myasnikov",
+      "locator": "characters 750:851; sha256 45bf9925fce8e9b24b9915b7668fd89a863202e97061a613120e590f3f098eed",
+      "claim": "가브릴 먀스니코프는 이듬해 러시아 사회민주노동당 볼셰비키파에 가담했다.",
+      "excerpt": "He left the party in September, before joining the Bolshevik faction of the RSDLP the following year."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "earl-browder",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-us-socialist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1907,
+    "endYear": 1912,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Earl_Browder",
+      "locator": "characters 2849:2987; sha256 08524a11d95ab3d423d6dde804272a438a02798dd2b41f198ecc0348d68bdfd1",
+      "claim": "얼 브라우더는 1907년 미국 사회당에 입당해 1912년 분열 때까지 남았다.",
+      "excerpt": "In 1907, Browder, age 16, joined the Socialist Party of America in Wichita and remained in that organization until the party split of 1912"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ernst-toller",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-german-uspd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ernst_Toller",
+      "locator": "characters 1284:1505; sha256 2f8e36177eeb78b29d8fa16aaf519374748545bce2723a9c09c78ddc6b0af319",
+      "claim": "에른스트 톨러는 소속 정당인 독일 독립사회민주당과 함께 1919년 바이에른 소비에트 공화국에 참여했다.",
+      "excerpt": "Together with leading anarchists, such as B. Traven and Gustav Landauer, and Toller's party, the Independent Social Democratic Party of Germany (USPD), Toller was involved in the short-lived 1919 Bavarian Soviet Republic."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "anton-pannekoek",
+   "activity": {
+    "functionId": "science",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BD%D0%BD%D0%B5%D0%BA%D1%83%D0%BA,_%D0%90%D0%BD%D1%82%D0%BE%D0%BD",
+      "locator": "characters 3162:3265; sha256 321de7d9bf5ce259976893fd28841f5c10093fd14dc1c9af982214cdd43239bd",
+      "claim": "안톤 판네쿠크는 독일에 살면서 독일 사회민주당 좌파에 합류했다.",
+      "excerpt": "Он проживал в Германии, где присоединился к левому крылу Социал-демократической партии Германии (СДПГ)."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Anton_Pannekoek",
+      "locator": "characters 7783:7922; sha256 a8f30ffdbcfe17ee5b43d1335958cc90f45d57bf229eaaf670bf51cc791edad3",
+      "claim": "안톤 판네쿠크는 독일 사회민주당에서 활동했다.",
+      "excerpt": "He was active in the Social Democratic Workers' Party (Netherlands), Social Democratic Party of Germany, Communist Party of the Netherlands"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georgy-lvov",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "russian-kadets",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1905,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Georgy_Lvov",
+      "locator": "characters 525:618; sha256 cabcad919602360bab4ac9a47f62de3569219420e8bf487f55ed7015a7aed968",
+      "claim": "게오르기 리보프는 1906년 입헌민주당 소속으로 제1대 두마 의원에 선출되었다.",
+      "excerpt": "In 1906, he was elected to the First Duma as a member of the Constitutional Democratic Party."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2,_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 3014:3124; sha256 9e4b3d02314dea1973b77451470a980e6ecb7aa5d4ae0d860f43aa7a2ac0b61d",
+      "claim": "게오르기 리보프는 1905년부터 입헌민주당 당원이었다.",
+      "excerpt": "С 1911 года — член Московского комитета партии «прогрессистов» (ранее, с 1905 года, состоял в партии кадетов)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "georgy-shakhnazarov",
+   "activity": {
+    "functionId": "scholarship",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D0%BD%D0%B0%D0%B7%D0%B0%D1%80%D0%BE%D0%B2,_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%A5%D0%BE%D1%81%D1%80%D0%BE%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 1289:1463; sha256 696950ee13f9d30c5e5fb4cae4329ee25a8dea3057700ebe15d4f90a6f08d03a",
+      "claim": "게오르기 샤흐나자로프는 1964–1988년 소련공산당 중앙위원회 부서 간부로 일했다.",
+      "excerpt": "С 1964 по 1988 год — консультант, затем — заместитель и первый заместитель заведующего Отдела ЦК КПСС по связям с коммунистическими и рабочими партиями социалистических стран"
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D0%BD%D0%B0%D0%B7%D0%B0%D1%80%D0%BE%D0%B2,_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%A5%D0%BE%D1%81%D1%80%D0%BE%D0%B5%D0%B2%D0%B8%D1%87",
+      "locator": "characters 2087:2149; sha256 696950ee13f9d30c5e5fb4cae4329ee25a8dea3057700ebe15d4f90a6f08d03a",
+      "claim": "게오르기 샤흐나자로프는 1988년 소련공산당 서기장 보좌관이 되었다.",
+      "excerpt": "В 1988 году назначен помощником генерального секретаря ЦК КПСС"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "grigory-voitinsky",
+   "activity": {
+    "functionId": "diplomacy",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1918,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Grigori_Voitinsky",
+      "locator": "characters 827:997; sha256 bf13c1c86bc37693aba29be60575a99ae04931eed63deb1bfa54092f371bf865",
+      "claim": "그리고리 보이틴스키는 1918년 블라디보스토크에서 소련공산당에 입당했다.",
+      "excerpt": "After five years living in the United States and Canada, he returned to Russia in the spring of 1918 and he joined the Communist Party of the Soviet Union in Vladivostok."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "mikoyan",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1915,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Anastas_Mikoyan",
+      "locator": "characters 3351:3550; sha256 a503a05511998e183ed879383d437fcbe1006fb94d2784b9a0079541d84630ca",
+      "claim": "아나스타스 미코얀은 1915년 볼셰비키에 정식 입당했다.",
+      "excerpt": "In 1915, he formally joined the Bolshevik faction of the Russian Social Democratic Labour Party (later known as the Bolshevik Party) and became a leader of the revolutionary movement in the Caucasus."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Anastas_Mikoyan",
+      "locator": "characters 426:498; sha256 a503a05511998e183ed879383d437fcbe1006fb94d2784b9a0079541d84630ca",
+      "claim": "아나스타스 미코얀은 1923–1976년 소련공산당 중앙위원이었다.",
+      "excerpt": "As a member of the Communist Party's Central Committee from 1923 to 1976"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "heinrich-brandler",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-german-spd",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1901,
+    "endYear": 1915,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Heinrich_Brandler",
+      "locator": "characters 1256:1361; sha256 d53df8d8c471f79025415e80a6dda191a5da5418f82f927009ffc15356549300",
+      "claim": "하인리히 브란들러는 1901년 독일 사회민주당에 입당했다.",
+      "excerpt": "Brandler joined the Social Democratic Party of Germany (SPD) in 1901, while living in the city of Hamburg"
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Heinrich_Brandler",
+      "locator": "characters 2297:2441; sha256 d53df8d8c471f79025415e80a6dda191a5da5418f82f927009ffc15356549300",
+      "claim": "하인리히 브란들러는 1915년 독일 사회민주당에서 제명되었다.",
+      "excerpt": "factional activity which ran him afoul of the SPD leadership and ultimately led to his expulsion from the SPD in 1915, along with Fritz Heckert."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ludvik-vaculik",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-czechoslovak-communist",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Vacul%C3%ADk",
+      "locator": "characters 488:615; sha256 4b19fd518ed9bd3be49be97d223d3a629875cecef49d7bc8b211d5ba0c4b5a15",
+      "claim": "루드비크 바출리크는 1967년 작가동맹 대회 당시 체코슬로바키아 공산당 당원이었다.",
+      "excerpt": "The following month, Vaculík, then still a member of the Communist Party, attended the Fourth Congress of the Union of Writers."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ludv%C3%ADk_Vacul%C3%ADk",
+      "locator": "characters 1745:1861; sha256 4b19fd518ed9bd3be49be97d223d3a629875cecef49d7bc8b211d5ba0c4b5a15",
+      "claim": "루드비크 바출리크는 체코슬로바키아 공산당에서 가장 진보적인 당원 가운데 하나였다.",
+      "excerpt": "Vaculík was among the most progressive members of the Communist Party and thereby more radical than Alexander Dubček"
+     }
+    ]
+   }
+  },
+  {
+   "personId": "bela-kovacs",
+   "activity": {
+    "functionId": "agriculture",
+    "affiliationId": "party-hungarian-smallholders",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/B%C3%A9la_Kov%C3%A1cs_%28politician%2C_1908%29",
+      "locator": "characters 227:299; sha256 9adfddb792bf21a78bcae951eb1ad0640129e22d245c224cc1e48c3fe3f6e962",
+      "claim": "코바치 벨러는 헝가리 독립소농업자당에 입당했다.",
+      "excerpt": "He became involved in politics and joined the Smallholders Party (FKGP)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B2%D0%B0%D1%87,_%D0%91%D0%B5%D0%BB%D0%B0_%28%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D0%BA,_1908%29",
+      "locator": "characters 2090:2218; sha256 c2c476f91b874e3d57f6769eb7e0e3fd6f9f93ddd106f60333bc081df7de4ac0",
+      "claim": "코바치 벨러는 1956년 혁명 때 헝가리 독립소농업자당 재건에 참여했다.",
+      "excerpt": "Во время революции 1956 года, а точнее 31 октября, Бела Ковач принимал участие в реорганизации Независимой партии мелких хозяев."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "agostinho-mendes-de-carvalho",
+   "activity": {
+    "functionId": "arts",
+    "affiliationId": "party-angolan-mpla",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Uanhenga_Xitu",
+      "locator": "characters 151:252; sha256 687a8106ae8771df05364f469e099631f21b3b89fa3bf3558be0d2e858f1dda6",
+      "claim": "아고스티뉴 안드레 멘드스 드 카르발류는 2009년 앙골라 해방인민운동 소속 최고령 의원이었다.",
+      "excerpt": "Xitu was born in Calomboloca, and in 2009 was the oldest member of the parliament for the MPLA party."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "edvard-gylling",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "soviet-party",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1920,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%8E%D0%BB%D0%BB%D0%B8%D0%BD%D0%B3,_%D0%AD%D0%B4%D0%B2%D0%B0%D1%80%D0%B4_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 4161:4199; sha256 4d9ddbbdc83b618203ea1e29dab0ba1218c4a3cee8fa91c0cdc9c89f72844f59",
+      "claim": "에드바르드 귈링은 1920년 5월 러시아 공산당(볼셰비키)에 입당했다.",
+      "excerpt": "В мае 1920 года принят в члены РКП(б)."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%8E%D0%BB%D0%BB%D0%B8%D0%BD%D0%B3,_%D0%AD%D0%B4%D0%B2%D0%B0%D1%80%D0%B4_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+      "locator": "characters 7009:7045; sha256 4d9ddbbdc83b618203ea1e29dab0ba1218c4a3cee8fa91c0cdc9c89f72844f59",
+      "claim": "에드바르드 귈링은 소련공산당 카렐리야 주위원회 뷰로 위원이었다.",
+      "excerpt": "Член Бюро Карельского Обкома ВКП(б)."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "ferenc-nagy",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-hungarian-smallholders",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1930,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Ferenc_Nagy",
+      "locator": "characters 1624:1802; sha256 c7c13424d592cd53553ee9506ba0478c2370f96cf85389e0ad31bb56c0cf5945",
+      "claim": "너지 페렌츠는 1930년 10월 헝가리 독립소농업자당 창당에 참여했다.",
+      "excerpt": "He was involved in local peasant societies and was the co-founder of the Peasant Union, and in October 1930 he took part in the foundation of the Independent Smallholders' Party."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Ferenc_Nagy",
+      "locator": "characters 2421:2501; sha256 c7c13424d592cd53553ee9506ba0478c2370f96cf85389e0ad31bb56c0cf5945",
+      "claim": "너지 페렌츠는 헝가리 독립소농업자당 2인자가 되었다.",
+      "excerpt": "Nagy soon became the Smallholders' Party's second-in-command after Zoltán Tildy."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "charles-vanik",
+   "activity": {
+    "functionId": "economy",
+    "affiliationId": "party-us-democratic",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 2007,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Charles_Vanik",
+      "locator": "characters 0:93; sha256 d2bfaa3e09f36b847ebc5c90557d4a9c4e808630acf9772801532ecfd8ddc18d",
+      "claim": "찰스 배닉은 오하이오주 미국 민주당 정치인이었다.",
+      "excerpt": "Charles Albert Vanik (April 7, 1913 – August 30, 2007) was a Democratic politician from Ohio."
+     },
+     {
+      "source": "https://ru.wikipedia.org/wiki/%D0%92%D1%8D%D0%BD%D0%B8%D0%BA,_%D0%A7%D0%B0%D1%80%D0%BB%D1%8C%D0%B7_%D0%90%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82",
+      "locator": "characters 158:201; sha256 3f1133f7dd1c82f57b457e3f9ebd6381a1acb749e0f6064c7d7c29eec910a625",
+      "claim": "찰스 배닉은 오하이오주 미국 민주당 당원이었다.",
+      "excerpt": "Член Демократической партии от штата Огайо."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "herbert-hoover",
+   "activity": {
+    "functionId": "government",
+    "affiliationId": "party-us-republican",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": null,
+    "endYear": 1964,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Herbert_Hoover",
+      "locator": "characters 1625:1750; sha256 a1d4a0a6862a3c7d1d3344af5034b91885e40e592a1c12c6a92bff8c485e9559",
+      "claim": "허버트 C. 후버는 1928년 미국 공화당 대통령 후보로 지명되어 당선되었다.",
+      "excerpt": "He won the Republican nomination in the 1928 presidential election and defeated Democratic candidate Al Smith in a landslide."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Herbert_Hoover",
+      "locator": "characters 1082:1247; sha256 a1d4a0a6862a3c7d1d3344af5034b91885e40e592a1c12c6a92bff8c485e9559",
+      "claim": "허버트 C. 후버는 1920년 미국 공화당 대통령 후보 지명을 노렸다.",
+      "excerpt": "His wartime service made him a favorite of many progressives, and he unsuccessfully sought the Republican nomination in the 1920 United States presidential election."
+     }
+    ]
+   }
+  },
+  {
+   "personId": "choe-chang-ik",
+   "activity": {
+    "functionId": "political-leadership",
+    "affiliationId": "party-north-korean-workers",
+    "affiliationStatus": "confirmed",
+    "relation": "membership",
+    "startYear": 1946,
+    "endYear": null,
+    "primary": false,
+    "evidence": [
+     {
+      "source": "https://en.wikipedia.org/wiki/Choe_Chang-ik",
+      "locator": "characters 3960:4123; sha256 ff823cc9a0b910557dd83fff4dee98546c7924189b01909f698d16040f1dc70b",
+      "claim": "최창익은 1946년 8월 신민당과 조선공산당 북조선 분국의 합당에 참여했다.",
+      "excerpt": "In August of that year he was involved in the integration of the New Democratic Party and the Communist Party of Korea to North faction of Workers' Party of Korea."
+     },
+     {
+      "source": "https://en.wikipedia.org/wiki/Choe_Chang-ik",
+      "locator": "characters 4124:4265; sha256 ff823cc9a0b910557dd83fff4dee98546c7924189b01909f698d16040f1dc70b",
+      "claim": "최창익은 북조선로동당 중앙위원회 상무위원회에서 직책에 선출되었다.",
+      "excerpt": "In September the Workers' Party of North Korea's Central Committee, the Standing Committee, elected Ch'oe as commerce and business commissar."
+     }
+    ]
+   }
+  }
+ ],
+ "corrections": []
+}
