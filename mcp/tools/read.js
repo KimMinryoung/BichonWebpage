@@ -1,6 +1,6 @@
 // `read` scope: the same views the Admin screens and editorial services use.
 // Modules are required lazily so loading the tool list needs no DB.
-const { str, int, bool, object } = require('../schema');
+const { str, int, bool, arr, object } = require('../schema');
 
 const page = {
     limit: int('Max items (default 20)', 1, 100, { default: 20 }),
@@ -36,12 +36,30 @@ function paged(items, { limit, offset }) {
 const tools = [
     {
         name: 'people_search',
-        description: 'Search CommuLingo people by id, Korean/English name or native name. Returns card fields.',
-        inputSchema: object({ q: str('Substring of id or name'), groupId: str('Exact group id'), ...page }),
-        async handler({ q, groupId, limit, offset }) {
-            const { listPeopleAdmin } = require('../../data/commulingo/people-admin-store');
-            const people = await listPeopleAdmin({ q, groupId, limit, offset });
-            return { offset, people: people.map(({ bio, moment, ...card }) => ({ ...card, bio: { ko: (bio.ko || '').slice(0, 200), en: (bio.en || '').slice(0, 200) } })) };
+        description: 'Search CommuLingo people by id, Korean/English name or native name; optional group, and activity filters '
+            + '(functionId and affiliationIds must match the same activity). Returns compact cards.',
+        inputSchema: object({
+            q: str('Substring of id or name'),
+            groupId: str('Exact group id'),
+            functionId: str('Activity function id (activity catalog)'),
+            affiliationIds: arr('Activity affiliation ids, usually one id plus its descendants', 200),
+            ...page,
+        }),
+        async handler({ q = '', groupId = '', functionId = '', affiliationIds = [], limit, offset }) {
+            if (affiliationIds.some(id => typeof id !== 'string')) throw Object.assign(new Error('affiliationIds must be strings'), { status: 400 });
+            const db = require('../../config/database');
+            const activity = functionId || affiliationIds.length;
+            const { rows } = await db.query(`SELECT p.id, p.group_id, p.name_ko, p.name_en, p.cyrillic, p.years_label, p.epithet_ko,
+                    p.epithet_en, p.fate_kind, p.citizenship_code, p.origin_code, left(p.bio_ko, 200) AS bio_ko_excerpt
+                FROM commulingo_people p
+                WHERE ($1 = '' OR p.id ILIKE '%' || $1 || '%' OR p.name_ko ILIKE '%' || $1 || '%'
+                       OR p.name_en ILIKE '%' || $1 || '%' OR p.cyrillic ILIKE '%' || $1 || '%')
+                  AND ($2 = '' OR p.group_id = $2)
+                  AND (NOT $3 OR EXISTS (SELECT 1 FROM jsonb_array_elements(COALESCE(p.activities, '[]'::jsonb)) a
+                       WHERE ($4 = '' OR a->>'functionId' = $4) AND (cardinality($5::text[]) = 0 OR a->>'affiliationId' = ANY($5::text[]))))
+                ORDER BY p.sort_order, p.id LIMIT $6 OFFSET $7`,
+            [q.trim(), groupId.trim(), !!activity, functionId, affiliationIds, limit, offset]);
+            return { offset, people: rows };
         },
     },
     {
@@ -77,7 +95,8 @@ const tools = [
                 && matches(needle, [term.id, term.original, ...flatStrings(term.term), ...flatStrings(term.aliases)]));
             const result = paged(terms, { limit, offset });
             result.items = result.items.map(term => ({ id: term.id, term: term.term, original: term.original,
-                period: term.period, category: term.category, region: term.region, parent: term.parent || null }));
+                period: term.period, category: term.category, region: term.region, parent: term.parent || null,
+                aliases: flatStrings(term.aliases) }));
             return result;
         },
     },
@@ -102,6 +121,12 @@ const tools = [
             const events = (await loadCommuLingoHistoryEvents()).filter(event => matches(needle, [event.id, ...flatStrings(event.title)]));
             const result = paged(events, { limit, offset });
             result.items = result.items.map(event => ({ id: event.id, title: event.title, period: event.period, people: event.people.length }));
+            if (result.items.length) {
+                const db = require('../../config/database');
+                const sizes = new Map((await db.query(`SELECT id, length(body_ko) AS body_ko_chars, jsonb_array_length(timeline) AS timeline_entries
+                    FROM commulingo_history_events WHERE id = ANY($1::text[])`, [result.items.map(e => e.id)])).rows.map(r => [r.id, r]));
+                result.items = result.items.map(e => ({ ...e, bodyKoChars: sizes.get(e.id)?.body_ko_chars ?? 0, timelineEntries: sizes.get(e.id)?.timeline_entries ?? 0 }));
+            }
             return result;
         },
     },
@@ -122,7 +147,9 @@ const tools = [
         inputSchema: object({}),
         async handler() {
             const { listOfficesAdmin } = require('../../data/commulingo/people-offices-store');
-            return { offices: await listOfficesAdmin() };
+            const db = require('../../config/database');
+            const counts = new Map((await db.query('SELECT office_id, count(*)::int AS n FROM commulingo_office_rows GROUP BY office_id')).rows.map(r => [r.office_id, r.n]));
+            return { offices: (await listOfficesAdmin()).map(office => ({ ...office, rowCount: counts.get(office.id) || 0 })) };
         },
     },
     {

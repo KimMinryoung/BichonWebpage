@@ -3,7 +3,7 @@ const { parseClients } = require('./auth');
 const { createMcpApp } = require('./server');
 const { recordAudit } = require('./audit');
 
-const tools = [...require('./tools/read'), ...require('./tools/edit'), ...require('./tools/ops')];
+const tools = [...require('./tools/read'), ...require('./tools/data'), ...require('./tools/edit'), ...require('./tools/ops')];
 
 function startMcpServer() {
     const clients = parseClients(process.env.COMMULINGO_MCP_CLIENTS);
