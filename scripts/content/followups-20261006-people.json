@@ -174,23 +174,6 @@
    "activities": [
     {
      "endYear": null,
-     "primary": false,
-     "evidence": [
-      {
-       "claim": "젠지노프는 사회혁명당 당원이자 여러 권의 책을 낸 저술가였다.",
-       "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
-       "excerpt": "was a member of Russia's Socialist-Revolutionary Party, a participant of the First (1905), Second (February 1917), and Third (November 1917) Russian Revolutions, and an author of a number of books.",
-       "locator": "characters 171:368; sha256 e5b09edf6fd6086a9cf962d6be580d5e966a256e07a7b7a0c5c9159486b054bc"
-      }
-     ],
-     "relation": "unresolved",
-     "startYear": null,
-     "functionId": "arts",
-     "affiliationId": null,
-     "affiliationStatus": "unresolved"
-    },
-    {
-     "endYear": null,
      "primary": true,
      "evidence": [
       {
@@ -217,6 +200,23 @@
      "functionId": "political-leadership",
      "affiliationId": "russian-sr",
      "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "젠지노프는 사회혁명당 당원이자 여러 권의 책을 낸 저술가였다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+       "excerpt": "was a member of Russia's Socialist-Revolutionary Party, a participant of the First (1905), Second (February 1917), and Third (November 1917) Russian Revolutions, and an author of a number of books.",
+       "locator": "characters 171:368; sha256 e5b09edf6fd6086a9cf962d6be580d5e966a256e07a7b7a0c5c9159486b054bc"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": null,
+     "functionId": "arts",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
     }
    ]
   }
