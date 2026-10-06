@@ -1,0 +1,1289 @@
+[
+ {
+  "personId": "charlotte-corday",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "코르데는 지롱드파에 동조한 혁명기 정치 활동가였다.",
+    "source": "https://en.wikipedia.org/wiki/Charlotte_Corday",
+    "excerpt": "Corday was an aristocratic sympathiser of the Girondins, a moderate faction of French revolutionaries in opposition to the more extremist Jacobins.",
+    "locator": "characters 237:384; sha256 e1156af0483d35e186dee355915878f52f7d96c81eb609ec2739c517ce2ac858"
+   },
+   {
+    "claim": "그녀는 마라 암살을 스스로 계획하고 실행한 정치적 행동의 주체였다.",
+    "source": "https://en.wikipedia.org/wiki/Charlotte_Corday",
+    "excerpt": "she decided to assassinate Marat.",
+    "locator": "characters 552:585; sha256 e1156af0483d35e186dee355915878f52f7d96c81eb609ec2739c517ce2ac858"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "출처는 지롱드파 '동조자'로만 기술하고 조직 소속·직책이 없음; 마라 암살은 단독 행동."
+ },
+ {
+  "personId": "conrado-benitez",
+  "functionId": "education",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "자원 교사로 농촌의 아동과 성인을 가르치는 문해 운동에 참여했다. 사후 이름을 딴 여단을 생전 소속으로 간주하지 않는다.",
+    "source": "https://www.ecured.cu/Conrado_Ben%C3%ADtez_Garc%C3%ADa",
+    "excerpt": "Se inició como maestro voluntario y fue ubicado en una escuela en las montañas de Sancti Spíritus, donde alternaba las clases de 44 niños por el día con otros tantos adultos por las noches, con el fin de erradicar el analfabetismo.",
+    "locator": "characters 781:1012; sha256 a2bfeda5f7080e8dbbeafa0e27fc4ac36c25c3a19c27679be925c904c4e8b16d"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "자원 교사였다는 기술뿐 소속 단체(교사 대열 등)가 출처에 명시되지 않음(EcuRed 접속 불가, es 위키 문해운동 문서도 그를 특정 대열 소속으로 쓰지 않음); 사후 명명된 여단은 소속 아님."
+ },
+ {
+  "personId": "dimitar-blagoev",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-bulgarian-workers-social-democratic",
+  "relation": "service",
+  "startYear": 1891,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "블라고예프는 불가리아 사회민주당을 창건하고 1903년 분당 후 좁은파를 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+    "excerpt": "Blagoev was the founder of socialism in Bulgaria and the first social-democratic party in the Balkans, the Marxist Bulgarian Social Democratic Party. He led the Narrow Socialists after a split in 1903.",
+    "locator": "characters 175:376; sha256 201961854716aa7354321f58bebb1efcd572ed5ba487b5c51e7e61af90df9dab"
+   },
+   {
+    "claim": "그는 1919년 불가리아 공산당의 초대 지도자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+    "excerpt": "In 1919, he became the first leader of the Bulgarian Communist Party (BCP).",
+    "locator": "characters 11701:11776; sha256 201961854716aa7354321f58bebb1efcd572ed5ba487b5c51e7e61af90df9dab"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+    "locator": "en: Bulgaria",
+    "excerpt": "Since political assemblies were forbidden then, Blagoev and his associates held the Buzludzha Congress from 2 August 1891, where the Bulgarian Social Democratic Party was established.",
+    "claim": "블라고예프는 1891년 부즐루자 대회를 열어 불가리아 사회민주당을 창립했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+    "locator": "en: Bulgaria",
+    "excerpt": "The Social Democratic Party and the Social Democratic Union merged to form the Bulgarian Workers' Social Democratic Party, preserving Blagoev's adaptation of the Erfurt Program as its statute.",
+    "claim": "사회민주당과 사회민주동맹이 합쳐 불가리아 노동자사회민주당이 되었고 블라고예프의 강령을 유지했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+    "locator": "en: Narrow Socialists",
+    "excerpt": "Blagoev become the leader of the \"Narrows\",  pursuing orthodox Marxism.",
+    "claim": "1903년 분당 뒤 블라고예프는 협소파를 이끌었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-bulgarian-workers-social-democratic",
+   "kind": "party",
+   "label": {
+    "ko": "불가리아 노동자사회민주당(협소파)",
+    "en": "Bulgarian Workers' Social Democratic Party (Narrow Socialists)"
+   },
+   "countryCode": "bulgaria",
+   "parentId": null,
+   "periods": [
+    [
+     1891,
+     1919
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "1891 창당~1919 공산당 개칭까지 협소파 계열 정당 지도. 1919~1923은 기존 party-bulgarian-communist 활동이 담당하므로 endYear를 1919로 줄임(그 활동은 지도자였으니 membership→service 검토 권장)."
+ },
+ {
+  "personId": "dmitry-pisarev",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "피사레프는 러시아의 문학비평가이자 철학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Dmitry_Pisarev",
+    "excerpt": "Dmitry Ivanovich Pisarev (14 October [O.S. 2 October] 1840 – 16 July [O.S. 4 July] 1868) was a Russian literary critic and philosopher who was a central figure of Russian nihilism.",
+    "locator": "characters 0:180; sha256 12399e3deffc914372953c01cd46d7eb1cf1737a95a48e7f3c3dde65a5cc7b45"
+   },
+   {
+    "claim": "그는 1858년 학생 시절부터 문학비평가로 글을 쓰기 시작했다.",
+    "source": "https://en.wikipedia.org/wiki/Dmitry_Pisarev",
+    "excerpt": "He began writing as a literary critic for a women's liberal journal called Rassavet in 1858 while he was still a student.",
+    "locator": "characters 1909:2030; sha256 12399e3deffc914372953c01cd46d7eb1cf1737a95a48e7f3c3dde65a5cc7b45"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "잡지(Rassvet 등)에 기고·편집한 독립 비평가; 카탈로그 대상 조직 소속 없음."
+ },
+ {
+  "personId": "emma-goldman",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "골드만은 저술가로 규정되는 인물이다.",
+    "source": "https://en.wikipedia.org/wiki/Emma_Goldman",
+    "excerpt": "Emma Goldman (June 27, 1869 – May 14, 1940) was a Russian-born anarchist revolutionary, political activist, and writer.",
+    "locator": "characters 0:119; sha256 d039a5bcd75259bc07d45eca1c7bcc3b1b83c8f3cdcf1c13f19ecbe4650fa607"
+   },
+   {
+    "claim": "그녀는 1906년 아나키스트 저널 『Mother Earth』를 창간하며 저술·출판 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Emma_Goldman",
+    "excerpt": "In 1906, Goldman founded the anarchist journal Mother Earth.",
+    "locator": "characters 1033:1093; sha256 d039a5bcd75259bc07d45eca1c7bcc3b1b83c8f3cdcf1c13f19ecbe4650fa607"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "아나키스트 저술가로 정당·노조 가입 기록 없음; 자신이 창간한 잡지 Mother Earth는 정치조직이 아님."
+ },
+ {
+  "personId": "ernest-bevin",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "british-tgwu",
+  "relation": "service",
+  "startYear": 1922,
+  "endYear": 1940,
+  "evidence": [
+   {
+    "claim": "베빈은 1922년부터 1940년까지 운수일반노동조합을 공동 창립하고 사무총장으로 재직하며 노동조합 조직을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Ernest_Bevin",
+    "excerpt": "He co-founded and served as General Secretary of the powerful Transport and General Workers' Union from 1922 to 1940",
+    "locator": "characters 117:233; sha256 cf245dec1725adc5c6e32d6e0cad1deaf0ee1ec1ee5c92f1c945e87e80832e8f"
+   },
+   {
+    "claim": "그는 14개 노조를 통합한 운수일반노동조합의 창립 지도자 중 한 명이었다.",
+    "source": "https://en.wikipedia.org/wiki/Ernest_Bevin",
+    "excerpt": "In 1922, Bevin was one of the founding leaders of the Transport and General Workers' Union (TGWU), a merger of fourteen unions with a combined membership of 300,000",
+    "locator": "characters 3004:3168; sha256 cf245dec1725adc5c6e32d6e0cad1deaf0ee1ec1ee5c92f1c945e87e80832e8f"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Transport_and_General_Workers'_Union",
+    "locator": "en: History",
+    "excerpt": "On 1 January 1922, fourteen trades unions officially amalgamated to form the Transport and General Workers' Union (TGWU), with Ernest Bevin as its first General Secretary.",
+    "claim": "1922년 14개 노조가 합쳐 운수일반노동조합이 생겼고 베빈이 초대 사무총장이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "british-tgwu",
+   "kind": "force",
+   "label": {
+    "ko": "운수일반노동조합",
+    "en": "Transport and General Workers' Union (TGWU)"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     1922,
+     2007
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "운수일반노동조합 공동 창립자이자 사무총장(1922~1940)."
+ },
+ {
+  "personId": "etibar-mammadov",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-azerbaijani-nipa",
+  "relation": "service",
+  "startYear": 1992,
+  "endYear": 2004,
+  "evidence": [
+   {
+    "claim": "마메도프는 아제르바이잔 민족독립당(NIPA)의 창당자이자 정치인이다.",
+    "source": "https://en.wikipedia.org/wiki/Etibar_Mammadov",
+    "excerpt": "is an Azerbaijani politician and the founder of the Azerbaijan National Independence Party (NIPA)",
+    "locator": "characters 100:197; sha256 f0a3fa7356bbd1c07d773fa8ee5a30bee3fcb47f192dc046addf5d8cde09842d"
+   },
+   {
+    "claim": "그는 2004년 12월 24일 사임할 때까지 NIPA를 이끌며 당 지도 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Etibar_Mammadov",
+    "excerpt": "Mammadov led the NIPA until his resignation on 24 December 2004 following a series of poor performances by the party in recent elections.",
+    "locator": "characters 1245:1382; sha256 f0a3fa7356bbd1c07d773fa8ee5a30bee3fcb47f192dc046addf5d8cde09842d"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Etibar_Mammadov",
+    "locator": "en: lead",
+    "excerpt": "Mammadov, who served in the National Assembly of Azerbaijan from 1991 until 2000, founded the NIPA in 1992.",
+    "claim": "마메도프는 1992년 민족독립당을 창당했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-azerbaijani-nipa",
+   "kind": "party",
+   "label": {
+    "ko": "아제르바이잔 민족독립당",
+    "en": "Azerbaijan National Independence Party (NIPA)"
+   },
+   "countryCode": "azerbaijan",
+   "parentId": null,
+   "periods": [
+    [
+     1992,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "아제르바이잔 민족독립당 창당자·당수(1992~2004 사임)."
+ },
+ {
+  "personId": "etienne-cabet",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-icarians",
+  "relation": "service",
+  "startYear": null,
+  "endYear": 1856,
+  "evidence": [
+   {
+    "claim": "카베는 이카리아 운동을 창시한 공상적 사회주의자였다.",
+    "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Cabet",
+    "excerpt": "Étienne Cabet (French: [etjɛn kabɛ]; January 1, 1788 – November 9, 1856) was a philosopher and utopian socialist who founded the Icarian movement.",
+    "locator": "plain-text extract characters 0:146; sha256 ab4edab64ed7e9787dcbd8ecc7474ac57e9ebb4242743a00c08a049ee5ff0b91"
+   },
+   {
+    "claim": "카베는 텍사스와 일리노이에 이카리아 공동체를 세웠다.",
+    "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Cabet",
+    "excerpt": "Cabet founded utopian communities in Texas and Illinois, but was again undercut, this time by recurring feuds with his followers.",
+    "locator": "plain-text extract characters 623:752; sha256 ab4edab64ed7e9787dcbd8ecc7474ac57e9ebb4242743a00c08a049ee5ff0b91"
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-icarians",
+   "kind": "force",
+   "label": {
+    "ko": "이카리아 운동",
+    "en": "Icarian movement (Icarians)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1840,
+     1898
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "이카리아 운동 창시자·공동체 조직자. 기존 근거 두 줄이 그대로 적용됨."
+ },
+ {
+  "personId": "eugene-v-debs",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "american-railway-union",
+  "relation": "service",
+  "startYear": 1893,
+  "endYear": 1897,
+  "evidence": [
+   {
+    "claim": "뎁스는 1893년 미국 최초의 산업별 노동조합 중 하나인 미국철도노동조합(ARU)을 조직하고 초대 회장으로 선출되었다.",
+    "source": "https://en.wikipedia.org/wiki/Eugene_V._Debs",
+    "excerpt": "After stepping down as Brotherhood Grand Secretary in 1893, Debs organized one of the first industrial unions in the United States, the American Railway Union (ARU), for unskilled workers. He was elected president of the ARU upon its founding",
+    "locator": "characters 6368:6610; sha256 096552197075d56e8efe56b81d270fc898527083174fb1168b41baab2d8b5337"
+   },
+   {
+    "claim": "뎁스는 1905년 시카고에서 세계산업노동자연맹(IWW) 창립에 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Eugene_V._Debs",
+    "excerpt": "On June 27, 1905, in Chicago, Illinois, Debs and other influential union leaders including Bill Haywood, leader of the Western Federation of Miners; and Daniel De Leon, leader of the Socialist Labor Party, held what Haywood called the \"Continental Congress of the working class\".",
+    "locator": "characters 15705:15984; sha256 096552197075d56e8efe56b81d270fc898527083174fb1168b41baab2d8b5337"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/American_Railway_Union",
+    "locator": "en: History",
+    "excerpt": "The group's blacklisted and dispirited remnants finally disbanded the organization via amalgamation into the Social Democracy of America (SDA) at its founding convention in June 1897.",
+    "claim": "미국철도연합은 1897년 미국 사회민주주의 단체에 합류하며 해산했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Eugene_V._Debs",
+    "locator": "en: lead",
+    "excerpt": "As a leader of the ARU, Debs was convicted of federal charges for defying a court injunction against the strike and served six months in prison.",
+    "claim": "뎁스는 미국철도연합 지도자로서 파업을 이끌다 투옥되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "american-railway-union",
+   "kind": "force",
+   "label": {
+    "ko": "미국철도연합",
+    "en": "American Railway Union (ARU)"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1893,
+     1897
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "1893년 미국철도연합을 조직하고 초대 위원장을 지냄(1897 해산). 두 번째 기존 근거(1905 IWW 창립)는 international-iww 별도 활동 후보."
+ },
+ {
+  "personId": "fang-lizhi",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "china-prc",
+  "relation": "service",
+  "startYear": 1958,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "천체물리학 연구·과학 활동. 국적과 대학 소속만으로 중국 국가기관 복무를 추정하지 않는다.",
+    "source": "https://en.wikipedia.org/wiki/Fang_Lizhi",
+    "excerpt": "was a Chinese astrophysicist, vice-president of the University of Science and Technology of China",
+    "locator": "characters 81:178; sha256 ade01a49441bc2a675736316c7de72ab6437daffaa7e6b9143ac080a587cbfb0"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Fang_Lizhi",
+    "locator": "en: Career",
+    "excerpt": "In August 1958, Fang was reassigned to the faculty of the University of Science and Technology of China (USTC), which was located in Beijing at the time.",
+    "claim": "팡리즈는 1958년 국립 중국과학기술대학 교수진에 배치되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "국립 중국과학기술대학 교수·부총장; 소련 과학자 선례(state-soviet service)대로 국가기관 소속."
+ },
+ {
+  "personId": "fanon",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "파농은 정신과 의사이자 정치철학자로서 탈식민지 연구와 비판이론에 기여한 학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Frantz_Fanon",
+    "excerpt": "Frantz Omar Fanon (, US: ; French: [fʁɑ̃ts fanɔ̃]; 20 July 1925 – 6 December 1961) was a French psychiatrist and political philosopher, who made critical contribution to the fields of post-colonial studies and critical theory.",
+    "locator": "characters 0:226; sha256 8477236a153380d2a55da9864298456ab566a34c2acd6258850ec4f91e8db8bb"
+   },
+   {
+    "claim": "파농은 리옹에서 전공의 과정 중 첫 저서 『검은 피부, 하얀 가면』을 저술·출판하며 식민지 억압의 심리적 영향을 분석했다.",
+    "source": "https://en.wikipedia.org/wiki/Frantz_Fanon",
+    "excerpt": "In Lyon, while completing his residency, Fanon wrote and published his first book, Black Skin, White Masks (1952), an analysis of the negative psychological effects of colonial subjugation upon black people.",
+    "locator": "characters 6499:6706; sha256 8477236a153380d2a55da9864298456ab566a34c2acd6258850ec4f91e8db8bb"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "저술·이론 활동은 개인 작업; 블리다 병원 근무(의료)와 FLN 활동(기존 별도 활동)은 이 학술 활동의 소속이 아님."
+ },
+ {
+  "personId": "farabundo-marti",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "international-red-aid",
+  "relation": "service",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "마르티는 중앙아메리카 공산당 창당에 참여하고 국제적색구원의 대표로 활동하며 혁명적 조직화에 관여했다.",
+    "source": "https://en.wikipedia.org/wiki/Farabundo_Mart%C3%AD",
+    "excerpt": "Martí became involved in the founding of the Communist Party of Central America, where he led a communist alternative to the Red Cross, the International Red Aid, serving as one of its representatives.",
+    "locator": "characters 2862:3063; sha256 b105a4e50323a413499e9dff06064861acf39a507154de18b1554aa4ef0fa804"
+   },
+   {
+    "claim": "마르티는 1931년 엘살바도르로 돌아와 동지들과 함께 원주민 농민들의 게릴라 봉기를 조직하고 지도했다.",
+    "source": "https://en.wikipedia.org/wiki/Farabundo_Mart%C3%AD",
+    "excerpt": "Once the new president Arturo Araujo was elected in March 1931, Martí returned to El Salvador and, along with Alfonso Luna and Mario Zapata, began the movement that was later truncated by the military. They helped start a guerrilla revolt of indigenous farmers.",
+    "locator": "characters 3477:3738; sha256 b105a4e50323a413499e9dff06064861acf39a507154de18b1554aa4ef0fa804"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/International_Red_Aid",
+    "locator": "en: lead",
+    "excerpt": "MOPR was founded in 1922 by the Communist International to function as an \"international political Red Cross\", providing material and moral aid to radical \"class-war\" political prisoners around the world.",
+    "claim": "국제적색구원회는 1922년 코민테른이 세운 정치범 구원 조직이다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "international-red-aid",
+   "kind": "international",
+   "label": {
+    "ko": "국제적색구원회",
+    "en": "International Red Aid (MOPR)"
+   },
+   "countryCode": null,
+   "parentId": "comintern",
+   "periods": [
+    [
+     1922,
+     1947
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "국제적색구원회 대표로 활동(기존 근거). 공산당 지도는 기존 party-salvadoran-communist 활동이 담당. 종료 1947은 일반 지식(출처 문서엔 명시 없음)."
+ },
+ {
+  "personId": "franz-mehring",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-german-spd",
+  "relation": "service",
+  "startYear": 1902,
+  "endYear": 1911,
+  "evidence": [
+   {
+    "claim": "메링은 독일의 공산주의 역사가·문학예술평론가·철학자로 규정된다.",
+    "source": "https://en.wikipedia.org/wiki/Franz_Mehring",
+    "excerpt": "Franz Erdmann Mehring (27 February 1846 – 28 January 1919) was a German communist historian, literary and art critic, philosopher, and revolutionary socialist politician",
+    "locator": "characters 0:169; sha256 ac7203b6e6093d341e90b515d033d4e50cb904925f5975568c85645d9b5cb569"
+   },
+   {
+    "claim": "그는 마르크스의 고전적 전기로 평가된 저서를 저술한 학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Franz_Mehring",
+    "excerpt": "He authored Karl Marx: The Story of His Life (1918), which was long considered the classical biography of Marx.",
+    "locator": "characters 261:372; sha256 ac7203b6e6093d341e90b515d033d4e50cb904925f5975568c85645d9b5cb569"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Franz_Mehring",
+    "locator": "en: Life",
+    "excerpt": "Between 1902 and 1907, Mehring was the chief editor of the Social Democratic Leipziger Volkszeitung newspaper.",
+    "claim": "메링은 1902~1907년 사민당 기관지 라이프치히 인민신문 주필이었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Franz_Mehring",
+    "locator": "en: Life",
+    "excerpt": "From 1906 to 1911, Mehring taught at the SPD's party school and was a member of the Prussian parliament from 1917 to 1918.",
+    "claim": "메링은 1906~1911년 사민당 당학교에서 가르쳤다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "사민당 기관지 주필·당학교 강사로 당 소속 학술·이론 활동(직책이므로 service)."
+ },
+ {
+  "personId": "frederick-lindemann",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "british-university-of-oxford",
+  "relation": "employment",
+  "startYear": 1919,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "린데만은 1919년 옥스퍼드 대학의 실험철학(물리학) 교수이자 클래런던 연구소 소장으로 임명되어 자연과학 연구를 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/Frederick_Lindemann%2C_1st_Viscount_Cherwell",
+    "excerpt": "In 1919, Lindemann was appointed professor of experimental philosophy (physics) at the University of Oxford and director of the Clarendon Laboratory, largely on the recommendation of Henry Tizard, who had been a colleague in Berlin.",
+    "locator": "characters 3285:3517; sha256 91dfe2f7e8d62f9913f0353ae561f6891717d82928d1e08de7d49e06487e7c04"
+   },
+   {
+    "claim": "그는 1921년 단분자 화학 반응에 대한 린데만 메커니즘을 제안하는 등 물리화학 연구를 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/Frederick_Lindemann%2C_1st_Viscount_Cherwell",
+    "excerpt": "In the field of chemical kinetics, he proposed the Lindemann mechanism in 1921 for unimolecular chemical reactions, and showed that the first step is one of bimolecular activation.",
+    "locator": "characters 4010:4190; sha256 91dfe2f7e8d62f9913f0353ae561f6891717d82928d1e08de7d49e06487e7c04"
+   }
+  ],
+  "newAffiliation": {
+   "id": "british-university-of-oxford",
+   "kind": "institution",
+   "label": {
+    "ko": "옥스퍼드 대학교",
+    "en": "University of Oxford"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     null,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "옥스퍼드 대학 실험철학 교수·클래런던 연구소장(기존 근거). 대학 소속 첫 사례라 카탈로그에 대학을 넣을지 주인 판단 필요."
+ },
+ {
+  "personId": "gapon",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-gapon-assembly",
+  "relation": "service",
+  "startYear": null,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "가폰은 상트페테르부르크 러시아 공장·제분 노동자 협회를 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Gapon",
+    "excerpt": "Gapon organized the Assembly of Russian Factory and Mill Workers of Saint Petersburg, which was also patronized by the Department of the Police and the Saint Petersburg Okhrana",
+    "locator": "characters 6805:6981; sha256 b660fb3ea0774afa8b2306d18c351443efb8d0d4d566607cf2bc0198558f9030"
+   },
+   {
+    "claim": "가폰은 차르에게 청원서를 제출하기 위한 노동자 행진을 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Gapon",
+    "excerpt": "Gapon organized a workers' procession to present an emotionally charged written petition to the Tsar.",
+    "locator": "characters 8399:8500; sha256 b660fb3ea0774afa8b2306d18c351443efb8d0d4d566607cf2bc0198558f9030"
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-gapon-assembly",
+   "kind": "force",
+   "label": {
+    "ko": "상트페테르부르크 러시아 공장노동자회",
+    "en": "Assembly of Russian Factory and Mill Workers of St. Petersburg"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1904,
+     1906
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "상트페테르부르크 러시아 공장노동자회를 조직·지도(기존 근거). 용어 assembly-of-russian-factory-and-mill-workers-of-st-petersbur 표제어를 라벨로 씀; 피의 일요일(1905) 이후 단체 해체."
+ },
+ {
+  "personId": "george-padmore",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "comintern",
+  "relation": "service",
+  "startYear": 1930,
+  "endYear": 1933,
+  "evidence": [
+   {
+    "claim": "패드모어는 저명한 범아프리카주의자이자 언론인, 저술가였다.",
+    "source": "https://en.wikipedia.org/wiki/George_Padmore",
+    "excerpt": "George Padmore (28 June 1903 – 23 September 1959), born Malcolm Ivan Meredith Nurse, was a leading Pan-Africanist, journalist, and author.",
+    "locator": "characters 0:138; sha256 ac4d6ea449ce27237b9313c7ae5af04b83372fb0b026c17ef75d80187874fcf8"
+   },
+   {
+    "claim": "그는 1945년 맨체스터 범아프리카 회의를 조직했으며, 이는 그의 저술·이론 활동의 연장이었다.",
+    "source": "https://en.wikipedia.org/wiki/George_Padmore",
+    "excerpt": "Padmore was then organizing the 1945 Manchester Pan-African Congress (designated the Fifth Pan-African Congress), attended not only by the inner circle of the IASB but also by W. E. B. Du Bois, the American organizer of earlier Pan-African conferences.",
+    "locator": "characters 9393:9645; sha256 ac4d6ea449ce27237b9313c7ae5af04b83372fb0b026c17ef75d80187874fcf8"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/George_Padmore",
+    "locator": "en: Comintern",
+    "excerpt": "It launched a Comintern-backed international organization of black labour organizations called the International Trade Union Committee of Negro Workers (ITUCNW).",
+    "claim": "코민테른이 후원한 흑인노동자 국제노조위원회(ITUCNW)가 출범했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/George_Padmore",
+    "locator": "en: Comintern",
+    "excerpt": "Padmore lived in Vienna, Austria, during this time, where he edited the monthly publication of the new group, The Negro Worker.",
+    "claim": "패드모어는 이 단체 월간지 『흑인 노동자』를 편집했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/George_Padmore",
+    "locator": "en: Comintern",
+    "excerpt": "Padmore was deported to England by the German government, while the Comintern placed the ITUCNW and its Negro Worker on hiatus in August 1933.",
+    "claim": "1933년 코민테른이 ITUCNW와 『흑인 노동자』를 중단시켰다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "저널리스트 활동의 조직 소속은 코민테른 산하 ITUCNW 기관지 편집(1930~1933). 기존 두 번째 근거(1945 범아프리카회의 조직)는 IASB 쪽 organizing 활동 후보로 따로 두는 것이 맞음."
+ },
+ {
+  "personId": "georgios-papandreou",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "existing",
+  "affiliationId": "party-greek-centre-union",
+  "relation": "service",
+  "startYear": 1961,
+  "endYear": 1968,
+  "evidence": [
+   {
+    "claim": "그는 1961년 중앙연합당을 창당했다.",
+    "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+    "excerpt": "In 1961, Papandreou revived Greek liberalism by founding the Centre Union Party, a confederation of old liberal Venizelists, social democrats and dissatisfied conservatives.",
+    "locator": "characters 8765:8938; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a"
+   },
+   {
+    "claim": "그는 1961년 총선에서 중앙연합을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+    "excerpt": "The merger of the Liberal Party and other parties in 1961 created the Centre Union that Papandreou led in that year's elections.",
+    "locator": "characters 2133:2261; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+    "locator": "en: Centre Union",
+    "excerpt": "The merger of the Liberal Party and other parties in 1961 created the Centre Union that Papandreou led in that year's elections.",
+    "claim": "1961년 창당된 중도연합을 파판드레우가 이끌었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "중도연합 창당자·당수(기존 1961–1968 membership 활동과 중복되므로 그 활동을 service로 바꾸고 이 행과 합치는 것도 검토)."
+ },
+ {
+  "personId": "georgy-arbatov",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1965,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "아르바토프는 소련 과학아카데미 산하 미국·캐나다 연구소(ISKRAN)의 창립 소장이자 이후 명예 소장으로서 학술 연구 기관을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Arbatov",
+    "excerpt": "He was the founding director and later emeritus director of the Institute for US and Canadian Studies of the Soviet Academy of Sciences (ISKRAN), the Soviet and Russian think tank for the study of the US and Canada.",
+    "locator": "characters 448:663; sha256 acc91fa82927f9378049daa7a178db23125f3a71415a93f211525560e6647609"
+   },
+   {
+    "claim": "그는 1965년부터 1995년까지 ISKRAN의 창립 소장으로 재직하며 학술 연구를 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Arbatov",
+    "excerpt": "He was founder director of the Institute for US and Canadian Studies (ISKRAN) from 1965 to 1995.",
+    "locator": "characters 1927:2023; sha256 acc91fa82927f9378049daa7a178db23125f3a71415a93f211525560e6647609"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "소련 과학아카데미 미국·캐나다 연구소 창립 소장(국가 학술기관, state-soviet 선례). 1991~1995 소장직은 러시아 과학아카데미이므로 필요하면 russia-federation 활동 분리."
+ },
+ {
+  "personId": "georgy-khrustalev-nosar",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-petersburg-soviet-1905",
+  "relation": "service",
+  "startYear": 1905,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "그는 1905년 10월부터 11월까지 상트페테르부르크 노동자 대표 소비에트의 초대 의장으로서 노동자 대표 조직을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Stepanovich_Khrustalev-Nosar",
+    "excerpt": "From October to November 1905, he was the first chairman of the St. Petersburg Council of Workers' Deputies.",
+    "locator": "characters 207:315; sha256 33d65f0e81e70fbd8520ea689d04fa573b266d51ee5f304fe521038dba29f1d9"
+   },
+   {
+    "claim": "원출처는 그를 정치·공적 인물로 규정하여 소비에트 의장직이 공적·정치 조직 활동이었음을 뒷받침한다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Stepanovich_Khrustalev-Nosar",
+    "excerpt": "was a political and public figure, and assistant barrister from the Russian Empire",
+    "locator": "characters 123:205; sha256 33d65f0e81e70fbd8520ea689d04fa573b266d51ee5f304fe521038dba29f1d9"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Saint_Petersburg_Soviet",
+    "locator": "en: lead",
+    "excerpt": "The Petersburg Soviet of Workers' Delegates (Russian: Петербургский совет рабочих депутатов, romanized: Peterburgskiy sovet rabochikh deputatov; later the Petersburg Soviet of Workers' Deputies) was a workers' council, or soviet, in Saint Petersburg in 1905.",
+    "claim": "페테르부르크 노동자 대표 소비에트는 1905년의 노동자 평의회였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-petersburg-soviet-1905",
+   "kind": "force",
+   "label": {
+    "ko": "페테르부르크 소비에트(1905)",
+    "en": "St. Petersburg Soviet of Workers' Deputies (1905)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1905,
+     1905
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "1905년 페테르부르크 소비에트 초대 의장(기존 근거). 무소속 기술은 사이트 소개문에 있으나 RSDLP 활동이 별도로 있어 정합성 확인 권장."
+ },
+ {
+  "personId": "georgy-shakhnazarov",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "soviet-political-science-association",
+  "relation": "service",
+  "startYear": 1975,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "그는 정치학자로서 학문 경력을 쌓았고 1975년부터 소련 정치학회 회장을 지냈다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Shakhnazarov",
+    "excerpt": "At the same time he was building a parallel career as a political scientist and contributed to the professionalisation of the field in the later Soviet era. In 1975, he became president of the Soviet Association of Political Sciences (until 1991)",
+    "locator": "characters 2703:2949; sha256 76de23f0404397db41c51d95894425ed68a45431d6a9a866bf793df852b58fe7"
+   },
+   {
+    "claim": "그는 저술에서 소련 사회의 이익집단 다원성을 인정하는 등 정치이론 연구를 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/Georgy_Shakhnazarov",
+    "excerpt": "In published works he recognised that Soviet society had different interest groups—an implicit rejection of a homogenised, communist society—and advocated a greater flow of information at a time of paranoid secrecy.",
+    "locator": "characters 3035:3250; sha256 76de23f0404397db41c51d95894425ed68a45431d6a9a866bf793df852b58fe7"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Georgy_Shakhnazarov",
+    "locator": "en: Career",
+    "excerpt": "In 1975, he became president of the Soviet Association of Political Sciences (until 1991), and vice-president of the International Political Science Association (until 1988).",
+    "claim": "샤흐나자로프는 1975~1991년 소련 정치학회 회장이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "soviet-political-science-association",
+   "kind": "institution",
+   "label": {
+    "ko": "소련 정치학회",
+    "en": "Soviet Association of Political Sciences"
+   },
+   "countryCode": "soviet",
+   "parentId": null,
+   "periods": [
+    [
+     1960,
+     1991
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "소련 정치학회(1960~1991, 자발적 학술단체) 회장. ru 위키는 1973~1990으로 적음."
+ },
+ {
+  "personId": "grace-lee-boggs",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "american-noar",
+  "relation": "service",
+  "startYear": 1979,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "그녀는 1992년 다문화 세대 간 청소년 프로그램인 디트로이트 서머를 설립했고, 그녀의 디트로이트 집은 지역사회 리더십을 위한 보그스 센터의 본부로 사용되었다.",
+    "source": "https://en.wikipedia.org/wiki/Grace_Lee_Boggs",
+    "excerpt": "She founded Detroit Summer, a multicultural intergenerational youth program, in 1992, and was the recipient of numerous awards. Additionally, Boggs' home in Detroit also serves as headquarters for the Boggs Center to Nurture Community Leadership.",
+    "locator": "characters 6628:6874; sha256 ffa39c6eb3ec550f0883ce1e80166fafa14cbd22d3737becc6b4905c1c66d89d"
+   },
+   {
+    "claim": "그녀와 남편 제임스 보그스는 1979년 미국 혁명을 위한 전국 조직(NOAR) 창립에 기여했다.",
+    "source": "https://en.wikipedia.org/wiki/Grace_Lee_Boggs",
+    "excerpt": "In 1979, Grace Lee Boggs and husband James Boggs contributed to the founding of National Organization for an American Revolution (NOAR).",
+    "locator": "characters 5748:5884; sha256 ffa39c6eb3ec550f0883ce1e80166fafa14cbd22d3737becc6b4905c1c66d89d"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Grace_Lee_Boggs",
+    "locator": "en: Activism",
+    "excerpt": "In 1979, Grace Lee Boggs and husband James Boggs contributed to the founding of National Organization for an American Revolution (NOAR).",
+    "claim": "보그스 부부는 1979년 미국혁명전국조직(NOAR) 창립에 참여했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "american-noar",
+   "kind": "force",
+   "label": {
+    "ko": "미국혁명전국조직",
+    "en": "National Organization for an American Revolution (NOAR)"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1979,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "NOAR 공동 창립. 노동자당·사회주의노동자당(party-us-swp) 당적도 출처에 있어 정당 활동 후보(이 행 범위 밖)."
+ },
+ {
+  "personId": "grigory-vakulinchuk",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-tsentralka",
+  "relation": "service",
+  "startYear": null,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "바쿨렌추크는 혁명 수병 조직인 쓰베트날카 회의에 참여해 봉기를 주장했다.",
+    "source": "https://en.wikipedia.org/wiki/Grigory_Vakulenchuk",
+    "excerpt": "On 10/23 June 1905, he had attended a meeting of Tsentralka (the revolutionary sailors' organisation) and had argued in favour of an uprising: \"To delay means to fail the revolution. At this moment, everywhere, workers and peasants are striking out. We must join the common fight.\"",
+    "locator": "characters 735:1016; sha256 4b411629148a89886fcdf7e85164dadc4aba94fb13fa26a6ce152bdda50f8762"
+   },
+   {
+    "claim": "그는 젠트랄카 지도부를 설득해 포툠킨호가 흑해 봉기를 주도하게 했다.",
+    "source": "https://en.wikipedia.org/wiki/Grigory_Vakulenchuk",
+    "excerpt": "On 11/24 June he convinced the Tsentralka leaders to let the Potemkin lead the Black Sea uprising.",
+    "locator": "characters 1095:1193; sha256 4b411629148a89886fcdf7e85164dadc4aba94fb13fa26a6ce152bdda50f8762"
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-tsentralka",
+   "kind": "force",
+   "label": {
+    "ko": "첸트랄카",
+    "en": "Tsentralka (Black Sea Fleet sailors' organisation)"
+   },
+   "countryCode": "russia",
+   "parentId": "russian-rsdlp",
+   "periods": [
+    [
+     1904,
+     1905
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "흑해함대 수병 비밀조직 첸트랄카 회의에 참석해 봉기를 주도(기존 근거). 용어 tsentralka 표제어가 '젠트랄카'로 오기돼 있어 사이트 소개문 표기 '첸트랄카'를 씀(용어 표제어 정정 권장). 소개문의 1903 RSDLP 입당은 en/ru 위키에 없음."
+ },
+ {
+  "personId": "grigory-yavlinsky",
+  "functionId": "economy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1984,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "야블린스키는 소련 정부의 경제 부서장을 지냈다.",
+    "source": "https://en.wikipedia.org/wiki/Grigory_Yavlinsky",
+    "excerpt": "He was head of the Joint Economic Department of the Government of the USSR.",
+    "locator": "characters 4067:4142; sha256 16c1f66dd1c89350fd0b3a93ce3416f84f42ddbd463c97c45846cb01b1baeb85"
+   },
+   {
+    "claim": "그는 시장경제 전환을 위한 500일 프로그램을 작성했다.",
+    "source": "https://en.wikipedia.org/wiki/Grigory_Yavlinsky",
+    "excerpt": "Yavlinsky's commitment to a market economy was established in 1990 when he wrote 500 Days – a programme for the Soviet Union in which he proposed the rapid transition from a centrally planned economy to a free market economy in less than two years.",
+    "locator": "characters 4324:4572; sha256 16c1f66dd1c89350fd0b3a93ce3416f84f42ddbd463c97c45846cb01b1baeb85"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Grigory_Yavlinsky",
+    "locator": "en: Career",
+    "excerpt": "From 1984, he held a management position at the Labour Ministry and then at the Council of Ministers of the USSR.",
+    "claim": "1984년부터 소련 노동부와 각료회의에서 관리직을 맡았다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "소련 각료회의 경제부서장·러시아공화국 각료회의 부의장 등 국가 경제직."
+ },
+ {
+  "personId": "grigory-yavlinsky",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "party-russian-yabloko",
+  "relation": "service",
+  "startYear": 1993,
+  "endYear": 2008,
+  "evidence": [
+   {
+    "claim": "야블린스키는 야블로코 정당의 전 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Grigory_Yavlinsky",
+    "excerpt": "Yavlinsky was one of authors of the 500 Days Program, a plan for the transition of the Soviet regime to a free-market economy, and is the former leader of the opposition Yabloko party.",
+    "locator": "characters 255:439; sha256 16c1f66dd1c89350fd0b3a93ce3416f84f42ddbd463c97c45846cb01b1baeb85"
+   },
+   {
+    "claim": "그는 민주적 야당의 지도자로 자리매김했다.",
+    "source": "https://en.wikipedia.org/wiki/Grigory_Yavlinsky",
+    "excerpt": "Yavlinsky established himself as a leader of the democratic opposition.",
+    "locator": "characters 9712:9783; sha256 16c1f66dd1c89350fd0b3a93ce3416f84f42ddbd463c97c45846cb01b1baeb85"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Grigory_Yavlinsky",
+    "locator": "en: Yabloko",
+    "excerpt": "On 22 June 2008, Yavlinsky stepped down as party leader at Yabloko's 15th congress, proposing in his place the candidacy of Moscow City Duma deputy Sergey Mitrokhin who was elected as the new party chairman.",
+    "claim": "야블린스키는 2008년 야블로코 당수에서 물러났다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-russian-yabloko",
+   "kind": "party",
+   "label": {
+    "ko": "야블로코",
+    "en": "Yabloko"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1993,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "야블로코 창립자·당수(1993~2008)."
+ },
+ {
+  "personId": "guy-moquet",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-communist-youth",
+  "relation": "membership",
+  "startYear": null,
+  "endYear": 1940,
+  "evidence": [
+   {
+    "claim": "기 모케는 공산주의 청년운동에 가입한 청년 활동가였다.",
+    "source": "https://en.wikipedia.org/wiki/Guy_M%C3%B4quet",
+    "excerpt": "He studied at the Lycée Carnot and joined the Communist Youth Movement.",
+    "locator": "characters 617:688; sha256 cd3a20cef62922a6d9945a55733fee9ebd952b6bdc0fdde57233300fbd4fedf4"
+   },
+   {
+    "claim": "그는 반전 선전물을 배포하는 지하 조직 활동을 하다 체포되었다.",
+    "source": "https://en.wikipedia.org/wiki/Guy_M%C3%B4quet",
+    "excerpt": "Guy Môquet was arrested in 1940 distributing propaganda against the war.",
+    "locator": "characters 2511:2583; sha256 cd3a20cef62922a6d9945a55733fee9ebd952b6bdc0fdde57233300fbd4fedf4"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Guy_Môquet",
+    "locator": "en: Life",
+    "excerpt": "He studied at the Lycée Carnot and joined the Communist Youth Movement.",
+    "claim": "모케는 공산주의청년운동에 가입했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-communist-youth",
+   "kind": "force",
+   "label": {
+    "ko": "프랑스 공산주의청년운동",
+    "en": "Communist Youth Movement of France (MJCF)"
+   },
+   "countryCode": "france",
+   "parentId": "party-french-communist",
+   "periods": [
+    [
+     1920,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "공산주의청년운동 회원으로 반전 전단 배포 중 1940 체포. 청년조직 자체 소속이며 당적(PCF) 추론에는 쓰지 않음 — 청년조직을 카탈로그에 둘지 주인 판단 필요."
+ },
+ {
+  "personId": "haile-fida",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-ethiopian-meison",
+  "relation": "service",
+  "startYear": null,
+  "endYear": 1977,
+  "evidence": [
+   {
+    "claim": "하일레 피다는 에티오피아의 정치인이자 MEISON으로 알려진 전에티오피아 사회주의 운동의 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Haile_Fida",
+    "excerpt": "Haile Fida (Amharic: ኃይሌ ፊዳ, Oromo: Haaylee Fidaa, c. 4 April 1939 – c. 4 April 1979) was an Ethiopian politician and the leader of the All-Ethiopia Socialist Movement (popularly known as \"MEISON\", after its Amharic abbreviation መኢሶን).",
+    "locator": "characters 0:235; sha256 dfeeb92a5b2e440abc6b92a70fde008df36aacbe30e782d10989a2a77ffe141d"
+   },
+   {
+    "claim": "1975년 12월 그는 POMOA의 의장으로 임명되어 정치 조직을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Haile_Fida",
+    "excerpt": "In December 1975, the Derg secretly created what became known as the Provisional Office for Mass Organizational Affairs (POMOA), and Haile Fida was made its chairman.",
+    "locator": "characters 1677:1843; sha256 dfeeb92a5b2e440abc6b92a70fde008df36aacbe30e782d10989a2a77ffe141d"
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-ethiopian-meison",
+   "kind": "party",
+   "label": {
+    "ko": "전에티오피아 사회주의 운동",
+    "en": "All-Ethiopia Socialist Movement (MEISON)"
+   },
+   "countryCode": "ethiopia",
+   "parentId": null,
+   "periods": [
+    [
+     1968,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": "meison"
+  },
+  "reason": "MEISON 지도자(기존 근거). 기존 용어 meison 있음. 1977년 탄압으로 지도 종료."
+ },
+ {
+  "personId": "hans-von-manteuffel-szoege",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "baltic-landeswehr",
+  "relation": "service",
+  "startYear": 1919,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "만토이펠은 발트 방위군 예하 슈트루프트루프 만토이펠(제1 독일-발트 전투대대)의 지휘관이었다.",
+    "source": "https://en.wikipedia.org/wiki/Baltische_Landeswehr",
+    "excerpt": "1. Deutsch-Balt. Kampfbataillon (Stoßtrupp Manteuffel; Baron Hans von Manteuffel)",
+    "locator": "characters 7067:7148; sha256 0f852d78d9bc6bdba013c5ac007060cc23d02df3771105d18a11c1ab64d03754"
+   },
+   {
+    "claim": "그는 1919년 리가 진입 당시 소규모 부대를 이끌고 들어가 부하들을 지휘하다 전사했다.",
+    "source": "https://en.wikipedia.org/wiki/Baltische_Landeswehr",
+    "excerpt": "Baron Hans von Manteuffel-Szoege made an entry with a small detachment, and died leading his men.",
+    "locator": "characters 3379:3476; sha256 0f852d78d9bc6bdba013c5ac007060cc23d02df3771105d18a11c1ab64d03754"
+   },
+   {
+    "source": "https://de.wikipedia.org/wiki/Hans_von_Manteuffel-Szoege",
+    "locator": "de: Leben",
+    "excerpt": "Hier trat er zu Beginn des Jahres 1919 als Erster Generalstabsoffizier (Ia) in die Baltische Landeswehr.",
+    "claim": "그는 1919년 초 발트 향토방위군 제1참모장교로 들어갔다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Baltische_Landeswehr",
+    "locator": "en: lead",
+    "excerpt": "It was established on 7 December 1918 and existed as a unified force until 3 July 1919.",
+    "claim": "발트 향토방위군은 1918년 12월~1919년 7월 존속했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "baltic-landeswehr",
+   "kind": "military",
+   "label": {
+    "ko": "발트 향토방위군",
+    "en": "Baltische Landeswehr (Baltic Landwehr)"
+   },
+   "countryCode": "latvia",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1919
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "발트 향토방위군 참모장교·돌격대장."
+ },
+ {
+  "personId": "heiki-ahonen",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "estonian-mrp-aeg",
+  "relation": "service",
+  "startYear": 1987,
+  "endYear": 1988,
+  "evidence": [
+   {
+    "claim": "헤이키 아호넨은 1977년 지하 저항운동에 합류해 항의서한에 서명하고 외국 언론인과 연락하는 반체제 활동을 했다.",
+    "source": "https://et.wikipedia.org/wiki/Heiki_Ahonen",
+    "excerpt": "1977 liitus ta põrandaaluse vastupanuliikumisega. Ta kirjutas alla kollektiivsetele protestikirjadele ja pidas sidet Moskvas töötavate välismaiste ajakirjanikega.",
+    "locator": "characters 937:1099; sha256 38ff1ee24782f17b0a61c049f2d245ec4d55656cee38b58c6c94b8f5bce3a893"
+   },
+   {
+    "claim": "그는 1987년 히르베파르크 집회의 주요 조직자 중 한 명이자 MRP-AEG 창립 멤버였다.",
+    "source": "https://et.wikipedia.org/wiki/Heiki_Ahonen",
+    "excerpt": "Ta oli 23. augustil 1987 toimunud Hirvepargi miitingu üks peakorraldajaid ja MRP-AEG asutajaliige.",
+    "locator": "characters 1403:1501; sha256 38ff1ee24782f17b0a61c049f2d245ec4d55656cee38b58c6c94b8f5bce3a893"
+   }
+  ],
+  "newAffiliation": {
+   "id": "estonian-mrp-aeg",
+   "kind": "force",
+   "label": {
+    "ko": "MRP-AEG",
+    "en": "MRP-AEG (Estonian Group for the Disclosure of the Molotov-Ribbentrop Pact)"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1987,
+     1988
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "MRP-AEG 창립 회원·1987 히르베파르크 집회 주최(기존 근거). 1977~1983 지하 저항은 이름 있는 조직이 없어 startYear를 1987로 조정. 1988 강제 출국으로 종료. 용어 mrp-aeg-… 있음."
+ },
+ {
+  "personId": "heinz-reinefarth",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "german-nazi",
+  "relation": "service",
+  "startYear": 1944,
+  "endYear": 1944,
+  "evidence": [
+   {
+    "claim": "라이네파르트는 1944년 바르샤바 봉기 당시 여러 보안 부대원으로 구성된 군사 부대를 조직하고 지휘했다.",
+    "source": "https://en.wikipedia.org/wiki/Heinz_Reinefarth",
+    "excerpt": "After the outbreak of the Warsaw Uprising, Reinefarth was ordered to organise a military unit consisting of personnel from various security units and head for Warsaw. Upon arrival, his forces (Kampfgruppe Reinefarth) were included in the Korpsgruppe von dem Bach",
+    "locator": "characters 2125:2387; sha256 0fb9ba96d3b378ab21cde157840c5a2f7d2f84cacda4b9e209d2c82ffcdf6cb2"
+   },
+   {
+    "claim": "그의 지휘 아래 부대가 볼라 학살을 저질렀으며, 이는 그가 실질적인 군사 지휘관이었음을 보여준다.",
+    "source": "https://en.wikipedia.org/wiki/Heinz_Reinefarth",
+    "excerpt": "In two days, the units of Reinefarth, which included the notorious SS-Sonderregiment Dirlewanger under SS-Oberführer Oskar Dirlewanger, murdered approximately 60,000 civilian inhabitants of Warsaw in what is known as the Wola massacre.",
+    "locator": "characters 2614:2849; sha256 0fb9ba96d3b378ab21cde157840c5a2f7d2f84cacda4b9e209d2c82ffcdf6cb2"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Heinz_Reinefarth",
+    "locator": "en: lead",
+    "excerpt": "Heinrich \"Heinz\" Friedrich Reinefarth (26 December 1903 – 7 May 1979) was a German SS commander during World War II and government official in West Germany after the war.",
+    "claim": "라이네파르트는 2차 대전기 SS 지휘관이었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "SS 지휘관으로 바르샤바 봉기 진압 부대 지휘; SS는 german-nazi(나치당·나치 정권) 범위."
+ },
+ {
+  "personId": "heng-samrin",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-kampuchean-revolutionary",
+  "relation": "service",
+  "startYear": 1981,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "헹 삼린은 캄푸치아인민혁명당(KPRP)의 총서기로서 당을 이끌며 경제발전 정책을 설정했다.",
+    "source": "https://countrystudies.us/cambodia/62.htm",
+    "excerpt": "the Kampuchean (or Khmer) People's Revolutionary Party (KPRP), led by General Secretary Heng Samrin, set Cambodia's economic development policies.",
+    "locator": "characters 157:303; sha256 e62ca255863857a78c1b27dc04899d26a0de6f28f4c1c54e84e1e10ed053fb0c"
+   },
+   {
+    "claim": "헹 삼린은 당 대회에서 정치 보고를 통해 캄보디아의 계획을 공식 발표했다.",
+    "source": "https://countrystudies.us/cambodia/62.htm",
+    "excerpt": "Heng Samrin formally announced Cambodia's plan in his political report to the congress.",
+    "locator": "characters 5493:5580; sha256 e62ca255863857a78c1b27dc04899d26a0de6f28f4c1c54e84e1e10ed053fb0c"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Heng_Samrin",
+    "locator": "en: lead",
+    "excerpt": "Between 1979 and 1985, he was the de facto leader of the People's Republic of Kampuchea later renamed into the State of Cambodia, he also was the General Secretary of the Kampuchean People's Revolutionary Party (1981–1991).",
+    "claim": "헹 삼린은 1981~1991년 캄푸치아 인민혁명당 총서기였다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "캄푸치아 인민혁명당 총서기(1981~1991)."
+ },
+ {
+  "personId": "henk-sneevliet",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-dutch-rsap",
+  "relation": "service",
+  "startYear": 1929,
+  "endYear": 1940,
+  "evidence": [
+   {
+    "claim": "그는 네덜란드에서 혁명적 사회주의 노동자당(RSP/RSAP)을 창설하고 의장을 맡은 정당 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Henk_Sneevliet",
+    "excerpt": "In his native country, he was the founder, chairman, and only Representative for the Revolutionary Socialist (Workers') Party (RSP/RSAP).",
+    "locator": "characters 401:538; sha256 2428fcb8b2886db0f7ac1e997c12285e80ef4db7b17375ef7f9ea803c6521cbe"
+   },
+   {
+    "claim": "그는 1929년 혁명적 사회주의당(RSP)을 창당하고 실업자 운동·파업·반파시즘 투쟁을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Henk_Sneevliet",
+    "excerpt": "In 1929, Sneevliet formed a new political party, the Revolutionary Socialist Party (RSP). This organization concentrated on national issues, gaining some successes in organizing the unemployed movement, strike actions, and the struggle against the rise of fascism.",
+    "locator": "characters 5848:6112; sha256 2428fcb8b2886db0f7ac1e997c12285e80ef4db7b17375ef7f9ea803c6521cbe"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Henk_Sneevliet",
+    "locator": "en: Netherlands",
+    "excerpt": "However, when war broke out on 10 May 1940, Sneevliet immediately dissolved the, legally-registered RSAP and  began preparations to launch an illegal, underground party.",
+    "claim": "1940년 전쟁 발발 때 스네블릿은 RSAP를 해산했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-dutch-rsap",
+   "kind": "party",
+   "label": {
+    "ko": "네덜란드 혁명적 사회주의 노동자당",
+    "en": "Revolutionary Socialist (Workers') Party (RSP/RSAP)"
+   },
+   "countryCode": "netherlands",
+   "parentId": null,
+   "periods": [
+    [
+     1929,
+     1940
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "혁명적 사회주의(노동자)당 창립자·당수(1929 창당~1940 해산)."
+ }
+]

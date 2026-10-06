@@ -1,0 +1,1284 @@
+[
+ {
+  "personId": "henri-frenay",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-combat",
+  "relation": "service",
+  "startYear": 1940,
+  "endYear": 1943,
+  "evidence": [
+   {
+    "claim": "프르네는 1940년 8월 베르티 알브레히트와 함께 지하 저항 네트워크인 국민해방운동(MLN)을 결성했다.",
+    "source": "https://en.wikipedia.org/wiki/Henri_Frenay",
+    "excerpt": "Frenay set out in August 1940 to gather the beginnings of a network around himself and Albrecht. This network, the Mouvement de Libération Nationale (MLN), was the first historical movement of internal resistance in France.",
+    "locator": "characters 2104:2327; sha256 bbe0cdc82e6e39d1ed66188fbf6a7ed66b008137d375ac8b6f8967a225dcf558"
+   },
+   {
+    "claim": "그는 1941년 11월 콩바 저항 그룹 결성에 관여했다.",
+    "source": "https://en.wikipedia.org/wiki/Henri_Frenay",
+    "excerpt": "In November 1941, Frenay had a hand in the formation of the Combat group.",
+    "locator": "characters 3120:3193; sha256 bbe0cdc82e6e39d1ed66188fbf6a7ed66b008137d375ac8b6f8967a225dcf558"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Combat_(French_Resistance)",
+    "locator": "en: Combat's development",
+    "excerpt": "Combat was created in August 1940 in Lyon by Henri Frenay, supported by Berty Albrecht.",
+    "claim": "콩바는 1940년 8월 리옹에서 앙리 프르네가 베르티 알브레히트의 지원을 받아 창설했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Combat_(French_Resistance)",
+    "locator": "en: Combat's development",
+    "excerpt": "Combat, also known under its former name National Liberation Movement (MLN), was active both in the unoccupied zone in southern France and in the occupied north.",
+    "claim": "프르네가 세운 국민해방운동(MLN)은 콩바의 이전 이름이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Henri_Frenay",
+    "locator": "en: Resistance",
+    "excerpt": "When the Gestapo captured Moulin in June 1943, Frenay fled to Algiers.",
+    "claim": "프르네는 1943년 6월 물랭이 체포된 뒤 알제로 떠났다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-combat",
+   "kind": "force",
+   "label": {
+    "ko": "콩바",
+    "en": "Combat (French Resistance)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1940,
+     1944
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Frenay founded the MLN network in 1940, which became the Combat resistance movement; Combat is not in the catalog."
+ },
+ {
+  "personId": "henry-beeuwkes",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "american-relief-administration",
+  "relation": "service",
+  "startYear": 1921,
+  "endYear": 1923,
+  "evidence": [
+   {
+    "claim": "헨리 뵈우커스는 러시아에서 미국구호청(ARA) 의료부서 책임자로서 의료 구호 활동을 총괄했다.",
+    "source": "https://en.wikipedia.org/wiki/Russian_famine_of_1921%E2%80%931922",
+    "excerpt": "As noted by Dr. Henry Beeuwkes, the chief of the Medical Division in Russia, American relief was supplying over 16,000 hospitals, which were treating more than a million persons daily.",
+    "locator": "characters 7502:7686; sha256 958bc86bc1805bf2f8a1952b1c81a652ab712f03f6715c5ea54c014c151da463"
+   },
+   {
+    "claim": "그는 의료물자와 병원 운영의 실태를 직접 보고하며 의료 지원을 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Russian_famine_of_1921%E2%80%931922",
+    "excerpt": "According to Dr. Beeuwkes, everything was in short supply, including beds, blankets, sheets, and most medical tools and medicines.",
+    "locator": "characters 8404:8534; sha256 958bc86bc1805bf2f8a1952b1c81a652ab712f03f6715c5ea54c014c151da463"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Existing evidence names him chief of the ARA Medical Division in Russia (American relief)."
+ },
+ {
+  "personId": "henryka-krzywonos",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "polish-solidarity",
+  "relation": "service",
+  "startYear": 1980,
+  "endYear": 1980,
+  "evidence": [
+   {
+    "claim": "그녀는 그단스크 교통 노동자 조직의 책임자였다.",
+    "source": "https://en.wikipedia.org/wiki/Henryka_Krzywonos",
+    "excerpt": "Henryka Krystyna Krzywonos-Strycharska was the former head of the Gdańsk transport workers.",
+    "locator": "characters 0:91; sha256 2f843309c30ae999f7670d737d26f10f1874b2cfc7f0a7c3a75a1a43b0036d4f"
+   },
+   {
+    "claim": "그녀는 1980년 그단스크 파업과 시위에서 역할을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Henryka_Krzywonos",
+    "excerpt": "She is noted for playing a role in strikes and protests in 1980 Gdańsk.",
+    "locator": "characters 92:163; sha256 2f843309c30ae999f7670d737d26f10f1874b2cfc7f0a7c3a75a1a43b0036d4f"
+   },
+   {
+    "source": "https://pl.wikipedia.org/wiki/Henryka_Krzywonos-Strycharska",
+    "locator": "pl: Życiorys",
+    "excerpt": "Została następnie przedstawicielem WPK w Międzyzakładowym Komitecie Strajkowym, weszła w skład jego prezydium.",
+    "claim": "그녀는 그단스크 교통공사 대표로 연안 공장간 파업위원회에 들어가 그 간부회 일원이 되었다."
+   },
+   {
+    "source": "https://pl.wikipedia.org/wiki/Henryka_Krzywonos-Strycharska",
+    "locator": "pl: Życiorys",
+    "excerpt": "31 sierpnia znalazła się wśród sygnatariuszy porozumień sierpniowych, wkrótce została odwołana z prezydium MKZ Gdańsk przez komitet założycielski NSZZ „Solidarność” w jej zakładzie pracy.",
+    "claim": "그녀는 8월 협정에 서명했고, 곧 직장의 연대노조 창립위원회에 의해 그단스크 MKZ 간부회에서 소환되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Gdańsk Inter-factory Strike Committee presidium and MKZ Gdańsk of NSZZ Solidarność in 1980; existing polish-solidarity (from 1980) covers it."
+ },
+ {
+  "personId": "ho-hon",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": "independent",
+  "startYear": 1907,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "허헌은 변호사로서 독립운동가들을 변론했다.",
+    "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+    "excerpt": "As a lawyer, he defended independence activists along with Lee In and Kim Byong-ro.",
+    "locator": "plain-text extract characters 165:248; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6"
+   },
+   {
+    "claim": "3·1운동으로 그는 대표적인 항일 변호사가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+    "excerpt": "The March 1st Movement of March 1919 made him a representative anti-Japanese lawyer.",
+    "locator": "plain-text extract characters 4247:4331; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Independent practising defence lawyer; the sources tie his defence work to no organization (existing independent status kept)."
+ },
+ {
+  "personId": "ho-hon",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-south-korean-workers",
+  "relation": "service",
+  "startYear": 1946,
+  "endYear": 1949,
+  "evidence": [
+   {
+    "claim": "허헌은 1946년 11월 남조선로동당 창당에 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+    "excerpt": "In November 1946, he participated in the formation of the South Korean Workers' Party.",
+    "locator": "characters 11242:11328; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6"
+   },
+   {
+    "claim": "남조선로동당 결성 후 허헌은 박헌영을 지지하며 당내 정치 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Ho_Hon",
+    "excerpt": "After the formation of the Workers' Party of South Korea, Lyuh Woon-hyung sat down in office and stopped the conflict with Pak Hon-yong. Around this time, Ho Hon followed, supporting Pak.",
+    "locator": "characters 11329:11516; sha256 044293cea67f95c53a154a5dbc6f67724e4457521109a7c98dc833c36983cad6"
+   },
+   {
+    "claim": "허헌은 1946년 12월 2일부터 제2대 남조선로동당 위원장으로 활동했다.",
+    "source": "https://ko.wikipedia.org/wiki/%ED%97%88%ED%97%8C",
+    "excerpt": "남조선로동당이 결성된 뒤 여운형이 당수직에 앉았다가 박헌영과의 갈등으로 물러나자, 그는 1946년 12월 2일 제2대 남로당 위원장으로 활동하였다.",
+    "locator": "characters 7746:7828; sha256 b39a56fe8661622ae6f21dad63ab573bf5c0776f5d782b875f0b7ad2248e0a26"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Chairman of the Workers' Party of South Korea from Dec 1946 until the 1949 merger; duplicates the existing SKWP membership row (merge suggested). His 1948-51 Supreme People's Assembly chairmanship is state-north-korea/legislature, a separate activity."
+ },
+ {
+  "personId": "hotsumi-ozaki",
+  "functionId": "security",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1934,
+  "endYear": 1941,
+  "evidence": [
+   {
+    "claim": "오자키 호쓰미는 소련 정보기관의 정보원이었다.",
+    "source": "https://en.wikipedia.org/wiki/Hotsumi_Ozaki",
+    "excerpt": "Hotsumi Ozaki (尾崎 秀実, Ozaki Hotsumi; April 29, 1901 – November 7, 1944) was a Japanese journalist working for the Asahi Shimbun newspaper, communist, Soviet intelligence agent, and advisor to Prime Minister Fumimaro Konoe.",
+    "locator": "characters 0:222; sha256 e03385b4b0c0fbf11bc5ea8e5b09ac1dede4fa773766c03fea34ca664eff56a5"
+   },
+   {
+    "claim": "오자키는 일본의 대소 정책 정보를 소련 측 리처드 조르게에게 전달했다.",
+    "source": "https://en.wikipedia.org/wiki/Hotsumi_Ozaki",
+    "excerpt": "Ozaki learned that Japan wanted to avoid a war with the Soviet Union, and let Sorge know of it. This information proved to be of utmost importance for the whole history of the Second World War: after Sorge relayed it to Soviet command, Moscow transferred 18 divisions, 1,700 tanks, and over 1,500 aircraft from Siberia and the Far East to the Western Front against the Nazi Germany during the most dangerous months of the Battle for Moscow.",
+    "locator": "characters 3715:4155; sha256 e03385b4b0c0fbf11bc5ea8e5b09ac1dede4fa773766c03fea34ca664eff56a5"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Hotsumi_Ozaki",
+    "locator": "en: Biography",
+    "excerpt": "During his trial, it was revealed that Ozaki had been working with Sorge since his return to Japan, and that through his close contacts with Konoe and other senior Japanese politicians, was able to gather information and to copy secret documents.",
+    "claim": "재판에서 오자키가 일본 귀국 후 줄곧 조르게와 함께 일하며 기밀 정보를 수집·복사했음이 밝혀졌다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Hotsumi_Ozaki",
+    "locator": "en: Biography",
+    "excerpt": "On October 15, 1941, Ozaki was arrested in conjunction with the Sorge Incident.",
+    "claim": "그는 1941년 10월 15일 조르게 사건으로 체포되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Documented Soviet intelligence agent in the Sorge ring (Tokyo, 1934-1941): service for Soviet state intelligence."
+ },
+ {
+  "personId": "hun-sen",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-cambodian-peoples",
+  "relation": "service",
+  "startYear": 1991,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "훈 센은 1979년부터 캄보디아를 통치해 온 캄보디아 인민당(CPP)의 의장이다.",
+    "source": "https://en.wikipedia.org/wiki/Hun_Sen",
+    "excerpt": "He is the president of the Cambodian People's Party (CPP), originally known as the Kampuchean People's Revolutionary Party (KPRP), which has governed Cambodia since 1979",
+    "locator": "characters 382:551; sha256 9f33b963194a890d965cf4b7b651ce0682f36e9a0a6a92b9bf6342cf38627157"
+   },
+   {
+    "claim": "훈 센은 1998년부터 2023년까지 캄보디아 인민당을 이끌며 연속 선거 승리를 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Hun_Sen",
+    "excerpt": "Between 1998 and 2023, Hun Sen led the CPP to consecutive and often contentious election victories",
+    "locator": "characters 1914:2012; sha256 9f33b963194a890d965cf4b7b651ce0682f36e9a0a6a92b9bf6342cf38627157"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Cambodian_People%27s_Party",
+    "locator": "en: lead",
+    "excerpt": "The party's current name was adopted during the final year of the State of Cambodia, when the party abandoned the one-party system and Marxism–Leninism.",
+    "claim": "캄보디아 인민당이라는 현재 이름은 캄보디아국 마지막 해(1991년)에 채택되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Cambodian_People%27s_Party",
+    "locator": "en: lead",
+    "excerpt": "CPP presents itself as a big tent of supporters of the Prime Minister Hun Sen, and after him his son Hun Manet.",
+    "claim": "캄보디아 인민당은 훈 센 총리 지지자들의 정당으로 자처한다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-cambodian-peoples",
+   "kind": "party",
+   "label": {
+    "ko": "캄보디아 인민당",
+    "en": "Cambodian People's Party (CPP)"
+   },
+   "countryCode": "cambodia",
+   "parentId": null,
+   "periods": [
+    [
+     1991,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "He leads the CPP, the 1991 renaming of the KPRP; the catalog KPRP entry ends in 1991 and his KPRP membership is already a separate row."
+ },
+ {
+  "personId": "ilya-krichevsky",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": "independent",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "원출처는 크리쳅스키를 소련의 건축가로 규정한다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D1%87%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%98%D0%BB%D1%8C%D1%8F_%D0%9C%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Илья́ Мара́тович Криче́вский (3 февраля 1963, Москва — 21 августа 1991, Москва) — советский архитектор, один из трёх погибших защитников Белого дома во время августовского путча 1991 года.",
+    "locator": "characters 0:188; sha256 41b9a1cf517b4d99a2b5beee6c67c0f3c69f6ceb06adc75bb3814f53c4ca9387"
+   },
+   {
+    "claim": "그가 시를 썼고 사후에 시집에 수록되었다는 문학 창작 활동을 확인해준다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D1%87%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%98%D0%BB%D1%8C%D1%8F_%D0%9C%D0%B0%D1%80%D0%B0%D1%82%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Илья Кричевский писал стихи; посмертно они включались в антологии («Строфы века» Евгения Евтушенко и другие).",
+    "locator": "characters 680:789; sha256 41b9a1cf517b4d99a2b5beee6c67c0f3c69f6ceb06adc75bb3814f53c4ca9387"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Poems were private and published posthumously; his architect jobs (state design institute, then the Kommunar cooperative) are employment, not the arts/poetry activity, and no artistic organization is documented."
+ },
+ {
+  "personId": "iosif-bleikhman",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-petrograd-anarchist-federation",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "블레이흐만은 1917년 페트로그라드 아나키스트-공산주의자 연맹의 지도자로서 임시정부에 반대하는 시위를 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Iosif_Bleikhman",
+    "excerpt": "He was the leader of the Petrograd Federation of Anarchist-Communists at the time of the Russian Revolution in 1917, organising a series of demonstrations against the Russian Provisional Government that culminated in the July Days.",
+    "locator": "characters 102:333; sha256 17ed9b886d57d24077c43252c7df1d5c3d708c5f21cfacdecd8b33bb1fc82e0a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Iosif_Bleikhman",
+    "locator": "en: Revolutionary activism",
+    "excerpt": "Following the February Revolution, Bleikhman was released from his sentence and moved to Petrograd, where he quickly became leader of the local Anarchist-Communist Federation and edited its newspaper Burevestnik.",
+    "claim": "2월혁명 뒤 블레이흐만은 페트로그라드 무정부공산주의자 연맹의 지도자가 되어 기관지 「부레베스트니크」를 편집했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Iosif_Bleikhman",
+    "locator": "en: Revolutionary activism",
+    "excerpt": "Following the October Revolution, Bleikhman was elected to the Petrograd Military Revolutionary Committee and became secretary of the Petrograd Federation of Anarchist Groups, once again taking up editing Burevestnik.",
+    "claim": "10월혁명 뒤 그는 페트로그라드 무정부주의 그룹 연맹의 서기가 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Iosif_Bleikhman",
+    "locator": "en: Revolutionary activism",
+    "excerpt": "The Cheka responded by raiding the Petrograd Federation, arresting Bleikhman, despite his membership in the Petrograd Soviet, and shutting down Burevestnik.",
+    "claim": "체카가 페트로그라드 연맹을 급습해 블레이흐만을 체포하고 기관지를 폐간했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-petrograd-anarchist-federation",
+   "kind": "force",
+   "label": {
+    "ko": "페트로그라드 무정부공산주의자 연맹",
+    "en": "Petrograd Federation of Anarchist-Communists"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Leader, then secretary, of the Petrograd anarchist federation 1917-1918 until the Cheka raid; organization not in catalog."
+ },
+ {
+  "personId": "iuliu-maniu",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-romanian-national-peasants",
+  "relation": "service",
+  "startYear": 1926,
+  "endYear": 1947,
+  "evidence": [
+   {
+    "claim": "마니우는 제1차 세계대전 전후 트란실바니아·바나트 국민당의 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Iuliu_Maniu",
+    "excerpt": "He was a leader of the National Party of Transylvania and Banat before and after World War I, playing an important role in the Union of Transylvania with Romania.",
+    "locator": "characters 128:290; sha256 90ee3dbe0b7f682320eb37435edcda911f41e2620204e3049d51573896da38a5"
+   },
+   {
+    "claim": "마니우는 이온 미할라케와 함께 국민농민당을 공동창당했다.",
+    "source": "https://en.wikipedia.org/wiki/Iuliu_Maniu",
+    "excerpt": "Maniu served as Prime Minister of Romania for three terms during 1928–1933, and, with Ion Mihalache, co-founded the National Peasants' Party.",
+    "locator": "characters 291:432; sha256 90ee3dbe0b7f682320eb37435edcda911f41e2620204e3049d51573896da38a5"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Iuliu_Maniu",
+    "locator": "en: Interwar",
+    "excerpt": "Citing fears that the PNL had ensured a grip over Romanian politics, the PNR and the Peasants' Party united in 1926, with Maniu becoming the President of the new political force, the National Peasants' Party (PNȚ), for the following seven years, and then again between 1937 and 1947.",
+    "claim": "마니우는 1926년 창당된 국민농민당의 총재를 7년간, 그리고 1937~1947년에 다시 맡았다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "President of the National Peasants' Party (1926-33, 1937-47); overlaps the existing NPP membership row (merge suggested). His earlier Romanian National Party leadership is already its own row."
+ },
+ {
+  "personId": "ivan-frolov",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1952,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "원문은 프롤로프를 소련 및 러시아의 철학자이자 과학아카데미 회원으로 규정한다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "excerpt": "Ива́н Тимофе́евич Фроло́в (1 сентября 1929, с. Доброе, Центрально-Чернозёмная область, СССР — 18 ноября 1999, Ханчжоу, Китай) — советский и российский философ, академик РАН, АН СССР",
+    "locator": "characters 0:181; sha256 dad07f3a6aa1499c42ed84a260349c6eb201092819e1fbe96d1692386ac6016e"
+   },
+   {
+    "claim": "그는 소련 과학아카데미 철학연구소에서 철학 학위를 취득하며 학술 연구 경력을 쌓았다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "excerpt": "В 1958 году в Институте философии АН СССР защитил диссертацию на соискание учёной степени кандидата философских наук",
+    "locator": "characters 1859:1975; sha256 dad07f3a6aa1499c42ed84a260349c6eb201092819e1fbe96d1692386ac6016e"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "С 1952 года — младший редактор (Издательство АН СССР, журнал «Вопросы философии», журнал «Проблемы мира и социализма», журнал «Человек»).",
+    "claim": "프롤로프는 1952년부터 소련 과학아카데미 출판사와 「철학의 문제」 등의 편집자로 일했다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "В 1968—1977 годах — главный редактор журнала «Вопросы философии».",
+    "claim": "1968~1977년 「철학의 문제」 주필을 지냈다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "23 декабря 1987 года избран академиком АН СССР.",
+    "claim": "1987년 12월 23일 소련 과학아카데미 정회원으로 선출되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Scholarly career in USSR Academy of Sciences bodies (editor, academician) is Soviet state-institution employment; post-1991 Russian Academy work (Institute of Man) would be russia-federation, a separate activity."
+ },
+ {
+  "personId": "jan-nowak-jezioranski",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "american-radio-free-europe",
+  "relation": "service",
+  "startYear": 1952,
+  "endYear": 1976,
+  "evidence": [
+   {
+    "claim": "그는 폴란드의 언론인이자 작가였다.",
+    "source": "https://en.wikipedia.org/wiki/Jan_Nowak-Jeziora%C5%84ski",
+    "excerpt": "was a Polish journalist, writer, politician, social worker and patriot",
+    "locator": "characters 95:165; sha256 bc9ae45a4d70af4b18d2c6b5bc2dc4d3c07aee8890e8377b725e6b144b1151ec"
+   },
+   {
+    "claim": "전후 그는 자유유럽방송 폴란드어 부서장으로 일했다.",
+    "source": "https://en.wikipedia.org/wiki/Jan_Nowak-Jeziora%C5%84ski",
+    "excerpt": "After the war he worked as the head of the Polish section of Radio Free Europe",
+    "locator": "characters 547:625; sha256 bc9ae45a4d70af4b18d2c6b5bc2dc4d3c07aee8890e8377b725e6b144b1151ec"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jan_Nowak-Jeziora%C5%84ski",
+    "locator": "en: After the war",
+    "excerpt": "In 1952 he also became head of the Polish section of the Munich-based Radio Free Europe.",
+    "claim": "그는 1952년 뮌헨의 자유유럽방송 폴란드어부 책임자가 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jan_Nowak-Jeziora%C5%84ski",
+    "locator": "en: After the war",
+    "excerpt": "After giving up his posts in 1976 he became one of the most prominent members of the Polish American Congress.",
+    "claim": "그는 1976년 그 직책들을 내려놓았다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "american-radio-free-europe",
+   "kind": "institution",
+   "label": {
+    "ko": "자유유럽방송",
+    "en": "Radio Free Europe/Radio Liberty (RFE/RL)"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1949,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "His journalism is documented as head of RFE's Polish section 1952-1976; RFE is not in the catalog. (Function arts kept; propaganda would also fit a state-funded broadcaster.)"
+ },
+ {
+  "personId": "jan-palach",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": "independent",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "팔라흐는 1968년 바르샤바 조약군의 체코슬로바키아 침공에 반대하는 정치적 항의로 1969년 분신했다.",
+    "source": "https://en.wikipedia.org/wiki/Jan_Palach",
+    "excerpt": "His self-immolation in 1969 at the age of 20 was a political protest against the Warsaw Pact invasion of Czechoslovakia in 1968 which brought an end to the Prague Spring.",
+    "locator": "characters 169:339; sha256 1422cb77aaea69a1174b61eea4d1e04d7455354663ff803c870a60a7607b1d35"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Individual protest; the clandestine group he claimed in his letter \"seems never existed\" per the source, so no organization."
+ },
+ {
+  "personId": "jean-jaures",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-french-socialist-1902",
+  "relation": "service",
+  "startYear": 1902,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "장 조레스는 1902년 프랑스 사회당의 지도자가 되었고, 1905년 SFIO로의 통합을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Jean_Jaur%C3%A8s",
+    "excerpt": "in 1902 the leader of the French Socialist Party, which opposed Jules Guesde's revolutionary Socialist Party of France. The two parties merged in 1905 into the French Section of the Workers' International (SFIO).",
+    "locator": "characters 356:568; sha256 0088b8abd75dcb8c103301366ac8566a84d0fbd7478c6bda7b2f92df2531a46f"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/French_Socialist_Party_(1902)",
+    "locator": "en: lead",
+    "excerpt": "The French Socialist Party (French: Parti socialiste français, PSF) was a social democratic political party in France, founded in 1902 and disestablished in 1905.",
+    "claim": "프랑스사회당(PSF)은 1902년 창당되어 1905년 해산된 사회민주주의 정당이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/French_Socialist_Party_(1902)",
+    "locator": "en: lead",
+    "excerpt": "The PSF came from the merger of the possibilist Federation of the Socialist Workers of France (FTSF), Jean Allemane's Revolutionary Socialist Workers' Party (POSR), and some independent socialist politicians like Jean Jaurès, who went on to become the party's leader.",
+    "claim": "조레스는 이 당의 지도자가 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-french-socialist-1902",
+   "kind": "party",
+   "label": {
+    "ko": "프랑스사회당(조레스)",
+    "en": "French Socialist Party (1902–1905)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1902,
+     1905
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Leader of the 1902-1905 Parti socialiste français before the SFIO merger (SFIO is already a separate row); disambiguated from PSF 1936 '프랑스사회당(라 로크)'."
+ },
+ {
+  "personId": "john-paul-ii",
+  "functionId": "government",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "state-vatican",
+  "relation": "service",
+  "startYear": 1978,
+  "endYear": 2005,
+  "evidence": [
+   {
+    "claim": "카롤 보이티와는 1978년부터 2005년까지 가톨릭 교회의 수장이자 바티칸 시국의 주권자였다.",
+    "source": "https://en.wikipedia.org/wiki/Pope_John_Paul_II",
+    "excerpt": "Pope John Paul II (born Karol Józef Wojtyła; 18 May 1920 – 2 April 2005) was the head of the Catholic Church and sovereign of Vatican City from 16 October 1978 until his death in 2005.",
+    "locator": "characters 0:184; sha256 78960177a70363c393c3bc20039c1e71d2adfa96358675e49cc6cf1a9bb88db1"
+   },
+   {
+    "claim": "그는 1978년 10월 콘클라베에서 교황으로 선출되었다.",
+    "source": "https://en.wikipedia.org/wiki/Pope_John_Paul_II",
+    "excerpt": "Wojtyła was elected pope on the third day of the October 1978 conclave, becoming one of the youngest popes in over a century.",
+    "locator": "characters 1161:1286; sha256 78960177a70363c393c3bc20039c1e71d2adfa96358675e49cc6cf1a9bb88db1"
+   }
+  ],
+  "newAffiliation": {
+   "id": "state-vatican",
+   "kind": "state",
+   "label": {
+    "ko": "바티칸 시국 국가기관",
+    "en": "Vatican City / Holy See state institutions"
+   },
+   "countryCode": "vatican",
+   "parentId": null,
+   "periods": [
+    [
+     1929,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Sovereign of Vatican City 1978-2005. NOTE: countryCode \"vatican\" is not yet in the catalog country list; alternative is to fold this activity into catholic-church."
+ },
+ {
+  "personId": "john-paul-ii",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "catholic-church",
+  "relation": "service",
+  "startYear": 1946,
+  "endYear": 2005,
+  "evidence": [
+   {
+    "claim": "보이티와는 1946년 사제 서품을 받았고 1978년부터 2005년 사망까지 가톨릭 교회의 수장이었다.",
+    "source": "https://en.wikipedia.org/wiki/Pope_John_Paul_II",
+    "excerpt": "Pope John Paul II (born Karol Józef Wojtyła; 18 May 1920 – 2 April 2005) was the head of the Catholic Church and sovereign of Vatican City from 16 October 1978 until his death in 2005.",
+    "locator": "characters 0:184; accessed 2026-09-27; sha256 fb72378a811f04725947242999a56275d9277e04c44dc3f27d57008f0d51706d"
+   },
+   {
+    "claim": "보이티와는 1946년 사제 서품을 받았고 1978년부터 2005년 사망까지 가톨릭 교회의 수장이었다.",
+    "source": "https://en.wikipedia.org/wiki/Pope_John_Paul_II",
+    "excerpt": "After finishing his studies at the seminary in Kraków, Wojtyła was ordained as a priest on All Saints' Day, 1 November 1946, by the Archbishop of Kraków, Cardinal Adam Stefan Sapieha.",
+    "locator": "characters 9918:10101; accessed 2026-09-27; sha256 fb72378a811f04725947242999a56275d9277e04c44dc3f27d57008f0d51706d"
+   }
+  ],
+  "newAffiliation": {
+   "id": "catholic-church",
+   "kind": "institution",
+   "label": {
+    "ko": "가톨릭교회",
+    "en": "Catholic Church"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Priest from 1946 and head of the Catholic Church 1978-2005; the church is not in the catalog (international, so countryCode null)."
+ },
+ {
+  "personId": "john-reed",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": "independent",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "존 리드는 미국의 저널리스트이자 시인이었다.",
+    "source": "https://en.wikipedia.org/wiki/John_Reed_%28journalist%29",
+    "excerpt": "John Silas Reed (October 22, 1887 – October 17, 1920) was an American journalist, poet, and communist activist.",
+    "locator": "characters 0:111; sha256 5bb645010b9b8cf17df854943fcf2b4ade632973c283a1608cbf13b06938cd21"
+   },
+   {
+    "claim": "그는 1919년 저서 『러시아 혁명 10일』로 가장 잘 알려져 있다.",
+    "source": "https://en.wikipedia.org/wiki/John_Reed_%28journalist%29",
+    "excerpt": "He is best known for his coverage of the October Revolution in Petrograd, Russia, which he wrote about in his 1919 book Ten Days That Shook the World.",
+    "locator": "characters 243:393; sha256 5bb645010b9b8cf17df854943fcf2b4ade632973c283a1608cbf13b06938cd21"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Freelance journalist/poet; his party roles are already separate rows (CPUSA, Socialist Party) and the source names no employer organization for the reporting."
+ },
+ {
+  "personId": "julian-marchlewski",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "polish-revolutionary-committee",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "마르흘레프스키는 폴란드 공산주의 정치인이자 혁명 활동가였으며 폴란드 임시혁명위원회 의장을 지냈다.",
+    "source": "https://en.wikipedia.org/wiki/Julian_Marchlewski",
+    "excerpt": "Julian Baltazar Józef Marchlewski (17 May 1866 – 22 March 1925) was a Polish communist politician, revolutionary activist and publicist who served as chairman of the Provisional Polish Revolutionary Committee.",
+    "locator": "characters 0:209; sha256 f5cac95da614491de3ebfbf701b68813956c383b6f3bc7a2fcc6615b8430ef24"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Julian_Marchlewski",
+    "locator": "en: Biography",
+    "excerpt": "In July 1920, during the Polish-Soviet War, Marchlewski was appointed Chairman of the Polish Provisional Revolutionary Committee (Tymczasowy Komitet Rewolucyjny Polski) in Białystok, implying that he would have been head of the Polish government had the Red Army won the war, though real power would probably have bene exercised by Dzerzhinsky, nominally his deputy.",
+    "claim": "마르흘레프스키는 1920년 7월 비아위스토크에서 폴란드 임시혁명위원회 위원장에 임명되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Provisional_Polish_Revolutionary_Committee",
+    "locator": "en: lead",
+    "excerpt": "The Provisional Polish Revolutionary Committee (Polish: Tymczasowy Komitet Rewolucyjny Polski, TKRP, Polrewkom; Russian: Временный революционный комитет Польши, Польревком) was a revolutionary committee established by the Russian Soviet Federative Socialist Republic during the Polish–Soviet War as the intended provisional government for territories occupied by the Red Army, with the purpose of establishing a Soviet republic in Poland.",
+    "claim": "폴란드 임시혁명위원회는 폴란드-소비에트 전쟁 중 러시아 소비에트 공화국이 세운 임시정부 예정 기구였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "polish-revolutionary-committee",
+   "kind": "force",
+   "label": {
+    "ko": "폴란드 임시혁명위원회",
+    "en": "Provisional Polish Revolutionary Committee (Polrevkom)"
+   },
+   "countryCode": "poland",
+   "parentId": null,
+   "periods": [
+    [
+     1920,
+     1920
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Chairman of Polrevkom in 1920; not in catalog (alternative: treat as an RSFSR organ under state-soviet)."
+ },
+ {
+  "personId": "juri-mikk",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "estonian-mrp-aeg",
+  "relation": "service",
+  "startYear": 1987,
+  "endYear": 1988,
+  "evidence": [
+   {
+    "claim": "1987년 모스크바에서 독소 불가침 조약 공개를 요구하는 1인 시위를 했다. 이 자료만으로 ERSP 당적을 확정하지 않는다.",
+    "source": "https://communistcrimes.org/et/eesti-dissidentide-tegevus-perestroika-ja-glasnosti-perioodil",
+    "excerpt": "30. septembril 1987 korraldas Jüri Mikk Moskvas üksikmeeleavalduse, millega nõudis MRP avalikustamist.",
+    "locator": "characters 13101:13203; sha256 99b95b5615fe0179846d378337955f2a55d0a0d8fa85de71968f260cf67d1ce0"
+   },
+   {
+    "source": "https://et.wikipedia.org/wiki/MRP-AEG",
+    "locator": "et: Ajalugu",
+    "excerpt": "MRP-AEG moodustasid 15. augustil 1987 Lagle Parek, Tiit Madisson, Jüri Mikk, Jan Kõrb, Heiki Ahonen, Ilse Heinsalu ja Mati Kiirend.",
+    "claim": "위리 미크는 1987년 8월 15일 MRP-AEG를 결성한 일곱 명 가운데 한 명이다."
+   },
+   {
+    "source": "https://et.wikipedia.org/wiki/MRP-AEG",
+    "locator": "et: lead",
+    "excerpt": "MRP-AEG (Molotov-Ribbentropi Pakti Avalikustamise Eesti Grupp) oli aastatel 1987–1988 Eestis tegutsenud organisatsioon, mille eesmärk oli Molotovi-Ribbentropi pakti ja selle salaprotokollide avalikustamine ning tagajärgede likvideerimine.",
+    "claim": "MRP-AEG는 1987~1988년 독소불가침조약과 비밀의정서 공개를 목표로 활동한 에스토니아 조직이다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "estonian-mrp-aeg",
+   "kind": "force",
+   "label": {
+    "ko": "MRP-AEG",
+    "en": "MRP-AEG (Estonian Group for the Disclosure of the Molotov–Ribbentrop Pact)"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1987,
+     1988
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "mrp-aeg-estonian-group-for-the-disclosure-of-the-molotov-ribbentrop-pact"
+  },
+  "reason": "Co-founder of MRP-AEG (1987); a glossary term already exists, its affiliation does not (not a party, so no new term needed)."
+ },
+ {
+  "personId": "khieu-samphan",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-khmer-national-solidarity",
+  "relation": "service",
+  "startYear": 1997,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "키우 삼판은 1997년 5월 크메르 민족연대당을 창당한 크메르 루즈의 고위 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+    "excerpt": "The Khmer National Solidarity Party (KNSP) was a Cambodian political party founded in May 1997 by senior Khmer Rouge leader Khieu Samphan",
+    "locator": "characters 0:137; sha256 350958fe682bd7c629b4a056304a7edc1ee4e4c123adb4b19de0cad02f534be9"
+   },
+   {
+    "claim": "그는 이전에 캄보디아 민족통일당의 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+    "excerpt": "Khieu Samphan was formerly the leader of the Cambodian National Unity Party.",
+    "locator": "characters 224:300; sha256 350958fe682bd7c629b4a056304a7edc1ee4e4c123adb4b19de0cad02f534be9"
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-khmer-national-solidarity",
+   "kind": "party",
+   "label": {
+    "ko": "크메르 민족연대당",
+    "en": "Khmer National Solidarity Party (KNSP)"
+   },
+   "countryCode": "cambodia",
+   "parentId": null,
+   "periods": [
+    [
+     1997,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founded the KNSP in May 1997 (existing evidence); party not in catalog. End year not given by the source. His earlier Cambodian National Unity Party leadership could be a separate activity."
+ },
+ {
+  "personId": "kim-jong-suk",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "china-pla",
+  "relation": "service",
+  "startYear": 1935,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "김정숙은 1935~1936년경 김일성의 유격대에 합류했다.",
+    "source": "https://en.wikipedia.org/wiki/Kim_Jong-suk",
+    "excerpt": "Most sources agree that Kim Jong-suk then joined Kim Il Sung's guerrilla force in 1935 or 1936 as a kitchen helper.",
+    "locator": "characters 839:954; sha256 7ed67094d1f88c41b4e104d295198a4d8c5ff6b294449e7f4c9f2c7520a90733"
+   },
+   {
+    "claim": "김정숙은 유격대에서 무장 전투에 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Kim_Jong-suk",
+    "excerpt": "Without losing a moment, Comrade Kim Jung Sook [Kim Jong Suk] shielded the General with her own body and shot down an enemy with her revolver.",
+    "locator": "characters 1700:1842; sha256 7ed67094d1f88c41b4e104d295198a4d8c5ff6b294449e7f4c9f2c7520a90733"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Kim_Il_Sung",
+    "locator": "en: Early life and anti-Japanese guerrilla activity",
+    "excerpt": "In February 1936, Kim became a member of the Northeast Counter-Japanese United Army, a guerrilla group established by the CCP.",
+    "claim": "김일성은 1936년 2월 중국공산당이 세운 유격대인 동북항일연군의 일원이 되었다(김정숙이 합류한 유격대)."
+   },
+   {
+    "source": "https://ko.wikipedia.org/wiki/%EA%B9%80%EC%A0%95%EC%88%99_(%EA%B9%80%EC%9D%BC%EC%84%B1%EC%9D%98_%EB%B6%80%EC%9D%B8)",
+    "locator": "ko: 생애",
+    "excerpt": "1937년 1월에 중국공산당에 입당하여 활동하였다.",
+    "claim": "김정숙은 1937년 1월 중국공산당에 입당했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Kim Il Sung's guerrilla force was a CCP-led Northeast Anti-Japanese United Army unit; same mapping as kim-chaek (china-pla). Her 1937 CCP membership could be added as a china-ccp row."
+ },
+ {
+  "personId": "kim-won-bong",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "korean-independence-movement",
+  "relation": "service",
+  "startYear": 1919,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "김원봉은 1919년 일제 관료에 대한 공격을 감행한 무장 독립운동 단체 의열단을 창설했다.",
+    "source": "https://en.wikipedia.org/wiki/Kim_W%C5%8Fnbong",
+    "excerpt": "In 1919, Kim established the Heroic Corps, an anarchist group which carried out a six-year campaign of attacks against Japanese officials.",
+    "locator": "characters 170:308; sha256 fd664a62d7c17a401b653650c5de5c9332388d11efb1faad01016078f3c8e959"
+   },
+   {
+    "claim": "김원봉은 1935년 한국민족혁명당을 창설하고 그 군사부대인 한국의용대를 지휘했다.",
+    "source": "https://en.wikipedia.org/wiki/Kim_W%C5%8Fnbong",
+    "excerpt": "In 1935, he established the Korean National Revolutionary Party, which formed part of a united front with other Korean radical groups, and commanded its military detachment, the Korean Volunteer Corps.",
+    "locator": "characters 309:510; sha256 fd664a62d7c17a401b653650c5de5c9332388d11efb1faad01016078f3c8e959"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Kim_W%C5%8Fnbong",
+    "locator": "en: Biography",
+    "excerpt": "In 1938, Kim Wŏnbong was appointed as commander-in-chief of its military branch, the Korean Volunteer Corps (KVC), which later merged together with other pro-independence forces, forming the Korean Liberation Army.",
+    "claim": "김원봉은 1938년 조선의용대 총사령관이 되었고 의용대는 뒤에 한국광복군으로 합류했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Heroic Corps (의열단), Korean National Revolutionary Party and Korean Volunteer Corps are independence societies/armies covered by the existing umbrella korean-independence-movement."
+ },
+ {
+  "personId": "lagle-parek",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-estonian-national-independence",
+  "relation": "service",
+  "startYear": 1988,
+  "endYear": 1992,
+  "evidence": [
+   {
+    "claim": "그녀는 1988년 에스토니아 국민독립당(ERSP)의 창당자 중 한 명이었고 1988년부터 1992년까지 당 의장을 지냈다.",
+    "source": "https://en.wikipedia.org/wiki/Lagle_Parek",
+    "excerpt": "In 1988, she was one of the founders of the Estonian National Independence Party (ERSP) and she was its chairman from 1988–1992.",
+    "locator": "characters 2693:2821; sha256 d9ad67b5c611c5ad8d2d4feff0a9bfb3edb8b31b19968f75b816665f2cc41691"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Estonian_National_Independence_Party",
+    "locator": "en: lead",
+    "excerpt": "The Estonian National Independence Party, or ENIP, (Estonian: Eesti Rahvusliku Sõltumatuse Partei, ERSP), founded on 20 August 1988 in Estonian SSR, was the first non-communist political party established in the former USSR.",
+    "claim": "에스토니아 민족독립당(ERSP)은 1988년 8월 20일 창당된 소련 최초의 비공산 정당이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Lagle_Parek",
+    "locator": "en: Political career",
+    "excerpt": "Parek was a member of the Pro Patria and Res Publica Union party, formed in 1995 through the merger of ERSP and the National Coalition Party along with the \"Fatherland\" Party, to create the \"Isamaaliit\" (\"Fatherland Union\"), and then in 2006, she was a member of the Pro Patria Union and Res Publica Party.",
+    "claim": "ERSP는 1995년 국민연합당 등과 합당해 조국연합이 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-estonian-national-independence",
+   "kind": "party",
+   "label": {
+    "ko": "에스토니아 민족독립당",
+    "en": "Estonian National Independence Party (ERSP)"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1988,
+     1995
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Co-founder and chair of ERSP 1988-1992; party not in catalog."
+ },
+ {
+  "personId": "laszlo-tokes",
+  "functionId": "political-leadership",
+  "newFunctionId": "legislature",
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "international-european-parliament",
+  "relation": "service",
+  "startYear": 2007,
+  "endYear": 2019,
+  "evidence": [
+   {
+    "claim": "퇴케시는 2007년부터 2019년까지 유럽의회 의원으로 재직했다.",
+    "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+    "excerpt": "He was a Member of the European Parliament (MEP) from 2007 to 2019.",
+    "locator": "characters 137:204; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293"
+   },
+   {
+    "claim": "그는 2010년부터 2012년까지 유럽의회 부의장을 지냈다.",
+    "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+    "excerpt": "Tőkés served as a Vice-President of the European Parliament from 2010 to 2012.",
+    "locator": "characters 205:283; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+    "locator": "en: European Parliament",
+    "excerpt": "In 2007, László Tőkés ran for the European Parliament as an independent, with the support of Hungary’s Fidesz.",
+    "claim": "퇴케시는 2007년 피데스의 지원을 받는 무소속으로 유럽의회 선거에 나섰다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "international-european-parliament",
+   "kind": "international",
+   "label": {
+    "ko": "유럽의회",
+    "en": "European Parliament"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": [
+    [
+     1952,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "MEP 2007-2019 and EP vice-president 2010-12; seat changed lists (independent, RMDSZ, Fidesz), so the stable body is the European Parliament. Suggest functionId legislature."
+ },
+ {
+  "personId": "laszlo-tokes",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "romanian-reformed-church",
+  "relation": "service",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "퇴케시는 루마니아의 목사이자 정치인이다.",
+    "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+    "excerpt": "László Tőkés (Hungarian pronunciation: [ˈlaːsloː ˈtøːkeːʃ]; born 1 April 1952) is a Romanian pastor and politician of Hungarian descent.",
+    "locator": "plain-text extract characters 0:136; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293"
+   },
+   {
+    "claim": "그는 루마니아 개혁교회 키라이하고멜레크 교구 주교를 지냈다.",
+    "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+    "excerpt": "Bishop of the Reformed Diocese of Királyhágómellék of the Romanian Reformed Church, he is also a former Honorary President of the Democratic Alliance of Hungarians in Romania.",
+    "locator": "plain-text extract characters 284:459; sha256 9ef69a6d6df7db08cf4747cdd24b1ea8c1d0e21dc83f8a411531f1d62b89c293"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_T%C5%91k%C3%A9s",
+    "locator": "en: Bishop",
+    "excerpt": "After the removal of the discredited Communist bishop of Oradea, László Papp, in 1989, László Tőkés was elected bishop of the Reformed Diocese of Királyhágómellék.",
+    "claim": "1989년 라슬로 파프 주교가 물러난 뒤 퇴케시는 키라이하고멜레크 개혁교회 교구 주교로 선출되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "romanian-reformed-church",
+   "kind": "institution",
+   "label": {
+    "ko": "루마니아 개혁교회",
+    "en": "Reformed Church in Romania"
+   },
+   "countryCode": "romania",
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Pastor and later bishop of the Reformed Church in Romania; church not in catalog."
+ },
+ {
+  "personId": "louis-auguste-blanqui",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-societe-des-saisons",
+  "relation": "service",
+  "startYear": 1837,
+  "endYear": 1839,
+  "evidence": [
+   {
+    "claim": "블랑키는 비밀 결사인 가족회를 창설하고 계절회를 조직하여 1839년 파리 봉기를 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Louis-Auguste_Blanqui",
+    "excerpt": "he founded the Société des Familles in 1834; he was jailed again in 1836–37, and upon his release patiently organised the secret Société des Saisons (Society of the Seasons). On 12 May 1839, he led the society in an ill-fated insurrectionary attempt in Paris.",
+    "locator": "characters 5357:5616; sha256 8eb76b10410060942fd87f0607cc796803d0ce21f77565284aac76dd5be0b792"
+   },
+   {
+    "claim": "1848년 혁명 후 블랑키는 중앙공화회를 창설하고 대중 동원을 통해 급진적 요구를 관철하려 했다.",
+    "source": "https://en.wikipedia.org/wiki/Louis-Auguste_Blanqui",
+    "excerpt": "He returned to Paris and quickly became a leading figure in the radical movement, founding the Société républicaine centrale (Central Republican Society). Through this political club, he pushed the Provisional Government to adopt more revolutionary measures through mass mobilisation",
+    "locator": "characters 6274:6557; sha256 8eb76b10410060942fd87f0607cc796803d0ce21f77565284aac76dd5be0b792"
+   },
+   {
+    "source": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_des_saisons",
+    "locator": "fr: lead",
+    "excerpt": "Fondée en 1837 par Blanqui, Barbès et Bernard, elle succède à la Société des familles (SDF) et, forte de quelque 1 500 membres, lance en mai 1839 une insurrection.",
+    "claim": "계절결사는 1837년 블랑키·바르베스·베르나르가 세웠고 1839년 5월 봉기를 일으켰다."
+   },
+   {
+    "source": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_des_saisons",
+    "locator": "fr: lead",
+    "excerpt": "Son échec aboutit à sa disparition.",
+    "claim": "봉기의 실패로 결사는 소멸했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-societe-des-saisons",
+   "kind": "force",
+   "label": {
+    "ko": "계절결사",
+    "en": "Society of the Seasons (Société des Saisons)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1837,
+     1839
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founded and led the Société des Saisons (1837-39 rising); his other societies (Familles 1834, Société républicaine centrale 1848) could be added separately. Korean name follows ko.wikipedia usage \"계절결사\"."
+ },
+ {
+  "personId": "luis-emilio-recabarren",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-chilean-communist",
+  "relation": "service",
+  "startYear": 1912,
+  "endYear": 1924,
+  "evidence": [
+   {
+    "claim": "레카바렌은 노동운동에 깊이 관여하며 노동자들을 정치적·산업적으로 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Luis_Emilio_Recabarren",
+    "excerpt": "Heavily involved in the labour movement, organising workers both politically and industrially, as a consequence of which he was re-prosecuted by the government and had to escape to Argentina.",
+    "locator": "characters 1841:2032; sha256 394605b10ad094eefbe1ac09b36ac3fee150286c6dcfd1c3017905a46ca6d758"
+   },
+   {
+    "claim": "그는 초석 노동자들과 함께 사회주의 노동자당(POS)을 창설했다.",
+    "source": "https://en.wikipedia.org/wiki/Luis_Emilio_Recabarren",
+    "excerpt": "In 1911 he moved back to Iquique where, unhappy with his party and together with a group of nitrate workers, he founded the Socialist Workers' Party (POS) on 4 June 1912.",
+    "locator": "characters 2334:2504; sha256 394605b10ad094eefbe1ac09b36ac3fee150286c6dcfd1c3017905a46ca6d758"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Luis_Emilio_Recabarren",
+    "locator": "en: Biography",
+    "excerpt": "Fascinated by the October Revolution, and after the party congress of 22 January 1922 that transformed the Socialist Workers Party (POS) into the Communist Party of Chile (PCCh), he travelled to the USSR as the only Chilean delegate to the Union Congress of the Third International that took place in Moscow.",
+    "claim": "1922년 당대회에서 사회주의노동자당(POS)이 칠레 공산당으로 전환되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Luis_Emilio_Recabarren",
+    "locator": "en: lead",
+    "excerpt": "Luis Emilio Recabarren Serrano (Spanish pronunciation: [lwis eˈmiljo rekaˈβaren]; 6 July 1876 – 19 December 1924) was a Chilean political figure.",
+    "claim": "레카바렌은 1924년 사망했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Founded the POS in 1912, which the catalog counts as party-chilean-communist (period from 1912); overlaps the existing PCCh membership row (merge suggested). His 1894-1912 Democrat Party work would be a separate, not-yet-catalogued party."
+ },
+ {
+  "personId": "manandafy-rakotonirina",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-malagasy-mfm",
+  "relation": "service",
+  "startYear": 1972,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "그는 1972년 12월 27일 MFM을 창당했다.",
+    "source": "https://en.wikipedia.org/wiki/Manandafy_Rakotonirina",
+    "excerpt": "On 27 December 1972, he founded the Movement for Proletarian Power (MFM) with Rakotonirainy Germain.",
+    "locator": "characters 876:976; sha256 c8a7306cc6af6a30040c7380081619d6078308141f27416124ce0797f4ebba3a"
+   },
+   {
+    "claim": "그는 자신이 창당한 당을 계속 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Manandafy_Rakotonirina",
+    "excerpt": "Rakotonirina's party had moved towards liberalism, and it renamed itself the Militant Party for the Development of Madagascar.  He continued to lead the party.",
+    "locator": "characters 2355:2514; sha256 c8a7306cc6af6a30040c7380081619d6078308141f27416124ce0797f4ebba3a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+    "locator": "en: lead",
+    "excerpt": "The Chairman of the party is Manandafy Rakotonirina.",
+    "claim": "라코토니리나는 MFM 의장이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+    "locator": "en: lead",
+    "excerpt": "The party was founded on 27 December 1972 as the Party for Proletarian Power (Mpitolona ho amin'ny Fanjakana ny Madinika).",
+    "claim": "MFM은 1972년 12월 27일 소민 권력 투사(프롤레타리아 권력당)로 창당되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-malagasy-mfm",
+   "kind": "party",
+   "label": {
+    "ko": "소민 권력 투사(MFM)",
+    "en": "MFM – Movement for Proletarian Power / Movement for the Progress of Madagascar"
+   },
+   "countryCode": "madagascar",
+   "parentId": null,
+   "periods": [
+    [
+     1972,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder and lifelong leader of MFM; party not in catalog. Korean label reuses the bio's \"소민 권력 투사(MFM)\" (later renamed for development/progress; owner may prefer another form)."
+ },
+ {
+  "personId": "marceau-pivert",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-french-psop",
+  "relation": "service",
+  "startYear": 1938,
+  "endYear": 1940,
+  "evidence": [
+   {
+    "claim": "피베르는 1930년대 초 SFIO 내 좌파 조직인 혁명적 좌파를 결성하고 지도했다.",
+    "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+    "excerpt": "In the early 1930s, Pivert organised the most left-wing members of the SFIO in his Gauche Révolutionnaire (\"Revolutionary Left\") tendency of which Daniel Guérin was a member.",
+    "locator": "characters 603:777; sha256 8865c51493356e245a21a264c3b1922a3c9de3a1cee82484d6af022f73f2c0f9"
+   },
+   {
+    "claim": "그는 SFIO를 떠나 노동자·농민 사회당(PSOP)을 창설했다.",
+    "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+    "excerpt": "The Gauche révolutionnaire left the SFIO to establish the Workers and Peasants' Socialist Party (Parti Socialiste Ouvrier et Paysan or PSOP), awkwardly between socialists and Stalinism.",
+    "locator": "characters 1673:1858; sha256 8865c51493356e245a21a264c3b1922a3c9de3a1cee82484d6af022f73f2c0f9"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+    "locator": "en: lead",
+    "excerpt": "The Workers and Peasants' Socialist Party (Parti socialiste ouvrier et paysan, PSOP ) was a socialist organisation in France, formed on June 8, 1938, by Marceau Pivert.",
+    "claim": "노동자농민사회당(PSOP)은 1938년 6월 8일 마르소 피베르가 결성했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Marceau_Pivert",
+    "locator": "en: Workers and Peasants' Socialist Party",
+    "excerpt": "In 1940, it was outlawed after the fall of France to Nazi Germany, on orders of Vichy French leader Philippe Pétain.",
+    "claim": "PSOP는 1940년 비시 정권에 의해 불법화되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-french-psop",
+   "kind": "party",
+   "label": {
+    "ko": "노동자농민사회당",
+    "en": "Workers and Peasants' Socialist Party (PSOP)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1938,
+     1940
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder-leader of PSOP 1938-1940 (from his Gauche Révolutionnaire SFIO tendency); SFIO membership is already a separate row."
+ },
+ {
+  "personId": "maurice-ahanhanzo-glele",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-benin",
+  "relation": "service",
+  "startYear": 1990,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "모리스 아앙한조글레는 베냉의 1990년 헌법 제정에 주도적으로 기여한 저명한 법학자·헌법학자이다.",
+    "source": "https://lanation.bj/actualites/hommage-au-professeur-maurice-ahanhanzo-glele-une-fierte-nationale-aux-valeurs-intrinseques",
+    "excerpt": "Le professeur Maurice Ahanhanzo-Glèlè est un grand juriste, un grand constitutionnaliste. Il a été l’inspirateur à titre principal de la Constitution du 11 décembre 1990 et je lui rends honneur.",
+    "locator": "characters 901:1095; sha256 76ed4b5d1c81adeec28bff574c0db3ede3c121860f64b0527b076f363c9511b3"
+   },
+   {
+    "claim": "그는 교수이자 학자로서 뛰어난 경력을 쌓았으며, 소르본에서 가르친 바 있다.",
+    "source": "https://lanation.bj/actualites/hommage-au-professeur-maurice-ahanhanzo-glele-une-fierte-nationale-aux-valeurs-intrinseques",
+    "excerpt": "Maurice Ahanhanzo-Glèlè a fait une carrière remarquable comme professeur et scientifique. Il a été mon professeur quand j’étais à Paris Sorbonne Panthéon.",
+    "locator": "characters 1468:1622; sha256 76ed4b5d1c81adeec28bff574c0db3ede3c121860f64b0527b076f363c9511b3"
+   },
+   {
+    "source": "https://fr.wikipedia.org/wiki/Maurice_Gl%C3%A8l%C3%A8-Ahanhanzo",
+    "locator": "fr: lead",
+    "excerpt": "Docteur en droit et ancien Président de l'Assemblée constituante du Bénin (1990-1991).",
+    "claim": "그는 1990~1991년 베냉 제헌의회 의장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "His constitutional work was as president of Benin's constituent body (1990-91), a state institution; UNESCO/UN posts are separate activities."
+ }
+]

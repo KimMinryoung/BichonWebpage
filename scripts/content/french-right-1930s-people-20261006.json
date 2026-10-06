@@ -1,0 +1,3115 @@
+{
+  "people": [
+    {
+      "id": "maurice-pujo",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "모리스",
+        "en": "Maurice"
+      },
+      "familyName": {
+        "ko": "퓌조",
+        "en": "Pujo"
+      },
+      "cyrillic": "Maurice Pujo",
+      "years": "1872–1955",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "카믈로 뒤 루아를 만들고 30년 동안 이끈 악시옹 프랑세즈의 공동 창립자",
+        "en": "Co-founder of Action Française who created the Camelots du Roi and led them for three decades"
+      },
+      "bio": {
+        "ko": "1872년 센에마른에서 태어나 독일 철학에 기운 문필가로 출발했다. 드레퓌스 사건 중이던 1898년 앙리 보주아와 함께 드레퓌스 옹호로 돌아선 지식인 모임을 떠나 「악시옹 프랑세즈」라는 말을 처음 내건 글을 썼고, 이듬해 운동 창립에 참여해 모라스의 영향으로 왕당파가 되었다. 1908년 일간지 《악시옹 프랑세즈》를 공동 창간하고 11월 청년 행동대 카믈로 뒤 루아를 만들어 1930년대까지 지휘했으며, 1934년 1~2월 스타비스키 사건 시위를 이끌었다. 점령기에는 리옹에서 모라스와 신문을 내며 비시를 지지했고, 1945년 1월 징역 5년과 공민권 박탈을 선고받았다.",
+        "en": "Born in Seine-et-Marne in 1872, he began as a man of letters drawn to German philosophy. In 1898, at the height of the Dreyfus affair, he and Henri Vaugeois left an intellectual circle that had turned Dreyfusard, and he wrote the article that first used the name “Action française”; the next year he helped found the movement and, under Maurras’s influence, became a royalist. In 1908 he co-founded the daily L’Action française and that November created the Camelots du Roi, its youth action squads, which he led into the 1930s, including the Stavisky-affair demonstrations of January and February 1934. Under the occupation he published the paper with Maurras in Lyon, backing Vichy, and in January 1945 he was sentenced to five years in prison and national degradation."
+      },
+      "moment": {
+        "ko": "1934년 1월부터 그는 스타비스키 사건을 내건 파리의 반의회 시위를 이끌었다. 그러나 2월 6일 저녁에는 현장에 오래 머물지 않았고, 사망자를 낸 총격 이틀 뒤에는 행방을 찾을 수 없었다",
+        "en": "From January 1934 he led the anti-parliamentary demonstrations in Paris over the Stavisky affair. Yet on the evening of 6 February he did not stay long on the scene, and two days after the deadly shooting he could not be found"
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Maurice_Pujo",
+        "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+        "https://en.wikipedia.org/wiki/Camelots_du_Roi"
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "french-camelots-du-roi",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1908,
+          "endYear": 1939,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+              "locator": "en: lead",
+              "claim": "퓌조는 악시옹 프랑세즈의 청년 조직 카믈로 뒤 루아의 지도자가 되었다.",
+              "excerpt": "He became the leader of the Camelots du Roi, the youth organization of the Action Française which took part in many right-wing demonstrations in the years before World War II (1939–45)."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+              "locator": "en: Action Française",
+              "claim": "퓌조는 1908년부터 1939년까지 카믈로 뒤 루아를 지휘했다.",
+              "excerpt": "He remained director of the Camelots from 1908 to 1939."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+              "locator": "fr: Les Camelots du Roi",
+              "claim": "퓌조는 1908년 11월 16일 카믈로 뒤 루아를 세웠다.",
+              "excerpt": "Il fonde les Camelots du Roi le 16 novembre 1908."
+            }
+          ]
+        },
+        {
+          "functionId": "propaganda",
+          "affiliationId": "french-action-francaise",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1899,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+              "locator": "en: lead",
+              "claim": "퓌조는 악시옹 프랑세즈 운동의 공동 창립자였다.",
+              "excerpt": "was a French journalist and co-founder of the nationalist and monarchist Action Française movement."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+              "locator": "fr: De l'Union pour l'action morale à l'Action française",
+              "claim": "퓌조는 1908년 일간지 악시옹 프랑세즈를 공동 창간해 1944년까지 공동 주간을 맡았다.",
+              "excerpt": "En mars 1908 avec le concours de Charles Maurras, il est l’un des cofondateurs du quotidien L’Action française (successeur de la Revue d'Action française), l’organe de presse du mouvement politique du même nom, qui est « d'extrême-droite antisémite, antiparlementaire et antirépublicain ». Il le codirige jusqu'en 1944."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1872,
+              1,
+              26
+            ]
+          },
+          "r": {
+            "ko": "센에마른 출생, 오를레앙 리세에서 수학",
+            "en": "Born in Seine-et-Marne; educated at the lycée in Orléans"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1892
+            ],
+            "end": [
+              1898
+            ]
+          },
+          "r": {
+            "ko": "문예지 《라 르뷔 죈》(뒤에 《라르 에 라 비》) 창간·주재",
+            "en": "Founds and runs the review La Revue jeune, later L’Art et la Vie"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1898
+            ],
+            "end": [
+              1899
+            ]
+          },
+          "r": {
+            "ko": "드레퓌스 반대파로 돌아서 악시옹 프랑세즈 위원회 창립, 1899년 운동 창립에 참여",
+            "en": "Turns anti-Dreyfusard, founds the Action française committee and joins the founding of the movement in 1899"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1908
+            ],
+            "end": [
+              1944
+            ]
+          },
+          "r": {
+            "ko": "일간 《악시옹 프랑세즈》 공동 창간, 공동 주간",
+            "en": "Co-founder and co-director of the daily L’Action française"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1908,
+              11
+            ],
+            "end": [
+              1939
+            ]
+          },
+          "r": {
+            "ko": "카믈로 뒤 루아 창설·지휘",
+            "en": "Founds and directs the Camelots du Roi"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1915
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "지방군으로 소집되어 전선 복무",
+            "en": "Called up to the territorial army and serves at the front"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1934,
+              1
+            ],
+            "end": [
+              1934,
+              2
+            ]
+          },
+          "r": {
+            "ko": "스타비스키 사건을 내건 파리 반의회 시위 지휘",
+            "en": "Leads the anti-parliamentary demonstrations in Paris over the Stavisky affair"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940
+            ],
+            "end": [
+              1944
+            ]
+          },
+          "r": {
+            "ko": "리옹에서 모라스와 신문 발행, 비시 정권 지지",
+            "en": "Publishes the paper with Maurras in Lyon, backing the Vichy regime"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              6
+            ]
+          },
+          "r": {
+            "ko": "게슈타포에 체포되어 몽뤼크 감옥에 3주 수감",
+            "en": "Arrested by the Gestapo and held for three weeks at Montluc prison"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1945,
+              1
+            ]
+          },
+          "r": {
+            "ko": "리옹에서 적과 내통한 죄로 징역 5년·공민권 박탈 선고",
+            "en": "Sentenced at Lyon to five years and national degradation for intelligence with the enemy"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1951
+            ],
+            "end": [
+              1955
+            ]
+          },
+          "r": {
+            "ko": "《아스페 드 라 프랑스》 주간",
+            "en": "Directs Aspects de la France"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1955,
+              9,
+              6
+            ]
+          },
+          "r": {
+            "ko": "루아레 페리에르앙가티네에서 사망",
+            "en": "Dies at Ferrières-en-Gâtinais, Loiret"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "fr: lead",
+          "claim": "1872년 센에마른 출생, 1955년 루아레 사망한 프랑스 언론인·정치인",
+          "excerpt": "Maurice Pujo, né le 26 janvier 1872 à Lorrez-le-Bocage-Préaux (Seine-et-Marne) et mort le 6 septembre 1955 à Ferrières-en-Gâtinais (Loiret), est un journaliste et homme politique français d'extrême droite, antisémite et royaliste.",
+          "field": "years"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "fr: lead",
+          "claim": "1872년 센에마른 출생, 1955년 루아레 사망한 프랑스 언론인·정치인",
+          "excerpt": "Maurice Pujo, né le 26 janvier 1872 à Lorrez-le-Bocage-Préaux (Seine-et-Marne) et mort le 6 septembre 1955 à Ferrières-en-Gâtinais (Loiret), est un journaliste et homme politique français d'extrême droite, antisémite et royaliste.",
+          "field": "citizenship"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "fr: lead",
+          "claim": "1872년 센에마른 출생, 1955년 루아레 사망한 프랑스 언론인·정치인",
+          "excerpt": "Maurice Pujo, né le 26 janvier 1872 à Lorrez-le-Bocage-Préaux (Seine-et-Marne) et mort le 6 septembre 1955 à Ferrières-en-Gâtinais (Loiret), est un journaliste et homme politique français d'extrême droite, antisémite et royaliste.",
+          "field": "nationalOrigin"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "en: Anti-Dreyfusard",
+          "claim": "1898년 「악시옹 프랑세즈」라는 말을 처음 쓴 글",
+          "excerpt": "On 19 December 1898 Pujo published an article that first used the term L’Action française (French Action) in the daily paper L’Éclair",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "en: Action Française",
+          "claim": "모라스의 영향으로 왕당파가 됨",
+          "excerpt": "Pujo came to agree with Maurras.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "en: Action Française",
+          "claim": "1908년 카믈로 뒤 루아 창설",
+          "excerpt": "On 16 November 1908 Lucien Moreau and Maurice Pujo created the Camelots du Roi youth movement.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "en: Action Française",
+          "claim": "1934년 1~2월 스타비스키 사건 시위 지휘",
+          "excerpt": "He continued to lead demonstrations by the Camelots du Roi into the 1930s, notably the demonstrations about the Stavisky Affair of January and February 1934.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "fr: Sous l'Occupation",
+          "claim": "점령기 비시 지지",
+          "excerpt": "Durant l'occupation de la France par l'armée allemande (1940-1944), Maurice Pujo continue à diriger l'Action française avec Charles Maurras, soutenant le régime de Vichy.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "en: Action Française",
+          "claim": "1945년 1월 징역 5년 선고",
+          "excerpt": "In January 1945 Pujo and Maurras were tried for collaboration and Pujo was sentenced to five years in prison.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Maurice_Pujo",
+          "locator": "fr: L'entre-deux guerres",
+          "claim": "2월 6일 저녁 오래 머물지 않았고 이틀 뒤 행방불명",
+          "excerpt": "De janvier à février 1934, Maurice Pujo mène les manifestations antiparlementaires à Paris. Pourtant, Maurice Pujo ne s'attarde pas dans la soirée du 6 février 1934 et se révèle introuvable deux jours après la fusillade mortelle.",
+          "field": "moment"
+        }
+      ]
+    },
+    {
+      "id": "xavier-vallat",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "그자비에",
+        "en": "Xavier"
+      },
+      "familyName": {
+        "ko": "발라",
+        "en": "Vallat"
+      },
+      "cyrillic": "Xavier Vallat",
+      "years": "1891–1972",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "비시 정부의 초대 유대인 문제 총국장이 된 반유대주의 우파 의원",
+        "en": "Antisemitic right-wing deputy who became Vichy’s first Commissioner-General for Jewish Questions"
+      },
+      "bio": {
+        "ko": "보클뤼즈의 가톨릭 가정에서 태어나 1차 대전에서 중상으로 한쪽 다리를 잃었다. 1919~1924년과 1928~1940년 아르데슈 선출 하원의원이었고, 공화연맹 부의장으로 가톨릭 반유대주의·반프리메이슨 우파의 대표 연설가였다. 1936년 6월 하원에서 새 총리 레옹 블룸을 유대인이라는 이유로 공격했다. 1940년 페탱 전권 위임에 찬성했고, 1941년 3월 유대인 문제 총국장이 되어 제2차 유대인 지위법, 유대인 등록, 유대인 재산의 「아리아화」를 맡았다. 1942년 5월 독일의 압력으로 물러났으나 1944년 여름 라디오 파리에서 선전 방송을 했다. 1947년 징역 10년을 선고받았고 1954년 사면되었다.",
+        "en": "Born into a Catholic family in the Vaucluse, he lost a leg to wounds in the First World War. Deputy for the Ardèche in 1919–1924 and 1928–1940, and a vice-president of the Republican Federation, he was the leading orator of the Catholic, antisemitic and anti-Masonic right, and in June 1936 attacked the new prime minister Léon Blum in the Chamber for being a Jew. In 1940 he voted full powers to Pétain; in March 1941 he became Commissioner-General for Jewish Questions, in charge of the second Statute on Jews, the registration of Jews and the “Aryanisation” of Jewish property. Removed under German pressure in May 1942, he made propaganda broadcasts on Radio-Paris in the summer of 1944. Sentenced to ten years in prison in 1947, he was amnestied in 1954."
+      },
+      "moment": {
+        "ko": "1936년 6월 6일 하원에서 그는 새 총리 레옹 블룸을 향해 「처음으로 이 오래된 갈로로만의 나라가 유대인에게 통치받게 된다」고 말했다. 좌파는 분노했지만 우파는 그를 지지했다",
+        "en": "On 6 June 1936, addressing the new prime minister Léon Blum in the Chamber, he declared: “For the first time this ancient Gallo-Roman land will be governed by a Jew.” The left was outraged; the right stood by him"
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Xavier_Vallat",
+        "https://fr.wikipedia.org/wiki/Xavier_Vallat"
+      ],
+      "activities": [
+        {
+          "functionId": "government",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1941,
+          "endYear": 1942,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "en: Vichy France",
+              "claim": "발라는 1941년 3월 유대인 문제 총국의 수장에 임명되었다.",
+              "excerpt": "In March 1941, he was appointed as head of the Commissariat-General for Jewish Questions, a body set up to implement the anti-Semitic laws enacted by Pétain's government."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: lead",
+              "claim": "발라는 1941년부터 1942년까지 비시 정부의 유대인 문제 총국장이었다.",
+              "excerpt": "De 1941 à 1942, il occupe le poste de commissaire général aux questions juives du gouvernement de Vichy."
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1919,
+          "endYear": 1940,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "en: Until World War II",
+              "claim": "발라는 1919년 아르데슈 선출 하원의원이 되었다.",
+              "excerpt": "He was elected to the National Assembly for the Ardèche in 1919 as an \"independent\", who supported the National Bloc."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "en: Until World War II",
+              "claim": "1924년 낙선하고 1928년 재선되어 1940년까지 의원이었다.",
+              "excerpt": "He was defeated in 1924, re-elected in 1928 still as an \"independent\", and then served until the Assembly was suspended in 1940."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-republican-federation",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1933,
+          "endYear": 1940,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+              "claim": "발라는 1933년 공화연맹에 가입했고 1936년 그 당원으로 재선되었다.",
+              "excerpt": "Il est réélu député en 1936 comme membre de la Fédération républicaine, à laquelle il a adhéré en 1933."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+              "claim": "발라는 1936년 10월 공화연맹 부의장에 선출되었다.",
+              "excerpt": "Enfin, il est élu à l'unanimité vice-président de la Fédération républicaine en octobre 1936."
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "french-croix-de-feu",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1928,
+          "endYear": 1936,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+              "claim": "발라는 1928년 불의 십자단에 가입했고 1936년 라 로크와 결별했다.",
+              "excerpt": "Cet ancien combattant mutilé, membre du comité directeur des Légionnaires décorés au péril de leur vie, adhère en 1928 aux Croix-de-Feu — il le revendique lors du débat parlementaire sur les ligues en décembre 1935 — puis rompt avec le colonel de la Rocque en 1936."
+            }
+          ]
+        },
+        {
+          "functionId": "organizing",
+          "affiliationId": "french-fnc",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1924,
+          "endYear": 1937,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+              "claim": "발라는 1924년 낙선 뒤 전국가톨릭연맹에서 활동하며 이듬해 집행위원회에 들어갔다.",
+              "excerpt": "il milite pour la Fédération nationale catholique et intègre l'année suivante son comité exécutif."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+              "claim": "발라는 1937년 12월 전국가톨릭연맹 지도위원회에서 물러났다.",
+              "excerpt": "Vallat démissionne du comité directeur de la FNC en décembre 1937."
+            }
+          ]
+        },
+        {
+          "functionId": "propaganda",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1944,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+              "locator": "fr: Au service du régime de Vichy",
+              "claim": "발라는 1944년 6월 29일부터 8월 19일까지 라디오 파리에서 필리프 앙리오를 대신했다.",
+              "excerpt": "Du 29 juin au 19 août 1944, il remplace Philippe Henriot, après l'assassinat de ce dernier, au micro de Radio-Paris, à la demande de Pierre Laval."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1891,
+              12,
+              23
+            ]
+          },
+          "r": {
+            "ko": "보클뤼즈 빌디외 출생",
+            "en": "Born at Villedieu, Vaucluse"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1911
+            ],
+            "end": [
+              1913
+            ]
+          },
+          "r": {
+            "ko": "엑상프로방스 가톨릭 학교 교사",
+            "en": "Teacher at the Catholic college of Aix-en-Provence"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1913
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "군 복무, 1차 대전 중상으로 한쪽 다리 상실",
+            "en": "Military service; loses a leg to wounds in the First World War"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1919
+            ],
+            "end": [
+              1924
+            ]
+          },
+          "r": {
+            "ko": "아르데슈 선출 하원의원",
+            "en": "Deputy for the Ardèche"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1925
+            ],
+            "end": [
+              1937
+            ]
+          },
+          "r": {
+            "ko": "전국가톨릭연맹 집행위원, 주요 연사",
+            "en": "Executive committee member and leading speaker of the National Catholic Federation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1928
+            ],
+            "end": [
+              1940
+            ]
+          },
+          "r": {
+            "ko": "아르데슈 선출 하원의원(재선)",
+            "en": "Deputy for the Ardèche again"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1936,
+              6
+            ]
+          },
+          "r": {
+            "ko": "하원에서 블룸 총리를 유대인이라는 이유로 공격",
+            "en": "Attacks Prime Minister Blum in the Chamber for being a Jew"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1936,
+              10
+            ]
+          },
+          "r": {
+            "ko": "공화연맹 부의장",
+            "en": "Vice-president of the Republican Federation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940,
+              7
+            ]
+          },
+          "r": {
+            "ko": "페탱 전권 위임에 찬성",
+            "en": "Votes full powers to Pétain"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940
+            ],
+            "end": [
+              1941
+            ]
+          },
+          "r": {
+            "ko": "비시 정부 재향군인 사무총장",
+            "en": "Secretary-general for veterans in the Vichy government"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1941,
+              3
+            ],
+            "end": [
+              1942,
+              5
+            ]
+          },
+          "r": {
+            "ko": "유대인 문제 총국장",
+            "en": "Commissioner-General for Jewish Questions"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              6,
+              29
+            ],
+            "end": [
+              1944,
+              8,
+              19
+            ]
+          },
+          "r": {
+            "ko": "라디오 파리 선전 방송",
+            "en": "Propaganda broadcasts on Radio-Paris"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1947,
+              12
+            ]
+          },
+          "r": {
+            "ko": "고등법원에서 징역 10년 선고",
+            "en": "Sentenced by the High Court of Justice to ten years in prison"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1949
+            ],
+            "end": [
+              1954
+            ]
+          },
+          "r": {
+            "ko": "가석방, 1954년 사면",
+            "en": "Paroled; amnestied in 1954"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1962
+            ],
+            "end": [
+              1966
+            ]
+          },
+          "r": {
+            "ko": "극우 주간지 《아스페 드 라 프랑스》 편집인",
+            "en": "Editor of the far-right weekly Aspects de la France"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1972,
+              1,
+              6
+            ]
+          },
+          "r": {
+            "ko": "아르데슈 아노네에서 사망",
+            "en": "Dies at Annonay, Ardèche"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "fr: lead",
+          "claim": "1891년 보클뤼즈 출생, 1972년 아르데슈 사망한 프랑스 정치인",
+          "excerpt": "Xavier Joseph Vallat, né le 23 décembre 1891 à Villedieu (Vaucluse) et mort le 6 janvier 1972 à Annonay (Ardèche), est un avocat, journaliste et homme politique français.",
+          "field": "years"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "fr: lead",
+          "claim": "1891년 보클뤼즈 출생, 1972년 아르데슈 사망한 프랑스 정치인",
+          "excerpt": "Xavier Joseph Vallat, né le 23 décembre 1891 à Villedieu (Vaucluse) et mort le 6 janvier 1972 à Annonay (Ardèche), est un avocat, journaliste et homme politique français.",
+          "field": "citizenship"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "fr: lead",
+          "claim": "1891년 보클뤼즈 출생, 1972년 아르데슈 사망한 프랑스 정치인",
+          "excerpt": "Xavier Joseph Vallat, né le 23 décembre 1891 à Villedieu (Vaucluse) et mort le 6 janvier 1972 à Annonay (Ardèche), est un avocat, journaliste et homme politique français.",
+          "field": "nationalOrigin"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+          "claim": "1차 대전에서 한쪽 다리를 잃음",
+          "excerpt": "Il est gravement blessé lors d'un combat, blessure qui lui fait perdre une jambe.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "en: Until World War II",
+          "claim": "1930년대 가톨릭 반유대주의 극우의 대표자",
+          "excerpt": "In the 1930s Vallat was a leading representative of the Catholic, antisemitic extreme right in French politics.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "en: Vichy France",
+          "claim": "아리아화와 유대인 등록 감독",
+          "excerpt": "In this position, he oversaw the \"Aryanisation\" of the French economy, education system, civil service and professions, and the enforcement of laws requiring all Jews to be registered with the police.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "fr: Au service du régime de Vichy",
+          "claim": "제2차 유대인 지위법과 등록 담당, 1942년 5월 교체",
+          "excerpt": "Vallat prend notamment en charge le second statut des Juifs",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "en: Vichy France",
+          "claim": "1940년 7월 10일 전권 위임 찬성",
+          "excerpt": "On 10 July 1940, he voted in favour of granting the Cabinet presided by Marshal Pétain the authority to draw up a new constitution",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "en: After the war",
+          "claim": "징역 10년, 1949년 가석방, 1954년 사면",
+          "excerpt": "Vallat was released on parole in 1949 and amnestied in 1954.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "en: Until World War II",
+          "claim": "블룸에 대한 발언",
+          "excerpt": "Vallat made a series of personal rhetorical attacks on Blum, saying that \"For the first time this ancient Gallo-Roman land will be governed by a Jew.\"",
+          "field": "moment"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+          "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+          "claim": "좌파는 분노했고 우파는 지지했다",
+          "excerpt": "Ces propos soulèvent l'indignation de la gauche, mais Vallat est soutenu à droite.",
+          "field": "moment"
+        }
+      ]
+    },
+    {
+      "id": "marcel-bucard",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "마르셀",
+        "en": "Marcel"
+      },
+      "familyName": {
+        "ko": "뷔카르",
+        "en": "Bucard"
+      },
+      "cyrillic": "Marcel Bucard",
+      "years": "1895–1946",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "무솔리니의 자금으로 프랑시스트 운동을 세우고 대독 협력으로 총살된 파시스트",
+        "en": "Fascist who founded the Francist Movement with Mussolini’s money and was shot for collaboration"
+      },
+      "bio": {
+        "ko": "신학생으로 1차 대전에 동원되어 세 차례 부상하고 대위가 되었다. 악시옹 프랑세즈와 전국가톨릭연맹을 거쳐 1925년 조르주 발루아의 페소에 들어가 1926년부터 선전을 맡았고, 1927년 발루아와 갈라선 뒤 코티의 《라미 뒤 푀플》에 글을 썼다. 1933년 9월 이탈리아 파시즘을 본뜬 프랑시스트 운동을 세웠다. 운동은 무솔리니 정부의 자금을 받았고 1934년 2월 6일 시위에 참가했으며 1936년 인민전선 정부에 금지되었다. 금지 뒤 공공연한 반유대주의로 돌아섰고 1941년 프랑시스트당을 재건해 대독 협력에 나섰다. 1945년 이탈리아에서 체포되어 1946년 3월 샤티용 요새에서 총살되었다.",
+        "en": "A seminarian when the First World War broke out, he was wounded three times and rose to captain. After Action Française and the National Catholic Federation he joined Georges Valois’s Faisceau in 1925 and ran its propaganda from 1926; breaking with Valois in 1927, he wrote for Coty’s L’Ami du peuple. In September 1933 he founded the Francist Movement on the model of Italian Fascism. Financed by Mussolini’s government, it took part in the demonstration of 6 February 1934 and was banned by the Popular Front government in 1936. After the ban he turned openly antisemitic, and in 1941 he refounded the Francist Party as a collaborationist force. Arrested in Italy in 1945, he was shot at the Fort de Châtillon in March 1946."
+      },
+      "moment": {
+        "ko": "1933년 9월 29일 밤 11시 개선문 아래에서 열린 의식에서 그는 「권력 장악을 목표로 하는 혁명적 행동 운동」을 세운다고 선언했다. 「우리의 프랑시슴은 프랑스에게, 파시즘이 이탈리아에게 그러한 것이다」라고 그는 썼다",
+        "en": "At 11 p.m. on 29 September 1933, at a ceremony at the Arc de Triomphe, he announced the founding of “a movement of revolutionary action whose aim is to conquer power”. “Our Francisme is to France what Fascism is to Italy,” he wrote"
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by firing squad"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Marcel_Bucard",
+        "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+        "https://en.wikipedia.org/wiki/Mouvement_Franciste",
+        "https://fr.wikipedia.org/wiki/Parti_franciste"
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "french-francisme",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1933,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+              "locator": "fr: Mouvement franciste",
+              "claim": "뷔카르는 1933년 9월 29일 프랑시스트 운동을 세웠다.",
+              "excerpt": "Le 29 septembre 1933, Marcel Bucard fonde le Mouvement franciste, « mouvement d'action révolutionnaire » s'inspirant du fascisme italien mêlé à du spiritualisme."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Parti_franciste",
+              "locator": "fr: lead",
+              "claim": "프랑시스트당(1933~1944)은 뷔카르가 이끈 파시스트 정당이었다.",
+              "excerpt": "Le Francisme, ou Parti franciste ou Mouvement franciste (1933-1944), était un parti politique fasciste dirigé par Marcel Bucard."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+              "locator": "fr: Collaboration",
+              "claim": "1941년 뷔카르는 대독 협력에 가담하며 운동을 프랑시스트당으로 재건했다.",
+              "excerpt": "En 1941, Bucard se rallie à la Collaboration avec les nazis et reforme une nouvelle fois son mouvement, sous le nom de Parti franciste."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-faisceau",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1925,
+          "endYear": 1927,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+              "locator": "fr: Vie politique",
+              "claim": "뷔카르는 1925년 페소에 가입해 1926년 9월부터 선전 책임을 맡았다.",
+              "excerpt": "La même année, il adhère, parmi les premiers, au Faisceau de Georges Valois — premier parti à se revendiquer ouvertement du fascisme — et dont il est chargé de la direction de la propagande à partir de septembre 1926."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Marcel_Bucard",
+              "locator": "en: Early career",
+              "claim": "뷔카르는 페소의 구성원이었다.",
+              "excerpt": "later as a member of the overtly-fascist and anti-Semitic Faisceau of Georges Valois."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1914,
+          "endYear": 1918,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+              "locator": "fr: Jeunesse",
+              "claim": "뷔카르는 1차 대전에 동원되어 대위가 되었고 세 차례 부상했다.",
+              "excerpt": "Il est élevé au grade de capitaine au terme de la guerre et, blessé trois fois, il reçoit la croix de guerre avec dix citations."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1895,
+              12,
+              7
+            ]
+          },
+          "r": {
+            "ko": "생클레르쉬레프트 출생",
+            "en": "Born at Saint-Clair-sur-Epte"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "신학생으로 동원되어 대위까지 진급, 세 차례 부상",
+            "en": "Mobilised as a seminarian; rises to captain, wounded three times"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1924
+            ]
+          },
+          "r": {
+            "ko": "국민블록 후보로 하원 선거 낙선",
+            "en": "Defeated as a National Bloc candidate for the Chamber"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1925
+            ],
+            "end": [
+              1927
+            ]
+          },
+          "r": {
+            "ko": "페소 가입, 1926년부터 선전 책임자",
+            "en": "Joins the Faisceau; head of propaganda from 1926"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1927
+            ],
+            "end": [
+              1933
+            ]
+          },
+          "r": {
+            "ko": "《라미 뒤 푀플》 재향군인 면 담당",
+            "en": "Runs the veterans’ page of L’Ami du peuple"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1933,
+              9,
+              29
+            ]
+          },
+          "r": {
+            "ko": "프랑시스트 운동 창설",
+            "en": "Founds the Francist Movement"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1934,
+              2,
+              6
+            ]
+          },
+          "r": {
+            "ko": "2월 6일 시위 참가",
+            "en": "Takes part in the demonstration of 6 February"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1934,
+              12
+            ]
+          },
+          "r": {
+            "ko": "몽트뢰 국제 파시스트 대회 참가",
+            "en": "Attends the international fascist congress at Montreux"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1936
+            ]
+          },
+          "r": {
+            "ko": "인민전선 정부의 동맹 금지로 운동 해산",
+            "en": "His movement is banned with the other leagues by the Popular Front government"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1941
+            ],
+            "end": [
+              1944
+            ]
+          },
+          "r": {
+            "ko": "프랑시스트당 재건, 대독 협력",
+            "en": "Refounds the Francist Party as a collaborationist force"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              8
+            ]
+          },
+          "r": {
+            "ko": "독일로 도주",
+            "en": "Flees to Germany"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1945,
+              6
+            ]
+          },
+          "r": {
+            "ko": "메라노에서 체포되어 프랑스로 인도",
+            "en": "Arrested at Merano and extradited to France"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1946,
+              2,
+              21
+            ]
+          },
+          "r": {
+            "ko": "센 법원에서 사형 선고",
+            "en": "Sentenced to death by the Court of Justice of the Seine"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1946,
+              3
+            ]
+          },
+          "r": {
+            "ko": "샤티용 요새에서 총살",
+            "en": "Shot at the Fort de Châtillon"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "fr: lead",
+          "claim": "1895년 생클레르쉬레프트 출생, 1946년 총살된 프랑스 정치인",
+          "excerpt": "Marcel Bucard, né le 7 décembre 1895 à Saint-Clair-sur-Epte (actuel département du Val d'Oise), mort fusillé le 19 mars 1946 au fort de Châtillon à Fontenay-aux-Roses (actuel département des Hauts-de-Seine), est un homme politique français.",
+          "field": "years"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "fr: lead",
+          "claim": "1895년 생클레르쉬레프트 출생, 1946년 총살된 프랑스 정치인",
+          "excerpt": "Marcel Bucard, né le 7 décembre 1895 à Saint-Clair-sur-Epte (actuel département du Val d'Oise), mort fusillé le 19 mars 1946 au fort de Châtillon à Fontenay-aux-Roses (actuel département des Hauts-de-Seine), est un homme politique français.",
+          "field": "citizenship"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "fr: lead",
+          "claim": "1895년 생클레르쉬레프트 출생, 1946년 총살된 프랑스 정치인",
+          "excerpt": "Marcel Bucard, né le 7 décembre 1895 à Saint-Clair-sur-Epte (actuel département du Val d'Oise), mort fusillé le 19 mars 1946 au fort de Châtillon à Fontenay-aux-Roses (actuel département des Hauts-de-Seine), est un homme politique français.",
+          "field": "nationalOrigin"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "en: Early career",
+          "claim": "무솔리니 정부의 자금을 받은 프랑시스트 운동 창설",
+          "excerpt": "In September 1933, Bucard founded his own group, the Mouvement franciste, which was arguably the most extreme group and was financed by Benito Mussolini's government.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "en: Early career",
+          "claim": "1936년 인민전선 정부의 금지",
+          "excerpt": "In 1936, the new Popular Front government banned his movement and all other right-wing \"leagues\", fascist or otherwise, and Bucard was briefly imprisoned.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "fr: Antisémitisme",
+          "claim": "금지 뒤 공공연한 반유대주의",
+          "excerpt": "Marcel Bucard devient ouvertement antisémite après son arrestation fin 1935 puis l’interdiction de son mouvement, prononcée par le Front populaire.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "fr: Vie politique",
+          "claim": "발루아와 갈라서 코티의 신문으로",
+          "excerpt": "Bucard le désapprouve et se tourne vers le millionnaire d'extrême droite François Coty et son quotidien L'Ami du peuple",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+          "locator": "fr: Arrestation et condamnation",
+          "claim": "1945년 메라노 체포, 1946년 총살",
+          "excerpt": "Alors qu'il cherche à gagner l'Espagne franquiste, il est arrêté à Mérano en juin 1945, extradé en France et jugé par la Cour de justice de la Seine.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Parti_franciste",
+          "locator": "fr: La création (1933)",
+          "claim": "1933년 9월 29일 밤 11시 개선문 의식",
+          "excerpt": "La création officielle a lieu le 29 septembre 1933, à 23 heures, lors d'une cérémonie organisée à l'Arc-de-Triomphe de Paris.",
+          "field": "moment"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Parti_franciste",
+          "locator": "fr: La création (1933)",
+          "claim": "「우리의 프랑시슴은…」",
+          "excerpt": "Notre Francisme est à la France ce que le Fascisme est à l’Italie",
+          "field": "moment"
+        }
+      ]
+    },
+    {
+      "id": "jean-renaud",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "장",
+        "en": "Jean"
+      },
+      "familyName": {
+        "ko": "르노",
+        "en": "Renaud"
+      },
+      "cyrillic": "Jean Renaud",
+      "years": "1880–1952",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "코티가 세운 연대 프랑스를 넘겨받아 파시스트 동맹으로 몰고 간 식민지군 장교 출신 작가",
+        "en": "Colonial army officer and novelist who took over Coty’s Solidarité Française and drove it toward fascism"
+      },
+      "bio": {
+        "ko": "1880년 툴루즈에서 태어나 식민지 포병 장교로 다호메이와 인도차이나에서 복무했고, 1910~1914년 인도차이나 총독 알베르 사로의 전속 부관이었다. 1차 대전에 참전했고 1931년까지 군에 있으면서 쓴 식민지 소설로 그해 식민지 문학 대상을 받았다. 1933년 코티가 연대 프랑스를 세우면서 그에게 지휘를 맡겼고, 동맹은 1934년 2월 6일 시위에 참가했다. 그해 여름 코티가 죽어 단독 지도자가 되자 동맹은 푸른 셔츠와 고대식 경례로 이탈리아 파시즘을 흉내 냈고, 그는 1937년 9월 「파시스트」를 자처했다. 1936년 해산된 뒤에는 정당으로 이름을 바꿔 이어 갔으나 세력은 미미했다.",
+        "en": "Born in Toulouse in 1880, he served as a colonial artillery officer in Dahomey and Indochina, and from 1910 to 1914 was aide-de-camp to Albert Sarraut, Governor-General of Indochina. He fought in the First World War, and the colonial novels he wrote while in the army, which he left in 1931, won him the grand prize for colonial literature that year. When Coty founded Solidarité Française in 1933 he entrusted its leadership to Renaud, and the league took part in the demonstration of 6 February 1934. Sole leader after Coty’s death that summer, he gave it the blue shirts and Roman salute of Italian Fascism, and in September 1937 claimed the label “fascist”. Dissolved in 1936, it carried on as a party under new names, but with very few members."
+      },
+      "moment": {
+        "ko": "코티가 죽은 뒤 그가 지휘한 단원들은 푸른 셔츠와 검은 베레모, 장화를 갖추고 「프랑스인의 프랑스」를 외쳤다. 1937년 9월 그는 마침내 「파시스트」라는 이름을 스스로 내걸었다",
+        "en": "After Coty’s death the men he commanded wore blue shirts, black berets and jackboots and shouted “France for the French”. In September 1937 he at last claimed the label “fascist” for himself"
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+        "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+        "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise"
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "french-solidarite-francaise",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1933,
+          "endYear": 1936,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+              "locator": "fr: Les débuts",
+              "claim": "코티는 연대 프랑스를 세우면서 그 지휘를 장 르노 소령에게 맡겼다.",
+              "excerpt": "Face à l’incapacité de la classe politique à gérer la crise, il décide de fonder son propre mouvement politique, tout en confiant sa direction au commandant Jean Renaud"
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise",
+              "locator": "en: lead",
+              "claim": "코티가 죽은 뒤 연대 프랑스는 장 르노 소령이 지휘했다.",
+              "excerpt": "After Coty's death, it was commanded by Major Jean Renaud, members dressed in blue shirts, black berets and jackboots and shouted the slogan \"France for the French\"."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+              "locator": "fr: Solidarité française",
+              "claim": "르노는 1930년대 극우 동맹 연대 프랑스를 이끌었다.",
+              "excerpt": "Proche des Ligues dès 1932, il dirige dans les années 1930 une des ligues nationales d'extrême droite, la Solidarité française, fondée par François Coty."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1898,
+          "endYear": 1931,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+              "locator": "fr: Les débuts",
+              "claim": "르노는 1898년부터 1931년까지 식민지군 장교로 복무했다.",
+              "excerpt": "un ancien officier de la Coloniale né à Toulouse en 1880, qui a mené une double carrière, littéraire (auteur de romans, titulaire du grand prix de littérature coloniale en 1931) et militaire, de 1898 à 1931"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+              "locator": "fr: Biographie",
+              "claim": "르노는 1910~1914년 인도차이나 총독 알베르 사로의 전속 부관이었다.",
+              "excerpt": "Lieutenant en 1907, il a été de 1910 à 1914, l'officier d'ordonnance du gouverneur général d'Indochine, Albert Sarraut."
+            }
+          ]
+        },
+        {
+          "functionId": "arts",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": null,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+              "locator": "fr: Romancier et journaliste",
+              "claim": "르노는 식민지 소설로 1931년 식민지 문학 대상을 받았다.",
+              "excerpt": "Il est d'ailleurs titulaire du grand prix de littérature coloniale en mai 1931, pour l'ensemble de son œuvre coloniale."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1880,
+              5,
+              18
+            ]
+          },
+          "r": {
+            "ko": "툴루즈 출생",
+            "en": "Born in Toulouse"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1898
+            ],
+            "end": [
+              1931
+            ]
+          },
+          "r": {
+            "ko": "식민지 포병 장교(다호메이, 인도차이나), 소령으로 퇴역",
+            "en": "Officer in the colonial artillery (Dahomey, Indochina); ends as major"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1910
+            ],
+            "end": [
+              1914
+            ]
+          },
+          "r": {
+            "ko": "인도차이나 총독 알베르 사로의 전속 부관",
+            "en": "Aide-de-camp to Albert Sarraut, Governor-General of Indochina"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "1차 대전 참전, 레지옹 도뇌르 수훈",
+            "en": "Serves in the First World War; awarded the Legion of Honour"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1920
+            ],
+            "startQual": "decade"
+          },
+          "r": {
+            "ko": "카사블랑카 일간지 《라 프레스 마로켄》 주재",
+            "en": "Runs the Casablanca daily La Presse marocaine"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1931,
+              5
+            ]
+          },
+          "r": {
+            "ko": "식민지 문학 대상 수상",
+            "en": "Wins the grand prize for colonial literature"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1933
+            ],
+            "end": [
+              1936
+            ]
+          },
+          "r": {
+            "ko": "연대 프랑스 지도자",
+            "en": "Leader of Solidarité Française"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1934,
+              2,
+              6
+            ]
+          },
+          "r": {
+            "ko": "연대 프랑스가 2월 6일 시위에 참가",
+            "en": "Solidarité Française takes part in the demonstration of 6 February"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1936
+            ]
+          },
+          "r": {
+            "ko": "총선 출마, 낙선",
+            "en": "Stands for the Chamber and is defeated"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1937,
+              9
+            ]
+          },
+          "r": {
+            "ko": "「파시스트」라는 이름을 스스로 내세움",
+            "en": "Openly claims the label “fascist”"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1952,
+              5,
+              5
+            ]
+          },
+          "r": {
+            "ko": "파리에서 사망",
+            "en": "Dies in Paris"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+          "locator": "fr: lead",
+          "claim": "1880년 툴루즈 출생, 1952년 파리 사망한 프랑스 군인·작가·정치인",
+          "excerpt": "Le commandant Jean Renaud (né Jean-Jacques Ernest Renaud à Toulouse le 18 mai 1880 et mort à Paris le 5 mai 1952) est un militaire, écrivain colonial, journaliste et homme politique français.",
+          "field": "years"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+          "locator": "fr: lead",
+          "claim": "1880년 툴루즈 출생, 1952년 파리 사망한 프랑스 군인·작가·정치인",
+          "excerpt": "Le commandant Jean Renaud (né Jean-Jacques Ernest Renaud à Toulouse le 18 mai 1880 et mort à Paris le 5 mai 1952) est un militaire, écrivain colonial, journaliste et homme politique français.",
+          "field": "citizenship"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+          "locator": "fr: lead",
+          "claim": "1880년 툴루즈 출생, 1952년 파리 사망한 프랑스 군인·작가·정치인",
+          "excerpt": "Le commandant Jean Renaud (né Jean-Jacques Ernest Renaud à Toulouse le 18 mai 1880 et mort à Paris le 5 mai 1952) est un militaire, écrivain colonial, journaliste et homme politique français.",
+          "field": "nationalOrigin"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Jean_Renaud_(ligue_Solidarit%C3%A9_fran%C3%A7aise)",
+          "locator": "fr: Biographie",
+          "claim": "사로의 전속 부관",
+          "excerpt": "Lieutenant en 1907, il a été de 1910 à 1914, l'officier d'ordonnance du gouverneur général d'Indochine, Albert Sarraut.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+          "locator": "fr: L'action aux côtés des autres ligues",
+          "claim": "2월 6일 시위 참가",
+          "excerpt": "La Solidarité française a participé à la manifestation du 6 février 1934 avec les autres ligues d'extrême droite",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+          "locator": "fr: La radicalisation",
+          "claim": "코티 사후 이탈리아 파시즘의 모습",
+          "excerpt": "Après la mort de Coty en 1934, la ligue emprunte l'image du fascisme italien",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+          "locator": "fr: La radicalisation",
+          "claim": "1937년 9월 「파시스트」 자처",
+          "excerpt": "Jean-Renaud finit par revendiquer l'étiquette de « fasciste » en septembre 1937.",
+          "field": "bio"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+          "locator": "fr: De la ligue au parti",
+          "claim": "정당으로 개명, 세력 미미",
+          "excerpt": "Elle prend le nom de Parti du rassemblement français en juillet 1936 puis devient le Parti du faisceau français en juin 1937. Ses effectifs sont alors très faibles.",
+          "field": "bio"
+        },
+        {
+          "source": "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise",
+          "locator": "en: lead",
+          "claim": "푸른 셔츠·검은 베레모·장화, 「프랑스인의 프랑스」",
+          "excerpt": "After Coty's death, it was commanded by Major Jean Renaud, members dressed in blue shirts, black berets and jackboots and shouted the slogan \"France for the French\".",
+          "field": "moment"
+        },
+        {
+          "source": "https://fr.wikipedia.org/wiki/Solidarit%C3%A9_fran%C3%A7aise",
+          "locator": "fr: La radicalisation",
+          "claim": "1937년 9월 「파시스트」 자처",
+          "excerpt": "Jean-Renaud finit par revendiquer l'étiquette de « fasciste » en septembre 1937.",
+          "field": "moment"
+        }
+      ]
+    },
+    {
+      "id": "eugene-deloncle",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "외젠",
+        "en": "Eugène"
+      },
+      "familyName": {
+        "ko": "들롱클",
+        "en": "Deloncle"
+      },
+      "cyrillic": "Eugène Deloncle",
+      "years": "1890–1944",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "의회 공화국을 무너뜨리려 비밀 무장조직 카굴을 만든 악시옹 프랑세즈 이탈자",
+        "en": "Action Française dissident who built the Cagoule, a secret armed organisation meant to overthrow the parliamentary republic"
+      },
+      "bio": {
+        "ko": "브레스트에서 태어나 에콜 폴리테크니크를 나온 해군 조선 기술자로, 1차 대전에 포병 장교로 싸웠다. 악시옹 프랑세즈의 카믈로 뒤 루아에서 활동하다 지도부가 행동하지 않는다며 1935년 떠났고, 1936년 6월 동맹 해산 뒤 비밀 무장조직 혁명행동비밀위원회(CSAR)를 이끌었다. 언론은 이 조직을 카굴이라 불렀다. 카굴은 이탈리아 망명자 로셀리 형제를 암살했고, 1937년 9월 에투알 폭탄 테러를 공산당 소행으로 꾸몄으며, 그해 11월 쿠데타 시도가 무산된 뒤 적발되었다. 점령기에는 사회혁명운동(MSR)을 세워 대독 협력에 나섰고, 1944년 1월 파리 자택에서 독일 보안국(SD) 요원들에게 사살되었다.",
+        "en": "Born in Brest, he graduated from the École Polytechnique, became a naval engineer and fought in the First World War as an artillery officer. Active in the Camelots du Roi of Action Française, he left in 1935, accusing its leaders of inaction, and after the leagues were dissolved in June 1936 led the secret armed organisation known as the CSAR and nicknamed La Cagoule by the press. The Cagoule murdered the exiled Italian antifascists Carlo and Nello Rosselli, set off the Étoile bombings of September 1937 so that the Communists would be blamed, and was broken up after its coup attempt of November 1937 collapsed. Under the Occupation he founded the collaborationist Social Revolutionary Movement (MSR); in January 1944 he was shot dead at his Paris home by agents of the German SD."
+      },
+      "moment": {
+        "ko": "1937년 11월 15일 밤 그는 공산당의 권력 장악이 임박했다며 파리의 카굴 대원들을 동원했다. 봉기를 확인하러 나선 군인들이 허세임을 알아채고 가담하지 않자 그는 작전을 취소했고, 새벽 5시 대원들은 흩어지라는 지시를 받았다.",
+        "en": "On the night of 15 November 1937 he mobilised the Cagoule's men in Paris, claiming a Communist seizure of power was imminent. The officers sent to verify the supposed uprising saw through the bluff and stayed out; he called the operation off, and at 5 a.m. the groups were told to disperse."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "독일 보안국 요원에게 사살",
+          "en": "Shot dead by German SD agents"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+        "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+        "https://fr.wikipedia.org/wiki/La_Cagoule",
+        "https://en.wikipedia.org/wiki/La_Cagoule",
+        "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+        "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+        "https://en.wikipedia.org/wiki/National_Popular_Rally"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "en: lead",
+          "claim": "1890년 출생, 1944년 사망",
+          "excerpt": "Eugène Deloncle (20 June 1890 – 17 January 1944)"
+        },
+        {
+          "field": "citizenship",
+          "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "fr: lead",
+          "claim": "프랑스 극우 정치인",
+          "excerpt": "Antoine Octave Eugène Deloncle est un homme politique français d'extrême droite né à Brest, le 20 juin 1890"
+        },
+        {
+          "field": "nationalOrigin",
+          "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "fr: lead",
+          "claim": "프랑스 극우 정치인",
+          "excerpt": "Antoine Octave Eugène Deloncle est un homme politique français d'extrême droite né à Brest, le 20 juin 1890"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "fr: Carrière et activité politique",
+          "claim": "폴리테크니크 출신 해군 조선 기술자, 1차 대전 포병 장교로 샹파뉴에서 부상",
+          "excerpt": "Polytechnicien (promotion X1910, second), ingénieur du Génie maritime, cadre dirigeant de la société de contrôle technique Bureau Veritas, il combat pendant la Première Guerre mondiale : officier d'artillerie, il est blessé sur le front de Champagne."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+          "locator": "fr: Création",
+          "claim": "카믈로 뒤 루아 제17지부원들이 모라스의 무기력에 항의해 탈퇴했고 들롱클도 그중 하나였다",
+          "excerpt": "À terme, soixante-dix des principaux membres de la 17e section des Camelots du roi protestent contre l'apathie de Charles Maurras et quittent le mouvement. Parmi eux se trouve Eugène Deloncle"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "en: 1930s political activity",
+          "claim": "좌파와 싸우는 데 무기력하다며 1935년 악시옹 프랑세즈를 떠났다",
+          "excerpt": "he left the movement in 1935 because of his perception of inaction by the older organisation in combating the French left"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+          "locator": "fr: Création",
+          "claim": "1936년 6월 18일 동맹 해산과 같은 날 CSAR가 생겼고 들롱클이 이끌었다",
+          "excerpt": "Le 18 juin 1936, le Front populaire de Blum dissout les ligues. Le même jour, le PNR se dissout et laisse la place à l'Osarn (« Organisation secrète d'action révolutionnaire nationale ») ou « Comité secret d'action révolutionnaire » (CSAR). Sa tête pensante est Eugène Deloncle, son bras-droit Jean Filiol."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "fr: Carrière et activité politique",
+          "claim": "조직은 언론에서 카굴이라 불렸고, 이탈리아 반파시스트 로셀리 형제를 암살했다",
+          "excerpt": "En outre, l'organisation clandestine assassine les frères Sabatino et Carlo Rosselli, deux militants italiens antifascistes réfugiés en France."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+          "locator": "fr: Les attentats terroristes de l'Étoile",
+          "claim": "1937년 9월 11일 공산당에 뒤집어씌우려 에투알 폭탄 테러를 저질렀다",
+          "excerpt": "Le 11 septembre 1937, afin d’en faire accuser les communistes, l'Osarn commet deux attentats à la bombe à Paris"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+          "locator": "fr: Assassinat de Marx Dormoy",
+          "claim": "1937년 11월 쿠데타 실패 뒤 내무장관 도르무아가 조직을 해체했다",
+          "excerpt": "Après l'échec de leur coup d'État dans la nuit du 15 au 16 novembre 1937, le complot est révélé au grand jour. Le ministre de l'Intérieur Marx Dormoy fait démanteler l'organisation, le 23 novembre."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "fr: Carrière et activité politique",
+          "claim": "1940년 말 사회혁명운동(MSR) 창설",
+          "excerpt": "Fin 1940, il crée le Mouvement social révolutionnaire pour la Révolution nationale (MSR), soutenant le maréchal Pétain"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "en: World War II and death",
+          "claim": "1944년 1월 SD 요원들에게 자택에서 사살되었다",
+          "excerpt": "On 17 January 1944, Deloncle's house was swarmed by SD agents and he was killed in a shootout."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+          "locator": "fr: Carrière et activité politique",
+          "claim": "독일 SD 요원들에게 자택에서 사살(날짜는 프랑스어판 1월 7일, 영어판 1월 17일로 엇갈려 월까지만 씀)",
+          "excerpt": "Le 7 janvier 1944 au matin, Deloncle est abattu à son domicile par des agents allemands du SD."
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+          "locator": "fr: Le putsch raté de la nuit du 15 au 16 novembre 1937",
+          "claim": "공산당 권력 장악이 임박했다며 파리 대원들을 동원했다",
+          "excerpt": "Deloncle et ses hommes veulent faire un gros coup en évoquant l'imminence d'une prise de pouvoir par les communistes. Considérant que le climat anticommuniste est propice, tandis que la surveillance policière envers son propre mouvement s'intensifie, Deloncle mobilise les troupes cagoulardes à Paris."
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+          "locator": "fr: Le putsch raté de la nuit du 15 au 16 novembre 1937",
+          "claim": "군인들이 허세를 알아채고 가담하지 않자 작전을 취소했고 새벽 5시 해산 지시",
+          "excerpt": "Cependant, les militaires chargés de vérifier le soi-disant soulèvement communiste s'aperçoivent du bluff et ne s'associent pas à l'aventure. Constatant son échec, Deloncle annule toute l'opération, provoquant ainsi la fureur de Jean Filiol. À 5 heures du matin, les groupes de cagoulards reçoivent la consigne de se disperser."
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1890
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "브레스트 출생",
+            "en": "Born in Brest"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": [
+              1918
+            ]
+          },
+          "r": {
+            "ko": "1차 대전 포병 장교, 샹파뉴 전선에서 부상",
+            "en": "Artillery officer in the First World War, wounded on the Champagne front"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1935
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "악시옹 프랑세즈를 떠나 독자 조직 결성",
+            "en": "Leaves Action Française to build his own organisation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1936,
+              6
+            ],
+            "end": [
+              1937,
+              11
+            ]
+          },
+          "r": {
+            "ko": "혁명행동비밀위원회(카굴) 지도",
+            "en": "Leads the Secret Committee of Revolutionary Action (La Cagoule)"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1937,
+              11
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "쿠데타 시도 무산, 조직 적발",
+            "en": "Coup attempt collapses; the organisation is uncovered"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940
+            ],
+            "end": [
+              1942,
+              5
+            ]
+          },
+          "r": {
+            "ko": "사회혁명운동(MSR) 창설·지도, 1942년 5월 축출",
+            "en": "Founds and leads the Social Revolutionary Movement (MSR); expelled in May 1942"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1941,
+              2
+            ],
+            "end": [
+              1941,
+              10
+            ]
+          },
+          "r": {
+            "ko": "국민민중연합 첫 지도위원회 위원",
+            "en": "Member of the first directing committee of the National Popular Rally"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1943,
+              8
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "독일 당국에 체포되어 한 달 구금",
+            "en": "Arrested by the Germans and held for a month"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              1
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "파리 자택에서 독일 보안국 요원들에게 사살",
+            "en": "Shot dead at his Paris home by German SD agents"
+          }
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "french-cagoule",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1936,
+          "endYear": 1937,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/La_Cagoule",
+              "locator": "en: lead",
+              "claim": "카굴은 들롱클이 세웠다",
+              "excerpt": "La Cagoule was founded by Eugène Deloncle"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+              "locator": "fr: Création",
+              "claim": "1936년 6월 생긴 CSAR의 지도자는 들롱클이었다",
+              "excerpt": "Sa tête pensante est Eugène Deloncle, son bras-droit Jean Filiol."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+              "locator": "fr: Assassinat de Marx Dormoy",
+              "claim": "1937년 11월 쿠데타 실패 뒤 조직이 해체되었다",
+              "excerpt": "Le ministre de l'Intérieur Marx Dormoy fait démanteler l'organisation, le 23 novembre."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "french-action-francaise",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": null,
+          "endYear": 1935,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+              "locator": "fr: Carrière et activité politique",
+              "claim": "들롱클은 악시옹 프랑세즈에 가입했다가 떠났다",
+              "excerpt": "Il adhère à l'Action française avant de la quitter pour fonder avec d'autres dissidents, notamment Jean Filiol, l'Organisation secrète d'action révolutionnaire nationale (OSARN) en 1935."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+              "locator": "en: 1930s political activity",
+              "claim": "1935년 탈퇴",
+              "excerpt": "he left the movement in 1935 because of his perception of inaction by the older organisation in combating the French left"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-msr",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1940,
+          "endYear": 1942,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+              "locator": "fr: Fondation et programme",
+              "claim": "사회혁명운동은 들롱클이 세운 파시즘 계열 정당이다",
+              "excerpt": "Fondé par Eugène Deloncle, ancien chef de la Cagoule, et Eugène Schueller, propriétaire du groupe L'Oréal"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Deloncle",
+              "locator": "fr: Carrière et activité politique",
+              "claim": "1942년 5월 MSR에서 축출",
+              "excerpt": "Deloncle est finalement exclu du MSR en mai 1942."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-rnp",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1941,
+          "endYear": 1941,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+              "locator": "en: February–October 1941: the RNP-MSR period",
+              "claim": "들롱클은 RNP-MSR 첫 지도위원회 위원이었다",
+              "excerpt": "The first committee of direction of the RNP-MSR was composed of two RNP members and three MSR members: Marcel Déat, Jean Fontenoy, Jean Van Ormelingen (alias Jean Vanor), Eugène Deloncle and Jean Goy."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+              "locator": "fr: Phase RNP-MSR (février-octobre 1941)",
+              "claim": "1941년 10월 MSR이 RNP에서 배제되었다",
+              "excerpt": "Le MSR est donc exclu du RNP en octobre 1941"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marcel-deat",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "마르셀",
+        "en": "Marcel"
+      },
+      "familyName": {
+        "ko": "데아",
+        "en": "Déat"
+      },
+      "cyrillic": "Marcel Déat",
+      "years": "1894–1955",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "「질서·권위·민족」을 내걸고 사회당을 떠나 대독 협력 정당 국민민중연합을 세운 신사회주의자",
+        "en": "Neo-socialist who left the SFIO under the slogan 'Order, Authority, Nation' and founded the collaborationist National Popular Rally"
+      },
+      "bio": {
+        "ko": "게리니에서 태어나 고등사범학교에 들어간 1914년 노동자 인터내셔널 프랑스 지부(SFIO)에 입당했고, 1차 대전을 대위로 마친 뒤 철학 교수 자격을 얻었다. 1932년 파리 20구에서 자크 뒤클로를 꺾고 하원의원이 되었으나, 계급투쟁 대신 계급 협력과 권위적 계획 국가를 내건 신사회주의 노선 때문에 1933년 11월 당에서 제명되었다. 1936년 초 사로 내각의 공군장관을 지냈고, 1939년 5월 단치히를 위해 죽을 수 없다는 기사로 이름을 알렸다. 점령기인 1941년 2월 대독 협력 정당 국민민중연합(RNP)을 세웠고 1944년 3월 라발 정부의 노동장관이 되었다. 해방 뒤 궐석으로 사형을 선고받았고, 이탈리아의 수도원에 숨어 지내다 1955년 죽었다.",
+        "en": "Born in Guérigny, he entered the École Normale Supérieure and joined the SFIO in 1914, ended the First World War a captain and qualified in philosophy. Elected deputy for the 20th arrondissement of Paris in 1932 against Jacques Duclos, he was expelled from the party in November 1933 for a neo-socialism that put class collaboration and an authoritarian planning state in place of class struggle. He was Minister of Air in the Sarraut cabinet early in 1936, and in May 1939 won national fame with an article refusing to die for Danzig. Under the Occupation he founded the collaborationist National Popular Rally (RNP) in February 1941 and became Laval's Minister of Labour in March 1944. Sentenced to death in absentia after the Liberation, he lived hidden in an Italian convent until his death in 1955."
+      },
+      "moment": {
+        "ko": "1939년 5월 4일 《뢰브르》의 기사에서 그는 폴란드 친구들과 함께 우리 영토를 지키는 전망이라면 용감히 생각해 볼 수 있다고 쓴 뒤 이렇게 맺었다. 「그러나 단치히를 위해 죽는 것, 그것은 안 된다!」",
+        "en": "In L'Œuvre on 4 May 1939 he wrote that fighting beside \"our Polish friends\" for the common defence of French territory was a prospect one could bravely consider, and then closed: \"But to die for Danzig, no!\""
+      },
+      "fate": {
+        "kind": "exile",
+        "label": {
+          "ko": "은신 중 사망",
+          "en": "Died in hiding"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+        "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+        "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+        "https://en.wikipedia.org/wiki/National_Popular_Rally"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: lead",
+          "claim": "1894년 출생, 1955년 사망",
+          "excerpt": "Marcel Déat (French pronunciation: [maʁsɛl dea]; 7 March 1894 – 5 January 1955) was a French politician."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: lead",
+          "claim": "게리니 출생의 프랑스 정치인",
+          "excerpt": "Marcel Déat, né le 7 mars 1894 à Guérigny (Nièvre) et mort le 5 janvier 1955 à Turin (Italie), est un homme politique français"
+        },
+        {
+          "field": "nationalOrigin",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: lead",
+          "claim": "게리니 출생의 프랑스 정치인",
+          "excerpt": "Marcel Déat, né le 7 mars 1894 à Guérigny (Nièvre) et mort le 5 janvier 1955 à Turin (Italie), est un homme politique français"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: Origines familiales et formation secondaire",
+          "claim": "1914년 고등사범학교 입학, 같은 해 SFIO 입당",
+          "excerpt": "Il est admis en 1914 à l’École normale supérieure de la rue d'Ulm. La même année, il adhère à la SFIO"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: Première Guerre mondiale et formation universitaire",
+          "claim": "1919년 초 대위로 제대",
+          "excerpt": "Il est démobilisé début 1919 avec le grade de capitaine."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Neo-socialist period",
+          "claim": "1932년 뒤클로를 꺾고 파리 20구 의원 당선, 1933년 11월 5일 제명",
+          "excerpt": "During the 1932 elections, he was elected deputy of the 20th arrondissement of Paris, beating the Communist Jacques Duclos"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Neo-socialist period",
+          "claim": "계급 협력과 권위적 계획 국가를 내세운 신사회주의",
+          "excerpt": "Déat replaced class struggle by collaboration of classes and national solidarity, advocated corporatism as a social organization model, replaced the notion of \"socialism\" by \"anti-capitalism\" and supported an authoritarian state which would plan the economy and from which parliamentarism would be repealed."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Neo-socialist period",
+          "claim": "1933년 11월 5일 대회에서 제명",
+          "excerpt": "Déat and other Neosocialists were expelled from the SFIO at the 5 November 1933 Congress"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: L'Union socialiste républicaine (1935-1940)",
+          "claim": "1936년 초 사로 내각 공군장관",
+          "excerpt": "Il est brièvement ministre de l’Air début 1936, dans le cabinet Sarraut."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Neo-socialist period",
+          "claim": "「단치히를 위해 왜 죽는가」 기사로 전국적으로 유명해졌다",
+          "excerpt": "the publication caused a widespread controversy, and propelled Déat to national fame"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Roots of extremism",
+          "claim": "1941년 2월 국민민중연합 창설",
+          "excerpt": "Thereafter, he founded in February 1941 the National Popular Rally (RNP) which advocated collaboration with Nazi Germany and antisemitism."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Roots of extremism",
+          "claim": "1944년 3월 16일 라발 내각 노동·국민연대 장관",
+          "excerpt": "Under the suggestion of the Germans, Marcel Déat became on 16 March 1944, Minister of Labour and National Solidarity in Laval's cabinet."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "en: Exile and death",
+          "claim": "이탈리아 수도원에 숨어 지내다 사망, 궐석 사형 선고",
+          "excerpt": "He was later taken in and hidden by a Roman Catholic religious order in the convent of San Vito, near Turin, where he wrote his memoirs and lived undiscovered until his death in 1955. After the war, he was convicted of treason in France and sentenced to death in absentia on 19 June 1945."
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: L'Union socialiste républicaine (1935-1940)",
+          "claim": "1939년 5월 4일 《뢰브르》 기사 「단치히를 위해 죽는 것, 안 된다」",
+          "excerpt": "Il publie le 4 mai 1939 dans L'Œuvre un article retentissant dénonçant les garanties données par la Grande-Bretagne à la Pologne"
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+          "locator": "fr: L'Union socialiste républicaine (1935-1940)",
+          "claim": "기사의 맺음말",
+          "excerpt": "« Combattre aux côtés de nos amis polonais pour la défense commune de nos territoires, de nos biens, de nos libertés, c’est une perspective qu’on peut courageusement envisager, si elle doit contribuer au maintien de la paix. Mais mourir pour Dantzig, non ! »"
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1894
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "니에브르 게리니 출생",
+            "en": "Born at Guérigny in the Nièvre"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "고등사범학교 입학, SFIO 입당",
+            "en": "Enters the École Normale Supérieure; joins the SFIO"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1914
+            ],
+            "end": [
+              1919
+            ]
+          },
+          "r": {
+            "ko": "1차 대전 종군, 대위로 제대",
+            "en": "Serves through the First World War; demobilised as a captain"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1926,
+              2
+            ],
+            "end": [
+              1928
+            ]
+          },
+          "r": {
+            "ko": "랭스 보궐선거로 하원의원",
+            "en": "Deputy, elected at a by-election in Reims"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1932
+            ],
+            "end": [
+              1936
+            ]
+          },
+          "r": {
+            "ko": "파리 20구 하원의원",
+            "en": "Deputy for the 20th arrondissement of Paris"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1933,
+              11
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "SFIO에서 제명, 프랑스 사회주의당-장 조레스 연합 참여",
+            "en": "Expelled from the SFIO; joins the Socialist Party of France – Jean Jaurès Union"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1935
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "사회주의공화연합 결성에 참여",
+            "en": "Takes part in forming the Socialist Republican Union"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1936
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "사로 내각 공군장관",
+            "en": "Minister of Air in the Sarraut cabinet"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1939
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "앙굴렘 하원의원 당선, 5월 「단치히」 기사",
+            "en": "Elected deputy for Angoulême; the Danzig article in May"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940,
+              12
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "비시 경찰에 잠시 체포",
+            "en": "Briefly arrested by the Vichy police"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1941,
+              2
+            ],
+            "end": [
+              1944
+            ]
+          },
+          "r": {
+            "ko": "국민민중연합 창당·지도",
+            "en": "Founds and leads the National Popular Rally"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1941,
+              8
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "베르사유에서 폴 콜레트의 저격으로 부상",
+            "en": "Wounded at Versailles in Paul Collette's assassination attempt"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              3
+            ],
+            "end": [
+              1944,
+              8
+            ]
+          },
+          "r": {
+            "ko": "라발 정부 노동·국민연대 장관",
+            "en": "Minister of Labour and National Solidarity in the Laval government"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1945,
+              6
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "궐석 재판으로 사형 선고",
+            "en": "Sentenced to death in absentia"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1955
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "토리노 근교 수도원에 숨어 지내다 사망",
+            "en": "Dies in hiding in a convent near Turin"
+          }
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-rnp",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1941,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+              "locator": "fr: lead",
+              "claim": "국민민중연합은 데아가 세운 대독 협력 정당이다",
+              "excerpt": "Le Rassemblement national populaire (RNP) est un parti politique français fasciste et collaborationniste, fondé par Marcel Déat pendant l'occupation allemande. Le RNP, qui a existé du 2 février 1941 jusqu'en 1944"
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+              "locator": "en: lead",
+              "claim": "데아가 이끈 정당",
+              "excerpt": "Created in February 1941 by former members of the French Section of the Workers' International (SFIO) of the neosocialist tendency and led by Marcel Déat"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-sfio",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1914,
+          "endYear": 1933,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+              "locator": "fr: Origines familiales et formation secondaire",
+              "claim": "1914년 SFIO 입당",
+              "excerpt": "La même année, il adhère à la SFIO, plus par « idéalisme philosophique que par matérialisme »."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+              "locator": "en: Neo-socialist period",
+              "claim": "1933년 제명",
+              "excerpt": "Déat and other Neosocialists were expelled from the SFIO at the 5 November 1933 Congress"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-psdf",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1933,
+          "endYear": 1935,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+              "locator": "en: Neo-socialist period",
+              "claim": "1933년 프랑스 사회주의당-장 조레스 연합 가입",
+              "excerpt": "The same year, Déat joined the Socialist Party of France – Jean Jaurès Union (PSdF) created the same year by Planist and Neosocialist elements expelled by the SFIO during the 1933 Congress."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+              "locator": "fr: lead",
+              "claim": "신사회주의자의 우두머리",
+              "excerpt": "Il participe la même année à la création du Parti socialiste de France, et devient le chef de file des néo-socialistes"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-usr",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1935,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Marcel_D%C3%A9at",
+              "locator": "en: Neo-socialist period",
+              "claim": "2년 뒤 사회주의공화연합 가입",
+              "excerpt": "Two years later, he joined the Socialist Republican Union (USR)."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+              "locator": "fr: L'Union socialiste républicaine (1935-1940)",
+              "claim": "1935년 PSDF를 다른 두 당과 합쳐 USR을 만들었다",
+              "excerpt": "En 1935, Déat et ses proches, Renaudel, Marquet et Montagon, fusionnent le PSDF avec deux autres groupes de gauche modérée"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "philippe-henriot",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "필리프",
+        "en": "Philippe"
+      },
+      "familyName": {
+        "ko": "앙리오",
+        "en": "Henriot"
+      },
+      "cyrillic": "Philippe Henriot",
+      "years": "1889–1944",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "전국가톨릭연맹의 연사에서 비시 라디오의 목소리가 된 선전 담당 국무장관",
+        "en": "Catholic Federation orator who became the voice of Vichy radio and its secretary of state for propaganda"
+      },
+      "bio": {
+        "ko": "랭스에서 태어나 가톨릭 학교 교사로 일하다 1924년 보르도 《락시옹 카톨리크》의 책임자가 되면서 전국가톨릭연맹(FNC)에 가입했고, 연맹의 순회 연사로 이름을 얻었다. 1932년 지롱드에서 하원의원에 당선되었고, 공화연맹 부의장으로서 반공·반유대·반프리메이슨·반의회 연설을 이어 갔다. 1940년 7월 페탱 전권 위임에 찬성했고, 1941년 독일이 소련을 침공하자 친독으로 돌아섰다. 1942년부터 국영 라디오에서 대독 협력을 옹호했고 1943년 민병대에 들어갔으며, 1944년 1월 정보·선전 담당 국무장관이 되었다. 1944년 6월 28일 부처 청사에서 레지스탕스 특공대에게 사살되었다.",
+        "en": "Born in Reims, he taught at a Catholic school and in 1924 became director of L'Action catholique in Bordeaux and joined the National Catholic Federation (FNC), making his name as one of its touring speakers. Elected deputy for the Gironde in 1932, he spoke as vice-president of the Republican Federation against communists, Jews, Freemasons and parliament. He voted full powers to Pétain in July 1940 and turned pro-German after Germany invaded the Soviet Union in 1941. From 1942 he defended collaboration on state radio, joined the Milice in 1943 and in January 1944 became secretary of state for information and propaganda. On 28 June 1944 a Resistance commando shot him dead inside the ministry."
+      },
+      "moment": {
+        "ko": "1944년 5월 10일 라디오 파리에서 그는 런던 방송의 맞수 피에르 다크를 유대인 출신이라며 공격했다. 다크는 다음 날 앙리오의 무덤에는 「히틀러를 위해 죽다, 프랑스인에게 총살되다」라고 새겨질 것이라 답했다. 48일 뒤 그는 사살되었다.",
+        "en": "On Radio-Paris on 10 May 1944 he attacked his chief opponent on London radio, Pierre Dac, for his Jewish origins. Dac answered the next day that Henriot's grave would read \"Died for Hitler, shot by the French\". Forty-eight days later Henriot was shot dead."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "레지스탕스에게 사살",
+          "en": "Shot by the Resistance"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Philippe_Henriot",
+        "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+        "https://fr.wikipedia.org/wiki/F%C3%A9d%C3%A9ration_nationale_catholique"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://en.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "en: lead",
+          "claim": "1889년 출생, 1944년 사망",
+          "excerpt": "Philippe Henriot (English:  ahn-REE-oh, French: [filip ɑ̃ʁjo]; 7 January 1889 – 28 June 1944) was a French poet, journalist, politician, and Nazi collaborator"
+        },
+        {
+          "field": "citizenship",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: lead",
+          "claim": "랭스 출생 프랑스 정치인",
+          "excerpt": "Philippe Henriot, né le 7 janvier 1889 à Reims et mort le 28 juin 1944 à Paris"
+        },
+        {
+          "field": "nationalOrigin",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: lead",
+          "claim": "랭스 출생 프랑스 정치인",
+          "excerpt": "Philippe Henriot, né le 7 janvier 1889 à Reims et mort le 28 juin 1944 à Paris"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Études et débuts politiques",
+          "claim": "1924년 《락시옹 카톨리크》 책임자, FNC 가입",
+          "excerpt": "Le 20 octobre 1924, Philippe Henriot devient directeur du journal L'Action catholique à Bordeaux et adhère à la Fédération nationale catholique (FNC), présidée par le général de Castelnau."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Études et débuts politiques",
+          "claim": "1925~1932년 FNC 전국 순회 강연",
+          "excerpt": "De 1925 à 1932, il participe avec le général de Castelnau et l'abbé Bergey à des conférences données dans toute la France par la Fédération nationale catholique"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Député de 1932 à 1940",
+          "claim": "1932년 지롱드 하원의원",
+          "excerpt": "En 1932, il succède à l'abbé Bergey comme député de la 4e circonscription de Bordeaux."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Député de 1932 à 1940",
+          "claim": "공화연맹 부의장",
+          "excerpt": "Élu vice-président de la Fédération républicaine, un parti conservateur qui se droitise dans les années 1930"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "en: Career",
+          "claim": "반공·반유대·반프리메이슨·반의회",
+          "excerpt": "his speeches showed him to be anti-communist, antisemitic, anti-Freemasonry, and against the parliamentary system"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Face à la montée de l'hitlérisme 1938-1940",
+          "claim": "1940년 7월 10일 전권 위임 찬성, 1941년 6월 22일 이후 친히틀러",
+          "excerpt": "vote les pleins pouvoirs le 10 juillet 1940"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Face à la montée de l'hitlérisme 1938-1940",
+          "claim": "독소전 뒤 친히틀러로 돌아섰다",
+          "excerpt": "Par anticommunisme, il devient très pro-hitlérien à partir du 22 juin 1941, quand l'Allemagne envahit l'URSS."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Collaboration",
+          "claim": "1942년 2월 국영 라디오 첫 연설, 1943년 3월 민병대 입대",
+          "excerpt": "s'engage dans la Milice en mars 1943"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Collaboration",
+          "claim": "1942년 2월 7일 국영 라디오 첫 연설",
+          "excerpt": "le samedi 7 février 1942, Philippe Henriot prononce sa première allocution à la « Radio Nationale »"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Collaboration",
+          "claim": "1944년 1월 6일 정보·선전 담당 국무장관",
+          "excerpt": "il devient, le 6 janvier 1944, secrétaire d'État à l'Information et à la Propagande du gouvernement de Vichy"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "en: Assassination",
+          "claim": "1944년 6월 28일 부처 청사에서 레지스탕스에게 사살",
+          "excerpt": "on 28 June 1944, in the Ministry building where he lived, he was assassinated by a group of COMAC members of the Maquis"
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Collaboration",
+          "claim": "1944년 5월 10일 라디오 파리에서 피에르 다크 공격",
+          "excerpt": "Le 10 mai 1944, Philippe Henriot, sur Radio-Paris, s'en prend à son adversaire privilégié Pierre Dac, en mentionnant les origines juives de ce dernier."
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Collaboration",
+          "claim": "다크의 응답",
+          "excerpt": "tandis que celle d'Henriot portera la mention « Mort pour Hitler, fusillé par les Français »."
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+          "locator": "fr: Collaboration",
+          "claim": "48일 뒤 사살",
+          "excerpt": "La réponse de Dac s'avère prémonitoire, car Henriot sera abattu par la Résistance 48 jours plus tard."
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1889
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "랭스 출생",
+            "en": "Born in Reims"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1909
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "생트푸아라그랑드의 가톨릭 학교 문학 교사",
+            "en": "Literature teacher at a Catholic school in Sainte-Foy-la-Grande"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1924,
+              10
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "보르도 《락시옹 카톨리크》 책임자, 전국가톨릭연맹 가입",
+            "en": "Director of L'Action catholique in Bordeaux; joins the National Catholic Federation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1925
+            ],
+            "end": [
+              1932
+            ]
+          },
+          "r": {
+            "ko": "전국가톨릭연맹 전국 순회 강연",
+            "en": "Speaks across France for the National Catholic Federation"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1932
+            ],
+            "end": [
+              1940
+            ]
+          },
+          "r": {
+            "ko": "지롱드 하원의원(1936년 재선)",
+            "en": "Deputy for the Gironde (re-elected 1936)"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940,
+              7
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "페탱 전권 위임에 찬성",
+            "en": "Votes full powers to Pétain"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1942,
+              2
+            ],
+            "end": [
+              1943,
+              12
+            ]
+          },
+          "r": {
+            "ko": "국영 라디오에서 매주 연설",
+            "en": "Weekly addresses on state radio"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1943,
+              3
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "민병대 입대",
+            "en": "Joins the Milice"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1943,
+              12
+            ],
+            "end": [
+              1944,
+              6
+            ]
+          },
+          "r": {
+            "ko": "라디오 파리에서 하루 두 차례 논평",
+            "en": "Twice-daily editorials on Radio-Paris"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              1
+            ],
+            "end": [
+              1944,
+              6
+            ]
+          },
+          "r": {
+            "ko": "정보·선전 담당 국무장관",
+            "en": "Secretary of state for information and propaganda"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              6
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "정보부 청사에서 레지스탕스 특공대에게 사살",
+            "en": "Shot dead in the ministry by a Resistance commando"
+          }
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "propaganda",
+          "affiliationId": "state-france",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1942,
+          "endYear": 1944,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "en: lead",
+              "claim": "비시 정부의 정보·선전 담당 국무장관",
+              "excerpt": "served as Secretary of State for Information and Propaganda for Vichy France"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "fr: Collaboration",
+              "claim": "1942년 2월부터 국영 라디오 연설",
+              "excerpt": "le samedi 7 février 1942, Philippe Henriot prononce sa première allocution à la « Radio Nationale », puis y parle chaque dimanche jusqu'au 20 décembre 1943"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "fr: Collaboration",
+              "claim": "1944년 1월 6일 국무장관 임명",
+              "excerpt": "il devient, le 6 janvier 1944, secrétaire d'État à l'Information et à la Propagande du gouvernement de Vichy"
+            }
+          ]
+        },
+        {
+          "functionId": "propaganda",
+          "affiliationId": "french-fnc",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1924,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "fr: Études et débuts politiques",
+              "claim": "1924년 FNC 가입",
+              "excerpt": "adhère à la Fédération nationale catholique (FNC), présidée par le général de Castelnau"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/F%C3%A9d%C3%A9ration_nationale_catholique",
+              "locator": "fr: Histoire",
+              "claim": "FNC 지롱드 지부의 주요 활동가이자 연사",
+              "excerpt": "En Gironde, les principaux animateurs locaux de la FNC (le député et prêtre Daniel Bergey et l'orateur Philippe Henriot)"
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-republican-federation",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": null,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "fr: Député de 1932 à 1940",
+              "claim": "공화연맹 부의장",
+              "excerpt": "Élu vice-président de la Fédération républicaine, un parti conservateur qui se droitise dans les années 1930"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "fr: Face à la montée de l'hitlérisme 1938-1940",
+              "claim": "공화연맹 소속",
+              "excerpt": "Inscrit à la Fédération républicaine, il est anticommuniste, antisémite, antimaçon et antiparlementaire."
+            }
+          ]
+        },
+        {
+          "functionId": "propaganda",
+          "affiliationId": "french-milice",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1943,
+          "endYear": 1944,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "fr: Collaboration",
+              "claim": "1943년 3월 민병대 입대",
+              "excerpt": "s'engage dans la Milice en mars 1943"
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Philippe_Henriot",
+              "locator": "en: Propagandist",
+              "claim": "1943년 민병대 가입",
+              "excerpt": "In 1943, Henriot joined the Milice paramilitary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robert-brasillach",
+      "groupId": "world-interwar",
+      "givenName": {
+        "ko": "로베르",
+        "en": "Robert"
+      },
+      "familyName": {
+        "ko": "브라지야크",
+        "en": "Brasillach"
+      },
+      "cyrillic": "Robert Brasillach",
+      "years": "1909–1945",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "《주 쉬 파르투》 편집장으로 대독 협력과 반유대 선동을 이끌다 총살된 파시스트 문필가",
+        "en": "Fascist man of letters who led collaborationist and antisemitic agitation as editor of Je suis partout and was shot for it"
+      },
+      "bio": {
+        "ko": "페르피냥에서 태어나 고등사범학교를 나왔고, 1939년까지 일간지 《악시옹 프랑세즈》의 문학 평론을 맡으며 소설과 『영화사』를 썼다. 1934년 2월 6일 뒤 파시즘을 공공연히 지지했고, 1937년 주간지 《주 쉬 파르투》의 편집장이 되었다. 1940년 독일군 포로가 되었다가 1941년 돌아와 편집장에 복귀했고, 지면에서 블룸·달라디에·망델 같은 전 공화국 각료의 사형을 요구하며 반유대 선동을 폈다. 1943년 편집장에서 물러났다. 해방 뒤 적과 내통한 혐의로 1945년 1월 사형을 선고받았고, 문인들의 청원에도 드골이 사면을 거부해 2월 6일 몽루주 요새에서 총살되었다.",
+        "en": "Born in Perpignan and educated at the École Normale Supérieure, he wrote the literary column of the daily L'Action française until 1939, alongside novels and a history of the cinema. After 6 February 1934 he openly supported fascism, and in 1937 he became editor-in-chief of the weekly Je suis partout. Taken prisoner by the Germans in 1940, he returned in 1941 to his editorial post and used the paper to demand the death of former republican ministers such as Blum, Daladier and Mandel and to spread antisemitic agitation. He gave up the editorship in 1943. After the Liberation he was sentenced to death in January 1945 for intelligence with the enemy; despite a writers' petition de Gaulle refused a pardon, and he was shot at the fort of Montrouge on 6 February."
+      },
+      "moment": {
+        "ko": "1945년 1월 19일 그의 재판은 여섯 시간 만에 끝났고 20분의 숙의 끝에 사형이 선고되었다. 판결에 분개한 지지자들에게 그는 「영광입니다!」라고 답했다. 2월 6일 그는 눈가리개를 거부하고 총살되었다.",
+        "en": "His trial on 19 January 1945 lasted six hours, and after twenty minutes of deliberation he was sentenced to death. To the supporters protesting in the courtroom he answered, \"It's an honour!\" On 6 February he refused a blindfold and was shot."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Executed by firing squad"
+        }
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Robert_Brasillach",
+        "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+        "https://fr.wikipedia.org/wiki/Je_suis_partout"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "source": "https://en.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "en: lead",
+          "claim": "1909년 출생, 1945년 사망",
+          "excerpt": "Robert Brasillach (French: [ʁɔbɛʁ bʁazijak] ; 31 March 1909 – 6 February 1945) was a French author and journalist."
+        },
+        {
+          "field": "citizenship",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: lead",
+          "claim": "페르피냥 출생 프랑스 문필가",
+          "excerpt": "Robert Brasillach ([ʁɔbɛʁ bʁazijak] ), né le 31 mars 1909 à Perpignan et mort fusillé le 6 février 1945 au fort de Montrouge, à Arcueil, est un homme de lettres, journaliste et collaborateur français."
+        },
+        {
+          "field": "nationalOrigin",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: lead",
+          "claim": "페르피냥 출생 프랑스 문필가",
+          "excerpt": "Robert Brasillach ([ʁɔbɛʁ bʁazijak] ), né le 31 mars 1909 à Perpignan et mort fusillé le 6 février 1945 au fort de Montrouge, à Arcueil, est un homme de lettres, journaliste et collaborateur français."
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "en: Biography",
+          "claim": "고등사범학교 졸업, 악시옹 프랑세즈의 문학 평론가, 1934년 2월 6일 뒤 파시즘 지지",
+          "excerpt": "He studied at the École normale supérieure, at the time a school of the University of Paris, and then became a novelist and literary critic for the Action française of Charles Maurras. After the 6 February 1934 crisis in the Place de la Concorde, Brasillach openly supported fascism."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Pendant l'entre-deux-guerres",
+          "claim": "1939년까지 일간지 《악시옹 프랑세즈》 문학 평론",
+          "excerpt": "dans le quotidien L'Action française jusqu'en 1939"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Critique de cinéma",
+          "claim": "『영화사』 1935년 초판",
+          "excerpt": "est son Histoire du cinéma, publiée pour la première fois en 1935"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Pendant l'entre-deux-guerres",
+          "claim": "1937년 《주 쉬 파르투》 편집장",
+          "excerpt": "il devient en 1937 rédacteur en chef de l'hebdomadaire Je suis partout, journal déjà ouvertement antisémite."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Sous l'Occupation allemande",
+          "claim": "1940년 6월 포로, 1941년 3월까지 억류, 귀국 후 편집장 복귀",
+          "excerpt": "Capturé en juin 1940, il est détenu jusqu'en mars 1941 en Allemagne à l'Oflag VI A de Soest"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Sous l'Occupation allemande",
+          "claim": "1941년 9월 6일 블룸·달라디에·망델 사형 요구",
+          "excerpt": "Dans l'édition du 6 septembre 1941, il réclame la condamnation à mort des anciens ministres républicains, comme Blum, Daladier ou Mandel"
+        },
+        {
+          "field": "bio",
+          "source": "https://en.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "en: Politics and wartime activities",
+          "claim": "1943년 편집장 교체",
+          "excerpt": "was replaced as editor of Je suis partout in 1943 by the even more extreme Pierre-Antoine Cousteau"
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Déroulement",
+          "claim": "적과의 내통 혐의, 1945년 1월 19일 사형 선고",
+          "excerpt": "Il est emprisonné à la prison de Fresnes (actuel Val-de-Marne) et poursuivi pour intelligence avec l'ennemi."
+        },
+        {
+          "field": "bio",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Déroulement",
+          "claim": "청원과 드골의 사면 거부, 2월 6일 몽루주에서 총살",
+          "excerpt": "Le général choisit de ne pas commuer la peine prononcée, ce qui entraîne l'exécution de la sentence : le 6 février 1945, à 9 h 40, après avoir refusé de se laisser bander les yeux, Robert Brasillach est fusillé au fort de Montrouge."
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Déroulement",
+          "claim": "재판 여섯 시간, 20분 숙의 끝에 사형",
+          "excerpt": "Son procès, qui s'ouvre le 19 janvier 1945 devant la cour d'assises de la Seine, dure six heures. Il est condamné à mort le jour même, après une délibération de vingt minutes."
+        },
+        {
+          "field": "moment",
+          "source": "https://en.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "en: Trial and execution",
+          "claim": "「영광입니다!」",
+          "excerpt": "Brasillach responded to the outrage of some of his supporters then in attendance by saying \"It's an honour!\""
+        },
+        {
+          "field": "moment",
+          "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+          "locator": "fr: Déroulement",
+          "claim": "눈가리개를 거부하고 총살",
+          "excerpt": "après avoir refusé de se laisser bander les yeux, Robert Brasillach est fusillé au fort de Montrouge"
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1909
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "페르피냥 출생",
+            "en": "Born in Perpignan"
+          }
+        },
+        {
+          "period": {
+            "end": [
+              1939
+            ],
+            "endQual": "until"
+          },
+          "r": {
+            "ko": "일간지 《악시옹 프랑세즈》 문학 평론",
+            "en": "Literary columnist of the daily L'Action française"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1935
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "『영화사』 출간",
+            "en": "Publishes his history of the cinema"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1937,
+              6
+            ],
+            "end": [
+              1943
+            ]
+          },
+          "r": {
+            "ko": "주간지 《주 쉬 파르투》 편집장",
+            "en": "Editor-in-chief of the weekly Je suis partout"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1940,
+              6
+            ],
+            "end": [
+              1941,
+              3
+            ]
+          },
+          "r": {
+            "ko": "독일군 포로로 조스트의 장교 수용소에 억류",
+            "en": "Prisoner of war at the Oflag VI A in Soest"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1943
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "동부전선의 프랑스 의용군단 방문, 카틴 현장 방문",
+            "en": "Visits the French volunteer legion on the Eastern Front and the Katyn site"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1943,
+              11
+            ],
+            "end": [
+              1944,
+              7
+            ]
+          },
+          "r": {
+            "ko": "《라 크로니크 드 파리》 편집장",
+            "en": "Editor-in-chief of La Chronique de Paris"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1944,
+              9
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "해방 뒤 경찰에 자수, 프렌 교도소 수감",
+            "en": "Surrenders to the police after the Liberation; held at Fresnes"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1945,
+              1
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "적과 내통한 혐의로 사형 선고",
+            "en": "Sentenced to death for intelligence with the enemy"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1945,
+              2
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "드골의 사면 거부 뒤 몽루주 요새에서 총살",
+            "en": "Shot at the fort of Montrouge after de Gaulle refuses a pardon"
+          }
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "propaganda",
+          "affiliationId": "french-je-suis-partout",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1937,
+          "endYear": 1943,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+              "locator": "fr: Pendant l'entre-deux-guerres",
+              "claim": "1937년 반유대 주간지 《주 쉬 파르투》 편집장(카탈로그에 이 신문의 소속이 없음)",
+              "excerpt": "il devient en 1937 rédacteur en chef de l'hebdomadaire Je suis partout, journal déjà ouvertement antisémite."
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Je_suis_partout",
+              "locator": "fr: Sous l'Occupation",
+              "claim": "점령기 대독 협력 노선",
+              "excerpt": "L'hebdomadaire reparaît le 7 février 1941 en zone occupée contre l'avis de Maurras et soutient immédiatement une politique collaborationniste. Robert Brasillach, rédacteur en chef depuis juin 1937, reprend les rênes à son retour de captivité."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Robert_Brasillach",
+              "locator": "en: Politics and wartime activities",
+              "claim": "숨은 유대인의 이름과 주소를 공개하고 좌파 정치인의 죽음을 요구",
+              "excerpt": "He published the names and addresses of Jews who had gone into hiding, called for the death of left-wing politicians"
+            }
+          ]
+        },
+        {
+          "functionId": "arts",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": null,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Robert_Brasillach",
+              "locator": "en: Biography",
+              "claim": "소설가이자 문학 평론가",
+              "excerpt": "then became a novelist and literary critic for the Action française of Charles Maurras"
+            },
+            {
+              "source": "https://fr.wikipedia.org/wiki/Robert_Brasillach",
+              "locator": "fr: Critique de cinéma",
+              "claim": "영화 평론과 『영화사』",
+              "excerpt": "Le fruit de cette passion, outre de nombreuses chroniques dans les journaux, est son Histoire du cinéma, publiée pour la première fois en 1935"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

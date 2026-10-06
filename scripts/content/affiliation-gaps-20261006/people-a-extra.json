@@ -1,0 +1,167 @@
+{
+ "newAffiliations": [
+  {
+   "id": "french-camelots-du-roi",
+   "kind": "force",
+   "label": {
+    "ko": "카믈로 뒤 루아",
+    "en": "Camelots du Roi"
+   },
+   "countryCode": "france",
+   "parentId": "french-action-francaise",
+   "periods": [
+    [
+     1908,
+     1936
+    ]
+   ],
+   "termNeeded": false,
+   "evidence": {
+    "source": "https://en.wikipedia.org/wiki/Camelots_du_Roi",
+    "locator": "en: lead",
+    "claim": "카믈로 뒤 루아는 1908~1936년 활동한 악시옹 프랑세즈의 극우 청년 조직이다.",
+    "excerpt": "The King's Camelots, officially the National Federation of the King's Camelots (French: Fédération nationale des Camelots du Roi) was a far-right youth organization of the French militant royalist and integralist movement Action Française active from 1908 to 1936."
+   },
+   "usedBy": [
+    "maurice-pujo"
+   ]
+  },
+  {
+   "id": "french-francisme",
+   "kind": "force",
+   "label": {
+    "ko": "프랑시슴",
+    "en": "Francisme (Francist Movement / Parti franciste)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1933,
+     1936
+    ],
+    [
+     1941,
+     1944
+    ]
+   ],
+   "termNeeded": true,
+   "evidence": {
+    "source": "https://fr.wikipedia.org/wiki/Parti_franciste",
+    "locator": "fr: lead",
+    "claim": "프랑시슴(프랑시스트당·프랑시스트 운동, 1933~1944)은 뷔카르가 이끈 파시스트 정당이었다.",
+    "excerpt": "Le Francisme, ou Parti franciste ou Mouvement franciste (1933-1944), était un parti politique fasciste dirigé par Marcel Bucard."
+   },
+   "note": "Id per coordinator (french-francisme). Kind left as force to match the id prefix, but fr:Parti franciste calls it a party and it was one in 1941–1944 — a term is still wanted. Banned as a league in 1936, failed relaunch in 1938, refounded as the Parti franciste in 1941 (en: Mouvement Franciste). The periods leave out 1936–1941; use [[1933, 1944]] if a continuous span is preferred.",
+   "usedBy": [
+    "marcel-bucard"
+   ]
+  },
+  {
+   "id": "party-french-faisceau",
+   "kind": "party",
+   "label": {
+    "ko": "페소",
+    "en": "Faisceau"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1925,
+     1928
+    ]
+   ],
+   "termNeeded": true,
+   "evidence": {
+    "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
+    "locator": "fr: Vie politique",
+    "claim": "페소는 조르주 발루아가 세운, 파시즘을 공공연히 내건 최초의 프랑스 정당이었다.",
+    "excerpt": "La même année, il adhère, parmi les premiers, au Faisceau de Georges Valois — premier parti à se revendiquer ouvertement du fascisme — et dont il est chargé de la direction de la propagande à partir de septembre 1926."
+   },
+   "note": "Founded November 1925 by Georges Valois, dissolved 1928 (dates from the general record; check fr:Le Faisceau before registering). The existing François Coty card calls it 「파소」; the 표기법 form of [fɛso] is 페소 — pick one and align both.",
+   "usedBy": [
+    "marcel-bucard"
+   ]
+  },
+  {
+   "id": "party-french-prns",
+   "kind": "party",
+   "label": {
+    "ko": "국민사회공화당",
+    "en": "National and Social Republican Party (PRNS)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1936,
+     1940
+    ]
+   ],
+   "termNeeded": true,
+   "evidence": {
+    "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+    "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+    "claim": "발라는 1937년부터 테탱제의 국민사회공화당(PRNS) 지도위원이었다.",
+    "excerpt": "Il est également membre du comité de direction du Parti républicain national et social (PRNS) de Pierre Taittinger à partir de 1937."
+   },
+   "note": "Taittinger’s party successor to the Jeunesses Patriotes after the 1936 dissolution; periods are approximate — verify against fr:Jeunesses patriotes / Pierre Taittinger before registering. Could alternatively be dropped and Vallat’s PRNS row removed.",
+   "usedBy": [
+    "xavier-vallat"
+   ]
+  },
+  {
+   "id": "french-fnc",
+   "kind": "force",
+   "label": {
+    "ko": "전국가톨릭연맹",
+    "en": "National Catholic Federation (FNC)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1924,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "evidence": {
+    "source": "https://fr.wikipedia.org/wiki/Xavier_Vallat",
+    "locator": "fr: Militant catholique et parlementaire anti-maçon et antisémite",
+    "claim": "발라는 전국가톨릭연맹에서 활동하며 집행위원회에 들어갔다.",
+    "excerpt": "il milite pour la Fédération nationale catholique et intègre l'année suivante son comité exécutif."
+   },
+   "note": "Founded 1924 by General de Castelnau (general record; verify the end date before registering).",
+   "usedBy": [
+    "xavier-vallat"
+   ]
+  }
+ ],
+ "catalogNotes": [
+  "french-solidarite-francaise is catalogued 1933–1936, but fr:Solidarité française dates the organisation 1933–1939: after the June 1936 dissolution it continued as the Parti du rassemblement français and, from June 1937, the Parti du faisceau français. Consider extending its periods to [[1933, 1939]] rather than adding a new id; Renaud’s activity is kept at 1933–1936 because no source states his leadership of the successor party explicitly."
+ ],
+ "collections": {
+  "maurice-pujo": [
+   "counterrevolution",
+   "monarchist"
+  ],
+  "xavier-vallat": [
+   "counterrevolution"
+  ],
+  "marcel-bucard": [
+   "counterrevolution",
+   "fascist"
+  ],
+  "jean-renaud": [
+   "counterrevolution",
+   "fascist"
+  ]
+ },
+ "collectionNotes": {
+  "maurice-pujo": "monarchist fits (royalist leader), but Maurras and Daudet are only in counterrevolution; drop monarchist to keep the Action Française cards uniform, or add it to all three.",
+  "xavier-vallat": "conservative is defensible for his Republican Federation vice-presidency; left out because Taittinger (same party) is only in counterrevolution.",
+  "jean-renaud": "fascist on the strength of the 1934–1937 blue-shirt turn and his self-description as fascist (sf-fr); the league itself is contested between fascist and classic league in the literature."
+ }
+}

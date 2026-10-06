@@ -1,0 +1,1311 @@
+[
+  {
+    "id": "russian-tsentralka",
+    "kind": "force",
+    "label": {
+      "ko": "첸트랄카",
+      "en": "Tsentralka"
+    },
+    "termIds": [
+      "tsentralka"
+    ],
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Tsentralka. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1904,
+        1905
+      ]
+    ]
+  },
+  {
+    "id": "party-afghan-jamiat-e-islami",
+    "kind": "party",
+    "label": {
+      "ko": "이슬람회(아프가니스탄)",
+      "en": "Jamiat-e Islami (Afghanistan)"
+    },
+    "countryCode": "afghanistan",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Jamiat-e Islami (Afghanistan). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1972,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "russian-tambov-insurgents",
+    "kind": "military",
+    "label": {
+      "ko": "탐보프 봉기군",
+      "en": "Tambov insurgent army (Partisan Armies of Tambov Region)"
+    },
+    "countryCode": "russia",
+    "icon": "swords",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Tambov insurgent army (Partisan Armies of Tambov Region). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1920,
+        1921
+      ]
+    ]
+  },
+  {
+    "id": "american-pioneers-of-liberty",
+    "kind": "force",
+    "label": {
+      "ko": "자유의 개척자",
+      "en": "Pioneers of Liberty (Pionire der Frayhayt)"
+    },
+    "countryCode": "usa",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Pioneers of Liberty (Pionire der Frayhayt). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1886,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "international-iwa-ait",
+    "kind": "international",
+    "label": {
+      "ko": "아나르코생디칼리슴 국제노동자협회",
+      "en": "International Workers' Association (anarcho-syndicalist, IWA-AIT)"
+    },
+    "termIds": [
+      "anarcho-syndicalist-iwa"
+    ],
+    "countryCode": null,
+    "icon": "globe",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in International Workers' Association (anarcho-syndicalist, IWA-AIT). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1922,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "russian-konr",
+    "kind": "force",
+    "label": {
+      "ko": "러시아 인민해방위원회",
+      "en": "Committee for the Liberation of the Peoples of Russia (KONR)"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Committee for the Liberation of the Peoples of Russia (KONR). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1944,
+        1945
+      ]
+    ]
+  },
+  {
+    "id": "russian-evangelical-lutheran-church",
+    "kind": "institution",
+    "label": {
+      "ko": "러시아 복음루터교회",
+      "en": "Evangelical Lutheran Church in Russia"
+    },
+    "countryCode": "russia",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Evangelical Lutheran Church in Russia. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1832,
+        1918
+      ]
+    ]
+  },
+  {
+    "id": "party-italian-psim",
+    "kind": "party",
+    "label": {
+      "ko": "이탈리아 사회당(최대주의)",
+      "en": "Italian Socialist Party (Maximalist) (PSIm)"
+    },
+    "countryCode": "italy",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Italian Socialist Party (Maximalist) (PSIm). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1930,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "nicaraguan-edsn",
+    "kind": "military",
+    "label": {
+      "ko": "니카라과 국가주권 수호군",
+      "en": "Army in Defense of the National Sovereignty of Nicaragua (EDSN)"
+    },
+    "countryCode": "nicaragua",
+    "icon": "swords",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Army in Defense of the National Sovereignty of Nicaragua (EDSN). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1927,
+        1934
+      ]
+    ]
+  },
+  {
+    "id": "party-congolese-mcddi",
+    "kind": "party",
+    "label": {
+      "ko": "콩고민주통합발전운동",
+      "en": "Congolese Movement for Democracy and Integral Development (MCDDI)"
+    },
+    "countryCode": "republic-of-congo",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Congolese Movement for Democracy and Integral Development (MCDDI). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1989,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "french-combat",
+    "kind": "force",
+    "label": {
+      "ko": "콩바",
+      "en": "Combat (French Resistance)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Combat (French Resistance). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1941,
+        1944
+      ]
+    ]
+  },
+  {
+    "id": "party-lithuanian-democratic-labour",
+    "kind": "party",
+    "label": {
+      "ko": "리투아니아 민주노동당",
+      "en": "Democratic Labour Party of Lithuania (LDDP)"
+    },
+    "countryCode": "lithuania",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Democratic Labour Party of Lithuania (LDDP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1990,
+        2001
+      ]
+    ]
+  },
+  {
+    "id": "brazilian-aln",
+    "kind": "force",
+    "label": {
+      "ko": "민족해방행동",
+      "en": "Ação Libertadora Nacional (ALN)"
+    },
+    "countryCode": "brazil",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Ação Libertadora Nacional (ALN). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1968,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "party-bulgarian-workers-social-democratic",
+    "kind": "party",
+    "label": {
+      "ko": "불가리아 노동자사회민주당(협소파)",
+      "en": "Bulgarian Workers' Social Democratic Party (Narrow Socialists)"
+    },
+    "countryCode": "bulgaria",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Bulgarian Workers' Social Democratic Party (Narrow Socialists). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1891,
+        1919
+      ]
+    ]
+  },
+  {
+    "id": "british-tgwu",
+    "kind": "force",
+    "label": {
+      "ko": "운수일반노동조합",
+      "en": "Transport and General Workers' Union (TGWU)"
+    },
+    "countryCode": "uk",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Transport and General Workers' Union (TGWU). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1922,
+        2007
+      ]
+    ]
+  },
+  {
+    "id": "party-azerbaijani-nipa",
+    "kind": "party",
+    "label": {
+      "ko": "아제르바이잔 민족독립당",
+      "en": "Azerbaijan National Independence Party (NIPA)"
+    },
+    "countryCode": "azerbaijan",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Azerbaijan National Independence Party (NIPA). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1992,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "french-icarians",
+    "kind": "force",
+    "label": {
+      "ko": "이카리아 운동",
+      "en": "Icarian movement (Icarians)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Icarian movement (Icarians). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1840,
+        1898
+      ]
+    ]
+  },
+  {
+    "id": "american-railway-union",
+    "kind": "force",
+    "label": {
+      "ko": "미국철도연합",
+      "en": "American Railway Union (ARU)"
+    },
+    "countryCode": "usa",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in American Railway Union (ARU). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1893,
+        1897
+      ]
+    ]
+  },
+  {
+    "id": "international-red-aid",
+    "kind": "international",
+    "label": {
+      "ko": "국제적색구원회",
+      "en": "International Red Aid (MOPR)"
+    },
+    "countryCode": null,
+    "icon": "globe",
+    "parentId": "comintern",
+    "criteria": "Only documented service, membership or organizational activity in International Red Aid (MOPR). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1922,
+        1947
+      ]
+    ]
+  },
+  {
+    "id": "british-university-of-oxford",
+    "kind": "institution",
+    "label": {
+      "ko": "옥스퍼드 대학교",
+      "en": "University of Oxford"
+    },
+    "countryCode": "uk",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in University of Oxford. Never infer affiliation from nationality, residence or ideology."
+  },
+  {
+    "id": "russian-gapon-assembly",
+    "kind": "force",
+    "label": {
+      "ko": "상트페테르부르크 러시아 공장노동자회",
+      "en": "Assembly of Russian Factory and Mill Workers of St. Petersburg"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Assembly of Russian Factory and Mill Workers of St. Petersburg. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1904,
+        1906
+      ]
+    ]
+  },
+  {
+    "id": "russian-petersburg-soviet-1905",
+    "kind": "force",
+    "label": {
+      "ko": "페테르부르크 소비에트(1905)",
+      "en": "St. Petersburg Soviet of Workers' Deputies (1905)"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in St. Petersburg Soviet of Workers' Deputies (1905). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1905,
+        1905
+      ]
+    ]
+  },
+  {
+    "id": "soviet-political-science-association",
+    "kind": "institution",
+    "label": {
+      "ko": "소련 정치학회",
+      "en": "Soviet Association of Political Sciences"
+    },
+    "countryCode": "soviet",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Soviet Association of Political Sciences. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1960,
+        1991
+      ]
+    ]
+  },
+  {
+    "id": "american-noar",
+    "kind": "force",
+    "label": {
+      "ko": "미국혁명전국조직",
+      "en": "National Organization for an American Revolution (NOAR)"
+    },
+    "countryCode": "usa",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in National Organization for an American Revolution (NOAR). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1979,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "party-russian-yabloko",
+    "kind": "party",
+    "label": {
+      "ko": "야블로코",
+      "en": "Yabloko"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Yabloko. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1993,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "french-communist-youth",
+    "kind": "force",
+    "label": {
+      "ko": "프랑스 공산주의청년운동",
+      "en": "Communist Youth Movement of France (MJCF)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": "party-french-communist",
+    "criteria": "Only documented service, membership or organizational activity in Communist Youth Movement of France (MJCF). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1920,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "party-ethiopian-meison",
+    "kind": "party",
+    "label": {
+      "ko": "전에티오피아 사회주의 운동",
+      "en": "All-Ethiopia Socialist Movement (MEISON)"
+    },
+    "termIds": [
+      "meison"
+    ],
+    "countryCode": "ethiopia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in All-Ethiopia Socialist Movement (MEISON). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1968,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "baltic-landeswehr",
+    "kind": "military",
+    "label": {
+      "ko": "발트 향토방위군",
+      "en": "Baltische Landeswehr (Baltic Landwehr)"
+    },
+    "countryCode": "latvia",
+    "icon": "swords",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Baltische Landeswehr (Baltic Landwehr). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1918,
+        1919
+      ]
+    ]
+  },
+  {
+    "id": "estonian-mrp-aeg",
+    "kind": "force",
+    "label": {
+      "ko": "MRP-AEG",
+      "en": "MRP-AEG"
+    },
+    "countryCode": "estonia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in MRP-AEG. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1987,
+        1988
+      ]
+    ]
+  },
+  {
+    "id": "party-dutch-rsap",
+    "kind": "party",
+    "label": {
+      "ko": "네덜란드 혁명적 사회주의 노동자당",
+      "en": "Revolutionary Socialist (Workers') Party (RSP/RSAP)"
+    },
+    "countryCode": "netherlands",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Revolutionary Socialist (Workers') Party (RSP/RSAP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1929,
+        1940
+      ]
+    ]
+  },
+  {
+    "id": "party-cambodian-peoples",
+    "kind": "party",
+    "label": {
+      "ko": "캄보디아 인민당",
+      "en": "Cambodian People's Party (CPP)"
+    },
+    "countryCode": "cambodia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Cambodian People's Party (CPP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1991,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "russian-petrograd-anarchist-federation",
+    "kind": "force",
+    "label": {
+      "ko": "페트로그라드 무정부공산주의자 연맹",
+      "en": "Petrograd Federation of Anarchist-Communists"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Petrograd Federation of Anarchist-Communists. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1917,
+        1918
+      ]
+    ]
+  },
+  {
+    "id": "american-radio-free-europe",
+    "kind": "institution",
+    "label": {
+      "ko": "자유유럽방송",
+      "en": "Radio Free Europe/Radio Liberty (RFE/RL)"
+    },
+    "countryCode": "usa",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Radio Free Europe/Radio Liberty (RFE/RL). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1949,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "party-french-socialist-1902",
+    "kind": "party",
+    "label": {
+      "ko": "프랑스사회당(조레스)",
+      "en": "French Socialist Party (1902–1905)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in French Socialist Party (1902–1905). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1902,
+        1905
+      ]
+    ]
+  },
+  {
+    "id": "state-vatican",
+    "kind": "state",
+    "label": {
+      "ko": "바티칸 시국 국가기관",
+      "en": "Vatican City state institutions"
+    },
+    "countryCode": "vatican-city",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Vatican City state institutions. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1929,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "catholic-church",
+    "kind": "institution",
+    "label": {
+      "ko": "가톨릭교회",
+      "en": "Catholic Church"
+    },
+    "countryCode": null,
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Catholic Church. Never infer affiliation from nationality, residence or ideology."
+  },
+  {
+    "id": "polish-revolutionary-committee",
+    "kind": "force",
+    "label": {
+      "ko": "폴란드 임시혁명위원회",
+      "en": "Provisional Polish Revolutionary Committee (Polrevkom)"
+    },
+    "countryCode": "poland",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Provisional Polish Revolutionary Committee (Polrevkom). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1920,
+        1920
+      ]
+    ]
+  },
+  {
+    "id": "party-khmer-national-solidarity",
+    "kind": "party",
+    "label": {
+      "ko": "크메르 민족연대당",
+      "en": "Khmer National Solidarity Party (KNSP)"
+    },
+    "countryCode": "cambodia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Khmer National Solidarity Party (KNSP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1997,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "party-estonian-national-independence",
+    "kind": "party",
+    "label": {
+      "ko": "에스토니아 민족독립당",
+      "en": "Estonian National Independence Party (ERSP)"
+    },
+    "countryCode": "estonia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Estonian National Independence Party (ERSP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1988,
+        1995
+      ]
+    ]
+  },
+  {
+    "id": "international-european-parliament",
+    "kind": "international",
+    "label": {
+      "ko": "유럽의회",
+      "en": "European Parliament"
+    },
+    "countryCode": null,
+    "icon": "globe",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in European Parliament. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1952,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "romanian-reformed-church",
+    "kind": "institution",
+    "label": {
+      "ko": "루마니아 개혁교회",
+      "en": "Reformed Church in Romania"
+    },
+    "countryCode": "romania",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Reformed Church in Romania. Never infer affiliation from nationality, residence or ideology."
+  },
+  {
+    "id": "french-societe-des-saisons",
+    "kind": "force",
+    "label": {
+      "ko": "계절결사",
+      "en": "Society of the Seasons (Société des Saisons)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Society of the Seasons (Société des Saisons). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1837,
+        1839
+      ]
+    ]
+  },
+  {
+    "id": "party-malagasy-mfm",
+    "kind": "party",
+    "label": {
+      "ko": "소민 권력 투사(MFM)",
+      "en": "MFM – Movement for Proletarian Power / Movement for the Progress of Madagascar"
+    },
+    "countryCode": "madagascar",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in MFM – Movement for Proletarian Power / Movement for the Progress of Madagascar. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1972,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "party-french-psop",
+    "kind": "party",
+    "label": {
+      "ko": "노동자농민사회당",
+      "en": "Workers and Peasants' Socialist Party (PSOP)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Workers and Peasants' Socialist Party (PSOP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1938,
+        1940
+      ]
+    ]
+  },
+  {
+    "id": "georgian-helsinki-group",
+    "kind": "force",
+    "label": {
+      "ko": "그루지야 헬싱키 그룹",
+      "en": "Georgian Helsinki Group"
+    },
+    "countryCode": "georgia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Georgian Helsinki Group. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1976,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "malagasy-faem",
+    "kind": "force",
+    "label": {
+      "ko": "마다가스카르 학생협회연맹",
+      "en": "Federation of Student Associations of Madagascar (FAEM)"
+    },
+    "countryCode": "madagascar",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Federation of Student Associations of Madagascar (FAEM). Never infer affiliation from nationality, residence or ideology."
+  },
+  {
+    "id": "party-malagasy-monima",
+    "kind": "party",
+    "label": {
+      "ko": "말라가시인의 마다가스카르 (MONIMA)",
+      "en": "Madagascar for the Malagasy (MONIMA)"
+    },
+    "countryCode": "madagascar",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Madagascar for the Malagasy (MONIMA). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1958,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "kokand-autonomy",
+    "kind": "state",
+    "label": {
+      "ko": "코칸트 자치국 국가기관",
+      "en": "Kokand (Turkestan) Autonomy state institutions"
+    },
+    "termIds": [
+      "kokand-autonomy"
+    ],
+    "countryCode": "uzbekistan",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Kokand (Turkestan) Autonomy state institutions. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1917,
+        1918
+      ]
+    ]
+  },
+  {
+    "id": "greek-edes",
+    "kind": "force",
+    "label": {
+      "ko": "국민공화그리스동맹",
+      "en": "National Republican Greek League (EDES)"
+    },
+    "countryCode": "greece",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in National Republican Greek League (EDES). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1941,
+        1945
+      ]
+    ]
+  },
+  {
+    "id": "manchukuo",
+    "kind": "state",
+    "label": {
+      "ko": "만주국 국가기관",
+      "en": "Manchukuo state institutions"
+    },
+    "termIds": [
+      "manchukuo"
+    ],
+    "countryCode": "china",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Manchukuo state institutions. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1932,
+        1945
+      ]
+    ]
+  },
+  {
+    "id": "us-news-and-letters",
+    "kind": "force",
+    "label": {
+      "ko": "뉴스 앤 레터스 위원회",
+      "en": "News and Letters Committees"
+    },
+    "countryCode": "usa",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in News and Letters Committees. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1955,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "russian-narodnaya-rasprava",
+    "kind": "force",
+    "label": {
+      "ko": "인민의 보복",
+      "en": "People's Reprisal (Narodnaya Rasprava)"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in People's Reprisal (Narodnaya Rasprava). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1869,
+        1869
+      ]
+    ]
+  },
+  {
+    "id": "british-friends-of-russian-freedom",
+    "kind": "force",
+    "label": {
+      "ko": "러시아 자유의 벗 협회",
+      "en": "Society of Friends of Russian Freedom"
+    },
+    "countryCode": "uk",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Society of Friends of Russian Freedom. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1890,
+        1914
+      ]
+    ]
+  },
+  {
+    "id": "russian-metalworkers-union",
+    "kind": "force",
+    "label": {
+      "ko": "전러시아 금속노동자조합",
+      "en": "All-Russian Metalworkers' Union"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in All-Russian Metalworkers' Union. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1917,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "cambodian-kpnlf",
+    "kind": "force",
+    "label": {
+      "ko": "크메르 인민민족해방전선",
+      "en": "Khmer People's National Liberation Front (KPNLF)"
+    },
+    "countryCode": "cambodia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Khmer People's National Liberation Front (KPNLF). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1979,
+        1992
+      ]
+    ]
+  },
+  {
+    "id": "party-british-wsf",
+    "kind": "party",
+    "label": {
+      "ko": "노동자사회주의연맹",
+      "en": "Workers' Socialist Federation (East London Federation of Suffragettes)"
+    },
+    "countryCode": "uk",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Workers' Socialist Federation (East London Federation of Suffragettes). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1914,
+        1920
+      ]
+    ]
+  },
+  {
+    "id": "party-estonian-communist",
+    "kind": "party",
+    "label": {
+      "ko": "에스토니아 공산당",
+      "en": "Communist Party of Estonia (EKP, 1918–1940)"
+    },
+    "countryCode": "estonia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Communist Party of Estonia (EKP, 1918–1940). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1918,
+        1940
+      ]
+    ]
+  },
+  {
+    "id": "party-lithuanian-communist",
+    "kind": "party",
+    "label": {
+      "ko": "리투아니아 공산당",
+      "en": "Communist Party of Lithuania (LKP, 1918–1940)"
+    },
+    "countryCode": "lithuania",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Communist Party of Lithuania (LKP, 1918–1940). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1918,
+        1940
+      ]
+    ]
+  },
+  {
+    "id": "party-russian-sr-maximalists",
+    "kind": "party",
+    "label": {
+      "ko": "사회혁명당 최대주의자 연합",
+      "en": "Union of Socialists-Revolutionaries-Maximalists (SSRM)"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Union of Socialists-Revolutionaries-Maximalists (SSRM). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1906,
+        1920
+      ]
+    ]
+  },
+  {
+    "id": "party-russian-union-of-russian-people",
+    "kind": "party",
+    "label": {
+      "ko": "러시아 인민동맹",
+      "en": "Union of the Russian People (URP)"
+    },
+    "countryCode": "russia",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Union of the Russian People (URP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1905,
+        1917
+      ]
+    ]
+  },
+  {
+    "id": "soviet-vtssps",
+    "kind": "force",
+    "label": {
+      "ko": "소련 노동조합중앙평의회",
+      "en": "All-Russian / All-Union Central Council of Trade Unions (VTsSPS)"
+    },
+    "countryCode": "soviet",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in All-Russian / All-Union Central Council of Trade Unions (VTsSPS). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1918,
+        1990
+      ]
+    ]
+  },
+  {
+    "id": "ukrainian-nabat",
+    "kind": "force",
+    "label": {
+      "ko": "나바트 연합",
+      "en": "Nabat Confederation of Anarchist Organizations of Ukraine"
+    },
+    "countryCode": "ukraine",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Nabat Confederation of Anarchist Organizations of Ukraine. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1918,
+        1920
+      ]
+    ]
+  },
+  {
+    "id": "french-camelots-du-roi",
+    "kind": "force",
+    "label": {
+      "ko": "카믈로 뒤 루아",
+      "en": "Camelots du Roi"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": "french-action-francaise",
+    "criteria": "Only documented service, membership or organizational activity in Camelots du Roi. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1908,
+        1936
+      ]
+    ]
+  },
+  {
+    "id": "french-francisme",
+    "kind": "force",
+    "label": {
+      "ko": "프랑시스트 운동",
+      "en": "Francisme"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Francisme. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1933,
+        1936
+      ],
+      [
+        1941,
+        1944
+      ]
+    ]
+  },
+  {
+    "id": "party-french-faisceau",
+    "kind": "party",
+    "label": {
+      "ko": "페소",
+      "en": "Faisceau"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Faisceau. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1925,
+        1928
+      ]
+    ]
+  },
+  {
+    "id": "french-fnc",
+    "kind": "force",
+    "label": {
+      "ko": "전국가톨릭연맹",
+      "en": "National Catholic Federation (FNC)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in National Catholic Federation (FNC). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1924,
+        null
+      ]
+    ]
+  },
+  {
+    "id": "french-cagoule",
+    "kind": "force",
+    "label": {
+      "ko": "라 카굴",
+      "en": "La Cagoule (CSAR)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in La Cagoule (CSAR). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1936,
+        1937
+      ]
+    ]
+  },
+  {
+    "id": "party-french-rnp",
+    "kind": "party",
+    "label": {
+      "ko": "국민민중연합",
+      "en": "National Popular Rally (RNP)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in National Popular Rally (RNP). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1941,
+        1944
+      ]
+    ]
+  },
+  {
+    "id": "party-french-msr",
+    "kind": "party",
+    "label": {
+      "ko": "사회혁명운동",
+      "en": "Social Revolutionary Movement (MSR)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Social Revolutionary Movement (MSR). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1940,
+        1944
+      ]
+    ]
+  },
+  {
+    "id": "party-french-psdf",
+    "kind": "party",
+    "label": {
+      "ko": "프랑스 사회주의당-장 조레스 연합",
+      "en": "Socialist Party of France – Jean Jaurès Union (PSdF)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Socialist Party of France – Jean Jaurès Union (PSdF). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1933,
+        1935
+      ]
+    ]
+  },
+  {
+    "id": "party-french-usr",
+    "kind": "party",
+    "label": {
+      "ko": "사회주의공화연합",
+      "en": "Socialist Republican Union (USR)"
+    },
+    "countryCode": "france",
+    "icon": "flag",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Socialist Republican Union (USR). Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1935,
+        1940
+      ]
+    ]
+  },
+  {
+    "id": "french-milice",
+    "kind": "military",
+    "label": {
+      "ko": "프랑스 민병대",
+      "en": "French Milice"
+    },
+    "countryCode": "france",
+    "icon": "swords",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in French Milice. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1943,
+        1944
+      ]
+    ]
+  },
+  {
+    "id": "french-je-suis-partout",
+    "kind": "institution",
+    "label": {
+      "ko": "주 쉬 파르투",
+      "en": "Je suis partout"
+    },
+    "countryCode": "france",
+    "icon": "landmark",
+    "parentId": null,
+    "criteria": "Only documented service, membership or organizational activity in Je suis partout. Never infer affiliation from nationality, residence or ideology.",
+    "periods": [
+      [
+        1930,
+        1944
+      ]
+    ]
+  }
+]

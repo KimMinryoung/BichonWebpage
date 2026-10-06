@@ -1,0 +1,981 @@
+[
+ {
+  "personId": "maxim-filonenko",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "필로넨코는 1919년 이후 파리에서 변호사로 활동했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "С 1919 в эмиграции. Жил в Париже, занимался адвокатской практикой.",
+    "locator": "characters 3446:3512; sha256 ac1246bb0a1e69b8784b244b75d37f13f762b2156b10e47e3930fdd99d3f43fd"
+   },
+   {
+    "claim": "그는 파리 법정에서 러시아 이민자들을 주로 변호하는 변호사로 활동했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Выступал в Париже как защитник преимущественно русских эмигрантов на судебных процессах, в том числе в 1937—1938 гг. на процессе Н. В. Плевицкой",
+    "locator": "characters 3795:3939; sha256 ac1246bb0a1e69b8784b244b75d37f13f762b2156b10e47e3930fdd99d3f43fd"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "파리 망명기 개인 변호사 활동으로 소속 기관이 없다; 사회혁명당 당원 활동은 별도 activity로 이미 기록됨."
+ },
+ {
+  "personId": "merab-kostava",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "georgian-helsinki-group",
+  "relation": "service",
+  "startYear": 1976,
+  "endYear": 1989,
+  "evidence": [
+   {
+    "claim": "코스타바는 소련에 반대하는 그루지야 반체제 운동을 이끌고 독립을 위한 시위에 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Merab_Kostava",
+    "excerpt": "Along with Zviad Gamsakhurdia, he led the dissident movement in Georgia against the Soviet Union and was active in protests for an independent Georgia, until his death in a car crash in 1989.",
+    "locator": "characters 197:388; sha256 e45737b6ba5bac91739d2f27b9936dc4206e28e838b25532d5716ac06bae3090"
+   },
+   {
+    "claim": "코스타바는 1976년 그루지야 헬싱키 그룹을 공동 창설하고 운영위원으로 활동했다.",
+    "source": "https://en.wikipedia.org/wiki/Merab_Kostava",
+    "excerpt": "In 1976 Kostava co-founded the Georgian Helsinki Group (later renamed the Georgian Helsinki Union in 1989). From 1976 to 1977 and 1987–1989 Kostava was a member of the Governing Board of the abovementioned human rights organization.",
+    "locator": "characters 1263:1495; sha256 e45737b6ba5bac91739d2f27b9936dc4206e28e838b25532d5716ac06bae3090"
+   }
+  ],
+  "newAffiliation": {
+   "id": "georgian-helsinki-group",
+   "kind": "force",
+   "label": {
+    "ko": "그루지야 헬싱키 그룹",
+    "en": "Georgian Helsinki Group"
+   },
+   "countryCode": "georgia",
+   "parentId": null,
+   "periods": [
+    [
+     1976,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "1976년 그루지야 헬싱키 그룹을 공동 창립하고 운영위원을 지냈다(모스크바 헬싱키 그룹 표기에 맞춤)."
+ },
+ {
+  "personId": "michal-kalecki",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "칼레츠키는 런던정경대, 케임브리지대, 옥스퍼드대, 바르샤바 경제대학에서 근무한 학술인이다.",
+    "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+    "excerpt": "Over the course of his life, Kalecki worked at the London School of Economics, University of Cambridge, University of Oxford, and Warsaw School of Economics",
+    "locator": "characters 108:264; sha256 faa196806680d2af607bb4e675f6aaa711de57eb36363b7e1b7befbe2cce6f69"
+   },
+   {
+    "claim": "그는 수학적 모형과 통계 자료를 경제 문제에 적용한 거시경제학자로서 학술 연구가 정의적 활동이었다.",
+    "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+    "excerpt": "He was one of the first macroeconomists to apply mathematical models and statistical data to economic questions.",
+    "locator": "characters 984:1096; sha256 faa196806680d2af607bb4e675f6aaa711de57eb36363b7e1b7befbe2cce6f69"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "LSE·케임브리지·옥스퍼드·바르샤바 등 여러 대학 연구직으로 카탈로그 조직이 아니다; 유엔·폴란드 정부 자문은 별도 activity 감."
+ },
+ {
+  "personId": "micheline-ravololonarisoa",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "malagasy-faem",
+  "relation": "service",
+  "startYear": 1972,
+  "endYear": 1972,
+  "evidence": [
+   {
+    "claim": "그녀는 1972년 전국 학생운동을 이끈 FAEM의 사무총장이었다.",
+    "source": "https://roape.net/2024/10/23/the-struggle-in-madagascar-an-interview-with-micheline-ravololonarisoa",
+    "excerpt": "Under the leadership of the Federation des Associations d’etudiants de Madagascar (FAEM), of which I was the general secretary, campaigns of information and conscientisation were undertaken",
+    "locator": "characters 9862:10051; sha256 99f35429726f6d0702584859b871305473e4940a9796da6ce72b03dcf8d9795a"
+   },
+   {
+    "claim": "그녀는 FAEM 파업위원회 위원으로 운동 조직에 참여했다.",
+    "source": "https://roape.net/2024/10/23/the-struggle-in-madagascar-an-interview-with-micheline-ravololonarisoa",
+    "excerpt": "The strike committee of which I was a member, was meeting at the FAEM office to prepare for the demonstration planned the following morning",
+    "locator": "characters 14129:14268; sha256 99f35429726f6d0702584859b871305473e4940a9796da6ce72b03dcf8d9795a"
+   }
+  ],
+  "newAffiliation": {
+   "id": "malagasy-faem",
+   "kind": "force",
+   "label": {
+    "ko": "마다가스카르 학생협회연맹 (FAEM)",
+    "en": "Federation of Student Associations of Madagascar (FAEM)"
+   },
+   "countryCode": "madagascar",
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "1972년 FAEM 사무총장으로 학생운동을 이끌었다(창립·해산 연도는 출처에 없어 periods 미정)."
+ },
+ {
+  "personId": "mikhail-bakunin",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "international-iwa",
+  "relation": "membership",
+  "startYear": 1868,
+  "endYear": 1872,
+  "evidence": [
+   {
+    "claim": "바쿠닌은 1868년 제1인터내셔널에 가입하여 아나키스트 파벌을 이끌며 영향력을 확대한 조직 활동가였다.",
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Bakunin",
+    "excerpt": "In 1868, Bakunin joined the International Workingmen's Association, leading the anarchist faction to rapidly grow in influence.",
+    "locator": "characters 1335:1462; sha256 115f107dcea193f6634fa5ba368adf9746e84402bb2117c29537a8ee42638e13"
+   },
+   {
+    "claim": "그는 1872년 제1인터내셔널에서 제명된 후 반권위주의 인터내셔널을 창설하며 혁명적 조직 활동을 지속했다.",
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Bakunin",
+    "excerpt": "Bakunin was expelled from the International for maintaining, in Marx's view, a secret organisation within the International, and founded the Anti-Authoritarian International in 1872.",
+    "locator": "characters 1912:2094; sha256 115f107dcea193f6634fa5ba368adf9746e84402bb2117c29537a8ee42638e13"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1868년 제1인터내셔널에 가입해 아나키스트 분파를 이끌다 1872년 제명됐다."
+ },
+ {
+  "personId": "mikhail-katkov",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1863,
+  "endYear": 1887,
+  "evidence": [
+   {
+    "claim": "카트코프는 1863년부터 1887년 사망할 때까지 모스크바 뉴스(Moskovskie Vedomosti)의 경영과 편집을 맡았다.",
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Katkov",
+    "excerpt": "In early 1863, he assumed the management and editorship of the Moscow News, and he retained that position until his death in 1887.",
+    "locator": "characters 1743:1873; sha256 9acc8c12bb7ed51f6a11e6511ada1225f0684ee015b3ce46c6c40dc485367991"
+   },
+   {
+    "claim": "그는 문학 잡지 러스키 베스트니크와 신문 모스크바 뉴스를 운영한 언론인·편집자였다.",
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Katkov",
+    "excerpt": "His literary magazine Russkii Vestnik (\"The Russian Messenger\") and newspaper Moskovskie Vedomosti (\"Moscow News\") were successful and influential media for promoting his views.",
+    "locator": "characters 675:852; sha256 9acc8c12bb7ed51f6a11e6511ada1225f0684ee015b3ce46c6c40dc485367991"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "자신이 운영·편집한 《모스크바 통보》·《러시아 통보》 언론 활동으로 카탈로그 조직이 아니다."
+ },
+ {
+  "personId": "miklos-gimes",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-hungarian-communist",
+  "relation": "service",
+  "startYear": 1945,
+  "endYear": 1948,
+  "evidence": [
+   {
+    "claim": "기메시는 1956년 혁명 기간 중 혁명적 저널리즘에 깊이 관여했고, 다른 혁명가들과 함께 Magyar Szabadság 신문을 창간하고 편집했다.",
+    "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Gimes",
+    "excerpt": "During the revolution, Gimes was heavily involved in both politics and revolutionary journalism. He founded and edited a newspaper along with other revolutionaries, Magyar Szabadság.",
+    "locator": "characters 780:962; sha256 1f15184000d450021165858775533056e0f66a78e101310b1310f2d0ba7a5a74"
+   },
+   {
+    "claim": "기메시는 1942년 헝가리 공산주의 운동에 관여했으며 여러 공산주의 신문에서 언론인으로 일했다.",
+    "source": "https://en.wikipedia.org/wiki/Mikl%C3%B3s_Gimes",
+    "excerpt": "Gimes became involved in the Hungarian communist movement in 1942, and worked as a journalist in various communist newspapers.",
+    "locator": "characters 460:586; sha256 1f15184000d450021165858775533056e0f66a78e101310b1310f2d0ba7a5a74"
+   },
+   {
+    "source": "https://hu.wikipedia.org/wiki/Gimes_Mikl%C3%B3s",
+    "locator": "hu: Élete",
+    "excerpt": "Budapestre visszatérve 1945-ben előbb egy ifjúsági lapnál dolgozott, aztán a kommunista párt napilapja, a Szabad Nép újságírója lett.",
+    "claim": "기메시는 1945년부터 공산당 일간지 《서바드 네프》 기자로 일했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1945년부터 공산당 기관지 《서바드 네프》 기자로 일했다; 1948년 이후 노동인민당 시기는 기존 activity가 다룬다."
+ },
+ {
+  "personId": "monja-jaona",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-malagasy-monima",
+  "relation": "service",
+  "startYear": 1958,
+  "endYear": 1994,
+  "evidence": [
+   {
+    "claim": "1958년 MONIMA 정당을 창당했다.",
+    "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+    "excerpt": "He formed the Madagascar for the Malagasy (MONIMA) party in 1958 and successfully campaigned for the seat of mayor in Toliara, a position he held from 1959 to 1961.",
+    "locator": "characters 461:625; sha256 32f3b43df79ca8395dc1095b05299da7fdd7a435406b345080985a9b62205d28"
+   },
+   {
+    "claim": "MONIMA를 창당하여 사망할 때까지 당을 이끌며 정치 지도자로 활동했다.",
+    "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+    "excerpt": "1958 - Formed the Madagasikara Otronin'ny Malagasy (MONIMA)--Madagascar for the Malagasy—party in Tulear which he led till his death.",
+    "locator": "characters 3011:3144; sha256 32f3b43df79ca8395dc1095b05299da7fdd7a435406b345080985a9b62205d28"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/MONIMA",
+    "locator": "en: lead",
+    "excerpt": "The party is one of the oldest political parties in the country, founded by Monja Jaona, mayor of the city of Toliara, in the 1950s.",
+    "claim": "MONIMA는 몽자 자오나가 1950년대에 창당한 정당이다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-malagasy-monima",
+   "kind": "party",
+   "label": {
+    "ko": "말라가시인의 마다가스카르 (MONIMA)",
+    "en": "Madagascar for the Malagasy (MONIMA)"
+   },
+   "countryCode": "madagascar",
+   "parentId": null,
+   "periods": [
+    [
+     1958,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "1958년 MONIMA를 창당해 사망할 때까지 이끌었다."
+ },
+ {
+  "personId": "mustafa-shokay",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "kokand-autonomy",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "쇼카이는 투르키스탄 민족주의의 정치 활동가이자 이데올로그였다.",
+    "source": "https://en.wikipedia.org/wiki/Mustafa_Shokay",
+    "excerpt": "Mustafa bek Shokay (25 December 1890 – 27 December 1941) was a Kazakh social and political activist and ideologue of Turkestan nationalism.",
+    "locator": "characters 0:139; sha256 a02fe8a7c8e944a5a8b9963f7a9fe9f2d3e9e035b04afa4ee9564d6b19ea28e4"
+   },
+   {
+    "claim": "그는 투르키스탄 자치(코칸트 자치) 수립에 참여한 정치 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Mustafa_Shokay",
+    "excerpt": "On the 4th Congress in Turkestan, Turkestan autonomy, known as the Kokand Autonomy was founded.",
+    "locator": "characters 8890:8985; sha256 a02fe8a7c8e944a5a8b9963f7a9fe9f2d3e9e035b04afa4ee9564d6b19ea28e4"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Kokand_Autonomy",
+    "locator": "en: Issues governing Turkestan",
+    "excerpt": "The seizing of the account intensified conflict within the government, leading to Tynyshpaev resigning as prime minister in early January, replaced by Mustafa Shokay.",
+    "claim": "쇼카이는 1918년 초 티니시파예프의 뒤를 이어 코칸트 자치국 총리가 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Kokand_Autonomy",
+    "locator": "en: lead",
+    "excerpt": "The Turkestan Autonomy or Kokand Autonomy was a short-lived polity in Central Asia that existed from November 27, 1917, to February 22, 1918.",
+    "claim": "코칸트 자치국은 1917년 11월부터 1918년 2월까지 존속했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "kokand-autonomy",
+   "kind": "state",
+   "label": {
+    "ko": "코칸트 자치국 국가기관",
+    "en": "Kokand (Turkestan) Autonomy state institutions"
+   },
+   "countryCode": "uzbekistan",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "kokand-autonomy"
+  },
+  "reason": "코칸트(투르키스탄) 자치정부의 각료·총리였다; 기존 용어 kokand-autonomy(코칸트 자치국) 표기를 따름."
+ },
+ {
+  "personId": "napoleon-zervas",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "greek-edes",
+  "relation": "service",
+  "startYear": 1941,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "제르바스는 그리스 육군 장교이자 EDES 저항군을 조직하고 지휘한 군사 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Napoleon_Zervas",
+    "excerpt": "Napoleon Zervas (Greek: Ναπολέων Ζέρβας; May 17, 1891 – December 10, 1957) was a Hellenic Army officer and resistance leader during World War II. He organized and led the National Republican Greek League (EDES), the second most significant (after EAM), in terms of size and activity, resistance organization against the Axis Occupation of Greece.",
+    "locator": "characters 0:346; sha256 a9d0425cbdecc3f2bfcc7067b243beeb1cefa9fb4d5a099a70bf4e593765e670"
+   },
+   {
+    "claim": "그는 EDES의 군사 부문인 EOEA를 창설하고 게릴라 부대를 지휘했다.",
+    "source": "https://en.wikipedia.org/wiki/Napoleon_Zervas",
+    "excerpt": "In August 1942, with his political advisor and second-in-command of EDES, Komninos Pyromaglou, he went to the mountains of Epirus, where he founded the military branch of EDES, the EOEA (Ethnikes Omades Ellinon Antarton, National Groups of Greek Guerrillas).",
+    "locator": "characters 4327:4585; sha256 a9d0425cbdecc3f2bfcc7067b243beeb1cefa9fb4d5a099a70bf4e593765e670"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Napoleon_Zervas",
+    "locator": "en: Establishment of EDES",
+    "excerpt": "In September 1941, a few months after the start of the Axis Occupation of Greece, Zervas, along with other Venizelist army officers and political figures, founded the National Republican Greek League (EDES).",
+    "claim": "제르바스는 1941년 9월 국민공화그리스동맹(EDES)을 창설했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "greek-edes",
+   "kind": "force",
+   "label": {
+    "ko": "국민공화그리스동맹",
+    "en": "National Republican Greek League (EDES)"
+   },
+   "countryCode": "greece",
+   "parentId": null,
+   "periods": [
+    [
+     1941,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "EDES를 창설해 그 무장 조직을 지휘했다; 한국어 이름은 인물 소개문 표기를 따름."
+ },
+ {
+  "personId": "nazim-hikmet",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "나즘 히크메트는 터키의 시인, 극작가, 소설가, 각본가, 연출가, 회고록 작가였다.",
+    "source": "https://en.wikipedia.org/wiki/N%C3%A2z%C4%B1m_Hikmet",
+    "excerpt": "Mehmed Nâzım Ran (17 January 1902 – 3 June 1963), commonly known as Nâzım Hikmet (Turkish: [naːˈzɯm hicˈmet] ), was a Turkish poet, playwright, novelist, screenwriter, director, and memoirist.",
+    "locator": "characters 0:192; sha256 b88d3fbeae71d6dd376f74b1604f38490ec37e5a60288804f6cfd7f0625c3639"
+   },
+   {
+    "claim": "그는 터키 아방가르드의 지도자로서 혁신적인 시, 희곡, 영화 각본을 창작했다.",
+    "source": "https://en.wikipedia.org/wiki/N%C3%A2z%C4%B1m_Hikmet",
+    "excerpt": "On his return to Turkey, he became the charismatic leader of the Turkish avant-garde by producing streams of innovative poems, plays and film scripts.",
+    "locator": "characters 6789:6939; sha256 b88d3fbeae71d6dd376f74b1604f38490ec37e5a60288804f6cfd7f0625c3639"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "시인·극작가 개인 창작 활동으로 소속 조직 근거가 없다; 터키 공산당 당원 활동은 별도 activity로 기록됨."
+ },
+ {
+  "personId": "nikola-petkov",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-bulgarian-agrarian",
+  "relation": "service",
+  "startYear": 1941,
+  "endYear": 1947,
+  "evidence": [
+   {
+    "claim": "페트코프는 1941년 불가리아 농민연합 '알렉산다르 스탐볼리스키'의 지도권을 인수했다.",
+    "source": "https://en.wikipedia.org/wiki/Nikola_Petkov",
+    "excerpt": "After Dr G. M. Dimitrov emigrated in 1941, Nikola Petkov took the leadership of BZNS \"Aleksandar Stamboliyski\".",
+    "locator": "characters 2231:2342; sha256 a208f6cd7707b34c7a6fadf297f3fc0fc17b02ec37ee27b9504265d5ff20527b"
+   },
+   {
+    "claim": "그는 1945년 1월부터 반공 통합야당의 지도자가 되어 정치적 전략을 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Nikola_Petkov",
+    "excerpt": "From January 1945 he became a leader of the anti-communist United opposition.",
+    "locator": "characters 2937:3014; sha256 a208f6cd7707b34c7a6fadf297f3fc0fc17b02ec37ee27b9504265d5ff20527b"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1941년부터 처형될 때까지 농민민족동맹(스탐볼리스키파)의 지도자였다."
+ },
+ {
+  "personId": "nikolai-avksentiev",
+  "functionId": "government",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "existing",
+  "affiliationId": "russian-white",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "1918년 9월 우파 주립회의에서 의장으로 선출되어 새 임시전러시아정부를 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Avksentiev",
+    "excerpt": "In September 1918, he was elected chairman of the State Meeting in Ufa and headed the new Provisional All-Russian Government",
+    "locator": "characters 3444:3568; sha256 fed916af2bbadef59894954fb325931c616d9381809f9ac56e2aeeb53b1613a9"
+   },
+   {
+    "claim": "임시전러시아정부 의장으로서 1918년 9월 23일부터 11월 18일까지 러시아 국가를 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Avksentiev",
+    "excerpt": "As Chairman of the Provisional All-Russian Government, he headed the Russian state from September 23 to November 18, 1918.",
+    "locator": "characters 376:498; sha256 fed916af2bbadef59894954fb325931c616d9381809f9ac56e2aeeb53b1613a9"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1918년 우파 반볼셰비키 정부인 임시전러시아정부(우파 디렉토리아) 의장; 별도 국가 항목 없이 러시아 백색운동으로 묶음."
+ },
+ {
+  "personId": "nikolai-shmit",
+  "functionId": "industry",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1904,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "니콜라이 시미트는 프레스냐의 가구공장을 소유·운영하며 9시간 노동제와 임금 인상, 부속 의료 및 교육 시설을 도입했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BC%D0%B8%D1%82%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Вступив во владение мебельной фабрикой на Пресне, Николай Шмит с 1 мая 1905 года ввёл 9-часовой рабочий день вместо 11-часового, повысил заработную плату, открыл при фабрике амбулаторию и специальные общеобразовательные курсы.",
+    "locator": "characters 4097:4323; sha256 7d79b99edd5814b3bc88cad3736a720b9a270185211984e205691b1b74e70882"
+   },
+   {
+    "claim": "그의 공장에서는 폭탄 제조와 전단 인쇄가 이루어졌다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BC%D0%B8%D1%82%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "На фабрике изготавливали бомбы, печатали листовки.",
+    "locator": "characters 5424:5474; sha256 7d79b99edd5814b3bc88cad3736a720b9a270185211984e205691b1b74e70882"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "가족 소유 가구공장 경영으로 카탈로그 조직이 아니다; 러시아 사회민주노동당 당원 활동은 별도 activity로 기록됨."
+ },
+ {
+  "personId": "nikolai-skoblin",
+  "functionId": "security",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-rovs",
+  "relation": "service",
+  "startYear": 1935,
+  "endYear": 1937,
+  "evidence": [
+   {
+    "claim": "스코블린은 ROVS 내에서 반정보부(Inner Line)를 이끌며 정보·보안 활동을 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Skoblin",
+    "excerpt": "Skoblin was meanwhile gaining importance in the ROVS' ranks and in 1935 he headed its counter-intelligence branch, the Inner Line.",
+    "locator": "characters 1680:1810; sha256 9936f2a4fbeb0f7cd056dbe0e7d071b8e9142ba23e0a36f7b8b2c08ce92412af"
+   },
+   {
+    "claim": "스코블린은 소련 대외정보 부국장의 지휘 아래 ROVS 의장 밀러를 NKVD 아파트로 유인하는 정보 공작에 가담했다.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Skoblin",
+    "excerpt": "On 22 September 1937, Skoblin, operating under the direction of deputy chief of Soviet foreign intelligence Sergey Spigelglas, lured the ROVS chairman Yevgeny Miller into an NKVD safe apartment",
+    "locator": "characters 2528:2721; sha256 9936f2a4fbeb0f7cd056dbe0e7d071b8e9142ba23e0a36f7b8b2c08ce92412af"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1935년 러시아 전군연합 방첩부서(내부선)를 지휘했다; 1930년부터의 OGPU/NKVD 첩보 활동(state-soviet)은 별도 activity 감."
+ },
+ {
+  "personId": "nikolai-sokolov",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "소콜로프는 변호사(присяжный поверенный)가 되었다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%28%D0%B0%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%29",
+    "excerpt": "Николай Дмитриевич Соколов стал присяжным поверенным.",
+    "locator": "characters 323:376; sha256 bb9bed9cc1ff1a682ff8f5bf76ba66d23ad7d3e9551b94827c178a311875033f"
+   },
+   {
+    "claim": "그는 변호사로서 많은 정치 재판에 참여했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%28%D0%B0%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%29",
+    "excerpt": "В качестве адвоката участвовал во многих политических процессах.",
+    "locator": "characters 998:1062; sha256 bb9bed9cc1ff1a682ff8f5bf76ba66d23ad7d3e9551b94827c178a311875033f"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "개인 개업 변호사(присяжный поверенный)로 정치재판을 변론했다; 1909~10년 사회민주당 두마 분파 법률고문은 별도 activity 감."
+ },
+ {
+  "personId": "nykyfor-hryhoriv",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": "independent",
+  "startYear": 1919,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "흐리호리우 부대는 볼셰비키 지휘를 거부하고 농민들에게 \"오타만 흐리호리우의 빨치산\"으로 볼셰비키와 싸우자고 호소했다.",
+    "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+    "excerpt": "Hryhoriv's troops then stopped recognizing the Bolshevik command. They began to distribute leaflets, which called on peasants to fight against the Bolsheviks in the ranks of \"otaman Hryhoriv's partisans\".",
+    "locator": "plain-text extract characters 5194:5398; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603"
+   },
+   {
+    "claim": "1919년 5월 8일 우니베르살을 발표해 반볼셰비키 봉기를 일으켰다.",
+    "source": "https://en.wikipedia.org/wiki/Nykyfor_Hryhoriv",
+    "excerpt": "On 8 May 1919, Hryhoriv issued the Universal, in which he called for \"the Ukrainian people to take power into their own hands\"",
+    "locator": "plain-text extract characters 5498:5624; accessed 2026-09-30; sha256 c4f5ae34d6cefea6c66f13b5632acbd210315ee8f3470b631124903e4b1dc603"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1919년 볼셰비키와 결별하고 자기 반란군을 이끌었다; 기존 independent 판정 유지."
+ },
+ {
+  "personId": "pavel-akselrod",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-mensheviks",
+  "relation": "service",
+  "startYear": 1903,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "1903년 러시아 사회민주노동당 분당 이후 악셀로트는 멘셰비키 파벌의 최고 이데올로그로서 멘셰비즘의 핵심 강령을 정립하며 당의 노선과 전략을 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Pavel_Axelrod",
+    "excerpt": "Following the 1903 split in the Russian Social Democratic Labour Party (RSDLP), Axelrod emerged as the foremost ideologist of the Menshevik faction. He formulated the main tenets of Menshevism, arguing for the creation of a broad-based, mass workers' party in contrast to Vladimir Lenin's concept of a narrow, centralized vanguard party.",
+    "locator": "characters 414:751; sha256 f4ce593f2f1ac20362ede89b620bde2dd6d78f62ab59fd4188012946d3af7171"
+   },
+   {
+    "claim": "당 대회 이후 악셀로트는 멘셰비키 파벌의 수석 이데올로그가 되어 멘셰비즘의 핵심 원칙을 천명함으로써 당 지도부의 이론적·전략적 방향을 설정했다.",
+    "source": "https://en.wikipedia.org/wiki/Pavel_Axelrod",
+    "excerpt": "In the aftermath of the congress, Axelrod became the chief ideologist of the Menshevik faction. In a seminal two-part article in Iskra in late 1903 and early 1904, he articulated the core principles of Menshevism.",
+    "locator": "characters 12376:12589; sha256 f4ce593f2f1ac20362ede89b620bde2dd6d78f62ab59fd4188012946d3af7171"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1903년 분열 이후 멘셰비키의 대표 이론가이자 지도자였다."
+ },
+ {
+  "personId": "pitirim-sorokin",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1930,
+  "endYear": 1959,
+  "evidence": [
+   {
+    "claim": "소로킨은 미국으로 이주한 뒤 미네소타 대학과 하버드 대학에서 사회학 교수로 재직하며 학술 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Pitirim_Sorokin",
+    "excerpt": "Moving to the United States, he became a professor of sociology at the University of Minnesota in 1924, and, in 1930, he was hired as head of the newly formed department of sociology at Harvard University.",
+    "locator": "characters 661:866; sha256 57cb3b07de6235031e51bba010df35f3eea5bdfb0ec78548c43da04030a59632"
+   },
+   {
+    "claim": "그는 1924년부터 1959년까지 미국 대학에서 사회학 교수로 재직했다.",
+    "source": "https://en.wikipedia.org/wiki/Pitirim_Sorokin",
+    "excerpt": "Sorokin was a sociology professor at the University of Minnesota from 1924 to 1929 when he accepted an offer of a position by the president of Harvard University to join the Harvard faculty, where he continued to work until 1959.",
+    "locator": "characters 4454:4683; sha256 57cb3b07de6235031e51bba010df35f3eea5bdfb0ec78548c43da04030a59632"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "미네소타·하버드 대학 교수직으로 카탈로그 조직이 아니다."
+ },
+ {
+  "personId": "preobrazhensky",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "soviet-party",
+  "relation": "membership",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "그는 마르크스주의 경제학자로서 '원시 사회주의적 축적' 개념을 정립한 이론적 기여를 했다.",
+    "source": "https://en.wikipedia.org/wiki/Yevgeni_Preobrazhensky",
+    "excerpt": "was a Russian revolutionary, Soviet politician, and Marxist economist. His main contribution to Marxist theory is the concept of \"primitive socialist accumulation\"",
+    "locator": "characters 192:355; sha256 746af46803d0d8f9b84ab527c7e8c68013b46826d11119fd16d36f40f4bd9e5f"
+   },
+   {
+    "claim": "그의 주요 이론적 기여는 후진 농업경제의 산업화를 위한 원시 사회주의적 축적 이론이다.",
+    "source": "https://en.wikipedia.org/wiki/Yevgeni_Preobrazhensky",
+    "excerpt": "His main contribution to Marxist theory is the concept of \"primitive socialist accumulation\", which holds that industrialization in an underdeveloped and agrarian economy such as Russia's in 1917 must rely on the squeezing of agriculture",
+    "locator": "characters 263:500; sha256 746af46803d0d8f9b84ab527c7e8c68013b46826d11119fd16d36f40f4bd9e5f"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Yevgeni_Preobrazhensky",
+    "locator": "en: Years in authority",
+    "excerpt": "In 1921, Preobrazhensky was appointed President of the party's Financial Committee and Chief of the Directorate for Professional Training in the People's Commissariat of Education. Through the 1920s, he was a leading Soviet Economist, developing the plan for industrialisation of the country and an opponent of the New Economic Policy.",
+    "claim": "프레오브라젠스키는 당 재정위원회 의장을 지내며 1920년대 소련의 대표적 경제학자로 공업화 계획을 세웠다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "당 경제학자로서의 이론 작업; 기존 볼셰비키 이론가 scholarship 활동과 같은 방식으로 소련공산당 당원 소속."
+ },
+ {
+  "personId": "puyi",
+  "functionId": "monarchy",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "manchukuo",
+  "relation": "service",
+  "startYear": 1932,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "푸이는 1932년 만주국의 집정, 1934년 만주국의 황제로 즉위하여 국가원수로서 통치했다.",
+    "source": "https://en.wikipedia.org/wiki/Puyi",
+    "excerpt": "Following the Japanese invasion of Manchuria, Puyi was installed as chief executive of Manchukuo in 1932 and he was crowned emperor of Manchukuo in 1934.",
+    "locator": "characters 1068:1221; sha256 17597b35ab7dfa1f6e80777b224de616e50e31bdf55898f64f787a1fffb4a08d"
+   }
+  ],
+  "newAffiliation": {
+   "id": "manchukuo",
+   "kind": "state",
+   "label": {
+    "ko": "만주국 국가기관",
+    "en": "Manchukuo state institutions"
+   },
+   "countryCode": "china",
+   "parentId": null,
+   "periods": [
+    [
+     1932,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "manchukuo"
+  },
+  "reason": "1932년 만주국 집정, 1934년 황제로 재위했다; 기존 용어 manchukuo(만주국) 표기를 따름."
+ },
+ {
+  "personId": "pyotr-kropotkin",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "크로폿킨은 아나키스트 정치철학자이자 지리학자로, 이론 연구가 그의 정의적 활동이었다.",
+    "source": "https://en.wikipedia.org/wiki/Peter_Kropotkin",
+    "excerpt": "Pyotr Alexeyevich Kropotkin (9 December [O.S. 27 November] 1842 – 8 February 1921) was a Russian anarchist political philosopher and geographer known as a proponent of anarchist communism.",
+    "locator": "characters 0:188; sha256 c75f009d31ae20ee6025f125a8159492962ec4a7dc97c4c2a4b318973ad8ca4c"
+   },
+   {
+    "claim": "그는 아나키즘과 지리학에 관한 다수의 저서와 글을 저술하며 학술·이론 작업을 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/Peter_Kropotkin",
+    "excerpt": "He wrote many books, pamphlets and articles, the most prominent being The Conquest of Bread (1892) and Fields, Factories, and Workshops (1899), with Mutual Aid: A Factor of Evolution (1902) being his principal scientific offering.",
+    "locator": "characters 965:1195; sha256 c75f009d31ae20ee6025f125a8159492962ec4a7dc97c4c2a4b318973ad8ca4c"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "아나키즘 저술·지리학 연구 개인 활동; 러시아 지리학회 분과 서기직은 카탈로그 조직이 아니며 쥐라 연맹 등 조직 활동은 별도 organizing activity 감."
+ },
+ {
+  "personId": "pyotr-palchinsky",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "표트르 팔친스키는 러시아 산업에 과학적 방법을 도입하는 데 중요한 역할을 한 러시아 공학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Peter_Palchinsky",
+    "excerpt": "Peter Akimovich Palchinsky (Russian: Пётр Иоаки́мович (Аки́мович) Пальчи́нский; 9 October [O.S. 27 September] 1875–22 May 1929) was a Russian engineer who played a significant role in the introduction of scientific method into Russian industry.",
+    "locator": "characters 0:244; sha256 aff7bd7c7d894c0023bbb932e0967dd50af43cdd27431960d445089c36875395"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Peter_Palchinsky",
+    "locator": "en: Biography",
+    "excerpt": "Palchinsky worked with the Soviet Authorities and the Communist party in planning industry and increasing the strength of Russia, but he was strongly against any takeover by the Party of any organization of which he was a member.",
+    "claim": "팔친스키는 소비에트 당국과 함께 산업 계획 작업을 했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "1920년대 소비에트 당국의 산업 계획 작업에 참여했다(당원은 아님)."
+ },
+ {
+  "personId": "pyotr-schmidt",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "표트르 시미트는 1905년 러시아 혁명 기간 중 세바스토폴 봉기의 지도자 중 한 명이었다.",
+    "source": "https://en.wikipedia.org/wiki/Pyotr_Schmidt",
+    "excerpt": "was one of the leaders of the Sevastopol Uprising during the Russian Revolution of 1905",
+    "locator": "characters 122:209; sha256 8a58b52263fd74494a78a859644f9e583828c03741b8041d5e6cbe7055453d78"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Pyotr_Schmidt",
+    "locator": "en: Uprising in the Black Sea Fleet",
+    "excerpt": "Lieutenant Commander Schmidt, though not being a member of RSDRP, was invited to take command of the rebel ships",
+    "claim": "시미트는 사회민주노동당 당원이 아니었지만 반란 함선의 지휘를 맡았다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "세바스토폴 봉기를 이끌었으나 당 소속이 아니었다고 출처가 명시; 봉기 자체는 조직이 아니다."
+ },
+ {
+  "personId": "raya-dunayevskaya",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "us-news-and-letters",
+  "relation": "service",
+  "startYear": 1955,
+  "endYear": 1987,
+  "evidence": [
+   {
+    "claim": "그녀는 News and Letters Committees를 설립하고 사망할 때까지 그 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Raya_Dunayevskaya",
+    "excerpt": "she later split with him and ultimately founded the organization News and Letters Committees and was its leader until her death.",
+    "locator": "characters 299:427; sha256 db69eca6cd2af2f2876fd407fb84cfcadd5e97f5cc7fa8234c6d5d2d1a68d25c"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Raya_Dunayevskaya",
+    "locator": "en: News and Letters Committees",
+    "excerpt": "In 1955, she founded her own organization, News and Letters Committees, and a Marxist-Humanist newspaper, News & Letters, which remains in publication today.",
+    "claim": "두나옙스카야는 1955년 뉴스 앤 레터스 위원회를 창립했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "us-news-and-letters",
+   "kind": "force",
+   "label": {
+    "ko": "뉴스 앤 레터스 위원회",
+    "en": "News and Letters Committees"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1955,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "1955년 뉴스 앤 레터스 위원회를 창립해 사망할 때까지 이끌었다; 한국어 이름은 인물 소개문 표기."
+ },
+ {
+  "personId": "rudolf-walden",
+  "functionId": "industry",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1906,
+  "endYear": 1946,
+  "evidence": [
+   {
+    "claim": "발덴은 1906년부터 1946년까지 제지 산업에서 일하며 핀란드 제지 산업을 통합했고, Yhtyneet Paperitehtaat Oy를 설립했으며 핀란드 제지 판매 협회인 Finpap의 초대 회장을 맡았다.",
+    "source": "https://en.wikipedia.org/wiki/Rudolf_Walden",
+    "excerpt": "From 1906 to 1946, Walden worked in the paper industry. He worked to consolidate the Finnish paper industry. He founded Yhtyneet Paperitehtaat Oy (United Paper Mills Ltd) and was the first president of \"Finpap\", a Finnish paper sales association.",
+    "locator": "characters 1450:1696; sha256 7ba64b2ffb7623c919a21dd3506d73d70a68c43d659945ae5dde585bbccfc2e3"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "자신이 세운 제지회사(Yhtyneet Paperitehtaat)·판매조합 Finpap 경영으로 카탈로그에 기업 항목이 없다; 기업도 받는다면 institution으로 신설 가능."
+ },
+ {
+  "personId": "ruth-first",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "퍼스트는 급진 신문 《가디언》의 편집장으로서 언론·저술 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Ruth_First",
+    "excerpt": "First then became the editor-in-chief of the radical newspaper The Guardian, which was subsequently banned by the state under the Communism Suppression Act and often changed names due to repressive state actions and media censorship.",
+    "locator": "characters 2355:2588; sha256 fcbc187ca18b2717d4e80b0e1d37a73afd63fee04d3a476815c986d82ea434b7"
+   },
+   {
+    "claim": "그녀는 탐사 저널리즘을 통해 아파르트헤이트 정책을 폭로하는 저술 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Ruth_First",
+    "excerpt": "Through investigative journalism, First exposed the racial segregation policies known as apartheid, targeting black South Africans following the rise of the National Party in 1948.",
+    "locator": "characters 2589:2769; sha256 fcbc187ca18b2717d4e80b0e1d37a73afd63fee04d3a476815c986d82ea434b7"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "급진 신문 《가디언》 편집 활동으로 카탈로그 조직이 아니다; 남아프리카 공산당·ANC 소속은 별도 activity로 기록됨."
+ },
+ {
+  "personId": "sergei-nechayev",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-narodnaya-rasprava",
+  "relation": "service",
+  "startYear": 1869,
+  "endYear": 1869,
+  "evidence": [
+   {
+    "claim": "네차예프는 1868~1869년 학생 운동에 참여하여 급진 소수파를 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Sergei_Nechaev",
+    "excerpt": "Inspired by the failed attempt on the Tsar's life by Dmitry Karakozov, Nechaev participated in student activism in 1868–1869, leading a radical minority with Pyotr Tkachev and others.",
+    "locator": "characters 2150:2333; sha256 7a359d60f4f57153536041439ef74f69bf02f41728e2621bfebda1b38906e634"
+   },
+   {
+    "claim": "네차예프는 '인민의 응징'이라는 비밀 결사를 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Sergei_Nechaev",
+    "excerpt": "He pretended to be a proxy of the Russian department of the Worldwide Revolutionary Union, which did not exist, and created an affiliate of a secret society called People's Reprisal Society",
+    "locator": "characters 7071:7260; sha256 7a359d60f4f57153536041439ef74f69bf02f41728e2621bfebda1b38906e634"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Sergei_Nechaev",
+    "locator": "en: Return to Russia",
+    "excerpt": "One Narodnaya Rasprava member, I. I. Ivanov, disagreed with Nechaev about the distribution of propaganda and left the group.",
+    "claim": "네차예프가 만든 인민의 보복 조직의 구성원 이바노프가 그와 대립해 조직을 떠났다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-narodnaya-rasprava",
+   "kind": "force",
+   "label": {
+    "ko": "인민의 보복",
+    "en": "People's Reprisal (Narodnaya Rasprava)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1869,
+     1869
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "1869년 비밀결사 인민의 보복을 조직해 이끌었다; 한국어 이름은 인물 소개문 표기."
+ },
+ {
+  "personId": "sergei-stepniak-kravchinsky",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "british-friends-of-russian-freedom",
+  "relation": "service",
+  "startYear": 1890,
+  "endYear": 1895,
+  "evidence": [
+   {
+    "claim": "크라프친스키는 런던에서 『Underground Russia』를 출판하고 러시아 자유의 친구 협회와 러시아 자유출판기금을 설립한 작가·출판인이다.",
+    "source": "https://en.wikipedia.org/wiki/Sergei_Stepniak",
+    "excerpt": "He was already known in England by his book, Underground Russia, which had been published in London in 1882. In England he established the Society of Friends of Russian Freedom and the Russia Free Press (with an associated Russia Free Press Fund (RFPF))",
+    "locator": "characters 5106:5359; sha256 ab165984a0035e96d3947b1d4f5a59ba48b68363f845b71e7f0c587addbe07a8"
+   },
+   {
+    "claim": "그는 『Underground Russia』 이후 러시아 농민, 니힐리즘, 러시아 생활 조건에 관한 여러 저작을 발표한 문필가였다.",
+    "source": "https://en.wikipedia.org/wiki/Sergei_Stepniak",
+    "excerpt": "Stepniak followed up Underground Russia with a number of other works on the condition of the Russian peasantry, on Nihilism, and on the conditions of life in Russia.",
+    "locator": "characters 6026:6191; sha256 ab165984a0035e96d3947b1d4f5a59ba48b68363f845b71e7f0c587addbe07a8"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Sergei_Stepniak",
+    "locator": "en: Murder of Mezentsev and second emigration",
+    "excerpt": "He was also an editor for the Society's house organ, Free Russia.",
+    "claim": "스테프냐크는 협회 기관지 《자유 러시아》의 편집자였다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Society_of_Friends_of_Russian_Freedom",
+    "locator": "en: English society",
+    "excerpt": "The English Society of Friends of Russian Freedom was founded in April 1890.",
+    "claim": "영국의 러시아 자유의 벗 협회는 1890년 4월에 창립되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Society_of_Friends_of_Russian_Freedom",
+    "locator": "en: English society",
+    "excerpt": "From 1890 to 1914 Society published Free Russia, a monthly newsletter edited by Sergei Stepniak and later Felix Volkhovsky.",
+    "claim": "협회는 1890~1914년 스테프냐크 등이 편집한 《자유 러시아》를 발행했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "british-friends-of-russian-freedom",
+   "kind": "force",
+   "label": {
+    "ko": "러시아 자유의 벗 협회",
+    "en": "Society of Friends of Russian Freedom"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     1890,
+     1914
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "런던에서 러시아 자유의 벗 협회를 세우고 기관지 《자유 러시아》를 편집했다(arts 유지: 저술·편집 활동); 한국어 이름은 인물 소개문 표기."
+ }
+]

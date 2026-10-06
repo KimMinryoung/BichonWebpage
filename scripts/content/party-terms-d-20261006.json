@@ -1,0 +1,458 @@
+{
+  "id": "party-terms-d-20261006",
+  "terms": [
+    {
+      "id": "national-popular-rally",
+      "affiliationId": "party-french-rnp",
+      "sources": [
+        "https://en.wikipedia.org/wiki/National_Popular_Rally",
+        "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+        "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%EC%9D%B8%EB%AF%BC%EC%97%B0%ED%95%A9"
+      ],
+      "fields": {
+        "term": {
+          "ko": "국민인민연합",
+          "en": "National Popular Rally"
+        },
+        "original": "Rassemblement national populaire (RNP)",
+        "category": "parties",
+        "period": {
+          "ko": "1941–1944",
+          "en": "1941–1944"
+        },
+        "startYear": 1941,
+        "endYear": 1944,
+        "definition": {
+          "ko": "1941년 2월 노동자 인터내셔널 프랑스 지부(SFIO)에서 제명된 신사회주의자 마르셀 데아가 독일 점령하의 파리에서 세운 파시즘·대독 협력 정당. 프랑스인민당과 함께 비시 정권기의 주요 협력 정당이었고, 반유대주의·인종주의 정책을 주장하며 나치 독일을 찬양했다. 1944년 8월 데아가 독일로 달아나면서 활동이 끝났다.",
+          "en": "A fascist and collaborationist party founded in occupied Paris in February 1941 by Marcel Déat, a neosocialist who had been expelled from the French Section of the Workers' International (SFIO). With the French Popular Party it was one of the main collaborationist parties of the Vichy period, advocating antisemitic and racist policies and admiring Nazi Germany. Its activity ended when Déat fled to Germany in August 1944."
+        },
+        "body": {
+          "ko": "데아는 1940년 여름 비시 정권이 들어서자 곧바로 단일 국가 정당을 만들자고 제안했다. 1940년 12월 13일 프랑스 경찰에 잠시 체포된 뒤 1941년 2월 당을 세웠고, 당원은 주로 신사회주의 경향의 옛 SFIO 당원 등 프랑스 좌파 출신이었다. 독일 당국은 곧 외젠 들롱클의 극우 조직 사회혁명운동(MSR)과 합치게 했으나, MSR은 당 안에서 사실상 자율을 유지하며 보안대를 맡았다. 1941년 8월 27일 폴 콜레트가 피에르 라발과 데아를 저격한 뒤 데아는 MSR이 자신을 없애려 했다고 비난했고, MSR은 1941년 10월 당에서 쫓겨났다.\n\n당의 이념은 분명히 파시즘이었지만, 보통선거·공교육·반교권주의를 지키고 시청의 마리안 상을 보존하자고 한 점에서 프랑스인민당과 달랐다. 이 때문에 악시옹 프랑세즈 출신의 비시 반동 세력과 끊임없이 부딪쳤다. 당은 라발을 지지했고, 데아는 파리 주재 독일 대사 오토 아베츠와 가까웠다. 1942년 11월에는 프랑스인민당을 뺀 주요 협력 단체를 모아 국민혁명전선을 만들어 단일 협력 정당을 이루려 했으나 실패했다.\n\n당원은 많을 때 3만 명이었다고 하나, 역사가 로버트 수시는 2,638명에 불과했고 그중 산업 노동자는 12.8%였다고 본다. 기관지는 《르 나시오날 포퓔레르》였고 데아의 일간지 《뢰브르》도 당을 지원했다. 1944년 3월 데아가 비시 정부의 노동·국민연대 장관이 된 뒤로는 당 조직보다 장관 업무에 힘을 쏟았고, 1944년 8월 17일 거의 혼자 독일로 피신했다.",
+          "en": "Déat proposed a single state party in the summer of 1940, immediately after the Vichy regime was proclaimed. Briefly arrested by the French police on 13 December 1940, he founded the party in February 1941; it recruited mainly among former members of the French Left, notably neosocialist former SFIO members. The German authorities at once imposed a fusion with Eugène Deloncle's far-right Social Revolutionary Movement (MSR), which kept de facto autonomy inside the party and formed its security service. After Paul Collette shot at Pierre Laval and Déat on 27 August 1941, Déat accused the MSR of trying to eliminate him, and the MSR was expelled in October 1941.\n\nThe party's ideology was clearly fascist, but unlike the French Popular Party it upheld universal suffrage, public education and anti-clericalism and kept the busts of Marianne in town halls. This brought it into constant conflict with the reactionary elements of Vichy trained in Action Française. It supported Laval, and Déat kept close links with the German ambassador in Paris, Otto Abetz. In November 1942 it gathered the main collaborationist groups, apart from the French Popular Party, into the National Revolutionary Front in an attempt to form a single collaborationist party, but the front failed.\n\nThe party claimed at most 30,000 members, though the historian Robert Soucy puts the figure at only 2,638, of whom 12.8 percent were industrial workers. Its mouthpiece was Le National Populaire, and Déat's daily L'Œuvre also supported it. After Déat became Vichy's Minister of Labour and National Solidarity in March 1944 he concentrated on his ministry rather than the party, and on 17 August 1944 he took refuge in Germany almost alone."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Rassemblement national populaire",
+            "RNP"
+          ]
+        },
+        "people": [],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Founded in February 1941 by former SFIO neosocialists, led by Marcel Déat; one of the main collaborationist parties under Vichy.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Fascist and collaborationist party founded by Déat during the German occupation; existed from 2 February 1941 until 1944.",
+            "source": "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Ideology fascist, antisemitic and racist, admiring Nazi Germany; Déat fled to Germany on 17 August 1944.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: The RNP without the MSR (after October 1941)"
+          },
+          {
+            "field": "body",
+            "claim": "Déat proposed a single party in summer 1940, arrested 13 December 1940, founded the RNP in February 1941; German-imposed fusion with Deloncle's MSR; MSR autonomous, formed security service; Collette attempt of 27 August 1941; MSR expelled October 1941.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: February–October 1941: the RNP-MSR period"
+          },
+          {
+            "field": "body",
+            "claim": "Differed from the PPF by keeping universal suffrage, public education, anti-clericalism, Marianne busts; conflict with Action Française-trained Vichy reactionaries; supported Laval; Déat close to Abetz; FRN of November 1942 excluding the PPF, which failed.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: The RNP without the MSR (after October 1941)"
+          },
+          {
+            "field": "body",
+            "claim": "At most 30,000 members; Soucy: 2,638 members, 12.8 percent industrial workers; Le National Populaire; L'Œuvre.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: Organisation of the RNP following October 1941"
+          },
+          {
+            "field": "body",
+            "claim": "Déat Minister of Labour and National Solidarity in March 1944; took refuge in Germany on 17 August 1944.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: The RNP without the MSR (after October 1941)"
+          },
+          {
+            "field": "term",
+            "claim": "Korean Wikipedia renders the party as 국민인민연합; the site already renders populaire as 인민 (프랑스인민당).",
+            "source": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%EC%9D%B8%EB%AF%BC%EC%97%B0%ED%95%A9",
+            "locator": "ko: lead"
+          },
+          {
+            "field": "period",
+            "claim": "Existed from 2 February 1941 until 1944.",
+            "source": "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Created in February 1941.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Existed until 1944; Déat fled to Germany in August 1944.",
+            "source": "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+            "locator": "fr: lead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "social-revolutionary-movement-france",
+      "affiliationId": "party-french-msr",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Revolutionary_Social_Movement",
+        "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+        "https://en.wikipedia.org/wiki/National_Popular_Rally",
+        "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%EC%9D%B8%EB%AF%BC%EC%97%B0%ED%95%A9"
+      ],
+      "fields": {
+        "term": {
+          "ko": "사회혁명운동",
+          "en": "Social Revolutionary Movement"
+        },
+        "original": "Mouvement social révolutionnaire (MSR)",
+        "category": "parties",
+        "period": {
+          "ko": "1940–1944",
+          "en": "1940–1944"
+        },
+        "startYear": 1940,
+        "endYear": 1944,
+        "definition": {
+          "ko": "1940년 9월 카굴의 옛 지도자 외젠 들롱클과 로레알 소유주 외젠 쉬엘레르가 파리에서 세운 파시즘 계열 극우 정당. 반유대주의를 내걸고 나치 독일과의 협력에 적극 가담했으며, 1941년 10월 파리 유대교 회당 폭탄 공격에 관여했다. 1944년 2월 소규모 프랑스혁명운동(MRF)으로 대체되었다.",
+          "en": "A far-right party of fascist inspiration founded in Paris in September 1940 by Eugène Deloncle, former leader of La Cagoule, and Eugène Schueller, owner of L'Oréal. Openly antisemitic, it took an active part in collaboration with Nazi Germany and was involved in the bombing of Paris synagogues in October 1941. In February 1944 it was replaced by the tiny French Revolutionary Movement (MRF)."
+        },
+        "body": {
+          "ko": "당에는 장 필리올, 자크 코레즈 같은 옛 카굴 단원과 조르주 레드리슈 같은 우파 기업가, 장 퐁트누아처럼 다른 진영에서 온 인물이 모였다. 독일 대사 오토 아베츠가 승인한 강령은 국가사회주의 독일과 협력해 「자유주의 자본주의, 유대교, 볼셰비즘, 프리메이슨」에서 해방된 새 유럽을 세우고, 프랑스에 남는 유대인에게 가혹한 지위를 부과하겠다고 밝혔다. 본부는 파리 오스만 대로에 있었고 기관지는 《레볼뤼시옹 나시오날》이었다. 주로 파리에서 활동하며 프랑스인민당과 경쟁했다.\n\n1941년 2월 독일 당국의 요구로 마르셀 데아의 국민인민연합(RNP)과 합쳤으나, 들롱클 일파는 당 안에서 자율을 지키며 RNP의 보안대를 이루었다. 1941년 8월 27일 라발과 데아 저격 사건 뒤 데아는 들롱클이 자신을 노린다고 보고 그 일파를 쫓아내, 합당은 10월에 깨졌다. 그 사이 1941년 7월 들롱클과 쉬엘레르는 반볼셰비키 프랑스의용군단(LVF)을 세웠다. 같은 해 10월 들롱클은 친위대 장교 한스 조머가 준 폭약으로 파리의 유대교 회당 일곱 곳에 대한 공격을 꾀했다.\n\n들롱클이 의용군단 일에 몰두하는 사이 당은 다시 갈라졌고, 1942년 5월 14일 조르주 술레 등이 일으킨 당내 쿠데타로 들롱클은 쫓겨났다. 1942년 한때 장 퐁트누아가 당을 이끌었다. 술레 일파는 반독 쪽으로 돌아섰고, 1944년 2월 MSR은 초기 강령을 그대로 이은 소규모 프랑스혁명운동으로 바뀌었다.",
+          "en": "The movement brought together former Cagoulards such as Jean Filiol and Jacques Corrèze, right-wing employers such as Georges Laederich, and figures from other backgrounds such as Jean Fontenoy. Its programme, approved by the German ambassador Otto Abetz, called for building a new Europe in cooperation with National Socialist Germany, freed from 'liberal capitalism, Judaism, Bolshevism and Freemasonry', and for a harsh statute for the Jews who would remain in France. Its headquarters were on the boulevard Haussmann in Paris and its organ was the review Révolution nationale. Active mainly in Paris, it set itself up as a rival to the French Popular Party.\n\nIn February 1941, at German insistence, it merged with Marcel Déat's National Popular Rally (RNP), but Deloncle's faction kept its autonomy and formed the RNP's security service. After the shooting of Laval and Déat on 27 August 1941, Déat concluded that Deloncle was plotting against him and removed his faction, ending the merger in October. Meanwhile, in July 1941, Deloncle and Schueller had founded the Legion of French Volunteers Against Bolshevism (LVF). In October 1941 Deloncle plotted attacks on seven Paris synagogues with explosives supplied by the SS officer Hans Sommer.\n\nWhile Deloncle was absorbed in the LVF the movement split again, and an internal coup led by Georges Soulès and others removed him on 14 May 1942. For a time in 1942 Jean Fontenoy led the movement. Soulès's faction moved to an anti-German position, and in February 1944 the MSR was replaced by the tiny French Revolutionary Movement, which kept the original programme."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Mouvement social révolutionnaire",
+            "Revolutionary Social Movement",
+            "MSR"
+          ]
+        },
+        "people": [],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Fascist movement founded in France in September 1940 by Eugène Deloncle (La Cagoule) and Eugène Schueller (L'Oréal).",
+            "source": "https://en.wikipedia.org/wiki/Revolutionary_Social_Movement",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Far-right party of fascist inspiration founded in Paris in 1940, active in collaboration; antisemitic; took part in October 1941 attacks on Paris synagogues; replaced in February 1944 by the MRF.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+            "locator": "fr: lead; Fondation et programme; La « révolution de palais »"
+          },
+          {
+            "field": "body",
+            "claim": "Members: former Cagoulards (Filiol, Corrèze), employers (Laederich), Fontenoy; programme approved by Abetz; headquarters 141 boulevard Haussmann; organ Révolution nationale; rival to the PPF; merged with RNP in February 1941, break in October; LVF founded by Deloncle and Schueller a month after 22 June 1941.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+            "locator": "fr: Fondation et programme"
+          },
+          {
+            "field": "body",
+            "claim": "German-imposed fusion with the RNP; MSR kept autonomy and formed the RNP security service; after the 27 August 1941 attempt Déat accused the MSR; MSR excluded in October 1941.",
+            "source": "https://en.wikipedia.org/wiki/National_Popular_Rally",
+            "locator": "en: February–October 1941: the RNP-MSR period"
+          },
+          {
+            "field": "body",
+            "claim": "Deloncle plotted against seven Paris synagogues in October 1941 with explosives from SS officer Hans Sommer; splits; coup of 14 May 1942 against Deloncle; Fontenoy led in 1942; Soulès faction anti-German.",
+            "source": "https://en.wikipedia.org/wiki/Revolutionary_Social_Movement",
+            "locator": "en: body"
+          },
+          {
+            "field": "body",
+            "claim": "In February 1944 the MSR was replaced by the tiny MRF, which kept the initial programme.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+            "locator": "fr: La « révolution de palais »"
+          },
+          {
+            "field": "term",
+            "claim": "Korean Wikipedia's RNP article renders the movement as 사회혁명운동(MSR).",
+            "source": "https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%EC%9D%B8%EB%AF%BC%EC%97%B0%ED%95%A9",
+            "locator": "ko: 1941년 2월 ~ 10월: RNP-MSR 시기"
+          },
+          {
+            "field": "period",
+            "claim": "Founded 1940; replaced by the MRF in February 1944.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+            "locator": "fr: lead; La « révolution de palais »"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded in September 1940.",
+            "source": "https://en.wikipedia.org/wiki/Revolutionary_Social_Movement",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Replaced by the MRF in February 1944.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+            "locator": "fr: La « révolution de palais »"
+          }
+        ]
+      }
+    },
+    {
+      "id": "socialist-party-of-france-jean-jaures-union",
+      "affiliationId": "party-french-psdf",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Socialist_Party_of_France_%E2%80%93_Jean_Jaur%C3%A8s_Union",
+        "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+        "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+        "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine"
+      ],
+      "fields": {
+        "term": {
+          "ko": "프랑스사회당(신사회주의)",
+          "en": "Socialist Party of France – Jean Jaurès Union"
+        },
+        "original": "Parti socialiste de France-Union Jean Jaurès (PSdF)",
+        "category": "parties",
+        "period": {
+          "ko": "1933–1935",
+          "en": "1933–1935"
+        },
+        "startYear": 1933,
+        "endYear": 1935,
+        "definition": {
+          "ko": "1933년 11월 노동자 인터내셔널 프랑스 지부(SFIO)에서 제명된 신사회주의 우파가 그해 12월 세운 개량주의 사회주의 정당. 피에르 르노델이 이끌었고 마르셀 데아·아드리앵 마르케·폴 라마디에 등이 참여했다. 세력을 넓히지 못하고 1935년 다른 두 당과 합쳐 사회주의공화연합이 되었다.",
+          "en": "A reformist socialist party founded in December 1933 by the neosocialist right wing expelled from the French Section of the Workers' International (SFIO) in November 1933. Led by Pierre Renaudel, it included Marcel Déat, Adrien Marquet and Paul Ramadier. It failed to grow and in 1935 merged with two other parties into the Socialist Republican Union."
+        },
+        "body": {
+          "ko": "1930년대 초 레옹 블룸이 이끄는 SFIO 안에서 세계 공황과 유럽 파시즘의 성장에 영향을 받은 우파가 형성되었다. 르노델·데아·마르케·귀스타브 푸르망이 대표했고, 개량주의·계획주의·권위주의를 띤 이들의 사상은 벨기에 사회주의자 드 만의 영향을 받아 신사회주의로 불렸다. 이들은 SFIO가 소수 연정 참여를 거부하는 데 맞서 중도좌파 공화파 내각을 거듭 지지했다. 1933년 7월 당대회에서 마르케가 「질서, 권위, 국민」을 새 구호로 내놓자 블룸은 「경악했다」고 답했다.\n\n1933년 11월 5일 SFIO 전국평의회가 이들을 제명했고, 제명자들은 12월 당을 세웠다. 의원단 대표는 르노델, 서기는 에르네스트 라퐁이었고 르노델의 신문 《라 비 소시알리스트》가 기관지가 되었다. 당은 당원과 선출직을 많이 끌어오지 못했고, 라마디에 같은 온건파와 더 급진적인 파로 나뉘었다. 마르케는 1934년 당을 떠났고 르노델은 1935년 4월 죽었다.\n\n르노델이 죽은 뒤 데아는 공화사회당·프랑스사회당(Parti socialiste français)과 의회 활동을 조정하는 교섭을 열었고, 1935년 11월 3일 세 당이 합쳐 사회주의공화연합이 되었다. 1940년 이후 신사회주의자 일부는 데아를 따라 대독 협력 정당 국민인민연합에 들어갔다. 이름이 비슷한 라 로크의 프랑스사회당(Parti social français)과는 다른 당이다.",
+          "en": "In the early 1930s a right wing formed inside the SFIO, then led by Léon Blum, under the influence of the world crisis and the rise of fascism in Europe. Its main figures were Renaudel, Déat, Marquet and Gustave Fourment; their ideas, marked by reformism, planism and authoritarianism and influenced by the Belgian socialist De Man, were called neosocialist. Against the SFIO's refusal to join governments as a minority partner, they repeatedly supported centre-left republican cabinets. At the party congress of July 1933 Marquet proposed 'Order, Authority, Nation' as the new socialist watchword, to which Blum replied that he was 'appalled'.\n\nThe SFIO National Council expelled them on 5 November 1933, and the expelled members formed the party in December. Renaudel presided over its parliamentary group, Ernest Lafont was its secretary, and Renaudel's paper La Vie socialiste became the neosocialists' organ. The party did not attract many activists or elected officials and was divided between a moderate wing, represented by Ramadier, and a more radical one. Marquet left in 1934 and Renaudel died in April 1935.\n\nAfter Renaudel's death Déat opened negotiations with the Republican-Socialist Party and the French Socialist Party (Parti socialiste français) to coordinate their parliamentary work, and on 3 November 1935 the three parties merged into the Socialist Republican Union. After 1940 some neosocialists followed Déat into the collaborationist National Popular Rally. It is distinct from the similarly abbreviated French Social Party (Parti social français) of La Rocque."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Parti socialiste de France-Union Jean Jaurès",
+            "PSdF"
+          ]
+        },
+        "people": [],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Formed in December 1933 by neosocialists expelled from the SFIO in November 1933; Déat, Renaudel, Marquet, Fourment; merged into the USR in 1935.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+            "locator": "fr: lead; Formation du PSDF"
+          },
+          {
+            "field": "definition",
+            "claim": "Neosocialist members expelled in 1933 included Déat, Ramadier and Marquet; the party was weak and merged with the PRS and the French Socialist Party into the USR in 1935.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Party_of_France_%E2%80%93_Jean_Jaur%C3%A8s_Union",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Founded in December 1933 by the veteran socialist leader Pierre Renaudel.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: Component Parties of the Socialist Republican Union"
+          },
+          {
+            "field": "body",
+            "claim": "Right wing of Blum's SFIO shaped by the crisis and fascism; Renaudel, Déat, Marquet, Fourment; reformism, planism, authoritarianism, De Man; called neosocialist; July 1933 congress 'Ordre, Autorité, Nation' and Blum 'épouvanté'.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+            "locator": "fr: L'aile néo-socialiste de la SFIO; Congrès de la SFIO de juillet 1933"
+          },
+          {
+            "field": "body",
+            "claim": "Expelled for recurrently supporting centre-left republican cabinets against the SFIO's non-participation policy.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: Component Parties of the Socialist Republican Union"
+          },
+          {
+            "field": "body",
+            "claim": "Exclusion on 5 November 1933; party formed in December; Renaudel president of the group, Lafont secretary; La Vie socialiste; weak recruitment; moderate (Ramadier) and radical wings; Marquet left 1934; Renaudel died April 1935.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+            "locator": "fr: L'exclusion des néo-socialistes; Formation du PSDF"
+          },
+          {
+            "field": "body",
+            "claim": "After Renaudel's death Déat opened negotiations with the two Socialist Republican parties.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "Merger of PSdF, Parti socialiste français and Parti républicain-socialiste into the USR on 3 November 1935 at Pantin.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Création — Parti"
+          },
+          {
+            "field": "body",
+            "claim": "After 1940 some neosocialists followed Déat into the RNP; the PSDF must not be confused with La Rocque's PSF (Parti social français).",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+            "locator": "fr: lead; Suites : la collaboration de Marcel Déat"
+          },
+          {
+            "field": "term",
+            "claim": "Parti socialiste de France was also the name of 1919–1926 and 1928–1935 parties, so the bare name is not an alias; the qualifier reflects the 'Neo-Socialists' label others gave the party.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: Prehistory: Socialist Republicanism; Component Parties of the Socialist Republican Union"
+          },
+          {
+            "field": "period",
+            "claim": "Constituted in December 1933; ceased to exist in 1935 on joining the USR.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Constituted in December 1933.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_de_France-Union_Jean_Jaur%C3%A8s",
+            "locator": "fr: Formation du PSDF"
+          },
+          {
+            "field": "endYear",
+            "claim": "Merged into the USR on 3 November 1935.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Création — Parti"
+          }
+        ]
+      }
+    },
+    {
+      "id": "socialist-republican-union",
+      "affiliationId": "party-french-usr",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+        "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine"
+      ],
+      "fields": {
+        "term": {
+          "ko": "사회주의공화연합",
+          "en": "Socialist Republican Union"
+        },
+        "original": "Union socialiste républicaine (USR)",
+        "category": "parties",
+        "period": {
+          "ko": "1935–1940",
+          "en": "1935–1940"
+        },
+        "startYear": 1935,
+        "endYear": 1940,
+        "definition": {
+          "ko": "1935년 11월 3일 노동자 인터내셔널 프랑스 지부(SFIO)와 급진사회당 사이에 있던 세 소수당이 합쳐 만든 프랑스 제3공화국 말기의 온건 사회주의 정당. 인민전선에 참여해 블룸 내각에 각료를 냈고, 이후 달라디에·레노 내각에도 참여했다. 1940년 활동이 멈췄고 해방 뒤 재건되지 않았다.",
+          "en": "A moderate socialist party of the late French Third Republic formed on 3 November 1935 by the merger of three small parties situated between the French Section of the Workers' International (SFIO) and the Radical Party. It joined the Popular Front and had ministers in the Blum government, and later in the Daladier and Reynaud governments. It became dormant in 1940 and was not revived after the Liberation."
+        },
+        "body": {
+          "ko": "당은 1890년대부터 마르크스주의 SFIO와 급진사회당 사이에 있던 사회주의공화파의 흐름을 하나의 당으로 묶은 것이었다. 참여한 당은 신사회주의 계열의 프랑스사회당(Parti socialiste de France), 프랑스사회당(Parti socialiste français), 공화사회당이었다. 1935년 봄 르노델이 죽은 뒤 신사회주의 쪽 지도자 마르셀 데아가 두 사회주의공화파 정당과 교섭해 그해 여름 공동 의원단을 만들었고, 11월 3일 팡탱 대회에서 정식 정당이 되었다. 세 당은 공동 선언에서 독재적 파시즘과 전체주의적 교조주의에 맞서 공화국을 지키고 경제 위기를 극복하며 평화를 지키겠다고 밝혔다.\n\n당은 1936년 총선에서 급진주의와 정통 마르크스주의 사회주의의 중간 노선으로 돌파구를 기대했지만, 인민전선이 성립하면서 그 자리가 사라졌다. 선거 전 47명이던 의원은 27명으로 줄었고, 데아가 낙선하는 등 신사회주의 쪽이 가장 큰 타격을 받았다. 당은 인민전선 연합에 들어가 블룸 내각에 모리스 비올레트, 피에르 비에노, 폴 라마디에를 각료로 보냈다.\n\n1938–1939년 제3차 달라디에 내각에 참여해 급진파와 사회주의자의 동맹이 끝나는 데 한몫했고, 1940년까지 달라디에·레노 내각에 남았다. 마지막 대회는 1939년 5월이었고 1940년 활동을 멈췄다. 전쟁 중 조제프 폴봉쿠르처럼 페탱에게 전권 부여를 거부한 당원도, 데아처럼 대독 협력에 나선 당원도 있었다. 해방 뒤 당은 재건되지 않았고, 당원 다수는 SFIO나 공화좌파연합으로 옮겼다.",
+          "en": "The party consolidated into one organisation the Socialist Republican current that had existed since the 1890s between the Marxist SFIO and the Radical-Socialists. Its components were the neosocialist Socialist Party of France (Parti socialiste de France), the French Socialist Party (Parti socialiste français) and the Republican-Socialist Party. After Renaudel's death in the spring of 1935, Marcel Déat, leader of the neosocialists, negotiated with the two Socialist Republican parties, forming a combined parliamentary group that summer and a formal party at a congress in Pantin on 3 November. In their joint declaration the three parties pledged to defend the Republic against dictatorial fascisms and totalitarian dogmatisms, overcome the economic crisis and save the peace.\n\nIn the 1936 election the party hoped for a breakthrough as a midpoint between Radicalism and orthodox Marxian socialism, but the formation of the Popular Front made that offer redundant. Its deputies fell from 47 before the election to 27, and the neosocialist wing was hit hardest, Déat losing his seat. It joined the Popular Front coalition and sent Maurice Viollette, Pierre Viénot and Paul Ramadier into the Blum government.\n\nIts participation in the third Daladier government of 1938–1939 helped end the alliance between Radicals and Socialists, and it stayed in the Daladier and Reynaud governments until 1940. Its last congress was held in May 1939 and it became dormant in 1940. During the war some members, such as Joseph Paul-Boncour, refused to vote full powers to Pétain, while others, such as Déat, collaborated. The party was not revived after the Liberation, and most members joined the SFIO or the Rally of the Republican Left."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Union socialiste républicaine"
+          ]
+        },
+        "people": [],
+        "events": [
+          "french-popular-front"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Founded on 3 November 1935 as a fusion of three small parties between the SFIO and the Radical PRRRS.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: Prehistory: Socialist Republicanism"
+          },
+          {
+            "field": "definition",
+            "claim": "Merger of PSdF, Parti socialiste français and Parti républicain-socialiste; joined the Popular Front and the Blum government; dormant from 1940, not reconstituted at the Liberation.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Création; Gouvernement Blum; Disparition et suites"
+          },
+          {
+            "field": "definition",
+            "claim": "Participated in the Daladier and Reynaud governments until 1940.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "Consolidation of the Socialist Republican current present since the 1890s; component parties; Déat's negotiations after Renaudel's death; inter-group in summer 1935, party in November 1935.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: Prehistory: Socialist Republicanism; Component Parties; History"
+          },
+          {
+            "field": "body",
+            "claim": "Pantin congress of 3 November 1935; joint declaration on defending the Republic, overcoming the crisis and saving the peace.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Création — Parti"
+          },
+          {
+            "field": "body",
+            "claim": "Hoped to be a midpoint; Popular Front made it redundant; 47 deputies before, 27 after; neosocialists hit hardest, Déat lost his seat.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "Ministers in the Blum government: Viollette, Viénot, Ramadier.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Gouvernement Blum"
+          },
+          {
+            "field": "body",
+            "claim": "Third Daladier government 1938–1939 ended the Radical–Socialist alliance; in the 4th and 5th Daladier governments until 1940.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Rupture et virage à droite"
+          },
+          {
+            "field": "body",
+            "claim": "Last congress May 1939; Paul-Boncour refused full powers to Pétain, Déat collaborated; not resurrected; members to SFIO or Rally of the Republican Left.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Republican_Union",
+            "locator": "en: History"
+          },
+          {
+            "field": "events",
+            "claim": "The USR took part in the Popular Front coalition of 1936 and the Blum government.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Gouvernement Blum"
+          },
+          {
+            "field": "period",
+            "claim": "Founded 1935; parliamentary group until 1940; dormant in 1940.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: lead; Disparition et suites"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded on 3 November 1935.",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: Création — Parti"
+          },
+          {
+            "field": "endYear",
+            "claim": "Became dormant in 1940; parliamentary group until 1940 (en: last congress May 1939).",
+            "source": "https://fr.wikipedia.org/wiki/Union_socialiste_r%C3%A9publicaine",
+            "locator": "fr: lead; Disparition et suites"
+          }
+        ]
+      }
+    }
+  ]
+}

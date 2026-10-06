@@ -1,0 +1,249 @@
+{
+ "newAffiliations": [
+  {
+   "id": "french-cagoule",
+   "kind": "force",
+   "label": {
+    "ko": "카굴 (혁명행동비밀위원회)",
+    "en": "La Cagoule (CSAR)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1936,
+     1937
+    ]
+   ],
+   "termNeeded": false,
+   "note": "Shared id with the parallel agent. Secret armed organisation (OSARN/CSAR) founded June 1936, dismantled from 23 November 1937.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+     "locator": "fr: Création",
+     "excerpt": "Le même jour, le PNR se dissout et laisse la place à l'Osarn (« Organisation secrète d'action révolutionnaire nationale ») ou « Comité secret d'action révolutionnaire » (CSAR)."
+    },
+    {
+     "source": "https://fr.wikipedia.org/wiki/La_Cagoule",
+     "locator": "fr: Assassinat de Marx Dormoy",
+     "excerpt": "Le ministre de l'Intérieur Marx Dormoy fait démanteler l'organisation, le 23 novembre."
+    }
+   ]
+  },
+  {
+   "id": "party-french-rnp",
+   "kind": "party",
+   "label": {
+    "ko": "국민민중연합",
+    "en": "National Popular Rally (RNP)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1941,
+     1944
+    ]
+   ],
+   "termNeeded": true,
+   "note": "Shared id with the parallel agent.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/Rassemblement_national_populaire",
+     "locator": "fr: lead",
+     "excerpt": "Le Rassemblement national populaire (RNP) est un parti politique français fasciste et collaborationniste, fondé par Marcel Déat pendant l'occupation allemande. Le RNP, qui a existé du 2 février 1941 jusqu'en 1944"
+    }
+   ]
+  },
+  {
+   "id": "french-fnc",
+   "kind": "force",
+   "label": {
+    "ko": "가톨릭전국연맹",
+    "en": "National Catholic Federation (FNC)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1924,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "note": "Shared id with the parallel agent (Vallat). Catholic mass pressure group, not a party; it continued after 1945 on a smaller scale, so the end year is left open.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/F%C3%A9d%C3%A9ration_nationale_catholique",
+     "locator": "fr: lead",
+     "excerpt": "La Fédération nationale catholique (FNC) est une association catholique française, fondée en 1924, active dans l'entre-deux-guerres et encore après la Seconde Guerre mondiale, dans une moindre mesure."
+    }
+   ]
+  },
+  {
+   "id": "party-french-msr",
+   "kind": "party",
+   "label": {
+    "ko": "사회혁명운동",
+    "en": "Social Revolutionary Movement (MSR)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1940,
+     1944
+    ]
+   ],
+   "termNeeded": true,
+   "note": "New id (not in the shared list). Deloncle's collaborationist party; replaced by the MRF in February 1944.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+     "locator": "fr: lead",
+     "excerpt": "Le Mouvement social révolutionnaire était un parti d'extrême droite d'inspiration fasciste, fondé à Paris en 1940."
+    },
+    {
+     "source": "https://fr.wikipedia.org/wiki/Mouvement_social_r%C3%A9volutionnaire",
+     "locator": "fr: La « révolution de palais »",
+     "excerpt": "En février 1944, le MSR est remplacé par un minuscule Mouvement révolutionnaire français (MRF)"
+    }
+   ]
+  },
+  {
+   "id": "party-french-psdf",
+   "kind": "party",
+   "label": {
+    "ko": "프랑스 사회주의당-장 조레스 연합",
+    "en": "Socialist Party of France – Jean Jaurès Union (PSdF)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1933,
+     1935
+    ]
+   ],
+   "termNeeded": true,
+   "note": "New id. Korean label deliberately says 사회주의당 so it is not confused with party-french-psf (프랑스사회당, La Rocque).",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+     "locator": "fr: Le Parti socialiste de France-Union Jean Jaurès (1933-1935)",
+     "excerpt": "En 1933, Marcel Déat adhère au Parti socialiste de France-Union Jean Jaurès (PSDF) né en 1933 d'une scission des franges réformiste, planiste et néo-socialiste de la SFIO exclues par le congrès du 5 novembre 1933."
+    },
+    {
+     "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+     "locator": "fr: L'Union socialiste républicaine (1935-1940)",
+     "excerpt": "En 1935, Déat et ses proches, Renaudel, Marquet et Montagon, fusionnent le PSDF avec deux autres groupes de gauche modérée"
+    }
+   ]
+  },
+  {
+   "id": "party-french-usr",
+   "kind": "party",
+   "label": {
+    "ko": "사회주의공화연합",
+    "en": "Socialist Republican Union (USR)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1935,
+     1940
+    ]
+   ],
+   "termNeeded": true,
+   "note": "New id. End year 1940 taken from the fr Déat section heading only; confirm before registering.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/Marcel_D%C3%A9at",
+     "locator": "fr: L'Union socialiste républicaine (1935-1940)",
+     "excerpt": "fusionnent le PSDF avec deux autres groupes de gauche modérée (le Parti républicain-socialiste et le Parti socialiste français) pour former l’Union socialiste républicaine."
+    }
+   ]
+  },
+  {
+   "id": "french-milice",
+   "kind": "military",
+   "label": {
+    "ko": "프랑스 민병대",
+    "en": "French Milice"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1943,
+     1944
+    ]
+   ],
+   "termNeeded": false,
+   "note": "New id. Vichy paramilitary, which Henriot joined in March 1943. It would also fit Darnand and others, but this pass has no source for its founding or dissolution dates; check them before registering.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/Philippe_Henriot",
+     "locator": "fr: Collaboration",
+     "excerpt": "s'engage dans la Milice en mars 1943"
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Philippe_Henriot",
+     "locator": "en: Propagandist",
+     "excerpt": "In 1943, Henriot joined the Milice paramilitary"
+    }
+   ]
+  }
+ ],
+ "optionalAffiliations": [
+  {
+   "id": "french-je-suis-partout",
+   "kind": "institution",
+   "label": {
+    "ko": "주 쉬 파르투",
+    "en": "Je suis partout"
+   },
+   "countryCode": "france",
+   "periods": [
+    [
+     1930,
+     1944
+    ]
+   ],
+   "note": "NOT used in the spec. The catalog has no newspapers as affiliations, so Brasillach's primary is propaganda/unresolved, like the zaki-validi pattern. If the owner wants the paper as an affiliation, set his primary to this id with relation employment.",
+   "evidence": [
+    {
+     "source": "https://fr.wikipedia.org/wiki/Je_suis_partout",
+     "locator": "fr: Sous l'Occupation",
+     "excerpt": "Robert Brasillach, rédacteur en chef depuis juin 1937, reprend les rênes à son retour de captivité."
+    }
+   ]
+  }
+ ],
+ "collections": {
+  "eugene-deloncle": [
+   "counterrevolution",
+   "fascist"
+  ],
+  "marcel-deat": [
+   "counterrevolution",
+   "fascist"
+  ],
+  "philippe-henriot": [
+   "counterrevolution",
+   "fascist",
+   "conservative"
+  ],
+  "robert-brasillach": [
+   "counterrevolution",
+   "fascist"
+  ]
+ },
+ "collectionNotes": {
+  "eugene-deloncle": "Fascist: he led the Cagoule (fr: \"organisation terroriste fasciste\") and the fascist MSR party.",
+  "marcel-deat": "Fascist: he founded and led the RNP (\"parti politique français fasciste\"). Not in non-bolshevik-socialist: his SFIO period is a documented membership, but the card is defined by the later fascist party. Add it only if the collection is meant to cover a period like that.",
+  "philippe-henriot": "Fascist through his Milice membership. Conservative because he was vice-president of the Republican Federation (\"un parti conservateur\"), which matches the conservative-party criterion.",
+  "robert-brasillach": "Fascist is a judgement call: he openly called himself a fascist (fr: \"assume avoir été, et être encore, fasciste\"), but no fascist party membership is documented, and the collection intro asks for members and leaders. Drop it if that rule is applied strictly."
+ }
+}

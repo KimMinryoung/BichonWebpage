@@ -1,0 +1,1225 @@
+[
+ {
+  "personId": "abel-aganbegyan",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1961,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "아간베갼은 1961년 관료직을 떠나 노보시비르스크의 새 과학연구소에서 수리경제학자로 연구 경력을 시작했고, 1964년 연구소장이 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Abel_Aganbegyan",
+    "excerpt": "In 1961 he left the official work and started his scientific career. He became an employee of a new scientific institute in Novosibirsk which was quickly filled by young and ambitious persons from Moscow. An active member of the group of mathematical economists which emerged in the USSR in the 1960s, Aganbegyan became an Academy member in 1963 (full member in 1974) and the head of the institute in 1964.",
+    "locator": "characters 686:1092; sha256 d66bd408ae2e8df95c3ef2398decd86eda7bf380a5f0f59e2a3edd9611856492"
+   },
+   {
+    "claim": "그는 250편 이상의 동료심사 논문과 20권의 단행본을 저술한 학자이다.",
+    "source": "https://en.wikipedia.org/wiki/Abel_Aganbegyan",
+    "excerpt": "Aganbegyan is the author of more than 250 peer-reviewed publications and 20 monographs.",
+    "locator": "characters 2433:2520; sha256 d66bd408ae2e8df95c3ef2398decd86eda7bf380a5f0f59e2a3edd9611856492"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Abel_Aganbegyan",
+    "locator": "en: Biography",
+    "excerpt": "Aganbegyan became an Academy member in 1963 (full member in 1974) and the head of the institute in 1964.",
+    "claim": "아간베갼은 1963년 소련 과학아카데미 회원이 되었고 1964년 노보시비르스크 연구소장이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Soviet Academy of Sciences institute researcher (1961) and director (1964): Soviet state-institution service per state-soviet criteria."
+ },
+ {
+  "personId": "afanasi-matushenko",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-tsentralka",
+  "relation": "membership",
+  "startYear": null,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "마튜셴코는 포툠킨호 반란의 주모자로서 반란을 조직·주도한 인물이다.",
+    "source": "https://en.wikipedia.org/wiki/Afanasi_Matushenko",
+    "excerpt": "He was a non-commissioned officer in the Black Sea Fleet, revolutionary socialist, and ringleader of the mutiny on the Russian battleship Potemkin.",
+    "locator": "characters 187:334; sha256 64bac23f2dc5daf804757d00169b363dc9a78a029e1ca342941d01e28813522e"
+   },
+   {
+    "claim": "그는 수병 혁명조직인 첸트랄카에 가입하여 조직 활동에 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Afanasi_Matushenko",
+    "excerpt": "Here, he joined Tsentralka, the sailors' revolutionary organisation.",
+    "locator": "characters 1613:1681; sha256 64bac23f2dc5daf804757d00169b363dc9a78a029e1ca342941d01e28813522e"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Afanasi_Matushenko",
+    "locator": "en: Biography",
+    "excerpt": "On the morning of 10 June 1905, Tsentralka met on Malakhov hill, just outside Sebastopol. Over 100 sailors were there.",
+    "claim": "젠트랄카는 1905년 6월 세바스토폴 근교에서 회합해 흑해함대 봉기를 준비한 수병 혁명조직이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Afanasi_Matushenko",
+    "locator": "en: Biography",
+    "excerpt": "Matushenko was not a member of any political party and had no distinct political views.",
+    "claim": "마튜셴코는 어떤 정당에도 속하지 않았다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-tsentralka",
+   "kind": "force",
+   "label": {
+    "ko": "젠트랄카",
+    "en": "Tsentralka (Black Sea Fleet sailors' revolutionary organisation)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1904,
+     1905
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "tsentralka"
+  },
+  "reason": "Joined Tsentralka, the named sailors' revolutionary organisation; source says he belonged to no party, so not RSDLP even though the glossary describes Tsentralka as an RSDLP Sevastopol military body (parentId left null for that reason)."
+ },
+ {
+  "personId": "agostinho-mendes-de-carvalho",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "그는 우안헨가 시투라는 필명으로 활동한 앙골라의 작가였다.",
+    "source": "https://en.wikipedia.org/wiki/Uanhenga_Xitu",
+    "excerpt": "Agostinho André Mendes de Carvalho (August 29, 1924 – February 13, 2014), known by the pseudonym Uanhenga Xitu, was an Angolan writer and nationalist.",
+    "locator": "characters 0:150; sha256 687a8106ae8771df05364f469e099631f21b3b89fa3bf3558be0d2e858f1dda6"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Literary work under the pen name Uanhenga Xitu; the source names no organization for his writing (MPLA already a separate activity). Current relation \"independent\" is not stated by the source."
+ },
+ {
+  "personId": "ahmad-shah-massoud",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-afghan-jamiat-e-islami",
+  "relation": "service",
+  "startYear": 1979,
+  "endYear": 2001,
+  "evidence": [
+   {
+    "claim": "마수드는 1979~1989년 소련 점령에 맞선 아프가니스탄 무자헤딘의 최고 지휘관이었다.",
+    "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+    "excerpt": "Known as the \"Lion of Panjshir\", he was the foremost commander of the Afghan mujahideen against Soviet occupation during the Soviet–Afghan War from 1979 to 1989.",
+    "locator": "characters 94:255; sha256 a0ce42acf7b7de3bcc2d6ee2d173af65a9bc045a87e5963dc62955b47393c9fd"
+   },
+   {
+    "claim": "1996년 이후 그는 탈레반에 맞서는 북부동맹의 군사 지도자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+    "excerpt": "He became the military leader of the Northern Alliance, which by 2000 controlled only 5–10% of the country.",
+    "locator": "characters 1464:1571; sha256 a0ce42acf7b7de3bcc2d6ee2d173af65a9bc045a87e5963dc62955b47393c9fd"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+    "locator": "en: lead",
+    "excerpt": "He joined the Jamiat-i Islami of Burhanuddin Rabbani and, in 1975, participated in a failed uprising against President Daoud Khan's government.",
+    "claim": "마수드는 라바니의 이슬람회(자미아트 이슬라미)에 가담했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+    "locator": "en: Afshar operation (February 1993)",
+    "excerpt": "Human Rights Watch, in a report based largely on the material collected by the Afghanistan Justice Project, concurs that Massoud's Jamiat forces bear a share of the responsibility for human rights abuses throughout the war",
+    "claim": "마수드는 이슬람회(자미아트) 무장세력을 지휘했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-afghan-jamiat-e-islami",
+   "kind": "party",
+   "label": {
+    "ko": "이슬람회(아프가니스탄)",
+    "en": "Jamiat-e Islami (Afghanistan)"
+   },
+   "countryCode": "afghanistan",
+   "parentId": null,
+   "periods": [
+    [
+     1972,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Commander of Jamiat-e Islami forces through the Soviet war, civil war and Northern Alliance period; his 1992–1996 Minister of Defense post could be a separate state-afghanistan activity, and the Northern Alliance (1996–2001) is a coalition he created."
+ },
+ {
+  "personId": "aime-cesaire",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "에메 세제르는 시인이자 작가로서 프랑스어권 문학에서 네그리튀드 운동의 창시자 중 한 명이며 '네그리튀드'라는 용어를 만들었다.",
+    "source": "https://en.wikipedia.org/wiki/Aim%C3%A9_C%C3%A9saire",
+    "excerpt": "was an Afro-Martinican poet, author, and politician. He was one of the founders of the Négritude movement in Francophone literature and coined the word \"négritude\" in French.",
+    "locator": "characters 94:268; sha256 b7335a7c3e56bf9064c77ca5786c6a3b870f501ba6e1d8e4bad7a7eada9595f5"
+   },
+   {
+    "claim": "그의 대표작으로 장시 『고향으로의 귀환 노트』(1939), 셰익스피어의 『템페스트』에 대한 응답인 『어느 폭풍』, 식민주의를 비판한 에세이 『식민주의에 관한 담론』 등이 있다.",
+    "source": "https://en.wikipedia.org/wiki/Aim%C3%A9_C%C3%A9saire",
+    "excerpt": "His works include the book-length poem Cahier d'un retour au pays natal (1939), Une Tempête, a response to William Shakespeare's play The Tempest, and Discours sur le colonialisme (Discourse on Colonialism), an essay describing the strife between the colonizers and the colonized.",
+    "locator": "characters 528:808; sha256 b7335a7c3e56bf9064c77ca5786c6a3b870f501ba6e1d8e4bad7a7eada9595f5"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Poet and Négritude co-founder; Négritude is a literary movement, not an organization; party work (PCF) is already a separate activity."
+ },
+ {
+  "personId": "aimo-cajander",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "existing",
+  "affiliationId": "party-finnish-national-progressive",
+  "relation": "service",
+  "startYear": 1933,
+  "endYear": 1943,
+  "evidence": [
+   {
+    "claim": "그는 1933–1943년 국민진보당 의장이었다.",
+    "source": "https://en.wikipedia.org/wiki/Aimo_Cajander",
+    "excerpt": "chairman of the National Progressive Party 1933–1943",
+    "locator": "characters 312:364; sha256 32884d50ada4a2bf2d52518d830ed23592d189572831eb11c842ee8171553726"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Chairman of the National Progressive Party 1933–1943 (party post → service); the separate membership activity 1927–1943 remains."
+ },
+ {
+  "personId": "alexander-antonov",
+  "functionId": "organizing",
+  "newFunctionId": "military",
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-tambov-insurgents",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1921,
+  "evidence": [
+   {
+    "claim": "그는 사회혁명당원이자 볼셰비키 정권에 맞선 탐보프 반란의 지도자 중 한 명이었다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Antonov_%28politician%29",
+    "excerpt": "was a Russian revolutionary, member of the Socialist Revolutionary Party, and one of the leaders of the Tambov Rebellion against the Bolshevik regime.",
+    "locator": "characters 102:252; sha256 07c77939370494b43fb3a67be191b4362c8400469ca7fd7b5d2b8fe18d772993"
+   },
+   {
+    "claim": "그는 키르사노프에서 탐보프 반란을 조직하고 그 지도자 중 한 명이 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Antonov_%28politician%29",
+    "excerpt": "In Kirsanov he organised and became one of the leaders of the Tambov Rebellion against the Bolshevik regime.",
+    "locator": "characters 5369:5477; sha256 07c77939370494b43fb3a67be191b4362c8400469ca7fd7b5d2b8fe18d772993"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Антонов,_Александр_Степанович",
+    "locator": "ru: Начальник Главоперштаба",
+    "excerpt": "14 ноября 1920 года, преодолев сопротивление командиров отдельных повстанческих отрядов, Антонову удалось создать единый центр руководства восстанием — который получил название «Главный оперативный штаб». Его начальником «тайным голосованием на альтернативной основе» был избран сам Антонов",
+    "claim": "안토노프는 1920년 11월 탐보프 봉기의 단일 지휘부인 '주작전참모부'를 세우고 그 수장으로 선출되었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Антонов,_Александр_Степанович",
+    "locator": "ru: Начальник Главоперштаба",
+    "excerpt": "К февралю 1921 года, на пике восстания, в регионе существовало около двадцати повстанческих полков, сгруппированных в две «партизанские армии Тамбовского края»: Первую и Вторую.",
+    "claim": "1921년 2월 봉기군은 약 20개 연대로 이루어진 두 개의 탐보프 지역 빨치산군으로 편성되어 있었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-tambov-insurgents",
+   "kind": "military",
+   "label": {
+    "ko": "탐보프 봉기군",
+    "en": "Tambov insurgent army (Partisan Armies of Tambov Region)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1920,
+     1921
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Headed the Main Operational Staff commanding the Tambov rebellion regiments: military command, so function → military. Alternative: the political Union of Working Peasantry (term union-of-working-peasantry) if the owner prefers an organizing affiliation."
+ },
+ {
+  "personId": "alexander-berkman",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "american-pioneers-of-liberty",
+  "relation": "membership",
+  "startYear": 1888,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "베르크만은 미국 최초의 유대인 아나키스트 단체인 '자유의 개척자들'에 가입했다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Berkman",
+    "excerpt": "He joined the Pioneers of Liberty, the first Jewish anarchist group in the U.S.",
+    "locator": "characters 5532:5611; sha256 50a944ca7dc374d88eed824f181f49f13ec02acf9cf685a458813b278bc3f22f"
+   },
+   {
+    "claim": "그는 곧 그 조직의 저명한 구성원 중 한 명이 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Berkman",
+    "excerpt": "Before long, Berkman was one of the prominent members of the organization.",
+    "locator": "characters 5997:6071; sha256 50a944ca7dc374d88eed824f181f49f13ec02acf9cf685a458813b278bc3f22f"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexander_Berkman",
+    "locator": "en: New York City",
+    "excerpt": "The group was affiliated with the International Working People's Association, the organization to which the Haymarket defendants had belonged, and they regarded the Haymarket men as martyrs.",
+    "claim": "베르크만이 가입한 '자유의 개척자'는 헤이마켓 피고들이 속했던 국제노동인민협회에 가맹한 단체였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "american-pioneers-of-liberty",
+   "kind": "force",
+   "label": {
+    "ko": "자유의 개척자",
+    "en": "Pioneers of Liberty (Pionire der Frayhayt)"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1886,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Documented prominent member of the Pioneers of Liberty after arriving in New York in 1888; later roles (Mother Earth editor) are journal work, not a catalog organization."
+ },
+ {
+  "personId": "alexander-konovalov",
+  "functionId": "industry",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-provisional-government",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "코노발로프는 러시아 최대 섬유 제조업자 중 한 명으로, 산업 경영이 그의 정의적 활동이었다.",
+    "source": "https://en.wikipedia.org/wiki/Aleksandr_Konovalov_%28politician%29",
+    "excerpt": "One of Russia's biggest textile manufacturers, he became a leader of the liberal, business-oriented Progressist Party",
+    "locator": "characters 220:337; sha256 bbd66fa20add97c9cf47f898a24f9e0af8ec027d30f8071b48ae3a2209d85c70"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Aleksandr_Konovalov_(politician)",
+    "locator": "en: Biography",
+    "excerpt": "During World War I he was vice president of Alexander Guchkov's Military-Industrial Committee, and after the February Revolution he became Minister of Trade and Industry in the Provisional Government.",
+    "claim": "코노발로프는 2월 혁명 뒤 임시정부의 통상산업부 장관이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Industrial administration as Provisional Government Minister of Trade and Industry (1917). His own textile firm is not a catalog organization; the War Industries Committee vice-presidency could be a further activity."
+ },
+ {
+  "personId": "alexander-shapiro",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "international-iwa-ait",
+  "relation": "service",
+  "startYear": 1922,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "샤피로는 국제 아나키스트 연맹(아나키스트 인터내셔널)의 서기이자 기관지 편집자로 활동하며 국제 아나키스트 운동을 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Schapiro",
+    "excerpt": "The congress decided to form an International Bureau which also became known as the Anarchist International. Schapiro, Rocker, and Malatesta were chosen as the bureau's secretaries. Schapiro became the editor of the Bureau's journal, the Bulletin de l'Internationale  Anarchiste",
+    "locator": "characters 5783:6061; sha256 4787485b7118052aa092160155506ef3503e7da885fa1b8329252f7082eea24d"
+   },
+   {
+    "claim": "제1차 세계대전 무렵 샤피로는 국제 아나키스트 운동의 중요한 조직가였다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Schapiro",
+    "excerpt": "By the time World War I broke out, Schapiro was an important organizer in the international anarchist movement",
+    "locator": "characters 7780:7890; sha256 4787485b7118052aa092160155506ef3503e7da885fa1b8329252f7082eea24d"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexander_Schapiro",
+    "locator": "en: Exile",
+    "excerpt": "Berlin was selected as the seat of the IWMA. Schapiro, Souchy, and Rocker were elected to its secretariat.",
+    "claim": "샤피로는 베를린에 본부를 둔 국제노동자협회(IWMA)의 서기국원으로 선출되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexander_Schapiro",
+    "locator": "en: Exile",
+    "excerpt": "In April 1932, Schapiro was elected to the secretariat of the IWMA again, having left in 1925.",
+    "claim": "그는 1925년 서기국을 떠났다가 1932년 4월 다시 선출되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "international-iwa-ait",
+   "kind": "international",
+   "label": {
+    "ko": "아나르코생디칼리슴 국제노동자협회",
+    "en": "International Workers' Association (anarcho-syndicalist, IWA-AIT)"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": [
+    [
+     1922,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "anarcho-syndicalist-iwa"
+  },
+  "reason": "Secretary of the anarcho-syndicalist IWA 1922–1925 and again from 1932; distinct from international-iwa (First International). The 1907 Anarchist International bureau is an earlier, shorter role."
+ },
+ {
+  "personId": "alexander-vannovsky",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-rsdlp",
+  "relation": "service",
+  "startYear": 1898,
+  "endYear": 1912,
+  "evidence": [
+   {
+    "claim": "원문은 알렉산드르 반놉스키를 러시아 혁명가이자 일본 문학연구가·철학자로 규정하여, 그의 정의적 활동이 사회주의 혁명 조직 활동이었음을 확인한다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "excerpt": "Александр Алексеевич Ванновский (11 сентября 1874, Чернь, Тульская губерния — 16 сентября 1967, Токио) — российский революционер, японский литературовед и философ.",
+    "locator": "characters 0:163; sha256 0650726c615afd12eb4949eacf1235bddc4750a08bf746956e9008bb5bddeab4"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Ванновский,_Александр_Алексеевич",
+    "locator": "ru: Биография",
+    "excerpt": "Делегат первого, учредительного съезда РСДРП (Минск, 1898) от московского «Союза борьбы за освобождение рабочего класса».",
+    "claim": "반놉스키는 1898년 러시아 사회민주노동당 창립대회 대의원이었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Ванновский,_Александр_Алексеевич",
+    "locator": "ru: Биография",
+    "excerpt": "В 1906 году играл активную роль в московском Военно-техническом бюро РСДРП.",
+    "claim": "그는 1906년 러시아 사회민주노동당 모스크바 군사기술국에서 활동했다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Ванновский,_Александр_Алексеевич",
+    "locator": "ru: Биография",
+    "excerpt": "В 1912 году Александр Ванновский принял христианство и вышел из РСДРП",
+    "claim": "그는 1912년 러시아 사회민주노동당을 떠났다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Founding-congress delegate and RSDLP organizer (presses, Military-Technical Bureau) 1898–1912."
+ },
+ {
+  "personId": "alexandros-svolos",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-greece",
+  "relation": "employment",
+  "startYear": 1929,
+  "endYear": 1946,
+  "evidence": [
+   {
+    "claim": "스볼로스는 1929년 아테네 대학 헌법학 교수직을 승계하여 1946년까지 재직했다.",
+    "source": "https://en.wikipedia.org/wiki/Alexandros_Svolos",
+    "excerpt": "In 1929 he succeeded his mentor, N. Saripolos, at the seat of Constitutional Law at Athens, a position he retained until 1946.",
+    "locator": "characters 970:1096; sha256 9367747304efc3b709b3102cc42d0f755c0e09f66e68bc93df9bf7784614b547"
+   },
+   {
+    "claim": "그는 그리스에서 가장 저명한 헌법학 전문가 중 한 명이었다.",
+    "source": "https://en.wikipedia.org/wiki/Alexandros_Svolos",
+    "excerpt": "Alexandros Svolos was among the most prominent experts on constitutional law in Greece, and held strong democratic and socialist views",
+    "locator": "characters 3244:3378; sha256 9367747304efc3b709b3102cc42d0f755c0e09f66e68bc93df9bf7784614b547"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexandros_Svolos",
+    "locator": "en: Political activity during and after WWII",
+    "excerpt": "After EAM's defeat in the Dekemvriana, he was again dismissed from his teaching post at the university.",
+    "claim": "스볼로스는 데켐브리아나 이후 아테네 대학 교수직에서 다시 해임되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Chair of constitutional law at the (state) University of Athens 1929–1946; state university employment. If the owner treats university chairs as non-affiliated, change to none."
+ },
+ {
+  "personId": "alexei-kazannik",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1975,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "카잔니크는 1975년부터 1991년까지 옴스크 국립대학에서 노동·경제·농업법 부교수로 재직하며 학술·교육 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Alexey_Kazannik",
+    "excerpt": "In 1975 he moved to Omsk and became an associate professor of the Department of Labor, Economics, and Agricultural Law of the Omsk State University, which he did until 1991.",
+    "locator": "characters 1089:1262; sha256 f16461924a2f1c28461890d786cdc8d8e3728ae05f7ac706f5e3ee1d32c80ef4"
+   },
+   {
+    "claim": "그는 옴스크 국립대학에서 법학을 가르쳤다.",
+    "source": "https://en.wikipedia.org/wiki/Alexey_Kazannik",
+    "excerpt": "Additionally, he taught law at Omsk State University.",
+    "locator": "characters 1516:1569; sha256 f16461924a2f1c28461890d786cdc8d8e3728ae05f7ac706f5e3ee1d32c80ef4"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Associate professor of law at Omsk State University 1975–1991: Soviet state-institution employment."
+ },
+ {
+  "personId": "andrey-vlasov",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "russian-konr",
+  "relation": "service",
+  "startYear": 1944,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "블라소프는 러시아 해방군을 명목상 이끌었고 러시아 협력 반소련 운동의 정치적 지도자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Andrey_Vlasov",
+    "excerpt": "He nominally headed the Russian Liberation Army (Russkaya osvoboditel'naya armiya, ROA), also becoming the political leader of the Russian collaborationist anti-Soviet movement.",
+    "locator": "characters 405:582; sha256 09bf0721baf17a5f6a5738efa2ff540c7ed7c0d2f6b9b4cb3d6ebcaae3e3fe76"
+   },
+   {
+    "claim": "그는 1944년 11월 러시아 민족해방위원회(KONR)라는 정치 조직의 수장이 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Andrey_Vlasov",
+    "excerpt": "only in November 1944 did Heinrich Himmler, aware of Germany's shortage of manpower, arrange for Vlasov's formations, composed of Soviet prisoners of war as armed forces of Committee for the Liberation of the Peoples of Russia, a political organisation headed by Vlasov.",
+    "locator": "characters 822:1092; sha256 09bf0721baf17a5f6a5738efa2ff540c7ed7c0d2f6b9b4cb3d6ebcaae3e3fe76"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Andrey_Vlasov",
+    "locator": "en: Vlasov Movement",
+    "excerpt": "The Committee for the Liberation of the Peoples of Russia (KONR) became the political body of this movement, and its positions were described in the Prague Manifesto of the Committee in November 1944.",
+    "claim": "러시아 인민해방위원회(KONR)는 블라소프 운동의 정치기구였고 1944년 11월 프라하 선언을 발표했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-konr",
+   "kind": "force",
+   "label": {
+    "ko": "러시아 인민해방위원회",
+    "en": "Committee for the Liberation of the Peoples of Russia (KONR)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1944,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Headed KONR, the collaborationist political body; the ROA could be a separate military affiliation if wanted."
+ },
+ {
+  "personId": "andrievs-niedra",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "니에드라는 라트비아의 작가로 규정된다.",
+    "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+    "excerpt": "Andrievs Niedra (Latvian old orthography: Andreews Needra; 8 February 1871 – 25 September 1942) was a Latvian writer, Lutheran pastor and the Prime Minister of the German puppet government in Latvia between April and June 1919, during the Latvian War of Independence.",
+    "locator": "characters 0:267; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb"
+   },
+   {
+    "claim": "그의 시집이 출판되고 역사·민속 기반 단편이 신문에 실리는 등 문학 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+    "excerpt": "Niedra's first collection of poems was published when he was only nineteen years old, and he was still in his teens when his stories based on history and folklore began to appear in the newspaper Baltijas Vēstnesis.",
+    "locator": "characters 268:483; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Literary work; no organization named for it in the sources."
+ },
+ {
+  "personId": "andrievs-niedra",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "russian-evangelical-lutheran-church",
+  "relation": "service",
+  "startYear": 1906,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "니드라는 라트비아의 작가이자 루터교 목사였다.",
+    "source": "https://en.wikipedia.org/wiki/Andrievs_Niedra",
+    "excerpt": "Andrievs Niedra (Latvian old orthography: Andreews Needra; 8 February 1871 – 25 September 1942) was a Latvian writer, Lutheran pastor and the Prime Minister of the German puppet government in Latvia between April and June 1919, during the Latvian War of Independence.",
+    "locator": "plain-text extract characters 0:267; sha256 368f9ff806f7730c0eee977a8ac39e3c6d22284874b0a5896084cc7a8beaabeb"
+   },
+   {
+    "source": "https://lv.wikipedia.org/wiki/Andrievs_Niedra",
+    "locator": "lv: Politiskā darbība",
+    "excerpt": "Taču Andrievs Niedra, kas jau vairākus gadus iepriekš bija sācis darboties baznīcas struktūrās un no 1906. līdz 1918. gadam bija mācītājs vairākās baznīcās, uzstājās ar kontrrevolucionārām idejām.",
+    "claim": "니에드라는 1906년부터 1918년까지 여러 루터교회의 목사였다."
+   },
+   {
+    "source": "https://lv.wikipedia.org/wiki/Andrievs_Niedra",
+    "locator": "lv: Politiķis",
+    "excerpt": "Tā paša gada nogalē Vidzemes mācītāju sinode pieņēma lēmumu par apsveikuma telegrammas nosūtīšanu Vācijas ķeizaram. Sinode lēmumu pieņēma, bet Niedra un vēl 16 latviešu un igauņu mācītāji (starp viņiem V. Maldonis, E. Bergs, K. Beldavs un citi) uzstājās pret.",
+    "claim": "니에드라는 비제메(리보니아) 목사 시노드에서 활동한 루터교 목사였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-evangelical-lutheran-church",
+   "kind": "institution",
+   "label": {
+    "ko": "러시아 복음루터교회",
+    "en": "Evangelical Lutheran Church in Russia"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1832,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Parish pastor in Vidzeme (Livonian consistory) 1906–1918. The source documents the parishes and the Livonian synod but does not name the umbrella church — owner check whether a Livonian-consistory label is preferred; his later East Prussian pastorate is a different church."
+ },
+ {
+  "personId": "angela-davis",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "그녀는 UC 산타크루즈의 페미니즘 연구 및 의식사 명예교수로, 학술·이론 연구가 정의적 활동임을 보여준다.",
+    "source": "https://en.wikipedia.org/wiki/Angela_Davis",
+    "excerpt": "She is Distinguished Professor Emerita of Feminist Studies and History of Consciousness at the University of California, Santa Cruz.",
+    "locator": "characters 147:279; sha256 87e10e75185114b17cf96a9c00d31b8e171400422267487119c2c324d56cfbf5"
+   },
+   {
+    "claim": "1969년부터 UCLA 철학과 조교수로 재직하며 학술 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Angela_Davis",
+    "excerpt": "Beginning in 1969, Davis was an acting assistant professor in the philosophy department at the University of California, Los Angeles (UCLA).",
+    "locator": "characters 8648:8788; sha256 87e10e75185114b17cf96a9c00d31b8e171400422267487119c2c324d56cfbf5"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "UCLA/UC Santa Cruz faculty: University of California is a California public university, not a US (federal) state institution or a catalog organization; scholarship is affiliationOptional."
+ },
+ {
+  "personId": "angelica-balabanova",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "party-italian-psim",
+  "relation": "service",
+  "startYear": 1930,
+  "endYear": 1936,
+  "evidence": [
+   {
+    "claim": "그녀는 1930년 이탈리아 사회당(막시말리스트)을 결성하고 6년간 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Angelica_Balabanoff",
+    "excerpt": "as a maximalist, Balabanoff dissented from the leadership's desire for \"fusion\" and formed a new political grouping, the Italian Socialist Party (Maximalist) (Partito Socialista Italiano Massimalista; PSIm), which she led for the next six years.",
+    "locator": "characters 2710:2955; sha256 71e9efc1f3aac4af45f60a53f27af4abc70c7b4bf2a377594de6d087e444e1af"
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-italian-psim",
+   "kind": "party",
+   "label": {
+    "ko": "이탈리아 사회당(최대주의)",
+    "en": "Italian Socialist Party (Maximalist) (PSIm)"
+   },
+   "countryCode": "italy",
+   "parentId": null,
+   "periods": [
+    [
+     1930,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Formed and led the PSIm for six years after the 1930 PSI split; existing excerpt already documents it."
+ },
+ {
+  "personId": "anna-louise-strong",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "soviet-moscow-news",
+  "relation": "service",
+  "startYear": 1930,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "스트롱은 30권 이상의 책과 다양한 기사를 쓴 미국인 저널리스트이자 작가였다.",
+    "source": "https://en.wikipedia.org/wiki/Anna_Louise_Strong",
+    "excerpt": "Anna Louise Strong (November 24, 1885 – March 29, 1970) was an American journalist and activist, best known for her reporting on and support for communist movements in the Soviet Union and the People's Republic of China. She wrote over 30 books and varied articles.",
+    "locator": "characters 0:265; sha256 63da2390a34922570cbdd501104e0360f06536c5e7fd19322df8f2b960a2e7ca"
+   },
+   {
+    "claim": "그녀는 모스크바 뉴스 창간에 참여했고 편집장과 특집 필진으로 활동하며 저술·언론 활동을 이어갔다.",
+    "source": "https://en.wikipedia.org/wiki/Anna_Louise_Strong",
+    "excerpt": "In 1930, she returned to Moscow and helped found Moscow News, the first English-language newspaper in the city. She was managing editor for a year and then became a featured writer.",
+    "locator": "characters 8099:8280; sha256 63da2390a34922570cbdd501104e0360f06536c5e7fd19322df8f2b960a2e7ca"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/The_Moscow_News",
+    "locator": "en: Soviet Union",
+    "excerpt": "In 1930 The Moscow News was founded by American socialist Anna Louise Strong, who was one of the leaders of the Seattle General Strike in 1919.",
+    "claim": "『모스크바 뉴스』는 1930년 애나 루이즈 스트롱이 창간했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "soviet-moscow-news",
+   "kind": "institution",
+   "label": {
+    "ko": "모스크바 뉴스",
+    "en": "The Moscow News"
+   },
+   "countryCode": "soviet",
+   "parentId": null,
+   "periods": [
+    [
+     1930,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Co-founder, managing editor and featured writer of Moscow News (approved by the Soviet leadership). Low-priority catalog addition; alternative is none (journalism, affiliationOptional)."
+ },
+ {
+  "personId": "annamarie-doherr",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "german-frankfurter-rundschau",
+  "relation": "employment",
+  "startYear": 1949,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "아네마리 도에르는 Frankfurter Rundschau의 기자로서 1961년 6월 15일 기자 회견에서 울브리히트에게 질문했다.",
+    "source": "https://en.wikipedia.org/wiki/June_1961",
+    "excerpt": "Reporter Annamarie Doherr of the Frankfurter Rundschau asked Ulbricht whether a boundary would be erected at the Brandenburg Gate.",
+    "locator": "characters 16221:16351; sha256 fdd0ac246e720aedb06847cb83d214a2c6db2e76e4ca0435adc13e3b50e0c2df"
+   },
+   {
+    "source": "https://de.wikipedia.org/wiki/Annamarie_Doherr",
+    "locator": "de: Leben",
+    "excerpt": "1949 verließ sie den Berliner Rundfunk und wurde West-Berliner Korrespondentin der Frankfurter Rundschau, für die sie mehr als 20 Jahre arbeitete.",
+    "claim": "도에르는 1949년부터 20년 넘게 프랑크푸르터 룬트샤우의 서베를린 특파원으로 일했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "german-frankfurter-rundschau",
+   "kind": "institution",
+   "label": {
+    "ko": "프랑크푸르터 룬트샤우",
+    "en": "Frankfurter Rundschau"
+   },
+   "countryCode": "germany",
+   "parentId": null,
+   "periods": [
+    [
+     1945,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Employed correspondent of the Frankfurter Rundschau from 1949. Low-priority: a private newspaper; alternative is none (journalism, affiliationOptional)."
+ },
+ {
+  "personId": "apostolos-santas",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "greek-eam",
+  "relation": "membership",
+  "startYear": 1942,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "산타스는 1942년 EAM에 가입하고 이듬해 게릴라 부대 ELAS에 합류하여 추축군에 대항해 중부 그리스 전역에서 여러 전투에 참전했다.",
+    "source": "https://en.wikipedia.org/wiki/Apostolos_Santas",
+    "excerpt": "In 1942, he joined the fledgling National Liberation Front (EAM), and a year later the guerrilla force ELAS, with which he participated in several battles against the Axis troops throughout Central Greece.",
+    "locator": "characters 1141:1346; sha256 c5eb859d4f2652cfbb959aa293aa95433ec716f6a0010a1ddd607c92bbb2d625"
+   },
+   {
+    "claim": "그는 1941년 5월 30일 밤 마놀리스 글레조스와 함께 아크로폴리스에 올라 나치 깃발을 내렸으며, 이는 그리스 최초의 저항 행동 중 하나였다.",
+    "source": "https://en.wikipedia.org/wiki/Apostolos_Santas",
+    "excerpt": "On the night of 30 May 1941, he and Manolis Glezos climbed on the Acropolis of Athens and tore down the Nazi flag, which had been there since 27 April, when the Nazi forces had entered and occupied Athens, leaving the flagpole empty. That was one of the first resistance acts in Greece.",
+    "locator": "characters 693:979; sha256 c5eb859d4f2652cfbb959aa293aa95433ec716f6a0010a1ddd607c92bbb2d625"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Joined EAM in 1942 (existing excerpt); ELAS from 1943 could be a separate military activity."
+ },
+ {
+  "personId": "august-thalheimer",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-german-communist",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1929,
+  "evidence": [
+   {
+    "claim": "탈하이머는 독일 공산당(KPD)의 창립 멤버이자 주요 이론가로서 당 지도부에서 활동했다.",
+    "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+    "excerpt": "Thalheimer became a founding member of the Communist Party of Germany (KPD) and was recognised as its main theorist in the early 1920s.",
+    "locator": "characters 869:1004; sha256 e76af2162de081aea86bfd75f1a36302446a579e147a14cc422ce82ab8eb83c6"
+   },
+   {
+    "claim": "그는 KPD에서 제명된 후 하인리히 브란들러와 함께 공산당 야당(KPO)을 결성하며 정치 지도 활동을 이어갔다.",
+    "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+    "excerpt": "However, a year later, he and Brandler were expelled from the KPD and they went on to form the Communist Party Opposition (KPO).",
+    "locator": "characters 1771:1899; sha256 e76af2162de081aea86bfd75f1a36302446a579e147a14cc422ce82ab8eb83c6"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/August_Thalheimer",
+    "locator": "en: Political career",
+    "excerpt": "He edited Rote Fahne and the manuscripts that Franz Mehring left unpublished at his death.",
+    "claim": "탈하이머는 독일 공산당 기관지 『로테 파네』를 편집했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "KPD founder, chief theorist and Rote Fahne editor until expulsion in 1929; duplicates the existing KPD membership row (which could be dropped). KPO founding is already its own activity."
+ },
+ {
+  "personId": "augusto-cesar-sandino",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "nicaraguan-edsn",
+  "relation": "service",
+  "startYear": 1927,
+  "endYear": 1933,
+  "evidence": [
+   {
+    "source": "https://en.wikipedia.org/wiki/Augusto_César_Sandino",
+    "locator": "en: lead",
+    "excerpt": "was a Nicaraguan revolutionary, founder of the militant group EDSN, and leader of a rebellion between 1927 and 1933 against the United States occupation of Nicaragua.",
+    "claim": "산디노는 무장조직 EDSN을 창설하고 1927~1933년 미국 점령에 맞선 봉기를 이끌었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Augusto_César_Sandino",
+    "locator": "en: Declaring war on the United States",
+    "excerpt": "Later Sandino took the more impressive name \"Augusto César Sandino\", and renamed his insurgents \"The Army in Defense of the National Sovereignty of Nicaragua\".",
+    "claim": "산디노는 자신의 봉기군을 '니카라과 국가주권 수호군'으로 명명했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "nicaraguan-edsn",
+   "kind": "military",
+   "label": {
+    "ko": "니카라과 국가주권 수호군",
+    "en": "Army in Defense of the National Sovereignty of Nicaragua (EDSN)"
+   },
+   "countryCode": "nicaragua",
+   "parentId": null,
+   "periods": [
+    [
+     1927,
+     1934
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founder and commander of the EDSN. Existing second excerpt no longer matches the article verbatim (\"more official title\" → \"more impressive name\"), so the evidence is refreshed."
+ },
+ {
+  "personId": "bernard-kolelas",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-congolese-mcddi",
+  "relation": "service",
+  "startYear": 1989,
+  "endYear": 2009,
+  "evidence": [
+   {
+    "claim": "콜렐라는 MCDDI의 당수로서 정치 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Bernard_Kol%C3%A9las",
+    "excerpt": "Bernard Bakana Kolélas (12 June 1933 – 13 November 2009) was a Congolese politician and President of the Congolese Movement for Democracy and Integral Development (MCDDI).",
+    "locator": "characters 0:171; sha256 dc6359ec0ce4058adc23ab24778007e85d509e173a1f5a5f7da68240fed627f9"
+   },
+   {
+    "claim": "그는 MCDDI를 창당하고 당을 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Bernard_Kol%C3%A9las",
+    "excerpt": "Kolélas later founded a political party, the MCDDI; its statutes were deposited at the Ministry of the Interior on 3 August 1989.",
+    "locator": "characters 2493:2622; sha256 dc6359ec0ce4058adc23ab24778007e85d509e173a1f5a5f7da68240fed627f9"
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-congolese-mcddi",
+   "kind": "party",
+   "label": {
+    "ko": "콩고민주통합발전운동",
+    "en": "Congolese Movement for Democracy and Integral Development (MCDDI)"
+   },
+   "countryCode": "republic-of-congo",
+   "parentId": null,
+   "periods": [
+    [
+     1989,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder and president of the MCDDI (statutes deposited 1989) until his death; existing excerpts document it."
+ },
+ {
+  "personId": "berty-albrecht",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-combat",
+  "relation": "service",
+  "startYear": 1941,
+  "endYear": 1943,
+  "evidence": [
+   {
+    "claim": "그녀는 앙리 프레네와 함께 주요 레지스탕스 운동인 콩바의 공동 조직가였다.",
+    "source": "https://en.wikipedia.org/wiki/Berty_Albrecht",
+    "excerpt": "Albrecht and Frenay became both lovers and, later, co-organizers of the major resistance movement, Combat.",
+    "locator": "characters 2309:2415; sha256 d90c14e5f617791e3e411705ad4725fa20f90f93ca8f56470e9f47d82ac735f3"
+   },
+   {
+    "claim": "그녀는 프레네와 함께 지하 신문들을 제작한 뒤 콩바 네트워크의 책임자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Berty_Albrecht",
+    "excerpt": "Together, they produced three successive journals: “Bulletins d’informations et de propagande” (Information and Propaganda Bulletins), “Les Petites Ailes” (Little Wings) and then “Vérités” (Truths), before becoming directors of the \"Combat\" network, one of the most important resistance organizations.",
+    "locator": "characters 2989:3290; sha256 d90c14e5f617791e3e411705ad4725fa20f90f93ca8f56470e9f47d82ac735f3"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Berty_Albrecht",
+    "locator": "en: Resistance",
+    "excerpt": "Together, they produced three successive journals: “Bulletins d’informations et de propagande” (Information and Propaganda Bulletins), “Les Petites Ailes” (Little Wings) and then “Vérités” (Truths), before becoming directors of the \"Combat\" network, one of the most important resistance organizations.",
+    "claim": "알브레히트는 프르네와 함께 저항조직 콩바 네트워크의 지도자가 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-combat",
+   "kind": "force",
+   "label": {
+    "ko": "콩바",
+    "en": "Combat (French Resistance movement)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1941,
+     1943
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Co-organizer and director of the Combat resistance network until her 1943 arrest/death; Combat merged into MUR in 1943 (term mouvements-unis-de-resistance-mur exists)."
+ },
+ {
+  "personId": "bogdan-knunyants",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-rsdlp",
+  "relation": "service",
+  "startYear": 1901,
+  "endYear": 1911,
+  "evidence": [
+   {
+    "claim": "보그단 크누냔츠는 1902년 트빌리시에서 아르메니아 사회민주주의자 연합(HSDM)을 공동 창립한 조직가였다.",
+    "source": "https://en.wikipedia.org/wiki/Union_of_Armenian_Social_Democrats",
+    "excerpt": "The HSDM was founded in Tiflis in 1902 by Stepan Shaumian, Melik Melikian, Ashot Khoumerian, Assadour Kakhoyan, Bogdan Knunyants, and Arshak Zubarian.",
+    "locator": "characters 280:430; sha256 b7ff40df47bb4f5d3e08036905664cb1b9c2f1341f56e0bcc40166ed1cb285e6"
+   },
+   {
+    "claim": "크누냔츠는 러시아 사회민주노동당의 지부로서 아르메니아 사회민주주의자 연합을 공동 설립하는 데 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Armenia_%28Soviet_Union%29",
+    "excerpt": "In 1902, Shaumian, Bogdan Knunyants and Arshak Zurabov jointly established the Union of Armenian Social Democrats in Tiflis (Tbilisi) as a branch of the Russian Social Democratic Labour Party.",
+    "locator": "characters 390:582; sha256 f6d1eee5cc87f7ab0991ad0bfa7e611fb3077654a939b681d2b64af9923e065e"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Кнунянц,_Богдан_Мирзаджанович",
+    "locator": "ru: Биография",
+    "excerpt": "В 1901 году выслан в Баку, вёл партийную работу, член Бакинского и Кавказского союзного комитетов РСДРП, один из организаторов «Союза армянских социал-демократов».",
+    "claim": "크누냔츠는 1901년 바쿠에서 러시아 사회민주노동당 바쿠·캅카스 연합위원회 위원으로 당 활동을 했고 아르메니아 사회민주주의자 연맹 조직자의 한 사람이었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Кнунянц,_Богдан_Мирзаджанович",
+    "locator": "ru: Биография",
+    "excerpt": "В сентябре 1905 года снова жил в Петербурге, член Петербургского комитета РСДРП и Петербургского совета рабочих депутатов.",
+    "claim": "그는 1905년 러시아 사회민주노동당 페테르부르크 위원회 위원이었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "RSDLP committee member and organizer 1901 until death in 1911; the Union of Armenian Social Democrats he co-founded was an RSDLP branch merged into its Caucasus organization in 1903."
+ },
+ {
+  "personId": "boris-eltsin",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-empire",
+  "relation": "employment",
+  "startYear": 1907,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "그는 의사이자 공론가였으며 주로 바시키리아에서 활동했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D1%8C%D1%86%D0%B8%D0%BD%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "российский революционер, публицист и врач, действовал в основном в Башкирии.",
+    "locator": "characters 93:169; sha256 c7079d137ec63019a0df59730076d10cfc3ac5abcf98a54cda25dae31b29dee5"
+   },
+   {
+    "claim": "1920년대에 사회위생 및 역학 분야의 연구 저작을 여러 편 썼다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D1%8C%D1%86%D0%B8%D0%BD%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "В 1920-е годы написал несколько работ в области социальной гигиены и эпидемиологии.",
+    "locator": "characters 3721:3804; sha256 c7079d137ec63019a0df59730076d10cfc3ac5abcf98a54cda25dae31b29dee5"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Эльцин,_Борис_Михайлович",
+    "locator": "ru: Биография",
+    "excerpt": "За революционную деятельность в 1910 году сослан в Уфимскую губернию, где работал санитарным врачом губернского земства в Белебее и Бирске, руководил санитарным бюро Уфимского губернского земства, продолжал революционную деятельность, примыкал к большевикам.",
+    "claim": "엘친은 우파현 젬스트보의 위생의사로 일하며 젬스트보 위생국을 이끌었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Zemstvo physician and head of the Ufa provincial zemstvo sanitary bureau (imperial local self-government) until 1917. If zemstvo service is not counted as russian-empire, change to none."
+ },
+ {
+  "personId": "boris-souvarine",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-institut-histoire-sociale",
+  "relation": "service",
+  "startYear": 1935,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "그는 1935년 스탈린 최초의 비판적 전기를 저술한 역사 연구자였다.",
+    "source": "https://en.wikipedia.org/wiki/Boris_Souvarine",
+    "excerpt": "He famously authored the first biography of Joseph Stalin, published in 1935 as Staline, Aperçu Historique du Bolchévisme (Stalin, Historic Overview of Bolshevism)",
+    "locator": "characters 389:552; sha256 66c0e1ea85fbc0e7dd834a83943fe973a7bc7adf8f26faeb3ccef8855d6acba0"
+   },
+   {
+    "claim": "그는 1935년 사회사연구소를 설립하여 학술 연구 기관을 운영했다.",
+    "source": "https://en.wikipedia.org/wiki/Boris_Souvarine",
+    "excerpt": "In 1935, Souvarine created the Institute for Social History, a French branch of the International Institute of Social History of Amsterdam",
+    "locator": "characters 6675:6813; sha256 66c0e1ea85fbc0e7dd834a83943fe973a7bc7adf8f26faeb3ccef8855d6acba0"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Boris_Souvarine",
+    "locator": "en: Break with the Communist Party",
+    "excerpt": "In 1935, Souvarine created the Institute for Social History, a French branch of the International Institute of Social History of Amsterdam, which was originally created to preserve the archives of the Social Democratic Party of Germany.",
+    "claim": "수바린은 1935년 암스테르담 국제사회사연구소의 프랑스 지부인 사회사연구소를 세웠다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-institut-histoire-sociale",
+   "kind": "institution",
+   "label": {
+    "ko": "사회사연구소(프랑스)",
+    "en": "Institut d'histoire sociale (Institute for Social History, France)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1935,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founder of the Institut d'histoire sociale (1935). Low-priority; alternative is none (scholarship is affiliationOptional)."
+ },
+ {
+  "personId": "brazauskas",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-lithuanian-democratic-labour",
+  "relation": "service",
+  "startYear": 1990,
+  "endYear": 2001,
+  "evidence": [
+   {
+    "claim": "브라자우스카스는 1988년 리투아니아 공산당 제1서기가 되어 당을 이끌었고, 당이 소련 공산당과 결별해 사회민주주의 정당으로 전환하는 과정을 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Algirdas_Brazauskas",
+    "excerpt": "In 1988, he became the first secretary of the Communist Party of Lithuania. Under his leadership, the majority of the Communist Party of Lithuania supported the Lithuanian independence movement, broke away from the Communist Party of the Soviet Union and transformed itself into social-democratic Democratic Labour Party of Lithuania",
+    "locator": "characters 2258:2591; sha256 fc3b9269abd0bc477cf53a678ef9ac86f3aacc70105a56d4cf2676219e1f54b5"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Algirdas_Brazauskas",
+    "locator": "en: President of Lithuania",
+    "excerpt": "Though he was elected with the backing of his political party, the Democratic Labour Party, he attempted to stay within the limitations of constitutional powers",
+    "claim": "그는 자신의 정당인 민주노동당의 지지로 대통령에 당선되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-lithuanian-democratic-labour",
+   "kind": "party",
+   "label": {
+    "ko": "리투아니아 민주노동당",
+    "en": "Democratic Labour Party of Lithuania (LDDP)"
+   },
+   "countryCode": "lithuania",
+   "parentId": null,
+   "periods": [
+    [
+     1990,
+     2001
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Led the CPL→LDDP transformation; 1988–1989 CPL is covered by soviet-party, and his 2001–2007 Social Democratic Party of Lithuania chairmanship needs a separate activity (LSDP is not in the catalog either). Years narrowed to the LDDP period."
+ },
+ {
+  "personId": "c-l-r-james",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "제임스는 트리니다드 출신 역사가이자 마르크스주의 저술가로 학술·연구 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/C._L._R._James",
+    "excerpt": "Cyril Lionel Robert James (4 January 1901 – 31 May 1989), who sometimes wrote under the pen-name J. R. Johnson, was a Trinidadian historian, journalist, Trotskyist activist, and Marxist writer.",
+    "locator": "characters 0:193; sha256 a2b65afd0f86139a385bf4c2fc994351b6eb1d14bd3285e460d44cece02989f0"
+   },
+   {
+    "claim": "그는 《세계혁명》과 《블랙 자코뱅》 등 역사 연구 저서를 저술했다.",
+    "source": "https://en.wikipedia.org/wiki/C._L._R._James",
+    "excerpt": "Amid his frenetic political activity, James wrote what are perhaps his best known works of non-fiction: World Revolution (1937), a history of the rise and fall of the Communist International, which was critically praised by Leon Trotsky, George Orwell, E. H. Carr, and Fenner Brockway; and The Black Jacobins: Toussaint L'Ouverture and the San Domingo Revolution (1938), a widely acclaimed history of the Haitian Revolution, which was later seen as a seminal text in the study of the African diaspora.",
+    "locator": "characters 5734:6235; sha256 a2b65afd0f86139a385bf4c2fc994351b6eb1d14bd3285e460d44cece02989f0"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Historical and theoretical writing; no organization named for the scholarship (SWP membership is a separate activity)."
+ },
+ {
+  "personId": "carlos-marighella",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "brazilian-aln",
+  "relation": "service",
+  "startYear": 1968,
+  "endYear": 1969,
+  "evidence": [
+   {
+    "claim": "마리겔라는 1968년 2월 PCB에서 제명된 후 아상 리베르타도라 나시오날(ALN)을 창설했다.",
+    "source": "https://en.wikipedia.org/wiki/Carlos_Marighella",
+    "excerpt": "That same year he was expelled from PCB, and founded the Ação Libertadora Nacional (ALN) in February 1968.",
+    "locator": "characters 3334:3440; sha256 df56713757c5e48d22a729a7f1d8d055a94887a0842fcff427a6ca44d12b12e2"
+   },
+   {
+    "claim": "그는 브라질 군사독재에 대한 비폭력 저항에 비판적이었고, 무장투쟁을 위한 도시 게릴라 조직 ALN을 창설하여 활동을 지도했다.",
+    "source": "https://en.wikipedia.org/wiki/Carlos_Marighella",
+    "excerpt": "Critical of nonviolent resistance to the Brazilian military dictatorship, he founded the Ação Libertadora Nacional, a Marxist–Leninist urban guerrilla group, which was responsible for a series of bank robberies and high-profile kidnappings.",
+    "locator": "characters 165:405; sha256 df56713757c5e48d22a729a7f1d8d055a94887a0842fcff427a6ca44d12b12e2"
+   }
+  ],
+  "newAffiliation": {
+   "id": "brazilian-aln",
+   "kind": "force",
+   "label": {
+    "ko": "민족해방행동",
+    "en": "Ação Libertadora Nacional (ALN)"
+   },
+   "countryCode": "brazil",
+   "parentId": null,
+   "periods": [
+    [
+     1968,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founded and led the ALN urban guerrilla group from 1968 to his death in 1969 (existing excerpts)."
+ }
+]

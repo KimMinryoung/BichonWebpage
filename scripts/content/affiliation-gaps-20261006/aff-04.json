@@ -1,0 +1,1166 @@
+[
+ {
+  "personId": "shlyapnikov",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-metalworkers-union",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "실랴프니코프는 1917년 페트로그라드 금속노동자조합 중앙위원회 위원으로 선출되어 그 첫 중앙위원회를 주재했다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+    "excerpt": "On May 7, Shliapnikov was elected to the central board of the Petrograd Metalworkers' Union alongside the unaligned socialist Aleksei Gastev and the Menshevik I.G. Volkov, and once he recovered from his automobile accident, he chaired the first Central Committee of the Petrograd Metalworkers' Union on May 27.",
+    "locator": "characters 10173:10483; sha256 db3c0ee3ccae0fbf67f420b1f1a4523a82215f1e3fbdfbbecd12c0708656d806"
+   },
+   {
+    "claim": "실랴프니코프는 전러시아 금속노동자조합 중앙위원회 위원으로 선출되고 1917년 6월 29일 중앙위원회 의장으로 선출되었다.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Shliapnikov",
+    "excerpt": "Over the next month, delegates from across Russia formed the first All-Russian Metalworkers' Union, and Shliapnikov found himself elected to its central committee alongside three other Bolsheviks, Volkov and three other Mensheviks, and Gastev. Due to Gastev's support, he was elected as chairman of the Central Committee during its first meeting on June 29.",
+    "locator": "characters 10660:11017; sha256 db3c0ee3ccae0fbf67f420b1f1a4523a82215f1e3fbdfbbecd12c0708656d806"
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-metalworkers-union",
+   "kind": "force",
+   "label": {
+    "ko": "전러시아 금속노동자조합",
+    "en": "All-Russian Metalworkers' Union"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Elected to the Petrograd and then All-Russian Metalworkers' Union central committee and its chairman (1917); existing excerpts document it."
+ },
+ {
+  "personId": "son-sann",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "cambodian-kpnlf",
+  "relation": "service",
+  "startYear": 1979,
+  "endYear": 1992,
+  "evidence": [
+   {
+    "claim": "손 산은 1978년 KPNLF를 결성했다.",
+    "source": "https://en.wikipedia.org/wiki/Son_Sann",
+    "excerpt": "In 1978, he formed the Khmer People's National Liberation Front (KPNLF) to unite anti-communist refugees on the Thai-Cambodia border following the 1978 Vietnamese invasion of Cambodia.",
+    "locator": "characters 2770:2954; sha256 e84097fb34875a55bf32d73b3565e2d6aac9dcc93554926d84f003d751acb679"
+   },
+   {
+    "claim": "손 산은 1982년 연립정부의 총리로 임명되었다.",
+    "source": "https://en.wikipedia.org/wiki/Son_Sann",
+    "excerpt": "Son Sann was named Prime Minister in the new coalition government.",
+    "locator": "characters 3189:3255; sha256 e84097fb34875a55bf32d73b3565e2d6aac9dcc93554926d84f003d751acb679"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Khmer_People%27s_National_Liberation_Front",
+    "locator": "en: lead",
+    "excerpt": "The Khmer People's National Liberation Front (KPNLF, Khmer: រណសិរ្សរំដោះជាតិប្រជាជនខ្មែរ) was a political front organized in 1979 in opposition to the Vietnamese-installed People's Republic of Kampuchea (PRK) regime in Cambodia.",
+    "claim": "크메르 인민민족해방전선은 1979년 인민공화국 정권에 맞서 조직된 정치 전선이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Son_Sann",
+    "locator": "en: lead",
+    "excerpt": "Following Cambodia's Paris Peace Agreement, Son Sann formed a new political party, the Buddhist Liberal Democratic Party in 1992 and participated in the 1993 elections.",
+    "claim": "손 산은 1992년 불교자유민주당을 새로 창당했다(KPNLF 지도의 끝)."
+   }
+  ],
+  "newAffiliation": {
+   "id": "cambodian-kpnlf",
+   "kind": "force",
+   "label": {
+    "ko": "크메르 인민민족해방전선",
+    "en": "Khmer People's National Liberation Front (KPNLF)"
+   },
+   "countryCode": "cambodia",
+   "parentId": null,
+   "periods": [
+    [
+     1979,
+     1992
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founder-leader of the KPNLF until it became the Buddhist Liberal Democratic Party (1992). The 1982 CGDK premiership could be a separate state-democratic-kampuchea activity; the BLDP is not in the catalog."
+ },
+ {
+  "personId": "stanislav-shatalin",
+  "functionId": "economy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": null,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "샤탈린은 1965년부터 소련 과학아카데미 산하 중앙경제수학연구소에서 근무했다.",
+    "source": "https://en.wikipedia.org/wiki/Stanislav_Shatalin",
+    "excerpt": "Beginning in 1965, Shatalin was employed at the Central Economic Mathematical Institute, under the Academy of Sciences of the Soviet Union.",
+    "locator": "characters 2006:2145; sha256 fc8c6fef707f4f69f71f262491f4330a8e5584224b963657a298ec70fdf8f285"
+   },
+   {
+    "claim": "샤탈린은 고르바초프의 요청으로 500일 프로그램이라는 경제개혁 계획을 설계했다.",
+    "source": "https://en.wikipedia.org/wiki/Stanislav_Shatalin",
+    "excerpt": "As a result, Soviet leader Mikhail Gorbachev sought the advice of Shatalin and several other liberal economists to devise an economic plan. The end result was what would later become known as the 500 Days Programme.",
+    "locator": "characters 2905:3120; sha256 fc8c6fef707f4f69f71f262491f4330a8e5584224b963657a298ec70fdf8f285"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Stanislav_Shatalin",
+    "locator": "en: Academy of Sciences of the Soviet Union",
+    "excerpt": "Shatalin also worked at All-Union Scientific Research Institute of Systemic Sciences, or VNIISI, (now the Institute of Systemic Analysis of the Russian Academy of Sciences) from 1976 to 1986, studying socioeconomic topics and the role of state planning on social development.",
+    "claim": "샤탈린은 1976~1986년 전연맹 체계과학연구소(VNIISI)에서 일했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Stanislav_Shatalin",
+    "locator": "en: Early life",
+    "excerpt": "Following his graduation, Shatalin worked at the USSR Gosplan Economic Institute, quickly moving from a junior researcher to director of one of the institute's sectors.",
+    "claim": "샤탈린은 졸업 뒤 소련 국가계획위원회 경제연구소에서 연구원·부문장으로 일했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Economist employed at Soviet state research institutes (Gosplan Economic Institute, CEMI and VNIISI of the USSR Academy of Sciences), per the state-soviet precedent for Academy institutes; 1990 advisory work for Gorbachev also falls under state-soviet."
+ },
+ {
+  "personId": "stefan-staszewski",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-polish-pzpr",
+  "relation": "service",
+  "startYear": 1955,
+  "endYear": 1957,
+  "evidence": [
+   {
+    "claim": "그는 폴란드 공산당 중앙위원회 서기국에서 활동한 당 지도부 인물이었다.",
+    "source": "https://en.wikipedia.org/wiki/Stefan_Staszewski",
+    "excerpt": "An activist in the communist movement from the age of fourteen, he was in the Secretariat of the Central Committee of the Communist Party of Poland in 1930–1932.",
+    "locator": "characters 193:354; sha256 3d1e695844726b54d7e00160f183f7f6c61453640c12030091b83d0fa25cdd52"
+   },
+   {
+    "claim": "그는 1955년 폴란드 통일노동자당 바르샤바 위원회 제1서기로 임명되어 당을 지도했다.",
+    "source": "https://en.wikipedia.org/wiki/Stefan_Staszewski",
+    "excerpt": "He was appointed regional first secretary of the Polish United Workers' Party Warsaw committee in September 1955.",
+    "locator": "characters 1048:1161; sha256 3d1e695844726b54d7e00160f183f7f6c61453640c12030091b83d0fa25cdd52"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Stefan_Staszewski",
+    "locator": "en: lead",
+    "excerpt": "He resigned from the first secretary position in February 1957 and became president of the Polish Press Agency, a post he held until the summer of 1958.",
+    "claim": "스타셰프스키는 1957년 2월 제1서기직을 사임했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Party leadership post: PZPR Warsaw committee first secretary 1955–1957 (party post → service). His 1930–1932 KPP Central Committee secretariat could be a separate party-polish-communist service row; existing membership rows remain."
+ },
+ {
+  "personId": "stefan-wyszynski",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "catholic-church",
+  "relation": "service",
+  "startYear": 1948,
+  "endYear": 1981,
+  "evidence": [
+   {
+    "claim": "비신스키는 1948~1981년 바르샤바·그니에즈노 대주교를 지낸 폴란드 가톨릭 고위 성직자였다.",
+    "source": "https://en.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski",
+    "excerpt": "Stefan Wyszyński (Polish pronunciation: [ˈstɛfan vɨˈʂɨj̃skʲi]; 3 August 1901 – 28 May 1981) was a Polish Roman Catholic prelate who served as Archbishop of Warsaw and Archbishop of Gniezno from 1948 to 1981.",
+    "locator": "plain-text extract characters 0:207; sha256 403ac9d961dcfc804f037b0e8cae1bf1e2ca05242d12ec024788bf170e82c220"
+   },
+   {
+    "claim": "그는 1953년 추기경에 서임되었다.",
+    "source": "https://en.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski",
+    "excerpt": "He was created a cardinal on 12 January 1953 by Pope Pius XII.",
+    "locator": "plain-text extract characters 268:330; sha256 403ac9d961dcfc804f037b0e8cae1bf1e2ca05242d12ec024788bf170e82c220"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski",
+    "locator": "en: lead",
+    "excerpt": "After Hlond's death on 22 October 1948, Wyszyński was named Archbishop of Gniezno and Warsaw, and thus Primate of Poland, on 12 November 1948.",
+    "claim": "비신스키는 1948년 그니에즈노·바르샤바 대주교, 곧 폴란드 수석대주교로 임명되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "catholic-church",
+   "kind": "institution",
+   "label": {
+    "ko": "가톨릭교회",
+    "en": "Catholic Church"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Archbishop of Warsaw and Gniezno, Primate of Poland and cardinal (1948–1981): Catholic Church service. Same catholic-church id as proposed for John Paul II."
+ },
+ {
+  "personId": "sylvia-pankhurst",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-british-wsf",
+  "relation": "service",
+  "startYear": 1914,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "그녀는 미국에서 여성 주도 노동운동을 접한 뒤 런던 이스트엔드에서 노동계급 여성들을 조직하는 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Sylvia_Pankhurst",
+    "excerpt": "Following encounters with women-led labour activism in the United States, she worked to organise working-class women in London's East End.",
+    "locator": "characters 125:263; sha256 610f8eb70308675044df36a52eea5251170d06e872ad75b30fd0c31f67ac1917"
+   },
+   {
+    "claim": "그녀는 1914년 이스트런던 참정권 연맹에서 노동자 참정권 연맹을 결성하며 사회운동 조직을 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Sylvia_Pankhurst",
+    "excerpt": "From the East London Federation of Suffragettes, in 1914 Pankhurst formed the Workers' Suffrage Federation.",
+    "locator": "characters 10278:10385; sha256 610f8eb70308675044df36a52eea5251170d06e872ad75b30fd0c31f67ac1917"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+    "locator": "en: lead",
+    "excerpt": "The Workers' Socialist Federation was a socialist political party in the United Kingdom, led by Sylvia Pankhurst.",
+    "claim": "노동자사회주의연맹은 실비아 팽크허스트가 이끈 영국의 사회주의 정당이다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+    "locator": "en: East London Federation of Suffragettes",
+    "excerpt": "In early 1914, they renamed themselves the East London Federation of Suffragettes (ELFS) and launched a newspaper, the Women's Dreadnought.",
+    "claim": "1914년 초 이 단체는 동런던 서프러제트 연맹(ELFS)으로 이름을 바꾸었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-british-wsf",
+   "kind": "party",
+   "label": {
+    "ko": "노동자사회주의연맹",
+    "en": "Workers' Socialist Federation (East London Federation of Suffragettes)"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     1914,
+     1920
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founded and led the ELFS (1914) → Workers' Suffrage Federation (1916) → Workers' Socialist Federation (1918), one organization under successive names until the 1920 communist merger. Wikipedia calls it a political party, hence kind party and a term. Her earlier WSPU organizer work (1906–1914) could be a separate activity."
+ },
+ {
+  "personId": "tiit-madisson",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "estonian-mrp-aeg",
+  "relation": "service",
+  "startYear": 1987,
+  "endYear": 1987,
+  "evidence": [
+   {
+    "claim": "마디손은 1987년 MRP-AEG를 창립하고 히르베파르크 집회의 지도자 중 한 명으로 활동했다.",
+    "source": "https://en.wikipedia.org/wiki/Tiit_Madisson",
+    "excerpt": "After his release on 15 August 1987 he founded the MRP-AEG group. After a Deer park rally, of which he was one of the leaders, he was expelled from the Soviet Union in September 1987.",
+    "locator": "characters 840:1023; sha256 1e158b27929c6b35829aa5e63a4502a6c419ac8c85fd845b5fe811490a9cd96c"
+   }
+  ],
+  "newAffiliation": {
+   "id": "estonian-mrp-aeg",
+   "kind": "force",
+   "label": {
+    "ko": "MRP-AEG",
+    "en": "MRP-AEG (Estonian Group for the Disclosure of the Molotov–Ribbentrop Pact)"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1987,
+     1988
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "mrp-aeg-estonian-group-for-the-disclosure-of-the-molotov-ribbentrop-pact"
+  },
+  "reason": "Founder of MRP-AEG (1987), expelled the same year; same estonian-mrp-aeg id as proposed for Ahonen and Mikk (glossary term exists)."
+ },
+ {
+  "personId": "to-huu",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "또흐우는 20세기 베트남의 가장 중요한 시인 중 한 명으로 평가받는 혁명 시인이자 정치인이다.",
+    "source": "https://en.wikipedia.org/wiki/T%E1%BB%91_H%E1%BB%AFu",
+    "excerpt": "Tố Hữu (4 October 1920 – 9 December 2002) was a Vietnamese revolutionary poet and politician. Tố Hữu is considered one of the most important Vietnamese poets of the 20th century.",
+    "locator": "characters 0:178; sha256 084657014a723f2383babd3ab6289aaa04fc85d79e887a15f507a1484f085ed7"
+   },
+   {
+    "claim": "그는 일곱 권의 시집을 출간했으며, 1946년 시집 『뜨 어이』를 비롯해 다수의 시 작품을 남겼다.",
+    "source": "https://en.wikipedia.org/wiki/T%E1%BB%91_H%E1%BB%AFu",
+    "excerpt": "He published seven collections of poems, the first of which was the 1946 collection entitled Từ ấy (Thenceforth), which included many of his most popular and influential works that were written between 1937 and 1946.",
+    "locator": "characters 522:738; sha256 084657014a723f2383babd3ab6289aaa04fc85d79e887a15f507a1484f085ed7"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Poetry is his own literary work; no writers' organization is named in the source (party role already a separate activity)."
+ },
+ {
+  "personId": "tsiang-tingfu",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1923,
+  "endYear": 1935,
+  "evidence": [
+   {
+    "claim": "장팅푸는 1923년 귀국 후 난카이대와 칭화대에서 교수로 재직했다.",
+    "source": "https://en.wikipedia.org/wiki/Tsiang_Tingfu",
+    "excerpt": "After obtaining a Ph.D., he returned to China in 1923, where he took up a position at Nankai University and then at Tsinghua University.",
+    "locator": "characters 889:1025; sha256 ed97b42567145cc7035f9d3f81b8fba26d5cadb537e861743fbdf50275418e37"
+   },
+   {
+    "claim": "장팅푸는 칭화대 역사학과 주임으로서 중국사 연구와 학술지 편집을 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/Tsiang_Tingfu",
+    "excerpt": "At Tsinghua, Tsiang became the head of the History Department, where he edited and published a number of works on Chinese history and edited the English-language journal Chinese Social and Political Science Review.",
+    "locator": "characters 1051:1265; sha256 ed97b42567145cc7035f9d3f81b8fba26d5cadb537e861743fbdf50275418e37"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "History chair at Nankai (private) and Tsinghua universities; universities are not catalog organizations and the ROC state has no state affiliation in the catalog (his KMT-era service is filed under china-kmt)."
+ },
+ {
+  "personId": "vaclav-havel",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "하벨은 체코의 극작가이자 작가였다.",
+    "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Havel",
+    "excerpt": "was a Czech statesman, author, poet, playwright, and dissident",
+    "locator": "characters 78:140; sha256 6324878571d1bb9225c9e8ba8d37f3addb3fe0e6ea97a5ccb693e68c25860a71"
+   },
+   {
+    "claim": "그의 첫 자작 장편 희곡 '가든 파티'가 1963년에 공연되었다.",
+    "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Havel",
+    "excerpt": "His first own full-length play performed in public, besides various vaudeville collaborations, was The Garden Party (1963).",
+    "locator": "characters 4924:5047; sha256 6324878571d1bb9225c9e8ba8d37f3addb3fe0e6ea97a5ccb693e68c25860a71"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Playwright's own work; the source mentions stagehand employment at Theatre ABC and the Theatre on the Balustrade but no catalog organization. His 1989–2003 presidency (state-czechoslovakia/state-czechia) is not among his activities and could be added."
+ },
+ {
+  "personId": "vaino-voionmaa",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-finland",
+  "relation": "employment",
+  "startYear": 1903,
+  "endYear": 1936,
+  "evidence": [
+   {
+    "claim": "보이온마는 핀란드 역사학에 경제·지리적 관점을 도입하고 중세 및 근대 도시 산업사회를 연구한 학자였다.",
+    "source": "https://en.wikipedia.org/wiki/V%C3%A4in%C3%B6_Voionmaa",
+    "excerpt": "As an academic, Voionmaa contributed to introduce economic and geographic perspectives into Finnish history writings. He has studied the medieval times and the rise of the modern urban industrial society.",
+    "locator": "characters 342:546; sha256 99e7aa109c118a891d7cceff47c3b25fdab8889ffb8b83055ad503a364ac11e5"
+   },
+   {
+    "source": "https://fi.wikipedia.org/wiki/V%C3%A4in%C3%B6_Voionmaa",
+    "locator": "fi: lead",
+    "excerpt": "Tutkimustyön ohessa Voionmaa toimi myös opettajana, puhujana ja hallintomiehenä: hän oli muun muassa Helsingin yliopiston pohjoismaiden historian dosentti 1903–1918, ylim. professori 1918–1936",
+    "claim": "보이온마는 헬싱키 대학교 북유럽사 강사(1903~1918)와 원외교수(1918~1936)였다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Docent and professor at the (state) University of Helsinki 1903–1936, same treatment as Svolos (state university employment). If university chairs are treated as non-affiliated, change to none."
+ },
+ {
+  "personId": "vera-zasulich",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-emancipation-labour",
+  "relation": "service",
+  "startYear": 1883,
+  "endYear": 1903,
+  "evidence": [
+   {
+    "claim": "자술리치는 러시아의 마르크스주의 이론가였다.",
+    "source": "https://en.wikipedia.org/wiki/Vera_Zasulich",
+    "excerpt": "Vera Ivanovna Zasulich (Russian: Ве́ра Ива́новна Засу́лич; 8 August [O.S. 27 July] 1849 – 8 May 1919) was a Russian Marxist theorist and revolutionary.",
+    "locator": "characters 0:151; sha256 4e888a8676fe653a2082182a5841fab7b715dad0460b239bf4390d1a445b24af"
+   },
+   {
+    "claim": "자술리치는 1883년 노동해방단을 공동 창설하고 마르크스주의 이론 작업에 참여했다.",
+    "source": "https://en.wikipedia.org/wiki/Vera_Zasulich",
+    "excerpt": "On 12 September 1883, in Geneva, Zasulich, Georgi Plekhanov, Pavel Axelrod, and Lev Deich announced the formation of the Emancipation of Labour group. It was the first self-proclaimed Russian Marxist organization, dedicated to translating and disseminating the works of Marx and Friedrich Engels and developing a Marxist analysis of Russian conditions.",
+    "locator": "characters 11157:11509; sha256 4e888a8676fe653a2082182a5841fab7b715dad0460b239bf4390d1a445b24af"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vera_Zasulich",
+    "locator": "en: lead",
+    "excerpt": "Disillusioned with terrorism as a revolutionary tactic, she converted to Marxism and in 1883 co-founded the Emancipation of Labour group, the first Russian Marxist organization, with Georgi Plekhanov and Pavel Axelrod.",
+    "claim": "자술리치는 1883년 플레하노프·악셀로드와 노동해방단을 공동 창립했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Co-founder of the Emancipation of Labour group (1883) until its merger into the RSDLP in 1903."
+ },
+ {
+  "personId": "viktor-kingissepp",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-estonian-communist",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1922,
+  "evidence": [
+   {
+    "claim": "킹기세프는 에스토니아 공산당의 창립자이자 지도부 구성원이었다.",
+    "source": "https://en.wikipedia.org/wiki/Viktor_Kingissepp",
+    "excerpt": "Viktor Eduard Kingissepp (Russian: Виктор Эдуардович Кингисепп; 24 March [O.S. 12 March] 1888 – 4 May 1922) was an Estonian communist politician who was a founder and leading member of the Estonian Communist Party.",
+    "locator": "characters 0:214; sha256 2a0ace353861e452056697d3c7c73ff39114fce94d147f03e72e59787f77e6a1"
+   },
+   {
+    "claim": "그는 에스토니아 공산당을 조직하고 제1차 당 대회를 주재하며 당을 지도했다.",
+    "source": "https://en.wikipedia.org/wiki/Viktor_Kingissepp",
+    "excerpt": "He returned to Estonia in November 1918 to organise the banned Estonian Communist Party, and presided over its first congress in November 1920.",
+    "locator": "characters 1130:1273; sha256 2a0ace353861e452056697d3c7c73ff39114fce94d147f03e72e59787f77e6a1"
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-estonian-communist",
+   "kind": "party",
+   "label": {
+    "ko": "에스토니아 공산당",
+    "en": "Communist Party of Estonia (EKP, 1918–1940)"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1940
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder and leader of the underground Estonian Communist Party from Nov 1918 until his execution in 1922. Its 1920–1940 existence as a separate Comintern section is outside soviet-party; after 1940 the catalog files it under soviet-party, hence periods 1918–1940."
+ },
+ {
+  "personId": "viktor-maltsev",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-konr",
+  "relation": "service",
+  "startYear": null,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "빅토르 말체프는 KONR 공군을 지휘한 군사 지휘관이었다.",
+    "source": "https://en.wikipedia.org/wiki/Russian_Liberation_Army",
+    "excerpt": "Air Force of KONR under the command of major general Viktor Maltsev (5 000–6 000 men).",
+    "locator": "characters 11206:11292; sha256 7f544ab497700001a8ff1cd527c9bc837089eb48aa9bfb2c67cc009411e62ffa"
+   },
+   {
+    "claim": "말체프는 ROA/KONR의 항공부대를 지휘했다.",
+    "source": "https://en.wikipedia.org/wiki/Russian_Liberation_Army",
+    "excerpt": "The only ROA unit that largely avoided repatriation was the ROA air arm commanded by Viktor Maltsev.",
+    "locator": "characters 9883:9983; sha256 7f544ab497700001a8ff1cd527c9bc837089eb48aa9bfb2c67cc009411e62ffa"
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-konr",
+   "kind": "force",
+   "label": {
+    "ko": "러시아 인민해방위원회",
+    "en": "Committee for the Liberation of the Peoples of Russia (KONR)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1944,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Commander of the KONR Air Force (the ROA air arm) until 1945; reuses the russian-konr id proposed for Vlasov. A separate ROA military affiliation would also fit if the owner splits political body and army."
+ },
+ {
+  "personId": "vincas-kapsukas",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-lithuanian-communist",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1935,
+  "evidence": [
+   {
+    "claim": "He organized the secret Third Congress of the Lithuanian Communist Party (Bolsheviks) in 1921.",
+    "source": "https://www.mle.lt/straipsniai/vincas-mickevicius-kapsukas",
+    "excerpt": "1921 spalį Mickevičius organizavo slaptą Lietuvos komunistų partijos (bolševikų) (LKP (b)) III suvažiavimą Karaliaučiuje.",
+    "locator": "characters 3081:3202; sha256 5a3a857547f0fc4316e1f3ded4d2328a785766d7c61c87ae712fff5009c3451a"
+   },
+   {
+    "claim": "He was one of the organizers of the Fourth Congress of the Lithuanian Communist Party (Bolsheviks) in Moscow in 1924.",
+    "source": "https://www.mle.lt/straipsniai/vincas-mickevicius-kapsukas",
+    "excerpt": "Mickevičius buvo vienas iš 1924 VII 17–21 vykusio Maskvoje LKP (b) IV suvažiavimo organizatorių.",
+    "locator": "characters 3619:3715; sha256 5a3a857547f0fc4316e1f3ded4d2328a785766d7c61c87ae712fff5009c3451a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vincas_Mickevi%C4%8Dius-Kapsukas",
+    "locator": "en: lead",
+    "excerpt": "After the fall of these republics, Mickevičius left for Soviet Russia, where he continued to lead the Lithuanian communists and worked for the Communist International (Comintern).",
+    "claim": "카프수카스는 소비에트 러시아로 옮긴 뒤에도 리투아니아 공산주의자들을 계속 지도했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-lithuanian-communist",
+   "kind": "party",
+   "label": {
+    "ko": "리투아니아 공산당",
+    "en": "Communist Party of Lithuania (LKP, 1918–1940)"
+   },
+   "countryCode": "lithuania",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1940
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder and leader of the Communist Party of Lithuania (LKP(b)) from 1918, organizing its congresses in 1921 and 1924, until his death in 1935. Periods 1918–1940 mirror the Estonian party (after 1940 under soviet-party)."
+ },
+ {
+  "personId": "vladimir-burtsev",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "부르체프는 학자이자 여러 러시아어 정기간행물의 출판인·편집자였다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Burtsev",
+    "excerpt": "was a revolutionary activist, scholar, publisher and editor of several Russian language periodicals",
+    "locator": "characters 100:199; sha256 db2133ddbc2cf4cdd9fa1eec687c404738dbef6883d628a5cf1a2d101173ca2c"
+   },
+   {
+    "claim": "그는 1908년 예브노 아제프를 비롯한 다수의 경찰 밀정을 폭로한 것으로 유명해졌다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Burtsev",
+    "excerpt": "He became famous by exposing a great number of agents provocateurs, notably Yevno Azef in 1908.",
+    "locator": "characters 201:296; sha256 db2133ddbc2cf4cdd9fa1eec687c404738dbef6883d628a5cf1a2d101173ca2c"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Historian-publisher of his own journals (Byloye, Obshcheye Delo); no catalog organization. The source does document Narodnaya Volya membership (\"As a member of Narodnaya Volya, he was imprisoned...\"), which could be a separate russian-narodnaya-volya membership row."
+ },
+ {
+  "personId": "vladimir-mazurin",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-russian-sr-maximalists",
+  "relation": "service",
+  "startYear": null,
+  "endYear": 1906,
+  "evidence": [
+   {
+    "claim": "마주린은 사회혁명당-막시말리스트 연합의 창설자이자 지도자 중 한 명이었다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B7%D1%83%D1%80%D0%B8%D0%BD%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "один из создателей и лидеров Союза эсеров-максималистов",
+    "locator": "characters 90:145; sha256 de796ebcb60adbd8fc44473cdf18370da0a5392bd537d4192cc6f4999546e86e"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Union_of_Socialists-Revolutionaries-Maximalists",
+    "locator": "en: lead",
+    "excerpt": "Union of Socialists-Revolutionaries-Maximalists (Russian: Союз социалистов-революционеров-максималистов) was a political party in the Russian Empire, a radical wing expelled from the Socialist-Revolutionary Party in 1906.",
+    "claim": "사회혁명당 최대주의자 연합은 1906년 사회혁명당에서 축출된 급진파가 만든 정당이다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-russian-sr-maximalists",
+   "kind": "party",
+   "label": {
+    "ko": "사회혁명당 최대주의자 연합",
+    "en": "Union of Socialists-Revolutionaries-Maximalists (SSRM)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1906,
+     1920
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "One of the founders and leaders of the SR-Maximalists (ru source) until his execution in Aug 1906; label follows the bio's 최대주의자 and the 사회혁명당 spelling rule."
+ },
+ {
+  "personId": "vladimir-purishkevich",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-russian-union-of-russian-people",
+  "relation": "service",
+  "startYear": 1905,
+  "endYear": 1907,
+  "evidence": [
+   {
+    "claim": "그는 1905년 러시아 혁명 시기 흑백단을 지도하는 데 기여했다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Purishkevich",
+    "excerpt": "He helped lead the paramilitary Black Hundreds during the Russian Revolution of 1905.",
+    "locator": "characters 286:371; sha256 e3da2051edf6955929e211a2eec4febb30dec70e8a72e12fa1c5a7ecc7ff3c15"
+   },
+   {
+    "claim": "그는 이후 국가두마 의원으로 활동하며 논란을 일삼는 인물로 명성을 얻었다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Purishkevich",
+    "excerpt": "He later served in the State Duma, where he gained a reputation for courting of public controversy.",
+    "locator": "characters 372:471; sha256 e3da2051edf6955929e211a2eec4febb30dec70e8a72e12fa1c5a7ecc7ff3c15"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Purishkevich",
+    "locator": "en: Early career",
+    "excerpt": "He became one of the founders of the Union of the Russian People and served as its deputy chairman until 1907, when he split to form the Union of the Archangel Michael.",
+    "claim": "푸리슈케비치는 러시아 인민동맹 창립자의 한 사람으로 1907년까지 부의장을 지냈다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+    "locator": "en: lead",
+    "excerpt": "The Union of the Russian People (URP; Russian: Союз русского народа, romanized: Soyuz russkogo naroda, СРН/SRN) was a royalist far-right nationalist political party, the most important among Black-Hundredist monarchist political organizations in the Russian Empire between 1905 and 1917.",
+    "claim": "러시아 인민동맹은 1905~1917년 흑백당 계열 군주주의 조직 가운데 가장 중요한 정당이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-russian-union-of-russian-people",
+   "kind": "party",
+   "label": {
+    "ko": "러시아 인민동맹",
+    "en": "Union of the Russian People (URP)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1905,
+     1917
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Co-founder and deputy chairman of the Union of the Russian People 1905–1907 (the Black Hundreds of the existing excerpt). His own Union of the Archangel Michael (1908–1917, site name 미하일 대천사 동맹) could be a further new party/activity."
+ },
+ {
+  "personId": "vladimir-usov",
+  "functionId": "economy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "모스크바 합작기업 이콤의 경제 업무 담당자였다. 학위·국적을 농업 정책 관료나 소련 국가기관 복무로 간주하지 않는다.",
+    "source": "https://warheroes.ru/hero/hero.asp?Hero_id=1201",
+    "excerpt": "Усов Владимир Александрович - экономист совместного предприятия \"Иком\" (Москва).",
+    "locator": "characters 333:413; sha256 3bf522ce574c2d442d0e6426944f73ec689d6df728096951d0c668ed4a03e008"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Economist at a Moscow joint venture (Ikom); a private firm, not a catalog organization."
+ },
+ {
+  "personId": "vladimir-voitinsky",
+  "functionId": "economy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-usa",
+  "relation": "employment",
+  "startYear": 1935,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "보이트인스키는 독일에서 독일 노동조합연맹과 국제노동기구의 연구원으로 일했다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Voitinsky",
+    "excerpt": "Voitinsky then lived in Germany, working as a researcher for the German Federation of Trade Unions and International Labour Organization.",
+    "locator": "characters 1286:1423; sha256 1f7eb960824d6a487e8cab90b55a8a8040ffc94a25cf215c99ad622b9410ba93"
+   },
+   {
+    "claim": "그는 1935년 미국으로 건너가 중앙통계국과 사회보장국에서 근무했다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Voitinsky",
+    "excerpt": "In 1935, Voitinsky left for the United States, where he worked for the Central Statistical Board and Social Security Board.",
+    "locator": "characters 1531:1654; sha256 1f7eb960824d6a487e8cab90b55a8a8040ffc94a25cf215c99ad622b9410ba93"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Economist for US federal agencies (Central Statistical Board, Social Security Board) from 1935; the earlier ADGB/ILO research (1920s–1933) has no catalog affiliation and could be a separate activity."
+ },
+ {
+  "personId": "vladimir-zenzinov",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "젠지노프는 사회혁명당 당원이자 여러 권의 책을 낸 저술가였다.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+    "excerpt": "was a member of Russia's Socialist-Revolutionary Party, a participant of the First (1905), Second (February 1917), and Third (November 1917) Russian Revolutions, and an author of a number of books.",
+    "locator": "characters 171:368; sha256 e5b09edf6fd6086a9cf962d6be580d5e966a256e07a7b7a0c5c9159486b054bc"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Books (ethnography, memoirs) are his own writing; no organization named for them. Note: primary=true on arts looks wrong — he is chiefly an SR Central Committee member and Ufa Directory member, so the primary flag may belong on his russian-sr political-leadership row (which could be service)."
+ },
+ {
+  "personId": "vladislav-kosior",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "soviet-vtssps",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1922,
+  "evidence": [
+   {
+    "claim": "코시오르는 1919년 모스크바 금속노동자 조합의 강사와 중앙위원회 서기였고, 1920~1922년에는 전우크라이나 노동조합 평의회 의장이었다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%B8%D0%BE%D1%80%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D1%81%D0%BB%D0%B0%D0%B2_%D0%92%D0%B8%D0%BA%D0%B5%D0%BD%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "excerpt": "В 1919 году — инструктор московского союза металлистов, затем секретарь ЦК союза металлистов. В 1920—1922 годах — председатель Всеукраинского совета профсоюзов, член президиума ВЦСПС.",
+    "locator": "characters 1701:1884; sha256 4fc2c25eb82253167a211fd37ba3bca87e0e685f26341191ab2430a837f31441"
+   }
+  ],
+  "newAffiliation": {
+   "id": "soviet-vtssps",
+   "kind": "force",
+   "label": {
+    "ko": "소련 노동조합중앙평의회",
+    "en": "All-Russian / All-Union Central Council of Trade Unions (VTsSPS)"
+   },
+   "countryCode": "soviet",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1990
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Chairman of the All-Ukrainian Council of Trade Unions and member of the VTsSPS presidium 1920–1922 (existing excerpt). Not filed under state-soviet: trade unions were mass organizations, not state institutions."
+ },
+ {
+  "personId": "volin",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "new",
+  "affiliationId": "ukrainian-nabat",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "볼린은 러시아 아나키스트 지식인이었다.",
+    "source": "https://en.wikipedia.org/wiki/Volin",
+    "excerpt": "Vsevolod Mikhailovich Eikhenbaum (23 August [O.S. 11 August] 1882 – 18 September 1945), commonly known by his pseudonym Volin, was a Russian anarchist intellectual.",
+    "locator": "characters 0:164; sha256 142819c1d5a91ba902ff6aadee29cae4e4261b20f4f393d99c7392b7e1de067d"
+   },
+   {
+    "claim": "그는 아나키스트 종합 이론을 발전시키고 우크라이나 아나키즘의 지적 발전을 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Volin",
+    "excerpt": "During this time, he developed a theory of anarchist synthesis, which advocated for collaboration between anarchists of different tendencies, and spearheaded the intellectual development of Ukrainian anarchism",
+    "locator": "characters 648:857; sha256 142819c1d5a91ba902ff6aadee29cae4e4261b20f4f393d99c7392b7e1de067d"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Nabat",
+    "locator": "en: lead",
+    "excerpt": "On 12–16 November 1918, the Nabat held its founding conference in Kursk.",
+    "claim": "나바트는 1918년 11월 쿠르스크에서 창립 회의를 열었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "ukrainian-nabat",
+   "kind": "force",
+   "label": {
+    "ko": "나바트 연합",
+    "en": "Nabat Confederation of Anarchist Organizations of Ukraine"
+   },
+   "countryCode": "ukraine",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1920
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Principal theoretician and leader of the Nabat (1918–1920) — the organization behind his anarchist-synthesis theory work; label reuses the bio's 나바트 연합."
+ },
+ {
+  "personId": "volodymyr-vynnychenko",
+  "functionId": "arts",
+  "newFunctionId": null,
+  "primary": false,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "혁명 이전 우크라이나 모더니즘 문학의 대표 작가다.",
+    "source": "https://en.wikipedia.org/wiki/Volodymyr_Vynnychenko",
+    "excerpt": "He is recognized as a leading Ukrainian modernist writer of the pre-revolutionary era, and an author of short stories, novels, and plays.",
+    "locator": "plain-text extract characters 710:847; accessed 2026-09-30; sha256 4093a947c68f1e40f567658ee3dd637da94c30e54ecaa222f8c23f41d15f0030"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Literary work; no organization named for his writing (his UPR government and party roles are separate activities)."
+ },
+ {
+  "personId": "walter-rodney",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-tanzania",
+  "relation": "employment",
+  "startYear": 1966,
+  "endYear": 1974,
+  "evidence": [
+   {
+    "claim": "월터 로드니는 가이아나 출신의 역사학자이자 학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Walter_Rodney",
+    "excerpt": "Walter Anthony Rodney (23 March 1942 – 13 June 1980) was a Guyanese historian, political activist and academic.",
+    "locator": "characters 0:111; sha256 676d8aafe231b390d713efb1612cb6a32d4498b7d3b01c0b999a7c49859f50ac"
+   },
+   {
+    "claim": "그의 대표적 학술 저작으로 『How Europe Underdeveloped Africa』(1972)가 있다.",
+    "source": "https://en.wikipedia.org/wiki/Walter_Rodney",
+    "excerpt": "His notable works include How Europe Underdeveloped Africa, first published in 1972.",
+    "locator": "characters 112:196; sha256 676d8aafe231b390d713efb1612cb6a32d4498b7d3b01c0b999a7c49859f50ac"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Walter_Rodney",
+    "locator": "en: Academic career",
+    "excerpt": "He taught at the University of Dar es Salaam in Tanzania during the periods 1966–67 and 1969–1974 and in 1968 at his alma mater University of the West Indies at Mona, Jamaica.",
+    "claim": "로드니는 1966~67년과 1969~1974년 탄자니아 다르에스살람 대학교에서 가르쳤다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Lecturer at the (national) University of Dar es Salaam 1966–1974, state university employment. If university posts are treated as non-affiliated, change to none. His Working People's Alliance membership (party, not in catalog) could be a separate row."
+ },
+ {
+  "personId": "web-du-bois",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "듀보이스는 애틀랜타 대학 교수로서 학술 연구와 저술 활동을 수행했다.",
+    "source": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois",
+    "excerpt": "He was a professor at Atlanta University and over the course of his life wrote many books and articles.",
+    "locator": "characters 392:495; sha256 edd186b0681b488b6dbd0dca996251b9a6260b4d770a2990278283ad77f51d98"
+   },
+   {
+    "claim": "그의 저작은 미국 사회학 분야의 과학적 논문으로 평가받는 학술적 성과다.",
+    "source": "https://en.wikipedia.org/wiki/W._E._B._Du_Bois",
+    "excerpt": "His 1940 autobiography Dusk of Dawn is regarded in part as one of the first scientific treatises in the field of American sociology.",
+    "locator": "characters 2682:2814; sha256 edd186b0681b488b6dbd0dca996251b9a6260b4d770a2990278283ad77f51d98"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Professor at Atlanta University, a private historically black university, not a catalog organization (NAACP/Crisis work is separate)."
+ },
+ {
+  "personId": "wei-jingsheng",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "웨이징성은 중국 민주화 운동에 참여한 인권 운동가·반체제 인사이다.",
+    "source": "https://en.wikipedia.org/wiki/Wei_Jingsheng",
+    "excerpt": "Wei Jingsheng (Chinese: 魏京生; born 20 May 1950) is a Chinese human rights activist and dissident. He is best known for his involvement in the Chinese democracy movement.",
+    "locator": "characters 0:168; sha256 0f1f4dccc0f9fa84ec837c283054a7fd59577819174bd4a82dd470a07287cf91"
+   },
+   {
+    "claim": "그는 1978년 베이징 민주장벽에 게시된 「제5의 현대화」를 집필하며 민주화 운동을 전개했다.",
+    "source": "https://en.wikipedia.org/wiki/Wei_Jingsheng",
+    "excerpt": "He is most prominent for having authored the essay \"The Fifth Modernization\", which was posted on the Democracy Wall in Beijing in 1978.",
+    "locator": "characters 170:306; sha256 0f1f4dccc0f9fa84ec837c283054a7fd59577819174bd4a82dd470a07287cf91"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Democracy Wall essays and the short-lived magazine Explorations are individual/ad-hoc activity; no named organization (his 1998 Wei Jingsheng Foundation is a personal foundation)."
+ },
+ {
+  "personId": "yeo-un-hyeong",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "korean-independence-movement",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "여운형은 한국 독립운동과 통일운동을 조직하고 이끈 사회·정치 운동가였다.",
+    "source": "https://en.wikipedia.org/wiki/Lyuh_Woon-hyung",
+    "excerpt": "was a Korean independence activist and reunification activist",
+    "locator": "characters 117:178; sha256 8c1c53cc581af5e5d92ef986cd56d61784eb58253509611bf6701cfdffd1074e"
+   },
+   {
+    "claim": "일제강점기 2·8 독립선언 작성에 참여하는 등 독립운동 조직 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Lyuh_Woon-hyung",
+    "excerpt": "participated in the creation of the February 8 Declaration of Independence during the Japanese colonial period",
+    "locator": "characters 255:365; sha256 8c1c53cc581af5e5d92ef986cd56d61784eb58253509611bf6701cfdffd1074e"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Lyuh_Woon-hyung",
+    "locator": "en: lead",
+    "excerpt": "In April 1919, Lyuh became one of the founders of the Provisional Government of the Republic of Korea.",
+    "claim": "여운형은 1919년 4월 대한민국임시정부 창립자의 한 사람이 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Lyuh_Woon-hyung",
+    "locator": "en: Chronology",
+    "excerpt": "1918 – Founded New Korea Youth Party in Shanghai and had been appointed to the leader.",
+    "claim": "여운형은 1918년 상하이에서 신한청년당을 창립하고 지도자가 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "New Korea Youth Party (1918), the February 8 Declaration and the Provisional Government are independence-movement service; his 1945–47 parties are separate."
+ },
+ {
+  "personId": "yevsei-liberman",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "리베르만은 소련의 경제학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Evsei_Liberman",
+    "excerpt": "Evsei Grigorievich Liberman (Russian: Евсей Григорьевич Либерман, pronounced [jɪfˈsʲej ɡrʲɪˈɡorʲjɪvʲɪtɕ lʲɪbʲɪrˈman], Ukrainian: Овсій Григорович Ліберман; 2 October 1897, – 11 November 1981) was a Soviet economist who lived in Kharkov, Ukrainian SSR.",
+    "locator": "characters 0:251; sha256 7c49d8768f7198b0ffae96e42687675ca4621d5da11e2d4486c846b73b1606b3"
+   },
+   {
+    "claim": "그는 1965년 소련 경제개혁의 설계자로 평가된다.",
+    "source": "https://en.wikipedia.org/wiki/Evsei_Liberman",
+    "excerpt": "He is noted as the architect of the Soviet economic reform of 1965, also known as \"Libermanism\".",
+    "locator": "characters 252:348; sha256 7c49d8768f7198b0ffae96e42687675ca4621d5da11e2d4486c846b73b1606b3"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Evsei_Liberman",
+    "locator": "en: Biography",
+    "excerpt": "He taught at the Kharkiv Institute of National Economy in 1920s, Kharkiv Engineering and Economic Institute in 1930s-1950-s, the Kharkiv V.I. Lenin Polytechnic Institute, and the University of Kharkiv.",
+    "claim": "리베르만은 하르키우 국민경제대학·공학경제대학·폴리테크닉·하르키우 대학교에서 가르쳤다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Researcher and teacher at Soviet state institutes in Kharkiv (Institute of Labor, Engineering-Economic Institute, Kharkiv University): Soviet state-institution employment."
+ },
+ {
+  "personId": "yuri-afanasyev",
+  "functionId": "scholarship",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1986,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "아파나시예프는 소련/러시아의 역사학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Yury_Afanasyev",
+    "excerpt": "Yury Nikolayevich Afanasyev (also spelled Yuri Afanasiev; Russian: Юрий Николаевич Афанасьев; 5 September 1934 – 14 September 2015) was a Soviet/Russian historian",
+    "locator": "characters 0:162; sha256 33842906d4d58840e6023a6a3481ef3557b9f4982409cd1fd0b45dfe4573d118"
+   },
+   {
+    "claim": "그는 모스크바 역사·기록보관 연구소의 총장이었고 이를 1991년 러시아국립인문대학으로 개편하여 2003년까지 이끌었다.",
+    "source": "https://en.wikipedia.org/wiki/Yury_Afanasyev",
+    "excerpt": "He was also the rector of the Moscow State Institute of History and Archives which he transformed in 1991 into the Russian State University of Humanities (RSUH) and led until 2003",
+    "locator": "characters 251:430; sha256 33842906d4d58840e6023a6a3481ef3557b9f4982409cd1fd0b45dfe4573d118"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Yury_Afanasyev",
+    "locator": "en: Biography",
+    "excerpt": "In 1986, he was appointed rector of the Moscow State Institute of History and Archives.",
+    "claim": "아파나시예프는 1986년 모스크바 국립 역사기록대학 총장이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Rector of the state Moscow Historical-Archival Institute 1986–1991 (head post → service). The RSUH rectorship 1991–2003 would be a separate russia-federation activity."
+ },
+ {
+  "personId": "yuri-lutovinov",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "russian-metalworkers-union",
+  "relation": "service",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "루토비노프는 러시아 금속노동자 연합에서 활동한 노동운동 조직가였다.",
+    "source": "https://en.wikipedia.org/wiki/Yury_Lutovinov",
+    "excerpt": "Lutovinov also was an activist in the Russian Metalworkers' Union.",
+    "locator": "characters 338:404; sha256 df12ca9da1bffa4f31e2d583f6e817a005d1807f9c906bd67396a9bf3f3d2585"
+   },
+   {
+    "claim": "그는 러시아 금속노동자 연합 중앙위원회와 전러시아 노동조합 중앙평의회 위원으로 노동조합 조직 활동을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Yury_Lutovinov",
+    "excerpt": "He was in the central committee of the Russian Metalworkers' Union and a member of the All-Russian Central Council of Trade Unions.",
+    "locator": "characters 832:963; sha256 df12ca9da1bffa4f31e2d583f6e817a005d1807f9c906bd67396a9bf3f3d2585"
+   }
+  ],
+  "newAffiliation": {
+   "id": "russian-metalworkers-union",
+   "kind": "force",
+   "label": {
+    "ko": "전러시아 금속노동자조합",
+    "en": "All-Russian Metalworkers' Union"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Central committee member of the Russian Metalworkers' Union (existing excerpts); same new affiliation as Shlyapnikov. His VTsSPS presidium seat could be a soviet-vtssps row."
+ },
+ {
+  "personId": "zviad-gamsakhurdia",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-georgia",
+  "relation": "service",
+  "startYear": 1991,
+  "endYear": 1992,
+  "evidence": [
+   {
+    "claim": "감사후르디아를 중심으로 결성된 라운드 테이블-자유 그루지야 연합이 1990년 선거에서 집권 공산당에 도전했다.",
+    "source": "https://en.wikipedia.org/wiki/Zviad_Gamsakhurdia",
+    "excerpt": "Eventually, a number of underground political organizations united around Zviad Gamsakhurdia and formed the Round Table—Free Georgia coalition, which successfully challenged the ruling Communist Party of Georgia in the 1990 elections.",
+    "locator": "characters 1009:1243; sha256 ff6cf87e598fdc349adf815f399bd91d4708064e1f442e6b0bb7b6c3a21be02c"
+   },
+   {
+    "claim": "그는 1991년 그루지야 대통령으로 선출되었다.",
+    "source": "https://en.wikipedia.org/wiki/Zviad_Gamsakhurdia",
+    "excerpt": "Gamsakhurdia was elected as the President of Georgia in 1991, gaining 87% of votes in the election.",
+    "locator": "characters 1244:1343; sha256 ff6cf87e598fdc349adf815f399bd91d4708064e1f442e6b0bb7b6c3a21be02c"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Zviad_Gamsakhurdia",
+    "locator": "en: lead",
+    "excerpt": "Zviad Konstantines dze Gamsakhurdia (Georgian: ზვიად კონსტანტინეს ძე გამსახურდია; Russian: Звиа́д Константи́нович Гамсаху́рдия, romanized: Zviad Konstantinovich Gamsakhurdiya; 31 March 1939 – 31 December 1993) was a Georgian politician, human rights activist, dissident, professor of English language studies and American literature at Tbilisi State University, and writer who became the first democratically elected President of Georgia in May 1991.",
+    "claim": "감사후르디아는 1991년 5월 그루지야 최초의 민선 대통령이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Elected President of Georgia 1991, ousted Jan 1992 (state-georgia periods start 1991). Alternative: the Round Table—Free Georgia coalition (1990 electoral bloc he led) as a new force; his 1990 Supreme Council chairmanship predates the catalog period."
+ }
+]

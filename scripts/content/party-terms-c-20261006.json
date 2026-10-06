@@ -1,0 +1,1110 @@
+{
+  "id": "party-terms-c-20261006",
+  "terms": [
+    {
+      "id": "khmer-national-solidarity-party",
+      "affiliationId": "party-khmer-national-solidarity",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+        "https://en.wikipedia.org/wiki/Cambodian_National_Unity_Party",
+        "https://en.wikipedia.org/wiki/Khmer_Rouge_unrecognized_government",
+        "https://en.wikipedia.org/wiki/Khieu_Samphan"
+      ],
+      "fields": {
+        "term": {
+          "ko": "크메르 민족연대당",
+          "en": "Khmer National Solidarity Party"
+        },
+        "original": "Khmer National Solidarity Party (KNSP)",
+        "category": "parties",
+        "period": {
+          "ko": "1997–",
+          "en": "1997–"
+        },
+        "startYear": 1997,
+        "definition": {
+          "ko": "크메르루주의 고위 지도자 키우 삼판이 1997년 5월, 폴 포트를 비난하고 크메르루주와 거리를 두기 시작하면서 세운 캄보디아의 정당. 1998년 총선을 앞두고 노로돔 라나리드 왕자가 제안한 민족연합전선을 지지하려 했으나, 훈 센이 이끄는 집권 캄보디아인민당의 반대로 뜻을 이루지 못했다.",
+          "en": "A Cambodian party founded in May 1997 by the senior Khmer Rouge leader Khieu Samphan as he denounced Pol Pot and began distancing himself from the Khmer Rouge. It was meant to back the National United Front that Prince Norodom Ranariddh proposed for the 1998 parliamentary election, but opposition from Hun Sen's ruling Cambodian People's Party prevented this."
+        },
+        "body": {
+          "ko": "키우 삼판은 그전까지 캄보디아 국민통합당을 이끌었다. 이 당은 크메르루주가 유엔 과도행정 시기인 1992년 11월 30일 그해 선거에 나가려고 만든 당으로, 키우 삼판과 손 센이 지도했다. 1996년 8월 이엥 사리가 추종자들을 데리고 갈라져 나가 민주국민연합운동을 세우자 크메르루주에서 이탈이 잇따랐고, 키우 삼판은 1997년 5월 크메르루주를 떠나 이 당을 세웠다. 1997년 6월 중순 그는 폴 포트를 비난하고 무장 해제와 민간 생활로의 복귀를 논의하기 시작했다.\n\n키우 삼판은 새 당으로 라나리드 왕자의 민족연합전선을 지지해 1998년 총선에 참여하겠다고 밝혔으나, 집권 캄보디아인민당의 반대로 이루어지지 않았다. 1998년 그는 선거가 베트남 공산주의자들과 그 꼭두각시의 철권 아래 치러지지 않는다면 민주적이고 다원적인 세력으로서 기꺼이 참여하겠다고 말했다. 그해 12월 그는 누온 체아와 함께 정부에 투항했다.",
+          "en": "Khieu Samphan had previously led the Cambodian National Unity Party, which the Khmer Rouge set up on 30 November 1992, during the United Nations transitional administration, to contest that year's elections, and which he led together with Son Sen. When Ieng Sary broke away with his followers in August 1996 to form the Democratic National Union Movement, further defections from the Khmer Rouge followed, and in May 1997 Khieu Samphan left the Khmer Rouge and founded this party. In mid-June 1997 he denounced Pol Pot and began discussing demobilisation and a return to civilian life.\n\nKhieu Samphan announced the new party in order to back Prince Ranariddh's National United Front in the 1998 election, but opposition from the ruling Cambodian People's Party prevented this. In 1998 he said that if the elections did not go ahead under the iron rule of the Vietnamese communists and their puppet, his side would be very happy to take part as a democratic, pluralistic and free force. In December of that year he surrendered to the government together with Nuon Chea."
+        },
+        "aliases": {
+          "ko": [
+            "KNSP"
+          ],
+          "en": [
+            "KNSP"
+          ]
+        },
+        "people": [
+          "khieu-samphan"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "KNSP founded in May 1997 by Khieu Samphan after he denounced Pol Pot and began distancing himself from the Khmer Rouge; meant to back Ranariddh's National United Front for 1998, prevented by Hun Sen's CPP.",
+            "source": "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "CNUP set up by the Khmer Rouge on 30 November 1992 under UNTAC, led by Khieu Samphan and Son Sen; Ieng Sary split in August 1996; Khieu Samphan founded the KNSP in May 1997 after defecting.",
+            "source": "https://en.wikipedia.org/wiki/Cambodian_National_Unity_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "In mid-June 1997 Khieu Samphan, who had by then founded the KNSP, denounced Pol Pot and began discussing demobilisation.",
+            "source": "https://en.wikipedia.org/wiki/Khmer_Rouge_unrecognized_government",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "1998 statement about taking part in elections not held under the iron rule of Vietnamese communists and their puppet.",
+            "source": "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "In December 1998 Khieu Samphan and Nuon Chea surrendered to the Cambodian government.",
+            "source": "https://en.wikipedia.org/wiki/Khieu_Samphan",
+            "locator": "en: Life and career"
+          },
+          {
+            "field": "period",
+            "claim": "Founded in May 1997; no dissolution date given.",
+            "source": "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded in May 1997.",
+            "source": "https://en.wikipedia.org/wiki/Cambodian_National_Unity_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "people",
+            "claim": "Khieu Samphan founded the party.",
+            "source": "https://en.wikipedia.org/wiki/Khmer_National_Solidarity_Party",
+            "locator": "en: lead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "estonian-national-independence-party",
+      "affiliationId": "party-estonian-national-independence",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Estonian_National_Independence_Party",
+        "https://et.wikipedia.org/wiki/Eesti_Rahvusliku_S%C3%B5ltumatuse_Partei",
+        "https://en.wikipedia.org/wiki/Lagle_Parek"
+      ],
+      "fields": {
+        "term": {
+          "ko": "에스토니아 민족독립당",
+          "en": "Estonian National Independence Party"
+        },
+        "original": "Eesti Rahvusliku Sõltumatuse Partei (ERSP)",
+        "category": "parties",
+        "period": {
+          "ko": "1988–1995",
+          "en": "1988–1995"
+        },
+        "startYear": 1988,
+        "endYear": 1995,
+        "definition": {
+          "ko": "1988년 8월 20일 에스토니아 소비에트 사회주의 공화국에서 민족주의·반공주의 반체제 인사들이 세운 정당으로, 소련 안에서 처음 생긴 비공산 정당이다. 1940년 이전의 에스토니아 공화국을 법적 연속성에 따라 되살리는 것을 목표로 삼아 독립운동의 급진파를 대표했고, 1995년 다른 당과 합쳐 조국연합이 되었다.",
+          "en": "A party founded on 20 August 1988 in the Estonian SSR by nationalist and anti-communist dissidents, the first non-communist party established in the Soviet Union. Aiming to restore the Republic of Estonia on the principle of legal continuity, it represented the radical wing of the independence movement, and in 1995 it merged with another party to form the Pro Patria Union."
+        },
+        "body": {
+          "ko": "창당은 불교 단체 지도자 벨로 배르트뇌우의 발의에서 시작되었다. 1988년 1월 30일 그는 모스크바에서 서방 언론을 상대로 기자회견을 열어 14명이 서명한 창당 제안을 알렸고, 곧 소련에서 추방되었다. 당은 1988년 8월 에스토니아 중부 필리스티베레의 교회에서 104명의 창립 당원으로 창립대회를 열었고, 라글레 파레크 등이 지도부에 뽑혔다. 파레크는 1988년부터 1992년까지 당 의장을 지냈다.\n\n당은 개혁파 공산주의자들과 협력한 인민전선과 달리 강경한 반공 언어를 썼고, 당시의 에스토니아를 점령·병합된 나라로 보았다. 1989년 2월 24일 다른 단체들과 함께 시민위원회 운동을 시작했고, 이 운동은 1990년 2월 에스토니아 회의 선거로 이어졌다. 당은 이 선거에서 다수를 얻었다.\n\n1991년 독립 회복 뒤 당은 1992년 첫 리기코구 선거에서 10석(8.8%)을 얻어 1992~1995년 중도우파 연립정부에 참여했고, 파레크는 마르트 라르 내각의 내무장관을 지냈다. 1995년 12월 2일 당은 국민연합당 「조국」과 합쳐 민족보수 정당 조국연합(이사말리이트)을 만들었다.",
+          "en": "The initiative came from Vello Väärtnõu, the leader of a local Buddhist group. On 30 January 1988 he held a press conference in Moscow for Western media announcing a proposal, signed by fourteen people, to found the party, and he was soon expelled from the Soviet Union. The party held its founding congress in August 1988 in the church at Pilistvere in central Estonia with 104 founding members, and Lagle Parek was among those elected to its board; she chaired the party from 1988 to 1992.\n\nUnlike the Popular Front, which cooperated with pro-reform communists, the party used hardline anti-communist rhetoric and treated Estonia as an occupied and annexed country. On 24 February 1989 it launched, together with other groups, the citizens' committees movement, which led to the elections to the Congress of Estonia in February 1990, in which the party won a majority.\n\nAfter independence was restored in 1991, the party won 10 seats (8.8 per cent) in the first Riigikogu election of 1992 and joined the centre-right coalition government of 1992–1995, with Parek serving as interior minister under Mart Laar. On 2 December 1995 it merged with the National Coalition Party \"Pro Patria\" to form the national-conservative Pro Patria Union (Isamaaliit)."
+        },
+        "aliases": {
+          "ko": [
+            "에스토니아민족독립당",
+            "ERSP"
+          ],
+          "en": [
+            "Eesti Rahvusliku Sõltumatuse Partei",
+            "ERSP",
+            "ENIP"
+          ]
+        },
+        "people": [
+          "lagle-parek"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Founded 20 August 1988 in the Estonian SSR by nationalist and anti-communist dissidents; first non-communist party in the USSR; radical wing; merged with Pro Patria to form the Pro Patria Union.",
+            "source": "https://en.wikipedia.org/wiki/Estonian_National_Independence_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Programmatic aim: restoration of the Republic of Estonia on the basis of legal continuity.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvusliku_S%C3%B5ltumatuse_Partei",
+            "locator": "et: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Väärtnõu initiative; 30 January 1988 Moscow press conference; proposal signed by 14 people; Väärtnõu expelled 13 February 1988; founding congress at Pilistvere church with 104 founders; Lagle Parek elected to the board.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvusliku_S%C3%B5ltumatuse_Partei",
+            "locator": "et: Ajalugu"
+          },
+          {
+            "field": "body",
+            "claim": "Parek was a founder and chairman of the ERSP 1988–1992; ERSP won 10 seats (8.8%) in 1992; Parek interior minister under Mart Laar.",
+            "source": "https://en.wikipedia.org/wiki/Lagle_Parek",
+            "locator": "en: After release"
+          },
+          {
+            "field": "body",
+            "claim": "Hardline anti-communist rhetoric in contrast with the Popular Front; majority in the February 1990 Congress of Estonia elections; part of centre-right government 1992–1995.",
+            "source": "https://en.wikipedia.org/wiki/Estonian_National_Independence_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Citizens' committees movement launched 24 February 1989; ERSP regarded Estonia as occupied and annexed; merged on 2 December 1995 with Rahvuslik Koonderakond Isamaa into Isamaaliit.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvusliku_S%C3%B5ltumatuse_Partei",
+            "locator": "et: lead; Ajalugu"
+          },
+          {
+            "field": "period",
+            "claim": "Founded 1988, merged into Isamaaliit on 2 December 1995.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvusliku_S%C3%B5ltumatuse_Partei",
+            "locator": "et: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded on 20 August 1988.",
+            "source": "https://en.wikipedia.org/wiki/Estonian_National_Independence_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Merged on 2 December 1995.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvusliku_S%C3%B5ltumatuse_Partei",
+            "locator": "et: lead"
+          },
+          {
+            "field": "people",
+            "claim": "Lagle Parek was a founder and chairman of the ERSP.",
+            "source": "https://en.wikipedia.org/wiki/Lagle_Parek",
+            "locator": "en: After release"
+          }
+        ]
+      }
+    },
+    {
+      "id": "movement-for-proletarian-power-madagascar",
+      "affiliationId": "party-malagasy-mfm",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+        "https://en.wikipedia.org/wiki/Manandafy_Rakotonirina"
+      ],
+      "fields": {
+        "term": {
+          "ko": "소민 권력 투사",
+          "en": "Movement for Proletarian Power"
+        },
+        "original": "Mpitolona ho amin'ny Fanjakana ny Madinika (MFM)",
+        "category": "parties",
+        "period": {
+          "ko": "1972–",
+          "en": "1972–"
+        },
+        "startYear": 1972,
+        "definition": {
+          "ko": "1972년 12월 27일 마난다피 라코토니리나가 세운 마다가스카르의 좌파 정당. 그해 들어선 군사정권에 맞선 좌파 야당으로 출발했으나, 뒤에 자유주의로 돌아서 이름을 마다가스카르 진보운동으로 바꾸었다. 약칭 MFM은 두 이름에 모두 쓰인다.",
+          "en": "A left-wing Malagasy party founded on 27 December 1972 by Manandafy Rakotonirina. It began as a left-wing opposition to the military regime that had taken power that year, but later converted to liberalism and renamed itself the Movement for the Progress of Madagascar; the abbreviation MFM covers both names."
+        },
+        "body": {
+          "ko": "사회주의자인 농학 교수 라코토니리나는 몽자 자오나의 MONIMA에서 안타나나리보 프롤레타리아의 참여를 주장했고, 1971년 4월 체포되었다가 1972년 5월 치라나나 대통령에 맞선 시위를 조직하는 데 힘을 보탰다. 그해 12월 27일 그는 라코토니라이니 제르맹과 함께 이 당을 세웠고, 1973년 5월 1972년 5월 사건의 기념행사와 관련해 다시 체포되었다.\n\n1975년 집권한 디디에 라치라카 정권에 적극적으로 맞서지 않았는데도, 라치라카는 1976년 9월 당을 해산하고 라코토니리나를 1977년 1월까지 가택연금했다. 그 뒤 당은 집권 연합인 혁명수호민족전선 안에서 재건되었고, 라코토니리나는 최고혁명평의회 위원으로 경제위원회를 맡았다. 1989년 대선에서 그는 20% 가까이 얻어 라치라카에 이어 2위를 했고, 당은 1991년 라치라카를 권력에서 물러나게 한 운동에 참여했다.\n\n당은 자유주의로 돌아서 이름을 바꾸었고, 2006년 마라케시 대회에서 자유주의 인터내셔널의 옵서버 회원이 되었다. 2001년 12월 대선에서는 마르크 라발로마나나를 지지해, 첫 공식 결과를 받아들이지 말고 스스로 승리를 선언하도록 설득했다. 2007년 9월 23일 국민의회 선거 뒤로는 의석이 없다.",
+          "en": "Rakotonirina, a socialist professor of agronomy, had called within Monja Jaona's MONIMA for the involvement of the proletariat of Antananarivo; arrested in April 1971, he helped organise the May 1972 protests against President Tsiranana. On 27 December of that year he founded this party with Rakotonirainy Germain, and in May 1973 he was arrested again in connection with a commemoration of May 1972.\n\nAlthough the party did not actively oppose Didier Ratsiraka's regime when it came to power in 1975, Ratsiraka dissolved it in September 1976 and kept Rakotonirina under house arrest until January 1977. The party was then re-formed within the ruling National Front for the Defence of the Revolution, and Rakotonirina became a member of the Supreme Council of the Revolution, heading its Economic Commission. He came second to Ratsiraka with just under 20 per cent in the 1989 presidential election, and the party took part in the movement that forced Ratsiraka to give up power in 1991.\n\nThe party converted to liberalism and changed its name, and at the Marrakesh congress of 2006 it became an observer member of the Liberal International. In the December 2001 presidential election it backed Marc Ravalomanana and helped persuade him not to accept the first official result but to proclaim himself the winner. Since the National Assembly election of 23 September 2007 it has had no seats."
+        },
+        "aliases": {
+          "ko": [
+            "MFM",
+            "마다가스카르 진보운동"
+          ],
+          "en": [
+            "MFM",
+            "Party for Proletarian Power",
+            "Movement for the Progress of Madagascar",
+            "Mpitolona ho amin'ny Fanjakana ny Madinika",
+            "Mpitolona ho an'ny Fandrosoan'i Madagasikara"
+          ]
+        },
+        "people": [
+          "manandafy-rakotonirina"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Founded on 27 December 1972 as the Party for Proletarian Power; left-wing opposition to the military regime that took power that year; converted to liberalism and changed its name.",
+            "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "On 27 December 1972 Rakotonirina founded the Movement for Proletarian Power (MFM).",
+            "source": "https://en.wikipedia.org/wiki/Manandafy_Rakotonirina",
+            "locator": "en: Political career"
+          },
+          {
+            "field": "body",
+            "claim": "Joined MONIMA and called for involvement of the Antananarivo proletariat; arrested April 1971; helped organise May 1972 protests; co-founded the MFM with Rakotonirainy Germain; arrested again May 1973.",
+            "source": "https://en.wikipedia.org/wiki/Manandafy_Rakotonirina",
+            "locator": "en: Political career"
+          },
+          {
+            "field": "body",
+            "claim": "Ratsiraka dissolved the party in September 1976; house arrest until January 1977; party re-formed within the National Front for the Defence of the Revolution; Supreme Council of the Revolution, Economic Commission; second place in 1989 with just under 20%.",
+            "source": "https://en.wikipedia.org/wiki/Manandafy_Rakotonirina",
+            "locator": "en: Political career"
+          },
+          {
+            "field": "body",
+            "claim": "Part of the movement that forced Ratsiraka to give up power in 1991; backed Ravalomanana in December 2001; Liberal International observer since the 2006 Marrakesh Congress; no seats since 23 September 2007.",
+            "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+            "locator": "en: lead"
+          },
+          {
+            "field": "period",
+            "claim": "Founded 1972 and described as an existing party.",
+            "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+            "locator": "en: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded on 27 December 1972.",
+            "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+            "locator": "en: lead"
+          },
+          {
+            "field": "people",
+            "claim": "Manandafy Rakotonirina founded and chairs the party.",
+            "source": "https://en.wikipedia.org/wiki/Movement_for_the_Progress_of_Madagascar",
+            "locator": "en: lead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "workers-and-peasants-socialist-party-france",
+      "affiliationId": "party-french-psop",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+        "https://fr.wikipedia.org/wiki/Parti_socialiste_ouvrier_et_paysan"
+      ],
+      "fields": {
+        "term": {
+          "ko": "노동자농민사회당(프랑스)",
+          "en": "Workers and Peasants' Socialist Party"
+        },
+        "original": "Parti socialiste ouvrier et paysan (PSOP)",
+        "category": "parties",
+        "period": {
+          "ko": "1938–1940",
+          "en": "1938–1940"
+        },
+        "startYear": 1938,
+        "endYear": 1940,
+        "definition": {
+          "ko": "노동자 인터내셔널 프랑스 지부(SFIO)에서 쫓겨난 좌파 분파 「혁명적 좌익」이 마르소 피베르를 중심으로 1938년 6월 8일 세운 프랑스의 혁명적 사회주의 정당. SFIO와 프랑스 공산당 모두에 불만을 품은 소수를 모아 당원이 8천~1만 명에 이르렀고, 1940년 비시 정권에 해산되었다.",
+          "en": "A French revolutionary socialist party formed on 8 June 1938 around Marceau Pivert by the Gauche Révolutionnaire, a left-wing faction expelled from the French Section of the Workers' International (SFIO). Appealing to a minority dissatisfied with both the SFIO and the French Communist Party, it had between 8,000 and 10,000 members, and it was dissolved by the Vichy regime in 1940."
+        },
+        "body": {
+          "ko": "당에는 온건한 마르크스주의자들과 함께, 「프랑스 전환」의 결과로 들어온 트로츠키주의자들과 출판인 르네 르푀브르 같은 룩셈부르크주의자들이 모였다. 피베르와 나란히 이름난 지도자로는 자유지상주의적 사회주의자 다니엘 게랭이 있었고, 청년 조직은 노동자농민사회주의청년단(JSOP)이었다. 당 기관지 《쥐앵 36》은 인민전선 정부와 피베르가 갈라선 계기가 된 1936년 총파업을 기념한 이름이다.\n\n국제적으로는 영국 독립노동당과 스페인 마르크스주의 통일노동자당(POUM)이 속한 좌파 사회주의 정당들의 런던 뷰로에 가입했다. 그러나 SFIO와 공산당 사이에서 세력을 넓히지 못했고, 1939년에는 작은 트로츠키주의 분파가 떨어져 나가 오늘날 「노동자 투쟁」으로 알려진 트로츠키주의 그룹을 세웠다.\n\n당은 제2차 세계대전 초에 무너졌고 1940년 페탱 정권에 해산되었다. 옛 당원 다수는 SFIO나 공산당 계열의 레지스탕스 조직, 또는 리옹 일대의 독자 조직 「랭쉬르제」에 들어갔다. 해방 뒤 당은 재건되지 않았고, 대부분은 SFIO로, 소수는 프랑스 공산당으로 갔다.",
+          "en": "Alongside moderate Marxists the party grouped Trotskyists, who had come in as an outcome of the French Turn, and Luxemburgists such as the publisher René Lefeuvre. Besides Pivert its best-known leader was the libertarian socialist Daniel Guérin, and its youth wing was the Workers and Peasants' Socialist Youth (JSOP). Its paper, Juin 36, was named after the general strike of 1936 that had caused the split between Pivert and the Popular Front government.\n\nInternationally it was affiliated with the London Bureau of left-wing socialist parties, which also included the British Independent Labour Party and the Spanish POUM. It struggled to grow between the SFIO and the Communist Party, and in 1939 a small Trotskyist faction split away to found the Trotskyist group now known as Lutte Ouvrière.\n\nThe party collapsed at the beginning of the Second World War and was dissolved by Pétain's regime in 1940. Most former members joined Resistance groups affiliated with the SFIO or the Communists, or L'Insurgé, an independent group around Lyon. The party was not re-formed after the Liberation; most of its activists returned to the SFIO and a minority joined the French Communist Party."
+        },
+        "aliases": {
+          "ko": [
+            "PSOP"
+          ],
+          "en": [
+            "Parti socialiste ouvrier et paysan",
+            "PSOP"
+          ]
+        },
+        "people": [
+          "marceau-pivert"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Formed on 8 June 1938 by Marceau Pivert out of the Gauche Révolutionnaire faction expelled from the SFIO; revolutionary socialist; 8,000–10,000 members; outlawed by the Vichy regime.",
+            "source": "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Dissolved in 1940 by the Pétain government.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_ouvrier_et_paysan",
+            "locator": "fr: Historique"
+          },
+          {
+            "field": "body",
+            "claim": "Moderate Marxists, Trotskyists (French Turn) and Luxemburgists (René Lefeuvre); Daniel Guérin; JSOP youth wing; paper Juin 36 named after the 1936 general strike that caused the split between Pivert and the Popular Front government.",
+            "source": "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "London Bureau affiliation with the ILP and POUM; 1939 Trotskyist split, now Lutte Ouvrière; members joined the Resistance, including L'Insurgé around Lyon.",
+            "source": "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Difficulty growing between the SFIO and the PCF; not re-formed after the Liberation, most returned to the SFIO and a minority joined the PCF.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_ouvrier_et_paysan",
+            "locator": "fr: Historique"
+          },
+          {
+            "field": "period",
+            "claim": "Formed 1938, dissolved 1940.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_ouvrier_et_paysan",
+            "locator": "fr: lead; Historique"
+          },
+          {
+            "field": "startYear",
+            "claim": "Formed on 8 June 1938.",
+            "source": "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Dissolved in 1940.",
+            "source": "https://fr.wikipedia.org/wiki/Parti_socialiste_ouvrier_et_paysan",
+            "locator": "fr: Historique"
+          },
+          {
+            "field": "people",
+            "claim": "Marceau Pivert formed and led the party.",
+            "source": "https://en.wikipedia.org/wiki/Workers_and_Peasants%27_Socialist_Party",
+            "locator": "en: lead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "madagascar-for-the-malagasy",
+      "affiliationId": "party-malagasy-monima",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Madagascar_for_the_Malagasy",
+        "https://fr.wikipedia.org/wiki/Mouvement_national_pour_l%27ind%C3%A9pendance_de_Madagascar",
+        "https://en.wikipedia.org/wiki/Monja_Jaona"
+      ],
+      "fields": {
+        "term": {
+          "ko": "말라가시인의 마다가스카르",
+          "en": "Madagascar for the Malagasy"
+        },
+        "original": "Madagasikara otronin'ny Malagasy (MONIMA)",
+        "category": "parties",
+        "period": {
+          "ko": "1958–",
+          "en": "1958–"
+        },
+        "startYear": 1958,
+        "definition": {
+          "ko": "1947년 마다가스카르 봉기에 가담했던 민족주의자 몽자 자오나가 1958년 7월 남부의 툴레아르(톨리아라)에서 세운 마다가스카르의 정당. 탈식민화와 반제국주의를 내걸고 남부의 급진적 지식인과 농민을 대변했으며, 1971~1972년 치라나나 대통령을 물러나게 한 로타카 소요에서 큰 몫을 했다.",
+          "en": "A Malagasy party founded in July 1958 at Toliara (Tuléar) in the south by Monja Jaona, a nationalist who had taken part in the Malagasy Uprising of 1947. Standing for decolonisation and anti-imperialism, it represented radical intellectuals and peasants of the south, and it played a major part in the rotaka unrest of 1971–1972 that brought down President Tsiranana."
+        },
+        "body": {
+          "ko": "프랑스어 이름은 자료에 따라 「마다가스카르 민족독립운동」(Mouvement national pour l'indépendance de Madagascar) 또는 「마다가스카르 민족주의 독립운동」(Mouvement Nationaliste et Indépendant de Madagascar)으로 적힌다. 자오나는 1959년부터 1961년까지 톨리아라 시장을 지냈고, 1960년 독립 뒤 치라나나 대통령과 그 사회민주당(PSD)이 프랑스의 이익에 지나치게 기운다고 보았다. 1960년대 당의 강령에는 마오주의 경향이 있었다.\n\n1971년 4월 1~2일 앙드로이의 가난한 농민들이 일으킨 무장봉기를 자오나는 자신이 이끌었다고 밝혔다. 1천 명이 넘는 MONIMA 무장 당원이 툴레아르주의 군 초소 다섯 곳을 공격했으나 곧 진압되어 45명이 죽고 847명이 조사를 받았으며, 많은 당원이 노시라바 섬에 갇혔다. 1972년 좌파 야당이 된 당은 대학생과 도시 급진파의 지지를 얻었고, 이들이 이끈 시위는 그해 5월 치라나나의 사임으로 이어졌다.\n\n1976년 11월 대회에서 당은 새 체제에 사회주의적 선택을 실제로 실천하라고 요구하며 거리를 두었고, 1970년대 말 자오나는 라치라카에게 실망해 야당으로 돌아섰다. 1994년 자오나가 죽은 뒤 아들 몽자 로인데포가 당을 이끌었다. 2007년 당은 타움바트라·마나오바소아와 TMM 연합을 이루었으나, 그해 9월 총선 뒤로 국민의회에 의석이 없다.",
+          "en": "Its French name is given variously as Mouvement national pour l'indépendance de Madagascar or Mouvement Nationaliste et Indépendant de Madagascar. Jaona was mayor of Toliara from 1959 to 1961, and after independence in 1960 he came to see President Tsiranana and his Social Democratic Party (PSD) as unduly favourable to French interests. In the 1960s the party's programme had a Maoist tendency.\n\nJaona claimed authorship of the armed insurrection of 1–2 April 1971 by impoverished peasants in Androy. More than a thousand armed MONIMA members attacked five military posts in Tuléar province; the rising was quickly suppressed, with 45 MONIMA members killed and 847 held for questioning, and many were imprisoned on Nosy Lava. In 1972 the party, now a left-wing opposition movement, gained the support of university students and urban radicals whose demonstrations led to Tsiranana's resignation that May.\n\nAt its congress of November 1976 the party distanced itself from the new regime, demanding that it put its socialist choices into practice, and by the late 1970s Jaona had become disillusioned with Ratsiraka and gone into opposition. After Jaona's death in 1994 his son Monja Roindefo led the party. In 2007 it formed the TMM alliance with Tambatra and Manaovasoa, but since that year's National Assembly election it has had no seats."
+        },
+        "aliases": {
+          "ko": [
+            "MONIMA",
+            "모니마"
+          ],
+          "en": [
+            "MONIMA",
+            "Madagasikara otronin'ny Malagasy",
+            "Mouvement national pour l'indépendance de Madagascar",
+            "Mouvement Nationaliste et Indépendant de Madagascar"
+          ]
+        },
+        "people": [
+          "monja-jaona"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "MONIMA founded in July 1958 by Monja Jaona, one of the inspirers of the 1947 insurrection; programme of decolonisation and anti-imperialism; important role in the unrest that led to Tsiranana's fall in 1972.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_national_pour_l%27ind%C3%A9pendance_de_Madagascar",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Formed MONIMA in 1958 in Tulear; regional party of radical intellectuals and peasants from the south; instigated the 1971–72 rotaka.",
+            "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+            "locator": "en: lead; Nationalist politician"
+          },
+          {
+            "field": "body",
+            "claim": "Mayor of Toliara 1959–1961; viewed Tsiranana and the PSD as unduly favourable to French interests.",
+            "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Maoist tendency in the 1960s; November 1976 congress distanced the party from the regime; 2007 TMM alliance with Tambatra and Manaovasoa; no seats since 2007.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_national_pour_l%27ind%C3%A9pendance_de_Madagascar",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "body",
+            "claim": "French name given as Mouvement Nationaliste et Indépendant de Madagascar; led by Monja Roindefo; no longer represented since the 23 September 2007 elections.",
+            "source": "https://en.wikipedia.org/wiki/Madagascar_for_the_Malagasy",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "1–2 April 1971 Androy insurrection: over 1,000 armed MONIMA members attacked 5 posts; 45 killed, 847 held; prisoners sent to Nosy Lava; 1972 student and urban support leading to Tsiranana's resignation in May 1972; disillusioned with Ratsiraka by the late 1970s; died 1994.",
+            "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+            "locator": "en: Role in the 1971-72 rotaka; Opposition leader; lead"
+          },
+          {
+            "field": "period",
+            "claim": "Founded in July 1958; still celebrating its 55th anniversary in July 2013.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_national_pour_l%27ind%C3%A9pendance_de_Madagascar",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded in July 1958.",
+            "source": "https://fr.wikipedia.org/wiki/Mouvement_national_pour_l%27ind%C3%A9pendance_de_Madagascar",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "people",
+            "claim": "Monja Jaona founded and led the party until his death.",
+            "source": "https://en.wikipedia.org/wiki/Monja_Jaona",
+            "locator": "en: Nationalist politician"
+          }
+        ]
+      }
+    },
+    {
+      "id": "workers-socialist-federation",
+      "affiliationId": "party-british-wsf",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation"
+      ],
+      "fields": {
+        "term": {
+          "ko": "노동자사회주의연맹",
+          "en": "Workers' Socialist Federation"
+        },
+        "original": "Workers' Socialist Federation",
+        "category": "parties",
+        "period": {
+          "ko": "1914–1920",
+          "en": "1914–1920"
+        },
+        "startYear": 1914,
+        "endYear": 1920,
+        "definition": {
+          "ko": "실비아 팽크허스트가 이끈 영국의 사회주의 단체. 1914년 여성사회정치연합(WSPU)에서 쫓겨난 이스트런던 연맹에서 출발해 이름을 여러 번 바꾸며 여성 참정권 운동에서 반의회주의 좌익 공산주의로 나아갔다. 1920년 6월 공산당(제3인터내셔널 영국 지부)으로 이름을 바꾸었고, 1921년 1월 영국 공산당에 합류했다.",
+          "en": "A British socialist organisation led by Sylvia Pankhurst. Starting in 1914 from the East London Federation expelled from the Women's Social and Political Union (WSPU), it changed its name several times as it moved from women's suffrage to anti-parliamentary left communism. In June 1920 it became the Communist Party (British Section of the Third International), which merged into the Communist Party of Great Britain in January 1921."
+        },
+        "body": {
+          "ko": "이스트런던 연맹은 WSPU와 달리 민주적으로 운영되었고 조지 랜즈버리 같은 남성도 받아들였다. 실비아는 여성 참정권보다 넓은 문제를 다루고 독립노동당과 손잡는, 이스트엔드 노동계급에 뿌리를 둔 사회주의 조직을 원했고, 재산 공격 대신 노동자의 집단행동을 중시했다. 이 차이로 연맹은 1914년 초 WSPU에서 쫓겨나 이스트런던 서프러제트 연맹(ELFS)이 되었고 신문 《여성의 드레드노트》를 냈다. 제1차 세계대전이 터지자 치머발트 회의의 입장을 따라 전쟁에 반대했고, 원가 식당과 장난감 공장, 무료 진료소, 몬테소리 보육원을 세웠다.\n\n1916년 3월 단체는 노동자참정권연맹으로, 1917년 7월 신문은 《노동자의 드레드노트》로 이름을 바꾸었다. 연맹은 1916년 아일랜드 봉기를 지지했고, 10월 혁명을 열렬히 환영하면서 보통선거 요구에서 반의회주의로 돌아섰다. 「러시아에서 손 떼라」라는 구호로 연합국의 러시아 내전 간섭에 반대하는 운동을 벌였고, 1918년 5월 이름을 노동자사회주의연맹으로 바꾸었다. 1919년 6월 대회에서는 앞으로의 모든 선거를 거부하고 단일 공산당 결성을 위한 협상에 나서기로 했다.\n\n의회 참여와 노동당 가입 문제로 통합 협상이 막히자, 연맹은 1920년 6월 긴급대회를 열어 공산당(제3인터내셔널 영국 지부)을 세웠다. 레닌은 『공산주의에서의 「좌익」 소아병』에서 이 그룹을 다루었고, 코민테른 제2차 대회에서 팽크허스트를 설득해 통합에 동의하게 했다. 팽크허스트가 9월 체포된 가운데, 이 그룹은 1921년 1월 영국 공산당과 합쳤다.",
+          "en": "The East London Federation differed from its parent organisation in being democratic and in admitting men such as George Lansbury. Sylvia wanted an explicitly socialist organisation, aligned with the Independent Labour Party and based among the working class of the East End, that would tackle wider issues than women's suffrage and rely on collective workers' action rather than attacks on property. These differences led to the federation's expulsion from the WSPU, and in early 1914 it renamed itself the East London Federation of Suffragettes (ELFS) and launched the Women's Dreadnought. When the First World War broke out it opposed the war, supporting the positions of the Zimmerwald Conference, and set up cost-price restaurants, a toy factory, a free clinic and a Montessori nursery.\n\nIn March 1916 it renamed itself the Workers' Suffrage Federation, and in July 1917 its paper became the Workers' Dreadnought. It supported the Irish Rising of 1916, and its enthusiastic support for the October Revolution moved it from universal suffrage towards anti-parliamentarism. It campaigned against Allied intervention in the Russian Civil War under the slogan \"Hands off Russia\", and in May 1918 it renamed itself the Workers' Socialist Federation. At its conference of June 1919 it voted to ignore all future elections and to open discussions on forming a single communist party.\n\nWhen the unity negotiations stalled over parliamentary action and affiliation to the Labour Party, the federation called an emergency conference in June 1920 and formed the Communist Party (British Section of the Third International). Lenin dealt with the group in Left-Wing Communism: An Infantile Disorder and, at the Second Congress of the Comintern, persuaded Pankhurst to accept unity. With Pankhurst arrested in September, the group merged with the Communist Party of Great Britain in January 1921."
+        },
+        "aliases": {
+          "ko": [
+            "이스트런던 서프러제트 연맹",
+            "노동자참정권연맹"
+          ],
+          "en": [
+            "East London Federation of Suffragettes",
+            "Workers' Suffrage Federation",
+            "ELFS"
+          ]
+        },
+        "people": [
+          "sylvia-pankhurst"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Socialist party in the UK led by Sylvia Pankhurst; under many names it moved from women's suffrage to left communism.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "East London Federation democratic and including men such as George Lansbury; Sylvia's aims; expulsion from the WSPU; renamed ELFS in early 1914; Women's Dreadnought; Zimmerwald positions; restaurants, toy factory, clinic, Montessori nursery.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: East London Federation of the WSPU; East London Federation of Suffragettes"
+          },
+          {
+            "field": "body",
+            "claim": "Renamed Workers' Suffrage Federation in March 1916; Workers' Dreadnought from July 1917; supported the 1916 Irish Rising and the October Revolution; Hands off Russia; renamed Workers' Socialist Federation in May 1918; June 1919 conference to ignore elections and pursue a single communist party.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: Workers' Suffrage Federation; Workers' Socialist Federation"
+          },
+          {
+            "field": "body",
+            "claim": "June 1920 emergency conference formed the CP(BSTI); Lenin's Left-Wing Communism; Second Comintern Congress; Pankhurst arrested in September; merger with the CPGB in January 1921.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: Communist Party (British Section of the Third International)"
+          },
+          {
+            "field": "period",
+            "claim": "Renamed ELFS in early 1914 after expulsion from the WSPU; became the CP(BSTI) in June 1920.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: East London Federation of Suffragettes; Communist Party (BSTI)"
+          },
+          {
+            "field": "startYear",
+            "claim": "Became an independent organisation, the ELFS, in early 1914.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: East London Federation of Suffragettes"
+          },
+          {
+            "field": "endYear",
+            "claim": "Formed the Communist Party (BSTI) in June 1920.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: Communist Party (British Section of the Third International)"
+          },
+          {
+            "field": "people",
+            "claim": "Led by Sylvia Pankhurst.",
+            "source": "https://en.wikipedia.org/wiki/Workers%27_Socialist_Federation",
+            "locator": "en: lead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "communist-party-of-estonia",
+      "affiliationId": "party-estonian-communist",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia",
+        "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+        "https://en.wikipedia.org/wiki/Viktor_Kingissepp"
+      ],
+      "fields": {
+        "term": {
+          "ko": "에스토니아 공산당",
+          "en": "Communist Party of Estonia"
+        },
+        "original": "Eestimaa Kommunistlik Partei (EKP)",
+        "category": "parties",
+        "period": {
+          "ko": "1920–1991",
+          "en": "1920–1991"
+        },
+        "startYear": 1920,
+        "endYear": 1991,
+        "definition": {
+          "ko": "1920년 11월 5일 러시아 공산당(볼셰비키)의 에스토니아 조직들이 따로 떨어져 나와 세운 공산당. 독립 에스토니아 공화국에서는 1940년까지 금지된 지하 정당으로 코민테른의 지도를 받았고, 1940년 소련의 병합 뒤 전연방 공산당(볼셰비키)에 합쳐져 에스토니아 SSR의 집권당 조직이 되었다. 1990년 소련 공산당에서 떨어져 나가려는 다수파와 친소파로 갈라졌다.",
+          "en": "The communist party formed on 5 November 1920 when the Estonian organisations of the Russian Communist Party (Bolsheviks) were set up as a separate party. Banned in the independent Republic of Estonia until 1940, it worked underground under the direction of the Comintern; after the Soviet annexation of 1940 it was merged into the All-Union Communist Party (Bolsheviks) and became its ruling organisation in the Estonian SSR. In 1990 it split between a pro-sovereignty majority and a pro-Soviet remainder."
+        },
+        "body": {
+          "ko": "전신은 1914년 6월에 만든 러시아 사회민주노동당(볼셰비키) 북부발트 위원회다. 2월 혁명 뒤 에스토니아 볼셰비키는 1917년 여름 탈린 시의회에서 다수를 차지했고, 제헌의회 선거에서 에스토니아 표의 40.2%를 얻었다. 그러나 1918년 2월 말 독일군의 침공으로 권력을 잃고 소비에트 러시아로 망명했으며, 1918년 11월 독립 에스토니아 정부가 들어선 뒤에는 적군의 침공을 지지해 점령 지역에 에스토니아 노동 코뮌을 세웠다. 빅토르 킹기세프는 1918년 11월 에스토니아로 돌아와 금지된 당을 조직했고, 1920년 11월 탈린에서 열린 제1차 대회를 주재했다. 이 대회에서 당은 코민테른의 한 지부로 가입했다.\n\n에스토니아 공화국은 1920년부터 1940년까지 당을 금지했다. 당은 산업 노동자와 학생, 교사 사이에 상당한 지지가 있었고 노동조합 운동에서 강했으며, 당의 외곽 조직은 의회 선거에서 늘 5% 넘게 득표했다. 그러나 1924년 12월 1일의 쿠데타 시도가 실패한 뒤 지지를 빠르게 잃어 당원이 70~200명으로 줄었고, 1940년 6월 병합 무렵 당 자체 기록으로 150명이 남았다. 조작된 1940년 총선에서 당 후보들은 「에스토니아 근로인민연합」 명단에 들어갔다.\n\n1940년 10월 8일 당은 전연방 공산당(볼셰비키)에 합쳐져 에스토니아 공산당(볼셰비키)이 되었고, 1952년 소련 공산당으로 개칭할 때 「(볼셰비키)」를 뺐다. 1950년 토박이 지도자 다수가 숙청되고 러시아에서 자란 에스토니아인들로 바뀌었으며, 요한네스 캐빈이 1950년부터 1978년까지 제1서기를 지냈다. 1990년 주권을 지지하는 다수파가 소련 공산당에서 떨어져 나가 에스토니아 민주노동당이 되었고, 친소파는 「소련 공산당 강령」 에스토니아 공산당으로 다시 조직했다.",
+          "en": "Its predecessor was the Northern Baltic Committee of the RSDLP(b), created in June 1914. After the February Revolution the Estonian Bolsheviks won a majority on the Tallinn city council in the summer of 1917 and took 40.2 per cent of the Estonian vote in the Constituent Assembly election. Their rule ended with the German invasion at the end of February 1918 and the party went into exile in Soviet Russia; after an independent Estonian government took office in November 1918 it supported the Red Army's invasion and set up the Estonian Workers' Commune in the occupied areas. Viktor Kingissepp returned to Estonia in November 1918 to organise the banned party and presided over its first congress in Tallinn in November 1920, which joined the Comintern as one of its sections.\n\nThe Republic of Estonia banned the party from 1920 to 1940. It had significant support among industrial workers, students and teachers and a strong position in the trade unions, and its front organisations always won more than 5 per cent in parliamentary elections. After the failed coup attempt of 1 December 1924, however, it lost support rapidly and its membership fell to around 70–200; by its own records only 150 members remained at the Soviet annexation in June 1940. In the rigged election of 1940 its candidates stood on the list of the Estonian Working People's Union.\n\nOn 8 October 1940 the party was merged into the All-Union Communist Party (Bolsheviks) as the Communist Party of Estonia (Bolsheviks), dropping the \"(b)\" when the parent party was renamed in 1952. In 1950 many of its original native leaders were purged and replaced by Estonians who had grown up in Russia, and Johannes Käbin served as first secretary from 1950 to 1978. In 1990 the pro-sovereignty majority separated from the CPSU and became the Estonian Democratic Labour Party, while the pro-Soviet faction reconstituted itself as the Communist Party of Estonia (CPSU platform)."
+        },
+        "aliases": {
+          "ko": [
+            "EKP"
+          ],
+          "en": [
+            "Eestimaa Kommunistlik Partei",
+            "EKP",
+            "Estonian Communist Party",
+            "Communist Party of Estonia (Bolsheviks)"
+          ]
+        },
+        "people": [
+          "viktor-kingissepp",
+          "jaan-anvelt",
+          "nikolai-karotamm",
+          "johannes-kabin"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "EKP founded as a separate party on 5 November 1920 from the Estonian organisations of the RCP(b); banned 1920–1940; merged with the AUCP(b) after the 1940 annexation; split in 1990.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia",
+            "locator": "en: lead; History; Split of 1990"
+          },
+          {
+            "field": "definition",
+            "claim": "Operated 1920–1940 under Comintern direction, 1940–1990 as a territorial organisation of the CPSU, 1990–1991 as a distinct part of the CPSU.",
+            "source": "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+            "locator": "et: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Northern Baltic Committee June 1914; Tallinn council majority summer 1917; 40.2% in Constituent Assembly election; German invasion February 1918; Estonian Workers' Commune; first congress 5 November 1920.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "First congress in Tallinn on 5 November 1920 joined the Comintern as a section.",
+            "source": "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+            "locator": "et: Ajalugu"
+          },
+          {
+            "field": "body",
+            "claim": "Kingissepp returned in November 1918 to organise the banned party and presided over its first congress in November 1920.",
+            "source": "https://en.wikipedia.org/wiki/Viktor_Kingissepp",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Support among workers, students and teachers; trade unions; front organisations above 5%; failed coup of 1 December 1924; membership 70–200; 150 members in June 1940; Estonian Working People's Union bloc in 1940.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "Merged into the AUCP(b) on 8 October 1940; EK(b)P; (b) dropped in 1952; 1950 purge; Käbin first secretary 1950–1978; 1990 split into the Estonian Democratic Labour Party and the CPSU-platform party.",
+            "source": "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+            "locator": "et: lead; Juhtkond"
+          },
+          {
+            "field": "period",
+            "claim": "Active 1920–1940, 1940–1990 and 1990–1991.",
+            "source": "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+            "locator": "et: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded on 5 November 1920.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia",
+            "locator": "en: History"
+          },
+          {
+            "field": "endYear",
+            "claim": "Existed as a part of the CPSU until 1991.",
+            "source": "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+            "locator": "et: lead"
+          },
+          {
+            "field": "people",
+            "claim": "Kingissepp a founder and leading member; Anvelt listed among prominent Estonian communists; Karotamm and Käbin first secretaries.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Estonia",
+            "locator": "en: Prominent Estonian communists; Second Secretaries"
+          },
+          {
+            "field": "people",
+            "claim": "Karotamm EK(b)P secretary 1941–1944 and first secretary; Käbin first secretary 1950–1978.",
+            "source": "https://et.wikipedia.org/wiki/Eestimaa_Kommunistlik_Partei",
+            "locator": "et: Juhtkond"
+          }
+        ]
+      }
+    },
+    {
+      "id": "communist-party-of-lithuania",
+      "affiliationId": "party-lithuanian-communist",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Communist_Party_of_Lithuania",
+        "https://lt.wikipedia.org/wiki/Lietuvos_komunist%C5%B3_partija",
+        "https://en.wikipedia.org/wiki/Vincas_Kapsukas"
+      ],
+      "fields": {
+        "term": {
+          "ko": "리투아니아 공산당",
+          "en": "Communist Party of Lithuania"
+        },
+        "original": "Lietuvos komunistų partija (LKP)",
+        "category": "parties",
+        "period": {
+          "ko": "1918–1991",
+          "en": "1918–1991"
+        },
+        "startYear": 1918,
+        "endYear": 1991,
+        "definition": {
+          "ko": "1918년 10월 초 빌뉴스에서 창립대회를 연 리투아니아의 공산당. 1920년부터 1940년까지 독립 리투아니아에서 불법 정당으로 활동했고, 1940년 소련 병합 뒤 전연방 공산당(볼셰비키)에 합쳐져 리투아니아 SSR의 유일 집권당이 되었다. 1989년 12월 소련 공산당에서 독립을 선언했고, 소련 공산당에 남은 분파는 1991년 8월 23일 금지되었다.",
+          "en": "The communist party of Lithuania, whose founding congress met in Vilnius in early October 1918. It worked illegally in independent Lithuania from 1920 to 1940, and after the Soviet annexation of 1940 it was merged into the All-Union Communist Party (Bolsheviks) and became the sole ruling party of the Lithuanian SSR. It declared its independence from the CPSU in December 1989, and the faction that stayed loyal to the CPSU was banned on 23 August 1991."
+        },
+        "body": {
+          "ko": "당의 전신은 1917년 가을 러시아 사회민주노동당(볼셰비키) 안에 꾸려진 리투아니아 지부이며, 이 지부가 독립 정당이 되는 데는 중앙국 위원인 빈차스 카프수카스와 지그마스 안가리에티스의 몫이 가장 컸다. 1918년 10월 초 창립대회 뒤 당은 12월 8일 빌뉴스 소비에트를 통해 카프수카스를 수반으로 하는 임시 혁명 노동자농민정부를 세웠고, 정부는 12월 16일 리투아니아 소비에트 사회주의 공화국을 선포했다. 1919년 2월 리투아니아-벨로루시 소비에트 사회주의 공화국(리트벨)이 세워지자 당은 3월 벨로루시 공산당과 합쳐 리투아니아·벨로루시 공산당이 되었고, 카프수카스가 중앙위원회 의장으로 뽑혔다.\n\n소비에트 정권이 무너진 뒤 당은 1920년부터 1940년까지 불법으로 활동했다. 일부 당원은 1922년 의회 선거에 「노동자 그룹」이라는 이름으로 나가 5.0%(약 4만 표)를 얻어 5석을 차지했지만, 1923년 선거에서는 지지의 절반을 잃었다. 1921년부터 1940년까지 당은 코민테른의 리투아니아 지부였고, 안가리에티스가 1921년 7월부터 코민테른 집행위원회에 당을 대표했다.\n\n1940년 소련 병합 무렵 당은 안타나스 스니에치쿠스가 이끌었고, 전연방 공산당(볼셰비키)에 합쳐져 리투아니아 공산당(볼셰비키)이 되었다가 1952년 옛 이름을 되찾았다. 중앙위원회 제1서기(늘 리투아니아인)가 사실상 나라를 다스렸고, 제2서기는 대개 모스크바가 보낸 러시아인이었다. 노래 혁명 중인 1989년 12월 24일 당은 소련 공산당에서 독립을 선언했고, 1990년 본류는 리투아니아 민주노동당으로 재편되었다. 미콜라스 부로케비추스가 이끈 친소 분파는 1991년 1월 사태에서 큰 역할을 했고, 1991년 8월 23일 금지되었다.",
+          "en": "The party's predecessor was the Lithuanian section of the RSDLP(b), organised in the autumn of 1917, and the largest contribution to its becoming a separate party came from Vincas Kapsukas and Zigmas Angarietis of the section's central bureau. After the founding congress of early October 1918, the Vilnius Soviet formed the Provisional Revolutionary Workers' and Peasants' Government under Kapsukas on 8 December, and on 16 December that government proclaimed the Lithuanian Soviet Socialist Republic. When the Lithuanian–Belorussian Soviet Socialist Republic (Litbel) was formed in February 1919, the party merged in March with the Belorussian communists into the Communist Party of Lithuania and Belorussia, with Kapsukas elected chairman of its central committee.\n\nAfter the fall of the Soviet republics the party worked illegally from 1920 to 1940. Some of its members stood in the 1922 parliamentary election as the \"Workers' Groups\", winning 5.0 per cent (about 40,000 votes) and five seats, but lost half of that support in 1923. From 1921 to 1940 the party was the Lithuanian section of the Comintern, represented on its Executive Committee from July 1921 by Angarietis.\n\nAt the time of the Soviet annexation in 1940 the party was headed by Antanas Sniečkus; it was merged into the All-Union Communist Party (Bolsheviks) as the Communist Party of Lithuania (Bolsheviks) and readopted its old name in 1952. The first secretary of its central committee, always a Lithuanian, was the de facto ruler of the country, while the second secretary was for most of the Soviet era a Moscow-appointed Russian. On 24 December 1989, during the Singing Revolution, the party declared its independence from the CPSU, and in 1990 its main body reorganised itself as the Democratic Labour Party of Lithuania. The pro-CPSU faction under Mykolas Burokevičius played a major role in the January Events of 1991 and was banned on 23 August 1991."
+        },
+        "aliases": {
+          "ko": [
+            "LKP"
+          ],
+          "en": [
+            "Lietuvos komunistų partija",
+            "LKP",
+            "Lithuanian Communist Party",
+            "Communist Party of Lithuania (Bolsheviks)"
+          ]
+        },
+        "people": [
+          "vincas-kapsukas",
+          "zigmas-angarietis",
+          "antanas-snieckus",
+          "mykolas-burokevicius"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Established in early October 1918; illegal 1920–1940; merged with the CPSU(b) in 1940; declared independence from the CPSU on 24 December 1989; banned 23 August 1991.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Lithuania",
+            "locator": "en: lead; History"
+          },
+          {
+            "field": "definition",
+            "claim": "Founding congress of the Communist Party of Lithuania took place in Vilnius in early October 1918.",
+            "source": "https://en.wikipedia.org/wiki/Vincas_Kapsukas",
+            "locator": "en: Communist revolutionary"
+          },
+          {
+            "field": "body",
+            "claim": "Lithuanian section of the RSDLP(b) in autumn 1917; Kapsukas and Angarietis made the largest contribution; provisional government 8 December 1918; Lithuanian SSR proclaimed 16 December; Litbel February 1919; merged party March 1919 with Kapsukas as CC chairman; Angarietis Comintern ECCI representative from July 1921; Comintern section 1921–1940.",
+            "source": "https://lt.wikipedia.org/wiki/Lietuvos_komunist%C5%B3_partija",
+            "locator": "lt: Istorija (Atsiradimas; Litbelas; LKP veikla tarpukario Lietuvoje)"
+          },
+          {
+            "field": "body",
+            "claim": "1922 election as Workers' Groups, 5.0%, five seats; half lost in 1923; Sniečkus headed the party in 1940; LKP(b); name readopted 1952; first and second secretaries; 1990 Democratic Labour Party; Burokevičius faction and January 1991 events.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Lithuania",
+            "locator": "en: History"
+          },
+          {
+            "field": "period",
+            "claim": "Active 1918–1991.",
+            "source": "https://lt.wikipedia.org/wiki/Lietuvos_komunist%C5%B3_partija",
+            "locator": "lt: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Established in early October 1918.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Lithuania",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Banned on 23 August 1991.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Lithuania",
+            "locator": "en: History"
+          },
+          {
+            "field": "people",
+            "claim": "Kapsukas and Angarietis central to founding; Sniečkus headed the party in 1940; Burokevičius led the pro-CPSU faction.",
+            "source": "https://lt.wikipedia.org/wiki/Lietuvos_komunist%C5%B3_partija",
+            "locator": "lt: Istorija (Atsiradimas; Litbelas; LKP veikla tarpukario Lietuvoje)"
+          },
+          {
+            "field": "people",
+            "claim": "Sniečkus head of the LKP in 1940; Burokevičius leader of the CPSU-platform party.",
+            "source": "https://en.wikipedia.org/wiki/Communist_Party_of_Lithuania",
+            "locator": "en: History"
+          }
+        ]
+      }
+    },
+    {
+      "id": "union-of-socialists-revolutionaries-maximalists",
+      "affiliationId": "party-russian-sr-maximalists",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Union_of_Socialists-Revolutionaries-Maximalists",
+        "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%BE%D0%B2-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2"
+      ],
+      "fields": {
+        "term": {
+          "ko": "사회혁명당 최대주의자 연합",
+          "en": "Union of Socialists-Revolutionaries-Maximalists"
+        },
+        "original": "Союз социалистов-революционеров-максималистов (ССРМ)",
+        "category": "parties",
+        "period": {
+          "ko": "1906–1920",
+          "en": "1906–1920"
+        },
+        "startYear": 1906,
+        "endYear": 1920,
+        "definition": {
+          "ko": "1906년 사회혁명당에서 갈라져 나온 러시아 제국의 급진 인민주의 정당. 토지와 공장을 비롯한 모든 생산수단의 즉각적인 사회화, 곧 「최대 강령」의 전면 실행과 「노동자 공화국」 수립을 요구했고, 정치 테러뿐 아니라 공장주·지주를 겨냥한 「경제 테러」와 수탈을 옹호했다.",
+          "en": "A radical populist party of the Russian Empire that split from the Socialist Revolutionary Party in 1906. It demanded the immediate socialisation of the land, factories and all other means of production, that is, the full implementation of the 'maximum programme', and a 'Toilers' Republic', and it endorsed 'economic terror' against factory owners and landowners and expropriations as well as political terror."
+        },
+        "body": {
+          "ko": "최대주의자들은 농촌의 테러리스트, 「모스크바 반대파」 등 사회혁명당 안의 급진 반대파였고, 1906년 이마트라에서 열린 사회혁명당 제2차 대회에서 공식적으로 갈라졌다. 첫 창립 협의회는 1906년 10월 핀란드의 아보(투르쿠)에서 열렸다. 이들은 체르노프와 결부된 사회혁명당의 「2단계 혁명」론을 거부하고, 해방된 근로 대중이 부르주아 공화국과 점진적 개혁에 머물리라는 생각이야말로 비현실적이라고 보았다. 국가 자체에 반대하지 않고 혁명적 인민 독재를 구상해 무정부주의자와의 비교를 거부했으며, 의회 민주주의를 거부하고 국가두마 선거를 보이콧했다.\n\n당의 실제 활동은 대부분 범죄적 방법의 자금 조달과 관리·자본가·지주에 대한 폭력이었다. 1906년 3월 모스크바 상호신용조합에서 87만 5천 루블을 빼앗았고, 8월에는 스톨리핀 암살을 시도해 100명이 넘는 사상자를 냈으며, 10월에는 페테르부르크 포나르니 골목에서 세관 현금 수송 마차를 습격해 40만 루블을 탈취했다. 1906~1907년 이들이 일으킨 테러는 50건쯤이었다. 대표적 인물로는 「타고난 독재자」로 불린 지도자 소콜로프와 이론가 로진스키(우스티노프), 블라디미르 마주린 등이 있었다.\n\n1905~1907년 혁명이 실패한 뒤 체포로 큰 타격을 입어 1911년 무렵 활동을 멈추었으나, 1917년 2월 혁명 뒤 되살아나 10월 무장봉기와 소비에트 대회, 전러시아 중앙집행위원회에 참여했다. 1918년 4월 제3차 전러시아 협의회는 「노동자 공화국 헌법 기초안」을 승인했다. 연합은 1919년 분열했고, 1920년 일부는 러시아 공산당(볼셰비키)에 들어가고 다른 일부는 옛 좌파 사회혁명당원들과 합쳤다.",
+          "en": "The Maximalists were agrarian terrorists, the 'Moscow Opposition' and other radical dissidents within the Socialist Revolutionary Party, and they split from it officially at its Second Congress at Imatra in 1906; their first founding conference met at Åbo (Turku) in Finland in October 1906. They rejected the 'two-stage' revolution associated with Chernov, arguing that it was unrealistic to think the liberated toiling masses would content themselves with a bourgeois republic and gradual reform. They were not opposed to the state as such and envisaged a popular revolutionary dictatorship, rejecting the comparison with anarchists; they also rejected parliamentary democracy and boycotted the State Duma elections.\n\nIn practice much of the party's energy went into fundraising by criminal means and violence against officials, capitalists and landowners. In March 1906 it seized 875,000 roubles from the Moscow Mutual Credit Society; in August it attempted to assassinate Stolypin, killing or wounding more than a hundred people; and in October it attacked a customs cash carriage in Fonarny Lane in St Petersburg and took 400,000 roubles. It was responsible for about fifty terrorist acts in 1906–1907. Prominent Maximalists included the principal leader M. I. Sokolov, regarded by his followers as a 'born dictator', the theorist E. Iu. Lozinsky ('Ustinov') and Vladimir Mazurin.\n\nDecimated by arrests after the failed revolution of 1905–1907, the party had ceased to function by 1911, but it revived after the February Revolution of 1917 and took part in the October armed uprising, the congresses of soviets and the All-Russian Central Executive Committee. In April 1918 its Third All-Russian Conference approved a draft of the foundations of a constitution of the Toilers' Republic. The Union split in 1919, and in 1920 some Maximalists joined the Russian Communist Party (Bolsheviks) while others united with former Left SRs."
+        },
+        "aliases": {
+          "ko": [
+            "SSRM"
+          ],
+          "en": [
+            "SSRM",
+            "SR Maximalists",
+            "Socialist-Revolutionary Maximalists",
+            "Union of Socialist-Revolutionary Maximalists"
+          ]
+        },
+        "people": [
+          "vladimir-mazurin"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Radical wing expelled from the PSR in 1906; demanded full implementation of the maximum programme; endorsed political and economic terror and expropriations; Toilers' Republic.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Socialists-Revolutionaries-Maximalists",
+            "locator": "en: lead; Ideology and history"
+          },
+          {
+            "field": "body",
+            "claim": "Agrarian terrorists and Moscow Opposition; split at the Second Congress at Imatra in 1906; rejected Chernov's two-stage theory; popular revolutionary dictatorship; rejected anarchist comparison; boycotted Duma elections; criminal fundraising and violence; Sokolov, Lozinsky, Mazurin.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Socialists-Revolutionaries-Maximalists",
+            "locator": "en: lead; Ideology and history"
+          },
+          {
+            "field": "body",
+            "claim": "First founding conference at Åbo, 10–24 October 1906; Moscow Mutual Credit Society 875,000 roubles; Stolypin attempt with over 100 casualties; Fonarny Lane 400,000 roubles; about 50 terrorist acts 1906–07; ceased by 1911, revived after February 1917; October uprising, soviet congresses, VTsIK; April 1918 constitution draft; split 1919; 1920 part to RKP(b), part with former Left SRs.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%BE%D0%B2-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2",
+            "locator": "ru: История; Эсеры-максималисты о политических преобразованиях"
+          },
+          {
+            "field": "period",
+            "claim": "Split from the PSR in 1906; split in 1919 and dispersed in 1920.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%BE%D0%B2-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2",
+            "locator": "ru: lead; История"
+          },
+          {
+            "field": "startYear",
+            "claim": "Split from the PSR in 1906.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Socialists-Revolutionaries-Maximalists",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "In 1920 part joined the RKP(b) and part united with former Left SRs.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2-%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%BE%D0%B2-%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2",
+            "locator": "ru: История"
+          },
+          {
+            "field": "people",
+            "claim": "V. Mazurin listed among prominent Maximalists and leaders.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_Socialists-Revolutionaries-Maximalists",
+            "locator": "en: Ideology and history"
+          }
+        ]
+      }
+    },
+    {
+      "id": "union-of-the-russian-people",
+      "affiliationId": "party-russian-union-of-russian-people",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Union_of_the_Russian_People"
+      ],
+      "fields": {
+        "term": {
+          "ko": "러시아 인민연맹",
+          "en": "Union of the Russian People"
+        },
+        "original": "Союз русского народа (СРН)",
+        "category": "parties",
+        "period": {
+          "ko": "1905–1917",
+          "en": "1905–1917"
+        },
+        "startYear": 1905,
+        "endYear": 1917,
+        "definition": {
+          "ko": "1905년 혁명 직후 알렉산드르 두브로빈을 의장으로 세워진 러시아 제국의 왕당파 극우 민족주의 정당으로, 1905~1917년 검은 백인대 계열 군주주의 조직 가운데 가장 중요한 조직이었다. 대러시아 민족주의와 차르를 중심으로 민중을 결집하려 했고 반사회주의·반자유주의, 무엇보다 반유대주의를 표방했다. 1917년 2월 혁명 뒤 해산되었다.",
+          "en": "A royalist far-right nationalist party of the Russian Empire, founded after the Revolution of 1905 with Alexander Dubrovin as chairman, and the most important of the Black-Hundredist monarchist organisations between 1905 and 1917. It aimed to rally the people behind Great Russian nationalism and the Tsar, espousing anti-socialist, anti-liberal and above all antisemitic views, and it was dissolved after the February Revolution of 1917."
+        },
+        "body": {
+          "ko": "10월 선언이 나온 닷새 뒤 블라디미르 푸리슈케비치, 아폴론 마이코프, 파벨 불라첼, 블라디미르 그링무트 등이 두브로빈의 집에 모여 정치 조직을 세우기로 했고, 1905년 11월 8일(구력 10월 26일) 러시아 인민연맹의 창립을 공식 발표했다. 니콜라이 2세가 그 창설을 직접 승인했다. 11월 21일 페테르부르크의 미하일롭스키 마네주에서 약 2천 명이 모인 첫 대중 집회를 열었고, 1906년에는 회원이 30만 명을 넘었다. 보수적인 정교회 성직자들이 연맹과 손잡았고, 크론시타트의 요안과 수도사 일리오도르, 주교 게르모겐 같은 이름난 성직자들도 연맹을 지지했다.\n\n연맹은 「단일 불가분의 대러시아」와 지식인과 유대인이 장악하기 전에 있었다고 믿은 「인민 전제」의 회복을 내걸었고, 국가두마를 입법 기관이 아니라 차르에게 인민의 필요를 알리는 기구로 보았다. 유대인은 기독교로 개종했더라도 가입할 수 없었고, 강령은 제국의 유대인 전체가 두마 의원을 셋 넘게 뽑지 못하게 하자고 제안했다. 「검은 백인대」라 불린 준군사 무장대는 거리에서 혁명가들과 폭력적으로 싸웠고, 지도자들은 카데트 두마 의원 미하일 게르첸시테인과 그리고리 이올로스 살해를 비롯한 정치 암살을 조직했다. 그 책임은 뒷날 지도자 니콜라이 마르코프가 시인했다.\n\n부의장 푸리슈케비치는 1907년 내부 분쟁으로 연맹을 떠나 미하일 대천사 러시아 인민연맹을 세웠고, 1908년부터 연맹은 여러 분파로 갈라졌다. 1912년 8월 두브로빈 분파가 따로 등록했고, 본류의 지도권은 1912년 11월 마르코프에게 넘어갔다. 1917년 2월 혁명 뒤 모든 검은 백인대 조직이 강제로 해산·금지되었고, 두브로빈은 체포되었다. 연구자들 사이에서는 연맹을 파시즘의 초기 사례로 보는 견해와 그에 못 미친 원형적 선구로 보는 견해가 엇갈린다.",
+          "en": "Five days after the October Manifesto, Vladimir Purishkevich, Apollo Maikov, Pavel Bulatsel, Vladimir Gringmut and others met at Dubrovin's home and agreed to set up a political organisation, and on 8 November [O.S. 26 October] 1905 they formally announced the founding of the Union of the Russian People; Emperor Nicholas II personally approved its creation. Its first public rally, with about 2,000 people, was held on 21 November in the Mikhailovsky Manege in St Petersburg, and by 1906 it had over 300,000 members. Conservative Orthodox clergy allied with it, and prominent churchmen such as John of Kronstadt, the monk Iliodor and Bishop Hermogenes supported it.\n\nThe Union called for 'a Great Russia, united and indivisible' and the restoration of a 'popular autocracy' that it believed had existed before Russia was taken over by intellectuals and Jews, and it saw the State Duma not as a legislature but as a body to inform the Tsar of the people's needs. Jews were barred from membership even if they had converted to Christianity, and its programme proposed that the entire Jewish population of the Empire elect no more than three Duma deputies. Its paramilitary bands, the Black Hundreds, fought revolutionaries violently in the streets, and its leaders organised political assassinations, among them the murders of the Kadet Duma deputies Mikhail Herzenstein and Grigory Iollos, responsibility for which was later acknowledged by its leader Nikolai Markov.\n\nDeputy chairman Purishkevich broke away after internal disputes in 1907 to found the Michael the Archangel Russian People's Union, and from 1908 the Union split into competing factions: Dubrovin's own group registered separately in August 1912, and leadership of the main body passed to Markov in November 1912. After the February Revolution of 1917 all Black-Hundredist organisations were forcibly dissolved and banned, and Dubrovin was arrested. Scholars disagree over whether the Union was an early example of fascism or a proto-fascist precursor that fell short of it."
+        },
+        "aliases": {
+          "ko": [
+            "러시아국민연맹"
+          ],
+          "en": [
+            "URP",
+            "Soyuz russkogo naroda",
+            "SRN"
+          ]
+        },
+        "people": [
+          "vladimir-purishkevich"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Royalist far-right nationalist party, the most important Black-Hundredist organisation 1905–1917; founded October 1905; Great Russian nationalism and the Tsar; anti-socialist, anti-liberal, antisemitic; dissolved in 1917 after the February Revolution.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Meeting at Dubrovin's home five days after the October Manifesto with Purishkevich, Maikov, Bulatzel, Gringmut; founding announced 8 November [O.S. 26 October] 1905; approved by Nicholas II; Mikhailovsky Manege rally of about 2,000; clergy support including John of Kronstadt, Iliodor and Hermogenes.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: Creation; 1905–1906; Support"
+          },
+          {
+            "field": "body",
+            "claim": "Over 300,000 members by 1906; Black Hundreds bands; murders of Herzenstein and Iollos acknowledged by Markov; popular autocracy; Duma role; Jews barred; three-deputy proposal.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: lead; Government and administration; National minorities"
+          },
+          {
+            "field": "body",
+            "claim": "Purishkevich deputy chairman until 1907, founded the Michael the Archangel Russian People's Union; factions from 1908; Dubrovin group registered August 1912; Markov leader from November 1912; all Black-Hundredist organisations dissolved after February 1917; Dubrovin arrested; fascism debate.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: Party leaders and organisation; 1906–1917; Fascism, nationalism and scholarly debate"
+          },
+          {
+            "field": "period",
+            "claim": "Active 1905–1917.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founding announced on 8 November 1905.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: 1905–1906"
+          },
+          {
+            "field": "endYear",
+            "claim": "Dissolved in 1917 after the February Revolution.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: lead"
+          },
+          {
+            "field": "people",
+            "claim": "Purishkevich a founder and deputy chairman.",
+            "source": "https://en.wikipedia.org/wiki/Union_of_the_Russian_People",
+            "locator": "en: 1905–1906; Party leaders and organisation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "le-faisceau",
+      "affiliationId": "party-french-faisceau",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Le_Faisceau",
+        "https://fr.wikipedia.org/wiki/Le_Faisceau",
+        "https://en.wikipedia.org/wiki/Georges_Valois"
+      ],
+      "fields": {
+        "term": {
+          "ko": "르 페소",
+          "en": "Le Faisceau"
+        },
+        "original": "Le Faisceau",
+        "category": "parties",
+        "period": {
+          "ko": "1925–1928",
+          "en": "1925–1928"
+        },
+        "startYear": 1925,
+        "endYear": 1928,
+        "definition": {
+          "ko": "조르주 발루아가 1925년 11월 11일 극우 동맹으로 세운 단명한 프랑스의 파시즘 정당. 이탈리아의 파시와 국가파시스트당에서 이름을 빌리고 제복과 의식, 행진 같은 준군사 양식을 따랐으며, 강력한 권위주의 지도자가 이끄는 모든 사회계급의 「국민」 국가를 내걸었다. 1928년 내분 끝에 사라졌다.",
+          "en": "A short-lived French fascist party founded on 11 November 1925 as a far-right league by Georges Valois. It took its name from the Italian Fasci and the National Fascist Party and adopted their paramilitary style of uniforms, staged ceremonies and parades, and it called for a \"national\" state for all social classes under a strong authoritarian leader. It broke up in 1928 amid internal dissension."
+        },
+        "body": {
+          "ko": "당에 앞서 1925년 2월 26일 주간지로 창간된 《르 누보 시에클》이 있었고, 이 신문은 당이 세워진 뒤 일간지가 되었다. 악시옹 프랑세즈는 새 당을 경쟁자로 보고 거세게 공격했는데, 1925년 12월부터 1926년 4월까지 파리의 악시옹 프랑세즈 회원 약 1천8백 명이 이 당으로 넘어왔다고 한다. 당의 목표에는 쿠데타와 독재가 들어 있었지만 이를 위한 구체적 조치는 없었고, 누가 독재자가 될지도 분명하지 않았다.\n\n옛 아나르코생디칼리스트로 오를레앙파로 돌아섰다가 악시옹 프랑세즈를 떠난 발루아, 그리고 당에 자금을 댄 직물 기업가 외젠 마통과 향수 제조업자 프랑수아 코티는 모두 코포라티즘을 내세웠으나 그 뜻이 달랐다. 발루아에게 그것은 생산자가 운영하는 경제였고, 마통에게는 국가의 간섭 없이 기업가가 이끄는 자본주의였다. 이 차이로 마통과 코티는 창당 직후 떠났고, 당은 재정난에 빠졌다. 발루아는 파시즘을 「부르주아 지배」에 대한 반란으로 보아 마르크스주의와 「형제 적」이라 불렀고, 당은 좌파에서도 페리괴의 옛 공산당 시장 마르셀 들라그랑주와 아나르코생디칼리스트 위베르 라가르델 등을 끌어들였다. 뒷날 프랑시슴 운동을 세운 마르셀 뷔카르도 당원이었다.\n\n준군사 조직 「군단」은 주로 악시옹 프랑세즈의 카믈로 뒤 루아의 공격에 맞선 자위에 쓰였고, 공산당과의 큰 충돌은 1926년 6월 27일 랭스 집회 한 번뿐이었다. 1926년 11월 14일에는 악시옹 프랑세즈 본부를 습격해 총격전을 벌였다. 혁명적 행동을 바라던 당원들은 떠나기 시작했고, 1926년 말 레몽 푸앵카레의 우파 정부가 들어서고 프랑이 안정되자 쇠퇴는 빨라졌다. 당은 1928년 해체되었다. 좌경화하던 발루아는 당에서 쫓겨나 1928년 6월 10일 공화주의 생디칼리스트당을 세웠고, 이탈리아 파시즘에 충실했던 나머지는 혁명파시스트당을 만들었다.",
+          "en": "The party was preceded by its newspaper, Le Nouveau Siècle, founded as a weekly on 26 February 1925, which became a daily after the party's creation. The Action Française regarded the new party as a rival and attacked it bitterly; some 1,800 Paris members of the Action Française reportedly joined it between December 1925 and April 1926. Its stated aims included a coup d'état and a dictatorship, but it never took concrete steps towards them, nor was it clear who the dictator would be.\n\nValois, a former anarcho-syndicalist who had converted to Orléanism and then left the Action Française, and the industrialists who financed the party, the textile owner Eugène Mathon and the perfume manufacturer François Coty, all claimed to favour corporatism but meant different things by it: for Valois an economy run by the producers, for Mathon a capitalism led by businessmen without state interference. These differences led Mathon and Coty to leave shortly after the party's foundation, leaving it in financial difficulty. Valois saw fascism as a revolt against \"bourgeois rule\" and called it and Marxism \"brother enemies\", and the party recruited some figures from the left, notably Marcel Delagrange, the former Communist mayor of Périgueux, and the anarcho-syndicalist Hubert Lagardelle. Marcel Bucard, later founder of the Mouvement Franciste, was also a member.\n\nIts paramilitary \"Légions\" served mostly as self-defence against the Action Française's Camelots du Roi, and its only major clash with the Communists came at their meeting in Rheims on 27 June 1926. On 14 November 1926 it raided the Action Française offices, and shots were exchanged. Members who had hoped for revolutionary action began to leave, and the decline quickened at the end of 1926 with the formation of Raymond Poincaré's right-wing government and the stabilisation of the franc. The party broke up in 1928: Valois, whose politics were moving to the left, was excluded and founded the Republican Syndicalist Party on 10 June 1928, while those who remained loyal to Italian Fascism formed the Revolutionary Fascist Party."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Faisceau"
+          ]
+        },
+        "people": [
+          "francois-coty"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Short-lived French fascist party founded on 11 November 1925 as a far-right league by Georges Valois; name from the Italian Fasci and the PNF; paramilitary style; national state with a strong authoritarian leader; ceased to exist in 1928.",
+            "source": "https://en.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "en: lead; Creation; Authoritarianism and corporatism; Valois's version of fascism"
+          },
+          {
+            "field": "definition",
+            "claim": "The party broke up in 1928 after serious internal dissension.",
+            "source": "https://fr.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "fr: lead; Crise et éclatement"
+          },
+          {
+            "field": "body",
+            "claim": "Le Nouveau Siècle founded 26 February 1925 as a weekly, daily after the party; Action Française attacks; aims of coup and dictatorship without concrete steps.",
+            "source": "https://en.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "en: lead; Creation; Authoritarianism and corporatism"
+          },
+          {
+            "field": "body",
+            "claim": "About 1,800 Paris Action Française members joined between December 1925 and April 1926; raid on the Action Française offices on 14 November 1926 with shots exchanged.",
+            "source": "https://fr.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "fr: Opposition avec l'Action française"
+          },
+          {
+            "field": "body",
+            "claim": "Valois, Mathon and Coty and their differing views of corporatism; Mathon and Coty left shortly after the foundation; brother enemies; Delagrange, Lagardelle, Bucard; Légions and Camelots du Roi; Rheims 27 June 1926; decline by end of 1926 with Poincaré and the franc; ceased 1928; Valois excluded; remains formed the Parti Fasciste Révolutionnaire.",
+            "source": "https://en.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "en: Authoritarianism and corporatism; Valois's version of fascism"
+          },
+          {
+            "field": "body",
+            "claim": "Valois founded the Parti républicain syndicaliste on 10 June 1928; members loyal to Italian Fascism founded the PFR.",
+            "source": "https://fr.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "fr: Après le Faisceau"
+          },
+          {
+            "field": "period",
+            "claim": "Founded 1925, disappeared 1928.",
+            "source": "https://fr.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "fr: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded on 11 November 1925.",
+            "source": "https://en.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "en: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Ceased to exist in 1928.",
+            "source": "https://en.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "en: Valois's version of fascism"
+          },
+          {
+            "field": "people",
+            "claim": "François Coty was among the industrialists who financed the party.",
+            "source": "https://en.wikipedia.org/wiki/Le_Faisceau",
+            "locator": "en: Authoritarianism and corporatism"
+          }
+        ]
+      }
+    }
+  ]
+}
