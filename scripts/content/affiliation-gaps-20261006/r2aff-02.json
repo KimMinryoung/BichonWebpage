@@ -1,0 +1,971 @@
+[
+ {
+  "personId": "mikhail-kalashnikov",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1942,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "AK-47을 개발한 총기 설계자로, 주된 활동은 공학·기술 개발이다.",
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Kalashnikov",
+    "excerpt": "He is most famous for developing the AK-47 assault rifle",
+    "locator": "Lead, first paragraph"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Kalashnikov",
+    "locator": "en: Early life and career",
+    "excerpt": "From 1942 onwards, Kalashnikov was assigned to the Central Scientific-developmental Firing Range for Rifle Firearms of the Chief Artillery Directorate of the Red Army.",
+    "claim": "칼라시니코프는 1942년부터 붉은 군대 포병총국 소화기 시험장에 배치되어 총기를 설계했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Mikhail_Kalashnikov",
+    "locator": "en: lead",
+    "excerpt": "was a Soviet and Russian lieutenant general, inventor, military engineer, writer, and small arms designer.",
+    "claim": "그는 소련·러시아의 중장 계급 군사 기술자이자 소화기 설계자였다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Designed weapons as a serving Red/Soviet Army officer (sergeant to lieutenant general) at state facilities; state service. Post-1991 work would be russia-federation."
+ },
+ {
+  "personId": "milada-horakova",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "czech-pvvz",
+  "relation": "service",
+  "startYear": 1939,
+  "endYear": 1940,
+  "evidence": [
+   {
+    "claim": "Returned in 1945, rejoined party and became MP.",
+    "source": "https://english.radio.cz/milada-horakova-8070014",
+    "excerpt": "After the occupation of the Czechoslovakia in 1939, Milada Horakova and her husband, Bohuslav Horak, joined a resistance movement and were both arrested by the Gestapo in 1940. Milada Horakova was sent to the transit camp at Terezin. In 1944, she was sentenced to life in prison. She was sent to the concentration camp at Ainach near Munich, where she was liberated by Allied forces in May 1945, and she promptly returned to Prague.\n\nNow, this may seem a swift rundown of the first forty-five years of a woman who did live to the age of forty-nine, but it is the last few years of her life that have had the greatest significance in recent Czech history.\n\nWhen she returned to Prague in 1945, Milada Horakova rejoined the National Socialist Party, and became a Member of Parliament, where she remained until the Communist take-over in February 1948, when she resigned her position. With her experience of the resistance movement against the Nazis, Milada Horakova soon joined an illegal group of former members of the National Socialist Party, which held meetings regularly. Until, that is, Milada Horakova was arrested by the Communist secret police on September 27th, 1949, along with many other members of the same group, and with the help of two prosecutors from Moscow, set about preparing a case against them.",
+    "locator": "characters 1372–2687"
+   },
+   {
+    "source": "https://cs.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+    "locator": "cs: Odboj",
+    "excerpt": "V  průběhu spolupráce s Národním ústředím sociální a zdravotní pomoci se zapojila do antifašistické odbojové organizace Petiční výbor Věrni zůstaneme (PVVZ) a Politické ústředí (nikoliv hned po 15. březnu 1939), pro které aktivně vyhledávala na struktuře ŽNR nové ilegální pracovnice, zajišťovala tajné byty, získávala zpravodajské informace.",
+    "claim": "호라코바는 반파시즘 저항조직 「우리는 충실하리라」 청원위원회(PVVZ)와 정치중앙에 가담해 지하 활동가를 모으고 은신처를 마련하며 정보를 수집했다."
+   },
+   {
+    "source": "https://cs.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+    "locator": "cs: Odboj",
+    "excerpt": "Za tuto práci byla 2. srpna 1940  Milada Horáková společně s manželem zatčena, na udání.",
+    "claim": "이 활동 때문에 1940년 8월 2일 남편과 함께 체포되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "czech-pvvz",
+   "kind": "force",
+   "label": {
+    "ko": "「우리는 충실하리라」 청원위원회",
+    "en": "Petition Committee \"We Remain Faithful\" (PVVZ)"
+   },
+   "countryCode": "czechoslovakia",
+   "parentId": null,
+   "periods": [
+    [
+     1939,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Czech wiki names PVVZ (and Politické ústředí) as the resistance organizations she worked for; PVVZ chosen as the first-named; Politické ústředí could be added later."
+ },
+ {
+  "personId": "mirza-kuchik-khan",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "iranian-jangal-movement",
+  "relation": "service",
+  "startYear": 1914,
+  "endYear": 1921,
+  "evidence": [
+   {
+    "claim": "Founder and leader of the Jungle movement, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+    "excerpt": "He was the founder of a revolutionary movement based in the forests of Gilan in northern Iran that became known as the Nehzat-e Jangal (The Jungle Movement).",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Mirza_Kuchik_Khan",
+    "locator": "en: lead",
+    "excerpt": "This uprising started in 1914 and remained active against internal and foreign enemies until 1921 when the movement was completely abandoned after the demise of Mirza Kuchak Khan.",
+    "claim": "정글리 운동은 1914년 시작되어 1921년 미르자 쿠착 칸의 죽음과 함께 소멸했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "iranian-jangal-movement",
+   "kind": "force",
+   "label": {
+    "ko": "정글리 운동",
+    "en": "Jangal movement (Nehzat-e Jangal)"
+   },
+   "countryCode": "iran",
+   "parentId": null,
+   "periods": [
+    [
+     1914,
+     1921
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founder and leader of the Jangal movement (site already calls it 정글리 운동). His separate government row (Gilan Soviet Republic, term persian-socialist-soviet-republic) is not in this chunk."
+ },
+ {
+  "personId": "najmuddin-gotsinsky",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "north-caucasus-mountainous-republic",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "Leader of anti-Bolshevik uprisings in Dagestan and Chechnya (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+    "excerpt": "who led multiple uprisings against the Bolsheviks during and after the Russian Civil War",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+    "locator": "en: Revolution and the Mountainous Republic",
+    "excerpt": "In late May 1918, the leading military commanders of the Mountainous Republic of the Northern Caucasus were gathered in Gunib at Najmuddin's initiative. There, they recognised Najmuddin's authority as Imam of Dagestan and Chechnya, an act which mobilised Highlanders to fight for the republic.",
+    "claim": "1918년 5월 북캅카스 산악공화국 군 지휘관들이 고친스키의 권위를 인정하고 공화국을 위해 산악민을 동원했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Najmuddin_of_Gotzo",
+    "locator": "en: Revolution and the Mountainous Republic",
+    "excerpt": "The reestablished republic granted Najmuddin the position of director of sharia affairs in March 1919.",
+    "claim": "재건된 공화국은 1919년 3월 그를 샤리아 업무 책임자로 임명했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "north-caucasus-mountainous-republic",
+   "kind": "state",
+   "label": {
+    "ko": "북캅카스 산악공화국 국가기관",
+    "en": "Mountainous Republic of the Northern Caucasus state institutions"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1920
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "mountainous-republic-of-the-northern-caucasus"
+  },
+  "reason": "1918-1919 fighting was for the Mountainous Republic; the 1920-21 Dagestan and 1924-25 Chechen uprisings had no named organization in the sources (consider narrowing years or splitting). The same affiliation fits his religion row (mufti of the Republic)."
+ },
+ {
+  "personId": "nikolai-fedoseev",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Fedoseev",
+    "excerpt": "Nikolai Yevgrafovich Fedoseyev (Russian: Николай Евгрáфович Федосéев; May 9 1871, [O.S. 27 April] Nolinsk – July 4 [O.S. 22 June] 1898, Verkhoyansk) was a pioneer of Marxism in the Russian Empire.",
+    "locator": "plain-text extract lead sentence; sha256 e3c6f5e20ab1262b4c1271c33f088171df0061af51ec9721cbc58b7ccd20737d"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Федосеев,_Николай_Евграфович",
+    "locator": "ru: Биография",
+    "excerpt": "В том же году начал организовывать в Поволжье первые марксистские кружки, в которые входило по 10—15 человек, собиравшихся 2 раза в неделю.",
+    "claim": "페도세예프는 1888년부터 볼가 지역에서 첫 마르크스주의 서클을 직접 조직했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Organized his own unnamed Kazan/Vladimir Marxist circles; no named organization he belonged to."
+ },
+ {
+  "personId": "nikolai-shmit",
+  "functionId": "industry",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "니콜라이 시미트는 프레스냐의 가구공장을 소유·운영하며 9시간 노동제와 임금 인상, 부속 의료 및 교육 시설을 도입했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BC%D0%B8%D1%82%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Вступив во владение мебельной фабрикой на Пресне, Николай Шмит с 1 мая 1905 года ввёл 9-часовой рабочий день вместо 11-часового, повысил заработную плату, открыл при фабрике амбулаторию и специальные общеобразовательные курсы.",
+    "locator": "characters 4097:4323; sha256 7d79b99edd5814b3bc88cad3736a720b9a270185211984e205691b1b74e70882"
+   },
+   {
+    "claim": "그의 공장에서는 폭탄 제조와 전단 인쇄가 이루어졌다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%BC%D0%B8%D1%82%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "На фабрике изготавливали бомбы, печатали листовки.",
+    "locator": "characters 5424:5474; sha256 7d79b99edd5814b3bc88cad3736a720b9a270185211984e205691b1b74e70882"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Owner of his own inherited furniture factory; no organization beyond his private firm. RSDLP is already a separate activity."
+ },
+ {
+  "personId": "nikolai-sokolov",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "소콜로프는 변호사(присяжный поверенный)가 되었다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%28%D0%B0%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%29",
+    "excerpt": "Николай Дмитриевич Соколов стал присяжным поверенным.",
+    "locator": "characters 323:376; sha256 bb9bed9cc1ff1a682ff8f5bf76ba66d23ad7d3e9551b94827c178a311875033f"
+   },
+   {
+    "claim": "그는 변호사로서 많은 정치 재판에 참여했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87_%28%D0%B0%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%29",
+    "excerpt": "В качестве адвоката участвовал во многих политических процессах.",
+    "locator": "characters 998:1062; sha256 bb9bed9cc1ff1a682ff8f5bf76ba66d23ad7d3e9551b94827c178a311875033f"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Соколов,_Николай_Дмитриевич_(адвокат)",
+    "locator": "ru: Биография",
+    "excerpt": "Социал-демократ по убеждениям, однако в партиях не состоял.",
+    "claim": "소콜로프는 사회민주주의 신념을 가졌으나 어느 당에도 속하지 않았다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Private sworn attorney; the source names no bar council or firm. Post-1917 Soviet legal-consultant posts are undated and could form a separate state-soviet activity."
+ },
+ {
+  "personId": "nikolai-ustryalov",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-empire",
+  "relation": "employment",
+  "startYear": 1913,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "우스트랄로프는 모스크바 대학에서 가르쳤다.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Ustryalov",
+    "excerpt": "Teaching at Moscow University, he was initially a member of the Constitutional Democratic Party.",
+    "locator": "plain-text extract characters 440:536; sha256 f6bf73a65f9d1468d6e50ae69d49b3efb2e8261856bb9e3a91a482fcbbf66fa6"
+   },
+   {
+    "claim": "그는 1920~1924년 하얼빈 법학부 학장이었다.",
+    "source": "https://en.wikipedia.org/wiki/Nikolai_Ustryalov",
+    "excerpt": "He was Dean of the Faculty of Law at Harbin from 1920 until 1924.",
+    "locator": "plain-text extract characters 2786:2851; sha256 f6bf73a65f9d1468d6e50ae69d49b3efb2e8261856bb9e3a91a482fcbbf66fa6"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Устрялов,_Николай_Васильевич",
+    "locator": "ru: Биография",
+    "excerpt": "В 1915—1916 годах сдал магистерские экзамены и, после прочтения двух пробных лекций «Политическое учение Платона» и «Идея самодержавия у славянофилов», получил звание приват-доцента Московского университета.",
+    "claim": "우스트랴로프는 1915~1916년 석사시험을 통과하고 모스크바 대학 강사(приват-доцент)가 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Moscow University was a state university, so imperial-era teaching = russian-empire employment. Harbin law faculty (1920-1934) and Moscow transport institute (1935-37, state-soviet) are separate periods if wanted."
+ },
+ {
+  "personId": "noman-celebicihan",
+  "functionId": "government",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "crimean-peoples-republic",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Chairman of the Directory of the Crimean People’s Republic (no catalog affiliation)",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D0%BB%D0%B5%D0%B1%D0%B8%D0%B4%D0%B6%D0%B8%D1%85%D0%B0%D0%BD,_%D0%9D%D0%BE%D0%BC%D0%B0%D0%BD",
+    "excerpt": "первый председатель правительства Крымской Народной Республики",
+    "locator": "преамбула"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Челебиджихан,_Номан",
+    "locator": "ru: Биография",
+    "excerpt": "Челебиджихан был избран председателем национального правительства — Совета директоров (Директории) и одновременно начальником его управления юстиции.",
+    "claim": "첼레비지한은 크림 인민공화국 정부인 디렉토리 의장 겸 법무 국장으로 선출되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "crimean-peoples-republic",
+   "kind": "state",
+   "label": {
+    "ko": "크림 인민공화국 국가기관",
+    "en": "Crimean People's Republic state institutions"
+   },
+   "countryCode": "ukraine",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "crimean-peoples-republic"
+  },
+  "reason": "Chairman of the Directorate (government) of the Crimean People's Republic. countryCode ukraine chosen as the modern internationally recognised country; owner may prefer russia (era) – please confirm."
+ },
+ {
+  "personId": "olga-kameneva",
+  "functionId": "political-leadership",
+  "newFunctionId": "diplomacy",
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1923,
+  "endYear": 1928,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Olga_Kameneva",
+    "excerpt": "Olga Davidovna Kameneva (Russian: Ольга Давыдовна Каменева, Ukrainian: Ольга Давидiвна Каменева; 19 November [O.S. 7 November] 1883 – 11 September 1941) (née Bronstein — Бронште́йн) was a Russian Bolshevik revolutionary and a Soviet politician.",
+    "locator": "plain-text extract lead sentence; sha256 0a66ad836d5624deadc67d8172cd301ea9ee39601264f72012d28726afc58389"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Olga_Kameneva",
+    "locator": "en: Theater and CPSU's Women's Section (1918–1920)",
+    "excerpt": "Between 1923 and 1925, she was the head of the Commission for Foreign Relief (KZP), a Soviet governmental commission that regulated and then liquidated remaining Western charities in the Soviet Union.",
+    "claim": "1923~1925년 서방 구호단체를 관리한 정부 위원회(KZP)의 위원장이었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Olga_Kameneva",
+    "locator": "en: Theater and CPSU's Women's Section (1918–1920)",
+    "excerpt": "From 1926 to 1928, Kameneva served as chairman of the USSR Society for Cultural Relations with Foreign Countries (\"Voks\", Vsesoiuznoe Obshchestvo Kul'turnoi Sviazi s Zagranitsei)",
+    "claim": "1926~1928년 대외문화교류협회(VOKS) 회장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Her defining posts were state cultural-diplomacy bodies (KZP, VOKS), matching her epithet; political-leadership (party/movement leadership) does not fit. TEO 1918-19 could be a separate arts activity."
+ },
+ {
+  "personId": "olga-shatunovskaya",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "soviet-party",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1962,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Olga_Shatunovskaya",
+    "excerpt": "Olga Grigoryevna Shatunovskaya (Russian: Ольга Григорьевна Шатуновская; 1 March 1901, Baku – 23 November 1990, Moscow) was a prominent Old Bolshevik.",
+    "locator": "plain-text extract lead sentence; sha256 b18b0ed7462f9022f926556949b4f90e7bd85cdbf09e9f14ca9d6d80097d876e"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Olga_Shatunovskaya",
+    "locator": "en: Early career and arrest",
+    "excerpt": "In 1920, Shatunovskaya became the secretary of the Baku Komsomol and the secretary of district party committees in Baku.",
+    "claim": "1920년 바쿠 콤소몰 서기와 바쿠 구역 당위원회 서기가 되었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Шатуновская,_Ольга_Григорьевна",
+    "locator": "ru: Биография",
+    "excerpt": "В 1956—1962 годах член КПК при ЦК КПСС, занималась вопросами, связанными с реабилитацией репрессированных",
+    "claim": "1956~1962년 소련공산당 중앙위원회 당통제위원회 위원으로 피해자 복권 문제를 다뤘다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Career was party cadre work (district committees, Moscow City Committee, CPSU Party Control Committee) = soviet-party service."
+ },
+ {
+  "personId": "omer-nishani",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "albanian-konare",
+  "relation": "service",
+  "startYear": 1925,
+  "endYear": 1932,
+  "evidence": [
+   {
+    "claim": "니샤니는 1925년 망명지에서 반조구 혁명조직 KONARE를 공동 창립해 1932년까지 기관지를 운영했고, 1942년 민족해방운동에 가담했다.",
+    "source": "https://en.wikipedia.org/wiki/Omer_Nishani",
+    "excerpt": "After the downfall of the government in December that same year, Nishani fled abroad and co-founded the anti-Zogu and Comintern-backed KONARE (National Revolutionary Committee) in 1925, helping to run its newspaper Liria Kombëtare (National Freedom) together with the Albanian Communist Halim Xhelo from 1925 to 1932 in Geneva.",
+    "locator": "characters 1310:1637; accessed 2026-09-27; sha256 649574f916d4a94c78251d541cb29575cbda48fc08877438d05b6834a8678c85"
+   },
+   {
+    "claim": "니샤니는 1925년 망명지에서 반조구 혁명조직 KONARE를 공동 창립해 1932년까지 기관지를 운영했고, 1942년 민족해방운동에 가담했다.",
+    "source": "https://en.wikipedia.org/wiki/Omer_Nishani",
+    "excerpt": "Nishani became a member of the National Liberation Movement upon its formation in September 1942.",
+    "locator": "characters 3858:3955; accessed 2026-09-27; sha256 649574f916d4a94c78251d541cb29575cbda48fc08877438d05b6834a8678c85"
+   }
+  ],
+  "newAffiliation": {
+   "id": "albanian-konare",
+   "kind": "force",
+   "label": {
+    "ko": "알바니아 민족혁명위원회",
+    "en": "National Revolutionary Committee (KONARE)"
+   },
+   "countryCode": "albania",
+   "parentId": null,
+   "periods": [
+    [
+     1925,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Co-founder of KONARE. Activity years 1925-1944 also cover the National Liberation Movement (member from Sept 1942, chairman of the Anti-Fascist National Liberation Council 1944): recommend splitting into a second activity with a new force albanian-national-liberation-movement (민족해방운동, 1942-1945). KONARE end year not given by the source."
+ },
+ {
+  "personId": "pan-halippa",
+  "functionId": "legislature",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "moldavian-democratic-republic",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Vice-president, then president of Sfatul Țării (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Pan_Halippa",
+    "excerpt": "he was elected first vice-president, then president of Sfatul Țării",
+    "locator": "Political activity"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Moldavian_Democratic_Republic",
+    "locator": "en: lead",
+    "excerpt": "The Sfatul Țării was its legislative body, while the \"Council of Directors General\", renamed the \"Council of Ministers\" after the Declaration of Independence, was its government.",
+    "claim": "스파툴 처리이는 몰다비아 민주공화국의 입법기관이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "moldavian-democratic-republic",
+   "kind": "state",
+   "label": {
+    "ko": "몰다비아 민주공화국 국가기관",
+    "en": "Moldavian Democratic Republic state institutions"
+   },
+   "countryCode": "moldova",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "moldavian-democratic-republic"
+  },
+  "reason": "Vice-president then president of Sfatul Țării, the legislature of the Moldavian Democratic Republic (shared new state affiliation with pantelimon-erhan). His row propaganda/political-leadership (Moldovan National Party) is not in this chunk."
+ },
+ {
+  "personId": "pantelimon-erhan",
+  "functionId": "government",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "moldavian-democratic-republic",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "First prime minister of the Moldavian Democratic Republic (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Pantelimon_Erhan",
+    "excerpt": "He was the first prime minister of the Moldavian Democratic Republic",
+    "locator": "Prime minister"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Pantelimon_Erhan",
+    "locator": "en: Prime minister",
+    "excerpt": "On 7 December [O.S. 24 November] 1917, Sfatul Țării elected the Pantelimon Erhan Cabinet (named the Council of Directors General), with nine members and with Pantelimon Erhan as President of the Council of Directors General and Director General for Agriculture.",
+    "claim": "1917년 12월 스파툴 처리이가 에르한을 총국장 위원회 의장 겸 농업 총국장으로 선출했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "moldavian-democratic-republic",
+   "kind": "state",
+   "label": {
+    "ko": "몰다비아 민주공화국 국가기관",
+    "en": "Moldavian Democratic Republic state institutions"
+   },
+   "countryCode": "moldova",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "moldavian-democratic-republic"
+  },
+  "reason": "First head of government of the Moldavian Democratic Republic; same new state affiliation as pan-halippa."
+ },
+ {
+  "personId": "pasha-angelina",
+  "functionId": "agriculture",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1929,
+  "endYear": 1959,
+  "evidence": [
+   {
+    "claim": "여성 트랙터 작업반을 조직한 농업 노동자로, 주된 활동은 농업이다.",
+    "source": "https://en.wikipedia.org/wiki/Praskovya_Angelina",
+    "excerpt": "In 1933, she organized an all-female tractor team",
+    "locator": "Career, first paragraph"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Ангелина,_Прасковья_Никитична",
+    "locator": "ru: Биография",
+    "excerpt": "В 1929 году одной из первых женщин окончила курсы трактористов и стала работать трактористкой Старо-Бешевской машинно-тракторной станции.",
+    "claim": "1929년 트랙터 운전 과정을 마치고 국영 스타로베셰보 기계트랙터 정류소(MTS)의 운전수가 되었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Ангелина,_Прасковья_Никитична",
+    "locator": "ru: lead",
+    "excerpt": "бригадир тракторной бригады МТС",
+    "claim": "MTS 트랙터 여단장이었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Worked her whole career for state machine-tractor stations (MTS), state-run institutions."
+ },
+ {
+  "personId": "pavel-cherenkov",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1930,
+  "endYear": 1990,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Pavel_Cherenkov",
+    "excerpt": "Pavel Alekseyevich Cherenkov (Russian: Па́вел Алексе́евич Черенко́в [ˈpavʲɪl ɐlʲɪkˈsʲe(j)ɪvʲɪtɕ tɕɪrʲɪnˈkof];  28 July 1904 – 6 January 1990) was a Soviet physicist who shared the 1958 Nobel Prize in Physics with Ilya Frank and Igor Tamm \"for the discovery and interpretation of the Cherenkov effect\".",
+    "locator": "plain-text extract lead sentence; sha256 5ca601cc9d9bf0014b41afc191a9d4c81d123111f5eccf0f9b4f8b3562b3753a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Pavel_Cherenkov",
+    "locator": "en: Biography",
+    "excerpt": "In 1930, he took a post as a senior researcher in the Lebedev Physical Institute.",
+    "claim": "1930년 레베데프 물리연구소 선임연구원이 되었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Черенков,_Павел_Алексеевич",
+    "locator": "ru: Биография",
+    "excerpt": "С 1935 года — сотрудник ФИАН имени П. Н. Лебедева, с 1948 года — профессор МЭИ имени В. М. Молотова, с 1951 года — профессор МИФИ.",
+    "claim": "1935년부터 소련 과학아카데미 레베데프 물리연구소 연구원이었고 국립 대학 교수도 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Lebedev Physical Institute of the USSR Academy of Sciences (state academy) = state-soviet employment."
+ },
+ {
+  "personId": "pierre-gaspard-chaumette",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "french-cordeliers",
+  "relation": "service",
+  "startYear": 1792,
+  "endYear": 1794,
+  "evidence": [
+   {
+    "claim": "급진 에베르파 지도자로 탈기독교화를 이끌고 공포정치 수립에 주도적으로 기여했다.",
+    "source": "https://en.wikipedia.org/wiki/Pierre_Gaspard_Chaumette",
+    "excerpt": "He was a leader of the radical Hébertistes of the revolution, an ardent critic of Christianity who was one of the leaders of the dechristianization of France.",
+    "locator": "characters 276:434; accessed 2026-09-27; sha256 b58786c21d53e54e8e07df27af73c650c20c956315dfce6d3d2ddfd1eef7e2af"
+   },
+   {
+    "claim": "급진 에베르파 지도자로 탈기독교화를 이끌고 공포정치 수립에 주도적으로 기여했다.",
+    "source": "https://en.wikipedia.org/wiki/Pierre_Gaspard_Chaumette",
+    "excerpt": "Chaumette made a leading contribution to establishing the Reign of Terror.",
+    "locator": "characters 3202:3276; accessed 2026-09-27; sha256 b58786c21d53e54e8e07df27af73c650c20c956315dfce6d3d2ddfd1eef7e2af"
+   },
+   {
+    "source": "https://fr.wikipedia.org/wiki/Pierre-Gaspard_Chaumette",
+    "locator": "fr: Biographie",
+    "excerpt": "Il fut reçu au Club des cordeliers, adhéra à la section communale du Théâtre-Français et collabora au journal Révolutions de Paris.",
+    "claim": "쇼메트는 코르들리에 클럽에 가입했다."
+   },
+   {
+    "source": "https://fr.wikipedia.org/wiki/Pierre-Gaspard_Chaumette",
+    "locator": "fr: Biographie",
+    "excerpt": "Il fut, avec Hébert, son substitut, à la tête d'une faction dite des « exagérés ».",
+    "claim": "그는 에베르와 함께 「과격파」 분파를 이끌었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Cordeliers member and Hébertist leader; the catalog's french-cordeliers explicitly includes the Hébertist faction."
+ },
+ {
+  "personId": "pyotr-schmidt",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "표트르 시미트는 1905년 러시아 혁명 기간 중 세바스토폴 봉기의 지도자 중 한 명이었다.",
+    "source": "https://en.wikipedia.org/wiki/Pyotr_Schmidt",
+    "excerpt": "was one of the leaders of the Sevastopol Uprising during the Russian Revolution of 1905",
+    "locator": "characters 122:209; sha256 8a58b52263fd74494a78a859644f9e583828c03741b8041d5e6cbe7055453d78"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Шмидт,_Пётр_Петрович",
+    "locator": "ru: Революция 1905 года",
+    "excerpt": "В начале Революции 1905 года организовал в Севастополе «Союз офицеров — друзей народа», в который входил лишь сам Шмидт.",
+    "claim": "그가 만든 「인민의 벗 장교 연맹」의 구성원은 시미트 자신뿐이었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Шмидт,_Пётр_Петрович",
+    "locator": "ru: Революция 1905 года",
+    "excerpt": "Ведя пропаганду среди матросов и офицеров, Шмидт называл себя внепартийным социалистом.",
+    "claim": "시미트는 스스로를 당 밖의 사회주의자라고 불렀다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Retired officer, self-described non-party; his only \"union\" had himself as sole member and the uprising had no named organization."
+ },
+ {
+  "personId": "pyotr-tokmakov",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-tambov-insurgents",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1921,
+  "evidence": [
+   {
+    "claim": "Commander of the 2nd Insurgent Army and of the United Partisan Army of Tambov, no catalog affiliation",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%BC%D0%B0%D0%BA%D0%BE%D0%B2,_%D0%9F%D1%91%D1%82%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "В июне 1920 года П. М. Токмаков становится командующим 2-й повстанческой армией восставших, а затем в ноябре принимает командование Объединённой партизанской армией Тамбовской губернии",
+    "locator": "Биография"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Commander of the 2nd Insurgent Army and the United Partisan Army of Tambov = the catalog Tambov insurgent army (1920-1921); his 1918-1919 partisan unit precedes it, so years narrowed to 1920-1921. Union of Working Peasantry (term union-of-working-peasantry) fits his separate political-leadership row."
+ },
+ {
+  "personId": "raoul-wallenberg",
+  "functionId": "diplomacy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "state-sweden",
+  "relation": "service",
+  "startYear": 1944,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "부다페스트 스웨덴 공사관 외교관(구조 임무)",
+    "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+    "excerpt": "While serving as Sweden's special envoy in Budapest between July and December 1944, Wallenberg issued protective passports and sheltered Jews in buildings which he declared as Swedish territory.",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Raoul_Wallenberg",
+    "locator": "en: Budapest",
+    "excerpt": "the Swedish Ministry for Foreign Affairs agreed to the American request to assign Wallenberg to its legation in Budapest",
+    "claim": "스웨덴 외무부가 발렌베리를 부다페스트 공사관에 배치했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "state-sweden",
+   "kind": "state",
+   "label": {
+    "ko": "스웨덴 국가기관",
+    "en": "Sweden state institutions"
+   },
+   "countryCode": "sweden",
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Swedish diplomat at the Budapest legation; no state-sweden in the catalog yet."
+ },
+ {
+  "personId": "rezso-kasztner",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "hungarian-vaada",
+  "relation": "service",
+  "startYear": 1943,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "부다페스트 구호구조위원회 지도자",
+    "source": "https://en.wikipedia.org/wiki/Rezső_Kasztner",
+    "excerpt": "Kasztner was one of the leaders of the Budapest Aid and Rescue Committee (Va'adat Ezrah Vehatzalah, or Vaada), which smuggled Jewish refugees into Hungary during World War II.",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Aid_and_Rescue_Committee",
+    "locator": "en: lead",
+    "excerpt": "The main personalities of the Vaada were Ottó Komoly, president; Rudolf Kasztner, executive vice-president; Samuel Springmann, treasurer; and Joel Brand, who was in charge of tijul or the underground rescue of Jews.",
+    "claim": "커스트네르는 부다페스트 구호구조위원회(바아다)의 집행 부위원장이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "hungarian-vaada",
+   "kind": "force",
+   "label": {
+    "ko": "부다페스트 구호구조위원회",
+    "en": "Aid and Rescue Committee of Budapest (Vaada)"
+   },
+   "countryCode": "hungary",
+   "parentId": null,
+   "periods": [
+    [
+     1943,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Executive vice-president of the Vaada. Start year: the en Vaada article dates the committee to 1944-1945 while the Kasztner article has it smuggling refugees during the war; 1943 founding is from general literature, please confirm (activity row said 1941)."
+ },
+ {
+  "personId": "richard-muller",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "german-revolutionary-stewards",
+  "relation": "service",
+  "startYear": 1916,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "In 1916 began organizing political strikes against World War I with Revolutionary Stewards",
+    "source": "https://www.workerscontrol.net/activists/richard-mueller",
+    "excerpt": "Richard Müller was one of the leading figures of the German Revolution 1918. Starting as a local union organizer he began to organize political strikes against WWI in 1916 with a group called \"Revolutionary Stewards\". This group had started as opposition within the German Metalworkers Union (DMV) and later became very influential for the movement of worker´s councils in 1918/1919.",
+    "locator": "characters 261–644"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Richard_M%C3%BCller_(socialist)",
+    "locator": "en: World War I",
+    "excerpt": "Müller, as the head of an organization called the \"Revolutionary Stewards\", was the leading figure behind these mass-strikes.",
+    "claim": "뮐러는 혁명적 직장위원 조직의 우두머리로 대중 파업을 이끌었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Revolutionary_Stewards",
+    "locator": "en: January 1919: January uprising",
+    "excerpt": "The January uprising led to the dissolution of the Revolutionary Stewards' network, because many of its members took part in the uprising while others such as Richard Müller opposed it.",
+    "claim": "1919년 1월 봉기 뒤 혁명적 직장위원 조직은 해체되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "german-revolutionary-stewards",
+   "kind": "force",
+   "label": {
+    "ko": "혁명적 직장위원",
+    "en": "Revolutionary Stewards (Revolutionäre Obleute)"
+   },
+   "countryCode": "germany",
+   "parentId": null,
+   "periods": [
+    [
+     1914,
+     1919
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Leader of the Revolutionary Stewards (site already uses 혁명적 직장위원). Start of the organization given only as \"during WWI\"."
+ },
+ {
+  "personId": "robert-grimm",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "international-socialist-commission",
+  "relation": "service",
+  "startYear": 1915,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "Grimm chaired the International Socialist Commission after the Zimmerwald Conference and lost his leading role after the Grimm-Hoffmann Affair.",
+    "source": "https://encyclopedia.1914-1918-online.net/article/grimm-robert",
+    "excerpt": "Grimm drafted the resolution of the first larger international socialist meeting after the outbreak of the war – the Italian-Swiss socialist conference at Lugano (27 September 1914). In his Berner Tagwacht, he published articles from the leaders of the socialist anti-war opposition. Bern and its surroundings hosted key meetings of this movement, beginning with the International Socialist Women and Youth conferences in spring 1915. In close collaboration with Angelica Balabanoff (1878-1965), Grimm was the main organiser of the Zimmerwald Conference, where he was elected as a chairman of the International Socialist Commission. This body attempted to coordinate socialist anti-war activities on the international level and organised a second conference in Kiental (April 1916). Grimm effectively resisted attempts of a group led by Karl Radek (1885-1939) and Vladimir Il’ich Lenin (1870-1924) (the so-called “Zimmerwald Left”) to use Zimmerwald to split the international labour movement. This explains the frequent malicious remarks on Grimm in Lenin’s writings from these years. After the Grimm-Hoffmann Affair, Grimm lost his leading role in the socialist anti-war opposition.",
+    "locator": "characters 2794–3978"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Robert_Grimm",
+    "locator": "en: lead",
+    "excerpt": "Grimm was the main organiser of the  Zimmerwald Movement and the chairman of the International Socialist Commission in Bern 1915–1917.",
+    "claim": "그림은 치머발트 운동의 주된 조직자이자 1915~1917년 국제사회주의위원회 의장이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "international-socialist-commission",
+   "kind": "international",
+   "label": {
+    "ko": "국제사회주의위원회",
+    "en": "International Socialist Commission (Zimmerwald)"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": [
+    [
+     1915,
+     1919
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "zimmerwald-movement"
+  },
+  "reason": "Chaired the Zimmerwald International Socialist Commission; existing term zimmerwald-movement can be linked. (He also has SPS membership, not this row.)"
+ },
+ {
+  "personId": "rudolf-walden",
+  "functionId": "industry",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "finnish-united-paper-mills",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1946,
+  "evidence": [
+   {
+    "claim": "발덴은 1906년부터 1946년까지 제지 산업에서 일하며 핀란드 제지 산업을 통합했고, Yhtyneet Paperitehtaat Oy를 설립했으며 핀란드 제지 판매 협회인 Finpap의 초대 회장을 맡았다.",
+    "source": "https://en.wikipedia.org/wiki/Rudolf_Walden",
+    "excerpt": "From 1906 to 1946, Walden worked in the paper industry. He worked to consolidate the Finnish paper industry. He founded Yhtyneet Paperitehtaat Oy (United Paper Mills Ltd) and was the first president of \"Finpap\", a Finnish paper sales association.",
+    "locator": "characters 1450:1696; sha256 7ba64b2ffb7623c919a21dd3506d73d70a68c43d659945ae5dde585bbccfc2e3"
+   },
+   {
+    "source": "https://fi.wikipedia.org/wiki/Yhtyneet_Paperitehtaat",
+    "locator": "fi: Historia",
+    "excerpt": "Kaikkien yhtiöiden johdossa ja suuromistajana oli kenraali Rudolf Walden.",
+    "claim": "발덴은 연합제지에 합병된 모든 회사의 경영자이자 대주주였다."
+   },
+   {
+    "source": "https://fi.wikipedia.org/wiki/Yhtyneet_Paperitehtaat",
+    "locator": "fi: lead",
+    "excerpt": "Yhtyneet Paperitehtaat Oy oli suomalainen metsäteollisuusyhtiö, joka syntyi vuonna 1920 ja muodosti vuonna 1996 yhdessä paperiyhtiö Kymmenen kanssa UPM-Kymmene Oyj:n.",
+    "claim": "연합제지는 1920년 생겨 1996년 UPM-Kymmene로 합병된 핀란드 임업 회사였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "finnish-united-paper-mills",
+   "kind": "institution",
+   "label": {
+    "ko": "연합제지",
+    "en": "Yhtyneet Paperitehtaat (United Paper Mills)"
+   },
+   "countryCode": "finland",
+   "parentId": null,
+   "periods": [
+    [
+     1920,
+     1996
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founder and board chairman of a named company. OWNER CHECK: a private company as affiliation for industry is not covered by round-1 rules; alternative is decision none (ko transcription would be 위흐티네트 파페리테흐타트). Years narrowed to the company (1920-1946)."
+ },
+ {
+  "personId": "sadri-maksudi",
+  "functionId": "political-leadership",
+  "newFunctionId": "government",
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "idel-ural-milli-idare",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Chairman of the Milli Idare, head of the Idel-Ural State (no catalog affiliation)",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BA%D1%81%D1%83%D0%B4%D0%B8,_%D0%A1%D0%B0%D0%B4%D1%80%D0%B8",
+    "excerpt": "5 января 1918 года Садри Максуди был избран председателем Милли Идарэ",
+    "locator": "Штат Идель-Урал"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Максуди,_Садри",
+    "locator": "ru: Биография",
+    "excerpt": "5 января 1918 года Садри Максуди был избран председателем Милли Идарэ, органа национально-культурной автономии мусульман тюрко-татар Внутренней России и Сибири.",
+    "claim": "1918년 1월 5일 내부 러시아·시베리아 무슬림 투르크-타타르 민족문화 자치기관 밀리 이다레의 의장으로 뽑혔다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "idel-ural-milli-idare",
+   "kind": "state",
+   "label": {
+    "ko": "이델-우랄 국가기관",
+    "en": "Idel-Ural State and Milli Idare institutions"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "idel-ural-state"
+  },
+  "reason": "Chairman of Milli Idare, the executive of the Turko-Tatar national-cultural autonomy (Idel-Ural State). Chairing that executive is government rather than party leadership, hence newFunctionId government (optional)."
+ }
+]

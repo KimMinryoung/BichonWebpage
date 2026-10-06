@@ -1,0 +1,879 @@
+[
+ {
+  "personId": "said-alim-khan",
+  "functionId": "monarchy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "bukhara-emirate",
+  "relation": "service",
+  "startYear": 1911,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+    "locator": "en: lead",
+    "excerpt": "Emir Sayyid Mir Muhammad Alim Khan (Chagatai and Persian: سید میر محمد عالم خان, 3 January 1880 – 28 April 1944) was the last emir of the Uzbek Manghit dynasty, rulers of the Emirate of Bukhara in Central Asia.",
+    "claim": "사이드 알림 칸은 부하라 에미르국을 다스린 망기트 왕조의 마지막 에미르였다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Sayyid_Mir_Muhammad_Alim_Khan",
+    "locator": "en: lead",
+    "excerpt": "Although Bukhara was a protectorate of the Russian Empire from 1873, the Emir presided over the internal affairs of his emirate as an absolute monarch and reigned from 3 January 1911 to 30 August 1920.",
+    "claim": "그는 1911년 1월 3일부터 1920년 8월 30일까지 부하라 에미르국의 절대군주로 재위했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Emirate_of_Bukhara",
+    "locator": "en: lead",
+    "excerpt": "The Emirate of Bukhara was an Uzbek absolute monarchy in Central Asia that existed from 1785 to 1920 in what is now parts of Tajikistan, Uzbekistan, Turkmenistan and Kazakhstan.",
+    "claim": "부하라 에미르국은 1785~1920년 중앙아시아에 존재한 절대군주국이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "bukhara-emirate",
+   "kind": "state",
+   "label": {
+    "ko": "부하라 에미르국 국가기관",
+    "en": "Emirate of Bukhara state institutions"
+   },
+   "countryCode": "uzbekistan",
+   "parentId": null,
+   "periods": [
+    [
+     1785,
+     1920
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Monarch of the Emirate of Bukhara; monarchs take the state affiliation of their realm, which the catalog lacks (site already writes 부하라 에미르국)."
+ },
+ {
+  "personId": "song-qingling",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "china-defence-league",
+  "relation": "service",
+  "startYear": 1938,
+  "endYear": 1949,
+  "evidence": [
+   {
+    "claim": "쑹칭링은 공산당 지도자 구출에 관여하고 1938년 중국보위동맹을 창설해 항전 지원을 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Soong_Ching-ling",
+    "excerpt": "She played a key role in rescuing Communist leaders, including Chen Geng, Liao Chengzhi, and Chen Duxiu, and communicated with the CCP via her secretary  Li Yun.",
+    "locator": "characters 16151:16312; accessed 2026-09-27; sha256 bec6ab636034d10581660fa43125731406fc72864b3e63a60e6ec90917eadb92"
+   },
+   {
+    "claim": "쑹칭링은 공산당 지도자 구출에 관여하고 1938년 중국보위동맹을 창설해 항전 지원을 조직했다.",
+    "source": "https://en.wikipedia.org/wiki/Soong_Ching-ling",
+    "excerpt": "In 1938, she founded the China Defence League in Hong Kong, aiming to garner international support for China's war effort.",
+    "locator": "characters 16926:17048; accessed 2026-09-27; sha256 bec6ab636034d10581660fa43125731406fc72864b3e63a60e6ec90917eadb92"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Soong_Ching-ling",
+    "locator": "en: Communist revolution",
+    "excerpt": "By December, she had left Chongqing for Shanghai, where she restructured the China Defence League into the China Welfare Institute. The organisation continued its support for Communist groups and their army while also engaging in charitable activities for children and social welfare.",
+    "claim": "쑹칭링은 1945년 보위중국동맹을 중국복리회로 개편해 공산당 측 지원을 이어 갔다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "china-defence-league",
+   "kind": "force",
+   "label": {
+    "ko": "보위중국동맹",
+    "en": "China Defence League (China Welfare Institute from 1945)"
+   },
+   "countryCode": "china",
+   "parentId": null,
+   "periods": [
+    [
+     1938,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founded and led the China Defence League (1938), reorganised by her as the China Welfare Institute (1945); the 1931–37 rescue work had no named organization, so the start year moves to 1938. Site bio already calls it 보위중국동맹."
+ },
+ {
+  "personId": "stanislaw-grabski",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "polish-national-league",
+  "relation": "service",
+  "startYear": 1905,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "그는 국민연맹의 지도자 중 한 명이었고 국민민주당의 당원이었다.",
+    "source": "https://en.wikipedia.org/wiki/Stanis%C5%82aw_Grabski",
+    "excerpt": "A member of the  National League since 1905, a year later he became one of its leaders. From 1907 he was a member of Dmowski's party, the National-Democratic Party.",
+    "locator": "characters 867:1031; sha256 838a84731c5c0aecd368f0619b86ad9a23552d9f091b3265e89632025222559b"
+   },
+   {
+    "source": "https://pl.wikipedia.org/wiki/Stanis%C5%82aw_Grabski",
+    "locator": "pl: Życiorys",
+    "excerpt": "Nieco wcześniej Stanisław został członkiem Ligi Narodowej (zbliżenie Grabskiego do LN było prawdopodobne spowodowane jego przyjaźnią z Zygmuntem Balickim) i wszedł w skład Komitetu Centralnego",
+    "claim": "그랍스키는 국민연맹에 가입해 그 중앙위원회 위원이 되었다."
+   },
+   {
+    "source": "https://pl.wikipedia.org/wiki/Stanis%C5%82aw_Grabski",
+    "locator": "pl: Życiorys",
+    "excerpt": "Wniosek jednak upadł, a Grabski wystąpił z Ligi,",
+    "claim": "1920년 비밀조직 해산 제안이 부결되자 그랍스키는 국민연맹을 탈퇴했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "polish-national-league",
+   "kind": "force",
+   "label": {
+    "ko": "폴란드 국민연맹",
+    "en": "National League (Liga Narodowa, Poland)"
+   },
+   "countryCode": "poland",
+   "parentId": null,
+   "periods": [
+    [
+     1893,
+     1928
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Leader (Central Committee member) of the National League, the directing organization of Polish National Democracy, 1905–1920; chosen over the National-Democratic Party where he only sat on the board from 1907. The Riga negotiation excerpt belongs to diplomacy/state-poland, not this activity."
+ },
+ {
+  "personId": "stanislaw-hejmowski",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "polish-poznan-bar",
+  "relation": "membership",
+  "startYear": 1930,
+  "endYear": 1961,
+  "evidence": [
+   {
+    "claim": "헤이모프스키는 1956년 포즈난 시위 참가자들을 변호한 변호사였다.",
+    "source": "https://en.wikipedia.org/wiki/1956_Pozna%C5%84_protests",
+    "excerpt": "Stanisław Hejmowski, Michał Grzegorzewicz and Gerard Kujanek (among others), the lawyers who defended them, faced repressions by the government for their statements that the government's actions had led to the death of innocent civilians.",
+    "locator": "characters 9182:9420; sha256 470dbe87ffabb97853f575eedc396c32f3697fcf6f070d26b0bedde4e24e2fca"
+   },
+   {
+    "claim": "헤이모프스키는 재판에서 변호인으로 활동했다.",
+    "source": "https://en.wikipedia.org/wiki/Arthur_Greiser",
+    "excerpt": "Greiser's advocates, Stanisław Hejmowski and Jan Kręglewski, tried to convince the Tribunal that Greiser, as a head of a formally independent state, the Free City of Danzig, could not be judged by another country, an argument rejected by the court.",
+    "locator": "characters 13061:13309; sha256 bbfd5001f0a9f9572ee87ffc77a74899db0fc873470aecfba560b12497dfd8d5"
+   },
+   {
+    "source": "https://pl.wikipedia.org/wiki/Stanis%C5%82aw_Hejmowski",
+    "locator": "pl: Wczesne lata",
+    "excerpt": "15 maja 1930 roku został wpisany na listę adwokatów przez Okręgową Radę Adwokacką w Poznaniu.",
+    "claim": "헤이모프스키는 1930년 5월 15일 포즈난 지방변호사회 변호사 명부에 등록되었다."
+   },
+   {
+    "source": "https://pl.wikipedia.org/wiki/Stanis%C5%82aw_Hejmowski",
+    "locator": "pl: Represje ze strony UB i SB",
+    "excerpt": "W 1961 przesłuchano większość jego dotychczasowych klientów i następnie 20 lipca 1961 podjęto decyzję zawieszeniu w wykonywaniu czynności zawodowych na podstawie decyzji Ministra Sprawiedliwości.",
+    "claim": "1961년 7월 법무장관 결정으로 그의 변호사 업무가 정지되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "polish-poznan-bar",
+   "kind": "institution",
+   "label": {
+    "ko": "포즈난 변호사회",
+    "en": "Poznań Bar (Izba Adwokacka w Poznaniu)"
+   },
+   "countryCode": "poland",
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Advocate of the Poznań bar 1930–1961 (suspended 1961, never resumed); bar is a valid affiliation for law, following the french-paris-bar precedent."
+ },
+ {
+  "personId": "stanislaw-matyja",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1956,
+  "endYear": 1956,
+  "evidence": [
+   {
+    "claim": "스타니스와프 마티야는 1956년 6월 포즈난 봉기의 비공식 지도자로 확인된다.",
+    "source": "https://en.wikipedia.org/wiki/Monument_to_the_Victims_of_June_1956",
+    "excerpt": "Among the speakers were Zdzisław Rozwalak, chairman of the Social Committee for the Construction of the Poznań June 1956 Monument; Stanisław Matyja, the informal leader of June 1956; and Lech Wałęsa, chairman of Solidarity.",
+    "locator": "characters 6405:6628; sha256 e03dc18cc6a51bffd36a89d10ab42a4827c0a3db8cabad7d1f2dba67f83f9d17"
+   },
+   {
+    "claim": "그는 1956년 6월 사건을 기념하는 기념비 제막식에서 상징적 역할을 했다.",
+    "source": "https://en.wikipedia.org/wiki/Monument_to_the_Victims_of_June_1956",
+    "excerpt": "The monument was unveiled jointly by Stanisław Matyja and Anna Strzałkowska.",
+    "locator": "characters 6629:6705; sha256 e03dc18cc6a51bffd36a89d10ab42a4827c0a3db8cabad7d1f2dba67f83f9d17"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Informal leader of the June 1956 Poznań strike as an elected ZISPO works-council delegate; no named organization led the protest (Solidarity link is only an honorary 1980 membership). Proposed years 1956."
+ },
+ {
+  "personId": "stepan-bandera",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "oun",
+  "relation": "service",
+  "startYear": 1931,
+  "endYear": 1959,
+  "evidence": [
+   {
+    "claim": "Bandera led nationalist underground activity; he organized the assassination of Pieracki, was imprisoned, led OUN-B after its 1940 split, and its 1941 proclamation pledged cooperation with Nazi Germany; he was later held in Sachsenhausen and led the OUN foreign organization after the war.",
+    "source": "https://en.wikipedia.org/wiki/Stepan_Bandera",
+    "excerpt": "Bandera was born into the family of a Ukrainian Greek Catholic priest in the Austro-Hungarian region of Galicia, which after World War I became part of Poland. Involved in nationalist organisations from a young age, he joined the Ukrainian Military Organisation in 1924. In 1931, he became head of propaganda of the Organisation of Ukrainian Nationalists (OUN), and later became head of the OUN for Poland in 1932. In 1934, he organised the assassination of the Polish interior minister, Bronisław Pieracki, for which he was sentenced to death for terrorism, subsequently commuted to life imprisonment.\nDuring the invasion of Poland in 1939, Bandera left custody amidst the turmoil, moving on to Kraków. In 1940, the OUN split into two factions with Bandera leading the more radical faction, the OUN-B, in opposition to the OUN-M. Bandera's OUN-B was devoted to the establishment of an independent Ukrainian state, envisioned by him as \"a one-party fascist dictatorship free of national minorities\" according to Timothy Snyder.  On 22 June 1941, the day that Nazi Germany invaded the Soviet Union, Bandera formed the Ukrainian National Committee. Its head, Yaroslav Stetsko, announced the creation of a Ukrainian state on 30 June 1941, in German-captured Lviv. The proclamation pledged to work with Nazi Germany. Germany disapproved of the proclamation and, for his refusal to rescind it, Bandera was arrested by the Gestapo and sent to the Sachsenhausen concentration camp in January 1942. The Germa",
+    "locator": "characters 185–2041"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Stepan_Bandera",
+    "locator": "en: lead",
+    "excerpt": "In 1931, he became head of propaganda of the Organisation of Ukrainian Nationalists (OUN), and later became head of the OUN for Poland in 1932.",
+    "claim": "반데라는 1931년 우크라이나 민족주의자 조직의 선전 책임자, 1932년 폴란드 지역 책임자가 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Stepan_Bandera",
+    "locator": "en: lead",
+    "excerpt": "In 1940, the OUN split into two factions with Bandera leading the more radical faction, the OUN-B, in opposition to the OUN-M.",
+    "claim": "1940년 조직이 분열하자 반데라가 급진파 OUN-B를 이끌었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Leadership posts in the OUN from 1931 and head of OUN-B until death in 1959; existing evidence kept, two focused excerpts added."
+ },
+ {
+  "personId": "tomas-garrigue-masaryk",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "czechoslovak-national-council",
+  "relation": "service",
+  "startYear": 1915,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "마사리크는 망명 중 체코슬로바키아 독립 운동을 조직하고 주도했다.",
+    "source": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Masaryk",
+    "excerpt": "He went into exile, and travelled around Europe to organise and promote the Czechoslovak cause.",
+    "locator": "characters 764:859; sha256 6dfb40b76e1b64e9385129ad08dab782886b6ab8c43d4bdbdbb7f8efa731a721"
+   },
+   {
+    "claim": "그는 망명 중 체코와 슬로바키아인들을 조직하여 독립 운동의 기반을 마련했다.",
+    "source": "https://en.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Masaryk",
+    "excerpt": "Masaryk began organizing Czechs and Slovaks outside Austria-Hungary during his exile, establishing contacts which would be crucial to Czechoslovak independence.",
+    "locator": "characters 5515:5675; sha256 6dfb40b76e1b64e9385129ad08dab782886b6ab8c43d4bdbdbb7f8efa731a721"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Czechoslovak_National_Council",
+    "locator": "en: World War I Activity",
+    "excerpt": "On 14 November 1915 his organization, calling itself the Czech Committee Abroad, published a manifesto declaring war on Austria-Hungary. Shortly afterwards, the Czech Committee Abroad was reconstituted as the Czecho-Slovak National Council.",
+    "claim": "마사리크의 해외체코위원회는 1915년 11월 선언 직후 체코슬로바키아 민족평의회로 재편되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Czechoslovak_National_Council",
+    "locator": "en: World War I Activity",
+    "excerpt": "The Czechoslovak National Council originally consisted of Masaryk and another Czech political exile, Josef Dürich, as co-chairmen.",
+    "claim": "마사리크는 체코슬로바키아 민족평의회의 공동의장이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "czechoslovak-national-council",
+   "kind": "force",
+   "label": {
+    "ko": "체코슬로바키아 민족평의회",
+    "en": "Czechoslovak National Council"
+   },
+   "countryCode": "czechoslovakia",
+   "parentId": null,
+   "periods": [
+    [
+     1915,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Chaired the émigré Czechoslovak National Council (Paris), which became the provisional government in 1918; site already calls it 민족평의회 (Beneš bio)."
+ },
+ {
+  "personId": "tony-cliff",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-british-swp",
+  "relation": "service",
+  "startYear": 1950,
+  "endYear": 2000,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Tony_Cliff",
+    "excerpt": "Tony Cliff (born Yigael Glückstein, Hebrew: יגאל גליקשטיין; 20 May 1917 – 9 April 2000) was a Trotskyist activist.",
+    "locator": "plain-text extract lead sentence; sha256 7be8b3def9dc377e3db2c3f6b3c27d856cf0f617a768e83679bd0ee6ed32d277"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Tony_Cliff",
+    "locator": "en: lead",
+    "excerpt": "A founding member of the Socialist Review Group, which became the International Socialists and then the Socialist Workers Party, in 1977. Cliff was effectively the leader of all three.",
+    "claim": "클리프는 사회주의평론그룹을 창립했고, 그것이 국제사회주의자들을 거쳐 1977년 사회주의노동자당이 되기까지 사실상 지도자였다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Tony_Cliff",
+    "locator": "en: International Socialists and SWP",
+    "excerpt": "Cliff remained a leading member until his death in 2000.",
+    "claim": "클리프는 2000년 사망할 때까지 지도적 당원이었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_%28UK%29",
+    "locator": "en: lead",
+    "excerpt": "Founded as the Socialist Review Group (SRG) by supporters of Tony Cliff in 1950 which had split from The Club, it became the International Socialists in 1962 and the SWP in 1977.",
+    "claim": "사회주의노동자당은 1950년 사회주의평론그룹으로 창립되어 1962년 국제사회주의자들, 1977년 사회주의노동자당이 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-british-swp",
+   "kind": "party",
+   "label": {
+    "ko": "영국 사회주의노동자당",
+    "en": "Socialist Workers Party (Britain)"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     1950,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder and de facto leader of the SRG / International Socialists / SWP (one continuous organization) from 1950 to his death."
+ },
+ {
+  "personId": "valery-sablin",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1960,
+  "endYear": 1975,
+  "evidence": [
+   {
+    "claim": "사블린은 소련 해군 장교이자 스토로제보이의 정치장교로서 소련 국가기관에 복무했다.",
+    "source": "https://en.wikipedia.org/wiki/Valery_Sablin",
+    "excerpt": "Valery Mikhailovich Sablin (Russian: Валерий Михайлович Саблин; 1 January 1939 – 3 August 1976) was a Soviet Navy officer and member of the Communist Party who in November 1975, while serving as the political officer on the anti-submarine frigate Storozhevoy, led a mutiny against the Soviet state.",
+    "locator": "characters 0:298; sha256 7c3ab89899fc3cb7c831828c73f33b79907a25fbbaa18efe14894ff374e056a2"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Valery_Sablin",
+    "locator": "en: Naval career",
+    "excerpt": "Upon graduation, Sablin was commissioned as a lieutenant and assigned to the Soviet Northern Fleet in Severomorsk.",
+    "claim": "사블린은 1960년 졸업과 함께 소위로 임관해 소련 북방함대에 배속되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Soviet Navy officer 1960–1975; the Soviet armed forces are filed under state-soviet (as in his existing zampolit activity)."
+ },
+ {
+  "personId": "vernon-kellogg",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "american-stanford-university",
+  "relation": "employment",
+  "startYear": 1894,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Vernon_Lyman_Kellogg",
+    "excerpt": "Vernon Lyman Kellogg (December 1, 1867 – August 8, 1937) was an American entomologist, evolutionary biologist, and science administrator.",
+    "locator": "plain-text extract lead sentence; sha256 8b54f47146efd5fdf9ba5f7237031ae3f43da560fd3f2dd57ea50301ec2ed98a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vernon_Lyman_Kellogg",
+    "locator": "en: Career",
+    "excerpt": "From 1894 to 1920, Kellogg was professor of entomology at Stanford University, where he established the Department of Zoology.",
+    "claim": "켈로그는 1894~1920년 스탠퍼드 대학교 곤충학 교수로 동물학과를 세웠다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "american-stanford-university",
+   "kind": "institution",
+   "label": {
+    "ko": "스탠퍼드 대학교",
+    "en": "Stanford University"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1891,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "His entomological research was done as a Stanford professor 1894–1920; universities are valid affiliations for science (Stanford is private, so not state-usa). Later NRC secretary is science administration, not this activity."
+ },
+ {
+  "personId": "victor-adler",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-austrian-sdap",
+  "relation": "service",
+  "startYear": 1889,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "1880년대 오스트리아 사회민주주의 통합에 기여",
+    "source": "https://encyclopedia.1914-1918-online.net/article/adler-victor",
+    "excerpt": "Dr. Victor Adler (1852-1918) entered the First World War in a state of ill health and deep apprehension. Hailing from a prosperous Prague Jewish merchant family, he had, as student of medicine in Vienna, joined the German nationalist movement under Georg von Schönerer’s (1842-1921) leadership before leaving due to the movement’s rising anti-Semitism. After a brief career as a physician helping Vienna’s poor, he devoted himself completely to the Austrian workers’ movement. In the 1880s, he unified the estranged factions of Austrian Social Democracy and did most to define its course in the years 1890-1918, struggling throughout against rising ethnic-national tensions among workers. An unorthodox Austro-Marxist like Otto Bauer (1881-1938) and Karl Renner (1870-1950), Adler believed that nationalism and theories of nationalism could somehow be reconciled with socialism.",
+    "locator": "characters 906–1784"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Victor_Adler",
+    "locator": "en: Life",
+    "excerpt": "At an 1888 conference in Hainfeld he formed the Social Democratic Workers' Party and became its first chairman.",
+    "claim": "아들러는 하인펠트 대회에서 사회민주노동자당을 결성하고 초대 의장이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Founder and first chairman of the SDAP, which he led until his death in 1918 (catalog period starts 1889, the Hainfeld congress ran into January 1889)."
+ },
+ {
+  "personId": "viktor-alksnis",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "soviet-soyuz-group",
+  "relation": "service",
+  "startYear": 1989,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Viktor_Alksnis",
+    "excerpt": "Viktor Imantovich Alksnis (Russian: Виктор Имантович Алкснис, Latvian: Viktors Alksnis; 21 June 1950 – 1 January 2025) was a Russian politician and Soviet Air Force colonel of Latvian descent.",
+    "locator": "plain-text extract lead sentence; sha256 97b3d1f91887c18890e05e1f9a9b74052757b1da3b2e3a4b009e66a3e2122a62"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%BA%D1%81%D0%BD%D0%B8%D1%81%2C_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80_%D0%98%D0%BC%D0%B0%D0%BD%D1%82%D0%BE%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "В октябре 1989 года стал одним из инициаторов создания и одним из руководителей крупнейшей депутатской группы Съезда народных депутатов СССР — группы «Союз».",
+    "claim": "알크스니스는 1989년 10월 소련 인민대표대회 최대 의원 그룹 「소유즈」의 창설을 주도하고 지도자의 한 사람이 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Viktor_Alksnis",
+    "locator": "en: Attitude to the breakup of the USSR",
+    "excerpt": "In 1990, he was one of the founders of a hard-line group \"Soyuz\" within the USSR Supreme Soviet.",
+    "claim": "그는 소련 최고회의 내 강경파 그룹 소유즈의 창립자 가운데 한 명이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "soviet-soyuz-group",
+   "kind": "force",
+   "label": {
+    "ko": "소유즈 의원 그룹",
+    "en": "Soyuz deputies' group (USSR Congress of People's Deputies)"
+   },
+   "countryCode": "soviet",
+   "parentId": null,
+   "periods": [
+    [
+     1989,
+     1991
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "soyuz-parliamentary-faction"
+  },
+  "reason": "Co-founder and leader of the Soyuz deputies' group, the activity that made him the 'Black Colonel'; glossary term soyuz-parliamentary-faction already exists (not a party, so no new term needed)."
+ },
+ {
+  "personId": "vincentas-borisevicius",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "catholic-church",
+  "relation": "service",
+  "startYear": 1910,
+  "endYear": 1946,
+  "evidence": [
+   {
+    "claim": "Catholic priest, seminary rector and bishop of Telšiai, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Vincentas_Borisevi%C4%8Dius",
+    "excerpt": "Borisevičius succeeded him as the new bishop of Telšiai",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vincentas_Borisevi%C4%8Dius",
+    "locator": "en: Early life and education",
+    "excerpt": "He was ordained as a priest on 29 May 1910 in Sejny.",
+    "claim": "보리세비추스는 1910년 5월 29일 세이니에서 사제 서품을 받았다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vincentas_Borisevi%C4%8Dius",
+    "locator": "en: lead",
+    "excerpt": "Vincentas Borisevičius (23 November 1887 – 18 November 1946) was a Lithuanian Roman Catholic bishop of the Telšiai Diocese.",
+    "claim": "그는 텔시아이 교구의 가톨릭 주교였다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Catholic priest from 1910, seminary rector, bishop of Telšiai until execution in 1946."
+ },
+ {
+  "personId": "vladimir-bekhterev",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-empire",
+  "relation": "employment",
+  "startYear": 1885,
+  "endYear": 1913,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Bekhterev",
+    "excerpt": "Vladimir Mikhailovich Bekhterev (Russian: Влади́мир Миха́йлович Бе́хтерев, IPA: [ˈbʲextʲɪrʲɪf]; 20 January 1857 – 24 December 1927) was a Russian neurologist and the father of objective psychology.",
+    "locator": "plain-text extract lead sentence; sha256 823a4a94f7997185f458112077b1ad66cf89bdd00ae471e9677489292fdebd1d"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Bekhterev",
+    "locator": "en: Contribution to neurology",
+    "excerpt": "Bekhterev's scholarship lasted until September 1885, after which, he returned to Russia and worked as the head of the Psychiatry Department at the University of Kazan until 1893.",
+    "claim": "베흐테레프는 1885~1893년 카잔 대학교 정신의학과장이었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Vladimir_Bekhterev",
+    "locator": "en: Other contributions",
+    "excerpt": "Bekhterev founded the Psychoneurological Institute at the St. Petersburg State Medical Academy; however, he was forced to resign in 1913 as a professor at the Military Medical Academy in St. Petersburg.",
+    "claim": "그는 1913년 상트페테르부르크 군의학아카데미 교수직에서 물러나야 했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Research posts at state institutions (Kazan University 1885–93, Military Medical Academy 1893–1913) count as employment in russian-empire; his 1918–27 Soviet posts would be a separate state-soviet activity if wanted."
+ },
+ {
+  "personId": "vladimir-usov",
+  "functionId": "economy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "모스크바 합작기업 이콤의 경제 업무 담당자였다. 학위·국적을 농업 정책 관료나 소련 국가기관 복무로 간주하지 않는다.",
+    "source": "https://warheroes.ru/hero/hero.asp?Hero_id=1201",
+    "excerpt": "Усов Владимир Александрович - экономист совместного предприятия \"Иком\" (Москва).",
+    "locator": "characters 333:413; sha256 3bf522ce574c2d442d0e6426944f73ec689d6df728096951d0c668ed4a03e008"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Only documented post is economist at the small Moscow joint venture 'Ikom' — a private firm not worth a catalog entry and not a state body; known chiefly as a victim of the August 1991 coup."
+ },
+ {
+  "personId": "vyacheslav-karpinsky",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-rsdlp",
+  "relation": "service",
+  "startYear": 1898,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "excerpt": "Вячеслав Алексеевич Карпинский (16 января 1880, Пенза — 20 марта 1965, Москва) — видный участник марксистского революционного движения в Российской империи.",
+    "locator": "plain-text extract lead sentence; sha256 ab7068edcb8b2a1f5b148870de276e9d7d998071f9fd2bdf9be3f93cf4592147"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "Член РСДРП с 1898 г. Один из организаторов «Союза борьбы за освобождение рабочего класса» в Харькове.",
+    "claim": "카르핀스키는 1898년부터 러시아 사회민주노동당 당원이었고 하르키우 노동계급해방투쟁동맹 조직자의 한 사람이었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "В Женеве под руководством В. И. Ленина работал в газетах «Вперёд» и «Пролетарий»; сотрудничал в «Правде». В годы первой мировой войны 1914—1918 годов организовал издание газеты «Социал-демократ».",
+    "claim": "그는 제네바에서 레닌 지도 아래 당 기관지에서 일했고, 1차 대전 중 「사회민주주의자」 발행을 조직했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Pre-1917 revolutionary organizing was party work in the RSDLP (Bolshevik émigré press in Geneva); post-1917 party work is already the soviet-party activity."
+ },
+ {
+  "personId": "wei-jingsheng",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "웨이징성은 중국 민주화 운동에 참여한 인권 운동가·반체제 인사이다.",
+    "source": "https://en.wikipedia.org/wiki/Wei_Jingsheng",
+    "excerpt": "Wei Jingsheng (Chinese: 魏京生; born 20 May 1950) is a Chinese human rights activist and dissident. He is best known for his involvement in the Chinese democracy movement.",
+    "locator": "characters 0:168; sha256 0f1f4dccc0f9fa84ec837c283054a7fd59577819174bd4a82dd470a07287cf91"
+   },
+   {
+    "claim": "그는 1978년 베이징 민주장벽에 게시된 「제5의 현대화」를 집필하며 민주화 운동을 전개했다.",
+    "source": "https://en.wikipedia.org/wiki/Wei_Jingsheng",
+    "excerpt": "He is most prominent for having authored the essay \"The Fifth Modernization\", which was posted on the Democracy Wall in Beijing in 1978.",
+    "locator": "characters 170:306; sha256 0f1f4dccc0f9fa84ec837c283054a7fd59577819174bd4a82dd470a07287cf91"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Democracy Wall essayist and co-editor of the unofficial magazine Explorations (1979); the sources name no organization he belonged to, and a magazine is not an affiliation."
+ },
+ {
+  "personId": "yakov-etinger",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1922,
+  "endYear": 1949,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Yakov_Gilyarievich_Etinger",
+    "excerpt": "Yakov Gilyarievich Etinger (Russian: Яков Гиляриевич Этингер; 22 December 1887 – 2 March 1951) was a Soviet medical doctor.",
+    "locator": "plain-text extract lead sentence; sha256 2dd69ed972941aceaae515371019ca53eefffbe4de04ed8de97ce9617236ccd1"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%AD%D1%82%D0%B8%D0%BD%D0%B3%D0%B5%D1%80%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%93%D0%B8%D0%BB%D1%8F%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "В 1922—1929 годах — ассистент, в 1929—1932 годах — приват-доцент кафедры пропедевтики внутренних болезней медицинского факультета 1-го МГУ",
+    "claim": "에틴게르는 1922~1932년 제1모스크바 국립대학 의학부에서 조교와 강사로 일했다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%AD%D1%82%D0%B8%D0%BD%D0%B3%D0%B5%D1%80%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%93%D0%B8%D0%BB%D1%8F%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "С 1932 года — заведующий кафедрой пропедевтики внутренних болезней, в 1941—1949 годах — кафедрой факультетской терапии педиатрического факультета 2-го Московского медицинского института (ММИ).",
+    "claim": "그는 1932~1949년 제2모스크바 의과대학 학과장을 지냈다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%AD%D1%82%D0%B8%D0%BD%D0%B3%D0%B5%D1%80%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%93%D0%B8%D0%BB%D1%8F%D1%80%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Биография",
+    "excerpt": "1 июня 1949 уволен из ММИ",
+    "claim": "그는 1949년 6월 1일 제2모스크바 의과대학에서 해임되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Professor at state medical schools (1st MGU, 2nd Moscow Medical Institute) 1922–1949 = employment in state-soviet."
+ },
+ {
+  "personId": "yevgeny-korovin",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1923,
+  "endYear": 1964,
+  "evidence": [
+   {
+    "claim": "코로빈은 국제법을 전공한 소련 법학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Yevgeny_Korovin",
+    "excerpt": "30 September] 1892 – 23 November 1964) was a Soviet jurist specializing in international law.",
+    "locator": "plain-text extract characters 92:185; sha256 d199e2a20111e329d36c8cd6ef3c86cc845544310342b50957acddc48e800876"
+   },
+   {
+    "claim": "그는 모스크바 대학, 유엔, 헤이그 상설중재재판소에서 학술·법률 직책을 맡았다.",
+    "source": "https://en.wikipedia.org/wiki/Yevgeny_Korovin",
+    "excerpt": "\" Korovin held several academic and legal positions at Moscow State University, the United Nations, and the Permanent Court of Arbitration in the Hague.",
+    "locator": "plain-text extract characters 342:494; sha256 d199e2a20111e329d36c8cd6ef3c86cc845544310342b50957acddc48e800876"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Yevgeny_Korovin",
+    "locator": "en: Career",
+    "excerpt": "In 1923, he became a Professor of Law at Moscow State University.",
+    "claim": "코로빈은 1923년 모스크바 국립대학 법학 교수가 되었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D0%BD%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "locator": "ru: Вехи биографии",
+    "excerpt": "1948—1950 — директор Института права Академии наук СССР (1948—1952).",
+    "claim": "그는 소련 과학아카데미 법연구소 소장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Moscow State University professor from 1923 and director of the Academy of Sciences Institute of Law: state academic posts = employment in state-soviet (until death in 1964; no end date given, so 1964)."
+ },
+ {
+  "personId": "yi-dong-hwi",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-korean-socialist-1918",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1921,
+  "evidence": [
+   {
+    "claim": "이동휘는 1918년 한인사회당 창당에 참여했고, 1920년 고려공산당을 결성했다.",
+    "source": "https://en.wikipedia.org/wiki/Yi_Tonghwi",
+    "excerpt": "Yi was one of the founding members of the Korean Socialist Party in Khabarovsk on 26 June 1918, and sought support from the Bolsheviks.",
+    "locator": "characters 1296:1431; accessed 2026-09-27; sha256 d6fe60c9245c03763514eced7f1723bb30e7e7446110fc42cf5db83fdf5be2a1"
+   },
+   {
+    "claim": "이동휘는 1918년 한인사회당 창당에 참여했고, 1920년 고려공산당을 결성했다.",
+    "source": "https://en.wikipedia.org/wiki/Yi_Tonghwi",
+    "excerpt": "Yi formed the Korean Communist Party in 1920, and members from the Korean Socialist Party joined the party on 10 January 1921.",
+    "locator": "characters 2217:2343; accessed 2026-09-27; sha256 d6fe60c9245c03763514eced7f1723bb30e7e7446110fc42cf5db83fdf5be2a1"
+   },
+   {
+    "source": "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4%EA%B3%B5%EC%82%B0%EB%8B%B9_%28%EC%83%81%ED%95%98%EC%9D%B4%29",
+    "locator": "ko: lead",
+    "excerpt": "당시 상해임시정부는 이동휘가 한인사회당 당수로서 국무총리에 취임함으로써 민족,사회주의 세력의 연합정부 형태를 띠었다.",
+    "claim": "이동휘는 한인사회당 당수였다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Founder and head (당수) of the Korean Socialist Party 1918–1921; its continuation, the Shanghai Koryo Communist Party 1921–22, is already a separate activity, so the primary ends in 1921."
+ },
+ {
+  "personId": "zaki-validi",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "bashkir-army",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "Leader of the Bashkir Army (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Bashkiria_(1917%E2%80%931919)",
+    "excerpt": "an independent army, named simply the Bashkir Army, was established under the leadership of Zeki Velidi Togan",
+    "locator": "History"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Bashkiria_%281917%E2%80%931919%29",
+    "locator": "en: History",
+    "excerpt": "However, subsequent moves by Alexander Kolchak, including the forcible dissolution of the Bashkir Army and the transfer of its units to the Orenburg Cossacks, obliged the government of Bashkiria to engage in negotiates with Bolshevik forces.",
+    "claim": "콜차크가 바시키르군을 강제 해산하려 하자 바시키르 정부는 볼셰비키와 협상에 나섰다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "bashkir-army",
+   "kind": "military",
+   "label": {
+    "ko": "바시키르군",
+    "en": "Bashkir Army (Bashkurdistan, 1917–1919)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1919
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Founder and commander of the Bashkir Army of autonomous Bashkurdistan (Dec 1917–1919), before it went over to the Reds; site uses 바시키르 in bios (term bashkir-autonomy is 바시쿠르디스탄)."
+ },
+ {
+  "personId": "zanis-lipke",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": 1941,
+  "endYear": 1944,
+  "evidence": [
+   {
+    "claim": "리가의 유대인 구조",
+    "source": "https://en.wikipedia.org/wiki/%C5%BDanis_Lipke",
+    "excerpt": "was a Latvian rescuer of Jews in Riga in World War II from the Holocaust in Latvia",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/J%C4%81nis_Lipke",
+    "locator": "en: lead",
+    "excerpt": "He retrained in order to become a contractor for the Luftwaffe, and then used his position to smuggle Jewish workers out of the Riga Ghetto and camps in and around Riga, whom he concealed with the aid of his wife Johanna until the arrival of the Red Army in October 1944.",
+    "claim": "립케는 아내의 도움으로 개인적으로 유대인들을 게토에서 빼내 숨겼다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Private rescue network run by Lipke and his wife with helpers; sources name no organization."
+ },
+ {
+  "personId": "zoltan-tildy",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-hungarian-smallholders",
+  "relation": "service",
+  "startYear": 1929,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "틸디는 1929년 독립소농업자당에 합류해 부총재가 되었고, 1945년 당 지도자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+    "excerpt": "In 1929, Tildy joined the Independent Smallholders' Party (FKgP) with other noted Hungarian political figures, including Ferenc Nagy. He became executive vice-president of the organization soon afterwards.",
+    "locator": "characters 832:1037; accessed 2026-09-27; sha256 99d35b54f27a229dde254ceade629bba3258977f1060e257e6b1ba186bef22c6"
+   },
+   {
+    "claim": "틸디는 1929년 독립소농업자당에 합류해 부총재가 되었고, 1945년 당 지도자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Tildy",
+    "excerpt": "When the Soviets occupied Hungary and drove out the Germans, Tildy became leader of the FKgP and was appointed Prime Minister of Hungary, serving from 15 November 1945 until 1 February 1946, when he was elected President of Hungary.",
+    "locator": "characters 1479:1711; accessed 2026-09-27; sha256 99d35b54f27a229dde254ceade629bba3258977f1060e257e6b1ba186bef22c6"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Executive vice-president of the FKgP soon after joining in 1929 and party leader from 1945: leadership posts, so service (the plain membership is already a separate activity)."
+ }
+]

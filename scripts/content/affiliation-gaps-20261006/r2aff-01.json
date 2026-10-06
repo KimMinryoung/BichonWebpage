@@ -1,0 +1,1042 @@
+[
+ {
+  "personId": "gustav-landauer",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "german-socialist-bund",
+  "relation": "service",
+  "startYear": 1908,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "Founded the Socialist Bund in 1908",
+    "source": "https://spartacus-educational.com/GERlandauer.htm",
+    "excerpt": "Landauer and Erich Mühsam established Sozialistischer Bund in May 1908, with the stated goal of \"uniting all humans who are serious about realizing socialism\". Landauer and Mühsam hoped to inspire the creation of small independent cooperatives and communes as the basic cells of a new socialist society. To support the new organisation, Landauer revived Der Sozialist, describing it as the Journal of the Socialist Bund.",
+    "locator": "characters 3874–4294"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Gustav_Landauer",
+    "locator": "en: lead",
+    "excerpt": "In 1908, he founded the Socialist Bund (Socialist League), an association of autonomous groups intended to prefigure a future libertarian society through cooperative settlements.",
+    "claim": "란다우어는 1908년 사회주의자동맹을 세웠다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Gustav_Landauer",
+    "locator": "en: Philosophy of history and the Socialist Bund",
+    "excerpt": "The Bund was launched in June 1908 with \"Twelve Articles\" aiming to begin immediate socialist construction in enclaves outside the capitalist state through a federation of autonomous communities.",
+    "claim": "사회주의자동맹은 1908년 6월 자율 공동체 연합으로 출범했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "german-socialist-bund",
+   "kind": "force",
+   "label": {
+    "ko": "사회주의자동맹",
+    "en": "Socialist Bund (Sozialistischer Bund)"
+   },
+   "countryCode": "germany",
+   "parentId": null,
+   "periods": [
+    [
+     1908,
+     1919
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Landauer founded and led the Sozialistischer Bund (1908); bio already calls it 사회주의자 동맹. Not a party, so kind force; end year approximate (Bund faded by Landauer's death 1919)."
+ },
+ {
+  "personId": "harold-harmsworth",
+  "functionId": "propaganda",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "british-daily-mail",
+  "relation": "service",
+  "startYear": 1896,
+  "endYear": 1940,
+  "evidence": [
+   {
+    "claim": "Newspaper proprietor of the Daily Mail and Daily Mirror",
+    "source": "https://en.wikipedia.org/wiki/Harold_Harmsworth%2C_1st_Viscount_Rothermere",
+    "excerpt": "In 1896 Harmsworth and his brother Alfred together founded the Daily Mail. In 1903 they launched the Daily Mirror.",
+    "locator": "Entry into Fleet Street"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Harold_Harmsworth%2C_1st_Viscount_Rothermere",
+    "locator": "en: lead",
+    "excerpt": "Harold Sidney Harmsworth, 1st Viscount Rothermere (26 April 1868 – 26 November 1940), was a leading British newspaper proprietor who owned Associated Newspapers Ltd. He is best known, like his brother Alfred Harmsworth, later Viscount Northcliffe, for the development of the Daily Mail and the Daily Mirror.",
+    "claim": "함즈워스는 어소시에이티드 뉴스페이퍼스를 소유하고 『데일리 메일』을 키운 신문 사주였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "british-daily-mail",
+   "kind": "institution",
+   "label": {
+    "ko": "데일리 메일",
+    "en": "Daily Mail (Associated Newspapers)"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     1896,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Co-founder (1896) and later controlling proprietor of the Daily Mail/Associated Newspapers, the vehicle of his press campaigns; precedent french-je-suis-partout for a newspaper under propaganda. Alternative: id for Associated Newspapers Ltd as the owning company."
+ },
+ {
+  "personId": "hjalmar-mae",
+  "functionId": "government",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "estonian-self-administration",
+  "relation": "service",
+  "startYear": 1941,
+  "endYear": 1944,
+  "evidence": [
+   {
+    "claim": "에스토니아 자치행정 수장",
+    "source": "https://en.wikipedia.org/wiki/Hjalmar_M%C3%A4e",
+    "excerpt": "In 1941–1944 he headed the Estonian Self-Administration, a puppet government set up during the country's occupation by Nazi Germany during World War II.",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Estonian_Self-Administration",
+    "locator": "en: lead",
+    "excerpt": "Estonian Self-Administration (Estonian: Eesti Omavalitsus, German: Estnische Selbstverwaltung), also known as the Directorate, was the puppet government set up in Estonia during the occupation of Estonia by Nazi Germany. It was headed by Hjalmar Mäe.",
+    "claim": "에스토니아 자치행정은 나치 독일 점령기의 괴뢰 정부였고 매에가 이끌었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "estonian-self-administration",
+   "kind": "state",
+   "label": {
+    "ko": "에스토니아 자치행정 국가기관",
+    "en": "Estonian Self-Administration state institutions"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1941,
+     1944
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Headed the German-installed Estonian Self-Administration 1941–1944; modelled on manchukuo/kokand-autonomy state entries; label reuses the bio wording 「에스토니아 자치행정」."
+ },
+ {
+  "personId": "hugo-eberlein",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "german-spartacus-league",
+  "relation": "service",
+  "startYear": 1916,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "1916년 스파르타쿠스단의 지하 조직화와 1918년 독일 공산당 창당에 참여했다.",
+    "source": "https://spartacus-educational.com/GEReberlein.htm",
+    "excerpt": "Over the next few months members of this group were arrested and spent several short spells in prison. On the release of Luxemburg in February 1916, it was decided to establish an underground political organization called Spartakusbund (Spartacus League). The Spartacus League publicized its views in its illegal newspaper, Spartacus Letters. Like the Bolsheviks in Russia, they began to argue that socialists should turn this nationalist conflict into a revolutionary war.\n\nDick Howard has argued: \"Agitation continued throughout the war; yet the Spartacus League was never very strong. All agitation had to be carried out in strict secrecy, and the leaders were more often than not in jail.\" Members included Duncker, Rosa Luxemburg, Karl Liebknecht, Leo Jogiches, Paul Levi, Ernest Meyer, Franz Mehring, Clara Zetkin, Wilhelm Pieck, Julian Marchlewski and Hermann Duncker.\n\nOn 1st May, 1916, the Spartacus League decided to come out into the open and organized a demonstration against the First World War in the Potsdamer Platz in Berlin. One of those who attended reported: \"It was a great success. At eight o'clock in the morning a dense throng of workers - almost ten thousand - assembled in the square, which the police had already occupied well ahead of time. Karl Liebknecht, in uniform, and Rosa Luxemburg were in the midst of the demonstrators and greeted with cheers from all sides.\" Several of its leaders, including Karl Liebknecht and Rosa Luxemburg were arrested and imprisoned.\n\nKarl",
+    "locator": "characters 1178–3107"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Hugo_Eberlein",
+    "locator": "en: lead",
+    "excerpt": "As an opponent of Burgfriedenspolitik, the party's policy of support for and cessation of strikes during the First World War, he co-founded the USPD and the Spartacus League.",
+    "claim": "에벌라인은 스파르타쿠스단을 공동 창립했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "german-spartacus-league",
+   "kind": "force",
+   "label": {
+    "ko": "스파르타쿠스단",
+    "en": "Spartacus League (Spartakusbund)"
+   },
+   "countryCode": "germany",
+   "parentId": null,
+   "periods": [
+    [
+     1916,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Co-founder of the Spartacus League (1916), which became the KPD in Dec 1918; bio already uses 스파르타쿠스단. Kind force (a faction/league, not a separate party until it founded the KPD); no glossary term found."
+ },
+ {
+  "personId": "hussein-kulmiye-afrah",
+  "functionId": "security",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-somalia",
+  "relation": "service",
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "후세인 쿨미예 아프라는 소말리아의 매우 고위 경찰관이자 혁명가·정치인으로 규정된다.",
+    "source": "https://en.wikipedia.org/wiki/Hussein_Kulmiye_Afrah",
+    "excerpt": "Hussein Kulmiye Afrah (Somali: Xuseen Kulmiye Afrax, Arabic: حسين كلمي افرح, (1920 – 1993) was a very senior Somali police officer, revolutionary and a politician who served as the second Vice President of Somalia from 1971 to 1989 and various political positions in the Somali Democratic Republic.",
+    "locator": "characters 0:298; accessed 2026-09-27; sha256 b16926c26a9b0b52ed89445ea60773eef141f0d71157d3b00d3ac5eb36c9e857"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Senior officer of the Somali police (state policing) per the lead already on the activity; years of police service not given."
+ },
+ {
+  "personId": "ibrahim-bek",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "basmachi-movement",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1931,
+  "evidence": [
+   {
+    "claim": "Basmachi commander, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+    "excerpt": "was an Uzbek leader in the Basmachi movement, a liberation movement in Central Asia, which fought against the Red Army",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ibrahim_Bek",
+    "locator": "en: Biography",
+    "excerpt": "Ibrahim Bek and his Basmachi were engaged and defeated by Red Army units of the Turkestan Military District under the command of Mikhail Frunze in the spring of 1925.",
+    "claim": "이브라힘 베크는 자기 바스마치 부대를 이끌고 붉은 군대와 싸웠다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "basmachi-movement",
+   "kind": "military",
+   "label": {
+    "ko": "바스마치 운동",
+    "en": "Basmachi movement"
+   },
+   "countryCode": "uzbekistan",
+   "parentId": null,
+   "periods": [
+    [
+     1916,
+     1934
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "basmachi-movement"
+  },
+  "reason": "Documented Basmachi commander (lead + biography); glossary term basmachi-movement already exists, label reused; kind military like russian-tambov-insurgents."
+ },
+ {
+  "personId": "igor-grazin",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": null,
+  "endYear": 1989,
+  "evidence": [
+   {
+    "claim": "그라진은 타르투 국립대학 법학 교수로 경력을 시작했다.",
+    "source": "https://en.wikipedia.org/wiki/Igor_Gr%C3%A4zin",
+    "excerpt": "Grazin began his career as a professor of law at Tartu State University.",
+    "locator": "plain-text extract characters 474:546; sha256 b7d7b74d9ce34cb18ac234cb3578f2b21ae9ff81f04f39b893893e0755b9fa25"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Грязин,_Игорь_Николаевич",
+    "locator": "ru: Биография",
+    "excerpt": "Преподавал в Тартуском университете, исполнял обязанности заместителя декана и помощника ректора, затем в 1988—1989 годах работал заведующим отделом Института философии, социологии и права Академии наук Эстонской ССР.",
+    "claim": "그랴진은 타르투 대학에서 가르치고 1988~1989년 에스토니아 SSR 과학아카데미 연구소 부장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Law teaching at the state-run Tartu State University and a department of the Estonian SSR Academy of Sciences = employment in state-soviet; later Notre Dame/University Nord posts not affiliations."
+ },
+ {
+  "personId": "ion-inculet",
+  "functionId": "legislature",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "moldavian-democratic-republic",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "President of Sfatul Țării, the assembly of the Moldavian Democratic Republic (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Ion_Incule%C8%9B",
+    "excerpt": "He served as President of the Country Council of the Moldavian Democratic Republic",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ion_Incule%C8%9B",
+    "locator": "en: President of the Sfatul Țării",
+    "excerpt": "On 21 November 1917 the Country Council was opened, a body that would speak on behalf of Bessarabia and decided its fate. Ion Inculeț was elected president of this parliament unanimously.",
+    "claim": "인쿨레츠는 1917년 스파툴 처리이 의장으로 선출되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Moldavian_Democratic_Republic",
+    "locator": "en: lead",
+    "excerpt": "The Sfatul Țării was its legislative body, while the \"Council of Directors General\", renamed the \"Council of Ministers\" after the Declaration of Independence, was its government.",
+    "claim": "스파툴 처리이는 몰다비아 민주공화국의 입법기관이었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "moldavian-democratic-republic",
+   "kind": "state",
+   "label": {
+    "ko": "몰다비아 민주공화국 국가기관",
+    "en": "Moldavian Democratic Republic state institutions"
+   },
+   "countryCode": "moldova",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "moldavian-democratic-republic"
+  },
+  "reason": "Presided over the Sfatul Țării, legislature of the Moldavian Democratic Republic (1917–1918); state not in catalog; glossary term moldavian-democratic-republic exists."
+ },
+ {
+  "personId": "ion-pelivan",
+  "functionId": "diplomacy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "moldavian-democratic-republic",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Foreign minister (Director General for Foreign Affairs) of the Moldavian Democratic Republic (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Ion_Pelivan",
+    "excerpt": "Pelivan served as Foreign Minister of the Moldavian Democratic Republic in the Pantelimon Erhan Cabinet and the Daniel Ciugureanu Cabinet",
+    "locator": "lead"
+   }
+  ],
+  "newAffiliation": {
+   "id": "moldavian-democratic-republic",
+   "kind": "state",
+   "label": {
+    "ko": "몰다비아 민주공화국 국가기관",
+    "en": "Moldavian Democratic Republic state institutions"
+   },
+   "countryCode": "moldova",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "moldavian-democratic-republic"
+  },
+  "reason": "Foreign Minister of the Moldavian Democratic Republic 1917–1918 (lead already on activity); same new state as ion-inculet."
+ },
+ {
+  "personId": "ivan-alexandrov",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1920,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Ivan_Alexandrov",
+    "excerpt": "Ivan Gavrilovich Alexandrov (Russian: Ива́н Гаври́лович Алекса́ндров; 1 September [O.S. 21 August] 1875 – 2 May 1936) was a Russian and Soviet engineer who played a significant role in the modernization of the Soviet Union.",
+    "locator": "plain-text extract lead sentence; sha256 f04ad450246a558ce2cd60f00bdeda793db5e15b06b7eb98d011929fdb0aab94"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ivan_Alexandrov",
+    "locator": "en: Career",
+    "excerpt": "From 1921 to 1927, he was Chief Engineer of the design organization Dniprobud or Dniprostroy (Ukrainian: Дніпробуд; Russian: «Днепрострой») and, in 1926, designed the Dnipr Dam on the Dnipr. From 1921, he headed the Regionalisation Committee of Gosplan",
+    "claim": "알렉산드로프는 국가 설계기관 드네프로스트로이 수석 기사와 고스플란 지역화위원회 위원장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Engineering work for GOELRO, Dneprostroy and Gosplan (Soviet state bodies) = state-soviet employment."
+ },
+ {
+  "personId": "ivan-bardin",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1932,
+  "endYear": 1960,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Ivan_Bardin",
+    "excerpt": "Ivan Pavlovich Bardin (Russian: Иван Павлович Бардин; 1883–1960) was a Soviet metallurgist and active participant in solving the main engineering issues of the domestic ferrous metallurgical industry.",
+    "locator": "plain-text extract lead sentence; sha256 b5c699c8be203a92606f5cd24676648952a6019d8f7bfd8a9a7241b77f2a45e9"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ivan_Bardin",
+    "locator": "en: Career",
+    "excerpt": "From 1939 he was director of the Institute of Metallurgy of the USSR AS and since 1944 director of the Central research institute of ferrous metallurgy that has borne his name since 1960. Since 1942 he was made vice-president of USSR AS",
+    "claim": "바르딘은 소련 과학아카데미 야금연구소 소장과 과학아카데미 부총재를 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Academician (1932), institute director and vice-president of the USSR Academy of Sciences = state academy employment."
+ },
+ {
+  "personId": "ivan-ilyin",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-empire",
+  "relation": "employment",
+  "startYear": 1909,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "일린은 러시아의 법학자이자 종교·정치 철학자였다.",
+    "source": "https://en.wikipedia.org/wiki/Ivan_Ilyin",
+    "excerpt": "28 March] 1883 – 21 December 1954) was a Russian jurist, religious and political philosopher, publicist, orator, and a far-right thinker.",
+    "locator": "plain-text extract characters 113:250; sha256 9a5e99a9bf4c09743b82cf07104cce2441fb503c50adf1bff279c654729ef971"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ivan_Ilyin",
+    "locator": "en: Early life",
+    "excerpt": "From 1909 he began working as a privatdozent.",
+    "claim": "일리인은 1909년부터 (모스크바 대학) 사강사로 일했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ivan_Ilyin",
+    "locator": "en: World War I and the Russian Revolution",
+    "excerpt": "Ilyin became a professor of law in Moscow University.",
+    "claim": "일리인은 모스크바 대학 법학 교수가 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Legal philosophy taught at the state Moscow University from 1909 (Russian Empire); his 1918–1922 Soviet-era professorship and the émigré Russian Scientific Institute in Berlin (1923–1934) are not covered by this choice and could be separate activities."
+ },
+ {
+  "personId": "ivan-pavlov",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-empire",
+  "relation": "employment",
+  "startYear": 1890,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Ivan_Pavlov",
+    "excerpt": "Ivan Petrovich Pavlov (Russian: Иван Петрович Павлов, IPA: [ɪˈvan pʲɪˈtrovʲɪtɕ ˈpavləf] ; 26 September [O.S. 14 September] 1849 – 27 February 1936) was a Russian and Soviet experimental neurologist and physiologist known for his discovery of classical conditioning through his experiments with dogs.",
+    "locator": "plain-text extract lead sentence; sha256 d73678875389744576a2e70698934e93c5cec619e923d8e0c763b6eae41bfac6"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Ivan_Pavlov",
+    "locator": "en: Return to Russia",
+    "excerpt": "In 1890, he was appointed the role of professor of Pharmacology at the Military Medical Academy and occupied the position for five years. In 1891, Pavlov was invited to the Institute of Experimental Medicine in St. Petersburg to organize and direct the Department of Physiology.",
+    "claim": "파블로프는 군의학아카데미 교수와 실험의학연구소 생리학부장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Professor at the Military Medical Academy and head of physiology at the Institute of Experimental Medicine (imperial state institutions) where the Nobel work was done; his Soviet-era work (Academy of Sciences institute, 1925) would be a separate state-soviet activity."
+ },
+ {
+  "personId": "jaan-tonisson",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-estonian-national-progress",
+  "relation": "service",
+  "startYear": 1905,
+  "endYear": 1917,
+  "evidence": [
+   {
+    "claim": "퇴니손은 1905년 에스토니아 최초의 정당을 창당해 이끌었고, 1930년대 권위주의 체제에서는 민주 야당의 지도자가 되었다.",
+    "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+    "excerpt": "Tõnisson used the October Manifesto to widen the rights of Estonians, establishing the first Estonian political party – Estonian National Progress Party (Eesti Rahvuslik Eduerakond – ERE; or Eesti Rahvameelne Eduerakond – Estonian Progressive People's Party) together with Villem Reiman.",
+    "locator": "characters 3710:3997; accessed 2026-09-27; sha256 c7b6f54327180ff67907c9f0256e950b43558065f3417c8ec24d04090a4f264f"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+    "locator": "en: Early political career",
+    "excerpt": "In 1906, the National Progress Party saw great support and Tõnisson was among the four Estonian politicians to be elected to the First State Duma in 1906",
+    "claim": "퇴니손의 민족진보당은 1906년 큰 지지를 얻었고 그는 제1대 두마 의원이 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+    "locator": "en: Independence",
+    "excerpt": "For the elections to the Estonian Constituent Assembly, Tõnisson had yet again transformed his party, this time to the Estonian People's Party.",
+    "claim": "퇴니손은 자기 당을 다시 에스토니아 인민당으로 개편했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-estonian-national-progress",
+   "kind": "party",
+   "label": {
+    "ko": "에스토니아 민족진보당",
+    "en": "Estonian National Progress Party (Eesti Rahvameelne Eduerakond)"
+   },
+   "countryCode": "estonia",
+   "parentId": null,
+   "periods": [
+    [
+     1905,
+     1917
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder-leader of the first Estonian party (ERE, 1905); its 1919 successor is the existing party-estonian-people activity, so years narrowed to 1905–1917. The second old excerpt (leader of the democratic opposition, 1930s) does not fit this party and is dropped; National Centre Party 1932– could be a further activity. No glossary term found."
+ },
+ {
+  "personId": "jan-palach",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "팔라흐는 1968년 바르샤바 조약군의 체코슬로바키아 침공에 반대하는 정치적 항의로 1969년 분신했다.",
+    "source": "https://en.wikipedia.org/wiki/Jan_Palach",
+    "excerpt": "His self-immolation in 1969 at the age of 20 was a political protest against the Warsaw Pact invasion of Czechoslovakia in 1968 which brought an end to the Prague Spring.",
+    "locator": "characters 169:339; sha256 1422cb77aaea69a1174b61eea4d1e04d7455354663ff803c870a60a7607b1d35"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Individual protest (self-immolation) by a student; the clandestine group named in his letter apparently never existed, and no organization membership is documented."
+ },
+ {
+  "personId": "jaroslaw-dabrowski",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-paris-commune-1871",
+  "relation": "service",
+  "startYear": 1871,
+  "endYear": 1871,
+  "evidence": [
+   {
+    "claim": "Commune general and command assignments, fatal wounding/death",
+    "source": "https://polishhistory.pl/jaroslaw-dabrowski-and-walery-wroblewski-from-a-polish-uprising-to-a-french-revolt/",
+    "excerpt": "The political upheaval in Paris, which took place on 18 March 1871, found Dąbrowski in the south of France, where he wanted to join the army formed by his idol Garibaldi. He had already criticised the French government and sympathised with the opposition left. He knew many of the future revolutionaries personally. He wrote memoranda in which he argued that Paris, with its human and financial resources, could become an impregnable fortress. Meanwhile, the Commune was paralysed by bickering politicians giving conflicting orders to soldiers.\n\nThe moment when the government was virtually defenceless was missed. The failure of the offensive on Versailles in early April shook up the authorities of the revolutionary capital leading to a major personnel reshuffle and the Poles benefited from this. Dąbrowski was given command of the most vulnerable north-western section of the front. With counterattacks, he tried to push the government forces as far away from Paris as possible. But he had too few men, cannons and ammunition to win. He could only delay the advance of the enemy. After further regroupings, Wróblewski commanded the western front, and Dąbrowski became commander-in-chief. He was dismissed after four days, then reinstated when the outcome of the civil war was already determined.\n\nWróblewski, who spoke poor French, was for some time quartered at the Elysée Palace, in the suite where Tsar Alexander II had stayed during a recent visit to Paris. He did not tolerate drunkenness, ",
+    "locator": "characters 6034–8251"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jaros%C5%82aw_D%C4%85browski",
+    "locator": "en: Paris Commune",
+    "excerpt": "Dąbrowski was elected to the Council of the Paris Commune, using the spelling Jaroslav Dombrowski. As one of the few Commune soldiers with military experience, he was soon named Commander-in-Chief of the Commune forces.",
+    "claim": "동브로프스키는 파리 코뮌 평의회에 선출되고 코뮌군 총사령관이 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-paris-commune-1871",
+   "kind": "institution",
+   "label": {
+    "ko": "파리 코뮌(1871)",
+    "en": "Paris Commune (1871)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1871,
+     1871
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "General and commander-in-chief of the Commune forces in 1871; catalog has only the 1789–1795 Commune, so a 1871 entry is needed (label disambiguated 파리 코뮌(1871)). His 1863 January Uprising role is separate and not this activity."
+ },
+ {
+  "personId": "jean-moulin",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-cnr",
+  "relation": "service",
+  "startYear": 1943,
+  "endYear": 1943,
+  "evidence": [
+   {
+    "claim": "대표 경력을 원문과 대조하여 organizing 기능으로 분류함.",
+    "source": "https://en.wikipedia.org/wiki/Jean_Moulin",
+    "excerpt": "Jean Pierre Moulin (French: [ʒɑ̃ mulɛ̃] ; 20 June 1899 – 8 July 1943) was a French civil servant and hero of the French Resistance who succeeded in unifying the main networks of the Resistance in World War II . He served as the first President of the National Council of the Resistance from 27 May 1943 until his death less than two months later.",
+    "locator": "Article text, line 168 in reviewed snapshot; accessed 2026-09-27; sha256 0ed72c25664dc507fbfed2ab2896f08a70d3c847ae1e3c35826f3185ba77f056"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jean_Moulin",
+    "locator": "en: lead",
+    "excerpt": "He served as the first president of the National Council of the Resistance (CNR) from 27 May 1943 until he was killed less than two months later.",
+    "claim": "물랭은 1943년 국민저항위원회 초대 의장을 지냈다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-cnr",
+   "kind": "force",
+   "label": {
+    "ko": "국민저항위원회",
+    "en": "National Council of the Resistance (CNR)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1943,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "national-resistance-council-cnr"
+  },
+  "reason": "Founder and first president of the CNR (1943); bio and glossary already use 국민저항위원회 (term national-resistance-council-cnr; label drops the parenthesized abbreviation). Free France (de Gaulle delegate) would be an alternative umbrella."
+ },
+ {
+  "personId": "jonas-zemaitis",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "lithuanian-partisans",
+  "relation": "service",
+  "startYear": 1944,
+  "endYear": 1953,
+  "evidence": [
+   {
+    "claim": "Chairman of the Union of Lithuanian Freedom Fighters (LLKS), no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Jonas_%C5%BDemaitis",
+    "excerpt": "In February 1949, he established the Union of Lithuanian Freedom Fighters and became its chairman",
+    "locator": "Biography"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jonas_%C5%BDemaitis",
+    "locator": "en: Biography",
+    "excerpt": "When the Red Army returned to Lithuania, Žemaitis joined the Lithuanian Liberty Army and the Lithuanian partisans, steadily rising to a position of leadership. In February 1949, he established the Union of Lithuanian Freedom Fighters and became its chairman",
+    "claim": "제마이티스는 리투아니아 파르티잔에 합류해 지휘관이 되었고 1949년 리투아니아 자유 전사 연합을 세워 의장이 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "lithuanian-partisans",
+   "kind": "military",
+   "label": {
+    "ko": "리투아니아 파르티잔",
+    "en": "Lithuanian partisans (1944–1953), incl. Union of Lithuanian Freedom Fighters (LLKS)"
+   },
+   "countryCode": "lithuania",
+   "parentId": null,
+   "periods": [
+    [
+     1944,
+     1953
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "union-of-lithuanian-freedom-fighters"
+  },
+  "reason": "Partisan commander from 1944/45 and LLKS chairman 1949–1953. One entry for the armed resistance with LLKS (1949 umbrella, glossary term union-of-lithuanian-freedom-fighters) inside it covers both Žemaitis and Lukša; alternative is an LLKS-only id with periods 1949–1953."
+ },
+ {
+  "personId": "jozsef-mindszenty",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "catholic-church",
+  "relation": "service",
+  "startYear": 1944,
+  "endYear": 1974,
+  "evidence": [
+   {
+    "claim": "베스프렘 주교, 에스테르곰 대주교·수좌대주교, 추기경",
+    "source": "https://en.wikipedia.org/wiki/József_Mindszenty",
+    "excerpt": "was a Hungarian cardinal of the Catholic Church who served as Archbishop of Esztergom and leader of the Catholic Church in Hungary from 1945 to 1973",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/J%C3%B3zsef_Mindszenty",
+    "locator": "en: Early life and career",
+    "excerpt": "On 25 March 1944, he was consecrated Bishop of Veszprém.",
+    "claim": "민드센티는 1944년 베스프렘 주교로 서품되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Bishop of Veszprém from 1944, Archbishop of Esztergom 1945–1973: Catholic Church service."
+ },
+ {
+  "personId": "junaid-khan",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "basmachi-movement",
+  "relation": "service",
+  "startYear": 1920,
+  "endYear": 1931,
+  "evidence": [
+   {
+    "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+    "locator": "en: lead",
+    "excerpt": "Junaid fled to the Karakum Desert with the remnants of his troops from where he organized active resistance to the emerging Soviet government.",
+    "claim": "주나이드는 카라쿰 사막으로 물러나 소비에트 정부에 대한 저항을 조직했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Junaid_Khan_(Basmachi_leader)",
+    "locator": "en: Clashes with the Red Army",
+    "excerpt": "In addition, Turkmen tribes also joined Junaid khan, who had the title of \"Commander of the Army of Islam\" Thus the area under the control of the Khiva Basmachis was significantly expanded.",
+    "claim": "주나이드가 이끈 히바 바스마치의 세력권이 확대되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "basmachi-movement",
+   "kind": "military",
+   "label": {
+    "ko": "바스마치 운동",
+    "en": "Basmachi movement"
+   },
+   "countryCode": "uzbekistan",
+   "parentId": null,
+   "periods": [
+    [
+     1916,
+     1934
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "basmachi-movement"
+  },
+  "reason": "Most of the 1918–1931 command was as Khivan Basmachi leader after 1920; start narrowed to 1920. The 1918–1920 command of the Khiva Khanate army (old excerpt, dropped here) would need a Khanate of Khiva state entry, not in the catalog — the same entry would also resolve his government activity."
+ },
+ {
+  "personId": "juozas-luksa",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "lithuanian-partisans",
+  "relation": "service",
+  "startYear": 1946,
+  "endYear": 1951,
+  "evidence": [
+   {
+    "claim": "Lithuanian partisan commander, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Juozas_Luk%C5%A1a",
+    "excerpt": "Within a year, he commanded the Birutė brigade of the Tauras military district.",
+    "locator": "Life"
+   }
+  ],
+  "newAffiliation": {
+   "id": "lithuanian-partisans",
+   "kind": "military",
+   "label": {
+    "ko": "리투아니아 파르티잔",
+    "en": "Lithuanian partisans (1944–1953), incl. Union of Lithuanian Freedom Fighters (LLKS)"
+   },
+   "countryCode": "lithuania",
+   "parentId": null,
+   "periods": [
+    [
+     1944,
+     1953
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "union-of-lithuanian-freedom-fighters"
+  },
+  "reason": "Commander of the Birutė brigade, Tauras military district (old excerpt kept); later a decorated LLKS partisan major. Same new entry as jonas-zemaitis."
+ },
+ {
+  "personId": "jusztinian-seredi",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "catholic-church",
+  "relation": "service",
+  "startYear": 1927,
+  "endYear": 1945,
+  "evidence": [
+   {
+    "claim": "에스테르곰 대주교, 헝가리 수좌대주교",
+    "source": "https://en.wikipedia.org/wiki/Jusztini%C3%A1n_Gy%C3%B6rgy_Ser%C3%A9di",
+    "excerpt": "Pope Pius XI appointed him Archbishop of Esztergom on 30 November 1927.",
+    "locator": "Episcopate"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Archbishop of Esztergom and cardinal (old excerpt kept): Catholic Church service."
+ },
+ {
+  "personId": "konkordia-samoilova",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "soviet-party",
+  "relation": "service",
+  "startYear": 1912,
+  "endYear": 1921,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D0%BE%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%2C_%D0%9A%D0%BE%D0%BD%D0%BA%D0%BE%D1%80%D0%B4%D0%B8%D1%8F_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%BD%D0%B0",
+    "excerpt": "Конко́рдия Никола́евна Само́йлова (урождённая Громова; 1876, Иркутск — 2 июня 1921, Астрахань) — российский политик, революционерка, участница коммунистического движения, деятель женского пролетарского движения в России и РСФСР. Основательница журнала «Работница» и одна из организаторов Международного женского дня.",
+    "locator": "plain-text extract lead sentence; sha256 19c9a35877c6c04668c2fac57e14f80971cc3882803c6311d9622aaaef2bf94e"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Самойлова,_Конкордия_Николаевна",
+    "locator": "ru: Биография",
+    "excerpt": "Была разъездным инструктором ЦК РКП(б) по работе среди женщин, работала в газете «Правда» и журнале «Коммунистка».",
+    "claim": "사모일로바는 러시아 공산당(볼셰비키) 중앙위원회의 여성 사업 순회 지도원이었다."
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Самойлова,_Конкордия_Николаевна",
+    "locator": "ru: Биография",
+    "excerpt": "В 1912 году заняла должность секретаря редакции газеты «Правда».",
+    "claim": "사모일로바는 1912년 『프라우다』 편집서기가 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Her women's-movement organizing was Bolshevik party work (Pravda 1912, Rabotnitsa 1914, CC women's instructor, Ukrainian CP(b) women's department): soviet-party service."
+ },
+ {
+  "personId": "lee-kuan-yew",
+  "functionId": "government",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "state-singapore",
+  "relation": "service",
+  "startYear": 1959,
+  "endYear": 1990,
+  "evidence": [
+   {
+    "claim": "1954년 정당 창당, 총리 1959–1990, 1963–1965 말레이시아 의회 의원, 1990–2004 선임장관, 2004–2011 자문장관.",
+    "source": "https://en.wikipedia.org/wiki/Lee_Kuan_Yew",
+    "excerpt": "Lee Kuan Yew (born Harry Lee Kuan Yew; 16 September 1923 – 23 March 2015), also known as LKY, was a Singaporean politician, barrister and statesman who served as the first prime minister of Singapore from 1959 to 1990. A member of the People's Action Party (PAP), his authoritarian governance oversaw the transformation of post-independence Singapore into a highly developed country and one of the four Asian Tigers. He is regarded as the founding father of modern Singapore.\nBorn in Singapore during British colonial rule to a family of Peranakan Chinese descent, Lee studied law in England at Cambridge University and was called to the bar at the Middle Temple in 1950. Shortly after, he returned to Singapore and practised law, founding the law firm Lee & Lee. In 1954, Lee co-founded the PAP, which won significant support among the working class and trade unions in the lead up to the 1955 general election, securing him a seat in the Tanjong Pagar division and making him the de facto leader of the opposition. In 1959, Lee led the PAP to its first electoral victory, becoming Singapore's first prime minister. Seeking sovereignty from the British Empire, Lee led Singapore to a merger with Malaya along with Sarawak and Sabah, forming Malaysia in 1963. Racial strife and ideological differences later led to Singapore's expulsion from Malaysia and consequent independence in 1965.\nLee oversaw major economic reforms and urban development, instituting policies promoting meritocracy, multiracia",
+    "locator": "characters 0–2756"
+   }
+  ],
+  "newAffiliation": {
+   "id": "state-singapore",
+   "kind": "state",
+   "label": {
+    "ko": "싱가포르 국가기관",
+    "en": "Singapore state institutions"
+   },
+   "countryCode": "singapore",
+   "parentId": null,
+   "periods": [
+    [
+     1959,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Prime minister of Singapore 1959–1990 (lead, old excerpt kept); no state-singapore in catalog. Period starts with the self-governing State of Singapore (1959; within Malaysia 1963–1965)."
+ },
+ {
+  "personId": "leopold-ii",
+  "functionId": "monarchy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-austria",
+  "relation": "service",
+  "startYear": 1790,
+  "endYear": 1792,
+  "evidence": [
+   {
+    "claim": "레오폴트 2세는 1765년부터 토스카나 대공, 1790~1792년 신성 로마 황제였다.",
+    "source": "https://en.wikipedia.org/wiki/Leopold_II%2C_Holy_Roman_Emperor",
+    "excerpt": "Leopold II (Peter Leopold Josef Anton Joachim Pius Gotthard; 5 May 1747 – 1 March 1792) was the penultimate Holy Roman Emperor, as well as King of Hungary, Croatia and Bohemia, and Archduke of Austria from 1790 to 1792, and Grand Duke of Tuscany from 1765 to 1790 as Leopold I.",
+    "locator": "plain-text extract characters 0:277; sha256 d1843cf6994ed7bc7b11b03ac9d12359c50e6faa8b7ca2322ecce14926cae233"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Reigned over the Habsburg realm (Archduke of Austria, King of Hungary/Bohemia, Emperor) 1790–1792 per lead; years narrowed. His 1765–1790 reign as Grand Duke of Tuscany is another realm with no catalog entry and should be a separate monarchy activity if wanted."
+ },
+ {
+  "personId": "louise-michel",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-paris-commune-1871",
+  "relation": "service",
+  "startYear": 1871,
+  "endYear": 1871,
+  "evidence": [
+   {
+    "claim": "She led Montmartre's Women's Vigilance Committee, served with the 61st Battalion and organized ambulance stations, surrendered to protect her mother, and was sentenced to penal transportation after demanding death at trial.",
+    "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+    "excerpt": "During the siege, Michel became part of the National Guard. When the Paris Commune was declared she was elected head of the Montmartre Women's Vigilance Committee. In April 1871 she threw herself into the armed struggle against the French government. Her close ally, Théophile Ferré, was a senior member of the Commune and of its Committee of Public Safety. It was Ferré who ordered the execution of Georges Darboy, the Archbishop of Paris. She was aligned with Ferré and Raoul Rigault, two of the most militant  members of the Paris Commune. However, Ferré and Rigault persuaded her to not carry out her plan to assassinate Adolphe Thiers, the chief executive of the French national government. Michel fought with the 61st Battalion of Montmartre and organized ambulance stations during the beginning of the Bloody Week (May 21–28, 1871), the battle that ended the Commune In her memoirs she later wrote \"oh, I'm a savage all right, I like the smell of gunpowder, grapeshot flying through the air, but above all, I'm devoted to the Revolution.\" On May 23, after a fierce fight, Montmartre was captured by the French Army. On May 24, she surrendered to the French army in order to save her mother from possible imprisonment.\nMichel ideologically justified a militant revolution, proclaiming: \"I descended the Butte, my rifle under my coat, shouting: Treason! . . . Our deaths would free Paris\". She reflected: \"It is true, perhaps, that women like rebellions. We are no better than men with respect t",
+    "locator": "characters 3899–6508"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Louise_Michel",
+    "locator": "en: Paris Commune",
+    "excerpt": "During the siege, Michel became part of the National Guard. When the Paris Commune was declared she was elected head of the Montmartre Women's Vigilance Committee.",
+    "claim": "미셸은 국민방위군에 들어갔고 코뮌 선포 뒤 몽마르트르 여성감시위원회 책임자로 뽑혔다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-paris-commune-1871",
+   "kind": "institution",
+   "label": {
+    "ko": "파리 코뮌(1871)",
+    "en": "Paris Commune (1871)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": [
+    [
+     1871,
+     1871
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Elected head of the Montmartre Women's Vigilance Committee and fought with the National Guard in the 1871 Commune; same new entry as jaroslaw-dabrowski. Later anarchist agitation had no named organization in the source."
+ },
+ {
+  "personId": "mammad-amin-rasulzade",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-azerbaijani-musavat",
+  "relation": "service",
+  "startYear": 1913,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "Chief of the Musavat party, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+    "excerpt": "joined the then secret Musavat (Equality) party in 1913",
+    "locator": "The Musavat Party and Azerbaijan Democratic Republic"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+    "locator": "en: The Musavat Party and Azerbaijan Democratic Republic",
+    "excerpt": "joined the then secret Musavat (Equality) party in 1913, established in 1911,",
+    "claim": "라술자데는 1913년 비밀 정당 무사바트에 가입했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Mahammad_Amin_Rasulzade",
+    "locator": "en: The Musavat Party and Azerbaijan Democratic Republic",
+    "excerpt": "and which eventually became Azerbaijani nationalist party, and quickly became its chief.",
+    "claim": "라술자데는 곧 무사바트의 지도자가 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-azerbaijani-musavat",
+   "kind": "party",
+   "label": {
+    "ko": "무사바트",
+    "en": "Musavat"
+   },
+   "countryCode": "azerbaijan",
+   "parentId": null,
+   "periods": [
+    [
+     1911,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": "musavat"
+  },
+  "reason": "Joined Musavat in 1913 and became its chief; glossary term musavat already exists (label reused). Period open-ended (exile party, refounded 1989)."
+ },
+ {
+  "personId": "maxim-filonenko",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "french-paris-bar",
+  "relation": "membership",
+  "startYear": 1919,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "필로넨코는 1919년 이후 파리에서 변호사로 활동했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "С 1919 в эмиграции. Жил в Париже, занимался адвокатской практикой.",
+    "locator": "characters 3446:3512; sha256 ac1246bb0a1e69b8784b244b75d37f13f762b2156b10e47e3930fdd99d3f43fd"
+   },
+   {
+    "claim": "그는 파리 법정에서 러시아 이민자들을 주로 변호하는 변호사로 활동했다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD_%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B8%D0%BB%D0%B8%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Выступал в Париже как защитник преимущественно русских эмигрантов на судебных процессах, в том числе в 1937—1938 гг. на процессе Н. В. Плевицкой",
+    "locator": "characters 3795:3939; sha256 ac1246bb0a1e69b8784b244b75d37f13f762b2156b10e47e3930fdd99d3f43fd"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Филоненко,_Максимилиан_Максимилианович",
+    "locator": "ru: Эмиграция",
+    "excerpt": "В последние годы жизни из-за неприятностей личного характера вышел из коллегии адвокатов и жил в нужде.",
+    "claim": "필로넨코는 말년에 변호사회에서 탈퇴했다(즉 파리에서 변호사회 회원이었다)."
+   }
+  ],
+  "newAffiliation": {
+   "id": "french-paris-bar",
+   "kind": "institution",
+   "label": {
+    "ko": "파리 변호사회",
+    "en": "Paris Bar (Barreau de Paris)"
+   },
+   "countryCode": "france",
+   "parentId": null,
+   "periods": null,
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Practised as an advocate in Paris from 1919 and later left the bar (коллегия адвокатов); the source does not name the Paris bar verbatim, so weak — alternative is none/independent. His 1933 Brussels University chair (Roman law) is another possible affiliation."
+ }
+]

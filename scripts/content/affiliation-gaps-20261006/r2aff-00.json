@@ -1,0 +1,1005 @@
+[
+ {
+  "personId": "adolfas-ramanauskas",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "lithuanian-llks",
+  "relation": "service",
+  "startYear": 1949,
+  "endYear": 1956,
+  "evidence": [
+   {
+    "claim": "Partisan commander and leader of the Union of Lithuanian Freedom Fighters, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Adolfas_Ramanauskas",
+    "excerpt": "When Žemaitis resigned due to poor health in 1952, Ramanauskas became the leader of the Union.",
+    "locator": "1949–1952"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Adolfas_Ramanauskas",
+    "locator": "en: 1949–1952",
+    "excerpt": "The Union of Lithuanian Freedom Fighters, chief command of the partisans, was established during the meeting. Ramanauskas was elected to the presidium of the Union and as the first deputy of its chairman Jonas Žemaitis.",
+    "claim": "1949년 리투아니아 자유 전사 연합 창설 때 간부회에 뽑히고 의장 제1대리가 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Adolfas_Ramanauskas",
+    "locator": "en: 1949–1952",
+    "excerpt": "In autumn 1949, Ramanauskas was further promoted to colonel and chief commander of the defensive forces of the Union of Lithuanian Freedom Fighters.",
+    "claim": "1949년 가을 연합 방위군 총사령관이 되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "lithuanian-llks",
+   "kind": "military",
+   "label": {
+    "ko": "리투아니아 자유 전사 연합",
+    "en": "Union of Lithuanian Freedom Fighters (LLKS)"
+   },
+   "countryCode": "lithuania",
+   "parentId": null,
+   "periods": [
+    [
+     1949,
+     1953
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "union-of-lithuanian-freedom-fighters"
+  },
+  "reason": "LLKS presidium member 1949, defence-forces chief 1949, chairman from 1952 until his 1956 arrest; his 1945–1949 partisan unit command predates the Union (activity start would move from 1945 to 1949; keep 1945 if the owner prefers the whole partisan career)."
+ },
+ {
+  "personId": "alexander-khatisian",
+  "functionId": "diplomacy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "armenia-first-republic",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "Foreign minister of the First Republic of Armenia; signed the treaties of Batum and Alexandropol (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+    "excerpt": "he served as foreign minister and signed the Treaty of Batum with the Ottoman Empire",
+    "locator": "Biography"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexander_Khatisian",
+    "locator": "en: Biography",
+    "excerpt": "After declaration of the First Republic of Armenia, he served as foreign minister and signed the Treaty of Batum with the Ottoman Empire.",
+    "claim": "아르메니아 제1공화국 선포 뒤 외무장관으로 바투미 조약에 서명했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "armenia-first-republic",
+   "kind": "state",
+   "label": {
+    "ko": "아르메니아 제1공화국 국가기관",
+    "en": "First Republic of Armenia state institutions"
+   },
+   "countryCode": "armenia",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1920
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Foreign minister of the First Republic of Armenia; no Armenian state affiliation exists in the catalog (Armenian SSR is state-soviet)."
+ },
+ {
+  "personId": "alexander-luria",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1923,
+  "endYear": 1977,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Alexander_Luria",
+    "excerpt": "Alexander Romanovich Luria (; Russian: Алекса́ндр Рома́нович Лу́рия, IPA: [ˈlurʲɪjə]; 16 July 1902 – 14 August 1977) was a Soviet neuropsychologist, often credited as the father of modern neuropsychology.",
+    "locator": "plain-text extract lead sentence; sha256 18782ff58a2c9341c45f9e380f82ea076c0d25ab0578e77fbaf24fa62041be01"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexander_Luria",
+    "locator": "en: Early education and move to Moscow",
+    "excerpt": "In Moscow, Luria was offered a position at the Moscow State Institute of Experimental Psychology, run from November 1923 by Konstantin Kornilov.",
+    "claim": "1923년 모스크바 국립 실험심리학연구소에 자리를 얻었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexander_Luria",
+    "locator": "en: World War II and aftermath",
+    "excerpt": "Soon after the end of the war, Luria was assigned a permanent position in General Psychology at the central Moscow State University in General Psychology, where he would predominantly stay for the remainder of his life",
+    "claim": "전후 모스크바 국립대학교에 정규직을 받아 평생 그곳에서 일했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "State research institutes and Moscow State University posts count as employment in state-soviet."
+ },
+ {
+  "personId": "alexander-obolensky",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-russian-sdpr-1990",
+  "relation": "service",
+  "startYear": 1990,
+  "endYear": 1994,
+  "evidence": [
+   {
+    "claim": "오볼렌스키는 1990년 러시아 사회민주당 창당 대회에서 공동의장으로 선출되었고 1994년 다시 의장으로 선출되었다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%82%D1%80%D0%BE%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "В январе 1990 года вошёл в составе оргкомитета по созданию социал-демократической партии, а на учредительном съезде СДПРФ избран одним из трёх её сопредседателей.",
+    "locator": "characters 4370:4532; accessed 2026-09-27; sha256 127edac53cbca8b648be08f6209b9014ea79e03ffe6a92192560b36c80097b5b"
+   },
+   {
+    "claim": "오볼렌스키는 1990년 러시아 사회민주당 창당 대회에서 공동의장으로 선출되었고 1994년 다시 의장으로 선출되었다.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%82%D1%80%D0%BE%D1%84%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "В 1994 году вновь избран председателем СДПР.",
+    "locator": "characters 4857:4901; accessed 2026-09-27; sha256 127edac53cbca8b648be08f6209b9014ea79e03ffe6a92192560b36c80097b5b"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+    "locator": "en: lead",
+    "excerpt": "The Social Democratic Party of the Russian Federation (Russian: Социал-демократическая партия Российской Федерации, romanized: Sotsial-demokraticheskaya partiya Rossiyskoy Federatsii; SDPR) was a social democratic organization in modern Russia, founded in May 1990.",
+    "claim": "СДПР는 1990년 5월 창립된 러시아의 사회민주주의 정당이다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-russian-sdpr-1990",
+   "kind": "party",
+   "label": {
+    "ko": "러시아 사회민주당(1990)",
+    "en": "Social Democratic Party of the Russian Federation (SDPR, 1990)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1990,
+     2011
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Co-chairman at the 1990 founding congress and chairman again in 1994 (existing ru evidence); same-named parties of 2001 and 2012 exist, hence the (1990) disambiguation; end year per the en disambiguation page."
+ },
+ {
+  "personId": "alexei-yablokov",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1969,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Alexei_Vladimirovich_Yablokov",
+    "excerpt": "Alexei Vladimirovich Yablokov (Russian: Алексей Владимирович Яблоков; 3 October 1933 – 10 January 2017) was a Soviet and Russian biologist, environmentalist and politician.",
+    "locator": "plain-text extract lead sentence; sha256 5a9f8b84fa1c5bb7ce3db1e4351d2f2292b57a256415d1a47ced6e60d86076b1"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexei_Vladimirovich_Yablokov",
+    "locator": "en: Scientific career",
+    "excerpt": "From 1969 Yablokov headed a laboratory at the Koltsov Institute of Developmental Biology in Moscow.",
+    "claim": "1969년부터 콜초프 발생생물학연구소의 실험실을 이끌었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alexei_Vladimirovich_Yablokov",
+    "locator": "en: Scientific career",
+    "excerpt": "He took his doctorate in 1966, became a professor in 1976, and in 1984 the Soviet Academy of Sciences elected him a corresponding member.",
+    "claim": "1984년 소련 과학아카데미 통신회원이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Academy of Sciences institute laboratory head = employment in state-soviet; source gives no end date, capped at 1991."
+ },
+ {
+  "personId": "ali-aaltonen",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "finnish-red-guards",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "First commander-in-chief of the Finnish Red Guards (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Ali_Aaltonen",
+    "excerpt": "who served as the first commander-in-chief of the Finnish Red Guards from November 1917 to the end of January 1918",
+    "locator": "lead"
+   }
+  ],
+  "newAffiliation": {
+   "id": "finnish-red-guards",
+   "kind": "military",
+   "label": {
+    "ko": "핀란드 적위대",
+    "en": "Finnish Red Guards"
+   },
+   "countryCode": "finland",
+   "parentId": null,
+   "periods": [
+    [
+     1905,
+     1906
+    ],
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "finnish-red-guards"
+  },
+  "reason": "First commander-in-chief of the Finnish Red Guards (existing lead evidence); term finnish-red-guards already exists."
+ },
+ {
+  "personId": "alikhan-bukeikhanov",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "party-kazakh-alash",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "Leader of the Alash party and the Alash Orda government, no catalog affiliation",
+    "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+    "excerpt": "who led the Alash party and the provisional government of Alash Orda from 1917 to 1920",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+    "locator": "en: Author of the idea of the First Kazakh Republic",
+    "excerpt": "There, for the first time, the idea of territorial autonomy emerged, and a national Kazakh-Kirghiz political party was formed, the Alash Autonomy.",
+    "claim": "1917년 오렌부르크 대회에서 카자흐 민족 정당 알라시가 결성되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "party-kazakh-alash",
+   "kind": "party",
+   "label": {
+    "ko": "알라시당",
+    "en": "Alash party"
+   },
+   "countryCode": "kazakhstan",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1920
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Led the Alash party (existing lead evidence); a party affiliation fits political-leadership. Glossary has only the state term alash-orda, no party term."
+ },
+ {
+  "personId": "andranik-ozanian",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "armenian-special-striking-division",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1919,
+  "evidence": [
+   {
+    "claim": "Commander of the Special Striking Division in Zangezur, acting independently of the Armenian government (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Andranik",
+    "excerpt": "Andranik and his Special Striking Division transitioned to the rugged, mountainous terrain of Zangezur",
+    "locator": "Zangezur"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Andranik",
+    "locator": "en: First Republic of Armenia",
+    "excerpt": "Andranik refused to recognize the legitimacy of the Republic of Armenia, describing it as \"a pawn in the grip of [Ottoman] Turkey\".",
+    "claim": "아르메니아 공화국의 정통성을 인정하지 않아 공화국 군 소속이 아니었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Andranik",
+    "locator": "en: Departure",
+    "excerpt": "Due to disagreements with the British command and the Armenian government, Andranik decided to disband his unit.",
+    "claim": "1919년 영국군·아르메니아 정부와의 이견으로 부대를 해산했다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "armenian-special-striking-division",
+   "kind": "military",
+   "label": {
+    "ko": "아르메니아 특별타격사단",
+    "en": "Armenian Special Striking Division (Andranik)"
+   },
+   "countryCode": "armenia",
+   "parentId": null,
+   "periods": [
+    [
+     1918,
+     1919
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Commanded his own Special Striking Division outside the Republic of Armenia's army (he refused to recognize the Republic); the site bio already calls it 특별타격사단."
+ },
+ {
+  "personId": "bela-bacso",
+  "functionId": "propaganda",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-hungarian-social-democratic",
+  "relation": "service",
+  "startYear": 1919,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "Journalist on Népszava",
+    "source": "https://hu.wikipedia.org/wiki/Bacs%C3%B3_B%C3%A9la_(%C3%BAjs%C3%A1g%C3%ADr%C3%B3)",
+    "excerpt": "1919-ben a Népszava munkatársa lett.",
+    "locator": "Élete"
+   },
+   {
+    "source": "https://hu.wikipedia.org/wiki/Népszava",
+    "locator": "hu: lead",
+    "excerpt": "Eredetileg a Magyarországi Szociáldemokrata Párt (MSZDP) lapja volt, majd 1948-1989 között a SZOT központi orgánuma volt.",
+    "claim": "『네프서버』는 본래 헝가리 사회민주당(MSZDP)의 기관지였다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Staff journalist of Népszava, the MSZDP organ, from 1919; propaganda work for the party press, not the newspaper itself as affiliation. Owner may prefer null if party membership must be explicit."
+ },
+ {
+  "personId": "bela-somogyi",
+  "functionId": "propaganda",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "party-hungarian-social-democratic",
+  "relation": "service",
+  "startYear": 1903,
+  "endYear": 1920,
+  "evidence": [
+   {
+    "claim": "Journalist and responsible editor of Népszava",
+    "source": "https://hu.wikipedia.org/wiki/Somogyi_B%C3%A9la",
+    "excerpt": "1919. szeptembertől a Népszava felelős szerkesztője lett",
+    "locator": "Életpályája"
+   },
+   {
+    "source": "https://hu.wikipedia.org/wiki/Népszava",
+    "locator": "hu: lead",
+    "excerpt": "Eredetileg a Magyarországi Szociáldemokrata Párt (MSZDP) lapja volt, majd 1948-1989 között a SZOT központi orgánuma volt.",
+    "claim": "『네프서버』는 본래 헝가리 사회민주당(MSZDP)의 기관지였다."
+   },
+   {
+    "source": "https://hu.wikipedia.org/wiki/Somogyi_Béla",
+    "locator": "hu: Életpályája",
+    "excerpt": "A kommün bukása után a Szociáldemokrata Röpiratokat szerkesztette, majd 1919. szeptembertől a Népszava felelős szerkesztője lett.",
+    "claim": "코뮌 붕괴 뒤 『사회민주당 소책자』를 편집했고 1919년 9월 『네프서버』 책임 편집인이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Writer and from 1919 editor-in-chief of the MSZDP central organ Népszava."
+ },
+ {
+  "personId": "bogd-khan",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "gelug-school",
+  "relation": "service",
+  "startYear": 1874,
+  "endYear": 1924,
+  "evidence": [
+   {
+    "claim": "보그드 칸은 제8대 젭춘담바 후툭투로서 티베트 불교 위계의 세 번째 인물이었고 보그드 칸국 티베트 불교의 영적 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Bogd_Khan",
+    "excerpt": "Born in Tibet, he was the third most important person in the Tibetan Buddhist hierarchy as the 8th Jebtsundamba Khutuktu, below only the Dalai Lama and Panchen Lama, and therefore also known as the \"Bogdo Lama\".",
+    "locator": "characters 210:421; accessed 2026-09-27; sha256 29299fc4fe17f1d371a8cc3f8c1ac319baabd8136fe3c9aed21cb4b7ba033bd2"
+   },
+   {
+    "claim": "보그드 칸은 제8대 젭춘담바 후툭투로서 티베트 불교 위계의 세 번째 인물이었고 보그드 칸국 티베트 불교의 영적 지도자였다.",
+    "source": "https://en.wikipedia.org/wiki/Bogd_Khan",
+    "excerpt": "He was the spiritual leader of Tibetan Buddhism in the Bogd Khaganate.",
+    "locator": "characters 422:492; accessed 2026-09-27; sha256 29299fc4fe17f1d371a8cc3f8c1ac319baabd8136fe3c9aed21cb4b7ba033bd2"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Jebtsundamba_Khutuktu",
+    "locator": "en: lead",
+    "excerpt": "The Jebtsundamba Khutuktu or Khalkha Jetsün Dampa Rinpoche is the spiritual head of the Gelug lineage of Tibetan Buddhism in Mongolia.",
+    "claim": "젭춘담바 쿠툭투는 몽골 티베트 불교 겔룩파의 영적 수장이다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "gelug-school",
+   "kind": "institution",
+   "label": {
+    "ko": "겔룩파",
+    "en": "Gelug school of Tibetan Buddhism"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": [
+    [
+     1409,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "As 8th Jebtsundamba Khutuktu he headed the Gelug lineage in Mongolia; religion function needs a religious institution (his reign is the separate monarchy/state-mongolia activity). Glossary term jebtsundamba-khutuktu exists for the title."
+ },
+ {
+  "personId": "boguslaw-zborowski",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "russian-petersburg-soviet-1905",
+  "relation": "service",
+  "startYear": 1905,
+  "endYear": 1905,
+  "evidence": [
+   {
+    "claim": "즈보로프스키는 1905년 페테르부르크 노동자대표 소비에트의 조직자 중 한 명이자 초대 의장이었다.",
+    "source": "https://my-dict.ru/dic/biografiya-1000-ludey/1436716-zborovskiy/",
+    "excerpt": "Зборовский (Никитин, Кузьма, Костич) - один из организаторов Петербургского Совета Рабочих Депутатов в 1905 г. И первый его председатель.",
+    "locator": "characters 58:195; sha256 4b2a6ed206537c67f3d5903f9bac109867e4affa354b08b5c620dac6f24c2127"
+   },
+   {
+    "claim": "페테르부르크 소비에트는 그를 전러시아 소비에트 대회 준비를 위해 지방 도시들로 파견했다.",
+    "source": "https://my-dict.ru/dic/biografiya-1000-ludey/1436716-zborovskiy/",
+    "excerpt": "Петербургский Совет посылал его в провинциальные города для работы по подготовке к Всероссийскому Съезду Советов.",
+    "locator": "characters 377:490; sha256 4b2a6ed206537c67f3d5903f9bac109867e4affa354b08b5c620dac6f24c2127"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Co-organizer and first chairman of the 1905 St. Petersburg Soviet (existing evidence)."
+ },
+ {
+  "personId": "cafer-seydahmet",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "crimean-peoples-republic",
+  "relation": "service",
+  "startYear": 1917,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Director of Foreign and Military Affairs of the Crimean People’s Republic (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Cafer_Seydahmet_K%C4%B1r%C4%B1mer",
+    "excerpt": "He served as Prime Minister and Director of Foreign and Military Affairs in the Crimean People's Republic",
+    "locator": "lead"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Cafer_Seydahmet_Kırımer",
+    "locator": "en: Biography",
+    "excerpt": "Following the declaration of the Crimean People's Republic, Seydahmet was appointed as Director of Foreign and Military Affairs.",
+    "claim": "크림 인민공화국 선포 뒤 외무·군사 국장에 임명되었다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "crimean-peoples-republic",
+   "kind": "state",
+   "label": {
+    "ko": "크림 인민공화국 국가기관",
+    "en": "Crimean People's Republic state institutions"
+   },
+   "countryCode": "ukraine",
+   "parentId": null,
+   "periods": [
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "crimean-peoples-republic"
+  },
+  "reason": "Director of Military Affairs of the Crimean People's Republic. countryCode 'ukraine' follows the modern-territory practice (cf. kokand-autonomy=uzbekistan); the glossary term's region is russia-ussr, so the owner may prefer 'russia'."
+ },
+ {
+  "personId": "camille-huysmans",
+  "functionId": "diplomacy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "international-second-international",
+  "relation": "service",
+  "startYear": 1905,
+  "endYear": 1922,
+  "evidence": [
+   {
+    "claim": "1917년 인터내셔널 사무국이 스톡홀름 평화회의 추진, 교전국 사회주의자 중재 역할 시도 및 회의가 무산됨",
+    "source": "https://www.socialhistoryportal.org/stockholm1917/background",
+    "excerpt": "International social democracy fell apart when the World War began in 1914. In all countries, whether or not they were among the belligerents, three currents may be discerned. On the right side, were the majority socialists, who, depending on their nationality, were for or against a separate peace with Russia. On the left side, were the internationalists, revolutionaries, and pacifists, united in the International Socialist Committee (ISC). This group is usually called the Zimmerwaldians, for their constitutive meeting in Zimmerwald, Switzerland 1915. In the middle was the Bureau of the Socialist International (BSI) led by the Belgian Camille Huysmans, who prudently tried to mediate between socialists from belligerent countries.\n\nThe BSI decided to locate in neutral Stockholm on 15 April 1917. The Zimmerwaldians did the same. A \"Dutch-Scandinavian Committee\" began to advocate for a peace conference. The Petrograd Soviet formed a third party, with Bolsheviks, Mensheviks, and Socialist-Revolutionaries still united briefly after the 1917 February Revolution.\n\nIn May it had become clear that the British, French, Belgians, and Russians would oppose a conference. A seemingly endless series of bilateral negotiations, preliminary meetings, tripartite discussions, and cross-initiatives then took off. The Zimmerwaldians had a conference in Stockholm to decide whether they would join the Stockholm conference, and the Russians presented their own peace initiative. Eventually, after four ",
+    "locator": "characters 32–1807"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Camille_Huysmans",
+    "locator": "en: Biography",
+    "excerpt": "Between 1905 and 1922 Huysmans was secretary of the Second International.",
+    "claim": "1905~1922년 제2인터내셔널 서기였다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "international-second-international",
+   "kind": "international",
+   "label": {
+    "ko": "제2인터내셔널",
+    "en": "Second International (International Socialist Bureau)"
+   },
+   "countryCode": null,
+   "parentId": null,
+   "periods": [
+    [
+     1889,
+     1923
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "second-international"
+  },
+  "reason": "Secretary of the International Socialist Bureau of the Second International 1905–1922; diplomacy covers international organization staff. Not a party, but glossary term second-international exists."
+ },
+ {
+  "personId": "charles-william-ferdinand-of-brunswick",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-germany",
+  "relation": "service",
+  "startYear": 1773,
+  "endYear": 1806,
+  "evidence": [
+   {
+    "claim": "영어 위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Charles_William_Ferdinand%2C_Duke_of_Brunswick",
+    "excerpt": "Charles William Ferdinand (German: Karl Wilhelm Ferdinand; 9 October 1735 – 10 November 1806) was the ruling prince of Brunswick-Wolfenbüttel, hereditary duke of Brunswick-Lüneburg and a military leader.",
+    "locator": "plain-text extract lead sentence; sha256 4c519c9fc10e9ec3ee257573f6221c221e14d596845afd945e19a0957bdaf9c1"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Charles_William_Ferdinand,_Duke_of_Brunswick",
+    "locator": "en: Military commander",
+    "excerpt": "He was made a Prussian general in 1773.",
+    "claim": "1773년 프로이센 장군이 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Charles_William_Ferdinand,_Duke_of_Brunswick",
+    "locator": "en: Invasion of the Netherlands",
+    "excerpt": "In 1787 the Duke was made Generalfeldmarschall (field marshal) in the Prussian army.",
+    "claim": "1787년 프로이센군 원수가 되었다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Charles_William_Ferdinand,_Duke_of_Brunswick",
+    "locator": "en: War of the Fourth Coalition",
+    "excerpt": "The duke commanded the large Prussian army at Auerstedt during the double Battle of Jena–Auerstedt on 14 October 1806.",
+    "claim": "1806년 아우어슈테트에서 프로이센 대군을 지휘했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Prussian general from 1773, field marshal from 1787, commander in 1792 and 1806; Prussia is covered by state-germany."
+ },
+ {
+  "personId": "charlotte-corday",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "코르데는 지롱드파에 동조한 혁명기 정치 활동가였다.",
+    "source": "https://en.wikipedia.org/wiki/Charlotte_Corday",
+    "excerpt": "Corday was an aristocratic sympathiser of the Girondins, a moderate faction of French revolutionaries in opposition to the more extremist Jacobins.",
+    "locator": "characters 237:384; sha256 e1156af0483d35e186dee355915878f52f7d96c81eb609ec2739c517ce2ac858"
+   },
+   {
+    "claim": "그녀는 마라 암살을 스스로 계획하고 실행한 정치적 행동의 주체였다.",
+    "source": "https://en.wikipedia.org/wiki/Charlotte_Corday",
+    "excerpt": "she decided to assassinate Marat.",
+    "locator": "characters 552:585; sha256 e1156af0483d35e186dee355915878f52f7d96c81eb609ec2739c517ce2ac858"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Sources call her only a sympathiser of the Girondins; no membership or organizational role, she acted alone."
+ },
+ {
+  "personId": "conrado-benitez",
+  "functionId": "education",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "none",
+  "affiliationId": null,
+  "relation": null,
+  "startYear": null,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "자원 교사로 농촌의 아동과 성인을 가르치는 문해 운동에 참여했다. 사후 이름을 딴 여단을 생전 소속으로 간주하지 않는다.",
+    "source": "https://www.ecured.cu/Conrado_Ben%C3%ADtez_Garc%C3%ADa",
+    "excerpt": "Se inició como maestro voluntario y fue ubicado en una escuela en las montañas de Sancti Spíritus, donde alternaba las clases de 44 niños por el día con otros tantos adultos por las noches, con el fin de erradicar el analfabetismo.",
+    "locator": "characters 781:1012; sha256 a2bfeda5f7080e8dbbeafa0e27fc4ac36c25c3a19c27679be925c904c4e8b16d"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Only documented as a volunteer teacher (EcuRed); the volunteer-teacher contingent is not shown as a state body in the sources reached (EcuRed unreachable now, no wiki article), and the brigade named after him is posthumous."
+ },
+ {
+  "personId": "dmitry-komar",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "service",
+  "startYear": 1986,
+  "endYear": null,
+  "evidence": [
+   {
+    "claim": "1991년 8월 쿠데타 당시 백악관 방어 활동이며, 이 발췌만으로 국가기관 복무를 입증할 수 없다.",
+    "source": "https://en.wikipedia.org/wiki/Hero_of_the_Soviet_Union",
+    "excerpt": "Dmitry Komar, Vladimir Usov, and Ilya Krichevsky – Posthumously awarded for being killed while attempting to block IFVs from reaching the White House during the August Coup",
+    "locator": "characters 10731:10903; sha256 3ca01e3fb6251f3c2e6114faf75d552269d3ff916227be8f2fc4dfc519dc2a67"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Комарь,_Дмитрий_Алексеевич",
+    "locator": "ru: Биография",
+    "excerpt": "С ноября 1986 года проходил службу в учебном центре Воздушно-десантных войск СССР (д. Гайжюнай Литовской ССР). С мая 1987 года воевал в Афганистане, имел воинское звание гвардии сержанта.",
+    "claim": "1986년 11월부터 소련 공수부대에서 복무했고 1987년 5월부터 아프가니스탄에서 근위 하사로 싸웠다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Conscript service in the Soviet Airborne Troops and Afghanistan (end year not given). His 1991 death defending the White House was as a civilian; 'military command' is a stretch for a sergeant but kept."
+ },
+ {
+  "personId": "eero-haapalainen",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "finnish-red-guards",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Commander-in-chief of the Finnish Red Guards (no catalog affiliation)",
+    "source": "https://en.wikipedia.org/wiki/Eero_Haapalainen",
+    "excerpt": "who served as the commander-in-chief of the Red Guards from January to March 1918 during the Finnish Civil War",
+    "locator": "lead"
+   }
+  ],
+  "newAffiliation": {
+   "id": "finnish-red-guards",
+   "kind": "military",
+   "label": {
+    "ko": "핀란드 적위대",
+    "en": "Finnish Red Guards"
+   },
+   "countryCode": "finland",
+   "parentId": null,
+   "periods": [
+    [
+     1905,
+     1906
+    ],
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "finnish-red-guards"
+  },
+  "reason": "Commander-in-chief of the Finnish Red Guards Jan–Mar 1918 (existing lead evidence); same new affiliation as Aaltonen."
+ },
+ {
+  "personId": "eino-rahja",
+  "functionId": "military",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "new",
+  "affiliationId": "finnish-red-guards",
+  "relation": "service",
+  "startYear": 1918,
+  "endYear": 1918,
+  "evidence": [
+   {
+    "claim": "Member of the three-man command of the Finnish Red Guards; commander of the Lempäälä front (no catalog affiliation)",
+    "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+    "excerpt": "tilalle nimitettiin Rahjan, Evert Elorannan ja Adolf Taimin muodostama kolmikko",
+    "locator": "Venäjän vallankumous ja Suomen sisällissota"
+   },
+   {
+    "source": "https://fi.wikipedia.org/wiki/Eino_Rahja",
+    "locator": "fi: lead",
+    "excerpt": "Hieman myöhemmin hän hankki punakaartille aseita Neuvosto-Venäjältä ja toimi sisällissodan aikana muun muassa rintamapäällikkönä Lempäälän taisteluissa sekä lyhyesti koko punakaartin ylipäällikkönä.",
+    "claim": "내전 중 렘팰래 전선 사령관과 잠시 적위대 전체의 총사령관을 지냈다."
+   }
+  ],
+  "newAffiliation": {
+   "id": "finnish-red-guards",
+   "kind": "military",
+   "label": {
+    "ko": "핀란드 적위대",
+    "en": "Finnish Red Guards"
+   },
+   "countryCode": "finland",
+   "parentId": null,
+   "periods": [
+    [
+     1905,
+     1906
+    ],
+    [
+     1917,
+     1918
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": "finnish-red-guards"
+  },
+  "reason": "Member of the March 1918 Red Guard command troika and Lempäälä front commander; same new affiliation as Aaltonen."
+ },
+ {
+  "personId": "ernest-kombo",
+  "functionId": "religion",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "catholic-church",
+  "relation": "service",
+  "startYear": 1973,
+  "endYear": 2008,
+  "evidence": [
+   {
+    "claim": "콤보는 콩고의 예수회 사제로 1983년부터 2008년까지 은카이·오완도 주교와 푸앵트누아르 교구 사도좌 서리를 지냈다.",
+    "source": "https://fr.wikipedia.org/wiki/Ernest_Kombo",
+    "excerpt": "Ernest Kombo ou Nkombo, né le 27 mars 1941 à Pointe-Noire et mort le 22 octobre 2008 à Paris, était un prêtre jésuite congolais, évêque de Nkayi de 1983 à 1986, administrateur apostolique de Pointe-Noire de 1986 à 1990 et évêque d'Owando de 1990 à 2008.",
+    "locator": "characters 0:253; accessed 2026-09-27; sha256 fb7123d44e004271f8782c97deb84ce07e976733138b95c64cc964ebc40ef65a"
+   },
+   {
+    "source": "https://fr.wikipedia.org/wiki/Ernest_Kombo",
+    "locator": "fr: Biographie",
+    "excerpt": "Le 8 juillet 1973, il est ordonné prêtre par le cardinal Émile Biayenda dans la basilique Sainte-Anne-du-Congo, à Brazzaville ; il prononce ses vœux définitifs dans la Compagnie de Jésus le 23 novembre 1980.",
+    "claim": "1973년 사제 서품을 받고 1980년 예수회 종신서원을 했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Jesuit priest from 1973 and bishop of Nkayi and Owando until his death in 2008."
+ },
+ {
+  "personId": "eugene-varlin",
+  "functionId": "organizing",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "international-iwa",
+  "relation": "service",
+  "startYear": 1865,
+  "endYear": 1871,
+  "evidence": [
+   {
+    "claim": "He helped found the bookbinders’ mutual-aid society in 1857 and was a principal organiser of the 1864 strike.",
+    "source": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Varlin",
+    "excerpt": "Louis-Eugène Varlin was born at Claye-Souilly (Seine-et-Marne), into a poor peasant family. Apprenticed as a painter, he moved to Paris and became a bookbinder by profession. As a young man he read the writings of the anarchist social critic Pierre-Joseph Proudhon, which greatly influenced him. In 1857, Varlin participated in founding a bookbinders' mutual aid society, which became the nucleus of a bookbinders' trade union. Varlin was one of the principal organisers of the very first strike of the Parisian bookbinders in 1864. The strike was a success, so in 1865, the bookbinders repeated the exercise; this time the results were less encouraging. Varlin also founded the bookbinders' mutual savings and credit association, organised along Proudhonist lines. As a firm believer in the equality of the sexes, he promoted the anarchist and feminist Nathalie Lemel (1827–1921) to a leading position in the bank.",
+    "locator": "characters 268–1183"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Eugène_Varlin",
+    "locator": "en: Early life and activism",
+    "excerpt": "Varlin led the bookbinders' union into the International Working Men's Association (the First International), founded in 1864. He was a delegate to the London congress of the International in 1865, to the Geneva congress in 1866, along with Lemel, and to the Basel congress in 1869.",
+    "claim": "제본공 조합을 제1인터내셔널에 가입시키고 1865·1866·1869년 대회 대의원을 지냈다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Eugène_Varlin",
+    "locator": "en: The Franco-Prussian War and the Paris Commune",
+    "excerpt": "Varlin also became secretary for the French section of the First International.",
+    "claim": "제1인터내셔널 프랑스 지부 서기가 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Delegate to IWA congresses, branch organizer and secretary of the French section."
+ },
+ {
+  "personId": "evgeny-pashukanis",
+  "functionId": "law",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1924,
+  "endYear": 1937,
+  "evidence": [
+   {
+    "claim": "대표 경력을 원문과 대조하여 scholarship 기능으로 분류함.",
+    "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+    "excerpt": "In August 1918, he became a judge in Moscow . Meanwhile, he launched his career as a legal scholar. He also held a post in the Ministry of Foreign Affairs and was an adviser to the Soviet embassy in Berlin , helping to draft the Rapallo Treaty of 1922. In 1924 he was transferred to full-time academic duties as a member of the Communist Academy .",
+    "locator": "Article text, line 154 in reviewed snapshot; accessed 2026-09-27; sha256 42fe17fdbdd1f2f0f2d02482ddf63990b5ba079bc2dd078a00904580bf08f452"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+    "locator": "en: Early life and October Revolution",
+    "excerpt": "In 1924 he was transferred to full-time academic duties as a member of the Communist Academy.",
+    "claim": "1924년 공산아카데미 회원으로 전임 학술 업무를 맡았다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Evgeny_Pashukanis",
+    "locator": "en: Latter years",
+    "excerpt": "He was rewarded by being made director of the Institute of Soviet Construction and Law (predecessor of the Institute of State and Law of the Soviet Academy of Sciences) in 1931.",
+    "claim": "1931년 소비에트건설·법연구소 소장이 되었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Legal scholarship at the state Communist Academy and its Institute of Soviet Construction and Law = employment in state-soviet, until his 1937 arrest."
+ },
+ {
+  "personId": "filipp-makharadze",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "soviet-party",
+  "relation": "service",
+  "startYear": 1907,
+  "endYear": 1921,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Filipp_Makharadze",
+    "excerpt": "Filipp Yeseyevich Makharadze (Georgian: ფილიპე მახარაძე, Russian: Фили́пп Иесе́евич Махара́дзе; 9 March 1868 – 10 December 1941) was a Georgian Bolshevik revolutionary and government official.",
+    "locator": "plain-text extract lead sentence; sha256 df549446c2494c8f0a104b102239ed58493ef3633c423872ce4c045d70af3e3a"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Filipp_Makharadze",
+    "locator": "en: Life",
+    "excerpt": "In 1907–1915, he led various Bolshevik groups in Transcaucasia and, after the February Revolution, he co-founded the Tbilisi Soviet of Workers' Deputies. In April 1917, he was elected as a delegate to the 7th RSDRP(B) Conference and served in the Bolshevik Caucasian Region Committee. In 1919–1920, he led Bolshevik groups resisting the Menshevik government of independent Georgia.",
+    "claim": "1907~1915년과 1919~1920년 자캅카스·그루지야의 볼셰비키 조직을 이끌었고 1917년 볼셰비키 캅카스 지역위원회에서 일했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Party leadership of Bolshevik organizations in Transcaucasia (soviet-party covers pre-1917 Bolshevik activity); his later Revkom/government posts are state-soviet."
+ },
+ {
+  "personId": "filipp-mikheyev",
+  "functionId": "political-leadership",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "soviet-party",
+  "relation": "service",
+  "startYear": 1932,
+  "endYear": 1949,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B5%D0%B5%D0%B2%2C_%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF_%D0%95%D0%B3%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "excerpt": "Филипп Егорович Михеев (1902 — 1975) — советский партийный деятель.",
+    "locator": "plain-text extract lead sentence; sha256 ee6e85cc80a35e540ba28dbe07771525af9ebdc5cf19ee13a36df22594a9e8ff"
+   },
+   {
+    "source": "https://ru.wikipedia.org/wiki/Михеев,_Филипп_Егорович",
+    "locator": "ru: Биография",
+    "excerpt": "С 1936 года заместитель секретаря, затем первый секретарь Детскосельского (Пушкинского) райкома ВКП(б) Ленинградской области. В 1940—1949 годах был управляющим делами Ленинградского горкома и обкома ВКП(б).",
+    "claim": "1936년부터 데츠코예셀로 지구당 (제1)서기, 1940~1949년 레닌그라드 시·주 당위원회 관리국장을 지냈다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Party cadre posts from 1932 (factory partkom) to his 1949 arrest."
+ },
+ {
+  "personId": "frederick-william-ii",
+  "functionId": "monarchy",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-germany",
+  "relation": "service",
+  "startYear": 1786,
+  "endYear": 1797,
+  "evidence": [
+   {
+    "claim": "프리드리히 빌헬름 2세는 1786년부터 1797년 죽을 때까지 프로이센 국왕이었다.",
+    "source": "https://en.wikipedia.org/wiki/Frederick_William_II_of_Prussia",
+    "excerpt": "; 25 September 1744 – 16 November 1797) was King of Prussia from 1786 until his death in 1797.",
+    "locator": "plain-text extract characters 51:145; sha256 fdf29e8579967899b7241f66bb04ac89598ce3315402db21b57c98e095cf04a0"
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "King of Prussia; monarchs take the state affiliation of their realm (Prussia → state-germany)."
+ },
+ {
+  "personId": "friedrich-zander",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1919,
+  "endYear": 1933,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Friedrich_Zander",
+    "excerpt": "Georg Arthur Constantin Friedrich Zander (also Tsander; Russian: Фри́дрих Арту́рович Ца́ндер, romanized: Fridrikh Arturovich Tsander; Latvian: Frīdrihs Canders; 23 August [O.S. 11 August] 1887 – 28 March 1933) was a Russian and Soviet pioneer of rocketry and spaceflight, of Baltic German descent.",
+    "locator": "plain-text extract lead sentence; sha256 170051cd71bfc13b2d543edaa3a02c13aa2d28860974fdb44264fa64e1b0efcb"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Friedrich_Zander",
+    "locator": "en: Biography",
+    "excerpt": "He worked at the \"Provodnik\" rubber plant, then in 1919 worked at Aircraft Factory No. 4 (\"Motor\").",
+    "claim": "1919년 제4 항공기 공장에서 일했다."
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Friedrich_Zander",
+    "locator": "en: Biography",
+    "excerpt": "After several years of unemployment and intensive research on rocketry and space travel, in 1926, Zander began work at the Central Design Bureau of Aviation, and in 1930 worked at the Central Institute of Aviation Motor Construction (TsIAM).",
+    "claim": "1926년 중앙항공설계국, 1930년 중앙항공발동기연구소(TsIAM)에서 일했다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Engineering work at Soviet state aviation design bureau and institute; GIRD (Osoaviakhim) not separately catalogued."
+ },
+ {
+  "personId": "fyodor-uglov",
+  "functionId": "science",
+  "newFunctionId": null,
+  "primary": true,
+  "decision": "existing",
+  "affiliationId": "state-soviet",
+  "relation": "employment",
+  "startYear": 1950,
+  "endYear": 1991,
+  "evidence": [
+   {
+    "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+    "source": "https://en.wikipedia.org/wiki/Fyodor_Uglov",
+    "excerpt": "Fyodor Grigorievich Uglov (Russian: Фёдор Григорьевич Углов; 5 October [O.S. 22 September] 1904 – 22 June 2008) was a Soviet and Russian surgeon.",
+    "locator": "plain-text extract lead sentence; sha256 c1323d83d509c8fe085414a66f292234dee1bfa2d7b2234633b5297ae52fa480"
+   },
+   {
+    "source": "https://en.wikipedia.org/wiki/Fyodor_Uglov",
+    "locator": "en: Biography",
+    "excerpt": "From 1950 to 1991, he headed the Department of Hospital Surgery No. 2 at the First Leningrad Medical Institute. Until 1972 he was the director of the All-Russian Research Institute of Pulmonology of the USSR Ministry of Health, and created a large surgical school.",
+    "claim": "1950~1991년 제1레닌그라드 의학연구소 학과장, 1972년까지 소련 보건부 산하 폐학연구소 소장이었다."
+   }
+  ],
+  "newAffiliation": null,
+  "reason": "Department head at a state medical institute and director of a Ministry of Health research institute = employment in state-soviet."
+ }
+]

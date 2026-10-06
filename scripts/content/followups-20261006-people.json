@@ -1,0 +1,224 @@
+{
+ "people": [
+  {
+   "id": "dimitar-blagoev",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dimitar_Blagoev"
+   ],
+   "bio": {
+    "ko": "페테르부르크 대학 유학 중이던 1883년 러시아 최초의 맑스주의 서클 '러시아 사회민주당'을 결성하고 불법신문 『라보치』를 발행했으며, 체포·추방 후 불가리아로 돌아와 1891년 부즐루자 대회에서 불가리아 사회민주당을 창립했다. 1903년 개량주의 '광의파'와 결별하고 혁명적 '협의파(테스냐키)'를 이끌었으며, 25년간 이론지 『노보 브레메』를 편집하고 『자본론』을 불가리아어로 번역했다. 발칸전쟁과 제1차 세계대전에 반대하고 발칸 연방을 주장했으며, 10월 혁명 후 볼셰비키 편에 서서 1919년 당을 불가리아 공산당으로 재편하고 초대 지도자가 되었다. 레닌의 노농동맹론을 끝내 수용하지 않은 독자적 혁명가로, 불가리아 맑스주의의 이론적 토대를 세운 사상가이기도 했다."
+   },
+   "career": [
+    {
+     "period": {
+      "start": [
+       1883
+      ],
+      "end": [
+       1885
+      ]
+     },
+     "r": {
+      "ko": "러시아 최초의 맑스주의 서클 결성, 『라보치』 발행",
+      "en": "Organized Russia's first Marxist circle, published Rabochii"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1891
+      ]
+     },
+     "r": {
+      "ko": "부즐루자 대회에서 불가리아 사회민주당 창립",
+      "en": "Founded Bulgarian Social Democratic Party at Buzludzha Congress"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1897
+      ],
+      "end": [
+       1923
+      ]
+     },
+     "r": {
+      "ko": "이론지 『노보 브레메』 편집장",
+      "en": "Editor-in-chief of theoretical journal Novo Vreme"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1903
+      ],
+      "end": [
+       1919
+      ]
+     },
+     "r": {
+      "ko": "협의파(테스냐키) 지도자",
+      "en": "Leader of Narrow Socialists (Tesnyaki)"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1905
+      ]
+     },
+     "r": {
+      "ko": "『자본론』 제1권 불가리아어 번역",
+      "en": "Translated Marx's Capital, Vol. I into Bulgarian"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1919
+      ],
+      "end": [
+       1923
+      ]
+     },
+     "r": {
+      "ko": "불가리아 공산당 초대 중앙위원회 의장",
+      "en": "First Chairman of Bulgarian Communist Party"
+     }
+    }
+   ],
+   "activities": [
+    {
+     "endYear": 1919,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "블라고예프는 불가리아 사회민주당을 창건하고 1903년 분당 후 협의파를 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+       "excerpt": "Blagoev was the founder of socialism in Bulgaria and the first social-democratic party in the Balkans, the Marxist Bulgarian Social Democratic Party. He led the Narrow Socialists after a split in 1903.",
+       "locator": "characters 175:376; sha256 201961854716aa7354321f58bebb1efcd572ed5ba487b5c51e7e61af90df9dab"
+      },
+      {
+       "claim": "그는 1919년 불가리아 공산당의 초대 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+       "excerpt": "In 1919, he became the first leader of the Bulgarian Communist Party (BCP).",
+       "locator": "characters 11701:11776; sha256 201961854716aa7354321f58bebb1efcd572ed5ba487b5c51e7e61af90df9dab"
+      },
+      {
+       "claim": "블라고예프는 1891년 부즐루자 대회를 열어 불가리아 사회민주당을 창립했다.",
+       "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+       "excerpt": "Since political assemblies were forbidden then, Blagoev and his associates held the Buzludzha Congress from 2 August 1891, where the Bulgarian Social Democratic Party was established.",
+       "locator": "en: Bulgaria"
+      },
+      {
+       "claim": "사회민주당과 사회민주동맹이 합쳐 불가리아 노동자사회민주당이 되었고 블라고예프의 강령을 유지했다.",
+       "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+       "excerpt": "The Social Democratic Party and the Social Democratic Union merged to form the Bulgarian Workers' Social Democratic Party, preserving Blagoev's adaptation of the Erfurt Program as its statute.",
+       "locator": "en: Bulgaria"
+      },
+      {
+       "claim": "1903년 분당 뒤 블라고예프는 협의파를 이끌었다.",
+       "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+       "excerpt": "Blagoev become the leader of the \"Narrows\",  pursuing orthodox Marxism.",
+       "locator": "en: Narrow Socialists"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1891,
+     "functionId": "political-leadership",
+     "affiliationId": "party-bulgarian-workers-social-democratic",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "디미타르 블라고예프는 1919년 불가리아 공산당의 초대 지도자가 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+       "excerpt": "In 1919, he became the first leader of the Bulgarian Communist Party (BCP).",
+       "locator": "plain-text extract characters 11701:11776; accessed 2026-10-01; sha256 c01a2386f45d34a04ab8775771cc53fdaf92e3973260792eb2e84c232d9a7622"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "political-leadership",
+     "affiliationId": "party-bulgarian-communist",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+     "locator": "en: lead",
+     "claim": "표기 통일: 협의파(테스냐키)·광의파, 용어 「불가리아 사회민주노동당(협의파)」와 같게",
+     "excerpt": "Blagoev was the founder of socialism in Bulgaria and the first social-democratic party in the Balkans, the Marxist Bulgarian Social Democratic Party. He led the Narrow Socialists after a split in 1903."
+    },
+    {
+     "field": "career",
+     "source": "https://en.wikipedia.org/wiki/Dimitar_Blagoev",
+     "locator": "en: lead",
+     "claim": "1903년 분당 뒤 협의파를 이끌었다(표기 통일)",
+     "excerpt": "Blagoev was the founder of socialism in Bulgaria and the first social-democratic party in the Balkans, the Marxist Bulgarian Social Democratic Party. He led the Narrow Socialists after a split in 1903."
+    }
+   ]
+  },
+  {
+   "id": "vladimir-zenzinov",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BD%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "activities": [
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "젠지노프는 사회혁명당 당원이자 여러 권의 책을 낸 저술가였다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+       "excerpt": "was a member of Russia's Socialist-Revolutionary Party, a participant of the First (1905), Second (February 1917), and Third (November 1917) Russian Revolutions, and an author of a number of books.",
+       "locator": "characters 171:368; sha256 e5b09edf6fd6086a9cf962d6be580d5e966a256e07a7b7a0c5c9159486b054bc"
+      }
+     ],
+     "relation": "unresolved",
+     "startYear": null,
+     "functionId": "arts",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved"
+    },
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "젠지노프는 사회혁명당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+       "excerpt": "He joined the Socialist-Revolutionary Party (PSR) in 1901 and returned to Russia in 1904.",
+       "locator": "characters 622:711; sha256 b05e5b994703c0622380e84ee0511904142df3e5ae114f120df4a7b1d89ae0be"
+      },
+      {
+       "claim": "사회혁명당에서 여러 직책을 맡고 중앙위원으로 선출되었다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Zenzinov",
+       "excerpt": "He worked for the PSR in various capacities and was elected to its Central Committee.",
+       "locator": "characters 886:971; sha256 b05e5b994703c0622380e84ee0511904142df3e5ae114f120df4a7b1d89ae0be"
+      },
+      {
+       "claim": "2월 혁명 뒤 사회혁명당 중앙위원이 되었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%97%D0%B5%D0%BD%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "После Февральской революции 1917 года Зензинов стал членом ЦК ПСР и исполкома Петроградского совета.",
+       "locator": "characters 3979:4079; sha256 89d8e47171b81ce2dea803bb77f7a7a4fe2fd340d0e125f8a5d496b511495839"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "russian-sr",
+     "affiliationStatus": "confirmed"
+    }
+   ]
+  }
+ ]
+}

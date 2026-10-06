@@ -1,5 +1,5 @@
 {
-  "version": 25,
+  "version": 26,
   "functions": [
     {
       "id": "political-leadership",
@@ -4270,6 +4270,10 @@
         [
           1975,
           1979
+        ],
+        [
+          1982,
+          1993
         ]
       ],
       "socialistSystem": true,
@@ -8009,6 +8013,890 @@
         [
           1930,
           1944
+        ]
+      ]
+    },
+    {
+      "id": "armenia-first-republic",
+      "kind": "state",
+      "label": {
+        "ko": "아르메니아 제1공화국 국가기관",
+        "en": "First Republic of Armenia state institutions"
+      },
+      "countryCode": "armenia",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in First Republic of Armenia state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1918,
+          1920
+        ]
+      ]
+    },
+    {
+      "id": "party-russian-sdpr-1990",
+      "kind": "party",
+      "label": {
+        "ko": "러시아 사회민주당(1990)",
+        "en": "Social Democratic Party of the Russian Federation (SDPR, 1990)"
+      },
+      "termIds": [
+        "social-democratic-party-of-russia-1990"
+      ],
+      "countryCode": "russia",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Social Democratic Party of the Russian Federation (SDPR, 1990). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1990,
+          2011
+        ]
+      ]
+    },
+    {
+      "id": "finnish-red-guards",
+      "kind": "military",
+      "label": {
+        "ko": "핀란드 적위대",
+        "en": "Finnish Red Guards"
+      },
+      "termIds": [
+        "finnish-red-guards"
+      ],
+      "countryCode": "finland",
+      "icon": "swords",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Finnish Red Guards. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1905,
+          1906
+        ],
+        [
+          1917,
+          1918
+        ]
+      ]
+    },
+    {
+      "id": "party-kazakh-alash",
+      "kind": "party",
+      "label": {
+        "ko": "알라시당",
+        "en": "Alash party"
+      },
+      "termIds": [
+        "alash-party"
+      ],
+      "countryCode": "kazakhstan",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Alash party. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1917,
+          1920
+        ]
+      ]
+    },
+    {
+      "id": "armenian-special-striking-division",
+      "kind": "military",
+      "label": {
+        "ko": "아르메니아 특별타격사단",
+        "en": "Armenian Special Striking Division (Andranik)"
+      },
+      "countryCode": "armenia",
+      "icon": "swords",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Armenian Special Striking Division (Andranik). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1918,
+          1919
+        ]
+      ]
+    },
+    {
+      "id": "gelug-school",
+      "kind": "institution",
+      "label": {
+        "ko": "겔룩파",
+        "en": "Gelug school of Tibetan Buddhism"
+      },
+      "countryCode": null,
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Gelug school of Tibetan Buddhism. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1409,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "crimean-peoples-republic",
+      "kind": "state",
+      "label": {
+        "ko": "크림 인민공화국 국가기관",
+        "en": "Crimean People's Republic state institutions"
+      },
+      "termIds": [
+        "crimean-peoples-republic"
+      ],
+      "countryCode": "ukraine",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Crimean People's Republic state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1917,
+          1918
+        ]
+      ]
+    },
+    {
+      "id": "international-second-international",
+      "kind": "international",
+      "label": {
+        "ko": "제2인터내셔널",
+        "en": "Second International (International Socialist Bureau)"
+      },
+      "termIds": [
+        "second-international"
+      ],
+      "countryCode": null,
+      "icon": "globe",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Second International (International Socialist Bureau). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1889,
+          1923
+        ]
+      ]
+    },
+    {
+      "id": "german-socialist-bund",
+      "kind": "force",
+      "label": {
+        "ko": "사회주의자동맹",
+        "en": "Socialist Bund (Sozialistischer Bund)"
+      },
+      "countryCode": "germany",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Socialist Bund (Sozialistischer Bund). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1908,
+          1919
+        ]
+      ]
+    },
+    {
+      "id": "british-daily-mail",
+      "kind": "institution",
+      "label": {
+        "ko": "데일리 메일",
+        "en": "Daily Mail (Associated Newspapers)"
+      },
+      "countryCode": "uk",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Daily Mail (Associated Newspapers). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1896,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "estonian-self-administration",
+      "kind": "state",
+      "label": {
+        "ko": "에스토니아 자치행정 국가기관",
+        "en": "Estonian Self-Administration state institutions"
+      },
+      "countryCode": "estonia",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Estonian Self-Administration state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1941,
+          1944
+        ]
+      ]
+    },
+    {
+      "id": "german-spartacus-league",
+      "kind": "force",
+      "label": {
+        "ko": "스파르타쿠스단",
+        "en": "Spartacus League (Spartakusbund)"
+      },
+      "countryCode": "germany",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Spartacus League (Spartakusbund). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1916,
+          1918
+        ]
+      ]
+    },
+    {
+      "id": "basmachi-movement",
+      "kind": "military",
+      "label": {
+        "ko": "바스마치 운동",
+        "en": "Basmachi movement"
+      },
+      "termIds": [
+        "basmachi-movement"
+      ],
+      "countryCode": "uzbekistan",
+      "icon": "swords",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Basmachi movement. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1916,
+          1934
+        ]
+      ]
+    },
+    {
+      "id": "moldavian-democratic-republic",
+      "kind": "state",
+      "label": {
+        "ko": "몰다비아 민주공화국 국가기관",
+        "en": "Moldavian Democratic Republic state institutions"
+      },
+      "termIds": [
+        "moldavian-democratic-republic"
+      ],
+      "countryCode": "moldova",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Moldavian Democratic Republic state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1917,
+          1918
+        ]
+      ]
+    },
+    {
+      "id": "party-estonian-national-progress",
+      "kind": "party",
+      "label": {
+        "ko": "에스토니아 민족진보당",
+        "en": "Estonian National Progress Party (Eesti Rahvameelne Eduerakond)"
+      },
+      "termIds": [
+        "estonian-national-progress-party"
+      ],
+      "countryCode": "estonia",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Estonian National Progress Party (Eesti Rahvameelne Eduerakond). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1905,
+          1917
+        ]
+      ]
+    },
+    {
+      "id": "french-paris-commune-1871",
+      "kind": "institution",
+      "label": {
+        "ko": "파리 코뮌(1871)",
+        "en": "Paris Commune (1871)"
+      },
+      "countryCode": "france",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Paris Commune (1871). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1871,
+          1871
+        ]
+      ]
+    },
+    {
+      "id": "french-cnr",
+      "kind": "force",
+      "label": {
+        "ko": "국민저항위원회",
+        "en": "National Council of the Resistance (CNR)"
+      },
+      "termIds": [
+        "national-resistance-council-cnr"
+      ],
+      "countryCode": "france",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in National Council of the Resistance (CNR). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1943,
+          1945
+        ]
+      ]
+    },
+    {
+      "id": "lithuanian-partisans",
+      "kind": "military",
+      "label": {
+        "ko": "리투아니아 파르티잔",
+        "en": "Lithuanian partisans (LLKS from 1949)"
+      },
+      "termIds": [
+        "union-of-lithuanian-freedom-fighters"
+      ],
+      "countryCode": "lithuania",
+      "icon": "swords",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Lithuanian partisans (LLKS from 1949). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1944,
+          1953
+        ]
+      ]
+    },
+    {
+      "id": "state-singapore",
+      "kind": "state",
+      "label": {
+        "ko": "싱가포르 국가기관",
+        "en": "Singapore state institutions"
+      },
+      "countryCode": "singapore",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Singapore state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1959,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "party-azerbaijani-musavat",
+      "kind": "party",
+      "label": {
+        "ko": "무사바트",
+        "en": "Musavat"
+      },
+      "termIds": [
+        "musavat"
+      ],
+      "countryCode": "azerbaijan",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Musavat. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1911,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "czech-pvvz",
+      "kind": "force",
+      "label": {
+        "ko": "우리는 충실하리라 청원위원회",
+        "en": "Petition Committee \"We Remain Faithful\" (PVVZ)"
+      },
+      "countryCode": "czechoslovakia",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Petition Committee \"We Remain Faithful\" (PVVZ). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1939,
+          1945
+        ]
+      ]
+    },
+    {
+      "id": "iranian-jangal-movement",
+      "kind": "force",
+      "label": {
+        "ko": "정글리 운동",
+        "en": "Jangal movement (Nehzat-e Jangal)"
+      },
+      "countryCode": "iran",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Jangal movement (Nehzat-e Jangal). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1914,
+          1921
+        ]
+      ]
+    },
+    {
+      "id": "north-caucasus-mountainous-republic",
+      "kind": "state",
+      "label": {
+        "ko": "북캅카스 산악공화국 국가기관",
+        "en": "Mountainous Republic of the Northern Caucasus state institutions"
+      },
+      "termIds": [
+        "mountainous-republic-of-the-northern-caucasus"
+      ],
+      "countryCode": "russia",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Mountainous Republic of the Northern Caucasus state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1917,
+          1920
+        ]
+      ]
+    },
+    {
+      "id": "albanian-konare",
+      "kind": "force",
+      "label": {
+        "ko": "알바니아 민족혁명위원회",
+        "en": "National Revolutionary Committee (KONARE)"
+      },
+      "countryCode": "albania",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in National Revolutionary Committee (KONARE). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1925,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "state-sweden",
+      "kind": "state",
+      "label": {
+        "ko": "스웨덴 국가기관",
+        "en": "Sweden state institutions"
+      },
+      "countryCode": "sweden",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Sweden state institutions. Never infer affiliation from nationality, residence or ideology."
+    },
+    {
+      "id": "hungarian-vaada",
+      "kind": "force",
+      "label": {
+        "ko": "부다페스트 구호구조위원회",
+        "en": "Aid and Rescue Committee of Budapest (Vaada)"
+      },
+      "countryCode": "hungary",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Aid and Rescue Committee of Budapest (Vaada). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1944,
+          1945
+        ]
+      ]
+    },
+    {
+      "id": "german-revolutionary-stewards",
+      "kind": "force",
+      "label": {
+        "ko": "혁명적 직장위원",
+        "en": "Revolutionary Stewards (Revolutionäre Obleute)"
+      },
+      "countryCode": "germany",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Revolutionary Stewards (Revolutionäre Obleute). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1914,
+          1919
+        ]
+      ]
+    },
+    {
+      "id": "international-socialist-commission",
+      "kind": "international",
+      "label": {
+        "ko": "국제사회주의위원회",
+        "en": "International Socialist Commission (Zimmerwald)"
+      },
+      "termIds": [
+        "zimmerwald-movement"
+      ],
+      "countryCode": null,
+      "icon": "globe",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in International Socialist Commission (Zimmerwald). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1915,
+          1919
+        ]
+      ]
+    },
+    {
+      "id": "finnish-united-paper-mills",
+      "kind": "institution",
+      "label": {
+        "ko": "연합제지",
+        "en": "Yhtyneet Paperitehtaat (United Paper Mills)"
+      },
+      "countryCode": "finland",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Yhtyneet Paperitehtaat (United Paper Mills). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1920,
+          1996
+        ]
+      ]
+    },
+    {
+      "id": "idel-ural-milli-idare",
+      "kind": "state",
+      "label": {
+        "ko": "이델-우랄 국가기관",
+        "en": "Idel-Ural State and Milli Idare institutions"
+      },
+      "termIds": [
+        "idel-ural-state"
+      ],
+      "countryCode": "russia",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Idel-Ural State and Milli Idare institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1917,
+          1918
+        ]
+      ]
+    },
+    {
+      "id": "bukhara-emirate",
+      "kind": "state",
+      "label": {
+        "ko": "부하라 에미르국 국가기관",
+        "en": "Emirate of Bukhara state institutions"
+      },
+      "countryCode": "uzbekistan",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Emirate of Bukhara state institutions. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1785,
+          1920
+        ]
+      ]
+    },
+    {
+      "id": "china-defence-league",
+      "kind": "force",
+      "label": {
+        "ko": "보위중국동맹",
+        "en": "China Defence League (China Welfare Institute from 1945)"
+      },
+      "countryCode": "china",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in China Defence League (China Welfare Institute from 1945). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1938,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "polish-national-league",
+      "kind": "force",
+      "label": {
+        "ko": "폴란드 국민연맹",
+        "en": "National League (Liga Narodowa, Poland)"
+      },
+      "countryCode": "poland",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in National League (Liga Narodowa, Poland). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1893,
+          1928
+        ]
+      ]
+    },
+    {
+      "id": "polish-poznan-bar",
+      "kind": "institution",
+      "label": {
+        "ko": "포즈난 변호사회",
+        "en": "Poznań Bar (Izba Adwokacka w Poznaniu)"
+      },
+      "countryCode": "poland",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Poznań Bar (Izba Adwokacka w Poznaniu). Never infer affiliation from nationality, residence or ideology."
+    },
+    {
+      "id": "czechoslovak-national-council",
+      "kind": "force",
+      "label": {
+        "ko": "체코슬로바키아 민족평의회",
+        "en": "Czechoslovak National Council"
+      },
+      "countryCode": "czechoslovakia",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Czechoslovak National Council. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1915,
+          1918
+        ]
+      ]
+    },
+    {
+      "id": "party-british-swp",
+      "kind": "party",
+      "label": {
+        "ko": "영국 사회주의노동자당",
+        "en": "Socialist Workers Party (Britain)"
+      },
+      "termIds": [
+        "socialist-workers-party-britain"
+      ],
+      "countryCode": "uk",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Socialist Workers Party (Britain). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1950,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "american-stanford-university",
+      "kind": "institution",
+      "label": {
+        "ko": "스탠퍼드 대학교",
+        "en": "Stanford University"
+      },
+      "countryCode": "usa",
+      "icon": "landmark",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Stanford University. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1891,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "soviet-soyuz-group",
+      "kind": "force",
+      "label": {
+        "ko": "소유즈 의원 그룹",
+        "en": "Soyuz deputies' group (USSR Congress of People's Deputies)"
+      },
+      "termIds": [
+        "soyuz-parliamentary-faction"
+      ],
+      "countryCode": "soviet",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Soyuz deputies' group (USSR Congress of People's Deputies). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1989,
+          1991
+        ]
+      ]
+    },
+    {
+      "id": "bashkir-army",
+      "kind": "military",
+      "label": {
+        "ko": "바시키르군",
+        "en": "Bashkir Army (Bashkurdistan, 1917–1919)"
+      },
+      "countryCode": "russia",
+      "icon": "swords",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Bashkir Army (Bashkurdistan, 1917–1919). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1917,
+          1919
+        ]
+      ]
+    },
+    {
+      "id": "british-iasb",
+      "kind": "force",
+      "label": {
+        "ko": "국제아프리카서비스국",
+        "en": "International African Service Bureau (IASB)"
+      },
+      "countryCode": "uk",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in International African Service Bureau (IASB). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1937,
+          1945
+        ]
+      ]
+    },
+    {
+      "id": "party-us-workers",
+      "kind": "party",
+      "label": {
+        "ko": "미국 노동자당(샥트먼)",
+        "en": "Workers Party (United States)"
+      },
+      "termIds": [
+        "workers-party-united-states"
+      ],
+      "countryCode": "usa",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Workers Party (United States). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1940,
+          1949
+        ]
+      ]
+    },
+    {
+      "id": "russian-roa",
+      "kind": "military",
+      "label": {
+        "ko": "러시아 해방군",
+        "en": "Russian Liberation Army (ROA)"
+      },
+      "countryCode": "russia",
+      "icon": "swords",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Russian Liberation Army (ROA). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1944,
+          1945
+        ]
+      ]
+    },
+    {
+      "id": "party-russian-union-of-archangel-michael",
+      "kind": "party",
+      "label": {
+        "ko": "미하일 대천사 동맹",
+        "en": "Union of the Archangel Michael"
+      },
+      "termIds": [
+        "union-of-the-archangel-michael"
+      ],
+      "countryCode": "russia",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Union of the Archangel Michael. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1907,
+          1917
+        ]
+      ]
+    },
+    {
+      "id": "party-guyanese-wpa",
+      "kind": "party",
+      "label": {
+        "ko": "노동인민동맹",
+        "en": "Working People's Alliance (WPA)"
+      },
+      "termIds": [
+        "working-peoples-alliance-guyana"
+      ],
+      "countryCode": "guyana",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Working People's Alliance (WPA). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1974,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "swiss-jura-federation",
+      "kind": "force",
+      "label": {
+        "ko": "쥐라 연맹",
+        "en": "Jura Federation"
+      },
+      "countryCode": "switzerland",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Jura Federation. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1872,
+          null
+        ]
+      ]
+    },
+    {
+      "id": "party-lithuanian-social-democratic",
+      "kind": "party",
+      "label": {
+        "ko": "리투아니아 사회민주당",
+        "en": "Social Democratic Party of Lithuania (LSDP)"
+      },
+      "termIds": [
+        "social-democratic-party-of-lithuania"
+      ],
+      "countryCode": "lithuania",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Social Democratic Party of Lithuania (LSDP). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1896,
+          1940
+        ],
+        [
+          1989,
+          null
         ]
       ]
     }

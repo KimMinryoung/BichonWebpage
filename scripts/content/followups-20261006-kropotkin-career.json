@@ -1,0 +1,119 @@
+{
+ "people": [
+  {
+   "id": "pyotr-kropotkin",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Peter_Kropotkin"
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1857
+      ],
+      "end": [
+       1862
+      ]
+     },
+     "r": {
+      "ko": "파제스키 군단 수석 졸업 — 황제의 시종(侍從) 카메르파주로 근무",
+      "en": "Graduated top of the Page Corps — served as Emperor's personal Kammer-page"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1862
+      ],
+      "end": [
+       1867
+      ]
+     },
+     "r": {
+      "ko": "동시베리아 코사크 장교 겸 지리탐사 대원 — 파톰·비팀 고원 발견, 러시아지리학회 금메달 수상",
+      "en": "Cossack officer and explorer in East Siberia — discovered Patom and Vitim plateaus, gold medal of Russian Geographical Society"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1867
+      ],
+      "end": [
+       1874
+      ]
+     },
+     "r": {
+      "ko": "페테르부르크 대학 수학, 러시아지리학회 물리지리부 서기 — 빙하기 이론, 프란츠요제프 란드 예측",
+      "en": "Studied at St. Petersburg University; Physical Geography Secretary at Russian Geographical Society — glacial theory, predicted Franz Josef Land"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1872
+      ],
+      "end": [
+       1874
+      ]
+     },
+     "r": {
+      "ko": "쥐라 연맹 가입, 아나키스트 전향 — 차이콥스키 서클 노동자 선전, 「인민 속으로」 운동 주도",
+      "en": "Joined Jura Federation, became anarchist — worker agitation with Chaikovsky Circle, led 'Going to the People'"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1874
+      ],
+      "end": [
+       1876
+      ]
+     },
+     "r": {
+      "ko": "체포 — 페트로파블롭스크 요새에서 빙하기 연구, 니콜라옙스크 군병원 탈옥",
+      "en": "Arrested — completed glacial research in Peter and Paul Fortress, escaped from Nikolaevsky Military Hospital"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1876
+      ],
+      "end": [
+       1917
+      ]
+     },
+     "r": {
+      "ko": "서유럽 망명 — 『르 레볼테』 창간, 리옹 공정으로 3년 수감, 『빵의 쟁취』·『상호부조』·『한 혁명가의 회상』 집필",
+      "en": "Exile in Western Europe — founded Le Révolté, 3-year imprisonment after Lyon Trial, wrote The Conquest of Bread, Mutual Aid, Memoirs of a Revolutionist"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1917
+      ],
+      "end": [
+       1921
+      ]
+     },
+     "r": {
+      "ko": "러시아 귀국 — 케렌스키 입각 거부, 볼셰비키 적색 테러 비판, 드미트로프에서 『윤리학』 집필 중 폐렴 사망",
+      "en": "Returned to Russia — refused Kerensky's cabinet, criticized Bolshevik Red Terror, died of pneumonia in Dmitrov while writing Ethics"
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "field": "career",
+     "source": "https://en.wikipedia.org/wiki/Peter_Kropotkin",
+     "locator": "en: lead",
+     "claim": "표기 수정: 유라 연맹→쥐라 연맹(Fédération jurassienne), 내용 변경 없음",
+     "excerpt": "Pyotr Alexeyevich Kropotkin (9 December [O.S. 27 November] 1842 – 8 February 1921) was a Russian anarchist political philosopher and geographer known as a proponent of anarchist communism."
+    }
+   ]
+  }
+ ]
+}

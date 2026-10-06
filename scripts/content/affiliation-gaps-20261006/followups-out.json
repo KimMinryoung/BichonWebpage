@@ -1,0 +1,832 @@
+[
+ {
+  "personId": "eugene-v-debs",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "international-iww",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1905,
+   "endYear": null,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Eugene_V._Debs",
+     "locator": "en: lead",
+     "excerpt": "He was one of the founding members of the Industrial Workers of the World (IWW) and a five-time candidate of the Socialist Party of America for President of the United States",
+     "claim": "뎁스는 세계산업노동자연맹(IWW)의 창립 회원이었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Eugene_V._Debs",
+     "locator": "en: Founding the Industrial Workers of the World",
+     "excerpt": "On June 27, 1905, in Chicago, Illinois, Debs and other influential union leaders including Bill Haywood, leader of the Western Federation of Miners; and Daniel De Leon, leader of the Socialist Labor Party, held what Haywood called the \"Continental Congress of the working class\".",
+     "claim": "뎁스는 1905년 6월 시카고에서 IWW 창립 대회를 함께 열었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Founding member of the IWW at its 1905 Chicago congress; end year not given in the source."
+ },
+ {
+  "personId": "george-padmore",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "british-iasb",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1937,
+   "endYear": null,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/George_Padmore",
+     "locator": "en: London",
+     "excerpt": "Padmore was chair of IASB, the Barbadian trade unionist Chris Braithwaite was its organising secretary, and James edited its periodical, International African Opinion.",
+     "claim": "패드모어는 국제아프리카서비스국(IASB)의 의장이었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/International_African_Service_Bureau",
+     "locator": "en: lead",
+     "excerpt": "The International African Service Bureau (I.A.S.B.) was a pan-African organisation founded in London in 1937 by West Indians George Padmore, C. L. R. James, Amy Ashwood Garvey, T. Ras Makonnen, Kenyan nationalist Jomo Kenyatta and Sierra Leonean labour activist and agitator I. T. A. Wallace-Johnson.",
+     "claim": "IASB는 1937년 런던에서 패드모어 등이 창립한 범아프리카 조직이다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/George_Padmore",
+     "locator": "en: London",
+     "excerpt": "Padmore was then organizing the 1945 Manchester Pan-African Congress (designated the Fifth Pan-African Congress), attended not only by the inner circle of the IASB but also by W. E. B. Du Bois, the American organizer of earlier Pan-African conferences.",
+     "claim": "패드모어는 IASB 핵심 인사들이 참석한 1945년 맨체스터 범아프리카회의를 조직했다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "british-iasb",
+   "kind": "force",
+   "label": {
+    "ko": "국제아프리카서비스국",
+    "en": "International African Service Bureau (IASB)"
+   },
+   "countryCode": "uk",
+   "parentId": null,
+   "periods": [
+    [
+     1937,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Co-founder and chair of the IASB (1937); organised the 1945 Manchester Congress. The congress itself is an event, not an organization, so it is evidence on the IASB activity rather than its own activity."
+ },
+ {
+  "personId": "grace-lee-boggs",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "party-us-workers",
+   "affiliationStatus": "confirmed",
+   "relation": "membership",
+   "primary": false,
+   "startYear": null,
+   "endYear": 1947,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Grace_Lee_Boggs",
+     "locator": "en: Early life",
+     "excerpt": "As a result of their activism on tenants' rights, she joined the revolutionary left Workers Party, known for its Third Camp position regarding the Soviet Union, which it saw as bureaucratic collectivist.",
+     "claim": "보그스는 세입자 권리 운동을 계기로 노동자당에 입당했다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Workers_Party_%28United_States%29",
+     "locator": "en: Early years",
+     "excerpt": "The Johnson-Forest Tendency left the WP in October 1947 in order to rejoin the SWP, while Farrell and Goldman left in 1948 to join the Socialist Party of America.",
+     "claim": "보그스가 속한 존슨-포레스트 경향은 1947년 10월 노동자당을 떠났다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "party-us-workers",
+   "kind": "party",
+   "label": {
+    "ko": "미국 노동자당",
+    "en": "Workers Party (United States)"
+   },
+   "countryCode": "usa",
+   "parentId": null,
+   "periods": [
+    [
+     1940,
+     1949
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Member of the Shachtmanite Workers Party until the Johnson–Forest Tendency left it in 1947; join year not stated (career entry says early 1940s)."
+ },
+ {
+  "personId": "grace-lee-boggs",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "party-us-swp",
+   "affiliationStatus": "confirmed",
+   "relation": "membership",
+   "primary": false,
+   "startYear": 1947,
+   "endYear": 1951,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Grace_Lee_Boggs",
+     "locator": "en: Early life",
+     "excerpt": "While originally operating as a tendency of the Workers Party, they briefly rejoined the Socialist Workers Party before leaving the Trotskyist left entirely, forming the Correspondence Publishing Committee in 1951.",
+     "claim": "보그스의 경향은 사회주의노동자당에 잠시 재가입했다가 1951년 트로츠키주의 좌파를 떠났다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Johnson%E2%80%93Forest_Tendency",
+     "locator": "en: History",
+     "excerpt": "Their disgruntlement with the Shachtmanite majority within the Workers Party led Johnson–Forest in 1947 to rejoin the Socialist Workers Party.",
+     "claim": "존슨-포레스트 경향은 1947년 사회주의노동자당에 재가입했다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "SWP membership 1947–1951 with the Johnson–Forest Tendency (existing catalog party)."
+ },
+ {
+  "personId": "georgios-papandreou",
+  "change": "modify",
+  "activity": {
+   "endYear": 1958,
+   "primary": false,
+   "evidence": [
+    {
+     "claim": "파판드레우는 1945년 이후 소포클리스 베니젤로스 아래에서 자유당 부당수가 되었다.",
+     "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+     "excerpt": "He resigned in early January 1945 and rose to becoming deputy leader of the Liberal Party under Sofoklis Venizelos.",
+     "locator": "characters 1716:1831; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a"
+    },
+    {
+     "claim": "1952년 선거 패배 뒤 파판드레우가 자유당 지도부를 맡았다.",
+     "source": "https://el.wikipedia.org/wiki/%CE%9A%CF%8C%CE%BC%CE%BC%CE%B1_%CF%84%CF%89%CE%BD_%CE%A6%CE%B9%CE%BB%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CE%BD",
+     "excerpt": "Μετά την ήττα των Φιλελευθέρων στις εκλογές του 1952 από τον Ελληνικό Συναγερμό του Αλεξάνδρου Παπάγου, ο Σοφοκλής Βενιζέλος αποσύρθηκε προσωρινά από την πολιτική και την ηγεσία του κόμματος ανέλαβε ο Γεώργιος Παπανδρέου.",
+     "locator": "characters 5343:5564; sha256 15ed23f3726c5a0fefe7f30bab52331508583c0897abcf55db74edde7a2a3589"
+    },
+    {
+     "claim": "1958년 11월 당수 선거에서 소포클리스 베니젤로스가 재선되자 파판드레우는 자유당을 떠났다.",
+     "source": "https://el.wikipedia.org/wiki/%CE%9A%CF%8C%CE%BC%CE%BC%CE%B1_%CF%84%CF%89%CE%BD_%CE%A6%CE%B9%CE%BB%CE%B5%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CF%89%CE%BD",
+     "excerpt": "Μετά την επανεκλογή του Σοφοκλή Βενιζέλου το κόμμα διασπάστηκε κι έτσι αποχώρησαν βασικά στελέχη όπως ο Γεώργιος Παπανδρέου, ο Κωνσταντίνος Μητσοτάκης, ο Γεώργιος Μαύρος, ο Ιωάννης Ζίγδης, κ.α.",
+     "locator": "characters 6213:6406; sha256 15ed23f3726c5a0fefe7f30bab52331508583c0897abcf55db74edde7a2a3589"
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
+     "locator": "en: lead",
+     "excerpt": "He would deputise both Venizelos and Nikolaos Plastiras as deputy prime minister before the Liberals lost the 1952 elections, resulting in the former relinquishing the party leadership to Papandreou.",
+     "claim": "1952년 선거 패배 뒤 베니젤로스가 자유당 지도부를 파판드레우에게 넘겼다."
+    }
+   ],
+   "relation": "service",
+   "startYear": 1945,
+   "functionId": "political-leadership",
+   "affiliationId": "party-greek-liberal",
+   "affiliationStatus": "confirmed"
+  },
+  "modifyMatch": {
+   "functionId": "political-leadership",
+   "affiliationId": "party-greek-liberal"
+  },
+  "newAffiliation": null,
+  "reason": "1945–1958 Liberal activity: deputy leader from 1945 and party leader after 1952, so relation membership -> service; the 1923–1935 government/Liberal row stays membership (MP and minister, not party leader)."
+ },
+ {
+  "personId": "georgy-arbatov",
+  "change": "add",
+  "activity": {
+   "functionId": "scholarship",
+   "affiliationId": "russia-federation",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1991,
+   "endYear": 1995,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Georgy_Arbatov",
+     "locator": "en: Political scientist",
+     "excerpt": "He was founder director of the Institute for US and Canadian Studies (ISKRAN) from 1965 to 1995.",
+     "claim": "아르바토프는 1965~1995년 미국·캐나다연구소 소장이었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Georgy_Arbatov",
+     "locator": "en: Political scientist",
+     "excerpt": "Sergey Rogov, who succeeded him in 1995 as director of the Institute for US and Canadian Studies called Arbatov someone who \"was probably willing more than anybody else to stick his neck out\"",
+     "claim": "1995년 세르게이 로고프가 그의 소장직을 이었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Directorship of the (Russian) Academy of Sciences institute continued after 1991 until 1995; same relation as the existing state-soviet row."
+ },
+ {
+  "personId": "nikolai-skoblin",
+  "change": "add",
+  "activity": {
+   "functionId": "security",
+   "affiliationId": "state-soviet",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1930,
+   "endYear": 1937,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Nikolai_Skoblin",
+     "locator": "en: In exile",
+     "excerpt": "Skoblin and his wife were recruited to the OGPU (the predecessor to the NKVD) by his former regimental comrade in Paris in September 1930 and received the code name Farmer.",
+     "claim": "스코블린은 1930년 9월 파리에서 OGPU에 포섭되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Nikolai_Skoblin",
+     "locator": "en: In exile",
+     "excerpt": "On 22 September 1937, Skoblin, operating under the direction of deputy chief of Soviet foreign intelligence Sergey Spigelglas, lured the ROVS chairman Yevgeny Miller into an NKVD safe apartment for a meeting with two supposedly German officers.",
+     "claim": "1937년 9월 그는 소련 대외정보부 지휘 아래 밀레르 납치에 가담했다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Soviet OGPU/NKVD agent from September 1930; endYear 1937 = his last documented operation and disappearance."
+ },
+ {
+  "personId": "apostolos-santas",
+  "change": "add",
+  "activity": {
+   "functionId": "military",
+   "affiliationId": "greek-elas",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1943,
+   "endYear": null,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Apostolos_Santas",
+     "locator": "en: Biography",
+     "excerpt": "In 1942, he joined the fledgling National Liberation Front (EAM), and a year later the guerrilla force ELAS, with which he participated in several battles against the Axis troops throughout Central Greece.",
+     "claim": "산타스는 1943년 ELAS에 합류해 중부 그리스에서 추축군과 싸웠다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Joined ELAS in 1943 and fought with it; end year not stated."
+ },
+ {
+  "personId": "andrey-vlasov",
+  "change": "add",
+  "activity": {
+   "functionId": "military",
+   "affiliationId": "russian-roa",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1944,
+   "endYear": 1945,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Andrey_Vlasov",
+     "locator": "en: lead",
+     "excerpt": "He nominally headed the Russian Liberation Army (Russkaya osvoboditel'naya armiya, ROA), also becoming the political leader of the Russian collaborationist anti-Soviet movement.",
+     "claim": "블라소프는 러시아 해방군(ROA)을 명목상 이끌었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Russian_Liberation_Army",
+     "locator": "en: lead",
+     "excerpt": "From January 1945, the army was led by Andrey Vlasov, a Red Army general who had defected, and members of the army are often referred to as Vlasovtsy",
+     "claim": "1945년 1월부터 블라소프가 이 군을 지휘했다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Russian_Liberation_Army",
+     "locator": "en: lead",
+     "excerpt": "On 14 November 1944, it was officially formed as the Armed Forces of the Committee for the Liberation of the Peoples of Russia, with the KONR being formed as a political body to which the army pledged loyalty.",
+     "claim": "ROA는 1944년 11월 KONR 군대로 정식 편성되었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "russian-roa",
+   "kind": "military",
+   "label": {
+    "ko": "러시아 해방군",
+    "en": "Russian Liberation Army (ROA)"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1944,
+     1945
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Commander of the ROA (officially formed Nov 1944, under his command from Jan 1945); KONR political activity already exists. Before 1944 the ROA existed only as a propaganda label, so the period starts in 1944."
+ },
+ {
+  "personId": "ahmad-shah-massoud",
+  "change": "add",
+  "activity": {
+   "functionId": "military",
+   "affiliationId": "state-afghanistan",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1992,
+   "endYear": 1996,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+     "locator": "en: lead",
+     "excerpt": "He was appointed the Minister of Defense as well as the government's main military commander.",
+     "claim": "마수드는 아프가니스탄 이슬람국의 국방장관 겸 정부군 최고 지휘관이 되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+     "locator": "en: Islamic State of Afghanistan",
+     "excerpt": "Under the 1992 Peshawar Accord, the Defense Ministry was given to Massoud while the Prime Ministership was given to Hekmatyar.",
+     "claim": "1992년 페샤와르 협정으로 국방부가 마수드에게 배정되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Ahmad_Shah_Massoud",
+     "locator": "en: Islamic State of Afghanistan",
+     "excerpt": "The Taliban marched into Kabul on September 27, 1996, and established the Islamic Emirate of Afghanistan.",
+     "claim": "1996년 9월 탈레반이 카불을 점령했다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Defence minister and chief military commander of the Islamic State of Afghanistan 1992–1996; function military rather than government because the catalog prefers the specific domain over a minister title."
+ },
+ {
+  "personId": "vaclav-havel",
+  "change": "add",
+  "activity": {
+   "functionId": "legislature",
+   "affiliationId": "state-czechoslovakia",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1989,
+   "endYear": 1992,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Havel",
+     "locator": "en: lead",
+     "excerpt": "Havel served as the last president of Czechoslovakia from 1989 until 1992, prior to the dissolution of Czechoslovakia on 31 December, before he became the first president of the Czech Republic from 1993 to 2003.",
+     "claim": "하벨은 1989~1992년 체코슬로바키아 마지막 대통령, 1993~2003년 체코 초대 대통령을 지냈다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Havel",
+     "locator": "en: Presidency",
+     "excerpt": "On 29 December 1989, while he was leader of the Civic Forum, Havel became President of Czechoslovakia by a unanimous vote of the Federal Assembly.",
+     "claim": "1989년 12월 연방의회가 만장일치로 하벨을 대통령으로 선출했다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "President of Czechoslovakia 1989–1992. Function legislature (catalog: non-monarchical head of state whose real executive power lay elsewhere) rather than government, whose criteria say a head-of-state title alone is insufficient; change to government if the owner prefers."
+ },
+ {
+  "personId": "vaclav-havel",
+  "change": "add",
+  "activity": {
+   "functionId": "legislature",
+   "affiliationId": "state-czechia",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1993,
+   "endYear": 2003,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Havel",
+     "locator": "en: lead",
+     "excerpt": "Havel served as the last president of Czechoslovakia from 1989 until 1992, prior to the dissolution of Czechoslovakia on 31 December, before he became the first president of the Czech Republic from 1993 to 2003.",
+     "claim": "하벨은 1989~1992년 체코슬로바키아 마지막 대통령, 1993~2003년 체코 초대 대통령을 지냈다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/V%C3%A1clav_Havel",
+     "locator": "en: Presidency",
+     "excerpt": "Although he was nominally the new country's chief executive, the framers of the Constitution of the Czech Republic intended to vest most of the real power in the prime minister.",
+     "claim": "체코 헌법은 실권을 총리에게 두었고 대통령은 명목상 행정 수반이었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "President of the Czech Republic 1993–2003; parliamentary presidency, hence legislature (see previous row)."
+ },
+ {
+  "personId": "vladimir-burtsev",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "russian-narodnaya-volya",
+   "affiliationStatus": "confirmed",
+   "relation": "membership",
+   "primary": false,
+   "startYear": null,
+   "endYear": null,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Vladimir_Burtsev",
+     "locator": "en: Early life (1862–1886)",
+     "excerpt": "As a member of Narodnaya Volya, he was imprisoned for two years (for about a year in the Peter and Paul Fortress) and in 1886 exiled to the Irkutsk region of Eastern Siberia.",
+     "claim": "부르체프는 인민의 의지 당원으로 투옥되었고 1886년 시베리아로 유형되었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Narodnaya Volya member in the mid-1880s; exact years not given (arrest ~1885, exile 1886)."
+ },
+ {
+  "personId": "stefan-staszewski",
+  "change": "add",
+  "activity": {
+   "functionId": "political-leadership",
+   "affiliationId": "party-polish-communist",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1930,
+   "endYear": 1932,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Stefan_Staszewski",
+     "locator": "en: lead",
+     "excerpt": "An activist in the communist movement from the age of fourteen, he was in the Secretariat of the Central Committee of the Communist Party of Poland in 1930–1932.",
+     "claim": "스타셰프스키는 1930~1932년 폴란드 공산당 중앙위원회 서기국에 있었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "KPP Central Committee secretariat 1930–1932 (service), alongside the existing plain KPP membership row; same pattern as his two PZPR rows."
+ },
+ {
+  "personId": "vladimir-purishkevich",
+  "change": "add",
+  "activity": {
+   "functionId": "political-leadership",
+   "affiliationId": "party-russian-union-of-archangel-michael",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1907,
+   "endYear": 1917,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Vladimir_Purishkevich",
+     "locator": "en: Political career",
+     "excerpt": "He became one of the founders of the Union of the Russian People and served as its deputy chairman until 1907, when he split to form the Union of the Archangel Michael.",
+     "claim": "푸리슈케비치는 1907년 러시아 인민연맹에서 갈라져 미하일 대천사 동맹을 결성했다."
+    },
+    {
+     "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9_%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D1%81%D0%BE%D1%8E%D0%B7_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%B0_%D0%90%D1%80%D1%85%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D0%B0",
+     "locator": "ru: lead",
+     "excerpt": "«Ру́сский наро́дный сою́з и́мени Михаи́ла Арха́нгела» (РНСМА, краткое название «Союз Михаила Архангела») — монархическая консервативная («черносотенная») общественно-политическая организация (партия), действовавшая в Российской империи в 1907—1917 года.",
+     "claim": "미하일 대천사 동맹은 1907~1917년 활동한 흑백단 계열 군주주의 정당이었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "party-russian-union-of-archangel-michael",
+   "kind": "party",
+   "label": {
+    "ko": "미하일 대천사 동맹",
+    "en": "Union of the Archangel Michael"
+   },
+   "countryCode": "russia",
+   "parentId": null,
+   "periods": [
+    [
+     1907,
+     1917
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Founder and leader of the Union of the Archangel Michael 1907–1917 (Korean label as in his bio_ko). Black Hundred party, so a glossary term is needed (none exists)."
+ },
+ {
+  "personId": "walter-rodney",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "party-guyanese-wpa",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1974,
+   "endYear": 1980,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Walter_Rodney",
+     "locator": "en: Later life",
+     "excerpt": "Increasingly active in politics, he joined the Working People's Alliance (WPA), a party that provided the most effective and credible opposition to the People's National Congress government and aimed to \"create political consciousness, replacing ethnic politics with revolutionary organisations based on class solidarity\".",
+     "claim": "로드니는 가이아나의 노동인민동맹(WPA)에 가입했다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Working_People%27s_Alliance",
+     "locator": "en: History",
+     "excerpt": "It was informally led by Walter Rodney until his assassination in June 1980.",
+     "claim": "WPA는 1980년 6월 암살될 때까지 로드니가 비공식적으로 이끌었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "party-guyanese-wpa",
+   "kind": "party",
+   "label": {
+    "ko": "노동인민동맹",
+    "en": "Working People's Alliance (WPA)"
+   },
+   "countryCode": "guyana",
+   "parentId": null,
+   "periods": [
+    [
+     1974,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "Informal leader of the WPA from his 1974 return until his 1980 assassination (Korean name from his career entry)."
+ },
+ {
+  "personId": "son-sann",
+  "change": "add",
+  "activity": {
+   "functionId": "government",
+   "affiliationId": "state-democratic-kampuchea",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1982,
+   "endYear": null,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Son_Sann",
+     "locator": "en: Later career",
+     "excerpt": "The KPNLF later joined with the Armeè Nationale Sihanouk to form the non-communist resistance and in 1982, the KPNLF joined with Sihanouk and the Party of Democratic Kampuchea to form the Coalition Government of Democratic Kampuchea.",
+     "claim": "1982년 KPNLF는 시아누크파·민주캄푸치아당과 민주캄푸치아 연합정부를 구성했다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Son_Sann",
+     "locator": "en: Later career",
+     "excerpt": "Son Sann was named Prime Minister in the new coalition government.",
+     "claim": "손 산은 연합정부의 총리가 되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Coalition_Government_of_Democratic_Kampuchea",
+     "locator": "en: lead",
+     "excerpt": "For most of its existence, it was the UN-recognized government of Cambodia, despite being a government-in-exile.",
+     "claim": "연합정부는 망명정부였으나 대부분 기간 유엔이 인정한 캄보디아 정부였다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "CGDK prime minister from 1982 (end year not in source). NOTE: state-democratic-kampuchea currently has periods [[1975,1979]]; it needs a second period (e.g. [1982,1993]) for the CGDK, or a separate affiliation if the owner prefers."
+ },
+ {
+  "personId": "yuri-afanasyev",
+  "change": "add",
+  "activity": {
+   "functionId": "scholarship",
+   "affiliationId": "russia-federation",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1991,
+   "endYear": 2003,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Yury_Afanasyev",
+     "locator": "en: lead",
+     "excerpt": "He was also the rector of the Moscow State Institute of History and Archives which he transformed in 1991 into the Russian State University of Humanities (RSUH) and led until 2003, making it into one of Russia's most internationally prominent educational institutions.",
+     "claim": "아파나시예프는 1991년 러시아 국립인문대학을 세워 2003년까지 총장으로 이끌었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Russian_State_University_for_the_Humanities",
+     "locator": "en: lead",
+     "excerpt": "The Russian State University for the Humanities (RSUH; Russian: Росси́йский госуда́рственный гуманита́рный университе́т (РГГУ), romanized: Rossiyskiy gosudarstvennyy gumanitarnyy universitet (RGGU)) is a university in Moscow, Russia with over 25,000 students.",
+     "claim": "러시아 국립인문대학은 모스크바의 국립대학이다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Rector of the state RSUH 1991–2003; function scholarship to match the existing 1986–1991 rector row (education would also fit both)."
+ },
+ {
+  "personId": "michal-kalecki",
+  "change": "add",
+  "activity": {
+   "functionId": "economy",
+   "affiliationId": "international-un",
+   "affiliationStatus": "confirmed",
+   "relation": "employment",
+   "primary": false,
+   "startYear": 1946,
+   "endYear": 1955,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+     "locator": "en: Abroad",
+     "excerpt": "By the end of 1946, he assumed the job of Deputy Director in the Department of Economic Affairs of the United Nations Secretariat in New York.",
+     "claim": "칼레츠키는 1946년 말 유엔 사무국 경제국 부국장이 되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+     "locator": "en: Abroad",
+     "excerpt": "He remained there until 1955, mainly preparing the World Economic Reports.",
+     "claim": "그는 1955년까지 그 자리에서 세계경제보고서를 작성했다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "UN Secretariat economic department deputy director 1946–1955."
+ },
+ {
+  "personId": "michal-kalecki",
+  "change": "add",
+  "activity": {
+   "functionId": "economy",
+   "affiliationId": "state-poland",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 1955,
+   "endYear": 1960,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+     "locator": "en: In communist Poland: 1955–1968",
+     "excerpt": "He became economic advisor to the Office of the Council of Ministers.",
+     "claim": "칼레츠키는 폴란드 각료회의 사무처 경제 고문이 되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+     "locator": "en: In communist Poland: 1955–1968",
+     "excerpt": "In 1957, he was appointed chairman of the Central Commission for Perspective Planning.",
+     "claim": "1957년 그는 중앙장기계획위원회 위원장에 임명되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Micha%C5%82_Kalecki",
+     "locator": "en: In communist Poland: 1955–1968",
+     "excerpt": "Although Kalecki remained with the Commission of the Perspective Plan for another year beyond 1959, all concerned knew that it was a pro forma function.",
+     "claim": "그는 1959년 이후 1년 더 장기계획위원회에 남았다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "Polish government economic posts 1955–1960 (adviser, then chairman of the perspective-planning commission); the brief 1946 Central Planning Office post is not separated."
+ },
+ {
+  "personId": "nikolai-sokolov",
+  "change": "skip",
+  "activity": null,
+  "modifyMatch": null,
+  "newAffiliation": null,
+  "reason": "ru.wikipedia confirms he was legal adviser (юрисконсульт) to the SD Duma faction 1909–1910 but also states «в партиях не состоял» (not a party member); an adviser's contract is not party service/membership, so no russian-rsdlp activity. (Possible separate follow-up: after 1917 he was legal adviser to the Soviet government -> law/state-soviet employment.)"
+ },
+ {
+  "personId": "pyotr-kropotkin",
+  "change": "add",
+  "activity": {
+   "functionId": "organizing",
+   "affiliationId": "swiss-jura-federation",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": null,
+   "endYear": 1881,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Peter_Kropotkin",
+     "locator": "en: Exile in Switzerland and the Congress of London (late 1870s–1881)",
+     "excerpt": "Kropotkin associated with the Jura Federation and began editing its publication.",
+     "claim": "크로폿킨은 쥐라 연맹과 함께하며 그 기관지를 편집했다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Peter_Kropotkin",
+     "locator": "en: Exile in Switzerland and the Congress of London (late 1870s–1881)",
+     "excerpt": "Ultimately, Kropotkin agreed to participate and spoke for the Jura Federation and the Lyon Revolutionary Federation, according to his own testimony, and although he was opposed to several points of the congress, decided to vote in favour of its resolutions.",
+     "claim": "그는 1881년 런던 대회에서 쥐라 연맹을 대표해 발언했다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Jura_Federation",
+     "locator": "en: lead",
+     "excerpt": "The Jura Federation (French: Fédération jurassienne) was a federation of the anti-authoritarian International founded in the Jura region in 1872.",
+     "claim": "쥐라 연맹은 1872년 쥐라 지방에서 창립된 반권위주의 인터내셔널의 연맹이다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "swiss-jura-federation",
+   "kind": "force",
+   "label": {
+    "ko": "쥐라 연맹",
+    "en": "Jura Federation"
+   },
+   "countryCode": "switzerland",
+   "parentId": null,
+   "periods": [
+    [
+     1872,
+     null
+    ]
+   ],
+   "termNeeded": false,
+   "existingTermId": null
+  },
+  "reason": "Edited the Jura Federation's bulletin (late 1870s) and represented it at the 1881 London Congress; start year not given. Label uses standard 쥐라 (his career entry spells it 유라 연맹; owner to choose). End of the federation not dated in the source."
+ },
+ {
+  "personId": "brazauskas",
+  "change": "add",
+  "activity": {
+   "functionId": "political-leadership",
+   "affiliationId": "party-lithuanian-social-democratic",
+   "affiliationStatus": "confirmed",
+   "relation": "service",
+   "primary": false,
+   "startYear": 2001,
+   "endYear": 2007,
+   "evidence": [
+    {
+     "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Lithuania",
+     "locator": "en: History",
+     "excerpt": "After the merger, Algirdas Brazauskas was elected leader of the Social Democratic Party.",
+     "claim": "2001년 합당 뒤 브라자우스카스가 사회민주당 대표로 선출되었다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Lithuania",
+     "locator": "en: History",
+     "excerpt": "Brazauskas resigned as the chairman of the party on 19 May 2007 and was replaced by Gediminas Kirkilas.",
+     "claim": "그는 2007년 5월 19일 당 대표에서 물러났다."
+    },
+    {
+     "source": "https://en.wikipedia.org/wiki/Algirdas_Brazauskas",
+     "locator": "en: Prime Minister",
+     "excerpt": "He led the ruling Social Democratic Party of Lithuania for one more year, until 19 May 2007, when he passed the reins to Gediminas Kirkilas.",
+     "claim": "브라자우스카스는 2007년 5월까지 리투아니아 사회민주당을 이끌었다."
+    }
+   ]
+  },
+  "modifyMatch": null,
+  "newAffiliation": {
+   "id": "party-lithuanian-social-democratic",
+   "kind": "party",
+   "label": {
+    "ko": "리투아니아 사회민주당",
+    "en": "Social Democratic Party of Lithuania (LSDP)"
+   },
+   "countryCode": "lithuania",
+   "parentId": null,
+   "periods": [
+    [
+     1896,
+     1940
+    ],
+    [
+     1989,
+     null
+    ]
+   ],
+   "termNeeded": true,
+   "existingTermId": null
+  },
+  "reason": "LSDP chairman 2001–2007 after the LDDP merger; LSDP not yet in catalog, no glossary term exists."
+ }
+]

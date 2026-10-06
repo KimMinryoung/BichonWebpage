@@ -1,0 +1,360 @@
+{
+  "scope": "2026-10-06 정당 용어 8개의 표제어·별칭; owner-requested",
+  "references": [
+    "scripts/content/party-terms-20261004-finish.py"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-russia-1990",
+      "lang": "ko",
+      "text": "러시아 사회민주당(1990)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-russia-1990",
+      "lang": "en",
+      "text": "Social Democratic Party of Russia (1990)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-russia-1990",
+      "lang": "ko",
+      "text": "러시아연방 사회민주당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-russia-1990",
+      "lang": "en",
+      "text": "Social Democratic Party of the Russian Federation",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "alash-party",
+      "lang": "ko",
+      "text": "알라시당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "alash-party",
+      "lang": "en",
+      "text": "Alash Party",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "alash-party",
+      "lang": "ko",
+      "text": "알라시 당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "alash-party",
+      "lang": "en",
+      "text": "Alaş partiası",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "estonian-national-progress-party",
+      "lang": "ko",
+      "text": "에스토니아 민족진보당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "estonian-national-progress-party",
+      "lang": "en",
+      "text": "Estonian National Progress Party",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "estonian-national-progress-party",
+      "lang": "en",
+      "text": "Eesti Rahvameelne Eduerakond",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "estonian-national-progress-party",
+      "lang": "en",
+      "text": "Eesti Rahvuslik Eduerakond",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "estonian-national-progress-party",
+      "lang": "en",
+      "text": "Estonian Progressive People's Party",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-workers-party-britain",
+      "lang": "ko",
+      "text": "영국 사회주의노동자당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-workers-party-britain",
+      "lang": "en",
+      "text": "Socialist Workers Party (Britain)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "socialist-workers-party-britain",
+      "lang": "en",
+      "text": "Socialist Workers Party (UK)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "workers-party-united-states",
+      "lang": "ko",
+      "text": "미국 노동자당(샥트먼)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "workers-party-united-states",
+      "lang": "en",
+      "text": "Workers Party (United States)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "union-of-the-archangel-michael",
+      "lang": "ko",
+      "text": "미하일 대천사 동맹",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "union-of-the-archangel-michael",
+      "lang": "en",
+      "text": "Union of the Archangel Michael",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "union-of-the-archangel-michael",
+      "lang": "ko",
+      "text": "미하일 대천사 러시아 인민연맹",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "union-of-the-archangel-michael",
+      "lang": "en",
+      "text": "Russian People's Union named after Michael the Archangel",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "union-of-the-archangel-michael",
+      "lang": "en",
+      "text": "Union of Michael the Archangel",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "working-peoples-alliance-guyana",
+      "lang": "ko",
+      "text": "노동인민동맹",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "working-peoples-alliance-guyana",
+      "lang": "en",
+      "text": "Working People's Alliance",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "working-peoples-alliance-guyana",
+      "lang": "ko",
+      "text": "가이아나 노동인민동맹",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "working-peoples-alliance-guyana",
+      "lang": "en",
+      "text": "Working People's Alliance (Guyana)",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-lithuania",
+      "lang": "ko",
+      "text": "리투아니아 사회민주당",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-lithuania",
+      "lang": "en",
+      "text": "Social Democratic Party of Lithuania",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-lithuania",
+      "lang": "en",
+      "text": "Lietuvos socialdemokratų partija",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-lithuania",
+      "lang": "en",
+      "text": "LSDP",
+      "role": "identity",
+      "policy": "search",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 약칭·짧은 표기라 다른 글자열과 겹칠 수 있어 검색 전용.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "social-democratic-party-of-lithuania",
+      "lang": "en",
+      "text": "Lithuanian Social Democratic Party",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

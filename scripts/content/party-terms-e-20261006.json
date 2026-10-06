@@ -1,0 +1,436 @@
+{
+  "id": "party-terms-e-20261006",
+  "terms": [
+    {
+      "id": "social-democratic-party-of-russia-1990",
+      "affiliationId": "party-russian-sdpr-1990",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+        "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_(1990)"
+      ],
+      "fields": {
+        "term": {
+          "ko": "러시아 사회민주당(1990)",
+          "en": "Social Democratic Party of Russia (1990)"
+        },
+        "original": "Социал-демократическая партия Российской Федерации (СДПР)",
+        "category": "parties",
+        "period": {
+          "ko": "1990–2011",
+          "en": "1990–2011"
+        },
+        "startYear": 1990,
+        "endYear": 2011,
+        "definition": {
+          "ko": "페레스트로이카 말기의 사회민주주의 단체들이 모여 1990년 5월 모스크바에서 창당한 러시아의 사회민주주의 정당. 1991년 3월 14일 러시아 소비에트 연방 사회주의 공화국 법무부에 등록되어, 러시아에서 새로 만들어져 등록까지 마친 첫 정당이 되었다. 1994년 무렵부터 내분으로 쇠퇴했고 2011년 법원 결정으로 최종 해산되었다.",
+          "en": "A Russian social democratic party founded in Moscow in May 1990 by social democratic groups of the late perestroika period. Registered by the Ministry of Justice of the RSFSR on 14 March 1991, it was the first new party in Russia not only to be created but also to be registered. It declined amid internal conflict from about 1994 and was finally dissolved by a court decision in 2011."
+        },
+        "body": {
+          "ko": "창당에 앞서 1989년 2월 여러 도시의 비공식 클럽과 그룹을 묶은 사회민주주의 연맹이 생겼고, 1990년 1월에는 전 연방 규모의 사회민주주의 협회가 세워졌다. 협회 안에 꾸려진 조직위원회가 1990년 5월 4일 모스크바에서 창당 대회를 열었다. 첫 공동의장은 파벨 쿠듀킨, 올레크 루먄체프, 알렉산드르 오볼렌스키였고, 창당 당시 당원은 약 5600명이었다. 당은 1990년 가을 민주 러시아 운동에 단체 회원으로 가입했다.\n\n1992년 공동의장제를 없애고 의장직을 두었으나 지도부의 갈등이 이어졌고, 1993년 대회 뒤 루먄체프 일파가 탈당했다. 같은 해 당은 야블린스키·볼디레프·루킨 선거 블록에 들어가 국가 두마 의원을 냈다. 1994년 당은 둘로 갈라져 한쪽 대회가 오볼렌스키를 의장으로 뽑았고, 1995년 통합 대회에서 세르게이 벨로제르체프가 의장이 되었다.\n\n당은 2002년 새 정당법에 따른 재등록을 하지 못해 법무부의 청산 대상이 되었다. 오볼렌스키는 2005년 다시 지도부에 들었다가 2008년 탈당했고, 이후 당은 보고서를 내지 않았다. 2011년 4월 1일 모스크바 트베르스코이 지구 법원이 당의 활동 중지를 인정하면서 당은 최종 해산되었다.",
+          "en": "The party was preceded by the Social Democratic Confederation, formed in February 1989 from informal clubs and groups in several cities, and by the all-union Social Democratic Association, founded in January 1990. An organising committee formed inside the association held the founding congress in Moscow on 4 May 1990. The first co-chairmen were Pavel Kudyukin, Oleg Rumyantsev and Alexander Obolensky, and the party had about 5,600 members at its founding. In the autumn of 1990 it joined the Democratic Russia movement as a collective member.\n\nIn 1992 the co-chairmanship was replaced by a single chairman, but conflict in the leadership continued, and after the 1993 congress Rumyantsev and his supporters left the party. That year the party entered the Yavlinsky–Boldyrev–Lukin electoral bloc and gained deputies in the State Duma. In 1994 the party split in two, with one congress electing Obolensky chairman; a unification congress in 1995 elected Sergei Belozertsev chairman.\n\nIn 2002 the party, not having re-registered under the new law on parties, was liquidated by the Ministry of Justice. Obolensky returned to the leadership in 2005 and left the party in 2008, after which it stopped filing reports. On 1 April 2011 the Tverskoy District Court of Moscow declared that the party had ceased its activity, and it was finally dissolved."
+        },
+        "aliases": {
+          "ko": [
+            "러시아연방 사회민주당"
+          ],
+          "en": [
+            "Social Democratic Party of the Russian Federation"
+          ]
+        },
+        "people": [
+          "alexander-obolensky"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "term",
+            "claim": "Article title 'Social Democratic Party of Russia (1990)'; the 1990 qualifier distinguishes it from other parties of the same name.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: title; ru disambiguation"
+          },
+          {
+            "field": "original",
+            "claim": "Russian name Социал-демократическая партия Российской Федерации, abbreviated SDPR.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Founded May 1990; registered by the RSFSR Ministry of Justice on 14 March 1991, the first new party created and registered in Russia; finally liquidated in 2011.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: lead; History"
+          },
+          {
+            "field": "definition",
+            "claim": "Fell into permanent crisis by 1994 owing to leadership conflicts and decentralisation.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_(1990)",
+            "locator": "ru: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Social Democratic Confederation February 1989; Social Democratic Association January 1990; founding congress 4 May 1990 in Moscow; joined Democratic Russia in autumn 1990.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "First co-chairmen Kudyukin, Rumyantsev and Obolensky; about 5,600 members at founding.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_(1990)",
+            "locator": "ru: 1990 founding section"
+          },
+          {
+            "field": "body",
+            "claim": "1992 congress replaced co-chairmanship with a chairman; Rumyantsev's group left after the 1993 congress; YaBL bloc in 1993 gave two Duma deputies.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_(1990)",
+            "locator": "ru: IV and V congresses; 1993 elections"
+          },
+          {
+            "field": "body",
+            "claim": "1994 split; 1995 unified under Belozertsev; 2002 liquidated as not re-registered.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: History"
+          },
+          {
+            "field": "body",
+            "claim": "VI congress (Oct 1994) elected Obolensky chairman; Obolensky in the presidium 2005; left in 2008; Tverskoy court on 1 April 2011 declared the party had ceased activity.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_(1990)",
+            "locator": "ru: 1994–1995; XII and XIV congresses; dissolution"
+          },
+          {
+            "field": "period",
+            "claim": "Existed from its founding in May 1990 until final liquidation in 2011.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: lead; History"
+          },
+          {
+            "field": "startYear",
+            "claim": "Constituent congress held on 4 May 1990.",
+            "source": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Russia_(1990)",
+            "locator": "en: History"
+          },
+          {
+            "field": "endYear",
+            "claim": "Finally liquidated in 2011 (court ruling of 1 April 2011).",
+            "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%86%D0%B8%D0%B0%D0%BB-%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_(1990)",
+            "locator": "ru: dissolution"
+          }
+        ]
+      }
+    },
+    {
+      "id": "alash-party",
+      "affiliationId": "party-kazakh-alash",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alash_(party)",
+        "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0%D1%88_(%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F)",
+        "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov"
+      ],
+      "fields": {
+        "term": {
+          "ko": "알라시당",
+          "en": "Alash Party"
+        },
+        "original": "Алаш партиясы (Alaş partiası)",
+        "category": "parties",
+        "period": {
+          "ko": "1917–1920",
+          "en": "1917–1920"
+        },
+        "startYear": 1917,
+        "endYear": 1920,
+        "definition": {
+          "ko": "1917년 혁명기에 카자흐 지식인들이 만든 카자흐의 민족 정당으로, 알라시 자치국을 이끈 여당이었다. 알리칸 부케이하노프가 의장이었고 카자흐인과 러시아인의 동등한 대우와 카자흐 땅으로의 러시아인 이주 중단을 요구했다. 1920년 8월 26일 볼셰비키가 이 지역을 장악하고 키르기스 자치 소비에트 사회주의 공화국을 세우면서 사라졌다.",
+          "en": "A Kazakh national party formed by the Kazakh intelligentsia in the revolutionary year 1917 and the ruling party of the Alash Autonomy. Led by Alikhan Bukeikhanov, it demanded equal treatment of Kazakhs and Russians and an end to Russian settlement on Kazakh lands. It ceased to exist on 26 August 1920, when the Bolsheviks took the region and formed the Kirghiz Autonomous Socialist Soviet Republic."
+        },
+        "body": {
+          "ko": "당은 1905년 무렵 입헌민주당(카데트)에 몸담았던 카자흐인 당원들의 모임에서 나왔다. 2월 혁명 뒤 1917년 7월 21~28일 오렌부르크에서 열린 제1차 전카자흐 대회에서 조직의 틀을 갖추었고, 대회는 러시아가 의회제 연방 공화국이 되어야 한다고 결의했다. 지도자는 부케이하노프와 언어학자 아흐메트 바이투르스노프, 작가 미르자키프 둘라토프였고, 기관지는 신문 《카자흐》였다.\n\n당의 강령 초안은 보통선거, 민주적 러시아 연방 공화국, 연방 구성 공화국들의 평등, 정교 분리, 언어의 동등을 내걸었다. 1917년 11월 러시아 제헌의회 선거에서 당은 43석을 얻었다. 1917년 12월 제2차 전카자흐 대회는 알라시 자치국과 임시 인민평의회 알라시 오르다를 세웠다.\n\n1920년 당이 사라진 뒤 옛 당원 일부는 소련 공산당에 들어갔고 학교 교과서 번역에 힘썼다. 1930년대 대숙청기에 옛 당 인사 대부분이 민족주의 혐의로 체포되었고, 1935~1938년에 다수가 총살되었다. 카자흐스탄 독립 뒤 이들은 복권되었다.",
+          "en": "The party grew out of a group of ethnic Kazakh members of the Constitutional Democratic Party (Kadets) formed around 1905. After the February Revolution it took organisational shape at the First All-Kazakh Congress in Orenburg on 21–28 July 1917, which resolved that Russia should become a federal parliamentary republic. Its leaders were Bukeikhanov, the linguist Akhmet Baitursynov and the writer Mirzhakip Dulatov, and its organ was the newspaper Qazaq.\n\nThe party's draft programme called for universal suffrage, a democratic Russian federal republic, equality of the republics within Russia, separation of church and state and equality of languages. In the elections to the Russian Constituent Assembly in November 1917 it won 43 seats. In December 1917 the Second All-Kazakh Congress proclaimed the Alash Autonomy and its provisional People's Council, the Alash Orda.\n\nAfter the party ended in 1920, some former members joined the Communist Party and worked on translating school textbooks. During the Great Purge of the 1930s most of its former figures were arrested for alleged nationalism, and many were shot in 1935–1938. They were rehabilitated after Kazakhstan's independence."
+        },
+        "aliases": {
+          "ko": [
+            "알라시 당"
+          ],
+          "en": [
+            "Alaş partiası"
+          ]
+        },
+        "people": [
+          "alikhan-bukeikhanov"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "term",
+            "claim": "Article title 'Alash (party)'; referred to as the Alash Party.",
+            "source": "https://en.wikipedia.org/wiki/Alash_(party)",
+            "locator": "en: title; History"
+          },
+          {
+            "field": "original",
+            "claim": "Kazakh name Алаш партиясы, Alaş partiası.",
+            "source": "https://en.wikipedia.org/wiki/Alash_(party)",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Ruling party of Alash Autonomy; advocated equal treatment of Kazakhs and Russians and cessation of Russian settlement; chairman Bokeikhanov; ceased 26 August 1920 when the Bolsheviks formed the Kirghiz ASSR.",
+            "source": "https://en.wikipedia.org/wiki/Alash_(party)",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Party movement uniting the Kazakh intelligentsia, created in 1917.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0%D1%88_(%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F)",
+            "locator": "ru: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Formed from Kazakh Kadet members from 1905; organised at the First All-Kirghiz Congress in Orenburg 21–28 July 1917; leaders Bukeikhanov, Baitursynov, Dulatov; organ the newspaper Qazaq.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0%D1%88_(%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F)",
+            "locator": "ru: lead; History"
+          },
+          {
+            "field": "body",
+            "claim": "Draft programme; 43 seats in the Constituent Assembly election of November 1917; Second Congress in December 1917 proclaimed the Alash republic and the Alash Orda.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0%D1%88_(%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F)",
+            "locator": "ru: History"
+          },
+          {
+            "field": "body",
+            "claim": "Orenburg congress resolved Russia should be a federal parliamentary republic; former members joined the CPSU, translated textbooks; arrested in the Great Purge, many shot 1935–1938; rehabilitated after independence.",
+            "source": "https://en.wikipedia.org/wiki/Alash_(party)",
+            "locator": "en: Formation; Alash during the Kazakh ASSR; Legacy"
+          },
+          {
+            "field": "body",
+            "claim": "Bukeikhanov led the Alash party and the Alash Orda government 1917–1920.",
+            "source": "https://en.wikipedia.org/wiki/Alikhan_Bukeikhanov",
+            "locator": "en: lead"
+          },
+          {
+            "field": "period",
+            "claim": "Created in 1917; ceased to exist in 1920.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0%D1%88_(%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F)",
+            "locator": "ru: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "Organised at the July 1917 Orenburg congress.",
+            "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B0%D1%88_(%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F)",
+            "locator": "ru: History"
+          },
+          {
+            "field": "endYear",
+            "claim": "Ceased to exist on 26 August 1920.",
+            "source": "https://en.wikipedia.org/wiki/Alash_(party)",
+            "locator": "en: lead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "estonian-national-progress-party",
+      "affiliationId": "party-estonian-national-progress",
+      "sources": [
+        "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+        "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson"
+      ],
+      "fields": {
+        "term": {
+          "ko": "에스토니아 민족진보당",
+          "en": "Estonian National Progress Party"
+        },
+        "original": "Eesti Rahvameelne Eduerakond",
+        "category": "parties",
+        "period": {
+          "ko": "1905–1917",
+          "en": "1905–1917"
+        },
+        "startYear": 1905,
+        "endYear": 1917,
+        "definition": {
+          "ko": "1905년 혁명 뒤 러시아 제국 안에서 얀 퇴니손과 빌렘 레이만이 세운 에스토니아 최초의 정당. 러시아 입헌민주당과 비슷한 입헌군주제 강령에 에스토니아의 제한적 자치와 에스토니아인의 동등한 권리를 더해 요구했다. 1917년 퇴니손이 에스토니아 민주당으로 개편했다.",
+          "en": "The first Estonian political party, founded in the Russian Empire after the Revolution of 1905 by Jaan Tõnisson and Villem Reiman. Its programme, close to that of the Russian Constitutional Democrats, called for a constitutional monarchy together with limited autonomy for Estonia and equal rights for Estonians. In 1917 Tõnisson reorganised it as the Estonian Democratic Party."
+        },
+        "body": {
+          "ko": "당은 10월 선언으로 정치적 자유가 열린 뒤 1905년 11월 26일(신력 12월 9일) 활동을 시작했다. 강령은 핀란드 대공국이나 폴란드와 같은 에스토니아의 자치권, 그리고 발트 독일인·러시아인과 동등한 에스토니아인의 권리를 평화적이고 민주적인 방법으로 얻자는 것이었다. 주요 이론가는 퇴니손과 레이만이었다.\n\n1905년 말 타르투의 에스토니아 대표자 회의에서 당은 온건한 입장을 지켰고, 혁명적 권력 장악을 논하는 급진파와 갈라섰다. 혁명을 지지하지 않은 덕에 당은 혁명이 진압된 뒤에도 합법으로 남았고, 오랫동안 에스토니아에서 유일하게 합법적으로 활동한 정당이었다.\n\n당은 러시아 제국 국가 두마 선거에 후보를 내어 세 차례의 두마에 대표를 보냈다. 퇴니손은 1906년 제1대 두마 의원이 되었다. 1917년 2월 혁명 뒤 퇴니손은 당을 에스토니아 민주당으로 개편했고, 이 당은 에스토니아 지방의회 55석 중 7석을 얻었다.",
+          "en": "The party began its activity on 26 November (9 December) 1905, after the October Manifesto opened political freedoms. Its programme sought autonomy for Estonia like that of the Grand Duchy of Finland and Poland, and rights for Estonians equal to those of Baltic Germans and Russians, by peaceful and democratic means. Its chief ideologists were Tõnisson and Reiman.\n\nAt the congress of Estonian representatives in Tartu at the end of 1905 the party kept to its moderate positions and parted with the radicals, who discussed taking revolutionary power. Because it had not backed the revolution, the party remained legal after the revolution was put down, and for many years it was the only legally active party in Estonia.\n\nThe party put up candidates for the State Duma of the Russian Empire and had representatives in three Dumas; Tõnisson was elected to the First Duma in 1906. After the February Revolution of 1917 Tõnisson reorganised the party as the Estonian Democratic Party, which won 7 of the 55 seats in the Estonian Provincial Assembly."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Eesti Rahvameelne Eduerakond",
+            "Eesti Rahvuslik Eduerakond",
+            "Estonian Progressive People's Party"
+          ]
+        },
+        "people": [
+          "jaan-tonisson"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "term",
+            "claim": "Tõnisson established the first Estonian political party – Estonian National Progress Party.",
+            "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+            "locator": "en: Revolution of 1905"
+          },
+          {
+            "field": "original",
+            "claim": "Estonian name Eesti Rahvameelne Eduerakond.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: title; lead"
+          },
+          {
+            "field": "definition",
+            "claim": "First Estonian party, founded 1905 by Tõnisson with Villem Reiman; platform similar to the Kadets; constitutional monarchy, equal rights for Estonians.",
+            "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+            "locator": "en: Revolution of 1905"
+          },
+          {
+            "field": "definition",
+            "claim": "Supported Kadet ideas of a constitutional monarchy plus limited autonomy for Estonia; Tõnisson reorganised it into the Estonian Democratic Party in early 1917.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: Programm; Legaalses poliitikas osalemine"
+          },
+          {
+            "field": "body",
+            "claim": "Began activity 26 November (9 December) 1905; autonomy on the model of Finland and Poland; equal rights with Baltic Germans and Russians by peaceful democratic means; ideologists Tõnisson and Reiman.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: Programm; Legaalses poliitikas osalemine"
+          },
+          {
+            "field": "body",
+            "claim": "Moderate at the late-1905 congress; remained legal after the revolution, for many years the only legal Estonian party; representatives elected to three Dumas.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: Legaalses poliitikas osalemine"
+          },
+          {
+            "field": "body",
+            "claim": "Tartu gathering December 1905 and walkout; Tõnisson elected to the First State Duma in 1906; renamed Estonian Democratic Party, 7 of 55 seats in the Maapäev.",
+            "source": "https://en.wikipedia.org/wiki/Jaan_T%C3%B5nisson",
+            "locator": "en: Revolution of 1905; Autonomy"
+          },
+          {
+            "field": "period",
+            "claim": "Formed in 1905; reorganised into the Estonian Democratic Party in 1917.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: lead; Legaalses poliitikas osalemine"
+          },
+          {
+            "field": "startYear",
+            "claim": "Founded in 1905, activity from 26 November (9 December) 1905.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "Reorganised as the Estonian Democratic Party at the beginning of 1917.",
+            "source": "https://et.wikipedia.org/wiki/Eesti_Rahvameelne_Eduerakond",
+            "locator": "et: Legaalses poliitikas osalemine"
+          }
+        ]
+      }
+    },
+    {
+      "id": "socialist-workers-party-britain",
+      "affiliationId": "party-british-swp",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)"
+      ],
+      "fields": {
+        "term": {
+          "ko": "영국 사회주의노동자당",
+          "en": "Socialist Workers Party (Britain)"
+        },
+        "original": "Socialist Workers Party (SWP)",
+        "category": "parties",
+        "period": {
+          "ko": "1950–현재",
+          "en": "1950–present"
+        },
+        "startYear": 1950,
+        "definition": {
+          "ko": "토니 클리프의 지지자들이 1950년 소셜리스트 리뷰 그룹으로 세운 영국의 트로츠키주의 정당. 1962년 국제사회주의자들(IS)이 되었고 1977년 사회주의노동자당으로 이름을 바꾸었다. 소련과 그 위성국들을 사회주의가 아닌 국가자본주의로 규정하는 클리프의 분석을 바탕으로 하며, 국제사회주의 경향에 속한다.",
+          "en": "A Trotskyist party in the United Kingdom, founded in 1950 as the Socialist Review Group by supporters of Tony Cliff. It became the International Socialists in 1962 and took the name Socialist Workers Party in 1977. It rests on Cliff's analysis of the Soviet Union and its satellites as state capitalist rather than socialist, and belongs to the International Socialist Tendency."
+        },
+        "body": {
+          "ko": "소셜리스트 리뷰 그룹은 「더 클럽」에서 갈라져 나와 1950년에 생겼고, 처음 회원은 여덟 명이었다. 규모가 작아 노동당에 들어가 활동하는 가입전술을 썼으며, 핵군축운동과 노동당 청년 조직에서 회원을 모았다. 1962년 12월 국제사회주의자 그룹으로 이름을 바꾼 뒤 1965년 무렵 가입전술을 그만두고 노동조합 활동에 힘을 쏟았다. 1968년 레닌주의 민주집중제를 채택했고, 베트남 연대운동과 학생 시위에 참여하며 회원이 400명에서 1000명으로 늘었다.\n\n1970년대 초 공장 지부와 평당원 신문을 만들어 산업 현장으로 나아갔고, 회원은 1977년 4000명에 이르렀다. 1977년 1월 당명을 사회주의노동자당으로 바꾸었고, 같은 해 국민전선에 맞선 반나치 연맹을 출범시켰다. 1978년 이후 클리프는 투쟁이 쇠퇴기에 들어섰다고 판단했고, 1982년 당은 지역 지부 중심의 선전 활동으로 방향을 바꾸었다.\n\n2001년 이후 당은 반전연합과 조지 갤러웨이와의 선거 연합 리스펙트에 참여했으나, 리스펙트와의 결별은 2007년 내부 위기를 불렀다. 2013년에는 지도적 당원 마틴 스미스에 대한 성폭력 고발을 당이 처리한 방식을 두고 위기가 일어나 2014년까지 약 700명이 탈당했다. 지도부는 매년 1월 전국대회에서 뽑는 중앙위원회와 전국위원회다.",
+          "en": "The Socialist Review Group split from The Club and was formed in 1950 with only eight members. Because of its small size it practised entryism in the Labour Party, recruiting through the Campaign for Nuclear Disarmament and Labour's youth organisations. Renamed the International Socialism Group in December 1962, it gave up entryism around 1965 and turned to work in the trade unions. In 1968 it adopted Leninist democratic centralism, and through the Vietnam Solidarity Campaign and the student protests it grew from 400 to 1,000 members.\n\nIn the early 1970s it turned to industry, creating factory branches and rank-and-file papers, and its membership reached 4,000 by 1977. In January 1977 it was renamed the Socialist Workers Party, and that year it launched the Anti-Nazi League against the National Front. From 1978 Cliff became convinced that a downturn in struggle had begun, and by 1982 the party had turned to a propagandist approach based on geographical branches.\n\nAfter 2001 the party took part in the Stop the War Coalition and in Respect, an electoral alliance with George Galloway, whose collapse in 2007 caused an internal crisis. In 2013 a crisis over the party's handling of allegations of sexual assault against the leading member Martin Smith followed, and about 700 members had resigned by 2014. The party is led by a central committee elected each January at its national conference and by a national committee."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Socialist Workers Party (UK)"
+          ]
+        },
+        "people": [
+          "tony-cliff"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "term",
+            "claim": "Socialist Workers Party, a political party in the United Kingdom; 'Britain' distinguishes it from the US SWP.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: title; lead"
+          },
+          {
+            "field": "original",
+            "claim": "English name Socialist Workers Party, abbreviated SWP.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: lead"
+          },
+          {
+            "field": "definition",
+            "claim": "Trotskyist party; founded as the Socialist Review Group by supporters of Tony Cliff in 1950; International Socialists 1962; SWP 1977; state capitalist analysis of the USSR; part of the International Socialist Tendency.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "SRG split from The Club, formed 1950 with eight members; entryism in Labour; CND and Young Socialists recruitment.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: Socialist Review Group (1950–1962)"
+          },
+          {
+            "field": "body",
+            "claim": "Renamed IS December 1962; ended entryism around 1965; trade union turn; democratic centralism 1968; Vietnam Solidarity Campaign; 400 to 1,000 members; factory branches; 4,000 by 1977.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: International Socialists (1962–1977)"
+          },
+          {
+            "field": "body",
+            "claim": "Renamed SWP January 1977; launched the Anti-Nazi League in 1977; downturn from 1978; propagandist approach by 1982.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: Formation of the SWP; Anti-Nazi League; Downturn"
+          },
+          {
+            "field": "body",
+            "claim": "Stop the War Coalition after 9/11; Respect from 2004, collapse in 2007 causing internal crisis.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: lead; Involvement with other groups"
+          },
+          {
+            "field": "body",
+            "claim": "2013 crisis over allegations against Martin Smith; around 700 members resigned by June 2014; central committee and national committee elected at January conference.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: Internal crisis over allegations of rape; Leadership"
+          },
+          {
+            "field": "period",
+            "claim": "Founded in 1950 and still an existing party.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "The Socialist Review Group was formed in 1950.",
+            "source": "https://en.wikipedia.org/wiki/Socialist_Workers_Party_(UK)",
+            "locator": "en: Socialist Review Group (1950–1962)"
+          }
+        ]
+      }
+    }
+  ]
+}
