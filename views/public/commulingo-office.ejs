@@ -56,16 +56,14 @@
             <ol class="commu-office-rows commu-hub-office-rows">
                 <% track.rows.forEach(function(row) { %>
                 <li>
-                    <span class="commu-office-years"><%= row.years %></span>
-                    <span class="commu-office-main">
-                        <% if (row.personId) { %>
-                        <a href="/commulingo/people/<%= row.personId %>"><%= row.displayName || row.name %></a>
-                        <% } else { %>
-                        <strong><%= row.displayName || row.name %></strong>
-                        <% } %>
-                        <small><%= row.body %></small>
-                        <% if (row.note) { %><em><%= row.note %></em><% } %>
-                    </span>
+                    <<%= row.personId ? 'a' : 'div' %> class="commu-office-row"<% if (row.personId) { %> href="/commulingo/people/<%= row.personId %>"<% } %>>
+                        <span class="commu-office-years"><%= row.years %></span>
+                        <span class="commu-office-main">
+                            <strong><%= row.displayName || row.name %></strong>
+                            <small><%= row.body %></small>
+                            <% if (row.note) { %><em><%= row.note %></em><% } %>
+                        </span>
+                    </<%= row.personId ? 'a' : 'div' %>>
                 </li>
                 <% }) %>
             </ol>

@@ -1,6 +1,11 @@
 <%# Link cards for the Central Committee rosters and the office lineage pages.
     Locals: bodies (availableBodies), offices (standardized offices). %>
+<% var leading = offices.filter(function(office) { return office.id === 'party-leadership'; });
+   var rest = offices.filter(function(office) { return office.id !== 'party-leadership'; }); %>
 <div class="commu-office-grid">
+    <%# The party's top post leads, ahead of the Central Committee rosters. %>
+    <% leading.concat([null], rest).forEach(function(office) { %>
+    <% if (office === null) { %>
     <% bodies.forEach(function(body) { %>
     <a class="commu-office-card commu-role-category-link" href="<%= body.href %>">
         <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
@@ -11,7 +16,7 @@
         <span class="commu-role-category-arrow" aria-hidden="true">→</span>
     </a>
     <% }) %>
-    <% offices.forEach(function(office) { %>
+    <% return; } %>
     <a class="commu-office-card commu-role-category-link is-<%= office.id %>" href="/commulingo/offices/<%= office.id %>">
         <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>
         <span class="commu-role-category-copy">
