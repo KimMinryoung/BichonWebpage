@@ -2160,10 +2160,29 @@ button.commu-dc-option:hover { border-color: var(--link); }
     text-decoration: none;
 }
 
+/* Accent ground + cream text, same as the dictionary and country cards;
+   the muted line, range, arrow and icon frame flip to cream with it. */
 .commu-role-category-link:hover,
 .commu-role-category-link:focus-visible {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
+    text-decoration: none;
+}
+
+.commu-role-category-link:hover .commu-role-category-copy p,
+.commu-role-category-link:focus-visible .commu-role-category-copy p,
+.commu-role-category-link:hover .commu-office-range,
+.commu-role-category-link:focus-visible .commu-office-range {
+    color: color-mix(in srgb, var(--clr-cream) 75%, var(--accent));
+}
+
+.commu-role-category-link:hover .commu-role-category-arrow,
+.commu-role-category-link:focus-visible .commu-role-category-arrow,
+.commu-role-category-link:hover .commu-office-icon-link,
+.commu-role-category-link:focus-visible .commu-office-icon-link {
+    border-color: var(--clr-cream);
+    color: var(--clr-cream);
 }
 
 .commu-role-category-link:focus-visible {
@@ -5183,8 +5202,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-tenure-tick {
     fill: var(--text-muted);
-    font-family: 'Courier New', monospace;
     font-size: 0.74rem;
+    font-variant-numeric: tabular-nums;
 }
 
 .commu-tenure-grid {
@@ -5271,8 +5290,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-congress-meta {
     color: var(--text-muted);
-    font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
 }
 
 .commu-politburo-preview {
@@ -5353,11 +5372,10 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     min-width: 10em;
 }
 
-/* One stint ("정위원 1919.03–1924.01") per line, in the date voice. */
+/* One stint ("정위원 1919.03–1924.01") per line; digits line up. */
 .commu-politburo-stint {
     display: block;
-    font-family: 'Courier New', monospace;
-    font-size: 0.84rem;
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
 }
 

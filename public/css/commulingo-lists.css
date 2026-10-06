@@ -528,11 +528,27 @@
     position: relative;
     text-decoration: none;
 }
-
 .commu-role-category-link:hover,
 .commu-role-category-link:focus-visible {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
+    text-decoration: none;
+}
+
+.commu-role-category-link:hover .commu-role-category-copy p,
+.commu-role-category-link:focus-visible .commu-role-category-copy p,
+.commu-role-category-link:hover .commu-office-range,
+.commu-role-category-link:focus-visible .commu-office-range {
+    color: color-mix(in srgb, var(--clr-cream) 75%, var(--accent));
+}
+
+.commu-role-category-link:hover .commu-role-category-arrow,
+.commu-role-category-link:focus-visible .commu-role-category-arrow,
+.commu-role-category-link:hover .commu-office-icon-link,
+.commu-role-category-link:focus-visible .commu-office-icon-link {
+    border-color: var(--clr-cream);
+    color: var(--clr-cream);
 }
 
 .commu-role-category-link:focus-visible {
