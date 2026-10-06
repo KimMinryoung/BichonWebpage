@@ -190,11 +190,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "루벤 카타냔",
-    "en": "Ruben Katanyan"
-   },
+   "personId": "ruben-katanyan",
    "post": {
     "ko": "중앙위원회 선동선전부장",
     "en": "Head of the Central Committee Agitation and Propaganda Department"
@@ -213,11 +209,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "레프 소스놉스키",
-    "en": "Lev Sosnovsky"
-   },
+   "personId": "lev-sosnovsky",
    "post": {
     "ko": "중앙위원회 선동선전부장",
     "en": "Head of the Central Committee Agitation and Propaganda Department"
@@ -295,11 +287,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "알렉산드르 크리니츠키",
-    "en": "Alexander Krinitsky"
-   },
+   "personId": "alexander-krinitsky",
    "post": {
     "ko": "중앙위원회 선동선전부장",
     "en": "Head of the Central Committee Agitation and Propaganda Department"
@@ -319,11 +307,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "알렉산드르 크리니츠키",
-    "en": "Alexander Krinitsky"
-   },
+   "personId": "alexander-krinitsky",
    "post": {
     "ko": "중앙위원회 선동·선전·출판부장",
     "en": "Head of the Central Committee Department of Agitation, Propaganda and the Press"
@@ -703,11 +687,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "게오르기 스미르노프",
-    "en": "Georgy Smirnov"
-   },
+   "personId": "georgy-smirnov",
    "post": {
     "ko": "중앙위원회 선전부장",
     "en": "Head of the Central Committee Department of Propaganda"
@@ -788,11 +768,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "유리 스클랴로프",
-    "en": "Yuri Sklyarov"
-   },
+   "personId": "yuri-sklyarov",
    "post": {
     "ko": "중앙위원회 선전부장",
     "en": "Head of the Central Committee Department of Propaganda"
@@ -811,11 +787,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "알렉산드르 캅토",
-    "en": "Alexander Kapto"
-   },
+   "personId": "alexander-kapto",
    "post": {
     "ko": "중앙위원회 이념부장",
     "en": "Head of the Central Committee Ideological Department"
@@ -833,11 +805,7 @@
   },
   {
    "track": "propaganda-head",
-   "personId": null,
-   "name": {
-    "ko": "알렉산드르 데그탸료프",
-    "en": "Alexander Degtyarev"
-   },
+   "personId": "alexander-degtyaryov",
    "post": {
     "ko": "중앙위원회 이념부장",
     "en": "Head of the Central Committee Ideological Department"

@@ -118,11 +118,7 @@
   },
   {
    "track": "finance",
-   "personId": null,
-   "name": {
-    "ko": "이시도르 구콥스키",
-    "en": "Isidor Gukovsky"
-   },
+   "personId": "isidor-gukovsky",
    "post": {
     "ko": "러시아 공화국(RSFSR) 재무인민위원",
     "en": "People's Commissar of Finance of the RSFSR"
@@ -495,11 +491,7 @@
   },
   {
    "track": "finance",
-   "personId": null,
-   "name": {
-    "ko": "블라디미르 오를로프",
-    "en": "Vladimir Orlov"
-   },
+   "personId": "vladimir-orlov",
    "post": {
     "ko": "소련 재무장관",
     "en": "Minister of Finance of the USSR"
@@ -520,11 +512,7 @@
   },
   {
    "track": "finance",
-   "personId": null,
-   "name": {
-    "ko": "블라디미르 라옙스키",
-    "en": "Vladimir Raevsky"
-   },
+   "personId": "vladimir-raevsky",
    "post": {
     "ko": "소련 재무장관",
     "en": "Minister of Finance of the USSR"
@@ -591,11 +579,7 @@
   },
   {
    "track": "gosbank",
-   "personId": null,
-   "name": {
-    "ko": "니콜라이 투마노프",
-    "en": "Nikolai Tumanov"
-   },
+   "personId": "nikolai-tumanov",
    "post": {
     "ko": "소련 국가은행 이사회 의장",
     "en": "Chairman of the Board of the State Bank of the USSR"
@@ -704,11 +688,7 @@
   },
   {
    "track": "gosbank",
-   "personId": null,
-   "name": {
-    "ko": "솔로몬 크루글리코프",
-    "en": "Solomon Kruglikov"
-   },
+   "personId": "solomon-kruglikov",
    "post": {
     "ko": "소련 국가은행 이사회 의장",
     "en": "Chairman of the Board of the State Bank of the USSR"
@@ -729,11 +709,7 @@
   },
   {
    "track": "gosbank",
-   "personId": null,
-   "name": {
-    "ko": "알렉세이 그리치마노프",
-    "en": "Alexei Grichmanov"
-   },
+   "personId": "alexei-grichmanov",
    "post": {
     "ko": "소련 국가은행 이사회 의장",
     "en": "Chairman of the Board of the State Bank of the USSR"
@@ -775,11 +751,7 @@
   },
   {
    "track": "gosbank",
-   "personId": null,
-   "name": {
-    "ko": "니콜라이 소콜로프",
-    "en": "Nikolai Sokolov"
-   },
+   "personId": "nikolai-konstantinovich-sokolov",
    "post": {
     "ko": "소련 국가은행 이사회 의장",
     "en": "Chairman of the Board of the State Bank of the USSR"
@@ -989,11 +961,7 @@
   },
   {
    "track": "gosbank",
-   "personId": null,
-   "name": {
-    "ko": "니콜라이 가레톱스키",
-    "en": "Nikolai Garetovsky"
-   },
+   "personId": "nikolai-garetovsky",
    "post": {
     "ko": "소련 국가은행 이사회 의장",
     "en": "Chairman of the Board of the State Bank of the USSR"
@@ -1035,11 +1003,7 @@
   },
   {
    "track": "gosbank",
-   "personId": null,
-   "name": {
-    "ko": "안드레이 즈베레프",
-    "en": "Andrei Zverev"
-   },
+   "personId": "andrei-zverev",
    "post": {
     "ko": "소련 국가은행 이사회 의장",
     "en": "Chairman of the Board of the State Bank of the USSR"
@@ -1215,11 +1179,7 @@
   },
   {
    "track": "foreign-trade",
-   "personId": null,
-   "name": {
-    "ko": "예브게니 치뱔레프",
-    "en": "Yevgeny Chvyalev"
-   },
+   "personId": "yevgeny-chvyalev",
    "post": {
     "ko": "소련 대외무역인민위원",
     "en": "People's Commissar of Foreign Trade of the USSR"
@@ -1303,11 +1263,7 @@
   },
   {
    "track": "foreign-trade",
-   "personId": null,
-   "name": {
-    "ko": "파벨 쿠미킨",
-    "en": "Pavel Kumykin"
-   },
+   "personId": "pavel-kumykin",
    "post": {
     "ko": "소련 대외무역장관",
     "en": "Minister of Foreign Trade of the USSR"

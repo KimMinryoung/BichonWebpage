@@ -342,11 +342,7 @@
     },
     {
       "track": "prime-minister",
-      "personId": null,
-      "name": {
-        "ko": "비탈리 도구지예프",
-        "en": "Vitaly Doguzhiev"
-      },
+      "personId": "vitaly-doguzhiev",
       "post": {
         "ko": "소련 총리",
         "en": "Prime Minister of the USSR"

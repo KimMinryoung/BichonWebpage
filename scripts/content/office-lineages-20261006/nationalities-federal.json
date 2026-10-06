@@ -335,11 +335,7 @@
   },
   {
    "track": "soviet-of-nationalities",
-   "personId": null,
-   "name": {
-    "ko": "아누아르베크 알림자노프",
-    "en": "Anuarbek Alimzhanov"
-   },
+   "personId": "anuar-alimzhanov",
    "post": {
     "ko": "소련 최고소비에트 공화국 소비에트 의장",
     "en": "Chairman of the Soviet of the Republics of the USSR Supreme Soviet"

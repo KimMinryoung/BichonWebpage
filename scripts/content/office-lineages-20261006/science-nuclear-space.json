@@ -430,11 +430,7 @@
   },
   {
    "track": "sredmash",
-   "personId": null,
-   "name": {
-    "ko": "비탈리 코노발로프",
-    "en": "Vitaly Konovalov"
-   },
+   "personId": "vitaly-konovalov",
    "post": {
     "ko": "소련 원자력에너지·산업장관",
     "en": "Minister of Atomic Energy and Industry of the USSR"
@@ -501,11 +497,7 @@
   },
   {
    "track": "mom",
-   "personId": null,
-   "name": {
-    "ko": "비탈리 도구지예프",
-    "en": "Vitaly Doguzhiev"
-   },
+   "personId": "vitaly-doguzhiev",
    "post": {
     "ko": "소련 일반기계공업장관",
     "en": "Minister of General Machine Building of the USSR"
@@ -526,11 +518,7 @@
   },
   {
    "track": "mom",
-   "personId": null,
-   "name": {
-    "ko": "올레크 시시킨",
-    "en": "Oleg Shishkin"
-   },
+   "personId": "oleg-shishkin",
    "post": {
     "ko": "소련 일반기계공업장관",
     "en": "Minister of General Machine Building of the USSR"

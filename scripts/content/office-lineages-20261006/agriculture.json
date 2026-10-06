@@ -103,11 +103,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "세묜 세레다",
-    "en": "Semyon Sereda"
-   },
+   "personId": "semyon-sereda",
    "post": {
     "ko": "러시아 공화국(RSFSR) 농업인민위원",
     "en": "People's Commissar of Agriculture of the RSFSR"
@@ -153,11 +149,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "바실리 야코벤코",
-    "en": "Vasily Yakovenko"
-   },
+   "personId": "vasily-yakovenko",
    "post": {
     "ko": "러시아 공화국(RSFSR) 농업인민위원",
     "en": "People's Commissar of Agriculture of the RSFSR"
@@ -199,11 +191,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "니콜라이 쿠뱌크",
-    "en": "Nikolai Kubyak"
-   },
+   "personId": "nikolai-kubyak",
    "post": {
     "ko": "러시아 공화국(RSFSR) 농업인민위원",
     "en": "People's Commissar of Agriculture of the RSFSR"
@@ -400,11 +388,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "알렉세이 코즐로프",
-    "en": "Alexei Kozlov"
-   },
+   "personId": "alexei-kozlov",
    "post": {
     "ko": "소련 농업·조달장관",
     "en": "Minister of Agriculture and Procurement of the USSR"
@@ -509,11 +493,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "콘스탄틴 피신",
-    "en": "Konstantin Pysin"
-   },
+   "personId": "konstantin-pysin",
    "post": {
     "ko": "소련 농업장관",
     "en": "Minister of Agriculture of the USSR"
@@ -534,11 +514,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "이반 볼로프첸코",
-    "en": "Ivan Volovchenko"
-   },
+   "personId": "ivan-volovchenko",
    "post": {
     "ko": "소련 농업장관",
     "en": "Minister of Agriculture of the USSR"
@@ -622,11 +598,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "뱌체슬라프 체르노이바노프",
-    "en": "Vyacheslav Chernoivanov"
-   },
+   "personId": "vyacheslav-chernoivanov",
    "post": {
     "ko": "소련 농업·식량장관",
     "en": "Minister of Agriculture and Food of the USSR"
@@ -647,11 +619,7 @@
   },
   {
    "track": "narkomzem-minister",
-   "personId": null,
-   "name": {
-    "ko": "뱌체슬라프 체르노이바노프",
-    "en": "Vyacheslav Chernoivanov"
-   },
+   "personId": "vyacheslav-chernoivanov",
    "post": {
     "ko": "소련 농업·식량장관",
     "en": "Minister of Agriculture and Food of the USSR"
@@ -697,11 +665,7 @@
   },
   {
    "track": "agroprom",
-   "personId": null,
-   "name": {
-    "ko": "블라딜렌 니키틴",
-    "en": "Vladilen Nikitin"
-   },
+   "personId": "vladilen-nikitin",
    "post": {
     "ko": "소련 각료회의 식량·조달 국가위원회 의장",
     "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Food and Procurement"
@@ -722,11 +686,7 @@
   },
   {
    "track": "agroprom",
-   "personId": null,
-   "name": {
-    "ko": "뱌체슬라프 체르노이바노프",
-    "en": "Vyacheslav Chernoivanov"
-   },
+   "personId": "vyacheslav-chernoivanov",
    "post": {
     "ko": "소련 각료회의 식량·조달 국가위원회 의장",
     "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Food and Procurement"

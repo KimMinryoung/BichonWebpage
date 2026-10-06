@@ -88,11 +88,7 @@
   },
   {
    "track": "narkompros",
-   "personId": null,
-   "name": {
-    "ko": "표트르 튜르킨",
-    "en": "Pyotr Tyurkin"
-   },
+   "personId": "pyotr-tyurkin",
    "post": {
     "ko": "러시아 공화국(RSFSR) 교육인민위원",
     "en": "People’s Commissar of Education of the RSFSR"
@@ -305,11 +301,7 @@
   },
   {
    "track": "writers",
-   "personId": null,
-   "name": {
-    "ko": "블라디미르 스탑스키",
-    "en": "Vladimir Stavsky"
-   },
+   "personId": "vladimir-stavsky",
    "post": {
     "ko": "소련 작가동맹 서기장",
     "en": "General Secretary of the Union of Soviet Writers"
@@ -342,11 +334,7 @@
   },
   {
    "track": "writers",
-   "personId": null,
-   "name": {
-    "ko": "니콜라이 티호노프",
-    "en": "Nikolai Tikhonov"
-   },
+   "personId": "nikolai-tikhonov-poet",
    "post": {
     "ko": "소련 작가동맹 이사회 의장",
     "en": "Chairman of the Board of the Union of Soviet Writers"
@@ -458,11 +446,7 @@
   },
   {
    "track": "writers",
-   "personId": null,
-   "name": {
-    "ko": "블라디미르 카르포프",
-    "en": "Vladimir Karpov"
-   },
+   "personId": "vladimir-karpov",
    "post": {
     "ko": "소련 작가동맹 이사회 제1서기",
     "en": "First Secretary of the Board of the Union of Soviet Writers"
@@ -481,11 +465,7 @@
   },
   {
    "track": "writers",
-   "personId": null,
-   "name": {
-    "ko": "티무르 풀라토프",
-    "en": "Timur Pulatov"
-   },
+   "personId": "timur-pulatov",
    "post": {
     "ko": "소련 작가동맹 이사회 제1서기",
     "en": "First Secretary of the Board of the Union of Soviet Writers"
