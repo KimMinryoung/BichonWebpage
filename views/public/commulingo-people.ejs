@@ -208,13 +208,13 @@
             <% if (openShelfBox) { %></section><% } %>
 
             <% if (offices.length) { %>
-            <details class="commu-office-index" open aria-label="<%= strings.commuLingoViews.office.lineages %>">
-                <summary class="commu-office-index-head">
+            <section class="commu-office-index" aria-label="<%= strings.commuLingoViews.office.lineages %>">
+                <a class="commu-office-index-head" href="/commulingo/offices">
                     <span class="commu-people-range">INDEX</span>
-                    <h2><a href="/commulingo/offices"><%= strings.commuLingoViews.office.lineages %></a></h2>
-                </summary>
+                    <h2><%= strings.commuLingoViews.office.lineages %></h2>
+                </a>
                 <%- include('../partials/commulingo-office-index', { bodies: bodies, offices: offices }) %>
-            </details>
+            </section>
             <% } %>
             <% } %>
         </section>

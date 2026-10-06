@@ -156,16 +156,6 @@
     function focusHash() {
         var hash = window.location.hash;
         if (!hash) return;
-        if (hash.indexOf('#office-') === 0) {
-            var office = document.getElementById(hash.slice(1));
-            var officeIndex = document.querySelector('details.commu-office-index');
-            if (officeIndex) officeIndex.open = true;
-            if (office && office.tagName === 'DETAILS') {
-                office.open = true;
-                window.requestAnimationFrame(function() { office.scrollIntoView({ block: 'start' }); });
-            }
-            return;
-        }
         if (hash.indexOf('#p-') !== 0) return;
         var personId = hash.slice(3);
         revealPerson(personId).then(function() { focusCard(personId); }).catch(function() {});

@@ -27,7 +27,7 @@
             <div class="commu-office-grid">
             <% links.forEach(function(link) { %>
                 <a class="commu-office-card commu-role-category-link" href="<%= link.href %>">
-                    <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(link.icon) %></span>
+                    <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg(link.icon) %></span>
                     <span class="commu-role-category-copy"><h3><%= link.label %></h3></span>
                     <span aria-hidden="true">→</span>
                 </a>

@@ -8,7 +8,7 @@
     <% if (office === null) { %>
     <% bodies.forEach(function(body) { %>
     <a class="commu-office-card commu-role-category-link" href="<%= body.href %>">
-        <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
+        <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
         <span class="commu-role-category-copy">
             <h3><%= body.title %> <small class="commu-office-range"><%= body.range %></small></h3>
             <p><%= body.description %></p>
@@ -18,7 +18,7 @@
     <% }) %>
     <% return; } %>
     <a class="commu-office-card commu-role-category-link is-<%= office.id %>" href="/commulingo/offices/<%= office.id %>">
-        <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>
+        <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>
         <span class="commu-role-category-copy">
             <h3><%= office.title %> <small class="commu-office-range"><%= office.range %></small></h3>
             <p><%= office.tracks.filter(function(track) { return track.title; }).map(function(track) { return track.title; }).join(' · ') || office.blurb %></p>

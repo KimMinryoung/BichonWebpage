@@ -2071,22 +2071,19 @@ button.commu-dc-option:hover { border-color: var(--link); }
     background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
     border: 1px solid var(--border);
     border-left: 4px solid var(--accent);
-    cursor: pointer;
     display: block;
-    list-style: none;
+    margin-bottom: 14px;
     padding: 12px 38px 12px 14px;
     position: relative;
+    text-decoration: none;
     transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
-}
-
-.commu-office-index-head::-webkit-details-marker {
-    display: none;
 }
 
 .commu-office-index-head:hover,
 .commu-office-index-head:focus-visible {
     background: var(--bg-surface-hover);
     border-color: var(--link);
+    text-decoration: none;
 }
 
 .commu-office-index-head:focus-visible {
@@ -2094,32 +2091,24 @@ button.commu-dc-option:hover { border-color: var(--link); }
     outline-offset: 2px;
 }
 
+/* The head links to the offices page, so it carries the same arrow as the
+   link cards below it. */
 .commu-office-index-head::after {
     color: var(--text-muted);
-    content: '›';
-    font-size: 1.5rem;
+    content: '→';
+    font-size: 1.15rem;
+    font-weight: var(--weight-emphasis);
     line-height: var(--leading-none);
     position: absolute;
-    /* The glyph is rotated, so its rendered box is wider than the unrotated one.
-       At right: 8px it reached 5px past the summary and put the whole page into a
-       4px horizontal scroll; 14px keeps it inside the 38px padding. */
     right: 14px;
     top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    transition: color 0.16s ease, transform 0.16s ease;
+    transform: translateY(-50%);
+    transition: color 0.16s ease;
 }
 
 .commu-office-index-head:hover::after,
 .commu-office-index-head:focus-visible::after {
     color: var(--link);
-}
-
-.commu-office-index[open] .commu-office-index-head {
-    margin-bottom: 14px;
-}
-
-.commu-office-index[open] .commu-office-index-head::after {
-    transform: translateY(-50%) rotate(-90deg);
 }
 
 .commu-office-index-head h2 {
@@ -2179,8 +2168,8 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-role-category-link:hover .commu-role-category-arrow,
 .commu-role-category-link:focus-visible .commu-role-category-arrow,
-.commu-role-category-link:hover .commu-office-icon-link,
-.commu-role-category-link:focus-visible .commu-office-icon-link {
+.commu-role-category-link:hover .commu-office-icon,
+.commu-role-category-link:focus-visible .commu-office-icon {
     border-color: var(--clr-cream);
     color: var(--clr-cream);
 }
@@ -2188,13 +2177,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-role-category-link:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 2px;
-}
-
-.commu-role-category-link .commu-office-icon-link {
-    flex: 0 0 auto;
-    left: auto;
-    position: static;
-    top: auto;
 }
 
 .commu-role-category-copy {
@@ -2233,30 +2215,17 @@ button.commu-dc-option:hover { border-color: var(--link); }
     border-bottom: 1px solid var(--border);
 }
 
-.commu-office-icon-link {
+/* Decoration inside a link card: the card is the only click target, so the
+   icon has no hover state of its own and just follows the card's colours. */
+.commu-office-icon {
     align-items: center;
     border: 1px solid var(--border);
     color: var(--text-secondary);
     display: flex;
+    flex: 0 0 auto;
     height: 32px;
     justify-content: center;
-    left: 14px;
-    position: absolute;
-    text-decoration: none;
-    top: 14px;
     width: 32px;
-}
-
-.commu-office-icon-link:hover,
-.commu-office-icon-link:focus-visible {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
-    color: var(--link);
-}
-
-.commu-office-icon-link:focus-visible {
-    outline: 2px solid var(--link);
-    outline-offset: 2px;
 }
 
 .commu-office-card-head::-webkit-details-marker {
