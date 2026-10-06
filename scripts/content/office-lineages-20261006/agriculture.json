@@ -1,0 +1,753 @@
+{
+ "officeId": "agriculture",
+ "title": {
+  "ko": "농업",
+  "en": "Agriculture"
+ },
+ "blurb": {
+  "ko": "러시아 공화국과 소련의 농업인민위원·농업장관, 국가농공위원회 의장, 각료회의 식량·조달 국가위원회 의장.",
+  "en": "People's Commissars and Ministers of Agriculture of the RSFSR and the USSR, the Chairman of Gosagroprom, and the chairmen of the Council of Ministers' State Commission for Food and Procurement."
+ },
+ "range": "1917–1991",
+ "tracks": [
+  {
+   "id": "narkomzem-minister",
+   "title": {
+    "ko": "농업인민위원·농업장관",
+    "en": "People's Commissar / Minister of Agriculture"
+   },
+   "blurb": {
+    "ko": "1929년 12월까지는 러시아 공화국 농업인민위원, 그 뒤로는 연방 농업인민위원과 농업장관이다. 1947년 2월 농업부(земледелия)가 축산부·기술작물부와 합쳐 농업부(сельского хозяйства)가 됐고, 1953년 3~11월에는 농업·조달부였다. 1985년 11월부터 1991년 4월까지는 부처가 국가농공위원회와 그 후신에 흡수되어 장관직이 없었다.",
+    "en": "People's Commissars of Agriculture of the RSFSR until December 1929, then the union-level commissars and ministers. In February 1947 the Ministry of Agriculture (Zemledeliya) merged with the livestock and industrial-crop ministries into the Ministry of Agriculture (Selskogo Khozyaistva); from March to November 1953 it was the Ministry of Agriculture and Procurement. From November 1985 to April 1991 there was no minister, the ministry having been absorbed into Gosagroprom and its successor."
+   }
+  },
+  {
+   "id": "agroprom",
+   "title": {
+    "ko": "국가농공위원회·식량조달 국가위원회",
+    "en": "Gosagroprom and the State Commission for Food and Procurement"
+   },
+   "blurb": {
+    "ko": "1985년 11월 농업부와 식품 관련 부처들을 합친 국가농공위원회가 섰고, 1989년 각료회의 식량·조달 국가위원회로 바뀌었다가 1991년 2월 폐지됐다.",
+    "en": "Gosagroprom, formed in November 1985 by merging the Ministry of Agriculture with the food-related ministries, gave way in 1989 to the Council of Ministers' State Commission for Food and Procurement, abolished in February 1991."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "narkomzem-minister",
+   "personId": "vladimir-milyutin",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     11,
+     8
+    ],
+    "end": [
+     1917,
+     11,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "alexander-shlikhter",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     11,
+     17
+    ],
+    "end": [
+     1917,
+     12,
+     1
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "andrei-kolegayev",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     12,
+     9
+    ],
+    "end": [
+     1918,
+     3,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Колегаев,_Андрей_Лукич"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "세묜 세레다",
+    "en": "Semyon Sereda"
+   },
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     4,
+     3
+    ],
+    "end": [
+     1921,
+     2,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Середа,_Семён_Пафнутьевич"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "osinsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1921,
+     2,
+     10
+    ],
+    "end": [
+     1922,
+     1,
+     9
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "바실리 야코벤코",
+    "en": "Vasily Yakovenko"
+   },
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1922,
+     1,
+     9
+    ],
+    "end": [
+     1923,
+     7,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Яковенко,_Василий_Григорьевич"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "alexander-smirnov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     7,
+     7
+    ],
+    "end": [
+     1928,
+     2,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "니콜라이 쿠뱌크",
+    "en": "Nikolai Kubyak"
+   },
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원",
+    "en": "People's Commissar of Agriculture of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1928,
+     2,
+     16
+    ],
+    "end": [
+     1929,
+     12,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Кубяк,_Николай_Афанасьевич"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "yakov-yakovlev",
+   "post": {
+    "ko": "소련 농업인민위원",
+    "en": "People's Commissar of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1929,
+     12,
+     8
+    ],
+    "end": [
+     1934,
+     4,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "mikhail-chernov",
+   "post": {
+    "ko": "소련 농업인민위원",
+    "en": "People's Commissar of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1934,
+     4,
+     10
+    ],
+    "end": [
+     1937,
+     10,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "robert-eikhe",
+   "post": {
+    "ko": "소련 농업인민위원",
+    "en": "People's Commissar of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     10,
+     29
+    ],
+    "end": [
+     1938,
+     4,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "benediktov",
+   "post": {
+    "ko": "소련 농업인민위원",
+    "en": "People's Commissar of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     4,
+     29
+    ],
+    "end": [
+     1938,
+     11,
+     15
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "benediktov",
+   "post": {
+    "ko": "소련 농업인민위원",
+    "en": "People's Commissar of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     11,
+     15
+    ],
+    "end": [
+     1943,
+     12,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Бенедиктов,_Иван_Александрович"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "andrei-andreyev",
+   "post": {
+    "ko": "소련 농업인민위원",
+    "en": "People's Commissar of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1943,
+     12,
+     11
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Андреев,_Андрей_Андреевич"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "benediktov",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture (Zemledeliya) of the USSR"
+   },
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1947,
+     2,
+     4
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "benediktov",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1947,
+     2,
+     4
+    ],
+    "end": [
+     1953,
+     3,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России",
+   "note": {
+    "ko": "1947년 농업 부처 통합 개편 뒤",
+    "en": "after the 1947 merger of the agriculture ministries"
+   }
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "알렉세이 코즐로프",
+    "en": "Alexei Kozlov"
+   },
+   "post": {
+    "ko": "소련 농업·조달장관",
+    "en": "Minister of Agriculture and Procurement of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     3,
+     15
+    ],
+    "end": [
+     1953,
+     9,
+     1
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "benediktov",
+   "post": {
+    "ko": "소련 농업·조달장관",
+    "en": "Minister of Agriculture and Procurement of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     9,
+     1
+    ],
+    "end": [
+     1953,
+     11,
+     21
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "benediktov",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     11,
+     25
+    ],
+    "end": [
+     1955,
+     3,
+     2
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "matskevich",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1955,
+     10,
+     14
+    ],
+    "end": [
+     1960,
+     12,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "mikhail-olshanski",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1960,
+     12,
+     29
+    ],
+    "end": [
+     1962,
+     4,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "콘스탄틴 피신",
+    "en": "Konstantin Pysin"
+   },
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1962,
+     4,
+     25
+    ],
+    "end": [
+     1963,
+     3,
+     8
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "이반 볼로프첸코",
+    "en": "Ivan Volovchenko"
+   },
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1963,
+     3,
+     8
+    ],
+    "end": [
+     1965,
+     2,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "matskevich",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1965,
+     2,
+     17
+    ],
+    "end": [
+     1973,
+     2,
+     2
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "polyansky",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1973,
+     2,
+     2
+    ],
+    "end": [
+     1976,
+     3,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": "mesyats",
+   "post": {
+    "ko": "소련 농업장관",
+    "en": "Minister of Agriculture of the USSR"
+   },
+   "period": {
+    "start": [
+     1976,
+     3,
+     16
+    ],
+    "end": [
+     1985,
+     11,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "뱌체슬라프 체르노이바노프",
+    "en": "Vyacheslav Chernoivanov"
+   },
+   "post": {
+    "ko": "소련 농업·식량장관",
+    "en": "Minister of Agriculture and Food of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     4,
+     1
+    ],
+    "end": [
+     1991,
+     8,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Черноиванов,_Вячеслав_Иванович"
+  },
+  {
+   "track": "narkomzem-minister",
+   "personId": null,
+   "name": {
+    "ko": "뱌체슬라프 체르노이바노프",
+    "en": "Vyacheslav Chernoivanov"
+   },
+   "post": {
+    "ko": "소련 농업·식량장관",
+    "en": "Minister of Agriculture and Food of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     28
+    ],
+    "end": [
+     1991,
+     11,
+     26
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "agroprom",
+   "personId": "murakhovsky",
+   "post": {
+    "ko": "소련 국가농공위원회 의장",
+    "en": "Chairman of the State Agro-Industrial Committee (Gosagroprom) of the USSR"
+   },
+   "period": {
+    "start": [
+     1985,
+     11,
+     22
+    ],
+    "end": [
+     1989,
+     4,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "agroprom",
+   "personId": null,
+   "name": {
+    "ko": "블라딜렌 니키틴",
+    "en": "Vladilen Nikitin"
+   },
+   "post": {
+    "ko": "소련 각료회의 식량·조달 국가위원회 의장",
+    "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Food and Procurement"
+   },
+   "period": {
+    "start": [
+     1989,
+     7,
+     27
+    ],
+    "end": [
+     1990,
+     8,
+     30
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  },
+  {
+   "track": "agroprom",
+   "personId": null,
+   "name": {
+    "ko": "뱌체슬라프 체르노이바노프",
+    "en": "Vyacheslav Chernoivanov"
+   },
+   "post": {
+    "ko": "소련 각료회의 식량·조달 국가위원회 의장",
+    "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Food and Procurement"
+   },
+   "period": {
+    "start": [
+     1990,
+     9,
+     1
+    ],
+    "end": [
+     1991,
+     2,
+     28
+    ]
+   },
+   "note": {
+    "ko": "제1부의장으로서 직무대행",
+    "en": "Acting, as first deputy chairman"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+  }
+ ]
+}

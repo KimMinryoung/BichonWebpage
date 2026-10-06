@@ -1,0 +1,754 @@
+{
+ "officeId": "state-security",
+ "title": {
+  "ko": "국가보안 기관",
+  "en": "State security agencies"
+ },
+ "blurb": {
+  "ko": "체카·GPU·OGPU 의장, 내무인민위원(국가보안 겸임 시기), 국가보안인민위원·국가보안장관, 1953년 통합 내무장관, KGB 의장으로 이어진 정치경찰 수장.",
+  "en": "Heads of the political police: chairmen of the Cheka, GPU and OGPU, People's Commissars of Internal Affairs while the NKVD held state security, People's Commissars and Ministers of State Security, the 1953 merged Minister of Internal Affairs, and chairmen of the KGB."
+ },
+ "range": "1917–1991",
+ "lineage": [
+  {
+   "name": {
+    "ko": "체카(ВЧК)",
+    "en": "Cheka (VChK)"
+   },
+   "period": "1917.12–1922.2",
+   "termId": "cheka",
+   "body": {
+    "ko": "반혁명·사보타주 단속 전러시아 비상위원회. 제르진스키가 이끈 인민위원회의 산하 비상기구로, 내전기 적색 테러를 집행하며 재판 없는 처형 권한까지 행사했다.",
+    "en": "The All-Russian Extraordinary Commission for Combating Counter-Revolution and Sabotage, an emergency body of the Council of People's Commissars headed by Dzerzhinsky. It carried out the Red Terror of the Civil War and wielded summary powers, including execution without trial."
+   }
+  },
+  {
+   "name": {
+    "ko": "국가정치보안부(GPU)·합동국가정치보안부(OGPU)",
+    "en": "State Political Directorate (GPU) · Joint State Political Directorate (OGPU)"
+   },
+   "period": "1922.2–1934.7",
+   "termId": "ogpu",
+   "body": {
+    "ko": "내전이 끝나자 체카를 해산하고 러시아 공화국 내무인민위원부 산하의 국가정치보안부(GPU)로 재편했으며, 1923년 11월 소련 결성에 따라 연방급 합동국가정치보안부(OGPU)가 됐다. 비상기구에서 상설 정치경찰로의 제도화.",
+    "en": "With the Civil War over, the Cheka was dissolved into the State Political Directorate (GPU) under the RSFSR People's Commissariat of Internal Affairs, which became the all-union Joint State Political Directorate (OGPU) in November 1923 after the USSR was formed. The emergency organ became a permanent political police."
+   }
+  },
+  {
+   "name": {
+    "ko": "내무인민위원부(NKVD) 국가보안총국(GUGB)",
+    "en": "NKVD Main Directorate of State Security (GUGB)"
+   },
+   "period": "1934.7–1941.2 · 1941.7–1943.4",
+   "termId": "nkvd",
+   "body": {
+    "ko": "OGPU가 새 전연방 내무인민위원부(NKVD)에 국가보안총국(GUGB)으로 흡수되어, 일반 경찰·국경군·굴라크까지 관장하는 거대 기구의 일부가 됐다. 야고다·예조프·베리야 치하에서 대숙청의 집행 기관이었다. 국가보안 부문은 1941년 2월 떨어져 나갔다가 7월 다시 합쳐졌고 1943년 4월 다시 분리됐다.",
+    "en": "The OGPU was absorbed into the new all-union People's Commissariat of Internal Affairs (NKVD) as its Main Directorate of State Security (GUGB), part of a giant that also ran the regular police, border troops and the Gulag. Under Yagoda, Yezhov and Beria it was the executing machinery of the Great Terror. State security was split off in February 1941, merged back in July and split off again in April 1943."
+   }
+  },
+  {
+   "name": {
+    "ko": "국가보안인민위원부(NKGB)·국가보안부(MGB)",
+    "en": "NKGB · Ministry of State Security (MGB)"
+   },
+   "period": "1941.2–1941.7 · 1943.4–1953.3",
+   "termId": "mgb",
+   "body": {
+    "ko": "국가보안 기능을 NKVD에서 분리해 국가보안인민위원부(NKGB)로 세우고, 1946년 3월 인민위원부가 부(部)로 바뀌면서 국가보안부(MGB)가 됐다. 전후 숙청(레닌그라드 사건, 의사들의 음모)을 주도했다.",
+    "en": "State-security functions were split from the NKVD into the People's Commissariat of State Security (NKGB), which became the Ministry of State Security (MGB) when the commissariats were turned into ministries in March 1946. It drove the postwar purges, from the Leningrad Affair to the Doctors' Plot."
+   }
+  },
+  {
+   "name": {
+    "ko": "내무부(MVD) 통합기",
+    "en": "MVD merger"
+   },
+   "period": "1953.3–1954.3",
+   "termId": null,
+   "body": {
+    "ko": "스탈린 사후 베리야가 MGB를 내무부(MVD)로 통합해 장악했으나, 그해 6월 실각·처형되며 짧게 끝났다. 이후 정치경찰을 당의 통제 아래 묶는 재편이 시작된다.",
+    "en": "After Stalin's death Beria merged the MGB into the Ministry of Internal Affairs (MVD) under his own hand, an arrangement cut short by his fall in June and his execution, which opened the way to party control over the political police."
+   }
+  },
+  {
+   "name": {
+    "ko": "국가보안위원회(KGB)",
+    "en": "Committee for State Security (KGB)"
+   },
+   "period": "1954.3–1991.12",
+   "termId": "kgb",
+   "body": {
+    "ko": "국가보안위원회(KGB)로 재편되어 부처가 아닌 위원회 지위로 당의 통제를 받았다. '당의 방패와 검'으로 37년간 존속하다 1991년 8월 쿠데타 실패 뒤 해체됐다.",
+    "en": "Reconstituted as the Committee for State Security, a committee rather than a ministry, kept under party control. The party's \"shield and sword\" for 37 years, it was dismantled after the failed August 1991 coup."
+   }
+  }
+ ],
+ "tracks": [
+  {
+   "id": "chiefs",
+   "title": {
+    "ko": "정치경찰 수장",
+    "en": "Heads of the political police"
+   },
+   "blurb": {
+    "ko": "기관 이름이 바뀌어도 하나로 이어진 지휘 계보라 한 줄로 싣고, 행마다 당시의 정식 직함을 적었다. 내무인민위원은 NKVD가 국가보안 부문을 거느린 기간만 넣었다.",
+    "en": "One continuous chain of command under changing institutional names, so it is shown as a single line with each row's formal title of the time. People's Commissars of Internal Affairs appear only for the periods when the NKVD held state security."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "chiefs",
+   "personId": "dzerzhinsky",
+   "post": {
+    "ko": "전러시아 비상위원회(체카) 의장",
+    "en": "Chairman of the All-Russian Extraordinary Commission (VChK)"
+   },
+   "period": {
+    "start": [
+     1917,
+     12,
+     20
+    ],
+    "end": [
+     1918,
+     7,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Дзержинский,_Феликс_Эдмундович"
+  },
+  {
+   "track": "chiefs",
+   "personId": "yakov-peters",
+   "post": {
+    "ko": "전러시아 비상위원회(체카) 의장",
+    "en": "Chairman of the All-Russian Extraordinary Commission (VChK)"
+   },
+   "period": {
+    "start": [
+     1918,
+     7,
+     7
+    ],
+    "end": [
+     1918,
+     8,
+     22
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Петерс,_Яков_Христофорович"
+  },
+  {
+   "track": "chiefs",
+   "personId": "dzerzhinsky",
+   "post": {
+    "ko": "전러시아 비상위원회(체카) 의장",
+    "en": "Chairman of the All-Russian Extraordinary Commission (VChK)"
+   },
+   "period": {
+    "start": [
+     1918,
+     8,
+     22
+    ],
+    "end": [
+     1922,
+     2,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Дзержинский,_Феликс_Эдмундович"
+  },
+  {
+   "track": "chiefs",
+   "personId": "dzerzhinsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 내무인민위원부 국가정치보안부(GPU) 의장",
+    "en": "Chairman of the State Political Directorate (GPU) under the NKVD of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1922,
+     2,
+     6
+    ],
+    "end": [
+     1923,
+     11,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Государственное_политическое_управление_при_НКВД_РСФСР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "dzerzhinsky",
+   "post": {
+    "ko": "소련 합동국가정치보안부(OGPU) 의장",
+    "en": "Chairman of the Joint State Political Directorate (OGPU) of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     11,
+     15
+    ],
+    "end": [
+     1926,
+     7,
+     20
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Объединённое_государственное_политическое_управление"
+  },
+  {
+   "track": "chiefs",
+   "personId": "menzhinsky",
+   "post": {
+    "ko": "소련 합동국가정치보안부(OGPU) 의장",
+    "en": "Chairman of the Joint State Political Directorate (OGPU) of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     7,
+     30
+    ],
+    "end": [
+     1934,
+     5,
+     10
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Менжинский,_Вячеслав_Рудольфович"
+  },
+  {
+   "track": "chiefs",
+   "personId": "yagoda",
+   "post": {
+    "ko": "소련 내무인민위원",
+    "en": "People's Commissar of Internal Affairs of the USSR"
+   },
+   "period": {
+    "start": [
+     1934,
+     7,
+     10
+    ],
+    "end": [
+     1936,
+     9,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_внутренних_дел_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "yezhov",
+   "post": {
+    "ko": "소련 내무인민위원",
+    "en": "People's Commissar of Internal Affairs of the USSR"
+   },
+   "period": {
+    "start": [
+     1936,
+     9,
+     26
+    ],
+    "end": [
+     1938,
+     11,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_внутренних_дел_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "beria",
+   "post": {
+    "ko": "소련 내무인민위원",
+    "en": "People's Commissar of Internal Affairs of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     11,
+     25
+    ],
+    "end": [
+     1941,
+     2,
+     3
+    ]
+   },
+   "note": {
+    "ko": "국가보안 부문 분리(NKGB 신설)까지",
+    "en": "until state security was split off into the NKGB"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_внутренних_дел_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "merkulov",
+   "post": {
+    "ko": "소련 국가보안인민위원",
+    "en": "People's Commissar of State Security of the USSR"
+   },
+   "period": {
+    "start": [
+     1941,
+     2,
+     3
+    ],
+    "end": [
+     1941,
+     7,
+     20
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "beria",
+   "post": {
+    "ko": "소련 내무인민위원",
+    "en": "People's Commissar of Internal Affairs of the USSR"
+   },
+   "period": {
+    "start": [
+     1941,
+     7,
+     20
+    ],
+    "end": [
+     1943,
+     4,
+     14
+    ]
+   },
+   "note": {
+    "ko": "NKGB 재통합부터 재분리까지",
+    "en": "from the NKGB's re-merger to its second split"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_внутренних_дел_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "merkulov",
+   "post": {
+    "ko": "소련 국가보안인민위원",
+    "en": "People's Commissar of State Security of the USSR"
+   },
+   "period": {
+    "start": [
+     1943,
+     4,
+     14
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "merkulov",
+   "post": {
+    "ko": "소련 국가보안장관",
+    "en": "Minister of State Security of the USSR"
+   },
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1946,
+     5,
+     4
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "abakumov",
+   "post": {
+    "ko": "소련 국가보안장관",
+    "en": "Minister of State Security of the USSR"
+   },
+   "period": {
+    "start": [
+     1946,
+     5,
+     4
+    ],
+    "end": [
+     1951,
+     7,
+     4
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "sergei-ogoltsov",
+   "post": {
+    "ko": "소련 국가보안장관",
+    "en": "Minister of State Security of the USSR"
+   },
+   "period": {
+    "start": [
+     1951,
+     7,
+     4
+    ],
+    "end": [
+     1951,
+     8,
+     9
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "ignatiev",
+   "post": {
+    "ko": "소련 국가보안장관",
+    "en": "Minister of State Security of the USSR"
+   },
+   "period": {
+    "start": [
+     1951,
+     8,
+     9
+    ],
+    "end": [
+     1953,
+     3,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "beria",
+   "post": {
+    "ko": "소련 내무장관",
+    "en": "Minister of Internal Affairs of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     6,
+     26
+    ]
+   },
+   "note": {
+    "ko": "MGB를 흡수한 통합 내무부",
+    "en": "merged ministry that absorbed the MGB"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внутренних_дел_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "sergey-kruglov",
+   "post": {
+    "ko": "소련 내무장관",
+    "en": "Minister of Internal Affairs of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     6,
+     26
+    ],
+    "end": [
+     1954,
+     3,
+     13
+    ]
+   },
+   "note": {
+    "ko": "KGB 분리(1954년 3월 13일)까지",
+    "en": "until the KGB split off on 13 March 1954"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Круглов,_Сергей_Никифорович"
+  },
+  {
+   "track": "chiefs",
+   "personId": "serov",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1954,
+     3,
+     13
+    ],
+    "end": [
+     1958,
+     12,
+     8
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "konstantin-lunev",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1958,
+     12,
+     8
+    ],
+    "end": [
+     1958,
+     12,
+     25
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "shelepin",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1958,
+     12,
+     25
+    ],
+    "end": [
+     1961,
+     11,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "pyotr-ivashutin",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1961,
+     11,
+     5
+    ],
+    "end": [
+     1961,
+     11,
+     13
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "semichastny",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1961,
+     11,
+     13
+    ],
+    "end": [
+     1967,
+     5,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "andropov",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1967,
+     5,
+     18
+    ],
+    "end": [
+     1982,
+     5,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "fedorchuk",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1982,
+     5,
+     26
+    ],
+    "end": [
+     1982,
+     12,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "chebrikov",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1982,
+     12,
+     17
+    ],
+    "end": [
+     1988,
+     10,
+     1
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "kryuchkov",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1988,
+     10,
+     1
+    ],
+    "end": [
+     1991,
+     8,
+     22
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "leonid-shebarshin",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     22
+    ],
+    "end": [
+     1991,
+     8,
+     23
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Председатель_Комитета_государственной_безопасности_СССР"
+  },
+  {
+   "track": "chiefs",
+   "personId": "vadim-bakatin",
+   "post": {
+    "ko": "소련 국가보안위원회(KGB) 의장",
+    "en": "Chairman of the Committee for State Security (KGB) of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     23
+    ],
+    "end": [
+     1991,
+     12,
+     3
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Бакатин,_Вадим_Викторович"
+  }
+ ]
+}

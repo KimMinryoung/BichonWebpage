@@ -1,0 +1,1435 @@
+{
+ "officeId": "economic-management",
+ "title": {
+  "ko": "경제 운영",
+  "en": "Economic management"
+ },
+ "blurb": {
+  "ko": "러시아 공화국과 소련의 재무인민위원·재무장관, 국가은행 이사회 의장, 대외무역인민위원·대외무역장관.",
+  "en": "People's Commissars and Ministers of Finance of the RSFSR and the USSR, chairmen of the State Bank, and People's Commissars and Ministers of Foreign Trade."
+ },
+ "range": "1917–1991",
+ "tracks": [
+  {
+   "id": "finance",
+   "title": {
+    "ko": "재무인민위원·재무장관",
+    "en": "People's Commissar / Minister of Finance"
+   },
+   "blurb": {
+    "ko": "1923년 7월까지는 러시아 공화국 재무인민위원, 그 뒤로는 소련 재무인민위원과 1946년 3월부터의 재무장관이다.",
+    "en": "People's Commissars of Finance of the RSFSR until July 1923, then of the USSR, and Ministers of Finance from March 1946."
+   }
+  },
+  {
+   "id": "gosbank",
+   "title": {
+    "ko": "국가은행 이사회 의장",
+    "en": "Chairman of the State Bank"
+   },
+   "blurb": {
+    "ko": "1921년 10월 러시아 공화국 국가은행으로 출범해 1923년 소련 국가은행(고스방크)이 된 중앙은행의 이사회 의장.",
+    "en": "Chairmen of the Board of the central bank, founded as the State Bank of the RSFSR in October 1921 and turned into the State Bank of the USSR (Gosbank) in 1923."
+   }
+  },
+  {
+   "id": "foreign-trade",
+   "title": {
+    "ko": "대외무역인민위원·대외무역장관",
+    "en": "People's Commissar / Minister of Foreign Trade"
+   },
+   "blurb": {
+    "ko": "1925년 11월부터 1930년 11월까지와 1953년 3~8월에는 대외무역이 국내무역과 한 부처로 묶였고, 1988년 1월 대외무역부는 대외경제관계부로 통합됐다.",
+    "en": "Foreign trade shared a single commissariat or ministry with domestic trade from November 1925 to November 1930 and from March to August 1953; in January 1988 the Ministry of Foreign Trade was merged into the Ministry of Foreign Economic Relations."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "finance",
+   "personId": "skvortsov-stepanov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     11,
+     9
+    ],
+    "end": [
+     1917,
+     11,
+     12
+    ]
+   },
+   "note": {
+    "ko": "취임 거부",
+    "en": "declined the post"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "menzhinsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     11,
+     12
+    ],
+    "end": [
+     1918,
+     2,
+     2
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "menzhinsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     2,
+     2
+    ],
+    "end": [
+     1918,
+     3,
+     21
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Менжинский,_Вячеслав_Рудольфович"
+  },
+  {
+   "track": "finance",
+   "personId": null,
+   "name": {
+    "ko": "이시도르 구콥스키",
+    "en": "Isidor Gukovsky"
+   },
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     3,
+     21
+    ],
+    "end": [
+     1918,
+     8,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Гуковский,_Исидор_Эммануилович"
+  },
+  {
+   "track": "finance",
+   "personId": "krestinsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     8,
+     16
+    ],
+    "end": [
+     1922,
+     4,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "sokolnikov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1922,
+     4,
+     7
+    ],
+    "end": [
+     1922,
+     11,
+     22
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "sokolnikov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1922,
+     11,
+     22
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "sokolnikov",
+   "post": {
+    "ko": "소련 재무인민위원",
+    "en": "People's Commissar of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1926,
+     1,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "nikolai-bryukhanov",
+   "post": {
+    "ko": "소련 재무인민위원",
+    "en": "People's Commissar of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     1,
+     16
+    ],
+    "end": [
+     1926,
+     1,
+     29
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "nikolai-bryukhanov",
+   "post": {
+    "ko": "소련 재무인민위원",
+    "en": "People's Commissar of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     1,
+     29
+    ],
+    "end": [
+     1930,
+     10,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "grigory-grinko",
+   "post": {
+    "ko": "소련 재무인민위원",
+    "en": "People's Commissar of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1930,
+     10,
+     18
+    ],
+    "end": [
+     1937,
+     8,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "vlas-chubar",
+   "post": {
+    "ko": "소련 재무인민위원",
+    "en": "People's Commissar of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     8,
+     16
+    ],
+    "end": [
+     1938,
+     1,
+     19
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "zverev",
+   "post": {
+    "ko": "소련 재무인민위원",
+    "en": "People's Commissar of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     1,
+     19
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+  },
+  {
+   "track": "finance",
+   "personId": "zverev",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1948,
+     2,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": "kosygin",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1948,
+     2,
+     16
+    ],
+    "end": [
+     1948,
+     12,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": "zverev",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1948,
+     12,
+     28
+    ],
+    "end": [
+     1960,
+     5,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": "garbuzov",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1960,
+     5,
+     16
+    ],
+    "end": [
+     1985,
+     11,
+     12
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": "viktor-dementsev",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1985,
+     11,
+     12
+    ],
+    "end": [
+     1985,
+     12,
+     13
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": "boris-gostev",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1985,
+     12,
+     13
+    ],
+    "end": [
+     1989,
+     6,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": "pavlov",
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1989,
+     7,
+     17
+    ],
+    "end": [
+     1991,
+     1,
+     14
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": null,
+   "name": {
+    "ko": "블라디미르 오를로프",
+    "en": "Vladimir Orlov"
+   },
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     3,
+     7
+    ],
+    "end": [
+     1991,
+     8,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "finance",
+   "personId": null,
+   "name": {
+    "ko": "블라디미르 라옙스키",
+    "en": "Vladimir Raevsky"
+   },
+   "post": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     28
+    ],
+    "end": [
+     1992,
+     2,
+     4
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+  },
+  {
+   "track": "gosbank",
+   "personId": "aron-sheinman",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1921,
+     10,
+     13
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Шейнман,_Арон_Львович"
+  },
+  {
+   "track": "gosbank",
+   "personId": "aron-sheinman",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1924,
+     3,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Шейнман,_Арон_Львович"
+  },
+  {
+   "track": "gosbank",
+   "personId": null,
+   "name": {
+    "ko": "니콜라이 투마노프",
+    "en": "Nikolai Tumanov"
+   },
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1924,
+     3,
+     5
+    ],
+    "end": [
+     1926,
+     1,
+     16
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "aron-sheinman",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     1,
+     16
+    ],
+    "end": [
+     1929,
+     4,
+     19
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "yuri-pyatakov",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1929,
+     4,
+     19
+    ],
+    "end": [
+     1930,
+     10,
+     18
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "moisei-kalmanovich",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1930,
+     10,
+     18
+    ],
+    "end": [
+     1934,
+     4,
+     4
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "lev-maryasin",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1934,
+     4,
+     4
+    ],
+    "end": [
+     1936,
+     7,
+     14
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": null,
+   "name": {
+    "ko": "솔로몬 크루글리코프",
+    "en": "Solomon Kruglikov"
+   },
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1936,
+     7,
+     14
+    ],
+    "end": [
+     1937,
+     9,
+     15
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": null,
+   "name": {
+    "ko": "알렉세이 그리치마노프",
+    "en": "Alexei Grichmanov"
+   },
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     9,
+     15
+    ],
+    "end": [
+     1938,
+     7,
+     16
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "bulganin",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     10,
+     2
+    ],
+    "end": [
+     1940,
+     4,
+     17
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": null,
+   "name": {
+    "ko": "니콜라이 소콜로프",
+    "en": "Nikolai Sokolov"
+   },
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1940,
+     4,
+     17
+    ],
+    "end": [
+     1940,
+     10,
+     12
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "bulganin",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1940,
+     10,
+     12
+    ],
+    "end": [
+     1945,
+     5,
+     23
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "yakov-golev",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1945,
+     5,
+     23
+    ],
+    "end": [
+     1948,
+     3,
+     23
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "vasily-popov",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1948,
+     3,
+     23
+    ],
+    "end": [
+     1958,
+     3,
+     31
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "bulganin",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1958,
+     3,
+     31
+    ],
+    "end": [
+     1958,
+     8,
+     15
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "aleksandr-korovushkin",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1958,
+     8,
+     15
+    ],
+    "end": [
+     1963,
+     8,
+     14
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "alexei-poskonov",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1963,
+     8,
+     14
+    ],
+    "end": [
+     1969,
+     3,
+     13
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Посконов,_Алексей_Андреевич"
+  },
+  {
+   "track": "gosbank",
+   "personId": "mefody-sveshnikov",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1969,
+     9,
+     4
+    ],
+    "end": [
+     1976,
+     10,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Свешников,_Мефодий_Наумович"
+  },
+  {
+   "track": "gosbank",
+   "personId": "alkhimov",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1976,
+     10,
+     11
+    ],
+    "end": [
+     1986,
+     1,
+     10
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "viktor-dementsev",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1986,
+     1,
+     10
+    ],
+    "end": [
+     1987,
+     8,
+     22
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": null,
+   "name": {
+    "ko": "니콜라이 가레톱스키",
+    "en": "Nikolai Garetovsky"
+   },
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1987,
+     8,
+     22
+    ],
+    "end": [
+     1989,
+     6,
+     7
+    ]
+   },
+   "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+  },
+  {
+   "track": "gosbank",
+   "personId": "gerashchenko",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1989,
+     8,
+     3
+    ],
+    "end": [
+     1991,
+     8,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Геращенко,_Виктор_Владимирович"
+  },
+  {
+   "track": "gosbank",
+   "personId": null,
+   "name": {
+    "ko": "안드레이 즈베레프",
+    "en": "Andrei Zverev"
+   },
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     26
+    ],
+    "end": [
+     1991,
+     8,
+     28
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Зверев,_Андрей_Викторович"
+  },
+  {
+   "track": "gosbank",
+   "personId": "gerashchenko",
+   "post": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     28
+    ],
+    "end": [
+     1991,
+     12,
+     26
+    ]
+   },
+   "note": {
+    "ko": "복귀",
+    "en": "reinstated"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Геращенко,_Виктор_Владимирович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "leonid-krasin",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 대외무역인민위원",
+    "en": "People's Commissar of Foreign Trade of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1920,
+     6,
+     11
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "leonid-krasin",
+   "post": {
+    "ko": "소련 대외무역인민위원",
+    "en": "People's Commissar of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1925,
+     11,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "alexander-tsyurupa",
+   "post": {
+    "ko": "소련 대외·국내무역인민위원",
+    "en": "People's Commissar of Foreign and Domestic Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1925,
+     11,
+     18
+    ],
+    "end": [
+     1926,
+     1,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "kamenev",
+   "post": {
+    "ko": "소련 대외·국내무역인민위원",
+    "en": "People's Commissar of Foreign and Domestic Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     1,
+     16
+    ],
+    "end": [
+     1926,
+     8,
+     14
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "mikoyan",
+   "post": {
+    "ko": "소련 대외·국내무역인민위원",
+    "en": "People's Commissar of Foreign and Domestic Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     8,
+     14
+    ],
+    "end": [
+     1930,
+     11,
+     22
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "arkady-rozengolts",
+   "post": {
+    "ko": "소련 대외무역인민위원",
+    "en": "People's Commissar of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1930,
+     11,
+     22
+    ],
+    "end": [
+     1937,
+     6,
+     14
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Розенгольц,_Аркадий_Павлович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": null,
+   "name": {
+    "ko": "예브게니 치뱔레프",
+    "en": "Yevgeny Chvyalev"
+   },
+   "post": {
+    "ko": "소련 대외무역인민위원",
+    "en": "People's Commissar of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     1,
+     19
+    ],
+    "end": [
+     1938,
+     11,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Чвялев,_Евгений_Денисович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "mikoyan",
+   "post": {
+    "ko": "소련 대외무역인민위원",
+    "en": "People's Commissar of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     11,
+     29
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Чвялев,_Евгений_Денисович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "mikoyan",
+   "post": {
+    "ko": "소련 대외무역장관",
+    "en": "Minister of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1949,
+     3,
+     4
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Микоян,_Анастас_Иванович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "mikhail-menshikov",
+   "post": {
+    "ko": "소련 대외무역장관",
+    "en": "Minister of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1949,
+     3,
+     4
+    ],
+    "end": [
+     1951,
+     11,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Меньшиков,_Михаил_Алексеевич"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": null,
+   "name": {
+    "ko": "파벨 쿠미킨",
+    "en": "Pavel Kumykin"
+   },
+   "post": {
+    "ko": "소련 대외무역장관",
+    "en": "Minister of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1951,
+     11,
+     6
+    ],
+    "end": [
+     1953,
+     3,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Кумыкин,_Павел_Николаевич"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "mikoyan",
+   "post": {
+    "ko": "소련 국내·대외무역장관",
+    "en": "Minister of Internal and Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     8,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "ivan-kabanov",
+   "post": {
+    "ko": "소련 대외무역장관",
+    "en": "Minister of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     8,
+     24
+    ],
+    "end": [
+     1958,
+     8,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Кабанов,_Иван_Григорьевич"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "nikolai-patolichev",
+   "post": {
+    "ko": "소련 대외무역장관",
+    "en": "Minister of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1958,
+     8,
+     26
+    ],
+    "end": [
+     1985,
+     10,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Патоличев,_Николай_Семёнович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "boris-aristov",
+   "post": {
+    "ko": "소련 대외무역장관",
+    "en": "Minister of Foreign Trade of the USSR"
+   },
+   "period": {
+    "start": [
+     1985,
+     10,
+     18
+    ],
+    "end": [
+     1988,
+     1,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Аристов,_Борис_Иванович"
+  },
+  {
+   "track": "foreign-trade",
+   "personId": "katushev",
+   "post": {
+    "ko": "소련 대외경제관계장관",
+    "en": "Minister of Foreign Economic Relations of the USSR"
+   },
+   "period": {
+    "start": [
+     1988,
+     1,
+     15
+    ],
+    "end": [
+     1991,
+     12,
+     1
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Катушев,_Константин_Фёдорович"
+  }
+ ]
+}

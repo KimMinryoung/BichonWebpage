@@ -1,0 +1,470 @@
+{
+ "officeId": "heavy-military-industry",
+ "title": {
+  "ko": "중공업 · 군수공업",
+  "en": "Heavy industry and military industry"
+ },
+ "blurb": {
+  "ko": "최고국민경제회의 의장, 중공업인민위원, 국방공업인민위원, 각료회의 군수공업위원회 의장.",
+  "en": "Chairmen of the Supreme Council of the National Economy (VSNKh), People's Commissars of Heavy Industry and of Defence Industry, and chairmen of the Council of Ministers' Military-Industrial Commission."
+ },
+ "range": "1917–1991",
+ "tracks": [
+  {
+   "id": "vsnkh",
+   "title": {
+    "ko": "최고국민경제회의 의장",
+    "en": "Chairman of the VSNKh"
+   },
+   "blurb": {
+    "ko": "1923년 7월까지는 러시아 공화국 최고국민경제회의, 그 뒤로는 소련 최고국민경제회의의 의장이다. 1932년 1월 중공업·경공업·임업 인민위원부로 나뉘며 폐지됐다.",
+    "en": "Chairmen of the VSNKh of the RSFSR until July 1923, then of the VSNKh of the USSR, which was abolished in January 1932 when it was split into the commissariats of heavy, light and timber industry."
+   }
+  },
+  {
+   "id": "heavy-industry",
+   "title": {
+    "ko": "중공업인민위원",
+    "en": "People's Commissar of Heavy Industry"
+   },
+   "blurb": {
+    "ko": "최고국민경제회의를 이어받은 중공업인민위원부는 1939년 1월 여러 업종별 인민위원부로 쪼개지며 없어졌다.",
+    "en": "The People's Commissariat of Heavy Industry, heir to the VSNKh, ceased to exist in January 1939 when it was broken up into several branch commissariats."
+   }
+  },
+  {
+   "id": "defence-industry",
+   "title": {
+    "ko": "국방공업인민위원",
+    "en": "People's Commissar of Defence Industry"
+   },
+   "blurb": {
+    "ko": "1936년 12월 중공업인민위원부에서 떨어져 나와 1939년 1월 항공·조선·탄약·무기 인민위원부로 나뉘었다.",
+    "en": "Split off from the heavy-industry commissariat in December 1936 and divided in January 1939 into the commissariats of aviation, shipbuilding, ammunition and armament."
+   }
+  },
+  {
+   "id": "vpk",
+   "title": {
+    "ko": "군수공업위원회 의장",
+    "en": "Chairman of the Military-Industrial Commission (VPK)"
+   },
+   "blurb": {
+    "ko": "1957년 12월 각료회의 간부회 산하에 세워져 1985년 각료회의 국가위원회, 1991년 내각 국가군수공업위원회가 됐다. 의장은 각료회의 부의장을 겸했다.",
+    "en": "Set up under the Presidium of the Council of Ministers in December 1957, it became a State Commission of the Council of Ministers in 1985 and the State Military-Industrial Commission of the Cabinet of Ministers in 1991; its chairman was also a deputy chairman of the government."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "vsnkh",
+   "personId": "osinsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     12,
+     15
+    ],
+    "end": [
+     1918,
+     3,
+     23
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Оболенский,_Валериан_Валерианович"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "vladimir-milyutin",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     3,
+     23
+    ],
+    "end": [
+     1918,
+     4,
+     3
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "rykov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     4,
+     4
+    ],
+    "end": [
+     1921,
+     5,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "pyotr-bogdanov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1921,
+     5,
+     26
+    ],
+    "end": [
+     1923,
+     5,
+     9
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "rykov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     5,
+     9
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "rykov",
+   "post": {
+    "ko": "소련 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1924,
+     2,
+     2
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "dzerzhinsky",
+   "post": {
+    "ko": "소련 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the USSR"
+   },
+   "period": {
+    "start": [
+     1924,
+     2,
+     2
+    ],
+    "end": [
+     1926,
+     7,
+     20
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "kuibyshev",
+   "post": {
+    "ko": "소련 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     8,
+     5
+    ],
+    "end": [
+     1930,
+     11,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+  },
+  {
+   "track": "vsnkh",
+   "personId": "ordzhonikidze",
+   "post": {
+    "ko": "소련 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the USSR"
+   },
+   "period": {
+    "start": [
+     1930,
+     11,
+     10
+    ],
+    "end": [
+     1932,
+     1,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+  },
+  {
+   "track": "heavy-industry",
+   "personId": "ordzhonikidze",
+   "post": {
+    "ko": "소련 중공업인민위원",
+    "en": "People's Commissar of Heavy Industry of the USSR"
+   },
+   "period": {
+    "start": [
+     1932,
+     1,
+     5
+    ],
+    "end": [
+     1937,
+     2,
+     18
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР"
+  },
+  {
+   "track": "heavy-industry",
+   "personId": "mezhlauk",
+   "post": {
+    "ko": "소련 중공업인민위원",
+    "en": "People's Commissar of Heavy Industry of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     2,
+     25
+    ],
+    "end": [
+     1937,
+     8,
+     22
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР"
+  },
+  {
+   "track": "heavy-industry",
+   "personId": "kaganovich",
+   "post": {
+    "ko": "소련 중공업인민위원",
+    "en": "People's Commissar of Heavy Industry of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     8,
+     22
+    ],
+    "end": [
+     1939,
+     1,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР"
+  },
+  {
+   "track": "defence-industry",
+   "personId": "moisei-rukhimovich",
+   "post": {
+    "ko": "소련 국방공업인민위원",
+    "en": "People's Commissar of Defence Industry of the USSR"
+   },
+   "period": {
+    "start": [
+     1936,
+     12,
+     8
+    ],
+    "end": [
+     1937,
+     10,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_оборонной_промышленности_СССР"
+  },
+  {
+   "track": "defence-industry",
+   "personId": "mikhail-kaganovich",
+   "post": {
+    "ko": "소련 국방공업인민위원",
+    "en": "People's Commissar of Defence Industry of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     10,
+     15
+    ],
+    "end": [
+     1939,
+     1,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_оборонной_промышленности_СССР"
+  },
+  {
+   "track": "vpk",
+   "personId": "ustinov",
+   "post": {
+    "ko": "소련 각료회의 간부회 군수공업위원회 의장",
+    "en": "Chairman of the Commission of the Presidium of the Council of Ministers of the USSR for Military-Industrial Questions"
+   },
+   "period": {
+    "start": [
+     1957,
+     12,
+     14
+    ],
+    "end": [
+     1963,
+     3,
+     13
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Устинов,_Дмитрий_Фёдорович"
+  },
+  {
+   "track": "vpk",
+   "personId": "leonid-smirnov",
+   "post": {
+    "ko": "소련 각료회의 간부회 군수공업위원회 의장",
+    "en": "Chairman of the Commission of the Presidium of the Council of Ministers of the USSR for Military-Industrial Questions"
+   },
+   "period": {
+    "start": [
+     1963,
+     3,
+     13
+    ],
+    "end": [
+     1985,
+     11,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Смирнов,_Леонид_Васильевич"
+  },
+  {
+   "track": "vpk",
+   "personId": "maslyukov",
+   "post": {
+    "ko": "소련 각료회의 군수공업 국가위원회 의장",
+    "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Military-Industrial Questions"
+   },
+   "period": {
+    "start": [
+     1985,
+     11
+    ],
+    "end": [
+     1988,
+     2,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Маслюков,_Юрий_Дмитриевич"
+  },
+  {
+   "track": "vpk",
+   "personId": "igor-belousov",
+   "post": {
+    "ko": "소련 각료회의 군수공업 국가위원회 의장",
+    "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Military-Industrial Questions"
+   },
+   "period": {
+    "start": [
+     1988,
+     2,
+     12
+    ],
+    "end": [
+     1990,
+     12,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Белоусов,_Игорь_Сергеевич"
+  },
+  {
+   "track": "vpk",
+   "personId": "maslyukov",
+   "post": {
+    "ko": "소련 내각 국가군수공업위원회 의장",
+    "en": "Chairman of the State Military-Industrial Commission of the Cabinet of Ministers of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     1,
+     15
+    ],
+    "end": [
+     1991,
+     8,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Маслюков,_Юрий_Дмитриевич"
+  }
+ ]
+}
