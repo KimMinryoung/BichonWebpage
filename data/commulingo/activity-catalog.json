@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 24,
   "functions": [
     {
       "id": "political-leadership",
@@ -6550,6 +6550,81 @@
         [
           1991,
           null
+        ]
+      ]
+    },
+    {
+      "id": "french-croix-de-feu",
+      "kind": "force",
+      "label": {
+        "ko": "불의 십자단",
+        "en": "Croix-de-Feu"
+      },
+      "countryCode": "france",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Croix-de-Feu. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1927,
+          1936
+        ]
+      ]
+    },
+    {
+      "id": "french-jeunesses-patriotes",
+      "kind": "force",
+      "label": {
+        "ko": "청년애국단",
+        "en": "Jeunesses Patriotes"
+      },
+      "countryCode": "france",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Jeunesses Patriotes. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1924,
+          1936
+        ]
+      ]
+    },
+    {
+      "id": "french-solidarite-francaise",
+      "kind": "force",
+      "label": {
+        "ko": "연대 프랑스",
+        "en": "Solidarité Française"
+      },
+      "countryCode": "france",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in Solidarité Française. Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1933,
+          1936
+        ]
+      ]
+    },
+    {
+      "id": "party-french-ppf",
+      "kind": "party",
+      "label": {
+        "ko": "프랑스인민당",
+        "en": "French Popular Party (PPF)"
+      },
+      "termIds": [
+        "french-popular-party"
+      ],
+      "countryCode": "france",
+      "icon": "flag",
+      "parentId": null,
+      "criteria": "Only documented service, membership or organizational activity in French Popular Party (PPF). Never infer affiliation from nationality, residence or ideology.",
+      "periods": [
+        [
+          1936,
+          1945
         ]
       ]
     }

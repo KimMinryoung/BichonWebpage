@@ -1,0 +1,96 @@
+{
+  "id": "party-terms-a-20261006",
+  "terms": [
+    {
+      "id": "french-popular-party",
+      "affiliationId": "party-french-ppf",
+      "sources": [
+        "https://en.wikipedia.org/wiki/French_Popular_Party",
+        "https://en.wikipedia.org/wiki/Jacques_Doriot",
+        "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise"
+      ],
+      "fields": {
+        "term": {
+          "ko": "프랑스인민당",
+          "en": "French Popular Party"
+        },
+        "original": "Parti populaire français (PPF)",
+        "category": "parties",
+        "period": {
+          "ko": "1936–1945",
+          "en": "1936–1945"
+        },
+        "startYear": 1936,
+        "definition": {
+          "ko": "프랑스공산당에서 제명된 자크 도리오가 1936년 6월 28일 생드니에서 세운 파시즘·반유대주의 정당. 인민전선에 맞서 옛 공산당원과 해산된 극우 동맹의 회원들을 모았고, 독일 점령기에는 나치 독일과의 군사적 협력을 가장 앞장서 주장해 프랑스에서 가장 대독 협력적인 정당으로 꼽힌다. 1945년 2월 도리오가 죽은 뒤 사라졌다.",
+          "en": "A fascist and antisemitic party founded at Saint-Denis on 28 June 1936 by Jacques Doriot after his expulsion from the French Communist Party. Opposing the Popular Front, it gathered former Communists and members of the dissolved far-right leagues; under the German occupation it pressed hardest for military collaboration with Nazi Germany and is generally regarded as the most collaborationist party in France. It did not survive Doriot's death in February 1945."
+        },
+        "body": {
+          "ko": "당은 도리오와 앙리 바르베, 폴 마리옹 등 인민전선에 반대해 민족주의로 돌아선 옛 공산당원들이 만들었다. 처음에는 도리오가 1930년부터 1934년까지 공산당 시장을 지낸 생드니의 노동자층을 기반으로 했고, 악시옹 프랑세즈·청년애국단·불의 십자단·연대 프랑스의 회원들을 끌어들였다. 1936년 이들 동맹이 인민전선 정부에 해산되자 연대 프랑스의 회원 다수가 이 당으로 옮겨 왔다. 지도부는 공산당 시절의 「정치국」이라는 이름을 그대로 썼지만, 당은 마르크스주의를 격렬히 적대했고 준군사 조직 질서유지대가 공산당 지지자들을 폭행했다.\n\n1937년 도리오가 생드니 시장 선거에서 지면서 노동자 기반을 잃자 당은 코포라티즘 쪽으로 기울었고, 보름스 은행 같은 재계와 무솔리니의 이탈리아로부터 자금을 받아 《라 리베르테》 등 신문을 사들였다. 처음에는 반유대주의에 모호한 태도였으나 1938년부터 당의 선전물은 「유대·프리메이슨·볼셰비키」 음모론으로 채워졌다.\n\n1940년 패전 뒤 당은 독일의 지원을 받아 활동을 넓혔고, 페탱 정부가 너무 온건하다고 비판하며 동부전선 파병과 나치식 인종 정책을 요구했다. 1941년 도리오는 당원들에게 반볼셰비키 프랑스의용군단(LVF)에 들어가라고 촉구했고, 당원들은 게슈타포와 민병대를 도와 유대인을 검거해 수용소로 보내는 데 가담했다. 1944년 도리오는 독일로 옮겨 지크마링겐의 비시 망명 정부와 주도권을 다투었으나, 1945년 2월 22일 연합군 항공기의 기총소사로 죽었고 당은 그와 함께 끝났다.",
+          "en": "The party was founded by Doriot together with Henri Barbé, Paul Marion and other former Communists who had turned to nationalism in opposition to the Popular Front. It rested at first on the working-class population of Saint-Denis, where Doriot had been the Communist mayor from 1930 to 1934, and it drew in members of Action Française, the Jeunesses Patriotes, the Croix-de-Feu and Solidarité Française; when the Popular Front government dissolved those leagues in 1936, many members of Solidarité Française came over to it. Its leadership kept the Communist name Politburo, yet the party was violently anti-Marxist, and its paramilitary Service d'Ordre beat Communist supporters.\n\nWhen Doriot lost the Saint-Denis mayoral election in 1937 and with it his working-class base, the party moved towards corporatism and took money from French business, including the Banque Worms, and from Mussolini's Italy, buying newspapers such as La Liberté. Ambiguous about antisemitism at first, by 1938 its literature was full of the 'Judeo-masonic-bolshevik' conspiracy.\n\nAfter the defeat of 1940 the party grew with German support, criticising Pétain's regime as too moderate and calling for troops on the Russian front and for racial policies modelled on Nazi Germany's. In 1941 Doriot urged members to join the Legion of French Volunteers against Bolshevism (LVF), and PPF members helped the Gestapo and the Milice round up Jews for deportation. In 1944 Doriot moved to Germany and competed with the Vichy exiles at Sigmaringen for leadership, but he was killed by Allied strafing on 22 February 1945 and the party ended with him."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Parti populaire français",
+            "PPF"
+          ]
+        },
+        "people": [
+          "jacques-doriot"
+        ],
+        "events": [],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "Fascist and antisemitic party led by Doriot, regarded as the most collaborationist party of France; formed 28 June 1936.",
+            "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+            "locator": "en: lead; Formation and early years"
+          },
+          {
+            "field": "definition",
+            "claim": "Doriot founded the PPF in 1936 after his exclusion from the French Communist Party.",
+            "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "Founded with Barbé and Marion; Saint-Denis working-class base; drew members of Action Française, Jeunesses Patriotes, Croix de Feu and Solidarité Française; Politburo name; Service d'Ordre violence.",
+            "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+            "locator": "en: Formation and early years"
+          },
+          {
+            "field": "body",
+            "claim": "Solidarité Française was dissolved by the Popular Front government in June 1936 and many of its members joined Doriot's PPF.",
+            "source": "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise",
+            "locator": "en: lead"
+          },
+          {
+            "field": "body",
+            "claim": "1937 loss of Saint-Denis, corporatism, Banque Worms and Italian funds, La Liberté; antisemitic conspiracy literature by 1938.",
+            "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+            "locator": "en: Formation and early years; Ideology and fascism of PPF"
+          },
+          {
+            "field": "body",
+            "claim": "Wartime German support, criticism of Pétain, LVF, participation in round-ups with the Gestapo and Milice; Sigmaringen; Doriot killed 22 February 1945 and the party did not survive.",
+            "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+            "locator": "en: The PPF during the war; The PPF and the home front; Collaboration"
+          },
+          {
+            "field": "period",
+            "claim": "Formed 1936; did not survive Doriot's death in February 1945.",
+            "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+            "locator": "en: Formation and early years; Collaboration"
+          },
+          {
+            "field": "startYear",
+            "claim": "Formed on 28 June 1936.",
+            "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+            "locator": "en: Formation and early years"
+          }
+        ]
+      }
+    }
+  ]
+}
