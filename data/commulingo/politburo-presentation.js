@@ -88,6 +88,7 @@ function buildRoster(data, names, lang, bodyId) {
         title: localize(era.title, lang),
         period: era.period,
         intro: localize(era.intro, lang),
+        count: era.list.length,
         rows: era.list.map(key => {
             const member = data.members[key];
             const noteParts = [];
@@ -137,7 +138,58 @@ function buildRoster(data, names, lang, bodyId) {
             electedCandidates: elected.candidates,
         };
     });
-    return { eras, congresses };
+    return { eras, congresses, timeline: buildTimeline(data, names, lang, bodyId) };
+}
+
+// The tenure chart: one row per member, a bar per stint on a shared year axis.
+// Positions are percentages of the body's range, so the chart is plain HTML
+// that scales with its container. "YYYY.MM" months become fractional years;
+// a stint's end month is included.
+function monthValue(text, endOfMonth) {
+    const [year, month] = String(text).split('.').map(Number);
+    if (!year) return null;
+    return year + ((month || 1) - 1) / 12 + (endOfMonth ? 1 / 12 : 0);
+}
+
+function buildTimeline(data, names, lang, bodyId) {
+    const rows = [];
+    let min = Infinity, max = -Infinity;
+    for (const [key, member] of Object.entries(data.members)) {
+        const stints = (member.spans || []).filter(span => span.f).map(span => ({
+            kind: span.k === 'cand' ? 'cand' : 'full',
+            from: monthValue(span.f, false),
+            to: span.t ? monthValue(span.t, true) : null,
+            label: spanParts([span], lang, bodyId)[0],
+        }));
+        if (!stints.length) continue;
+        stints.forEach(stint => {
+            min = Math.min(min, stint.from);
+            max = Math.max(max, stint.to || stint.from);
+        });
+        rows.push({ ...personCell(key, member, names, lang), stints, first: stints[0].from });
+    }
+    const start = Math.floor(min);
+    const end = Math.ceil(max);
+    const span = end - start || 1;
+    const pct = value => Math.round(((value - start) / span) * 10000) / 100;
+    const step = span > 40 ? 10 : 5;
+    const ticks = [];
+    for (let year = Math.ceil(start / step) * step; year <= end; year += step) ticks.push({ year, left: pct(year) });
+    rows.sort((a, b) => a.first - b.first || a.name.localeCompare(b.name, lang === 'en' ? 'en' : 'ko'));
+    return {
+        start,
+        end,
+        ticks,
+        rows: rows.map(row => ({
+            name: row.name,
+            href: row.href,
+            bars: row.stints.map(stint => {
+                const left = pct(stint.from);
+                const right = pct(stint.to == null ? end : stint.to);
+                return { kind: stint.kind, label: `${row.name} · ${stint.label}`, left, width: Math.max(right - left, 0.4) };
+            }),
+        })),
+    };
 }
 
 module.exports = { rosterFor };

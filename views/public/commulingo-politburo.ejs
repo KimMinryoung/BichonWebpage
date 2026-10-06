@@ -11,44 +11,91 @@
                 { label: body.title }
             ],
             dictJump: 'people' }) %>
-        <header class="commu-politburo-head">
-            <h1><%= body.title %></h1>
-            <p class="commu-politburo-range"><%= body.range %></p>
-            <p class="commu-politburo-intro"><%= intro %></p>
+        <header class="commu-hub-head commu-role-hub-head commu-politburo-head">
+            <span class="commu-person-medal" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
+            <div>
+                <span class="commu-office-range"><%= body.range %></span>
+                <h1><%= body.title %></h1>
+                <p class="commu-politburo-intro"><%= intro %></p>
+            </div>
         </header>
 
-        <% eras.forEach(function(era) { %>
-        <details class="commu-politburo-era" id="<%= era.id %>">
-            <summary>
-                <h2 id="era-<%= era.id %>"><%= era.title %> <span class="commu-politburo-period"><%= era.period %></span></h2>
-            </summary>
-            <p class="commu-politburo-era-intro"><%= era.intro %></p>
-            <div class="commu-politburo-scroll">
-                <table class="commu-politburo-table">
-                    <thead>
-                        <tr>
-                            <th scope="col"><%= strings.commuLingoViews.politburo.person %></th>
-                            <th scope="col"><%= strings.commuLingoViews.politburo.tenure %></th>
-                            <th scope="col"><%= strings.commuLingoViews.politburo.notes %></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% era.rows.forEach(function(row) { %>
-                        <tr>
-                            <td><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><span class="commu-politburo-unlinked"><%= row.name %></span><% } %></td>
-                            <td><% row.tenureParts.forEach(function(part) { %><span class="commu-politburo-stint"><%= part %></span><% }) %></td>
-                            <td><%= row.note %></td>
-                        </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
+        <% var hasCand = timeline.rows.some(function(row) { return row.bars.some(function(bar) { return bar.kind === 'cand'; }); }); %>
+        <section class="commu-politburo-section" aria-labelledby="tenure-chart-title">
+            <div class="commu-tenure-headline">
+                <h2 id="tenure-chart-title"><%= en ? 'Tenure chart' : '재임 연표' %> <span class="commu-politburo-period"><%= timeline.rows.length %><%= en ? ' people' : '명' %></span></h2>
+                <ul class="commu-tenure-legend">
+                    <li><span class="commu-tenure-swatch is-full" aria-hidden="true"></span><%= body.spans.full %></li>
+                    <% if (hasCand) { %><li><span class="commu-tenure-swatch is-cand" aria-hidden="true"></span><%= body.spans.cand %></li><% } %>
+                </ul>
             </div>
-        </details>
-        <% }) %>
+            <div class="commu-tenure-scroll">
+                <div class="commu-tenure-chart" role="img" aria-label="<%= en ? 'Tenure of each member as bars on a year axis; the tables below list the same dates.' : '구성원별 재임 기간을 연도 축 위의 막대로 그린 그림. 같은 날짜가 아래 표에 있다.' %>">
+                    <svg class="commu-tenure-defs" aria-hidden="true" focusable="false">
+                        <defs>
+                            <pattern id="commu-tenure-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                                <rect class="commu-tenure-hatch-bg" width="6" height="6"></rect>
+                                <rect class="commu-tenure-hatch-line" width="3" height="6"></rect>
+                            </pattern>
+                        </defs>
+                    </svg>
+                    <div class="commu-tenure-axis" aria-hidden="true">
+                        <span class="commu-tenure-name"></span>
+                        <svg class="commu-tenure-track" focusable="false">
+                            <% timeline.ticks.forEach(function(tick) { %><text class="commu-tenure-tick" x="<%= tick.left %>%" y="17" text-anchor="<%= tick.left < 4 ? 'start' : tick.left > 96 ? 'end' : 'middle' %>"><%= tick.year %></text><% }) %>
+                        </svg>
+                    </div>
+                    <% timeline.rows.forEach(function(row) { %>
+                    <div class="commu-tenure-row">
+                        <span class="commu-tenure-name"><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><%= row.name %><% } %></span>
+                        <svg class="commu-tenure-track" focusable="false">
+                            <% timeline.ticks.forEach(function(tick) { %><line class="commu-tenure-grid" x1="<%= tick.left %>%" x2="<%= tick.left %>%" y1="0" y2="100%"></line><% }) %>
+                            <% row.bars.forEach(function(bar) { %><rect class="commu-tenure-bar is-<%= bar.kind %>" x="<%= bar.left %>%" width="<%= bar.width %>%" y="5" height="10" rx="2"><title><%= bar.label %></title></rect><% }) %>
+                        </svg>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
 
-        <section class="commu-politburo-congresses" aria-labelledby="politburo-congresses-title">
+        <section class="commu-politburo-section" aria-labelledby="eras-title">
+            <h2 id="eras-title"><%= en ? 'By era' : '시기별 구성' %></h2>
+            <% eras.forEach(function(era) { %>
+            <details class="commu-politburo-era" id="<%= era.id %>">
+                <summary>
+                    <span class="commu-politburo-era-title" id="era-<%= era.id %>"><%= era.title %></span>
+                    <span class="commu-politburo-congress-meta"><%= era.period %> · <%= era.count %><%= en ? ' people' : '명' %></span>
+                    <span class="commu-politburo-preview"><%= era.rows.slice(0, 4).map(function(row) { return row.name; }).join(', ') %><%= era.rows.length > 4 ? (en ? ' …' : ' 외') : '' %></span>
+                </summary>
+                <p class="commu-politburo-era-intro"><%= era.intro %></p>
+                <div class="commu-politburo-scroll">
+                    <table class="commu-politburo-table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><%= strings.commuLingoViews.politburo.person %></th>
+                                <th scope="col"><%= strings.commuLingoViews.politburo.tenure %></th>
+                                <th scope="col"><%= strings.commuLingoViews.politburo.notes %></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% era.rows.forEach(function(row) { %>
+                            <tr>
+                                <td><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><span class="commu-politburo-unlinked"><%= row.name %></span><% } %></td>
+                                <td><% row.tenureParts.forEach(function(part) { %><span class="commu-politburo-stint"><%= part %></span><% }) %></td>
+                                <td><%= row.note %></td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </details>
+            <% }) %>
+        </section>
+
+        <section class="commu-politburo-section" aria-labelledby="politburo-congresses-title">
             <h2 id="politburo-congresses-title"><%= strings.commuLingoViews.politburo.compositionByPartyCongress %></h2>
             <% if (congressesIntro) { %><p class="commu-politburo-era-intro"><%= congressesIntro %></p><% } %>
+            <div class="commu-politburo-congress-grid">
             <% congresses.forEach(function(congress) { %>
             <details class="commu-politburo-congress" id="congress-<%= congress.n %>">
                 <summary>
@@ -82,6 +129,7 @@
                 <% }) %>
             </details>
             <% }) %>
+            </div>
         </section>
 
         <p class="commu-politburo-sources"><%= sources %></p>
