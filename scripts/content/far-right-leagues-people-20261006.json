@@ -1,0 +1,243 @@
+{
+  "people": [
+    {
+      "id": "francois-de-la-rocque",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fran%C3%A7ois_de_La_Rocque",
+        "https://fr.wikipedia.org/wiki/Parti_social_fran%C3%A7ais"
+      ],
+      "activities": [
+        {
+          "endYear": 1936,
+          "primary": true,
+          "evidence": [
+            {
+              "claim": "라 로크는 1929년 불의 십자단에 가입해 1930년 이를 장악하고 조직을 변혁하며 지도했다.",
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_de_La_Rocque",
+              "excerpt": "He then joined the Croix-de-Feu in 1929, two years after it had been formed, and took over it in 1930. He quickly transformed the veterans' league; created a paramilitary organisation",
+              "locator": "characters 1910:2093; sha256 8a3247f0ff443fccb721d37350fc54e35e858533fc7aaa7d1d093af25aca3096"
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_de_La_Rocque",
+              "locator": "en: lead",
+              "excerpt": "François de La Rocque (French: [fʁɑ̃swa dəlaʁɔk]; 6 October 1885 – 28 April 1946) was a French soldier and politician who was the leader of the French right-wing league the Croix de Feu from 1930 to 1936",
+              "claim": "라 로크는 1930년부터 1936년까지 우익 동맹 불의 십자단의 지도자였다."
+            }
+          ],
+          "relation": "service",
+          "startYear": 1930,
+          "functionId": "political-leadership",
+          "affiliationId": "french-croix-de-feu",
+          "affiliationStatus": "confirmed"
+        },
+        {
+          "endYear": 1940,
+          "primary": false,
+          "evidence": [
+            {
+              "claim": "라 로크는 크루아드푀 해산 뒤 1936년 7월 6일 프랑스 사회당을 창당했다.",
+              "source": "https://fr.wikipedia.org/wiki/Parti_social_fran%C3%A7ais",
+              "excerpt": "Le Parti social français (PSF) est un parti politique français de droite conservatrice à tendance nationaliste fondé le 6 juillet 1936 à la suite de la dissolution des Croix-de-Feu, par son chef le lieutenant-colonel François de La Rocque.",
+              "locator": "characters 0:239; sha256 c82252b521584b0498a8f78e6198ba978177db48e2230514b5ff2b9ab399d7c0"
+            },
+            {
+              "claim": "라 로크는 프랑스 사회당 의장이었다.",
+              "source": "https://fr.wikipedia.org/wiki/Parti_social_fran%C3%A7ais",
+              "excerpt": "François de La Rocque, président du PSF, résistant (réseau Klan), arrêté par la Gestapo en 1943 et déporté en Allemagne.",
+              "locator": "characters 37694:37814; sha256 c82252b521584b0498a8f78e6198ba978177db48e2230514b5ff2b9ab399d7c0"
+            }
+          ],
+          "relation": "membership",
+          "startYear": 1936,
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-psf",
+          "affiliationStatus": "confirmed"
+        }
+      ]
+    },
+    {
+      "id": "pierre-taittinger",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pierre_Taittinger",
+        "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+        "https://en.wikipedia.org/wiki/Jeunesses_Patriotes"
+      ],
+      "activities": [
+        {
+          "endYear": 1936,
+          "primary": true,
+          "evidence": [
+            {
+              "claim": "테탱제는 1924년 청년애국단을 창설했다.",
+              "source": "https://en.wikipedia.org/wiki/Pierre_Taittinger",
+              "excerpt": "In 1924, Taittinger founded the Jeunesses patriotes (Patriotic Youths), a fascist group, recruited mostly from university students and financed by industrialists.",
+              "locator": "characters 1995:2157; sha256 7e690d37144f77141048eb52f2bc97fdb473606125ad8220b9f72242e7158aa4"
+            },
+            {
+              "claim": "그가 창설한 청년애국단은 1920년대 말 극우 반공 운동의 주요 조직 중 하나가 되었다.",
+              "source": "https://en.wikipedia.org/wiki/Pierre_Taittinger",
+              "excerpt": "In the end of the 1920s, the Jeunesses patriotes became one of the far-right's major anti-Communist movements, challenging the Action française and the Croix de Feu under Colonel de Larocque.",
+              "locator": "characters 2372:2563; sha256 7e690d37144f77141048eb52f2bc97fdb473606125ad8220b9f72242e7158aa4"
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Jeunesses_Patriotes",
+              "locator": "en: lead",
+              "excerpt": "In 1936, the Popular Front government outlawed the Jeunesses Patriotes and other nationalist groups.",
+              "claim": "1936년 인민전선 정부가 청년애국단을 비롯한 민족주의 단체들을 금지했다."
+            }
+          ],
+          "relation": "service",
+          "startYear": 1924,
+          "functionId": "political-leadership",
+          "affiliationId": "french-jeunesses-patriotes",
+          "affiliationStatus": "confirmed"
+        },
+        {
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "claim": "테탱제는 우파 정당인 공화연맹 당원이었다.",
+              "source": "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+              "excerpt": "Il est membre d'un parti de droite, la Fédération républicaine.",
+              "locator": "characters 11817:11880; sha256 80e5245b7c70fd1d5b6a4116afd4b0ec8de4426679dfe6e5dca0e063d049bf99"
+            },
+            {
+              "claim": "테탱제는 1931년 5월 공화연맹 전국평의회에서 공개적으로 사임했다.",
+              "source": "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+              "excerpt": "Il s'éloigne alors de ce parti, démissionnant publiquement du Conseil national de la Fédération républicaine en mai 1931.",
+              "locator": "characters 17744:17865; sha256 80e5245b7c70fd1d5b6a4116afd4b0ec8de4426679dfe6e5dca0e063d049bf99"
+            },
+            {
+              "claim": "테탱제는 다시 공화연맹에 가까워져 그 부의장 가운데 한 사람이 되었다.",
+              "source": "https://fr.wikipedia.org/wiki/Pierre_Taittinger",
+              "excerpt": "Taittinger se rapproche à nouveau de la Fédération républicaine et en devient l'un des vice-présidents.",
+              "locator": "characters 19371:19474; sha256 80e5245b7c70fd1d5b6a4116afd4b0ec8de4426679dfe6e5dca0e063d049bf99"
+            }
+          ],
+          "relation": "membership",
+          "startYear": null,
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-republican-federation",
+          "affiliationStatus": "confirmed"
+        }
+      ]
+    },
+    {
+      "id": "jacques-doriot",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jacques_Doriot",
+        "https://en.wikipedia.org/wiki/French_Popular_Party"
+      ],
+      "activities": [
+        {
+          "endYear": 1945,
+          "primary": true,
+          "evidence": [
+            {
+              "claim": "도리오는 프랑스 공산당 제명 후 1936년 프랑스인민당(PPF)을 창당하고 당을 이끌었다.",
+              "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+              "excerpt": "In 1936, after his exclusion from the French Communist Party, he founded the French Popular Party (PPF) and took over the newspaper La Liberté, which took a stand against the Popular Front.",
+              "locator": "characters 179:368; sha256 8ea43a18fc95d0b8e235b4adc620602163abec11eda342c2946e359ea1b88d14"
+            },
+            {
+              "claim": "전쟁 중 그는 대독 협력 노선을 이끌며 반볼셰비즘 프랑스인 의용군단 창설에 기여했다.",
+              "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+              "excerpt": "During the war, Doriot was a radical supporter of collaboration and contributed to the creation of the Legion of French Volunteers against Bolshevism (LVF).",
+              "locator": "characters 369:525; sha256 8ea43a18fc95d0b8e235b4adc620602163abec11eda342c2946e359ea1b88d14"
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/French_Popular_Party",
+              "locator": "en: Collaboration",
+              "excerpt": "On 22 February 1945, Doriot, attired in his SS uniform and being driven in a Nazi officer's car, was killed by Allied strafing near Mengen, Württemberg, Germany, while en route from Mainau to Sigmaringen. The PPF movement did not survive the death of its leader, and no attempt was made to revive it in postwar France.",
+              "claim": "1945년 2월 도리오가 죽자 프랑스인민당도 함께 끝났다."
+            }
+          ],
+          "relation": "service",
+          "startYear": 1936,
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-ppf",
+          "affiliationStatus": "confirmed"
+        },
+        {
+          "endYear": 1934,
+          "primary": false,
+          "evidence": [
+            {
+              "claim": "자크 도리오는 1920년 프랑스 공산당에 입당했다.",
+              "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+              "excerpt": "After being released, he returned to France and in 1920 joined the French Communist Party (PCF), quickly rising through the party.",
+              "locator": "characters 1241:1371; sha256 970be57d7cb8a567ae170e960a8b94d8f33790d086049b9b9286ff1b84d9ce0c"
+            },
+            {
+              "claim": "자크 도리오는 1934년 프랑스 공산당에서 제명되었다.",
+              "source": "https://en.wikipedia.org/wiki/Jacques_Doriot",
+              "excerpt": "Although this would soon become official Communist Party policy, at the time it was seen as heretical and Doriot was expelled from the Communist Party in 1934.",
+              "locator": "characters 2216:2375; sha256 970be57d7cb8a567ae170e960a8b94d8f33790d086049b9b9286ff1b84d9ce0c"
+            }
+          ],
+          "relation": "membership",
+          "startYear": 1920,
+          "functionId": "political-leadership",
+          "affiliationId": "party-french-communist",
+          "affiliationStatus": "confirmed"
+        }
+      ]
+    },
+    {
+      "id": "francois-coty",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Coty",
+        "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise"
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationId": "french-solidarite-francaise",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "primary": true,
+          "startYear": 1933,
+          "endYear": 1934,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Coty",
+              "locator": "en: Politics",
+              "excerpt": "In 1933, surrounded by courtisans, parasites or scoundrels, misled by more seasoned politicians, he published \"A Reform of the State\" and founded his own movement: French Solidarity. After his death in July 1934, the movement became more radical.",
+              "claim": "코티는 1933년 자신의 운동 연대 프랑스를 창설했고, 그가 1934년 7월 죽은 뒤 운동은 더 급진화했다."
+            },
+            {
+              "source": "https://en.wikipedia.org/wiki/Solidarit%C3%A9_Fran%C3%A7aise",
+              "locator": "en: lead",
+              "excerpt": "Solidarité Française (\"French Solidarity\") was a French far-right league founded in 1933 by the perfume manufacturer François Coty (1874-1934) as the \"Parti national corporatif républicain\".",
+              "claim": "연대 프랑스는 1933년 향수 제조업자 프랑수아 코티가 세운 프랑스의 극우 동맹이었다."
+            }
+          ]
+        },
+        {
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "claim": "코티는 코티 향수 회사를 창립하고 현대 향수 산업의 창시자로 평가받는 산업가였다.",
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Coty",
+              "excerpt": "He was the founder of the Coty perfume company, today a multinational. He is considered the founding father of the modern perfume industry.",
+              "locator": "characters 239:378; sha256 32fb9e98dded9be64c66a08f2550c3e114f389f5ad29bf3fddaaacf8c2cf645f"
+            },
+            {
+              "claim": "코티는 1908년 수렌에 제조 본부를 옮기고 연구소와 공장 단지를 세워 제품을 생산했다.",
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Coty",
+              "excerpt": "In 1908, Coty relocated his manufacturing headquarters to Suresnes, just outside Paris. He acquired property in the area and began to build what would become \"La cité des Parfums\", a large complex of laboratories and factories that manufactured his products.",
+              "locator": "characters 5572:5830; sha256 32fb9e98dded9be64c66a08f2550c3e114f389f5ad29bf3fddaaacf8c2cf645f"
+            }
+          ],
+          "relation": "unresolved",
+          "startYear": null,
+          "functionId": "industry",
+          "affiliationId": null,
+          "affiliationStatus": "unresolved"
+        }
+      ]
+    }
+  ]
+}
