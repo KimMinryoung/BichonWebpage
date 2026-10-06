@@ -51,6 +51,8 @@ function validateFields(fields, current, action, sources) {
         if (value !== undefined) {
             if (!value || typeof value !== 'object' || Array.isArray(value)
                 || Object.keys(value).some(k => !['ko','en'].includes(k) || typeof value[k] !== 'string')) throw badRequest(`${field} must contain ko/en text`);
+            // [P12] is a pipeline passage id, not a citation readers can follow (migration 290).
+            for (const lang of Object.keys(value)) if (/\[P\d+/.test(value[lang])) throw badRequest(`${field}.${lang} contains source markers like [P12]; remove them`);
             merged[field] = { ...(current?.[field] || {}), ...value };
         }
         const limits = contract.limits[field];
