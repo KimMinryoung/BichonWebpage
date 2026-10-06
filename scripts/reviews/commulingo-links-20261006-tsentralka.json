@@ -1,0 +1,7 @@
+{
+  "scope": "2026-10-06 첸트랄카 표제어 표기 수정(젠트랄카→첸트랄카)으로 새로 생긴 한국어 별칭; owner-requested affiliation-gap work",
+  "references": ["scripts/content/affiliation-gaps-catalog-20261006.json"],
+  "decisions": [
+    {"kind": "term", "id": "tsentralka", "lang": "ko", "text": "마트로스카야 첸트랄카", "role": "identity", "policy": "auto", "note": "2026-10-06 표기 수정: 흑해함대 수병 조직만 가리키는 원어 음역. 자동 연결.", "original479": false, "beforePolicy": "search"}
+  ]
+}

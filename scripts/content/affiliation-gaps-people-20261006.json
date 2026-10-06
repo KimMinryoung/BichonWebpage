@@ -487,29 +487,6 @@
      "functionId": "organizing",
      "affiliationId": "russian-rsdlp",
      "affiliationStatus": "confirmed"
-    },
-    {
-     "endYear": 1912,
-     "primary": false,
-     "evidence": [
-      {
-       "claim": "알렉산드르 반놉스키는 1898년 러시아 사회민주노동당 창립 대회 대의원이었다.",
-       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
-       "excerpt": "Делегат первого, учредительного съезда РСДРП (Минск, 1898) от московского «Союза борьбы за освобождение рабочего класса».",
-       "locator": "characters 857:978; sha256 10b78608fc494287667eab7ccd9babb1e953e8a9fa51eb0a47f674a8cb0afd7d"
-      },
-      {
-       "claim": "알렉산드르 반놉스키는 1912년 기독교로 개종하고 러시아 사회민주노동당을 떠났다.",
-       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
-       "excerpt": "В 1912 году Александр Ванновский принял христианство и вышел из РСДРП",
-       "locator": "characters 1813:1882; sha256 10b78608fc494287667eab7ccd9babb1e953e8a9fa51eb0a47f674a8cb0afd7d"
-      }
-     ],
-     "relation": "membership",
-     "startYear": 1898,
-     "functionId": "organizing",
-     "affiliationId": "russian-rsdlp",
-     "affiliationStatus": "confirmed"
     }
    ]
   },
@@ -2073,35 +2050,6 @@
      "functionId": "political-leadership",
      "affiliationId": "party-greek-liberal",
      "affiliationStatus": "confirmed"
-    },
-    {
-     "endYear": 1968,
-     "primary": false,
-     "evidence": [
-      {
-       "claim": "파판드레우는 1961년 중도연합을 창당했다.",
-       "source": "https://en.wikipedia.org/wiki/Georgios_Papandreou",
-       "excerpt": "In 1961, Papandreou revived Greek liberalism by founding the Centre Union Party, a confederation of old liberal Venizelists, social democrats and dissatisfied conservatives.",
-       "locator": "characters 8765:8938; sha256 85a15db845956f2b9eea519d72238b95e098717bd2b0f429bf9a28c46242727a"
-      },
-      {
-       "claim": "파판드레우는 중도연합을 이끈 8인 운영위원회의 위원장을 맡았다.",
-       "source": "https://el.wikipedia.org/wiki/%CE%88%CE%BD%CF%89%CF%83%CE%B7_%CE%9A%CE%AD%CE%BD%CF%84%CF%81%CE%BF%CF%85",
-       "excerpt": "Η Ένωση Κέντρου διοικούνταν από οκταμελή επιτροπή της οποίας πρόεδρος ανέλαβε ο Γεώργιος Παπανδρέου.",
-       "locator": "characters 6321:6421; sha256 a482621e03f9696976fe0479b0a4e38375f8dababf25848fdcdc0814db7ff296"
-      },
-      {
-       "claim": "파판드레우는 1968년 11월 1일 사망할 때까지 중도연합을 이끌었다.",
-       "source": "https://en.wikipedia.org/wiki/Centre_Union",
-       "excerpt": "Georgios Papandreou died on 1 November 1968 and the Centre Union, now illegal, was placed under the titular leadership of Georgios Mavros.",
-       "locator": "characters 15911:16049; sha256 f4b32020a964e4f580f1d9386c36297eed0894453d6e8cb3070d85cdcfabf640"
-      }
-     ],
-     "relation": "membership",
-     "startYear": 1961,
-     "functionId": "political-leadership",
-     "affiliationId": "party-greek-centre-union",
-     "affiliationStatus": "confirmed"
     }
    ]
   },
@@ -3167,29 +3115,6 @@
      "startYear": 1897,
      "functionId": "political-leadership",
      "affiliationId": "party-romanian-national",
-     "affiliationStatus": "confirmed"
-    },
-    {
-     "endYear": 1947,
-     "primary": false,
-     "evidence": [
-      {
-       "claim": "마니우는 1926~1933년과 1937~1947년 국민농민당 당수였다.",
-       "source": "https://ro.wikipedia.org/wiki/Iuliu_Maniu",
-       "excerpt": "Iuliu Maniu a fost președinte al partidului (1926-1933 și 1937-1947) și de trei ori prim-ministru al României între 1928 și 1933.",
-       "locator": "characters 7968:8097; sha256 52dcca89b54edab2be6b47c3ef800b4cbc0efe8705e178cccc8e47103fea0ff1"
-      },
-      {
-       "claim": "마니우는 1926년 창당된 국민농민당의 당수가 되었다.",
-       "source": "https://en.wikipedia.org/wiki/Iuliu_Maniu",
-       "excerpt": "Citing fears that the PNL had ensured a grip over Romanian politics, the PNR and the Peasants' Party united in 1926, with Maniu becoming the President of the new political force, the National Peasants' Party (PNȚ), for the following seven years, and then again between 1937 and 1947.",
-       "locator": "characters 3528:3811; sha256 098cb00df9e65ac420d4c912d0f9f951e7f3166a067b877df85886dbfb4f788e"
-      }
-     ],
-     "relation": "membership",
-     "startYear": 1926,
-     "functionId": "political-leadership",
-     "affiliationId": "party-romanian-national-peasants",
      "affiliationStatus": "confirmed"
     }
    ]

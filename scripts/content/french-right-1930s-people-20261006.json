@@ -841,7 +841,7 @@
         "en": "Fascist who founded the Francist Movement with Mussolini’s money and was shot for collaboration"
       },
       "bio": {
-        "ko": "신학생으로 1차 대전에 동원되어 세 차례 부상하고 대위가 되었다. 악시옹 프랑세즈와 전국가톨릭연맹을 거쳐 1925년 조르주 발루아의 페소에 들어가 1926년부터 선전을 맡았고, 1927년 발루아와 갈라선 뒤 코티의 《라미 뒤 푀플》에 글을 썼다. 1933년 9월 이탈리아 파시즘을 본뜬 프랑시스트 운동을 세웠다. 운동은 무솔리니 정부의 자금을 받았고 1934년 2월 6일 시위에 참가했으며 1936년 인민전선 정부에 금지되었다. 금지 뒤 공공연한 반유대주의로 돌아섰고 1941년 프랑시스트당을 재건해 대독 협력에 나섰다. 1945년 이탈리아에서 체포되어 1946년 3월 샤티용 요새에서 총살되었다.",
+        "ko": "신학생으로 1차 대전에 동원되어 세 차례 부상하고 대위가 되었다. 악시옹 프랑세즈와 전국가톨릭연맹을 거쳐 1925년 조르주 발루아의 르 페소에 들어가 1926년부터 선전을 맡았고, 1927년 발루아와 갈라선 뒤 코티의 《라미 뒤 푀플》에 글을 썼다. 1933년 9월 이탈리아 파시즘을 본뜬 프랑시스트 운동을 세웠다. 운동은 무솔리니 정부의 자금을 받았고 1934년 2월 6일 시위에 참가했으며 1936년 인민전선 정부에 금지되었다. 금지 뒤 공공연한 반유대주의로 돌아섰고 1941년 프랑시스트당을 재건해 대독 협력에 나섰다. 1945년 이탈리아에서 체포되어 1946년 3월 샤티용 요새에서 총살되었다.",
         "en": "A seminarian when the First World War broke out, he was wounded three times and rose to captain. After Action Française and the National Catholic Federation he joined Georges Valois’s Faisceau in 1925 and ran its propaganda from 1926; breaking with Valois in 1927, he wrote for Coty’s L’Ami du peuple. In September 1933 he founded the Francist Movement on the model of Italian Fascism. Financed by Mussolini’s government, it took part in the demonstration of 6 February 1934 and was banned by the Popular Front government in 1936. After the ban he turned openly antisemitic, and in 1941 he refounded the Francist Party as a collaborationist force. Arrested in Italy in 1945, he was shot at the Fort de Châtillon in March 1946."
       },
       "moment": {
@@ -907,13 +907,13 @@
             {
               "source": "https://fr.wikipedia.org/wiki/Marcel_Bucard",
               "locator": "fr: Vie politique",
-              "claim": "뷔카르는 1925년 페소에 가입해 1926년 9월부터 선전 책임을 맡았다.",
+              "claim": "뷔카르는 1925년 르 페소에 가입해 1926년 9월부터 선전 책임을 맡았다.",
               "excerpt": "La même année, il adhère, parmi les premiers, au Faisceau de Georges Valois — premier parti à se revendiquer ouvertement du fascisme — et dont il est chargé de la direction de la propagande à partir de septembre 1926."
             },
             {
               "source": "https://en.wikipedia.org/wiki/Marcel_Bucard",
               "locator": "en: Early career",
-              "claim": "뷔카르는 페소의 구성원이었다.",
+              "claim": "뷔카르는 르 페소의 구성원이었다.",
               "excerpt": "later as a member of the overtly-fascist and anti-Semitic Faisceau of Georges Valois."
             }
           ]
@@ -985,7 +985,7 @@
             ]
           },
           "r": {
-            "ko": "페소 가입, 1926년부터 선전 책임자",
+            "ko": "르 페소 가입, 1926년부터 선전 책임자",
             "en": "Joins the Faisceau; head of propaganda from 1926"
           }
         },

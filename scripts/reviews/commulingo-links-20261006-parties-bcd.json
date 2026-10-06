@@ -1407,8 +1407,8 @@
       "lang": "ko",
       "text": "사회혁명운동",
       "role": "identity",
-      "policy": "auto",
-      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "policy": "search",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 일반 표현(사회혁명 운동 일반)과 겹칠 수 있어 검색 전용.",
       "original479": false,
       "beforePolicy": "search"
     },
@@ -1418,8 +1418,8 @@
       "lang": "en",
       "text": "Social Revolutionary Movement",
       "role": "identity",
-      "policy": "auto",
-      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 정당의 표제어라 이 항목만 가리킨다. 자동 연결.",
+      "policy": "search",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 일반 표현(사회혁명 운동 일반)과 겹칠 수 있어 검색 전용.",
       "original479": false,
       "beforePolicy": "search"
     },
@@ -1440,8 +1440,8 @@
       "lang": "en",
       "text": "Revolutionary Social Movement",
       "role": "identity",
-      "policy": "auto",
-      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 이 정당만 가리키는 다른 정식 이름·원어 음역. 자동 연결.",
+      "policy": "search",
+      "note": "2026-10-06 정당 용어 일괄 등록(사용자 지시)과 함께 검토: 일반 표현(사회혁명 운동 일반)과 겹칠 수 있어 검색 전용.",
       "original479": false,
       "beforePolicy": "search"
     },
