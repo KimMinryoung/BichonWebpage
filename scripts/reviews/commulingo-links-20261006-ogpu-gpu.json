@@ -1,0 +1,8 @@
+{
+  "scope": "2026-10-06 사용자 지적: ogpu 용어의 관련 보고서가 AI·반도체 보고서로 가득 찼다. 별칭 GPU가 그래픽 처리장치(GPU)에 자동 연결됐기 때문",
+  "references": ["https://cyber-lenin.com/commulingo/terms/ogpu"],
+  "decisions": [
+    {"kind": "term", "id": "ogpu", "lang": "ko", "text": "GPU", "role": "short", "policy": "context", "note": "2026-10-06 owner-requested: GPU는 보고서 코퍼스에서 거의 늘 그래픽 처리장치다. 같은 본문에 OGPU·국가정치보안부 같은 승인 명칭이 있을 때만 연결.", "original479": false, "beforePolicy": "auto", "sourceSignature": "bd17401fdb6c2db6161d47656456c1b3d121c3c1dd85aa5e580805ccf3aaede2"},
+    {"kind": "term", "id": "ogpu", "lang": "en", "text": "GPU", "role": "short", "policy": "context", "note": "2026-10-06 owner-requested: GPU almost always means a graphics processor in the report corpus. Link only when an approved name such as OGPU or State Political Directorate is in the same body unit.", "original479": false, "beforePolicy": "auto", "sourceSignature": "99d349fd2fb9b1c8050e82d530a79c6bcc06ba021535c717692358a1fc65f9b5"}
+  ]
+}

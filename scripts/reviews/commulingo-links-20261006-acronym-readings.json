@@ -1,0 +1,85 @@
+{
+  "scope": "2026-10-06 사용자 요청: 러시아어 약칭의 읽는 법(마이그레이션 293)을 별칭으로 추가",
+  "references": [
+    "scripts/migrations/293_commulingo_russian_acronym_readings.sql"
+  ],
+  "decisions": [
+    {
+      "kind": "term",
+      "id": "mgb",
+      "lang": "ko",
+      "text": "엠게베",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: MGB의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "state-defense-committee-gko",
+      "lang": "ko",
+      "text": "게카오",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: GKO의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "first-chief-directorate-pgu",
+      "lang": "ko",
+      "text": "페게우",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: PGU의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "supreme-council-of-the-national-economy-vsnkh",
+      "lang": "ko",
+      "text": "베에스엔하",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: VSNKh의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "rbmk-reactor",
+      "lang": "ko",
+      "text": "에르베엠카",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: RBMK의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "cheka",
+      "lang": "ko",
+      "text": "베체카",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: ВЧК의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "military-collegium-ussr",
+      "lang": "ko",
+      "text": "베카베에스",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-06 owner-requested: ВКВС의 러시아어 글자 이름 읽기. 이 대상만 가리키는 원어 음역이라 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}
