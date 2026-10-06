@@ -117,23 +117,31 @@ function buildRoster(data, names, lang, bodyId) {
         const elected = {};
         for (const bucket of ['full', 'candidates']) {
             elected[bucket] = congress.members[bucket].filter(electedAtCongress).length;
-            // A candidate promoted to full membership mid-term is listed first,
-            // earliest promotion first, and marked so the table can tint the
-            // row in the full-member colour; everyone else is alphabetical.
+            // The members elected at the congress come first, alphabetical;
+            // mid-term joiners (by-elected, promoted, demoted from full)
+            // follow in the order they joined. Among a candidate table's
+            // congress-elected members, those promoted to full membership
+            // mid-term lead, earliest promotion first, and are marked so the
+            // table tints them in the full-member colour.
             buckets[bucket] = congress.members[bucket].map(m => {
                 const key = m.p || '';
                 const member = key && data.members[key];
-                const promotedOn = bucket === 'candidates' && m.out && m.out.t === 'promotedOut' ? (m.out.d || '') : null;
+                const cand = bucket === 'candidates';
+                const promotedOn = cand && m.out && m.out.t === 'promotedOut' ? (m.out.d || '') : null;
                 return {
                     ...personCell(key, member || m, names, lang),
                     in: m.in ? dated(IN_KINDS, m.in, lang) : localize(IN_KINDS.re, lang),
                     out: m.out ? dated(OUT_KINDS, m.out, lang) : '',
                     promoted: promotedOn !== null,
                     promotedOn,
+                    joinedOn: electedAtCongress(m) ? null : (m.in.d || ''),
                 };
             }).sort((a, b) => {
-                if (a.promoted !== b.promoted) return a.promoted ? -1 : 1;
-                if (a.promoted && a.promotedOn !== b.promotedOn) return a.promotedOn < b.promotedOn ? -1 : 1;
+                const late = (a.joinedOn !== null) - (b.joinedOn !== null);
+                if (late) return late;
+                if (a.joinedOn !== null && a.joinedOn !== b.joinedOn) return a.joinedOn < b.joinedOn ? -1 : 1;
+                if (a.joinedOn === null && a.promoted !== b.promoted) return a.promoted ? -1 : 1;
+                if (a.joinedOn === null && a.promoted && a.promotedOn !== b.promotedOn) return a.promotedOn < b.promotedOn ? -1 : 1;
                 return a.name.localeCompare(b.name, en ? 'en' : 'ko');
             });
         }
