@@ -1,0 +1,557 @@
+{
+ "officeId": "science-nuclear-space",
+ "title": {
+  "ko": "과학 · 원자력 · 우주 개발",
+  "en": "Science, nuclear and space development"
+ },
+ "blurb": {
+  "ko": "과학아카데미 원장, 원자력 사업 특별위원회 의장, 핵무기 산업을 맡은 중형기계공업장관, 로켓·우주 산업을 맡은 일반기계공업장관.",
+  "en": "President of the Academy of Sciences, Chairman of the Special Committee on the atomic project, the Minister of Medium Machine Building (nuclear weapons industry) and the Minister of General Machine Building (rocket and space industry)."
+ },
+ "range": "1917–1991",
+ "lineage": [
+  {
+   "name": {
+    "ko": "러시아 과학아카데미",
+    "en": "Russian Academy of Sciences"
+   },
+   "period": "1917–1925",
+   "body": {
+    "ko": "제정기의 상트페테르부르크 과학아카데미가 1917년 이름을 바꾼 기관.",
+    "en": "The former St Petersburg Academy of Sciences under the name it took in 1917."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "소련 과학아카데미",
+    "en": "USSR Academy of Sciences"
+   },
+   "period": "1925–1991",
+   "body": {
+    "ko": "1925년 7월 27일 소련 전체의 최고 학술기관으로 개편되었고, 1991년 12월 다시 러시아 과학아카데미가 되었다.",
+    "en": "Reorganized on 27 July 1925 as the supreme scholarly body of the whole Union; it became the Russian Academy of Sciences again in December 1991."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "특별위원회",
+    "en": "Special Committee"
+   },
+   "period": "1945–1953",
+   "body": {
+    "ko": "원자폭탄 개발을 총괄한 초부처 기관. 베리야 체포 당일 해체되었다.",
+    "en": "The supra-ministerial body that ran the atomic bomb project, dissolved on the day of Beria’s arrest."
+   },
+   "termId": "special-committee"
+  },
+  {
+   "name": {
+    "ko": "중형기계공업부",
+    "en": "Ministry of Medium Machine Building"
+   },
+   "period": "1953–1989",
+   "body": {
+    "ko": "1953년 6월 26일 설치되어 각료회의 제1총국과 제3국을 바탕으로 꾸린 핵무기·원자력 산업 부처. 1963~1965년에는 국가생산위원회였다.",
+    "en": "The nuclear weapons and nuclear industry ministry created on 26 June 1953 and built on the Council of Ministers’ First Main Directorate and Third Directorate; a State Production Committee in 1963–1965."
+   },
+   "termId": "ministry-of-medium-machine-building-sredmash"
+  },
+  {
+   "name": {
+    "ko": "원자력에너지·산업부",
+    "en": "Ministry of Atomic Energy and Industry"
+   },
+   "period": "1989–1991",
+   "body": {
+    "ko": "1989년 중형기계공업부와 원자력에너지부를 합쳐 만든 부처.",
+    "en": "Formed in 1989 by merging Medium Machine Building with the Ministry of Atomic Energy."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "일반기계공업부",
+    "en": "Ministry of General Machine Building"
+   },
+   "period": "1965–1991",
+   "body": {
+    "ko": "1965년 3월 2일 국방기술 국가위원회에서 떼어 낸 로켓·우주 산업 부처.",
+    "en": "The rocket and space industry ministry separated on 2 March 1965 from the State Committee for Defence Technology."
+   },
+   "termId": null
+  }
+ ],
+ "tracks": [
+  {
+   "id": "academy",
+   "title": {
+    "ko": "과학아카데미 원장",
+    "en": "President of the Academy of Sciences"
+   },
+   "blurb": {
+    "ko": "러시아 과학아카데미(1917~1925)와 그 후신인 소련 과학아카데미(1925~1991)의 원장. 원장 사망·사임 뒤 후임 선출까지의 공백(1936년 7~12월, 1951년 1~2월, 1975년 5~11월)에는 출처에 대행자가 나오지 않는다.",
+    "en": "President of the Russian Academy of Sciences (1917–1925) and of its successor, the USSR Academy of Sciences (1925–1991). The sources name no acting president for the gaps between a president’s death or resignation and the next election (July–December 1936, January–February 1951, May–November 1975)."
+   }
+  },
+  {
+   "id": "special-committee",
+   "title": {
+    "ko": "특별위원회 의장",
+    "en": "Chairman of the Special Committee"
+   },
+   "blurb": {
+    "ko": "원자폭탄 개발을 총괄하려 1945년 8월 20일 국가방위위원회 결정으로 만든 특별위원회의 의장. 위원회는 국가방위위원회, 인민위원회의, 각료회의 소속으로 차례로 옮겼고 1953년 6월 26일 해체되어 중형기계공업부에 넘어갔다.",
+    "en": "Chairman of the Special Committee created by State Defence Committee decision of 20 August 1945 to run the atomic bomb project. Attached in turn to the State Defence Committee, the Council of People’s Commissars and the Council of Ministers, it was dissolved on 26 June 1953 and its work passed to the Ministry of Medium Machine Building."
+   }
+  },
+  {
+   "id": "sredmash",
+   "title": {
+    "ko": "중형기계공업장관",
+    "en": "Minister of Medium Machine Building"
+   },
+   "blurb": {
+    "ko": "핵무기와 원자력 산업을 맡은 중형기계공업부(스레드마시)의 장관. 1963~1965년에는 중형기계공업 국가생산위원회로 바뀌었고, 1989년 6월 원자력에너지부와 합쳐 원자력에너지·산업부가 되었다. 1957년 1~4월과 1989년 6~7월에는 출처에 장관이 나오지 않는다.",
+    "en": "Minister of Medium Machine Building (Sredmash), the ministry for nuclear weapons and the nuclear industry. In 1963–1965 it was a State Production Committee, and in June 1989 it merged with the Ministry of Atomic Energy into the Ministry of Atomic Energy and Industry. The sources name no minister for January–April 1957 or June–July 1989."
+   }
+  },
+  {
+   "id": "mom",
+   "title": {
+    "ko": "일반기계공업장관",
+    "en": "Minister of General Machine Building"
+   },
+   "blurb": {
+    "ko": "1965년 3월 2일 만들어져 로켓·우주 산업을 맡은 일반기계공업부의 장관. 부처는 1991년 12월 1일 폐지되었다.",
+    "en": "Minister of General Machine Building, the ministry created on 2 March 1965 for the rocket and space industry; it was abolished on 1 December 1991."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "academy",
+   "personId": "alexander-karpinsky",
+   "post": {
+    "ko": "러시아 과학아카데미 원장",
+    "en": "President of the Russian Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1917,
+     5,
+     28
+    ],
+    "end": [
+     1925,
+     7,
+     27
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "alexander-karpinsky",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1925,
+     7,
+     27
+    ],
+    "end": [
+     1936,
+     7,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "vladimir-komarov",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1936,
+     12,
+     29
+    ],
+    "end": [
+     1945,
+     7,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "sergei-vavilov",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1945,
+     7,
+     17
+    ],
+    "end": [
+     1951,
+     1,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "aleksandr-nesmeyanov",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1951,
+     2,
+     16
+    ],
+    "end": [
+     1961,
+     5,
+     19
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "keldysh",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1961,
+     5,
+     19
+    ],
+    "end": [
+     1975,
+     5,
+     19
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "anatoly-alexandrov",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1975,
+     11,
+     25
+    ],
+    "end": [
+     1986,
+     10,
+     16
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "academy",
+   "personId": "gury-marchuk",
+   "post": {
+    "ko": "소련 과학아카데미 원장",
+    "en": "President of the USSR Academy of Sciences"
+   },
+   "period": {
+    "start": [
+     1986,
+     10,
+     16
+    ],
+    "end": [
+     1991,
+     12,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_президентов_Российской_академии_наук"
+  },
+  {
+   "track": "special-committee",
+   "personId": "beria",
+   "post": {
+    "ko": "특별위원회 의장",
+    "en": "Chairman of the Special Committee"
+   },
+   "period": {
+    "start": [
+     1945,
+     8,
+     20
+    ],
+    "end": [
+     1953,
+     6,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Специальный_комитет_при_Совете_министров_СССР"
+  },
+  {
+   "track": "sredmash",
+   "personId": "malyshev",
+   "post": {
+    "ko": "소련 중형기계공업장관",
+    "en": "Minister of Medium Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     6,
+     29
+    ],
+    "end": [
+     1955,
+     2,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Малышев,_Вячеслав_Александрович"
+  },
+  {
+   "track": "sredmash",
+   "personId": "avraami-zavenyagin",
+   "post": {
+    "ko": "소련 중형기계공업장관",
+    "en": "Minister of Medium Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1955,
+     2,
+     28
+    ],
+    "end": [
+     1956,
+     12,
+     31
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Завенягин,_Авраамий_Павлович"
+  },
+  {
+   "track": "sredmash",
+   "personId": "mikhail-pervukhin",
+   "post": {
+    "ko": "소련 중형기계공업장관",
+    "en": "Minister of Medium Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1957,
+     4,
+     30
+    ],
+    "end": [
+     1957,
+     7,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Первухин,_Михаил_Георгиевич"
+  },
+  {
+   "track": "sredmash",
+   "personId": "slavsky",
+   "post": {
+    "ko": "소련 중형기계공업장관",
+    "en": "Minister of Medium Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1957,
+     7,
+     24
+    ],
+    "end": [
+     1986,
+     11,
+     21
+    ]
+   },
+   "note": {
+    "ko": "1963~1965 중형기계공업 국가생산위원회 의장",
+    "en": "Chairman of the State Production Committee for Medium Machine Building 1963–1965"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Славский,_Ефим_Павлович"
+  },
+  {
+   "track": "sredmash",
+   "personId": "lev-ryabev",
+   "post": {
+    "ko": "소련 중형기계공업장관",
+    "en": "Minister of Medium Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1986,
+     11,
+     21
+    ],
+    "end": [
+     1989,
+     6,
+     27
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рябев,_Лев_Дмитриевич"
+  },
+  {
+   "track": "sredmash",
+   "personId": null,
+   "name": {
+    "ko": "비탈리 코노발로프",
+    "en": "Vitaly Konovalov"
+   },
+   "post": {
+    "ko": "소련 원자력에너지·산업장관",
+    "en": "Minister of Atomic Energy and Industry of the USSR"
+   },
+   "period": {
+    "start": [
+     1989,
+     7,
+     17
+    ],
+    "end": [
+     1991,
+     11,
+     26
+    ]
+   },
+   "note": {
+    "ko": "1991.08.28부터 직무대행",
+    "en": "Acting from 1991.08.28"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Коновалов,_Виталий_Фёдорович"
+  },
+  {
+   "track": "mom",
+   "personId": "afanasyev",
+   "post": {
+    "ko": "소련 일반기계공업장관",
+    "en": "Minister of General Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1965,
+     3,
+     2
+    ],
+    "end": [
+     1983,
+     4,
+     8
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Афанасьев,_Сергей_Александрович"
+  },
+  {
+   "track": "mom",
+   "personId": "baklanov",
+   "post": {
+    "ko": "소련 일반기계공업장관",
+    "en": "Minister of General Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1983,
+     4,
+     8
+    ],
+    "end": [
+     1988,
+     3,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Бакланов,_Олег_Дмитриевич"
+  },
+  {
+   "track": "mom",
+   "personId": null,
+   "name": {
+    "ko": "비탈리 도구지예프",
+    "en": "Vitaly Doguzhiev"
+   },
+   "post": {
+    "ko": "소련 일반기계공업장관",
+    "en": "Minister of General Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1988,
+     3,
+     25
+    ],
+    "end": [
+     1989,
+     6,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Догужиев,_Виталий_Хуссейнович"
+  },
+  {
+   "track": "mom",
+   "personId": null,
+   "name": {
+    "ko": "올레크 시시킨",
+    "en": "Oleg Shishkin"
+   },
+   "post": {
+    "ko": "소련 일반기계공업장관",
+    "en": "Minister of General Machine Building of the USSR"
+   },
+   "period": {
+    "start": [
+     1989,
+     7,
+     17
+    ],
+    "end": [
+     1991,
+     11,
+     26
+    ]
+   },
+   "note": {
+    "ko": "1991.08.28부터 직무대행",
+    "en": "Acting from 1991.08.28"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Шишкин,_Олег_Николаевич"
+  }
+ ]
+}

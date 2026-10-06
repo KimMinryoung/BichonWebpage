@@ -1,0 +1,162 @@
+{
+ "officeId": "comintern",
+ "title": {
+  "ko": "코민테른",
+  "en": "Comintern"
+ },
+ "blurb": {
+  "ko": "코민테른 집행위원회의 의장(1919~1926)과 서기장(1935~1943), 그리고 그 사이 의장직이 폐지된 시기의 지도부.",
+  "en": "The Chairman (1919–1926) and General Secretary (1935–1943) of the Executive Committee of the Communist International, and its leadership in the years between, when there was no chairman."
+ },
+ "range": "1919–1943",
+ "lineage": [
+  {
+   "name": {
+    "en": "Founding and the offensive years",
+    "ko": "창립과 세계혁명 공세기"
+   },
+   "period": "1919–1921",
+   "body": {
+    "en": "The Third International, founded in Moscow in March 1919 in the expectation of imminent European revolution. It declared itself a single world communist party, and the Twenty-one Conditions adopted at the Second Congress in 1920 forced the splits that created the communist parties of France, Italy and Germany.",
+    "ko": "1919년 3월 모스크바 창립 대회로 출발한 제3인터내셔널. 유럽 혁명이 눈앞에 있다는 전망 아래 단일한 세계 공산당을 자임했고, 1920년 제2차 대회가 채택한 21개조 가입 조건은 각국 사회당의 분당을 강제해 프랑스·이탈리아·독일의 공산당들을 만들어 냈다."
+   },
+   "termId": "comintern"
+  },
+  {
+   "name": {
+    "en": "United front and Bolshevization",
+    "ko": "통일전선 전술과 볼셰비키화"
+   },
+   "period": "1921–1928",
+   "body": {
+    "en": "After the German revolution failed, the Third Congress fell back on the united front tactic of winning the masses. Under Zinoviev's chairmanship the Fifth Congress of 1924 decreed the Bolshevization of the sections, and the faction fights of the Soviet party began to be replayed as leadership changes in every national party.",
+    "ko": "독일 혁명이 좌절되자 제3차 대회부터 대중 획득을 앞세운 통일전선 전술로 물러섰다. 지노비예프 집행위원회 의장 아래 1924년 제5차 대회는 각국 당의 「볼셰비키화」를 결의했고, 소련 당내 투쟁이 그대로 각국 지부의 지도부 교체로 번지기 시작했다."
+   },
+   "termId": "bolshevization"
+  },
+  {
+   "name": {
+    "en": "Third Period",
+    "ko": "제3기 노선"
+   },
+   "period": "1928–1934",
+   "body": {
+    "en": "The Sixth Congress of 1928 declared the final crisis of capitalism at hand and branded social democracy as social fascism. By blocking joint action between communists and social democrats, the line is counted among the reasons the German workers' movement failed to stop Hitler.",
+    "ko": "1928년 제6차 대회는 자본주의의 최종 위기가 왔다는 「제3기」 정세 판단 위에서 사회민주주의를 사회파시즘으로 규정했다. 공산당과 사회민주당의 공동 행동을 봉쇄한 이 노선은 독일 노동운동이 나치 집권을 막지 못한 요인의 하나로 꼽힌다."
+   },
+   "termId": "third-period"
+  },
+  {
+   "name": {
+    "en": "Popular Front turn",
+    "ko": "인민전선 전환"
+   },
+   "period": "1934–1939",
+   "body": {
+    "en": "The shock of Hitler's victory reversed the line. Dimitrov's report to the Seventh Congress in 1935 made the anti-fascist popular front official policy, and the popular front governments of France and Spain followed. In the same years the Great Purge consumed much of the foreign communist cadre living in Moscow.",
+    "ko": "나치 집권의 충격 속에 노선을 뒤집었다. 1935년 제7차 대회에서 디미트로프의 보고로 반파시즘 인민전선이 공식 노선이 되어 프랑스와 스페인의 인민전선 정부를 낳았다. 같은 시기의 대숙청은 모스크바에 와 있던 각국 공산당 간부들을 대거 삼켰다."
+   },
+   "termId": "popular-front"
+  },
+  {
+   "name": {
+    "en": "Pact interlude",
+    "ko": "독소조약 전환기"
+   },
+   "period": "1939–1941",
+   "body": {
+    "en": "With the Nazi-Soviet pact of August 1939 the anti-fascist line was withdrawn overnight. The war was declared an imperialist war with guilt on both sides, and the national parties bled members in the confusion of the sudden turn.",
+    "ko": "1939년 8월 독소 불가침조약과 함께 반파시즘 노선이 하루아침에 걷혔다. 전쟁은 양쪽 모두에 책임이 있는 제국주의 전쟁으로 규정되었고, 각국 당은 갑작스러운 전환을 따르느라 심한 혼란과 당원 이탈을 겪었다."
+   },
+   "termId": "molotov-ribbentrop-pact"
+  },
+  {
+   "name": {
+    "en": "War and dissolution",
+    "ko": "전쟁과 해산"
+   },
+   "period": "1941–1943",
+   "body": {
+    "en": "The German invasion restored the anti-fascist line. In May 1943 Stalin dissolved the Comintern with an eye to relations with the Allies; parts of its apparatus passed to the party Central Committee's international department, and part of its role to the Cominform founded in 1947.",
+    "ko": "독소전 개전으로 반파시즘 투쟁 노선이 복원되었다. 1943년 5월 스탈린은 연합국과의 관계를 고려해 코민테른을 해산했고, 기구의 일부는 소련공산당 중앙위원회 국제부로, 기능의 일부는 1947년 창설된 코민포름으로 이어졌다."
+   },
+   "termId": "cominform"
+  }
+ ],
+ "tracks": [
+  {
+   "id": "ecci-head",
+   "title": {
+    "ko": "코민테른 집행위원회 지도부",
+    "en": "Leadership of the Comintern Executive Committee"
+   },
+   "blurb": {
+    "ko": "1926년 집행위원회 의장직이 폐지되고 9명의 정치비서국이 지도를 맡았다. 1929년 부하린 축출 뒤에는 정치비서국과 그 정치위원회(쿠시넨, 마누일스키, 퍄트니츠키 등)가 집단으로 이끌어 단일한 수장이 없었고, 1935년 서기장 직이 생겼다.",
+    "en": "In 1926 the chairmanship of the Executive Committee was abolished and a nine-member Political Secretariat took over. After Bukharin’s removal in 1929 the Political Secretariat and its Political Commission (Kuusinen, Manuilsky, Piatnitsky and others) led collectively with no single head, until the post of General Secretary was created in 1935."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "ecci-head",
+   "personId": "zinoviev",
+   "post": {
+    "ko": "코민테른 집행위원회 의장",
+    "en": "Chairman of the Executive Committee of the Communist International"
+   },
+   "period": {
+    "start": [
+     1919,
+     3,
+     4
+    ],
+    "end": [
+     1926
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Зиновьев,_Григорий_Евсеевич"
+  },
+  {
+   "track": "ecci-head",
+   "personId": "bukharin",
+   "post": {
+    "ko": "코민테른 집행위원회 정치비서국 위원",
+    "en": "Member of the Political Secretariat of the Comintern Executive Committee"
+   },
+   "period": {
+    "start": [
+     1926,
+     12
+    ],
+    "end": [
+     1929,
+     7
+    ]
+   },
+   "note": {
+    "ko": "의장직 폐지 뒤 코민테른을 사실상 이끎",
+    "en": "De facto leader of the Comintern after the chairmanship was abolished"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Бухарин,_Николай_Иванович"
+  },
+  {
+   "track": "ecci-head",
+   "personId": "dimitrov",
+   "post": {
+    "ko": "코민테른 집행위원회 서기장",
+    "en": "General Secretary of the Executive Committee of the Communist International"
+   },
+   "period": {
+    "start": [
+     1935
+    ],
+    "end": [
+     1943,
+     5,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Димитров,_Георгий_Михайлович"
+  }
+ ]
+}

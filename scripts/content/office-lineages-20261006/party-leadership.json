@@ -1,0 +1,208 @@
+{
+ "officeId": "party-leadership",
+ "title": {
+  "ko": "당 최고 지도자",
+  "en": "Party leadership"
+ },
+ "blurb": {
+  "ko": "공산당의 최고 직위인 중앙위원회 서기장(1922~1953, 1966~1991)과 제1서기(1953~1966)를 맡은 사람들.",
+  "en": "Holders of the party’s top post: General Secretary of the Central Committee (1922–1953 and 1966–1991) and First Secretary (1953–1966)."
+ },
+ "range": "1922–1991",
+ "tracks": [
+  {
+   "id": "gensec-1922",
+   "title": {
+    "ko": "서기장 (1922~1953)",
+    "en": "General Secretary (1922–1953)"
+   },
+   "blurb": {
+    "ko": "1922년 4월 3일 중앙위원회 전원회의가 스탈린을 서기장으로 선출하면서 생긴 직위. 1934년부터는 서기장 직함이 공식 문서에서 사라지고 스탈린은 일반 중앙위원회 서기로 선출되었지만, 1953년 3월 사망할 때까지 당을 이끌었다.",
+    "en": "Created when the Central Committee plenum of 3 April 1922 elected Stalin General Secretary. From 1934 the title disappeared from official documents and Stalin was elected an ordinary Central Committee secretary, but he led the party until his death in March 1953."
+   }
+  },
+  {
+   "id": "first-secretary",
+   "title": {
+    "ko": "제1서기 (1953~1966)",
+    "en": "First Secretary (1953–1966)"
+   },
+   "blurb": {
+    "ko": "스탈린 사망 뒤 서기장 직위는 되살아나지 않았고, 1953년 9월 7일 전원회의가 흐루쇼프를 제1서기로 선출했다. 1953년 3월부터 9월까지는 이 직위가 없었다. 1966년 4월 제23차 당대회에서 이름이 서기장으로 바뀌었다.",
+    "en": "The post of General Secretary was not revived after Stalin’s death; the plenum of 7 September 1953 elected Khrushchev First Secretary. The post did not exist from March to September 1953. The 23rd Congress renamed it General Secretary in April 1966."
+   }
+  },
+  {
+   "id": "gensec-1966",
+   "title": {
+    "ko": "서기장 (1966~1991)",
+    "en": "General Secretary (1966–1991)"
+   },
+   "blurb": {
+    "ko": "1966년 4월 8일 제1서기 직함이 서기장으로 바뀐 뒤 1991년 8월 고르바초프의 사임까지. 1990년 7월부터는 부서기장 직위도 있었다.",
+    "en": "From the renaming of the First Secretary as General Secretary on 8 April 1966 to Gorbachev’s resignation in August 1991. From July 1990 there was also a Deputy General Secretary."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "gensec-1922",
+   "personId": "stalin",
+   "post": {
+    "ko": "중앙위원회 서기장",
+    "en": "General Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1922,
+     4,
+     3
+    ],
+    "end": [
+     1953,
+     3,
+     5
+    ]
+   },
+   "note": {
+    "ko": "1934년부터 직함상 중앙위원회 서기",
+    "en": "Formally a Central Committee secretary from 1934"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  },
+  {
+   "track": "first-secretary",
+   "personId": "khrushchev",
+   "post": {
+    "ko": "중앙위원회 제1서기",
+    "en": "First Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1953,
+     9,
+     7
+    ],
+    "end": [
+     1964,
+     10,
+     14
+    ]
+   },
+   "note": {
+    "ko": "1953.03.14 말렌코프의 서기직 사임 뒤부터 당 기구를 이끎",
+    "en": "Ran the party apparatus from 1953.03.14, when Malenkov gave up his secretaryship"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  },
+  {
+   "track": "first-secretary",
+   "personId": "brezhnev",
+   "post": {
+    "ko": "중앙위원회 제1서기",
+    "en": "First Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1964,
+     10,
+     14
+    ],
+    "end": [
+     1966,
+     4,
+     8
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  },
+  {
+   "track": "gensec-1966",
+   "personId": "brezhnev",
+   "post": {
+    "ko": "중앙위원회 서기장",
+    "en": "General Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1966,
+     4,
+     8
+    ],
+    "end": [
+     1982,
+     11,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  },
+  {
+   "track": "gensec-1966",
+   "personId": "andropov",
+   "post": {
+    "ko": "중앙위원회 서기장",
+    "en": "General Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1982,
+     11,
+     12
+    ],
+    "end": [
+     1984,
+     2,
+     9
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  },
+  {
+   "track": "gensec-1966",
+   "personId": "chernenko",
+   "post": {
+    "ko": "중앙위원회 서기장",
+    "en": "General Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1984,
+     2,
+     13
+    ],
+    "end": [
+     1985,
+     3,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  },
+  {
+   "track": "gensec-1966",
+   "personId": "gorbachev",
+   "post": {
+    "ko": "중앙위원회 서기장",
+    "en": "General Secretary of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1985,
+     3,
+     11
+    ],
+    "end": [
+     1991,
+     8,
+     24
+    ]
+   },
+   "note": {
+    "ko": "사임 뒤 블라디미르 이바시코 부서기장이 당 활동 정지까지 직무대행",
+    "en": "After his resignation Deputy General Secretary Vladimir Ivashko acted as General Secretary until the party was suspended"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+  }
+ ]
+}

@@ -1,0 +1,858 @@
+{
+ "officeId": "ideology-propaganda",
+ "title": {
+  "ko": "이념 · 선전",
+  "en": "Ideology and propaganda"
+ },
+ "blurb": {
+  "ko": "당 중앙위원회 선전 담당 부서(선동선전부, 문화선전부, 선전선동국, 선전선동부, 선전부, 이념부)의 부장.",
+  "en": "Heads of the Central Committee’s propaganda department under its successive names (Agitprop, Culture and Propaganda, the Propaganda and Agitation Directorate, Propaganda and Agitation, Propaganda, Ideological)."
+ },
+ "range": "1920–1991",
+ "lineage": [
+  {
+   "name": {
+    "ko": "선동선전부",
+    "en": "Agitation and Propaganda Department (Agitprop)"
+   },
+   "period": "1920–1928",
+   "body": {
+    "ko": "1920년 중앙위원회에 둔 선동·선전 부서. 국가출판소, 중앙출판유통국, 적군 정치국 등의 선전 사업을 조정했다.",
+    "en": "The Central Committee’s agitation and propaganda department, set up in 1920 to coordinate the propaganda work of the State Publishing House, Tsentropechat, the Red Army’s Political Directorate and others."
+   },
+   "termId": "agitprop"
+  },
+  {
+   "name": {
+    "ko": "선동·선전·출판부",
+    "en": "Department of Agitation, Propaganda and the Press"
+   },
+   "period": "1928–1930",
+   "body": {
+    "ko": "1928년 5월 개편된 이름으로, 신문·출판 지도를 함께 맡았다.",
+    "en": "The name adopted in the reorganization of May 1928, adding direction of the press."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "문화선전부",
+    "en": "Culture and Propaganda Department"
+   },
+   "period": "1930–1934",
+   "body": {
+    "ko": "1930년 1월 개편. 같은 기간 대중 선동은 따로 둔 선동·대중캠페인부가 맡았다.",
+    "en": "Reorganized in January 1930; mass agitation went to a separate Department of Agitation and Mass Campaigns over the same years."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "문화·레닌주의선전부",
+    "en": "Department of Culture and Propaganda of Leninism"
+   },
+   "period": "1934–1935",
+   "body": {
+    "ko": "1934년 3월부터 1935년 5월까지 쓰인 이름.",
+    "en": "The name in use from March 1934 to May 1935."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "당선전선동부",
+    "en": "Department of Party Propaganda and Agitation"
+   },
+   "period": "1935–1938",
+   "body": {
+    "ko": "1935년 5월 문화·학술 부문을 별도 부서로 떼어 낸 뒤 남은 당 선전 부서.",
+    "en": "The party propaganda department left after the cultural and scholarly sections were split off into separate departments in May 1935."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "선전선동부(구두·출판)",
+    "en": "Department of Propaganda and Agitation (Oral and Printed)"
+   },
+   "period": "1938–1939",
+   "body": {
+    "ko": "1938년 11월 흩어졌던 선전 부서들을 다시 합쳐 만든 부서.",
+    "en": "Formed in November 1938 by recombining the separate propaganda departments."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "선전선동국",
+    "en": "Propaganda and Agitation Directorate"
+   },
+   "period": "1939–1948",
+   "body": {
+    "ko": "1939년 3월 31일 부서를 국(Управление)으로 격상해 산하에 여러 부를 두었다.",
+    "en": "On 31 March 1939 the department was raised to a directorate (upravlenie) with departments of its own."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "선전선동부",
+    "en": "Department of Propaganda and Agitation"
+   },
+   "period": "1948–1956",
+   "body": {
+    "ko": "1948년 7월 10일 국을 다시 부로 개편.",
+    "en": "The directorate was turned back into a department on 10 July 1948."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "연방공화국 담당 선전선동부",
+    "en": "Department of Propaganda and Agitation for the Union Republics"
+   },
+   "period": "1956–1962",
+   "body": {
+    "ko": "1956년 러시아 공화국 담당 선전선동부와 나뉘었다.",
+    "en": "Split in 1956 from a separate department for the RSFSR."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "이념부",
+    "en": "Ideological Department"
+   },
+   "period": "1962–1965",
+   "body": {
+    "ko": "1962년 12월 20일 문화부, 과학·고등교육·학교부와 합쳐 이념부가 되었다.",
+    "en": "Merged on 20 December 1962 with the Culture Department and the Department of Science, Higher Education and Schools to form the Ideological Department."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "선전선동부·선전부",
+    "en": "Department of Propaganda and Agitation / Department of Propaganda"
+   },
+   "period": "1965–1988",
+   "body": {
+    "ko": "1965년 5월 12일 선전선동부로 환원되었다. 이후 당대 문헌과 당사자 전기에서는 흔히 선전부라고 불렀다.",
+    "en": "Restored as the Department of Propaganda and Agitation on 12 May 1965; contemporary usage and officials’ biographies thereafter generally call it the Department of Propaganda."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "이념부",
+    "en": "Ideological Department"
+   },
+   "period": "1988–1991",
+   "body": {
+    "ko": "1988년 10월 이념부로 개편되었고, 1991년 8월 29일 소련 최고 소비에트가 당 활동을 정지시키면서 사라졌다.",
+    "en": "Reorganized as the Ideological Department in October 1988; it ended when the USSR Supreme Soviet suspended the party’s activity on 29 August 1991."
+   },
+   "termId": null
+  }
+ ],
+ "tracks": [
+  {
+   "id": "propaganda-head",
+   "title": {
+    "ko": "중앙위원회 선전 담당 부장",
+    "en": "Heads of the Central Committee propaganda department"
+   },
+   "blurb": {
+    "ko": "부서 이름은 행마다 그때의 공식 명칭으로 적었다. 1938년 4월 스테츠키 체포부터 11월 즈다노프 임명까지, 그리고 1961년부터 1962년 12월 이념부 창설까지는 출처에 부장이 나오지 않는다. 1965~1988년의 부서는 참고 목록에 선전선동부로 올라 있으나 당대 문헌과 당사자 전기에서는 선전부라고 불렀다.",
+    "en": "Each row gives the department’s official name at the time. The sources list no head between Stetsky’s arrest in April 1938 and Zhdanov’s appointment that November, or between 1961 and the creation of the Ideological Department in December 1962. Reference lists name the 1965–1988 department Propaganda and Agitation, while contemporary usage and the officials’ own biographies call it the Department of Propaganda."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "propaganda-head",
+   "personId": "preobrazhensky",
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1920,
+     4
+    ],
+    "end": [
+     1920,
+     6
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "루벤 카타냔",
+    "en": "Ruben Katanyan"
+   },
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1920,
+     6
+    ],
+    "end": [
+     1921,
+     10
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "레프 소스놉스키",
+    "en": "Lev Sosnovsky"
+   },
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1921,
+     10
+    ],
+    "end": [
+     1922,
+     5
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "andrei-bubnov",
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1922,
+     5
+    ],
+    "end": [
+     1924,
+     2
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "sergei-syrtsov",
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1924,
+     2
+    ],
+    "end": [
+     1926,
+     1,
+     27
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "vilgelm-knorin",
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1926,
+     1,
+     27
+    ],
+    "end": [
+     1927,
+     5
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "알렉산드르 크리니츠키",
+    "en": "Alexander Krinitsky"
+   },
+   "post": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1927,
+     5
+    ],
+    "end": [
+     1928,
+     5,
+     3
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00508.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "알렉산드르 크리니츠키",
+    "en": "Alexander Krinitsky"
+   },
+   "post": {
+    "ko": "중앙위원회 선동·선전·출판부장",
+    "en": "Head of the Central Committee Department of Agitation, Propaganda and the Press"
+   },
+   "period": {
+    "start": [
+     1928,
+     5,
+     3
+    ],
+    "end": [
+     1929,
+     11,
+     19
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00514.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "aleksei-stetsky",
+   "post": {
+    "ko": "중앙위원회 선동·선전·출판부장",
+    "en": "Head of the Central Committee Department of Agitation, Propaganda and the Press"
+   },
+   "period": {
+    "start": [
+     1929,
+     11,
+     19
+    ],
+    "end": [
+     1930,
+     1,
+     5
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00514.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "aleksei-stetsky",
+   "post": {
+    "ko": "중앙위원회 문화선전부장",
+    "en": "Head of the Central Committee Culture and Propaganda Department"
+   },
+   "period": {
+    "start": [
+     1930,
+     1,
+     5
+    ],
+    "end": [
+     1934,
+     2
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00707.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "aleksei-stetsky",
+   "post": {
+    "ko": "중앙위원회 문화·레닌주의선전부장",
+    "en": "Head of the Central Committee Department of Culture and Propaganda of Leninism"
+   },
+   "period": {
+    "start": [
+     1934,
+     3,
+     10
+    ],
+    "end": [
+     1935,
+     5,
+     13
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00721.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "aleksei-stetsky",
+   "post": {
+    "ko": "중앙위원회 당선전선동부장",
+    "en": "Head of the Central Committee Department of Party Propaganda and Agitation"
+   },
+   "period": {
+    "start": [
+     1935,
+     5,
+     13
+    ],
+    "end": [
+     1938,
+     4,
+     26
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00534.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "zhdanov",
+   "post": {
+    "ko": "중앙위원회 선전선동부(구두·출판)장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation (Oral and Printed)"
+   },
+   "period": {
+    "start": [
+     1938,
+     11,
+     21
+    ],
+    "end": [
+     1939,
+     3,
+     21
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/11122.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "zhdanov",
+   "post": {
+    "ko": "중앙위원회 선전선동국장",
+    "en": "Chief of the Central Committee Propaganda and Agitation Directorate"
+   },
+   "period": {
+    "start": [
+     1939,
+     3,
+     31
+    ],
+    "end": [
+     1940,
+     9,
+     6
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00570.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "georgy-alexandrov",
+   "post": {
+    "ko": "중앙위원회 선전선동국장",
+    "en": "Chief of the Central Committee Propaganda and Agitation Directorate"
+   },
+   "period": {
+    "start": [
+     1940,
+     9,
+     6
+    ],
+    "end": [
+     1947,
+     9,
+     17
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00570.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "suslov",
+   "post": {
+    "ko": "중앙위원회 선전선동국장",
+    "en": "Chief of the Central Committee Propaganda and Agitation Directorate"
+   },
+   "period": {
+    "start": [
+     1947,
+     9,
+     17
+    ],
+    "end": [
+     1948,
+     7,
+     10
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00570.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "shepilov",
+   "post": {
+    "ko": "중앙위원회 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation"
+   },
+   "period": {
+    "start": [
+     1948,
+     7,
+     10
+    ],
+    "end": [
+     1949,
+     7,
+     20
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00549.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "suslov",
+   "post": {
+    "ko": "중앙위원회 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation"
+   },
+   "period": {
+    "start": [
+     1949,
+     7,
+     20
+    ],
+    "end": [
+     1952,
+     10,
+     27
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00549.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "nikolai-mikhailov",
+   "post": {
+    "ko": "중앙위원회 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation"
+   },
+   "period": {
+    "start": [
+     1952,
+     10,
+     27
+    ],
+    "end": [
+     1953,
+     3,
+     14
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00549.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "vladimir-kruzhkov",
+   "post": {
+    "ko": "중앙위원회 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation"
+   },
+   "period": {
+    "start": [
+     1953,
+     3,
+     25
+    ],
+    "end": [
+     1955
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00549.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "fyodor-konstantinov",
+   "post": {
+    "ko": "중앙위원회 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation"
+   },
+   "period": {
+    "start": [
+     1955
+    ],
+    "end": [
+     1956
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/00549.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "fyodor-konstantinov",
+   "post": {
+    "ko": "중앙위원회 연방공화국 담당 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation for the Union Republics"
+   },
+   "period": {
+    "start": [
+     1956
+    ],
+    "end": [
+     1958
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/05203.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "leonid-ilyichev",
+   "post": {
+    "ko": "중앙위원회 연방공화국 담당 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation for the Union Republics"
+   },
+   "period": {
+    "start": [
+     1958
+    ],
+    "end": [
+     1961
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/05203.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "leonid-ilyichev",
+   "post": {
+    "ko": "중앙위원회 이념부장",
+    "en": "Head of the Central Committee Ideological Department"
+   },
+   "period": {
+    "start": [
+     1962,
+     12,
+     20
+    ],
+    "end": [
+     1965,
+     5
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "vladimir-stepakov",
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1965,
+     5
+    ],
+    "end": [
+     1970
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "yakovlev",
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1970
+    ],
+    "end": [
+     1973
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "게오르기 스미르노프",
+    "en": "Georgy Smirnov"
+   },
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1974
+    ],
+    "end": [
+     1977,
+     5
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "yevgeny-tyazhelnikov",
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1977,
+     5
+    ],
+    "end": [
+     1982,
+     12
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "boris-stukalin",
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1982,
+     12
+    ],
+    "end": [
+     1985,
+     7,
+     5
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": "yakovlev",
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1985,
+     7,
+     5
+    ],
+    "end": [
+     1986,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Агитпроп"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "유리 스클랴로프",
+    "en": "Yuri Sklyarov"
+   },
+   "post": {
+    "ko": "중앙위원회 선전부장",
+    "en": "Head of the Central Committee Department of Propaganda"
+   },
+   "period": {
+    "start": [
+     1986,
+     7
+    ],
+    "end": [
+     1988,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Скляров,_Юрий_Александрович"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "알렉산드르 캅토",
+    "en": "Alexander Kapto"
+   },
+   "post": {
+    "ko": "중앙위원회 이념부장",
+    "en": "Head of the Central Committee Ideological Department"
+   },
+   "period": {
+    "start": [
+     1988,
+     11
+    ],
+    "end": [
+     1990
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Агитпроп"
+  },
+  {
+   "track": "propaganda-head",
+   "personId": null,
+   "name": {
+    "ko": "알렉산드르 데그탸료프",
+    "en": "Alexander Degtyarev"
+   },
+   "post": {
+    "ko": "중앙위원회 이념부장",
+    "en": "Head of the Central Committee Ideological Department"
+   },
+   "period": {
+    "start": [
+     1990
+    ],
+    "end": [
+     1991,
+     8,
+     29
+    ]
+   },
+   "source": "http://www.knowbysight.info/2_KPSS/04284.asp"
+  }
+ ]
+}

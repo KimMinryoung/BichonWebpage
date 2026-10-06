@@ -1,0 +1,503 @@
+{
+ "officeId": "culture-literature",
+ "title": {
+  "ko": "문화 · 문학예술 통제",
+  "en": "Culture and literary control"
+ },
+ "blurb": {
+  "ko": "러시아 공화국 교육인민위원(1917~1946), 소련 문화장관(1953~1991), 소련 작가동맹 지도자(1934~1991).",
+  "en": "People’s Commissar of Education of the RSFSR (1917–1946), Minister of Culture of the USSR (1953–1991) and the head of the Union of Soviet Writers (1934–1991)."
+ },
+ "range": "1917–1991",
+ "tracks": [
+  {
+   "id": "narkompros",
+   "title": {
+    "ko": "교육인민위원",
+    "en": "People’s Commissar of Education"
+   },
+   "blurb": {
+    "ko": "러시아 공화국 교육인민위원부(나르콤프로스)의 수장. 학교, 학술, 출판, 예술을 함께 관할했다. 1946년 3월 교육부로 바뀌었다.",
+    "en": "Head of the RSFSR People’s Commissariat of Education (Narkompros), which ran schools, scholarship, publishing and the arts. It became a ministry in March 1946."
+   }
+  },
+  {
+   "id": "minkult",
+   "title": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "blurb": {
+    "ko": "1953년 3월 문화 관련 부처들을 합쳐 만든 소련 문화부의 장관. 1991년 11월 문화위원회로 개편되었다.",
+    "en": "Minister of the USSR Ministry of Culture, formed by merging the cultural agencies in March 1953 and turned into a committee in November 1991."
+   }
+  },
+  {
+   "id": "writers",
+   "title": {
+    "ko": "소련 작가동맹 지도자",
+    "en": "Head of the Union of Soviet Writers"
+   },
+   "blurb": {
+    "ko": "1934년 규약상 지도자는 이사회 의장이었으나 실무는 서기장·제1서기가 이끌었고, 1977년 규약부터는 이사회 제1서기가 지도자였다. 그래서 1971~1977년에는 의장과 제1서기가 겹친다. 직함은 당시 것이다.",
+    "en": "Under the 1934 statute the head was the Chairman of the Board, though the General or First Secretary ran the Union’s work; from the 1977 statute the First Secretary of the Board was the head, so the Chairman and the First Secretary overlap in 1971–1977. Titles are those of the time."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "narkompros",
+   "personId": "lunacharsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 교육인민위원",
+    "en": "People’s Commissar of Education of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     11,
+     8
+    ],
+    "end": [
+     1929,
+     9,
+     12
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Луначарский,_Анатолий_Васильевич"
+  },
+  {
+   "track": "narkompros",
+   "personId": "andrei-bubnov",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 교육인민위원",
+    "en": "People’s Commissar of Education of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1929,
+     9,
+     12
+    ],
+    "end": [
+     1937,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Бубнов,_Андрей_Сергеевич"
+  },
+  {
+   "track": "narkompros",
+   "personId": null,
+   "name": {
+    "ko": "표트르 튜르킨",
+    "en": "Pyotr Tyurkin"
+   },
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 교육인민위원",
+    "en": "People’s Commissar of Education of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     10,
+     26
+    ],
+    "end": [
+     1940,
+     2,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Тюркин,_Пётр_Андреевич"
+  },
+  {
+   "track": "narkompros",
+   "personId": "vladimir-potemkin",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 교육인민위원",
+    "en": "People’s Commissar of Education of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1940,
+     2,
+     28
+    ],
+    "end": [
+     1946,
+     2,
+     23
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Потёмкин,_Владимир_Петрович"
+  },
+  {
+   "track": "minkult",
+   "personId": "panteleimon-ponomarenko",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     3,
+     15
+    ],
+    "end": [
+     1954,
+     3,
+     9
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "minkult",
+   "personId": "georgy-alexandrov",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1954,
+     3,
+     9
+    ],
+    "end": [
+     1955,
+     3,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "minkult",
+   "personId": "nikolai-mikhailov",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1955,
+     3,
+     21
+    ],
+    "end": [
+     1960,
+     5,
+     4
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "minkult",
+   "personId": "furtseva",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1960,
+     5,
+     4
+    ],
+    "end": [
+     1974,
+     10,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "minkult",
+   "personId": "demichev",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1974,
+     11,
+     14
+    ],
+    "end": [
+     1986,
+     6,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "minkult",
+   "personId": "vasily-zakharov",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1986,
+     8,
+     15
+    ],
+    "end": [
+     1989,
+     6,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "minkult",
+   "personId": "gubenko",
+   "post": {
+    "ko": "소련 문화장관",
+    "en": "Minister of Culture of the USSR"
+   },
+   "period": {
+    "start": [
+     1989,
+     11,
+     21
+    ],
+    "end": [
+     1991,
+     11,
+     27
+    ]
+   },
+   "note": {
+    "ko": "1991.08.28부터 직무대행",
+    "en": "Acting from 1991.08.28"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Министерство_культуры_СССР"
+  },
+  {
+   "track": "writers",
+   "personId": "gorky",
+   "post": {
+    "ko": "소련 작가동맹 이사회 의장",
+    "en": "Chairman of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1934,
+     9
+    ],
+    "end": [
+     1936,
+     6,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Горький,_Максим"
+  },
+  {
+   "track": "writers",
+   "personId": null,
+   "name": {
+    "ko": "블라디미르 스탑스키",
+    "en": "Vladimir Stavsky"
+   },
+   "post": {
+    "ko": "소련 작가동맹 서기장",
+    "en": "General Secretary of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1936
+    ],
+    "end": null
+   },
+   "ongoing": false,
+   "source": "https://ru.wikipedia.org/wiki/Ставский,_Владимир_Петрович"
+  },
+  {
+   "track": "writers",
+   "personId": "fadeyev",
+   "post": {
+    "ko": "소련 작가동맹 서기",
+    "en": "Secretary of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1939
+    ],
+    "end": [
+     1944
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Фадеев,_Александр_Александрович"
+  },
+  {
+   "track": "writers",
+   "personId": null,
+   "name": {
+    "ko": "니콜라이 티호노프",
+    "en": "Nikolai Tikhonov"
+   },
+   "post": {
+    "ko": "소련 작가동맹 이사회 의장",
+    "en": "Chairman of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1944
+    ],
+    "end": [
+     1946
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Тихонов,_Николай_Семёнович"
+  },
+  {
+   "track": "writers",
+   "personId": "fadeyev",
+   "post": {
+    "ko": "소련 작가동맹 서기장 겸 이사회 의장",
+    "en": "General Secretary and Chairman of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1946
+    ],
+    "end": [
+     1954
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Фадеев,_Александр_Александрович"
+  },
+  {
+   "track": "writers",
+   "personId": "alexei-surkov",
+   "post": {
+    "ko": "소련 작가동맹 이사회 제1서기",
+    "en": "First Secretary of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1953
+    ],
+    "end": [
+     1959
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Сурков,_Алексей_Александрович"
+  },
+  {
+   "track": "writers",
+   "personId": "konstantin-fedin",
+   "post": {
+    "ko": "소련 작가동맹 이사회 제1서기",
+    "en": "First Secretary of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1959
+    ],
+    "end": [
+     1971
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Федин,_Константин_Александрович"
+  },
+  {
+   "track": "writers",
+   "personId": "konstantin-fedin",
+   "post": {
+    "ko": "소련 작가동맹 이사회 의장",
+    "en": "Chairman of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1971
+    ],
+    "end": [
+     1977,
+     7,
+     15
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Федин,_Константин_Александрович"
+  },
+  {
+   "track": "writers",
+   "personId": "georgy-markov",
+   "post": {
+    "ko": "소련 작가동맹 이사회 제1서기",
+    "en": "First Secretary of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1971,
+     7,
+     2
+    ],
+    "end": [
+     1986,
+     6,
+     28
+    ]
+   },
+   "note": {
+    "ko": "1986.06.28–1989.01.18 이사회 의장",
+    "en": "Chairman of the Board 1986.06.28–1989.01.18"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Марков,_Георгий_Мокеевич"
+  },
+  {
+   "track": "writers",
+   "personId": null,
+   "name": {
+    "ko": "블라디미르 카르포프",
+    "en": "Vladimir Karpov"
+   },
+   "post": {
+    "ko": "소련 작가동맹 이사회 제1서기",
+    "en": "First Secretary of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1986,
+     6,
+     28
+    ],
+    "end": [
+     1991
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Карпов,_Владимир_Васильевич"
+  },
+  {
+   "track": "writers",
+   "personId": null,
+   "name": {
+    "ko": "티무르 풀라토프",
+    "en": "Timur Pulatov"
+   },
+   "post": {
+    "ko": "소련 작가동맹 이사회 제1서기",
+    "en": "First Secretary of the Board of the Union of Soviet Writers"
+   },
+   "period": {
+    "start": [
+     1991
+    ],
+    "end": null
+   },
+   "ongoing": false,
+   "source": "https://ru.wikipedia.org/wiki/Пулатов,_Тимур_Исхакович"
+  }
+ ]
+}

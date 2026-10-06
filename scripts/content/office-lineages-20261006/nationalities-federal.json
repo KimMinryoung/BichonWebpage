@@ -1,0 +1,362 @@
+{
+ "officeId": "nationalities-federal",
+ "title": {
+  "ko": "민족문제 · 연방 관리",
+  "en": "Nationalities and federal management"
+ },
+ "blurb": {
+  "ko": "러시아 공화국 민족인민위원(1917~1923)과 연방 상원인 민족 소비에트의 의장(소련 중앙집행위원회 1927~, 최고소비에트 1938~1991).",
+  "en": "People’s Commissar of Nationalities of the RSFSR (1917–1923) and the chairman of the Soviet of Nationalities, the federal upper chamber (of the USSR Central Executive Committee from 1927, of the Supreme Soviet 1938–1991)."
+ },
+ "range": "1917–1991",
+ "lineage": [
+  {
+   "name": {
+    "ko": "민족인민위원부",
+    "en": "People’s Commissariat of Nationalities"
+   },
+   "period": "1917–1924",
+   "body": {
+    "ko": "러시아 공화국의 민족 정책 기관. 소련 창설 뒤 1924년 4월 폐지되고 기능은 전러시아 중앙집행위원회로 넘어갔다.",
+    "en": "The RSFSR’s agency for nationalities policy, abolished in April 1924 after the USSR was formed, its functions passing to the All-Russian Central Executive Committee."
+   },
+   "termId": null
+  },
+  {
+   "name": {
+    "ko": "소련 중앙집행위원회 민족 소비에트",
+    "en": "Soviet of Nationalities of the USSR Central Executive Committee"
+   },
+   "period": "1924–1938",
+   "body": {
+    "ko": "1924년 헌법으로 생긴 중앙집행위원회의 제2원으로, 연방공화국·자치공화국·자치주 대표로 구성되었다.",
+    "en": "The second chamber of the Central Executive Committee created by the 1924 Constitution, made up of delegates of the union republics, autonomous republics and autonomous regions."
+   },
+   "termId": "soviet-of-nationalities"
+  },
+  {
+   "name": {
+    "ko": "소련 최고소비에트 민족 소비에트",
+    "en": "Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": "1938–1991",
+   "body": {
+    "ko": "1936년 헌법에 따라 1938년 1월 첫 회의를 연 최고소비에트의 상원.",
+    "en": "The upper chamber of the Supreme Soviet under the 1936 Constitution, first convened in January 1938."
+   },
+   "termId": "soviet-of-nationalities"
+  },
+  {
+   "name": {
+    "ko": "공화국 소비에트",
+    "en": "Soviet of the Republics"
+   },
+   "period": "1991",
+   "body": {
+    "ko": "1991년 10월 민족 소비에트를 대신한 최고소비에트의 상원. 12월 26일 소련 해체를 선언하고 소멸했다.",
+    "en": "The upper chamber that replaced the Soviet of Nationalities in October 1991 and dissolved itself after declaring the end of the USSR on 26 December."
+   },
+   "termId": null
+  }
+ ],
+ "tracks": [
+  {
+   "id": "narkomnats",
+   "title": {
+    "ko": "민족인민위원",
+    "en": "People’s Commissar of Nationalities"
+   },
+   "blurb": {
+    "ko": "10월 혁명 직후 설치된 러시아 공화국 민족인민위원부의 수장. 스탈린이 내내 맡았고, 소련 창설 뒤 1923년 7월 그의 임기가 끝났다.",
+    "en": "Head of the RSFSR People’s Commissariat of Nationalities, set up immediately after the October Revolution. Stalin held the post throughout; his tenure ended in July 1923, after the USSR was formed."
+   }
+  },
+  {
+   "id": "soviet-of-nationalities",
+   "title": {
+    "ko": "민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities"
+   },
+   "blurb": {
+    "ko": "1924년 헌법으로 소련 중앙집행위원회의 제2원으로 생긴 민족 소비에트의 의장, 1938년부터는 최고소비에트 민족 소비에트의 의장. 중앙집행위원회 시기(1924~1938)에는 출처가 1927년 4월 선출된 스크리프니크만 의장으로 기록하고 다른 의장과 그의 퇴임일은 나오지 않는다. 1991년 10월 민족 소비에트는 공화국 소비에트로 바뀌었다.",
+    "en": "Chairman of the Soviet of Nationalities, created by the 1924 Constitution as the second chamber of the USSR Central Executive Committee, and from 1938 of the Supreme Soviet’s Soviet of Nationalities. For the Central Executive Committee period (1924–1938) the sources record only Skrypnyk, elected in April 1927, and give neither the other chairmen nor the end of his term. In October 1991 the chamber was replaced by the Soviet of the Republics."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "narkomnats",
+   "personId": "stalin",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 민족인민위원",
+    "en": "People’s Commissar of Nationalities of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1917,
+     11,
+     8
+    ],
+    "end": [
+     1923,
+     7,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Сталин,_Иосиф_Виссарионович"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "mykola-skrypnyk",
+   "post": {
+    "ko": "소련 중앙집행위원회 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Central Executive Committee"
+   },
+   "period": {
+    "start": [
+     1927,
+     4,
+     27
+    ],
+    "end": null
+   },
+   "ongoing": false,
+   "source": "http://www.knowbysight.info/SSS/05501.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "shvernik",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1938,
+     1,
+     12
+    ],
+    "end": [
+     1946,
+     3,
+     12
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "vasily-kuznetsov",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1946,
+     3,
+     12
+    ],
+    "end": [
+     1950,
+     6,
+     12
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "shayakhmetov",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1950,
+     6,
+     12
+    ],
+    "end": [
+     1954,
+     4,
+     20
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "vilis-lacis",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1954,
+     4,
+     20
+    ],
+    "end": [
+     1958,
+     3,
+     27
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "janis-peive",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1958,
+     3,
+     27
+    ],
+    "end": [
+     1966,
+     8,
+     2
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "paleckis",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1966,
+     8,
+     2
+    ],
+    "end": [
+     1970,
+     7,
+     14
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "nasriddinova",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1970,
+     7,
+     14
+    ],
+    "end": [
+     1974,
+     7,
+     25
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "vitalijs-rubens",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1974,
+     7,
+     25
+    ],
+    "end": [
+     1984,
+     4,
+     11
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "voss",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1984,
+     4,
+     11
+    ],
+    "end": [
+     1989,
+     5,
+     25
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": "nishonov",
+   "post": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1989,
+     6,
+     6
+    ],
+    "end": [
+     1991,
+     9,
+     5
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  },
+  {
+   "track": "soviet-of-nationalities",
+   "personId": null,
+   "name": {
+    "ko": "아누아르베크 알림자노프",
+    "en": "Anuarbek Alimzhanov"
+   },
+   "post": {
+    "ko": "소련 최고소비에트 공화국 소비에트 의장",
+    "en": "Chairman of the Soviet of the Republics of the USSR Supreme Soviet"
+   },
+   "period": {
+    "start": [
+     1991,
+     10,
+     29
+    ],
+    "end": [
+     1991,
+     12,
+     26
+    ]
+   },
+   "source": "http://www.knowbysight.info/1_SSSR/09011.asp"
+  }
+ ]
+}
