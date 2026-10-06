@@ -107,7 +107,7 @@
                 <% var members = congress[bucket]; if (!members.length) return; %>
                 <h3><%= body.buckets[bucket] %></h3>
                 <div class="commu-politburo-scroll">
-                    <table class="commu-politburo-table">
+                    <table class="commu-politburo-table is-<%= bucket %>">
                         <thead>
                             <tr>
                                 <th scope="col"><%= strings.commuLingoViews.politburo.person %></th>
@@ -117,7 +117,7 @@
                         </thead>
                         <tbody>
                             <% members.forEach(function(row) { %>
-                            <tr>
+                            <tr<% if (row.promoted) { %> class="is-promoted"<% } %>>
                                 <td><% if (row.href) { %><a href="<%= row.href %>"><%= row.name %></a><% } else { %><span class="commu-politburo-unlinked"><%= row.name %></span><% } %></td>
                                 <td><%= row.in %></td>
                                 <td><%= row.out %></td>

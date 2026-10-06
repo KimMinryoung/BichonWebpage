@@ -5418,6 +5418,17 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     white-space: nowrap;
 }
 
+/* Congress tables: full members on a red wash, candidates on a neutral
+   one; a candidate promoted mid-term takes the full-member wash. */
+.commu-politburo-table.is-full tbody tr,
+.commu-politburo-table.is-candidates tbody tr.is-promoted {
+    background: color-mix(in srgb, var(--accent-red) 14%, transparent);
+}
+
+.commu-politburo-table.is-candidates tbody tr {
+    background: color-mix(in srgb, var(--text-muted) 7%, transparent);
+}
+
 .commu-politburo-table th {
     border-bottom-color: color-mix(in srgb, var(--border) 60%, transparent);
     color: var(--text-muted);
