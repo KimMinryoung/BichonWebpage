@@ -2,37 +2,48 @@ const fs = require('fs');
 const path = require('path');
 const { localize } = require('./localize');
 
-// The Politburo membership dataset (data/commulingo/politburo.json): a member
-// registry with tenure spans, era sections over it, and per-congress tables.
-// Like the genealogy charts it lives under the host-mounted data/ directory
-// and is cached by file mtime, so correcting a date or filling in a person id
-// needs no image rebuild.
-const FILE = path.join(__dirname, 'politburo.json');
+// The Central Committee body rosters (party-bodies.js): politburo.json,
+// secretariat.json, orgburo.json — a member registry with tenure spans, era
+// sections over it, and per-congress tables. Like the genealogy charts they live
+// under the host-mounted data/ directory and are cached by file mtime, so
+// correcting a date or filling in a person id needs no image rebuild.
+const { BODIES, BODY_IDS } = require('./party-bodies');
 
-let cache = null; // { mtimeMs, data }
+const cache = new Map(); // bodyId -> { mtimeMs, data, checkedAt }
 // Every person page calls this; re-stat at most twice a second (same
 // debounce as the docs manifest) while keeping the mtime live-reload.
 const FRESHNESS_MS = 500;
-let checkedAt = 0;
+
+// null when the body's file is not there yet.
+function loadBody(bodyId) {
+    const body = BODIES[bodyId];
+    if (!body) throw new Error(`unknown party body ${bodyId}`);
+    let entry = cache.get(bodyId);
+    if (entry && Date.now() - entry.checkedAt < FRESHNESS_MS) return entry.data;
+    const file = path.join(__dirname, body.file);
+    let stat;
+    try {
+        stat = fs.statSync(file);
+    } catch (err) {
+        if (err.code !== 'ENOENT') throw err;
+        cache.set(bodyId, { mtimeMs: 0, data: null, checkedAt: Date.now() });
+        return null;
+    }
+    if (!entry || entry.mtimeMs !== stat.mtimeMs) {
+        entry = { mtimeMs: stat.mtimeMs, data: JSON.parse(fs.readFileSync(file, 'utf8')) };
+    }
+    entry.checkedAt = Date.now();
+    cache.set(bodyId, entry);
+    return entry.data;
+}
 
 function loadPolitburo() {
-    if (cache && Date.now() - checkedAt < FRESHNESS_MS) return cache.data;
-    const stat = fs.statSync(FILE);
-    checkedAt = Date.now();
-    if (!cache || cache.mtimeMs !== stat.mtimeMs) {
-        cache = { mtimeMs: stat.mtimeMs, data: JSON.parse(fs.readFileSync(FILE, 'utf8')) };
-    }
-    return cache.data;
+    return loadBody('politburo');
 }
 
 // ── Shared label tables ──────────────────────────────────────────────────
 // The dataset stores structured spans and end events, not prose; both the
 // roster page and the person-page box render from these.
-const SPAN_KINDS = {
-    full: { ko: '정위원', en: 'Full member' },
-    cand: { ko: '후보위원', en: 'Candidate' },
-    orig: { ko: '1917.10 봉기 정치국', en: 'October 1917 Politburo' },
-};
 const END_KINDS = {
     died: { ko: '재임 중 사망', en: 'died in office' },
     assassinated: { ko: '암살', en: 'assassinated' },
@@ -43,6 +54,7 @@ const END_KINDS = {
     not: { ko: '미재선', en: 'not re-elected' },
     resigned: { ko: '서기장 사임', en: 'resigned as General Secretary' },
     banned: { ko: '1991.11 당 활동 금지까지 재임', en: 'served until the party ban of 1991.11' },
+    abolished: { ko: '기구 폐지까지 재임', en: 'served until the body was abolished' },
 };
 
 function endText(event, lang) {
@@ -51,27 +63,55 @@ function endText(event, lang) {
 }
 
 // One string per stint; callers keep each unbreakable and break lines only
-// between stints.
-function spanParts(spans, lang) {
+// between stints. Span labels are the body's (정위원 / 서기 / 위원 …).
+function spanParts(spans, lang, bodyId = 'politburo') {
+    const kinds = BODIES[bodyId].spans;
     return spans.map(span => {
-        const kind = localize(SPAN_KINDS[span.k] || SPAN_KINDS.full, lang);
+        const kind = localize(kinds[span.k] || kinds.full, lang);
         if (!span.f) return kind;
         return `${kind} ${span.f}–${span.t || ''}`;
     });
 }
 
-// The person-page box: this person's Politburo career, or null when the
-// dictionary id never sat on the body.
-function politburoCareerFor(personId, lang) {
-    const member = loadPolitburo().members[personId];
+function careerFor(bodyId, personId, lang) {
+    const data = loadBody(bodyId);
+    const member = data && data.members[personId];
     if (!member || member.name) return null;
     const noteParts = [];
     if (member.end) noteParts.push(endText(member.end, lang));
     if (member.note) noteParts.push(localize(member.note, lang));
     return {
-        parts: spanParts(member.spans, lang),
+        parts: spanParts(member.spans, lang, bodyId),
         note: noteParts.join(' · '),
     };
 }
 
-module.exports = { loadPolitburo, spanParts, endText, politburoCareerFor };
+// The person-page box: this person's Politburo career, or null when the
+// dictionary id never sat on the body.
+function politburoCareerFor(personId, lang) {
+    return careerFor('politburo', personId, lang);
+}
+
+// The person-page boxes for every body the person sat on, in BODIES order.
+function bodyCareersFor(personId, lang) {
+    return BODY_IDS.map(bodyId => {
+        const career = careerFor(bodyId, personId, lang);
+        return career && { bodyId, title: localize(BODIES[bodyId].title, lang), href: BODIES[bodyId].path, ...career };
+    }).filter(Boolean);
+}
+
+module.exports = { loadBody, loadPolitburo, spanParts, endText, politburoCareerFor, bodyCareersFor };
+
+// The roster cards of the office index: bodies whose file is present.
+function availableBodies(lang) {
+    return BODY_IDS.filter(bodyId => loadBody(bodyId)).map(bodyId => ({
+        id: bodyId,
+        href: BODIES[bodyId].path,
+        officeId: BODIES[bodyId].officeId,
+        range: BODIES[bodyId].range,
+        title: localize(BODIES[bodyId].title, lang),
+        description: localize(BODIES[bodyId].description, lang),
+    }));
+}
+
+module.exports.availableBodies = availableBodies;

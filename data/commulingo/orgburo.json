@@ -1,0 +1,2825 @@
+{
+ "intro": {
+  "ko": "조직국(Оргбюро)은 1919년 3월 제8차 당대회의 결정으로 정치국·서기국과 나란히 설치된 중앙위원회 기구로, 당의 조직 사업과 간부 문제를 맡았다. 위원과 후보위원으로 나뉘었으나, 같은 일을 상설로 다루는 서기국에 실무가 쏠리면서 비중이 줄었고, 1952년 10월 제19차 당대회에서 폐지되어 그 기능은 확대된 서기국으로 넘어갔다.",
+  "en": "The Orgburo (Organisational Bureau) was the Central Committee body that the 8th Congress set up in March 1919 alongside the Politburo and the Secretariat, to handle the party’s organisational and cadre questions. It had full and candidate members, but lost weight as the same work gathered in the standing Secretariat, and the 19th Congress abolished it in October 1952, passing its functions to an enlarged Secretariat."
+ },
+ "sources": {
+  "ko": "명단과 날짜는 knowbysight.info(Справочник по истории КПСС)의 「Организационное бюро РКП(б) — ВКП(б)」 구성 목록을 따르고, 러시아어 위키백과 「Составы Оргбюро ЦК ВКП(б)」·영어 위키백과 「Orgburo」와 대조했다. 1919년 1월 중앙위원회 회의가 뽑은 3인 조직국도 앞머리에 실었고, 1927년 2월의 교체는 정치국 결정 날짜(영어 위키백과는 1927년 4월 전원회의)를 따랐다.",
+  "en": "Rosters and dates follow the composition lists of the Orgburo in knowbysight.info (Spravochnik po istorii KPSS), checked against the Russian Wikipedia list of Orgburo compositions and the English Wikipedia article “Orgburo”. The three-man Orgburo chosen by the Central Committee in January 1919 is included at the start, and the February 1927 changes are dated by the Politburo decision (English Wikipedia gives an April 1927 plenum)."
+ },
+ "congressesIntro": {
+  "ko": "각 항목의 표는 보선·승격·해임 등 임기 중 변동까지 포함해 그 기수를 거쳐 간 전원을 싣는다. 머리글의 인원수는 표의 행 수가 아니라 당대회 뒤 중앙위원회 전원회의에서 선출된 시점의 실제 정원이다. 첫 항목은 제8차 당대회 이전인 1919년 1월에 꾸려진 3인 조직국이고, 마지막 항목은 1946년 3월 전원회의의 재편이다.",
+  "en": "Each block’s table lists everyone who passed through that term, mid-term by-elections, promotions and removals included. The counts in the heading are the body’s actual size as elected at the Central Committee plenum after the congress, not the table’s row count. The first block is the three-man Orgburo of January 1919, before the 8th Congress; the last is the reorganisation at the March 1946 plenum."
+ },
+ "members": {
+  "krestinsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.01",
+     "t": "1921.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1921.03"
+   }
+  },
+  "mikhail-vladimirsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.01",
+     "t": "1919.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1919.03"
+   }
+  },
+  "sverdlov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.01",
+     "t": "1919.03"
+    }
+   ],
+   "end": {
+    "t": "died",
+    "d": "1919.03"
+   }
+  },
+  "alexander-beloborodov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.03",
+     "t": "1919.10"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1919.10"
+   }
+  },
+  "leonid-serebryakov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.03",
+     "t": "1921.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1921.03"
+   }
+  },
+  "matvei-muranov": {
+   "name": {
+    "ko": "마트베이 무라노프",
+    "en": "Matvei Muranov"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1919.03",
+     "t": "1920.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1920.04"
+   }
+  },
+  "stalin": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "stasova": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.03",
+     "t": "1920.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1920.04"
+   }
+  },
+  "dzerzhinsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.08",
+     "t": "1920.04"
+    },
+    {
+     "k": "cand",
+     "f": "1920.04",
+     "t": "1921.08"
+    },
+    {
+     "k": "full",
+     "f": "1921.08",
+     "t": "1924.06"
+    },
+    {
+     "k": "cand",
+     "f": "1924.06",
+     "t": "1926.01"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1926.01"
+   }
+  },
+  "kamenev": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.08",
+     "t": "1920.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1920.04"
+   }
+  },
+  "christian-rakovsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.10",
+     "t": "1920.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1920.04"
+   }
+  },
+  "kalinin": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.11",
+     "t": "1920.04"
+    },
+    {
+     "k": "cand",
+     "f": "1921.03",
+     "t": "1924.06"
+    },
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1926.01"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1926.01"
+   }
+  },
+  "trotsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1919.11",
+     "t": "1920.04"
+    },
+    {
+     "k": "full",
+     "f": "1923.09",
+     "t": "1924.06"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1924.06"
+   }
+  },
+  "preobrazhensky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1920.04",
+     "t": "1921.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1921.03"
+   }
+  },
+  "rykov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1920.04",
+     "t": "1924.06"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1924.06"
+   }
+  },
+  "tomsky": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1920.04",
+     "t": "1921.03"
+    },
+    {
+     "k": "full",
+     "f": "1921.03",
+     "t": "1921.08"
+    },
+    {
+     "k": "full",
+     "f": "1922.04",
+     "t": "1924.06"
+    },
+    {
+     "k": "cand",
+     "f": "1924.06",
+     "t": "1926.01"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1926.01"
+   }
+  },
+  "emelyan-yaroslavsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1921.03",
+     "t": "1921.08"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1921.08"
+   }
+  },
+  "molotov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1921.03",
+     "t": "1930.12"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1930.12"
+   }
+  },
+  "nikolai-komarov": {
+   "name": {
+    "ko": "니콜라이 코마로프",
+    "en": "Nikolai Komarov"
+   },
+   "spans": [
+    {
+     "k": "full",
+     "f": "1921.03",
+     "t": "1921.08"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1921.08"
+   }
+  },
+  "rudzutak": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1921.03",
+     "t": "1921.08"
+    },
+    {
+     "k": "full",
+     "f": "1921.08",
+     "t": "1922.04"
+    },
+    {
+     "k": "cand",
+     "f": "1922.04",
+     "t": "1923.04"
+    },
+    {
+     "k": "full",
+     "f": "1923.04",
+     "t": "1924.06"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1924.06"
+   }
+  },
+  "vasily-mikhailov": {
+   "name": {
+    "ko": "바실리 미하일로프",
+    "en": "Vasily Mikhailov"
+   },
+   "spans": [
+    {
+     "k": "full",
+     "f": "1921.03",
+     "t": "1922.04"
+    },
+    {
+     "k": "cand",
+     "f": "1923.04",
+     "t": "1924.06"
+    },
+    {
+     "k": "cand",
+     "f": "1926.01",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "ivan-kutuzov": {
+   "name": {
+    "ko": "이반 쿠투조프",
+    "en": "Ivan Kutuzov"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1921.05",
+     "t": "1922.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1922.04"
+   }
+  },
+  "pyotr-zalutsky": {
+   "name": {
+    "ko": "표트르 잘루츠키",
+    "en": "Pyotr Zalutsky"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1921.05",
+     "t": "1921.08"
+    },
+    {
+     "k": "full",
+     "f": "1921.08",
+     "t": "1922.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1922.04"
+   }
+  },
+  "vasily-shmidt": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1921.05",
+     "t": "1922.04"
+    },
+    {
+     "k": "cand",
+     "f": "1926.01",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "ivan-tuntul": {
+   "name": {
+    "ko": "이반 툰툴",
+    "en": "Ivan Tuntul"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1922.03",
+     "t": "1922.04"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1922.04"
+   }
+  },
+  "andrei-andreyev": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1922.04",
+     "t": "1928.04"
+    },
+    {
+     "k": "full",
+     "f": "1935.03",
+     "t": "1946.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1946.03"
+   }
+  },
+  "isaak-zelensky": {
+   "name": {
+    "ko": "이사크 젤렌스키",
+    "en": "Isaak Zelensky"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1922.04",
+     "t": "1924.06"
+    },
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1924.08"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1924.08"
+   }
+  },
+  "kuibyshev": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1922.04",
+     "t": "1923.04"
+    },
+    {
+     "k": "full",
+     "f": "1934.02",
+     "t": "1935.01"
+    }
+   ],
+   "end": {
+    "t": "died",
+    "d": "1935.01"
+   }
+  },
+  "bukharin": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1923.09",
+     "t": "1924.06"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1924.06"
+   }
+  },
+  "ivan-korotkov": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1923.09",
+     "t": "1924.06"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1924.06"
+   }
+  },
+  "zinoviev": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1923.09",
+     "t": "1924.06"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1924.06"
+   }
+  },
+  "alexander-dogadov": {
+   "name": {
+    "ko": "알렉산드르 도가도프",
+    "en": "Alexander Dogadov"
+   },
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1930.07"
+    },
+    {
+     "k": "cand",
+     "f": "1930.07",
+     "t": "1932.10"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1932.10"
+   }
+  },
+  "alexander-smirnov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1930.07"
+    },
+    {
+     "k": "cand",
+     "f": "1930.07",
+     "t": "1933.01"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1933.01"
+   }
+  },
+  "andrei-bubnov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1934.02"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1934.02"
+   }
+  },
+  "frunze": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1924.06",
+     "t": "1925.10"
+    }
+   ],
+   "end": {
+    "t": "died",
+    "d": "1925.10"
+   }
+  },
+  "ivan-lepse": {
+   "name": {
+    "ko": "이반 렙세",
+    "en": "Ivan Lepse"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1924.06",
+     "t": "1929.10"
+    }
+   ],
+   "end": {
+    "t": "died",
+    "d": "1929.10"
+   }
+  },
+  "kaganovich": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1926.01"
+    },
+    {
+     "k": "full",
+     "f": "1928.07",
+     "t": "1946.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1946.03"
+   }
+  },
+  "klavdiya-nikolaeva": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1926.01"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1926.01"
+   }
+  },
+  "nikolai-antipov": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1924.06",
+     "t": "1926.01"
+    },
+    {
+     "k": "cand",
+     "f": "1928.04",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "nikolai-chaplin": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1924.06",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "voroshilov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.06",
+     "t": "1926.01"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1926.01"
+   }
+  },
+  "nikolai-uglanov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1924.08",
+     "t": "1929.04"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1929.04"
+   }
+  },
+  "alexandra-artyukhina": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1926.01",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "emmanuil-kviring": {
+   "name": {
+    "ko": "에마누일 크비링",
+    "en": "Emmanuil Kviring"
+   },
+   "spans": [
+    {
+     "k": "full",
+     "f": "1926.01",
+     "t": "1927.02"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1927.02"
+   }
+  },
+  "grigory-evdokimov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1926.01",
+     "t": "1926.04"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1926.04"
+   }
+  },
+  "konstantin-ukhanov": {
+   "name": {
+    "ko": "콘스탄틴 우하노프",
+    "en": "Konstantin Ukhanov"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1926.01",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "kosior": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1926.01",
+     "t": "1928.07"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1928.07"
+   }
+  },
+  "shvernik": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1926.04",
+     "t": "1927.02"
+    },
+    {
+     "k": "cand",
+     "f": "1929.11",
+     "t": "1930.07"
+    },
+    {
+     "k": "full",
+     "f": "1930.07",
+     "t": "1946.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1946.03"
+   }
+  },
+  "daniil-sulimov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1927.02",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "moisei-rukhimovich": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1927.02",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "nikolai-kubyak": {
+   "name": {
+    "ko": "니콜라이 쿠뱌크",
+    "en": "Nikolai Kubyak"
+   },
+   "spans": [
+    {
+     "k": "full",
+     "f": "1927.02",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "semyon-lobov": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1927.02",
+     "t": "1930.07"
+    },
+    {
+     "k": "full",
+     "f": "1930.07",
+     "t": "1934.02"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1934.02"
+   }
+  },
+  "ivan-moskvin": {
+   "name": {
+    "ko": "이반 모스크빈",
+    "en": "Ivan Moskvin"
+   },
+   "spans": [
+    {
+     "k": "full",
+     "f": "1927.12",
+     "t": "1934.02"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1934.02"
+   }
+  },
+  "vasily-kotov": {
+   "name": {
+    "ko": "바실리 코토프",
+    "en": "Vasily Kotov"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1927.12",
+     "t": "1930.07"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1930.07"
+   }
+  },
+  "karl-bauman": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1928.04",
+     "t": "1932.10"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1932.10"
+   }
+  },
+  "gamarnik": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1929.11",
+     "t": "1937.05"
+    }
+   ],
+   "end": {
+    "t": "suicide",
+    "d": "1937.05"
+   }
+  },
+  "aleksandr-kosarev": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1930.07",
+     "t": "1934.02"
+    },
+    {
+     "k": "full",
+     "f": "1934.02",
+     "t": "1938.11"
+    }
+   ],
+   "end": {
+    "t": "arrested",
+    "d": "1938.11"
+   },
+   "note": {
+    "ko": "체포 뒤에도 1939년 2월 처형 때까지 형식상 위원으로 남았다",
+    "en": "Formally remained a member after his arrest until he was shot in February 1939"
+   }
+  },
+  "anton-tsikhon": {
+   "name": {
+    "ko": "안톤 치혼",
+    "en": "Anton Tsikhon"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1930.07",
+     "t": "1934.02"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1934.02"
+   }
+  },
+  "ivan-akulov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1930.07",
+     "t": "1932.10"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1932.10"
+   }
+  },
+  "postyshev": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1930.07",
+     "t": "1934.02"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1934.02"
+   }
+  },
+  "aleksei-stetsky": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1934.02",
+     "t": "1938.04"
+    }
+   ],
+   "end": {
+    "t": "arrested",
+    "d": "1938.04"
+   },
+   "note": {
+    "ko": "체포 뒤에도 1938년 8월 처형 때까지 형식상 위원으로 남았다",
+    "en": "Formally remained a member after his arrest until he was shot in August 1938"
+   }
+  },
+  "alexander-krinitsky": {
+   "name": {
+    "ko": "알렉산드르 크리니츠키",
+    "en": "Alexander Krinitsky"
+   },
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1934.02",
+     "t": "1937.10"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1937.10"
+   }
+  },
+  "kirov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1934.02",
+     "t": "1934.12"
+    }
+   ],
+   "end": {
+    "t": "assassinated",
+    "d": "1934.12"
+   }
+  },
+  "mikhail-kaganovich": {
+   "spans": [
+    {
+     "k": "cand",
+     "f": "1934.02",
+     "t": "1939.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1939.03"
+   }
+  },
+  "yezhov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1934.02",
+     "t": "1939.03"
+    }
+   ],
+   "end": {
+    "t": "not",
+    "d": "1939.03"
+   }
+  },
+  "zhdanov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1934.02",
+     "t": "1948.08"
+    }
+   ],
+   "end": {
+    "t": "died",
+    "d": "1948.08"
+   }
+  },
+  "lev-mekhlis": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1938.01",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "alexander-shcherbakov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1939.03",
+     "t": "1945.05"
+    }
+   ],
+   "end": {
+    "t": "died",
+    "d": "1945.05"
+   }
+  },
+  "malenkov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1939.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "nikolai-mikhailov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1939.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "alexei-kuznetsov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1949.03"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1949.03"
+   },
+   "note": {
+    "ko": "레닌그라드 사건으로 1949년 체포, 1950년 처형",
+    "en": "Arrested in the Leningrad affair in 1949; shot in 1950"
+   }
+  },
+  "bulganin": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "georgy-alexandrov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "georgy-popov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "mikhail-rodionov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1949.03"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1949.03"
+   },
+   "note": {
+    "ko": "레닌그라드 사건으로 1949년 체포, 1950년 처형",
+    "en": "Arrested in the Leningrad affair in 1949; shot in 1950"
+   }
+  },
+  "nikolai-patolichev": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1947.05"
+    }
+   ],
+   "end": {
+    "t": "removed",
+    "d": "1947.05"
+   }
+  },
+  "nikolai-shatalin": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "suslov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "vasily-andrianov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "vasily-kuznetsov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1946.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  },
+  "boris-chernousov": {
+   "spans": [
+    {
+     "k": "full",
+     "f": "1949.03",
+     "t": "1952.10"
+    }
+   ],
+   "end": {
+    "t": "abolished",
+    "d": "1952.10"
+   }
+  }
+ },
+ "eras": [
+  {
+   "id": "founding",
+   "title": {
+    "ko": "창설기",
+    "en": "The founding years"
+   },
+   "period": "1919–1922",
+   "intro": {
+    "ko": "1919년 3월 제8차 당대회는 중앙위원회 안에 정치국·조직국·서기국을 두기로 하고, 조직국에 당의 조직 사업 전반을 맡겼다. 조직국은 위원 다섯 명으로 출발했고 위원 상당수가 정치국이나 서기국을 겸했다. 1921년 제10차 당대회 뒤에는 크레스틴스키·프레오브라젠스키·세레브랴코프가 물러나고 몰로토프가 들어왔다.",
+    "en": "In March 1919 the 8th Congress set up a Politburo, an Orgburo and a Secretariat inside the Central Committee, and gave the Orgburo charge of the party’s organisational work as a whole. It started with five full members, many of whom also sat on the Politburo or the Secretariat. After the 10th Congress of 1921 Krestinsky, Preobrazhensky and Serebryakov left and Molotov came in."
+   },
+   "list": [
+    "krestinsky",
+    "mikhail-vladimirsky",
+    "sverdlov",
+    "alexander-beloborodov",
+    "leonid-serebryakov",
+    "matvei-muranov",
+    "stalin",
+    "stasova",
+    "dzerzhinsky",
+    "kamenev",
+    "christian-rakovsky",
+    "kalinin",
+    "trotsky",
+    "preobrazhensky",
+    "rykov",
+    "tomsky",
+    "emelyan-yaroslavsky",
+    "molotov",
+    "nikolai-komarov",
+    "rudzutak",
+    "vasily-mikhailov",
+    "ivan-kutuzov",
+    "pyotr-zalutsky",
+    "vasily-shmidt",
+    "ivan-tuntul"
+   ]
+  },
+  {
+   "id": "twenties",
+   "title": {
+    "ko": "서기장 체제와 조직국의 확대",
+    "en": "The General Secretary and a larger Orgburo"
+   },
+   "period": "1922–1930",
+   "intro": {
+    "ko": "1922년 4월 스탈린이 서기장이 된 뒤 조직국은 서기국과 함께 당 간부 배치를 관장했다. 1924년부터 위원이 열 명을 넘었고, 반대파에 선 예브도키모프와 우글라노프는 임기 중에 해임되었다.",
+    "en": "After Stalin became General Secretary in April 1922, the Orgburo ran the placement of party cadres together with the Secretariat. From 1924 it had more than ten full members, and Evdokimov and Uglanov, who sided with the oppositions, were removed in mid-term."
+   },
+   "list": [
+    "andrei-andreyev",
+    "isaak-zelensky",
+    "kuibyshev",
+    "bukharin",
+    "ivan-korotkov",
+    "zinoviev",
+    "alexander-dogadov",
+    "alexander-smirnov",
+    "andrei-bubnov",
+    "frunze",
+    "ivan-lepse",
+    "kaganovich",
+    "klavdiya-nikolaeva",
+    "nikolai-antipov",
+    "nikolai-chaplin",
+    "voroshilov",
+    "nikolai-uglanov",
+    "alexandra-artyukhina",
+    "emmanuil-kviring",
+    "grigory-evdokimov",
+    "konstantin-ukhanov",
+    "kosior",
+    "shvernik",
+    "daniil-sulimov",
+    "moisei-rukhimovich",
+    "nikolai-kubyak",
+    "semyon-lobov",
+    "ivan-moskvin",
+    "vasily-kotov",
+    "karl-bauman",
+    "gamarnik"
+   ]
+  },
+  {
+   "id": "thirties",
+   "title": {
+    "ko": "1930년대와 대숙청",
+    "en": "The 1930s and the Great Terror"
+   },
+   "period": "1930–1939",
+   "intro": {
+    "ko": "1930년대 들어 조직국의 활동은 사실상 서기국과 하나로 합쳐졌다. 1934년에 뽑힌 조직국에서는 키로프가 암살되고 가마르니크가 자살했으며 스테츠키·코사레프가 대숙청 중 체포되었다. 1930년대 말에는 후보위원을 더 이상 선출하지 않았다.",
+    "en": "In the 1930s the Orgburo’s work in effect merged with that of the Secretariat. Of the Orgburo elected in 1934, Kirov was assassinated, Gamarnik killed himself, and Stetsky and Kosarev were arrested in the Terror. By the end of the decade candidate members were no longer elected."
+   },
+   "list": [
+    "aleksandr-kosarev",
+    "anton-tsikhon",
+    "ivan-akulov",
+    "postyshev",
+    "aleksei-stetsky",
+    "alexander-krinitsky",
+    "kirov",
+    "mikhail-kaganovich",
+    "yezhov",
+    "zhdanov",
+    "lev-mekhlis"
+   ]
+  },
+  {
+   "id": "late-stalin",
+   "title": {
+    "ko": "1940년대와 폐지",
+    "en": "The 1940s and abolition"
+   },
+   "period": "1939–1952",
+   "intro": {
+    "ko": "1940년대에는 셰르바코프와 즈다노프, 이어 말렌코프가 조직국 회의를 주재하며 그 역할을 다시 키우려 했고, 즈다노프 아래서 조직국은 1946년 잡지 「즈베즈다」·「레닌그라드」 결정처럼 이념 문제에도 개입했다. 1952년 10월 제19차 당대회가 조직국을 폐지하고 그 기능을 확대된 서기국에 넘겼다.",
+    "en": "In the 1940s Shcherbakov and Zhdanov, and then Malenkov, chaired the Orgburo and tried to revive its role; under Zhdanov it reached into ideology, as in its 1946 resolution on the journals Zvezda and Leningrad. In October 1952 the 19th Congress abolished the Orgburo and handed its functions to an enlarged Secretariat."
+   },
+   "list": [
+    "alexander-shcherbakov",
+    "malenkov",
+    "nikolai-mikhailov",
+    "alexei-kuznetsov",
+    "bulganin",
+    "georgy-alexandrov",
+    "georgy-popov",
+    "mikhail-rodionov",
+    "nikolai-patolichev",
+    "nikolai-shatalin",
+    "suslov",
+    "vasily-andrianov",
+    "vasily-kuznetsov",
+    "boris-chernousov"
+   ]
+  }
+ ],
+ "congresses": [
+  {
+   "n": "jan1919",
+   "label": {
+    "ko": "1919년 1월 조직국",
+    "en": "The January 1919 Orgburo"
+   },
+   "date": "1919.01",
+   "members": {
+    "full": [
+     {
+      "p": "krestinsky",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "mikhail-vladimirsky",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "sverdlov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "died",
+       "d": "1919.03"
+      }
+     }
+    ],
+    "candidates": []
+   },
+   "note": {
+    "ko": "제7차 당대회가 뽑은 중앙위원회가 1919년 1월 16일 회의에서 처음 구성한 3인 조직국. 스베르들로프는 3월 16일 사망했다.",
+    "en": "The first, three-man Orgburo, formed on 16 January 1919 by the Central Committee elected at the 7th Congress. Sverdlov died on 16 March."
+   }
+  },
+  {
+   "n": 8,
+   "label": {
+    "ko": "제8차 당대회",
+    "en": "8th Congress"
+   },
+   "date": "1919.03",
+   "members": {
+    "full": [
+     {
+      "p": "alexander-beloborodov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1919.10"
+      }
+     },
+     {
+      "p": "christian-rakovsky",
+      "in": {
+       "t": "by",
+       "d": "1919.10"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "dzerzhinsky",
+      "in": {
+       "t": "by",
+       "d": "1919.08"
+      }
+     },
+     {
+      "p": "kalinin",
+      "in": {
+       "t": "by",
+       "d": "1919.11"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "kamenev",
+      "in": {
+       "t": "by",
+       "d": "1919.08"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "krestinsky"
+     },
+     {
+      "p": "leonid-serebryakov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "stalin",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "stasova",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "trotsky",
+      "in": {
+       "t": "by",
+       "d": "1919.11"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ],
+    "candidates": [
+     {
+      "p": "matvei-muranov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   },
+   "note": {
+    "ko": "당대회가 정치국·조직국·서기국을 두기로 결정했고, 1919년 3월 25일 중앙위원회 전원회의가 위원 5인과 후보위원 1인을 선출했다.",
+    "en": "The congress resolved to set up a Politburo, an Orgburo and a Secretariat; on 25 March 1919 the Central Committee plenum elected five full members and one candidate."
+   }
+  },
+  {
+   "n": 9,
+   "label": {
+    "ko": "제9차 당대회",
+    "en": "9th Congress"
+   },
+   "date": "1920.04",
+   "members": {
+    "full": [
+     {
+      "p": "krestinsky",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "leonid-serebryakov",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "preobrazhensky",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "rykov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "stalin"
+     }
+    ],
+    "candidates": [
+     {
+      "p": "dzerzhinsky",
+      "in": {
+       "t": "demoted"
+      }
+     },
+     {
+      "p": "tomsky",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "nextFull"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 10,
+   "label": {
+    "ko": "제10차 당대회",
+    "en": "10th Congress"
+   },
+   "date": "1921.03",
+   "members": {
+    "full": [
+     {
+      "p": "dzerzhinsky",
+      "in": {
+       "t": "promoted",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "emelyan-yaroslavsky",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "molotov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "nikolai-komarov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "pyotr-zalutsky",
+      "in": {
+       "t": "promoted",
+       "d": "1921.08"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "rudzutak",
+      "in": {
+       "t": "promoted",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "rykov"
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "tomsky",
+      "in": {
+       "t": "fromCand"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "vasily-mikhailov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ],
+    "candidates": [
+     {
+      "p": "dzerzhinsky",
+      "out": {
+       "t": "promotedOut",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "ivan-kutuzov",
+      "in": {
+       "t": "by",
+       "d": "1921.05"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "ivan-tuntul",
+      "in": {
+       "t": "by",
+       "d": "1922.03"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "kalinin",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "pyotr-zalutsky",
+      "in": {
+       "t": "by",
+       "d": "1921.05"
+      },
+      "out": {
+       "t": "promotedOut",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "rudzutak",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "promotedOut",
+       "d": "1921.08"
+      }
+     },
+     {
+      "p": "vasily-shmidt",
+      "in": {
+       "t": "by",
+       "d": "1921.05"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   },
+   "note": {
+    "ko": "1921년 8월 전원회의가 코마로프·톰스키·야로슬랍스키를 내보내고 후보위원 제르진스키·잘루츠키·루주타크를 위원으로 올렸다.",
+    "en": "In August 1921 a plenum dropped Komarov, Tomsky and Yaroslavsky and moved the candidates Dzerzhinsky, Zalutsky and Rudzutak up to full membership."
+   }
+  },
+  {
+   "n": 11,
+   "label": {
+    "ko": "제11차 당대회",
+    "en": "11th Congress"
+   },
+   "date": "1922.04",
+   "members": {
+    "full": [
+     {
+      "p": "andrei-andreyev",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "dzerzhinsky"
+     },
+     {
+      "p": "kuibyshev",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "molotov"
+     },
+     {
+      "p": "rykov"
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "tomsky",
+      "in": {
+       "t": "new"
+      }
+     }
+    ],
+    "candidates": [
+     {
+      "p": "isaak-zelensky",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "kalinin"
+     },
+     {
+      "p": "rudzutak",
+      "in": {
+       "t": "demoted"
+      },
+      "out": {
+       "t": "nextFull"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 12,
+   "label": {
+    "ko": "제12차 당대회",
+    "en": "12th Congress"
+   },
+   "date": "1923.04",
+   "members": {
+    "full": [
+     {
+      "p": "andrei-andreyev"
+     },
+     {
+      "p": "dzerzhinsky"
+     },
+     {
+      "p": "molotov"
+     },
+     {
+      "p": "rudzutak",
+      "in": {
+       "t": "fromCand"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "rykov",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "tomsky"
+     },
+     {
+      "p": "trotsky",
+      "in": {
+       "t": "by",
+       "d": "1923.09"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "zinoviev",
+      "in": {
+       "t": "by",
+       "d": "1923.09"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ],
+    "candidates": [
+     {
+      "p": "bukharin",
+      "in": {
+       "t": "by",
+       "d": "1923.09"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "isaak-zelensky",
+      "out": {
+       "t": "nextFull"
+      }
+     },
+     {
+      "p": "ivan-korotkov",
+      "in": {
+       "t": "by",
+       "d": "1923.09"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "kalinin",
+      "out": {
+       "t": "nextFull"
+      }
+     },
+     {
+      "p": "vasily-mikhailov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 13,
+   "label": {
+    "ko": "제13차 당대회",
+    "en": "13th Congress"
+   },
+   "date": "1924.06",
+   "members": {
+    "full": [
+     {
+      "p": "alexander-dogadov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "alexander-smirnov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "andrei-andreyev"
+     },
+     {
+      "p": "andrei-bubnov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "isaak-zelensky",
+      "in": {
+       "t": "fromCand"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1924.08"
+      }
+     },
+     {
+      "p": "kaganovich",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "kalinin",
+      "in": {
+       "t": "fromCand"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "klavdiya-nikolaeva",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "molotov"
+     },
+     {
+      "p": "nikolai-uglanov",
+      "in": {
+       "t": "by",
+       "d": "1924.08"
+      }
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "voroshilov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ],
+    "candidates": [
+     {
+      "p": "dzerzhinsky",
+      "in": {
+       "t": "demoted"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "frunze",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "died",
+       "d": "1925.10"
+      }
+     },
+     {
+      "p": "ivan-lepse",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "nikolai-antipov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "nikolai-chaplin",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "tomsky",
+      "in": {
+       "t": "demoted"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 14,
+   "label": {
+    "ko": "제14차 당대회",
+    "en": "14th Congress"
+   },
+   "date": "1926.01",
+   "members": {
+    "full": [
+     {
+      "p": "alexander-dogadov"
+     },
+     {
+      "p": "alexander-smirnov"
+     },
+     {
+      "p": "alexandra-artyukhina",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "andrei-andreyev"
+     },
+     {
+      "p": "andrei-bubnov"
+     },
+     {
+      "p": "daniil-sulimov",
+      "in": {
+       "t": "by",
+       "d": "1927.02"
+      }
+     },
+     {
+      "p": "emmanuil-kviring",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1927.02"
+      }
+     },
+     {
+      "p": "grigory-evdokimov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1926.04"
+      }
+     },
+     {
+      "p": "kosior",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "moisei-rukhimovich",
+      "in": {
+       "t": "by",
+       "d": "1927.02"
+      }
+     },
+     {
+      "p": "molotov"
+     },
+     {
+      "p": "nikolai-kubyak",
+      "in": {
+       "t": "by",
+       "d": "1927.02"
+      }
+     },
+     {
+      "p": "nikolai-uglanov"
+     },
+     {
+      "p": "shvernik",
+      "in": {
+       "t": "by",
+       "d": "1926.04"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1927.02"
+      }
+     },
+     {
+      "p": "stalin"
+     }
+    ],
+    "candidates": [
+     {
+      "p": "ivan-lepse"
+     },
+     {
+      "p": "konstantin-ukhanov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "nikolai-chaplin"
+     },
+     {
+      "p": "semyon-lobov",
+      "in": {
+       "t": "by",
+       "d": "1927.02"
+      }
+     },
+     {
+      "p": "vasily-mikhailov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "vasily-shmidt",
+      "in": {
+       "t": "new"
+      }
+     }
+    ]
+   },
+   "note": {
+    "ko": "1927년 2월의 교체(크비링·시베르니크 해임, 쿠뱌크·루히모비치·술리모프·로보프 선임)는 정치국 결정으로 이루어졌다.",
+    "en": "The February 1927 changes (Kviring and Shvernik out; Kubyak, Rukhimovich, Sulimov and Lobov in) were made by a Politburo decision."
+   }
+  },
+  {
+   "n": 15,
+   "label": {
+    "ko": "제15차 당대회",
+    "en": "15th Congress"
+   },
+   "date": "1927.12",
+   "members": {
+    "full": [
+     {
+      "p": "alexander-dogadov"
+     },
+     {
+      "p": "alexander-smirnov"
+     },
+     {
+      "p": "alexandra-artyukhina",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "andrei-andreyev",
+      "out": {
+       "t": "removed",
+       "d": "1928.04"
+      }
+     },
+     {
+      "p": "andrei-bubnov"
+     },
+     {
+      "p": "daniil-sulimov",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "gamarnik",
+      "in": {
+       "t": "by",
+       "d": "1929.11"
+      }
+     },
+     {
+      "p": "ivan-moskvin",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "kaganovich",
+      "in": {
+       "t": "by",
+       "d": "1928.07"
+      }
+     },
+     {
+      "p": "karl-bauman",
+      "in": {
+       "t": "by",
+       "d": "1928.04"
+      }
+     },
+     {
+      "p": "kosior",
+      "out": {
+       "t": "removed",
+       "d": "1928.07"
+      }
+     },
+     {
+      "p": "moisei-rukhimovich",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "molotov"
+     },
+     {
+      "p": "nikolai-kubyak",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "nikolai-uglanov",
+      "out": {
+       "t": "removed",
+       "d": "1929.04"
+      }
+     },
+     {
+      "p": "stalin"
+     }
+    ],
+    "candidates": [
+     {
+      "p": "ivan-lepse",
+      "out": {
+       "t": "died",
+       "d": "1929.10"
+      }
+     },
+     {
+      "p": "konstantin-ukhanov",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "nikolai-antipov",
+      "in": {
+       "t": "by",
+       "d": "1928.04"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "nikolai-chaplin",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "semyon-lobov",
+      "out": {
+       "t": "nextFull"
+      }
+     },
+     {
+      "p": "shvernik",
+      "in": {
+       "t": "by",
+       "d": "1929.11"
+      },
+      "out": {
+       "t": "nextFull"
+      }
+     },
+     {
+      "p": "vasily-kotov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "vasily-mikhailov",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "vasily-shmidt",
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 16,
+   "label": {
+    "ko": "제16차 당대회",
+    "en": "16th Congress"
+   },
+   "date": "1930.07",
+   "members": {
+    "full": [
+     {
+      "p": "andrei-bubnov",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "gamarnik"
+     },
+     {
+      "p": "ivan-akulov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1932.10"
+      }
+     },
+     {
+      "p": "ivan-moskvin",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "kaganovich"
+     },
+     {
+      "p": "karl-bauman",
+      "out": {
+       "t": "removed",
+       "d": "1932.10"
+      }
+     },
+     {
+      "p": "molotov",
+      "out": {
+       "t": "removed",
+       "d": "1930.12"
+      }
+     },
+     {
+      "p": "postyshev",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "semyon-lobov",
+      "in": {
+       "t": "fromCand"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "shvernik",
+      "in": {
+       "t": "fromCand"
+      }
+     },
+     {
+      "p": "stalin"
+     }
+    ],
+    "candidates": [
+     {
+      "p": "aleksandr-kosarev",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "nextFull"
+      }
+     },
+     {
+      "p": "alexander-dogadov",
+      "in": {
+       "t": "demoted"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1932.10"
+      }
+     },
+     {
+      "p": "alexander-smirnov",
+      "in": {
+       "t": "demoted"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1933.01"
+      }
+     },
+     {
+      "p": "anton-tsikhon",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 17,
+   "label": {
+    "ko": "제17차 당대회",
+    "en": "17th Congress"
+   },
+   "date": "1934.02",
+   "members": {
+    "full": [
+     {
+      "p": "aleksandr-kosarev",
+      "in": {
+       "t": "fromCand"
+      },
+      "out": {
+       "t": "arrested",
+       "d": "1938.11"
+      }
+     },
+     {
+      "p": "aleksei-stetsky",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "arrested",
+       "d": "1938.04"
+      }
+     },
+     {
+      "p": "andrei-andreyev",
+      "in": {
+       "t": "by",
+       "d": "1935.03"
+      }
+     },
+     {
+      "p": "gamarnik",
+      "out": {
+       "t": "suicide",
+       "d": "1937.05"
+      }
+     },
+     {
+      "p": "kaganovich"
+     },
+     {
+      "p": "kirov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "assassinated",
+       "d": "1934.12"
+      }
+     },
+     {
+      "p": "kuibyshev",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "died",
+       "d": "1935.01"
+      }
+     },
+     {
+      "p": "lev-mekhlis",
+      "in": {
+       "t": "by",
+       "d": "1938.01"
+      }
+     },
+     {
+      "p": "shvernik"
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "yezhov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "zhdanov",
+      "in": {
+       "t": "new"
+      }
+     }
+    ],
+    "candidates": [
+     {
+      "p": "alexander-krinitsky",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1937.10"
+      }
+     },
+     {
+      "p": "mikhail-kaganovich",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "not"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 18,
+   "label": {
+    "ko": "제18차 당대회",
+    "en": "18th Congress"
+   },
+   "date": "1939.03",
+   "members": {
+    "full": [
+     {
+      "p": "alexander-shcherbakov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "died",
+       "d": "1945.05"
+      }
+     },
+     {
+      "p": "andrei-andreyev",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "kaganovich",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "lev-mekhlis"
+     },
+     {
+      "p": "malenkov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "nikolai-mikhailov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "shvernik",
+      "out": {
+       "t": "not"
+      }
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "zhdanov"
+     }
+    ],
+    "candidates": []
+   },
+   "note": {
+    "ko": "후보위원 없이 위원만 선출되었다.",
+    "en": "Only full members were elected; there were no candidates."
+   }
+  },
+  {
+   "n": "1946",
+   "label": {
+    "ko": "1946년 3월 중앙위원회 전원회의",
+    "en": "March 1946 Central Committee plenum"
+   },
+   "date": "1946.03",
+   "members": {
+    "full": [
+     {
+      "p": "alexei-kuznetsov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1949.03"
+      }
+     },
+     {
+      "p": "boris-chernousov",
+      "in": {
+       "t": "by",
+       "d": "1949.03"
+      }
+     },
+     {
+      "p": "bulganin",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "georgy-alexandrov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "georgy-popov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "lev-mekhlis"
+     },
+     {
+      "p": "malenkov"
+     },
+     {
+      "p": "mikhail-rodionov",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1949.03"
+      }
+     },
+     {
+      "p": "nikolai-mikhailov"
+     },
+     {
+      "p": "nikolai-patolichev",
+      "in": {
+       "t": "new"
+      },
+      "out": {
+       "t": "removed",
+       "d": "1947.05"
+      }
+     },
+     {
+      "p": "nikolai-shatalin",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "stalin"
+     },
+     {
+      "p": "suslov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "vasily-andrianov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "vasily-kuznetsov",
+      "in": {
+       "t": "new"
+      }
+     },
+     {
+      "p": "zhdanov",
+      "out": {
+       "t": "died",
+       "d": "1948.08"
+      }
+     }
+    ],
+    "candidates": []
+   },
+   "note": {
+    "ko": "제18차 당대회가 뽑은 중앙위원회가 당대회 없이 조직국을 새로 구성했다. 이 구성은 1952년 10월 제19차 당대회가 조직국을 폐지할 때까지 이어졌다.",
+    "en": "The Central Committee elected at the 18th Congress re-formed the Orgburo without a congress. This composition lasted until the 19th Congress abolished the Orgburo in October 1952."
+   }
+  }
+ ]
+}

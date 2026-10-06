@@ -50,7 +50,7 @@ const tools = [
             + 'value, or pending (HTTP-202-like) when review is required. review: {suggestionId, approve, note}. enrichment: {id, topic, status, '
             + 'reason, sources, expectedRevision}. note: {id, note, jobRef?}. Terms always stage as pending. History events and office rows '
             + '(history_event update; history_event_section create/update {heading, body, after?}; history_event_person create/update '
-            + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id) / update / delete (id = row id)) '
+            + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id; fields period, body = formal post title, personId or name, note, trackId from the office tracks) / update / delete (id = row id)) '
             + 'apply at once unless directApply is false; they support submit and review only.',
         inputSchema: object({
             command: str('Store command', { enum: ['submit', 'review', 'enrichment', 'note'] }),

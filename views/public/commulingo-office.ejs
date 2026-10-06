@@ -10,7 +10,7 @@
     <main class="container commulingo-shell commu-person-hub-page" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: strings.commuLingoViews.office.people, href: '/commulingo/people' },
+                { label: strings.commuLingoViews.office.lineages, href: '/commulingo/offices' },
                 { label: office.title },
             ],
             dictJump: 'people' }) %>
@@ -32,7 +32,7 @@
                 <% office.lineage.forEach(function(step) { %>
                 <li class="commu-lineage-step">
                     <div class="commu-lineage-node">
-                        <strong><%= step.name %></strong>
+                        <strong><% if (step.termHref) { %><a href="<%= step.termHref %>"><%= step.name %></a><% } else { %><%= step.name %><% } %></strong>
                         <span class="commu-office-years"><%= step.period %></span>
                     </div>
                     <p><%= step.body %></p>
@@ -42,10 +42,19 @@
         </section>
         <% } %>
 
-        <section class="commu-hub-section" aria-labelledby="office-timeline">
-            <h2 id="office-timeline"><%= strings.commuLingoViews.office.leadershipTimeline %></h2>
+        <% if (rosters && rosters.length) { %>
+        <section class="commu-hub-section" aria-labelledby="office-rosters">
+            <h2 id="office-rosters"><%= strings.commuLingoViews.office.rosters %></h2>
+            <%- include('../partials/commulingo-office-index', { bodies: rosters, offices: [] }) %>
+        </section>
+        <% } %>
+
+        <% office.tracks.forEach(function(track, index) { %>
+        <section class="commu-hub-section" aria-labelledby="office-track-<%= index %>">
+            <h2 id="office-track-<%= index %>"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></h2>
+            <% if (track.blurb) { %><p class="commu-office-track-blurb"><%= track.blurb %></p><% } %>
             <ol class="commu-office-rows commu-hub-office-rows">
-                <% office.rows.forEach(function(row) { %>
+                <% track.rows.forEach(function(row) { %>
                 <li>
                     <span class="commu-office-years"><%= row.years %></span>
                     <span class="commu-office-main">
@@ -61,6 +70,7 @@
                 <% }) %>
             </ol>
         </section>
+        <% }) %>
 
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
         <section class="commu-hub-section commu-related-reports" aria-labelledby="related-reports">

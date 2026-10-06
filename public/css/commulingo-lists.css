@@ -633,6 +633,19 @@
     content: '-';
 }
 
+.commu-role-category-copy h3 .commu-office-range {
+    display: inline;
+    margin: 0 0 0 6px;
+    font-weight: 400;
+}
+
+.commu-office-track-blurb {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
 .commu-office-range {
     color: var(--text-muted);
     display: block;

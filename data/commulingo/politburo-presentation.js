@@ -23,7 +23,8 @@ const OUT_KINDS = {
     suicide: { ko: '자살', en: 'died by suicide' },
     arrested: { ko: '체포', en: 'arrested' },
     banned: { ko: '1991.11 당 금지', en: 'party banned 1991.11' },
-    resigned: { ko: '1991.08 사임', en: 'resigned 1991.08' },
+    abolished: { ko: '기구 폐지', en: 'body abolished' },
+    resigned: { ko: '사임', en: 'resigned' },
     promotedOut: { ko: '정위원 승격', en: 'promoted to full member' },
     demotedOut: { ko: '후보로 강등', en: 'demoted to candidate' },
 };
@@ -63,9 +64,9 @@ function personCell(key, member, names, lang) {
 // and the language; the names come from the people table and are re-read
 // only when the people snapshot changes. Both used to be rebuilt (one DB
 // query + a full transform of the 96 KB dataset) on every request.
-const rosterMemo = new WeakMap(); // politburo data -> { peopleRef, names, byLang: Map(lang -> { eras, congresses }) }
+const rosterMemo = new WeakMap(); // body roster data -> { peopleRef, names, byLang: Map(lang -> { eras, congresses }) }
 
-async function rosterFor(data, lang) {
+async function rosterFor(data, lang, bodyId = 'politburo') {
     const loaded = await loadCommuLingoPeople();
     let memo = rosterMemo.get(data);
     if (!memo || memo.peopleRef !== loaded.data) {
@@ -74,13 +75,13 @@ async function rosterFor(data, lang) {
     }
     let roster = memo.byLang.get(lang);
     if (!roster) {
-        roster = buildRoster(data, memo.names, lang);
+        roster = buildRoster(data, memo.names, lang, bodyId);
         memo.byLang.set(lang, roster);
     }
     return roster;
 }
 
-function buildRoster(data, names, lang) {
+function buildRoster(data, names, lang, bodyId) {
     const en = lang === 'en';
     const eras = data.eras.map(era => ({
         id: era.id,
@@ -94,7 +95,7 @@ function buildRoster(data, names, lang) {
             if (member.note) noteParts.push(localize(member.note, lang));
             return {
                 ...personCell(key, member, names, lang),
-                tenureParts: spanParts(member.spans, lang),
+                tenureParts: spanParts(member.spans, lang, bodyId),
                 note: noteParts.join(' · '),
             };
         }),

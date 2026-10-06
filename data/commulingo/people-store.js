@@ -88,12 +88,12 @@ async function fetchRows() {
              ORDER BY person_id, sort_order, id`
         ),
         client.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, updated_at
+            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, tracks, updated_at
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
         client.query(
-            `SELECT office_id, ${PERIOD_COLUMNS.join(', ')}, body_ko, body_en, person_id,
+            `SELECT office_id, track_id, ${PERIOD_COLUMNS.join(', ')}, body_ko, body_en, person_id,
                     name_ko, name_en, note_ko, note_en, updated_at
              FROM commulingo_office_rows
              ORDER BY office_id, sort_order, id`
@@ -211,6 +211,7 @@ function rowsToPeopleData(rows) {
     rows.officeRows.forEach(row => {
         const period = periodFromRow(row);
         addListItem(officeRowsByOffice, row.office_id, {
+            trackId: row.track_id || '',
             period,
             years: formatBoth(period),
             body: t(row.body_ko, row.body_en),
@@ -269,6 +270,7 @@ function rowsToPeopleData(rows) {
             blurb: t(row.blurb_ko, row.blurb_en),
             icon: row.icon || '',
             lineage: Array.isArray(row.lineage) ? row.lineage : [],
+            tracks: Array.isArray(row.tracks) ? row.tracks : [],
             rows: officeRowsByOffice[row.id] || [],
             updatedAt: latestTimestamp(
                 row.updated_at,

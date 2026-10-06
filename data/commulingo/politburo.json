@@ -7,6 +7,10 @@
   "ko": "명단과 날짜는 각 당대회 기수별 구성 목록(Известия ЦК КПСС·knowbysight.info 계열 자료 기반)을 따르되, 쿠이비셰프의 진입(1927.12), 트로츠키·카메네프의 해임(1926.10), 셸레핀·셸레스트의 진입(1964.11), 1953년 3월의 간부회 축소 등은 러시아어 문헌과 대조해 바로잡았다.",
   "en": "Rosters and dates follow the per-congress composition lists (based on Izvestiya TsK KPSS and knowbysight.info), with corrections checked against Russian-language sources: Kuibyshev’s entry (1927.12), the removal of Trotsky and Kamenev (1926.10), the entry of Shelepin and Shelest (1964.11), and the March 1953 cutback of the Presidium."
  },
+ "congressesIntro": {
+  "ko": "각 항목의 표는 보선·승격·해임 등 임기 중 변동까지 포함해 그 기수를 거쳐 간 전원을 싣는다. 머리글의 인원수는 표의 행 수가 아니라 당대회에서 선출된 시점의 실제 정원이다. 1959년의 제21차(비상) 당대회는 새 간부회를 선출하지 않았다.",
+  "en": "Each block’s table lists everyone who passed through that term, mid-term by-elections, promotions and removals included. The member counts in the heading are the body’s actual size as elected at the congress, not the table’s row count. The 21st (extraordinary) Congress of 1959 elected no new Presidium."
+ },
  "members": {
   "lenin": {
    "spans": [

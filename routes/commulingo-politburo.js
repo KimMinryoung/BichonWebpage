@@ -1,35 +1,48 @@
 const express = require('express');
 const { setShortPublicCache, commuLingoLoadError } = require('../data/commulingo/page-helpers');
-const { loadPolitburo } = require('../data/commulingo/politburo-store');
+const { loadBody } = require('../data/commulingo/politburo-store');
+const { BODIES } = require('../data/commulingo/party-bodies');
 const { localize } = require('../data/commulingo/localize');
-
-const router = express.Router();
-
 const { rosterFor } = require('../data/commulingo/politburo-presentation');
 
-router.get('/', async (req, res) => {
-    try {
-        const lang = res.locals.lang;
-        const en = lang === 'en';
-        const data = loadPolitburo();
-        const { eras, congresses } = await rosterFor(data, lang);
+// One roster page per Central Committee body (party-bodies.js); mounted at
+// /commulingo/politburo, /commulingo/secretariat and /commulingo/orgburo.
+function bodyRouter(bodyId) {
+    const body = BODIES[bodyId];
+    const router = express.Router();
+    router.get('/', async (req, res, next) => {
+        try {
+            const lang = res.locals.lang;
+            const data = loadBody(bodyId);
+            if (!data) return next();
+            const { eras, congresses } = await rosterFor(data, lang, bodyId);
+            const title = localize(body.title, lang);
 
-        setShortPublicCache(res);
-        res.render('public/commulingo-politburo', {
-            intro: localize(data.intro, lang),
-            sources: localize(data.sources, lang),
-            eras,
-            congresses,
-            pageTitle: en ? 'The Soviet Politburo — CommuLingo' : '소련 정치국 — 공산링고',
-            pageDescription: en
-                ? 'Membership of the Politburo and Presidium of the CPSU, 1917–1991, by era and by party congress.'
-                : '1917년부터 1991년까지 소련 공산당 정치국·간부회의 구성원을 시기별·당대회 기수별로 정리한 표.',
-            pagePath: '/commulingo/politburo',
-        });
-    } catch (err) {
-        console.error('commulingo politburo:', err);
-        commuLingoLoadError(res, { message: { ko: '정치국 명부를 불러올 수 없습니다.', en: 'Failed to load the Politburo page.' } });
-    }
-});
+            setShortPublicCache(res);
+            res.render('public/commulingo-politburo', {
+                body: {
+                    id: bodyId,
+                    title,
+                    range: body.range,
+                    officeId: body.officeId,
+                    buckets: { full: localize(body.buckets.full, lang), candidates: localize(body.buckets.candidates, lang) },
+                    counts: { full: localize(body.counts.full, lang), candidates: localize(body.counts.candidates, lang) },
+                },
+                intro: localize(data.intro, lang),
+                sources: localize(data.sources, lang),
+                congressesIntro: data.congressesIntro ? localize(data.congressesIntro, lang) : '',
+                eras,
+                congresses,
+                pageTitle: `${title} — ${lang === 'en' ? 'CommuLingo' : '공산링고'}`,
+                pageDescription: localize(body.description, lang),
+                pagePath: body.path,
+            });
+        } catch (err) {
+            console.error(`commulingo ${bodyId}:`, err);
+            commuLingoLoadError(res, { message: { ko: `${localize(body.title, 'ko')} 명부를 불러올 수 없습니다.`, en: `Failed to load the ${localize(body.title, 'en')} page.` } });
+        }
+    });
+    return router;
+}
 
-module.exports = router;
+module.exports = { bodyRouter };

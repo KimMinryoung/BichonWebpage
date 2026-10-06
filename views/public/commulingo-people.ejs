@@ -208,48 +208,12 @@
             <% if (openShelfBox) { %></section><% } %>
 
             <% if (offices.length) { %>
-            <details class="commu-office-index" open aria-label="<%= en ? 'Institution leadership timelines' : '기관별 지도부 타임라인' %>">
+            <details class="commu-office-index" open aria-label="<%= strings.commuLingoViews.office.lineages %>">
                 <summary class="commu-office-index-head">
                     <span class="commu-people-range">INDEX</span>
-                    <h2><%= en ? 'Institution leadership timelines' : '기관별 지도부 타임라인' %></h2>
+                    <h2><a href="/commulingo/offices"><%= strings.commuLingoViews.office.lineages %></a></h2>
                 </summary>
-                <div class="commu-office-grid">
-                    <a class="commu-office-card commu-role-category-link" href="/commulingo/politburo">
-                        <span class="commu-office-icon-link" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
-                        <span class="commu-role-category-copy">
-                            <h3><%= t.theSovietPolitburo %></h3>
-                            <p><%= t.membership19171991By %></p>
-                        </span>
-                        <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-                    </a>
-                    <% offices.forEach(function(office) { %>
-                    <details class="commu-office-card is-<%= office.id %>" id="office-<%= office.id %>">
-                        <summary class="commu-office-card-head">
-                            <a class="commu-office-icon-link" href="/commulingo/offices/<%= office.id %>" title="<%= office.title %>" aria-label="<%= en ? 'Open ' + office.title + ' page' : office.title + ' 기관 페이지 열기' %>" onclick="event.stopPropagation()"><%- roleIconSvg(office.icon) %></a>
-                            <span class="commu-office-range"><%= office.range %></span>
-                            <h3><%= office.title %></h3>
-                            <p><%= office.blurb %></p>
-                        </summary>
-                        <ol class="commu-office-rows">
-                            <% office.rows.forEach(function(row) { %>
-                            <li>
-                                <span class="commu-office-years"><%= row.years %></span>
-                                <span class="commu-office-main">
-                                    <% if (row.personId) { %>
-                                    <a href="#p-<%= row.personId %>"><%= row.name %></a>
-                                    <% } else { %>
-                                    <strong><%= row.name %></strong>
-                                    <% } %>
-                                    <small><%= row.body %></small>
-                                    <% if (row.note) { %><em><%= row.note %></em><% } %>
-                                </span>
-                            </li>
-                            <% }) %>
-                        </ol>
-                        <a class="commu-office-page-link" href="/commulingo/offices/<%= office.id %>"><%= t.officePage %></a>
-                    </details>
-                    <% }) %>
-                </div>
+                <%- include('../partials/commulingo-office-index', { bodies: bodies, offices: offices }) %>
             </details>
             <% } %>
             <% } %>

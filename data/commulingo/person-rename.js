@@ -130,7 +130,9 @@ function renameInGenealogy(data, map) {
 function dataFiles(root) {
     const genealogy = path.join(root, 'genealogy');
     return [
-        { file: path.join(root, 'politburo.json'), rewrite: renameInPolitburo },
+        // The Central Committee body rosters share the Politburo schema (party-bodies.js).
+        ...['politburo.json', 'secretariat.json', 'orgburo.json'].map(f => path.join(root, f)).filter(f => fs.existsSync(f))
+            .map(file => ({ file, rewrite: renameInPolitburo })),
         { file: path.join(root, 'docs', 'manifest.json'), rewrite: renameInDocsManifest },
         ...(fs.existsSync(genealogy) ? fs.readdirSync(genealogy).filter(f => f.endsWith('.json')).sort()
             .map(f => ({ file: path.join(genealogy, f), rewrite: renameInGenealogy })) : []),

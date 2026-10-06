@@ -11,7 +11,7 @@ const { relatedDocsFor } = require('../data/commulingo/docs-refs');
 const { PAGE_SIZE } = require('../data/commulingo/list-pagination');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
-const { politburoCareerFor } = require('../data/commulingo/politburo-store');
+const { bodyCareersFor, availableBodies } = require('../data/commulingo/politburo-store');
 const { otherNames } = require('../data/commulingo/person-other-names');
 const { hasFlag } = require('../data/commulingo/flag-icons');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
@@ -63,6 +63,7 @@ router.get('/people', async (req, res) => {
             explore,
             explorerHref: explorer.explorerHref,
             offices: standardized.offices,
+            bodies: availableBodies(lang),
             groupsMeta: peopleShellFor(standardized).groupsMeta,
             people: active ? explore.pagination.pageItems : [],
             linkifyPersonText: active && explore.view === 'cards' ? await cardTextLinker(res) : null,
@@ -123,6 +124,30 @@ router.get('/people/list/:groupId', async (req, res) => {
     }
 });
 
+// The office index: Central Committee rosters, then the office lineage pages
+// in commulingo_offices.sort_order (chronological), not the person-list order.
+router.get('/offices', async (req, res) => {
+    try {
+        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
+        const order = new Map(standardized.officeOrder.map((id, index) => [id, index]));
+        const offices = [...standardized.offices].sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999));
+        const title = lang === 'en' ? 'Soviet offices' : '직책 계보';
+        setShortPublicCache(res);
+        res.render('public/commulingo-offices', {
+            offices,
+            bodies: availableBodies(lang),
+            roleIconSvg,
+            pageTitle: `${title} — ${lang === 'en' ? 'CommuLingo' : '공산링고'}`,
+            pageDescription: res.locals.strings.commuLingoViews.office.lineagesIntro,
+            pagePath: '/commulingo/offices',
+            jsonLd: commuLingoBreadcrumb(lang, [{ name: title, href: '/commulingo/offices' }]),
+        });
+    } catch (err) {
+        console.error('commulingo office index:', err);
+        commuLingoLoadError(res, { message: { ko: '직책 계보를 불러올 수 없습니다.', en: 'Failed to load the office index.' } });
+    }
+});
+
 router.get('/offices/:officeId', async (req, res) => {
     try {
         const officeId = typeof req.params.officeId === 'string' ? req.params.officeId.trim() : '';
@@ -141,13 +166,14 @@ router.get('/offices/:officeId', async (req, res) => {
         setShortPublicCache(res);
         res.render('public/commulingo-office', {
             office,
+            rosters: availableBodies(lang).filter(body => body.officeId === office.id),
             relatedReports,
             roleIconSvg,
-            pageTitle: lang === 'en' ? `${office.title} — People` : `${office.title} — 인물 사전`,
+            pageTitle: lang === 'en' ? `${office.title} — Soviet offices` : `${office.title} — 직책 계보`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,
             jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
+                { name: lang === 'en' ? 'Soviet offices' : '직책 계보', href: '/commulingo/offices' },
                 { name: office.title, href: `/commulingo/offices/${office.id}` },
             ]),
         });
@@ -242,14 +268,14 @@ router.get('/people/:personId', async (req, res) => {
         const historyEvents = (await loadCommuLingoPersonHistoryEvents(personId)).map(event => ({
             ...event, title: localize(event.title, lang), relation: localize(event.relation, lang), note: localize(event.note, lang),
         }));
-        // Politburo career, when the person sat on the body (politburo.json is
-        // keyed by dictionary person id). Renders as one box between the career
-        // timeline and the related events.
-        let politburo = null;
+        // Central Committee body careers (Politburo, Secretariat, Orgburo), when
+        // the person sat on them (the rosters are keyed by dictionary person id).
+        // One box each between the career timeline and the related events.
+        let bodyCareers = [];
         try {
-            politburo = politburoCareerFor(personId, lang);
+            bodyCareers = bodyCareersFor(personId, lang);
         } catch (e) {
-            console.error('commulingo person politburo box:', e);
+            console.error('commulingo person party body boxes:', e);
         }
         // Public research reports that mention this person. Failure only costs
         // the section, never the page.
@@ -271,7 +297,7 @@ router.get('/people/:personId', async (req, res) => {
             bioHtml,
             sections,
             historyEvents,
-            politburo,
+            bodyCareers,
             genealogies: genealogyLinksFor('person', personId, lang),
             relatedReports,
             relatedDocs,

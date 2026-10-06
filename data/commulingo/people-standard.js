@@ -296,6 +296,7 @@ function normalizeOfficeRow(row, office, peopleById, lang) {
     const person = row.personId ? peopleById[row.personId] : null;
     return {
         officeId: office.id,
+        trackId: row.trackId || '',
         personId: row.personId || '',
         period: row.period || null,
         years: localize(row.years, lang),
@@ -305,6 +306,33 @@ function normalizeOfficeRow(row, office, peopleById, lang) {
         displayName: person ? person.names.display : localize(row.name, lang),
         note: localize(row.note, lang),
     };
+}
+
+// The office page's sections: each listed track with its rows in time order,
+// then any rows whose track the office does not list, in one untitled section.
+function periodKey(period) {
+    const start = period && period.start;
+    return Array.isArray(start) ? [start[0] || 0, start[1] || 0, start[2] || 0] : [9999, 0, 0];
+}
+
+function byStart(a, b) {
+    const ka = periodKey(a.period), kb = periodKey(b.period);
+    for (let i = 0; i < 3; i += 1) if (ka[i] !== kb[i]) return ka[i] - kb[i];
+    return 0;
+}
+
+function officeTracks(raw, rows, lang) {
+    const listed = Array.isArray(raw && raw.tracks) ? raw.tracks : [];
+    const known = new Set(listed.map(track => track.id));
+    const sections = listed.map(track => ({
+        id: track.id,
+        title: localize(track.title, lang),
+        blurb: localize(track.blurb, lang),
+        rows: rows.filter(row => row.trackId === track.id).sort(byStart),
+    })).filter(track => track.rows.length);
+    const rest = rows.filter(row => !known.has(row.trackId));
+    if (rest.length) sections.push({ id: '', title: '', blurb: '', rows: rest });
+    return sections;
 }
 
 function normalizeCommuLingoPeople(data, options = {}) {
@@ -332,9 +360,10 @@ function normalizeCommuLingoPeople(data, options = {}) {
             period: step.period || '',
             name: localize(step.name, lang),
             body: localize(step.body, lang),
+            termHref: step.termId ? `/commulingo/terms/${step.termId}` : '',
         })) : [],
         rows: (office.rows || []).map(row => normalizeOfficeRow(row, office, peopleById, lang)),
-    })).filter(office => office.rows.length).sort((a, b) => {
+    })).map(office => ({ ...office, tracks: officeTracks(data.offices.find(raw => raw.id === office.id), office.rows, lang) })).filter(office => office.rows.length).sort((a, b) => {
         const aIndex = OFFICE_DISPLAY_ORDER.indexOf(a.id);
         const bIndex = OFFICE_DISPLAY_ORDER.indexOf(b.id);
         return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);
@@ -401,6 +430,8 @@ function normalizeCommuLingoPeople(data, options = {}) {
         lang,
         groups,
         offices,
+        // commulingo_offices.sort_order (chronological), for the office index page.
+        officeOrder: (data.offices || []).map(office => office.id),
         collections,
         people,
         peopleById,

@@ -31,14 +31,14 @@ async function getOfficeAdmin(officeId, options = {}) {
     const id = requireId(officeId, 'office id');
     const client = options.client || db;
     const officeResult = await client.query(
-        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
+        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, tracks
          FROM commulingo_offices
          WHERE id = $1`,
         [id]
     );
     if (!officeResult.rows.length) return null;
     const rowsResult = await client.query(
-        `SELECT id, ${PERIOD_COLUMNS.join(', ')},
+        `SELECT id, track_id, ${PERIOD_COLUMNS.join(', ')},
                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en
          FROM commulingo_office_rows
          WHERE office_id = $1
@@ -52,8 +52,10 @@ async function getOfficeAdmin(officeId, options = {}) {
         title: t(officeRow.title_ko, officeRow.title_en),
         blurb: t(officeRow.blurb_ko, officeRow.blurb_en),
         icon: officeRow.icon || '',
+        tracks: Array.isArray(officeRow.tracks) ? officeRow.tracks : [],
         rows: rowsResult.rows.map(row => ({
             id: row.id,
+            trackId: row.track_id || '',
             period: periodFromRow(row),
             years: formatBoth(periodFromRow(row)),
             body: t(row.body_ko, row.body_en),
@@ -81,6 +83,14 @@ async function lockedOfficeRow(client, id) {
     return again.rows.length && again.rows[0].office_id === officeId ? officeId : null;
 }
 
+// A row's track must be one the office lists (commulingo_offices.tracks).
+function trackOf(payload, office) {
+    const trackId = payload.trackId == null ? '' : payload.trackId;
+    if (typeof trackId !== 'string') throw badRequest('trackId must be a string');
+    if (trackId && !office.tracks.some(track => track.id === trackId)) throw badRequest(`unknown track ${trackId} for office ${office.id}`);
+    return trackId;
+}
+
 async function createOfficeRowAdmin(officeId, payload, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(officeId, 'office id');
@@ -100,9 +110,9 @@ async function createOfficeRowAdmin(officeId, payload, options = {}) {
         const result = await client.query(
             `INSERT INTO commulingo_office_rows
                 (office_id, sort_order, ${PERIOD_COLUMNS.join(', ')},
-                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en, updated_at)
+                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en, track_id, updated_at)
              VALUES ($1, $2, ${periodVals.map((_, i) => '$' + (i + 3)).join(', ')}, ${p(0)}, ${p(1)},
-                     NULLIF(${p(2)}, ''), ${p(3)}, ${p(4)}, ${p(5)}, ${p(6)}, NOW())
+                     NULLIF(${p(2)}, ''), ${p(3)}, ${p(4)}, ${p(5)}, ${p(6)}, NULLIF(${p(7)}, ''), NOW())
              RETURNING id`,
             [
                 id,
@@ -115,6 +125,7 @@ async function createOfficeRowAdmin(officeId, payload, options = {}) {
                 localized(payload.name, 'en'),
                 contentLocalized(payload.note, 'ko'),
                 localized(payload.note, 'en'),
+                trackOf(payload, before),
             ]
         );
         const after = await getOfficeAdmin(id, { client });
@@ -162,6 +173,7 @@ async function updateOfficeRowAdmin(rowId, payload, options = {}) {
             set('note_ko', contentLocalized(payload.note, 'ko'));
             set('note_en', localized(payload.note, 'en'));
         }
+        if (payload.trackId !== undefined) set('track_id', trackOf(payload, before) || null);
         if (sets.length) {
             set('updated_at', new Date());
             values.push(id);
