@@ -1,0 +1,629 @@
+{
+ "officeId": "central-planning",
+ "title": {
+  "ko": "중앙계획 기관",
+  "en": "Central planning agencies"
+ },
+ "blurb": {
+  "ko": "러시아 공화국과 소련의 고스플란 의장, 1955~1957년 분리된 국가경제위원회 의장, 1991년 고스플란을 이은 경제·예측장관.",
+  "en": "The chairmen of Gosplan of the RSFSR and the USSR, the chairmen of the separate State Economic Commission of 1955–1957, and the 1991 Minister of Economics and Forecasting who succeeded Gosplan."
+ },
+ "range": "1921–1991",
+ "tracks": [
+  {
+   "id": "gosplan-chairman",
+   "title": {
+    "ko": "고스플란 의장",
+    "en": "Chairman of Gosplan"
+   },
+   "blurb": {
+    "ko": "1921년 노동국방회의 산하 국가총계획위원회로 출발해 1923년 연방 기관이 되었고, 1948년 위원회(Committee)로 격상되었다. 1955~1957년에는 장기계획만 맡은 국가장기계획위원회가 고스플란이라는 이름을 이었다. 1991년 4월 경제·예측부로 개편되었고 5월 셰르바코프가 임명될 때까지 장관은 공석이었다.",
+    "en": "Began in 1921 as the State General Planning Commission under the RSFSR Council of Labour and Defence, became a union body in 1923 and a state committee in 1948. In 1955–1957 the long-term planning commission kept the Gosplan name. In April 1991 it became the Ministry of Economics and Forecasting, whose minister was appointed only in May."
+   }
+  },
+  {
+   "id": "gosekonomkomissiya",
+   "title": {
+    "ko": "국가경제위원회 의장 (1955~1957)",
+    "en": "Chairman of the State Economic Commission (1955–1957)"
+   },
+   "blurb": {
+    "ko": "1955년 5월 국가계획위원회를 둘로 나누면서 생긴 당면(연간) 계획 기관. 1957년 5월 폐지되었다.",
+    "en": "The current (annual) planning body created when the State Planning Committee was split in May 1955; abolished in May 1957."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "gosplan-chairman",
+   "personId": "krzhizhanovsky",
+   "post": {
+    "ko": "러시아 공화국(RSFSR) 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State General Planning Commission (Gosplan) of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1921,
+     2
+    ],
+    "end": [
+     1923,
+     8,
+     13
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Кржижановский,_Глеб_Максимилианович"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "krzhizhanovsky",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     8,
+     13
+    ],
+    "end": [
+     1923,
+     12,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Кржижановский,_Глеб_Максимилианович"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "alexander-tsyurupa",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     12,
+     11
+    ],
+    "end": [
+     1925,
+     11,
+     18
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "krzhizhanovsky",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1925,
+     11,
+     18
+    ],
+    "end": [
+     1930,
+     11,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "kuibyshev",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1930,
+     11,
+     10
+    ],
+    "end": [
+     1934,
+     4,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "mezhlauk",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1934,
+     4,
+     25
+    ],
+    "end": [
+     1937,
+     2,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "gennady-smirnov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     2,
+     25
+    ],
+    "end": [
+     1937,
+     10,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "mezhlauk",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1937,
+     10,
+     17
+    ],
+    "end": [
+     1937,
+     12,
+     1
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "voznesensky",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1938,
+     1,
+     19
+    ],
+    "end": [
+     1941,
+     3,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Вознесенский,_Николай_Алексеевич"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "saburov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1941,
+     3,
+     10
+    ],
+    "end": [
+     1942,
+     12,
+     8
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "voznesensky",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1942,
+     12,
+     8
+    ],
+    "end": [
+     1949,
+     3,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "saburov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1949,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     3,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "grigory-kosyachenko",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     6,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "saburov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     6,
+     29
+    ],
+    "end": [
+     1955,
+     5,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "baibakov",
+   "post": {
+    "ko": "소련 국가장기계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Commission for Long-Term Planning (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1955,
+     5,
+     25
+    ],
+    "end": [
+     1957,
+     5,
+     3
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "iosif-kuzmin",
+   "post": {
+    "ko": "소련 국가장기계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Commission for Long-Term Planning (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1957,
+     5,
+     3
+    ],
+    "end": [
+     1957,
+     5,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "iosif-kuzmin",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1957,
+     5,
+     10
+    ],
+    "end": [
+     1959,
+     3,
+     20
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "kosygin",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1959,
+     3,
+     20
+    ],
+    "end": [
+     1960,
+     5,
+     4
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "vladimir-novikov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1960,
+     5,
+     4
+    ],
+    "end": [
+     1962,
+     7,
+     17
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "veniamin-dymshits",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1962,
+     7,
+     17
+    ],
+    "end": [
+     1962,
+     11,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "pyotr-lomako",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1962,
+     11,
+     24
+    ],
+    "end": [
+     1965,
+     10,
+     2
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "baibakov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1965,
+     10,
+     2
+    ],
+    "end": [
+     1985,
+     10,
+     14
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "talyzin",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1985,
+     10,
+     14
+    ],
+    "end": [
+     1988,
+     2,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "maslyukov",
+   "post": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "period": {
+    "start": [
+     1988,
+     2,
+     5
+    ],
+    "end": [
+     1991,
+     4,
+     1
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "vladimir-shcherbakov",
+   "post": {
+    "ko": "소련 경제·예측장관",
+    "en": "Minister of Economics and Forecasting of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     5,
+     16
+    ],
+    "end": [
+     1991,
+     8,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosplan-chairman",
+   "personId": "vladimir-shcherbakov",
+   "post": {
+    "ko": "소련 경제·예측장관",
+    "en": "Minister of Economics and Forecasting of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     8,
+     28
+    ],
+    "end": [
+     1991,
+     11,
+     26
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosekonomkomissiya",
+   "personId": "saburov",
+   "post": {
+    "ko": "소련 국가경제위원회 의장",
+    "en": "Chairman of the State Economic Commission for Current Planning of the USSR"
+   },
+   "period": {
+    "start": [
+     1955,
+     5,
+     25
+    ],
+    "end": [
+     1956,
+     12,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  },
+  {
+   "track": "gosekonomkomissiya",
+   "personId": "mikhail-pervukhin",
+   "post": {
+    "ko": "소련 국가경제위원회 의장",
+    "en": "Chairman of the State Economic Commission for Current Planning of the USSR"
+   },
+   "period": {
+    "start": [
+     1956,
+     12,
+     25
+    ],
+    "end": [
+     1957,
+     5,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+  }
+ ]
+}

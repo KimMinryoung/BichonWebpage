@@ -1,0 +1,436 @@
+{
+  "officeId": "head-of-government",
+  "title": {
+    "ko": "정부 수반",
+    "en": "Heads of government"
+  },
+  "blurb": {
+    "ko": "러시아 공화국과 소련의 인민위원회의 의장, 소련 각료회의 의장, 소련 총리, 그리고 1991년 8월 이후 정부 기능을 맡은 과도 경제기구의 수장.",
+    "en": "The chairmen of the Council of People's Commissars of the RSFSR and the USSR, the chairmen of the USSR Council of Ministers, the Prime Minister of the USSR, and the heads of the interim economic bodies that took over government functions after August 1991."
+  },
+  "range": "1917–1991",
+  "tracks": [
+    {
+      "id": "sovnarkom-rsfsr",
+      "title": {
+        "ko": "러시아 공화국 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the RSFSR"
+      },
+      "blurb": {
+        "ko": "10월 혁명으로 수립된 소비에트 정부의 수반. 1923년 소련 인민위원회의가 생긴 뒤에는 공화국 정부직이 되었으므로 레닌까지만 싣는다.",
+        "en": "Head of the Soviet government formed in the October Revolution. Once the USSR Council of People's Commissars existed in 1923 it became a republican post, so only Lenin is listed."
+      }
+    },
+    {
+      "id": "sovnarkom-ussr",
+      "title": {
+        "ko": "소련 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the USSR"
+      },
+      "blurb": {
+        "ko": "1923년 7월부터 1946년 3월 각료회의로 개편될 때까지의 연방 정부 수반.",
+        "en": "Head of the union government from July 1923 until the council became the Council of Ministers in March 1946."
+      }
+    },
+    {
+      "id": "council-of-ministers",
+      "title": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "blurb": {
+        "ko": "1946년 3월부터 1991년 1월 내각 체제로 바뀔 때까지의 정부 수반.",
+        "en": "Head of government from March 1946 until the switch to a cabinet system in January 1991."
+      }
+    },
+    {
+      "id": "prime-minister",
+      "title": {
+        "ko": "소련 총리",
+        "en": "Prime Minister of the USSR"
+      },
+      "blurb": {
+        "ko": "1991년 1월 대통령 아래 신설된 내각의 수반. 8월 쿠데타 중 제1부총리 도구지예프가 내각 업무를 맡았고, 8월 28일 내각이 총사퇴했다.",
+        "en": "Head of the Cabinet of Ministers created under the president in January 1991. During the August coup First Deputy Prime Minister Doguzhiev ran the cabinet, which resigned as a whole on 28 August."
+      }
+    },
+    {
+      "id": "interim-economic-bodies",
+      "title": {
+        "ko": "1991년 과도 경제기구",
+        "en": "Interim economic bodies of 1991"
+      },
+      "blurb": {
+        "ko": "내각 사퇴 뒤 정부 기능을 넘겨받은 국민경제 운영관리위원회와, 공화국간 경제위원회(11월부터 국가간 경제위원회). 셋 모두 실라예프가 이끌었다.",
+        "en": "After the cabinet resigned, government functions passed to the Committee for the Operational Management of the National Economy and to the Inter-republican Economic Committee (from November the Interstate Economic Committee), all headed by Silayev."
+      }
+    }
+  ],
+  "rows": [
+    {
+      "track": "sovnarkom-rsfsr",
+      "personId": "lenin",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1917,
+          11,
+          9
+        ],
+        "end": [
+          1924,
+          1,
+          21
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_правительств_РСФСР"
+    },
+    {
+      "track": "sovnarkom-ussr",
+      "personId": "lenin",
+      "post": {
+        "ko": "소련 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the USSR"
+      },
+      "period": {
+        "start": [
+          1923,
+          7,
+          6
+        ],
+        "end": [
+          1924,
+          1,
+          21
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_народных_комиссаров_СССР"
+    },
+    {
+      "track": "sovnarkom-ussr",
+      "personId": "rykov",
+      "post": {
+        "ko": "소련 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the USSR"
+      },
+      "period": {
+        "start": [
+          1924,
+          2,
+          2
+        ],
+        "end": [
+          1930,
+          12,
+          19
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_народных_комиссаров_СССР"
+    },
+    {
+      "track": "sovnarkom-ussr",
+      "personId": "molotov",
+      "post": {
+        "ko": "소련 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the USSR"
+      },
+      "period": {
+        "start": [
+          1930,
+          12,
+          19
+        ],
+        "end": [
+          1941,
+          5,
+          6
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_народных_комиссаров_СССР"
+    },
+    {
+      "track": "sovnarkom-ussr",
+      "personId": "stalin",
+      "post": {
+        "ko": "소련 인민위원회의 의장",
+        "en": "Chairman of the Council of People's Commissars of the USSR"
+      },
+      "period": {
+        "start": [
+          1941,
+          5,
+          6
+        ],
+        "end": [
+          1946,
+          3,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_народных_комиссаров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "stalin",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1946,
+          3,
+          19
+        ],
+        "end": [
+          1953,
+          3,
+          5
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "malenkov",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1953,
+          3,
+          5
+        ],
+        "end": [
+          1955,
+          2,
+          8
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "bulganin",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1955,
+          2,
+          8
+        ],
+        "end": [
+          1958,
+          3,
+          27
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "khrushchev",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1958,
+          3,
+          27
+        ],
+        "end": [
+          1964,
+          10,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "kosygin",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1964,
+          10,
+          15
+        ],
+        "end": [
+          1980,
+          10,
+          23
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "tikhonov",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1980,
+          10,
+          23
+        ],
+        "end": [
+          1985,
+          9,
+          27
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "council-of-ministers",
+      "personId": "ryzhkov",
+      "post": {
+        "ko": "소련 각료회의 의장",
+        "en": "Chairman of the Council of Ministers of the USSR"
+      },
+      "period": {
+        "start": [
+          1985,
+          9,
+          27
+        ],
+        "end": [
+          1991,
+          1,
+          14
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+    },
+    {
+      "track": "prime-minister",
+      "personId": "pavlov",
+      "post": {
+        "ko": "소련 총리",
+        "en": "Prime Minister of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          1,
+          14
+        ],
+        "end": [
+          1991,
+          8,
+          28
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Кабинет_министров_СССР"
+    },
+    {
+      "track": "prime-minister",
+      "personId": null,
+      "name": {
+        "ko": "비탈리 도구지예프",
+        "en": "Vitaly Doguzhiev"
+      },
+      "post": {
+        "ko": "소련 총리",
+        "en": "Prime Minister of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          8,
+          19
+        ],
+        "end": [
+          1991,
+          8,
+          28
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Догужиев,_Виталий_Хуссейнович"
+    },
+    {
+      "track": "interim-economic-bodies",
+      "personId": "ivan-silayev",
+      "post": {
+        "ko": "소련 국민경제 운영관리위원회 위원장",
+        "en": "Head of the Committee for the Operational Management of the National Economy of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          8,
+          24
+        ],
+        "end": [
+          1991,
+          12,
+          26
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Комитет_по_оперативному_управлению_народным_хозяйством_СССР"
+    },
+    {
+      "track": "interim-economic-bodies",
+      "personId": "ivan-silayev",
+      "post": {
+        "ko": "소련 공화국간 경제위원회 의장",
+        "en": "Chairman of the Inter-republican Economic Committee of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          9,
+          20
+        ],
+        "end": [
+          1991,
+          11,
+          14
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Межгосударственный_экономический_комитет_Экономического_сообщества"
+    },
+    {
+      "track": "interim-economic-bodies",
+      "personId": "ivan-silayev",
+      "post": {
+        "ko": "국가간 경제위원회 의장",
+        "en": "Chairman of the Interstate Economic Committee"
+      },
+      "period": {
+        "start": [
+          1991,
+          11,
+          14
+        ],
+        "end": [
+          1991,
+          12,
+          26
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Межгосударственный_экономический_комитет_Экономического_сообщества"
+    }
+  ]
+}

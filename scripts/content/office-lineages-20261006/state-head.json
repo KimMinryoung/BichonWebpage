@@ -1,0 +1,532 @@
+{
+  "officeId": "state-head",
+  "title": {
+    "ko": "국가원수",
+    "en": "Formal heads of state"
+  },
+  "blurb": {
+    "ko": "전러시아 중앙집행위원회 의장, 소련 중앙집행위원회 의장, 최고소비에트 상무회 의장, 최고소비에트 의장, 소련 대통령으로 이어진 공식 국가원수 직함.",
+    "en": "The formal head-of-state posts: chairman of the All-Russian Central Executive Committee, chairman of the USSR Central Executive Committee, chairman of the Presidium of the Supreme Soviet, chairman of the Supreme Soviet and President of the USSR."
+  },
+  "range": "1917–1991",
+  "tracks": [
+    {
+      "id": "vtsik-chairman",
+      "title": {
+        "ko": "전러시아 중앙집행위원회 의장",
+        "en": "Chairman of the All-Russian Central Executive Committee (VTsIK)"
+      },
+      "blurb": {
+        "ko": "10월 혁명부터 소련 결성까지 소비에트 러시아의 최고 국가직. 1922년 12월 소련이 결성된 뒤에는 러시아 공화국의 최고직으로 남아 칼리닌이 1938년까지 겸했다.",
+        "en": "The highest state post of Soviet Russia from the October Revolution until the USSR was formed; after December 1922 it remained the top post of the Russian republic, which Kalinin held until 1938."
+      }
+    },
+    {
+      "id": "tsik-chairman",
+      "title": {
+        "ko": "소련 중앙집행위원회 의장",
+        "en": "Chairman of the Central Executive Committee of the USSR"
+      },
+      "blurb": {
+        "ko": "소련 중앙집행위원회는 연방 공화국 수만큼 공동의장을 두었다(우크라이나 페트롭스키, 벨로루시 체르뱌코프, 자캅카지예 나리마노프·무사베코프 등). 여기서는 러시아 공화국 몫의 공동의장이자 사실상의 대표였던 칼리닌만 싣는다.",
+        "en": "The USSR Central Executive Committee had one co-chairman per union republic (Petrovsky for Ukraine, Chervyakov for Belorussia, Narimanov and then Musabekov for Transcaucasia, and others). Only Kalinin, the co-chairman for the RSFSR and its de facto representative, is listed here."
+      }
+    },
+    {
+      "id": "presidium-chairman",
+      "title": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "blurb": {
+        "ko": "1936년 헌법에 따라 1938년 1월 신설되어 1989년 5월까지 존속한 직위. 의장이 사망하면 제1부의장 쿠즈네초프가 직무를 대행했다.",
+        "en": "Created under the 1936 constitution in January 1938 and kept until May 1989. When a chairman died, First Deputy Chairman Kuznetsov acted in his place."
+      }
+    },
+    {
+      "id": "supreme-soviet-chairman",
+      "title": {
+        "ko": "소련 최고소비에트 의장",
+        "en": "Chairman of the Supreme Soviet of the USSR"
+      },
+      "blurb": {
+        "ko": "1988년 헌법 개정으로 1989년 5월 신설된 최고 국가직. 1990년 3월 대통령직이 생기자 국가원수 지위를 잃었고, 이후 의장 루키야노프는 입법부 수장으로만 남았다.",
+        "en": "The highest state post from May 1989 under the 1988 constitutional amendments. It lost head-of-state status when the presidency was created in March 1990; its later holder Lukyanov led only the legislature."
+      }
+    },
+    {
+      "id": "president",
+      "title": {
+        "ko": "소련 대통령",
+        "en": "President of the USSR"
+      },
+      "blurb": {
+        "ko": "1990년 3월 인민대의원대회가 신설한 직위로, 1991년 12월 고르바초프의 사임으로 끝났다.",
+        "en": "Created by the Congress of People's Deputies in March 1990 and ended with Gorbachev's resignation in December 1991."
+      }
+    }
+  ],
+  "rows": [
+    {
+      "track": "vtsik-chairman",
+      "personId": "kamenev",
+      "post": {
+        "ko": "전러시아 중앙집행위원회 의장",
+        "en": "Chairman of the All-Russian Central Executive Committee"
+      },
+      "period": {
+        "start": [
+          1917,
+          11,
+          9
+        ],
+        "end": [
+          1917,
+          11,
+          21
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Всероссийского_центрального_исполнительного_комитета"
+    },
+    {
+      "track": "vtsik-chairman",
+      "personId": "sverdlov",
+      "post": {
+        "ko": "전러시아 중앙집행위원회 의장",
+        "en": "Chairman of the All-Russian Central Executive Committee"
+      },
+      "period": {
+        "start": [
+          1917,
+          11,
+          21
+        ],
+        "end": [
+          1919,
+          3,
+          16
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Всероссийского_центрального_исполнительного_комитета"
+    },
+    {
+      "track": "vtsik-chairman",
+      "personId": "mikhail-vladimirsky",
+      "post": {
+        "ko": "전러시아 중앙집행위원회 의장",
+        "en": "Chairman of the All-Russian Central Executive Committee"
+      },
+      "period": {
+        "start": [
+          1919,
+          3,
+          16
+        ],
+        "end": [
+          1919,
+          3,
+          30
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Всероссийского_центрального_исполнительного_комитета"
+    },
+    {
+      "track": "vtsik-chairman",
+      "personId": "kalinin",
+      "post": {
+        "ko": "전러시아 중앙집행위원회 의장",
+        "en": "Chairman of the All-Russian Central Executive Committee"
+      },
+      "period": {
+        "start": [
+          1919,
+          3,
+          30
+        ],
+        "end": [
+          1938,
+          7,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Всероссийского_центрального_исполнительного_комитета"
+    },
+    {
+      "track": "tsik-chairman",
+      "personId": "kalinin",
+      "post": {
+        "ko": "소련 중앙집행위원회 의장",
+        "en": "Chairman of the Central Executive Committee of the USSR"
+      },
+      "period": {
+        "start": [
+          1922,
+          12,
+          30
+        ],
+        "end": [
+          1938,
+          1,
+          12
+        ]
+      },
+      "note": {
+        "ko": "러시아 공화국 몫 공동의장",
+        "en": "Co-chairman for the RSFSR"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Центральный_исполнительный_комитет_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "kalinin",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1938,
+          1,
+          17
+        ],
+        "end": [
+          1946,
+          3,
+          19
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "shvernik",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1946,
+          3,
+          19
+        ],
+        "end": [
+          1953,
+          3,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "voroshilov",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1953,
+          3,
+          15
+        ],
+        "end": [
+          1960,
+          5,
+          7
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "brezhnev",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1960,
+          5,
+          7
+        ],
+        "end": [
+          1964,
+          7,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "mikoyan",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1964,
+          7,
+          15
+        ],
+        "end": [
+          1965,
+          12,
+          9
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "podgorny",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1965,
+          12,
+          9
+        ],
+        "end": [
+          1977,
+          6,
+          16
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "brezhnev",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1977,
+          6,
+          16
+        ],
+        "end": [
+          1982,
+          11,
+          10
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "vasily-kuznetsov",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1982,
+          11,
+          10
+        ],
+        "end": [
+          1983,
+          6,
+          16
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "andropov",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1983,
+          6,
+          16
+        ],
+        "end": [
+          1984,
+          2,
+          9
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "vasily-kuznetsov",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1984,
+          2,
+          9
+        ],
+        "end": [
+          1984,
+          4,
+          11
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "chernenko",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1984,
+          4,
+          11
+        ],
+        "end": [
+          1985,
+          3,
+          10
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "vasily-kuznetsov",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1985,
+          3,
+          10
+        ],
+        "end": [
+          1985,
+          7,
+          2
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "gromyko",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1985,
+          7,
+          2
+        ],
+        "end": [
+          1988,
+          10,
+          1
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "presidium-chairman",
+      "personId": "gorbachev",
+      "post": {
+        "ko": "소련 최고소비에트 상무회 의장",
+        "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1988,
+          10,
+          1
+        ],
+        "end": [
+          1989,
+          5,
+          25
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+    },
+    {
+      "track": "supreme-soviet-chairman",
+      "personId": "gorbachev",
+      "post": {
+        "ko": "소련 최고소비에트 의장",
+        "en": "Chairman of the Supreme Soviet of the USSR"
+      },
+      "period": {
+        "start": [
+          1989,
+          5,
+          25
+        ],
+        "end": [
+          1990,
+          3,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Председатель_Верховного_Совета_СССР"
+    },
+    {
+      "track": "president",
+      "personId": "gorbachev",
+      "post": {
+        "ko": "소련 대통령",
+        "en": "President of the USSR"
+      },
+      "period": {
+        "start": [
+          1990,
+          3,
+          15
+        ],
+        "end": [
+          1991,
+          12,
+          25
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Президент_СССР"
+    }
+  ]
+}

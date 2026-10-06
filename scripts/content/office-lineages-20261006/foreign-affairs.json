@@ -1,0 +1,383 @@
+{
+  "officeId": "foreign-affairs",
+  "title": {
+    "ko": "외교",
+    "en": "Foreign affairs"
+  },
+  "blurb": {
+    "ko": "러시아 공화국과 소련의 외무인민위원, 소련 외무장관, 1991년 대외관계장관.",
+    "en": "The People's Commissars for Foreign Affairs of the RSFSR and the USSR, the USSR Ministers of Foreign Affairs and the 1991 Minister of External Relations."
+  },
+  "range": "1917–1991",
+  "tracks": [
+    {
+      "id": "narkomindel-rsfsr",
+      "title": {
+        "ko": "러시아 공화국 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the RSFSR"
+      },
+      "blurb": {
+        "ko": "10월 혁명부터 1923년 7월 연방 외무인민위원부가 생길 때까지의 외교 수장.",
+        "en": "The head of foreign policy from the October Revolution until the union commissariat was created in July 1923."
+      }
+    },
+    {
+      "id": "narkomindel-ussr",
+      "title": {
+        "ko": "소련 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the USSR"
+      },
+      "blurb": {
+        "ko": "1923년 7월부터 1946년 3월 외무부로 개편될 때까지.",
+        "en": "From July 1923 until the commissariat became a ministry in March 1946."
+      }
+    },
+    {
+      "id": "foreign-minister",
+      "title": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "blurb": {
+        "ko": "1946년 3월부터 1991년 11월 대외관계부로 개편될 때까지. 8월 쿠데타 뒤 임명된 판킨은 최고소비에트의 승인을 받지 못했다.",
+        "en": "From March 1946 until the ministry became the Ministry of External Relations in November 1991. Pankin, appointed after the August coup, was never confirmed by the Supreme Soviet."
+      }
+    },
+    {
+      "id": "external-relations-minister",
+      "title": {
+        "ko": "소련 대외관계장관",
+        "en": "Minister of External Relations of the USSR"
+      },
+      "blurb": {
+        "ko": "1991년 11월 외무부와 대외경제관계부를 합쳐 만든 부처의 장관. 소련 해체와 함께 사라졌다.",
+        "en": "Minister of the body formed in November 1991 by merging the foreign and foreign economic relations ministries; it ended with the USSR."
+      }
+    }
+  ],
+  "rows": [
+    {
+      "track": "narkomindel-rsfsr",
+      "personId": "trotsky",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1917,
+          11,
+          9
+        ],
+        "end": [
+          1918,
+          3,
+          13
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Троцкий,_Лев_Давидович"
+    },
+    {
+      "track": "narkomindel-rsfsr",
+      "personId": "chicherin",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1918,
+          3,
+          13
+        ],
+        "end": [
+          1918,
+          5,
+          30
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Чичерин,_Георгий_Васильевич"
+    },
+    {
+      "track": "narkomindel-rsfsr",
+      "personId": "chicherin",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1918,
+          5,
+          30
+        ],
+        "end": [
+          1923,
+          7,
+          6
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_по_иностранным_делам_РСФСР"
+    },
+    {
+      "track": "narkomindel-ussr",
+      "personId": "chicherin",
+      "post": {
+        "ko": "소련 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1923,
+          7,
+          6
+        ],
+        "end": [
+          1930,
+          7,
+          21
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_(Soviet_Union)"
+    },
+    {
+      "track": "narkomindel-ussr",
+      "personId": "litvinov",
+      "post": {
+        "ko": "소련 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1930,
+          7,
+          21
+        ],
+        "end": [
+          1939,
+          5,
+          3
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_(Soviet_Union)"
+    },
+    {
+      "track": "narkomindel-ussr",
+      "personId": "molotov",
+      "post": {
+        "ko": "소련 외무인민위원",
+        "en": "People's Commissar for Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1939,
+          5,
+          3
+        ],
+        "end": [
+          1946,
+          3,
+          15
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_(Soviet_Union)"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "molotov",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1946,
+          3,
+          19
+        ],
+        "end": [
+          1949,
+          3,
+          4
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "vyshinsky",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1949,
+          3,
+          4
+        ],
+        "end": [
+          1953,
+          3,
+          5
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "molotov",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1953,
+          3,
+          5
+        ],
+        "end": [
+          1956,
+          6,
+          1
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "shepilov",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1956,
+          6,
+          1
+        ],
+        "end": [
+          1957,
+          2,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "gromyko",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1957,
+          2,
+          15
+        ],
+        "end": [
+          1985,
+          7,
+          2
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "shevardnadze",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1985,
+          7,
+          2
+        ],
+        "end": [
+          1990,
+          12,
+          20
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "bessmertnykh",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          1,
+          15
+        ],
+        "end": [
+          1991,
+          8,
+          28
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "foreign-minister",
+      "personId": "pankin",
+      "post": {
+        "ko": "소련 외무장관",
+        "en": "Minister of Foreign Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          8,
+          28
+        ],
+        "end": [
+          1991,
+          11,
+          18
+        ]
+      },
+      "note": {
+        "ko": "최고소비에트 미승인",
+        "en": "Not confirmed by the Supreme Soviet"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Министерство_иностранных_дел_СССР"
+    },
+    {
+      "track": "external-relations-minister",
+      "personId": "shevardnadze",
+      "post": {
+        "ko": "소련 대외관계장관",
+        "en": "Minister of External Relations of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          11,
+          19
+        ],
+        "end": [
+          1991,
+          12,
+          26
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Ministry_of_Foreign_Affairs_(Soviet_Union)"
+    }
+  ]
+}

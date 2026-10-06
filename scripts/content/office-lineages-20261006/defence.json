@@ -1,0 +1,725 @@
+{
+  "officeId": "defence",
+  "title": {
+    "ko": "군사 · 국방",
+    "en": "Military and defence"
+  },
+  "blurb": {
+    "ko": "군사인민위원·육해군인민위원, 국방인민위원, 군대장관, 군사장관, 국방장관과, 따로 존재했던 해군인민위원·해군장관.",
+    "en": "The People's Commissars for Military (and Naval) Affairs, People's Commissars of Defence, Ministers of the Armed Forces, Ministers of War and Ministers of Defence, plus the separate naval commissars and ministers."
+  },
+  "range": "1917–1991",
+  "tracks": [
+    {
+      "id": "military-commissar",
+      "title": {
+        "ko": "군사인민위원 · 육해군인민위원",
+        "en": "People's Commissar for Military (and Naval) Affairs"
+      },
+      "blurb": {
+        "ko": "10월 혁명 직후에는 안토노프-옵세옌코·크릴렌코·디벤코의 육해군사위원회가 공동으로 맡았고, 1917년 11월 러시아 공화국 군사인민위원부가 생겼다. 1923년 11월 해군인민위원부와 합쳐 소련 육해군인민위원부가 되었다.",
+        "en": "Right after the October Revolution a collective Committee for Military and Naval Affairs (Antonov-Ovseenko, Krylenko, Dybenko) held the post; the RSFSR Commissariat for Military Affairs followed in November 1917. In November 1923 it merged with the naval commissariat into the USSR Commissariat for Military and Naval Affairs."
+      }
+    },
+    {
+      "id": "defence-commissar",
+      "title": {
+        "ko": "국방인민위원",
+        "en": "People's Commissar of Defence"
+      },
+      "blurb": {
+        "ko": "1934년 6월 육해군인민위원부를 개편해 만든 직위. 1937년 12월 해군인민위원부가 떨어져 나갔다.",
+        "en": "Created in June 1934 from the Commissariat for Military and Naval Affairs; the navy commissariat split off in December 1937."
+      }
+    },
+    {
+      "id": "armed-forces-minister",
+      "title": {
+        "ko": "군대인민위원 · 군대장관",
+        "en": "People's Commissar / Minister of the Armed Forces"
+      },
+      "blurb": {
+        "ko": "1946년 2월 국방인민위원부와 해군인민위원부를 합친 통합 군사기구의 수장. 1950년 2월 다시 둘로 나뉘었다.",
+        "en": "Head of the unified military body formed in February 1946 by merging the defence and navy commissariats; split in two again in February 1950."
+      }
+    },
+    {
+      "id": "war-minister",
+      "title": {
+        "ko": "군사장관",
+        "en": "Minister of War"
+      },
+      "blurb": {
+        "ko": "1950년 2월부터 1953년 3월 국방부로 통합될 때까지 지상군 중심 부처의 장관.",
+        "en": "Minister of the army-centred ministry from February 1950 until it was merged into the Ministry of Defence in March 1953."
+      }
+    },
+    {
+      "id": "defence-minister",
+      "title": {
+        "ko": "국방장관",
+        "en": "Minister of Defence"
+      },
+      "blurb": {
+        "ko": "1953년 3월 군사부와 해군부를 합쳐 만든 직위. 8월 쿠데타 뒤 야조프가 체포되자 모이세예프가 잠시 직무를 대행했다.",
+        "en": "Created in March 1953 by merging the war and navy ministries. After Yazov's arrest in the August 1991 coup Moiseyev briefly acted in his place."
+      }
+    },
+    {
+      "id": "navy",
+      "title": {
+        "ko": "해군인민위원 · 해군장관",
+        "en": "People's Commissar / Minister of the Navy"
+      },
+      "blurb": {
+        "ko": "해군 담당 부처가 따로 있던 시기: 러시아 공화국 해군인민위원부(1918~1923), 소련 해군인민위원부(1937~1946), 소련 해군부(1950~1953). 그 사이에는 통합 군사부처가 해군을 관할했다.",
+        "en": "The periods with a separate naval department: the RSFSR Commissariat for Naval Affairs (1918–1923), the USSR People's Commissariat of the Navy (1937–1946) and the USSR Ministry of the Navy (1950–1953). In between the unified military ministry ran the navy."
+      }
+    }
+  ],
+  "rows": [
+    {
+      "track": "military-commissar",
+      "personId": "podvoisky",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 군사인민위원",
+        "en": "People's Commissar for Military Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1917,
+          11,
+          23
+        ],
+        "end": [
+          1918,
+          3,
+          13
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_по_военным_делам_РСФСР"
+    },
+    {
+      "track": "military-commissar",
+      "personId": "trotsky",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 군사인민위원",
+        "en": "People's Commissar for Military Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1918,
+          3,
+          14
+        ],
+        "end": [
+          1923,
+          11,
+          12
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_по_военным_делам_РСФСР"
+    },
+    {
+      "track": "military-commissar",
+      "personId": "trotsky",
+      "post": {
+        "ko": "소련 육해군인민위원",
+        "en": "People's Commissar for Military and Naval Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1923,
+          11,
+          12
+        ],
+        "end": [
+          1925,
+          1,
+          26
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "military-commissar",
+      "personId": "frunze",
+      "post": {
+        "ko": "소련 육해군인민위원",
+        "en": "People's Commissar for Military and Naval Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1925,
+          1,
+          26
+        ],
+        "end": [
+          1925,
+          10,
+          31
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "military-commissar",
+      "personId": "voroshilov",
+      "post": {
+        "ko": "소련 육해군인민위원",
+        "en": "People's Commissar for Military and Naval Affairs of the USSR"
+      },
+      "period": {
+        "start": [
+          1925,
+          11,
+          6
+        ],
+        "end": [
+          1934,
+          6,
+          20
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-commissar",
+      "personId": "voroshilov",
+      "post": {
+        "ko": "소련 국방인민위원",
+        "en": "People's Commissar of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1934,
+          6,
+          20
+        ],
+        "end": [
+          1940,
+          5,
+          7
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-commissar",
+      "personId": "timoshenko",
+      "post": {
+        "ko": "소련 국방인민위원",
+        "en": "People's Commissar of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1940,
+          5,
+          7
+        ],
+        "end": [
+          1941,
+          7,
+          19
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-commissar",
+      "personId": "stalin",
+      "post": {
+        "ko": "소련 국방인민위원",
+        "en": "People's Commissar of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1941,
+          7,
+          19
+        ],
+        "end": [
+          1946,
+          2,
+          25
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "armed-forces-minister",
+      "personId": "stalin",
+      "post": {
+        "ko": "소련 군대인민위원",
+        "en": "People's Commissar of the Armed Forces of the USSR"
+      },
+      "period": {
+        "start": [
+          1946,
+          2,
+          25
+        ],
+        "end": [
+          1946,
+          3,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "armed-forces-minister",
+      "personId": "stalin",
+      "post": {
+        "ko": "소련 군대장관",
+        "en": "Minister of the Armed Forces of the USSR"
+      },
+      "period": {
+        "start": [
+          1946,
+          3,
+          15
+        ],
+        "end": [
+          1947,
+          3,
+          3
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "armed-forces-minister",
+      "personId": "bulganin",
+      "post": {
+        "ko": "소련 군대장관",
+        "en": "Minister of the Armed Forces of the USSR"
+      },
+      "period": {
+        "start": [
+          1947,
+          3,
+          3
+        ],
+        "end": [
+          1949,
+          3,
+          24
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "armed-forces-minister",
+      "personId": "vasilevsky",
+      "post": {
+        "ko": "소련 군대장관",
+        "en": "Minister of the Armed Forces of the USSR"
+      },
+      "period": {
+        "start": [
+          1949,
+          3,
+          24
+        ],
+        "end": [
+          1950,
+          2,
+          25
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "war-minister",
+      "personId": "vasilevsky",
+      "post": {
+        "ko": "소련 군사장관",
+        "en": "Minister of War of the USSR"
+      },
+      "period": {
+        "start": [
+          1950,
+          2,
+          25
+        ],
+        "end": [
+          1953,
+          3,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "bulganin",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1953,
+          3,
+          15
+        ],
+        "end": [
+          1955,
+          2,
+          9
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "zhukov",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1955,
+          2,
+          9
+        ],
+        "end": [
+          1957,
+          10,
+          26
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "malinovsky",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1957,
+          10,
+          26
+        ],
+        "end": [
+          1967,
+          3,
+          31
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "grechko",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1967,
+          4,
+          12
+        ],
+        "end": [
+          1976,
+          4,
+          26
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "ustinov",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1976,
+          4,
+          29
+        ],
+        "end": [
+          1984,
+          12,
+          20
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "sokolov",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1984,
+          12,
+          22
+        ],
+        "end": [
+          1987,
+          5,
+          30
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "yazov",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1987,
+          5,
+          30
+        ],
+        "end": [
+          1991,
+          8,
+          28
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "mikhail-moiseyev",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          8,
+          22
+        ],
+        "end": [
+          1991,
+          8,
+          23
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Моисеев,_Михаил_Алексеевич"
+    },
+    {
+      "track": "defence-minister",
+      "personId": "yevgeny-shaposhnikov",
+      "post": {
+        "ko": "소련 국방장관",
+        "en": "Minister of Defence of the USSR"
+      },
+      "period": {
+        "start": [
+          1991,
+          8,
+          29
+        ],
+        "end": [
+          1992,
+          2,
+          14
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "navy",
+      "personId": "pavel-dybenko",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 해군인민위원",
+        "en": "People's Commissar for Naval Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1917,
+          11
+        ],
+        "end": [
+          1918,
+          3
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Дыбенко,_Павел_Ефимович"
+    },
+    {
+      "track": "navy",
+      "personId": "trotsky",
+      "post": {
+        "ko": "러시아 공화국(RSFSR) 해군인민위원",
+        "en": "People's Commissar for Naval Affairs of the RSFSR"
+      },
+      "period": {
+        "start": [
+          1918,
+          4
+        ],
+        "end": [
+          1923,
+          11,
+          12
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Троцкий,_Лев_Давидович"
+    },
+    {
+      "track": "navy",
+      "personId": null,
+      "name": {
+        "ko": "표트르 스미르노프",
+        "en": "Pyotr Smirnov"
+      },
+      "post": {
+        "ko": "소련 해군인민위원",
+        "en": "People's Commissar of the Navy of the USSR"
+      },
+      "period": {
+        "start": [
+          1937,
+          12,
+          30
+        ],
+        "end": [
+          1938,
+          6,
+          30
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_Военно-морского_флота_СССР"
+    },
+    {
+      "track": "navy",
+      "personId": null,
+      "name": {
+        "ko": "표트르 스미르노프-스베틀롭스키",
+        "en": "Pyotr Smirnov-Svetlovsky"
+      },
+      "post": {
+        "ko": "소련 해군인민위원",
+        "en": "People's Commissar of the Navy of the USSR"
+      },
+      "period": {
+        "start": [
+          1938,
+          6,
+          30
+        ],
+        "end": [
+          1938,
+          9,
+          8
+        ]
+      },
+      "note": {
+        "ko": "직무대행",
+        "en": "Acting"
+      },
+      "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_Военно-морского_флота_СССР"
+    },
+    {
+      "track": "navy",
+      "personId": "frinovsky",
+      "post": {
+        "ko": "소련 해군인민위원",
+        "en": "People's Commissar of the Navy of the USSR"
+      },
+      "period": {
+        "start": [
+          1938,
+          9,
+          8
+        ],
+        "end": [
+          1939,
+          4,
+          6
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Фриновский,_Михаил_Петрович"
+    },
+    {
+      "track": "navy",
+      "personId": "nikolai-kuznetsov-navy",
+      "post": {
+        "ko": "소련 해군인민위원",
+        "en": "People's Commissar of the Navy of the USSR"
+      },
+      "period": {
+        "start": [
+          1939,
+          4,
+          28
+        ],
+        "end": [
+          1946,
+          2,
+          25
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_Военно-морского_флота_СССР"
+    },
+    {
+      "track": "navy",
+      "personId": "ivan-stepanovich-yumashev",
+      "post": {
+        "ko": "소련 해군장관",
+        "en": "Minister of the Navy of the USSR"
+      },
+      "period": {
+        "start": [
+          1950,
+          2,
+          25
+        ],
+        "end": [
+          1951,
+          7,
+          20
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    },
+    {
+      "track": "navy",
+      "personId": "nikolai-kuznetsov-navy",
+      "post": {
+        "ko": "소련 해군장관",
+        "en": "Minister of the Navy of the USSR"
+      },
+      "period": {
+        "start": [
+          1951,
+          7,
+          20
+        ],
+        "end": [
+          1953,
+          3,
+          15
+        ]
+      },
+      "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+    }
+  ]
+}
