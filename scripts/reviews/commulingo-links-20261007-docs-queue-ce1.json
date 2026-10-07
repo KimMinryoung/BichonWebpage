@@ -1,0 +1,206 @@
+{
+ "scope": "2026-10-07 docs queue CE1: PKWN July Manifesto, Tito–Šubašić agreement — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "ko",
+   "text": "『폴란드 민족해방위원회 선언』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "ko",
+   "text": "7월 선언",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 맨 「7월 선언」은 다른 7월 선언과 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "ko",
+   "text": "루블린 위원회의 선언",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "ko",
+   "text": "PKWN 선언",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "ko",
+   "text": "폴란드 민족해방위원회 7월 선언",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "en",
+   "text": "PKWN Manifesto",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "en",
+   "text": "July Manifesto",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 링크 검토: generic month-named manifesto; 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "en",
+   "text": "Manifesto of the Polish Committee of National Liberation",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "en",
+   "text": "Lublin Committee's manifesto",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "pkwn-july-manifesto-1944",
+   "lang": "en",
+   "text": "Manifest PKWN",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "ko",
+   "text": "『티토-슈바시치 협정』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "ko",
+   "text": "티토-슈바시치 협정",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 용어 titosubasic-agreement가 쓰는 맨 이름이고 1944년 6월 비스 협정과도 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "ko",
+   "text": "베오그라드 협정",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 다른 베오그라드 협정과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "ko",
+   "text": "1944년 11월 1일 티토-슈바시치 협정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "en",
+   "text": "Tito–Šubašić Agreement",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 용어 titosubasic-agreement·비스 협정과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "en",
+   "text": "Tito-Subasic Agreement",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 용어 titosubasic-agreement·비스 협정과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "en",
+   "text": "Belgrade Agreement of 1 November 1944",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "tito-subasic-agreement-1944-11-01",
+   "lang": "en",
+   "text": "Sporazum Tito–Šubašić",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}
