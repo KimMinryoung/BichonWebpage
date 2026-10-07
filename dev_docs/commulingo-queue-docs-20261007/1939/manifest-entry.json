@@ -1,0 +1,28 @@
+{
+  "id": "mpla-politburo-statement-27-may-1977",
+  "file": "mpla-politburo-statement-27-may-1977.html",
+  "docLang": "ko",
+  "date": "1977-07-12",
+  "title": {
+    "ko": "5월 27일 쿠데타 기도에 관한 MPLA 정치국 성명 (1977년 7월 12일)",
+    "en": "MPLA Political Bureau Statement on the Attempted Coup of 27 May 1977 (12 July 1977)"
+  },
+  "description": {
+    "ko": "니투 알베스·조제 반두넴 일파의 1977년 5월 27일 쿠데타 기도에 대해 MPLA 정치국이 낸 공식 해명서 전문. 1974년부터의 「분파주의」 침투 과정, 쿠데타 계획과 세 차례 시도, 지휘관 살해를 집권 측 시각에서 서술하고 「혁명적 민주독재」의 적용을 선언한다.",
+    "en": "Full text of the MPLA Political Bureau's official account of the attempted coup of 27 May 1977 by the faction of Nito Alves and José Van-Dúnem. It narrates, from the ruling side's perspective, the 'fractionist' infiltration from 1974, the coup plan and its three attempts and the killing of commanders, and calls for applying the 'Democratic Revolutionary Dictatorship'."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Informação do Bureau Político sobre a tentativa de golpe de estado de 27 de Maio de 1977 (Comunicado do Bureau Político sobre o golpe de estado de 27 de Maio, assinado: O Bureau Político do Comité Central do MPLA, Luanda, 12 de Julho de 1977). Luanda: Publicações Gama, Ministério da Defesa, Julho 1977, 64 pp., 50.000 ex. 저본: Arquivo Lúcio Lara 소장본 스캔, https://www.marxists.org/portugues/tematica/mpla/pdf/50.pdf (2026-10-07 접근). 집권당 지도 기관의 공식 성명으로 게재.",
+  "people": ["nito-alves", "jose-van-dunem", "sita-valles", "agostinho-neto", "iko-carreira", "lucio-lara", "jose-eduardo-dos-santos"],
+  "terms": ["popular-movement-for-the-liberation-of-angola", "fractionism-nitismo"],
+  "events": ["angolan-independence-1975-1977"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『5월 27일 쿠데타 기도에 관한 MPLA 정치국 성명』", "MPLA 정치국 성명", "5월 27일 쿠데타에 관한 정치국 성명", "1977년 7월 12일 정치국 성명", "정치국 보고 책자"],
+    "en": ["MPLA Political Bureau statement on 27 May", "Informação do Bureau Político", "Political Bureau statement of 12 July 1977", "MPLA pamphlet on the 27 May coup"]
+  },
+  "noAutoLink": []
+}
