@@ -300,7 +300,6 @@ const event = buildEvent({
         ['자크멜', 'Jacmel', 18.23, -72.53, 'place'],
         ['레오간', 'Léogâne', 18.51, -72.63, 'place'],
         ['크레타피에로', 'Crête-à-Pierrot', 19.13, -72.49, 'place'],
-        ['베르티에르', 'Vertières', 19.73, -72.22, 'place'],
         ['산토도밍고', 'Santo Domingo', 18.47, -69.90, 'place'],
     ],
     countries: ['haiti', 'france', 'uk', 'spain', 'dominican-republic'],

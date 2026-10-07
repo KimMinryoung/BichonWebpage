@@ -2,298 +2,18 @@
   "changedBy": "queue-events-20261007",
   "people": [
     {
-      "id": "otto-von-bismarck",
-      "groupId": "world-before-1917",
+      "id": "louis-marie-turreau",
+      "groupId": "france-revolution",
       "givenName": {
-        "ko": "오토",
-        "en": "Otto"
+        "ko": "루이 마리",
+        "en": "Louis Marie"
       },
       "familyName": {
-        "ko": "폰 비스마르크",
-        "en": "von Bismarck"
+        "ko": "튀로",
+        "en": "Turreau"
       },
-      "nativeName": "Otto von Bismarck",
-      "years": "1815–1898",
-      "citizenship": {
-        "code": "germany"
-      },
-      "nationalOrigin": {
-        "code": "germany"
-      },
-      "epithet": {
-        "ko": "엠스 전보로 보불전쟁을 끌어내고 베르사유에서 독일 제국을 세운 프로이센 총리이자 제국의 첫 재상",
-        "en": "Prussian minister president who provoked the war of 1870 with the Ems dispatch and became first chancellor of the German Empire"
-      },
-      "bio": {
-        "ko": "쇤하우젠의 융커 집안에서 태어나 프랑크푸르트 연방의회 대표와 러시아·프랑스 대사를 지냈고, 1862년 빌헬름 1세가 군제 개혁 예산을 둘러싼 의회와의 충돌을 뚫기 위해 그를 총리로 임명했다. 1890년까지 프로이센 총리 겸 외무장관으로 덴마크·오스트리아·프랑스와의 세 차례 전쟁을 이끌었고, 1866년 북독일연방을 세웠으며 1870년 엠스 전보를 손질해 공개해 프랑스의 선전포고를 끌어냈다. 1871년 베르사유에서 빌헬름 1세를 황제로 선포하고 제국의 첫 재상이 되었다. 문화투쟁으로 가톨릭과 싸우고 1878년 반사회주의자법으로 사회민주당을 억눌렀으며, 동맹 체계로 프랑스를 고립시켰다. 1890년 빌헬름 2세의 요구로 사임해 1898년 프리드리히스루에서 죽었다.",
-        "en": "Born into a Junker family at Schönhausen, he was Prussia's envoy to the Frankfurt Diet and ambassador to Russia and France before Wilhelm I made him minister president in 1862 to force the army reforms through the Landtag. Minister president and foreign minister until 1890, he led three short wars against Denmark, Austria and France, founded the North German Confederation in 1866 and in 1870 published the edited Ems dispatch that drew France into declaring war. In 1871 he had Wilhelm I proclaimed emperor at Versailles and became the empire's first chancellor. He fought the Catholic Church in the Kulturkampf, suppressed the Social Democrats with the Anti-Socialist Law of 1878 and introduced social insurance to undercut them, while his alliances isolated France. Dismissed at Wilhelm II's insistence in 1890, he died at Friedrichsruh in 1898."
-      },
-      "fate": {
-        "kind": "natural",
-        "label": {
-          "ko": "자연사",
-          "en": "Natural causes"
-        }
-      },
-      "aliases": {
-        "ko": [
-          "오토 에두아르트 레오폴트 폰 비스마르크",
-          "철혈재상"
-        ],
-        "en": [
-          "Otto Eduard Leopold von Bismarck",
-          "Prince Bismarck",
-          "Fürst von Bismarck",
-          "Iron Chancellor"
-        ]
-      },
-      "sources": [
-        "https://en.wikipedia.org/wiki/Otto_von_Bismarck"
-      ],
-      "evidence": [
-        {
-          "field": "years",
-          "claim": "1815–1898",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "(1 April 1815 – 30 July 1898)"
-        },
-        {
-          "field": "citizenship",
-          "claim": "German statesman, first chancellor of the German Empire",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "was a German statesman and diplomat who oversaw the unification of Germany and served as its first chancellor from 1871 to 1890"
-        },
-        {
-          "field": "nationalOrigin",
-          "claim": "Prussian Junker origins",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "From Junker landowner origins, Bismarck rose rapidly in Prussian politics under King Wilhelm I of Prussia."
-        },
-        {
-          "field": "bio",
-          "claim": "envoy to the Frankfurt Diet from 1851",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Early career",
-          "excerpt": "In 1851, Frederick William IV appointed Bismarck as Prussia's envoy to the Diet of the German Confederation in Frankfurt."
-        },
-        {
-          "field": "bio",
-          "claim": "ambassador to Russia and France",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "He served as the Prussian ambassador to Russia and France and in both houses of the Prussian parliament."
-        },
-        {
-          "field": "bio",
-          "claim": "minister president and foreign minister 1862–1890",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "From 1862 to 1890, he held office as the minister president and foreign minister of Prussia."
-        },
-        {
-          "field": "bio",
-          "claim": "three short wars",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "Under Bismarck's leadership, Prussia provoked three short, decisive wars against Denmark, Austria, and France."
-        },
-        {
-          "field": "bio",
-          "claim": "North German Confederation without Austria",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "After Austria's defeat in 1866, he replaced the German Confederation with the North German Confederation, which aligned the smaller North German states with Prussia while excluding Austria."
-        },
-        {
-          "field": "bio",
-          "claim": "published the edited Ems dispatch",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Franco-Prussian War 1870–1871",
-          "excerpt": "To provoke France into declaring war with Prussia, Bismarck published the Ems Dispatch, a carefully edited version of a conversation between King Wilhelm and the French ambassador to Prussia, Count Benedetti."
-        },
-        {
-          "field": "bio",
-          "claim": "Wilhelm proclaimed emperor at Versailles",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Franco-Prussian War 1870–1871",
-          "excerpt": "While the war was in its final phase, Wilhelm I of Prussia was proclaimed German Emperor on 18 January 1871 in the Hall of Mirrors in the Château de Versailles."
-        },
-        {
-          "field": "bio",
-          "claim": "prince and first imperial chancellor 1871",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Chancellor of the German Empire",
-          "excerpt": "In 1871, Bismarck was raised to the rank of Fürst (Prince). He was also appointed as the first Imperial Chancellor (Reichskanzler) of the German Empire but retained his Prussian offices, including those of Minister-President and Foreign Minister."
-        },
-        {
-          "field": "bio",
-          "claim": "Kulturkampf",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Kulturkampf",
-          "excerpt": "Bismarck launched an anti-Catholic Kulturkampf (\"culture struggle\") in Prussia in 1871."
-        },
-        {
-          "field": "bio",
-          "claim": "anti-socialist laws and the first welfare state",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "lead",
-          "excerpt": "As part of his domestic political maneuvering, Bismarck created the first welfare state, with the goal of undermining his socialist opponents."
-        },
-        {
-          "field": "bio",
-          "claim": "isolated France by alliances and kept the peace",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Foreign policy",
-          "excerpt": "Bismarck, therefore, engaged in a policy of diplomatically isolating France while maintaining cordial relations with other nations in Europe."
-        },
-        {
-          "field": "bio",
-          "claim": "resigned 18 March 1890",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Dismissal",
-          "excerpt": "Bismarck resigned at Wilhelm II's insistence on 18 March 1890, at the age of 75."
-        },
-        {
-          "field": "bio",
-          "claim": "died at Friedrichsruh 30 July 1898",
-          "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-          "locator": "Last years and death",
-          "excerpt": "He died just after midnight on 30 July 1898, at the age of 83 in Friedrichsruh, where he is entombed in the Bismarck Mausoleum."
-        }
-      ],
-      "activities": [
-        {
-          "functionId": "government",
-          "affiliationId": "state-germany",
-          "affiliationStatus": "confirmed",
-          "relation": "service",
-          "startYear": 1862,
-          "endYear": 1890,
-          "primary": true,
-          "evidence": [
-            {
-              "source": "https://en.wikipedia.org/wiki/Otto_von_Bismarck",
-              "locator": "lead",
-              "claim": "Minister president and foreign minister of Prussia 1862–1890, chancellor of the North German Confederation and of the German Empire",
-              "excerpt": "From 1862 to 1890, he held office as the minister president and foreign minister of Prussia."
-            }
-          ]
-        }
-      ],
-      "career": [
-        {
-          "period": {
-            "start": [
-              1851
-            ],
-            "end": [
-              1859
-            ]
-          },
-          "r": {
-            "ko": "프랑크푸르트 연방의회 프로이센 대표",
-            "en": "Prussian envoy to the Diet of the German Confederation at Frankfurt"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1862
-            ],
-            "end": [
-              1890
-            ]
-          },
-          "r": {
-            "ko": "프로이센 총리·외무장관",
-            "en": "Minister president and foreign minister of Prussia"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1867
-            ],
-            "end": [
-              1871
-            ]
-          },
-          "r": {
-            "ko": "북독일연방 재상",
-            "en": "Chancellor of the North German Confederation"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1870
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "엠스 전보 공개",
-            "en": "Published the Ems dispatch"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1871
-            ],
-            "end": [
-              1890
-            ]
-          },
-          "r": {
-            "ko": "독일 제국 재상",
-            "en": "Chancellor of the German Empire"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1890
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "빌헬름 2세의 요구로 사임",
-            "en": "Resigned at the insistence of Wilhelm II"
-          }
-        }
-      ],
-      "linkExpressions": [
-        {
-          "text": "비스마르크",
-          "lang": "ko",
-          "role": "identity",
-          "policy": "auto"
-        },
-        {
-          "text": "Bismarck",
-          "lang": "en",
-          "role": "identity",
-          "policy": "auto"
-        }
-      ],
-      "cyrillic": "Otto von Bismarck"
-    },
-    {
-      "id": "napoleon-iii",
-      "groupId": "world-before-1917",
-      "givenName": {
-        "ko": "",
-        "en": ""
-      },
-      "familyName": {
-        "ko": "나폴레옹 3세",
-        "en": "Napoleon III"
-      },
-      "nativeName": "Napoléon III",
-      "years": "1808–1873",
+      "nativeName": "Louis Marie Turreau",
+      "years": "1756–1816",
       "citizenship": {
         "code": "france"
       },
@@ -301,695 +21,448 @@
         "code": "france"
       },
       "epithet": {
-        "ko": "1851년 쿠데타로 세운 제2제정을 1870년 스당의 항복으로 잃은 프랑스 황제",
-        "en": "Emperor of the French whose Second Empire, founded by the coup of 1851, ended with his capitulation at Sedan in 1870"
+        "ko": "1794년 방데를 휩쓴 지옥 종대를 조직한 서부군 총사령관",
+        "en": "Commander of the Army of the West who organised the infernal columns that swept the Vendée in 1794"
       },
       "bio": {
-        "ko": "나폴레옹 1세의 조카로 파리에서 태어나 7월 왕정에 맞선 두 차례 쿠데타에 실패하고 1840년 투옥되었다. 1848년 제2공화국 대통령에 뽑혔고, 재선이 막히자 1851년 12월 2일 쿠데타로 권력을 잡아 1852년 황제가 되었다. 제2제정은 철도와 파리 개조의 시대였으나 1866년 이후 프로이센의 부상에 밀렸다. 1870년 5월 국민투표에서 이긴 뒤 7월 여론에 떠밀려 프로이센에 선전포고했고, 병든 몸으로 군을 따라갔다가 9월 2일 스당에서 포로가 되었다. 빌헬름스회에에 억류된 동안 파리에서 공화국이 선포되었고 1871년 3월 국민의회가 그의 폐위를 선언했다. 풀려난 뒤 영국 치즐허스트로 망명해 1873년 죽었다.",
-        "en": "A nephew of Napoleon I, born in Paris, he led two failed coups against the July Monarchy and was imprisoned in 1840. Elected president of the Second Republic in 1848, he seized power by the coup of 2 December 1851 when he could not be re-elected and became emperor in 1852. The Second Empire was an age of railways and the rebuilding of Paris, but after 1866 it was overshadowed by Prussia. Having won the plebiscite of May 1870, in July he declared war on Prussia under public pressure, accompanied the army though seriously ill and was taken prisoner at Sedan on 2 September. While he was held at Wilhelmshöhe a republic was proclaimed in Paris, and in March 1871 the National Assembly declared him deposed. Released, he went into exile at Chislehurst in England and died there in 1873."
-      },
-      "fate": {
-        "kind": "exile",
-        "label": {
-          "ko": "망명지에서 사망",
-          "en": "Died in exile"
-        }
-      },
-      "aliases": {
-        "ko": [
-          "루이 나폴레옹 보나파르트",
-          "루이 나폴레옹",
-          "샤를 루이 나폴레옹 보나파르트"
-        ],
-        "en": [
-          "Louis-Napoléon Bonaparte",
-          "Louis Napoleon",
-          "Charles-Louis Napoléon Bonaparte",
-          "Napoléon III"
-        ]
-      },
-      "sources": [
-        "https://en.wikipedia.org/wiki/Napoleon_III"
-      ],
-      "evidence": [
-        {
-          "field": "years",
-          "claim": "1808–1873",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "lead",
-          "excerpt": "(born Charles-Louis Napoléon Bonaparte; 20 April 1808 – 9 January 1873)"
-        },
-        {
-          "field": "citizenship",
-          "claim": "President of France and Emperor of the French",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "lead",
-          "excerpt": "was the first President of France from 1848 to 1852 and then Emperor of the French from 1852 until his deposition in 1870"
-        },
-        {
-          "field": "nationalOrigin",
-          "claim": "born in Paris, nephew of Napoleon I",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Early life",
-          "excerpt": "was born in Paris on the night of 19–20 April 1808. His father was Louis Bonaparte, the younger brother of Napoleon Bonaparte"
-        },
-        {
-          "field": "bio",
-          "claim": "two failed coups, imprisoned 1840",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "lead",
-          "excerpt": "As a young man, he led two failed coups against the July Monarchy, for which he was imprisoned in 1840."
-        },
-        {
-          "field": "bio",
-          "claim": "elected president in 1848",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "lead",
-          "excerpt": "In 1848, after the overthrow of the July Monarchy in the February Revolution, he was elected president of the French Second Republic."
-        },
-        {
-          "field": "bio",
-          "claim": "coup of 1851",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "lead",
-          "excerpt": "He seized power by force in 1851 when he could not constitutionally be re-elected."
-        },
-        {
-          "field": "bio",
-          "claim": "Second Empire proclaimed 2 December 1852",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Emperor",
-          "excerpt": "on 2 December 1852—exactly one year after the coup—the Second Republic was officially ended, replaced by the Second French Empire."
-        },
-        {
-          "field": "bio",
-          "claim": "plebiscite of May 1870",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Growing opposition and liberal concessions (1860–1870)",
-          "excerpt": "The final vote was 7,336,434 votes yes, 1,560,709 votes no, and 1,900,000 abstentions."
-        },
-        {
-          "field": "bio",
-          "claim": "declared war on Prussia, captured at Sedan",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "lead",
-          "excerpt": "In July 1870, Napoleon III reluctantly declared war on Prussia after pressure from the general public. The French Army was rapidly defeated, and Napoleon III was captured at Sedan."
-        },
-        {
-          "field": "bio",
-          "claim": "captivity at Wilhelmshöhe",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Captivity, exile and death",
-          "excerpt": "From 5 September 1870 until 19 March 1871, Napoleon III and his entourage of thirteen aides were held in comfortable captivity at Schloss Wilhelmshöhe near Kassel, Germany."
-        },
-        {
-          "field": "bio",
-          "claim": "deposed by the National Assembly 1 March 1871",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Captivity, exile and death",
-          "excerpt": "On 1 March, the newly elected assembly officially declared the removal of the emperor from power and placed all the blame for the French defeat squarely on him."
-        },
-        {
-          "field": "bio",
-          "claim": "exile in England from 20 March 1871",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Captivity, exile and death",
-          "excerpt": "the emperor decided to go into exile in Great Britain. Having limited funds, Napoleon sold properties and jewels and arrived in England on 20 March 1871."
-        },
-        {
-          "field": "bio",
-          "claim": "died 9 January 1873",
-          "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-          "locator": "Captivity, exile and death",
-          "excerpt": "He was given last rites and died on 9 January 1873."
-        }
-      ],
-      "activities": [
-        {
-          "functionId": "monarchy",
-          "affiliationId": "state-france",
-          "affiliationStatus": "confirmed",
-          "relation": "service",
-          "startYear": 1852,
-          "endYear": 1870,
-          "primary": true,
-          "evidence": [
-            {
-              "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-              "locator": "lead",
-              "claim": "Emperor of the French 1852–1870",
-              "excerpt": "Emperor of the French from 1852 until his deposition in 1870"
-            }
-          ]
-        },
-        {
-          "functionId": "government",
-          "affiliationId": "state-france",
-          "affiliationStatus": "confirmed",
-          "relation": "service",
-          "startYear": 1848,
-          "endYear": 1852,
-          "primary": false,
-          "evidence": [
-            {
-              "source": "https://en.wikipedia.org/wiki/Napoleon_III",
-              "locator": "lead",
-              "claim": "President of the Second Republic 1848–1852",
-              "excerpt": "was the first President of France from 1848 to 1852"
-            }
-          ]
-        }
-      ],
-      "career": [
-        {
-          "period": {
-            "start": [
-              1840
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "7월 왕정에 맞선 두 번째 쿠데타 실패로 투옥",
-            "en": "Imprisoned after his second failed coup against the July Monarchy"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1848
-            ],
-            "end": [
-              1852
-            ]
-          },
-          "r": {
-            "ko": "제2공화국 대통령",
-            "en": "President of the Second Republic"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1851
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "12월 2일 쿠데타",
-            "en": "Coup d'état of 2 December"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1852
-            ],
-            "end": [
-              1870
-            ]
-          },
-          "r": {
-            "ko": "프랑스 황제",
-            "en": "Emperor of the French"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1870
-            ],
-            "end": [
-              1871
-            ]
-          },
-          "r": {
-            "ko": "스당 항복 뒤 빌헬름스회에 억류",
-            "en": "Captivity at Wilhelmshöhe after Sedan"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1871
-            ],
-            "end": [
-              1873
-            ]
-          },
-          "r": {
-            "ko": "영국 치즐허스트 망명",
-            "en": "Exile at Chislehurst, England"
-          }
-        }
-      ],
-      "cyrillic": "Napoléon III"
-    },
-    {
-      "id": "wilhelm-i",
-      "groupId": "world-before-1917",
-      "givenName": {
-        "ko": "",
-        "en": ""
-      },
-      "familyName": {
-        "ko": "빌헬름 1세",
-        "en": "Wilhelm I"
-      },
-      "nativeName": "Wilhelm I.",
-      "years": "1797–1888",
-      "citizenship": {
-        "code": "germany"
-      },
-      "nationalOrigin": {
-        "code": "germany"
-      },
-      "epithet": {
-        "ko": "엠스에서 프랑스 대사의 요구를 거절하고 스당의 승리 뒤 베르사유에서 독일 황제가 된 프로이센 국왕",
-        "en": "King of Prussia who refused the French ambassador at Ems and, after Sedan, became German Emperor at Versailles"
-      },
-      "bio": {
-        "ko": "프리드리히 빌헬름 3세의 둘째 아들로 태어나 나폴레옹 전쟁에 참전했고, 1848년 베를린 봉기를 대포로 진압해 「산탄 왕자」라 불렸다. 1858년 섭정, 1861년 국왕이 되었고 군제 개혁 예산을 둘러싸고 의회와 충돌하자 1862년 비스마르크를 총리로 임명했다. 1870년 7월 13일 바트엠스에서 프랑스 대사 베네데티의 요구를 거절했고, 그라블로트와 스당에서 독일군을 총지휘했다. 「독일의 황제」 칭호를 원했으나 비스마르크의 설득으로 「독일 황제」를 받아들여 1871년 1월 18일 베르사유에서 선포되었다. 통치는 대체로 비스마르크에게 맡겼고 1878년의 암살 시도는 반사회주의자법의 구실이 되었다. 1888년 90세로 죽었다.",
-        "en": "The second son of Frederick William III, born in Berlin, he fought in the Napoleonic Wars and in 1848 crushed the Berlin rising with cannon, earning the nickname \"Prince of Grapeshot\". Regent from 1858 and king from 1861, he appointed Bismarck minister president in 1862 when the Landtag refused the military budget, and was commander-in-chief in the wars against Denmark in 1864 and Austria in 1866. On 13 July 1870 at Bad Ems he refused the demand of the French ambassador Benedetti, and he commanded the German forces at Gravelotte and Sedan. He wanted the title \"Emperor of Germany\" but, persuaded by Bismarck, accepted \"German Emperor\" and was proclaimed at Versailles on 18 January 1871. He left governing largely to Bismarck; the assassination attempts of 1878 became the pretext for the Anti-Socialist Laws. He died in 1888 at the age of 90."
+        "ko": "1756년 에브뢰에서 태어나 1789년부터 혁명을 지지해 아비롱 시장을 지내고 국유재산을 사들였다. 1792년 외르 의용대대 장교로 북부 전선에 나갔고, 1793년 방데에서 두 달 싸운 뒤 동피레네군을 지휘했다. 1793년 12월 30일 서부군 총사령관이 되어 1794년 1월 열두 개 종대에 반란에 가담한 「도적」을 여자와 아이까지 죽이고 마을을 불태우라고 지시했다. 지옥 종대는 넉 달 동안 민간인 2만~5만 명을 죽였으나 봉기를 되살렸고, 그는 5월 해임되고 9월 체포되었다. 1795년 12월 군사재판은 명령을 따랐을 뿐이라며 무죄를 선고했고, 그는 1803~1811년 주미 대사와 1812년 제국 남작으로 출세한 뒤 1816년 죽었다.",
+        "en": "Born in Évreux in 1756, he backed the Revolution from 1789, served as mayor of Aviron and bought confiscated church property. An officer of the Eure volunteers on the northern frontier in 1792, he fought two months in the Vendée in 1793 and then commanded the Army of the Eastern Pyrenees. Taking command of the Army of the West on 30 December 1793, in January 1794 he ordered twelve columns to bayonet the “brigands” who had joined the revolt, women and children included, and to burn the villages. In four months these infernal columns killed 20,000 to 50,000 civilians but revived the rising; he was recalled in May 1794 and arrested in September. A military tribunal acquitted him in December 1795 because he had only obeyed orders, and he prospered as ambassador to the United States from 1803 to 1811 and a baron of the Empire in 1812, dying unprosecuted in 1816."
       },
       "fate": {
         "kind": "natural",
         "label": {
           "ko": "자연사",
-          "en": "Natural causes"
+          "en": "Died of natural causes"
         }
       },
       "aliases": {
         "ko": [
-          "카이저 빌헬름 1세",
-          "빌헬름 프리드리히 루트비히",
-          "황제 빌헬름 1세"
+          "루이 마리 튀로 드 가랑부빌",
+          "튀로 드 리니에르"
         ],
         "en": [
-          "William I",
-          "Kaiser Wilhelm I",
-          "Wilhelm Friedrich Ludwig",
-          "William I, German Emperor"
+          "Louis Marie Turreau de Garambouville",
+          "Louis-Marie Turreau",
+          "Turreau de Lignières"
         ]
       },
       "sources": [
-        "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor"
+        "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+        "https://fr.wikipedia.org/wiki/Louis_Marie_Turreau"
       ],
       "evidence": [
         {
           "field": "years",
-          "claim": "1797–1888",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
+          "claim": "1756–1816",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
           "locator": "lead",
-          "excerpt": "(22 March 1797 – 9 March 1888)"
+          "excerpt": "4 July 1756 – 10 December 1816"
         },
         {
           "field": "citizenship",
-          "claim": "King of Prussia and German Emperor",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
+          "claim": "French Army officer and diplomat",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
           "locator": "lead",
-          "excerpt": "was King of Prussia from 1861 and German Emperor from 1871 until his death in 1888"
+          "excerpt": "was a French Army officer and diplomat who served in the French Revolutionary Wars"
         },
         {
           "field": "nationalOrigin",
-          "claim": "Prussian prince of the House of Hohenzollern",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "lead",
-          "excerpt": "A member of the House of Hohenzollern, he was the first head of state of a united Germany."
+          "claim": "born in Évreux, Normandy",
+          "source": "https://fr.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "préambule",
+          "excerpt": "né le 4 juillet 1756 à Évreux et mort le 10 décembre 1816 à Conches-en-Ouche"
         },
         {
           "field": "bio",
-          "claim": "crushed the Berlin rising of 1848",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Early life and military career",
-          "excerpt": "During the Revolutions of 1848, Wilhelm successfully crushed a revolt in Berlin that was aimed at Frederick William IV. The use of cannons made him unpopular at the time and earned him the nickname Kartätschenprinz (Prince of Grapeshot)."
-        },
-        {
-          "field": "bio",
-          "claim": "regent from 1858",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Early life and military career",
-          "excerpt": "In January 1858, Wilhelm became Prince Regent for his brother, initially only temporarily but after October on a permanent basis."
-        },
-        {
-          "field": "bio",
-          "claim": "king from 2 January 1861",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Life as King",
-          "excerpt": "On 2 January 1861, Frederick William IV died and Wilhelm ascended the throne as Wilhelm I of Prussia."
-        },
-        {
-          "field": "bio",
-          "claim": "appointed Bismarck in 1862",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Life as King",
-          "excerpt": "Then, on the advice of Roon, Wilhelm appointed Otto von Bismarck as Minister President in order to force through the proposals."
-        },
-        {
-          "field": "bio",
-          "claim": "commander-in-chief 1864 and 1866",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Life as King",
-          "excerpt": "During his reign, Wilhelm was the commander-in-chief of the Prussian forces in the Second Schleswig War against Denmark in 1864 and the Austro-Prussian War in 1866."
-        },
-        {
-          "field": "bio",
-          "claim": "commanded at Gravelotte and Sedan",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Life as King",
-          "excerpt": "In 1870, during the Franco-Prussian War, Wilhelm was in command of all the German forces at the crucial Battle of Sedan, as well as at the Battle of Gravelotte."
-        },
-        {
-          "field": "bio",
-          "claim": "proclaimed emperor 18 January 1871",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "German Emperor",
-          "excerpt": "Wilhelm eventually—though grudgingly—relented and on 18 January, he was formally proclaimed as emperor in the Hall of Mirrors in the Palace of Versailles."
-        },
-        {
-          "field": "bio",
-          "claim": "left governing to Bismarck",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "German Emperor",
-          "excerpt": "Despite possessing considerable power as Kaiser, Wilhelm left the task of governing mostly to his chancellor, limiting himself to representing the state and approving Bismarck's every policy."
-        },
-        {
-          "field": "bio",
-          "claim": "assassination attempts and the Anti-Socialist Laws",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Assassination attempts and Anti-Socialist Laws",
-          "excerpt": "The attempts on Wilhelm's life became the pretext for the institution of the Anti-Socialist Laws, which were passed by Bismarck's government with the support of a majority in the Reichstag on 19 October 1878"
-        },
-        {
-          "field": "bio",
-          "claim": "died 9 March 1888 in Berlin",
-          "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-          "locator": "Later years and death",
-          "excerpt": "Wilhelm died on 9 March 1888 in Berlin after a short illness, at age 90."
-        }
-      ],
-      "activities": [
-        {
-          "functionId": "monarchy",
-          "affiliationId": "state-germany",
-          "affiliationStatus": "confirmed",
-          "relation": "service",
-          "startYear": 1861,
-          "endYear": 1888,
-          "primary": true,
-          "evidence": [
-            {
-              "source": "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
-              "locator": "lead",
-              "claim": "King of Prussia 1861–1888 and German Emperor 1871–1888",
-              "excerpt": "was King of Prussia from 1861 and German Emperor from 1871 until his death in 1888"
-            }
-          ]
-        }
-      ],
-      "career": [
-        {
-          "period": {
-            "start": [
-              1848
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "베를린 봉기 진압, 「산탄 왕자」",
-            "en": "Crushed the Berlin rising; the \"Prince of Grapeshot\""
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1858
-            ],
-            "end": [
-              1861
-            ]
-          },
-          "r": {
-            "ko": "프로이센 섭정",
-            "en": "Prince Regent of Prussia"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1861
-            ],
-            "end": [
-              1888
-            ]
-          },
-          "r": {
-            "ko": "프로이센 국왕",
-            "en": "King of Prussia"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1862
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "비스마르크를 총리로 임명",
-            "en": "Appointed Bismarck minister president"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1870
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "엠스에서 베네데티 접견 거부, 그라블로트·스당 총지휘",
-            "en": "Refused Benedetti at Ems; commanded at Gravelotte and Sedan"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1871
-            ],
-            "end": [
-              1888
-            ]
-          },
-          "r": {
-            "ko": "독일 황제",
-            "en": "German Emperor"
-          }
-        }
-      ],
-      "linkExpressions": [
-        {
-          "text": "카이저 빌헬름 1세",
-          "lang": "ko",
-          "role": "identity",
-          "policy": "auto"
-        },
-        {
-          "text": "Kaiser Wilhelm I",
-          "lang": "en",
-          "role": "identity",
-          "policy": "auto"
-        }
-      ],
-      "cyrillic": "Wilhelm I."
-    },
-    {
-      "id": "helmuth-von-moltke",
-      "groupId": "world-before-1917",
-      "givenName": {
-        "ko": "헬무트",
-        "en": "Helmuth"
-      },
-      "familyName": {
-        "ko": "폰 몰트케",
-        "en": "von Moltke"
-      },
-      "nativeName": "Helmuth von Moltke",
-      "years": "1800–1891",
-      "citizenship": {
-        "code": "germany"
-      },
-      "nationalOrigin": {
-        "code": "germany"
-      },
-      "epithet": {
-        "ko": "철도 동원과 포위 작전으로 메스와 스당에서 프랑스군을 섬멸한 프로이센 참모총장",
-        "en": "Chief of the Prussian General Staff whose railway mobilisation and encirclements destroyed the French armies at Metz and Sedan"
-      },
-      "bio": {
-        "ko": "메클렌부르크 파르힘에서 덴마크군에 복무하던 독일인 장군의 아들로 태어나 코펜하겐 사관학교를 나왔고, 1822년 프로이센군 소위가 되었다. 1857년 참모총장이 되어 30년 동안 철도와 전신을 군사적으로 쓰는 새로운 지휘 방식을 만들었다. 1864년 덴마크 전쟁 연합군 참모장, 1866년 쾨니히그레츠 작전의 지휘관이었고, 1870년 7월 전시 참모총장으로 왕명에 준하는 명령권을 받았다. 세 개 군의 우회 기동으로 바젠을 메스에 가두고 마크마옹을 스당에서 포위해 항복시킨 뒤 파리를 포위했다. 1870년 백작, 1871년 원수가 되었고 1867년부터 제국의회 보수당 의원이었다. 1888년 퇴역해 1891년 베를린에서 죽었다.",
-        "en": "Born at Parchim in Mecklenburg, the son of a German general in Danish service, he was educated at the Copenhagen military academy and became a Prussian second lieutenant in 1822. Chief of the General Staff from 1857, he held the post for thirty years and created a new way of directing armies that used railways and the telegraph. Chief of staff of the allied forces against Denmark in 1864 and director of the Königgrätz campaign of 1866, he was appointed chief of staff for the war in July 1870 with the right to issue orders equivalent to royal commands. By wheeling three armies he shut Bazaine in Metz, encircled MacMahon at Sedan and then besieged Paris. Made a count in 1870 and a field marshal in 1871, he sat in the Reichstag for the Conservative Party from 1867. He retired in 1888 and died in Berlin in 1891; his is the only surviving voice recording of a person born in 1800."
-      },
-      "fate": {
-        "kind": "natural",
-        "label": {
-          "ko": "자연사",
-          "en": "Natural causes"
-        }
-      },
-      "aliases": {
-        "ko": [
-          "대몰트케",
-          "헬무트 카를 베른하르트 폰 몰트케"
-        ],
-        "en": [
-          "Moltke the Elder",
-          "Helmuth Karl Bernhard von Moltke",
-          "Helmuth Graf von Moltke"
-        ]
-      },
-      "sources": [
-        "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-        "https://en.wikipedia.org/wiki/Unification_of_Germany"
-      ],
-      "evidence": [
-        {
-          "field": "years",
-          "claim": "1800–1891",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "lead",
-          "excerpt": "26 October 1800 – 24 April 1891) was a Prussian Generalfeldmarschall."
-        },
-        {
-          "field": "citizenship",
-          "claim": "Prussian field marshal, chief of the General Staff",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "lead",
-          "excerpt": "was a Prussian Generalfeldmarschall. The chief of staff of the Prussian Army for thirty years"
-        },
-        {
-          "field": "nationalOrigin",
-          "claim": "born in Mecklenburg to a German officer in Danish service",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
+          "claim": "fervent revolutionary, mayor of Aviron, bought church property",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
           "locator": "Early life",
-          "excerpt": "Moltke was born in Parchim, Mecklenburg-Schwerin, son of Generalleutnant  Friedrich Philipp Victor von Moltke (1768–1845), a German in Danish service."
+          "excerpt": "Turreau was nevertheless a fervent revolutionary from 1789, profiting like many others, especially the bourgeois of that era. Elected mayor of Aviron, he bought several clerical estates"
         },
         {
           "field": "bio",
-          "claim": "Danish page and officer, joined the Prussian army at 21",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Early life",
-          "excerpt": "In 1818 he became a page to King Frederick VI of Denmark and a second lieutenant in the Oldenburg Infantry Regiment. At twenty-one, Moltke decided to leave Denmark and enter the Prussian army, despite the loss of seniority."
+          "claim": "captain of Eure volunteers, northern frontier, colonel",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Career to 1794",
+          "excerpt": "In September he was elected captain of a company of volunteers from Eure and set out to fight on the northern frontiers. Made a colonel in November, he was integrated into the Army of the Moselle."
         },
         {
           "field": "bio",
-          "claim": "chief of the General Staff from 1857",
-          "source": "https://en.wikipedia.org/wiki/Unification_of_Germany",
-          "locator": "Prussian military reforms",
-          "excerpt": "Helmuth von Moltke had become chief of the Prussian General Staff in 1857"
+          "claim": "two months in the Vendée; Army of the Eastern Pyrenees",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Career to 1794",
+          "excerpt": "Even so, he fought for two months in the Vendée. He served as head of the Army of the Eastern Pyrenees from 12 October until 27 November 1793."
         },
         {
           "field": "bio",
-          "claim": "pioneered the military use of railways",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "lead",
-          "excerpt": "He was fascinated with railways and pioneered their military use."
+          "claim": "commander in chief of the Army of the West from 29 December",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Career to 1794",
+          "excerpt": "He became commander in chief of the Armée de l'Ouest from 29 December, but he again regarded this post with little enthusiasm."
         },
         {
           "field": "bio",
-          "claim": "chief of staff of the allied forces in 1864",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Second Schleswig War",
-          "excerpt": "On 30 April 1864, Moltke was sent to be chief of the staff for the allied (German) forces."
+          "claim": "instructions of 19 January 1794",
+          "source": "https://fr.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Les colonnes infernales",
+          "excerpt": "La consigne est de passer au fil de la baïonnette tous les rebelles « trouvés les armes à la main, ou convaincus de les avoir prises », ainsi que « les filles, femmes et enfants qui seront dans ce cas »."
         },
         {
           "field": "bio",
-          "claim": "command in 1866",
-          "source": "https://en.wikipedia.org/wiki/Unification_of_Germany",
-          "locator": "War with Austria",
-          "excerpt": "On 1 May, Wilhelm gave von Moltke command over the Prussian armed forces, and the next day he began full-scale mobilization."
+          "claim": "20,000 to 50,000 civilians killed in four months; the war revived",
+          "source": "https://fr.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Les colonnes infernales",
+          "excerpt": "Entre 20 000 et 50 000 civils périssent en quatre mois à cause de ces massacres."
         },
         {
           "field": "bio",
-          "claim": "chief of staff for the war of 1870",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Franco-Prussian War",
-          "excerpt": "The successes of 1866 had strengthened Moltke's position, so that when, on 5 July 1870, the order for the mobilization of the Prussian and South German forces was issued, his plans were adopted without dispute. Five days later he was appointed Chief of Staff of the Army for the duration of the war."
+          "claim": "recalled 18 May 1794, arrested 28 September, a year in prison, memoirs",
+          "source": "https://fr.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Suite de la carrière de Turreau",
+          "excerpt": "Louis Marie Turreau est rappelé dès le 18 mai 1794. [...] Mais il est arrêté le 28 septembre de la même année. Il passe une année en prison et en profite pour rédiger ses Mémoires pour servir à l’histoire de la Vendée."
         },
         {
           "field": "bio",
-          "claim": "Gravelotte drove Bazaine into Metz",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Franco-Prussian War",
-          "excerpt": "the effect of the battle of Gravelotte was to drive Bazaine into the fortress of Metz and cut him off from Paris."
+          "claim": "acquitted 19 December 1795 for having obeyed orders",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Later career",
+          "excerpt": "On 19 December 1795 he was acquitted by a military tribunal which judged he had only been obeying orders."
         },
         {
           "field": "bio",
-          "claim": "Sedan",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Franco-Prussian War",
-          "excerpt": "At the Battle of Sedan, the two German armies surrounded the French army, which on 1 September was attacked from multiple sides and compelled to surrender."
+          "claim": "envoy to Switzerland, ambassador to the USA 1803–1811",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Later career",
+          "excerpt": "Under the French Consulate he was sent as an envoy to Switzerland. [...] From 1803 to 1811 he was French ambassador to the United States of America"
         },
         {
           "field": "bio",
-          "claim": "count 1870, field marshal 1871",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Later life",
-          "excerpt": "In October 1870, Moltke was made a Graf (count) as a reward for his services during the Franco-Prussian War and victory at the Battle of Sedan. In June 1871, he was further rewarded by a promotion to the rank of field marshal and a large monetary grant."
+          "claim": "baron of the Empire 1812",
+          "source": "https://fr.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Distinctions",
+          "excerpt": "Louis Marie Turreau est créé baron de l'Empire le 13 mars 1812."
         },
         {
           "field": "bio",
-          "claim": "Reichstag member 1867–1891",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Later life",
-          "excerpt": "He served in the Diet of the North German Confederation from 1867 to 1871, and from 1871 to 1891 he was a member of the Reichstag (federal parliament)."
-        },
-        {
-          "field": "bio",
-          "claim": "retired 1888, died 1891",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "Later life",
-          "excerpt": "Field Marshal Helmuth von Moltke remained in good health until he died at his home in Berlin on 24 April 1891 after a short illness."
-        },
-        {
-          "field": "bio",
-          "claim": "voice recordings",
-          "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-          "locator": "lead",
-          "excerpt": "He is notably the earliest-born human whose recorded voice is preserved, being born in the year 1800."
+          "claim": "submitted to Louis XVIII, not prosecuted",
+          "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+          "locator": "Later career",
+          "excerpt": "In 1814, he submitted to Louis XVIII [...] On the Bourbon Restoration he was not prosecuted, either for libel or for the infernal columns."
         }
       ],
       "activities": [
         {
           "functionId": "military",
-          "affiliationId": "state-germany",
+          "affiliationId": "french-first-republic",
           "affiliationStatus": "confirmed",
           "relation": "service",
-          "startYear": 1857,
-          "endYear": 1888,
+          "startYear": 1792,
+          "endYear": 1797,
           "primary": true,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-              "locator": "lead",
-              "claim": "Chief of the Prussian General Staff for thirty years",
-              "excerpt": "The chief of staff of the Prussian Army for thirty years, he is regarded as the creator of a new, more modern method of directing armies in the field"
+              "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+              "locator": "Career to 1794",
+              "claim": "General of the Republic; commander in chief of the Army of the West, December 1793 – May 1794",
+              "excerpt": "He became commander in chief of the Armée de l'Ouest from 29 December"
+            }
+          ]
+        },
+        {
+          "functionId": "diplomacy",
+          "affiliationId": "french-napoleonic-state",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1803,
+          "endYear": 1811,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Louis_Marie_Turreau",
+              "locator": "Later career",
+              "claim": "French ambassador to the United States under the Consulate and Empire",
+              "excerpt": "From 1803 to 1811 he was French ambassador to the United States of America"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1792
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "외르 의용대대 중령",
+            "en": "Lieutenant-colonel of the Eure volunteer battalion"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "동피레네군 사령관",
+            "en": "Commander of the Army of the Eastern Pyrenees"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": [
+              1794
+            ]
+          },
+          "r": {
+            "ko": "서부군 총사령관, 지옥 종대 지휘",
+            "en": "Commander in chief of the Army of the West; directed the infernal columns"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": [
+              1795
+            ]
+          },
+          "r": {
+            "ko": "체포·수감, 군사재판에서 무죄",
+            "en": "Arrested and imprisoned; acquitted by a military tribunal"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1803
+            ],
+            "end": [
+              1811
+            ]
+          },
+          "r": {
+            "ko": "주미 대사",
+            "en": "Ambassador to the United States"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1812
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제국 남작",
+            "en": "Baron of the Empire"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jean-baptiste-carrier",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "장바티스트",
+        "en": "Jean-Baptiste"
+      },
+      "familyName": {
+        "ko": "카리에",
+        "en": "Carrier"
+      },
+      "nativeName": "Jean-Baptiste Carrier",
+      "years": "1756–1794",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "낭트 익사형을 명령한 국민공회 파견의원",
+        "en": "Representative on mission of the Convention who ordered the drownings at Nantes"
+      },
+      "bio": {
+        "ko": "1756년 오리야크 근처 욜레의 소작농 집안에서 태어나 소송대리인이 되었고, 혁명이 일어나자 국민방위대와 자코뱅 클럽에 들어갔다. 1792년 캉탈 선출 국민공회 의원으로 코르들리에와 자코뱅의 연설가였고 루이 16세 처형에 찬성했으며 지롱드파 축출에 가담했다. 1793년 가을 낭트에 파견되어 갈레른 행군에서 잡힌 포로가 쌓이자 12월부터 1794년 2월까지 바닥에 구멍을 낸 배로 루아르강에 가라앉히는 익사형과 집단 총살로 감옥을 비웠다. 그가 「수직 유배」라 부른 익사형으로 1,800~4,800명, 총살로 2,600명이 죽었다. 1794년 2월 소환된 뒤 튀로의 방침을 옹호했고 테르미도르에 가담했으나 낭트 혁명위원회 재판에서 기소되어 12월 16일 단두대에 올랐다.",
+        "en": "Born in 1756 at Yolet near Aurillac into a tenant-farming family, he became a procurator and, when the Revolution came, joined the National Guard and the Jacobin Club. Elected to the Convention for Cantal in 1792, an orator of the Cordeliers and Jacobins, he voted for the execution of Louis XVI and took part in the fall of the Girondins. Sent to Nantes in the autumn of 1793, where prisoners from the Virée de Galerne were piling up, from December 1793 to February 1794 he emptied the prisons by mass shootings and by drownings in the Loire on barges with trap-door bottoms. The drownings, which he called “vertical deportation”, killed 1,800 to 4,800 people and the shootings 2,600. Recalled in February 1794, he defended Turreau’s methods and joined the overthrow of Robespierre, but the trial of the Nantes revolutionary committee turned on him and he was guillotined on 16 December 1794."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Guillotined"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "장바티스트 카리에르",
+          "장 바티스트 카리에"
+        ],
+        "en": [
+          "Jean Baptiste Carrier"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+        "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1756–1794",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "lead",
+          "excerpt": "16 March 1756 – 16 December 1794"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French revolutionary politician, deputy to the National Convention",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "lead",
+          "excerpt": "was a French Revolutionary, politician and convicted war criminal most notable for his actions in the War in the Vendée during the Reign of Terror"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born at Yolet near Aurillac in Auvergne",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Early life",
+          "excerpt": "Carrier was born at Yolet, a village near Aurillac in upper Auvergne, as the fourth of six children born to Jean Carrier and Marguerite Puex."
+        },
+        {
+          "field": "bio",
+          "claim": "tenant-farmer family; law office; National Guard and Jacobin Club",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Early life",
+          "excerpt": "As the son of a middle class tenant farmer, Carrier and his family survived on income reaped from cultivating the land of a French nobleman. [...] with the outbreak of the Revolution joined the National Guard and the Jacobin Club."
+        },
+        {
+          "field": "bio",
+          "claim": "procurator at Aurillac 1784",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Biographie",
+          "excerpt": "En 1784, Jean-Baptiste Carrier, à force de travail, parvient à obtenir la place de procureur à Aurillac, mais son office est supprimé en 1789."
+        },
+        {
+          "field": "bio",
+          "claim": "deputy for Cantal; Cordeliers and Jacobins",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Early life",
+          "excerpt": "in 1792 was elected deputy to the National Convention for Cantal. He was already known as one of the influential members of the Cordeliers and the Jacobin Club."
+        },
+        {
+          "field": "bio",
+          "claim": "voted for the king's death; fall of the Girondins",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Early life",
+          "excerpt": "He voted in favor of the execution of deposed King Louis XVI, was one of the first to call for the arrest of the Duke of Orléans and took a prominent part in the overthrow of the Girondists (on 31 May)."
+        },
+        {
+          "field": "bio",
+          "claim": "missions in Normandy and Rennes, then Nantes",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Carrier à Nantes",
+          "excerpt": "Après ses missions en Normandie et une autre à Rennes, il est envoyé à Nantes en vendémiaire an II (septembre 1793) pour faire cesser la révolte vendéenne par les moyens les plus extrêmes."
+        },
+        {
+          "field": "bio",
+          "claim": "drownings in barges with trap doors",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Representative to Nantes",
+          "excerpt": "In the following days Carrier put large numbers of prisoners aboard vessels with trap doors for bottoms, and sank them in the Loire river. These executions included priests and nuns, as well as women and children. They were known as the Drownings at Nantes."
+        },
+        {
+          "field": "bio",
+          "claim": "2,600 shot",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Les fusillades",
+          "excerpt": "De la fin décembre 1793 à la fin février 1794, 2 600 prisonniers sont fusillés."
+        },
+        {
+          "field": "bio",
+          "claim": "\"vertical deportation\"",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Les noyades",
+          "excerpt": "procédé que Carrier appelait « la déportation verticale », la Loire étant en conséquence qualifiée dans ses écrits de « fleuve républicain »"
+        },
+        {
+          "field": "bio",
+          "claim": "recalled 8 February 1794; defended Turreau",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Les difficultés",
+          "excerpt": "Carrier demande dans le même temps son rappel à Paris, qu'il obtient le 8 février 1794. [...] Après son rappel, Carrier prend publiquement position en faveur du général Turreau"
+        },
+        {
+          "field": "bio",
+          "claim": "joined Thermidor; arrested 3 September 1794",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Sa chute",
+          "excerpt": "Il prend part à la chute de Robespierre le 9 thermidor an II (27 juillet 1794). [...] ils décrètent son arrestation le 3 septembre 1794."
+        },
+        {
+          "field": "bio",
+          "claim": "guillotined 16 December 1794",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+          "locator": "Trial and execution",
+          "excerpt": "Along with two accomplices from the revolutionary committee of Nantes, Carrier was executed by the guillotine in Paris, on 16 December 1794."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "legislature",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1792,
+          "endYear": 1794,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+              "locator": "Early life",
+              "claim": "Deputy for Cantal in the National Convention; representative on mission at Nantes",
+              "excerpt": "in 1792 was elected deputy to the National Convention for Cantal"
             }
           ]
         },
         {
           "functionId": "legislature",
-          "affiliationId": null,
-          "affiliationStatus": "unresolved",
-          "relation": "unresolved",
-          "startYear": 1867,
-          "endYear": 1891,
+          "affiliationId": "french-jacobins",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1789,
+          "endYear": 1794,
           "primary": false,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/Helmuth_von_Moltke_the_Elder",
-              "locator": "Austro-Prussian War",
-              "claim": "Reichstag member for the Conservative Party; the Prussian Conservative Party has no catalog affiliation",
-              "excerpt": "In the same year Moltke became a member of Reichstag as a member of the Conservative Party."
+              "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+              "locator": "Early life",
+              "claim": "Member of the Jacobin Club",
+              "excerpt": "with the outbreak of the Revolution joined the National Guard and the Jacobin Club"
+            }
+          ]
+        },
+        {
+          "functionId": "legislature",
+          "affiliationId": "french-cordeliers",
+          "affiliationStatus": "confirmed",
+          "relation": "membership",
+          "startYear": 1792,
+          "endYear": 1794,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Carrier",
+              "locator": "Early life",
+              "claim": "Influential member of the Cordeliers",
+              "excerpt": "He was already known as one of the influential members of the Cordeliers and the Jacobin Club."
             }
           ]
         }
@@ -998,302 +471,205 @@
         {
           "period": {
             "start": [
-              1822
+              1784
             ],
             "end": null
           },
           "r": {
-            "ko": "프로이센군 소위 임관",
-            "en": "Second lieutenant in the Prussian army"
+            "ko": "오리야크 소송대리인",
+            "en": "Procurator at Aurillac"
           }
         },
         {
           "period": {
             "start": [
-              1857
+              1792
             ],
             "end": [
-              1888
+              1794
             ]
           },
           "r": {
-            "ko": "프로이센군 참모총장",
-            "en": "Chief of the Prussian General Staff"
+            "ko": "캉탈 선출 국민공회 의원",
+            "en": "Deputy for Cantal in the National Convention"
           }
         },
         {
           "period": {
             "start": [
-              1864
+              1793
+            ],
+            "end": [
+              1794
+            ]
+          },
+          "r": {
+            "ko": "낭트 파견의원, 익사형·총살 지휘",
+            "en": "Representative on mission at Nantes; directed the drownings and shootings"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
             ],
             "end": null
           },
           "r": {
-            "ko": "덴마크 전쟁 연합군 참모장",
-            "en": "Chief of staff of the allied forces against Denmark"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1866
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "쾨니히그레츠 작전 지휘",
-            "en": "Directed the Königgrätz campaign"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1870
-            ],
-            "end": [
-              1871
-            ]
-          },
-          "r": {
-            "ko": "보불전쟁 전시 참모총장, 백작·원수",
-            "en": "Chief of staff for the war; made count and field marshal"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1867
-            ],
-            "end": [
-              1891
-            ]
-          },
-          "r": {
-            "ko": "북독일연방·독일 제국의회 의원 (보수당)",
-            "en": "Member of the North German and German Reichstag (Conservative Party)"
+            "ko": "체포, 혁명재판소에서 사형, 단두대 처형",
+            "en": "Arrested, condemned by the Revolutionary Tribunal and guillotined"
           }
         }
-      ],
-      "linkExpressions": [
-        {
-          "text": "몰트케",
-          "lang": "ko",
-          "role": "identity",
-          "policy": "auto"
-        },
-        {
-          "text": "Moltke",
-          "lang": "en",
-          "role": "identity",
-          "policy": "auto"
-        }
-      ],
-      "cyrillic": "Helmuth von Moltke"
+      ]
     },
     {
-      "id": "leon-gambetta",
-      "groupId": "world-before-1917",
+      "id": "jean-baptiste-kleber",
+      "groupId": "france-revolution",
       "givenName": {
-        "ko": "레옹",
-        "en": "Léon"
+        "ko": "장바티스트",
+        "en": "Jean-Baptiste"
       },
       "familyName": {
-        "ko": "강베타",
-        "en": "Gambetta"
+        "ko": "클레베르",
+        "en": "Kléber"
       },
-      "nativeName": "Léon Gambetta",
-      "years": "1838–1882",
+      "nativeName": "Jean-Baptiste Kléber",
+      "years": "1753–1800",
       "citizenship": {
         "code": "france"
       },
       "nationalOrigin": {
-        "code": "france",
-        "label": {
-          "ko": "프랑스 (제노바계)",
-          "en": "France (Genoese descent)"
-        }
+        "code": "france"
       },
       "epithet": {
-        "ko": "1870년 9월 4일 공화국을 선포하고 기구로 파리를 빠져나가 지방의 국민방위 전쟁을 조직한 공화파 지도자",
-        "en": "Republican who proclaimed the Republic on 4 September 1870, left besieged Paris by balloon and organised the war in the provinces"
+        "ko": "마인츠군을 이끌고 르망과 사부네에서 방데군을 깨뜨린 공화국 장군",
+        "en": "Republican general who led the Army of Mainz and broke the Vendéan army at Le Mans and Savenay"
       },
       "bio": {
-        "ko": "카오르에서 제노바 출신 식료품상의 아들로 태어나 1859년 변호사가 되었고, 1868년 들레클뤼즈 변호에서 1851년 쿠데타를 공격해 이름을 얻었다. 1869년 입법원에 들어가 제정을 공격했다. 1870년 전쟁 선포에 반대했으나 군비에는 찬성했고, 9월 4일 시청에서 공화국을 선포해 국방정부 내무장관이 되었다. 10월 7일 기구로 파리를 벗어나 투르에서 내무·전쟁장관으로 지방의 새 군대를 조직했고, 휴전에 반대하다 1871년 2월 6일 사임했다. 1875년 헌법 제정과 1877년 5월 16일 위기에서 공화파를 이끌며 마크마옹에게 「굴복하든가 물러나라」고 요구했고, 1879년 하원 의장, 1881~82년 66일간 총리를 지낸 뒤 1882년 암으로 죽었다.",
-        "en": "Born at Cahors, the son of a Genoese grocer, he was called to the bar in 1859 and made his name in 1868 defending Delescluze with an attack on the coup of 1851. Elected in 1869, he became the leading defender of the lower classes against the Empire. He opposed the declaration of war in 1870 but voted funds for the army, proclaimed the Republic at the Hôtel de Ville on 4 September and became interior minister of the Government of National Defence. On 7 October he left Paris by balloon and at Tours, as minister of the interior and of war, raised new armies in the provinces; opposing the armistice, he resigned on 6 February 1871. He led the republicans through the constitutional laws of 1875 and the crisis of 16 May 1877, telling MacMahon to \"submit or resign\", was president of the Chamber from 1879 and prime minister for 66 days in 1881–82, and died of cancer in 1882."
+        "ko": "1753년 스트라스부르의 석공 집안에서 태어나 건축을 공부했고, 신성 로마 제국군 장교로 7년을 복무하다 평민 출신이라 승진이 막히자 돌아와 벨포르의 공공건물 감독관이 되었다. 1792년 오랭 의용대대에 들어가 1793년 마인츠 방어로 이름을 얻었고, 여단장으로 마인츠군과 함께 방데에 파견되었다. 토르푸에서 패했으나 10월 숄레의 승리에 기여해 사단장이 되었고, 마르소와 함께 12월 르망과 사부네에서 가톨릭 왕당군을 섬멸했다. 1794년 1월 튀로에게 주민의 신뢰를 얻고 반군 집결지만 치자는 안을 냈다가 거부당했고, 방데인에게 관대해야 한다고 말해 소환되었다. 뒤에 플뢰뤼스와 라인 전선에서 싸웠고 이집트 원정군을 지휘하다 1800년 카이로에서 암살되었다.",
+        "en": "Born in 1753 in Strasbourg, the son of a master builder, he studied architecture, served seven years as an officer of the Holy Roman Emperor and returned as inspector of public buildings at Belfort. He enlisted in the Haut-Rhin volunteers in 1792, won renown in the defence of Mainz in 1793 and was sent as a brigade general with the Army of Mainz to the Vendée. Beaten at Torfou, he contributed to the victory at Cholet in October, was promoted divisional general and, with Marceau, destroyed the Catholic and Royal Army at Le Mans and Savenay in December. In January 1794 Turreau rejected his plan to win the inhabitants’ trust and attack only rebel gatherings, and his opinion that the Vendéans deserved lenient measures got him recalled. He later fought at Fleurus and on the Rhine, commanded the army in Egypt and was assassinated in Cairo on 14 June 1800."
       },
       "fate": {
-        "kind": "natural",
+        "kind": "assassinated",
         "label": {
-          "ko": "자연사",
-          "en": "Natural causes"
+          "ko": "암살",
+          "en": "Assassinated"
         }
       },
       "aliases": {
         "ko": [
-          "레옹 미셸 강베타",
-          "레옹 감베타"
+          "장 바티스트 클레베르"
         ],
         "en": [
-          "Léon Michel Gambetta",
-          "Leon Gambetta"
+          "Jean Baptiste Kléber",
+          "Jean-Baptiste Kleber"
         ]
       },
       "sources": [
-        "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta"
+        "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+        "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e"
       ],
       "evidence": [
         {
           "field": "years",
-          "claim": "1838–1882",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
+          "claim": "1753–1800",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
           "locator": "lead",
-          "excerpt": "(French pronunciation: [leɔ̃ ɡɑ̃bɛta]; 2 April 1838 – 31 December 1882)"
+          "excerpt": "9 March 1753 – 14 June 1800"
         },
         {
           "field": "citizenship",
-          "claim": "French republican politician",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
+          "claim": "French army officer",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
           "locator": "lead",
-          "excerpt": "was a French lawyer and republican politician who proclaimed the Third Republic in 1870 and played a prominent role in its early government"
+          "excerpt": "was a French army officer and architect who served in the War of the Bavarian Succession and French Revolutionary Wars"
         },
         {
           "field": "nationalOrigin",
-          "claim": "born at Cahors to a Genoese father and a French mother",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Early life and education",
-          "excerpt": "Born in Cahors, Gambetta is said to have inherited his vigour and eloquence from his father, a Genoese grocer who had married a Frenchwoman named Massabie."
+          "claim": "born in Strasbourg, Alsace",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "Early career",
+          "excerpt": "Jean-Baptiste Kléber was born on 9 March 1753 in Strasbourg, in the province of Alsace, where his father worked as a master builder."
         },
         {
           "field": "bio",
-          "claim": "called to the bar 1859",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Career",
-          "excerpt": "Gambetta was called to the bar in 1859."
+          "claim": "studied architecture; Austrian service; left 1783",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "Early career",
+          "excerpt": "Finding that his humble birth hindered his chances for promotion beyond that of an unterleutnant, he left the Austrian army in 1783 after serving seven years."
         },
         {
           "field": "bio",
-          "claim": "defence of Delescluze 1868",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Career",
-          "excerpt": "on 17 November 1868, he was selected to defend the journalist Delescluze"
+          "claim": "inspector of public buildings at Belfort",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "Architecture",
+          "excerpt": "On returning to France, Kléber received the appointment of inspector of public buildings at Belfort."
         },
         {
           "field": "bio",
-          "claim": "elected 1869",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Career",
-          "excerpt": "In May 1869, he was elected to the Assembly, both by a district in Paris and another in Marseille"
+          "claim": "Haut-Rhin volunteers 1792; Mainz 1793; brigade general",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "French Revolutionary Wars",
+          "excerpt": "In 1792, at the start of the French Revolutionary Wars, Kléber enlisted in the 4th Battalion of Volunteers of Haut-Rhin. [...] At the defense of Mainz in July 1793 he so distinguished himself that [...] was promoted to brigade general in August 1793."
         },
         {
           "field": "bio",
-          "claim": "opposed the war but voted army funds",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Proclamation of the Republic",
-          "excerpt": "Gambetta opposed the declaration of the Franco-Prussian War. He did not, however, like some of his colleagues, refuse to vote for funds for the army."
+          "claim": "Tiffauges defeat; Cholet; divisional general",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "French Revolutionary Wars",
+          "excerpt": "Although beaten at the Battle of Tiffauges on 19 September 1793, he maintained good relations with the representatives on mission and managed to keep his command. A month later, Kléber contributed to the Republican victory at Cholet, earning him his promotion to divisional general on 17 October 1793."
         },
         {
           "field": "bio",
-          "claim": "proclaimed the Republic 4 September",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Proclamation of the Republic",
-          "excerpt": "Later that day, from the Hôtel de Ville, Gambetta proclaimed the French Republic to a large crowd gathered in the Place de l'Hôtel-de-Ville"
+          "claim": "Le Mans and Savenay with Marceau",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "French Revolutionary Wars",
+          "excerpt": "In these operations began his intimacy with General François Marceau, with whom he defeated the Royalists at the battles of Le Mans and Savenay in December 1793."
         },
         {
           "field": "bio",
-          "claim": "interior minister",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Government of National Defense",
-          "excerpt": "Gambetta was one of the first members of the new Government of National Defense, becoming Minister of the Interior."
+          "claim": "plan of 7 January 1794 rejected by Turreau",
+          "source": "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e",
+          "locator": "Dévastation de la Vendée",
+          "excerpt": "Le 7 janvier 1794, Kléber soumet un plan au général Turreau. [...] Il propose de protéger les côtes des Anglais, d'encercler et de quadriller le territoire insurgé en utilisant des camps fortifiés comme points d'appui, de gagner la confiance des habitants et enfin de n'attaquer que les rassemblements des rebelles. Mais ce plan est rejeté par Turreau"
         },
         {
           "field": "bio",
-          "claim": "balloon to Tours, minister of the interior and of war",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Government of National Defense",
-          "excerpt": "Gambetta himself left Paris 7 October with Eugène Spuller in a coal gas-filled balloon—the \"Armand-Barbès\"—and upon arriving at Tours took control as minister of the interior and of war."
+          "claim": "recalled for advocating lenient measures",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "French Revolutionary Wars",
+          "excerpt": "When Kléber openly expressed his opinion that the Vendéans merited lenient measures, the authorities recalled him, but reinstated him once more in April 1794 and sent him to the Army of the Ardennes."
         },
         {
           "field": "bio",
-          "claim": "resigned and left for Spain",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Self-exile to San Sebastián",
-          "excerpt": "Gambetta, disgusted with the Assembly's unwillingness to fight, resigned and quit France for San Sebastián in Spain."
+          "claim": "Fleurus; Rhine; Egypt; Heliopolis",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "Egyptian campaign",
+          "excerpt": "Although he had only 10,000 men against 60,000 Turks, Kléber's forces utterly defeated the Ottomans on 20 March 1800."
         },
         {
           "field": "bio",
-          "claim": "opposed the Commune",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Self-exile to San Sebastián",
-          "excerpt": "Gambetta voiced his opposition to the Commune in a letter to Antonin Proust"
-        },
-        {
-          "field": "bio",
-          "claim": "constitutional laws of 1875",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Return",
-          "excerpt": "he was instrumental in voting in the French Constitutional Laws of 1875 in February 1875"
-        },
-        {
-          "field": "bio",
-          "claim": "crisis of 16 May 1877",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Return",
-          "excerpt": "called on President MacMahon se soumettre ou se démettre, to submit to parliament's majority or to resign"
-        },
-        {
-          "field": "bio",
-          "claim": "president of the Chamber 1879, amnesty speech",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Return",
-          "excerpt": "accepted the office of president of the chamber of deputies in January 1879. This position did not prevent his occasionally descending from the presidential chair to make speeches, one of which, advocating an amnesty to the communards, was especially memorable."
-        },
-        {
-          "field": "bio",
-          "claim": "ministry of 66 days",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Return",
-          "excerpt": "his cabinet fell on 26 January 1882, after only sixty-six days"
-        },
-        {
-          "field": "bio",
-          "claim": "died 31 December 1882",
-          "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-          "locator": "Return",
-          "excerpt": "On 31 December 1882, at his house in Ville d'Avray, near Sèvres, he died from intestine or stomach cancer."
+          "claim": "assassinated in Cairo 14 June 1800",
+          "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+          "locator": "Assassination",
+          "excerpt": "The assassination happened in Cairo on 14 June 1800, coincidentally the same day on which Kléber's friend and comrade, Desaix, fell at Marengo."
         }
       ],
       "activities": [
         {
-          "functionId": "government",
-          "affiliationId": "state-france",
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
           "affiliationStatus": "confirmed",
           "relation": "service",
-          "startYear": 1870,
-          "endYear": 1871,
+          "startYear": 1792,
+          "endYear": 1800,
           "primary": true,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-              "locator": "Government of National Defense",
-              "claim": "Interior minister of the Government of National Defence; minister of the interior and of war directing the war from Tours and Bordeaux",
-              "excerpt": "upon arriving at Tours took control as minister of the interior and of war"
-            }
-          ]
-        },
-        {
-          "functionId": "political-leadership",
-          "affiliationId": null,
-          "affiliationStatus": "unresolved",
-          "relation": "unresolved",
-          "startYear": 1869,
-          "endYear": 1882,
-          "primary": false,
-          "evidence": [
-            {
-              "source": "https://en.wikipedia.org/wiki/L%C3%A9on_Gambetta",
-              "locator": "Return",
-              "claim": "Leader of the republican opposition and of the Opportunist Republicans; no catalog affiliation",
-              "excerpt": "He gave this policy the appropriate name of \"opportunism,\" and became one of the leader of the \"Opportunist Republicans.\""
+              "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Kl%C3%A9ber",
+              "locator": "French Revolutionary Wars",
+              "claim": "General of the Republic: Mainz, the Vendée, Fleurus, the Rhine, Egypt",
+              "excerpt": "Kléber was then posted to the Army of the Coasts of La Rochelle and deployed to Western France, where he took part in the suppression of the Revolt in the Vendée."
             }
           ]
         }
@@ -1302,99 +678,100 @@
         {
           "period": {
             "start": [
-              1868
+              1777
+            ],
+            "end": [
+              1783
+            ]
+          },
+          "r": {
+            "ko": "신성 로마 제국군 장교",
+            "en": "Officer in the army of the Holy Roman Emperor"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1784
+            ],
+            "end": [
+              1792
+            ]
+          },
+          "r": {
+            "ko": "벨포르 공공건물 감독관",
+            "en": "Inspector of public buildings at Belfort"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
             ],
             "end": null
           },
           "r": {
-            "ko": "들레클뤼즈 변호로 명성",
-            "en": "Fame from the defence of Delescluze"
+            "ko": "마인츠 방어, 여단장",
+            "en": "Defence of Mainz; brigade general"
           }
         },
         {
           "period": {
             "start": [
-              1869
+              1793
             ],
             "end": [
-              1870
+              1794
             ]
           },
           "r": {
-            "ko": "입법원 의원 (마르세유)",
-            "en": "Deputy for Marseille in the Corps législatif"
+            "ko": "방데에서 마인츠군 지휘, 숄레·르망·사부네",
+            "en": "Led the Army of Mainz in the Vendée: Cholet, Le Mans, Savenay"
           }
         },
         {
           "period": {
             "start": [
-              1870
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "9월 4일 공화국 선포, 국방정부 내무장관",
-            "en": "Proclaimed the Republic on 4 September; interior minister"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1870
+              1794
             ],
             "end": [
-              1871
+              1797
             ]
           },
           "r": {
-            "ko": "투르·보르도 대표단의 내무·전쟁장관",
-            "en": "Minister of the interior and of war at Tours and Bordeaux"
+            "ko": "상브르뫼즈군, 플뢰뤼스와 라인 전선",
+            "en": "Army of Sambre and Meuse; Fleurus and the Rhine"
           }
         },
         {
           "period": {
             "start": [
-              1879
+              1799
             ],
             "end": [
-              1881
+              1800
             ]
           },
           "r": {
-            "ko": "하원 의장",
-            "en": "President of the Chamber of Deputies"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1881
-            ],
-            "end": [
-              1882
-            ]
-          },
-          "r": {
-            "ko": "총리 겸 외무장관",
-            "en": "Prime minister and foreign minister"
+            "ko": "이집트 프랑스군 총사령관",
+            "en": "Commander in chief of the French army in Egypt"
           }
         }
-      ],
-      "cyrillic": "Léon Gambetta"
+      ]
     },
     {
-      "id": "louis-jules-trochu",
-      "groupId": "world-before-1917",
+      "id": "lazare-hoche",
+      "groupId": "france-revolution",
       "givenName": {
-        "ko": "루이쥘",
-        "en": "Louis-Jules"
+        "ko": "라자르",
+        "en": "Lazare"
       },
       "familyName": {
-        "ko": "트로쉬",
-        "en": "Trochu"
+        "ko": "오슈",
+        "en": "Hoche"
       },
-      "nativeName": "Louis-Jules Trochu",
-      "years": "1815–1896",
+      "nativeName": "Louis Lazare Hoche",
+      "years": "1768–1797",
       "citizenship": {
         "code": "france"
       },
@@ -1402,151 +779,416 @@
         "code": "france"
       },
       "epithet": {
-        "ko": "포위된 파리의 총독이자 국방정부의 수반으로 「결코 항복하지 않는다」고 했으나 출격이 모두 실패한 장군",
-        "en": "Governor of besieged Paris and head of the Government of National Defence who vowed never to capitulate; every sortie failed"
+        "ko": "키브롱에서 망명군을 무찌르고 1796년 방데를 평정한 공화국 장군",
+        "en": "Republican general who crushed the émigré landing at Quiberon and pacified the Vendée in 1796"
       },
       "bio": {
-        "ko": "브르타뉴 벨일에서 태어나 생시르를 나왔고, 알제리에서 뷔조 원수의 부관, 크림 전쟁에서 여단장으로 복무했다. 1867년 오를레앙파 색채의 『1867년의 프랑스군』을 익명으로 펴내 궁정의 미움을 샀고 개전 때 야전 지휘를 받지 못했다. 초기 패전 뒤 1870년 8월 17일 파리 총독 겸 수도 방위군 총사령관이 되었고, 9월 4일 혁명으로 국방정부의 수반이 되었다. 「파리 총독은 결코 항복하지 않는다」는 포고와 달리 여론에 밀린 출격은 모두 실패했고, 1871년 1월 22일 총독직을 비누아에게 넘기고 휴전 뒤까지 정부 수반직만 유지했다. 국민의회 모르비앙 의원을 지낸 뒤 1872년 정계, 1873년 군에서 물러났고 1896년 투르에서 죽었다.",
-        "en": "Born on Belle-Île in Brittany and trained at Saint-Cyr, he served in Algeria as aide-de-camp to Marshal Bugeaud and in the Crimea as a brigade commander. In 1867 he published anonymously L'Armée française en 1867, a work of Orleanist sentiment that offended the court, and he was refused a field command at the outbreak of war. After the early defeats he became governor of Paris and commander-in-chief of its defence on 17 August 1870, and the revolution of 4 September made him president of the Government of National Defence. He proclaimed that the governor of Paris would never capitulate, yet the sorties made under pressure of public opinion all failed; on 22 January 1871 he handed the governorship to Vinoy, keeping the presidency until after the armistice. Deputy for Morbihan, he retired from politics in 1872 and the army in 1873, and died at Tours in 1896."
+        "ko": "1768년 베르사유 근교에서 왕실 사냥터 마부의 아들로 태어나 1784년 근위연대 사병으로 입대했다. 1792년 장교가 되어 됭케르크 방어로 1793년 사단장과 모젤군 사령관에 올랐고 12월 알자스에서 오스트리아군을 몰아냈다. 1794년 3월 피슈그뤼의 고발로 체포되어 테르미도르 뒤에야 풀려났다. 서부의 연안군 사령관으로 1795년 2월 라자주네 조약으로 이어진 화해를 마무리했고, 7월 키브롱에서 영국이 실어 온 망명군을 섬멸했다. 12월 서부 전군을 지휘하게 되어 기동 종대와 사면, 예배의 자유로 1796년 스토플레와 샤레트를 잡아 방데 전쟁을 끝내고 슈앙의 항복을 받았다. 아일랜드 원정에 실패했고 1797년 잠시 전쟁장관을 지낸 뒤 29세로 병사했다.",
+        "en": "Born in 1768 near Versailles, a groom’s son, he enlisted as a private in the French Guards in 1784. Commissioned in 1792, he rose to divisional general and command of the Army of the Moselle in 1793 and drove the Austrians from Alsace. Arrested in March 1794 after a denunciation by Pichegru, he was freed only after Thermidor. Commanding the coastal armies in the west, he completed the conciliation that led to the Treaty of La Jaunaye in February 1795 and annihilated the émigré force landed by the British at Quiberon in July. Supreme commander in the west from December, he used disciplined mobile columns, amnesty and freedom of worship to capture Stofflet and Charette in 1796, ending the War in the Vendée, and took the surrender of the Chouans. His Irish expedition failed; he was briefly Minister of War in 1797 and died of tuberculosis aged 29."
       },
       "fate": {
         "kind": "natural",
         "label": {
-          "ko": "자연사",
-          "en": "Natural causes"
+          "ko": "병사",
+          "en": "Died of illness"
         }
       },
       "aliases": {
         "ko": [
-          "쥘 트로쉬",
-          "루이 쥘 트로쉬"
+          "루이 라자르 오슈",
+          "라자르 호슈"
         ],
         "en": [
-          "Jules Trochu",
-          "Louis Jules Trochu"
+          "Louis Lazare Hoche"
         ]
       },
       "sources": [
-        "https://en.wikipedia.org/wiki/Louis-Jules_Trochu"
+        "https://en.wikipedia.org/wiki/Lazare_Hoche"
       ],
       "evidence": [
         {
           "field": "years",
-          "claim": "1815–1896",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
+          "claim": "1768–1797",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
           "locator": "lead",
-          "excerpt": "12 March 1815 – 7 October 1896) was a French military leader and politician."
+          "excerpt": "24 June 1768 – 19 September 1797"
         },
         {
           "field": "citizenship",
-          "claim": "French general, president of the Government of National Defence",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
+          "claim": "French Army officer and Minister of War",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
           "locator": "lead",
-          "excerpt": "He served as President of the Government of National Defense—France's de facto head of state—from 4 September 1870 until his resignation on 22 January 1871"
+          "excerpt": "was a French Army officer and politician who served as the Minister of War in 1797"
         },
         {
           "field": "nationalOrigin",
-          "claim": "born on Belle-Île, Brittany",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "Trochu was born at Le Palais on the island of Belle-Île-en-Mer, off the coast of Brittany."
+          "claim": "born at Montreuil, Versailles",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Early life",
+          "excerpt": "Lazare Hoche was born on 24 June 1768 in the village of Montreuil, today part of Versailles, to Anne Merlière and Louis Hoche, a groom at the royal hunting grounds."
         },
         {
           "field": "bio",
-          "claim": "Algeria under Bugeaud",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "He served as a captain in Algeria under Marshal Bugeaud, who, in recognition of his gallantry in the battles of Sidi Yussuf and Isly, made him his aide-de-camp"
+          "claim": "French Guards 1784; National Guard 1789",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Early life",
+          "excerpt": "He enlisted in the French Guards Regiment as a fusilier in October 1784 [...] Hoche joined the new National Guard in September 1789."
         },
         {
           "field": "bio",
-          "claim": "Crimea and Italy",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "He served with distinction throughout the Crimean campaign, first as aide-de-camp to Marshal St. Arnaud, and then as general of brigade"
+          "claim": "Dunkirk; general of division October 1793; Army of the Moselle",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Flanders campaign",
+          "excerpt": "he took part in the successful defence of Dunkirk, for which he was promoted successively to colonel and brigade general in September, and to general of division in October 1793. In November, Hoche was provisionally appointed to command the Army of the Moselle"
         },
         {
           "field": "bio",
-          "claim": "L'Armée française en 1867",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "he published anonymously in the following year L'Armée française en 1867, a work inspired with Orleanist sentiment"
+          "claim": "drove Wurmser from Alsace",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Flanders campaign",
+          "excerpt": "In the Second Battle of Wissembourg on 26 December 1793, the French under his command drove Dagobert Sigmund von Wurmser's Austrian army from Alsace."
         },
         {
           "field": "bio",
-          "claim": "governor of Paris 17 August 1870",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "soon afterwards (17 August) governor of Paris and commander-in-chief of all the forces destined for the defence of the capital"
+          "claim": "arrested 1794, freed after Thermidor",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Arrest",
+          "excerpt": "he was arrested on orders of the Committee of Public Safety, charges of treason having been proffered by Charles Pichegru [...] and was only released on 4 August, after the fall of Maximilien Robespierre and the end of the Reign of Terror."
         },
         {
           "field": "bio",
-          "claim": "president of the Government of National Defence",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "At the revolution of 4 September he became president of the Government of National Defence, in addition to his other offices."
+          "claim": "Army of the Coasts of Cherbourg and Brest; La Jaunaye",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "War in the Vendée and Chouannerie",
+          "excerpt": "Hoche completed the work of his predecessors in a few months by the Treaty of La Jaunaye (15 February 1795), but soon afterwards the war was renewed by the rebel leadership."
         },
         {
           "field": "bio",
-          "claim": "sorties failed, resigned the governorship 22 January 1871",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "he resigned the governorship of Paris on 22 January 1871 to General Joseph Vinoy, retaining the presidency of the government until after the armistice in February."
+          "claim": "Quiberon 21 July 1795",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "War in the Vendée and Chouannerie",
+          "excerpt": "He decisively defeated the Royalist invaders at Fort Penthièvre on 21 July."
         },
         {
           "field": "bio",
-          "claim": "deputy for Morbihan",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "He was elected to the National Assembly by eight Départements, and sat for Morbihan."
+          "claim": "supreme commander in the west December 1795",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "War in the Vendée and Chouannerie",
+          "excerpt": "In December 1795, when the three armies previously under his command [...] merged to form the new Army of the Coasts of the Ocean, Hoche became the supreme commander of all Republican forces in Western France."
         },
         {
           "field": "bio",
-          "claim": "retired 1872 and 1873",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "In July 1872 he retired from political life and in 1873 from the army."
+          "claim": "Stofflet and Charette captured; Chouans surrender",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "War in the Vendée and Chouannerie",
+          "excerpt": "Hoche directed the operations that led to the capture (and subsequent execution) of rebel leaders Jean-Nicolas Stofflet (24 February 1796) and François de Charette (23 March), bringing an end to the War in the Vendée. With the surrender of the leaders of the Chouannerie, in May and June 1796, Hoche concluded the pacification of Western France"
         },
         {
           "field": "bio",
-          "claim": "died at Tours 1896",
-          "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-          "locator": "Military career",
-          "excerpt": "On October 7, 1896, he died in Tours."
+          "claim": "Irish expedition",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Expedition to Ireland",
+          "excerpt": "The fleet set sail for Ireland on 15 December 1796, with Hoche and Morard de Galles aboard the frigate Fraternité."
+        },
+        {
+          "field": "bio",
+          "claim": "Minister of War July 1797",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Rhine frontier and death",
+          "excerpt": "In July 1797, Hoche was appointed the Minister of War by the Directory."
+        },
+        {
+          "field": "bio",
+          "claim": "died at Wetzlar of tuberculosis aged 29",
+          "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+          "locator": "Death and legacy",
+          "excerpt": "he died at Wetzlar on 19 September of consumption (tuberculosis), aged 29"
         }
       ],
       "activities": [
         {
-          "functionId": "government",
-          "affiliationId": "state-france",
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
           "affiliationStatus": "confirmed",
           "relation": "service",
-          "startYear": 1870,
-          "endYear": 1871,
+          "startYear": 1792,
+          "endYear": 1797,
           "primary": true,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-              "locator": "lead",
-              "claim": "President of the Government of National Defence, 4 September 1870 – January 1871",
-              "excerpt": "He served as President of the Government of National Defense—France's de facto head of state—from 4 September 1870 until his resignation on 22 January 1871"
+              "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+              "locator": "War in the Vendée and Chouannerie",
+              "claim": "General of the Republic; supreme commander of the Republican forces in western France, 1795–1796",
+              "excerpt": "Hoche became the supreme commander of all Republican forces in Western France"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1797,
+          "endYear": 1797,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Lazare_Hoche",
+              "locator": "Rhine frontier and death",
+              "claim": "Minister of War under the Directory, July 1797",
+              "excerpt": "In July 1797, Hoche was appointed the Minister of War by the Directory."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1784
+            ],
+            "end": [
+              1789
+            ]
+          },
+          "r": {
+            "ko": "프랑스 근위연대 사병",
+            "en": "Private in the French Guards"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "모젤군 사령관, 알자스 탈환",
+            "en": "Commander of the Army of the Moselle; recovered Alsace"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "공안위원회 명령으로 체포, 테르미도르 뒤 석방",
+            "en": "Arrested on the Committee of Public Safety's orders; freed after Thermidor"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": [
+              1795
+            ]
+          },
+          "r": {
+            "ko": "셰르부르·브레스트 연안군 사령관, 키브롱 승리",
+            "en": "Commander of the Armies of the Coasts of Cherbourg and Brest; victory at Quiberon"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1795
+            ],
+            "end": [
+              1796
+            ]
+          },
+          "r": {
+            "ko": "대양 연안군 총사령관, 방데 평정",
+            "en": "Commander in chief of the Army of the Coasts of the Ocean; pacification of the Vendée"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1797
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "상브르뫼즈군 사령관, 전쟁장관",
+            "en": "Commander of the Army of Sambre and Meuse; Minister of War"
+          }
+        }
+      ]
+    },
+    {
+      "id": "francois-joseph-westermann",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "프랑수아 조제프",
+        "en": "François Joseph"
+      },
+      "familyName": {
+        "ko": "베스테르만",
+        "en": "Westermann"
+      },
+      "nativeName": "François-Joseph Westermann",
+      "years": "1751–1794",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "「방데의 도살자」로 불린 공화국 여단장, 당통파와 함께 처형",
+        "en": "Republican brigade general called “the butcher of the Vendée”, executed with the Dantonists"
+      },
+      "bio": {
+        "ko": "1751년 알자스 몰스하임에서 태어나 경기병으로 복무한 뒤 1790년 아그노 시 서기가 되었다. 1792년 파리에서 당통과 가까워졌고 8월 10일 튈르리궁 습격에서 연맹병 부대를 이끌었다. 뒤무리에의 참모로 종군하다 1793년 4월 그의 배반 뒤 체포되었으나 무죄를 입증하고 여단장이 되어 방데로 보내졌다. 라로셸 연안군 전위로 6월 파르트네와 7월 샤티용을 점령했으나 7월 5일 샤티용에서 대패해 정직되었다가 복직했다. 갈레른 행군 때 패배를 거듭했으나 르망과 사부네에서 왕당군 섬멸에 가담했고, 사부네 뒤 포로 500~700명을 총살했다. 「방데는 더 이상 없다」는 편지는 진위가 다투어진다. 1794년 당통의 벗으로 기소되어 4월 5일 당통파와 함께 처형되었다.",
+        "en": "Born in 1751 at Molsheim in Alsace, he served in a hussar regiment and in 1790 became clerk of Haguenau. In Paris from 1792 he became an ally of Danton and commanded fédérés in the attack on the Tuileries on 10 August. On Dumouriez’s staff, he was arrested after the general’s defection in April 1793, cleared and sent to the Vendée as a brigade general. Leading the vanguard of the Army of the Coasts of La Rochelle, he took Parthenay in June and Châtillon on 3 July, but was routed at Châtillon on 5 July and suspended. Beaten repeatedly in the Virée de Galerne, he took part in the destruction of the Catholic and Royal Army at Le Mans and Savenay, after which his hussars shot 500 to 700 prisoners. The letter attributed to him beginning “There is no more Vendée” is of disputed authenticity. Proscribed as a friend of Danton, he was guillotined with the Dantonists on 5 April 1794."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Guillotined"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "프랑수아조제프 베스테르만",
+          "프랑수아 조제프 웨스테르만"
+        ],
+        "en": [
+          "François-Joseph Westermann",
+          "Francois Joseph Westermann"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+        "https://fr.wikipedia.org/wiki/Fran%C3%A7ois-Joseph_Westermann",
+        "https://en.wikipedia.org/wiki/Battle_of_Savenay"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1751–1794",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "lead",
+          "excerpt": "5 September 1751 – 5 April 1794"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French Army officer, brigade general",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "lead",
+          "excerpt": "was a French Army officer. He is best known as one of the main French Republican commanders in the initial stage of the War in the Vendée."
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born at Molsheim, Alsace",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "Early life and military career",
+          "excerpt": "Westermann was born on 5 September 1751 in Molsheim, Alsace (today department of Bas-Rhin)."
+        },
+        {
+          "field": "bio",
+          "claim": "hussars 1767; clerk of Haguenau 1790",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "Early life and military career",
+          "excerpt": "He enlisted in Count Esterhazy's regiment of hussars in 1767, retiring six years later as a non-commissioned officer. [...] in 1790 became greffier of the municipality of Haguenau."
+        },
+        {
+          "field": "bio",
+          "claim": "ally of Danton; 10 August 1792",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "Early life and military career",
+          "excerpt": "Westermann moved to Paris in May 1792, where he became an ally of revolutionary leader Georges Danton. Westermann played a leading role in the insurrection of 10 August 1792, where he commanded a unit of fédérés in the attack on the Tuileries Palace."
+        },
+        {
+          "field": "bio",
+          "claim": "with Dumouriez; arrested; cleared; brigade general",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "Early life and military career",
+          "excerpt": "but was arrested as an accomplice after the general's defection in April 1793. Denounced by Jean-Paul Marat to the National Convention, Westermann succeeded in proving his innocence, and was promoted to brigade general and sent to quell the Revolt in the Vendée."
+        },
+        {
+          "field": "bio",
+          "claim": "vanguard; Parthenay; Châtillon; suspended; restored 29 August",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "War in the Vendée",
+          "excerpt": "Appointed commander of the vanguard of the Army of the Coasts of La Rochelle on 18 May 1793, he defeated the rebels at Parthenay on 20 June, then captured Châtillon on 3 July. After suffering a defeat at the First Battle of Châtillon, Westermann was suspended and brought before the National Convention, only recovering his command on 29 August."
+        },
+        {
+          "field": "bio",
+          "claim": "Croix-Bataille, Entrammes, Le Mans, Savenay",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "War in the Vendée",
+          "excerpt": "Beaten at the battles of Croix-Bataille and Entrames, he defeated the Vendéens at Beaupréau, Granville, and in December 1793 annihilated the Catholic and Royal Army at the Battle of Le Mans and the Battle of Savenay."
+        },
+        {
+          "field": "bio",
+          "claim": "shot 500 to 700 prisoners near Prinquiau",
+          "source": "https://en.wikipedia.org/wiki/Battle_of_Savenay",
+          "locator": "The flight and massacres",
+          "excerpt": "Westermann and his hussards shot 500 to 700 prisoners, men, women, and children, at the Sem forest near Prinquiau."
+        },
+        {
+          "field": "bio",
+          "claim": "the disputed letter",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "War in the Vendée",
+          "excerpt": "In a controversial document, the authenticity of which is disputed, Westermann supposedly wrote to the Committee of Public Safety: \"There is no more Vendée, Republican citizens."
+        },
+        {
+          "field": "bio",
+          "claim": "\"le boucher de la Vendée\"",
+          "source": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois-Joseph_Westermann",
+          "locator": "Biographie",
+          "excerpt": "portent le nom de celui qui fut surnommé « le boucher de la Vendée »"
+        },
+        {
+          "field": "bio",
+          "claim": "guillotined with the Dantonists 5 April 1794",
+          "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+          "locator": "War in the Vendée",
+          "excerpt": "After his victory, in January 1794 Westermann was summoned to Paris, where, as a friend and partisan of Danton, he was proscribed and sentenced to death by the Revolutionary Tribunal. He was guillotined along with the Dantonist party on 5 April 1794."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1793,
+          "endYear": 1794,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+              "locator": "War in the Vendée",
+              "claim": "Brigade general; commander of the vanguard of the Army of the Coasts of La Rochelle, then in the Army of the West",
+              "excerpt": "Appointed commander of the vanguard of the Army of the Coasts of La Rochelle on 18 May 1793"
             }
           ]
         },
         {
           "functionId": "military",
-          "affiliationId": "state-france",
+          "affiliationId": "french-revolution",
           "affiliationStatus": "confirmed",
           "relation": "service",
-          "startYear": 1837,
-          "endYear": 1873,
+          "startYear": 1792,
+          "endYear": 1792,
           "primary": false,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/Louis-Jules_Trochu",
-              "locator": "Military career",
-              "claim": "Career officer; governor of Paris and commander-in-chief of its defence in 1870",
-              "excerpt": "governor of Paris and commander-in-chief of all the forces destined for the defence of the capital"
+              "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Joseph_Westermann",
+              "locator": "Early life and military career",
+              "claim": "Commanded fédérés in the insurrection of 10 August 1792",
+              "excerpt": "Westermann played a leading role in the insurrection of 10 August 1792, where he commanded a unit of fédérés in the attack on the Tuileries Palace."
             }
           ]
         }
@@ -1555,97 +1197,92 @@
         {
           "period": {
             "start": [
-              1837
+              1790
             ],
             "end": null
           },
           "r": {
-            "ko": "참모단 장교 임관",
-            "en": "Commissioned in the Staff Corps"
+            "ko": "아그노 시 서기",
+            "en": "Clerk of the municipality of Haguenau"
           }
         },
         {
           "period": {
             "start": [
-              1854
-            ],
-            "end": [
-              1855
-            ]
-          },
-          "r": {
-            "ko": "크림 전쟁 여단장",
-            "en": "Brigade commander in the Crimean War"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1867
+              1792
             ],
             "end": null
           },
           "r": {
-            "ko": "『1867년의 프랑스군』 익명 출간",
-            "en": "Published L'Armée française en 1867 anonymously"
+            "ko": "8월 10일 봉기에서 연맹병 지휘",
+            "en": "Commanded fédérés on 10 August 1792"
           }
         },
         {
           "period": {
             "start": [
-              1870
+              1792
+            ],
+            "end": [
+              1793
+            ]
+          },
+          "r": {
+            "ko": "뒤무리에의 참모, 북부군",
+            "en": "On Dumouriez's staff with the Army of the North"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
             ],
             "end": null
           },
           "r": {
-            "ko": "8월 17일 파리 총독",
-            "en": "Governor of Paris from 17 August"
+            "ko": "여단장, 라로셸 연안군 전위 사령관",
+            "en": "Brigade general; commander of the vanguard of the Army of the Coasts of La Rochelle"
           }
         },
         {
           "period": {
             "start": [
-              1870
+              1793
             ],
-            "end": [
-              1871
-            ]
+            "end": null
           },
           "r": {
-            "ko": "국방정부 수반",
-            "en": "President of the Government of National Defence"
+            "ko": "서부군, 르망·사부네",
+            "en": "Army of the West; Le Mans and Savenay"
           }
         },
         {
           "period": {
             "start": [
-              1871
+              1794
             ],
-            "end": [
-              1872
-            ]
+            "end": null
           },
           "r": {
-            "ko": "국민의회 의원 (모르비앙)",
-            "en": "Deputy for Morbihan in the National Assembly"
+            "ko": "당통파와 함께 처형",
+            "en": "Executed with the Dantonists"
           }
         }
-      ],
-      "cyrillic": "Louis-Jules Trochu"
+      ]
     },
     {
-      "id": "jules-favre",
-      "groupId": "world-before-1917",
+      "id": "maurice-d-elbee",
+      "groupId": "france-revolution",
       "givenName": {
-        "ko": "쥘",
-        "en": "Jules"
+        "ko": "모리스",
+        "en": "Maurice"
       },
       "familyName": {
-        "ko": "파브르",
-        "en": "Favre"
+        "ko": "델베",
+        "en": "d'Elbée"
       },
-      "nativeName": "Jules Favre",
-      "years": "1809–1880",
+      "nativeName": "Maurice Joseph Louis Gigost d'Elbée",
+      "years": "1752–1794",
       "citizenship": {
         "code": "france"
       },
@@ -1653,163 +1290,154 @@
         "code": "france"
       },
       "epithet": {
-        "ko": "「한 치의 영토도」 내주지 않겠다고 선언했으나 휴전과 프랑크푸르트 조약을 교섭해야 했던 국방정부의 외무장관",
-        "en": "Foreign minister who vowed not to yield \"an inch of territory\" and then negotiated the armistice and the Treaty of Frankfurt"
+        "ko": "카틀리노의 뒤를 이은 가톨릭 왕당군 제2대 총사령관, 누아르무티에에서 총살",
+        "en": "Second generalissimo of the Catholic and Royal Army after Cathelineau, shot at Noirmoutier"
       },
       "bio": {
-        "ko": "리옹에서 태어나 변호사가 되었고 1830년 혁명 때부터 공화파를 자처했다. 1851년 쿠데타 때 위고 등과 무장 저항을 조직하려 했다. 1858년 파리에서 당선되어 제정에 맞선 공화파 「5인」의 하나가 되었다. 1870년 티에르와 함께 전쟁에 반대했고 스당 뒤 황제의 폐위를 요구했다. 국방정부 부수반 겸 외무장관으로 9월 6일 「영토의 한 치도, 요새의 돌 하나도」 내주지 않겠다고 선언했으나 페리에르에서 비스마르크의 알자스-로렌 요구를 들었다. 1871년 1월 28일 휴전을 맺고 동부군이 제외된 것을 알리지 않아 그 군대는 스위스로 넘어가야 했다. 프랑크푸르트 조약 뒤 1871년 8월 물러났고, 1876년 상원의원이 되어 1880년 죽었다.",
-        "en": "Born in Lyon, he became a lawyer and declared himself a republican from 1830. He tried with Victor Hugo to resist the coup of 1851 and was elected for Paris in 1858 as one of the republican \"Five\" opposing the Empire. With Thiers he opposed the war of 1870, and after Sedan demanded the emperor's deposition. As vice-president and foreign minister of the Government of National Defence he declared on 6 September that France would not yield \"an inch of territory nor a single stone of the fortresses\", only to hear Bismarck's demand for Alsace-Lorraine at Ferrières. He arranged the armistice of 28 January 1871 without knowing the state of the armies and failed to report that the Army of the East was excluded, so that it had to retreat into Switzerland. Discredited after the Treaty of Frankfurt, he withdrew in August 1871, became a senator in 1876 and died in 1880."
+        "ko": "1752년 드레스덴에서 폴란드 왕의 고문이던 프랑스인 아버지에게서 태어나 1757년 프랑스에 귀화했다. 왕실 기병 장교로 복무하다 1783년 제대해 앙주의 보프레오에 은거했고, 1790년 연맹제에 멘에루아르 대표로 참석할 만큼 혁명에 호의적이었다. 1793년 3월 징집에 맞서 봉기한 농민들이 군 경험을 보고 그를 지휘관으로 끌어냈다. 4월 슈미예에서 포로 학살을 요구하는 부하들에게 주기도문을 외우게 하고 「하느님께 거짓말하지 말라」며 포로를 살렸다. 카틀리노가 죽자 7월 19일 총사령관으로 뽑혔으나 뤼송에서 두 번 패했고, 10월 숄레에서 중상을 입어 누아르무티에섬으로 옮겨졌다. 1794년 1월 3일 섬을 점령한 공화국군에 붙잡혀 안락의자에 앉은 채 총살되었다.",
+        "en": "Born in 1752 in Dresden to a French father who was a privy councillor of the King of Poland, he was naturalised French in 1757. An officer of royal cavalry, he resigned in 1783 and retired to Beaupréau in Anjou, and represented Maine-et-Loire at the Fête de la Fédération in 1790. In March 1793 the peasants who had risen against conscription forced him to lead them because of his military experience. At Chemillé in April he saved the Republican prisoners his men wanted to kill by making them recite the Lord’s Prayer and breaking in with “Do not lie to God”. Elected generalissimo on 19 July 1793 after Cathelineau’s death, he was twice beaten at Luçon and gravely wounded at Cholet in October, and was carried to the island of Noirmoutier. Captured when Republican troops took the island on 3 January 1794, unable to stand, he was shot in an armchair. His wife was shot on 29 January."
       },
       "fate": {
-        "kind": "natural",
+        "kind": "executed",
         "label": {
-          "ko": "자연사",
-          "en": "Natural causes"
+          "ko": "총살",
+          "en": "Shot"
         }
       },
       "aliases": {
         "ko": [
-          "쥘 클로드 가브리엘 파브르"
+          "모리스 지고 델베",
+          "모리스 조제프 루이 지고 델베",
+          "델베 장군"
         ],
         "en": [
-          "Jules Claude Gabriel Favre"
+          "Maurice Gigost d'Elbée",
+          "Maurice-Joseph-Louis Gigost d'Elbée",
+          "Maurice Joseph Louis Gigost d'Elbée"
         ]
       },
       "sources": [
-        "https://en.wikipedia.org/wiki/Jules_Favre"
+        "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+        "https://en.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e"
       ],
       "evidence": [
         {
           "field": "years",
-          "claim": "1809–1880",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "lead",
-          "excerpt": "(21 March 1809 – 20 January 1880)"
+          "claim": "1752–1794",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "préambule",
+          "excerpt": "né le 21 mars 1752 à Dresde et mort entre le 6 et le 9 janvier 1794 à Noirmoutier, est un militaire français"
         },
         {
           "field": "citizenship",
-          "claim": "French statesman, leader of the Moderate Republicans",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "lead",
-          "excerpt": "was a French statesman and lawyer. After the establishment of the Third Republic in September 1870, he became one of the leaders of the Moderate Republicans in the National Assembly."
+          "claim": "French soldier, naturalised in 1757",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Vie sous l'Ancien Régime",
+          "excerpt": "Il est naturalisé français en 1757."
         },
         {
           "field": "nationalOrigin",
-          "claim": "born in Lyon",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Early years",
-          "excerpt": "He was born in Lyon, and began his career as a lawyer."
+          "claim": "French family established at Dresden",
+          "source": "https://en.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Life",
+          "excerpt": "Maurice d'Elbee was born in Dresden, Electorate of Saxony to a French family in 1752."
         },
         {
           "field": "bio",
-          "claim": "republican from 1830",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Early years",
-          "excerpt": "From the time of the Revolution of 1830, he openly declared himself a republican"
+          "claim": "father privy councillor of the King of Poland at Dresden",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Vie sous l'Ancien Régime",
+          "excerpt": "Fils de Maurice Gigost d'Elbée, seigneur de la Gobinière et de La Loge-Vaugirault (1695-1763), alors conseiller privé du Roi de Pologne établi à Dresde, en Saxe"
         },
         {
           "field": "bio",
-          "claim": "Constituent Assembly 1848, moderate republican",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Early years",
-          "excerpt": "After the Revolution of 1848 he was elected deputy for Lyon to the Constituent Assembly, where he sat among the Moderate Republicans, voting against the socialists."
+          "claim": "royal cavalry 1772–1783; retired to Beaupréau",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Vie sous l'Ancien Régime",
+          "excerpt": "Le 1er juin 1772, il est sous-lieutenant au régiment du Dauphin cavalerie et le 6 mai 1781, il est lieutenant au 5e régiment de chevau-légers. Il démissionne de l'armée le 17 septembre 1783. Il se retire alors à Beaupréau, en Anjou."
         },
         {
           "field": "bio",
-          "claim": "resistance to the coup of 1851",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Early years",
-          "excerpt": "On 2 December 1851 he tried with Victor Hugo and others to organize armed resistance in the streets of Paris."
+          "claim": "favourable to the Revolution; Fête de la Fédération 1790",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Vie sous l'Ancien Régime",
+          "excerpt": "En 1789, d'Elbée se montre d'abord favorable à la Révolution française. Le 14 juillet 1790, il participe à la Fête de la Fédération à Paris, où il représente le Maine-et-Loire."
         },
         {
           "field": "bio",
-          "claim": "defended Orsini",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Early years",
-          "excerpt": "distinguishing himself by his defence of Felice Orsini, the perpetrator of the attack against the life of Napoleon III"
+          "claim": "forced to lead the insurgents in March 1793",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Général de l'Armée catholique et royale",
+          "excerpt": "Les paysans insurgés viennent trouver d'Elbée en raison de son expérience militaire et le contraignent à prendre la tête de leur rassemblement."
         },
         {
           "field": "bio",
-          "claim": "one of the Five, 1858; head of the party 1863",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Early years",
-          "excerpt": "In 1858 he was elected deputy for Paris, being one of the \"Five\" who gave the signal for the republican opposition to the Empire. In 1863 he became the head of his party"
+          "claim": "the \"Pater de d'Elbée\" at Chemillé",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Général de l'Armée catholique et royale",
+          "excerpt": "d'Elbée les interrompt : « Arrêtez ! Ne mentez pas à Dieu ! [...] ». Ces déclarations ne provoquent aucune contestation et les prisonniers sont ainsi sauvés. L'épisode est alors appelé le « Pater de d'Elbée »."
         },
         {
           "field": "bio",
-          "claim": "opposed the war, demanded deposition",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Franco-Prussian War and Third Republic",
-          "excerpt": "With Adolphe Thiers he opposed the war against Prussia in 1870, and at the news of the defeat of Napoleon III at Sedan he demanded the deposition of the emperor."
+          "claim": "elected generalissimo 19 July 1793; defeats at Luçon",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Général de l'Armée catholique et royale",
+          "excerpt": "Le 19 juillet, d'Elbée est élu par un conseil de guerre généralissime de Armée catholique et royale pour succéder à Jacques Cathelineau. Il décide d'attaquer la ville de Luçon mais il subit deux lourdes défaites devant cette ville le 30 juillet et le 14 août."
         },
         {
           "field": "bio",
-          "claim": "vice-president and foreign minister",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Franco-Prussian War and Third Republic",
-          "excerpt": "In the government of National Defence he became vice-president under General Trochu, and minister of foreign affairs, with the onerous task of negotiating peace with victorious Germany."
+          "claim": "wounded at Cholet; carried to Noirmoutier",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Mort à Noirmoutier",
+          "excerpt": "Le 17 octobre 1793, l'armée vendéenne est complètement défaite à la bataille de Cholet et d'Elbée est grièvement blessé lors des combats. Il ne prend pas part à la virée de Galerne"
         },
         {
           "field": "bio",
-          "claim": "statement of 6 September and Bismarck's reply",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Franco-Prussian War and Third Republic",
-          "excerpt": "His famous statement on 6 September 1870, that he \"would not yield to Germany an inch of territory nor a single stone of the fortresses\" was a piece of oratory which Bismarck met on the 19th by his declaration to Favre that Alsace and Lorraine had to be ceded as a condition of peace."
+          "claim": "captured 3 January 1794, shot in an armchair",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Mort à Noirmoutier",
+          "excerpt": "Le 3 janvier 1794, les troupes républicaines débarquent sur l'île de Noirmoutier et la garnison vendéenne capitule. D'Elbée est rapidement découvert et fait prisonnier. [...] D'Elbée est exécuté entre le 6 et le 9 janvier. Incapable de marcher, il est porté sur un fauteuil jusqu'à la place d'Armes."
         },
         {
           "field": "bio",
-          "claim": "armistice of 28 January 1871; Army of the East",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Franco-Prussian War and Third Republic",
-          "excerpt": "He arranged for the armistice of 28 January 1871 without knowing the situation of the armies, and without consulting the government at Bordeaux. By a grave oversight, he neglected to inform Léon Gambetta that the Army of the East (80,000 men) was not included in the armistice, and it was thus obliged to retreat to neutral territory."
-        },
-        {
-          "field": "bio",
-          "claim": "Frankfurt negotiations, resignation 2 August 1871",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Franco-Prussian War and Third Republic",
-          "excerpt": "He showed no diplomatic skill in the negotiations for the Treaty of Frankfurt, and it was Bismarck who imposed all the conditions. He withdrew from the ministry, discredited, on 2 August 1871"
-        },
-        {
-          "field": "bio",
-          "claim": "senator 1876, died 1880",
-          "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-          "locator": "Franco-Prussian War and Third Republic",
-          "excerpt": "Elected Senator on 30 January 1876, he continued to support the government of the republic against the reactionary opposition until his death on 20 January 1880."
+          "claim": "wife shot 29 January 1794",
+          "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+          "locator": "Mort à Noirmoutier",
+          "excerpt": "L'épouse de d'Elbée, Marguerite-Charlotte Duhoux d'Hauterive, est quant à elle fusillée le 29 janvier"
         }
       ],
       "activities": [
         {
-          "functionId": "diplomacy",
-          "affiliationId": "state-france",
+          "functionId": "military",
+          "affiliationId": "french-catholic-royal-army",
           "affiliationStatus": "confirmed",
           "relation": "service",
-          "startYear": 1870,
-          "endYear": 1871,
+          "startYear": 1793,
+          "endYear": 1794,
           "primary": true,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-              "locator": "Franco-Prussian War and Third Republic",
-              "claim": "Foreign minister who negotiated the armistice of 1871 and the Treaty of Frankfurt",
-              "excerpt": "minister of foreign affairs, with the onerous task of negotiating peace with victorious Germany"
+              "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+              "locator": "préambule",
+              "claim": "General, then generalissimo of the Catholic and Royal Army, July–October 1793",
+              "excerpt": "Chef royaliste pendant la guerre de Vendée, il est généralissime de l'Armée catholique et royale, succédant à Cathelineau, de juillet à octobre 1793."
             }
           ]
         },
         {
-          "functionId": "political-leadership",
-          "affiliationId": null,
-          "affiliationStatus": "unresolved",
-          "relation": "unresolved",
-          "startYear": 1858,
-          "endYear": 1880,
+          "functionId": "military",
+          "affiliationId": "french-monarchy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1772,
+          "endYear": 1783,
           "primary": false,
           "evidence": [
             {
-              "source": "https://en.wikipedia.org/wiki/Jules_Favre",
-              "locator": "Early years",
-              "claim": "Leader of the republican opposition to the Empire and of the Moderate Republicans; no catalog affiliation",
-              "excerpt": "In 1863 he became the head of his party and delivered a number of addresses denouncing the Mexican expedition and the occupation of Rome."
+              "source": "https://fr.wikipedia.org/wiki/Maurice_d'Elb%C3%A9e",
+              "locator": "Vie sous l'Ancien Régime",
+              "claim": "Officer of royal cavalry",
+              "excerpt": "Le 1er juin 1772, il est sous-lieutenant au régiment du Dauphin cavalerie et le 6 mai 1781, il est lieutenant au 5e régiment de chevau-légers."
             }
           ]
         }
@@ -1818,81 +1446,307 @@
         {
           "period": {
             "start": [
-              1848
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "헌법제정의회 의원 (리옹)",
-            "en": "Deputy for Lyon in the Constituent Assembly"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1858
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "파리 선출 의원, 공화파 「5인」",
-            "en": "Deputy for Paris, one of the republican \"Five\""
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1867
-            ],
-            "end": null
-          },
-          "r": {
-            "ko": "아카데미 프랑세즈 회원",
-            "en": "Member of the Académie française"
-          }
-        },
-        {
-          "period": {
-            "start": [
-              1870
+              1772
             ],
             "end": [
-              1871
+              1783
             ]
           },
           "r": {
-            "ko": "국방정부 부수반·외무장관",
-            "en": "Vice-president and foreign minister of the Government of National Defence"
+            "ko": "왕실 기병 장교",
+            "en": "Officer of royal cavalry"
           }
         },
         {
           "period": {
             "start": [
-              1871
+              1790
             ],
             "end": null
           },
           "r": {
-            "ko": "프랑크푸르트 조약 교섭, 8월 2일 사임",
-            "en": "Negotiated the Treaty of Frankfurt; resigned on 2 August"
+            "ko": "연맹제 멘에루아르 대표",
+            "en": "Maine-et-Loire representative at the Fête de la Fédération"
           }
         },
         {
           "period": {
             "start": [
-              1876
+              1793
             ],
-            "end": [
-              1880
-            ]
+            "end": null
           },
           "r": {
-            "ko": "상원의원",
-            "en": "Senator"
+            "ko": "방데 봉기군 지휘관, 슈미예·투아르·퐁트네",
+            "en": "Commander of the Vendéan insurgents: Chemillé, Thouars, Fontenay"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "가톨릭 왕당군 총사령관",
+            "en": "Generalissimo of the Catholic and Royal Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "누아르무티에에서 포로가 되어 총살",
+            "en": "Captured at Noirmoutier and shot"
           }
         }
+      ]
+    },
+    {
+      "id": "jean-nicolas-stofflet",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "장니콜라",
+        "en": "Jean-Nicolas"
+      },
+      "familyName": {
+        "ko": "스토플레",
+        "en": "Stofflet"
+      },
+      "nativeName": "Jean-Nicolas Stofflet",
+      "years": "1753–1796",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "사냥터지기에서 앙주군 사령관이 된 방데의 장군, 앙제에서 총살",
+        "en": "Gamekeeper who became commander of the Vendéan army of Anjou, shot at Angers"
+      },
+      "bio": {
+        "ko": "1753년 로렌의 바텔레몽에서 방앗간 주인의 아들로 태어나 오랫동안 스위스 연대 사병으로 복무했고, 뒤에 몰레브리에에서 백작의 사냥터지기가 되었다. 1793년 3월 앙주의 봉기 때 옛 군인으로서 지휘관에 추대되어 카틀리노와 함께 생플로랑르비에이를 점령했고, 델베 휘하에서 퐁트네·숄레·라발·앙트랭 전투에 참여했다. 왕당군 소장이 되었고 1794년 1월 라로슈자클랭이 전사하자 사령관이 되어 지옥 종대를 피해 모여든 농민들과 2월 8일 숄레를 잠시 되찾았다. 1795년 2월 라자주네에서 공화국 승인을 거부했으나 캉클로의 공세에 밀려 5월 2일 생플로랑르비에이에서 강화했다. 아르투아 백작의 명령으로 1796년 1월 다시 봉기했다가 2월 농가에서 붙잡혀 앙제에서 총살되었다.",
+        "en": "Born in 1753 at Bathelémont in Lorraine, a miller’s son, he served for long as a private in a Swiss regiment and later became a gamekeeper at Maulévrier. Chosen as a leader for his military past when Anjou rose in March 1793, he took Saint-Florent-le-Vieil with Cathelineau and fought under d’Elbée at Fontenay, Cholet, Laval and Antrain. Appointed major-general of the royalist army, he took command after La Rochejaquelein was killed in January 1794 and, with peasants fleeing the infernal columns, briefly retook Cholet on 8 February. At La Jaunaye in February 1795 he refused to recognise the Republic, but Canclaux’s offensive drove him to make peace on the same terms at Saint-Florent-le-Vieil on 2 May. On the orders of the Count of Artois he rose again in January 1796, was surprised in a farmhouse near La Poitevinière, condemned by a military commission at Angers and shot on 25 February."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "총살",
+          "en": "Shot"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "장 니콜라 스토플레"
+        ],
+        "en": [
+          "Jean Nicolas Stofflet"
+        ]
+      },
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+        "https://en.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+        "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e"
       ],
-      "cyrillic": "Jules Favre"
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1753–1796",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "préambule",
+          "excerpt": "né le 3 février 1753 à Bathelémont (duché de Lorraine) et mort fusillé le 25 février 1796 à Angers, est un militaire français et un général royaliste de la guerre de Vendée"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French soldier and royalist general",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "préambule",
+          "excerpt": "est un militaire français et un général royaliste de la guerre de Vendée"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born at Bathelémont, Lorraine, son of a miller",
+          "source": "https://en.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "lead",
+          "excerpt": "Born in Bathelémont-lès-Bauzemont (Meurthe-et-Moselle), the son of a miller"
+        },
+        {
+          "field": "bio",
+          "claim": "Swiss regiment; gamekeeper at Maulévrier",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "Biographie",
+          "excerpt": "Longtemps simple soldat dans un régiment suisse en France et ensuite garde-chasse au service du comte de Colbert-Maulévrier à Maulévrier, il rejoint les Vendéens quand ils se révoltent contre la Révolution"
+        },
+        {
+          "field": "bio",
+          "claim": "chosen as leader in March 1793; Saint-Florent-le-Vieil",
+          "source": "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e",
+          "locator": "Insurrection contre la levée en masse en mars 1793",
+          "excerpt": "les insurgés prennent pour chefs d'anciens soldats comme Jean-Nicolas Stofflet et Jean Perdriau [...] Ils s'emparent de Saint-Florent-le-Vieil le 12 mars"
+        },
+        {
+          "field": "bio",
+          "claim": "under d'Elbée; battles",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "Biographie",
+          "excerpt": "Pendant la guerre de Vendée, il sert d'abord sous le commandement de Maurice d'Elbée, se bat à Fontenay, Cholet et Beaupréau, Laval et Antrain."
+        },
+        {
+          "field": "bio",
+          "claim": "major-general; succeeded La Rochejaquelein in 1794",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "Biographie",
+          "excerpt": "Il est nommé major-général de l'armée royaliste et, en 1794, succède à Henri de La Rochejaquelein comme général en chef."
+        },
+        {
+          "field": "bio",
+          "claim": "retook Cholet 8 February 1794",
+          "source": "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e",
+          "locator": "Renaissance des armées vendéennes",
+          "excerpt": "Le 8 février, désormais à la tête de 4 000 à 7 000 Vendéens, il attaque Cholet. Bien que défendue par 3 000 hommes, la ville est prise"
+        },
+        {
+          "field": "bio",
+          "claim": "refused to recognise the Republic at La Jaunaye",
+          "source": "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e",
+          "locator": "Les traités de La Jaunaye et de Saint-Florent-le-Vieil",
+          "excerpt": "Les représentants lui offrent les mêmes conditions de paix qu'à Charette et Sapinaud, mais il refuse catégoriquement de reconnaître la République. Le 22 février, il rompt les négociations et regagne l'Anjou."
+        },
+        {
+          "field": "bio",
+          "claim": "peace at Saint-Florent-le-Vieil 2 May 1795",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "Biographie",
+          "excerpt": "le conduisent à faire sa soumission et à accepter les termes du traité de Saint-Florent-le-Vieil, le 2 mai 1795"
+        },
+        {
+          "field": "bio",
+          "claim": "took up arms again for the comte de Provence; maréchal de camp",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "Biographie",
+          "excerpt": "Cependant, il viole bientôt ce traité et, en décembre 1795, reprend les armes à l'instigation d'agents royalistes pour le parti du comte de Provence, le futur Louis XVIII, de qui il a reçu le rang de maréchal de camp."
+        },
+        {
+          "field": "bio",
+          "claim": "rose on 26 January 1796 with 400 men on Artois's order",
+          "source": "https://fr.wikipedia.org/wiki/Guerre_de_Vend%C3%A9e",
+          "locator": "Effondrement des armées vendéennes et victoire des républicains",
+          "excerpt": "Stofflet, fait Lieutenant Général et chevalier de Saint-Louis, reste longtemps dans l'expectative avant de reprendre les armes sans illusion le 26 janvier sur ordre du comte d'Artois. Rejoint par seulement 400 hommes"
+        },
+        {
+          "field": "bio",
+          "claim": "captured and shot at Angers 25 February 1796",
+          "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+          "locator": "Biographie",
+          "excerpt": "Il est surpris par un détachement républicain du régiment de Bassigny, la nuit du 23 au 24 février 1796 dans une métairie, la ferme de la Saugrenière, près de La Poitevinière. [...] Conduit à Angers, Stofflet est condamné à mort par une commission militaire et fusillé le lendemain, 25 février."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "french-catholic-royal-army",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1793,
+          "endYear": 1796,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+              "locator": "Biographie",
+              "claim": "Major-general, then commander in chief of the Catholic and Royal Army of Anjou",
+              "excerpt": "Il est nommé major-général de l'armée royaliste et, en 1794, succède à Henri de La Rochejaquelein comme général en chef."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "french-monarchy",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": null,
+          "endYear": null,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://fr.wikipedia.org/wiki/Jean-Nicolas_Stofflet",
+              "locator": "Biographie",
+              "claim": "Private in a Swiss regiment in royal service",
+              "excerpt": "Longtemps simple soldat dans un régiment suisse en France"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "앙주 봉기군 지휘관, 생플로랑르비에이 점령",
+            "en": "Leader of the Anjou insurgents; took Saint-Florent-le-Vieil"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "가톨릭 왕당군 소장",
+            "en": "Major-general of the Catholic and Royal Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": [
+              1796
+            ]
+          },
+          "r": {
+            "ko": "앙주군 사령관",
+            "en": "Commander in chief of the army of Anjou"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1795
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "생플로랑르비에이 강화",
+            "en": "Peace of Saint-Florent-le-Vieil"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1796
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "재봉기, 체포, 앙제에서 총살",
+            "en": "Rose again; captured and shot at Angers"
+          }
+        }
+      ]
     }
   ]
 }
