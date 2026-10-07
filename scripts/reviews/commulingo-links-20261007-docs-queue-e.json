@@ -1,0 +1,206 @@
+{
+ "scope": "2026-10-07 docs queue E/150: three published documents (migration 311) — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "cpsu-basic-provisions-economic-management-1987",
+   "lang": "ko",
+   "text": "『경제관리의 근본적 개편에 관한 기본 규정』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpsu-basic-provisions-economic-management-1987",
+   "lang": "ko",
+   "text": "경제관리 근본 개편 기본 규정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpsu-basic-provisions-economic-management-1987",
+   "lang": "ko",
+   "text": "급진적 경제관리 개편을 위한 기본 규정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpsu-basic-provisions-economic-management-1987",
+   "lang": "ko",
+   "text": "1987년 6월 전원회의 기본 규정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpsu-basic-provisions-economic-management-1987",
+   "lang": "en",
+   "text": "Basic Provisions for the Radical Restructuring of Economic Management",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpsu-basic-provisions-economic-management-1987",
+   "lang": "en",
+   "text": "Basic Provisions for Fundamental Perestroika of Economic Management",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "ko",
+   "text": "『민주캄푸치아 시기 범죄의 기소에 관한 국제연합·캄보디아 협정』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "ko",
+   "text": "캄보디아 특별재판소 설치 협정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "ko",
+   "text": "ECCC 협정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "ko",
+   "text": "유엔-캄보디아 협정",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue E 링크 검토: 유엔과 캄보디아 사이의 다른 협정과 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "en",
+   "text": "ECCC Agreement",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "en",
+   "text": "UN-Cambodia Agreement",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue E 링크 검토: 다른 유엔-캄보디아 협정과 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "un-cambodia-eccc-agreement-2003",
+   "lang": "en",
+   "text": "Agreement concerning the Prosecution under Cambodian Law of Crimes Committed during the Period of Democratic Kampuchea",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "gromyko-toon-telegram-1977-12-12",
+   "lang": "ko",
+   "text": "『그로미코-툰 회담에 관한 모스크바 주재 미국 대사관 전문』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "gromyko-toon-telegram-1977-12-12",
+   "lang": "ko",
+   "text": "그로미코-툰 회담 전문",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "gromyko-toon-telegram-1977-12-12",
+   "lang": "ko",
+   "text": "Moscow 17909",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue E 링크 검토: 전문 번호라 산문 표현이 아니어서 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "gromyko-toon-telegram-1977-12-12",
+   "lang": "en",
+   "text": "Gromyko–Toon meeting telegram",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue E 링크 검토: 문헌 제목·기구·회담을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "gromyko-toon-telegram-1977-12-12",
+   "lang": "en",
+   "text": "Moscow 17909",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue E 링크 검토: 전문 번호라 산문 표현이 아니어서 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}
