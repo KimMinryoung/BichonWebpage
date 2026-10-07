@@ -68,7 +68,7 @@ const event = buildEvent({
     // 마르탱(Jean-Clément Martin), 마르탱 라치스가 아님; 튀로는 장군과 파견의원
     // 사촌이 같은 성이라 본문은 사촌을 이름 없이 부른다. 「뒤마」는 알렉상드르
     // 뒤마 장군(소설가의 아버지)이라 인물 카드와 겹칠 수 있어 막는다.
-    noAutoLink: ['마르탱', '뒤마', '마르탱 라치스'],
+    noAutoLink: ['마르탱', '뒤마', '마르탱 라치스', '파견의원 튀로', 'representative Turreau'],
     people,
 });
 
