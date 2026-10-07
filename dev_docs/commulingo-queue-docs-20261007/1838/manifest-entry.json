@@ -1,0 +1,47 @@
+{
+  "id": "benin-constitution-1990",
+  "file": "benin-constitution-1990.html",
+  "docLang": "ko",
+  "date": "1990-12-11",
+  "title": {
+    "ko": "베냉 공화국 헌법 (1990년 12월 11일)",
+    "en": "Constitution of the Republic of Benin (11 December 1990)"
+  },
+  "description": {
+    "ko": "국민회의 이후 1990년 12월 국민투표로 채택되고 법률 제90-32호로 공포된 베냉 헌법의 원래 본문. 대통령 5년 임기 1회 연임과 40~70세 후보 연령, 헌법재판소·경제사회이사회·시청각통신고등기구, 쿠데타에 맞선 불복종의 권리와 의무를 정했다.",
+    "en": "The original text of Benin's constitution, adopted by referendum in December 1990 after the National Conference and promulgated as Law No. 90-32. It set a five-year presidential term renewable once, a candidate age range of 40 to 70, a Constitutional Court, an Economic and Social Council and a High Authority for Audiovisual and Communication, and made disobedience to a coup a right and a duty."
+  },
+  "kind": {
+    "ko": "헌법·법령·명령",
+    "en": "Constitutions, laws & orders"
+  },
+  "source": "Loi n° 90-32 du 11 décembre 1990 portant Constitution de la République du Bénin, Journal officiel de la République du Bénin, 102e année, n° 1, 1er janvier 1991. Text: Digithèque MJP (Jean-Pierre Maury), https://mjp.univ-perp.fr/constit/bj1990.htm; promulgation formula and signatures from ConstitutionNet (https://constitutionnet.org/sites/default/files/Benin%20const.%20fr.pdf) and WIPO Lex BJ001 (https://www.wipo.int/wipolex/fr/text/490646); three copies collated word by word, accessed 2026-10-07. Original 1990 text (before the 2019 revision). National constitution; not subject to copyright.",
+  "people": [
+    "mathieu-kerekou",
+    "nicephore-soglo",
+    "maurice-ahanhanzo-glele"
+  ],
+  "terms": [
+    "sovereign-national-conference"
+  ],
+  "events": [
+    "beninese-socialist-transition-1974-1990"
+  ],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": [
+      "『베냉 공화국 헌법』",
+      "1990년 베냉 헌법",
+      "베냉 헌법",
+      "헌법법률 제90-32호",
+      "법률 제90-32호"
+    ],
+    "en": [
+      "Constitution of Benin of 11 December 1990",
+      "1990 Constitution of Benin",
+      "Beninese Constitution of 1990",
+      "Law No. 90-32"
+    ]
+  },
+  "noAutoLink": []
+}
