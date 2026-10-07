@@ -3494,7 +3494,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 .commu-section-wide > .commu-event-timeline-list,
 .commu-section-wide > .commu-tl-filter,
-.commu-section-wide > .commu-tl-map-hint,
 .commu-section-wide > .commu-event-control {
     margin-inline: var(--content-inset);
 }
@@ -3913,16 +3912,13 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* The row's twin of the map badge; the pair lights together. */
 .commu-tl-geo-badge {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 1.6rem; height: 1.6rem; margin-right: .45rem; padding: 0;
-    box-sizing: border-box; border-radius: 50%; background: transparent; cursor: pointer;
+    width: 1.3rem; height: 1.3rem; margin-right: .45rem; padding: 0;
+    box-sizing: border-box; border-radius: 50%;
     border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-    font-family: inherit; font-weight: inherit; font-style: normal; font-size: .72rem; line-height: var(--leading-none);
+    font-style: normal; font-size: .72rem; line-height: var(--leading-none);
     color: var(--text-primary);
 }
 .commu-event-timeline-list li[data-geo-num] { cursor: pointer; }
-.commu-tl-geo-badge:focus-visible { outline: 2px solid var(--clr-red); outline-offset: 2px; }
-.commu-tl-map-hint { color: var(--text-muted); font-size: var(--text-sm); line-height: var(--leading-normal); margin-block: 0 var(--space-3); }
-.commu-tl-unpin { margin-top: var(--space-2); }
 .commu-event-timeline-list li[data-geo-num]:hover,
 .commu-event-timeline-list li.is-map-active { background: color-mix(in srgb, var(--border) 6%, transparent); }
 .commu-event-timeline-list li[data-geo-num]:hover .commu-tl-geo-badge,
