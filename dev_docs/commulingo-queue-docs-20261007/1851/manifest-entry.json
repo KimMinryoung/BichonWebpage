@@ -1,0 +1,28 @@
+{
+  "id": "gromyko-toon-telegram-1977-12-12",
+  "file": "gromyko-toon-telegram-1977-12-12.html",
+  "docLang": "ko",
+  "date": "1977-12-12",
+  "title": {
+    "ko": "그로미코-툰 회담에 관한 모스크바 주재 미국 대사관 전문 (1977년 12월 12일)",
+    "en": "US Embassy Moscow telegram on the Gromyko–Toon meeting (12 December 1977)"
+  },
+  "description": {
+    "ko": "오가덴 전쟁 중 맬컴 툰 미국 대사가 그로미코 소련 외무장관을 만나고 보낸 보고 전문. 그로미코는 에티오피아에 대한 소련 무기 공급이 「대수롭지 않다」고 하고, 소말리아가 자위용 무기 공급 조건을 어기고 에티오피아를 침공했다고 주장했다.",
+    "en": "Ambassador Malcolm Toon's report of his meeting with Soviet Foreign Minister Andrei Gromyko during the Ogaden War. Gromyko called Soviet arms supplies to Ethiopia 'insignificant' and said Somalia had broken the self-defence condition attached to Soviet arms and invaded Ethiopia."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Telegram From the Department of State to Secretary of State Vance in the Middle East, Washington, December 12, 1977, 2000Z (Tosec 120139/296012, repeating Moscow 17909), Foreign Relations of the United States, 1977–1980, Volume VI, Soviet Union, Document 65; Carter Library, National Security Affairs, Staff Material, Office, Meetings File, Box 7. 저본: https://history.state.gov/historicaldocuments/frus1977-80v06/d65 (2026-10-07 접근). 미국 정부 문서로 저작권 보호 대상 아님.",
+  "people": ["gromyko", "mohamed-siad-barre", "mengistu-haile-mariam", "zbigniew-brzezinski"],
+  "terms": [],
+  "events": ["somali-socialist-transition-1969-1976", "ethiopian-revolution-1974-1977"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『그로미코-툰 회담에 관한 모스크바 주재 미국 대사관 전문』", "그로미코-툰 회담 전문", "Moscow 17909"],
+    "en": ["Gromyko–Toon meeting telegram", "Moscow 17909"]
+  },
+  "noAutoLink": []
+}
