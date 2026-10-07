@@ -164,8 +164,18 @@ router.get('/offices/:officeId', async (req, res) => {
         }
         const relatedReports = await relatedReportsForTopic('office', office.id, lang);
         setShortPublicCache(res);
+        // The people link filters by activity affiliation and officeId: use the
+        // affiliation that finds the most people (party and Comintern lines are
+        // not mostly state-soviet), and drop the link when none finds anyone.
+        const [officeAffiliation] = [...activitiesModel.OFFICE_AFFILIATIONS]
+            .map(affiliationId => [affiliationId, standardized.people
+                .filter(person => activitiesModel.matchesActivities(person, { affiliationId, officeId: office.id })).length])
+            .filter(([, count]) => count > 0)
+            .sort((a, b) => b[1] - a[1])[0] || [];
+        const officePeopleHref = officeAffiliation ? `/commulingo/people?affiliation=${officeAffiliation}&office=${office.id}` : '';
         res.render('public/commulingo-office', {
             office,
+            officePeopleHref,
             rosters: availableBodies(lang).filter(body => body.officeId === office.id),
             relatedReports,
             roleIconSvg,

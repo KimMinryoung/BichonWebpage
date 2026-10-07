@@ -27,6 +27,7 @@ const OFFICE_DISPLAY_ORDER = [
     'head-of-government',
     'defence',
     'state-security',
+    'control-commissions',
     'ideology-propaganda',
     'culture-literature',
     'state-head',
@@ -52,6 +53,7 @@ const ROLE_OFFICE_TITLES = {
     'head-of-government': { ko: '정부 수반', en: 'Heads of government' },
     defence: { ko: '군사 · 국방', en: 'Military and defence' },
     'state-security': { ko: '국가보안 기관', en: 'State security agencies' },
+    'control-commissions': { ko: '통제 · 감찰 기관', en: 'Control and inspection bodies' },
     'ideology-propaganda': { ko: '이념 · 선전', en: 'Ideology and propaganda' },
     'culture-literature': { ko: '문화 · 문학예술 통제', en: 'Culture and literary control' },
     'state-head': { ko: '국가원수', en: 'Formal heads of state' },
@@ -72,6 +74,7 @@ const ROLE_OFFICE_TITLES = {
 // paths, which are the one genuinely code-shaped thing in this area).
 const OFFICE_ICON = {
     'state-security': 'eye',
+    'control-commissions': 'scale',
     defence: 'star',
     'foreign-affairs': 'handshake',
     'ideology-propaganda': 'megaphone',

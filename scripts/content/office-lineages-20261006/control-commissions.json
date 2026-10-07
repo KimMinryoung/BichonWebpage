@@ -1,0 +1,1162 @@
+{
+ "officeId": "control-commissions",
+ "title": {
+  "ko": "통제 · 감찰 기관",
+  "en": "Control and inspection bodies"
+ },
+ "blurb": {
+  "ko": "당 규율을 다룬 통제위원회 계열과 국가기관을 감찰한 국가통제 계열.",
+  "en": "The party's control commissions, which enforced party discipline, and the state control bodies that inspected the administration."
+ },
+ "range": "1918–1991",
+ "lineage": [
+  {
+   "name": {
+    "ko": "국가통제인민위원부",
+    "en": "State Control"
+   },
+   "period": "1918–1920",
+   "body": {
+    "ko": "혁명 직후의 노동자 통제와 1918년 1월의 중앙통제참의회를 이어받아 1918년 7월 국가통제인민위원부가 섰다. 옛 제정의 회계 감사 기구를 바탕으로 한 관료적 감사 기관이었고, 1919년 3월부터 스탈린이 이끌었다.",
+    "en": "Workers' control after the revolution and the Central Control Board of January 1918 gave way in July 1918 to the People's Commissariat of State Control, a bureaucratic audit office built on the tsarist one. Stalin headed it from March 1919."
+   },
+   "termId": "workers-control"
+  },
+  {
+   "name": {
+    "ko": "라브크린과 중앙통제위원회",
+    "en": "Rabkrin and the Central Control Commission"
+   },
+   "period": "1920–1934",
+   "body": {
+    "ko": "1920년 국가통제인민위원부는 노동자·농민을 감사에 끌어들인다는 노동자농민감찰인민위원부(라브크린)로 바뀌었고, 같은 해 당에는 규율 위반과 「관료적 타락」을 다루는 통제위원회가 생겼다. 레닌은 마지막 글들에서 두 기구를 합쳐 중앙위원회를 견제하게 하자고 제안했고, 1923년부터 중앙통제위원회 위원장이 라브크린 인민위원을 겸했다. 실제로는 반대파를 징계·제명하는 도구가 되었다.",
+    "en": "In 1920 State Control became the Workers' and Peasants' Inspection (Rabkrin), meant to draw workers and peasants into inspection, and the party set up a control commission for breaches of discipline and \"bureaucratic degeneration\". In his last writings Lenin proposed merging the two as a check on the Central Committee, and from 1923 the chairman of the Central Control Commission also served as People's Commissar of Rabkrin. In practice the pair became the instrument for disciplining and expelling the oppositions."
+   },
+   "termId": "workers-and-peasants-inspectorate-rabkrin"
+  },
+  {
+   "name": {
+    "ko": "당통제위원회와 소비에트통제위원회",
+    "en": "Party Control and Soviet Control"
+   },
+   "period": "1934–1952",
+   "body": {
+    "ko": "1934년 제17차 당대회는 대회가 선출하던 중앙통제위원회를 없애고 중앙위원회 아래 당통제위원회를 두었으며, 라브크린은 인민위원회의의 소비에트통제위원회로 바뀌었다. 당통제위원회는 독립된 감찰 기관이 아니라 중앙위원회의 하부 기관이 되어 대숙청기의 당원 심사와 제명을 맡았다.",
+    "en": "The Seventeenth Congress of 1934 replaced the elected Central Control Commission with a Commission of Party Control under the Central Committee, and Rabkrin with the Commission of Soviet Control under the Council of People's Commissars. Party control was now a subordinate organ of the Central Committee, not an independent check, and it handled the vetting and expulsions of the Great Purge."
+   },
+   "termId": "great-purge"
+  },
+  {
+   "name": {
+    "ko": "국가통제부",
+    "en": "Ministry of State Control"
+   },
+   "period": "1940–1957",
+   "body": {
+    "ko": "1940년 소비에트통제위원회는 국가통제인민위원부로, 1946년에는 국가통제부로 바뀌었다. 메흘리스·메르쿨로프 같은 스탈린 측근이 맡은 강력한 부처였으나, 1957년 「반당 그룹」 사건과 함께 몰로토프를 끝으로 폐지되었다.",
+    "en": "In 1940 Soviet Control became the People's Commissariat of State Control, and in 1946 the Ministry of State Control, a powerful ministry held by Stalin's men such as Mekhlis and Merkulov. It was abolished in 1957, with Molotov its last minister, in the fall of the \"Anti-Party Group\"."
+   }
+  },
+  {
+   "name": {
+    "ko": "당·국가 통제의 통합과 분리",
+    "en": "Party and state control merged and separated"
+   },
+   "period": "1952–1965",
+   "body": {
+    "ko": "1952년 당통제위원회는 이름을 「위원회(Комитет)」로 바꾸었고, 스탈린 사후 시베르니크 아래에서 탄압 피해자의 복권 심사를 맡았다. 1962년 흐루쇼프는 당통제와 국가통제를 셸레핀의 당·국가통제위원회로 합쳤다가, 그가 실각한 뒤인 1965년 다시 둘로 나뉘었다. 통합 기간에는 중앙위원회 산하 당위원회가 당원 징계를 맡았다.",
+    "en": "In 1952 the Commission of Party Control became the Party Control Committee, and after Stalin's death it reviewed the rehabilitation of repression victims under Shvernik. In 1962 Khrushchev merged party and state control into Shelepin's Party-State Control Committee; after his fall it was split again in 1965. While they were merged, a Party Commission of the Central Committee handled party discipline."
+   }
+  },
+  {
+   "name": {
+    "ko": "인민통제와 당통제의 정착",
+    "en": "People's Control and settled party control"
+   },
+   "period": "1965–1990",
+   "body": {
+    "ko": "국가 쪽은 인민통제위원회가 되어 수백만 명의 「인민통제원」을 거느린 감사 조직이 되었고, 당통제위원회는 펠셰 아래 17년간 당원 개인 사건을 심리했다. 페레스트로이카기에는 당통제위원장 솔로멘체프가 정치국 복권위원회를 이끌며 1930~1950년대 탄압 피해자 복권을 다시 열었다.",
+    "en": "The state side became the People's Control Committee, an inspection network with millions of volunteer controllers, while the Party Control Committee under Pelshe heard members' personal cases for seventeen years. Under perestroika its chairman Solomentsev led the Politburo's rehabilitation commission, which reopened the cases of the victims of the 1930s to 1950s."
+   }
+  },
+  {
+   "name": {
+    "ko": "중앙통제위원회의 부활과 해체",
+    "en": "The Central Control Commission revived, then ended"
+   },
+   "period": "1990–1991",
+   "body": {
+    "ko": "1990년 제28차 당대회는 당통제위원회와 중앙감사위원회를 합쳐 대회가 선출하는 중앙통제위원회를 되살렸고, 국가 쪽 인민통제위원회는 같은 해 말 폐지되어 1991년 최고소비에트 소속 감사원으로 바뀌었다. 당 중앙통제위원회는 1991년 11월 당 활동 금지와 함께 끝났다.",
+    "en": "The Twenty-eighth Congress of 1990 merged the Party Control Committee and the Central Auditing Commission into a congress-elected Central Control Commission again. People's Control was abolished at the end of the same year and replaced in 1991 by a Control Chamber answerable to the Supreme Soviet. The party commission ended when the party was banned in November 1991."
+   }
+  }
+ ],
+ "tracks": [
+  {
+   "id": "party",
+   "title": {
+    "ko": "당 통제위원회",
+    "en": "Party control commissions"
+   },
+   "blurb": {
+    "ko": "중앙통제위원회(1920~1934) → 당통제위원회(1934~1990) → 소련공산당 중앙통제위원회(1990~1991). 1920~1923년에는 위원장 직이 없었다. 1962~1966년 당통제위원회가 당·국가통제위원회에 흡수된 동안의 당 징계 기구(중앙위원회 산하 당위원회)를 함께 실었다. 예조프의 종료일은 후임 안드레예프의 선임일이다.",
+    "en": "Central Control Commission (1920–1934) → Commission, later Committee, of Party Control (1934–1990) → CPSU Central Control Commission (1990–1991). There was no chairman in 1920–1923. The Party Commission of the Central Committee, which handled discipline while party control was folded into Party-State Control (1962–1966), is included. Yezhov's end date is Andreyev's appointment."
+   }
+  },
+  {
+   "id": "state",
+   "title": {
+    "ko": "국가통제",
+    "en": "State control"
+   },
+   "blurb": {
+    "ko": "국가통제인민위원부 → 노동자농민감찰인민위원부(라브크린) → 소비에트통제위원회 → 국가통제인민위원부·국가통제부 → 소비에트통제위원회·국가통제위원회 → 당·국가통제위원회 → 인민통제위원회 → 감사원. 1923년 이후 러시아 공화국 라브크린은 싣지 않았다. 1937~1938년, 1957년, 1973~1974년은 공석이었다. 마냐킨의 해임일은 출처에 따라 1989년 4월 또는 6월이며, 그 사이 올레크 솔로비요프가 직무를 대행했다.",
+    "en": "State Control → Workers' and Peasants' Inspection (Rabkrin) → Commission of Soviet Control → Commissariat, then Ministry, of State Control → Commission of Soviet Control and State Control Commission → Party-State Control → People's Control → Control Chamber. The RSFSR Rabkrin after 1923 is not listed. The post was vacant in 1937–1938, in 1957 and in 1973–1974. Sources put Manyakin's release in April or June 1989; Oleg Solovyov acted in between."
+   }
+  }
+ ],
+ "rows": [
+  {
+   "track": "party",
+   "post": {
+    "ko": "중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission"
+   },
+   "period": {
+    "start": [
+     1923,
+     4,
+     26
+    ],
+    "end": [
+     1926,
+     8,
+     5
+    ]
+   },
+   "note": {
+    "ko": "노동자농민감찰 인민위원 겸임",
+    "en": "Also People's Commissar of the Workers' and Peasants' Inspection"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Куйбышев,_Валериан_Владимирович",
+   "personId": "kuibyshev"
+  },
+  {
+   "track": "party",
+   "personId": "ordzhonikidze",
+   "post": {
+    "ko": "중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission"
+   },
+   "period": {
+    "start": [
+     1926,
+     11,
+     5
+    ],
+    "end": [
+     1930,
+     11,
+     10
+    ]
+   },
+   "note": {
+    "ko": "노동자농민감찰 인민위원 겸임",
+    "en": "Also People's Commissar of the Workers' and Peasants' Inspection"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Орджоникидзе,_Григорий_Константинович"
+  },
+  {
+   "track": "party",
+   "personId": "andrei-andreyev",
+   "post": {
+    "ko": "중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission"
+   },
+   "period": {
+    "start": [
+     1930,
+     12,
+     15
+    ],
+    "end": [
+     1931,
+     10,
+     9
+    ]
+   },
+   "note": {
+    "ko": "노동자농민감찰 인민위원 겸임",
+    "en": "Also People's Commissar of the Workers' and Peasants' Inspection"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Андреев,_Андрей_Андреевич"
+  },
+  {
+   "track": "party",
+   "personId": "rudzutak",
+   "post": {
+    "ko": "중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission"
+   },
+   "period": {
+    "start": [
+     1931,
+     10,
+     9
+    ],
+    "end": [
+     1934,
+     2,
+     10
+    ]
+   },
+   "note": {
+    "ko": "노동자농민감찰 인민위원 겸임",
+    "en": "Also People's Commissar of the Workers' and Peasants' Inspection"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рудзутак,_Ян_Эрнестович"
+  },
+  {
+   "track": "party",
+   "personId": "kaganovich",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Commission of Party Control of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1934,
+     2,
+     10
+    ],
+    "end": [
+     1935,
+     2,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Каганович,_Лазарь_Моисеевич"
+  },
+  {
+   "track": "party",
+   "personId": "yezhov",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Commission of Party Control of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1935,
+     2
+    ],
+    "end": [
+     1939,
+     3,
+     22
+    ]
+   },
+   "note": {
+    "ko": "1938년 11월 내무인민위원 해임 뒤로는 이름만",
+    "en": "In name only after his removal from the NKVD in November 1938"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Ежов,_Николай_Иванович"
+  },
+  {
+   "track": "party",
+   "personId": "andrei-andreyev",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Commission of Party Control of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1939,
+     3,
+     22
+    ],
+    "end": [
+     1952,
+     10,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Андреев,_Андрей_Андреевич"
+  },
+  {
+   "track": "party",
+   "personId": "matvei-shkiryatov",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1952,
+     10,
+     16
+    ],
+    "end": [
+     1954,
+     1,
+     18
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "Died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Шкирятов,_Матвей_Фёдорович"
+  },
+  {
+   "track": "party",
+   "name": {
+    "ko": "파벨 코마로프",
+    "en": "Pavel Komarov"
+   },
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1954,
+     1
+    ],
+    "end": [
+     1956,
+     2
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комаров,_Павел_Тимофеевич"
+  },
+  {
+   "track": "party",
+   "personId": "shvernik",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1956,
+     2,
+     27
+    ],
+    "end": [
+     1962,
+     11,
+     23
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Шверник,_Николай_Михайлович"
+  },
+  {
+   "track": "party",
+   "personId": "shvernik",
+   "post": {
+    "ko": "중앙위원회 산하 당위원회 위원장",
+    "en": "Chairman of the Party Commission of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1962,
+     11,
+     23
+    ],
+    "end": [
+     1966,
+     3,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Шверник,_Николай_Михайлович"
+  },
+  {
+   "track": "party",
+   "personId": "arvids-pelshe",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1966,
+     4,
+     8
+    ],
+    "end": [
+     1983,
+     5,
+     29
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "Died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Пельше,_Арвид_Янович"
+  },
+  {
+   "track": "party",
+   "personId": "mikhail-solomentsev",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1983,
+     6,
+     15
+    ],
+    "end": [
+     1988,
+     9,
+     30
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Соломенцев,_Михаил_Сергеевич"
+  },
+  {
+   "track": "party",
+   "personId": "boris-pugo",
+   "post": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "period": {
+    "start": [
+     1988,
+     9,
+     30
+    ],
+    "end": [
+     1990,
+     7,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Пуго,_Борис_Карлович"
+  },
+  {
+   "track": "party",
+   "personId": "boris-pugo",
+   "post": {
+    "ko": "소련공산당 중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission of the CPSU"
+   },
+   "period": {
+    "start": [
+     1990,
+     7,
+     14
+    ],
+    "end": [
+     1991,
+     4,
+     23
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Пуго,_Борис_Карлович"
+  },
+  {
+   "track": "party",
+   "name": {
+    "ko": "예브게니 마호프",
+    "en": "Yevgeny Makhov"
+   },
+   "post": {
+    "ko": "소련공산당 중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission of the CPSU"
+   },
+   "period": {
+    "start": [
+     1991,
+     4,
+     23
+    ],
+    "end": [
+     1991,
+     11,
+     6
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Махов,_Евгений_Николаевич"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "카를 란데르",
+    "en": "Karl Lander"
+   },
+   "post": {
+    "ko": "러시아 공화국 국가통제인민위원",
+    "en": "People's Commissar of State Control of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1918,
+     5,
+     9
+    ],
+    "end": [
+     1919,
+     3,
+     25
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_государственного_контроля_РСФСР"
+  },
+  {
+   "track": "state",
+   "personId": "stalin",
+   "post": {
+    "ko": "러시아 공화국 국가통제인민위원",
+    "en": "People's Commissar of State Control of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1919,
+     3,
+     30
+    ],
+    "end": [
+     1920,
+     2,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_государственного_контроля_РСФСР"
+  },
+  {
+   "track": "state",
+   "personId": "stalin",
+   "post": {
+    "ko": "러시아 공화국 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1920,
+     2,
+     24
+    ],
+    "end": [
+     1922,
+     5,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "alexander-tsyurupa",
+   "post": {
+    "ko": "러시아 공화국 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1922,
+     5,
+     6
+    ],
+    "end": [
+     1923,
+     4,
+     28
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "kuibyshev",
+   "post": {
+    "ko": "러시아 공화국 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the RSFSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     4,
+     28
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "kuibyshev",
+   "post": {
+    "ko": "소련 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the USSR"
+   },
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1926,
+     8,
+     5
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "ordzhonikidze",
+   "post": {
+    "ko": "소련 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the USSR"
+   },
+   "period": {
+    "start": [
+     1926,
+     11,
+     5
+    ],
+    "end": [
+     1930,
+     11,
+     10
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "andrei-andreyev",
+   "post": {
+    "ko": "소련 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the USSR"
+   },
+   "period": {
+    "start": [
+     1930,
+     11,
+     22
+    ],
+    "end": [
+     1931,
+     10,
+     9
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "rudzutak",
+   "post": {
+    "ko": "소련 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the USSR"
+   },
+   "period": {
+    "start": [
+     1931,
+     10,
+     9
+    ],
+    "end": [
+     1934,
+     2,
+     11
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+  },
+  {
+   "track": "state",
+   "personId": "kuibyshev",
+   "post": {
+    "ko": "인민위원회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
+   },
+   "period": {
+    "start": [
+     1934,
+     2,
+     11
+    ],
+    "end": [
+     1935,
+     1,
+     25
+    ]
+   },
+   "note": {
+    "ko": "재임 중 사망",
+    "en": "Died in office"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "nikolai-antipov",
+   "post": {
+    "ko": "인민위원회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
+   },
+   "period": {
+    "start": [
+     1935,
+     4,
+     27
+    ],
+    "end": [
+     1937,
+     6,
+     21
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "kosior",
+   "post": {
+    "ko": "인민위원회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
+   },
+   "period": {
+    "start": [
+     1938,
+     1,
+     19
+    ],
+    "end": [
+     1938,
+     5,
+     3
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "자하르 벨렌키",
+    "en": "Zakhar Belenky"
+   },
+   "post": {
+    "ko": "인민위원회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
+   },
+   "period": {
+    "start": [
+     1938,
+     5,
+     15
+    ],
+    "end": [
+     1939,
+     4,
+     23
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "rozaliya-zemlyachka",
+   "post": {
+    "ko": "인민위원회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
+   },
+   "period": {
+    "start": [
+     1939,
+     5,
+     8
+    ],
+    "end": [
+     1940,
+     9,
+     6
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "lev-mekhlis",
+   "post": {
+    "ko": "소련 국가통제인민위원",
+    "en": "People's Commissar of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1940,
+     9,
+     6
+    ],
+    "end": [
+     1941,
+     6,
+     21
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "vasily-popov",
+   "post": {
+    "ko": "소련 국가통제인민위원",
+    "en": "People's Commissar of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1941,
+     6,
+     22
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "lev-mekhlis",
+   "post": {
+    "ko": "소련 국가통제장관",
+    "en": "Minister of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1950,
+     10,
+     27
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "merkulov",
+   "post": {
+    "ko": "소련 국가통제장관",
+    "en": "Minister of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1950,
+     10,
+     27
+    ],
+    "end": [
+     1953,
+     5,
+     22
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "알렉산드르 파벨리예프",
+    "en": "Alexander Pavelyev"
+   },
+   "post": {
+    "ko": "소련 국가통제장관",
+    "en": "Minister of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     5,
+     23
+    ],
+    "end": [
+     1953,
+     12,
+     16
+    ]
+   },
+   "note": {
+    "ko": "직무대행",
+    "en": "Acting"
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "바실리 자보론코프",
+    "en": "Vasily Zhavoronkov"
+   },
+   "post": {
+    "ko": "소련 국가통제장관",
+    "en": "Minister of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1953,
+     12,
+     16
+    ],
+    "end": [
+     1956,
+     11,
+     21
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "molotov",
+   "post": {
+    "ko": "소련 국가통제장관",
+    "en": "Minister of State Control of the USSR"
+   },
+   "period": {
+    "start": [
+     1956,
+     11,
+     21
+    ],
+    "end": [
+     1957,
+     6,
+     29
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "게오르기 예뉴틴",
+    "en": "Georgy Yenyutin"
+   },
+   "post": {
+    "ko": "각료회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of Ministers"
+   },
+   "period": {
+    "start": [
+     1957,
+     12,
+     18
+    ],
+    "end": [
+     1961,
+     7,
+     22
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "게오르기 예뉴틴",
+    "en": "Georgy Yenyutin"
+   },
+   "post": {
+    "ko": "각료회의 국가통제위원회 의장",
+    "en": "Chairman of the State Control Commission of the Council of Ministers"
+   },
+   "period": {
+    "start": [
+     1961,
+     8,
+     15
+    ],
+    "end": [
+     1962,
+     11,
+     24
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "shelepin",
+   "post": {
+    "ko": "당·국가통제위원회 의장",
+    "en": "Chairman of the Party-State Control Committee"
+   },
+   "period": {
+    "start": [
+     1962,
+     11,
+     23
+    ],
+    "end": [
+     1965,
+     12,
+     9
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  },
+  {
+   "track": "state",
+   "personId": "pavel-kovanov",
+   "post": {
+    "ko": "소련 인민통제위원회 의장",
+    "en": "Chairman of the People's Control Committee of the USSR"
+   },
+   "period": {
+    "start": [
+     1965,
+     12,
+     9
+    ],
+    "end": [
+     1971,
+     7,
+     22
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комитет_народного_контроля_СССР"
+  },
+  {
+   "track": "state",
+   "personId": "gennady-voronov",
+   "post": {
+    "ko": "소련 인민통제위원회 의장",
+    "en": "Chairman of the People's Control Committee of the USSR"
+   },
+   "period": {
+    "start": [
+     1971,
+     7,
+     22
+    ],
+    "end": [
+     1973,
+     5,
+     7
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комитет_народного_контроля_СССР"
+  },
+  {
+   "track": "state",
+   "personId": "aleksei-shkolnikov",
+   "post": {
+    "ko": "소련 인민통제위원회 의장",
+    "en": "Chairman of the People's Control Committee of the USSR"
+   },
+   "period": {
+    "start": [
+     1974,
+     7,
+     26
+    ],
+    "end": [
+     1987,
+     2,
+     27
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комитет_народного_контроля_СССР"
+  },
+  {
+   "track": "state",
+   "personId": "sergei-manyakin",
+   "post": {
+    "ko": "소련 인민통제위원회 의장",
+    "en": "Chairman of the People's Control Committee of the USSR"
+   },
+   "period": {
+    "start": [
+     1987,
+     2,
+     27
+    ],
+    "end": [
+     1989,
+     4,
+     1
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комитет_народного_контроля_СССР"
+  },
+  {
+   "track": "state",
+   "personId": "gennady-kolbin",
+   "post": {
+    "ko": "소련 인민통제위원회 의장",
+    "en": "Chairman of the People's Control Committee of the USSR"
+   },
+   "period": {
+    "start": [
+     1989,
+     7,
+     7
+    ],
+    "end": [
+     1990,
+     12,
+     26
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комитет_народного_контроля_СССР"
+  },
+  {
+   "track": "state",
+   "name": {
+    "ko": "알렉산드르 오를로프",
+    "en": "Alexander Orlov"
+   },
+   "post": {
+    "ko": "소련 감사원 의장",
+    "en": "Chairman of the Control Chamber of the USSR"
+   },
+   "period": {
+    "start": [
+     1991,
+     5,
+     16
+    ],
+    "end": [
+     1992,
+     2,
+     3
+    ]
+   },
+   "source": "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+  }
+ ]
+}
