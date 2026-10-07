@@ -1,0 +1,28 @@
+{
+  "id": "soviet-law-on-state-enterprise-1987",
+  "file": "soviet-law-on-state-enterprise-1987.html",
+  "docLang": "ko",
+  "date": "1987-06-30",
+  "title": {
+    "ko": "국영기업(연합)에 관한 소련 법률 (1987년 6월 30일)",
+    "en": "Law of the USSR on the State Enterprise (Association) (30 June 1987)"
+  },
+  "description": {
+    "ko": "1987년 6월 30일 소련 최고소비에트가 채택하고 1988년 1월 1일 시행한 국영기업법의 원본 전문. 기업을 완전 독립채산·자기금융·자주관리의 「사회주의적 상품 생산자」로 규정하고, 통제 수치·국가 주문·경제 기준치에 따른 자율 계획, 책임자 선출과 노동집단 평의회, 계약 가격, 대외경제 활동, 기업 해산까지 25개 조로 정했다.",
+    "en": "The original 1987 text of the Soviet Law on the State Enterprise, adopted by the USSR Supreme Soviet on 30 June 1987 and in force from 1 January 1988. Its 25 articles define the enterprise as a 'socialist commodity producer' run on full khozraschet, self-financing and self-management, with self-drafted plans guided by control figures, state orders and economic norms, elected managers and a labour-collective council, contract prices, foreign economic activity and the closure of enterprises."
+  },
+  "kind": {
+    "ko": "헌법·법령·명령",
+    "en": "Constitutions, laws & orders"
+  },
+  "source": "Закон Союза Советских Социалистических Республик от 30 июня 1987 г. № 7284-XI «О государственном предприятии (объединении)» // Ведомости Верховного Совета СССР. 1987. № 26. Ст. 385; Заря Востока (Тбилиси). 1987. 2 июля. № 152–153. С. 1–4. 저본: 1987년 원본 — 제1~14조 base.garant.ru/3962016 (1989년 8월 개정 전 판), 제15~25조 economics.kiev.ua/download/ZakonySSSR/data01/tex11996.htm에서 1989년 개정분을 걷어 냄; 전체를 『자랴 보스토카』 지면(dspace.nplg.gov.ge, handle 1234/538328)과 대조 (2026-10-07 접근). 국가 법령으로 저작권 보호 대상 아님.",
+  "people": ["gromyko"],
+  "terms": ["law-on-state-enterprise-1987", "khozraschet", "gosplan", "glasnost", "perestroika", "law-on-cooperatives-1988"],
+  "events": ["nineteenth-party-conference", "economic-reform-debate"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『국영기업(연합)에 관한 소련 법률』", "국영기업(연합)법", "1987년 국영기업법", "소련 국영기업법"],
+    "en": ["Law on the State Enterprise (Association)", "1987 Law on State Enterprise", "Soviet State Enterprise Law"]
+  },
+  "noAutoLink": []
+}
