@@ -1,0 +1,55 @@
+{
+  "id": "french-revolution-relations-20261007",
+  "changes": [
+    {
+      "event": "french-revolution-1789-1799",
+      "column": "relations",
+      "expected": {
+        "related": [
+          "french-revolutionary-wars-1792-1802",
+          "haitian-revolution-1791-1804"
+        ]
+      },
+      "value": {}
+    },
+    {
+      "event": "french-revolutionary-wars-1792-1802",
+      "column": "relations",
+      "expected": {
+        "related": [
+          "french-revolution-1789-1799",
+          "vendee-war-1793-1796"
+        ]
+      },
+      "value": {
+        "parent": "french-revolution-1789-1799"
+      }
+    },
+    {
+      "event": "haitian-revolution-1791-1804",
+      "column": "relations",
+      "expected": {
+        "related": [
+          "french-revolution-1789-1799",
+          "french-revolutionary-wars-1792-1802"
+        ]
+      },
+      "value": {
+        "parent": "french-revolution-1789-1799"
+      }
+    },
+    {
+      "event": "vendee-war-1793-1796",
+      "column": "relations",
+      "expected": {
+        "parent": "french-revolution-1789-1799",
+        "related": [
+          "french-revolutionary-wars-1792-1802"
+        ]
+      },
+      "value": {
+        "parent": "french-revolution-1789-1799"
+      }
+    }
+  ]
+}

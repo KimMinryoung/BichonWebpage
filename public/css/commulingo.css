@@ -2944,15 +2944,16 @@ a.commu-person-position:focus-visible {
     height: 0.86em;
     width: auto;
     border-radius: 0;
-    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.28);
+    border: 0;
+    box-shadow: none;
     vertical-align: middle;
     object-fit: contain;
     flex: 0 0 auto;
 }
 
 .commu-nationality-hub-flag .commu-flag {
-    width: 54px;
-    height: auto;
+    height: 36px;
+    width: auto;
 }
 
 .commu-nationality-hub-head {
@@ -3016,12 +3017,9 @@ a.commu-person-position:focus-visible {
 .commu-world-map-panel.is-country .wmap-marker.is-selected { visibility: hidden; }
 .wmap-history-line { stroke: var(--clr-red); stroke-width: 3; opacity: .65; }
 .wmap-marker { cursor: pointer; outline: none; -webkit-tap-highlight-color: transparent; }
-.wmap-marker rect { fill: var(--bg-canvas); stroke: color-mix(in srgb, var(--border) 75%, transparent); stroke-width: 1.4; }
+.wmap-marker rect { fill: transparent; stroke: none; }
 .wmap-marker image { pointer-events: none; }
-.wmap-marker:hover rect,
-.wmap-marker:focus-visible rect,
-.wmap-marker.is-map-active rect,
-.wmap-marker.is-selected rect { fill: var(--clr-cream); stroke: var(--clr-red); stroke-width: 2.6; }
+.wmap-marker:focus-visible rect { stroke: var(--clr-red); stroke-width: 2.6; }
 .wmap-marker-leader { stroke: var(--text-muted); stroke-width: 1; pointer-events: none; }
 .wmap-marker-leader.is-map-active { stroke: var(--clr-red); stroke-width: 1.8; }
 .commu-world-map-controls {
@@ -3051,7 +3049,7 @@ a.commu-person-position:focus-visible {
 .commu-country-card:hover,
 .commu-country-card:focus-visible,
 .commu-country-card.is-map-active { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
-.commu-country-card .commu-flag { flex: 0 0 auto; height: 22px; width: 32px; }
+.commu-country-card .commu-flag { flex: 0 0 auto; height: 22px; width: auto; }
 .commu-country-card-icon { display: flex; flex: 0 0 32px; justify-content: center; }
 .commu-country-card-icon .commu-role-icon { height: 24px; width: 24px; }
 .commu-country-card span { min-width: 0; }
@@ -4077,23 +4075,23 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* Country tags: flags under the date, and the chip row above the list that
    filters it (commulingo-event-timeline.js). */
 .commu-tl-flags { display: inline-flex; flex-wrap: wrap; gap: .25rem; margin-left: .45rem; vertical-align: -1px; }
-.commu-tl-flags .commu-flag { width: 18px; height: 13px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
+.commu-tl-flags .commu-flag { height: 13px; width: auto; }
 .commu-tl-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
 .commu-tl-chip {
     display: inline-flex; align-items: center; gap: .35rem;
     padding: .25rem .7rem; border: 1px solid var(--border, #555); border-radius: 999px;
     background: transparent; color: var(--text-primary); font: inherit; font-size: .84rem; cursor: pointer;
 }
-.commu-tl-chip .commu-flag { width: 18px; height: 13px; }
+.commu-tl-chip .commu-flag { height: 13px; width: auto; }
 .commu-tl-chip:hover { border-color: var(--accent); }
 .commu-tl-chip.is-active { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); }
 .emap-badge.is-filtered-out { opacity: .25; }
 /* Section country markers (`## … {estonia}`): flags lead the heading and its
    contents entry. */
 .commu-section-flags { display: inline-flex; gap: .3rem; margin-right: .55rem; vertical-align: -2px; }
-h2 .commu-section-flags .commu-flag { width: 22px; height: 15px; border: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
+h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-event-toc .commu-section-flags { margin-right: .45rem; vertical-align: -1px; }
-.commu-event-toc .commu-section-flags .commu-flag { width: 17px; height: 12px; }
+.commu-event-toc .commu-section-flags .commu-flag { height: 12px; width: auto; }
 .commu-event-timeline-list p { margin: .25rem 0 0; line-height: var(--leading-normal); }
 
 /* 결과 and the timeline entries are read as continuous prose in the same column
@@ -5863,7 +5861,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-people-row-epithet { overflow: hidden; color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); text-overflow: ellipsis; white-space: nowrap; }
 .commu-people-row-role { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); }
 .commu-people-row-years { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-muted); font-family: var(--font-mono); font-size: var(--text-xs, .75rem); }
-.commu-people-row-years .commu-flag { width: 18px; height: auto; }
+.commu-people-row-years .commu-flag { height: 13px; width: auto; }
 .commu-people-result-divider { margin: var(--space-4) 0 var(--space-2); padding: var(--space-2) var(--content-inset); border-left: 4px solid var(--text-muted); color: var(--text-secondary); font-size: var(--text-sm); font-weight: 600; list-style: none; grid-column: 1 / -1; }
 .commu-people-browser[aria-busy="true"] .commu-people-rows, .commu-people-browser[aria-busy="true"] .commu-people-grid, .commu-people-browser[aria-busy="true"] .commu-people-results-head { opacity: .5; transition: opacity var(--duration-fast) var(--ease-standard); }
 @media (max-width: 640px) {

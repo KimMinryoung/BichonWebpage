@@ -1233,7 +1233,8 @@ a.commu-person-position:focus-visible {
     height: 0.86em;
     width: auto;
     border-radius: 0;
-    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.28);
+    border: 0;
+    box-shadow: none;
     vertical-align: middle;
     object-fit: contain;
     flex: 0 0 auto;
@@ -2054,7 +2055,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-people-row-epithet { overflow: hidden; color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); text-overflow: ellipsis; white-space: nowrap; }
 .commu-people-row-role { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); }
 .commu-people-row-years { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-muted); font-family: var(--font-mono); font-size: var(--text-xs, .75rem); }
-.commu-people-row-years .commu-flag { width: 18px; height: auto; }
+.commu-people-row-years .commu-flag { height: 13px; width: auto; }
 .commu-people-result-divider { margin: var(--space-4) 0 var(--space-2); padding: var(--space-2) var(--content-inset); border-left: 4px solid var(--text-muted); color: var(--text-secondary); font-size: var(--text-sm); font-weight: 600; list-style: none; grid-column: 1 / -1; }
 .commu-people-browser[aria-busy="true"] .commu-people-rows,
 .commu-people-browser[aria-busy="true"] .commu-people-grid,
