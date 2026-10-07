@@ -1,0 +1,732 @@
+[
+ {
+  "id": 1712,
+  "kind": "doc",
+  "event_id": "siege-of-leningrad",
+  "label_ko": "레닌그라드 방어 지시",
+  "label_en": "Instructions on the Defence of Leningrad",
+  "priority": 6,
+  "reason": "1941년 7월 4일 게오르기 주코프가 북부전선 군사평의회에 내린 방어선 구축 지시가 9월 지휘 재편의 작전적 배경을 보여준다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1634,
+  "kind": "doc",
+  "event_id": "siege-of-leningrad",
+  "label_ko": "『레닌그라드 봉쇄, 1941~1944년』",
+  "label_en": "The Leningrad Blockade, 1941–1944",
+  "priority": 8,
+  "reason": "소련 기록보관소 문서집으로 배급, 행정, 사망과 봉쇄 운영에 관한 새 문서의 근거가 된다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 691,
+  "kind": "doc",
+  "event_id": "new-thinking-diplomacy",
+  "label_ko": "1989년 1월 24일 정치국 회의록 (아프가니스탄 철군 5개 시나리오)",
+  "label_en": "CPSU CC Politburo Decision of 24 January 1989 with five withdrawal scenarios",
+  "priority": 8,
+  "reason": "The Politburo document where Shevardnadze, Chebrikov, Yakovlev, Yazov, Murakhovsky and Kryuchkov laid out five scenarios — four of which involved leaving Soviet troops in Afghanistan after 15 February. This is the clearest window into the split between Shevardnadze/KGB (who wanted to stay) and the military (who wanted a clean break).",
+  "created_by": "commulingo-maintainer-events-1"
+ },
+ {
+  "id": 1799,
+  "kind": "doc",
+  "event_id": "ethiopian-revolution-1974-1977",
+  "label_ko": "농촌 토지 공유화 포고령 제31호(1975)",
+  "label_en": "Public Ownership of Rural Lands Proclamation No. 31/1975",
+  "priority": 9,
+  "reason": "The primary decree itself, nationalizing rural land without compensation, abolishing tenancy, capping holdings at 10 hectares, and creating peasant associations. Short enough to republish in full; the section turns on it.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1825,
+  "kind": "doc",
+  "event_id": "congo-peoples-republic-1969-1991",
+  "label_ko": "1991년 6월 4일 기본법(Acte fondamental)",
+  "label_en": "Acte fondamental of 4 June 1991",
+  "priority": 8,
+  "reason": "국민회의가 과도기 권력 조직을 규정한 기본법. 전문이 일당제를 '전체주의·권력 혼재·족벌주의'로 단죄하는 핵심 1차 사료로, 전문(全文) 게재가 타당한 짧은 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 785,
+  "kind": "doc",
+  "event_id": "perestroika",
+  "label_ko": "500일 계획 — 샤탈린-야블린스키 안",
+  "label_en": "The 500 Days Plan — Shatalin-Yavlinsky Programme",
+  "priority": 6,
+  "reason": "The closing section references the 500-day plan as the alternative path Gorbachev rejected. Having the document itself would let readers assess what was on the table.",
+  "created_by": "commulingo-maintainer-events-1"
+ },
+ {
+  "id": 1643,
+  "kind": "doc",
+  "event_id": "warsaw-uprising",
+  "label_ko": "국내군 작전명령, 바르샤바 봉기",
+  "label_en": "Home Army orders for the Warsaw Uprising",
+  "priority": 5,
+  "reason": "봉기의 군사 목표와 개시 결정이 어떻게 내려졌는지 문서 수준에서 보강할 자료다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1370,
+  "kind": "doc",
+  "event_id": "fall-of-france",
+  "label_ko": "1940년 2월 24일 작전지시 제4호 황색 작전",
+  "label_en": "Aufmarschanweisung Nr. 4, Fall Gelb, 1940년 2월 24일",
+  "priority": 8,
+  "reason": "The section identifies the actual German operational instruction and distinguishes it from the later retrospective label Sichelschnitt.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1306,
+  "kind": "doc",
+  "event_id": "succession-struggle",
+  "label_ko": "트로츠키의 치헤이제 서한 (1913)",
+  "label_en": "Trotsky's letter to Chkheidze (1913)",
+  "priority": 7,
+  "reason": "The 1913 letter to Chkheidze (and Trotsky's 1921 letter to Olminsky asking it not be published), which Pravda printed during the Literary Discussion as the dirtiest falsification device to build the 'eternal Lenin-Trotsky conflict' legend.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1473,
+  "kind": "doc",
+  "event_id": "detente-salt",
+  "label_ko": "SALT II 조약 본문, 빈, 1979년 6월 18일",
+  "label_en": "SALT II Treaty text, Vienna, 18 June 1979",
+  "priority": 8,
+  "reason": "The closing argument needs the treaty's actual limits, verification provisions, duration, and legal status after non-ratification.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1494,
+  "kind": "doc",
+  "event_id": "warsaw-pact",
+  "label_ko": "유럽 집단안보에 관한 일반 유럽조약(1955년 7월 20일 소련안)",
+  "label_en": "General European Treaty on Collective Security in Europe (Soviet draft, July 20, 1955)",
+  "priority": 9,
+  "reason": "The section depends on the Soviet draft presented at Geneva, especially its proposed simultaneous dissolution of NATO and the Warsaw Pact and its model of an all-European security system.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1525,
+  "kind": "doc",
+  "event_id": "holodomor",
+  "label_ko": "1933년 우크라이나행 재정착 열차 종합 명세서",
+  "label_en": "Summary statement on sending settlement trains to Ukraine, 1933",
+  "priority": 7,
+  "reason": "1933년 11~12월 RSFSR과 벨로루시 SSR에서 온 21,856가구 117,149명의 출신지와 우크라이나 내 정착지를 입증하는 архив 문서",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1552,
+  "kind": "doc",
+  "event_id": "yugoslav-partisans",
+  "label_ko": "1944년 11월 1일 티토-슈바시치 협정",
+  "label_en": "November 1, 1944 Tito–Šubašić Agreement",
+  "priority": 8,
+  "reason": "The section relies on the agreement’s exact transitional formula: continuity of the Yugoslav state, a future free decision on government form, and a regency while King Peter II remained absent.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1856,
+  "kind": "doc",
+  "event_id": "lao-republic-1975",
+  "label_ko": "베트남-라오스 우호협력조약 (1977)",
+  "label_en": "Vietnam–Laos Treaty of Friendship and Cooperation (1977)",
+  "priority": 6,
+  "reason": "1977년 7월 18일 체결된 조약 전문. 제2조 상호방위 조항과 '특수 관계' 규정이 단락의 핵심 증거이므로 원문 공개가 서술을 뒷받침.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1675,
+  "kind": "doc",
+  "event_id": "greek-resistance",
+  "label_ko": "1940년 10월 28일 이탈리아 최후통첩",
+  "label_en": "Italian ultimatum to Greece, 28 October 1940",
+  "priority": 6,
+  "reason": "그리스 정부가 거부한 영토 점령 요구의 원문 또는 공식 기록을 통해 침공이 단순한 국경 충돌이 아니라 강압적 주권 박탈 시도였음을 보여준다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1681,
+  "kind": "doc",
+  "event_id": "italian-campaign",
+  "label_ko": "아이젠하워의 시칠리아 전역 최고사령관 보고서",
+  "label_en": "Eisenhower's Commander-in-Chief's Dispatch, Sicilian Campaign, 1943",
+  "priority": 6,
+  "reason": "카사블랑카 이후 시칠리아 선택, 계획 변경, 상륙과 전역의 공식 작전 서술을 담은 짧은 1차 문헌이다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1705,
+  "kind": "doc",
+  "event_id": "warsaw-uprising",
+  "label_ko": "폴란드 민족해방위원회 7월 선언",
+  "label_en": "Manifesto of the Polish Committee of National Liberation",
+  "priority": 9,
+  "reason": "루블린 위원회가 런던 망명정부를 불법으로 규정하고 해방지대의 행정권을 주장한 1944년 7월 22일의 핵심 1차 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1735,
+  "kind": "doc",
+  "event_id": "stalingrad",
+  "label_ko": "바실리 추이코프의 스탈린그라드 회고록",
+  "label_en": "Vasily Chuikov's Stalingrad memoir",
+  "priority": 6,
+  "reason": "추이코프가 근접 방어, 볼가 도하, 지휘소 배치와 병사들의 전투 방식을 어떻게 설명했는지 보여주는 짧은 1차 기록이 필요하다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1758,
+  "kind": "doc",
+  "event_id": "italian-campaign",
+  "label_ko": "작전 버펄로 계획",
+  "label_en": "Operation Buffalo plan",
+  "priority": 6,
+  "reason": "안치오 돌파 때 독일 제10군의 퇴로를 차단하려던 실제 작전 목표와 로마 직행으로의 변경을 대비하는 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1769,
+  "kind": "doc",
+  "event_id": "warsaw-uprising",
+  "label_ko": "바르샤바 파괴 명령, 1944년 8월 1일",
+  "label_en": "Order for the Destruction of Warsaw, 1 August 1944",
+  "priority": 7,
+  "reason": "주민과 도시를 구별하지 않고 파괴하라는 독일 지휘부의 명령을 1차 문서로 뒷받침한다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1789,
+  "kind": "doc",
+  "event_id": "battle-of-britain",
+  "label_ko": "1940년 7월 31일 히틀러 회의 기록",
+  "label_en": "Hitler's conference record of 31 July 1940",
+  "priority": 8,
+  "reason": "작전명 바다사자의 침공 시기가 독일 해군 준비와 공중 우세 달성 여부에 종속되어 있었음을 보여 주는 1차 문서로 결론의 인과관계를 설명하는 데 필요하다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 566,
+  "kind": "doc",
+  "event_id": "korean-war",
+  "label_ko": "스탈린의 고트발트 서한 (1950년 8월 27일)",
+  "label_en": "Stalin's Letter to Gottwald (27 August 1950)",
+  "priority": 8,
+  "reason": "The single most important primary source on why Stalin kept the Soviet seat empty. Stalin lays out four reasons for the UNSC boycott and explains his strategic calculus: tying the US down in Asia, drawing China into conflict, and postponing a third world war. The letter is published in RGASPI fond 558, opis 11, delo 62, listy 71-72, and first published by Andrei Ledovskii in Novaia i Noveishaia Istoriia (2005).",
+  "created_by": "commulingo-maintainer-events-2"
+ },
+ {
+  "id": 613,
+  "kind": "doc",
+  "event_id": "february-revolution",
+  "label_ko": "페트로그라드 소비에트의 임시정부 조건부 지지 선언 (1917년 3월 16일)",
+  "label_en": "Petrograd Soviet Declaration of Conditional Support for the Provisional Government, 16 March 1917",
+  "priority": 7,
+  "reason": "This document established the terms on which the Soviet backed the new government: support only insofar as the government fulfilled its democratic promises. It is the founding text of dual power.",
+  "created_by": "commulingo-maintainer-events-2"
+ },
+ {
+  "id": 1014,
+  "kind": "doc",
+  "event_id": "tito-stalin-split",
+  "label_ko": "베오그라드 선언 (1955)",
+  "label_en": "Belgrade Declaration (1955)",
+  "priority": 5,
+  "reason": "The closing section cites the 1955 Belgrade Declaration as the document where Khrushchev formally recognised the diversity of roads to socialism. The event card references it but there is no primary document entry for the full text.",
+  "created_by": "commulingo-maintainer-events-1"
+ },
+ {
+  "id": 1442,
+  "kind": "doc",
+  "event_id": "kronstadt-1921",
+  "label_ko": "1921년 3월 7~8일 제7군 사령부 명령",
+  "label_en": "Order of the Seventh Army command, 7–8 March 1921",
+  "priority": 4,
+  "reason": "The section relies on the command decision to bombard and assault before the Gulf ice became unusable, and on the operational record of the failed first attack.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 432,
+  "kind": "doc",
+  "event_id": "new-thinking-diplomacy",
+  "label_ko": "1987년 2월 26일 정치국 회의록",
+  "label_en": "Politburo session notes, 26 February 1987",
+  "priority": 9,
+  "reason": "The session where Gorbachev, backed by Yakovlev's memo, made the historic decision to 'untie the package' — negotiating INF separately from SDI and START. This is the pivot point of the entire treaty story. The National Security Archive has published these notes.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 188,
+  "kind": "doc",
+  "event_id": "anti-alcohol-campaign",
+  "label_ko": "1985년 4월 4일 정치국 회의록 (반알코올 캠페인)",
+  "label_en": "Minutes of the Politburo Session of April 4, 1985 (Anti-Alcohol Campaign)",
+  "priority": 8,
+  "reason": "The working notes of the Politburo session where Solomentsev presented the radical anti-alcohol plan, Dementsev and Voronin warned of economic consequences, and Gorbachev declared 'we cannot tolerate our drunk budget any longer.' This is the single most important primary source for understanding how and why the campaign was launched. From the Volkogonov Collection, Library of Congress.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 766,
+  "kind": "doc",
+  "event_id": "new-thinking-diplomacy",
+  "label_ko": "몰타 정상회담 소련측 회의록 (1989.12.2–3)",
+  "label_en": "Soviet Transcript of the Malta Summit, December 2-3, 1989",
+  "priority": 8,
+  "reason": "The fullest primary source for what was actually said at Malta. The US transcript remains classified. Published by the Gorbachev Foundation and excerpted in the NSA's 'Masterpieces of History' volume.",
+  "created_by": "commulingo-maintainer-events-1"
+ },
+ {
+  "id": 117,
+  "kind": "doc",
+  "event_id": "anti-alcohol-campaign",
+  "label_ko": "안드로포프의 1982년 5월 정치국 비망록",
+  "label_en": "Andropov's May 1982 Politburo memorandum on drunkenness",
+  "priority": 7,
+  "reason": "This memorandum, sent while Andropov was still KGB chairman, triggered the creation of the Pelshe commission and was the immediate political origin of the anti-alcohol campaign. The section references it as the key turning point.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 337,
+  "kind": "doc",
+  "event_id": "marshall-plan",
+  "label_ko": "몰로토프의 파리 회담 성명 (1947년 7월 2일)",
+  "label_en": "Molotov's Statement at the Paris Conference (2 July 1947)",
+  "priority": 7,
+  "reason": "몰로토프가 파리 회담 최종 회의에서 마셜 플랜을 거부하며 밝힌 공식 입장. 주권 침해, 유럽 분단, 독일 문제를 들어 반대한 핵심 1차 사료.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 1599,
+  "kind": "doc",
+  "event_id": "french-resistance",
+  "label_ko": "오토 폰 슈튈프나겔의 1941년 9월 28일 인질 규정",
+  "label_en": "Otto von Stülpnagel's hostage code, 28 September 1941",
+  "priority": 7,
+  "reason": "독일 점령당국이 공격에 대한 집단적 처벌과 인질 선정·처형을 어떤 규칙으로 제도화했는지 보여주는 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1882,
+  "kind": "doc",
+  "event_id": "albanian-socialist-transition-1944-1946",
+  "label_ko": "1946년 인민공화국 헌법(3월 14일 제정)",
+  "label_en": "Constitution of the People's Republic of Albania (adopted 14 March 1946)",
+  "priority": 8,
+  "reason": "The founding constitution whose proclamation on 11 January and adoption on 14 March 1946 is the pivot of this section; the full text would let readers see the 'popular democracy' structure the assembly actually enacted.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1307,
+  "kind": "doc",
+  "event_id": "berlin-wall",
+  "label_ko": "1961년 8월 1일 흐루쇼프-울브리히트 전화통화 기록",
+  "label_en": "Record of the Khrushchev-Ulbricht discussion, 1 August 1961",
+  "priority": 8,
+  "reason": "The section turns on Khrushchev's 'iron ring' instruction to Ulbricht ('I think our troops should lay down the ring, but your troops should control it') and his warning not to announce anything beforehand. The full transcript is published on chronik-der-mauer.de; the reader needs the document in full to follow the decision.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1372,
+  "kind": "doc",
+  "event_id": "yugoslav-partisans",
+  "label_ko": "1941년 9월 26일 스톨리체 결의",
+  "label_en": "Stolice Resolution, 26 September 1941",
+  "priority": 7,
+  "reason": "The section relies on the documented decisions that standardized Partisan detachments, expanded liberated territory, and continued negotiations with Mihailović.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 557,
+  "kind": "doc",
+  "event_id": "prague-spring",
+  "label_ko": "「위기 발전의 교훈」",
+  "label_en": "\"Lessons from the Crisis Development\" (Poučení z krizového vývoje)",
+  "priority": 8,
+  "reason": "The December 1970 KSČ Central Committee document that codified the official interpretation of 1968 as a counter-revolution and became the mandatory ideological catechism of the normalization era. The section describes it as the document that sealed the purge and dictated how every citizen had to talk about 1968.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 884,
+  "kind": "doc",
+  "event_id": "hungarian-revolution",
+  "label_ko": "부다페스트 중앙노동자평의회 결의문 (1956년 11월 14일)",
+  "label_en": "Resolution of the Central Workers' Council of Greater Budapest (14 November 1956)",
+  "priority": 7,
+  "reason": "The founding declaration of the Central Workers' Council, formed after the Soviet invasion, which declared loyalty to socialism while demanding the withdrawal of Soviet troops and the return of Imre Nagy. The section quotes from this document and its significance depends on the reader knowing what it actually said.",
+  "created_by": "commulingo-maintainer-events-2"
+ },
+ {
+  "id": 1318,
+  "kind": "doc",
+  "event_id": "soviet-japanese-border-wars",
+  "label_ko": "국경방비요령 (1939.4.25)",
+  "label_en": "Kwantung Army Border Defense Guide (25 April 1939)",
+  "priority": 8,
+  "reason": "The Kwantung Army operational guideline drafted under Tsuji Masanobu authorising commanders to 'enter Soviet territory or trap or lure Soviet troops into Manchurian territory.' It is the document that converted a grazing dispute into war and the section cites it by name.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1531,
+  "kind": "doc",
+  "event_id": "war-scare-1983",
+  "label_ko": "중거리핵전력 전폐 조약",
+  "label_en": "INF Treaty",
+  "priority": 9,
+  "reason": "1987년 12월 8일 체결된 조약의 금지 범위, 폐기 수량, 현장검증을 본문에서 구체적으로 설명할 수 있도록 전문 또는 문서 카드가 필요하다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1694,
+  "kind": "doc",
+  "event_id": "battle-of-britain",
+  "label_ko": "윈스턴 처칠의 1940년 6월 18일 하원 연설",
+  "label_en": "Winston Churchill's House of Commons speech of 18 June 1940",
+  "priority": 8,
+  "reason": "영국 정부가 협상이나 항복이 아니라 장기 항전을 선택한 공개 논리를 직접 보여 주는 1차 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1813,
+  "kind": "doc",
+  "event_id": "chinese-revolution-1949",
+  "label_ko": "마오쩌둥, 「협동화 문제에 대하여」(1955.7)",
+  "label_en": "Mao Zedong, 'On the Question of Agricultural Co-operation' (July 1955)",
+  "priority": 7,
+  "reason": "The July 1955 speech in which Mao, against most of the Politburo, called for speeding up the cooperative movement is the pivotal primary text for the acceleration that finished collectivization by end-1956; a full republication would anchor the section.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1367,
+  "kind": "doc",
+  "event_id": "second-front-normandy",
+  "label_ko": "윈스턴 처칠의 1942년 7월 8일 루스벨트 전보",
+  "label_en": "윈스턴 처칠의 1942년 7월 8일 루스벨트 전보",
+  "priority": 7,
+  "reason": "영국군 지휘부가 프랑스 상륙작전 슬레지해머를 실행 불가능하다고 판단하고, 북아프리카 침공 짐내스트를 1942년의 제2전선으로 제시한 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1240,
+  "kind": "doc",
+  "event_id": "war-scare-1983",
+  "label_ko": "KGB 런던 주재부 ‘영구 작전과제’ 전문 (1983.02)",
+  "label_en": "KGB telegram to London residency 'Permanent operational assignment' (Feb 1983)",
+  "priority": 5,
+  "reason": "RYaN의 실제 지시문으로, 고르디옙스키가 1991년에 공개했다. 혈액은행 비축량, 대피소, 핵 결정권자 감시 등 7개 즉각·13개 유망 과제를 담고 있어 RYaN이 무엇을 찾았는지 보여주는 1차 자료.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1611,
+  "kind": "doc",
+  "event_id": "solidarity-martial-law",
+  "label_ko": "빅토르 아노시킨의 1981년 12월 11일 수첩 기록",
+  "label_en": "Viktor Anoshkin's notebook entries, 11 December 1981",
+  "priority": 8,
+  "reason": "The closing argument needs the primary record of Jaruzelski's request for possible Soviet military backing, which complicates both the invasion-necessity and purely autonomous-coup interpretations.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 150,
+  "kind": "doc",
+  "event_id": "economic-reform-debate",
+  "label_ko": "「급진적 경제관리 개편을 위한 기본 규정」(1987년 6월)",
+  "label_en": "Basic Provisions for the Radical Restructuring of Economic Management (June 1987)",
+  "priority": 8,
+  "reason": "The companion document to the enterprise law, approved at the same June 1987 plenum, which set out the overall architecture of the reform including price, finance, and planning changes that the enterprise law needed but never got.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 141,
+  "kind": "doc",
+  "event_id": "nineteenth-party-conference",
+  "label_ko": "「국가기업법」(1987년 6월 30일 채택, 1988년 1월 1일 발효)",
+  "label_en": "Law on State Enterprise (passed 30 June 1987, effective 1 January 1988)",
+  "priority": 5,
+  "reason": "The Law on State Enterprise was the centerpiece of economic perestroika before the political turn, and its failure — managers raised wages without raising output, the budget deficit ballooned — is crucial to explaining why Gorbachev concluded that economic reform required political reform first. The section describes this dynamic.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 257,
+  "kind": "doc",
+  "event_id": "economic-reform-debate",
+  "label_ko": "「코옙에 관한 법률」(1988년 5월 26일)",
+  "label_en": "Law on Cooperatives in the USSR (26 May 1988)",
+  "priority": 5,
+  "reason": "The full text of Article 25 (free wage-setting) and Article 19 (free pricing) are referenced in the section. Readers should be able to open the original law, as the MSU Seventeen Moments site already hosts excerpts.",
+  "created_by": "commulingo-maintainer-events"
+ },
+ {
+  "id": 565,
+  "kind": "doc",
+  "event_id": "economic-reform-debate",
+  "label_ko": "「시장으로의 이행: 개념과 프로그램」(1990년 8월)",
+  "label_en": "\"Transition to the Market: Concept and Programme\" (August 1990, the 400-page 500 Days document)",
+  "priority": 5,
+  "reason": "The full 400-page Shatalin-Yavlinsky programme, published as a book in 1990. The section quotes its structure and its introduction's framing of 'Human Being, Freedom, Market.'",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 719,
+  "kind": "doc",
+  "event_id": "economic-reform-debate",
+  "label_ko": "「화폐개혁 실시의 부적절성에 관하여」 (1990년 12월 14일)",
+  "label_en": "'On the Inexpediency of Conducting a Monetary Reform' (December 14, 1990)",
+  "priority": 8,
+  "reason": "Joint letter from Gosbank chairman Gerashchenko and Finance Minister Pavlov to Premier Ryzhkov, arguing that a confiscatory monetary reform would be disastrous given the social-political climate and lack of reserves. The very man who carried out the reform had signed a document opposing it six weeks earlier.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1728,
+  "kind": "doc",
+  "event_id": "siege-of-leningrad",
+  "label_ko": "레닌그라드 봉쇄 시기 배급 명령 및 기록",
+  "label_en": "Leningrad blockade rationing orders and records",
+  "priority": 6,
+  "reason": "1941~1942년 배급 인상과 수송 행정의 결정을 1차 자료로 보여줄 짧은 문서군이 필요하다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1748,
+  "kind": "doc",
+  "event_id": "stalingrad",
+  "label_ko": "천왕성 작전 지시서",
+  "label_en": "Operation Uranus directive",
+  "priority": 5,
+  "reason": "소련군의 이중 포위 구상과 공격축을 1차 문서로 뒷받침할 수 있는 단기 문서다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1795,
+  "kind": "doc",
+  "event_id": "vietnam-reunification-1975-1976",
+  "label_ko": "1976년 7월 2일 통일 국회 결의문",
+  "label_en": "Resolution of the VI National Assembly, 2 July 1976 (naming the Socialist Republic of Vietnam)",
+  "priority": 8,
+  "reason": "The primary instrument of state unification: the resolution adopting the country's name, flag, anthem, capital, and the renaming of Saigon-Gia Dinh. Short enough to republish in full and load-bearing for the page.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1810,
+  "kind": "doc",
+  "event_id": "malagasy-socialist-transition-1972-1975",
+  "label_ko": "말라가시 사회주의 혁명헌장(붉은 책)",
+  "label_en": "Charter of the Malagasy Socialist Revolution (Boky Mena)",
+  "priority": 6,
+  "reason": "The 1975 Red Book whose endorsement was the precondition for FNDR membership; a short primary source (Ratsiraka's collected August–September 1975 speeches) short enough to republish or excerpt as the front's ideological gate.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1819,
+  "kind": "doc",
+  "event_id": "cuban-revolution-1959-1961",
+  "label_ko": "1961년 4월 16일 피델 카스트로의 사회주의 선언 연설",
+  "label_en": "Fidel Castro's 16 April 1961 socialist declaration speech",
+  "priority": 8,
+  "reason": "The funeral address where Castro first declared 'we have made a socialist revolution right under the very nose of the United States.' Short enough to republish in full; the section quotes directly from it.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1817,
+  "kind": "doc",
+  "event_id": "angolan-independence-1975-1977",
+  "label_ko": "앙골라·소련 우호협력조약 (1976)",
+  "label_en": "Treaty of Friendship and Cooperation between Angola and the USSR (1976)",
+  "priority": 6,
+  "reason": "1976년 10월 7~13일 네투의 모스크바 방문 때 체결된 20년 조약. MPLA가 소련에 군사·경제 협력을 보장받고 이념적 정렬을 공식화한 문서로, 사회주의 노선 채택의 국제정치적 토대를 보여주는 1차 사료다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1838,
+  "kind": "doc",
+  "event_id": "beninese-socialist-transition-1974-1990",
+  "label_ko": "1990년 베냉 헌법 (헌법법률 제90-32호)",
+  "label_en": "Constitution of Benin, 11 December 1990 (Act No. 90-32)",
+  "priority": 8,
+  "reason": "The primary text that abolished Marxism-Leninism, set the 40-70 presidential age limit, five-year renewable-once terms, and created the Constitutional Court and the High Authority of Audio-Visuals and Communications. The section quotes its specific mechanisms and the site should host the text itself.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1843,
+  "kind": "doc",
+  "event_id": "vietnam-reunification-1975-1976",
+  "label_ko": "제4차 당대회 정치보고",
+  "label_en": "Political Report to the Fourth Party Congress",
+  "priority": 7,
+  "reason": "레주언이 1976년 12월 제4차 당대회에서 발표한 정치보고와 사회주의 건설 노선은 이 절의 중심 근거다. 제2차 5개년계획 목표(공업 연 16–18%, 농업 8–10% 성장)와 당명 변경 배경을 담은 결의 부분을 발췌해 전재할 가치가 있다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1851,
+  "kind": "doc",
+  "event_id": "somali-socialist-transition-1969-1976",
+  "label_ko": "그로미코-토운 회담 전문 (1977.12.12)",
+  "label_en": "Gromyko-Toon meeting telegram, 12 Dec 1977",
+  "priority": 6,
+  "reason": "The US State Department telegram recording Gromyko's defense of the Soviet switch to Ethiopia (arms 'insignificant', Somalia violated the self-defense clause) is a compact primary document that shows the Soviet side's own stated reasoning in the reversal.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1870,
+  "kind": "doc",
+  "event_id": "chinese-revolution-1949",
+  "label_ko": "「중국인민정치협상회의 공동강령」(1949)",
+  "label_en": "Common Program of the Chinese People's Political Consultative Conference (1949)",
+  "priority": 8,
+  "reason": "The closing section grounds the 'what was settled' claim in this interim constitution: its mixed-ownership economy (state, cooperative, private, state-capitalist sectors) and its framing of New Democracy as the state's political foundation. It is short enough (60 articles, but the fordham text is ~4 pages) to republish in full and serves as the primary anchor for both the settled mixed-economy order and the later historiographical dispute over its abandonment.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1875,
+  "kind": "doc",
+  "event_id": "cuban-revolution-1959-1961",
+  "label_ko": "「벤세레모스」 교과서",
+  "label_en": "The Venceremos primer",
+  "priority": 7,
+  "reason": "문해운동의 표준 교재. 토지개혁, 피그스만 침공, 노동의 존엄을 읽기 교습과 결합한 정치적 입문서로, 문해운동이 중립적 기술이 아니라 국민 만들기의 도구였음을 보여주는 1차 사료다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1905,
+  "kind": "doc",
+  "event_id": "cambodian-regime-change-1975-1979",
+  "label_ko": "캄보디아 특별재판소 설치에 관한 유엔-캄보디아 협정(2003)",
+  "label_en": "UN-Cambodia Agreement on the Establishment of the ECCC (2003)",
+  "priority": 7,
+  "reason": "The short founding instrument that fixes the court's temporal jurisdiction and its hybrid structure, including the supermajority voting rule that shaped which cases could ever reach trial. Republishable in full and the primary source behind the section's claim about what was and was not prosecutable.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1908,
+  "kind": "doc",
+  "event_id": "dprk-foundation-1946-1948",
+  "label_ko": "미국 국가안전보장회의 NSC 8/2 '한국에 관한 미국의 입장' (1949.03.22)",
+  "label_en": "US National Security Council report NSC 8/2, 'The Position of the United States with Respect to Korea' (22 March 1949)",
+  "priority": 9,
+  "reason": "Primary document that records the Soviet declaration of completed withdrawal on 25 December 1948 and evaluates what the Soviets left behind: a trained People's Army, Soviet-Korean officers, and Red Army personnel attached to the Soviet 'embassy' serving as advisers, with the northern forces estimated at 75,000 to 95,000.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1914,
+  "kind": "doc",
+  "event_id": "cuban-revolution-1959-1961",
+  "label_ko": "피델 카스트로의 1961년 12월 2일 마르크스-레닌주의 선언 방송 연설 (요약본)",
+  "label_en": "Fidel Castro's 2 December 1961 television speech declaring himself a Marxist-Leninist",
+  "priority": 8,
+  "reason": "Primary source for the second, formal step after April 1961: the 1961 'socialist' declaration was not yet a claim to Marxism-Leninism, which came only in December. Distinct from the already-queued April 16 speech.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1918,
+  "kind": "doc",
+  "event_id": "albanian-socialist-transition-1944-1946",
+  "label_ko": "1946년 인민공화국 헌법 제7조·제8조·제11조·제12조",
+  "label_en": "1946 People's Republic Constitution, Articles 7, 8, 11, 12",
+  "priority": 7,
+  "reason": "국유 부문·국가계획·사유재산 제한·토지 소유 상한을 규정한 조문. 경제제도 전환의 법적 근거를 원문으로 보여줄 수 있다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1919,
+  "kind": "doc",
+  "event_id": "angolan-independence-1975-1977",
+  "label_ko": "1977년 MPLA 제1차 정기대회 결의: 노동계급 정당 구성에 관한 결의",
+  "label_en": "Resolution on the constitution of the MPLA as a party of the working class, First Ordinary Congress, 1977",
+  "priority": 9,
+  "reason": "The 4-10 December 1977 congress passed five governing resolutions; the one constituting the MPLA as a party of the working class is the constitutional act of the one-party state and is short enough to publish in full. The section turns on what that document actually decreed.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1920,
+  "kind": "doc",
+  "event_id": "angolan-independence-1975-1977",
+  "label_ko": "앙골라 인민공화국 헌법법(1978.02.07) 제2조",
+  "label_en": "Constitutional Law of the People's Republic of Angola, 7 February 1978, article 2",
+  "priority": 8,
+  "reason": "Article 2 first wrote into law that MPLA-PT is the organised vanguard of the working class and, as a Marxist-Leninist party, provides the political, economic and social leadership of the state. It is the legal completion of the December 1977 congress and a short primary text.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1928,
+  "kind": "doc",
+  "event_id": "ethiopian-revolution-1974-1977",
+  "label_ko": "데르그의 「에티오피아 우선」 선언(1974.12)",
+  "label_en": "Derg's 'Ethiopia First' manifesto (December 1974)",
+  "priority": 6,
+  "reason": "Short primary text stating 'Ethiopian Socialism' (equality, self-reliance, dignity of labour, supremacy of the common good, indivisibility of Ethiopian unity) which the section quotes to show what the regime claimed the revolution was. Short enough to republish in full.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1932,
+  "kind": "doc",
+  "event_id": "dprk-foundation-1946-1948",
+  "label_ko": "1946년 3월 23일 김일성 20개조 정강",
+  "label_en": "Kim Il Sung's Twenty-Point Platform of 23 March 1946",
+  "priority": 7,
+  "reason": "토지개혁·국유화·노동·남녀평등 법령 전체의 모법(母法) 역할을 한 짧은 정강(20개 항)으로 전문 게재가 가능하다. 이 사건의 개혁이 어디에서 기원했는지를 문서 자체로 검증하게 한다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1937,
+  "kind": "doc",
+  "event_id": "albanian-socialist-transition-1944-1946",
+  "label_ko": "1945년 12월 2일 선거 관련 소련·영국 외교문서",
+  "label_en": "diplomatic dispatches on the 2 December 1945 election",
+  "priority": 6,
+  "reason": "선거 결과(유권자 약 92% 투표, 93%가 민주전선 지지)를 서방 강대국이 어떻게 평가했는지 보여주는 1차 사료. 선거의 국제적 승인 문제를 둘러싼 논쟁을 독자가 직접 확인할 수 있게 하는, 전문 게재가 가능한 짧은 외교 전문/보고서 형태의 문서가 필요하다.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 1939,
+  "kind": "doc",
+  "event_id": "angolan-independence-1975-1977",
+  "label_ko": "MPLA 정치국 성명: 1977년 5월 27일 쿠데타 시도 보고(1977.07.12)",
+  "label_en": "MPLA Political Bureau statement on the attempted coup of 27 May 1977 (12 July 1977)",
+  "priority": 9,
+  "reason": "This is the only contemporaneous official MPLA document on the purge that circulates (a roughly 65-page pamphlet). Republishing the statement's operative passage in full would give readers the primary text on which every later death-toll claim rests, and on which the historiography dispute turns.",
+  "created_by": "commulingo-maintainer-events-0"
+ },
+ {
+  "id": 2061,
+  "kind": "event",
+  "event_id": "",
+  "label_ko": "보불전쟁 (1870–1871)",
+  "label_en": "The Franco-Prussian War (1870-1871)",
+  "priority": 8,
+  "reason": "「사회주의의 분기」 제5편 바젤 선언 대목의 전제. 독일 통일·알자스로렌 병합과 파리 코뮌의 직접 배경. 제1인터내셔널의 반전 성명과 연결",
+  "created_by": "operator"
+ },
+ {
+  "id": 2062,
+  "kind": "event",
+  "event_id": "",
+  "label_ko": "아이티 혁명 (1791–1804)",
+  "label_en": "The Haitian Revolution (1791-1804)",
+  "priority": 8,
+  "reason": "「프랑스 혁명사」 제2편(생도맹그 1791년 봉기, 1793년 송토나 포고, 1794년 노예제 폐지). 기존 용어 free-people-of-color-saint-domingue와 연결. 봉기가 파리의 법령에 앞섰다는 순서를 분명히",
+  "created_by": "operator"
+ },
+ {
+  "id": 2063,
+  "kind": "event",
+  "event_id": "",
+  "label_ko": "방데전쟁 (1793–1796)",
+  "label_en": "The War in the Vendée (1793-1796)",
+  "priority": 7,
+  "reason": "「프랑스 혁명사」 제5편의 1793년 복합 위기. 징병 반발·종교·지역 사회의 원인과 진압의 규모를 사료별로 구별. 기존 사건 french-revolution-1789-1799, french-revolutionary-wars-1792-1802와 연결",
+  "created_by": "operator"
+ },
+ {
+  "id": 2064,
+  "kind": "event",
+  "event_id": "",
+  "label_ko": "발칸 전쟁 (1912–1913)",
+  "label_en": "The Balkan Wars (1912-1913)",
+  "priority": 6,
+  "reason": "「사회주의의 분기」 제5편: 바젤 임시대회가 발칸전쟁 중에 열렸다. 1차 세계대전(world-war-i)의 직접 전사로 연결",
+  "created_by": "operator"
+ }
+]
