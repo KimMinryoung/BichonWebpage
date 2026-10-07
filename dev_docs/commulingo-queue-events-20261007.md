@@ -32,6 +32,7 @@
 - b 발칸(324): 투초비치(communist), 탈라트 파샤(nationalist; 「탈라트」 auto, Talat/Talaat 검색 전용), 콘스탄티노스 1세(monarchist). 관계 6행: 발칸 3, 1차 세계대전 2(탈라트 central-powers, 투초비치 antiwar-socialists), 브레스트-리토프스크 1(탈라트).
 - c 방데(328): 봉샹·레스퀴르·카두달·퓌자예(counterrevolution), 마르소(입장 없음, 클레베르·오슈 선례), 로시뇰(jacobin). 맨 성 링크 표현(봉샹·레스퀴르·퓌자예)은 linkExpressions. 관계 10행(방데 6, 프랑스 혁명 2, 혁명 전쟁 2). `audit-link-fires.js ko`로 맨 「마르소」가 어느 카드로도 걸리지 않음(마르소 피베르와 충돌 없음)을 확인.
 - 같은 날 `francois-de-charette` 카드의 「조네 조약」을 「라자주네 조약」으로 통일했다(bio·경력·절).
+- d 발칸·아이티 2차(330): 마요레스쿠(conservative), 푸트니크, 사보프, 다네프·라도슬라보프·카밀 파샤·에드워드 그레이(liberal-republican), 나즘 파샤, 에사드 파샤 톱타니, 세르게이 사조노프(imperial-white), 쥘리앵 레몽, 조르주 비아수, 장프랑수아 파피용, 프랑수아 카푸아·장피에르 부아예(national-liberation). 관계 15행. 카롤 1세·셰브케트 파샤·산단스키·카박치에프는 본문에 이름이 없어 뺐다. 링크 차단 329·331: 맨 「그레이/Grey」「사조노프/Sazonov」「파피용/Papillon」(alias), 「레몽 푸앵카레」「마흐무트 카밀 파샤」(phrase); 발칸 본문은 「세르게이 사조노프」로 고침.
 
 ## 남은 일
 
