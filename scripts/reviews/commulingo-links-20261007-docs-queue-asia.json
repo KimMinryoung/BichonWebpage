@@ -1,0 +1,316 @@
+{
+ "scope": "2026-10-07 docs queue Asia and 1799 — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "ko",
+   "text": "『농촌 토지 공유화 포고령』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "ko",
+   "text": "농촌 토지 공유화 포고령",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "ko",
+   "text": "농촌 토지 공유화 포고령(제31호)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "ko",
+   "text": "포고령 제31호(1975년)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "en",
+   "text": "Public Ownership of Rural Lands Proclamation",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "en",
+   "text": "Proclamation No. 31/1975",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "ethiopia-rural-land-proclamation-1975",
+   "lang": "en",
+   "text": "Proclamation No. 31 of 1975",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-national-assembly-resolution-1976-07-02",
+   "lang": "ko",
+   "text": "『국호·국기·국장·수도·국가에 관한 결의』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-national-assembly-resolution-1976-07-02",
+   "lang": "ko",
+   "text": "1976년 7월 2일 국회 결의",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 같은 날 채택된 사이공 개칭 결의와 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-national-assembly-resolution-1976-07-02",
+   "lang": "ko",
+   "text": "통일 국회 결의",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 같은 국회의 다른 결의와 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-national-assembly-resolution-1976-07-02",
+   "lang": "ko",
+   "text": "국호·국기·국장·수도·국가에 관한 결의",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-national-assembly-resolution-1976-07-02",
+   "lang": "en",
+   "text": "Resolution of 2 July 1976",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue Asia 링크 검토: the Saigon renaming resolution was adopted the same day; 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-national-assembly-resolution-1976-07-02",
+   "lang": "en",
+   "text": "Resolution on the Name, Flag, Emblem, Capital and Anthem",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "ko",
+   "text": "『중국인민정치협상회의 공동강령』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "ko",
+   "text": "중국인민정치협상회의 공동강령",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "ko",
+   "text": "정치협상회의의 공동강령",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "ko",
+   "text": "1949년 공동강령",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "ko",
+   "text": "공동강령",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 맨 「공동강령」은 다른 강령과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "en",
+   "text": "Common Program of the Chinese People's Political Consultative Conference",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "en",
+   "text": "Common Programme of 1949",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cppcc-common-program-1949",
+   "lang": "en",
+   "text": "1949 Common Program",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "ko",
+   "text": "『만·소 국경분쟁 처리 요강』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "ko",
+   "text": "만·소 국경분쟁 처리 요강",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "ko",
+   "text": "만소 국경분쟁 처리요강",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "ko",
+   "text": "국경방비요령",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "en",
+   "text": "Border Defense Guide",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "en",
+   "text": "Manchukuo–Soviet Border Dispute Settlement Guidelines",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "kwantung-army-border-dispute-guidelines-1939",
+   "lang": "en",
+   "text": "Kwantung Army Operations Order No. 1488",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue Asia 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}
