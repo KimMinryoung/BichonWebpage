@@ -1,7 +1,26 @@
 {
+  "toussaint-louverture": "national-liberation",
+  "jean-jacques-dessalines": "national-liberation",
+  "henri-christophe": "national-liberation",
+  "alexandre-petion": "national-liberation",
+  "dutty-boukman": "national-liberation",
   "louis-marie-turreau": "jacobin",
   "jean-baptiste-carrier": "jacobin",
   "francois-joseph-westermann": "jacobin",
   "maurice-d-elbee": "counterrevolution",
-  "jean-nicolas-stofflet": "counterrevolution"
+  "jean-nicolas-stofflet": "counterrevolution",
+  "otto-von-bismarck": "conservative",
+  "napoleon-iii": "monarchist",
+  "wilhelm-i": "monarchist",
+  "helmuth-von-moltke": "conservative",
+  "leon-gambetta": "liberal-republican",
+  "louis-jules-trochu": "monarchist",
+  "jules-favre": "liberal-republican",
+  "ferdinand-i-of-bulgaria": "monarchist",
+  "eleftherios-venizelos": "liberal-republican",
+  "nikola-pasic": "nationalist",
+  "ivan-geshov": "conservative",
+  "nikola-i-of-montenegro": "monarchist",
+  "ismail-qemali": "national-liberation",
+  "dragisa-lapcevic": "non-bolshevik-socialist"
 }
