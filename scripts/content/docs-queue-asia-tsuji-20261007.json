@@ -1,0 +1,24 @@
+{
+ "changedBy": "docs-queue-asia-20261007",
+ "people": [
+  {
+   "id": "masanobu-tsuji",
+   "bio": {
+    "ko": "관동군 작전참모였던 쓰지 마사노부는 스스로 작성한 「만·소 국경분쟁 처리 요강」으로 1939년 할힌골 사건을 일으켜, 아래로부터의 월권(게코쿠조)으로 소련과의 국경전쟁을 밀어붙였다. 할힌골 패배 뒤에는 소련의 화력을 목격한 경험을 근거로 대소전을 반대하면서도, 도리어 대미 개전의 가장 강경한 주창자가 되었다. 말레이 작전 입안자이자 바탄 죽음의 행진·숙칭 학살의 주모자였던 그는 전범 재판을 피해 도주했다가 귀국해 중의원 의원으로 재선되었다.",
+    "en": "An operations staff officer of the Kwantung Army, Masanobu Tsuji drafted the Guidelines for the Settlement of Manchukuo–Soviet Border Disputes (the 'Border Defense Guide') that touched off the 1939 Nomonhan Incident, pushing the border war with the Soviet Union forward by gekokujō, insubordination from below. After the defeat, his encounter with Soviet firepower turned him against war with the USSR, yet he became the most forceful advocate of war against the United States. A planner of the Malayan campaign and an instigator of the Bataan Death March and Sook Ching massacres, he evaded a war-crimes trial, returned to Japan, and was re-elected to the Diet."
+   },
+   "sources": [
+    "https://www.jacar.archives.go.jp/das/meta/C13010596700"
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "The Kwantung Army document of 25 April 1939 is titled 滿「ソ」國境紛争處理要綱 (Guidelines for the Settlement of Manchukuo–Soviet Border Disputes), issued as a separate volume of 關作命第一四八八號.",
+     "source": "https://www.jacar.archives.go.jp/das/meta/C13010596700",
+     "locator": "JACAR C13010596700, 別紙第四",
+     "stance": "supports"
+    }
+   ]
+  }
+ ]
+}
