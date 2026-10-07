@@ -1,0 +1,42 @@
+{
+  "id": "madagascar-constitution-1975",
+  "file": "madagascar-constitution-1975.html",
+  "docLang": "ko",
+  "date": "1975-12-31",
+  "title": {
+    "ko": "마다가스카르 민주공화국 헌법 (1975년 12월 31일)",
+    "en": "Constitution of the Democratic Republic of Madagascar (31 December 1975)"
+  },
+  "description": {
+    "ko": "1975년 12월 21일 국민투표로 혁명헌장과 함께 채택되고 12월 31일 공포된 제2공화국 헌법. 포코놀로나에 바탕을 둔 국가, 주요 생산수단의 공적 소유, 7년 임기 대통령과 혁명최고평의회·국민인민의회·헌법고등법원, 혁명수호민족전선, 공화정과 사회주의 선택의 개정 금지를 정했다.",
+    "en": "The Second Republic's constitution, adopted by referendum on 21 December 1975 together with the revolutionary charter and promulgated on 31 December. It founded the state on the fokonolona, made public ownership of the main means of production the basis of the social order, created a seven-year presidency, the Supreme Revolutionary Council, the National People's Assembly and the High Constitutional Court, recognized the National Front for the Defence of the Revolution, and barred revision of the republican form and the socialist option."
+  },
+  "kind": {
+    "ko": "헌법·법령·명령",
+    "en": "Constitutions, laws & orders"
+  },
+  "source": "Constitution de la République Démocratique de Madagascar, promulguée le 31 décembre 1975, Journal officiel, 31 décembre 1975, pp. 3373–3391 (Malagasy and French texts). French text: Digithèque MJP (Jean-Pierre Maury), https://mjp.univ-perp.fr/constit/mg1975.htm, accessed 2026-10-07; presidential oath (art. 49) translated from the Malagasy given in the French text. National constitution; not subject to copyright.",
+  "people": [
+    "didier-ratsiraka"
+  ],
+  "terms": [
+    "malagasy-socialist-planning"
+  ],
+  "events": [
+    "malagasy-socialist-transition-1972-1975"
+  ],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": [
+      "『마다가스카르 민주공화국 헌법』",
+      "마다가스카르 민주공화국 헌법",
+      "1975년 마다가스카르 헌법"
+    ],
+    "en": [
+      "Constitution of the Democratic Republic of Madagascar",
+      "1975 Constitution of Madagascar",
+      "Malagasy Constitution of 1975"
+    ]
+  },
+  "noAutoLink": []
+}

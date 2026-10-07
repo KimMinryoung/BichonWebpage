@@ -1,0 +1,465 @@
+0001	Conformément à la loi constitutionnelle provisoire du 7 novembre 1972,
+0002	Le Comité National Constitutionnel a donné son avis,
+0003	Le Gouvernement a arrêté,
+0004	Le Peuple a adopté,
+0005	Le Président de la République Démocratique de Madagascar promulgue la loi dont la teneur suit :
+0006	#### Préambule.
+0007	Le Peuple Malgache,
+0008	— Fidèle aux traditions de lutte, entretenues tout au long de son histoire par les meilleurs de ses fils qui se sont sacrifiés pour que soient à jamais abolies l'exploitation de l'homme par l'homme ainsi que toutes les formes de domination, d'oppression et d'aliénation qui en découlent,
+0009	— Convaincu de l'éminente dignité de la personne humaine et résolu à combattre avec tous les hommes épris de justice et de progrès pour la libération de tout homme et de tout l'homme,
+0010	— Persuadé que la paix et l'amitié entre les peuples ne sauraient être instaurées que par le respect de leur auto-détermination, l'indépendance des États et l'organisation démocratique des relations économiques entre les Nations,
+0011	— Décidé à construire un État de type nouveau, expression des intérêts des masses laborieuses, et à édifier une société conforme aux principes socialistes énoncés dans la « Charte de la Révolution Socialiste Malagasy »,
+0012	Déclare :
+0013	### Titre premier. Principes généraux.
+0014	#### Article premier.
+0015	Le Peuple Malgache constitue une Nation organisée en État fondé sur la communauté socialiste et démocratique, le Fokonolona.
+0016	Cet État est une République souveraine et indivisible, comptant en premier lieu sur ses propres forces, et porte le nom de « République Démocratique de Madagascar ».
+0017	Son territoire est inaliénable.
+0018	#### Article 2.
+0019	La République Démocratique de Madagascar, unitaire et décentralisée, garantit et favorise l'exercice, par les collectivités territoriales, des activités et fonctions concourant au développement de la Nation.
+0020	#### Article 3.
+0021	Le peuple travailleur souverain détient la plénitude des pouvoirs au sein de la République Démocratique de Madagascar.
+0022	Le peuple souverain qui se manifeste par la voie du suffrage universel :
+0023	— élit et révoque démocratiquement ses représentants,
+0024	— désigne et présente les citoyens dignes d'être élus.
+0025	#### Article 4.
+0026	Le peuple exerce son pouvoir, soit directement, au sein des Fokonolona ou par voie de référendum, soit par délégation au Président de la République et à l'Assemblée Nationale Populaire.
+0027	#### Article 5.
+0028	L'élection au suffrage universel et la nomination par le Président de la République sont les seules sources de la légitimité socialiste et de la légalité républicaine.
+0029	#### Article 6.
+0030	La loi est l'expression de la volonté populaire.
+0031	Elle est la même pour tous, qu'elle protège, qu'elle oblige ou qu'elle punisse
+0032	#### Article 7.
+0033	— La propriété publique des principaux moyens de production, des ressources naturelles, des industries et des activités fondamentales pour la vie et le progrès de la Nation,
+0034	— la gestion de la production par les producteurs organisés démocratiquement selon l'esprit de la Révolution socialiste,
+0035	— le développement autonome, équilibré et harmonieux d'une économie maîtrisée par le peuple,
+0036	— le Gouvernement du peuple travailleur par lui-même
+0037	constituent le fondement de l'organisation sociale et politique de la République Démocratique de Madagascar.
+0038	#### Article 8.
+0039	Les citoyens les plus conscients, animés de l'idéal socialiste et patriotique, qui militent au sein des organisations progressistes, s'unissent librement dans le Front National pour la défense de la Révolution.
+0040	#### Article 9.
+0041	Le Front anime et guide la Révolution dans son élan vers l'édification du Socialisme, et inspire l'activité de l'État.
+0042	La loi fixe les attributions, l'organisation et les prérogatives du Front.
+0043	#### Article 10.
+0044	La République Démocratique de Madagascar a pour devise : TANINDRAZANA - TOLOM-PIAVOTANA - FAHAFAHANA.
+0045	Son emblème est le drapeau tricolore blanc, rouge, vert, composé de trois bandes rectangulaires d'égales dimensions : la première
+0046	verticale et de couleur blanche, du côté de la hampe, les deux autres horizontales, la supérieure rouge et l'inférieure verte.
+0047	La capitale est Antananarivo.
+0048	L'hymne national est : « Ry tanindrazanay malala ô ! ».
+0049	Les sceaux de l'État et ses armoiries sont définis par la loi.
+0050	### Titre II. Des droits et devoirs fondamentaux.
+0051	#### Article 11.
+0052	L'État protège et consolide l'indépendance, l'unité et l'intégrité territoriale de la Nation.
+0053	Il se défend de recourir à la guerre pour porter atteinte à la souveraineté légitime et à la liberté d'autres peuples.
+0054	Il s'efforce de régler les différends internationaux par des moyens pacifiques.
+0055	#### Article 12.
+0056	L'État assure l'égalité de tous„ les citoyens en :
+0057	— garantissant l'unité de l'ordre social et du système juridique socialiste, ainsi que l'unité du système économique, en matière de
+0058	législation et de réglementation;
+0059	— s'engageant à lever les obstacles d'ordre économique et social qui limitent l'égalité entre les citoyens, entravent le développement de la personne humaine et empêchent la participation effective de tous les travailleurs à l'organisation politique, économique et sociale;
+0060	— proscrivant toute discrimination tirée de la race, de l'origine, de la croyance religieuse, du degré d'instruction, de la fortune ou
+0061	du sexe.
+0062	#### Article 13.
+0063	Les libertés fondamentales et les droits individuels sont garantis dans le cadre de la Charte de la Révolution socialiste Malagasy.
+0064	#### Article 14.
+0065	Les droits et libertés fondamentaux sont l'expression des rapports socialistes et démocratiques dans lesquels les citoyens se libèrent de toute exploitation et de tout arbitraire, et créent, par le travail personnel et le travail associé, les conditions nécessaires à l'épanouissement de l'homme dans la liberté et la dignité.
+0066	Aucun droit ou liberté ne peut être invoque par un citoyen qui n'a pas rempli ses devoirs envers la collectivité.
+0067	Aucun droit ne peut être invoqué pour contrecarrer l'État dans son œuvre d'instauration de l'ordre socialiste.
+0068	#### Article 15.
+0069	L'exercice des droits et libertés reconnus par la Constitution et la loi est garanti à tout citoyen qui oeuvre dans le sens de la Charte et milite pour le triomphe d'une société socialiste.
+0070	#### Article 16.
+0071	Quiconque abuse des libertés constitutionnelles ou légales pour :
+0072	— combattre la Révolution,
+0073	— entraver l'avènement de l'État socialiste,
+0074	— violer la Constitution,
+0075	— porter atteinte aux intérêts de la collectivité,
+0076	— mettre en danger l'unité de la Nation,
+0077	encourt la déchéance de ses droits et libertés.
+0078	Les droits et libertés du citoyen trouvent également leurs limites dans la loi et les impératifs de nécessité nationale.
+0079	#### Article 17.
+0080	Tout citoyen est tenu au devoir de fidélité à la Nation et à la Patrie ainsi qu'au devoir de respect de la Charte de la Révolution Socialiste Malagasy, de la Constitution, des lois et des règlements de la République Démocratique de Madagascar.
+0081	Il doit remplir loyalement ses obligations vis-à-vis de la collectivité et observer les règles de conduite socialistes.
+0082	#### Article 18.
+0083	La défense de la Patrie, la sauvegarde des réalisations et de la propriété socialistes, ainsi que la protection des institutions dont le peuple s'est démocratiquement doté sont un devoir sacré pour tout citoyen.
+0084	#### Article 19.
+0085	Le Service national obligatoire est un devoir d'honneur. Son accomplissement ne porte pas atteinte à la position de travail du citoyen ni à l'exercice de ses droits politiques.
+0086	#### Article 20.
+0087	Le Service national est organisé, outre les impératifs de défense nationale, pour assurer la promotion sociale et culturelle du plus grand nombre et contribuer au développement d'un système économique fondé sur :
+0088	— l'esprit communautaire et mutualiste,
+0089	— l'éradication de l'exploitation de l'homme par l'homme,
+0090	— la juste répartition du revenu national,
+0091	— l'égal accès au bien-être physique.
+0092	#### Article 21.
+0093	Le travail est un honneur et un devoir impérieux pour tout citoyen qui doit en accepter volontairement la discipline.
+0094	Il sera exigé de chacun selon sa capacité.
+0095	Chacun sera rémunéré selon la qualité et la quantité de son travail.
+0096	#### Article 22.
+0097	Le droit au travail est assuré par la transformation et l'organisation socialiste de l'économie nationale, la libération des forces productives et le développement de la formation professionnelle.
+0098	#### Article 23.
+0099	Les travailleurs ont le droit de participer à la gestion des entreprises, dans les conditions fixées par la loi.
+0100	#### Article 24.
+0101	L'État favorise l'exercice par chaque citoyen d'une activité conforme à sa qualification, dans les domaines économique, administratif, social et culturel.
+0102	#### Article 25.
+0103	L'État reconnaît aux travailleurs individuels le droit d'exercer dans les limites autorisées par la loi, et sans exploiter autrui, une activité privée qui ne soit pas contraire à l'esprit et aux objectifs de la Charte.
+0104	#### Article 26.
+0105	L'accès aux fonctions, publiques, professions, places et emplois, est ouvert à tout citoyen sans autres conditions que celles de la capacité et des aptitudes.
+0106	#### Article 27.
+0107	La durée et les conditions de travail ne doivent porter atteinte ni à la santé, ni à la dignité du travailleur.
+0108	#### Article 28.
+0109	La liberté d'expression, de presse et de réunion est garantie aux citoyens quand elle est exercée conformément aux objectifs de la Révolution, aux intérêts des travailleurs et de la collectivité et en vue d'affermir la démocratie nouvelle pour l'avènement d'un État socialiste.
+0110	#### Article 29.
+0111	Les travailleurs et les citoyens animés de l'idéal révolutionnaire et patriotique, qui constituent l'avant-garde du mouvement d'édification du socialisme, sont encouragés à s'associer démocratiquement pour animer, diriger et contrôler les organisations de défense de la Révolution.
+0112	#### Article 30.
+0113	La loi garantit le droit à la propriété individuelle notamment de la maison d'habitation des membres de la famille, des biens d'usage, des éléments qui concourent au confort et au bien-être matériel, et de l'exploitation économique, famille ou artisanale, sous réserve des limites imposées par la propriété de la collectivité, les nécessités de nationalisation et l'expropriation pour utilité publique.
+0114	#### Article 31.
+0115	Le droit de propriété individuelle ne peut être exercé contrairement à l'utilité sociale, mais doit contribuer au bien de la collectivité.
+0116	#### Article 32.
+0117	Afin de réaliser l'exploitation rationnelle de la terre, d'augmenter la production nationale et d'établir des rapports sociaux et économiques équitables entre les membres de la collectivité la loi peut imposer des obligations ou des limitations à la propriété foncière privée.
+0118	#### Article 33.
+0119	La participation de chaque citoyen aux dépenses publiques doit être progressive et calculée en fonction de sa capacité contributive.
+0120	#### Article 34.
+0121	Chaque citoyen doit combattre sans pitié le parasitisme social que la loi interdit au même titre que les actes anti-révolutionnaires.
+0122	#### Article 35.
+0123	Les biens et les deniers de l'État et des collectivités socialistes ne peuvent souffrir d'aucune atteinte.
+0124	La dilapidation et le détournement des biens et deniers de l'État et des collectivités socialistes constituent, selon le cas, un délit ou un crime qui sera réprimé avec la dernière rigueur par la loi et pourra entraîner la déchéance des droits civils et politiques et la confiscation des biens de son auteur.
+0125	#### Article 36.
+0126	L'État punit avec la plus grande sévérité quiconque nuit, par son fait ou par son omission, aux objectifs de la Révolution, à l'édification de l'économie socialiste ou à l'intérêt public.
+0127	#### Article 37.
+0128	L'État protège la famille, la femme et l'enfant, et reconnaît à tout citoyen le droit de fonder une famille et de transmettre en héritage les biens personnels.
+0129	#### Article 38.
+0130	Tout citoyen jouissant de la plénitude de ses droits civils et politiques, a le droit, dans les conditions fixées par la loi, de s'établir et de circuler librement en tout lieu du territoire national.
+0131	#### Article 39.
+0132	La liberté de conscience et de religion est garantie par la neutralité de l'État vis-à-vis de toutes les croyances.
+0133	Les cultes s'organisent et fonctionnent librement en conformité avec la loi.
+0134	#### Article 40.
+0135	Tout citoyen remplissant les conditions légales dispose du droit de vote et d'être élu.
+0136	#### Article 41.
+0137	Tout citoyen a droit à l'instruction. L'État assure l'exercice de ce droit par l'organisation de l'éducation de base.
+0138	Il organise et surveille l'enseignement. Il veille à l'égal accès de tous à l'instruction, à la formation professionnelle et à la culture, sans autre limitation que l'aptitude de chacun.
+0139	L'État et les collectivités concourent à l'éducation et à l'instruction des enfants
+0140	#### Article 42.
+0141	Les citoyens jouissent de la même dignité sociale.
+0142	Tout citoyen est assuré de l'inviolabilité de sa personne, de son domicile et du secret de la correspondance.
+0143	Nulle perquisition ne peut avoir lieu qu'en vertu de la loi et sur ordre écrit émanant de l'autorité judiciaire compétente.
+0144	Nul ne peut être poursuivi, arrêté ou détenu que dans les cas déterminés par la loi et selon les formes qu'elle a prescrites.
+0145	Nul ne peut être puni qu'en vertu d'une loi promulguée et publiée antérieurement à la commission de l'acte punissable.
+0146	Nul ne peut être puni deux fois pour le même fait.
+0147	La loi assure à tous les hommes le droit de se faire rendre justice et l'insuffisance de ressources ne saurait y faire obstacle.
+0148	L'État garantit la plénitude et l'inviolabilité des droits de la défense devant toutes les juridictions et à tous les degrés de la procédure.
+0149	### Titre III. De la structure de l'État.
+0150	#### Article 43.
+0151	Les institutions de la République Démocratique de Madagascar sont :
+0152	— le Président de la République;
+0153	— le Conseil Suprême de la Révolution;
+0154	— l'Assemblée Nationale Populaire;
+0155	— le Gouvernement;
+0156	— le Comité Militaire pour le Développement;
+0157	— la Haute Cour Constitutionnelle,
+0158	#### Article 44.
+0159	Les principes généraux d'organisation de chaque institution et d'exécution de son budget sont déterminés par la loi.
+0160	#### Article 45.
+0161	La loi détermine le montant, les conditions et les modalités des indemnités allouées aux personnalités appelées à exercer un mandat, à accomplir des fonctions où à effectuer des missions prévus par la présente Constitution.
+0162	### Titre IV. De l'Exécutif.
+0163	#### Article 46.
+0164	L'Exécutif est composé du. Président de la République, du Conseil Suprême de la Révolution et du Gouvernement.
+0165	#### Sous-titre premier. Du Président de la République.
+0166	#### Article 47.
+0167	Le Président de la République est le Chef de l'État.
+0168	Il est l'organe Suprême du pouvoir d'État. Il est assisté du Conseil Suprême de la Révolution et du Gouvernement.
+0169	Le Président de la République est élu pour 7 ans au suffrage universel direct. Il est rééligible.
+0170	#### Article 48.
+0171	Tout candidat aux fonctions de Président de la République doit jouir de ses droits civils et politiques et avoir trente-cinq ans révolus à la date du scrutin. Les autres conditions et les modalités de présentation des candidatures sont fixées par la loi.
+0172	#### Article 49.
+0173	L'élection du Président de la République a lieu sur convocation du Conseil Suprême de la Révolution trente jours au moins et soixante jours au plus avant l'expiration du mandat du Président de la République en exercice,
+0174	Avant son entrée en fonction, le Président de la République prête, devant la Nation et en présence de la Haute Cour Constitutionnelle, le serment suivant : « Ho an' ny Firenena sy ny Vahoaka, dia miadiana aho fa hampiasa mandrakarii a ny fahefana natolotra ahÿ hitondrana ny Tany sy ny Fanjakana, hampitoviana zo vy sata ary fari-piainana ny Malagasy rehetra, ary hampandrosoana lalandai a ireo mpiray Tanindrazana amiko, ao anatin' ny firaisan-kina sy ny firahalahiana tsy misy aiakavaka. Mianiana koa aho fa hanaja hatrany ny tombontsoam -pirenena, ny zon olombelona ary ny lalàm-panjakana.
+0175	«Tsy hikatsaka afa-tsy ny soa ho an' ny besinimaro aho, ary hanokana ny heriko rehetra ho an' ny fanamafisana orina sy fiarovana ny tolom-piavotana sy ny fahaleoi antena ary ny handrianam-pirenena. »
+0176	#### Article 50.
+0177	En cas de vacance ou d'empêchement définitif constaté par la Haute Cour Constitutionnelle, les fonctions de Président de la République sont provisoirement et collégialement exercées par le Conseil Suprême de la Révolution présidé par le doyen d 'âge. Le Gouvernement assure l'expédition des affaires courantes.
+0178	L'élection du nouveau Président se fait dans les délais prévus à l'article 49 susvisé.
+0179	#### Article 51.
+0180	En cas d'empêchement temporaire du Président de la République, ses fonctions sont assurées collégialement par le Conseil Suprême de la Révolution présidé par le doyen d'âge.
+0181	#### Article 52.
+0182	Les fonctions de Président de la République sont incompatibles avec toute autre fonction publique élective et toute autre activité professionnelle.
+0183	#### Article 53.
+0184	Le Président de la République conduit la politique de l'État telle qu'elle est définie par la Charte de la Révolution Socialiste Malagasy.
+0185	Il veille à l'exécution des décisions de justice.
+0186	Il a l'initiative des lois concurremment avec les membres de l'Assemblée Nationale Populaire.
+0187	Il est le Chef de l'administration.
+0188	Il est le Chef de toutes les armées et des forces intérieures de police et est responsable de la défense nationale.
+0189	Il est garant de l'indépendance nationale et de l'intégrité territoriale.
+0190	Il est garant du maintien de l'ordre et de la sécurité publiques.
+0191	Il accrédite et rappelle les ambassadeurs et envoyés extraordinaires de la République Démocratique de Madagascar auprès des autres États et des Organisations internationales. Il reçoit les lettres de créances et de rappel des représentants des États et Organisations internationales reconnus par la République Démocratique de Madagascar.
+0192	Il négocie et ratifie les Traités.
+0193	Il nomme aux hauts emplois de l'État. Il peut déléguer ce pouvoir au Premier Ministre avec faculté de subdélégation.
+0194	Il exerce le droit de grâce.
+0195	Il confère les décorations de la République Démocratique de Madagascar.
+0196	#### Article 54.
+0197	Le Président de la République promulgue les lois dans les quinze jours qui suivent la transmission par l'Assemblée Nationale Populaire de la loi définitivement adoptée.
+0198	Il peut, avant l'expiration de ce délai, demander à l'Assemblée une nouvelle délibération de la loi ou de certains de ses articles.
+0199	#### Sous-titre II. Du Conseil Suprême de la Révolution.
+0200	#### Article 55.
+0201	Le Conseil Suprême de la Révolution est le gardien de la Révolution Socialiste Malagasy.
+0202	#### Article 56.
+0203	En Conseil Suprême de la Révolution, le Président de la République :
+0204	— arrête le programme d'exécution de la Charte de la Révolution Socialiste Malagasy et fixe les directives générales destinées au
+0205	Gouvernement;
+0206	— élabore les principes d'organisation de la défense nationale avec la participation du Comité Militaire pour le Développement;
+0207	— convoque les sessions de l'Assemblée Nationale Populaire;
+0208	— dissout l'Assemblée Nationale Populaire en vertu de l'article 78 ci-après et fixe la date des nouvelles élections;
+0209	— prend l'ordonnance de finances lorsque la loi de finances n'est pas votée par l'Assemblée Nationale Populaire dans le délai légal;
+0210	— légifère par voie d'ordonnances contresignées par les membres du Conseil Suprême de la Révolution, lorsque la situation d'urgence ou l'état de nécessité a été proclamé en conseil des Ministres après avis de la Haute Cour Constitutionnelle;
+0211	— légifère par voie d'ordonnances contresignées par les membres du Conseil Suprême de la Révolution entre les sessions de l'Assemblée Nationale Populaire selon les modalités prévues au titre V. Ces ordonnances applicables immédiatement sont toutefois soumises pour ratification de l'Assemblée Nationale Populaire à sa prochaine session;
+0212	— a l'initiative du référendum pour tout projet de loi sur l'organisation générale de l'État ou les options fondamentales.
+0213	#### Article 57.
+0214	Le Conseil Suprême de la Révolution assiste le Président de la République dans la conception, l'orientation et le contrôle de la politique générale de l'État.
+0215	Il veille à la sauvegarde et au respect de la souveraineté nationale tant à l'intérieur qu'à l'extérieur.
+0216	#### Article 58.
+0217	Le Président de la République est de droit le Président du Conseil Suprême de la Révolution dont il nomme les deux tiers des membres. Le dernier tiers est choisi par le Président de la République sur une liste de personnalités présentée par l'Assemblée Nationale Populaire.
+0218	Le nombre des membres du Conseil Suprême de la Révolution et les conditions de nomination sont déterminés par la loi.
+0219	Le Président de la République met fin à leurs fonctions
+0220	#### Article 59.
+0221	Les fonctions de membre du Conseil Suprême de la Révolution sont incompatibles avec toute autre fonction publique élective ou toute autre activité professionnelle.
+0222	Les fonctions de membre du Conseil Suprême de la Révolution prennent fin normalement avec le mandat du Président de la
+0223	République.
+0224	Ils peuvent être reconduits.
+0225	En cas de vacance ou en cas d'empêchement définitif d'un membre du Conseil Suprême de la Révolution, il est pourvu à son remplacement conformément à la loi.
+0226	#### Sous-titre III. Du Gouvernement.
+0227	#### Article 60.
+0228	Le Gouvernement, organe supérieur de l'Administration de l'État, exécute la politique de l'État conformément aux directives générales arrêtées par le Président de la République en Conseil Suprême de la Révolution.
+0229	Il est responsable devant le Président de la République à qui il rend compte de son activité.
+0230	#### Article 61.
+0231	Le Président de la République nomme le Premier Ministre après consultation du Conseil Suprême de la Révolution. Sur proposition du Premier Ministre, il nomme les autres membres du Gouvernement. Le Président de la République met fin aux fonctions des membres du Gouvernement.
+0232	Le Premier Ministre, Chef du Gouvernement, est membre de droit du Conseil Suprême de la Révolution.
+0233	Le Président de la République préside le Conseil des Ministres.
+0234	#### Article 62.
+0235	En conseil des Ministres, le Président de la République, assisté du Premier Ministre auquel il peut déléguer certains de ses pouvoirs :
+0236	— exerce le pouvoir réglementaire et veille à l'exécution des lois;
+0237	— anime, coordonne l'exécution de la politique générale de l'État arrêtée en Conseil Suprême de la Révolution;
+0238	— arrête les projets de loi à soumettre à l'Assemblée Nationale Populaire après avis du Conseil Suprême de la Révolution;
+0239	— décrète les dispositions réglementaires d'application des directives du Conseil Suprême de la Révolution et d'exécution des lois;
+0240	— élabore le plan général de développement économique et social;
+0241	— exerce les autres attributions pour lesquelles la consultation du Conseil des Ministres est obligatoire en vertu de la présente Constitution et des lois particulières;
+0242	— proclame la situation d'urgence ou l'état de nécessité nationale ou la loi martiale lorsque les circonstances l'exigent ou, pour la
+0243	défense de la République Démocratique de Madagascar, l'ordre public et la sécurité de l'État.
+0244	#### Article 63.
+0245	Le Premier Ministre dirige l'action du Gouvernement et assume la coordination des activités des départements ministériels.
+0246	Il assure l'exécution des lois et règlements et dispose de l'administration à cette fin.
+0247	Il assure la sécurité publique et le maintien de l'ordre.
+0248	Il exerce le pouvoir réglementaire, sauf en ce qui concerne les matières qui relèvent du domaine du décret et notamment sous réserve des dispositions des articles 56 et 57 ci-dessus.
+0249	Il peut déléguer certains de ses pouvoirs aux Ministres avec faculté de subdélégation. Il préside le Conseil de Cabinet auquel assistent les Ministres.
+0250	#### Article 64.
+0251	Les décrets pris par le Président de la République sont contresignés par le Premier Ministre et les Ministres chargés de leur exécution.
+0252	### Titre V. De l'Assemblée nationale populaire.
+0253	#### Article 65.
+0254	L'Assemblée Nationale Populaire est l'organe d'État, délégataire suprême du pouvoir législatif populaire.
+0255	Les membres de l'Assemblée Nationale Populaire portent le titre de députés de la République Démocratique de Madagascar.
+0256	Ils sont élus pour cinq ans au suffrage universel direct.
+0257	La loi fixe le nombre des membres de l'Assemblée Nationale Populaire, les conditions d'éligibilité, le régime des incompatibilités et de déchéance ainsi que les conditions dans lesquelles sont élues les personnes appelées à assurer en cas de vacance le remplacement des députés jusqu'au renouvellement de l'Assemblée.
+0258	La loi fixe également les conditions de contrôle de révocation d'un député par les électeurs.
+0259	#### Article 66.
+0260	Aucun député ne peut être poursuivi, recherché, arrêté, détenu ou jugé en raison des opinions ou vote émis par lui dans l'exercice ou à l'occasion de l'exercice de ses fonctions.
+0261	#### Article 67.
+0262	Le mandat des députés est national.
+0263	Le droit de vote est personnel. Toutefois, la délégation de ce droit est permise dans les conditions et suivant les modalités fixées par la loi. Aucun député ne peut recevoir plus d'une délégation de droit de vote.
+0264	#### Article 68.
+0265	Le Président de l'Assemblée Nationale Populaire et les membres du bureau sont élus chaque année au début de la première session. Ils sont rééligibles.
+0266	#### Article 69.
+0267	L'Assemblée Nationale Populaire se réunit en deux sessions ordinaires par an.
+0268	Les dates de convocation sont fixées par le Président de la République en Conseil Suprême de la Révolution. La durée de chaque session ne peut être ni inférieure à trente jours, ni supérieure à soixante jours. La première session se termine avant le dix juillet et la seconde session consacrée principalement à l'adoption de la loi de finances avant le dix décembre.
+0269	L'Assemblée Nationale Populaire est réunie en session extraordinaire sur un ordre du jour déterminé, à l'initiative du Président de la République prise en Conseil Suprême de la Révolution ou à la demande des deux tiers de ses membres.
+0270	Lorsque la session extraordinaire a lieu à la demande des députés, le décret de clôture intervient dès que l'Assemblée Nationale Populaire a épuisé l'ordre du jour pour lequel elle a été convoquée et au plus tard douze jours après celui de la première séance.
+0271	L'Assemblée Nationale Populaire ne peut être convoquée en session extraordinaire à la demande de ses membres dans le mois qui suit.
+0272	#### Article 70.
+0273	Les séances de l'Assemblée Nationale Populaire sont publiques. Il en est tenu procès-verbal dont la publicité est assurée dans les conditions prévues par la loi. L'Assemblée Nationale Populaire siège à huis clos à la demande du Gouvernement ou d'un quart de ses membres.
+0274	#### Article 71.
+0275	Les principes généraux relatifs à l'organisation et au fonctionnement de l'Assemblée Nationale Populaire sont fixés par la loi, les modalités d 'application étant arrêtées par le règlement intérieur.
+0276	L'Assemblée Nationale Populaire établit et vote son règlement intérieur.
+0277	#### Article 72.
+0278	La loi est votée par l'Assemblée Nationale Populaire dans les conditions prévues au présent titre.
+0279	Outre les questions qui lui sont renvoyées par d'autres articles de la Constitution :
+0280	I. — La loi fixe :
+0281	a. Les règles relatives :
+0282	— les droits civiques et les garanties fondamentales accordées aux personnes pour l'exercice des libertés, droits, obligations et devoirs consacrés par la présente Constitution;
+0283	— les sujétions imposées par la défense nationale aux citoyens en leur personne et leurs biens;
+0284	— la nationalité, l'organisation de la famille, l'état et la capacité des personnes, les régimes matrimoniaux, les successions et les libéralités;
+0285	— la détermination des crimes et délits ainsi que les peines qui leur sont applicables, la procédure pénale et l'amnistie;
+0286	— la création ou la modification des ordres de juridiction, leurs compétences respectives et les règles de procédure applicables;
+0287	— le statut des magistrats et des juges populaires ainsi que les garanties de leur indépendance.
+0288	b. Les règles relatives :
+0289	— aux modalités d'élection, à l'organisation générale et au fonctionnement des assemblées des collectivités décentralisées;
+0290	— aux conditions dans lesquelles les biens peuvent faire l'objet d'expropriation ou de réquisition pour cause de nécessité publique ou de récupération pour cause d'abandon ou de non-exploitation;
+0291	— à l'assiette, au taux et aux modalités de recouvrement des impositions de toutes natures.
+0292	II. — La loi détermine les principes fondamentaux :
+0293	— de l'organisation de la défense nationale;
+0294	— du statut des fonctionnaires civils et militaires et des agents publics de l'État, des collectivités décentralisées et des établissements publics;
+0295	— du régime juridique des obligations civiles et commerciales;
+0296	— du cadre juridique des relations de travail et du droit syndical;
+0297	— de l'enseignement et de la formation professionnelle;
+0298	— de l'organisation des professions libérales.
+0299	III. — La loi, en conformité avec la Charte, approuve le plan de développement national.
+0300	IV. — Les lois de finances déterminent les ressources et les charges de l'État.
+0301	V. — La loi détermine les limitations des libertés publiques et individuelles durant les situations d'exception.
+0302	VI. — Les traités d'alliance, les traités de commerce, les traités ou accords relatifs à l'organisation internationale, ceux qui engagent les finances de l'État, ceux qui modifient les dispositions de nature législative, ceux qui sont relatifs à l'état des personnes, les traités de paix, ceux qui comportent cession, échanges ou adjonction de territoire ne peuvent être ratifiés ou approuvés qu'en vertu d 'une loi. Ils ne prennent effet qu'après avoir été ratifiés ou approuvés.
+0303	Avant leur ratification, les traités sont soumis au contrôle de constitutionnalité de la Haute Cour Constitutionnelle.
+0304	#### Article 73.
+0305	Les matières autres que celles qui sont du domaine de la loi ont un caractère réglementaire.
+0306	Toutes dispositions prises en la forme législative sur ces matières peuvent être modifiées par décret pris après avis conforme de la Haute Cour Constitutionnelle.
+0307	#### Article 74.
+0308	L'initiative de la loi appartient concurremment au Président de la République et aux députés.
+0309	Les projets de loi, à l'exception de ceux concernant l'organisation de la défense nationale, sont arrêtés en Conseil des Ministres, après avis du Conseil Suprême de la Révolution et déposés sur le bureau de l'Assemblée Nationale Populaire.
+0310	Les députés et le Gouvernement ont le droit d'amendement.
+0311	Les propositions de lois et amendements formulés par les députés sont portés à la connaissance du Président de la République, du Conseil Suprême de la Révolution et du Gouvernement. Ils ne sont pas recevables lorsque leur adoption a pour conséquence soit la diminution des ressources publiques soit la création ou l'aggravation des charges de l'État. Ces dispositions ne s'appliquent pas aux lois de finances.
+0312	#### Article 75.
+0313	L'Assemblée Nationale Populaire examine la loi de finances au cours de sa deuxième session. Tout amendement au projet de budget entraînant un accroissement des dépenses ou une diminution des ressources publiques doit être accompagné d'une proposition d'augmentation de recette ou d'économie équivalentes.
+0314	La loi de finances est adoptée par un vote bloqué, portant sur l'ensemble du projet gouvernemental.
+0315	Si, à la clôture de la session, ce projet n'est pas voté, le Président de la République peut, par ordonnance, promulguer ses dispositions en y incluant un ou plusieurs des amendements adoptés par l'Assemblée Nationale Populaire.
+0316	### Titre VI. Des rapports entre l'exécutif et l'Assemblée Nationale Populaire.
+0317	#### Article 76.
+0318	Le Président de la République communique avec l'Assemblée Nationale Populaire par des messages qui ne donnent lieu à aucun débat.
+0319	Les membres du Conseil Suprême de la Révolution et du Gouvernement ont accès à l'Assemblée Nationale Populaire; ils sont entendus quand ils le demandent. Ils peuvent se faire assister par des personnalités compétentes.
+0320	#### Article 77.
+0321	Dans l'intervalle des sessions, le Conseil Suprême de la Révolution peut prendre par voie d'ordonnances des mesures relevant du domaine de la loi.
+0322	Ces ordonnances qui entrent en vigueur dès leur publication doivent toutefois être soumises à la ratification de l'Assemblée Nationale Populaire dès l'ouverture de la session suivante.
+0323	#### Article 78.
+0324	Le Premier Ministre présente à l'Assemblée Nationale Populaire le programme général d'action de son Gouvernement. Les députés ont droit d'amendement dans les conditions fixées par la loi. Ce programme, une fois voté, ne peut plus être remis en cause par l'Assemblée Nationale Populaire.
+0325	Toutefois, en cours d 'exécution, si le Gouvernement estime que des modifications fondamentales à ce programme général d'action
+0326	s'avèrent nécessaires, le Premier Ministre soumet à l'Assemblée Nationale Populaire lesdites modifications. Faute d'accord entre les
+0327	deux parties sur ces modifications, le Premier Ministre peut engager la responsabilité de son Gouvernement en posant la question de confiance.
+0328	Le vote ne peut avoir lieu que quarante-huit heures après le dépôt de la question. S'il est mis en minorité par les deux-tiers des membres composant l'Assemblée Nationale Populaire, le Gouvernement remet sa démission au Président de la République.
+0329	Dans le délai maximum de trente jours suivant le vote refusant la confiance, un nouveau Gouvernement est formé. Si le nouveau Gouvernement reprend les modifications éventuellement remaniées et que l'Assemblée Nationale Populaire rejette celles-ci à la majorité des deux-tiers des membres la composant, le Président de la République dissout l'Assemblée Nationale Populaire. Il est alors procédé à des élections générales trente jours au moins et soixante jours au plus après la dissolution.
+0330	La nouvelle Assemblée Nationale Populaire se réunit de plein droit en session extraordinaire le deuxième mardi qui suit son élection.
+0331	#### Article 79.
+0332	Les moyens d'information de l'Assemblée Nationale Populaire à l'égard de l'action gouvernementale sont la question orale, la question écrite, l'interpellation, l'audition en commission, la commission d'enquête.
+0333	La loi détermine les conditions et modalités de mise en oeuvre de ces procédures.
+0334	#### Article 80.
+0335	A la première session de l'année en cours, le Gouvernement présente à l'Assemblée Nationale Populaire un rapport annuel d'exécution de son programme.
+0336	A l'occasion du débat portant sur le rapport annuel, l'Assemblée Nationale Populaire peut, par le vote d'une résolution hostile, mettre en cause la responsabilité du Gouvernement si elle estime qu'il y a manquement grave à l'exécution du programme général d'action. Une telle résolution n'est recevable que si elle est signée par la moitié au moins des membres de l'Assemblée. Le vote ne peut avoir lieu que quarante-huit heures après le dépôt de la résolution. Ladite résolution n'est adoptée que si elle est votée à la majorité des deux-tiers (2/3) des membres composant l'Assemblée Nationale Populaire.
+0337	Si cette résolution hostile est adoptée, le Président de la République procède à un arbitrage qui peut entraîner soit le remaniement, soit la dissolution du Gouvernement.
+0338	En cas de dissolution, il est formé un nouveau Gouvernement dans un délai maximum de trente jours.
+0339	#### Article 81.
+0340	Le Conseil Suprême de la Révolution peut, pour l'exécution d'un programme d'action déterminé, demander à l'Assemblée Nationale Populaire une délégation de pouvoir, pendant un délai limité, pour prendre par voie d'ordonnances des mesures qui relèvent du domaine de la loi.
+0341	Le Président de la République peut en Conseil des Ministres, et après avis de la Haute Cour Constitutionnelle et du Président de l'Assemblée Nationale Populaire, proclamer la situation d'urgence, l'état de nécessité ou la loi martiale, qui lui confère des pouvoirs spéciaux dont l'étendue et la durée sont fixées par la loi.
+0342	Les ordonnances prises dans le cadre du présent article ne sont pas soumises à la ratification de l'Assemblée Nationale Populaire.
+0343	#### Article 82.
+0344	Le Président de la République peut, après avis du Gouvernement ou sur proposition des trois-quarts (3/4) des membres composant l'Assemblée Nationale Populaire, soumettre au référendum tout projet relatif au fonctionnement des institutions ou tout projet de loi qui lui paraît nécessiter la consultation directe du Peuple.
+0345	Si l'initiative de la consultation populaire a été prise par l'Assemblée Nationale Populaire, le projet de référendum est préalablement soumis à l'avis conforme des comités de Faritany.
+0346	Lorsque le référendum a conclu à l'adoption du projet, le Président de la République le promulgue dans le délai de quinze jours.
+0347	### Titre VII. Des juridictions.
+0348	#### Sous-titre premier. Des principes généraux.
+0349	#### Article 83.
+0350	Dans la République Démocratique de Madagascar, la justice est rendue conformément à la loi au nom du Peuple Malgache, par la Cour Suprême, les Cours d'appel et les tribunaux.
+0351	Dans leurs activités juridictionnelles, les magistrats du siège, les juges et assesseurs populaires sont indépendants et ne sont soumis qu'à la Constitution et à la loi.
+0352	Le Président de la République est garant de l'indépendance des magistrats du siège. Il est assisté par le Conseil Supérieur de la Magistrature qu'il préside et dont l'organisation, les attributions et le fonctionnement sont fixés par la loi.
+0353	La participation des citoyens au fonctionnement et au contrôle de la justice sera déterminée par la loi, par la création des tribunaux populaires au siège des Fokontany et des Firaisampokontany.
+0354	#### Article 84.
+0355	Les juges et assesseurs populaires sont élus par l'assemblée de la collectivité décentralisée du ressort de la juridiction concernée.
+0356	#### Article 85.
+0357	Les membres du Ministère Public sont soumis au principe de la subordination hiérarchique. Ils disposent de )a police judiciaire.
+0358	#### Article 86.
+0359	La Cour Suprême, dans sa formation qui exerce le contrôle général de l'activité juridictionnelle des cours d'appel et des tribunaux, est composée de magistrats professionnels élus par l'Assemblée Nationale Populaire dans les conditions et suivant les modalités prévues par la loi. Elle répond de son activité dans les conditions fixées par la loi, devant l'Assemblée Nationale Populaire et, entre les sessions, devant le Conseil Suprême de la Révolution.
+0360	Le Premier président de la Cour Suprême est nommé par !e Président de la République en Conseil Suprême de la Révolution.
+0361	#### Sous-titre II. De la Haute Cour de Justice.
+0362	#### Article 87.
+0363	Le Président de la République et les membres du Conseil Suprême de la Révolution et du Gouvernement sont pénalement responsables des actes accomplis dans l'exercice de leurs fonctions et qualifiés crimes ou délits au moment où ils ont été commis. Ils sont justiciables de la Haute Cour de Justice.
+0364	Ils peuvent être mis en accusation par l'Assemblée Nationale Populaire par un vote au scrutin public et à la majorité absolue des membres la composant.
+0365	Ne prennent pas part au vote les membres de l'Assemblée Nationale Populaire appelés à participer à l'instruction ou au jugement.
+0366	La Haute Cour de Justice est composée :
+0367	— du Premier président de la Cour Suprême, président;
+0368	— des deux premiers présidents de Cour d'appel;
+0369	— de six membres, de l'Assemblée Nationale Populaire.
+0370	La loi fixe les modalités de désignation des membres titulaires autres que le Président, et des membres suppléants, ainsi que les règles de fonctionnement et la procédure applicables devant cette haute juridiction.
+0371	Le Ministère Public près la Haute Cour de Justice est exercé par des représentants de l'Assemblée Nationale Populaire élus en son sein, assistés de magistrats du parquet.
+0372	La Haute Cour de Justice est liée par la définition des crimes et délits ainsi que par la détermination des peines telles qu'elles résultent des lois pénales en vigueur au moment où les faits ont été commis.
+0373	#### Sous-titre III. De la Haute Cour Constitutionnelle.
+0374	#### Article 88.
+0375	La Haute Cour Constitutionnelle statue sur la conformité des lois, ordonnances et règlements autonomes à la Constitution ainsi que sur les conflits de compétence entre les institutions de l'État et entre l'État et les collectivités décentralisées.
+0376	#### Article 89.
+0377	La Haute Cour Constitutionnelle comprend sept membres qui portent le titre de Haut Conseiller à la Haute Cour Constitutionnelle et dont le mandat est de cinq ans renouvelable.
+0378	Deux membres sont désignés par le Président de la République, deux par le Conseil Suprême de la Révolution, un par le Gouvernement et deux par l'Assemblée Nationale Populaire. Un des membres désignés par le Président de la République, par le
+0379	Conseil Suprême de la Révolution, par l'Assemblée Nationale Populaire et le membre désigné par le Gouvernement, sont choisis en raison de leurs connaissances en matière juridique.
+0380	Le Président de la Haute Cour Constitutionnelle est nommé par le Président de la République. Il a voix prépondérante en cas de partage. La désignation des autres membres est constatée par décret du Président de la République.
+0381	#### Article 90.
+0382	Les fonctions de membres de la Haute Cour Constitutionnelle sont incompatibles avec celles de membre du Conseil Suprême de la Révolution, de membre du Gouvernement, et avec tout mandat électif ou autre activité professionnelle.
+0383	La loi définit les conditions dans lesquelles des fonctions ou des missions peuvent être confiées par le Président de la République aux Hauts Conseillers à la Haute Cour Constitutionnelle.
+0384	#### Article 91.
+0385	La Haute Cour Constitutionnelle veille à la régularité de l'élection du Président de la République, de la désignation des membres du Conseil Suprême de la Révolution et de l'élection des députés.
+0386	Elle veille également à la régularité des opérations de consultation populaire directe et en proclame les résultats.
+0387	#### Article 92.
+0388	Avant leur promulgation, les lois peuvent être déférées à la Haute Cour Constitutionnelle par le Président de la République, pour contrôle de constitutionnalité.
+0389	Une disposition jugée inconstitutionnelle par la Haute Cour Constitutionnelle ne peut être promulguée. Dans ce cas, le Président de la République peut décider soit de promulguer les autres dispositions de la loi, soit de soumettre l'ensemble du texte à une nouvelle délibération de l'Assemblée Nationale Populaire, soit de ne pas procéder à la promulgation.
+0390	#### Article 93.
+0391	Les ordonnances, avant leur promulgation et le règlement intérieur de l'Assemblée Nationale Populaire avant sa mise en application, sont soumis à la Haute Cour Constitutionnelle qui statue sur leur conformité à la Constitution.
+0392	#### Article 94.
+0393	Si devant une juridiction quelconque, une partie soulève une exception d'inconstitutionnalité, cette juridiction sursoit à statuer et lui impartit un délai d'un mois pour saisir la Haute Cour Constitutionnelle qui doit statuer dans le délai le plus bref.
+0394	#### Article 95.
+0395	La Haute Cour Constitutionnelle peut également être consultée par le Président de la République sur la constitutionnalité de tout projet de loi ou de décret.
+0396	Le Président de la République peut demander à la Haute Cour Constitutionnelle un avis sur l'interprétation d'une disposition législative.
+0397	#### Article 96.
+0398	En matière de contentieux électoral et de consultation populaire directe, la Haute Cour Constitutionnelle rend des arrêts.
+0399	Dans les autres matières relevant de sa compétence et hors le cas prévu à l'article 95 elle rend des décisions.
+0400	Les décisions et arrêts de la Haute Cour Constitutionnelle sont motivés; ils ne sont susceptibles d'aucun recours. I!s s'imposent aux pouvoirs publics et à toutes les autorités administratives et juridictionnelles.
+0401	#### Article 97.
+0402	La loi détermine les modalités d'application des articles 88 et 90 du présent titre, les règles d'organisation et de fonctionnement de la Haute Cour Constitutionnelle, ainsi que la procédure à suivre devant elle.
+0403	### Titre VIII. Du Comité Militaire pour le développement.
+0404	#### Article 98.
+0405	Le Comité Militaire pour le Développement est un organe consultatif dont l'avis est requis sur tout programme national de défense et de développement économique et social. A cet effet, il participe à l'élaboration des projets de développement économique et social dont l'exécution est confiée aux Forces Armées Populaires.
+0406	#### Article 99.
+0407	Le statut, le nombre des membres, les organes et les règles de fonctionnement du Comité Militaire pour le Développement sont fixés par la loi.
+0408	### Titre IX. De la décentralisation.
+0409	#### Article 100.
+0410	Les collectivités décentralisées de l'État sont le Fokontany, le Firaisampokontany, le Fivondronampokontany, le Faritany.
+0411	Ces collectivités sont fondées sur le Fokonolona.
+0412	#### Article 101.
+0413	L'assemblée générale des citoyens électeurs et un comité exécutif élu gèrent les affaires du Fokontany.
+0414	Le Firaisampokontany, le Fivondronampokontany, le Faritany sont pourvus d'un conseil populaire et d'un comité exécutif élus.
+0415	#### Article 102.
+0416	L'assemblée générale pour le Fokontany et le conseil populaire pour les autres collectivités décentralisées, dirigent, à leur échelon respectif, l'activité locale visant notamment le développement économique, social, culturel et édilitaire.
+0417	Le principe du centralisme démocratique, défini par la Charte de la Révolution Socialiste Malagasy, s'applique à ces collectivités décentralisées
+0418	#### Article 103.
+0419	Des services publics peuvent être créés ou maintenus pour faciliter la coordination économique, l'action administrative et l'appui technique sur le plan local.
+0420	#### Article 104.
+0421	La loi fixe les règles relatives à l'organisation, au fonctionnement et aux attributions des collectivités décentralisées.
+0422	### Titre X. De la révision de la Constitution.
+0423	#### Article 105.
+0424	L'initiative de la révision de la Constitution appartient soit au Président de la République qui statue en Conseil Suprême de la Révolution et Conseil des Ministres réunis en séance extraordinaire, soit à l'Assemblée Nationale Populaire, sur proposition du tiers au moins de ses membres.
+0425	#### Article 106.
+0426	Le projet ou la proposition de révision n'est adopté qu'à la majorité des trois-quarts des membres de l'Assemblée Nationale Populaire.
+0427	#### Article 107.
+0428	Le Président de la République, en Conseil Suprême de la Révolution et Conseil des Ministres réunis, peut soumettre la révision de la Constitution à la consultation populaire directe
+0429	#### Article 108.
+0430	La forme républicaine de l'État ainsi que l'option socialiste du régime ne peuvent faire l'objet d'une révision.
+0431	### Titre XI. Dispositions transitoires et finales.
+0432	#### Article 109.
+0433	Jusqu'à la proclamation officielle par le Conseil Supérieur des Institutions du résultat national de la consultation populaire directe portant ratification de la Charte de la Révolution Socialiste Malagasy et adoption de la présente Constitution, le Conseil Suprême de la Révolution et le Gouvernement continueront à exercer leurs fonctions.
+0434	#### Article 110.
+0435	Le Président de la République, élu dans le cadre de la consultation populaire directe visée à l'article précédent dispose de plein droit des pouvoirs qui lui sont conférés par la présente Constitution, dès la proclamation officielle par le Conseil Supérieur des Institutions du résultat national.
+0436	Il prêtera serment au cours de l'investiture solennelle après la promulgation de la nouvelle Constitution.
+0437	#### Article 111.
+0438	Jusqu'à la mise en place de l'Assemblée Nationale Populaire prévue par le titre V de la présente Constitution, le Conseil Suprême de la Révolution, composé des membres directement désignés par décret du Président de la République exercera les prérogatives constitutionnelles et la plénitude des attributions de ladite Assemblée.
+0439	Il légifère par voie d'ordonnances sur toutes les matières qui relèvent du domaine de la loi.
+0440	#### Article 112.
+0441	Il sera mis fin aux activités du Conseil National Populaire du Développement par décret du Président de la République avant l'ouverture de la campagne pour les élections législatives.
+0442	#### Article 113.
+0443	Le Président de la République a pleins pouvoirs :
+0444	— pour prendre, par voie d'ordonnances, délibérées en Conseil Suprême de la Révolution, toutes les dispositions législatives prévues par la présente Constitution en vue de l'organisation des pouvoirs publics. Ces ordonnances seront soumises avant leur promulgation à la sanction de l'organe chargé du contrôle de la constitutionnalité des lois et dont la décision s'impose à toutes les autorités et juridictions de l'État;
+0445	— pour organiser les élections destinées à la mise en place des nouvelles institutions de l'État dans un délai maximum de dix-huit mois.
+0446	#### Article 114.
+0447	Jusqu'à la mise en place de la Haute Cour Constitutionnelle, le Conseil Supérieur des Institutions continuera à fonctionner conformément aux dispositions législatives en vigueur.
+0448	#### Article 115.
+0449	Jusqu'à la mise en place de la Cour Suprême prévue à l'article 86, la Cour Suprême actuelle continuera à fonctionner conformément aux dispositions législatives en vigueur.
+0450	#### Article 116.
+0451	Sous réserve des modifications à intervenir, la législation en vigueur dans la République demeure applicable en toutes ses dispositions qui ne sont pas contraires à celles de la présente Constitution.
+0452	#### Article 117.
+0453	Les dispositions législatives dérogatoires au droit commun prises en vertu des états d'exception proclamés depuis le 13 mai 1972 sont abrogées de plein droit à l'expiration de la période d'exercice des pleins pouvoirs visée à l'article 113 ci-dessus, si elles ne sont pas expressément confirmées et introduites dans la législation ordinaire avant cette date.
+0454	#### Article 118.
+0455	La présente loi entrera en vigueur dès sa promulgation et sera publiée au Journal officiel de la République.
+0456	Elle sera exécutée comme Constitution de la République Démocratique de Madagascar.
+0457	Promulguée à Tananarive, le 31 décembre 1975.
+0458	Didier RATSIRAKA.
+0459	Pour obtenir davantage d'informations sur le pays et sur le texte ci-dessus,
+0460	voir la fiche Madagascar.
+0461	Retour à la liste des pays.
+0462	©- 2022 - Pour toute information complémentaire, pour signaler une erreur, pour correspondre avec nous,
+0463	adressez-nous un message électronique.
+0464	Retour à la liste des pays.
+0465	[ Haut de la page ] Jean-Pierre Maury
