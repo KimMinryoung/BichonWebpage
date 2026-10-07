@@ -1,0 +1,27 @@
+# Former Naval Person to President, 8 July 1942 (Churchill to Roosevelt)
+# Text as printed in Winston S. Churchill, The Second World War, vol. IV: The Hinge of Fate
+#   (London: Cassell & Co., 1951), Book II, ch. "Decision for 'Torch'", pp. 391–392.
+# Scan: Digital Library of India copy, Internet Archive item in.ernet.dli.2015.191153
+#   https://archive.org/details/in.ernet.dli.2015.191153 (djvu.txt OCR + page images, PDF idx 406–407), accessed 2026-10-07.
+# OCR proofread against page images. The binarised scan drops most full stops; sentence-final
+#   punctuation restored from sentence structure (no word changed). Square brackets in ¶4 are Churchill's
+#   own editorial insertion in the memoir.
+# Note: Churchill's preface says some telegrams in this volume were paraphrased at HMG's request on
+#   security grounds "without altering the sense or substance". The archival text (CHAR 20/77/87-90;
+#   Kimball ed., Churchill & Roosevelt: The Complete Correspondence, vol. 1, 1984) was not available for collation.
+
+Former Naval Person to President                                    8 July 42
+
+No responsible British general, admiral, or air marshal is prepared to recommend "Sledgehammer" as a practicable operation in 1942. The Chiefs of Staff have reported, "The conditions which would make 'Sledgehammer' a sound, sensible enterprise are very unlikely to occur." They are now sending their paper to your Chiefs of Staff.
+
+2. The taking up of the shipping is being proceeded with by us for camouflage purposes, though it involves a loss in British imports of perhaps 250,000 tons. But far more serious is the fact that, according to Mountbatten, if we interrupt the training of the troops we should, apart from the loss of landing-craft, etc., delay "Round-up" or 1943 "Bolero" for at least two or three months, even if the enterprise were unsuccessful and the troops had to be withdrawn after a short stay.
+
+3. In the event of a lodgment being effected and maintained it would have to be nourished, and the bomber effort on Germany would have to be greatly curtailed. All our energies would be involved in defending the bridgehead. The possibility of mounting a large-scale operation in 1943 would be marred, if not ruined. All our resources would be absorbed piecemeal on the very narrow front which alone is open. It may therefore be said that premature action in 1942, while probably ending in disaster, would decisively injure the prospect of well-organised large-scale action in 1943.
+
+4. I am sure myself that French North Africa ["Gymnast"] is by far the best chance for effecting relief to the Russian front in 1942. This has all along been in harmony with your ideas. In fact, it is your commanding idea. Here is the true Second Front of 1942. I have consulted the Cabinet and Defence Committee, and we all agree. Here is the safest and most fruitful stroke that can be delivered this autumn.
+
+5. We of course can aid in every way, by transfer of either American or British landing forces from the United Kingdom to "Gymnast", and with landing-craft, shipping, etc. You can, if you choose, put the punch in partly from here and the rest direct across the Atlantic.
+
+6. It must be clearly understood that we cannot count upon an invitation or a guarantee from Vichy. But any resistance would not be comparable to that which would be offered by the German Army in the Pas de Calais. Indeed, it might be only token resistance. The stronger you are, the less resistance there would be and the more to overcome it. This is a political more than a military issue. It seems to me that we ought not to throw away the sole great strategic stroke open to us in the Western theatre during this cardinal year.
+
+7. Besides the above we are studying very hard the possibility of an operation in Northern Norway, or, if this should prove impracticable, elsewhere in Norway. The difficulties are great owing to the danger of shore-based aircraft attack upon our ships. We are having frightful difficulties about the Russian convoys. All the more is it necessary to try to clear the way and maintain the contact with Russia.
