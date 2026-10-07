@@ -1,0 +1,4041 @@
+{
+ "changedBy": "queue-events-20261007-extra",
+ "people": [
+  {
+   "id": "samuel-spier",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "자무엘",
+    "en": "Samuel"
+   },
+   "familyName": {
+    "ko": "슈피어",
+    "en": "Spier"
+   },
+   "nativeName": "Samuel Spier",
+   "years": "1838–1903",
+   "citizenship": {
+    "code": "germany"
+   },
+   "nationalOrigin": {
+    "code": "germany"
+   },
+   "epithet": {
+    "ko": "SDAP 창당을 준비하고 브라운슈바이크 당 위원회를 사실상 이끈 독일 사회민주주의자",
+    "en": "German social democrat who helped prepare the founding of the SDAP and in practice led its Brunswick party committee"
+   },
+   "bio": {
+    "ko": "1838년 알스펠트의 유대인 상인 집안에서 태어나 기센에서 철학과 자연과학을 공부하고 볼펜뷔텔 잠손 학교의 교사가 되었다. 국민자유주의자였다가 1867년 브라케의 연설을 듣고 전독일노동자협회에 들어갔고, 슈바이처에 맞서 1869년 아이제나흐 창당 대회를 준비해 사회민주노동자당 강령에 큰 영향을 주었다. 브라운슈바이크 당 위원회를 사실상 이끌었고 그해 바젤 인터내셔널 대회에 대의원으로 나갔다. 1870년 위원회는 처음에 방어 전쟁을 지지했으나 스당 뒤 즉시 강화를 요구하는 선언을 냈고, 9월 위원 전원이 체포되어 쇠사슬에 묶인 채 뢰첸 요새로 끌려갔다. 1871년 풀려난 뒤 정계를 떠나 기숙학교를 운영했다.",
+    "en": "Born in 1838 at Alsfeld into a Jewish merchant family, he studied philosophy and natural science at Giessen and became a teacher at the Samson School in Wolfenbüttel. A National Liberal, he was won over by a speech of Wilhelm Bracke in 1867 and joined the General German Workers’ Association; opposing Schweitzer’s leadership, he helped prepare the Eisenach congress of 1869 and left a strong mark on the programme of the Social Democratic Workers’ Party. He was the de facto chairman of its Brunswick party committee and a delegate to the International’s Basel congress that year. In 1870 the committee at first backed what it saw as a defensive war, but after Sedan it issued a manifesto for an immediate honourable peace; in September all its members were arrested and taken in chains to the fortress of Lötzen. Released in 1871, he left politics and ran a boarding school."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": []
+   },
+   "sources": [
+    "https://de.wikipedia.org/wiki/Samuel_Spier"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1838–1903",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Einleitung",
+     "excerpt": "Samuel Spier (geb. 4. April 1838 in Alsfeld; gest. 9. November 1903 in Frankfurt am Main)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "German teacher and politician",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Einleitung",
+     "excerpt": "war ein deutscher Lehrer, Internatsdirektor, Privatgelehrter sowie als Politiker ein Kämpfer für Demokratie und soziale Gerechtigkeit"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "son of a well-off Jewish merchant family",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Leben",
+     "excerpt": "Der Sohn einer wohlhabenden jüdischen Kaufmannsfamilie besuchte in seinem Geburtsort zunächst die Grundschule"
+    },
+    {
+     "field": "bio",
+     "claim": "studied philosophy and natural science at Giessen",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Leben",
+     "excerpt": "Anschließend studierte er in Gießen Philosophie und Naturwissenschaften für das Lehramt."
+    },
+    {
+     "field": "bio",
+     "claim": "teacher at the Samson School, Wolfenbüttel",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Leben",
+     "excerpt": "Im Herbst 1864 wechselte Spier als „erster Lehrer“ an die Samsonschule nach Wolfenbüttel."
+    },
+    {
+     "field": "bio",
+     "claim": "converted by Bracke, joined the ADAV in 1867",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Sozialdemokrat",
+     "excerpt": "Das Erlebnis des Arbeitertages und insbesondere der mitreißende Auftritt Brackes wandelten Spier endgültig vom Nationalliberalen zum Anhänger der Lassalleschen Ideologie. Noch auf der Versammlung trat er dem ADAV bei."
+    },
+    {
+     "field": "bio",
+     "claim": "shaped the SDAP programme",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Sozialdemokrat",
+     "excerpt": "Das Programm der SDAP trägt in vielen Bereichen die Handschrift Spiers."
+    },
+    {
+     "field": "bio",
+     "claim": "de facto chairman of the party committee",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Sozialdemokrat",
+     "excerpt": "Tatsächlicher Vorsitzender des Ausschusses und damit der neuen Partei war folglich der „Stellvertreter“: Samuel Spier."
+    },
+    {
+     "field": "bio",
+     "claim": "delegate to the Basel congress of the International, 1869",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Sozialdemokrat",
+     "excerpt": "1869 ging Spier mit Wilhelm Liebknecht als Delegierter zum vierten Kongress der ersten Internationale nach Basel"
+    },
+    {
+     "field": "bio",
+     "claim": "the Brunswick leadership first backed the war as defensive",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "„Hoch- und Landesverräter“",
+     "excerpt": "Die Braunschweiger Parteiführung unterstützte nämlich zunächst den Krieg gegen Frankreich. Wer angegriffen werde, müsse sich verteidigen dürfen, war ihre Einstellung."
+    },
+    {
+     "field": "bio",
+     "claim": "manifesto of 5 September 1870 for an honourable peace",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "„Hoch- und Landesverräter“",
+     "excerpt": "forderte am 5. September 1870 in einem Manifest einen sofortigen „ehrenvollen Frieden“ mit Frankreich"
+    },
+    {
+     "field": "bio",
+     "claim": "committee arrested and taken in chains to Lötzen",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "„Hoch- und Landesverräter“",
+     "excerpt": "wurden alle Mitglieder Parteiausschusses und der Drucker des Manifests, ein völlig unpolitischer Bürger, verhaftet, und wie Schwerstverbrecher in Ketten geschlossen auf die Feste Boyen im ostpreußischen Lötzen verbracht"
+    },
+    {
+     "field": "bio",
+     "claim": "left politics; ran the boarding school at Segnitz",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Schuldirektor und Privatgelehrter",
+     "excerpt": "Er verließ Wolfenbüttel und tauchte politisch regelrecht unter."
+    },
+    {
+     "field": "bio",
+     "claim": "head of the Brüssel Institute",
+     "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+     "locator": "Schuldirektor und Privatgelehrter",
+     "excerpt": "Er übernahm hier die Leitung des Brüsselschen Instituts"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-sdap",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1869,
+     "endYear": 1871,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+       "locator": "Einleitung",
+       "claim": "Co-organiser of the Eisenach congress and de facto chairman of the committee of the SDAP, forerunner of the SPD",
+       "excerpt": "Er bereitete den Eisenacher Kongress maßgeblich mit vor, auf dem die SDAP, Vorläuferin der SPD, gegründet wurde, beeinflusste das dort verabschiedete Programm in erheblichem Maße und wurde der erste De-facto-Vorsitzende des Parteiausschusses und damit der neugegründeten Partei."
+      }
+     ]
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-adav",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1867,
+     "endYear": 1869,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+       "locator": "Sozialdemokrat",
+       "claim": "Joined the ADAV and founded its Wolfenbüttel branch",
+       "excerpt": "Noch auf der Versammlung trat er dem ADAV bei. In Wolfenbüttel rief er umgehend eine Ortsgruppe des ADAV ins Leben."
+      }
+     ]
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "international-iwa",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1869,
+     "endYear": 1869,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Samuel_Spier",
+       "locator": "Sozialdemokrat",
+       "claim": "Delegate to the Basel congress of the First International",
+       "excerpt": "1869 ging Spier mit Wilhelm Liebknecht als Delegierter zum vierten Kongress der ersten Internationale nach Basel"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1864
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "볼펜뷔텔 잠손 학교 교사",
+      "en": "Teacher at the Samson School, Wolfenbüttel"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1867
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "전독일노동자협회 가입",
+      "en": "Joined the General German Workers’ Association"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1869
+      ],
+      "end": [
+       1871
+      ]
+     },
+     "r": {
+      "ko": "사회민주노동자당 브라운슈바이크 당 위원회를 사실상 이끎",
+      "en": "De facto head of the SDAP committee in Brunswick"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1869
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "바젤 인터내셔널 대회 대의원",
+      "en": "Delegate to the Basel congress of the International"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": [
+       1871
+      ]
+     },
+     "r": {
+      "ko": "뢰첸 요새 구금",
+      "en": "Held in the fortress of Lötzen"
+     }
+    }
+   ],
+   "cyrillic": "Samuel Spier"
+  },
+  {
+   "id": "adolf-hepner",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "아돌프",
+    "en": "Adolf"
+   },
+   "familyName": {
+    "ko": "헤프너",
+    "en": "Hepner"
+   },
+   "nativeName": "Adolf Hepner",
+   "years": "1846–1923",
+   "citizenship": {
+    "code": "germany"
+   },
+   "nationalOrigin": {
+    "code": "germany"
+   },
+   "epithet": {
+    "ko": "『폴크스슈타트』 둘째 편집자로 베벨·리프크네히트와 함께 국가반역 재판을 받은 언론인",
+    "en": "German social-democratic journalist, second editor of Der Volksstaat, tried for high treason with Bebel and Liebknecht"
+   },
+   "bio": {
+    "ko": "1846년 포젠의 슈미겔에서 유대인 집안에 태어나 브레슬라우 랍비 신학교를 다니다 신학을 버리고 브레슬라우와 베를린에서 철학과 국민경제학을 공부했다. 1869년 아이제나흐 창당 대회에 참가했고 그해 말 당 기관지 『폴크스슈타트』의 둘째 편집자가 되었다. 1870년 베벨·리프크네히트와 함께 체포되어 1872년 라이프치히 국가반역 재판에 섰으나 혼자 무죄를 받았다. 같은 해 금지를 무릅쓰고 헤이그 인터내셔널 대회에 대의원으로 나가 마르크스·엥겔스를 만났다. 1873년 라이프치히에서 추방되었고, 1882년 사회주의자 탄압법을 피해 미국으로 건너가 세인트루이스에서 독일어 신문을 편집했다. 1908년 귀국해 『노이에 차이트』 등에 기고했다.",
+    "en": "Born in 1846 into a Jewish family at Schmiegel in Posen, he attended the rabbinical seminary in Breslau, turned away from theology and studied philosophy and political economy at Breslau and Berlin. He took part in the founding congress of the SDAP at Eisenach in 1869 and at the end of that year became second editor of the party organ Der Volksstaat. Arrested with Bebel and Liebknecht, he stood trial with them for high treason at Leipzig in 1872 and was the only one acquitted. That year he defied a police ban to attend the Hague congress of the International as a delegate, where he met Marx and Engels. Expelled from Leipzig in 1873, he emigrated in 1882 to escape the Anti-Socialist Laws and edited German-language papers in St. Louis. He returned to Germany in 1908 and wrote for Die Neue Zeit and other journals."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "A. Ephren"
+    ]
+   },
+   "sources": [
+    "https://de.wikipedia.org/wiki/Adolf_Hepner",
+    "https://en.wikipedia.org/wiki/Adolf_Hepner"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1846–1923",
+     "source": "https://en.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "lead",
+     "excerpt": "Adolf Hepner (November 24, 1846 – April 26, 1923)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "German social democrat and journalist",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Einleitung",
+     "excerpt": "war ein deutscher Sozialdemokrat (SPD), Verleger, Journalist und Mitangeklagter im Leipziger Hochverratsprozess"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "German Jewish family",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Jugend",
+     "excerpt": "Hepner stammte aus einer gutbürgerlichen jüdischen Familie"
+    },
+    {
+     "field": "bio",
+     "claim": "rabbinical seminary in Breslau, then philosophy and political economy",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Jugend",
+     "excerpt": "Danach studierte er Philosophie und Nationalökonomie an der Universität Breslau und in Berlin."
+    },
+    {
+     "field": "bio",
+     "claim": "rabbinical seminary 1863–1866",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Jugend",
+     "excerpt": "1863 bis 1866 studierte Hepner am Jüdisch-Theologischen Seminar in Breslau, einem Rabbinerseminar."
+    },
+    {
+     "field": "bio",
+     "claim": "Eisenach founding congress 1869",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "Am Gründungskongress der Sozialdemokratischen Arbeiterpartei (SDAP) 1869 in Eisenach nahm er teil."
+    },
+    {
+     "field": "bio",
+     "claim": "second editor of Der Volksstaat",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "wurde Ende Dezember 1869 in Leipzig zweiter Redakteur dieses Blattes"
+    },
+    {
+     "field": "bio",
+     "claim": "arrested with Bebel and Liebknecht",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "Mit Bebel und Liebknecht wurde er in seiner Funktion als Redaktionsmitglied von Der Volksstaat verhaftet."
+    },
+    {
+     "field": "bio",
+     "claim": "Leipzig treason trial 1872; the only one acquitted",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "Im Leipziger Hochverratsprozess vom 11. bis 26. März 1872 wurde er mit Bebel und Liebknecht angeklagt, er in seiner Funktion als Redakteur von Der Volksstaat. Er wurde als einziger freigesprochen."
+    },
+    {
+     "field": "bio",
+     "claim": "delegate to the Hague congress; met Marx and Engels",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "nahm Hepner als Delegierter mit einem Mandat der Sektion Regensburg an diesem Kongress teil. Hier lernte er Karl Marx, Friedrich Engels und auch Josef Dietzgen persönlich kennen."
+    },
+    {
+     "field": "bio",
+     "claim": "expelled from Leipzig 1873",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "Hepner wurde im Frühjahr 1873 aus Leipzig ausgewiesen."
+    },
+    {
+     "field": "bio",
+     "claim": "emigrated 1882 under the Anti-Socialist Laws; St. Louis Tageblatt",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "1882 wanderte er aufgrund der Repressionsmaßnahmen gegen die Sozialdemokratie durch das Sozialistengesetz wie viele seiner Genossen in die Vereinigten Staaten von Amerika aus. 1886 zog er nach St. Louis. Dort redigierte er von 1888 bis 1898 das St. Louis Tageblatt"
+    },
+    {
+     "field": "bio",
+     "claim": "returned 1908; wrote for Die Neue Zeit",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Politik und Journalismus",
+     "excerpt": "1908 kehrte er nach Deutschland zurück. Hepner schrieb zahlreiche Artikel für Die Neue Zeit"
+    },
+    {
+     "field": "bio",
+     "claim": "pseudonym A. Ephren",
+     "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+     "locator": "Einleitung",
+     "excerpt": "Er verwendete auch das Pseudonym A. Ephren."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "propaganda",
+     "affiliationId": "party-german-sdap",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1869,
+     "endYear": 1873,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+       "locator": "Politik und Journalismus",
+       "claim": "Second editor of Der Volksstaat, central organ of the SDAP",
+       "excerpt": "Er arbeitete journalistisch für das sozialdemokratische Zentralorgan Der Volksstaat und wurde Ende Dezember 1869 in Leipzig zweiter Redakteur dieses Blattes."
+      }
+     ]
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "international-iwa",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1872,
+     "endYear": 1872,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Adolf_Hepner",
+       "locator": "Politik und Journalismus",
+       "claim": "Delegate to the Hague congress of the International",
+       "excerpt": "nahm Hepner als Delegierter mit einem Mandat der Sektion Regensburg an diesem Kongress teil."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1869
+      ],
+      "end": [
+       1873
+      ]
+     },
+     "r": {
+      "ko": "『폴크스슈타트』 둘째 편집자",
+      "en": "Second editor of Der Volksstaat"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1872
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "라이프치히 국가반역 재판에서 무죄",
+      "en": "Acquitted at the Leipzig high treason trial"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1872
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "헤이그 인터내셔널 대회 대의원",
+      "en": "Delegate to the Hague congress of the International"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1888
+      ],
+      "end": [
+       1898
+      ]
+     },
+     "r": {
+      "ko": "『세인트루이스 타게블라트』 편집",
+      "en": "Editor of the St. Louis Tageblatt"
+     }
+    }
+   ],
+   "cyrillic": "Adolf Hepner"
+  },
+  {
+   "id": "johann-jacoby",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "요한",
+    "en": "Johann"
+   },
+   "familyName": {
+    "ko": "야코비",
+    "en": "Jacoby"
+   },
+   "nativeName": "Johann Jacoby",
+   "years": "1805–1877",
+   "citizenship": {
+    "code": "germany"
+   },
+   "nationalOrigin": {
+    "code": "germany"
+   },
+   "epithet": {
+    "ko": "1848년 혁명의 급진 민주주의자, 알자스-로렌 병합에 반대하다 투옥되었다",
+    "en": "Radical democrat of 1848 who was imprisoned for opposing the annexation of Alsace-Lorraine and later joined the Social Democrats"
+   },
+   "bio": {
+    "ko": "1805년 쾨니히스베르크의 유대인 상인 집안에서 태어나 의사로 일하면서 유대인 해방과 프로이센 헌법을 요구하는 글을 써 여러 번 기소되었다. 1848년 프로이센 국민의회와 프랑크푸르트 국민의회에서 좌파를 이끌었고, 국왕 앞에서 「진실을 들으려 하지 않는 것이 왕들의 불행」이라 말해 이름을 떨쳤다. 슈투트가르트 잔부 의회에도 남았다. 1863~1870년 프로이센 하원에서 진보당 최좌파로 비스마르크에 맞서 납세 거부를 호소했다가 여섯 달 갇혔다. 1870년 9월 알자스-로렌 병합에 반대하는 연설로 체포되어 뢰첸 요새에 갇혔다. 1872년 사회민주노동자당에 들어갔고 1874년 제국의회 의원에 뽑혔으나 의석을 거부했다.",
+    "en": "Born in 1805 into a Jewish merchant family in Königsberg, he practised as a physician and was repeatedly prosecuted for writings demanding Jewish emancipation and a constitution for Prussia. In 1848 he was among the leaders of the Left in both the Prussian National Assembly and the Frankfurt Parliament, and became famous for telling the king to his face that “it is the misfortune of kings that they will not listen to the truth”. He stayed on in the Stuttgart rump parliament. From 1863 to 1870 he sat on the far left of the Progress Party in the Prussian lower house, and his call for tax refusal against Bismarck cost him six months in prison. On 14 September 1870 he spoke against the annexation of Alsace-Lorraine and was arrested and held in the fortress of Lötzen. He joined the Social Democratic Workers’ Party in 1872 and was elected to the Reichstag in 1874 but refused to take his seat."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": []
+   },
+   "sources": [
+    "https://de.wikipedia.org/wiki/Johann_Jacoby",
+    "https://en.wikipedia.org/wiki/Johann_Jacoby"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1805–1877",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "lead",
+     "excerpt": "(1 May 1805 – 6 March 1877)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "German physician and radical-democratic Prussian politician",
+     "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Einleitung",
+     "excerpt": "war ein deutscher Arzt und radikaldemokratischer preußischer Politiker"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "son of a Jewish Königsberg merchant",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "The son of a Jewish Königsberg (now Kaliningrad) merchant, Gerson Jacoby"
+    },
+    {
+     "field": "bio",
+     "claim": "physician in Königsberg; prosecuted for his writings",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "studied medicine at the Albertina University of Königsberg and in 1830 started practicing in his native city"
+    },
+    {
+     "field": "bio",
+     "claim": "brochures for Jewish emancipation",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "His first published brochures called for Emancipation of the Jews."
+    },
+    {
+     "field": "bio",
+     "claim": "leader of the Left in the Prussian National Assembly and the Frankfurt Parliament",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "He was a delegate in both the Prussian National assembly and the All-German Frankfurt Parliament, and was reckoned among the conspicuous leaders of the Left in both of them."
+    },
+    {
+     "field": "bio",
+     "claim": "words to the king in 1848",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "It is the misfortune of Kings that they will not listen to the truth!"
+    },
+    {
+     "field": "bio",
+     "claim": "Stuttgart rump parliament",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "Jacoby was among the most radical members, who fled to Stuttgart and there set up a rump parliament"
+    },
+    {
+     "field": "bio",
+     "claim": "far left of the Progress Party in the Prussian lower house 1863–1870",
+     "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Oppositioneller gegen Bismarck",
+     "excerpt": "Zwischen 1863 und 1870 vertrat er den 2. Berliner Wahlbezirk in der zweiten Kammer des preußischen Abgeordnetenhauses. Dort gehört er der äußersten Linken innerhalb der Fortschrittspartei an."
+    },
+    {
+     "field": "bio",
+     "claim": "tax-refusal speech; six months in prison",
+     "source": "https://en.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Biography",
+     "excerpt": "In 1864 he delivered, in the presence of the King, a strong anti-Bismarck speech calling for tax refusal. For that, he was prosecuted and served six months behind bars."
+    },
+    {
+     "field": "bio",
+     "claim": "speech against annexing Alsace-Lorraine; held at Lötzen",
+     "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Abkehr von der Fortschrittspartei",
+     "excerpt": "Während des Deutsch-Französischen Krieges hielt er am 14. September 1870 eine Rede gegen die Annexion von Elsass-Lothringen. Er wurde verhaftet und nach Kriegsrecht in der Festung Lötzen inhaftiert."
+    },
+    {
+     "field": "bio",
+     "claim": "elected to the Reichstag in 1874 but did not take his seat",
+     "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+     "locator": "Hinwendung zur Sozialdemokratie",
+     "excerpt": "Bei der Reichstagswahl im Jahr 1874 wurde er bei einer Stichwahl im Landkreis Leipzig als sozialdemokratischer Kandidat in den Reichstag gewählt, trat das Mandat aber nicht an."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-germany",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1848,
+     "endYear": 1870,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+       "locator": "Oppositioneller gegen Bismarck",
+       "claim": "Deputy of the Left in the Prussian National Assembly and the Frankfurt Parliament (1848–1849) and member of the Prussian House of Representatives (1863–1870)",
+       "excerpt": "Zwischen 1863 und 1870 vertrat er den 2. Berliner Wahlbezirk in der zweiten Kammer des preußischen Abgeordnetenhauses."
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "party-german-sdap",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1872,
+     "endYear": 1875,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+       "locator": "Hinwendung zur Sozialdemokratie",
+       "claim": "Joined the Social Democratic Workers’ Party (SDAP) in 1872",
+       "excerpt": "Unter dem Eindruck des Leipziger Hochverratsprozess gegen August Bebel und Wilhelm Liebknecht trat Jacoby 1872 der Sozialdemokratischen Arbeiterpartei (SDAP) bei."
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1861,
+     "endYear": 1868,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://de.wikipedia.org/wiki/Johann_Jacoby",
+       "locator": "Oppositioneller gegen Bismarck",
+       "claim": "Member of the German Progress Party 1861–1868 (no catalog affiliation)",
+       "excerpt": "trat 1861 der Deutschen Fortschrittspartei bei"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1848
+      ],
+      "end": [
+       1849
+      ]
+     },
+     "r": {
+      "ko": "프로이센 국민의회·프랑크푸르트 국민의회 의원",
+      "en": "Deputy in the Prussian National Assembly and the Frankfurt Parliament"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1863
+      ],
+      "end": [
+       1870
+      ]
+     },
+     "r": {
+      "ko": "프로이센 하원 의원(진보당 최좌파)",
+      "en": "Member of the Prussian House of Representatives (far left of the Progress Party)"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "알자스-로렌 병합 반대 연설로 뢰첸 요새에 구금",
+      "en": "Held at Lötzen for a speech against annexing Alsace-Lorraine"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1872
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "사회민주노동자당 입당",
+      "en": "Joined the Social Democratic Workers’ Party"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1874
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "제국의회 의원 당선, 의석 거부",
+      "en": "Elected to the Reichstag; refused the seat"
+     }
+    }
+   ],
+   "cyrillic": "Johann Jacoby"
+  },
+  {
+   "id": "charles-denis-bourbaki",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "샤를 드니",
+    "en": "Charles Denis"
+   },
+   "familyName": {
+    "ko": "부르바키",
+    "en": "Bourbaki"
+   },
+   "nativeName": "Charles Denis Sauter Bourbaki",
+   "years": "1816–1897",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "제국 근위대와 동부군을 이끌었고 패주 끝에 스위스로 밀려난 프랑스 장군",
+    "en": "French general who commanded the Imperial Guard and then the Army of the East, whose remnant was driven into Switzerland in 1871"
+   },
+   "bio": {
+    "ko": "1816년 포에서 그리스 독립전쟁 때 전사한 그리스인 대령의 아들로 태어나 생시르를 나와 주아브 부대에 들어갔다. 알제리 원정과 크림 전쟁, 1859년 이탈리아 전쟁에서 이름을 얻었고 1862년 그리스 왕위 후보로 거론되었으나 사양했다. 1870년 제국 근위대를 지휘해 메스에서 싸웠으나 그라블로트에서 예비대를 투입하지 않아 비판을 받았다. 레니에 사건에 속아 메스를 떠난 뒤 강베타에게 복무를 자청해 북부군, 이어 동부군을 맡았다. 벨포르 구원에 나섰다가 1871년 1월 리젠 전투에서 패했고, 만토이펠에게 밀려 스위스 국경으로 쫓기자 지휘권을 넘기고 자살을 기도했다. 남은 병력은 스위스에서 무장해제되었다.",
+    "en": "Born at Pau in 1816, the son of a Greek colonel killed in the Greek War of Independence, he passed through Saint-Cyr and joined the Zouaves. He made his name in Algeria, in the Crimean War and in the Italian war of 1859, and in 1862 declined to be a candidate for the Greek throne. In 1870 he commanded the Imperial Guard around Metz, and was criticised for refusing to commit its reserves at Gravelotte. Deceived by the adventurer Régnier into leaving Metz, he offered his services to Gambetta and was given the Army of the North and then the Army of the East. His attempt to relieve Belfort ended in defeat on the Lisaine in January 1871; driven towards the Swiss frontier by Manteuffel, he handed over command and tried to shoot himself, and the remnant of his army was disarmed in Switzerland. He later commanded at Lyon."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "샤를 드니 소테르 부르바키"
+    ],
+    "en": [
+     "Charles-Denis Bourbaki",
+     "Charles Denis Sauter Bourbaki"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+    "https://fr.wikipedia.org/wiki/Charles_Denis_Bourbaki"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1816–1897",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "lead",
+     "excerpt": "Charles Denis Sauter Bourbaki (22 April 1816 – 22 September 1897) was a French general."
+    },
+    {
+     "field": "citizenship",
+     "claim": "French general",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "lead",
+     "excerpt": "was a French general"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Pau, son of a Greek colonel",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Career",
+     "excerpt": "Bourbaki was born at Pau in extreme southwestern France, the son of Greek colonel Constantin Denis Bourbaki, who died in the Greek War of Independence in 1827."
+    },
+    {
+     "field": "bio",
+     "claim": "Saint-Cyr; Zouaves 1836",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Career",
+     "excerpt": "entered École Spéciale Militaire de Saint-Cyr, and in 1836 joined the Zouaves (light infantry)"
+    },
+    {
+     "field": "bio",
+     "claim": "Crimean War fame",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Early commands",
+     "excerpt": "In the Crimean War he commanded a portion of the Algerian troops; and at the Alma, Inkerman and Sevastopol Bourbaki's name became famous."
+    },
+    {
+     "field": "bio",
+     "claim": "Italy 1859; declined the Greek throne 1862",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Early commands",
+     "excerpt": "His success in the war in Italy was second only to that of MacMahon, and in 1862 he was proposed as a candidate for the vacant Greek throne, but declined the proffered honour."
+    },
+    {
+     "field": "bio",
+     "claim": "Imperial Guard 1870",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Imperial Guard",
+     "excerpt": "In 1870 the Emperor Napoleon III entrusted Bourbaki with the command of the Imperial Guard, and he played an important part in the fighting around Metz."
+    },
+    {
+     "field": "bio",
+     "claim": "refused to commit the Guard reserves at Gravelotte",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Imperial Guard",
+     "excerpt": "Bourbaki refused to commit the reserves of the French Imperial Guard to the battle because he considered it a defeat"
+    },
+    {
+     "field": "bio",
+     "claim": "Régnier affair; left Metz",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Imperial Guard",
+     "excerpt": "Bourbaki at once went to England, with Prussian connivance, as though he had an official mission, only to discover from the empress at Hastings that a trick had been played on him."
+    },
+    {
+     "field": "bio",
+     "claim": "served Gambetta; Northern Army, then Army of the East; Lisaine",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Armée de l'Est",
+     "excerpt": "Bourbaki offered his services to Léon Gambetta, a lawyer and republican politician who had proclaimed the Third French Republic in September 1870. Bourbaki was given the command of the Northern Army, but was recalled on 10 November and transferred to the Army of the Loire."
+    },
+    {
+     "field": "bio",
+     "claim": "failed to relieve Belfort; defeat on the Lisaine",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Armée de l'Est",
+     "excerpt": "Bourbaki made an attempt to raise the siege of Belfort, which, after an initial victory in the Battle of Villersexel ended in the defeat of the French in the three-day battle of the Lisaine."
+    },
+    {
+     "field": "bio",
+     "claim": "driven into Switzerland; troops disarmed",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Armée de l'Est",
+     "excerpt": "They were disarmed and detained for six weeks before being repatriated in March."
+    },
+    {
+     "field": "bio",
+     "claim": "handed over command and attempted suicide",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Armée de l'Est",
+     "excerpt": "Bourbaki had delegated his functions to General Justin Clinchant on 26 January 1871, and tried to commit suicide that night."
+    },
+    {
+     "field": "bio",
+     "claim": "military governor at Lyon",
+     "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+     "locator": "Armée de l'Est",
+     "excerpt": "In July 1871, he again took the command at Lyon where he subsequently became military governor."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1836,
+     "endYear": 1881,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Charles-Denis_Bourbaki",
+       "locator": "Imperial Guard",
+       "claim": "French army officer: Zouaves, Crimea, Italy; commander of the Imperial Guard and of the Army of the East in 1870–1871",
+       "excerpt": "In 1870 the Emperor Napoleon III entrusted Bourbaki with the command of the Imperial Guard"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1836
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "주아브 부대 입대",
+      "en": "Joined the Zouaves"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1854
+      ],
+      "end": [
+       1856
+      ]
+     },
+     "r": {
+      "ko": "크림 전쟁 참전",
+      "en": "Served in the Crimean War"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "제국 근위대 사령관",
+      "en": "Commander of the Imperial Guard"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": [
+       1871
+      ]
+     },
+     "r": {
+      "ko": "북부군·동부군 사령관",
+      "en": "Commander of the Army of the North and the Army of the East"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1871
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "리옹 군정장관",
+      "en": "Military governor of Lyon"
+     }
+    }
+   ],
+   "cyrillic": "Charles Denis Sauter Bourbaki"
+  },
+  {
+   "id": "jules-ferry",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "쥘",
+    "en": "Jules"
+   },
+   "familyName": {
+    "ko": "페리",
+    "en": "Ferry"
+   },
+   "nativeName": "Jules François Camille Ferry",
+   "years": "1832–1893",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "포위된 파리의 시장으로 「굶기는 페리」라 불렸고 뒤에 세속 교육과 식민지 팽창을 이끈 총리",
+    "en": "Mayor of besieged Paris nicknamed “Ferry-Famine”, later the prime minister of secular schooling and colonial expansion"
+   },
+   "bio": {
+    "ko": "1832년 보주의 변호사 집안에서 태어나 파리에서 변호사가 되었고 『르 탕』에 오스만 지사를 공격하는 글을 써 이름을 얻었다. 1869년 파리 선출 공화파 의원으로 대독 선전포고에 반대했고, 1870년 9월 국방정부의 센 지사, 11월 파리 시장이 되어 포위된 수도의 식량을 맡으며 「굶기는 페리」라는 별명을 얻었다. 1871년 3월 18일 코뮌 봉기 첫날 파리를 떠났고 티에르에게 강경책을 권했다. 기회주의 공화파의 지도자로 1880~1881년과 1883~1885년 총리를 지내며 초등교육을 무상·세속·의무로 만든 법을 통과시키고 튀니지 보호령과 통킹 정복을 추진했으나, 랑선 철수 소식에 1885년 실각했다.",
+    "en": "Born in 1832 into a family of lawyers in the Vosges, he was called to the Paris bar and made his name attacking Baron Haussmann in Le Temps. Elected a republican deputy for Paris in 1869, he protested against the declaration of war; on 6 September 1870 the Government of National Defence made him prefect of the Seine, and from 15 November, as mayor of Paris, he was responsible for feeding the besieged capital, which earned him the nickname “Ferry-Famine”. On the first day of the Commune rising, 18 March 1871, he fled the city, having urged Thiers to use force. A leader of the Opportunist Republicans, he was prime minister in 1880–1881 and 1883–1885, passed the laws that made primary education free, secular and compulsory, and drove the protectorate over Tunisia and the conquest of Tonkin, until the retreat from Lạng Sơn brought him down in 1885."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "쥘 프랑수아 카미유 페리"
+    ],
+    "en": [
+     "Jules François Camille Ferry"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jules_Ferry",
+    "https://fr.wikipedia.org/wiki/Jules_Ferry"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1832–1893",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "lead",
+     "excerpt": "5 April 1832 – 17 March 1893"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French statesman",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "lead",
+     "excerpt": "was a French statesman and republican philosopher"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in the Vosges",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Early life and family",
+     "excerpt": "Ferry was born in France, in the Vosges department"
+    },
+    {
+     "field": "bio",
+     "claim": "Paris bar 1854; attacked Haussmann in Le Temps",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Early life and family",
+     "excerpt": "He studied law, and was called to the bar at Paris in 1854"
+    },
+    {
+     "field": "bio",
+     "claim": "The Fantastic Tales of Haussmann",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Early life and family",
+     "excerpt": "A series of his articles in Le Temps was later republished as The Fantastic Tales of Haussmann (1868)."
+    },
+    {
+     "field": "bio",
+     "claim": "deputy 1869; protested the war; prefect of the Seine",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Political rise",
+     "excerpt": "Elected republican deputy for Paris in 1869, he protested against the declaration of war with Germany, and on 6 September 1870 was appointed prefect of the Seine by the Government of National Defence."
+    },
+    {
+     "field": "bio",
+     "claim": "mayor of Paris, 15 November 1870, in charge of supplies",
+     "source": "https://fr.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Parcours politique, Débuts",
+     "excerpt": "Nommé maire de Paris le 15 novembre 1870, il a la charge d'assurer le ravitaillement de la capitale assiégée par l'armée prussienne."
+    },
+    {
+     "field": "bio",
+     "claim": "nicknamed Ferry-Famine",
+     "source": "https://fr.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Parcours politique, Débuts",
+     "excerpt": "Les restrictions alimentaires qu'il impose lui valent les surnoms de « Ferry-Famine » et « Ferry l'affameur »."
+    },
+    {
+     "field": "bio",
+     "claim": "fled Paris on 18 March 1871",
+     "source": "https://fr.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Parcours politique, Débuts",
+     "excerpt": "Le premier jour de l'insurrection de la Commune de Paris, le 18 mars 1871, adversaire résolu des fédérés, auxquels il ne peut résister, il fuit la ville."
+    },
+    {
+     "field": "bio",
+     "claim": "urged Thiers to use force",
+     "source": "https://fr.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Parcours politique, Débuts",
+     "excerpt": "Il encourage Adolphe Thiers à employer la manière forte"
+    },
+    {
+     "field": "bio",
+     "claim": "twice premier, Opportunist leader",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Political rise",
+     "excerpt": "A leader of the Opportunist Republicans faction, he was twice premier (1880–1881 and 1883–1885)."
+    },
+    {
+     "field": "bio",
+     "claim": "Ferry laws on primary education",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "School reforms",
+     "excerpt": "He finally succeeded in passing his eponymous laws of 16 June 1881 and 28 March 1882, which made primary education in France free, non-clerical (laïque) and mandatory."
+    },
+    {
+     "field": "bio",
+     "claim": "Tunisia, Tonkin",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Colonial expansion",
+     "excerpt": "Ferry directed the negotiations which led to the establishment of a French protectorate in Tunis (1881)"
+    },
+    {
+     "field": "bio",
+     "claim": "downfall after Lạng Sơn, 30 March 1885",
+     "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+     "locator": "Colonial expansion",
+     "excerpt": "The excitement caused in Paris by the sudden retreat of the French troops from Lạng Sơn during this war led to the Tonkin Affair: his violent denunciation by Clemenceau and other radicals, and his downfall on 30 March 1885."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1870,
+     "endYear": 1885,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+       "locator": "lead",
+       "claim": "Prefect of the Seine and mayor of Paris during the siege; minister of education and foreign affairs; prime minister 1880–1881 and 1883–1885",
+       "excerpt": "served as Prime Minister of France from 1880 to 1881 and 1883 to 1885"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1869,
+     "endYear": 1889,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+       "locator": "Political rise",
+       "claim": "Republican deputy for Paris (1869) and then for the Vosges",
+       "excerpt": "Elected republican deputy for Paris in 1869"
+      }
+     ]
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1873,
+     "endYear": 1893,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jules_Ferry",
+       "locator": "Political rise",
+       "claim": "A leader of the Opportunist Republicans (no catalog affiliation)",
+       "excerpt": "became one of the leaders of the Opportunist Republicans"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1869
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "파리 선출 공화파 의원",
+      "en": "Republican deputy for Paris"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "국방정부 센 지사, 파리 시장",
+      "en": "Prefect of the Seine and mayor of Paris under the Government of National Defence"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1879
+      ],
+      "end": [
+       1885
+      ]
+     },
+     "r": {
+      "ko": "교육장관·외무장관",
+      "en": "Minister of education and of foreign affairs"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1880
+      ],
+      "end": [
+       1881
+      ]
+     },
+     "r": {
+      "ko": "총리",
+      "en": "Prime minister"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1883
+      ],
+      "end": [
+       1885
+      ]
+     },
+     "r": {
+      "ko": "총리",
+      "en": "Prime minister"
+     }
+    }
+   ],
+   "cyrillic": "Jules François Camille Ferry"
+  },
+  {
+   "id": "jules-simon",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "쥘",
+    "en": "Jules"
+   },
+   "familyName": {
+    "ko": "시몽",
+    "en": "Simon"
+   },
+   "nativeName": "Jules François Simon",
+   "years": "1814–1896",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "국방정부의 교육장관으로 보르도에서 강베타를 밀어낸 온건 공화파 철학자·총리",
+    "en": "Moderate republican philosopher and prime minister who, as minister of the Government of National Defence, ousted Gambetta at Bordeaux"
+   },
+   "bio": {
+    "ko": "1814년 로리앙에서 태어났고 본래 성은 쉬스였다. 고등사범학교를 나와 빅토르 쿠쟁의 대리로 소르본에서 철학을 가르쳤다. 1848년 제헌의회 의원이 되었고, 1851년 쿠데타 뒤 루이 나폴레옹에게 충성 서약을 거부해 교수직에서 쫓겨났다. 1863년 입법원에 들어가 「5인」의 반대파를 지지했고, 1870년 9월 국방정부의 교육장관이 되었다. 1871년 2월 파리 항복 뒤 보르도로 가 강화에 반대하던 강베타와 맞섰고 강베타는 물러났다. 티에르 내각에서 교육장관을 이어 맡았고 1876년 총리가 되었으나 1877년 5월 16일 마크마옹의 압박으로 사임한 뒤 다시는 관직을 맡지 않았다. 집산주의에는 늘 반대했다.",
+    "en": "Born at Lorient in 1814 under the family name Suisse, he studied at the École Normale Supérieure and taught philosophy at the Sorbonne as Victor Cousin’s deputy. Elected to the National Assembly in 1848, he refused the oath to Louis Napoleon after the coup of 1851 and lost his chair. Returned to the Corps Législatif in 1863, he supported the opposition of “the Five”, and on 5 September 1870 became minister of public instruction in the Government of National Defence. After the capitulation of Paris he was sent to Bordeaux to stop Gambetta’s resistance to the peace, and Gambetta resigned. He kept the education ministry under Thiers and became prime minister in 1876, but resigned under MacMahon’s pressure on 16 May 1877 and never held office again. He had no sympathy at any time for collectivism."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "쥘 프랑수아 시몽",
+     "쥘프랑수아시몽 쉬스"
+    ],
+    "en": [
+     "Jules François Simon",
+     "Jules-François-Simon Suisse"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jules_Simon",
+    "https://fr.wikipedia.org/wiki/Jules_Simon"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1814–1896",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "lead",
+     "excerpt": "31 December 1814 – 8 June 1896"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French statesman and philosopher",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "lead",
+     "excerpt": "was a French statesman and philosopher, and one of the leaders of the Moderate Republicans in the Third French Republic"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Lorient, Brittany",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Biography",
+     "excerpt": "Simon was born at Lorient, Brittany."
+    },
+    {
+     "field": "bio",
+     "claim": "family name Suisse",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Biography",
+     "excerpt": "The family name was Suisse, which Simon dropped in favour of his third forename."
+    },
+    {
+     "field": "bio",
+     "claim": "ENS; Cousin’s deputy at the University of Paris",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Biography",
+     "excerpt": "in 1839 became his deputy in the chair of philosophy at the University of Paris"
+    },
+    {
+     "field": "bio",
+     "claim": "never sympathised with collectivism",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Biography",
+     "excerpt": "with which he was at no time in sympathy"
+    },
+    {
+     "field": "bio",
+     "claim": "1848 National Assembly; refused the oath after the coup",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Political career from 1848 to 1871",
+     "excerpt": "His refusal to take the oath of allegiance to the government of Louis Napoleon after the coup d'état was followed by his dismissal from his professorship"
+    },
+    {
+     "field": "bio",
+     "claim": "Corps Législatif 1863; supported the Five",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Political career from 1848 to 1871",
+     "excerpt": "In 1863 he was returned to the Corps Législatif for the 8th circonscription of the Seine département, and supported \"les Cinq\""
+    },
+    {
+     "field": "bio",
+     "claim": "minister of instruction, 5 September 1870",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Political career from 1848 to 1871",
+     "excerpt": "He became minister of instruction in the Government of National Defense on 5 September 1870."
+    },
+    {
+     "field": "bio",
+     "claim": "sent to Bordeaux against Gambetta; Gambetta resigned",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Political career from 1848 to 1871",
+     "excerpt": "After the capitulation of Paris in January 1871 he was sent down to Bordeaux to prevent the resistance of Léon Gambetta to the peace."
+    },
+    {
+     "field": "bio",
+     "claim": "Gambetta resigned",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Political career from 1848 to 1871",
+     "excerpt": "Gambetta resigned, and the ministry of the Interior, though nominally given to Arago, was really in Simon's hands."
+    },
+    {
+     "field": "bio",
+     "claim": "education under Thiers; premier 1876; Seize Mai 1877",
+     "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+     "locator": "Third Republic",
+     "excerpt": "His resignation in response to this act of the president, known as the \"Seize Mai\", which he might have resisted by an appeal to the Chamber, proved his ruin, and he never again held office."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1870,
+     "endYear": 1877,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+       "locator": "Political career from 1848 to 1871",
+       "claim": "Minister of public instruction (1870–1873) and prime minister (1876–1877)",
+       "excerpt": "He became minister of instruction in the Government of National Defense on 5 September 1870."
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1848,
+     "endYear": 1896,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+       "locator": "Third Republic",
+       "claim": "Deputy in 1848 and from 1863; life senator from 1875",
+       "excerpt": "In 1875, he became a member of the Académie Française and a life senator"
+      }
+     ]
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1871,
+     "endYear": 1896,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jules_Simon",
+       "locator": "lead",
+       "claim": "A leader of the Moderate (left-centre Opportunist) Republicans (no catalog affiliation)",
+       "excerpt": "one of the leaders of the Moderate Republicans in the Third French Republic"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1848
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "제헌의회 의원",
+      "en": "Deputy to the Constituent Assembly"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1863
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "입법원 의원",
+      "en": "Deputy to the Corps Législatif"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": [
+       1873
+      ]
+     },
+     "r": {
+      "ko": "교육장관",
+      "en": "Minister of public instruction"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1875
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "종신 상원의원",
+      "en": "Life senator"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1876
+      ],
+      "end": [
+       1877
+      ]
+     },
+     "r": {
+      "ko": "총리",
+      "en": "Prime minister"
+     }
+    }
+   ],
+   "cyrillic": "Jules François Simon"
+  },
+  {
+   "id": "vincent-benedetti",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "뱅상",
+    "en": "Vincent"
+   },
+   "familyName": {
+    "ko": "베네데티",
+    "en": "Benedetti"
+   },
+   "nativeName": "Vincent Benedetti",
+   "years": "1817–1900",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "바트엠스에서 빌헬름 1세에게 보장을 요구한 프랑스의 주프로이센 대사",
+    "en": "French ambassador to Prussia who put France’s demand for a guarantee to Wilhelm I at Bad Ems in July 1870"
+   },
+   "bio": {
+    "ko": "1817년 코르시카 바스티아의 그리스계 집안에서 태어나 1840년 외무부에 들어가 카이로·팔레르모 영사, 콘스탄티노폴리스 대사관 1등 서기관을 지냈다. 1856년 파리 강화회의의 서기를 맡았고 1861년 이탈리아 왕국에 간 첫 프랑스 공사가 되었다. 1864년 주프로이센 대사가 되었고, 1866년 프랑스의 벨기에 병합을 프로이센이 지지한다는 조약 초안을 손수 썼는데 비스마르크가 이를 보관했다가 1870년 개전 직후 『타임스』에 공개했다. 1870년 7월 그라몽의 훈령으로 엠스 산책로에서 국왕에게 호엔촐레른 후보를 다시 내세우지 않겠다는 보장을 요구했고, 이 대화를 비스마르크가 편집해 발표하면서 전쟁의 길이 열렸다. 뒤에 『프로이센에서의 나의 임무』로 자신을 변호했다.",
+    "en": "Born in 1817 at Bastia in Corsica to a family of Greek origin, he entered the foreign service in 1840, serving as consul at Cairo and Palermo and as first secretary of the embassy at Constantinople. He was secretary of the Congress of Paris in 1856 and in 1861 the first French envoy to the new Kingdom of Italy. Appointed ambassador to Prussia in 1864, he wrote out in his own hand the draft of a treaty by which Prussia would back a French annexation of Belgium; Bismarck kept it and published it in The Times days after war broke out in 1870. In July 1870, on Gramont’s instructions, he asked the king on the promenade at Ems to guarantee that the Hohenzollern candidature would never be renewed, and Bismarck’s published version of the conversation paved the way to war. He defended his conduct in Ma Mission en Prusse (1871)."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "Count Benedetti"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+    "https://fr.wikipedia.org/wiki/Vincent_Benedetti"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1817–1900",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "lead",
+     "excerpt": "29 April 1817 – 28 March 1900"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French diplomat",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "lead",
+     "excerpt": "was a French diplomat"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Bastia, Corsica, to a family of Greek origin",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "Benedetti was born to a family of Greek origin at Bastia, on the island of Corsica."
+    },
+    {
+     "field": "bio",
+     "claim": "foreign service 1840; Cairo; Palermo; Constantinople",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "In 1840, he entered the service of the French foreign office"
+    },
+    {
+     "field": "bio",
+     "claim": "consul at Palermo; first secretary at Constantinople",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "In 1848, he was made consul at Palermo, and in 1851, he accompanied the marquis, who had been appointed ambassador at Constantinople, as first secretary."
+    },
+    {
+     "field": "bio",
+     "claim": "secretary of the Congress of Paris",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "acted as secretary to the congress at Paris (1855–1856)"
+    },
+    {
+     "field": "bio",
+     "claim": "first envoy to the Kingdom of Italy; ambassador to Prussia 1864",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "He was chosen in 1861 to be the first envoy of France to the king of Italy"
+    },
+    {
+     "field": "bio",
+     "claim": "ambassador to Prussia 1864",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "In 1864, he was appointed ambassador at the court of Prussia."
+    },
+    {
+     "field": "bio",
+     "claim": "Belgian draft treaty published in The Times",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "This treaty was never concluded, but the draft, which was in Benedetti's handwriting, was kept by Bismarck and, in 1870, a few days after the outbreak of the war, was published by him in The Times."
+    },
+    {
+     "field": "bio",
+     "claim": "Ems demand on Gramont’s instructions",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "This last demand Benedetti submitted to the king in informal meetings on the promenade at Ems"
+    },
+    {
+     "field": "bio",
+     "claim": "publication paved the way to war",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "The emotions stirred up by the incident and Bismarck's publication paved the way to the Franco-Prussian War which followed."
+    },
+    {
+     "field": "bio",
+     "claim": "Ma Mission en Prusse",
+     "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+     "locator": "Life and career",
+     "excerpt": "Benedetti answered the charges brought against him in a book, Ma Mission en Prusse (Paris, 1871)"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1840,
+     "endYear": 1870,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Vincent,_Count_Benedetti",
+       "locator": "Life and career",
+       "claim": "French consul and diplomat; envoy to Italy (1861–1862) and ambassador to Prussia (1864–1870)",
+       "excerpt": "Benedetti remained in Berlin until the outbreak of the Franco-Prussian War in 1870"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1840
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "외무부 입부, 카이로 근무",
+      "en": "Entered the foreign service; posted to Cairo"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1856
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "파리 강화회의 서기",
+      "en": "Secretary of the Congress of Paris"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1861
+      ],
+      "end": [
+       1862
+      ]
+     },
+     "r": {
+      "ko": "이탈리아 왕국 주재 공사",
+      "en": "Envoy to the Kingdom of Italy"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1864
+      ],
+      "end": [
+       1870
+      ]
+     },
+     "r": {
+      "ko": "주프로이센 대사",
+      "en": "Ambassador to Prussia"
+     }
+    }
+   ],
+   "cyrillic": "Vincent Benedetti"
+  },
+  {
+   "id": "agenor-de-gramont",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "아제노르",
+    "en": "Agénor"
+   },
+   "familyName": {
+    "ko": "드 그라몽",
+    "en": "de Gramont"
+   },
+   "nativeName": "Antoine Alfred Agénor de Gramont",
+   "years": "1819–1880",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "엠스에서 프로이센 국왕의 보장을 요구하게 한 제2제정 마지막 외무장관",
+    "en": "Foreign minister of the Second Empire whose demand for a Prussian guarantee in July 1870 led to the Ems Dispatch and war"
+   },
+   "bio": {
+    "ko": "1819년 파리의 명문 귀족 그라몽 가문에서 태어나 에콜 폴리테크니크를 나왔다. 조부는 혁명기 망명 귀족이었으나 그는 젊은 시절 루이 나폴레옹과 맺은 친분으로 출세해, 1851년 쿠데타 뒤 카셀·슈투트가르트·토리노 공사와 워싱턴·로마·빈 대사를 지냈다. 1870년 5월 올리비에 내각의 외무장관이 되어 호엔촐레른 후보 문제를 다루었고, 7월 12일 밤 올리비에에게 알리지 않고 엠스의 베네데티에게 프로이센 국왕의 보장을 받아 내라는 전보를 보냈다. 비스마르크가 편집한 엠스 전보를 의회에서 「뺨을 맞은 것」이라 불렀고, 프랑스는 19일 선전포고했다. 개전 초 패전으로 8월 9일 내각과 함께 물러났다.",
+    "en": "Born in Paris in 1819 into the illustrious Gramont family, he studied at the École Polytechnique. His grandfather had been an émigré, but he owed his career to an early friendship with Louis Napoleon: after the coup of 1851 he was minister at Cassel, Stuttgart and Turin and ambassador at Washington, Rome and Vienna. Appointed foreign minister in the Ollivier cabinet in May 1870, he handled the Hohenzollern candidature, and on the night of 12 July, without telling Ollivier, sent Benedetti at Ems the telegram demanding the Prussian king’s guarantee. He called the Bismarck-edited Ems Dispatch a “slap in the face” in the Chamber, and France declared war on the 19th. He resigned with the rest of the ministry on 9 August after the first defeats, went to England after the September revolution, and later published apologies for his policy."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "앙투안 알프레드 아제노르 드 그라몽",
+     "그라몽 공작"
+    ],
+    "en": [
+     "Antoine Alfred Agénor de Gramont",
+     "Duc de Gramont",
+     "Duke of Gramont"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1819–1880",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "lead",
+     "excerpt": "Antoine Alfred Agénor; 14 August 1819 – 17 January 1880"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French diplomat and statesman",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "lead",
+     "excerpt": "was a French diplomat and statesman who also had the title Prince of Bidache"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Paris to an old noble family",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Early life",
+     "excerpt": "He was born in Paris to one of the most illustrious families of the old noblesse"
+    },
+    {
+     "field": "bio",
+     "claim": "École Polytechnique",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Early life",
+     "excerpt": "Gramont was educated at the École Polytechnique."
+    },
+    {
+     "field": "bio",
+     "claim": "émigré grandfather; career owed to Louis Napoleon",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Early life",
+     "excerpt": "while Antoine Agénor owed his career to his early friendship for Louis Napoleon"
+    },
+    {
+     "field": "bio",
+     "claim": "diplomatic posts after 1851",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Career",
+     "excerpt": "He was successively minister plenipotentiary at Cassel and Stuttgart (1852), at Turin (1853), ambassador at Washington DC (1854), Rome (1857) and at Vienna (1861)."
+    },
+    {
+     "field": "bio",
+     "claim": "foreign minister in the Ollivier cabinet",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Franco-Prussian War",
+     "excerpt": "On 15 May 1870, he was appointed minister of foreign affairs in the Ollivier cabinet"
+    },
+    {
+     "field": "bio",
+     "claim": "telegram to Benedetti on 12 July without informing Ollivier",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Franco-Prussian War",
+     "excerpt": "on the same night, without informing Ollivier, despatched to Benedetti at Ems the fatal telegram demanding the king of Prussia's guarantee that the candidature would not be revived"
+    },
+    {
+     "field": "bio",
+     "claim": "“slap in the face”; declaration of war on the 19th",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Franco-Prussian War",
+     "excerpt": "the \"slap in the face\" (soufflet) as Gramont called it in the Chamber by means of the Bismarck-edited \"Ems telegram,\" which was the immediate cause of the French declaration of war on the 19th"
+    },
+    {
+     "field": "bio",
+     "claim": "resigned 9 August; England; apologies",
+     "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+     "locator": "Later life",
+     "excerpt": "After the defeat of Wissembourg (4 August) Gramont resigned his office with the rest of the Ollivier ministry (9 August), and after the revolution of September he went to England"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1852,
+     "endYear": 1870,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+       "locator": "Career",
+       "claim": "Minister and ambassador of the Second Empire; foreign minister May–August 1870",
+       "excerpt": "He was successively minister plenipotentiary at Cassel and Stuttgart (1852), at Turin (1853), ambassador at Washington DC (1854), Rome (1857) and at Vienna (1861)."
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1870,
+     "endYear": 1870,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Ag%C3%A9nor_de_Gramont,_10th_Duke_of_Gramont",
+       "locator": "Franco-Prussian War",
+       "claim": "Minister of foreign affairs in the Ollivier cabinet",
+       "excerpt": "On 15 May 1870, he was appointed minister of foreign affairs in the Ollivier cabinet"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1852
+      ],
+      "end": [
+       1853
+      ]
+     },
+     "r": {
+      "ko": "카셀·슈투트가르트·토리노 공사",
+      "en": "Minister at Cassel, Stuttgart and Turin"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1854
+      ],
+      "end": [
+       1861
+      ]
+     },
+     "r": {
+      "ko": "워싱턴·로마·빈 대사",
+      "en": "Ambassador at Washington, Rome and Vienna"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "외무장관",
+      "en": "Minister of foreign affairs"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "그라몽",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "auto"
+    },
+    {
+     "text": "Gramont",
+     "lang": "en",
+     "role": "identity",
+     "policy": "auto"
+    }
+   ],
+   "cyrillic": "Antoine Alfred Agénor de Gramont"
+  },
+  {
+   "id": "emile-ollivier",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "에밀",
+    "en": "Émile"
+   },
+   "familyName": {
+    "ko": "올리비에",
+    "en": "Ollivier"
+   },
+   "nativeName": "Olivier Émile Ollivier",
+   "years": "1825–1913",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "「가벼운 마음으로」 전쟁의 책임을 받아들인 자유주의 제정의 총리",
+    "en": "Prime minister of the Liberal Empire who accepted responsibility for the war of 1870 “with a light heart”"
+   },
+   "bio": {
+    "ko": "1825년 마르세유에서 공화파 의원의 아들로 태어나 1848년 스물두 살에 부슈뒤론 정부위원이 되어 마르세유의 사회주의 봉기를 진압했다. 1857년 센 선출 의원이 되어 파브르·피카르 등과 공화파 반대파 「5인」을 이루었으나, 시민적 자유를 얻는 대가로 제정을 받아들이는 「자유주의 제정」의 제3당을 이끌게 되었다. 1870년 1월 2일 내각을 구성해 사실상 총리가 되었고, 국민투표로 입헌화한 제정을 승인받았다. 7월 15일 엠스 전보를 근거로 의회에서 전쟁 예산을 얻으며 「가벼운 마음으로」 책임을 받아들인다고 말했다. 8월 잇단 패전으로 내각이 무너지자 이탈리아로 피했고, 1873년 귀국했으나 정치적 힘을 되찾지 못했다.",
+    "en": "Born at Marseille in 1825, the son of a republican deputy, he was made government commissary of the Bouches-du-Rhône at twenty-three in 1848 and suppressed a socialist rising at Marseille. Elected for the Seine in 1857, he formed the republican opposition of “the Five” with Favre, Picard and others, but came to lead a third party that would accept the Empire in exchange for civil liberties, the “Liberal Empire”. He formed the ministry of 2 January 1870 and was premier in all but name; a plebiscite endorsed the constitutional Empire in May. On 15 July he cited the Ems Dispatch to obtain the war credits and said he accepted responsibility for the war “with a light heart”. When the defeats of August brought down his cabinet he fled to Italy; he returned in 1873 but never regained political power."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "올리비에 에밀 올리비에"
+    ],
+    "en": [
+     "Olivier Émile Ollivier",
+     "Emile Ollivier"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+    "https://fr.wikipedia.org/wiki/%C3%89mile_Ollivier_(homme_politique)"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1825–1913",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "lead",
+     "excerpt": "2 July 1825 – 20 August 1913"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French statesman",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "lead",
+     "excerpt": "was a French statesman"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Marseille",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Biography",
+     "excerpt": "Émile Ollivier was born on 2 July 1825 in Marseille."
+    },
+    {
+     "field": "bio",
+     "claim": "father a republican deputy",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Biography",
+     "excerpt": "His father, Démosthène Ollivier (1799–1884), was a vehement opponent of the July Monarchy"
+    },
+    {
+     "field": "bio",
+     "claim": "commissary-general of the Bouches-du-Rhône; suppressed a socialist rising",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Biography",
+     "excerpt": "Less radical in his political opinions than his father, he suppressed a socialist uprising at Marseille"
+    },
+    {
+     "field": "bio",
+     "claim": "deputy 1857; the Five",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Calls for a Liberal Empire",
+     "excerpt": "With Alfred Darimon, Jules Favre, JL Hénon and Ernest Picard he formed a group known as Les Cinq (the Five)"
+    },
+    {
+     "field": "bio",
+     "claim": "third party for a Liberal Empire",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Calls for a Liberal Empire",
+     "excerpt": "Ollivier formed a third party, which supported the principle of a Liberal Empire"
+    },
+    {
+     "field": "bio",
+     "claim": "ministry of 2 January 1870",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Politics",
+     "excerpt": "The new cabinet, known as the ministry of 2 January, had a hard task before it"
+    },
+    {
+     "field": "bio",
+     "claim": "plebiscite of 8 May 1870",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Politics",
+     "excerpt": "On 8 May, however, the amended constitution was submitted, on Rouher's advice, to a plebiscite, which resulted in a vote of nearly seven to one in favour of the government."
+    },
+    {
+     "field": "bio",
+     "claim": "“with a light heart”",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Franco-Prussian War",
+     "excerpt": "He obtained a war vote of 500,000,000 francs, and said that he accepted the responsibility of the war \"with a light heart,\" saying that the war had been forced on France."
+    },
+    {
+     "field": "bio",
+     "claim": "fall 9 August; refuge in Italy; return 1873",
+     "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+     "locator": "Franco-Prussian War",
+     "excerpt": "the Ollivier cabinet was driven from office, and Ollivier sought refuge from the general rage in Italy. He returned to France in 1873"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1870,
+     "endYear": 1870,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+       "locator": "Politics",
+       "claim": "Head of the ministry of 2 January 1870, premier in all but name until 9 August 1870",
+       "excerpt": "the formation in the last week of that year of a ministry of which Ollivier was really premier, although that office was not nominally recognized by the constitution"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1857,
+     "endYear": 1870,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89mile_Ollivier",
+       "locator": "Calls for a Liberal Empire",
+       "claim": "Deputy for the Seine in the Corps Législatif",
+       "excerpt": "He re-entered political life in 1857 as deputy for the 3rd circumscription of the Seine département."
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1848,
+     "endYear": 1849,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/%C3%89mile_Ollivier_(homme_politique)",
+       "locator": "Origines familiales et jeunesse",
+       "claim": "Commissary of the provisional government in the Bouches-du-Rhône, then prefect",
+       "excerpt": "le nomme le 27 février 1848 commissaire du gouvernement provisoire de la République dans les départements des Bouches-du-Rhône et du Var"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1848
+      ],
+      "end": [
+       1849
+      ]
+     },
+     "r": {
+      "ko": "부슈뒤론 정부위원, 지사",
+      "en": "Government commissary and prefect in the Bouches-du-Rhône"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1857
+      ],
+      "end": [
+       1870
+      ]
+     },
+     "r": {
+      "ko": "입법원 의원(센)",
+      "en": "Deputy for the Seine in the Corps Législatif"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "1월 2일 내각 수반",
+      "en": "Head of the ministry of 2 January"
+     }
+    }
+   ],
+   "cyrillic": "Olivier Émile Ollivier"
+  },
+  {
+   "id": "gustave-flourens",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "귀스타브",
+    "en": "Gustave"
+   },
+   "familyName": {
+    "ko": "플루랑스",
+    "en": "Flourens"
+   },
+   "nativeName": "Gustave Flourens",
+   "years": "1838–1871",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "10월 31일 봉기를 이끌고 파리 코뮌의 장군이 되었다가 베르사유 출격 중 살해된 혁명가",
+    "en": "Revolutionary who led the rising of 31 October 1870, became a general of the Paris Commune and was killed after capture on 3 April 1871"
+   },
+   "bio": {
+    "ko": "1838년 파리에서 생리학자 피에르 플루랑스의 아들로 태어나 1863년 콜레주 드 프랑스에서 인류사를 강의했으나 반종교·반보나파르트 견해로 강의를 금지당했다. 벨기에 망명 중 블랑키파에 가까워졌고 1866~1868년 크레타 봉기에 가담했다. 귀국해 로슈포르의 『라 마르세예즈』에 기고했고, 1870년 2월 벨빌 봉기 시도가 실패하자 영국으로 피해 마르크스와 가까워졌다. 9월 공화국 선포 뒤 돌아와 벨빌 국민방위군 대대를 이끌고 10월 31일 시청 점거를 조직했다가 투옥되었으나 1871년 1월 부하들이 구해 냈다. 3월 코뮌 의원과 장군이 되었고, 4월 3일 베르사유 출격에서 패한 뒤 뤼에유 근처에서 헌병 대위에게 살해되었다. 코뮌 의원 가운데 첫 희생자였다.",
+    "en": "Born in Paris in 1838, the son of the physiologist Pierre Flourens, he lectured at the Collège de France in 1863 until his anti-religious and anti-Bonapartist views got the course banned. In exile in Belgium he drew close to the Blanquists, and he fought in the Cretan insurrection of 1866–1868. Back in France he wrote for Rochefort’s La Marseillaise; after a failed rising at Belleville in February 1870 he fled to England, where he became a familiar of Karl Marx. Returning after the Republic was proclaimed, he led a Belleville battalion of the National Guard and was one of the organisers of the rising of 31 October; imprisoned, he was freed by his men in January 1871. In March he was elected to the Commune and made a general, and on 3 April, after the sortie against Versailles, he was cut down near Rueil by a gendarmerie captain after his capture. He was the first Commune member to die."
+   },
+   "fate": {
+    "kind": "murdered",
+    "label": {
+     "ko": "체포 뒤 살해",
+     "en": "Killed after capture"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": []
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+    "https://en.wikipedia.org/wiki/Gustave_Flourens"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1838–1871",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "préambule",
+     "excerpt": "Gustave Flourens, né le 4 août 1838 à Paris et mort le 3 avril 1871 à Rueil"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French academic, publicist, soldier and politician",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "préambule",
+     "excerpt": "est un universitaire, publiciste, militaire et homme politique français"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Paris, son of Pierre Flourens",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "Famille et formation",
+     "excerpt": "Gustave Flourens naît le 4 août 1838 à Paris. Il est le fils de Pierre Flourens (1794-1867)"
+    },
+    {
+     "field": "bio",
+     "claim": "Collège de France lectures banned after one year",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "Débuts dans le professorat",
+     "excerpt": "Professeur au Collège de France à 25 ans en 1863, il est chargé de traiter l’Histoire des races humaines où ses opinions antireligieuses et antibonapartistes le font interdire de cours après une année d'exercice."
+    },
+    {
+     "field": "bio",
+     "claim": "close to the Blanquists in Belgian exile",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "Entrée en politique",
+     "excerpt": "En exil en Belgique en 1865, il rejoint les partisans des minorités agissantes, proches du courant blanquiste"
+    },
+    {
+     "field": "bio",
+     "claim": "Cretan insurrection",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "Entrée en politique",
+     "excerpt": "En 1866, il participe à l'insurrection crétoise avec le grade de capitaine."
+    },
+    {
+     "field": "bio",
+     "claim": "La Marseillaise; fled to England; close to Marx",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "Entrée en politique",
+     "excerpt": "Après l'arrestation de Rochefort en février 1870, il s'enfuit en Hollande puis en Angleterre, où il devient un familier de Karl Marx."
+    },
+    {
+     "field": "bio",
+     "claim": "failed Belleville rising, 7 February 1870",
+     "source": "https://en.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "lead",
+     "excerpt": "having failed in an attempt to organize a revolution at Belleville on 7 February 1870, was compelled to flee from France"
+    },
+    {
+     "field": "bio",
+     "claim": "Belleville battalion; organiser of 31 October; freed in January 1871",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "La Commune de Paris",
+     "excerpt": "il est élu chef d'un bataillon de la Garde nationale de Belleville et est l'un des organisateurs du soulèvement du 31 octobre 1870"
+    },
+    {
+     "field": "bio",
+     "claim": "freed by men under Cipriani",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "La Commune de Paris",
+     "excerpt": "Emprisonné, il est libéré par des hommes de la Garde nationale commandés par son ami Amilcare Cipriani dans la nuit du 21 au 22 janvier 1871."
+    },
+    {
+     "field": "bio",
+     "claim": "Commune member and general; killed 3 April at Rueil",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "La Commune de Paris",
+     "excerpt": "nommé général et chargé de la défense du Paris révolutionnaire. Partisan de la désastreuse offensive des communards contre Versailles, il est sabré mortellement le 3 avril 1871 à Rueil, alors qu'il était désarmé, par le capitaine de gendarmerie Jean-Marc-Noël Démaret"
+    },
+    {
+     "field": "bio",
+     "claim": "first Commune member to die",
+     "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+     "locator": "La Commune de Paris",
+     "excerpt": "Premier mort parmi les membres de la Commune"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-paris-commune-1871",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1871,
+     "endYear": 1871,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+       "locator": "La Commune de Paris",
+       "claim": "General of the Paris Commune charged with the defence of revolutionary Paris",
+       "excerpt": "nommé général et chargé de la défense du Paris révolutionnaire"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "french-paris-commune-1871",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1871,
+     "endYear": 1871,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Gustave_Flourens",
+       "locator": "lead",
+       "claim": "Elected member of the Commune",
+       "excerpt": "was elected a member of the revolutionary Commune by the 20th arrondissement, and was named general"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1866,
+     "endYear": 1868,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Gustave_Flourens",
+       "locator": "Entrée en politique",
+       "claim": "Captain in the Cretan insurrection against the Ottoman Empire (no catalog affiliation)",
+       "excerpt": "En 1866, il participe à l'insurrection crétoise avec le grade de capitaine."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1863
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "콜레주 드 프랑스 강사",
+      "en": "Lecturer at the Collège de France"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1866
+      ],
+      "end": [
+       1868
+      ]
+     },
+     "r": {
+      "ko": "크레타 봉기 참가",
+      "en": "Fought in the Cretan insurrection"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "벨빌 국민방위군 대대장, 10월 31일 봉기 조직",
+      "en": "Belleville National Guard battalion leader; organiser of the 31 October rising"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1871
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "파리 코뮌 의원·장군",
+      "en": "Member and general of the Paris Commune"
+     }
+    }
+   ],
+   "cyrillic": "Gustave Flourens"
+  },
+  {
+   "id": "charles-sapinaud-de-la-rairie",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "샤를",
+    "en": "Charles"
+   },
+   "familyName": {
+    "ko": "사피노 드 라레리",
+    "en": "Sapinaud de La Rairie"
+   },
+   "nativeName": "Charles Henri Félicité Sapinaud de La Rairie",
+   "years": "1760–1829",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "중부군을 이끌고 라자주네 조약에 서명한 방데 장군",
+    "en": "Vendéan general who led the Army of the Centre and signed the Treaty of La Jaunaye"
+   },
+   "bio": {
+    "ko": "1760년 라고브르티에르에서 태어나 1778년 푸아 연대 사관후보생이 되었고 1789년 중위로 전역해 고향의 첫 입헌 시장이 되었다. 1793년 3월 봉기에 가담해 루아랑 휘하 중부군에서 숙부 밑에 있다가, 7월 숙부가 샹토네 근처에서 전사하자 뒤를 이었다. 갈레른 행군 중 르망에서 본대와 떨어졌다가 방데로 돌아왔고, 루아랑이 죽은 뒤 중부군을 이끌며 지옥 종대와 싸웠다. 1794년 4월 샤레트·스토플레·마리니와 상호 지원을 맹세했으나 마리니의 사형 표결은 거부했다. 1795년 2월 샤레트와 함께 라자주네 조약에 서명했고, 10월 다시 봉기했다가 1796년 1월 낭트에서 강화했다. 1800년 몽포콩 강화에도 서명했고 복고 왕정에서 하원의원과 귀족원 의원이 되었다.",
+    "en": "Born at La Gaubretière in 1760, he became a gentleman cadet in the Foix regiment in 1778, left the army as a lieutenant in 1789 and was elected the first constitutional mayor of his parish. In March 1793 he joined the rising, serving under his uncle in Royrand’s Army of the Centre, and succeeded the uncle when he was killed near Chantonnay in July. Cut off from the main army at Le Mans during the Virée de Galerne, he made his way back to the Vendée and, after Royrand’s death, led the Army of the Centre against the infernal columns. In April 1794 he swore mutual assistance with Charette, Stofflet and Marigny, but refused to vote for Marigny’s execution. He signed the Treaty of La Jaunaye with Charette in February 1795, took up arms again in October and made peace at Nantes in January 1796. He signed the peace of Montfaucon in 1800 and under the Restoration became a deputy and a peer."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "샤를 앙리 펠리시테 사피노 드 라레리"
+    ],
+    "en": [
+     "Charles Henri Félicité Sapinaud de La Rairie",
+     "Charles Sapinaud de la Rairie",
+     "Charles-Henri Sapinaud de La Rairie"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+    "https://en.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1760–1829",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "préambule",
+     "excerpt": "né le 3 décembre 1760 au château du Sourdy à La Gaubretière (Vendée), où il meurt le 10 août 1829"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French soldier and Vendéan general",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "préambule",
+     "excerpt": "est un militaire français et un général vendéen"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at La Gaubretière (Vendée)",
+     "source": "https://en.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Life",
+     "excerpt": "Sapinaud was born in La Gaubretière."
+    },
+    {
+     "field": "bio",
+     "claim": "Foix regiment 1778; lieutenant 1789; first constitutional mayor",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Il démissionne de l'armée en 1789 avec le grade de lieutenant. Il se retire ensuite dans ses terres de La Gaubretière où il est élu maire (premier maire constitutionnel)."
+    },
+    {
+     "field": "bio",
+     "claim": "joined the rising under his uncle, under Royrand",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "En mars 1793, la guerre de Vendée éclate, Sapinaud rejoint les insurgés et sert sous les ordres de son oncle Louis Sapinaud de Boishuguet, dit Chevalier de La Verrie, lui-même sous les ordres de Charles de Royrand"
+    },
+    {
+     "field": "bio",
+     "claim": "succeeded his uncle, killed 25 July 1793",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Son oncle est tué le 25 juillet 1793 près de Chantonnay (bataille du Pont-Charrault), Sapinaud de La Rairie lui succède."
+    },
+    {
+     "field": "bio",
+     "claim": "separated at Le Mans",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Il est cependant séparé de l'armée à la suite de la bataille du Mans (1793), le 13 décembre 1793."
+    },
+    {
+     "field": "bio",
+     "claim": "led the Army of the Centre against the infernal columns",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Sapinaud prend la tête de l'Armée catholique et royale du Centre et combat les colonnes infernales dans les premiers mois de l'année 1794."
+    },
+    {
+     "field": "bio",
+     "claim": "refused to vote Marigny’s death",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Un tribunal militaire condamne Marigny à mort par contumace, Sapinaud refuse de voter sa mort."
+    },
+    {
+     "field": "bio",
+     "claim": "Treaty of La Jaunaye, 17 February 1795",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Traité de La Jaunaye que Sapinaud et Charette signent le 17 février 1795"
+    },
+    {
+     "field": "bio",
+     "claim": "took up arms 3 October 1795; peace at Nantes January 1796",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Sapinaud reprend les armes le 3 octobre 1795."
+    },
+    {
+     "field": "bio",
+     "claim": "peace at Nantes, January 1796",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "il signe finalement la paix à Nantes à la fin du mois de janvier 1796"
+    },
+    {
+     "field": "bio",
+     "claim": "peace of Montfaucon 1800",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "Il signe la paix de Montfaucon le 18 janvier 1800."
+    },
+    {
+     "field": "bio",
+     "claim": "deputy 1822; peer 1827",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+     "locator": "Biographie",
+     "excerpt": "il est élu député du grand collège de la Vendée, le 20 novembre 1822"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1800,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+       "locator": "Biographie",
+       "claim": "Commander of the Catholic and Royal Army of the Centre",
+       "excerpt": "Sapinaud prend la tête de l'Armée catholique et royale du Centre"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1822,
+     "endYear": 1829,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_Sapinaud_de_La_Rairie",
+       "locator": "Biographie",
+       "claim": "Deputy for the Vendée (1822) and peer of France (1827)",
+       "excerpt": "Élevé à la dignité de pair de France le 5 novembre 1827"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1778
+      ],
+      "end": [
+       1789
+      ]
+     },
+     "r": {
+      "ko": "푸아 연대 장교",
+      "en": "Officer of the Foix regiment"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "중부군 지휘관(숙부의 후임)",
+      "en": "Commander in the Army of the Centre, succeeding his uncle"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1795
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "라자주네 조약 서명",
+      "en": "Signed the Treaty of La Jaunaye"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1800
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "몽포콩 강화 서명",
+      "en": "Signed the peace of Montfaucon"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1822
+      ],
+      "end": [
+       1829
+      ]
+     },
+     "r": {
+      "ko": "방데 선출 하원의원, 귀족원 의원",
+      "en": "Deputy for the Vendée; peer of France"
+     }
+    }
+   ],
+   "cyrillic": "Charles Henri Félicité Sapinaud de La Rairie"
+  },
+  {
+   "id": "charles-aime-de-royrand",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "샤를 에메",
+    "en": "Charles Aimé"
+   },
+   "familyName": {
+    "ko": "드 루아랑",
+    "en": "de Royrand"
+   },
+   "nativeName": "Charles Aimé de Royrand",
+   "years": "1726–1793",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "방데 남부 전선을 지킨 중부군 사령관, 앙트람 전투에서 치명상을 입었다",
+    "en": "Commander of the Vendéan Army of the Centre on the southern front, mortally wounded at Entrammes"
+   },
+   "bio": {
+    "ko": "1726년 생퓔장에서 태어나 나바르 보병연대와 아르마냐크 연대에서 복무하고 미국 독립전쟁에 참전한 뒤 1780년 영지로 물러났다. 1793년 봉기가 일어나자 주민들의 추대를 망설이다 받아들여 방데 남부 전선을 지키는 중부군의 지휘관이 되었고, 야전 지휘는 부관 사피노 드 라레리에게 맡겼다. 6월과 7월 뤼송을 공격했으나 격퇴되었고 8월 14일 뤼송 전투에서도 졌다. 갈레른 행군에서 10월 26일 앙트람 전투 때 라로슈자클랭과 함께 중앙을 이끌어 서부군을 무너뜨렸으나 치명상을 입었고, 12월 5일 보제 근처에서 숨졌다. 동생 샤를 오귀스탱도 1793년 3월 봉기를 이끌다 전사했다.",
+    "en": "Born at Saint-Fulgent in 1726, he served in the Navarre and Armagnac infantry regiments, fought in the American Revolutionary War and retired to his estates in 1780. When the rising broke out in 1793 he reluctantly accepted the local people’s call and became leader of the Army of the Centre guarding the southern front of the Vendée, leaving field command to his second Charles Sapinaud de La Rairie. He attacked Luçon in June and July and was repulsed, and was beaten again at the battle of Luçon on 14 August. On the Virée de Galerne he led the centre with La Rochejaquelein at Entrammes on 26 October, where the Army of the West was routed, but he was mortally wounded and died near Baugé on 5 December. His brother Charles Augustin had been killed leading the rising in March 1793."
+   },
+   "fate": {
+    "kind": "killed",
+    "label": {
+     "ko": "전사",
+     "en": "Died of wounds"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": []
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1726–1793",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "lead",
+     "excerpt": "14 March 1726 – 5 December 1793"
+    },
+    {
+     "field": "citizenship",
+     "claim": "Vendean leader, former officer of the French Royal Army",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "lead",
+     "excerpt": "He joined the French Royal Army and served in an infantry regiment during the American Revolutionary War before retiring to his estates in 1780."
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Saint-Fulgent",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Early life",
+     "excerpt": "Charles Aimé de Royrand was born on 14 March 1726 in Saint-Fulgent"
+    },
+    {
+     "field": "bio",
+     "claim": "Navarre and Armagnac regiments; American war; retired 1780",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Early life",
+     "excerpt": "Charles Aimé joined the Navarre Infantry Regiment and later transferred to the Armagnac Regiment."
+    },
+    {
+     "field": "bio",
+     "claim": "reluctant leader of the Army of the Centre; Sapinaud in the field",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Army command and Luçon",
+     "excerpt": "He proved to be a capable organizer while assigning his second-in-command Charles Sapinaud de La Rairie to lead the rebels in the field."
+    },
+    {
+     "field": "bio",
+     "claim": "reluctant at first",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Army command and Luçon",
+     "excerpt": "Upon the outbreak of the War in the Vendée, the local Vendeans offered to make Royrand their leader but he was reluctant to accept at first."
+    },
+    {
+     "field": "bio",
+     "claim": "repulsed at Luçon 28 June and 30 July",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Army command and Luçon",
+     "excerpt": "On 28 June, Royrand attacked Luçon but Claude Sandoz and its Republican garrison drove him off."
+    },
+    {
+     "field": "bio",
+     "claim": "battle of Luçon 14 August 1793",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Army command and Luçon",
+     "excerpt": "The Vendeans suffered 1,500 casualties and abandoned 18 guns."
+    },
+    {
+     "field": "bio",
+     "claim": "Entrammes: led the centre with La Rochejaquelein",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Chantonnay, Cholet and Entrames",
+     "excerpt": "Led by La Rochejaquelein and Royrand in the center, the Vendeans forced back the Republicans, turning captured cannon against their former owners."
+    },
+    {
+     "field": "bio",
+     "claim": "mortally wounded; died 5 December near Baugé",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Chantonnay, Cholet and Entrames",
+     "excerpt": "Royrand was mortally wounded at Entrames. After he fell, La Rochejaquelein urged Royrand's followers to avenge their leader. Royrand lingered until 5 December 1793, when he died near Baugé-en-Anjou."
+    },
+    {
+     "field": "bio",
+     "claim": "brother Charles Augustin killed 19 March 1793",
+     "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+     "locator": "Family",
+     "excerpt": "When the revolt broke out, the Vendeans asked Charles Augustin to lead them and he was killed in the fighting at La Guérinière on 19 March 1793."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1793,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+       "locator": "Army command and Luçon",
+       "claim": "Leader of the Vendéan Army of the Centre",
+       "excerpt": "He was soon recognized as leader of the so-called Army of the Center which defended the southern front of the Vendée."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": null,
+     "endYear": 1780,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Charles_Aim%C3%A9_de_Royrand",
+       "locator": "Early life",
+       "claim": "Officer of the Navarre and Armagnac regiments; American Revolutionary War",
+       "excerpt": "After fighting in the American Revolutionary War and possibly in the earlier French and Indian War, he returned to France in 1780 and retired to his properties"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1780
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "왕정 군대에서 퇴역",
+      "en": "Retired from the royal army"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "방데 중부군 지휘관",
+      "en": "Leader of the Vendéan Army of the Centre"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "앙트람 전투에서 치명상",
+      "en": "Mortally wounded at Entrammes"
+     }
+    }
+   ],
+   "cyrillic": "Charles Aimé de Royrand"
+  },
+  {
+   "id": "gaspard-de-bernard-de-marigny",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "가스파르",
+    "en": "Gaspard"
+   },
+   "familyName": {
+    "ko": "베르나르 드 마리니",
+    "en": "Bernard de Marigny"
+   },
+   "nativeName": "Gaspard Augustin René de Bernard de Marigny",
+   "years": "1754–1794",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "가톨릭 왕당군 포병 지휘관, 동료 지휘관들의 판결로 스토플레의 병사들에게 총살되었다",
+    "en": "Artillery commander of the Catholic and Royal Army, condemned by his fellow generals and shot by Stofflet’s men"
+   },
+   "bio": {
+    "ko": "1754년 뤼송에서 태어나 해군 중위로 미국 독립전쟁에 참전해 그레나다 점령과 사바나 포위전에 나갔다. 1792년 튈르리궁 방어에 가담했고, 1793년 브레쉬르에서 봉기군에 풀려나 가톨릭 왕당군 포병 장군이 되어 투아르·소뮈르 전투와 갈레른 행군에서 이름을 얻었다. 처음에는 포로에게 관용을 내세웠으나 7월 샤티용 전투 뒤 공화국군 포로 학살을 주도했다. 1794년 봄 오푸아투군을 맡아 4월 샤레트·스토플레·사피노와 상호 지원을 맹세했으나 곧 갈라섰고, 군사 회의가 그에게 궐석 사형을 선고했다. 7월 10일 병든 채 콩브랑 근처 성에 숨어 있다가 스토플레의 병사들에게 총살되었다.",
+    "en": "Born at Luçon in 1754, he served as a naval lieutenant in the American War of Independence, at the capture of Grenada and the siege of Savannah. He helped defend the Tuileries in 1792; freed by the insurgents at Bressuire in 1793, he became artillery general of the Catholic and Royal Army and distinguished himself at Thouars, at Saumur and on the Virée de Galerne. At first he preached clemency towards prisoners, but after the battle of Châtillon in July 1793 he led a massacre of republican prisoners. In spring 1794 he commanded the army of Upper Poitou and in April swore mutual assistance with Charette, Stofflet and Sapinaud, but soon broke with them, and a council of war condemned him to death in his absence. On 10 July, ill and hiding in a château near Combrand, he was shot by Stofflet’s soldiers."
+   },
+   "fate": {
+    "kind": "executed",
+    "label": {
+     "ko": "총살",
+     "en": "Shot"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "가스파르 드 베르나르 드 마리니",
+     "가스파르 오귀스탱 르네 드 베르나르 드 마리니"
+    ],
+    "en": [
+     "Gaspard de Bernard de Marigny",
+     "Gaspard Augustin René Bernard de Marigny",
+     "Gaspard Augustin René de Bernard de Marigny"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+    "https://en.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1754–1794",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "préambule",
+     "excerpt": "né à Luçon le 2 novembre 1754, mort à Combrand le 10 juillet 1794"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French officer and Vendéan general",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "préambule",
+     "excerpt": "est un militaire français et un général vendéen"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Luçon",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Famille",
+     "excerpt": "Marigny naît le 2 novembre 1754, en l'hôtel des Regnon de Chaligny à Luçon."
+    },
+    {
+     "field": "bio",
+     "claim": "naval lieutenant in the American war",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Guerre d'indépendance des États-Unis",
+     "excerpt": "Lieutenant de vaisseau dans La Royale sous l'Ancien Régime, il prend part à la guerre de la Révolution américaine"
+    },
+    {
+     "field": "bio",
+     "claim": "Grenada and Savannah",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Guerre d'indépendance des États-Unis",
+     "excerpt": "En 1779, il participe à la prise de la Grenade, puis au siège de Savannah."
+    },
+    {
+     "field": "bio",
+     "claim": "defended the Tuileries 1792",
+     "source": "https://en.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Life",
+     "excerpt": "In 1792, he tried to defend the Tuileries with the king's constitutional guard."
+    },
+    {
+     "field": "bio",
+     "claim": "freed at Bressuire; artillery general; Thouars, Saumur, Galerne",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Guerre de Vendée",
+     "excerpt": "Lorsque la guerre de Vendée éclate, il rejoint les insurgés après avoir été libéré par eux à Bressuire et se retrouve général d'artillerie. Il se distingue principalement à la bataille de Thouars, à la bataille de Saumur et lors de la Virée de Galerne."
+    },
+    {
+     "field": "bio",
+     "claim": "first preached clemency",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Guerre de Vendée",
+     "excerpt": "Marigny prône la clémence dans les premiers mois de l'insurrection."
+    },
+    {
+     "field": "bio",
+     "claim": "massacre of prisoners at Châtillon",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Guerre de Vendée",
+     "excerpt": "Cependant lors de la bataille de Châtillon du 5 juillet 1793, Marigny se rend responsable du massacre d'un certain nombre de prisonniers en représailles aux exactions commises dans la région par le général François-Joseph Westermann."
+    },
+    {
+     "field": "bio",
+     "claim": "Army of Upper Poitou; oath of April 1794",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Mort",
+     "excerpt": "Charette commande l'Armée du Bas-Poitou et du Pays de Retz, Stofflet l'Armée d'Anjou, Sapinaud l'Armée du Centre et Marigny l'Armée du Haut-Poitou."
+    },
+    {
+     "field": "bio",
+     "claim": "condemned by a council of war",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Mort",
+     "excerpt": "Marigny est accusé de trahison et un conseil de guerre est réuni le 26 avril."
+    },
+    {
+     "field": "bio",
+     "claim": "shot by Stofflet’s soldiers, 10 July 1794",
+     "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+     "locator": "Mort",
+     "excerpt": "Cependant le 10 juillet, des soldats allemands de Stofflet le surprennent, malade, dans le château de La Girardière, près de Combrand."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1794,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+       "locator": "Guerre de Vendée",
+       "claim": "Artillery general of the Catholic and Royal Army; commander of the army of Upper Poitou",
+       "excerpt": "il rejoint les insurgés après avoir été libéré par eux à Bressuire et se retrouve général d'artillerie"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1779,
+     "endYear": 1792,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Gaspard_de_Bernard_de_Marigny",
+       "locator": "Guerre d'indépendance des États-Unis",
+       "claim": "Naval lieutenant of the royal navy; defended the Tuileries in 1792",
+       "excerpt": "Lieutenant de vaisseau dans La Royale sous l'Ancien Régime, il prend part à la guerre de la Révolution américaine"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1779
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "해군 중위, 그레나다 점령·사바나 포위전",
+      "en": "Naval lieutenant at Grenada and Savannah"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1792
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "튈르리궁 방어",
+      "en": "Defence of the Tuileries"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "가톨릭 왕당군 포병 장군",
+      "en": "Artillery general of the Catholic and Royal Army"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "오푸아투군 지휘관, 궐석 사형 판결 뒤 총살",
+      "en": "Commander of the army of Upper Poitou; condemned in absence and shot"
+     }
+    }
+   ],
+   "cyrillic": "Gaspard Augustin René de Bernard de Marigny"
+  },
+  {
+   "id": "charles-de-sombreuil",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "샤를",
+    "en": "Charles"
+   },
+   "familyName": {
+    "ko": "드 솜브뢰유",
+    "en": "de Sombreuil"
+   },
+   "nativeName": "Charles Eugène Gabriel de Virot de Sombreuil",
+   "years": "1770–1795",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "키브롱 원정의 망명군 사단장으로 오슈에게 항복한 뒤 총살된 왕당파",
+    "en": "Royalist commander of an émigré division on the Quiberon expedition, shot after surrendering to Hoche"
+   },
+   "bio": {
+    "ko": "1770년 리무쟁의 보낙라코트에서 앵발리드 총독 솜브뢰유 후작의 셋째 아이로 태어났다. 1789년 에스테르하지 경기병 연대 대위였다가 혁명 초 망명해 프로이센과 러시아에서 복무했고, 1792년 프로이센군에서 롱위 점령과 발미 전투에 나갔다. 1794년 영국 지휘 아래 살름 경기병대를 이끌었고, 그해 아버지와 형이 단두대에서 처형되었다. 1795년 네덜란드에서 싸우던 망명군 부대를 합친 「솜브뢰유 사단」을 맡아 7월 키브롱에 닿았으나 이미 패색이 짙었고, 퓌자예가 배로 물러난 뒤 지휘를 넘겨받았다. 부하들의 목숨을 보장받는 조건으로 오슈에게 항복했으나 군사위원회는 약속을 지키지 않았고, 그는 7월 28일 반에서 총살되었다.",
+    "en": "Born in 1770 at Bonnac-la-Côte in the Limousin, the third child of the marquis de Sombreuil, governor of the Invalides, he was a captain in the Esterhazy hussars in 1789, emigrated early in the Revolution and served Prussia and Russia, fighting in Prussian ranks at Longwy and Valmy in 1792. In 1794 he commanded the Salm hussars in British service; that year his father and brother were guillotined. In 1795 he was given the “Sombreuil division”, formed from émigré corps that had fought in Holland, and reached Quiberon in July when the battle was all but lost; after Puisaye withdrew to the ships, command passed to him. He surrendered to Hoche on condition that his men’s lives be spared, but the military commission ignored the promise and he was shot at Vannes on 28 July."
+   },
+   "fate": {
+    "kind": "executed",
+    "label": {
+     "ko": "총살",
+     "en": "Shot"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "샤를 외젠 가브리엘 드 비로 드 솜브뢰유",
+     "샤를 드 비로 드 솜브뢰유"
+    ],
+    "en": [
+     "Charles Eugène Gabriel de Virot de Sombreuil",
+     "Charles Eugène Gabriel de Sombreuil",
+     "Charles de Virot de Sombreuil"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+    "https://en.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Sombreuil"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1770–1795",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "préambule",
+     "excerpt": "né le 11 juillet 1770 au château de Leychoisier à Bonnac-la-Côte et mort le 28 juillet 1795 à Vannes est un militaire français"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French soldier",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "préambule",
+     "excerpt": "est un militaire français"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "son of the governor of the Invalides",
+     "source": "https://en.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Sombreuil",
+     "locator": "lead",
+     "excerpt": "He was born in Bonnac-la-Côte to Charles François de Virot de Sombreuil, the governor of Les Invalides"
+    },
+    {
+     "field": "bio",
+     "claim": "third child of the marquis de Sombreuil",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "Famille",
+     "excerpt": "Charles de Sombreuil est le troisième enfant de Charles François de Virot, marquis de Sombreuil, maréchal de camp puis gouverneur des Invalides"
+    },
+    {
+     "field": "bio",
+     "claim": "father and brother guillotined in 1794",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "Famille",
+     "excerpt": "Son père et son frère, Stanislas de Sombreuil, sont guillotinés le 17 juin 1794."
+    },
+    {
+     "field": "bio",
+     "claim": "Esterhazy hussars 1789; emigrated; Prussian and Russian service",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "Militaire en France et à l'émigration",
+     "excerpt": "puis capitaine au régiment de hussards Esterhazy en 1789. Au début de la Révolution française, il émigre et passe au service de la Prusse en 1790"
+    },
+    {
+     "field": "bio",
+     "claim": "Longwy and Valmy in Prussian ranks",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "Militaire en France et à l'émigration",
+     "excerpt": "combat à Arnhem et à Valmy (20 septembre 1792) dans les rangs prussiens"
+    },
+    {
+     "field": "bio",
+     "claim": "Salm hussars in British service 1794",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "Militaire en France et à l'émigration",
+     "excerpt": "colonel commandant les hussards du prince de Salm au service de la Grande-Bretagne par brevet du duc d'York le 31 mai 1794"
+    },
+    {
+     "field": "bio",
+     "claim": "the Sombreuil division",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "L'expédition de Quiberon : mission de sacrifice de la division de Sombreuil",
+     "excerpt": "Cette nouvelle unité est connue historiquement sous le nom de « Division de Sombreuil »"
+    },
+    {
+     "field": "bio",
+     "claim": "arrived 16 July when the battle was nearly over",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "L'expédition de Quiberon : mission de sacrifice de la division de Sombreuil",
+     "excerpt": "Lorsque la division de Sombreuil, partie de Hollande, est parvenue au large de Quiberon le 16 juillet 1795 sur le bateau Discovery, la bataille de Plouharnel était déjà pratiquement achevée"
+    },
+    {
+     "field": "bio",
+     "claim": "Puisaye handed him command",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "L'expédition de Quiberon : mission de sacrifice de la division de Sombreuil",
+     "excerpt": "le comte de Puisaye, ayant prévu la catastrophe, s'empresse de transmettre le commandement au comte de Sombreuil"
+    },
+    {
+     "field": "bio",
+     "claim": "capitulated on condition his soldiers be spared; promise broken",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "L'expédition de Quiberon : mission de sacrifice de la division de Sombreuil",
+     "excerpt": "le comte de Sombreuil a donc capitulé devant le général Hoche, sur la plage de Porigo à Port-Haliguen en Quiberon, à la condition formelle que ses soldats soient épargnés"
+    },
+    {
+     "field": "bio",
+     "claim": "shot at Vannes on 28 July 1795",
+     "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+     "locator": "L'expédition de Quiberon : mission de sacrifice de la division de Sombreuil",
+     "excerpt": "Le 10 thermidor an III (28 juillet 1795) à 10 h, les condamnés sont emmenés au lieu de l'exécution au plateau de la Garenne."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1794,
+     "endYear": 1795,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+       "locator": "L'expédition de Quiberon : mission de sacrifice de la division de Sombreuil",
+       "claim": "Émigré commander in British service: the Salm hussars and the Sombreuil division of the Quiberon expedition (no catalog affiliation)",
+       "excerpt": "Ce corps de combat est confié au comte de Sombreuil, nommé brigadier général à l'âge de 25 ans."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1788,
+     "endYear": 1789,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+       "locator": "Militaire en France et à l'émigration",
+       "claim": "Captain in the royal cavalry (La Marche, Esterhazy hussars)",
+       "excerpt": "Il est capitaine de remplacement au régiment de La Marche cavalerie en 1788, puis capitaine au régiment de hussards Esterhazy en 1789."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "state-germany",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1790,
+     "endYear": 1793,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_Eug%C3%A8ne_Gabriel_de_Virot_de_Sombreuil",
+       "locator": "Militaire en France et à l'émigration",
+       "claim": "Émigré officer in Prussian service; Longwy and Valmy",
+       "excerpt": "il émigre et passe au service de la Prusse en 1790"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1789
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "에스테르하지 경기병 연대 대위",
+      "en": "Captain in the Esterhazy hussars"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1790
+      ],
+      "end": [
+       1793
+      ]
+     },
+     "r": {
+      "ko": "망명, 프로이센군 복무(롱위·발미)",
+      "en": "Emigrated; served in the Prussian army at Longwy and Valmy"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "영국 지휘 아래 살름 경기병대 지휘",
+      "en": "Commanded the Salm hussars in British service"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1795
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "키브롱 원정 솜브뢰유 사단장, 항복 뒤 총살",
+      "en": "Commander of the Sombreuil division at Quiberon; shot after surrendering"
+     }
+    }
+   ],
+   "cyrillic": "Charles Eugène Gabriel de Virot de Sombreuil"
+  },
+  {
+   "id": "nicolas-haxo",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "니콜라",
+    "en": "Nicolas"
+   },
+   "familyName": {
+    "ko": "악소",
+    "en": "Haxo"
+   },
+   "nativeName": "Nicolas Haxo",
+   "years": "1749–1794",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "누아르무티에를 탈환하고 샤레트를 쫓다 레클루조에서 전사한 공화국 장군",
+    "en": "Republican general who retook Noirmoutier and died fighting Charette at Les Clouzeaux"
+   },
+   "bio": {
+    "ko": "1749년 로렌의 에티발클레르퐁텐에서 태어나 1768~1777년 투렌 보병연대에서 복무했다. 혁명이 일어나자 생디에 국민방위대 대장이 되었고 1791년 보주 제3의용대대장으로 뽑혀 라인군에서 싸웠다. 마인츠 포위전에서 공을 세워 1793년 8월 여단장이 되었고, 마인츠군과 함께 방데로 가 10월 숄레 전투에 참가했다. 1794년 1월 누아르무티에섬을 되찾으며 항복한 수비대의 목숨을 보장했으나, 파견의원들이 델베를 포함한 수비대를 처형했다. 지옥 종대 계획에서 서쪽 종대들을 맡았으나 「우리는 군인이지 사형집행인이 아니다」라며 샤레트 추격에 전념했다. 1794년 3월 레클루조에서 샤레트군에 포위되어 전사했는데, 튀로는 그가 자살했다고 보고했다.",
+    "en": "Born at Étival-Clairefontaine in Lorraine in 1749, he served in the Touraine infantry regiment from 1768 to 1777. At the Revolution he became commander of the Saint-Dié National Guard, and in 1791 was elected commander of the 3rd battalion of volunteers of the Vosges, fighting with the Army of the Rhine. Distinguished at the siege of Mainz, he was made brigadier general in August 1793, went to the Vendée with the Mainz garrison and fought at Cholet in October. On 3 January 1794 he retook the island of Noirmoutier and promised the surrendering garrison their lives, but the representatives on mission had them executed, d’Elbée among them. Given the western columns in Turreau’s plan, he declared “we are soldiers, not executioners” and kept to hunting Charette. Surrounded by Charette’s men at Les Clouzeaux in March 1794, he was killed; Turreau reported that he had shot himself."
+   },
+   "fate": {
+    "kind": "killed",
+    "label": {
+     "ko": "전사",
+     "en": "Killed in action"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": []
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+    "https://en.wikipedia.org/wiki/Nicolas_Haxo"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1749–1794",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "préambule",
+     "excerpt": "Nicolas Haxo, né le 7 juin 1749 à Étival-Clairefontaine en Lorraine et mort le 20 mars 1794 lors de la bataille des Clouzeaux (Vendée)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "general of the French Revolution",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "préambule",
+     "excerpt": "est un général de la Révolution française"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Lorraine",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "préambule",
+     "excerpt": "né le 7 juin 1749 à Étival-Clairefontaine en Lorraine"
+    },
+    {
+     "field": "bio",
+     "claim": "Touraine regiment 1768–1777",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "Sous-officier sous l'Ancien Régime (1768-1777)",
+     "excerpt": "Il s'engage le 21 février 1768 à Strasbourg au régiment de Touraine infanterie."
+    },
+    {
+     "field": "bio",
+     "claim": "Saint-Dié National Guard; 3rd Vosges battalion",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "préambule",
+     "excerpt": "Au début de la Révolution française, il est nommé commandant de la garde nationale de Saint-Dié, puis s'engage dès 1791 dans le 3e bataillon de volontaires des Vosges qui en fait son commandant."
+    },
+    {
+     "field": "bio",
+     "claim": "brigadier general 17 August 1793",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "Dans la guerre de la première coalition (1792-1793) : le siège de Mayence",
+     "excerpt": "Haxo est nommé général de brigade le 17 août 1793."
+    },
+    {
+     "field": "bio",
+     "claim": "Cholet; Noirmoutier",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "préambule",
+     "excerpt": "Il participe à la bataille de Cholet (17 octobre 1793) et commande les troupes qui prennent Noirmoutier en janvier 1794."
+    },
+    {
+     "field": "bio",
+     "claim": "garrison executed despite his promise",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "À la poursuite de Charette : la prise de Noirmoutier (janvier 1794)",
+     "excerpt": "Sans souci de la parole donnée, les représentants du gouvernement Pierre-Louis Prieur, Louis Turreau et Pierre Bourbotte font exécuter toute la garnison, soit 1 800 personnes, dont le général Maurice d'Elbée. Haxo proteste en vain."
+    },
+    {
+     "field": "bio",
+     "claim": "eight western columns",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "Période des colonnes infernales",
+     "excerpt": "à l'ouest Haxo, qui poursuivait jusqu'alors Charette sur les côtes, est chargé de former huit colonnes plus réduites"
+    },
+    {
+     "field": "bio",
+     "claim": "“soldiers, not executioners”",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "Période des colonnes infernales",
+     "excerpt": "Haxo continue sa poursuite de Charette sans pour autant obéir aux ordres barbares de Turreau : « Nous sommes des soldats pas des bourreaux ! »."
+    },
+    {
+     "field": "bio",
+     "claim": "killed at Les Clouzeaux; Turreau claimed suicide",
+     "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+     "locator": "Mort (21 mars 1794) et funérailles",
+     "excerpt": "Haxo étant mort sans témoins du côté républicain, Turreau qui n'a pas apporté toute l'aide nécessaire, déclare qu'il s'est suicidé pour échapper à l'ennemi."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1791,
+     "endYear": 1794,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+       "locator": "préambule",
+       "claim": "Volunteer battalion commander, then general in the Army of the Rhine and the War in the Vendée",
+       "excerpt": "Au début de la guerre de la première coalition, il combat d'abord sur le Rhin, puis en Vendée, parvenant au grade de général de division."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1768,
+     "endYear": 1777,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Nicolas_Haxo",
+       "locator": "Sous-officier sous l'Ancien Régime (1768-1777)",
+       "claim": "NCO in the Touraine infantry regiment",
+       "excerpt": "Il s'engage le 21 février 1768 à Strasbourg au régiment de Touraine infanterie."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1768
+      ],
+      "end": [
+       1777
+      ]
+     },
+     "r": {
+      "ko": "투렌 보병연대 부사관",
+      "en": "NCO in the Touraine infantry regiment"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1791
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "보주 제3의용대대장",
+      "en": "Commander of the 3rd volunteer battalion of the Vosges"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "마인츠 포위전, 여단장 진급",
+      "en": "Siege of Mainz; promoted brigadier general"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "누아르무티에 탈환, 레클루조에서 전사",
+      "en": "Retook Noirmoutier; killed at Les Clouzeaux"
+     }
+    }
+   ],
+   "cyrillic": "Nicolas Haxo"
+  },
+  {
+   "id": "jean-baptiste-camille-de-canclaux",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "장바티스트 카미유",
+    "en": "Jean-Baptiste Camille"
+   },
+   "familyName": {
+    "ko": "드 캉클로",
+    "en": "de Canclaux"
+   },
+   "nativeName": "Jean-Baptiste Camille de Canclaux",
+   "years": "1740–1817",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "1793년 낭트를 지켜 낸 브레스트 연안군 사령관, 뒤에 서부군 사령관",
+    "en": "Commander of the Army of the Coasts of Brest who held Nantes in 1793, later commander of the Army of the West"
+   },
+   "bio": {
+    "ko": "1740년 파리의 법관 집안에서 태어나 1756년 기병으로 입대해 칠년전쟁의 민덴 전투에 나갔고 1788년 준장이 되었다. 1792년 브르타뉴의 봉기를 온건하게 진압해 이름을 얻었고 9월 중장이 되었다. 1793년 4월 브레스트 연안군 사령관이 되어 6월 29일 1만 2천 명으로 카틀리노의 방데군 공격에서 낭트를 지켰다. 9월 마인츠군과 함께 방데 진공에 나섰으나 티포주 등에서 패했고, 10월 귀족 출신이라는 이유로 해임되었다. 테르미도르 뒤 서부군 사령관으로 돌아왔고 1795년 키브롱 상륙 때 오슈에게 증원을 보냈다. 뒤에 나폴리 공사, 제정 원로원 의원, 복고 왕정의 귀족원 의원을 지냈다.",
+    "en": "Born in Paris in 1740 to a family of magistrates, he joined a cavalry regiment in 1756, fought at Minden in the Seven Years’ War and became maréchal de camp in 1788. His moderation in putting down risings in Brittany in 1792 won him notice, and he was made lieutenant general that September. Appointed commander of the Army of the Coasts of Brest in April 1793, he defended Nantes with barely 12,000 men against Cathelineau’s Vendéan army on 29 June. His September offensive with the Mainz garrison faltered after defeats such as Tiffauges, and in October he was dismissed because of his noble birth. Recalled after Thermidor to command the Army of the West, he sent Hoche reinforcements against the Quiberon landing in 1795. He was later envoy to Naples, a senator of the Empire and a peer under the Restoration."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "장바티스트 카미유 캉클로"
+    ],
+    "en": [
+     "Jean Baptiste Camille Canclaux",
+     "Jean-Baptiste-Camille de Canclaux",
+     "Jean Baptiste Camille de Canclaux"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+    "https://en.wikipedia.org/wiki/Jean_Baptiste_Camille_Canclaux"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1740–1817",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "préambule",
+     "excerpt": "né le 2 août 1740 à Paris et mort le 27 décembre 1817, dans la même ville"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French soldier and politician",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "préambule",
+     "excerpt": "est un militaire et un homme politique français"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "family of magistrates, born in Paris",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Ancien Régime",
+     "excerpt": "Issu d'une famille de magistrats, il entre à l'École de cavalerie de Besançon"
+    },
+    {
+     "field": "bio",
+     "claim": "Fumel cavalry 1756; Minden",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Ancien Régime",
+     "excerpt": "dont celle de Hanovre ou il participe à la bataille de Minden"
+    },
+    {
+     "field": "bio",
+     "claim": "maréchal de camp 1788",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Ancien Régime",
+     "excerpt": "il est promu maréchal de camp le 10 mars 1788"
+    },
+    {
+     "field": "bio",
+     "claim": "moderation in Brittany; Quimper 1792",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Révolution française",
+     "excerpt": "Il s'y fait remarquer par sa modération et son esprit conciliateur, et le 8 juillet 1792, près de Quimper, il remporte une victoire importante."
+    },
+    {
+     "field": "bio",
+     "claim": "lieutenant general 7 September 1792",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Révolution française",
+     "excerpt": "Élevé au grade de lieutenant-général le 7 septembre 1792"
+    },
+    {
+     "field": "bio",
+     "claim": "Army of the Coasts of Brest; defended Nantes",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Révolution française",
+     "excerpt": "Il est nommé commandant en chef de l'armée des Côtes de Brest, le 10 avril 1793, et défend victorieusement Nantes le 29 juin 1793 contre l'attaque de l'armée vendéenne."
+    },
+    {
+     "field": "bio",
+     "claim": "dismissed for noble birth",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Révolution française",
+     "excerpt": "il est suspendu de son commandement puis destitué le 1er octobre 1793 du fait de son ascendance noble et du contexte de Terreur qui règne alors en France"
+    },
+    {
+     "field": "bio",
+     "claim": "Army of the West after Thermidor; reinforcements to Hoche",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Révolution française",
+     "excerpt": "Il ne réintègre l'armée qu'après la chute de Robespierre et est nommé commandant en chef de l'armée de l'Ouest. Il seconde Hoche lors du débarquement des émigrés à Quiberon, en lui envoyant à propos les renforts dont il a besoin."
+    },
+    {
+     "field": "bio",
+     "claim": "Naples; Senate; peer",
+     "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+     "locator": "Révolution française",
+     "excerpt": "il est nommé, fin 1796, ministre plénipotentiaire à la cour de Naples, et y remplit ces fonctions jusqu'en 1797"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1792,
+     "endYear": 1795,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+       "locator": "Révolution française",
+       "claim": "Commander of the Army of the Coasts of Brest (1793) and of the Army of the West (1794–1795)",
+       "excerpt": "Il est nommé commandant en chef de l'armée des Côtes de Brest, le 10 avril 1793"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1756,
+     "endYear": 1792,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+       "locator": "Ancien Régime",
+       "claim": "Cavalry officer of the royal army; maréchal de camp 1788",
+       "excerpt": "Brigadier au 1er janvier 1784, il est promu maréchal de camp le 10 mars 1788."
+      }
+     ]
+    },
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1796,
+     "endYear": 1797,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Jean-Baptiste-Camille_de_Canclaux",
+       "locator": "Révolution française",
+       "claim": "Minister plenipotentiary at Naples",
+       "excerpt": "il est nommé, fin 1796, ministre plénipotentiaire à la cour de Naples"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1804,
+     "endYear": 1814,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jean_Baptiste_Camille_Canclaux",
+       "locator": "Administrative career",
+       "claim": "Member of the Sénat conservateur",
+       "excerpt": "on 22 October 1804, he was appointed to the Sénat conservateur"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1756
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "퓌멜 기병연대 입대",
+      "en": "Joined the Fumel cavalry regiment"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1788
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "준장(마레샬 드 캉)",
+      "en": "Maréchal de camp"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "브레스트 연안군 사령관, 낭트 방어",
+      "en": "Commander of the Army of the Coasts of Brest; defence of Nantes"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": [
+       1795
+      ]
+     },
+     "r": {
+      "ko": "서부군 사령관",
+      "en": "Commander of the Army of the West"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1796
+      ],
+      "end": [
+       1797
+      ]
+     },
+     "r": {
+      "ko": "나폴리 주재 전권공사",
+      "en": "Minister plenipotentiary at Naples"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1804
+      ],
+      "end": [
+       1814
+      ]
+     },
+     "r": {
+      "ko": "원로원 의원",
+      "en": "Senator of the Empire"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "캉클로",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "auto"
+    },
+    {
+     "text": "Canclaux",
+     "lang": "en",
+     "role": "identity",
+     "policy": "auto"
+    }
+   ],
+   "cyrillic": "Jean-Baptiste Camille de Canclaux"
+  },
+  {
+   "id": "etienne-alexandre-bernier",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "에티엔알렉상드르",
+    "en": "Étienne-Alexandre"
+   },
+   "familyName": {
+    "ko": "베르니에",
+    "en": "Bernier"
+   },
+   "nativeName": "Étienne-Alexandre Bernier",
+   "years": "1762–1806",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "「방데의 사도」로 불린 앙주군의 신부, 뒤에 정교협약을 협상하고 오를레앙 주교가 되었다",
+    "en": "Priest called the “apostle of the Vendée”, power behind Stofflet’s Army of Anjou, later a Concordat negotiator and Bishop of Orléans"
+   },
+   "bio": {
+    "ko": "1762년 앙주의 다옹에서 직조공의 아들로 태어나 앙제 대학 신학 교수와 생로 본당 신부가 되었다. 성직자 민사기본법 서약을 거부했고, 1793년 봉기 때 앙주군에 합류해 방데군 최고평의회 위원이 되어 「방데의 사도」라 불렸다. 사부네 패배 뒤 숨어 지내다 스토플레의 앙주군에 들어가 선언문을 쓰고 대외 연락을 맡는 실질적 지도자가 되었고, 마리니의 처형도 그의 영향으로 여겨졌다. 1795년 강화 교섭을 맡았고 라자주네 조약을 비난하는 글을 썼다. 1796년 2월 스토플레는 그가 부른 은신처에서 체포되었다. 통령정부 아래 1801년 정교협약의 전권위원이 되었고 1802년 오를레앙 주교가 되었다.",
+    "en": "Born at Daon in Anjou in 1762, the son of a weaver, he became professor of theology at the University of Angers and curé of Saint-Laud. He refused the oath of the Civil Constitution of the Clergy and in 1793 joined the Army of Anjou, sat on the Superior Council of the Vendéan armies and was called “the apostle of the Vendée”. After the rout at Savenay he hid, then joined Stofflet’s Army of Anjou, where he wrote the proclamations and handled correspondence abroad and became its real leader; Marigny’s execution was generally attributed to his influence. He negotiated with the Republic in 1795 and wrote a manifesto against the La Jaunaye peace. In February 1796 Stofflet was taken at a farm where Bernier had summoned him. Under the Consulate he was one of the plenipotentiaries for the Concordat of 1801 and in 1802 became Bishop of Orléans."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "베르니에 신부",
+     "에티엔알렉상드르 장바티스트 마리 베르니에"
+    ],
+    "en": [
+     "Abbé Bernier",
+     "Étienne-Alexandre Jean-Baptiste Marie Bernier",
+     "Etienne-Alexandre Bernier"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+    "https://en.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1762–1806",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "lead",
+     "excerpt": "31 October 1762 – 1 October 1806"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French Catholic priest, Vendéan leader, Bishop of Orléans",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "préambule",
+     "excerpt": "prêtre catholique français, fut un chef vendéen, évêque d'Orléans"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Daon in Anjou, son of a weaver",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "Biographie",
+     "excerpt": "Il est le fils du tisserand Étienne Branchu dit Bernier et de Marie Deslauriers."
+    },
+    {
+     "field": "bio",
+     "claim": "professor of theology at Angers; vicar in Angers",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "lead",
+     "excerpt": "Bernier was a professor of theology at the University of Angers and a vicar in the city of Angers"
+    },
+    {
+     "field": "bio",
+     "claim": "refused the oath; joined the Army of Anjou; Superior Council",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "Chef vendéen",
+     "excerpt": "Bernier fit partie de ce conseil. Gabriel Guyot de Folleville perdit toute son influence et l'abbé Bernier devint « l'apôtre de la Vendée »."
+    },
+    {
+     "field": "bio",
+     "claim": "real leader of the Army of Anjou under Stofflet",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "Chef vendéen",
+     "excerpt": "À partir de ce moment, l'abbé Bernier devint le vrai chef de l'armée d'Anjou ; Stofflet ne se conduisait que par ses conseils les proclamations étaient rédigées par l'abbé Bernier"
+    },
+    {
+     "field": "bio",
+     "claim": "Marigny’s death attributed to him",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "Chef vendéen",
+     "excerpt": "Cette mort fut généralement attribuée à l'influence du curé de Saint-Laud."
+    },
+    {
+     "field": "bio",
+     "claim": "negotiated the peace",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "Chef vendéen",
+     "excerpt": "ce fut l'abbé Bernier qui négocia, qui discuta les conditions"
+    },
+    {
+     "field": "bio",
+     "claim": "Stofflet taken at Bernier’s hiding place, 25 February 1796",
+     "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "Chef vendéen",
+     "excerpt": "Le 25 février 1796, l'abbé Bernier fit dire à Stofflet de venir le trouver dans une métairie où il était caché."
+    },
+    {
+     "field": "bio",
+     "claim": "Concordat plenipotentiary; Bishop of Orléans",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+     "locator": "lead",
+     "excerpt": "After successful completion of the 1801 Concordat, he was named Bishop of Orléans by Napoleon in 1802."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1796,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+       "locator": "lead",
+       "claim": "Member of the Superior Council of the Vendéan armies and real leader of Stofflet’s Army of Anjou",
+       "excerpt": "in 1793, joined the Revolt in the Vendée, and, for a while, was its leader alongside Jean-Nicolas Stofflet"
+      }
+     ]
+    },
+    {
+     "functionId": "diplomacy",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1801,
+     "endYear": 1801,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+       "locator": "lead",
+       "claim": "One of the plenipotentiaries for the Concordat of 1801",
+       "excerpt": "Under Napoleon Bonaparte, Bernier was assigned to negotiate the unification of nation and church in France with the Papal delegation of Pius VII."
+      }
+     ]
+    },
+    {
+     "functionId": "religion",
+     "affiliationId": "catholic-church",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1802,
+     "endYear": 1806,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/%C3%89tienne-Alexandre_Bernier",
+       "locator": "Évêque d'Orléans",
+       "claim": "Bishop of Orléans",
+       "excerpt": "Le 9 avril 1802, il fut pourvu du diocèse d'Orléans"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "방데군 최고평의회 위원",
+      "en": "Member of the Superior Council of the Vendéan armies"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": [
+       1796
+      ]
+     },
+     "r": {
+      "ko": "스토플레의 앙주군 고문",
+      "en": "Adviser and real leader of Stofflet’s Army of Anjou"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1801
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "정교협약 전권위원",
+      "en": "Plenipotentiary for the Concordat"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1802
+      ],
+      "end": [
+       1806
+      ]
+     },
+     "r": {
+      "ko": "오를레앙 주교",
+      "en": "Bishop of Orléans"
+     }
+    }
+   ],
+   "cyrillic": "Étienne-Alexandre Bernier"
+  }
+ ]
+}
