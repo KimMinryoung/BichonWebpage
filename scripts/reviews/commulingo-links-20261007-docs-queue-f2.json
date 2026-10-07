@@ -1,0 +1,305 @@
+{
+ "scope": "2026-10-07 docs queue F2: Italian ultimatum to Greece, Castro 16 April 1961, MPLA Politburo statement 12 July 1977 — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "ko",
+   "text": "『이탈리아 정부가 그리스 정부에 보낸 통첩』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "ko",
+   "text": "이탈리아의 최후통첩",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue F2 링크 검토: 1939년 알바니아 등 다른 이탈리아 최후통첩과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "ko",
+   "text": "1940년 10월 28일 최후통첩",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "ko",
+   "text": "그리스에 보낸 이탈리아 최후통첩",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "ko",
+   "text": "그라치의 최후통첩",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "en",
+   "text": "Italian ultimatum to Greece",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "en",
+   "text": "ultimatum of 28 October 1940",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "en",
+   "text": "Italian ultimatum of 1940",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "italian-ultimatum-to-greece-1940",
+   "lang": "en",
+   "text": "Grazzi's ultimatum",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "ko",
+   "text": "『폭격 희생자 장례식 연설』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "ko",
+   "text": "카스트로의 사회주의 선언 연설",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "ko",
+   "text": "1961년 4월 16일 연설",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue F2 링크 검토: 같은 날 다른 연설과 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "ko",
+   "text": "사회주의 혁명 선언 연설",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue F2 링크 검토: 1961년 12월 마르크스-레닌주의 선언 방송과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "ko",
+   "text": "4월 16일 장례식 연설",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "en",
+   "text": "Castro's socialist declaration speech",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "en",
+   "text": "speech of 16 April 1961",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue F2 링크 검토: other speeches that day; 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "en",
+   "text": "funeral address of 16 April 1961",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "castro-1961-04-16-socialist-declaration",
+   "lang": "en",
+   "text": "Castro's 16 April 1961 speech",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "ko",
+   "text": "『5월 27일 쿠데타 기도에 관한 MPLA 정치국 성명』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "ko",
+   "text": "MPLA 정치국 성명",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue F2 링크 검토: MPLA 정치국의 다른 성명과 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "ko",
+   "text": "5월 27일 쿠데타에 관한 정치국 성명",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "ko",
+   "text": "1977년 7월 12일 정치국 성명",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "ko",
+   "text": "정치국 보고 책자",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue F2 링크 검토: 일반어라 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "en",
+   "text": "MPLA Political Bureau statement on 27 May",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "en",
+   "text": "Informação do Bureau Político",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "en",
+   "text": "Political Bureau statement of 12 July 1977",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "mpla-politburo-statement-27-may-1977",
+   "lang": "en",
+   "text": "MPLA pamphlet on the 27 May coup",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue F2 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}

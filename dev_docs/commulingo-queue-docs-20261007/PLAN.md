@@ -48,3 +48,4 @@ A 진행, B 조사 후 가능한 것만, C 제외.
 - 2026-10-07 소유자 결정: 1372는 회보의 회의 보고·명령으로 게재(마이그레이션 314, 링크 8건: 「스톨리체 결의」/Stolice Resolution 검색 전용). 1799는 관보 병기 영어 공식본을 저본으로 완역(소유자 허용, 엮은이 주에 정본이 암하라어임을 명시).
 - 2026-10-07 명칭 통일: KRN=국가국민평의회, Milicja Obywatelska=시민경찰, NKOJ=유고슬라비아 민족해방위원회. 사건 4편 마이그레이션 315, 용어 5개 `scripts/apply-term-text-fixes.js`(`scripts/content/name-consistency-terms-20261007.json`; ZOMO 정의의 「时期」도 수정), 인물 절 2개 Admin upsert(`name-consistency-people-20261007.json`), 문헌 avnoj-resolutions 번역어도 맞춤.
 - 188(남은 18쪽 완역, 214–247쪽 결락 표시 `.doc-gap`)·1367(『The Hinge of Fate』 저본) 게재, 마이그레이션 316, 링크 10건(「true Second Front of 1942」 검색 전용).
+- F2(마이그레이션 317): done 1675 이탈리아 최후통첩(DDI 9-5 문서 789), 1819 카스트로 1961-04-16 연설, 1939 MPLA 정치국 성명 책자(1977-07-12) 전문. skipped 1914(원문 미확보·분량), 1919(포르투갈어 원문 없음), 1920(조항 발췌 요청·1978 원문 없음). 링크 27건(자동 21, 검색 전용 6).

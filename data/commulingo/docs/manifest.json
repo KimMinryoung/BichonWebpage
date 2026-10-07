@@ -7637,6 +7637,148 @@
         ]
       },
       "noAutoLink": []
+    },
+    {
+      "id": "italian-ultimatum-to-greece-1940",
+      "file": "italian-ultimatum-to-greece-1940.html",
+      "docLang": "ko",
+      "date": "1940-10-28",
+      "title": {
+        "ko": "이탈리아 정부가 그리스 정부에 보낸 통첩 (1940년 10월 28일) — 치아노 외무장관이 그라치 공사에게 내린 훈령",
+        "en": "The Italian Government's Communication to the Greek Government (28 October 1940) — Ciano's Instructions to Minister Grazzi"
+      },
+      "description": {
+        "ko": "1940년 10월 28일 새벽 아테네 주재 이탈리아 공사가 메탁사스에게 건넨 통첩과 그 전달을 지시한 치아노 외무장관의 전보 전문. 그리스가 영국에 협력해 중립을 어겼다고 비난하며 영국과의 전쟁 기간 동안 그리스의 전략 지점 점령을 허용하라고 요구하고, 이탈리아군이 세 시간 뒤 어떤 경우에도 진입한다고 구두로 알리게 했다.",
+        "en": "Full text of the note handed to Metaxas by the Italian minister in Athens before dawn on 28 October 1940, with Foreign Minister Ciano's covering instructions. It accused Greece of breaching neutrality in Britain's favour, demanded that Italian forces be allowed to occupy strategic points in Greece for the duration of the war with Britain, and had the minister add orally that Italian troops would enter in any case three hours later."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Ciano a Grazzi, T. 33759-60-61-62/319-320-321-322 P.R., Roma, 26 ottobre 1940, ore 13,05 (comunicazione del Governo italiano al Governo greco, consegnata il 28 ottobre 1940 alle ore 3). I Documenti Diplomatici Italiani, serie 9, vol. V, Roma 1965, doc. 789. 디지털판 https://www.farnesina.ipzs.it/download/pdf/NONASERIE_VOLV (2026-10-07 접근). 국가 간 공식 외교 문서로 게재.",
+      "people": [
+        "galeazzo-ciano",
+        "ioannis-metaxas",
+        "benito-mussolini"
+      ],
+      "terms": [],
+      "events": [
+        "greek-resistance"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『이탈리아 정부가 그리스 정부에 보낸 통첩』",
+          "이탈리아의 최후통첩",
+          "1940년 10월 28일 최후통첩",
+          "그리스에 보낸 이탈리아 최후통첩",
+          "그라치의 최후통첩"
+        ],
+        "en": [
+          "Italian ultimatum to Greece",
+          "ultimatum of 28 October 1940",
+          "Italian ultimatum of 1940",
+          "Grazzi's ultimatum"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "castro-1961-04-16-socialist-declaration",
+      "file": "castro-1961-04-16-socialist-declaration.html",
+      "docLang": "ko",
+      "date": "1961-04-16",
+      "title": {
+        "ko": "폭격 희생자 장례식 연설 — 쿠바 혁명의 사회주의적 성격 선언 (1961년 4월 16일)",
+        "en": "Funeral Address for the Victims of the Air Raids — Declaration of the Socialist Character of the Cuban Revolution (16 April 1961)"
+      },
+      "description": {
+        "ko": "1961년 4월 15일 공습 희생자의 장례식에서 피델 카스트로가 한 연설 전문. 공습을 쿠바 공군 탈영병의 소행으로 전한 미국 통신사 기사와 유엔 발언을 반박한 끝에 「우리가 바로 미국의 코앞에서 사회주의 혁명을 이루었다」고 처음 공개 선언하고 침공에 대비한 동원을 명령했다.",
+        "en": "Full text of Fidel Castro's address at the funeral of the victims of the air raids of 15 April 1961. After rebutting the US wire reports and UN statements that blamed the raids on defecting Cuban pilots, he publicly declared for the first time that 'we have made a socialist revolution right under the very nose of the United States' and ordered mobilization against the coming invasion."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "Discurso pronunciado por Fidel Castro Ruz en las honras fúnebres de las víctimas del bombardeo a distintos puntos de la república, efectuado en 23 y 12, frente al cementerio de Colón, el día 16 de abril de 1961. 쿠바 정부 공식 사이트 「Discursos e intervenciones del Comandante en Jefe Fidel Castro Ruz」, http://www.cuba.cu/gobierno/discursos/1961/esp/f160461e.html (2026-10-07 접근). 국가 지도자(혁명정부 총리)의 공식 연설로 게재.",
+      "people": [
+        "fidel-castro",
+        "john-f-kennedy",
+        "adlai-stevenson"
+      ],
+      "terms": [],
+      "events": [
+        "cuban-revolution-1959-1961"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『폭격 희생자 장례식 연설』",
+          "카스트로의 사회주의 선언 연설",
+          "1961년 4월 16일 연설",
+          "사회주의 혁명 선언 연설",
+          "4월 16일 장례식 연설"
+        ],
+        "en": [
+          "Castro's socialist declaration speech",
+          "speech of 16 April 1961",
+          "funeral address of 16 April 1961",
+          "Castro's 16 April 1961 speech"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "mpla-politburo-statement-27-may-1977",
+      "file": "mpla-politburo-statement-27-may-1977.html",
+      "docLang": "ko",
+      "date": "1977-07-12",
+      "title": {
+        "ko": "5월 27일 쿠데타 기도에 관한 MPLA 정치국 성명 (1977년 7월 12일)",
+        "en": "MPLA Political Bureau Statement on the Attempted Coup of 27 May 1977 (12 July 1977)"
+      },
+      "description": {
+        "ko": "니투 알베스·조제 반두넴 일파의 1977년 5월 27일 쿠데타 기도에 대해 MPLA 정치국이 낸 공식 해명서 전문. 1974년부터의 「분파주의」 침투 과정, 쿠데타 계획과 세 차례 시도, 지휘관 살해를 집권 측 시각에서 서술하고 「혁명적 민주독재」의 적용을 선언한다.",
+        "en": "Full text of the MPLA Political Bureau's official account of the attempted coup of 27 May 1977 by the faction of Nito Alves and José Van-Dúnem. It narrates, from the ruling side's perspective, the 'fractionist' infiltration from 1974, the coup plan and its three attempts and the killing of commanders, and calls for applying the 'Democratic Revolutionary Dictatorship'."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Informação do Bureau Político sobre a tentativa de golpe de estado de 27 de Maio de 1977 (Comunicado do Bureau Político sobre o golpe de estado de 27 de Maio, assinado: O Bureau Político do Comité Central do MPLA, Luanda, 12 de Julho de 1977). Luanda: Publicações Gama, Ministério da Defesa, Julho 1977, 64 pp., 50.000 ex. 저본: Arquivo Lúcio Lara 소장본 스캔, https://www.marxists.org/portugues/tematica/mpla/pdf/50.pdf (2026-10-07 접근). 집권당 지도 기관의 공식 성명으로 게재.",
+      "people": [
+        "nito-alves",
+        "jose-van-dunem",
+        "sita-valles",
+        "agostinho-neto",
+        "iko-carreira",
+        "lucio-lara",
+        "jose-eduardo-dos-santos"
+      ],
+      "terms": [
+        "popular-movement-for-the-liberation-of-angola",
+        "fractionism-nitismo"
+      ],
+      "events": [
+        "angolan-independence-1975-1977"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『5월 27일 쿠데타 기도에 관한 MPLA 정치국 성명』",
+          "MPLA 정치국 성명",
+          "5월 27일 쿠데타에 관한 정치국 성명",
+          "1977년 7월 12일 정치국 성명",
+          "정치국 보고 책자"
+        ],
+        "en": [
+          "MPLA Political Bureau statement on 27 May",
+          "Informação do Bureau Político",
+          "Political Bureau statement of 12 July 1977",
+          "MPLA pamphlet on the 27 May coup"
+        ]
+      },
+      "noAutoLink": []
     }
   ],
   "redirects": {
