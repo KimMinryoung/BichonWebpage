@@ -1,0 +1,239 @@
+{
+ "scope": "2026-10-07 docs queue CE2: Budapest Central Workers' Council resolution, 1946 Albanian constitution, Lessons from the Crisis Development — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "ko",
+   "text": "『대부다페스트 중앙노동자평의회 결의문』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "ko",
+   "text": "중앙노동자평의회 결의문",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 평의회의 다른 결의와 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "ko",
+   "text": "부다페스트 중앙노동자평의회 결의문",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "ko",
+   "text": "1956년 11월 14일 결의문",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 날짜만 붙은 결의문이라 다른 결의와 구별되지 않아 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "en",
+   "text": "Resolution of the Central Workers' Council of Greater Budapest",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "en",
+   "text": "Central Workers' Council resolution of 14 November 1956",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "budapest-central-workers-council-resolution-1956",
+   "lang": "en",
+   "text": "Budapest Central Workers' Council resolution",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "ko",
+   "text": "『알바니아 인민공화국 헌법』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "ko",
+   "text": "1946년 알바니아 헌법",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "ko",
+   "text": "1946년 인민공화국 헌법",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 같은 해 유고슬라비아 연방인민공화국 헌법과 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "ko",
+   "text": "알바니아 인민공화국 헌장",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "en",
+   "text": "1946 Albanian Constitution",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "en",
+   "text": "Albanian Constitution of 1946",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "en",
+   "text": "Statute of the People's Republic of Albania",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "albania-constitution-1946",
+   "lang": "en",
+   "text": "Statuti i Republikës Popullore të Shqipërisë",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "lessons-crisis-development-1970",
+   "lang": "ko",
+   "text": "『위기 발전의 교훈』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "lessons-crisis-development-1970",
+   "lang": "ko",
+   "text": "위기 발전의 교훈",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "lessons-crisis-development-1970",
+   "lang": "ko",
+   "text": "제13차 당대회 이후 당과 사회의 위기 발전에서 얻은 교훈",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "lessons-crisis-development-1970",
+   "lang": "en",
+   "text": "Lessons from the Crisis Development",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "lessons-crisis-development-1970",
+   "lang": "en",
+   "text": "Lessons Drawn from the Crisis Development",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "lessons-crisis-development-1970",
+   "lang": "en",
+   "text": "Poučení z krizového vývoje",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE2 링크 검토: 문헌 제목·발신 기관·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}

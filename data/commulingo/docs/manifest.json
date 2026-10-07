@@ -7779,6 +7779,166 @@
         ]
       },
       "noAutoLink": []
+    },
+    {
+      "id": "budapest-central-workers-council-resolution-1956",
+      "file": "budapest-central-workers-council-resolution-1956.html",
+      "docLang": "ko",
+      "date": "1956-11-14",
+      "title": {
+        "ko": "대부다페스트 중앙노동자평의회 결의문 (1956년 11월 14일)",
+        "en": "Resolution of the Central Workers' Council of Greater Budapest (14 November 1956)"
+      },
+      "description": {
+        "ko": "소련군 재개입 뒤 부다페스트 공장 노동자평의회 대표들이 중앙노동자평의회를 세우며 채택한 결의문. 사회주의 원칙과 생산 단위의 사회적 소유를 지킨다고 선언하고, 너지 임레의 정부 복귀, 소련군 철수, 구금자 석방, 일당제 폐지와 자유선거를 요구하며 답을 얻을 때까지 파업을 이어 가기로 정한다.",
+        "en": "The resolution adopted by delegates of Budapest factory workers' councils as they founded the Central Workers' Council after the second Soviet intervention. It declares loyalty to socialist principles and social ownership of the means of production, demands Imre Nagy's return to the government, Soviet withdrawal, the release of detainees, an end to one-party rule and free elections, and keeps the strike going until these are answered."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "A Nagy-budapesti Központi Munkástanács határozata, 1956. november 14. Printed in „Szuronyok hegyén nem lehet dolgozni.” Válogatás 1956-os munkástanács-vezetők visszaemlékezéseiből, ed. Kozák Gyula and Molnár Adrienne (Budapest, 1993), pp. 353–354. Text: Magyar Elektronikus Könyvtár, https://mek.oszk.hu/01900/01937/html/szerviz/dokument/kmt1114s.htm (accessed 2026-10-07). Collective resolution of a workers' representative body; not a personal work.",
+      "people": [
+        "nagy",
+        "pal-maleter",
+        "ferenc-munnich"
+      ],
+      "terms": [
+        "state-protection-authority-avh"
+      ],
+      "events": [
+        "hungarian-revolution"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『대부다페스트 중앙노동자평의회 결의문』",
+          "중앙노동자평의회 결의문",
+          "부다페스트 중앙노동자평의회 결의문",
+          "1956년 11월 14일 결의문"
+        ],
+        "en": [
+          "Resolution of the Central Workers' Council of Greater Budapest",
+          "Central Workers' Council resolution of 14 November 1956",
+          "Budapest Central Workers' Council resolution"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "albania-constitution-1946",
+      "file": "albania-constitution-1946.html",
+      "docLang": "ko",
+      "date": "1946-03-14",
+      "title": {
+        "ko": "알바니아 인민공화국 헌법 (1946년 3월 14일)",
+        "en": "Constitution of the People's Republic of Albania (14 March 1946)"
+      },
+      "description": {
+        "ko": "인민공화국 선포 두 달 뒤 알바니아 제헌의회가 채택한 첫 헌법. 모든 권력을 인민평의회에 두고, 지하자원·은행·통신을 인민의 공동재산으로, 경제를 국가의 일반 경제계획 아래 두되 사유재산과 상속을 보장하며, 토지는 경작하는 자의 것이라 선언한다.",
+        "en": "Albania's first constitution, adopted by the Constituent Assembly two months after the proclamation of the people's republic. It vests power in the people's councils, makes subsoil resources, banks and communications the common property of the people and places the economy under a general state plan while guaranteeing private property and inheritance, and declares that the land belongs to those who work it."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "Statuti i Republikës Popullore të Shqipërisë, adopted by the Asambleja Kushtetonjëse, Tirana, 14 March 1946; promulgated by Decree No. 24 of the Presidium of the Constituent Assembly, 15 March 1946. First printed: Asambleja Kushtetonjëse, Statuti i Republikës Popullore të Shqipërisë (Tiranë: Shtyp. \"Bashkimi\", 1946). Text: Albanian transcription of that print, https://constitutions.albasio.eu/wp-content/uploads/costituzioni/STATUTI-I-ASAMBLESE-KUSHTETONJE%C2%A6%C3%AASE-1946.pdf (accessed 2026-10-07). Constitution of a state; not subject to copyright.",
+      "people": [
+        "enver-hoxha",
+        "omer-nishani",
+        "koci-xoxe",
+        "nako-spiru"
+      ],
+      "terms": [
+        "peoples-democracy"
+      ],
+      "events": [
+        "albanian-socialist-transition-1944-1946"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『알바니아 인민공화국 헌법』",
+          "1946년 알바니아 헌법",
+          "1946년 인민공화국 헌법",
+          "알바니아 인민공화국 헌장"
+        ],
+        "en": [
+          "1946 Albanian Constitution",
+          "Albanian Constitution of 1946",
+          "Statute of the People's Republic of Albania",
+          "Statuti i Republikës Popullore të Shqipërisë"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "lessons-crisis-development-1970",
+      "file": "lessons-crisis-development-1970.html",
+      "docLang": "ko",
+      "date": "1970-12-11",
+      "title": {
+        "ko": "제13차 당대회 이후 당과 사회의 위기 발전에서 얻은 교훈 (1970년 12월)",
+        "en": "Lessons from the Crisis Development in the Party and Society after the 13th Congress of the CPCz (December 1970)"
+      },
+      "description": {
+        "ko": "체코슬로바키아 공산당 중앙위원회가 1970년 12월 승인한 「위기 발전의 교훈」. 1968년을 우파와 반사회주의 세력이 이끈 반혁명으로, 8월의 바르샤바조약군 진입을 국제주의적 원조로 규정하고, 둡체크 지도부의 책임과 1969년 4월 이후 후사크 지도부의 정상화 과정을 서술한다.",
+        "en": "The \"Lessons\" approved by the Central Committee of the Communist Party of Czechoslovakia in December 1970. It defines 1968 as a counter-revolution led by right-wing and anti-socialist forces and the August entry of Warsaw Pact troops as internationalist assistance, assigns blame to the Dubček leadership, and narrates the normalization carried out under Husák from April 1969."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Poučení z krizového vývoje ve straně a společnosti po XIII. sjezdu KSČ, approved by the plenary session of the Central Committee of the KSČ, 10–11 December 1970; first printed as a supplement to Rudé právo; pamphlet: Oddělení propagandy a agitace ÚV KSČ, Praha, březen 1971. Text: transcription of the March 1971 pamphlet at totalita.cz (Tomáš Vlček), https://www.totalita.cz/txt/txt_pouceni.php (accessed 2026-10-07). Official resolution of a party central committee; not a personal work.",
+      "people": [
+        "dubcek",
+        "antonin-novotny",
+        "gustav-husak",
+        "vasil-bilak",
+        "ludvik-svoboda",
+        "oldrich-cernik",
+        "josef-smrkovsky",
+        "frantisek-kriegel",
+        "ota-sik",
+        "zdenek-mlynar",
+        "alois-indra",
+        "lubomir-strougal",
+        "josef-pavel",
+        "jiri-hajek",
+        "klement-gottwald",
+        "brezhnev",
+        "janos-kadar",
+        "milan-kundera",
+        "karel-kosik",
+        "ludvik-vaculik",
+        "vaclav-havel",
+        "jan-palach"
+      ],
+      "terms": [
+        "communist-party-of-czechoslovakia",
+        "normalization-czechoslovakia",
+        "action-programme-1968",
+        "vyso-any-party-congress",
+        "moscow-protocol",
+        "warsaw-pact"
+      ],
+      "events": [
+        "prague-spring"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『위기 발전의 교훈』",
+          "위기 발전의 교훈",
+          "제13차 당대회 이후 당과 사회의 위기 발전에서 얻은 교훈"
+        ],
+        "en": [
+          "Lessons from the Crisis Development",
+          "Lessons Drawn from the Crisis Development",
+          "Poučení z krizového vývoje"
+        ]
+      },
+      "noAutoLink": []
     }
   ],
   "redirects": {
