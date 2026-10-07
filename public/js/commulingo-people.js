@@ -1,4 +1,4 @@
-// People explorer: era shelves with paged group cards, #p-<id> deep links,
+// People explorer: the era table's hidden group grids for #p-<id> deep links,
 // facet panels, and the in-place swap of #people-browser for every filter,
 // pager, sort and search change (each of which is also a plain link).
 
@@ -12,7 +12,7 @@
 
     function browser() { return document.getElementById(ROOT); }
 
-    // ── Era shelves ─────────────────────────────────────────────────────
+    // ── Deep-link groups ────────────────────────────────────────────────
     // Opening a group fetches one page of its cards
     // (/commulingo/people/cards?group=<id>&page=N, with the site's pager
     // appended) instead of the whole group — the largest group is 900KB of
@@ -268,6 +268,7 @@
                 document.title = doc.title;
                 if (options.push) history.pushState({ people: true }, '', url);
                 else if (options.replace) history.replaceState({ people: true }, '', url);
+                shownQuery = location.pathname + location.search;
                 initBrowser(next);
                 // Typing keeps the caret and the page where they are; otherwise
                 // bring the results head into view when it is off screen.
@@ -294,7 +295,12 @@
         swap(url.href, { push: true, scrollToResults: !!link.closest('[data-commu-list-pager]') });
     });
 
+    // A #p-<id> hash change also fires popstate; only a new path or query
+    // needs the browser swapped (which would drop the opened group).
+    var shownQuery = location.pathname + location.search;
     window.addEventListener('popstate', function() {
+        if (location.pathname + location.search === shownQuery) return;
+        shownQuery = location.pathname + location.search;
         if (searchInput) syncSearch(new URL(location.href).searchParams.get('q') || '');
         swap(location.href, { push: false });
     });

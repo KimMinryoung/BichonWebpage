@@ -353,6 +353,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
     const offices = (data.offices || []).map(office => ({
         schemaVersion: SCHEMA_VERSION,
         id: office.id,
+        section: office.section || 'state',
         icon: office.icon || OFFICE_ICON[office.id] || 'circle-help',
         title: localize(office.title, lang),
         titleI18n: office.title || {},

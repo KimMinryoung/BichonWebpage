@@ -137,7 +137,7 @@ function facetsFor(standardized, state, pool, lang) {
     const eraCounts = new Map();
     for (const p of eraPool) eraCounts.set(p.groupId, (eraCounts.get(p.groupId) || 0) + 1);
     const eras = keep(peopleShellFor(standardized).groupsMeta.map(g => ({
-        id: g.id, shelf: g.shelf, label: g.title, range: g.range, count: eraCounts.get(g.id) || 0,
+        id: g.id, shelf: g.shelf, label: g.title, range: g.range, blurb: g.blurb, count: eraCounts.get(g.id) || 0,
     })), state.eraId);
 
     const positionPool = pool.filter(p => matches(p, state, 'position'));

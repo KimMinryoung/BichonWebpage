@@ -21,9 +21,9 @@
             </div>
         </header>
 
-        <section class="commu-hub-section commu-office-index">
-            <%- include('../partials/commulingo-office-index', { bodies: bodies, offices: offices }) %>
-        </section>
+        <div class="commu-office-index">
+            <%- include('../partials/commulingo-office-index', { bodies: bodies, offices: offices, sectionTitles: strings.commuLingoViews.office.sections }) %>
+        </div>
     </main>
 
     <%- include('../partials/footer') %>

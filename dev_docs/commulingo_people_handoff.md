@@ -433,16 +433,21 @@ Event grouping and country tags:
 Event sources may be book citations as well as URLs; non-URL references render as text.
 
 Current people groups (`commulingo_people_groups`; the `shelf` column, migration
-182, says which boxed section of the people page a group renders in —
-`people-view.js` orders the shelves soviet → china → france → world and nothing in code
-names a group id):
+182, says which row of the people page's era table a group renders in —
+`people-view.js` orders the shelves soviet → china → france → world → scholars and nothing in code
+names a group id). Since 2026-10-07 the page shows no era boxes: a region × era
+table of link cells (each opens `?era=<id>`, whose result head prints the group
+blurb), then entry rows for the office index and every shelf outside the four
+regions (`scholars`, migration 301). The group card grids stay in the page,
+hidden, only for `#p-<id>` deep links (the person page's way back):
 
 | shelf | groups |
 | --- | --- |
 | soviet | `old-regime`, `bolshevik`, `stalin-era`, `thaw`, `perestroika` |
 | china | `china-old-regime` (구체제와 국민당), `china-revolution` (혁명 세대 1911–1949), `china-mao-era`, `china-reform` |
 | france | `france-revolution` (대혁명과 나폴레옹 시대 1774–1830) — migrations 188–189; `france-napoleon` 301s to it |
-| world | `world-before-1917` (인터내셔널과 제국의 시대 1820–1917), `world-interwar` (혁명의 물결과 세계대전 1917–1945), `world-cold-war` (냉전과 탈식민 1945–현재), `scholar` — migration 218 |
+| world | `world-before-1917` (인터내셔널과 제국의 시대 1820–1917), `world-interwar` (혁명의 물결과 세계대전 1917–1945), `world-cold-war` (냉전과 탈식민 1945–현재) — migration 218 |
+| scholars | `scholar` (이 역사를 연구한 사람들) — migration 301 |
 
 The China shelf follows the Soviet assignment rule: people who made the
 revolution stay in 혁명 세대 even when they ruled afterwards (Mao, Zhou, Liu

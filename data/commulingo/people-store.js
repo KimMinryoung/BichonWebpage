@@ -88,7 +88,7 @@ async function fetchRows() {
              ORDER BY person_id, sort_order, id`
         ),
         client.query(
-            `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, tracks, updated_at
+            `SELECT id, section, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, tracks, updated_at
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
@@ -265,6 +265,7 @@ function rowsToPeopleData(rows) {
         })),
         offices: rows.offices.map(row => ({
             id: row.id,
+            section: row.section || 'state',
             range: row.range_label || '',
             title: t(row.title_ko, row.title_en),
             blurb: t(row.blurb_ko, row.blurb_en),

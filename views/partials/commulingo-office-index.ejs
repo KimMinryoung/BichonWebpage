@@ -1,29 +1,46 @@
-<%# Link cards for the Central Committee rosters and the office lineage pages.
-    Locals: bodies (availableBodies), offices (standardized offices). %>
-<% var leading = offices.filter(function(office) { return office.id === 'party-leadership'; });
-   var rest = offices.filter(function(office) { return office.id !== 'party-leadership'; }); %>
+<%# The office index: the Central Committee rosters, then the lineage pages
+    grouped by commulingo_offices.section in the order of `sections`.
+    Locals: bodies (availableBodies), offices (standardized offices, in
+    sort_order), sectionTitles (strings.commuLingoViews.office.sections).
+    Without sectionTitles (an office page's own rosters) the grid stands alone. %>
+<% var sectionTitles = locals.sectionTitles;
+   var sections = ['party', 'state', 'economy', 'international'];
+   function card(href, icon, title, range, text) { %>
+        <a class="commu-office-card commu-role-category-link" href="<%= href %>">
+            <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg(icon) %></span>
+            <span class="commu-role-category-copy">
+                <h3><%= title %> <small class="commu-office-range"><%= range %></small></h3>
+                <p><%= text %></p>
+            </span>
+            <span class="commu-role-category-arrow" aria-hidden="true">→</span>
+        </a>
+<% } %>
+<% if (!sectionTitles) { %>
 <div class="commu-office-grid">
-    <%# The party's top post leads, ahead of the Central Committee rosters. %>
-    <% leading.concat([null], rest).forEach(function(office) { %>
-    <% if (office === null) { %>
-    <% bodies.forEach(function(body) { %>
-    <a class="commu-office-card commu-role-category-link" href="<%= body.href %>">
-        <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
-        <span class="commu-role-category-copy">
-            <h3><%= body.title %> <small class="commu-office-range"><%= body.range %></small></h3>
-            <p><%= body.description %></p>
-        </span>
-        <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-    </a>
-    <% }) %>
-    <% return; } %>
-    <a class="commu-office-card commu-role-category-link is-<%= office.id %>" href="/commulingo/offices/<%= office.id %>">
-        <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>
-        <span class="commu-role-category-copy">
-            <h3><%= office.title %> <small class="commu-office-range"><%= office.range %></small></h3>
-            <p><%= office.tracks.filter(function(track) { return track.title; }).map(function(track) { return track.title; }).join(' · ') || office.blurb %></p>
-        </span>
-        <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-    </a>
-    <% }) %>
+<% bodies.forEach(function(body) { card(body.href, 'hammer-sickle', body.title, body.range, body.description); }) %>
 </div>
+<% } else { %>
+<% if (bodies.length) { %>
+<section class="commu-office-section" aria-labelledby="office-section-rosters">
+    <h2 id="office-section-rosters"><%= sectionTitles.rosters %></h2>
+    <div class="commu-office-grid">
+    <% bodies.forEach(function(body) { card(body.href, 'hammer-sickle', body.title, body.range, body.description); }) %>
+    </div>
+</section>
+<% } %>
+<% sections.concat(['other']).forEach(function(section) {
+    var items = offices.filter(function(office) {
+        return section === 'other' ? sections.indexOf(office.section) === -1 : office.section === section;
+    });
+    if (!items.length) return; %>
+<section class="commu-office-section" aria-labelledby="office-section-<%= section %>">
+    <h2 id="office-section-<%= section %>"><%= sectionTitles[section] || '' %></h2>
+    <div class="commu-office-grid">
+    <% items.forEach(function(office) {
+        card('/commulingo/offices/' + office.id, office.icon, office.title, office.range,
+            office.tracks.filter(function(track) { return track.title; }).map(function(track) { return track.title; }).join(' · ') || office.blurb);
+    }) %>
+    </div>
+</section>
+<% }) %>
+<% } %>

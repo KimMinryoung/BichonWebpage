@@ -2062,61 +2062,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     margin-top: 12px;
 }
 
-/* Same 17px rhythm as the shelves below it (9px + the shell's 8px gap). */
-.commu-office-index {
-    margin-top: 9px;
-}
-
-.commu-office-index-head {
-    background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
-    display: block;
-    margin-bottom: 14px;
-    padding: 12px 38px 12px 14px;
-    position: relative;
-    text-decoration: none;
-    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
-}
-
-.commu-office-index-head:hover,
-.commu-office-index-head:focus-visible {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
-    text-decoration: none;
-}
-
-.commu-office-index-head:focus-visible {
-    outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent);
-    outline-offset: 2px;
-}
-
-/* The head links to the offices page, so it carries the same arrow as the
-   link cards below it. */
-.commu-office-index-head::after {
-    color: var(--text-muted);
-    content: '→';
-    font-size: 1.15rem;
-    font-weight: var(--weight-emphasis);
-    line-height: var(--leading-none);
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: color 0.16s ease;
-}
-
-.commu-office-index-head:hover::after,
-.commu-office-index-head:focus-visible::after {
-    color: var(--link);
-}
-
-.commu-office-index-head h2 {
-    color: var(--text-primary);
-    font-size: 1.3rem;
-    margin: 2px 0 4px;
-}
-
 .commu-office-grid {
     display: grid;
     gap: 14px;
@@ -2124,6 +2069,17 @@ button.commu-dc-option:hover { border-color: var(--link); }
 }
 
 .commu-office-index .commu-office-grid { gap: 0; }
+
+/* The offices page: one titled group per field (commulingo_offices.section). */
+.commu-office-section { margin-top: var(--space-5); }
+.commu-office-section h2 {
+    border-left: 4px solid var(--accent);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: var(--weight-emphasis);
+    margin: 0 0 10px;
+    padding: 2px 0 2px 10px;
+}
 
 .commu-office-card {
     background: var(--card-bg);
@@ -2445,91 +2401,134 @@ a.commu-office-row:focus-visible .commu-office-main em {
     text-decoration: none;
 }
 
-.commu-people-shelf-head + .commu-people-era {
-    margin-top: 17px;
-}
-
-.commu-people-group-head {
-    background: color-mix(in srgb, var(--bg-surface) 72%, transparent);
+/* The era table: a row per region, a cell per era group. Cells share one
+   column count (--era-columns, the longest row) so the eras line up. */
+.commu-people-eras {
+    background: var(--card-bg);
     border: 1px solid var(--border);
-    display: block;
-    padding: var(--space-3);
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    margin-top: var(--space-5);
+    padding: 14px;
 }
-
-.commu-people-group-head:hover,
-.commu-people-group-head:focus-visible {
+.commu-people-eras-title {
+    border-left: 4px solid var(--accent);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: var(--weight-emphasis);
+    margin: 0 0 12px;
+    padding: 2px 0 2px 10px;
+}
+.commu-people-era-row {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 12px;
+    align-items: stretch;
+}
+.commu-people-era-row + .commu-people-era-row { margin-top: 10px; }
+.commu-people-era-region {
+    align-self: center;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: var(--weight-emphasis);
+    margin: 0;
+}
+.commu-people-era-cells {
+    display: grid;
+    grid-template-columns: repeat(var(--era-columns, 4), minmax(0, 1fr));
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.commu-people-era-cell {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+    padding: 8px 10px;
+    text-decoration: none;
+    transition: background-color 0.16s ease, border-color 0.16s ease;
+}
+.commu-people-era-cell:hover,
+.commu-people-era-cell:focus-visible {
     background: var(--bg-surface-hover);
     border-color: var(--link);
     color: var(--text-primary);
     text-decoration: none;
 }
-
-.commu-people-group-head:focus-visible {
-    outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent);
-    outline-offset: 2px;
+.commu-people-era-cell:focus-visible { outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent); outline-offset: 2px; }
+.commu-people-era-cell strong { font-size: 0.95rem; line-height: var(--leading-snug); }
+.commu-people-era-count {
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 400;
 }
 
-.commu-people-preview-toggle {
-    display: flex; align-items: center; justify-content: flex-end; gap: var(--space-2);
-    min-height: var(--control-height); box-sizing: border-box; padding: 0 var(--space-3);
-    border: 1px solid var(--border); border-top: 0;
-    color: var(--text-muted); font-size: var(--text-sm); cursor: pointer; list-style: none;
-}
-.commu-people-preview-toggle::-webkit-details-marker { display: none; }
-.commu-people-preview-toggle:hover { color: var(--text-primary); background: var(--bg-surface-hover); }
-.commu-people-preview-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
-.commu-people-preview-toggle .commu-role-icon { width: 15px; height: 15px; }
-.commu-people-group[open] > .commu-people-preview-toggle .commu-role-icon { transform: rotate(180deg); }
-
-/* A group's pager sits under its grid; a page switch scrolls the group head
-   back under the sticky bar. */
-.commu-people-group { scroll-margin-top: 4.5rem; }
-.commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
-.commu-people-group[open] > .commu-people-preview-toggle {
-    margin-bottom: 14px;
-}
-
-
-/* Regional shelves frame their title and a continuous stack of era groups.
-   Keep breathing room after the shelf title, with no gaps between eras. */
-.commu-people-shelf {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+/* Entries beside the era table: the office index and the groups that are no
+   region's era (the researchers). Each row is the link. */
+.commu-people-entries {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 9px;
-    padding: 14px;
 }
-
-.commu-people-shelf-head {
-    border-left: 4px solid var(--accent);
+.commu-people-entry {
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
     color: var(--text-primary);
-    font-size: 1.1rem;
-    font-weight: var(--weight-emphasis);
-    margin: 0;
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    text-decoration: none;
+    transition: background-color 0.16s ease, border-color 0.16s ease;
+}
+.commu-people-entry:hover,
+.commu-people-entry:focus-visible {
+    background: var(--bg-surface-hover);
+    border-color: var(--link);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.commu-people-entry-icon .commu-role-icon { width: 22px; height: 22px; }
+.commu-people-entry-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
+.commu-people-entry-copy small { color: var(--text-secondary); font-size: 0.85rem; }
+
+/* #p-<id> arrivals open one group's grid below the table; a closed group
+   takes no space. */
+.commu-people-focus .commu-people-group:not([open]) { display: none; }
+.commu-people-focus .commu-people-group { margin-top: var(--space-5); }
+.commu-people-focus-head {
+    align-items: center;
+    border-left: 4px solid var(--accent);
+    cursor: pointer;
+    display: flex;
+    gap: var(--space-2);
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 14px;
     padding: 2px 0 2px 10px;
 }
+.commu-people-focus-head::-webkit-details-marker { display: none; }
+.commu-people-focus-close { align-items: center; color: var(--text-muted); display: inline-flex; font-size: var(--text-sm); gap: 4px; }
+.commu-people-focus-head:hover .commu-people-focus-close { color: var(--text-primary); }
+.commu-people-focus-close .commu-role-icon { width: 15px; height: 15px; }
+.commu-people-group { scroll-margin-top: 4.5rem; }
+.commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
 
-/* Below 768px the .container gutters are gone and the group cards run edge
-   to edge; the shelves drop their side walls into full-bleed bands so the
-   cards inside keep the same full screen width. */
-@media (max-width: 768px) {
-    .commu-people-shelf {
-        border-left: 0;
-        border-right: 0;
-        padding: 14px 0;
-    }
+.commu-people-era-blurb { color: var(--text-secondary); font-size: 0.92rem; margin: 0 0 12px; }
 
-    .commu-people-shelf-head {
-        margin: 0 14px;
-    }
+@media (max-width: 900px) {
+    .commu-people-era-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
 }
-
-.commu-people-group-meta { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); }
-.commu-people-group-action { font-size: var(--text-sm); color: var(--text-muted); white-space: nowrap; }
-.commu-people-group-head:hover .commu-people-group-action,
-.commu-people-group-head:focus-visible .commu-people-group-action { color: var(--text-primary); }
+@media (max-width: 640px) {
+    .commu-people-eras { border-left: 0; border-right: 0; padding: 14px var(--content-inset, 14px); }
+    .commu-people-era-cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .commu-people-entries { grid-template-columns: minmax(0, 1fr); }
+}
 
 .commu-people-range {
     font-family: 'Courier New', monospace;
@@ -2599,18 +2598,6 @@ a.commu-office-row:focus-visible .commu-office-main em {
     padding-left: 18px;
     columns: 2;
     font-size: 0.92rem;
-}
-
-.commu-people-group-head h2 {
-    margin: 2px 0 4px;
-    font-size: 1.25rem;
-    color: var(--text-primary);
-}
-
-.commu-people-group-head p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--text-secondary);
 }
 
 .commu-people-grid {
@@ -3239,7 +3226,6 @@ a.commu-person-position:focus-visible {
 }
 a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
 
-.commu-people-group-count,
 .commu-event-people-count {
     font-family: 'Courier New', monospace;
     font-size: 0.8rem;
@@ -5874,8 +5860,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-people-row-years .commu-flag { width: 18px; height: auto; }
 .commu-people-result-divider { margin: var(--space-4) 0 var(--space-2); padding: var(--space-2) var(--content-inset); border-left: 4px solid var(--text-muted); color: var(--text-secondary); font-size: var(--text-sm); font-weight: 600; list-style: none; grid-column: 1 / -1; }
 .commu-people-browser[aria-busy="true"] .commu-people-rows, .commu-people-browser[aria-busy="true"] .commu-people-grid, .commu-people-browser[aria-busy="true"] .commu-people-results-head { opacity: .5; transition: opacity var(--duration-fast) var(--ease-standard); }
-.commu-people-browser > .commu-people-shelf:first-of-type { margin-top: var(--space-5); }
-.commu-people-browser > .commu-office-index { margin-top: var(--space-5); }
 @media (max-width: 640px) {
     .commu-people-facet { flex: 1 1 calc(50% - var(--space-2)); }
     .commu-people-facet > summary { width: 100%; box-sizing: border-box; padding: 0 var(--space-2); }

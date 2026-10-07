@@ -131,7 +131,7 @@ router.get('/offices', async (req, res) => {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         const order = new Map(standardized.officeOrder.map((id, index) => [id, index]));
         const offices = [...standardized.offices].sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999));
-        const title = lang === 'en' ? 'Soviet offices' : '직책 계보';
+        const title = lang === 'en' ? 'Soviet offices' : '소련 직책 계보';
         setShortPublicCache(res);
         res.render('public/commulingo-offices', {
             offices,
@@ -144,7 +144,7 @@ router.get('/offices', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo office index:', err);
-        commuLingoLoadError(res, { message: { ko: '직책 계보를 불러올 수 없습니다.', en: 'Failed to load the office index.' } });
+        commuLingoLoadError(res, { message: { ko: '소련 직책 계보를 불러올 수 없습니다.', en: 'Failed to load the office index.' } });
     }
 });
 
@@ -179,11 +179,11 @@ router.get('/offices/:officeId', async (req, res) => {
             rosters: availableBodies(lang).filter(body => body.officeId === office.id),
             relatedReports,
             roleIconSvg,
-            pageTitle: lang === 'en' ? `${office.title} — Soviet offices` : `${office.title} — 직책 계보`,
+            pageTitle: lang === 'en' ? `${office.title} — Soviet offices` : `${office.title} — 소련 직책 계보`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,
             jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'Soviet offices' : '직책 계보', href: '/commulingo/offices' },
+                { name: lang === 'en' ? 'Soviet offices' : '소련 직책 계보', href: '/commulingo/offices' },
                 { name: office.title, href: `/commulingo/offices/${office.id}` },
             ]),
         });

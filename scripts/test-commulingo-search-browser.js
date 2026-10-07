@@ -162,7 +162,7 @@ const assert = require('node:assert/strict');
         await input.press('Escape');
         assert.equal(await page.locator('.commu-country-group[hidden]').count(), 0);
         await goto('/commulingo/people?lang=ko');
-        const eraLink = page.locator('.commu-people-group-head[href*="era=china-old-regime"]');
+        const eraLink = page.locator('.commu-people-era-cell[href*="era=china-old-regime"]');
         assert.equal(await eraLink.getAttribute('href'), '/commulingo/people?era=china-old-regime');
         assert.equal(await page.locator('a[href*="/people/list/"]').count(), 0);
         for (const width of [360, 390, 640, 641, 1280, 1920]) {
@@ -183,15 +183,22 @@ const assert = require('node:assert/strict');
                 assert(layout.tops[3] > layout.tops[0]);
             }
         }
+        // The era table shows no cards; a #p-<id> arrival opens that person's
+        // group below it, and closing it hides the group again.
         const preview = page.locator('[data-group-id="china-old-regime"]');
-        await preview.locator('.commu-people-preview-toggle').focus();
-        await preview.locator('.commu-people-preview-toggle').press('Enter');
-        await preview.locator('.commu-person-card').first().waitFor();
-        assert(!(new URL(page.url())).searchParams.has('era'), 'preview keeps the era shelves');
-        assert(await preview.locator('.commu-person-bio').first().textContent(), 'preview keeps full biographies');
-        await preview.locator('.commu-people-preview-toggle').press('Enter');
+        assert.equal(await preview.isVisible(), false, 'groups stay hidden without a deep link');
+        const personId = (await preview.getAttribute('data-people')).split(' ')[0];
+        await page.evaluate(id => { location.hash = 'p-' + id; }, personId);
+        await page.locator('#p-' + personId + '.is-focused').waitFor();
+        assert(!(new URL(page.url())).searchParams.has('era'), 'a deep link keeps the era table');
+        assert(await preview.locator('.commu-person-bio').first().textContent(), 'deep links keep full biographies');
+        await preview.locator('.commu-people-focus-head').click();
         assert.equal(await preview.getAttribute('open'), null);
-        await eraLink.locator('h2').click();
+        assert.equal(await preview.isVisible(), false);
+        await page.evaluate(() => window.history.replaceState(null, '', window.location.pathname + window.location.search));
+        assert(await page.locator('.commu-people-entry[href="/commulingo/offices"]').count() === 1, 'office index entry');
+        assert(await page.locator('.commu-people-entry[href*="era=scholar"]').count() === 1, 'researchers entry');
+        await eraLink.locator('strong').click();
         await page.waitForURL('**/people?era=china-old-regime');
         assert(await page.locator('[data-facet="era"].is-set').count() > 0);
         assert(await page.locator('.commu-people-row').count() > 0);
