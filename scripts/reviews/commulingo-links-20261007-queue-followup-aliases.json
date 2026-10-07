@@ -1,0 +1,42 @@
+{
+ "scope": "2026-10-07 queue follow-up aliases: bare 바젤 선언 (doc), 협의파 and 국민 활력 세력 회의 (terms)",
+ "references": [
+  "dev_docs/commulingo-queue-events-20261007.md",
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "second-international-basel-manifesto-1912",
+   "lang": "ko",
+   "text": "바젤 선언",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 링크 검토: 코퍼스의 맨 「바젤 선언」(발칸 전쟁 사건)은 모두 1912년 제2인터내셔널 바젤 임시대회 선언을 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "bulgarian-social-democratic-workers-party-narrow-socialists",
+   "lang": "ko",
+   "text": "협의파",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 링크 검토: 코퍼스 발화(발칸 전쟁 사건·불가리아 공산당 용어·블라고예프 카드)가 모두 불가리아 사회민주노동당 협의파(테스냐키)를 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "sovereign-national-conference",
+   "lang": "ko",
+   "text": "국민 활력 세력 회의",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 링크 검토: 베냉 1990년 헌법 번역의 Conférence des Forces Vives de la Nation 번역어. 이 회의만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}

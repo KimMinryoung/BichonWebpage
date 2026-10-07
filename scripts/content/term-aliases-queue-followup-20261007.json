@@ -1,0 +1,9 @@
+{
+ "id": "queue-followup-aliases-20261007",
+ "source": "https://en.wikipedia.org/wiki/Bulgarian_Workers%27_Social_Democratic_Party_(Narrow_Socialists)",
+ "claim": "Korean prose calls the party 협의파 (Tesnyaks); the Benin 1990 constitution translation renders Conférence des Forces Vives de la Nation as 국민 활력 세력 회의.",
+ "fixes": [
+  {"id": "bulgarian-social-democratic-workers-party-narrow-socialists", "aliasesAdd": {"ko": ["협의파"]}},
+  {"id": "sovereign-national-conference", "aliasesAdd": {"ko": ["국민 활력 세력 회의"]}, "source": "https://en.wikipedia.org/wiki/National_Conference_of_the_Active_Forces_of_the_Nation"}
+ ]
+}

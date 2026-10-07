@@ -1,0 +1,25 @@
+{
+ "changedBy": "queue-events-20261007-extra",
+ "people": [
+  {
+   "id": "achille-bazaine",
+   "bio": {
+    "ko": "1831년 사병으로 입대해 외인부대와 알제리, 크림·이탈리아 전쟁을 거쳤고, 멕시코 원정에서 푸에블라 공략을 이끌어 원정군 사령관이 되었으며 1864년 원수 겸 상원의원이 되었다. 1870년 8월 총사령관이 되었으나 마르라투르 뒤 군대를 메스로 물려 고립되었고 생프리바에 예비대를 보내지 않았다. 돌파 시도가 실패한 뒤 국방정부를 인정하지 않고 프로이센 측, 외제니 황후와 교섭하며 「프랑스를 그 자신으로부터 구하기」 위한 군대의 출구를 구했다. 10월 27일 굶주린 라인군 약 19만 명과 함께 항복해 강베타에게 반역자로 고발당했다. 1873년 군사재판에서 사형을 선고받았으나 20년 금고로 감형되었고, 1874년 탈옥해 마드리드에서 망명 생활을 하다 1888년 죽었다.",
+    "en": "Enlisting as a private in 1831, he served in the Foreign Legion, Algeria, the Crimea and Italy, and in Mexico, where he led the taking of Puebla and rose to command the expeditionary corps; in 1864 he became Marshal of France and senator. Made commander-in-chief in August 1870, he pulled his army back to Metz after Mars-la-Tour, cutting himself off, and sent no reserves to Saint-Privat. After failed break-outs he refused to recognise the Government of National Defence and negotiated with the Prussians and Empress Eugénie for leave to use his army \"to save France from itself\". He capitulated with the starving Army of the Rhine, some 190,000 men, on 27 October and Gambetta denounced him as a traitor. Condemned to death by court-martial in 1873, commuted to twenty years, he escaped in 1874 and died in exile in Madrid in 1888."
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Siege_of_Metz_(1870)"
+   ],
+   "evidence": [
+    {
+     "field": "bio",
+     "claim": "Bazaine surrendered Metz and the Army of the Rhine, some 193,000 men, on 27 October 1870; the troops marched out on 29 October.",
+     "source": "https://en.wikipedia.org/wiki/Siege_of_Metz_(1870)",
+     "locator": "Capitulation section",
+     "excerpt": "François Achille Bazaine surrendered the fortress and the entire Army of the Rhine, some 193,000 men, into German hands on 27 October.",
+     "stance": "supports"
+    }
+   ]
+  }
+ ]
+}
