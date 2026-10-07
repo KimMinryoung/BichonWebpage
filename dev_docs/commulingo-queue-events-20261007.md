@@ -24,17 +24,20 @@
 
 발칸 전쟁도 같은 순서(인물 7 → 사건, 백업 `/tmp/qe/before-20261007-balkan.json` → 용어 6 → 링크 승인 45건 `commulingo-links-20261007-queue-events-balkan.json`(자동 37·검색 전용 8) → 마이그레이션 309: 입장 모음 7명, 1차 세계대전·제2인터내셔널 붕괴 역방향 related, 큐 2064 done)로 적용했다. 진영은 두 전쟁에서 편이 바뀌어 BRIEF의 3분법 대신 불가리아 / 세르비아·그리스·몬테네그로 / 오스만 / 반전 사회주의자 4개로 나눴다(REPORT 참조).
 
+## 추가 인물 (2026-10-07 후속)
+
+카드가 없던 주요 인물 17명을 `people-extra-20261007-{a,b,c}.js`(보고 `REPORT-people-extra-{a,b,c}.md`)로 만들어 Admin upsert(`scripts/content/queue-events-20261007-people-extra-{a,b,c}.json`)로 넣었다. 기존 사건과의 관계는 `scripts/apply-event-person-links.js`(콘텐츠 편집 서비스 history_event_person, 행 파일 `…-people-extra-{a,b,c}-links.json`), 입장 모음은 마이그레이션으로 넣었다.
+
+- a 아이티·보불(325): 폴브렐(jacobin), 장바티스트 벨레(사건 본문의 Belley, 국민공회 첫 흑인 의원; jacobin), 도나시앵 드 로샹보, 토머스 메이틀랜드, 아실 바젠(monarchist), 빌헬름 브라케(non-bolshevik-socialist; SDAP가 카탈로그에 없어 party-german-spd), 샤를 드 프레시네(liberal-republican), 뒤크로. 맨 성 「로샹보/Rochambeau」「프레시네/Freycinet」는 아버지·삼촌과 겹쳐 검색 전용. 관계 8행.
+- b 발칸(324): 투초비치(communist), 탈라트 파샤(nationalist; 「탈라트」 auto, Talat/Talaat 검색 전용), 콘스탄티노스 1세(monarchist). 관계 6행: 발칸 3, 1차 세계대전 2(탈라트 central-powers, 투초비치 antiwar-socialists), 브레스트-리토프스크 1(탈라트).
+- c 방데(328): 봉샹·레스퀴르·카두달·퓌자예(counterrevolution), 마르소(입장 없음, 클레베르·오슈 선례), 로시뇰(jacobin). 맨 성 링크 표현(봉샹·레스퀴르·퓌자예)은 linkExpressions. 관계 10행(방데 6, 프랑스 혁명 2, 혁명 전쟁 2). `audit-link-fires.js ko`로 맨 「마르소」가 어느 카드로도 걸리지 않음(마르소 피베르와 충돌 없음)을 확인.
+- 같은 날 `francois-de-charette` 카드의 「조네 조약」을 「라자주네 조약」으로 통일했다(bio·경력·절).
+
 ## 남은 일
 
-- 방데: 본문이 2.7만 자로 길다(「평가」 절부터 줄일 수 있음). `francois-de-charette` 카드의 「조네 조약」은 2026-10-07 「라자주네 조약」으로 통일했다(bio·경력·절, Admin upsert).
-- 발칸: 한국어 「바젤 선언」이 문헌 `second-international-basel-manifesto-1912`에, 「협의파」가 협의파 용어에 링크되지 않는다(별칭 추가 검토). 카드 없는 인물 중 투초비치·탈라트·콘스탄티노스 1세 우선.
-- 카드가 없는 주요 인물: 아이티 폴브렐·로샹보·벨레·메이틀랜드, 보불 아실 바젠·브라케·프레시네·뒤크로.
+- 방데 본문이 2.7만 자로 길다(「평가」 절부터 줄일 수 있음).
+- 발칸: 한국어 「바젤 선언」이 문헌 `second-international-basel-manifesto-1912`에, 본문의 「협의파」가 협의파 용어에 링크되지 않는다(별칭 추가 검토).
+- 메스 항복일이 보불전쟁 본문은 10월 27일, 바젠 카드는 10월 28일(출처 차이). 항복 병력도 본문 17만 3천~19만 3천, 카드 18만.
 - 몰트케(대몰트케) 맨 표현 「몰트케/Moltke」가 자동 링크라 소몰트케 카드가 생기면 context로 낮출 것.
+- 카드 없는 인물(본문에 이름만): 발칸 카롤 1세·마요레스쿠·푸트니크·사보프·다네프·라도슬라보프·카밀 파샤·나즘 파샤·셰브케트 파샤·에사드 파샤·그레이·사조노프·산단스키·카박치에프, 보불 슈피어·헤프너·야코비·부르바키·페리·쥘 시몽·베네데티·그라몽·올리비에·플루랑스 등, 아이티 레몽·비아수·파피용·카푸아·부아예, 방데 사피노·루아랑·마리니·솜브뢰유·악소·캉클로·베르니에 신부 등. 전체 목록은 각 REPORT의 「못 만든 인물」.
 - 연결할 사건이 없는 문헌(공산당 선언, 임금 노동과 자본, 가치·가격·이윤, 고타 강령 비판, 오언, 변증법적 유물론, 스탈린-예이젠시테인)은 1848년 혁명·제1인터내셔널·즈다놉시나 사건이 생기면 연결한다.
-
-## 추가 인물 (2026-10-07, 같은 날 후속)
-
-카드가 없던 주요 인물을 `people-extra-20261007-{a,b,c}.js`로 만들어 Admin upsert로 넣고, 사건 관계는 `scripts/apply-event-person-links.js`(콘텐츠 편집 서비스 history_event_person)로, 입장 모음은 마이그레이션으로 넣는다.
-- b(발칸): 투초비치(communist), 탈라트 파샤(nationalist; 링크 표현 「탈라트」 auto, Talat/Talaat 검색 전용), 콘스탄티노스 1세(monarchist). 관계 6행: 발칸 3, 1차 세계대전(탈라트 central-powers·투초비치 antiwar-socialists), 브레스트-리토프스크(탈라트). 마이그레이션 324.
-- a(아이티·보불): 폴브렐(jacobin), 장바티스트 벨레(사건 본문의 Belley; jacobin), 도나시앵 드 로샹보, 토머스 메이틀랜드, 아실 바젠(monarchist), 빌헬름 브라케(non-bolshevik-socialist), 샤를 드 프레시네(liberal-republican), 뒤크로. 맨 성 「로샹보/Rochambeau」「프레시네/Freycinet」는 아버지·삼촌과 겹쳐 검색 전용. 관계 8행, 마이그레이션 325. 메스 항복일은 사건 본문 10월 27일, 바젠 카드 10월 28일(출처 차이).
-- c(방데): 샤를 드 봉샹·루이 마리 드 레스퀴르·조르주 카두달·조제프 드 퓌자예(counterrevolution), 프랑수아 세브랭 마르소(입장 없음), 장앙투안 로시뇰(jacobin). 맨 성 링크 표현(봉샹·레스퀴르·퓌자예)은 linkExpressions. 관계 10행(방데 6, 프랑스 혁명 2, 혁명 전쟁 2), 마이그레이션 328. 링크 발화 점검: 맨 「마르소」는 어느 카드로도 걸리지 않음(마르소 피베르와 충돌 없음).
