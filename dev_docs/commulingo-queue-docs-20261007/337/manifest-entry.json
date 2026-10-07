@@ -1,0 +1,28 @@
+{
+  "id": "molotov-paris-statement-1947",
+  "file": "molotov-paris-statement-1947.html",
+  "docLang": "ko",
+  "date": "1947-07-02",
+  "title": {
+    "ko": "몰로토프의 파리 회담 성명 (1947년 7월 2일)",
+    "en": "Molotov's Statement at the Paris Conference (2 July 1947)"
+  },
+  "description": {
+    "ko": "파리 3국 외무상 회의 마지막 날 몰로토프가 마셜 플랜 수용을 위한 영국·프랑스 안을 거부하며 낸 성명. 유럽 경제를 짤 「운영위원회」가 각국 주권을 침해하고 독일 자원을 배상 대신 다른 데 돌리며 유럽을 두 국가군으로 가를 것이라고 경고한다.",
+    "en": "The statement with which Molotov rejected the Anglo-French plan for taking up Marshall aid on the last day of the Paris Three-Power Conference. He warned that a European 'steering committee' would override national sovereignty, divert German resources away from reparations and split Europe into two groups of states."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Заявление В. М. Молотова на совещании министров иностранных дел СССР, Франции и Англии (Париж, 2 июля, ТАСС) // Правда, 3 июля 1947, № 169, с. 3; digital reproduction: CVCE.eu, https://www.cvce.eu/obj/zaiavlenie_molotova_parizh_2_iiulia_1947_g-ru-f692bc11-0049-4b78-ba99-bc0ac81aedeb.html. Official statement of the Soviet foreign minister; state document.",
+  "people": ["molotov", "georges-bidault", "ernest-bevin"],
+  "terms": ["paris-three-power-conference-27-june-2-july-1947", "european-recovery-program-erp"],
+  "events": ["marshall-plan"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『몰로토프의 파리 회담 성명』", "몰로토프의 파리 회담 성명", "몰로토프 파리 성명", "1947년 7월 2일 몰로토프 성명"],
+    "en": ["Molotov's Paris statement", "Molotov statement of 2 July 1947", "Molotov's statement at the Paris Conference"]
+  },
+  "noAutoLink": []
+}
