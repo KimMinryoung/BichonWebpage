@@ -1,0 +1,129 @@
+{
+ "scope": "2026-10-07 docs queue follow-up: Madagascar 1975 constitution (instead of 1810), CPV Fourth Congress resolution (instead of 1843)",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "madagascar-constitution-1975",
+   "lang": "ko",
+   "text": "『마다가스카르 민주공화국 헌법』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "madagascar-constitution-1975",
+   "lang": "ko",
+   "text": "마다가스카르 민주공화국 헌법",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "madagascar-constitution-1975",
+   "lang": "ko",
+   "text": "1975년 마다가스카르 헌법",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "madagascar-constitution-1975",
+   "lang": "en",
+   "text": "Constitution of the Democratic Republic of Madagascar",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "madagascar-constitution-1975",
+   "lang": "en",
+   "text": "1975 Constitution of Madagascar",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "madagascar-constitution-1975",
+   "lang": "en",
+   "text": "Malagasy Constitution of 1975",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpv-fourth-congress-resolution-1976",
+   "lang": "ko",
+   "text": "『베트남 공산당 제4차 전국대표대회 결의』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpv-fourth-congress-resolution-1976",
+   "lang": "ko",
+   "text": "베트남 공산당 제4차 대회 결의",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpv-fourth-congress-resolution-1976",
+   "lang": "ko",
+   "text": "제4차 당대회 결의",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 다른 공산당의 제4차 대회 결의와 겹쳐 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpv-fourth-congress-resolution-1976",
+   "lang": "en",
+   "text": "Resolution of the Fourth National Congress of the Communist Party of Vietnam",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: 나라·기관·연도를 담은 문헌 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "cpv-fourth-congress-resolution-1976",
+   "lang": "en",
+   "text": "Fourth Party Congress resolution",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 문헌 후속(대체 문헌) 링크 검토: other parties' fourth congresses; 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}

@@ -8146,6 +8146,91 @@
         ]
       },
       "noAutoLink": []
+    },
+    {
+      "id": "madagascar-constitution-1975",
+      "file": "madagascar-constitution-1975.html",
+      "docLang": "ko",
+      "date": "1975-12-31",
+      "title": {
+        "ko": "마다가스카르 민주공화국 헌법 (1975년 12월 31일)",
+        "en": "Constitution of the Democratic Republic of Madagascar (31 December 1975)"
+      },
+      "description": {
+        "ko": "1975년 12월 21일 국민투표로 혁명헌장과 함께 채택되고 12월 31일 공포된 제2공화국 헌법. 포코놀로나에 바탕을 둔 국가, 주요 생산수단의 공적 소유, 7년 임기 대통령과 혁명최고평의회·국민인민의회·헌법고등법원, 혁명수호민족전선, 공화정과 사회주의 선택의 개정 금지를 정했다.",
+        "en": "The Second Republic's constitution, adopted by referendum on 21 December 1975 together with the revolutionary charter and promulgated on 31 December. It founded the state on the fokonolona, made public ownership of the main means of production the basis of the social order, created a seven-year presidency, the Supreme Revolutionary Council, the National People's Assembly and the High Constitutional Court, recognized the National Front for the Defence of the Revolution, and barred revision of the republican form and the socialist option."
+      },
+      "kind": {
+        "ko": "헌법·법령·명령",
+        "en": "Constitutions, laws & orders"
+      },
+      "source": "Constitution de la République Démocratique de Madagascar, promulguée le 31 décembre 1975, Journal officiel, 31 décembre 1975, pp. 3373–3391 (Malagasy and French texts). French text: Digithèque MJP (Jean-Pierre Maury), https://mjp.univ-perp.fr/constit/mg1975.htm, accessed 2026-10-07; presidential oath (art. 49) translated from the Malagasy given in the French text. National constitution; not subject to copyright.",
+      "people": [
+        "didier-ratsiraka"
+      ],
+      "terms": [
+        "malagasy-socialist-planning"
+      ],
+      "events": [
+        "malagasy-socialist-transition-1972-1975"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『마다가스카르 민주공화국 헌법』",
+          "마다가스카르 민주공화국 헌법",
+          "1975년 마다가스카르 헌법"
+        ],
+        "en": [
+          "Constitution of the Democratic Republic of Madagascar",
+          "1975 Constitution of Madagascar",
+          "Malagasy Constitution of 1975"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "cpv-fourth-congress-resolution-1976",
+      "file": "cpv-fourth-congress-resolution-1976.html",
+      "docLang": "ko",
+      "date": "1976-12-20",
+      "title": {
+        "ko": "베트남 공산당 제4차 전국대표대회 결의 (1976년 12월 20일)",
+        "en": "Resolution of the Fourth National Congress of the Communist Party of Vietnam (20 December 1976)"
+      },
+      "description": {
+        "ko": "통일 뒤 첫 당대회가 마지막 날 채택한 결의. 항미 전쟁의 승리를 총괄하고, 프롤레타리아 독재·집단적 주인권·3대 혁명을 축으로 한 사회주의 혁명의 총노선, 제2차 5개년계획(1976~1980)의 임무와 1980년 생산 목표, 남부의 사회주의적 개조, 국가·대외 정책·당 건설의 방향을 정했다.",
+        "en": "The resolution adopted on the closing day of the first party congress after reunification. It summed up the victory over the United States and set the general line of the socialist revolution around the dictatorship of the proletariat, collective mastery and the three revolutions, the tasks of the Second Five-Year Plan (1976–1980) with its 1980 output targets, the socialist transformation of the South, and the course of the state, foreign policy and party building."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Nghị quyết Đại hội đại biểu toàn quốc lần thứ IV của Đảng Cộng sản Việt Nam, Nxb. Sự thật, Hà Nội, 1977. Text: Tư liệu - Văn kiện Đảng (Communist Party of Vietnam electronic document archive), https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-iv/nghi-quyet-cua-dai-hoi-dai-bieu-toan-quoc-lan-thu-iv-cua-dang-1522, accessed 2026-10-07. Official party resolution.",
+      "people": [
+        "le-duan",
+        "ho-chi-minh"
+      ],
+      "terms": [
+        "communist-party-of-vietnam",
+        "dictatorship-of-the-proletariat"
+      ],
+      "events": [
+        "vietnam-reunification-1975-1976"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『베트남 공산당 제4차 전국대표대회 결의』",
+          "베트남 공산당 제4차 대회 결의",
+          "제4차 당대회 결의"
+        ],
+        "en": [
+          "Resolution of the Fourth National Congress of the Communist Party of Vietnam",
+          "Fourth Party Congress resolution"
+        ]
+      },
+      "noAutoLink": []
     }
   ],
   "redirects": {
