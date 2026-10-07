@@ -1,0 +1,28 @@
+{
+  "id": "gosbank-minfin-1990-12-14-monetary-reform",
+  "file": "gosbank-minfin-1990-12-14-monetary-reform.html",
+  "docLang": "ko",
+  "date": "1990-12-14",
+  "title": {
+    "ko": "화폐개혁 실시의 부적절성에 관하여 — 고스방크·재무부 서한 (1990년 12월 14일)",
+    "en": "On the Inexpediency of Conducting a Monetary Reform — Gosbank and Finance Ministry Letter (14 December 1990)"
+  },
+  "description": {
+    "ko": "재무장관 파블로프와 고스방크 의장 게라셴코가 리시코프 총리에게, 사회정치적 상황과 소비재 시장의 긴장, 상품·외환 준비금 부족을 들어 지금 몰수형 화폐개혁은 부적절하다는 결론을 다시 확인한 서한. 한 달여 뒤 파블로프가 총리로서 고액권 교환을 단행했다.",
+    "en": "Finance Minister Pavlov and Gosbank chairman Gerashchenko remind Premier Ryzhkov that a confiscatory monetary reform is inexpedient given the socio-political situation, the strained consumer market and the lack of commodity and currency reserves. Six weeks later Pavlov, as premier, carried out the exchange of large banknotes."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Письмо Госбанка СССР и Минфина СССР «О нецелесообразности проведения денежной реформы» от 14 декабря 1990 года (Председателю Совета Министров СССР тов. Рыжкову Н.И.; подп. В.С. Павлов, В.В. Геращенко). РГАЭ, ф. 2324, оп. 33, д. 741, л. 157. Опубл.: По страницам архивных фондов Центрального банка Российской Федерации. Вып. 12. Денежное обращение в СССР в 1986–1991 годах. М.: Банк России, 2011. С. 88 (https://cbr.ru/Content/Document/File/48222/ArchivalFonds_012.pdf). Official government correspondence; not subject to private copyright.",
+  "people": ["pavlov", "gerashchenko", "ryzhkov", "arnold-voylukov"],
+  "terms": ["pavlov-reform"],
+  "events": ["economic-reform-debate"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『화폐개혁 실시의 부적절성에 관하여』", "「화폐개혁 실시의 부적절성에 관하여」", "화폐개혁 실시의 부적절성에 관하여", "게라셴코·파블로프 서한"],
+    "en": ["On the Inexpediency of Conducting a Monetary Reform", "Gerashchenko–Pavlov letter of 14 December 1990"]
+  },
+  "noAutoLink": []
+}
