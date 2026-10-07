@@ -1,0 +1,28 @@
+{
+  "id": "stalin-gottwald-letter-1950",
+  "file": "stalin-gottwald-letter-1950.html",
+  "docLang": "ko",
+  "date": "1950-08-27",
+  "title": {
+    "ko": "스탈린이 고트발트에게 보낸 서한 (1950년 8월 27일)",
+    "en": "Stalin's Letter to Gottwald (27 August 1950)"
+  },
+  "description": {
+    "ko": "스탈린이 「필리포프」라는 이름으로 프라하의 소련 대사를 거쳐 고트발트에게 전한 답신. 소련이 유엔 안전보장이사회를 떠난 네 가지 목적을 들고, 미국이 조선에서 중국과 싸우다 지치면 제3차 세계대전이 미뤄진다는 계산을 밝힌다.",
+    "en": "Stalin's reply to Gottwald, sent under the name 'Filippov' through the Soviet ambassador in Prague. It gives four reasons for the Soviet absence from the UN Security Council and argues that a United States worn down fighting China in Korea would have to postpone a third world war."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Письмо Филиппова (И. В. Сталина) советскому послу в Праге для передачи К. Готвальду, 27 августа 1950 г. РГАСПИ, ф. 558, оп. 11, д. 62, л. 71–72; опубл.: А. М. Ледовский, Сталин, Мао Цзэдун и корейская война 1950–1953 годов // Новая и новейшая история, 2005, № 5, с. 79–113. Russian transcription: Wilson Center Digital Archive, doc. 112225 (https://digitalarchive.wilsoncenter.org/document/112225). Official Soviet state correspondence; not subject to private copyright.",
+  "people": ["stalin", "klement-gottwald"],
+  "terms": ["soviet-boycott-of-the-un-security-council-1950", "kuomintang"],
+  "events": ["korean-war"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『스탈린의 고트발트 서한』", "스탈린의 고트발트 서한", "고트발트에게 보낸 스탈린의 편지", "필리포프 서한 (1950년 8월 27일)"],
+    "en": ["Stalin's letter to Gottwald", "Stalin to Gottwald, 27 August 1950", "Filippov letter to Gottwald"]
+  },
+  "noAutoLink": []
+}
