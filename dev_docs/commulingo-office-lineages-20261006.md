@@ -26,5 +26,5 @@ ru.wikipedia 목록·인물 정보상자, knowbysight.info(Справочник 
 - 직책 `control-commissions`(마이그레이션 299, 인덱스 3번째, 아이콘 `scale`)를 새로 두었다. 계보 파일 `scripts/content/office-lineages-20261006/control-commissions.json`, 46행.
 - 묶음 둘: 당 통제위원회(중앙통제위원회 1923~1934 → 당통제위원회 1934~1990, 1962~1966 중앙위원회 산하 당위원회 포함 → 소련공산당 중앙통제위원회 1990~1991), 국가통제(국가통제인민위원부 → 라브크린 → 소비에트통제위원회 → 국가통제부 → 당·국가통제위원회 → 인민통제위원회 → 감사원). 1923년 이후 러시아 공화국 라브크린은 뺐다.
 - 출처: ru.wikipedia 기관 문서(ЦКК КПСС, Рабоче-крестьянская инспекция, Комиссия советского контроля, Комитет народного контроля СССР)와 인물 정보상자. knowbysight는 이번에 인증서 오류로 열리지 않았다.
-- 카드 없는 8명은 이름만 둔다: 카를 란데르, 파벨 코마로프(1954~1956 대행), 예브게니 마호프(1991 대행), 자하르 벨렌키(1938~1939 대행), 알렉산드르 파벨리예프, 바실리 자보론코프, 게오르기 예뉴틴, 알렉산드르 오를로프(감사원).
-- 활동의 `officeId`를 이 직책으로 단 인물은 아직 없다. 직책 페이지의 「이 기관 계열에서 활동한 인물」 링크는 인물이 가장 많이 잡히는 소속(state-soviet·soviet-party·comintern)으로 걸리고, 아무도 없으면 숨는다.
+- 카드 없던 8명은 같은 날 등록했다(`scripts/content/control-commission-people-20261007.json`, Admin 스토어 경로, 정치 입장 분류는 마이그레이션 300): `karl-lander`, `pavel-komarov`, `yevgeny-makhov`, `zakhar-belenky`, `alexander-pavelyev`, `vasily-zhavoronkov`, `georgy-yenyutin`, 그리고 NKVD 망명자 `alexander-orlov`와 동명인 감사원 의장 `alexander-kondratyevich-orlov`(`identity_uncertain` 검토 승인). 46행 모두 카드에 연결된다. 주된 활동은 당 통제가 organizing/soviet-party, 국가통제가 economy/state-soviet이고 `officeId`는 `control-commissions`다.
+- 직책 페이지의 「이 기관 계열에서 활동한 인물」 링크는 인물이 가장 많이 잡히는 소속(state-soviet·soviet-party·comintern)으로 걸리고, 아무도 없으면 숨는다.

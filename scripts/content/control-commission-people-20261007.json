@@ -1,0 +1,1976 @@
+{
+ "people": [
+  {
+   "id": "karl-lander",
+   "groupId": "bolshevik",
+   "givenName": {
+    "ko": "카를",
+    "en": "Karl"
+   },
+   "familyName": {
+    "ko": "란데르",
+    "en": "Lander"
+   },
+   "cyrillic": "Карл Ландер",
+   "patronymic": {
+    "ko": "이바노비치",
+    "en": "Ivanovich"
+   },
+   "cyrillicPatronymic": "Иванович",
+   "years": "1883–1937",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "러시아 제국 → 소련",
+     "en": "Russian Empire → Soviet Union"
+    }
+   },
+   "nationalOrigin": {
+    "code": "latvia",
+    "label": {
+     "ko": "라트비아",
+     "en": "Latvia"
+    }
+   },
+   "epithet": {
+    "ko": "러시아 공화국 초대 국가통제인민위원, 북캅카스 적색 테러를 지휘한 라트비아인 볼셰비키",
+    "en": "Latvian Bolshevik, the RSFSR's first People's Commissar of State Control, who directed the Red Terror in the North Caucasus"
+   },
+   "bio": {
+    "ko": "쿠를란트의 농민 가정에서 태어나 교사로 일하다 옥중에서 마르크스주의자가 되었고, 1905년 러시아 사회민주노동당에 들어가 모스크바 12월 봉기에 참여했다. 『라트비아사』(1908~1909)를 썼다. 1917년 민스크 소비에트 의장, 서부 지역 인민위원회 의장, 제헌의회 의원이 되었고, 1918년 5월~1919년 3월 러시아 공화국 국가통제인민위원을 지냈다. 1920년 체카 돈·북캅카스 전권대표로 「트로이카」 재판부를 세웠고, 그해 10월에만 이들이 6천 명 이상을 총살했다. 1928년 반대파 연계를 의심받아 연금 생활로 밀려났고 1937년 결핵으로 죽었다.",
+    "en": "Born into a peasant family in Courland, he became a teacher and turned Marxist in prison; he joined the RSDLP in 1905, fought in the Moscow December uprising and wrote a History of Latvia (1908–1909). In 1917 he chaired the Minsk Soviet and the Council of People's Commissars of the Western Oblast and was elected to the Constituent Assembly. From May 1918 to March 1919 he was People's Commissar of State Control of the RSFSR. In 1920, as Cheka plenipotentiary for the Don and the North Caucasus, he set up troika tribunals that shot more than six thousand people in October 1920 alone. Suspected of links with the oppositions, he was pensioned off in 1928 and died of tuberculosis in 1937."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "결핵",
+     "en": "Tuberculosis"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "카를리스 란데르스"
+    ],
+    "en": [
+     "Karlis Landers",
+     "K. I. Lander"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/K%C4%81rlis_Landers"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1883–1937",
+     "excerpt": "Карл Ива́нович Ла́ндер (5 апреля 1883, Курляндская губерния — 29 июля 1937, Москва)"
+    },
+    {
+     "field": "nationalOrigin",
+     "source": "https://en.wikipedia.org/wiki/K%C4%81rlis_Landers",
+     "locator": "lead",
+     "claim": "라트비아인 볼셰비키",
+     "excerpt": "Kārlis Landers ... was a Latvian Bolshevik revolutionary, Soviet statesman"
+    },
+    {
+     "field": "citizenship",
+     "source": "https://en.wikipedia.org/wiki/K%C4%81rlis_Landers",
+     "locator": "lead",
+     "claim": "소련 국가 활동가",
+     "excerpt": "Soviet statesman, official of the Soviet state security of the Cheka and OGPU"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Деятельность в Советской России",
+     "claim": "1918~1919 국가통제인민위원",
+     "excerpt": "В 1918—1919 годах нарком госконтроля РСФСР"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "На Северном Кавказе",
+     "claim": "트로이카 6천 명 총살",
+     "excerpt": "только за один октябрь 1920 года созданные им «тройки» приговорили к смерти и тотчас расстреляли более шести тысяч человек."
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Персональный пенсионер",
+     "claim": "1928년 연금",
+     "excerpt": "В 1928 году Сталин ... стал подозревать его в нелояльности и связях с внутрипартийными оппозиционными группами."
+    },
+    {
+     "field": "fate",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Смерть",
+     "claim": "결핵 사망",
+     "excerpt": "Cкончался от туберкулёза в Москве 29 июля 1937 года."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1918,
+     "endYear": 1919,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Деятельность в Советской России",
+       "claim": "러시아 공화국 국가통제인민위원 1918~1919",
+       "excerpt": "В 1918—1919 годах нарком госконтроля РСФСР"
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1920,
+     "endYear": 1920,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "На Северном Кавказе",
+       "claim": "체카 돈·북캅카스 전권대표",
+       "excerpt": "В 1920 году особоуполномоченный ВЧК по Донской области и Северному Кавказу и начальник особого отдела ВЧК Кавказского фронта."
+      }
+     ],
+     "officeId": "state-security"
+    },
+    {
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1905,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D0%B4%D0%B5%D1%80%2C_%D0%9A%D0%B0%D1%80%D0%BB_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Революционная деятельность",
+       "claim": "1905년부터 당원",
+       "excerpt": "Член РСДРП с 1905 года."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1917,
+       10
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "민스크 노동자·병사 대표 소비에트 의장",
+      "en": "Chairman of the Minsk Soviet of Workers' and Soldiers' Deputies"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1917
+      ],
+      "end": [
+       1918
+      ]
+     },
+     "r": {
+      "ko": "서부 지역·전선 인민위원회 의장",
+      "en": "Chairman of the Council of People's Commissars of the Western Oblast and Front"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1918,
+       5,
+       9
+      ],
+      "end": [
+       1919,
+       3,
+       25
+      ]
+     },
+     "r": {
+      "ko": "러시아 공화국 국가통제인민위원",
+      "en": "People's Commissar of State Control of the RSFSR"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1920
+      ],
+      "end": [
+       1920
+      ]
+     },
+     "r": {
+      "ko": "체카 돈·북캅카스 전권대표, 캅카스 전선 특별부장",
+      "en": "Cheka plenipotentiary for the Don and the North Caucasus; head of the Special Department of the Caucasian Front"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1921
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "러시아공산당 모스크바 위원회 선전선동부장",
+      "en": "Head of the agitation and propaganda department of the Moscow Committee of the RCP(b)"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1923
+      ],
+      "end": [
+       1925
+      ]
+     },
+     "r": {
+      "ko": "소련 대외무역인민위원부 참의회 위원",
+      "en": "Member of the collegium of the People's Commissariat of Foreign Trade of the USSR"
+     }
+    }
+   ]
+  },
+  {
+   "id": "pavel-komarov",
+   "groupId": "stalin-era",
+   "givenName": {
+    "ko": "파벨",
+    "en": "Pavel"
+   },
+   "familyName": {
+    "ko": "코마로프",
+    "en": "Komarov"
+   },
+   "cyrillic": "Павел Комаров",
+   "patronymic": {
+    "ko": "티모페예비치",
+    "en": "Timofeyevich"
+   },
+   "cyrillicPatronymic": "Тимофеевич",
+   "years": "1898–1983",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "러시아 제국 → 소련",
+     "en": "Russian Empire → Soviet Union"
+    }
+   },
+   "nationalOrigin": {
+    "code": "russia",
+    "label": {
+     "ko": "러시아",
+     "en": "Russia"
+    }
+   },
+   "epithet": {
+    "ko": "볼로그다·사라토프 주당 제1서기를 거쳐 당통제위원장 직무를 대행한 당 간부",
+    "en": "Party official who led the Vologda and Saratov regional committees and then served as acting chairman of the Party Control Committee"
+   },
+   "bio": {
+    "ko": "모스크바현 솔네치나야고라에서 태어나 내전에 참가했고 1920년 러시아공산당에 들어갔다. 모스크바의 구 소비에트 의장과 시 수도·주택 복구 책임자, 지하철 개통 준비 전권위원을 거쳐 대숙청기인 1937년 볼로그다주에 파견되어 1938~1942년 주당위원회 제1서기, 1942~1948년 사라토프 주당위원회 제1서기를 지냈다. 1951~1952년 소련 조달 차관을 거쳐 1952~1959년 당통제위원회 부위원장으로 있었고, 시키랴토프가 죽은 뒤 1954~1956년 위원장 직무를 대행했다. 1939~1961년 중앙위원회 후보위원이었다. 1959년 은퇴했다.",
+    "en": "Born in Solnechnaya Gora, Moscow Governorate, he fought in the Civil War and joined the Russian Communist Party in 1920. After chairing Moscow district soviets, running the city's housing repair and water supply and preparing the opening of the Metro, he was sent to Vologda in 1937 and served as first secretary of the Vologda regional committee (1938–1942) and of the Saratov regional committee (1942–1948). After a spell as USSR Deputy Minister of Procurement (1951–1952) he was deputy chairman of the Party Control Committee from 1952 to 1959, and acting chairman after Shkiryatov's death, 1954–1956. He was a candidate member of the Central Committee from 1939 to 1961 and retired in 1959."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "en": [
+     "P. T. Komarov"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1898–1983",
+     "excerpt": "Павел Тимофеевич Комаров (30 июня [12 июля] 1898, с. Солнечная Гора, Московская губерния — 2 мая 1983, Москва)"
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련 당·국가 활동가, 러시아 출생",
+     "excerpt": "советский партийный и государственный деятель"
+    },
+    {
+     "field": "nationalOrigin",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "infobox",
+     "claim": "모스크바현 출생",
+     "excerpt": "место рождения = Солнечная Гора, Московская губерния, Российская империя"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "당통제위원회 부위원장·위원장 대행",
+     "excerpt": "1952—1959 гг. — заместитель председателя Комитета партийного контроля при ЦК КПСС. 1954—1956 гг. — и. о. председателя Комитета партийного контроля при ЦК КПСС."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1952,
+     "endYear": 1959,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "당통제위원회 부위원장, 1954~1956 위원장 대행",
+       "excerpt": "1952—1959 гг. — заместитель председателя Комитета партийного контроля при ЦК КПСС. 1954—1956 гг. — и. о. председателя Комитета партийного контроля при ЦК КПСС."
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1936,
+     "endYear": 1948,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "lead",
+       "claim": "볼로그다·사라토프 주당 제1서기",
+       "excerpt": "первый секретарь Саратовского (1942—1948) и Вологодского (1938—1942) областных комитетов ВКП(б)"
+      }
+     ],
+     "officeId": "party-secretariat-cadres"
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1920,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "1920년 입당",
+       "excerpt": "Член РКП(б) с 1920 г."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1929
+      ],
+      "end": [
+       1930
+      ]
+     },
+     "r": {
+      "ko": "칼루가 관구 소비에트 집행위원회 의장",
+      "en": "Chairman of the Kaluga District Soviet Executive Committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1931
+      ],
+      "end": [
+       1934
+      ]
+     },
+     "r": {
+      "ko": "모스크바 수도국장·지하철 개통 준비 전권위원",
+      "en": "Head of the Moscow water supply; Moscow Soviet commissioner for the opening of the Metro"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1936
+      ],
+      "end": [
+       1937
+      ]
+     },
+     "r": {
+      "ko": "모스크바 크라스노그바르데이스키 구당위원회 제1서기",
+      "en": "First secretary of the Krasnogvardeysky district committee, Moscow"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1938
+      ],
+      "end": [
+       1942
+      ]
+     },
+     "r": {
+      "ko": "볼로그다 주당위원회 제1서기",
+      "en": "First secretary of the Vologda regional party committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1942
+      ],
+      "end": [
+       1948
+      ]
+     },
+     "r": {
+      "ko": "사라토프 주당위원회 제1서기",
+      "en": "First secretary of the Saratov regional party committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1951
+      ],
+      "end": [
+       1952
+      ]
+     },
+     "r": {
+      "ko": "소련 조달 차관",
+      "en": "USSR Deputy Minister of Procurement"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1952
+      ],
+      "end": [
+       1959
+      ]
+     },
+     "r": {
+      "ko": "중앙위원회 당통제위원회 부위원장",
+      "en": "Deputy chairman of the Party Control Committee of the Central Committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1954,
+       1
+      ],
+      "end": [
+       1956,
+       2
+      ]
+     },
+     "r": {
+      "ko": "중앙위원회 당통제위원회 위원장 직무대행",
+      "en": "Acting chairman of the Party Control Committee of the Central Committee"
+     }
+    }
+   ]
+  },
+  {
+   "id": "yevgeny-makhov",
+   "groupId": "perestroika",
+   "givenName": {
+    "ko": "예브게니",
+    "en": "Yevgeny"
+   },
+   "familyName": {
+    "ko": "마호프",
+    "en": "Makhov"
+   },
+   "cyrillic": "Евгений Махов",
+   "patronymic": {
+    "ko": "니콜라예비치",
+    "en": "Nikolayevich"
+   },
+   "cyrillicPatronymic": "Николаевич",
+   "years": "1937–",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "소련",
+     "en": "Soviet Union"
+    }
+   },
+   "nationalOrigin": {
+    "code": "russia",
+    "label": {
+     "ko": "러시아",
+     "en": "Russia"
+    }
+   },
+   "epithet": {
+    "ko": "당 활동 금지까지 소련공산당 중앙통제위원장 직무를 대행한 군 정치장교",
+    "en": "Army political officer who was acting chairman of the CPSU Central Control Commission until the party was banned"
+   },
+   "bio": {
+    "ko": "토르조크의 러시아인 노동자 가정에서 태어나 1954년 군에 들어갔고, 1957년 레닌그라드 군사공병학교를 마치며 공산당에 입당했다. 이후 줄곧 군 정치기관에서 일해 소련군 총정치국 콤소몰 사업부장, 레닌그라드 군관구 군단·군 정치부장, 주독 소련군 집단 정치국 제1부국장, 1985~1989년 프리카르파티아 군관구 정치국장을 지냈고 체르노빌 사고 수습에도 참여했다. 중장. 1989년 당통제위원회 위원이 되었고 1990년 7월 제28차 당대회가 되살린 중앙통제위원회의 부위원장·제1부위원장을 거쳐, 1991년 4월 푸고가 내무장관이 되자 그해 11월 당 활동이 금지될 때까지 위원장 직무를 대행했다.",
+    "en": "Born into a Russian working-class family in Torzhok, he joined the army in 1954 and the Communist Party in 1957, on graduating from the Leningrad Military Engineering School. His whole career was in the army's political organs: head of Komsomol work at the Main Political Directorate, political chief of a corps and an army in the Leningrad Military District, first deputy political chief of the Group of Soviet Forces in Germany and, in 1985–1989, political chief of the Carpathian Military District; he also took part in the Chernobyl clean-up. A lieutenant general, he joined the Party Control Committee in 1989, became deputy and then first deputy chairman of the Central Control Commission revived by the Twenty-eighth Congress in July 1990, and when Pugo became Interior Minister in April 1991 served as acting chairman until the party was banned that November."
+   },
+   "aliases": {
+    "en": [
+     "E. N. Makhov"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "infobox",
+     "claim": "1937년생",
+     "excerpt": "дата рождения = 29.04.1937"
+    },
+    {
+     "field": "nationalOrigin",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "러시아인 노동자 가정",
+     "excerpt": "Родился в русской семье рабочих."
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련공산당 중앙통제위원장",
+     "excerpt": "последний председатель ЦКК КПСС, генерал-лейтенант"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "중앙통제위원장 대행",
+     "excerpt": "с июля 1990 по апрель 1991 заместитель, 1-й заместитель, затем до запрета партии 6 ноября 1991 исполняющий обязанности председателя Центральной контрольной комиссии КПСС"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1989,
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "당통제위원회 위원, 중앙통제위원회 부위원장·위원장 대행",
+       "excerpt": "В 1989—1990 член Комитета партийного контроля при ЦК КПСС, с июля 1990 по апрель 1991 заместитель, 1-й заместитель, затем до запрета партии 6 ноября 1991 исполняющий обязанности председателя Центральной контрольной комиссии КПСС."
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1954,
+     "endYear": 1989,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "군 정치기관 근무",
+       "excerpt": "В Советской армии с 1954. ... С 1985 до 1989 член Военного совета и начальник политического управления Прикарпатского военного округа."
+      }
+     ],
+     "officeId": "defence"
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1957,
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%85%D0%BE%D0%B2%2C_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "1957년 입당",
+       "excerpt": "Окончил в 1957 году Ленинградское военно-инженерное училище, с того же года член КПСС."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1971
+      ],
+      "end": [
+       1975
+      ]
+     },
+     "r": {
+      "ko": "소련군 총정치국 콤소몰 사업부장",
+      "en": "Head of Komsomol work, Main Political Directorate of the Soviet Army and Navy"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1975
+      ],
+      "end": [
+       1985
+      ]
+     },
+     "r": {
+      "ko": "레닌그라드 군관구 군단·군 정치부장",
+      "en": "Political chief of a corps and an army, Leningrad Military District"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1985
+      ],
+      "end": [
+       1989
+      ]
+     },
+     "r": {
+      "ko": "프리카르파티아 군관구 정치국장",
+      "en": "Political chief of the Carpathian Military District"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1986
+      ],
+      "end": [
+       1990
+      ]
+     },
+     "r": {
+      "ko": "우크라이나 공산당 중앙위원회 후보위원",
+      "en": "Candidate member of the Central Committee of the Communist Party of Ukraine"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1989
+      ],
+      "end": [
+       1990
+      ]
+     },
+     "r": {
+      "ko": "중앙위원회 당통제위원회 위원",
+      "en": "Member of the Party Control Committee of the Central Committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1990,
+       7
+      ],
+      "end": [
+       1991,
+       4
+      ]
+     },
+     "r": {
+      "ko": "소련공산당 중앙통제위원회 부위원장·제1부위원장",
+      "en": "Deputy, then first deputy chairman of the CPSU Central Control Commission"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1991,
+       4,
+       23
+      ],
+      "end": [
+       1991,
+       11,
+       6
+      ]
+     },
+     "r": {
+      "ko": "소련공산당 중앙통제위원회 위원장 직무대행",
+      "en": "Acting chairman of the CPSU Central Control Commission"
+     }
+    }
+   ]
+  },
+  {
+   "id": "zakhar-belenky",
+   "groupId": "stalin-era",
+   "givenName": {
+    "ko": "자하르",
+    "en": "Zakhar"
+   },
+   "familyName": {
+    "ko": "벨렌키",
+    "en": "Belenky"
+   },
+   "cyrillic": "Захар Беленький",
+   "patronymic": {
+    "ko": "모이세예비치",
+    "en": "Moiseyevich"
+   },
+   "cyrillicPatronymic": "Моисеевич",
+   "years": "1888–1940",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "러시아 제국 → 소련",
+     "en": "Russian Empire → Soviet Union"
+    }
+   },
+   "epithet": {
+    "ko": "라브크린과 소비에트통제위원회를 거쳐 위원장 직무를 대행하다 총살된 통제 관료",
+    "en": "Control official who rose through Rabkrin and the Commission of Soviet Control to acting chairman, and was shot"
+   },
+   "bio": {
+    "ko": "1905년부터 볼셰비키 당원이었다. 혁명 뒤 페트로그라드 노동조합 평의회 집행위원과 페트로그라드 노동거래소 의장, 전러시아 노동조합 중앙평의회 우랄·시베리아 전권대표, 러시아 공화국 노동인민위원부 참의회 위원, 남동부 국장을 지냈다. 1928년 소련 노동자농민감찰인민위원부 참의회에 들어가 1931~1934년 부인민위원 겸 중앙통제위원회 간부회원을 지냈고, 1934년부터 소비에트통제위원회 부의장·제1부의장으로 있다가 1938~1939년 의장 직무를 대행했다. 1939년 6월 체포되어 1940년 2월 1일 소련 최고재판소 군사참의회에서 선고받고 그날 총살되었으며, 1956년 복권되었다.",
+    "en": "A Bolshevik from 1905, after the revolution he sat on the executive of the Petrograd trade union council and chaired the Petrograd labour exchange, then served as the trade union council's plenipotentiary in the Urals and Siberia, on the collegium of the RSFSR People's Commissariat of Labour, and as head of its South-Eastern bureau. He joined the collegium of the USSR Workers' and Peasants' Inspection in 1928 and was deputy People's Commissar and a member of the Presidium of the Central Control Commission in 1931–1934. From 1934 he was deputy and then first deputy chairman of the Commission of Soviet Control, and its acting chairman in 1938–1939. Arrested in June 1939, he was sentenced by the Military Collegium of the USSR Supreme Court on 1 February 1940 and shot the same day; he was rehabilitated in 1956."
+   },
+   "fate": {
+    "kind": "executed",
+    "label": {
+     "ko": "처형",
+     "en": "Executed"
+    }
+   },
+   "aliases": {
+    "en": [
+     "Z. M. Belenky",
+     "Zakhar Belenkiy"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D1%8F_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8F"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1888–1940",
+     "excerpt": "Захар Моисеевич Беленький (1888 — 1 февраля 1940)"
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련 국가 활동가",
+     "excerpt": "советский государственный и общественный деятель. Член ЦИК СССР 4, 7 созывов."
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "소비에트통제위원회 의장 대행",
+     "excerpt": "1938—1939 гг. — исполняющий обязанности Председателя КСК."
+    },
+    {
+     "field": "fate",
+     "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "체포·총살·복권",
+     "excerpt": "Арестован 16 июня 1939 года, осужден 1 февраля 1940 года военной коллегией Верховного суда СССР, в тот же день расстрелян, реабилитирован 5 января 1956 года."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1928,
+     "endYear": 1939,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "라브크린 참의회·부인민위원, 소비에트통제위원회 부의장·의장 대행",
+       "excerpt": "1928—1931 гг. — член коллегии Наркомата рабоче-крестьянской инспекции СССР. 1931—1934 гг. — заместитель наркома РКИ СССР ... 1938—1939 гг. — исполняющий обязанности Председателя КСК."
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1927,
+     "endYear": 1934,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "중앙통제위원회 위원",
+       "excerpt": "В 1927—1934 — член Центральной контрольной комиссии ВКП(б)"
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1905,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9%2C_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "infobox",
+       "claim": "1905년부터 당원",
+       "excerpt": "партия = ВКП(б) с 1905 года"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1917
+      ],
+      "end": [
+       1918
+      ]
+     },
+     "r": {
+      "ko": "페트로그라드 노동거래소 의장",
+      "en": "Chairman of the Petrograd labour exchange"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1922
+      ],
+      "end": [
+       1927
+      ]
+     },
+     "r": {
+      "ko": "전소련 노동조합 중앙평의회 남동부국 의장",
+      "en": "Chairman of the South-Eastern Bureau of the All-Union Central Council of Trade Unions"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1928
+      ],
+      "end": [
+       1931
+      ]
+     },
+     "r": {
+      "ko": "소련 노동자농민감찰인민위원부 참의회 위원",
+      "en": "Member of the collegium of the USSR Workers' and Peasants' Inspection"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1931
+      ],
+      "end": [
+       1934
+      ]
+     },
+     "r": {
+      "ko": "소련 노동자농민감찰 부인민위원·중앙통제위원회 간부회원",
+      "en": "Deputy People's Commissar of the Workers' and Peasants' Inspection; member of the Presidium of the Central Control Commission"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1934
+      ],
+      "end": [
+       1938
+      ]
+     },
+     "r": {
+      "ko": "인민위원회의 소비에트통제위원회 부의장·제1부의장",
+      "en": "Deputy, then first deputy chairman of the Commission of Soviet Control"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1938,
+       5,
+       15
+      ],
+      "end": [
+       1939,
+       4,
+       23
+      ]
+     },
+     "r": {
+      "ko": "인민위원회의 소비에트통제위원회 의장 직무대행",
+      "en": "Acting chairman of the Commission of Soviet Control"
+     }
+    }
+   ]
+  },
+  {
+   "id": "alexander-pavelyev",
+   "groupId": "stalin-era",
+   "givenName": {
+    "ko": "알렉산드르",
+    "en": "Alexander"
+   },
+   "familyName": {
+    "ko": "파벨리예프",
+    "en": "Pavelyev"
+   },
+   "cyrillic": "Александр Павельев",
+   "patronymic": {
+    "ko": "세묘노비치",
+    "en": "Semyonovich"
+   },
+   "cyrillicPatronymic": "Семёнович",
+   "years": "1905–1970",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "러시아 제국 → 소련",
+     "en": "Russian Empire → Soviet Union"
+    }
+   },
+   "nationalOrigin": {
+    "code": "russia",
+    "label": {
+     "ko": "러시아",
+     "en": "Russia"
+    }
+   },
+   "epithet": {
+    "ko": "군수공장 감독관에서 출발해 1953년 국가통제장관 직무를 대행한 화학 기사",
+    "en": "Chemical engineer who rose from controller at an arms plant to acting Minister of State Control in 1953"
+   },
+   "bio": {
+    "ko": "니즈니노브고로드의 하급 사무원 가정에서 태어나 1930년 니즈니노브고로드 화학공학대학을 마쳤다. 1930년대 이젭스크 제180호 공장 중앙화학실험실장, 제71호 무기공장 중앙검사실험실장을 지냈고, 1941년 5월 국가통제인민위원부 선임 감독관으로 옮겨 무기인민위원부·철강인민위원부 담당 수석 감독관을 거쳐 1946년 국가통제 차관이 되었다. 1953~1955년 제1차관이었고, 메르쿨로프가 물러난 1953년 5~12월 장관 직무를 대행했다. 이후 계기제작 차관, 국가계획위원회·최고국민경제회의·국가물자공급위원회 간부로 일했다.",
+    "en": "Born into a minor clerk's family in Nizhny Novgorod, he graduated from the Nizhny Novgorod Chemical Technology Institute in 1930. In the 1930s he ran the central chemical laboratory of Plant No. 180 in Izhevsk and the central inspection laboratory of armaments Plant No. 71. In May 1941 he became a senior controller of the People's Commissariat of State Control, rising to chief controller for the armaments and ferrous metallurgy commissariats and in 1946 to Deputy Minister of State Control. He was first deputy minister in 1953–1955 and acting minister from May to December 1953, after Merkulov's removal. He later served as Deputy Minister of Instrument Making and in the apparatus of Gosplan, the Supreme Council of the National Economy and Gossnab."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "en": [
+     "A. S. Pavelyev",
+     "Alexander Paveliev"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1905–1970",
+     "excerpt": "Алекса́ндр Семёнович Паве́льев (18 мая (1 июня) 1905, Нижний Новгород, Российская империя — 1 марта 1970, Москва, СССР)"
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련 국가 활동가",
+     "excerpt": "советский государственный деятель. Исполняющий обязанности министра государственного контроля СССР в 1953 году."
+    },
+    {
+     "field": "nationalOrigin",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "니즈니노브고로드 출생",
+     "excerpt": "Нижний Новгород, Российская империя"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "국가통제 제1차관·장관 대행",
+     "excerpt": "В марте 1953 — декабре 1955 гг. — 1-й заместитель министра госконтроля СССР, при этом в мае — декабре 1953 года исполняющий обязанности министра."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1941,
+     "endYear": 1955,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "국가통제 감독관·차관·장관 대행",
+       "excerpt": "С мая 1941 г. — старший контролер Наркомата государственного контроля СССР ... В марте 1953 — декабре 1955 гг. — 1-й заместитель министра госконтроля СССР, при этом в мае — декабре 1953 года исполняющий обязанности министра."
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1930,
+     "endYear": 1941,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "이젭스크 군수공장 실험실장",
+       "excerpt": "В 1930—1940 гг. — инженер-исследователь, начальник центральной химической лаборатории завода № 180 в Ижевске."
+      }
+     ]
+    },
+    {
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": null,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%D1%8C%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "infobox",
+       "claim": "당원",
+       "excerpt": "партия = ВКП(б)"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1930
+      ],
+      "end": [
+       1940
+      ]
+     },
+     "r": {
+      "ko": "이젭스크 제180호 공장 중앙화학실험실장",
+      "en": "Head of the central chemical laboratory, Plant No. 180, Izhevsk"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1941,
+       5
+      ],
+      "end": [
+       1946,
+       11
+      ]
+     },
+     "r": {
+      "ko": "국가통제인민위원부 감독관·수석 감독관",
+      "en": "Controller and chief controller, People's Commissariat of State Control"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1946,
+       11
+      ],
+      "end": [
+       1953,
+       3
+      ]
+     },
+     "r": {
+      "ko": "소련 국가통제 차관",
+      "en": "USSR Deputy Minister of State Control"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1953,
+       3
+      ],
+      "end": [
+       1955,
+       12
+      ]
+     },
+     "r": {
+      "ko": "소련 국가통제 제1차관",
+      "en": "USSR First Deputy Minister of State Control"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1953,
+       5,
+       23
+      ],
+      "end": [
+       1953,
+       12,
+       16
+      ]
+     },
+     "r": {
+      "ko": "소련 국가통제장관 직무대행",
+      "en": "Acting USSR Minister of State Control"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1955,
+       12
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "소련 계기제작·자동화장비 차관",
+      "en": "USSR Deputy Minister of Instrument Making and Automation"
+     }
+    }
+   ]
+  },
+  {
+   "id": "vasily-zhavoronkov",
+   "groupId": "stalin-era",
+   "givenName": {
+    "ko": "바실리",
+    "en": "Vasily"
+   },
+   "familyName": {
+    "ko": "자보론코프",
+    "en": "Zhavoronkov"
+   },
+   "cyrillic": "Василий Жаворонков",
+   "patronymic": {
+    "ko": "가브릴로비치",
+    "en": "Gavrilovich"
+   },
+   "cyrillicPatronymic": "Гаврилович",
+   "years": "1906–1987",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "러시아 제국 → 소련",
+     "en": "Russian Empire → Soviet Union"
+    }
+   },
+   "nationalOrigin": {
+    "code": "russia",
+    "label": {
+     "ko": "러시아",
+     "en": "Russia"
+    }
+   },
+   "epithet": {
+    "ko": "툴라 방어를 지휘한 주당 제1서기, 무역장관을 거쳐 국가통제장관",
+    "en": "Tula regional party chief who led the city's defence in 1941, later Minister of Trade and Minister of State Control"
+   },
+   "bio": {
+    "ko": "볼로그다현 농가에서 태어나 문맹 퇴치 교사로 일했고 1929년 공산당에 입당했다. 1936년 모스크바 광산대학을 마친 뒤 당 사업으로 옮겨 1938년 툴라 주당위원회 제1서기가 되었고, 1941년 10월부터 툴라 시 방위위원회 의장으로 독일군에 포위된 툴라의 방어를 지휘했다. 1943~1946년 쿠이비셰프 주당위원회 제1서기, 1948~1953년 소련 무역장관을 지냈고, 1953년 12월 국가통제장관이 되어 1956년 11월 몰로토프에게 자리를 넘겼다. 이후 국가통제부·소비에트통제위원회 차관과 부의장, 당·국가통제위원회 인민 고충·제안 중앙국장을 지내다 1973년 은퇴했다. 1977년 툴라 방어 공로로 소련 영웅이 되었다.",
+    "en": "Born into a peasant family in Vologda Governorate, he taught literacy classes and joined the Communist Party in 1929. After graduating from the Moscow Mining Institute in 1936 he moved into party work, became first secretary of the Tula regional committee in 1938, and from October 1941, as chairman of the Tula City Defence Committee, led the defence of the encircled city. He was first secretary of the Kuibyshev regional committee in 1943–1946 and USSR Minister of Trade in 1948–1953, then Minister of State Control from December 1953 until he gave way to Molotov in November 1956. He went on as deputy minister of State Control, deputy chairman of the Commission of Soviet Control and head of the Central Bureau of Complaints of the Party-State Control Committee, retiring in 1973. He was made a Hero of the Soviet Union in 1977 for the defence of Tula."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "en": [
+     "V. G. Zhavoronkov"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1906–1987",
+     "excerpt": "Васи́лий Гаври́лович Жа́воронков (10 февраля 1906, Вологодская губерния — 9 июня 1987, Москва)"
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련 당·국가 활동가",
+     "excerpt": "советский партийный и государственный деятель"
+    },
+    {
+     "field": "nationalOrigin",
+     "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "볼로그다현 농가 출생",
+     "excerpt": "Родился ... в деревне Кустовская Вельского уезда Вологодской губернии ... в крестьянской семье."
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "1953년 12월 국가통제장관",
+     "excerpt": "В декабре 1953 года указом Президиума Верховного Совета СССР назначен министром государственного контроля СССР."
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+     "locator": "Звание и награды",
+     "claim": "1977년 소련 영웅",
+     "excerpt": "Герой Советского Союза (18 января 1977)"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1953,
+     "endYear": 1973,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "국가통제장관, 이후 통제 기구 간부",
+       "excerpt": "В декабре 1953 года ... назначен министром государственного контроля СССР. В 1956—1957 годах — заместитель министра, в 1957—1958 годах — первый заместитель министра государственного контроля СССР."
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1938,
+     "endYear": 1946,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "툴라·쿠이비셰프 주당 제1서기",
+       "excerpt": "На пленуме Областного комитета ВКП(б) был избран первым секретарём обкома партии. ... первого секретаря Куйбышевского обкома и горкома ВКП(б)"
+      }
+     ],
+     "officeId": "party-secretariat-cadres"
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1941,
+     "endYear": 1943,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "툴라 시 방위위원회 의장",
+       "excerpt": "Во время Великой Отечественной войны (1941—1945 гг.) с октября 1941 являлся председателем Тульского городского комитета обороны."
+      }
+     ]
+    },
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1946,
+     "endYear": 1953,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "소련 무역장관",
+       "excerpt": "1 марта 1948 года указом Президиума Верховного Совета СССР назначен министром торговли СССР."
+      }
+     ],
+     "officeId": "economic-management"
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1929,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%96%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B0%D0%B2%D1%80%D0%B8%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "Политическая деятельность",
+       "claim": "1929년 입당",
+       "excerpt": "Член ВКП(б) с 1929 года."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1938,
+       7
+      ],
+      "end": [
+       1943,
+       3
+      ]
+     },
+     "r": {
+      "ko": "툴라 주당위원회 제1서기",
+      "en": "First secretary of the Tula regional party committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1941,
+       10
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "툴라 시 방위위원회 의장",
+      "en": "Chairman of the Tula City Defence Committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1943,
+       3
+      ],
+      "end": [
+       1946,
+       4
+      ]
+     },
+     "r": {
+      "ko": "쿠이비셰프 주당·시당위원회 제1서기",
+      "en": "First secretary of the Kuibyshev regional and city party committees"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1948,
+       3,
+       1
+      ],
+      "end": [
+       1953
+      ]
+     },
+     "r": {
+      "ko": "소련 무역장관",
+      "en": "USSR Minister of Trade"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1953,
+       12,
+       16
+      ],
+      "end": [
+       1956,
+       11,
+       21
+      ]
+     },
+     "r": {
+      "ko": "소련 국가통제장관",
+      "en": "USSR Minister of State Control"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1958
+      ],
+      "end": [
+       1962
+      ]
+     },
+     "r": {
+      "ko": "각료회의 소비에트통제위원회 부의장",
+      "en": "Deputy chairman of the Commission of Soviet Control of the Council of Ministers"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1962
+      ],
+      "end": [
+       1973,
+       6
+      ]
+     },
+     "r": {
+      "ko": "당·국가통제위원회 인민 고충·제안 중앙국장",
+      "en": "Head of the Central Bureau of Complaints and Proposals, Party-State Control Committee"
+     }
+    }
+   ]
+  },
+  {
+   "id": "georgy-yenyutin",
+   "groupId": "thaw",
+   "givenName": {
+    "ko": "게오르기",
+    "en": "Georgy"
+   },
+   "familyName": {
+    "ko": "예뉴틴",
+    "en": "Yenyutin"
+   },
+   "cyrillic": "Георгий Енютин",
+   "patronymic": {
+    "ko": "바실리예비치",
+    "en": "Vasilyevich"
+   },
+   "cyrillicPatronymic": "Васильевич",
+   "years": "1903–1969",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "러시아 제국 → 소련",
+     "en": "Russian Empire → Soviet Union"
+    }
+   },
+   "nationalOrigin": {
+    "code": "ukraine",
+    "label": {
+     "ko": "우크라이나",
+     "en": "Ukraine"
+    }
+   },
+   "epithet": {
+    "ko": "아조프스탈 제강 기사 출신으로 흐루쇼프 시대 국가통제를 맡은 당 간부",
+    "en": "Azovstal steelmaker turned party official who ran state control under Khrushchev"
+   },
+   "bio": {
+    "ko": "마리우폴의 노동자 가정에서 태어나 콤소몰 구 서기를 거쳐 드네프로페트롭스크 야금대학을 마치고, 1932~1941년 아조프스탈 공장에서 평로 제강 직장장과 부기사장을 지냈다. 전쟁 중 스탈리노·노보시비르스크·케메로보 주당위원회의 야금공업 담당 서기를 맡았고, 1947~1951년 자포로지예 주당위원회 제1서기, 1954~1957년 카멘스크 주당위원회 제1서기였다. 1957년 12월 국가통제부가 폐지된 자리에 선 각료회의 소비에트통제위원회 의장이 되었고, 1961년 국가통제위원회로 바뀐 뒤에도 1962년 셸레핀의 당·국가통제위원회에 흡수될 때까지 이끌었다. 이후 러시아 공화국 각료회의 부의장 겸 러시아 공화국 당·국가통제위원장을 지냈다. 1956~1966년 중앙위원회 위원.",
+    "en": "Born into a worker's family in Mariupol, he was a district Komsomol secretary, graduated from the Dnipropetrovsk Metallurgical Institute and in 1932–1941 worked at the Azovstal plant, rising to head of the open-hearth shop and deputy chief engineer. During the war he was secretary for metallurgy of the Stalino, Novosibirsk and Kemerovo regional committees, then first secretary of the Zaporizhzhia regional committee (1947–1951) and the Kamensk regional committee (1954–1957). In December 1957 he became chairman of the Commission of Soviet Control set up in place of the abolished Ministry of State Control, and led it, renamed the State Control Commission in 1961, until it was absorbed into Shelepin's Party-State Control Committee in 1962. He then served as deputy premier of the RSFSR and chairman of its Party-State Control Committee. He was a member of the Central Committee in 1956–1966."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "en": [
+     "G. V. Yenyutin",
+     "Georgy Enyutin"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D1%8F_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8F"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1903–1969",
+     "excerpt": "Георгий Васильевич Енютин (21 марта (4 апреля) 1903, Мариуполь, Мариупольский уезд, Екатеринославская губерния, Российская империя — 2 марта 1969, Москва, СССР)"
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련 국가·당 활동가",
+     "excerpt": "советский государственный и партийный деятель. Член ЦК КПСС (1956—1966)"
+    },
+    {
+     "field": "nationalOrigin",
+     "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "마리우폴 출생",
+     "excerpt": "Мариуполь, Мариупольский уезд, Екатеринославская губерния"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Партийная карьера",
+     "claim": "소비에트통제위원회 의장",
+     "excerpt": "1957—1962 гг. — Председатель КСК Совета Министров СССР."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1957,
+     "endYear": 1966,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Партийная карьера",
+       "claim": "소비에트통제위원회 의장, 러시아 공화국 당·국가통제위원장",
+       "excerpt": "1957—1962 гг. — Председатель КСК Совета Министров СССР. 1962—1966 гг. — Заместитель Председателя Совета Министров РСФСР и председатель Комитета партийно-государственного контроля Совета Министров РСФСР"
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1941,
+     "endYear": 1957,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Партийная карьера",
+       "claim": "주당위원회 서기·제1서기",
+       "excerpt": "1947—1951 гг. — второй, с ноября 1947 года первый секретарь Запорожского обкома ВКП(б). ... 1954—1957 гг. — первый секретарь Каменского обкома КПСС."
+      }
+     ],
+     "officeId": "party-secretariat-cadres"
+    },
+    {
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1932,
+     "endYear": 1941,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D0%BD%D1%8E%D1%82%D0%B8%D0%BD%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Ранние годы",
+       "claim": "아조프스탈 제강 기사",
+       "excerpt": "1932—1941 гг. — на заводе «Азовсталь»: инженер-металлург, ... начальник мартеновского цеха"
+      }
+     ],
+     "officeId": "heavy-military-industry"
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1932
+      ],
+      "end": [
+       1941
+      ]
+     },
+     "r": {
+      "ko": "아조프스탈 공장 평로 제강 직장장·부기사장",
+      "en": "Head of the open-hearth shop and deputy chief engineer, Azovstal"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1947,
+       11
+      ],
+      "end": [
+       1951
+      ]
+     },
+     "r": {
+      "ko": "자포로지예 주당위원회 제1서기",
+      "en": "First secretary of the Zaporizhzhia regional party committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1954
+      ],
+      "end": [
+       1957
+      ]
+     },
+     "r": {
+      "ko": "카멘스크 주당위원회 제1서기",
+      "en": "First secretary of the Kamensk regional party committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1957,
+       12,
+       18
+      ],
+      "end": [
+       1961,
+       7,
+       22
+      ]
+     },
+     "r": {
+      "ko": "각료회의 소비에트통제위원회 의장",
+      "en": "Chairman of the Commission of Soviet Control of the Council of Ministers"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1961,
+       8,
+       15
+      ],
+      "end": [
+       1962,
+       11,
+       24
+      ]
+     },
+     "r": {
+      "ko": "각료회의 국가통제위원회 의장",
+      "en": "Chairman of the State Control Commission of the Council of Ministers"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1962
+      ],
+      "end": [
+       1966
+      ]
+     },
+     "r": {
+      "ko": "러시아 공화국 각료회의 부의장 겸 러시아 공화국 당·국가통제위원장",
+      "en": "Deputy chairman of the RSFSR Council of Ministers and chairman of the RSFSR Party-State Control Committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1956
+      ],
+      "end": [
+       1966
+      ]
+     },
+     "r": {
+      "ko": "소련공산당 중앙위원회 위원",
+      "en": "Member of the Central Committee of the CPSU"
+     }
+    }
+   ]
+  },
+  {
+   "id": "alexander-kondratyevich-orlov",
+   "groupId": "perestroika",
+   "reviewFlags": [
+    "identity_uncertain"
+   ],
+   "givenName": {
+    "ko": "알렉산드르",
+    "en": "Alexander"
+   },
+   "familyName": {
+    "ko": "오를로프",
+    "en": "Orlov"
+   },
+   "cyrillic": "Александр Орлов",
+   "patronymic": {
+    "ko": "콘드라티예비치",
+    "en": "Kondratyevich"
+   },
+   "cyrillicPatronymic": "Кондратьевич",
+   "years": "1930–2011",
+   "citizenship": {
+    "code": "soviet",
+    "label": {
+     "ko": "소련 → 러시아",
+     "en": "Soviet Union → Russia"
+    }
+   },
+   "epithet": {
+    "ko": "소련 감사원의 처음이자 마지막 의장을 지낸 첼랴빈스크의 정치경제학자",
+    "en": "Chelyabinsk political economist who was the first and only chairman of the USSR Control Chamber"
+   },
+   "bio": {
+    "ko": "열세 살부터 민야르 금속공장 노동자로 일하다 1954년 우랄 국립대학을 마쳤고, 첼랴빈스크 공과대학에서 정치경제학을 가르쳤다. 1960~1965년 첼랴빈스크 주당위원회 강연단장, 1965~1985년 공과대학 정치경제학 학과장, 1985~1991년 고등노동조합학교 첼랴빈스크 분교장을 지냈다. 경제학 박사. 1989년 소련 인민대의원이 되어 최고소비에트 계획·예산위원회 부위원장을 맡았고, 1991년 5월 인민통제위원회를 대신해 선 소련 감사원의 의장이 되어 1992년 2월 기관이 폐지될 때까지 있었다.",
+    "en": "Working at the Minyar metalware plant from the age of thirteen, he graduated from the Ural State University in 1954, taught political economy at the Chelyabinsk Polytechnic Institute, headed the lecturers' group of the Chelyabinsk regional party committee (1960–1965) and the Polytechnic's political economy department (1965–1985), and ran the Chelyabinsk branch of the Higher School of the Trade Union Movement (1985–1991). A doctor of economics, he was elected a People's Deputy of the USSR in 1989 and deputy chairman of the Supreme Soviet's planning and budget commission. From May 1991 he chaired the USSR Control Chamber, which replaced People's Control, until it was abolished in February 1992."
+   },
+   "aliases": {
+    "en": [
+     "A. K. Orlov"
+    ]
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D1%8F_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8F"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "1930–2011",
+     "excerpt": "Алекса́ндр Кондра́тьевич Орло́в (20 июня 1930 — 23 декабря 2011) — советский и российский учёный-экономист. Народный депутат СССР."
+    },
+    {
+     "field": "citizenship",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "lead",
+     "claim": "소련·러시아 경제학자",
+     "excerpt": "советский и российский учёный-экономист"
+    },
+    {
+     "field": "bio",
+     "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+     "locator": "Биография",
+     "claim": "소련 감사원 의장",
+     "excerpt": "1991—1992 гг. — председатель Контрольной палаты СССР."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1991,
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "소련 감사원 의장",
+       "excerpt": "1991—1992 гг. — председатель Контрольной палаты СССР."
+      }
+     ],
+     "officeId": "control-commissions"
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1989,
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "Биография",
+       "claim": "소련 인민대의원, 계획·예산위원회 부위원장",
+       "excerpt": "1989—1992 гг. — народный депутат СССР, заместитель председателя плановой и бюджетной комиссии Верховного Совета СССР."
+      }
+     ]
+    },
+    {
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1957,
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D0%BB%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9A%D0%BE%D0%BD%D0%B4%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "infobox",
+       "claim": "1957~1991 당원",
+       "excerpt": "партия = КПСС (1957—1991)"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1960
+      ],
+      "end": [
+       1965
+      ]
+     },
+     "r": {
+      "ko": "첼랴빈스크 주당위원회 강연단장",
+      "en": "Head of the lecturers' group, Chelyabinsk regional party committee"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1965
+      ],
+      "end": [
+       1985
+      ]
+     },
+     "r": {
+      "ko": "첼랴빈스크 공과대학 정치경제학 학과장",
+      "en": "Head of the political economy department, Chelyabinsk Polytechnic Institute"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1985
+      ],
+      "end": [
+       1991
+      ]
+     },
+     "r": {
+      "ko": "고등노동조합학교 첼랴빈스크 분교장",
+      "en": "Rector of the Chelyabinsk branch of the Higher School of the Trade Union Movement"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1989
+      ],
+      "end": [
+       1992
+      ]
+     },
+     "r": {
+      "ko": "소련 인민대의원, 최고소비에트 계획·예산위원회 부위원장",
+      "en": "People's Deputy of the USSR; deputy chairman of the Supreme Soviet planning and budget commission"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1991,
+       5,
+       16
+      ],
+      "end": [
+       1992,
+       2,
+       3
+      ]
+     },
+     "r": {
+      "ko": "소련 감사원 의장",
+      "en": "Chairman of the USSR Control Chamber"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1992
+      ],
+      "end": [
+       1996
+      ]
+     },
+     "r": {
+      "ko": "첼랴빈스크주 러시아 정부 상주대표부 책임자",
+      "en": "Head of the Chelyabinsk Oblast representation to the Russian government"
+     }
+    }
+   ]
+  }
+ ]
+}

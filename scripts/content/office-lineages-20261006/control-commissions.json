@@ -309,10 +309,7 @@
   },
   {
    "track": "party",
-   "name": {
-    "ko": "파벨 코마로프",
-    "en": "Pavel Komarov"
-   },
+   "personId": "pavel-komarov",
    "post": {
     "ko": "중앙위원회 당통제위원회 위원장",
     "en": "Chairman of the Party Control Committee of the Central Committee"
@@ -465,10 +462,7 @@
   },
   {
    "track": "party",
-   "name": {
-    "ko": "예브게니 마호프",
-    "en": "Yevgeny Makhov"
-   },
+   "personId": "yevgeny-makhov",
    "post": {
     "ko": "소련공산당 중앙통제위원회 위원장",
     "en": "Chairman of the Central Control Commission of the CPSU"
@@ -493,10 +487,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "카를 란데르",
-    "en": "Karl Lander"
-   },
+   "personId": "karl-lander",
    "post": {
     "ko": "러시아 공화국 국가통제인민위원",
     "en": "People's Commissar of State Control of the RSFSR"
@@ -752,10 +743,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "자하르 벨렌키",
-    "en": "Zakhar Belenky"
-   },
+   "personId": "zakhar-belenky",
    "post": {
     "ko": "인민위원회의 소비에트통제위원회 의장",
     "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
@@ -889,10 +877,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "알렉산드르 파벨리예프",
-    "en": "Alexander Pavelyev"
-   },
+   "personId": "alexander-pavelyev",
    "post": {
     "ko": "소련 국가통제장관",
     "en": "Minister of State Control of the USSR"
@@ -917,10 +902,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "바실리 자보론코프",
-    "en": "Vasily Zhavoronkov"
-   },
+   "personId": "vasily-zhavoronkov",
    "post": {
     "ko": "소련 국가통제장관",
     "en": "Minister of State Control of the USSR"
@@ -962,10 +944,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "게오르기 예뉴틴",
-    "en": "Georgy Yenyutin"
-   },
+   "personId": "georgy-yenyutin",
    "post": {
     "ko": "각료회의 소비에트통제위원회 의장",
     "en": "Chairman of the Commission of Soviet Control of the Council of Ministers"
@@ -986,10 +965,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "게오르기 예뉴틴",
-    "en": "Georgy Yenyutin"
-   },
+   "personId": "georgy-yenyutin",
    "post": {
     "ko": "각료회의 국가통제위원회 의장",
     "en": "Chairman of the State Control Commission of the Council of Ministers"
@@ -1136,10 +1112,7 @@
   },
   {
    "track": "state",
-   "name": {
-    "ko": "알렉산드르 오를로프",
-    "en": "Alexander Orlov"
-   },
+   "personId": "alexander-kondratyevich-orlov",
    "post": {
     "ko": "소련 감사원 의장",
     "en": "Chairman of the Control Chamber of the USSR"
