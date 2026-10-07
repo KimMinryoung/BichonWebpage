@@ -7470,6 +7470,50 @@
         ]
       },
       "noAutoLink": []
+    },
+    {
+      "id": "stolice-conference-bulletin-1941",
+      "file": "stolice-conference-bulletin-1941.html",
+      "docLang": "ko",
+      "date": "1941-10-01",
+      "title": {
+        "ko": "스톨리체 회의 보고와 최고사령부 명령 — 『최고사령부 회보』 제7·8호 (1941년 10월 1일)",
+        "en": "Report on the Stolice Conference and Orders of the Supreme Staff — Bulletin of the Supreme Staff Nos. 7–8 (1 October 1941)"
+      },
+      "description": {
+        "ko": "1941년 9월 26일 스톨리체 회의 직후 파르티잔 최고사령부가 우지체에서 낸 회보의 회의 보고 기사와 티토 서명 명령 전문. 지역별 봉기 상황, 중립 체트니크와의 충돌 회피, 분견대 연결과 규율 문제를 짚고, 붉은 오각별과 지역별 삼색 표지·깃발·경례를 통일했다.",
+        "en": "Full text of the conference report and the Tito-signed orders in the bulletin the Partisan Supreme Staff issued at Užice just after the Stolice conference of 26 September 1941. It reviews the rising region by region, calls for avoiding conflict with neutral Chetnik groups, faults the detachments' poor liaison and discipline, and standardises the red five-pointed star, regional tricolour badges, flags and salute."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Билтен Врховног штаба народноослободилачких партизанских одреда Југославије, бр. 7 и 8, Ужице, 1 октобар 1941: «Савјетовање претставника штабова и команданата НОП одреда Југославије» и «Наредбе» (за Врховни штаб: Тито). 저본: Зборник докумената и података о НОР-у, том II, књ. 1, Београд 1949, 71–74, 80–81, https://www.znaci.org/00001/4_2_1.pdf (2026-10-07 접근). 파르티잔 최고사령부의 공식 간행물로 저작권 보호 대상 아님.",
+      "people": [
+        "josip-broz-tito"
+      ],
+      "terms": [
+        "ustase"
+      ],
+      "events": [
+        "yugoslav-partisans"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『최고사령부 회보』 제7·8호",
+          "스톨리체 회의 보고",
+          "스톨리체 회의의 결정",
+          "스톨리체 결의"
+        ],
+        "en": [
+          "Stolice conference report",
+          "Stolice Resolution",
+          "decisions of the Stolice conference",
+          "Bulletin of the Supreme Staff Nos. 7–8"
+        ]
+      },
+      "noAutoLink": []
     }
   ],
   "redirects": {

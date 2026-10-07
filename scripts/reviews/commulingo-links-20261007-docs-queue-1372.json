@@ -1,0 +1,96 @@
+{
+ "scope": "2026-10-07 docs queue 1372 Stolice bulletin — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "ko",
+   "text": "『최고사령부 회보』 제7·8호",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 회의·간행물 이름을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "ko",
+   "text": "스톨리체 회의 보고",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 회의·간행물 이름을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "ko",
+   "text": "스톨리체 회의의 결정",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 회의·간행물 이름을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "ko",
+   "text": "스톨리체 결의",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 결의문은 따로 없어 실제 제목과 맞지 않으므로 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "en",
+   "text": "Stolice conference report",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 회의·간행물 이름을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "en",
+   "text": "Stolice Resolution",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: no separate resolution exists; 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "en",
+   "text": "decisions of the Stolice conference",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 회의·간행물 이름을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "stolice-conference-bulletin-1941",
+   "lang": "en",
+   "text": "Bulletin of the Supreme Staff Nos. 7–8",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue CE1 1372 링크 검토: 회의·간행물 이름을 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}
