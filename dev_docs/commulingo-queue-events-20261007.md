@@ -36,3 +36,4 @@
 
 카드가 없던 주요 인물을 `people-extra-20261007-{a,b,c}.js`로 만들어 Admin upsert로 넣고, 사건 관계는 `scripts/apply-event-person-links.js`(콘텐츠 편집 서비스 history_event_person)로, 입장 모음은 마이그레이션으로 넣는다.
 - b(발칸): 투초비치(communist), 탈라트 파샤(nationalist; 링크 표현 「탈라트」 auto, Talat/Talaat 검색 전용), 콘스탄티노스 1세(monarchist). 관계 6행: 발칸 3, 1차 세계대전(탈라트 central-powers·투초비치 antiwar-socialists), 브레스트-리토프스크(탈라트). 마이그레이션 324.
+- a(아이티·보불): 폴브렐(jacobin), 장바티스트 벨레(사건 본문의 Belley; jacobin), 도나시앵 드 로샹보, 토머스 메이틀랜드, 아실 바젠(monarchist), 빌헬름 브라케(non-bolshevik-socialist), 샤를 드 프레시네(liberal-republican), 뒤크로. 맨 성 「로샹보/Rochambeau」「프레시네/Freycinet」는 아버지·삼촌과 겹쳐 검색 전용. 관계 8행, 마이그레이션 325. 메스 항복일은 사건 본문 10월 27일, 바젠 카드 10월 28일(출처 차이).

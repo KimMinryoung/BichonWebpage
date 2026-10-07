@@ -1,0 +1,2122 @@
+{
+ "changedBy": "queue-events-20261007-extra",
+ "people": [
+  {
+   "id": "etienne-polverel",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "에티엔",
+    "en": "Étienne"
+   },
+   "familyName": {
+    "ko": "폴브렐",
+    "en": "Polverel"
+   },
+   "nativeName": "Étienne Polverel",
+   "years": "1740–1795",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "송토나와 함께 생도맹그에 파견되어 1793년 서부·남부 관구의 노예를 해방한 자코뱅 민사위원",
+    "en": "Jacobin civil commissioner sent to Saint-Domingue with Sonthonax who freed the slaves of the western and southern provinces in 1793"
+   },
+   "bio": {
+    "ko": "베아른 출신의 부유한 귀족 법률가로 자코뱅 클럽 회원이었고, 혁명 뒤 급진 신문에 노예제 반대 글을 썼다. 1792년 4월 4일 법령을 집행할 민사위원으로 송토나, 아이요와 함께 약 1만 명의 병력을 이끌고 9월 17일 카프프랑세에 닿아 노예제를 폐지하러 온 것이 아니라고 선언했다. 서부와, 아이요가 떠난 뒤 남부를 맡았다. 1793년 6월 갈보가 카프프랑세를 공격하자 자신들 편에서 싸우는 흑인에게 시민권을 약속해 도시를 되찾았고, 8월부터 10월 31일까지 단계적으로 모든 노예를 해방하면서 해방된 이들에게 1년간 농장 노동을 의무로 지웠다. 브리소파로 몰려 소환되어 1794년 귀국했고, 식민자들의 고발로 재판을 받던 중 병으로 죽었다.",
+    "en": "A wealthy aristocratic lawyer from Béarn and a member of the Jacobin Club, he wrote against slavery in radical newspapers after 1789. Sent with Sonthonax and Ailhaud as civil commissioner to enforce the decree of 4 April 1792, with about 10,000 troops, he reached Cap-Français on 17 September and proclaimed that they had not come to abolish slavery. He took charge of the West, and of the South when Ailhaud left. When Galbaud attacked Cap-Français in June 1793 he and Sonthonax promised citizenship to Blacks who fought for them and retook the city. Between August and 31 October 1793 they freed all the slaves step by step, Polverel requiring the freed to keep working on their plantations for a year. Recalled as men of Brissot's circle, he returned to France in 1794, was tried on the colonists' charges and died of illness before the verdict."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "재판 중 병사",
+     "en": "Died during his trial"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "Étienne Polvérel",
+     "Etienne Polverel"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1740–1795",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "lead",
+     "excerpt": "Étienne Polverel (1740–1795) was a French lawyer, aristocrat, and revolutionary."
+    },
+    {
+     "field": "citizenship",
+     "claim": "French lawyer and revolutionary",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "lead",
+     "excerpt": "Étienne Polverel (1740–1795) was a French lawyer, aristocrat, and revolutionary."
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Béarn",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Life and background",
+     "excerpt": "Born in Bearn, Polverel served as syndic for the region, and he was hired as a jurist by the Estates of Navarre to represent and defend the independence of the kingdom before the Parlement of Paris."
+    },
+    {
+     "field": "bio",
+     "claim": "wealthy aristocratic lawyer, Jacobin",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Life and background",
+     "excerpt": "Étienne Polverel came from a wealthy, aristocratic background. By profession he was a lawyer. Polverel was also a Freemason and a member of the Jacobin Club."
+    },
+    {
+     "field": "bio",
+     "claim": "anti-slavery articles in radical newspapers",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Views on slavery and the revolution in France",
+     "excerpt": "Following the French Revolution in 1789, Polverel began contributing to radical newspapers where he published articles against slavery."
+    },
+    {
+     "field": "bio",
+     "claim": "about 10,000 troops went with the commissioners",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Life and background",
+     "excerpt": "About 10,000 French troops went with Polverel and Sonthonax to help enforce the April 4th decree."
+    },
+    {
+     "field": "bio",
+     "claim": "arrived 17 September 1792; charge of Ouest and Sud",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Involvement in the abolition of slavery in Saint-Domingue",
+     "excerpt": "He was given charge of Ouest, and when Ailhaud abandoned his post, Polverel took responsibility for Sud province as well."
+    },
+    {
+     "field": "bio",
+     "claim": "proclaimed they came to save slavery",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Views on slavery and the revolution in France",
+     "excerpt": "When he and Sonthonax arrived in Saint-Domingue, one of their first acts was to issue a proclamation declaring that they had arrived to save slavery, not abolish it."
+    },
+    {
+     "field": "bio",
+     "claim": "proclamation of 5 May 1793 read in Creole",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Involvement in the abolition of slavery in Saint-Domingue",
+     "excerpt": "To ensure enforcement, the proclamation was translated to Creole and read aloud on all slave plantations."
+    },
+    {
+     "field": "bio",
+     "claim": "citizenship to Blacks who fought Galbaud",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Involvement in the abolition of slavery in Saint-Domingue",
+     "excerpt": "To recapture the city, Polverel and Sonthonax issued a statement saying that all blacks who would join them and fight against Galbaud would be granted French citizenship."
+    },
+    {
+     "field": "bio",
+     "claim": "freed all slaves between 27 August and 31 October 1793",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "lead",
+     "excerpt": "Under pressure, between 27 August and 31 October 1793, they progressively gave freedom to all the slaves of Saint-Domingue."
+    },
+    {
+     "field": "bio",
+     "claim": "one year of plantation labour required of the freed",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "Involvement in the abolition of slavery in Saint-Domingue",
+     "excerpt": "including a requirement that freed slaves continue to work on their plantations for one year following the decree"
+    },
+    {
+     "field": "bio",
+     "claim": "recalled as Brissot's men, tried, died before the ruling",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "lead",
+     "excerpt": "Being from Brissot's orbit, on 16 July 1793, they were recalled by an upheld recall order by the Committee of Public Safety."
+    },
+    {
+     "field": "bio",
+     "claim": "died during the trial",
+     "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+     "locator": "lead",
+     "excerpt": "Polverel did not survive to see the ruling, dying during the trial."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1792,
+     "endYear": 1794,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+       "locator": "Involvement in the abolition of slavery in Saint-Domingue",
+       "claim": "Civil commissioner in Saint-Domingue for the West and South",
+       "excerpt": "Polverel arrived in Le Cap aboard the America as a Civil Commissioner to Saint-Domingue on 17 September 1792, along with Sonthonax and Jean-Antoine Ailhaud."
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "jacobin-club",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": null,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+       "locator": "lead",
+       "claim": "Member of the Jacobin Club",
+       "excerpt": "He was a member of the Jacobin club."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1792
+      ],
+      "end": [
+       1794
+      ]
+     },
+     "r": {
+      "ko": "생도맹그 민사위원 (서부·남부 관구)",
+      "en": "Civil commissioner in Saint-Domingue (West and South)"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "서부·남부 관구 노예 해방",
+      "en": "Freed the slaves of the West and South"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": [
+       1795
+      ]
+     },
+     "r": {
+      "ko": "프랑스로 소환되어 재판을 받던 중 사망",
+      "en": "Recalled to France; died during his trial"
+     }
+    }
+   ],
+   "cyrillic": "Étienne Polverel"
+  },
+  {
+   "id": "donatien-de-rochambeau",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "도나시앵",
+    "en": "Donatien"
+   },
+   "familyName": {
+    "ko": "드 로샹보",
+    "en": "de Rochambeau"
+   },
+   "nativeName": "Donatien de Rochambeau",
+   "years": "1755–1813",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "르클레르의 뒤를 이어 생도맹그 원정군을 지휘하며 절멸전을 벌이다 1803년 데살린에게 항복한 프랑스 장군",
+    "en": "French general who succeeded Leclerc at the head of the Saint-Domingue expedition and surrendered to Dessalines in 1803"
+   },
+   "bio": {
+    "ko": "로샹보 백작의 아들로 미국 독립전쟁에서 아버지의 부관으로 싸웠다. 1790년대 마르티니크와 생도맹그에서 프랑스의 권위를 되찾으려는 원정에 참가했으나 실패했고, 뒤에 이탈리아의 혁명군에 배속되어 리구리아 공화국의 군사 지휘를 맡았다. 1802년 르클레르가 죽자 생도맹그 원정군을 이어받아 어떤 수단으로든 식민지를 되찾으라는 임무 아래 흑인 수천 명을 학살하는 절멸전을 벌였고, 그 잔혹함은 흑인과 자유 유색인 병사들을 프랑스에 맞서 하나로 묶었다. 1803년 11월 데살린에게 항복한 뒤 영국 해군에 붙잡혀 거의 9년간 영국에 억류되었다. 1811년 포로 교환으로 풀려났고 1813년 라이프치히 전투에서 치명상을 입고 죽었다.",
+    "en": "Son of the comte de Rochambeau, he served as his father's aide-de-camp in the American Revolutionary War. In the 1790s he took part in an unsuccessful campaign to re-establish French authority in Martinique and Saint-Domingue, and later held the military command of the Ligurian Republic. Appointed in 1802 after Leclerc's death to lead the Saint-Domingue expedition and restore French control by any means, he waged a war of extermination that massacred thousands of Blacks, and his brutality united Black and free coloured soldiers against the French. After surrendering to Dessalines in November 1803 he was captured by a Royal Navy squadron and interned in England for almost nine years. Exchanged in 1811, he was mortally wounded at the Battle of the Nations in 1813."
+   },
+   "fate": {
+    "kind": "killed",
+    "label": {
+     "ko": "전사",
+     "en": "Killed in action"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "도나시앵마리조제프 드 비뫼르 드 로샹보"
+    ],
+    "en": [
+     "Donatien-Marie-Joseph de Vimeur de Rochambeau",
+     "Donatien-Marie-Joseph de Vimeur, vicomte de Rochambeau"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1755–1813",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "lead",
+     "excerpt": "(7 April 1755 – 20 October 1813)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French Army officer and colonial administrator",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "lead",
+     "excerpt": "was a French Army officer and colonial administrator who served in the American Revolutionary War and French Revolutionary and Napoleonic Wars"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "son of the comte de Rochambeau",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "lead",
+     "excerpt": "He was the son of Jean-Baptiste Donatien de Vimeur, comte de Rochambeau."
+    },
+    {
+     "field": "bio",
+     "claim": "aide-de-camp to his father in America",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "He served in the American Revolutionary War as an aide-de-camp to his father, spending the winter of 1781–1782 in quarters at Williamsburg, Virginia."
+    },
+    {
+     "field": "bio",
+     "claim": "unsuccessful campaign in Martinique and Saint-Domingue in the 1790s",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "In the 1790s, he participated in an unsuccessful campaign to re-establish French authority in Martinique and Saint-Domingue."
+    },
+    {
+     "field": "bio",
+     "claim": "Italy and the Ligurian Republic",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "Rochambeau was later assigned to the French Revolutionary Army in the Italian Peninsula, and was appointed to the military command of the Ligurian Republic."
+    },
+    {
+     "field": "bio",
+     "claim": "led the expedition after Leclerc's death",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "In 1802, he was appointed to lead an expeditionary force against Saint-Domingue (Haiti) after General Charles Leclerc's death. His remit was to restore French control of their rebellious colony, by any means."
+    },
+    {
+     "field": "bio",
+     "claim": "brutal tactics united Black and gens de couleur soldiers",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "Historians of the Haitian Revolution credit his brutal tactics for uniting black and gens de couleur soldiers against the French."
+    },
+    {
+     "field": "bio",
+     "claim": "war of extermination",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "During his time in Haiti, Rochambeau waged a war of extermination, massacring thousands of blacks of all ages and genders."
+    },
+    {
+     "field": "bio",
+     "claim": "surrendered to Dessalines in November 1803",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "After Rochambeau surrendered to the rebel general Jean-Jacques Dessalines in November 1803, the former French colony declared its independence as Haïti"
+    },
+    {
+     "field": "bio",
+     "claim": "captured by the Royal Navy, interned nearly nine years",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "returned to England as a prisoner on parole, where he remained interned for almost nine years"
+    },
+    {
+     "field": "bio",
+     "claim": "exchanged in 1811",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "He was exchanged in 1811, and returned to the family château"
+    },
+    {
+     "field": "bio",
+     "claim": "mortally wounded at Leipzig",
+     "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+     "locator": "Life",
+     "excerpt": "He was mortally wounded in the Battle of Nations, and died three days later at Leipzig, at the age of 58."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1802,
+     "endYear": 1803,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+       "locator": "Life",
+       "claim": "Commander of the Saint-Domingue expedition after Leclerc's death",
+       "excerpt": "In 1802, he was appointed to lead an expeditionary force against Saint-Domingue (Haiti) after General Charles Leclerc's death."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1781,
+     "endYear": 1782,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+       "locator": "Life",
+       "claim": "Aide-de-camp to his father in the American Revolutionary War",
+       "excerpt": "He served in the American Revolutionary War as an aide-de-camp to his father, spending the winter of 1781–1782 in quarters at Williamsburg, Virginia."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": null,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Donatien_de_Rochambeau",
+       "locator": "Life",
+       "claim": "Campaign to re-establish French authority in Martinique and Saint-Domingue in the 1790s",
+       "excerpt": "In the 1790s, he participated in an unsuccessful campaign to re-establish French authority in Martinique and Saint-Domingue."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1781
+      ],
+      "end": [
+       1782
+      ]
+     },
+     "r": {
+      "ko": "미국 독립전쟁에서 아버지의 부관",
+      "en": "Aide-de-camp to his father in the American Revolutionary War"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1790
+      ],
+      "startQual": "decade"
+     },
+     "r": {
+      "ko": "마르티니크·생도맹그 원정",
+      "en": "Campaigns in Martinique and Saint-Domingue"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1802
+      ],
+      "end": [
+       1803
+      ]
+     },
+     "r": {
+      "ko": "생도맹그 원정군 사령관",
+      "en": "Commander of the Saint-Domingue expedition"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1803
+      ],
+      "end": [
+       1811
+      ]
+     },
+     "r": {
+      "ko": "영국에 억류",
+      "en": "Interned in England"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1813
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "라이프치히 전투에서 전사",
+      "en": "Killed at the Battle of Leipzig"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "로샹보",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "search"
+    },
+    {
+     "text": "Rochambeau",
+     "lang": "en",
+     "role": "identity",
+     "policy": "search"
+    }
+   ],
+   "cyrillic": "Donatien de Rochambeau"
+  },
+  {
+   "id": "jean-baptiste-belley",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "장바티스트",
+    "en": "Jean-Baptiste"
+   },
+   "familyName": {
+    "ko": "벨레",
+    "en": "Belley"
+   },
+   "nativeName": "Jean-Baptiste Belley",
+   "years": "1746–1805",
+   "citizenship": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "노예였다가 국민공회에 앉은 첫 흑인 의원이 되어 1794년 노예제 폐지 토론에 선 생도맹그 대표",
+    "en": "Formerly enslaved deputy for Saint-Domingue, the first Black member of the National Convention, who spoke in the abolition debate of 1794"
+   },
+   "bio": {
+    "ko": "1746년 또는 1747년 세네갈 고레섬에서 태어나 두 살에 생도맹그로 팔려 왔고, 모은 돈으로 자유를 산 뒤 그 자신도 노예를 소유했다. 1793년 보병 대위로 왕당파와 싸우다 여섯 번 다쳤다. 같은 해 9월 24일 북부 관구가 뽑은 국민공회 대표 세 사람 가운데 하나로 밀스, 뒤페와 함께 선출되어 국민공회의 첫 흑인 의원이 되었고 산악파 쪽에 앉았다. 1794년 2월 노예제 폐지를 가결한 토론에서 발언했고, 노예제 부활을 요구한 굴리에 맞서 마시아크 클럽을 고발했다. 1796년 오백인회 의원으로 재선되었다. 1802년 르클레르 원정군의 헌병 장교로 돌아갔다가 체포되어 송환되었고, 벨일섬에 연금된 채 1805년 죽었다.",
+    "en": "Born on Gorée in Senegal in 1746 or 1747, he was sold at two to slavers bound for Saint-Domingue, bought his own freedom and later owned slaves himself. In 1793 he fought the royalists as an infantry captain and was wounded six times. On 24 September 1793 he was elected with Mills and Dufaÿ as one of the three deputies for northern Saint-Domingue, becoming the first Black member of the National Convention, where he sat with the Montagnards. He spoke in the debate of February 1794 in which the Convention abolished slavery and answered Gouly's call to restore slavery by denouncing the Massiac Club. Re-elected to the Council of Five Hundred in 1796, he returned to Saint-Domingue in 1802 as a gendarme officer with Leclerc's expedition, was arrested and sent back, and died under house arrest at Belle-Île in 1805."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "연금 중 사망",
+     "en": "Died under house arrest"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": []
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1746–1805 (birth year 1746 or 1747)",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "lead",
+     "excerpt": "(1 July 1746/1747 – 6 August 1805)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French politician, deputy of the French First Republic",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "lead",
+     "excerpt": "Jean-Baptiste Belley (1 July 1746/1747 – 6 August 1805) was a French politician."
+    },
+    {
+     "field": "bio",
+     "claim": "native of Senegal, formerly enslaved in Saint-Domingue",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "lead",
+     "excerpt": "A native of Senegal and formerly enslaved in the colony of Saint-Domingue, in the French West Indies, he was an elected member of the National Convention and the Council of Five Hundred during the French First Republic."
+    },
+    {
+     "field": "bio",
+     "claim": "sold at two, bought his freedom",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "At the age of two, he was sold to slavers sailing for the French colony of Saint-Domingue. With his savings, he later bought his freedom."
+    },
+    {
+     "field": "bio",
+     "claim": "later a slave owner himself",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "Belley subsequently became a slave owner himself"
+    },
+    {
+     "field": "bio",
+     "claim": "infantry captain wounded six times in 1793",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "In 1793, Belley fought as an infantry captain against Royalist forces in Saint-Domingue and was wounded six times."
+    },
+    {
+     "field": "bio",
+     "claim": "elected 24 September 1793, first Black deputy",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "thus becoming the first black deputy to take a seat in the convention"
+    },
+    {
+     "field": "bio",
+     "claim": "sat with the Montagnards",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "He, along with the other two elected deputies, sat with the Montagnards."
+    },
+    {
+     "field": "bio",
+     "claim": "spoke in the abolition debate",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "On 3 February 1794, he spoke in a debate in the Convention when it decided unanimously to abolish slavery."
+    },
+    {
+     "field": "bio",
+     "claim": "denounced the Massiac Club against Gouly",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "Belley denounced a pro-slavery pressure group known as the Massiac Club in a speech published under the title The Settlers' Ear, or the Massiac Hotel System Updated by Gouly."
+    },
+    {
+     "field": "bio",
+     "claim": "Council of Five Hundred, re-elected 1796",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "Belley continued to serve into the Council of Five Hundred and was reelected on 8 September 1796."
+    },
+    {
+     "field": "bio",
+     "claim": "gendarme officer with Leclerc, arrested, house arrest at Belle-Île",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "Belley returned to Saint-Domingue in 1802 as a gendarme officer in the  expeditionary force commanded by Divisional-general Charles Leclerc. However, Belley was subsequently arrested and sent back to France, where he was imprisoned under house arrest in Belle Île."
+    },
+    {
+     "field": "bio",
+     "claim": "died 6 August 1805",
+     "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+     "locator": "Life",
+     "excerpt": "Belley was still being held prisoner there in 1805 when he wrote to Isaac Louverture, the son of Toussaint Louverture, and died later the same year on 6 August."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "legislature",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1797,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+       "locator": "lead",
+       "claim": "Deputy for Saint-Domingue in the National Convention and the Council of Five Hundred",
+       "excerpt": "he was an elected member of the National Convention and the Council of Five Hundred during the French First Republic"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "french-montagnards",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1794,
+     "endYear": 1795,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+       "locator": "Life",
+       "claim": "Sat with the Montagnards in the Convention",
+       "excerpt": "He, along with the other two elected deputies, sat with the Montagnards."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1793,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+       "locator": "Life",
+       "claim": "Infantry captain against royalist forces in Saint-Domingue",
+       "excerpt": "In 1793, Belley fought as an infantry captain against Royalist forces in Saint-Domingue and was wounded six times."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-napoleonic-state",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1802,
+     "endYear": 1802,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley",
+       "locator": "Life",
+       "claim": "Gendarme officer in Leclerc's expedition",
+       "excerpt": "Belley returned to Saint-Domingue in 1802 as a gendarme officer in the  expeditionary force commanded by Divisional-general Charles Leclerc."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "생도맹그에서 보병 대위로 왕당파와 싸움",
+      "en": "Infantry captain against the royalists in Saint-Domingue"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": [
+       1795
+      ]
+     },
+     "r": {
+      "ko": "국민공회 의원 (생도맹그 북부 관구)",
+      "en": "Deputy in the National Convention for northern Saint-Domingue"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1795
+      ],
+      "end": [
+       1797
+      ]
+     },
+     "r": {
+      "ko": "오백인회 의원",
+      "en": "Member of the Council of Five Hundred"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1802
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "르클레르 원정군 헌병 장교, 체포되어 송환",
+      "en": "Gendarme officer with Leclerc's expedition; arrested and sent back"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1802
+      ],
+      "end": [
+       1805
+      ]
+     },
+     "r": {
+      "ko": "벨일섬에 연금",
+      "en": "House arrest at Belle-Île"
+     }
+    }
+   ],
+   "cyrillic": "Jean-Baptiste Belley"
+  },
+  {
+   "id": "thomas-maitland",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "토머스",
+    "en": "Thomas"
+   },
+   "familyName": {
+    "ko": "메이틀랜드",
+    "en": "Maitland"
+   },
+   "nativeName": "Thomas Maitland",
+   "years": "1760–1824",
+   "citizenship": {
+    "code": "uk"
+   },
+   "nationalOrigin": {
+    "code": "uk"
+   },
+   "epithet": {
+    "ko": "생도맹그 영국군을 이끌다 투생 루베르튀르와 철수 협정을 맺은 영국 장군, 뒤에 실론·몰타 총독",
+    "en": "British general who negotiated the withdrawal from Saint-Domingue with Toussaint Louverture, later governor of Ceylon and Malta"
+   },
+   "bio": {
+    "ko": "로더데일 백작의 아들로 1778년 대위로 군에 들어가 1798년 대령 겸 여단장에 올랐고 해딩턴 선출 하원의원을 지냈다. 1797년 생도맹그를 점령하라는 명령을 받고 상륙했으나 병사들이 황열병으로 무더기로 죽자, 육군부가 아니라 자신의 판단으로 투생 루베르튀르와 철수를 교섭했다. 1798년 8월 31일 비밀 협정으로 영국은 생도맹그를 공격하거나 내정에 간섭하지 않고 투생은 자메이카에 같은 약속을 했으며, 1799년 메이틀랜드 협약으로 카프와 포르레퓌블리캥을 영미 선박에 열었다. 1805~1811년 실론 총독, 1813년부터 죽을 때까지 몰타 총독을 지내며 독단적 통치로 「킹 톰」이라 불렸다.",
+    "en": "A son of the 7th Earl of Lauderdale, he entered the army as a captain in 1778, became colonel and brigadier-general in 1798 and sat in Parliament for Haddington. Landing in Saint-Domingue in 1797 under orders to capture the colony, he saw his troops dying in droves of yellow fever and on his own judgment, not the War Ministry's, negotiated a total evacuation with Toussaint Louverture. By the secret agreement of 31 August 1798 Britain undertook not to attack Saint-Domingue or interfere in its affairs and Louverture made the same promise regarding Jamaica; the Maitland Convention of 1799 opened Le Cap and Port-Républicain to Anglo-American shipping. He was governor of Ceylon from 1805 to 1811 and of Malta from 1813 until his death, ruling so autocratically that he was called \"King Tom\"."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "킹 톰"
+    ],
+    "en": [
+     "Sir Thomas Maitland",
+     "King Tom"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1760–1824",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "lead",
+     "excerpt": "(10 March 1760 – 17 January 1824)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "British Army officer, politician and colonial administrator",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "lead",
+     "excerpt": "was a British Army officer, politician and colonial administrator"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "son of the 7th Earl of Lauderdale",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "lead",
+     "excerpt": "He was the second surviving son of James Maitland, 7th Earl of Lauderdale, and the younger brother of James Maitland, 8th Earl of Lauderdale."
+    },
+    {
+     "field": "bio",
+     "claim": "captain in 1778, colonel and brigadier-general in 1798",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Early military career",
+     "excerpt": "He was promoted lieutenant-colonel in 1794 and colonel and brigadier-general in 1798."
+    },
+    {
+     "field": "bio",
+     "claim": "MP for Haddington",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "lead",
+     "excerpt": "He also served as a Member of Parliament for Haddington from 1790 to 1796, 1802–06 and 1812–13."
+    },
+    {
+     "field": "bio",
+     "claim": "landed in Saint-Domingue in 1797; negotiated with Louverture",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Haitian Revolution",
+     "excerpt": "Maitland realised that his forces were quickly dying in droves due to yellow fever, and he began to negotiate a retreat with Toussaint Louverture, a Black general in French service."
+    },
+    {
+     "field": "bio",
+     "claim": "his own decision, not the War Ministry's",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Haitian Revolution",
+     "excerpt": "It was in fact Maitland and not the War Ministry who had determined that Britain's only sensible choice"
+    },
+    {
+     "field": "bio",
+     "claim": "secret agreement of 31 August 1798",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Haitian Revolution",
+     "excerpt": "Accordingly he and the black general concluded a secret agreement on August 31, 1798."
+    },
+    {
+     "field": "bio",
+     "claim": "Maitland Convention of 13 June 1799",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Haitian Revolution",
+     "excerpt": "Maitland and Louverture signed the Maitland Convention, which stipulated that the ports of Le Cap and Port-Républicain would be opened to Anglo-American shipping."
+    },
+    {
+     "field": "bio",
+     "claim": "Maitland Plan of 1800",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Haitian Revolution",
+     "excerpt": "In 1800 he devised the Maitland Plan - a six point plan to free South America from Spanish rule."
+    },
+    {
+     "field": "bio",
+     "claim": "governor of Ceylon 1805–1811",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Governor of Ceylon",
+     "excerpt": "Maitland served as Governor of Ceylon (Sri Lanka) during 1805 to 1811."
+    },
+    {
+     "field": "bio",
+     "claim": "governor of Malta, \"King Tom\"",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Governor of Malta and of the Ionian Islands",
+     "excerpt": "On Malta, he was autocratic and he refused to form an advisory council made up of Maltese representatives, and so he was informally known as \"King Tom\"."
+    },
+    {
+     "field": "bio",
+     "claim": "died in office 17 January 1824",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Governor of Malta and of the Ionian Islands",
+     "excerpt": "Maitland remained Governor until his death from apoplexy on 17 January 1824."
+    },
+    {
+     "field": "bio",
+     "claim": "Lord High Commissioner of the Ionian Islands",
+     "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+     "locator": "Governor of Malta and of the Ionian Islands",
+     "excerpt": "Maitland also served as Lord High Commissioner of the Ionian Islands during 1815 to 1823"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "state-uk",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1778,
+     "endYear": 1812,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+       "locator": "Haitian Revolution",
+       "claim": "British Army officer; commander in Saint-Domingue 1797–1798",
+       "excerpt": "In 1797, Maitland landed in Saint-Domingue, under orders to capture the French colony."
+      }
+     ]
+    },
+    {
+     "functionId": "government",
+     "affiliationId": "state-uk",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1805,
+     "endYear": 1824,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+       "locator": "Governor of Ceylon",
+       "claim": "Governor of Ceylon and of Malta, Lord High Commissioner of the Ionian Islands",
+       "excerpt": "Maitland served as Governor of Ceylon (Sri Lanka) during 1805 to 1811."
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-uk",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1790,
+     "endYear": 1813,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Thomas_Maitland_%28British_Army_officer%29",
+       "locator": "lead",
+       "claim": "Member of Parliament for Haddington",
+       "excerpt": "He also served as a Member of Parliament for Haddington from 1790 to 1796, 1802–06 and 1812–13."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1778
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "제78 보병연대 대위",
+      "en": "Captain in the 78th Regiment of Foot"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1790
+      ],
+      "end": [
+       1796
+      ]
+     },
+     "r": {
+      "ko": "해딩턴 선출 하원의원",
+      "en": "MP for Haddington"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1797
+      ],
+      "end": [
+       1799
+      ]
+     },
+     "r": {
+      "ko": "생도맹그 영국군 지휘, 투생과 철수 협정",
+      "en": "Commanded in Saint-Domingue; withdrawal agreements with Toussaint"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1805
+      ],
+      "end": [
+       1811
+      ]
+     },
+     "r": {
+      "ko": "실론 총독",
+      "en": "Governor of Ceylon"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1813
+      ],
+      "end": [
+       1824
+      ]
+     },
+     "r": {
+      "ko": "몰타 총독",
+      "en": "Governor of Malta"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1815
+      ],
+      "end": [
+       1823
+      ]
+     },
+     "r": {
+      "ko": "이오니아 제도 고등판무관",
+      "en": "Lord High Commissioner of the Ionian Islands"
+     }
+    }
+   ],
+   "cyrillic": "Thomas Maitland"
+  },
+  {
+   "id": "achille-bazaine",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "아실",
+    "en": "Achille"
+   },
+   "familyName": {
+    "ko": "바젠",
+    "en": "Bazaine"
+   },
+   "nativeName": "François Achille Bazaine",
+   "years": "1811–1888",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "라인군을 이끌고 메스에서 포위되어 1870년 10월 항복한 프랑스 원수, 뒤에 반역죄로 사형을 선고받음",
+    "en": "Marshal of France whose Army of the Rhine was besieged in Metz and surrendered in October 1870, later condemned for treason"
+   },
+   "bio": {
+    "ko": "1831년 사병으로 입대해 외인부대와 알제리, 크림·이탈리아 전쟁을 거쳤고, 멕시코 원정에서 푸에블라 공략을 이끌어 원정군 사령관이 되었으며 1864년 원수 겸 상원의원이 되었다. 1870년 8월 총사령관이 되었으나 마르라투르 뒤 군대를 메스로 물려 고립되었고 생프리바에 예비대를 보내지 않았다. 돌파 시도가 실패한 뒤 국방정부를 인정하지 않고 프로이센 측, 외제니 황후와 교섭하며 「프랑스를 그 자신으로부터 구하기」 위한 군대의 출구를 구했다. 10월 28일 굶주린 라인군과 함께 항복해 강베타에게 반역자로 고발당했다. 1873년 군사재판에서 사형을 선고받았으나 20년 금고로 감형되었고, 1874년 탈옥해 마드리드에서 망명 생활을 하다 1888년 죽었다.",
+    "en": "Enlisting as a private in 1831, he served in the Foreign Legion, Algeria, the Crimea and Italy, and in Mexico, where he led the taking of Puebla and rose to command the expeditionary corps; in 1864 he became Marshal of France and senator. Made commander-in-chief in August 1870, he pulled his army back to Metz after Mars-la-Tour, cutting himself off, and sent no reserves to Saint-Privat. After failed break-outs he refused to recognise the Government of National Defence and negotiated with the Prussians and Empress Eugénie for leave to use his army \"to save France from itself\". He capitulated with the starving Army of the Rhine on 28 October and Gambetta denounced him as a traitor. Condemned to death by court-martial in 1873, commuted to twenty years, he escaped in 1874 and died in exile in Madrid in 1888."
+   },
+   "fate": {
+    "kind": "exile",
+    "label": {
+     "ko": "망명지에서 사망",
+     "en": "Died in exile"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "프랑수아 아실 바젠"
+    ],
+    "en": [
+     "François Achille Bazaine",
+     "François-Achille Bazaine"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1811–1888",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "lead",
+     "excerpt": "13 February 1811 – 23 September 1888"
+    },
+    {
+     "field": "citizenship",
+     "claim": "officer of the French army, Marshal of France",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "lead",
+     "excerpt": "was an officer of the French army"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "family from Scy-Chazelles near Metz, born at Versailles",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Early life",
+     "excerpt": "Bazaine came from a family established in Scy-Chazelles, near Metz."
+    },
+    {
+     "field": "bio",
+     "claim": "enlisted as a private in 1831",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Early life",
+     "excerpt": "In 1831, he enlisted as a private on 28 March 1831 at the 37th Infantry Division at Auxonne"
+    },
+    {
+     "field": "bio",
+     "claim": "entered the Foreign Legion in 1832",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "French Foreign Legion and Algeria",
+     "excerpt": "Bazaine entered the French Foreign Legion in August 1832."
+    },
+    {
+     "field": "bio",
+     "claim": "Puebla and command of the Mexican expedition",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Mexico",
+     "excerpt": "His decisive action was instrumental in the taking of the city of Puebla in 1863. As a consequence, he was cited and designated at the head of the expeditionary corps by replacing Élie Frédéric Forey."
+    },
+    {
+     "field": "bio",
+     "claim": "Marshal and senator in 1864",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Mexico",
+     "excerpt": "Bazaine, who had started as a Legionnaire, was elevated to the dignity of Marshal of France and Senator of the Second French Empire by Imperial decree on 5 September 1864."
+    },
+    {
+     "field": "bio",
+     "claim": "commander-in-chief on 13 August 1870",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Takes over as Commander in Chief from Napoleon III",
+     "excerpt": "Napoleon III (who was in increasingly poor health) was swift to give Bazaine the title of Commander-in-Chief of the French Army on 13 August 1870."
+    },
+    {
+     "field": "bio",
+     "claim": "deployed at Metz after Mars-la-Tour",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Prelude",
+     "excerpt": "he decided, to the astonishment of his general staff headquarters, to deploy his army of 180,000 men at Metz, accordingly cutting himself off from France and his reserves"
+    },
+    {
+     "field": "bio",
+     "claim": "no reserves to Saint-Privat",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Prelude",
+     "excerpt": "The latter had judged that Saint-Privat was not an important battle and refused to engage his reserve troops, which were numerous."
+    },
+    {
+     "field": "bio",
+     "claim": "Noisseville break-out failed",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Siege of Metz",
+     "excerpt": "Bazaine attempted to break the siege at Noisseville on 31 August but the French were repulsed, losing 3,500 men in the attempt."
+    },
+    {
+     "field": "bio",
+     "claim": "refused to recognise the Government of National Defence",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Diplomacy, then surrender",
+     "excerpt": "Bazaine refused to recognise the new Government of National Defence"
+    },
+    {
+     "field": "bio",
+     "claim": "\"to save France from itself\"",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Prelude",
+     "excerpt": "He negotiated equally with the Germans the authorization of an exit of his army « pour sauver la France d'elle-même » (to save France from itself), which meant from the republican push, as in revolutionary."
+    },
+    {
+     "field": "bio",
+     "claim": "capitulated on 28 October",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Prelude",
+     "excerpt": "Bazaine renounced to pursue combat and capitulated on 28 October"
+    },
+    {
+     "field": "bio",
+     "claim": "Gambetta accused him of treason",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Prelude",
+     "excerpt": "launched a proclamation where he explicitly accused Bazaine of treason in his speech"
+    },
+    {
+     "field": "bio",
+     "claim": "court-martial from 6 October 1873, death sentence",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Sentencing",
+     "excerpt": "The court unanimously sentenced Bazaine to 'degradation and death'"
+    },
+    {
+     "field": "bio",
+     "claim": "MacMahon commuted to twenty years",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Sentencing",
+     "excerpt": "commuted the punishment of death to twenty years' imprisonment"
+    },
+    {
+     "field": "bio",
+     "claim": "escaped in August 1874",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Escape",
+     "excerpt": "Bazaine escaped after two hundred and twenty-one days of imprisonment"
+    },
+    {
+     "field": "bio",
+     "claim": "settled in Madrid",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Later life",
+     "excerpt": "By midsummer 1875, Bazaine had settled in Madrid"
+    },
+    {
+     "field": "bio",
+     "claim": "died in Madrid 23 September 1888",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+     "locator": "Death",
+     "excerpt": "At his Madrid lodgings, Bazaine died of a stroke on 23 September 1888 (aged 77)"
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1831,
+     "endYear": 1870,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+       "locator": "Prelude",
+       "claim": "French army officer from private to Marshal; commander of the Army of the Rhine in 1870",
+       "excerpt": "On 12 August 1870, during the war, Bazaine was nominated as the commander-in-chief of the Army of the Rhine"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1864,
+     "endYear": 1870,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Achille_Bazaine",
+       "locator": "Mexico",
+       "claim": "Senator of the Second Empire",
+       "excerpt": "was elevated to the dignity of Marshal of France and Senator of the Second French Empire by Imperial decree on 5 September 1864"
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1831
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "사병으로 입대",
+      "en": "Enlisted as a private"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1832
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "외인부대 입대",
+      "en": "Joined the Foreign Legion"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1862
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "멕시코 원정, 1863년부터 원정군 사령관",
+      "en": "Mexican expedition, commander of the expeditionary corps from 1863"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1864
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "프랑스 원수, 제2제정 상원의원",
+      "en": "Marshal of France and senator of the Second Empire"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "라인군 사령관, 메스에서 항복",
+      "en": "Commander of the Army of the Rhine; surrendered at Metz"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1873
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "군사재판에서 사형 선고, 20년 금고로 감형",
+      "en": "Condemned to death by court-martial, commuted to twenty years"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1874
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "생트마르그리트섬 탈출",
+      "en": "Escaped from Île Sainte-Marguerite"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1875
+      ],
+      "end": [
+       1888
+      ]
+     },
+     "r": {
+      "ko": "마드리드 망명",
+      "en": "Exile in Madrid"
+     }
+    }
+   ],
+   "cyrillic": "François Achille Bazaine"
+  },
+  {
+   "id": "wilhelm-bracke",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "빌헬름",
+    "en": "Wilhelm"
+   },
+   "familyName": {
+    "ko": "브라케",
+    "en": "Bracke"
+   },
+   "nativeName": "Wilhelm Bracke",
+   "years": "1842–1880",
+   "citizenship": {
+    "code": "germany"
+   },
+   "nationalOrigin": {
+    "code": "germany"
+   },
+   "epithet": {
+    "ko": "아이제나흐 사회민주노동자당을 세워 브라운슈바이크 당 위원회를 이끈 독일 사회주의 출판인",
+    "en": "Founder of the Eisenach Social Democratic Workers' Party who led its Brunswick committee and was jailed in 1870 for calling for peace"
+   },
+   "bio": {
+    "ko": "브라운슈바이크의 곡물상 집안에서 태어나 대학 시절 라살의 전독일노동자협회에 들어갔고 1865년 브라운슈바이크 지부를 세워 협회 이사가 되었다. 1869년 쿠겔만의 집에서 마르크스를 만나 평생 교류했다. 협회 안에서 베벨, 리프크네히트와 같은 반대파에 서서 1869년 8월 아이제나흐에서 사회민주노동자당을 세우는 데 참여했고, 대변인이 되었으며 브라운슈바이크가 첫 당 본부가 되었다. 1870년 평화를 호소했다가 체포되어 3개월 형을 받았다. 출소 뒤 출판사와 『브라운슈바이거 폴크스프로인트』를 세워 마르크스의 첫 전기를 냈고, 1877년 제국의회 의원이 되어 반사회주의자법에 맞섰다. 1879년 건강 때문에 의원직을 내려놓았고 이듬해 죽었다.",
+    "en": "Born into a miller and grain merchant's family in Brunswick, he joined Lassalle's General German Workers' Association as a student, founded its Brunswick section in 1865 and sat on its board. In 1869 he met Marx at Kugelmann's house and stayed in contact with him for life. Sharing the oppositional views of Bebel and Liebknecht, he helped found the Social Democratic Workers' Party at Eisenach in August 1869 and became its spokesman, with Brunswick as the party's first seat. In 1870 he was arrested for calling for peace and sentenced to three months. He then founded a publishing house and the Braunschweiger Volksfreund, which published the first biography of Marx, became the first Social Democrat on the Brunswick city council in 1872 and entered the Reichstag in 1877, defying the Anti-Socialist Law. Ill health ended his mandate in 1879, and he died in 1880."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "헤르만 아우구스트 프란츠 빌헬름 고트하르트 브라케"
+    ],
+    "en": [
+     "Hermann August Franz Wilhelm Gotthard Bracke"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wilhelm_Bracke"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1842–1880",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "lead",
+     "excerpt": "(29 May 1842 – 27 April 1880)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "German socialist publisher",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "lead",
+     "excerpt": "was a German socialist publisher and publicist who was a founding member of the Social Democratic Workers' Party of Germany, the forerunner to the Social Democratic Party"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Brunswick",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "Wilhelm Bracke was born into the family of a miller and grain merchant from Braunschweig."
+    },
+    {
+     "field": "bio",
+     "claim": "joined the ADAV while a student",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "While studying at the Collegium Carolinum, he became a member of the General German Workers' Association (ADAV), which was founded by Ferdinand Lassalle"
+    },
+    {
+     "field": "bio",
+     "claim": "founded the Brunswick section in 1865, board member",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "On September 6, 1865, he founded a section of the General German Workers' Association in Braunschweig where he organized meetings and became a member of the board of the ADAV."
+    },
+    {
+     "field": "bio",
+     "claim": "met Marx in 1869",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "In 1869 he met Karl Marx in Hanover at Louis Kugelmann's house, with whom he remained in contact throughout his life."
+    },
+    {
+     "field": "bio",
+     "claim": "opposition with Bebel and Liebknecht, Eisenach founding congress",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "This tendency led to a group of members splitting off and the founding of the Social Democratic Workers' Party of Germany (SDAP) at the founding party conference from 7 to 9 August 1869 in Eisenach."
+    },
+    {
+     "field": "bio",
+     "claim": "spokesman; Brunswick the first seat",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "After the party was founded, Bracke became its spokesman; Braunschweig was chosen as the first seat."
+    },
+    {
+     "field": "bio",
+     "claim": "arrested in 1870 for calling for peace",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "In 1870 he was arrested for calling for peace and sentenced to three months in prison."
+    },
+    {
+     "field": "bio",
+     "claim": "publishing house, Braunschweiger Volksfreund, first Marx biography",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "After his release from prison he founded his own publishing house and the newspaper Braunschweiger Volksfreund where he published, among other things, the first biography of Karl Marx."
+    },
+    {
+     "field": "bio",
+     "claim": "first Social Democrat on the Brunswick council, Reichstag 1877",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "In 1872 he was the first Social Democrat to be elected to the council of the city of Braunschweig. In 1877 he became a member of the Reichstag."
+    },
+    {
+     "field": "bio",
+     "claim": "gave up his seat in 1879, died 1880",
+     "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+     "locator": "Biography",
+     "excerpt": "For health reasons he had to give up his mandate in 1879."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-spd",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1869,
+     "endYear": 1879,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+       "locator": "Biography",
+       "claim": "Founding member and spokesman of the Social Democratic Workers' Party (SDAP), the forerunner of the SPD",
+       "excerpt": "After the party was founded, Bracke became its spokesman; Braunschweig was chosen as the first seat."
+      }
+     ]
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-adav",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1865,
+     "endYear": 1869,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+       "locator": "Biography",
+       "claim": "Member and board member of the ADAV",
+       "excerpt": "On September 6, 1865, he founded a section of the General German Workers' Association in Braunschweig where he organized meetings and became a member of the board of the ADAV."
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-germany",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1877,
+     "endYear": 1879,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+       "locator": "Biography",
+       "claim": "Member of the Reichstag",
+       "excerpt": "In 1877 he became a member of the Reichstag."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1865
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "전독일노동자협회 브라운슈바이크 지부 창설, 협회 이사",
+      "en": "Founded the Brunswick section of the ADAV; board member"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1869
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "아이제나흐에서 사회민주노동자당 창당, 대변인",
+      "en": "Co-founded the SDAP at Eisenach; party spokesman"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "평화 호소로 체포, 3개월 형",
+      "en": "Arrested for calling for peace; three months in prison"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1872
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "브라운슈바이크 시의회 의원",
+      "en": "Brunswick city councillor"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1877
+      ],
+      "end": [
+       1879
+      ]
+     },
+     "r": {
+      "ko": "제국의회 의원",
+      "en": "Member of the Reichstag"
+     }
+    }
+   ],
+   "cyrillic": "Wilhelm Bracke"
+  },
+  {
+   "id": "charles-de-freycinet",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "샤를",
+    "en": "Charles"
+   },
+   "familyName": {
+    "ko": "드 프레시네",
+    "en": "de Freycinet"
+   },
+   "nativeName": "Charles de Freycinet",
+   "years": "1828–1923",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "강베타의 군사 내각을 맡아 지방 군대를 조직했고 뒤에 네 차례 총리를 지낸 제3공화국 정치가",
+    "en": "Engineer who ran Gambetta's military cabinet in 1870, later four times prime minister and minister of war of the Third Republic"
+   },
+   "bio": {
+    "ko": "푸아의 개신교 집안에서 태어나 에콜 폴리테크니크를 나와 광산 기술자로 일했고, 남부 철도회사 운수 책임자를 지냈다. 1870년 9월 강베타에게 자원해 타른에가론 도지사가 되었고 10월 군사 내각 책임자로서 강베타가 잇달아 군대를 일으키게 한 조직력을 보였다. 그러나 현장 장군에게 작전을 지시하는 방식은 도렐 드 팔라딘과의 마찰로 쿨미에·오를레앙의 이점을 잃게 했고, 부르바키의 동부군을 무너뜨린 동부 원정에도 책임이 있었다. 1876년 상원에 들어가 철도 국유화 계획을 통과시켰고, 1879년 총리가 되어 코뮌 가담자 사면을 통과시켰다. 네 차례 총리를 지냈고 1888~1893년 민간인 전쟁장관으로 3년 복무제와 참모본부를 도입했다. 온건 공화파였다.",
+    "en": "Born at Foix into a Protestant family and trained at the École Polytechnique, he was a mining engineer and traffic manager of the Compagnie du Midi. In September 1870 he offered his services to Gambetta, became prefect of Tarn-et-Garonne and in October chief of the military cabinet, and his organisation let Gambetta raise army after army. His dictating of operations to field generals went badly: friction with d'Aurelle de Paladines lost the advantage won at Coulmiers and Orléans, and he was responsible for the eastern campaign that destroyed Bourbaki's army. A senator from 1876, he passed a scheme for state acquisition of the railways and, as prime minister from 1879, an amnesty for the Communards. Four times prime minister, he was the first civilian minister of war since 1848 (1888–1893), introducing three-year service and a general staff. He was a Moderate Republican."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "샤를 루이 드 솔스 드 프레시네"
+    ],
+    "en": [
+     "Charles Louis de Saulces de Freycinet",
+     "Charles Freycinet"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Charles_de_Freycinet"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1828–1923",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "lead",
+     "excerpt": "14 November 1828 – 14 May 1923"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French statesman, four times prime minister",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "lead",
+     "excerpt": "was a French statesman who served four times as Prime Minister during the Third Republic"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Foix of a Protestant family",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Early years",
+     "excerpt": "Freycinet was born at Foix (Ariège) of a Protestant family"
+    },
+    {
+     "field": "bio",
+     "claim": "École Polytechnique, mining engineer",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Early years",
+     "excerpt": "Charles Freycinet was educated at the École Polytechnique. He entered government service as a mining engineer"
+    },
+    {
+     "field": "bio",
+     "claim": "traffic manager of the Compagnie du Midi",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Early years",
+     "excerpt": "In 1858 he was appointed traffic manager to the Compagnie de chemins de fer du Midi"
+    },
+    {
+     "field": "bio",
+     "claim": "report on women and children in English factories",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Early years",
+     "excerpt": "Mémoire sur le travail des femmes et des enfants dans les manufactures de l'Angleterre (1867)"
+    },
+    {
+     "field": "bio",
+     "claim": "offered his services to Gambetta, prefect, chief of the military cabinet",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Franco-Prussian War",
+     "excerpt": "he offered his services to Léon Gambetta, was appointed prefect of the department of Tarn-et-Garonne, and in October became chief of the military cabinet"
+    },
+    {
+     "field": "bio",
+     "claim": "his organisation let Gambetta raise army after army",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Franco-Prussian War",
+     "excerpt": "It was mainly Freycinet's powers of organization which enabled Gambetta to raise army after army to oppose the invading Germans."
+    },
+    {
+     "field": "bio",
+     "claim": "friction with d'Aurelle de Paladines; the eastern campaign",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Franco-Prussian War",
+     "excerpt": "The friction between him and General d'Aurelle de Paladines resulted in the loss of the advantage temporarily gained at Coulmiers and Orléans, and he was responsible for the campaign in the east, which ended in the destruction of the Armée de l'Est of Charles Denis Bourbaki."
+    },
+    {
+     "field": "bio",
+     "claim": "senator 1876; railway scheme as minister of public works",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "1871-1888",
+     "excerpt": "He passed a great scheme for the gradual acquisition of the railways by the state and the construction of new lines"
+    },
+    {
+     "field": "bio",
+     "claim": "amnesty for the Communards",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "1871-1888",
+     "excerpt": "He passed an amnesty for the Communards"
+    },
+    {
+     "field": "bio",
+     "claim": "first civilian minister of war since 1848",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Minister of War",
+     "excerpt": "In April 1888 he became Minister of War in Charles Floquet's cabinet – the first civilian since 1848 to hold that office."
+    },
+    {
+     "field": "bio",
+     "claim": "three-year service, general staff",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Minister of War",
+     "excerpt": "The introduction of the three-years' service and the establishment of a general staff, a supreme council of war, and the army commands were all due to him."
+    },
+    {
+     "field": "bio",
+     "claim": "Panama scandal, resigned January 1893",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "Minister of War",
+     "excerpt": "He failed to clear himself entirely of complicity in the Panama scandals, and in January 1893 resigned the Ministry of War."
+    },
+    {
+     "field": "bio",
+     "claim": "Moderate Republican",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+     "locator": "lead",
+     "excerpt": "He belonged to the Moderate Republican faction."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "government",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1870,
+     "endYear": 1899,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+       "locator": "lead",
+       "claim": "Chief of Gambetta's military cabinet 1870–1871; four times prime minister and minister of war",
+       "excerpt": "was a French statesman who served four times as Prime Minister during the Third Republic"
+      }
+     ]
+    },
+    {
+     "functionId": "legislature",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1876,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+       "locator": "1871-1888",
+       "claim": "Senator from 1876",
+       "excerpt": "He entered the Senate in 1876 as a follower of Gambetta"
+      }
+     ]
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": null,
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Charles_de_Freycinet",
+       "locator": "lead",
+       "claim": "Member of the Moderate Republican faction; no catalog affiliation",
+       "excerpt": "He belonged to the Moderate Republican faction."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1858
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "남부 철도회사 운수 책임자",
+      "en": "Traffic manager of the Compagnie du Midi"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": [
+       1871
+      ]
+     },
+     "r": {
+      "ko": "타른에가론 도지사, 강베타의 군사 내각 책임자",
+      "en": "Prefect of Tarn-et-Garonne; chief of Gambetta's military cabinet"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1876
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "상원의원",
+      "en": "Senator"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1877
+      ],
+      "end": [
+       1879
+      ]
+     },
+     "r": {
+      "ko": "공공사업장관",
+      "en": "Minister of Public Works"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1879
+      ],
+      "end": [
+       1880
+      ]
+     },
+     "r": {
+      "ko": "총리 겸 외무장관",
+      "en": "Prime minister and foreign minister"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1888
+      ],
+      "end": [
+       1893
+      ]
+     },
+     "r": {
+      "ko": "전쟁장관",
+      "en": "Minister of War"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "프레시네",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "search"
+    },
+    {
+     "text": "Freycinet",
+     "lang": "en",
+     "role": "identity",
+     "policy": "search"
+    }
+   ],
+   "cyrillic": "Charles de Freycinet"
+  },
+  {
+   "id": "auguste-alexandre-ducrot",
+   "groupId": "world-before-1917",
+   "givenName": {
+    "ko": "오귀스트알렉상드르",
+    "en": "Auguste-Alexandre"
+   },
+   "familyName": {
+    "ko": "뒤크로",
+    "en": "Ducrot"
+   },
+   "nativeName": "Auguste-Alexandre Ducrot",
+   "years": "1817–1882",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "스당에서 부상한 마크마옹의 지휘권을 잠시 이었고 파리 포위전에서 최대의 돌파 공격을 이끈 프랑스 장군",
+    "en": "French general who briefly succeeded the wounded MacMahon at Sedan and led the largest sortie of the siege of Paris"
+   },
+   "bio": {
+    "ko": "크림 전쟁, 알제리, 1859년 이탈리아 원정에서 복무했다. 보불전쟁 초 비상부르 일대 지형을 잘 안다는 이유로 프랑스군 전개를 맡았으나, 지원 없이 놓인 그의 사단은 비상부르 전투에서 프로이센·바이에른 대군에 기습당해 패했다. 1870년 9월 1일 스당에서 마크마옹이 부상하자 지휘권을 이어받아 「우리는 요강 속에 있다」는 말로 상황을 요약하고 퇴각을 명했으나, 후임 위임장을 내민 뱅펜이 그를 제치고 반격을 명했다가 완전히 실패했다. 항복 문서 서명 책임을 거부해 프로이센군에 갇혔다가 탈출해 파리 포위전에 참가했고, 1870년 11월 29일~12월 3일 빌리에 전투에서 포위군에 대한 가장 중요한 공격을 지휘했다. 그 실패 뒤 정부에 강화를 촉구했다.",
+    "en": "He served in the Crimean War, Algeria and the Italian campaign of 1859. At the outbreak of the Franco-Prussian War he oversaw the deployment of French forces because he knew the ground near Wissembourg, but his unsupported division was surprised and defeated there by a large Prussian and Bavarian force. At Sedan on 1 September 1870 he succeeded to command when MacMahon was wounded, summed up the situation by saying they were \"in a chamber pot\" and ordered a withdrawal, until Wimpffen produced a commission to succeed MacMahon, overruled him and ordered a counterattack that failed completely. Refusing responsibility for signing the surrender, he was imprisoned by the Prussians, escaped and commanded the most important French attack on the besiegers of Paris, at Villiers from 29 November to 3 December 1870. After its defeat he urged the government to make peace."
+   },
+   "fate": {
+    "kind": "natural",
+    "label": {
+     "ko": "자연사",
+     "en": "Natural causes"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "Auguste Alexandre Ducrot"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1817–1882",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "24 February 1817 – 16 August 1882"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French general",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "was a French general"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "French general",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "was a French general"
+    },
+    {
+     "field": "bio",
+     "claim": "Crimea, Algeria, Italy 1859",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "Ducrot served in the Crimean War, Algeria, the Italian campaign of 1859, and as a division commander in the Franco-Prussian War."
+    },
+    {
+     "field": "bio",
+     "claim": "defeated at Wissembourg",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "His unsupported division was surprised and defeated by a large force of Prussians and Bavarians at the Battle of Wissembourg."
+    },
+    {
+     "field": "bio",
+     "claim": "succeeded MacMahon at Sedan",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "At the Battle of Sedan on 1 September 1870, he succeeded to command of the French army when Marshal MacMahon was wounded early in the morning."
+    },
+    {
+     "field": "bio",
+     "claim": "the chamber-pot remark",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "Ducrot summed up the situation with the famous remark: « Nous sommes dans un pot de chambre, et nous y serons emmerdés. »"
+    },
+    {
+     "field": "bio",
+     "claim": "Wimpffen overruled him",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "Wimpffen overruled Ducrot, and ordered a counterattack that failed completely."
+    },
+    {
+     "field": "bio",
+     "claim": "refused to sign, imprisoned, escaped",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "Ducrot refused to accept responsibility for signing the articles of surrender and was imprisoned by the Prussians. He soon escaped, and took part in the Siege of Paris."
+    },
+    {
+     "field": "bio",
+     "claim": "Battle of Villiers",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "Ducrot commanded the most important French attack against the Prussian besiegers (the Battle of Villiers, 29 November–3 December 1870)."
+    },
+    {
+     "field": "bio",
+     "claim": "urged peace",
+     "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+     "locator": "lead",
+     "excerpt": "After the defeat of this attack, Ducrot urged the French government to make peace."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "state-france",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": null,
+     "endYear": 1871,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Auguste-Alexandre_Ducrot",
+       "locator": "lead",
+       "claim": "French general: Crimea, Algeria, Italy, division commander in 1870 and commander at the Battle of Villiers",
+       "excerpt": "Ducrot served in the Crimean War, Algeria, the Italian campaign of 1859, and as a division commander in the Franco-Prussian War."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1859
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "이탈리아 원정",
+      "en": "Italian campaign"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "비상부르 전투 사단장, 스당에서 일시 지휘",
+      "en": "Division commander at Wissembourg; briefly in command at Sedan"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1870
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "파리 포위전, 빌리에 전투 지휘",
+      "en": "Siege of Paris; commanded at the Battle of Villiers"
+     }
+    }
+   ],
+   "cyrillic": "Auguste-Alexandre Ducrot"
+  }
+ ]
+}

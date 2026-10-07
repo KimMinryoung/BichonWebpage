@@ -1,0 +1,86 @@
+{
+ "changedBy": "queue-events-20261007-extra",
+ "source": "https://en.wikipedia.org/wiki/Haitian_Revolution",
+ "rows": [
+  [
+   "haitian-revolution-1791-1804",
+   "etienne-polverel",
+   "leader",
+   "민사위원 (서부·남부 관구)",
+   "Civil commissioner (West and South)",
+   "송토나와 함께 1792년 생도맹그에 와 1793년 10월 31일 서부·남부 관구에서 노예제 폐지를 선포했다.",
+   "Came to Saint-Domingue with Sonthonax in 1792 and proclaimed the abolition of slavery in the West and South on 31 October 1793.",
+   "french-republic"
+  ],
+  [
+   "haitian-revolution-1791-1804",
+   "jean-baptiste-belley",
+   "participant",
+   "국민공회 생도맹그 대표",
+   "Saint-Domingue deputy to the Convention",
+   "북부 관구 대표로 파리에 가 국민공회의 첫 흑인 의원이 되었고, 1794년 2월 노예제 폐지 가결에 앞서 호소했다.",
+   "Went to Paris as a deputy for the North, became the Convention's first Black member and spoke before it abolished slavery in February 1794.",
+   "french-republic"
+  ],
+  [
+   "haitian-revolution-1791-1804",
+   "donatien-de-rochambeau",
+   "leader",
+   "원정군 사령관 (1802–1803)",
+   "Commander of the expedition (1802–1803)",
+   "르클레르가 죽은 뒤 지휘를 이어 절멸전을 벌였고, 1803년 11월 베르티에르에서 패해 항복했다.",
+   "Took command after Leclerc's death, waged a war of extermination and surrendered after Vertières in November 1803.",
+   "french-expedition"
+  ],
+  [
+   "haitian-revolution-1791-1804",
+   "thomas-maitland",
+   "leader",
+   "생도맹그 영국군 사령관",
+   "British commander in Saint-Domingue",
+   "1798년 투생과 휴전하고 포르토프랭스에서 철수했으며, 8월 31일 비밀 협정으로 영국군을 생도맹그 전체에서 물렸다.",
+   "Agreed an armistice with Toussaint in 1798, left Port-au-Prince and by the secret agreement of 31 August withdrew the British from all of Saint-Domingue.",
+   "britain-spain-royalists"
+  ],
+  [
+   "franco-prussian-war-1870-1871",
+   "achille-bazaine",
+   "executor",
+   "라인군 사령관",
+   "Commander of the Army of the Rhine",
+   "그라블로트 뒤 메스에 포위되었고 1870년 10월 라인군과 함께 항복했다.",
+   "Besieged in Metz after Gravelotte, he surrendered with the Army of the Rhine in October 1870.",
+   "french-empire-and-republic"
+  ],
+  [
+   "franco-prussian-war-1870-1871",
+   "auguste-alexandre-ducrot",
+   "participant",
+   "스당·파리 포위전의 지휘관",
+   "Commander at Sedan and in the siege of Paris",
+   "스당에서 부상한 마크마옹의 지휘권을 잠시 이었고, 파리 포위전에서 빌리에 돌파 공격을 이끌었다.",
+   "Briefly succeeded the wounded MacMahon at Sedan and led the Villiers sortie during the siege of Paris.",
+   "french-empire-and-republic"
+  ],
+  [
+   "franco-prussian-war-1870-1871",
+   "charles-de-freycinet",
+   "participant",
+   "강베타의 군사 내각 책임자",
+   "Chief of Gambetta's military cabinet",
+   "투르에서 강베타를 도와 점령되지 않은 지방의 군대를 조직했다.",
+   "Assisted Gambetta at Tours in raising the armies of unoccupied France.",
+   "french-empire-and-republic"
+  ],
+  [
+   "franco-prussian-war-1870-1871",
+   "wilhelm-bracke",
+   "participant",
+   "브라운슈바이크 당 위원회",
+   "Brunswick party committee",
+   "사회민주노동자당 중앙위원회로서 전쟁 초기를 방어전으로 보아 베벨·리프크네히트와 부딪쳤고, 평화를 호소해 체포되었다.",
+   "As the SDAP central committee he saw the early war as defensive and clashed with Bebel and Liebknecht, and was arrested for calling for peace.",
+   "international-and-socialists"
+  ]
+ ]
+}
