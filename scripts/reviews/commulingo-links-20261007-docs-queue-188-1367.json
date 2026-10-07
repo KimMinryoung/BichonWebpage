@@ -1,0 +1,118 @@
+{
+ "scope": "2026-10-07 docs queue 188 (Politburo 4 April 1985, surviving pages) and 1367 (Churchill telegram 8 July 1942) — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "politburo-1985-04-04-anti-alcohol",
+   "lang": "ko",
+   "text": "『정치국 회의 작업 기록 — 음주와 알코올 중독 극복 대책에 관하여』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "politburo-1985-04-04-anti-alcohol",
+   "lang": "ko",
+   "text": "1985년 4월 4일 정치국 회의 기록",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "politburo-1985-04-04-anti-alcohol",
+   "lang": "ko",
+   "text": "1985년 4월 4일 정치국 작업 기록",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "politburo-1985-04-04-anti-alcohol",
+   "lang": "en",
+   "text": "Politburo session of 4 April 1985",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "politburo-1985-04-04-anti-alcohol",
+   "lang": "en",
+   "text": "April 4, 1985 Politburo session",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "churchill-roosevelt-1942-07-08-sledgehammer",
+   "lang": "ko",
+   "text": "『처칠이 루스벨트에게 보낸 전보 — 슬레지해머를 접고 북아프리카로』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "churchill-roosevelt-1942-07-08-sledgehammer",
+   "lang": "ko",
+   "text": "처칠의 1942년 7월 8일 전보",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "churchill-roosevelt-1942-07-08-sledgehammer",
+   "lang": "ko",
+   "text": "7월 8일 프랭클린 D. 루스벨트에게 보낸 전보",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "churchill-roosevelt-1942-07-08-sledgehammer",
+   "lang": "en",
+   "text": "Churchill's telegram of 8 July 1942",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 문헌 제목·발신자·날짜를 담은 고유 표현이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "churchill-roosevelt-1942-07-08-sledgehammer",
+   "lang": "en",
+   "text": "true Second Front of 1942",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue 188·1367 링크 검토: 전보 속 인용 구절이라 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}
