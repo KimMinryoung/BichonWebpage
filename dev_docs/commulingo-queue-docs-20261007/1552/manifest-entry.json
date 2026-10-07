@@ -1,0 +1,28 @@
+{
+  "id": "tito-subasic-agreement-1944-11-01",
+  "file": "tito-subasic-agreement-1944-11-01.html",
+  "docLang": "ko",
+  "date": "1944-11-01",
+  "title": {
+    "ko": "유고슬라비아 민족해방위원회와 왕국 정부의 협정 — 티토-슈바시치 협정 (1944년 11월 1일)",
+    "en": "Agreement between the National Committee for the Liberation of Yugoslavia and the Royal Yugoslav Government — the Tito–Šubašić Agreement (1 November 1944)"
+  },
+  "description": {
+    "ko": "티토와 망명 왕국 정부 총리 슈바시치가 베오그라드에서 맺은 협정 전문. 국가의 연속성을 내세워 대외적으로 옛 형태를 유지하되 정부 형태는 국민의 자유로운 결정에 맡기고, 그때까지 페타르 2세는 귀국하지 않으며 섭정단이 왕권을 행사한다고 정했다. 28개 부처의 통합 정부 구성과 민주적 자유 선언의 원칙도 담았다.",
+    "en": "Full text of the agreement signed in Belgrade by Tito and Ivan Šubašić, prime minister of the royal government-in-exile. Invoking the continuity of the state, it kept Yugoslavia's old form abroad while leaving the form of government to a free decision of the people, kept King Peter II out of the country in the meantime with a regency exercising royal power, and set out a 28-portfolio united government and the principles of a declaration of democratic liberties."
+  },
+  "kind": {
+    "ko": "조약·협정",
+    "en": "Treaties & agreements"
+  },
+  "source": "Sporazum Nacionalnog komiteta oslobođenja Jugoslavije i Kraljevske jugoslovenske vlade, 1. novembra 1944, Službeni list DFJ, br. 11, Beograd, 9. mart 1945, 121–122. 저본: B. Petranović, M. Zečević, Jugoslavija 1918–1988. Tematska zbirka dokumenata, Beograd 1988, 691–692 (관보 재수록), https://www.znaci.org/00001/138_62.pdf (2026-10-07 접근). 정부 수반 간 공식 협정으로 저작권 보호 대상 아님.",
+  "people": ["josip-broz-tito", "ivan-subasic", "peter-ii-of-yugoslavia"],
+  "terms": ["avnoj", "democratic-federal-yugoslavia"],
+  "events": ["yugoslav-partisans"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『티토-슈바시치 협정』", "티토-슈바시치 협정", "베오그라드 협정", "1944년 11월 1일 티토-슈바시치 협정"],
+    "en": ["Tito–Šubašić Agreement", "Tito-Subasic Agreement", "Belgrade Agreement of 1 November 1944", "Sporazum Tito–Šubašić"]
+  },
+  "noAutoLink": []
+}
