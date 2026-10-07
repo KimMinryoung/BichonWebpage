@@ -15,14 +15,15 @@
             ],
             dictJump: 'people' }) %>
 
-        <header class="commu-hub-head commu-role-hub-head">
-            <span class="commu-person-medal" aria-hidden="true"><%- roleIconSvg(office.icon) %></span>
-            <div>
-                <span class="commu-office-range"><%= office.range %></span>
-                <h1><%= office.title %></h1>
-                <p><%= office.blurb %></p>
-                <% if (officePeopleHref) { %><p><a class="btn btn-small" href="<%= officePeopleHref %>"><%= en ? 'People who worked in this line' : '이 기관 계열에서 활동한 인물' %> →</a></p><% } %>
-            </div>
+        <header class="ui-card commu-office-head">
+            <<%= officePeopleHref ? 'a' : 'div' %> class="commu-office-head-row"<% if (officePeopleHref) { %> href="<%= officePeopleHref %>"<% } %>>
+                <div class="commu-office-head-title">
+                    <span class="commu-office-range"><%= office.range %></span>
+                    <h1><%= office.title %></h1>
+                </div>
+                <% if (officePeopleHref) { %><span class="commu-office-head-link"><%= en ? 'People →' : '인물 목록 →' %></span><% } %>
+            </<%= officePeopleHref ? 'a' : 'div' %>>
+            <p class="commu-office-head-description"><%= office.blurb %></p>
         </header>
 
         <% if (office.lineage && office.lineage.length) { %>
