@@ -1,0 +1,28 @@
+{
+  "id": "belgrade-declaration-1955",
+  "file": "belgrade-declaration-1955.html",
+  "docLang": "ko",
+  "date": "1955-06-02",
+  "title": {
+    "ko": "베오그라드 선언 (1955년 6월 2일)",
+    "en": "The Belgrade Declaration (2 June 1955)"
+  },
+  "description": {
+    "ko": "흐루쇼프·불가닌이 이끈 소련 대표단과 티토의 유고슬라비아 대표단이 회담 끝에 서명한 두 정부의 공동 선언. 사회주의 발전의 구체적 형태는 각 나라 인민이 정할 일이라는 내정 불간섭 원칙을 밝히고 관계 정상화를 위한 여덟 개 합의를 담았다.",
+    "en": "Joint declaration of the Soviet and Yugoslav governments signed at the end of talks between the delegations led by Khrushchev and Bulganin and by Tito. It states the principle of non-interference, holding that the concrete forms of socialist development are solely the affair of each country's people, and sets out eight agreements for normalizing relations."
+  },
+  "kind": {
+    "ko": "조약·협정",
+    "en": "Treaties & agreements"
+  },
+  "source": "Декларация Правительств Союза Советских Социалистических Республик и Федеративной Народной Республики Югославии, Белград, 2 июня 1955 г. Russian text: «Заря Востока» (Тбилиси), 3 июня 1955, № 130 (9322), с. 1 (National Parliamentary Library of Georgia, https://dspace.nplg.gov.ge/bitstream/1234/480897/1/Zaria_Vostoka_1955_N130.pdf, accessed 2026-10-07; OCR corrected against the page image). Checked against the Serbo-Croatian text (Borba, 3 June 1955; abridged in Jugoslavija 1918–1988, pp. 1041–1043, znaci.org 138_83). Russian and Serbo-Croatian texts are both authentic. Official intergovernmental declaration; not subject to private copyright.",
+  "people": ["khrushchev", "bulganin", "josip-broz-tito", "mikoyan", "shepilov", "gromyko", "pavel-kumykin", "edvard-kardelj", "aleksandar-rankovic"],
+  "terms": ["peaceful-coexistence", "united-nations"],
+  "events": ["tito-stalin-split"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『베오그라드 선언』", "베오그라드 선언", "1955년 베오그라드 선언", "소련·유고슬라비아 정부 선언"],
+    "en": ["Belgrade Declaration", "Belgrade Declaration of 1955", "Soviet–Yugoslav Belgrade Declaration"]
+  },
+  "noAutoLink": []
+}
