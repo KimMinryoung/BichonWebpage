@@ -1,0 +1,49 @@
+{
+  "id": "politburo-1985-04-04-anti-alcohol",
+  "file": "politburo-1985-04-04-anti-alcohol.html",
+  "docLang": "ko",
+  "date": "1985-04-04",
+  "title": {
+    "ko": "정치국 회의 작업 기록 — 음주와 알코올 중독 극복 대책에 관하여 (1985년 4월 4일, 발췌 사본)",
+    "en": "Politburo Session Working Record on Measures to Overcome Drunkenness and Alcoholism (4 April 1985, surviving excerpt)"
+  },
+  "description": {
+    "ko": "반알코올 캠페인을 정치국에 올린 회의의 발언 기록. 솔로멘체프의 보고, 데멘체프·보로닌의 예산·상품 공급 경고와 고르바초프의 「취한 예산」 발언이 실렸다. 공개 사본은 214–247쪽이 빠져 토론 후반과 결정이 없다.",
+    "en": "The working record of the Politburo session that took up the anti-alcohol campaign: Solomentsev's report, the budget and supply warnings of Dementsev and Voronin, and Gorbachev's remark about the 'drunken budget'. The only public copy lacks pages 214–247, so the rest of the debate and the decision are missing."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Заседание Политбюро ЦК КПСС 4 апреля 1985 года (Рабочая запись), сов. секретно, экз. единственный; архивные листы 200–213, 248–251 (лл. 214–247 в копии отсутствуют). Facsimile from the Volkogonov Papers (Library of Congress, reel 18): National Security Archive, Russian pages «Архив Перестройки — Политбюро», doc. 3 (https://nsarchive.gwu.edu/media/25711), accessed 2026-10-07. Official CPSU record; not subject to private copyright.",
+  "people": [
+    "gorbachev", "mikhail-solomentsev", "viktor-dementsev", "lev-voronin",
+    "heydar-aliyev", "vitaly-vorotnikov", "viktor-grishin", "gromyko", "grigory-romanov",
+    "demichev", "vladimir-dolgikh", "chebrikov", "mikhail-zimyanin", "kapitonov",
+    "konstantin-rusakov", "ryzhkov", "arvids-pelshe", "ivan-bodiul", "shevardnadze",
+    "leo-tolstoy", "lenin", "stalin", "khrushchev", "brezhnev", "chernenko",
+    "karl-marx", "friedrich-engels"
+  ],
+  "terms": [
+    "anti-alcohol-campaign", "politburo-of-the-cpsu", "samogon", "narcological-service",
+    "plenum-of-the-central-committee", "gosplan", "goelro", "komsomol", "nep",
+    "collectivization", "kulak", "first-international", "cult-of-personality",
+    "collective-leadership"
+  ],
+  "events": [
+    "anti-alcohol-campaign"
+  ],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": [
+      "『정치국 회의 작업 기록 — 음주와 알코올 중독 극복 대책에 관하여』",
+      "1985년 4월 4일 정치국 회의 기록",
+      "1985년 4월 4일 정치국 작업 기록"
+    ],
+    "en": [
+      "Politburo session of 4 April 1985",
+      "April 4, 1985 Politburo session"
+    ]
+  },
+  "noAutoLink": []
+}
