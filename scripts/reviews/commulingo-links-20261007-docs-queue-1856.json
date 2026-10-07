@@ -1,0 +1,74 @@
+{
+ "scope": "2026-10-07 docs queue 1856 Vietnam–Laos treaty — alias link review",
+ "references": [
+  "dev_docs/commulingo-queue-docs-20261007/PLAN.md"
+ ],
+ "decisions": [
+  {
+   "kind": "doc",
+   "id": "vietnam-laos-friendship-treaty-1977",
+   "lang": "ko",
+   "text": "『베트남-라오스 우호협력조약』",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 1856 링크 검토: 두 나라와 연도를 담은 조약 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-laos-friendship-treaty-1977",
+   "lang": "ko",
+   "text": "베트남-라오스 우호협력조약",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 1856 링크 검토: 두 나라와 연도를 담은 조약 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-laos-friendship-treaty-1977",
+   "lang": "ko",
+   "text": "베트남과 우호협력조약",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 docs queue 1856 링크 검토: 상대국이 빠진 표현이라 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-laos-friendship-treaty-1977",
+   "lang": "ko",
+   "text": "1977년 베트남-라오스 조약",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 1856 링크 검토: 두 나라와 연도를 담은 조약 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-laos-friendship-treaty-1977",
+   "lang": "en",
+   "text": "Vietnam–Laos Treaty of Friendship and Cooperation",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 1856 링크 검토: 두 나라와 연도를 담은 조약 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "doc",
+   "id": "vietnam-laos-friendship-treaty-1977",
+   "lang": "en",
+   "text": "1977 Lao–Vietnamese Treaty of Friendship and Cooperation",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 docs queue 1856 링크 검토: 두 나라와 연도를 담은 조약 이름이라 이 문헌만 가리킴. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}
