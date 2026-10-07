@@ -1,0 +1,28 @@
+{
+  "id": "castro-1961-04-16-socialist-declaration",
+  "file": "castro-1961-04-16-socialist-declaration.html",
+  "docLang": "ko",
+  "date": "1961-04-16",
+  "title": {
+    "ko": "폭격 희생자 장례식 연설 — 쿠바 혁명의 사회주의적 성격 선언 (1961년 4월 16일)",
+    "en": "Funeral Address for the Victims of the Air Raids — Declaration of the Socialist Character of the Cuban Revolution (16 April 1961)"
+  },
+  "description": {
+    "ko": "1961년 4월 15일 공습 희생자의 장례식에서 피델 카스트로가 한 연설 전문. 공습을 쿠바 공군 탈영병의 소행으로 전한 미국 통신사 기사와 유엔 발언을 반박한 끝에 「우리가 바로 미국의 코앞에서 사회주의 혁명을 이루었다」고 처음 공개 선언하고 침공에 대비한 동원을 명령했다.",
+    "en": "Full text of Fidel Castro's address at the funeral of the victims of the air raids of 15 April 1961. After rebutting the US wire reports and UN statements that blamed the raids on defecting Cuban pilots, he publicly declared for the first time that 'we have made a socialist revolution right under the very nose of the United States' and ordered mobilization against the coming invasion."
+  },
+  "kind": {
+    "ko": "저작·연설",
+    "en": "Writings & speeches"
+  },
+  "source": "Discurso pronunciado por Fidel Castro Ruz en las honras fúnebres de las víctimas del bombardeo a distintos puntos de la república, efectuado en 23 y 12, frente al cementerio de Colón, el día 16 de abril de 1961. 쿠바 정부 공식 사이트 「Discursos e intervenciones del Comandante en Jefe Fidel Castro Ruz」, http://www.cuba.cu/gobierno/discursos/1961/esp/f160461e.html (2026-10-07 접근). 국가 지도자(혁명정부 총리)의 공식 연설로 게재.",
+  "people": ["fidel-castro", "john-f-kennedy", "adlai-stevenson"],
+  "terms": [],
+  "events": ["cuban-revolution-1959-1961"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『폭격 희생자 장례식 연설』", "카스트로의 사회주의 선언 연설", "1961년 4월 16일 연설", "사회주의 혁명 선언 연설", "4월 16일 장례식 연설"],
+    "en": ["Castro's socialist declaration speech", "speech of 16 April 1961", "funeral address of 16 April 1961", "Castro's 16 April 1961 speech"]
+  },
+  "noAutoLink": []
+}
