@@ -2,490 +2,683 @@
   "id": "queue-events-20261007",
   "terms": [
     {
-      "id": "saint-domingue",
+      "id": "ems-dispatch",
       "sources": [
-        "https://en.wikipedia.org/wiki/Saint-Domingue",
-        "https://en.wikipedia.org/wiki/Haitian_Revolution"
+        "https://en.wikipedia.org/wiki/Ems_Dispatch",
+        "https://en.wikipedia.org/wiki/Franco-Prussian_War"
       ],
       "fields": {
         "term": {
-          "ko": "생도맹그",
-          "en": "Saint-Domingue"
+          "ko": "엠스 전보",
+          "en": "Ems Dispatch"
         },
-        "category": "state",
+        "category": "diplomacy",
         "period": {
-          "ko": "1659–1804",
-          "en": "1659–1804"
+          "ko": "1870년 7월 13일",
+          "en": "13 July 1870"
         },
-        "startYear": 1659,
-        "endYear": 1804,
+        "startYear": 1870,
+        "endYear": 1870,
         "definition": {
-          "ko": "1659년부터 1804년까지 이스파니올라섬 서쪽 3분의 1을 차지한 프랑스 식민지로, 오늘날의 아이티다. 1697년 레이스베이크 조약으로 스페인이 프랑스의 지배를 인정했고, 18세기에 노예 노동에 기댄 설탕·커피 플랜테이션으로 「앙티유의 진주」라 불리는 프랑스 최대의 부의 원천이 되었다. 1791년 노예 봉기로 시작된 아이티 혁명 끝에 1804년 1월 1일 아이티로 독립했다.",
-          "en": "The French colony on the western third of Hispaniola from 1659 to 1804, today's Haiti. Spain recognised French rule in the Treaty of Ryswick of 1697, and in the eighteenth century sugar and coffee plantations worked by enslaved Africans made it the \"Pearl of the Antilles\", France's richest colony. The Haitian Revolution that began with the slave rising of 1791 ended with its independence as Haiti on 1 January 1804."
+          "ko": "1870년 7월 13일 바트엠스에서 프로이센 국왕 빌헬름 1세가 프랑스 대사 베네데티의 요구를 거절한 사실을 베를린에 알린 전보와, 비스마르크가 이를 줄여 그날 저녁 언론에 공개한 발표문. 왕이 대사를 모욕했다는 인상을 주어 7월 19일 프랑스의 선전포고와 보불전쟁을 불렀다.",
+          "en": "The telegram of 13 July 1870 reporting to Berlin that King Wilhelm I of Prussia had refused the demand of the French ambassador Benedetti at Bad Ems, and the shortened version Bismarck released to the press that evening. By suggesting that the king had insulted the ambassador it provoked the French declaration of war on 19 July and the Franco-Prussian War."
         },
         "body": {
-          "ko": "프랑스 해적들은 1625년 토르튀섬에 자리 잡았고 1659년 루이 14세의 인가로 정착지가 공식화되었다. 스페인은 1697년 레이스베이크 조약에서 섬 서쪽 3분의 1에 대한 프랑스의 존재를 묵인했다. 7년 전쟁 뒤 식민지는 급속히 팽창해 1767년 원당 7,200만 파운드와 정제당 5,100만 파운드, 인디고 100만 파운드, 면화 200만 파운드를 수출했고, 1780년대에는 유럽에서 소비되는 설탕의 약 40%와 커피의 60%를 생산했다. 1789년 약 8,000개의 플랜테이션이 유럽과 아메리카에서 소비되는 설탕과 커피의 절반을 생산했으며, 하와이나 벨기에만 한 이 식민지 하나가 영국령 서인도 전체보다 많은 설탕과 커피를 냈다. 1681~1791년에 들어온 노예는 79만~86만 명으로 추정되고 1783~1791년에는 대서양 노예무역의 3분의 1을 차지했으며, 1787년 이후 해마다 3만 명 이상이 수입되었다. 열대병과 노예제의 조건 때문에 자연 증가가 불가능해 노예의 다수는 언제나 아프리카 태생이었다. 설탕 플랜테이션은 경작지의 14%만 차지했지만 평균 300명, 최대 1,400명의 노예를 부렸고, 커피는 경작지의 50%를 차지했다.\n\n1789년 무렵 인구는 백인 4만~4만 5천 명, 자유 유색인 2만 8천~3만 2천 명, 노예 40만 6천~46만 5천 명이었다. 백인은 대부분 프랑스에 사는 소수의 「그랑 블랑」과 장인·소상인·감독인 「프티 블랑」으로 나뉘었고, 자유 유색인은 카리브해에서 가장 크고 부유한 집단으로 1789년 플랜테이션 재산의 3분의 1과 노예의 4분의 1을 소유했으며 커피 농장을 사실상 독점했다. 그러나 1760년대부터 부르봉 왕정은 이들에게 특정 직업, 유럽식 복장, 공공장소에서의 무기 휴대를 금지하는 차별법을 두었다. 1791년 8월 부아 카이망의 집회로 시작된 노예 봉기는 1793년 노예제 폐지와 1794년 국민공회의 추인으로 이어졌고, 투생 루베르튀르 아래 프랑스는 1795~1802년 섬 전체를 지배했다. 1802년 르클레르 원정이 다시 봉기를 부르자 프랑스군은 1803년 말 철수했고, 식민지는 1804년 타이노어 이름을 따 아이티로 독립했다.",
-          "en": "French buccaneers settled on Tortuga in 1625, and the settlement was officially established under a commission of Louis XIV in 1659. Spain tacitly recognised the French presence in the western third of the island in the Peace of Ryswick of 1697. After the Seven Years' War the colony expanded rapidly: in 1767 it exported 72 million pounds of raw sugar, 51 million pounds of refined sugar, a million pounds of indigo and two million pounds of cotton, and by the 1780s it produced about 40 percent of the sugar and 60 percent of the coffee consumed in Europe. By 1789 some 8,000 plantations produced half of all the sugar and coffee consumed in Europe and the Americas, and this colony roughly the size of Hawaiʻi or Belgium produced more of both than all the British West Indies combined. An estimated 790,000 to 860,000 slaves were brought in between 1681 and 1791, a third of the entire Atlantic slave trade in 1783–1791, and from 1787 more than 30,000 a year. Tropical disease and the conditions of slavery prevented natural increase, so that a majority of the slaves were always African-born. Sugar plantations occupied only 14 percent of cultivated land but employed 300 slaves on average and 1,400 at the largest, while coffee took up 50 percent of the land.\n\nAround 1789 the population was 40,000–45,000 whites, 28,000–32,000 free people of colour and 406,000–465,000 slaves. The whites were divided between a small group of grands blancs, most of whom lived in France, and the petits blancs, artisans, small traders and overseers; the free people of colour, the largest and wealthiest such population in the Caribbean, owned a third of the plantation property and a quarter of the slaves by 1789 and held a near monopoly of coffee planting. From the 1760s, however, the Bourbon authorities subjected them to discriminatory statutes forbidding certain professions, European clothing and the carrying of arms in public. The slave rising that began with the ceremony at Bois Caïman in August 1791 led to the abolition of slavery in 1793 and its confirmation by the Convention in 1794, and under Toussaint Louverture France controlled the whole island from 1795 to 1802. When the Leclerc expedition of 1802 provoked a new rising, the French withdrew at the end of 1803, and the colony declared its independence as Haiti, from the Taíno name of the island, in 1804."
-        },
-        "aliases": {
-          "ko": [],
-          "en": [
-            "Saint Domingue",
-            "San Domingo"
-          ]
-        },
-        "people": [
-          "toussaint-louverture",
-          "leger-felicite-sonthonax"
-        ],
-        "events": [
-          "haitian-revolution-1791-1804",
-          "french-revolution-1789-1799"
-        ],
-        "evidence": [
-          {
-            "field": "definition",
-            "claim": "The French colony on the western third of Hispaniola from 1659 to 1804, today's Haiti. Spain recognised French rule in the Treaty of Ryswick of 1697, and in the eighteenth century sugar and coffee plantations worked by enslaved Africans made it the \"Pearl of the Antilles\", France's richest colony. The Haitian Revolution that began with the slave rising of 1791 ended with its independence as Haiti on 1 January 1804.",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
-            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
-          },
-          {
-            "field": "body",
-            "claim": "French buccaneers settled on Tortuga in 1625, and the settlement was officially established under a commission of Louis XIV in 1659. Spain tacitly recognised the French presence in the western third of the island in the Peace of Ryswick of 1697. After the Seven Years' War the colony expanded rapidly",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
-            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
-          },
-          {
-            "field": "period",
-            "claim": "1659–1804",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
-            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
-          },
-          {
-            "field": "startYear",
-            "claim": "1659",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
-            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
-          },
-          {
-            "field": "endYear",
-            "claim": "1804",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
-            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
-          }
-        ],
-        "original": "Saint-Domingue",
-        "region": "americas"
-      }
-    },
-    {
-      "id": "code-noir",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Code_Noir",
-        "https://en.wikipedia.org/wiki/Haitian_Revolution",
-        "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
-        "https://en.wikipedia.org/wiki/Haitian_independence_debt"
-      ],
-      "fields": {
-        "term": {
-          "ko": "코드 누아르",
-          "en": "Code Noir"
-        },
-        "category": "repression",
-        "period": {
-          "ko": "1685–1848",
-          "en": "1685–1848"
-        },
-        "startYear": 1685,
-        "endYear": 1848,
-        "definition": {
-          "ko": "1685년 3월 루이 14세가 공포한, 프랑스령 아메리카 섬들의 노예제 조건을 규정한 칙령. 노예의 세례와 가톨릭 교육, 일요일 휴식, 혼인의 조건을 정하는 한편 노예를 압류할 수 없는 재산으로 취급하고 도주 노예에게 귀 절단, 힘줄 절단, 사형의 단계적 형벌을 정했으며, 유대인 추방과 자유 유색인의 활동 제한을 담았다. 1794년 폐지되었다가 1802년 되살아나 1848년 노예제 폐지까지 효력을 가졌다.",
-          "en": "The ordinance of March 1685 by which Louis XIV defined the conditions of slavery in the French islands of the Americas. It required the baptism and Catholic instruction of slaves, Sunday rest and conditions for marriage, while treating slaves as property immune from seizure and prescribing graduated punishments for runaways (ears cut off, hamstringing, death), expelling the Jews and restricting the activities of free people of colour. Abolished in 1794, it was reinstated in 1802 and remained in force until the abolition of slavery in 1848."
-        },
-        "body": {
-          "ko": "1681년 루이 14세는 카리브해 흑인 인구에 관한 법규를 만들기로 하고 콜베르에게 작성을 맡겼으며, 마르티니크 지사 파툴레와 그 후임 베공의 의견서를 바탕으로 해군장관 세뉼레 후작이 초안을 썼다. 1685년 3월 「아메리카 섬들의 노예에 관한 칙령」으로 공포된 이 법은 프랑스 땅을 밟은 사람은 누구나 자유라는 원칙 때문에 본국의 고등법원들이 등록을 거부해, 마르티니크(1685년 8월 6일), 과들루프(12월 10일), 생도맹그(1687년 5월 6일) 등 식민지에서만 시행되었다. 「코드 누아르」라는 이름은 1715~1723년 섭정기에 처음 쓰였다. 60개 조항은 노예를 압류 불가의 재산(제44조)이자 형사 책임의 주체(제32조)로 규정했고, 세례와 가톨릭 교육(제2조), 일요일과 축일의 노동·매매 금지(제6조), 주인의 허락과 노예 본인의 동의를 요하는 혼인(제10~11조), 어머니의 신분을 따르는 자녀(제12~13조), 부부와 어린 자녀를 따로 팔지 못하게 하는 조항(제47조)을 두었다. 무기 휴대와 집회를 금지했고, 주인을 때린 노예는 사형, 한 달 도주한 노예는 귀 절단과 낙인, 두 번째는 힘줄 절단, 세 번째는 사형이었다(제38조). 주인은 노예를 쇠사슬로 묶고 때릴 수 있었으나 고문과 신체 훼손은 금지되었고(제42조), 노예를 죽인 주인은 처벌받게 되어 있었다(제43조).\n\n실제로는 보호 조항이 지켜지지 않았다. 생도맹그의 농장주들은 코드를 공공연히 어겼고 18세기 지방 입법은 그 일부를 뒤집었으며, 1793년 5월 5일 민사위원 폴브렐이 코드의 시행을 요구하는 포고를 크레올어로 번역해 모든 농장에서 낭독하게 했을 정도였다. 국민공회는 1794년 노예제를 폐지했지만, 1802년 아미앵 조약으로 식민지를 돌려받은 뒤 5월 20일 법으로 마르티니크·세인트루시아·토바고와 마스카렌 제도에서, 7월 16일 통령 명령으로 과들루프에서, 12월 7일 기아나에서 노예제와 코드 누아르가 되살아났다. 코드는 나폴레옹 법전과 43년간 공존하다 1848년 제2공화국의 노예제 폐지로 효력을 잃었다. 1825년 프랑스가 아이티에 요구한 1억 5천만 프랑의 배상액은 노예 노동자가 농장 가치의 30~60%를 이룬다고 본 코드 누아르 제44조와 제48조를 근거로 산정되었다.",
-          "en": "In 1681 Louis XIV decided to create a statute for the Black population of the French Caribbean and entrusted its drafting to Colbert; the naval minister the Marquis de Seignelay wrote the text on the basis of memoranda from Patoulet, intendant of Martinique, and his successor Bégon. Promulgated in March 1685 as the \"Ordinance or edict of March 1685 on the slaves of the islands of America\", it was refused registration by the parlements of France, on the principle that anyone who set foot on French soil was free, and was instituted only in the colonies: Martinique on 6 August 1685, Guadeloupe on 10 December and Saint-Domingue on 6 May 1687. The title Code noir first appeared during the Regency of 1715–1723. Its 60 articles made the slave property immune from seizure (article 44) yet criminally liable (article 32), required baptism and Catholic instruction (article 2), forbade work and sales on Sundays and holy days (article 6), made marriage depend on the master's permission and the slave's consent (articles 10–11), made children follow the mother's status (articles 12–13) and forbade selling a couple and their young children separately (article 47). Slaves could not carry arms or gather; a slave who struck his master was executed, and a runaway absent for a month had his ears cut off and was branded, a second time was hamstrung, and a third time executed (article 38). Masters might chain and beat slaves but not torture or mutilate them (article 42), and a master who killed a slave was to be prosecuted (article 43).\n\nIn practice the protective clauses were not kept. The planters of Saint-Domingue openly and consistently broke the code, local legislation reversed parts of it during the eighteenth century, and on 5 May 1793 the civil commissioner Polverel had to issue a proclamation demanding its enforcement, translated into Creole and read aloud on every plantation. The Convention abolished slavery in 1794, but after the Treaty of Amiens returned the colonies, slavery and the provisions of the Code noir were put back in place by the law of 20 May 1802 in Martinique, Saint Lucia, Tobago and the Mascarenes, by consular decree of 16 July 1802 in Guadeloupe and of 7 December in Guiana. The code coexisted with the Napoleonic code for forty-three years until the abolition of slavery by the Second Republic in 1848. The indemnity of 150 million francs that France demanded of Haiti in 1825 was calculated on articles 44 and 48 of the Code noir, under which the enslaved labourers of an estate constituted 30 to 60 percent of its value."
+          "ko": "1866년 전쟁 뒤 프랑스는 「사도바의 복수」를 외쳤고, 1868년 에스파냐 왕위가 비자 호엔촐레른지크마링겐 가의 레오폴트 공이 후보로 떠올랐다. 프랑스의 항의로 레오폴트가 7월 11일 후보를 거두자 외무장관 그라몽은 한 걸음 더 나가, 프로이센 왕이 앞으로 어떤 호엔촐레른도 내세우지 않겠다고 보장하고 나폴레옹 3세에게 사과 편지를 보내라고 요구했다. 7월 13일 아침 바트엠스의 쿠어잘 산책로에서 베네데티가 왕을 붙들고 이 요구를 전했고, 왕은 「언제까지나(à tout jamais)」 약속할 수는 없다며 정중히 거절한 뒤 그날 더는 대사를 접견하지 않고 부관을 통해 할 말이 없다고 알렸다. 외무부 고문 하인리히 아베켄이 이 경위를 왕의 지시에 따라 베를린의 비스마르크에게 전보로 보냈고, 왕은 이 내용을 대사관과 언론에 알려도 좋다고 덧붙였다.\n\n비스마르크는 아베켄의 문안에서 왕의 유화적 표현을 지우고, 프랑스가 전쟁 위협 아래 요구했으며 왕이 거부했다는 요지만 남긴 발표문을 그날 저녁 언론과 각국 공사관에 돌렸다. 발표문은 베네데티가 더 무례하고 왕이 더 퉁명스러웠다는 인상을 양쪽에 주었다. 아바스 통신의 프랑스어 번역은 고급 부관을 뜻하는 「Adjutant」를 하사관을 뜻하는 「adjudant」로 옮겨 모욕의 인상을 키웠고, 이 번역이 7월 14일 혁명 기념일 아침 신문에 실렸다. 비스마르크는 자기 발표문이 「갈리아 황소에게 붉은 천 같은 효과」를 낼 것이라고 말했다. 파리의 군중은 전쟁을 외쳤고 15일 동원령, 19일 선전포고가 이어졌다. 영어 위키백과는 프랑스의 선전포고에 이 전보가 「오히려 무관했다」며 나폴레옹 3세가 정권 안정을 위해 이미 전쟁을 결심했다고 보지만, 비스마르크가 여러 선택지를 열어 두다 기회가 오자 감정을 자극할 뜻으로 공개했다는 점에서는 그의 책임도 인정한다. 비스마르크는 뒤에 「이 문서가 전쟁의 원인으로 제시되어야 했다」고 썼고, 베네데티는 1871년 『나의 프로이센 사명』으로 자신을 변호했다.",
+          "en": "After the war of 1866 France cried for \"revenge for Sadowa\", and when the Spanish throne fell vacant in 1868 Prince Leopold of Hohenzollern-Sigmaringen emerged as a candidate. When Leopold withdrew on 11 July under French protest, the foreign minister Gramont went further and demanded that the Prussian king guarantee that no Hohenzollern would ever be a candidate again, and send Napoleon III a letter of apology. On the morning of 13 July Benedetti stopped the king on the promenade of the Kursaal at Bad Ems and presented the demand; the king refused politely, saying he could not bind himself \"à tout jamais\", and later that day declined to receive the ambassador again, informing him through an adjutant that he had nothing further to say. The foreign-office councillor Heinrich Abeken reported the episode by telegram to Bismarck in Berlin on the king's instructions, and the king added that the demand and its rejection might be communicated to the embassies and the press.\n\nBismarck struck the king's conciliatory phrases from Abeken's text, left only the statement that France had made demands under threat of war and the king had refused, and circulated the result to the press and the foreign embassies that evening. The communiqué made Benedetti seem more demanding and the king more abrupt than either had been. The French translation by the Havas agency turned \"Adjutant\", a high-ranking aide, into \"adjudant\", a non-commissioned officer, heightening the impression of an insult, and this version appeared in the papers on the morning of 14 July, the national holiday. Bismarck said his release would have \"the effect of a red rag on the Gallic bull\". Crowds in Paris demanded war, mobilisation followed on the 15th and the declaration of war on the 19th. The English Wikipedia judges the dispatch \"rather irrelevant\" to the French declaration, since Napoleon III had already decided on war to stabilise his regime, but holds Bismarck responsible in that he kept several options open and, when the opportunity came, published the message with the intention of stirring up emotions. Bismarck later wrote that the document \"was then to be presented as the cause of the war\", and Benedetti defended himself in Ma mission en Prusse in 1871."
         },
         "aliases": {
           "ko": [
-            "흑인법전"
+            "엠스 급보",
+            "엠스 전문",
+            "엠저 데페셰"
           ],
           "en": [
-            "Code noir",
-            "Black Code"
-          ]
-        },
-        "people": [],
-        "events": [
-          "haitian-revolution-1791-1804"
-        ],
-        "evidence": [
-          {
-            "field": "definition",
-            "claim": "The ordinance of March 1685 by which Louis XIV defined the conditions of slavery in the French islands of the Americas. It required the baptism and Catholic instruction of slaves, Sunday rest and conditions for marriage, while treating slaves as property immune from seizure and prescribing graduated punishments for runaways (ears cut off, hamstringing, death), expelling the Jews and restricting the activities of free people of colour. Abolished in 1794, it was reinstated in 1802 and remained in force until the abolition of slavery in 1848.",
-            "source": "https://en.wikipedia.org/wiki/Code_Noir",
-            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
-          },
-          {
-            "field": "body",
-            "claim": "In 1681 Louis XIV decided to create a statute for the Black population of the French Caribbean and entrusted its drafting to Colbert; the naval minister the Marquis de Seignelay wrote the text on the basis of memoranda from Patoulet, intendant of Martinique, and his successor Bégon. Promulgated in M",
-            "source": "https://en.wikipedia.org/wiki/Code_Noir",
-            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
-          },
-          {
-            "field": "period",
-            "claim": "1685–1848",
-            "source": "https://en.wikipedia.org/wiki/Code_Noir",
-            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
-          },
-          {
-            "field": "startYear",
-            "claim": "1685",
-            "source": "https://en.wikipedia.org/wiki/Code_Noir",
-            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
-          },
-          {
-            "field": "endYear",
-            "claim": "1848",
-            "source": "https://en.wikipedia.org/wiki/Code_Noir",
-            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
-          }
-        ],
-        "original": "Code noir",
-        "region": "americas"
-      }
-    },
-    {
-      "id": "law-of-16-pluviose-year-ii",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
-        "https://en.wikipedia.org/wiki/Haitian_Revolution",
-        "https://en.wikipedia.org/wiki/Law_of_20_May_1802",
-        "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley"
-      ],
-      "fields": {
-        "term": {
-          "ko": "플뤼비오즈 16일 법령",
-          "en": "Law of 16 Pluviôse Year II"
-        },
-        "category": "state",
-        "period": {
-          "ko": "1794–1802",
-          "en": "1794–1802"
-        },
-        "startYear": 1794,
-        "endYear": 1802,
-        "definition": {
-          "ko": "1794년 2월 4일(혁명력 2년 플뤼비오즈 16일) 국민공회가 모든 프랑스 식민지의 노예제 폐지를 선언하고 식민지에 거주하는 모든 사람을 피부색의 구별 없이 프랑스 시민으로 인정한 법령. 생도맹그에서 송토나(1793년 8월 29일)와 폴브렐(10월 31일)이 먼저 선포한 해방을 뒤늦게 추인한 것으로, 역사상 첫 노예제 폐지로 꼽히기도 하며 1802년 5월 20일 나폴레옹의 법으로 뒤집혔다.",
-          "en": "The decree of 4 February 1794 (16 Pluviôse Year II) by which the National Convention declared slavery abolished in all the French colonies and recognised all men living in them, without distinction of colour, as French citizens. It ratified after the fact the emancipation already proclaimed in Saint-Domingue by Sonthonax (29 August 1793) and Polverel (31 October), is sometimes counted as the first abolition of slavery in history, and was reversed by Napoleon's Law of 20 May 1802."
-        },
-        "body": {
-          "ko": "1788년 브리소와 클라비에르가 세운 흑인우호협회가 폐지를 주장했지만, 혁명 초기의 폐지안은 귀족의 반대로 철회되었고 1790년 국민의회는 노예제 유지를 확인했다. 1791년 생도맹그의 노예 봉기와 영국·스페인의 침공 앞에서 민사위원 송토나와 폴브렐은 1793년 6월 자신들 편에서 싸울 노예에게 자유를 주었고, 8월 29일 송토나가 북부에서, 10월 31일 폴브렐이 서부와 남부에서 노예제를 폐지했다. 두 사람 모두 폐지론자였으나 파리로부터 그런 권한을 받은 적이 없었고, 스페인 편에 서 있던 투생 루베르튀르는 그 진정성을 의심했다. 송토나가 파리로 보낸 생도맹그 대표 뒤페, 벨레, 밀스는 반대파에게 잠시 체포되었다가 국민공회에서 환영받았고, 실용과 도덕 양면에서 해방을 변호했다. 들라크루아가 「긴 토론으로 공회의 명예를 더럽히지 말자」고 외치자 법령은 박수로 통과되었다. 「국민공회는 모든 식민지에서 노예제가 폐지되었음을 선언한다. 따라서 식민지에 거주하는 모든 사람은 피부색의 구별 없이 프랑스 시민이며 헌법이 보장하는 모든 권리를 누린다.」 공안위원회가 집행 조치를 즉시 보고하도록 위임되었고, 당통은 「오늘 우리는 보편적 자유를 선포한다」고 말했다.\n\n공안위원회는 서인도에 1,200명의 병력을 보내 영국과 프랑스 왕당파에게서 과들루프를 되찾고 다른 섬들을 공격하는 기지로 삼았다. 법령은 이 지역의 흑인을 공화국 편으로 끌어들였고 투생이 스페인에서 프랑스로 돌아선 결정에 영향을 주었을 수 있으나, 그가 그 소식을 제때 알았는지는 분명하지 않다. 1793년 9월 왕당파가 봉기한 마르티니크는 1794년 영국에 점령되어 법령의 적용을 받지 않았고, 인도양의 일드프랑스와 레위니옹은 식민자들의 반대로 시행을 거부했다. 시행된 곳에서도 물질적 조건은 크게 달라지지 않았다. 과들루프의 해방 노예들은 부랑 금지법으로 사실상 농장에 묶였고 법정 임금을 받지 못했으며, 생도맹그의 공화국 관리들은 플랜테이션 경제를 유지하려 해 자율을 원하는 해방 노예들과 충돌했다. 법령과 인권선언의 사본은 베네수엘라, 브라질, 자메이카, 쿠바의 노예 반란을 자극했다. 브뤼메르 18일 뒤 나폴레옹은 친노예제 로비에 설득되어 트뤼게에게 「나는 백인이기 때문에 백인 편이다. 다른 이유는 없으며 이것이 옳은 이유다」라고 썼고, 1802년 5월 20일 법으로 아미앵 조약으로 돌려받은 식민지의 노예제와 노예무역을 되살렸다. 이 법은 노예제가 이미 폐지된 생도맹그에는 적용되지 않았으나, 과들루프의 복원 소식이 생도맹그의 재봉기를 불러 르클레르 원정의 실패로 이어졌다.",
-          "en": "The Society of the Friends of the Blacks, founded by Brissot and Clavière in 1788, argued for abolition, but a measure proposed at the start of the Revolution was dropped under noble opposition and in 1790 the National Assembly affirmed its support for the continuation of slavery. Facing the slave rising of 1791 in Saint-Domingue and the British and Spanish invasions, the civil commissioners Sonthonax and Polverel decreed in June 1793 that slaves willing to fight under them would be freed; on 29 August Sonthonax abolished slavery in the north and on 31 October Polverel in the west and south. Both were abolitionists but had received no such orders from Paris, and Toussaint Louverture, then allied with the Spanish, doubted their sincerity. The Saint-Domingue deputies Dufay, Belley and Mills, sent by Sonthonax, were briefly arrested by his opponents but well received by the Convention, where they justified emancipation on practical and moral grounds. When Delacroix exclaimed that the Convention should not \"dishonor itself by a long discussion\", the law passed by acclamation: \"The National Convention declares slavery abolished throughout all the colonies: consequently, it decrees that all men, without distinction of color, domiciliated in the colonies, are French citizens, and entitled to the enjoyment of all the rights secured by the Constitution.\" It was referred to the Committee of Public Safety for immediate measures of execution, and Danton declared, \"today we proclaim it to the universe\".\n\nThe Committee of Public Safety sent 1,200 troops to the West Indies, recaptured Guadeloupe from the British and their French royalist allies and used it as a base against the other islands. The law won the Black population of the region to the Republican side and may have influenced Toussaint's decision to switch from the Spanish to the French, though it is unclear whether he learned of it early enough. Martinique, where a royalist insurrection had begun in September 1793, was occupied by the British in 1794 and remained unaffected, and the colonial authorities of Isle de France and Réunion refused to implement the decree under pressure from local colonists. Where it was implemented, material conditions often did not change: in Guadeloupe the emancipated were restricted to the plantations by laws against vagrancy and were not paid the wages they were owed, and in Saint-Domingue Republican officials tried to maintain the plantation economy against the newly freed who wanted autonomy. Copies of the law and of the Declaration of the Rights of Man helped to spark slave revolts in Venezuela, Brazil, Jamaica and Cuba. After 18 Brumaire Napoleon was convinced by pro-slavery lobbyists; \"I am for the whites, because I am white; I have no other reason, and this is the right one\", he wrote to Truguet, and by the Law of 20 May 1802 he reinstated slavery and the slave trade in the colonies returned by the Treaty of Amiens. That law did not apply to Saint-Domingue, where slavery had already been abolished, but news of the restoration in Guadeloupe set off the new rising there and the failure of the Leclerc expedition."
-        },
-        "aliases": {
-          "ko": [
-            "1794년 2월 4일 노예제 폐지 법령",
-            "1794년 노예제 폐지령"
-          ],
-          "en": [
-            "Law of 4 February 1794",
-            "Decree of 16 Pluviôse",
-            "Decree of 16 Pluviôse Year II"
+            "Ems telegram",
+            "Emser Depesche",
+            "Dépêche d'Ems"
           ]
         },
         "people": [
-          "leger-felicite-sonthonax",
-          "georges-danton",
-          "jacques-pierre-brissot",
-          "napoleon-bonaparte",
-          "toussaint-louverture"
+          "otto-von-bismarck",
+          "wilhelm-i",
+          "napoleon-iii"
         ],
         "events": [
-          "haitian-revolution-1791-1804",
-          "french-revolution-1789-1799"
+          "franco-prussian-war-1870-1871"
         ],
         "evidence": [
           {
             "field": "definition",
-            "claim": "The decree of 4 February 1794 (16 Pluviôse Year II) by which the National Convention declared slavery abolished in all the French colonies and recognised all men living in them, without distinction of colour, as French citizens. It ratified after the fact the emancipation already proclaimed in Saint-Domingue by Sonthonax (29 August 1793) and Polverel (31 October), is sometimes counted as the first abolition of slavery in history, and was reversed by Napoleon's Law of 20 May 1802.",
-            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
-            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+            "claim": "The telegram of 13 July 1870 reporting to Berlin that King Wilhelm I of Prussia had refused the demand of the French ambassador Benedetti at Bad Ems, and the shortened version Bismarck released to the press that evening. By suggesting that the king had insulted the ambassador it provoked the French declaration of war on 19 July and the Franco-Prussian War.",
+            "source": "https://en.wikipedia.org/wiki/Ems_Dispatch",
+            "locator": "lead; Background; Incident; Text; French translation; Aftermath"
           },
           {
             "field": "body",
-            "claim": "The Society of the Friends of the Blacks, founded by Brissot and Clavière in 1788, argued for abolition, but a measure proposed at the start of the Revolution was dropped under noble opposition and in 1790 the National Assembly affirmed its support for the continuation of slavery. Facing the slave r",
-            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
-            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+            "claim": "After the war of 1866 France cried for \"revenge for Sadowa\", and when the Spanish throne fell vacant in 1868 Prince Leopold of Hohenzollern-Sigmaringen emerged as a candidate. When Leopold withdrew on 11 July under French protest, the foreign minister Gramont went further and demanded that the Pruss",
+            "source": "https://en.wikipedia.org/wiki/Ems_Dispatch",
+            "locator": "lead; Background; Incident; Text; French translation; Aftermath"
           },
           {
             "field": "period",
-            "claim": "1794–1802",
-            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
-            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+            "claim": "13 July 1870",
+            "source": "https://en.wikipedia.org/wiki/Ems_Dispatch",
+            "locator": "lead; Background; Incident; Text; French translation; Aftermath"
           },
           {
             "field": "startYear",
-            "claim": "1794",
-            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
-            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+            "claim": "1870",
+            "source": "https://en.wikipedia.org/wiki/Ems_Dispatch",
+            "locator": "lead; Background; Incident; Text; French translation; Aftermath"
           },
           {
             "field": "endYear",
-            "claim": "1802",
-            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
-            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+            "claim": "1870",
+            "source": "https://en.wikipedia.org/wiki/Ems_Dispatch",
+            "locator": "lead; Background; Incident; Text; French translation; Aftermath"
           }
         ],
-        "original": "Décret du 16 pluviôse an II",
+        "original": "Emser Depesche / Dépêche d'Ems",
         "region": "europe"
       }
     },
     {
-      "id": "saint-domingue-constitution-1801",
+      "id": "battle-of-sedan-1870",
       "sources": [
-        "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
-        "https://en.wikipedia.org/wiki/Toussaint_Louverture",
-        "https://en.wikipedia.org/wiki/Saint-Domingue_expedition"
+        "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+        "https://en.wikipedia.org/wiki/Franco-Prussian_War"
       ],
       "fields": {
         "term": {
-          "ko": "1801년 생도맹그 헌법",
-          "en": "Constitution of Saint-Domingue of 1801"
-        },
-        "category": "state",
-        "period": {
-          "ko": "1801–1802",
-          "en": "1801–1802"
-        },
-        "startYear": 1801,
-        "endYear": 1802,
-        "definition": {
-          "ko": "1801년 7월 투생 루베르튀르가 카프프랑세에서 공포한 생도맹그의 헌법. 생도맹그를 「프랑스 제국의 일부이되 특별한 법의 적용을 받는 식민지」로 규정하고 노예제의 영구 폐지와 피부색에 따른 차별의 금지를 선언하는 한편, 투생을 후계자 지명권을 가진 종신 총독으로 삼고 가톨릭을 유일한 공인 종교로 정했으며 경작자를 농장에 묶는 강제노동을 유지했다. 나폴레옹은 이를 프랑스의 권위에 대한 도전으로 받아들여 르클레르 원정을 보냈다.",
-          "en": "The constitution promulgated at Cap-Français by Toussaint Louverture in July 1801. It defined Saint-Domingue as a colony \"which forms part of the French Empire, but is subject to particular laws\", declared slavery abolished for ever and banned distinctions of colour, while making Toussaint governor-general for life with the right to name his successor, establishing Catholicism as the only public religion and keeping forced labour that bound cultivators to the plantations. Napoleon took it as a challenge to French authority and sent the Leclerc expedition."
-        },
-        "body": {
-          "ko": "생도맹그의 첫 헌법은 1790년 5월 28일 자유 유색인을 배제한 식민지 의회가 만든 것이었다. 1793~1794년의 노예제 폐지와 영국·스페인군 축출 뒤 프랑스 공화국의 총독이 된 투생은 1798년 영국과 휴전하고 1799년 영미 상인과 통상 협정을 맺었으며, 1799년 11월 집권한 나폴레옹은 1801년 5월 4일 브레스트에 원정의 핵심이 될 3,600명을 모으라고 명령했다. 투생은 1801년 3월 주로 백인 농장주로 이루어진 중앙의회를 소집해 헌법을 기초하게 했다. 의장 보르젤라 등 서명한 초안은 혁명력 9년 플로레알 19일 포르레퓌블리캥(포르토프랭스)에서 작성되었고, 투생은 카프프랑세에서 「중앙의회의 요청은 나에게 명령이다. 따라서 이를 프랑스 정부에 보내 재가를 구하겠다」는 승인문과 함께 공포했다. 공포일은 프랑스어 자료가 메시도르 14일(7월 3일), 영어 전기가 7월 7일, 원정 문서가 7월 12일로 엇갈린다. 13개 편 77개 조항 가운데 제1조는 생도맹그와 부속 도서가 「프랑스 제국의 일부이되 특별한 법의 적용을 받는 하나의 식민지」를 이룬다고 했고, 제3조는 「이 영토에 노예는 존재할 수 없다. 예속은 영원히 폐지된다. 모든 사람은 자유롭고 프랑스인으로 태어나고 살고 죽는다」, 제4조는 피부색과 무관하게 모든 직무에 나아갈 수 있다고 선언했다. 1799년 12월 13일 프랑스 헌법의 조항을 여럿 옮겨 왔다.\n\n그러나 제6조는 가톨릭을 유일한 공인 종교로 삼았고, 제10조는 이혼을 금지했으며, 제17조는 노동력을 보충하기 위한 노예무역을 금지하지 않았다. 제8편은 권력을 총독의 통제 아래 두어 제39조로 검열을 세웠고, 제67~68조는 결사와 교육의 자유를 막았다. 제6편은 농장 소유자를 경작자의 「아버지」로 규정하는 가부장적 농장 체제를 유지했고, 제13편 제75~77조는 경작자를 사실상 땅에 묶어 강제노동을 허용해 농노제에 가깝다는 평가를 받는다. 역사가 제러미 팝킨은 「투생이 세워 가던 사회는 토지 소유를 독점해 가는 군사 카스트의 억압적 통제를 받는 농민층을 가진 고도로 위계적인 사회」였다고 썼다. 투생은 헌법 초안에 반대한 뱅상 대령에게 이를 나폴레옹에게 전달하게 했는데, 뱅상은 그 때문에 엘바섬으로 잠시 유배되었다. 프랑스 관리의 자리를 두지 않은 점, 통상 특권이 없는 점, 프랑스 정부에 제출하기 전에 공포한 점이 파리에서 문제가 되었고, 나폴레옹은 이를 구실로 노예 소유자들의 영향 아래 3만 명의 생도맹그 원정을 조직했다. 1801년 10월 북부에서 강제노동에 반대하는 경작자 봉기가 일어나자 투생은 이를 지지한 조카 모이즈를 11월 21일 카프에서 총살했고, 이 기억은 1802년 원정군이 왔을 때 북부 흑인 장군들이 경작 지대와 연락을 유지하기 어렵게 만든 한 원인이 되었다.",
-          "en": "Saint-Domingue's first constitution had been promulgated on 28 May 1790 by a colonial assembly that excluded the free people of colour. After the abolition of slavery in 1793–1794 and the expulsion of the British and Spanish, Toussaint, now governor for the French Republic, obtained an armistice with the British in 1798 and a trade agreement with British and American merchants in 1799, while Napoleon, in power from November 1799, ordered on 4 May 1801 that 3,600 soldiers be gathered at Brest as the core of a future expedition. In March 1801 Toussaint convened a central assembly composed chiefly of white planters to draft a constitution. The text signed by its president Borgella and others was dated at Port-Républicain (Port-au-Prince) on 19 Floréal Year IX, and Toussaint promulgated it at Cap-Français with the approval, \"The invitation of the Central Assembly is an order for me; consequently I shall transmit it to the French government to obtain its sanction.\" Sources date the promulgation to 14 Messidor (3 July, the French article), 7 July (the English biography) or 12 July (the expedition article). Of its 77 articles in 13 titles, Article 1 declared that Saint-Domingue and the adjacent islands formed \"a single colony, which forms part of the French Empire, but is subject to particular laws\"; Article 3 that \"there cannot exist slaves in this territory; servitude is forever abolished; all men are born, live and die free and French\"; and Article 4 that every man, whatever his colour, was eligible for all posts. Several articles were copied from the French constitution of 13 December 1799.\n\nYet Article 6 made the Catholic faith the only publicly professed religion, Article 10 forbade divorce, and Article 17 did not prohibit recourse to the slave trade to obtain new labour. Title VIII placed power under the governor's control, with censorship under Article 39, and Articles 67 and 68 barred freedom of association and of teaching. Title VI kept the paternalist plantation system, making the owner of the soil \"necessarily the father\" of its cultivators, and Articles 75 to 77 of Title XIII all but attached the cultivators to the land and allowed forced labour, to the point that historians have spoken of serfdom. The historian Jeremy Popkin wrote that \"the society Toussaint was building was a strongly hierarchical society, with a peasantry subjected to repressive control, exercised by a military caste that was monopolising landed property\". Toussaint charged Colonel Vincent, who opposed the draft, with carrying it to Napoleon, and Vincent was briefly exiled to Elba for his pains. The absence of any provision for French officials, the lack of trade advantages and the breach of protocol in publishing the text before submitting it to Paris told against it, and Napoleon took it as the pretext for organising, under the influence of the slave owners, the Saint-Domingue expedition of 30,000 men. When a rising of cultivators against forced labour broke out in the north in October 1801, Toussaint had his nephew Moïse, who had supported it, shot at Le Cap on 21 November, and the memory of that revolt was one reason the Black generals of the north found it hard to keep in touch with the cultivated lowlands when the expedition arrived in 1802."
-        },
-        "aliases": {
-          "ko": [
-            "루베르튀르 헌법"
-          ],
-          "en": [
-            "1801 Constitution of Haiti",
-            "Louverture's constitution"
-          ]
-        },
-        "people": [
-          "toussaint-louverture",
-          "napoleon-bonaparte"
-        ],
-        "events": [
-          "haitian-revolution-1791-1804"
-        ],
-        "evidence": [
-          {
-            "field": "definition",
-            "claim": "The constitution promulgated at Cap-Français by Toussaint Louverture in July 1801. It defined Saint-Domingue as a colony \"which forms part of the French Empire, but is subject to particular laws\", declared slavery abolished for ever and banned distinctions of colour, while making Toussaint governor-general for life with the right to name his successor, establishing Catholicism as the only public religion and keeping forced labour that bound cultivators to the plantations. Napoleon took it as a challenge to French authority and sent the Leclerc expedition.",
-            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
-            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
-          },
-          {
-            "field": "body",
-            "claim": "Saint-Domingue's first constitution had been promulgated on 28 May 1790 by a colonial assembly that excluded the free people of colour. After the abolition of slavery in 1793–1794 and the expulsion of the British and Spanish, Toussaint, now governor for the French Republic, obtained an armistice wit",
-            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
-            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
-          },
-          {
-            "field": "period",
-            "claim": "1801–1802",
-            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
-            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
-          },
-          {
-            "field": "startYear",
-            "claim": "1801",
-            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
-            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
-          },
-          {
-            "field": "endYear",
-            "claim": "1802",
-            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
-            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
-          }
-        ],
-        "original": "Constitution de Saint-Domingue de 1801",
-        "region": "americas"
-      }
-    },
-    {
-      "id": "saint-domingue-expedition",
-      "sources": [
-        "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
-        "https://en.wikipedia.org/wiki/Haitian_Revolution",
-        "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
-        "https://en.wikipedia.org/wiki/Battle_of_Verti%C3%A8res"
-      ],
-      "fields": {
-        "term": {
-          "ko": "생도맹그 원정",
-          "en": "Saint-Domingue expedition"
+          "ko": "스당 전투 (1870)",
+          "en": "Battle of Sedan (1870)"
         },
         "category": "military",
         "period": {
-          "ko": "1801–1803",
-          "en": "1801–1803"
+          "ko": "1870년 9월 1~2일",
+          "en": "1–2 September 1870"
         },
-        "startYear": 1801,
-        "endYear": 1803,
+        "startYear": 1870,
+        "endYear": 1870,
         "definition": {
-          "ko": "1801년 12월부터 1803년 12월까지 제1통령 나폴레옹이 매제 샤를 르클레르에게 맡겨 생도맹그에 보낸 대규모 침공. 투생 루베르튀르의 자치 정부를 무너뜨리고 프랑스의 지배와 노예제를 되살리려 했으나, 황열병과 1802년 가을 재개된 봉기, 1803년 영국의 봉쇄 속에 베르티에르에서 패해 철수했다. 보낸 약 3만 1천 명 가운데 7,000~8,000명만 살아남았고, 아이티의 독립으로 끝났다.",
-          "en": "The large invasion of Saint-Domingue that First Consul Napoleon entrusted to his brother-in-law Charles Leclerc, from December 1801 to December 1803, to overthrow Toussaint Louverture's autonomous government and restore French rule and slavery. Yellow fever, the renewed rising of autumn 1802 and the British blockade of 1803 led to defeat at Vertières and withdrawal; of some 31,000 troops sent only 7,000–8,000 survived, and the expedition ended with Haitian independence."
+          "ko": "1870년 9월 1~2일 뫼즈강의 요새 도시 스당에서 몰트케의 독일 제3군·뫼즈군이 마크마옹의 프랑스 샬롱군을 포위 섬멸한 전투. 나폴레옹 3세가 병사 104,000명과 함께 포로가 되어 제2제정이 무너지고 9월 4일 파리에서 공화국이 선포되었다.",
+          "en": "The battle of 1–2 September 1870 in which Moltke's German Third and Meuse Armies encircled and annihilated MacMahon's French Army of Châlons at the fortress town of Sedan on the Meuse. Napoleon III was taken prisoner with 104,000 men, the Second Empire collapsed and a republic was proclaimed in Paris on 4 September."
         },
         "body": {
-          "ko": "1801년 2월 뤼네빌 조약으로 대륙에서 손이 자유로워진 나폴레옹은 처음에 투생 장교들의 계급과 토지를 인정하고 해방을 보장하면서 파리의 권위만 세우려 했으나, 1801년 7월 헌법을 보고 10월에는 투생 정부를 무장 해제하고 흑인 장교들을 추방하라고 비밀리에 지시했다. 투생이 1만 6천 명을 거느렸으므로 르클레르에게는 3만 명이 주어졌다. 아미앵 조약이 맺어지기 전인 1801년 12월 14일 빌라레 드 주아외즈의 함대가 전열함 35척과 프리깃 21척에 7,000~8,000명을 싣고 브레스트를 떠났고, 2월 툴롱의 강톰(4,200명)과 카디스의 리누아(2,400명) 전대, 뒤이어 해군 보병 4,000여 명과 네덜란드 사단, 폴란드 제3반여단과 스페인의 그라비나 함대가 따랐다. 모두 31,131명이 상륙했고 리고와 페티옹 같은 자유 유색인 장교들도 함께였다(르클레르 전기는 4만 명, 투생 전기는 2만 명이라고 적는다). 1802년 2월 3일 카프프랑세 앞에 닿은 함대는 5일 공격을 시작했고 크리스토프는 명령대로 도시를 불태웠다. 열흘 안에 프랑스군은 항구와 도시, 경작지 대부분을 차지했으며, 2월 17일의 총공세로 투생을 고나이브 쪽으로 몰아넣었다. 데살린은 크레타피에로 요새에서 3월 4~24일 포위를 버티다 빠져나갔고, 크리스토프(4월 25일)와 데살린의 투항에 이어 5월 6일 투생이 르클레르의 권위를 인정하고 에네리의 농장에 물러났다. 르클레르는 6월 회담을 구실로 투생을 체포해 프랑스의 주 요새로 보냈다.\n\n3월의 우기와 함께 황열병이 번져 두 달 만에 약 1만 5천 명이 죽었다. 아미앵 조약으로 돌려받은 마르티니크의 노예제를 확정한 1802년 5월 20일 법과 과들루프의 노예제 복원 소식이 전해지자 생도맹그에는 다시 반란의 기운이 돌았고, 르클레르가 흑인을 무장 해제하려 하자 분노만 키웠다. 8월부터 흑인·물라토 부대의 집단 이탈이 시작되었고 10월에는 페티옹, 크리스토프, 데살린이 모두 프랑스군을 떠났다. 싸울 수 있는 병력이 8,000~1만 명으로 준 르클레르는 포르드페에서 크리스토프가 폴란드 병사 수백 명을 죽이자 카프의 흑인 식민지 부대 1,000명을 밀가루 부대를 목에 매달아 배에서 밀어 넣어 죽였고, 충성을 지키던 모르파 장군도 11월 초 가족과 함께 익사시켰다. 르클레르는 1802년 11월 1일 토르튀섬에서 황열병으로 죽었고(영어 전기는 11월 2일), 아내 폴린 보나파르트는 머리카락을 잘라 관에 넣고 그의 심장을 단지에 담아 유해를 프랑스로 가져갔다. 뒤를 이은 로샹보는 쿠바에서 노예 사냥개를 들여왔으나 군사적으로는 실망스러웠고, 그 잔학은 아이티에서 식민 지배의 악랄함의 상징으로 남았다. 1803년 5월 영국과의 전쟁이 재개되어 봉쇄가 시작되었고, 11월 18일 베르티에르에서 패한 프랑스군은 12월 말 섬을 떠났으며 로샹보는 귀환길에 영국 해군에 붙잡혀 9년 가까이 억류되었다. 3만 1천 명 가운데 살아남은 병사는 7,000~8,000명뿐이었고 장군 20명 이상이 죽어, 프랑스는 뒷날의 워털루보다 더 많은 병력을 생도맹그에서 잃었다. 1804년 1월 1일 데살린은 아이티의 독립을 선포했다.",
-          "en": "With his hands freed on the continent by the Treaty of Lunéville of February 1801, Napoleon at first planned to confirm the ranks and lands of Toussaint's officers and guarantee freedom to the former slaves while re-establishing Paris's authority, but after the constitution of July 1801 he secretly directed Leclerc in October to disarm Toussaint's government and deport the Black officers to France. Since Toussaint had over 16,000 men, Leclerc was given 30,000. Before the Peace of Amiens was signed, on 14 December 1801 Villaret de Joyeuse's fleet of 35 ships of the line and 21 frigates left Brest with 7,000–8,000 troops, followed in February by Ganteaume's squadron from Toulon (4,200 men) and Linois's from Cádiz (2,400), then by over 4,000 naval troops, a Dutch division, the 3rd Polish Half-Brigade and a Spanish fleet under Gravina. In all 31,131 troops were landed, among them the free coloured officers Rigaud and Pétion (Leclerc's biography gives 40,000 and Toussaint's 20,000). The fleet reached Cap-Français on 3 February 1802 and attacked on the 5th, and Christophe burned the town as ordered. Within ten days the French held the ports, the towns and most of the cultivated land, and the general offensive of 17 February drove Toussaint back towards Gonaïves. Dessalines held the fort of Crête-à-Pierrot under siege from 4 to 24 March before breaking out; the surrenders of Christophe (25 April) and Dessalines were followed on 6 May by Toussaint's acknowledgement of Leclerc's authority and his retirement to his plantation at Ennery. In June Leclerc called Toussaint to an interview, arrested him and shipped him to the Fort de Joux in France.\n\nWith the rains of March came yellow fever, which killed around 15,000 men in only two months. The Law of 20 May 1802, confirming slavery in Martinique, returned by the Treaty of Amiens, and news of the re-establishment of slavery in Guadeloupe revived the threat of revolt in Saint-Domingue, and Leclerc's attempt to disarm the Blacks only angered them further. From August the Black and mulatto troops deserted en masse, and in October Pétion, Christophe and Dessalines all left the French forces. With only 8,000 to 10,000 men fit to serve, Leclerc, after Christophe massacred several hundred Polish soldiers at Port-de-Paix, had 1,000 Black colonial troops at Le Cap executed by tying sacks of flour to their necks and pushing them from the ships, and in early November the still-loyal General Maurepas was drowned with his family in the harbour. Leclerc died of yellow fever on Tortuga on 1 November 1802 (2 November in his English biography); his wife Pauline Bonaparte cut off her hair and put it in his coffin, placed his heart in an urn and took his remains back to France. His successor Rochambeau received a shipment of slave-hunting dogs from Cuba, a military disappointment whose use still resounds in Haiti as a symbol of colonial viciousness. War with Britain resumed in May 1803 and a blockade began; defeated at Vertières on 18 November, the last French soldiers left the island at the end of December, and Rochambeau was captured on the voyage home by the Royal Navy and interned for nearly nine years. Little more than 7,000 to 8,000 of the 31,000 soldiers sent survived and over twenty generals died, so that France lost more troops in Saint-Domingue than it would later lose at Waterloo. On 1 January 1804 Dessalines proclaimed the independence of Haiti."
+          "ko": "8월 18일 그라블로트에서 밀린 바젠의 라인군이 메스에 갇히자, 나폴레옹 3세와 마크마옹은 8월 17일 편성한 샬롱군 13만 명으로 메스를 구하러 나섰다. 군은 프로이센군을 피해 벨기에 국경 쪽으로 북동진했으나 양 측면이 드러났다. 몰트케는 메스 포위군에서 세 개 군단을 떼어 작센 황태자의 뫼즈군을 만들고 제3군과 함께 북쪽으로 방향을 돌려 8월 30일 보몽에서 프랑스군을 덮쳤다. 7,500명과 대포 40문을 잃은 마크마옹은 바젠과의 합류를 포기하고 17세기의 낡은 요새 스당으로 물러나 군대를 쉬게 하고 「적 앞에서 기동」하려 했으나 독일군의 규모를 얕보았고, 두에 장군이 참호를 파자고 청하자 오래 머물지 않는다며 거절했다. 9월 1일 아침 9시 프로이센 제5·제11군단이 북서쪽을 막아 포위가 완성되었다. 새벽 4시 바이에른군이 바제유를 기습하며 전투가 시작되었고, 마크마옹이 부상하자 뒤크로가 지휘를 맡아 후퇴를 명했지만 정부의 임명장을 가진 뱅펜이 이를 뒤집고 역습에 나섰다.\n\n오전 11시부터 사방의 독일 포병이 프랑스군을 가렌 숲으로 몰아넣었고, 뒤크로의 명령으로 마르그리트 장군의 기병대가 플루앙을 향해 세 차례 돌격하다 마르그리트가 치명상을 입고 791명이 쓰러졌다. 오후 2시 30분 프로이센 근위대가 숲을 점령하자 안의 병사들은 항복했다. 나폴레옹 3세는 요새 성벽에 백기를 올렸고, 뱅펜은 「명예로운 항복」을 요구했으나 몰트케는 탄약과 식량 부족, 독일군 25만 명 대 프랑스군 8만 명이라는 수를 들어 거절했다. 9월 2일 11시 30분 뱅펜이 샬롱군과 요새의 항복에 서명했다. 프랑스군은 3,220명이 죽고 14,811명이 다쳤으며 104,000명이 대포 558문과 함께 포로가 되었고, 독일군의 손실은 9,860명이었다. 황제는 3일 카셀 근처 빌헬름스회에로 보내졌다. 황제의 생포는 프로이센에 강화를 맺을 상대를 없애 버렸고, 파리에서는 4일 군중이 입법원에 몰려들어 공화국과 국방정부가 섰다. 독일에서는 통일에서 이 전투가 한 역할을 기려 1919년까지 해마다 9월 2일을 「스당의 날」로 지냈으며, 황제가 공식 공휴일로 삼기를 거부해 비공식 기념일로 남았다. 에밀 졸라의 『패주』가 이 전투를 그렸다.",
+          "en": "When Bazaine's Army of the Rhine, pushed back at Gravelotte on 18 August, was shut up in Metz, Napoleon III and MacMahon set out with the 130,000-strong Army of Châlons, formed on 17 August, to relieve it. The army marched north-east towards the Belgian border to avoid the Prussians, leaving both flanks exposed. Moltke detached three corps from the siege of Metz to form the Army of the Meuse under the Crown Prince of Saxony, turned north with it and the Third Army and fell on the French at Beaumont on 30 August. Having lost 7,500 men and 40 guns, MacMahon abandoned the link-up with Bazaine and withdrew into the obsolete seventeenth-century fortress of Sedan to rest the army and, in his words, manoeuvre in front of the enemy; he underestimated the German strength and refused General Douay's request to dig trenches, saying the army would not stay long. By 9 a.m. on 1 September the Prussian V and XI Corps had closed the ring to the north-west. The battle had begun at 4 a.m. with a Bavarian surprise attack on Bazeilles; when MacMahon was wounded, Ducrot took command and ordered a retreat, but Wimpffen, who held a government commission to succeed him, overruled it and counter-attacked.\n\nFrom 11 a.m. German artillery on all sides drove the French into the Bois de la Garenne; on Ducrot's orders General Margueritte's cavalry charged Floing three times, Margueritte was mortally wounded and 791 men fell. When the Prussian Guard took the wood at 2:30 p.m. the troops inside surrendered. Napoleon III hoisted a white flag on the fortress wall; Wimpffen sought an \"honorable capitulation\", but Moltke refused, pointing to the lack of ammunition and food and to 250,000 Germans against 80,000 French. At 11:30 on 2 September Wimpffen signed the surrender of the Army of Châlons and the fortress. The French lost 3,220 killed and 14,811 wounded, and 104,000 men passed into captivity with 558 guns; German casualties were 9,860. The emperor was sent on the 3rd to Wilhelmshöhe near Kassel. His capture left Prussia without a government to make peace with, and on the 4th crowds in Paris stormed the legislature and a republic and a Government of National Defence were set up. In Germany 2 September was celebrated as Sedantag until 1919 in recognition of the battle's role in unification, though the Kaiser refused to make it an official holiday. Émile Zola's La Débâcle depicts the battle."
         },
         "aliases": {
           "ko": [
-            "르클레르 원정"
+            "스당 항복",
+            "스당의 날",
+            "제1차 스당 전투"
           ],
           "en": [
-            "Leclerc expedition",
-            "Leclerc's expedition"
+            "Capitulation at Sedan",
+            "Sedantag",
+            "Day of Sedan",
+            "First Battle of Sedan"
           ]
         },
         "people": [
-          "charles-leclerc",
-          "napoleon-bonaparte",
-          "toussaint-louverture",
-          "jean-jacques-dessalines",
-          "henri-christophe",
-          "alexandre-petion",
-          "andre-rigaud",
-          "antoine-richepanse",
-          "jean-joseph-amable-humbert"
+          "napoleon-iii",
+          "patrice-de-mac-mahon",
+          "helmuth-von-moltke",
+          "wilhelm-i",
+          "otto-von-bismarck"
         ],
         "events": [
-          "haitian-revolution-1791-1804",
-          "french-revolutionary-wars-1792-1802"
+          "franco-prussian-war-1870-1871"
         ],
         "evidence": [
           {
             "field": "definition",
-            "claim": "The large invasion of Saint-Domingue that First Consul Napoleon entrusted to his brother-in-law Charles Leclerc, from December 1801 to December 1803, to overthrow Toussaint Louverture's autonomous government and restore French rule and slavery. Yellow fever, the renewed rising of autumn 1802 and the British blockade of 1803 led to defeat at Vertières and withdrawal; of some 31,000 troops sent only 7,000–8,000 survived, and the expedition ended with Haitian independence.",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
-            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+            "claim": "The battle of 1–2 September 1870 in which Moltke's German Third and Meuse Armies encircled and annihilated MacMahon's French Army of Châlons at the fortress town of Sedan on the Meuse. Napoleon III was taken prisoner with 104,000 men, the Second Empire collapsed and a republic was proclaimed in Paris on 4 September.",
+            "source": "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+            "locator": "lead; Background; Battle; Aftermath; Casualties"
           },
           {
             "field": "body",
-            "claim": "With his hands freed on the continent by the Treaty of Lunéville of February 1801, Napoleon at first planned to confirm the ranks and lands of Toussaint's officers and guarantee freedom to the former slaves while re-establishing Paris's authority, but after the constitution of July 1801 he secretly ",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
-            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+            "claim": "When Bazaine's Army of the Rhine, pushed back at Gravelotte on 18 August, was shut up in Metz, Napoleon III and MacMahon set out with the 130,000-strong Army of Châlons, formed on 17 August, to relieve it. The army marched north-east towards the Belgian border to avoid the Prussians, leaving both fl",
+            "source": "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+            "locator": "lead; Background; Battle; Aftermath; Casualties"
           },
           {
             "field": "period",
-            "claim": "1801–1803",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
-            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+            "claim": "1–2 September 1870",
+            "source": "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+            "locator": "lead; Background; Battle; Aftermath; Casualties"
           },
           {
             "field": "startYear",
-            "claim": "1801",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
-            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+            "claim": "1870",
+            "source": "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+            "locator": "lead; Background; Battle; Aftermath; Casualties"
           },
           {
             "field": "endYear",
-            "claim": "1803",
-            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
-            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+            "claim": "1870",
+            "source": "https://en.wikipedia.org/wiki/Battle_of_Sedan",
+            "locator": "lead; Background; Battle; Aftermath; Casualties"
           }
         ],
-        "original": "Expédition de Saint-Domingue",
-        "region": "americas"
+        "original": "Bataille de Sedan / Schlacht von Sedan",
+        "region": "europe"
       }
     },
     {
-      "id": "bois-caiman-ceremony",
+      "id": "government-of-national-defence-1870",
       "sources": [
-        "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
-        "https://en.wikipedia.org/wiki/Dutty_Boukman",
-        "https://en.wikipedia.org/wiki/Toussaint_Louverture"
+        "https://en.wikipedia.org/wiki/Government_of_National_Defense",
+        "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+        "https://en.wikipedia.org/wiki/Armistice_of_Versailles"
       ],
       "fields": {
         "term": {
-          "ko": "부아 카이망 집회",
-          "en": "Bois Caïman ceremony"
+          "ko": "국방정부 (1870)",
+          "en": "Government of National Defence (1870)"
         },
-        "category": "events",
+        "category": "state",
         "period": {
-          "ko": "1791",
-          "en": "1791"
+          "ko": "1870년 9월 4일 ~ 1871년 2월 13일",
+          "en": "4 September 1870 – 13 February 1871"
         },
-        "startYear": 1791,
-        "endYear": 1791,
+        "startYear": 1870,
+        "endYear": 1871,
         "definition": {
-          "ko": "1791년 8월 14일 밤 카프프랑세 근교 숲에서 노예 약 200명이 모여 북부 평원의 봉기를 계획했다고 전해지는 보두 의식이자 모의. 사제 뒤티 부크만과 여사제 세실 파티망이 주재하고 검은 돼지를 제물로 바쳐 맹세했다고 하며, 일주일 뒤 8월 21~22일의 노예 봉기, 곧 아이티 혁명의 시작으로 이어졌다. 당대의 직접 기록은 없고 1814년에야 문헌에 나타나 실재 여부가 논쟁거리다.",
-          "en": "The Vodou ceremony and conspiracy at which, on the night of 14 August 1791 in woods near Cap-Français, some 200 enslaved people are said to have planned the rising of the northern plain. Presided over by the priest Dutty Boukman and the priestess Cécile Fatiman, with a black pig sacrificed and an oath sworn, it led a week later to the slave rising of 21–22 August, the beginning of the Haitian Revolution. No first-hand account exists, the earliest record dates from 1814, and whether it happened is debated."
+          "ko": "1870년 9월 4일 스당 항복 소식에 파리 군중이 공화국을 요구하자 파리 선출 공화파 의원들이 시청에서 세운 제3공화국의 첫 정부. 트로쉬 장군을 수반으로 파브르·강베타 등이 참여해 포위된 파리에서 다섯 달 동안 프로이센과의 전쟁을 이어 가다 1871년 1월 28일 휴전에 서명했고, 2월 8일 선거로 뽑힌 국민의회가 티에르를 세우면서 물러났다.",
+          "en": "The first government of the Third Republic, set up at the Hôtel de Ville on 4 September 1870 by the republican deputies for Paris after crowds demanded a republic at the news of the capitulation at Sedan. Headed by General Trochu with Favre and Gambetta among its members, it carried on the war against Prussia from besieged Paris for five months, signed the armistice of 28 January 1871 and gave way when the National Assembly elected on 8 February chose Thiers."
         },
         "body": {
-          "ko": "백인 농장주들은 보두 의식을 해롭지 않은 사교 모임으로 여겨 허용했고, 노예들은 그 자리를 조직의 기회로 삼았다. 전해지는 바로는 1791년 8월 14일 밤 카프프랑세 근교 슈아죌 농장의 「악어 숲」(부아 카이망)에 인근 농장의 대표 약 200명이 모였고, 사제 부크만과 여사제 파티망이 봉기를 준비하기 위해 몇 주 전부터 이어 온 모임의 마지막 회합을 주재했다. 장프랑수아, 비아수, 장노가 참석했다고 하며, 투생 루베르튀르 전기는 같은 날 모른루주의 농장에서 노예 감독·크레올·해방 노예 200명이 모여 비아수를 지도자로 뽑았고 투생이 그를 추천했다고 적는다. 첫 기록은 1814년 백인 식민자 앙투안 달마스의 『생도맹그 혁명사』로, 「검은 돼지 한 마리가 마법의 힘을 믿는 노예들에게 둘러싸여 전능한 정령에게 제물로 바쳐졌고, 흑인들은 그 피를 이마에 발랐다고 믿었으며, 그 털을 가지면 무적이 된다고 믿었다」고 썼다. 1824년 에라르 뒤멜이 현지에서 구술을 모아 기록한 부크만의 기도는 「백인들의 신은 그들을 범죄로 몰지만 우리의 신은 선행을 원한다. 그러나 그토록 선한 신이 우리에게 복수를 명한다. 우리의 눈물에 목마른 백인들의 신의 형상을 내던지고 우리 모두의 가슴속에서 말하는 자유에 귀 기울이라」고 되어 있으나, 뒤멜은 부크만의 이름을 적지 않았고 그 글은 그리스·로마 고전을 끌어온 각색으로 보인다. 의식이 있은 지 일주일 뒤인 8월 21~22일 밤 북부 평원 전체가 불길에 휩싸였다.\n\n레옹프랑수아 오프만 같은 비평가는 이 서사가 봉기 세력을 묶는 동기 부여의 구실을 했을 뿐 실제로 일어났다는 근거는 없다고 본다. 반면 예테보리 대학의 마르켈 튈레포르스는 「부아 카이망 의식은 아이티의 발생 자체와 이어지는 아이티 민족 정체성의 중요한 부분」이라고 평가하며, 이 의식은 민족주의자들에게 영감의 원천이자 억압에 맞선 저항의 상징으로 쓰여 왔다. 1970년대 뿌리 음악은 뒤발리에 독재에 맞선 저항을 조상들의 부아 카이망에 빗댔다. 1990년대 미국 개신교 선교의 영향 아래 일부 복음주의자는 이 의식을 「사탄과의 피의 계약」으로 다시 해석했고, 2010년 아이티 지진 뒤 팻 로버트슨이 아이티인이 「악마와 계약」했기 때문에 저주받았다고 말해 비난을 샀다. 부크만은 1791년 11월 7일 프랑스군에게 죽었고, 아이티인들은 그를 로아(수호 정령)의 신전에 모셨다.",
-          "en": "White planters allowed Vodou rituals as harmless social gatherings, and the enslaved used them as opportunities to organise. According to tradition, on the night of 14 August 1791 some 200 representatives of the nearby plantations met in the \"Alligator Wood\" (Bois Caïman) on the Choiseul plantation near Cap-Français, where the priest Boukman and the priestess Fatiman presided over the last of a series of meetings held for weeks to organise a revolt. Jean-François, Biassou and Jeannot are said to have attended, and Toussaint Louverture's biography records that the same day 200 slave foremen, Creoles and freed slaves met at a plantation at Morne-Rouge, where Biassou was chosen as leader on Toussaint's nomination. The first written account is the white colonist Antoine Dalmas's History of the Saint-Domingue Revolution of 1814: \"A black pig, surrounded by the slaves believe to have magical powers, each carrying the most bizarre offering, was offered as a sacrifice to the all-powerful spirit\", whose blood the participants \"believed to have marked themselves on the forehead with\" and whose bristles they thought would make them invincible. Boukman's prayer, recorded by Hérard Dumesle from oral testimony in 1824, runs: \"The God of the whites pushes them to crime, but he wants us to do good deeds. But the God who is so good orders us to vengeance... Throw away the image of the God of the whites who thirsts for our tears. Listen to the liberty that speaks in all our hearts\", but Dumesle did not name Boukman, and the text appears to be a dramatisation with references to Greek and Roman writings. A week after the ceremony, on the night of 21–22 August, the whole northern plain was in flames.\n\nCritics such as Léon-François Hoffmann hold that the story served to motivate and unite the rebels but that there is no factual basis for the event. By contrast the University of Gothenburg researcher Markel Thylefors writes that \"the event of the Bois Caïman ceremony forms an important part of Haitian national identity as it relates to the very genesis of Haiti\", and the ceremony has often been used as a source of inspiration to nationalists and as a symbol of resistance to oppression. In the 1970s roots music likened resistance to the Duvalier dictatorship to the ancestors' Bois Caïman. Under the influence of American Protestant missions in the 1990s, some evangelicals reinterpreted the ceremony as a \"blood pact with Satan\", and after the earthquake of 2010 Pat Robertson was denounced for saying that Haitians had been cursed after swearing \"a pact to the devil\". Boukman was killed by French troops on 7 November 1791, and Haitians admitted him to the pantheon of the loa, the guiding spirits."
+          "ko": "9월 4일 시청에서 강베타가 공화국을 선포한 뒤 정부는 곧바로 프랑스의 모든 업무를 맡아 전쟁을 계속하기로 했다. 구성원은 수반 루이쥘 트로쉬(파리 총독 겸임), 부수반 겸 외무장관 쥘 파브르, 내무장관 레옹 강베타, 전쟁장관 르플로, 해군장관 푸리숑, 재무장관 피카르, 정부 서기 쥘 페리, 교육장관 쥘 시몽, 법무장관 크레미외, 공공사업장관 도리앙과 로슈포르·글레비주앵·가르니에파제스·펠탕 등 무임소 장관이었다. 보나파르트파를 뺀 여러 정파가 들어왔지만 실권은 오를레앙파와 정통왕조파, 보수파에 있었고, 오를레앙파 트로쉬는 「종교와 재산과 가족을 단호히 지킨다」는 약속을 받고 수반이 되었다. 프로이센을 뺀 열강이 며칠 안에 정부를 승인했다는 서술과, 미국과 에스파냐만 곧바로 승인했다는 서술이 나란히 있다. 비스마르크는 파리 사람들만으로 된 정부가 프랑스를 대표하느냐고 물었고, 황제가 포로이고 황후는 망명했어도 법적 퇴위는 없었다는 점을 이용해 나폴레옹 3세를 「정당한 통치자」로 불렀다. 정부는 로마·알제리·식민지의 부대까지 파리로 불러들이고 요새를 보강하고 식량을 쌓았으며, 9월 20일 파리가 포위되자 푸리숑과 크레미외의 대표단을 투르에 두었다. 10월 7일 강베타가 기구로 파리를 벗어나 투르에서 내무·전쟁장관으로서 지방의 전쟁을 지휘했고, 통신이 끊긴 파리와 투르의 두 정부는 서로 상의 없이 움직여 강베타는 점령되지 않은 프랑스의 사실상 독재자가 되었다.\n\n정부는 돌파를 꺼렸고 11월 28일 밤의 「대출격」과 1871년 1월 18일의 출격이 실패하자 파리 여론은 정부를 비난했다. 정부는 국민방위군을 「규율 없는 주정뱅이 떼」로 의심했고, 주민은 국민방위군을 막을 수 없는 힘으로 여겼다. 1월 22일 정부는 트로쉬를 파리 총독에서 해임해 비누아로 바꾸었고(공화국 수반직은 유지), 파브르가 실질적 지도자가 되었다. 23일의 작은 봉기가 무력으로 진압되어 파리의 분노는 더 커졌다. 1월 28일 파브르는 비스마르크와 휴전·항복 협정에 서명해 2주 안에 2억 프랑, 총 50억 프랑이 넘는 배상, 파리 외곽 요새의 인도를 받아들였다. 투르의 강베타는 29일 전보로 소식을 받고 싸움을 계속하려 했으나 파리에서 기차로 온 외교관들의 설득으로 2월 6일 물러났다. 2월 8일 선거는 보수적인 농촌 의원들을 대거 뽑았고, 베르사유 궁전을 새 의회 소재지로 삼은 국민의회는 티에르를 행정 수반으로 뽑아 2월 13일 트로쉬의 자리를 이었다. 배상을 서둘러 프로이센군을 내보내려 한 새 정부의 재정 법률은 파리 시민을 격분시켜 파리 코뮌으로 이어졌다.",
+          "en": "After Gambetta proclaimed the Republic at the Hôtel de Ville on 4 September, the government at once assumed control of all affairs in France and resolved to continue the war. Its members were Louis-Jules Trochu as president (also governor of Paris), Jules Favre as vice-president and foreign minister, Léon Gambetta as interior minister, Le Flô at war, Fourichon at the navy, Picard at finance, Jules Ferry as secretary, Jules Simon at education, Crémieux at justice, Dorian at public works and Rochefort, Glais-Bizoin, Garnier-Pagès and Pelletan as ministers without portfolio. Various factions except the Bonapartists were included, but Orleanists, Legitimists and conservatives held real power, and the Orleanist Trochu accepted the presidency on a promise to \"resolutely defend religion, property, and the family\". One account says the leading powers except Prussia recognised the government within days; another that only the United States and Spain did so at once. Bismarck asked whether a body composed entirely of Parisians could act as France's government, and, since the emperor was a captive and the empress in exile but there had been no abdication de jure, called Napoleon III \"the legitimate ruler of France\". The government recalled troops from Rome, Algeria and the colonies to Paris, strengthened the fortifications and stockpiled food, and when Paris was surrounded on 20 September left a delegation under Fourichon and Crémieux at Tours. On 7 October Gambetta left Paris by balloon and directed the war from Tours as minister of the interior and of war; cut off from each other, the governments in Paris and Tours often acted without consulting, and Gambetta became the virtual dictator of unoccupied France.\n\nThe government was reluctant to try to break out, and when the \"great sortie\" of the night of 28 November and the sortie of 18 January 1871 failed, Parisian opinion heaped blame on it. The government suspected the National Guard as \"a rabble of ill-disciplined drunks\", while the population saw the Guard as an unstoppable force. On 22 January the government sacked Trochu as governor of Paris in favour of Vinoy, though he remained president of the republic, and Favre became the de facto leader; a small rising on 23 January was crushed by force, further infuriating the city. On 28 January Favre signed the convention on the armistice and the capitulation of Paris with Bismarck, accepting 200 million francs within a fortnight, over five billion francs in total reparations and the surrender of the forts around Paris. Gambetta, told by telegram on the 29th, wished to fight on but was persuaded to step down by diplomats who arrived from Paris by train, and resigned on 6 February. The elections of 8 February returned an overwhelming number of conservative rural deputies, and the National Assembly, seated at Versailles, elected Thiers chief executive; he took over from Trochu on 13 February. The new government's financial laws, passed in haste to pay the reparations and oblige the Prussians to leave, angered Parisians and led to the Paris Commune."
         },
         "aliases": {
           "ko": [
-            "부아 카이망 의식",
-            "부아 카이망"
+            "국민방위정부",
+            "국가방위정부 (1870)",
+            "트로쉬 정부"
           ],
           "en": [
-            "Bois Caïman",
-            "Bwa Kayiman"
+            "Government of National Defense",
+            "Gouvernement de la Défense nationale",
+            "Trochu government"
           ]
         },
         "people": [
-          "dutty-boukman",
-          "toussaint-louverture"
+          "louis-jules-trochu",
+          "jules-favre",
+          "leon-gambetta",
+          "adolphe-thiers",
+          "otto-von-bismarck"
         ],
         "events": [
-          "haitian-revolution-1791-1804"
+          "franco-prussian-war-1870-1871",
+          "paris-commune-1871"
         ],
         "evidence": [
           {
             "field": "definition",
-            "claim": "The Vodou ceremony and conspiracy at which, on the night of 14 August 1791 in woods near Cap-Français, some 200 enslaved people are said to have planned the rising of the northern plain. Presided over by the priest Dutty Boukman and the priestess Cécile Fatiman, with a black pig sacrificed and an oath sworn, it led a week later to the slave rising of 21–22 August, the beginning of the Haitian Revolution. No first-hand account exists, the earliest record dates from 1814, and whether it happened is debated.",
-            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
-            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+            "claim": "The first government of the Third Republic, set up at the Hôtel de Ville on 4 September 1870 by the republican deputies for Paris after crowds demanded a republic at the news of the capitulation at Sedan. Headed by General Trochu with Favre and Gambetta among its members, it carried on the war against Prussia from besieged Paris for five months, signed the armistice of 28 January 1871 and gave way when the National Assembly elected on 8 February chose Thiers.",
+            "source": "https://en.wikipedia.org/wiki/Government_of_National_Defense",
+            "locator": "lead; Origins; Notable members; Besieged; End of the government"
           },
           {
             "field": "body",
-            "claim": "White planters allowed Vodou rituals as harmless social gatherings, and the enslaved used them as opportunities to organise. According to tradition, on the night of 14 August 1791 some 200 representatives of the nearby plantations met in the \"Alligator Wood\" (Bois Caïman) on the Choiseul plantation ",
-            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
-            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+            "claim": "After Gambetta proclaimed the Republic at the Hôtel de Ville on 4 September, the government at once assumed control of all affairs in France and resolved to continue the war. Its members were Louis-Jules Trochu as president (also governor of Paris), Jules Favre as vice-president and foreign minister",
+            "source": "https://en.wikipedia.org/wiki/Government_of_National_Defense",
+            "locator": "lead; Origins; Notable members; Besieged; End of the government"
           },
           {
             "field": "period",
-            "claim": "1791",
-            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
-            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+            "claim": "4 September 1870 – 13 February 1871",
+            "source": "https://en.wikipedia.org/wiki/Government_of_National_Defense",
+            "locator": "lead; Origins; Notable members; Besieged; End of the government"
           },
           {
             "field": "startYear",
-            "claim": "1791",
-            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
-            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+            "claim": "1870",
+            "source": "https://en.wikipedia.org/wiki/Government_of_National_Defense",
+            "locator": "lead; Origins; Notable members; Besieged; End of the government"
           },
           {
             "field": "endYear",
-            "claim": "1791",
-            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
-            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Government_of_National_Defense",
+            "locator": "lead; Origins; Notable members; Besieged; End of the government"
           }
         ],
-        "original": "Cérémonie du Bois-Caïman",
-        "region": "americas"
+        "original": "Gouvernement de la Défense nationale",
+        "region": "europe"
+      }
+    },
+    {
+      "id": "siege-of-paris-1870-1871",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Siege_of_Paris_(1870%E2%80%931871)",
+        "https://en.wikipedia.org/wiki/Armistice_of_Versailles"
+      ],
+      "fields": {
+        "term": {
+          "ko": "파리 포위전 (1870–1871)",
+          "en": "Siege of Paris (1870–1871)"
+        },
+        "category": "military",
+        "period": {
+          "ko": "1870년 9월 19일 ~ 1871년 1월 28일",
+          "en": "19 September 1870 – 28 January 1871"
+        },
+        "startYear": 1870,
+        "endYear": 1871,
+        "definition": {
+          "ko": "1870년 9월 19일부터 1871년 1월 28일까지 프로이센이 이끄는 북독일연방군이 파리를 에워싼 넉 달의 포위전. 세 차례 돌파 시도가 실패하고 굶주림과 추위, 1월의 포격 끝에 국방정부가 휴전에 서명했다. 포위 중 정치화된 국민방위군이 무기를 간직한 채 남은 것이 파리 코뮌의 배경이 되었다.",
+          "en": "The four-month investment of Paris by the forces of the Prussian-led North German Confederation from 19 September 1870 to 28 January 1871. After three failed break-out attempts, starvation, cold and the bombardment of January, the Government of National Defence concluded an armistice. The National Guard, politicised during the siege and left with its arms, became the base of the Paris Commune."
+        },
+        "body": {
+          "ko": "스당 뒤 길이 열리자 빌헬름 1세와 몰트케는 제3군과 뫼즈군을 이끌고 거의 저항 없이 파리로 진군했다. 파리 총독 트로쉬는 스당에서 빠져나온 정규군 6만 명, 기동대 9만 명, 수병 1만 3천 명, 국민방위군 35만 명 등 약 51만 3천 명을 모았으나 징집된 국민방위군은 훈련이 없었다. 바이양 원수의 위원회가 1,200만 프랑으로 방어를 보강했고, 불로뉴 숲에는 양 25만 마리와 소 4만 마리가 들어왔으며 정부는 밀가루가 80일 분이면 넉넉하다고 보았다. 9월 15일 몰트케가 포위 명령을 내렸고 18일 베르사유가 점령되어 독일군 사령부가 되었으며 19일 포위가 완성되었다. 공성 지휘는 블루멘탈이 맡았다. 비스마르크는 빠른 항복을 위해 포격을 주장했으나 왕과 블루멘탈·황태자·몰트케는 민간인 피해와 중립국 여론을 들어 거절했고, 새 프랑스 군대를 먼저 섬멸해 파리를 굶겨 항복시키기로 했다. 트로쉬는 몰트케가 강습하기를 바라며 티에르 성벽과 16개 외곽 요새에 기댔지만 몰트케는 강습할 뜻이 없었다. 9월 30일 슈비이, 10월 13일 샤티용, 10월 29일 르부르제의 싸움이 이어졌고, 10월 31일 메스 항복 소식에 군중이 시청을 점거해 트로쉬 내각을 인질로 잡았다. 플루랑스·들레클뤼즈·블랑키 등은 새 정부를 세우려 했으나 합의하지 못했고, 11월 1일 새벽 평화롭게 물러났다. 정부는 보복하지 않겠다고 약속하고도 주모자 22명을 투옥했다.\n\n11월 30일 뒤크로의 8만 명이 샹피니·크레테유·빌리에를 공격한 「대출격」은 12월 3일 뷔르템베르크 군단에 막혔고, 12월 21일 르부르제 출격은 영하 14도의 추위 속에 동상 900건과 사상 2,000명을 냈다. 파리에서는 10월 초 말고기, 11월 중순 개·고양이·쥐를 거쳐 식물원의 코끼리 카스토르와 폴뤽스까지 잡아먹었고, 가난한 여성과 아이들이 가장 고통받았으며 1월에는 한 주에 3천에서 4천 명이 추위와 굶주림으로 죽었다. 기구 66편이 우편 250만 통과 강베타 등 승객을 실어 날랐고 전서구가 답신을 가져왔다. 1월 5일 샤티용 고지에서 남쪽 요새를 포격한 뒤 독일군은 23일 밤 동안 약 12,000발을 좌안에 쏘아 약 400명을 죽이거나 다치게 했으나 들레클뤼즈는 「1870년의 프랑스인은 전투가 축제였던 갈리아인의 후손」이라 외쳤고 저항 의지는 꺾이지 않았다. 1월 19일 뷔즈발 출격이 4천 명 넘는 손실로 끝나자 트로쉬는 총독직을 내놓았다. 1월 25일 빌헬름 1세는 몰트케에게 비스마르크와 상의하라고 명했고 비스마르크는 대구경 크루프 공성포를 쏘게 했다. 1월 23일부터 베르사유에서 파브르와 비스마르크가 비밀 교섭을 벌였고, 비스마르크는 국민방위군의 봉기를 걱정하는 파브르에게 「봉기를 도발하라, 아직 진압할 군대가 있을 때」라고 조언했다. 1월 28일 정규군 무장해제(1개 사단 제외), 2억 프랑, 요새 인도를 조건으로 휴전이 체결되었다. 영국과 미국의 식량이 곧 들어왔고, 3월 1일 독일군 3만 명이 승전 행진을 한 뒤 이틀 만에 동쪽으로 물러났다.",
+          "en": "With the road open after Sedan, Wilhelm I and Moltke marched on Paris with the Third Army and the Army of the Meuse almost unopposed. The governor of Paris, Trochu, assembled about 513,000 potential defenders, 60,000 regulars who had escaped from Sedan, 90,000 Mobiles, 13,000 seamen and 350,000 National Guards, though the compulsorily enrolled Guards were untrained. A committee under Marshal Vaillant spent 12 million francs on the defences, the Bois de Boulogne received 250,000 sheep and 40,000 oxen, and the government believed 80 days of flour would be ample. Moltke ordered the investment on 15 September, Versailles was taken on the 18th and became the German headquarters, and the encirclement was complete on the 19th; Blumenthal directed the siege. Bismarck proposed shelling the city to force a quick surrender, but the king, Blumenthal, the crown prince and Moltke refused on the grounds of civilian casualties and neutral opinion, preferring to destroy the new French armies first and starve Paris into surrender. Trochu hoped Moltke would storm the city and relied on the Thiers wall and sixteen forts, but Moltke had no such intention. Fighting followed at Chevilly on 30 September, Châtillon on 13 October and Le Bourget on 29 October, and on 31 October, at the news of Metz, a crowd invaded the Hôtel de Ville and held Trochu's cabinet hostage; Flourens, Delescluze and Blanqui tried to form a new government but could not agree, and the insurgents left peacefully early on 1 November. Despite promising no reprisals, the government imprisoned 22 of the leaders.\n\nThe \"great sortie\" of 30 November, in which Ducrot attacked Champigny, Créteil and Villiers with 80,000 men, was driven back by the Württemberg corps by 3 December, and the sortie towards Le Bourget on 21 December, in temperatures of minus 14 degrees, cost 900 cases of frostbite and 2,000 casualties. Parisians ate horses from early October, dogs, cats and rats from mid-November and finally the elephants Castor and Pollux of the Jardin des Plantes; poor women and children suffered most, and by January three to four thousand people a week were dying of cold and hunger. Sixty-six balloon flights carried some 2.5 million letters and passengers including Gambetta, and homing pigeons brought replies. After silencing the southern forts from the Châtillon heights on 5 January, the Germans fired some 12,000 shells into the Left Bank over 23 nights, killing or wounding about 400, but Delescluze declared that \"the Frenchmen of 1870 are the sons of those Gauls for whom battles were holidays\" and the will to resist held. When the sortie at Buzenval on 19 January ended with more than 4,000 casualties, Trochu resigned as governor. On 25 January Wilhelm I ordered Moltke to consult Bismarck, who had the city bombarded with large-calibre Krupp siege guns. Secret talks between Favre and Bismarck began at Versailles on 23 January, and Bismarck advised Favre, who feared a rising of the National Guard, to \"provoke an uprising, then, while you still have an army with which to suppress it\". The armistice signed on 28 January disarmed the regular troops less one division, levied 200 million francs and surrendered the forts. British and American food arrived almost at once, and on 1 March 30,000 German troops paraded through the city before withdrawing east after two days."
+        },
+        "aliases": {
+          "ko": [
+            "파리 포위 (1870)",
+            "파리 공성전 (1870–1871)",
+            "파리 포위전 (1870)"
+          ],
+          "en": [
+            "Siege of Paris (1870)",
+            "Belagerung von Paris",
+            "Siège de Paris (1870-1871)"
+          ]
+        },
+        "people": [
+          "louis-jules-trochu",
+          "helmuth-von-moltke",
+          "otto-von-bismarck",
+          "jules-favre",
+          "leon-gambetta",
+          "louis-auguste-blanqui",
+          "charles-delescluze"
+        ],
+        "events": [
+          "franco-prussian-war-1870-1871",
+          "paris-commune-1871"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The four-month investment of Paris by the forces of the Prussian-led North German Confederation from 19 September 1870 to 28 January 1871. After three failed break-out attempts, starvation, cold and the bombardment of January, the Government of National Defence concluded an armistice. The National Guard, politicised during the siege and left with its arms, became the base of the Paris Commune.",
+            "source": "https://en.wikipedia.org/wiki/Siege_of_Paris_(1870%E2%80%931871)",
+            "locator": "lead; Background; Siege; Food & fuel shortages; Bombardment; Armistice and surrender; Air mail"
+          },
+          {
+            "field": "body",
+            "claim": "With the road open after Sedan, Wilhelm I and Moltke marched on Paris with the Third Army and the Army of the Meuse almost unopposed. The governor of Paris, Trochu, assembled about 513,000 potential defenders, 60,000 regulars who had escaped from Sedan, 90,000 Mobiles, 13,000 seamen and 350,000 Nati",
+            "source": "https://en.wikipedia.org/wiki/Siege_of_Paris_(1870%E2%80%931871)",
+            "locator": "lead; Background; Siege; Food & fuel shortages; Bombardment; Armistice and surrender; Air mail"
+          },
+          {
+            "field": "period",
+            "claim": "19 September 1870 – 28 January 1871",
+            "source": "https://en.wikipedia.org/wiki/Siege_of_Paris_(1870%E2%80%931871)",
+            "locator": "lead; Background; Siege; Food & fuel shortages; Bombardment; Armistice and surrender; Air mail"
+          },
+          {
+            "field": "startYear",
+            "claim": "1870",
+            "source": "https://en.wikipedia.org/wiki/Siege_of_Paris_(1870%E2%80%931871)",
+            "locator": "lead; Background; Siege; Food & fuel shortages; Bombardment; Armistice and surrender; Air mail"
+          },
+          {
+            "field": "endYear",
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Siege_of_Paris_(1870%E2%80%931871)",
+            "locator": "lead; Background; Siege; Food & fuel shortages; Bombardment; Armistice and surrender; Air mail"
+          }
+        ],
+        "original": "Siège de Paris (1870-1871) / Belagerung von Paris",
+        "region": "europe"
+      }
+    },
+    {
+      "id": "treaty-of-frankfurt-1871",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+        "https://en.wikipedia.org/wiki/Franco-Prussian_War"
+      ],
+      "fields": {
+        "term": {
+          "ko": "프랑크푸르트 조약 (1871)",
+          "en": "Treaty of Frankfurt (1871)"
+        },
+        "category": "diplomacy",
+        "period": {
+          "ko": "1871년 5월 10일",
+          "en": "10 May 1871"
+        },
+        "startYear": 1871,
+        "endYear": 1871,
+        "definition": {
+          "ko": "1871년 5월 10일 프랑크푸르트에서 독일 제국과 프랑스 제3공화국이 맺은 보불전쟁의 강화 조약. 프랑스는 벨포르를 뺀 알자스와 로렌 일부(마을 1,694곳, 주민 159만 7천 명)를 넘기고 금 50억 프랑을 5년 안에 갚기로 했으며, 완납까지 영토 일부가 점령되었다. 알자스-로렌 회복은 이후 40년 프랑스 보복주의의 핵심이 되었다.",
+          "en": "The peace treaty of the Franco-Prussian War, signed at Frankfurt on 10 May 1871 by the German Empire and the French Third Republic. France ceded Alsace except Belfort and part of Lorraine (1,694 villages and towns, 1,597,000 inhabitants) and undertook to pay five billion gold francs within five years, with part of its territory occupied until payment. The recovery of Alsace-Lorraine became the core of French revanchism for the next forty years."
+        },
+        "body": {
+          "ko": "1월 28일의 베르사유 휴전과 2월 26일의 가조약 뒤에 맺어진 이 조약은 새 국경을 정했다. 프랑스는 알자스의 바랭·오랭 주를 벨포르와 그 영역을 빼고, 로렌에서는 모젤 주의 대부분과 샤토살랭·사르부르를 포함한 뫼르트 주의 3분의 1, 보주 주의 살과 시르메크 칸톤을 넘겼다. 144만 7천 헥타르와 광업·제철 잠재력의 20%가 함께 넘어갔다. 병합지 주민은 1872년 10월 1일까지 프랑스 국적을 지키고 이주하거나 남아서 독일 국민이 되는 선택권을 가졌다. 조약은 독일군의 단계적 철수 틀을 정하고, 배상금 50억 프랑의 지급을 규정했으며, 1871년에 10억 프랑을 내야 철수가 시작되고 완납까지 프랑스 일부를 점령하도록 했다. 빌헬름 1세의 독일 황제 즉위를 승인했고, 알자스-로렌과 이어지는 수로 이용, 양국 교역, 포로 송환도 다뤘다. 1862년의 통상 조약은 갱신되지 않았고 프랑스는 독일에 교역·항해의 최혜국 대우를 주었다. 프랑스는 약속보다 빨리 배상금을 치러 독일군은 1873년 9월 물러났다.\n\n국경을 정한 요인은 여러 가지였다. 독일 군부는 보주 산맥까지의 알자스와 티옹빌에서 메스에 이르는 길목을 미래의 프랑스와의 전쟁에 대비한 필수 지역으로 보았다. 국경을 서쪽으로 옮기지 않으면 새 제국의 프랑스 국경 대부분이 바덴과 바이에른의 몫이 되어, 보복심에 찬 프랑스를 문 앞에 둔 두 나라에 제국군을 주둔시켜야 하고 통일 조약으로 얻은 남독일의 자치가 흔들릴 터였다. 새 국경은 대체로 언어 경계를 따랐고 주민 다수가 독일어 방언을 쓰며 두 세기 전까지 신성로마제국에 속했다는 사실이 민족적 명분이 되었으나, 프랑스어권 메스의 병합은 프랑스에서 분노를 일으켜 보복주의의 주요 논거가 되었다. 철광과 석탄 같은 자원은 병합의 동기로 작용하지 않은 것으로 보인다. 프랑스는 1914년까지 조약을 전부 지켰다. 조약은 이후 40년 프랑스의 대독 정책을 규정했고, 「잃어버린 지방」의 회복은 1차 세계대전 참전의 가장 강력한 동기 가운데 하나가 되었다. 1918년 윌슨은 14개조의 여덟째 조항에서 주민의 뜻을 묻지 않고 알자스-로렌의 반환을 주장했고, 1919년 베르사유 조약으로 프랑스에 돌아갔다.",
+          "en": "Concluded after the armistice of 28 January and the preliminary peace of 26 February, the treaty fixed the new frontier. France ceded the Alsatian departments of Bas-Rhin and Haut-Rhin except Belfort and its territory, and in Lorraine most of the Moselle department, a third of Meurthe including Château-Salins and Sarrebourg, and the cantons of Saales and Schirmeck in the Vosges: 1,447,000 hectares and 20 per cent of its mining and steel potential went with them. Residents of the annexed region had until 1 October 1872 to keep French nationality and emigrate or to remain and become German citizens. The treaty set a framework for the staged withdrawal of German troops, regulated the payment of the five-billion-franc indemnity, required one billion in 1871 before any withdrawal and military occupation of parts of France until the sum was paid, recognised Wilhelm I as German Emperor, and dealt with navigable waterways connected with Alsace-Lorraine, trade between the two countries and the return of prisoners of war. The trade treaty of 1862 was not renewed, and France granted Germany most-favoured-nation treatment for trade and navigation. France paid faster than agreed and the German troops withdrew in September 1873.\n\nSeveral factors shaped the boundary. The German military regarded Alsace up to the Vosges and the route between Thionville and Metz as a requirement for the protection of Germany in any future war with France. Without a westward shift, the new empire's frontier with France would have fallen largely to Baden and Bavaria, which would have required stationing imperial forces in those states and compromised the autonomy the southern states had kept in the unification treaty. The new border largely followed the linguistic one, and the fact that most of the population spoke German dialects and had belonged to the Holy Roman Empire two centuries earlier served as a nationalist justification, but the conquest of French-speaking Metz sparked outrage in France and became one of the main arguments of revanchism. Iron ore and coal do not appear to have played a role in the annexation. France respected the treaty in its entirety until 1914. The treaty polarised French policy towards Germany for forty years, and the recovery of the \"lost provinces\" became one of the most powerful motives for France's involvement in the First World War. In 1918 Wilson advocated the transfer of Alsace-Lorraine to France as the eighth of his Fourteen Points without reference to the wishes of its population, and it was returned to France under the Treaty of Versailles of 1919."
+        },
+        "aliases": {
+          "ko": [
+            "프랑크푸르트 강화조약",
+            "프랑크푸르트 평화조약 (1871)",
+            "프랑크푸르트 강화 (1871)"
+          ],
+          "en": [
+            "Peace of Frankfurt",
+            "Traité de Francfort",
+            "Friede von Frankfurt",
+            "Frankfurt Peace Treaty"
+          ]
+        },
+        "people": [
+          "otto-von-bismarck",
+          "jules-favre",
+          "adolphe-thiers",
+          "wilhelm-i"
+        ],
+        "events": [
+          "franco-prussian-war-1870-1871",
+          "paris-commune-1871"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The peace treaty of the Franco-Prussian War, signed at Frankfurt on 10 May 1871 by the German Empire and the French Third Republic. France ceded Alsace except Belfort and part of Lorraine (1,694 villages and towns, 1,597,000 inhabitants) and undertook to pay five billion gold francs within five years, with part of its territory occupied until payment. The recovery of Alsace-Lorraine became the core of French revanchism for the next forty years.",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+            "locator": "lead; Summary; Factors that influenced the boundary; Legacy"
+          },
+          {
+            "field": "body",
+            "claim": "Concluded after the armistice of 28 January and the preliminary peace of 26 February, the treaty fixed the new frontier. France ceded the Alsatian departments of Bas-Rhin and Haut-Rhin except Belfort and its territory, and in Lorraine most of the Moselle department, a third of Meurthe including Chât",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+            "locator": "lead; Summary; Factors that influenced the boundary; Legacy"
+          },
+          {
+            "field": "period",
+            "claim": "10 May 1871",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+            "locator": "lead; Summary; Factors that influenced the boundary; Legacy"
+          },
+          {
+            "field": "startYear",
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+            "locator": "lead; Summary; Factors that influenced the boundary; Legacy"
+          },
+          {
+            "field": "endYear",
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+            "locator": "lead; Summary; Factors that influenced the boundary; Legacy"
+          }
+        ],
+        "original": "Traité de Francfort / Friede von Frankfurt",
+        "region": "europe"
+      }
+    },
+    {
+      "id": "annexation-of-alsace-lorraine-1871",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alsace%E2%80%93Lorraine",
+        "https://en.wikipedia.org/wiki/Treaty_of_Frankfurt_(1871)",
+        "https://www.marxists.org/archive/marx/works/1871/civil-war-france/ch02.htm"
+      ],
+      "fields": {
+        "term": {
+          "ko": "알자스-로렌 병합 (1871)",
+          "en": "Annexation of Alsace-Lorraine (1871)"
+        },
+        "category": "nationalities",
+        "period": {
+          "ko": "1871–1918",
+          "en": "1871–1918"
+        },
+        "startYear": 1871,
+        "endYear": 1918,
+        "definition": {
+          "ko": "보불전쟁에서 이긴 독일 제국이 프랑크푸르트 조약으로 알자스 대부분과 로렌 일부를 넘겨받아 1871년 6월 28일 「제국령 알자스-로렌」으로 삼은 일과 그 통치. 연방 구성국이 아니라 황제가 임명한 총독이 다스리는 직할 영토였고, 1918년 프랑스로 돌아갈 때까지 프랑스 보복주의와 독일의 프랑스 고립 외교의 원천이었다. 제1인터내셔널과 독일 사회민주주의자들은 1870년 9월부터 이 병합에 반대했다.",
+          "en": "The German Empire's takeover of most of Alsace and part of Lorraine, ceded by France under the Treaty of Frankfurt, and its rule there as the \"Imperial Territory of Alsace-Lorraine\" created on 28 June 1871. Administered directly by an imperial governor rather than as a constituent state, it was a source of French revanchism and of Germany's diplomacy of isolating France until it returned to France in 1918. The First International and the German Social Democrats opposed the annexation from September 1870."
+        },
+        "body": {
+          "ko": "스트라스부르를 수도로 한 제국령은 독일 제국에서 유일하게 구성국이 아니라 제국 정부가 직접 다스린 영토였다. 프로이센은 주민을 먼저 「독일화」해야 한다고 보아 처음에는 점령지처럼 다루었고 빌헬름 1세가 임명한 총독이 통치했다. 1874년 10월 29일 황제의 칙령으로 구 의회가 임명하는 30명의 지방위원회가 생겼고, 1877년 입법권, 1879년 법률 발의권과 제국 총독직이 더해졌으며, 1911년 헌법으로 양원제 의회와 제한적 자치를 얻었다. 프랑크푸르트 조약에 따라 주민은 1872년 10월 1일까지 프랑스 국적을 택할 수 있었는데 160,878명(10.4%)이 택했고 오랭에서는 20.3%에 이르렀다. 원래는 선택자가 떠나야 했지만 실제로 프랑스로 간 사람은 약 5만 명(3.2%)이었고, 떠나지 않은 약 11만 명은 추방되지 않고 독일 국적을 얻었다. 선택자를 28만 명, 이주자를 13만 명으로 보는 추정도 있다. 주민의 약 90%가 독일어 방언을 썼지만 가톨릭 신자들은 개신교 프로이센 주도의 통일을 의심했고 개신교 소수는 독일 편입을 반겼다. 1872~73년 문화투쟁이 이르자 가톨릭 교회는 저항의 통로가 되었고, 1873년 8월 낭시 주교의 재통합 기도 요청 서한이 읽히자 당국은 체포와 가톨릭 언론 금지로 답했다.\n\n1874년 제국의회 의석 15석이 주어진 뒤 1887년까지 선거마다 6~10명이 병합에 반대하는 「항의 의원」이었다. 이들은 「의견을 묻지 않고 프랑크푸르트 조약으로 독일 제국에 편입된 알자스-로렌 주민에게 이 병합에 대한 의견을 표명할 기회를 달라」는 프랑스어 동의안을 냈으나 큰 표차로 부결되었고, 당선 뒤 회의에 나가지 않았다. 1918년 프랑스로 돌아갈 때도 주민 투표는 없었다. 1890년 비스마르크가 물러난 뒤 제국의 정당들이 세력을 넓혔고, 20세기 초에는 프랑스 복귀를 주장하는 큰 사회 집단이 사라졌다가 1913년 차베른 사건이 긴장을 되살렸다. 병합의 동기와 책임은 논쟁거리다. 독일 군부는 보주 산맥과 티옹빌-메스 길목을 요구했고 여론도 프랑스에 굴욕을 주기를 바랐으며, 비스마르크의 전기 작가들은 그가 「마지못해 양보했다」고 보면서 병합을 프랑스를 영구적 적으로 만든 그의 가장 큰 실책으로 꼽는다. 그러나 보복심이 1880년대에는 가라앉았고 알자스-로렌 회복이 1차 세계대전 개전 뒤에야 프랑스의 전쟁 목표가 되었다는 지적도 있다. 1870년 9월 마르크스와 엥겔스는 브라운슈바이크 위원회에 병합이 강화를 휴전으로 만든다고 썼고, 위원회의 선언과 총평의회의 두 번째 담화, 베벨과 리프크네히트의 11월 26일 제안은 모두 병합 없는 강화를 요구했다.",
+          "en": "With Strasbourg as its capital, the Imperial Territory was the only territory of the German Empire administered directly by the imperial government rather than as a constituent state. Prussia held that the population would first have to be \"Germanised\", treated the region initially as occupied territory and governed it through a governor appointed by Wilhelm I. An imperial decree of 29 October 1874 created a thirty-member Territorial Committee appointed by the district assemblies; it gained legislative functions in 1877 and the right to initiate laws in 1879, when the office of imperial governor (Reichsstatthalter) was introduced, and the constitution of 1911 brought a bicameral Landtag and limited autonomy. Under the Treaty of Frankfurt the inhabitants could opt for French citizenship until 1 October 1872: 160,878 (10.4 per cent) did so, 20.3 per cent in Upper Alsace. Optants were originally expected to leave, but only about 50,000 (3.2 per cent) left for France, and the roughly 110,000 who stayed were not expelled but kept German citizenship; some estimates put the optants at 280,000 and those who left at 130,000. About 90 per cent of the population spoke German dialects, but Catholics were sceptical of unification under Protestant Prussia while the Protestant minority welcomed it. When the Kulturkampf reached the territory in 1872–73 the Catholic Church became a vehicle of resistance, and when a pastoral letter from the Bishop of Nancy calling for prayers for reunification with France was read in August 1873 the authorities answered with arrests and a ban on the Catholic press.\n\nAfter the territory received 15 Reichstag seats in 1874, between six and ten of its deputies at every election until 1887 were \"protest deputies\" opposed to the annexation. Their French-language motion that \"the population of Alsace-Lorraine, which has been incorporated into the German Empire by the Treaty of Frankfurt without having been consulted, be called upon to express its opinion on this annexation\" was rejected by a large majority, and they did not attend the sessions after their election; nor was the population consulted when it returned to France in 1918. After Bismarck's dismissal in 1890 the parties of the Empire gained ground, and by the early twentieth century no major social group advocated a return to France, until the Zabern affair of 1913 revived tensions. The motives and responsibility for the annexation are disputed. The army demanded the Vosges and the Thionville-Metz route, public opinion wanted France humiliated, and Bismarck's biographers hold that he \"reluctantly gave in\" while counting the annexation his main mistake, the one that turned France into a permanent enemy; others note that revanchism faded in the 1880s and that the return of Alsace-Lorraine became a French war aim only after the First World War had begun. In September 1870 Marx and Engels wrote to the Brunswick committee that annexation would turn the peace into an armistice, and the committee's manifesto, the General Council's second address and Bebel's and Liebknecht's motion of 26 November all demanded a peace without annexation."
+        },
+        "aliases": {
+          "ko": [
+            "제국령 알자스-로렌",
+            "알자스로렌 병합",
+            "엘자스로트링겐 제국령"
+          ],
+          "en": [
+            "Imperial Territory of Alsace-Lorraine",
+            "Reichsland Elsass-Lothringen",
+            "Reichsland"
+          ]
+        },
+        "people": [
+          "otto-von-bismarck",
+          "wilhelm-i",
+          "karl-marx",
+          "friedrich-engels",
+          "august-bebel",
+          "wilhelm-liebknecht"
+        ],
+        "events": [
+          "franco-prussian-war-1870-1871",
+          "second-international-collapse-1914"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The German Empire's takeover of most of Alsace and part of Lorraine, ceded by France under the Treaty of Frankfurt, and its rule there as the \"Imperial Territory of Alsace-Lorraine\" created on 28 June 1871. Administered directly by an imperial governor rather than as a constituent state, it was a source of French revanchism and of Germany's diplomacy of isolating France until it returned to France in 1918. The First International and the German Social Democrats opposed the annexation from September 1870.",
+            "source": "https://en.wikipedia.org/wiki/Alsace%E2%80%93Lorraine",
+            "locator": "lead; Citizenship option; Reichstag elections 1874–1912; Kulturkampf; Treaty of Frankfurt: Legacy"
+          },
+          {
+            "field": "body",
+            "claim": "With Strasbourg as its capital, the Imperial Territory was the only territory of the German Empire administered directly by the imperial government rather than as a constituent state. Prussia held that the population would first have to be \"Germanised\", treated the region initially as occupied terri",
+            "source": "https://en.wikipedia.org/wiki/Alsace%E2%80%93Lorraine",
+            "locator": "lead; Citizenship option; Reichstag elections 1874–1912; Kulturkampf; Treaty of Frankfurt: Legacy"
+          },
+          {
+            "field": "period",
+            "claim": "1871–1918",
+            "source": "https://en.wikipedia.org/wiki/Alsace%E2%80%93Lorraine",
+            "locator": "lead; Citizenship option; Reichstag elections 1874–1912; Kulturkampf; Treaty of Frankfurt: Legacy"
+          },
+          {
+            "field": "startYear",
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Alsace%E2%80%93Lorraine",
+            "locator": "lead; Citizenship option; Reichstag elections 1874–1912; Kulturkampf; Treaty of Frankfurt: Legacy"
+          },
+          {
+            "field": "endYear",
+            "claim": "1918",
+            "source": "https://en.wikipedia.org/wiki/Alsace%E2%80%93Lorraine",
+            "locator": "lead; Citizenship option; Reichstag elections 1874–1912; Kulturkampf; Treaty of Frankfurt: Legacy"
+          }
+        ],
+        "original": "Reichsland Elsaß-Lothringen",
+        "region": "europe"
+      }
+    },
+    {
+      "id": "proclamation-of-german-empire-1871",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Proclamation_of_the_German_Empire",
+        "https://en.wikipedia.org/wiki/Wilhelm_I,_German_Emperor",
+        "https://en.wikipedia.org/wiki/Franco-Prussian_War"
+      ],
+      "fields": {
+        "term": {
+          "ko": "독일 제국 선포 (1871)",
+          "en": "Proclamation of the German Empire (1871)"
+        },
+        "category": "state",
+        "period": {
+          "ko": "1871년 1월 18일",
+          "en": "18 January 1871"
+        },
+        "startYear": 1871,
+        "endYear": 1871,
+        "definition": {
+          "ko": "1871년 1월 18일 포위된 파리 외곽의 베르사유 궁전 거울의 방에서 프로이센 국왕 빌헬름 1세가 독일 황제로 선포된 의식. 11월 조약으로 남독일 국가들이 북독일연방에 들어오고 1월 1일 새 헌법이 발효한 뒤의 상징적 행사로, 1701년 프로이센 왕국 창건 기념일에 맞춰 열렸고 독일 제국 건국일로 기념되었다.",
+          "en": "The ceremony in the Hall of Mirrors at the Palace of Versailles, outside besieged Paris, at which King Wilhelm I of Prussia was proclaimed German Emperor on 18 January 1871. A symbolic act following the November Treaties that brought the South German states into the North German Confederation and the new constitution in force from 1 January, it was timed to the anniversary of the founding of the Kingdom of Prussia in 1701 and was celebrated as the empire's founding day."
+        },
+        "body": {
+          "ko": "1866년 오스트리아를 밀어내고 북독일연방을 세운 비스마르크에게 1870년의 전쟁은 남독일 국가들의 특수주의를 넘어설 기회였다. 8~9월의 승리로 남독일 군주들은 연방 가입에 기울었고, 1870년 11월 바덴·헤센다름슈타트·뷔르템베르크·바이에른이 조약을 맺었다. 12월 8일 연방 참의원은 연방의 이름을 「독일 제국」으로 바꾸고 프로이센 왕을 독일 황제로 삼기로 의결했고, 빌헬름은 그날 제국의회 대표단 앞에서 동의했으며, 12월 9~10일 제국의회가 황제 칭호를 바치기로 하고 남독일 국가들을 받아들이는 헌법 개정을 통과시켰다. 새 헌법과 황제 칭호는 1871년 1월 1일 발효했다. 빌헬름은 황제 칭호가 프로이센 왕의 칭호를 가릴까 꺼렸고 「독일의 황제(Kaiser von Deutschland)」를 원했으나, 비스마르크는 남독일 제후들과 오스트리아 황제가 반발할 것이라고 경고했고 왕은 마지못해 「독일 황제(Deutscher Kaiser)」를 받아들였다. 날짜는 1701년 브란덴부르크 선제후 프리드리히 3세가 프로이센 왕 프리드리히 1세로 대관한 1월 18일로 잡았고, 장소는 루이 14세가 독일 도시와 나라들을 정복한 것을 천장화로 기린 거울의 방이었다. 독일군 대본영이 베르사유에 있었고 프로이센 지도부와 동맹국 지도자 일부가 파리 주변에 모여 있었다.\n\n1월 18일 군악대 뒤로 독일군이 궁전 둘레를 행진했고, 각 야전 연대 대표단이 전투로 찢긴 군기를 「알록달록한 숲」처럼 거울의 방에 세웠다. 한가운데 제단을 두고 예배를 올린 뒤 모두가 「이제 모두 하느님께 감사하라」를 불렀고, 회랑 끝 단 위에 빌헬름 1세와 제후들이 섰다. 비스마르크가 선포문을 읽었고, 빌헬름의 유일한 사위 바덴 대공 프리드리히 1세가 헌법상 정확한 칭호를 피해 「빌헬름 황제 폐하」를 외치자 참석자들이 세 번 따라 외쳤다. 헤센 대공, 브라운슈바이크 공, 로이스 양가와 슈바르츠부르크존더스하우젠·발데크피르몬트·리페의 제후는 참석하지 않았다. 빌헬름의 편지, 비스마르크의 서술, 병사로 참석한 역사가 알베르트 폰 피스터의 기록은 옥좌 대신 야전 제단을 세운 점에서 일치한다. 빌헬름은 종교적 성격을 강조했고, 비스마르크는 황제가 제후들 위에 서는 권위자가 아니라 전우들과 함께 승리한 사령관으로 자신을 보았다며 공공연히 비판했다. 3월 3일 새 제국의회 선거를 거쳐 5월 4일 제국 헌법이 발효했고, 프랑스는 5월 10일 프랑크푸르트 조약으로 제국을 승인했다. 제국은 왕국·대공국·공국·후국·자유시 25개의 연방이었고, 황제는 「동등한 자 가운데 첫째」로서 연방 참의원을 주재하고 재상을 임명했다. 통일은 자유 대신 이루어졌다는 비판 속에 마르크스는 제국을 「의회의 형식으로 가린 군사 전제」라 불렀다.",
+          "en": "For Bismarck, who had excluded Austria and founded the North German Confederation in 1866, the war of 1870 was the chance to overcome South German particularism. The victories of August and September inclined the southern princes to join, and in November 1870 Baden, Hesse-Darmstadt, Württemberg and Bavaria signed treaties. On 8 December the Bundesrat voted to rename the Confederation the \"German Empire\" and to make the king of Prussia German Emperor, Wilhelm agreed that day before a Reichstag delegation, and on 9 and 10 December the Reichstag voted to offer the title and passed the constitutional amendment admitting the southern states. The new constitution and the imperial title came into effect on 1 January 1871. Wilhelm feared the title would overshadow his Prussian kingship and wanted \"Kaiser von Deutschland\", but Bismarck warned that the South German princes and the emperor of Austria might protest, and the king grudgingly accepted \"Deutscher Kaiser\". The date chosen was 18 January, the anniversary of the coronation of Elector Frederick III of Brandenburg as King Frederick I of Prussia in 1701, and the place the Hall of Mirrors, whose ceiling celebrated Louis XIV as a conqueror of German cities and states. The great headquarters of the German armies was at Versailles, and the Prussian leadership and part of the allied leaders were gathered around Paris.\n\nOn 18 January German troops paraded behind military bands around the palace, and delegations of the field regiments raised their battle-torn banners in the Hall of Mirrors in a \"colourful forest\". A service was held at an altar in the middle of the hall, ending with everyone singing \"Nun danket alle Gott\", and Wilhelm I and the princes stood on a raised podium at the end of the gallery. Bismarck read out the proclamation, and Grand Duke Frederick I of Baden, Wilhelm's only son-in-law, avoided the precise constitutional title and shouted \"His Majesty, Kaiser Wilhelm\", which those present repeated three times. The rulers of Hesse, Brunswick, the two lines of Reuss, Schwarzburg-Sondershausen, Waldeck-Pyrmont and Lippe were not represented. Wilhelm's letter, Bismarck's account and the record of the historian Albert von Pfister, present as a soldier, agree that a field altar was built instead of a throne. Wilhelm emphasised the religious nature of the ceremony, while Bismarck openly criticised the emperor for seeing himself not as holding authority over the princes but as a master of war triumphing with his faithful. After the election of a new Reichstag on 3 March the constitution of the German Empire came into force on 4 May, and France recognised the empire in the Treaty of Frankfurt on 10 May. The empire was a federation of 25 kingdoms, grand duchies, duchies, principalities and free cities in which the emperor, as \"first among equals\", presided over the Bundesrat and appointed the chancellor. Amid the criticism that unity had been achieved at the expense of freedom, Marx called the empire \"a military despotism cloaked in parliamentary forms\"."
+        },
+        "aliases": {
+          "ko": [
+            "베르사유 황제 선포",
+            "독일 제국 건국",
+            "카이저 선포 (1871)"
+          ],
+          "en": [
+            "Kaiserproklamation",
+            "Deutsche Reichsgründung",
+            "Reichsgründung",
+            "Imperial proclamation at Versailles"
+          ]
+        },
+        "people": [
+          "wilhelm-i",
+          "otto-von-bismarck",
+          "karl-marx"
+        ],
+        "events": [
+          "franco-prussian-war-1870-1871"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The ceremony in the Hall of Mirrors at the Palace of Versailles, outside besieged Paris, at which King Wilhelm I of Prussia was proclaimed German Emperor on 18 January 1871. A symbolic act following the November Treaties that brought the South German states into the North German Confederation and the new constitution in force from 1 January, it was timed to the anniversary of the founding of the Kingdom of Prussia in 1701 and was celebrated as the empire's founding day.",
+            "source": "https://en.wikipedia.org/wiki/Proclamation_of_the_German_Empire",
+            "locator": "lead; Background; Proclamation on 18 January 1871; Accounts from eyewitnesses; Wilhelm I: German Emperor; Franco-Prussian War: German unification and power"
+          },
+          {
+            "field": "body",
+            "claim": "For Bismarck, who had excluded Austria and founded the North German Confederation in 1866, the war of 1870 was the chance to overcome South German particularism. The victories of August and September inclined the southern princes to join, and in November 1870 Baden, Hesse-Darmstadt, Württemberg and ",
+            "source": "https://en.wikipedia.org/wiki/Proclamation_of_the_German_Empire",
+            "locator": "lead; Background; Proclamation on 18 January 1871; Accounts from eyewitnesses; Wilhelm I: German Emperor; Franco-Prussian War: German unification and power"
+          },
+          {
+            "field": "period",
+            "claim": "18 January 1871",
+            "source": "https://en.wikipedia.org/wiki/Proclamation_of_the_German_Empire",
+            "locator": "lead; Background; Proclamation on 18 January 1871; Accounts from eyewitnesses; Wilhelm I: German Emperor; Franco-Prussian War: German unification and power"
+          },
+          {
+            "field": "startYear",
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Proclamation_of_the_German_Empire",
+            "locator": "lead; Background; Proclamation on 18 January 1871; Accounts from eyewitnesses; Wilhelm I: German Emperor; Franco-Prussian War: German unification and power"
+          },
+          {
+            "field": "endYear",
+            "claim": "1871",
+            "source": "https://en.wikipedia.org/wiki/Proclamation_of_the_German_Empire",
+            "locator": "lead; Background; Proclamation on 18 January 1871; Accounts from eyewitnesses; Wilhelm I: German Emperor; Franco-Prussian War: German unification and power"
+          }
+        ],
+        "original": "Kaiserproklamation in Versailles / Deutsche Reichsgründung",
+        "region": "europe"
+      }
+    },
+    {
+      "id": "brunswick-manifesto-1870",
+      "sources": [
+        "https://de.wikipedia.org/wiki/Braunschweiger_Manifest",
+        "https://www.marxists.org/archive/marx/works/1871/civil-war-france/ch02.htm",
+        "https://www.marxists.org/archive/marx/works/1870/letters/70_09_01a.htm"
+      ],
+      "fields": {
+        "term": {
+          "ko": "브라운슈바이크 선언 (1870)",
+          "en": "Brunswick Manifesto of 1870"
+        },
+        "category": "events",
+        "period": {
+          "ko": "1870년 9월 5일",
+          "en": "5 September 1870"
+        },
+        "startYear": 1870,
+        "endYear": 1870,
+        "definition": {
+          "ko": "1870년 9월 5일 브라운슈바이크에 있던 독일 사회민주노동자당(아이제나흐파) 중앙위원회가 낸 선언. 스당 뒤 전쟁의 중단과 프랑스 공화국과의 「명예로운 강화」를 요구하고 알자스-로렌 병합에 항의했다. 선언문은 압수되었고 위원 전원이 체포되어 쇠사슬에 묶인 채 동프로이센 뢰첸으로 끌려갔다. 1792년의 브라운슈바이크 선언과는 다른 문서다.",
+          "en": "The manifesto issued on 5 September 1870 by the central committee of the German Social Democratic Workers' Party (the Eisenachers), then seated in Brunswick. After Sedan it demanded an end to the war and an \"honourable peace\" with the French republic and protested against the annexation of Alsace-Lorraine. The manifesto was confiscated and all the committee members were arrested and taken in chains to Lötzen in East Prussia. It is not the Brunswick Manifesto of 1792."
+        },
+        "body": {
+          "ko": "전쟁이 시작될 때 브라운슈바이크의 위원회는 공격받은 쪽은 방어할 권리가 있다는 이유로 프랑스와의 전쟁을 지지했다. 자무엘 슈피어와 빌헬름 브라케의 이 입장은, 전쟁이 독일 쪽에서 의도된 것이라 보고 「형제에 대한」 무력 사용에 반대해 7월 제국의회 표결에서 기권한 아우구스트 베벨·빌헬름 리프크네히트와 정면으로 부딪쳤다. 두 진영의 격렬한 다툼으로 창당 1년 된 당은 깨질 위기에 놓였다. 마르크스와 엥겔스는 9월 1일 무렵 위원회에 보낸 편지에서 알자스-로렌 병합이 「이 전쟁을 유럽의 제도로 만드는 최선의 수단」이고 「서쪽의 폴란드」를 붙들려고 새 독일에 군사 전제를 영속시키며, 강화를 「프랑스가 잃은 영토를 되찾을 만큼 회복할 때까지의 휴전」으로 만든다고 썼다. 스당의 승리와 나폴레옹 3세의 생포 뒤 위원회는 전쟁 계속에 반대로 돌아서, 9월 5일 선언에서 프랑스와의 즉각적인 「명예로운 강화」를 요구했다. 선언은 「우리는 알자스와 로렌의 병합에 항의한다. 우리는 독일 노동계급의 이름으로 말하고 있음을 안다. 프랑스와 독일의 공동 이익을 위해, 동방의 야만에 맞선 서방 문명의 이익을 위해, 독일 노동자는 알자스와 로렌의 병합을 참고 견디지 않을 것이다」라고 썼고, 루이 보나파르트를 보통 범죄자로서 프랑스 공화국에 인도하라고 요구했다. 당은 이로써 분열을 면했지만 지도부는 곧바로 체포되었다.\n\n마르크스는 9월 15일 『폴 몰 가제트』에 「브라운슈바이크에 본부를 둔 국제노동자협회 독일 지부 위원회는 이달 5일 독일 노동계급에게 보내는 선언을 내어 알자스와 로렌의 병합을 막고 프랑스 공화국과의 명예로운 강화에 기여할 것을 호소했다. 사령관 포겔 폰 팔켄슈타인 장군의 명령으로 이 선언이 압수되었을 뿐 아니라 위원회의 모든 위원, 심지어 이 문서의 불운한 인쇄공까지 체포되어 보통 범죄자처럼 쇠사슬에 묶여 동프로이센의 뢰첸으로 끌려갔다」고 썼다. 브라운슈바이크에서 약 1,000km 떨어진 곳이었다. 1871년 1월 『데일리 뉴스』에서는 위원들이 「지난해 9월 초부터 갤리선 죄수처럼 다뤄졌고 지금도 국가반역 혐의로 사법 희극을 겪고 있으며」, 선언을 퍼뜨린 많은 노동자가 같은 운명을 맞았다고 썼다. 국가반역 기소는 집회법 위반으로 쪼그라들어 슈피어에게 구형된 수년의 자유형은 판결에서 징역 2개월로 남았다. 총평의회의 9월 9일 담화는 이 선언을 인용하며 독일 노동계급이 「이 보장의 첫째로 프랑스를 위한 명예로운 강화와 프랑스 공화국의 승인을 요구한다」고 썼고, 「독일 노동계급은 독일 중간계급과 같은 무른 재료로 만들어지지 않았음을 역사가 증명할 것」이라고 덧붙였다. 11월 26일 베벨과 리프크네히트는 제국의회에 병합 없는 강화를 제안했다.",
+          "en": "At the outbreak of the war the committee in Brunswick supported the war against France on the ground that whoever is attacked must be allowed to defend himself. This position of Samuel Spier and Wilhelm Bracke clashed head-on with that of August Bebel and Wilhelm Liebknecht, who held that the hostilities were desired by Germany and, rejecting a war \"against brothers\", abstained in the Reichstag vote of July; the fierce quarrel between the two camps threatened to break the year-old party apart. In a letter to the committee of about 1 September, Marx and Engels wrote that annexing Alsace-Lorraine was \"the best means of turning this war into a European institution\", would perpetuate military despotism in the new Germany as the price of holding \"a western Poland\", and would turn the peace into \"a mere armistice until France has recovered sufficiently to demand back her lost territories\". After the victory at Sedan and the capture of Napoleon III the committee too came out against continuing the war and in its manifesto of 5 September demanded an immediate \"honourable peace\" with France. \"We protest against the annexation of Alsace and Lorraine. And we are conscious of speaking in the name of the German working class. In the common interest of France and Germany, in the interest of western civilization against eastern barbarism, the German workmen will not patiently tolerate the annexation of Alsace and Lorraine\", it declared, and it demanded the extradition of Louis Bonaparte to the French republic as a common felon. The party was thus saved from a split, but its leadership was arrested at once.\n\nMarx reported in the Pall Mall Gazette on 15 September that the committee of the German section of the International Working Men's Association, seated in Brunswick, had issued a manifesto to the German working class on the 5th calling on it to prevent the annexation of Alsace and Lorraine and to contribute to an honourable peace with the French republic, and that on the orders of the commanding general Vogel von Falckenstein not only had the manifesto been confiscated but all the members of the committee, even the unfortunate printer of the document, had been arrested and taken \"in chains like common criminals\" to Lötzen in East Prussia, about a thousand kilometres from Brunswick. In the Daily News in January 1871 he wrote that the members had been treated \"like galley slaves\" since the beginning of September and were still undergoing a judicial comedy on a charge of high treason, a fate shared by many workers who had spread the manifesto. The treason charge shrank to an offence against the law on assemblies, and of the years of imprisonment demanded for Spier the verdict left two months. The General Council's second address of 9 September quoted the manifesto and wrote that the German working class claimed \"as the first of these guarantees, an honorable peace for France, and the recognition of the French republic\", adding that \"history will prove that the German working class are not made of the same malleable stuff as the German middle class\". On 26 November Bebel and Liebknecht put a peace without annexation to the Reichstag."
+        },
+        "aliases": {
+          "ko": [
+            "브라운슈바이크 위원회 선언",
+            "1870년 브라운슈바이크 선언",
+            "사회민주노동자당 브라운슈바이크 선언"
+          ],
+          "en": [
+            "Braunschweiger Manifest",
+            "Brunswick Manifesto (1870)",
+            "Manifesto of the Brunswick committee"
+          ]
+        },
+        "people": [
+          "karl-marx",
+          "friedrich-engels",
+          "august-bebel",
+          "wilhelm-liebknecht"
+        ],
+        "events": [
+          "franco-prussian-war-1870-1871"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The manifesto issued on 5 September 1870 by the central committee of the German Social Democratic Workers' Party (the Eisenachers), then seated in Brunswick. After Sedan it demanded an end to the war and an \"honourable peace\" with the French republic and protested against the annexation of Alsace-Lorraine. The manifesto was confiscated and all the committee members were arrested and taken in chains to Lötzen in East Prussia. It is not the Brunswick Manifesto of 1792.",
+            "source": "https://de.wikipedia.org/wiki/Braunschweiger_Manifest",
+            "locator": "de: 전체 — en: Second Address; Marx and Engels to the Brunswick Committee, c. 1 September 1870"
+          },
+          {
+            "field": "body",
+            "claim": "At the outbreak of the war the committee in Brunswick supported the war against France on the ground that whoever is attacked must be allowed to defend himself. This position of Samuel Spier and Wilhelm Bracke clashed head-on with that of August Bebel and Wilhelm Liebknecht, who held that the hostil",
+            "source": "https://de.wikipedia.org/wiki/Braunschweiger_Manifest",
+            "locator": "de: 전체 — en: Second Address; Marx and Engels to the Brunswick Committee, c. 1 September 1870"
+          },
+          {
+            "field": "period",
+            "claim": "5 September 1870",
+            "source": "https://de.wikipedia.org/wiki/Braunschweiger_Manifest",
+            "locator": "de: 전체 — en: Second Address; Marx and Engels to the Brunswick Committee, c. 1 September 1870"
+          },
+          {
+            "field": "startYear",
+            "claim": "1870",
+            "source": "https://de.wikipedia.org/wiki/Braunschweiger_Manifest",
+            "locator": "de: 전체 — en: Second Address; Marx and Engels to the Brunswick Committee, c. 1 September 1870"
+          },
+          {
+            "field": "endYear",
+            "claim": "1870",
+            "source": "https://de.wikipedia.org/wiki/Braunschweiger_Manifest",
+            "locator": "de: 전체 — en: Second Address; Marx and Engels to the Brunswick Committee, c. 1 September 1870"
+          }
+        ],
+        "original": "Braunschweiger Manifest",
+        "region": "europe"
       }
     }
   ]

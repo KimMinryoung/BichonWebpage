@@ -1,7 +1,9 @@
 {
-  "toussaint-louverture": "national-liberation",
-  "jean-jacques-dessalines": "national-liberation",
-  "henri-christophe": "national-liberation",
-  "alexandre-petion": "national-liberation",
-  "dutty-boukman": "national-liberation"
+  "otto-von-bismarck": "conservative",
+  "napoleon-iii": "monarchist",
+  "wilhelm-i": "monarchist",
+  "helmuth-von-moltke": "conservative",
+  "leon-gambetta": "liberal-republican",
+  "louis-jules-trochu": "monarchist",
+  "jules-favre": "liberal-republican"
 }
