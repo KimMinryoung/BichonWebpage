@@ -202,7 +202,9 @@
         "self-determination-of-nations",
         "bourgeois-nationalism"
       ],
-      "events": [],
+      "events": [
+        "revolution-1905"
+      ],
       "addedAt": "2026-08-06",
       "aliases": {
         "ko": [
@@ -253,7 +255,9 @@
         "liquidationism",
         "august-bloc"
       ],
-      "events": [],
+      "events": [
+        "ussr-formation"
+      ],
       "addedAt": "2026-08-05",
       "aliases": {
         "ko": [
@@ -299,7 +303,10 @@
         "liquidationism",
         "august-bloc"
       ],
-      "events": [],
+      "events": [
+        "ussr-formation",
+        "finland-1917-1920"
+      ],
       "addedAt": "2026-08-05",
       "aliases": {
         "ko": [
@@ -344,7 +351,10 @@
         "russian-provisional-government",
         "bolshevik"
       ],
-      "events": [],
+      "events": [
+        "february-revolution",
+        "october-revolution"
+      ],
       "excerpts": {
         "terms": {
           "april-theses": "*"
@@ -1625,7 +1635,10 @@
         "developed-socialism",
         "all-peoples-state"
       ],
-      "events": [],
+      "events": [
+        "nineteenth-party-conference",
+        "novo-ogaryovo-process"
+      ],
       "addedAt": "2026-08-02",
       "aliases": {
         "ko": [
@@ -4894,7 +4907,10 @@
         "ronald-reagan"
       ],
       "terms": [],
-      "events": [],
+      "events": [
+        "new-thinking-diplomacy",
+        "war-scare-1983"
+      ],
       "addedAt": "2026-09-07",
       "aliases": {
         "ko": [
@@ -4935,7 +4951,10 @@
       "terms": [
         "salt-ii-compliance-dispute"
       ],
-      "events": [],
+      "events": [
+        "detente-salt",
+        "war-scare-1983"
+      ],
       "addedAt": "2026-09-07",
       "aliases": {
         "ko": [
@@ -5026,7 +5045,9 @@
       "terms": [
         "first-international"
       ],
-      "events": [],
+      "events": [
+        "paris-commune-1871"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5064,7 +5085,9 @@
       "terms": [
         "anarchism"
       ],
-      "events": [],
+      "events": [
+        "paris-commune-1871"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5115,7 +5138,9 @@
         "anarchism",
         "dictatorship-of-the-proletariat"
       ],
-      "events": [],
+      "events": [
+        "paris-commune-1871"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5157,7 +5182,9 @@
       "terms": [
         "social-democracy"
       ],
-      "events": [],
+      "events": [
+        "second-international-collapse-1914"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -5203,7 +5230,9 @@
       "terms": [
         "social-democracy"
       ],
-      "events": [],
+      "events": [
+        "second-international-collapse-1914"
+      ],
       "addedAt": "2026-09-13",
       "aliases": {
         "ko": [
@@ -6141,7 +6170,9 @@
         "social-democratic-party-of-germany",
         "anti-socialist-laws"
       ],
-      "events": [],
+      "events": [
+        "second-international-collapse-1914"
+      ],
       "excerpts": {
         "terms": {
           "erfurt-program": "*"
