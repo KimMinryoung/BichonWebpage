@@ -241,7 +241,7 @@ const people = [
       ['1900', '오스만 제국을 떠나 망명', 'Went into exile from the Ottoman Empire'],
       ['1908', '오스만 의회 의원 (베라트)', 'Deputy for Berat in the Ottoman parliament'],
       ['1912', '블로러 회의에서 알바니아 독립 선언', 'Proclaimed Albanian independence at the Vlorë assembly'],
-      ['1912–1914', '블로러 정부(알바니아 첫 정부) 총리 겸 외무장관', 'Prime minister and foreign minister of the provisional government of Albania'],
+      ['1912–1914', '블로러 정부의 총리 겸 외무장관', 'Prime minister and foreign minister of the provisional government of Albania'],
     ],
   }),
   unaffiliated(person({
