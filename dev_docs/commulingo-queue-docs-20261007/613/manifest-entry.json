@@ -1,0 +1,28 @@
+{
+  "id": "petrograd-soviet-conditional-support-1917",
+  "file": "petrograd-soviet-conditional-support-1917.html",
+  "docLang": "ko",
+  "date": "1917-03-15",
+  "title": {
+    "ko": "페트로그라드 소비에트 집행위원회의 대시민 호소 (1917년 3월 2일[15일])",
+    "en": "Petrograd Soviet Executive Committee Appeal to the Citizens on the Formation of the Provisional Government (2 [15] March 1917)"
+  },
+  "description": {
+    "ko": "임시정부가 구성되던 날 페트로그라드 소비에트 집행위원회가 낸 호소문. 새 정부가 약속한 개혁을 실행하고 구권력과 싸우는 「그만큼」만 지지한다는 조건부 지지를 밝혀, 이중권력의 출발점이 된 문서다.",
+    "en": "The appeal issued by the Executive Committee of the Petrograd Soviet on the day the Provisional Government was formed. It pledged support only 'insofar as' the new government carried out its promised reforms and fought the old regime, the founding formula of dual power."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Обращение Исполнительного комитета к гражданам в связи с созданием Временного правительства, 2 марта 1917 г. // Известия Петроградского Совета рабочих и солдатских депутатов, 3 марта 1917, № 4, с. 1; текст по: Петроградский Совет рабочих и солдатских депутатов в 1917 году. Протоколы, стенограммы и отчеты, резолюции, постановления… Т. 1. Л.: Наука, 1991. С. 69 (док. № 15). Official appeal of a revolutionary state body, 1917; public domain.",
+  "people": [],
+  "terms": ["dual-power", "russian-provisional-government", "constituent-assembly", "soviet"],
+  "events": ["february-revolution"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『페트로그라드 소비에트의 대시민 호소』", "페트로그라드 소비에트의 임시정부 조건부 지지 선언", "임시정부 조건부 지지 호소", "「그만큼」 지지 호소문"],
+    "en": ["Petrograd Soviet appeal of 2 March 1917", "Petrograd Soviet declaration of conditional support", "'insofar as' declaration"]
+  },
+  "noAutoLink": []
+}
