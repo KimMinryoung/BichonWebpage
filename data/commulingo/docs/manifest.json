@@ -6608,6 +6608,300 @@
           "Sixteen Points (full text)"
         ]
       }
+    },
+    {
+      "id": "stalin-gottwald-letter-1950",
+      "file": "stalin-gottwald-letter-1950.html",
+      "docLang": "ko",
+      "date": "1950-08-27",
+      "title": {
+        "ko": "스탈린이 고트발트에게 보낸 서한 (1950년 8월 27일)",
+        "en": "Stalin's Letter to Gottwald (27 August 1950)"
+      },
+      "description": {
+        "ko": "스탈린이 「필리포프」라는 이름으로 프라하의 소련 대사를 거쳐 고트발트에게 전한 답신. 소련이 유엔 안전보장이사회를 떠난 네 가지 목적을 들고, 미국이 조선에서 중국과 싸우다 지치면 제3차 세계대전이 미뤄진다는 계산을 밝힌다.",
+        "en": "Stalin's reply to Gottwald, sent under the name 'Filippov' through the Soviet ambassador in Prague. It gives four reasons for the Soviet absence from the UN Security Council and argues that a United States worn down fighting China in Korea would have to postpone a third world war."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Письмо Филиппова (И. В. Сталина) советскому послу в Праге для передачи К. Готвальду, 27 августа 1950 г. РГАСПИ, ф. 558, оп. 11, д. 62, л. 71–72; опубл.: А. М. Ледовский, Сталин, Мао Цзэдун и корейская война 1950–1953 годов // Новая и новейшая история, 2005, № 5, с. 79–113. Russian transcription: Wilson Center Digital Archive, doc. 112225 (https://digitalarchive.wilsoncenter.org/document/112225). Official Soviet state correspondence; not subject to private copyright.",
+      "people": [
+        "stalin",
+        "klement-gottwald"
+      ],
+      "terms": [
+        "soviet-boycott-of-the-un-security-council-1950",
+        "kuomintang"
+      ],
+      "events": [
+        "korean-war"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『스탈린의 고트발트 서한』",
+          "스탈린의 고트발트 서한",
+          "고트발트에게 보낸 스탈린의 편지",
+          "필리포프 서한 (1950년 8월 27일)"
+        ],
+        "en": [
+          "Stalin's letter to Gottwald",
+          "Stalin to Gottwald, 27 August 1950",
+          "Filippov letter to Gottwald"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "petrograd-soviet-conditional-support-1917",
+      "file": "petrograd-soviet-conditional-support-1917.html",
+      "docLang": "ko",
+      "date": "1917-03-15",
+      "title": {
+        "ko": "페트로그라드 소비에트 집행위원회의 대시민 호소 (1917년 3월 2일[15일])",
+        "en": "Petrograd Soviet Executive Committee Appeal to the Citizens on the Formation of the Provisional Government (2 [15] March 1917)"
+      },
+      "description": {
+        "ko": "임시정부가 구성되던 날 페트로그라드 소비에트 집행위원회가 낸 호소문. 새 정부가 약속한 개혁을 실행하고 구권력과 싸우는 「그만큼」만 지지한다는 조건부 지지를 밝혀, 이중권력의 출발점이 된 문서다.",
+        "en": "The appeal issued by the Executive Committee of the Petrograd Soviet on the day the Provisional Government was formed. It pledged support only 'insofar as' the new government carried out its promised reforms and fought the old regime, the founding formula of dual power."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Обращение Исполнительного комитета к гражданам в связи с созданием Временного правительства, 2 марта 1917 г. // Известия Петроградского Совета рабочих и солдатских депутатов, 3 марта 1917, № 4, с. 1; текст по: Петроградский Совет рабочих и солдатских депутатов в 1917 году. Протоколы, стенограммы и отчеты, резолюции, постановления… Т. 1. Л.: Наука, 1991. С. 69 (док. № 15). Official appeal of a revolutionary state body, 1917; public domain.",
+      "people": [],
+      "terms": [
+        "dual-power",
+        "russian-provisional-government",
+        "constituent-assembly",
+        "soviet"
+      ],
+      "events": [
+        "february-revolution"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『페트로그라드 소비에트의 대시민 호소』",
+          "페트로그라드 소비에트의 임시정부 조건부 지지 선언",
+          "임시정부 조건부 지지 호소",
+          "「그만큼」 지지 호소문"
+        ],
+        "en": [
+          "Petrograd Soviet appeal of 2 March 1917",
+          "Petrograd Soviet declaration of conditional support",
+          "'insofar as' declaration"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "molotov-paris-statement-1947",
+      "file": "molotov-paris-statement-1947.html",
+      "docLang": "ko",
+      "date": "1947-07-02",
+      "title": {
+        "ko": "몰로토프의 파리 회담 성명 (1947년 7월 2일)",
+        "en": "Molotov's Statement at the Paris Conference (2 July 1947)"
+      },
+      "description": {
+        "ko": "파리 3국 외무상 회의 마지막 날 몰로토프가 마셜 플랜 수용을 위한 영국·프랑스 안을 거부하며 낸 성명. 유럽 경제를 짤 「운영위원회」가 각국 주권을 침해하고 독일 자원을 배상 대신 다른 데 돌리며 유럽을 두 국가군으로 가를 것이라고 경고한다.",
+        "en": "The statement with which Molotov rejected the Anglo-French plan for taking up Marshall aid on the last day of the Paris Three-Power Conference. He warned that a European 'steering committee' would override national sovereignty, divert German resources away from reparations and split Europe into two groups of states."
+      },
+      "kind": {
+        "ko": "정당·정부 문서",
+        "en": "Party & government documents"
+      },
+      "source": "Заявление В. М. Молотова на совещании министров иностранных дел СССР, Франции и Англии (Париж, 2 июля, ТАСС) // Правда, 3 июля 1947, № 169, с. 3; digital reproduction: CVCE.eu, https://www.cvce.eu/obj/zaiavlenie_molotova_parizh_2_iiulia_1947_g-ru-f692bc11-0049-4b78-ba99-bc0ac81aedeb.html. Official statement of the Soviet foreign minister; state document.",
+      "people": [
+        "molotov",
+        "georges-bidault",
+        "ernest-bevin"
+      ],
+      "terms": [
+        "paris-three-power-conference-27-june-2-july-1947",
+        "european-recovery-program-erp"
+      ],
+      "events": [
+        "marshall-plan"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『몰로토프의 파리 회담 성명』",
+          "몰로토프의 파리 회담 성명",
+          "몰로토프 파리 성명",
+          "1947년 7월 2일 몰로토프 성명"
+        ],
+        "en": [
+          "Molotov's Paris statement",
+          "Molotov statement of 2 July 1947",
+          "Molotov's statement at the Paris Conference"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "soviet-draft-european-collective-security-treaty-1955",
+      "file": "soviet-draft-european-collective-security-treaty-1955.html",
+      "docLang": "ko",
+      "date": "1955-07-20",
+      "title": {
+        "ko": "유럽 집단안보에 관한 전유럽 조약 (기본 원칙) — 소련 대표단 초안 (1955년 7월 20일)",
+        "en": "General European Treaty on Collective Security in Europe (Basic Principles) — Soviet Delegation Draft (20 July 1955)"
+      },
+      "description": {
+        "ko": "1955년 7월 20일 제네바 4개국 정부수반 회의에서 소련 대표단이 내놓은 유럽 집단안보 조약의 기본 원칙 15개 항. 미국과 두 독일 국가를 포함한 상호 불가침·상호 원조 체제를 제안하고, 합의된 기한 뒤 바르샤바 조약·파리 협정·북대서양조약을 함께 종료하도록 했다.",
+        "en": "The fifteen basic principles of a European collective-security treaty tabled by the Soviet delegation at the Geneva four-power summit on 20 July 1955, proposing a non-aggression and mutual-assistance system including the United States and both German states, and the termination of the Warsaw Treaty, the Paris Agreements and the North Atlantic Treaty after an agreed period."
+      },
+      "kind": {
+        "ko": "조약·협정",
+        "en": "Treaties & agreements"
+      },
+      "source": "Проект делегации СССР. Общеевропейский договор о коллективной безопасности в Европе (основные принципы), внесён на Совещании глав правительств четырёх держав в Женеве 20 июля 1955 г. // Заря Востока (Тбилиси). 1955. 22 июля. № 172 (9364). С. 1 (ТАСС). 저본: 그루지야 국립의회도서관 디지털 아카이브 https://dspace.nplg.gov.ge/bitstream/1234/481248/1/Zaria_Vostoka_1955_N172.pdf (2026-10-07 접근). 국가 대표단의 공식 외교 문서로 저작권 보호 대상 아님.",
+      "people": [
+        "bulganin"
+      ],
+      "terms": [
+        "proposed-european-collective-security-treaty",
+        "warsaw-pact",
+        "north-atlantic-treaty-organization-nato",
+        "paris-agreements-1954",
+        "german-question",
+        "collective-security",
+        "united-nations"
+      ],
+      "events": [
+        "warsaw-pact"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『유럽 집단안보에 관한 전유럽 조약』",
+          "유럽 집단안보에 관한 일반 유럽조약",
+          "소련의 유럽 집단안보 조약안",
+          "제네바 소련안",
+          "유럽 집단안보조약 소련 초안"
+        ],
+        "en": [
+          "General European Treaty on Collective Security in Europe",
+          "Soviet draft European security treaty (1955)",
+          "Soviet Geneva draft treaty on European security"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "trotsky-1913-chkheidze-letter",
+      "file": "trotsky-1913-chkheidze-letter.html",
+      "docLang": "ko",
+      "date": "1913-04-01",
+      "title": {
+        "ko": "트로츠키의 치헤이제 앞 편지(1913)와 올민스키 앞 편지(1921)",
+        "en": "Trotsky's Letter to Chkheidze (1913) and Letter to Olminsky (1921)"
+      },
+      "description": {
+        "ko": "트로츠키가 1913년 4월 빈에서 두마 의원 치헤이제에게 보내 레닌과 「레닌주의」를 맹렬히 공격한 편지, 그리고 이 편지의 출판을 묻는 올민스키에게 1921년 12월 공개를 말리며 답한 편지. 1932년 『반대파 회보』 편집부 머리말을 함께 실었다.",
+        "en": "Trotsky's April 1913 letter from Vienna to the Duma deputy Chkheidze, a fierce attack on Lenin and 'Leninism', together with his December 1921 reply to Olminsky advising against its publication, and the 1932 editorial note of the Bulletin of the Opposition."
+      },
+      "kind": {
+        "ko": "저작·연설",
+        "en": "Writings & speeches"
+      },
+      "source": "Л. Троцкий. Письмо Н. С. Чхеидзе, Вена, 1 апреля 1913 г. — копия в Trotsky Papers, Houghton Library, Harvard University, MS Russ 13, T-714 (русская транскрипция); Письмо М. С. Ольминскому, 6 декабря 1921 г., и редакционное предисловие — Бюллетень Оппозиции. 1932. № 28 (июль), электронная версия iskra-research.org (снимок Wayback 2023-02-03, https://web.archive.org/web/20230203165113/http://iskra-research.org/FI/BO/BO-28.shtml). Оба письма впервые опубликованы в «Правде» в декабре 1924 г. 저작권: 트로츠키 1940년 사망, 보호 기간 만료.",
+      "people": [
+        "trotsky",
+        "nikolai-chkheidze",
+        "mikhail-olminsky",
+        "lenin",
+        "stalin",
+        "karl-kautsky",
+        "zetkin",
+        "luxemburg"
+      ],
+      "terms": [
+        "liquidationism",
+        "august-bloc",
+        "permanent-revolution",
+        "pravda",
+        "menshevik",
+        "bolshevik"
+      ],
+      "events": [
+        "succession-struggle"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『치헤이제 앞 편지』",
+          "치헤이제 앞 편지",
+          "치헤이제에게 보낸 편지",
+          "트로츠키의 치헤이제 편지",
+          "올민스키 앞 편지"
+        ],
+        "en": [
+          "Letter to Chkheidze",
+          "Trotsky's letter to Chkheidze",
+          "Chkheidze letter",
+          "Letter to Olminsky"
+        ]
+      },
+      "noAutoLink": []
+    },
+    {
+      "id": "belgrade-declaration-1955",
+      "file": "belgrade-declaration-1955.html",
+      "docLang": "ko",
+      "date": "1955-06-02",
+      "title": {
+        "ko": "베오그라드 선언 (1955년 6월 2일)",
+        "en": "The Belgrade Declaration (2 June 1955)"
+      },
+      "description": {
+        "ko": "흐루쇼프·불가닌이 이끈 소련 대표단과 티토의 유고슬라비아 대표단이 회담 끝에 서명한 두 정부의 공동 선언. 사회주의 발전의 구체적 형태는 각 나라 인민이 정할 일이라는 내정 불간섭 원칙을 밝히고 관계 정상화를 위한 여덟 개 합의를 담았다.",
+        "en": "Joint declaration of the Soviet and Yugoslav governments signed at the end of talks between the delegations led by Khrushchev and Bulganin and by Tito. It states the principle of non-interference, holding that the concrete forms of socialist development are solely the affair of each country's people, and sets out eight agreements for normalizing relations."
+      },
+      "kind": {
+        "ko": "조약·협정",
+        "en": "Treaties & agreements"
+      },
+      "source": "Декларация Правительств Союза Советских Социалистических Республик и Федеративной Народной Республики Югославии, Белград, 2 июня 1955 г. Russian text: «Заря Востока» (Тбилиси), 3 июня 1955, № 130 (9322), с. 1 (National Parliamentary Library of Georgia, https://dspace.nplg.gov.ge/bitstream/1234/480897/1/Zaria_Vostoka_1955_N130.pdf, accessed 2026-10-07; OCR corrected against the page image). Checked against the Serbo-Croatian text (Borba, 3 June 1955; abridged in Jugoslavija 1918–1988, pp. 1041–1043, znaci.org 138_83). Russian and Serbo-Croatian texts are both authentic. Official intergovernmental declaration; not subject to private copyright.",
+      "people": [
+        "khrushchev",
+        "bulganin",
+        "josip-broz-tito",
+        "mikoyan",
+        "shepilov",
+        "gromyko",
+        "pavel-kumykin",
+        "edvard-kardelj",
+        "aleksandar-rankovic"
+      ],
+      "terms": [
+        "peaceful-coexistence",
+        "united-nations"
+      ],
+      "events": [
+        "tito-stalin-split"
+      ],
+      "addedAt": "2026-10-07",
+      "aliases": {
+        "ko": [
+          "『베오그라드 선언』",
+          "베오그라드 선언",
+          "1955년 베오그라드 선언",
+          "소련·유고슬라비아 정부 선언"
+        ],
+        "en": [
+          "Belgrade Declaration",
+          "Belgrade Declaration of 1955",
+          "Soviet–Yugoslav Belgrade Declaration"
+        ]
+      },
+      "noAutoLink": []
     }
   ],
   "redirects": {
