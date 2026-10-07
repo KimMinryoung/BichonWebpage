@@ -9,9 +9,9 @@
 - 원어: 러시아어.
 
 ## 저본
-- 『Правда』 1947. 3 июля. № 169. С. 3 — CVCE.eu 러시아어 복제본(PDF: https://www.cvce.eu/content/publication/1999/1/1/f692bc11-0049-4b78-ba99-bc0ac81aedeb/publishable_ru.pdf, 객체 페이지 https://www.cvce.eu/obj/zaiavlenie_molotova_parizh_2_iiulia_1947_g-ru-f692bc11-0049-4b78-ba99-bc0ac81aedeb.html). 2026-10-07 접근해 PDF 텍스트를 추출, 이전 단계의 `source.ru.txt`와 한 글자씩 대조했다. 본문 일치.
+- 『Правда』 1947. 3 июля. № 169. С. 3 — CVCE.eu 러시아어 복제본(PDF: https://www.cvce.eu/content/publication/1999/1/1/f692bc11-0049-4b78-ba99-bc0ac81aedeb/publishable_ru.pdf, 객체 페이지 https://www.cvce.eu/obj/zaiavlenie_molotova_parizh_2_iiulia_1947_g-ru-f692bc11-0049-4b78-ba99-bc0ac81aedeb.html). 2026-10-07 접근해 PDF 텍스트를 추출, 이전 단계의 `source.ru.txt`와 공백을 뺀 문자열 비교로 대조했다. 본문 일치.
 - 이전 단계 `source.ru.txt`에는 저본 서지 주석이 없었다. 이번에 머리 주석을 보충했고, CVCE PDF에서 문단이 나뉜 곳(「…в последнем французском проекте.」 / 「Когда стремятся…」)을 저본대로 나눴다.
-- 전문 여부: 타스 보도 리드부터 마지막 경고 문단까지 프라우다 게재분 전체. CVCE 영어·프랑스어판도 같은 범위. 전문으로 판단.
+- 전문 여부: 타스 보도 리드부터 마지막 경고 문단까지 프라우다 게재분 전체. 전문으로 판단.
 - 저본 오자: 「починенных」(→ подчиненных)는 바른 뜻으로 옮겼다. CVCE의 저작권 고지는 복제본 편집에 관한 것이고, 성명 자체는 국가 공식 문서다.
 
 ## 한국어 번역본 확인
