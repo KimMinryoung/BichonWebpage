@@ -1,0 +1,41 @@
+{
+  "id": "ethiopia-rural-land-proclamation-1975",
+  "file": "ethiopia-rural-land-proclamation-1975.html",
+  "docLang": "ko",
+  "date": "1975-04-29",
+  "title": {
+    "ko": "농촌 토지 공유화 포고령 (포고령 제31호, 1975년)",
+    "en": "Public Ownership of Rural Lands Proclamation (Proclamation No. 31 of 1975)"
+  },
+  "description": {
+    "ko": "에티오피아 임시군사행정평의회(데르그)의 토지개혁 포고령. 모든 농촌 토지를 인민의 공동 재산으로 정해 보상 없이 사적 소유를 없애고, 소작 관계를 폐지하며, 가구당 10헥타르 한도의 배분과 분쟁 심판을 농민협회에 맡긴다.",
+    "en": "The land-reform proclamation of Ethiopia's Provisional Military Administration Council (the Derg). It makes all rural land the collective property of the people, abolishing private ownership without compensation and ending tenancy, and entrusts allotment of up to ten hectares per family and the settlement of disputes to peasant associations."
+  },
+  "kind": {
+    "ko": "헌법·법령·명령",
+    "en": "Constitutions, laws & orders"
+  },
+  "source": "Proclamation No. 31 of 1975, A Proclamation to Provide for the Public Ownership of Rural Lands, Negarit Gazeta, 34th Year No. 26, Addis Ababa, 29 April 1975, pp. 93–101. The Amharic text is authoritative; translated from the official English text printed alongside it in the same gazette (owner's decision 2026-10-07), scan via FAOLEX https://faolex.fao.org/docs/pdf/eth3096.pdf (accessed 2026-10-07). State legislation; not subject to copyright.",
+  "people": [],
+  "terms": [
+    "ethiopian-land-nationalization"
+  ],
+  "events": [
+    "ethiopian-revolution-1974-1977"
+  ],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": [
+      "『농촌 토지 공유화 포고령』",
+      "농촌 토지 공유화 포고령",
+      "농촌 토지 공유화 포고령(제31호)",
+      "포고령 제31호(1975년)"
+    ],
+    "en": [
+      "Public Ownership of Rural Lands Proclamation",
+      "Proclamation No. 31/1975",
+      "Proclamation No. 31 of 1975"
+    ]
+  },
+  "noAutoLink": []
+}

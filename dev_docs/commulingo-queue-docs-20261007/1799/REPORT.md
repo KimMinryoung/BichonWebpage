@@ -1,26 +1,45 @@
 # 큐 1799 — 농촌 토지 공유화 포고령 제31호 (1975)
 
-- 상태: **hold** (사유: 원어가 암하라어이고, 구할 수 있는 전문은 관보 병기 영어본뿐 — 중역 여부 소유자 판단 필요)
+- 상태: **done** (소유자 결정 2026-10-07: 관보 병기 영어 공식본을 저본으로 완역, 이 항목에 한해 중역 금지 기준 예외)
 - event_id: `ethiopian-revolution-1974-1977`
+- 산출: `ethiopia-rural-land-proclamation-1975.html`, `manifest-entry.json`, 교정 원문 `source.en.txt`, 원 스캔 `source.en.faolex-eth3096.pdf`, 교정 전 OCR `source.en.faolex-ocr.txt`
 
 ## 문서 특정
-Public Ownership of Rural Lands Proclamation No. 31/1975 (「A Proclamation to Provide for the Public Ownership of Rural Lands」), 에티오피아 임시군사행정평의회(데르그). 1975-04-29 아디스아바바 공포, 1975-03-04 소급 시행(제33조). Negarit Gazeta 34th Year No. 26, 29 April 1975, pp. 93–101. 전문 8단락 + 6장 33조. 원문 분량(영어본) 약 19,000자.
+Public Ownership of Rural Lands Proclamation No. 31/1975 (「A Proclamation to Provide for the Public Ownership of Rural Lands」), 에티오피아 임시군사행정평의회(데르그). 1975-04-29 아디스아바바에서 작성(서명란), 1975-03-04 소급 시행(제33조). Negarit Gazeta 34th Year No. 26, 29 April 1975, pp. 93–101. 전문 9개 「WHEREAS」 단락 + 제정 문구 + 6장 33조.
 
-## 원어 판단
-- 데르그 포고령은 Negarit Gazeta에 암하라어·영어를 나란히 실어 공포했다. 국가 공용어이자 포고령의 기초 언어는 암하라어이고, 영어는 병기본이다. 1995년 연방관보설립포고(Proclamation No. 3/1995)는 「두 판이 어긋나면 암하라어가 우선한다」고 명문화했다. 그 이전(제정기·데르그 시기) 관보에 같은 우선 규정이 있었는지는 원문으로 확인하지 못했다.
-- 영어본은 같은 관보에 같은 기관 이름으로 실린 공식 병기본이다. 번역자가 따로 만든 2차 번역은 아니다. 다만 BRIEF 기준 2(「문서가 작성된 언어의 전문」)로 보면 저본 언어가 암하라어가 아니므로, 영어본에서 옮기면 중역이 된다. 소유자 메모(「영어 경유 번역은 하기 전에 묻는다」)도 같은 방향이다.
-- 암하라어 관보 원본: 공개 스캔을 찾지 못했다(검색: Negarit Gazeta 34th Year No. 26 / ነጋሪት ጋዜጣ የገጠር መሬት). FAOLEX 등의 PDF는 영어 부분만 있다.
-
-## 확보한 자료
-- `source.en.faolex-eth3096.pdf`: FAOLEX https://faolex.fao.org/docs/pdf/eth3096.pdf (9쪽, 관보 영어 부분 스캔에 OCR 텍스트층, 2026-10-07 접근). 영어 전문 완비(전문~제33조, 서명란 「THE PROVISIONAL MILITARY ADMINISTRATION COUNCIL」).
-- `source.en.faolex-ocr.txt`: 위 PDF의 텍스트층(교정 전, OCR 잡음 있음: 「&ny」, 「tribu~:fs'」 등).
+## 원어와 저본
+- 정본은 암하라어. 관보에 암하라어·영어가 나란히 실렸다. 암하라어 관보 스캔은 공개본을 찾지 못했다(이전 조사).
+- 소유자 결정에 따라 영어 공식본에서 옮겼고, 엮은이 주 「옮긴이 일러두기」와 manifest `source`에 정본이 암하라어이고 영어 공식본에서 옮겼음을 적었다.
+- 저본: FAOLEX https://faolex.fao.org/docs/pdf/eth3096.pdf (9쪽, 2026-10-07 접근).
+- OCR 교정: 9쪽 전부를 쪽 이미지(130dpi)로 대조해 `source.en.txt`를 만들었다. 고친 곳: ETIDOPIA→ETHIOPIA, &ny→any, (Y<i of a gasha)→(1/4 of a gasha), tribu~:fs'. t~ he~r→tribunals to hear, trib~al, ~ven, Worcda/W oreda, leplity→legality, :;hall ac:.;o→shall also, tu→to, busine.ss, associa_tions, 장 제목과 제1조 제목 순서(OCR이 뒤집음) 등. 5쪽 여백의 손글씨 표시(「7」, 밑줄)는 원문이 아니므로 무시했다.
+- 인쇄 그대로 둔 곳: 제10조 제1항 가호 「to farmer tenants」(former tenants의 오식일 가능성 — 저본대로 「농민 소작인」으로 옮기고 옮긴이 주 [7]).
 
 ## 한국어 번역본 확인
-「에티오피아 1975 농촌 토지 국유화 포고 제31호 번역 전문 데르그 토지개혁」 등으로 검색. 한국어 번역은 없다(영어 연구 문헌만 나옴). 번역 대상 요건(기준 1)은 충족한다.
+- 이전 조사(「에티오피아 1975 농촌 토지 국유화 포고 제31호 번역 전문 데르그 토지개혁」)와 이번 재검색(「에티오피아 1975 토지 포고령 제31호 농촌 토지 번역」): 한국어 번역 없음. 영어 연구 문헌만 나옴.
 
 ## 저작권
-정부 법령. 문제없음.
+국가 법령. 문제없음.
 
-## 소유자에게 물을 것
-1. 관보에 병기된 영어 공식본을 저본으로 완역해도 되는가? 되면 엮은이 주에 「암하라어 정본과 함께 관보에 실린 영어 공식본에서 옮김」이라고 밝히고, FAOLEX 스캔을 교정하여 바로 번역할 수 있다(분량 약 1만 9천 자, 한국어 약 7~8천 자 예상).
-2. 아니면 암하라어 관보 스캔(에티오피아 법무부·아디스아바바대 법대 도서관·Chilot 등)을 구할 때까지 보류한다.
+## 구조 대조
+- 저본: 표제 3줄(포고령 번호·제목·「ETHIOPIA TIKDEM」), 전문 WHEREAS 9 + NOW, THEREFORE 1, 장 6, 조 33(조 제목 33), 서명 3줄(시행일 조문 뒤 작성일·기관명).
+- 번역: 표제 `<p>` 3, 전문 `<p>` 10, `<h2>` 6(장), 조 제목 `<p><strong>제N조. …</strong></p>` 33, 각 조의 항·호는 원문 번호대로 한 `<p>`씩(호 a)~f)는 가)~바)), 작성일·기관명 `<p>` 2. 본문 `<p>` 총 141개.
+- 생략 없음.
+
+## 글자 수
+- 번역 본문(엮은이 주·주석 제외): 공백 포함 약 7,660자 / 공백 제외 약 5,790자.
+- 원문(영어 본문): 약 19,000자.
+
+## 표기·용어 결정
+- Provisional Military Administration Council → 「임시군사행정평의회」, Minister of Land Reform and Administration → 「토지개혁행정부 장관」, Land Reform Officer → 「토지개혁관」, judicial tribunal → 「사법 재판부」, ordinary courts → 「일반 법원」, Special Penal Code Proclamation → 「특별형법 포고령」.
+- public ownership → 「공유」(사건 카드의 「농촌 토지 공유화 포고령」에 맞춤), collective property → 「공동 재산」, possessory right → 「점유권」, holding → 「보유지」, antichresis → 「안티크레시스」(주석).
+- 토지제도 용어 소리 표기: 가샤, 치카, 치카 슘, 데보, 워레다, 아우라자, 리스트, 데이사, 굴테냐, 페레세냐, 데브르, 고트, 발라바트, 차트, 엔세트. 「에티오피아 티크뎀」. 옮긴이 주 14개(굴테냐·페레세냐 중 페레세냐는 뜻을 확인하지 못해 소리 표기만 밝힘).
+- manifest people: 비움(본문에 인명 없음, 서명은 기관명). terms: `ethiopian-land-nationalization`. events: 큐 event.
+
+## 상위 에이전트 확인점
+- 사건 카드 「1975년 3월 4일 공포된 <농촌 토지 공유화 포고령>(제31호)」: 관보상 작성·공포일은 1975-04-29이고 3월 4일은 시행일(제33조, 소급). 실제 라디오 발표가 3월 4일이었던 것으로 보이나 문서상으로는 「3월 4일 시행」이 정확하다. 카드 문구 조정 검토. manifest `date`는 1975-04-29.
+- 사건 카드 「가구당 10헥타르를 넘는 사유 경작을 금했다」: 문서는 사유 소유 자체를 없애고(제3조) 한 농가에 「배정하는」 토지가 10헥타르를 넘지 못하게 한다(제4조 제3항). 「배분 한도 10헥타르」로 고칠지 검토.
+- 사건 카드 「800헥타르 단위의 농민협회」: 문서는 「최소 800헥타르(20가샤)」(제8조).
+- 사건 카드 「그보다 큰 상업 농장은 국가 관리로」: 문서의 「대규모 농장」은 면적이 아니라 기계화 농장·근대 축산 농장(제2조 제2항)이고, 국영·협동 농장 또는 경작자 배분(제7조).
+- 사건 카드 「제19조가 공유지 경작자에게 기존 경작권을 인정」: 번역어는 「점유권」.
+- 용어 카드 `ethiopian-land-nationalization` 제목이 「토지 국유화」. 문서 제목은 「공유화」(public ownership). 별칭 겹침은 없다.
+- 맨 「포고령 제31호」는 다른 나라 포고령과 겹칠 수 있어 별칭에 「포고령 제31호(1975년)」만 넣었다 — 검색 전용 여부 판단.
