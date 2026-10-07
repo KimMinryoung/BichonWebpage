@@ -188,7 +188,7 @@
                 return groupsMeta.filter(function(group) { return group.shelf === shelf; }).length;
             }).concat([1]));
             %>
-            <section class="commu-people-eras" style="--era-columns: <%= eraColumns %>" aria-labelledby="commu-people-eras-title">
+            <section class="commu-people-eras is-cols-<%= Math.min(eraColumns, 6) %>" aria-labelledby="commu-people-eras-title">
                 <h2 class="commu-people-eras-title" id="commu-people-eras-title"><%= t.eraTableTitle %></h2>
                 <% regionShelves.forEach(function(shelf) {
                     var groups = groupsMeta.filter(function(group) { return group.shelf === shelf; });

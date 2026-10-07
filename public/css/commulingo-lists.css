@@ -773,6 +773,12 @@ a.commu-office-row:focus-visible .commu-office-main em {
     margin: 0 0 12px;
     padding: 2px 0 2px 10px;
 }
+.commu-people-eras.is-cols-1 { --era-columns: 1; }
+.commu-people-eras.is-cols-2 { --era-columns: 2; }
+.commu-people-eras.is-cols-3 { --era-columns: 3; }
+.commu-people-eras.is-cols-4 { --era-columns: 4; }
+.commu-people-eras.is-cols-5 { --era-columns: 5; }
+.commu-people-eras.is-cols-6 { --era-columns: 6; }
 .commu-people-era-row {
     display: grid;
     grid-template-columns: 6.5rem minmax(0, 1fr);
