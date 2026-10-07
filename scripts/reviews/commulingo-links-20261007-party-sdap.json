@@ -1,0 +1,85 @@
+{
+ "scope": "2026-10-07 SDAP term registered with catalog entry party-german-sdap",
+ "references": [
+  "scripts/content/party-terms-sdap-20261007.json"
+ ],
+ "decisions": [
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "ko",
+   "text": "독일 사회민주노동자당",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 1869–1875년 아이제나흐파 정당만 가리키는 이름. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "en",
+   "text": "Social Democratic Workers' Party of Germany (SDAP)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 1869–1875년 아이제나흐파 정당만 가리키는 이름. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "ko",
+   "text": "아이제나흐파",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 1869–1875년 아이제나흐파 정당만 가리키는 이름. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "ko",
+   "text": "사회민주노동자당 (독일)",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 1869–1875년 아이제나흐파 정당만 가리키는 이름. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "en",
+   "text": "Eisenachers",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 1869–1875년 아이제나흐파 정당만 가리키는 이름. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "en",
+   "text": "Sozialdemokratische Arbeiterpartei",
+   "role": "identity",
+   "policy": "auto",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 1869–1875년 아이제나흐파 정당만 가리키는 이름. 자동 연결.",
+   "original479": false,
+   "beforePolicy": "search"
+  },
+  {
+   "kind": "term",
+   "id": "social-democratic-workers-party-of-germany",
+   "lang": "en",
+   "text": "SDAP",
+   "role": "identity",
+   "policy": "search",
+   "note": "2026-10-07 SDAP 카탈로그 등재와 함께 검토: 짧은 라틴 약칭이라 검색 전용.",
+   "original479": false,
+   "beforePolicy": "search"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "id": "party-terms-sdap-20261007",
+ "terms": [
+  {
+   "id": "social-democratic-workers-party-of-germany",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+    "https://de.wikipedia.org/wiki/Sozialdemokratische_Arbeiterpartei"
+   ],
+   "fields": {
+    "term": {
+     "ko": "독일 사회민주노동자당",
+     "en": "Social Democratic Workers' Party of Germany (SDAP)"
+    },
+    "original": "Sozialdemokratische Arbeiterpartei Deutschlands",
+    "category": "parties",
+    "region": "europe",
+    "period": {
+     "ko": "1869–1875",
+     "en": "1869–1875"
+    },
+    "startYear": 1869,
+    "endYear": 1875,
+    "definition": {
+     "ko": "1869년 8월 아이제나흐 대회에서 아우구스트 베벨과 빌헬름 리프크네히트가 세운 독일의 사회주의 정당. 창립 도시의 이름을 따 「아이제나흐파」로 불렸고 국제노동자협회와 손잡았다. 1875년 고타 대회에서 라살의 전독일노동자협회와 합쳐 독일 사회주의노동자당이 되었으며, 오늘날 독일 사회민주당의 전신이다.",
+     "en": "A German socialist party founded by August Bebel and Wilhelm Liebknecht at the Eisenach congress of August 1869. Known as the Eisenachers after its founding city, it aligned itself with the International Workingmen's Association. At Gotha in 1875 it merged with Lassalle's General German Workers' Association into the Socialist Workers' Party of Germany, the forerunner of today's SPD."
+    },
+    "body": {
+     "ko": "사회민주노동자당은 1869년 8월 7~9일 아이제나흐에서 독일 노동자협회 연맹 활동가들과 전독일노동자협회 이탈파가 모여 창립했다. 지도자는 베벨과 리프크네히트였고, 리프크네히트가 편집한 기관지 『민중국가』(Der Volksstaat)가 1869년 10월부터 발행되었다. 마르크스와 엥겔스는 이 당을 마르크스주의 쪽으로 이끌려 했고, 당은 독일 법이 허용하는 범위에서 국제노동자협회와 연결되었다. 강령은 「자유로운 인민 국가」를 내세웠다.\n\n1870년 보불전쟁이 일어나자 베벨과 리프크네히트는 북독일 연방의회에서 전쟁 공채에 기권했고, 당 집행위원회(브라운슈바이크 위원회)는 9월 알자스-로렌 병합에 반대하는 선언을 냈다가 위원들이 체포되었다. 1872년 베벨과 리프크네히트는 반역 예비죄로 금고형을 받았다.\n\n당은 1875년 5월 고타 대회에서 전독일노동자협회와 합쳐 독일 사회주의노동자당(SAPD)이 되었다. 이때 채택된 고타 강령은 마르크스의 「고타 강령 비판」의 대상이 되었다. 합당한 당은 1890년부터 독일 사회민주당이라는 이름을 썼다.",
+     "en": "The Social Democratic Workers' Party was founded at Eisenach on 7–9 August 1869 by activists of the Federation of German Workers' Associations and dissidents from the General German Workers' Association. Bebel and Liebknecht led it, and its organ Der Volksstaat, edited by Liebknecht, appeared from October 1869. Marx and Engels steered it towards Marxian socialism, and it was linked with the International Workingmen's Association as far as German law allowed. Its programme called for a 'free people's state'.\n\nWhen the Franco-Prussian War broke out in 1870, Bebel and Liebknecht abstained on the war credits in the North German Reichstag, and in September the party executive, the Brunswick Committee, issued a manifesto against the annexation of Alsace-Lorraine, after which its members were arrested. In 1872 Bebel and Liebknecht were sentenced to fortress imprisonment for preparing high treason.\n\nAt the Gotha congress of May 1875 the party merged with the General German Workers' Association into the Socialist Workers' Party of Germany (SAPD). The Gotha Programme adopted there was the target of Marx's Critique of the Gotha Programme. The merged party has used the name Social Democratic Party of Germany since 1890."
+    },
+    "aliases": {
+     "ko": [
+      "아이제나흐파",
+      "사회민주노동자당 (독일)"
+     ],
+     "en": [
+      "Eisenachers",
+      "Sozialdemokratische Arbeiterpartei",
+      "SDAP"
+     ]
+    },
+    "people": [
+     "august-bebel",
+     "wilhelm-liebknecht",
+     "wilhelm-bracke"
+    ],
+    "events": [
+     "franco-prussian-war-1870-1871"
+    ],
+    "evidence": [
+     {
+      "field": "definition",
+      "claim": "Founded at Eisenach on 7–9 August 1869, led by Wilhelm Liebknecht and August Bebel, known as the Eisenachers; merged with the ADAV at Gotha in 1875 into the SAPD, forerunner of the SPD.",
+      "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+      "locator": "lead; History"
+     },
+     {
+      "field": "body",
+      "claim": "Der Volksstaat edited by Liebknecht from 2 October 1869; Marx and Engels steered the party towards Marxian socialism and welcomed it into the IWA as far as German law allowed; 'free people's state'; Gotha merger 1875 and the Gotha Programme criticised by Marx.",
+      "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+      "locator": "History; Ideology"
+     },
+     {
+      "field": "body",
+      "claim": "Bebel and Liebknecht abstained on the 1870 war credits; the Braunschweig party committee was arrested after its September 1870 manifesto against annexation; the 1872 Leipzig high-treason trial.",
+      "source": "https://de.wikipedia.org/wiki/Sozialdemokratische_Arbeiterpartei",
+      "locator": "Geschichte (Deutsch-Französischer Krieg, Leipziger Hochverratsprozess)"
+     },
+     {
+      "field": "period",
+      "claim": "1869–1875",
+      "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+      "locator": "infobox"
+     },
+     {
+      "field": "startYear",
+      "claim": "1869",
+      "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+      "locator": "infobox"
+     },
+     {
+      "field": "endYear",
+      "claim": "1875",
+      "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+      "locator": "infobox"
+     }
+    ]
+   }
+  }
+ ]
+}
