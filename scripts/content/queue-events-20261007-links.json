@@ -1,0 +1,393 @@
+{
+  "scope": "2026-10-07 queue events (Haitian Revolution, Vendée, Franco-Prussian War, Balkan Wars): event titles and their new glossary terms; owner-requested queue registration",
+  "references": [
+    "dev_docs/commulingo-queue-events-20261007.md"
+  ],
+  "decisions": [
+    {
+      "kind": "event",
+      "id": "haitian-revolution-1791-1804",
+      "lang": "ko",
+      "text": "아이티 혁명",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 사건 제목 전체 문자열이라 다른 대상과 겹치지 않음. 자동 연결.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "haitian-revolution-1791-1804",
+      "lang": "en",
+      "text": "The Haitian Revolution",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The full event title, unique to this event. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "event",
+      "id": "haitian-revolution-1791-1804",
+      "lang": "en",
+      "text": "Haitian Revolution",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The title without its article, unique to this event. Auto link.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue",
+      "lang": "ko",
+      "text": "생도맹그",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 프랑스 식민지만 가리키는 고유 지명.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue",
+      "lang": "en",
+      "text": "Saint-Domingue",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The French colony's own name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue",
+      "lang": "en",
+      "text": "Saint Domingue",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. Unhyphenated spelling of the colony's name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue",
+      "lang": "en",
+      "text": "San Domingo",
+      "role": "identity",
+      "policy": "search",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The old English form also names the Spanish city and colony (Santo Domingo); search only.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "code-noir",
+      "lang": "ko",
+      "text": "코드 누아르",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 1685년 칙령만 가리키는 고유 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "code-noir",
+      "lang": "ko",
+      "text": "흑인법전",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 프랑스 칙령의 관용 번역어로 다른 항목과 겹치지 않음.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "code-noir",
+      "lang": "en",
+      "text": "Code Noir",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The ordinance's own name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "code-noir",
+      "lang": "en",
+      "text": "Code noir",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. French-case spelling of the ordinance's name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "code-noir",
+      "lang": "en",
+      "text": "Black Code",
+      "role": "identity",
+      "policy": "search",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. Also the name of the US Black Codes of 1865; search only.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "ko",
+      "text": "플뤼비오즈 16일 법령",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 혁명력 날짜로 특정되는 고유 법령명.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "ko",
+      "text": "1794년 2월 4일 노예제 폐지 법령",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 날짜와 내용으로 특정된 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "en",
+      "text": "Law of 16 Pluviôse Year II",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The decree's own revolutionary-calendar name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "en",
+      "text": "Law of 4 February 1794",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The decree named by its date.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "en",
+      "text": "Decree of 16 Pluviôse",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. Short revolutionary-calendar form, unique to this decree.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "en",
+      "text": "Decree of 16 Pluviôse Year II",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The decree named as a decree with its revolutionary-calendar date.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "law-of-16-pluviose-year-ii",
+      "lang": "ko",
+      "text": "1794년 노예제 폐지령",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 연도와 내용으로 특정된 짧은 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-constitution-1801",
+      "lang": "ko",
+      "text": "1801년 생도맹그 헌법",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 연도와 지명으로 특정된 고유 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-constitution-1801",
+      "lang": "ko",
+      "text": "루베르튀르 헌법",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 투생 루베르튀르의 헌법만 가리키는 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-constitution-1801",
+      "lang": "en",
+      "text": "Constitution of Saint-Domingue of 1801",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The constitution's full name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-constitution-1801",
+      "lang": "en",
+      "text": "1801 Constitution of Haiti",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. English Wikipedia's title for the same text.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-constitution-1801",
+      "lang": "en",
+      "text": "Louverture's constitution",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. Names only Toussaint Louverture's constitution.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-expedition",
+      "lang": "ko",
+      "text": "생도맹그 원정",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 1801~1803년 프랑스 원정만 가리키는 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-expedition",
+      "lang": "ko",
+      "text": "르클레르 원정",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 사령관 이름으로 특정된 원정 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-expedition",
+      "lang": "en",
+      "text": "Saint-Domingue expedition",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The expedition's own name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-expedition",
+      "lang": "en",
+      "text": "Leclerc expedition",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The expedition named after its commander.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "saint-domingue-expedition",
+      "lang": "en",
+      "text": "Leclerc's expedition",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. Possessive form of the same name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "bois-caiman-ceremony",
+      "lang": "ko",
+      "text": "부아 카이망 집회",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 1791년 8월의 집회만 가리키는 이름.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "bois-caiman-ceremony",
+      "lang": "ko",
+      "text": "부아 카이망 의식",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 같은 집회의 다른 번역.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "bois-caiman-ceremony",
+      "lang": "ko",
+      "text": "부아 카이망",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 아이티 혁명 사건 등록과 함께 만든 항목의 고유 표제어·별칭. 지명이지만 이 집회로만 알려진 곳.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "bois-caiman-ceremony",
+      "lang": "en",
+      "text": "Bois Caïman ceremony",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The ceremony's own name.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "bois-caiman-ceremony",
+      "lang": "en",
+      "text": "Bois Caïman",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. The place is known only for this ceremony.",
+      "original479": false,
+      "beforePolicy": "search"
+    },
+    {
+      "kind": "term",
+      "id": "bois-caiman-ceremony",
+      "lang": "en",
+      "text": "Bwa Kayiman",
+      "role": "identity",
+      "policy": "auto",
+      "note": "2026-10-07 reviewed with the Haitian Revolution event registration. Haitian Creole form of the name.",
+      "original479": false,
+      "beforePolicy": "search"
+    }
+  ]
+}

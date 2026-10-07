@@ -1,0 +1,1983 @@
+{
+  "changedBy": "queue-events-20261007",
+  "people": [
+    {
+      "id": "toussaint-louverture",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "투생",
+        "en": "Toussaint"
+      },
+      "familyName": {
+        "ko": "루베르튀르",
+        "en": "Louverture"
+      },
+      "nativeName": "Toussaint Louverture",
+      "years": "1743–1803",
+      "citizenship": {
+        "code": "haiti"
+      },
+      "nationalOrigin": {
+        "code": "haiti"
+      },
+      "epithet": {
+        "ko": "노예 출신으로 생도맹그를 통일해 1801년 헌법으로 종신 총독이 된 아이티 혁명의 지도자",
+        "en": "Former slave who united Saint-Domingue and became governor-general for life in 1801, the foremost leader of the Haitian Revolution"
+      },
+      "bio": {
+        "ko": "1743년 생도맹그 브레다 농장에서 노예로 태어나 1770년대에 해방되어 노예를 부리는 소농장주가 되었다. 1791년 봉기 뒤 비아수의 비서·부관으로 가담했고, 1793년 스페인군에 들어갔다가 프랑스의 노예제 폐지 뒤인 1794년 5월 프랑스 편으로 돌아섰다. 1796년 부총독이 되었고 1797년 송토나를 추방했으며 1798년 메이틀랜드와 영국군 철수 조약을 맺었다. 남부 전쟁에서 리고를 꺾고 1801년 1월 산토도밍고를 점령한 뒤 7월 종신 총독과 노예제 폐지, 농장 강제노동을 담은 헌법을 공포했다. 1802년 르클레르에게 항복했다가 체포되어 프랑스로 추방되었고 1803년 4월 7일 주 요새에서 옥사했다.",
+        "en": "Born a slave on the Bréda plantation in 1743 and manumitted in the 1770s, he became a small planter who owned slaves. After the rising of 1791 he joined Biassou as secretary and lieutenant, entered Spanish service in 1793 and came over to the French in May 1794, after France had abolished slavery. Lieutenant governor in 1796, he expelled Sonthonax in 1797 and in 1798 signed the treaties with Maitland for the British withdrawal. He defeated Rigaud in the War of the South, occupied Santo Domingo in January 1801 and in July promulgated a constitution that made him governor-general for life, abolished slavery and bound cultivators to the plantations. He submitted to Leclerc in 1802, was arrested and deported, and died in the Fort de Joux on 7 April 1803."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "옥사",
+          "en": "Died in prison"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "투생 브레다",
+          "프랑수아도미니크 투생 루베르튀르"
+        ],
+        "en": [
+          "Toussaint L'Ouverture",
+          "Toussaint L’Ouverture",
+          "Toussaint Bréda",
+          "François-Dominique Toussaint Louverture"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Toussaint_Louverture"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1743–1803",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "lead",
+          "excerpt": "20 May 1743 – 7 April 1803"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Haitian general and leader of the Haitian Revolution",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "lead",
+          "excerpt": "was a Haitian general and the most prominent leader of the Haitian Revolution"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born on the Bréda plantation in Saint-Domingue",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Birth, parentage, and childhood",
+          "excerpt": "Louverture is thought to have been born on the Bréda plantation of Haut-du-Cap in Saint-Domingue, where his parents were enslaved"
+        },
+        {
+          "field": "bio",
+          "claim": "manumitted between 1772 and 1776",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "First marriage and manumission",
+          "excerpt": "documented that Louverture was a freeman, meaning that he had been manumitted sometime between 1772 and 1776"
+        },
+        {
+          "field": "bio",
+          "claim": "rented a coffee plantation with 13 slaves",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "First marriage and manumission",
+          "excerpt": "He began by renting a small coffee plantation, along with its 13 slaves, from his future son-in-law."
+        },
+        {
+          "field": "bio",
+          "claim": "nominated Biassou as leader in 1791 and joined him as secretary and lieutenant",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Beginnings of a rebellion: 1789–1793",
+          "excerpt": "went on to nominate Georges Biassou as leader. He would later join his forces as a secretary and lieutenant"
+        },
+        {
+          "field": "bio",
+          "claim": "allied with the Spanish in 1793",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Alliance with the Spanish: 1793–1794",
+          "excerpt": "Jean-François and Biassou formally allied with the Spanish in May 1793; Louverture likely did so in early June."
+        },
+        {
+          "field": "bio",
+          "claim": "fighting for the French by May 1794",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Alliance with the French: 1794–1796",
+          "excerpt": "a letter from Toussaint to General Laveaux confirms that he was already fighting officially on the behalf of the French by 18 May 1794"
+        },
+        {
+          "field": "bio",
+          "claim": "proclaimed lieutenant governor by Laveaux",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Alliance with the French: 1794–1796",
+          "excerpt": "Laveaux proclaimed Louverture as Lieutenant Governor, announcing at the same time that he would do nothing without his approval"
+        },
+        {
+          "field": "bio",
+          "claim": "arranged Sonthonax's return to France in 1797",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Third Commission: 1796–1797",
+          "excerpt": "Only a few weeks later, he began arranging for Sonthonax's return to France that summer."
+        },
+        {
+          "field": "bio",
+          "claim": "treaty with Maitland, 1798",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Treaties with Britain and the United States: 1798",
+          "excerpt": "On 30 April 1798, Louverture signed a treaty with British Army officer Thomas Maitland, exchanging the withdrawal of British troops from western Saint-Domingue in return for a general amnesty"
+        },
+        {
+          "field": "bio",
+          "claim": "won the War of the South, 1799–1800",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Expansion of territory: 1799–1801",
+          "excerpt": "The resulting civil war, known as the War of the South, lasted more than a year, with the defeated Rigaud fleeing to Guadeloupe, then France, in August 1800."
+        },
+        {
+          "field": "bio",
+          "claim": "took Spanish Santo Domingo in January 1801",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Expansion of territory: 1799–1801",
+          "excerpt": "In January 1801, Louverture and his nephew, General Hyacinthe Moïse invaded the Spanish territory, taking possession of it from the governor, Don Garcia, with few difficulties."
+        },
+        {
+          "field": "bio",
+          "claim": "constitution of 1801: governor-general for life",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Constitution of 1801",
+          "excerpt": "He promulgated the Constitution on 7 July 1801, officially establishing his authority over the entire island of Hispaniola. It made him governor-general for life with near absolute powers and the possibility of choosing his successor."
+        },
+        {
+          "field": "bio",
+          "claim": "Catholicism the only public faith; forced labour confirmed",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Constitution of 1801",
+          "excerpt": "The constitution guaranteed equal opportunity and equal treatment under the law for all races, but confirmed Louverture's policies of forced labor and the importation of workers through the slave trade."
+        },
+        {
+          "field": "bio",
+          "claim": "arrested and deported on 7 June 1802",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Arrest, imprisonment, and death: 1802–1803",
+          "excerpt": "Finally on 7 June 1802, despite the promises made in exchange for his surrender, Toussaint Louverture – as well as a hundred members of his inner circle – were captured and deported to France."
+        },
+        {
+          "field": "bio",
+          "claim": "died in the Fort de Joux on 7 April 1803",
+          "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+          "locator": "Arrest, imprisonment, and death: 1802–1803",
+          "excerpt": "He died in prison on 7 April 1803 at the age of 59."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1794,
+          "endYear": 1802,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+              "locator": "Alliance with the French: 1794–1796",
+              "claim": "General in the French Republic's service from May 1794 until his arrest in 1802",
+              "excerpt": "a letter from Toussaint to General Laveaux confirms that he was already fighting officially on the behalf of the French by 18 May 1794"
+            }
+          ]
+        },
+        {
+          "functionId": "government",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1797,
+          "endYear": 1802,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+              "locator": "lead",
+              "claim": "Governor-general of Saint-Domingue, for life from 1801",
+              "excerpt": "then joined with Republican France, becoming Governor-General-for-life of Saint-Domingue"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "state-spain",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1793,
+          "endYear": 1794,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+              "locator": "Alliance with the Spanish: 1793–1794",
+              "claim": "Officer in Spanish service, 1793–1794",
+              "excerpt": "Jean-François and Biassou formally allied with the Spanish in May 1793; Louverture likely did so in early June."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1791
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "비아수 휘하 반란군의 비서·부관",
+            "en": "Secretary and lieutenant to Biassou in the rebel army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": [
+              1794
+            ]
+          },
+          "r": {
+            "ko": "스페인군 장교",
+            "en": "Officer in Spanish service"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "프랑스 공화국 편으로 전향",
+            "en": "Came over to the French Republic"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1796
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "생도맹그 부총독",
+            "en": "Lieutenant governor of Saint-Domingue"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1797
+            ],
+            "end": [
+              1802
+            ]
+          },
+          "r": {
+            "ko": "생도맹그 총독, 1801년부터 종신",
+            "en": "Governor-general of Saint-Domingue, for life from 1801"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1802
+            ],
+            "end": [
+              1803
+            ]
+          },
+          "r": {
+            "ko": "주 요새 수감",
+            "en": "Imprisoned in the Fort de Joux"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jean-jacques-dessalines",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "장자크",
+        "en": "Jean-Jacques"
+      },
+      "familyName": {
+        "ko": "데살린",
+        "en": "Dessalines"
+      },
+      "nativeName": "Jean-Jacques Dessalines",
+      "years": "1758–1806",
+      "citizenship": {
+        "code": "haiti"
+      },
+      "nationalOrigin": {
+        "code": "haiti"
+      },
+      "epithet": {
+        "ko": "루베르튀르의 부관으로 원주민군을 이끌어 1804년 아이티 독립을 선포하고 황제 자크 1세가 된 혁명 지도자",
+        "en": "Louverture's lieutenant who led the Indigenous Army to victory, proclaimed Haitian independence in 1804 and reigned as Emperor Jacques I"
+      },
+      "bio": {
+        "ko": "1758년 생도맹그 북부 코르미에 농장에서 노예로 태어나 감독까지 올랐고, 그를 산 자유 유색인의 성을 물려받았다. 1791년 봉기에 가담해 장프랑수아의 부관이 되었고, 1794년부터 투생 루베르튀르의 주요 부관으로 1799년 여단장에 올랐다. 1802년 크레타피에로에서 1,300명으로 20일간 포위를 버텼고, 르클레르에게 투항했다가 노예제 복원 움직임에 10월 페티옹과 함께 다시 봉기해 반란군을 이끌었다. 1803년 11월 베르티에르에서 로샹보를 꺾고 1804년 1월 1일 고나이브에서 독립을 선포했다. 남은 프랑스인 3,000~5,000명의 학살을 명령했고 10월 황제 자크 1세로 대관했으며, 농장 노동을 강제해 반감을 사 1806년 10월 17일 퐁루주에서 암살되었다.",
+        "en": "Born a slave in 1758 on the Cormier plantation in the north of Saint-Domingue, he rose to foreman and took the surname of the free man of colour who bought him. He joined the rising of 1791 as a lieutenant of Jean-François and from 1794 was Toussaint Louverture's chief lieutenant, brigadier general by 1799. In 1802 he held Crête-à-Pierrot with 1,300 men through a twenty-day siege, submitted to Leclerc, and when the French moved to restore slavery rose again with Pétion in October, becoming leader of the rebels. He defeated Rochambeau at Vertières in November 1803 and on 1 January 1804 at Gonaïves proclaimed independence. He ordered the massacre of the remaining French, 3,000 to 5,000 people, was crowned Emperor Jacques I in October 1804, enforced plantation labour and was assassinated at Pont-Rouge on 17 October 1806."
+      },
+      "fate": {
+        "kind": "assassinated",
+        "label": {
+          "ko": "암살",
+          "en": "Assassinated"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "장자크 뒤클로",
+          "자크 1세"
+        ],
+        "en": [
+          "Jean-Jacques Duclos",
+          "Jacques I",
+          "Jan-Jak Desalin"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1758–1806",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "lead",
+          "excerpt": "20 September 1758 – 17 October 1806"
+        },
+        {
+          "field": "citizenship",
+          "claim": "first emperor and first ruler of independent Haiti",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "lead",
+          "excerpt": "was the first Haitian Emperor, leader of the Haitian Revolution, and the first ruler of an independent Haiti under the 1805 constitution"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "of Afro-Caribbean origin, born into slavery in Saint-Domingue",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Early life",
+          "excerpt": "Of Afro-Caribbean origin, Jean-Jacques Duclos was born into slavery on Cormier, a plantation near Grande-Riviere-du-Nord, Saint-Domingue."
+        },
+        {
+          "field": "bio",
+          "claim": "field slave and foreman until about thirty",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Early life",
+          "excerpt": "Working in the sugarcane fields as a laborer, Dessalines rose to the rank of commandeur, or foreman. He worked on Duclos's plantation until he was about 30 years old."
+        },
+        {
+          "field": "bio",
+          "claim": "took the surname of the free man of colour who bought him",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Early life",
+          "excerpt": "He later took the surname Dessalines, after a free man of color who had purchased him."
+        },
+        {
+          "field": "bio",
+          "claim": "lieutenant in Jean-François's army in 1791",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Ending slavery",
+          "excerpt": "Dessalines became a lieutenant in Papillon's army and followed him to Santo Domingo"
+        },
+        {
+          "field": "bio",
+          "claim": "Toussaint's chief lieutenant, brigadier general by 1799",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Ending slavery",
+          "excerpt": "Dessalines followed, becoming a chief lieutenant to Toussaint Louverture and rising to the rank of brigadier general by 1799."
+        },
+        {
+          "field": "bio",
+          "claim": "captured Jacmel and Petit-Goâve",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Ending slavery",
+          "excerpt": "Dessalines commanded many successful engagements, including the captures of Jacmel, Petit-Goâve, Miragoâne and Anse-à-Veau."
+        },
+        {
+          "field": "bio",
+          "claim": "held Crête-à-Pierrot with 1,300 men for twenty days",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Resisting the Leclerc campaign",
+          "excerpt": "During the 11 March 1802 battle, Dessalines and his 1,300 men defended a small fort against 18,000 attackers."
+        },
+        {
+          "field": "bio",
+          "claim": "rose again in October 1802 and led the alliance from November",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Resisting the Leclerc campaign",
+          "excerpt": "Dessalines and Pétion switched sides again in October 1802, to oppose the French. By November 1802, Dessalines had become the leader of the alliance"
+        },
+        {
+          "field": "bio",
+          "claim": "victory at Vertières, 18 November 1803",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Resisting the Leclerc campaign",
+          "excerpt": "On 18 November 1803, black and mulatto forces under Dessalines and Pétion attacked the fort of Vertières, held by Rochambeau, near Cap-Français in the north. Rochambeau and his troops surrendered the next day."
+        },
+        {
+          "field": "bio",
+          "claim": "declared independence at Gonaïves on 1 January 1804",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Emperor of independent Haiti",
+          "excerpt": "On 1 January 1804, from the city of Gonaïves, Dessalines officially declared the former colony's independence and renamed it \"Ayiti\" after the indigenous Taíno name."
+        },
+        {
+          "field": "bio",
+          "claim": "ordered the 1804 massacre",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "lead",
+          "excerpt": "He ordered the 1804 Haitian massacre of the remaining  Coloniser French population in Haiti, killing between 3,000 and 5,000 people, and an exodus of thousands."
+        },
+        {
+          "field": "bio",
+          "claim": "crowned Jacques I on 6 October 1804",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Emperor of independent Haiti",
+          "excerpt": "He was crowned Emperor Jacques I in a coronation ceremony on 6 October in the city of Le Cap (now Cap-Haïtien)."
+        },
+        {
+          "field": "bio",
+          "claim": "enforced plantation labour",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "lead",
+          "excerpt": "As Emperor, Dessalines enforced plantation labor to promote the economy and began an autocratic rule."
+        },
+        {
+          "field": "bio",
+          "claim": "assassinated at Pont-Rouge on 17 October 1806",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Death",
+          "excerpt": "culminated in Dessalines being assassinated north of the capital city, Port-au-Prince, at Larnage (now known as Pont-Rouge), on 17 October 1806"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1802,
+          "endYear": 1803,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+              "locator": "lead",
+              "claim": "General-in-chief of the Indigenous Army",
+              "excerpt": "Thereafter, Dessalines became the leader of the revolution and Général-Chef de l'Armée Indigène on 18 May 1803."
+            }
+          ]
+        },
+        {
+          "functionId": "monarchy",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1804,
+          "endYear": 1806,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+              "locator": "lead",
+              "claim": "Emperor of Haiti as Jacques I",
+              "excerpt": "Dessalines was later named Emperor of Haiti as Jacques I (1804–1806) by generals of the Haitian Revolutionary army and ruled in that capacity until being assassinated in 1806."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1794,
+          "endYear": 1802,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+              "locator": "lead",
+              "claim": "Officer in the French army under Toussaint, brigadier general by 1799",
+              "excerpt": "Dessalines served as an officer in the French army when Saint-Domingue was fending off Spanish and British incursions."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1791
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "장프랑수아 휘하 반란군 부관",
+            "en": "Lieutenant in Jean-François's rebel army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": [
+              1802
+            ]
+          },
+          "r": {
+            "ko": "투생 루베르튀르의 부관, 1799년 여단장",
+            "en": "Toussaint Louverture's lieutenant, brigadier general from 1799"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1803
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "원주민군 총사령관",
+            "en": "General-in-chief of the Indigenous Army"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1804
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "아이티 종신 총독",
+            "en": "Governor-general for life of Haiti"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1804
+            ],
+            "end": [
+              1806
+            ]
+          },
+          "r": {
+            "ko": "아이티 황제 자크 1세",
+            "en": "Emperor Jacques I of Haiti"
+          }
+        }
+      ]
+    },
+    {
+      "id": "henri-christophe",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "앙리",
+        "en": "Henri"
+      },
+      "familyName": {
+        "ko": "크리스토프",
+        "en": "Christophe"
+      },
+      "nativeName": "Henri Christophe",
+      "years": "1767–1820",
+      "citizenship": {
+        "code": "haiti"
+      },
+      "nationalOrigin": {
+        "code": "grenada"
+      },
+      "epithet": {
+        "ko": "카프프랑세를 불태우고 북부를 지킨 혁명 장군으로 아이티국 대통령을 거쳐 왕 앙리 1세가 된 인물",
+        "en": "Revolutionary general who burned Cap-Français and held the north, then president of the State of Haiti and King Henry I"
+      },
+      "bio": {
+        "ko": "1767년 영국령 카리브해(그레나다 또는 세인트키츠)에서 태어나 노예로 생도맹그 북부에 끌려왔다. 1791년 봉기 이후 투생 루베르튀르 휘하에서 싸워 카프프랑세 사령관이 되었고 1801년 여단장이 되었다. 1802년 2월 르클레르 원정군이 오자 명령대로 카프프랑세를 불태웠으나 4월 투항했고, 10월 다시 데살린 편에 섰다. 데살린 암살 뒤 1807년 2월 아이티국 대통령이 되었고 1811년 3월 왕국을 선포해 앙리 1세로 즉위했다. 시타델 라페리에르와 상수시 궁전을 세우고 코르베 강제노동으로 설탕 수입을 올렸으나 민심을 잃었고, 1820년 10월 8일 병든 몸으로 반란을 두려워해 자살했다.",
+        "en": "Born in 1767 in the British Caribbean, in Grenada or perhaps Saint Kitts, he was brought as a slave to the north of Saint-Domingue. From the rising of 1791 he fought under Toussaint Louverture, becoming commander at Cap-Français and brigadier general by 1801. When Leclerc's expedition arrived in February 1802 he burned Cap-Français as ordered, submitted in April and rejoined Dessalines in October. After Dessalines' assassination he was elected president of the State of Haiti in February 1807 and in March 1811 proclaimed a kingdom, reigning as Henry I. He built the Citadelle Laferrière and the Sans-Souci Palace and drew sugar revenues from corvée labour, but lost popular support, and on 8 October 1820, ill and fearing a coup, he shot himself."
+      },
+      "fate": {
+        "kind": "suicide",
+        "label": {
+          "ko": "자살",
+          "en": "Died by suicide"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "앙리 1세",
+          "크리스토프 앙리"
+        ],
+        "en": [
+          "Henry I",
+          "Henry Christophe",
+          "Christophe Henry"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Henri_Christophe",
+        "https://en.wikipedia.org/wiki/Saint-Domingue_expedition"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1767–1820",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "lead",
+          "excerpt": "6 October 1767 – 8 October 1820"
+        },
+        {
+          "field": "citizenship",
+          "claim": "leader of the Haitian Revolution and monarch of the Kingdom of Haiti",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "lead",
+          "excerpt": "was a key leader in the Haitian Revolution and the only monarch of the Kingdom of Haiti"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in the British Caribbean, probably Grenada",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "Early life",
+          "excerpt": "Born Christophe Henry, probably in Grenada but perhaps Saint Kitts the son of a slave mother and Christophe, a freeman, he was brought as a slave to the northern part of Saint-Domingue."
+        },
+        {
+          "field": "bio",
+          "claim": "may have served at Savannah in 1779",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "Early life",
+          "excerpt": "In 1779 he may have served with the French forces as a drummer boy in the Chasseurs-Volontaires de Saint-Domingue"
+        },
+        {
+          "field": "bio",
+          "claim": "fought under Toussaint, commander at Cap-Français, brigadier general by 1801",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "Early life",
+          "excerpt": "He fought for years with Toussaint Louverture in the north, participating in numerous battles during the revolution, and eventually rising to the rank of commander-in-chief at Cap-Français. By 1801, Louverture had promoted him to brigadier-general."
+        },
+        {
+          "field": "bio",
+          "claim": "burned Cap-Français in February 1802",
+          "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+          "locator": "Recoccupation",
+          "excerpt": "Christophe carried out his orders, setting light to the town and slitting the throats of part of the white population."
+        },
+        {
+          "field": "bio",
+          "claim": "deserted the French in October 1802",
+          "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+          "locator": "French defeat",
+          "excerpt": "In October, the former rebel leaders Alexander Petion, Henri Christophe and Jean-Jacques Dessalines all deserted the French forces as well."
+        },
+        {
+          "field": "bio",
+          "claim": "president of the State of Haiti, 17 February 1807",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "lead",
+          "excerpt": "On 17 February 1807, he was elected president of the State of Haiti, as he named that area."
+        },
+        {
+          "field": "bio",
+          "claim": "king from 1811",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "lead",
+          "excerpt": "On 26 March 1811, Christophe created a kingdom in the north and was later proclaimed Henry I, King of Haïti."
+        },
+        {
+          "field": "bio",
+          "claim": "built the Citadelle and Sans-Souci",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "lead",
+          "excerpt": "He is known for constructing Citadel Henry, now known as Citadelle Laferrière, the Sans-Souci Palace, the royal chapel of Milot"
+        },
+        {
+          "field": "bio",
+          "claim": "corvée labour resented by the people",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "lead",
+          "excerpt": "Under his policies of corvée, or forced labor bordering on slavery, the Kingdom earned revenues from agricultural production, primarily sugar, but the Haitian people resented the system."
+        },
+        {
+          "field": "bio",
+          "claim": "suicide in 1820",
+          "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+          "locator": "End of reign",
+          "excerpt": "King Henry died by suicide by shooting himself with a silver bullet rather than risk a coup and assassination."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "monarchy",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1811,
+          "endYear": 1820,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+              "locator": "lead",
+              "claim": "King of Haiti as Henry I",
+              "excerpt": "On 26 March 1811, Christophe created a kingdom in the north and was later proclaimed Henry I, King of Haïti."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1807,
+          "endYear": 1811,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+              "locator": "lead",
+              "claim": "President of the State of Haiti",
+              "excerpt": "On 17 February 1807, he was elected president of the State of Haiti, as he named that area."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1794,
+          "endYear": 1802,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Henri_Christophe",
+              "locator": "Early life",
+              "claim": "Officer under Toussaint in the French service, brigadier general by 1801",
+              "excerpt": "By 1801, Louverture had promoted him to brigadier-general."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1791
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "북부 봉기에 참가",
+            "en": "Joined the rising of the North"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1794
+            ],
+            "end": [
+              1802
+            ]
+          },
+          "r": {
+            "ko": "투생 루베르튀르 휘하 장교, 카프프랑세 사령관",
+            "en": "Officer under Toussaint Louverture, commander at Cap-Français"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1802
+            ],
+            "end": [
+              1803
+            ]
+          },
+          "r": {
+            "ko": "데살린 휘하 독립 전쟁 지휘관",
+            "en": "Commander in the war of independence under Dessalines"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1807
+            ],
+            "end": [
+              1811
+            ]
+          },
+          "r": {
+            "ko": "아이티국 대통령",
+            "en": "President of the State of Haiti"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1811
+            ],
+            "end": [
+              1820
+            ]
+          },
+          "r": {
+            "ko": "아이티 왕 앙리 1세",
+            "en": "King Henry I of Haiti"
+          }
+        }
+      ]
+    },
+    {
+      "id": "alexandre-petion",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "알렉상드르",
+        "en": "Alexandre"
+      },
+      "familyName": {
+        "ko": "페티옹",
+        "en": "Pétion"
+      },
+      "nativeName": "Alexandre Sabès Pétion",
+      "years": "1770–1818",
+      "citizenship": {
+        "code": "haiti"
+      },
+      "nationalOrigin": {
+        "code": "haiti"
+      },
+      "epithet": {
+        "ko": "자크멜을 지킨 포병 장교로 1802년 데살린과 손잡고 아이티 공화국의 초대 대통령이 된 자유 유색인 지도자",
+        "en": "Free coloured artillery officer who defended Jacmel, joined Dessalines in 1802 and became the first president of the Republic of Haiti"
+      },
+      "bio": {
+        "ko": "1770년 포르토프랭스에서 프랑스인 아버지와 자유 물라토 어머니 사이에서 태어나 1788년 파리 사관학교로 유학했다. 돌아와 영국군과 싸웠고 1796년 레오간에서 포격으로 영국군을 물리쳤다. 1799년 남부 전쟁에서 리고 편에 서서 자크멜을 지켰고 1800년 프랑스로 망명했다. 1802년 르클레르 원정군과 함께 돌아왔으나 투생이 추방된 뒤 10월 아르카에 비밀 회합에서 데살린을 지지해 반란군에 합류했다. 데살린 암살 음모에 가담했고 1807년 남부 아이티 공화국 대통령으로 선출되어 1816년 종신 대통령이 되었다. 대농장을 몰수해 농민에게 나누어 「파파 봉쾨르」라 불렸고, 1815년 볼리바르에게 피난처와 병력을 제공했으며 1818년 황열병으로 죽었다.",
+        "en": "Born in Port-au-Prince in 1770 to a French father and a free mulatto mother, he was sent to the Military Academy in Paris in 1788. Returning to fight the British, he drove them off at Léogâne with his guns in 1796. In the War of the South of 1799 he sided with Rigaud, commanded the defence of Jacmel and went into exile in France in 1800. He returned with Leclerc's expedition in 1802, but after Toussaint's deportation backed Dessalines at the secret conference of Arcahaie in October and joined the rebels. He took part in the conspiracy against Dessalines, was elected president of the southern Republic of Haiti in 1807 and made himself president for life in 1816. He redistributed the plantations to the peasantry, earning the name Papa Bon-Cœur, gave Bolívar sanctuary and troops in 1815 and died of yellow fever in 1818."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "황열병으로 사망",
+          "en": "Died of yellow fever"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "알렉상드르 사베스 페티옹",
+          "안 알렉상드르 사베스"
+        ],
+        "en": [
+          "Alexandre Sabès Pétion",
+          "Anne Alexandre Sabès",
+          "Alexandre Petion"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+        "https://en.wikipedia.org/wiki/Haitian_Revolution",
+        "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1770–1818",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "lead",
+          "excerpt": "2 April 1770 – 29 March 1818"
+        },
+        {
+          "field": "citizenship",
+          "claim": "Haitian officer and first president of the Republic of Haiti",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "lead",
+          "excerpt": "was a Haitian army officer and statesman who served as the first president of the Republic of Haiti from 1807 until his death in 1818"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Port-au-Prince to a French father and a free mulatto mother",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Early life",
+          "excerpt": "Pétion was born \"Anne Alexandre Sabès\" in Port-au-Prince to Pascal Sabès, a wealthy French father and Ursula, a free mulatto woman"
+        },
+        {
+          "field": "bio",
+          "claim": "educated at the Military Academy in Paris from 1788",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Early life",
+          "excerpt": "Pétion was sent to France in 1788 to be educated and study at the Military Academy in Paris."
+        },
+        {
+          "field": "bio",
+          "claim": "artilleryman who repulsed the British at Léogâne in 1796",
+          "source": "https://en.wikipedia.org/wiki/Haitian_Revolution",
+          "locator": "British \"great push\"",
+          "excerpt": "The French commander, Mulatto general Alexandre Pétion, proved to be an excellent artilleryman, who used the guns of his fort to disable two of the three ships of the line under Admiral Hyde Parker in the harbour"
+        },
+        {
+          "field": "bio",
+          "claim": "commanded the defence of Jacmel for Rigaud",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Haitian Revolution",
+          "excerpt": "By November, Rigaud's forces were pushed back to the strategic southern port of Jacmel by Louverture's army; the defence was commanded by Pétion. The town fell in March 1800 and the conflict was effectively over."
+        },
+        {
+          "field": "bio",
+          "claim": "returned with Leclerc in 1802",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Haitian Revolution",
+          "excerpt": "Petion, Boyer, and Rigaud returned with him in the hope of securing power in the colony."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the rebels after the conference at Arcahaie, October 1802",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Haitian Revolution",
+          "excerpt": "Pétion joined the rebels in October 1802. This followed a secret conference at Arcahaie, where Pétion supported Jean-Jacques Dessalines, the general who had captured Jacmel."
+        },
+        {
+          "field": "bio",
+          "claim": "fought at Vertières",
+          "source": "https://en.wikipedia.org/wiki/Jean-Jacques_Dessalines",
+          "locator": "Resisting the Leclerc campaign",
+          "excerpt": "On 18 November 1803, black and mulatto forces under Dessalines and Pétion attacked the fort of Vertières, held by Rochambeau, near Cap-Français in the north."
+        },
+        {
+          "field": "bio",
+          "claim": "conspired against Dessalines",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Post-revolution",
+          "excerpt": "Disaffected members of Emperor Dessalines's administration, including Pétion and Henri Christophe, began a conspiracy to overthrow Dessalines."
+        },
+        {
+          "field": "bio",
+          "claim": "president of the Republic of Haiti from 1807, for life from 1816",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Post-revolution",
+          "excerpt": "On 2 June 1816, Pétion modified the terms of the presidency in the constitution, making himself president for life."
+        },
+        {
+          "field": "bio",
+          "claim": "land redistribution, Papa Bon-Cœur",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Post-revolution",
+          "excerpt": "Pétion seized commercial plantations from the rich gentry. He had the land redistributed to his supporters and the peasantry, earning him the nickname Papa Bon-Cœur (\"good-hearted father\")."
+        },
+        {
+          "field": "bio",
+          "claim": "sanctuary and support for Bolívar",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Post-revolution",
+          "excerpt": "He gave sanctuary to the independence leader Simón Bolívar in 1815 and provided him with material and infantry support."
+        },
+        {
+          "field": "bio",
+          "claim": "died of yellow fever, 29 March 1818",
+          "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+          "locator": "Official Version and Succession",
+          "excerpt": "The official record states that he succumbed to yellow fever, a disease endemic to the Caribbean that claimed many lives during that era."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1807,
+          "endYear": 1818,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+              "locator": "lead",
+              "claim": "President of the Republic of Haiti",
+              "excerpt": "was a Haitian army officer and statesman who served as the first president of the Republic of Haiti from 1807 until his death in 1818"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1802,
+          "endYear": 1803,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+              "locator": "lead",
+              "claim": "Commander in the rebel coalition with Dessalines",
+              "excerpt": "The 1802 coalition formed by him and Dessalines against French forces led by Charles Leclerc would prove to be a watershed moment in the decade-long conflict"
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1796,
+          "endYear": 1800,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Alexandre_P%C3%A9tion",
+              "locator": "Haitian Revolution",
+              "claim": "Officer in the French colonial forces against the British and in Rigaud's army",
+              "excerpt": "Pétion returned to Saint-Domingue as a young man to take part in the Haitian Revolution, participating in skirmishes with British forces in Saint-Domingue."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1788
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "파리 사관학교 유학",
+            "en": "Student at the Military Academy in Paris"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1796
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "레오간에서 영국군을 물리친 포병 지휘관",
+            "en": "Artillery commander who repulsed the British at Léogâne"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1799
+            ],
+            "end": [
+              1800
+            ]
+          },
+          "r": {
+            "ko": "남부 전쟁에서 리고 편, 자크멜 방어 지휘",
+            "en": "Commanded the defence of Jacmel for Rigaud in the War of the South"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1802
+            ],
+            "end": [
+              1803
+            ]
+          },
+          "r": {
+            "ko": "데살린과 함께 프랑스에 맞선 지휘관",
+            "en": "Commander against the French alongside Dessalines"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1807
+            ],
+            "end": [
+              1818
+            ]
+          },
+          "r": {
+            "ko": "아이티 공화국 대통령, 1816년부터 종신",
+            "en": "President of the Republic of Haiti, for life from 1816"
+          }
+        }
+      ]
+    },
+    {
+      "id": "andre-rigaud",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "앙드레",
+        "en": "André"
+      },
+      "familyName": {
+        "ko": "리고",
+        "en": "Rigaud"
+      },
+      "nativeName": "André Rigaud",
+      "years": "1761–1811",
+      "citizenship": {
+        "code": "haiti"
+      },
+      "nationalOrigin": {
+        "code": "haiti"
+      },
+      "epithet": {
+        "ko": "남부의 자유 유색인 군대를 이끌다 1799~1800년 남부 전쟁에서 루베르튀르에게 패한 물라토 지도자",
+        "en": "Mulatto leader who led the free coloured army of the South against the British and lost the War of the South to Louverture in 1799–1800"
+      },
+      "bio": {
+        "ko": "1761년 레카이에서 부유한 프랑스인 농장주 아버지와 노예 어머니 사이에서 태어나 보르도에서 금세공을 배웠다. 돌아와 오제와 레몽의 뒤를 이어 자유 유색인의 권리를 대변했고, 1790년대 중반 서부·남부에서 군대를 이끌어 폴브렐로부터 통치권을 받았으며 1794년 레오간을 되찾고 티뷔롱을 탈환해 영국군을 막았다. 남부의 권력을 투생 루베르튀르에게 내주려 하지 않았고 에두빌의 부추김 속에 1799년 6월 남부 전쟁이 터졌다. 패한 뒤 1800년 프랑스로 떠났고, 1802년 르클레르 원정군과 함께 돌아왔다가 추방되어 투생과 같은 주 요새에 갇혔다. 1810년 12월 세 번째로 아이티에 돌아와 페티옹과 크리스토프 모두에 맞서 남부국의 대통령이 되었으나 1811년 9월 죽었다.",
+        "en": "Born in Les Cayes in 1761 to a wealthy French planter and an enslaved mother, he was trained as a goldsmith in Bordeaux. Back in the colony he succeeded Ogé and Raimond as the champion of the free people of colour, led an army in the West and South from the mid-1790s with authority granted by Polverel, and checked the British, retaking Léogâne and Tiburon in 1794. Unwilling to concede power in the South to Toussaint Louverture, and encouraged by Hédouville, he fought the War of the South from June 1799. After his defeat he left for France in 1800, returned with Leclerc's expedition in 1802 and was deported again, held in the Fort de Joux like Toussaint. In December 1810 he returned to Haiti a third time and made himself president of the State of the South against both Pétion and Christophe, but died in September 1811."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "사망",
+          "en": "Died"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "브누아 조제프 앙드레 리고"
+        ],
+        "en": [
+          "Benoit Joseph André Rigaud",
+          "Andre Rigaud"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+        "https://en.wikipedia.org/wiki/Haitian_Revolution",
+        "https://en.wikipedia.org/wiki/War_of_the_South"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1761–1811",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "lead",
+          "excerpt": "17 January 1761 – 18 September 1811"
+        },
+        {
+          "field": "citizenship",
+          "claim": "leading mulatto military leader of the Haitian Revolution, later president of the State of the South",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "lead",
+          "excerpt": "was the leading mulatto military leader during the Haitian Revolution"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Les Cayes to a French planter and an enslaved mother",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Early life",
+          "excerpt": "Rigaud was born on 17 January 1761 in Les Cayes, Saint-Domingue, to André Rigaud, a wealthy French planter, and Rose Bossy Depa, a slave woman."
+        },
+        {
+          "field": "bio",
+          "claim": "trained as a goldsmith in Bordeaux",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Early life",
+          "excerpt": "His father acknowledged the mixed-race (mulatto) boy as his at a young age and sent him to Bordeaux, where he was trained as a goldsmith."
+        },
+        {
+          "field": "bio",
+          "claim": "champion of the free people of colour after Ogé and Raimond",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Revolutionary",
+          "excerpt": "He was a successor to Vincent Ogé and Julien Raimond as a champion of the interests of free people of color in Saint-Domingue"
+        },
+        {
+          "field": "bio",
+          "claim": "led an army in the West and South with Polverel's authority",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Revolutionary",
+          "excerpt": "By the mid-1790s, with slave uprisings in the North, Rigaud was leading an army, a force in the Ouest and Sud departments. He was given authority to govern by Étienne Polverel"
+        },
+        {
+          "field": "bio",
+          "claim": "checked the British, retaking Léogâne and Tiburon in 1794",
+          "source": "https://en.wikipedia.org/wiki/Haitian_Revolution",
+          "locator": "Spanish depart Saint Domingue",
+          "excerpt": "Rigaud had checked the British in the south, taking the town of Léogâne by storm and driving the British back to Port-au-Prince."
+        },
+        {
+          "field": "bio",
+          "claim": "War of the South from June 1799, encouraged by Hédouville",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Revolutionary",
+          "excerpt": "That led to the War of the South in June 1799, when Toussaint's army invaded Rigaud's territory. The Comte d'Hédouville, sent by France to govern the island, had encouraged Rigaud's rivalry with Toussaint."
+        },
+        {
+          "field": "bio",
+          "claim": "left for France in 1800 after his defeat",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Revolutionary",
+          "excerpt": "In 1800, Rigaud left Saint-Domingue for France after his defeat by Toussaint."
+        },
+        {
+          "field": "bio",
+          "claim": "returned with Leclerc in 1802",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Leclerc expedition",
+          "excerpt": "Rigaud returned to Saint-Domingue in 1802 with the expedition of General Charles Leclerc, Napoleon Bonaparte's brother-in-law"
+        },
+        {
+          "field": "bio",
+          "claim": "imprisoned in the Fort de Joux",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Leclerc expedition",
+          "excerpt": "For a time, he was held a prisoner in Fort de Joux, the same fortress as his rival, Toussaint, where the latter died in 1803."
+        },
+        {
+          "field": "bio",
+          "claim": "president of the State of the South, 1810–1811",
+          "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+          "locator": "Final expedition",
+          "excerpt": "Rigaud returned to Haiti a third time in December 1810. He established himself as President of the State of the South, in opposition to both Alexandre Pétion, a mulatto and former ally in the South, and Henri Christophe, a black man who took power in the North."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1793,
+          "endYear": 1800,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/War_of_the_South",
+              "locator": "Early revolution",
+              "claim": "Commander of the free coloured forces of the South in the French Republic's service, brigadier general from 1795",
+              "excerpt": "In early 1795, the French National Convention promoted both men to the rank of brigadier general."
+            }
+          ]
+        },
+        {
+          "functionId": "political-leadership",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1810,
+          "endYear": 1811,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Andr%C3%A9_Rigaud",
+              "locator": "Final expedition",
+              "claim": "President of the State of the South",
+              "excerpt": "He established himself as President of the State of the South, in opposition to both Alexandre Pétion, a mulatto and former ally in the South, and Henri Christophe, a black man who took power in the North."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": [
+              1798
+            ]
+          },
+          "r": {
+            "ko": "서부·남부의 자유 유색인 군대 지휘관",
+            "en": "Commander of the free coloured army of the West and South"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1799
+            ],
+            "end": [
+              1800
+            ]
+          },
+          "r": {
+            "ko": "남부 전쟁에서 투생 루베르튀르와 대결",
+            "en": "Fought Toussaint Louverture in the War of the South"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1800
+            ],
+            "end": [
+              1802
+            ]
+          },
+          "r": {
+            "ko": "프랑스 망명",
+            "en": "In exile in France"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1802
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "르클레르 원정군과 함께 귀환, 다시 추방",
+            "en": "Returned with the Leclerc expedition and was deported again"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1810
+            ],
+            "end": [
+              1811
+            ]
+          },
+          "r": {
+            "ko": "남부국 대통령",
+            "en": "President of the State of the South"
+          }
+        }
+      ]
+    },
+    {
+      "id": "charles-leclerc",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "샤를",
+        "en": "Charles"
+      },
+      "familyName": {
+        "ko": "르클레르",
+        "en": "Leclerc"
+      },
+      "nativeName": "Charles Victoire Emmanuel Leclerc",
+      "years": "1772–1802",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "france"
+      },
+      "epithet": {
+        "ko": "나폴레옹의 매제로 1802년 생도맹그 원정군을 지휘해 루베르튀르를 체포하고 황열병으로 죽은 프랑스 장군",
+        "en": "Napoleon's brother-in-law who commanded the Saint-Domingue expedition of 1802, arrested Louverture and died of yellow fever"
+      },
+      "bio": {
+        "ko": "1772년 퐁투아즈에서 태어나 1791년 입대했고 1793년 툴롱 포위전에서 나폴레옹을 처음 만났다. 이탈리아 원정에서 1797년 여단장이 되었고 그해 나폴레옹의 여동생 폴린과 결혼했으며, 브뤼메르 18일 쿠데타에서 척탄병을 이끌고 오백인회에 들어갔다. 1801년 말 투생 루베르튀르의 정부를 무너뜨리고 흑인 장교들을 추방하라는 지시를 받고 원정군 사령관이 되어 12월 14일 브레스트를 떠났다. 1802년 투생을 회담 자리에서 체포해 프랑스로 보냈으나, 과들루프의 노예제 복원 소식에 흑인 부대가 이탈하자 10월 나폴레옹에게 섬멸전을 건의했고 카프프랑세에서 흑인 병사 1,000명을 익사시켰다. 1802년 11월 황열병으로 죽었다.",
+        "en": "Born in Pontoise in 1772, he volunteered in 1791 and met Napoleon at the siege of Toulon in 1793. He became a brigade general in Italy in 1797, married Napoleon's sister Pauline that year and led grenadiers into the Council of Five Hundred in the coup of 18 Brumaire. In late 1801 he was given command of the expedition to Saint-Domingue with instructions to liquidate Toussaint Louverture's government and deport his officers, and sailed from Brest on 14 December. In 1802 he arrested Toussaint at a meeting and shipped him to France, but when news of the restoration of slavery in Guadeloupe set off desertions he proposed a war of annihilation to Napoleon in October and had 1,000 Black soldiers drowned at Cap-Français. He died of yellow fever in November 1802."
+      },
+      "fate": {
+        "kind": "natural",
+        "label": {
+          "ko": "황열병으로 사망",
+          "en": "Died of yellow fever"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "샤를 빅투아르 에마뉘엘 르클레르"
+        ],
+        "en": [
+          "Charles Victoire Emmanuel Leclerc",
+          "Victor-Emmanuel Leclerc"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "1772–1802",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "lead",
+          "excerpt": "17 March 1772 – 2 November 1802"
+        },
+        {
+          "field": "citizenship",
+          "claim": "French Army officer",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "lead",
+          "excerpt": "was a French Army officer who served in the French Revolutionary Wars"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "French, from Pontoise in the Île-de-France",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Early life",
+          "excerpt": "Charles Leclerc was born on 17 March 1772 in Pontoise, Île-de-France."
+        },
+        {
+          "field": "bio",
+          "claim": "volunteered in 1791",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Early life",
+          "excerpt": "In 1791, he volunteered to join the French Royal Army, serving as a second lieutenant in the 12th Regiment of Chasseurs à Cheval"
+        },
+        {
+          "field": "bio",
+          "claim": "met Napoleon at Toulon in 1793",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Early life",
+          "excerpt": "serving as the chief of staff of a French Revolutionary Army division during the siege of Toulon in 1793, where he met Napoleon for the first time"
+        },
+        {
+          "field": "bio",
+          "claim": "brigade general in 1797",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Early life",
+          "excerpt": "participating in the battles of Castiglione and Rivoli and rising to the rank of brigade general by 1797"
+        },
+        {
+          "field": "bio",
+          "claim": "married Pauline Bonaparte",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Early life",
+          "excerpt": "Upon Leclerc's return to Paris, he accepted Napoleon's offer to marry Pauline."
+        },
+        {
+          "field": "bio",
+          "claim": "led grenadiers into the Council of Five Hundred on 18 Brumaire",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Early life",
+          "excerpt": "During the coup, supported by Joachim Murat, Leclerc ordered a detachment of grenadiers to march into the Council of Five Hundred."
+        },
+        {
+          "field": "bio",
+          "claim": "appointed to command the expedition in late 1801",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Saint-Domingue",
+          "excerpt": "In late 1801, Napoleon appointed Leclerc as the commander of a military expedition to overthrow the regime of Toussaint Louverture in the French colony of Saint-Domingue and restore metropolitan authority there."
+        },
+        {
+          "field": "bio",
+          "claim": "instructions: deport the officers, publicly maintain abolition",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Saint-Domingue",
+          "excerpt": "In his initial instructions, Napoleon directed Leclerc to liquidate Louverture's government and deport his military officers to France, while publicly maintaining the abolition of slavery in Saint-Domingue."
+        },
+        {
+          "field": "bio",
+          "claim": "sailed from Brest on 14 December 1801",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Saint-Domingue",
+          "excerpt": "Leclerc left Brest, France on 14 December 1801 at the head of a French Navy fleet transporting 40,000 troops"
+        },
+        {
+          "field": "bio",
+          "claim": "arrested Louverture at a meeting and deported him",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Saint-Domingue",
+          "excerpt": "Napoleon had given secret instructions to Leclerc to arrest Louverture, which he did during a meeting before deporting him to France"
+        },
+        {
+          "field": "bio",
+          "claim": "letter of October 1802 proposing a war of annihilation",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Saint-Domingue",
+          "excerpt": "By October 1802, Leclerc wrote a letter to Napoleon advocating for a war of annihilation, declaring that \"We must destroy all the blacks of the mountains – men and women – and spare only children under 12 years of age."
+        },
+        {
+          "field": "bio",
+          "claim": "had 1,000 Black troops drowned at Cap-Français",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Saint-Domingue",
+          "excerpt": "Leclerc ordered the arrest of all remaining Black troops in French service in Cap-Francais, executing 1,000 of them by tying sacks of flour to their necks and pushing them off the side of ships."
+        },
+        {
+          "field": "bio",
+          "claim": "died of yellow fever in November 1802",
+          "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+          "locator": "Death and legacy",
+          "excerpt": "In November 1802, Leclerc died of yellow fever, which had already decimated his army."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationId": "french-napoleonic-state",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1801,
+          "endYear": 1802,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+              "locator": "lead",
+              "claim": "Commander of the Saint-Domingue expedition",
+              "excerpt": "In 1801, Leclerc was appointed commander of the Saint-Domingue expedition with the goal of restoring French rule and slavery in the colony of Saint-Domingue and deposing Governor-General Toussaint Louverture."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationId": "french-first-republic",
+          "affiliationStatus": "confirmed",
+          "relation": "service",
+          "startYear": 1792,
+          "endYear": 1799,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+              "locator": "Early life",
+              "claim": "Officer of the Revolutionary armies, brigade general by 1797",
+              "excerpt": "Leclerc remained loyal to the French First Republic which replaced the Kingdom of France and was promoted to the rank of captain, serving as the chief of staff of a French Revolutionary Army division during the siege of Toulon in 1793"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1791
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "제12 기병엽병연대 소위",
+            "en": "Second lieutenant in the 12th Chasseurs à Cheval"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1793
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "툴롱 포위전의 사단 참모장",
+            "en": "Divisional chief of staff at the siege of Toulon"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1797
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "여단장, 폴린 보나파르트와 결혼",
+            "en": "Brigade general; married Pauline Bonaparte"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1799
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "사단장, 브뤼메르 18일 쿠데타 참가",
+            "en": "Divisional general; took part in the coup of 18 Brumaire"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1801
+            ],
+            "end": [
+              1802
+            ]
+          },
+          "r": {
+            "ko": "생도맹그 원정군 사령관",
+            "en": "Commander of the Saint-Domingue expedition"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dutty-boukman",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "뒤티",
+        "en": "Dutty"
+      },
+      "familyName": {
+        "ko": "부크만",
+        "en": "Boukman"
+      },
+      "nativeName": "Dutty Boukman",
+      "years": "c. 1767–1791",
+      "citizenship": {
+        "code": "haiti"
+      },
+      "nationalOrigin": {
+        "code": "senegal",
+        "label": {
+          "ko": "세네감비아",
+          "en": "Senegambia"
+        }
+      },
+      "epithet": {
+        "ko": "1791년 8월 부아 카이망 집회를 주재하고 북부 노예 봉기를 이끈 보두 사제",
+        "en": "Vodou priest who presided over the Bois Caïman ceremony of August 1791 and led the slave rising of the North"
+      },
+      "bio": {
+        "ko": "1767년 무렵 세네감비아의 무슬림 집안에서 태어나 자메이카에서 노예가 되었고, 뒤에 생도맹그로 팔려 와 보두 사제가 되었다고 전해진다. 다른 노예에게 글을 가르치려다 팔려 농장 감독과 마부로 일했고, 이름은 영어 별명 「북맨」에서 왔다. 1791년 8월 14일 무렵 부아 카이망에서 여사제 세실 파티망과 함께 봉기를 준비하는 마지막 모임을 주재했고, 8월 22일 노에 제당소를 불태워 봉기를 열었다. 약 1만 5천 명의 반란군을 이끌고 카프프랑세로 향했으나 11월 7일 퐁블뢰에서 프랑스군에게 죽었고, 잘린 머리는 「반란군의 우두머리 부크만의 머리」라는 글귀와 함께 전시되었다.",
+        "en": "Born around 1767 to a Muslim family in Senegambia, he was captured and enslaved in Jamaica, then sold to Saint-Domingue, where he is said to have become a Vodou priest. Sold on after trying to teach other slaves to read, he worked as a slave driver and coach driver, and his name came from his English nickname \"Book Man\". On or about 14 August 1791 at Bois Caïman on the Choiseul plantation he presided, with the priestess Cécile Fatiman, over the last of the meetings that planned the rising, and on 22 August he gathered the slaves of the Dutilh, Héron and Noé estates and burned the Noé sugar works, opening the revolt. He led a rebel force that grew to around fifteen thousand towards Cap-Français, but on 7 November 1791 he was killed by French troops while defending the rebel base at Fond Bleu, and his head was displayed with the inscription \"The head of Boukman, leader of the rebels\"."
+      },
+      "fate": {
+        "kind": "killed",
+        "label": {
+          "ko": "전사",
+          "en": "Killed in action"
+        }
+      },
+      "aliases": {
+        "ko": [
+          "부크만 뒤티",
+          "잠바 부크만"
+        ],
+        "en": [
+          "Boukman Dutty",
+          "Zamba Boukman",
+          "Bookman"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Dutty_Boukman"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "died 7 November 1791",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "lead",
+          "excerpt": "Dutty Boukman (or Boukman Dutty; died 7 November 1791) was a leader of the Haitian Revolution."
+        },
+        {
+          "field": "years",
+          "claim": "born about 1767",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "Background",
+          "excerpt": "In about 1767, Dutty Boukman was born in the region of Senegambia (present-day Senegal and Gambia), where he was a Muslim cleric."
+        },
+        {
+          "field": "citizenship",
+          "claim": "leader of the Haitian Revolution",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "lead",
+          "excerpt": "was a leader of the Haitian Revolution"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born in Senegambia",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "lead",
+          "excerpt": "Born to a Muslim family in Senegambia (present-day Senegal and The Gambia), he was initially enslaved in Jamaica."
+        },
+        {
+          "field": "bio",
+          "claim": "enslaved in Jamaica, then Saint-Domingue, Vodou priest",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "Background",
+          "excerpt": "He was captured in Senegambia, and forced into slavery in the Caribbean, first to the island of Jamaica, then Saint-Domingue, modern-day Haiti, where he became a Haitian Vodou houngan priest."
+        },
+        {
+          "field": "bio",
+          "claim": "sold on for teaching slaves to read; driver and coachman",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "Background",
+          "excerpt": "After he attempted to teach other enslaved people how to read, he was sold to a French plantation owner and placed as a commandeur (slave driver) and, later, a coach driver."
+        },
+        {
+          "field": "bio",
+          "claim": "name from the nickname \"Book Man\"",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "Background",
+          "excerpt": "His French name came from his English nickname, \"Book Man\""
+        },
+        {
+          "field": "bio",
+          "claim": "presided at Bois Caïman with Cécile Fatiman",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "Ceremony at the Bois Caïman",
+          "excerpt": "Contemporaneous accounts place the ceremony at Bois Caïman on or about 14 August 1791 at the Choiseul plantation. Boukman and priestess Cécile Fatiman presided over the last of a series of meetings to organize a slave revolt for weeks in advance"
+        },
+        {
+          "field": "bio",
+          "claim": "opened the rising on 22 August by burning the Noé sugar works",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "1791 slave revolt",
+          "excerpt": "He led these forces to the Noé sugar refinery where they began their work of setting plantations ablaze as well as killing and capturing plantation owners and their families. Scholars mark the burning of the Noé estate as the beginning of the 1791 slave revolt"
+        },
+        {
+          "field": "bio",
+          "claim": "rebel force of around fifteen thousand marched on Le Cap",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "1791 slave revolt",
+          "excerpt": "They then moved eastward and met up with other rebel fighters gathering a total force of around fifteen thousand strong. Together they marched to the city of le Cap to lay siege."
+        },
+        {
+          "field": "bio",
+          "claim": "killed at Fond Bleu, head displayed",
+          "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+          "locator": "Death",
+          "excerpt": "Boukman was killed by French soldiers in November 1791 while defending a rebel base at Fond Bleu. The French then publicly displayed his head in an attempt to dispel the aura of invincibility that he had cultivated."
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "military",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1791,
+          "endYear": 1791,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Dutty_Boukman",
+              "locator": "lead",
+              "claim": "Leader of the slave rising of the North in August–November 1791",
+              "excerpt": "Boukman was a key leader of the slave revolt in the Le Cap‑Français region in the north of the colony."
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1791
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "부아 카이망 집회 주재, 북부 노예 봉기 지도자",
+            "en": "Presided at Bois Caïman; leader of the slave rising of the North"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vincent-oge",
+      "groupId": "france-revolution",
+      "givenName": {
+        "ko": "뱅상",
+        "en": "Vincent"
+      },
+      "familyName": {
+        "ko": "오제",
+        "en": "Ogé"
+      },
+      "nativeName": "Vincent Ogé",
+      "years": "c. 1757–1791",
+      "citizenship": {
+        "code": "france"
+      },
+      "nationalOrigin": {
+        "code": "haiti"
+      },
+      "epithet": {
+        "ko": "자유 유색인의 투표권을 요구하며 1790년 카프프랑세 근교에서 봉기했다가 거열형을 당한 생도맹그의 상인",
+        "en": "Saint-Domingue merchant who rose near Cap-Français in 1790 demanding voting rights for free people of colour and was broken on the wheel"
+      },
+      "bio": {
+        "ko": "1757년 무렵 생도맹그 동동의 자유 유색인 농장주 가문에서 태어나 보르도에서 금세공을 배웠고, 1775년 돌아와 카프프랑세에서 아프리카계 가운데 가장 부유한 커피 상인이 되었다. 1788년 파리에 가서 혁명에 가담했고, 쥘리앵 레몽과 함께 자유 유색인의 대표권과 투표권을 국민제헌의회에 요구하면서도 노예 소유자로서 노예제의 존속은 지지했다. 1790년 3월 제헌의회가 모호한 투표권 법을 통과시키자 10월 몰래 돌아왔고, 식민 당국이 시행을 거부하자 샤반과 함께 약 300명을 모아 봉기했다. 패해 스페인령으로 달아났다가 붙잡혀 넘겨졌고, 1791년 2월 6일 카프프랑세에서 거열형으로 처형되었다. 그의 처형은 뒤에 노예 반란군의 저항 명분으로 거론되었다.",
+        "en": "Born around 1757 at Dondon to a free coloured planter family, he was apprenticed to a goldsmith in Bordeaux and returned in 1775 to become the richest merchant of African descent in Cap-Français. He went to Paris in 1788, joined the revolutionaries and with Julien Raimond demanded representation and voting rights for free people of colour from the National Constituent Assembly, while as a slaveholder supporting the continuation of slavery. After the Assembly passed an ambiguously worded law in March 1790 he returned secretly in October, and when the colonial authorities refused to implement it he and Chavannes gathered about 300 men and rose. Defeated, he fled to Spanish territory, was captured and handed over, and on 6 February 1791 was broken on the wheel at Cap-Français. His execution was later cited by the slave rebels as a reason to keep resisting."
+      },
+      "fate": {
+        "kind": "executed",
+        "label": {
+          "ko": "처형",
+          "en": "Executed"
+        }
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "Vincent Oge"
+        ]
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9"
+      ],
+      "evidence": [
+        {
+          "field": "years",
+          "claim": "c. 1757–1791",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "lead",
+          "excerpt": "Vincent Ogé (French pronunciation: [vɛ̃sɑ̃ ɔʒe]; c. 1757 – 6 February 1791)"
+        },
+        {
+          "field": "citizenship",
+          "claim": "subject of the French colony of Saint-Domingue who claimed the rights of French citizens",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "lead",
+          "excerpt": "was a Saint-Domingan merchant, military officer and revolutionary who had a leading role in a failed uprising against French colonial rule in the colony of Saint-Domingue in 1790"
+        },
+        {
+          "field": "nationalOrigin",
+          "claim": "born at Dondon to a white French father and a free woman of colour",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Early life",
+          "excerpt": "Ogé's parents were Jacques Ogé, a white Frenchman, and Angélique Ossé, a free woman of color"
+        },
+        {
+          "field": "bio",
+          "claim": "apprenticed to a goldsmith in Bordeaux, returned in 1775",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Early life",
+          "excerpt": "At the age of eleven, Ogé was sent to Bordeaux in France by his parents in 1768. There, he was apprenticed to a goldsmith for approximately seven years, returning to Saint-Domingue in 1775."
+        },
+        {
+          "field": "bio",
+          "claim": "richest merchant of African descent in Cap-Français",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Early life",
+          "excerpt": "Ogé eventually became the wealthiest businessman of African descent who was active in Cap‑Français during the 1780s."
+        },
+        {
+          "field": "bio",
+          "claim": "joined the revolutionaries in Paris in 1789",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Revolutionary activities",
+          "excerpt": "In 1788, he travelled to France for a second time. A year later, the French Revolution began, and Ogé, who was in Paris at the time, embraced the cause of the revolutionaries."
+        },
+        {
+          "field": "bio",
+          "claim": "with Raimond, the public face of the free people of colour",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Revolutionary activities",
+          "excerpt": "Along with Julien Raimond, he quickly became the leaders of de Joly's group, and the public face of the political concerns of free people of colour in France."
+        },
+        {
+          "field": "bio",
+          "claim": "slaveholder who supported slavery's continuation",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Revolutionary activities",
+          "excerpt": "As both men were slaveholders, they expressed support for slavery's continued existence in the colonies."
+        },
+        {
+          "field": "bio",
+          "claim": "consulted Clarkson in London",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Revolutionary activities",
+          "excerpt": "During his journey, he made a stop in London to consult with abolitionists in Britain, including Thomas Clarkson."
+        },
+        {
+          "field": "bio",
+          "claim": "rose with Chavannes and about 300 men",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Revolutionary activities",
+          "excerpt": "leading to Ogé and Chavannes to conspire to overthrow the colonial government by force, gathering approximately 300 free men of color 12 miles outside Cap‑Français"
+        },
+        {
+          "field": "bio",
+          "claim": "captured at Hinche on 20 November 1790",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Uprising, capture and execution",
+          "excerpt": "On 20 November 1790, Ogé and 23 rebels, including Chavannes, were captured by the colonial authorities in the town of Hinche"
+        },
+        {
+          "field": "bio",
+          "claim": "broken on the wheel on 6 February 1791",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Uprising, capture and execution",
+          "excerpt": "He was sentenced to death, and Ogé was executed by being broken on the wheel on 6 February in the presence of Blanchelande and several politicians from the colonial assembly."
+        },
+        {
+          "field": "bio",
+          "claim": "his execution cited by the slave rebels",
+          "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+          "locator": "Uprising, capture and execution",
+          "excerpt": "his execution was frequently cited by rebel slaves during the revolution as a justification for continuing to resist the French colonial government"
+        }
+      ],
+      "activities": [
+        {
+          "functionId": "political-leadership",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1789,
+          "endYear": 1790,
+          "primary": true,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+              "locator": "Revolutionary activities",
+              "claim": "Leader of the free people of colour's campaign for political rights in Paris",
+              "excerpt": "Along with Julien Raimond, he quickly became the leaders of de Joly's group, and the public face of the political concerns of free people of colour in France."
+            }
+          ]
+        },
+        {
+          "functionId": "military",
+          "affiliationStatus": "unresolved",
+          "relation": "unresolved",
+          "startYear": 1790,
+          "endYear": 1790,
+          "primary": false,
+          "evidence": [
+            {
+              "source": "https://en.wikipedia.org/wiki/Vincent_Og%C3%A9",
+              "locator": "Revolutionary activities",
+              "claim": "Led the free coloured rising of October 1790",
+              "excerpt": "gathering approximately 300 free men of color 12 miles outside Cap‑Français"
+            }
+          ]
+        }
+      ],
+      "career": [
+        {
+          "period": {
+            "start": [
+              1775
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "카프프랑세의 커피 상인",
+            "en": "Coffee merchant in Cap-Français"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1789
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "파리에서 자유 유색인의 권리를 요구",
+            "en": "Demanded rights for free people of colour in Paris"
+          }
+        },
+        {
+          "period": {
+            "start": [
+              1790
+            ],
+            "end": null
+          },
+          "r": {
+            "ko": "카프프랑세 근교 봉기 지도자",
+            "en": "Leader of the rising near Cap-Français"
+          }
+        }
+      ]
+    }
+  ]
+}

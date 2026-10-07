@@ -1,0 +1,492 @@
+{
+  "id": "queue-events-20261007",
+  "terms": [
+    {
+      "id": "saint-domingue",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Saint-Domingue",
+        "https://en.wikipedia.org/wiki/Haitian_Revolution"
+      ],
+      "fields": {
+        "term": {
+          "ko": "생도맹그",
+          "en": "Saint-Domingue"
+        },
+        "category": "state",
+        "period": {
+          "ko": "1659–1804",
+          "en": "1659–1804"
+        },
+        "startYear": 1659,
+        "endYear": 1804,
+        "definition": {
+          "ko": "1659년부터 1804년까지 이스파니올라섬 서쪽 3분의 1을 차지한 프랑스 식민지로, 오늘날의 아이티다. 1697년 레이스베이크 조약으로 스페인이 프랑스의 지배를 인정했고, 18세기에 노예 노동에 기댄 설탕·커피 플랜테이션으로 「앙티유의 진주」라 불리는 프랑스 최대의 부의 원천이 되었다. 1791년 노예 봉기로 시작된 아이티 혁명 끝에 1804년 1월 1일 아이티로 독립했다.",
+          "en": "The French colony on the western third of Hispaniola from 1659 to 1804, today's Haiti. Spain recognised French rule in the Treaty of Ryswick of 1697, and in the eighteenth century sugar and coffee plantations worked by enslaved Africans made it the \"Pearl of the Antilles\", France's richest colony. The Haitian Revolution that began with the slave rising of 1791 ended with its independence as Haiti on 1 January 1804."
+        },
+        "body": {
+          "ko": "프랑스 해적들은 1625년 토르튀섬에 자리 잡았고 1659년 루이 14세의 인가로 정착지가 공식화되었다. 스페인은 1697년 레이스베이크 조약에서 섬 서쪽 3분의 1에 대한 프랑스의 존재를 묵인했다. 7년 전쟁 뒤 식민지는 급속히 팽창해 1767년 원당 7,200만 파운드와 정제당 5,100만 파운드, 인디고 100만 파운드, 면화 200만 파운드를 수출했고, 1780년대에는 유럽에서 소비되는 설탕의 약 40%와 커피의 60%를 생산했다. 1789년 약 8,000개의 플랜테이션이 유럽과 아메리카에서 소비되는 설탕과 커피의 절반을 생산했으며, 하와이나 벨기에만 한 이 식민지 하나가 영국령 서인도 전체보다 많은 설탕과 커피를 냈다. 1681~1791년에 들어온 노예는 79만~86만 명으로 추정되고 1783~1791년에는 대서양 노예무역의 3분의 1을 차지했으며, 1787년 이후 해마다 3만 명 이상이 수입되었다. 열대병과 노예제의 조건 때문에 자연 증가가 불가능해 노예의 다수는 언제나 아프리카 태생이었다. 설탕 플랜테이션은 경작지의 14%만 차지했지만 평균 300명, 최대 1,400명의 노예를 부렸고, 커피는 경작지의 50%를 차지했다.\n\n1789년 무렵 인구는 백인 4만~4만 5천 명, 자유 유색인 2만 8천~3만 2천 명, 노예 40만 6천~46만 5천 명이었다. 백인은 대부분 프랑스에 사는 소수의 「그랑 블랑」과 장인·소상인·감독인 「프티 블랑」으로 나뉘었고, 자유 유색인은 카리브해에서 가장 크고 부유한 집단으로 1789년 플랜테이션 재산의 3분의 1과 노예의 4분의 1을 소유했으며 커피 농장을 사실상 독점했다. 그러나 1760년대부터 부르봉 왕정은 이들에게 특정 직업, 유럽식 복장, 공공장소에서의 무기 휴대를 금지하는 차별법을 두었다. 1791년 8월 부아 카이망의 집회로 시작된 노예 봉기는 1793년 노예제 폐지와 1794년 국민공회의 추인으로 이어졌고, 투생 루베르튀르 아래 프랑스는 1795~1802년 섬 전체를 지배했다. 1802년 르클레르 원정이 다시 봉기를 부르자 프랑스군은 1803년 말 철수했고, 식민지는 1804년 타이노어 이름을 따 아이티로 독립했다.",
+          "en": "French buccaneers settled on Tortuga in 1625, and the settlement was officially established under a commission of Louis XIV in 1659. Spain tacitly recognised the French presence in the western third of the island in the Peace of Ryswick of 1697. After the Seven Years' War the colony expanded rapidly: in 1767 it exported 72 million pounds of raw sugar, 51 million pounds of refined sugar, a million pounds of indigo and two million pounds of cotton, and by the 1780s it produced about 40 percent of the sugar and 60 percent of the coffee consumed in Europe. By 1789 some 8,000 plantations produced half of all the sugar and coffee consumed in Europe and the Americas, and this colony roughly the size of Hawaiʻi or Belgium produced more of both than all the British West Indies combined. An estimated 790,000 to 860,000 slaves were brought in between 1681 and 1791, a third of the entire Atlantic slave trade in 1783–1791, and from 1787 more than 30,000 a year. Tropical disease and the conditions of slavery prevented natural increase, so that a majority of the slaves were always African-born. Sugar plantations occupied only 14 percent of cultivated land but employed 300 slaves on average and 1,400 at the largest, while coffee took up 50 percent of the land.\n\nAround 1789 the population was 40,000–45,000 whites, 28,000–32,000 free people of colour and 406,000–465,000 slaves. The whites were divided between a small group of grands blancs, most of whom lived in France, and the petits blancs, artisans, small traders and overseers; the free people of colour, the largest and wealthiest such population in the Caribbean, owned a third of the plantation property and a quarter of the slaves by 1789 and held a near monopoly of coffee planting. From the 1760s, however, the Bourbon authorities subjected them to discriminatory statutes forbidding certain professions, European clothing and the carrying of arms in public. The slave rising that began with the ceremony at Bois Caïman in August 1791 led to the abolition of slavery in 1793 and its confirmation by the Convention in 1794, and under Toussaint Louverture France controlled the whole island from 1795 to 1802. When the Leclerc expedition of 1802 provoked a new rising, the French withdrew at the end of 1803, and the colony declared its independence as Haiti, from the Taíno name of the island, in 1804."
+        },
+        "aliases": {
+          "ko": [],
+          "en": [
+            "Saint Domingue",
+            "San Domingo"
+          ]
+        },
+        "people": [
+          "toussaint-louverture",
+          "leger-felicite-sonthonax"
+        ],
+        "events": [
+          "haitian-revolution-1791-1804",
+          "french-revolution-1789-1799"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The French colony on the western third of Hispaniola from 1659 to 1804, today's Haiti. Spain recognised French rule in the Treaty of Ryswick of 1697, and in the eighteenth century sugar and coffee plantations worked by enslaved Africans made it the \"Pearl of the Antilles\", France's richest colony. The Haitian Revolution that began with the slave rising of 1791 ended with its independence as Haiti on 1 January 1804.",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
+            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
+          },
+          {
+            "field": "body",
+            "claim": "French buccaneers settled on Tortuga in 1625, and the settlement was officially established under a commission of Louis XIV in 1659. Spain tacitly recognised the French presence in the western third of the island in the Peace of Ryswick of 1697. After the Seven Years' War the colony expanded rapidly",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
+            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
+          },
+          {
+            "field": "period",
+            "claim": "1659–1804",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
+            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
+          },
+          {
+            "field": "startYear",
+            "claim": "1659",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
+            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
+          },
+          {
+            "field": "endYear",
+            "claim": "1804",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue",
+            "locator": "lead; The division of Hispaniola; Economy; Plantation economy; Saint-Domingue Creole society"
+          }
+        ],
+        "original": "Saint-Domingue",
+        "region": "americas"
+      }
+    },
+    {
+      "id": "code-noir",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Code_Noir",
+        "https://en.wikipedia.org/wiki/Haitian_Revolution",
+        "https://en.wikipedia.org/wiki/%C3%89tienne_Polverel",
+        "https://en.wikipedia.org/wiki/Haitian_independence_debt"
+      ],
+      "fields": {
+        "term": {
+          "ko": "코드 누아르",
+          "en": "Code Noir"
+        },
+        "category": "repression",
+        "period": {
+          "ko": "1685–1848",
+          "en": "1685–1848"
+        },
+        "startYear": 1685,
+        "endYear": 1848,
+        "definition": {
+          "ko": "1685년 3월 루이 14세가 공포한, 프랑스령 아메리카 섬들의 노예제 조건을 규정한 칙령. 노예의 세례와 가톨릭 교육, 일요일 휴식, 혼인의 조건을 정하는 한편 노예를 압류할 수 없는 재산으로 취급하고 도주 노예에게 귀 절단, 힘줄 절단, 사형의 단계적 형벌을 정했으며, 유대인 추방과 자유 유색인의 활동 제한을 담았다. 1794년 폐지되었다가 1802년 되살아나 1848년 노예제 폐지까지 효력을 가졌다.",
+          "en": "The ordinance of March 1685 by which Louis XIV defined the conditions of slavery in the French islands of the Americas. It required the baptism and Catholic instruction of slaves, Sunday rest and conditions for marriage, while treating slaves as property immune from seizure and prescribing graduated punishments for runaways (ears cut off, hamstringing, death), expelling the Jews and restricting the activities of free people of colour. Abolished in 1794, it was reinstated in 1802 and remained in force until the abolition of slavery in 1848."
+        },
+        "body": {
+          "ko": "1681년 루이 14세는 카리브해 흑인 인구에 관한 법규를 만들기로 하고 콜베르에게 작성을 맡겼으며, 마르티니크 지사 파툴레와 그 후임 베공의 의견서를 바탕으로 해군장관 세뉼레 후작이 초안을 썼다. 1685년 3월 「아메리카 섬들의 노예에 관한 칙령」으로 공포된 이 법은 프랑스 땅을 밟은 사람은 누구나 자유라는 원칙 때문에 본국의 고등법원들이 등록을 거부해, 마르티니크(1685년 8월 6일), 과들루프(12월 10일), 생도맹그(1687년 5월 6일) 등 식민지에서만 시행되었다. 「코드 누아르」라는 이름은 1715~1723년 섭정기에 처음 쓰였다. 60개 조항은 노예를 압류 불가의 재산(제44조)이자 형사 책임의 주체(제32조)로 규정했고, 세례와 가톨릭 교육(제2조), 일요일과 축일의 노동·매매 금지(제6조), 주인의 허락과 노예 본인의 동의를 요하는 혼인(제10~11조), 어머니의 신분을 따르는 자녀(제12~13조), 부부와 어린 자녀를 따로 팔지 못하게 하는 조항(제47조)을 두었다. 무기 휴대와 집회를 금지했고, 주인을 때린 노예는 사형, 한 달 도주한 노예는 귀 절단과 낙인, 두 번째는 힘줄 절단, 세 번째는 사형이었다(제38조). 주인은 노예를 쇠사슬로 묶고 때릴 수 있었으나 고문과 신체 훼손은 금지되었고(제42조), 노예를 죽인 주인은 처벌받게 되어 있었다(제43조).\n\n실제로는 보호 조항이 지켜지지 않았다. 생도맹그의 농장주들은 코드를 공공연히 어겼고 18세기 지방 입법은 그 일부를 뒤집었으며, 1793년 5월 5일 민사위원 폴브렐이 코드의 시행을 요구하는 포고를 크레올어로 번역해 모든 농장에서 낭독하게 했을 정도였다. 국민공회는 1794년 노예제를 폐지했지만, 1802년 아미앵 조약으로 식민지를 돌려받은 뒤 5월 20일 법으로 마르티니크·세인트루시아·토바고와 마스카렌 제도에서, 7월 16일 통령 명령으로 과들루프에서, 12월 7일 기아나에서 노예제와 코드 누아르가 되살아났다. 코드는 나폴레옹 법전과 43년간 공존하다 1848년 제2공화국의 노예제 폐지로 효력을 잃었다. 1825년 프랑스가 아이티에 요구한 1억 5천만 프랑의 배상액은 노예 노동자가 농장 가치의 30~60%를 이룬다고 본 코드 누아르 제44조와 제48조를 근거로 산정되었다.",
+          "en": "In 1681 Louis XIV decided to create a statute for the Black population of the French Caribbean and entrusted its drafting to Colbert; the naval minister the Marquis de Seignelay wrote the text on the basis of memoranda from Patoulet, intendant of Martinique, and his successor Bégon. Promulgated in March 1685 as the \"Ordinance or edict of March 1685 on the slaves of the islands of America\", it was refused registration by the parlements of France, on the principle that anyone who set foot on French soil was free, and was instituted only in the colonies: Martinique on 6 August 1685, Guadeloupe on 10 December and Saint-Domingue on 6 May 1687. The title Code noir first appeared during the Regency of 1715–1723. Its 60 articles made the slave property immune from seizure (article 44) yet criminally liable (article 32), required baptism and Catholic instruction (article 2), forbade work and sales on Sundays and holy days (article 6), made marriage depend on the master's permission and the slave's consent (articles 10–11), made children follow the mother's status (articles 12–13) and forbade selling a couple and their young children separately (article 47). Slaves could not carry arms or gather; a slave who struck his master was executed, and a runaway absent for a month had his ears cut off and was branded, a second time was hamstrung, and a third time executed (article 38). Masters might chain and beat slaves but not torture or mutilate them (article 42), and a master who killed a slave was to be prosecuted (article 43).\n\nIn practice the protective clauses were not kept. The planters of Saint-Domingue openly and consistently broke the code, local legislation reversed parts of it during the eighteenth century, and on 5 May 1793 the civil commissioner Polverel had to issue a proclamation demanding its enforcement, translated into Creole and read aloud on every plantation. The Convention abolished slavery in 1794, but after the Treaty of Amiens returned the colonies, slavery and the provisions of the Code noir were put back in place by the law of 20 May 1802 in Martinique, Saint Lucia, Tobago and the Mascarenes, by consular decree of 16 July 1802 in Guadeloupe and of 7 December in Guiana. The code coexisted with the Napoleonic code for forty-three years until the abolition of slavery by the Second Republic in 1848. The indemnity of 150 million francs that France demanded of Haiti in 1825 was calculated on articles 44 and 48 of the Code noir, under which the enslaved labourers of an estate constituted 30 to 60 percent of its value."
+        },
+        "aliases": {
+          "ko": [
+            "흑인법전"
+          ],
+          "en": [
+            "Code noir",
+            "Black Code"
+          ]
+        },
+        "people": [],
+        "events": [
+          "haitian-revolution-1791-1804"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The ordinance of March 1685 by which Louis XIV defined the conditions of slavery in the French islands of the Americas. It required the baptism and Catholic instruction of slaves, Sunday rest and conditions for marriage, while treating slaves as property immune from seizure and prescribing graduated punishments for runaways (ears cut off, hamstringing, death), expelling the Jews and restricting the activities of free people of colour. Abolished in 1794, it was reinstated in 1802 and remained in force until the abolition of slavery in 1848.",
+            "source": "https://en.wikipedia.org/wiki/Code_Noir",
+            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
+          },
+          {
+            "field": "body",
+            "claim": "In 1681 Louis XIV decided to create a statute for the Black population of the French Caribbean and entrusted its drafting to Colbert; the naval minister the Marquis de Seignelay wrote the text on the basis of memoranda from Patoulet, intendant of Martinique, and his successor Bégon. Promulgated in M",
+            "source": "https://en.wikipedia.org/wiki/Code_Noir",
+            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
+          },
+          {
+            "field": "period",
+            "claim": "1685–1848",
+            "source": "https://en.wikipedia.org/wiki/Code_Noir",
+            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
+          },
+          {
+            "field": "startYear",
+            "claim": "1685",
+            "source": "https://en.wikipedia.org/wiki/Code_Noir",
+            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
+          },
+          {
+            "field": "endYear",
+            "claim": "1848",
+            "source": "https://en.wikipedia.org/wiki/Code_Noir",
+            "locator": "lead; Inception; Subsequent evolution; Summary — Haitian Revolution: Demographics — Polverel: Involvement in the abolition — Independence debt: Independent Haiti and the rejection of the international community"
+          }
+        ],
+        "original": "Code noir",
+        "region": "americas"
+      }
+    },
+    {
+      "id": "law-of-16-pluviose-year-ii",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
+        "https://en.wikipedia.org/wiki/Haitian_Revolution",
+        "https://en.wikipedia.org/wiki/Law_of_20_May_1802",
+        "https://en.wikipedia.org/wiki/Jean-Baptiste_Belley"
+      ],
+      "fields": {
+        "term": {
+          "ko": "플뤼비오즈 16일 법령",
+          "en": "Law of 16 Pluviôse Year II"
+        },
+        "category": "state",
+        "period": {
+          "ko": "1794–1802",
+          "en": "1794–1802"
+        },
+        "startYear": 1794,
+        "endYear": 1802,
+        "definition": {
+          "ko": "1794년 2월 4일(혁명력 2년 플뤼비오즈 16일) 국민공회가 모든 프랑스 식민지의 노예제 폐지를 선언하고 식민지에 거주하는 모든 사람을 피부색의 구별 없이 프랑스 시민으로 인정한 법령. 생도맹그에서 송토나(1793년 8월 29일)와 폴브렐(10월 31일)이 먼저 선포한 해방을 뒤늦게 추인한 것으로, 역사상 첫 노예제 폐지로 꼽히기도 하며 1802년 5월 20일 나폴레옹의 법으로 뒤집혔다.",
+          "en": "The decree of 4 February 1794 (16 Pluviôse Year II) by which the National Convention declared slavery abolished in all the French colonies and recognised all men living in them, without distinction of colour, as French citizens. It ratified after the fact the emancipation already proclaimed in Saint-Domingue by Sonthonax (29 August 1793) and Polverel (31 October), is sometimes counted as the first abolition of slavery in history, and was reversed by Napoleon's Law of 20 May 1802."
+        },
+        "body": {
+          "ko": "1788년 브리소와 클라비에르가 세운 흑인우호협회가 폐지를 주장했지만, 혁명 초기의 폐지안은 귀족의 반대로 철회되었고 1790년 국민의회는 노예제 유지를 확인했다. 1791년 생도맹그의 노예 봉기와 영국·스페인의 침공 앞에서 민사위원 송토나와 폴브렐은 1793년 6월 자신들 편에서 싸울 노예에게 자유를 주었고, 8월 29일 송토나가 북부에서, 10월 31일 폴브렐이 서부와 남부에서 노예제를 폐지했다. 두 사람 모두 폐지론자였으나 파리로부터 그런 권한을 받은 적이 없었고, 스페인 편에 서 있던 투생 루베르튀르는 그 진정성을 의심했다. 송토나가 파리로 보낸 생도맹그 대표 뒤페, 벨레, 밀스는 반대파에게 잠시 체포되었다가 국민공회에서 환영받았고, 실용과 도덕 양면에서 해방을 변호했다. 들라크루아가 「긴 토론으로 공회의 명예를 더럽히지 말자」고 외치자 법령은 박수로 통과되었다. 「국민공회는 모든 식민지에서 노예제가 폐지되었음을 선언한다. 따라서 식민지에 거주하는 모든 사람은 피부색의 구별 없이 프랑스 시민이며 헌법이 보장하는 모든 권리를 누린다.」 공안위원회가 집행 조치를 즉시 보고하도록 위임되었고, 당통은 「오늘 우리는 보편적 자유를 선포한다」고 말했다.\n\n공안위원회는 서인도에 1,200명의 병력을 보내 영국과 프랑스 왕당파에게서 과들루프를 되찾고 다른 섬들을 공격하는 기지로 삼았다. 법령은 이 지역의 흑인을 공화국 편으로 끌어들였고 투생이 스페인에서 프랑스로 돌아선 결정에 영향을 주었을 수 있으나, 그가 그 소식을 제때 알았는지는 분명하지 않다. 1793년 9월 왕당파가 봉기한 마르티니크는 1794년 영국에 점령되어 법령의 적용을 받지 않았고, 인도양의 일드프랑스와 레위니옹은 식민자들의 반대로 시행을 거부했다. 시행된 곳에서도 물질적 조건은 크게 달라지지 않았다. 과들루프의 해방 노예들은 부랑 금지법으로 사실상 농장에 묶였고 법정 임금을 받지 못했으며, 생도맹그의 공화국 관리들은 플랜테이션 경제를 유지하려 해 자율을 원하는 해방 노예들과 충돌했다. 법령과 인권선언의 사본은 베네수엘라, 브라질, 자메이카, 쿠바의 노예 반란을 자극했다. 브뤼메르 18일 뒤 나폴레옹은 친노예제 로비에 설득되어 트뤼게에게 「나는 백인이기 때문에 백인 편이다. 다른 이유는 없으며 이것이 옳은 이유다」라고 썼고, 1802년 5월 20일 법으로 아미앵 조약으로 돌려받은 식민지의 노예제와 노예무역을 되살렸다. 이 법은 노예제가 이미 폐지된 생도맹그에는 적용되지 않았으나, 과들루프의 복원 소식이 생도맹그의 재봉기를 불러 르클레르 원정의 실패로 이어졌다.",
+          "en": "The Society of the Friends of the Blacks, founded by Brissot and Clavière in 1788, argued for abolition, but a measure proposed at the start of the Revolution was dropped under noble opposition and in 1790 the National Assembly affirmed its support for the continuation of slavery. Facing the slave rising of 1791 in Saint-Domingue and the British and Spanish invasions, the civil commissioners Sonthonax and Polverel decreed in June 1793 that slaves willing to fight under them would be freed; on 29 August Sonthonax abolished slavery in the north and on 31 October Polverel in the west and south. Both were abolitionists but had received no such orders from Paris, and Toussaint Louverture, then allied with the Spanish, doubted their sincerity. The Saint-Domingue deputies Dufay, Belley and Mills, sent by Sonthonax, were briefly arrested by his opponents but well received by the Convention, where they justified emancipation on practical and moral grounds. When Delacroix exclaimed that the Convention should not \"dishonor itself by a long discussion\", the law passed by acclamation: \"The National Convention declares slavery abolished throughout all the colonies: consequently, it decrees that all men, without distinction of color, domiciliated in the colonies, are French citizens, and entitled to the enjoyment of all the rights secured by the Constitution.\" It was referred to the Committee of Public Safety for immediate measures of execution, and Danton declared, \"today we proclaim it to the universe\".\n\nThe Committee of Public Safety sent 1,200 troops to the West Indies, recaptured Guadeloupe from the British and their French royalist allies and used it as a base against the other islands. The law won the Black population of the region to the Republican side and may have influenced Toussaint's decision to switch from the Spanish to the French, though it is unclear whether he learned of it early enough. Martinique, where a royalist insurrection had begun in September 1793, was occupied by the British in 1794 and remained unaffected, and the colonial authorities of Isle de France and Réunion refused to implement the decree under pressure from local colonists. Where it was implemented, material conditions often did not change: in Guadeloupe the emancipated were restricted to the plantations by laws against vagrancy and were not paid the wages they were owed, and in Saint-Domingue Republican officials tried to maintain the plantation economy against the newly freed who wanted autonomy. Copies of the law and of the Declaration of the Rights of Man helped to spark slave revolts in Venezuela, Brazil, Jamaica and Cuba. After 18 Brumaire Napoleon was convinced by pro-slavery lobbyists; \"I am for the whites, because I am white; I have no other reason, and this is the right one\", he wrote to Truguet, and by the Law of 20 May 1802 he reinstated slavery and the slave trade in the colonies returned by the Treaty of Amiens. That law did not apply to Saint-Domingue, where slavery had already been abolished, but news of the restoration in Guadeloupe set off the new rising there and the failure of the Leclerc expedition."
+        },
+        "aliases": {
+          "ko": [
+            "1794년 2월 4일 노예제 폐지 법령",
+            "1794년 노예제 폐지령"
+          ],
+          "en": [
+            "Law of 4 February 1794",
+            "Decree of 16 Pluviôse",
+            "Decree of 16 Pluviôse Year II"
+          ]
+        },
+        "people": [
+          "leger-felicite-sonthonax",
+          "georges-danton",
+          "jacques-pierre-brissot",
+          "napoleon-bonaparte",
+          "toussaint-louverture"
+        ],
+        "events": [
+          "haitian-revolution-1791-1804",
+          "french-revolution-1789-1799"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The decree of 4 February 1794 (16 Pluviôse Year II) by which the National Convention declared slavery abolished in all the French colonies and recognised all men living in them, without distinction of colour, as French citizens. It ratified after the fact the emancipation already proclaimed in Saint-Domingue by Sonthonax (29 August 1793) and Polverel (31 October), is sometimes counted as the first abolition of slavery in history, and was reversed by Napoleon's Law of 20 May 1802.",
+            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
+            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+          },
+          {
+            "field": "body",
+            "claim": "The Society of the Friends of the Blacks, founded by Brissot and Clavière in 1788, argued for abolition, but a measure proposed at the start of the Revolution was dropped under noble opposition and in 1790 the National Assembly affirmed its support for the continuation of slavery. Facing the slave r",
+            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
+            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+          },
+          {
+            "field": "period",
+            "claim": "1794–1802",
+            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
+            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+          },
+          {
+            "field": "startYear",
+            "claim": "1794",
+            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
+            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+          },
+          {
+            "field": "endYear",
+            "claim": "1802",
+            "source": "https://en.wikipedia.org/wiki/Law_of_4_February_1794",
+            "locator": "Background; Enactment; Effect; Revocation; Legacy — Haitian Revolution: French declare slavery abolished — Law of 20 May 1802: lead"
+          }
+        ],
+        "original": "Décret du 16 pluviôse an II",
+        "region": "europe"
+      }
+    },
+    {
+      "id": "saint-domingue-constitution-1801",
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
+        "https://en.wikipedia.org/wiki/Toussaint_Louverture",
+        "https://en.wikipedia.org/wiki/Saint-Domingue_expedition"
+      ],
+      "fields": {
+        "term": {
+          "ko": "1801년 생도맹그 헌법",
+          "en": "Constitution of Saint-Domingue of 1801"
+        },
+        "category": "state",
+        "period": {
+          "ko": "1801–1802",
+          "en": "1801–1802"
+        },
+        "startYear": 1801,
+        "endYear": 1802,
+        "definition": {
+          "ko": "1801년 7월 투생 루베르튀르가 카프프랑세에서 공포한 생도맹그의 헌법. 생도맹그를 「프랑스 제국의 일부이되 특별한 법의 적용을 받는 식민지」로 규정하고 노예제의 영구 폐지와 피부색에 따른 차별의 금지를 선언하는 한편, 투생을 후계자 지명권을 가진 종신 총독으로 삼고 가톨릭을 유일한 공인 종교로 정했으며 경작자를 농장에 묶는 강제노동을 유지했다. 나폴레옹은 이를 프랑스의 권위에 대한 도전으로 받아들여 르클레르 원정을 보냈다.",
+          "en": "The constitution promulgated at Cap-Français by Toussaint Louverture in July 1801. It defined Saint-Domingue as a colony \"which forms part of the French Empire, but is subject to particular laws\", declared slavery abolished for ever and banned distinctions of colour, while making Toussaint governor-general for life with the right to name his successor, establishing Catholicism as the only public religion and keeping forced labour that bound cultivators to the plantations. Napoleon took it as a challenge to French authority and sent the Leclerc expedition."
+        },
+        "body": {
+          "ko": "생도맹그의 첫 헌법은 1790년 5월 28일 자유 유색인을 배제한 식민지 의회가 만든 것이었다. 1793~1794년의 노예제 폐지와 영국·스페인군 축출 뒤 프랑스 공화국의 총독이 된 투생은 1798년 영국과 휴전하고 1799년 영미 상인과 통상 협정을 맺었으며, 1799년 11월 집권한 나폴레옹은 1801년 5월 4일 브레스트에 원정의 핵심이 될 3,600명을 모으라고 명령했다. 투생은 1801년 3월 주로 백인 농장주로 이루어진 중앙의회를 소집해 헌법을 기초하게 했다. 의장 보르젤라 등 서명한 초안은 혁명력 9년 플로레알 19일 포르레퓌블리캥(포르토프랭스)에서 작성되었고, 투생은 카프프랑세에서 「중앙의회의 요청은 나에게 명령이다. 따라서 이를 프랑스 정부에 보내 재가를 구하겠다」는 승인문과 함께 공포했다. 공포일은 프랑스어 자료가 메시도르 14일(7월 3일), 영어 전기가 7월 7일, 원정 문서가 7월 12일로 엇갈린다. 13개 편 77개 조항 가운데 제1조는 생도맹그와 부속 도서가 「프랑스 제국의 일부이되 특별한 법의 적용을 받는 하나의 식민지」를 이룬다고 했고, 제3조는 「이 영토에 노예는 존재할 수 없다. 예속은 영원히 폐지된다. 모든 사람은 자유롭고 프랑스인으로 태어나고 살고 죽는다」, 제4조는 피부색과 무관하게 모든 직무에 나아갈 수 있다고 선언했다. 1799년 12월 13일 프랑스 헌법의 조항을 여럿 옮겨 왔다.\n\n그러나 제6조는 가톨릭을 유일한 공인 종교로 삼았고, 제10조는 이혼을 금지했으며, 제17조는 노동력을 보충하기 위한 노예무역을 금지하지 않았다. 제8편은 권력을 총독의 통제 아래 두어 제39조로 검열을 세웠고, 제67~68조는 결사와 교육의 자유를 막았다. 제6편은 농장 소유자를 경작자의 「아버지」로 규정하는 가부장적 농장 체제를 유지했고, 제13편 제75~77조는 경작자를 사실상 땅에 묶어 강제노동을 허용해 농노제에 가깝다는 평가를 받는다. 역사가 제러미 팝킨은 「투생이 세워 가던 사회는 토지 소유를 독점해 가는 군사 카스트의 억압적 통제를 받는 농민층을 가진 고도로 위계적인 사회」였다고 썼다. 투생은 헌법 초안에 반대한 뱅상 대령에게 이를 나폴레옹에게 전달하게 했는데, 뱅상은 그 때문에 엘바섬으로 잠시 유배되었다. 프랑스 관리의 자리를 두지 않은 점, 통상 특권이 없는 점, 프랑스 정부에 제출하기 전에 공포한 점이 파리에서 문제가 되었고, 나폴레옹은 이를 구실로 노예 소유자들의 영향 아래 3만 명의 생도맹그 원정을 조직했다. 1801년 10월 북부에서 강제노동에 반대하는 경작자 봉기가 일어나자 투생은 이를 지지한 조카 모이즈를 11월 21일 카프에서 총살했고, 이 기억은 1802년 원정군이 왔을 때 북부 흑인 장군들이 경작 지대와 연락을 유지하기 어렵게 만든 한 원인이 되었다.",
+          "en": "Saint-Domingue's first constitution had been promulgated on 28 May 1790 by a colonial assembly that excluded the free people of colour. After the abolition of slavery in 1793–1794 and the expulsion of the British and Spanish, Toussaint, now governor for the French Republic, obtained an armistice with the British in 1798 and a trade agreement with British and American merchants in 1799, while Napoleon, in power from November 1799, ordered on 4 May 1801 that 3,600 soldiers be gathered at Brest as the core of a future expedition. In March 1801 Toussaint convened a central assembly composed chiefly of white planters to draft a constitution. The text signed by its president Borgella and others was dated at Port-Républicain (Port-au-Prince) on 19 Floréal Year IX, and Toussaint promulgated it at Cap-Français with the approval, \"The invitation of the Central Assembly is an order for me; consequently I shall transmit it to the French government to obtain its sanction.\" Sources date the promulgation to 14 Messidor (3 July, the French article), 7 July (the English biography) or 12 July (the expedition article). Of its 77 articles in 13 titles, Article 1 declared that Saint-Domingue and the adjacent islands formed \"a single colony, which forms part of the French Empire, but is subject to particular laws\"; Article 3 that \"there cannot exist slaves in this territory; servitude is forever abolished; all men are born, live and die free and French\"; and Article 4 that every man, whatever his colour, was eligible for all posts. Several articles were copied from the French constitution of 13 December 1799.\n\nYet Article 6 made the Catholic faith the only publicly professed religion, Article 10 forbade divorce, and Article 17 did not prohibit recourse to the slave trade to obtain new labour. Title VIII placed power under the governor's control, with censorship under Article 39, and Articles 67 and 68 barred freedom of association and of teaching. Title VI kept the paternalist plantation system, making the owner of the soil \"necessarily the father\" of its cultivators, and Articles 75 to 77 of Title XIII all but attached the cultivators to the land and allowed forced labour, to the point that historians have spoken of serfdom. The historian Jeremy Popkin wrote that \"the society Toussaint was building was a strongly hierarchical society, with a peasantry subjected to repressive control, exercised by a military caste that was monopolising landed property\". Toussaint charged Colonel Vincent, who opposed the draft, with carrying it to Napoleon, and Vincent was briefly exiled to Elba for his pains. The absence of any provision for French officials, the lack of trade advantages and the breach of protocol in publishing the text before submitting it to Paris told against it, and Napoleon took it as the pretext for organising, under the influence of the slave owners, the Saint-Domingue expedition of 30,000 men. When a rising of cultivators against forced labour broke out in the north in October 1801, Toussaint had his nephew Moïse, who had supported it, shot at Le Cap on 21 November, and the memory of that revolt was one reason the Black generals of the north found it hard to keep in touch with the cultivated lowlands when the expedition arrived in 1802."
+        },
+        "aliases": {
+          "ko": [
+            "루베르튀르 헌법"
+          ],
+          "en": [
+            "1801 Constitution of Haiti",
+            "Louverture's constitution"
+          ]
+        },
+        "people": [
+          "toussaint-louverture",
+          "napoleon-bonaparte"
+        ],
+        "events": [
+          "haitian-revolution-1791-1804"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The constitution promulgated at Cap-Français by Toussaint Louverture in July 1801. It defined Saint-Domingue as a colony \"which forms part of the French Empire, but is subject to particular laws\", declared slavery abolished for ever and banned distinctions of colour, while making Toussaint governor-general for life with the right to name his successor, establishing Catholicism as the only public religion and keeping forced labour that bound cultivators to the plantations. Napoleon took it as a challenge to French authority and sent the Leclerc expedition.",
+            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
+            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
+          },
+          {
+            "field": "body",
+            "claim": "Saint-Domingue's first constitution had been promulgated on 28 May 1790 by a colonial assembly that excluded the free people of colour. After the abolition of slavery in 1793–1794 and the expulsion of the British and Spanish, Toussaint, now governor for the French Republic, obtained an armistice wit",
+            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
+            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
+          },
+          {
+            "field": "period",
+            "claim": "1801–1802",
+            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
+            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
+          },
+          {
+            "field": "startYear",
+            "claim": "1801",
+            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
+            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
+          },
+          {
+            "field": "endYear",
+            "claim": "1802",
+            "source": "https://fr.wikipedia.org/wiki/Constitution_de_Saint-Domingue_de_1801",
+            "locator": "fr: Contexte historique; Proclamation; Conséquences; Aspects généraux; Aspects autoritaires — en Toussaint: Constitution of 1801 — expedition: Context"
+          }
+        ],
+        "original": "Constitution de Saint-Domingue de 1801",
+        "region": "americas"
+      }
+    },
+    {
+      "id": "saint-domingue-expedition",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+        "https://en.wikipedia.org/wiki/Haitian_Revolution",
+        "https://en.wikipedia.org/wiki/Charles_Leclerc_(general,_born_1772)",
+        "https://en.wikipedia.org/wiki/Battle_of_Verti%C3%A8res"
+      ],
+      "fields": {
+        "term": {
+          "ko": "생도맹그 원정",
+          "en": "Saint-Domingue expedition"
+        },
+        "category": "military",
+        "period": {
+          "ko": "1801–1803",
+          "en": "1801–1803"
+        },
+        "startYear": 1801,
+        "endYear": 1803,
+        "definition": {
+          "ko": "1801년 12월부터 1803년 12월까지 제1통령 나폴레옹이 매제 샤를 르클레르에게 맡겨 생도맹그에 보낸 대규모 침공. 투생 루베르튀르의 자치 정부를 무너뜨리고 프랑스의 지배와 노예제를 되살리려 했으나, 황열병과 1802년 가을 재개된 봉기, 1803년 영국의 봉쇄 속에 베르티에르에서 패해 철수했다. 보낸 약 3만 1천 명 가운데 7,000~8,000명만 살아남았고, 아이티의 독립으로 끝났다.",
+          "en": "The large invasion of Saint-Domingue that First Consul Napoleon entrusted to his brother-in-law Charles Leclerc, from December 1801 to December 1803, to overthrow Toussaint Louverture's autonomous government and restore French rule and slavery. Yellow fever, the renewed rising of autumn 1802 and the British blockade of 1803 led to defeat at Vertières and withdrawal; of some 31,000 troops sent only 7,000–8,000 survived, and the expedition ended with Haitian independence."
+        },
+        "body": {
+          "ko": "1801년 2월 뤼네빌 조약으로 대륙에서 손이 자유로워진 나폴레옹은 처음에 투생 장교들의 계급과 토지를 인정하고 해방을 보장하면서 파리의 권위만 세우려 했으나, 1801년 7월 헌법을 보고 10월에는 투생 정부를 무장 해제하고 흑인 장교들을 추방하라고 비밀리에 지시했다. 투생이 1만 6천 명을 거느렸으므로 르클레르에게는 3만 명이 주어졌다. 아미앵 조약이 맺어지기 전인 1801년 12월 14일 빌라레 드 주아외즈의 함대가 전열함 35척과 프리깃 21척에 7,000~8,000명을 싣고 브레스트를 떠났고, 2월 툴롱의 강톰(4,200명)과 카디스의 리누아(2,400명) 전대, 뒤이어 해군 보병 4,000여 명과 네덜란드 사단, 폴란드 제3반여단과 스페인의 그라비나 함대가 따랐다. 모두 31,131명이 상륙했고 리고와 페티옹 같은 자유 유색인 장교들도 함께였다(르클레르 전기는 4만 명, 투생 전기는 2만 명이라고 적는다). 1802년 2월 3일 카프프랑세 앞에 닿은 함대는 5일 공격을 시작했고 크리스토프는 명령대로 도시를 불태웠다. 열흘 안에 프랑스군은 항구와 도시, 경작지 대부분을 차지했으며, 2월 17일의 총공세로 투생을 고나이브 쪽으로 몰아넣었다. 데살린은 크레타피에로 요새에서 3월 4~24일 포위를 버티다 빠져나갔고, 크리스토프(4월 25일)와 데살린의 투항에 이어 5월 6일 투생이 르클레르의 권위를 인정하고 에네리의 농장에 물러났다. 르클레르는 6월 회담을 구실로 투생을 체포해 프랑스의 주 요새로 보냈다.\n\n3월의 우기와 함께 황열병이 번져 두 달 만에 약 1만 5천 명이 죽었다. 아미앵 조약으로 돌려받은 마르티니크의 노예제를 확정한 1802년 5월 20일 법과 과들루프의 노예제 복원 소식이 전해지자 생도맹그에는 다시 반란의 기운이 돌았고, 르클레르가 흑인을 무장 해제하려 하자 분노만 키웠다. 8월부터 흑인·물라토 부대의 집단 이탈이 시작되었고 10월에는 페티옹, 크리스토프, 데살린이 모두 프랑스군을 떠났다. 싸울 수 있는 병력이 8,000~1만 명으로 준 르클레르는 포르드페에서 크리스토프가 폴란드 병사 수백 명을 죽이자 카프의 흑인 식민지 부대 1,000명을 밀가루 부대를 목에 매달아 배에서 밀어 넣어 죽였고, 충성을 지키던 모르파 장군도 11월 초 가족과 함께 익사시켰다. 르클레르는 1802년 11월 1일 토르튀섬에서 황열병으로 죽었고(영어 전기는 11월 2일), 아내 폴린 보나파르트는 머리카락을 잘라 관에 넣고 그의 심장을 단지에 담아 유해를 프랑스로 가져갔다. 뒤를 이은 로샹보는 쿠바에서 노예 사냥개를 들여왔으나 군사적으로는 실망스러웠고, 그 잔학은 아이티에서 식민 지배의 악랄함의 상징으로 남았다. 1803년 5월 영국과의 전쟁이 재개되어 봉쇄가 시작되었고, 11월 18일 베르티에르에서 패한 프랑스군은 12월 말 섬을 떠났으며 로샹보는 귀환길에 영국 해군에 붙잡혀 9년 가까이 억류되었다. 3만 1천 명 가운데 살아남은 병사는 7,000~8,000명뿐이었고 장군 20명 이상이 죽어, 프랑스는 뒷날의 워털루보다 더 많은 병력을 생도맹그에서 잃었다. 1804년 1월 1일 데살린은 아이티의 독립을 선포했다.",
+          "en": "With his hands freed on the continent by the Treaty of Lunéville of February 1801, Napoleon at first planned to confirm the ranks and lands of Toussaint's officers and guarantee freedom to the former slaves while re-establishing Paris's authority, but after the constitution of July 1801 he secretly directed Leclerc in October to disarm Toussaint's government and deport the Black officers to France. Since Toussaint had over 16,000 men, Leclerc was given 30,000. Before the Peace of Amiens was signed, on 14 December 1801 Villaret de Joyeuse's fleet of 35 ships of the line and 21 frigates left Brest with 7,000–8,000 troops, followed in February by Ganteaume's squadron from Toulon (4,200 men) and Linois's from Cádiz (2,400), then by over 4,000 naval troops, a Dutch division, the 3rd Polish Half-Brigade and a Spanish fleet under Gravina. In all 31,131 troops were landed, among them the free coloured officers Rigaud and Pétion (Leclerc's biography gives 40,000 and Toussaint's 20,000). The fleet reached Cap-Français on 3 February 1802 and attacked on the 5th, and Christophe burned the town as ordered. Within ten days the French held the ports, the towns and most of the cultivated land, and the general offensive of 17 February drove Toussaint back towards Gonaïves. Dessalines held the fort of Crête-à-Pierrot under siege from 4 to 24 March before breaking out; the surrenders of Christophe (25 April) and Dessalines were followed on 6 May by Toussaint's acknowledgement of Leclerc's authority and his retirement to his plantation at Ennery. In June Leclerc called Toussaint to an interview, arrested him and shipped him to the Fort de Joux in France.\n\nWith the rains of March came yellow fever, which killed around 15,000 men in only two months. The Law of 20 May 1802, confirming slavery in Martinique, returned by the Treaty of Amiens, and news of the re-establishment of slavery in Guadeloupe revived the threat of revolt in Saint-Domingue, and Leclerc's attempt to disarm the Blacks only angered them further. From August the Black and mulatto troops deserted en masse, and in October Pétion, Christophe and Dessalines all left the French forces. With only 8,000 to 10,000 men fit to serve, Leclerc, after Christophe massacred several hundred Polish soldiers at Port-de-Paix, had 1,000 Black colonial troops at Le Cap executed by tying sacks of flour to their necks and pushing them from the ships, and in early November the still-loyal General Maurepas was drowned with his family in the harbour. Leclerc died of yellow fever on Tortuga on 1 November 1802 (2 November in his English biography); his wife Pauline Bonaparte cut off her hair and put it in his coffin, placed his heart in an urn and took his remains back to France. His successor Rochambeau received a shipment of slave-hunting dogs from Cuba, a military disappointment whose use still resounds in Haiti as a symbol of colonial viciousness. War with Britain resumed in May 1803 and a blockade began; defeated at Vertières on 18 November, the last French soldiers left the island at the end of December, and Rochambeau was captured on the voyage home by the Royal Navy and interned for nearly nine years. Little more than 7,000 to 8,000 of the 31,000 soldiers sent survived and over twenty generals died, so that France lost more troops in Saint-Domingue than it would later lose at Waterloo. On 1 January 1804 Dessalines proclaimed the independence of Haiti."
+        },
+        "aliases": {
+          "ko": [
+            "르클레르 원정"
+          ],
+          "en": [
+            "Leclerc expedition",
+            "Leclerc's expedition"
+          ]
+        },
+        "people": [
+          "charles-leclerc",
+          "napoleon-bonaparte",
+          "toussaint-louverture",
+          "jean-jacques-dessalines",
+          "henri-christophe",
+          "alexandre-petion",
+          "andre-rigaud",
+          "antoine-richepanse",
+          "jean-joseph-amable-humbert"
+        ],
+        "events": [
+          "haitian-revolution-1791-1804",
+          "french-revolutionary-wars-1792-1802"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The large invasion of Saint-Domingue that First Consul Napoleon entrusted to his brother-in-law Charles Leclerc, from December 1801 to December 1803, to overthrow Toussaint Louverture's autonomous government and restore French rule and slavery. Yellow fever, the renewed rising of autumn 1802 and the British blockade of 1803 led to defeat at Vertières and withdrawal; of some 31,000 troops sent only 7,000–8,000 survived, and the expedition ended with Haitian independence.",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+          },
+          {
+            "field": "body",
+            "claim": "With his hands freed on the continent by the Treaty of Lunéville of February 1801, Napoleon at first planned to confirm the ranks and lands of Toussaint's officers and guarantee freedom to the former slaves while re-establishing Paris's authority, but after the constitution of July 1801 he secretly ",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+          },
+          {
+            "field": "period",
+            "claim": "1801–1803",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+          },
+          {
+            "field": "startYear",
+            "claim": "1801",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+          },
+          {
+            "field": "endYear",
+            "claim": "1803",
+            "source": "https://en.wikipedia.org/wiki/Saint-Domingue_expedition",
+            "locator": "Context; Expedition; Recoccupation; French defeat; Aftermath — Haitian Revolution: Napoleon invades Haiti; Crête-à-Pierrot fortress; Rebellion against reimposition of slavery — Leclerc: Saint-Domingue; Death and legacy"
+          }
+        ],
+        "original": "Expédition de Saint-Domingue",
+        "region": "americas"
+      }
+    },
+    {
+      "id": "bois-caiman-ceremony",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
+        "https://en.wikipedia.org/wiki/Dutty_Boukman",
+        "https://en.wikipedia.org/wiki/Toussaint_Louverture"
+      ],
+      "fields": {
+        "term": {
+          "ko": "부아 카이망 집회",
+          "en": "Bois Caïman ceremony"
+        },
+        "category": "events",
+        "period": {
+          "ko": "1791",
+          "en": "1791"
+        },
+        "startYear": 1791,
+        "endYear": 1791,
+        "definition": {
+          "ko": "1791년 8월 14일 밤 카프프랑세 근교 숲에서 노예 약 200명이 모여 북부 평원의 봉기를 계획했다고 전해지는 보두 의식이자 모의. 사제 뒤티 부크만과 여사제 세실 파티망이 주재하고 검은 돼지를 제물로 바쳐 맹세했다고 하며, 일주일 뒤 8월 21~22일의 노예 봉기, 곧 아이티 혁명의 시작으로 이어졌다. 당대의 직접 기록은 없고 1814년에야 문헌에 나타나 실재 여부가 논쟁거리다.",
+          "en": "The Vodou ceremony and conspiracy at which, on the night of 14 August 1791 in woods near Cap-Français, some 200 enslaved people are said to have planned the rising of the northern plain. Presided over by the priest Dutty Boukman and the priestess Cécile Fatiman, with a black pig sacrificed and an oath sworn, it led a week later to the slave rising of 21–22 August, the beginning of the Haitian Revolution. No first-hand account exists, the earliest record dates from 1814, and whether it happened is debated."
+        },
+        "body": {
+          "ko": "백인 농장주들은 보두 의식을 해롭지 않은 사교 모임으로 여겨 허용했고, 노예들은 그 자리를 조직의 기회로 삼았다. 전해지는 바로는 1791년 8월 14일 밤 카프프랑세 근교 슈아죌 농장의 「악어 숲」(부아 카이망)에 인근 농장의 대표 약 200명이 모였고, 사제 부크만과 여사제 파티망이 봉기를 준비하기 위해 몇 주 전부터 이어 온 모임의 마지막 회합을 주재했다. 장프랑수아, 비아수, 장노가 참석했다고 하며, 투생 루베르튀르 전기는 같은 날 모른루주의 농장에서 노예 감독·크레올·해방 노예 200명이 모여 비아수를 지도자로 뽑았고 투생이 그를 추천했다고 적는다. 첫 기록은 1814년 백인 식민자 앙투안 달마스의 『생도맹그 혁명사』로, 「검은 돼지 한 마리가 마법의 힘을 믿는 노예들에게 둘러싸여 전능한 정령에게 제물로 바쳐졌고, 흑인들은 그 피를 이마에 발랐다고 믿었으며, 그 털을 가지면 무적이 된다고 믿었다」고 썼다. 1824년 에라르 뒤멜이 현지에서 구술을 모아 기록한 부크만의 기도는 「백인들의 신은 그들을 범죄로 몰지만 우리의 신은 선행을 원한다. 그러나 그토록 선한 신이 우리에게 복수를 명한다. 우리의 눈물에 목마른 백인들의 신의 형상을 내던지고 우리 모두의 가슴속에서 말하는 자유에 귀 기울이라」고 되어 있으나, 뒤멜은 부크만의 이름을 적지 않았고 그 글은 그리스·로마 고전을 끌어온 각색으로 보인다. 의식이 있은 지 일주일 뒤인 8월 21~22일 밤 북부 평원 전체가 불길에 휩싸였다.\n\n레옹프랑수아 오프만 같은 비평가는 이 서사가 봉기 세력을 묶는 동기 부여의 구실을 했을 뿐 실제로 일어났다는 근거는 없다고 본다. 반면 예테보리 대학의 마르켈 튈레포르스는 「부아 카이망 의식은 아이티의 발생 자체와 이어지는 아이티 민족 정체성의 중요한 부분」이라고 평가하며, 이 의식은 민족주의자들에게 영감의 원천이자 억압에 맞선 저항의 상징으로 쓰여 왔다. 1970년대 뿌리 음악은 뒤발리에 독재에 맞선 저항을 조상들의 부아 카이망에 빗댔다. 1990년대 미국 개신교 선교의 영향 아래 일부 복음주의자는 이 의식을 「사탄과의 피의 계약」으로 다시 해석했고, 2010년 아이티 지진 뒤 팻 로버트슨이 아이티인이 「악마와 계약」했기 때문에 저주받았다고 말해 비난을 샀다. 부크만은 1791년 11월 7일 프랑스군에게 죽었고, 아이티인들은 그를 로아(수호 정령)의 신전에 모셨다.",
+          "en": "White planters allowed Vodou rituals as harmless social gatherings, and the enslaved used them as opportunities to organise. According to tradition, on the night of 14 August 1791 some 200 representatives of the nearby plantations met in the \"Alligator Wood\" (Bois Caïman) on the Choiseul plantation near Cap-Français, where the priest Boukman and the priestess Fatiman presided over the last of a series of meetings held for weeks to organise a revolt. Jean-François, Biassou and Jeannot are said to have attended, and Toussaint Louverture's biography records that the same day 200 slave foremen, Creoles and freed slaves met at a plantation at Morne-Rouge, where Biassou was chosen as leader on Toussaint's nomination. The first written account is the white colonist Antoine Dalmas's History of the Saint-Domingue Revolution of 1814: \"A black pig, surrounded by the slaves believe to have magical powers, each carrying the most bizarre offering, was offered as a sacrifice to the all-powerful spirit\", whose blood the participants \"believed to have marked themselves on the forehead with\" and whose bristles they thought would make them invincible. Boukman's prayer, recorded by Hérard Dumesle from oral testimony in 1824, runs: \"The God of the whites pushes them to crime, but he wants us to do good deeds. But the God who is so good orders us to vengeance... Throw away the image of the God of the whites who thirsts for our tears. Listen to the liberty that speaks in all our hearts\", but Dumesle did not name Boukman, and the text appears to be a dramatisation with references to Greek and Roman writings. A week after the ceremony, on the night of 21–22 August, the whole northern plain was in flames.\n\nCritics such as Léon-François Hoffmann hold that the story served to motivate and unite the rebels but that there is no factual basis for the event. By contrast the University of Gothenburg researcher Markel Thylefors writes that \"the event of the Bois Caïman ceremony forms an important part of Haitian national identity as it relates to the very genesis of Haiti\", and the ceremony has often been used as a source of inspiration to nationalists and as a symbol of resistance to oppression. In the 1970s roots music likened resistance to the Duvalier dictatorship to the ancestors' Bois Caïman. Under the influence of American Protestant missions in the 1990s, some evangelicals reinterpreted the ceremony as a \"blood pact with Satan\", and after the earthquake of 2010 Pat Robertson was denounced for saying that Haitians had been cursed after swearing \"a pact to the devil\". Boukman was killed by French troops on 7 November 1791, and Haitians admitted him to the pantheon of the loa, the guiding spirits."
+        },
+        "aliases": {
+          "ko": [
+            "부아 카이망 의식",
+            "부아 카이망"
+          ],
+          "en": [
+            "Bois Caïman",
+            "Bwa Kayiman"
+          ]
+        },
+        "people": [
+          "dutty-boukman",
+          "toussaint-louverture"
+        ],
+        "events": [
+          "haitian-revolution-1791-1804"
+        ],
+        "evidence": [
+          {
+            "field": "definition",
+            "claim": "The Vodou ceremony and conspiracy at which, on the night of 14 August 1791 in woods near Cap-Français, some 200 enslaved people are said to have planned the rising of the northern plain. Presided over by the priest Dutty Boukman and the priestess Cécile Fatiman, with a black pig sacrificed and an oath sworn, it led a week later to the slave rising of 21–22 August, the beginning of the Haitian Revolution. No first-hand account exists, the earliest record dates from 1814, and whether it happened is debated.",
+            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
+            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+          },
+          {
+            "field": "body",
+            "claim": "White planters allowed Vodou rituals as harmless social gatherings, and the enslaved used them as opportunities to organise. According to tradition, on the night of 14 August 1791 some 200 representatives of the nearby plantations met in the \"Alligator Wood\" (Bois Caïman) on the Choiseul plantation ",
+            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
+            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+          },
+          {
+            "field": "period",
+            "claim": "1791",
+            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
+            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+          },
+          {
+            "field": "startYear",
+            "claim": "1791",
+            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
+            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+          },
+          {
+            "field": "endYear",
+            "claim": "1791",
+            "source": "https://en.wikipedia.org/wiki/Bois_Ca%C3%AFman",
+            "locator": "lead; Role during the Haitian Revolution; Significance and legacy — Boukman: Ceremony at the Bois Caïman; Death; Legacy — Toussaint: Beginnings of a rebellion"
+          }
+        ],
+        "original": "Cérémonie du Bois-Caïman",
+        "region": "americas"
+      }
+    }
+  ]
+}
