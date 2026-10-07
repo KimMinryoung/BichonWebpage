@@ -5,26 +5,26 @@
     Without sectionTitles (an office page's own rosters) the grid stands alone. %>
 <% var sectionTitles = locals.sectionTitles;
    var sections = ['party', 'state', 'economy', 'international'];
-   function card(href, icon, title, range, text) { %>
-        <a class="commu-office-card commu-role-category-link" href="<%= href %>">
-            <span class="commu-office-icon" aria-hidden="true"><%- roleIconSvg(icon) %></span>
-            <span class="commu-role-category-copy">
-                <h3><%= title %> <small class="commu-office-range"><%= range %></small></h3>
-                <p><%= text %></p>
+   function card(href, title, range, text) { %>
+        <a class="commu-office-card commu-office-entry" href="<%= href %>">
+            <span class="commu-office-entry-copy">
+                <span class="commu-office-range"><%= range %></span>
+                <h3><%= title %></h3>
+                <% if (text) { %><span class="commu-office-entry-description"><%= text %></span><% } %>
             </span>
-            <span class="commu-role-category-arrow" aria-hidden="true">→</span>
+            <span class="commu-office-entry-arrow" aria-hidden="true">→</span>
         </a>
 <% } %>
 <% if (!sectionTitles) { %>
 <div class="commu-office-grid">
-<% bodies.forEach(function(body) { card(body.href, 'hammer-sickle', body.title, body.range, body.description); }) %>
+<% bodies.forEach(function(body) { card(body.href, body.title, body.range, body.description); }) %>
 </div>
 <% } else { %>
 <% if (bodies.length) { %>
 <section class="commu-office-section" aria-labelledby="office-section-rosters">
     <h2 id="office-section-rosters"><%= sectionTitles.rosters %></h2>
     <div class="commu-office-grid">
-    <% bodies.forEach(function(body) { card(body.href, 'hammer-sickle', body.title, body.range, body.description); }) %>
+    <% bodies.forEach(function(body) { card(body.href, body.title, body.range, ''); }) %>
     </div>
 </section>
 <% } %>
@@ -37,7 +37,7 @@
     <h2 id="office-section-<%= section %>"><%= sectionTitles[section] || '' %></h2>
     <div class="commu-office-grid">
     <% items.forEach(function(office) {
-        card('/commulingo/offices/' + office.id, office.icon, office.title, office.range,
+        card('/commulingo/offices/' + office.id, office.title, office.range,
             office.tracks.filter(function(track) { return track.title; }).map(function(track) { return track.title; }).join(' · ') || office.blurb);
     }) %>
     </div>

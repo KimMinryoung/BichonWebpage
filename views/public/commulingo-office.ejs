@@ -15,16 +15,7 @@
             ],
             dictJump: 'people' }) %>
 
-        <header class="ui-card commu-office-head">
-            <<%= officePeopleHref ? 'a' : 'div' %> class="commu-office-head-row"<% if (officePeopleHref) { %> href="<%= officePeopleHref %>"<% } %>>
-                <div class="commu-office-head-title">
-                    <span class="commu-office-range"><%= office.range %></span>
-                    <h1><%= office.title %></h1>
-                </div>
-                <% if (officePeopleHref) { %><span class="commu-office-head-link"><%= en ? 'People →' : '인물 목록 →' %></span><% } %>
-            </<%= officePeopleHref ? 'a' : 'div' %>>
-            <p class="commu-office-head-description"><%= office.blurb %></p>
-        </header>
+        <%- include('../partials/commulingo-office-head', { title: office.title, range: office.range, description: office.blurb, peopleHref: officePeopleHref }) %>
 
         <% if (office.lineage && office.lineage.length) { %>
         <section class="commu-hub-section" aria-labelledby="office-lineage">

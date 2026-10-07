@@ -11,14 +11,7 @@
                 { label: body.title }
             ],
             dictJump: 'people' }) %>
-        <header class="commu-hub-head commu-role-hub-head commu-politburo-head">
-            <span class="commu-person-medal" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
-            <div>
-                <span class="commu-office-range"><%= body.range %></span>
-                <h1><%= body.title %></h1>
-                <p class="commu-politburo-intro"><%= intro %></p>
-            </div>
-        </header>
+        <%- include('../partials/commulingo-office-head', { title: body.title, range: body.range, description: intro, peopleHref: '' }) %>
 
         <% var hasCand = timeline.rows.some(function(row) { return row.bars.some(function(bar) { return bar.kind === 'cand'; }); }); %>
         <section class="commu-politburo-section" aria-labelledby="tenure-chart-title">

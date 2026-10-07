@@ -14,12 +14,7 @@
             ],
             dictJump: 'people' }) %>
 
-        <header class="commu-hub-head">
-            <div>
-                <h1><%= strings.commuLingoViews.office.lineages %></h1>
-                <p><%= strings.commuLingoViews.office.lineagesIntro %></p>
-            </div>
-        </header>
+        <%- include('../partials/commulingo-office-head', { title: strings.commuLingoViews.office.lineages, range: '', description: strings.commuLingoViews.office.lineagesIntro, peopleHref: '' }) %>
 
         <div class="commu-office-index">
             <%- include('../partials/commulingo-office-index', { bodies: bodies, offices: offices, sectionTitles: strings.commuLingoViews.office.sections }) %>
