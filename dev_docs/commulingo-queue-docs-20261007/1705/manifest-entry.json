@@ -1,0 +1,28 @@
+{
+  "id": "pkwn-july-manifesto-1944",
+  "file": "pkwn-july-manifesto-1944.html",
+  "docLang": "ko",
+  "date": "1944-07-22",
+  "title": {
+    "ko": "폴란드 민족해방위원회 선언 — 7월 선언 (1944년 7월 22일)",
+    "en": "Manifesto of the Polish Committee of National Liberation — the July Manifesto (22 July 1944)"
+  },
+  "description": {
+    "ko": "루블린 위원회가 헤움에서 「폴란드 국민에게」 낸 창립 선언 전문. 국가국민평의회를 유일한 합법 권력으로, 런던 망명 「정부」를 참칭 권력으로 규정하고 해방 지역의 행정권 인수, 동부 국경 원칙, 50헥타르 이상 지주 토지의 몰수 분배 토지개혁을 선포했다.",
+    "en": "Full text of the founding manifesto the Lublin Committee addressed 'to the Polish nation' from Chełm. It declared the State National Council the sole legal source of power and the London 'government' a usurping authority, took over administration of the liberated territories, set out the eastern frontier principle and announced a land reform confiscating and distributing estates over 50 hectares."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Manifest Polskiego Komitetu Wyzwolenia Narodowego, Chełm, 22.VII.1944 r. (벽보; Dziennik Ustaw RP 1944 nr 1 부록으로도 게재). 저본: 폴란드어 위키문헌 교정 완료 전사본(벽보 쪽 이미지 PKWN Manifest.jpg 대조), https://pl.wikisource.org/wiki/Manifest_Polskiego_Komitetu_Wyzwolenia_Narodowego (2026-10-07 접근). 국가기관의 공식 문서로 저작권 보호 대상 아님(위키문헌 PD-ineligible).",
+  "people": [],
+  "terms": ["lublin-committee", "polish-government-in-exile", "polish-workers-party", "milicja-obywatelska-citizens-militia"],
+  "events": ["warsaw-uprising", "poland-1944-1948"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『폴란드 민족해방위원회 선언』", "7월 선언", "루블린 위원회의 선언", "PKWN 선언", "폴란드 민족해방위원회 7월 선언"],
+    "en": ["PKWN Manifesto", "July Manifesto", "Manifesto of the Polish Committee of National Liberation", "Lublin Committee's manifesto", "Manifest PKWN"]
+  },
+  "noAutoLink": []
+}
