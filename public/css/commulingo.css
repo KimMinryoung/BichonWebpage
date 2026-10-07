@@ -3494,6 +3494,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 
 .commu-section-wide > .commu-event-timeline-list,
 .commu-section-wide > .commu-tl-filter,
+.commu-section-wide > .commu-tl-map-hint,
 .commu-section-wide > .commu-event-control {
     margin-inline: var(--content-inset);
 }
@@ -3912,17 +3913,22 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 /* The row's twin of the map badge; the pair lights together. */
 .commu-tl-geo-badge {
     display: inline-flex; align-items: center; justify-content: center;
-    min-width: 1.3rem; height: 1.3rem; margin-right: .45rem; padding: 0 .2rem;
+    width: 1.6rem; height: 1.6rem; margin-right: .45rem; padding: 0;
+    box-sizing: border-box; border-radius: 50%; background: transparent; cursor: pointer;
     border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-    font-style: normal; font-size: .72rem; line-height: var(--leading-none);
+    font-family: inherit; font-weight: inherit; font-style: normal; font-size: .72rem; line-height: var(--leading-none);
     color: var(--text-primary);
 }
-.commu-event-timeline-list li[data-geo-num] { cursor: default; }
+.commu-event-timeline-list li[data-geo-num] { cursor: pointer; }
+.commu-tl-geo-badge:focus-visible { outline: 2px solid var(--clr-red); outline-offset: 2px; }
+.commu-tl-map-hint { color: var(--text-muted); font-size: var(--text-sm); line-height: var(--leading-normal); margin-block: 0 var(--space-3); }
+.commu-tl-unpin { margin-top: var(--space-2); }
 .commu-event-timeline-list li[data-geo-num]:hover,
 .commu-event-timeline-list li.is-map-active { background: color-mix(in srgb, var(--border) 6%, transparent); }
 .commu-event-timeline-list li[data-geo-num]:hover .commu-tl-geo-badge,
-.commu-event-timeline-list li.is-map-active .commu-tl-geo-badge {
-    background: var(--accent); border-color: var(--accent); color: var(--clr-cream);
+.commu-event-timeline-list li.is-map-active .commu-tl-geo-badge,
+.commu-event-timeline-list li.is-map-pinned .commu-tl-geo-badge {
+    background: var(--clr-red); border-color: var(--clr-red); color: var(--clr-cream);
 }
 /* A city-scale event's rows name their sites instead of carrying numbers;
    rows at the same site light together. */
@@ -3935,11 +3941,6 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-event-timeline-list li.is-place-match { background: color-mix(in srgb, var(--border) 6%, transparent); }
 .commu-event-timeline-list li.is-place-match .commu-tl-place {
     background: var(--accent); border-color: var(--accent); color: var(--clr-cream);
-}
-/* Clicked-to-pin: held through mouseleave and scrolling, so it wears the map
-   badge's red instead of the hover green. */
-.commu-event-timeline-list li.is-map-pinned .commu-tl-geo-badge {
-    background: var(--clr-red); border-color: var(--clr-red); color: var(--clr-cream);
 }
 /* The SVG scales with the container, so on a phone the 12px labels land near
    6px on glass. Larger in-SVG sizes compensate; markers get the same bump. */
@@ -4079,7 +4080,7 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 .commu-tl-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
 .commu-tl-chip {
     display: inline-flex; align-items: center; gap: .35rem;
-    padding: .25rem .7rem; border: 1px solid var(--border, #555); border-radius: 999px;
+    padding: .25rem .7rem; border: 1px solid var(--border, #555); border-radius: 0;
     background: transparent; color: var(--text-primary); font: inherit; font-size: .84rem; cursor: pointer;
 }
 .commu-tl-chip .commu-flag { height: 13px; width: auto; }

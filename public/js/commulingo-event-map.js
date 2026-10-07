@@ -5,8 +5,9 @@
 // Two strengths of highlight, because the timeline is long and the map
 // scrolls away: hovering a numbered row lights its geometry while the pointer
 // stays; CLICKING a row pins the highlight, so the reader can scroll back up
-// to the map with number ⑨ still lit. Clicking the same row again, another
-// row, or empty map unpins. Tapping a map badge pins and scrolls to its row.
+// to the map with number ⑨ still lit. Clicking the same row again, an
+// unnumbered row, Unpin, Esc, or empty map clears the pin. Another numbered
+// row replaces it. Tapping a map badge pins and scrolls to its row.
 (function () {
     'use strict';
     // A city-scale event has no map numbers; its rows name their sites
@@ -185,11 +186,17 @@
     var shown = null;   // number currently lit
     var pinned = null;  // number held through mouseleave/scroll, or null
 
-    // The pinned row wears the map badge's red so held ≠ hovered at a glance.
+    document.querySelectorAll('[data-map-pin-hint]').forEach(function (hint) { hint.hidden = false; });
+
+    // The explicit action and pressed number distinguish a pin from a preview.
     function markPinned() {
         rows.forEach(function (row) {
-            row.classList.toggle('is-map-pinned',
-                row.getAttribute('data-geo-num') === String(pinned));
+            var on = row.getAttribute('data-geo-num') === String(pinned);
+            row.classList.toggle('is-map-pinned', on);
+            var badge = row.querySelector('.commu-tl-geo-badge');
+            if (badge) badge.setAttribute('aria-pressed', on ? 'true' : 'false');
+            var unpin = row.querySelector('[data-map-unpin]');
+            if (unpin) unpin.hidden = !on;
         });
     }
 
@@ -218,10 +225,34 @@
             if (pinned === null) show(null);
         });
         row.addEventListener('click', function (event) {
-            if (event.target.closest('a')) return;
+            if (event.target.closest('a, button:not(.commu-tl-geo-badge)')) return;
             pinned = pinned === num ? null : num;
             markPinned();
             show(num);          // unpinning keeps it lit — the pointer is still here
+        });
+    });
+
+    function clearPin() {
+        var focusedUnpin = document.activeElement.closest('[data-map-unpin]');
+        var badge = focusedUnpin && focusedUnpin.closest('li').querySelector('.commu-tl-geo-badge');
+        pinned = null;
+        markPinned();
+        show(null);
+        if (badge) badge.focus({ preventScroll: true });
+    }
+
+    document.querySelectorAll('[data-map-unpin]').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.stopPropagation();
+            clearPin();
+        });
+    });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && pinned !== null) clearPin();
+    });
+    document.querySelectorAll('.commu-event-timeline-list > li:not([data-geo-num])').forEach(function (row) {
+        row.addEventListener('click', function (event) {
+            if (!event.target.closest('a, button')) clearPin();
         });
     });
 
@@ -229,9 +260,7 @@
         svg.addEventListener('click', function (event) {
             var group = event.target.closest('[data-geo-num]');
             if (!group) {
-                pinned = null;
-                markPinned();
-                show(null);
+                clearPin();
                 return;
             }
             var num = parseInt(group.getAttribute('data-geo-num'), 10);
