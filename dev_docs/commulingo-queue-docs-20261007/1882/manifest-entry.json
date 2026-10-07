@@ -1,0 +1,47 @@
+{
+  "id": "albania-constitution-1946",
+  "file": "albania-constitution-1946.html",
+  "docLang": "ko",
+  "date": "1946-03-14",
+  "title": {
+    "ko": "알바니아 인민공화국 헌법 (1946년 3월 14일)",
+    "en": "Constitution of the People's Republic of Albania (14 March 1946)"
+  },
+  "description": {
+    "ko": "인민공화국 선포 두 달 뒤 알바니아 제헌의회가 채택한 첫 헌법. 모든 권력을 인민평의회에 두고, 지하자원·은행·통신을 인민의 공동재산으로, 경제를 국가의 일반 경제계획 아래 두되 사유재산과 상속을 보장하며, 토지는 경작하는 자의 것이라 선언한다.",
+    "en": "Albania's first constitution, adopted by the Constituent Assembly two months after the proclamation of the people's republic. It vests power in the people's councils, makes subsoil resources, banks and communications the common property of the people and places the economy under a general state plan while guaranteeing private property and inheritance, and declares that the land belongs to those who work it."
+  },
+  "kind": {
+    "ko": "헌법·법령·명령",
+    "en": "Constitutions, laws & orders"
+  },
+  "source": "Statuti i Republikës Popullore të Shqipërisë, adopted by the Asambleja Kushtetonjëse, Tirana, 14 March 1946; promulgated by Decree No. 24 of the Presidium of the Constituent Assembly, 15 March 1946. First printed: Asambleja Kushtetonjëse, Statuti i Republikës Popullore të Shqipërisë (Tiranë: Shtyp. \"Bashkimi\", 1946). Text: Albanian transcription of that print, https://constitutions.albasio.eu/wp-content/uploads/costituzioni/STATUTI-I-ASAMBLESE-KUSHTETONJE%C2%A6%C3%AASE-1946.pdf (accessed 2026-10-07). Constitution of a state; not subject to copyright.",
+  "people": [
+    "enver-hoxha",
+    "omer-nishani",
+    "koci-xoxe",
+    "nako-spiru"
+  ],
+  "terms": [
+    "peoples-democracy"
+  ],
+  "events": [
+    "albanian-socialist-transition-1944-1946"
+  ],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": [
+      "『알바니아 인민공화국 헌법』",
+      "1946년 알바니아 헌법",
+      "1946년 인민공화국 헌법",
+      "알바니아 인민공화국 헌장"
+    ],
+    "en": [
+      "1946 Albanian Constitution",
+      "Albanian Constitution of 1946",
+      "Statute of the People's Republic of Albania",
+      "Statuti i Republikës Popullore të Shqipërisë"
+    ]
+  },
+  "noAutoLink": []
+}

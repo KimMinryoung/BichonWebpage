@@ -1,0 +1,750 @@
+# Statuti i Republikës Popullore të Shqipërisë (Asambleja Kushtetonjëse, Tiranë, 14 Mars 1946; shpallur me Dekret Nr. 24, 15 Mars 1946)
+# Source: transcription PDF of the 1946 print (Asambleja Kushtetonjëse, Statuti i Republikës Popullore të Shqipërisë, Shtyp. "Bashkimi", Tiranë 1946), 19 pp.,
+#   https://constitutions.albasio.eu/wp-content/uploads/costituzioni/STATUTI-I-ASAMBLESE-KUSHTETONJE%C2%A6%C3%AASE-1946.pdf (accessed 2026-10-07);
+#   identical file (same bytes) at https://www.crteducazione.org/wp-content/uploads/2025/02/STATUTI-I-ASAMBLESE-KUSHTETONJE%C2%A6eSE-1946.pdf
+# Text extracted with pypdf; lines joined into paragraphs (paragraph ends checked against layout extraction). Orthography left as in the transcription.
+# Editorial marks in [square brackets] are mine: list numbers lost in the PDF text layer (Art. 54 items 2–9, 12–16; Art. 65 items 1–9),
+#   and the missing "ART. 11." heading (restored by comparison with Art. 20 of the 1946 Yugoslav Constitution, on which this text is modelled, and Art. 12–13 of the 1950 Albanian Constitution).
+[Kopertina:] ASAMBLEJA KUSHTETONJËSE / STATUTI i REPUBLIKES POPULLORE TE SHQIPERISE / SHTYP. “BASHKIMI” Tiranë 1946
+
+ASAMBLEJA KUSHTETONJESE
+
+S T A T U T I i BEPUBLIKES [sic] POPULLORE TE SHQIPERISE
+
+PJESA E PARË
+
+PARIMET THEMELORE
+
+KAPITULLI I.
+
+Republika Popullore e Shqipërisë
+
+ART. 1.
+
+Shqipëria është një republikë popullore, ku i gjithë pushteti buron nga populli dhe i takon popullit.
+
+ART. 2.
+
+Në Republikën Popullore të Shqipërisë populli realizon pushtetin e tij me anë t'organeve përfaqësonjëse të pushtetit shtetëror që janë këshillat popullore, të cilat lindën në luftën nacional çlirimtare kundër fashizmit e reakcionit edhe përfaqësojnë fitoren më të madhe të masave kryesore të popullit shqiptar.
+
+Këto organe zgjidhen lirisht prej popullit që nga këshillat e lokaliteteve e gjer në Kuvendin Popullor.
+
+ART. 3.
+
+Të gjitha organet përfaqësonjëse të pushtetit shtetëror zgjidhen prej shtetasvet me zgjedhje të lira dhe me votim të përgjithshëm, të barabartë, direkt dhe të fshehtë.
+
+Në të gjitha organet e pushtetit shtetëror përfaqësonjësit e popullit janë përgjegjës përpara zgjedhësve të tyre.
+
+Zgjedhësit kanë të drejtë të revokojnë në çdo kohë përfaqësonjësit e tyre. Normat për ushtrimin e kësaj të drejte do të caktohen me ligjë të veçantë.
+
+ART. 4.
+
+Të gjitha organet e pushtetit shtetëror ushtrojnë funkcionet e tyre në bazë të Statutit, të ligjëvet dhe të urdhëravet të përgjithëshme të dhëna prej organevet të larta të pushtetit shtetëror.
+
+Të gjitha vepërimet e organevet t'administratës së shtetit dhe të gjykatave duhet të jenë të bazuara në ligjë.
+
+KAPITULLI II.
+
+Rendi Shoqëror dhe Ekonomik
+
+ART. 5.
+
+Në Republikën Popullore të Shqipërisë mjetet e prodhimit përbëhen prej pasurisë së përbashkët të popullit që gjëndet në duart e shtetit, prej pasurisë së organizatave kooperative popullore dhe prej pasurisë së personave private, fizike ose morale.
+
+Janë pasuri e përbashkët e popullit të gjitha minierat dhe pasuritë e tjera të nënëtokës, ujrat, burimet natyrale, pyjet dhe kullotat, mjetet e komunikacjonit ajror, postat, telegrafet, telefonet, radio-stacionet dhe bankat.
+
+Tregëtia e jashtme është nënë kontrollin e shtetit.
+
+ART. 6.
+
+Për të mprojtur interesat jetësore të popullit dhe për të ngritur shkallën e mirëqënies së tij si edhe për të shfrytëzuar të gjitha mundësitë e të gjitha fuqitë ekonomike, shteti drejton jetën dhe zhvillimin ekonomik në bazë të një pllani ekonomik të përgjithshëm. Duke u pështetur në sektorin ekonomik shtetëror dhe në sektorin kooperativ, ay ushtron një kontroll të përgjithshëm mi sektorin privat të ekonomisë.
+
+Për realizimin e pllanit ekonomik të përgjithshëm, shteti pështetet në organizatat sindikale të puntorëve dhe të nëpunësve, në kooperativat e fshatarëve si edhe në të tjera organizata të masave punonjëse.
+
+ART. 7.
+
+Drejtimi dhe përdorja e pasurisë së përbashkët të popullit rregullohen me ligjë.
+
+Pasuria e përbashkët e popullit përkrahet veçanërisht nga shteti.
+
+ART. 8.
+
+Shteti kujdeset veçanërisht për lëvizjen kooperative të popullit; e përkrah këtë dhe e favorizon.
+
+ART. 9
+
+Garantohen pronësia private dhe iniciativa private në ekonomi. Garantohet e drejta e trashëgimit të pasurisë private. Asnjeri nuk munt të përdorë të drejtën e pronësisë private në dëm të kolektivitetit.
+
+Pronësia private munt të kufizohet e të shpronësohet kur e lyp interesi i përgjithshëm dhe në bazë të një ligje.
+
+Me ligjë do të caktohet në ç'rast dhe sa do të shpërblehet pronari.
+
+Po me ato kushte munt të shtetëzohen disa degë t’ekonomisë ose sipërmarrje kur e do interesi i përgiithshëm.
+
+Ndalohen monopolet, trustet, kartelet, etj., të krijuara me qëllim që të diktojnë çmimet, të monopolizojnë tregjet në dëm t'ekonomisë nacionale.
+
+ART. 10.
+
+Toka u takon atyre që e punojnë. Caktohet me ligjë kur një institut ose një person që nuk e punon tokën munt të mbetet zot i kësaj toke dhe në ç'masë.
+
+Tokat e mbëdha për asnjë arësye nuk munt të jenë në duart e privatëvet.
+
+Me ligjë caktohet maksimumi i sipërfaqes së tokës që munt të jetë pronë private.
+
+Shteti mpron dhe përkrah veçanërisht fshatarët e vegjël dhe fshatarët e mesmë me politikën e tij ekonomike, me kredi dhe me sistemin e taksave.
+
+[ART. 11. — numri mungon në transkriptim]
+
+Me masa ekonomike dhe të tjera, shteti përkrah masat punonjëse të popullit që të bashkohen dhe të organizohen kundër shfrytëzimit ekonomik.
+
+Shteti mpron personat që pajtohen për punë duke i u siguruar të drejtat e organizimit, duke kufizuar orët e punës dhe duke caktuar minimumin e mëditjevet.
+
+Ay i përkrah me anë të sigurimevet shoqërore dhe me mprojtjen e së drejtës së tyre për një pushim të përvitshëm që u paguhet nga ana e punëdhënësvet.
+
+Shteti mpron veçanërisht të rinjtë që nuk janë në moshë madhore për sa i takon marrjes së tyre në panë.
+
+KAPITULLI III.
+
+Të Drejtat dhe Detyrat e Shtetasve
+
+ART. 12.
+
+Të gjithë shtetasit janë njësoj përpara ligjës. Ata kanë për detyrë të konformohen me Statutin dhe me ligjët.
+
+Nuk njihet asnjë privilegj për shkak origjine, pozite, pasurie ose shkallë kulture.
+
+ART. 13.
+
+Të gjithë shtetasit janë të barabartë pa ndryshim kombësie, race ose feje. Çdo akt që sjell privilegje në favor të shtetasvet ose që kufizon të drejtat e tyre për shkak ndryshimi në kombësi, racë ose fe, është kundra Statutit dhe sjell me vete dënime të parashikuara me ligjë. Është kundra Statutit dhe dënohet me ligjë çdo provokim për të mbjellur urrejtje dhe grindje në mes të kombësive, racave dhe feve.
+
+ART. 14.
+
+Të gjithë shtetasit pa ndryshim seksi, kombësie, race, besimi, shkallë kulture ose banimi dhe që kanë mbushur 18 vjet, kanë të drejtë të zgjedhin dhe të zgjidhen në të gjitha organet e pushtetit shtetëror.
+
+Këto të drejta i kanë dhe shtetasit që shërbejnë në ushtëri.
+
+E drejta e votimit është e përgjithëshme, e barabartë, direkte dhe e fshehtë.
+
+Nuk kanë të drejtën e votimit personat që përjashtohen në bazë të ligjës.
+
+ART. 15.
+
+Gruaja është njësoj me burrin në çdo fushë të jetës private, politike dhe shoqërore.
+
+Gruaja ka të drejtë të shpërblehet njësoj me burrin për një punë të barabartë. Ajo ka po atë të drejtë dhe në sigurimet shoqërore.
+
+Shteti mpron veçanërisht interesat e nënës dhe të fëmijës duke siguruar të drejtën për një pushim të paguarshëm përpara dhe pas lindjes dhe duke krijuar shtëpira për gra që lindin dhe shtëpira për rritjen dhe strehimin e fëmijve.
+
+ART. 16.
+
+Të gjithë shtetasvet u garantohet liria e ndërgjegjës dhe e besimit.
+
+Kisha është e ndarë nga shteti.
+
+Komunitetet fetare janë të lira në çeshtjet e tyre të besimit si edhe në ushtrimin dhe praktikimin e jashtëm të tyre.
+
+Ndalohet që Kisha dhe Feja të shpërdoren për qëllime politike.
+
+Gjithashtu ndalohen organizatat politike me bazë fetare.
+
+Shteti munt të ndihmojë materialisht komunitetet fetare.
+
+ART. 17.
+
+Martesa dhe familja janë nënë mprojtjen e shtetit. Shteti cakton me ligjë konditat juridike të martesës dhe të familjes.
+
+Martesa legjitime nuk munt të lidhet veçse përpara organeve kompetente të shtetit.
+
+Pas celebrimit të martesës legjitime shtetasit munt të bëjnë edhe martesë fetare si pas rregullave të besimit të tyre.
+
+Për të gjitha çështjet në lidhje me martesën janë kompetente vetëm gjykatat e shtetit.
+
+Prindërit kanë kundrejt fëmijve të lindur jashtë martesës po ato detyrime dhe detyra që kanë dhe kundrejt fëmijve të lindur me martesë. Fëmijët e lindur jashtë martesës kanë po ato të drejta që kanë dhe fëmijët e lindur me martesë.
+
+ART. 18.
+
+Të gjithë shtetasve u garantohet liria e fjalës, e shtypit, e organizimit, e mbledhjes, e grumbullimit dhe e manifestimit publik.
+
+ART. 19.
+
+Për të gjithë shtetasit garantohet inviolabiliteti i personës. Asnjeri nuk munt të arestohet për një kohë më tepër se tri ditë pa vendim të gjykatës ose pa pëlqimin e prokurorit publik.
+
+Asnjeri nuk munt të dënohet për një faj pa vendim të gjykatës kompetente në konformitet me ligjën që cakton kompetencën gjyqësore dhe fajin.
+
+Dënimet nuk munt të caktohen dhe të jepen veçse në bazë të ligjës.
+
+Asnjeri nuk munt të dënohet pa u dëgjuar dhe pa u thirrur që të mprohet sipas përshkrimeve të ligjës, përveç se kur vërtetohet ligjërisht mungesa e tij.
+
+Organet e administratës së shtetit, brënda kufive të caktuara prej ligjës, munt të japin dënime edhe me burgosje për faje të vogla të së drejtës komune.
+
+Asnjë shtetas nuk munt të nxiret jashtë shtetit ose të internohet brënda shtetit, veçse në raste të parashikuara me ligjë.
+
+Republika Popullore e Shqipërisë mpron shtetasit shqiptarë që ndodhen jashtë shtetit.
+
+ART. 20.
+
+Banesa nuk munt të dhunohet.
+
+Asnjeri nuk munt të hyjë në shtëpi dhe të bëjë një përkuizim kundër vullnetit të zotit të shtëpisë, veçse kur ka në dorë një urdhër të dhënë në bazë të ligjës.
+
+Përkuizimi nuk munt të bëhet veçse kur ndodhen aty dy dëshmonjës. Edhe i zoti i shtëpisë ka të drejtë të ndodhet.
+
+ART. 21.
+
+Fshehtësia e letrave dhe e mjeteve të tjera të korespondencës nuk munt të cënohet, përveç rasteve të hetimevet kriminale, të mobilizimit ose të gjëndjes së luftës.
+
+ART. 22.
+
+Në Republikën Popullore të Shqipërisë puna është një nder dhe një detyrë.
+
+Çdo shtetas ka të drejtë të shpërblehet sipas punës dhe aftësisë dhe të marrë nga shoqëria aqë sa i jep ay vetë shoqërisë.
+
+ART. 23.
+
+Të gjithë shtetasit kanë, në kondita të caktuara prej ligjës, të drejtë njësoj të pranohen në nëpunësitë e shtetit.
+
+Shtetasit e ngarkuar me funkcione publike ose të zgjedhur në një shërbim publik, kanë për detyrë të kryejnë me ndërgjegje misionin e tyre.
+
+ART. 24.
+
+Shteti ka për detyrë t'u sigurojë invalidëve të luftës një jetë të mirë dhe t'i bëjë të aftë për punë me shpenzimet e tij. Shteti kujdeset veçanërisht për fëmijët e luftëtarëvet të rënë në fushën e luftës dhe për viktimat e tjera të luftës.
+
+ART. 25.
+
+Shteti kujdeset për shëndetin e popullit duke organizuar dhe kontrolluar shërbimin e shëndetësisë, spitalet dhe sanatoriumet.
+
+ART. 26.
+
+Shteti kujdeset për edukimin fizik të popullit, sidomos të të rinjve, me qëllim që të përmirësohet shëndeti dhe të shtohet fuqia e popullit për punë dhe për mprojtjen e shtetit.
+
+ART. 27.
+
+Garantohet liria e punës shkencore dhe artistike. Shteti përkrah shkencën dhe artin me qëllim që të shvillohet kultura e popullit dhe mirëqënia e tij.
+
+Të drejtat e auktorit mprohen me ligjë.
+
+ART. 28.
+
+Me qëllim që të ngrihet shkalla e kulturës së përgjithëshme të popullit, shteti u siguron të gjitha shtresave të popullit mundësitë për të ndjekur shkollat dhe institutet e tjera kulturale.
+
+Shteti kujdeset veçanërisht për edukimin e të rinjve.
+
+Fëmijët në moshë të vogël janë nënë mprojtjen e ligjës.
+
+Shkollat varen prej shtetit. Nuk munt të hapen shkolla private veçse me ligjë.
+
+Veprimtaria e tyre është nënë kontrollin e shtetit.
+
+Arësimi fillor ësht i detyruarshëm dhe jepet falas.
+
+Shkolla ësht e ndarë nga Kisha.
+
+ART. 29.
+
+Shtetasit kanë të drejtë t'u parashtrojnë kërkesa dhe ankime organevet të pushtetit shtetëror.
+
+Shtetasit kanë të drejtë të ankohen kundra të gjitha vendimeve të kundraligjëshme ose të parregullta të dhëna prej organeve të administratës së shtetit si dhe atëhere kur nëpunësit vepërojnë keq.
+
+ART. 30.
+
+Çdo shtetas ka të drejtë të ankohet në gjykatat kompetente kundër nëpunësve për padrejtësi të bëra në ushtrimin e detyrës.
+
+ART. 31.
+
+Në konditat e caktuara me ligjë shtetasit kanë të drejtë të kërkojnë prej shtetit ose nëpunësve të tij një shpërblim për dëmin që kanë pësuar nga fakti i kryerjes së një shërbimi në kundërshtim me ligjën ose në mënyrë të parregulltë.
+
+ART. 32.
+
+Mprojtja e Atdheut është detyra më e lartë dhe nderi më i math për çdo shtetas.
+
+Trathëtia kundrejt popullit është krimi më i math.
+
+Shërbimi ushtarak ësht i detyruarshëm për të gjithë shtetasit.
+
+ART. 33.
+
+Të gjithë shtetasit janë të detyruar të paguajnë taksë në proporcion me mundësitë ekonomike të tyre.
+
+Taksat e shtetit dhe përjashtimi nga të paguarit e taksave caktohen me ligjë.
+
+ART. 34.
+
+Shtetasit nuk munt të përdorin të drejtat që u jep ky Statut për të ndrruar rendin konstitucional të Republikës Popullore të Shqipërisë me qëllime antidemokratike.
+
+Çdo vepër në këtë drejtim konsiderohet kundra ligjës dhe sjell me vete dënime të parashikuara me ligjë.
+
+ART. 35. .
+
+Pakicat nacionale kanë në Republikën Popullore të Shqipërisë të gjitha të drejtat, mprojtjen e zhvillimit kultural të tyre dhe përdorjen e lirë të gjuhës së tyre.
+
+ART. 36.
+
+Republika Popullore e Shqipërisë u jep të drejtë strehimi në tokën e saj shtetasve të huaj të ndjekur për shkak të aktivitetit të tyre në favor të demokracisë, të luftës nacional-çlirimtare, të të drejtave të popullit punëtor ose në favor të lirisë së punës shkencore dhe kulturale.
+
+PJESA E DYTË
+
+ORGANIZIMI I SHTETIT
+
+KAPITULLI I.
+
+Organet e Larta të Pushtetit Shtetëror
+
+a) KUVENDI POPULLOR
+
+ART. 37.
+
+• Kuvëndi Popullor është organi më i lartë i pushtetit shtetëror të Republikës Popullore të Shqipërisë.
+
+ART. 38.
+
+Kuvëndi Popullor mban sovranitetin e kombit dhe të shtetit dhe ushtron të gjitha të drejtat sovrane në bazë të Statutit me përjashtim të atyre të drejtavet që vetë Statuti i ka lënë në kompetencë të Presidiumit të Kuvëndit Popullor ose të Qeverisë.
+
+ART. 39.
+
+Pushteti legjislativ ushtrohet vetëm prej Kuvëndit Popullor.
+
+ART. 40.
+
+Kuvëndi Popullor zgjidhet prej të gjithë shtetasve në proporcion të një përfaqësonjësi për çdo 20.000 frymë.
+
+ART. 41.
+
+Kuvëndi Popullor zgjidhet për katër vjet.
+
+ART. 42.
+
+Kuvëndi Popullor zgjeth në fillim të çdo sesioni një kryetar, një nënëkryetar dhe një sekretar. Kryetari drejton mbledhjet në bazë të rregullores.
+
+ART. 43.
+
+Kuvëndi Popullor thirret me dekret të Presidiumit të tij në sesione të zakonëshme dhe të jashtëzakonëshme.
+
+Sesionet e zakonëshme mbahen dy herë në vit: më 15 Mars dhe 15 Tetor. Në qoftë se Kuvëndi Popullor nuk është thirrur në këto afate, ay munt të mblidhet me iniciativën e tij edhe pa dekret të Presidiumit.
+
+Sesionet e jashtëzakonëshme thirren kur Presidiumi i Kuvëndit Popullor e gjykon me udhë ose kur e kërkojnë një e treta e përfaqësonjësve të popullit.
+
+ART. 44.
+
+Kuvëndi Popullor harton rregulloren e tij.
+
+ART. 45.
+
+Asnjë projekt-ligjë nuk munt të marrë fuqinë e ligjës në qoftë se nuk votohet prej shumicës relative të përfaqësonjësve të popullit në një mbledhje të Kuvëndit Popullor ku marrin pjesë shumica e anëtarëve të tij.
+
+ART. 46.
+
+Ligjët hyjnë në fuqi 15 ditë pas shpalljes në «Gazetën Zyrtare», përveç kur në ligjë urdhërohet ndryshe.
+
+ART. 47.
+
+Kuvëndi Popullor zgjeth komisione të veçanta me mision të caktuar.
+
+Kuvëndi Popullor në mbledhjen e parë të tij zgjeth një komision për vërtetimin e mandateve të përfaqësonjësve të popullit.
+
+Me propozimin e këtij komisioni Kuvëndi Popullor vërteton ose anulon mandatet e përfaqësonjësve të popullit.
+
+ART 48.
+
+Kuvëndi Popullor munt të bëjë anketa mi çështje me rëndësi të përgjithëshme me anë të një komisioni ankete.
+
+Të gjitha organet e shtetit janë të detyruara t’u përgjigjen kërkesavet të komisionit në lidhje me konstatimin e faktevet dhe mbledhjen e provave.
+
+ART. 49.
+
+Përfaqësonjësit e Popullit në Kuvëndin Popullor gëzojnë imunitetin parlamentar.
+
+Nuk munt të arestohen as të ndiqen penalisht pa pëlqimin e Kuvëndit Popullor ose të Presidiumit të tij përveç rastit të deliktit flagrant.
+
+ART. 50.
+
+Në rast lufte ose në raste analoge të jashtëzakonëshme Kuvëndi Popullor munt të zgjatë legjislaturën e tij përtej afatit normal gjersa të vazhdojë gjëndja e jashtëzakonëshme.
+
+Kuvëndi Popullor munt të vendosë shpërndarjen e tij përpara mbarimit të afatit për të cilin është zgjedhur.
+
+ART. 51.
+
+Zgjedhjet për një Kuvënt Popullor të ri duhet të caktohen përpara mbarimit të ditës së fundit të legjislaturës së mëparëshme.
+
+Koha në mes të ditës së shpërndarjes së Kuvëndit Popullor dhe ditës së zgjedhjeve për Kuvëndin e ri Popullor nuk munt të jetë më tepër se tre muaj dhe më pakë se dy muaj.
+
+ART. 52.
+
+Vetëm me vendim të Kuvëndit Popullor munt të bëhen ndryshime ose shtesa në Statut.
+
+Projektet për ndryshime ose shtesa në Statut munt të paraqiten prej Presidiumit të Kuvëndit Popullor, prej Qeverisë ose prej dy të pestavet të përfaqësonjësve të popullit në Kuvënt.
+
+Projektet për ndryshime ose shtesa në Statut duhet të pranohen me shumicë absolute të votave të të gjithë anëtarëve të Kuvëndit.
+
+b) PRESIDIUMI I KUVENDIT POPULLOR
+
+ART. 53.
+
+Kuvëndi Popullor zgjedh Presidiumin e tij që përbëhet prej një kryetari, dy nënkryetarëve, një sekretari dhe shtatë antarëve.
+
+ART. 54.
+
+Presidiumi i Kuvëndit Popullor ka këto detyra:
+
+1) Thërret sesionet e Kuvëndit Popullor.
+
+[2)] Cakton zgjedhjet për Kuvëndin Popullor.
+
+[3)] Bën interpretime autentike në lidhje me konformitetin e ligjëve me Statutin, interpretime, që i paraqiten më pas për pranim Kuvëndit Popullor.
+
+[4)] Bën interpretime autentike të ligjëve, nxjerr dekrete.
+
+[5)] Promulgon ligjet e votuara.
+
+[6)] Ushtron të drejtën e faljes në konformitet me urdhërimet e ligjës.
+
+[7)] Jep dekorata dhe tituj nderi me propozimin e Kryetarit të Qeverisë.
+
+[8)] Ratifikon traktatet nërkombëtare përveç rastit kur e gjykon me udhë që ratifikimi të bëhet prej Kuvëndit Popullor.
+
+[9)] Emëron dhe heq me propozimin e Qeverisë të dërguarit e jashtëzakonshëm dhe ministrat fuqiplotë.
+
+10) Pranon letrat kredenciale dhe letrat e thirrjes së përfaqësonjësve diplomatikë të shteteve të huaja.
+
+11) Shpall mobilizimin e përgjithshëm dhe gjëndjen e luftës në rast të një agresioni të armatosur kundër Republikës Popullore të Shqipërisë, në mes të dy sesioneve të Kuvëndit Popullor; në rast nevoje të ngutëshme mbush detyrimet nërkombëtare të Republikës kundrejt organizatës nërkombëtare të paqes ose kundrejt shteteve aleate.
+
+[12)] Me propozimin e Kryetarit të Qeverisë emëron dhe pushon ministra në mes të dy sesioneve të Kuvëndit Popullor.
+
+[13)] Emëron nënëministra me propozimin e Kryetarit të Qeverisë.
+
+[14)] Me propozimin e Kryetarit të Qeverisë krijon komisione në gjirin e Qeverisë dhe emëron kryetarët e tyre.
+
+[15)] Me propozimin e Qeverisë cakton sipërmarrjet me rëndësi të përgjithëshme për shtetin që duhet të jenë nënë drejtimin direkt të një ministrie ose të një komisioni qeveritar.
+
+[16)] Në bazë të vendimeve të Kuvëndit Popullor ose me propozimin e Qeverisë shpall referendume popullore mi çështje të ndryshme.
+
+Dekretet e Presidiumit të Kuvëndit Popullor nënëshkruhen prej kryetarit dhe sekretarit.
+
+ART. 55.
+
+Presidiumi i Kuvëndit Popullor është përgjegjës për veprimtarinë e tij përpara Kuvëndit Popullor. Ky munt t'a revokojë presidiumin e tij, të zgjedhë një tjetër, të revokojë antarët dhe t'i zëvëndësojë edhe përpara mbarimit t'afatit për të cilin janë zgjedhur.
+
+ART. 56.
+
+Në rast çpërndarjeje të Kuvëndit Popullor, Presidiumi mbetet në fuqi gjersa të zgjidhet Presidiumi i ri i Kuvendit Popullor.
+
+Presidiumi thërret Kuvëndin Popullor të zgjedhur jo më von se një muaj prej zgjedhjes së tij.
+
+KAPITULLI II.
+
+Organet e Administratës së Shtetit
+
+ART. 57.
+
+Qeveria është organi ekzekutiv dhe urdhër-dhënës më i lartë i Republikës Popullore të Shqipërisë.
+
+Qeveria emërohet dhe hiqet prej Kuvëndit Popullor.
+
+Qeveria është përgjegjëse përpara Kuvëndit Popullor dhe duhet të japë llogari për veprimtarinë e saj. Në mes të dy sesioneve te Kuvëndit Popullor, ajo është përgjegjëse përpara Presidiumit të Kuvëndit, të cilit duhet t i japë llogari për veprimtarinë e saj.
+
+ART. 58.
+
+Qeveria vepëron në bazë të Statutit dhe të ligjëve. Qeveria nxjerr dekretet e nevojshme për zbatimin e ligjeve dhe të dekreteve në bazë të një autorizimi ligjor të veçantë; ajo jep instrukcione të detyruarshme për zbatimin e përpiktë të këtyre ligjëve.
+
+Dekretet, instrukcione dhe vendimet e qeverisë nënëshkruhen prej kryetarit të Qeverisë dhe ministrit kompetent.
+
+ART. 59.
+
+Qeveria drejton dhe bashkërendon punët e ministrive, të komisioneve dhe të shërbimeve të instituteve të tjera që ndodhen nënë kontrollin direkt të saj.
+
+Qeveria harton planin ekonomik të përgjithëshëm të shtetit dhe buxhetin e përgjithëshëm të shtetit të cilët ja parashtron Kuvendit Popullor për pranim dhe kontrollon zbatimin e tyre; drejton sistemin e kreditit dhe sistemin monetar; merr të gjitha masat e nevojshme për sigurimin dhe mprojtjen e rendit konstitucional dhe të drejtavet të shtetasve; drejton organizimin e përgjithshëm të ushtërisë; mban lidhje me shtetet e huaja; kujdeset për zbatimin e traktateve dhe për detyrimet nërkombëtare; i parashtron Kuvëndit Popullor projektet e ligjëve të hartuara prej saj dhe prej ministrave të ndryshmë; cakton organizimin e brëndshëm të ministrive dhe të instituteve të varura prej saj: krijon komisione dhe institute për zbatimin e masave ekonomike, kulturale dhe të mprojtjes kombëtare.
+
+ART. 60.
+
+Qeveria përbëhet prej kryetarit, nënëkryetarëve, ministrave, kryetarit të Komisionit për Planin Ekonomik dhe kryetarit të Komisionit të Kontrollit.
+
+Anëtarët e qeverisë betohen përpara Presidiumit të Kuvëndit Popullor.
+
+ART. 61.
+
+Kryetari i qeverisë përfaqëson qeverinë, kryeson mbledhjet dhe drejton punët e qeverisë.
+
+ART. 62.
+
+Anëtarët e qeverisë ndodhen në krye të dikastereve të ndryshme të administratës së shtetit.
+
+Qeveria munt të ketë dhe ministra pa portofol.
+
+ART. 63.
+
+Anëtarët e qeverisë janë përgjegjës penalisht për shkeljen e Statutit dhe të ligjëve në lidhje me ushtrimin e funkcioneve të tyre.
+
+Ata janë përgjegjës edhe për dëmet që mund t'i shkaktojnë shtetit me veprimtarinë e tyre të kundraligjshme.
+
+Me ligjë të veçantë do të vihen me hollësi normat mi përgjegjësinë e anëtarëvet të qeverisë.
+
+ART. 64.
+
+Ministrat dhe komisionet qeveritare kanë të drejtë të nxjerrin rregullore, urdhëresa dhe instrukcione në bazë dhe për zbatimin e ligjëve si dhe të dekreteve dhe instrukcioneve të qeverisë.
+
+Ministrat kontrollojnë zbatimin e përpiktë të ligjëve, të dekreteve dhe të instrukcioneve të qeverisë brënda sferës së veprimtarisë së tyre dhe janë përgjegjës për zbatimin e tyre në degën e administratës së shtetit që drejtojnë.
+
+Vetëm me ligjë munt të krijohen ministrira dhe komisione të tjera dhe të suprimohen ato që eksistojnë.
+
+ART. 65.
+
+Ministritë e ndryshme të qeverisë janë:
+
+[1)] Ministria e P. të Jashtme
+
+[2)] Ministria e P. të Brëndëshme
+
+[3)] Ministria e Mbrojtjes Kombëtare
+
+[4)] Ministria e Drejtësisë
+
+[5)] Ministria e Financavet
+
+[6)] Ministria e Arësimit
+
+[7)] Ministria e Ekonomisë
+
+[8)] Ministria e Bujqësisë dhe e Pyjeve
+
+[9)] Ministria e P. Botore
+
+10) Ministria e Shëndetsisë
+
+ART. 66.
+
+Qeveria munt të ngarkojë me dekret një këshill ministerial më të ngushtë që të merret me disa çështje në lidhje me ekonominë dhe me mprojtjen kombëtare.
+
+Dekreti mi krijimin e këshillit ministerial të ngushtë do të caktojë përbërjen dhe kompetencën e tij.
+
+KAPITULLI III.
+
+Organet e Pushtetit Shtetëror të Njësive Administrative Lokale
+
+ART. 67.
+
+Këshillat Popullore janë organet e pushtetit shtetëror në lokalitete, komune, nënëprefektura dhe prefektura.
+
+Këshillat popullore zgjidhen drejt për së drejti prej shtetasve: ato të lokaliteteve për dy vjet, kurse ato të komuneve, nënëprefekturave, dhe prefekturave për tre vjet.
+
+Këshillat popullore të komuneve, nënëprefekturave dhe të prefekturave bëjnë mbledhjet e tyre të zakonëshme sipas normave të caktuara me ligjë të veçantë.
+
+ART. 68.
+
+Këshillat popullore drejtojnë punët e organevet t'administratës që varen prej tyre, janë të ngarkuara me çështje ekonomike dhe kulturale brënda kufive të kompetencës së tyre, sigurojnë rendin publik, kontrollojnë zbatimin e ligjëve, ruajnë të drejtat e shtetasve dhe- hartojnë buxhetet lokale.
+
+Këshillat popullore brënda kufive të kompetencës së tyre japin vendime me karakter të përgjithshëm në konformitet me Statutin, me ligjët, vendimet dhe me urdhëresat e përgjithëshme t'organeve të larta të pushtetit shtetëror.
+
+ART. 69.
+
+Në ushtrimin e funkcioneve të tyre të përgjithshme dhe lokale këshillat popullore duhet të bashkëpunojnë me popullin dhe me organizatat e masave punonjëse të popullit dhe të inspirohen nga iniciativa e tyre.
+
+ART. 70.
+
+Me përjashtim të lokaliteteve, komitetet ekzekutive të zgjedhura prej këshillave popullore janë organe ekzekutive dhe urdhërdhënëse të këtyre këshillave.
+
+Komiteti ekzekutiv përbëhet prej një kryetari, një sekretari dhe anëtarëve.
+
+ART. 71.
+
+Në lokalitetet organi ekzekutiv i këshillit popullor përbëhet nga kryetari dhe sekretari i këshillit.
+
+ART. 72.
+
+Këshilli popullor i lokalitetit thërret në afatin e caktuar me ligjë një kuvënt të zgjedhësve përpara të cilit jep llogari për punët e tij. Të drejtat dhe detyrat e këtij kuvëndi të lokalitetit do të caktohen me ligjë.
+
+ART. 73.
+
+Organet ekzekutive të këshillave popullore varen si nga këshillat popullore ashtu dhe nga organet ekzekutive dhe urdhër dhënëse të pushtetit shtetëror.
+
+ART. 74.
+
+Për të drejtuar degët e ndryshme të administratës këshillat popullore munt të krijojnë zyra ose sekcione. Veprimtaria e këtyre zyrave ose sekcioneve drejtohet nga komitetet ekzekutive dhe kontrollohet nga këshilli popullor dhe njëkohësisht nga zyrat ose sekcionet respektive të këshillavet popullore më të larta dhe nga ministria kompetente.
+
+KAPITULLI IV.
+
+Gjykatat dhe Prokuroria
+
+a) GJYKATAT
+
+ART. 75.
+
+Organet gjyqësore në Republikën Popullore të Shqipërisë janë: Gjykata e Lartë, gjykatat popullore të prefekturave dhe të nënëprefekturave dhe gjykatat ushtarake.
+
+Munt të krijohen me ligjë dhe gjykata të veçanta për një kategori të caktuar çështjesh.
+
+Gjykatat japin vendime në emër të popullit.
+
+ART. 76.
+
+Gjykatat janë të pavarura në ushtrimin e funkcionevet të tyre. Gjykatat janë të ndara nga administrata në të gjitha gradat. Vendimet e tyre nuk munt të ndryshohen veçse prej gjykatës kompetente më të lartë.
+
+Gjykatat më të larta kanë të drejtë të kontrollojnë brënda kufive të ligjës gjykatat më të unjta.
+
+Ministri i Drejtësisë drejton dhe kontrollon punën e administratës gjyqësore dhe kujdeset për organizimin dhe funkcionimin e mirë të gjyqeve.
+
+ART. 77.
+
+Gjykatat gjykojnë në bazë të ligjës.
+
+ART. 78.
+
+Seancat e gjykatave në parim janë publike.
+
+ART.79.
+
+Në parim vendimet jepen prej gjykatave të formuara në trup. Trupi gjyqësor i gjykatës së nënëprefekturës dhe i asaj të prefekturës, kur gjykon në gradë të parë, formohet nga gjykatës permanentë dhe nga juria që kanë të drejta të barabarta.
+
+Vendimet e dënimit me heqjen e lirisë më tepër se dhjetë vjet nuk munt të jepen në gradë të parë veçse prej një gjykate të prefekturës ose prej një gjykate më të lartë.
+
+ART. 80.
+
+Në të gjitha gjykatat përdoret gjuha shqipe. Shtetasit që nuk dijnë shqip munt të përdorin gjuhën e tyre dhe të flasin me anë të një përkthenjësi.
+
+ART. 81.
+
+Gjykata e Lartë zgjidhet me votim të fshehtë prej Kuvëndit Popullor të Republikës për katër vjet.
+
+Gjykatat e prefekturave zgjidhen me votim të fshehtë për tre vjet prej këshillave popullore të prefekturavet.
+
+Gjykatat e nënëprefekturave zgjidhen për tre vjet prej këshillave popullore të nënëprefekturave.
+
+Një person munt të zgjidhet shumë herë si gjykatës.
+
+Mënyra e zgjedhjes për të gjitha gjykatat do të caktohet me ligjë.
+
+ART. 82.
+
+Gjykata e Lartë është organi më i lartë i drejtësisë në Republikën Popullore të Shqipërisë.
+
+Gjykata e Lartë ka kompetencë për të zgjidhur konfliktet e kompetencës në mes të gjykatave civile dhe ushtarake dhe në mes të gjykatave dhe të autoriteteve të tjera.
+
+Rastet kur Gjykata e Lartë do të gjykojë në gradë të parë ose të dytë, do të caktohen me ligjë.
+
+ART. 83
+
+Gjykata e Lartë vendos në janë ose jo të ligjëshme vendimet e formës së prerë për të gjitha gjykatat e Republikës.
+
+Vetëm prokurori publik munt të ushtrojë rekursin e kontrollit kundër një vendimi të formës së prerë të gjykatave. Vendimi i dhënë mi një rekurs të tillë kundër një vendimi të formës së prerë nuk ka efekt mi gjënë e gjykuar, veçse kur ligja urdhëron ndryshe.
+
+b) PROKURORIA
+
+ART. 84.
+
+Prokuroria është një organ i Kuvëndit PopuIlor që ka për mision të kontrollojë zbatimin e përpiktë të ligjës prej ministrive dhe organevet të tjera administrative si edhe prej nëpunësve publikë dhe prej gjithë shtetasve.
+
+ART.85.
+
+Prokurori i Përgjithshëm i Republikës Popullore të Shqipërisë dhe ndihmësit e tij emërohen prej Kuvëndit Popullor.
+
+Prokurorët publikë të prefekturave dhe të nënëprefekturave emërohen prej Prokurorit të Përgjithshëm.
+
+ART. 86.
+
+Të gjithë prokurorët publikë janë të pavarur kundrejt të gjitha organeve lokale dhe varen vetëm prej Prokurorit të Përgjithshëm nga i cili marrin urdhëra dhe instrukcione.
+
+ART. 87.
+
+Prokurorët publikë kanë të drejtë të ngrejnë padijë penale, të ushtrojnë rekursin e apelit si dhe të drejtën e ndërhyrjes në vazhdimin e një procedimi gjyqësor dhe administrativ. Prokurorët publikë mund të ushtrojnë rekursin e kontrollit kundër vendimeve të formës së prerë të gjykatave dhe të organeve administrative kur këto vendime nuk pajtohen me ligjën.
+
+ART. 88.
+
+Prokurori ushtarak i Ushtrisë Kombëtare të Republikës Popullore të Shqipërisë dhe prokurorët e tjerë ushtarakë emërohen nga Komandanti Suprem i forcave t'armatosura të Republikës Popullore të Shqipërisë.
+
+KAPITULLI V.
+
+Lidhjet në mes të Organeve të Pushtetit Shtetëror dhe të Administratës Shtetërore
+
+ART. 89.
+
+Presidiumi i Kuvëndit Popullor munt të anullojë ose të pezullojë dekretet, instrukcionet ose vendimet e qeverisë kur janë në kundërshtim me dispozitat e Statutit dhe me ligjët.
+
+Qeveria munt të anullojë ose të pezullojë rregulloret, urdhëresat, instrukcionet dhe vendimet e ministrëve kur janë në kundërshtim me dispozitat themelore ose me dekretet, instrukcionet dhe vendimet e Qeverisë.
+
+ART. 90.
+
+Presidiumi i Kuvëndit Popullor dhe këshillat popullore më të larta munt të pezullojnë çdo akt të kundraligjshëm ose të paregulltë të këshillave popullore më të unjta.
+
+Qeveria ose ministrat munt të anullojnë e të pezullojnë çdo akt të kundraligjshëm ose të paregullt të komitetevet ekzekutive. Komitetet ekzekutive të këshillave popullore më të larta kanë po këtë të drejtë kundrejt komiteteve ekzekutive më të unjta.
+
+Këshillat popullore munt të anullojnë ose të pezullojnë çdo akt të kundraligjshëm ose të paregullt të komiteteve ekzekutive të tyre.
+
+Qeveria dhe komitetet ekzekutive të këshillave popullore më të larta munt të pezullojnë ekzekutimin e çdo akti të kundraligjshëm ose të paregullt të këshillave popullore më të unjta dhe t'u propozojnë këshillave të tyre që t'i anullojnë.
+
+ART. 91.
+
+Presidiumi i Kuvëndit Popullor dhe këshillat popullore më të larta munt të shpërndajnë këshillat popullore më të unjta dhe të caktojnë zgjedhjet për një këshill popullor të ri. Gjithashtu ato munt të pushojnë komitetet ekzekutive të këshillave popullore më të unjta dhe të urdhërojnë zgjedhjet për një komitet ekzekutiv të ri.
+
+KAPITULLI VI.
+
+Ushtëria Kombëtare
+
+ART. 92.
+
+Ushtëria Kombëtare është fuqia e armatosur e Republikës Popullore të Shqipërisë.
+
+Detyra e saj është të sigurojë dhe të mprojë independencën e shtetit dhe lirinë e popullit.
+
+Ajo ruan që të mos cënohen kufitë e shtetit dhe shërben për mbajtjen e paqës dhe të sigurisë.
+
+ART. 93.
+
+Komandanti Suprem i forcave t'armatosura të Republikës Popullore të Shqipërisë emërohet prej Kuvëndit Popullor.
+
+Komandanti Suprem drejton të gjitha forcat e armatosura të Republikës Popullore të Shqipërisë.
+
+PJESA E TRETË
+
+STEMA, FLAMURI KRYEQYTETI
+
+ART. 94.
+
+Stema e shtetit të Republikës Popullore të Shqipërisë përfaqëson një fushë të pështjellur me dy tufa kallinj gruri. Tufat me kallinj gruri janë lidhur në funt me kordhela, ku është shkruar data 24 Maj.
+
+Në mes të majrave të kallinjve ka një yll të kuq me pesë çipa. Në mes të fushës ka një shqiponjë të zezë me dy krerë.
+
+Art. 95.
+
+Flamuri i shtetit të Republikës Popullore të Shqipërisë përfaqëson një fushë të kuqe me në mes një shqiponjë të zezë me dy krerë. Mi shqiponjën ka një yll të kuq me pesë çipa, qëndisur rreth e rrotull me ar. Raporti në mes të gjerësisë dhe të gjatësisë së flamurit është një me një e dyzet.
+
+ART. 96.
+
+Kryeqyteti i Republikës Popullore të Shqipërisë është Tirana.
+
+Tiranë, më 14 Mars 1946
+
+KRYETARI I ASAMBLESË KUSHTETONJËSE Tuk Jakova d. v.
+
+SEKRETARI Sami Baholli
+
+_________________________
+
+PRESIDIUMI I ASAMBLESË KUSHTETONJESE
+
+Dekret Nr. 24 datë 15 Mars 1946
+
+SHPALLJA E STATUTIT TE REPUBLIKES POPULLORE TE SHQIPERISE
+
+PRESIDIUMI I ASAMBLESË KUSHTETONJËSE
+
+Në bazë të Ligjës Nr. 195 datë 12 Janar 1946, mi Presidiumin e Asamblesë Kushtetonjëse,
+
+DEKRETON:
+
+Shpalljen e Statutit të Republikës Popullore të Shqipërisë, t'aprovuar prej Asamblesë Kushtetonjëse, me datë 14 Mars 1946.
+
+Tiranë, më 15 Mars 1946.
+
+Dr. Omer Nishani d. v. / Gjen. Kol Enver Hoxha d. v.
+
+Gj. Leit. Koçi Xoxe d. v. / Dr. Medar Shtylla d. v.
+
+Gj. Maj. Myslim Peza d. v. / Prof. S. Malëshova d. v.
+
+Nako Spiru d. v / Kol. Ramadan Çitaku d. v.
+
+Sami Baholli d. v. / Dr. Manol Konomi d. v.
+
+Hasan Pulo d. v.
+
+Qiriako Harito d. v.
+
+Pandi Kristo d. v.
