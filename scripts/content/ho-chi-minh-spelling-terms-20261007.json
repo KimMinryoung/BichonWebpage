@@ -1,0 +1,10 @@
+{
+ "id": "ho-chi-minh-spelling-20261007",
+ "source": "https://ko.wikipedia.org/wiki/%ED%98%B8%EC%B0%8C%EB%AF%BC",
+ "claim": "Korean standard spelling of Hồ Chí Minh is 호찌민 (국립국어원 베트남어 표기; ko.wikipedia headword). Spelling unified 2026-10-07; content unchanged.",
+ "fixes": [
+  {"id": "comintern", "from": "호치민", "to": "호찌민"},
+  {"id": "communist-party-of-vietnam", "from": "호치민", "to": "호찌민"},
+  {"id": "peoples-war", "from": "호치민", "to": "호찌민"}
+ ]
+}
