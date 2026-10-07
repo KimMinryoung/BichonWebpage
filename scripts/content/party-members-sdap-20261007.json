@@ -1,0 +1,157 @@
+{
+ "changedBy": "party-sdap-20261007",
+ "people": [
+  {
+   "id": "wilhelm-bracke",
+   "activities": [
+    {
+     "endYear": 1875,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "Founding member and spokesman of the Social Democratic Workers' Party (SDAP), the forerunner of the SPD",
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+       "excerpt": "After the party was founded, Bracke became its spokesman; Braunschweig was chosen as the first seat.",
+       "locator": "Biography"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1869,
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-sdap",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1869,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "Member and board member of the ADAV",
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+       "excerpt": "On September 6, 1865, he founded a section of the General German Workers' Association in Braunschweig where he organized meetings and became a member of the board of the ADAV.",
+       "locator": "Biography"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1865,
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-adav",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1879,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "Member of the Reichstag",
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Bracke",
+       "excerpt": "In 1877 he became a member of the Reichstag.",
+       "locator": "Biography"
+      }
+     ],
+     "relation": "service",
+     "startYear": 1877,
+     "functionId": "legislature",
+     "affiliationId": "state-germany",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+    "https://en.wikipedia.org/wiki/Wilhelm_Bracke"
+   ]
+  },
+  {
+   "id": "august-bebel",
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "베벨은 독일 사회민주당(SPD)의 창립자 중 한 명이며 40년 넘게 독일 노동자 운동을 이끈 지도자였다.",
+       "source": "https://en.wikipedia.org/wiki/August_Bebel",
+       "excerpt": "One of the founders of the Social Democratic Party of Germany (SPD), he was a leader of the German workers' movement for over four decades.",
+       "locator": "characters 102:241; sha256 555249cc3a8751f9f2aeb8f176cc2003220e33027d2f8dd38f7d606919f633db"
+      },
+      {
+       "claim": "반사회주의법 시기에 베벨은 불법화된 당의 확고한 지도자로서 당 재무와 비밀 조직을 총괄했다.",
+       "source": "https://en.wikipedia.org/wiki/August_Bebel",
+       "excerpt": "During this \"heroic era\", Bebel emerged as the undisputed leader of the outlawed party. He assumed the duties of party treasurer and became the central organizer of the clandestine movement, maintaining contact with comrades throughout Germany and soliciting funds.",
+       "locator": "characters 11474:11739; sha256 555249cc3a8751f9f2aeb8f176cc2003220e33027d2f8dd38f7d606919f633db"
+      }
+     ],
+     "relation": "service",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-spd",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-sdap",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1869,
+     "endYear": 1875,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+       "locator": "History",
+       "claim": "Wilhelm Liebknecht and August Bebel founded and led the SDAP at Eisenach in 1869.",
+       "excerpt": "The Eisenachers, as they came to be called, were under the leadership of Wilhelm Liebknecht and August Bebel."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/August_Bebel",
+    "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany"
+   ]
+  },
+  {
+   "id": "wilhelm-liebknecht",
+   "activities": [
+    {
+     "endYear": null,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "위키백과 첫 문장이 밝힌 이 인물의 대표 활동.",
+       "source": "https://en.wikipedia.org/wiki/Wilhelm_Liebknecht",
+       "excerpt": "Wilhelm Martin Philipp Christian Ludwig Liebknecht (German: [ˈvɪlhɛlm ˈliːpknɛçt] ; 29 March 1826 – 7 August 1900) was a German social democratic politician and journalist.",
+       "locator": "plain-text extract lead sentence; sha256 bfca2b5757327d228c9233e95e8b388614749d3b8cd2e2ce75d9b1109a7c77ef"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-spd",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "functionId": "political-leadership",
+     "affiliationId": "party-german-sdap",
+     "affiliationStatus": "confirmed",
+     "relation": "membership",
+     "startYear": 1869,
+     "endYear": 1875,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+       "locator": "History",
+       "claim": "Wilhelm Liebknecht and August Bebel founded and led the SDAP at Eisenach in 1869.",
+       "excerpt": "The Eisenachers, as they came to be called, were under the leadership of Wilhelm Liebknecht and August Bebel."
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Social_Democratic_Workers%27_Party_of_Germany",
+    "https://en.wikipedia.org/wiki/Wilhelm_Liebknecht"
+   ]
+  }
+ ]
+}

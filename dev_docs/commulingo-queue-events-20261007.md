@@ -28,7 +28,7 @@
 
 카드가 없던 주요 인물 17명을 `people-extra-20261007-{a,b,c}.js`(보고 `REPORT-people-extra-{a,b,c}.md`)로 만들어 Admin upsert(`scripts/content/queue-events-20261007-people-extra-{a,b,c}.json`)로 넣었다. 기존 사건과의 관계는 `scripts/apply-event-person-links.js`(콘텐츠 편집 서비스 history_event_person, 행 파일 `…-people-extra-{a,b,c}-links.json`), 입장 모음은 마이그레이션으로 넣었다.
 
-- a 아이티·보불(325): 폴브렐(jacobin), 장바티스트 벨레(사건 본문의 Belley, 국민공회 첫 흑인 의원; jacobin), 도나시앵 드 로샹보, 토머스 메이틀랜드, 아실 바젠(monarchist), 빌헬름 브라케(non-bolshevik-socialist; SDAP가 카탈로그에 없어 party-german-spd), 샤를 드 프레시네(liberal-republican), 뒤크로. 맨 성 「로샹보/Rochambeau」「프레시네/Freycinet」는 아버지·삼촌과 겹쳐 검색 전용. 관계 8행.
+- a 아이티·보불(325): 폴브렐(jacobin), 장바티스트 벨레(사건 본문의 Belley, 국민공회 첫 흑인 의원; jacobin), 도나시앵 드 로샹보, 토머스 메이틀랜드, 아실 바젠(monarchist), 빌헬름 브라케(non-bolshevik-socialist; 대표 활동은 같은 날 카탈로그에 올린 party-german-sdap), 샤를 드 프레시네(liberal-republican), 뒤크로. 맨 성 「로샹보/Rochambeau」「프레시네/Freycinet」는 아버지·삼촌과 겹쳐 검색 전용. 관계 8행.
 - b 발칸(324): 투초비치(communist), 탈라트 파샤(nationalist; 「탈라트」 auto, Talat/Talaat 검색 전용), 콘스탄티노스 1세(monarchist). 관계 6행: 발칸 3, 1차 세계대전 2(탈라트 central-powers, 투초비치 antiwar-socialists), 브레스트-리토프스크 1(탈라트).
 - c 방데(328): 봉샹·레스퀴르·카두달·퓌자예(counterrevolution), 마르소(입장 없음, 클레베르·오슈 선례), 로시뇰(jacobin). 맨 성 링크 표현(봉샹·레스퀴르·퓌자예)은 linkExpressions. 관계 10행(방데 6, 프랑스 혁명 2, 혁명 전쟁 2). `audit-link-fires.js ko`로 맨 「마르소」가 어느 카드로도 걸리지 않음(마르소 피베르와 충돌 없음)을 확인.
 - 같은 날 `francois-de-charette` 카드의 「조네 조약」을 「라자주네 조약」으로 통일했다(bio·경력·절).
