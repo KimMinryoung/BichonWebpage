@@ -1,0 +1,28 @@
+{
+  "id": "soviet-draft-european-collective-security-treaty-1955",
+  "file": "soviet-draft-european-collective-security-treaty-1955.html",
+  "docLang": "ko",
+  "date": "1955-07-20",
+  "title": {
+    "ko": "유럽 집단안보에 관한 전유럽 조약 (기본 원칙) — 소련 대표단 초안 (1955년 7월 20일)",
+    "en": "General European Treaty on Collective Security in Europe (Basic Principles) — Soviet Delegation Draft (20 July 1955)"
+  },
+  "description": {
+    "ko": "1955년 7월 20일 제네바 4개국 정부수반 회의에서 소련 대표단이 내놓은 유럽 집단안보 조약의 기본 원칙 15개 항. 미국과 두 독일 국가를 포함한 상호 불가침·상호 원조 체제를 제안하고, 합의된 기한 뒤 바르샤바 조약·파리 협정·북대서양조약을 함께 종료하도록 했다.",
+    "en": "The fifteen basic principles of a European collective-security treaty tabled by the Soviet delegation at the Geneva four-power summit on 20 July 1955, proposing a non-aggression and mutual-assistance system including the United States and both German states, and the termination of the Warsaw Treaty, the Paris Agreements and the North Atlantic Treaty after an agreed period."
+  },
+  "kind": {
+    "ko": "조약·협정",
+    "en": "Treaties & agreements"
+  },
+  "source": "Проект делегации СССР. Общеевропейский договор о коллективной безопасности в Европе (основные принципы), внесён на Совещании глав правительств четырёх держав в Женеве 20 июля 1955 г. // Заря Востока (Тбилиси). 1955. 22 июля. № 172 (9364). С. 1 (ТАСС). 저본: 그루지야 국립의회도서관 디지털 아카이브 https://dspace.nplg.gov.ge/bitstream/1234/481248/1/Zaria_Vostoka_1955_N172.pdf (2026-10-07 접근). 국가 대표단의 공식 외교 문서로 저작권 보호 대상 아님.",
+  "people": ["bulganin"],
+  "terms": ["proposed-european-collective-security-treaty", "warsaw-pact", "north-atlantic-treaty-organization-nato", "paris-agreements-1954", "german-question", "collective-security", "united-nations"],
+  "events": ["warsaw-pact"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『유럽 집단안보에 관한 전유럽 조약』", "유럽 집단안보에 관한 일반 유럽조약", "소련의 유럽 집단안보 조약안", "제네바 소련안", "유럽 집단안보조약 소련 초안"],
+    "en": ["General European Treaty on Collective Security in Europe", "Soviet draft European security treaty (1955)", "Soviet Geneva draft treaty on European security"]
+  },
+  "noAutoLink": []
+}
