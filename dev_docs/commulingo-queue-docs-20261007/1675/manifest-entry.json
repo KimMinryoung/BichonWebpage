@@ -1,0 +1,28 @@
+{
+  "id": "italian-ultimatum-to-greece-1940",
+  "file": "italian-ultimatum-to-greece-1940.html",
+  "docLang": "ko",
+  "date": "1940-10-28",
+  "title": {
+    "ko": "이탈리아 정부가 그리스 정부에 보낸 통첩 (1940년 10월 28일) — 치아노 외무장관이 그라치 공사에게 내린 훈령",
+    "en": "The Italian Government's Communication to the Greek Government (28 October 1940) — Ciano's Instructions to Minister Grazzi"
+  },
+  "description": {
+    "ko": "1940년 10월 28일 새벽 아테네 주재 이탈리아 공사가 메탁사스에게 건넨 통첩과 그 전달을 지시한 치아노 외무장관의 전보 전문. 그리스가 영국에 협력해 중립을 어겼다고 비난하며 영국과의 전쟁 기간 동안 그리스의 전략 지점 점령을 허용하라고 요구하고, 이탈리아군이 세 시간 뒤 어떤 경우에도 진입한다고 구두로 알리게 했다.",
+    "en": "Full text of the note handed to Metaxas by the Italian minister in Athens before dawn on 28 October 1940, with Foreign Minister Ciano's covering instructions. It accused Greece of breaching neutrality in Britain's favour, demanded that Italian forces be allowed to occupy strategic points in Greece for the duration of the war with Britain, and had the minister add orally that Italian troops would enter in any case three hours later."
+  },
+  "kind": {
+    "ko": "정당·정부 문서",
+    "en": "Party & government documents"
+  },
+  "source": "Ciano a Grazzi, T. 33759-60-61-62/319-320-321-322 P.R., Roma, 26 ottobre 1940, ore 13,05 (comunicazione del Governo italiano al Governo greco, consegnata il 28 ottobre 1940 alle ore 3). I Documenti Diplomatici Italiani, serie 9, vol. V, Roma 1965, doc. 789. 디지털판 https://www.farnesina.ipzs.it/download/pdf/NONASERIE_VOLV (2026-10-07 접근). 국가 간 공식 외교 문서로 게재.",
+  "people": ["galeazzo-ciano", "ioannis-metaxas", "benito-mussolini"],
+  "terms": [],
+  "events": ["greek-resistance"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『이탈리아 정부가 그리스 정부에 보낸 통첩』", "이탈리아의 최후통첩", "1940년 10월 28일 최후통첩", "그리스에 보낸 이탈리아 최후통첩", "그라치의 최후통첩"],
+    "en": ["Italian ultimatum to Greece", "ultimatum of 28 October 1940", "Italian ultimatum of 1940", "Grazzi's ultimatum"]
+  },
+  "noAutoLink": []
+}
