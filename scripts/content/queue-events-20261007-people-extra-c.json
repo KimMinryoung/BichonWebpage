@@ -1,0 +1,1496 @@
+{
+ "changedBy": "queue-events-20261007-extra",
+ "people": [
+  {
+   "id": "charles-de-bonchamps",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "샤를",
+    "en": "Charles"
+   },
+   "familyName": {
+    "ko": "드 봉샹",
+    "en": "de Bonchamps"
+   },
+   "nativeName": "Charles Melchior Artus de Bonchamps",
+   "years": "1760–1793",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "앙주군을 이끈 가톨릭 왕당군 지휘관, 숄레에서 치명상을 입고 죽기 전 공화국군 포로 5,000명을 살렸다",
+    "en": "Commander of the Anjou army of the Catholic and Royal Army who, mortally wounded at Cholet, spared 5,000 republican prisoners before he died"
+   },
+   "bio": {
+    "ko": "1760년 앙주 쥐바르데유의 소귀족 집안에서 태어나 1775년 아키텐 연대에 들어갔고, 미국 독립전쟁 때 인도 원정에 나가 퐁디셰리에서 두 해를 보냈다. 척탄병 대위였다가 1791년 연대 반란 뒤 사직해 생플로랑르비에이 근처 영지로 물러났다. 1793년 3월 봉기한 농민들의 요청으로 지휘를 맡아 투아르·퐁트네르콩트 점령에 참여했고 거듭 크게 다쳤다. 9월 토르푸에서 앙주군을 이끌고 마인츠군을 물리쳤으나 10월 17일 숄레 전투에서 치명상을 입었다. 이튿날 생플로랑르비에이에서 부하들이 총살하려던 공화국군 포로 약 5,000명을 살려 주라고 명령하고 숨졌는데, 이를 「봉샹의 사면」이라 한다.",
+    "en": "Born in 1760 at Juvardeil in Anjou into a family of minor nobility, he joined the Aquitaine regiment in 1775 and, during the American War of Independence, went with the expedition to India and spent two years at Pondicherry. A captain of grenadiers, he resigned after a mutiny in his regiment in 1791 and retired to his estate near Saint-Florent-le-Vieil. In March 1793 the insurgent peasants made him their leader; he took part in the capture of Thouars and Fontenay-le-Comte and was repeatedly badly wounded. He led the Anjou army that repulsed the Army of Mainz at Torfou in September, and was mortally wounded at the battle of Cholet on 17 October. At Saint-Florent-le-Vieil the next day he ordered his men to spare about 5,000 republican prisoners they meant to shoot, and died; the act is remembered as the “pardon of Bonchamps”."
+   },
+   "fate": {
+    "kind": "killed",
+    "label": {
+     "ko": "전사",
+     "en": "Died of wounds"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "샤를 멜키오르 아르튀스 드 봉샹"
+    ],
+    "en": [
+     "Charles-Melchior Artus de Bonchamps",
+     "Charles Melchior Artus de Bonchamps",
+     "Marquis de Bonchamps"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+    "https://en.wikipedia.org/wiki/Charles_de_Bonchamps"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1760–1793",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "préambule",
+     "excerpt": "né le 10 mai 1760 à Juvardeil (Maine-et-Loire) et mort le 18 octobre 1793 à Varades (Loire inférieure)"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French officer and royalist general of the War in the Vendée",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "préambule",
+     "excerpt": "est un militaire français et un général royaliste de la guerre de Vendée"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "minor Angevin nobility",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Jeunesse",
+     "excerpt": "Charles Melchior Artus de Bonchamps est issu d'une famille de petite noblesse angevine."
+    },
+    {
+     "field": "bio",
+     "claim": "cadet in the Aquitaine regiment 1775",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Expédition aux Indes",
+     "excerpt": "En 1775, Charles de Bonchamps, alors âgé de 15 ans, s'engage comme cadet au régiment d'Aquitaine."
+    },
+    {
+     "field": "bio",
+     "claim": "two years at Pondicherry",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Expédition aux Indes",
+     "excerpt": "Charles de Bonchamps demeure pendant deux ans à Pondichéry, avant d'entamer le voyage du retour vers la France qui dure onze mois."
+    },
+    {
+     "field": "bio",
+     "claim": "captain of grenadiers 1787",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Début de la Révolution française",
+     "excerpt": "En 1787, il est élevé au grade de capitaine des grenadiers du régiment d'Aquitaine."
+    },
+    {
+     "field": "bio",
+     "claim": "resigned after the 1791 mutiny",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Début de la Révolution française",
+     "excerpt": "Après cet événement, Charles de Bonchamps démissionne et se retire sur sa terre de La Baronnière, près de Saint-Florent-le-Vieil."
+    },
+    {
+     "field": "bio",
+     "claim": "peasants asked him to lead the insurrection, March 1793",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Insurrection dans les Mauges et début de la guerre de Vendée",
+     "excerpt": "Le lendemain, les paysans viennent chercher Charles de Bonchamps à La Baronnière pour lui demander de prendre la tête de l'insurrection."
+    },
+    {
+     "field": "bio",
+     "claim": "Bressuire, Thouars, Fontenay-le-Comte; wounded",
+     "source": "https://en.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "lead",
+     "excerpt": "He was present at the taking of Bressuire, Thouars, and of Fontenay-le-Comte - where he was wounded but recovered."
+    },
+    {
+     "field": "bio",
+     "claim": "wounded again at Martigné-Briand",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Blessures et convalescences",
+     "excerpt": "Bonchamps est de nouveau grièvement blessé par un coup de pistolet tiré par un hussard qui lui fracasse le coude et pénètre dans la poitrine."
+    },
+    {
+     "field": "bio",
+     "claim": "Anjou army repulsed the Mainz troops at Torfou",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Combats contre l'Armée de Mayence",
+     "excerpt": "Les républicains ont d'abord l'avantage mais l'armée d'Anjou arrive en renfort et repousse les Mayençais qui se replient sur Clisson."
+    },
+    {
+     "field": "bio",
+     "claim": "mortally wounded at Cholet facing Marceau",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Combats contre l'Armée de Mayence",
+     "excerpt": "D'Elbée et Bonchamps sont tous deux grièvement blessés. Gravement touché au bas-ventre, Bonchamps reste sans connaissance et est évacué sur un brancard."
+    },
+    {
+     "field": "bio",
+     "claim": "pardoned about 5,000 republican prisoners, the \"pardon de Bonchamps\"",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "préambule",
+     "excerpt": "Il reste célèbre pour avoir gracié près de 5 000 soldats républicains à la suite de la bataille de Cholet du 17 octobre 1793, combat au cours duquel il est mortellement blessé. Cet acte est appelé a posteriori le « pardon de Bonchamps »."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1793,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+       "locator": "Insurrection dans les Mauges et début de la guerre de Vendée",
+       "claim": "Royalist general, commander of the army of Anjou in the Catholic and Royal Army",
+       "excerpt": "Bonchamps se montre réticent et doute qu'une victoire soit possible contre les troupes de la République mais il finit cependant par accepter de prendre la tête des insurgés."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1775,
+     "endYear": 1791,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+       "locator": "Début de la Révolution française",
+       "claim": "Officer of the royal Aquitaine regiment, India expedition, captain of grenadiers",
+       "excerpt": "En 1787, il est élevé au grade de capitaine des grenadiers du régiment d'Aquitaine."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1775
+      ],
+      "end": [
+       1791
+      ]
+     },
+     "r": {
+      "ko": "아키텐 연대 장교, 인도 원정",
+      "en": "Officer of the Aquitaine regiment; expedition to India"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "생플로랑르비에이 봉기군 지휘관, 앙주군 지휘",
+      "en": "Leader of the Saint-Florent-le-Vieil insurgents; commanded the army of Anjou"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "숄레 전투에서 치명상, 공화국군 포로 사면",
+      "en": "Mortally wounded at Cholet; pardoned the republican prisoners"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "봉샹",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "auto"
+    },
+    {
+     "text": "Bonchamps",
+     "lang": "en",
+     "role": "identity",
+     "policy": "auto"
+    }
+   ]
+  },
+  {
+   "id": "louis-marie-de-lescure",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "루이 마리",
+    "en": "Louis Marie"
+   },
+   "familyName": {
+    "ko": "드 레스퀴르",
+    "en": "de Lescure"
+   },
+   "nativeName": "Louis Marie de Salgues de Lescure",
+   "years": "1766–1793",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "「푸아투의 성인」으로 불린 가톨릭 왕당군 지휘관",
+    "en": "Commander of the Catholic and Royal Army known as the “saint of Poitou”"
+   },
+   "bio": {
+    "ko": "1766년 파리에서 태어나 사관학교를 나와 루아얄피에몽 기병연대의 중대장이 되었다. 1791년 사촌 빅투아르 드 도니상과 결혼했고, 앙리 드 라로슈자클랭과도 사촌이다. 1792년 8월 10일 튈르리궁 방어에 나섰다가 브레쉬르 근처 클리송 성으로 물러났고, 1793년 4월 봉기 주모자로 체포되었다. 5월 방데군이 브레쉬르를 점령해 풀려나자 지휘관이 되어 투아르에서 싸우고 퐁트네에 가장 먼저 들어갔으며 소뮈르에서 다쳤다. 10월 15일 숄레 근처 라트랑블레에서 머리에 총을 맞고 갈레른 행군에 실려 가다 11월 4일 숨졌다. 미망인은 뒤에 라로슈자클랭 후작부인으로 회고록을 남겼다.",
+    "en": "Born in Paris in 1766, he was educated at the École Militaire and commanded a cavalry company in the Royal-Piémont regiment. In 1791 he married his cousin Victoire de Donnissan; Henri de La Rochejaquelein was also his cousin. He took part in the defence of the Tuileries on 10 August 1792, then withdrew to the château of Clisson near Bressuire, and in April 1793 he was arrested as a promoter of the rising. Freed when the Vendéans took Bressuire in May, he became one of their leaders, fought at Thouars, was the first into Fontenay and was wounded at Saumur. Shot in the head at La Tremblaye near Cholet on 15 October, he was carried along on the Virée de Galerne and died on 4 November between Ernée and Fougères. His widow, later the marquise de La Rochejaquelein, wrote celebrated memoirs."
+   },
+   "fate": {
+    "kind": "killed",
+    "label": {
+     "ko": "전사",
+     "en": "Died of wounds"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "루이 마리 드 살그 드 레스퀴르",
+     "루이 드 살그 드 레스퀴르"
+    ],
+    "en": [
+     "Louis Marie de Salgues de Lescure",
+     "Louis-Marie de Salgues de Lescure",
+     "Louis de Salgues de Lescure",
+     "Louis-Marie de Lescure",
+     "Marquis de Lescure"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+    "https://en.wikipedia.org/wiki/Louis_Marie_de_Lescure"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1766–1793",
+     "source": "https://en.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "lead",
+     "excerpt": "13 October 1766 – 4 November 1793"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French soldier, leader of the Catholic and Royal Army",
+     "source": "https://en.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "lead",
+     "excerpt": "was a French soldier and opponent of the French Revolution, the cousin of Henri de la Rochejaquelein"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Paris; family from Lescure in the Albigeois",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Famille",
+     "excerpt": "La famille de Lescure est originaire de la terre de Lescure en Albigeois, où l'on voyait encore avant la Révolution française son château sur les bords du Tarn."
+    },
+    {
+     "field": "bio",
+     "claim": "École Militaire; Royal-Piémont cavalry",
+     "source": "https://en.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Early life",
+     "excerpt": "He was born in Versailles and educated at the École Militaire, which he left at the age of sixteen. Lescure was in command of a company of cavalry in the Regiment de Royal-Piémont."
+    },
+    {
+     "field": "bio",
+     "claim": "born in Paris (fr)",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "préambule",
+     "excerpt": "né le 15 octobre 1766 à Paris en l'hôtel de Montaigu rue des Fossoyeurs"
+    },
+    {
+     "field": "bio",
+     "claim": "married his cousin Victoire de Donnissan 1791",
+     "source": "https://en.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Early life",
+     "excerpt": "In 1791, he married his cousin Victoire de Donnissan de La Rochejaquelein, who was also the cousin of Henri de la Rochejaquelein"
+    },
+    {
+     "field": "bio",
+     "claim": "defence of the Tuileries on 10 August 1792; refuge at Clisson",
+     "source": "https://en.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Early life",
+     "excerpt": "on the Insurrection of 10 August 1792, took part in the defence of the Tuileries Palace against the mob of Paris. The day after, he was forced to leave the capital, and took refuge in the château of Clisson near Bressuire."
+    },
+    {
+     "field": "bio",
+     "claim": "arrested 9 April 1793 and held at Bressuire; freed in May",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Emprisonnement à Bressuire",
+     "excerpt": "La nuit du 2 au 3 mai, l'armée républicaine abandonne Bressuire et les prisonniers sont délivrés quelques heures plus tard par l'armée vendéenne lorsque celle-ci s'empare de la ville."
+    },
+    {
+     "field": "bio",
+     "claim": "Thouars, Fontenay, wounded at Saumur",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Guerre de Vendée",
+     "excerpt": "Le 5 mai 1793, il participe activement à la prise de Thouars. Le 16 mai 1793, à Fontenay, il entre le premier dans la ville et délivre des prisonniers vendéens qui y sont enfermés. Il est blessé à Saumur dont il s'empare."
+    },
+    {
+     "field": "bio",
+     "claim": "revenge at Tiffauges; head wound at La Tremblaye 15 October 1793",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "La virée de Galerne",
+     "excerpt": "Chassé de son quartier général par le général François-Joseph Westermann, il prend sa revanche à Tiffauges. Le 15 octobre 1793, blessé grièvement à la bataille de La Tremblaye par une balle reçue à la tête"
+    },
+    {
+     "field": "bio",
+     "claim": "died 4 November 1793 between Ernée and Fougères; \"saint du Poitou\"",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Mort",
+     "excerpt": "Celui qu'on appelait le « saint du Poitou » meurt le 4 novembre 1793 dans la voiture au lieu-dit Les Besnardières près de La Pellerine sur la route entre Ernée et Fougères."
+    },
+    {
+     "field": "bio",
+     "claim": "widow known as Madame de La Rochejaquelein",
+     "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+     "locator": "Mort",
+     "excerpt": "Sa veuve acquiert plus tard une grande célébrité, sous le nom de « Madame de La Rochejaquelein », du nom de son nouveau mari Louis du Vergier de La Rochejaquelein, frère d’Henri."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1793,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+       "locator": "préambule",
+       "claim": "One of the leaders of the Catholic and Royal Army",
+       "excerpt": "est l'un des chefs de l'Armée catholique et royale au cours de la guerre de Vendée, pendant la Révolution française"
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": null,
+     "endYear": 1792,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Louis_Marie_de_Lescure",
+       "locator": "Avant la Révolution française",
+       "claim": "Cavalry company commander in the Royal-Piémont regiment; defended the Tuileries",
+       "excerpt": "Peu de temps avant la Révolution française, il obtient une compagnie de cavalerie dans le régiment Royal-Piémont cavalerie."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1792
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "튈르리궁 방어",
+      "en": "Defence of the Tuileries"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "브레쉬르에서 체포, 방데군에 의해 석방",
+      "en": "Arrested and held at Bressuire; freed by the Vendéans"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "가톨릭 왕당군 지휘관, 투아르·퐁트네·소뮈르",
+      "en": "Leader in the Catholic and Royal Army at Thouars, Fontenay and Saumur"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "라트랑블레에서 중상, 갈레른 행군 중 사망",
+      "en": "Gravely wounded at La Tremblaye; died during the Virée de Galerne"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "레스퀴르",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "auto"
+    },
+    {
+     "text": "Lescure",
+     "lang": "en",
+     "role": "identity",
+     "policy": "auto"
+    }
+   ]
+  },
+  {
+   "id": "georges-cadoudal",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "조르주",
+    "en": "Georges"
+   },
+   "familyName": {
+    "ko": "카두달",
+    "en": "Cadoudal"
+   },
+   "nativeName": "Georges Cadoudal",
+   "years": "1771–1804",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france",
+    "label": {
+     "ko": "프랑스 (브르타뉴인)",
+     "en": "France (Breton)"
+    }
+   },
+   "epithet": {
+    "ko": "모르비앙 슈앙을 이끌고 나폴레옹 암살 음모를 꾸미다 처형된 브르타뉴의 반혁명 지휘관",
+    "en": "Breton counter-revolutionary who led the Chouans of the Morbihan and was executed for plotting against Napoleon"
+   },
+   "bio": {
+    "ko": "1771년 브르타뉴 브레크의 부농 집안에서 태어나 1791년 성직자 민사기본법 뒤 혁명에 등을 돌렸고, 1793년 징집에 맞서 봉기했다. 방데군에 들어가 봉샹 아래 브르타뉴 중대 대위로 갈레른 행군에서 사부네까지 싸웠다. 1794년 체포되어 브레스트에 갇혔다가 탈출해 오레 지방 슈앙을 이끌었고, 1795년 키브롱 상륙에 슈앙을 모았으며 8월 모르비앙 가톨릭 왕당군 사령관이 되어 퓌자예와 망명 장교들에 맞섰다. 1796년 강화했다가 다시 싸웠고 보나파르트의 회유를 거부했다. 1803년 제1통령을 납치하거나 죽이려 파리에 잠입했다가 체포되어 1804년 6월 25일 처형되었고, 복고 왕정은 그를 원수로 추서했다.",
+    "en": "Born in 1771 into a well-off peasant family at Brech in Brittany, he turned against the Revolution after the Civil Constitution of the Clergy and rose against conscription in 1793. He joined the Vendéan army as a captain of the Breton companies under Bonchamps and fought through the Virée de Galerne to Savenay. Arrested in 1794 and imprisoned at Brest, he escaped and led the Chouans of the Auray country; in 1795 he brought Chouans to the Quiberon landing and in August became commander of the Catholic and Royal Army of the Morbihan, resisting Puisaye and the émigré officers. He made peace in 1796, fought again and refused Bonaparte’s offers. In 1803 he slipped into Paris to kidnap or kill the First Consul, was arrested and guillotined on 25 June 1804; the restored Bourbons made him a Marshal of France posthumously."
+   },
+   "fate": {
+    "kind": "executed",
+    "label": {
+     "ko": "처형",
+     "en": "Guillotined"
+    }
+   },
+   "aliases": {
+    "ko": [],
+    "en": [
+     "Jorj Kadoudal"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+    "https://en.wikipedia.org/wiki/Georges_Cadoudal"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1771–1804",
+     "source": "https://en.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "lead",
+     "excerpt": "1 January 1771 – 25 June 1804"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French royalist general (Breton)",
+     "source": "https://en.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "lead",
+     "excerpt": "was a Breton counter-revolutionary and leader of the Chouannerie during the French Revolution"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "Breton, born at Brech",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "préambule",
+     "excerpt": "Georges Cadoudal, né à Brec'h le 1er janvier 1771 et mort guillotiné le 25 juin 1804 à Paris, est un général chouan, commandant de l'Armée catholique et royale de Bretagne."
+    },
+    {
+     "field": "bio",
+     "claim": "peasant family; turned from the Revolution in 1791; took up arms in 1793",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "préambule",
+     "excerpt": "Fils de paysans aisés, charismatique et doué d'une force herculéenne, Cadoudal est d'abord partisan de la Révolution française. Il s'en détache en 1791, après la constitution civile du clergé, puis prend les armes contre elle en 1793 pour s'opposer au recrutement militaire de la levée en masse."
+    },
+    {
+     "field": "bio",
+     "claim": "captain of the Breton companies under Bonchamps; Virée de Galerne; Savenay",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "préambule",
+     "excerpt": "Capitaine dans les compagnies bretonnes sous les ordres de Bonchamps, il prend part aux batailles de la guerre de Vendée. Après la défaite des Vendéens à la deuxième bataille de Cholet et la mort de Bonchamps, il sert sous les ordres de Stofflet et participe à la Virée de Galerne. Il combat avec les Vendéens jusqu'à l'ultime bataille de Savenay."
+    },
+    {
+     "field": "bio",
+     "claim": "arrested, imprisoned at Brest, escaped",
+     "source": "https://en.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "Biography",
+     "excerpt": "Returning to Morbihan, he was arrested, and imprisoned at Brest. He succeeded, however, in escaping, and began again the struggle against the Revolution."
+    },
+    {
+     "field": "bio",
+     "claim": "led Chouans of Auray; refused La Mabilais; Quiberon; proclaimed general",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "préambule",
+     "excerpt": "De retour dans le Morbihan, Cadoudal prend le commandement des troupes de Chouans qui se forment dans le pays d'Auray. Il refuse de signer le traité de la Mabilais et de reconnaître la République. Colonel en 1795, il se distingue lors de l'expédition de Quiberon, après la débâcle de l'armée des émigrés, il parvient à sauver ses troupes des colonnes républicaines et est proclamé général par ses hommes."
+    },
+    {
+     "field": "bio",
+     "claim": "elected general of the Catholic and Royal Army of the Morbihan, 16 August 1795",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "Cadoudal, général du Morbihan",
+     "excerpt": "Le 16 août 1795, au château de la Grand'ville à Grand-Champ, Cadoudal est élu général de l'Armée catholique et royale du Morbihan, lors de la réunion du Conseil royaliste."
+    },
+    {
+     "field": "bio",
+     "claim": "opposed Puisaye and the émigré officers; peace 1796, war again",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "préambule",
+     "excerpt": "Défenseur d'une chouannerie populaire, il s'oppose à son chef, Joseph de Puisaye et à la domination des officiers émigrés. Il signe la paix en 1796, puis reprend la guerre en 1798."
+    },
+    {
+     "field": "bio",
+     "claim": "refused Bonaparte's offers",
+     "source": "https://en.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "Biography",
+     "excerpt": "He refused to come to any understanding with the government, although offers were made to him by Napoleon Bonaparte, who admired his skill and his obstinate energy."
+    },
+    {
+     "field": "bio",
+     "claim": "plot to capture or kill the First Consul; guillotined; posthumous marshal",
+     "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+     "locator": "préambule",
+     "excerpt": "Jugé avec le général Moreau, Cadoudal est condamné à mort le 11 juin et guillotiné à Paris, place de l'Hôtel-de-Ville, le 25 juin 1804 avec onze autres royalistes. Sa famille est anoblie par Louis XVIII et il est fait maréchal de France à titre posthume."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1794,
+     "endYear": 1804,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+       "locator": "Cadoudal, général du Morbihan",
+       "claim": "Chouan general, commander of the Catholic and Royal Army of the Morbihan and later of Brittany (no catalog affiliation for the Chouannerie)",
+       "excerpt": "Cadoudal est élu général de l'Armée catholique et royale du Morbihan, lors de la réunion du Conseil royaliste."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-catholic-royal-army",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1793,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Georges_Cadoudal",
+       "locator": "La Guerre de Vendée",
+       "claim": "Captain of the Breton companies of the Vendéan army under Bonchamps",
+       "excerpt": "Il se place sous les ordres du général Charles de Bonchamps et sert au sein des compagnies bretonnes qui rassemblent les insurgés du nord de la Loire."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "방데군 브르타뉴 중대 대위, 갈레른 행군",
+      "en": "Captain of the Breton companies of the Vendéan army; Virée de Galerne"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "체포, 브레스트 수감 뒤 탈출",
+      "en": "Arrested and imprisoned at Brest; escaped"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1795
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "키브롱 상륙 참가, 모르비앙 가톨릭 왕당군 사령관",
+      "en": "Fought in the Quiberon landing; commander of the Catholic and Royal Army of the Morbihan"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1800
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "브르타뉴 왕당군 총사령관(중장)",
+      "en": "Lieutenant-general commanding the royal troops of Brittany"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1803
+      ],
+      "end": [
+       1804
+      ]
+     },
+     "r": {
+      "ko": "제1통령 암살 음모, 체포·처형",
+      "en": "Plot against the First Consul; arrested and guillotined"
+     }
+    }
+   ]
+  },
+  {
+   "id": "joseph-de-puisaye",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "조제프",
+    "en": "Joseph"
+   },
+   "familyName": {
+    "ko": "드 퓌자예",
+    "en": "de Puisaye"
+   },
+   "nativeName": "Joseph-Geneviève de Puisaye",
+   "years": "1755–1827",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "영국의 지원을 얻어 1795년 키브롱 상륙을 기획한 브르타뉴 슈앙 총사령관",
+    "en": "Commander of the Breton Chouans who won British backing for the Quiberon landing of 1795"
+   },
+   "bio": {
+    "ko": "1755년 모르타뉴오페르슈의 귀족 집안에서 태어나 군인이 되었고, 1789년 페르슈 귀족 대표로 삼부회에 나가 입헌군주정을 지지했다. 1793년 지롱드파 쪽에서 노르망디 연방주의 군대를 지휘하다 패하자 브르타뉴로 숨어 들어가 슈앙을 재조직했다. 1794년 영국에서 피트 정부를 설득해 1795년 6월 망명군 3,500명과 키브롱반도에 상륙했으나, 데르빌리와 지휘권을 다투다 기회를 놓쳤고 오슈가 반도를 막자 영국 함선으로 물러나 비겁하다는 비난을 받았다. 카두달 등 슈앙 지휘관들의 신망을 잃어 1797년 지휘권을 내놓았다. 어퍼캐나다 정착지 건설에 실패한 뒤 1802년 영국 국적을 얻었고 1827년 해머스미스에서 죽었다.",
+    "en": "Born in 1755 into a noble family of Mortagne-au-Perche, he became an army officer and sat in the Estates-General of 1789 for the nobility of the Perche, supporting a constitutional monarchy. Siding with the Girondins in 1793, he commanded the federalist army of Normandy and, after its rout, went into hiding in Brittany and reorganised the Chouans. In England in 1794 he persuaded Pitt’s government to back an émigré invasion and landed on the Quiberon peninsula with 3,500 émigrés in June 1795, but a quarrel over command with d’Hervilly wasted the chance, and when Hoche sealed the peninsula he withdrew to a British ship and was accused of cowardice. Having lost the confidence of Cadoudal and the other Chouan chiefs, he gave up his command in 1797. After a failed settlement in Upper Canada he became a British subject in 1802 and died at Hammersmith in 1827."
+   },
+   "fate": {
+    "kind": "exile",
+    "label": {
+     "ko": "망명지에서 사망",
+     "en": "Died in exile"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "조제프주느비에브 드 퓌자예"
+    ],
+    "en": [
+     "Joseph-Geneviève de Puisaye",
+     "Joseph Geneviève de Puisaye",
+     "Comte de Puisaye"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+    "https://en.wikipedia.org/wiki/Joseph_de_Puisaye"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1755–1827",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "lead",
+     "excerpt": "6 March 1755 – 13 September 1827"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French military officer and politician; naturalised British 1802",
+     "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "préambule",
+     "excerpt": "est un militaire et un homme politique français qui a pris part à la Révolution française, d'abord comme partisan de la monarchie constitutionnelle, puis, après la chute de Louis XVI, comme chef de la Chouannerie en Bretagne."
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born at Mortagne-au-Perche to a French aristocratic family",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Before the revolution",
+     "excerpt": "De Puisaye was born in Mortagne-au-Perche, the fourth son of a French aristocratic family."
+    },
+    {
+     "field": "bio",
+     "claim": "seminary, army commission",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Before the revolution",
+     "excerpt": "He joined the French Army in 1773 at age eighteen."
+    },
+    {
+     "field": "bio",
+     "claim": "delegate to the Estates-General; constitutional monarchy; Girondins",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "A revolutionary becomes a counter-revolutionary",
+     "excerpt": "In the Estates-General he supported a constitutional monarchy and aligned himself with the Girondins."
+    },
+    {
+     "field": "bio",
+     "claim": "federalist army of Normandy; Brécourt",
+     "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Du fédéralisme à la contre-révolution",
+     "excerpt": "En juin 1793, il rejoint l’opposition girondine et reçoit, conjointement avec Wimpffen, le commandement de l’armée fédéraliste de Normandie."
+    },
+    {
+     "field": "bio",
+     "claim": "went into hiding and reorganised the Chouans in Brittany",
+     "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Du fédéralisme à la contre-révolution",
+     "excerpt": "Puisaye entre alors dans la clandestinité. Il gagne la Bretagne, où il rallie et réorganise dans le département d’Ille-et-Vilaine les débris de la chouannerie."
+    },
+    {
+     "field": "bio",
+     "claim": "persuaded Pitt to back the invasion",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "First French invasion",
+     "excerpt": "In England, he persuaded the British Prime Minister William Pitt to back an invasion of France to restore the monarchy."
+    },
+    {
+     "field": "bio",
+     "claim": "about 3,500 men; Quiberon; command dispute with d'Hervilly",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "First French invasion",
+     "excerpt": "The British recognised Puisaye as the commander of the force, but French royalist forces recognised the Comte d'Hervilly as the commander of the forces, and internal power struggles plagued the unit."
+    },
+    {
+     "field": "bio",
+     "claim": "escaped to England, accused of cowardice",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "First French invasion",
+     "excerpt": "Puisaye escaped to England, claiming the need to save official correspondence, although he was accused of cowardice."
+    },
+    {
+     "field": "bio",
+     "claim": "criticised by Cadoudal's circle; resigned command 5 December 1797",
+     "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "L’expédition de Quiberon",
+     "excerpt": "Sa morgue et sa hauteur le rendent impopulaire, d’autant qu’il est en butte aux critiques des proches de Cadoudal. Désavoué par le comte d'Artois, dont il avait annoncé prématurément la venue en Vendée, il résilie son commandement le 5 décembre 1797."
+    },
+    {
+     "field": "bio",
+     "claim": "Upper Canada settlement 1798",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Move to Upper Canada",
+     "excerpt": "He and forty-one other settlers departed England for Upper Canada in the summer of 1798."
+    },
+    {
+     "field": "bio",
+     "claim": "British nationality 1802",
+     "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Un réprouvé",
+     "excerpt": "d’autant qu’il avait obtenu la nationalité britannique en 1802"
+    },
+    {
+     "field": "bio",
+     "claim": "died at Hammersmith 1827",
+     "source": "https://en.wikipedia.org/wiki/Joseph_de_Puisaye",
+     "locator": "Move to Upper Canada",
+     "excerpt": "Puisaye died in Hammersmith on 13 September 1827."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": null,
+     "affiliationStatus": "unresolved",
+     "relation": "unresolved",
+     "startYear": 1793,
+     "endYear": 1797,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+       "locator": "préambule",
+       "claim": "Commander in chief of the Chouans, the Catholic and Royal Army of Brittany; led the Quiberon landing (no catalog affiliation for the Chouannerie)",
+       "excerpt": "Son activité importante lui permet d'être reconnu lieutenant-général dans l'armée britannique et dans l'armée catholique et royale de Bretagne dont il reçoit le commandement en chef."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-girondins",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1793,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Joseph_de_Puisaye",
+       "locator": "Du fédéralisme à la contre-révolution",
+       "claim": "Commanded the Girondin federalist army of Normandy",
+       "excerpt": "En juin 1793, il rejoint l’opposition girondine et reçoit, conjointement avec Wimpffen, le commandement de l’armée fédéraliste de Normandie."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1789
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "삼부회 페르슈 귀족 대표",
+      "en": "Deputy of the nobility of the Perche to the Estates-General"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "노르망디 연방주의 군대 지휘관",
+      "en": "Commander of the federalist army of Normandy"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": [
+       1797
+      ]
+     },
+     "r": {
+      "ko": "브르타뉴 슈앙 총사령관",
+      "en": "Commander in chief of the Breton Chouans"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1795
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "키브롱 상륙 지휘",
+      "en": "Led the Quiberon landing"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1798
+      ],
+      "end": [
+       1802
+      ]
+     },
+     "r": {
+      "ko": "어퍼캐나다 망명 귀족 정착지 건설 시도",
+      "en": "Attempted an émigré settlement in Upper Canada"
+     }
+    }
+   ],
+   "linkExpressions": [
+    {
+     "text": "퓌자예",
+     "lang": "ko",
+     "role": "identity",
+     "policy": "auto"
+    },
+    {
+     "text": "Puisaye",
+     "lang": "en",
+     "role": "identity",
+     "policy": "auto"
+    }
+   ]
+  },
+  {
+   "id": "francois-severin-marceau",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "프랑수아 세브랭",
+    "en": "François Séverin"
+   },
+   "familyName": {
+    "ko": "마르소",
+    "en": "Marceau"
+   },
+   "nativeName": "François Séverin Marceau-Desgraviers",
+   "years": "1769–1796",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "클레베르와 함께 르망과 사부네에서 방데군을 섬멸한 젊은 공화국 장군",
+    "en": "Young republican general who destroyed the Vendéan army with Kléber at Le Mans and Savenay"
+   },
+   "bio": {
+    "ko": "1769년 샤르트르의 소송대리인 집안에서 태어나 16세에 앙굴렘 연대에 입대했고, 1789년 바스티유 습격에 참여했다. 1792년 외르에루아르 의용대대 대위로 베르됭 방어에 나섰고, 1793년 방데에서 잠시 체포되었다가 풀려나 소뮈르 전투에서 파견의원 부르보트를 구해 빠르게 진급했다. 10월 숄레 전투에서 포병을 숨겼다가 쏘는 계략으로 방데군 중앙을 무너뜨렸고, 11월 24세에 사단장으로 로시뇰을 대신해 서부군 임시 총사령관이 되었다. 12월 클레베르와 함께 르망과 사부네에서 가톨릭 왕당군을 섬멸했다. 이후 상브르에뫼즈군에서 싸우다 1796년 9월 알텐키르헨에서 후위를 지휘하던 중 치명상을 입고 27세로 숨졌다.",
+    "en": "Born in 1769 in Chartres, the son of a prosecutor, he enlisted in the Angoulême regiment at sixteen and took part in the storming of the Bastille in 1789. A captain of the Eure-et-Loir volunteers at the defence of Verdun in 1792, he was briefly arrested in the Vendée in 1793 and, released, rescued the representative Bourbotte at the battle of Saumur, which brought rapid promotion. At Cholet in October he broke the Vendéan centre by unmasking his guns at close range, and in November, a divisional general at twenty-four, he replaced Rossignol as interim commander of the Army of the West. With Kléber he destroyed the Catholic and Royal Army at Le Mans and Savenay in December. He then fought with the Army of the Sambre-and-Meuse and was mortally wounded commanding the rear guard near Altenkirchen in September 1796, dying at twenty-seven."
+   },
+   "fate": {
+    "kind": "killed",
+    "label": {
+     "ko": "전사",
+     "en": "Killed in action"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "프랑수아 세브랭 마르소데그라비에",
+     "프랑수아 마르소"
+    ],
+    "en": [
+     "François Séverin Marceau-Desgraviers",
+     "François-Séverin Marceau",
+     "François Marceau",
+     "Francois Severin Marceau"
+    ]
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+    "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+    "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1769–1796",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "lead",
+     "excerpt": "1 March 1769 – 21 September 1796"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French general of the Revolutionary Wars",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "lead",
+     "excerpt": "was a French general of the Revolutionary Wars"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in Chartres",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Early life",
+     "excerpt": "Desgraviers was born on 1 March 1769 in Chartres, in the province of Orléanais, the son of a prosecutor."
+    },
+    {
+     "field": "bio",
+     "claim": "Angoulême regiment; storming of the Bastille",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Early life",
+     "excerpt": "In December 1785, at the age of 16, he enlisted in the Angoulême Infantry Regiment"
+    },
+    {
+     "field": "bio",
+     "claim": "Bastille",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Early life",
+     "excerpt": "While on furlough in Paris, Marceau participated in the storming of the Bastille on 14 July 1789."
+    },
+    {
+     "field": "bio",
+     "claim": "Eure-et-Loir volunteers; Verdun",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Revolutionary Wars",
+     "excerpt": "In July 1792, Marceau was appointed captain of the Revolutionary Army's 2nd Battalion of Volunteers of Eure-et-Loir. He took part in the defence of Verdun later in the year"
+    },
+    {
+     "field": "bio",
+     "claim": "arrested with Westermann on Bourbotte's order, then released",
+     "source": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "En service dans l'armée de l'Ouest",
+     "excerpt": "En 1793, il sert en Vendée dans l'armée de l'Ouest, où il se trouve mis en état d'arrestation avec son chef François-Joseph Westermann, par ordre du représentant Pierre Bourbotte."
+    },
+    {
+     "field": "bio",
+     "claim": "rescued Bourbotte at Saumur",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Vendée",
+     "excerpt": "distinguishing himself at the Battle of Saumur on 10 June 1793 by rescuing the representative Pierre Bourbotte from the hands of the insurgents"
+    },
+    {
+     "field": "bio",
+     "claim": "Cholet ruse with the artillery",
+     "source": "https://fr.wikipedia.org/wiki/Charles_de_Bonchamps",
+     "locator": "Combats contre l'Armée de Mayence",
+     "excerpt": "Cependant Marceau utilise une ruse : il laisse les Vendéens s'approcher de ses lignes, puis tout à coup il fait reculer son infanterie et dévoile ainsi son artillerie."
+    },
+    {
+     "field": "bio",
+     "claim": "interim commander of the Army of the West in place of Rossignol until Turreau",
+     "source": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "En service dans l'armée de l'Ouest",
+     "excerpt": "ils confient à Marceau, sur la proposition de Kléber, le commandement en chef par intérim de l’armée de l’Ouest le 27 novembre 1793, à la place de Jean-Antoine Rossignol, et en attendant l'arrivée de Louis Marie Turreau le 30 décembre 1793."
+    },
+    {
+     "field": "bio",
+     "claim": "Le Mans and Savenay with Kléber",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Vendée",
+     "excerpt": "With Kléber, he crushed the Vendean rebels at the Battle of Le Mans on 12–13 December and at the Battle of Savenay on 23 December 1793."
+    },
+    {
+     "field": "bio",
+     "claim": "Fleurus, Koblenz, Sambre-and-Meuse",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Battles of 1795–96",
+     "excerpt": "He took part in the 1795-1796 campaign with the armies of the Sambre and Meuse, fighting on the Rhine and the Lahn"
+    },
+    {
+     "field": "bio",
+     "claim": "mortally wounded near Altenkirchen",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Death",
+     "excerpt": "While conducting a successful rear guard action near Altenkirchen on 19 September, he received a mortal wound. He died two days later in the early morning, aged only twenty-seven."
+    },
+    {
+     "field": "bio",
+     "claim": "Panthéon 1889",
+     "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+     "locator": "Death",
+     "excerpt": "They were transferred to the Panthéon in 1889."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1792,
+     "endYear": 1796,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://en.wikipedia.org/wiki/Fran%C3%A7ois_S%C3%A9verin_Marceau",
+       "locator": "Vendée",
+       "claim": "General of the Republic: the Vendée, interim commander of the Army of the West, Sambre-and-Meuse",
+       "excerpt": "Marceau in turn became a général de division on 10 November; then succeeded to the commander-in-chief ad interim."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1785
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "앙굴렘 보병연대 입대",
+      "en": "Enlisted in the Angoulême infantry regiment"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1792
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "외르에루아르 의용대대 대위, 베르됭 방어",
+      "en": "Captain of the Eure-et-Loir volunteers; defence of Verdun"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "서부군 사단장·임시 총사령관, 르망·사부네 승리",
+      "en": "Divisional general and interim commander of the Army of the West; victories at Le Mans and Savenay"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1794
+      ],
+      "end": [
+       1796
+      ]
+     },
+     "r": {
+      "ko": "상브르에뫼즈군 사단장",
+      "en": "Divisional general in the Army of the Sambre-and-Meuse"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1796
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "알텐키르헨에서 치명상",
+      "en": "Mortally wounded near Altenkirchen"
+     }
+    }
+   ]
+  },
+  {
+   "id": "jean-antoine-rossignol",
+   "groupId": "france-revolution",
+   "givenName": {
+    "ko": "장앙투안",
+    "en": "Jean Antoine"
+   },
+   "familyName": {
+    "ko": "로시뇰",
+    "en": "Rossignol"
+   },
+   "nativeName": "Jean-Antoine Rossignol",
+   "years": "1759–1802",
+   "citizenship": {
+    "code": "france"
+   },
+   "nationalOrigin": {
+    "code": "france"
+   },
+   "epithet": {
+    "ko": "바스티유를 친 생탕투안 출신 금세공 노동자로 방데에서 서부군을 지휘한 상퀼로트 장군",
+    "en": "Faubourg Saint-Antoine goldsmith who stormed the Bastille and, as a sans-culotte general, commanded the Army of the West in the Vendée"
+   },
+   "bio": {
+    "ko": "1759년 파리 생탕투안 문밖의 가난한 집에서 태어난 금세공 노동자로, 1789년 바스티유 습격과 1792년 8월 10일 봉기에 가담해 봉기 코뮌 총평의회에 들어갔다. 1793년 헌병 중령으로 방데에 가서 롱생의 비호로 7월 라로셸 연안군 총사령관이 되었다. 약탈과 무능으로 8월 해임되었으나 국민공회가 복직시켰고, 9월 로베스피에르와 에베르가 자코뱅 클럽에서 그를 변호했다. 11월 서부군과 브레스트·셰르부르 연안군까지 맡았으나 돌의 패배 뒤 밀려났다. 1794년 4월 해임되고 테르미도르 뒤 투옥되었으며, 바뵈프의 평등파 음모에 연루되었다가 무죄로 풀려났다. 1801년 자코뱅들과 함께 유배되어 1802년 코모로의 앙주안섬에서 병사했다.",
+    "en": "A goldsmith born in 1759 to a poor family of the Faubourg Saint-Antoine, he stormed the Bastille in 1789, helped prepare the rising of 10 August 1792 and sat on the general council of the insurrectionary Commune. Sent to the Vendée in 1793 as a lieutenant-colonel of gendarmerie, he became commander of the Army of the Coasts of La Rochelle in July under Ronsin’s protection. Dismissed in August for looting and incompetence, he was reinstated by the Convention and defended at the Jacobin Club by Robespierre and Hébert in September. In November he also took over the Army of the West and the Armies of the Coasts of Brest and Cherbourg, losing them after the defeat at Dol. Dismissed in April 1794 and imprisoned after Thermidor, he was implicated in Babeuf’s Conspiracy of the Equals but acquitted. Deported with other Jacobins in 1801, he died of disease on Anjouan in the Comoros in 1802."
+   },
+   "fate": {
+    "kind": "exile",
+    "label": {
+     "ko": "유배지에서 사망",
+     "en": "Died in deportation"
+    }
+   },
+   "aliases": {
+    "ko": [
+     "장 앙투안 로시뇰"
+    ],
+    "en": [
+     "Jean-Antoine Rossignol",
+     "Jean Rossignol"
+    ]
+   },
+   "sources": [
+    "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+    "https://en.wikipedia.org/wiki/Jean_Antoine_Rossignol"
+   ],
+   "evidence": [
+    {
+     "field": "years",
+     "claim": "1759–1802",
+     "source": "https://en.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "lead",
+     "excerpt": "7 November 1759 – 27 April 1802"
+    },
+    {
+     "field": "citizenship",
+     "claim": "French revolutionary militant and general",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "préambule",
+     "excerpt": "est un militant révolutionnaire et un général de la Révolution française, né le 7 novembre 1759 à Paris"
+    },
+    {
+     "field": "nationalOrigin",
+     "claim": "born in the Faubourg Saint-Antoine, Paris; father from Burgundy",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Un enfant du faubourg",
+     "excerpt": "il naît le 7 novembre 1759 à Paris, dans le faubourg Saint-Antoine où est installée sa famille."
+    },
+    {
+     "field": "bio",
+     "claim": "goldsmith apprentice",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Un enfant du faubourg",
+     "excerpt": "En 1774, à quatorze ans, après trois années d'apprentissage comme ouvrier orfèvre"
+    },
+    {
+     "field": "bio",
+     "claim": "Royal-Roussillon regiment 1775–1783",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Un enfant du faubourg",
+     "excerpt": "Le 13 août 1775, il intègre à Dunkerque le régiment Royal-Roussillon sous le nom de « Francœur ». [...] En 1783, il obtient son congé par ancienneté et reprend son métier d'orfèvre."
+    },
+    {
+     "field": "bio",
+     "claim": "Bastille; 10 August; insurrectionary Commune",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Un militant révolutionnaire",
+     "excerpt": "Le 14 juillet 1789 il participe à la prise de la Bastille."
+    },
+    {
+     "field": "bio",
+     "claim": "10 August; insurrectionary Commune council and surveillance committee",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Un militant révolutionnaire",
+     "excerpt": "joue un rôle actif dans la préparation de la journée du 10 août 1792. Nommé membre de la Commune insurrectionnelle, il entre au Conseil général et au premier comité de surveillance."
+    },
+    {
+     "field": "bio",
+     "claim": "Vendée; under Ronsin; commander of the Army of the Coasts of La Rochelle",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "La guerre de Vendée",
+     "excerpt": "il est nommé, sous la protection du général Charles-Philippe Ronsin, général en chef de l'armée des côtes de La Rochelle en remplacement de Biron (destitué et arrêté) le 24 juillet"
+    },
+    {
+     "field": "bio",
+     "claim": "looting; accused of incompetence",
+     "source": "https://en.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Vendée",
+     "excerpt": "He engaged in widespread looting and reported several successes. As a general Rossignol was accused of incompetence by his subordinate, Augustin Tuncq."
+    },
+    {
+     "field": "bio",
+     "claim": "dismissed, reinstated; defended at the Jacobins by Robespierre and Hébert",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "La guerre de Vendée",
+     "excerpt": "Il est néanmoins défendu par Georges Danton et rétabli le 28 août 1793, décision devenue effective le 31 août par la Convention, soutenu par Robespierre et Hébert au club des Jacobins en septembre 1793."
+    },
+    {
+     "field": "bio",
+     "claim": "Army of the West and Cherbourg; removed after Dol",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "La guerre de Vendée",
+     "excerpt": "Toutefois, ce dernier commandement lui est retiré dès le 25 novembre après la défaite de Dol, de même que celui de l'armée de l'Ouest le 4 décembre, qui passe au général Léchelle."
+    },
+    {
+     "field": "bio",
+     "claim": "dismissed April 1794; imprisoned after Thermidor",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Entre prison et militantisme clandestin",
+     "excerpt": "Emprisonné le 2 août 1794 quelques jours après Thermidor, il n'est libéré que le 25 octobre 1795"
+    },
+    {
+     "field": "bio",
+     "claim": "Conspiracy of the Equals; acquitted at Vendôme",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "Entre prison et militantisme clandestin",
+     "excerpt": "Sous le Directoire, compromis dans la Conjuration des Égaux de Gracchus Babeuf, qui comptait sur lui pour entraîner le faubourg Saint-Antoine, il est emprisonné du 11 mai 1796 au 27 avril 1797, mais parvient à se disculper devant la Haute Cour de Vendôme."
+    },
+    {
+     "field": "bio",
+     "claim": "deported with other Jacobins 1801; died on Anjouan 1802",
+     "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+     "locator": "La déportation et la mort",
+     "excerpt": "Rossignol est emprisonné, traîné de prison en prison et condamné à la déportation aux Seychelles en 1801, avec d'autres jacobins."
+    }
+   ],
+   "activities": [
+    {
+     "functionId": "military",
+     "affiliationId": "french-first-republic",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1793,
+     "endYear": 1794,
+     "primary": true,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+       "locator": "La guerre de Vendée",
+       "claim": "Sans-culotte general: commander of the Army of the Coasts of La Rochelle, the Army of the West and the Armies of the Coasts of Brest and Cherbourg",
+       "excerpt": "Le 29 septembre 1793 Rossignol est nommé général en chef de l'armée des côtes de Brest en remplaçant Canclaux"
+      }
+     ]
+    },
+    {
+     "functionId": "organizing",
+     "affiliationId": "french-revolutionary-commune",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1792,
+     "endYear": 1792,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+       "locator": "Un militant révolutionnaire",
+       "claim": "Section militant; member of the insurrectionary Commune of 10 August 1792, its general council and first surveillance committee",
+       "excerpt": "Nommé membre de la Commune insurrectionnelle, il entre au Conseil général et au premier comité de surveillance."
+      }
+     ]
+    },
+    {
+     "functionId": "military",
+     "affiliationId": "french-monarchy",
+     "affiliationStatus": "confirmed",
+     "relation": "service",
+     "startYear": 1775,
+     "endYear": 1783,
+     "primary": false,
+     "evidence": [
+      {
+       "source": "https://fr.wikipedia.org/wiki/Jean_Antoine_Rossignol",
+       "locator": "Un enfant du faubourg",
+       "claim": "Soldier of the Royal-Roussillon regiment",
+       "excerpt": "Le 13 août 1775, il intègre à Dunkerque le régiment Royal-Roussillon sous le nom de « Francœur »."
+      }
+     ]
+    }
+   ],
+   "career": [
+    {
+     "period": {
+      "start": [
+       1775
+      ],
+      "end": [
+       1783
+      ]
+     },
+     "r": {
+      "ko": "루아얄루시용 연대 병사",
+      "en": "Soldier of the Royal-Roussillon regiment"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1789
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "바스티유 습격 참가",
+      "en": "Took part in the storming of the Bastille"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1792
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "8월 10일 봉기, 봉기 코뮌 총평의회 위원",
+      "en": "10 August rising; member of the general council of the insurrectionary Commune"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "라로셸 연안군 총사령관",
+      "en": "Commander of the Army of the Coasts of La Rochelle"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1793
+      ],
+      "end": null
+     },
+     "r": {
+      "ko": "브레스트 연안군·서부군·셰르부르 연안군 사령관",
+      "en": "Commander of the Armies of the Coasts of Brest and Cherbourg and of the Army of the West"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1796
+      ],
+      "end": [
+       1797
+      ]
+     },
+     "r": {
+      "ko": "평등파 음모 연루로 투옥, 무죄",
+      "en": "Imprisoned over the Conspiracy of the Equals; acquitted"
+     }
+    },
+    {
+     "period": {
+      "start": [
+       1801
+      ],
+      "end": [
+       1802
+      ]
+     },
+     "r": {
+      "ko": "세이셸·코모로 유배, 앙주안섬에서 사망",
+      "en": "Deported to the Seychelles and the Comoros; died on Anjouan"
+     }
+    }
+   ]
+  }
+ ]
+}

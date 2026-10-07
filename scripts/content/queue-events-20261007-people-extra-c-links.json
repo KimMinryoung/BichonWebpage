@@ -1,0 +1,106 @@
+{
+ "changedBy": "queue-events-20261007-extra",
+ "source": "https://en.wikipedia.org/wiki/War_in_the_Vend%C3%A9e",
+ "rows": [
+  [
+   "vendee-war-1793-1796",
+   "charles-de-bonchamps",
+   "leader",
+   "앙주군 지휘관",
+   "Commander of the army of Anjou",
+   "1793년 3월 생플로랑르비에이 봉기군의 지휘를 맡았고, 10월 숄레에서 치명상을 입은 뒤 공화국군 포로 약 5,000명을 살리라고 명령하고 숨졌다.",
+   "Took command of the Saint-Florent-le-Vieil insurgents in March 1793; mortally wounded at Cholet in October, he ordered about 5,000 republican prisoners spared before he died.",
+   "vendee-royalists"
+  ],
+  [
+   "vendee-war-1793-1796",
+   "louis-marie-de-lescure",
+   "leader",
+   "푸아투의 가톨릭 왕당군 지휘관",
+   "Catholic and Royal Army commander from Poitou",
+   "투아르·퐁트네·소뮈르에서 싸우고 토르푸 승리에 가담했으며, 라트랑블레에서 머리에 총상을 입고 갈레른 행군 중에 숨졌다.",
+   "Fought at Thouars, Fontenay and Saumur and shared in the victory at Torfou; shot in the head at La Tremblaye, he died during the Virée de Galerne.",
+   "vendee-royalists"
+  ],
+  [
+   "vendee-war-1793-1796",
+   "georges-cadoudal",
+   "leader",
+   "모르비앙 슈앙 지휘관",
+   "Chouan commander of the Morbihan",
+   "봉샹 아래에서 갈레른 행군과 사부네까지 싸운 뒤 모르비앙 슈앙을 이끌었고, 키브롱 상륙에 슈앙 수천 명을 모았다.",
+   "Fought under Bonchamps through the Virée de Galerne to Savenay, then led the Chouans of the Morbihan and brought thousands of them to the Quiberon landing.",
+   "vendee-royalists"
+  ],
+  [
+   "vendee-war-1793-1796",
+   "joseph-de-puisaye",
+   "leader",
+   "키브롱 상륙을 기획한 슈앙 총사령관",
+   "Chouan commander who planned the Quiberon landing",
+   "피트 정부를 설득해 1795년 망명군 상륙을 얻어 냈으나 데르빌리와의 지휘권 다툼으로 기습의 이점을 잃었고, 패배 중 영국 함선으로 물러났다.",
+   "Persuaded Pitt’s government to back the émigré landing of 1795, but his quarrel over command with d’Hervilly lost the advantage of surprise, and he withdrew to a British ship during the defeat.",
+   "britain-emigres"
+  ],
+  [
+   "vendee-war-1793-1796",
+   "francois-severin-marceau",
+   "leader",
+   "르망·사부네의 공화국군 지휘관",
+   "Republican commander at Le Mans and Savenay",
+   "숄레 전투에서 방데군 중앙을 무너뜨렸고, 서부군 임시 총사령관으로 클레베르와 함께 1793년 12월 르망과 사부네에서 가톨릭 왕당군을 섬멸했다.",
+   "Broke the Vendéan centre at Cholet and, as interim commander of the Army of the West, destroyed the Catholic and Royal Army with Kléber at Le Mans and Savenay in December 1793.",
+   "republic"
+  ],
+  [
+   "vendee-war-1793-1796",
+   "jean-antoine-rossignol",
+   "leader",
+   "상퀼로트 장군, 라로셸 연안군·서부군 사령관",
+   "Sans-culotte general commanding the Army of the Coasts of La Rochelle and the Army of the West",
+   "롱생의 비호로 1793년 7월 총사령관이 되었으나 코롱 패배와 퐁토르송·돌의 패배로 무능하다는 평을 받고 밀려났다.",
+   "Raised to command in July 1793 under Ronsin’s protection, he was judged incompetent after the defeats at Coron, Pontorson and Dol and was removed.",
+   "republic"
+  ],
+  [
+   "french-revolution-1789-1799",
+   "jean-antoine-rossignol",
+   "participant",
+   "바스티유 습격과 8월 10일 봉기의 상퀼로트",
+   "Sans-culotte of the Bastille and 10 August",
+   "생탕투안 문밖의 금세공 노동자로 바스티유 습격에 참여했고 1792년 8월 10일 봉기를 준비해 봉기 코뮌에 들어갔다.",
+   "A goldsmith of the Faubourg Saint-Antoine, he stormed the Bastille, helped prepare the rising of 10 August 1792 and sat in the insurrectionary Commune.",
+   null
+  ],
+  [
+   "french-revolution-1789-1799",
+   "georges-cadoudal",
+   "opponent",
+   "브르타뉴 슈앙 지휘관",
+   "Chouan commander in Brittany",
+   "1793년부터 브르타뉴와 방데에서 공화국에 맞서 싸웠고, 통령정부 아래서도 왕정복고를 위한 음모를 이어 가다 1804년 처형되었다.",
+   "Fought the Republic in Brittany and the Vendée from 1793 and kept plotting for a restoration under the Consulate until his execution in 1804.",
+   null
+  ],
+  [
+   "french-revolutionary-wars-1792-1802",
+   "joseph-de-puisaye",
+   "opponent",
+   "영국의 지원으로 키브롱 상륙을 이끈 망명 귀족",
+   "Émigré who led the British-backed Quiberon landing",
+   "1795년 6월 영국 함대가 실어 온 망명군을 이끌고 키브롱반도에 상륙했으나 오슈에게 패했다.",
+   "Landed on the Quiberon peninsula in June 1795 with an émigré force carried by a British fleet and was defeated by Hoche.",
+   null
+  ],
+  [
+   "french-revolutionary-wars-1792-1802",
+   "francois-severin-marceau",
+   "participant",
+   "상브르에뫼즈군 사단장",
+   "Divisional general of the Army of the Sambre-and-Meuse",
+   "플뢰뤼스와 라인 전선에서 싸웠고 1796년 9월 알텐키르헨에서 후위를 지휘하다 치명상을 입었다.",
+   "Fought at Fleurus and on the Rhine and was mortally wounded commanding the rear guard near Altenkirchen in September 1796.",
+   null
+  ]
+ ]
+}
