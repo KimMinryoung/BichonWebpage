@@ -16,7 +16,7 @@ const THESSALONIKI = P(40.6401, 22.9444, '테살로니키', 'Thessaloniki');
 
 const timeline = [
   ['1908-10', '보스니아 병합과 불가리아 독립', 'Annexation of Bosnia and Bulgarian independence', '청년 튀르크 혁명의 혼란을 틈타 오스트리아-헝가리가 보스니아·헤르체고비나를 병합하고 불가리아가 독립을 선언했다.', 'Exploiting the upheaval of the Young Turk Revolution, Austria-Hungary annexed Bosnia and Herzegovina and Bulgaria declared independence.', ['bulgaria', 'turkey'], SOFIA],
-  ['1910-01-07', '첫 발칸 사회민주당 회의', 'First Balkan Social Democratic Conference', '투초비치가 조직하고 블라고예프의 협의파 대표단이 참석한 베오그라드 회의가 열강의 간섭과 발칸 국가들의 패권 추구를 규탄했다.', 'The Belgrade conference organised by Tucović, attended by Blagoev\'s Narrow Socialist delegation, condemned Great Power interference and the Balkan states\' quest for hegemony.', ['serbia', 'bulgaria'], P(44.7866, 20.4489, '베오그라드', 'Belgrade')],
+  ['1910-01-07', '첫 발칸 사회민주당 대회', 'First conference of the Balkan social democrats', '투초비치가 조직하고 블라고예프의 협의파 대표단이 참석한 대회가 베오그라드에서 열려 열강의 간섭과 발칸 국가들의 패권 추구를 규탄했다.', 'The Belgrade conference organised by Tucović, attended by Blagoev\'s Narrow Socialist delegation, condemned Great Power interference and the Balkan states\' quest for hegemony.', ['serbia', 'bulgaria'], P(44.7866, 20.4489, '베오그라드', 'Belgrade')],
   ['1912-03-13', '세르비아-불가리아 동맹 조약', 'Serbo-Bulgarian treaty of alliance', '러시아의 감독 아래 맺은 조약의 비밀 부속서가 마케도니아를 무쟁 지역과 쟁점 지역으로 나누고 러시아 황제의 중재를 정했다.', 'The secret annex of the treaty, concluded under Russian supervision, divided Macedonia into Uncontested and Contested Zones subject to the Russian Emperor\'s arbitration.', ['serbia', 'bulgaria'], SOFIA],
   ['1912-05-29', '그리스-불가리아 동맹', 'Greco-Bulgarian alliance', '영토 분할 규정 없이 맺은 조약으로 그리스가 발칸 동맹에 들어왔다.', 'A treaty without any provision for the division of territory brought Greece into the Balkan League.', ['greece', 'bulgaria'], SOFIA],
   ['1912-10-08', '몬테네그로의 선전포고', 'Montenegro declares war', '국경 교섭이 깨진 몬테네그로가 동맹국 가운데 맨 먼저 오스만 제국에 선전포고했다.', 'After border negotiations failed, Montenegro was the first of the allies to declare war on the Ottoman Empire.', ['montenegro', 'turkey'], P(42.3931, 18.9116, '체티네', 'Cetinje')],
@@ -123,10 +123,12 @@ const event = buildEvent({
     { id: SIDES.ottoman, label: { ko: '오스만 제국', en: 'The Ottoman Empire' } },
     { id: SIDES.socialists, label: { ko: '발칸과 국제 사회주의의 반전 세력', en: 'Balkan and international anti-war socialists' } },
   ],
-  // 런던 조약 would otherwise be read as a bare generic; the new term is the
-  // 1913 treaty (london-treaty-1913) with a dated headword. 임시정부 would link
-  // to the Russian Provisional Government; the text avoids it but the guard stays.
-  noAutoLink: ['임시정부', 'Provisional Government'],
+  // 임시정부 would link to the Russian Provisional Government; the text avoids
+  // it but the guard stays. The bare treaty names 런던 조약 / 부쿠레슈티 조약 are
+  // search-only aliases of the new dated terms; the body says 1913년 … once.
+  // 야니차 (Giannitsa) would otherwise fire the person alias 야니 (gusztav-jany);
+  // blockStrings compare the matched alias, so the guard is 야니 itself.
+  noAutoLink: ['임시정부', 'Provisional Government', '야니'],
   people,
 });
 

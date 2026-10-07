@@ -30,14 +30,14 @@ const withNative = card => ({ ...card, cyrillic: card.nativeName });
 const people = [
   person({
     id: 'ferdinand-i-of-bulgaria',
-    given: ['', ''], family: ['페르디난드 1세', 'Ferdinand I'], nativeName: 'Фердинанд I', years: '1861–1948',
+    given: ['', ''], family: ['페르디난트 1세', 'Ferdinand I of Bulgaria'], nativeName: 'Фердинанд I', years: '1861–1948',
     citizenship: 'bulgaria', origin: { code: 'germany', label: { ko: '독일계 (작센코부르크고타 가)', en: 'German (House of Saxe-Coburg and Gotha)' } },
     epithet: ['발칸 전쟁을 「십자가의 성전」이라 부르고 옛 동맹국 공격을 명령한 불가리아 차르',
       'Bulgarian tsar who led his country into the Balkan League and then ordered the attack on his allies that began the Second Balkan War'],
     bio: ['빈에서 작센코부르크고타 가의 독일계 공자로 태어나 오스트리아-헝가리군 장교로 있다가 1887년 불가리아 공으로 뽑혔다. 1908년 독립을 선언하고 차르가 되었다. 1912년 오스만 제국에 맞선 전쟁을 「초승달에 맞선 십자가의 성전」이라 선언했고, 1913년 6월 사보프 장군을 통해 정부와 협의 없이 세르비아·그리스군 공격을 명령했다. 부쿠레슈티 조약으로 마케도니아 대부분을 잃었고, 1915년 동맹국 편으로 참전했다가 1918년 아들 보리스에게 양위하고 코부르크에서 죽었다.',
       'Born in Vienna a German prince of the House of Saxe-Coburg and Gotha-Koháry, he was an officer in the Austro-Hungarian army when the Grand National Assembly elected him Prince of Bulgaria in 1887; in 1908 he proclaimed independence and took the title of tsar. In 1912 he declared the war on the Ottoman Empire "a just, great and sacred struggle of the Cross against the Crescent", and in June 1913 General Savov, under his direct orders and without consulting the government, launched the attack on Serbia and Greece. The Treaty of Bucharest cost Bulgaria most of Macedonia. He took Bulgaria into the First World War on the side of the Central Powers, abdicated in favour of his son Boris III in October 1918 and died in exile in Coburg in 1948.'],
     fate: ['exile', '망명지에서 사망', 'Died in exile'],
-    aliases: { ko: ['차르 페르디난드'], en: ['Tsar Ferdinand', 'Ferdinand of Saxe-Coburg and Gotha'] },
+    aliases: { ko: ['차르 페르디난트', '불가리아 차르 페르디난트'], en: ['Tsar Ferdinand', 'Ferdinand of Saxe-Coburg and Gotha'] },
     sources: [S.ferdinand, E('Balkan_Wars')],
     facts: {
       years: { claim: '1861–1948', locator: 'lead', excerpt: '26 February 1861 – 10 September 1948' },
