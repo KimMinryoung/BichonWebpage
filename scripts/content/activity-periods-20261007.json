@@ -1,0 +1,3549 @@
+{
+ "changedBy": "activity-periods-20261007",
+ "people": [
+  {
+   "id": "anatoly-alexandrov",
+   "activities": [
+    {
+     "endYear": 1988,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: science-nuclear-space).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Анато́лий Петро́вич Алекса́ндров (31 января [13 февраля] 1903, Тараща, Киевская губерния — 3 февраля 1994, Москва) — советский физик, академик АН СССР (1953; член-корреспондент 1943), доктор физико-математических наук (1941), педагог, профессор.",
+       "locator": "plain-text extract lead sentence; sha256 61068187ac034e6fd80a29c59025b989493a7bd9b4e13a387c4f297886a8889c"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4688:4839; sha256 242db8a7899c1c79cbcb7d1cc84f3c457f260f723230091e376d8482d43512d2",
+       "claim": "1930년 키예프 대학 졸업 뒤 키예프 뢴트겐 연구소에서 연구를 시작했다.",
+       "excerpt": "По окончании Киевского университета (физический факультет, 1930), работал в Киевском рентгеновском (медицинском) институте в рентгено-физическом отделе"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 8974:9050; sha256 242db8a7899c1c79cbcb7d1cc84f3c457f260f723230091e376d8482d43512d2",
+       "claim": "1975년 11월부터 1986년 10월까지 소련 과학아카데미 원장이었다.",
+       "excerpt": "С 25 ноября 1975 года по 16 октября 1986 года — президент Академии наук СССР"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 24842:24903; sha256 242db8a7899c1c79cbcb7d1cc84f3c457f260f723230091e376d8482d43512d2",
+       "claim": "1960–1988년 원자력연구소 소장을 지냈다.",
+       "excerpt": "Игорь Курчатов | директор Института атомной энергии\n1960—1988"
+      }
+     ],
+     "officeId": "science-nuclear-space",
+     "relation": "service",
+     "startYear": 1930,
+     "functionId": "science",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "아나톨리 알렉산드로프는 1962년부터 소련공산당 당원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Anatoly_Alexandrov_%28physicist%29",
+       "excerpt": "Alexandrov was a member of the Communist Party of the Soviet Union from 1962.",
+       "locator": "characters 3816:3893; sha256 f4bf63e68fe418c79d8cdb852403513da6bd1dccca2dc5361e196caec393e85d"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1962,
+     "functionId": "science",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%2C_%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Anatoly_Alexandrov_%28physicist%29"
+   ]
+  },
+  {
+   "id": "vasily-zakharov",
+   "activities": [
+    {
+     "endYear": 1989,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: culture-literature).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Васи́лий Гео́ргиевич Заха́ров (5 января 1934, дер. Хриплы, Фировский район, Тверская область, РСФСР — 17 октября 2023, Москва, Российская Федерация) — советский партийный и государственный деятель, Министр культуры СССР в 1986—1989 годах, заместитель Председателя Совета Министров РСФСР в 1989—1990 годах.",
+       "locator": "plain-text extract lead sentence; sha256 092cfa16af51f3a805349acad97f373323d05e827ed5f0c84004c5063177abe4"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2165:2199; sha256 7e0e0c4c19ec9fbf073a98a1dd84bb4287a5343e61f18942e79947b8be25aa1c",
+       "claim": "1986–1989년 소련 문화장관이었다.",
+       "excerpt": "1986—1989 — министр культуры СССР."
+      }
+     ],
+     "officeId": "culture-literature",
+     "relation": "service",
+     "startYear": 1986,
+     "functionId": "propaganda",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "바실리 자하로프는 1978–1983년 소련공산당 레닌그라드 주위원회 서기였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80%D0%BE%D0%B2,_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "1978—1983 — секретарь Ленинградского обкома КПСС.",
+       "locator": "characters 1079:1128; sha256 092cfa16af51f3a805349acad97f373323d05e827ed5f0c84004c5063177abe4"
+      },
+      {
+       "claim": "바실리 자하로프는 1986년 3월 공산당 중앙위원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Vasily_Zakharov",
+       "excerpt": "In March 1986 Zakharov became one of the central committee members of the Communist Party.",
+       "locator": "characters 996:1086; sha256 87e3918bcabf76e6cbd929437938fc32259941244f14de6ac30f2ec30c4af1f5"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%85%D0%B0%D1%80%D0%BE%D0%B2,_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Vasily_Zakharov"
+   ]
+  },
+  {
+   "id": "alexei-surkov",
+   "activities": [
+    {
+     "endYear": 1983,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: culture-literature).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Алексе́й Алекса́ндрович Сурко́в (1 (13) октября 1899, д. Середнево, Рыбинский уезд, Ярославская губерния, Российская империя — 14 июня 1983, Москва, СССР) — русский советский поэт и литературный критик, общественный деятель; педагог, журналист, военный корреспондент.",
+       "locator": "plain-text extract lead sentence; sha256 7b6d3ca3b7ce977616026ef9c4c98c98bb9be667e8ebd26784e75c48d13c3ad1"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 8255:8277; sha256 ad494e827ba001eb1282d1b5902046deb8307434953404a05491e2587b6945bc",
+       "claim": "1918년부터 작품을 발표했다.",
+       "excerpt": "Печатался с 1918 года."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 6194:6287; sha256 ad494e827ba001eb1282d1b5902046deb8307434953404a05491e2587b6945bc",
+       "claim": "1949년부터 작가동맹 부총서기, 1953–1959년 제1서기였다.",
+       "excerpt": "С 1949 года заместитель генерального секретаря, в 1953—1959 годах — первый секретарь СП СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 7426:7462; sha256 ad494e827ba001eb1282d1b5902046deb8307434953404a05491e2587b6945bc",
+       "claim": "1983년 6월 14일 사망했다.",
+       "excerpt": "А. А. Сурков умер 14 июня 1983 года."
+      }
+     ],
+     "officeId": "culture-literature",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "arts",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "알렉세이 수르코프는 1925년부터 전연방 공산당(볼셰비키) 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б) с 1925 года.",
+       "locator": "characters 1456:1480; sha256 7b6d3ca3b7ce977616026ef9c4c98c98bb9be667e8ebd26784e75c48d13c3ad1"
+      },
+      {
+       "claim": "알렉세이 수르코프는 1956–1966년 소련공산당 중앙위원 후보였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член Центральной ревизионной комиссии КПСС (1952—1956), кандидат в члены ЦК КПСС (1956—1966).",
+       "locator": "characters 5320:5413; sha256 7b6d3ca3b7ce977616026ef9c4c98c98bb9be667e8ebd26784e75c48d13c3ad1"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1925,
+     "functionId": "arts",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D0%BA%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "beria",
+   "activities": [
+    {
+     "endYear": 1953,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%B8%D1%8F%2C_%D0%9B%D0%B0%D0%B2%D1%80%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Лавре́нтий Па́влович Бе́рия (груз. и мегр. ლავრენტი პავლეს ძე ბერია Лавре́нти Па́влес дзе Бе́риа; 17 (29) марта 1899, Мерхеули, Кутаисская губерния, Российская империя — 23 декабря 1953, Москва) — советский государственный и партийный деятель, генеральный комиссар государственной безопасности (1941), Маршал Советского Союза (1945), Герой Социалистического Труда (1943), лишённый этих званий в 1953 году.",
+       "locator": "plain-text extract lead sentence; sha256 b9524c8df410a6425e43ed868db4af0bfb2a633bbfa729485ab62f42d987bf6e"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%B8%D1%8F%2C_%D0%9B%D0%B0%D0%B2%D1%80%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 13234:13445; sha256 c4a10b2f3780a89d4a815fa8dc1571fa3a92f2d21e1aabcf1b49e8de1416f195",
+       "claim": "1921년 4월 아제르바이잔 체카 비밀작전부 부부장에 임명됐다.",
+       "excerpt": "На состоявшемся 24 апреля 1921 года заседании Политбюро и Оргбюро ЦК АКП(б) его назначили заместителем заведующего (тогда им был Гусейн Ахундов) Секретно-оперативного отдела Азербайджанской Чрезвычайной Комиссии"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%B8%D1%8F%2C_%D0%9B%D0%B0%D0%B2%D1%80%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3685:3751; sha256 c4a10b2f3780a89d4a815fa8dc1571fa3a92f2d21e1aabcf1b49e8de1416f195",
+       "claim": "1953년 6월 26일 체포됐다.",
+       "excerpt": "26 июня 1953 года Берия был арестован по обвинению в измене Родине"
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1921,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1953,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "라브렌티 베리야는 1917년 3월 볼셰비키에 입당했다고 주장했다.",
+       "source": "https://en.wikipedia.org/wiki/Lavrentiy_Beria",
+       "excerpt": "Beria attended a technical school in Sukhumi, and later claimed to have joined the Bolsheviks in March 1917 while a student in the Baku Polytechnicum (subsequently known as the Azerbaijan State Oil Academy).",
+       "locator": "characters 3987:4194; sha256 76785fd7710f4677d5518b93ea5281d6dc96ba1ee2a5407e33f309add8ffa2c1"
+      },
+      {
+       "claim": "라브렌티 베리야는 1934년 소련공산당 중앙위원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Lavrentiy_Beria",
+       "excerpt": "He became a member of the Central Committee of the Communist Party of the Soviet Union in February 1934.",
+       "locator": "characters 7488:7592; sha256 76785fd7710f4677d5518b93ea5281d6dc96ba1ee2a5407e33f309add8ffa2c1"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1917,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1953,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "라브렌티 베리야: 1945.08.20–1953.06.26 특별위원회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Специальный_комитет_при_Совете_министров_СССР",
+       "excerpt": "Председатель | Л. П. Берия",
+       "locator": "characters 412:438; sha256 e20db193bd783c513dbb69312ef9fe0399f9f4fa76f5cc2be21d942c828a882a"
+      }
+     ],
+     "officeId": "science-nuclear-space",
+     "relation": "service",
+     "startYear": 1945,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%B8%D1%8F%2C_%D0%9B%D0%B0%D0%B2%D1%80%D0%B5%D0%BD%D1%82%D0%B8%D0%B9_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Lavrentiy_Beria",
+    "https://ru.wikipedia.org/wiki/Специальный_комитет_при_Совете_министров_СССР"
+   ]
+  },
+  {
+   "id": "khrushchev",
+   "activities": [
+    {
+     "endYear": 1964,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-leadership).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D1%83%D1%89%D1%91%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Ники́та Серге́евич Хрущёв (3 [15] апреля 1894, Калиновка, Дмитриевский уезд, Курская губерния, Российская империя — 11 сентября 1971, Москва, РСФСР, СССР) — советский политический, государственный и партийный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 90e16c4346cd2406b2bdbe6d438e64a84e126715fb78f27c113ffcbd9a3c6e3c"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D1%83%D1%89%D1%91%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 11458:11641; sha256 676d1a66d8085a24c73c08772b95c41ed2633897fecc0bb560093107073ad306",
+       "claim": "1934년 초 모스크바 시당 제1서기, 1935년 3월부터 모스크바 주당 제1서기도 겸했다.",
+       "excerpt": "В начале 1934 года избран первым секретарём МГК ВКП(б) и членом ЦК ВКП(б). С 7 марта 1935 года по февраль 1938 года был также первым секретарём Московского областного комитета ВКП(б)."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D1%83%D1%89%D1%91%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3269:3306; sha256 676d1a66d8085a24c73c08772b95c41ed2633897fecc0bb560093107073ad306",
+       "claim": "1953–1964년 소련공산당 중앙위원회 제1서기였다.",
+       "excerpt": "Первый секретарь ЦК КПСС (1953—1964)."
+      }
+     ],
+     "officeId": "party-leadership",
+     "relation": "service",
+     "startYear": 1934,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1964,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니키타 흐루쇼프: 1958.03.27–1964.10.15 소련 각료회의 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР",
+       "excerpt": "Правительство Хрущёва (1958—1964)",
+       "locator": "characters 7649:7682; sha256 53e2add9ed5ce1b6e45d51454187f6bf97de11ab64d5c705c80793bb0bd6e527"
+      }
+     ],
+     "officeId": "head-of-government",
+     "relation": "service",
+     "startYear": 1958,
+     "functionId": "government",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D1%83%D1%89%D1%91%D0%B2%2C_%D0%9D%D0%B8%D0%BA%D0%B8%D1%82%D0%B0_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+   ]
+  },
+  {
+   "id": "bukharin",
+   "activities": [
+    {
+     "endYear": 1929,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: comintern).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Никола́й Ива́нович Буха́рин (27 сентября [9 октября] 1888, Москва — 15 марта 1938, Коммунарка, Московская область) — российский революционер, советский политический и партийный деятель, член Политбюро ЦК ВКП(б) (1924—1929, кандидат в члены с 1919).",
+       "locator": "plain-text extract lead sentence; sha256 b068812b8375361d3e1407ad87a5e0cd121f7c105dbfba8e3fe005310b415d41"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 14770:14923; sha256 38b6b1890278e169428e35c63b79a29a3b98a2c76ddcd5e2a6eaec4bd76057d2",
+       "claim": "1926년 말 지노비예프 해임 뒤 코민테른을 이끌었다.",
+       "excerpt": "С освобождением Зиновьева от должности председателя ИККИ на VII пленуме ИККИ (ноябрь-декабрь 1926 года) руководящее положение в Коминтерне занял Бухарин."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 17648:17746; sha256 38b6b1890278e169428e35c63b79a29a3b98a2c76ddcd5e2a6eaec4bd76057d2",
+       "claim": "1929년 6월 19일 코민테른 집행위원회 상무회 위원직에서 해임됐다.",
+       "excerpt": "19 июня 1929 года на Х пленуме ИККИ состоялось отстранение Бухарина от поста члена Президиума ИККИ"
+      }
+     ],
+     "officeId": "comintern",
+     "relation": "service",
+     "startYear": 1926,
+     "functionId": "diplomacy",
+     "affiliationId": "comintern",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 부하린은 1906년 입당해 볼셰비키 분파에 들었다.",
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Bukharin",
+       "excerpt": "He joined the Russian Social Democratic Labour Party in 1906, and became a member of its Bolshevik faction.",
+       "locator": "characters 2906:3013; sha256 79e11e4e4defc88294dc47255446eb2152a1f681bc7ecf87ca2231494768d93b"
+      },
+      {
+       "claim": "니콜라이 부하린은 1924년 소련공산당 정치국원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Bukharin",
+       "excerpt": "After Lenin's death in 1924, Bukharin became a full member of the Politburo.",
+       "locator": "characters 9409:9485; sha256 79e11e4e4defc88294dc47255446eb2152a1f681bc7ecf87ca2231494768d93b"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1906,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 부하린은 1906년 러시아 사회민주노동당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Bukharin",
+       "excerpt": "Bukharin joined the Russian Social Democratic Labour Party in 1906, and studied economics at Moscow Imperial University.",
+       "locator": "characters 491:611; sha256 79e11e4e4defc88294dc47255446eb2152a1f681bc7ecf87ca2231494768d93b"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1906,
+     "functionId": "political-leadership",
+     "affiliationId": "russian-rsdlp",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Nikolai_Bukharin"
+   ]
+  },
+  {
+   "id": "bulganin",
+   "activities": [
+    {
+     "endYear": 1958,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: head-of-government).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D0%B3%D0%B0%D0%BD%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Никола́й Алекса́ндрович Булга́нин (30 мая (11 июня) 1895, Нижний Новгород — 24 февраля 1975, Москва) — советский государственный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 800a318eb3dcab1efda50db5997995dfe86d6bbc1a1820d73e5f115cff88e8da"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D0%B3%D0%B0%D0%BD%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4386:4439; sha256 bf3e3107ada57c2e6386f1cbcb2b6f1dfd031f8592f9a5461d6bc884b2ef1e7b",
+       "claim": "1931–1937년 모스크바 소비에트 집행위원회 의장이었다.",
+       "excerpt": "В 1931—1937 годах — председатель исполкома Моссовета."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D0%B3%D0%B0%D0%BD%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1956:2002; sha256 bf3e3107ada57c2e6386f1cbcb2b6f1dfd031f8592f9a5461d6bc884b2ef1e7b",
+       "claim": "1955–1958년 소련 각료회의 의장이었다.",
+       "excerpt": "Председатель Совета Министров СССР (1955—1958)"
+      }
+     ],
+     "officeId": "head-of-government",
+     "relation": "service",
+     "startYear": 1931,
+     "functionId": "government",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 불가닌은 1917년 3월 볼셰비키당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Bulganin",
+       "excerpt": "He joined the Bolshevik Party in March 1917 and was recruited in 1918 into the Cheka",
+       "locator": "characters 1933:2017; sha256 dd8b6e5c43746c85a5cd110e51f826dd093ea3273ff893624c1727f3d1291267"
+      },
+      {
+       "claim": "니콜라이 불가닌은 1937년 소련공산당 중앙위원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Nikolai_Bulganin",
+       "excerpt": "in 1937 he was named premier of the Russian SFSR and a full member of the Central Committee of the Communist Party.",
+       "locator": "characters 719:834; sha256 dd8b6e5c43746c85a5cd110e51f826dd093ea3273ff893624c1727f3d1291267"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1917,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1945,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 불가닌: 1938.10.02–1940.04.17 소련 국가은행 이사회 의장.",
+       "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR",
+       "excerpt": "Nikolai Bulganin (1895–1975) | October 2, 1938 | April 17, 1940",
+       "locator": "characters 9990:10053; sha256 25a2162cdf33943b5222b89389042898d5623d54f6da504de32020a167587117"
+      },
+      {
+       "claim": "니콜라이 불가닌: 1940.10.12–1945.05.23 소련 국가은행 이사회 의장.",
+       "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR",
+       "excerpt": "Nikolai Bulganin (1895–1975) | October 12, 1940 | May 23, 1945 | Joseph Stalin",
+       "locator": "characters 10126:10204; sha256 25a2162cdf33943b5222b89389042898d5623d54f6da504de32020a167587117"
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1938,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1958,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 불가닌: 1958.03.31–1958.08.15 소련 국가은행 이사회 의장.",
+       "source": "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR",
+       "excerpt": "Nikolai Bulganin (1895–1975) | March 31, 1958 | August 15, 1958 | Nikita Khrushchev",
+       "locator": "characters 10330:10413; sha256 25a2162cdf33943b5222b89389042898d5623d54f6da504de32020a167587117"
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1958,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1949,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 불가닌: 1947.03.03–1949.03.24 소련 군대장관.",
+       "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР",
+       "excerpt": "Николай Александрович Булганин | 3 марта 1947 — 24 марта 1949 | Маршал Советского Союза",
+       "locator": "characters 2127:2214; sha256 c316635c56fe5d0bbd83643476eebccbbf084875de84b782a9a38eb45af727ba"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1947,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1955,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "니콜라이 불가닌: 1953.03.15–1955.02.09 소련 국방장관.",
+       "source": "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР",
+       "excerpt": "Николай Александрович Булганин | 15 марта 1953 — 9 февраля 1955 | Маршал Советского Союза",
+       "locator": "characters 2776:2865; sha256 c316635c56fe5d0bbd83643476eebccbbf084875de84b782a9a38eb45af727ba"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1953,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D0%BB%D0%B3%D0%B0%D0%BD%D0%B8%D0%BD%2C_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Nikolai_Bulganin",
+    "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR",
+    "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+   ]
+  },
+  {
+   "id": "sergei-vavilov",
+   "activities": [
+    {
+     "endYear": 1951,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: science-nuclear-space).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Серге́й Ива́нович Вави́лов (12 [24] марта 1891, Москва — 25 января 1951, там же) — советский физик-оптик, основатель научной школы физической оптики в СССР, общественный деятель и популяризатор науки; младший брат генетика Николая Вавилова.",
+       "locator": "plain-text extract lead sentence; sha256 ecd2b080ddd54449a28df1604e06299304d5a62232b5d6adddeee9db7b5200f2"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3141:3193; sha256 697501f1aa86e4cf210a44332fc4773ec239d7d5d1368318b37c8094e994b26d",
+       "claim": "1918–1932년 모스크바 고등기술학교에서 일했다.",
+       "excerpt": "В 1918—1932 годах работал в МВТУ (доцент, профессор)"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 8310:8392; sha256 697501f1aa86e4cf210a44332fc4773ec239d7d5d1368318b37c8094e994b26d",
+       "claim": "1945년 7월 17일 소련 과학아카데미 원장에 선출됐다.",
+       "excerpt": "17 июля 1945 года избран президентом АН СССР, сменив на этом посту В. Л. Комарова."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 10036:10105; sha256 697501f1aa86e4cf210a44332fc4773ec239d7d5d1368318b37c8094e994b26d",
+       "claim": "1951년 1월 25일 재임 중 사망했다.",
+       "excerpt": "25 января 1951 года в 4 часа 45 минут скончался от инфаркта миокарда."
+      }
+     ],
+     "officeId": "science-nuclear-space",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "science",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "alexei-poskonov",
+   "activities": [
+    {
+     "endYear": 1969,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: economic-management).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D0%BA%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Алексе́й Андре́евич Поско́нов (5 марта 1904, Уфа — 13 марта 1969, Москва) — советский государственный деятель, председатель правления Госбанка СССР.",
+       "locator": "plain-text extract lead sentence; sha256 7927b21502e83276b2b2c0c8605e73e25b71e10330d2eb95124759cb5de07856"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D0%BA%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1027:1076; sha256 c325786095aadd5a7fc19a92e9f08a1fe0e854328a9aa8d4f5e43d7dff22b0c0",
+       "claim": "1923년 재정 기관에 들어갔다.",
+       "excerpt": "В 1923 году пришёл на работу в финансовые органы."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D0%BA%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1905:1976; sha256 c325786095aadd5a7fc19a92e9f08a1fe0e854328a9aa8d4f5e43d7dff22b0c0",
+       "claim": "1963–1969년 국가은행 이사회 의장이었다.",
+       "excerpt": "В 1963—1969 годах — Председатель Правления Государственного банка СССР."
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1923,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1969,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "알렉세이 포스코노프는 1966–1969년 소련공산당 중앙감사위원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D0%BA%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член Центральной ревизионной комиссии КПСС (1966—1969).",
+       "locator": "characters 1364:1419; sha256 7927b21502e83276b2b2c0c8605e73e25b71e10330d2eb95124759cb5de07856"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%81%D0%BA%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "menzhinsky",
+   "activities": [
+    {
+     "endYear": 1934,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Вячесла́в Рудо́льфович Менжи́нский (пол. Wacław Mężyński; 19 [31] августа 1874, Санкт-Петербург — 10 мая 1934, дача «Горки-6», Архангельское Московской области) — российский революционер польского происхождения, советский политический, государственный и партийный деятель, один из руководителей советских органов государственной безопасности, преемник Ф. Э. Дзержинского во главе ОГПУ (1926—1934), нарком финансов РСФСР (1918), писатель.",
+       "locator": "plain-text extract lead sentence; sha256 56873c342169648ccebf8b93211c29208dccec12e0f7aea81f15d5265191268a"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 5640:5700; sha256 0fe4ee0a87c90a2d01d40f667aaaa054f80aab7dfc572314d1d869a4414f1516",
+       "claim": "1917년 12월 체카 위원이 됐다.",
+       "excerpt": "В состав ВЧК Менжинский был введён 8 (21) декабря 1917 года."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 10116:10154; sha256 0fe4ee0a87c90a2d01d40f667aaaa054f80aab7dfc572314d1d869a4414f1516",
+       "claim": "1934년 5월 10일 OGPU 의장 재임 중 사망했다.",
+       "excerpt": "Менжинский скончался 10 мая 1934 года."
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1917,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1934,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "뱌체슬라프 멘진스키는 1902년부터 러시아 사회민주노동당 당원이었고 볼셰비키였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "С 1902 года состоял в РСДРП, большевик.",
+       "locator": "characters 2051:2090; sha256 56873c342169648ccebf8b93211c29208dccec12e0f7aea81f15d5265191268a"
+      },
+      {
+       "claim": "뱌체슬라프 멘진스키는 제15차 당대회에서 전연방공산당(볼셰비키) 중앙위원으로 선출되었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "На съезде Менжинский был избран членом ЦК ВКП(б).",
+       "locator": "characters 8087:8136; sha256 56873c342169648ccebf8b93211c29208dccec12e0f7aea81f15d5265191268a"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "뱌체슬라프 멘진스키는 1902년 러시아 사회민주노동당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Vyacheslav_Menzhinsky",
+       "excerpt": "Born to Polish parents in Saint Petersburg, Menzhinsky joined the Russian Social Democratic Labour Party in 1902.",
+       "locator": "characters 301:414; sha256 b57563d0899a3d04cdd6044e977f1805cf3d2ff5b3e37d62f7c1ae3d0e91260b"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1902,
+     "functionId": "security",
+     "affiliationId": "russian-rsdlp",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9,_%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Vyacheslav_Menzhinsky"
+   ]
+  },
+  {
+   "id": "kapitonov",
+   "activities": [
+    {
+     "endYear": 1986,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Ива́н Васи́льевич Капито́нов (23 февраля 1915 года, дер. Серовское, Рязанская область, — 28 мая 2002 года, Москва) — советский партийный и государственный деятель, секретарь ЦК КПСС (1965—1986), председатель Центральной ревизионной комиссии КПСС (1986—1988).",
+       "locator": "plain-text extract lead sentence; sha256 0f0eb658ecf61f651e5c62060809e6c5e5b04ef4e7fff2dd243273e0d0f77845"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2364:2407; sha256 009418c93cbbcd1ec73de4c307514022f16e23fd93c671a50a28989377770eec",
+       "claim": "1941년부터 당·소비에트 기관에서 일했다.",
+       "excerpt": "С 1941 года на партийной и советской работе"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3742:3792; sha256 009418c93cbbcd1ec73de4c307514022f16e23fd93c671a50a28989377770eec",
+       "claim": "1965–1986년 중앙위원회 서기였다.",
+       "excerpt": "одновременно в 1965—1986 годах — секретарь ЦК КПСС"
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1941,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "vasilevsky",
+   "activities": [
+    {
+     "endYear": 1977,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Алекса́ндр Миха́йлович Василе́вский (18 [30] сентября 1895, село Новая Гольчиха, Кинешемский уезд, Костромская губерния, Российская империя — 5 декабря 1977, Москва, СССР) — советский полководец, Маршал Советского Союза (1943), начальник Генерального штаба, член Ставки Верховного Главнокомандования, главнокомандующий Главным командованием советских войск на Дальнем Востоке, министр Вооружённых сил СССР и военный министр СССР.",
+       "locator": "plain-text extract lead sentence; sha256 7fd9b87c3c6f3d19425e2245cfc00ee50508ed834bc7e7825de99268871a1a54"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 9276:9318; sha256 89ec0d292b5a89e83516c793cb47e05acf6d5a58cf0cb7e4d571b1857517a965",
+       "claim": "1919년 4월 적군에 징집됐다.",
+       "excerpt": "В апреле 1919 года призван в Красную армию"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 236:343; sha256 89ec0d292b5a89e83516c793cb47e05acf6d5a58cf0cb7e4d571b1857517a965",
+       "claim": "1959년 1월부터 1977년 12월 사망까지 국방부 총감찰관단 총감찰관이었다.",
+       "excerpt": "Генеральный инспектор Группы генеральных инспекторов Министерства обороны СССР\nянварь 1959 — 5 декабря 1977"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1977,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "알렉산드르 바실렙스키는 1938년 소련공산당 당원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Aleksandr_Vasilevsky",
+       "excerpt": "In 1938, he was made a member of the Communist Party of the Soviet Union",
+       "locator": "characters 9748:9820; sha256 9b6e992baa6ac7c89a47304a6dc65418a7b8d92db7ab63e0850d8e8b5d3deec5"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1938,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Aleksandr_Vasilevsky"
+   ]
+  },
+  {
+   "id": "serov",
+   "activities": [
+    {
+     "endYear": 1963,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Ива́н Алекса́ндрович Серо́в (12 [25] августа 1905, дер. Афимское, Кадниковский уезд, Вологодская губерния, Российская империя — 1 июля 1990, Красногорск, Московская область, РСФСР, СССР) — советский государственный и военный деятель, один из ключевых руководителей спецслужб СССР в середине XX века.",
+       "locator": "plain-text extract lead sentence; sha256 8dbc573589dd1945dadb5b6b041389982d8ad5e843a291a1add57adbbf513a2c"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 5583:5698; sha256 33a18b998ff4f8eb245c979aa12e5a5fe13dc0b669ec5d4ebafed037cb7967b1",
+       "claim": "1939년 2월 내무인민위원부 중앙기관에 배치됐다.",
+       "excerpt": "По окончании академии, в феврале 1939 года, направлен на службу в центральные органы Наркомата внутренних дел СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 106:232; sha256 33a18b998ff4f8eb245c979aa12e5a5fe13dc0b669ec5d4ebafed037cb7967b1",
+       "claim": "1958년 12월부터 1963년 2월까지 GRU 총국장이었다.",
+       "excerpt": "Начальник Главного разведывательного управления Генерального штаба Вооружённых Сил СССР (ГРУ)\n10 декабря 1958 — 2 февраля 1963"
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1939,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1965,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "이반 세로프는 1926년 전연방 공산당(볼셰비키)에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Ivan_Serov",
+       "excerpt": "In 1926, he became a member of the All-Union Communist Party (Bolsheviks), and in 1928 graduated from the Artillery Officers' School of Leningrad.",
+       "locator": "characters 1499:1645; sha256 d4fc031cf2936229bb046dde9afec6f8e6ffe78544a3817cbc74b5666c0116ab"
+      },
+      {
+       "claim": "이반 세로프는 1965년 공산당 당적을 박탈당했다.",
+       "source": "https://en.wikipedia.org/wiki/Ivan_Serov",
+       "excerpt": "In retaliation, Serov was stripped of his position, rank, Communist Party membership and Hero of the Soviet Union award in 1965.",
+       "locator": "characters 1019:1147; sha256 d4fc031cf2936229bb046dde9afec6f8e6ffe78544a3817cbc74b5666c0116ab"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1926,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%BE%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Ivan_Serov"
+   ]
+  },
+  {
+   "id": "ustinov",
+   "activities": [
+    {
+     "endYear": 1984,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Дми́трий Фёдорович Усти́нов (17 (30 октября) 1908, Самара, Российская империя — 20 декабря 1984, Москва, РСФСР, СССР) — советский государственный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 3b6895571e640b818ee9c71922cc73e164a678d8eedff80c6cd40f4056d9d8f3"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 8363:8429; sha256 6353b80bd3af85d16e7c6ea3301f39393501d3198c0274ce9549a5e53718e7d0",
+       "claim": "1976년 4월부터 1984년 12월 사망까지 국방장관이었다.",
+       "excerpt": "29 апреля 1976 года — 20 декабря 1984 года — министр обороны СССР."
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1976,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1984,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "드미트리 우스티노프는 1927년 공산당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Dmitry_Ustinov",
+       "excerpt": "Ustinov joined the Communist Party in 1927.",
+       "locator": "characters 2806:2849; sha256 a014d6b022b211a2aab198d4478285610722d441fcce117e175b7fbd8316c0c6"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1927,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1963,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "드미트리 우스티노프: 1957.12.14–1963.03.13 소련 각료회의 간부회 군수공업위원회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Устинов,_Дмитрий_Фёдорович",
+       "excerpt": "14 декабря 1957 года — 13 марта 1963 года — заместитель председателя Совета министров СССР, председатель Комиссии Президиума Совета министров СССР по военно-промышленным вопросам. Подписал распоряжение об организации физико-математических школ при ведущих университетах СССР. За подготовку первого полёта человека в космос (Ю. А. Гагарин, 12 апреля 1961 года) удостоен звания Героя Социалистического Труда (указ не публиковался).",
+       "locator": "characters 7622:8051; sha256 6353b80bd3af85d16e7c6ea3301f39393501d3198c0274ce9549a5e53718e7d0"
+      }
+     ],
+     "officeId": "heavy-military-industry",
+     "relation": "service",
+     "startYear": 1957,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Dmitry_Ustinov",
+    "https://ru.wikipedia.org/wiki/Устинов,_Дмитрий_Фёдорович"
+   ]
+  },
+  {
+   "id": "sergey-kruglov",
+   "activities": [
+    {
+     "endYear": 1956,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Серге́й Ники́форович Кругло́в (19 сентября (2 октября) 1907, дер. Устье ныне Калязинского района Тверской области — 6 июня 1977, Пушкинский район, Московская область) — один из руководителей органов государственной безопасности СССР, Нарком (Министр) внутренних дел СССР с 1945 по 1956 год.",
+       "locator": "plain-text extract lead sentence; sha256 bca2818566b1025f9fe4529f7209dfebe272c65e867b35574a5989756aed93b9"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3367:3497; sha256 552c7c7f9de2d9aa99b15ed0ca68baaa7fec40ea45f82f8dde49399d74285e2d",
+       "claim": "1938년 11월 내무인민위원부에 특별전권으로 파견됐다.",
+       "excerpt": "В ноябре 1938 года (после прихода в НКВД СССР Л. П. Берии) был направлен в Наркомат внутренних дел в качестве особоуполномоченного"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1506:1562; sha256 552c7c7f9de2d9aa99b15ed0ca68baaa7fec40ea45f82f8dde49399d74285e2d",
+       "claim": "1945–1956년 소련 내무인민위원·내무장관이었다.",
+       "excerpt": "Нарком (Министр) внутренних дел СССР с 1945 по 1956 год."
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1938,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1960,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "세르게이 크루글로프는 1928년 12월부터 전연방공산당(볼셰비키) 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B2,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б) с декабря 1928 года.",
+       "locator": "characters 391:423; sha256 bca2818566b1025f9fe4529f7209dfebe272c65e867b35574a5989756aed93b9"
+      },
+      {
+       "claim": "세르게이 크루글로프는 1960년 스탈린 시대 탄압 가담으로 소련공산당에서 제명되었다.",
+       "source": "https://en.wikipedia.org/wiki/Sergei_Kruglov_%28politician%29",
+       "excerpt": "In 1960 he was expelled from CPSU for complicity in the Stalin-era political repressions.",
+       "locator": "characters 9803:9892; sha256 025fc66627f43899eafd80471dab1bc2d7c748e8a89b8f955e5ec77991825548"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1928,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3%D0%BB%D0%BE%D0%B2,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9D%D0%B8%D0%BA%D0%B8%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Sergei_Kruglov_%28politician%29"
+   ]
+  },
+  {
+   "id": "konstantin-lunev",
+   "activities": [
+    {
+     "endYear": 1960,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D1%91%D0%B2%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Константи́н Фёдорович Лунёв (3 сентября 1907, с. Гаврилов-Ям, Ярославская губерния — июнь 1980, Москва) — советский партийный и государственный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 956aac0ad11f9283930e419a09f23eb9da45fad74e6b6cab9461f08be1c352a0"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D1%91%D0%B2%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2757:2898; sha256 57a3d8de193c8ede14d6088d995f986594f46fc9740bc5d0daeb5c369289cf75",
+       "claim": "1953년 6월 27일 내무부 제9국장에 임명됐다.",
+       "excerpt": "После ареста Л. П. Берии, с 27 июня 1953 года был назначен начальником 9-го Управления МВД СССР (охрана руководителей партии и правительства)"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D1%91%D0%B2%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3791:3831; sha256 57a3d8de193c8ede14d6088d995f986594f46fc9740bc5d0daeb5c369289cf75",
+       "claim": "1960년 병으로 퇴직했다.",
+       "excerpt": "С 1960 года уволен на пенсию по болезни."
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1953,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "콘스탄틴 루네프는 1942년 소련공산당·볼셰비키 세르푸호프 시위원회 서기, 파블로보포사드 시위원회 제1서기를 지냈다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D1%91%D0%B2%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "С марта 1942 года секретарь Серпуховского городского комитета ВКП(б) по кадрам, с августа 1942 года — первый секретарь Павлово-Посадского городского комитета ВКП(б).",
+       "locator": "characters 1469:1634; sha256 956aac0ad11f9283930e419a09f23eb9da45fad74e6b6cab9461f08be1c352a0"
+      },
+      {
+       "claim": "콘스탄틴 루네프는 1956–1961년 소련공산당 중앙위원 후보였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D1%91%D0%B2%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Кандидат в члены ЦК КПСС (1956—1961).",
+       "locator": "characters 2888:2925; sha256 956aac0ad11f9283930e419a09f23eb9da45fad74e6b6cab9461f08be1c352a0"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D1%91%D0%B2%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "averky-aristov",
+   "activities": [
+    {
+     "endYear": 1960,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%2C_%D0%90%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Аве́ркий Бори́сович А́ристов (10 октября 1903, Красный Яр, Астраханская губерния — 11 июля 1973, Вена) — советский партийно-государственный деятель, дипломат.",
+       "locator": "plain-text extract lead sentence; sha256 ebed6d0fc26652154225769ac8ce7feae3db5653546deb22e9696b026e2d5a6d"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%2C_%D0%90%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 7640:7730; sha256 240b2f8969cb70a8aeb7997bea84a89b439dff1120f93fade32f3e9b169391ee",
+       "claim": "1939년 5월 부교수 칭호를 받았다(아래 '같은 해'의 기준 연도).",
+       "excerpt": "В мае 1939 года решением Высшей аттестационной комиссии утверждён в учёном звании доцента."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%2C_%D0%90%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 7792:7942; sha256 240b2f8969cb70a8aeb7997bea84a89b439dff1120f93fade32f3e9b169391ee",
+       "claim": "같은 해(1939) 12월 스베르들롭스크 주당 지도 업무로 옮겼다.",
+       "excerpt": "В декабре того же года первый секретарь Свердловского обкома ВКП(б) В. М. Андрианов перевёл А. Аристова на руководящую партийную работу в обком партии"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%2C_%D0%90%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 12368:12416; sha256 240b2f8969cb70a8aeb7997bea84a89b439dff1120f93fade32f3e9b169391ee",
+       "claim": "1955년 7월부터 1960년 5월까지 중앙위원회 서기였다.",
+       "excerpt": "В июле 1955 — мае 1960 года — секретарь ЦК КПСС."
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1939,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B8%D1%81%D1%82%D0%BE%D0%B2%2C_%D0%90%D0%B2%D0%B5%D1%80%D0%BA%D0%B8%D0%B9_%D0%91%D0%BE%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "gennady-smirnov",
+   "activities": [
+    {
+     "endYear": 1937,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: central-planning).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Генна́дий Ива́нович Смирно́в (23 марта [5 апреля] 1903, Рязань — 28 июля 1938, Москва) — советский государственный деятель, председатель Госплана СССР (1937)\n\n\n== Биография ==\nРодился 23 марта 1903 года в Рязани, в семье преподавателя математики Рязанской мужской гимназии, позднее директора Муромского реального училища, статского советника Ивана Ивановича Смирнова (1872—1921) и Глафиры Арсеньевны Корюгиной (1876 — ?); внук Ивана Ксенофонтовича Смирнова (1844—1919), архиепископа Рязанского и Зарайского.",
+       "locator": "plain-text extract lead sentence; sha256 430d7881d1c180bf695254d3d47c1490ad98ca74e748327cc929e4ae669f8ec8"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2068:2143; sha256 08af2d0b9a7230fa1818d0bc84fa8c6ad1ff58000865ff714e2b5be26720a27e",
+       "claim": "1928–1929년 최고국민경제회의 자본건설부장이었다.",
+       "excerpt": "1928 по 1929 год — заведующий отделом капитального строительства ВСНХ СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2498:2531; sha256 08af2d0b9a7230fa1818d0bc84fa8c6ad1ff58000865ff714e2b5be26720a27e",
+       "claim": "1937년 10월 17일 고스플란 의장 재임 중 체포됐다.",
+       "excerpt": "17 октября 1937 года — арестован."
+      }
+     ],
+     "officeId": "central-planning",
+     "relation": "service",
+     "startYear": 1928,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "겐나디 스미르노프는 1920년 소련공산당·볼셰비키(러시아 공산당(볼))에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2,_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "1920 год — вступил в РКП(б).",
+       "locator": "characters 1034:1062; sha256 430d7881d1c180bf695254d3d47c1490ad98ca74e748327cc929e4ae669f8ec8"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1920,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2,_%D0%93%D0%B5%D0%BD%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "kaganovich",
+   "activities": [
+    {
+     "endYear": 1939,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9B%D0%B0%D0%B7%D0%B0%D1%80%D1%8C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Ла́зарь Моисе́евич Кагано́вич (10 (22) ноября 1893, Кабаны, Киевская губерния — 25 июля 1991, Москва, РСФСР) — советский государственный, хозяйственный и партийный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 04a0073a5473d4d8cd5f1249e7d6fc6321cff9932d535917e424a80bcddac7ab"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9B%D0%B0%D0%B7%D0%B0%D1%80%D1%8C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 7688:7841; sha256 67ad55c2704aad552f266277ad7e6de211c2107cfe0047eec9b2b4c3b63f4868",
+       "claim": "1922년 중앙위원회 조직지도부(뒤의 조직배치부)장에 임명됐다.",
+       "excerpt": "В 1922 году Лазарь Каганович назначен заведующим организационно-инструкторским, ставшим впоследствии организационно-распределительным, отделом ЦК РКП(б)."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9B%D0%B0%D0%B7%D0%B0%D1%80%D1%8C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3035:3077; sha256 67ad55c2704aad552f266277ad7e6de211c2107cfe0047eec9b2b4c3b63f4868",
+       "claim": "1924–1925, 1928–1939년 중앙위원회 서기였다.",
+       "excerpt": "секретарь ЦК ВКП(б) (1924—1925, 1928—1939)"
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1922,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1935,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "라자르 카가노비치: 1934.02.10–1935.02.28 중앙위원회 당통제위원회 위원장.",
+       "source": "https://ru.wikipedia.org/wiki/Каганович,_Лазарь_Моисеевич",
+       "excerpt": "Председатель Комиссии партийного контроля ВКП(б) 10 февраля 1934 — 28 февраля 1935",
+       "locator": "characters 1829:1911; sha256 67ad55c2704aad552f266277ad7e6de211c2107cfe0047eec9b2b4c3b63f4868"
+      }
+     ],
+     "officeId": "control-commissions",
+     "relation": "service",
+     "startYear": 1934,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1939,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "라자르 카가노비치: 1937.08.22–1939.01.24 소련 중공업인민위원.",
+       "source": "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР",
+       "excerpt": "Каганович, Лазарь Моисеевич | 22 августа 1937 года | 24 января 1939 года",
+       "locator": "characters 1931:2003; sha256 82e67ab749dd79531a1ea8b81cb5c4db427a263e482b8a64a54f749331949d9b"
+      }
+     ],
+     "officeId": "heavy-military-industry",
+     "relation": "service",
+     "startYear": 1937,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9B%D0%B0%D0%B7%D0%B0%D1%80%D1%8C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/Каганович,_Лазарь_Моисеевич",
+    "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР"
+   ]
+  },
+  {
+   "id": "mikhail-moiseyev",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Михаи́л Алексе́евич Моисе́ев (22 января 1939, Малый Ивер, Свободненский район Амурская область, Хабаровский край — 18 декабря 2022) — советский и российский военачальник, генерал армии (1989).",
+       "locator": "plain-text extract lead sentence; sha256 ac3f42e39ca15d3d19fd17970bb0c3ccaa05383cf31e7897eb825b44551aa4e8"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 895:918; sha256 b8f288cfba1420e44d39b8ffaee819db832d9674bcf6b8cbbc59115ca7681684",
+       "claim": "1958–1991년 군 복무했다.",
+       "excerpt": "Годы службы | 1958—1991"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4878:4915; sha256 b8f288cfba1420e44d39b8ffaee819db832d9674bcf6b8cbbc59115ca7681684",
+       "claim": "1991년 11월 전역했다.",
+       "excerpt": "В ноябре 1991 года уволен в отставку."
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1958,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "미하일 모이세예프는 공산당원으로 소련군 총참모장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Mikhail_Moiseyev",
+       "excerpt": "A member of the Communist Party, he served as commander of the 27th Guards Motor Rifle Division from 5 April 1978–21 June 1980, and Chief of the General Staff of the Soviet Armed Forces from 1988 to 1991.",
+       "locator": "characters 157:361; sha256 1b43bac5979ecec56a7088f27c0356ec2df37cd6482b8b393fe9d5c226922201"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Mikhail_Moiseyev"
+   ]
+  },
+  {
+   "id": "yakov-golev",
+   "activities": [
+    {
+     "endYear": 1959,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: economic-management).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%B5%D0%B2%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "excerpt": "Яков Ильич Голев (21 октября 1894, Тульская губерния — 27 февраля 1960, Москва) — советский государственный деятель, председатель правления Госбанка СССР.",
+       "locator": "plain-text extract lead sentence; sha256 ca928822d5f1b14ab1ce546b3c54a0fbdace116e0b8d7aa0b2b2630bcb59b564"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%B5%D0%B2%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "locator": "characters 947:1014; sha256 16479411cf14d6267e02efdeac4eb62f3a4f8aab1a77efb62603bc8e8252c39f",
+       "claim": "골레프는 1920–1922년 퍄티고르스크 식량위원부 참사·부위원으로 경제 행정을 시작했다.",
+       "excerpt": "В 1920—1922 член коллегии и заместитель Пятигорского продкомиссара."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%B5%D0%B2%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "locator": "characters 1919:1996; sha256 16479411cf14d6267e02efdeac4eb62f3a4f8aab1a77efb62603bc8e8252c39f",
+       "claim": "1953–1959년 농업은행 총재를 지내고 1959년 은퇴했다.",
+       "excerpt": "В 1953—1959 председатель правления Сельхозбанка СССР. В 1959 вышел на пенсию."
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1920,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "야코프 골레프는 1918년 러시아 공산당(볼셰비키)에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%B5%D0%B2%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "excerpt": "В 1918 вступил в РКП(б).",
+       "locator": "characters 304:328; sha256 ca928822d5f1b14ab1ce546b3c54a0fbdace116e0b8d7aa0b2b2630bcb59b564"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1918,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D0%B5%D0%B2%2C_%D0%AF%D0%BA%D0%BE%D0%B2_%D0%98%D0%BB%D1%8C%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "vladimir-stepakov",
+   "activities": [
+    {
+     "endYear": 1970,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: ideology-propaganda).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "excerpt": "Влади́мир Ильи́ч Степако́в (31 мая [13 июня] 1912, Калуга — 28 мая 1987) — советский партийный деятель, дипломат, доктор исторических наук (1968).",
+       "locator": "plain-text extract lead sentence; sha256 869d90fa0eb5c2944979d3598b1507624dbf5e4d906f74b3df4a7d5777c969dc"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "locator": "characters 1646:1742; sha256 3e57a803278cf45b693f67526efb9c191fc98e00afff295c4439131e48512585",
+       "claim": "스테파코프는 1957–1961년 모스크바 시당 선전선동부장·서기를 지냈다.",
+       "excerpt": "В 1957—1961 годах — заведующий отделом пропаганды и агитации, секретарь, 2-й секретарь МГК КПСС."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "locator": "characters 1903:1972; sha256 3e57a803278cf45b693f67526efb9c191fc98e00afff295c4439131e48512585",
+       "claim": "1965–1970년 당 중앙위원회 선전선동부장을 지냈다.",
+       "excerpt": "В 1965—1970 годах — заведующий Отделом пропаганды и агитации ЦК КПСС."
+      }
+     ],
+     "officeId": "ideology-propaganda",
+     "relation": "service",
+     "startYear": 1957,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "블라디미르 스테파코프는 1937년부터 소련공산당·볼셰비키 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б) с 1937 года.",
+       "locator": "characters 147:171; sha256 869d90fa0eb5c2944979d3598b1507624dbf5e4d906f74b3df4a7d5777c969dc"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1937,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%BB%D1%8C%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "brezhnev",
+   "activities": [
+    {
+     "endYear": 1982,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-leadership).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D0%B6%D0%BD%D0%B5%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "excerpt": "Леони́д Ильи́ч Бре́жнев (6 [19] декабря 1906, по другим данным, 19 декабря 1906 [1 января 1907], Каменское, Екатеринославская губерния, Российская империя — 10 ноября 1982, Заречье, Одинцовский район, Московская область, СССР) — советский государственный, политический и партийный деятель, занимавший высшую руководящую должность в КПСС в течение 18 лет (с 1964 и до своей смерти в 1982 году).",
+       "locator": "plain-text extract lead sentence; sha256 dabf91d91ea296dd13b06487700463b9d3876fb4628199e181780b9f30690f25"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D0%B6%D0%BD%D0%B5%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "locator": "characters 11832:11928; sha256 e37a43c3a16365fc1bc2154953ec0eaa3abe8d9bdb7735f02fc3ec64511777a1",
+       "claim": "브레즈네프는 1946년 자포리자 주당 제1서기로 당 지도직을 시작했다.",
+       "excerpt": "С 28 августа 1946 года по 22 ноября 1947 года первый секретарь Запорожского обкома КП(б) Украины"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D0%B6%D0%BD%D0%B5%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+       "locator": "characters 2646:2844; sha256 e37a43c3a16365fc1bc2154953ec0eaa3abe8d9bdb7735f02fc3ec64511777a1",
+       "claim": "1964년부터 1982년 사망까지 당 최고 지도직(제1서기·서기장)을 지냈다.",
+       "excerpt": "занимавший высшую руководящую должность в КПСС в течение 18 лет (с 1964 и до своей смерти в 1982 году). Первый секретарь ЦК КПСС в 1964—1966 годах и Генеральный секретарь ЦК КПСС с 1966 по 1982 год."
+      }
+     ],
+     "officeId": "party-leadership",
+     "relation": "service",
+     "startYear": 1946,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1964,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "레오니트 브레즈네프: 1960.05.07–1964.07.15 소련 최고소비에트 상무회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР",
+       "excerpt": "4 | Леонид Ильич Брежнев (1906—1982) | 7 мая 1960 | 15 июля 1964 | — | 5-й—6-й созывы | КПСС",
+       "locator": "characters 3371:3463; sha256 7a245aea263e77fab9660e48199220f6aadd47710ba9a3d5f31ba26583e256df"
+      }
+     ],
+     "officeId": "state-head",
+     "relation": "service",
+     "startYear": 1960,
+     "functionId": "legislature",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1982,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "레오니트 브레즈네프: 1977.06.16–1982.11.10 소련 최고소비에트 상무회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР",
+       "excerpt": "7 | Леонид Ильич Брежнев (1906—1982) | 16 июня 1977 | 10 ноября 1982 | Василий Кузнецов | 10-й созыв | КПСС",
+       "locator": "characters 3663:3770; sha256 7a245aea263e77fab9660e48199220f6aadd47710ba9a3d5f31ba26583e256df"
+      }
+     ],
+     "officeId": "state-head",
+     "relation": "service",
+     "startYear": 1977,
+     "functionId": "legislature",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B5%D0%B6%D0%BD%D0%B5%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%98%D0%BB%D1%8C%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "id": "gromyko",
+   "activities": [
+    {
+     "endYear": 1985,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: foreign-affairs).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D0%BC%D1%8B%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Андре́й Андре́евич Громы́ко (бел. Андрэй Андрэевіч Грамыка; 5 (18) июля 1909, деревня Старые Громыки, Речковская волость, Гомельский уезд, Могилёвская губерния, Российская империя — 2 июля 1989, Москва, РСФСР, СССР) — советский государственный деятель и дипломат.",
+       "locator": "plain-text extract lead sentence; sha256 b050cbf33e8a1f99bd61550044ff29c9a025cd377a1b7ee537bb528392833098"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D0%BC%D1%8B%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 12261:12330; sha256 00a2a721c8ad9943bbabde0301d9ce0a0a87164e55426890f14eaec270b02778",
+       "claim": "그로미코는 1939년 5월 외무인민위원부 미주국장으로 외교관 경력을 시작했다.",
+       "excerpt": "В мае 1939 года Громыко — заведующий Отделом американских стран НКИД."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D0%BC%D1%8B%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 18311:18411; sha256 00a2a721c8ad9943bbabde0301d9ce0a0a87164e55426890f14eaec270b02778",
+       "claim": "1957–1985년 외무장관을 지냈다.",
+       "excerpt": "В 1957—1985 годах, на протяжении 28 лет, Громыко бессменно оставался министром иностранных дел СССР."
+      }
+     ],
+     "officeId": "foreign-affairs",
+     "relation": "service",
+     "startYear": 1939,
+     "functionId": "diplomacy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1989,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "안드레이 그로미코는 1931년 전연방공산당(볼셰비키)에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Andrei_Gromyko",
+       "excerpt": "Gromyko became a member of the All-Union Communist Party Bolsheviks in 1931, something he had dreamed of since he learned about the \"difference between a poor farmer and a landowner, a worker and a capitalist\".",
+       "locator": "characters 5371:5581; sha256 2911a467a8f7cb04a095fe86b0774ae407252556a9b8b46fbbf2a4870246bf57"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1931,
+     "functionId": "diplomacy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1988,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "안드레이 그로미코: 1985.07.02–1988.10.01 소련 최고소비에트 상무회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР",
+       "excerpt": "10 | Андрей Андреевич Громыко (1909—1989) | 2 июля 1985 | 1 октября 1988 | Василий Кузнецов (1985—1986)",
+       "locator": "characters 4342:4445; sha256 7a245aea263e77fab9660e48199220f6aadd47710ba9a3d5f31ba26583e256df"
+      }
+     ],
+     "officeId": "state-head",
+     "relation": "service",
+     "startYear": 1985,
+     "functionId": "legislature",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%BE%D0%BC%D1%8B%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Andrei_Gromyko",
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "id": "alkhimov",
+   "activities": [
+    {
+     "endYear": 1986,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: economic-management).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Влади́мир Серге́евич Алхи́мов (25 октября 1919, дер. Никулино, Смоленская губерния — 9 января 1993, Москва) — советский экономист, кандидат экономических наук, в 1976—1986 годах — председатель Правления Государственного банка СССР.",
+       "locator": "plain-text extract lead sentence; sha256 fe9370647d2b1781e85db96158950b431f3ab0f1e2ac00fea327fb7db5fa244f"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2827:2987; sha256 05e7f22e753c48f6916d4f4635f82182758dfc359d479cd734960fda4cb1a00c",
+       "claim": "알히모프는 1950년부터 대외무역부 경기연구소 가격부장으로 경제 분야에서 일했다.",
+       "excerpt": "После окончания академии в 1950—1955 годах работал заведующим отделом цен Научно-исследовательского конъюнктурного института Министерства внешней торговли СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1027:1092; sha256 05e7f22e753c48f6916d4f4635f82182758dfc359d479cd734960fda4cb1a00c",
+       "claim": "1976–1986년 국가은행 이사회 의장을 지냈다.",
+       "excerpt": "в 1976—1986 годах — председатель Правления Государственного банка"
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1950,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "블라디미르 알히모프는 1942년 소련공산당·볼셰비키에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "В 1942 вступил в ВКП(б).",
+       "locator": "characters 754:778; sha256 fe9370647d2b1781e85db96158950b431f3ab0f1e2ac00fea327fb7db5fa244f"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1942,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "vasily-popov",
+   "activities": [
+    {
+     "endYear": 1960,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: economic-management).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Васи́лий Фёдорович Попо́в (7 марта 1903, Ростов-на-Дону — 3 декабря 1964, Москва) — советский государственный деятель, председатель правления Госбанка СССР.",
+       "locator": "plain-text extract lead sentence; sha256 d8e70f8f733187c944178a049152aea610a3f9be4f3790722be36e449a117c3e"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1661:1851; sha256 36250b04796aa15de0ecb4f89119f46d458cfee004aede00410841c927b2b8f3",
+       "claim": "포포프는 1923년부터 재무 기관에서 재무 요원·재무감독관 등으로 일했다.",
+       "excerpt": "В 1923—1934 работал финансовым агентом, старшим агентом, помощником фининспектора, фининспектором, старшим инспектором окружного финотдела, заведующим районным, а затем городским финотделом."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2248:2366; sha256 36250b04796aa15de0ecb4f89119f46d458cfee004aede00410841c927b2b8f3",
+       "claim": "1958년 국가은행 제1부의장으로 옮겼다가 1960년 6월 은퇴했다.",
+       "excerpt": "В марте 1958 переведён на пост первого заместителя председателя правления Госбанка, а в июне 1960 отправлен на пенсию."
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1923,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "바실리 포포프는 1923년 공산당(볼셰비키)에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "В 1923 вступил в ВКП(б) и перешёл на работу в финансовую сферу.",
+       "locator": "characters 577:640; sha256 d8e70f8f733187c944178a049152aea610a3f9be4f3790722be36e449a117c3e"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1923,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BF%D0%BE%D0%B2%2C_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D0%B8%D0%B9_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "trotsky",
+   "activities": [
+    {
+     "endYear": 1925,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%BE%D1%86%D0%BA%D0%B8%D0%B9%2C_%D0%9B%D0%B5%D0%B2_%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Лев Дави́дович Тро́цкий (партийные псевдонимы: Перо, Антид Ото; фамилия при рождении — Бронште́йн, официальная фамилия — Седо́в; 26 октября (7 ноября) 1879, Яновка, Херсонская губерния, Российская империя — 21 августа 1940, Койоакан, Мексика) — российский революционер, советский государственный, партийный и военно-политический деятель, один из организаторов Октябрьской революции, создателей Красной армии и основателей Коминтерна, основатель и идеолог троцкизма.",
+       "locator": "plain-text extract lead sentence; sha256 2eb65b8799fdd4511fb766e14193bf00c175a0e024cc981f744f4a2d5c07c49e"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%BE%D1%86%D0%BA%D0%B8%D0%B9%2C_%D0%9B%D0%B5%D0%B2_%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4224:4322; sha256 ebda791c92e3029636c1d18224f1bee29eae29b38b7c6eb736c3c9218f4ea28c",
+       "claim": "트로츠키는 1918–1925년 육해군인민위원부와 혁명군사회의를 이끌었다.",
+       "excerpt": "затем в 1918—1925 годах возглавлял Народный комиссариат по военным и морским делам и Реввоенсовет."
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "레프 트로츠키는 1898년 러시아 사회민주노동당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Leon_Trotsky",
+       "excerpt": "Trotsky joined the Russian Social Democratic Labour Party in 1898, being arrested and exiled to Siberia for his activities.",
+       "locator": "characters 660:783; sha256 3821172050aa316fa4df1b3e20d3f3af4f40e44328258a44839bd3e0c75407c9"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1898,
+     "functionId": "military",
+     "affiliationId": "russian-rsdlp",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1927,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "레프 트로츠키는 1917년 2월 혁명 뒤 볼셰비키에 합류했다.",
+       "source": "https://en.wikipedia.org/wiki/Leon_Trotsky",
+       "excerpt": "After the February Revolution of 1917, Trotsky joined the Bolsheviks and was elected chairman of the Petrograd Soviet.",
+       "locator": "characters 1136:1254; sha256 3821172050aa316fa4df1b3e20d3f3af4f40e44328258a44839bd3e0c75407c9"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1917,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%BE%D1%86%D0%BA%D0%B8%D0%B9%2C_%D0%9B%D0%B5%D0%B2_%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Leon_Trotsky"
+   ]
+  },
+  {
+   "id": "grechko",
+   "activities": [
+    {
+     "endYear": 1976,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D1%87%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Андре́й Анто́нович Гре́чко (4 (17) октября 1903, село Голодаевка, Таганрогской округ, область Войска Донского, Российская империя — 26 апреля 1976, Москва, РСФСР, СССР) — советский военный и государственный деятель, Маршал Советского Союза (1955), дважды Герой Советского Союза (1958, 1973).",
+       "locator": "plain-text extract lead sentence; sha256 8d7e41d2ca72697342e8a2083e4c493954406ea034dc9a9c27303417f700bc11"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D1%87%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2592:2640; sha256 581ac03b51f60ef9244aa0ccd6f29e18eba632ded025f3ee8d1aeb4e1f88959d",
+       "claim": "그레치코는 1919년 12월 붉은 군대에 자원 입대했다.",
+       "excerpt": "В Красной армии с декабря 1919 года, доброволец."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D1%87%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 9205:9276; sha256 581ac03b51f60ef9244aa0ccd6f29e18eba632ded025f3ee8d1aeb4e1f88959d",
+       "claim": "1967년 4월부터 1976년 사망까지 국방장관을 지냈다.",
+       "excerpt": "С апреля 1967 года до своей кончины в 1976 году — министр обороны СССР."
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1976,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "안드레이 그레치코는 1926년부터 소련공산당·볼셰비키 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D1%87%D0%BA%D0%BE,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б) с 1926 года.",
+       "locator": "characters 1816:1840; sha256 8d7e41d2ca72697342e8a2083e4c493954406ea034dc9a9c27303417f700bc11"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1926,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D1%87%D0%BA%D0%BE%2C_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B5%D1%87%D0%BA%D0%BE,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9_%D0%90%D0%BD%D1%82%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "boris-gostev",
+   "activities": [
+    {
+     "endYear": 1989,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: economic-management).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Бори́с Ива́нович Го́стев (15 сентября 1927, Москва — 9 августа 2015, там же) — советский государственный деятель, министр финансов СССР в 1985-1989 годах.",
+       "locator": "plain-text extract lead sentence; sha256 affd58a961fc569e2498f760cb4a6a043bf9f18dcaecfddeb7e461c185c7443b"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1253:1278; sha256 ff3818119458927eee20522e1f5ee60d903cd6e087c1c86009709e2b84f4e51b",
+       "claim": "고스테프는 1959년 국가계획위원회에 들어갔다.",
+       "excerpt": "С 1959 — в Госплане СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1887:1954; sha256 ff3818119458927eee20522e1f5ee60d903cd6e087c1c86009709e2b84f4e51b",
+       "claim": "1985년 12월부터 1989년 6월까지 재무장관을 지냈다.",
+       "excerpt": "С 13 декабря 1985 года по 7 июня 1989 года — министр финансов СССР."
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1959,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1990,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "보리스 고스테프는 1981–1990년 소련공산당 중앙위원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Кандидат в члены ЦК КПСС (1976—81), член ЦК КПСС (1981—90), член Центральной Ревизионной Комиссии КПСС (1971—76).",
+       "locator": "characters 1087:1200; sha256 affd58a961fc569e2498f760cb4a6a043bf9f18dcaecfddeb7e461c185c7443b"
+      },
+      {
+       "claim": "보리스 고스테프는 1985년부터 소련공산당 중앙위원회 경제부장이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "С 1982 — первый заместитель заведующего, с августа 1985 — заведующий Экономическим отделом ЦК КПСС.",
+       "locator": "characters 900:999; sha256 affd58a961fc569e2498f760cb4a6a043bf9f18dcaecfddeb7e461c185c7443b"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B5%D0%B2%2C_%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "lev-maryasin",
+   "activities": [
+    {
+     "endYear": 1936,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: economic-management).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%8C%D1%8F%D1%81%D0%B8%D0%BD%2C_%D0%9B%D0%B5%D0%B2_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Лев Ефи́мович Марья́син (1894, Могилёв — 22 августа 1938, Москва) — советский государственный и партийный деятель, председатель правления Госбанка СССР.",
+       "locator": "plain-text extract lead sentence; sha256 8d79e09afe8034190680e029ce9d04253c4eb0ebac7e7af66f6bfe5d23a5297a"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%8C%D1%8F%D1%81%D0%B8%D0%BD%2C_%D0%9B%D0%B5%D0%B2_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1137:1292; sha256 9c1922dfe1aee5561395c68b989d8876fcb088ad21963aefb66e93b86c460d36",
+       "claim": "마랴신은 1922년 투르키스탄 경제 행정에 파견되어 국민경제회의 의장을 지냈다.",
+       "excerpt": "В 1922 году Марьясин направлен на хозяйственную работу в Туркестан, где в 1922—1923 был председателем Центрального совета народного хозяйства (ЦСНХ) ТаССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%8C%D1%8F%D1%81%D0%B8%D0%BD%2C_%D0%9B%D0%B5%D0%B2_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2652:2779; sha256 9c1922dfe1aee5561395c68b989d8876fcb088ad21963aefb66e93b86c460d36",
+       "claim": "1936년 7월 14일 국가은행 이사회 의장에서 해임되었다.",
+       "excerpt": "В тот же день отстранён от должности Председателя Правления Государственного банка СССР «в связи с переходом на другую работу»."
+      }
+     ],
+     "officeId": "economic-management",
+     "relation": "service",
+     "startYear": 1922,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "레프 마랴신는 1915년 러시아 사회민주노동당(볼셰비키)에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%8C%D1%8F%D1%81%D0%B8%D0%BD%2C_%D0%9B%D0%B5%D0%B2_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "В 1915 вступил в РСДРП(б).",
+       "locator": "characters 269:295; sha256 8d79e09afe8034190680e029ce9d04253c4eb0ebac7e7af66f6bfe5d23a5297a"
+      },
+      {
+       "claim": "레프 마랴신는 1920년 당 사업으로 옮겨 보로네시 시당위원회 위원장이 되었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%8C%D1%8F%D1%81%D0%B8%D0%BD%2C_%D0%9B%D0%B5%D0%B2_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "В 1920 перешёл на партийную работу, стал председателем Воронежского горкома ВКП(б).",
+       "locator": "characters 451:534; sha256 8d79e09afe8034190680e029ce9d04253c4eb0ebac7e7af66f6bfe5d23a5297a"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1915,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%8C%D1%8F%D1%81%D0%B8%D0%BD%2C_%D0%9B%D0%B5%D0%B2_%D0%95%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "malinovsky",
+   "activities": [
+    {
+     "endYear": 1967,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%A0%D0%BE%D0%B4%D0%B8%D0%BE%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Родио́н Я́ковлевич Малино́вский (11 (23) ноября 1898 (по документам) / 10 (22) ноября 1898 (по метрической книге), Одесса, Одесский уезд, Херсонская губерния, Российская империя — 31 марта 1967, Москва, РСФСР, СССР) — советский военачальник и государственный деятель, Маршал Советского Союза (1944), дважды Герой Советского Союза (1945, 1958), кавалер Ордена «Победа» (1945).",
+       "locator": "plain-text extract lead sentence; sha256 b3279bed70ad380022aa76b498ffe90f39743647ca75eb2be72d0165e16e2ddb"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%A0%D0%BE%D0%B4%D0%B8%D0%BE%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 903:944; sha256 b69d8acda9fb51038fc0c4e558f9a6f80ede6a47eefa34d6ee57a86975c458db",
+       "claim": "정보상자에 따르면 말리놉스키의 군 복무 중 마지막 구간은 1919–1967년이다.",
+       "excerpt": "Годы службы\n1914—1917\n1917—1919\n1919—1967"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%A0%D0%BE%D0%B4%D0%B8%D0%BE%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 23295:23394; sha256 b69d8acda9fb51038fc0c4e558f9a6f80ede6a47eefa34d6ee57a86975c458db",
+       "claim": "1957년 10월 국방장관에 임명되어 사망할 때까지 재임했다.",
+       "excerpt": "26 октября 1957 года назначен министром обороны СССР и оставался на этой должности до своей смерти."
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1967,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "로디온 말리놉스키는 1926년 소련공산당·볼셰비키 당원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Rodion_Malinovsky",
+       "excerpt": "In 1926, he became a member of the Communist Party of the Soviet Union",
+       "locator": "characters 5028:5098; sha256 70cecfab6935d1fa04df5fc63b24a553b5ea7e67535ee9a95fa49852254416b3"
+      },
+      {
+       "claim": "로디온 말리놉스키는 공산당 중앙위원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Rodion_Malinovsky",
+       "excerpt": "he was selected a full member of the Communist Party Central Committee.",
+       "locator": "characters 16348:16419; sha256 70cecfab6935d1fa04df5fc63b24a553b5ea7e67535ee9a95fa49852254416b3"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1926,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%A0%D0%BE%D0%B4%D0%B8%D0%BE%D0%BD_%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Rodion_Malinovsky"
+   ]
+  },
+  {
+   "id": "mikhail-kaganovich",
+   "activities": [
+    {
+     "endYear": 1941,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: heavy-military-industry).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Михаи́л Моисе́евич Кагано́вич (16 октября 1888 года — 1 июля 1941 года) — советский государственный и партийный деятель, старший брат Юлия Кагановича и Лазаря Кагановича.",
+       "locator": "plain-text extract lead sentence; sha256 1ffb7cfc057cced32dbcff2cb0be7f2b5f0710a2770cbdbe8202cd8613ce24bb"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1752:1851; sha256 17acb2ca598513ecdb020c615965360ef29f4aab4f1185b1964c1d5afc8a2dc9",
+       "claim": "미하일 카가노비치는 1931년 최고국민경제회의 기계제작총국장 겸 부의장이 되었다.",
+       "excerpt": "С 1931 года начальник Главного машиностроительного управления и заместитель председателя ВСНХ СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3090:3230; sha256 17acb2ca598513ecdb020c615965360ef29f4aab4f1185b1964c1d5afc8a2dc9",
+       "claim": "1940년 1월 인민위원에서 물러나 카잔 제124 항공기 공장장이 되었다.",
+       "excerpt": "10 января 1940 года был освобождён от должности наркома и назначен директором авиационного «Завода № 124 имени Серго Орджоникидзе» в Казани."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4004:4033; sha256 17acb2ca598513ecdb020c615965360ef29f4aab4f1185b1964c1d5afc8a2dc9",
+       "claim": "1941년 7월 1일 자살했다.",
+       "excerpt": "Застрелился 1 июля 1941 года."
+      }
+     ],
+     "officeId": "heavy-military-industry",
+     "relation": "service",
+     "startYear": 1931,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1941,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "미하일 카가노비치는 1905년 볼셰비키에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Mikhail_Kaganovich",
+       "excerpt": "A metal worker, Kaganovich joined the Bolsheviks in 1905 and fought with the Red Army during the Russian Civil War.",
+       "locator": "characters 207:322; sha256 2bac78934c5af238d1637b0fbd2c76e0989951b03e148f74de312902d2925fe8"
+      },
+      {
+       "claim": "미하일 카가노비치는 1934년 공산당 중앙위원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Mikhail_Kaganovich",
+       "excerpt": "In 1934, he was made a member of the Central Committee of the Communist Party and an alternate member of the Orgburo.",
+       "locator": "characters 538:655; sha256 2bac78934c5af238d1637b0fbd2c76e0989951b03e148f74de312902d2925fe8"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1905,
+     "functionId": "industry",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B3%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Mikhail_Kaganovich"
+   ]
+  },
+  {
+   "id": "gury-marchuk",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: science-nuclear-space).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%87%D1%83%D0%BA%2C_%D0%93%D1%83%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Гу́рий Ива́нович Марчу́к (8 июня 1925[…], Петрохерсонец, Самарская губерния — 24 марта 2013, Москва) — советский и российский учёный в области вычислительной математики, физики атмосферы и геофизики.",
+       "locator": "plain-text extract lead sentence; sha256 66f2fc72b90ec5c9f1c1c12090d49b3989fa1b9a2883fe30dabff711726a3aec"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%87%D1%83%D0%BA%2C_%D0%93%D1%83%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1536:1622; sha256 f82ded50a4c788053db03465f557460eecd2f6ad3872e623f93143f4c133ecc0",
+       "claim": "마르추크는 1949년 과학아카데미 지구물리연구소에서 연구를 시작했다.",
+       "excerpt": "1949—1953 — аспирант, после защиты в 1952 — сотрудник Геофизического института АН СССР"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%87%D1%83%D0%BA%2C_%D0%93%D1%83%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2570:2610; sha256 f82ded50a4c788053db03465f557460eecd2f6ad3872e623f93143f4c133ecc0",
+       "claim": "1986–1991년 소련 과학아카데미 원장을 지냈다.",
+       "excerpt": "1986—1991 — президент Академии наук СССР"
+      }
+     ],
+     "officeId": "science-nuclear-space",
+     "relation": "service",
+     "startYear": 1949,
+     "functionId": "science",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "구리 마르추크는 1947년부터 소련공산당 당원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Gury_Marchuk",
+       "excerpt": "A member of the Communist Party of the Soviet Union since 1947",
+       "locator": "characters 432:494; sha256 82dfc0eab4323704df6f5235d5f0c9e39d4dda9e5f7444d8d8cb22aa08af8311"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1947,
+     "functionId": "science",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%87%D1%83%D0%BA%2C_%D0%93%D1%83%D1%80%D0%B8%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Gury_Marchuk"
+   ]
+  },
+  {
+   "id": "leonid-smirnov",
+   "activities": [
+    {
+     "endYear": 1985,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: heavy-military-industry).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Леонид Васильевич Смирно́в (3 [16] апреля 1916, Кузнецк, Саратовская губерния — 21 декабря 2001, Москва) — советский государственный деятель оборонно-промышленного комплекса СССР.",
+       "locator": "plain-text extract lead sentence; sha256 911d47577f7373eac0163aa2614aa33b8703e48ba01c12be97b19cf7637164b0"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1869:2117; sha256 e8088d14baf4c9b0009069339233e6c87588f8d8027cfb46a1fbef181b611d81",
+       "claim": "스미르노프는 1934년부터 노보체르카스크 광산설비공장에서 전기공·기술자로 일했다.",
+       "excerpt": "1934—1948 — дежурный электромонтёр, инспектор по электронадзору, инженер, заместитель начальника, начальник цеха, заместитель главного энергетика, начальник теплоэлектроцентрали, главный энергетик Новочеркасского завода горно-шахтного оборудования."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2857:2886; sha256 e8088d14baf4c9b0009069339233e6c87588f8d8027cfb46a1fbef181b611d81",
+       "claim": "1985년 11월 은퇴했다.",
+       "excerpt": "С ноября 1985 года на пенсии."
+      }
+     ],
+     "officeId": "heavy-military-industry",
+     "relation": "service",
+     "startYear": 1934,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "레오니트 스미르노프는 1961–1986년 소련공산당 중앙위원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Leonid_Smirnov_%28politician%29",
+       "excerpt": "From 31 October 1961 to 25 February 1986 Smirnov was a member of the Central Committee of the Communist Party of the Soviet Union.",
+       "locator": "characters 3070:3200; sha256 6e97c858438055afdfe0c4a2514c7c4e083303bb9f535557cbdc7105cdd9088e"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "industry",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B2%2C_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Leonid_Smirnov_%28politician%29"
+   ]
+  },
+  {
+   "id": "pyotr-ivashutin",
+   "activities": [
+    {
+     "endYear": 1987,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B2%D0%B0%D1%88%D1%83%D1%82%D0%B8%D0%BD%2C_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Пётр Ива́нович Ивашу́тин (урожд. Ивашутич; 5 [18] сентября 1909, Брест-Литовск, Российская империя — 4 июня 2002, Москва, Россия) — руководитель органов государственной безопасности и военной разведки СССР.",
+       "locator": "plain-text extract lead sentence; sha256 9c87441ae383e31f91985e71276fe54d6dd74fc5d00651a47844a0cbf59829a9"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B2%D0%B0%D1%88%D1%83%D1%82%D0%B8%D0%BD%2C_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3087:3137; sha256 d1f5a6c35da4c4eceea5c5fc2d824b2385921aefc5164aabef2e96f43a099d59",
+       "claim": "이바슈틴은 1939년 1월 붉은 군대 방첩 기관에 들어갔다.",
+       "excerpt": "С января 1939 года — в органах контрразведки РККА."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%98%D0%B2%D0%B0%D1%88%D1%83%D1%82%D0%B8%D0%BD%2C_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 5802:5952; sha256 d1f5a6c35da4c4eceea5c5fc2d824b2385921aefc5164aabef2e96f43a099d59",
+       "claim": "1963–1987년 총참모부 정보총국(GRU) 국장을 지냈다.",
+       "excerpt": "С 18 марта 1963 по 13 июля 1987 года начальник Главного разведывательного управления — заместитель начальника Генерального штаба Вооружённых сил СССР."
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1939,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "표트르 이바슈틴은 1931년 전연방공산당(볼셰비키)에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Pyotr_Ivashutin",
+       "excerpt": "He graduated from a rabfak and joined the All-Union Communist Party (b) in 1931.",
+       "locator": "characters 377:457; sha256 f404bca9cfa697b43cc6024113e76e74b209988f80791288b417561d0f5d87ec"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1931,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%98%D0%B2%D0%B0%D1%88%D1%83%D1%82%D0%B8%D0%BD%2C_%D0%9F%D1%91%D1%82%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Pyotr_Ivashutin"
+   ]
+  },
+  {
+   "id": "ivan-stepanovich-yumashev",
+   "activities": [
+    {
+     "endYear": 1957,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%AE%D0%BC%D0%B0%D1%88%D0%B5%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Ива́н Степа́нович Юма́шев (27 сентября (9 октября) 1895, Тифлис, Российская империя — 2 сентября 1972, Ленинград, РСФСР, СССР) — советский военно-морской деятель, командующий Черноморским и Тихоокеанским флотами, главнокомандующий ВМФ СССР (1947—1951), военно-морской министр СССР (1950—1951), адмирал (31.05.1943).",
+       "locator": "plain-text extract lead sentence; sha256 5f630f0079dbec6bb33695a44a43b89b0165d2e90fbcb7446b53448bfc991628"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%AE%D0%BC%D0%B0%D1%88%D0%B5%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2523:2582; sha256 93df70b2b010de099ca664e01854b78b78db1beb2c28c0c01c4f05b90e270929",
+       "claim": "유마셰프는 1919년 2월 붉은 군대 해군에 자원 입대했다.",
+       "excerpt": "В феврале 1919 года добровольно вступил в Морские силы РККА"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%AE%D0%BC%D0%B0%D1%88%D0%B5%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 7208:7245; sha256 93df70b2b010de099ca664e01854b78b78db1beb2c28c0c01c4f05b90e270929",
+       "claim": "1957년 1월 퇴역했다.",
+       "excerpt": "В январе 1957 года уволен в отставку."
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1919,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "이반 유마셰프는 1918년 8월 러시아 공산당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Ivan_Yumashev",
+       "excerpt": "In August 1918, he joined the Russian Communist Party, and became the commander of the Red Volunteer detachment.",
+       "locator": "characters 1416:1528; sha256 c2db397e3ee6d9a1d31fa16f5bafd7b90c14655290938991dcca97b8389c17ee"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1918,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%AE%D0%BC%D0%B0%D1%88%D0%B5%D0%B2%2C_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%B5%D0%BF%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Ivan_Yumashev"
+   ]
+  },
+  {
+   "id": "moisei-rukhimovich",
+   "activities": [
+    {
+     "endYear": 1937,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: heavy-military-industry).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B9_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Моисей Львович Рухимович (октябрь 1889 — 29 июля 1938) — советский партийный и государственный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 a2e195a1965f25fe14ab1e1b274018889c2abcc4e821966faddaa7a06e5a95ef"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B9_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1936:2023; sha256 3d2e835c69c7ed21e7328ec276f4cc5e8f5681059ada2379500bdac2cb0a7b59",
+       "claim": "루히모비치는 1923–1925년 돈바스 탄광 트러스트 「돈우골」 관리인을 지냈다.",
+       "excerpt": "В 1923—1925 годах управляющий трестом «Донуголь», в который входили все шахты Донбасса."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B9_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2514:2581; sha256 3d2e835c69c7ed21e7328ec276f4cc5e8f5681059ada2379500bdac2cb0a7b59",
+       "claim": "1937년 10월 15일 해임되고 이튿날 체포되었다.",
+       "excerpt": "15 октября 1937 года снят с должности, арестован на следующий день."
+      }
+     ],
+     "officeId": "heavy-military-industry",
+     "relation": "service",
+     "startYear": 1923,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "모이세이 루히모비치는 1917년 러시아 사회민주노동당(볼셰비키) 하르키우 위원회 위원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Moisey_Rukhimovich",
+       "excerpt": "he was a member of the Kharkov Committee of the Russian Social Democratic Labour Party (Bolsheviks)",
+       "locator": "characters 696:795; sha256 8b7341ba5cfd26b4afe7d90bbd486c5bd7f48f5b06a4f5c3e4d9452c92cbb916"
+      },
+      {
+       "claim": "모이세이 루히모비치는 1924–1937년 전연방공산당(볼셰비키) 중앙위원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Moisey_Rukhimovich",
+       "excerpt": "Member of the Central Committee of the All–Union Communist Party (Bolsheviks) (1924–1937)",
+       "locator": "characters 2198:2287; sha256 8b7341ba5cfd26b4afe7d90bbd486c5bd7f48f5b06a4f5c3e4d9452c92cbb916"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "industry",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%85%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87%2C_%D0%9C%D0%BE%D0%B8%D1%81%D0%B5%D0%B9_%D0%9B%D1%8C%D0%B2%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Moisey_Rukhimovich"
+   ]
+  },
+  {
+   "id": "vadim-bakatin",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BA%D0%B0%D1%82%D0%B8%D0%BD%2C_%D0%92%D0%B0%D0%B4%D0%B8%D0%BC_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Вади́м Ви́кторович Бака́тин (6 ноября 1937, Киселёвск, Новосибирская область, РСФСР, СССР — 31 июля 2022, Москва, Россия) — советский партийный и государственный деятель, либеральный реформатор органов госбезопасности.",
+       "locator": "plain-text extract lead sentence; sha256 a559bcf251d1d9e2a960031fa905778bd2f0fda033d137288f25cc541ca544d8"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BA%D0%B0%D1%82%D0%B8%D0%BD%2C_%D0%92%D0%B0%D0%B4%D0%B8%D0%BC_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 5650:5727; sha256 fc60863fee091a20d51bb2debc771961539f5c7be5b4fd860b67d0956afbb6a2",
+       "claim": "바카틴은 1988년 10월 소련 내무장관에 임명되었다.",
+       "excerpt": "20 октября 1988 года Вадим Бакатин был назначен министром внутренних дел СССР"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BA%D0%B0%D1%82%D0%B8%D0%BD%2C_%D0%92%D0%B0%D0%B4%D0%B8%D0%BC_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 318:405; sha256 fc60863fee091a20d51bb2debc771961539f5c7be5b4fd860b67d0956afbb6a2",
+       "claim": "1991년 8–12월 소련 국가보안위원회(KGB) 의장을 지냈다.",
+       "excerpt": "8-й Председатель Комитета государственной безопасности СССР\n29 августа — 3 декабря 1991"
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1988,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "바딤 바카틴은 1964–1991년 소련공산당 당원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Vadim_Bakatin",
+       "excerpt": "From 1964 to 1991, he was the member of the Communist Party of the Soviet Union.",
+       "locator": "characters 906:986; sha256 a55c1412c4a10c797cb5c17f0c2683cf9e95d023a41836620606766639df96f2"
+      },
+      {
+       "claim": "바딤 바카틴은 1986–1990년 소련공산당 중앙위원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Vadim_Bakatin",
+       "excerpt": "From 1986 to 1990, he served as a member of the CPSU Central Committee.",
+       "locator": "characters 987:1058; sha256 a55c1412c4a10c797cb5c17f0c2683cf9e95d023a41836620606766639df96f2"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1964,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D0%BA%D0%B0%D1%82%D0%B8%D0%BD%2C_%D0%92%D0%B0%D0%B4%D0%B8%D0%BC_%D0%92%D0%B8%D0%BA%D1%82%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Vadim_Bakatin"
+   ]
+  },
+  {
+   "id": "grigory-kosyachenko",
+   "activities": [
+    {
+     "endYear": 1960,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: central-planning).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Григо́рий Петро́вич Косяче́нко (6 января 1901 (24 декабря 1900), слобода Петровка, Екатеринославская губерния — 8 июля 1983, Москва) — советский государственный деятель, председатель Госплана СССР (1953).",
+       "locator": "plain-text extract lead sentence; sha256 f4594aa2056acad093322b5d671000bad0239c83944d7564d6cf1de8d1fdc15f"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2190:2240; sha256 bfe9d410925c17830ad6db860a40d16500ce507168532226bb5d5d07d25fce8f",
+       "claim": "코샤첸코는 1940–1949년 국가계획위원회 부의장을 지냈다.",
+       "excerpt": "1940—1949 — заместитель Председателя Госплана СССР"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2498:2544; sha256 bfe9d410925c17830ad6db860a40d16500ce507168532226bb5d5d07d25fce8f",
+       "claim": "1957–1960년 재무차관을 지냈다.",
+       "excerpt": "1957—1960 — заместитель министра финансов СССР"
+      }
+     ],
+     "officeId": "central-planning",
+     "relation": "service",
+     "startYear": 1940,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "그리고리 코샤첸코는 1917년 5월부터 러시아 사회민주노동당(볼셰비키) 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член РСДРП(б) с мая 1917",
+       "locator": "characters 223:247; sha256 f4594aa2056acad093322b5d671000bad0239c83944d7564d6cf1de8d1fdc15f"
+      },
+      {
+       "claim": "그리고리 코샤첸코는 1952–1961년 소련공산당 중앙감사위원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ЦРК КПСС в 1952—1961.",
+       "locator": "characters 1992:2018; sha256 f4594aa2056acad093322b5d671000bad0239c83944d7564d6cf1de8d1fdc15f"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1917,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%8F%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "georgy-razumovsky",
+   "activities": [
+    {
+     "endYear": 1990,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D1%83%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Гео́ргий Петро́вич Разумо́вский (р. 19 января 1936 года, г. Краснодар, РСФСР, СССР) — советский государственный и политический деятель.",
+       "locator": "plain-text extract lead sentence; sha256 f198cfd1a67128e77cbf79c53b0b1d7f232208c1daaa250b6cc9326172014db0"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D1%83%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1355:1541; sha256 31ac64da0a0fd7e0a1c1b42b66650cffd6894558bf15871237219d83c5a2f50f",
+       "claim": "1961년부터 당 사업에 종사했다.",
+       "excerpt": "С 1961 года на партийной работе — первый секретарь Кореновского райкома КПСС (1964-67 гг.), заведующий отделом организационно-партийной работы Краснодарского крайкома КПСС (1967-71 гг.)."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D1%83%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2317:2422; sha256 31ac64da0a0fd7e0a1c1b42b66650cffd6894558bf15871237219d83c5a2f50f",
+       "claim": "1988–1990년 당 건설·간부정책위원회 의장이었다.",
+       "excerpt": "В 1988—1990 годах председатель Комиссии ЦК КПСС по вопросам партийного строительства и кадровой политики."
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1961,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B7%D1%83%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9_%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "alexei-kuznetsov",
+   "activities": [
+    {
+     "endYear": 1949,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Алексе́й Алекса́ндрович Кузнецо́в (20 февраля 1905, Боровичи, Новгородская губерния — 1 октября 1950, Ленинград) — советский партийный деятель, первый секретарь Ленинградского обкома и горкомов ВКП(б) (1945—1946), секретарь ЦК ВКП(б) (1946—1949).",
+       "locator": "plain-text extract lead sentence; sha256 9c63ebbe07c49575b73c3bbdc6a135f424f50291afc815962bfe1a08371f8c12"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1829:2034; sha256 feee2fdf380a4a31afdca1c3ceafbeaeb596b670903665cf2917db78113a4263",
+       "claim": "1932년부터 당 사업에 종사했다.",
+       "excerpt": "С 1932 года на партийной работе: инструктор Ленинградского городского комитета ВКП(б), второй секретарь Смольнинского районного комитета, первый секретарь Дзержинского районного комитета ВКП(б) Ленинграда."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3441:3498; sha256 feee2fdf380a4a31afdca1c3ceafbeaeb596b670903665cf2917db78113a4263",
+       "claim": "1946–1949년 중앙위 간부국장이었다.",
+       "excerpt": "В 1946—1949 годах начальник Управления кадров ЦК ВКП (б)."
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1932,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%B7%D0%BD%D0%B5%D1%86%D0%BE%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B9_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "igor-belousov",
+   "activities": [
+    {
+     "endYear": 1990,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: heavy-military-industry).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%BE%D1%83%D1%81%D0%BE%D0%B2%2C_%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "И́горь Серге́евич Белоу́сов (15 января 1928 — 10 февраля 2005) — советский государственный деятель, кораблестроитель.",
+       "locator": "plain-text extract lead sentence; sha256 0adb0e36497195115b6040cee2b7b65bd49ab915bec6c4795e2e28492a714681"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%BE%D1%83%D1%81%D0%BE%D0%B2%2C_%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1987:2282; sha256 d32314d7e85dab9ed574b3e676766228a515fe324607242c8cefd5e82f99b72c",
+       "claim": "1952년부터 조선소에서 일했다.",
+       "excerpt": "В 1952–1967 работал мастером, старшим мастером, старшим инженером-технологом, заместителем начальника цеха, секретарём комитета ВЛКСМ (1956–1957), начальником сборочно-сварочного цеха (1957–1961), начальником производственного отдела (1961–1963), главным инженером (1963–1967) Балтийского завода"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%BE%D1%83%D1%81%D0%BE%D0%B2%2C_%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3374:3495; sha256 d32314d7e85dab9ed574b3e676766228a515fe324607242c8cefd5e82f99b72c",
+       "claim": "1988–1990년 부총리 겸 국가군수공업위원회 의장이었다.",
+       "excerpt": "В 1988–1990 – заместитель Председателя Совета министров СССР — председатель Государственной военно-промышленной комиссии."
+      }
+     ],
+     "officeId": "heavy-military-industry",
+     "relation": "service",
+     "startYear": 1952,
+     "functionId": "industry",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "이고리 벨로우소프는 1955년 소련공산당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Igor_Belousov",
+       "excerpt": "He joined the Communist Party of the Soviet Union in 1955.",
+       "locator": "characters 629:687; sha256 39d87cbf188bf1fa030d7f1278bf56057d694cd5d378c16f8104fe10c2d6fe1f"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1955,
+     "functionId": "industry",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%BB%D0%BE%D1%83%D1%81%D0%BE%D0%B2%2C_%D0%98%D0%B3%D0%BE%D1%80%D1%8C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Igor_Belousov"
+   ]
+  },
+  {
+   "id": "voroshilov",
+   "activities": [
+    {
+     "endYear": 1940,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Климе́нт Ефре́мович (Клим) Вороши́лов (23 января [4 февраля] 1881, Верхнее, Екатеринославская губерния — 2 декабря 1969, Москва) — российский революционер, советский военный, политический, государственный и партийный деятель, участник Гражданской войны, один из первых Маршалов Советского Союза (1935).",
+       "locator": "plain-text extract lead sentence; sha256 a151478e98b230bc82f2a2f12c7efe1027dd72e49fa999b9282e2355685ad4d0"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 10235:10532; sha256 b7bce391d25073e70a36c75c90d97656ae55ad2aec0008420a8e6a18812e8a73",
+       "claim": "1918년 4월 제5군 사령관에 임명됐다.",
+       "excerpt": "С началом Гражданской войны 15 апреля 1918 Совнаркомом ДКР был назначен командующим 5 армией, затем командовал Царицынской группой войск, заместитель командующего и член Военного совета Южного фронта, командующий 10-й армией (3 октября — 18 декабря 1918), нарком внутренних дел УССР (январь — июнь"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 19205:19499; sha256 b7bce391d25073e70a36c75c90d97656ae55ad2aec0008420a8e6a18812e8a73",
+       "claim": "1940년 5월 국방인민위원에서 물러났다.",
+       "excerpt": "После Советско-финской войны 7 мая 1940 года Ворошилова на посту наркома обороны сменил С. К. Тимошенко, которого на эту должность назначил Сталин. Ворошилов в тот же день стал заместителем председателя Совета народных комиссаров СССР (являлся им до 15 марта 1953 года) и председателем Комитета"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1969,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "클리멘트 보로실로프는 1903년 말 볼셰비키에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2,_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "В члены Российской социалистической рабочей партии (большевиков) РСДРП(б) вступил в конце 1903 года.",
+       "locator": "characters 2128:2228; sha256 a151478e98b230bc82f2a2f12c7efe1027dd72e49fa999b9282e2355685ad4d0"
+      },
+      {
+       "claim": "클리멘트 보로실로프는 1921년 소련공산당 중앙위원으로 선출되었다.",
+       "source": "https://en.wikipedia.org/wiki/Kliment_Voroshilov",
+       "excerpt": "Voroshilov was elected to the Central Committee of the Communist Party in 1921, and in 1925 Stalin appointed him People's Commissar for Military and Navy Affairs (later People's Commissar for Defence).",
+       "locator": "characters 776:977; sha256 21261800687cddcfb80177795b3abdab394ca242aa18bc46e1691b12a3b6f3a8"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1903,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1960,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "클리멘트 보로실로프: 1953.03.15–1960.05.07 소련 최고소비에트 상무회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР",
+       "excerpt": "3 | Климент Ефремович Ворошилов (1881—1969) | 15 марта 1953 | 7 мая 1960 | — | 3-й—5-й созывы | КПСС",
+       "locator": "characters 3270:3370; sha256 7a245aea263e77fab9660e48199220f6aadd47710ba9a3d5f31ba26583e256df"
+      }
+     ],
+     "officeId": "state-head",
+     "relation": "service",
+     "startYear": 1953,
+     "functionId": "legislature",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%80%D0%BE%D1%88%D0%B8%D0%BB%D0%BE%D0%B2,_%D0%9A%D0%BB%D0%B8%D0%BC%D0%B5%D0%BD%D1%82_%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Kliment_Voroshilov",
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "id": "konstantin-fedin",
+   "activities": [
+    {
+     "endYear": 1977,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: culture-literature).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D0%B8%D0%BD%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Константи́н Алекса́ндрович Фе́дин (12 (24) февраля 1892, Саратов, Российская империя — 15 июля 1977, Москва, СССР) — русский советский писатель и журналист.",
+       "locator": "plain-text extract lead sentence; sha256 1c9cde934606ae9ab7b9cca410e32d830472f154d1cc6cc0e91162659b63404f"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D0%B8%D0%BD%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 482:509; sha256 f39bbbfa50bddf7b14c6a09c682c76de8ad85256c0fee066ec9bb59d28ae8b6e",
+       "claim": "창작 활동 기간은 1922–1977년이다.",
+       "excerpt": "Годы творчества | 1922—1977"
+      }
+     ],
+     "officeId": "culture-literature",
+     "relation": "service",
+     "startYear": 1922,
+     "functionId": "arts",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1921,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "콘스탄틴 페딘은 러시아로 돌아와 볼셰비키(소련공산당·볼셰비키)에 가입했다.",
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Fedin",
+       "excerpt": "On returning to Russia, he joined the Bolsheviks and served in the Red Army.",
+       "locator": "characters 439:515; sha256 2517de7b06df0c95aab6a9e683beaf5b47a0cd1a7e6db22365c203deaeeaf560"
+      },
+      {
+       "claim": "콘스탄틴 페딘은 1921년 당을 떠났다.",
+       "source": "https://en.wikipedia.org/wiki/Konstantin_Fedin",
+       "excerpt": "After leaving the Party in 1921, he joined the literary group called the Serapion Brothers",
+       "locator": "characters 516:606; sha256 2517de7b06df0c95aab6a9e683beaf5b47a0cd1a7e6db22365c203deaeeaf560"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1919,
+     "functionId": "arts",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D0%B8%D0%BD%2C_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Konstantin_Fedin"
+   ]
+  },
+  {
+   "id": "yakovlev",
+   "activities": [
+    {
+     "endYear": 1990,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: ideology-propaganda).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Алекса́ндр Никола́евич Я́ковлев (2 декабря 1923, дер. Королёво, Ярославская губерния — 18 октября 2005, Москва) — советский и российский политический деятель, публицист, учёный-американист, доктор исторических наук (1967), академик РАН.",
+       "locator": "plain-text extract lead sentence; sha256 8b5e4555d26eb73c1fd7333fbf16130deede96895bbe2b2294b2390c9c94ce7f"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4138:4434; sha256 95f6dc7711ad0c54cf07705a12d020da6d2952e112cbbd42b75f9baf0b7514cd",
+       "claim": "1946년 야로슬라블 주당위원회 선전선동부 지도원이 됐다.",
+       "excerpt": "С 1946 года в течение двух лет Яковлев работал инструктором отдела пропаганды и агитации Ярославского обкома ВКП(б), затем — до 1950 года — членом редколлегии областной газеты «Северный рабочий». В 1950 году был утверждён заместителем заведующего отделом пропаганды и агитации Ярославского обкома"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2264:2300; sha256 95f6dc7711ad0c54cf07705a12d020da6d2952e112cbbd42b75f9baf0b7514cd",
+       "claim": "1986–1990년 중앙위 서기였다.",
+       "excerpt": "член и секретарь ЦК КПСС (1986—1990)"
+      }
+     ],
+     "officeId": "ideology-propaganda",
+     "relation": "service",
+     "startYear": 1946,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "알렉산드르 야코블레프는 1944년 소련공산당 당원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Alexander_Yakovlev",
+       "excerpt": "He became a member of the Communist Party of the Soviet Union in 1944.",
+       "locator": "characters 2931:3001; sha256 341c891377d9d986c4b8b3c6c471f1985ebc469d5251a92f19cfb524653c57e2"
+      },
+      {
+       "claim": "알렉산드르 야코블레프는 1980년대 소련공산당 정치국원·서기국원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Alexander_Yakovlev",
+       "excerpt": "A member of the Politburo and Secretariat of the Communist Party of the Soviet Union throughout the 1980s",
+       "locator": "characters 172:277; sha256 341c891377d9d986c4b8b3c6c471f1985ebc469d5251a92f19cfb524653c57e2"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1944,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%AF%D0%BA%D0%BE%D0%B2%D0%BB%D0%B5%D0%B2%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Alexander_Yakovlev"
+   ]
+  },
+  {
+   "id": "gorbachev",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-leadership).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%B1%D0%B0%D1%87%D1%91%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Михаи́л Серге́евич Горбачёв (2 марта 1931, Привольное, Медвеженский район, Северо-Кавказский край, СССР — 30 августа 2022, Москва, Россия) — советский и российский государственный, политический, партийный и общественный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 a7d5ee7a27590fa00856fe67887f5953c3aff357213bf49fa3a01105d12ea2ba"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%B1%D0%B0%D1%87%D1%91%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 9579:9817; sha256 8d50b374197389cd01f60393391832de2fb15c3b08cda7e66f250b643b4ee94c",
+       "claim": "1970년 4월 스타브로폴 지방당 제1서기가 됐다.",
+       "excerpt": "с 10 апреля 1970 года — первый секретарь Ставропольского крайкома КПСС. Его предшественник Леонид Ефремов утверждал, что продвижение Горбачёва происходило по настоянию из Москвы, хотя он сам нашёл возможным выдвинуть его в свои преемники."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%B1%D0%B0%D1%87%D1%91%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2734:3028; sha256 8d50b374197389cd01f60393391832de2fb15c3b08cda7e66f250b643b4ee94c",
+       "claim": "1985–1991년 서기장이었다.",
+       "excerpt": "Генеральный секретарь ЦК КПСС (1985—1991). Последний Председатель Президиума Верховного Совета СССР (1988—1989), затем первый председатель Верховного Совета СССР (1989—1990). Единственный в истории президент СССР (1990—1991), а также единственный руководитель Советского государства, родившийся"
+      }
+     ],
+     "officeId": "party-leadership",
+     "relation": "service",
+     "startYear": 1970,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "미하일 고르바초프: 1988.10.01–1989.05.25 소련 최고소비에트 상무회 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР",
+       "excerpt": "11 | Михаил Сергеевич Горбачёв (1931—2022) | 1 октября 1988 | 25 мая 1989 | Анатолий Лукьянов | 11-й—12-й созывы | КПСС",
+       "locator": "characters 4491:4610; sha256 7a245aea263e77fab9660e48199220f6aadd47710ba9a3d5f31ba26583e256df"
+      },
+      {
+       "claim": "미하일 고르바초프: 1989.05.25–1990.03.15 소련 최고소비에트 의장.",
+       "source": "https://ru.wikipedia.org/wiki/Председатель_Верховного_Совета_СССР",
+       "excerpt": "Горбачёв, Михаил Сергеевич (25 мая 1989— 15 марта 1990)",
+       "locator": "characters 2993:3048; sha256 e6d3568877c686958775074d199d51c054aac3181f8eccd4c7f2041169f9bc86"
+      },
+      {
+       "claim": "미하일 고르바초프: 1990.03.15–1991.12.25 소련 대통령.",
+       "source": "https://ru.wikipedia.org/wiki/Президент_СССР",
+       "excerpt": "Михаил Горбачёв Президент СССР (1990—1991)",
+       "locator": "characters 38410:38452; sha256 9a890f0cf355b8a4fcd8f40e4059f5779d44929d650b738f23bdd5aa36fdfb50"
+      }
+     ],
+     "officeId": "state-head",
+     "relation": "service",
+     "startYear": 1988,
+     "functionId": "legislature",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%B1%D0%B0%D1%87%D1%91%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР",
+    "https://ru.wikipedia.org/wiki/Председатель_Верховного_Совета_СССР",
+    "https://ru.wikipedia.org/wiki/Президент_СССР"
+   ]
+  },
+  {
+   "id": "mesyats",
+   "activities": [
+    {
+     "endYear": 1985,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: agriculture).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%81%D1%8F%D1%86%2C_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Валентин Карпович Месяц (1 мая 1928 — 1 августа 2019) — советский государственный и партийный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 9c4036b4e130c9fa7457824b32ae3d8120b7d4a1e274a7493b921ca530530314"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%81%D1%8F%D1%86%2C_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1603:1666; sha256 c893fdbc2118ab92e9d8d5b4c4759bf634f8b451e66725d2ab532bc2cf5f692d",
+       "claim": "1953–1958년 MTS 수석 농학자·소장이었다.",
+       "excerpt": "1953—1958 — главный агроном, директор МТС (Московская область)."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%81%D1%8F%D1%86%2C_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2215:2260; sha256 c893fdbc2118ab92e9d8d5b4c4759bf634f8b451e66725d2ab532bc2cf5f692d",
+       "claim": "1976–1985년 소련 농업장관이었다.",
+       "excerpt": "1976—1985 — министр сельского хозяйства СССР."
+      }
+     ],
+     "officeId": "agriculture",
+     "relation": "service",
+     "startYear": 1953,
+     "functionId": "agriculture",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1990,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "발렌틴 메시야츠는 1971–1990년 소련공산당 중앙위원, 1985–1990년 모스크바 주위원회 제1서기였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%81%D1%8F%D1%86%2C_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ЦК КПСС в 1971—1990, министр сельского хозяйства СССР в 1976—1985, первый секретарь Московского обкома КПСС в 1985—1990.",
+       "locator": "characters 103:228; sha256 9c4036b4e130c9fa7457824b32ae3d8120b7d4a1e274a7493b921ca530530314"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "agriculture",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%81%D1%8F%D1%86%2C_%D0%92%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%B8%D0%BD_%D0%9A%D0%B0%D1%80%D0%BF%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "sokolov",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Серге́й Леони́дович Соколо́в (18 июня (1 июля) 1911, Евпатория, Таврическая губерния — 31 августа 2012, Москва) — советский военачальник, Маршал Советского Союза (1978), министр обороны СССР (1984—1987).",
+       "locator": "plain-text extract lead sentence; sha256 25d90c9d59a86334e839f26c28f5905efa993de5f03dfb927e95e8e9c776985d"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2521:2817; sha256 587e052b0425e2817038a4d6a1c594944e878be9c6b1219df6e667c5f6eaac1a",
+       "claim": "1932년 5월부터 붉은 군대에 복무했다.",
+       "excerpt": "В рядах Красной армии с мая 1932 года. По комсомольской путёвке получил право поступления в Горьковскую бронетанковую школу. Успешно пройдя вступительные испытания, был зачислен в училище курсантом (май 1932 — ноябрь 1934), командовал взводом и ротой. С отличием пройдя курс армейской подготовки,"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 6864:7161; sha256 587e052b0425e2817038a4d6a1c594944e878be9c6b1219df6e667c5f6eaac1a",
+       "claim": "총감찰관단 수석으로 1992년 1월 해체 때까지 있었다.",
+       "excerpt": "затем — старший этой Группы (в должности оставался вплоть до её расформирования в январе 1992 года). При увольнении в отставку в 1992 году награждён именным пистолетом. Некоторое время являлся советником Главнокомандующего Объединёнными Вооружёнными силами СНГ, с сентября 1992 года — советник при"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1932,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "세르게이 소콜로프는 1937–1991년 전연방공산당(볼셰비키)·소련공산당 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б)-КПСС в 1937—1991 годах.",
+       "locator": "characters 1134:1169; sha256 25d90c9d59a86334e839f26c28f5905efa993de5f03dfb927e95e8e9c776985d"
+      },
+      {
+       "claim": "세르게이 소콜로프는 1985–1987년 소련공산당 정치국원 후보, 1968–1989년 중앙위원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Кандидат в члены Политбюро ЦК КПСС (апрель 1985 — июнь 1987), член ЦК КПСС (1968—1989).",
+       "locator": "characters 204:291; sha256 25d90c9d59a86334e839f26c28f5905efa993de5f03dfb927e95e8e9c776985d"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1937,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "mikhail-yefremov",
+   "activities": [
+    {
+     "endYear": 1965,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Михаи́л Тимофе́евич Ефре́мов (22 мая 1911, Николаевка, Самарский уезд, Самарская губерния, Российская империя — 19 марта 2000, Москва) — советский партийный и государственный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 aeabe1feb4264c116c750c9dff3e3152c55e3b373a270dbc674ed4df13a94623"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2714:3012; sha256 17e25d7eea8b81e27c31f9a621c8b9f9f9e2cf9461aea7e90b438fbe6a65e790",
+       "claim": "1942년부터 당 사업에 종사했다.",
+       "excerpt": "С 1942 года находился на партийной работе: работал инструктором, заведующим отделом (1942—1943), заместителем секретаря обкома (1943—1945), заведующим отделом (1945—1947), заместителем секретаря обкома и заведующим отделом (1947—1948), заведующим отделом (1948—1951), вторым секретарём (1951—1952),"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3496:3575; sha256 17e25d7eea8b81e27c31f9a621c8b9f9f9e2cf9461aea7e90b438fbe6a65e790",
+       "claim": "1964.12–1965.11 고리키 주당위원회 제1서기였다.",
+       "excerpt": "В декабре 1964 — ноябре 1965 годов — первый секретарь Горьковского обкома КПСС."
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1942,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%95%D1%84%D1%80%D0%B5%D0%BC%D0%BE%D0%B2%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%A2%D0%B8%D0%BC%D0%BE%D1%84%D0%B5%D0%B5%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "fyodor-konstantinov",
+   "activities": [
+    {
+     "endYear": 1962,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: ideology-propaganda).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Фёдор Васи́льевич Константи́нов (8 [21] февраля 1901 — 8 декабря 1991) — советский учёный-философ.",
+       "locator": "plain-text extract lead sentence; sha256 e4f40f60ba51f80fcde36b3b4e08ccaa45d2f5fda324a454b98f97c8152f15dd"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1911:1977; sha256 b8de73c28e7f2be8e34f6422dd41701b5896ba51051ba7aea2d51edf076e28f3",
+       "claim": "1941–1942년 중앙위 선전선동국 강사였다.",
+       "excerpt": "В 1941—1942 гг. лектор управления пропаганды и агитации ЦК ВКП(б)."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 2808:2861; sha256 b8de73c28e7f2be8e34f6422dd41701b5896ba51051ba7aea2d51edf076e28f3",
+       "claim": "1958–1962년 《코무니스트》 주필이었다.",
+       "excerpt": "В 1958—62 годах главный редактор журнала «Коммунист»."
+      }
+     ],
+     "officeId": "ideology-propaganda",
+     "relation": "service",
+     "startYear": 1941,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "표도르 콘스탄티노프는 1918년 공산당 당원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Fyodor_Konstantinov",
+       "excerpt": "After becoming a member of the Communist Party in 1918",
+       "locator": "characters 320:374; sha256 6ae07dad4931c8803760e3dac6975e6aa5a08c05065df2f0ae37ffdcdeb5c1ba"
+      },
+      {
+       "claim": "표도르 콘스탄티노프는 소련공산당 중앙위원회 선전부장을 지냈다.",
+       "source": "https://en.wikipedia.org/wiki/Fyodor_Konstantinov",
+       "excerpt": "He also acted as head of the Propaganda Department of the CC of the CPSU",
+       "locator": "characters 819:891; sha256 6ae07dad4931c8803760e3dac6975e6aa5a08c05065df2f0ae37ffdcdeb5c1ba"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1918,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%2C_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Fyodor_Konstantinov"
+   ]
+  },
+  {
+   "id": "mikhail-olshanski",
+   "activities": [
+    {
+     "endYear": 1964,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: agriculture).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Михаил Александрович Ольша́нский (1908—1988) — советский агроном и селекционер.",
+       "locator": "plain-text extract lead sentence; sha256 b5287228289d7e356826a16890733a2a52f0753c519f50d0ffb1b2f63c1aab53"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1534:1557; sha256 3fcbb0e4c4dbd7a3c6dd93bcecf9f0bd92ecfc6d0dbf2d2c39dc86165f8ede6f",
+       "claim": "1928년 3월 전연방 육종유전연구소 기사로 일을 시작했다.",
+       "excerpt": "техник (март 1928—1929)"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1972:2020; sha256 3fcbb0e4c4dbd7a3c6dd93bcecf9f0bd92ecfc6d0dbf2d2c39dc86165f8ede6f",
+       "claim": "1962.3–1964.12 레닌 농업과학아카데미 총재였다.",
+       "excerpt": "Президент ВАСХНИЛ (в марте 1962 — декабре 1964)."
+      }
+     ],
+     "officeId": "agriculture",
+     "relation": "service",
+     "startYear": 1928,
+     "functionId": "agriculture",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": null,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "미하일 올샨스키는 1932년부터 전연방 공산당(볼셰비키) 당원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б) с 1932 года.",
+       "locator": "characters 427:451; sha256 b5287228289d7e356826a16890733a2a52f0753c519f50d0ffb1b2f63c1aab53"
+      },
+      {
+       "claim": "미하일 올샨스키는 1961–1966년 소련공산당 중앙위원 후보였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "кандидат в члены ЦК КПСС в 1961—1966.",
+       "locator": "characters 1703:1740; sha256 b5287228289d7e356826a16890733a2a52f0753c519f50d0ffb1b2f63c1aab53"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1932,
+     "functionId": "agriculture",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D1%8C%D1%88%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+   ]
+  },
+  {
+   "id": "kryuchkov",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%8E%D1%87%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Влади́мир Алекса́ндрович Крючко́в (29 февраля 1924, Царицын — 23 ноября 2007, Москва) — советский государственный деятель.",
+       "locator": "plain-text extract lead sentence; sha256 91d81067bed628733b6fa4db555d03549e269003f6a5df1d3283e92f28ed5e4c"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%8E%D1%87%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 3675:3781; sha256 b88d5e14e09c146b9b8ce12c6c7ee7d057248570b587e7d59ca29ce2f2b1f511",
+       "claim": "1967년 5월 KGB 의장 보좌관이 됐다.",
+       "excerpt": "С приходом 18 мая 1967 года на должность председателя КГБ Юрия Андропова с 24 мая назначен его помощником."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%8E%D1%87%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 228:260; sha256 b88d5e14e09c146b9b8ce12c6c7ee7d057248570b587e7d59ca29ce2f2b1f511",
+       "claim": "1988.10.1–1991.8.28 KGB 의장이었다.",
+       "excerpt": "1 октября 1988 — 28 августа 1991"
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1967,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "블라디미르 크류치코프는 1944년 소련공산당에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Kryuchkov",
+       "excerpt": "He joined the Communist Party of the Soviet Union in 1944 and became a full-time employee of the Communist Youth League (Komsomol).",
+       "locator": "characters 1718:1849; sha256 4feaa241863449efe5860f7a952fd30594118376b96bc3bf4d35e9a109ac9a15"
+      },
+      {
+       "claim": "블라디미르 크류치코프는 소련공산당 중앙위원회 정치국원이었다.",
+       "source": "https://en.wikipedia.org/wiki/Vladimir_Kryuchkov",
+       "excerpt": "Vladimir Aleksandrovich Kryuchkov (Russian: Влади́мир Алекса́ндрович Крючко́в; 29 February 1924 – 23 November 2007) was a Soviet lawyer, diplomat, and head of the KGB, member of the Politburo of the Central Committee of the CPSU.",
+       "locator": "characters 0:229; sha256 4feaa241863449efe5860f7a952fd30594118376b96bc3bf4d35e9a109ac9a15"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1944,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%8E%D1%87%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Vladimir_Kryuchkov"
+   ]
+  },
+  {
+   "id": "stasova",
+   "activities": [
+    {
+     "endYear": 1920,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: party-secretariat-cadres).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%2C_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0",
+       "excerpt": "Еле́на Дми́триевна Ста́сова (партийные псевдонимы: «Абсолют», «Гуща», «Варвара Ивановна», «Дельта»; 3 [15] октября 1873, Санкт-Петербург — 31 декабря 1966, Москва) — русская революционерка, деятель партии большевиков и Советского государства.",
+       "locator": "plain-text extract lead sentence; sha256 339af32097bf39b0600655a0808f500570bd6efb510c55fc1916baf6d4481d7f"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%2C_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0",
+       "locator": "characters 5634:5787; sha256 b14a1d31a94502ce3bd9edb4eae51ba009c58b0ec2e4f3dd3c6aef666e6d62e0",
+       "claim": "1917년 2월부터 중앙위 서기국 서기, 1919년 책임서기, 1920년 3월까지 중앙위 서기였다.",
+       "excerpt": "С 28 февраля (13 марта) 1917 секретарь Бюро ЦК, затем ответственный секретарь ЦК (25 марта—29 ноября 1919 г., секретарь ЦК (29 ноября 1919—20 марта 1920."
+      }
+     ],
+     "officeId": "party-secretariat-cadres",
+     "relation": "service",
+     "startYear": 1917,
+     "functionId": "organizing",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%2C_%D0%95%D0%BB%D0%B5%D0%BD%D0%B0_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B5%D0%B2%D0%BD%D0%B0"
+   ]
+  },
+  {
+   "id": "shepilov",
+   "activities": [
+    {
+     "endYear": 1957,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: ideology-propaganda).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Дми́трий Трофи́мович Шепи́лов (23 октября [5 ноября] 1905, Асхабад, Туркестанский край, Российская империя — 18 августа 1995, Москва, Россия) — советский государственный и партийный деятель, учёный-экономист.",
+       "locator": "plain-text extract lead sentence; sha256 b0b1663521126e3f23664ea8c599e362d400639b52a84ac5cfa27565bc7a8bc2"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4832:4973; sha256 57affb832b2af0cbbb1c2939346e2067aba6afd49918032372f0cfb782946ac1",
+       "claim": "1946년 2월 군 총정치국 선전선동국 부국장이 됐다.",
+       "excerpt": "В феврале — августе 1946 года заместитель начальника Управления пропаганды и агитации Главного политического управления Вооружённых сил СССР."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 6493:6714; sha256 57affb832b2af0cbbb1c2939346e2067aba6afd49918032372f0cfb782946ac1",
+       "claim": "1955–1956년과 1957년 중앙위 서기였다.",
+       "excerpt": "В июле 1955 — феврале 1956 годов и феврале — июне 1957 года Шепилов — Секретарь ЦК КПСС. Помогал Хрущёву готовить доклад XX съезду «О культе личности и его последствиях». Один из самых активных сторонников десталинизации."
+      }
+     ],
+     "officeId": "ideology-propaganda",
+     "relation": "service",
+     "startYear": 1946,
+     "functionId": "propaganda",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1962,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "드미트리 셰필로프는 1926년부터 소련공산당 당원이었고 1955–1956·1957년 중앙위원회 서기였다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D0%B8%D0%BB%D0%BE%D0%B2,_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Член ВКП(б) с 1926 года, член ЦК КПСС (1952—1957), кандидат в члены Президиума ЦК КПСС (1956—1957), Секретарь ЦК КПСС (1955—1956, 1957).",
+       "locator": "characters 319:455; sha256 b0b1663521126e3f23664ea8c599e362d400639b52a84ac5cfa27565bc7a8bc2"
+      },
+      {
+       "claim": "드미트리 셰필로프는 1962년 2월 21일 공산당에서 제명되었다.",
+       "source": "https://en.wikipedia.org/wiki/Dmitri_Shepilov",
+       "excerpt": "Following a second wave of denunciations of the \"Anti-Party Group\" at the 22nd Communist Party Congress in November 1961, Shepilov was expelled from the Communist Party on 21 February 1962.",
+       "locator": "characters 11649:11838; sha256 23e3a49da25bbd67e82b43d8f6183f0124ccb09dbcdb40089a6dfe6001ee85f0"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1926,
+     "functionId": "political-leadership",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D0%B8%D0%BB%D0%BE%D0%B2%2C_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D0%B8%D0%BB%D0%BE%D0%B2,_%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9_%D0%A2%D1%80%D0%BE%D1%84%D0%B8%D0%BC%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Dmitri_Shepilov"
+   ]
+  },
+  {
+   "id": "frunze",
+   "activities": [
+    {
+     "endYear": 1925,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "Михаи́л Васи́льевич Фру́нзе (молд. Mihail Vasilievici Frunze, до 1919 года — Фрунзеэ (на молдавской кириллице Фрунзэ, молд. и рум. Frunză); партийные псевдонимы Миха́йлов, Три́фоныч, Арсе́ний, литературные псевдонимы Серге́й Петро́в, А. Шу́йский, М. Ми́рский; 21 января [2 февраля] 1885, Пишпек, Семиреченская область, Российская империя — 31 октября 1925[…], Москва, РСФСР, СССР) — российский революционер, советский государственный деятель, военачальник Красной армии во время Гражданской войны, военный теоретик.",
+       "locator": "plain-text extract lead sentence; sha256 1d1dd1c84f5875293d5f64aa138c4df44b17e354d6245e35899025646b618244"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 6645:6756; sha256 4ec80aacd2f1b42a97e6176ae951347d7288fdb037d089aad3e199336d0447b8",
+       "claim": "1918년 8월 야로슬라블 군관구 군사위원이 됐다.",
+       "excerpt": "С августа 1918 — военный комиссар Ярославского военного округа. Участвовал в подавлении Ярославского восстания."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "locator": "characters 746:791; sha256 4ec80aacd2f1b42a97e6176ae951347d7288fdb037d089aad3e199336d0447b8",
+       "claim": "1925년 10월 31일 사망했다(육해군인민위원 재임 중).",
+       "excerpt": "Смерть | 31 октября 1925(1925-10-31) (40 лет)"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1925,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "미하일 프룬제는 1904년 러시아 사회민주노동당에 입당했다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+       "excerpt": "В 1904 году поступил в Петербургский политехнический институт, вступил в Российскую социал-демократическую рабочую партию.",
+       "locator": "characters 737:859; sha256 1d1dd1c84f5875293d5f64aa138c4df44b17e354d6245e35899025646b618244"
+      },
+      {
+       "claim": "미하일 프룬제는 당 분열 뒤 레닌의 볼셰비키파에 섰다.",
+       "source": "https://en.wikipedia.org/wiki/Mikhail_Frunze",
+       "excerpt": "Following the RSDLP ideological split, he sided with Vladimir Lenin's Bolshevik faction.",
+       "locator": "characters 413:501; sha256 21ce8743f69fec286d0e3478dcd9d73138f16dcf91698bb57ef29c72e7ec6960"
+      },
+      {
+       "claim": "미하일 프룬제는 1921년 볼셰비키당 중앙위원으로 선출되었다.",
+       "source": "https://en.wikipedia.org/wiki/Mikhail_Frunze",
+       "excerpt": "In 1921, Frunze was elected to the Central Committee of the Russian Bolshevik Party.",
+       "locator": "characters 4675:4759; sha256 21ce8743f69fec286d0e3478dcd9d73138f16dcf91698bb57ef29c72e7ec6960"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1904,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Mikhail_Frunze"
+   ]
+  },
+  {
+   "id": "sergei-ogoltsov",
+   "activities": [
+    {
+     "endYear": 1954,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: state-security).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BE%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Серге́й Ива́нович Огольцо́в (1900—1976) — деятель советских органов госбезопасности, генерал-лейтенант (1945), в 1959 году лишён этого звания.",
+       "locator": "plain-text extract lead sentence; sha256 8abaeef9854f0f25e0b32f13bf2b220a2dbdab7b3ff5f7adbc1f7183316f9990"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BE%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 351:374; sha256 e4ceebde542ef3cd5d540d2449aa57bdb43d6b8e2c7ce49bd78a2ee6f89ab5c0",
+       "claim": "복무 기간은 1918–1954년이다.",
+       "excerpt": "Годы службы | 1918—1954"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BE%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 5304:5342; sha256 e4ceebde542ef3cd5d540d2449aa57bdb43d6b8e2c7ce49bd78a2ee6f89ab5c0",
+       "claim": "1954년 1월 내무부 예비역으로 전역했다.",
+       "excerpt": "в январе 1954 года уволен в запас МВД."
+      }
+     ],
+     "officeId": "state-security",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "security",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1958,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "세르게이 오골초프는 1919년 러시아 공산당(볼셰비키)에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Sergei_Ogoltsov",
+       "excerpt": "In 1919 he joined the Russian Communist Party (Bolsheviks).",
+       "locator": "characters 689:748; sha256 21a1df8b1a39e473352ecbeb79c61bd7bb0220fc03a424a889a1b9261bd96bc2"
+      },
+      {
+       "claim": "세르게이 오골초프는 1958년 소련공산당에서 제명되었다.",
+       "source": "https://en.wikipedia.org/wiki/Sergei_Ogoltsov",
+       "excerpt": "On 14 February 1958 he was also excluded from the Communist Party of the Soviet Union for fabricating cases against professors in Leningrad universities in 1940s.",
+       "locator": "characters 7438:7600; sha256 21a1df8b1a39e473352ecbeb79c61bd7bb0220fc03a424a889a1b9261bd96bc2"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1919,
+     "functionId": "security",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%BE%D0%BB%D1%8C%D1%86%D0%BE%D0%B2%2C_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Sergei_Ogoltsov"
+   ]
+  },
+  {
+   "id": "vladimir-shcherbakov",
+   "activities": [
+    {
+     "endYear": 1991,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: central-planning).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%29",
+       "excerpt": "Владимир Иванович Щербаков (род. 5 декабря 1949, Новосысоевка, Приморский край) — советский государственный деятель, российский предприниматель, основной владелец автосборочной компании «Автотор».",
+       "locator": "plain-text extract lead sentence; sha256 3f045974f7f04b6dc8ab974b75ecbb89c604ebc1a35a6605fd2a4306097f7ea6"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%29",
+       "locator": "characters 2815:2900; sha256 5751a16a874f7e797ca46e598c24f64e2cac8cd4c0050c83435dc92fe0718fcb",
+       "claim": "1977–1982년 VAZ 계획경제국 부국장·국장이었다.",
+       "excerpt": "1977—1982 — заместитель начальника, начальник планово-экономического управления ВАЗа."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%29",
+       "locator": "characters 3491:3601; sha256 5751a16a874f7e797ca46e598c24f64e2cac8cd4c0050c83435dc92fe0718fcb",
+       "claim": "1991년 5–8월 제1부총리 겸 경제·예측장관이었다.",
+       "excerpt": "16 мая — 28 августа 1991 — Первый заместитель Премьер-министра СССР, Министр экономики и прогнозирования СССР."
+      }
+     ],
+     "officeId": "central-planning",
+     "relation": "service",
+     "startYear": 1977,
+     "functionId": "economy",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1991,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "블라디미르 셰르바코프는 1990–1991년 소련공산당 중앙위원이었다.",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%29",
+       "excerpt": "Член ЦК КПСС (1990—1991).",
+       "locator": "characters 197:222; sha256 3f045974f7f04b6dc8ab974b75ecbb89c604ebc1a35a6605fd2a4306097f7ea6"
+      }
+     ],
+     "relation": "membership",
+     "startYear": null,
+     "functionId": "economy",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A9%D0%B5%D1%80%D0%B1%D0%B0%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87_%28%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%29"
+   ]
+  },
+  {
+   "id": "timoshenko",
+   "activities": [
+    {
+     "endYear": 1960,
+     "primary": true,
+     "evidence": [
+      {
+       "claim": "러시아어 위키백과 첫 문장이 밝힌 이 인물의 소련 경력(구 분류: defence).",
+       "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BC%D0%BE%D1%88%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "excerpt": "Семён Константи́нович Тимоше́нко (6 [18] февраля 1895, Орман, Бессарабская губерния — 31 марта 1970, Москва) — советский военный и государственный деятель, Маршал Советского Союза (1940), дважды Герой Советского Союза (1940, 1965), кавалер ордена «Победа» (1945).",
+       "locator": "plain-text extract lead sentence; sha256 079644a0d1ca74ee3cf2db3b3cb803b44f572689babf7c434835dcf440514f56"
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BC%D0%BE%D1%88%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 4457:4749; sha256 6133044dc8baf89908ecfb89e32461231e22980e7ece42882df20f1c9df3e1d5",
+       "claim": "1918년 3월부터 붉은 군대에 복무했다.",
+       "excerpt": "В Красной армии с марта 1918 года, красноармеец 1-го Черноморского красногвардейского отряда. Командовал взводом с апреля 1918, эскадроном с июня 1918. В августе 1918 года во главе 1-го Революционного кавалерийского Крымского полка участвовал в обороне Царицына, где познакомился со Сталиным."
+      },
+      {
+       "source": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BC%D0%BE%D1%88%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+       "locator": "characters 1197:1206; sha256 6133044dc8baf89908ecfb89e32461231e22980e7ece42882df20f1c9df3e1d5",
+       "claim": "정보상자의 복무 기간은 1918–1960년이다.",
+       "excerpt": "1918—1960"
+      }
+     ],
+     "officeId": "defence",
+     "relation": "service",
+     "startYear": 1918,
+     "functionId": "military",
+     "affiliationId": "state-soviet",
+     "affiliationStatus": "confirmed"
+    },
+    {
+     "endYear": 1970,
+     "primary": false,
+     "evidence": [
+      {
+       "claim": "세묜 티모셴코는 1919년 러시아 공산당(볼셰비키)에 입당했다.",
+       "source": "https://en.wikipedia.org/wiki/Semyon_Timoshenko",
+       "excerpt": "Upon the outbreak of the Russian Revolution in 1917, he sided with the Bolsheviks, joining the Red Army in 1918 and the Russian Communist Party (Bolsheviks) in 1919.",
+       "locator": "characters 2627:2792; sha256 cca222ef620710f0d835370d196cd06e28cb7d80c43db019ddcef4c955f5ced1"
+      },
+      {
+       "claim": "세묜 티모셴코는 공산당 중앙위원이 되었다.",
+       "source": "https://en.wikipedia.org/wiki/Semyon_Timoshenko",
+       "excerpt": "He also became a member of the Communist Party's Central Committee.",
+       "locator": "characters 4390:4457; sha256 cca222ef620710f0d835370d196cd06e28cb7d80c43db019ddcef4c955f5ced1"
+      }
+     ],
+     "relation": "membership",
+     "startYear": 1919,
+     "functionId": "military",
+     "affiliationId": "soviet-party",
+     "affiliationStatus": "confirmed"
+    }
+   ],
+   "sources": [
+    "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BC%D0%BE%D1%88%D0%B5%D0%BD%D0%BA%D0%BE%2C_%D0%A1%D0%B5%D0%BC%D1%91%D0%BD_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87",
+    "https://en.wikipedia.org/wiki/Semyon_Timoshenko"
+   ]
+  }
+ ]
+}
