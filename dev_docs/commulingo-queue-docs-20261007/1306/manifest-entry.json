@@ -1,0 +1,28 @@
+{
+  "id": "trotsky-1913-chkheidze-letter",
+  "file": "trotsky-1913-chkheidze-letter.html",
+  "docLang": "ko",
+  "date": "1913-04-01",
+  "title": {
+    "ko": "트로츠키의 치헤이제 앞 편지(1913)와 올민스키 앞 편지(1921)",
+    "en": "Trotsky's Letter to Chkheidze (1913) and Letter to Olminsky (1921)"
+  },
+  "description": {
+    "ko": "트로츠키가 1913년 4월 빈에서 두마 의원 치헤이제에게 보내 레닌과 「레닌주의」를 맹렬히 공격한 편지, 그리고 이 편지의 출판을 묻는 올민스키에게 1921년 12월 공개를 말리며 답한 편지. 1932년 『반대파 회보』 편집부 머리말을 함께 실었다.",
+    "en": "Trotsky's April 1913 letter from Vienna to the Duma deputy Chkheidze, a fierce attack on Lenin and 'Leninism', together with his December 1921 reply to Olminsky advising against its publication, and the 1932 editorial note of the Bulletin of the Opposition."
+  },
+  "kind": {
+    "ko": "저작·연설",
+    "en": "Writings & speeches"
+  },
+  "source": "Л. Троцкий. Письмо Н. С. Чхеидзе, Вена, 1 апреля 1913 г. — копия в Trotsky Papers, Houghton Library, Harvard University, MS Russ 13, T-714 (русская транскрипция); Письмо М. С. Ольминскому, 6 декабря 1921 г., и редакционное предисловие — Бюллетень Оппозиции. 1932. № 28 (июль), электронная версия iskra-research.org (снимок Wayback 2023-02-03, https://web.archive.org/web/20230203165113/http://iskra-research.org/FI/BO/BO-28.shtml). Оба письма впервые опубликованы в «Правде» в декабре 1924 г. 저작권: 트로츠키 1940년 사망, 보호 기간 만료.",
+  "people": ["trotsky", "nikolai-chkheidze", "mikhail-olminsky", "lenin", "stalin", "karl-kautsky", "zetkin", "luxemburg"],
+  "terms": ["liquidationism", "august-bloc", "permanent-revolution", "pravda", "menshevik", "bolshevik"],
+  "events": ["succession-struggle"],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": ["『치헤이제 앞 편지』", "치헤이제 앞 편지", "치헤이제에게 보낸 편지", "트로츠키의 치헤이제 편지", "올민스키 앞 편지"],
+    "en": ["Letter to Chkheidze", "Trotsky's letter to Chkheidze", "Chkheidze letter", "Letter to Olminsky"]
+  },
+  "noAutoLink": []
+}
