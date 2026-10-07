@@ -1,0 +1,2260 @@
+{
+ "andropov": [
+  {
+   "rowIds": [
+    171
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1983,
+     6,
+     16
+    ],
+    "end": [
+     1984,
+     2,
+     9
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 상무회 의장",
+    "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  }
+ ],
+ "averky-aristov": [
+  {
+   "rowIds": [
+    800
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1952,
+     10,
+     27
+    ],
+    "end": [
+     1953,
+     4,
+     16
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 당·노동조합·콤소몰기관부장",
+    "en": "Head of the Central Committee Department of Party, Trade-Union and Komsomol Organs"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00535.asp"
+   ]
+  }
+ ],
+ "brezhnev": [
+  {
+   "rowIds": [
+    166
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1960,
+     5,
+     7
+    ],
+    "end": [
+     1964,
+     7,
+     15
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 상무회 의장",
+    "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    413
+   ],
+   "officeId": "party-leadership",
+   "period": {
+    "start": [
+     1966,
+     4,
+     8
+    ],
+    "end": [
+     1982,
+     11,
+     10
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 서기장",
+    "en": "General Secretary of the Central Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Генеральный_секретарь_ЦК_КПСС"
+   ]
+  }
+ ],
+ "dzerzhinsky": [
+  {
+   "rowIds": [
+    272
+   ],
+   "officeId": "state-security",
+   "period": {
+    "start": [
+     1922,
+     2,
+     6
+    ],
+    "end": [
+     1923,
+     11,
+     15
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 내무인민위원부 국가정치보안부(GPU) 의장",
+    "en": "Chairman of the State Political Directorate (GPU) under the NKVD of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Государственное_политическое_управление_при_НКВД_РСФСР"
+   ]
+  },
+  {
+   "rowIds": [
+    273
+   ],
+   "officeId": "state-security",
+   "period": {
+    "start": [
+     1923,
+     11,
+     15
+    ],
+    "end": [
+     1926,
+     7,
+     20
+    ]
+   },
+   "r": {
+    "ko": "소련 합동국가정치보안부(OGPU) 의장 (재임 중 사망)",
+    "en": "Chairman of the Joint State Political Directorate (OGPU) of the USSR (died in office)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Объединённое_государственное_политическое_управление"
+   ]
+  }
+ ],
+ "kaganovich": [
+  {
+   "rowIds": [
+    889
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1934,
+     2,
+     10
+    ],
+    "end": [
+     1935,
+     2,
+     28
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Commission of Party Control of the Central Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Каганович,_Лазарь_Моисеевич"
+   ]
+  },
+  {
+   "rowIds": [
+    402
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1937,
+     8,
+     22
+    ],
+    "end": [
+     1939,
+     1,
+     24
+    ]
+   },
+   "r": {
+    "ko": "소련 중공업인민위원",
+    "en": "People's Commissar of Heavy Industry of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР"
+   ]
+  }
+ ],
+ "kapitonov": [
+  {
+   "rowIds": [
+    818
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1964,
+     12,
+     12
+    ],
+    "end": [
+     1965
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 러시아 공화국(RSFSR) 담당 당기관부장",
+    "en": "Head of the Central Committee Department of Party Organs for the RSFSR"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/08816.asp"
+   ]
+  }
+ ],
+ "kosior": [
+  {
+   "rowIds": [
+    912
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1938,
+     1,
+     19
+    ],
+    "end": [
+     1938,
+     5,
+     3
+    ]
+   },
+   "r": {
+    "ko": "인민위원회의 소비에트통제위원회 의장",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+   ]
+  }
+ ],
+ "lenin": [
+  {
+   "rowIds": [
+    715
+   ],
+   "officeId": "head-of-government",
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1924,
+     1,
+     21
+    ]
+   },
+   "r": {
+    "ko": "소련 인민위원회의 의장",
+    "en": "Chairman of the Council of People's Commissars of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Совета_народных_комиссаров_СССР"
+   ]
+  }
+ ],
+ "lev-mekhlis": [
+  {
+   "rowIds": [
+    915
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1940,
+     9,
+     6
+    ],
+    "end": [
+     1941,
+     6,
+     21
+    ]
+   },
+   "r": {
+    "ko": "소련 국가통제인민위원",
+    "en": "People's Commissar of State Control of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+   ]
+  }
+ ],
+ "malenkov": [
+  {
+   "rowIds": [
+    793
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1936,
+     2,
+     4
+    ],
+    "end": [
+     1939,
+     3,
+     22
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 지도당기관부장",
+    "en": "Head of the Central Committee Department of Leading Party Organs (ORPO)"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00550.asp"
+   ]
+  }
+ ],
+ "maslyukov": [
+  {
+   "rowIds": [
+    407
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1985,
+     11
+    ],
+    "end": [
+     1988,
+     2,
+     5
+    ]
+   },
+   "r": {
+    "ko": "소련 각료회의 군수공업 국가위원회 의장",
+    "en": "Chairman of the State Commission of the Council of Ministers of the USSR for Military-Industrial Questions"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Маслюков,_Юрий_Дмитриевич"
+   ]
+  },
+  {
+   "rowIds": [
+    409
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1991,
+     1,
+     15
+    ],
+    "end": [
+     1991,
+     8,
+     28
+    ]
+   },
+   "r": {
+    "ko": "소련 내각 국가군수공업위원회 의장",
+    "en": "Chairman of the State Military-Industrial Commission of the Cabinet of Ministers of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Маслюков,_Юрий_Дмитриевич"
+   ]
+  }
+ ],
+ "mikoyan": [
+  {
+   "rowIds": [
+    709
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1953,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     8,
+     24
+    ]
+   },
+   "r": {
+    "ko": "소련 국내·대외무역장관",
+    "en": "Minister of Internal and Foreign Trade of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+   ]
+  }
+ ],
+ "molotov": [
+  {
+   "rowIds": [
+    779
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1921,
+     3,
+     16
+    ],
+    "end": [
+     1922,
+     4,
+     3
+    ]
+   },
+   "r": {
+    "ko": "러시아 공산당(볼셰비키) 중앙위원회 책임서기",
+    "en": "Responsible Secretary of the Central Committee of the RCP(b)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Ответственный_секретарь_ЦК_РКП(б)"
+   ]
+  },
+  {
+   "rowIds": [
+    921
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1956,
+     11,
+     21
+    ],
+    "end": [
+     1957,
+     6,
+     29
+    ]
+   },
+   "r": {
+    "ko": "소련 국가통제장관",
+    "en": "Minister of State Control of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+   ]
+  }
+ ],
+ "pavlov": [
+  {
+   "rowIds": [
+    671
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1989,
+     7,
+     17
+    ],
+    "end": [
+     1991,
+     1,
+     14
+    ]
+   },
+   "r": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+   ]
+  }
+ ],
+ "rykov": [
+  {
+   "rowIds": [
+    393
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1918,
+     4,
+     4
+    ],
+    "end": [
+     1921,
+     5,
+     26
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР"
+   ]
+  },
+  {
+   "rowIds": [
+    395
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1923,
+     5,
+     9
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР",
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    396
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1924,
+     2,
+     2
+    ]
+   },
+   "r": {
+    "ko": "소련 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР",
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+   ]
+  }
+ ],
+ "semichastny": [
+  {
+   "rowIds": [
+    804
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1959,
+     3,
+     17
+    ],
+    "end": [
+     1959,
+     8,
+     21
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 연방공화국 담당 당기관부장",
+    "en": "Head of the Central Committee Department of Party Organs for the Union Republics"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/04295.asp"
+   ]
+  }
+ ],
+ "shelepin": [
+  {
+   "rowIds": [
+    803
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1958,
+     4
+    ],
+    "end": [
+     1958,
+     12
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 연방공화국 담당 당기관부장",
+    "en": "Head of the Central Committee Department of Party Organs for the Union Republics"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/04295.asp"
+   ]
+  }
+ ],
+ "shvernik": [
+  {
+   "rowIds": [
+    894
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1956,
+     2,
+     27
+    ],
+    "end": [
+     1962,
+     11,
+     23
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 당통제위원회 위원장",
+    "en": "Chairman of the Party Control Committee of the Central Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Шверник,_Николай_Михайлович"
+   ]
+  },
+  {
+   "rowIds": [
+    895
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1962,
+     11,
+     23
+    ],
+    "end": [
+     1966,
+     3,
+     29
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 산하 당위원회 위원장",
+    "en": "Chairman of the Party Commission of the Central Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Шверник,_Николай_Михайлович"
+   ]
+  }
+ ],
+ "stalin": [
+  {
+   "rowIds": [
+    902
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1919,
+     3,
+     30
+    ],
+    "end": [
+     1920,
+     2,
+     7
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국 국가통제인민위원",
+    "en": "People's Commissar of State Control of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Народный_комиссариат_государственного_контроля_РСФСР"
+   ]
+  },
+  {
+   "rowIds": [
+    903
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1920,
+     2,
+     24
+    ],
+    "end": [
+     1922,
+     5,
+     6
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+   ]
+  },
+  {
+   "rowIds": [
+    718
+   ],
+   "officeId": "head-of-government",
+   "period": {
+    "start": [
+     1941,
+     5,
+     6
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "r": {
+    "ko": "소련 인민위원회의 의장",
+    "en": "Chairman of the Council of People's Commissars of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Совета_народных_комиссаров_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    719
+   ],
+   "officeId": "head-of-government",
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1953,
+     3,
+     5
+    ]
+   },
+   "r": {
+    "ko": "소련 각료회의 의장",
+    "en": "Chairman of the Council of Ministers of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    629
+   ],
+   "officeId": "defence",
+   "period": {
+    "start": [
+     1941,
+     7,
+     19
+    ],
+    "end": [
+     1946,
+     2,
+     25
+    ]
+   },
+   "r": {
+    "ko": "소련 국방인민위원",
+    "en": "People's Commissar of Defence of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    630
+   ],
+   "officeId": "defence",
+   "period": {
+    "start": [
+     1946,
+     2,
+     25
+    ],
+    "end": [
+     1946,
+     3,
+     15
+    ]
+   },
+   "r": {
+    "ko": "소련 군대인민위원",
+    "en": "People's Commissar of the Armed Forces of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    631
+   ],
+   "officeId": "defence",
+   "period": {
+    "start": [
+     1946,
+     3,
+     15
+    ],
+    "end": [
+     1947,
+     3,
+     3
+    ]
+   },
+   "r": {
+    "ko": "소련 군대장관",
+    "en": "Minister of the Armed Forces of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Главы_военных_ведомств_СССР"
+   ]
+  }
+ ],
+ "vasily-kuznetsov": [
+  {
+   "rowIds": [
+    767
+   ],
+   "officeId": "nationalities-federal",
+   "period": {
+    "start": [
+     1946,
+     3,
+     12
+    ],
+    "end": [
+     1950,
+     6,
+     12
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Supreme Soviet"
+   },
+   "sources": [
+    "http://www.knowbysight.info/1_SSSR/09011.asp"
+   ]
+  },
+  {
+   "rowIds": [
+    170
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1982,
+     11,
+     10
+    ],
+    "end": [
+     1983,
+     6,
+     16
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 상무회 의장 (직무대행)",
+    "en": "Chairman of the Presidium of the Supreme Soviet of the USSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    172
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1984,
+     2,
+     9
+    ],
+    "end": [
+     1984,
+     4,
+     11
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 상무회 의장 (직무대행)",
+    "en": "Chairman of the Presidium of the Supreme Soviet of the USSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    174
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1985,
+     3,
+     10
+    ],
+    "end": [
+     1985,
+     7,
+     2
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 상무회 의장 (직무대행)",
+    "en": "Chairman of the Presidium of the Supreme Soviet of the USSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  }
+ ],
+ "boris-pugo": [
+  {
+   "rowIds": [
+    899
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1990,
+     7,
+     14
+    ],
+    "end": [
+     1991,
+     4,
+     23
+    ]
+   },
+   "r": {
+    "ko": "소련공산당 중앙통제위원회 위원장",
+    "en": "Chairman of the Central Control Commission of the CPSU"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Пуго,_Борис_Карлович"
+   ]
+  }
+ ],
+ "fadeyev": [
+  {
+   "rowIds": [
+    613
+   ],
+   "officeId": "culture-literature",
+   "period": {
+    "start": [
+     1939
+    ],
+    "end": [
+     1944
+    ]
+   },
+   "r": {
+    "ko": "소련 작가동맹 서기",
+    "en": "Secretary of the Union of Soviet Writers"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Фадеев,_Александр_Александрович"
+   ]
+  }
+ ],
+ "kalinin": [
+  {
+   "rowIds": [
+    161
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1919,
+     3,
+     30
+    ],
+    "end": [
+     1938,
+     7,
+     15
+    ]
+   },
+   "r": {
+    "ko": "전러시아 중앙집행위원회 의장",
+    "en": "Chairman of the All-Russian Central Executive Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Всероссийского_центрального_исполнительного_комитета"
+   ]
+  }
+ ],
+ "khrushchev": [
+  {
+   "rowIds": [
+    722
+   ],
+   "officeId": "head-of-government",
+   "period": {
+    "start": [
+     1958,
+     3,
+     27
+    ],
+    "end": [
+     1964,
+     10,
+     15
+    ]
+   },
+   "r": {
+    "ko": "소련 각료회의 의장",
+    "en": "Chairman of the Council of Ministers of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Совета_министров_СССР"
+   ]
+  }
+ ],
+ "kosygin": [
+  {
+   "rowIds": [
+    666
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1948,
+     2,
+     16
+    ],
+    "end": [
+     1948,
+     12,
+     28
+    ]
+   },
+   "r": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    213
+   ],
+   "officeId": "central-planning",
+   "period": {
+    "start": [
+     1959,
+     3,
+     20
+    ],
+    "end": [
+     1960,
+     5,
+     4
+    ]
+   },
+   "r": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+   ]
+  }
+ ],
+ "menzhinsky": [
+  {
+   "rowIds": [
+    653
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1917,
+     11,
+     12
+    ],
+    "end": [
+     1918,
+     2,
+     2
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원 (직무대행)",
+    "en": "People's Commissar of Finance of the RSFSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_финансов_России"
+   ]
+  },
+  {
+   "rowIds": [
+    654
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1918,
+     2,
+     2
+    ],
+    "end": [
+     1918,
+     3,
+     21
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 재무인민위원",
+    "en": "People's Commissar of Finance of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Менжинский,_Вячеслав_Рудольфович"
+   ]
+  }
+ ],
+ "mezhlauk": [
+  {
+   "rowIds": [
+    401
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1937,
+     2,
+     25
+    ],
+    "end": [
+     1937,
+     8,
+     22
+    ]
+   },
+   "r": {
+    "ko": "소련 중공업인민위원",
+    "en": "People's Commissar of Heavy Industry of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Народный_комиссариат_тяжёлой_промышленности_СССР"
+   ]
+  }
+ ],
+ "mikhail-pervukhin": [
+  {
+   "rowIds": [
+    223
+   ],
+   "officeId": "central-planning",
+   "period": {
+    "start": [
+     1956,
+     12,
+     25
+    ],
+    "end": [
+     1957,
+     5,
+     10
+    ]
+   },
+   "r": {
+    "ko": "소련 국가경제위원회 의장",
+    "en": "Chairman of the State Economic Commission for Current Planning of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    831
+   ],
+   "officeId": "science-nuclear-space",
+   "period": {
+    "start": [
+     1957,
+     4,
+     30
+    ],
+    "end": [
+     1957,
+     7,
+     24
+    ]
+   },
+   "r": {
+    "ko": "소련 중형기계공업장관",
+    "en": "Minister of Medium Machine Building of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Первухин,_Михаил_Георгиевич"
+   ]
+  }
+ ],
+ "osinsky": [
+  {
+   "rowIds": [
+    573
+   ],
+   "officeId": "agriculture",
+   "period": {
+    "start": [
+     1921,
+     2,
+     10
+    ],
+    "end": [
+     1922,
+     1,
+     9
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 농업인민위원 (직무대행)",
+    "en": "People's Commissar of Agriculture of the RSFSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_сельского_хозяйства_России"
+   ]
+  }
+ ],
+ "preobrazhensky": [
+  {
+   "rowIds": [
+    731
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1920,
+     4
+    ],
+    "end": [
+     1920,
+     6
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선동선전부장",
+    "en": "Head of the Central Committee Agitation and Propaganda Department"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00508.asp"
+   ]
+  }
+ ],
+ "viktor-dementsev": [
+  {
+   "rowIds": [
+    669
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1985,
+     11,
+     12
+    ],
+    "end": [
+     1985,
+     12,
+     13
+    ]
+   },
+   "r": {
+    "ko": "소련 재무장관 (직무대행)",
+    "en": "Minister of Finance of the USSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+   ]
+  }
+ ],
+ "vladimir-milyutin": [
+  {
+   "rowIds": [
+    392
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1918,
+     3,
+     23
+    ],
+    "end": [
+     1918,
+     4,
+     3
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 최고국민경제회의 의장 (직무대행)",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the RSFSR (Acting)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_РСФСР"
+   ]
+  }
+ ],
+ "yakovlev": [
+  {
+   "rowIds": [
+    756
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1970
+    ],
+    "end": [
+     1973
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선전부장 (직무대행)",
+    "en": "Head of the Central Committee Department of Propaganda (Acting)"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/04284.asp"
+   ]
+  }
+ ],
+ "zhdanov": [
+  {
+   "rowIds": [
+    743
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1938,
+     11,
+     21
+    ],
+    "end": [
+     1939,
+     3,
+     21
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선전선동부(구두·출판)장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation (Oral and Printed)"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/11122.asp"
+   ]
+  },
+  {
+   "rowIds": [
+    744
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1939,
+     3,
+     31
+    ],
+    "end": [
+     1940,
+     9,
+     6
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선전선동국장",
+    "en": "Chief of the Central Committee Propaganda and Agitation Directorate"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00570.asp"
+   ]
+  }
+ ],
+ "zverev": [
+  {
+   "rowIds": [
+    665
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1946,
+     3,
+     19
+    ],
+    "end": [
+     1948,
+     2,
+     16
+    ]
+   },
+   "r": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    667
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1948,
+     12,
+     28
+    ],
+    "end": [
+     1960,
+     5,
+     16
+    ]
+   },
+   "r": {
+    "ko": "소련 재무장관",
+    "en": "Minister of Finance of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_финансов_СССР"
+   ]
+  }
+ ],
+ "aleksei-stetsky": [
+  {
+   "rowIds": [
+    739
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1929,
+     11,
+     19
+    ],
+    "end": [
+     1930,
+     1,
+     5
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선동·선전·출판부장",
+    "en": "Head of the Central Committee Department of Agitation, Propaganda and the Press"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00514.asp"
+   ]
+  }
+ ],
+ "beria": [
+  {
+   "rowIds": [
+    285
+   ],
+   "officeId": "state-security",
+   "period": {
+    "start": [
+     1953,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     6,
+     26
+    ]
+   },
+   "r": {
+    "ko": "소련 내무장관 (MGB를 흡수한 통합 내무부)",
+    "en": "Minister of Internal Affairs of the USSR (merged ministry that absorbed the MGB)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_внутренних_дел_СССР"
+   ]
+  }
+ ],
+ "bulganin": [
+  {
+   "rowIds": [
+    683
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1938,
+     10,
+     2
+    ],
+    "end": [
+     1940,
+     4,
+     17
+    ]
+   },
+   "r": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+   ]
+  },
+  {
+   "rowIds": [
+    685
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1940,
+     10,
+     12
+    ],
+    "end": [
+     1945,
+     5,
+     23
+    ]
+   },
+   "r": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+   ]
+  },
+  {
+   "rowIds": [
+    688
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1958,
+     3,
+     31
+    ],
+    "end": [
+     1958,
+     8,
+     15
+    ]
+   },
+   "r": {
+    "ko": "소련 국가은행 이사회 의장",
+    "en": "Chairman of the Board of the State Bank of the USSR"
+   },
+   "sources": [
+    "https://en.wikipedia.org/wiki/State_Bank_of_the_USSR"
+   ]
+  }
+ ],
+ "gorbachev": [
+  {
+   "rowIds": [
+    176
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1988,
+     10,
+     1
+    ],
+    "end": [
+     1989,
+     5,
+     25
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 상무회 의장",
+    "en": "Chairman of the Presidium of the Supreme Soviet of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Президиума_Верховного_Совета_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    177
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1989,
+     5,
+     25
+    ],
+    "end": [
+     1990,
+     3,
+     15
+    ]
+   },
+   "r": {
+    "ko": "소련 최고소비에트 의장",
+    "en": "Chairman of the Supreme Soviet of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Верховного_Совета_СССР"
+   ]
+  }
+ ],
+ "ignatiev": [
+  {
+   "rowIds": [
+    798
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1950,
+     12,
+     30
+    ],
+    "end": [
+     1952,
+     2,
+     16
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 당·노동조합·콤소몰기관부장",
+    "en": "Head of the Central Committee Department of Party, Trade-Union and Komsomol Organs"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00535.asp"
+   ]
+  }
+ ],
+ "ivan-silayev": [
+  {
+   "rowIds": [
+    729
+   ],
+   "officeId": "head-of-government",
+   "period": {
+    "start": [
+     1991,
+     9,
+     20
+    ],
+    "end": [
+     1991,
+     11,
+     14
+    ]
+   },
+   "r": {
+    "ko": "소련 공화국간 경제위원회 의장",
+    "en": "Chairman of the Inter-republican Economic Committee of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Комитет_по_оперативному_управлению_народным_хозяйством_СССР",
+    "https://ru.wikipedia.org/wiki/Межгосударственный_экономический_комитет_Экономического_сообщества"
+   ]
+  },
+  {
+   "rowIds": [
+    730
+   ],
+   "officeId": "head-of-government",
+   "period": {
+    "start": [
+     1991,
+     11,
+     14
+    ],
+    "end": [
+     1991,
+     12,
+     26
+    ]
+   },
+   "r": {
+    "ko": "국가간 경제위원회 의장",
+    "en": "Chairman of the Interstate Economic Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Комитет_по_оперативному_управлению_народным_хозяйством_СССР",
+    "https://ru.wikipedia.org/wiki/Межгосударственный_экономический_комитет_Экономического_сообщества"
+   ]
+  }
+ ],
+ "kamenev": [
+  {
+   "rowIds": [
+    158
+   ],
+   "officeId": "state-head",
+   "period": {
+    "start": [
+     1917,
+     11,
+     9
+    ],
+    "end": [
+     1917,
+     11,
+     21
+    ]
+   },
+   "r": {
+    "ko": "전러시아 중앙집행위원회 의장",
+    "en": "Chairman of the All-Russian Central Executive Committee"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Председатель_Всероссийского_центрального_исполнительного_комитета"
+   ]
+  },
+  {
+   "rowIds": [
+    701
+   ],
+   "officeId": "economic-management",
+   "period": {
+    "start": [
+     1926,
+     1,
+     16
+    ],
+    "end": [
+     1926,
+     8,
+     14
+    ]
+   },
+   "r": {
+    "ko": "소련 대외·국내무역인민위원",
+    "en": "People's Commissar of Foreign and Domestic Trade of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Министерство_внешней_торговли_СССР"
+   ]
+  }
+ ],
+ "kuibyshev": [
+  {
+   "rowIds": [
+    905
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1923,
+     4,
+     28
+    ],
+    "end": [
+     1923,
+     7,
+     6
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Куйбышев,_Валериан_Владимирович",
+    "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+   ]
+  },
+  {
+   "rowIds": [
+    906
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1923,
+     7,
+     6
+    ],
+    "end": [
+     1926,
+     8,
+     5
+    ]
+   },
+   "r": {
+    "ko": "소련 노동자농민감찰 인민위원",
+    "en": "People's Commissar of the Workers' and Peasants' Inspection of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Куйбышев,_Валериан_Владимирович",
+    "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+   ]
+  },
+  {
+   "rowIds": [
+    885
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1923,
+     4,
+     26
+    ],
+    "end": [
+     1926,
+     8,
+     5
+    ]
+   },
+   "r": {
+    "ko": "중앙통제위원회 위원장 (노동자농민감찰 인민위원 겸임)",
+    "en": "Chairman of the Central Control Commission (Also People's Commissar of the Workers' and Peasants' Inspection)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Куйбышев,_Валериан_Владимирович",
+    "https://ru.wikipedia.org/wiki/Рабоче-крестьянская_инспекция"
+   ]
+  },
+  {
+   "rowIds": [
+    398
+   ],
+   "officeId": "heavy-military-industry",
+   "period": {
+    "start": [
+     1926,
+     8,
+     5
+    ],
+    "end": [
+     1930,
+     11,
+     10
+    ]
+   },
+   "r": {
+    "ko": "소련 최고국민경제회의 의장",
+    "en": "Chairman of the Supreme Council of the National Economy (VSNKh) of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Высший_совет_народного_хозяйства_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    910
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1934,
+     2,
+     11
+    ],
+    "end": [
+     1935,
+     1,
+     25
+    ]
+   },
+   "r": {
+    "ko": "인민위원회의 소비에트통제위원회 의장 (재임 중 사망)",
+    "en": "Chairman of the Commission of Soviet Control of the Council of People's Commissars (Died in office)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Комиссия_советского_контроля"
+   ]
+  }
+ ],
+ "mykola-skrypnyk": [
+  {
+   "rowIds": [
+    765
+   ],
+   "officeId": "nationalities-federal",
+   "period": {
+    "start": [
+     1927,
+     4,
+     27
+    ],
+    "end": null
+   },
+   "r": {
+    "ko": "소련 중앙집행위원회 민족 소비에트 의장",
+    "en": "Chairman of the Soviet of Nationalities of the USSR Central Executive Committee"
+   },
+   "sources": [
+    "http://www.knowbysight.info/SSS/05501.asp"
+   ]
+  }
+ ],
+ "saburov": [
+  {
+   "rowIds": [
+    222
+   ],
+   "officeId": "central-planning",
+   "period": {
+    "start": [
+     1955,
+     5,
+     25
+    ],
+    "end": [
+     1956,
+     12,
+     25
+    ]
+   },
+   "r": {
+    "ko": "소련 국가경제위원회 의장",
+    "en": "Chairman of the State Economic Commission for Current Planning of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    205
+   ],
+   "officeId": "central-planning",
+   "period": {
+    "start": [
+     1941,
+     3,
+     10
+    ],
+    "end": [
+     1942,
+     12,
+     8
+    ]
+   },
+   "r": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Commission (Gosplan) of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    207
+   ],
+   "officeId": "central-planning",
+   "period": {
+    "start": [
+     1949,
+     3,
+     5
+    ],
+    "end": [
+     1953,
+     3,
+     5
+    ]
+   },
+   "r": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+   ]
+  },
+  {
+   "rowIds": [
+    209
+   ],
+   "officeId": "central-planning",
+   "period": {
+    "start": [
+     1953,
+     6,
+     29
+    ],
+    "end": [
+     1955,
+     5,
+     25
+    ]
+   },
+   "r": {
+    "ko": "소련 국가계획위원회(고스플란) 의장",
+    "en": "Chairman of the State Planning Committee (Gosplan) of the USSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Список_министров_экономики_СССР"
+   ]
+  }
+ ],
+ "suslov": [
+  {
+   "rowIds": [
+    746
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1947,
+     9,
+     17
+    ],
+    "end": [
+     1948,
+     7,
+     10
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선전선동국장",
+    "en": "Chief of the Central Committee Propaganda and Agitation Directorate"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00570.asp"
+   ]
+  },
+  {
+   "rowIds": [
+    748
+   ],
+   "officeId": "ideology-propaganda",
+   "period": {
+    "start": [
+     1949,
+     7,
+     20
+    ],
+    "end": [
+     1952,
+     10,
+     27
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 선전선동부장",
+    "en": "Head of the Central Committee Department of Propaganda and Agitation"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00549.asp"
+   ]
+  }
+ ],
+ "trotsky": [
+  {
+   "rowIds": [
+    224
+   ],
+   "officeId": "foreign-affairs",
+   "period": {
+    "start": [
+     1917,
+     11,
+     9
+    ],
+    "end": [
+     1918,
+     3,
+     13
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 외무인민위원",
+    "en": "People's Commissar for Foreign Affairs of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Троцкий,_Лев_Давидович"
+   ]
+  },
+  {
+   "rowIds": [
+    645
+   ],
+   "officeId": "defence",
+   "period": {
+    "start": [
+     1918,
+     4
+    ],
+    "end": [
+     1923,
+     11,
+     12
+    ]
+   },
+   "r": {
+    "ko": "러시아 공화국(RSFSR) 해군인민위원",
+    "en": "People's Commissar for Naval Affairs of the RSFSR"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Народный_комиссариат_по_военным_делам_РСФСР",
+    "https://ru.wikipedia.org/wiki/Троцкий,_Лев_Давидович"
+   ]
+  }
+ ],
+ "vilgelm-knorin": [
+  {
+   "rowIds": [
+    784
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1923
+    ],
+    "end": [
+     1924,
+     3,
+     10
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 등록배치부장",
+    "en": "Head of the Central Committee Registration and Assignment Department (Uchraspred)"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/04290.asp"
+   ]
+  }
+ ],
+ "yezhov": [
+  {
+   "rowIds": [
+    790
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1930,
+     11,
+     14
+    ],
+    "end": [
+     1934,
+     3,
+     10
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 행정·경제·노동조합 간부 배치부장",
+    "en": "Head of the Central Committee Department for the Assignment of Administrative, Economic and Trade-Union Cadres"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00554.asp"
+   ]
+  },
+  {
+   "rowIds": [
+    792
+   ],
+   "officeId": "party-secretariat-cadres",
+   "period": {
+    "start": [
+     1935,
+     3,
+     9
+    ],
+    "end": [
+     1936,
+     2,
+     4
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 지도당기관부장",
+    "en": "Head of the Central Committee Department of Leading Party Organs (ORPO)"
+   },
+   "sources": [
+    "http://www.knowbysight.info/2_KPSS/00550.asp"
+   ]
+  },
+  {
+   "rowIds": [
+    890
+   ],
+   "officeId": "control-commissions",
+   "period": {
+    "start": [
+     1935,
+     2
+    ],
+    "end": [
+     1939,
+     3,
+     22
+    ]
+   },
+   "r": {
+    "ko": "중앙위원회 당통제위원회 위원장 (1938년 11월 내무인민위원 해임 뒤로는 이름만)",
+    "en": "Chairman of the Commission of Party Control of the Central Committee (In name only after his removal from the NKVD in November 1938)"
+   },
+   "sources": [
+    "https://ru.wikipedia.org/wiki/Ежов,_Николай_Иванович"
+   ]
+  }
+ ]
+}

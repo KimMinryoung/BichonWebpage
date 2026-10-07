@@ -28,3 +28,7 @@ ru.wikipedia 목록·인물 정보상자, knowbysight.info(Справочник 
 - 출처: ru.wikipedia 기관 문서(ЦКК КПСС, Рабоче-крестьянская инспекция, Комиссия советского контроля, Комитет народного контроля СССР)와 인물 정보상자. knowbysight는 이번에 인증서 오류로 열리지 않았다.
 - 카드 없던 8명은 같은 날 등록했다(`scripts/content/control-commission-people-20261007.json`, Admin 스토어 경로, 정치 입장 분류는 마이그레이션 300): `karl-lander`, `pavel-komarov`, `yevgeny-makhov`, `zakhar-belenky`, `alexander-pavelyev`, `vasily-zhavoronkov`, `georgy-yenyutin`, 그리고 NKVD 망명자 `alexander-orlov`와 동명인 감사원 의장 `alexander-kondratyevich-orlov`(`identity_uncertain` 검토 승인). 46행 모두 카드에 연결된다. 주된 활동은 당 통제가 organizing/soviet-party, 국가통제가 economy/state-soviet이고 `officeId`는 `control-commissions`다.
 - 직책 페이지의 「이 기관 계열에서 활동한 인물」 링크는 인물이 가장 많이 잡히는 소속(state-soviet·soviet-party·comintern)으로 걸리고, 아무도 없으면 숨는다.
+
+## 계보 → 인물 이력 반영 (2026-10-07)
+- 계보 행 437개를 각 인물의 이력과 대조해, 같은 직책이 이력에 없던 87건(49명)을 이력에 넣었다(`scripts/content/office-lineage-careers-20261007.json`, 행 대응·출처는 `-rows.json`, Admin 스토어 경로). 직함·기간은 계보 행 그대로이고, 기존 이력 문장은 바꾸지 않았다. 새 항목은 시작 시점 순서 자리에 끼웠다(`careerEdits` add는 맨 끝에 붙어서 전체 `career` 교체를 썼다).
+- 기간이 정확히 이어지는 같은 직함 행만 한 항목으로 묶었다. 이력에 "지도부에서 활동"처럼 직함 없는 서술만 있으면 빠진 것으로 봤다.
