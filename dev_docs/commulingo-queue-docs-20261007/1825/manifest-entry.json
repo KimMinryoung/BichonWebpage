@@ -1,0 +1,45 @@
+{
+  "id": "congo-acte-fondamental-1991",
+  "file": "congo-acte-fondamental-1991.html",
+  "docLang": "ko",
+  "date": "1991-06-04",
+  "title": {
+    "ko": "콩고 기본법 — 과도기 공권력 조직에 관하여 (1991년 6월 4일)",
+    "en": "Fundamental Act of the Congo on the Organisation of Public Powers during the Transition (4 June 1991)"
+  },
+  "description": {
+    "ko": "브라자빌의 주권 국민회의가 채택한 과도기 헌법. 전문은 일당제 아래의 전체주의·족벌주의·부족주의와 정치적 처형을 단죄하고, 본문은 국호를 콩고 공화국으로 되돌리며 집행권을 국민회의가 뽑은 총리에게, 입법권을 공화국 최고평의회에 넘긴다.",
+    "en": "The transitional constitution adopted by the Sovereign National Conference in Brazzaville. Its preamble condemns the totalitarianism, nepotism, tribalism and political executions of single-party rule; its articles restore the name Republic of the Congo, hand executive power to a prime minister elected by the conference and legislative power to the Higher Council of the Republic."
+  },
+  "kind": {
+    "ko": "헌법·법령·명령",
+    "en": "Constitutions, laws & orders"
+  },
+  "source": "Acte fondamental portant organisation des pouvoirs publics durant la période de transition (4 juin 1991), Journal officiel de la République du Congo, édition spéciale, juin 1991, Brazzaville. Text: Digithèque MJP (Jean-Pierre Maury, Université de Perpignan), https://mjp.univ-perp.fr/constit/cg1991.htm (accessed 2026-10-07). Constitutional act of a state body; not subject to copyright.",
+  "people": [
+    "denis-sassou-nguesso",
+    "andre-milongo",
+    "ernest-kombo"
+  ],
+  "terms": [
+    "sovereign-national-conference"
+  ],
+  "events": [
+    "congo-peoples-republic-1969-1991"
+  ],
+  "addedAt": "2026-10-07",
+  "aliases": {
+    "ko": [
+      "『콩고 기본법 — 과도기 공권력 조직에 관하여』",
+      "1991년 6월 4일 기본법",
+      "1991년 콩고 기본법",
+      "과도기 공권력 조직에 관한 기본법"
+    ],
+    "en": [
+      "Acte fondamental of 4 June 1991",
+      "Fundamental Act of 4 June 1991",
+      "1991 Congolese Fundamental Act"
+    ]
+  },
+  "noAutoLink": []
+}
