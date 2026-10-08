@@ -26,7 +26,8 @@
 // - stamp, users, hand-fist, glasses, sprout, chess-king, castle,
 // bell, unlink, vote, mic-off, map-pinned, rose: Lucide (MIT),
 // https://github.com/lucide-icons/lucide/blob/main/icons/
-// Everything else is Lucide (MIT) except five custom drawings: `fasces`, `hammer-sickle-brush` and
+// Everything else is Lucide (MIT) except `hammer-sickle-brush` (the public-domain
+// WPK symbol, see its entry) and custom drawings: `fasces`, `hemicycle` and
 // `phrygian-cap` (see their entries), `commulingo`, a "political school"
 // emblem (open book + filled star), and `posts`, Bichon herself, a bob-haired
 // figure matching the site portrait.
@@ -65,16 +66,17 @@ const ICON_PATHS = {
     coins: '<circle cx="8" cy="8" r="5"/><path d="M18.1 8.6a5 5 0 1 1-6.7 6.7"/><path d="M8 5v6"/><path d="M5 8h6"/>',
     // Communist-current collections (2026-10-08): Lucide sun (Maoism, 'the East
     // is red'), cog (Yugoslav self-management),
-    // infinity (Trotskyism, permanent revolution), network (council communism),
-    // euro (Eurocommunism).
+    // infinity (Trotskyism, permanent revolution), network (council communism).
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
     cog: '<path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/>',
-    // Custom: the Workers' Party of Korea emblem, hammer between sickle and
-    // writing brush (Juche collection, 2026-10-08).
-    'hammer-sickle-brush': '<path fill="currentColor" stroke="none" d="M8.6 2.6h6.8v3.6H8.6z"/><path d="M12 6.2V22"/><path d="m16 18 4 4"/><path d="M16 18C9 18 4.5 13 5 6c1 4.5 4.5 8.5 11 9.2"/><path d="M4 22 14 12"/><path fill="currentColor" d="M14 12c.4-2.6 2.4-5.4 6-7-1.2 3.4-3.4 5.9-6 7Z"/>',
+    // The Workers' Party of Korea symbol (hammer, sickle and writing brush),
+    // public domain: https://commons.wikimedia.org/wiki/File:Workers%27_Party_of_Korea_symbol.svg
+    // (Juche collection, 2026-10-08).
+    'hammer-sickle-brush': '<g fill=\"currentColor\" stroke=\"none\" transform=\"translate(0.721 0) scale(0.60452)\"><g transform=\"translate(-86.396 -128.65)\"><g transform=\"matrix(.91015 0 0 .91015 27.005 27.493)\" ><rect x=\"84.738\" y=\"123.36\" width=\"4.3964\" height=\"31.399\" /><rect transform=\"matrix(.71064 .70355 -.71064 .70355 0 0)\" x=\"159.6\" y=\"21.673\" width=\"4.341\" height=\"31.404\" /><rect transform=\"matrix(.71064 -.70355 .71064 .70355 0 0)\" x=\"-41.608\" y=\"136.58\" width=\"4.445\" height=\"38.751\" /><path d=\"m69.265 133.61 11.006-10.921-1.5045-1.7639-4.5618-0.10823-8.9505 8.922z\" /><path d=\"m98.018 127.54s1.5825 1.1703 2.5398-0.11954c2.5905-3.4903-7.2616-7.5012-7.9729-7.7952 0 0 10.192-0.13742 12.888 4.9955 2.1098 4.0172-0.27245 6.966-4.6065 5.7808-0.92083-0.25183-2.8485-2.8615-2.8485-2.8615z\" /><path d=\"m85.133 123.64c0.56648 1.0244 1.1489 1.5234 1.8154 1.5482 0.6664-0.0249 1.2489-0.52379 1.8154-1.5482 3.2578-5.8915-1.8154-12.497-1.8154-12.497s-5.0731 6.606-1.8154 12.497z\" /></g></g><metadata><rdf:RDF><cc:Work rdf:about=\"\"><dc:date>2026-06-26</dc:date><dc:creator><cc:Agent><dc:title>David Bj\u00f6rkman</dc:title></cc:Agent></dc:creator></cc:Work></rdf:RDF></metadata></g>',
+    // Parliament hemicycle: the parliamentary road of Eurocommunism.
+    hemicycle: '<circle cx="3.5" cy="17" r="1.3"/><circle cx="5" cy="11.5" r="1.3"/><circle cx="8.8" cy="7.3" r="1.3"/><circle cx="14" cy="5.8" r="1.3"/><circle cx="19.2" cy="7.6" r="1.3"/><circle cx="22" cy="12" r="1"/><circle cx="8" cy="17" r="1.1"/><circle cx="9.3" cy="13" r="1.1"/><circle cx="13" cy="10.6" r="1.1"/><circle cx="16.8" cy="12" r="1.1"/><path d="M2 21h20"/>',
     infinity: '<path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/>',
     network: '<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/>',
-    euro: '<path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/>',
     globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/>',
     crown: '<path d="m2 6 5 12h10l5-12-6 5-4-7-4 7-6-5Z"/><path d="M7 18h10"/>',
     rose: '<path d="M17 10h-1a4 4 0 1 1 4-4v.534"/><path d="M17 6h1a4 4 0 0 1 1.42 7.74l-2.29.87a6 6 0 0 1-5.339-10.68l2.069-1.31"/><path d="M4.5 17c2.8-.5 4.4 0 5.5.8s1.8 2.2 2.3 3.7c-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2"/><path d="M9.77 12C4 15 2 22 2 22"/><circle cx="17" cy="8" r="2"/>',
