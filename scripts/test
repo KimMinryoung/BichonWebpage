@@ -65,6 +65,7 @@ for f in scripts/smoke-commulingo-*.js; do
     run "$(basename "$f" .js)" node "$f"
 done
 run validate-commulingo       node scripts/validate-commulingo.js
+run migration-kinds           node scripts/check-migration-kinds.js
 run audit-commulingo-quality  node scripts/audit-commulingo-quality.js
 
 # Lint runs here only when eslint is installed locally (the docker fallback in

@@ -65,11 +65,16 @@ docs/*.html
 scripts/bulk-translate/glossary-db.json
 __pycache__/
 
-# CommuLingo data-only SQL (content edits, no DDL) is kept in Cloudflare R2
-# next to the daily DB dumps (cyber-lenin-backups/commulingo-migrations/,
-# uploaded with scripts/archive-migrations-r2), not in git. Schema migrations
-# stay tracked in scripts/migrations/.
+# CommuLingo work products are records of DB writes, not code: data-only SQL
+# (content edits, no DDL) and its backups, batch specs/build scripts and
+# link-review files. They live in R2 (R2_BUCKET under work/, uploaded with
+# scripts/archive-work-r2.js), not in git. Files already tracked here stay
+# tracked (test fixtures, event-control sources); a new file a test or the app
+# needs must be added with `git add -f`. Schema migrations stay tracked in
+# scripts/migrations/.
 scripts/migrations/data/
+scripts/content/
+scripts/reviews/
 
 # Automatic-link review cache (PostgreSQL is authoritative)
 data/commulingo/link-reviews-snapshot.json

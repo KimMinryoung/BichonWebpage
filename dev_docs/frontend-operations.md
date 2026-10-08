@@ -46,8 +46,20 @@ Redis(세션 저장소) 장애 중에는 로그인 기능만 멈춘다. 사이�
 - 코드의 DB 사본을 수정했다면 `docker exec leninbot-frontend node /app/scripts/check-commulingo-code-db-drift.js`로 일치 여부를 확인한다.
 - 콘텐츠 규칙은 scripts/lib/commulingo-checks.js에 있다. 코스 구조나 문항을 바꿀 때는 관련 smoke 또는 validator 하나를 실행한다. 단순 공개 여부나 메타데이터 변경에는 해당 공개 결과를 확인하는 표적 검사만 쓴다. `--prune-baseline`은 기존 위반을 실제로 고쳤을 때만, `--no-baseline`은 전체 품질 감사 때만 실행한다.
 - 코스나 lesson을 코드 배포할 때 shard 재생성과 변경 레슨 캐시 제거는 `scripts/deploy`에 맡긴다. 배포 없이 생성 결과만 검사할 때만 `node scripts/build-commulingo-shards.js`를 수동 실행하며, 정상 deploy 전후에 별도 캐시 제거를 중복 실행하지 않는다.
+- 인물·용어·사건·링크 승인과 DB 등록부는 DB가 원본이라 수정에 커밋이 필요 없다. 아래 작업물 보관만 한다.
 - DB 스크립트는 scripts/lib/bootstrap으로 저장소 루트 환경을 로드한다. scripts/one-off/는 반복 실행용 도구가 아니다.
 - 인물 필드 설계는 [인물 인수인계](commulingo_people_handoff.md), 변경 순서와 완료 상태는 [인물 편집 체크리스트](commulingo-people-editing-plan.md)를 참고한다.
+
+### CommuLingo 작업물 R2 보관
+
+DB에 쓰는 작업의 입력과 기록은 git이 아니라 R2 버킷(`.env`의 `R2_BUCKET`, 접두어 `work/`)에 둔다.
+
+- 대상: `scripts/content/`(배치 명세·빌드 스크립트), `scripts/reviews/`(링크 승인 파일), `scripts/migrations/data/`(DDL 없는 데이터 SQL과 적용 전 백업). 세 디렉터리의 새 파일은 gitignore된다. 이미 추적 중인 파일(테스트 fixture, `scripts/content/event-control/` 원본 등)은 그대로 git에 남고, 테스트나 앱이 읽어야 하는 새 파일만 `git add -f`로 추가한다.
+- 보관: `node scripts/archive-work-r2.js`가 세 디렉터리의 미추적 파일을 `work/<scripts/ 아래 경로>`로 올린다. md5가 원격 ETag와 같으면 건너뛰고, 내용이 바뀌면 이전 객체를 `work/.history/<경로>.<옛 md5 앞 8자>`로 복사한 뒤 덮어쓴다(삭제하지 않는다). `--dry-run`, `--list`, `--get <key> [out]`(복원)이 있다. `scripts/apply-migration`은 `scripts/migrations/data/` 파일을 적용한 뒤 자동으로 실행한다.
+- 데이터 작업을 마칠 때 한 번 실행한다. 긴 배치는 중간 산출물을 디렉터리에 계속 써 두고 체크포인트마다 실행한다. 커밋은 하지 않는다.
+- 데이터 전용 SQL은 `scripts/migrations/data/`에 둔다. `scripts/migrations/`의 339번 이후 파일에 DDL(CREATE·ALTER·DROP·COMMENT ON·GRANT·REVOKE)이 없으면 `npm test`(`scripts/check-migration-kinds.js`)가 실패한다.
+- 자격증명: `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`(그 버킷 하나에 Object Read & Write만 준 S3 API 토큰). 클라이언트는 의존성 없는 `services/r2.js`다. 2026-10-08 이전 데이터 SQL 일부는 `cyber-lenin-backups/commulingo-migrations/`에 있다(옛 `scripts/archive-migrations-r2`, leninbot 자격증명 의존이라 폐기).
+- 아직 git에 있는 데이터 파일(`data/commulingo/docs/`, `courses/`, `lessons.json`, `event-control/`, `activity-catalog.json`, 명부·계보도)은 바꾸면 커밋한다. DB·R2 이전은 후속 단계다.
 
 ## 인증
 
