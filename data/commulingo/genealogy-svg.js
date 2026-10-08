@@ -198,7 +198,9 @@ function renderGenealogySvg(chart, lang) {
         });
         if (node.period) {
             const ty = p.y + NODE_PAD_Y + lines.length * LINE_HEIGHT + PERIOD_HEIGHT - 5;
-            inner.push(`<text class="gen-node-period" x="${p.x + NODE_WIDTH / 2}" y="${ty}" text-anchor="middle">${esc(node.period)}</text>`);
+            // A plain year range is one string; a period worded per language
+            // (1970년대 / 1970s) is a { ko, en } object.
+            inner.push(`<text class="gen-node-period" x="${p.x + NODE_WIDTH / 2}" y="${ty}" text-anchor="middle">${esc(localize(node.period, lang))}</text>`);
         }
         inner.push('</g>');
         if (href) {
