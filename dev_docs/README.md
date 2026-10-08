@@ -45,6 +45,7 @@
 | CommuLingo 프랑스 혁명 추가 문헌 DeepSeek 추론 ON 번역 | [22건 출판(주르당 법 2026-09-30 직접 전사·번역)·토큰 집계](commulingo-french-translations-20260913/README.md) |
 | CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](commulingo-fulltext-20260913/README.md) |
 | CommuLingo 프랑스 혁명 문헌집·기존 주소 이동 | [12편을 주제별 4편으로 통합](commulingo-french-reference-collections-20260913/README.md) |
+| CommuLingo 데이터 git 분리(작업물 R2, 문헌 DB, 후속 단계) | [단계·상태·설계](commulingo-data-off-git.md) |
 | CommuLingo DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
 | CommuLingo 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
 | CommuLingo 인물 별칭 등록 기준 | [별칭 표준과 2026-10-03 일괄 정리](commulingo-alias-standard.md) |
