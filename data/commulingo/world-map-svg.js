@@ -1,5 +1,6 @@
 const MAP = require('./world-map.json');
 const { countryInfo, hasCountry, countryCodes } = require('./country-geography');
+const { flagSrc } = require('./flag-icons');
 
 const WIDTH = 1000;
 const HEIGHT = 480;
@@ -132,7 +133,7 @@ function renderWorldMapSvg({ codes, selectedCode = '', lang = 'ko', territoryLin
         const current = marker.code === selected ? ' is-selected' : '';
         parts.push(`<a class="wmap-marker${current}" data-country-code="${esc(marker.code)}" href="${esc(marker.href)}" aria-label="${esc(marker.label)}">`
             + `<title>${esc(marker.label)}</title><rect x="${(x - 14).toFixed(1)}" y="${(y - 10).toFixed(1)}" width="28" height="20" rx="2"/>`
-            + `<image href="/flags/${esc(marker.code)}.svg" x="${(x - 12).toFixed(1)}" y="${(y - 8).toFixed(1)}" width="24" height="16" preserveAspectRatio="xMidYMid meet"/>`
+            + `<image href="${esc(flagSrc(marker.code))}" x="${(x - 12).toFixed(1)}" y="${(y - 8).toFixed(1)}" width="24" height="16" preserveAspectRatio="xMidYMid meet"/>`
             + '</a>');
     });
     parts.push('</g><rect class="wmap-border" x="0.5" y="0.5" width="999" height="479"/></svg>');

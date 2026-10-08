@@ -8,7 +8,7 @@ assert.deepEqual(eventCountries(['soviet', 'poland', 'soviet', 'atlantis']), ['s
 const timeline = [{ country: 'estonia' }, { country: ['latvia', 'poland'] }, {}, { country: 'estonia' }, { country: 'nowhere' }];
 assert.deepEqual(countryFilter(timeline, 'ko').map(c => [c.code, c.label]), [['estonia', '에스토니아'], ['latvia', '라트비아'], ['poland', '폴란드']]);
 assert.equal(countryFilter(timeline, 'en')[0].label, 'Estonia');
-assert.match(countryFilter(timeline, 'en')[0].flagHtml, /src="\/flags\/estonia\.svg"/);
+assert.match(countryFilter(timeline, 'en')[0].flagHtml, /src="\/flags\/estonia\.svg(\?v=[0-9a-f]{8})?"/);
 assert.deepEqual(countryFilter([{ country: 'estonia' }, { country: 'estonia' }], 'ko'), [], 'one country is not a filter');
 assert.deepEqual(countryFilter([], 'ko'), []);
 assert.equal(flagsHtml([], 'ko'), '');

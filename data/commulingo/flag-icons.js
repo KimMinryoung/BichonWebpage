@@ -124,6 +124,22 @@ function flagLabel(code, lang) {
     return (lang === 'en' ? entry.en : entry.ko) || entry.en || entry.ko || '';
 }
 
+// /flags/*.svg is served as immutable for 30 days, so a redrawn flag must get a
+// new URL: the query carries a short hash of the file, read once per code.
+const flagVersions = new Map();
+function flagSrc(code) {
+    if (!flagVersions.has(code)) {
+        let version = '';
+        try {
+            const body = require('fs').readFileSync(require('path').join(__dirname, '../../public/flags', `${code}.svg`));
+            version = require('crypto').createHash('sha1').update(body).digest('hex').slice(0, 8);
+        } catch { /* missing file: plain URL, the drift check reports it */ }
+        flagVersions.set(code, version);
+    }
+    const version = flagVersions.get(code);
+    return `/flags/${code}.svg${version ? `?v=${version}` : ''}`;
+}
+
 // One flag <img>, optionally wrapped in a link to its people filter page.
 // `label` overrides the default tooltip text; `kindLabel` prefixes the tooltip.
 function flagImg(code, label, kindLabel, href) {
@@ -131,7 +147,7 @@ function flagImg(code, label, kindLabel, href) {
     const name = label || FLAG_NAMES[code].ko;
     const title = kindLabel ? `${kindLabel}: ${name}` : name;
     const img = (
-        `<img class="commu-flag" src="/flags/${code}.svg" ` +
+        `<img class="commu-flag" src="${flagSrc(code)}" ` +
         `alt="${escapeAttr(name)}" title="${escapeAttr(title)}" loading="lazy" decoding="async" width="20" height="14">`
     );
     if (!href) return img;
@@ -141,4 +157,4 @@ function flagImg(code, label, kindLabel, href) {
     );
 }
 
-module.exports = { FLAG_NAMES, hasFlag, flagLabel, flagImg };
+module.exports = { FLAG_NAMES, hasFlag, flagLabel, flagImg, flagSrc };
