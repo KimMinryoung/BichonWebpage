@@ -70,11 +70,10 @@
             return { card: card, text: card.getAttribute('data-search').toLocaleLowerCase() };
         });
 
-        function showCount(total, filtered, periodStatus) {
+        function showCount(total, filtered) {
             var countText = total ? total + (en ? ' ' : '') + root.getAttribute(total === 1 ? 'data-result-one' : 'data-result-many')
                 : root.getAttribute('data-result-empty');
-            status.textContent = periodStatus || countText;
-            status.classList.toggle('is-period', !!periodStatus);
+            status.textContent = countText;
             status.classList.toggle('is-empty', total === 0);
             status.hidden = !filtered;
             if (count) { count.textContent = total ? countText : ''; count.hidden = !filtered || !total; }
@@ -131,7 +130,6 @@
             pager.hidden = true;
             status.hidden = false;
             status.classList.remove('is-empty');
-            status.classList.remove('is-period');
             status.textContent = en ? 'Loading…' : '불러오는 중…';
             if (count) count.hidden = true;
             loading = true;
@@ -158,7 +156,7 @@
                         pager.replaceChildren.apply(pager, Array.from(renderedPager.childNodes));
                         pager.hidden = renderedPager.hidden;
                         page = data.page;
-                        showCount(data.total, filtered, data.periodStatus);
+                        showCount(data.total, filtered);
                         updateUrl();
                     }).catch(function(err) {
                         if (err.name === 'AbortError') return;

@@ -11,6 +11,6 @@
         <button type="button" class="commu-people-search-clear" data-commu-dict-search-clear
             aria-label="<%= clearLabel %>" hidden><%- roleIconSvg('x') %></button>
     </div>
-    <p class="commu-dict-search-status<%= typeof periodStatus === 'string' && periodStatus ? ' is-period' : '' %>" data-commu-dict-search-status
-        role="status" aria-live="polite"<%- typeof periodStatus === 'string' && periodStatus ? '' : ' hidden' %>><%= typeof periodStatus === 'string' ? periodStatus : '' %></p>
+    <p class="commu-dict-search-status" data-commu-dict-search-status
+        role="status" aria-live="polite" hidden></p>
 </div>

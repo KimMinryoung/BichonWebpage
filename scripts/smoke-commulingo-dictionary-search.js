@@ -3,7 +3,7 @@ const path = require('node:path');
 const ejs = require('ejs');
 const { searchDictionary } = require('../utils/dictionary-search');
 const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
-const { eventPeriodYears, parseEventPeriodQuery, eventPeriodSearchStatus } = require('../utils/event-period-search');
+const { eventPeriodYears, parseEventPeriodQuery } = require('../utils/event-period-search');
 const docs = [
     { id: 'body', searchTitleText: 'Other', searchText: 'Other Lenin revolution', kindId: 'book' },
     { id: 'partial', searchTitleText: 'Lenin', searchText: 'Lenin revolution', kindId: 'book' },
@@ -57,9 +57,6 @@ assert.equal(searchDictionary([{ title: 'Event', period: '미상', startYear: 17
 assert.deepEqual(parseEventPeriodQuery('프랑스 1790 – 1800 혁명'), {
     periods: [{ startYear: 1790, endYear: 1800 }], keywords: '프랑스  혁명',
 });
-assert.equal(eventPeriodSearchStatus('1798', 4, 'ko'), '1798년에 진행 중인 사건 · 4건');
-assert.equal(eventPeriodSearchStatus('1790-1800', 0, 'en'), 'Events active in 1790–1800 · 0 results');
-assert.equal(eventPeriodSearchStatus('프랑스', 2, 'ko'), '');
 const refreshed = [{ ...terms[0], aliasSearchText: '새별칭' }];
 assert.equal(searchDictionary(refreshed, 'terms', '새별칭').length, 1);
 assert.equal(searchDictionary(terms, 'terms', '새별칭').length, 0);
@@ -101,16 +98,13 @@ async function request(query, lang = 'ko', route = handler) {
         load: async () => ({ items: periodEvents }) });
     const yearResults = await request({ q: '1798' }, 'ko', eventRoute);
     assert.equal(yearResults.body.total, 4);
-    assert.equal(yearResults.body.periodStatus, '1798년에 진행 중인 사건 · 4건');
     assert.equal(yearResults.body.highlightQuery, '');
     assert(yearResults.body.html.includes('/fr"'));
     const englishResults = await request({ q: 'French 1798년' }, 'en', eventRoute);
     assert.equal(englishResults.body.total, 1);
-    assert.equal(englishResults.body.periodStatus, 'Events active in 1798 · 1 results');
     assert.equal(englishResults.body.highlightQuery, 'French');
     assert(englishResults.body.html.includes('/en/commulingo/events/fr"'));
     const noYears = await request({ q: '1700' }, 'ko', eventRoute);
     assert.equal(noYears.body.total, 0);
-    assert.equal(noYears.body.periodStatus, '1700년에 진행 중인 사건 · 0건');
     console.log('dictionary search: ranking, aliases, filters, refresh, pagination, English links, validation passed');
 })().catch(err => { console.error(err); process.exitCode = 1; });

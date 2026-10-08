@@ -21,13 +21,4 @@ function parseEventPeriodQuery(query = '') {
     return { periods, keywords };
 }
 
-function eventPeriodSearchStatus(query, total, lang) {
-    const { periods } = parseEventPeriodQuery(query);
-    if (!periods.length) return '';
-    const label = periods.map(({ startYear, endYear }) => startYear === endYear
-        ? String(startYear) : `${startYear}–${endYear}`).join(', ');
-    return lang === 'en' ? `Events active in ${label} · ${total} results`
-        : `${label}년에 진행 중인 사건 · ${total}건`;
-}
-
-module.exports = { eventPeriodYears, parseEventPeriodQuery, eventPeriodSearchStatus };
+module.exports = { eventPeriodYears, parseEventPeriodQuery };

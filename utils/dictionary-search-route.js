@@ -4,7 +4,7 @@ const { renderAppView } = require('./render-app-view');
 const { localizeHtmlLinks } = require('./seo');
 const { setShortPublicCache } = require('../data/commulingo/page-helpers');
 const strings = require('../config/strings');
-const { eventPeriodSearchStatus, parseEventPeriodQuery } = require('./event-period-search');
+const { parseEventPeriodQuery } = require('./event-period-search');
 
 // Each dictionary supplies its own ordered snapshot and scope. Matching,
 // pagination, rendering and language-safe fragment responses are shared.
@@ -31,8 +31,7 @@ function dictionarySearchRoute({ kind, load, view, target }) {
             const pager = await renderAppView(req, 'partials/commulingo-list-pager', { ...locals, pagination, target });
             setShortPublicCache(res);
             res.json({ html: localizeHtmlLinks(html, lang), pager: localizeHtmlLinks(pager, lang), total: matched.length, page: pagination.current,
-                ...(kind === 'events' ? { periodStatus: eventPeriodSearchStatus(query, matched.length, lang),
-                    highlightQuery: parseEventPeriodQuery(query).keywords } : {}) });
+                ...(kind === 'events' ? { highlightQuery: parseEventPeriodQuery(query).keywords } : {}) });
         } catch (err) {
             console.error(`commulingo ${kind} search:`, err);
             res.status(500).json({ error: 'Failed to load search results' });

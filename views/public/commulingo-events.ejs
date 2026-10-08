@@ -12,8 +12,7 @@
         <%- include('../partials/commulingo-dict-search', {
             target: '#commu-event-list',
             searchValue: searchQuery,
-            placeholder: en ? 'Event, year or period · e.g. 1798, 1790–1800' : '사건·연도·기간 검색 · 예: 1798, 1790–1800',
-            periodStatus: typeof periodStatus === 'string' ? periodStatus : '',
+            placeholder: en ? 'Event name, summary or year · e.g. 1798, 1790–1800' : '사건명·개요·연도 검색 · 예: 1798, 1790–1800',
             ariaLabel: strings.commuLingoViews.events.searchHistoricalEvents,
             clearLabel: strings.commuLingoViews.events.clearSearch,
             resultOne: strings.commuLingoViews.events.eventFound,
