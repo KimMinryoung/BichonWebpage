@@ -100,10 +100,12 @@ function facetsFor(standardized, state, pool, lang) {
     const countIn = (people, test) => people.reduce((n, p) => n + (test(p) ? 1 : 0), 0);
     const keep = (rows, activeId) => rows.filter(r => r.count > 0 || r.id === activeId);
 
+    // Functions follow the current filters: most people first (ties keep the
+    // catalog order). Positions, by contrast, keep their fixed curated order.
     const functions = keep(activitiesModel.catalog.functions.map(f => ({
         id: f.id, icon: f.icon, label: localize(f.label, lang),
         count: countIn(activityPool, p => activitiesModel.matchesActivities(p, activityFilter(state, { functionId: f.id }))),
-    })), state.functionId);
+    })), state.functionId).sort((a, b) => b.count - a.count);
 
     // Picking another affiliation drops the institution line, so these counts ignore it.
     const affiliations = keep(activitiesModel.catalog.affiliations.map(a => ({

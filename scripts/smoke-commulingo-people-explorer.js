@@ -47,6 +47,8 @@ assert.equal(run({ function: 'security' }).facets.origins.find(o => o.id === 'ko
 const security = run({ function: 'security' });
 const count = (rows, id) => rows.find(r => r.id === id)?.count;
 assert.equal(count(security.facets.functions, 'political-leadership'), 1, 'function counts ignore the function condition');
+const functionCounts = run({}).facets.functions.map(f => f.count);
+assert.deepEqual(functionCounts, [...functionCounts].sort((a, b) => b - a), 'functions list the most people first');
 assert.equal(count(security.facets.eras, 'mao'), 1);
 assert.equal(count(security.facets.eras, 'scholars'), undefined, 'empty options drop out');
 assert.equal(count(security.facets.citizenships, 'soviet'), 1);
