@@ -1,6 +1,7 @@
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
+const { eventPeriodYears } = require('../../utils/event-period-search');
 
 // History events are served from an in-memory copy, mirroring people-store:
 // the hot path never awaits the DB. Serving (snapshot, background refresh,
@@ -31,6 +32,8 @@ async function fetchEvents() {
                     to_jsonb(commulingo_history_events)->'countries' AS countries,
                     to_jsonb(commulingo_history_events)->'relations' AS relations,
                     to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions,
+                    to_jsonb(commulingo_history_events)->'start_year' AS start_year,
+                    to_jsonb(commulingo_history_events)->'end_year' AS end_year,
                     to_jsonb(commulingo_history_events)->'sides' AS sides
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
@@ -65,6 +68,8 @@ async function fetchEvents() {
         id: row.id,
         linkExpressions: row.link_expressions || [],
         period: row.period_label || '',
+        ...(Number.isInteger(row.start_year) && Number.isInteger(row.end_year)
+            ? { startYear: row.start_year, endYear: row.end_year } : eventPeriodYears(row.period_label || '')),
         title: t(row.title_ko, row.title_en),
         question: t(row.question_ko, row.question_en),
         summary: t(row.summary_ko, row.summary_en),

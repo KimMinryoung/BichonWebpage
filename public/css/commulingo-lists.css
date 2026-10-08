@@ -411,6 +411,17 @@
     white-space: nowrap;
 }
 
+.commu-dict-search-status.is-period {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    margin: 12px 0 0;
+    color: var(--text-muted);
+}
+
 .commu-dict-search-status.is-empty {
     position: static;
     width: auto;

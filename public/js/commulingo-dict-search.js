@@ -70,12 +70,14 @@
             return { card: card, text: card.getAttribute('data-search').toLocaleLowerCase() };
         });
 
-        function showCount(total, filtered) {
-            status.textContent = total ? total + (en ? ' ' : '') + root.getAttribute(total === 1 ? 'data-result-one' : 'data-result-many')
+        function showCount(total, filtered, periodStatus) {
+            var countText = total ? total + (en ? ' ' : '') + root.getAttribute(total === 1 ? 'data-result-one' : 'data-result-many')
                 : root.getAttribute('data-result-empty');
+            status.textContent = periodStatus || countText;
+            status.classList.toggle('is-period', !!periodStatus);
             status.classList.toggle('is-empty', total === 0);
             status.hidden = !filtered;
-            if (count) { count.textContent = total ? status.textContent : ''; count.hidden = !filtered || !total; }
+            if (count) { count.textContent = total ? countText : ''; count.hidden = !filtered || !total; }
         }
         function cancel() {
             requests.cancel();
@@ -129,6 +131,7 @@
             pager.hidden = true;
             status.hidden = false;
             status.classList.remove('is-empty');
+            status.classList.remove('is-period');
             status.textContent = en ? 'Loading…' : '불러오는 중…';
             if (count) count.hidden = true;
             loading = true;
@@ -147,7 +150,7 @@
                         loading = false;
                         list.removeAttribute('aria-busy');
                         list.innerHTML = data.html;
-                        var pattern = search.pattern(query);
+                        var pattern = search.pattern(typeof data.highlightQuery === 'string' ? data.highlightQuery : query);
                         if (pattern) Array.from(list.children).forEach(function(card) { search.highlight(card, pattern); });
                         var holder = document.createElement('template');
                         holder.innerHTML = data.pager;
@@ -155,7 +158,7 @@
                         pager.replaceChildren.apply(pager, Array.from(renderedPager.childNodes));
                         pager.hidden = renderedPager.hidden;
                         page = data.page;
-                        showCount(data.total, filtered);
+                        showCount(data.total, filtered, data.periodStatus);
                         updateUrl();
                     }).catch(function(err) {
                         if (err.name === 'AbortError') return;
