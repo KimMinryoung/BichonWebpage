@@ -221,7 +221,7 @@
             if (event.target.closest('a, button')) return;
             pinned = pinned === num ? null : num;
             markPinned();
-            show(num);          // unpinning keeps it lit — the pointer is still here
+            show(pinned);       // a second click clears the row and map immediately
         });
     });
 

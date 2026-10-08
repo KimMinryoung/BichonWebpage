@@ -3953,9 +3953,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     color: var(--text-primary);
 }
 .commu-event-timeline-list li[data-geo-num] { cursor: pointer; }
-.commu-event-timeline-list li[data-geo-num]:hover,
 .commu-event-timeline-list li.is-map-active { background: color-mix(in srgb, var(--border) 6%, transparent); }
-.commu-event-timeline-list li[data-geo-num]:hover .commu-tl-geo-badge,
 .commu-event-timeline-list li.is-map-active .commu-tl-geo-badge,
 .commu-event-timeline-list li.is-map-pinned .commu-tl-geo-badge {
     background: var(--clr-red); border-color: var(--clr-red); color: var(--clr-cream);
