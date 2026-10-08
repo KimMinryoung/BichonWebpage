@@ -1,14 +1,18 @@
 // Date formatting follows the page language instead of always forcing Korean.
 var documentLocale = document.documentElement.lang === 'en' ? 'en-US' : 'ko-KR';
-document.querySelectorAll('.local-date').forEach(function(el) {
-    var d = new Date(el.getAttribute('datetime'));
-    var suffix = el.getAttribute('data-suffix') || '';
-    el.textContent = d.toLocaleDateString(documentLocale, { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
-});
-document.querySelectorAll('.local-date-short').forEach(function(el) {
-    var d = new Date(el.getAttribute('datetime'));
-    el.textContent = d.toLocaleDateString(documentLocale);
-});
+// Also run over list rows a search draws later (commulingo-dict-search.js).
+window.formatLocalDates = function(root) {
+    root.querySelectorAll('.local-date').forEach(function(el) {
+        var d = new Date(el.getAttribute('datetime'));
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = d.toLocaleDateString(documentLocale, { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
+    });
+    root.querySelectorAll('.local-date-short').forEach(function(el) {
+        var d = new Date(el.getAttribute('datetime'));
+        el.textContent = d.toLocaleDateString(documentLocale);
+    });
+};
+window.formatLocalDates(document);
 
 // Confirm dialog via data-confirm attribute on forms
 document.addEventListener('submit', function(e) {

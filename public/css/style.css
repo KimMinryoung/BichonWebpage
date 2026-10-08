@@ -1079,6 +1079,140 @@ a.home-card:hover::after {
     }
 }
 
+/* ===== Library list search =====
+   The CommuLingo dictionary search box (views/partials/commulingo-dict-search.ejs)
+   over /reports, /hub, /ai-diary and /posts; the rules mirror commulingo-lists.css. */
+.commu-dict-search .commu-role-icon {
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.9;
+}
+
+.commu-people-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.commu-people-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: color 0.15s ease;
+}
+
+.commu-people-search-icon .commu-role-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.commu-people-search:focus-within .commu-people-search-icon {
+    color: var(--link);
+}
+
+.commu-people-search-input {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 0.72rem 2.4rem 0.72rem 2.5rem;
+    font: inherit;
+    color: var(--text-primary);
+    background: var(--search-bg);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.commu-people-search-input::placeholder { color: var(--text-muted); opacity: 1; }
+
+.commu-people-search-input:hover {
+    border-color: color-mix(in srgb, var(--text-muted) 55%, var(--border));
+}
+
+.commu-people-search-input:focus {
+    border-color: var(--link);
+    box-shadow: inset 0 -2px 0 0 var(--link);
+}
+
+.commu-people-search-input::-webkit-search-cancel-button { display: none; }
+
+.commu-people-search-clear {
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.commu-people-search-clear .commu-role-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.commu-people-search-clear:hover {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--link) 16%, transparent);
+}
+
+.commu-people-search-clear[hidden],
+.commu-dict-search-count[hidden] {
+    display: none;
+}
+
+.commu-search-hl {
+    background: color-mix(in srgb, var(--link) 34%, transparent);
+    color: inherit;
+    padding: 0 1px;
+    border-radius: 0;
+}
+
+.commu-dict-search-count {
+    position: absolute;
+    right: 2.6rem;
+    padding-left: 8px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    white-space: nowrap;
+    pointer-events: none;
+    background: var(--search-bg);
+}
+
+.commu-dict-search-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.commu-dict-search-status.is-empty {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    padding: 18px 12px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    border: 1px dashed var(--border);
+    border-top: none;
+}
+
 /* ===== Post List & Cards ===== */
 .post-list {
     list-style: none;

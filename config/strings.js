@@ -62,7 +62,16 @@ const ko = {
         chatHistory: '이전 대화',
         chatNew: '새 대화',
         prevPost: '이전',
-        nextPost: '다음'
+        nextPost: '다음',
+        // 글 목록 검색창(보고서·큐레이션·일기·비숑글)
+        librarySearch: {
+            clear: '검색 지우기',
+            empty: '검색 결과가 없습니다',
+            reports: { placeholder: '보고서 제목 · 본문으로 검색…', ariaLabel: '보고서 검색', one: '편의 보고서', many: '편의 보고서' },
+            hub: { placeholder: '제목 · 출처 · 해설 · 태그로 검색…', ariaLabel: '큐레이션 검색', one: '편의 큐레이션', many: '편의 큐레이션' },
+            diary: { placeholder: '일기 제목 · 본문으로 검색…', ariaLabel: '일기 검색', one: '편의 일기', many: '편의 일기' },
+            posts: { placeholder: '글 제목 · 본문으로 검색…', ariaLabel: '비숑글 검색', one: '편의 글', many: '편의 글' }
+        }
     },
 
     // 일반 사용자 로그인/가입
@@ -713,7 +722,15 @@ const en = {
         chatHistory: 'History',
         chatNew: 'New chat',
         prevPost: 'Prev',
-        nextPost: 'Next'
+        nextPost: 'Next',
+        librarySearch: {
+            clear: 'Clear search',
+            empty: 'No results found',
+            reports: { placeholder: 'Search report titles and text…', ariaLabel: 'Search reports', one: 'report found', many: 'reports found' },
+            hub: { placeholder: 'Search by title, source, notes or tag…', ariaLabel: 'Search curations', one: 'curation found', many: 'curations found' },
+            diary: { placeholder: 'Search diary titles and text…', ariaLabel: 'Search the diary', one: 'entry found', many: 'entries found' },
+            posts: { placeholder: 'Search post titles and text…', ariaLabel: "Search Bichon's posts", one: 'post found', many: 'posts found' }
+        }
     },
 
     userAuth: {

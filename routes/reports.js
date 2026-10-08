@@ -9,6 +9,9 @@ const { listPrivateReports, getPrivateReport } = require('../config/private-repo
 const { researchSeriesNavFor } = require('../services/research-series');
 const { cachedResearchList, cachedPagesList } = require('../services/public-lists');
 const { renderResearch, researchMarkdown } = require('../services/research-render');
+const pageStore = require('../config/page-store');
+const { searchTerms, matchSnippet } = require('../utils/text-search');
+const { librarySearchRoute, libraryPagination } = require('../utils/library-search-route');
 
 const router = express.Router();
 const REPORTS_PER_PAGE = 20;
@@ -26,9 +29,79 @@ router.get(['/private', '/admin/private-reports'], (req, res) => {
     res.redirect('/reports');
 });
 
+// The research tab's feed: private reports (admin), research documents and
+// static pages, newest first. With a query, only the entries whose title,
+// summary or body contains every word, each excerpted around the match. The
+// public feed's sources failing is reported on the page (and as a 503 when
+// nothing could be listed) rather than shown as "none".
+async function researchFeed(lang, isAdmin, query) {
+    const terms = searchTerms(query);
+    let feedFailed = false;
+    const load = async (task, label, { required = true } = {}) => {
+        try {
+            return await task();
+        } catch (e) {
+            console.error(`Error loading ${label}:`, e);
+            if (required) feedFailed = true;
+            return [];
+        }
+    };
+    const [researchFiles, privateReports, pagesList, researchMatches, pageMatches] = await Promise.all([
+        load(() => cachedResearchList(lang), 'research list'),
+        isAdmin ? load(listPrivateReports, 'private reports', { required: false }) : [],
+        load(() => cachedPagesList(lang), 'pages list'),
+        terms.length ? load(() => researchStore.searchResearchDocuments(lang, terms, { includePrivate: isAdmin }), 'research search') : [],
+        terms.length ? load(() => pageStore.searchPages(lang, terms), 'pages search') : [],
+    ]);
+    const windows = new Map([
+        ...researchMatches.map(row => [row.status === 'private' ? `private:${row.slug}` : `research:${row.filename}`, row.body_window]),
+        ...pageMatches.map(row => [`page:${row.slug}`, row.body_window]),
+    ]);
+
+    // `summary` is the unified preview field — the EJS template clamps it to 3 lines via CSS.
+    let items = [
+        ...privateReports.map(r => ({
+            key: `private:${r.slug}`,
+            type: 'private',
+            title: r.title || r.slug,
+            href: `/reports/private/${r.slug}`,
+            modified: (r.modified_at || 0) * 1000,
+            size: r.size,
+            summary: r.excerpt,
+            private: true,
+        })),
+        ...researchFiles.map(f => ({
+            key: `research:${f.filename}`,
+            type: 'research',
+            title: f.title || f.filename.replace(/\.md$/, '').replace(/_/g, ' '),
+            href: `/reports/research/${f.filename.replace(/\.md$/, '')}`,
+            modified: (f.modified_at || 0) * 1000,
+            size: f.size,
+            summary: f.excerpt,
+        })),
+        ...pagesList.map(p => ({
+            key: `page:${p.slug}`,
+            type: 'page',
+            title: p.title,
+            href: `/p/${p.slug}`,
+            modified: p.updated_at ? new Date(p.updated_at).getTime() : 0,
+            summary: p.summary,
+        })),
+    ];
+    if (terms.length) {
+        items = items.filter(item => windows.has(item.key)).map(item => {
+            const summary = String(item.summary || '').toLocaleLowerCase();
+            const inSummary = terms.some(term => summary.includes(term));
+            return inSummary ? item : { ...item, summary: matchSnippet(windows.get(item.key), terms, 220) };
+        });
+    }
+    return { items: items.sort((a, b) => b.modified - a.modified), feedFailed };
+}
+
 // Shared by the success and failure branches of the list render.
-function reportsListLocals(res, pagePath, isAdmin) {
+function reportsListLocals(res, pagePath, isAdmin, query) {
     return {
+        searchValue: query,
         pagePath,
         pageTitle: res.locals.strings.nav.reports,
         pageDescription: res.locals.lang === 'en'
@@ -43,6 +116,7 @@ router.get('/', async (req, res) => {
     const isAdmin = !!req.session.adminUser;
     const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
     const pagePath = currentPage > 1 ? `/reports?page=${currentPage}` : '/reports';
+    const query = typeof req.query.q === 'string' ? req.query.q.slice(0, 200) : '';
     try {
         const offset = (currentPage - 1) * REPORTS_PER_PAGE;
 
@@ -71,65 +145,8 @@ router.get('/', async (req, res) => {
             }
         }
 
-        // Fetch research list directly from the shared database. Title/excerpt are returned
-        // with the row, so no per-document request is needed.
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-        // The public feed's sources; a failure is reported on the page (and
-        // as a 503 when nothing could be listed) rather than shown as "none".
-        let feedFailed = false;
-        let researchFiles = [];
-        try {
-            researchFiles = await cachedResearchList(lang);
-        } catch (e) {
-            console.error('Error loading research list:', e);
-            feedFailed = true;
-        }
-
-        let privateReports = [];
-        if (isAdmin) {
-            try {
-                privateReports = await listPrivateReports();
-            } catch (e) {
-                console.error('Error loading private reports:', e);
-            }
-        }
-
-        let pagesList = [];
-        try {
-            pagesList = await cachedPagesList(lang);
-        } catch (e) {
-            console.error('Error loading pages list:', e);
-            feedFailed = true;
-        }
-
-        // Unified research-tab feed: research files + static pages, sorted by date desc.
-        // `summary` is the unified preview field — the EJS template clamps it to 3 lines via CSS.
-        const researchItems = [
-            ...privateReports.map(r => ({
-                type: 'private',
-                title: r.title || r.slug,
-                href: `/reports/private/${r.slug}`,
-                modified: (r.modified_at || 0) * 1000,
-                size: r.size,
-                summary: r.excerpt,
-                private: true,
-            })),
-            ...researchFiles.map(f => ({
-                type: 'research',
-                title: f.title || f.filename.replace(/\.md$/, '').replace(/_/g, ' '),
-                href: `/reports/research/${f.filename.replace(/\.md$/, '')}`,
-                modified: (f.modified_at || 0) * 1000,
-                size: f.size,
-                summary: f.excerpt,
-            })),
-            ...pagesList.map(p => ({
-                type: 'page',
-                title: p.title,
-                href: `/p/${p.slug}`,
-                modified: p.updated_at ? new Date(p.updated_at).getTime() : 0,
-                summary: p.summary,
-            })),
-        ].sort((a, b) => b.modified - a.modified);
+        const { items: researchItems, feedFailed } = await researchFeed(lang, isAdmin, query);
 
         // The research feed pages on the same ?page= the task panel uses, so
         // one query param drives both tabs.
@@ -138,11 +155,10 @@ router.get('/', async (req, res) => {
         if (feedFailed) markDegraded(res, { empty: researchItems.length === 0 });
 
         res.render('public/reports', {
-            ...reportsListLocals(res, pagePath, isAdmin),
+            ...reportsListLocals(res, pagePath, isAdmin, query),
             ...taskData,
             researchItems: pagedResearchItems,
-            researchCurrentPage: currentPage,
-            researchTotalPages,
+            researchPagination: libraryPagination('/reports', query, currentPage, researchTotalPages),
             feedFailed,
             robotsMeta: isAdmin ? 'noindex, nofollow' : undefined,
             jsonLd: seo.itemListJsonLd(
@@ -153,11 +169,29 @@ router.get('/', async (req, res) => {
         console.error('Error fetching reports:', error);
         markDegraded(res, { empty: true });
         res.render('public/reports', {
-            ...reportsListLocals(res, pagePath, isAdmin),
+            ...reportsListLocals(res, pagePath, isAdmin, query),
             reports: [], currentPage: 1, totalPages: 0, researchItems: [], feedFailed: true,
+            researchPagination: libraryPagination('/reports', '', 1, 1),
         });
     }
 });
+
+router.get('/search', librarySearchRoute({
+    view: 'partials/library-report-items',
+    target: '#library-list',
+    logLabel: 'reports',
+    load: async (req, res, { query, page }) => {
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        const { items, feedFailed } = await researchFeed(lang, !!req.session.adminUser, query);
+        if (feedFailed && !items.length) throw new Error('research feed unavailable');
+        const offset = (page - 1) * REPORTS_PER_PAGE;
+        return {
+            locals: { researchItems: items.slice(offset, offset + REPORTS_PER_PAGE) },
+            pagination: libraryPagination('/reports', query, page, Math.ceil(items.length / REPORTS_PER_PAGE)),
+            matched: items.length,
+        };
+    },
+}));
 
 // Private research/report detail — admin-only, integrated into the public reports viewer.
 router.get('/private/:slug', async (req, res) => {

@@ -148,6 +148,7 @@
                         loading = false;
                         list.removeAttribute('aria-busy');
                         list.innerHTML = data.html;
+                        if (window.formatLocalDates) window.formatLocalDates(list);
                         var pattern = search.pattern(typeof data.highlightQuery === 'string' ? data.highlightQuery : query);
                         if (pattern) Array.from(list.children).forEach(function(card) { search.highlight(card, pattern); });
                         var holder = document.createElement('template');

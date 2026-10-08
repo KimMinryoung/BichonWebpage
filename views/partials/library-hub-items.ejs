@@ -1,0 +1,34 @@
+<%
+// The <li> rows of the curation list, drawn by /hub and by its search
+// (routes/hub.js). Args: items. A search result carries searchExcerpt.
+%>
+<% items.forEach(function(it) { %>
+    <li class="post-item">
+        <div>
+            <h2><a href="/hub/<%= it.slug %>"><%= it.title %></a></h2>
+            <div class="post-meta">
+                <% if (it.source_publication) { %>
+                    <span class="hub-source"><%= it.source_publication %></span>
+                <% } %>
+                <% if (it.source_author) { %>
+                    <span class="hub-author"><%= it.source_author %></span>
+                <% } %>
+                <% if (it.published_at) { %>
+                    <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
+                <% } %>
+            </div>
+            <% if (it.searchExcerpt) { %>
+                <p class="post-excerpt"><%= it.searchExcerpt %></p>
+            <% } else if (it.context) { %>
+                <p class="post-excerpt"><%= it.context.substring(0, 220) %><%= it.context.length > 220 ? '…' : '' %></p>
+            <% } %>
+            <% if (it.tags && it.tags.length > 0) { %>
+                <div class="hub-tags">
+                    <% it.tags.forEach(function(tag) { %>
+                        <span class="hub-tag">#<%= tag %></span>
+                    <% }) %>
+                </div>
+            <% } %>
+        </div>
+    </li>
+<% }) %>

@@ -11,6 +11,8 @@ const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
 const { clampInteger, markDegraded } = require('../utils/http');
 const { getReportLinkContext, linkifyReportHtml } = require('../data/commulingo/report-links');
+const { searchTerms, likePatterns, likeClause, matchSnippet } = require('../utils/text-search');
+const { librarySearchRoute, libraryPagination } = require('../utils/library-search-route');
 
 function localizedEntry(row, lang) {
     if (!row || lang !== 'en') return row;
@@ -29,6 +31,8 @@ function createEntryRoutes({
     table,              // SQL table name ('posts' / 'ai_diary')
     perPage,
     listView,           // 'public/posts'
+    itemsView,          // 'partials/library-entry-items' — the list's <li> rows
+    deletable,          // rows carry the admin delete form (diary)
     listKey,            // locals key the list view iterates ('posts' / 'diaries')
     listBasePath,       // '/posts' / '/ai-diary'
     detailView,         // 'public/post'
@@ -42,36 +46,69 @@ function createEntryRoutes({
     notFoundOpts,       // errorPage.notFound options (undefined → defaults)
     serverErrorOpts,    // errorPage.serverError options (undefined → defaults)
 }) {
+    // One page of entries, newest first; with a query, only the entries
+    // whose title or body (in the shown language) contains every word.
+    async function findEntries(lang, query, page) {
+        const terms = searchTerms(query);
+        const title = lang === 'en' ? "COALESCE(NULLIF(btrim(title_en), ''), title)" : 'title';
+        const content = lang === 'en' ? "COALESCE(NULLIF(btrim(content_en), ''), content)" : 'content';
+        const where = terms.length ? `WHERE ${likeClause(`concat_ws(' ', ${title}, ${content})`, terms)}` : '';
+        const params = likePatterns(terms);
+        const { rows } = await db.query(
+            `SELECT id, title, content, title_en, content_en, created_at, COUNT(*) OVER() AS total_count
+               FROM ${table} ${where} ORDER BY created_at DESC, id DESC
+              LIMIT $${params.length + 1} OFFSET $${params.length + 2}`,
+            [...params, perPage, (page - 1) * perPage]
+        );
+        const total = rows.length > 0 ? parseInt(rows[0].total_count) : 0;
+        const entries = rows.map(({ total_count, ...row }) => {
+            const entry = localizedEntry(row, lang);
+            return terms.length ? { ...entry, searchExcerpt: matchSnippet(entry.content, terms) } : entry;
+        });
+        return { entries, total };
+    }
+
     async function list(req, res) {
         const lang = res.locals.lang === 'en' ? 'en' : 'ko';
         const currentPage = clampInteger(req.query.page, { fallback: 1, min: 1, max: 1000 });
+        const query = typeof req.query.q === 'string' ? req.query.q.slice(0, 200) : '';
         const baseLocals = {
             pagePath: currentPage > 1 ? `${listBasePath}?page=${currentPage}` : listBasePath,
             pageTitle: listTitle(res),
             pageDescription: listDescription(res),
+            searchValue: query,
         };
         const itemList = entries => seo.itemListJsonLd(
             (entries || []).map(entry => ({ title: entry.title, href: `${detailPathPrefix}${entry.id}` })),
             res.locals.urlLanguage);
         try {
-            const offset = (currentPage - 1) * perPage;
-            const { rows } = await db.query(
-                `SELECT id, title, content, title_en, content_en, created_at, COUNT(*) OVER() AS total_count
-                   FROM ${table} ORDER BY created_at DESC, id DESC LIMIT $1 OFFSET $2`,
-                [perPage, offset]
-            );
-            const total = rows.length > 0 ? parseInt(rows[0].total_count) : 0;
+            const { entries, total } = await findEntries(lang, query, currentPage);
             const totalPages = Math.ceil(total / perPage);
-            const entries = rows.map(({ total_count, ...row }) => localizedEntry(row, lang));
-            const pageData = { [listKey]: entries, currentPage, totalPages, paginationBase: `${listBasePath}?page=` };
+            const pagination = libraryPagination(listBasePath, query, currentPage, totalPages);
+            const pageData = { [listKey]: entries, pagination };
 
             res.render(listView, { ...pageData, ...baseLocals, jsonLd: itemList(entries) });
         } catch (error) {
             console.error(`Error fetching ${logLabel}:`, error);
             markDegraded(res, { empty: true });
-            res.render(listView, { [listKey]: [], currentPage: 1, totalPages: 0, loadFailed: true, ...baseLocals });
+            res.render(listView, { [listKey]: [], pagination: libraryPagination(listBasePath, '', 1, 1), loadFailed: true, ...baseLocals });
         }
     }
+
+    const search = librarySearchRoute({
+        view: itemsView,
+        target: '#library-list',
+        logLabel,
+        load: async (req, res, { query, page }) => {
+            const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+            const { entries, total } = await findEntries(lang, query, page);
+            return {
+                locals: { entries, hrefPrefix: detailPathPrefix, deletable },
+                pagination: libraryPagination(listBasePath, query, page, Math.ceil(total / perPage)),
+                matched: total,
+            };
+        },
+    });
 
     async function detail(req, res) {
         try {
@@ -139,7 +176,7 @@ function createEntryRoutes({
         }
     }
 
-    return { list, detail };
+    return { list, detail, search };
 }
 
 module.exports = { createEntryRoutes, localizedEntry };

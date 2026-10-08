@@ -1,4 +1,5 @@
 const db = require('./database');
+const { likePatterns, likeClause } = require('../utils/text-search');
 
 function hasEnglish(row) {
     if (!row) return false;
@@ -52,7 +53,28 @@ async function getPage(slug, lang = 'ko') {
     return localize(rows[0], lang, true);
 }
 
+// Pages whose shown title, summary or body contains every search term, with
+// a stretch of the body around the first term (see searchResearchDocuments).
+async function searchPages(lang, terms) {
+    if (!terms.length) return [];
+    const localized = column => `CASE WHEN use_en THEN COALESCE(NULLIF(${column}_en, ''), ${column}) ELSE ${column} END`;
+    const params = likePatterns(terms);
+    const { rows } = await db.query(
+        `SELECT slug,
+                substring(body FROM greatest(1, strpos(lower(body), $${params.length + 1}) - 150) FOR 600) AS body_window
+           FROM (SELECT slug,
+                        concat_ws(' ', ${localized('title')}, ${localized('summary')}) AS head,
+                        COALESCE(${localized('html_body')}, '') AS body
+                   FROM (SELECT *, $${params.length + 2} = 'en' AND btrim(COALESCE(html_body_en, '')) <> '' AS use_en
+                           FROM static_pages) page) page
+          WHERE ${likeClause("concat_ws(' ', head, body)", terms)}`,
+        [...params, terms[0], lang === 'en' ? 'en' : 'ko']
+    );
+    return rows;
+}
+
 module.exports = {
     listPages,
     getPage,
+    searchPages,
 };

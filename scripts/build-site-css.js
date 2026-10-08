@@ -12,7 +12,7 @@ function moduleFor(selector) {
     if (/\.(?:home-(?:page|hero|description|card|section))/.test(selector)) return 'home';
     if (/\.(?:post-(?:content|body|summary)|report-body|commu-person-markdown|table-scroll)/.test(selector)) return 'prose';
     if (/\.(?:hub-(?:section|source-btn|tags|tag))/.test(selector)) return 'hub';
-    if (/\.(?:post-(?:list|item|meta|excerpt)|report-(?:tab|panel)|commu-update-|hub-(?:meta|source|author))/.test(selector)) return 'lists';
+    if (/\.(?:post-(?:list|item|meta|excerpt)|report-(?:tab|panel)|commu-update-|commu-(?:dict-search|people-search|search-hl)|hub-(?:meta|source|author))/.test(selector)) return 'lists';
     return 'core';
 }
 function buildSiteCss() {

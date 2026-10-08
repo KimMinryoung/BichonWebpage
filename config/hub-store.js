@@ -1,4 +1,5 @@
 const db = require('./database');
+const { searchTerms, likePatterns, likeClause, matchSnippet } = require('../utils/text-search');
 
 function normalizeTags(value) {
     if (!value) return [];
@@ -54,9 +55,42 @@ async function listHubCurations({ limit = 20, offset = 0, lang = 'ko' } = {}) {
     return rows.map(row => normalize(row, lang));
 }
 
-async function countHubCurations() {
-    const { rows } = await db.query('SELECT COUNT(*)::int AS total FROM hub_curations');
-    return rows[0] ? parseInt(rows[0].total, 10) : 0;
+// One page of the list, newest first, with the total; a query keeps the
+// curations whose shown title, source, notes or tags contain every word.
+// `use_en` mirrors normalize(): English only when the curation has it.
+async function searchHubCurations({ query = '', limit = 20, offset = 0, lang = 'ko' } = {}) {
+    const terms = searchTerms(query);
+    const localized = column => `CASE WHEN use_en THEN COALESCE(NULLIF(${column}_en, ''), ${column}) ELSE ${column} END`;
+    const text = `concat_ws(' ', ${['title', 'source_title', 'selection_rationale', 'context'].map(localized).join(', ')},
+                           source_author, source_publication, tags::text)`;
+    const params = likePatterns(terms);
+    const { rows } = await db.query(
+        `SELECT id, slug, title, source_url, source_title, source_author,
+                source_publication, source_published_at,
+                selection_rationale, context,
+                title_en, source_title_en, selection_rationale_en, context_en,
+                tags, published_at, COUNT(*) OVER() AS total_count
+           FROM (SELECT *, $${params.length + 1} = 'en'
+                        AND (COALESCE(title_en, '') <> '' OR COALESCE(selection_rationale_en, '') <> ''
+                             OR COALESCE(context_en, '') <> '') AS use_en
+                   FROM hub_curations) curation
+          ${terms.length ? `WHERE ${likeClause(text, terms)}` : ''}
+          ORDER BY published_at DESC, id DESC
+          LIMIT $${params.length + 2} OFFSET $${params.length + 3}`,
+        [...params, lang === 'en' ? 'en' : 'ko', limit, offset]
+    );
+    const total = rows.length ? parseInt(rows[0].total_count, 10) : 0;
+    const items = rows.map(({ total_count, ...row }) => {
+        const item = normalize(row, lang);
+        // The list shows the context; a match only in the rationale shows that.
+        if (terms.length) {
+            const lower = String(item.context || '').toLocaleLowerCase();
+            const source = terms.some(term => lower.includes(term)) || !item.selection_rationale ? item.context : item.selection_rationale;
+            item.searchExcerpt = matchSnippet(source, terms, 220);
+        }
+        return item;
+    });
+    return { items, total };
 }
 
 async function getHubCuration(slug, lang = 'ko') {
@@ -77,6 +111,6 @@ async function getHubCuration(slug, lang = 'ko') {
 
 module.exports = {
     listHubCurations,
-    countHubCurations,
+    searchHubCurations,
     getHubCuration,
 };

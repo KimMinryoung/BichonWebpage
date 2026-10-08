@@ -9,35 +9,22 @@
     <div class="container">
         <%- include('../partials/library-tabs', { active: 'posts' }) %>
 
-        <% if (posts && posts.length > 0) { %>
-            <ul class="post-list">
-                <% posts.forEach(post => { %>
-                    <li class="post-item">
-                        <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
-                        <div class="post-meta">
-                            <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
-                        </div>
-                        <p class="post-excerpt">
-                            <%- truncateHtml(sanitize(post.content), 200) %>
-                        </p>
-                    </li>
-                <% }) %>
-            </ul>
-
-            <% if (typeof totalPages !== 'undefined' && totalPages > 1) { %>
-                <%- include('../partials/pagination', {
-                    currentPage: currentPage,
-                    totalPages: totalPages,
-                    baseUrl: paginationBase
-                }) %>
-            <% } %>
+        <%- include('../partials/library-search', { section: 'posts' }) %>
+        <% if (typeof loadFailed !== 'undefined' && loadFailed) { %>
+            <div class="box"><p><%= strings.public.listUnavailable %></p></div>
         <% } else { %>
-            <div class="box">
-                <p><%= typeof loadFailed !== 'undefined' && loadFailed ? strings.public.listUnavailable : strings.public.noPosts %></p>
-            </div>
+            <% if (posts.length === 0 && !searchValue) { %>
+                <div class="box"><p><%= strings.public.noPosts %></p></div>
+            <% } %>
+            <ul class="post-list library-list" id="library-list" data-search-endpoint="/posts/search" data-page="<%= pagination.current %>">
+                <%- include('../partials/library-entry-items', { entries: posts, hrefPrefix: '/post/', deletable: false }) %>
+            </ul>
+            <%- include('../partials/commulingo-list-pager', { pagination: pagination, target: '#library-list' }) %>
         <% } %>
     </div>
 
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
+    <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

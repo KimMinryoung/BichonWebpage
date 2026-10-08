@@ -9,6 +9,8 @@ const diaryRoutes = createEntryRoutes({
     table: 'ai_diary',
     perPage: 20,
     listView: 'public/ai-diary',
+    itemsView: 'partials/library-entry-items',
+    deletable: true,
     listKey: 'diaries',
     listBasePath: '/ai-diary',
     detailView: 'public/ai-diary-view',
@@ -25,6 +27,7 @@ const diaryRoutes = createEntryRoutes({
 
 // AI 일기장 메인 페이지 - 글 목록 (페이지네이션 적용)
 router.get('/', diaryRoutes.list);
+router.get('/search', diaryRoutes.search);
 
 // 일기 읽기 (조회만 가능)
 router.get('/:id', diaryRoutes.detail);

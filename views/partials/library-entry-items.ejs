@@ -1,0 +1,27 @@
+<%
+// The <li> rows of the post and diary lists, drawn by the list page and by its
+// search (routes/entry-routes.js). Args: entries, hrefPrefix ('/post/' or
+// '/ai-diary/'), deletable (the diary's admin delete form). A search result
+// carries searchExcerpt: the part of the body around the match.
+%>
+<% entries.forEach(function(entry) { %>
+    <li class="post-item">
+        <div class="ui-split">
+            <div class="ui-split-main">
+                <h2><a href="<%= hrefPrefix %><%= entry.id %>"><%= entry.title %></a></h2>
+                <div class="post-meta">
+                    <time class="local-date" datetime="<%= new Date(entry.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                </div>
+                <p class="post-excerpt">
+                    <% if (entry.searchExcerpt !== undefined) { %><%= entry.searchExcerpt %><% } else { %><%- truncateHtml(sanitize(entry.content), 200) %><% } %>
+                </p>
+            </div>
+            <% if (deletable && isAuthenticated) { %>
+                <form action="<%= hrefPrefix %><%= entry.id %>/delete" method="POST" class="ui-inline-form" data-confirm="<%= strings.public.deleteDiaryConfirm %>">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" class="btn btn-danger btn-small"><%= strings.admin.delete %></button>
+                </form>
+            <% } %>
+        </div>
+    </li>
+<% }) %>

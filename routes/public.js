@@ -167,6 +167,8 @@ const postRoutes = createEntryRoutes({
     table: 'posts',
     perPage: POSTS_PER_PAGE,
     listView: 'public/posts',
+    itemsView: 'partials/library-entry-items',
+    deletable: false,
     listKey: 'posts',
     listBasePath: '/posts',
     detailView: 'public/post',
@@ -180,6 +182,7 @@ const postRoutes = createEntryRoutes({
 });
 
 router.get('/posts', postRoutes.list);
+router.get('/posts/search', postRoutes.search);
 
 // Chat page
 router.get('/chat', (req, res) => {

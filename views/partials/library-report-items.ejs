@@ -1,0 +1,27 @@
+<%
+// The <li> rows of the research feed, drawn by /reports and by its search
+// (routes/reports.js). Args: researchItems.
+%>
+<% researchItems.forEach(function(item) { %>
+    <li class="post-item">
+        <div>
+            <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
+            <div class="post-meta">
+                <% if (item.type === 'page') { %>
+                    <span class="post-type"><%= lang === 'ko' ? '페이지' : 'Page' %></span>
+                <% } else if (item.type === 'private') { %>
+                    <span class="post-type"><%= lang === 'ko' ? '비공개' : 'Private' %></span>
+                <% } else if (item.size) { %>
+                    <%# About 1.4 KB of source per minute of reading, in either language. %>
+                    <span class="read-time"><%= lang === 'ko' ? `약 ${Math.max(1, Math.round(item.size / 1400))}분 분량` : `${Math.max(1, Math.round(item.size / 1400))} min read` %></span><% if (item.modified) { %><span aria-hidden="true"> · </span><% } %>
+                <% } %>
+                <% if (item.modified) { %>
+                    <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 작성' : ', written' %>"></time>
+                <% } %>
+            </div>
+            <% if (item.summary) { %>
+                <p class="post-excerpt"><%= item.summary %></p>
+            <% } %>
+        </div>
+    </li>
+<% }) %>

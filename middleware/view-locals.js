@@ -6,6 +6,7 @@ const seo = require('../utils/seo');
 const { siteStyleModules } = require('../utils/site-stylesheets');
 const allStrings = require('../config/strings');
 const { iconPaths } = require('../data/icons');
+const { roleIconSvg } = require('../data/commulingo/role-icons');
 const { sanitizeBasic, sanitizePost } = require('../utils/sanitize');
 const { truncateHtml } = require('../utils/truncate-html');
 const { normalizeLanguage, resolveLanguage, resolvePublicLanguage } = require('../utils/language');
@@ -40,6 +41,9 @@ function viewLocals(req, res, next) {
     // The one glyph table (data/icons.js). Views cannot require, so the lookup
     // is handed to them here rather than each partial keeping its own copy.
     res.locals.iconPaths = iconPaths;
+    // The search and clear glyphs of the dictionary search box, which the
+    // library lists reuse.
+    res.locals.roleIconSvg = roleIconSvg;
     // Every view gets a useful styling/navigation scope by default. Routes
     // can still override this when the canonical path differs from req.path.
     res.locals.pagePath = req.path;

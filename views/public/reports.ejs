@@ -22,45 +22,16 @@
             <% if (researchFeedFailed && researchItems && researchItems.length > 0) { %>
                 <div class="box" role="status"><p><%= strings.public.partlyUnavailable %></p></div>
             <% } %>
-            <% if (researchItems && researchItems.length > 0) { %>
-                <ul class="post-list">
-                    <% researchItems.forEach(item => { %>
-                        <li class="post-item">
-                            <div>
-                                <h2><a href="<%= item.href %>"><%= item.title %></a></h2>
-                                <div class="post-meta">
-                                    <% if (item.type === 'page') { %>
-                                        <span class="post-type"><%= lang === 'ko' ? '페이지' : 'Page' %></span>
-                                    <% } else if (item.type === 'private') { %>
-                                        <span class="post-type"><%= lang === 'ko' ? '비공개' : 'Private' %></span>
-                                    <% } else if (item.size) { %>
-                                        <%# About 1.4 KB of source per minute of reading, in either language. %>
-                                        <span class="read-time"><%= lang === 'ko' ? `약 ${Math.max(1, Math.round(item.size / 1400))}분 분량` : `${Math.max(1, Math.round(item.size / 1400))} min read` %></span><% if (item.modified) { %><span aria-hidden="true"> · </span><% } %>
-                                    <% } %>
-                                    <% if (item.modified) { %>
-                                        <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 작성' : ', written' %>"></time>
-                                    <% } %>
-                                </div>
-                                <% if (item.summary) { %>
-                                    <p class="post-excerpt"><%= item.summary %></p>
-                                <% } %>
-                            </div>
-                        </li>
-                    <% }) %>
-                </ul>
-
-                <% if (typeof researchTotalPages !== 'undefined' && researchTotalPages > 1) { %>
-                    <%- include('../partials/pagination', {
-                        currentPage: researchCurrentPage,
-                        totalPages: researchTotalPages,
-                        baseUrl: '/reports?page='
-                    }) %>
-                <% } %>
-            <% } else { %>
+            <%- include('../partials/library-search', { section: 'reports' }) %>
+            <% if (researchItems.length === 0 && (researchFeedFailed || !searchValue)) { %>
                 <div class="box">
                     <p><%= researchFeedFailed ? strings.public.listUnavailable : (lang === 'ko' ? '아직 리서치가 없습니다.' : 'No research reports yet.') %></p>
                 </div>
             <% } %>
+            <ul class="post-list library-list" id="library-list" data-search-endpoint="/reports/search" data-page="<%= researchPagination.current %>">
+                <%- include('../partials/library-report-items', { researchItems: researchItems }) %>
+            </ul>
+            <%- include('../partials/commulingo-list-pager', { pagination: researchPagination, target: '#library-list' }) %>
         </div>
 
         <!-- Task reports panel — admin-only -->
@@ -109,6 +80,8 @@
     </div>
 
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
+    <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
     <script>
     (function() {
         var tabs = document.querySelectorAll('.report-tab');

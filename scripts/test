@@ -60,6 +60,7 @@ run test-access-boundaries node scripts/test-access-boundaries.js
 run static-page-sanitize node scripts/smoke-static-page-sanitize.js
 run question-ids    node scripts/check-commulingo-question-ids.js
 run menu-views      node scripts/smoke-menu-views.js
+run library-search  node scripts/smoke-library-search.js
 for f in scripts/smoke-commulingo-*.js; do
     run "$(basename "$f" .js)" node "$f"
 done

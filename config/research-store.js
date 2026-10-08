@@ -1,4 +1,5 @@
 const db = require('./database');
+const { likePatterns, likeClause } = require('../utils/text-search');
 
 function stripMarkdown(content) {
     if (!content) return '';
@@ -123,9 +124,34 @@ async function listResearchTexts() {
     return rows;
 }
 
+// Documents whose shown title, summary or body contains every search term
+// (utils/text-search.js), with a stretch of the body around the first term
+// for the result excerpt. Private reports (admin) are searched in Korean, as
+// the private list shows them.
+async function searchResearchDocuments(lang, terms, { includePrivate = false } = {}) {
+    if (!terms.length) return [];
+    const localized = column => `CASE WHEN use_en THEN COALESCE(NULLIF(${column}_en, ''), ${column}) ELSE ${column} END`;
+    const params = likePatterns(terms);
+    const { rows } = await db.query(
+        `SELECT filename, slug, status,
+                substring(body FROM greatest(1, strpos(lower(body), $${params.length + 1}) - 150) FOR 600) AS body_window
+           FROM (SELECT filename, slug, status,
+                        concat_ws(' ', ${localized('title')}, ${localized('summary')}) AS head,
+                        COALESCE(CASE WHEN use_en THEN markdown_en ELSE markdown END, '') AS body
+                   FROM (SELECT *, $${params.length + 2} = 'en' AND status = 'public'
+                                AND COALESCE(has_markdown_en, false) AS use_en
+                           FROM research_documents
+                          WHERE status = 'public' OR ($${params.length + 3} AND status = 'private')) doc) doc
+          WHERE ${likeClause("concat_ws(' ', head, body)", terms)}`,
+        [...params, terms[0], lang === 'en' ? 'en' : 'ko', includePrivate]
+    );
+    return rows;
+}
+
 module.exports = {
     localizeResearch: localize,
     listResearch,
     getResearch,
     listResearchTexts,
+    searchResearchDocuments,
 };

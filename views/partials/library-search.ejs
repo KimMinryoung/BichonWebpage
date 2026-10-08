@@ -1,0 +1,17 @@
+<%
+// Search box over a library list (reports, curations, diary, posts): the
+// CommuLingo dictionary box, driven by the same script over the list's
+// data-search-endpoint. Args: section ('reports' | 'hub' | 'diary' | 'posts').
+var librarySearchStrings = strings.public.librarySearch;
+var sectionSearch = librarySearchStrings[section];
+%>
+<%- include('commulingo-dict-search', {
+    target: '#library-list',
+    searchValue: typeof searchValue === 'string' ? searchValue : '',
+    placeholder: sectionSearch.placeholder,
+    ariaLabel: sectionSearch.ariaLabel,
+    clearLabel: librarySearchStrings.clear,
+    resultOne: sectionSearch.one,
+    resultMany: sectionSearch.many,
+    emptyLabel: librarySearchStrings.empty
+}) %>
