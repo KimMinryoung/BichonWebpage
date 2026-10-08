@@ -1,7 +1,9 @@
 // CommuLingo — nationality flags for the person cards.
 //
 // Real public-domain flag SVGs are vendored under public/flags/<code>.svg
-// (sourced from Wikimedia Commons) and served statically, so the card markup
+// (sourced from Wikimedia Commons; korea.svg, the Korean peninsula used for
+// the single Korean national background, is drawn from Natural Earth
+// coastlines) and served statically, so the card markup
 // only carries a small <img> tag — the browser caches each flag once no matter
 // how many cards reuse it.
 //
