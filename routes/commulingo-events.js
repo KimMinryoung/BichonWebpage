@@ -1,5 +1,6 @@
 const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const { searchDictionary } = require('../utils/dictionary-search');
+const { parseEventPeriodQuery } = require('../utils/event-period-search');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { paginateList } = require('../data/commulingo/list-pagination');
@@ -64,6 +65,7 @@ router.get('/', async (req, res) => {
             selectedCountry,
             countries,
             searchQuery,
+            highlightEventPeriod: parseEventPeriodQuery(searchQuery).periods.length > 0,
             filterHref,
             pagination,
             pageTitle: lang === 'en' ? 'Historical Events — CommuLingo' : '역사 사건 — 공산링고',

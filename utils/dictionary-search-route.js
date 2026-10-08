@@ -26,12 +26,14 @@ function dictionarySearchRoute({ kind, load, view, target }) {
             if (category) queryParams.set('kind', category);
             const baseUrl = `/commulingo/${kind}?${queryParams.size ? queryParams + '&' : ''}page=`;
             const pagination = paginateList(items, matched, { page }, baseUrl, { mark: false });
-            const locals = { strings: strings[lang], en: lang === 'en', [kind]: pagination.pageItems };
+            const eventSearch = kind === 'events' ? parseEventPeriodQuery(query) : null;
+            const locals = { strings: strings[lang], en: lang === 'en', [kind]: pagination.pageItems,
+                highlightEventPeriod: !!eventSearch && eventSearch.periods.length > 0 };
             const html = await renderAppView(req, view, locals);
             const pager = await renderAppView(req, 'partials/commulingo-list-pager', { ...locals, pagination, target });
             setShortPublicCache(res);
             res.json({ html: localizeHtmlLinks(html, lang), pager: localizeHtmlLinks(pager, lang), total: matched.length, page: pagination.current,
-                ...(kind === 'events' ? { highlightQuery: parseEventPeriodQuery(query).keywords } : {}) });
+                ...(eventSearch ? { highlightQuery: eventSearch.keywords } : {}) });
         } catch (err) {
             console.error(`commulingo ${kind} search:`, err);
             res.status(500).json({ error: 'Failed to load search results' });
