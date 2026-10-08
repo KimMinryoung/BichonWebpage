@@ -1,10 +1,8 @@
-const fs = require('fs');
-const path = require('path');
 const { createHash, randomUUID } = require('crypto');
 const db = require('../../config/database');
 const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
-const { listCommuLingoDocs, getCommuLingoDocContent } = require('./docs-store');
+const { listCommuLingoDocs, getCommuLingoDocContent, refreshCommuLingoDocs } = require('./docs-store');
 const { loadCommuLingoPeople } = require('./people-store');
 const { getLinkIndexes } = require('./linkify');
 const { renderLinkedContent } = require('./render-links');
@@ -26,10 +24,7 @@ async function loadState(client = db) {
     // Include prose as well as names: a preview of an old body cannot approve a new one.
     const [people, reportsResult] = await Promise.all([loadCommuLingoPeople({ fresh: true }),
         client.query("SELECT slug, markdown FROM research_documents WHERE status = 'public' ORDER BY slug")]);
-    const docVersions = records.doc.map(doc => {
-        const stat = fs.statSync(path.join(__dirname, 'docs', doc.file));
-        return [doc.id, stat.mtimeMs, stat.size];
-    });
+    const docVersions = records.doc.map(doc => [doc.id, doc.bodySha256]);
     const reports = reportsResult.rows;
     const revision = hash([records, [...reviews.values()], people.data, reports, docVersions]);
     return { records, reviews, rows, revision, people: people.data, reports };
@@ -306,13 +301,13 @@ async function rejectExpression(input, actor) {
             [kind, id, lang, text])).rows[0] || null;
         await client.query('INSERT INTO commulingo_link_review_history (kind,entity_id,lang,expression,before_value,after_value) VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb)',
             [kind, id, lang, text, JSON.stringify(old), JSON.stringify({ rejected: true, note, reviewed_by: actor })]);
-        // The manifest is a file: write it last, so a failure above leaves it untouched.
-        if (docPatch) updateDocMeta(id, docPatch);
+        if (docPatch) await updateDocMeta(id, docPatch, { actor, client, note: `reject link expression ${lang}:${text}` });
         await client.query('COMMIT');
     } catch (error) { await client.query('ROLLBACK'); throw error; }
     finally { client.release(); }
     if (kind === 'term') await loadCommuLingoTerms({ fresh: true });
     if (kind === 'event') await loadCommuLingoHistoryEvents({ fresh: true });
+    if (kind === 'doc') await refreshCommuLingoDocs();
     await refreshLinkReviews();
     return { kind, id, lang, text, removed: true };
 }

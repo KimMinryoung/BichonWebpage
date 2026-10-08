@@ -145,6 +145,10 @@ const server = app.listen(env.PORT, () => {
     // Same for the dictionary entry → course chapter index (seconds of CPU,
     // built in yielding steps).
     require('./data/commulingo/book-page').warmCourseChapters();
+    // Reference documents are served from a DB snapshot; pull it (and any
+    // missing bodies) now rather than on the first reader request.
+    require('./data/commulingo/docs-store').loadCommuLingoDocs()
+        .catch(err => console.error('[commulingo docs] warm-up failed:', err.message));
     // Table-change notifications refresh the in-memory public previews.
     require('./utils/db-change-listener').startDbChangeListener(require('./config/database'));
 });

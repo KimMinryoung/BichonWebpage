@@ -1,17 +1,14 @@
 const { assertLinkExpressions } = require('./link-expressions');
 const { assertHeadword, assertAliases, assertStringList } = require('./headword-validation');
-const fs = require('fs');
-const path = require('path');
 
 // Import/registry mutations for CommuLingo reference documents. Shared by
-// scripts/import-commulingo-doc.js (CLI) and the admin API, so both produce
-// identical fragments and manifest entries. Read-side serving lives in
-// docs-store.js; format rules in data/commulingo/docs/README.md.
+// scripts/import-commulingo-doc.js (CLI), scripts/commulingo-docs.js and the
+// admin API, so all produce identical fragments and entries. They are stored
+// in the database (docs-db.js); read-side serving lives in docs-store.js;
+// format rules in data/commulingo/docs/README.md.
 const { docRefId } = require('./docs-store');
 const { sanitizeDocHtml } = require('./doc-sanitize');
-
-const DOCS_DIR = path.join(__dirname, 'docs');
-const MANIFEST_PATH = path.join(DOCS_DIR, 'manifest.json');
+const { writeDocs, readDocRow } = require('./docs-db');
 
 function badRequest(message) {
     const err = new Error(message);
@@ -86,28 +83,6 @@ function harvestTocPreview(html) {
     return toc;
 }
 
-function readManifest() {
-    return JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
-}
-
-// Write to a unique temp file beside the target, then rename over it: a
-// reader (the server, the standby, a CLI run) sees the old file or the new
-// one, never a half-written manifest or fragment.
-function writeFileAtomic(target, content) {
-    const tmp = path.join(path.dirname(target), `.${path.basename(target)}.${process.pid}.${Date.now()}.tmp`);
-    try {
-        fs.writeFileSync(tmp, content);
-        fs.renameSync(tmp, target);
-    } catch (err) {
-        fs.rmSync(tmp, { force: true });
-        throw err;
-    }
-}
-
-function writeManifest(manifest) {
-    writeFileAtomic(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
-}
-
 function langPair(value, fallback) {
     const base = fallback || { ko: '', en: '' };
     if (!value || typeof value !== 'object') return { ko: base.ko || '', en: base.en || '' };
@@ -133,13 +108,12 @@ function normalizeRefs(refs, label) {
 }
 
 // Canonical field order for manifest entries, applied on every write.
-const CANONICAL_FIELDS = new Set(['id', 'file', 'docLang', 'title', 'description', 'kind', 'source', 'linkExpressions',
+const CANONICAL_FIELDS = new Set(['id', 'docLang', 'title', 'description', 'kind', 'source', 'linkExpressions',
     'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt']);
 
 function canonicalEntry(entry) {
     const out = {
         id: entry.id,
-        file: entry.file,
         docLang: entry.docLang || 'ko',
         title: langPair(entry.title),
         description: langPair(entry.description),
@@ -172,9 +146,9 @@ function canonicalEntry(entry) {
     return out;
 }
 
-// Convert raw HTML into a fragment + manifest entry. Writes both unless
-// dryRun. `overrides` may carry any manifest entry fields (title, source, …).
-function importDoc({ rawHtml, id, dryRun, force, overrides = {} }) {
+// Convert raw HTML into a fragment + entry. Writes both unless dryRun.
+// `overrides` may carry any entry fields (title, source, …).
+async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = 'unknown', note }) {
     if (typeof id !== 'string' || !/^[a-z0-9-]+$/.test(id)) throw badRequest('id must be lowercase letters, digits, hyphens');
     if (typeof rawHtml !== 'string' || !rawHtml.trim()) throw badRequest('html content is empty');
 
@@ -184,9 +158,8 @@ function importDoc({ rawHtml, id, dryRun, force, overrides = {} }) {
     const firstH1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
     const fallbackTitle = titleTag ? stripTags(titleTag[1]) : firstH1 ? stripTags(firstH1[1]) : id;
 
-    const manifest = readManifest();
-    const existing = manifest.docs.findIndex(doc => doc.id === id);
-    if (existing !== -1 && !force) {
+    const existing = await readDocRow(id);
+    if (existing && !force) {
         if (!dryRun) {
             const err = new Error(`doc "${id}" already exists (use force to overwrite)`);
             err.status = 409;
@@ -198,33 +171,17 @@ function importDoc({ rawHtml, id, dryRun, force, overrides = {} }) {
     const entry = canonicalEntry({
         ...overrides,
         id,
-        file: `${id}.html`,
         title: langPair(overrides.title, { ko: fallbackTitle, en: '' }),
     });
 
     const toc = harvestTocPreview(html);
-    if (!dryRun) {
-        // Fragment first, manifest last: a failure in between leaves the old
-        // entry pointing at a complete file.
-        writeFileAtomic(path.join(DOCS_DIR, entry.file), html);
-        if (existing !== -1) manifest.docs[existing] = entry;
-        else manifest.docs.push(entry);
-        writeManifest(manifest);
-    }
-    return { entry, warnings, toc, fragmentBytes: Buffer.byteLength(html), overwrote: existing !== -1 };
+    if (!dryRun) await writeDocs({ upserts: [{ id, entry, body: html }] }, { actor, note: note || 'import' });
+    return { entry, warnings, toc, fragmentBytes: Buffer.byteLength(html), overwrote: Boolean(existing) };
 }
 
-// Merge metadata into an existing manifest entry. {ko,en} fields merge
-// per-language; people/tocExclude replace wholesale when provided.
-function updateDocMeta(id, patch = {}) {
-    const manifest = readManifest();
-    const index = manifest.docs.findIndex(doc => doc.id === id);
-    if (index === -1) {
-        const err = new Error(`doc "${id}" not found`);
-        err.status = 404;
-        throw err;
-    }
-    const current = manifest.docs[index];
+// Merge metadata into an entry. {ko,en} fields merge per-language;
+// people/tocExclude replace wholesale when provided. Pure: callers persist.
+function mergeDocMeta(current, patch = {}) {
     const merged = canonicalEntry({
         ...current,
         linkExpressions: patch.linkExpressions !== undefined ? patch.linkExpressions : current.linkExpressions,
@@ -249,27 +206,34 @@ function updateDocMeta(id, patch = {}) {
     const entry = {};
     for (const key of Object.keys(current)) {
         if (Object.hasOwn(merged, key)) entry[key] = merged[key];
-        else if (!CANONICAL_FIELDS.has(key)) entry[key] = current[key];
+        else if (!CANONICAL_FIELDS.has(key) && key !== 'file') entry[key] = current[key];
     }
     for (const key of Object.keys(merged)) if (!Object.hasOwn(entry, key)) entry[key] = merged[key];
-    manifest.docs[index] = entry;
-    writeManifest(manifest);
     return entry;
 }
 
-function removeDoc(id) {
-    const manifest = readManifest();
-    const index = manifest.docs.findIndex(doc => doc.id === id);
-    if (index === -1) {
+// Pass `client` to write inside the caller's transaction (link reviews).
+async function updateDocMeta(id, patch = {}, { actor = 'unknown', note, client } = {}) {
+    const row = await readDocRow(id, client ? { client, forUpdate: true } : {});
+    if (!row) {
         const err = new Error(`doc "${id}" not found`);
         err.status = 404;
         throw err;
     }
-    const [entry] = manifest.docs.splice(index, 1);
-    writeManifest(manifest);
-    const fragmentPath = path.join(DOCS_DIR, entry.file);
-    if (fs.existsSync(fragmentPath)) fs.unlinkSync(fragmentPath);
+    const entry = mergeDocMeta({ id, ...row.entry }, patch);
+    await writeDocs({ upserts: [{ id, entry, expectedRevision: row.revision }] }, { actor, note: note || 'metadata', client });
     return entry;
 }
 
-module.exports = { canonicalEntry, extractFragment, harvestTocPreview, importDoc, updateDocMeta, removeDoc };
+async function removeDoc(id, { actor = 'unknown', note } = {}) {
+    const row = await readDocRow(id);
+    if (!row) {
+        const err = new Error(`doc "${id}" not found`);
+        err.status = 404;
+        throw err;
+    }
+    await writeDocs({ deletes: [id] }, { actor, note: note || 'remove' });
+    return { id, ...row.entry };
+}
+
+module.exports = { canonicalEntry, extractFragment, harvestTocPreview, importDoc, mergeDocMeta, updateDocMeta, removeDoc };

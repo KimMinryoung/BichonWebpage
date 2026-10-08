@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const assert = require('assert');
-const fs = require('fs');
 const { assertHeadword, assertAliases, assertPersonHeadwords } = require('../data/commulingo/headword-validation');
-const { canonicalEntry, updateDocMeta } = require('../data/commulingo/docs-import');
+const { canonicalEntry, mergeDocMeta } = require('../data/commulingo/docs-import');
+const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { buildTermLinkIndex: rawbuildTermLinkIndex } = require('../data/commulingo/term-linkify');
 const buildTermLinkIndex = (records, options) => rawbuildTermLinkIndex(records, { ...options, legacyReview: true });
 const { buildDocLinkIndex: rawbuildDocLinkIndex } = require('../data/commulingo/doc-linkify');
@@ -60,38 +60,25 @@ const html = createLinker({ event: events, term: concepts }, { surface: 'term' }
 assert.match(html, /terms\/sputnik/);
 assert.match(html, /terms\/glasnost/);
 
-// Existing manifest and PATCH: metadata edits must preserve linking controls.
-const docs = require('../data/commulingo/docs/manifest.json').docs;
+// Stored entries and PATCH: metadata edits must preserve linking controls.
+// The documents come from the DB snapshot when this checkout has one.
+const docs = listCommuLingoDocs();
 for (const doc of docs) canonicalEntry(doc);
-const original = { ...docs[0], excerpts: { terms: { 'some-term': 'some-heading' } }, anchors: { x: 'y' }, linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
-const read = fs.readFileSync;
-const write = fs.writeFileSync;
-const rename = fs.renameSync;
-let saved;
-try {
-    fs.readFileSync = () => JSON.stringify({ docs: [original] });
-    fs.writeFileSync = (_path, content) => { saved = JSON.parse(content).docs[0]; };
-    fs.renameSync = () => {}; // the manifest write is temp file + rename
-    updateDocMeta(original.id, { description: { ko: '수정' } });
-    assert.deepStrictEqual(saved.aliases, original.aliases);
-    assert.deepStrictEqual(saved.linkExpressions, original.linkExpressions);
-    assert.deepStrictEqual(saved.noAutoLink, original.noAutoLink);
-    assert.strictEqual(saved.date, '1921');
-    assert.deepStrictEqual(saved.excerpts, original.excerpts, 'fields canonicalEntry does not know survive a PATCH');
-    assert.deepStrictEqual(saved.anchors, original.anchors);
-    assert.deepStrictEqual(Object.keys(saved).slice(0, 3), Object.keys(original).slice(0, 3), 'key order kept');
-    updateDocMeta(original.id, { aliases: { ko: ['『새 문헌』'] }, noAutoLink: [] });
-    assert.deepStrictEqual(saved.aliases, { ko: ['『새 문헌』'] });
-    assert.deepStrictEqual(saved.noAutoLink, []);
-    updateDocMeta(original.id, { linkExpressions: [] });
-    assert.deepStrictEqual(saved.linkExpressions, []);
-    saved = null;
-    assert.throws(() => updateDocMeta(original.id, { linkExpressions: [{ text: 'bad' }] }), { status: 400 });
-    assert.throws(() => updateDocMeta(original.id, { aliases: { ko: '오류' } }), { status: 400 });
-    assert.strictEqual(saved, null);
-} finally {
-    fs.readFileSync = read;
-    fs.writeFileSync = write;
-    fs.renameSync = rename;
-}
+const original = { id: 'test-doc', title: { ko: '시험 문헌', en: '' }, description: { ko: '', en: '' }, people: [],
+    excerpts: { terms: { 'some-term': 'some-heading' } }, anchors: { x: 'y' }, linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
+let saved = mergeDocMeta(original, { description: { ko: '수정' } });
+assert.deepStrictEqual(saved.aliases, original.aliases);
+assert.deepStrictEqual(saved.linkExpressions, original.linkExpressions);
+assert.deepStrictEqual(saved.noAutoLink, original.noAutoLink);
+assert.strictEqual(saved.date, '1921');
+assert.deepStrictEqual(saved.excerpts, original.excerpts, 'fields canonicalEntry does not know survive a PATCH');
+assert.deepStrictEqual(saved.anchors, original.anchors);
+assert.deepStrictEqual(Object.keys(saved).slice(0, 3), Object.keys(original).slice(0, 3), 'key order kept');
+saved = mergeDocMeta(saved, { aliases: { ko: ['『새 문헌』'] }, noAutoLink: [] });
+assert.deepStrictEqual(saved.aliases, { ko: ['『새 문헌』'] });
+assert.deepStrictEqual(saved.noAutoLink, []);
+saved = mergeDocMeta(saved, { linkExpressions: [] });
+assert.deepStrictEqual(saved.linkExpressions, []);
+assert.throws(() => mergeDocMeta(original, { linkExpressions: [{ text: 'bad' }] }), { status: 400 });
+assert.throws(() => mergeDocMeta(original, { aliases: { ko: '오류' } }), { status: 400 });
 console.log('OK — alias ambiguity, syntax, semantic alias regressions and document PATCH metadata');

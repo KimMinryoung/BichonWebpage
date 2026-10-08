@@ -48,11 +48,9 @@ assert.equal(chart.nodes[1].ref.id, 'lech-wa-sa');
 // serializer would not reproduce is reported instead of reformatted.
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'person-rename-'));
 try {
-    fs.mkdirSync(path.join(root, 'docs'));
     fs.mkdirSync(path.join(root, 'genealogy'));
     const write = (rel, text) => fs.writeFileSync(path.join(root, rel), text);
     write('politburo.json', JSON.stringify({ members: { 'lech-wa-sa': {} }, eras: [], congresses: [] }, null, 1) + '\n');
-    write('docs/manifest.json', JSON.stringify({ docs: [{ id: 'd', people: ['other'] }] }, null, 2) + '\n');
     write('genealogy/hand.json', '{"nodes": [{"ref": {"type": "person", "id": "lech-wa-sa"}}]}\n');
     write('elsewhere.json', '{"see": "lech-wa-sa"}');
     const renames = [{ from: 'lech-wa-sa', to: 'lech-walesa' }];

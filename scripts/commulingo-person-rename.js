@@ -10,9 +10,10 @@
 // Every rename runs in one transaction (data/commulingo/person-rename.js): the
 // person row moves and its dependants follow by ON UPDATE CASCADE, loose
 // references move by hand, and commulingo_id_redirects gains from → to so
-// /commulingo/people/<from> 301s within one people-store refresh (~60s). After
-// the commit the host-mounted data files keyed by person id (politburo.json,
-// docs/manifest.json, genealogy charts) are rewritten. --dry-run runs every check
+// /commulingo/people/<from> 301s within one people-store refresh (~60s). The
+// reference documents' people lists (commulingo_docs) change in the same
+// transaction. After the commit the host-mounted data files keyed by person id
+// (politburo.json, genealogy charts) are rewritten. --dry-run runs every check
 // and UPDATE, rolls back, and only reports which data files would change.
 const fs = require('fs');
 const { db } = require('./lib/bootstrap');

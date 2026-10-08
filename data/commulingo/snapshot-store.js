@@ -344,8 +344,20 @@ function createRegistrySnapshotStore({
         return memory;
     }
 
+    // For callers whose accessors are synchronous (docs-store): memory, else
+    // the disk snapshot, else an empty install until the background pull lands.
+    function loadSync() {
+        ensureRefreshTimer();
+        if (memory) return memory;
+        const snapshot = readSnapshotFile();
+        if (snapshot) memory = install(snapshot);
+        refresh().catch(err => console.error(`[${label}] refresh failed:`, err.message));
+        return memory || install([]);
+    }
+
     return {
         load,
+        loadSync,
         refresh,
         getMemory: () => memory,
         setMemory: value => { memory = value; lastSnapshotHash = null; lastSignature = null; return memory; },

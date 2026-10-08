@@ -5,8 +5,6 @@
 // allowlist output equals an allow-everything pass over the same parser).
 //   node scripts/smoke-commulingo-doc-sanitize.js
 const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
 const sanitizeHtml = require('sanitize-html');
 const { sanitizeDocHtml } = require('../data/commulingo/doc-sanitize');
 const { extractFragment } = require('../data/commulingo/docs-import');
@@ -39,10 +37,13 @@ const loose = {
     allowVulnerableTags: true,
     allowedSchemesAppliedToAttributes: [],
 };
-const dir = path.join(__dirname, '..', 'data', 'commulingo', 'docs');
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
-for (const file of files) {
-    const raw = fs.readFileSync(path.join(dir, file), 'utf8');
-    assert.strictEqual(sanitizeDocHtml(raw), sanitizeHtml(raw, loose), `${file}: the allowlist drops content`);
+// Stored documents come from the DB snapshot and body cache when this checkout
+// has them (the server; a lone clone has neither and checks the fixtures only).
+const { listCommuLingoDocs, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
+const docs = listCommuLingoDocs();
+for (const doc of docs) {
+    const raw = getCommuLingoDocContent(doc).html;
+    assert.strictEqual(sanitizeDocHtml(raw), sanitizeHtml(raw, loose), `${doc.id}: the allowlist drops content`);
 }
-console.log(`ok: commulingo doc sanitize (${files.length} stored docs unchanged)`);
+console.log(`ok: commulingo doc sanitize (${docs.length} stored docs unchanged)`);
+process.exit(0);

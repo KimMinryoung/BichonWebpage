@@ -174,11 +174,12 @@ router.get('/docs-link-options', h(async (req, res) => {
 //   curl -sS -X POST -H 'Content-Type: text/html' --data-binary @doc.html \
 //     '<admin-origin>/commulingo/admin/api/docs?id=my-doc'
 const rawHtmlBody = express.text({ type: ['text/html', 'application/xhtml+xml'], limit: '20mb' });
-router.post('/docs', rawHtmlBody, h((req, res) => {
+router.post('/docs', rawHtmlBody, h(async (req, res) => {
     if (typeof req.body !== 'string') {
         return res.status(415).json({ error: 'send the document as the raw request body with Content-Type: text/html' });
     }
-    const result = importDoc({
+    const result = await importDoc({
+        actor: changedBy(req),
         rawHtml: req.body,
         id: req.query.id,
         dryRun: req.query.dryRun === '1' || req.query.dryRun === 'true',
@@ -188,7 +189,7 @@ router.post('/docs', rawHtmlBody, h((req, res) => {
     res.status(result.overwrote ? 200 : 201).json({
         ...result,
         url: `/commulingo/docs/${result.entry.id}`,
-        next: 'fill in title.en/description/source via PATCH or by editing manifest.json, then commit data/commulingo/docs/',
+        next: 'fill in title.en/description/source via PATCH (stored in the database; no commit)',
     });
 }));
 
@@ -196,12 +197,12 @@ router.post('/docs', rawHtmlBody, h((req, res) => {
 // people/tocExclude replace wholesale).
 //   curl -sS -X PATCH -H 'Content-Type: application/json' \
 //     -d '{"description":{"ko":"…"},"source":"…"}' '<admin-origin>/commulingo/admin/api/docs/my-doc'
-router.patch('/docs/:docId', h((req, res) => {
-    res.json({ entry: updateDocMeta(req.params.docId, req.body || {}) });
+router.patch('/docs/:docId', h(async (req, res) => {
+    res.json({ entry: await updateDocMeta(req.params.docId, req.body || {}, { actor: changedBy(req) }) });
 }));
 
-router.delete('/docs/:docId', h((req, res) => {
-    res.json({ removed: removeDoc(req.params.docId) });
+router.delete('/docs/:docId', h(async (req, res) => {
+    res.json({ removed: await removeDoc(req.params.docId, { actor: changedBy(req) }) });
 }));
 
 module.exports = router;

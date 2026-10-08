@@ -10,7 +10,7 @@ const sources = {
     person: load('people-snapshot.json').people,
     term: load('terms-snapshot.json'),
     event: load('history-events-snapshot.json'),
-    doc: load('docs/manifest.json').docs,
+    doc: load('docs-snapshot.json').filter(row => row.kind === 'doc').map(row => ({ id: row.id, ...row.entry })),
 };
 const problems = [];
 const owners = new Map();

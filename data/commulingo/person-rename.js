@@ -57,6 +57,7 @@ async function renameOne(client, { from, to, note }, changedBy) {
         if (!(await client.query('SELECT to_regclass($1) AS t', [ref.table])).rows[0].t) continue;
         moved[ref.table] = (await client.query(ref.sql, [from, to])).rowCount;
     }
+    moved.docs = await renameDocPeople(client, from, to, changedBy);
     moved.redirectsRetargeted = (await client.query(
         "UPDATE commulingo_id_redirects SET to_id=$2 WHERE entity_type='person' AND to_id=$1", [from, to])).rowCount;
     await client.query(
@@ -64,6 +65,23 @@ async function renameOne(client, { from, to, note }, changedBy) {
         [from, to, note || 'person id renamed']);
     await require('./admin-tx').writeRevision(client, 'person', to, `id renamed from ${from}`, { renamedFrom: from, renamedTo: to, note: note || '' }, changedBy);
     return { from, to, moved };
+}
+
+// Reference documents list their people by id in the entry stored in
+// commulingo_docs; rewritten in the same transaction, with a doc revision.
+async function renameDocPeople(client, from, to, changedBy) {
+    const { rows } = await client.query(
+        "SELECT id, entry, revision FROM commulingo_docs WHERE entry->'people' @> to_jsonb($1::text) OR entry->'people' @> jsonb_build_array(jsonb_build_object('id', $1::text))",
+        [from]);
+    if (!rows.length) return 0;
+    const { writeDocs } = require('./docs-db');
+    const map = new Map([[from, to]]);
+    const upserts = rows.map(row => ({
+        id: row.id, expectedRevision: row.revision,
+        entry: renameInDocsManifest({ docs: [row.entry] }, map).docs[0],
+    }));
+    await writeDocs({ upserts }, { actor: changedBy, note: `person id renamed ${from} → ${to}`, client });
+    return rows.length;
 }
 
 // All renames in one transaction. With dryRun the transaction is rolled back
@@ -133,7 +151,6 @@ function dataFiles(root) {
         // The Central Committee body rosters share the Politburo schema (party-bodies.js).
         ...['politburo.json', 'secretariat.json', 'orgburo.json'].map(f => path.join(root, f)).filter(f => fs.existsSync(f))
             .map(file => ({ file, rewrite: renameInPolitburo })),
-        { file: path.join(root, 'docs', 'manifest.json'), rewrite: renameInDocsManifest },
         ...(fs.existsSync(genealogy) ? fs.readdirSync(genealogy).filter(f => f.endsWith('.json')).sort()
             .map(f => ({ file: path.join(genealogy, f), rewrite: renameInGenealogy })) : []),
     ];

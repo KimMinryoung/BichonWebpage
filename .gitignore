@@ -86,6 +86,15 @@ data/cache/
 # Raw fetched sources for the French translation drafts (PDF/HTML dumps, ~36MB)
 dev_docs/commulingo-french-translations-20260913/sources/
 data/commulingo/docs/.*.tmp
+# CommuLingo reference documents live in the DB (commulingo_docs, migration
+# 339); the server keeps a snapshot and a content-addressed body cache. The
+# docs/ directory is now only a scratch area for exports and the archival
+# translation assembler; its README (authoring rules) stays tracked.
+data/commulingo/docs-snapshot.json
+data/commulingo/docs-snapshot.json.tmp
+data/commulingo/docs-cache/
+data/commulingo/docs/*
+!data/commulingo/docs/README.md
 
 .css-releases/
 .app-releases/

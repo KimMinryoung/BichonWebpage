@@ -1,6 +1,6 @@
 // HTML-to-text normalization for verifying question source excerpts
 // (question.source.quote) against the text they claim to quote. Two flavours:
-// the site's own reference documents (data/commulingo/docs/*.html, Korean) and
+// the site's own reference documents (commulingo_docs bodies, Korean) and
 // public-domain chapters on marxists.org (English, Moore/Aveling for Capital).
 // Both fold whitespace and entities so a quote copied from the rendered page
 // matches the markup on disk.

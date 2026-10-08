@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 const { renderLinkedContent } = require('../data/commulingo/render-links');
-// Proposes `terms` / `events` for reference documents in
-// data/commulingo/docs/manifest.json that have none, using the evidence in
+// Proposes `terms` / `events` for reference documents (commulingo_docs) that
+// have none, using the evidence in
 // the document itself: a glossary term or history event is proposed only when
 // the document's own text names it, found with the same mention scanner the
 // report cross-linking and the term-link audit use.
 //
 //   node scripts/audit-commulingo-doc-links.js           # report + write the patch file
 //   node scripts/audit-commulingo-doc-links.js --all     # also docs that already have some links
-//   node scripts/audit-commulingo-doc-links.js --apply   # merge a reviewed patch into manifest.json
+//   node scripts/audit-commulingo-doc-links.js --apply   # merge a reviewed patch into the documents
 //
 // The patch goes to temp_dev/commulingo-doc-links.patch.json as
 // { docId: { terms: [...], events: [...] } }; edit it by hand (the scanner is
@@ -19,9 +19,9 @@ require('./lib/bootstrap');
 const fs = require('fs');
 const path = require('path');
 const { getReportLinkContext } = require('../data/commulingo/report-links');
+const { readAllDocRows } = require('../data/commulingo/docs-db');
+const { updateDocMeta } = require('../data/commulingo/docs-import');
 
-const MANIFEST = path.join(__dirname, '..', 'data', 'commulingo', 'docs', 'manifest.json');
-const DOCS_DIR = path.dirname(MANIFEST);
 const PATCH = path.join(__dirname, '..', 'temp_dev', 'commulingo-doc-links.patch.json');
 const MAX_TERMS = 8;
 const MAX_EVENTS = 6;
@@ -39,39 +39,40 @@ function countLinks(links) {
 
 async function main() {
     const args = new Set(process.argv.slice(2));
-    const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
+    const rows = (await readAllDocRows()).docs;
+    const docs = rows.map(row => ({ id: row.id, ...row.entry, body: row.body }));
 
     if (args.has('--apply')) {
         const patch = JSON.parse(fs.readFileSync(PATCH, 'utf8'));
         let changed = 0;
-        for (const doc of manifest.docs) {
+        for (const doc of docs) {
             const add = patch[doc.id];
             if (!add) continue;
+            const fields = {};
             for (const kind of ['terms', 'events']) {
                 const have = new Set(doc[kind] || []);
                 const extra = (add[kind] || []).filter(id => !have.has(id));
                 if (!extra.length) continue;
-                doc[kind] = [...(doc[kind] || []), ...extra];
+                fields[kind] = [...(doc[kind] || []), ...extra];
                 changed += extra.length;
             }
+            if (Object.keys(fields).length) {
+                await updateDocMeta(doc.id, fields, { actor: 'audit-commulingo-doc-links', note: 'apply reviewed link patch' });
+            }
         }
-        fs.writeFileSync(MANIFEST + '.tmp', JSON.stringify(manifest, null, 2) + '\n');
-        fs.renameSync(MANIFEST + '.tmp', MANIFEST);
-        console.log(`applied ${changed} link(s) to manifest.json`);
+        console.log(`applied ${changed} link(s) to the documents`);
         return;
     }
 
     const contexts = { ko: await getReportLinkContext('ko'), en: await getReportLinkContext('en') };
     const patch = {};
     const report = [];
-    for (const doc of manifest.docs) {
+    for (const doc of docs) {
         const lang = doc.docLang === 'en' ? 'en' : 'ko';
         const needTerms = !(doc.terms || []).length;
         const needEvents = !(doc.events || []).length;
         if (!args.has('--all') && !needTerms && !needEvents) continue;
-        const file = path.join(DOCS_DIR, doc.file);
-        if (!fs.existsSync(file)) { console.error(`missing file for ${doc.id}: ${doc.file}`); continue; }
-        const text = fs.readFileSync(file, 'utf8');
+        const text = doc.body;
         const found = renderLinkedContent(text, contexts[lang], { html: true, surface: 'doc', exclude: { doc: doc.id }, blockStrings: doc.noAutoLink });
         const haveTerms = new Set(doc.terms || []);
         const haveEvents = new Set(doc.events || []);

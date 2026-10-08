@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /*
- * Import an arbitrary .html file as a CommuLingo reference document
- * (data/commulingo/docs/). Thin CLI over data/commulingo/docs-import.js —
- * the admin API (POST /commulingo/admin/api/docs) does the same thing over
- * HTTP and is usually more convenient. See data/commulingo/docs/README.md.
+ * Import an arbitrary .html file as a CommuLingo reference document (stored
+ * in commulingo_docs). Thin CLI over data/commulingo/docs-import.js — the admin
+ * API (POST /commulingo/admin/api/docs) does the same thing over HTTP. See
+ * data/commulingo/docs/README.md. To edit documents already published, use
+ * scripts/commulingo-docs (export → edit → put).
  *
- * No host node binary — run via docker:
- *   docker run --rm -v /home/grass/frontend:/app -w /app node:24-alpine \
- *     node scripts/import-commulingo-doc.js <input.html> --id <slug> [options]
+ * Needs the database: run in the container, the file on stdin (`-`):
+ *   docker exec -i leninbot-frontend node /app/scripts/import-commulingo-doc.js - --id <slug> [options] < input.html
  *
  * Options:
  *   --id <slug>          URL slug / fragment filename (required)
@@ -20,10 +20,11 @@
  *   --term <id=이름ko|NameEn>    Related glossary term (repeatable)
  *   --event <id=이름ko|NameEn>   Related history event (repeatable)
  *   --dry-run            Print what would be written without writing
+ *   --actor <who>        Recorded as the writer (default: import-commulingo-doc)
  *   --force              Overwrite an existing doc with the same id
  */
+require('./lib/bootstrap');
 const fs = require('fs');
-const path = require('path');
 const { importDoc } = require('../data/commulingo/docs-import');
 
 function fail(msg) {
@@ -59,15 +60,16 @@ function parseRefs(specs, flag) {
     });
 }
 
-function main() {
+async function main() {
     const args = parseArgs(process.argv.slice(2));
     if (!args.input) fail('usage: import-commulingo-doc.js <input.html> --id <slug> [options]');
     if (!args.id) fail('--id <slug> is required');
 
     let result;
     try {
-        result = importDoc({
-            rawHtml: fs.readFileSync(args.input, 'utf8'),
+        result = await importDoc({
+            actor: args.actor || 'import-commulingo-doc',
+            rawHtml: fs.readFileSync(args.input === '-' ? 0 : args.input, 'utf8'),
             id: args.id,
             dryRun: args.dryRun,
             force: args.force,
@@ -87,7 +89,7 @@ function main() {
     }
 
     const { entry, warnings, toc, fragmentBytes } = result;
-    console.log(`fragment: data/commulingo/docs/${entry.file} (${(fragmentBytes / 1024).toFixed(0)}KB)`);
+    console.log(`fragment: ${entry.id} (${(fragmentBytes / 1024).toFixed(0)}KB)`);
     console.log(`toc: ${toc.filter(t => t.level === 1).length} part(s), ${toc.filter(t => t.level === 2).length} chapter(s)`);
     toc.slice(0, 12).forEach(t => console.log(`  ${t.level === 1 ? '■' : ' ·'} ${t.text}`));
     if (toc.length > 12) console.log(`  … ${toc.length - 12} more`);
@@ -100,9 +102,9 @@ function main() {
         return;
     }
     console.log('\nwritten. next steps:');
-    console.log('  1. Fill in title.en / description / source in manifest.json (and tocExclude if the TOC preview shows junk headings).');
-    console.log('  2. Check the page locally, then commit & push — data-only, no deploy needed.');
+    console.log('  1. Fill in title.en / description / source via PATCH or scripts/commulingo-docs (and tocExclude if the TOC preview shows junk headings).');
+    console.log(`  2. Check /commulingo/docs/${entry.id} (live within a minute; no commit, no deploy).`);
     console.log(`  3. Link it from a person section as /commulingo/docs/${entry.id}`);
 }
 
-main();
+main().then(() => process.exit(0), err => { console.error(err); process.exit(1); });

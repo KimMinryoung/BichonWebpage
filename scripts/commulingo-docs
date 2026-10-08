@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# commulingo-docs — edit CommuLingo reference documents, which live in the
+# database (commulingo_docs), as files. export writes a directory shaped like
+# the old data/commulingo/docs/ (manifest.json + <id>.html); edit it with any
+# tool, then put sends back only what changed. Each document is guarded by the
+# revision it was exported at, so an edit made meanwhile (admin screen, another
+# job) is refused rather than overwritten. Every write keeps the replaced
+# version in commulingo_doc_revisions (history / restore). No commit, no deploy:
+# the site picks a write up within a minute.
+#
+#   scripts/commulingo-docs export <dir> [id ...]      # all docs, or just these
+#   scripts/commulingo-docs put <dir> [--dry-run] [--delete-missing] [--note text] [--actor who]
+#   scripts/commulingo-docs put-body <id> <file.html> [--note text]   # replace one body
+#   scripts/commulingo-docs history <id>
+#   scripts/commulingo-docs restore <id> <revision>
+#
+# Keep job directories under scripts/content/ (gitignored, archived to R2).
+# A new document is a new manifest entry plus its <id>.html. --delete-missing
+# removes documents absent from a full export's manifest. After a put the
+# directory is re-exported, so it can be edited and put again. Runs the deployed
+# scripts/commulingo-docs.js inside the production container.
+set -euo pipefail
+CONTAINER="${CONTAINER_NAME:-leninbot-frontend}"
+cmd="${1:-}"; shift || true
+run() { docker exec -i "$CONTAINER" node /app/scripts/commulingo-docs.js "$@"; }
+
+case "$cmd" in
+    export)
+        dir="${1:?usage: commulingo-docs export <dir> [id ...]}"; shift
+        mkdir -p "$dir"
+        bundle="$(mktemp)"; trap 'rm -f "$bundle"' EXIT
+        run export "$@" > "$bundle"
+        python3 -I -c '
+import json, os, sys
+d = sys.argv[1]
+bundle = json.load(open(sys.argv[2], encoding="utf-8"))
+docs = []
+for doc in bundle["docs"]:
+    with open(os.path.join(d, doc["id"] + ".html"), "w", encoding="utf-8") as f:
+        f.write(doc["body"])
+    docs.append({"id": doc["id"], "file": doc["id"] + ".html", **doc["entry"]})
+manifest = {"docs": docs}
+if bundle.get("redirects") is not None:
+    manifest["redirects"] = bundle["redirects"]
+with open(os.path.join(d, "manifest.json"), "w", encoding="utf-8") as f:
+    json.dump(manifest, f, ensure_ascii=False, indent=2); f.write("\n")
+meta = {"full": bundle.get("full", False), "ids": sys.argv[3:],
+        "revisions": {doc["id"]: doc["revision"] for doc in bundle["docs"]},
+        "sortOrders": {doc["id"]: doc["sortOrder"] for doc in bundle["docs"]}}
+with open(os.path.join(d, ".export.json"), "w", encoding="utf-8") as f:
+    json.dump(meta, f, indent=1); f.write("\n")
+print(f"exported {len(docs)} document(s) to {d}", file=sys.stderr)
+' "$dir" "$bundle" "$@"
+        ;;
+    put)
+        dir="${1:?usage: commulingo-docs put <dir> [--dry-run] [--delete-missing] [--note text] [--actor who]}"; shift
+        python3 -I -c '
+import json, os, sys
+d = sys.argv[1]
+manifest = json.load(open(os.path.join(d, "manifest.json"), encoding="utf-8"))
+meta_path = os.path.join(d, ".export.json")
+meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {"full": False, "revisions": {}, "sortOrders": {}}
+docs = []
+for entry in manifest["docs"]:
+    entry = dict(entry)
+    doc_id = entry.pop("id")
+    name = entry.pop("file", None) or doc_id + ".html"
+    with open(os.path.join(d, os.path.basename(name)), encoding="utf-8") as f:
+        body = f.read()
+    doc = {"id": doc_id, "entry": entry, "body": body}
+    if doc_id in meta["revisions"]: doc["revision"] = meta["revisions"][doc_id]
+    if doc_id in meta["sortOrders"]: doc["sortOrder"] = meta["sortOrders"][doc_id]
+    docs.append(doc)
+bundle = {"docs": docs, "full": meta.get("full", False)}
+if "redirects" in manifest: bundle["redirects"] = manifest["redirects"]
+json.dump(bundle, sys.stdout, ensure_ascii=False)
+' "$dir" | run put "$@"
+        # Re-export what was exported, so the directory holds the stored
+        # (sanitized) bodies and current revisions for the next round.
+        case " $* " in *" --dry-run "*) ;; *)
+            mapfile -t ids < <(python3 -I -c 'import json,sys; print("\n".join(json.load(open(sys.argv[1])).get("ids", [])))' "$dir/.export.json" 2>/dev/null | sed '/^$/d')
+            "$0" export "$dir" "${ids[@]}" ;;
+        esac
+        ;;
+    put-body)
+        id="${1:?usage: commulingo-docs put-body <id> <file.html> [--note text]}"; file="${2:?usage: commulingo-docs put-body <id> <file.html>}"; shift 2
+        run put-body "$id" "$@" < "$file"
+        ;;
+    history|restore)
+        run "$cmd" "$@"
+        ;;
+    *)
+        sed -n 2,21p "$0"; exit 2 ;;
+esac

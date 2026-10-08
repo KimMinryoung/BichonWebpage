@@ -1,21 +1,25 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../../config/database');
+const { createRegistrySnapshotStore } = require('./snapshot-store');
 
-// Reference documents (참고 문헌) served from data/commulingo/docs/: a
-// manifest.json registry plus one HTML body fragment per document. Everything
-// lives under the host-mounted data/ directory, so adding or editing a
-// document needs no image rebuild — caches are keyed by file mtime and pick
-// up changes on the next request. See data/commulingo/docs/README.md for the
-// authoring rules.
-const DOCS_DIR = path.join(__dirname, 'docs');
-const MANIFEST_PATH = path.join(DOCS_DIR, 'manifest.json');
+// Reference documents (참고 문헌). The database is the source of truth
+// (commulingo_docs, migration 339; writes go through docs-db.js). This module
+// serves them the way the dictionary registries are served — memory → disk
+// snapshot → DB, refreshed every minute — so every accessor stays synchronous:
+// the snapshot holds each document's manifest entry, and the bodies are
+// materialized into a content-addressed cache (docs-cache/<sha256>.html)
+// before the entries that name them are installed. A DB outage keeps serving
+// both. Authoring rules: data/commulingo/docs/README.md.
+const SNAPSHOT_PATH = process.env.COMMULINGO_DOCS_SNAPSHOT || path.join(__dirname, 'docs-snapshot.json');
+const CACHE_DIR = process.env.COMMULINGO_DOCS_CACHE_DIR || path.join(__dirname, 'docs-cache');
+const SHA = /^[0-9a-f]{64}$/;
+const bodyPath = sha => path.join(CACHE_DIR, `${sha}.html`);
 
-let manifestCache = { mtimeMs: 0, docs: [], redirects: {} };
-const bodyCache = new Map(); // file -> { mtimeMs, checkedAt, html, toc, paged }; insertion order = recency
+const bodyCache = new Map(); // body sha256 -> { html, toc, paged }; insertion order = recency
 // The largest fragments run to 1.4 MB and the paged copy doubles that, so the
 // body cache keeps the most recently read documents rather than all of them.
 const BODY_CACHE_MAX = 40;
-const BODY_FRESHNESS_MS = 500;
 
 // Harvest h1/h2 headings for the reader's table of contents, assigning
 // sequential ids to headings that lack one (existing ids are kept). The first
@@ -44,9 +48,6 @@ function annotateHeadings(rawHtml, excludePatterns) {
     });
     return { html, toc };
 }
-
-const MANIFEST_FRESHNESS_MS = 500;
-let manifestCheckedAt = 0;
 
 // Reading order is the date the original was written, and it is computed from
 // each entry's `date` rather than from where the entry sits in the array. The
@@ -86,60 +87,102 @@ function sortByOriginalDate(docs) {
     });
 }
 
-function documentModifiedAt(doc) {
-    const values = [doc.updatedAt, doc.addedAt];
-    try {
-        values.push(fs.statSync(path.join(DOCS_DIR, doc.file)).mtimeMs);
-    } catch (err) {
-        if (err.code !== 'ENOENT') console.error(`[commulingo docs] stat ${doc.file}:`, err.message);
-    }
-    const latest = values.reduce((max, value) => {
+function documentModifiedAt(doc, bodyUpdatedAt) {
+    const latest = [doc.updatedAt, doc.addedAt, bodyUpdatedAt].reduce((max, value) => {
         const time = value ? new Date(value).getTime() : NaN;
         return Number.isFinite(time) && time > max ? time : max;
     }, 0);
     return latest ? new Date(latest).toISOString() : null;
 }
 
-function loadManifest() {
-    // getLinkIndexes hits this several times per request; debounce the stat
-    // while keeping the mtime live-reload for data/ edits.
-    if (Date.now() - manifestCheckedAt < MANIFEST_FRESHNESS_MS) return manifestCache.docs;
-    const stat = fs.statSync(MANIFEST_PATH);
-    manifestCheckedAt = Date.now();
-    if (stat.mtimeMs !== manifestCache.mtimeMs) {
-        const parsed = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
-        const docs = (Array.isArray(parsed.docs) ? parsed.docs : []).filter(doc => {
-            if (!doc || typeof doc.id !== 'string' || typeof doc.file !== 'string') return false;
-            // Fragment files must stay inside docs/ — reject path segments.
-            return !doc.file.includes('/') && !doc.file.includes('\\') && doc.file.endsWith('.html');
-        });
-        manifestCache = {
-            mtimeMs: stat.mtimeMs,
-            redirects: parsed.redirects || {},
-            docs: sortByOriginalDate(docs.map(doc => ({
-                ...doc,
-                modifiedAt: documentModifiedAt(doc),
-            }))),
-        };
+// Snapshot rows: { kind: 'doc', id, sort_order, entry, body_sha256,
+// body_updated_at, revision } and { kind: 'redirect', from_id, to_id, anchor }.
+function install(rows) {
+    const docs = rows.filter(row => row.kind === 'doc' && typeof row.id === 'string' && SHA.test(row.body_sha256 || ''))
+        .sort((a, b) => a.sort_order - b.sort_order)
+        .map(row => ({
+            ...row.entry,
+            id: row.id,
+            bodySha256: row.body_sha256,
+            revision: row.revision,
+            modifiedAt: documentModifiedAt(row.entry, row.body_updated_at),
+        }));
+    const redirects = {};
+    rows.filter(row => row.kind === 'redirect').forEach(row => {
+        redirects[row.from_id] = { id: row.to_id, anchor: row.anchor };
+    });
+    return { docs: sortByOriginalDate(docs), redirects };
+}
+
+function writeBodyFile(sha, body) {
+    fs.mkdirSync(CACHE_DIR, { recursive: true });
+    const tmp = `${bodyPath(sha)}.${process.pid}.tmp`;
+    fs.writeFileSync(tmp, body);
+    fs.renameSync(tmp, bodyPath(sha));
+}
+
+// Bodies first, entries second: a snapshot is only returned (and installed)
+// once every body it names is on disk. Cache files no snapshot names are
+// removed a day after they were last written, so a standby still serving the
+// previous snapshot keeps its bodies.
+async function fetchRows() {
+    const docs = (await db.query(
+        'SELECT id, sort_order, entry, body_sha256, body_updated_at, revision FROM commulingo_docs ORDER BY sort_order, id')).rows;
+    const redirects = (await db.query('SELECT from_id, to_id, anchor FROM commulingo_doc_redirects ORDER BY from_id')).rows;
+    const missing = docs.filter(row => !fs.existsSync(bodyPath(row.body_sha256))).map(row => row.body_sha256);
+    if (missing.length) {
+        const bodies = (await db.query('SELECT body_sha256, body FROM commulingo_docs WHERE body_sha256 = ANY($1)', [missing])).rows;
+        bodies.forEach(row => writeBodyFile(row.body_sha256, row.body));
     }
-    return manifestCache.docs;
+    pruneBodyCache(new Set(docs.map(row => row.body_sha256)));
+    return [
+        ...docs.map(row => ({ kind: 'doc', ...row, body_updated_at: row.body_updated_at && new Date(row.body_updated_at).toISOString() })),
+        ...redirects.map(row => ({ kind: 'redirect', ...row })),
+    ];
+}
+
+function pruneBodyCache(keep) {
+    let names = [];
+    try { names = fs.readdirSync(CACHE_DIR); } catch { return; }
+    const cutoff = Date.now() - 24 * 3600 * 1000;
+    for (const name of names) {
+        const sha = name.replace(/\.html$/, '');
+        if (keep.has(sha)) continue;
+        try {
+            const file = path.join(CACHE_DIR, name);
+            if (fs.statSync(file).mtimeMs < cutoff) fs.rmSync(file, { force: true });
+        } catch { /* raced with another process */ }
+    }
+}
+
+const store = createRegistrySnapshotStore({
+    label: 'commulingo docs',
+    refreshMs: Number.parseInt(process.env.COMMULINGO_DOCS_REFRESH_MS || '60000', 10),
+    snapshotPath: SNAPSHOT_PATH,
+    fetchRows,
+    install,
+    signatureTables: ['commulingo_docs', 'commulingo_doc_redirects'],
+    validateSnapshot: rows => Array.isArray(rows) && rows.some(row => row.kind === 'doc'),
+});
+
+function loadManifest() {
+    return store.loadSync();
 }
 
 function listCommuLingoDocs() {
-    return loadManifest();
+    return loadManifest().docs;
 }
 
 function getCommuLingoDoc(docId) {
-    return loadManifest().find(doc => doc.id === docId) || null;
+    return listCommuLingoDocs().find(doc => doc.id === docId) || null;
 }
 
 // Merged documents leave the library index, but their old URLs still lead to
 // the individual text inside the collection. Only live, local targets qualify.
 function getCommuLingoDocRedirect(docId) {
-    const docs = loadManifest();
+    const { docs, redirects } = loadManifest();
     if (docs.some(doc => doc.id === docId)) return null;
-    const target = Object.hasOwn(manifestCache.redirects, docId)
-        ? manifestCache.redirects[docId] : null;
+    const target = Object.hasOwn(redirects, docId) ? redirects[docId] : null;
     if (!target || !/^[a-z0-9-]+$/.test(target.id)
         || !/^[a-z0-9-]+$/.test(target.anchor)) return null;
     const doc = docs.find(item => item.id === target.id);
@@ -159,7 +202,7 @@ function docRefId(ref) {
 // Docs associated with a person/term/event via the manifest's people/terms/
 // events arrays — powers the "참고 문헌" sections on those detail pages.
 function listCommuLingoDocsFor(kind, id) {
-    return loadManifest().filter(doc => (doc[kind] || []).some(ref => docRefId(ref) === id));
+    return listCommuLingoDocs().filter(doc => (doc[kind] || []).some(ref => docRefId(ref) === id));
 }
 
 // Documents longer than this are read page by page instead of as one scroll;
@@ -233,23 +276,30 @@ function paginateBody(html) {
 }
 
 function getCommuLingoDocContent(doc) {
-    const cached = bodyCache.get(doc.file);
-    const now = Date.now();
-    if (cached && now - cached.checkedAt < BODY_FRESHNESS_MS) return cached;
-    const filePath = path.join(DOCS_DIR, doc.file);
-    const stat = fs.statSync(filePath);
-    if (cached && cached.mtimeMs === stat.mtimeMs) {
-        cached.checkedAt = now;
+    const sha = doc.bodySha256;
+    const cached = bodyCache.get(sha);
+    if (cached) {
         // Re-insert so the Map's order tracks recency for the eviction below.
-        bodyCache.delete(doc.file);
-        bodyCache.set(doc.file, cached);
+        bodyCache.delete(sha);
+        bodyCache.set(sha, cached);
         return cached;
     }
-    const { html, toc } = annotateHeadings(fs.readFileSync(filePath, 'utf8'), doc.tocExclude);
-    const entry = { mtimeMs: stat.mtimeMs, checkedAt: now, html, toc, paged: paginateBody(html) };
-    bodyCache.delete(doc.file);
+    let raw;
+    try {
+        raw = fs.readFileSync(bodyPath(sha), 'utf8');
+    } catch (err) {
+        if (err.code !== 'ENOENT') throw err;
+        // Only a cache wiped under a running server gets here; the next
+        // refresh puts the body back.
+        store.refresh().catch(() => {});
+        const unavailable = new Error(`commulingo doc ${doc.id}: body not cached yet`);
+        unavailable.status = 503;
+        throw unavailable;
+    }
+    const { html, toc } = annotateHeadings(raw, doc.tocExclude);
+    const entry = { html, toc, paged: paginateBody(html) };
     while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
-    bodyCache.set(doc.file, entry);
+    bodyCache.set(sha, entry);
     return entry;
 }
 
@@ -260,7 +310,7 @@ function getCommuLingoDocContent(doc) {
 // "*" lends the whole document, for a short text that is the entry's subject.
 function listCommuLingoDocExcerptsFor(kind, id) {
     const out = [];
-    loadManifest().forEach(doc => {
+    listCommuLingoDocs().forEach(doc => {
         const byId = doc.excerpts && doc.excerpts[kind];
         const anchor = byId && Object.hasOwn(byId, id) ? byId[id] : null;
         if (typeof anchor === 'string' && /^(\*|[A-Za-z0-9_-]+)$/.test(anchor)) out.push({ doc, anchor });
@@ -302,6 +352,7 @@ function getCommuLingoDocSection(doc, anchor) {
 }
 
 module.exports = {
+    loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
     listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection,

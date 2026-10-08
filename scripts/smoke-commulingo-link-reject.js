@@ -23,7 +23,7 @@ stub('config/database.js', { connect: async () => client, query: client.query })
 stub('data/commulingo/terms-store.js', { loadCommuLingoTerms: async () => [] });
 stub('data/commulingo/history-events-store.js', { loadCommuLingoHistoryEvents: async () => [] });
 stub('data/commulingo/people-store.js', { loadCommuLingoPeople: async () => ({ data: {} }), clearCommuLingoPeopleCache() {} });
-stub('data/commulingo/docs-store.js', { listCommuLingoDocs: () => docs, getCommuLingoDocContent: () => null });
+stub('data/commulingo/docs-store.js', { listCommuLingoDocs: () => docs, getCommuLingoDocContent: () => null, refreshCommuLingoDocs: async () => {} });
 stub('data/commulingo/docs-import.js', { updateDocMeta: (id, patch) => docPatches.push({ id, patch }) });
 stub('data/commulingo/link-reviews-store.js', { loadLinkReviews: async () => new Map(), refreshLinkReviews: async () => new Map() });
 const { rejectExpression } = require('../data/commulingo/link-review-service');
@@ -59,6 +59,6 @@ const ran = pattern => queries.some(q => pattern.test(q.sql));
     await rejectExpression({ kind: 'doc', id: 'law', lang: 'ko', text: '주르당 법', note }, 'tester');
     assert.deepEqual(docPatches[0], { id: 'law', patch: { aliases: { ko: ['징병법'] } } });
     await assert.rejects(rejectExpression({ kind: 'doc', id: 'law', lang: 'ko', text: '주르당-델브렐 징병법', note }, 'tester'), /제목/);
-    assert.equal(docPatches.length, 1, 'a failed rejection leaves the manifest alone');
+    assert.equal(docPatches.length, 1, 'a failed rejection leaves the document alone');
     console.log('link expression rejection: aliases and expressions removed with history; headwords and titles kept');
 })().catch(err => { console.error(err); process.exitCode = 1; });

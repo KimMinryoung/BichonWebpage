@@ -254,15 +254,12 @@ const tools = [
             + 'and the stored HTML body as published.',
         inputSchema: object({ id: str('Document id') }, ['id']),
         async handler({ id }) {
-            const fs = require('node:fs');
-            const path = require('node:path');
             const { getCommuLingoDoc } = require('../../data/commulingo/docs-store');
+            const { readDocRow } = require('../../data/commulingo/docs-db');
             const doc = getCommuLingoDoc(id);
             if (!doc) throw notFound('document', id);
-            const file = path.join(__dirname, '../../data/commulingo/docs', path.basename(String(doc.file || '')));
-            let html = null;
-            try { html = doc.file ? fs.readFileSync(file, 'utf8') : null; } catch (err) { if (err.code !== 'ENOENT') throw err; }
-            return { doc, html };
+            const row = await readDocRow(id);
+            return { doc, html: row ? row.body : null };
         },
     },
     {

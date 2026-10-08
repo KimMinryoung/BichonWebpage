@@ -5,12 +5,41 @@
 `data/commulingo/docs-store.js` + `routes/commulingo-docs.js` +
 `views/public/commulingo-doc.ejs`.
 
-## 구성
+## 구성 (2026-10-08부터 DB)
 
-- `manifest.json` — 문서 레지스트리. 여기 등록된 문서만 서빙된다.
-- `<id>.html` — 문서 본문 fragment (아래 형식 참조).
+문헌은 git 파일이 아니라 DB에 있다(마이그레이션 339).
 
-문헌을 모음집으로 통합할 때는 이전 항목을 `docs` 배열에서 빼고, manifest의
+- `commulingo_docs` — 문서 하나에 한 행. `entry`(jsonb)가 예전 manifest 항목(제목·설명·별칭·
+  people/terms/events·excerpts…, id·file 제외)이고 `body`가 본문 fragment(아래 형식)다.
+- `commulingo_doc_revisions` — 수정·삭제 때마다 교체된 이전 판. 되돌리기는 `restore`.
+- `commulingo_doc_redirects` — 예전 manifest의 `redirects`.
+
+서버는 이를 스냅샷(`docs-snapshot.json`)과 해시 이름의 본문 캐시(`docs-cache/`)로 받아
+서빙한다(1분 주기). 이 디렉터리에는 이제 이 README만 git에 있다. 작업 디렉터리로
+쓰는 `manifest.json`·`<id>.html`은 `scripts/commulingo-docs export`가 만드는 것이며 커밋하지 않는다.
+
+**편집 경로**
+
+- 새 문헌: admin API `POST /docs` 또는 `scripts/import-commulingo-doc.js`(아래 「문서 추가 절차」).
+- 메타데이터 한두 칸: admin API `PATCH /docs/<id>`.
+- 본문·여러 문헌 일괄 수정(표기 통일 같은 치환 작업 포함):
+  ```bash
+  scripts/commulingo-docs export scripts/content/<작업>/docs [id ...]   # manifest.json + <id>.html
+  # 파일을 고친다(manifest.json 항목을 고치거나 새 항목+본문을 더해도 된다)
+  scripts/commulingo-docs put scripts/content/<작업>/docs --dry-run
+  scripts/commulingo-docs put scripts/content/<작업>/docs --note "무엇을 왜"
+  ```
+  put은 바뀐 문서만 쓰고, 문서마다 export 당시 리비전을 확인해 그사이 다른 경로로 고쳐진
+  문서는 거부한다(다시 export). 고친 본문은 import와 같은 정화를 거친다. put이 끝나면
+  디렉터리를 다시 export해 저장된 상태와 맞춘다.
+- 본문 하나 교체(번역 조립기 출력 등): `scripts/commulingo-docs put-body <id> <file.html>`.
+- 이력·복원: `scripts/commulingo-docs history <id>`, `scripts/commulingo-docs restore <id> <리비전>`.
+
+모두 운영 컨테이너 안에서 배포된 스크립트로 돈다. 커밋·배포가 필요 없고 1분 안에 반영된다.
+작업 디렉터리는 `scripts/content/` 아래에 두면 R2로 자동 보관된다.
+
+문헌을 모음집으로 통합할 때는 이전 항목을 지우고(export한 manifest의 `docs`
+배열에서 빼고 `put --delete-missing`, 또는 admin API DELETE), export한 manifest의
 `redirects`에 `"이전-id": {"id": "문헌집-id", "anchor": "해당-글-제목-id"}`를
 기록한다. 기존 주소는 문헌집의 해당 글로 301 이동하며 한국어·영어 경로와
 분할 페이지를 처리한다. 모음집 본문의 글 제목에 그 anchor를 부여하고,
@@ -28,9 +57,8 @@
 끝내거나 규정한 문서 하나만 싣는다. `scripts/smoke-commulingo-doc-excerpts.js`가
 선언된 발췌가 모두 실제 제목을 가리키는지 확인한다.
 
-이 디렉터리는 프로덕션 컨테이너에 호스트 마운트되는 `data/` 아래에 있고,
-store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배포 없이** 커밋·푸시만
-하면 다음 요청부터 반영된다. (라우트/뷰/CSS 변경은 `scripts/deploy` 필요.)
+문서 추가/수정은 **배포·커밋 없이** DB 쓰기만으로 1분 안에 반영된다.
+(라우트/뷰/CSS 변경은 `scripts/deploy` 필요.)
 
 ## 서두 틀 (필수)
 
@@ -123,7 +151,7 @@ store가 mtime으로 캐시를 무효화하므로 **문서 추가/수정은 배�
 ## 문서 추가 절차
 
 가장 쉬운 방법은 admin API다. 임의의 .html을 fragment로 변환(헤드/스타일/
-스크립트 제거, `<article>` 래핑)하고 manifest에 등록까지 해준다. 테일넷
+스크립트 제거, `<article>` 래핑)하고 DB에 등록까지 해준다. 테일넷
 allowlist IP에서 (CSRF 면제, `requireAdminIp`로 보호):
 
 ```sh
@@ -144,10 +172,12 @@ curl -sS "$ADMIN/docs"              # 목록
 curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 ```
 
-외국어 사료를 DeepSeek로 옮겨 이 디렉터리에 바로 쓰는 경로가 따로 있다
+외국어 사료를 DeepSeek로 옮겨 이 디렉터리에 파일로 쓰는 경로가 따로 있다
 (leninbot 저장소의 `translation_runtime/archival`). 스펙 하나가 어느
 출처의 어느 블록 범위를 옮길지 고정하고, 조립기가 fragment를 만들어 스펙의
-`output` 경로에 **덮어쓴다** — `data/commulingo/docs/`가 그 경로다. 따라서
+`output` 경로에 **덮어쓴다** — `data/commulingo/docs/`가 그 경로다. 이 파일은 더 이상
+서빙되지 않으므로 조립 뒤 `scripts/commulingo-docs put-body <id> data/commulingo/docs/<id>.html`로
+DB에 넣는다(새 문헌이면 import). 따라서
 이 파이프라인이 만든 문서는 손으로 고쳐도 다음 실행 때 되돌아간다. 서두를
 바꿀 일이 생기면 파일이 아니라 스펙을 고쳐야 한다:
 
@@ -185,14 +215,14 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
 결과를 확인할 수 있다(API 호출 없이 도는 오프라인 검사다).
 
 응답의 `toc` 미리보기에 잡티 제목이 보이면 `tocExclude` 정규식을 PATCH로
-추가한다. API가 쓴 파일은 호스트 `data/commulingo/docs/` 워킹트리에 그대로
-남으므로 확인 후 커밋/푸시할 것. 같은 일을 하는 CLI도 있다
-(`scripts/import-commulingo-doc.js`, node:24-alpine docker로 실행, `--help`
-대신 파일 상단 주석 참조). API·CLI import는 본문을 `data/commulingo/doc-sanitize.js`
+추가한다. API가 쓴 문서는 DB에 들어가므로 커밋할 것이 없다. 같은 일을 하는 CLI도 있다
+(`docker exec -i leninbot-frontend node /app/scripts/import-commulingo-doc.js - --id <id> … < 문서.html`,
+옵션은 파일 상단 주석 참조). API·CLI import는 본문을 `data/commulingo/doc-sanitize.js`
 허용 목록으로 정화한다(이벤트 속성·`javascript:` 주소·iframe/form/svg 등 제거,
 `<img>`의 data: 이미지는 허용). 새 태그·속성이 필요하면 허용 목록에 먼저 추가한다.
 `scripts/smoke-commulingo-doc-sanitize.js`가 저장된 모든 문헌이 정화로 바뀌지 않는지
 검사한다. 아래는 수동으로 만들 때의 규칙(자동 변환 출력도 같은 형식이어야 한다).
+export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
 
 1. 본문 fragment를 `<id>.html`로 저장한다.
    - 서두는 위의 **서두 틀**을 그대로 쓴다 (제목 → byline → 엮은이 주 상자).
@@ -210,7 +240,7 @@ curl -sS -X DELETE "$ADMIN/docs/my-doc"  # 등록 해제 + fragment 삭제
      따라서 fragment에 목차를 직접 넣지 말 것. 인쇄면 마커처럼 목차에서
      빼야 할 h1/h2가 있으면 manifest 항목의 `tocExclude`(정규식 문자열 배열)에
      제목 텍스트 패턴을 추가한다.
-2. `manifest.json`의 `docs` 배열에 항목을 추가한다. **배열 어디에 넣어도 된다.**
+2. (export한) `manifest.json`의 `docs` 배열에 항목을 추가한다. **배열 어디에 넣어도 된다.**
    표시 순서는 `date`로 정한다 — `docs-store.js`의 `sortByOriginalDate`가
    매니페스트를 읽을 때 한 번 정렬하므로, 목록 페이지의 카드 순서와 용어·인물·
    사건 페이지의 「참고 문헌」 절 순서가 함께 따라온다.

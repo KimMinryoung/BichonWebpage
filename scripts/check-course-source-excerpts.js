@@ -20,21 +20,20 @@
 //
 // Collections in REQUIRE_SOURCE must carry a source on every question; the
 // rest are checked only where a source is present.
-const fs = require('fs');
-const path = require('path');
 const { loadCommuLingoBundle } = require('../data/commulingo');
+const { getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const text = require('./lib/commulingo-source-text');
 
 const REQUIRE_SOURCE = new Set(['marx-wages-and-programme', 'marx-wage-labour-capital']);
-const DOCS_DIR = path.join(__dirname, '..', 'data', 'commulingo', 'docs');
 const doFetch = process.argv.includes('--fetch');
 
 const docCache = new Map();
 function siteDoc(docId) {
     if (!docCache.has(docId)) {
-        const file = path.join(DOCS_DIR, `${docId}.html`);
-        if (!fs.existsSync(file)) { docCache.set(docId, null); return null; }
-        const raw = fs.readFileSync(file, 'utf8');
+        // Served from the docs snapshot and body cache (data/commulingo/docs-store.js).
+        const doc = getCommuLingoDoc(docId);
+        if (!doc) { docCache.set(docId, null); return null; }
+        const raw = getCommuLingoDocContent(doc).html;
         docCache.set(docId, { text: text.normalizeSiteDoc(raw), ids: text.anchorsOf(raw) });
     }
     return docCache.get(docId);
