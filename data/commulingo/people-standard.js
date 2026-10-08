@@ -1,5 +1,5 @@
 const { displayActivities, affiliations } = require('./person-activities');
-const { resolvePosition, collectionPosition, RED_LABELS } = require('./person-position');
+const { resolvePosition, collectionPosition, RED_LABELS, RED_COLLECTIONS } = require('./person-position');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
@@ -402,17 +402,23 @@ function normalizeCommuLingoPeople(data, options = {}) {
     collections.forEach(collection => collection.personIds.forEach(id => {
         peopleById[id].collections.push({ id: collection.id, icon: collection.icon, title: collection.title, href: collection.href });
     }));
-    // A red read from the activities names no collection; its chip borrows the
-    // communist collection's glyph and opens that collection's filter.
-    const communistCollection = collections.find(c => c.id === 'communist') || {};
-    const redIcon = communistCollection.icon || 'hammer-sickle';
+    // A red read from the activities names no collection; its chip names the
+    // person's communist current (maoism, marxism-leninism …) and opens that
+    // filter, falling back to Marxism–Leninism.
+    const fallbackRed = collections.find(c => c.id === 'marxism-leninism') || {};
+    const redIcon = fallbackRed.icon || 'hammer-sickle';
     people.forEach(person => {
-        const { position, collectionId } = resolvePosition(person.activities, person.collections.map(c => c.id));
+        const resolved = resolvePosition(person.activities, person.collections.map(c => c.id));
+        const { position } = resolved;
+        let { collectionId } = resolved;
+        if (/^red(-|$)/.test(position) && !collectionId) {
+            collectionId = RED_COLLECTIONS.find(id => person.collections.some(c => c.id === id)) || '';
+        }
         const collection = collectionId && person.collections.find(c => c.id === collectionId);
         person.position = position;
         person.positionTag = !position ? null
             : collection ? { label: collection.title, href: collection.href, icon: collection.icon }
-            : { label: localize(RED_LABELS[position], lang), href: communistCollection.href || '', icon: redIcon };
+            : { label: fallbackRed.title || localize(RED_LABELS[position], lang), href: fallbackRed.href || '', icon: redIcon };
         // The collections the position chip does not name, for the detail head.
         // A red collection under a red chip (the communist collection under
         // Soviet communism) only repeats it.

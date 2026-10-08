@@ -24,11 +24,18 @@ assert.equal(personPosition(primary('party-paigc'), ['national-liberation']), 'n
 
 // Explicit commitments cover pre-party communists and politically active
 // writers; they do not turn state employment into an inferred ideology.
-assert.equal(personPosition(primary(null), ['communist']), 'red');
-assert.equal(personPosition(primary('state-france'), ['communist']), 'red');
-assert.equal(personPosition(primary('soviet-party'), ['communist']), 'red-soviet');
-assert.equal(personPosition(primary('china-ccp'), ['communist']), 'red-china');
-assert.equal(personPosition(primary('soviet-party'), ['liberal-republican', 'communist']), 'liberal-republican');
+assert.equal(personPosition(primary(null), ['marxism']), 'red');
+assert.equal(personPosition(primary('state-france'), ['marxism-leninism']), 'red');
+assert.equal(personPosition(primary('soviet-party'), ['marxism-leninism']), 'red-soviet');
+assert.equal(personPosition(primary('china-ccp'), ['maoism']), 'red-china');
+assert.equal(personPosition(primary(null), ['maoism']), 'red-china');
+assert.equal(personPosition(primary(null), ['juche']), 'red-korea');
+assert.equal(personPosition(primary('state-north-korea'), ['marxism-leninism']), 'red-korea');
+assert.equal(personPosition(primary('soviet-party'), ['liberal-republican', 'marxism-leninism']), 'liberal-republican');
+// Communist oppositions take their own shades of red over a party red.
+assert.equal(personPosition(primary('soviet-party'), ['trotskyism']), 'trotskyist');
+assert.equal(personPosition(primary('party-german-communist'), ['left-communism']), 'left-communist');
+assert.equal(personPosition(primary('party-italian-communist'), ['eurocommunism']), 'reform');
 assert.equal(personPosition(primary(null), ['early-socialist']), 'socialist');
 assert.equal(personPosition(primary(null), ['revolutionary-socialist']), 'revolutionary-socialist');
 assert.equal(personPosition(primary('state-britain'), ['conservative']), 'conservative');
@@ -68,7 +75,8 @@ assert.equal(personPosition([], []), '');
 
 // Secondary chips in the detail head take each collection's own colour.
 assert.equal(collectionPosition('socialist-bloc-reform-leader'), 'reform');
-assert.equal(collectionPosition('communist'), 'red');
+assert.equal(collectionPosition('marxism-leninism'), 'red');
+assert.equal(collectionPosition('juche'), 'red-korea');
 assert.equal(collectionPosition('no-such-collection'), '');
 
 console.log('person position ok');

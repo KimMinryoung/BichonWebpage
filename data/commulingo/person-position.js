@@ -14,8 +14,11 @@ const COLLECTION_POSITIONS = [
     ['imperial-white', 'white'],
     ['counterrevolution', 'white'],
     ['left-opposition', 'left-opposition'],
+    ['trotskyism', 'trotskyist'],
+    ['left-communism', 'left-communist'],
     ['dissident', 'dissident'],
     ['socialist-bloc-reform-leader', 'reform'],
+    ['eurocommunism', 'reform'],
     ['western-marxist', 'western-marxist'],
     ['monarchist', 'monarchist'],
     ['conservative', 'conservative'],
@@ -28,9 +31,14 @@ const COLLECTION_POSITIONS = [
 // the person's own affiliation does not make it red (a social democrat who
 // later led a ruling communist party is red).
 const EARLIER_POSITIONS = [
-    // Explicit intellectual or political commitments, including non-members
-    // and pre-party communists. Documented Soviet/Chinese service keeps its red.
-    ['communist', 'red'],
+    // The communist currents (2026-10-08 split of the old 'communist'
+    // collection along the communist-currents genealogy). Documented
+    // Soviet/Chinese service keeps its own red; the chip names the current.
+    ['maoism', 'red-china'],
+    ['titoism', 'red'],
+    ['juche', 'red-korea'],
+    ['marxism-leninism', 'red'],
+    ['marxism', 'red'],
     ['non-bolshevik-socialist', 'socialist'],
     ['early-socialist', 'socialist'],
     ['revolutionary-socialist', 'revolutionary-socialist'],
@@ -87,11 +95,13 @@ const SOCIALIST_WINDOWS = {
     'state-vietnam': [[1945, null]], 'state-yugoslavia': [[1945, 1991]],
 };
 
-// Each communist force keeps its own red: the Soviet and Chinese reds follow
-// their flags; every other communist party and state shares the generic red.
+// Each communist force keeps its own red: the Soviet, Chinese and North Korean
+// reds follow their flags; every other communist party and state shares the
+// generic red.
 const RED_TONES = [
     ['red-soviet', ['state-soviet', 'soviet-party']],
     ['red-china', ['china-ccp', 'china-prc']],
+    ['red-korea', ['state-north-korea', 'party-korean-workers', 'party-north-korean-workers']],
 ];
 
 const redTone = id => (RED_TONES.find(([, roots]) => roots.some(r => affiliationMatches(id, r))) || ['red'])[0];
@@ -110,13 +120,14 @@ function mostlySocialist({ startYear, endYear }, windows) {
 const RED_LABELS = {
     'red-soviet': { ko: '소련 공산주의', en: 'Soviet communism' },
     'red-china': { ko: '중국 공산주의', en: 'Chinese communism' },
+    'red-korea': { ko: '북한 공산주의', en: 'North Korean communism' },
     red: { ko: '공산주의', en: 'Communism' },
 };
 
 // collectionIds: the collections the person belongs to. Returns the position
 // key and, when a collection decided it, that collection's id (the card's
 // position tag links there); a red read from the activities has none (its
-// chip links to the communist collection).
+// chip names the person's communist-current collection).
 function resolvePosition(activities, collectionIds) {
     const inCollection = new Set(collectionIds || []);
     const hit = COLLECTION_POSITIONS.find(([id]) => inCollection.has(id));
@@ -149,4 +160,7 @@ const personPosition = (activities, collectionIds) => resolvePosition(activities
 const COLLECTION_COLOURS = new Map([...COLLECTION_POSITIONS, ...EARLIER_POSITIONS]);
 const collectionPosition = id => COLLECTION_COLOURS.get(id) || '';
 
-module.exports = { personPosition, resolvePosition, collectionPosition, RED_LABELS, COLLECTION_POSITIONS, EARLIER_POSITIONS, RED_TONES };
+// The communist-current collections a red chip names, in preference order.
+const RED_COLLECTIONS = ['maoism', 'titoism', 'juche', 'marxism-leninism', 'marxism'];
+
+module.exports = { personPosition, resolvePosition, collectionPosition, RED_LABELS, RED_COLLECTIONS, COLLECTION_POSITIONS, EARLIER_POSITIONS, RED_TONES };

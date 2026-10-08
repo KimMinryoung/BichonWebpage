@@ -43,10 +43,14 @@ const RETIRED_ROLE_PAGES = require('../data/commulingo/retired-role-pages');
 // #people-browser in place, so the same render serves links and script.
 router.get('/people', async (req, res) => {
     try {
-        const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
+        const { lang, loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
         const state = explorer.parseExplorerQuery(req.query);
         const merged = activitiesModel.catalog.retired?.[state.affiliationId];
         if (merged) return res.redirect(301, languagePath(explorer.explorerHref(state, { affiliationId: merged, officeId: state.officeId, page: state.page }), lang));
+        // A retired position collection (communist → marxism-leninism) keeps its links.
+        const position = state.positionId && !(standardized.collections || []).some(c => c.id === state.positionId)
+            && redirectTarget(loaded.data, 'role-category', state.positionId);
+        if (position) return res.redirect(301, languagePath(explorer.explorerHref(state, { positionId: position, page: state.page }), lang));
         const unknown = explorer.unknownCondition(standardized, state);
         if (unknown) return errorPage.notFound(res, {
             message: lang === 'en' ? 'This people filter does not exist.' : '없는 인물 분류 조건입니다.',

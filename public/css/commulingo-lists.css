@@ -1060,10 +1060,13 @@ a.commu-office-row:focus-visible .commu-office-main em {
 [class*="pos-"] { --pos-ink: #faf2da; }
 .pos-red-soviet { --pos: #b3261e; }
 .pos-red-china { --pos: #c4381f; }
+.pos-red-korea { --pos: #c42a3c; }
 .pos-red { --pos: #8f2a33; }
 .pos-western-marxist { --pos: #7d3c6b; }
 .pos-socialist { --pos: #c25a7c; --pos-ink: #0b0d0a; }
-.pos-left-opposition { --pos: #c4692c; --pos-ink: #0b0d0a; }
+.pos-left-opposition { --pos: #a2473a; }
+.pos-trotskyist { --pos: #9e2350; }
+.pos-left-communist { --pos: #8f2a33; }
 .pos-national-liberation { --pos: #c39a2e; --pos-ink: #0b0d0a; }
 .pos-narodnik { --pos: #6f7a32; }
 .pos-revolutionary-democrat { --pos: #a39a5a; --pos-ink: #0b0d0a; }
@@ -1096,6 +1099,12 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-person-card[class*="pos-"] .commu-person-top { padding-top: 19px; }
 .commu-person-card.pos-white::before {
     box-shadow: 0 1px 0 var(--text-muted);
+}
+.commu-person-card.pos-left-communist::before {
+    background: repeating-linear-gradient(135deg, #8f2a33 0 7px, #111 7px 10px);
+}
+.pos-left-communist .commu-person-position:not(.is-secondary) {
+    background: repeating-linear-gradient(135deg, #8f2a33 0 6px, #2a1214 6px 8px);
 }
 .commu-person-card.pos-anarchist::before {
     background: repeating-linear-gradient(135deg, #111 0 7px, var(--text-muted) 7px 9px);

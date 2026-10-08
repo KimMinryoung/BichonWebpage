@@ -10,8 +10,8 @@ const person = (id, birth, groupId, code, activities, collections = []) => ({
     activities, collections: collections.map(c => ({ id: c })),
 });
 const people = [
-    person('lenin', 1870, 'revolution', 'soviet', [{ functionId: 'political-leadership', affiliationId: 'soviet-party' }], ['communist']),
-    person('dzerzhinsky', 1877, 'revolution', 'soviet', [{ functionId: 'security', affiliationId: 'state-soviet', officeId: 'state-security' }], ['communist']),
+    person('lenin', 1870, 'revolution', 'soviet', [{ functionId: 'political-leadership', affiliationId: 'soviet-party' }], ['marxism-leninism']),
+    person('dzerzhinsky', 1877, 'revolution', 'soviet', [{ functionId: 'security', affiliationId: 'state-soviet', officeId: 'state-security' }], ['marxism-leninism']),
     person('kang', 1898, 'mao', 'china', [{ functionId: 'security', affiliationId: 'china-ccp' }, { functionId: 'diplomacy', affiliationId: 'comintern' }]),
     person('scholar', 1920, 'scholars', 'france', [{ functionId: 'scholarship', affiliationId: null }]),
 ];
@@ -23,7 +23,7 @@ const standardized = {
         { id: 'mao', shelf: 'china', title: '마오 시대', range: '1949–1976', people: [people[2]] },
         { id: 'scholars', shelf: 'world', title: '연구자', range: '1892–', people: [people[3]] },
     ],
-    collections: [{ id: 'communist', icon: 'hammer-sickle', title: '공산주의', personIds: ['lenin', 'dzerzhinsky'] }],
+    collections: [{ id: 'marxism-leninism', icon: 'hammer-sickle', title: '마르크스-레닌주의', personIds: ['lenin', 'dzerzhinsky'] }],
     offices: [{ id: 'state-security', title: '국가보안 기관', rows: [] }],
 };
 const run = query => explorer.exploreFor(standardized, explorer.parseExplorerQuery(query), 'ko');
@@ -35,7 +35,7 @@ assert.deepEqual(ids(run({ function: 'security' })), ['dzerzhinsky', 'kang']);
 // Function and affiliation must hold on one activity, not across two.
 assert.deepEqual(ids(run({ function: 'diplomacy', affiliation: 'china-ccp' })), []);
 assert.deepEqual(ids(run({ function: 'security', era: 'mao' })), ['kang']);
-assert.deepEqual(ids(run({ position: 'communist', citizenship: 'soviet' })), ['lenin', 'dzerzhinsky']);
+assert.deepEqual(ids(run({ position: 'marxism-leninism', citizenship: 'soviet' })), ['lenin', 'dzerzhinsky']);
 assert.deepEqual(ids(run({ affiliation: 'state-soviet', office: 'state-security' })), ['dzerzhinsky']);
 assert.deepEqual(ids(run({ sort: 'name' })), ['dzerzhinsky', 'kang', 'lenin', 'scholar']);
 

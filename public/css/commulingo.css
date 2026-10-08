@@ -2724,19 +2724,23 @@ a.commu-office-row:focus-visible .commu-office-main em {
    No known position, no band.
    --pos-ink is the chip text: cream on the dark colours, ink on the light ones
    (each pairing at least 4:1). */
-/* Colour families: communism is red (Soviet and Chinese flag reds); its
-   socialist neighbours are rose (social democracy) and wine (Western Marxism);
+/* Colour families: communism is red (Soviet, Chinese and North Korean flag reds; its
+   oppositions shade it: Trotskyism crimson, left critics brick, left communism
+   red cut with black); its socialist neighbours are rose (social democracy) and wine (Western Marxism);
    the pre-Marxist revolutionaries take earth tones (Narodniks, revolutionary
    democrats) and the tricolour navy (Jacobins); critics within the socialist
-   world are orange (left), slate blue (dissidents) and green (reformers);
+   world are slate blue (dissidents) and green (reformers, Eurocommunists);
    national liberation is gold; the anti-communist camp is white, fascism brown. */
 [class*="pos-"] { --pos-ink: #faf2da; }
 .pos-red-soviet { --pos: #b3261e; }
 .pos-red-china { --pos: #c4381f; }
+.pos-red-korea { --pos: #c42a3c; }
 .pos-red { --pos: #8f2a33; }
 .pos-western-marxist { --pos: #7d3c6b; }
 .pos-socialist { --pos: #c25a7c; --pos-ink: #0b0d0a; }
-.pos-left-opposition { --pos: #c4692c; --pos-ink: #0b0d0a; }
+.pos-left-opposition { --pos: #a2473a; }
+.pos-trotskyist { --pos: #9e2350; }
+.pos-left-communist { --pos: #8f2a33; }
 .pos-national-liberation { --pos: #c39a2e; --pos-ink: #0b0d0a; }
 .pos-narodnik { --pos: #6f7a32; }
 .pos-revolutionary-democrat { --pos: #a39a5a; --pos-ink: #0b0d0a; }
@@ -2786,6 +2790,15 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-person-card.pos-white::before,
 .commu-person-detail-head.pos-white::before {
     box-shadow: 0 1px 0 var(--text-muted);
+}
+/* Left communism: the communist red cut with black, the anti-party
+   counterpart of the anarchists' black-and-grey stripe. */
+.commu-person-card.pos-left-communist::before,
+.commu-person-detail-head.pos-left-communist::before {
+    background: repeating-linear-gradient(135deg, #8f2a33 0 7px, #111 7px 10px);
+}
+.pos-left-communist .commu-person-position:not(.is-secondary) {
+    background: repeating-linear-gradient(135deg, #8f2a33 0 6px, #2a1214 6px 8px);
 }
 .commu-person-card.pos-anarchist::before,
 .commu-person-detail-head.pos-anarchist::before {
