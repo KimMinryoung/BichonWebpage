@@ -44,6 +44,10 @@ for (const doc of docs) {
         assert.ok(Number.isInteger(node.year) && node.year >= chart.timeStart && node.year <= chart.timeEnd, at + ' (' + node.id + ') year out of range');
         bilingual(node.label, at + ' (' + node.id + ').label');
         if (node.note) bilingual(node.note, at + ' (' + node.id + ').note');
+        // A plain string period shows as is in both languages, so it must not
+        // carry Korean words (1970년대); those take a { ko, en } object.
+        if (node.period && typeof node.period === 'object') bilingual(node.period, at + ' (' + node.id + ').period');
+        else if (node.period) assert.ok(!/[가-힣]/.test(node.period), at + ' (' + node.id + ') period "' + node.period + '" has Korean text; use { ko, en }');
         assert.ok(node.ref && REF_TYPES.has(node.ref.type) && typeof node.ref.id === 'string' && node.ref.id, at + ' (' + node.id + ') ref must be {type: term|person|event|doc, id}');
     });
     assert.ok(Array.isArray(chart.edges), where + ': edges must be an array');
