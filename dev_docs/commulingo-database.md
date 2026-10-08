@@ -123,7 +123,7 @@ changed_by, job_ref)를 추가한다. 파이프라인 작성기가 한 번에 �
 - 한 트랜잭션에서 `commulingo_people.id`를 바꾼다. `commulingo_people`을 참조하는 FK는 모두 `ON UPDATE CASCADE`여야 하며(migration 190이 enrichment FK를 맞췄다) 아니면 도구가 전체를 거부한다.
 - FK가 없는 참조는 직접 옮긴다: person_evidence, 인물 편집 메모, 대기 중 제안·갭, 끝나지 않은 파이프라인 작업. 끝난 이력(승인된 제안, 완료 작업, revision, 도구 로그)은 기록 당시 id를 유지한다.
 - `commulingo_id_redirects`에 옛 id → 새 id를 넣고, 옛 id를 가리키던 redirect를 새 id로 돌린다. 새 id가 다른 곳으로 가는 redirect의 출발점이면 거부하고, 되돌리기(새 id → 옛 id)였다면 그 행을 지운다. 새 id의 revision에 변경 기록을 남긴다.
-- 커밋 뒤 호스트 데이터의 politburo.json(멤버·목록), docs/manifest.json(`people`), genealogy 차트(`type: "person"`)를 파일 자체 들여쓰기로 다시 쓴다. 직렬화로 원래 배치가 재현되지 않는 파일은 건드리지 않고 `manual`로 보고한다. 그 밖의 data/commulingo JSON에 옛 id가 문자열로 남으면 `leftover`로 알린다. 바뀐 데이터 파일은 커밋한다.
+- 같은 트랜잭션에서 참고 문헌 항목(`commulingo_docs.entry`의 `people`), 명부(`politburo`·`secretariat`·`orgburo`), 계보도 차트(`type: "person"`)의 옛 id를 새 id로 바꾸고 각각 문서 revision을 남긴다(2026-10-08부터 셋 다 DB 문서). 커밋할 파일은 없다.
 - KG 동기화는 redirect를 따라 옛 노드를 새 id로 병합하므로 별도 조치가 없다.
 
 격리 DB 회귀 테스트는 `scripts/test-commulingo-person-rename-db.js`(`COMMULINGO_ISOLATED_TEST=1`, `DB_NAME=commulingo_integrity_test`), 파일 재작성은 `npm test`의 `smoke-commulingo-person-rename.js`가 검사한다.

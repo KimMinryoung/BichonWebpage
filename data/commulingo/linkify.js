@@ -252,7 +252,7 @@ async function getLinkIndexes(lang) {
 // almost everywhere but wrong here. 임시정부 fires 199 times in this corpus and
 // is the Russian Provisional Government in essentially all of them, so it stays
 // in the index; the one French document where it means the GPRF declares
-// `noAutoLink: ["임시정부"]` in docs/manifest.json instead of the corpus losing
+// `noAutoLink: ["임시정부"]` in its manifest entry (commulingo_docs.entry) instead of the corpus losing
 // the alias. (Strings that are wrong almost everywhere belong in
 // commulingo_link_blocklist, not here.)
 function createLinker(indexes, options = {}) {

@@ -150,8 +150,8 @@ router.delete('/office-rows/:rowId', h(async (req, res) => {
 }));
 
 // ---- Reference documents (참고 문헌) ----------------------------------------
-// Files under the host-mounted data/commulingo/docs/, so API writes land in
-// the working tree — review and commit them afterwards.
+// Stored in commulingo_docs (docs-db.js); each write keeps a revision, so
+// there is nothing to commit afterwards.
 
 router.get('/docs', h((req, res) => {
     res.json({ docs: listCommuLingoDocs() });

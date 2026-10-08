@@ -18,7 +18,7 @@ const { registerAlias } = require('./alias-registry');
 //   term-headword — dropped even as the headword, for entries whose own name
 //                   is too common (소비에트) or homonymous (전세) to link bare.
 // A per-document escape hatch also exists for strings that are right almost
-// everywhere but wrong on one page: `noAutoLink` in docs/manifest.json.
+// everywhere but wrong on one page: `noAutoLink` in the document's manifest entry (commulingo_docs.entry).
 
 const { buildAliasPattern } = require('./people-linkify');
 const { termBlocklist } = require('./link-blocklist');
