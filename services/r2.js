@@ -1,26 +1,37 @@
 // Minimal Cloudflare R2 client (S3 API, SigV4) with no SDK dependency.
 //
-// Credentials come from .env, scoped to one bucket:
-//   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET
-// Used by scripts/archive-work-r2.js; the CommuLingo content store will read
-// document bodies through the same client.
+// The key pair is never in .env: systemd decrypts it from
+// /etc/credstore.encrypted (LoadCredentialEncrypted=r2_s3_access_key_id,
+// r2_s3_secret_access_key) into $CREDENTIALS_DIRECTORY, as for leninbot's
+// backup units. The account id and bucket are not secret and come from the
+// environment (R2_ACCOUNT_ID or leninbot's R2_CF_ACCOUNT_ID, R2_BUCKET).
+// Used by scripts/archive-work-r2.js (run via scripts/archive-work-r2).
 
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
 
 const REGION = 'auto';
 const SERVICE = 's3';
 
+function readCredential(env, name) {
+    if (!env.CREDENTIALS_DIRECTORY) return '';
+    try { return fs.readFileSync(path.join(env.CREDENTIALS_DIRECTORY, name), 'utf8').trim(); } catch { return ''; }
+}
+
 function r2Config(env = process.env) {
     const cfg = {
-        accountId: env.R2_ACCOUNT_ID || '',
-        accessKeyId: env.R2_ACCESS_KEY_ID || '',
-        secretAccessKey: env.R2_SECRET_ACCESS_KEY || '',
+        accountId: env.R2_ACCOUNT_ID || env.R2_CF_ACCOUNT_ID || '',
+        accessKeyId: readCredential(env, 'r2_s3_access_key_id'),
+        secretAccessKey: readCredential(env, 'r2_s3_secret_access_key'),
         bucket: env.R2_BUCKET || '',
     };
-    const missing = [['R2_ACCOUNT_ID', cfg.accountId], ['R2_ACCESS_KEY_ID', cfg.accessKeyId],
-        ['R2_SECRET_ACCESS_KEY', cfg.secretAccessKey], ['R2_BUCKET', cfg.bucket]]
+    const missing = [['R2_ACCOUNT_ID', cfg.accountId], ['credential r2_s3_access_key_id', cfg.accessKeyId],
+        ['credential r2_s3_secret_access_key', cfg.secretAccessKey], ['R2_BUCKET', cfg.bucket]]
         .filter(([, v]) => !v).map(([k]) => k);
-    if (missing.length) throw new Error(`R2 credentials missing in .env: ${missing.join(', ')}`);
+    if (missing.length) {
+        throw new Error(`R2 config missing: ${missing.join(', ')} — run scripts/archive-work-r2, which loads the encrypted credentials`);
+    }
     return cfg;
 }
 

@@ -9,7 +9,7 @@
 # A file already recorded with the same hash is skipped; one recorded with a
 # different hash (edited after it ran) is refused unless --force. Data-only
 # SQL under scripts/migrations/data/ is tracked the same way, and after it runs
-# the work directories are archived to R2 (scripts/archive-work-r2.js).
+# the work directories are archived to R2 (scripts/archive-work-r2).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 PG_CONTAINER="${PG_CONTAINER:-leninbot-pg}"
@@ -58,5 +58,5 @@ psql_pg -c "INSERT INTO schema_migrations (filename, sha256, applied_by) VALUES 
 echo "applied: $file"
 case "$file" in
     scripts/migrations/data/*|./scripts/migrations/data/*)
-        node scripts/archive-work-r2.js || echo "warning: R2 archive failed; rerun node scripts/archive-work-r2.js" >&2 ;;
+        scripts/archive-work-r2 || echo "warning: R2 archive did not run; the hourly commulingo-work-archive.timer will upload it" >&2 ;;
 esac

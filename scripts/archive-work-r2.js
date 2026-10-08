@@ -5,20 +5,20 @@
 // scripts/reviews/) and data-only SQL with its backups (scripts/migrations/data/)
 // are records of DB writes, not code the app runs. New files there are
 // gitignored; this uploads every untracked file under those directories to
-// R2_BUCKET as work/<path below scripts/>. Files already tracked by git stay in
+// R2 as commulingo-work/<path below scripts/>. Files already tracked by git stay in
 // git and are skipped.
 //
 // A file whose md5 matches the remote ETag is skipped. When a file changed after
 // it was archived, the previous object is first copied to
-// work/.history/<path>.<old md5 prefix>, so nothing archived is ever lost.
+// commulingo-work/.history/<path>.<old md5 prefix>, so nothing archived is lost.
 //
-// Usage:
-//   node scripts/archive-work-r2.js            # upload new/changed files
-//   node scripts/archive-work-r2.js --dry-run  # show what would be uploaded
-//   node scripts/archive-work-r2.js --list     # list archived objects
-//   node scripts/archive-work-r2.js --get work/content/x.json [out]  # restore one file
-//
-// Credentials: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET in .env.
+// The R2 key pair comes from the systemd credstore, so run it through the
+// wrapper, which starts it in a transient unit with the encrypted credentials:
+//   scripts/archive-work-r2              # upload new/changed files
+//   scripts/archive-work-r2 --dry-run    # show what would be uploaded
+//   scripts/archive-work-r2 --list       # list archived objects
+//   scripts/archive-work-r2 --get commulingo-work/content/x.json [out]  # restore one file
+// ops/systemd/commulingo-work-archive.{service,timer} runs it hourly.
 
 const fs = require('fs');
 const path = require('path');
@@ -26,11 +26,10 @@ const crypto = require('crypto');
 const { execFileSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
-require('dotenv').config({ path: path.join(ROOT, '.env') });
 const { createR2Client } = require('../services/r2');
 
 const DIRS = ['scripts/content', 'scripts/reviews', 'scripts/migrations/data'];
-const PREFIX = 'work/';
+const PREFIX = 'commulingo-work/';
 const SKIP = /(^|\/)(__pycache__|node_modules)\/|\.(tmp|pyc|swp)$|(^|\/)\.DS_Store$/;
 const TYPES = {
     '.json': 'application/json', '.jsonl': 'application/x-ndjson', '.js': 'text/javascript',

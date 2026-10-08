@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# archive-work-r2 — run scripts/archive-work-r2.js with the R2 key pair from the
+# systemd credstore, the same encrypted credentials and bucket leninbot's backup
+# units use (r2_s3_access_key_id / r2_s3_secret_access_key, cyber-lenin-backups).
+# Objects go under commulingo-work/; r2_retention only prunes dated *.dump keys
+# under the DB backup prefixes, so nothing here is ever deleted.
+#
+#   scripts/archive-work-r2 [--dry-run | --list | --get <key> [out]]
+#
+# Decrypting the credentials needs the system manager, hence sudo. Without a
+# terminal sudo does not prompt (-n); the hourly commulingo-work-archive.timer
+# uploads anything a failed run left behind.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+SUDO=()
+if [ "$(id -u)" -ne 0 ]; then
+    if [ -t 0 ]; then SUDO=(sudo); else SUDO=(sudo -n); fi
+fi
+CRED=/etc/credstore.encrypted
+exec "${SUDO[@]}" systemd-run --quiet --wait --pipe --collect \
+    --uid=grass --gid=grass \
+    -p WorkingDirectory="$PWD" \
+    -p EnvironmentFile=/home/grass/leninbot/.env \
+    -p Environment=R2_BUCKET=cyber-lenin-backups \
+    -p LoadCredentialEncrypted=r2_s3_access_key_id:$CRED/r2_s3_access_key_id.cred \
+    -p LoadCredentialEncrypted=r2_s3_secret_access_key:$CRED/r2_s3_secret_access_key.cred \
+    /usr/bin/node scripts/archive-work-r2.js "$@"

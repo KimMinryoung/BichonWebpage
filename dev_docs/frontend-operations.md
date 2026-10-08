@@ -52,13 +52,13 @@ Redis(세션 저장소) 장애 중에는 로그인 기능만 멈춘다. 사이�
 
 ### CommuLingo 작업물 R2 보관
 
-DB에 쓰는 작업의 입력과 기록은 git이 아니라 R2 버킷(`.env`의 `R2_BUCKET`, 접두어 `work/`)에 둔다.
+DB에 쓰는 작업의 입력과 기록은 git이 아니라 R2(`cyber-lenin-backups` 버킷의 `commulingo-work/`)에 둔다.
 
 - 대상: `scripts/content/`(배치 명세·빌드 스크립트), `scripts/reviews/`(링크 승인 파일), `scripts/migrations/data/`(DDL 없는 데이터 SQL과 적용 전 백업). 세 디렉터리의 새 파일은 gitignore된다. 이미 추적 중인 파일(테스트 fixture, `scripts/content/event-control/` 원본 등)은 그대로 git에 남고, 테스트나 앱이 읽어야 하는 새 파일만 `git add -f`로 추가한다.
-- 보관: `node scripts/archive-work-r2.js`가 세 디렉터리의 미추적 파일을 `work/<scripts/ 아래 경로>`로 올린다. md5가 원격 ETag와 같으면 건너뛰고, 내용이 바뀌면 이전 객체를 `work/.history/<경로>.<옛 md5 앞 8자>`로 복사한 뒤 덮어쓴다(삭제하지 않는다). `--dry-run`, `--list`, `--get <key> [out]`(복원)이 있다. `scripts/apply-migration`은 `scripts/migrations/data/` 파일을 적용한 뒤 자동으로 실행한다.
+- 보관: `scripts/archive-work-r2`가 세 디렉터리의 미추적 파일을 `commulingo-work/<scripts/ 아래 경로>`로 올린다. md5가 원격 ETag와 같으면 건너뛰고, 내용이 바뀌면 이전 객체를 `commulingo-work/.history/<경로>.<옛 md5 앞 8자>`로 복사한 뒤 덮어쓴다(삭제하지 않는다). `--dry-run`, `--list`, `--get <key> [out]`(복원)이 있다. `scripts/apply-migration`은 `scripts/migrations/data/` 파일을 적용한 뒤 자동으로 실행하고, `ops/systemd/commulingo-work-archive.{service,timer}`(시스템 유닛)가 매시간 실행한다.
 - 데이터 작업을 마칠 때 한 번 실행한다. 긴 배치는 중간 산출물을 디렉터리에 계속 써 두고 체크포인트마다 실행한다. 커밋은 하지 않는다.
 - 데이터 전용 SQL은 `scripts/migrations/data/`에 둔다. `scripts/migrations/`의 339번 이후 파일에 DDL(CREATE·ALTER·DROP·COMMENT ON·GRANT·REVOKE)이 없으면 `npm test`(`scripts/check-migration-kinds.js`)가 실패한다.
-- 자격증명: `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET`(그 버킷 하나에 Object Read & Write만 준 S3 API 토큰). 클라이언트는 의존성 없는 `services/r2.js`다. 2026-10-08 이전 데이터 SQL 일부는 `cyber-lenin-backups/commulingo-migrations/`에 있다(옛 `scripts/archive-migrations-r2`, leninbot 자격증명 의존이라 폐기).
+- 자격증명: leninbot 백업 유닛과 같은 systemd credstore 키(`/etc/credstore.encrypted/r2_s3_access_key_id.cred`, `r2_s3_secret_access_key.cred`)를 이 유닛이 `LoadCredentialEncrypted=`로 직접 받는다. `.env`에는 두지 않는다. 래퍼는 `sudo systemd-run`으로 같은 구성의 임시 유닛을 띄운다(터미널이 없으면 `sudo -n`, 실패분은 타이머가 올린다). 계정 id는 leninbot `.env`의 `R2_CF_ACCOUNT_ID`. 클라이언트는 의존성 없는 `services/r2.js`다. 2026-10-08 이전 데이터 SQL 일부는 `cyber-lenin-backups/commulingo-migrations/`에 있다(옛 `scripts/archive-migrations-r2`, leninbot 자격증명 의존이라 폐기).
 - 아직 git에 있는 데이터 파일(`data/commulingo/docs/`, `courses/`, `lessons.json`, `event-control/`, `activity-catalog.json`, 명부·계보도)은 바꾸면 커밋한다. DB·R2 이전은 후속 단계다.
 
 ## 인증
