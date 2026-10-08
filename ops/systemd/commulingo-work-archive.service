@@ -1,0 +1,14 @@
+[Unit]
+Description=Archive CommuLingo work products (scripts/content, reviews, migrations/data) to R2
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=grass
+WorkingDirectory=/home/grass/frontend
+EnvironmentFile=/home/grass/leninbot/.env
+Environment=R2_BUCKET=cyber-lenin-backups
+LoadCredentialEncrypted=r2_s3_access_key_id:/etc/credstore.encrypted/r2_s3_access_key_id.cred
+LoadCredentialEncrypted=r2_s3_secret_access_key:/etc/credstore.encrypted/r2_s3_secret_access_key.cred
+ExecStart=/usr/bin/node scripts/archive-work-r2.js
+TimeoutStartSec=15min

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Install the hourly CommuLingo work-product archive as a system unit (it needs
+# LoadCredentialEncrypted, which user units cannot use) and run it once.
+#   sudo ops/systemd/install-commulingo-work-archive
+set -euo pipefail
+cd "$(dirname "$0")"
+install -m 0644 commulingo-work-archive.service commulingo-work-archive.timer /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable --now commulingo-work-archive.timer
+systemctl start commulingo-work-archive.service
+journalctl -u commulingo-work-archive.service -n 20 --no-pager
