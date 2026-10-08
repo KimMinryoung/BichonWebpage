@@ -36,7 +36,7 @@
                 </div>
                 <div class="commu-person-detail-title">
                     <h1><%= person.displayName || person.name %></h1>
-                    <span><%= person.cyrillic %></span>
+                    <% if (String(person.cyrillic || '').replace(/\s/g, '') !== String(person.displayName || person.name || '').replace(/\s/g, '')) { %><span><%= person.cyrillic %></span><% } %>
                 </div>
             </div>
             <%- include('../partials/commulingo-person-meta', { person: person, showOtherPositions: true }) %>
