@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+# commulingo-data — edit the CommuLingo data documents, which live in the
+# database (commulingo_data_documents): activity-catalog, politburo,
+# secretariat, orgburo, event-control/<event id>, genealogy/<chart id>.
+# export writes <dir>/<key>.json (event-control/ and genealogy/ as
+# subdirectories); edit with any tool, then put sends back what changed. A
+# document is guarded by the revision it was exported at, so an edit made
+# meanwhile is refused rather than overwritten; a file put without an export
+# (a fresh bake) has no guard. Every write keeps the replaced version
+# (history / restore). No commit, no deploy: live within a minute.
+#
+#   scripts/commulingo-data export <dir> [key-or-prefix ...]   # e.g. activity-catalog, genealogy
+#   scripts/commulingo-data put <dir> [--dry-run] [--note text] [--actor who]
+#   scripts/commulingo-data history <key>
+#   scripts/commulingo-data restore <key> <revision>
+#
+# Keep job directories under scripts/content/ (gitignored, archived to R2).
+# After a put the exported keys are exported again. Runs the deployed
+# scripts/commulingo-data.js inside the production container.
+set -euo pipefail
+CONTAINER="${CONTAINER_NAME:-leninbot-frontend}"
+cmd="${1:-}"; shift || true
+run() { docker exec -i "$CONTAINER" node /app/scripts/commulingo-data.js "$@"; }
+
+case "$cmd" in
+    export)
+        dir="${1:?usage: commulingo-data export <dir> [key-or-prefix ...]}"; shift
+        mkdir -p "$dir"
+        bundle="$(mktemp)"; trap 'rm -f "$bundle"' EXIT
+        run export "$@" > "$bundle"
+        python3 -I -c '
+import json, os, sys
+d, bundle, selectors = sys.argv[1], json.load(open(sys.argv[2], encoding="utf-8")), sys.argv[3:]
+meta_path = os.path.join(d, ".export.json")
+meta = json.load(open(meta_path)) if os.path.exists(meta_path) else {"revisions": {}, "selectors": []}
+for doc in bundle["documents"]:
+    path = os.path.join(d, doc["key"] + ".json")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(doc["content"], f, ensure_ascii=False, indent=2); f.write("\n")
+    meta["revisions"][doc["key"]] = doc["revision"]
+meta["selectors"] = sorted(set(meta.get("selectors", [])) | set(selectors)) if selectors else []
+with open(meta_path, "w") as f:
+    json.dump(meta, f, indent=1); f.write("\n")
+print("exported %d document(s) to %s" % (len(bundle["documents"]), d), file=sys.stderr)
+' "$dir" "$bundle" "$@"
+        ;;
+    put)
+        dir="${1:?usage: commulingo-data put <dir> [--dry-run] [--note text] [--actor who]}"; shift
+        python3 -I -c '
+import json, os, sys
+d = sys.argv[1]
+meta_path = os.path.join(d, ".export.json")
+revisions = json.load(open(meta_path)).get("revisions", {}) if os.path.exists(meta_path) else {}
+docs = []
+for root, _, files in os.walk(d):
+    for name in sorted(files):
+        if not name.endswith(".json") or name.startswith("."): continue
+        key = os.path.relpath(os.path.join(root, name), d)[:-5].replace(os.sep, "/")
+        doc = {"key": key, "content": json.load(open(os.path.join(root, name), encoding="utf-8"))}
+        if key in revisions: doc["revision"] = revisions[key]
+        docs.append(doc)
+json.dump({"documents": docs}, sys.stdout, ensure_ascii=False)
+' "$dir" | run put "$@"
+        case " $* " in *" --dry-run "*) ;; *)
+            if [ -f "$dir/.export.json" ]; then
+                mapfile -t sel < <(python3 -I -c 'import json,sys; print("\n".join(json.load(open(sys.argv[1])).get("selectors", [])))' "$dir/.export.json" | sed '/^$/d')
+                "$0" export "$dir" "${sel[@]}"
+            fi ;;
+        esac
+        ;;
+    history|restore)
+        run "$cmd" "$@"
+        ;;
+    *)
+        sed -n 2,19p "$0"; exit 2 ;;
+esac

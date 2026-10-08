@@ -1,22 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const { listDataDocuments } = require('./data-documents');
 
-// Genealogy charts (계보도) served from data/commulingo/genealogy/: one JSON
-// file per chart describing columns (currents), nodes (groups, doctrines,
-// turning points) and typed edges between them. Like the reference library,
-// everything lives under the host-mounted data/ directory and is cached by
-// file mtime, so adding or editing a chart needs no image rebuild. The SVG
-// itself is drawn server-side by genealogy-svg.js.
-const CHARTS_DIR = path.join(__dirname, 'genealogy');
-
-const chartCache = new Map(); // file -> { mtimeMs, chart }
-
-// A term page calls loadCharts() once per reference doc on top of its own
-// call, each a readdir + stat per chart file. Freshness window matching the
-// shards.js debounce keeps the mtime live-reload while collapsing the
-// per-request walks. Callers only map over the result, never mutate it.
-const FRESHNESS_MS = 500;
-let lastLoad = { at: 0, charts: [] };
+// Genealogy charts (계보도): one database document per chart
+// (commulingo_data_documents, key genealogy/<chart id>; data-documents.js)
+// describing columns (currents), nodes (groups, doctrines, turning points) and
+// typed edges between them. Editing a chart needs no commit or deploy. The
+// SVG itself is drawn server-side by genealogy-svg.js.
 
 function validChart(chart) {
     return chart && typeof chart.id === 'string'
@@ -27,39 +15,18 @@ function validChart(chart) {
         && chart.timeEnd > chart.timeStart;
 }
 
+// Rebuilt only when the store installs a new set of documents (callers only
+// map over the result, never mutate it).
+let built = { source: null, charts: [] };
 function loadCharts() {
-    if (Date.now() - lastLoad.at < FRESHNESS_MS) return lastLoad.charts;
-    let files = [];
-    try {
-        files = fs.readdirSync(CHARTS_DIR).filter(file => file.endsWith('.json'));
-    } catch (err) {
-        if (err.code !== 'ENOENT') console.error('[commulingo genealogy] readdir failed:', err.message);
-        return [];
-    }
-    const charts = [];
-    for (const file of files.sort()) {
-        const filePath = path.join(CHARTS_DIR, file);
-        try {
-            const stat = fs.statSync(filePath);
-            const cached = chartCache.get(file);
-            if (cached && cached.mtimeMs === stat.mtimeMs) {
-                if (cached.chart) charts.push(cached.chart);
-                continue;
-            }
-            const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-            const chart = validChart(parsed) ? {
-                ...parsed,
-                modifiedAt: new Date(stat.mtimeMs).toISOString(),
-            } : null;
-            if (!chart) console.error(`[commulingo genealogy] ${file}: missing required fields, skipped`);
-            chartCache.set(file, { mtimeMs: stat.mtimeMs, chart });
-            if (chart) charts.push(chart);
-        } catch (err) {
-            console.error(`[commulingo genealogy] ${file}:`, err.message);
-            chartCache.delete(file);
-        }
-    }
-    lastLoad = { at: Date.now(), charts };
+    const docs = listDataDocuments('genealogy/');
+    if (built.source && built.source.length === docs.length && built.source.every((doc, i) => doc === docs[i])) return built.charts;
+    const charts = docs.filter(doc => {
+        if (validChart(doc.content)) return true;
+        console.error(`[commulingo genealogy] ${doc.key}: missing required fields, skipped`);
+        return false;
+    }).map(doc => ({ ...doc.content, modifiedAt: doc.updatedAt }));
+    built = { source: docs, charts };
     return charts;
 }
 

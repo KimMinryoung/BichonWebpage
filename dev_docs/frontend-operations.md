@@ -60,7 +60,8 @@ DB에 쓰는 작업의 입력과 기록은 git이 아니라 R2(`cyber-lenin-back
 - 데이터 전용 SQL은 `scripts/migrations/data/`에 둔다. `scripts/migrations/`의 339번 이후 파일에 DDL(CREATE·ALTER·DROP·COMMENT ON·GRANT·REVOKE)이 없으면 `npm test`(`scripts/check-migration-kinds.js`)가 실패한다.
 - 자격증명: leninbot 백업 유닛과 같은 systemd credstore 키(`/etc/credstore.encrypted/r2_s3_access_key_id.cred`, `r2_s3_secret_access_key.cred`)를 이 유닛이 `LoadCredentialEncrypted=`로 직접 받는다. `.env`에는 두지 않는다. 래퍼는 `sudo systemd-run`으로 같은 구성의 임시 유닛을 띄운다(터미널이 없으면 `sudo -n`, 실패분은 타이머가 올린다). 계정 id는 leninbot `.env`의 `R2_CF_ACCOUNT_ID`. 클라이언트는 의존성 없는 `services/r2.js`다. 2026-10-08 이전 데이터 SQL 일부는 `cyber-lenin-backups/commulingo-migrations/`에 있다(옛 `scripts/archive-migrations-r2`, leninbot 자격증명 의존이라 폐기).
 - 참고 문헌은 2026-10-08부터 DB(`commulingo_docs`)에 있다. 편집은 `scripts/commulingo-docs`(export → 수정 → put, `put-body`, `history`/`restore`), 규칙은 `data/commulingo/docs/README.md`. 서버는 `docs-snapshot.json`과 본문 캐시 `docs-cache/<sha256>.html`(둘 다 gitignore)로 서빙한다.
-- 아직 git에 있는 데이터 파일(`courses/`, `lessons.json`, `event-control/`, `activity-catalog.json`, 명부·계보도)은 바꾸면 커밋한다. DB 이전은 후속 단계다.
+- 활동 카탈로그·정치국/서기국/조직국 명부·사건 지도 통제 단계·계보도는 2026-10-08부터 DB 문서(`commulingo_data_documents`, 키 `activity-catalog`·`politburo`·`event-control/<id>`·`genealogy/<id>`)다. 편집은 `scripts/commulingo-data`(export → 수정 → put, `history`/`restore`). 서버는 `data-documents-snapshot.json`으로 서빙하고, leninbot이 읽는 `activity-catalog.json`을 같은 경로에 써 둔다(둘 다 gitignore). DB도 스냅샷도 없는 저장소(클라우드 세션 테스트)는 고정 시드 `scripts/fixtures/commulingo-data-documents-seed.json`을 쓴다. 이 시드는 데이터가 바뀌어도 갱신하지 않는다.
+- 아직 git에 있는 데이터 파일(`courses/`, `lessons.json`)은 바꾸면 커밋한다. DB 이전은 4단계다.
 
 ## 인증
 

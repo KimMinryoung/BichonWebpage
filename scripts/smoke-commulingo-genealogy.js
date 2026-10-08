@@ -1,15 +1,13 @@
 #!/usr/bin/env node
-// Every genealogy chart under data/commulingo/genealogy/ must be drawable:
+// Every genealogy chart (data documents genealogy/<id>) must be drawable:
 // unique node ids, every edge joining two existing nodes in time order (the
 // renderer draws top to bottom and silently skips a dangling endpoint, so a
 // typo would vanish instead of failing), known edge types, nodes in declared
 // columns, bilingual labels, refs of a linkable kind, and at least one edge
-// (a chart with none is a list, not a genealogy). Pure file check, no DB.
+// (a chart with none is a list, not a genealogy). Reads the snapshot (or the
+// test seed), no DB.
 const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
-
-const DIR = path.join(__dirname, '..', 'data', 'commulingo', 'genealogy');
+const { listDataDocuments } = require('../data/commulingo/data-documents');
 const EDGE_TYPES = new Set(['succession', 'split', 'merge', 'influence', 'opposition', 'end']);
 const REF_TYPES = new Set(['term', 'person', 'event', 'doc']);
 
@@ -19,12 +17,12 @@ function bilingual(value, where) {
     assert.ok(String(value.en || '').trim(), where + '.en is empty');
 }
 
-const files = fs.readdirSync(DIR).filter(name => name.endsWith('.json')).sort();
-assert.ok(files.length, 'no genealogy charts found');
-for (const name of files) {
-    const chart = JSON.parse(fs.readFileSync(path.join(DIR, name), 'utf8'));
-    const where = name;
-    assert.strictEqual(chart.id + '.json', name, where + ': id must match the file name');
+const docs = listDataDocuments('genealogy/');
+assert.ok(docs.length, 'no genealogy charts found');
+for (const doc of docs) {
+    const chart = doc.content;
+    const where = doc.key;
+    assert.strictEqual('genealogy/' + chart.id, doc.key, where + ': id must match the key');
     bilingual(chart.title, where + '.title');
     bilingual(chart.description, where + '.description');
     assert.ok(Number.isFinite(chart.timeStart) && Number.isFinite(chart.timeEnd) && chart.timeEnd > chart.timeStart, where + ': timeStart/timeEnd');
@@ -64,4 +62,4 @@ for (const name of files) {
         if (edge.label) bilingual(edge.label, at + '.label');
     });
 }
-console.log('ok: ' + files.length + ' genealogy charts');
+console.log('ok: ' + docs.length + ' genealogy charts');

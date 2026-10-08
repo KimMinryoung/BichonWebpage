@@ -60,7 +60,13 @@ function reviewReasons(target, action, payload, before) {
     return [...new Set(reasons)];
 }
 
-const PARTY_IDS = new Set(require('./activity-catalog.json').affiliations.filter(a => a.kind === 'party').map(a => a.id));
+// Live catalog (data-documents.js): rebuilt when the catalog object changes.
+let partyIds = { source: null, ids: new Set() };
+function partyIdSet() {
+    const { catalog } = require('./person-activities');
+    if (partyIds.source !== catalog) partyIds = { source: catalog, ids: new Set(catalog.affiliations.filter(a => a.kind === 'party').map(a => a.id)) };
+    return partyIds.ids;
+}
 
 async function recordEvidence(client, personId, sectionSlug, payload, options, revision) {
     const topics = new Set();
@@ -74,7 +80,7 @@ async function recordEvidence(client, personId, sectionSlug, payload, options, r
     if (topics.size) await client.query("UPDATE commulingo_person_enrichment SET status='open',review_after=NOW(),updated_at=NOW() WHERE person_id=$1 AND topic=ANY($2)", [personId, [...topics]]);
     // A 'party' record saying no membership was found stops being true once a
     // party activity is saved: it becomes complete, not reopened.
-    if ((payload.activities || []).some(a => PARTY_IDS.has(a?.affiliationId))) await client.query(`UPDATE commulingo_person_enrichment
+    if ((payload.activities || []).some(a => partyIdSet().has(a?.affiliationId))) await client.query(`UPDATE commulingo_person_enrichment
         SET status='complete', reason='party activity recorded', review_after=NOW()+INTERVAL '3650 days', updated_at=NOW()
         WHERE person_id=$1 AND topic='party' AND status<>'complete'`, [personId]);
     for (const e of payload.evidence || []) await client.query(`INSERT INTO commulingo_person_evidence

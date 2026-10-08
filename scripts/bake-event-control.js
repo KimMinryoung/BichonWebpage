@@ -15,7 +15,11 @@
 // repository.
 // Requires the polygon-clipping devDependency (bake time only).
 //
-// Output data/commulingo/event-control/<eventId>.json:
+// Output scripts/content/event-control/baked/event-control/<eventId>.json
+// (BAKE_OUT_DIR overrides the baked/ root). The site reads the database
+// document event-control/<eventId>, so publish the bake with
+//   scripts/commulingo-data put scripts/content/event-control/baked
+// Each baked file:
 // Spec fields: region (Natural Earth ADM0 codes), bounds (optional crop box
 // [[lat0, lng0], [lat1, lng1]]), sea (coastal waters, one or more [lat, lng] rings), base (the remainder side), precedence (drawn sides, highest first),
 // carve (sides the base's pockets cut; default all), overlays (sides drawn
@@ -55,7 +59,8 @@ const difference = clip('difference');
 const xor = clip('xor');
 
 const CONTENT_DIR = path.join(__dirname, 'content', 'event-control');
-const OUT_DIR = path.join(__dirname, '..', 'data', 'commulingo', 'event-control');
+const OUT_ROOT = process.env.BAKE_OUT_DIR || path.join(CONTENT_DIR, 'baked');
+const OUT_DIR = path.join(OUT_ROOT, 'event-control');
 // Degrees. The event map draws no borders, so a control boundary on land is
 // the only line there and can be coarse; the coast comes from the basemap.
 // A spec may coarsen it (spec.simplify) when its map spans a continent.
@@ -327,13 +332,13 @@ function main() {
         const baked = bakeEvent(spec, ne);
         const target = path.join(OUT_DIR, `${spec.eventId}.json`);
         const text = JSON.stringify(baked) + '\n';
-        // data/ is live-mounted in production: write beside, then rename.
         fs.writeFileSync(target + '.tmp', text);
         fs.renameSync(target + '.tmp', target);
         const points = baked.phases.reduce((s, p) => s + Object.values(p.areas)
             .reduce((t, rings) => t + rings.reduce((u, r) => u + r.length / 2, 0), 0), 0);
         console.log(`${spec.eventId}: ${baked.phases.length} phases, ${points} points, ${(text.length / 1024).toFixed(0)} KB`);
     }
+    console.log(`publish: scripts/commulingo-data put ${path.relative(process.cwd(), OUT_ROOT) || '.'}`);
 }
 
 if (require.main === module) main();

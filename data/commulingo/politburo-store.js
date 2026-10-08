@@ -1,40 +1,17 @@
-const fs = require('fs');
-const path = require('path');
 const { localize } = require('./localize');
+const { getDataDocument } = require('./data-documents');
 
-// The Central Committee body rosters (party-bodies.js): politburo.json,
-// secretariat.json, orgburo.json — a member registry with tenure spans, era
-// sections over it, and per-congress tables. Like the genealogy charts they live
-// under the host-mounted data/ directory and are cached by file mtime, so
-// correcting a date or filling in a person id needs no image rebuild.
+// The Central Committee body rosters (party-bodies.js): politburo, secretariat
+// and orgburo — a member registry with tenure spans, era sections over it, and
+// per-congress tables. Each is a database document (commulingo_data_documents,
+// key = body id), so correcting a date or filling in a person id needs no
+// commit or deploy.
 const { BODIES, BODY_IDS } = require('./party-bodies');
 
-const cache = new Map(); // bodyId -> { mtimeMs, data, checkedAt }
-// Every person page calls this; re-stat at most twice a second (same
-// debounce as the docs manifest) while keeping the mtime live-reload.
-const FRESHNESS_MS = 500;
-
-// null when the body's file is not there yet.
+// null when the body has no document yet.
 function loadBody(bodyId) {
-    const body = BODIES[bodyId];
-    if (!body) throw new Error(`unknown party body ${bodyId}`);
-    let entry = cache.get(bodyId);
-    if (entry && Date.now() - entry.checkedAt < FRESHNESS_MS) return entry.data;
-    const file = path.join(__dirname, body.file);
-    let stat;
-    try {
-        stat = fs.statSync(file);
-    } catch (err) {
-        if (err.code !== 'ENOENT') throw err;
-        cache.set(bodyId, { mtimeMs: 0, data: null, checkedAt: Date.now() });
-        return null;
-    }
-    if (!entry || entry.mtimeMs !== stat.mtimeMs) {
-        entry = { mtimeMs: stat.mtimeMs, data: JSON.parse(fs.readFileSync(file, 'utf8')) };
-    }
-    entry.checkedAt = Date.now();
-    cache.set(bodyId, entry);
-    return entry.data;
+    if (!BODIES[bodyId]) throw new Error(`unknown party body ${bodyId}`);
+    return getDataDocument(bodyId);
 }
 
 function loadPolitburo() {

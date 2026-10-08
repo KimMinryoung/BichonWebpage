@@ -1,30 +1,18 @@
 // Territorial-control phases for the event map: who held what, date by date.
 //
-// Baked by scripts/bake-event-control.js into event-control/<eventId>.json
-// (see that script for the format). Events without a file have no layer.
+// Baked by scripts/bake-event-control.js into the database document
+// event-control/<eventId> (data-documents.js; see that script for the format).
+// Events without one have no layer.
 // event-map-svg.js draws the areas; this module loads them, localizes the
 // captions and matches timeline rows to phases, so the map can follow the
 // row a reader is on.
-const fs = require('fs');
-const path = require('path');
 const { localize } = require('./localize');
-
-const DIR = path.join(__dirname, 'event-control');
-const cache = new Map();
+const { getDataDocument } = require('./data-documents');
 
 function loadEventControl(eventId) {
     if (typeof eventId !== 'string' || !/^[a-z0-9-]+$/.test(eventId)) return null;
-    if (cache.has(eventId)) return cache.get(eventId);
-    let control = null;
-    try {
-        control = JSON.parse(fs.readFileSync(path.join(DIR, `${eventId}.json`), 'utf8'));
-        if (!Array.isArray(control.phases) || !control.phases.length) control = null;
-    } catch (e) {
-        if (e.code !== 'ENOENT') console.error(`commulingo event control ${eventId}:`, e.message);
-        control = null;
-    }
-    cache.set(eventId, control);
-    return control;
+    const control = getDataDocument(`event-control/${eventId}`);
+    return control && Array.isArray(control.phases) && control.phases.length ? control : null;
 }
 
 // 'YYYY.MM.DD…' → a comparable day number; the first date in a range counts

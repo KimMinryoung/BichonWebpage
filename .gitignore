@@ -95,6 +95,19 @@ data/commulingo/docs-snapshot.json.tmp
 data/commulingo/docs-cache/
 data/commulingo/docs/*
 !data/commulingo/docs/README.md
+# CommuLingo data documents (activity catalog, rosters, event-control,
+# genealogy) live in the DB (commulingo_data_documents, migration 341). The
+# snapshot is the server's cache; activity-catalog.json is written from it
+# for leninbot, which reads that path.
+data/commulingo/data-documents-snapshot.json
+data/commulingo/data-documents-snapshot.json.tmp
+data/commulingo/activity-catalog.json
+data/commulingo/activity-catalog.json.*.tmp
+data/commulingo/politburo.json
+data/commulingo/secretariat.json
+data/commulingo/orgburo.json
+data/commulingo/event-control/
+data/commulingo/genealogy/
 
 .css-releases/
 .app-releases/

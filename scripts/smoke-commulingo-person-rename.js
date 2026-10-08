@@ -1,5 +1,5 @@
-// Pure checks for the person-id rename tool: batch validation and the rewrite
-// of host-mounted data files keyed by person id. The DB half is covered by
+// Pure checks for the person-id rename tool: batch validation and the
+// rewriters for documents keyed by person id. The DB half is covered by
 // scripts/test-commulingo-person-rename-db.js against an isolated database.
 const assert = require('node:assert/strict');
 const fs = require('fs');
@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const {
     validateRenames, renameInPolitburo, renameInDocsManifest, renameInGenealogy,
-    renameInDataFiles, findLeftoverReferences,
+    findLeftoverReferences,
 } = require('../data/commulingo/person-rename');
 
 assert.throws(() => validateRenames([]), /non-empty/);
@@ -44,27 +44,13 @@ const chart = renameInGenealogy({ nodes: [
 assert.equal(chart.nodes[0].ref.id, 'lech-walesa');
 assert.equal(chart.nodes[1].ref.id, 'lech-wa-sa');
 
-// File rewrite: own indentation kept, unchanged files untouched, a layout the
-// serializer would not reproduce is reported instead of reformatted.
+// Leftover scan: JSON files under data/commulingo still naming an old id.
 const root = fs.mkdtempSync(path.join(os.tmpdir(), 'person-rename-'));
 try {
-    fs.mkdirSync(path.join(root, 'genealogy'));
-    const write = (rel, text) => fs.writeFileSync(path.join(root, rel), text);
-    write('politburo.json', JSON.stringify({ members: { 'lech-wa-sa': {} }, eras: [], congresses: [] }, null, 1) + '\n');
-    write('genealogy/hand.json', '{"nodes": [{"ref": {"type": "person", "id": "lech-wa-sa"}}]}\n');
-    write('elsewhere.json', '{"see": "lech-wa-sa"}');
-    const renames = [{ from: 'lech-wa-sa', to: 'lech-walesa' }];
-
-    const planned = renameInDataFiles(renames, { root, dryRun: true });
-    assert.deepEqual(planned.changed, [path.join(root, 'politburo.json')]);
-    assert.deepEqual(planned.manual, [path.join(root, 'genealogy/hand.json')]);
-    assert.match(fs.readFileSync(path.join(root, 'politburo.json'), 'utf8'), /lech-wa-sa/, 'dry run writes nothing');
-
-    renameInDataFiles(renames, { root });
-    assert.equal(fs.readFileSync(path.join(root, 'politburo.json'), 'utf8'),
-        JSON.stringify({ members: { 'lech-walesa': {} }, eras: [], congresses: [] }, null, 1) + '\n');
-    assert.deepEqual(findLeftoverReferences(renames, { root }).map(h => path.relative(root, h.file)).sort(),
-        ['elsewhere.json', 'genealogy/hand.json']);
+    fs.writeFileSync(path.join(root, 'elsewhere.json'), '{"see": "lech-wa-sa"}');
+    fs.writeFileSync(path.join(root, 'clean.json'), '{"see": "lech-walesa"}');
+    assert.deepEqual(findLeftoverReferences([{ from: 'lech-wa-sa', to: 'lech-walesa' }], { root }).map(h => path.relative(root, h.file)),
+        ['elsewhere.json']);
 } finally {
     fs.rmSync(root, { recursive: true, force: true });
 }

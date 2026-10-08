@@ -1,5 +1,4 @@
 const assert = require('node:assert/strict');
-const path = require('node:path');
 
 const state = require('./content/socialist-states-20260908.json');
 const depth = require('./content/socialist-event-depth-20260908.json');
@@ -74,7 +73,7 @@ for (const event of depth.events) {
 
 let graphNodeCount = 0;
 for (const graphId of graphIds) {
-    const graph = require(path.join('..', 'data', 'commulingo', 'genealogy', graphId + '.json'));
+    const graph = require('../data/commulingo/data-documents').getDataDocument('genealogy/' + graphId);
     uniqueIds(graph.nodes, graphId + ' nodes');
     graphNodeCount += graph.nodes.length;
     const nodeIds = new Set(graph.nodes.map(node => node.id));

@@ -1,10 +1,9 @@
 // The Central Committee bodies with a membership roster page. Each roster is
-// a host-mounted JSON file in the Politburo schema (politburo.json: members
-// registry with spans, eras, per-congress tables), so a corrected date needs no
-// deploy. A body's office line links to its roster from the office page.
+// a database document keyed by the body id (data-documents.js) in the
+// Politburo schema (members registry with spans, eras, per-congress tables),
+// so a corrected date needs no commit or deploy. A body's office line links to its roster from the office page.
 const BODIES = {
     politburo: {
-        file: 'politburo.json',
         path: '/commulingo/politburo',
         officeId: 'party-leadership',
         range: '1917–1991',
@@ -28,7 +27,6 @@ const BODIES = {
         },
     },
     secretariat: {
-        file: 'secretariat.json',
         path: '/commulingo/secretariat',
         officeId: 'party-secretariat-cadres',
         range: '1917–1991',
@@ -51,7 +49,6 @@ const BODIES = {
         },
     },
     orgburo: {
-        file: 'orgburo.json',
         path: '/commulingo/orgburo',
         officeId: 'party-secretariat-cadres',
         range: '1919–1952',

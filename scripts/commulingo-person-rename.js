@@ -11,13 +11,12 @@
 // person row moves and its dependants follow by ON UPDATE CASCADE, loose
 // references move by hand, and commulingo_id_redirects gains from → to so
 // /commulingo/people/<from> 301s within one people-store refresh (~60s). The
-// reference documents' people lists (commulingo_docs) change in the same
-// transaction. After the commit the host-mounted data files keyed by person id
-// (politburo.json, genealogy charts) are rewritten. --dry-run runs every check
-// and UPDATE, rolls back, and only reports which data files would change.
+// reference documents' people lists (commulingo_docs), the rosters and the
+// genealogy charts (commulingo_data_documents) change in the same transaction. --dry-run runs every check
+// and UPDATE, rolls back, and reports what would move.
 const fs = require('fs');
 const { db } = require('./lib/bootstrap');
-const { renamePersonIds, renameInDataFiles, findLeftoverReferences } = require('../data/commulingo/person-rename');
+const { renamePersonIds, findLeftoverReferences } = require('../data/commulingo/person-rename');
 
 (async () => {
     const args = process.argv.slice(2);
@@ -37,12 +36,6 @@ const { renamePersonIds, renameInDataFiles, findLeftoverReferences } = require('
         for (const r of results) {
             const moved = Object.entries(r.moved).filter(([, n]) => n).map(([k, n]) => `${k}=${n}`).join(' ');
             console.log(`${dryRun ? 'would rename' : 'renamed'} ${r.from} → ${r.to}${moved ? ` (${moved})` : ''}`);
-        }
-        const files = renameInDataFiles(renames, { dryRun });
-        for (const f of files.changed) console.log(`${dryRun ? 'would rewrite' : 'rewrote'} ${f}`);
-        for (const f of files.manual) {
-            console.error(`manual: ${f} holds a renamed id but its layout is not machine-serializable; edit it by hand`);
-            exitCode = 1;
         }
         if (!dryRun) {
             for (const hit of findLeftoverReferences(renames)) console.error(`leftover: ${hit.file} still contains "${hit.id}"`);

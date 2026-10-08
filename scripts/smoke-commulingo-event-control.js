@@ -22,11 +22,9 @@ assert.equal(loadEventControl('no-such-event'), null);
 assert.equal(loadEventControl('../etc/passwd'), null);
 
 // Every baked event: dated, captioned, toned and self-consistent.
-const fs = require('node:fs');
-const path = require('node:path');
+const { listDataDocuments } = require('../data/commulingo/data-documents');
 const TONES = new Set(['blue', 'red', 'amber', 'purple', 'gray', 'green', 'black']);
-const bakedIds = fs.readdirSync(path.join(__dirname, '..', 'data', 'commulingo', 'event-control'))
-    .filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, ''));
+const bakedIds = listDataDocuments('event-control/').map(doc => doc.key.slice('event-control/'.length));
 assert(bakedIds.length >= 4, 'the four control events are baked');
 for (const id of bakedIds) {
     const baked = loadEventControl(id);

@@ -58,6 +58,7 @@ async function renameOne(client, { from, to, note }, changedBy) {
         moved[ref.table] = (await client.query(ref.sql, [from, to])).rowCount;
     }
     moved.docs = await renameDocPeople(client, from, to, changedBy);
+    moved.dataDocuments = await renameInDataDocuments(client, from, to, changedBy);
     moved.redirectsRetargeted = (await client.query(
         "UPDATE commulingo_id_redirects SET to_id=$2 WHERE entity_type='person' AND to_id=$1", [from, to])).rowCount;
     await client.query(
@@ -70,6 +71,7 @@ async function renameOne(client, { from, to, note }, changedBy) {
 // Reference documents list their people by id in the entry stored in
 // commulingo_docs; rewritten in the same transaction, with a doc revision.
 async function renameDocPeople(client, from, to, changedBy) {
+    if (!(await client.query("SELECT to_regclass('commulingo_docs') AS t")).rows[0].t) return 0;
     const { rows } = await client.query(
         "SELECT id, entry, revision FROM commulingo_docs WHERE entry->'people' @> to_jsonb($1::text) OR entry->'people' @> jsonb_build_array(jsonb_build_object('id', $1::text))",
         [from]);
@@ -82,6 +84,25 @@ async function renameDocPeople(client, from, to, changedBy) {
     }));
     await writeDocs({ upserts }, { actor: changedBy, note: `person id renamed ${from} → ${to}`, client });
     return rows.length;
+}
+
+// Rosters and genealogy charts (commulingo_data_documents) hold person ids;
+// rewritten in the same transaction, each with a document revision.
+async function renameInDataDocuments(client, from, to, changedBy) {
+    if (!(await client.query("SELECT to_regclass('commulingo_data_documents') AS t")).rows[0].t) return 0;
+    const { rows } = await client.query(
+        "SELECT key, content::text AS text, revision FROM commulingo_data_documents WHERE key IN ('politburo', 'secretariat', 'orgburo') OR key LIKE 'genealogy/%' ORDER BY key");
+    const map = new Map([[from, to]]);
+    const upserts = [];
+    for (const row of rows) {
+        const content = JSON.parse(row.text);
+        const renamed = row.key.startsWith('genealogy/') ? renameInGenealogy(content, map) : renameInPolitburo(content, map);
+        if (JSON.stringify(renamed) !== JSON.stringify(content)) upserts.push({ key: row.key, content: renamed, expectedRevision: row.revision });
+    }
+    if (!upserts.length) return 0;
+    const { writeDataDocuments } = require('./data-documents');
+    await writeDataDocuments({ upserts }, { actor: changedBy, note: `person id renamed ${from} → ${to}`, client });
+    return upserts.length;
 }
 
 // All renames in one transaction. With dryRun the transaction is rolled back
@@ -110,9 +131,8 @@ async function renamePersonIds(renames, { client, changedBy = 'commulingo-person
     }
 }
 
-// ── Host-mounted data files keyed by person id ─────────────────────────────
-// These are read by mtime and change with no deploy, so they are rewritten
-// after the DB commit. Each rewriter touches only fields that hold person ids.
+// ── Documents keyed by person id ───────────────────────────────────────────
+// Each rewriter touches only fields that hold person ids.
 function renameInPolitburo(data, map) {
     // Every id in the dataset is a person id: member keys, era lists, congress rows.
     const walk = value => {
@@ -145,46 +165,6 @@ function renameInGenealogy(data, map) {
     return walk(data);
 }
 
-function dataFiles(root) {
-    const genealogy = path.join(root, 'genealogy');
-    return [
-        // The Central Committee body rosters share the Politburo schema (party-bodies.js).
-        ...['politburo.json', 'secretariat.json', 'orgburo.json'].map(f => path.join(root, f)).filter(f => fs.existsSync(f))
-            .map(file => ({ file, rewrite: renameInPolitburo })),
-        ...(fs.existsSync(genealogy) ? fs.readdirSync(genealogy).filter(f => f.endsWith('.json')).sort()
-            .map(f => ({ file: path.join(genealogy, f), rewrite: renameInGenealogy })) : []),
-    ];
-}
-
-function serialize(value, indent, raw) {
-    return JSON.stringify(value, null, indent) + (raw.endsWith('\n') ? '\n' : '');
-}
-
-// Rewrites the files that changed (temp file + rename, in the file's own
-// indentation) and returns { changed, manual }. A file whose layout the
-// serializer would not reproduce is left alone and reported in `manual`, so a
-// rename never reformats a hand-laid-out chart. With dryRun nothing is written.
-function renameInDataFiles(renames, { root = __dirname, dryRun = false } = {}) {
-    const map = new Map(renames.map(r => [r.from, r.to]));
-    const changed = [], manual = [];
-    for (const { file, rewrite } of dataFiles(root)) {
-        if (!fs.existsSync(file)) continue;
-        const raw = fs.readFileSync(file, 'utf8');
-        const parsed = JSON.parse(raw);
-        const renamed = rewrite(parsed, map);
-        if (JSON.stringify(renamed) === JSON.stringify(parsed)) continue;
-        const indent = (raw.match(/\n( +)\S/) || [null, '  '])[1].length;
-        if (serialize(parsed, indent, raw) !== raw) { manual.push(file); continue; }
-        changed.push(file);
-        if (dryRun) continue;
-        const next = serialize(renamed, indent, raw);
-        const tmp = `${file}.rename-${process.pid}`;
-        fs.writeFileSync(tmp, next);
-        fs.renameSync(tmp, file);
-    }
-    return { changed, manual };
-}
-
 // Other JSON under data/commulingo that still carries an old id as an exact
 // string. Snapshots and generated shards are rebuilt from the DB; anything else
 // found here is a reference the tool does not know how to move.
@@ -206,6 +186,6 @@ function findLeftoverReferences(renames, { root = __dirname } = {}) {
 }
 
 module.exports = {
-    renamePersonIds, renameInDataFiles, findLeftoverReferences, validateRenames,
+    renamePersonIds, findLeftoverReferences, validateRenames,
     renameInPolitburo, renameInDocsManifest, renameInGenealogy,
 };

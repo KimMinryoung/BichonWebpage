@@ -1,11 +1,42 @@
-const catalog = require('./activity-catalog.json');
+const { getDataDocument } = require('./data-documents');
 const { localize } = require('./localize');
 const badRequest = message => require('./people-admin-fields').badRequest(message);
-const functions = new Map(catalog.functions.map(row => [row.id, row]));
-const affiliations = new Map(catalog.affiliations.map(row => [row.id, row]));
-// The glossary entries that name an affiliation (사회혁명당 → russian-sr), so the
-// term page can open the people filed under it and the filter can name the term.
-const affiliationByTerm = new Map(catalog.affiliations.flatMap(row => (row.termIds || []).map(termId => [termId, row])));
+
+// The catalog is a database document (commulingo_data_documents
+// 'activity-catalog'), so an edit is live within a minute. The maps below are
+// rebuilt when the catalog object changes and exported as stable read-only
+// views, so modules that destructured them at load keep seeing the current one.
+const EMPTY_CATALOG = { version: 0, functions: [], affiliations: [], legacy: {}, retired: {} };
+let derived = { source: null };
+function current() {
+    const catalog = getDataDocument('activity-catalog') || EMPTY_CATALOG;
+    if (derived.source !== catalog) {
+        derived = {
+            source: catalog,
+            functions: new Map(catalog.functions.map(row => [row.id, row])),
+            affiliations: new Map(catalog.affiliations.map(row => [row.id, row])),
+            // The glossary entries that name an affiliation (사회혁명당 → russian-sr), so the
+            // term page can open the people filed under it and the filter can name the term.
+            affiliationByTerm: new Map(catalog.affiliations.flatMap(row => (row.termIds || []).map(termId => [termId, row]))),
+        };
+    }
+    return derived;
+}
+function liveMap(name) {
+    return {
+        get: key => current()[name].get(key),
+        has: key => current()[name].has(key),
+        keys: () => current()[name].keys(),
+        values: () => current()[name].values(),
+        entries: () => current()[name].entries(),
+        forEach: (fn, thisArg) => current()[name].forEach(fn, thisArg),
+        get size() { return current()[name].size; },
+        [Symbol.iterator]: () => current()[name][Symbol.iterator](),
+    };
+}
+const functions = liveMap('functions');
+const affiliations = liveMap('affiliations');
+const affiliationByTerm = liveMap('affiliationByTerm');
 
 // Affiliations with a bounded existence carry periods: [[start|null, end|null], ...].
 // One year of slack on each side absorbs founding and dissolution years.
@@ -135,4 +166,6 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, catalog, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+// The whole catalog object; read it through the module (activities.catalog), not by destructuring.
+Object.defineProperty(module.exports, 'catalog', { enumerable: true, get: () => current().source });
