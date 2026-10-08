@@ -39,7 +39,7 @@ const EARLIER_POSITIONS = [
     ['juche', 'red-korea'],
     ['marxism-leninism', 'red'],
     ['marxism', 'red'],
-    ['non-bolshevik-socialist', 'socialist'],
+    ['social-democrat', 'socialist'],
     ['early-socialist', 'socialist'],
     ['revolutionary-socialist', 'revolutionary-socialist'],
     ['narodnik', 'narodnik'],
@@ -142,9 +142,9 @@ function resolvePosition(activities, collectionIds) {
     const earlier = EARLIER_POSITIONS.find(([id]) => inCollection.has(id));
     const member = rows.some(a => isCommunist(a.affiliationId));
     // Service in a socialist window without any communist membership does not
-    // make a curated non-Bolshevik socialist red: the social democrats who
+    // make a curated social democrat red: the social democrats who
     // served the 1919 Hungarian Soviet Republic stay socialists.
-    if (earlier?.[0] === 'non-bolshevik-socialist' && !member) return { position: earlier[1], collectionId: earlier[0] };
+    if (earlier?.[0] === 'social-democrat' && !member) return { position: earlier[1], collectionId: earlier[0] };
     const communist = rows.find(a => isCommunist(a.affiliationId)
         || (SOCIALIST_WINDOWS[a.affiliationId] && mostlySocialist(a, SOCIALIST_WINDOWS[a.affiliationId])));
     if (primary && communist && affiliations.get(primary.affiliationId)?.kind !== 'state') return { position: isCommunist(communist.affiliationId) ? redTone(communist.affiliationId) : 'red', collectionId: '' };

@@ -12,11 +12,11 @@ assert.equal(personPosition(primary('state-poland'), ['counterrevolution']), 'wh
 
 assert.equal(personPosition(primary('german-nazi'), ['counterrevolution', 'fascist']), 'fascist');
 // Earlier-career collections yield to a communist affiliation.
-assert.equal(personPosition(primary('russian-mensheviks'), ['non-bolshevik-socialist']), 'socialist');
-assert.equal(personPosition(primary('party-polish-pzpr'), ['non-bolshevik-socialist']), 'red');
+assert.equal(personPosition(primary('russian-mensheviks'), ['social-democrat']), 'socialist');
+assert.equal(personPosition(primary('party-polish-pzpr'), ['social-democrat']), 'red');
 // Socialist-window service alone does not: Peidl's 1919 government.
-assert.equal(personPosition(primary('state-hungary', 1919), ['non-bolshevik-socialist']), 'socialist');
-assert.equal(personPosition([...primary('state-hungary', 1919), { primary: false, affiliationId: 'party-hungarian-communist' }], ['non-bolshevik-socialist']), 'red');
+assert.equal(personPosition(primary('state-hungary', 1919), ['social-democrat']), 'socialist');
+assert.equal(personPosition([...primary('state-hungary', 1919), { primary: false, affiliationId: 'party-hungarian-communist' }], ['social-democrat']), 'red');
 assert.equal(personPosition(primary('russian-narodnaya-volya'), ['narodnik']), 'narodnik');
 assert.equal(personPosition(primary('party-german-communist'), ['western-marxist']), 'western-marxist');
 assert.equal(personPosition(primary('state-vietnam', 1945), ['national-liberation']), 'red');
