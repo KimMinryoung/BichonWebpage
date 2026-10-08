@@ -9,7 +9,7 @@
 | 1 | 작업물(`scripts/content/`·`scripts/reviews/`·`scripts/migrations/data/`) → R2 | 완료. 새 파일 gitignore, `scripts/archive-work-r2`와 시간별 `commulingo-work-archive.timer`가 `cyber-lenin-backups/commulingo-work/`에 올린다. `npm test`가 DDL 없는 새 마이그레이션을 거부한다. [운영 참고](frontend-operations.md#commulingo-작업물-r2-보관) |
 | 2 | 참고 문헌(`data/commulingo/docs/`) → DB | 완료. 아래 참조 |
 | 3 | `event-control/*.json`, `activity-catalog.json`, 정치국·서기국·조직국 명부, 계보도 → DB | 완료. 아래 참조 |
-| 4 | `lessons.json`, `courses/*.js` → DB | 미착수. 문항 id 검사(`check-commulingo-question-ids.js`)가 git HEAD 비교라 이전 revision 비교로 바꿔야 한다 |
+| 4 | `lessons.json`, `courses/*.js` | 하지 않음(사용자 결정 2026-10-08). 바뀌는 일이 드물고, 코드 검증(validator, 문항 id 검사)과 함께 커밋하는 편이 낫다. 지금처럼 git에서 관리한다 |
 
 ## 2단계: 참고 문헌
 
