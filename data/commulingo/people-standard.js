@@ -403,15 +403,16 @@ function normalizeCommuLingoPeople(data, options = {}) {
         peopleById[id].collections.push({ id: collection.id, icon: collection.icon, title: collection.title, href: collection.href });
     }));
     // A red read from the activities names no collection; its chip borrows the
-    // communist collection's glyph.
-    const redIcon = (collections.find(c => c.id === 'communist') || {}).icon || 'hammer-sickle';
+    // communist collection's glyph and opens that collection's filter.
+    const communistCollection = collections.find(c => c.id === 'communist') || {};
+    const redIcon = communistCollection.icon || 'hammer-sickle';
     people.forEach(person => {
         const { position, collectionId } = resolvePosition(person.activities, person.collections.map(c => c.id));
         const collection = collectionId && person.collections.find(c => c.id === collectionId);
         person.position = position;
         person.positionTag = !position ? null
             : collection ? { label: collection.title, href: collection.href, icon: collection.icon }
-            : { label: localize(RED_LABELS[position], lang), href: '', icon: redIcon };
+            : { label: localize(RED_LABELS[position], lang), href: communistCollection.href || '', icon: redIcon };
         // The collections the position chip does not name, for the detail head.
         // A red collection under a red chip (the communist collection under
         // Soviet communism) only repeats it.

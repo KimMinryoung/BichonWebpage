@@ -115,7 +115,8 @@ const RED_LABELS = {
 
 // collectionIds: the collections the person belongs to. Returns the position
 // key and, when a collection decided it, that collection's id (the card's
-// position tag links there); a red read from the activities has none.
+// position tag links there); a red read from the activities has none (its
+// chip links to the communist collection).
 function resolvePosition(activities, collectionIds) {
     const inCollection = new Set(collectionIds || []);
     const hit = COLLECTION_POSITIONS.find(([id]) => inCollection.has(id));
@@ -127,12 +128,17 @@ function resolvePosition(activities, collectionIds) {
     // movement rather than a state (Guevara's 26th of July Movement) does not
     // settle the position; a documented communist activity then decides it.
     // Service to a non-socialist state does not yield to it.
+    const earlier = EARLIER_POSITIONS.find(([id]) => inCollection.has(id));
+    const member = rows.some(a => isCommunist(a.affiliationId));
+    // Service in a socialist window without any communist membership does not
+    // make a curated non-Bolshevik socialist red: the social democrats who
+    // served the 1919 Hungarian Soviet Republic stay socialists.
+    if (earlier?.[0] === 'non-bolshevik-socialist' && !member) return { position: earlier[1], collectionId: earlier[0] };
     const communist = rows.find(a => isCommunist(a.affiliationId)
         || (SOCIALIST_WINDOWS[a.affiliationId] && mostlySocialist(a, SOCIALIST_WINDOWS[a.affiliationId])));
     if (primary && communist && affiliations.get(primary.affiliationId)?.kind !== 'state') return { position: isCommunist(communist.affiliationId) ? redTone(communist.affiliationId) : 'red', collectionId: '' };
     const windows = primary && SOCIALIST_WINDOWS[primary.affiliationId];
-    if (windows && (rows.some(a => isCommunist(a.affiliationId)) || mostlySocialist(primary, windows))) return { position: 'red', collectionId: '' };
-    const earlier = EARLIER_POSITIONS.find(([id]) => inCollection.has(id));
+    if (windows && (member || mostlySocialist(primary, windows))) return { position: 'red', collectionId: '' };
     return earlier ? { position: earlier[1], collectionId: earlier[0] } : { position: '', collectionId: '' };
 }
 
