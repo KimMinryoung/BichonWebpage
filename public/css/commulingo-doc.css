@@ -388,15 +388,16 @@
    it spans the whole column instead of the width of the word 목차. */
 .doc-toc details[open] > .doc-toc-parts {
   position: absolute;
-  left: 0;
-  right: 0;
+  /* 바의 테두리 바깥선에 맞춰 바로 아래 붙는다: 위 변이 바의 아래 변과 겹쳐
+     한 줄로 보이고, 옆 변은 바의 옆 변과 일직선이 된다. */
+  left: -1px;
+  right: -1px;
   top: 100%;
   z-index: 60;
   margin: 0;
   padding: 0.8rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-top: 0;
   max-height: calc(100dvh - 8rem);
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -835,14 +836,15 @@
 
 .doc-toc .doc-search details[open] > .doc-search-panel {
   position: absolute;
-  left: 0;
-  right: 0;
+  /* 바의 테두리 바깥선에 맞춰 바로 아래 붙는다: 위 변이 바의 아래 변과 겹쳐
+     한 줄로 보이고, 옆 변은 바의 옆 변과 일직선이 된다. */
+  left: -1px;
+  right: -1px;
   top: 100%;
   z-index: 60;
   padding: 0.8rem 1rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
-  border-top: 0;
   max-height: calc(100dvh - 8rem);
   overflow-y: auto;
   overscroll-behavior: contain;

@@ -43,6 +43,14 @@ body.commulingo-page > .admin-bar {
     margin-bottom: -9px;
 }
 
+/* The home link reaches the bar's left border: the negative margin cancels the
+   crumb's inline padding and the padding puts it back inside the link, so the
+   whole left end of the bar is the click target and fills on hover. */
+.commu-crumb-home {
+    margin-left: -10px;
+    padding-left: 16px;
+}
+
 .commu-crumb-home .commu-role-icon {
     color: inherit;
     flex: 0 0 auto;
@@ -116,6 +124,11 @@ body.commulingo-page > .admin-bar {
 
     .commu-crumb-slot {
         margin-right: -8px;
+    }
+
+    .commu-crumb-home {
+        margin-left: -8px;
+        padding-left: 14px;
     }
 
     .commu-crumb-home span {
