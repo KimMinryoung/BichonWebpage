@@ -10,7 +10,9 @@ const people = [person('yurovsky', '야코프', '유롭스키', '1878–1938'), 
     person('gorshkov', '세르게이', '고르시코프'), person('other-ustinov', '알렉산드르', '우스티노프')];
 installLinkBlocklist([]);
 const indexes = { lang: 'ko', person: buildPersonLinkIndex(people) };
-const raw = { id: 'source', people: ['yurovsky'], date: '1918' };
+// A curated document: any personLinks closes the cast (the production cases
+// below come from one). Open documents are tested further down.
+const raw = { id: 'source', people: ['yurovsky'], date: '1918', personLinks: { allowedPeople: ['yurovsky'] } };
 const render = (html, entry = raw, idx = indexes) => renderDocPersonLinks(html, entry, idx, { audit: true });
 // The four production false positives, with no document mapping required.
 const bad = render('<p>보즈네센스키 대로의 알렉산드르 우스티노프. 검사 쿠투조프와 표도르 니키포로비치 고르시코프.</p>');
@@ -75,4 +77,29 @@ assert.throws(() => validatePersonLinks({ period: { start: 1920, end: 1918 } }),
 assert.throws(() => render('<p>text</p>', mapped), /missing section/);
 assert.throws(() => render('<p>text</p>', { ...raw, personLinks: { allowedPeople: ['missing'] } }), /unknown allowed/);
 assert.deepEqual(mergeDocMeta({ ...raw, title: { ko: '문서' }, personLinks: mapped.personLinks }, { description: { ko: '갱신' } }).personLinks, mapped.personLinks);
+// Open documents (no curated cast) follow the dictionary pages.
+const openPeople = [...people, person('lenin', '블라디미르', '레닌', '1870–1924'), person('later', '미하일', '후대인', '1960–2020'),
+    person('marx', '카를', '마르크스', '1818–1883')];
+const openIdx = { lang: 'ko', person: buildPersonLinkIndex(openPeople) };
+const openRaw = { id: 'open', people: [], date: '1918' };
+const openRender = (html, relatedPeople = new Set(['lenin', 'later', 'marx'])) => renderDocPersonLinks(html, openRaw, openIdx, { audit: true, relatedPeople });
+// Full names outside the cast link unless the person was born long after.
+assert.match(openRender('<p>블라디미르 레닌이 말했다.</p>').html, /people\/lenin/);
+assert.doesNotMatch(openRender('<p>미하일 후대인이 말했다.</p>').html, /people\/later/);
+// A surname the dictionary links on its own, for someone tied to the
+// document (its history events' people), adult at its date.
+assert.match(openRender('<p>레닌이 말했다.</p>').html, /people\/lenin/);
+assert.doesNotMatch(openRender('<p>레닌이 말했다.</p>', new Set()).html, /people\/lenin/);
+assert.doesNotMatch(openRender('<p>후대인이 말했다.</p>').html, /people\/later/);
+assert.doesNotMatch(openRender('<p>블. 레닌이 서명했다.</p>').html, /people\/lenin/);
+// A full name in an earlier section introduces the surname for later ones.
+const twoSections = openRender('<h2 id="a">A</h2><p>카를 마르크스.</p><h2 id="b">B</h2><p>마르크스가 썼다.</p>');
+assert.equal((twoSections.html.match(/people\/marx/g) || []).length, 2);
+assert(twoSections.mentions.some(m => m.section === 'b' && m.decision === 'linked-doc-identity'));
+// Shared, blocked or place-bound surnames still need the document's own cast.
+assert.doesNotMatch(openRender('<p>우스티노프가 말했다.</p>').html, /ustinov/);
+assert.doesNotMatch(openRender('<p>레닌 광장에 모였다. 표도르 니키포로비치 고르시코프.</p>').html, /people\/(?:lenin|gorshkov)/);
+assert.doesNotMatch(openRender('<p>레닌그라드에서.</p>').html, /people\/lenin/);
+assert.doesNotMatch(openRender('<p>레닌 주와 레닌 크라이.</p>').html, /people\/lenin/);
+assert.doesNotMatch(openRender('<p>프리드리히 레닌 4세.</p>').html, /people\/lenin/);
 console.log('OK — document cast, prior identity, section conflicts, places, chronology and production false positives');

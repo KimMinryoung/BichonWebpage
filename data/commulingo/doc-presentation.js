@@ -1,6 +1,6 @@
 const { searchableAliases } = require('./link-expressions');
 const { getLinkIndexes } = require('./linkify');
-const { renderDocPersonLinks } = require('./doc-person-links');
+const { renderDocPersonLinks, docRelatedPeople } = require('./doc-person-links');
 const { localize } = require('./localize');
 
 // Dictionary links inside a document body, memoized. A full text is far too big
@@ -68,8 +68,8 @@ async function linkDocHtml(content, raw, lang, key, html) {
         // context (임시정부 in a French text is not the Russian one). Editing
         // noAutoLink is data-only: the manifest mtime refreshes the doc list,
         // which refreshes the link indexes, which invalidates this memo.
-        out = classifyEntityLinks(openEntityLinksInNewTab(
-            renderDocPersonLinks(html, raw, indexes, { sourceHtml: content.html || html }).html));
+        out = classifyEntityLinks(openEntityLinksInNewTab(renderDocPersonLinks(html, raw, indexes,
+            { sourceHtml: content.html || html, relatedPeople: await docRelatedPeople(raw) }).html));
         entry.byKey.set(memoKey, out);
     }
     return out;

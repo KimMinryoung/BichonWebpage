@@ -6,6 +6,7 @@ const { attributes, decode, walk } = require('./html-fragments');
 const { parseLifeYears } = require('./person-life-years');
 const { createLinker } = require('./linkify');
 const nameContext = require('../../public/js/commulingo-name-context');
+const { ERA_MARGIN, lifeOf, PLACE_AFTER, FAMILY_AFTER, precededByName } = require('./person-page-links');
 
 function invalid(message) {
     const error = new Error('personLinks: ' + message);
@@ -90,7 +91,7 @@ function placeQualifier(text, end) {
         || /^(?:\s+)(?:Street|Avenue|Road|Boulevard|City|Factory|Station|University|School|Foundation|Bank)\b/i.test(after);
 }
 
-function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = html } = {}) {
+function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = html, relatedPeople = new Set() } = {}) {
     const policy = raw.personLinks || {};
     validatePersonLinks(raw.personLinks);
     const allowed = new Set(policy.allowedPeople ?? raw.people ?? []);
@@ -145,6 +146,54 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
     }
     for (const candidate of candidates.values()) if (candidate.full) defaultFullNames[candidate.text] = [...candidate.ids];
     let truncated = false;
+    // A curated document (any personLinks: a cast list or name mappings) keeps
+    // the closed rules above. Every other document is open like the dictionary pages: people outside
+    // raw.people link by a full name, or by a surname the dictionary itself
+    // links (unique, not blocked) that fits the document's date, and a surname
+    // whose full name the document gave in an earlier section links too.
+    const open = raw.personLinks === undefined;
+    const year = Number(String(raw.date || '').slice(0, 4));
+    const period = policy.period || (year ? { start: year, end: year } : null);
+    const docIntroduced = new Set();
+    const familyOf = id => base.byId[id]?.names?.family;
+    const notName = (text, start, end, entry) => {
+        const after = text.slice(end), before = text.slice(0, start);
+        if (!nameContext.boundary(text, start, end, base.en)) return true;
+        if (PLACE_AFTER.test(after) || FAMILY_AFTER.test(after) || /^\s*(?:\d+\s*세|[IVX]+\b)/u.test(after)) return true;
+        if (base.context && nameContext.followedByName(text, end, base.context, [entry.id])) return true;
+        // Someone else's whole name: a patronymic before (표도르 니키포로비치
+        // 고르시코프), or in English an unknown capitalised word around it.
+        return base.en ? /^\s+\p{Lu}/u.test(after) || precededByName(before) : /(?:비치|브나)\s+$/u.test(before);
+    };
+    function openReason({ match, entry, start, text, full, candidate, protectedSpan }) {
+        const end = start + match.length;
+        if (!open || !entry || protectedSpan || notName(text, start, end, entry)) return null;
+        const life = lifeOf(entry);
+        if (full) {
+            if (!candidate || candidate.ids.size !== 1) return null;
+            if (/(?:비치|브나)$/u.test(match) && /^\s+[가-힣]/u.test(text.slice(end))) return null;
+            if (period && life.birth && life.birth > period.end + ERA_MARGIN) return null;
+            return 'linked-full-name';
+        }
+        const family = familyOf(entry.id);
+        if ([...docIntroduced].some(id => id !== entry.id && familyOf(id) === family)) return null;
+        if (docIntroduced.has(entry.id)) return 'linked-doc-identity';
+        // A surname the document never gives in full links only like an event
+        // page's: a surname (not a first name: 피델), unique in the dictionary,
+        // for someone tied to the document — its cast or the people of its
+        // history events — or named that way in any era (anyEra). Archive
+        // lists of common Russian surnames otherwise find a namesake born
+        // decades later (1937 troika 니키틴 ≠ Vladilen Nikitin, b. 1936).
+        const expression = base.expressions?.[entry.id + ':' + match];
+        if (base.byAlias[match]?.id !== entry.id || (base.en && match.length <= 4)) return null;
+        if (match !== family && !['identity', 'short'].includes(expression?.role)) return null;
+        if (/(?:^|[\s(])[\p{L}]{1,2}\.\s*$/u.test(text.slice(0, start))) return null;
+        if (!allowed.has(entry.id) && !relatedPeople.has(entry.id) && !expression?.anyEra) return null;
+        // Adult when the document was written; long dead only with anyEra.
+        if (period && life.birth && life.birth + 18 > period.end) return null;
+        if (period && life.death && life.death < period.start - ERA_MARGIN && !expression?.anyEra) return null;
+        return 'linked-dictionary';
+    }
     const rendered = sections.map(section => {
         const mappings = new Map(names.filter(name => !name.section || name.section === section.id).map(name => [normalize(name.text), name]));
         // Section-specific decisions override the document-wide map.
@@ -212,7 +261,10 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             // an introduction; later evidence never licenses an earlier match.
             if (text !== lastText) { lastText = text; paragraphAnalysis = nameContext.analyze(text, nameData); }
             for (const evidence of paragraphAnalysis.evidence) {
-                if (evidence.end <= start && evidence.ids.length === 1 && allowed.has(evidence.ids[0]) && !placeQualifier(text, evidence.end)) introduced.add(evidence.ids[0]);
+                if (evidence.end <= start && evidence.ids.length === 1 && !placeQualifier(text, evidence.end)) {
+                    if (allowed.has(evidence.ids[0])) introduced.add(evidence.ids[0]);
+                    if (open) docIntroduced.add(evidence.ids[0]);
+                }
                 if (mapping?.kind !== 'identity' && entry && evidence.start <= start && evidence.end >= start + match.length
                     && evidence.ids.length === 1 && evidence.ids[0] === entry.id) full = true;
             }
@@ -226,8 +278,14 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             else if (!full && conflicting.has(entry.id)) reason = 'conflicting-name-in-section';
             else if (!full && !introduced.has(entry.id)) reason = 'surname-without-prior-identity';
             else reason = 'linked';
-            if (reason === 'linked' && full) introduced.add(entry.id);
-            if (reason === 'linked' && alreadyLinked) reason = 'already-linked';
+            if (reason === 'person-not-allowed' || reason === 'surname-without-prior-identity') {
+                const protectedSpan = !full && paragraphAnalysis.protectedNames.some(span => start >= span.start && start + match.length <= span.end
+                    && !(span.ids.length === 1 && span.ids[0] === entry.id));
+                reason = openReason({ match, entry, start, text, full, candidate, protectedSpan }) || reason;
+            }
+            const linked = reason.startsWith('linked');
+            if (linked && full) { introduced.add(entry.id); if (open) docIntroduced.add(entry.id); }
+            if (linked && alreadyLinked) reason = 'already-linked';
             const timeWarnings = chronology(entry, policy, raw);
             if (audit) {
                 if (mentions.length < 1000) mentions.push({ text: decode(match), personId: entry?.id || mapping?.personId || null,
@@ -237,21 +295,37 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
                 else truncated = true;
                 for (const warning of timeWarnings) if (!warnings.some(w => w.personId === entry.id && w.code === warning)) warnings.push({ personId: entry.id, code: warning });
             }
-            return reason === 'linked' || reason === 'already-linked';
+            return reason.startsWith('linked') || reason === 'already-linked';
         };
         return createLinker({ ...indexes, person: personIndex }, { surface: 'doc', exclude: { doc: raw.id },
             blockStrings: raw.noAutoLink, personGuard: guard, personAfterContext: text => {
                 for (const evidence of nameContext.analyze(text, nameData).evidence) {
-                    if (evidence.ids.length === 1 && allowed.has(evidence.ids[0]) && !placeQualifier(text, evidence.end)) introduced.add(evidence.ids[0]);
+                    if (evidence.ids.length !== 1 || placeQualifier(text, evidence.end)) continue;
+                    if (allowed.has(evidence.ids[0])) introduced.add(evidence.ids[0]);
+                    if (open) docIntroduced.add(evidence.ids[0]);
                 }
             } }).html(section.html);
     });
     return { html: rendered.join(''), mentions, warnings, truncated };
 }
 
-async function inspectDocPersonLinks(html, raw) {
-    const { getLinkIndexes } = require('./linkify');
-    return renderDocPersonLinks(html, raw, await getLinkIndexes(raw.docLang === 'en' ? 'en' : 'ko'), { audit: true });
+// People of the history events a document is filed under (raw.events).
+async function docRelatedPeople(raw) {
+    const ids = new Set(raw?.events || []);
+    if (!ids.size) return new Set();
+    let events = [];
+    try {
+        events = await require('./history-events-store').loadCommuLingoHistoryEvents();
+    } catch (err) {
+        console.error('commulingo doc related people:', err);
+    }
+    return new Set(events.filter(event => ids.has(event.id)).flatMap(event => event.people.map(person => person.id)));
 }
 
-module.exports = { validatePersonLinks, renderDocPersonLinks, inspectDocPersonLinks, sectionsOf };
+async function inspectDocPersonLinks(html, raw) {
+    const { getLinkIndexes } = require('./linkify');
+    return renderDocPersonLinks(html, raw, await getLinkIndexes(raw.docLang === 'en' ? 'en' : 'ko'),
+        { audit: true, relatedPeople: await docRelatedPeople(raw) });
+}
+
+module.exports = { validatePersonLinks, renderDocPersonLinks, inspectDocPersonLinks, docRelatedPeople, sectionsOf };
