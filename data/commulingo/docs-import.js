@@ -109,7 +109,7 @@ function normalizeRefs(refs, label) {
 
 // Canonical field order for manifest entries, applied on every write.
 const CANONICAL_FIELDS = new Set(['id', 'docLang', 'title', 'description', 'kind', 'source', 'linkExpressions',
-    'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt']);
+    'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt', 'personLinks']);
 
 function canonicalEntry(entry) {
     const out = {
@@ -132,6 +132,10 @@ function canonicalEntry(entry) {
     if (entry.noAutoLink !== undefined) {
         assertStringList(entry.noAutoLink, 'noAutoLink');
         out.noAutoLink = entry.noAutoLink;
+    }
+    if (entry.personLinks !== undefined) {
+        require('./doc-person-links').validatePersonLinks(entry.personLinks);
+        out.personLinks = entry.personLinks;
     }
     for (const field of ['date', 'updatedAt']) {
         if (entry[field] !== undefined) out[field] = entry[field];
@@ -175,8 +179,9 @@ async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = '
     });
 
     const toc = harvestTocPreview(html);
+    const linkAudit = await require('./doc-person-links').inspectDocPersonLinks(html, entry);
     if (!dryRun) await writeDocs({ upserts: [{ id, entry, body: html }] }, { actor, note: note || 'import' });
-    return { entry, warnings, toc, fragmentBytes: Buffer.byteLength(html), overwrote: Boolean(existing) };
+    return { entry, warnings, toc, linkAudit: { mentions: linkAudit.mentions, warnings: linkAudit.warnings, truncated: linkAudit.truncated }, fragmentBytes: Buffer.byteLength(html), overwrote: Boolean(existing) };
 }
 
 // Merge metadata into an entry. {ko,en} fields merge per-language;
@@ -187,6 +192,7 @@ function mergeDocMeta(current, patch = {}) {
         linkExpressions: patch.linkExpressions !== undefined ? patch.linkExpressions : current.linkExpressions,
         aliases: patch.aliases !== undefined ? patch.aliases : current.aliases,
         noAutoLink: patch.noAutoLink !== undefined ? patch.noAutoLink : current.noAutoLink,
+        personLinks: patch.personLinks !== undefined ? patch.personLinks : current.personLinks,
         date: patch.date !== undefined ? patch.date : current.date,
         updatedAt: patch.updatedAt !== undefined ? patch.updatedAt : current.updatedAt,
         docLang: patch.docLang !== undefined ? patch.docLang : current.docLang,

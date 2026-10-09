@@ -250,8 +250,8 @@ function buildAliasPattern(tokens, blocked, en) {
 
 // Tags whose text content must never be linkified: existing anchors (no nested
 // links) and literal/code contexts.
-function mapLinkableText(html, mapText) {
-    return require('./html-fragments').walk(html, mapText);
+function mapLinkableText(html, mapText, onTag, afterContext) {
+    return require('./html-fragments').walk(html, mapText, onTag, afterContext);
 }
 
 module.exports = {

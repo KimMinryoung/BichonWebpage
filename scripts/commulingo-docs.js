@@ -111,8 +111,18 @@ async function main() {
         // A pipe takes stdout asynchronously: wait for the flush before main() exits.
         const json = JSON.stringify(await exportDocs(args.filter(a => !a.startsWith('--'))));
         await new Promise(resolve => process.stdout.write(json, resolve));
+    } else if (command === 'audit' && args[0]) {
+        const row = await require('../data/commulingo/docs-db').readDocRow(args[0]);
+        if (!row) throw new Error('no document ' + args[0]);
+        const audit = await require('../data/commulingo/doc-person-links').inspectDocPersonLinks(row.body, { id: row.id, ...row.entry });
+        process.stdout.write(JSON.stringify({ id: row.id, revision: row.revision, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated }, null, 2) + '\n');
     } else if (command === 'put') {
         const result = await put(JSON.parse(fs.readFileSync(0, 'utf8')), args);
+        for (const audit of result.linkAudits || []) {
+            console.log(`person-link audit: ${audit.id} (${audit.mentions.length} candidates${audit.truncated ? ', truncated' : ''})`);
+            for (const mention of audit.mentions) console.log(JSON.stringify(mention));
+            for (const warning of audit.warnings) console.log(`chronology warning: ${JSON.stringify(warning)}`);
+        }
         const changed = result.written.filter(w => w.op !== 'unchanged');
         for (const w of changed) console.log(`${result.dryRun ? 'would ' : ''}${w.op} ${w.id} → r${w.revision}`);
         for (const id of result.deleted) console.log(`${result.dryRun ? 'would ' : ''}delete ${id}`);
@@ -125,6 +135,7 @@ async function main() {
         if (!body.trim()) throw new Error('empty body on stdin');
         const result = await writeDocs({ upserts: [{ id: row.id, entry: row.entry, body: sanitizeDocHtml(body), expectedRevision: row.revision }] },
             { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`), note: option(args, '--note', 'put-body') });
+        console.error('person-link audit: ' + JSON.stringify(result.linkAudits));
         console.log(JSON.stringify(result.written));
     } else if (command === 'history' && args[0]) {
         for (const r of await listDocRevisions(args[0])) {

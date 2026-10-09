@@ -86,7 +86,7 @@ json.dump(bundle, sys.stdout, ensure_ascii=False)
         id="${1:?usage: commulingo-docs put-body <id> <file.html> [--note text]}"; file="${2:?usage: commulingo-docs put-body <id> <file.html>}"; shift 2
         run put-body "$id" "$@" < "$file"
         ;;
-    history|restore)
+    history|restore|audit)
         run "$cmd" "$@"
         ;;
     *)

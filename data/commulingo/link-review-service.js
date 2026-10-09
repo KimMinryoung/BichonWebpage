@@ -110,7 +110,7 @@ async function previewLinks(input) {
     for (const [id, sections] of Object.entries(people.sections || {})) for (const section of sections) add('person:' + id + '/' + section.slug, section.body?.[row.lang], { surface: 'person', exclude: { person: id } }, '/commulingo/people/' + id);
     for (const doc of state.records.doc) {
         if ((doc.docLang || 'ko') !== row.lang) continue;
-        add('doc:' + doc.id, getCommuLingoDocContent(doc)?.html, { surface: 'doc', html: true, exclude: { doc: doc.id }, blockStrings: doc.noAutoLink }, '/commulingo/docs/' + doc.id);
+        add('doc:' + doc.id, getCommuLingoDocContent(doc)?.html, { surface: 'doc', doc, html: true, exclude: { doc: doc.id }, blockStrings: doc.noAutoLink }, '/commulingo/docs/' + doc.id);
     }
     const reports = state.reports;
     for (const report of reports) add('report:' + report.slug, report.markdown, { surface: 'report' }, '/reports/' + report.slug);
@@ -193,7 +193,7 @@ async function previewReviews(inputs) {
         }
         for (const person of state.people.people || []) for (const field of ['epithet', 'moment', 'bio']) add('person:' + person.id + '/' + field, person[field]?.[lang], { surface: 'person', exclude: { person: person.id } }, '/commulingo/people/' + person.id);
         for (const [id, sections] of Object.entries(state.people.sections || {})) for (const section of sections) add('person:' + id + '/' + section.slug, section.body?.[lang], { surface: 'person', exclude: { person: id } }, '/commulingo/people/' + id);
-        for (const doc of state.records.doc) if ((doc.docLang || 'ko') === lang) add('doc:' + doc.id, getCommuLingoDocContent(doc)?.html, { surface: 'doc', html: true, exclude: { doc: doc.id }, blockStrings: doc.noAutoLink }, '/commulingo/docs/' + doc.id);
+        for (const doc of state.records.doc) if ((doc.docLang || 'ko') === lang) add('doc:' + doc.id, getCommuLingoDocContent(doc)?.html, { surface: 'doc', doc, html: true, exclude: { doc: doc.id }, blockStrings: doc.noAutoLink }, '/commulingo/docs/' + doc.id);
         for (const report of state.reports) add('report:' + report.slug, report.markdown, { surface: 'report' }, '/reports/' + report.slug);
         const base = await getLinkIndexes(lang);
         const before = buildIndexes(base, state.records, state.reviews, lang);

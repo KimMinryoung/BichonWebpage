@@ -201,6 +201,20 @@ router.patch('/docs/:docId', h(async (req, res) => {
     res.json({ entry: await updateDocMeta(req.params.docId, req.body || {}, { actor: changedBy(req) }) });
 }));
 
+// Preview the same person policy used by the reader and by every DB write.
+// Optional body/metadata are proposals only; this endpoint never writes.
+router.post('/docs/:docId/link-audit', h(async (req, res) => {
+    const { readDocRow } = require('../data/commulingo/docs-db');
+    const { mergeDocMeta } = require('../data/commulingo/docs-import');
+    const { inspectDocPersonLinks } = require('../data/commulingo/doc-person-links');
+    const row = await readDocRow(req.params.docId);
+    if (!row) return res.status(404).json({ error: 'Document not found' });
+    const entry = mergeDocMeta({ id: row.id, ...row.entry }, req.body?.entry || {});
+    const body = req.body?.body === undefined ? row.body : require('../data/commulingo/doc-sanitize').sanitizeDocHtml(String(req.body.body));
+    const audit = await inspectDocPersonLinks(body, entry);
+    res.json({ id: row.id, revision: row.revision, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated });
+}));
+
 router.delete('/docs/:docId', h(async (req, res) => {
     res.json({ removed: await removeDoc(req.params.docId, { actor: changedBy(req) }) });
 }));

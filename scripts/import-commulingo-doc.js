@@ -94,6 +94,8 @@ async function main() {
     toc.slice(0, 12).forEach(t => console.log(`  ${t.level === 1 ? '■' : ' ·'} ${t.text}`));
     if (toc.length > 12) console.log(`  … ${toc.length - 12} more`);
     warnings.forEach(w => console.log(`warning: ${w}`));
+    console.log('person-link audit:');
+    console.log(JSON.stringify(result.linkAudit, null, 2));
     console.log('manifest entry:');
     console.log(JSON.stringify(entry, null, 2));
 

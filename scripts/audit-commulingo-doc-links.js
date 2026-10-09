@@ -73,7 +73,7 @@ async function main() {
         const needEvents = !(doc.events || []).length;
         if (!args.has('--all') && !needTerms && !needEvents) continue;
         const text = doc.body;
-        const found = renderLinkedContent(text, contexts[lang], { html: true, surface: 'doc', exclude: { doc: doc.id }, blockStrings: doc.noAutoLink });
+        const found = renderLinkedContent(text, contexts[lang], { html: true, surface: 'doc', doc, exclude: { doc: doc.id }, blockStrings: doc.noAutoLink });
         const haveTerms = new Set(doc.terms || []);
         const haveEvents = new Set(doc.events || []);
         const termIds = found.terms.map(entry => entry.id).filter(id => !haveTerms.has(id));

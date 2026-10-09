@@ -4,7 +4,8 @@
 // so any earlier state can be restored (restoreDocRevision).
 //
 // Validation of entries (headwords, aliases, link expressions) stays in
-// docs-import.js; this module only persists what it is given.
+// docs-import.js. Every changed document also passes the reader's person-link
+// audit here, covering import, metadata edits, body replacement and restore.
 const crypto = require('crypto');
 const db = require('../../config/database');
 
@@ -68,6 +69,7 @@ async function writeDocs(changes, { actor, note, client } = {}) {
     const result = await withClient(client, async c => {
         await c.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-docs-write'))");
         const written = [];
+        const linkAudits = [];
         for (const item of upserts) {
             if (!item || typeof item.id !== 'string' || !ID.test(item.id)) throw badRequest('doc id must be lowercase letters, digits, hyphens');
             const entry = storedEntry(item.entry);
@@ -76,6 +78,12 @@ async function writeDocs(changes, { actor, note, client } = {}) {
             const current = (await c.query('SELECT * FROM commulingo_docs WHERE id = $1 FOR UPDATE', [item.id])).rows[0];
             if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
                 throw badRequest(`${item.id}: expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
+            }
+            const changed = !current || (body !== undefined && sha256(body) !== current.body_sha256)
+                || JSON.stringify(entry) !== JSON.stringify(current.entry);
+            if (changed) {
+                const audit = await require('./doc-person-links').inspectDocPersonLinks(body ?? current?.body, { id: item.id, ...entry });
+                linkAudits.push({ id: item.id, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated });
             }
             if (!current) {
                 if (body === undefined) throw badRequest(`${item.id}: a new document needs a body`);
@@ -127,7 +135,7 @@ async function writeDocs(changes, { actor, note, client } = {}) {
         for (const fromId of redirects.remove || []) {
             await c.query('DELETE FROM commulingo_doc_redirects WHERE from_id = $1', [fromId]);
         }
-        return { written, deleted };
+        return { written, deleted, linkAudits };
     });
     // Same-process readers see the write at once; other processes within a
     // refresh cycle (docs-store, 60 s).

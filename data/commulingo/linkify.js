@@ -303,6 +303,10 @@ function createLinker(indexes, options = {}) {
                 entry = id && index.byId[id];
                 expression = entry && index.expressions?.[entry.id + ':' + match];
             } else if (expression?.policy === 'context' && !identities.has(entry.id)) return match;
+            if (kind === 'person' && options.personGuard && !options.personGuard({
+                match, entry, expression, start: context.offset + offset, text: context.text, index,
+                alreadyLinked: Boolean(entry && seen.has('person:' + entry.id)),
+            })) return match;
             if (!entry || expression?.policy === 'search') return match;
             if (blockStrings.has(match)) return match;
             if (exclude[kind] && exclude[kind] === entry.id) return match;
@@ -322,7 +326,9 @@ function createLinker(indexes, options = {}) {
         let out = html;
         passes.forEach(pass => {
             out = mapLinkableText(out, (text, context) => text.replace(pass.index.pattern,
-                replacerFor(pass, context, textOptions.contextText && escapeHtml(textOptions.contextText))));
+                replacerFor(pass, context, textOptions.contextText && escapeHtml(textOptions.contextText))),
+            pass.kind === 'person' ? options.personTag : undefined,
+            pass.kind === 'person' ? options.personAfterContext : undefined);
         });
         const collected = require('./linked-entities').collectLinkedEntities(out, indexes, { anchors: surface.anchors });
         for (const bucket of Object.keys(found)) {

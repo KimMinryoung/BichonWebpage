@@ -24,7 +24,7 @@ function decode(text) {
         return n > 0 && n <= 0x10ffff ? String.fromCodePoint(n) : entity;
     });
 }
-function walk(html, onText, onTag) {
+function walk(html, onText, onTag, afterContext) {
     const output = [];
     let group = { text: '', nodes: [] };
     let literals = 0, anchors = 0;
@@ -32,6 +32,7 @@ function walk(html, onText, onTag) {
         for (const node of group.nodes) {
             if (!node.skip) output[node.index] = onText(node.text, { text: group.text, offset: node.offset });
         }
+        if (group.text && afterContext) afterContext(group.text);
         group = { text: '', nodes: [] };
     };
     for (const m of String(html).matchAll(TOKEN)) {
@@ -47,8 +48,12 @@ function walk(html, onText, onTag) {
             // Blank lines are paragraph boundaries in raw prose too.
             if (/\n\s*\n/.test(value)) {
                 flush();
-                output[index] = value.split(/(\n\s*\n)/).map(part => /\n\s*\n/.test(part) || anchors
-                    ? part : onText(part, { text: part, offset: 0 })).join('');
+                output[index] = value.split(/(\n\s*\n)/).map(part => {
+                    if (/\n\s*\n/.test(part)) return part;
+                    const out = anchors ? part : onText(part, { text: part, offset: 0 });
+                    if (part && afterContext) afterContext(part);
+                    return out;
+                }).join('');
             } else {
                 group.nodes.push({ index, text: value, offset: group.text.length, skip: anchors > 0 });
                 group.text += value;
