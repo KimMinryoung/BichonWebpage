@@ -109,4 +109,8 @@ async function main() {
     console.log(`  3. Link it from a person section as /commulingo/docs/${entry.id}`);
 }
 
-main().then(() => process.exit(0), err => { console.error(err); process.exit(1); });
+const finish = code => Promise.all([
+    new Promise(resolve => process.stdout.write('', resolve)),
+    new Promise(resolve => process.stderr.write('', resolve)),
+]).then(() => process.exit(code));
+main().then(() => finish(0), err => { console.error(err); return finish(1); });

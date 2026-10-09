@@ -115,7 +115,7 @@ async function main() {
         const row = await require('../data/commulingo/docs-db').readDocRow(args[0]);
         if (!row) throw new Error('no document ' + args[0]);
         const audit = await require('../data/commulingo/doc-person-links').inspectDocPersonLinks(row.body, { id: row.id, ...row.entry });
-        process.stdout.write(JSON.stringify({ id: row.id, revision: row.revision, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated }, null, 2) + '\n');
+        await new Promise(resolve => process.stdout.write(JSON.stringify({ id: row.id, revision: row.revision, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated }, null, 2) + '\n', resolve));
     } else if (command === 'put') {
         const result = await put(JSON.parse(fs.readFileSync(0, 'utf8')), args);
         for (const audit of result.linkAudits || []) {
@@ -151,4 +151,8 @@ async function main() {
     }
 }
 
-main().then(() => process.exit(0), err => { console.error(err.message || err); process.exit(1); });
+const finish = code => Promise.all([
+    new Promise(resolve => process.stdout.write('', resolve)),
+    new Promise(resolve => process.stderr.write('', resolve)),
+]).then(() => process.exit(code));
+main().then(() => finish(0), err => { console.error(err.message || err); return finish(1); });
