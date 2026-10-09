@@ -1,17 +1,27 @@
 <%# Pieces of reference documents printed on a dictionary entry page, in a
     reader box (manifest `excerpts`, docs-refs.js docExcerptsFor). Shared by the
     term and event panels; idPrefix keeps the headings apart when both panels
-    share one page. %>
+    share one page. A book too long to print lends its contents instead
+    (anchor 'toc'): each line opens the reader at that chapter. %>
         <% (excerpts || []).forEach(function(excerpt, i) { %>
         <section class="commu-person-detail-section commu-doc-excerpt-section" aria-labelledby="<%= idPrefix %>-<%= i %>">
             <h2 id="<%= idPrefix %>-<%= i %>"><%= strings.commuLingoViews.termPanel.primaryText %></h2>
             <div class="commu-doc-excerpt">
-                <a class="commu-doc-excerpt-head" href="/commulingo/docs/<%= excerpt.docId %><%= excerpt.anchor === '*' ? '' : '#' + excerpt.anchor %>" aria-label="<%= excerpt.title %>: <%= strings.commuLingoViews.termPanel.readInLibrary %>">
+                <a class="commu-doc-excerpt-head" href="/commulingo/docs/<%= excerpt.docId %><%= (excerpt.anchor === '*' || excerpt.anchor === 'toc') ? '' : '#' + excerpt.anchor %>" aria-label="<%= excerpt.title %>: <%= strings.commuLingoViews.termPanel.readInLibrary %>">
                     <span class="commu-doc-excerpt-title"><% if (excerpt.docTitle) { %><span><%= excerpt.docTitle %></span><% } %><strong><%= excerpt.title %></strong></span>
                     <span class="commu-doc-excerpt-go" aria-hidden="true"><%= strings.commuLingoViews.termPanel.libraryShort %> →</span>
                 </a>
+                <% var expandText = excerpt.contents ? strings.commuLingoViews.termPanel.expandContents : strings.commuLingoViews.termPanel.expandText; %>
+                <% if (excerpt.contents) { %>
+                <ol class="commu-doc-excerpt-body commu-doc-toc" id="<%= idPrefix %>-body-<%= i %>" lang="<%= excerpt.docLang %>">
+                    <% excerpt.contents.forEach(function(line) { %>
+                    <li class="commu-doc-toc-l<%= line.level %>"><a href="<%= line.href %>"><%= line.text %></a></li>
+                    <% }) %>
+                </ol>
+                <% } else { %>
                 <div class="commu-doc-excerpt-body" id="<%= idPrefix %>-body-<%= i %>" lang="<%= excerpt.docLang %>"><%- excerpt.html %></div>
-                <button type="button" class="commu-doc-excerpt-toggle" aria-controls="<%= idPrefix %>-body-<%= i %>" aria-expanded="false" data-expand="<%= strings.commuLingoViews.termPanel.expandText %>" data-collapse="<%= strings.commuLingoViews.termPanel.collapseText %>" hidden><%= strings.commuLingoViews.termPanel.expandText %></button>
+                <% } %>
+                <button type="button" class="commu-doc-excerpt-toggle" aria-controls="<%= idPrefix %>-body-<%= i %>" aria-expanded="false" data-expand="<%= expandText %>" data-collapse="<%= strings.commuLingoViews.termPanel.collapseText %>" hidden><%= expandText %></button>
             </div>
         </section>
         <% }) %>

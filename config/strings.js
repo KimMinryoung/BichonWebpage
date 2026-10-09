@@ -630,6 +630,7 @@ const ko = {
             readInLibrary: '참고 문헌에서 읽기',
             libraryShort: '참고 문헌',
             expandText: '전문 펼치기',
+            expandContents: '목차 펼치기',
             collapseText: '접기',
         },
         terms: {
@@ -1273,6 +1274,7 @@ const en = {
             readInLibrary: 'Read in the reference library',
             libraryShort: 'Library',
             expandText: 'Show full text',
+            expandContents: 'Show all contents',
             collapseText: 'Collapse',
         },
         terms: {

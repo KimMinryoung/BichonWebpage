@@ -4488,6 +4488,15 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-excerpt-toggle:hover { background: var(--bg-surface-hover); }
 .commu-doc-excerpt-toggle:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
 .commu-doc-excerpt-body p { margin: .6em 0; text-align: justify; word-break: normal; }
+/* A long book lends its contents (excerpt 'toc'): parts, then their chapters. */
+.commu-doc-toc { margin: 0; list-style: none; }
+.commu-doc-toc li { margin: 0; line-height: var(--leading-snug); word-break: keep-all; }
+.commu-doc-toc a { display: block; padding: .3rem 0; color: var(--text-primary); text-decoration: none; }
+.commu-doc-toc a:hover { color: var(--link); text-decoration: underline; }
+.commu-doc-toc-l1 { margin-top: .5rem; }
+.commu-doc-toc-l1:first-child { margin-top: 0; }
+.commu-doc-toc-l1 > a { font-weight: 600; }
+.commu-doc-toc-l2 > a { padding: .2rem 0 .2rem 1.1rem; font-size: .9rem; color: var(--text-secondary); }
 .commu-doc-excerpt-body h3,
 .commu-doc-excerpt-body h4 {
     margin: 1.1em 0 .3em;

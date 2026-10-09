@@ -16,7 +16,7 @@ const { loadCommuLingoPeople, redirectTarget } = require('./people-store');
 const { loadCommuLingoCatalog } = require('./shards');
 const { standardizedFor } = require('./linkify');
 const { docRefId, listCommuLingoDocsFor, getCommuLingoDoc,
-    listCommuLingoDocExcerptsFor, getCommuLingoDocSection } = require('./docs-store');
+    listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents } = require('./docs-store');
 const { localize } = require('./localize');
 
 const KINDS = ['people', 'terms', 'events'];
@@ -42,6 +42,15 @@ function relatedDocsFor(kind, id, lang) {
 function docExcerptsFor(kind, id, lang) {
     try {
         return listCommuLingoDocExcerptsFor(kind, id).map(({ doc, anchor }) => {
+            if (anchor === 'toc') {
+                const contents = getCommuLingoDocContents(doc);
+                if (!contents) {
+                    console.warn(`commulingo docs: ${doc.id} lends its contents to ${kind} "${id}" but has no headings`);
+                    return null;
+                }
+                return { docId: doc.id, docTitle: '', docLang: doc.docLang || 'ko', anchor,
+                    title: localize(doc.title, lang), contents };
+            }
             const section = getCommuLingoDocSection(doc, anchor);
             if (!section) {
                 console.warn(`commulingo docs: ${doc.id} excerpt for ${kind} "${id}" has no heading "${anchor}"`);

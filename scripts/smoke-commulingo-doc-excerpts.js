@@ -7,7 +7,7 @@
 //   node scripts/smoke-commulingo-doc-excerpts.js
 const assert = require('assert');
 const {
-    listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocSection,
+    listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocSection, getCommuLingoDocContents,
 } = require('../data/commulingo/docs-store');
 
 // Real documents come from the DB snapshot; a lone clone has none.
@@ -20,6 +20,13 @@ listCommuLingoDocs().forEach(doc => {
     Object.entries(doc.excerpts || {}).forEach(([kind, byId]) => {
         assert.ok(['people', 'terms', 'events'].includes(kind), `${doc.id}: excerpt kind ${kind}`);
         Object.entries(byId).forEach(([id, anchor]) => {
+            if (anchor === 'toc') {
+                const contents = getCommuLingoDocContents(doc);
+                assert.ok(contents && contents.length, `${doc.id}: contents for ${kind}/${id} are empty`);
+                assert.ok(contents.every(line => line.href.startsWith(`/commulingo/docs/${doc.id}`) && line.text), `${doc.id}: contents lines`);
+                count += 1;
+                return;
+            }
             const section = getCommuLingoDocSection(doc, anchor);
             assert.ok(section && section.html, `${doc.id}: excerpt for ${kind}/${id} has no heading "${anchor}"`);
             count += 1;

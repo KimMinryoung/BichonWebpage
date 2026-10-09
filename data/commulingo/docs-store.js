@@ -307,7 +307,9 @@ function getCommuLingoDocContent(doc) {
 // which then prints that piece in a reader box on its own page —
 //   "excerpts": { "terms": { "<term id>": "<heading id>" } }
 // The heading id is the piece's title (a collection's h1, as in `redirects`);
-// "*" lends the whole document, for a short text that is the entry's subject.
+// "*" lends the whole document, for a short text that is the entry's subject;
+// "toc" lends its table of contents, for a book too long to print that is
+// still the entry's subject (getCommuLingoDocContents).
 function listCommuLingoDocExcerptsFor(kind, id) {
     const out = [];
     listCommuLingoDocs().forEach(doc => {
@@ -351,9 +353,21 @@ function getCommuLingoDocSection(doc, anchor) {
     return { title: headingText(heads[start][3]), html: body.trim() };
 }
 
+// A long document's contents for an entry page: the reader's own TOC (h1
+// parts, h2 chapters), each line pointing at the page that holds it.
+function getCommuLingoDocContents(doc) {
+    const { toc, paged } = getCommuLingoDocContent(doc);
+    if (!toc.length) return null;
+    const pageOf = paged ? paged.idToPage : {};
+    return toc.map(({ level, id, text }) => ({
+        level, text,
+        href: `/commulingo/docs/${doc.id}${pageOf[id] > 1 ? `?p=${pageOf[id]}` : ''}#${id}`,
+    }));
+}
+
 module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
     listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
-    listCommuLingoDocExcerptsFor, getCommuLingoDocSection,
+    listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
 };
