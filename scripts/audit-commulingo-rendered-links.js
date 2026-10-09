@@ -97,7 +97,9 @@ async function crawl() {
         if (first.status !== 200) { failures.push({ path, status: first.status }); return; }
         links.push(...extractLinks(path, first.text));
         // Paged documents: the pager carries ?p=N links up to the last page.
-        const pages = [...first.text.matchAll(/[?&]p=(\d+)/g)].map(m => Number(m[1]));
+        // Only documents page; a ?p= inside another page's prose (a cited
+        // URL) is not a pager.
+        const pages = /\/docs\//.test(path) ? [...first.text.matchAll(/[?&]p=(\d+)/g)].map(m => Number(m[1])) : [];
         const total = pages.length ? Math.max(...pages) : 1;
         for (let p = 2; p <= total; p++) {
             const res = await fetchText(base + path + '?p=' + p);
