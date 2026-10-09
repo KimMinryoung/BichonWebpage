@@ -460,6 +460,7 @@
 .commu-office-entry:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .commu-office-section { margin-top: var(--space-5); }
 .commu-office-section h2 {
+    padding-inline: var(--content-inset);
     color: var(--text-primary);
     font-size: 1.1rem;
     font-weight: var(--weight-heading);
@@ -1529,7 +1530,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal);
 }
 .commu-office-head-glossary { padding: var(--space-3) var(--content-inset); border-top: 1px solid var(--border); }
-.commu-office-section-glossary { margin-bottom: var(--space-3); }
+.commu-office-section-glossary { margin-bottom: var(--space-3); padding-inline: var(--content-inset); }
 
 .commu-hub-section {
     margin-top: 26px;

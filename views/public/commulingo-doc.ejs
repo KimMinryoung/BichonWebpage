@@ -152,20 +152,21 @@ var docCourses = doc.courses || [];
         <span class="doc-pager-dir">← <%= strings.commuLingoViews.doc.previous %></span>
         <% if (pagination.prevHeading) { %><span class="doc-pager-heading"><%= pagination.prevHeading %></span><% } %>
     </a>
-    <% } else { %><span class="doc-pager-gap"></span><% } %>
+    <% } %>
     <span class="doc-pager-pos"><%= pagination.current %> / <%= pagination.total %></span>
     <% if (pagination.current < pagination.total) { %>
     <a class="doc-pager-next" href="?p=<%= pagination.current + 1 %>">
         <span class="doc-pager-dir"><%= strings.commuLingoViews.doc.next %> →</span>
         <% if (pagination.nextHeading) { %><span class="doc-pager-heading"><%= pagination.nextHeading %></span><% } %>
     </a>
-    <% } else { %><span class="doc-pager-gap"></span><% } %>
+    <% } %>
 </nav>
 <% } %>
+<% if (doc.source) { %>
 <footer class="doc-colophon">
-    <% if (doc.source) { %><p><%= strings.commuLingoViews.doc.source %>: <%= doc.source %></p><% } %>
-    <p><a class="btn" href="/commulingo/docs"><%= strings.commuLingoViews.doc.commulingoReferenceLibrary %></a></p>
+    <p><%= strings.commuLingoViews.doc.source %>: <%= doc.source %></p>
 </footer>
+<% } %>
 </main>
 <% if (toc.length) { %>
 <script>

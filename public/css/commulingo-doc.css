@@ -211,17 +211,17 @@
 /* Reader chrome: the footer added by the commulingo-doc template. The header
    is now the shared crumb bar (commulingo-crumb.css), the same one the
    dictionaries use, sitting inside the sticky control bar below. */
-/* Prev/next chapter navigation on paginated documents. */
+/* Prev/next chapter navigation on paginated documents. Three columns, the
+   outer two equal, so the "3 / 8" cell sits at the true centre whatever the
+   chapter headings' lengths; a missing side keeps its empty column. Each link
+   fills its whole cell, and hover repaints the cell (accent ground, cream
+   text) like the dictionary rows rather than underlining the heading. */
 .doc-pager {
-  display: flex;
-  /* Centred, not baseline: the prev/next links are two lines each and the
-     position label is one, so aligning on the first baseline pinned "2 / 10"
-     to the top of the box beside them. */
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
   margin-top: clamp(2rem, 5vw, 3rem);
-  padding: 0.7rem 0.9rem;
+  padding: 0;
   font-size: 0.9rem;
   line-height: var(--leading-normal);
 }
@@ -232,19 +232,25 @@
 .doc-pager a {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 0.15rem;
-  color: var(--link);
-  text-decoration: none;
-  max-width: 40%;
   min-width: 0;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  text-decoration: none;
   /* The reader's shared rule (`.book article a:hover { border-bottom-style:
-     solid }`) is written for the dictionary links, which all declare a 2px
-     border already. A link that declares none gets `medium` when that style
-     switches on, and medium is 3px — which is what grew this box under the
-     pointer and shrank it again on the way out. Pinning the width to 0 leaves
-     the shared rule with nothing to turn on; the hover cue is the heading's
-     own border below. */
+     solid }`) would give a link that declares no border a 3px `medium` one
+     under the pointer and grow the box; a zero width leaves it nothing. */
   border-bottom: 0 solid transparent;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.doc-pager-prev { grid-column: 1; }
+
+.doc-pager-next {
+  grid-column: 3;
+  align-items: flex-end;
+  text-align: right;
 }
 
 .doc-pager-dir {
@@ -254,24 +260,37 @@
 }
 
 .doc-pager-heading {
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* Declared, and merely colourless, so hover only repaints it. */
-  border-bottom: 2px solid transparent;
-  transition: border-bottom-color 0.12s ease;
 }
 
-.doc-pager a:hover {
-  color: var(--link-hover);
+.doc-pager a:hover,
+.doc-pager a:focus-visible {
+  background: var(--accent);
+  color: var(--clr-cream);
+  text-decoration: none;
 }
 
-.doc-pager a:hover .doc-pager-heading {
-  border-bottom-color: currentColor;
+.doc-pager a:hover .doc-pager-dir,
+.doc-pager a:focus-visible .doc-pager-dir {
+  color: inherit;
 }
 
-.doc-pager-next {
-  text-align: right;
+.doc-pager a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+
+.doc-pager-pos {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-inline: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
 }
 
 .doc-pager-pos,
@@ -279,11 +298,6 @@
   color: var(--text-muted);
   font-size: 0.85rem;
   white-space: nowrap;
-}
-
-.doc-pager-gap {
-  max-width: 40%;
-  flex: 1;
 }
 
 .doc-colophon {

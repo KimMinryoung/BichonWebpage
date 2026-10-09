@@ -375,7 +375,6 @@ const ko = {
             previous: '이전',
             next: '다음',
             source: '원전',
-            commulingoReferenceLibrary: '공산링고 참고 문헌',
             historicalFigure: '실존 인물',
         },
         docs: {
@@ -1023,7 +1022,6 @@ const en = {
             previous: 'Previous',
             next: 'Next',
             source: 'Source',
-            commulingoReferenceLibrary: 'CommuLingo Reference Library',
             historicalFigure: 'Historical figure',
         },
         docs: {
