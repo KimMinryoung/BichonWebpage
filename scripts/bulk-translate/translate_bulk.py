@@ -39,7 +39,7 @@ TAIL_PARAS = 2
 TAIL_CAP = 700
 
 HERE = Path(__file__).parent
-STYLE_CARD = (HERE / "style-card.ko.md").read_text(encoding="utf-8")
+DEFAULT_STYLE_CARD = HERE / "style-card.ko.md"
 
 BASE = {
     "scholarly": (
@@ -88,17 +88,31 @@ def n_paras(text):
 
 # ---- glossary ----------------------------------------------------------
 
-def load_glossary():
+def load_glossary(extra=None):
     path = HERE / "glossary-db.json"
     if not path.exists():
         raise SystemExit("glossary-db.json 없음 — 먼저 extract_glossary.py를 실행할 것")
     gloss = json.loads(path.read_text(encoding="utf-8"))
+    if extra:
+        # Work-specific overrides: "dbTerms": false drops the dictionary terms
+        # (their stem groups over-match in long texts), "excludePeople" drops
+        # people entries by their "cyr" (surname stems that hit common words,
+        # place names or a namesake).
+        add = json.loads(Path(extra).read_text(encoding="utf-8"))
+        if add.get("dbTerms") is False:
+            gloss["terms"] = []
+        drop = set(add.get("excludePeople", []))
+        gloss["people"] = [p for p in gloss["people"] if p["cyr"] not in drop]
+        gloss["people"] += add.get("people", [])
+        gloss["terms"] += add.get("terms", [])
     # A person mention is the cased stem (plus its ALL-CAPS variant, common in
     # interrogation records) followed by at most 3 lowercase inflection
     # letters. Boundaries stop substring hits (Кон in конечно, Ким in таким).
+    def yo(s):  # 1930s print and many sources write е for ё
+        return re.escape(s).replace("ё", "[её]").replace("Ё", "[ЕЁ]")
     for p in gloss["people"]:
-        m = re.escape(p["match"])
-        up = re.escape(p["match"].upper())
+        m = yo(p["match"])
+        up = yo(p["match"].upper())
         p["rx"] = re.compile(
             rf"(?<![А-Яа-яЁё])(?:{m}[а-яё]{{0,3}}|{up}[А-ЯЁ]{{0,3}})(?![А-Яа-яЁё])")
     for t in gloss["terms"]:
@@ -218,6 +232,10 @@ def main():
     ap.add_argument("--limit", type=int)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--chunk-chars", type=int, default=3500)
+    ap.add_argument("--style-card", default=str(DEFAULT_STYLE_CARD),
+                    help="policy card injected into every prompt (default: style-card.ko.md)")
+    ap.add_argument("--extra-glossary",
+                    help="JSON with work-specific people/terms in glossary-db.json format")
     args = ap.parse_args()
 
     src = Path(args.src)
@@ -227,8 +245,9 @@ def main():
     out_path = src.with_suffix(".ko.txt")
     flags_path = src.with_suffix(".flags.txt")
 
-    system = BASE[args.mode].format(desc=args.desc) + "\n\n" + STRUCTURE + "\n\n" + STYLE_CARD
-    gloss = load_glossary()
+    style_card = Path(args.style_card).read_text(encoding="utf-8")
+    system = BASE[args.mode].format(desc=args.desc) + "\n\n" + STRUCTURE + "\n\n" + style_card
+    gloss = load_glossary(args.extra_glossary)
 
     done, flagged = {}, {}
     if ckpt.exists():

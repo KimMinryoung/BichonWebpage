@@ -9,7 +9,8 @@
   사전이 바뀌었으면 재실행. 산출물은 gitignore(재생성 캐시).
 - `style-card.ko.md` — ш 표기 정책·기관명·고정 번역어·문장 규칙. 모든 청크 프롬프트에 주입된다.
   표기 정책이 바뀌면 이 파일을 고친다.
-- `translate_bulk.py SRC.txt [--mode scholarly|testimony] [--desc "저작 소개 한 줄"] [--limit N] [--dry-run]`
+- `translate_bulk.py SRC.txt [--mode scholarly|testimony] [--desc "저작 소개 한 줄"] [--limit N] [--dry-run] [--style-card 카드.md] [--extra-glossary 용어.json]`
+  `--style-card`는 기본 카드 대신 작업별 정책 카드를 쓴다(예: 원문 줄표를 살려야 하는 참고 문헌). `--extra-glossary`는 `glossary-db.json`과 같은 형식의 작업별 인물·용어를 덧붙인다. 그 파일에 `"dbTerms": false`를 주면 사전 용어를 빼고(긴 책에서는 어간 묶음이 엉뚱하게 걸린다) 작업 용어만 쓰며, `"excludePeople": [cyr…]`로 일반어·지명·동명이인에 걸리는 인물 항목을 뺀다. 본 실행 전에 청크별 매칭을 세어 오탐을 골라낼 것.
   청크마다 ① 청크에 실제 등장하는 사전 항목만 골라 용어집 주입, ② 직전 청크 번역 꼬리 2문단을
   롤링 컨텍스트로 첨부(그래서 순차 실행), ③ QA 게이트(한자 누출·경어체 뒤집힘·문단 수 일치·
   인명 표기 준수·마크다운 오염) + 위반 항목별 강화 지시 재시도. 재시도로도 안 잡히면 최선 시도를
