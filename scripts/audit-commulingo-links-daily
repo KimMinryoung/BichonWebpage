@@ -7,3 +7,16 @@ trap 'rm -f "$report_tmp"' EXIT
 docker exec --user "$(id -u):$(id -g)" leninbot-frontend node /app/scripts/audit-commulingo-link-ambiguity.js --json > "$report_tmp"
 node -e 'const rows=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")); if(!Array.isArray(rows))process.exit(1);console.log("Link ambiguity audit: "+rows.length+" review candidates")' "$report_tmp"
 mv "$report_tmp" temp_dev/commulingo-link-audit.json
+
+# What readers actually see: every dictionary page's automatic links, kept
+# beside the previous day's so a change in the engine or the data shows up as
+# added/removed links (scripts/audit-commulingo-rendered-links.js --diff).
+rendered=temp_dev/commulingo-rendered-links
+mkdir -p "$rendered"
+node scripts/audit-commulingo-rendered-links.js --out "$rendered/latest.tmp.json"
+[[ -f "$rendered/latest.json" ]] && mv "$rendered/latest.json" "$rendered/previous.json"
+mv "$rendered/latest.tmp.json" "$rendered/latest.json"
+if [[ -f "$rendered/previous.json" ]]; then
+    node scripts/audit-commulingo-rendered-links.js --diff "$rendered/previous.json" "$rendered/latest.json" > "$rendered/daily-diff.txt"
+    head -1 "$rendered/daily-diff.txt"
+fi

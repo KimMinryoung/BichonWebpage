@@ -3,6 +3,7 @@ const { loadCommuLingoTerms } = require('./terms-store');
 const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { getReportsForEvent } = require('../../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('./linkify');
+const { createPersonPageResolver, pagePeriod } = require('./person-page-links');
 const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
 const { loadEventControl, phaseIndexForDate, presentEventControl } = require('./event-control');
 const { eventRelationsFor } = require('./event-relations');
@@ -200,6 +201,10 @@ async function buildEventPanel(eventId, lang) {
             surface: 'event',
             exclude: { event: eventId, term: paired ? paired.id : '' },
             blockStrings: events[index].noAutoLink,
+            personPage: createPersonPageResolver({
+                period: pagePeriod(events[index].startYear, events[index].endYear),
+                related: events[index].people.map(person => person.id),
+            }),
         };
         const ledeLinker = createLinker(indexes, linkerOptions);
         const linker = createLinker(indexes, linkerOptions);

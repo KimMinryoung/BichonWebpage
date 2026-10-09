@@ -132,5 +132,5 @@
         }
         return policy === 'context' ? null : entryId;
     }
-    return { compile, analyze, resolve, boundary, normalize };
+    return { compile, analyze, resolve, boundary, followedByName, normalize };
 });

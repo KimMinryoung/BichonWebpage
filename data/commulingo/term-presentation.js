@@ -7,6 +7,7 @@ const { renderAppView } = require('../../utils/render-app-view');
 const { getReportsForTerm } = require('../../services/report-mentions');
 const { loadTermCategories, termCategoriesRef, termCategoriesWithCounts, termRegionsWithCounts, termCategoryLabel, termRegionLabel } = require('./term-categories');
 const { getLinkIndexes, createLinker } = require('./linkify');
+const { createPersonPageResolver, pagePeriod } = require('./person-page-links');
 const { genealogyLinksForEntry } = require('./genealogy-links');
 const { localize } = require('./localize');
 
@@ -284,6 +285,11 @@ async function buildTermPanel(termId, lang) {
         const link = createLinker(indexes, {
             surface: 'term',
             exclude: { term: term.id, event: term.sameSubjectEvent ? term.sameSubjectEvent.id : '' },
+            blockStrings: raw.noAutoLink,
+            personPage: createPersonPageResolver({
+                period: pagePeriod(raw.startYear, raw.endYear ?? (raw.startYear === null ? null : 9999)),
+                related: (raw.people || []).map(person => person.id),
+            }),
         });
         pure = {
             term,

@@ -6,6 +6,25 @@ const { roleIconSvg, roleHubHref } = require('./role-icons');
 const { flagImg } = require('./flag-icons');
 const { personFlagHref } = require('./nationality-filter');
 const { sortPeopleChronologically, localizedPersonSections } = require('./people-view');
+const { loadCommuLingoHistoryEvents } = require('./history-events-store');
+const { createPersonPageResolver, lifeOf, pagePeriod } = require('./person-page-links');
+
+// The people a person page is likely to name by surname alone: everyone listed
+// beside them on a history event.
+async function coParticipants(personId) {
+    let events = [];
+    try {
+        events = await loadCommuLingoHistoryEvents();
+    } catch (err) {
+        console.error('commulingo person co-participants:', err);
+    }
+    const ids = new Set();
+    for (const event of events) {
+        if (!event.people.some(person => person.id === personId)) continue;
+        for (const person of event.people) if (person.id !== personId) ids.add(person.id);
+    }
+    return [...ids];
+}
 
 // Card prose (epithet, moment, bio) on the list and hub pages. Person names
 // only — see the `card` surface in linkify.js — with one seen-set per card, and
@@ -88,9 +107,17 @@ async function personBody(personId, person, loaded, lang) {
         const rawSections = (loaded.data.sections || {})[personId] || [];
         const sections = localizedPersonSections(rawSections, lang);
         // One linker and seen-set for the whole page; exclude the person itself.
+        const life = lifeOf(person);
         const link = createLinker(indexes, {
             surface: 'person',
             exclude: { person: person.id },
+            blockStrings: person.noAutoLink,
+            personPage: createPersonPageResolver({
+                period: life.birth ? pagePeriod(life.birth, life.death ?? 9999) : null,
+                related: await coParticipants(person.id),
+                resolveShared: false,
+                self: person.id,
+            }),
         });
         const introContext = { contextText: [person.epithet, person.moment, person.bio].filter(Boolean).join(' ') };
         const epithetHtml = link.plain(person.epithet, introContext);

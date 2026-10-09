@@ -72,4 +72,12 @@ const crossReviews = reviewMap(crossRows.map(r => ({ kind: r.kind, entity_id: r.
 assert(catalogue(crossRecords, crossReviews).every(r => !r.needsReview));
 crossRecords.event.push({ id: 'new-competitor', title: { en: 'Shared Name' } });
 assert(catalogue(crossRecords, crossReviews).find(r => r.id === 'a').needsReview);
-console.log('link review defaults, stale approvals, cross-dictionary collisions and historical regression cases passed');
+// A person's whole name competes too: a book entry cannot take 프랜시스 후쿠야마.
+const { personNameRows } = require('../data/commulingo/link-review-catalog');
+const bookRecords = { term: [{ id: 'end-of-history', term: { ko: '역사의 종언' }, aliases: { ko: ['프랜시스 후쿠야마'] } }], event: [], doc: [],
+    personNames: personNameRows({ people: [{ id: 'francis-fukuyama', name: { ko: '프랜시스 후쿠야마', en: 'Francis Fukuyama' } }] }) };
+const bookRow = catalogue(bookRecords).find(r => r.text === '프랜시스 후쿠야마');
+assert.deepEqual(bookRow.collisions.map(c => c.kind + ':' + c.id), ['person:francis-fukuyama']);
+assert.throws(() => validateDecision(bookRow, { role: 'short', policy: 'auto', note: '사람 이름과 겹치는 별칭 검토' }, [bookRow]), /겹칩니다/);
+validateDecision(bookRow, { role: 'related', policy: 'search', note: '사람 이름과 겹치는 별칭 검토' }, [bookRow]);
+console.log('link review defaults, stale approvals, cross-dictionary and person-name collisions and historical regression cases passed');

@@ -63,6 +63,13 @@ assert(sharedAllowed.mentions.some(m => m.text === 'Ford' && m.personId === 'for
 const sharedConflict = render('<p>Gerald Ford spoke.</p><p>Henry Ford spoke.</p><p>Ford spoke.</p>', { id: 'en', people: ['ford'] }, enIdx);
 assert(sharedConflict.mentions.some(m => m.text === 'Ford' && m.decision === 'conflicting-name-in-section'));
 assert(render('<p>야코프 유롭스키.</p>', { ...raw, noAutoLink: ['야코프 유롭스키'] }).mentions.some(m => m.decision === 'document-blocked'));
+// A blocked compound is never its name's person, even for the cast.
+installLinkBlocklist([{ kind: 'phrase', lang: 'ko', phrase: '유롭스키그라드' }]);
+const compound = render('<p><a href="/commulingo/people/yurovsky">야코프 유롭스키</a></p><p>유롭스키그라드에서.</p>', raw,
+    { lang: 'ko', person: buildPersonLinkIndex(people) });
+assert.doesNotMatch(compound.html, /유롭스키<\/a>그라드/);
+assert(!compound.mentions.some(m => m.text === '유롭스키그라드'));
+installLinkBlocklist([]);
 assert.throws(() => validatePersonLinks({ names: [{ text: 'x' }] }), /personLinks/);
 assert.throws(() => validatePersonLinks({ period: { start: 1920, end: 1918 } }), /ordered/);
 assert.throws(() => render('<p>text</p>', mapped), /missing section/);

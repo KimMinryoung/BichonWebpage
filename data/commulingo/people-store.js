@@ -64,6 +64,7 @@ async function fetchRows() {
                     citizenship_code, citizenship_label_ko, citizenship_label_en,
                     origin_code, origin_label_ko, origin_label_en, updated_at,
                     to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
+                    COALESCE(to_jsonb(commulingo_people)->'no_auto_link', '[]'::jsonb) AS no_auto_link,
                     COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
              FROM commulingo_people
              ORDER BY sort_order, id`
@@ -305,6 +306,8 @@ function rowsToPeopleData(rows) {
                 label: t(row.origin_label_ko, row.origin_label_en),
             },
             linkExpressions: row.link_expressions || [],
+            // Strings this page's prose does not auto-link (migration 356).
+            noAutoLink: Array.isArray(row.no_auto_link) ? row.no_auto_link : [],
             aliases: aliasesByPerson[row.id] || { ko: [], en: [] },
             scenes: scenesByPerson[row.id] || [],
             updatedAt: personUpdatedAt[row.id] || latestTimestamp(row.updated_at),

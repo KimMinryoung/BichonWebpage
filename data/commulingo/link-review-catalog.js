@@ -12,6 +12,15 @@ function expressionSource(kind, record, lang, text) {
     if (kind === 'doc') return (record.aliases?.[lang] || []).includes(text) ? 'alias' : 'title';
     return 'title';
 }
+// Display names of people, for collision checks (records.personNames).
+function personNameRows(peopleData) {
+    const out = [];
+    for (const person of peopleData?.people || []) for (const lang of ['ko', 'en']) {
+        const text = person.name?.[lang];
+        if (typeof text === 'string' && text.trim()) out.push({ id: person.id, lang, text: text.trim() });
+    }
+    return out;
+}
 function catalogue(records, reviews = new Map()) {
     const rows = [];
     for (const kind of KINDS) for (const record of records[kind] || []) for (const lang of ['ko', 'en']) {
@@ -32,6 +41,16 @@ function catalogue(records, reviews = new Map()) {
         const normalized = row.lang + ':' + normalize(row.text, row.lang);
         if (!groups.has(normalized)) groups.set(normalized, []);
         groups.get(normalized).push(row);
+    }
+    // People are not review-gated, but a term, event or document claiming a
+    // person's whole name takes that name away from the person pass (the
+    // dictionary passes run first): 프랜시스 후쿠야마 linked to a book entry.
+    // Their names compete like an approved expression.
+    for (const person of records.personNames || []) {
+        const group = groups.get(person.lang + ':' + normalize(person.text, person.lang));
+        if (group && !group.some(other => other.kind === 'person' && other.id === person.id)) {
+            group.push({ kind: 'person', id: person.id, text: person.text, label: person.text, policy: 'auto', reviewed: true });
+        }
     }
     for (const row of rows) row.collisions = groups.get(row.lang + ':' + normalize(row.text, row.lang))
         .filter(other => other.kind !== row.kind || other.id !== row.id)
@@ -57,4 +76,4 @@ function validateDecision(row, decision, rows) {
             && (other.role === 'identity' || (other.role === 'legacy' && other.text === other.label)))) fail('먼저 이 항목의 구체적인 이름을 자동 연결로 승인하세요.');
     }
 }
-module.exports = { expressionSource, catalogue, validateDecision, builders };
+module.exports = { expressionSource, catalogue, personNameRows, validateDecision, builders };

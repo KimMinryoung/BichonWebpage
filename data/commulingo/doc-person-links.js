@@ -1,6 +1,7 @@
 // Reference texts have their own cast. A dictionary's famous bearer of a
 // surname is not evidence that the same spelling in an archive denotes them.
 const { buildAliasPattern } = require('./people-linkify');
+const { blockedPhrases } = require('./link-blocklist');
 const { attributes, decode, walk } = require('./html-fragments');
 const { parseLifeYears } = require('./person-life-years');
 const { createLinker } = require('./linkify');
@@ -122,7 +123,9 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
     }
     for (const [text, person] of Object.entries(base.byAlias)) if (person) add(text, person.id, /\s/.test(text) && text !== person.names?.family);
     for (const name of names) if (!candidates.has(normalize(name.text))) candidates.set(normalize(name.text), { text: name.text, ids: new Set(), full: name.kind === 'identity' });
-    const pattern = buildAliasPattern([...candidates.values()].map(value => value.text), [], base.en);
+    // Global surname bans are reconsidered here, but compounds that merely
+    // contain a name (레닌그라드, 스탈린상) are never that person.
+    const pattern = buildAliasPattern([...candidates.values()].map(value => value.text), blockedPhrases(lang), base.en);
     const defaultAliases = Object.create(null), defaultExpressions = Object.create(null);
     for (const candidate of candidates.values()) {
         const ids = candidate.full ? [...candidate.ids] : [...candidate.ids].filter(id => allowed.has(id));
@@ -202,6 +205,8 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
         let lastText, paragraphAnalysis;
         const guard = ({ match, entry, start, text, alreadyLinked }) => {
             const key = normalize(match), mapping = mappings.get(key), candidate = candidates.get(key);
+            // A blocked compound is consumed whole and is nobody's mention.
+            if (!mapping && !candidate) return false;
             let full = mapping ? mapping.kind === 'identity' : candidate?.full;
             // A full name inside an existing anchor/inline element is still
             // an introduction; later evidence never licenses an earlier match.

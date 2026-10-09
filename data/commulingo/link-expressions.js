@@ -9,7 +9,10 @@ function assertLinkExpressions(values) {
     const seen = new Set();
     for (const value of values) {
         if (!value || typeof value !== 'object' || Array.isArray(value)) fail('each expression must be an object');
-        if (Object.keys(value).some(key => !['text', 'lang', 'role', 'policy'].includes(key))) fail('unknown expression field');
+        if (Object.keys(value).some(key => !['text', 'lang', 'role', 'policy', 'anyEra'].includes(key))) fail('unknown expression field');
+        // A person's surname that prose uses long after their death (마르크스,
+        // 레닌): exempt from the page-era check in person-page-links.js.
+        if ('anyEra' in value && value.anyEra !== true) fail('anyEra must be true when present');
         if (!['ko', 'en'].includes(value.lang)) fail('lang must be ko or en');
         if (!ROLES.includes(value.role)) fail('role must be identity, short or related');
         if (!POLICIES.includes(value.policy)) fail('policy must be auto, context or search');

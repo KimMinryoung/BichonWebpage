@@ -7,7 +7,7 @@ const { loadCommuLingoPeople } = require('./people-store');
 const { getLinkIndexes } = require('./linkify');
 const { renderLinkedContent } = require('./render-links');
 const { loadLinkReviews, refreshLinkReviews } = require('./link-reviews-store');
-const { catalogue, validateDecision, builders, expressionSource } = require('./link-review-catalog');
+const { catalogue, personNameRows, validateDecision, builders, expressionSource } = require('./link-review-catalog');
 const { writeRevision } = require('./admin-tx');
 const { updateDocMeta } = require('./docs-import');
 const { key, normalize, reviewMap } = require('./link-review-policy');
@@ -18,12 +18,12 @@ async function loadState(client = db) {
     const [term, event] = await Promise.all([
         loadCommuLingoTerms({ fresh: true }), loadCommuLingoHistoryEvents({ fresh: true }),
     ]);
-    const records = { term, event, doc: listCommuLingoDocs() };
-    const reviews = reviewMap((await client.query('SELECT * FROM commulingo_link_reviews ORDER BY kind, entity_id, lang, expression')).rows);
-    const rows = catalogue(records, reviews);
     // Include prose as well as names: a preview of an old body cannot approve a new one.
     const [people, reportsResult] = await Promise.all([loadCommuLingoPeople({ fresh: true }),
         client.query("SELECT slug, markdown FROM research_documents WHERE status = 'public' ORDER BY slug")]);
+    const records = { term, event, doc: listCommuLingoDocs(), personNames: personNameRows(people.data) };
+    const reviews = reviewMap((await client.query('SELECT * FROM commulingo_link_reviews ORDER BY kind, entity_id, lang, expression')).rows);
+    const rows = catalogue(records, reviews);
     const docVersions = records.doc.map(doc => [doc.id, doc.bodySha256]);
     const reports = reportsResult.rows;
     const revision = hash([records, [...reviews.values()], people.data, reports, docVersions]);
@@ -38,13 +38,14 @@ async function loadState(client = db) {
 // compare revisions before writing.
 let listing = null;
 async function listingRows() {
-    const [term, event, reviews] = await Promise.all([
-        loadCommuLingoTerms(), loadCommuLingoHistoryEvents(), loadLinkReviews(),
+    const [term, event, reviews, people] = await Promise.all([
+        loadCommuLingoTerms(), loadCommuLingoHistoryEvents(), loadLinkReviews(), loadCommuLingoPeople(),
     ]);
     const doc = listCommuLingoDocs();
-    if (!listing || listing.term !== term || listing.event !== event || listing.reviews !== reviews || listing.doc !== doc) {
-        const rows = catalogue({ term, event, doc }, reviews);
-        listing = { term, event, reviews, doc, records: { term, event, doc }, rows, pending: rows.filter(row => !row.reviewed).length };
+    if (!listing || listing.term !== term || listing.event !== event || listing.reviews !== reviews || listing.doc !== doc || listing.people !== people.data) {
+        const records = { term, event, doc, personNames: personNameRows(people.data) };
+        const rows = catalogue(records, reviews);
+        listing = { term, event, reviews, doc, people: people.data, records, rows, pending: rows.filter(row => !row.reviewed).length };
     }
     return listing;
 }

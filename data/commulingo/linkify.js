@@ -255,6 +255,10 @@ async function getLinkIndexes(lang) {
 // `noAutoLink: ["임시정부"]` in its manifest entry (commulingo_docs.entry) instead of the corpus losing
 // the alias. (Strings that are wrong almost everywhere belong in
 // commulingo_link_blocklist, not here.)
+//
+// `personPage` is the dictionary pages' person resolver
+// (person-page-links.js): it may refuse a surname the page's years rule out,
+// or settle a shared surname on the one bearer the page lists.
 function createLinker(indexes, options = {}) {
     const surface = SURFACES[options.surface];
     if (!surface) throw new Error('linkify: unknown surface ' + options.surface);
@@ -303,6 +307,13 @@ function createLinker(indexes, options = {}) {
                 entry = id && index.byId[id];
                 expression = entry && index.expressions?.[entry.id + ':' + match];
             } else if (expression?.policy === 'context' && !identities.has(entry.id)) return match;
+            if (kind === 'person' && options.personPage) {
+                entry = options.personPage({
+                    match, entry, expression, index, context: personContext,
+                    start: Math.max(0, localOffset) + context.offset + offset, text: contextText,
+                });
+                expression = entry && index.expressions?.[entry.id + ':' + match];
+            }
             if (kind === 'person' && options.personGuard && !options.personGuard({
                 match, entry, expression, start: context.offset + offset, text: context.text, index,
                 alreadyLinked: Boolean(entry && seen.has('person:' + entry.id)),
