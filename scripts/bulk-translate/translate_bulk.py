@@ -163,7 +163,9 @@ def conformance_targets(people):
 
 def qa_problems(src_chunk, ko, mode, names):
     probs = []
-    if re.search(r"[一-鿿]", ko):
+    # A short hanja gloss in parentheses right after hangul (반(半), 반(反)) is
+    # deliberate disambiguation, not a leak.
+    if re.search(r"[一-鿿]", re.sub(r"(?<=[가-힣])\([一-鿿]{1,4}\)", "", ko)):
         probs.append(("cjk", None))
     hab = len(re.findall(r"니다|니까", ko))
     hada = len(re.findall(r'(?:했|였|았|었|이|한)다[.\s"”」)]', ko))
@@ -187,7 +189,7 @@ def reinforcement(probs, mode, src_chunk):
     lines = ["주의 — 직전 시도에서 다음 규칙을 어겼다. 이번에는 반드시 지켜라:"]
     for kind, detail in probs:
         if kind == "cjk":
-            lines.append("- 한자·중국어를 한 글자도 출력하지 마라.")
+            lines.append("- 한자·중국어를 출력하지 마라. 동음이의를 가르는 짧은 괄호 한자(반(半))만 허용한다.")
         elif kind == "register" and mode == "testimony":
             lines.append("- 모든 진술 문장을 「~습니다/~았습니다/~입니다」체로 끝내라. "
                          "「~했다/~였다」체 금지.")
