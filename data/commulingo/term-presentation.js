@@ -1,6 +1,7 @@
 const { searchableAliases } = require('./link-expressions');
 const { renderMarkdown } = require('../../utils/markdown');
 const { loadCommuLingoTerms } = require('./terms-store');
+const { findUrl } = require('../../utils/url-in-text');
 const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
 const { renderAppView } = require('../../utils/render-app-view');
 const { getReportsForTerm } = require('../../services/report-mentions');
@@ -69,14 +70,11 @@ const SOURCE_HOST_LABELS = {
 function presentSource(raw, lang) {
     const text = String(raw || '').trim();
     if (isSitePathSource(text)) return presentSitePathSource(text, lang);
-    const match = text.match(/https?:\/\/\S+/);
-    // Keep balanced parentheses ('…/ВКП(б)'); a ')' with no '(' in the URL
-    // closes the '(https://…)' wrapper.
-    let url = match ? match[0] : '';
-    while (url.endsWith(')') && url.split(')').length > url.split('(').length) url = url.slice(0, -1);
+    const match = findUrl(text);
+    const url = match ? match.url : '';
     const head = (match ? text.slice(0, match.index) : text).replace(/[\s(]+$/, '').trim();
     const note = (match ? text.slice(match.index + url.length) : '')
-        .replace(/^[)\s]*[—–-]?\s*/, '').trim();
+        .replace(/^[).,;:\s]*[—–-]?\s*/, '').trim();
     let host = '';
     if (url) {
         try { host = new URL(url).hostname; } catch (e) { host = ''; }

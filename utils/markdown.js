@@ -1,13 +1,11 @@
+const { findUrl, trimUrl } = require('./url-in-text');
+
 function escapeHtml(value = '') {
     return String(value)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
-}
-
-function cleanCitationUrl(value = '') {
-    return String(value).replace(/[.,;:]+$/, '');
 }
 
 function collectCitationLinks(markdown = '') {
@@ -26,25 +24,25 @@ function collectCitationLinks(markdown = '') {
         }
         if (inCode) continue;
 
-        const reference = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\]:\s*(?:.*?\s)?(https?:\/\/[^\s<>)]+)/);
+        const reference = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\]:\s*(?:.*?\s)?(https?:\/\/[^\s<>]+)/);
         if (reference) {
-            links.set(reference[1], cleanCitationUrl(reference[2]));
+            links.set(reference[1], trimUrl(reference[2]));
             pendingNumber = null;
             continue;
         }
 
-        const bracketed = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\][^\n]*(https?:\/\/[^\s<>)]+)/);
+        const bracketed = line.match(/^\s*\[\^?([A-Za-z0-9_]+)\][^\n]*(https?:\/\/[^\s<>]+)/);
         if (bracketed) {
-            links.set(bracketed[1], cleanCitationUrl(bracketed[2]));
+            links.set(bracketed[1], trimUrl(bracketed[2]));
             pendingNumber = null;
             continue;
         }
 
         const numbered = line.match(/^\s*([1-9]\d*)\.\s+(.+)$/);
         if (numbered) {
-            const sameLineUrl = numbered[2].match(/https?:\/\/[^\s<>)]+/);
+            const sameLineUrl = findUrl(numbered[2]);
             if (sameLineUrl) {
-                links.set(numbered[1], cleanCitationUrl(sameLineUrl[0]));
+                links.set(numbered[1], sameLineUrl.url);
                 pendingNumber = null;
             } else {
                 pendingNumber = numbered[1];
@@ -53,9 +51,9 @@ function collectCitationLinks(markdown = '') {
         }
 
         if (pendingNumber) {
-            const nextLineUrl = line.match(/^\s*(https?:\/\/[^\s<>)]+)/);
+            const nextLineUrl = line.match(/^\s*(https?:\/\/[^\s<>]+)/);
             if (nextLineUrl) {
-                links.set(pendingNumber, cleanCitationUrl(nextLineUrl[1]));
+                links.set(pendingNumber, trimUrl(nextLineUrl[1]));
             }
             pendingNumber = null;
         }
@@ -202,7 +200,7 @@ function renderSourceCard(kind, lines) {
     const origin = fields['출처'] || fields.source || '';
     const translator = fields['번역'] || fields.translator || '';
     const note = fields['설명'] || fields.note || '';
-    const url = cleanCitationUrl(fields['링크'] || fields.url || '');
+    const url = trimUrl(fields['링크'] || fields.url || '');
     if (!title || !/^https?:\/\//.test(url)) {
         // Malformed card: fall back to plain paragraphs so nothing is lost.
         return lines.map(line => `<p>${inlineMarkdown(line)}</p>`).join('\n');
