@@ -7,10 +7,10 @@ const { flagImg } = require('./flag-icons');
 const { personFlagHref } = require('./nationality-filter');
 const { sortPeopleChronologically, localizedPersonSections } = require('./people-view');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
-const { createPersonPageResolver, lifeOf, pagePeriod } = require('./person-page-links');
+const { createPersonPageResolver, lifeOf, namedPeople, pagePeriod } = require('./person-page-links');
 
 // The people a person page is likely to name by surname alone: everyone listed
-// beside them on a history event.
+// beside them on a history event, with the number of events they share.
 async function coParticipants(personId) {
     let events = [];
     try {
@@ -18,12 +18,12 @@ async function coParticipants(personId) {
     } catch (err) {
         console.error('commulingo person co-participants:', err);
     }
-    const ids = new Set();
+    const shared = new Map();
     for (const event of events) {
         if (!event.people.some(person => person.id === personId)) continue;
-        for (const person of event.people) if (person.id !== personId) ids.add(person.id);
+        for (const person of new Set(event.people.map(p => p.id))) if (person !== personId) shared.set(person, (shared.get(person) || 0) + 1);
     }
-    return [...ids];
+    return shared;
 }
 
 // Card prose (epithet, moment, bio) on the list and hub pages. Person names
@@ -108,14 +108,20 @@ async function personBody(personId, person, loaded, lang) {
         const sections = localizedPersonSections(rawSections, lang);
         // One linker and seen-set for the whole page; exclude the person itself.
         const life = lifeOf(person);
+        const shared = await coParticipants(person.id);
         const link = createLinker(indexes, {
             surface: 'person',
             exclude: { person: person.id },
             blockStrings: person.noAutoLink,
             personPage: createPersonPageResolver({
                 period: life.birth ? pagePeriod(life.birth, life.death ?? 9999) : null,
-                related: await coParticipants(person.id),
-                resolveShared: false,
+                related: [...shared.keys()],
+                // Shared surnames go to close co-participants (two events or
+                // more) or to people the page names in full.
+                claimants: [...[...shared].filter(([, count]) => count >= 2).map(([id]) => id),
+                    ...namedPeople([person.epithet, person.moment, person.bio,
+                        ...sections.map(section => section.bodyHtml)], indexes.person)],
+                rivals: [...shared.keys()],
                 self: person.id,
             }),
         });

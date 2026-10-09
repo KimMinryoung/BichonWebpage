@@ -58,13 +58,40 @@ assert.doesNotMatch(render('비탈리 프리마코프가 도착했다.', collaps
 // not hand shared surnames to co-participants at all.
 assert.doesNotMatch(render('프리마코프가 도착했다.', { ...collapse, self: 'vitaly-primakov' }), /primakov/);
 assert.doesNotMatch(render('프리마코프가 도착했다.', { ...collapse, resolveShared: false }), /primakov/);
+// Person pages: the claimants are the people the page itself names in full.
+const { namedPeople } = require('../data/commulingo/person-page-links');
+const named = namedPeople(['<p>예브게니 프리마코프가 외무장관이 되었다.</p>'], index);
+assert(named.has('yevgeny-primakov') && !named.has('vitaly-primakov'));
+const personPage = { period: pagePeriod(1929, 2015), claimants: named, self: 'someone-else' };
+assert.match(render('그 뒤 프리마코프가 도착했다.', personPage), /people\/yevgeny-primakov/);
+assert.doesNotMatch(render('프리마코프 형제가 도착했다.', personPage), /primakov/);
+assert.doesNotMatch(render('프리마코프 숲에서 처형됐다.', personPage), /primakov/);
+// A second bearer tied to the page at all leaves the surname open.
+assert.doesNotMatch(render('그 뒤 프리마코프가 도착했다.', { ...personPage, rivals: ['vitaly-primakov'], period: null }), /primakov/);
+assert.doesNotMatch(render('프리마코프상을 받았다.', personPage), /primakov/);
+assert.doesNotMatch(render('프리마코프가 도착했다.', { ...personPage, self: 'vitaly-primakov' }), /primakov/);
+assert.doesNotMatch(render('프리마코프가 도착했다.', { ...personPage,
+    claimants: namedPeople(['예브게니 프리마코프와 비탈리 프리마코프'], index), period: null }), /primakov/);
+
 // English surname-first names are someone else's whole name.
 const enPeople = [person('liu-bocheng', 'Bocheng', 'Liu', '1892–1986'), person('liu-shaoqi', 'Shaoqi', 'Liu', '1898–1969')]
     .map(p => ({ ...p, displayName: p.names.given + ' ' + p.names.family }));
 const enIndex = buildPersonLinkIndex(enPeople, { lang: 'en' });
 const renderEn = (text, page) => createLinker({ person: enIndex }, { surface: 'event', personPage: createPersonPageResolver(page) }).plain(text);
-assert.match(renderEn('Liu ordered the crossing.', { related: ['liu-bocheng'] }), /people\/liu-bocheng/);
+// One-syllable English surnames are left alone even with one listed bearer.
+assert.doesNotMatch(renderEn('Liu ordered the crossing.', { related: ['liu-bocheng'] }), /liu-bocheng/);
 assert.doesNotMatch(renderEn('They reached Liu Zhidan’s base.', { related: ['liu-bocheng'] }), /liu-bocheng/);
+const enLong = [person('karl-liebknecht', 'Karl', 'Liebknecht', '1871–1919'), person('wilhelm-liebknecht', 'Wilhelm', 'Liebknecht', '1826–1900')]
+    .map(p => ({ ...p, displayName: p.names.given + ' ' + p.names.family }));
+const enLongIndex = buildPersonLinkIndex(enLong, { lang: 'en' });
+const renderLong = (text, page) => createLinker({ person: enLongIndex }, { surface: 'event', personPage: createPersonPageResolver(page) }).plain(text);
+assert.match(renderLong('They mourned Liebknecht and Luxemburg.', { related: ['karl-liebknecht'] }), /karl-liebknecht/);
+assert.match(renderLong('Then Liebknecht spoke.', { related: ['karl-liebknecht'] }), /karl-liebknecht/);
+assert.doesNotMatch(renderLong('His brother Theodor Liebknecht wrote.', { related: ['karl-liebknecht'] }), /liebknecht"/);
+assert.doesNotMatch(renderLong('Socialists. Theodor Liebknecht wrote.', { related: ['karl-liebknecht'] }), /liebknecht"/);
+assert.match(renderLong('On 14 September Liebknecht spoke.', { related: ['karl-liebknecht'] }), /karl-liebknecht/);
+assert.match(renderLong('The German Liebknecht spoke.', { related: ['karl-liebknecht'] }), /karl-liebknecht/);
+assert.doesNotMatch(renderLong('Liu Bocheng and Liu met.', { related: ['liu-bocheng'] }), /liu-shaoqi/);
 
 // The margin: a generation either side of the page's years.
 assert.equal(eraConflict(people[4], { start: 2000, end: 2001 }), null);
