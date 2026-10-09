@@ -42,6 +42,7 @@ const { buildEventLinkIndex } = require('./event-linkify');
 const { buildTermLinkIndex } = require('./term-linkify');
 const { buildDocLinkIndex } = require('./doc-linkify');
 const { buildTopicLinkIndex } = require('./topic-linkify');
+const { isLinkHub } = require('./link-hubs');
 const { loadCommuLingoPeople } = require('./people-store');
 const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
@@ -123,10 +124,11 @@ const KIND_SPECS = {
 // Cards are the one surface that links a single kind: they are three-line
 // snippets rendered a few hundred to a page, where a full pass would cost a
 // grid of blue and the card's job is to move the reader between people anyway.
+// `hubs`: surfaces whose prose leaves the link-hubs.js entries unlinked.
 const SURFACES = {
-    person: { kinds: KIND_ORDER },
-    term: { kinds: KIND_ORDER },
-    event: { kinds: KIND_ORDER, newTab: true },
+    person: { kinds: KIND_ORDER, hubs: true },
+    term: { kinds: KIND_ORDER, hubs: true },
+    event: { kinds: KIND_ORDER, newTab: true, hubs: true },
     learning: { kinds: KIND_ORDER, newTab: true },
     report: { kinds: KIND_ORDER, anchors: true },
     // Reference-library full texts. A reader meeting 체르보네츠 or 가위차 inside a
@@ -134,7 +136,7 @@ const SURFACES = {
     // prose surface — the topbar's curated list only covers what the manifest
     // declares. Signatory names the fragment links by hand are already inside
     // anchors, which every pass skips.
-    doc: { kinds: KIND_ORDER },
+    doc: { kinds: KIND_ORDER, hubs: true },
     card: { kinds: ['person'] },
     // Web chat answers, linked in the browser after the answer is final
     // (routes/commulingo-chat-links.js). New tab for the same reason as
@@ -234,12 +236,19 @@ async function getLinkIndexes(lang) {
             standardized,
             doc: buildDocLinkIndex(docs, { lang: safeLang, reviews }),
             event: buildEventLinkIndex(events, { lang: safeLang, reviews }),
-            term: buildTermLinkIndex(terms, { lang: safeLang, reviews }),
-            topic: buildTopicLinkIndex(standardized, { lang: safeLang }),
+            ...(() => {
+                const topic = buildTopicLinkIndex(standardized, { lang: safeLang });
+                return { topic, term: buildTermLinkIndex(terms, { lang: safeLang, reviews, yieldTo: topicStrings(topic) }) };
+            })(),
             person: personIndex,
         };
     }
     return entry;
+}
+
+// The strings the topic pass links; the term pass leaves them to it.
+function topicStrings(topic) {
+    return topic ? Object.keys(topic.byAlias).filter(alias => topic.byAlias[alias]) : [];
 }
 
 // One linker = one reading unit. `exclude` is keyed by kind
@@ -324,6 +333,10 @@ function createLinker(indexes, options = {}) {
             if (!entry || expression?.policy === 'search') return match;
             if (blockStrings.has(match)) return match;
             if (exclude[kind] && exclude[kind] === entry.id) return match;
+            // A hub stays plain, and fenced so a later pass cannot link a word
+            // inside it (중앙위원회 in 소련공산당 중앙위원회). The fence is
+            // removed once every pass has run.
+            if (surface.hubs && isLinkHub(kind, entry.id)) return '<cmplain>' + match + '</cmplain>';
             // An anchored doc alias is its own first mention: 4조 and 5조 of one
             // treaty both link, each to its article.
             const key = kind + ':' + (kind === 'topic' ? entry.kind + ':' : '') + entry.id
@@ -344,6 +357,7 @@ function createLinker(indexes, options = {}) {
             pass.kind === 'person' ? options.personTag : undefined,
             pass.kind === 'person' ? options.personAfterContext : undefined);
         });
+        out = out.replace(/<\/?cmplain>/g, '');
         const collected = require('./linked-entities').collectLinkedEntities(out, indexes, { anchors: surface.anchors });
         for (const bucket of Object.keys(found)) {
             for (const entry of collected[bucket]) {
@@ -445,6 +459,7 @@ function clientPersonLinkPayload(indexes) {
 
 
 module.exports = {
+    topicStrings,
     KIND_ORDER,
     KIND_SPECS,
     SURFACES,

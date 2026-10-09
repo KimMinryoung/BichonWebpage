@@ -60,6 +60,10 @@ function buildTermLinkIndex(terms, options = {}) {
     const blockedPhrases = termBlocklist('term-phrase', lang);
     const neverAlias = new Set(termBlocklist('term-alias', lang));
     const neverHeadword = new Set(termBlocklist('term-headword', lang));
+    // Strings the office/classification pass owns (topic-linkify.js): NKVD
+    // or 코민테른 goes to its office lineage, never half the time to the
+    // glossary entry (owner decision 2026-10-09).
+    const yieldTo = new Set(options.yieldTo || []);
     (terms || []).forEach(term => {
         if (!term || !term.id) return;
         const label = (term.term && (term.term[lang] || term.term.ko || term.term.en)) || '';
@@ -79,6 +83,7 @@ function buildTermLinkIndex(terms, options = {}) {
             if (alias.length < 2) return;
             if (neverHeadword.has(alias)) return;
             if (alias !== label && neverAlias.has(alias)) return;
+            if (yieldTo.has(alias)) return;
             expressions[term.id + ':' + alias] = expression;
             if (expression.policy === 'search') return;
             if (expression.role === 'identity' || (expression.role === 'legacy' && alias === label)) identityAliases[alias] = term.id;

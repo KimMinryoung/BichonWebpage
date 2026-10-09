@@ -43,7 +43,8 @@ function walk(html, onText, onTag, afterContext) {
             if (BLOCK.test(tag.name) || LITERAL.has(tag.name)) flush();
             if (onTag) output[index] = onTag(value, tag, { literal: literals > 0 });
             if (LITERAL.has(tag.name)) literals = Math.max(0, literals + (tag.close ? -1 : tag.self ? 0 : 1));
-            if (tag.name === 'a') anchors = Math.max(0, anchors + (tag.close ? -1 : tag.self ? 0 : 1));
+            // <cmplain> fences a hub name the linker left plain (linkify.js).
+            if (tag.name === 'a' || tag.name === 'cmplain') anchors = Math.max(0, anchors + (tag.close ? -1 : tag.self ? 0 : 1));
         } else if (!value.startsWith('<') && !literals) {
             // Blank lines are paragraph boundaries in raw prose too.
             if (/\n\s*\n/.test(value)) {

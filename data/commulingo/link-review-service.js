@@ -4,7 +4,7 @@ const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { listCommuLingoDocs, getCommuLingoDocContent, refreshCommuLingoDocs } = require('./docs-store');
 const { loadCommuLingoPeople } = require('./people-store');
-const { getLinkIndexes } = require('./linkify');
+const { getLinkIndexes, topicStrings } = require('./linkify');
 const { renderLinkedContent } = require('./render-links');
 const { loadLinkReviews, refreshLinkReviews } = require('./link-reviews-store');
 const { catalogue, personNameRows, validateDecision, builders, expressionSource } = require('./link-review-catalog');
@@ -81,7 +81,7 @@ function reviewValue(row, input, actor) {
         note: input.note.trim(), reviewed_by: actor };
 }
 function buildIndexes(base, records, reviews, lang) {
-    return { ...base, term: builders.term.buildTermLinkIndex(records.term, { lang, reviews }),
+    return { ...base, term: builders.term.buildTermLinkIndex(records.term, { lang, reviews, yieldTo: topicStrings(base.topic) }),
         event: builders.event.buildEventLinkIndex(records.event, { lang, reviews }),
         doc: builders.doc.buildDocLinkIndex(records.doc, { lang, reviews }) };
 }
