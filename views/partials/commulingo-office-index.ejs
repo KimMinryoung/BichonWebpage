@@ -1,7 +1,8 @@
 <%# The office index: the Central Committee rosters, then the lineage pages
     grouped by commulingo_offices.section in the order of `sections`.
     Locals: bodies (availableBodies), offices (standardized offices, in
-    sort_order), sectionTitles (strings.commuLingoViews.office.sections).
+    sort_order), sectionTitles (strings.commuLingoViews.office.sections),
+    rosterGlossary (glossary links under the rosters heading, optional).
     Without sectionTitles (an office page's own rosters) the grid stands alone. %>
 <% var sectionTitles = locals.sectionTitles;
    var sections = ['party', 'state', 'economy', 'international'];
@@ -23,6 +24,7 @@
 <% if (bodies.length) { %>
 <section class="commu-office-section" aria-labelledby="office-section-rosters">
     <h2 id="office-section-rosters"><%= sectionTitles.rosters %></h2>
+    <%- include('commulingo-glossary-chips', { links: locals.rosterGlossary || [], className: 'commu-office-section-glossary' }) %>
     <div class="commu-office-grid">
     <% bodies.forEach(function(body) { card(body.href, body.title, body.range, ''); }) %>
     </div>

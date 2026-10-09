@@ -12,6 +12,8 @@ const { PAGE_SIZE } = require('../data/commulingo/list-pagination');
 const { roleIconSvg, roleHubHref } = require('../data/commulingo/role-icons');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { bodyCareersFor, availableBodies } = require('../data/commulingo/politburo-store');
+const { glossaryLinksFor } = require('../data/commulingo/office-term-links');
+const { CENTRAL_COMMITTEE_TERM_ID } = require('../data/commulingo/party-bodies');
 const { otherNames } = require('../data/commulingo/person-other-names');
 const { hasFlag } = require('../data/commulingo/flag-icons');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
@@ -140,6 +142,7 @@ router.get('/offices', async (req, res) => {
         res.render('public/commulingo-offices', {
             offices,
             bodies: availableBodies(lang),
+            rosterGlossary: await glossaryLinksFor([CENTRAL_COMMITTEE_TERM_ID], lang),
             roleIconSvg,
             pageTitle: `${title} — ${lang === 'en' ? 'CommuLingo' : '공산링고'}`,
             pageDescription: res.locals.strings.commuLingoViews.office.lineagesIntro,
@@ -180,6 +183,7 @@ router.get('/offices/:officeId', async (req, res) => {
         res.render('public/commulingo-office', {
             office,
             officePeopleHref,
+            glossary: await glossaryLinksFor(office.termIds, lang),
             rosters: availableBodies(lang).filter(body => body.officeId === office.id),
             relatedReports,
             roleIconSvg,

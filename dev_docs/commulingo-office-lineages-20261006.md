@@ -35,3 +35,9 @@ ru.wikipedia 목록·인물 정보상자, knowbysight.info(Справочник 
 - 같은 날 활동도 맞췄다(`scripts/content/office-lineage-activities-20261007.json`, 73명). 계보 직책의 기관 계열 활동이 없던 128건 중 16건은 기능·소속·시기가 맞는 기존 활동에 `officeId`만 붙였고(활동 하나에 계열 하나라 코시긴은 고스플란, 시베르니크는 상무회 쪽만), 80건은 새 활동(`primary` false, `relation` service, 당 직책은 soviet-party·국가 직책은 state-soviet, 재임 공백이 있으면 나눔)으로 넣었다. 1년 미만·직무대행만인 경우, 같은 기능이 다른 계열에 이미 있는 경우, 고리키 작가동맹은 뺐다(40건).
 - 근거는 계보 행의 출처 페이지에서 해당 인물 줄을 뽑은 원문 발췌다(내부 사전 URL은 검증기가 거부한다). 출처 페이지 59개에서 기계적으로 뽑고, 표 행이 두 줄로 갈라지는 위키백과(이름 → 다음 줄 날짜)와 날짜가 이름 앞에 오는 knowbysight를 구분했으며, 어긋난 13건은 직접 골랐다.
 - 계보 계열에 연결된 대표 활동 58개는 근거가 연도 없는 리드 문장(구 분류 이관분)뿐이라, 연도가 계보 재임과 겹치지 않았다. 최상위 직위 재임이 아니라 **그 기능의 전체 경력**(입직–이탈)으로 기간을 다시 잡고, 각 인물 ru.wikipedia 문서의 원문 발췌를 근거로 더했다(`scripts/content/activity-periods-20261007.json`). 당 선전 직책이 대부분인 야코블레프·셰필로프·콘스탄티노프·스테파코프는 소속을 soviet-party로 고쳤다. 실제 근거가 있는 벨렌키(중앙통제위원회 위원 1927–1934)는 그대로 둔다.
+
+## 직책 ↔ 용어 사전 연결 (2026-10-09)
+- 직책 페이지는 `commulingo_offices.term_ids`(마이그레이션 344, 첫 항목이 그 직책의 표제 용어), 중앙위원회 명부는 `party-bodies.js`의 `termIds`로 용어 사전 항목을 가리킨다. 머리 카드 아래 「용어 사전」 칩 줄로 보이고, 용어 항목이 없는 id는 건너뛴다(`data/commulingo/office-term-links.js`).
+- 용어 페이지는 그 용어를 가리키는 명부·직책을 「직책 계보 · 명부」로 거꾸로 모아 보인다. 명부 3종과 당 최고 지도자·서기국·이념 직책이 모두 `central-committee-of-the-cpsu`를 가리키므로, 직책 계보에 따로 '중앙위원회' 페이지를 두지 않고 중앙위원회 용어 페이지를 허브로 쓴다. `/commulingo/offices`의 「중앙위원회 구성표」 아래에도 이 용어 칩을 둔다.
+- 연결 고치기: `UPDATE commulingo_offices SET term_ids = ARRAY[...]`(배포 불필요, 인물 스냅샷 갱신 ~60초). 존재하지 않는 용어 id는 `check-commulingo-code-db-drift.js`가 잡는다.
+- 서기국·조직국·서기장 용어(`secretariat-of-the-cpsu-central-committee`, `orgburo-of-the-cpsu-central-committee`, `general-secretary-of-the-cpsu`)는 같은 날 등록했다(`scripts/content/cc-bodies-20261009-terms.json`, 링크 승인 `scripts/reviews/commulingo-links-20261009-cc-bodies.json`).

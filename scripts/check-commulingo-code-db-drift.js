@@ -63,6 +63,19 @@ async function checkOfficeTitlesAndIcons() {
     });
 }
 
+// Office pages and rosters link glossary entries by id (commulingo_offices.term_ids,
+// party-bodies.js termIds); a missing entry is skipped silently on the page.
+async function checkOfficeTerms() {
+    const { BODIES } = require('../data/commulingo/party-bodies');
+    const { rows } = await db.query('SELECT id, term_ids FROM commulingo_offices');
+    const named = rows.flatMap(office => (office.term_ids || []).map(termId => [`commulingo_offices ${office.id}`, termId]))
+        .concat(Object.entries(BODIES).flatMap(([bodyId, body]) => (body.termIds || []).map(termId => [`party-bodies.js ${bodyId}`, termId])));
+    const { rows: found } = await db.query('SELECT id FROM commulingo_terms WHERE id = ANY($1)', [[...new Set(named.map(([, termId]) => termId))]]);
+    const known = new Set(found.map(row => row.id));
+    named.filter(([, termId]) => !known.has(termId)).forEach(([where, termId]) => report('office term_ids', `${where} names glossary entry ${termId}, which does not exist`));
+    checks.push(`office glossary links: ${named.length}`);
+}
+
 async function checkFlags() {
     const flagDir = path.join(__dirname, '..', 'public', 'flags');
     const files = fs.readdirSync(flagDir).filter(name => name.endsWith('.svg')).map(name => name.replace(/\.svg$/, ''));
@@ -87,6 +100,7 @@ async function checkFlags() {
 (async () => {
     try {
         await checkOfficeTitlesAndIcons();
+        await checkOfficeTerms();
         await checkFlags();
     } catch (err) {
         console.error('drift check failed to run:', err.message);

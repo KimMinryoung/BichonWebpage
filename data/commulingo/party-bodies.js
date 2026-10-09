@@ -2,9 +2,16 @@
 // a database document keyed by the body id (data-documents.js) in the
 // Politburo schema (members registry with spans, eras, per-congress tables),
 // so a corrected date needs no commit or deploy. A body's office line links to its roster from the office page.
+// termIds are the glossary entries the roster links to (first = the body's own
+// entry), as commulingo_offices.term_ids does for an office page; every one of
+// them names the Central Committee too, so its entry gathers the rosters.
+// The glossary entry the office index's Central Committee rosters head with.
+const CENTRAL_COMMITTEE_TERM_ID = 'central-committee-of-the-cpsu';
+
 const BODIES = {
     politburo: {
         path: '/commulingo/politburo',
+        termIds: ['politburo-of-the-cpsu', 'presidium-of-the-cpsu-central-committee', CENTRAL_COMMITTEE_TERM_ID],
         officeId: 'party-leadership',
         range: '1917–1991',
         title: { ko: '소련 정치국', en: 'The Soviet Politburo' },
@@ -28,6 +35,7 @@ const BODIES = {
     },
     secretariat: {
         path: '/commulingo/secretariat',
+        termIds: ['secretariat-of-the-cpsu-central-committee', CENTRAL_COMMITTEE_TERM_ID],
         officeId: 'party-secretariat-cadres',
         range: '1917–1991',
         title: { ko: '중앙위원회 서기국', en: 'The Central Committee Secretariat' },
@@ -50,6 +58,7 @@ const BODIES = {
     },
     orgburo: {
         path: '/commulingo/orgburo',
+        termIds: ['orgburo-of-the-cpsu-central-committee', CENTRAL_COMMITTEE_TERM_ID],
         officeId: 'party-secretariat-cadres',
         range: '1919–1952',
         title: { ko: '중앙위원회 조직국', en: 'The Central Committee Orgburo' },
@@ -72,4 +81,4 @@ const BODIES = {
     },
 };
 
-module.exports = { BODIES, BODY_IDS: Object.keys(BODIES) };
+module.exports = { BODIES, BODY_IDS: Object.keys(BODIES), CENTRAL_COMMITTEE_TERM_ID };

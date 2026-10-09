@@ -61,6 +61,16 @@
             </ul>
         </section>
         <% } %>
+        <% if (p.officePages && p.officePages.length) { %>
+        <section class="commu-person-detail-section" aria-labelledby="term-offices">
+            <h2 id="term-offices"><%= strings.commuLingoViews.termPanel.officePages %></h2>
+            <ul class="commu-person-event-links">
+                <% p.officePages.forEach(function(page) { %>
+                <li><a href="<%= page.href %>"><span><%= page.range %></span><strong><%= page.title %></strong></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% } %>
         <% if (p.term.people.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-people">
             <h2 id="term-people"><%= strings.commuLingoViews.termPanel.relatedPeople %></h2>

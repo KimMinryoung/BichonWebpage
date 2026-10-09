@@ -1,4 +1,4 @@
-<%# Shared office/roster overview. Locals: title, range, description, peopleHref. %>
+<%# Shared office/roster overview. Locals: title, range, description, peopleHref, glossary (optional glossary links). %>
 <header class="ui-card commu-office-head">
     <<%= peopleHref ? 'a' : 'div' %> class="commu-office-head-row"<% if (peopleHref) { %> href="<%= peopleHref %>"<% } %>>
         <div class="commu-office-head-title">
@@ -8,4 +8,5 @@
         <% if (peopleHref) { %><span class="commu-office-head-link"><%= lang === 'en' ? 'People →' : '인물 목록 →' %></span><% } %>
     </<%= peopleHref ? 'a' : 'div' %>>
     <% if (description) { %><p class="commu-office-head-description"><%= description %></p><% } %>
+    <%- include('commulingo-glossary-chips', { links: locals.glossary || [], className: 'commu-office-head-glossary' }) %>
 </header>

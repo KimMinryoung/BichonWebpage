@@ -5,6 +5,7 @@ const { BODIES } = require('../data/commulingo/party-bodies');
 const { localize } = require('../data/commulingo/localize');
 const { rosterFor } = require('../data/commulingo/politburo-presentation');
 const { roleIconSvg } = require('../data/commulingo/role-icons');
+const { glossaryLinksFor } = require('../data/commulingo/office-term-links');
 
 // One roster page per Central Committee body (party-bodies.js); mounted at
 // /commulingo/politburo, /commulingo/secretariat and /commulingo/orgburo.
@@ -30,6 +31,7 @@ function bodyRouter(bodyId) {
                     counts: { full: localize(body.counts.full, lang), candidates: localize(body.counts.candidates, lang) },
                     spans: { full: localize(body.spans.full, lang), cand: localize(body.spans.cand, lang) },
                 },
+                glossary: await glossaryLinksFor(body.termIds, lang),
                 intro: localize(data.intro, lang),
                 sources: localize(data.sources, lang),
                 congressesIntro: data.congressesIntro ? localize(data.congressesIntro, lang) : '',

@@ -3679,6 +3679,12 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     margin: 0; padding: var(--space-4) var(--content-inset); border-top: 1px solid var(--border);
     color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal);
 }
+/* The glossary entries of an office or roster page: a labelled chip row, in
+   the overview card or under the rosters heading of the office index. */
+.commu-glossary-chips { display: flex; align-items: baseline; gap: var(--space-2) var(--space-4); }
+.commu-glossary-chips-label { flex: 0 0 auto; color: var(--text-muted); font-size: var(--text-sm); }
+.commu-office-head-glossary { padding: var(--space-3) var(--content-inset); border-top: 1px solid var(--border); }
+.commu-office-section-glossary { margin-bottom: var(--space-3); }
 
 .commu-role-hub-head {
     align-items: center;

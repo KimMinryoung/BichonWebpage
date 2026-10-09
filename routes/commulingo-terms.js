@@ -29,6 +29,13 @@ const { buildEventPanel } = require('../data/commulingo/event-presentation');
 const activitiesModel = require('../data/commulingo/person-activities');
 const { loadStandardizedPeople } = require('../data/commulingo/people-view');
 const { localize } = require('../data/commulingo/localize');
+const { officePagesForTerm } = require('../data/commulingo/office-term-links');
+
+// The office lineages and Central Committee rosters that name this entry.
+async function officePagesFor(termId, lang) {
+    const { standardized } = await loadStandardizedPeople(lang);
+    return officePagesForTerm(termId, standardized, lang);
+}
 
 // A term that names an affiliation links to the people filed under it.
 async function affiliationMembersFor(termId, lang) {
@@ -130,6 +137,7 @@ router.get('/:termId', async (req, res) => {
                 ? await buildEventPanel(term.sameSubjectEvent.id, lang)
                 : null,
             affiliationMembers: await affiliationMembersFor(term.id, lang),
+            officePages: await officePagesFor(term.id, lang),
             practiceDecks: await practiceDecksFor(practiceHrefs, lang),
             courseChapters: await courseChaptersFor(
                 [`terms:${term.id}`].concat(term.sameSubjectEvent ? [`events:${term.sameSubjectEvent.id}`] : []), lang),

@@ -85,6 +85,7 @@ function availableBodies(lang) {
         id: bodyId,
         href: BODIES[bodyId].path,
         officeId: BODIES[bodyId].officeId,
+        termIds: BODIES[bodyId].termIds || [],
         range: BODIES[bodyId].range,
         title: localize(BODIES[bodyId].title, lang),
         description: localize(BODIES[bodyId].description, lang),

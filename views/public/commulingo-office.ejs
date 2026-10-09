@@ -15,7 +15,7 @@
             ],
             dictJump: 'people' }) %>
 
-        <%- include('../partials/commulingo-office-head', { title: office.title, range: office.range, description: office.blurb, peopleHref: officePeopleHref }) %>
+        <%- include('../partials/commulingo-office-head', { title: office.title, range: office.range, description: office.blurb, peopleHref: officePeopleHref, glossary: glossary }) %>
 
         <% if (office.lineage && office.lineage.length) { %>
         <section class="commu-hub-section" aria-labelledby="office-lineage">

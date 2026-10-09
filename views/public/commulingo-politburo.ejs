@@ -11,7 +11,7 @@
                 { label: body.title }
             ],
             dictJump: 'people' }) %>
-        <%- include('../partials/commulingo-office-head', { title: body.title, range: body.range, description: intro, peopleHref: '' }) %>
+        <%- include('../partials/commulingo-office-head', { title: body.title, range: body.range, description: intro, peopleHref: '', glossary: glossary }) %>
 
         <% var hasCand = timeline.rows.some(function(row) { return row.bars.some(function(bar) { return bar.kind === 'cand'; }); }); %>
         <section class="commu-politburo-section" aria-labelledby="tenure-chart-title">
