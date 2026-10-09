@@ -69,8 +69,11 @@ const SOURCE_HOST_LABELS = {
 function presentSource(raw, lang) {
     const text = String(raw || '').trim();
     if (isSitePathSource(text)) return presentSitePathSource(text, lang);
-    const match = text.match(/https?:\/\/[^\s)]+/);
-    const url = match ? match[0] : '';
+    const match = text.match(/https?:\/\/\S+/);
+    // Keep balanced parentheses ('…/ВКП(б)'); a ')' with no '(' in the URL
+    // closes the '(https://…)' wrapper.
+    let url = match ? match[0] : '';
+    while (url.endsWith(')') && url.split(')').length > url.split('(').length) url = url.slice(0, -1);
     const head = (match ? text.slice(0, match.index) : text).replace(/[\s(]+$/, '').trim();
     const note = (match ? text.slice(match.index + url.length) : '')
         .replace(/^[)\s]*[—–-]?\s*/, '').trim();
