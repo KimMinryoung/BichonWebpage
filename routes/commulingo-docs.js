@@ -7,6 +7,7 @@ const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { courseChaptersForDoc } = require('../data/commulingo/book-page');
 const { paginateList } = require('../data/commulingo/list-pagination');
+const { searchDocContent } = require('../data/commulingo/doc-search');
 
 const router = express.Router();
 
@@ -47,6 +48,21 @@ router.get('/', async (req, res) => {
     } catch (err) {
         console.error('commulingo docs index:', err);
         commuLingoLoadError(res, { message: { ko: '참고 문헌 서고를 불러올 수 없습니다.', en: 'Failed to load reference library.' } });
+    }
+});
+
+// Keyword search across every page of one document (doc-search.js); the
+// reader's search panel (public/js/commulingo-doc-search.js) calls it.
+router.get('/:docId/search', (req, res) => {
+    try {
+        const raw = getCommuLingoDoc(typeof req.params.docId === 'string' ? req.params.docId.trim() : '');
+        if (!raw) return res.status(404).json({ error: 'not found' });
+        const query = typeof req.query.q === 'string' ? req.query.q : '';
+        setShortPublicCache(res);
+        res.json(searchDocContent(getCommuLingoDocContent(raw), query));
+    } catch (err) {
+        console.error('commulingo doc search:', err);
+        res.status(err.status || 500).json({ error: 'search failed' });
     }
 });
 

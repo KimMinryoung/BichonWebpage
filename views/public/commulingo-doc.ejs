@@ -112,6 +112,28 @@ var tocHref = function(id) {
 </details>
 </nav>
 <% } %>
+<%# 문헌 안 키워드 검색: 긴 문헌은 페이지로 나뉘어 브라우저 찾기가 지금 페이지만
+    본다. 패널은 서버(/search)가 모든 페이지를 뒤진 결과를 페이지별로 보여 주고,
+    고른 곳으로 가면 public/js/commulingo-doc-search.js가 본문(.doc-body)의 일치를
+    표시한다. 짧은 문헌도 같은 패널을 쓴다. %>
+<div class="doc-search" data-doc-search
+     data-endpoint="<%= languageUrl('/commulingo/docs/' + doc.id + '/search', urlLanguage === 'en' ? 'en' : 'ko') %>"
+     data-page="<%= pagination ? pagination.current : 1 %>"
+     data-total-pages="<%= pagination ? pagination.total : 1 %>"
+     data-strings="<%= JSON.stringify(strings.commuLingoViews.doc.searchUi) %>">
+<details>
+<summary><svg class="doc-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span><%= strings.commuLingoViews.doc.searchUi.label %></span></summary>
+<div class="doc-search-panel">
+    <form class="doc-search-form" role="search">
+        <input type="search" name="q" maxlength="100" autocomplete="off" enterkeyhint="search"
+               placeholder="<%= strings.commuLingoViews.doc.searchUi.placeholder %>" aria-label="<%= strings.commuLingoViews.doc.searchUi.placeholder %>">
+        <button type="submit"><%= strings.commuLingoViews.doc.searchUi.submit %></button>
+    </form>
+    <p class="doc-search-status" aria-live="polite"></p>
+    <div class="doc-search-results"></div>
+</div>
+</details>
+</div>
 </div>
 <%- bodyTopHtml %>
 <%# 이 문헌이 어느 사전 항목에 속하는지 알리는 한 줄. 제목 바로 아래 산문으로
@@ -139,7 +161,7 @@ var docCourses = doc.courses || [];
     <% } %>
 </p>
 <% } %>
-<%- bodyRestHtml %>
+<div class="doc-body"><%- bodyRestHtml %></div>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= strings.commuLingoViews.doc.pages %>">
     <%
@@ -271,6 +293,14 @@ var docCourses = doc.courses || [];
     });
 })();
 </script>
+<div class="doc-find" data-doc-find hidden>
+    <span class="doc-find-query"></span>
+    <span class="doc-find-pos"></span>
+    <button type="button" data-find="prev" aria-label="<%= strings.commuLingoViews.doc.searchUi.previous %>">↑</button>
+    <button type="button" data-find="next" aria-label="<%= strings.commuLingoViews.doc.searchUi.next %>">↓</button>
+    <button type="button" data-find="close" aria-label="<%= strings.commuLingoViews.doc.searchUi.close %>">✕</button>
+</div>
+<script src="/js/commulingo-doc-search.js?v=<%= assetVersion %>" defer></script>
 <%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
     쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이
     가져오는 nav.js(언어 드롭다운)만 동작하고 테마 전환은 죽어 있었다. %>
