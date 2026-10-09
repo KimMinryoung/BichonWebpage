@@ -91,7 +91,11 @@ function placeQualifier(text, end) {
         || /^(?:\s+)(?:Street|Avenue|Road|Boulevard|City|Factory|Station|University|School|Foundation|Bank)\b/i.test(after);
 }
 
-function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = html, relatedPeople = new Set() } = {}) {
+// `state` carries what earlier parts of the same document already did — the
+// entries linked (one link per document, not per section) and the people
+// introduced by full name — when a paged document is rendered page by page.
+function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = html, relatedPeople = new Set(),
+    state = { seen: new Set(), introduced: new Set() } } = {}) {
     const policy = raw.personLinks || {};
     validatePersonLinks(raw.personLinks);
     const allowed = new Set(policy.allowedPeople ?? raw.people ?? []);
@@ -154,7 +158,7 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
     const open = raw.personLinks === undefined;
     const year = Number(String(raw.date || '').slice(0, 4));
     const period = policy.period || (year ? { start: year, end: year } : null);
-    const docIntroduced = new Set();
+    const docIntroduced = state.introduced;
     const familyOf = id => base.byId[id]?.names?.family;
     const notName = (text, start, end, entry) => {
         const after = text.slice(end), before = text.slice(0, start);
@@ -297,7 +301,7 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             }
             return reason.startsWith('linked') || reason === 'already-linked';
         };
-        return createLinker({ ...indexes, person: personIndex }, { surface: 'doc', exclude: { doc: raw.id },
+        return createLinker({ ...indexes, person: personIndex }, { surface: 'doc', exclude: { doc: raw.id }, seen: state.seen,
             blockStrings: raw.noAutoLink, personGuard: guard, personAfterContext: text => {
                 for (const evidence of nameContext.analyze(text, nameData).evidence) {
                     if (evidence.ids.length !== 1 || placeQualifier(text, evidence.end)) continue;

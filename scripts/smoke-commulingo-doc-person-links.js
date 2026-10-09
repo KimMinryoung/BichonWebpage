@@ -93,9 +93,18 @@ assert.doesNotMatch(openRender('<p>레닌이 말했다.</p>', new Set()).html, /
 assert.doesNotMatch(openRender('<p>후대인이 말했다.</p>').html, /people\/later/);
 assert.doesNotMatch(openRender('<p>블. 레닌이 서명했다.</p>').html, /people\/lenin/);
 // A full name in an earlier section introduces the surname for later ones.
+// One link per document: a later section's mention stays plain…
 const twoSections = openRender('<h2 id="a">A</h2><p>카를 마르크스.</p><h2 id="b">B</h2><p>마르크스가 썼다.</p>');
-assert.equal((twoSections.html.match(/people\/marx/g) || []).length, 2);
-assert(twoSections.mentions.some(m => m.section === 'b' && m.decision === 'linked-doc-identity'));
+assert.equal((twoSections.html.match(/people\/marx/g) || []).length, 1);
+assert(twoSections.mentions.some(m => m.section === 'b' && m.decision === 'already-linked'));
+// …and across the pages of a paged document, with a shared state.
+const pageState = { seen: new Set(), introduced: new Set() };
+const page = html => renderDocPersonLinks(html, openRaw, openIdx, { relatedPeople: new Set(['marx']), state: pageState }).html;
+assert.match(page('<h2 id="a">A</h2><p>카를 마르크스.</p>'), /people\/marx/);
+assert.doesNotMatch(page('<h2 id="b">B</h2><p>카를 마르크스. 마르크스.</p>'), /people\/marx/);
+// A surname introduced on an earlier page still counts as introduced.
+const introState = { seen: new Set(), introduced: new Set(['marx']) };
+assert.match(renderDocPersonLinks('<p>마르크스가 썼다.</p>', openRaw, openIdx, { relatedPeople: new Set(), state: introState }).html, /people\/marx/);
 // Shared, blocked or place-bound surnames still need the document's own cast.
 assert.doesNotMatch(openRender('<p>우스티노프가 말했다.</p>').html, /ustinov/);
 assert.doesNotMatch(openRender('<p>레닌 광장에 모였다. 표도르 니키포로비치 고르시코프.</p>').html, /people\/(?:lenin|gorshkov)/);

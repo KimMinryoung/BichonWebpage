@@ -60,9 +60,25 @@ async function linkDocHtml(content, raw, lang, key, html) {
     }
     const memoKey = lang + '\0' + key;
     let out = entry.byKey.get(memoKey);
+    // A paged document links each entry once in the whole document, so a page
+    // depends on the pages before it: render forward from the last page done,
+    // in order, up to the one asked for (page 1 costs one page, not the book).
+    if (out === undefined && content.paged && /^p\d+$/.test(key)) {
+        const target = Number(key.slice(1));
+        const relatedPeople = await docRelatedPeople(raw);
+        const paging = entry.paging?.[lang] || ((entry.paging ||= {})[lang] = { state: { seen: new Set(), introduced: new Set() }, done: 0 });
+        while (paging.done < Math.min(target, content.paged.pages.length)) {
+            const page = content.paged.pages[paging.done];
+            paging.done += 1;
+            entry.byKey.set(lang + '\0p' + paging.done, classifyEntityLinks(openEntityLinksInNewTab(renderDocPersonLinks(page.html, raw, indexes,
+                { sourceHtml: content.html || page.html, relatedPeople, state: paging.state }).html)));
+        }
+        out = entry.byKey.get(memoKey);
+        if (out !== undefined) return out;
+    }
     if (out === undefined) {
-        // One linker per rendered unit: the first mention of an entry links and
-        // later ones stay plain. A document never links to itself, and skips
+        // One first-mention set per document: the first mention of an entry
+        // links and later ones, in any section, stay plain. A document never links to itself, and skips
         // the strings its manifest entry declares in `noAutoLink` — words whose
         // dictionary sense is right elsewhere but wrong in this document's
         // context (임시정부 in a French text is not the Russian one). Editing

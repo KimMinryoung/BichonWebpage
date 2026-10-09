@@ -256,6 +256,9 @@ async function getLinkIndexes(lang) {
 // the alias. (Strings that are wrong almost everywhere belong in
 // commulingo_link_blocklist, not here.)
 //
+// `seen` lets several linkers share one first-mention set: a reference
+// document links an entry once across all its sections and pages.
+//
 // `personPage` is the dictionary pages' person resolver
 // (person-page-links.js): it may refuse a surname the page's years rule out,
 // or settle a shared surname on the one bearer the page lists.
@@ -264,7 +267,7 @@ function createLinker(indexes, options = {}) {
     if (!surface) throw new Error('linkify: unknown surface ' + options.surface);
     const exclude = options.exclude || {};
     const blockStrings = new Set(options.blockStrings || []);
-    const seen = new Set();
+    const seen = options.seen || new Set();
     const found = { docs: [], events: [], terms: [], topics: [], people: [] };
     const foundKeys = new Set();
     const links = [];
