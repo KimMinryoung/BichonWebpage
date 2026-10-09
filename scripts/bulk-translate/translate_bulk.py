@@ -167,6 +167,9 @@ def qa_problems(src_chunk, ko, mode, names):
     # deliberate disambiguation, not a leak.
     if re.search(r"[一-鿿]", re.sub(r"(?<=[가-힣])\([一-鿿]{1,4}\)", "", ko)):
         probs.append(("cjk", None))
+    src_latin = set(re.findall(r"[A-Za-z]{3,}", src_chunk))
+    if any(w not in src_latin for w in re.findall(r"[A-Za-z]{3,}", ko)):
+        probs.append(("latin", None))
     hab = len(re.findall(r"니다|니까", ko))
     hada = len(re.findall(r'(?:했|였|았|었|이|한)다[.\s"”」)]', ko))
     if mode == "testimony" and hada > hab and hada > 3:
@@ -200,6 +203,8 @@ def reinforcement(probs, mode, src_chunk):
             lines.append(f"- 원문은 문단이 정확히 {n_paras(src_chunk)}개다. 번역도 같은 "
                          "개수의 문단으로 출력하고, 문단을 합치거나 쪼개거나 "
                          "[직전 문맥]을 다시 출력하지 마라.")
+        elif kind == "latin":
+            lines.append("- 영어 낱말을 섞지 마라. 원문에 없는 로마자는 한 단어도 출력하지 말고 한국어로 옮겨라.")
         elif kind == "markdown":
             lines.append("- 마크다운 서식(**, ## 등)을 붙이지 마라. 원문에 없는 강조를 만들지 마라.")
         elif kind == "names":
