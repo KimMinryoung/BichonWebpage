@@ -43,6 +43,7 @@ const { buildTermLinkIndex } = require('./term-linkify');
 const { buildDocLinkIndex } = require('./doc-linkify');
 const { buildTopicLinkIndex } = require('./topic-linkify');
 const { isLinkHub } = require('./link-hubs');
+const { resolveWithoutPageContext } = require('./person-page-links');
 const { loadCommuLingoPeople } = require('./people-store');
 const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
@@ -130,7 +131,9 @@ const SURFACES = {
     term: { kinds: KIND_ORDER, hubs: true },
     event: { kinds: KIND_ORDER, newTab: true, hubs: true },
     learning: { kinds: KIND_ORDER, newTab: true },
-    report: { kinds: KIND_ORDER, anchors: true },
+    // Reports and diaries: hubs stay plain as on the dictionary pages, and a
+    // bare surname needs anyEra or an earlier full name (person-page-links.js).
+    report: { kinds: KIND_ORDER, anchors: true, hubs: true, personPage: resolveWithoutPageContext },
     // Reference-library full texts. A reader meeting 체르보네츠 or 가위차 inside a
     // 1923 document needs the glossary exactly there, the same as on any other
     // prose surface — the topbar's curated list only covers what the manifest
@@ -268,15 +271,17 @@ function topicStrings(topic) {
 // `seen` lets several linkers share one first-mention set: a reference
 // document links an entry once across all its sections and pages.
 //
-// `personPage` is the dictionary pages' person resolver
-// (person-page-links.js): it may refuse a surname the page's years rule out,
-// or settle a shared surname on the one bearer the page lists.
+// `personPage` is the person resolver (person-page-links.js), set per page on
+// the dictionary pages and by the surface on reports and diaries: it may
+// refuse a surname the page's years rule out, or settle a shared surname on
+// the one bearer the page lists.
 function createLinker(indexes, options = {}) {
     const surface = SURFACES[options.surface];
     if (!surface) throw new Error('linkify: unknown surface ' + options.surface);
     const exclude = options.exclude || {};
     const blockStrings = new Set(options.blockStrings || []);
     const seen = options.seen || new Set();
+    const personPage = options.personPage || surface.personPage;
     const found = { docs: [], events: [], terms: [], topics: [], people: [] };
     const foundKeys = new Set();
     const links = [];
@@ -319,8 +324,8 @@ function createLinker(indexes, options = {}) {
                 entry = id && index.byId[id];
                 expression = entry && index.expressions?.[entry.id + ':' + match];
             } else if (expression?.policy === 'context' && !identities.has(entry.id)) return match;
-            if (kind === 'person' && options.personPage) {
-                entry = options.personPage({
+            if (kind === 'person' && personPage) {
+                entry = personPage({
                     match, entry, expression, index, context: personContext,
                     start: Math.max(0, localOffset) + context.offset + offset, text: contextText,
                 });

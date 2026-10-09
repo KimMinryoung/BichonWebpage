@@ -35,6 +35,8 @@ const people = [{
     names: { short: '스탈린', display: '이오시프 스탈린', family: '스탈린' },
     epithet: '강철의 사내',
     aliases: { ko: ['이오시프 스탈린', '스탈린'], en: ['Joseph Stalin', 'Stalin'] },
+    // Named by surname in any era, so reports link the bare 스탈린 too.
+    linkExpressions: [{ text: '스탈린', lang: 'ko', role: 'short', anyEra: true }],
 }, {
     // No alias row: the family name is the only short form, and it has to come
     // from the name parts.

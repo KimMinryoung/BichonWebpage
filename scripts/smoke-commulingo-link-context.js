@@ -15,8 +15,10 @@ function person(id, given, family, extra = {}) {
 }
 const people = [person('ford', 'Gerald', 'Ford'), person('henry', 'Henry', 'Black'), person('john', 'John', 'Smith'), person('robert', 'Robert', 'Smith')];
 const personIndex = buildPersonLinkIndex(people, { lang: 'en' });
+// Name-context policy on a surface without a page resolver; reports and
+// diaries add their surname rule on top (asserted at the end).
 function render(text, indexes = { person: personIndex }, options = {}) {
-    return createLinker(indexes, { surface: 'report', ...options }).html(text);
+    return createLinker(indexes, { surface: 'learning', ...options }).html(text);
 }
 assert.match(render('Ford negotiated.'), /people\/ford/); // preserve bare surname
 assert.doesNotMatch(render('Henry Ford negotiated.'), /people\/ford/);
@@ -101,7 +103,7 @@ assert.deepStrictEqual(collected.docs.map(p => p.id), ['manual-only']);
 assert.strictEqual(collected.links.length, 3);
 assert.strictEqual(collected.links[0].anchorId, 'mention-ford-2');
 for (const link of collected.links) assert(collected.html.includes('id="' + link.anchorId + '"'));
-const collision = render('<p id="mention-ford">intro</p><p>Ford spoke.</p>');
+const collision = render('<p id="mention-ford">intro</p><p>Gerald Ford spoke.</p>', undefined, { surface: 'report' });
 assert.match(collision, /id="mention-ford-2"/);
 const preserved = collectLinkedEntities('<a id="custom" href="/commulingo/people/ford">Ford</a>', indexes, { anchors: true });
 assert.strictEqual(preserved.links[0].anchorId, 'custom');
@@ -112,4 +114,11 @@ const context = compile(payload.contextData);
 assert.strictEqual(resolve('Ford', 'ford', 6, 'Henry Ford', context, analyze('Henry Ford', context)), null);
 assert.strictEqual(resolve('Smith', undefined, 0, 'Smith and John Smith', context, analyze('Smith and John Smith', context)), null);
 assert.strictEqual(resolve('Smith', undefined, 11, 'John Smith Smith', context, analyze('John Smith Smith', context)), 'john');
+// Reports and diaries have no page years or cast: a bare surname links only
+// when its expression is anyEra or the passage named the person in full.
+const report = text => render(text, undefined, { surface: 'report' });
+assert.doesNotMatch(report('Ford negotiated.'), /people\/ford/);
+assert.match(report('Gerald Ford arrived. Ford negotiated.'), />Gerald Ford</);
+const anyEra = buildPersonLinkIndex([person('ford', 'Gerald', 'Ford', { linkExpressions: [{ text: 'Ford', lang: 'en', role: 'short', anyEra: true }] })], { lang: 'en' });
+assert.match(render('Ford negotiated.', { person: anyEra }, { surface: 'report' }), /people\/ford/);
 console.log('OK — contextual surnames, expression roles/policies, actual manual links and browser context');

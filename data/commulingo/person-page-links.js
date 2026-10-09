@@ -82,6 +82,19 @@ function pagePeriod(start, end) {
     return { start: s, end: e };
 }
 
+// The passage named this person in full before `start`.
+function namedEarlier(context, start, id) {
+    return (context?.evidence || []).some(span => span.end <= start && span.ids.length === 1 && span.ids[0] === id);
+}
+
+// Reports and diaries have no years or cast to judge a bare surname by, so
+// one links only when its expression is anyEra (레닌, 마르크스) or the passage
+// already named that person in full. Full names link as everywhere else.
+function resolveWithoutPageContext({ match, entry, expression, context, start }) {
+    if (!entry || !surnameForm(match, entry) || expression?.anyEra || namedEarlier(context, start, entry.id)) return entry;
+    return null;
+}
+
 // Returns the linker's `personPage` resolver. It runs after the shared name
 // context has decided (linkify.js) and either keeps that decision, refuses it,
 // or — for a surname the context left unassigned because two people share it —
@@ -105,7 +118,7 @@ function createPersonPageResolver({ period = null, related = [], claimants = nul
     const rivalIds = rivals ? new Set([...rivals, ...claimantIds]) : claimantIds;
     const plausible = person => relatedIds.has(person.id) || !eraConflict(person, period);
     return function resolvePersonPage({ match, entry, expression, index, context, start, text }) {
-        const evidenced = id => (context?.evidence || []).some(span => span.end <= start && span.ids.length === 1 && span.ids[0] === id);
+        const evidenced = id => namedEarlier(context, start, id);
         if (entry) {
             if (!surnameForm(match, entry) || expression?.anyEra || evidenced(entry.id)) return entry;
             return plausible(entry) ? entry : null;
@@ -137,4 +150,4 @@ function createPersonPageResolver({ period = null, related = [], claimants = nul
     };
 }
 
-module.exports = { ERA_MARGIN, PLACE_AFTER, FAMILY_AFTER, eraConflict, lifeOf, pagePeriod, precededByName, surnameForm, namedPeople, createPersonPageResolver };
+module.exports = { ERA_MARGIN, PLACE_AFTER, FAMILY_AFTER, eraConflict, lifeOf, pagePeriod, precededByName, surnameForm, namedPeople, createPersonPageResolver, resolveWithoutPageContext };

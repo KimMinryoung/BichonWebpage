@@ -4,7 +4,8 @@
 //
 // The policy — pass order, first-mention restraint, the Korean guard, mention
 // anchors — lives in linkify.js and is the same one the dictionary and learning
-// pages run. What is particular to reports is here: the { html, people, events,
+// pages run; diaries and posts link through this same surface. What is
+// particular to reports is here: the { html, people, events,
 // topics, terms, docs, links } result. services/report-mentions.js consumes the
 // same rendered links for the reverse direction (entity → related reports).
 

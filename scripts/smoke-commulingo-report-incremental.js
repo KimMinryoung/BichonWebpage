@@ -50,7 +50,9 @@ const reassigned = indexes([makeTerm('beta', 'Alpha')]);
 assert.equal(render('Alpha', reassigned).terms[0].id, 'beta');
 
 // Whole-name context, new given names and ambiguous surnames can veto a link.
-const person = (id, given, family) => ({ id, displayName: given + ' ' + family, names: { given, family, short: given + ' ' + family, display: given + ' ' + family } });
+// anyEra: reports link a bare surname only for such people (person-page-links.js).
+const person = (id, given, family) => ({ id, displayName: given + ' ' + family, names: { given, family, short: given + ' ' + family, display: given + ' ' + family },
+    linkExpressions: [{ lang: 'en', text: family, role: 'short', anyEra: true }] });
 const peopleContext = people => ({ lang: 'en', person: buildPersonLinkIndex(people, { lang: 'en' }) });
 const ford = person('ford', 'Gerald', 'Ford');
 before = peopleContext([ford]);
