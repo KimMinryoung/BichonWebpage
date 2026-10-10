@@ -49,7 +49,7 @@ CommuLingo 보강(빈 정보 찾기 → 조사 → 초안 → 검토 → 반영)
 ## frontend 파이프라인 (Node)
 
 - 작업 상태 테이블 `commulingo_pipeline_*`(jobs, attempts, artifacts, budget, scheduler, publications, materials, mentions)와 `curation_gaps`는 frontend 소유다(migration 288). 출처 캐시(`sources`, `fetch_cache`, `job_sources`)는 leninbot 조사 인프라다.
-- planner의 유예 검사(`personInGrace`·`termInGrace`)와 완료 작업 조회는 migration 358의 `jobs (kind, target)`·`artifacts (job_id)`·`sources_unavailable` 부분 인덱스에 기댄다. 없으면 후보 쿼리가 사람마다 artifacts 전체를 훑어 20초가 걸렸다(2026-10-10). `submit/approved` 부분 인덱스는 계획을 artifacts 우선으로 뒤집어 오히려 느려지므로 넣지 않는다. 남은 지연의 대부분은 PostgreSQL JIT 컴파일(호출당 약 0.5초)이다.
+- planner의 유예 검사(`personInGrace`·`termInGrace`)와 완료 작업 조회는 migration 358의 `jobs (kind, target)`·`artifacts (job_id)`·`sources_unavailable` 부분 인덱스에 기댄다. 없으면 후보 쿼리가 사람마다 artifacts 전체를 훑어 20초가 걸렸다(2026-10-10). `submit/approved` 부분 인덱스는 계획을 artifacts 우선으로 뒤집어 오히려 느려지므로 넣지 않는다. 인덱스 후 남은 지연의 대부분이던 PostgreSQL JIT 컴파일(호출당 약 0.5초)은 서버 `jit=off`로 껐다(leninbot `db_migration_plan.md`). 현재 약 0.13초.
 - 후보 선정(planner): 지금 leninbot `planner.candidates`의 SQL을 그대로 frontend에서 실행한다. 소유자가 직접 읽으므로 MCP 경유가 필요 없다.
 - 단계: discover → research → draft → judge → validate → review → submit. 모델이 필요한 단계(research, draft, judge, review)는 일꾼 작업 하나다. validate·submit은 frontend 로컬(`editorial-pipeline-service.js`)이다.
 - 실행: 주 컨테이너 안 스케줄러(`COMMULINGO_PIPELINE_TICK=1`, `scripts/deploy`가 주 컨테이너에만 설정)가 `tick_seconds`마다 tick한다. advisory lock으로 한 번에 하나만 돈다. `plan_every_ticks`마다 검토 정산·예산 대기 해제·묶음·planner를 돌리고, 매 tick 최대 `batch_limit`개 단계를 진행한다. 설정은 `data/commulingo/pipeline-config.json`(호스트 마운트, 다음 tick부터 반영)이며 `enabled=false`면 아무것도 하지 않는다.
