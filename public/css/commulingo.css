@@ -5956,13 +5956,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     display: grid;
     grid-template-columns: 84px minmax(0, 1fr);
     column-gap: 10px;
-    padding: 6px var(--space-2);
+    padding: 4px var(--space-2);
     margin-inline: calc(-1 * var(--space-2));
     border-radius: 6px;
 }
 .commu-person-activities.is-undated .commu-activity { grid-template-columns: minmax(0, 1fr); }
 .commu-activity-years {
-    padding-top: 3px;
+    padding-top: 2px;
     font-family: 'Courier New', monospace;
     font-size: 0.76rem;
     color: var(--text-muted);
@@ -5971,6 +5971,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-activity-body { min-width: 0; }
 .commu-activity-body p { margin: 0; }
 .commu-activity-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 12px;
+}
+.commu-activity-main {
+    margin: 0;
     font-size: 0.95rem;
     line-height: 1.45;
     color: var(--text-primary);
@@ -5985,18 +5993,19 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-activity-office { font-weight: 400; }
 .commu-activity-org:hover, .commu-activity-office:hover { color: var(--text-primary); text-decoration-color: currentColor; }
-.commu-activity-org .commu-role-icon {
-    display: inline; width: 15px; height: 15px;
-    vertical-align: -2px; margin-right: 5px;
-    color: var(--text-secondary);
+.commu-activity-head .commu-role-icon {
+    display: inline; width: 14px; height: 14px;
+    vertical-align: -2px; margin-right: 4px;
+    color: var(--text-muted);
 }
 .commu-activity-sep { margin: 0 .4em; color: var(--text-muted); }
 .commu-activity-title { color: var(--text-secondary); }
 .commu-activity-function {
-    margin-top: 1px !important;
+    margin-left: auto;
     font-size: 0.78rem;
-    line-height: 1.4;
+    line-height: 1.45;
     color: var(--text-muted);
+    white-space: nowrap;
 }
 .commu-activity-posts {
     list-style: none;
