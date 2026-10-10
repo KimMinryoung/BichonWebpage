@@ -1640,6 +1640,35 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     display: block;
     overflow: visible;
 }
+.commu-docs-page .commu-event-card {
+    display: grid;
+    grid-template-rows: 1.3rem 3.1rem 4.3rem;
+    gap: var(--space-2);
+    height: 12rem;
+    box-sizing: border-box;
+    min-width: 0;
+}
+.commu-docs-page .commu-event-card h2,
+.commu-docs-page .commu-event-card p {
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.commu-docs-page .commu-event-card h2 {
+    line-height: var(--leading-snug);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.commu-docs-page .commu-event-card p {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+.commu-docs-page .commu-event-card .commu-event-period {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .commu-dict-toolbar { margin: -1px 0; }
 .commu-dict-sort { display: grid; grid-template-columns: 1fr 1fr; border: 0; background: none; }
 .commu-dict-sort a {
@@ -1672,6 +1701,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 a.commu-dict-chip { display: inline-block; text-decoration: none; line-height: var(--leading-tight); }
 a.commu-dict-chip:hover { text-decoration: none; }
 
+.commu-docs-page .commu-event-grid,
 .commu-events-page .commu-event-grid { scroll-margin-top: 4.5rem; }
 .commu-dict-index {
     display: flex; gap: .3rem; margin-top: var(--space-2);

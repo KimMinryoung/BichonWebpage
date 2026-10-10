@@ -5,7 +5,7 @@ const path = require('node:path');
 const postcss = require('postcss');
 const sourcePath = path.join(__dirname, '../public/css/commulingo.css');
 const outputPath = path.join(__dirname, '../public/css/commulingo-lists.css');
-const shared = /^(?:commulingo-(?:page|shell|home|hero|total|status|resume|book-groups|books)|commu-(?:sr-only|book-|resume-|updates|people-|person-|office-|lineage-|role-category-|flag(?:-|$)|fate|career-|dict-|search-|scene-chip|topic-link|doc-link|term-(?:group-head|chip|link)|event-(?:grid|card|meta|period|original|category|link)|terms-page|events-page|hub-(?:head|section)|drill-promo)|pos-|is-hidden)/;
+const shared = /^(?:commulingo-(?:page|shell|home|hero|total|status|resume|book-groups|books)|commu-(?:sr-only|book-|resume-|updates|people-|person-|office-|lineage-|role-category-|flag(?:-|$)|fate|career-|dict-|search-|scene-chip|topic-link|doc-link|term-(?:group-head|chip|link)|event-(?:grid|card|meta|period|original|category|link)|terms-page|events-page|docs-page|hub-(?:head|section)|drill-promo)|pos-|is-hidden)/;
 const detail = /^(?:commu-person-(?:detail|markdown|sections|section|activity|activities|event)|commulingo-hero--(?:graph|decision))/;
 function listSelector(selector) {
     if (selector.trim() === '[class*="pos-"]') return true;

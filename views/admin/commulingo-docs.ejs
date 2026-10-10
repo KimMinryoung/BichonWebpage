@@ -53,6 +53,10 @@
                     <label><%= strings.commuLingoViews.adminDocs.kindEn %><input class="ui-control" type="text" name="kindEn" placeholder="Writings &amp; speeches"></label>
                     <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionKo %><textarea class="ui-control" name="descKo" rows="3"></textarea></label>
                     <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.descriptionEn %><textarea class="ui-control" name="descEn" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= en ? 'Card summary (Korean, up to 160 characters)' : '카드 요약 (한국어, 160자 이하)' %><textarea class="ui-control" name="summaryKo" rows="2" maxlength="160"></textarea></label>
+                    <label class="cdocs-wide"><%= en ? 'Card summary (English, up to 360 characters)' : '카드 요약 (영어, 360자 이하)' %><textarea class="ui-control" name="summaryEn" rows="2" maxlength="360"></textarea></label>
+                    <label class="cdocs-wide"><%= en ? 'Editorial notes (Korean)' : '엮은이 주 (한국어)' %><textarea class="ui-control" name="editorialKo" rows="3"></textarea></label>
+                    <label class="cdocs-wide"><%= en ? 'Editorial notes (English)' : '엮은이 주 (영어)' %><textarea class="ui-control" name="editorialEn" rows="3"></textarea></label>
                     <label class="cdocs-wide"><%= strings.commuLingoViews.adminDocs.sourceCitation %><input class="ui-control" type="text" name="source"></label>
                     <label><%= strings.commuLingoViews.adminDocs.bodyLanguage %>
                         <select class="ui-control" name="docLang"><option value="ko">ko</option><option value="en">en</option></select>
@@ -79,8 +83,8 @@
         </div>
 
         <p class="cdocs-hint"><%= en
-            ? 'Changes are written to data/commulingo/docs/ on the host — remember to commit & push afterwards (data-only, no deploy needed).'
-            : '변경은 호스트의 data/commulingo/docs/에 기록됩니다 — 작업 후 커밋 & 푸시하세요 (data-only라 배포는 불필요).' %></p>
+            ? 'Changes are stored in the database with revision history and appear within a minute.'
+            : '변경은 이력과 함께 데이터베이스에 저장되며 1분 이내에 반영됩니다.' %></p>
     </div>
 
     <script src="/js/admin-commulingo-docs.js?v=<%= assetVersion %>"></script>

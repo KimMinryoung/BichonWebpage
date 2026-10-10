@@ -4369,6 +4369,36 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     display: block;
     overflow: visible;
 }
+/* Reference cards reserve identical slots across rows and search results. */
+.commu-docs-page .commu-event-card {
+    display: grid;
+    grid-template-rows: 1.3rem 3.1rem 4.3rem;
+    gap: var(--space-2);
+    height: 12rem;
+    box-sizing: border-box;
+    min-width: 0;
+}
+.commu-docs-page .commu-event-card h2,
+.commu-docs-page .commu-event-card p {
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.commu-docs-page .commu-event-card h2 {
+    line-height: var(--leading-snug);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.commu-docs-page .commu-event-card p {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+.commu-docs-page .commu-event-card .commu-event-period {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 /* Glossary order: two halves of one row between the crumb and the search
    field, sharing their borders (-1px each side) so the three read as a block.
    The current order takes the ui-tab mark, a red underline. */

@@ -161,7 +161,15 @@ var docCourses = doc.courses || [];
     <% } %>
 </p>
 <% } %>
-<div class="doc-body"><%- bodyRestHtml %></div>
+<div class="doc-body"><% if (doc.editorialNotes && (!pagination || pagination.current === 1)) { %>
+<aside class="doc-editorial">
+    <details>
+        <summary><%= en ? 'Editorial notes — translation and editing' : '엮은이 주 — 번역·편집 정보' %></summary>
+        <p><%= doc.editorialNotes %></p>
+    </details>
+</aside>
+<% } %>
+<%- bodyRestHtml %></div>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= strings.commuLingoViews.doc.pages %>">
     <%

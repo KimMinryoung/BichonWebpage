@@ -133,6 +133,7 @@ function docSearchText(raw, lang) {
     return [
         docTitleText(raw),
         localize(raw.kind, lang),
+        localize(raw.summary, lang),
         localize(raw.description, lang),
     ].filter(Boolean).join(' ');
 }
@@ -142,6 +143,8 @@ function presentDoc(raw, lang, resolveDocRefs) {
         ...raw,
         title: localize(raw.title, lang),
         description: localize(raw.description, lang),
+        summary: localize(raw.summary, lang) || '',
+        editorialNotes: localize(raw.editorialNotes, lang) || '',
         kind: localize(raw.kind, lang),
         searchText: docSearchText(raw, lang),
         searchTitleText: docTitleText(raw),

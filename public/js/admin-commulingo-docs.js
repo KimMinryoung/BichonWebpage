@@ -161,6 +161,10 @@
         form.kindEn.value = (doc.kind && doc.kind.en) || '';
         form.descKo.value = (doc.description && doc.description.ko) || '';
         form.descEn.value = (doc.description && doc.description.en) || '';
+        form.summaryKo.value = (doc.summary && doc.summary.ko) || '';
+        form.summaryEn.value = (doc.summary && doc.summary.en) || '';
+        form.editorialKo.value = (doc.editorialNotes && doc.editorialNotes.ko) || '';
+        form.editorialEn.value = (doc.editorialNotes && doc.editorialNotes.en) || '';
         form.source.value = doc.source || '';
         form.docLang.value = doc.docLang || 'ko';
         form.tocExclude.value = (doc.tocExclude || []).join('\n');
@@ -186,6 +190,8 @@
         var patch = {
             title: { ko: form.titleKo.value, en: form.titleEn.value },
             description: { ko: form.descKo.value, en: form.descEn.value },
+            summary: { ko: form.summaryKo.value, en: form.summaryEn.value },
+            editorialNotes: { ko: form.editorialKo.value, en: form.editorialEn.value },
             kind: { ko: form.kindKo.value, en: form.kindEn.value },
             source: form.source.value,
             docLang: form.docLang.value,

@@ -108,7 +108,7 @@ function normalizeRefs(refs, label) {
 }
 
 // Canonical field order for manifest entries, applied on every write.
-const CANONICAL_FIELDS = new Set(['id', 'docLang', 'title', 'description', 'kind', 'source', 'linkExpressions',
+const CANONICAL_FIELDS = new Set(['id', 'docLang', 'title', 'description', 'summary', 'editorialNotes', 'kind', 'source', 'linkExpressions',
     'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt', 'personLinks']);
 
 function canonicalEntry(entry) {
@@ -120,6 +120,14 @@ function canonicalEntry(entry) {
         kind: langPair(entry.kind, { ko: '저작·연설', en: 'Writings & speeches' }),
         source: typeof entry.source === 'string' ? entry.source : '',
     };
+    if (entry.summary !== undefined) {
+        out.summary = langPair(entry.summary);
+        for (const lang of ['ko', 'en']) {
+            const limit = lang === 'ko' ? 160 : 360;
+            if ([...out.summary[lang]].length > limit) throw badRequest(`summary.${lang} must be at most ${limit} characters`);
+        }
+    }
+    if (entry.editorialNotes !== undefined) out.editorialNotes = langPair(entry.editorialNotes);
     for (const lang of ['ko', 'en']) assertHeadword(out.title[lang], `title.${lang}`, { allowEmpty: lang === 'en' });
     if (entry.linkExpressions !== undefined) {
         assertLinkExpressions(entry.linkExpressions);
@@ -198,6 +206,8 @@ function mergeDocMeta(current, patch = {}) {
         docLang: patch.docLang !== undefined ? patch.docLang : current.docLang,
         title: langPair(patch.title, current.title),
         description: langPair(patch.description, current.description),
+        summary: patch.summary !== undefined ? langPair(patch.summary, current.summary) : current.summary,
+        editorialNotes: patch.editorialNotes !== undefined ? langPair(patch.editorialNotes, current.editorialNotes) : current.editorialNotes,
         kind: langPair(patch.kind, current.kind),
         source: patch.source !== undefined ? patch.source : current.source,
         tocExclude: patch.tocExclude !== undefined ? patch.tocExclude : current.tocExclude,
