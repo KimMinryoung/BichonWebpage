@@ -1331,7 +1331,6 @@ a.commu-person-role-tag { transition: background-color 120ms ease, color 120ms e
 a.commu-person-role-tag:hover {
     color: var(--text-primary);
     text-decoration: none;
-    background: color-mix(in srgb, var(--link) 22%, var(--bg-surface));
 }
 
 .commu-person-moment {
@@ -1477,6 +1476,9 @@ a.commu-person-role-tag:hover {
     border-radius: 0;
     margin-top: 18px;
     padding: 18px;
+}
+a.commu-person-role-tag:hover {
+    background: color-mix(in srgb, var(--link) 12%, transparent);
 }
 
 .commu-hub-section {
