@@ -587,7 +587,6 @@ const ko = {
             referenceDocuments: '참고 문헌',
             relatedReports: '관련 보고서',
             report: '보고서',
-            backToCard: '카드로 돌아가기',
             otherNames: '다른 이름',
         },
         personCard: {
@@ -1247,7 +1246,6 @@ const en = {
             referenceDocuments: 'Reference documents',
             relatedReports: 'Related reports',
             report: 'Report',
-            backToCard: 'Back to card',
             otherNames: 'Also known as',
         },
         personCard: {
