@@ -176,8 +176,62 @@ svg {
     margin: 0;
 }
 
-.post-nav-left .ui-inline-form {
-    margin-left: var(--space-2);
+/* Post footer navigation (list, edit/delete, previous/next): each control
+   fills the bar's full height as a cell, like the reference-document pager,
+   divided by hairlines; hover repaints the cell (accent ground, cream text)
+   rather than drawing a button inside the box. */
+.post-nav {
+    align-items: stretch;
+    gap: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.post-nav .ui-action-bar-start,
+.post-nav .ui-action-bar-end {
+    align-items: stretch;
+    gap: 0;
+}
+
+.post-nav .btn {
+    min-height: 2.25rem;
+    padding: 0 var(--space-3);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.post-nav-left > .btn,
+.post-nav-left > .ui-inline-form {
+    border-right: var(--border-width) solid var(--border);
+}
+
+.post-nav-right > .btn {
+    border-left: var(--border-width) solid var(--border);
+}
+
+.post-nav .btn:hover,
+.post-nav .btn:focus-visible {
+    background: var(--accent);
+    color: var(--clr-cream);
+    text-decoration: none;
+}
+
+.post-nav .btn:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+}
+
+.post-nav .btn-danger {
+    color: var(--btn-danger);
+}
+
+.post-nav .btn-danger:hover,
+.post-nav .btn-danger:focus-visible {
+    background: var(--btn-danger);
+    color: #fff;
 }
 
 /* ===== Shared surfaces ===== */
