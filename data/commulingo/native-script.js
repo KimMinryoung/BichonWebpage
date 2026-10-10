@@ -134,8 +134,9 @@ const NATION_SCRIPTS = {
 // Nations absent here use Western
 // "given family". The rule keys on citizenship_code alone: an ethnic
 // Hungarian with Romanian papers (Tőkés) or a Korean with Soviet ones (허가이)
-// follows the citizenship's order, and a mononym or a fused single token
-// (허가이, 마오쩌둥) lives wholly in the family part.
+// follows the citizenship's order. A fused Korean-text name is still stored as
+// family + given (마오 + 쩌둥); only a mononym (푸이, 히로히토) lives wholly in
+// the family part.
 // Ported to leninbot commulingo/people.py — keep the two in
 // sync, and run scripts/audit-person-name-order.js after touching either.
 const FAMILY_FIRST = {
@@ -157,6 +158,24 @@ function familyFirstJoiner(code, lang) {
     const rule = Object.prototype.hasOwnProperty.call(FAMILY_FIRST, key) ? FAMILY_FIRST[key] : null;
     if (!rule) return null;
     return rule[lang] !== undefined ? rule[lang] : null;
+}
+
+// Korean, Chinese, Vietnamese and Singaporean names: Korean text fuses the
+// family name onto the given name (마오쩌둥). The parts are still stored apart
+// (마오 + 쩌둥, like Mao + Zedong); only a mononym or pen name with no
+// surname to split off (푸이, 또흐우) keeps the whole name in family. These
+// surnames are shared by millions (마오, 저우, 쯔엉; Mao, Zhou, Trường), so
+// the linker never links one bare.
+function fusesFamilyName(code) {
+    return familyFirstJoiner(code, 'ko') === '';
+}
+
+// Korean names always carry a surname: 허가이 is 허 + 가이 (Ho + Ka-i), never
+// one token, so a Korean citizen's given part is never empty.
+const SURNAME_REQUIRED = new Set(['korea', 'north-korea', 'south-korea']);
+
+function requiresSurname(code) {
+    return SURNAME_REQUIRED.has(typeof code === 'string' ? code.trim() : '');
 }
 
 // Nations whose people carry no surname. The name as people call it lives
@@ -244,6 +263,8 @@ module.exports = {
     NATION_SCRIPTS,
     FAMILY_FIRST,
     familyFirstJoiner,
+    fusesFamilyName,
+    requiresSurname,
     SINGLE_NAME,
     isSingleNameNation,
     isRegnalNumber,

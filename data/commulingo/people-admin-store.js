@@ -14,7 +14,7 @@ const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, n
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems } = require('./person-life-years');
-const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate } = require('./people-admin-validation');
+const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate } = require('./people-admin-validation');
 
 async function officeIdSet(client) {
     const { rows } = await client.query('SELECT id FROM commulingo_offices');
@@ -308,6 +308,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         }
         assertSingleName(partsKo, 'ko', citizenship.code);
         assertSingleName(partsEn, 'en', citizenship.code);
+        assertFamilyFirstParts(partsKo, partsEn, citizenship.code);
         assertNoPatronymicForNameOrder(patronymicState, citizenship.code);
         assertPatronymicHasGiven(partsKo, patronymicState.ko, 'ko');
         assertPatronymicHasGiven(partsEn, patronymicState.en, 'en');
@@ -506,6 +507,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             }
             assertSingleName(newPartsKo, 'ko', citizenship.code);
             assertSingleName(newPartsEn, 'en', citizenship.code);
+            assertFamilyFirstParts(newPartsKo, newPartsEn, citizenship.code);
             set('name_ko', newPartsKo.full);
             set('name_en', newPartsEn.full);
             set('given_name_ko', newPartsKo.given);

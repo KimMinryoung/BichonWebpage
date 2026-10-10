@@ -14,8 +14,11 @@
 //      carries parts (the patronymic is inserted at render time, so the stored
 //      string never holds it; rows with no parts at all are counted, not
 //      failed — the legacy full name is what the page shows for them).
-//   2. No row is given-only: a single token, a mononym or a fused East Asian
-//      name lives in family, never given (허가이, 히로히토).
+//   2. No row is given-only: a single token or a mononym lives in family,
+//      never given (히로히토). A Korean/Chinese/Vietnamese name the Korean text
+//      fuses is still split (마오 + 쩌둥, like Mao + Zedong): both languages
+//      agree on whether there is a given part, and a Korean name always has
+//      one (허 + 가이). Only a mononym or pen name stays whole (푸이, 또흐우).
 //   3. The native-name line (`cyrillic`) matches the family-first shape:
 //      Latin-script family-first nations (hungary, vietnam) lead with the family
 //      name — 'Király Béla', not 'Béla Király'; CJK-script names carry no
@@ -34,6 +37,7 @@ require('dotenv').config();
 const db = require('../config/database');
 const { familyFirstJoiner, isSingleNameNation, isRegnalNumber, scriptsFor, detectScripts } = require('../data/commulingo/native-script');
 const { composeFromParts } = require('../data/commulingo/people-standard');
+const { familyFirstPartsProblem } = require('../data/commulingo/people-admin-validation');
 
 const CJK = new Set(['han', 'kana', 'hangul']);
 
@@ -83,11 +87,11 @@ function firstToken(text) {
                     problems.push(`${tag}: name_${lang} "${stored}" but parts compose to "${composed}"`
                         + ` (given "${given}", family "${family}")`);
                 }
-                // A lone token is a family name (or a mononym / fused East
-                // Asian name) by convention — splitFullName in the admin store
-                // files it there, and people-linkify offers the family part as
-                // the bare alias. A given-only row (허가이, 히로히토) is the
-                // shape a curator reaches for when the order rule does not fit.
+                // A lone token is a family name (or a mononym) by convention —
+                // splitFullName in the admin store files it there, and
+                // people-linkify offers the family part as the bare alias. A
+                // given-only row (히로히토) is the shape a curator reaches for
+                // when the order rule does not fit.
                 if (given && !family) {
                     problems.push(`${tag}: given_name_${lang} "${given}" with no family_name_${lang}`
                         + ' — a single token, mononym or fused name goes in family, not given');
@@ -100,6 +104,11 @@ function firstToken(text) {
                 }
             }
             if (!anyParts) withoutParts += 1;
+            const partsProblem = anyParts && familyFirstPartsProblem(
+                { given: (row.given_name_ko || '').trim(), family: (row.family_name_ko || '').trim() },
+                { given: (row.given_name_en || '').trim(), family: (row.family_name_en || '').trim() },
+                code);
+            if (partsProblem) problems.push(`${tag}: ${partsProblem}`);
 
             // 5. Patronymics render between given and family in Western order.
             const patronymic = [row.patronymic_ko, row.patronymic_en, row.cyrillic_patronymic]

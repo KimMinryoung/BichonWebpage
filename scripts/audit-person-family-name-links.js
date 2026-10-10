@@ -10,13 +10,9 @@
 require('dotenv').config();
 const { getLinkIndexes } = require('../data/commulingo/linkify');
 const { loadLinkBlocklist, neverLinkAliases } = require('../data/commulingo/link-blocklist');
+const { linkableFamilyNameOf } = require('../data/commulingo/family-name');
 
 const lang = process.argv[2] === 'en' ? 'en' : 'ko';
-
-// The same part the index offers as a bare alias.
-function familyNameOf(person) {
-    return String((person.names && person.names.family) || '').trim();
-}
 
 (async () => {
     const { person: index, standardized } = await getLinkIndexes(lang);
@@ -38,7 +34,7 @@ function familyNameOf(person) {
     const linked = [];
     const refused = [];
     people.forEach(p => {
-        const family = familyNameOf(p);
+        const family = linkableFamilyNameOf(p);
         if (!family) return;
         const entry = index.byAlias[family];
         const declared = ((p.aliases && p.aliases[lang]) || []).includes(family);

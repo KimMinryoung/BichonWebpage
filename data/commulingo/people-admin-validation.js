@@ -1,4 +1,4 @@
-const { checkNativeScript, familyFirstJoiner, isSingleNameNation, isRegnalNumber } = require('./native-script');
+const { checkNativeScript, familyFirstJoiner, fusesFamilyName, requiresSurname, isSingleNameNation, isRegnalNumber } = require('./native-script');
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { citizenshipOnlyCodes } = require('./nationality-policy.json');
 const { canonicalNationalityLabel } = require('./nationality-filter');
@@ -92,7 +92,8 @@ function collapseSpaces(value) {
 function splitFullName(full, lang, citizenshipCode) {
     const name = collapseSpaces(full);
     if (!name) return { given: '', family: '' };
-    // Single-token names (East Asian fused names, mononyms) live in family.
+    // Single-token names (mononyms, and fused East Asian names until
+    // familyFirstPartsProblem rejects them) live in family.
     if (!name.includes(' ')) return { given: '', family: name };
     // No-surname nations keep the whole name in family (멩기스투 하일레 마리암).
     if (isSingleNameNation(citizenshipCode)) return { given: '', family: name };
@@ -112,6 +113,32 @@ function composeFullName(given, family, lang, citizenshipCode) {
     const joiner = familyFirstJoiner(citizenshipCode, lang);
     if (joiner !== null && given && family) return `${family}${joiner}${given}`;
     return [given, family].filter(Boolean).join(' ');
+}
+
+// A fused Korean-text name (마오쩌둥) cannot be split from the string, so it
+// arrives whole in family while its English parts split (Mao + Zedong): the
+// two languages must agree on whether there is a given part. A Korean name
+// always has one (허 + 가이, not 허가이 / "Ho Ka-i" whole). Returns '' or the
+// problem; the audit reuses it for stored rows.
+function familyFirstPartsProblem(partsKo, partsEn, citizenshipCode) {
+    if (!fusesFamilyName(citizenshipCode)) return '';
+    if (!!partsKo.given !== !!partsEn.given) {
+        return `'${citizenshipCode}' name parts disagree: given "${partsKo.given}" / "${partsEn.given}" `
+            + `(family "${partsKo.family}" / "${partsEn.family}") — send givenName and familyName for both `
+            + 'languages (마오쩌둥: familyName {ko: "마오", en: "Mao"}, givenName {ko: "쩌둥", en: "Zedong"}); '
+            + 'a mononym or pen name with no surname (푸이, 또흐우) leaves givenName empty in both';
+    }
+    if (requiresSurname(citizenshipCode) && !partsKo.given) {
+        return `'${citizenshipCode}' names have a surname: "${partsKo.family}" / "${partsEn.family}" has no `
+            + 'given part — send givenName and familyName for both languages '
+            + '(허가이: familyName {ko: "허", en: "Ho"}, givenName {ko: "가이", en: "Ka-i"})';
+    }
+    return '';
+}
+
+function assertFamilyFirstParts(partsKo, partsEn, citizenshipCode) {
+    const problem = familyFirstPartsProblem(partsKo, partsEn, citizenshipCode);
+    if (problem) throw badRequest(problem);
 }
 
 // A no-surname nation (Mongolia, Ethiopia, Eritrea, Somalia) keeps the name
@@ -205,4 +232,4 @@ function assertIdKeepsLetters(id, nameEn) {
     }
 }
 
-module.exports = { foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate };
+module.exports = { foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, familyFirstPartsProblem, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate };

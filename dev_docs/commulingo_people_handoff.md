@@ -122,8 +122,15 @@ truth and the stored string only has to agree with them.
 
 The rule keys on `citizenship_code` alone. An ethnic Hungarian with Romanian
 papers (Tőkés) or a Korean with Soviet ones (허가이) follows the citizenship's
-order; a mononym or a fused single token (히로히토, 허가이, 마오쩌둥) lives wholly
-in `family_name_*`, never in `given_name_*`. The native line keeps the nation's
+order. A name the Korean text fuses is still stored in parts (마오 + 쩌둥,
+like Mao + Zedong): for the fused nations both languages agree on whether there
+is a given part, and a Korean name always has one (허 + 가이). Only a mononym or
+pen name stays whole in `family_name_*` (히로히토, 푸이, 또흐우), never in
+`given_name_*`. The Admin store rejects a fused name sent as `name` alone
+(`familyFirstPartsProblem`, 2026-10-10: 23 rows such as 마오쩌둥, 김일성 and
+허가이 had the whole Korean name in `family_name_ko`). The bare surname of a
+fused nation (마오, 저우, 쯔엉; Mao, Zhou, Trường) never links: it is shared by
+millions (`linkableFamilyNameOf`). The native line keeps the nation's
 own order (`Kádár János`, `Hồ Chí Minh`) and CJK names are written solid
 (`近衞文麿`). `scripts/audit-person-name-order.js` checks every row against all
 of this and exits 1 on a mismatch; migration 156 (2026-09-01) is the case that

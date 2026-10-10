@@ -2,7 +2,7 @@ const { expressionCandidates } = require('./link-expressions');
 const nameContext = require('../../public/js/commulingo-name-context');
 const { registerAlias } = require('./alias-registry');
 const { createLiteralPattern } = require('./literal-pattern');
-const { familyNameOf } = require('./family-name');
+const { familyNameOf, linkableFamilyNameOf } = require('./family-name');
 // The person alias index, plus the HTML-walking and escaping helpers every
 // index shares. Who links where, in what order, and how one link is written is
 // linkify.js; this file only answers which strings belong to which person.
@@ -178,9 +178,11 @@ function buildPersonLinkIndex(people, options = {}) {
         // too, and the checks below still decide: one that two people share
         // (야코블레프) is refused as ambiguous, one that is also an ordinary word
         // (레비, 리드) is on the never-link list, and a compound containing one
-        // (레닌그라드) is consumed by the blocklist first. Single-word names — 박헌영,
-        // 마오쩌둥 — are their own family name field, so nothing changes for them.
-        candidates.push(familyNameOf(person));
+        // (레닌그라드) is consumed by the blocklist first. Korean, Chinese and
+        // Vietnamese surnames (마오, 저우; Mao, Zhou) are never offered: one is
+        // shared by millions, and Korean prose fuses it to the given name.
+        const linkableFamily = linkableFamilyNameOf(person);
+        candidates.push(linkableFamily);
         expressionCandidates(person, lang, candidates).forEach(expression => {
             const raw = expression.text;
             const alias = typeof raw === 'string' ? raw.trim() : '';
@@ -191,7 +193,7 @@ function buildPersonLinkIndex(people, options = {}) {
             const trusted = trustedFormsFor(person.id, lang).includes(alias);
             expressions[person.id + ':' + alias] = expression;
             const short = expression.role === 'short' || (expression.role === 'legacy'
-                && alias === familyNameOf(person) && /\s/.test(person.displayName || person.names?.display || ''));
+                && alias === linkableFamily && /\s/.test(person.displayName || person.names?.display || ''));
             if (short) {
                 const ids = contextData.shorts[alias] || (contextData.shorts[alias] = []);
                 if (!ids.includes(person.id)) ids.push(person.id);

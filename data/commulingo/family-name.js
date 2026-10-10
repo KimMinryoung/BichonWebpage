@@ -1,3 +1,5 @@
+const { fusesFamilyName } = require('./native-script');
+
 // Regnal numbers are stored in the family-name field for monarchs but are never
 // a name a reader looks up: '니콜라이 2세' must not put '2세' in the index, nor
 // 'Nicholas II' an 'II'. Anything carrying brackets or a comma is a note that
@@ -15,4 +17,12 @@ function familyNameOf(person) {
     return name;
 }
 
-module.exports = { familyNameOf };
+// The family name the linker may link by itself. Korean, Chinese and
+// Vietnamese surnames are shared by millions — 마오, 저우, 쯔엉; Mao, Zhou,
+// Trường — so a bare one is never taken for one person.
+function linkableFamilyNameOf(person) {
+    const code = (person.citizenship && person.citizenship.code) || '';
+    return fusesFamilyName(code) ? '' : familyNameOf(person);
+}
+
+module.exports = { familyNameOf, linkableFamilyNameOf };
