@@ -144,7 +144,10 @@ function presentDoc(raw, lang, resolveDocRefs) {
         title: localize(raw.title, lang),
         description: localize(raw.description, lang),
         summary: localize(raw.summary, lang) || '',
-        editorialNotes: localize(raw.editorialNotes, lang) || '',
+        // Never borrowed from the other language: an editorial note says what
+        // this edition did, and an English note on a Korean page (or the
+        // reverse) reads as a stray placeholder.
+        editorialNotes: typeof raw.editorialNotes === 'string' ? raw.editorialNotes : (raw.editorialNotes?.[lang] || ''),
         kind: localize(raw.kind, lang),
         searchText: docSearchText(raw, lang),
         searchTitleText: docTitleText(raw),

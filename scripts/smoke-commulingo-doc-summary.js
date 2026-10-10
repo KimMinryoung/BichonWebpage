@@ -19,6 +19,7 @@ assert.deepEqual(mergeDocMeta(current, { editorialNotes: { ko: '' } }).editorial
 const card = presentDoc(current, 'ko', () => ({}));
 assert.equal(card.summary, '짧은 요약');
 assert.equal(card.editorialNotes, '전사 오류 수정');
+assert.equal(presentDoc({ ...current, editorialNotes: { ko: '', en: 'Transcription correction' } }, 'ko', () => ({})).editorialNotes, '');
 assert(card.searchText.includes('짧은 요약'));
 assert(!card.searchText.includes('전사 오류 수정'));
 console.log('doc summaries: bilingual merge, length limits, overview and editorial separation');
