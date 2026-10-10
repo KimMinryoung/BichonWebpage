@@ -3475,10 +3475,11 @@ a.commu-person-role-tag:hover {
     grid-row: 1;
 }
 
-/* The head card's edge already separates it from the first section, so that
+/* The head card hangs from the crumb, which the page marks attached so the two
+   share one rule. Its edge already separates it from the first section, so that
    section sits right under it: no rule of its own, and a negative margin
    takes back the shell's flex gap. */
-.commu-person-detail-head { margin-bottom: 0; }
+.commu-person-detail-head { margin-top: 0; margin-bottom: 0; }
 .commu-person-detail-head + .commu-person-detail-section {
     border-top: 0;
     margin-top: -8px;
@@ -5851,7 +5852,12 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
    Options are .commu-dict-chip links. The script swaps #people-browser. */
 .commu-people-browser { margin-top: var(--space-4); }
 .commu-dict-shell > .commu-people-browser { margin-top: 0; }
-.commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+/* The filter bar sits midway between the search above it and the first box
+   below it: one margin on each side, and whatever follows (in the shell or
+   after the browser that holds the bar) drops its own top margin. */
+.commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-5); }
+.commu-people-filterbar + *,
+.commu-people-browser:has(> .commu-people-filterbar:last-child) + * { margin-top: 0; }
 .commu-people-facet > summary {
     display: inline-flex; align-items: center; gap: var(--space-2);
     min-height: var(--control-height); padding: 0 var(--space-3);

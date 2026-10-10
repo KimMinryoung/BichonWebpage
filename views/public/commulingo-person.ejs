@@ -18,7 +18,8 @@
                 { label: strings.commuLingoViews.person.people, href: '/commulingo/people#p-' + person.id },
                 { label: person.name },
             ],
-            dictJump: 'people' }) %>
+            dictJump: 'people',
+            attached: true }) %>
 
         <header class="commu-person-detail-head<%= person.position ? ' pos-' + person.position : '' %>">
             <div class="commu-person-detail-top">
