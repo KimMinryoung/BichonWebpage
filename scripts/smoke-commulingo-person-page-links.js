@@ -98,6 +98,30 @@ assert.equal(eraConflict(people[4], { start: 2000, end: 2001 }), null);
 assert.equal(eraConflict(people[0], { start: 1985, end: 1991 }), 'died-before-period');
 assert.equal(eraConflict(people[1], { start: 1871, end: 1871 }), 'born-after-period');
 
+// Namesakes told apart by a display-name qualifier (2026-10-10): the bare full
+// name goes to the one bearer the page lists, and nowhere when none or both are.
+const qualified = (id, given, family, qualifier, years) => ({
+    ...person(id, given, family, years), displayName: `${given} ${family} (${qualifier})`,
+    names: { given, family, short: `${given} ${family} (${qualifier})`, display: `${given} ${family} (${qualifier})` },
+});
+const namesakeIndex = buildPersonLinkIndex([
+    qualified('otto-braun', '오토', '브라운', '코민테른 고문', '1900–1974'),
+    qualified('otto-braun-prussia', '오토', '브라운', '프로이센 총리', '1872–1955'),
+    person('kuznetsov-navy', '니콜라이', '쿠즈네초프', '1904–1974'),
+    qualified('kuznetsov-spy', '니콜라이', '쿠즈네초프', '첩보원', '1911–1944'),
+], { lang: 'ko' });
+const renderNamesake = (text, page) => createLinker({ person: namesakeIndex }, {
+    surface: 'event', personPage: createPersonPageResolver(page),
+}).plain(text);
+assert.match(renderNamesake('오토 브라운의 내각이 해임되었다.', { related: ['otto-braun-prussia'] }), /people\/otto-braun-prussia/);
+assert.match(renderNamesake('오토 브라운이 장정에 동행했다.', { related: ['otto-braun'] }), /people\/otto-braun"/);
+assert.doesNotMatch(renderNamesake('오토 브라운이 말했다.', {}), /people\//);
+assert.doesNotMatch(renderNamesake('오토 브라운이 말했다.', { related: ['otto-braun', 'otto-braun-prussia'] }), /people\//);
+assert.match(renderNamesake('오토 브라운 (프로이센 총리)의 내각.', {}), /people\/otto-braun-prussia/);
+// An unqualified owner keeps the bare name unless the page lists the other.
+assert.match(renderNamesake('니콜라이 쿠즈네초프 제독.', {}), /people\/kuznetsov-navy/);
+assert.match(renderNamesake('니콜라이 쿠즈네초프가 위장했다.', { related: ['kuznetsov-spy'] }), /people\/kuznetsov-spy/);
+
 // anyEra is a flag, not a value.
 assertLinkExpressions([{ lang: 'ko', text: '레닌', role: 'short', policy: 'auto', anyEra: true }]);
 assert.throws(() => assertLinkExpressions([{ lang: 'ko', text: '레닌', role: 'short', policy: 'auto', anyEra: false }]), /anyEra/);

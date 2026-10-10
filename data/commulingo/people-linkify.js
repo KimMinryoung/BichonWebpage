@@ -221,6 +221,30 @@ function buildPersonLinkIndex(people, options = {}) {
         });
     });
 
+    // Namesakes told apart only by a qualifier in their display name: 오토 브라운
+    // (코민테른 고문) and 오토 브라운 (프로이센 총리), or the navy's 니콜라이
+    // 쿠즈네초프 beside 니콜라이 쿠즈네초프 (첩보원). Prose writes the bare name,
+    // which no card owns alone, so it stays in the pattern and `namesakes` lists
+    // who may bear it; a page that lists exactly one of them settles it
+    // (person-page-links.js). Elsewhere it links as before: to an unqualified
+    // owner if there is one, otherwise to nobody.
+    const namesakes = Object.create(null);
+    list.forEach(person => {
+        if (!person || !person.id) return;
+        const display = (person.displayName || person.names?.display || '').trim();
+        const bare = (display.match(/^(.*\S)\s+\([^()]+\)$/u) || [])[1] || display;
+        if (/\s/.test(bare)) (namesakes[bare] || (namesakes[bare] = new Set())).add(person.id);
+    });
+    for (const bare of Object.keys(namesakes)) {
+        if (namesakes[bare].size < 2) { delete namesakes[bare]; continue; }
+        namesakes[bare] = [...namesakes[bare]];
+        if (!Object.hasOwn(byAlias, bare)) {
+            byAlias[bare] = null;
+            tokens.push(bare);
+        }
+    }
+    contextData.namesakes = namesakes;
+
     // BLOCKED tokens join the alternation so they are consumed before the alias
     // inside them; longest-first keeps multi-word names and compounds ahead of
     // their short forms.

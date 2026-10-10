@@ -217,6 +217,10 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 - 후속: 새로 승인한 「삼부회 제3신분」이 「삼부회 제3신분 대표」에서 삼부회 링크를 가로채 검색 전용으로 돌렸다. 「East German uprising of 1953」은 용어를 대표로 명시 검토했다. 적용 후 `audit-commulingo-link-ambiguity.js`: 표현 13,187개, 미검토 0, 검토 후보 0.
 - 운영 전수 감사(적용 전 85,280 → 적용 후 85,462 링크): 순수 제거 256(대부분 시대 검사로 걸러진 성 단독 오연결), 순수 추가 434(새로 승인한 용어 별칭 240, 사건·용어의 공유 성 해소 151 등). 기록은 `temp_dev/commulingo-rendered-links/`.
 
+## 2026-10-10 표시명 구분어로 가른 동명이인
+
+같은 이름의 두 사람은 위키백과처럼 표시명 끝에 괄호 구분어를 달고 id에 영어 구분어를 붙인다(`otto-braun` 「오토 브라운 (코민테른 고문)」, `otto-braun-prussia` 「오토 브라운 (프로이센 총리)」; 선례 `nikolai-kuznetsov-spy`). 구분어가 붙은 카드는 링크 인덱스에 구분어 붙은 이름만 올라가서, 본문의 맨 「오토 브라운」은 어느 카드에도 걸리지 않게 되었다. 이제 `people-linkify.js`가 구분어를 뗀 이름이 같은 카드들을 `contextData.namesakes`로 묶어 그 맨 이름을 패턴에 남기고(주인 없음), `person-page-links.js`의 페이지 판정이 사건·용어의 인물 관계(인물 페이지는 claimants)에 그중 한 사람만 있을 때 그 사람에게 잇는다. 둘 다 없거나 둘 다 있으면 구분어 없는 주인(쿠즈네초프 해군 제독처럼)이 있을 때만 그에게, 없으면 잇지 않는다. 보고서·일기처럼 페이지 문맥이 없는 화면은 잇지 않는다. 운영 데이터의 해당 묶음은 오토 브라운 한 쌍이다(사용자 결정 「b」, `smoke-commulingo-person-page-links.js`에 사례).
+
 ### 전수 렌더링 감사
 
 `scripts/audit-commulingo-rendered-links.js`는 실행 중인 서버의 사이트맵에서 인물·용어·사건·문헌 페이지(한영, 문헌은 `?p=` 전 페이지)를 받아 엔진이 단 링크(`commu-*-link`)와 앞뒤 40자를 모은다. `--diff a b`는 추가·제거 링크를 비교한다. 순서가 밀린 같은 링크는 제거+추가 한 쌍으로 보일 수 있다. 일일 감사(`scripts/audit-commulingo-links-daily`, 40분 제한)는 이것도 실행해 `temp_dev/commulingo-rendered-links/{latest,previous}.json`과 `daily-diff.txt`를 남긴다. 코드 변경 검증은 운영과 dev-preview를 함께 수집해 비교한다.

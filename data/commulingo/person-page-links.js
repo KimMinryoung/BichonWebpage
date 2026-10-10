@@ -119,6 +119,15 @@ function createPersonPageResolver({ period = null, related = [], claimants = nul
     const plausible = person => relatedIds.has(person.id) || !eraConflict(person, period);
     return function resolvePersonPage({ match, entry, expression, index, context, start, text }) {
         const evidenced = id => namedEarlier(context, start, id);
+        // A full name two cards share (namesakes, people-linkify.js) goes to
+        // the one bearer the page lists; with none or both listed it keeps
+        // its unqualified owner, if any.
+        const bearers = index.context?.namesakes?.[match];
+        if (bearers) {
+            const listed = bearers.filter(id => id !== self && claimantIds.has(id) && index.byId[id]);
+            if (listed.length === 1) return index.byId[listed[0]];
+            if (!entry) return null;
+        }
         if (entry) {
             if (!surnameForm(match, entry) || expression?.anyEra || evidenced(entry.id)) return entry;
             return plausible(entry) ? entry : null;
