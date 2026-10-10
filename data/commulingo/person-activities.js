@@ -65,13 +65,15 @@ function assertNoNewLegacyBasis(next, stored = []) {
     }
 }
 
+const TITLE_MAX = { ko: 40, en: 80 };
+
 function validateActivities(value, sources = [], { officeIds } = {}) {
     if (!Array.isArray(value) || !value.length || value.length > 30) throw badRequest('activities must contain 1–30 documented activities');
     if (value.filter(a => a?.primary === true).length !== 1) throw badRequest('activities requires exactly one primary activity');
     const seen = new Set();
     for (const a of value) {
         if (!a || typeof a !== 'object' || Array.isArray(a)) throw badRequest('invalid activity');
-        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','startYear','endYear','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
+        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','title','startYear','endYear','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
         if (!functions.has(a.functionId)) throw badRequest('unknown activity functionId');
         if (!['confirmed','independent','unresolved'].includes(a.affiliationStatus)) throw badRequest('activity affiliationStatus is required');
         if (a.affiliationStatus === 'confirmed' ? !affiliations.has(a.affiliationId) : a.affiliationId != null) throw badRequest('activity affiliationId must match its confirmation status');
@@ -81,6 +83,17 @@ function validateActivities(value, sources = [], { officeIds } = {}) {
         if (a.officeId != null) {
             if (typeof a.officeId !== 'string' || (officeIds && !officeIds.has(a.officeId))) throw badRequest('unknown activity officeId');
             if (!OFFICE_AFFILIATIONS.has(a.affiliationId)) throw badRequest('activity officeId requires a Soviet state, Soviet party or Comintern affiliation');
+        }
+        // The post held (바이에른 총리 겸 외무장관): a display name, never parsed.
+        // Offices with their own page are officeId; this names any other post.
+        if (a.title != null) {
+            const t = a.title;
+            if (!['service','employment'].includes(a.relation)) throw badRequest('activity title names a post: only for service or employment');
+            if (!t || typeof t !== 'object' || Array.isArray(t) || Object.keys(t).some(k => !['ko','en'].includes(k))
+                || !['ko','en'].every(k => typeof t[k] === 'string' && t[k].trim() && t[k] === t[k].trim())
+                || [...t.ko].length > TITLE_MAX.ko || [...t.en].length > TITLE_MAX.en) {
+                throw badRequest(`activity title must be {ko, en}, at most ${TITLE_MAX.ko}/${TITLE_MAX.en} characters`);
+            }
         }
         if (typeof a.primary !== 'boolean') throw badRequest('activity primary must be boolean');
         for (const key of ['startYear','endYear']) if (a[key] != null && (!Number.isInteger(a[key]) || a[key] < -3000 || a[key] > 2200)) throw badRequest('invalid activity year');
@@ -149,7 +162,7 @@ function mergeMemberships(rows) {
         // An open membership stays open; otherwise the row ends with its last year.
         const endYear = m.endYear == null && m.startYear != null ? null : ends.length ? Math.max(...ends) : null;
         merged.set(m, { ...m, primary: all.some(a => a.primary), startYear, endYear,
-            posts: posts.filter(s => s.officeId || s.startYear !== startYear || s.endYear !== endYear) });
+            posts: posts.filter(s => s.officeId || s.title || s.startYear !== startYear || s.endYear !== endYear) });
     }
     return rows.flatMap(a => merged.has(a) ? [merged.get(a)] : used.has(a) ? [] : [a]);
 }
@@ -157,7 +170,8 @@ function mergeMemberships(rows) {
 // officeTitles: { [officeId]: { ko, en } } from commulingo_offices.
 function displayActivities(raw, lang, officeTitles = {}) {
     const office = a => ({ officeLabel: a.officeId ? localize(officeTitles[a.officeId], lang) || '' : '',
-        officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '' });
+        officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '',
+        titleLabel: a.title ? localize(a.title, lang) : '' });
     return mergeMemberships((raw || []).filter(a => functions.has(a.functionId))).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,

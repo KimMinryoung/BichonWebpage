@@ -44,6 +44,13 @@ assert.equal(displayActivities([membership, { ...office, affiliationId: 'soviet-
 // not overlap the office (rejoining later) stays its own row.
 assert.deepEqual(displayActivities([membership, { ...office, startYear: 1930, endYear: 1960 }], 'ko')[0].posts, []);
 assert.equal(displayActivities([{ ...membership, startYear: 1970, endYear: 1975 }, office], 'ko').length, 2);
+// A post may carry its name; it shows on the row or, under a membership, on the post line.
+const titled = { ...office, title: { ko: '바이에른 총리', en: 'Minister-President of Bavaria' } };
+assert.doesNotThrow(() => validateActivities([{ ...primary, relation: 'service', title: titled.title }], sources));
+assert.throws(() => validateActivities([{ ...primary, title: titled.title }], sources), /only for service or employment/);
+assert.throws(() => validateActivities([{ ...primary, relation: 'service', title: { ko: '총리' } }], sources), /title must be/);
+assert.equal(displayActivities([titled], 'en')[0].titleLabel, 'Minister-President of Bavaria');
+assert.deepEqual(displayActivities([membership, { ...titled, startYear: 1930, endYear: 1960 }], 'ko')[0].posts.map(p => p.titleLabel), ['바이에른 총리']);
 // Scholarship and arts are usually done without serving a state or party: an
 // unresolved affiliation there is not a research gap.
 for (const functionId of ['scholarship', 'arts']) {

@@ -65,10 +65,11 @@
             <% activities.forEach(function(a) { %>
                 <li<% if (a.primary) { %> class="is-primary"<% } %>><% if (activitiesDated) { %><span class="commu-career-year"><%= a.years %></span><% } %>
                     <span><a class="commu-person-activity-link" href="<%= a.href %>"><%= a.label %><% if (a.affiliationLabel) { %> · <span class="commu-person-affiliation"><% if (a.affiliationIcon) { %><%- roleIconSvg(a.affiliationIcon) %><% } %><%= a.affiliationLabel %></span><% } %></a>
+                    <% if (a.titleLabel) { %> · <span class="commu-person-activity-title"><%= a.titleLabel %></span><% } %>
                     <% if (a.officeLabel) { %> · <a class="commu-person-office-link" href="<%= a.officeHref %>"><%= a.officeLabel %></a><% } %>
                     <% if (a.primary) { %><span class="commu-person-activity-primary"><%= en ? 'Main' : '대표' %></span><% } %>
                     <%# Posts held in the organisation, under the membership span. %>
-                    <% a.posts.forEach(function(p) { %><span class="commu-person-activity-post"><% if (p.officeLabel) { %><a class="commu-person-office-link" href="<%= p.officeHref %>"><%= p.officeLabel %></a><% } else { %><%= en ? 'Office' : '직책' %><% } %> <%= p.years %></span><% }) %>
+                    <% a.posts.forEach(function(p) { %><span class="commu-person-activity-post"><% if (p.titleLabel) { %><%= p.titleLabel %><% } %><% if (p.officeLabel) { %><%= p.titleLabel ? ' · ' : '' %><a class="commu-person-office-link" href="<%= p.officeHref %>"><%= p.officeLabel %></a><% } %><% if (!p.titleLabel && !p.officeLabel) { %><%= en ? 'Office' : '직책' %><% } %> <%= p.years %></span><% }) %>
                     </span></li>
             <% }) %>
             </ul>
