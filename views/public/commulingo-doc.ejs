@@ -161,11 +161,20 @@ var docCourses = doc.courses || [];
     <% } %>
 </p>
 <% } %>
-<div class="doc-body"><% if (doc.editorialNotes && (!pagination || pagination.current === 1)) { %>
+<div class="doc-body"><%
+// Existing editions carry some of these notes in their editorial box already.
+// Keep those in place and show only metadata notes absent from that box.
+var editorialText = ((bodyTopHtml || '') + (bodyRestHtml || ''))
+    .match(/<aside\b[^>]*class="doc-editorial"[^>]*>[\s\S]*?<\/aside>/g);
+editorialText = (editorialText || []).join(' ').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
+var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\s+/)
+    .filter(function(sentence) { return sentence && !editorialText.includes(sentence); }).join(' ');
+%>
+<% if (extraEditorialNotes && (!pagination || pagination.current === 1)) { %>
 <aside class="doc-editorial">
     <details>
         <summary><%= en ? 'Editorial notes — translation and editing' : '엮은이 주 — 번역·편집 정보' %></summary>
-        <p><%= doc.editorialNotes %></p>
+        <p><%= extraEditorialNotes %></p>
     </details>
 </aside>
 <% } %>
