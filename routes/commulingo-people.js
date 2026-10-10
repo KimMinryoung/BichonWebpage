@@ -309,6 +309,7 @@ router.get('/people/:personId', async (req, res) => {
         setShortPublicCache(res);
         res.render('public/commulingo-person', {
             person,
+            activities: activitiesModel.chronologicalActivities(person.activities),
             otherNames: otherNames(person, lang),
             epithetHtml,
             momentHtml,

@@ -142,6 +142,17 @@ function displayActivities(raw, lang, officeTitles = {}) {
     });
 }
 
+// The person page lists activities as a timeline: by start year (end year
+// when only that is known), then end year; undated rows keep their stored
+// order after the dated ones. The primary activity is marked, not hoisted.
+function chronologicalActivities(rows) {
+    const start = a => a.startYear ?? a.endYear ?? Infinity;
+    const end = a => a.endYear ?? Infinity;
+    return (rows || []).map((a, i) => [a, i])
+        .sort(([a, i], [b, j]) => start(a) - start(b) || end(a) - end(b) || i - j)
+        .map(([a]) => a);
+}
+
 // With an activity, a faction also counts inside the party it was part of
 // until a year (factionOf: 볼셰비키·멘셰비키 → 러시아 사회민주노동당 until 1912)
 // when the activity began by then.
@@ -166,6 +177,6 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, chronologicalActivities, activityHref, affiliationMatches, matchesActivities };
 // The whole catalog object; read it through the module (activities.catalog), not by destructuring.
 Object.defineProperty(module.exports, 'catalog', { enumerable: true, get: () => current().source });
