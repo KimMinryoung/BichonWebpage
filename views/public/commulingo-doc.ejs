@@ -166,9 +166,12 @@ var docCourses = doc.courses || [];
 // Keep those in place and show only metadata notes absent from that box.
 var editorialText = ((bodyTopHtml || '') + (bodyRestHtml || ''))
     .match(/<aside\b[^>]*class="doc-editorial"[^>]*>[\s\S]*?<\/aside>/g);
-editorialText = (editorialText || []).join(' ').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
+var normalizeEditorial = function(text) {
+    return text.replace(/<[^>]*>/g, '').replace(/[–—~〜]/g, '-').replace(/\s+/g, ' ');
+};
+editorialText = normalizeEditorial((editorialText || []).join(' '));
 var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\s+/)
-    .filter(function(sentence) { return sentence && !editorialText.includes(sentence); }).join(' ');
+    .filter(function(sentence) { return sentence && !editorialText.includes(normalizeEditorial(sentence)); }).join(' ');
 %>
 <% if (extraEditorialNotes && (!pagination || pagination.current === 1)) { %>
 <aside class="doc-editorial">
