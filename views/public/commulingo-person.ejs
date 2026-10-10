@@ -60,17 +60,23 @@
             <%# The year column exists only when some activity is dated; an empty
                 column pushed undated rows off the section's left edge. %>
             <% var activitiesDated = activities.some(function(a) { return a.startYear || a.endYear; }); %>
-            <ul class="commu-person-career commu-person-activities">
-            <%# In year order; the primary activity is highlighted in place. %>
+            <%# In year order; the primary activity is highlighted in place. Each row
+                leads with the organisation (the link: its people filtered by this
+                function), then the post held; the function is the quiet second line,
+                and posts held inside a membership follow it. Separators sit outside
+                the links so an underline marks only what is clickable. %>
+            <ul class="commu-person-activities<% if (!activitiesDated) { %> is-undated<% } %>">
             <% activities.forEach(function(a) { %>
-                <li<% if (a.primary) { %> class="is-primary"<% } %>><% if (activitiesDated) { %><span class="commu-career-year"><%= a.years %></span><% } %>
-                    <span><a class="commu-person-activity-link" href="<%= a.href %>"><%= a.label %><% if (a.affiliationLabel) { %> · <span class="commu-person-affiliation"><% if (a.affiliationIcon) { %><%- roleIconSvg(a.affiliationIcon) %><% } %><%= a.affiliationLabel %></span><% } %></a>
-                    <% if (a.titleLabel) { %> · <span class="commu-person-activity-title"><%= a.titleLabel %></span><% } %>
-                    <% if (a.officeLabel) { %> · <a class="commu-person-office-link" href="<%= a.officeHref %>"><%= a.officeLabel %></a><% } %>
-                    <% if (a.primary) { %><span class="commu-person-activity-primary"><%= en ? 'Main' : '대표' %></span><% } %>
-                    <%# Posts held in the organisation, under the membership span. %>
-                    <% a.posts.forEach(function(p) { %><span class="commu-person-activity-post"><% if (p.titleLabel) { %><%= p.titleLabel %><% } %><% if (p.officeLabel) { %><%= p.titleLabel ? ' · ' : '' %><a class="commu-person-office-link" href="<%= p.officeHref %>"><%= p.officeLabel %></a><% } %><% if (!p.titleLabel && !p.officeLabel) { %><%= en ? 'Office' : '직책' %><% } %> <%= p.years %></span><% }) %>
-                    </span></li>
+                <li class="commu-activity<% if (a.primary) { %> is-primary<% } %>">
+                    <% if (activitiesDated) { %><span class="commu-activity-years"><%= a.years %></span><% } %>
+                    <div class="commu-activity-body">
+                        <p class="commu-activity-head"><a class="commu-activity-org" href="<%= a.href %>"><% if (a.affiliationLabel && a.affiliationIcon) { %><%- roleIconSvg(a.affiliationIcon) %><% } %><span><%= a.affiliationLabel || a.label %></span></a><% if (a.titleLabel) { %><span class="commu-activity-sep" aria-hidden="true">·</span><span class="commu-activity-title"><%= a.titleLabel %></span><% } %><% if (a.officeLabel) { %><span class="commu-activity-sep" aria-hidden="true">·</span><a class="commu-activity-office" href="<%= a.officeHref %>"><%= a.officeLabel %></a><% } %><% if (a.primary) { %><span class="commu-activity-badge"><%= en ? 'Main' : '대표' %></span><% } %></p>
+                        <% if (a.affiliationLabel) { %><p class="commu-activity-function"><%= a.label %></p><% } %>
+                        <% if (a.posts.length) { %><ul class="commu-activity-posts">
+                            <% a.posts.forEach(function(p) { %><li><span class="commu-activity-post-name"><% if (p.titleLabel) { %><%= p.titleLabel %><% } %><% if (p.officeLabel) { %><% if (p.titleLabel) { %><span class="commu-activity-sep" aria-hidden="true">·</span><% } %><a class="commu-activity-office" href="<%= p.officeHref %>"><%= p.officeLabel %></a><% } %><% if (!p.titleLabel && !p.officeLabel) { %><%= en ? 'Office' : '직책' %><% } %></span><span class="commu-activity-post-years"><%= p.years %></span></li><% }) %>
+                        </ul><% } %>
+                    </div>
+                </li>
             <% }) %>
             </ul>
         </section>
