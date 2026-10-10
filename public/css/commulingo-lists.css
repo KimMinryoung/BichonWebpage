@@ -1327,7 +1327,12 @@ a.commu-person-position:focus-visible {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
+a.commu-person-role-tag { transition: background-color 120ms ease, color 120ms ease; }
+a.commu-person-role-tag:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    background: color-mix(in srgb, var(--link) 22%, var(--bg-surface));
+}
 
 .commu-person-moment {
     border-left: 3px solid color-mix(in srgb, var(--link) 72%, var(--border));
@@ -2121,3 +2126,15 @@ a.commu-dict-chip:hover { text-decoration: none; }
     .commu-people-facet > summary .commu-role-icon { transition: none; }
 }
 .commu-person-affiliation { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-secondary); font-size: var(--text-sm); }
+a.commu-person-affiliation {
+    margin-left: -6px;
+    padding: 2px 6px;
+    text-decoration: none;
+    transition: background-color 120ms ease, color 120ms ease;
+}
+a.commu-person-affiliation:hover,
+a.commu-person-affiliation:focus-visible {
+    background: color-mix(in srgb, var(--link) 12%, transparent);
+    color: var(--text-primary);
+    text-decoration: none;
+}

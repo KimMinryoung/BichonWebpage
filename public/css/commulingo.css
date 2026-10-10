@@ -3255,7 +3255,12 @@ a.commu-person-position:focus-visible {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--link); }
+a.commu-person-role-tag { transition: background-color 120ms ease, color 120ms ease; }
+a.commu-person-role-tag:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    background: color-mix(in srgb, var(--link) 22%, var(--bg-surface));
+}
 
 .commu-event-people-count {
     font-family: 'Courier New', monospace;
@@ -3415,28 +3420,35 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 
 
-/* The medal keeps the left column and the name starts right of it, so a long
-   role tag never shifts either. The medal is as tall as the two name lines
-   (--title-size and the 1.2 line heights below), and the tag sits under it. */
+/* The medal and its tag are one stack in the left column: they name the same
+   thing, so the tag always sits right under the medal however long the name
+   beside it runs. The column is the medal's width, or the tag's longest word
+   when that is wider; the tag wraps between words, adding lines rather than
+   widening the column or drifting under the name. The medal is as tall as the two name lines (--title-size and the 1.2
+   line heights below). */
 .commu-person-detail-top {
     --title-size: clamp(1.6rem, 3vw, 2.45rem);
+    --medal-size: calc(var(--title-size) * 1.2 + 4px + 0.98rem * 1.2);
     align-items: start;
     column-gap: 14px;
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(var(--medal-size), min-content) minmax(0, 1fr);
     margin-bottom: 12px;
-    row-gap: 6px;
 }
 
 .commu-person-detail-badge {
-    display: contents;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
 }
 
 .commu-person-detail-top > .commu-person-detail-badge > .commu-person-medal {
-    grid-column: 1;
-    grid-row: 1;
-    height: calc(var(--title-size) * 1.2 + 4px + 0.98rem * 1.2);
-    width: calc(var(--title-size) * 1.2 + 4px + 0.98rem * 1.2);
+    height: var(--medal-size);
+    width: var(--medal-size);
 }
 
 .commu-person-detail-top .commu-person-medal .commu-role-icon {
@@ -3445,9 +3457,14 @@ a.commu-person-role-tag:hover { color: var(--text-primary); border-color: var(--
 }
 
 .commu-person-detail-top .commu-person-role-tag {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-self: start;
+    box-sizing: border-box;
+    line-height: 1.3;
+    overflow: visible;
+    padding: 2px 4px;
+    text-align: center;
+    white-space: normal;
+    width: 100%;
+    word-break: keep-all;
 }
 
 .commu-person-detail-title {
@@ -6051,3 +6068,19 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     white-space: nowrap;
 }
 .commu-person-affiliation { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-secondary); font-size: var(--text-sm); }
+/* The affiliation and the activity tag answer a hover with a faint tint of
+   the link colour, not an underline: they sit among chips (position, fate),
+   so they react like one. The linked affiliation keeps its padding at rest
+   and pulls back by it, so the text stays aligned and nothing shifts. */
+a.commu-person-affiliation {
+    margin-left: -6px;
+    padding: 2px 6px;
+    text-decoration: none;
+    transition: background-color 120ms ease, color 120ms ease;
+}
+a.commu-person-affiliation:hover,
+a.commu-person-affiliation:focus-visible {
+    background: color-mix(in srgb, var(--link) 12%, transparent);
+    color: var(--text-primary);
+    text-decoration: none;
+}
