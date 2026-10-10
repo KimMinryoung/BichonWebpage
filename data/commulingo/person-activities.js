@@ -120,26 +120,61 @@ function isUnresolvedGap(a) {
     return a?.affiliationStatus === 'unresolved' && !functions.get(a.functionId)?.affiliationOptional;
 }
 
-// A membership row stays in the data for the years someone belonged to the
-// party, but the page shows only the office held in it when there is one:
-// both rows render the same label, so a pair read as a duplicate.
-function shadowedMembership(a, rows) {
-    return a.relation === 'membership' && !a.primary && rows.some(b => b !== a && b.relation === 'service'
-        && b.functionId === a.functionId && b.affiliationId === a.affiliationId);
+// A membership and the posts held in the same organisation (same function and
+// affiliation, overlapping years) render as one row: the membership's span in
+// the year column — joining is where the row starts — and each post's years
+// on a line under it (`posts`). Both used to render the same label, so the
+// membership was hidden and its years were lost. A post covering the whole
+// span adds nothing and is folded away; a membership that does not overlap
+// any post (rejoining after a gap) stays its own row.
+function spansTouch(a, b) {
+    const aFrom = a.startYear ?? a.endYear, aTo = a.endYear ?? a.startYear;
+    const bFrom = b.startYear ?? b.endYear, bTo = b.endYear ?? b.startYear;
+    if (aFrom == null || bFrom == null) return true;
+    return aFrom <= bTo && bFrom <= aTo;
+}
+
+function mergeMemberships(rows) {
+    const merged = new Map(), used = new Set();
+    for (const m of rows) {
+        if (used.has(m) || m.relation !== 'membership') continue;
+        const posts = rows.filter(s => !used.has(s) && s.relation === 'service'
+            && s.functionId === m.functionId && s.affiliationId === m.affiliationId && spansTouch(m, s));
+        if (!posts.length) continue;
+        [m, ...posts].forEach(a => used.add(a));
+        const all = [m, ...posts];
+        const starts = all.map(a => a.startYear ?? a.endYear).filter(y => y != null);
+        const ends = all.map(a => a.endYear ?? a.startYear).filter(y => y != null);
+        const startYear = starts.length ? Math.min(...starts) : null;
+        // An open membership stays open; otherwise the row ends with its last year.
+        const endYear = m.endYear == null && m.startYear != null ? null : ends.length ? Math.max(...ends) : null;
+        merged.set(m, { ...m, primary: all.some(a => a.primary), startYear, endYear,
+            posts: posts.filter(s => s.officeId || s.startYear !== startYear || s.endYear !== endYear) });
+    }
+    return rows.flatMap(a => merged.has(a) ? [merged.get(a)] : used.has(a) ? [] : [a]);
 }
 
 // officeTitles: { [officeId]: { ko, en } } from commulingo_offices.
 function displayActivities(raw, lang, officeTitles = {}) {
-    const rows = raw || [];
-    return rows.filter(a => functions.has(a.functionId) && !shadowedMembership(a, rows)).map(a => {
+    const office = a => ({ officeLabel: a.officeId ? localize(officeTitles[a.officeId], lang) || '' : '',
+        officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '' });
+    return mergeMemberships((raw || []).filter(a => functions.has(a.functionId))).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
             affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : '',
             affiliationIcon: affiliation?.icon || '',
-            officeLabel: a.officeId ? localize(officeTitles[a.officeId], lang) || '' : '',
-            officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '',
+            ...office(a),
+            years: activityYears(a),
+            posts: (a.posts || []).map(s => ({ startYear: s.startYear, endYear: s.endYear, years: activityYears(s), ...office(s) })),
             href: activityHref(a) };
     });
+}
+
+// Year label of an activity or post: 1917, 1917–1920, –1917, 1917–.
+function activityYears(a) {
+    if (a.startYear && a.startYear === a.endYear) return String(a.startYear);
+    if (!a.startYear && !a.endYear) return '';
+    return (a.startYear || '') + '–' + (a.endYear || '');
 }
 
 // The person page lists activities as a timeline: by start year (end year
@@ -177,6 +212,6 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, chronologicalActivities, activityHref, affiliationMatches, matchesActivities };
+module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, chronologicalActivities, activityYears, activityHref, affiliationMatches, matchesActivities };
 // The whole catalog object; read it through the module (activities.catalog), not by destructuring.
 Object.defineProperty(module.exports, 'catalog', { enumerable: true, get: () => current().source });

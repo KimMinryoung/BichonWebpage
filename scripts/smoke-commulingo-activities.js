@@ -32,11 +32,18 @@ for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) 
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '');
 assert.equal(displayActivities([{ ...primary, affiliationId: 'state-soviet' }], 'ko')[0].affiliationIcon, 'landmark');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');
-// Party membership stays in the data but the page shows only the office held in that party.
+// A membership and the office held in that party are one row: the membership's
+// span, the office's years under it; the office's primary flag carries over.
 const membership = { ...primary, primary: false, startYear: 1930, endYear: 1960 };
 const office = { ...primary, relation: 'service', startYear: 1945, endYear: 1950 };
-assert.deepEqual(displayActivities([membership, office], 'ko').map(a => a.relation), ['service']);
+const merged = displayActivities([membership, office], 'ko');
+assert.equal(merged.length, 1);
+assert.deepEqual([merged[0].years, merged[0].primary, merged[0].posts.map(p => p.years)], ['1930–1960', true, ['1945–1950']]);
 assert.equal(displayActivities([membership, { ...office, affiliationId: 'soviet-party' }], 'ko').length, 2);
+// An office spanning the whole membership adds no line; a membership that does
+// not overlap the office (rejoining later) stays its own row.
+assert.deepEqual(displayActivities([membership, { ...office, startYear: 1930, endYear: 1960 }], 'ko')[0].posts, []);
+assert.equal(displayActivities([{ ...membership, startYear: 1970, endYear: 1975 }, office], 'ko').length, 2);
 // Scholarship and arts are usually done without serving a state or party: an
 // unresolved affiliation there is not a research gap.
 for (const functionId of ['scholarship', 'arts']) {

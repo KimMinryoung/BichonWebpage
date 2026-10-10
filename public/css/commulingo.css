@@ -5961,6 +5961,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     background: color-mix(in srgb, var(--accent) 16%, transparent);
     box-shadow: inset 3px 0 0 var(--accent);
 }
+.commu-person-activity-post {
+    display: block;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-family: inherit;
+}
+.commu-person-activity-post::before { content: "└ "; }
 .commu-person-activity-primary {
     margin-left: var(--space-1);
     padding: 0 6px;
