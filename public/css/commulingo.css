@@ -5855,7 +5855,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 /* The filter bar sits midway between the search above it and the first box
    below it: one margin on each side, and whatever follows (in the shell or
    after the browser that holds the bar) drops its own top margin. */
-.commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-5); }
+.commu-people-filterbar { position: relative; display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: calc(var(--space-5) / 2); }
 .commu-people-filterbar + *,
 .commu-people-browser:has(> .commu-people-filterbar:last-child) + * { margin-top: 0; }
 .commu-people-facet > summary {
