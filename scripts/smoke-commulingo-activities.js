@@ -30,7 +30,6 @@ assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'governm
 for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) assert(from == null || to == null || from <= to, a.id);
 // An unresolved affiliation is a research-queue item, not something to show readers.
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '');
-assert.equal(displayActivities([{ ...primary, affiliationId: 'state-soviet' }], 'ko')[0].affiliationIcon, 'landmark');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');
 // A membership and the office held in that party are one row: the membership's
 // span, the office's years under it; the office's primary flag carries over.
@@ -51,6 +50,16 @@ assert.throws(() => validateActivities([{ ...primary, title: titled.title }], so
 assert.throws(() => validateActivities([{ ...primary, relation: 'service', title: { ko: '총리' } }], sources), /title must be/);
 assert.equal(displayActivities([titled], 'en')[0].titleLabel, 'Minister-President of Bavaria');
 assert.deepEqual(displayActivities([membership, { ...titled, startYear: 1930, endYear: 1960 }], 'ko')[0].posts.map(p => p.titleLabel), ['바이에른 총리']);
+// A post in the same organisation merges whatever its function, and an
+// employment counts as a post: its line carries its own function tag.
+const editor = { ...office, relation: 'employment', functionId: 'propaganda', title: { ko: '『포어베르츠』 편집인', en: 'Editor of Vorwärts' } };
+const press = displayActivities([membership, editor], 'ko');
+assert.equal(press.length, 1);
+assert.deepEqual(press[0].posts.map(p => [p.titleLabel, p.functionLabel]), [['『포어베르츠』 편집인', '이념·선전']]);
+// A post with neither title nor office is named by its function, never a bare 「직책」.
+assert.deepEqual(displayActivities([membership, office], 'ko')[0].posts.map(p => [p.nameLabel, p.functionLabel]), [['보안·정보·치안', '']]);
+// A state post is not a party post: party membership and a state premiership stay two rows.
+assert.equal(displayActivities([membership, { ...titled, affiliationId: 'state-germany', functionId: 'government', startYear: 1945, endYear: 1946 }], 'ko').length, 2);
 // Scholarship and arts are usually done without serving a state or party: an
 // unresolved affiliation there is not a research gap.
 for (const functionId of ['scholarship', 'arts']) {

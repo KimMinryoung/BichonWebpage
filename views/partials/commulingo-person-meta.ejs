@@ -8,7 +8,6 @@ var badge = person.badgeActivity || person.primaryActivity;
     <div class="commu-person-meta">
         <% if (badge && badge.affiliationLabel) { %>
         <% if (badge.affiliationId) { %><a class="commu-person-affiliation" href="<%= badge.href %>" onclick="event.stopPropagation()"><% } else { %><span class="commu-person-affiliation"><% } %>
-            <% if (badge.affiliationIcon) { %><%- roleIconSvg(badge.affiliationIcon) %><% } %>
             <%= badge.affiliationLabel %>
         <% if (badge.affiliationId) { %></a><% } else { %></span><% } %>
         <% } %>

@@ -133,13 +133,15 @@ function isUnresolvedGap(a) {
     return a?.affiliationStatus === 'unresolved' && !functions.get(a.functionId)?.affiliationOptional;
 }
 
-// A membership and the posts held in the same organisation (same function and
-// affiliation, overlapping years) render as one row: the membership's span in
-// the year column — joining is where the row starts — and each post's years
-// on a line under it (`posts`). Both used to render the same label, so the
-// membership was hidden and its years were lost. A post covering the whole
-// span adds nothing and is folded away; a membership that does not overlap
-// any post (rejoining after a gap) stays its own row.
+// A membership and the posts held in the same organisation (same affiliation,
+// overlapping years; service or employment, whatever the function) render as
+// one row: the membership's span in the year column — joining is where the
+// row starts — and each post's years on a line under it (`posts`). A post's
+// function may differ from the membership's (SPD 당원 → 『포어베르츠』 편집인,
+// 이념·선전); the post line then carries its own function tag. A bare post
+// covering the whole span with the membership's function adds nothing and is
+// folded away; a membership that does not overlap any post (rejoining after a
+// gap) stays its own row.
 function spansTouch(a, b) {
     const aFrom = a.startYear ?? a.endYear, aTo = a.endYear ?? a.startYear;
     const bFrom = b.startYear ?? b.endYear, bTo = b.endYear ?? b.startYear;
@@ -147,12 +149,14 @@ function spansTouch(a, b) {
     return aFrom <= bTo && bFrom <= aTo;
 }
 
+const POST_RELATIONS = new Set(['service', 'employment']);
+
 function mergeMemberships(rows) {
     const merged = new Map(), used = new Set();
     for (const m of rows) {
         if (used.has(m) || m.relation !== 'membership') continue;
-        const posts = rows.filter(s => !used.has(s) && s.relation === 'service'
-            && s.functionId === m.functionId && s.affiliationId === m.affiliationId && spansTouch(m, s));
+        const posts = rows.filter(s => !used.has(s) && POST_RELATIONS.has(s.relation)
+            && s.affiliationId != null && s.affiliationId === m.affiliationId && spansTouch(m, s));
         if (!posts.length) continue;
         [m, ...posts].forEach(a => used.add(a));
         const all = [m, ...posts];
@@ -162,7 +166,8 @@ function mergeMemberships(rows) {
         // An open membership stays open; otherwise the row ends with its last year.
         const endYear = m.endYear == null && m.startYear != null ? null : ends.length ? Math.max(...ends) : null;
         merged.set(m, { ...m, primary: all.some(a => a.primary), startYear, endYear,
-            posts: posts.filter(s => s.officeId || s.title || s.startYear !== startYear || s.endYear !== endYear) });
+            posts: posts.filter(s => s.officeId || s.title || s.functionId !== m.functionId
+                || s.startYear !== startYear || s.endYear !== endYear) });
     }
     return rows.flatMap(a => merged.has(a) ? [merged.get(a)] : used.has(a) ? [] : [a]);
 }
@@ -176,10 +181,18 @@ function displayActivities(raw, lang, officeTitles = {}) {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
             affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : '',
-            affiliationIcon: affiliation?.icon || '',
             ...office(a),
             years: activityYears(a),
-            posts: (a.posts || []).map(s => ({ startYear: s.startYear, endYear: s.endYear, years: activityYears(s), ...office(s) })),
+            // A post line is named by its title or office; failing both, by its
+            // function. Its function tag shows only when it differs from the row's.
+            posts: (a.posts || []).map(s => {
+                const sf = functions.get(s.functionId), names = office(s);
+                const own = s.functionId !== a.functionId;
+                return { startYear: s.startYear, endYear: s.endYear, years: activityYears(s), ...names,
+                    functionLabel: !names.titleLabel && !names.officeLabel ? '' : own ? localize(sf.label, lang) : '',
+                    functionIcon: own ? sf.icon : '',
+                    nameLabel: names.titleLabel || names.officeLabel ? '' : localize(sf.label, lang) };
+            }),
             href: activityHref(a) };
     });
 }
