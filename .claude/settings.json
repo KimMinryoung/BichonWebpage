@@ -7,7 +7,10 @@
       "Bash(docker exec -i leninbot-frontend node /app/scripts/review-commulingo-links.js:*)",
       "Bash(sudo cp /home/grass/frontend/nginx/leninbot-frontend.conf /etc/nginx/sites-available/leninbot-frontend)",
       "Bash(sudo nginx -t)",
-      "Bash(sudo systemctl reload nginx)"
+      "Bash(sudo systemctl reload nginx)",
+      "Bash(scripts/apply-migration:*)",
+      "Write(scripts/migrations/data/**)",
+      "Edit(scripts/migrations/data/**)"
     ]
   },
   "hooks": {
