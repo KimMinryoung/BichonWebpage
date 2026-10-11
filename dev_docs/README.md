@@ -24,6 +24,7 @@
 | CommuLingo 훈련장 쇼츠(숏폼 카드 피드) | [카드 재료·순서](commulingo-shorts.md) |
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md), [2026-09-27 미등록 항목 등록](commulingo-history-courses-registration-20260927.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
+| CommuLingo 1848년 혁명 사건 묶음 | [개요·프랑스·독일·헝가리·이탈리아 5편, 인물 35명·용어 48개·소속 8개·헝가리 지도·남은 일](commulingo-revolutions-1848-20261011.md) |
 | CommuLingo 파리 코뮌 사건 | [한영 사건·인물 10명·반영 기록](commulingo-paris-commune-20260929.md) |
 | CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
 | CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
