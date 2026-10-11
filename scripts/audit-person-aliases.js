@@ -8,12 +8,12 @@
 
 const { db } = require('./lib/bootstrap');
 const { aliasProblem } = require('../data/commulingo/person-alias-rules');
-const { composeFromParts, composePersonName } = require('../data/commulingo/people-standard');
+const { composeFromParts, personName } = require('../data/commulingo/person-name');
 
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT a.person_id, a.lang, a.alias, p.name_ko, p.name_en, p.given_name_ko, p.given_name_en,
+            `SELECT a.person_id, a.lang, a.alias, p.given_name_ko, p.given_name_en,
                     p.family_name_ko, p.family_name_en, p.citizenship_code, t.patronymic_ko, t.patronymic_en
              FROM commulingo_person_aliases a
              JOIN commulingo_people p ON p.id = a.person_id
@@ -26,10 +26,8 @@ const { composeFromParts, composePersonName } = require('../data/commulingo/peop
             const given = row[`given_name_${lang}`] || '';
             const family = row[`family_name_${lang}`] || '';
             const patronymic = row[`patronymic_${lang}`] || '';
-            const full = given || family
-                ? composeFromParts(given, patronymic, family, lang, row.citizenship_code || '')
-                : composePersonName(row[`name_${lang}`] || '', patronymic);
-            const problem = aliasProblem(row.alias, lang, { name: row[`name_${lang}`], family, full });
+            const full = composeFromParts(given, patronymic, family, lang, row.citizenship_code || '');
+            const problem = aliasProblem(row.alias, lang, { name: personName(row, lang), family, full });
             if (problem) hits.push({ id: row.person_id, lang, alias: row.alias, problem });
         }
         if (process.argv.includes('--json')) console.log(JSON.stringify(hits));
