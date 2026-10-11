@@ -735,6 +735,19 @@ nav .nav-links .nav-logout-btn {
     width: 17px;
     height: 17px;
 }
+.toolbar-logo {
+    white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+    .home-toolbar .toolbar-search-btn,
+.home-toolbar .theme-toggle {
+        min-width: 32px;
+    }
+    .home-toolbar .lang-btn {
+        padding-inline: 6px;
+    }
+}
 
 .site-search {
     padding-top: var(--space-4);
@@ -814,6 +827,7 @@ nav .nav-links .nav-logout-btn {
 
 .site-search-status {
     margin: var(--space-6) 0;
+    padding-inline: var(--content-inset);
     color: var(--text-muted);
 }
 

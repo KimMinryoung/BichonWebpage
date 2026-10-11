@@ -2578,6 +2578,22 @@ footer .footer-tagline {
     height: 17px;
 }
 
+/* The logo never wraps; on the narrowest phones (English labels are wider)
+   the icon buttons give up their square width instead. */
+.toolbar-logo {
+    white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+    .home-toolbar .toolbar-search-btn,
+    .home-toolbar .theme-toggle {
+        min-width: 32px;
+    }
+    .home-toolbar .lang-btn {
+        padding-inline: 6px;
+    }
+}
+
 .site-search {
     padding-top: var(--space-4);
 }
@@ -2656,6 +2672,7 @@ footer .footer-tagline {
 
 .site-search-status {
     margin: var(--space-6) 0;
+    padding-inline: var(--content-inset);
     color: var(--text-muted);
 }
 

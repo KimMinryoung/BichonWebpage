@@ -393,6 +393,17 @@
     border-inline: 0;
     border-bottom: 0;
 }
+.commulingo-home .commulingo-hero-dict .site-search-form {
+    margin-top: -10px;
+}
+.commulingo-home .commulingo-hero-dict .site-search-input {
+    border-left: 0;
+    border-bottom: 0;
+}
+.commulingo-home .commulingo-hero-dict .site-search-submit {
+    border-right: 0;
+    border-bottom: 0;
+}
 .commulingo-home .commu-dict-tab {
     min-height: 54px;
 }

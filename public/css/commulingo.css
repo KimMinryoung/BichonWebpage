@@ -5742,6 +5742,19 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     border-inline: 0;
     border-bottom: 0;
 }
+/* The search box closes the tab row: its top border is the tabs' bottom
+   line, and the hero's own frame stands in for its sides. */
+.commulingo-home .commulingo-hero-dict .site-search-form {
+    margin-top: -10px;
+}
+.commulingo-home .commulingo-hero-dict .site-search-input {
+    border-left: 0;
+    border-bottom: 0;
+}
+.commulingo-home .commulingo-hero-dict .site-search-submit {
+    border-right: 0;
+    border-bottom: 0;
+}
 .commulingo-home .commu-dict-tab {
     min-height: 54px;
 }
