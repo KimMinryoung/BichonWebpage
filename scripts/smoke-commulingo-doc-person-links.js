@@ -10,8 +10,8 @@ const people = [person('yurovsky', '야코프', '유롭스키', '1878–1938'), 
     person('gorshkov', '세르게이', '고르시코프'), person('other-ustinov', '알렉산드르', '우스티노프')];
 installLinkBlocklist([]);
 const indexes = { lang: 'ko', person: buildPersonLinkIndex(people) };
-// A curated document: any personLinks closes the cast (the production cases
-// below come from one). Open documents are tested further down.
+// A curated document: personLinks.allowedPeople closes the cast (the
+// production cases below come from one). Open documents are tested further down.
 const raw = { id: 'source', people: ['yurovsky'], date: '1918', personLinks: { allowedPeople: ['yurovsky'] } };
 const render = (html, entry = raw, idx = indexes) => renderDocPersonLinks(html, entry, idx, { audit: true });
 // The four production false positives, with no document mapping required.
@@ -56,7 +56,7 @@ assert.equal(sectionsOf('<h2 title="x > y" id="a">A</h2><pre>&lt;h2&gt;</pre><h2
 const enPeople = [person('ford', 'Gerald', 'Ford'), person('henry-ford', 'Henry', 'Ford')];
 const enIdx = { lang: 'en', person: buildPersonLinkIndex(enPeople, { lang: 'en' }) };
 const en = render('<h2 id="a">A</h2><p>Ford Road. Ford spoke. Gerald Ford spoke.</p><p>Ford spoke.</p><h2 id="b">B</h2><p>Ford spoke.</p>',
-    { id: 'en', people: ['ford'], docLang: 'en', personLinks: { names: [{ lang: 'en', text: 'Ford', personId: 'ford', kind: 'surname', reason: 'identified speaker' }] } }, enIdx);
+    { id: 'en', people: ['ford'], docLang: 'en', personLinks: { allowedPeople: ['ford'], names: [{ lang: 'en', text: 'Ford', personId: 'ford', kind: 'surname', reason: 'identified speaker' }] } }, enIdx);
 assert.equal((en.html.match(/commu-person-link/g) || []).length, 1);
 assert(en.mentions.some(m => m.decision === 'place-or-institution'));
 assert(en.mentions.some(m => m.section === 'b' && m.decision === 'surname-without-prior-identity'));
@@ -111,4 +111,11 @@ assert.doesNotMatch(openRender('<p>레닌 광장에 모였다. 표도르 니키�
 assert.doesNotMatch(openRender('<p>레닌그라드에서.</p>').html, /people\/lenin/);
 assert.doesNotMatch(openRender('<p>레닌 주와 레닌 크라이.</p>').html, /people\/lenin/);
 assert.doesNotMatch(openRender('<p>프리드리히 레닌 4세.</p>').html, /people\/lenin/);
+// Name mappings without a cast list keep the document open: the mapped
+// shared surname links to its bearer and the dictionary rules still apply.
+const openMapped = { id: 'open', people: ['ustinov'], date: '1918', personLinks: { names: [
+    { lang: 'ko', text: '우스티노프', personId: 'ustinov', kind: 'identity', reason: 'the troika chairman' }] } };
+const openMappedRender = renderDocPersonLinks('<p>레닌이 말했다. 의장은 우스티노프였다.</p>', openMapped, openIdx, { audit: true, relatedPeople: new Set(['lenin']) });
+assert.match(openMappedRender.html, /people\/ustinov/);
+assert.match(openMappedRender.html, /people\/lenin/);
 console.log('OK — document cast, prior identity, section conflicts, places, chronology and production false positives');

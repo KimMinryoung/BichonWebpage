@@ -150,12 +150,14 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
     }
     for (const candidate of candidates.values()) if (candidate.full) defaultFullNames[candidate.text] = [...candidate.ids];
     let truncated = false;
-    // A curated document (any personLinks: a cast list or name mappings) keeps
-    // the closed rules above. Every other document is open like the dictionary pages: people outside
+    // A curated cast (personLinks.allowedPeople) keeps the closed rules above.
+    // Every other document is open like the dictionary pages: people outside
     // raw.people link by a full name, or by a surname the dictionary itself
     // links (unique, not blocked) that fits the document's date, and a surname
     // whose full name the document gave in an earlier section links too.
-    const open = raw.personLinks === undefined;
+    // Name mappings alone only add to an open document: they settle the
+    // surnames the dictionary cannot (shared or unintroduced) for its cast.
+    const open = policy.allowedPeople === undefined;
     const year = Number(String(raw.date || '').slice(0, 4));
     const period = policy.period || (year ? { start: year, end: year } : null);
     const docIntroduced = state.introduced;
