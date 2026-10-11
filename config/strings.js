@@ -735,7 +735,7 @@ const en = {
         recentDiaries: "Cyber-Lenin's Recent Diaries",
         recentReports: "Cyber-Lenin's Recent Reports",
         recentHub: 'Recent Curations',
-        recentCommuLingo: 'Latest updates in each CommuLingo section',
+        recentCommuLingo: 'CommuLingo updates by section',
         commuLingoUpdatedAt: ', updated',
         viewAll: 'View all',
         chatDesc: 'Chat with Cyber-Lenin in real time',
