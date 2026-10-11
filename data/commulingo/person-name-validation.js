@@ -58,8 +58,23 @@ function containsComponent(fullName, component) {
 // required for names whose own displayed name is Cyrillic. Latin/Georgian/etc.
 // native names may intentionally omit a Russian-style patronymic even when the
 // localized Korean/English display keeps it.
+// A Cyrillic native name whose middle word is a patronymic (Борис Вениаминович
+// Родос): with no patronymic field, the Korean and English names silently lose
+// it — three cards did until 2026-10-11. Only inner words are tested, so a
+// surname that ends like one (Александр Серафимович) is not mistaken for it.
+const PATRONYMIC_WORD = /^[А-ЯЁІЇЄҐЎ][а-яёіїєґў'ʼ]+(?:ович|евич|ьевич|ич|овна|евна|ьевна|ична|инична|івна|ївна|авіч|евіч|віч|аўна|еўна|оглы|кызы)$/u;
+function embeddedPatronymic(nativeName) {
+    const words = collapseSpaces(nativeName).split(' ');
+    return words.slice(1, -1).find(word => PATRONYMIC_WORD.test(word)) || '';
+}
+
 function patronymicProblem(state, nativeName) {
     if (state.invalid) return state.invalid;
+    const embedded = !state.native && embeddedPatronymic(nativeName);
+    if (embedded) {
+        return `cyrillic/nativeName "${nativeName}" carries the patronymic "${embedded}": send the native name without it, `
+            + 'with patronymic {ko, en} and cyrillicPatronymic, so the Korean and English names show it too';
+    }
     if (!!state.ko !== !!state.en) {
         return 'patronymic.ko and patronymic.en must be supplied together';
     }
@@ -102,6 +117,7 @@ function nationalOriginInput(payload) {
 }
 
 module.exports = {
+    embeddedPatronymic,
     mergePatronymicPatch,
     patronymicProblem,
     nationalOriginInput,

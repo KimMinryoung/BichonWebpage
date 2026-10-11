@@ -11,9 +11,9 @@ const { patronymicProblem } = require('../data/commulingo/person-name-validation
     try {
         const { rows } = await db.query(
             `SELECT p.id, p.cyrillic, pp.patronymic_ko, pp.patronymic_en,
-                    pp.cyrillic_patronymic
+                    pp.cyrillic_patronymic, pp.person_id IS NOT NULL AS has_row
              FROM commulingo_people p
-             JOIN commulingo_person_patronymics pp ON pp.person_id = p.id
+             LEFT JOIN commulingo_person_patronymics pp ON pp.person_id = p.id
              ORDER BY p.id`
         );
         const problems = [];
@@ -26,12 +26,14 @@ const { patronymicProblem } = require('../data/commulingo/person-name-validation
             };
             const problem = patronymicProblem(state, row.cyrillic || '');
             if (problem) problems.push({ id: row.id, problem, ...state });
-            if (!state.ko && !state.en && !state.native) {
+            // Rows without a patronymic row come through the LEFT JOIN only to
+            // catch a patronymic left inside the native name (Борис Вениаминович Родос).
+            if (row.has_row && !state.ko && !state.en && !state.native) {
                 problems.push({ id: row.id, problem: 'empty patronymic row' });
             }
         }
         if (!problems.length) {
-            console.log(`OK — ${rows.length} patronymic rows are complete and non-duplicated.`);
+            console.log(`OK — ${rows.length} people checked: patronymic rows are complete and non-duplicated, no native name hides one.`);
             process.exit(0);
         }
         console.log(`${problems.length} patronymic problem(s):`);
