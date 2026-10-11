@@ -20,8 +20,14 @@ async function run() {
     try {
         await a.query('BEGIN');
         await a.query('INSERT INTO commulingo_people_groups(id) VALUES ($1)', [id]);
+        // A card the current store accepts: name parts, native name, life
+        // years, citizenship/origin and fate (the bare-name fixture predates them).
         await admin.createPersonAdmin({ id, groupId: id,
-            name: { ko: '검증 인물', en: 'Test Person' }, role: { icon: 'book-open' },
+            givenName: { ko: '피에르', en: 'Pierre' }, familyName: { ko: '르콩트', en: 'Lecomte' },
+            nativeName: 'Pierre Lecomte', years: '1890–1960',
+            citizenship: { code: 'france' }, nationalOrigin: { code: 'france' },
+            fate: { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } },
+            role: { icon: 'book-open' },
             bio: { ko: '원래 소개', en: 'Original biography' },
             career: [{ period: { start: [1920], end: [1925] }, r: { ko: '연구원', en: 'Researcher' } }],
         }, { client: a });
