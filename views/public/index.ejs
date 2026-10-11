@@ -36,7 +36,9 @@
                     <a href="/commulingo/people"><%- include('../partials/menu-icon', { icon: 'people', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictPeopleShort %>"><%= strings.commuLingo.dictPeople %></span></a>
                     <a href="/commulingo/events"><%- include('../partials/menu-icon', { icon: 'events', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictEventsShort %>"><%= strings.commuLingo.dictEvents %></span></a>
                     <a href="/commulingo/terms"><%- include('../partials/menu-icon', { icon: 'terms', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictTermsShort %>"><%= strings.commuLingo.dictTerms %></span></a>
+                    <% if (menuShown('commulingo.docs')) { %>
                     <a href="/commulingo/docs"><%- include('../partials/menu-icon', { icon: 'docs', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.commuLingo.dictDocsShort %>"><%= strings.commuLingo.dictDocs %></span></a>
+                    <% } %>
                 </div>
             </div>
             <div class="ui-card home-card home-card-full home-card-group">
@@ -49,10 +51,12 @@
                     <a href="/posts"><%- include('../partials/menu-icon', { icon: 'posts', iconClass: 'home-card-link-icon' }) %><span data-short="<%= strings.nav.bichonPostsShort %>"><%= strings.nav.bichonPosts %></span></a>
                 </div>
             </div>
+            <% if (menuShown('games')) { %>
             <a href="/games/" class="ui-card home-card home-card-full">
                 <h2><%- include('../partials/menu-icon', { icon: 'game', iconClass: 'home-card-icon' }) %><%= strings.nav.game %></h2>
                 <p><%= strings.home.gameDesc %></p>
             </a>
+            <% } %>
         </div>
 
         <% if (typeof partlyFailed !== 'undefined' && partlyFailed) { %>

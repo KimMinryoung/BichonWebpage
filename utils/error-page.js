@@ -6,6 +6,7 @@
  */
 
 const allStrings = require('../config/strings');
+const { menuHasEnglish } = require('../config/menu-languages');
 const { iconPaths } = require('../data/icons');
 const seo = require('./seo');
 const { siteStyleModules } = require('./site-stylesheets');
@@ -30,6 +31,7 @@ function fillLayoutLocals(res) {
     if (!locals.urlLanguage) locals.urlLanguage = FALLBACK_LANG;
     if (!locals.jsonLdScript) locals.jsonLdScript = seo.jsonLdScript;
     if (!locals.iconPaths) locals.iconPaths = iconPaths;
+    if (!locals.menuShown) locals.menuShown = menu => locals.lang !== 'en' || menuHasEnglish(menu);
     if (locals.assetVersion === undefined) locals.assetVersion = '';
     if (locals.currentUser === undefined) locals.currentUser = null;
     if (locals.isAuthenticated === undefined) locals.isAuthenticated = false;
